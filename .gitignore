@@ -3,6 +3,9 @@
 # C extensions
 *.so
 
+# temp
+*.swp
+
 # Packages
 *.egg
 *.egg-info
@@ -37,3 +40,16 @@ nosetests.xml
 # Jetbrains
 .idea
 *.iml
+
+*.ini
+*.war
+apache/wsgi.conf
+apache/tomcat-print.conf
+buildout/bin/
+buildout/develop-eggs/
+buildout/eggs/
+buildout/parts/
+print/config.yaml
+MANIFEST
+.coverage
+chsdi.egg-info
