@@ -53,7 +53,7 @@ class Search(SearchValidation):
         self.sphinx.SetSortMode(sphinxapi.SPH_SORT_ATTR_ASC, 'rank')
         if self.quadindex is not None:
             searchText = self._query_detail('@detail')
-            searchText += ' & @geom_quadindex ' + self.quadindex + '*'
+            searchText += ' & @geom_quadindex ^' + self.quadindex + '*'
         else:
             searchText = self._query_detail('@detail')
         temp = self.sphinx.Query(searchText, index='swisssearch')['matches']
@@ -67,7 +67,7 @@ class Search(SearchValidation):
             # bbox
             self.sphinx.SetLimits(0, limit)
             searchText = self._query_detail('@detail')
-            searchText += ' & @geom_quadindex !' + self.quadindex + '*'
+            searchText += ' & @geom_quadindex !^' + self.quadindex + '*'
             temp = self.sphinx.Query(
                 searchText,
                 index='swisssearch')['matches']
@@ -95,7 +95,7 @@ class Search(SearchValidation):
             self._add_feature_queries(searchText)
         else:
             searchText = self._query_detail('@detail')
-            searchText += ' & @geom_quadindex ' + self.quadindex + '*'
+            searchText += ' & @geom_quadindex ^' + self.quadindex + '*'
             self._add_feature_queries(searchText)
         temp = self.sphinx.RunQueries()
         nb_match = self._nb_of_match(temp)
@@ -103,7 +103,7 @@ class Search(SearchValidation):
         # look outside the bbox if no match when the bbox is defined
         if self.quadindex is not None and nb_match == 0:
             searchText = self._query_detail('@detail')
-            searchText += ' & @geom_quadindex !' + self.quadindex + '*'
+            searchText += ' & @geom_quadindex !^' + self.quadindex + '*'
             self._add_feature_queries(searchText)
 
             temp = self.sphinx.RunQueries()
