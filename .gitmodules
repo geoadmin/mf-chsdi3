@@ -1,0 +1,4 @@
+[submodule "ol3"]
+	path = ol3
+	url = git://github.com/geoadmin/ol3.git
+        ignore = dirty
