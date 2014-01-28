@@ -2,13 +2,12 @@
 
 <% 
   c = pageargs['feature']
-  protocol = request.scheme
+  base = '../../../../../../' + h.version()
   c['bbox'] = pageargs.get('bbox')
   c['scale'] = pageargs.get('scale')
   c['stable_id'] = False
   extended = pageargs.get('extended')
-  extendedPathCss = request.static_url('chsdi:static/css/extended.min.css').replace('http://', 'https://')
-  c['baseUrl'] = protocol + '://' + request.registry.settings['geoadminhost']
+  c['baseUrl'] = '//' + request.registry.settings['geoadminhost']
   c['instanceId'] = request.registry.settings['instanceid']
   bbox = c['bbox']
   lang = request.lang
@@ -19,10 +18,10 @@
 
 % if extended:
   <meta name="viewport" content="initial-scale=1.0"/>
-  <link rel="stylesheet" type="text/css" href="${h.versioned(extendedPathCss)}"/>
-  <link rel="stylesheet" type="text/css" href="../../../../../../static/css/blueimp-gallery-2.11.0.min.css"/>
-  <script src="../../../../../../static/js/jquery-2.0.3.min.js"></script>
-  <script src="../../../../../../static/js/blueimp-gallery-2.11.5.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="${base + '/static/css/extended.min.css'}"/>
+  <link rel="stylesheet" type="text/css" href="${base + '/static/css/blueimp-gallery-2.11.0.min.css'}"/>
+  <script src="${base + '/static/js/jquery-2.0.3.min.js'}"></script>
+  <script src="${base + '/static/js/blueimp-gallery-2.11.5.min.js'}"></script>
 % endif
 
 <div class="htmlpopup-container">

@@ -18,6 +18,10 @@ def versioned(path):
         return path
 
 
+def version():
+    return  'wsgi/' + get_current_registry().settings['app_version']
+
+
 def locale_negotiator(request):
     lang = request.params.get('lang')
     settings = get_current_registry().settings
