@@ -5,7 +5,7 @@
 
 # Stateful cookies
 <LocationMatch /${vars:instanceid}/(wsgi)?/print/>
-    Header set Set-Cookie "SRV=${hostname-digest}; path=/${vars:instanceid}/print/"
+    Header set Set-Cookie "SRV_GEO3=${hostname-digest}; path=/${vars:instanceid}/print/"
 </LocationMatch>
 
 
