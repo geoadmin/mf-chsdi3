@@ -76,14 +76,14 @@ sources:
     http:
       headers:
         Referer: http://www.geoportail.gouv.fr/
-    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/20130422/21781/%(z)d/%(y)d/%(x)d.jpeg
+    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/20131107/21781/%(z)d/%(y)d/%(x)d.jpeg
   pixelkarte-farbe-tiles:
     type: tile
     grid: swisstopo-pixelkarte
     http:
       headers:
         Referer: http://www.geoportail.gouv.fr/
-    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20130213/21781/%(z)d/%(y)d/%(x)d.jpeg
+    url: http://wmts3.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20140106/21781/%(z)d/%(y)d/%(x)d.jpeg
   osm_tms:
     type: tile
     grid: global_mercator_osm
