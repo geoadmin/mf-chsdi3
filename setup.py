@@ -30,6 +30,7 @@ requires = [
     'selenium',
     'regex',
     'pystache',
+    'MapProxy',
     ]
 
 setup(name='chsdi',
