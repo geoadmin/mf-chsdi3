@@ -60,6 +60,8 @@ class CatalogService(MapNameValidation):
                 node = row.to_dict(self.lang)
                 if node['category'] != 'layer':
                     node['children'] = []
+                else:
+                    node['label'] = self.request.translate(node['idBod'])
                 nodes_depth.append(node)
             else:
                 nodes_all.append(nodes_depth)
@@ -70,6 +72,8 @@ class CatalogService(MapNameValidation):
                 node = row.to_dict(self.lang)
                 if node['category'] != 'layer':
                     node['children'] = []
+                else:
+                    node['label'] = self.request.translate(node['idBod'])
                 nodes_depth.append(node)
 
         # Append the last list
