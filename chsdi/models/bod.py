@@ -327,8 +327,6 @@ class Catalog(Base):
 
     def to_dict(self, lang):
 
-        self.label = self._get_label_from_lang(lang)
-
         return dict([
             (k, getattr(self, k)) for
             k in self.__dict__.keys()
@@ -336,15 +334,6 @@ class Catalog(Base):
             self.__dict__[k] is not None and
             k not in ('nameDe', 'nameFr', 'nameIt', 'nameRm', 'nameEn')
         ])
-
-    def _get_label_from_lang(self, lang):
-        return {
-            'de': self.nameDe,
-            'fr': self.nameFr,
-            'it': self.nameIt,
-            'rm': self.nameRm,
-            'en': self.nameEn
-        }[lang]
 
     @classmethod
     def get_name_from_lang(cls, lang):
