@@ -122,6 +122,7 @@ quickview_url = get_quickview_url(request, params)
 <%def name="extended_info(c, lang)">
 <%
 loader_url = h.make_agnostic(route_url('ga_api', request))
+toto
 orientierung = '-'
 scan = '-'
 filename = c['attributes']['filename']
