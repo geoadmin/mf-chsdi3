@@ -77,6 +77,7 @@ class CadastralWebMap(Base, Vector):
     id = Column('gid', Integer, primary_key=True)
     kantonsnr = Column('kantonsnr', Integer)
     ak = Column('ak', Text)
+    url_geoportal = Column('url_geoportal', Text)
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.kantone.cadastralwebmap-farbe', CadastralWebMap)
