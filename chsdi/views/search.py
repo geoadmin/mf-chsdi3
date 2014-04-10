@@ -164,9 +164,14 @@ class Search(SearchValidation):
             self.searchText.remove(timeInterval.group(1))
             if min != max:
                 timeFilter = [start, stop]
-        searchdText = self._query_fields('@detail')
+
+        # searchText list can be empty when timerange filter is used alone
+        searchdText = self._query_fields('@detail') if self.searchText else ''
         if self.quadindex is not None:
-            searchdText += ' & (' + self._get_quadindex_string() + ')'
+            if searchdText:
+                searchdText += ' & '
+            searchdText += '(' + self._get_quadindex_string() + ')'
+
         self._add_feature_queries(searchdText, timeFilter)
         try:
             temp = self.sphinx.RunQueries()
