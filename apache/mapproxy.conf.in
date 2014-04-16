@@ -13,24 +13,15 @@ RewriteEngine On
 ExpiresActive On
 
 # MapProxy access control
-# TODO THIS IS A PROVISORY SOLUTION
+# TODO THIS SHOULD BE SOLVED BY THE WAF
 
 # Alwas allow if requested layer is 'osm'
 # RewriteCond %{QUERY_STRING} LAYERS=osm[^,]  [NC] 
 # RewriteRule ^${vars:apache-entry-point}mapproxy/service(.*)$ /${vars:instanceid}/mapproxy/service$1 [PT,L]
 
-# Deny access for all but these IPs or referer
-RewriteCond %{HTTP:X-Forwarded-for} !^92.106.80.107$
-RewriteCond %{HTTP:X-Forwarded-for} !^193.5.216.100$   
-RewriteCond %{HTTP:X-Forwarded-for} !^193.5.216.70$   
-RewriteCond %{HTTP:X-Forwarded-for} !^160.92.169.130$  
-RewriteCond %{HTTP:X-Forwarded-for} !^160.92.169.131$  
-RewriteCond %{HTTP:X-Forwarded-for} !^160.92.169.140$ 
-RewriteCond %{HTTP:X-Forwarded-for} !^160.92.169.141$  
-RewriteCond %{HTTP:X-Forwarded-for} !^10.48.109.212$ 
-RewriteCond %{HTTP:X-Forwarded-for} !^10.48.166.233$ 
-RewriteCond %{HTTP:X-Forwarded-for} !^10.48.109.212$  
-RewriteCond %{HTTP_REFERER}         !admin.ch
+# Deny access for all request without X-Wmts-Service-Authorized (set by Varnish)
+RewriteCond %{HTTP:X-WmtsService-Authorized}    !^true 
+RewriteCond %{HTTP_REFERER}                     !admin.ch
 RewriteRule ^${vars:apache-entry-point}mapproxy/service(.*)$  - [F,L]
 
 RewriteRule ^${vars:apache-entry-point}mapproxy(.*)$ /${vars:instanceid}/mapproxy/$1 [PT]
