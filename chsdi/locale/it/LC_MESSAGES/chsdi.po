@@ -333,7 +333,7 @@ msgid "autor"
 msgstr "Autore"
 
 msgid "auxiliary_information"
-msgstr "Déscription du contenu"
+msgstr "Description du contenu"
 
 msgid "bafu_NHVText"
 msgstr "Stato OPN"
@@ -2040,7 +2040,7 @@ msgid "contour_totalintensitaet"
 msgstr "Intensità totale [nT]"
 
 msgid "copy_avail"
-msgstr "Niveau d`accès "copy""
+msgstr "Niveau d'accès du "copy""
 
 msgid "ct"
 msgstr "Ct."
@@ -2073,7 +2073,7 @@ msgid "district"
 msgstr "distretto"
 
 msgid "doccreation_date"
-msgstr "Date du document"
+msgstr "Date de création du document"
 
 msgid "durationofeffect"
 msgstr "Durata dell'effetto"
