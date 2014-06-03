@@ -89,9 +89,6 @@ class Search(SearchValidation):
         if temp is not None and len(temp) != 0:
             nb_address = 0
             for res in temp:
-                if 'feature_id' in res['attrs'].keys():
-                    res['attrs']['featureId'] = res['attrs']['feature_id']
-                    res['attrs'].pop('feature_id', None)
                 if res['attrs']['origin'] == 'address':
                     res['attrs']['layerBodId'] = 'ch.bfs.gebaeude_wohnungs_register'
                     if nb_address < 20:
