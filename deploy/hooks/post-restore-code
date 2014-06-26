@@ -13,13 +13,15 @@ cd $CODE_DIR
 ##python bootstrap.py --distribute --version 1.5.2 > /dev/null
 
 if [ -f buildout_$TARGET.cfg ]; then
-    buildout/bin/buildout -c buildout_$TARGET.cfg
+    buildout/bin/buildout -c buildout_$TARGET.cfg || exit 1
 else
-    buildout/bin/buildout
+    buildout/bin/buildout || exit 1
 fi
 
 if [[ $CODE_DIR == */branch/* ]]; then
-    buildout/bin/buildout -c buildout_branch.cfg
+    buildout/bin/buildout -c buildout_branch.cfg || exit 1
 fi
+
+buildout/bin/nosetests
 
 exit $?
