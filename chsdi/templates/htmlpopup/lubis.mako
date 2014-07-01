@@ -162,7 +162,7 @@ else:
     imgtype = 0
 endif
 
-loader_url = h.make_agnostic(route_url('ga_api', request))
+loader_url = h.make_agnostic(route_url('ga_api', request)) + '?topic=luftbilder'
 preview_url = determinePreviewUrl(c['featureId'])
 
 filesize_mb = '-'

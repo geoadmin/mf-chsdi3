@@ -4,10 +4,11 @@
 import urllib2
 import simplejson
 from chsdi.lib.helpers import versioned
-mode = request.params.get('mode')
+mode = context.get('mode')
+topic = context.get('topic')
 lang = request.lang
 appUrl = request.application_url.replace('http:', request.scheme + ':')
-layersconfig = appUrl + versioned( '/rest/services/api/MapServer/layersConfig?lang=' + lang)
+layersconfig = appUrl + versioned( '/rest/services/' + topic + '/MapServer/layersConfig?lang=' + lang)
 f = None
 try:
     f = urllib2.urlopen(layersconfig)

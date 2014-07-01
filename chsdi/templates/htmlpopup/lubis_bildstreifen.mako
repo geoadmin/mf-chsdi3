@@ -19,7 +19,7 @@ from pyramid.url import route_url
 
 <%def name="extended_info(c, lang)">
 <%
-loader_url = h.make_agnostic(route_url('ga_api', request))
+loader_url = h.make_agnostic(route_url('ga_api', request)) + '?topic=luftbilder'
 %>
 <title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
 <body onload="init()">

@@ -7,7 +7,7 @@
   title = c.get('layer') if c.get('datenherr') is None else c.get('layer') + ' (' + c.get('datenherr') + ')'
   pageTitle = c.get('title') + ': ' + c.get('bildnummer')
   title += ': ' + pageTitle
-  loaderUrl = h.make_agnostic(route_url('ga_api', request))
+  loaderUrl = h.make_agnostic(route_url('ga_api', request)) + '?topic=luftbilder'
 %>
 
 <!DOCTYPE html>
