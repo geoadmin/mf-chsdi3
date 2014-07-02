@@ -58,7 +58,7 @@ def _check_url(url):
 def _shorten_url(url):
     API2_SHORTEN_URL = 'http://api.geo.admin.ch/shorten.json?url=%s'
     try:
-        h = httplib2.Http()
+        h = httplib2.Http(timeout=request.registry.settings['httplib2_timeout'])
         resp, content = h.request(API2_SHORTEN_URL % url, 'GET')
         resp = json.loads(content)
         url = resp['shorturl']

@@ -33,7 +33,8 @@ def ogcproxy(request):
         raise HTTPBadRequest()
 
     # forward request to target (without Host Header)
-    http = Http(disable_ssl_certificate_validation=True)
+    http = Http(disable_ssl_certificate_validation=True,
+                timeout=request.registry.settings['httplib2_timeout'])
     h = dict(request.headers)
     h.pop("Host", h)
     try:
