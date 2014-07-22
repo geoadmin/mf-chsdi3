@@ -9,8 +9,8 @@
 </LocationMatch>
 
 
-ProxyPass /${vars:apache_base_path}/wsgi/print/ ajp://localhost:8009/print-chsdi3-${vars:apache_base_path}/pdf/
-ProxyPassReverse /${vars:apache_base_path}/wsgi/print/ ajp://localhost:8009/print-chsdi3-${vars:apache_base_path}/pdf/
+ProxyPass /${vars:apache_base_path}/print/ ajp://localhost:8009/print-chsdi3-${vars:apache_base_path}/pdf/
+ProxyPassReverse /${vars:apache_base_path}/print/ ajp://localhost:8009/print-chsdi3-${vars:apache_base_path}/pdf/
 
 # Try to force IE to open the PDF in a new window
 # overriding what set by the print server
