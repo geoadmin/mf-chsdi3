@@ -12,6 +12,9 @@
     <link rel="stylesheet/" type="text/css" href="https://dav0.bgdi.admin.ch/swisstopo/cadastre/cadastralinfo/cadastre.css">
     <title>GeoAdmin API example: catalog </title>
     <style type="text/css">
+      .catalog-container {
+        width: 350px;
+      }
       .legend-btn {
         display: inline;
         border-radius: 50%;
@@ -32,6 +35,10 @@
         border-right-width: 0px;
         margin-left: 10px;
       }
+      .checkbox-tree {
+        background-color: red;
+        color: white;
+      }
       .checkbox-tree h1 {
         list-style-type: none;
         white-space: nowrap;
@@ -40,14 +47,12 @@
         font-family: arial, tahoma, helvetica, sans-serif;
         font-size: 14px;
         font-style: normal;
-        color: black;
         text-indent: 1em; 
         padding: 1px 0 1px 0;
         clear: left;
         line-height: 18px;
         cursor: pointer;
       }
-
       .modal-header {
         margin: 0;
         padding-top: 8px;
@@ -77,7 +82,6 @@
         margin-right: 0px;
         margin-bottom: 0px;
       }
-
       .legend-abstract {
         background-color: #eee;
         padding: 8px;
@@ -85,7 +89,6 @@
         margin-right: 0px;
         margin-bottom: 0px;
       }
-
       .legend-footer {
         padding: 8px;
       } 
@@ -93,7 +96,6 @@
       .legend-footer span {
         font-weight: bold;
       }
-
       .modal fade {
         position: absolute;
         left: 400px;
@@ -118,7 +120,6 @@
         box-shadow: 0 5px 10px rgba(0,0,0,0.2);
         white-space: normal;
       }
-
       .modal-dialog {
         border-top-color: rgba(0, 0, 0, 0.2);
         border-top-style: solid;
@@ -128,7 +129,6 @@
         line-height: 1.428571429;
         color: #333;
       }
-
       .modal-body {
         padding: 0px;
         overflow-x: auto;
@@ -137,7 +137,6 @@
         max-height: 340px;
         font-size: 12px; 
       }
-
       .close {
         opacity: 1;
         font-size: 26px;
@@ -151,7 +150,6 @@
         width: 18px;
         background-color: transparent;
       }
-
       .ga-popup-print {
         float: right;
         cursor: pointer;
@@ -174,16 +172,14 @@
         text-decoration: inherit;
         -webkit-font-smoothing: antialiased;
       }
-
       .checkbox-inhalt {
         padding-left: 12px;
         padding-bottom: 12px;
+        display: block;
       }
-
       .checkbox-label {
         display: initial;
       }
-
       .ga-popup-reduce {
         float: right;
         cursor: pointer;
@@ -206,32 +202,25 @@
         text-decoration: inherit;
         -webkit-font-smoothing: antialiased;
       }
-
     </style>
   </head>
   <body>
     <h1>GeoAdmin API example: catalog</h1>
     <div id="map" style="width=100%;height:350px;"></div>
-    <div class="checkbox-tree"><h1>Bundesinventare</h1></div>
-    <div class="checkbox-inhalt" id="inhalt"></div>  
- 
+    <div class="catalog-container">
+      <div class="checkbox-tree"><h1>Bundesinventare</h1></div>
+      <div class="checkbox-inhalt" id="inhalt"></div>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="legend-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" hidden-print="true">
       <div class="modal-dialog"> 
-      <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="i" id="myModalLabel">Infobox</h4>
-      </div>
-      <div class="modal-body"><p class="bod-title"><span>Bundesinventar der Amphibienlaichgebiete von nationaler Bedeutung - Ortsfeste Objekte</span> (Bundesamt für Umwelt BAFU)</p><p class="legend-abstract">In der Schweiz leben heute 19 Amphibienarten - fast alle befinden sich auf der Roten Liste der gefährdeten Tierarten. Die Fläche der Feuchtgebiete als Lebensraum der Amphibien schrumpfte in den letzten 100 Jahren auf weniger als einen Zehntel zusammen. Die noch erhaltenen Lebensräume sollten deshalb gesichert werden. Als Laichgewässer bevorzugen die meisten Arten stehende Kleingewässer wie Tümpel und Weiher. Neben kleineren Tümpeln bis zu grossen Feuchtgebietskomplexen bilden Kies- und Lehmgruben einen wichtigen Anteil (rund ein Fünftel der Gesamtobjekte) des Inventars. Im Laufe der Nutzung haben sie sich zu schützenswerten naturnahen Standorten entwickelt. Die ortsfesten Objekte sind in zwei verschiedene Bereiche eingeteilt: Der Bereich A ist dem Naturschutz unterstellt. Der Bereich B umfasst den engeren Bereich der Landlebensräume und die Pufferzonen. Es sind meist land- und forstwirtschaftlich genutzte Flächen. Als viertes Bundesinventar gemäss Art. 18a NHG setzte der Bundesrat 2001 das Bundesinventar der Amphibienlaichgebiete mit 701 Objekten in Kraft, welches in den Jahren 2003 und 2007 mit zwei Ergänzungen komplettiert wurde und nun 824 (742 ortsfeste und 82 Wander-) Objekte umfasst.</p>
-      <div class="legend-footer">
-        <br>
-        <span>Legende</span><br>
-        <img src="//api3.geo.admin.ch/main/wsgi/static/images/legends/ch.bafu.bundesinventare-amphibien_wanderobjekte_de.png" alt="layer legend img"><br><br>
-        <span>Informationen</span><br>
-      </div>
-      </div>
-      </div>
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="i" id="myModalLabel">Infobox</h4>
+          </div>
+          <div class="modal-body"></div>
+        </div>
       </div>
     </div>
     <br> This example shows the change the layers in a catalog.</br>
