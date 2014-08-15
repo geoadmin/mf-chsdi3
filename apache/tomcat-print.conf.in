@@ -6,6 +6,8 @@
 # Stateful cookies
 <LocationMatch ${apache_entry_path}/print/>
     Header set Set-Cookie "SRV=${hostname-digest}; path=${apache_entry_path}/print/"
+    # Limit the max request body. Should approx. match the 20 MB of the KML import size as JSON is more compact than KML
+    LimitRequestBody 20971520
 </LocationMatch>
 
 ProxyPass ${apache_entry_path}/print/ ajp://localhost:8009/print-chsdi3-${vars:apache_base_path}/pdf/
