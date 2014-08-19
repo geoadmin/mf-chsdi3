@@ -20,7 +20,8 @@ def loadjs(request):
         {
             'lang': lang,
             'mode': mode,
-            'data': resp.body
+            'data': resp.body,
+            'serviceurl': request.registry.settings['api_url']
         },
         request=request
     )
