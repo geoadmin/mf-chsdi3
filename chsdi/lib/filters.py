@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from chsdi.models.bod import LayersConfig
 from sqlalchemy.sql.expression import cast
-from sqlalchemy import Text, or_
+from sqlalchemy import Text, or_, and_
 
 
 def full_text_search(query, ormColumns, searchText):
@@ -28,14 +29,32 @@ def filter_by_geodata_staging(query, ormColumn, staging):
     }[staging]
 
 
-def filter_by_map_name(query, ormColumn, mapName):
+def filter_by_map_name(query, model, mapName):
     ''' Applies a map/topic filter '''
     if mapName != 'all':
-        clauses = [ormColumn.ilike('%%%s%%' % mapName)]
-        # we also want to always include all 'ech' layers (except for api's)
-        if (mapName != 'api-notfree' and
-                mapName != 'api-free' and
-                mapName != 'api'):
-            clauses.append(ormColumn.ilike('%%%s%%' % 'ech'))
+        clauses = []
+        if mapName == 'api-notfree':
+            mapName = 'api'
+            chargeable = True
+            clauses.append(model.maps.ilike('%%%s%%' % mapName))
+            clauses.append(model.chargeable == chargeable)
+            return query.filter(and_(*clauses))
+        elif mapName == 'api-free':
+            mapName = 'api'
+            chargeable = False
+            clauses.append(model.maps.ilike('%%%s%%' % mapName))
+            clauses.append(model.chargeable == chargeable)
+            return query.filter(and_(*clauses))
+        elif mapName in ('api', 'swissmaponline'):
+            clauses.append(model.maps.ilike('%%%s%%' % mapName))
+        else:
+            # add background layersConfig
+            if model.__tablename__ == LayersConfig.__tablename__:
+                isBgLayer = True
+                clauses.append(model.background == isBgLayer)
+            # we also want to always include all 'ech' layers (except for api's)
+            clauses.append(model.maps.ilike('%%%s%%' % mapName))
+            # whitelist hack
+            clauses.append(model.maps.ilike('%%%s%%' % 'ech'))
         return query.filter(or_(*clauses))
     return query

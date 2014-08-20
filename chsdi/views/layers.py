@@ -138,7 +138,7 @@ def get_layers_metadata_for_params(params, query, model, layerIds=None):
     layer metadata dictionaries. '''
     query = filter_by_map_name(
         query,
-        model.maps,
+        model,
         params.mapName
     )
     query = filter_by_geodata_staging(
@@ -159,16 +159,11 @@ def get_layers_config_for_params(params, query, model, layerIds=None):
     ''' Returns a generator function that yields
     layer config dictionaries. '''
     model = LayersConfig
-    bgLayers = True
-    if params.mapName != 'all':
-        clauses = [model.maps.ilike('%%%s%%' % params.mapName), model.background == bgLayers]
-        # we also want to always include all 'ech' layers (except for api's)
-        if (params.mapName != 'api-notfree' and
-                params.mapName != 'api-free' and
-                params.mapName != 'api'):
-            clauses.append(model.maps.ilike('%%%s%%' % 'ech'))
-        query = query.filter(or_(*clauses))
-
+    query = filter_by_map_name(
+        query,
+        model,
+        params.mapName
+    )
     query = filter_by_geodata_staging(
         query,
         model.staging,
