@@ -1782,11 +1782,11 @@ msgstr "Maximum glaciaire"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Carte géologique générale"
 
-msgid "ch.swisstopo.geologie-geocover.metadata"
-msgstr "Découpage GeoCover"
-
 msgid "ch.swisstopo.geologie-geocover"
 msgstr "GeoCover"
+
+msgid "ch.swisstopo.geologie-geocover.metadata"
+msgstr "Découpage GeoCover"
 
 msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
 msgstr "Anomalies de Bouguer"
@@ -2139,7 +2139,7 @@ msgid "ch.swisstopo.verschiebungsvektoren-tsp2"
 msgstr "MN95 Vecteurs de déformation PAT2"
 
 msgid "ch.swisstopo.zeitreihen"
-msgstr "Cartes - Voyage dans le temps"
+msgstr "Voyage dans le temps - Cartes"
 
 msgid "ch.tamedia"
 msgstr "tamedia"
