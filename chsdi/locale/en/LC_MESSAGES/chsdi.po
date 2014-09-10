@@ -2139,7 +2139,7 @@ msgid "ch.swisstopo.verschiebungsvektoren-tsp2"
 msgstr "LV95 Displacement vectors TSP2"
 
 msgid "ch.swisstopo.zeitreihen"
-msgstr "Journay through time - Maps"
+msgstr "Journey through time - Maps"
 
 msgid "ch.tamedia"
 msgstr "tamedia"
@@ -2353,7 +2353,7 @@ msgid "geocover_spec_description"
 msgstr "Spezifizierung"
 
 msgid "geocover_tecto"
-msgstr "Unité teconique"
+msgstr "Unité tectonique"
 
 msgid "geol_f"
 msgstr "Unit"
