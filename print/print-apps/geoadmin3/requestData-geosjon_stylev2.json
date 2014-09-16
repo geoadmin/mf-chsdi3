@@ -1,0 +1,56 @@
+{
+    "attributes": {
+        "map": {
+            "center": [
+                600000,
+                200000
+            ],
+            "dpi": 300,
+            "layers": [{
+                    "baseURL": "http://wms.geo.admin.ch",
+                    "customParams": {
+                        "TRANSPARENT": "true"
+                    },
+                    "imageFormat": "image/png",
+                    "layers": ["ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"],
+                    "opacity": 0.25,
+                    "styles": ["default"],
+                    "type": "WMS"
+                }, {
+                    "geoJson": "http://wfs.geo.admin.ch/?SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=ch.swisstopo.fixpunkte-lage-lfp1&SRSNAME=EPSG:21781&outputFormat=geojson",
+
+                    "type": "geojson",
+                    "style": {
+                        "version": "2",
+
+                        "[statuszus = 'verifiziert']": {
+                            "symbolizers": [{
+                                "fillColor": "#FF0000",
+                                "fillOpacity": 0,
+                                "rotation": "[nummer]",
+                                "type": "point",
+                                "externalGraphic": "https://map.geo.admin.ch/1433939002/img/maki/alcohol-shop-24@2x.png",
+                                "graphicOpacity": 0.8,
+                                "pointRadius": 16
+                            }]
+                        }
+
+
+
+
+                    }
+                }
+
+
+            ],
+            "projection": "EPSG:21781",
+            "rotation": 0,
+            "scale": 500000
+        },
+        "name": "Test WMS + style v2 (external .png)",
+        "printLegend": 0,
+        "scale": 300000
+    },
+    "layout": "Demo",
+    "outputFormat": "pdf"
+}

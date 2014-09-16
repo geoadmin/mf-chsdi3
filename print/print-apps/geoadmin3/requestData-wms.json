@@ -1,0 +1,36 @@
+{
+    "outputFormat": "pdf", 
+    "layout": "lessSimpleReport",
+    "attributes": {"map": {
+        "center": [
+            600000,
+            200000
+        ],
+        "dpi": 300,
+        "layers": [
+            {
+                "baseURL": "http://wms.geo.admin.ch",
+                "customParams": {"TRANSPARENT": "true"},
+                "imageFormat": "image/png",
+                "layers": ["ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"],
+                "opacity": 1,
+                "styles": ["default"],
+                "type": "WMS"
+            }
+        ],
+        "projection": "EPSG:21781",
+        "rotation": 0,
+        "scale": 500000
+    },
+    "legend": {
+        "name": "name",
+        "classes": [{
+          "name": "Ambres"
+        }, {
+          "name": "Alea"
+        }]
+      },
+    "scale": 300000,
+    "name": "Test WMS (simpliest example)"
+    }
+}

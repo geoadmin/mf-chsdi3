@@ -1,0 +1,411 @@
+{
+    "attributes": {
+        "map": {
+            "center": [
+                600000,
+                200000
+            ],
+            "dpi": 300,
+            "layers": [
+            
+{
+      
+        "opacity": 1,
+        "type": "geojson",
+        "style": {"version" : "1",
+   "styleProperty":"_gx_style", 
+        
+            "0": {
+                "id": 0,
+                "zIndex": 40,
+                "rotation": 0,
+                "graphicWidth": 5,
+                "graphicHeight": 5,
+                "graphicXOffset": -2.5,
+                "graphicYOffset": -2.5,
+                "pointRadius": 1,
+                "fillColor": "#000000",
+                "fillOpacity": 0,
+                "haloColor": "#dddddd", 
+                "haloOpacity": "0.7", 
+                "haloRadius": "2.0",
+                "strokeColor": "#000000",
+                "strokeOpacity": 0,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "label": "Женева",
+                "fontColor": "#000000",
+                "fontFamily": "DejaVu Sans",
+                "fontSize": 24,
+                "fontWeight": "normal"
+            },
+            "1": {
+                "id": 1,
+                "zIndex": 40,
+                "rotation": 0,
+                "graphicWidth": 5,
+                "graphicHeight": 5,
+                "graphicXOffset": -2.5,
+                "graphicYOffset": -2.5,
+                "pointRadius": 1,
+                "fillColor": "#000000",
+                "fillOpacity": 0,
+                "haloColor": "#dddddd", 
+                "haloOpacity": "0.7", 
+                "haloRadius": "2.0",
+                "strokeColor": "#000000",
+                "strokeColor": "#000000",
+                "strokeOpacity": 0,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "label": "Лозанна",
+                "fontColor": "#000000",
+                "fontFamily": "DejaVu Sans",
+                "fontSize": 24,
+                "fontWeight": "nomal"
+            },
+            "2": {
+                "id": 2,
+                "zIndex": 40,
+                "rotation": 0,
+                "graphicWidth": 5,
+                "graphicHeight": 5,
+                "graphicXOffset": -2.5,
+                "graphicYOffset": -2.5,
+                "pointRadius": 1,
+                "fillColor": "#000000",
+                "fillOpacity": 0,
+                "haloColor": "#dddddd", 
+                "haloOpacity": "0.7", 
+                "haloRadius": "2.0",
+                "strokeColor": "#000000",
+                "strokeColor": "#000000",
+                "strokeOpacity": 0,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "label": "Гранво",
+                "fontColor": "#000000",
+                "fontFamily": "DejaVu Sans",
+                "fontSize": 24,
+                "fontWeight": "normal"
+            },
+            "3": {
+                "id": 3,
+                "zIndex": 40,
+                "rotation": 0,
+                "graphicWidth": 5,
+                "graphicHeight": 5,
+                "graphicXOffset": -2.5,
+                "graphicYOffset": -2.5,
+                "pointRadius": 1,
+                "fillColor": "#000000",
+                "fillOpacity": 0,
+                "haloColor": "#dddddd", 
+                "haloOpacity": "0.7", 
+                "haloRadius": "2.0",
+                "strokeColor": "#000000",
+                "strokeColor": "#000000",
+                "strokeOpacity": 0,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "label": "Гранво",
+                "fontColor": "#000000",
+                "fontFamily": "DejaVu Sans",
+                "fontSize": 24,
+                "fontWeight": "normal"
+            },
+            "4": {
+                "id": 4,
+                "zIndex": 40,
+                "rotation": 0,
+                "graphicWidth": 5,
+                "graphicHeight": 5,
+                "graphicXOffset": -2.5,
+                "graphicYOffset": -2.5,
+                "pointRadius": 1,
+                "fillColor": "#000000",
+                "fillOpacity": 0,
+                "haloColor": "#dddddd", 
+                "haloOpacity": "0.7", 
+                "haloRadius": "2.0",
+                "strokeColor": "#000000",
+                "strokeColor": "#000000",
+                "strokeOpacity": 0,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "label": "Веве",
+                "fontColor": "#000000",
+                "fontFamily": "DejaVu Sans",
+                "fontSize": 24,
+                "fontWeight": "normal"
+            },
+            "5": {
+                "id": 5,
+                "zIndex": 40,
+                "rotation": 0,
+                "graphicWidth": 5,
+                "graphicHeight": 5,
+                "graphicXOffset": -2.5,
+                "graphicYOffset": -2.5,
+                "pointRadius": 1,
+                "fillColor": "#000000",
+                "fillOpacity": 0,
+                "haloColor": "#dddddd", 
+                "haloOpacity": "0.7", 
+                "haloRadius": "2.0",
+                "strokeColor": "#000000",
+                "strokeColor": "#000000",
+                "strokeOpacity": 0,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "label": "Грюйер",
+                "fontColor": "#000000",
+                "fontFamily": "DejaVu Sans",
+                "fontSize": 24,
+                "fontWeight": "normal"
+            },
+            "6": {
+                "id": 6,
+                "zIndex": 40,
+                "rotation": 0,
+                "graphicWidth": 5,
+                "graphicHeight": 5,
+                "graphicXOffset": -2.5,
+                "graphicYOffset": -2.5,
+                "pointRadius": 1,
+                "fillColor": "#000000",
+                "fillOpacity": 0,
+                "haloColor": "#dddddd", 
+                "haloOpacity": "0.7", 
+                "haloRadius": "2.0",
+                "strokeColor": "#000000",
+                "strokeColor": "#000000",
+                "strokeOpacity": 0,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "label": "Берн",
+                "fontColor": "#000000",
+                "fontFamily": "DejaVu Sans",
+                "fontSize": 24,
+                "fontWeight": "normal"
+            },
+            "7": {
+                "id": 7,
+                "zIndex": 40,
+                "rotation": 0,
+                "graphicWidth": 5,
+                "graphicHeight": 5,
+                "graphicXOffset": -2.5,
+                "graphicYOffset": -2.5,
+                "pointRadius": 1,
+                "fillColor": "#000000",
+                "fillOpacity": 0,
+                "haloColor": "#dddddd", 
+                "haloOpacity": "0.7", 
+                "haloRadius": "2.0",
+                "strokeColor": "#000000",
+                "strokeColor": "#000000",
+                "strokeOpacity": 0,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "label": "Базель",
+                "fontColor": "#000000",
+                "fontFamily": "DejaVu Sans",
+                "fontSize": 24,
+                "fontWeight": "normal"
+            },
+            "8": {
+                "id": 8,
+                "zIndex": 40,
+                "rotation": 0,
+                "graphicWidth": 5,
+                "graphicHeight": 5,
+                "graphicXOffset": -2.5,
+                "graphicYOffset": -2.5,
+                "pointRadius": 1,
+                "fillColor": "#000000",
+                "fillOpacity": 0,
+                "haloColor": "#dddddd", 
+                "haloOpacity": "0.7", 
+                "haloRadius": "2.0",
+                "strokeColor": "#000000",
+                "strokeColor": "#000000",
+                "strokeOpacity": 0,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "label": "Цюрих,",
+                "fontColor": "#000000",
+                "fontFamily": "DejaVu Sans",
+                "fontSize": 24,
+                "fontWeight": "normal"
+            },
+            "9": {
+                "id": 9,
+                "zIndex": 40,
+                "rotation": 0,
+                "graphicWidth": 5,
+                "graphicHeight": 5,
+                "graphicXOffset": -2.5,
+                "graphicYOffset": -2.5,
+                "pointRadius": 1,
+                "fillColor": "#000000",
+                "fillOpacity": 0,
+                "haloColor": "#dddddd", 
+                "haloOpacity": "0.7", 
+                "haloRadius": "2.0",
+                "strokeColor": "#000000",
+                "strokeColor": "#000000",
+                "strokeOpacity": 0,
+                "strokeLinecap": "round",
+                "strokeLinejoin": "round",
+                "label": "Лугано",
+                "fontColor": "#000000",
+                "fontFamily": "DejaVu Sans",
+                "fontSize": 24,
+                "fontWeight": "normal"
+            }
+        },
+       
+        "geoJson": {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [498000, 128250]
+                },
+                "properties": {
+                    "useText": true,
+                    "useIcon": false,
+                    "_gx_style": 0
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [537500, 161750]
+                },
+                "properties": {
+                    "useText": true,
+                    "useIcon": false,
+                    "_gx_style": 1
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [545761.8485536003, 150279.65000800006]
+                },
+                "properties": {
+                    "useText": true,
+                    "useIcon": false,
+                    "_gx_style": 2
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [550631.8485536003, 147419.65000800006]
+                },
+                "properties": {
+                    "useText": true,
+                    "useIcon": false,
+                    "_gx_style": 3
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [557000, 152250]
+                },
+                "properties": {
+                    "useText": true,
+                    "useIcon": false,
+                    "_gx_style": 4
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [570791.8485536005, 159039.65000800008]
+                },
+                "properties": {
+                    "useText": true,
+                    "useIcon": false,
+                    "_gx_style": 5
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [606000, 207750]
+                },
+                "properties": {
+                    "useText": true,
+                    "useIcon": false,
+                    "_gx_style": 6
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [614000, 272250]
+                },
+                "properties": {
+                    "useText": true,
+                    "useIcon": false,
+                    "_gx_style": 7
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [682500, 253750]
+                },
+                "properties": {
+                    "useText": true,
+                    "useIcon": false,
+                    "_gx_style": 8
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [719196.8914879274, 107129.56413934601]
+                },
+                "properties": {
+                    "useText": true,
+                    "useIcon": false,
+                    "_gx_style": 9
+                }
+            }]
+
+} 
+}
+,     
+            {
+                    "baseURL": "http://wms.geo.admin.ch",
+                    "customParams": {
+                        "TRANSPARENT": "true"
+                    },
+                    "imageFormat": "image/png",
+                    "layers": ["ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"],
+                    "opacity": 0.6,
+                    "styles": ["default"],
+                    "type": "WMS"
+                }
+
+
+
+            ],
+            "projection": "EPSG:21781",
+            "rotation": 0,
+            "scale": 2000000
+        },
+        "name": "Test WMS + UTF-8 font and halo",
+        "printLegend": 0
+    },
+    "layout": "Demo",
+    "outputFormat": "pdf"
+}
+

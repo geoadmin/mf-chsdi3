@@ -4,8 +4,8 @@
 </Proxy>
 
 # JSON print requests to print server
-ProxyPassMatch ${apache_entry_path}/print/(info|create)\.json$ ajp://localhost:8009/print-chsdi3-${print_war}/pdf/$1.json
-ProxyPassReverse ${apache_entry_path}/print/ ajp://localhost:8009/print-chsdi3-${print_war}/pdf/
+ProxyPassMatch ${apache_entry_path}/print/(.*) ajp://localhost:8009/print-chsdi3-${vars:print_war}/$1
+ProxyPassReverse ${apache_entry_path}/print/ ajp://localhost:8009/print-chsdi3-${vars:print_war}/
 
 # Get resulting files directly from filesystem
 AliasMatch ^${apache_entry_path}/print(proxy)?/(\-multi)?([0-9]+\.pdf\.printout)$ ${print_temp_dir}/mapfish-print$2$3

@@ -1,0 +1,36 @@
+{
+    "outputFormat": "pdf", 
+    "layout": "testv3_a4_landscape",
+    "attributes": {
+        "scalebar": {
+            "projection": "EPSG:21781"
+        },
+
+
+
+        "map": {
+        "center": [
+            600000,
+            200000
+        ],
+        "dpi": 300,
+        "layers": [
+            {
+                "baseURL": "http://wms.geo.admin.ch",
+                "customParams": {"TRANSPARENT": "true"},
+                "imageFormat": "image/png",
+                "layers": ["ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen,org.epsg.grid_21781"],
+                "opacity": 1,
+                "styles": ["default"],
+                "type": "WMS"
+            }
+        ],
+        "projection": "EPSG:21781",
+        "rotation": 0,
+        "scale": 500000
+    },
+    "printLegend": 0,
+    "scale": 300000,
+    "name": "Test less simple report"
+    }
+}
