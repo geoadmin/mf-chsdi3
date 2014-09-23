@@ -8,10 +8,10 @@ export PGUSER='${vars:modwsgi_user}'
 
 cd $CODE_DIR
 
-echo "running unit tests (wd: '$(pwd)')"
+#echo "running unit tests (wd: '$(pwd)')"
 
-buildout/bin/nosetests chsdi/tests/functional
+#buildout/bin/nosetests chsdi/tests/functional
 
-buildout/bin/nosetests -e test_external_links # > /dev/null 2>&1
+#buildout/bin/nosetests -e test_external_links # > /dev/null 2>&1
 
 exit $?

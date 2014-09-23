@@ -9,7 +9,7 @@ umask 0002
 set -o errexit
 
 # adapt these for emergency deploy coming from branches
-GITBRANCH=master
+GITBRANCH=rel_140918_2
 
 # set some variables
 DEPLOYDIR=/var/www/vhosts/mf-chsdi3/private/chsdi/
