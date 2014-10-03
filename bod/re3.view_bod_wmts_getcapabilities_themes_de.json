@@ -1,0 +1,292 @@
+[
+  {
+    "oberthema_id": "5dd7a565ca6c445a88fe243beb59bc7e", 
+    "inspire_id": "III_01", 
+    "inspire_oberthema_abstract": "Energie und Wirtschaft", 
+    "sswmts": "f", 
+    "inspire_oberthema_name": "Energie und Wirtschaft", 
+    "fk_dataset_id": "ch.are.gemeindetypen", 
+    "inspire_abstract": "Einheiten f\u00fcr die Verbreitung oder Verwendung statistischer Daten.", 
+    "inspire_name": "Statistische Einheiten"
+  }, 
+  {
+    "oberthema_id": "a001cf461fa252d16bc1365636dfbf64", 
+    "inspire_id": "III_02", 
+    "inspire_oberthema_abstract": "Infrastruktur und Kommunikation", 
+    "sswmts": "f,f,f,f,f", 
+    "inspire_oberthema_name": "Infrastruktur und Kommunikation", 
+    "fk_dataset_id": "ch.bfs.gebaeude_wohnungs_register,ch.kantone.cadastralwebmap-farbe,ch.swisstopo.swissbuildings3d,ch.swisstopo.vec200-building,ch.swisstopo.vec25-gebaeude", 
+    "inspire_abstract": "Geografischer Standort von Geb\u00e4uden.", 
+    "inspire_name": "Geb\u00e4ude"
+  }, 
+  {
+    "oberthema_id": "dcf0cad08fc749baa39453bb22e1a6f4", 
+    "inspire_id": "III_03", 
+    "inspire_oberthema_abstract": "Umwelt, Biologie und Geologie", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Umwelt, Biologie und Geologie", 
+    "fk_dataset_id": "ch.blw.bodeneignung-gruendigkeit,ch.blw.bodeneignung-kulturland,ch.blw.bodeneignung-kulturtyp,ch.blw.bodeneignung-naehrstoffspeichervermoegen,ch.blw.bodeneignung-skelettgehalt,ch.blw.bodeneignung-vernaessung,ch.blw.bodeneignung-wasserdurchlaessigkeit,ch.blw.bodeneignung-wasserspeichervermoegen,ch.blw.erosion,ch.blw.erosion-mit_bergzonen,ch.blw.erosion-quantitativ,ch.blw.feldblockkarte,ch.blw.gewaesseranschlusskarte,ch.blw.gewaesseranschlusskarte-direkt,ch.blw.hang_steillagen,ch.blw.steil_terrassenlagen_rebbau", 
+    "inspire_abstract": "Beschreibung von Boden und Unterboden anhand von Tiefe, Textur, Struktur und Gehalt an Teilchen sowie organischem Material, Steinigkeit, Erosion, gegebenenfalls durchschnittliches Gef\u00e4lle und erwartete Wasserspeicherkapazit\u00e4t.", 
+    "inspire_name": "Boden"
+  }, 
+  {
+    "oberthema_id": "5dd7a565ca6c445a88fe243beb59bc7e", 
+    "inspire_id": "III_04", 
+    "inspire_oberthema_abstract": "Energie und Wirtschaft", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Energie und Wirtschaft", 
+    "fk_dataset_id": "ch.are.bauzonen,ch.bafu.holznutzung,ch.bafu.holzvorrat,ch.bafu.holzzuwachs,ch.bafu.landesforstinventar-baumarten,ch.bafu.landesforstinventar-totholz,ch.bafu.landesforstinventar-waldanteil,ch.bfs.arealstatistik-hintergrund,ch.blw.klimaeignung-futterbau,ch.blw.klimaeignung-getreidebau,ch.blw.klimaeignung-kartoffeln,ch.blw.klimaeignung-koernermais,ch.blw.klimaeignung-kulturland,ch.blw.klimaeignung-spezialkulturen,ch.blw.klimaeignung-typ,ch.blw.klimaeignung-zwischenfruchtbau,ch.blw.landwirtschaftliche-zonengrenzen,ch.blw.niederschlagshaushalt,ch.blw.ursprungsbezeichnungen-fleisch,ch.blw.ursprungsbezeichnungen-kaese,ch.blw.ursprungsbezeichnungen-pflanzen,ch.blw.ursprungsbezeichnungen-spirituosen,ch.swisstopo.vec25-einzelobjekte", 
+    "inspire_abstract": "Beschreibung von Gebieten anhand ihrer derzeitigen und zuk\u00fcnftigen Funktion oder sozio\u00f6konomischem\nZweck (z.B. Wohn-, Industrie-, Gewerbegebiete, landwirtschaftliche Fl\u00e4chen, Forstwirtschaft,\nFreizeitgebiet).", 
+    "inspire_name": "Bodennutzung"
+  }, 
+  {
+    "oberthema_id": "fa15cedf4a1634d288c710b8b1371888", 
+    "inspire_id": "III_05", 
+    "inspire_oberthema_abstract": "Raum und Bev\u00f6lkerung", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Raum und Bev\u00f6lkerung", 
+    "fk_dataset_id": "ch.bafu.hydrologie-gewaesserzustandsmessstationen,ch.bafu.hydrologie-wassertemperaturmessstationen,ch.bafu.laerm-bahnlaerm_nacht,ch.bafu.laerm-bahnlaerm_tag,ch.bafu.laerm-strassenlaerm_nacht,ch.bafu.laerm-strassenlaerm_tag,ch.bafu.nabelstationen,ch.bafu.swissprtr,ch.bag.zecken-fsme-faelle,ch.bag.zecken-fsme-impfung,ch.bag.zecken-lyme,ch.bav.laerm-emissionplan_eisenbahn_2015,ch.bazl.points-of-interest,ch.ensi.zonenplan-notfallschutz-kernanlagen", 
+    "inspire_abstract": "Geografische Verteilung verst\u00e4rkt auftretender pathologischer Befunde (Allergien, Krebserkrankungen, Erkrankungen der Atemwege usw.", 
+    "inspire_name": "Gesundheit und Sicherheit"
+  }, 
+  {
+    "oberthema_id": "a001cf461fa252d16bc1365636dfbf64", 
+    "inspire_id": "III_06", 
+    "inspire_oberthema_abstract": "Infrastruktur und Kommunikation", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Infrastruktur und Kommunikation", 
+    "fk_dataset_id": "ch.astra.ausnahmetransportrouten,ch.bakom.anbieter-eigenes_festnetz,ch.bakom.anschlussart-glasfaser,ch.bakom.anschlussart-koaxialkabel,ch.bakom.anschlussart-kupferdraht,ch.bakom.downlink1,ch.bakom.downlink10,ch.bakom.downlink100,ch.bakom.downlink2,ch.bakom.downlink20,ch.bakom.downlink50,ch.bakom.uplink1,ch.bakom.uplink10,ch.bakom.uplink100,ch.bakom.uplink2,ch.bakom.uplink20,ch.bakom.uplink50,ch.bakom.verfuegbarkeit-hdtv,ch.bakom.verfuegbarkeit-tv,ch.bakom.versorgungsgebiet-tv,ch.bakom.versorgungsgebiet-ukw,ch.bfe.kernkraftwerke,ch.blw.alpprodukte,ch.blw.bergprodukte", 
+    "inspire_abstract": "Die \u00f6ffentlichen Dienste und Versorgungseinrichtungen umfassen \u00fcber- und unterirdische \u00f6ffentliche\nNetze und Dienste wie etwa die Abwasserleitungen, die Abfallbehandlung, die Energieversorgung,\ndie Telekommunikationsdienste und die Wasserversorgung sowie Verwaltungs- und soziale\nDienste wie etwa Beh\u00f6rden, Schulen und Krankenh\u00e4user.", 
+    "inspire_name": "Versorgungswirtschaft und staatliche Dienste"
+  }, 
+  {
+    "oberthema_id": "dcf0cad08fc749baa39453bb22e1a6f4", 
+    "inspire_id": "III_07", 
+    "inspire_oberthema_abstract": "Umwelt, Biologie und Geologie", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Umwelt, Biologie und Geologie", 
+    "fk_dataset_id": "ch.are.alpenkonvention,ch.bafu.fauna-vernetzungsachsen_national,ch.bafu.fauna-wildtierkorridor_national,ch.bafu.fischerei-krebspest,ch.bafu.fischerei-proliferative_nierenkrankheit,ch.bafu.hydrologie-gewaesserzustandsmessstationen,ch.bafu.hydrologie-hydromessstationen,ch.bafu.hydrologie-wassertemperaturmessstationen,ch.bafu.naqua-grundwasser_nitrat,ch.bafu.naqua-grundwasser_psm,ch.bafu.naqua-grundwasser_voc,ch.bafu.oekomorphologie-f_abschnitte,ch.bafu.oekomorphologie-f_abstuerze,ch.bafu.oekomorphologie-f_bauwerke,ch.bafu.schutzgebiete-biosphaerenreservate,ch.bafu.waldschadenflaechen-lothar,ch.bafu.waldschadenflaechen-vivian,ch.bafu.wasser-entnahme,ch.bafu.wasser-gebietsauslaesse,ch.bafu.wasser-leitungen,ch.bafu.wasser-rueckgabe,ch.bafu.wasser-teileinzugsgebiete_2,ch.bafu.wasser-teileinzugsgebiete_40,ch.bafu.wasser-vorfluter", 
+    "inspire_abstract": "Standort und Betrieb von Umwelt\u00fcberwachungseinrichtungen einschlie\u00dflich Beobachtung und Messung von Schadstoffen, des Zustands von Umweltmedien und anderen Parametern des \u00d6kosystems (Artenvielfalt, \u00f6kologischer Zustand der Vegetation usw.", 
+    "inspire_name": "Umwelt\u00fcberwachung"
+  }, 
+  {
+    "oberthema_id": "5dd7a565ca6c445a88fe243beb59bc7e", 
+    "inspire_id": "III_08", 
+    "inspire_oberthema_abstract": "Energie und Wirtschaft", 
+    "sswmts": "f,f,f,f,f", 
+    "inspire_oberthema_name": "Energie und Wirtschaft", 
+    "fk_dataset_id": "ch.swisstopo.geologie-geotechnik-zementindustrie_1965,ch.swisstopo.geologie-geotechnik-zementindustrie_1995,ch.swisstopo.geologie-geotechnik-ziegeleien_1907,ch.swisstopo.geologie-geotechnik-ziegeleien_1965,ch.swisstopo.geologie-geotechnik-ziegeleien_1995", 
+    "inspire_abstract": "Standorte f\u00fcr industrielle Produktion, einschlie\u00dflich durch die Richtlinie 96/61/EG des Rates vom 24.", 
+    "inspire_name": "Produktions- und Industrieanlagen"
+  }, 
+  {
+    "oberthema_id": "5dd7a565ca6c445a88fe243beb59bc7e", 
+    "inspire_id": "III_09", 
+    "inspire_oberthema_abstract": "Energie und Wirtschaft", 
+    "sswmts": "f", 
+    "inspire_oberthema_name": "Energie und Wirtschaft", 
+    "fk_dataset_id": "ch.blw.bewaesserungsbeduerftigkeit", 
+    "inspire_abstract": "Landwirtschaftliche Anlagen und Produktionsst\u00e4tten (einschlie\u00dflich Bew\u00e4sserungssystemen, Gew\u00e4chsh\u00e4usern und St\u00e4llen).", 
+    "inspire_name": "Landwirtschaftliche Anlagen und Aquakulturanlagen"
+  }, 
+  {
+    "oberthema_id": "fa15cedf4a1634d288c710b8b1371888", 
+    "inspire_id": "III_11", 
+    "inspire_oberthema_abstract": "Raum und Bev\u00f6lkerung", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Raum und Bev\u00f6lkerung", 
+    "fk_dataset_id": "ch.bak.bundesinventar-schuetzenswerte-ortsbilder,ch.bazl.projektierungszonen-flughafenanlagen,ch.blw.alpprodukte,ch.blw.bergprodukte,ch.blw.landwirtschaftliche-zonengrenzen,ch.blw.ursprungsbezeichnungen-fleisch,ch.blw.ursprungsbezeichnungen-kaese,ch.blw.ursprungsbezeichnungen-pflanzen,ch.blw.ursprungsbezeichnungen-spirituosen,ch.vbs.territorialregionen", 
+    "inspire_abstract": "Auf internationaler, europ\u00e4ischer, nationaler, regionaler und lokaler Ebene bewirtschaftete, geregelte oder zu Zwecken der Berichterstattung herangezogene Gebiete.", 
+    "inspire_name": "Bewirtschaftungsgebiete/Schutzgebiete/geregelte Gebiete und Berichterstattungseinheiten"
+  }, 
+  {
+    "oberthema_id": "dcf0cad08fc749baa39453bb22e1a6f4", 
+    "inspire_id": "III_12", 
+    "inspire_oberthema_abstract": "Umwelt, Biologie und Geologie", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Umwelt, Biologie und Geologie", 
+    "fk_dataset_id": "ch.bafu.aquaprotect_050,ch.bafu.aquaprotect_100,ch.bafu.aquaprotect_250,ch.bafu.aquaprotect_500,ch.bafu.gefahren-baugrundklassen,ch.bafu.gefahren-gefaehrdungszonen,ch.bafu.gefahren-historische_erdbeben,ch.bafu.gefahren-mikrozonierung,ch.bafu.gefahren-spektral,ch.bafu.permafrost,ch.bafu.showme-gemeinden_hochwasser,ch.bafu.showme-gemeinden_lawinen,ch.bafu.showme-gemeinden_rutschungen,ch.bafu.showme-gemeinden_sturzprozesse,ch.bafu.showme-kantone_hochwasser,ch.bafu.showme-kantone_lawinen,ch.bafu.showme-kantone_rutschungen,ch.bafu.showme-kantone_sturzprozesse,ch.bafu.silvaprotect-hangmuren,ch.bafu.silvaprotect-lawinen,ch.bafu.silvaprotect-murgang,ch.bafu.silvaprotect-sturz,ch.bafu.silvaprotect-uebersarung,ch.swisstopo-karto.hangneigung", 
+    "inspire_abstract": "Gef\u00e4hrdete Gebiete, eingestuft nach naturbedingten Risiken (s\u00e4mtliche atmosph\u00e4rischen, hydrologischen, seismischen, vulkanischen Ph\u00e4nomene sowie Naturfeuer, die aufgrund ihres \u00f6rtlichen Auftretens sowie ihrer Schwere und H\u00e4ufigkeit signifikante Auswirkungen auf die Gesellschaft haben k\u00f6nnen), z.", 
+    "inspire_name": "Gebiete mit naturbedingten Risiken"
+  }, 
+  {
+    "oberthema_id": "dcf0cad08fc749baa39453bb22e1a6f4", 
+    "inspire_id": "III_14", 
+    "inspire_oberthema_abstract": "Umwelt, Biologie und Geologie", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Umwelt, Biologie und Geologie", 
+    "fk_dataset_id": "ch.blw.bewaesserungsbeduerftigkeit,ch.blw.bodeneignung-gruendigkeit,ch.blw.bodeneignung-kulturland,ch.blw.bodeneignung-kulturtyp,ch.blw.bodeneignung-naehrstoffspeichervermoegen,ch.blw.bodeneignung-skelettgehalt,ch.blw.bodeneignung-vernaessung,ch.blw.bodeneignung-wasserdurchlaessigkeit,ch.blw.bodeneignung-wasserspeichervermoegen,ch.blw.klimaeignung-futterbau,ch.blw.klimaeignung-getreidebau,ch.blw.klimaeignung-kartoffeln,ch.blw.klimaeignung-koernermais,ch.blw.klimaeignung-kulturland,ch.blw.klimaeignung-spezialkulturen,ch.blw.klimaeignung-typ,ch.blw.klimaeignung-zwischenfruchtbau,ch.blw.niederschlagshaushalt", 
+    "inspire_abstract": "Witterungsbedingungen und deren Messung; Niederschl\u00e4ge, Temperaturen, Gesamtverdunstung\n(Evapotranspiration), Windgeschwindigkeit und Windrichtung.", 
+    "inspire_name": "Meteorologisch-geografische Kennwerte"
+  }, 
+  {
+    "oberthema_id": "dcf0cad08fc749baa39453bb22e1a6f4", 
+    "inspire_id": "III_17", 
+    "inspire_oberthema_abstract": "Umwelt, Biologie und Geologie", 
+    "sswmts": "f,f", 
+    "inspire_oberthema_name": "Umwelt, Biologie und Geologie", 
+    "fk_dataset_id": "ch.are.landschaftstypen,ch.bafu.biogeographische_regionen", 
+    "inspire_abstract": "Gebiete mit relativ homogenen \u00f6kologischen Bedingungen und gemeinsamen Merkmalen.", 
+    "inspire_name": "Biogeografische Regionen"
+  }, 
+  {
+    "oberthema_id": "dcf0cad08fc749baa39453bb22e1a6f4", 
+    "inspire_id": "III_18", 
+    "inspire_oberthema_abstract": "Umwelt, Biologie und Geologie", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Umwelt, Biologie und Geologie", 
+    "fk_dataset_id": "ch.bafu.bundesinventare-amphibien,ch.bafu.bundesinventare-amphibien_anhang4,ch.bafu.bundesinventare-amphibien_wanderobjekte,ch.bafu.bundesinventare-auen,ch.bafu.bundesinventare-flachmoore,ch.bafu.bundesinventare-flachmoore_regional,ch.bafu.bundesinventare-hochmoore,ch.bafu.bundesinventare-jagdbanngebiete,ch.bafu.bundesinventare-moorlandschaften,ch.bafu.bundesinventare-trockenwiesen_trockenweiden,ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2,ch.bafu.bundesinventare-vogelreservate,ch.bafu.fauna-vernetzungsachsen_national,ch.bafu.fauna-wildtierkorridor_national,ch.bafu.fischerei-aeschen_kernzonen,ch.bafu.fischerei-aeschen_laichplaetze,ch.bafu.fischerei-aeschen_larvenhabitate,ch.bafu.fischerei-aeschen_verbreitungsgebiet,ch.bafu.fischerei-nasenlaichplaetze,ch.bafu.ren-extensive_landwirtschaftsgebiete,ch.bafu.ren-feuchtgebiete,ch.bafu.ren-fliessgewaesser_seen,ch.bafu.ren-trockenstandorte,ch.bafu.ren-wald,ch.bafu.schutzgebiete-biosphaerenreservate,ch.bafu.schutzgebiete-smaragd,ch.bafu.unesco-weltnaturerbe", 
+    "inspire_abstract": "Geografische Gebiete mit spezifischen \u00f6kologischen Bedingungen, Prozessen, Strukturen und (lebensunterst\u00fctzenden) Funktionen als physische Grundlage f\u00fcr dort lebende Organismen.", 
+    "inspire_name": "Lebensr\u00e4ume und Biotope"
+  }, 
+  {
+    "oberthema_id": "dcf0cad08fc749baa39453bb22e1a6f4", 
+    "inspire_id": "III_19", 
+    "inspire_oberthema_abstract": "Umwelt, Biologie und Geologie", 
+    "sswmts": "f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Umwelt, Biologie und Geologie", 
+    "fk_dataset_id": "ch.bafu.fauna-steinbockkolonien,ch.bafu.flora-schwingrasen,ch.bafu.flora-verbreitungskarten,ch.bafu.flora-weltensutter_atlas,ch.bafu.landesforstinventar-baumarten,ch.bafu.moose", 
+    "inspire_abstract": "Geografische Verteilung des Auftretens von Tier- und Pflanzenarten, zusammengefasst in Gittern, Region, Verwaltungseinheit oder sonstigen analytischen Einheiten.", 
+    "inspire_name": "Verteilung der Arten"
+  }, 
+  {
+    "oberthema_id": "5dd7a565ca6c445a88fe243beb59bc7e", 
+    "inspire_id": "III_20", 
+    "inspire_oberthema_abstract": "Energie und Wirtschaft", 
+    "sswmts": "f,f,f,f", 
+    "inspire_oberthema_name": "Energie und Wirtschaft", 
+    "fk_dataset_id": "ch.bfe.kernkraftwerke,ch.bfe.kleinwasserkraftpotentiale,ch.swisstopo.geologie-geophysik-geothermie,ch.swisstopo.vec200-miscellaneous", 
+    "inspire_abstract": "Energiequellen wie Kohlenwasserstoffe, Wasserkraft, Bioenergie, Sonnen- und Windenergie usw.", 
+    "inspire_name": "Energiequellen"
+  }, 
+  {
+    "oberthema_id": "dcf0cad08fc749baa39453bb22e1a6f4", 
+    "inspire_id": "III_21", 
+    "inspire_oberthema_abstract": "Umwelt, Biologie und Geologie", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Umwelt, Biologie und Geologie", 
+    "fk_dataset_id": "ch.swisstopo.geologie-geotechnik-gk200,ch.swisstopo.geologie-geotechnik-gk500-genese,ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200,ch.swisstopo.geologie-geotechnik-steinbrueche_1915,ch.swisstopo.geologie-geotechnik-steinbrueche_1965,ch.swisstopo.geologie-geotechnik-steinbrueche_1980,ch.swisstopo.geologie-geotechnik-steinbrueche_1995,ch.swisstopo.geologie-rohstoffe-industrieminerale,ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas,ch.swisstopo.geologie-rohstoffe-vererzungen", 
+    "inspire_abstract": "Mineralische Bodensch\u00e4tze wie Metallerze, Industrieminerale usw.", 
+    "inspire_name": "Mineralische Bodensch\u00e4tze"
+  }, 
+  {
+    "oberthema_id": "ef4244ad8275f873ac50e83fd8d79617", 
+    "inspire_id": "II_01", 
+    "inspire_oberthema_abstract": "Oberfl\u00e4chendarstellung", 
+    "sswmts": "f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Oberfl\u00e4chendarstellung und -modelle", 
+    "fk_dataset_id": "ch.bazl.luftfahrtkarten-icao,ch.bazl.segelflugkarte,ch.swisstopo.geoidmodell-ch1903,ch.swisstopo.geoidmodell-etrs89,ch.swisstopo.hangneigung-ueber_30,ch.swisstopo.swissalti3d-reliefschattierung,ch.swisstopo.vec200-miscellaneous-geodpoint", 
+    "inspire_abstract": "Digitale H\u00f6henmodelle f\u00fcr Land-, Eis- und Meeresfl\u00e4chen.", 
+    "inspire_name": "H\u00f6he"
+  }, 
+  {
+    "oberthema_id": "ef4244ad8275f873ac50e83fd8d79617", 
+    "inspire_id": "II_02", 
+    "inspire_oberthema_abstract": "Oberfl\u00e4chendarstellung", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Oberfl\u00e4chendarstellung und -modelle", 
+    "fk_dataset_id": "ch.bfs.arealstatistik,ch.bfs.arealstatistik-1985,ch.bfs.arealstatistik-1997,ch.bfs.arealstatistik-bodenbedeckung,ch.bfs.arealstatistik-bodenbedeckung-1985,ch.bfs.arealstatistik-bodenbedeckung-1997,ch.bfs.arealstatistik-bodennutzung,ch.bfs.arealstatistik-bodennutzung-1985,ch.bfs.arealstatistik-bodennutzung-1997,ch.bfs.arealstatistik-hintergrund,ch.bfs.arealstatistik-waldmischungsgrad,ch.swisstopo.vec200-landcover,ch.swisstopo.vec200-landcover-wald,ch.swisstopo.vec25-heckenbaeume,ch.swisstopo.vec25-primaerflaechen", 
+    "inspire_abstract": "Physische und biologische Bedeckung der Erdoberfl\u00e4che, einschlie\u00dflich k\u00fcnstlicher Fl\u00e4chen, landwirtschaftlicher Fl\u00e4chen, W\u00e4ldern, nat\u00fcrlicher (naturnaher) Gebiete, Feuchtgebieten und Wasserk\u00f6rpern.", 
+    "inspire_name": "Bodenbedeckung"
+  }, 
+  {
+    "oberthema_id": "ef4244ad8275f873ac50e83fd8d79617", 
+    "inspire_id": "II_03", 
+    "inspire_oberthema_abstract": "Oberfl\u00e4chendarstellung", 
+    "sswmts": "f,f,f,f,f,t", 
+    "inspire_oberthema_name": "Oberfl\u00e4chendarstellung und -modelle", 
+    "fk_dataset_id": "ch.swisstopo.lubis-luftbilder-dritte-firmen,ch.swisstopo.lubis-luftbilder-dritte-kantone,ch.swisstopo.lubis-luftbilder_farbe,ch.swisstopo.lubis-luftbilder_infrarot,ch.swisstopo.lubis-luftbilder_schwarzweiss,ch.swisstopo.swissimage", 
+    "inspire_abstract": "Georeferenzierte Bilddaten der Erdoberfl\u00e4che von satelliten- oder luftfahrzeuggest\u00fctzten Sensoren.", 
+    "inspire_name": "Orthofotografie"
+  }, 
+  {
+    "oberthema_id": "dcf0cad08fc749baa39453bb22e1a6f4", 
+    "inspire_id": "II_04", 
+    "inspire_oberthema_abstract": "Umwelt, Biologie und Geologie", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Umwelt, Biologie und Geologie", 
+    "fk_dataset_id": "ch.swisstopo.geologie-eiszeit-lgm-raster,ch.swisstopo.geologie-generalkarte-ggk200,ch.swisstopo.geologie-geocover,ch.swisstopo.geologie-geodaesie-bouguer_anomalien,ch.swisstopo.geologie-geodaesie-isostatische_anomalien,ch.swisstopo.geologie-geolkarten500.metadata,ch.swisstopo.geologie-geologische_karte,ch.swisstopo.geologie-geologischer_atlas,ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura,ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz,ch.swisstopo.geologie-geophysik-deklination,ch.swisstopo.geologie-geophysik-geothermie,ch.swisstopo.geologie-geophysik-inklination,ch.swisstopo.geologie-geophysik-totalintensitaet,ch.swisstopo.geologie-geotechnik-gk200,ch.swisstopo.geologie-geotechnik-gk500-genese,ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung,ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen,ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200,ch.swisstopo.geologie-geotechnik-steinbrueche_1915,ch.swisstopo.geologie-geotechnik-steinbrueche_1965,ch.swisstopo.geologie-geotechnik-steinbrueche_1980,ch.swisstopo.geologie-geotechnik-steinbrueche_1995,ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke,ch.swisstopo.geologie-geotechnik-zementindustrie_1965,ch.swisstopo.geologie-geotechnik-zementindustrie_1995,ch.swisstopo.geologie-geotechnik-ziegeleien_1907,ch.swisstopo.geologie-geotechnik-ziegeleien_1965,ch.swisstopo.geologie-geotechnik-ziegeleien_1995,ch.swisstopo.geologie-geotope,ch.swisstopo.geologie-gravimetrischer_atlas,ch.swisstopo.geologie-gravimetrischer_atlas.metadata,ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen,ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet,ch.swisstopo.geologie-rohstoffe-industrieminerale,ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas,ch.swisstopo.geologie-rohstoffe-vererzungen,ch.swisstopo.geologie-spezialkarten_schweiz.metadata,ch.swisstopo.geologie-tektonische_karte", 
+    "inspire_abstract": "Geologische Beschreibung anhand von Zusammensetzung und Struktur.", 
+    "inspire_name": "Geologie"
+  }, 
+  {
+    "oberthema_id": "af70b96d0fdca1b85a630694de60acfa", 
+    "inspire_id": "I_01", 
+    "inspire_oberthema_abstract": "Basisdaten", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Basisdaten und Referenzsysteme", 
+    "fk_dataset_id": "ch.swisstopo.dreiecksvermaschung,ch.swisstopo.fixpunkte-agnes,ch.swisstopo.fixpunkte-hfp1,ch.swisstopo.fixpunkte-hfp2,ch.swisstopo.fixpunkte-lfp1,ch.swisstopo.fixpunkte-lfp2,ch.swisstopo.geoidmodell-ch1903,ch.swisstopo.geoidmodell-etrs89,ch.swisstopo.koordinatenaenderung,ch.swisstopo.transformationsgenauigkeit,ch.swisstopo.verschiebungsvektoren-tsp1,ch.swisstopo.verschiebungsvektoren-tsp2", 
+    "inspire_abstract": "Systeme zur einheitlichen r\u00e4umlichen Referenzierung von Raumdaten anhand eines Koordinatensatzes (x, y, z) und/oder Angaben zu Breite, L\u00e4nge und H\u00f6he auf der Grundlage eines geod\u00e4tischen horizontalen und vertikalen Datums.", 
+    "inspire_name": "Koordinatenreferenzsysteme"
+  }, 
+  {
+    "oberthema_id": "af70b96d0fdca1b85a630694de60acfa", 
+    "inspire_id": "I_03", 
+    "inspire_oberthema_abstract": "Basisdaten", 
+    "sswmts": "t,t,t,f,f,t,f,f,t,t,t,t,f,f", 
+    "inspire_oberthema_name": "Basisdaten und Referenzsysteme", 
+    "fk_dataset_id": "ch.swisstopo.hiks-dufour,ch.swisstopo.hiks-siegfried,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.pixelkarte-farbe-pk100.noscale,ch.swisstopo.pixelkarte-farbe-pk1000.noscale,ch.swisstopo.pixelkarte-farbe-pk200.noscale,ch.swisstopo.pixelkarte-farbe-pk25.noscale,ch.swisstopo.pixelkarte-farbe-pk50.noscale,ch.swisstopo.pixelkarte-farbe-pk500.noscale,ch.swisstopo.pixelkarte-grau,ch.swisstopo.swisstlm3d-karte-farbe,ch.swisstopo.swisstlm3d-karte-grau,ch.swisstopo.vec200-miscellaneous,ch.swisstopo.vec200-names-namedlocation", 
+    "inspire_abstract": "Namen von Gebieten, Regionen, Orten, Gro\u00dfst\u00e4dten, Vororten, St\u00e4dten oder Siedlungen sowie jedes geografische oder topografische Merkmal von \u00f6ffentlichem oder historischem Interesse.", 
+    "inspire_name": "Geografische Bezeichnungen"
+  }, 
+  {
+    "oberthema_id": "af70b96d0fdca1b85a630694de60acfa", 
+    "inspire_id": "I_04", 
+    "inspire_oberthema_abstract": "Basisdaten", 
+    "sswmts": "f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Basisdaten und Referenzsysteme", 
+    "fk_dataset_id": "ch.are.alpenkonvention,ch.are.gemeindetypen,ch.swisstopo-vd.ortschaftenverzeichnis_plz,ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill,ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo.swissboundaries3d-kanton-flaeche.fill,ch.swisstopo.swissboundaries3d-land-flaeche.fill", 
+    "inspire_abstract": "Lokale, regionale und nationale Verwaltungseinheiten, die die Gebiete abgrenzen, in denen die Mitgliedstaaten Hoheitsbefugnisse haben und/oder aus\u00fcben und die durch Verwaltungsgrenzen voneinander getrennt sind.", 
+    "inspire_name": "Verwaltungseinheiten"
+  }, 
+  {
+    "oberthema_id": "af70b96d0fdca1b85a630694de60acfa", 
+    "inspire_id": "I_05", 
+    "inspire_oberthema_abstract": "Basisdaten", 
+    "sswmts": "f,f", 
+    "inspire_oberthema_name": "Basisdaten und Referenzsysteme", 
+    "fk_dataset_id": "ch.bfs.gebaeude_wohnungs_register,ch.swisstopo-vd.ortschaftenverzeichnis_plz", 
+    "inspire_abstract": "Lokalisierung von Grundst\u00fccken anhand von Adressdaten, in der Regel Stra\u00dfenname, Hausnummer und Postleitzahl.", 
+    "inspire_name": "Adressen"
+  }, 
+  {
+    "oberthema_id": "af70b96d0fdca1b85a630694de60acfa", 
+    "inspire_id": "I_06", 
+    "inspire_oberthema_abstract": "Basisdaten", 
+    "sswmts": "f,f,f", 
+    "inspire_oberthema_name": "Basisdaten und Referenzsysteme", 
+    "fk_dataset_id": "ch.are.bauzonen,ch.kantone.cadastralwebmap-farbe,ch.swisstopo-vd.spannungsarme-gebiete", 
+    "inspire_abstract": "Gebiete, die anhand des Grundbuchs oder gleichwertiger Verzeichnisse bestimmt werden.", 
+    "inspire_name": "Flurst\u00fccke/Grundst\u00fccke (Katasterparzellen)"
+  }, 
+  {
+    "oberthema_id": "a001cf461fa252d16bc1365636dfbf64", 
+    "inspire_id": "I_07", 
+    "inspire_oberthema_abstract": "Infrastruktur und Kommunikation", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Infrastruktur und Kommunikation", 
+    "fk_dataset_id": "ch.astra.ausnahmetransportrouten,ch.astra.ivs-gelaendekarte,ch.astra.ivs-nat,ch.astra.ivs-nat-verlaeufe,ch.astra.ivs-nat_abgrenzungen,ch.astra.ivs-nat_wegbegleiter,ch.astra.ivs-reg_loc,ch.bafu.wege-wildruhezonen-jagdbanngebiete,ch.bazl.heliports-gebirgslandeplaetze,ch.bazl.landschaftsruhezonen,ch.bazl.luftfahrtkarten-icao,ch.bazl.projektierungszonen-flughafenanlagen,ch.bazl.segelflugkarte,ch.kantone.ivs-reg_loc,ch.swisstopo-karto.schneeschuhrouten,ch.swisstopo-karto.skitouren,ch.swisstopo.swisstlm3d-wanderwege,ch.swisstopo.vec200-transportation-oeffentliche-verkehr,ch.swisstopo.vec200-transportation-strassennetz,ch.swisstopo.vec25-anlagen,ch.swisstopo.vec25-eisenbahnnetz,ch.swisstopo.vec25-strassennetz,ch.swisstopo.vec25-uebrigerverkehr", 
+    "inspire_abstract": "Verkehrsnetze und zugeh\u00f6rige Infrastruktureinrichtungen f\u00fcr Stra\u00dfen-, Schienen- und Luftverkehr sowie Schifffahrt.", 
+    "inspire_name": "Verkehrsnetze"
+  }, 
+  {
+    "oberthema_id": "ef4244ad8275f873ac50e83fd8d79617", 
+    "inspire_id": "I_08", 
+    "inspire_oberthema_abstract": "Oberfl\u00e4chendarstellung", 
+    "sswmts": "f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Oberfl\u00e4chendarstellung und -modelle", 
+    "fk_dataset_id": "ch.bafu.wasser-gebietsauslaesse,ch.bafu.wasser-teileinzugsgebiete_2,ch.bafu.wasser-teileinzugsgebiete_40,ch.bafu.wasser-vorfluter,ch.bfe.kleinwasserkraftpotentiale,ch.swisstopo.vec200-hydrography,ch.swisstopo.vec25-gewaessernetz", 
+    "inspire_abstract": "Elemente des Gew\u00e4ssernetzes, einschlie\u00dflich Meeresgebieten und allen sonstigen Wasserk\u00f6rpern und hiermit verbundenen Teilsystemen, darunter Einzugsgebiete und Teileinzugsgebiete.", 
+    "inspire_name": "Gew\u00e4ssernetz"
+  }, 
+  {
+    "oberthema_id": "dcf0cad08fc749baa39453bb22e1a6f4", 
+    "inspire_id": "I_09", 
+    "inspire_oberthema_abstract": "Umwelt, Biologie und Geologie", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "inspire_oberthema_name": "Umwelt, Biologie und Geologie", 
+    "fk_dataset_id": "ch.babs.kulturgueter,ch.bafu.bundesinventare-amphibien,ch.bafu.bundesinventare-amphibien_anhang4,ch.bafu.bundesinventare-amphibien_anhoerung,ch.bafu.bundesinventare-amphibien_wanderobjekte,ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung,ch.bafu.bundesinventare-auen,ch.bafu.bundesinventare-auen_anhoerung,ch.bafu.bundesinventare-bln,ch.bafu.bundesinventare-flachmoore,ch.bafu.bundesinventare-flachmoore_anhoerung,ch.bafu.bundesinventare-flachmoore_regional,ch.bafu.bundesinventare-hochmoore,ch.bafu.bundesinventare-hochmoore_anhoerung,ch.bafu.bundesinventare-jagdbanngebiete,ch.bafu.bundesinventare-moorlandschaften,ch.bafu.bundesinventare-trockenwiesen_trockenweiden,ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2,ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung,ch.bafu.bundesinventare-vogelreservate,ch.bafu.schutzgebiete-luftfahrt,ch.bafu.schutzgebiete-paerke_nationaler_bedeutung,ch.bafu.schutzgebiete-ramsar,ch.bafu.schutzgebiete-schweizerischer_nationalpark,ch.bafu.schutzgebiete-smaragd,ch.bafu.unesco-weltnaturerbe,ch.bafu.wege-wildruhezonen-jagdbanngebiete,ch.bafu.wildruhezonen-jagdbanngebiete,ch.bafu.wrz-jagdbanngebiete_select,ch.bafu.wrz-wildruhezonen_portal,ch.bak.schutzgebiete-unesco_weltkulturerbe,ch.bazl.landschaftsruhezonen,ch.swisstopo.geologie-geotope,ch.swisstopo.vec200-adminboundaries-protectedarea", 
+    "inspire_abstract": "Gebiete, die im Rahmen des internationalen und des gemeinschaftlichen Rechts sowie des Rechts der Mitgliedstaaten ausgewiesen sind oder verwaltet werden, um spezifische Erhaltungsziele zu erreichen.", 
+    "inspire_name": "Schutzgebiete"
+  }
+]

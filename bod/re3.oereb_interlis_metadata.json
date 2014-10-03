@@ -1,0 +1,50 @@
+[
+  {
+    "footer": "</OeREBKRM09trsfr.Transferstruktur>\n</DATASECTION>\n</TRANSFER>", 
+    "layer_id": "ch.bazl.projektierungszonen-flughafenanlagen.oereb", 
+    "bgdi_modified_by": "pgkogis", 
+    "bgdi_modified": "2014-04-02 13:43:30.307297", 
+    "bgdi_created_by": "pgkogis", 
+    "header": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><TRANSFER xmlns=\"http://www.interlis.ch/INTERLIS2.3\">\n<HEADERSECTION SENDER=\"ili2fme-5.8.0-20130429\"><MODELS><MODEL NAME=\"CodeISO\" VERSION=\"20060808\" URI=\"http://www.kogis.ch\"></MODEL><MODEL NAME=\"chGeoId10\" VERSION=\"2010-05-03\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"MultilingualText09\" VERSION=\"2010-02-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"OeREBKRM09\" VERSION=\"2010-10-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"OeREBKRM09vs\" VERSION=\"2010-10-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"OeREBKRM09trsfr\" VERSION=\"2010-10-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL></MODELS></HEADERSECTION>\n<DATASECTION>\n<OeREBKRM09trsfr.Transferstruktur BID=\"b01\">", 
+    "data_created": "2013-12-16 20:29:46", 
+    "bgdi_created": "2013-09-23 13:56:29.04819", 
+    "data_imported": "2014-04-01 14:42:36", 
+    "bgdi_id": 5
+  }, 
+  {
+    "footer": "</OeREBKRM09trsfr.Transferstruktur>\n</DATASECTION>\n</TRANSFER>", 
+    "layer_id": "ch.bazl.sicherheitszonenplan.oereb", 
+    "bgdi_modified_by": "pgkogis", 
+    "bgdi_modified": "2014-04-02 13:43:38.967879", 
+    "bgdi_created_by": "pgkogis", 
+    "header": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><TRANSFER xmlns=\"http://www.interlis.ch/INTERLIS2.3\">\n<HEADERSECTION SENDER=\"ili2fme-5.8.0-20130429\"><MODELS><MODEL NAME=\"CodeISO\" VERSION=\"20060808\" URI=\"http://www.kogis.ch\"></MODEL><MODEL NAME=\"chGeoId10\" VERSION=\"2010-05-03\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"MultilingualText09\" VERSION=\"2010-02-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"OeREBKRM09\" VERSION=\"2010-10-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"OeREBKRM09vs\" VERSION=\"2010-10-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"OeREBKRM09trsfr\" VERSION=\"2010-10-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL></MODELS></HEADERSECTION>\n<DATASECTION>\n<OeREBKRM09trsfr.Transferstruktur BID=\"b01\">", 
+    "data_created": "2013-12-16 20:31:10", 
+    "bgdi_created": "2013-09-23 14:24:34.403101", 
+    "data_imported": "2014-04-01 14:58:12", 
+    "bgdi_id": 6
+  }, 
+  {
+    "footer": "</OeREBKRM09trsfr.Transferstruktur>\n</DATASECTION>\n</TRANSFER>", 
+    "layer_id": "ch.bav.kataster-belasteter-standorte-oev.oereb", 
+    "bgdi_modified_by": "pgkogis", 
+    "bgdi_modified": "2014-10-16 20:36:06.213989", 
+    "bgdi_created_by": "pgkogis", 
+    "header": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><TRANSFER xmlns=\"http://www.interlis.ch/INTERLIS2.3\">\n<HEADERSECTION SENDER=\"altlast4web\" VERSION=\"2.3\"><MODELS><MODEL NAME=\"chGeoId10\" VERSION=\"2010-05-03\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"CodeISO\" VERSION=\"20060808\" URI=\"http://www.kogis.ch\"></MODEL><MODEL NAME=\"MultilingualText09\" VERSION=\"2010-02-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"OeREBKRM09\" VERSION=\"2010-10-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"OeREBKRM09vs\" VERSION=\"2010-10-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"OeREBKRM09trsfr\" VERSION=\"2010-10-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL></MODELS></HEADERSECTION>\n<DATASECTION>\n<OeREBKRM09trsfr.Transferstruktur BID=\"b01\">", 
+    "data_created": "2014-10-16 19:14:20", 
+    "bgdi_created": "2013-12-12 13:49:15.449287", 
+    "data_imported": "2014-10-16 20:35:04", 
+    "bgdi_id": 9
+  }, 
+  {
+    "footer": "</OeREBKRM09trsfr.Transferstruktur>\n</DATASECTION>\n</TRANSFER>", 
+    "layer_id": "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb", 
+    "bgdi_modified_by": "pgkogis", 
+    "bgdi_modified": "2014-10-16 20:33:34.29395", 
+    "bgdi_created_by": "pgkogis", 
+    "header": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><TRANSFER xmlns=\"http://www.interlis.ch/INTERLIS2.3\">\n<HEADERSECTION SENDER=\"altlast4web\" VERSION=\"2.3\"><MODELS><MODEL NAME=\"chGeoId10\" VERSION=\"2010-05-03\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"CodeISO\" VERSION=\"20060808\" URI=\"http://www.kogis.ch\"></MODEL><MODEL NAME=\"MultilingualText09\" VERSION=\"2010-02-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"OeREBKRM09\" VERSION=\"2010-10-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"OeREBKRM09vs\" VERSION=\"2010-10-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL><MODEL NAME=\"OeREBKRM09trsfr\" VERSION=\"2010-10-26\" URI=\"mailto:ce@eisenhutinformatik.ch\"></MODEL></MODELS></HEADERSECTION>\n<DATASECTION>\n<OeREBKRM09trsfr.Transferstruktur BID=\"b01\">", 
+    "data_created": "2014-10-16 19:10:06", 
+    "bgdi_created": "2014-08-14 11:56:47.989842", 
+    "data_imported": "2014-10-16 20:25:46", 
+    "bgdi_id": 11
+  }
+]

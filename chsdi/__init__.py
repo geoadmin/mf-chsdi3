@@ -8,6 +8,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 
 from chsdi.renderers import EsriJSON, CSVRenderer
 from chsdi.models import initialize_sql
+from chsdi.models.bod import initialize_sqlite
 from papyrus.renderers import GeoJSON
 from chsdi.lib.raster.georaster import init_rasterfiles
 
@@ -51,6 +52,7 @@ def main(global_config, **settings):
     config.registry.dbmaker = scoped_session(sessionmaker())
     config.add_request_method(db, reify=True)
     initialize_sql(settings)
+    initialize_sqlite()
 
     # route definitions
     config.add_route('ogcproxy', '/ogcproxy')

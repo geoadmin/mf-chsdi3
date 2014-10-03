@@ -18,6 +18,7 @@ pyramid.default_locale_name = de
 pyramid.includes = pyramid_tm
 
 # SQLAlchemy database URL
+sqlalchemy.sqlite.url = sqlite://
 sqlalchemy.are.url = postgresql://${vars:dbhost}:${vars:dbport}/are_${vars:db_staging}
 sqlalchemy.bafu.url = postgresql://${vars:dbhost}:${vars:dbport}/bafu_${vars:db_staging}
 sqlalchemy.bak.url = postgresql://${vars:dbhost}:${vars:dbport}/bak_${vars:db_staging}

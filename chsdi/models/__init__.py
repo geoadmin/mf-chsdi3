@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.pool import StaticPool
 from sqlalchemy import engine_from_config
 
 
-dbs = ['are', 'bafu', 'bak', 'bod', 'dritte', 'edi', 'evd', 'kogis', 'stopo', 'uvek', 'vbs', 'zeitreihen', 'lubis']
+from chsdi.lib.helpers import remove_accents
+
+dbs = ['sqlite', 'are', 'bafu', 'bak', 'bod', 'dritte', 'edi', 'evd', 'kogis', 'stopo', 'uvek', 'vbs', 'zeitreihen', 'lubis']
 
 engines = {}
 bases = {}
@@ -17,13 +20,26 @@ for db in dbs:
 
 def initialize_sql(settings):
     for db in dbs:
-        engine = engine_from_config(
-            settings,
-            'sqlalchemy.%s.' % db,
-            pool_recycle=20,
-            pool_size=20,
-            max_overflow=-1
-        )
+        if 'sqlite' not in db:
+            engine = engine_from_config(
+                settings,
+                'sqlalchemy.%s.' % db,
+                pool_recycle=20,
+                pool_size=20,
+                max_overflow=-1
+            )
+        else:
+            '''
+            In Memory sqlite database. For the connection parameters
+            used, please see http://docs.sqlalchemy.org/en/rel_0_9/dialects/sqlite.html
+            '''
+            engine = engine_from_config(
+                settings,
+                'sqlalchemy.%s.' % db,
+                connect_args={'check_same_thread': False},
+                poolclass=StaticPool
+            )
+            engine.raw_connection().create_function('remove_accents', 1, remove_accents)
         engines[db] = engine
         bases[db].metadata.bind = engine
 
