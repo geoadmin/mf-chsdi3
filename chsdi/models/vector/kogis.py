@@ -16,8 +16,6 @@ class Gebaeuderegister(Base, Vector):
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
     __template__ = 'templates/htmlpopup/gebaeuderegister.mako'
     __bodId__ = 'ch.bfs.gebaeude_wohnungs_register'
-    # __minscale__ = 5001
-    # due to https://redmine.bgdi.admin.ch/issues/3146 ltmoc  __maxscale__ = 25000
     id = Column('egid_edid', Text, primary_key=True)
     egid = Column('egid', Integer)
     strname1 = Column('strname1', Text)
