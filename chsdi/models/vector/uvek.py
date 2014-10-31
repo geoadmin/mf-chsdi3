@@ -734,8 +734,8 @@ class sgt_facilities(Base, Vector):
     objname_text_fr = Column('objname_text_fr', Text)
     objname_text_it = Column('objname_text_it', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __minscale__ = 80005
-    __maxscale__ = 100000005
+    __minresolution__ = 8.05
+    __maxresolution__ = 10000.0
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bfe.sachplan-geologie-tiefenlager', sgt_facilities)
@@ -768,8 +768,8 @@ class sgt_planning(Base, Vector):
     description = Column('description', Text)
     web = Column('web', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __minscale__ = 20005
-    __maxscale__ = 500005
+    __minresolution__ = 2.05
+    __maxresolution__ = 50.05
 
 register('ch.bfe.sachplan-geologie-tiefenlager', sgt_planning)
 
@@ -800,8 +800,7 @@ class sgt_planning_raster(Base, Vector):
     description = Column('description', Text)
     web = Column('web', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __maxscale__ = 20005
-    __minscale__ = 1
+    __maxresolution__ = 2.05
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bfe.sachplan-geologie-tiefenlager', sgt_planning_raster)
@@ -829,8 +828,8 @@ class sgt_facilities_td(Base, Vector):
     objname_text_fr = Column('objname_text_fr', Text)
     objname_text_it = Column('objname_text_it', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __minscale__ = 80005
-    __maxscale__ = 100000005
+    __minresolution__ = 8.05
+    __maxresolution__ = 10000.05
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', sgt_facilities_td)
@@ -862,8 +861,8 @@ class sgt_planning_td(Base, Vector):
     description = Column('description', Text)
     web = Column('web', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __minscale__ = 20005
-    __maxscale__ = 500005
+    __minresolution__ = 2.05
+    __maxresolution__ = 50.05
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', sgt_planning_td)
@@ -895,8 +894,7 @@ class sgt_planning_raster_td(Base, Vector):
     description = Column('description', Text)
     web = Column('web', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __maxscale__ = 20005
-    __minscale__ = 1
+    __maxsresolution__ = 2.05
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', sgt_planning_raster_td)
@@ -959,8 +957,8 @@ class sil_planning_a(Base, Vector):
     description_text_it = Column('description_text_it', Text)
     document_web = Column('document_web', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __minscale__ = 20005
-    __maxscale__ = 500005
+    __minresolution__ = 2.05
+    __maxresolution__ = 50.05
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', sil_planning_a)
@@ -994,8 +992,7 @@ class sil_planning_raster_a(Base, Vector):
     description_text_it = Column('description_text_it', Text)
     document_web = Column('document_web', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __maxscale__ = 20005
-    __minscale__ = 1
+    __minresolution__ = 2.05
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', sil_planning_raster_a)
@@ -1058,8 +1055,8 @@ class sil_planning_k(Base, Vector):
     description_text_it = Column('description_text_it', Text)
     document_web = Column('document_web', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __minscale__ = 20005
-    __maxscale__ = 500005
+    __minresolution__ = 2.05
+    __maxresolution___ = 50.05
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_planning_k)
@@ -1093,8 +1090,7 @@ class sil_planning_raster_k(Base, Vector):
     description_text_it = Column('description_text_it', Text)
     document_web = Column('document_web', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __maxscale__ = 20005
-    __minscale__ = 1
+    __maxresolution__ = 2.05
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_planning_raster_k)
@@ -1222,8 +1218,8 @@ class sis_planning_a (Base, Vector):
     doc_web = Column('doc_web', Text)
     doc_title = Column('doc_title', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __minscale__ = 20005
-    __maxscale__ = 500005
+    __minresolution__ = 2.05
+    __maxresolution___ = 50.05
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bav.sachplan-infrastruktur-schiene_anhorung', sis_planning_a)
@@ -1284,8 +1280,7 @@ class sis_planning_raster_a (Base, Vector):
     doc_web = Column('doc_web', Text)
     doc_title = Column('doc_title', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __maxscale__ = 20005
-    __minscale__ = 1
+    __maxresolution__ = 2.05
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bav.sachplan-infrastruktur-schiene_anhorung', sis_planning_raster_a)
@@ -1352,8 +1347,8 @@ class sis_planning_k (Base, Vector):
     doc_web = Column('doc_web', Text)
     doc_title = Column('doc_title', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __minscale__ = 20005
-    __maxscale__ = 500005
+    __minresolution__ = 2.05
+    __maxresolution___ = 50.05
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bav.sachplan-infrastruktur-schiene_kraft', sis_planning_k)
@@ -1389,8 +1384,7 @@ class sis_planning_raster_k (Base, Vector):
     doc_web = Column('doc_web', Text)
     doc_title = Column('doc_title', Text)
     bgdi_created = Column('bgdi_created', Text)
-    __maxscale__ = 20005
-    __minscale__ = 1
+    __maxresolution__ = 20005
     the_geom = GeometryColumn(Geometry(dimension=2, srid=21781))
 
 register('ch.bav.sachplan-infrastruktur-schiene_kraft', sis_planning_raster_k)

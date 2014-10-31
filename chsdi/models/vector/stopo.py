@@ -140,7 +140,7 @@ class treasurehunt(Base, Vector):
     __tablename__ = 'treasurehunt'
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __template__ = 'templates/htmlpopup/treasurehunt.mako'
-    __maxscale__ = 2505
+    __maxresolution__ = 0.255
     __bodId__ = 'ch.swisstopo.treasurehunt'
     id = Column('bgdi_id', Integer, primary_key=True)
     title_de = Column('title_de', Text)
