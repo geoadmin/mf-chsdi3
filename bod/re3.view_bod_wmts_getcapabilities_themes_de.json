@@ -103,9 +103,9 @@
     "oberthema_id": "dcf0cad08fc749baa39453bb22e1a6f4", 
     "inspire_id": "III_12", 
     "inspire_oberthema_abstract": "Umwelt, Biologie und Geologie", 
-    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
+    "sswmts": "f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f,f", 
     "inspire_oberthema_name": "Umwelt, Biologie und Geologie", 
-    "fk_dataset_id": "ch.bafu.aquaprotect_050,ch.bafu.aquaprotect_100,ch.bafu.aquaprotect_250,ch.bafu.aquaprotect_500,ch.bafu.gefahren-baugrundklassen,ch.bafu.gefahren-gefaehrdungszonen,ch.bafu.gefahren-historische_erdbeben,ch.bafu.gefahren-mikrozonierung,ch.bafu.gefahren-spektral,ch.bafu.permafrost,ch.bafu.showme-gemeinden_hochwasser,ch.bafu.showme-gemeinden_lawinen,ch.bafu.showme-gemeinden_rutschungen,ch.bafu.showme-gemeinden_sturzprozesse,ch.bafu.showme-kantone_hochwasser,ch.bafu.showme-kantone_lawinen,ch.bafu.showme-kantone_rutschungen,ch.bafu.showme-kantone_sturzprozesse,ch.bafu.silvaprotect-hangmuren,ch.bafu.silvaprotect-lawinen,ch.bafu.silvaprotect-murgang,ch.bafu.silvaprotect-sturz,ch.bafu.silvaprotect-uebersarung,ch.swisstopo-karto.hangneigung", 
+    "fk_dataset_id": "ch.bafu.aquaprotect_050,ch.bafu.aquaprotect_100,ch.bafu.aquaprotect_250,ch.bafu.aquaprotect_500,ch.bafu.gefahren-baugrundklassen,ch.bafu.gefahren-gefaehrdungszonen,ch.bafu.gefahren-historische_erdbeben,ch.bafu.gefahren-spektral,ch.bafu.permafrost,ch.bafu.showme-gemeinden_hochwasser,ch.bafu.showme-gemeinden_lawinen,ch.bafu.showme-gemeinden_rutschungen,ch.bafu.showme-gemeinden_sturzprozesse,ch.bafu.showme-kantone_hochwasser,ch.bafu.showme-kantone_lawinen,ch.bafu.showme-kantone_rutschungen,ch.bafu.showme-kantone_sturzprozesse,ch.bafu.silvaprotect-hangmuren,ch.bafu.silvaprotect-lawinen,ch.bafu.silvaprotect-murgang,ch.bafu.silvaprotect-sturz,ch.bafu.silvaprotect-uebersarung,ch.swisstopo-karto.hangneigung", 
     "inspire_abstract": "Gef\u00e4hrdete Gebiete, eingestuft nach naturbedingten Risiken (s\u00e4mtliche atmosph\u00e4rischen, hydrologischen, seismischen, vulkanischen Ph\u00e4nomene sowie Naturfeuer, die aufgrund ihres \u00f6rtlichen Auftretens sowie ihrer Schwere und H\u00e4ufigkeit signifikante Auswirkungen auf die Gesellschaft haben k\u00f6nnen), z.", 
     "inspire_name": "Gebiete mit naturbedingten Risiken"
   }, 

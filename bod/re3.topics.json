@@ -165,7 +165,7 @@
     "lang": "de,fr,it,en", 
     "selected_layers": "ch.bazl.luftfahrthindernis", 
     "staging": "test", 
-    "topic": "airnavigationobstacles", 
+    "topic": "aviation", 
     "show_catalog": true, 
     "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
     "order_key": 14
