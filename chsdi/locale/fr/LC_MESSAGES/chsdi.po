@@ -2124,7 +2124,7 @@ msgid "ch.swisstopo.transformationsgenauigkeit"
 msgstr "MN95 Précision de transformation"
 
 msgid "ch.swisstopo.treasurehunt"
-msgstr "Carte-trésor"
+msgstr "Carte-tresor"
 
 msgid "ch.swisstopo.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/fr/home.html"
@@ -3404,8 +3404,9 @@ msgstr "Service RDPPF"
 msgid "oereb_status"
 msgstr "Etat RDPPF"
 
+#. TODO
 msgid "oereb_url"
-msgstr "Géoportail cantonal"
+msgstr "oereb_url"
 
 msgid "official object webpage"
 msgstr "Page officielle de l'objet"

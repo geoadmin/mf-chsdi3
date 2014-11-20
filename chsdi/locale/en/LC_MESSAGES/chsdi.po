@@ -3405,8 +3405,9 @@ msgstr "PLR Authority"
 msgid "oereb_status"
 msgstr "PLR State"
 
+#. TODO
 msgid "oereb_url"
-msgstr "Cantonal geoportal"
+msgstr "oereb_url"
 
 msgid "official object webpage"
 msgstr "Official object webpage"

@@ -3404,8 +3404,9 @@ msgstr "ÖREB-Fachstelle"
 msgid "oereb_status"
 msgstr "Status ÖREB"
 
+#. TODO
 msgid "oereb_url"
-msgstr "Geportal chantunal"
+msgstr "oereb_url"
 
 msgid "official object webpage"
 msgstr "Offizielle Objectseite"
