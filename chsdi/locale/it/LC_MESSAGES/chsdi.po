@@ -3404,8 +3404,9 @@ msgstr "Servizio RDPP"
 msgid "oereb_status"
 msgstr "Stato RDPP"
 
+#. TODO
 msgid "oereb_url"
-msgstr "Geoportale cantonale"
+msgstr "oereb_url"
 
 msgid "official object webpage"
 msgstr "Pagina ufficiale dell'oggetto"

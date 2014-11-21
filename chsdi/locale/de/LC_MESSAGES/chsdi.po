@@ -2553,7 +2553,7 @@ msgid "hydrografische_herkunft"
 msgstr "Hydrografische Herkunft"
 
 msgid "hydromessstationen_graph"
-msgstr "3 Tage Wassenstand/Abfluss"
+msgstr "3 Tage Wasserstand/Abfluss"
 
 msgid "id_arealstatistik_09"
 msgstr "Grundkategorie Arealstatistik 2004/09"
@@ -3404,8 +3404,9 @@ msgstr "ÖREB-Fachstelle"
 msgid "oereb_status"
 msgstr "Status ÖREB"
 
+#. TODO
 msgid "oereb_url"
-msgstr "Kantonales geoportal"
+msgstr "oereb_url"
 
 msgid "official object webpage"
 msgstr "Offizielle Objektseite"
