@@ -1,14 +1,5 @@
 [
   {
-    "lang": "de,fr,it,en", 
-    "selected_layers": "", 
-    "staging": "prod", 
-    "topic": "bafu", 
-    "show_catalog": true, 
-    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
-    "order_key": 3
-  }, 
-  {
     "lang": "de,fr", 
     "selected_layers": "ch.swisstopo.geologie-geologischer_atlas,ch.swisstopo.geologie-tektonische_karte", 
     "staging": "prod", 
@@ -81,15 +72,6 @@
     "order_key": 2
   }, 
   {
-    "lang": "de,fr,it,en", 
-    "selected_layers": "", 
-    "staging": "prod", 
-    "topic": "swisstopo", 
-    "show_catalog": true, 
-    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
-    "order_key": 4
-  }, 
-  {
     "lang": "de,fr,it", 
     "selected_layers": "ch.astra.ivs-nat", 
     "staging": "prod", 
@@ -145,12 +127,30 @@
   }, 
   {
     "lang": "de,fr,it,en", 
+    "selected_layers": "", 
+    "staging": "prod", 
+    "topic": "swisstopo", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-farbe,ch.swisstopo.pixelkarte-grau,ch.swisstopo.swissimage", 
+    "order_key": 4
+  }, 
+  {
+    "lang": "de,fr,it,en", 
     "selected_layers": "ch.astra.unfaelle-personenschaeden_alle", 
     "staging": "prod", 
     "topic": "vu", 
     "show_catalog": true, 
     "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
     "order_key": 13
+  }, 
+  {
+    "lang": "de,fr,it,en", 
+    "selected_layers": "", 
+    "staging": "prod", 
+    "topic": "bafu", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
+    "order_key": 3
   }, 
   {
     "lang": "de,fr,it,rm,en", 
