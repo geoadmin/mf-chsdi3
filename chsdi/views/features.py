@@ -1,4 +1,4 @@
-#-*- utf-8 -*-
+# -*- coding: utf-8 -*-
 
 import re
 
@@ -330,8 +330,9 @@ def _get_features_for_filters(params, models, maxFeatures=None, where=None):
             # Filter by sql query
             # Only one filter = one layer
             if where is not None:
-                query = query.filter(text(where))
-
+                query = query.filter(text(
+                    where
+                ))
             # Filter by bbox
             if params.geometry is not None:
                 geomFilter = model.geom_filter(

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import re
+
 from shapely.geometry import asShape
 from pyramid.httpexceptions import HTTPBadRequest
 
@@ -93,7 +95,18 @@ class MapServiceValidation(MapNameValidation):
     def where(self, value):
         ## TODO regexp to test validity of sql clause
         if value is not None:
-            self._where = value
+            if 'ilike' in value:
+                match = re.search(r'(.*)(%.*%)(.*)', value)
+                where = ''.join((
+                    match.group(1).replace('\'', 'E\''),
+                    match.group(2).replace('\'', '\\\''),
+                    match.group(3)
+                ))
+                where = where.encode('ascii', 'replace')
+                where = where.replace('?', '%')
+                self._where = where
+            else:
+                self._where = value
 
     @geometry.setter
     def geometry(self, value):
