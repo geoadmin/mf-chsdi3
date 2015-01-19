@@ -19,6 +19,7 @@ class Gebaeuderegister(Base, Vector):
     # __minscale__ = 5001
     # due to https://redmine.bgdi.admin.ch/issues/3146 ltmoc  __maxscale__ = 25000
     # Composite labels
+    __queryable_attributes__ = ['strname1', 'deinr', 'plz4', 'plzname', 'gdename', 'egid']
     __label__ = 'strname1'
     id = Column('egid_edid', Text, primary_key=True)
     egid = Column('egid', Integer)

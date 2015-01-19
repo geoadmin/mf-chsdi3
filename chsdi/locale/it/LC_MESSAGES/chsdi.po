@@ -1709,6 +1709,24 @@ msgstr "Miscela della foresta 1990/1992"
 msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Registro degli edifici e delle abitazioni"
 
+msgid "ch.bfs.gebaeude_wohnungs_register.deinr"
+msgstr "N°"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.egid"
+msgstr "EGID"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.gdename"
+msgstr "Commune"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.plz4"
+msgstr "NPA"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.plzname"
+msgstr "Località"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.strname1"
+msgstr "Rue"
+
 msgid "ch.bfs.url"
 msgstr "http://www.bfs.admin.ch/bfs/portal/it/index.html"
 
@@ -1862,6 +1880,27 @@ msgstr "http://www.pronatura.ch/attualita"
 
 msgid "ch.pronatura.waldreservate"
 msgstr "Riserve forestali Pro Natura"
+
+msgid "ch.pronatura.waldreservate.gisflaeche"
+msgstr "Superficie [ha]"
+
+msgid "ch.pronatura.waldreservate.mcpfe"
+msgstr "Tipo di superficie protetta"
+
+msgid "ch.pronatura.waldreservate.name"
+msgstr "Nome"
+
+msgid "ch.pronatura.waldreservate.sg_nr"
+msgstr "Numero della riserva"
+
+msgid "ch.pronatura.waldreservate.tt_pronatura_e1"
+msgstr "Nessun intervento attivo"
+
+msgid "ch.pronatura.waldreservate.tt_pronatura_e2"
+msgstr "Interventi minimi"
+
+msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
+msgstr "Promozione delle biodiversità per mezzo di interventi specifici"
 
 msgid "ch.swisstopo"
 msgstr "swisstopo"

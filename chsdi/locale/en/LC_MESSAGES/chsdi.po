@@ -1709,6 +1709,24 @@ msgstr "Mixture of forests 1990/1992"
 msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Register of Buildings and Dwellings"
 
+msgid "ch.bfs.gebaeude_wohnungs_register.deinr"
+msgstr "Nr."
+
+msgid "ch.bfs.gebaeude_wohnungs_register.egid"
+msgstr "EGID"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.gdename"
+msgstr "City"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.plz4"
+msgstr "Zip"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.plzname"
+msgstr "Location"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.strname1"
+msgstr "Street"
+
 msgid "ch.bfs.url"
 msgstr "http://www.bfs.admin.ch/bfs/portal/en/index.html"
 
@@ -1862,6 +1880,27 @@ msgstr "http://www.pronatura.ch/79"
 
 msgid "ch.pronatura.waldreservate"
 msgstr "Pro Natura forest reserves"
+
+msgid "ch.pronatura.waldreservate.gisflaeche"
+msgstr "Area [ha]"
+
+msgid "ch.pronatura.waldreservate.mcpfe"
+msgstr "Type of protected area"
+
+msgid "ch.pronatura.waldreservate.name"
+msgstr "Name"
+
+msgid "ch.pronatura.waldreservate.sg_nr"
+msgstr "Number oft he reserve"
+
+msgid "ch.pronatura.waldreservate.tt_pronatura_e1"
+msgstr "No active intervention"
+
+msgid "ch.pronatura.waldreservate.tt_pronatura_e2"
+msgstr "Minimum Intervention"
+
+msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
+msgstr "Conservation through active management"
 
 msgid "ch.swisstopo"
 msgstr "swisstopo"
