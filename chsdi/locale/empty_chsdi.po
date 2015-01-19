@@ -1,3 +1,18 @@
+msgid "ch.bfe.energiestaedte-energieregionen.name"
+msgstr ""
+
+msgid "ch.bfe.energiestaedte-2000watt-aufdemweg.name"
+msgstr ""
+
+msgid "ch.bfe.energiestaedte-2000watt-areale.name_watt"
+msgstr ""
+
+msgid "ch.bfe.energiestaedte-2000watt-areale.name"
+msgstr ""
+
+msgid "ch.bfe.energiestaedte.name"
+msgstr ""
+
 msgid "None"
 msgstr ""
 

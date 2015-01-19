@@ -1628,11 +1628,26 @@ msgstr "Città dell’energia"
 msgid "ch.bfe.energiestaedte-2000watt-areale"
 msgstr "Aree 2000 Watt"
 
+msgid "ch.bfe.energiestaedte-2000watt-areale.name"
+msgstr "Area"
+
+msgid "ch.bfe.energiestaedte-2000watt-areale.name_watt"
+msgstr "Area 2000 Watt"
+
 msgid "ch.bfe.energiestaedte-2000watt-aufdemweg"
 msgstr "Città dell’energia verso 2000 Watt"
 
+msgid "ch.bfe.energiestaedte-2000watt-aufdemweg.name"
+msgstr "Comune / città"
+
 msgid "ch.bfe.energiestaedte-energieregionen"
 msgstr "Regioni-Energia"
+
+msgid "ch.bfe.energiestaedte-energieregionen.name"
+msgstr "Regioni-Energia"
+
+msgid "ch.bfe.energiestaedte.name"
+msgstr "Comune / città"
 
 msgid "ch.bfe.kernkraftwerke"
 msgstr "Centrali nucleari"
