@@ -357,6 +357,7 @@ class KATASTERBELASTETERSTANDORTE(Base, Vector):
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/kataster_belasteter_standorte_oev.mako'
     __bodId__ = 'ch.bav.kataster-belasteter-standorte-oev'
+    __queryable_attributes__ = ['katasternummer']
     __label__ = 'id'
     id = Column('vflz_id', Integer, primary_key=True)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
@@ -1347,7 +1348,7 @@ class sis_angaben (Base, Vector):
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/sis_angaben.mako'
     __bodId__ = 'ch.bav.sachplan-infrastruktur-schiene_ausgangslage'
-    __queryable_attributes__ = ['name', 'description_de', 'description_fr', 'description_it', 'description_en']
+    __queryable_attributes__ = ['name', 'description_fr', 'description_it', 'description_de']
     __label__ = 'name'
     id = Column('anlage_id', Text, primary_key=True)
     name = Column('name', Text)
@@ -1527,6 +1528,7 @@ class kbs_zivilflugpl(Base, Vector):
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/kataster_belasteter_standorte_zivflpl.mako'
     __bodId__ = 'ch.bazl.kataster-belasteter-standorte-zivilflugplaetze'
+    __queryable_attributes__ = ['katasternummer']
     __label__ = 'katasternummer'
     id = Column('vflz_id', Integer, primary_key=True)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',

@@ -971,6 +971,24 @@ msgstr "IVS Nazionale"
 msgid "ch.astra.ivs-nat-verlaeufe"
 msgstr "IVS Tracciato senza sostanza"
 
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_nummer"
+msgstr "Oggetto IVS"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_slaname"
+msgstr "Tracciato"
+
+msgid "ch.astra.ivs-nat.ivs_nummer"
+msgstr "Oggetto IVS"
+
+msgid "ch.astra.ivs-nat.ivs_signatur"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-nat.ivs_slaname"
+msgstr "Tracciato"
+
 msgid "ch.astra.ivs-nat_abgrenzungen"
 msgstr "IVS Delimitazioni"
 
@@ -979,6 +997,15 @@ msgstr "IVS Supporti del traffico"
 
 msgid "ch.astra.ivs-reg_loc"
 msgstr "IVS Regionali e locali"
+
+msgid "ch.astra.ivs-reg_loc.ivs_nummer"
+msgstr "Oggetto IVS"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-reg_loc.ivs_slaname"
+msgstr "Tracciato"
 
 msgid "ch.astra.ivs-reg_loc.sub"
 msgstr "IVS Regionali e locali"
@@ -989,8 +1016,20 @@ msgstr "USTRA + cantone"
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Circolazione stradale (regionale)"
 
+msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.id"
+msgstr "Numero"
+
+msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.zaehlstellen_bezeichnung"
+msgstr "Posti di contaggio"
+
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"
 msgstr "Circolazione stradale (principale)"
+
+msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet.id"
+msgstr "Numero"
+
+msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet.zaehlstellen_bezeichnung"
+msgstr "Posti di contaggio"
 
 msgid "ch.astra.unfaelle-personenschaeden_alle"
 msgstr "Incidenti con danni personali"
@@ -1015,6 +1054,9 @@ msgstr "FOCP"
 
 msgid "ch.babs.kulturgueter"
 msgstr "Inventario dei beni culturali"
+
+msgid "ch.babs.kulturgueter.zkob"
+msgstr "Description"
 
 msgid "ch.babs.url"
 msgstr "http://www.bevoelkerungsschutz.admin.ch/internet/bs/it/home/das_babs.html"
@@ -1172,11 +1214,26 @@ msgstr "Incremento del legno (IFN)"
 msgid "ch.bafu.hydrologie-gewaesserzustandsmessstationen"
 msgstr "Siti misurazione stato delle acque"
 
+msgid "ch.bafu.hydrologie-gewaesserzustandsmessstationen.gewaesser"
+msgstr "Nome del corso d’acqua"
+
+msgid "ch.bafu.hydrologie-gewaesserzustandsmessstationen.name"
+msgstr "Nome del sito di prova"
+
+msgid "ch.bafu.hydrologie-gewaesserzustandsmessstationen.nr"
+msgstr "Numero della stazione"
+
 msgid "ch.bafu.hydrologie-hydromessstationen"
 msgstr "Stazioni idrologiche"
 
 msgid "ch.bafu.hydrologie-wassertemperaturmessstationen"
 msgstr "Stazioni misurazione temperatura"
+
+msgid "ch.bafu.hydrologie-wassertemperaturmessstationen.id"
+msgstr "Numero della stazione"
+
+msgid "ch.bafu.hydrologie-wassertemperaturmessstationen.name"
+msgstr "Nome della stazione"
 
 msgid "ch.bafu.kt"
 msgstr "UFAM + cantone"
@@ -1484,6 +1541,12 @@ msgstr "Ubicazione antenne 3G (UMTS)"
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emittenti radiotelevisive"
 
+msgid "ch.bakom.radio-fernsehsender.code"
+msgstr "Code"
+
+msgid "ch.bakom.radio-fernsehsender.name"
+msgstr "Nome"
+
 msgid "ch.bakom.uplink1"
 msgstr "Upload ≥ 1 Mbit/s"
 
@@ -1511,14 +1574,23 @@ msgstr "TV su rete fissa"
 msgid "ch.bakom.versorgungsgebiet-tv"
 msgstr "Zone di copertura TV"
 
+msgid "ch.bakom.versorgungsgebiet-tv.prog"
+msgstr "Programmi"
+
 msgid "ch.bakom.versorgungsgebiet-ukw"
 msgstr "Zone di copertura radio"
+
+msgid "ch.bakom.versorgungsgebiet-ukw.prog"
+msgstr "Programmi"
 
 msgid "ch.bav"
 msgstr "UFT"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev"
 msgstr "Siti inquinati trasporti pubbl."
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.katasternummer"
+msgstr "Numero UFT del sito"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Piano delle emissioni 2015"
@@ -1532,11 +1604,65 @@ msgstr "Piano emissioni foniche ferr 2015 G"
 msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung"
 msgstr "SIS consultazione"
 
+msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung.doc_title"
+msgstr "Informazioni supplementari"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung.facname_de"
+msgstr "Installazione"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung.facname_fr"
+msgstr "Installazione"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung.facname_it"
+msgstr "Installazione"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung.plname_de"
+msgstr "Misura"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung.plname_fr"
+msgstr "Misura"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung.plname_it"
+msgstr "Misura"
+
 msgid "ch.bav.sachplan-infrastruktur-schiene_ausgangslage"
 msgstr "SIS statu quo"
 
+msgid "ch.bav.sachplan-infrastruktur-schiene_ausgangslage.description_de"
+msgstr "Descrizione"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_ausgangslage.description_fr"
+msgstr "Descrizione"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_ausgangslage.description_it"
+msgstr "Descrizione"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_ausgangslage.name"
+msgstr "Nome di progetto"
+
 msgid "ch.bav.sachplan-infrastruktur-schiene_kraft"
 msgstr "SIS in vigore"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_kraft.doc_title"
+msgstr "Informazioni supplementari"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_kraft.facname_de"
+msgstr "Installazione"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_kraft.facname_fr"
+msgstr "Installazione"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_kraft.facname_it"
+msgstr "Installazione"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_kraft.plname_de"
+msgstr "Misura"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_kraft.plname_fr"
+msgstr "Misura"
+
+msgid "ch.bav.sachplan-infrastruktur-schiene_kraft.plname_it"
+msgstr "Misura"
 
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=it"
@@ -1549,6 +1675,9 @@ msgstr "Eliporti/aree d'atterr. in montagna"
 
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze"
 msgstr "Siti inquinati aeroporti civili"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.katasternummer"
+msgstr "Numero UFAC del sito"
 
 msgid "ch.bazl.landschaftsruhezonen"
 msgstr "Zone di calma per l'aviazione"
