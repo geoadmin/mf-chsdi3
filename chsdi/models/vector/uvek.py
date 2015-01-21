@@ -401,6 +401,7 @@ class ENERGIESTAEDTE(Base, Vector):
     __template__ = 'templates/htmlpopup/energiestaedte.mako'
     __bodId__ = 'ch.bfe.energiestaedte'
     __extended_info__ = True
+    __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
@@ -426,6 +427,7 @@ class ENERGIESTAEDTEREGIONEN(Base, Vector):
     __template__ = 'templates/htmlpopup/energiestaedte_energieregionen.mako'
     __bodId__ = 'ch.bfe.energiestaedte-energieregionen'
     __extended_info__ = True
+    __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
@@ -446,6 +448,7 @@ class ENERGIESTAEDTE2000WATTAREALE(Base, Vector):
     __template__ = 'templates/htmlpopup/energiestaedte_2000watt_areale.mako'
     __bodId__ = 'ch.bfe.energiestaedte-2000watt-areale'
     __extended_info__ = True
+    __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
@@ -469,6 +472,7 @@ class ENERGIESTAEDTE2000AUFDEMWEG(Base, Vector):
     __template__ = 'templates/htmlpopup/energiestaedte_2000watt_auf_dem_weg.mako'
     __bodId__ = 'ch.bfe.energiestaedte-2000watt-aufdemweg'
     __extended_info__ = True
+    __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
