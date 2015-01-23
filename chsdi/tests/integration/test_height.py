@@ -30,7 +30,7 @@ class TestHeightView(TestsBase):
     def test_height_with_comb(self):
         resp = self.testapp.get('/rest/services/height', params={'easting': '600000', 'northing': '200000', 'layers': 'COMB'}, headers=self.headers, status=200)
         self.failUnless(resp.content_type == 'application/json')
-        self.failUnless(resp.json['height'] == '556.5')
+        self.failUnless(resp.json['height'] == '552.9')
 
     def test_height_wrong_layer(self):
         resp = self.testapp.get('/rest/services/height', params={'easting': '600000', 'northing': '200000', 'layers': 'TOTO'}, headers=self.headers, status=400)
