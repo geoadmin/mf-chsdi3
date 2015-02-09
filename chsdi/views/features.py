@@ -262,7 +262,8 @@ def _identify(request):
     maxFeatures = params.maxFeatures
     if maxFeatures is None:
         maxFeatures = 200
-
+    elif maxFeatures == 'all':
+        maxFeatures = 10000
     total = _get_nb_features_for_filters(params, models, maxFeatures=maxFeatures, where=params.where)
 
     features = []
