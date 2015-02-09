@@ -68,6 +68,7 @@ def _get_features_params(request):
     params.tolerance = request.params.get('tolerance')
     params.layers = request.params.get('layers', 'all')
     params.timeInstant = request.params.get('timeInstant')
+    params.maxFeatures = request.params.get('maxFeatures')
     return params
 
 
@@ -258,7 +259,10 @@ def _identify(request):
     if models is None:
         raise exc.HTTPBadRequest('No GeoTable was found for %s' % ' '.join(layerIds))
 
-    maxFeatures = 200
+    maxFeatures = params.maxFeatures
+    if maxFeatures is None:
+        maxFeatures = 200
+
     features = []
     for feature in _get_features_for_filters(params, models, maxFeatures=maxFeatures, where=params.where):
         f = _process_feature(feature, params)
