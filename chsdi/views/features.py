@@ -263,6 +263,8 @@ def _identify(request):
     if maxFeatures is None:
         maxFeatures = 200
 
+    total = _get_nb_features_for_filters(params, models, maxFeatures=maxFeatures, where=params.where)
+
     features = []
     for feature in _get_features_for_filters(params, models, maxFeatures=maxFeatures, where=params.where):
         f = _process_feature(feature, params)
@@ -270,7 +272,7 @@ def _identify(request):
         if len(features) > maxFeatures:
             break
 
-    return {'results': features}
+    return {'total': total, 'results': features}
 
 
 def _get_feature_service(request):
@@ -325,6 +327,53 @@ def _render_feature_template(vectorModel, feature, request, extended=False):
             'hasExtendedInfo': hasExtendedInfo
         },
         request=request)
+
+
+def _get_nb_features_for_filters(params, models, maxFeatures=None, where=None):
+    ''' Returns a generator function that yields
+    a feature. '''
+    for vectorLayer in models:
+        for model in vectorLayer:
+            query = params.request.db.query(model)
+
+            # Filter by sql query
+            # Only one filter = one layer
+            if where is not None:
+                txt = format_query(model, where)
+                if txt is None:
+                    raise exc.HTTPBadRequest('The where clause is not valid.')
+                query = query.filter(text(
+                    txt
+                ))
+            # Filter by bbox
+            if params.geometry is not None:
+                geomFilter = model.geom_filter(
+                    params.geometry,
+                    params.geometryType,
+                    params.imageDisplay,
+                    params.mapExtent,
+                    params.tolerance
+                )
+                # Can be None because of max and min scale
+                if geomFilter is not None:
+                    # TODO Remove code specific clauses
+                    query = query.order_by(model.bgdi_order) if hasattr(model, 'bgdi_order') else query
+                    query = query.filter(geomFilter)
+
+            # Filter by time instant
+            if params.timeInstant is not None and hasattr(model, '__timeInstant__'):
+                timeInstantColumn = model.time_instant_column()
+                query = query.filter(timeInstantColumn == params.timeInstant)
+
+            # Add limit
+            #query = query.limit(maxFeatures) if maxFeatures is not None else query
+
+            # We need either where or geomFilter (geomFilter especially for zeitreihen layer)
+            # This probably needs refactoring...
+            # if where is not None or geomFilter is not None:
+            #    for feature in query:
+            #        yield feature
+            return query.count()
 
 
 def _get_features_for_filters(params, models, maxFeatures=None, where=None):
