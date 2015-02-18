@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import uuid
 import cgi
 import json
 import datetime
@@ -72,11 +73,13 @@ def feedback(self, request):
         mailServer.sendmail(to, to, msg.as_string())
         mailServer.close()
 
+    # unique messag id
+    uid = str(uuid.uuid1())
     ua = getParam('ua', 'no user-agent found')
     permalink = getParam('permalink', 'No permalink provided')
     feedback = getParam('feedback', 'No feedback provided')
     email = getParam('email', 'Anonymous')
-    text = u'%s just sent a feedback:\n %s. \nPermalink: %s. \n\nUser-Agent: %s'
+    text = u'%s just sent a feedback:\n\n%s\n\nPermalink: %s\n\nUser-Agent: %s\n\nMessagID: %s'
     attachement = getParam('attachement', None)
     kml = getParam('kml', None)
     now = datetime.datetime.now()
@@ -92,14 +95,15 @@ def feedback(self, request):
         'kml': kmlfilename if (kml is not None and kml is not '') else '',
         'attachement': attachfilename,
         'userAgent': ua,
-        'date': now.strftime("%Y-%m-%d %H:%M")
+        'date': now.strftime("%Y-%m-%d %H:%M"),
+        'messagId': uid
     }
 
     try:
         mail(
             defaultRecipient,
             defaultSubject,
-            text % (email, feedback, permalink, ua),
+            text % (email, feedback, permalink, ua, uid),
             attachement,
             kml,
             kmlfilename,
