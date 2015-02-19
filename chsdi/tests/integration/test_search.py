@@ -80,9 +80,13 @@ class TestSearchServiceView(TestsBase):
         self.failUnless('wil' in resp.json['results'][0]['attrs']['detail'])
 
     def test_search_location_max_address(self):
+        staging = self.testapp.app.registry.settings['geodata_staging']
+        maxresults = 62
+        if staging != 'test':
+            maxresults = 20
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'seftigenstrasse', 'type': 'locations'}, status=200)
         self.failUnless(resp.content_type == 'application/json')
-        self.failUnless(len(resp.json['results']) <= 20)
+        self.failUnless(len(resp.json['results']) <= maxresults)
 
     def test_search_locations_no_geometry(self):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'seftigenstrasse 264', 'type': 'locations', 'returnGeometry': 'false'}, status=200)
