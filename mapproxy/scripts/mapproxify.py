@@ -44,6 +44,7 @@ from pyramid.paster import get_appsettings
 
 from chsdi.models.bod import LayersConfig
 from chsdi.models.bod import get_wmts_models
+from chsdi.lib.filters import filter_by_geodata_staging
 
 
 DEBUG = False
@@ -64,7 +65,14 @@ def getLayersConfigs():
     DBSession.configure(bind=engine)
 
     models = get_wmts_models(LANG)
+    staging = settings.get('geodata_staging', 'prod')
     layers_query = DBSession.query(models['GetCap'])
+
+    layers_query = filter_by_geodata_staging(
+        layers_query,
+        models['GetCap'].staging,
+        staging
+    )
     layers_query = layers_query.filter(models['GetCap'].maps.ilike('%%%s%%' % 'api'))
     DBSession.close()
 
