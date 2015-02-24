@@ -331,16 +331,17 @@ class Search(SearchValidation):
 
     def _detect_keywords(self):
         if len(self.searchText) > 0:
-            PARCEL_KEYWORDS = ('parzelle', 'parcelle', 'parcella', 'parcel')
-            ADDRESS_KEYWORDS = ('addresse', 'adresse', 'indirizzo', 'address')
-            firstWord = self.searchText[0].lower()
-            if firstWord in PARCEL_KEYWORDS:
+            PARCEL_KEYWORDS = ['parzelle:', 'parcelle:', 'parcella:', 'parcel:']
+            ADDRESS_KEYWORDS = ['addresse:', 'adresse:', 'indirizzo:', 'address:']
+            if any(x.lower() in (str.lower() for str in self.searchText) for x in PARCEL_KEYWORDS):
                 # As one cannot apply filters on string attributes, we use the rank information
                 self.sphinx.SetFilter('rank', self._origins_to_ranks(['parcel']))
-                del self.searchText[0]
-            elif firstWord in ADDRESS_KEYWORDS:
+                for i in reversed([i for i, x in enumerate(self.searchText) if x.lower() in (x.lower() for x in PARCEL_KEYWORDS)]):
+                    del self.searchText[i]
+            elif any(x.lower() in (str.lower() for str in self.searchText) for x in ADDRESS_KEYWORDS):
                 self.sphinx.SetFilter('rank', self._origins_to_ranks(['address']))
-                del self.searchText[0]
+                for i in reversed([i for i, x in enumerate(self.searchText) if x.lower() in (x.lower() for x in ADDRESS_KEYWORDS)]):
+                    del self.searchText[i]
 
     def _filter_locations_by_origins(self):
         ranks = self._origins_to_ranks(self.origins)
