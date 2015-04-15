@@ -9,6 +9,32 @@
 Release Notes
 =============
 
+.. _releasenotes_20150422:
+
+Release 20150325 - Wednesday, April 22nd 2015
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_xxxxxx...r_xxxxxx>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_xxxxxx...r_xxxxx>`__
+
+
+Geodata
+*******
+
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update    | `Geological Atlas 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                 |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20150325:
 
 Release 20150325 - Wednesday, March 25th 2015
