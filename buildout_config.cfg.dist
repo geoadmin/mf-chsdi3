@@ -1,0 +1,57 @@
+[buildout]
+extends = buildout.cfg
+
+[vars]
+# apache
+apache_base_path =
+# urls
+host = api.geoadmin.local
+# api service url
+api_url = //api.geoadmin.local
+# geoadmin host
+geoadminhost = geoadmin.local
+# wms
+wmshost = mapserver.local
+# database host
+dbhost = carto_dev:oeuches45@localhost
+
+# database port
+dbport = 5432
+# database
+server_port = 9000
+
+# robots file
+robots_file = robots.txt
+# deploy_target
+deploy_target = dev
+# print files directory
+print_temp_dir = /tmp
+# Geodata staging
+geodata_staging = prod
+# database staging (not the same as geodata staginga
+db_staging = prod
+
+# mapproxy
+mapproxyhost = api.geoadmin.local
+#mapproxy wsgi options
+mapproxy_wsgi_options = processes=4 threads=32
+#wsgi daemon threads
+wsgi_threads = 30
+# the Unix user under which the modwsgi daemon processes are executed,
+# can be overriden in development-specific buildout config files
+modwsgi_user = apache
+
+#zadara
+zadara_dir =
+#http proxy
+http_proxy =
+# sphinx
+sphinxhost =
+
+
+[modwsgi]
+config-file = ${buildout:directory}/development.ini
+
+
+[deploy]
+git_branch = sigeom

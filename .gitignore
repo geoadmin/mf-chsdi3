@@ -29,3 +29,4 @@ buildout_branch.cfg
 deploy/deploy-branch.cfg
 deploy/conf/00-branch.conf
 print/WEB-INF/web.xml
+buildout_config.cfg
