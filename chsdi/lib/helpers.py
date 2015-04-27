@@ -235,3 +235,8 @@ def get_debug_headers(config):
         return {name.strip(): value.strip() for name, value in headers_list}
     else:
         return {}
+
+
+def get_debug_headerlist(config):
+    headers = get_debug_headers(config)
+    return [(name, value) for name, value in headers.items()]

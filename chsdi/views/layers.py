@@ -15,6 +15,7 @@ from chsdi.lib.validation.mapservice import MapServiceValidation
 from chsdi.models import models_from_name
 from chsdi.models.bod import LayersConfig, get_bod_model, computeHeader
 from chsdi.lib.filters import full_text_search, filter_by_geodata_staging, filter_by_map_name
+from chsdi.lib.helpers import get_debug_headerlist
 
 SAMPLE_SIZE = 100
 MAX_ATTRIBUTES_VALUES = 5
@@ -68,6 +69,7 @@ def layers_config(request):
     layers = {}
     for layer in get_layers_config_for_params(params, query, LayersConfig):
         layers = dict(layers.items() + layer.items())
+    request.response.headerlist.extend(get_debug_headerlist(request.registry.settings))
     return layers
 
 
