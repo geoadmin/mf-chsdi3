@@ -229,7 +229,7 @@ def transformCoordinate(wkt, srid_from, srid_to):
 
 
 def get_debug_headers(config):
-    if 'pyramid.debug_header' in config:
+    if 'pyramid.debug_header' in config and config['pyramid.debug_header'].strip() :
         raw_headers = config['pyramid.debug_header']
         headers_list = [header.split(':') for header in raw_headers.split(';')]
         return {name.strip(): value.strip() for name, value in headers_list}
