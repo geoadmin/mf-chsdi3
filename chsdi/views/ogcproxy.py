@@ -9,6 +9,7 @@ from pyramid.view import view_config
 from pyramid.httpexceptions import HTTPBadRequest, HTTPBadGateway, HTTPNotAcceptable
 from pyramid.response import Response
 from chsdi.lib.decorators import requires_authorization
+from chsdi.lib.helpers import get_debug_headers
 
 
 from StringIO import StringIO
@@ -82,7 +83,10 @@ class OgcProxy:
                 content = data.encode(DEFAULT_ENCODING)
                 content = content.replace(doc_encoding, DEFAULT_ENCODING)
 
+        debug_headers = get_debug_headers(self.request.registry.settings)
+        headers = {"Content-Type": ct}
+        headers.update(debug_headers)
         response = Response(content, status=resp.status,
-                            headers={"Content-Type": ct})
+                            headers=headers)
 
         return response

@@ -7,6 +7,7 @@ from chsdi.models.bod import Catalog
 from chsdi.lib.validation import MapNameValidation
 from chsdi.lib.sqlalchemy_customs import remove_accents
 from chsdi.lib.filters import filter_by_geodata_staging
+from chsdi.lib.helpers import get_debug_headerlist
 
 
 class CatalogService(MapNameValidation):
@@ -30,6 +31,9 @@ class CatalogService(MapNameValidation):
         if len(rows) == 0:
             raise HTTPNotFound('No catalog with id %s is available' % self.mapName)
 
+        self.request.response.headerlist.extend(get_debug_headerlist(
+                self.request.registry.settings
+        ))
         return {'results': self.tree(rows)}
 
     def tree(self, rows=[]):
