@@ -5,6 +5,8 @@ from pyramid.view import view_config
 from pyramid.renderers import render_to_response
 from pyramid.request import Request
 
+from chsdi.lib.helpers import make_api_url
+
 
 @view_config(route_name='ga_api', renderer='json')
 def loadjs(request):
@@ -16,6 +18,9 @@ def loadjs(request):
     subRequest = Request.blank(path)
     resp = request.invoke_subrequest(subRequest)
     data = simplejson.loads(resp.body)
+    for layer in data:
+        if data[layer]['type'] == 'geojson' and 'styleUrl' in data[layer]:
+            data[layer]['styleUrl'] = make_api_url(request) + '/static/vectorStyles/' + layer + '.json'
     response = render_to_response(
         'chsdi:templates/loader.js',
         {
