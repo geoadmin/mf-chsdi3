@@ -26,25 +26,30 @@ from chsdi.lib.decorators import requires_authorization, validate_kml_input
 
 
 def _get_dynamodb_table():
-    # PROFILE_NAME = 'Credentials'
+    table = None
+    debugval = 1
     DYNAMODB_TABLE_NAME = 'geoadmin-file-storage'
-    user_cfg = os.path.join(os.path.expanduser("~"), '.boto')
-    config = ConfigParser.ConfigParser()
-    config.read(["/etc/boto.cfg", user_cfg])
+    try:
+        PROFILE_NAME = 'Credentials'
+        user_cfg = os.path.join(os.path.expanduser("~"), '.boto')
+        config = ConfigParser.ConfigParser()
+        config.read(["/etc/boto.cfg", user_cfg])
+        access_key = config.get(PROFILE_NAME, 'aws_access_key_id')
+        secret_key = config.get(PROFILE_NAME, 'aws_secret_access_key')
+        conn = connect_to_region('eu-west-1', aws_access_key_id=access_key,
+                                 aws_secret_access_key=secret_key, debug=debugval)
+        table = Table(DYNAMODB_TABLE_NAME, connection=conn)
+    except:
+        table = None
 
-    # access_key = config.get(PROFILE_NAME, 'aws_access_key_id')
-    # secret_key = config.get(PROFILE_NAME, 'aws_secret_access_key')
-
-    # conn = connect_to_region('eu-west-1', aws_access_key_id=access_key,
-    #                          aws_secret_access_key=secret_key)
-    conn = connect_to_region('eu-west-1')
-
-    table = Table(DYNAMODB_TABLE_NAME, connection=conn)
+    if table is None:
+        try:
+            table = Table(DYNAMODB_TABLE_NAME, connection=connect_to_region('eu-west-dd1', debug=debugval))
+        except:
+            raise exc.HTTPInternalServerError('Unable to access dynamodb table')
 
     return table
 
-
-    # return get_table(table_name='geoadmin-file-storage')
 
 def _add_item(id, file_id=False):
     table = _get_dynamodb_table()
