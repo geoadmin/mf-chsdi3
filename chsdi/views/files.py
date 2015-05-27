@@ -1,20 +1,14 @@
 # -*- coding: utf-8 -*-
 
-import os.path
 import uuid
 import base64
 import time
 import zipfile
-import ConfigParser
 import StringIO
 
-from boto.dynamodb2.table import Table
-from boto.dynamodb2 import connect_to_region
 from boto.dynamodb2.exceptions import ItemNotFound
 
-#from chsdi.models.clientdata_dynamodb import get_table
-
-from boto.s3.connection import S3Connection
+from boto.exception import S3ResponseError
 from boto.s3.key import Key
 from boto.utils import parse_ts
 
@@ -22,37 +16,12 @@ from pyramid.view import view_config, view_defaults
 import pyramid.httpexceptions as exc
 from pyramid.response import Response
 
+from chsdi.models.clientdata_dynamodb import get_dynamodb_table, get_bucket
 from chsdi.lib.decorators import requires_authorization, validate_kml_input
 
 
-def _get_dynamodb_table():
-    table = None
-    debugval = 1
-    DYNAMODB_TABLE_NAME = 'geoadmin-file-storage'
-    try:
-        PROFILE_NAME = 'Credentials'
-        user_cfg = os.path.join(os.path.expanduser("~"), '.boto')
-        config = ConfigParser.ConfigParser()
-        config.read(["/etc/boto.cfg", user_cfg])
-        access_key = config.get(PROFILE_NAME, 'aws_access_key_id')
-        secret_key = config.get(PROFILE_NAME, 'aws_secret_access_key')
-        conn = connect_to_region('eu-west-1', aws_access_key_id=access_key,
-                                 aws_secret_access_key=secret_key, debug=debugval)
-        table = Table(DYNAMODB_TABLE_NAME, connection=conn)
-    except:
-        table = None
-
-    if table is None:
-        try:
-            table = Table(DYNAMODB_TABLE_NAME, connection=connect_to_region('eu-west-1', debug=debugval))
-        except Exception as e:
-            raise exc.HTTPInternalServerError('Unable to access dynamodb table (%s)' % e)
-
-    return table
-
-
 def _add_item(id, file_id=False):
-    table = _get_dynamodb_table()
+    table = get_dynamodb_table(table_name='geoadmin-file-storage')
     try:
         table.put_item(
             data={
@@ -62,12 +31,12 @@ def _add_item(id, file_id=False):
             }
         )
     except Exception as e:
-            raise exc.HTTPBadRequest('Error during put item %s' % e)
+        raise exc.HTTPBadRequest('Error during put item %s' % e)
     return True
 
 
 def _save_item(admin_id, file_id=None, last_updated=None):
-    table = _get_dynamodb_table()
+    table = get_dynamodb_table(table_name='geoadmin-file-storage')
     item = None
     if last_updated is not None:
         timestamp = last_updated.strftime('%Y-%m-%d %X')
@@ -84,7 +53,7 @@ def _save_item(admin_id, file_id=None, last_updated=None):
                 }
             )
         except Exception as e:
-                raise exc.HTTPBadRequest('Error during put item %s' % e)
+            raise exc.HTTPBadRequest('Error during put item %s' % e)
         return True
 
     else:
@@ -100,7 +69,7 @@ def _save_item(admin_id, file_id=None, last_updated=None):
 
 
 def _is_admin_id(admin_id):
-    table = _get_dynamodb_table()
+    table = get_dynamodb_table(table_name='geoadmin-file-storage')
     try:
         table.get_item(adminId=str(admin_id))
     except ItemNotFound:
@@ -111,7 +80,7 @@ def _is_admin_id(admin_id):
 
 def _get_file_id_from_admin_id(admin_id):
     fileId = None
-    table = _get_dynamodb_table()
+    table = get_dynamodb_table(table_name='geoadmin-file-storage')
     try:
         item = table.get_item(adminId=str(admin_id))
         fileId = item.get('fileId')
@@ -127,7 +96,7 @@ class FileView(object):
 
     def __init__(self, request):
         self.request = request
-        self.bucket = self._get_bucket()
+        self.bucket = get_bucket(request)
         if request.matched_route.name == 'files':
             self.admin_id = None
             self.key = None
@@ -139,8 +108,11 @@ class FileView(object):
                 self.file_id = id
             try:
                 key = self.bucket.get_key(self.file_id)
-            except:
-                raise exc.HTTPInternalServerError('Cannot access file with id=%s' % self.file_id)
+            except S3ResponseError as e:
+                raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (self.file_id, e))
+            except Exception as e:
+                raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (self.file_id, e))
+
             if key is not None:
                 self.key = key
             else:
@@ -148,27 +120,6 @@ class FileView(object):
 
     def _get_uuid(self):
         return base64.urlsafe_b64encode(uuid.uuid4().bytes).replace('=', '')
-
-    def _get_bucket(self):
-        # TODO use profile instead when correctly installed
-        PROFILE_NAME = 'profile geoadmin_filestorage'
-        BUCKET_NAME = self.request.registry.settings['geoadmin_file_storage_bucket']
-        user_cfg = os.path.join(os.path.expanduser("~"), '.boto')
-        config = ConfigParser.ConfigParser()
-        config.read(["/etc/boto.cfg", user_cfg])
-        try:
-            access_key = config.get(PROFILE_NAME, 'aws_access_key_id')
-            secret_key = config.get(PROFILE_NAME, 'aws_secret_access_key')
-        except Exception as e:
-            raise exc.HTTPInternalServerError('Error while trying to configure file access (%s)' % e)
-
-        try:
-            conn = S3Connection(aws_access_key_id=access_key, aws_secret_access_key=secret_key)
-            bucket = conn.get_bucket(BUCKET_NAME)
-        except Exception as e:
-            raise exc.HTTPBadRequest('Error during connection %s' % e)
-
-        return bucket
 
     @view_config(route_name='files_collection', request_method='OPTIONS', renderer='string')
     def options_files_collection(self):
@@ -234,8 +185,8 @@ class FileView(object):
             else:
                 data = self.key.get_contents_as_string()
                 return Response(data, content_type=self.key.content_type)
-        except:
-            raise exc.HTTPNotFound('File %s not found' % self.file_id)
+        except Exception as e:
+            raise exc.HTTPNotFound('File %s not found %s' % (self.file_id, e))
 
     @view_config(request_method='POST')
     @requires_authorization()
@@ -249,8 +200,8 @@ class FileView(object):
                 self._save_to_s3(data, mime, update=True)
 
                 return {'adminId': self.admin_id, 'fileId': self.file_id, 'status': 'updated'}
-            except:
-                raise exc.HTTPInternalServerError('Cannot update file with id=%s' % self.admin_id)
+            except Exception as e:
+                raise exc.HTTPInternalServerError('Cannot update file with id=%s %s' % (self.admin_id, e))
         else:
             # Fork file, get new file ids
             self.file_id = self._get_uuid()
@@ -269,8 +220,8 @@ class FileView(object):
             try:
                 self.bucket.delete_key(self.key)
                 return {'success': True}
-            except:
-                raise exc.HTTPInternalServerError('Error while deleting file %s' % self.file_id)
+            except Exception as e:
+                raise exc.HTTPInternalServerError('Error while deleting file %s. %e' % (self.file_id, e))
         else:
             raise exc.HTTPUnauthorized('You are not authorized to delete file %s' % self.file_id)
 
@@ -279,5 +230,6 @@ class FileView(object):
         # TODO: doesn't seem to be applied
         self.request.response.headers.update({
             'Access-Control-Allow-Methods': 'POST,GET,DELETE,OPTIONS',
-            'Access-Control-Allow-Credentials': 'true'})
+            'Access-Control-Allow-Credentials': 'true'
+        })
         return ''
