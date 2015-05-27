@@ -44,7 +44,7 @@ def _get_dynamodb_table():
 
     if table is None:
         try:
-            table = Table(DYNAMODB_TABLE_NAME, connection=connect_to_region('eu-west-dd1', debug=debugval))
+            table = Table(DYNAMODB_TABLE_NAME, connection=connect_to_region('eu-west-1', debug=debugval))
         except:
             raise exc.HTTPInternalServerError('Unable to access dynamodb table')
 
