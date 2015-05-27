@@ -70,7 +70,7 @@ port = 6543
 ###
 
 [loggers]
-keys = root, chsdi, sqlalchemy
+keys = root, chsdi, sqlalchemy, boto
 
 [logger_sqlalchemy]
 level = WARN
@@ -94,6 +94,11 @@ handlers = console
 level = WARN
 handlers =
 qualname = chsdi
+
+[logger_boto]
+level = DEBUG
+handlers = console
+qualname = boto
 
 [handler_console]
 class = StreamHandler
