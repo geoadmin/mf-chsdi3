@@ -45,8 +45,8 @@ def _get_dynamodb_table():
     if table is None:
         try:
             table = Table(DYNAMODB_TABLE_NAME, connection=connect_to_region('eu-west-1', debug=debugval))
-        except:
-            raise exc.HTTPInternalServerError('Unable to access dynamodb table')
+        except Exception as e:
+            raise exc.HTTPInternalServerError('Unable to access dynamodb table (%s)' % e)
 
     return table
 
@@ -160,7 +160,7 @@ class FileView(object):
             access_key = config.get(PROFILE_NAME, 'aws_access_key_id')
             secret_key = config.get(PROFILE_NAME, 'aws_secret_access_key')
         except Exception as e:
-            raise exc.HTTPInternalServerError('Error while trying to configure file access')
+            raise exc.HTTPInternalServerError('Error while trying to configure file access (%s)' % e)
 
         try:
             conn = S3Connection(aws_access_key_id=access_key, aws_secret_access_key=secret_key)
@@ -201,8 +201,8 @@ class FileView(object):
                 key = self.bucket.get_key(k.key)
                 last_updated = parse_ts(key.last_modified)
                 _save_item(self.admin_id, file_id=self.file_id, last_updated=last_updated)
-            except:
-                raise exc.HTTPInternalServerError('Cannot create file on S3')
+            except Exception as e:
+                raise exc.HTTPInternalServerError('Cannot create file on S3 (%s)' % e)
         else:
             try:
                 if self.key.content_type == 'application/vnd.google-earth.kmz' and ziped_data is not None:
@@ -211,8 +211,8 @@ class FileView(object):
                 key = self.bucket.get_key(self.key.key)
                 last_updated = parse_ts(key.last_modified)
                 _save_item(self.admin_id, last_updated=last_updated)
-            except:
-                raise exc.HTTPInternalServerError('Cannot update file on S3')
+            except Exception as e:
+                raise exc.HTTPInternalServerError('Cannot update file on S3 (%s)' % e)
 
     @view_config(route_name='files_collection', request_method='POST')
     @requires_authorization()
