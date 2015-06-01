@@ -7,33 +7,44 @@ from chsdi.lib.helpers import round
 from chsdi.lib.validation.profile import ProfileValidation
 from chsdi.lib.raster.georaster import get_raster
 from chsdi.lib.decorators import requires_authorization
+from pyramid.response import Response
+import urllib
 
 
 class Profile(ProfileValidation):
 
     def __init__(self, request):
         super(Profile, self).__init__()
-        self.linestring = request.params.get('geom')
-        if 'layers' in request.params:
-            self.layers = request.params.get('layers')
-        else:
-            self.layers = request.params.get('elevation_models')
-        if 'nbPoints' in request.params:
-            self.nb_points = request.params.get('nbPoints')
-        else:
-            self.nb_points = request.params.get('nb_points')
-        self.ma_offset = request.params.get('offset')
         self.request = request
+        if request.method != 'OPTIONS':
+            if ('geom' in request.params):
+                self.linestring = request.params.get('geom')
+            else:
+                self.linestring = urllib.unquote_plus(self.request.body)
+
+            if 'layers' in request.params:
+                self.layers = request.params.get('layers')
+            else:
+                self.layers = request.params.get('elevation_models')
+            if 'nbPoints' in request.params:
+                self.nb_points = request.params.get('nbPoints')
+            else:
+                self.nb_points = request.params.get('nb_points')
+            self.ma_offset = request.params.get('offset')
 
     @requires_authorization()
     @view_config(route_name='profile_json', renderer='jsonp', http_cache=0)
     def json(self):
+        if self.request.method == 'OPTIONS':
+            return Response(status=200)
         self.json = True
         return self._compute_points()
 
     @requires_authorization()
     @view_config(route_name='profile_csv', renderer='csv', http_cache=0)
     def csv(self):
+        if self.request.method == 'OPTIONS':
+            return Response(status=200)
         self.json = False
         return self._compute_points()
 
