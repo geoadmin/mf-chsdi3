@@ -293,6 +293,9 @@ msgstr "Ja"
 msgid "abfluss"
 msgstr "Abfluss m3/s"
 
+msgid "abflussvar"
+msgstr "Abflussvariabilität (%)"
+
 msgid "abfrage"
 msgstr "Datenbfrage"
 
@@ -308,11 +311,17 @@ msgstr "m ü.M."
 msgid "abkuerzung"
 msgstr "Abkürzung"
 
+msgid "abteilung"
+msgstr "Abteilung"
+
 msgid "aktuelle_daten"
 msgstr "Aktuelle und historische Daten"
 
 msgid "alexandria"
 msgstr "Bibliografische Angaben"
+
+msgid "amt"
+msgstr "Amt"
 
 msgid "anzahlaudits"
 msgstr "Anzahl erfolgreicher Audits"
@@ -373,6 +382,9 @@ msgstr "Autor"
 
 msgid "auxiliary_information"
 msgstr "Beschreibung des Inhaltes"
+
+msgid "azimut"
+msgstr "Azimut"
 
 msgid "bafu_NHVText"
 msgstr "NHV Status"
@@ -1148,6 +1160,9 @@ msgstr "Vernetzungssystem Wildtiere"
 msgid "ch.bafu.fauna-wildtierkorridor_national"
 msgstr "Wildtierkorridore Überregional"
 
+msgid "ch.bafu.feststoffe-geschiebemessnetz"
+msgstr "SOLID Bund, Geschiebe"
+
 msgid "ch.bafu.fischerei-aeschen_kernzonen"
 msgstr "Äschen: Kernzonen"
 
@@ -1456,6 +1471,9 @@ msgstr "Totholz (LFI)"
 
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Waldanteil (LFI)"
+
+msgid "ch.bafu.mittlere-abfluesse"
+msgstr "Mittlere Abflüsse (m³/s)"
 
 msgid "ch.bafu.moose"
 msgstr "Rote Liste Moose"
@@ -1771,6 +1789,9 @@ msgstr "Teileinzugsgebiete 40km2"
 
 msgid "ch.bafu.wasser-vorfluter"
 msgstr "Vorfluter"
+
+msgid "ch.bafu.wasserbau-querprofilmarken"
+msgstr "Querprofilmarke"
 
 msgid "ch.bafu.wasserbau-vermessungsstrecken"
 msgstr "Vermessungsstrecken"
@@ -3512,6 +3533,12 @@ msgstr "Einwohnerzahl (nur für Siedl.)"
 msgid "elevation"
 msgstr "Höhe"
 
+msgid "emailadresse1"
+msgstr "E-Mail Adresse1"
+
+msgid "emailadresse2"
+msgstr "E-Mail Adresse2"
+
 msgid "energiebedarf_motoren"
 msgstr "Energiebedarf Motoren"
 
@@ -3569,11 +3596,17 @@ msgstr "Bouguer Anomalie [mGal]"
 msgid "et_fromatt_ch"
 msgstr "Aeromagnetische Anomalien Schweiz [nT]"
 
+msgid "exp"
+msgstr "Exposition"
+
 msgid "faktenblatt"
 msgstr "Faktenblatt"
 
 msgid "fassung"
 msgstr "Fassung"
+
+msgid "fax"
+msgstr "Fax"
 
 msgid "feature"
 msgstr "Objekt"
@@ -3604,6 +3637,15 @@ msgstr "Fläche [m2]"
 
 msgid "fliessgewaesser"
 msgstr "Fliessgewässer"
+
+msgid "fluss"
+msgstr "Flussname"
+
+msgid "fn"
+msgstr "Einzugsgebietsgrösse in km2"
+
+msgid "form"
+msgstr "Formfaktor L²/F"
 
 msgid "format_de"
 msgstr "Lieferbare Formate"
@@ -3680,6 +3722,9 @@ msgstr "Tektonische Einheit"
 msgid "geol_f"
 msgstr "Einheit"
 
+msgid "geologie_fr_de"
+msgstr "Geologie"
+
 msgid "geometalink"
 msgstr "Nachführungsgeometer, Grundbuch und andere Metadata"
 
@@ -3740,11 +3785,17 @@ msgstr "Telefon"
 msgid "grundurl"
 msgstr "E-Mail / Web"
 
+msgid "gsch_n"
+msgstr "Identifikation des Geschiebesammlers"
+
 msgid "help title"
 msgstr "Hilfe"
 
 msgid "help url"
 msgstr "http://www.geo.admin.ch/internet/geoportal/de/commons/help/viewer_help.html"
+
+msgid "herkunft"
+msgstr "Herkunft"
 
 msgid "hersteller"
 msgstr "Hersteller"
@@ -3754,6 +3805,15 @@ msgstr "Ausblenden der Themen"
 
 msgid "hier"
 msgstr "Hier"
+
+msgid "hmax"
+msgstr "Höchster Punkt im Einzugsgebiet (m)"
+
+msgid "hmed"
+msgstr "Mittlere Höhe des Einzugsgebietes (m)"
+
+msgid "hmin"
+msgstr "Tiefster Punkt im Einzugsgebiet (m)"
 
 msgid "hoehe_see"
 msgstr "Höhe über Meer des Seespiegels [m]"
@@ -3823,6 +3883,9 @@ msgstr "Information"
 
 msgid "installierteleistung"
 msgstr "Installierte Leistung"
+
+msgid "institut"
+msgstr "Institut"
 
 msgid "intern"
 msgstr "Intern"
@@ -3943,6 +4006,9 @@ msgstr "Theoretisches hydroelektrisches Potential [kW/m]"
 
 msgid "konf_objekt"
 msgstr "Konfiguration der Objekte"
+
+msgid "kontakt_name"
+msgstr "Kontaktperson"
 
 msgid "krebsart"
 msgstr "Krebsart lateinisch"
@@ -4451,6 +4517,9 @@ msgstr "Länge [m]"
 msgid "laenge_strecke_m"
 msgstr "Länge der Strecke [m]"
 
+msgid "lage"
+msgstr "Geographische Lage "
+
 msgid "lage_objekt"
 msgstr "Lage des Objekts in Bezug zum Gelände"
 
@@ -4508,6 +4577,9 @@ msgstr "Detaillierte Beschreibung"
 msgid "linkzurlegende"
 msgstr "Link zur Legende"
 
+msgid "lk"
+msgstr "Nummer des Landeskartenblattes "
+
 msgid "lokal"
 msgstr "lokal"
 
@@ -4546,6 +4618,45 @@ msgstr "Modell"
 
 msgid "modif_validfrom"
 msgstr "Beschlussdatum"
+
+msgid "mqn_apr"
+msgstr "Q Apr"
+
+msgid "mqn_aug"
+msgstr "Q Aug"
+
+msgid "mqn_dez"
+msgstr "Q Dez"
+
+msgid "mqn_feb"
+msgstr "Q Feb"
+
+msgid "mqn_jahr"
+msgstr "Q Jahr"
+
+msgid "mqn_jan"
+msgstr "Q Jan"
+
+msgid "mqn_jul"
+msgstr "Q Jul"
+
+msgid "mqn_jun"
+msgstr "Q Jun"
+
+msgid "mqn_mai"
+msgstr "Q Mai"
+
+msgid "mqn_mar"
+msgstr "Q Mar"
+
+msgid "mqn_nov"
+msgstr "Q Nov"
+
+msgid "mqn_okt"
+msgstr "Q Okt"
+
+msgid "mqn_sep"
+msgstr "Q Sep"
 
 msgid "municipality"
 msgstr "Betroffene Gemeinden"
@@ -4670,6 +4781,9 @@ msgstr "Name des Antragstellers"
 msgid "ort"
 msgstr "Ort"
 
+msgid "ort_fr_de"
+msgstr "Ort"
+
 msgid "ortsbildname"
 msgstr "Ortsbild"
 
@@ -4694,7 +4808,13 @@ msgstr "Perimeter [m]"
 msgid "physischvirtuell"
 msgstr "Physisch-virtuell"
 
+msgid "platz"
+msgstr "Ablagerungsplatz"
+
 msgid "plz"
+msgstr "PLZ"
+
+msgid "plz_fr_de"
 msgstr "PLZ"
 
 msgid "print"
@@ -4729,6 +4849,12 @@ msgstr "Qualitätsstandard"
 
 msgid "raeumliche_qualitaeten"
 msgstr "Räumliche Qualitäten"
+
+msgid "regimenummer"
+msgstr "Regimenummer"
+
+msgid "regimetyp"
+msgstr "Regimetyp"
 
 msgid "regional"
 msgstr "regional"
@@ -4775,14 +4901,23 @@ msgstr "http://www.geo.admin.ch/internet/geoportal/de/home/current.enhRSS.html"
 msgid "rwknr"
 msgstr "Restwasserkarte Nr."
 
+msgid "sachbearb"
+msgstr "Sachbearb"
+
 msgid "safety_zone"
 msgstr "Bezeichnung"
 
 msgid "schiffbarkeit"
 msgstr "Schiffbarkeit des Gewässers"
 
+msgid "schluesselid"
+msgstr "Schluessel_ID"
+
 msgid "schonzeit"
 msgstr "Schonzeit"
+
+msgid "sektion"
+msgstr "Sektion"
 
 msgid "sektor"
 msgstr "Sektor"
@@ -4811,6 +4946,9 @@ msgstr "http://www.seismo.ethz.ch/index"
 msgid "stand"
 msgstr "Stand"
 
+msgid "station"
+msgstr "Name der Messstation"
+
 msgid "stationsname"
 msgstr "Stationsname"
 
@@ -4830,6 +4968,9 @@ msgid "stoff"
 msgstr "Produktion"
 
 msgid "strasse"
+msgstr "Strasse"
+
+msgid "strasse_fr_de"
 msgstr "Strasse"
 
 msgid "strassentyp"
@@ -4855,6 +4996,9 @@ msgstr "Fläche Teileinzugsgebiet [km2]"
 
 msgid "teilobjektnr"
 msgstr "Teilobjektnr."
+
+msgid "telephon_fr_de"
+msgstr "Telephon"
 
 msgid "tezgnr40"
 msgstr "Teileinzugsgebiets-Nummer"
@@ -5951,6 +6095,9 @@ msgid "twitter url"
 msgstr "http://www.twitter.com/swiss_geoportal"
 
 msgid "typ"
+msgstr "Typ"
+
+msgid "typ_fr_de"
 msgstr "Typ"
 
 msgid "typ_kraftwerk"

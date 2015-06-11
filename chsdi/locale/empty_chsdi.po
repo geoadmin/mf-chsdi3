@@ -34,6 +34,12 @@ msgstr ""
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.vergletscherung"
 msgstr ""
 
+msgid "ch.bafu.mittlere-abfluesse"
+msgstr ""
+
+msgid "ch.bafu.wasserbau-querprofilmarken"
+msgstr ""
+
 msgid "ch.sgpk.maechtigkeit-lockergesteine.epaisseur"
 msgstr ""
 
@@ -119,6 +125,9 @@ msgid "ch.nagra.aeromagnetische-karte_1100"
 msgstr ""
 
 msgid "ch.nagra.aeromagnetische-karte_1500"
+msgstr ""
+
+msgid "ch.bafu.feststoffe-geschiebemessnetz"
 msgstr ""
 
 msgid "ch.bafu.hydrologie-hochwasserstatistik.coordX"
@@ -935,6 +944,84 @@ msgid "ch.swisstopo.private"
 msgstr ""
 
 msgid "ch.swisstopo.kt.url"
+msgstr ""
+
+msgid "gsch_n"
+msgstr ""
+
+msgid "lk"
+msgstr ""
+
+msgid "lage"
+msgstr ""
+
+msgid "fn"
+msgstr ""
+
+msgid "hmax"
+msgstr ""
+
+msgid "hmin"
+msgstr ""
+
+msgid "hmed"
+msgstr ""
+
+msgid "exp"
+msgstr ""
+
+msgid "form"
+msgstr ""
+
+msgid "geologie_fr_de"
+msgstr ""
+
+msgid "platz"
+msgstr ""
+
+msgid "fluss"
+msgstr ""
+
+msgid "station"
+msgstr ""
+
+msgid "institut"
+msgstr ""
+
+msgid "amt"
+msgstr ""
+
+msgid "abteilung"
+msgstr ""
+
+msgid "sektion"
+msgstr ""
+
+msgid "kontakt_name"
+msgstr ""
+
+msgid "strasse_fr_de"
+msgstr ""
+
+msgid "plz_fr_de"
+msgstr ""
+
+msgid "ort_fr_de"
+msgstr ""
+
+msgid "sachbearb"
+msgstr ""
+
+msgid "telephon_fr_de"
+msgstr ""
+
+msgid "fax"
+msgstr ""
+
+msgid "emailadresse1"
+msgstr ""
+
+msgid "emailadresse2"
 msgstr ""
 
 msgid "ch.bafu"
@@ -3021,7 +3108,7 @@ msgstr ""
 
 msgid "url"
 msgstr ""
- 
+
 msgid "nummer"
 msgstr ""
 
@@ -3032,6 +3119,66 @@ msgid "protokoll"
 msgstr ""
 
 msgid "punktname"
+msgstr ""
+
+msgid "mqn_jahr"
+msgstr ""
+
+msgid "mqn_jan"
+msgstr ""
+
+msgid "mqn_feb"
+msgstr ""
+
+msgid "mqn_mar"
+msgstr ""
+
+msgid "mqn_apr"
+msgstr ""
+
+msgid "mqn_mai"
+msgstr ""
+
+msgid "mqn_jun"
+msgstr ""
+
+msgid "mqn_jul"
+msgstr ""
+
+msgid "mqn_aug"
+msgstr ""
+
+msgid "mqn_sep"
+msgstr ""
+
+msgid "mqn_okt"
+msgstr ""
+
+msgid "mqn_nov"
+msgstr ""
+
+msgid "mqn_dez"
+msgstr ""
+
+msgid "regimetyp"
+msgstr ""
+
+msgid "regimenummer"
+msgstr ""
+
+msgid "abflussvar"
+msgstr ""
+
+msgid "schluesselid"
+msgstr ""
+
+msgid "typ_fr_de"
+msgstr ""
+
+msgid "azimut"
+msgstr ""
+
+msgid "herkunft"
 msgstr ""
 
 msgid "status"

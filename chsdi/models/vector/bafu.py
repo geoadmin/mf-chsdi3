@@ -118,6 +118,104 @@ class Wasser_Vermessungsstrecken(Base, Vector):
 register('ch.bafu.wasserbau-vermessungsstrecken', Wasser_Vermessungsstrecken)
 
 
+class Mittlere_abfluesse(Base, Vector):
+    __tablename__ = 'mittlere_abfluesse'
+    __table_args__ = ({'schema': 'wasser', 'autoload': False})
+    __bodId__ = 'ch.bafu.mittlere-abfluesse'
+    __template__ = 'templates/htmlpopup/mittlere_abfluesse.mako'
+    __extended_info__ = True
+    __label__ = 'regimenummer'
+    __queryable_attributes__ = ['mqn_jahr', 'mqn_jan', 'mqn_feb', 'mqn_mar', 'mqn_apr', 'mqn_mai', 'mqn_jun', 'mqn_jul', 'mqn_aug', 'mqn_sep', 'mqn_okt', 'mqn_nov', 'mqn_dez', 'regimetyp', 'regimenummer', 'abflussvar']
+    id = Column('bgdi_id', Integer, primary_key=True)
+    mqn_jahr = Column('mqn_jahr', Numeric)
+    mqn_jan = Column('mqn_jan', Numeric)
+    mqn_feb = Column('mqn_feb', Numeric)
+    mqn_mar = Column('mqn_mar', Numeric)
+    mqn_apr = Column('mqn_apr', Numeric)
+    mqn_mai = Column('mqn_mai', Numeric)
+    mqn_jun = Column('mqn_jun', Numeric)
+    mqn_jul = Column('mqn_jul', Numeric)
+    mqn_aug = Column('mqn_aug', Numeric)
+    mqn_sep = Column('mqn_sep', Numeric)
+    mqn_okt = Column('mqn_okt', Numeric)
+    mqn_nov = Column('mqn_nov', Numeric)
+    mqn_dez = Column('mqn_dez', Numeric)
+    regimetyp = Column('regimetyp', Text)
+    regimenummer = Column('regimenummer', Integer)
+    abflussvar = Column('abflussvar', Integer)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY', dimension=2, srid=21781))
+
+register('ch.bafu.mittlere-abfluesse', Mittlere_abfluesse)
+
+
+class Wasserbau_querprofilmarken(Base, Vector):
+    __tablename__ = 'querprofilmarken'
+    __table_args__ = ({'schema': 'wasser', 'autoload': False})
+    __bodId__ = 'ch.bafu.wasserbau-querprofilmarken'
+    __template__ = 'templates/htmlpopup/querprofilmarken.mako'
+    __extended_info__ = True
+    __label__ = 'schluesselid'
+    __queryable_attributes__ = ['typ', 'herkunft']
+    id = Column('bgdi_id', Integer, primary_key=True)
+    schluesselid = Column('schluesselid', Integer)
+    typ = Column('typ', Text)
+    x_koordinate = Column('x_koordinate', Numeric)
+    y_koordinate = Column('y_koordinate', Numeric)
+    azimut = Column('azimut', Integer)
+    herkunft = Column('herkunft', Text)
+    bemerkung = Column('bemerkung', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY', dimension=2, srid=21781))
+
+register('ch.bafu.wasserbau-querprofilmarken', Wasserbau_querprofilmarken)
+
+
+class Feststoffe_geschiebemessnetz(Base, Vector):
+    __tablename__ = 'geschiebemessnetz'
+    __table_args__ = ({'schema': 'wasser', 'autoload': False})
+    __bodId__ = 'ch.bafu.feststoffe-geschiebemessnetz'
+    __template__ = 'templates/htmlpopup/geschiebemessnetz.mako'
+    __extended_info__ = True
+    __label__ = 'fluss'
+    __queryable_attributes__ = ['gsch_n', 'lk', 'lage', 'fn', 'hmax', 'hmin', 'hmed', 'exp', 'form', 'geologie', 'platz', 'fluss', 'station', 'institut', 'amt']
+    id = Column('bgdi_id', Integer, primary_key=True)
+    rechtswert = Column('rechtswert', Integer)
+    hochwert = Column('hochwert', Text)
+    gsch_n = Column('gsch_n', Numeric)
+    lk = Column('lk', Numeric)
+    lage = Column('lage', Integer)
+    fn = Column('fn', Text)
+    hmax = Column('hmax', Text)
+    hmin = Column('hmin', Text)
+    hmed = Column('hmed', Text)
+    exp = Column('exp', Text)
+    form = Column('form', Text)
+    geologie = Column('geologie', Text)
+    platz = Column('platz', Text)
+    fluss = Column('fluss', Text)
+    station = Column('station', Text)
+    institut = Column('institut', Text)
+    amt = Column('amt', Text)
+    abteilung = Column('abteilung', Text)
+    sektion = Column('sektion', Text)
+    kontakt_name = Column('kontakt_name', Text)
+    strasse = Column('strasse', Text)
+    plz = Column('plz', Text)
+    ort = Column('ort', Text)
+    sachbearb = Column('sachbearb', Text)
+    telephon = Column('telephon', Text)
+    fax = Column('fax', Text)
+    emailadresse1 = Column('emailadresse1', Text)
+    emailadresse2 = Column('emailadresse2', Text)
+    pdf_file = Column('pdf_file', Text)
+    lage_de = Column('lage_de', Text)
+    lage_fr = Column('lage_fr', Text)
+    platz_de = Column('platz_de', Text)
+    platz_fr = Column('platz_fr', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY', dimension=2, srid=21781))
+
+register('ch.bafu.feststoffe-geschiebemessnetz', Feststoffe_geschiebemessnetz)
+
+
 class Hydro_q347(Base, Vector):
     __tablename__ = 'hydro_q347'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
