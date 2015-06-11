@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.3.final using JasperReports Library version 6.0.3  -->
+<!-- 2015-02-27T13:34:13 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="1190" pageHeight="1684" columnWidth="1064" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="34" isSummaryNewPage="true" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="mm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="mm"/>
+	<parameter name="mapSubReport" class="java.lang.String"/>
+	<parameter name="scalebarSubReport" class="java.lang.String"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="legend" class="net.sf.jasperreports.engine.data.JRTableModelDataSource"/>
+	<parameter name="legendSubReport" class="java.lang.String"/>
+	<parameter name="scale" class="java.lang.String">
+		<defaultValueExpression><![CDATA[5000]]></defaultValueExpression>
+	</parameter>
+	<parameter name="url" class="java.lang.String">
+		<defaultValueExpression><![CDATA["http://g-o.lu/start"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="qrimage" class="java.lang.String">
+		<defaultValueExpression><![CDATA["http://dev.geoportail.lu/shorten/qr?url=http%3A%2F%2Fdevv3.geoportail.lu%2Fmain"]]></defaultValueExpression>
+	</parameter>
+	<field name="table" class="net.sf.jasperreports.engine.data.JRMapCollectionDataSource"/>
+	<field name="displayName" class="java.lang.String"/>
+	<field name="reportTemplate" class="java.lang.String"/>
+	<title>
+		<band height="1593" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="mm"/>
+			<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+			<staticText>
+				<reportElement x="739" y="-5" width="325" height="50" uuid="3988392b-f1e2-4eda-9cb4-7caa2b3eb0cc"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans" size="30"/>
+				</textElement>
+				<text><![CDATA[map.geoportail.lu]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="0" y="55" width="1064" height="1475" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<subreportExpression><![CDATA[$P{mapSubReport}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="661" y="1543" width="230" height="40" uuid="fa145068-76a5-4834-98ed-ce65b1976b3d"/>
+				<subreportExpression><![CDATA[$P{scalebarSubReport}]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="380" y="0" width="555" height="23" uuid="245a4b0e-d6e2-4c82-a5ec-072b3cc182e4"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="16" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RetainShape">
+				<reportElement x="0" y="0" width="230" height="51" uuid="70bbdaea-7cb7-4c97-b3ad-fd38c75a98ad"/>
+				<imageExpression><![CDATA["LOGO_ACT.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="739" y="29" width="325" height="30" uuid="f8a42822-0e3d-4802-ad70-024f9cc6677c"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[Le géoportail national du Grand-Duché du Luxembourg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="670" y="1533" width="280" height="30" uuid="eeaea6dd-01ac-4bbe-9216-e47772a7bcd9"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[Echelle approximative 1:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="795" y="1533" width="71" height="40" uuid="7a0a9863-e339-4697-b24b-d6178dbb85c5"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{scale}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="1024" y="1553" width="40" height="40" uuid="4e19a7b3-e5c9-4db3-ba26-65fd8e83fba6">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{qrimage}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="1533" width="530" height="59" uuid="90411500-de3c-418d-9c8d-cac869972f42"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<text><![CDATA[www.geoportail.lu est un portail d'accès aux informations géolocalisées, données et services qui sont mis à disposition par les administrations publiques luxembourgeoises.
+Responsabilité: Malgré la grande attention qu’elles portent à la justesse des informations diffusées sur ce site, les autorités ne peuvent endosser aucune responsabilité quant à la fidélité, à l’exactitude, à l’actualité, à la fiabilité et à l’intégralité de ces informations. Information dépourvue de foi publique.
+Droits d'auteur: Administration du Cadastre et de la Topographie. http://wiki.geoportal.lu/doku.php?id=fr:mcg_1]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="960" y="1533" width="104" height="30" uuid="39ebc32b-521c-4db2-9e67-82ba86a9850c"/>
+				<textElement textAlignment="Right">
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{url}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<summary>
+		<band height="68" splitType="Stretch">
+			<textField>
+				<reportElement x="-1" y="3" width="555" height="23" uuid="d07b4b5c-e5f3-45ce-8c22-f020b1473383"/>
+				<textElement>
+					<font size="16" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Legend"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-1" y="26" width="555" height="42" uuid="b4cae0ad-a520-425e-b790-d6984af7ddc8"/>
+				<dataSourceExpression><![CDATA[$P{legend}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{legendSubReport}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>
