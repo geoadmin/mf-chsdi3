@@ -51,5 +51,6 @@
         "printLegend": 0,
         "scale": 300000
     },
-    "layout": "Demo"
+    "layout": "Demo",
+    "outputFormat": "pdf"
 }

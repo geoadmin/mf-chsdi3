@@ -27,10 +27,9 @@
                             "symbolizers": [{
                                 "fillColor": "#FF0000",
                                 "fillOpacity": 0,
-                                "rotation": "30",
+                                "rotation": "[nummer]",
                                 "type": "point",
                                 "externalGraphic": "http://map.geo.admin.ch/1433939002/img/maki/alcohol-shop-24@2x.png",
-                                "graphicName": "circle",
                                 "graphicOpacity": 0.8,
                                 "pointRadius": 16
                             }]
@@ -52,5 +51,6 @@
         "printLegend": 0,
         "scale": 300000
     },
-    "layout": "Demo"
+    "layout": "Demo",
+    "outputFormat": "pdf"
 }
