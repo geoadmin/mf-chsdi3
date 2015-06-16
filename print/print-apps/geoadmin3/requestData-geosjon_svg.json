@@ -39,7 +39,7 @@
             "rotation": 0,
             "scale": 500000
         },
-        "name": "Test WMS",
+        "name": "Test WMS + GeoJSON using SVG graphics",
         "printLegend": 0,
         "scale": 300000
     },

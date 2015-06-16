@@ -1,0 +1,30 @@
+{
+    "attributes": {
+        "map": {
+            "center": [
+                600000,
+                200000
+            ],
+            "dpi": 300,
+            "layers": [{
+
+            "geoJson": "file://ressources/geol.gk500_lithologie_hauptgruppen.geojson",
+            style: "file://ressources/geol.gk500_lithologie_hauptgruppen.sld",
+            "renderAsSvg" : "true",
+            "type": "geojson"
+        }
+
+
+],
+            "projection": "EPSG:21781",
+            "rotation": 0,
+            "scale": 500000
+        },
+        "name": "Test WMS",
+        "printLegend": 0,
+        "scale": 300000
+    },
+    "layout": "Demo",
+     "outputFormat": "pdf"
+
+}

@@ -47,7 +47,7 @@
             "rotation": 0,
             "scale": 500000
         },
-        "name": "Test WMS",
+        "name": "Test WMS + style v2 using rules and attributes values",
         "printLegend": 0,
         "scale": 300000
     },

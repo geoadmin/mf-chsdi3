@@ -27,7 +27,7 @@
             "rotation": 0,
             "scale": 500000
         },
-        "name": "Test WMS",
+        "name": "Test WMS + GeoJSON (from WFS)",
         "printLegend": 0,
         "scale": 300000
     },

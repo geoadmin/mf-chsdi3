@@ -1,0 +1,37 @@
+{
+    "attributes": {
+        "map": {
+            "center": [
+                600000,
+                200000
+            ],
+            "dpi": 300,
+            "layers": [{
+                "baseURL": "http://wms.geo.admin.ch",
+                "customParams": {"TRANSPARENT": "true"},
+                "imageFormat": "image/png",
+                "layers": ["ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"],
+                "opacity": 0.25,
+                "styles": ["default"],
+                "type": "WMS"
+            },
+{
+            "geoJson": "file://ressources/bln.geojson",
+            style: "file://ressources/lines.sld",
+            "type": "geojson"
+        }
+
+
+],
+            "projection": "EPSG:21781",
+            "rotation": 0,
+            "scale": 500000
+        },
+        "name": "Test WMS",
+        "printLegend": 0,
+        "scale": 1000000
+    },
+    "layout": "Demo",
+     "outputFormat": "pdf"
+
+}
