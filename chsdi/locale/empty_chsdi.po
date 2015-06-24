@@ -928,6 +928,12 @@ msgstr ""
 msgid "ch.bazl.url"
 msgstr ""
 
+msgid "ch.swisstopo.cnes"
+msgstr ""
+
+msgid "ch.swisstopo.cnes.url"
+msgstr ""
+
 msgid "ch.swisstopo.kt"
 msgstr ""
 
@@ -5836,84 +5842,6 @@ msgid "ch_bafu_hydrologie_niedrigwasserstatistik.Beeinflussung"
 msgstr ""
 
 msgid "ch_bafu_hydrologie_niedrigwasserstatistik.Genauigkeit"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.Anz_Jahre"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM1Q100"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM1Q50"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM1Q20"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM1Q10"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM1Q5"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM1Q2"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM7Q100"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM7Q50"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM7Q20"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM7Q10"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM7Q5"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM7Q2"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM14Q100"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM14Q50"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM14Q20"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM14Q10"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM14Q5"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM14Q2"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM30Q100"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM30Q50"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM30Q20"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM30Q10"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM30Q5"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.NM30Q2"
-msgstr ""
-
-msgid "ch_bafu_hydrologie_niedrigwasserstatistik.hyperlink"
 msgstr ""
 
 msgid "ch.bafu.typisierung-fliessgewaesser"
