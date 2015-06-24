@@ -928,6 +928,12 @@ msgstr ""
 msgid "ch.bazl.url"
 msgstr ""
 
+msgid "ch.swisstopo.cnes"
+msgstr ""
+
+msgid "ch.swisstopo.cnes.url"
+msgstr ""
+
 msgid "ch.swisstopo.kt"
 msgstr ""
 
