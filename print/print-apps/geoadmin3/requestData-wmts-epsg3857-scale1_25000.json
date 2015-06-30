@@ -1,0 +1,162 @@
+{
+    "attributes": {
+        "name": "WMTS: EPSG:3857",
+        "url": "http://www.toto.ch",
+        "scale": 25000,
+        "map": {
+            "center": [
+                828695.6851970111,
+                5933686.68453687
+            ],
+            "dpi": 300,
+            "layers": [{
+                    "baseURL": "http://wms.geo.admin.ch",
+                    "customParams": {
+                        "TRANSPARENT": "true"
+                    },
+                    "imageFormat": "image/png",
+                    "layers": ["ch.babs.kulturgueter"],
+                    "opacity": 0.8,
+                    "styles": ["default"],
+                    "type": "WMS"
+                },
+
+
+
+                {
+                    "type": "WMTS",
+                    "baseURL": "http://wmts11.geo.admin.ch/1.0.0/{Layer}/{style}/{Time}/{TileMatrixSet}/{TileMatrix}/{TileCol}/{TileRow}.jpeg",
+                    "opacity": "0.5",
+                    "layer": "ch.swisstopo.pixelkarte-farbe",
+                    "requestEncoding": "REST",
+                    "version": "1.0.0",
+                    "style": "default",
+                    "dimensions": ["Time"],
+                    "dimensionParams": {
+                        "TIME": "20151231"
+                    },                    
+                    "matrixSet": "3857",
+                    "matrices": [{
+                            "identifier": "0",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 559082264.029,
+                            "matrixSize": [1, 1]
+                        }, {
+                            "identifier": "1",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 279541132.014,
+                            "matrixSize": [2, 2]
+                        }, {
+                            "identifier": "2",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 139770566.007,
+                            "matrixSize": [4, 4]
+                        }, {
+                            "identifier": "3",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 69885283.0036,
+                            "matrixSize": [8, 8]
+                        }, {
+                            "identifier": "4",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 34942641.5018,
+                            "matrixSize": [16, 16]
+                        }, {
+                            "identifier": "5",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 17471320.7509,
+                            "matrixSize": [32, 32]
+                        }, {
+                            "identifier": "6",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 8735660.37545,
+                            "matrixSize": [64, 64]
+                        }, {
+                            "identifier": "7",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 4367830.18772,
+                            "matrixSize": [128, 128]
+                        }, {
+                            "identifier": "8",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 2183915.09386,
+                            "matrixSize": [256, 256]
+                        }, {
+                            "identifier": "9",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 1091957.54693,
+                            "matrixSize": [512, 512]
+                        }, {
+                            "identifier": "10",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 545978.773466,
+                            "matrixSize": [1024, 1024]
+                        }, {
+                            "identifier": "11",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 272989.386733,
+                            "matrixSize": [2048, 2048]
+                        }, {
+                            "identifier": "12",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 136494.693366,
+                            "matrixSize": [4096, 4096]
+                        }, {
+                            "identifier": "13",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 68247.3466832,
+                            "matrixSize": [8192, 8192]
+                        }, {
+                            "identifier": "14",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 34123.6733416,
+                            "matrixSize": [16384, 16384]
+                        }, {
+                            "identifier": "15",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 17061.8366708,
+                            "matrixSize": [32768, 32768]
+                        }, {
+                            "identifier": "16",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 8530.9183354,
+                            "matrixSize": [65536, 65536]
+                        }, {
+                            "identifier": "17",
+                            "tileSize": [256, 256],
+                            "topLeftCorner": [-20037508.342789244, 20037508.342789244],
+                            "scaleDenominator": 4265.4591677,
+                            "matrixSize": [131072, 131072]
+                        }
+
+                    ],
+                    "imageFormat": "jpeg"
+                }
+
+            ],
+            "projection": "EPSG:3857",
+            "rotation": 0,
+            "scale": 25000
+        }
+    },
+    "layout": "Demo",
+    "outputFormat": "pdf"
+
+}
