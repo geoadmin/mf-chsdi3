@@ -10,7 +10,7 @@ except ImportError:
 
 from psycopg2.extras import RealDictCursor
 
-dbconnectionstring = "dbname='bod' port=5432 user='www-data' host='pgcluster0t.bgdi.admin.ch'"
+dbconnectionstring = "dbname='bod_dev' port=5432 user='www-data' host='pg-sandbox.bgdi.ch'"
 
 if __name__ == '__main__':
     bod_views = ['re3.topics',

@@ -15,13 +15,15 @@ import os
 # To switch between file-based/sqlite backed data and
 # postgres/bod backed data, just adapt the variable below
 
-__bodbackend__ = 'sqlite' # file-based backend
-#__bodbackend__ = 'bod'   # postgres backend
+__bodbackend__ = 'sqlite'  # file-based backend
+# __bodbackend__ = 'bod'   # postgres backend
 
 Base = bases[__bodbackend__]
 
+
 def is_sqlite():
     return __bodbackend__ == 'sqlite'
+
 
 class Bod(object):
     layerBodId = Column('bod_layer_id', Text, primary_key=True)
@@ -127,7 +129,7 @@ class LayersConfig(Base):
                             self.__dict__[k]
                         )
                 elif (k == 'subLayersIds' or k == 'timestamps') and \
-                     type(self.__dict__[k]) is not list:
+                        not isinstance(self.__dict__[k], list):
                     config[k] = self.__dict__[k].split(',')
                 else:
                     config[k] = self.__dict__[k]
@@ -368,7 +370,6 @@ class Topics(Base):
     staging = Column('staging', Text)
 
 
-
 class Catalog(Base):
     __tablename__ = 'view_catalog'
     if not is_sqlite():
@@ -505,5 +506,3 @@ def initialize_sqlite():
     session.add_all(items)
     session.commit()
     session.close()
-
-
