@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import httplib2
+import requests
 import json
 import StringIO
 
@@ -45,9 +45,8 @@ def _make_qrcode_img(url):
 def _shorten_url(request, url):
     API3_SHORTEN_URL = make_api_url(request) + '/shorten.json?url=%s'
     try:
-        h = httplib2.Http()
-        resp, content = h.request(API3_SHORTEN_URL % url, 'GET')
-        resp = json.loads(content)
+        resp = requests.get(API3_SHORTEN_URL % url)
+        resp = json.loads(resp.text)
         url = resp['shorturl']
         return url
     except:
