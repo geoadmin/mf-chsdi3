@@ -6959,6 +6959,9 @@ msgstr "Protection period"
 msgid "tt_wrz_select_zusatz"
 msgstr "More info"
 
+msgid "tt_zeitreihen_FullResView"
+msgstr "View of the original map"
+
 msgid "twitter title"
 msgstr "Twitter"
 

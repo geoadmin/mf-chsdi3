@@ -6959,6 +6959,9 @@ msgstr "Schutzzeit"
 msgid "tt_wrz_select_zusatz"
 msgstr "Zusatzinformationen"
 
+msgid "tt_zeitreihen_FullResView"
+msgstr "Ansicht des originalen Kartenblatts"
+
 msgid "twitter title"
 msgstr "Twitter"
 
