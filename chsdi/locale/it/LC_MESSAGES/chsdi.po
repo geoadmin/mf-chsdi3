@@ -6957,6 +6957,9 @@ msgstr "Periodo di protezione"
 msgid "tt_wrz_select_zusatz"
 msgstr "Ulteriori informazioni"
 
+msgid "tt_zeitreihen_FullResView"
+msgstr "Visualizzare il foglio originale"
+
 msgid "twitter title"
 msgstr "Twitter"
 

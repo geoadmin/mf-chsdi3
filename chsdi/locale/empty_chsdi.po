@@ -7088,3 +7088,6 @@ msgstr ""
 
 msgid "ads_name_Karst"
 msgstr ""
+
+msgid "tt_zeitreihen_FullResView"
+msgstr ""
