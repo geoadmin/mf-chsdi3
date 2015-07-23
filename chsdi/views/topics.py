@@ -17,7 +17,7 @@ def topics(request):
         'id': q.id,
         'langs': q.availableLangs,
         'showCatalog': q.showCatalog,
-        'backgroundLayers': q.backgroundLayers,
-        'selectedLayers': q.selectedLayers
+        'backgroundLayers': q.backgroundLayers if type(q.backgroundLayers) is list else q.backgroundLayers.split(','),
+        'selectedLayers': q.selectedLayers if type(q.selectedLayers) is list else q.selectedLayers.split(',')
     } for q in query]
     return {'topics': results}

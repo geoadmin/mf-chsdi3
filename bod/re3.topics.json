@@ -1,0 +1,200 @@
+[
+  {
+    "lang": "de,fr,it", 
+    "selected_layers": "", 
+    "staging": "prod", 
+    "topic": "sachplan", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
+    "order_key": 9
+  }, 
+  {
+    "lang": "de,fr,it,en", 
+    "selected_layers": "ch.babs.kulturgueter", 
+    "staging": "prod", 
+    "topic": "kgs", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-farbe,ch.swisstopo.pixelkarte-grau,ch.swisstopo.swissimage", 
+    "order_key": 5
+  }, 
+  {
+    "lang": "de,fr,it,en", 
+    "selected_layers": "", 
+    "staging": "prod", 
+    "topic": "nga", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
+    "order_key": 7
+  }, 
+  {
+    "lang": "de,fr,it", 
+    "selected_layers": "", 
+    "staging": "prod", 
+    "topic": "blw", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-farbe,ch.swisstopo.pixelkarte-grau,ch.swisstopo.swissimage", 
+    "order_key": 1
+  }, 
+  {
+    "lang": "de,fr,it,en,rm", 
+    "selected_layers": "ch.swisstopo.lubis-luftbilder_farbe,ch.swisstopo.lubis-luftbilder_schwarzweiss", 
+    "staging": "prod", 
+    "topic": "luftbilder", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
+    "order_key": 11
+  }, 
+  {
+    "lang": "de,fr,it,en", 
+    "selected_layers": "ch.bakom.mobil-antennenstandorte-lte,ch.bakom.mobil-antennenstandorte-umts,ch.bakom.mobil-antennenstandorte-gsm,ch.bakom.radio-fernsehsender", 
+    "staging": "prod", 
+    "topic": "funksender", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-farbe,ch.swisstopo.pixelkarte-grau,ch.swisstopo.swissimage", 
+    "order_key": 6
+  }, 
+  {
+    "lang": "de,fr", 
+    "selected_layers": "", 
+    "staging": "prod", 
+    "topic": "are", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
+    "order_key": 2
+  }, 
+  {
+    "lang": "de,fr,it", 
+    "selected_layers": "ch.astra.ivs-nat", 
+    "staging": "prod", 
+    "topic": "ivs", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-farbe,ch.swisstopo.pixelkarte-grau,ch.swisstopo.swissimage", 
+    "order_key": 8
+  }, 
+  {
+    "lang": null, 
+    "selected_layers": null, 
+    "staging": "test", 
+    "topic": "swissmaponline", 
+    "show_catalog": null, 
+    "background_layers": null, 
+    "order_key": null
+  }, 
+  {
+    "lang": null, 
+    "selected_layers": null, 
+    "staging": "test", 
+    "topic": "api", 
+    "show_catalog": null, 
+    "background_layers": null, 
+    "order_key": null
+  }, 
+  {
+    "lang": "de,fr,it,rm,en", 
+    "selected_layers": "", 
+    "staging": "prod", 
+    "topic": "inspire", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-farbe,ch.swisstopo.pixelkarte-grau,ch.swisstopo.swissimage", 
+    "order_key": 20
+  }, 
+  {
+    "lang": "de,fr,it,rm,en", 
+    "selected_layers": "", 
+    "staging": "prod", 
+    "topic": "ech", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-farbe,ch.swisstopo.pixelkarte-grau,ch.swisstopo.swissimage", 
+    "order_key": 21
+  }, 
+  {
+    "lang": "de,fr,it", 
+    "selected_layers": "ch.bafu.wrz-wildruhezonen_portal,ch.bafu.wrz-jagdbanngebiete_select", 
+    "staging": "prod", 
+    "topic": "wildruhezonen", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
+    "order_key": 12
+  }, 
+  {
+    "lang": "de,fr,it,en", 
+    "selected_layers": "", 
+    "staging": "prod", 
+    "topic": "swisstopo", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-farbe,ch.swisstopo.pixelkarte-grau,ch.swisstopo.swissimage", 
+    "order_key": 4
+  }, 
+  {
+    "lang": "de,fr,it,en", 
+    "selected_layers": "ch.astra.unfaelle-personenschaeden_alle", 
+    "staging": "prod", 
+    "topic": "vu", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
+    "order_key": 13
+  }, 
+  {
+    "lang": "de,fr,it,en", 
+    "selected_layers": "", 
+    "staging": "prod", 
+    "topic": "bafu", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
+    "order_key": 3
+  }, 
+  {
+    "lang": "de,fr,it,rm,en", 
+    "selected_layers": "", 
+    "staging": "test", 
+    "topic": "dev", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-farbe,ch.swisstopo.pixelkarte-grau,ch.swisstopo.swissimage", 
+    "order_key": 15
+  }, 
+  {
+    "lang": "de,fr", 
+    "selected_layers": "", 
+    "staging": "test", 
+    "topic": "mgdi", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-farbe,ch.swisstopo.pixelkarte-grau,ch.swisstopo.swissimage", 
+    "order_key": 19
+  }, 
+  {
+    "lang": "de,fr", 
+    "selected_layers": "ch.swisstopo.geologie-geocover", 
+    "staging": "prod", 
+    "topic": "geol", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
+    "order_key": 10
+  }, 
+  {
+    "lang": "de,fr,it,en", 
+    "selected_layers": "ch.bazl.luftfahrthindernis", 
+    "staging": "prod", 
+    "topic": "aviation", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
+    "order_key": 14
+  }, 
+  {
+    "lang": "de,fr", 
+    "selected_layers": "", 
+    "staging": "test", 
+    "topic": "emapis", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
+    "order_key": 99
+  }, 
+  {
+    "lang": "de,fr", 
+    "selected_layers": "ch.bafu.vec25-gewaessernetz_2000,ch.bafu.vec25-seen,ch.bafu.hydrologischer-atlas_flussgebiete", 
+    "staging": "prod", 
+    "topic": "gewiss", 
+    "show_catalog": true, 
+    "background_layers": "ch.swisstopo.pixelkarte-grau,ch.swisstopo.pixelkarte-farbe,ch.swisstopo.swissimage", 
+    "order_key": 19
+  }
+]

@@ -1,16 +1,31 @@
 # -*- coding: utf-8 -*-
 
+import json
+
 from sqlalchemy import Column, Text, Integer, Boolean
 from sqlalchemy.dialects import postgresql
+from sqlalchemy.dialects import sqlite
+from sqlalchemy.orm import scoped_session, sessionmaker
 
 from chsdi.lib.helpers import make_agnostic
 from chsdi.models import bases
 
-Base = bases['bod']
+import os
+
+# To switch between file-based/sqlite backed data and
+# postgres/bod backed data, just adapt the variable below
+
+__bodbackend__ = 'sqlite'  # file-based backend
+# __bodbackend__ = 'bod'   # postgres backend
+
+Base = bases[__bodbackend__]
+
+
+def is_sqlite():
+    return __bodbackend__ == 'sqlite'
 
 
 class Bod(object):
-    __dbname__ = 'bod'
     layerBodId = Column('bod_layer_id', Text, primary_key=True)
     idGeoCat = Column('geocat_uuid', Text)
     name = Column('kurzbezeichnung', Text)
@@ -51,7 +66,19 @@ class Bod(object):
 
 class LayersConfig(Base):
     __tablename__ = 'view_layers_js'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
+    if is_sqlite():
+        opacity = Column('opacity', sqlite.FLOAT)
+        minResolution = Column('minresolution', sqlite.FLOAT)
+        maxResolution = Column('maxresolution', sqlite.FLOAT)
+        subLayersIds = Column('sublayersids', Text)
+        timestamps = Column('timestamps', Text)
+    else:
+        __table_args__ = ({'schema': 're3'})
+        opacity = Column('opacity', postgresql.DOUBLE_PRECISION)
+        minResolution = Column('minresolution', postgresql.DOUBLE_PRECISION)
+        maxResolution = Column('maxresolution', postgresql.DOUBLE_PRECISION)
+        subLayersIds = Column('sublayersids', postgresql.ARRAY(Text))
+        timestamps = Column('timestamps', postgresql.ARRAY(Text))
     layerBodId = Column('layer_id', Text, primary_key=True)
     attribution = Column('attribution', Text)
     background = Column('backgroundlayer', Boolean)
@@ -60,19 +87,14 @@ class LayersConfig(Base):
     gutter = Column('wms_gutter', Integer)
     type = Column('layertype', Text)
     highlightable = Column('highlightable', Boolean)
-    opacity = Column('opacity', postgresql.DOUBLE_PRECISION)
-    minResolution = Column('minresolution', postgresql.DOUBLE_PRECISION)
-    maxResolution = Column('maxresolution', postgresql.DOUBLE_PRECISION)
     parentLayerId = Column('parentlayerid', Text)
     queryable = Column('queryable', Boolean)
     searchable = Column('searchable', Boolean)
     selectbyrectangle = Column('selectbyrectangle', Boolean)
     serverLayerName = Column('server_layername', Text)
     singleTile = Column('singletile', Boolean)
-    subLayersIds = Column('sublayersids', postgresql.ARRAY(Text))
     matrixSet = Column('tilematrixsetid', Text)
     timeEnabled = Column('timeenabled', Boolean)
-    timestamps = Column('timestamps', postgresql.ARRAY(Text))
     timeBehaviour = Column('time_behaviour', Text)
     maps = Column('topics', Text)
     chargeable = Column('chargeable', Boolean)
@@ -106,6 +128,9 @@ class LayersConfig(Base):
                         config['resolutions'] = self._getResolutionsFromMatrixSet(
                             self.__dict__[k]
                         )
+                elif (k == 'subLayersIds' or k == 'timestamps') and \
+                        not isinstance(self.__dict__[k], list):
+                    config[k] = self.__dict__[k].split(',')
                 else:
                     config[k] = self.__dict__[k]
 
@@ -140,31 +165,35 @@ class LayersConfig(Base):
 
 class BodLayerDe(Base, Bod):
     __tablename__ = 'view_bod_layer_info_de'
-    __table_args__ = ({'schema': 're3'})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
 
 
 class BodLayerFr(Base, Bod):
     __tablename__ = 'view_bod_layer_info_fr'
-    __table_args__ = ({'schema': 're3'})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
 
 
 class BodLayerIt(Base, Bod):
     __tablename__ = 'view_bod_layer_info_it'
-    __table_args__ = ({'schema': 're3'})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
 
 
 class BodLayerRm(Base, Bod):
     __tablename__ = 'view_bod_layer_info_rm'
-    __table_args__ = ({'schema': 're3'})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
 
 
 class BodLayerEn(Base, Bod):
     __tablename__ = 'view_bod_layer_info_en'
-    __table_args__ = ({'schema': 're3'})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
 
 
 class GetCap(object):
-    __dbname__ = 'bod'
     id = Column('fk_dataset_id', Text, primary_key=True)
     arr_all_formats = Column('format', Text)
     tile_matrix_set_id = Column('tile_matrix_set_id', Text)
@@ -192,16 +221,17 @@ class GetCap(object):
 
 class GetCapFr(Base, GetCap):
     __tablename__ = 'view_bod_wmts_getcapabilities_fr'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
 
 
 class GetCapDe(Base, GetCap):
     __tablename__ = 'view_bod_wmts_getcapabilities_de'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
 
 
 class GetCapThemes(object):
-    __dbname__ = 'bod'
     id = Column('inspire_id', Text, primary_key=True)
     inspire_name = Column('inspire_name', Text)
     inspire_abstract = Column('inspire_abstract', Text)
@@ -214,12 +244,14 @@ class GetCapThemes(object):
 
 class GetCapThemesFr(Base, GetCapThemes):
     __tablename__ = 'view_bod_wmts_getcapabilities_themes_fr'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
 
 
 class GetCapThemesDe(Base, GetCapThemes):
     __tablename__ = 'view_bod_wmts_getcapabilities_themes_de'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
 
 
 class ServiceMetadata(object):
@@ -251,12 +283,14 @@ class ServiceMetadata(object):
 
 class ServiceMetadataDe(Base, ServiceMetadata):
     __tablename__ = 'view_wms_service_metadata_de'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
 
 
 class ServiceMetadataFr(Base, ServiceMetadata):
     __tablename__ = 'view_wms_service_metadata_fr'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
 
 
 # TODO use GetCap model to fill that up instead
@@ -322,20 +356,24 @@ def computeHeader(mapName):
 
 class Topics(Base):
     __tablename__ = 'topics'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
+    if is_sqlite():
+        selectedLayers = Column('selected_layers', Text)
+        backgroundLayers = Column('background_layers', Text)
+    else:
+        selectedLayers = Column('selected_layers', postgresql.ARRAY(Text))
+        backgroundLayers = Column('background_layers', postgresql.ARRAY(Text))
+        __table_args__ = ({'schema': 're3'})
     id = Column('topic', Text, primary_key=True)
     orderKey = Column('order_key', Integer)
     availableLangs = Column('lang', Text)
-    selectedLayers = Column('selected_layers', postgresql.ARRAY(Text))
-    backgroundLayers = Column('background_layers', postgresql.ARRAY(Text))
     showCatalog = Column('show_catalog', Boolean)
     staging = Column('staging', Text)
 
 
 class Catalog(Base):
-    __dbname__ = 'bod'
     __tablename__ = 'view_catalog'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
     id = Column('bgdi_id', Integer, primary_key=True)
     parentId = Column('parent_id', Integer)
     topic = Column('topic', Text)
@@ -386,7 +424,8 @@ class Catalog(Base):
 
 class OerebMetadata(Base):
     __tablename__ = 'oereb_interlis_metadata'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
+    if not is_sqlite():
+        __table_args__ = ({'schema': 're3'})
     layerBodId = Column('layer_id', Text, primary_key=True)
     header = Column('header', Text)
     footer = Column('footer', Text)
@@ -420,3 +459,50 @@ def get_wmts_models(lang):
             'GetCapThemes': GetCapThemesDe,
             'ServiceMetadata': ServiceMetadataDe
         }
+
+
+def from_dict(model, values):
+    item = model()
+    for key in item.__mapper__.columns.keys():
+        name = item.__mapper__.columns[key].name
+        if name in values:
+            setattr(item, key, values[name])
+        else:
+            raise Exception('Defined column with id ' + key + ' does not have value (' + name + ') in the given dictionary')
+    return item
+
+
+def parse_json(model, filename):
+    jsonfile = open(os.path.join(os.path.dirname(__file__), '../../bod/' + filename))
+    data = json.load(jsonfile)
+    jsonfile.close()
+    items = []
+    for d in data:
+        item = from_dict(model, d)
+        items.append(item)
+    return items
+
+
+def initialize_sqlite():
+    if not is_sqlite():
+        return
+    Base.metadata.create_all(Base.metadata.bind)
+    items = parse_json(Catalog, 're3.view_catalog.json')
+    items.extend(parse_json(Topics, 're3.topics.json'))
+    items.extend(parse_json(LayersConfig, 're3.view_layers_js.json'))
+    items.extend(parse_json(BodLayerDe, 're3.view_bod_layer_info_de.json'))
+    items.extend(parse_json(BodLayerFr, 're3.view_bod_layer_info_fr.json'))
+    items.extend(parse_json(BodLayerIt, 're3.view_bod_layer_info_it.json'))
+    items.extend(parse_json(BodLayerRm, 're3.view_bod_layer_info_rm.json'))
+    items.extend(parse_json(BodLayerEn, 're3.view_bod_layer_info_en.json'))
+    items.extend(parse_json(GetCapDe, 're3.view_bod_wmts_getcapabilities_de.json'))
+    items.extend(parse_json(GetCapFr, 're3.view_bod_wmts_getcapabilities_fr.json'))
+    items.extend(parse_json(ServiceMetadataDe, 're3.view_wms_service_metadata_de.json'))
+    items.extend(parse_json(ServiceMetadataFr, 're3.view_wms_service_metadata_fr.json'))
+    items.extend(parse_json(GetCapThemesDe, 're3.view_bod_wmts_getcapabilities_themes_de.json'))
+    items.extend(parse_json(GetCapThemesFr, 're3.view_bod_wmts_getcapabilities_themes_fr.json'))
+    items.extend(parse_json(OerebMetadata, 're3.oereb_interlis_metadata.json'))
+    session = scoped_session(sessionmaker())
+    session.add_all(items)
+    session.commit()
+    session.close()
