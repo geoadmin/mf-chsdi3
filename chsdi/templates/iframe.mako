@@ -19,20 +19,30 @@
     }
 </style>
 
+<%!
+  from pyramid.url import route_url
+  import chsdi.lib.helpers as h
+%>
 <%
+    defaultImageDisplay = '400,600,96'
     api_url = 'http:' + request.registry.settings['api_url']
     geoadmin_url = 'https://' + request.registry.settings['geoadminhost']
+    param = request.params.get('param', defaultImageDisplay)
 %>    
 Parametre API : ${api_url}<br />
 Paramètre Geoadmin : ${geoadmin_url}
+Paramètre : ${param}
+
+% if param=='opacity':
 <li> layer opacity (sans paramètre): <br />
 <iframe src="${geoadmin_url}/embed.html?catalogNodes=9900&layers=ch.bafu.hydroweb-messstationen_gefahren&layers_opacity=0.8" name="IframeGeoadmin_1"></iframe>
 <br />
-
 <li> avec opacity = 0.2: <br />
 <iframe src="${geoadmin_url}/embed.html?catalogNodes=9900&layers=ch.bafu.hydroweb-messstationen_gefahren&layers_opacity=0.2" name="IframeGeoadmin_2"></iframe>
 <br />
+% elif param=='topic':
 
 <li> Topic funksender (with default layers) <br />
 <iframe src="${geoadmin_url}/embed.html?lang=fr&topic=funksender" name="IframeGeoadmin_3"></iframe>
 <br />
+% endif
