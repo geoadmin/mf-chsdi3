@@ -30,24 +30,15 @@
     param = request.params.get('param', defaultImageDisplay)
 %>    
 
-% if param=='opacity':
-<li> layer opacity (sans paramètre): <br />
-<iframe src="${geoadmin_url}/embed.html?catalogNodes=9900&layers=ch.bafu.hydroweb-messstationen_gefahren&layers_opacity=0.8" name="IframeGeoadmin_1"></iframe>
-<br />
-<li> avec opacity = 0.2: <br />
-<iframe src="${geoadmin_url}/embed.html?catalogNodes=9900&layers=ch.bafu.hydroweb-messstationen_gefahren&layers_opacity=0.2" name="IframeGeoadmin_2"></iframe>
-<br />
-
 <!-- GESTION DES TOPICS -->
-% elif param=='topic':
+% if param=='topic':
 
-<li> Topic ARE (gray background) <br />
+<li> Topic ARE <br />
 <iframe src="${geoadmin_url}/embed.html?topic=are" name="Iframei_Topic_1"></iframe>
 <br />
 <br />
 
-<li> Topic AVIATION <br />
-Default layer : ch.bazl.luftfahrthindernis<br />
+<li> Topic AVIATION (with default layers)<br />
 <iframe src="${geoadmin_url}/embed.html?topic=aviation" name="Iframe_Topic_2"></iframe>
 <br />
 <br />
@@ -57,12 +48,12 @@ Default layer : ch.bazl.luftfahrthindernis<br />
 <br />
 <br />
 
-<li> Topic BLW (color background)<br />
+<li> Topic BLW (background with color)<br />
 <iframe src="${geoadmin_url}/embed.html?topic=blw" name="Iframe_Topic_4"></iframe>
 <br />
 <br />
 
-<li> Topic ECH <br />
+<li> Topic ECH (background with color)<br />
 <iframe src="${geoadmin_url}/embed.html?topic=ech" name="Iframe_Topic_5"></iframe>
 <br />
 <br />
@@ -130,6 +121,24 @@ Default layer : ch.bazl.luftfahrthindernis<br />
 <li> Topic WILDRUHEZONEN (with default layers)<br />
 <iframe src="${geoadmin_url}/embed.html?topic=wildruhezonen" name="Iframe_Topic_18"></iframe>
 <br />
+<br />
+
+
+<!-- GESTION DES LAYER OPTION -->
+% elif param=='layer_option':
+
+<li> layer opacity (sans paramètre): <br />
+<iframe src="${geoadmin_url}/embed.html?catalogNodes=9900&layers=ch.bafu.hydroweb-messstationen_gefahren&layers_opacity=0.8" name="Iframe_Layer_Opacitiy_0"></iframe>
+<br />
+<br />
+
+<li> layer opacity (sans paramètre): <br />
+<iframe src="${geoadmin_url}/embed.html?catalogNodes=9900&layers=ch.bafu.hydroweb-messstationen_gefahren&layers_opacity=0.8" name="Iframe_Layer_Opacitiy_1"></iframe>
+<br />
+<br />
+
+<li> avec opacity = 0.2: <br />
+<iframe src="${geoadmin_url}/embed.html?catalogNodes=9900&layers=ch.bafu.hydroweb-messstationen_gefahren&layers_opacity=0.2" name="Iframe_Layer_Opacitiy_2"></iframe>
 <br />
 
 % endif

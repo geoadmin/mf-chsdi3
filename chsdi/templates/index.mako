@@ -159,8 +159,8 @@
       <h2>Attributes description</h2>
       <a href="rest/services/api/MapServer/ch.bazl.luftfahrthindernis">Attributes of layer 'ch.bazl.luftfahrthindernis'</a><br />
       <h2>iFrame</h2>
-      <a href="iframe?param=opacity">Opacity</a><br />
       <a href="iframe?param=topic">Topics</a><br />
+      <a href="iframe?param=layer_option">Opacity, visibility, layers_timestamp</a><br />
       <a href="iframe?param=other">TO DO</a><br />
       <br/>
       <br/>
