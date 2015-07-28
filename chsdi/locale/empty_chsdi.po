@@ -6932,3 +6932,9 @@ msgstr ""
 
 msgid "namen_typ"
 msgstr ""
+
+msgid "ch.bafu.neophyten-japanisches_geissblatt"
+msgstr ""
+
+msgid "ch.bafu.neophyten-riesenbaerenklau"
+msgstr ""
