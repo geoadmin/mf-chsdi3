@@ -7,8 +7,8 @@ from pyramid.renderers import render, render_to_response
 from pyramid.response import Response
 import pyramid.httpexceptions as exc
 
+from sqlalchemy.exc import InternalError, DataError
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
-from sqlalchemy.exc import InternalError
 from sqlalchemy.sql.expression import cast, func
 from sqlalchemy import Text, Integer, Boolean, Numeric, Date
 from sqlalchemy import text
@@ -308,6 +308,8 @@ def _get_features(params, extended=False):
                 feature = None
             except MultipleResultsFound:
                 raise exc.HTTPInternalServerError('Multiple features found for the same id %s' % featureId)
+            except DataError:
+                raise exc.HTTPBadRequest('Invalid feature id (%s) syntax for %s' % (featureId, params.layerId))
 
             if feature is not None:
                 vectorModel = model

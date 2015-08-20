@@ -325,6 +325,9 @@ class TestMapServiceView(TestsBase):
         self.failUnless(resp.content_type == 'text/html')
         resp.mustcontain('<table')
 
+    def test_htmlpopup_wrong_syntax(self):
+        self.testapp.get('/rest/services/all/MapServer/ch.bafu.bundesinventare-bln/toto', status=400)
+
     def test_htmlpopup_cadastralwebmap(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/14/htmlPopup', params={'mapExtent': '485412.34375,109644.67,512974.44,135580.01999999999', 'imageDisplay': '600,400,96'}, status=200)
         self.failUnless(resp.content_type == 'text/html')
