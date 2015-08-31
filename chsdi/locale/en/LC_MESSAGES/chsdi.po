@@ -3563,7 +3563,7 @@ msgid "ch.swisstopo.cnes"
 msgstr "CNES, Spot Image, swisstopo, NPOC"
 
 msgid "ch.swisstopo.cnes.url"
-msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/rm/home.html"
+msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/en/home.html"
 
 msgid "ch.swisstopo.dreiecksvermaschung"
 msgstr "LV95 Triangular network"
