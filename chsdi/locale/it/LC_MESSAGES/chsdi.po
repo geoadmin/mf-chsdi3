@@ -2697,7 +2697,7 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "Bacini imbriferi 40 km2"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Type de régime d'écoulement"
+msgstr ""
 
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Point fixe du profil en travers"
@@ -3627,8 +3627,9 @@ msgstr "Divisione carta geol. generale 200"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
 msgstr "Autori"
 
+#. TODO
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.ggk_nr"
-msgstr "numero di carta"
+msgstr "ch.swisstopo.geologie-generalkarte-ggk200.metadata.ggk_nr"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.jahr"
 msgstr "L'anno di edizione"
@@ -3742,9 +3743,8 @@ msgstr "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.sgd_nr"
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2"
 msgstr "Documents géol. (100-1000km2)"
 
-#. TODO
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.sgd_nr"
-msgstr "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.sgd_nr"
+msgstr "N° InfoGeol"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2"
 msgstr "Documents géol. (10-100km2)"
@@ -5672,8 +5672,9 @@ msgstr "Section"
 msgid "sektor"
 msgstr "Settore"
 
+#. TODO
 msgid "sgd_nr"
-msgstr "N° InfoGeol"
+msgstr "sgd_nr"
 
 msgid "sheetname"
 msgstr "Denominazione di foglio"
