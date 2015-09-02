@@ -7121,3 +7121,24 @@ msgstr ""
 
 msgid "ch.astra.mountainbikeland"
 msgstr ""
+
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen"
+msgstr ""
+
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen.id"
+msgstr ""
+
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen.bgdi_flugjahr"
+msgstr ""
+
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen.medium_format"
+msgstr ""
+
+msgid "tt_lubis_schraegaufnahmen_stereo_couple"
+msgstr ""
+
+msgid "tt_lubis_schraegaufnahmen_x"
+msgstr ""
+
+msgid "tt_lubis_schraegaufnahmen_y"
+msgstr ""

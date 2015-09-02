@@ -1,0 +1,147 @@
+<%inherit file="base.mako"/>
+<%namespace name="lubis_map" file="../lubis_map.mako"/>
+
+<%!
+import datetime
+import urllib
+import urllib2
+from pyramid.url import route_url
+import chsdi.lib.helpers as h
+import markupsafe
+
+def br(text):
+    return text.replace('\n', markupsafe.Markup('<br />'))
+
+tileUrlBasePath = 'http://aerialimages0.geo.admin.ch/tiles'
+
+
+def determinePreviewUrl(ebkey):
+
+    def getPreviewImageUrl(ebkey):
+        return tileUrlBasePath + '/' + ebkey + '/quickview.jpg'
+
+    def getZeroTileUrl(ebkey):
+        return tileUrlBasePath + '/' + ebkey + '/0/0/0.jpg'
+
+    class HeadRequest(urllib2.Request):
+        def get_method(self):
+            return 'HEAD'
+
+    def testForUrl(url):
+        response = None
+        try:
+            request = HeadRequest(url)
+            request.add_header('Referer', 'http://admin.ch')
+            response = urllib2.urlopen(request)
+
+        finally:
+            if response:
+                if response.getcode() != 200:
+                    url = ""
+                response.close()
+            else:
+                url = ""
+            return url
+
+
+    #testing these 2 url could be done more python like
+    url = testForUrl(getPreviewImageUrl(ebkey))
+    if url == "":
+        url = testForUrl(getZeroTileUrl(ebkey))
+    return h.make_agnostic(url)
+
+
+def imagesize_from_metafile(ebkey):
+    import xml.etree.ElementTree as etree
+    width = None
+    height = None
+    metaurl = tileUrlBasePath + '/' + ebkey + '/tilemapresource.xml'
+    response = None
+    try:
+        request = urllib2.Request(metaurl)
+        request.add_header('Referer', 'http://admin.ch')
+        response = urllib2.urlopen(request)
+        if response.getcode() == 200:
+            xml = etree.parse(response).getroot()
+            bb = xml.find('BoundingBox')
+            if bb != None:
+                width = abs(int(float(bb.get('maxy'))) - int(float(bb.get('miny'))))
+                height = abs(int(float(bb.get('maxx'))) - int(float(bb.get('minx'))))
+    except:
+        pass
+    finally:
+        if response:
+            response.close()
+
+    return (width, height)
+
+
+def date_to_str(datum):
+    try:
+        return datetime.datetime.strptime(datum.strip(), "%Y%m%d").strftime("%d-%m-%Y")
+    except:
+        return request.translate('None') + request.translate('Datenstand')
+
+def get_viewer_url(request, params):
+    f = {
+        'width': params[0],
+        'height': params[1],
+        'title': params[2].encode('utf8'),
+        'bildnummer': params[3],
+        'datenherr': params[4].encode('utf8'),
+        'layer': params[5].encode('utf8'),
+        'lang': params[6],
+        'rotation': params[7]
+    }
+    return h.make_agnostic(route_url('luftbilder', request)) + '?' + urllib.urlencode(f)
+
+%>
+
+<%def name="table_body(c, lang)">
+<%
+
+lang = lang if lang in ('fr','it','en') else 'de'
+c['stable_id'] = True
+preview_url = determinePreviewUrl(c['featureId'])
+
+image_rotation = 0
+wh = imagesize_from_metafile(c['featureId'])
+image_width = wh[0]
+image_height = wh[1]
+
+datum = date_to_str(c['attributes']['flightdate'])
+params = (
+    image_width,
+    image_height,
+    _('tt_lubis_ebkey'),
+    c['featureId'],
+    'swisstopo',
+    c['layerBodId'],
+    lang,
+    image_rotation)
+viewer_url = get_viewer_url(request, params)
+%>
+    <tr><td class="cell-left">${_('tt_lubis_ebkey')}</td>                               <td>${c['featureId']}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_inventarnummer')}</td>                      <td>${c['attributes']['inventory_number']}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_Flugdatum')}</td>                           <td>${c['attributes']['flightdate']}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_originalsize')}</td>                        <td>${c['attributes']['medium_format']}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_filesize_mb')}</td>                         <td>${c['attributes']['filesize_mb']} MB</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_bildpfad')}</td>                            <td>${c['attributes']['filename']}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_schraegaufnahmen_stereo_couple')}</td>      <td>${c['attributes']['stereo_couple']}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_schraegaufnahmen_x')}</td>                  <td>${c['attributes']['x']}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_schraegaufnahmen_y')}</td>                  <td>${c['attributes']['y']}</td></tr>
+
+% if preview_url != "" and image_width != None:
+<tr>
+  <td class="cell-left">${_('tt_lubis_Quickview')}</td>
+  <td>
+    <a href="${viewer_url}" target="_blank"><img src="${preview_url}" alt="quickview"></a>
+  </td>
+</tr>
+% else:
+<tr>
+  <td class="cell-left">${_('tt_lubis_Quickview')}</td>
+  <td>${_('tt_lubis_noQuickview')}</td>
+</tr>
+% endif
+</%def>
