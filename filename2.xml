@@ -1,0 +1,8 @@
+<data>
+  <country name="Singapore" Typ="02" StrNr="idname">
+    <Datum>04 Oktober</Datum>
+    <Zeit>11 Uhr</Zeit>
+    <Wert>59900</Wert>
+    <neighbor name="Malaysia" direction="N"/>
+  </country>
+</data>   

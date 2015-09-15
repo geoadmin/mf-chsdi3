@@ -33,13 +33,27 @@ class TestHeightView(TestsBase):
         self.assertTrue(resp.content_type == 'application/json')
         self.assertTrue(resp.json['height'] == '556.5')
 
+    def test_height_with_dtm2_elevModel(self):
+        resp = self.testapp.get('/rest/services/height', params={'easting': '600000.1', 'northing': '200000.1', 'elevation_model': 'DTM2'}, headers=self.headers, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+        self.assertTrue(resp.json['height'] == '556.5')
+
     def test_height_with_comb(self):
         resp = self.testapp.get('/rest/services/height', params={'easting': '600000.1', 'northing': '200000.1', 'layers': 'COMB'}, headers=self.headers, status=200)
         self.assertTrue(resp.content_type == 'application/json')
         self.assertTrue(resp.json['height'] == '556.5')
 
+    def test_height_with_comb_elevModel(self):
+        resp = self.testapp.get('/rest/services/height', params={'easting': '600000.1', 'northing': '200000.1', 'elevation_model': 'COMB'}, headers=self.headers, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+        self.assertTrue(resp.json['height'] == '556.5')
+
     def test_height_wrong_layer(self):
         resp = self.testapp.get('/rest/services/height', params={'easting': '600000', 'northing': '200000', 'layers': 'TOTO'}, headers=self.headers, status=400)
+        resp.mustcontain("Please provide a valid name for the elevation")
+
+    def test_height_wrong_layer_elevModel(self):
+        resp = self.testapp.get('/rest/services/height', params={'easting': '600000', 'northing': '200000', 'elevation_model': 'TOTO'}, headers=self.headers, status=400)
         resp.mustcontain("Please provide a valid name for the elevation")
 
     def test_height_wrong_lon_value(self):
