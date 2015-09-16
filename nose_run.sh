@@ -13,6 +13,8 @@ while getopts "ipa" opt; do
   case "$opt" in
   i) conf_to_use="buildout_nose_int.cfg"
      ;;
+  c) conf_to_use="buildout_nose_ci.cfg"
+     ;;
   p) conf_to_use="buildout_nose_prod.cfg"
      ;;
   a) nosetests_options=" "
