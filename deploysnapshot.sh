@@ -6,7 +6,7 @@ T="$(date +%s)"
 set -o errexit
 
 # Check if snapshot parameter is supplied and there are 2 parameters
-if [ "$2" != "int" ] && [ "$2" != "prod" ] && [ "$2" != "demo" ]
+if [ "$2" != "int" ] && [ "$2" != "prod" ] && [ "$2" != "demo" ] && [ "$2" != "prod_api" ] && [ "$2" != "prod_varia" ]
 then
   echo "Error: Please specify 1) snapshot directoy and 2) target."
   exit 1
@@ -28,7 +28,7 @@ then
       ./nose_run.sh -i
     fi
 
-    if [ "$2" == "prod" ]
+    if [ "$2" == "prod" ] ||  [ "$2" == "prod_api" ] ||  [ "$2" == "prod_varia" ] 
     then
       echo "Running nose tests with production cluster in $SNAPSHOTDIR"
       ./nose_run.sh -p
