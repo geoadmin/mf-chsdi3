@@ -193,18 +193,12 @@ caches:
     meta_buffer: 0
     meta_size: [1, 1]
     sources: [ch.astra.ivs-gelaendekarte_19980816_cache]
-  ch.astra.ivs-nat-verlaeufe_20100416_cache:
+  ch.astra.ivs-nat-verlaeufe_wms_cache:
     disable_storage: true
     format: image/png
-    grids: [swisstopo-pixelkarte]
-    sources: [ch.astra.ivs-nat-verlaeufe_20100416_source]
-  ch.astra.ivs-nat-verlaeufe_20100416_cache_out:
-    disable_storage: true
-    format: image/png
-    grids: [epsg_4258, epsg_4326, epsg_2056, epsg_3857]
-    meta_buffer: 0
+    grids: [epsg_21781, epsg_4258, epsg_4326, epsg_2056, epsg_3857]
     meta_size: [1, 1]
-    sources: [ch.astra.ivs-nat-verlaeufe_20100416_cache]
+    sources: [ch.astra.ivs-nat-verlaeufe_wms_source]
   ch.astra.ivs-nat_20100416_cache:
     disable_storage: true
     format: image/png
@@ -3307,6 +3301,18 @@ caches:
     meta_buffer: 0
     meta_size: [1, 1]
     sources: [ch.swisstopo.geoidmodell-etrs89_20041231_cache]
+  ch.swisstopo.geologie-dosisleistung-terrestrisch_19961231_cache:
+    disable_storage: true
+    format: image/png
+    grids: [swisstopo-pixelkarte]
+    sources: [ch.swisstopo.geologie-dosisleistung-terrestrisch_19961231_source]
+  ch.swisstopo.geologie-dosisleistung-terrestrisch_19961231_cache_out:
+    disable_storage: true
+    format: image/png
+    grids: [epsg_4258, epsg_4326, epsg_2056, epsg_3857]
+    meta_buffer: 0
+    meta_size: [1, 1]
+    sources: [ch.swisstopo.geologie-dosisleistung-terrestrisch_19961231_cache]
   ch.swisstopo.geologie-eiszeit-lgm-raster_20081231_cache:
     disable_storage: true
     format: image/png
@@ -8955,6 +8961,13 @@ layers:
   name: ch.kantone.cadastralwebmap-farbe_current
   sources: [ch.kantone.cadastralwebmap-farbe_wms_cache]
   title: CadastralWebMap
+- dimensions:
+    Time:
+      default: '20100416'
+      values: ['20100416']
+  name: ch.astra.ivs-nat-verlaeufe_20100416
+  sources: [ch.astra.ivs-nat-verlaeufe_wms_cache]
+  title: IVS historischer Verlauf
 - dimensions: &id010
     Time:
       default: '20090101'
@@ -9047,2374 +9060,2374 @@ layers:
   title: IVS Abgrenzungen (20100414, source)
 - dimensions: &id016
     Time:
-      default: '20100416'
-      values: ['20100416']
-  name: ch.astra.ivs-nat-verlaeufe_20100416
-  sources: [ch.astra.ivs-nat-verlaeufe_20100416_cache_out]
-  title: IVS historischer Verlauf (20100416)
-- dimensions: *id016
-  name: ch.astra.ivs-nat-verlaeufe
-  sources: [ch.astra.ivs-nat-verlaeufe_20100416_cache]
-  title: IVS historischer Verlauf ('current')
-- dimensions: *id016
-  name: ch.astra.ivs-nat-verlaeufe_20100416_source
-  sources: [ch.astra.ivs-nat-verlaeufe_20100416_cache]
-  title: IVS historischer Verlauf (20100416, source)
-- dimensions: &id017
-    Time:
       default: '20100414'
       values: ['20100414']
   name: ch.astra.ivs-nat_wegbegleiter_20100414
   sources: [ch.astra.ivs-nat_wegbegleiter_20100414_cache_out]
   title: IVS Wegbegleiter (20100414)
-- dimensions: *id017
+- dimensions: *id016
   name: ch.astra.ivs-nat_wegbegleiter
   sources: [ch.astra.ivs-nat_wegbegleiter_20100414_cache]
   title: IVS Wegbegleiter ('current')
-- dimensions: *id017
+- dimensions: *id016
   name: ch.astra.ivs-nat_wegbegleiter_20100414_source
   sources: [ch.astra.ivs-nat_wegbegleiter_20100414_cache]
   title: IVS Wegbegleiter (20100414, source)
-- dimensions: &id018
+- dimensions: &id017
     Time:
       default: '20100416'
       values: ['20100416']
   name: ch.astra.ivs-reg_loc_20100416
   sources: [ch.astra.ivs-reg_loc_20100416_cache_out]
   title: IVS Regional und Lokal (20100416)
-- dimensions: *id018
+- dimensions: *id017
   name: ch.astra.ivs-reg_loc
   sources: [ch.astra.ivs-reg_loc_20100416_cache]
   title: IVS Regional und Lokal ('current')
-- dimensions: *id018
+- dimensions: *id017
   name: ch.astra.ivs-reg_loc_20100416_source
   sources: [ch.astra.ivs-reg_loc_20100416_cache]
   title: IVS Regional und Lokal (20100416, source)
-- dimensions: &id019
+- dimensions: &id018
     Time:
       default: '20150101'
       values: ['20150101']
   name: ch.babs.kulturgueter_20150101
   sources: [ch.babs.kulturgueter_20150101_cache_out]
   title: KGS Inventar (20150101)
-- dimensions: *id019
+- dimensions: *id018
   name: ch.babs.kulturgueter
   sources: [ch.babs.kulturgueter_20150101_cache]
   title: KGS Inventar ('current')
-- dimensions: *id019
+- dimensions: *id018
   name: ch.babs.kulturgueter_20150101_source
   sources: [ch.babs.kulturgueter_20150101_cache]
   title: KGS Inventar (20150101, source)
-- dimensions: &id020
+- dimensions: &id019
     Time:
       default: '20070702'
       values: ['20070702']
   name: ch.bafu.bundesinventare-amphibien_20070702
   sources: [ch.bafu.bundesinventare-amphibien_20070702_cache_out]
   title: Amphibien Ortsfeste Objekte (20070702)
-- dimensions: *id020
+- dimensions: *id019
   name: ch.bafu.bundesinventare-amphibien
   sources: [ch.bafu.bundesinventare-amphibien_20070702_cache]
   title: Amphibien Ortsfeste Objekte ('current')
-- dimensions: *id020
+- dimensions: *id019
   name: ch.bafu.bundesinventare-amphibien_20070702_source
   sources: [ch.bafu.bundesinventare-amphibien_20070702_cache]
   title: Amphibien Ortsfeste Objekte (20070702, source)
-- dimensions: &id021
+- dimensions: &id020
     Time:
       default: '20150626'
       values: ['20150626']
   name: ch.bafu.bundesinventare-amphibien_anhoerung_20150626
   sources: [ch.bafu.bundesinventare-amphibien_anhoerung_20150626_cache_out]
   title: "Amphibien - Anh\xF6rung 2015 (20150626)"
-- dimensions: *id021
+- dimensions: *id020
   name: ch.bafu.bundesinventare-amphibien_anhoerung
   sources: [ch.bafu.bundesinventare-amphibien_anhoerung_20150626_cache]
   title: "Amphibien - Anh\xF6rung 2015 ('current')"
-- dimensions: *id021
+- dimensions: *id020
   name: ch.bafu.bundesinventare-amphibien_anhoerung_20150626_source
   sources: [ch.bafu.bundesinventare-amphibien_anhoerung_20150626_cache]
   title: "Amphibien - Anh\xF6rung 2015 (20150626, source)"
-- dimensions: &id022
+- dimensions: &id021
     Time:
       default: '20070702'
       values: ['20070702']
   name: ch.bafu.bundesinventare-amphibien_wanderobjekte_20070702
   sources: [ch.bafu.bundesinventare-amphibien_wanderobjekte_20070702_cache_out]
   title: Amphibien Wanderobjekte (20070702)
-- dimensions: *id022
+- dimensions: *id021
   name: ch.bafu.bundesinventare-amphibien_wanderobjekte
   sources: [ch.bafu.bundesinventare-amphibien_wanderobjekte_20070702_cache]
   title: Amphibien Wanderobjekte ('current')
-- dimensions: *id022
+- dimensions: *id021
   name: ch.bafu.bundesinventare-amphibien_wanderobjekte_20070702_source
   sources: [ch.bafu.bundesinventare-amphibien_wanderobjekte_20070702_cache]
   title: Amphibien Wanderobjekte (20070702, source)
-- dimensions: &id023
+- dimensions: &id022
     Time:
       default: '20141110'
       values: ['20141110']
   name: ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung_20141110
   sources: [ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung_20141110_cache_out]
   title: Amphibien Wanderobjekte 2015 (20141110)
-- dimensions: *id023
+- dimensions: *id022
   name: ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung
   sources: [ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung_20141110_cache]
   title: Amphibien Wanderobjekte 2015 ('current')
-- dimensions: *id023
+- dimensions: *id022
   name: ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung_20141110_source
   sources: [ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung_20141110_cache]
   title: Amphibien Wanderobjekte 2015 (20141110, source)
-- dimensions: &id024
+- dimensions: &id023
     Time:
       default: '20070701'
       values: ['20070701']
   name: ch.bafu.bundesinventare-auen_20070701
   sources: [ch.bafu.bundesinventare-auen_20070701_cache_out]
   title: Auengebiete (20070701)
-- dimensions: *id024
+- dimensions: *id023
   name: ch.bafu.bundesinventare-auen
   sources: [ch.bafu.bundesinventare-auen_20070701_cache]
   title: Auengebiete ('current')
-- dimensions: *id024
+- dimensions: *id023
   name: ch.bafu.bundesinventare-auen_20070701_source
   sources: [ch.bafu.bundesinventare-auen_20070701_cache]
   title: Auengebiete (20070701, source)
-- dimensions: &id025
+- dimensions: &id024
     Time:
       default: '20141110'
       values: ['20141110']
   name: ch.bafu.bundesinventare-auen_anhoerung_20141110
   sources: [ch.bafu.bundesinventare-auen_anhoerung_20141110_cache_out]
   title: "Auen - Anh\xF6rung 2015 (20141110)"
-- dimensions: *id025
+- dimensions: *id024
   name: ch.bafu.bundesinventare-auen_anhoerung
   sources: [ch.bafu.bundesinventare-auen_anhoerung_20141110_cache]
   title: "Auen - Anh\xF6rung 2015 ('current')"
-- dimensions: *id025
+- dimensions: *id024
   name: ch.bafu.bundesinventare-auen_anhoerung_20141110_source
   sources: [ch.bafu.bundesinventare-auen_anhoerung_20141110_cache]
   title: "Auen - Anh\xF6rung 2015 (20141110, source)"
-- dimensions: &id026
+- dimensions: &id025
     Time:
       default: '20010809'
       values: ['20010809']
   name: ch.bafu.bundesinventare-bln_20010809
   sources: [ch.bafu.bundesinventare-bln_20010809_cache_out]
   title: BLN (20010809)
-- dimensions: *id026
+- dimensions: *id025
   name: ch.bafu.bundesinventare-bln
   sources: [ch.bafu.bundesinventare-bln_20010809_cache]
   title: BLN ('current')
-- dimensions: *id026
+- dimensions: *id025
   name: ch.bafu.bundesinventare-bln_20010809_source
   sources: [ch.bafu.bundesinventare-bln_20010809_cache]
   title: BLN (20010809, source)
-- dimensions: &id027
+- dimensions: &id026
     Time:
       default: '20100623'
       values: ['20100623']
   name: ch.bafu.bundesinventare-flachmoore_20100623
   sources: [ch.bafu.bundesinventare-flachmoore_20100623_cache_out]
   title: Flachmoore (20100623)
-- dimensions: *id027
+- dimensions: *id026
   name: ch.bafu.bundesinventare-flachmoore
   sources: [ch.bafu.bundesinventare-flachmoore_20100623_cache]
   title: Flachmoore ('current')
-- dimensions: *id027
+- dimensions: *id026
   name: ch.bafu.bundesinventare-flachmoore_20100623_source
   sources: [ch.bafu.bundesinventare-flachmoore_20100623_cache]
   title: Flachmoore (20100623, source)
-- dimensions: &id028
+- dimensions: &id027
     Time:
       default: '20150626'
       values: ['20150626']
   name: ch.bafu.bundesinventare-flachmoore_anhoerung_20150626
   sources: [ch.bafu.bundesinventare-flachmoore_anhoerung_20150626_cache_out]
   title: "Flachmoore Anh\xF6rung 2015 (20150626)"
-- dimensions: *id028
+- dimensions: *id027
   name: ch.bafu.bundesinventare-flachmoore_anhoerung
   sources: [ch.bafu.bundesinventare-flachmoore_anhoerung_20150626_cache]
   title: "Flachmoore Anh\xF6rung 2015 ('current')"
-- dimensions: *id028
+- dimensions: *id027
   name: ch.bafu.bundesinventare-flachmoore_anhoerung_20150626_source
   sources: [ch.bafu.bundesinventare-flachmoore_anhoerung_20150626_cache]
   title: "Flachmoore Anh\xF6rung 2015 (20150626, source)"
-- dimensions: &id029
+- dimensions: &id028
     Time:
       default: '20080721'
       values: ['20080721']
   name: ch.bafu.bundesinventare-hochmoore_20080721
   sources: [ch.bafu.bundesinventare-hochmoore_20080721_cache_out]
   title: Hochmoore (20080721)
-- dimensions: *id029
+- dimensions: *id028
   name: ch.bafu.bundesinventare-hochmoore
   sources: [ch.bafu.bundesinventare-hochmoore_20080721_cache]
   title: Hochmoore ('current')
-- dimensions: *id029
+- dimensions: *id028
   name: ch.bafu.bundesinventare-hochmoore_20080721_source
   sources: [ch.bafu.bundesinventare-hochmoore_20080721_cache]
   title: Hochmoore (20080721, source)
-- dimensions: &id030
+- dimensions: &id029
     Time:
       default: '20141110'
       values: ['20141110']
   name: ch.bafu.bundesinventare-hochmoore_anhoerung_20141110
   sources: [ch.bafu.bundesinventare-hochmoore_anhoerung_20141110_cache_out]
   title: "Hochmoore - Anh\xF6rung 2015 (20141110)"
-- dimensions: *id030
+- dimensions: *id029
   name: ch.bafu.bundesinventare-hochmoore_anhoerung
   sources: [ch.bafu.bundesinventare-hochmoore_anhoerung_20141110_cache]
   title: "Hochmoore - Anh\xF6rung 2015 ('current')"
-- dimensions: *id030
+- dimensions: *id029
   name: ch.bafu.bundesinventare-hochmoore_anhoerung_20141110_source
   sources: [ch.bafu.bundesinventare-hochmoore_anhoerung_20141110_cache]
   title: "Hochmoore - Anh\xF6rung 2015 (20141110, source)"
-- dimensions: &id031
+- dimensions: &id030
     Time:
       default: '20131202'
       values: ['20131202']
   name: ch.bafu.bundesinventare-jagdbanngebiete_20131202
   sources: [ch.bafu.bundesinventare-jagdbanngebiete_20131202_cache_out]
   title: Jagdbanngebiete (20131202)
-- dimensions: *id031
+- dimensions: *id030
   name: ch.bafu.bundesinventare-jagdbanngebiete
   sources: [ch.bafu.bundesinventare-jagdbanngebiete_20131202_cache]
   title: Jagdbanngebiete ('current')
-- dimensions: *id031
+- dimensions: *id030
   name: ch.bafu.bundesinventare-jagdbanngebiete_20131202_source
   sources: [ch.bafu.bundesinventare-jagdbanngebiete_20131202_cache]
   title: Jagdbanngebiete (20131202, source)
-- dimensions: &id032
+- dimensions: &id031
     Time:
       default: '20150202'
       values: ['20150202']
   name: ch.bafu.bundesinventare-moorlandschaften_20150202
   sources: [ch.bafu.bundesinventare-moorlandschaften_20150202_cache_out]
   title: Moorlandschaften (20150202)
-- dimensions: *id032
+- dimensions: *id031
   name: ch.bafu.bundesinventare-moorlandschaften
   sources: [ch.bafu.bundesinventare-moorlandschaften_20150202_cache]
   title: Moorlandschaften ('current')
-- dimensions: *id032
+- dimensions: *id031
   name: ch.bafu.bundesinventare-moorlandschaften_20150202_source
   sources: [ch.bafu.bundesinventare-moorlandschaften_20150202_cache]
   title: Moorlandschaften (20150202, source)
-- dimensions: &id033
+- dimensions: &id032
     Time:
       default: '20130624'
       values: ['20130624']
   name: ch.bafu.bundesinventare-trockenwiesen_trockenweiden_20130624
   sources: [ch.bafu.bundesinventare-trockenwiesen_trockenweiden_20130624_cache_out]
   title: Trockenwiesen und -weiden (TWW) (20130624)
-- dimensions: *id033
+- dimensions: *id032
   name: ch.bafu.bundesinventare-trockenwiesen_trockenweiden
   sources: [ch.bafu.bundesinventare-trockenwiesen_trockenweiden_20130624_cache]
   title: Trockenwiesen und -weiden (TWW) ('current')
-- dimensions: *id033
+- dimensions: *id032
   name: ch.bafu.bundesinventare-trockenwiesen_trockenweiden_20130624_source
   sources: [ch.bafu.bundesinventare-trockenwiesen_trockenweiden_20130624_cache]
   title: Trockenwiesen und -weiden (TWW) (20130624, source)
-- dimensions: &id034
+- dimensions: &id033
     Time:
       default: '20150626'
       values: ['20150626']
   name: ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung_20150626
   sources: [ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung_20150626_cache_out]
   title: "TWW - Anh\xF6rung 2015 (20150626)"
-- dimensions: *id034
+- dimensions: *id033
   name: ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung
   sources: [ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung_20150626_cache]
   title: "TWW - Anh\xF6rung 2015 ('current')"
-- dimensions: *id034
+- dimensions: *id033
   name: ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung_20150626_source
   sources: [ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung_20150626_cache]
   title: "TWW - Anh\xF6rung 2015 (20150626, source)"
-- dimensions: &id035
+- dimensions: &id034
     Time:
       default: '20150622'
       values: ['20150622']
   name: ch.bafu.bundesinventare-vogelreservate_20150622
   sources: [ch.bafu.bundesinventare-vogelreservate_20150622_cache_out]
   title: Wasser- und Zugvogelreservate (20150622)
-- dimensions: *id035
+- dimensions: *id034
   name: ch.bafu.bundesinventare-vogelreservate
   sources: [ch.bafu.bundesinventare-vogelreservate_20150622_cache]
   title: Wasser- und Zugvogelreservate ('current')
-- dimensions: *id035
+- dimensions: *id034
   name: ch.bafu.bundesinventare-vogelreservate_20150622_source
   sources: [ch.bafu.bundesinventare-vogelreservate_20150622_cache]
   title: Wasser- und Zugvogelreservate (20150622, source)
-- dimensions: &id036
+- dimensions: &id035
     Time:
       default: '20150506'
       values: ['20150506']
   name: ch.bafu.fauna-steinbockkolonien_20150506
   sources: [ch.bafu.fauna-steinbockkolonien_20150506_cache_out]
   title: Steinbockkolonien (20150506)
-- dimensions: *id036
+- dimensions: *id035
   name: ch.bafu.fauna-steinbockkolonien
   sources: [ch.bafu.fauna-steinbockkolonien_20150506_cache]
   title: Steinbockkolonien ('current')
-- dimensions: *id036
+- dimensions: *id035
   name: ch.bafu.fauna-steinbockkolonien_20150506_source
   sources: [ch.bafu.fauna-steinbockkolonien_20150506_cache]
   title: Steinbockkolonien (20150506, source)
-- dimensions: &id037
+- dimensions: &id036
     Time:
       default: '20140805'
       values: ['20140805']
   name: ch.bafu.flussordnungszahlen-strahler_20140805
   sources: [ch.bafu.flussordnungszahlen-strahler_20140805_cache_out]
   title: Flussordnung (20140805)
-- dimensions: *id037
+- dimensions: *id036
   name: ch.bafu.flussordnungszahlen-strahler
   sources: [ch.bafu.flussordnungszahlen-strahler_20140805_cache]
   title: Flussordnung ('current')
-- dimensions: *id037
+- dimensions: *id036
   name: ch.bafu.flussordnungszahlen-strahler_20140805_source
   sources: [ch.bafu.flussordnungszahlen-strahler_20140805_cache]
   title: Flussordnung (20140805, source)
-- dimensions: &id038
+- dimensions: &id037
     Time:
       default: '20131001'
       values: ['20131001']
   name: ch.bafu.gewaesserschutzbereiche_20131001
   sources: [ch.bafu.gewaesserschutzbereiche_20131001_cache_out]
   title: "Gew\xE4sserschutzbereiche (20131001)"
-- dimensions: *id038
+- dimensions: *id037
   name: ch.bafu.gewaesserschutzbereiche
   sources: [ch.bafu.gewaesserschutzbereiche_20131001_cache]
   title: "Gew\xE4sserschutzbereiche ('current')"
-- dimensions: *id038
+- dimensions: *id037
   name: ch.bafu.gewaesserschutzbereiche_20131001_source
   sources: [ch.bafu.gewaesserschutzbereiche_20131001_cache]
   title: "Gew\xE4sserschutzbereiche (20131001, source)"
-- dimensions: &id039
+- dimensions: &id038
     Time:
       default: '20131001'
       values: ['20131001']
   name: ch.bafu.grundwasserschutzareale_20131001
   sources: [ch.bafu.grundwasserschutzareale_20131001_cache_out]
   title: Schutzareale (20131001)
-- dimensions: *id039
+- dimensions: *id038
   name: ch.bafu.grundwasserschutzareale
   sources: [ch.bafu.grundwasserschutzareale_20131001_cache]
   title: Schutzareale ('current')
-- dimensions: *id039
+- dimensions: *id038
   name: ch.bafu.grundwasserschutzareale_20131001_source
   sources: [ch.bafu.grundwasserschutzareale_20131001_cache]
   title: Schutzareale (20131001, source)
-- dimensions: &id040
+- dimensions: &id039
     Time:
       default: '20131001'
       values: ['20131001']
   name: ch.bafu.grundwasserschutzzonen_20131001
   sources: [ch.bafu.grundwasserschutzzonen_20131001_cache_out]
   title: Schutzzonen (20131001)
-- dimensions: *id040
+- dimensions: *id039
   name: ch.bafu.grundwasserschutzzonen
   sources: [ch.bafu.grundwasserschutzzonen_20131001_cache]
   title: Schutzzonen ('current')
-- dimensions: *id040
+- dimensions: *id039
   name: ch.bafu.grundwasserschutzzonen_20131001_source
   sources: [ch.bafu.grundwasserschutzzonen_20131001_cache]
   title: Schutzzonen (20131001, source)
-- dimensions: &id041
+- dimensions: &id040
     Time:
       default: '20130301'
       values: ['20130301']
   name: ch.bafu.hydrologie-gewaesserzustandsmessstationen_20130301
   sources: [ch.bafu.hydrologie-gewaesserzustandsmessstationen_20130301_cache_out]
   title: "Messstandorte Gew\xE4sserzustand (20130301)"
-- dimensions: *id041
+- dimensions: *id040
   name: ch.bafu.hydrologie-gewaesserzustandsmessstationen
   sources: [ch.bafu.hydrologie-gewaesserzustandsmessstationen_20130301_cache]
   title: "Messstandorte Gew\xE4sserzustand ('current')"
-- dimensions: *id041
+- dimensions: *id040
   name: ch.bafu.hydrologie-gewaesserzustandsmessstationen_20130301_source
   sources: [ch.bafu.hydrologie-gewaesserzustandsmessstationen_20130301_cache]
   title: "Messstandorte Gew\xE4sserzustand (20130301, source)"
-- dimensions: &id042
+- dimensions: &id041
     Time:
       default: '20141023'
       values: ['20141023']
   name: ch.bafu.hydrologie-hintergrundkarte_20141023
   sources: [ch.bafu.hydrologie-hintergrundkarte_20141023_cache_out]
   title: Hintergrundkarte hydrol. Daten (20141023)
-- dimensions: *id042
+- dimensions: *id041
   name: ch.bafu.hydrologie-hintergrundkarte
   sources: [ch.bafu.hydrologie-hintergrundkarte_20141023_cache]
   title: Hintergrundkarte hydrol. Daten ('current')
-- dimensions: *id042
+- dimensions: *id041
   name: ch.bafu.hydrologie-hintergrundkarte_20141023_source
   sources: [ch.bafu.hydrologie-hintergrundkarte_20141023_cache]
   title: Hintergrundkarte hydrol. Daten (20141023, source)
-- dimensions: &id043
+- dimensions: &id042
     Time:
       default: '20141201'
       values: ['20141201']
   name: ch.bafu.hydrologie-hydromessstationen_20141201
   sources: [ch.bafu.hydrologie-hydromessstationen_20141201_cache_out]
   title: Hydrologische Messstationen (20141201)
-- dimensions: *id043
+- dimensions: *id042
   name: ch.bafu.hydrologie-hydromessstationen
   sources: [ch.bafu.hydrologie-hydromessstationen_20141201_cache]
   title: Hydrologische Messstationen ('current')
-- dimensions: *id043
+- dimensions: *id042
   name: ch.bafu.hydrologie-hydromessstationen_20141201_source
   sources: [ch.bafu.hydrologie-hydromessstationen_20141201_cache]
   title: Hydrologische Messstationen (20141201, source)
-- dimensions: &id044
+- dimensions: &id043
     Time:
       default: '20141201'
       values: ['20141201']
   name: ch.bafu.hydrologie-wassertemperaturmessstationen_20141201
   sources: [ch.bafu.hydrologie-wassertemperaturmessstationen_20141201_cache_out]
   title: Messstationen Wassertemperatur (20141201)
-- dimensions: *id044
+- dimensions: *id043
   name: ch.bafu.hydrologie-wassertemperaturmessstationen
   sources: [ch.bafu.hydrologie-wassertemperaturmessstationen_20141201_cache]
   title: Messstationen Wassertemperatur ('current')
-- dimensions: *id044
+- dimensions: *id043
   name: ch.bafu.hydrologie-wassertemperaturmessstationen_20141201_source
   sources: [ch.bafu.hydrologie-wassertemperaturmessstationen_20141201_cache]
   title: Messstationen Wassertemperatur (20141201, source)
-- dimensions: &id045
+- dimensions: &id044
     Time:
       default: '20061231'
       values: ['20061231']
   name: ch.bafu.laerm-bahnlaerm_nacht_20061231
   sources: [ch.bafu.laerm-bahnlaerm_nacht_20061231_cache_out]
   title: "Eisenbahnl\xE4rm Nacht (20061231)"
-- dimensions: *id045
+- dimensions: *id044
   name: ch.bafu.laerm-bahnlaerm_nacht
   sources: [ch.bafu.laerm-bahnlaerm_nacht_20061231_cache]
   title: "Eisenbahnl\xE4rm Nacht ('current')"
-- dimensions: *id045
+- dimensions: *id044
   name: ch.bafu.laerm-bahnlaerm_nacht_20061231_source
   sources: [ch.bafu.laerm-bahnlaerm_nacht_20061231_cache]
   title: "Eisenbahnl\xE4rm Nacht (20061231, source)"
-- dimensions: &id046
+- dimensions: &id045
     Time:
       default: '20061231'
       values: ['20061231']
   name: ch.bafu.laerm-bahnlaerm_tag_20061231
   sources: [ch.bafu.laerm-bahnlaerm_tag_20061231_cache_out]
   title: "Eisenbahnl\xE4rm Tag (20061231)"
-- dimensions: *id046
+- dimensions: *id045
   name: ch.bafu.laerm-bahnlaerm_tag
   sources: [ch.bafu.laerm-bahnlaerm_tag_20061231_cache]
   title: "Eisenbahnl\xE4rm Tag ('current')"
-- dimensions: *id046
+- dimensions: *id045
   name: ch.bafu.laerm-bahnlaerm_tag_20061231_source
   sources: [ch.bafu.laerm-bahnlaerm_tag_20061231_cache]
   title: "Eisenbahnl\xE4rm Tag (20061231, source)"
-- dimensions: &id047
+- dimensions: &id046
     Time:
       default: '20101231'
       values: ['20101231']
   name: ch.bafu.laerm-strassenlaerm_nacht_20101231
   sources: [ch.bafu.laerm-strassenlaerm_nacht_20101231_cache_out]
   title: "Strassenverkehrsl\xE4rm Nacht (20101231)"
-- dimensions: *id047
+- dimensions: *id046
   name: ch.bafu.laerm-strassenlaerm_nacht
   sources: [ch.bafu.laerm-strassenlaerm_nacht_20101231_cache]
   title: "Strassenverkehrsl\xE4rm Nacht ('current')"
-- dimensions: *id047
+- dimensions: *id046
   name: ch.bafu.laerm-strassenlaerm_nacht_20101231_source
   sources: [ch.bafu.laerm-strassenlaerm_nacht_20101231_cache]
   title: "Strassenverkehrsl\xE4rm Nacht (20101231, source)"
-- dimensions: &id048
+- dimensions: &id047
     Time:
       default: '20101231'
       values: ['20101231']
   name: ch.bafu.laerm-strassenlaerm_tag_20101231
   sources: [ch.bafu.laerm-strassenlaerm_tag_20101231_cache_out]
   title: "Strassenverkehrsl\xE4rm Tag (20101231)"
-- dimensions: *id048
+- dimensions: *id047
   name: ch.bafu.laerm-strassenlaerm_tag
   sources: [ch.bafu.laerm-strassenlaerm_tag_20101231_cache]
   title: "Strassenverkehrsl\xE4rm Tag ('current')"
-- dimensions: *id048
+- dimensions: *id047
   name: ch.bafu.laerm-strassenlaerm_tag_20101231_source
   sources: [ch.bafu.laerm-strassenlaerm_tag_20101231_cache]
   title: "Strassenverkehrsl\xE4rm Tag (20101231, source)"
-- dimensions: &id049
+- dimensions: &id048
     Time:
       default: '20120416'
       values: ['20120416']
   name: ch.bafu.moose_20120416
   sources: [ch.bafu.moose_20120416_cache_out]
   title: Rote Liste Moose (20120416)
-- dimensions: *id049
+- dimensions: *id048
   name: ch.bafu.moose
   sources: [ch.bafu.moose_20120416_cache]
   title: Rote Liste Moose ('current')
-- dimensions: *id049
+- dimensions: *id048
   name: ch.bafu.moose_20120416_source
   sources: [ch.bafu.moose_20120416_cache]
   title: Rote Liste Moose (20120416, source)
-- dimensions: &id050
+- dimensions: &id049
     Time:
       default: '20110309'
       values: ['20110309']
   name: ch.bafu.nabelstationen_20110309
   sources: [ch.bafu.nabelstationen_20110309_cache_out]
   title: "Messstationen Luftqualit\xE4t (20110309)"
-- dimensions: *id050
+- dimensions: *id049
   name: ch.bafu.nabelstationen
   sources: [ch.bafu.nabelstationen_20110309_cache]
   title: "Messstationen Luftqualit\xE4t ('current')"
-- dimensions: *id050
+- dimensions: *id049
   name: ch.bafu.nabelstationen_20110309_source
   sources: [ch.bafu.nabelstationen_20110309_cache]
   title: "Messstationen Luftqualit\xE4t (20110309, source)"
-- dimensions: &id051
+- dimensions: &id050
     Time:
       default: '20140825'
       values: ['20140825']
   name: ch.bafu.neophyten-japanisches_geissblatt_20140825
   sources: [ch.bafu.neophyten-japanisches_geissblatt_20140825_cache_out]
   title: Japanisches Geissblatt (20140825)
-- dimensions: *id051
+- dimensions: *id050
   name: ch.bafu.neophyten-japanisches_geissblatt
   sources: [ch.bafu.neophyten-japanisches_geissblatt_20140825_cache]
   title: Japanisches Geissblatt ('current')
-- dimensions: *id051
+- dimensions: *id050
   name: ch.bafu.neophyten-japanisches_geissblatt_20140825_source
   sources: [ch.bafu.neophyten-japanisches_geissblatt_20140825_cache]
   title: Japanisches Geissblatt (20140825, source)
-- dimensions: &id052
+- dimensions: &id051
     Time:
       default: '20140825'
       values: ['20140825']
   name: ch.bafu.neophyten-riesenbaerenklau_20140825
   sources: [ch.bafu.neophyten-riesenbaerenklau_20140825_cache_out]
   title: "Riesenb\xE4renklau (20140825)"
-- dimensions: *id052
+- dimensions: *id051
   name: ch.bafu.neophyten-riesenbaerenklau
   sources: [ch.bafu.neophyten-riesenbaerenklau_20140825_cache]
   title: "Riesenb\xE4renklau ('current')"
-- dimensions: *id052
+- dimensions: *id051
   name: ch.bafu.neophyten-riesenbaerenklau_20140825_source
   sources: [ch.bafu.neophyten-riesenbaerenklau_20140825_cache]
   title: "Riesenb\xE4renklau (20140825, source)"
-- dimensions: &id053
+- dimensions: &id052
     Time:
       default: '20080913'
       values: ['20080913']
   name: ch.bafu.oekomorphologie-f_abschnitte_20080913
   sources: [ch.bafu.oekomorphologie-f_abschnitte_20080913_cache_out]
   title: "\xD6komorphologie F - Abschnitte (20080913)"
-- dimensions: *id053
+- dimensions: *id052
   name: ch.bafu.oekomorphologie-f_abschnitte
   sources: [ch.bafu.oekomorphologie-f_abschnitte_20080913_cache]
   title: "\xD6komorphologie F - Abschnitte ('current')"
-- dimensions: *id053
+- dimensions: *id052
   name: ch.bafu.oekomorphologie-f_abschnitte_20080913_source
   sources: [ch.bafu.oekomorphologie-f_abschnitte_20080913_cache]
   title: "\xD6komorphologie F - Abschnitte (20080913, source)"
-- dimensions: &id054
+- dimensions: &id053
     Time:
       default: '20110912'
       values: ['20110912']
   name: ch.bafu.oekomorphologie-f_abstuerze_20110912
   sources: [ch.bafu.oekomorphologie-f_abstuerze_20110912_cache_out]
   title: "\xD6komorphologie F - Abst\xFCrze (20110912)"
-- dimensions: *id054
+- dimensions: *id053
   name: ch.bafu.oekomorphologie-f_abstuerze
   sources: [ch.bafu.oekomorphologie-f_abstuerze_20110912_cache]
   title: "\xD6komorphologie F - Abst\xFCrze ('current')"
-- dimensions: *id054
+- dimensions: *id053
   name: ch.bafu.oekomorphologie-f_abstuerze_20110912_source
   sources: [ch.bafu.oekomorphologie-f_abstuerze_20110912_cache]
   title: "\xD6komorphologie F - Abst\xFCrze (20110912, source)"
-- dimensions: &id055
+- dimensions: &id054
     Time:
       default: '20110912'
       values: ['20110912']
   name: ch.bafu.oekomorphologie-f_bauwerke_20110912
   sources: [ch.bafu.oekomorphologie-f_bauwerke_20110912_cache_out]
   title: "\xD6komorphologie F - Bauwerke (20110912)"
-- dimensions: *id055
+- dimensions: *id054
   name: ch.bafu.oekomorphologie-f_bauwerke
   sources: [ch.bafu.oekomorphologie-f_bauwerke_20110912_cache]
   title: "\xD6komorphologie F - Bauwerke ('current')"
-- dimensions: *id055
+- dimensions: *id054
   name: ch.bafu.oekomorphologie-f_bauwerke_20110912_source
   sources: [ch.bafu.oekomorphologie-f_bauwerke_20110912_cache]
   title: "\xD6komorphologie F - Bauwerke (20110912, source)"
-- dimensions: &id056
+- dimensions: &id055
     Time:
       default: '20110317'
       values: ['20110317']
   name: ch.bafu.permafrost_20110317
   sources: [ch.bafu.permafrost_20110317_cache_out]
   title: Permafrosthinweiskarte (20110317)
-- dimensions: *id056
+- dimensions: *id055
   name: ch.bafu.permafrost
   sources: [ch.bafu.permafrost_20110317_cache]
   title: Permafrosthinweiskarte ('current')
-- dimensions: *id056
+- dimensions: *id055
   name: ch.bafu.permafrost_20110317_source
   sources: [ch.bafu.permafrost_20110317_cache]
   title: Permafrosthinweiskarte (20110317, source)
-- dimensions: &id057
+- dimensions: &id056
     Time:
       default: '20110214'
       values: ['20110214']
   name: ch.bafu.ren-extensive_landwirtschaftsgebiete_20110214
   sources: [ch.bafu.ren-extensive_landwirtschaftsgebiete_20110214_cache_out]
   title: REN  Extensives Landwirtschaftsgebiet (20110214)
-- dimensions: *id057
+- dimensions: *id056
   name: ch.bafu.ren-extensive_landwirtschaftsgebiete
   sources: [ch.bafu.ren-extensive_landwirtschaftsgebiete_20110214_cache]
   title: REN  Extensives Landwirtschaftsgebiet ('current')
-- dimensions: *id057
+- dimensions: *id056
   name: ch.bafu.ren-extensive_landwirtschaftsgebiete_20110214_source
   sources: [ch.bafu.ren-extensive_landwirtschaftsgebiete_20110214_cache]
   title: REN  Extensives Landwirtschaftsgebiet (20110214, source)
-- dimensions: &id058
+- dimensions: &id057
     Time:
       default: '20110214'
       values: ['20110214']
   name: ch.bafu.ren-feuchtgebiete_20110214
   sources: [ch.bafu.ren-feuchtgebiete_20110214_cache_out]
   title: REN  Feuchtgebiet (20110214)
-- dimensions: *id058
+- dimensions: *id057
   name: ch.bafu.ren-feuchtgebiete
   sources: [ch.bafu.ren-feuchtgebiete_20110214_cache]
   title: REN  Feuchtgebiet ('current')
-- dimensions: *id058
+- dimensions: *id057
   name: ch.bafu.ren-feuchtgebiete_20110214_source
   sources: [ch.bafu.ren-feuchtgebiete_20110214_cache]
   title: REN  Feuchtgebiet (20110214, source)
-- dimensions: &id059
+- dimensions: &id058
     Time:
       default: '20110214'
       values: ['20110214']
   name: ch.bafu.ren-fliessgewaesser_seen_20110214
   sources: [ch.bafu.ren-fliessgewaesser_seen_20110214_cache_out]
   title: "REN  Fliessgew\xE4sser / Seen (20110214)"
-- dimensions: *id059
+- dimensions: *id058
   name: ch.bafu.ren-fliessgewaesser_seen
   sources: [ch.bafu.ren-fliessgewaesser_seen_20110214_cache]
   title: "REN  Fliessgew\xE4sser / Seen ('current')"
-- dimensions: *id059
+- dimensions: *id058
   name: ch.bafu.ren-fliessgewaesser_seen_20110214_source
   sources: [ch.bafu.ren-fliessgewaesser_seen_20110214_cache]
   title: "REN  Fliessgew\xE4sser / Seen (20110214, source)"
-- dimensions: &id060
+- dimensions: &id059
     Time:
       default: '20110214'
       values: ['20110214']
   name: ch.bafu.ren-trockenstandorte_20110214
   sources: [ch.bafu.ren-trockenstandorte_20110214_cache_out]
   title: REN  Trockenstandort (20110214)
-- dimensions: *id060
+- dimensions: *id059
   name: ch.bafu.ren-trockenstandorte
   sources: [ch.bafu.ren-trockenstandorte_20110214_cache]
   title: REN  Trockenstandort ('current')
-- dimensions: *id060
+- dimensions: *id059
   name: ch.bafu.ren-trockenstandorte_20110214_source
   sources: [ch.bafu.ren-trockenstandorte_20110214_cache]
   title: REN  Trockenstandort (20110214, source)
-- dimensions: &id061
+- dimensions: &id060
     Time:
       default: '20110214'
       values: ['20110214']
   name: ch.bafu.ren-wald_20110214
   sources: [ch.bafu.ren-wald_20110214_cache_out]
   title: REN  Wald (20110214)
-- dimensions: *id061
+- dimensions: *id060
   name: ch.bafu.ren-wald
   sources: [ch.bafu.ren-wald_20110214_cache]
   title: REN  Wald ('current')
-- dimensions: *id061
+- dimensions: *id060
   name: ch.bafu.ren-wald_20110214_source
   sources: [ch.bafu.ren-wald_20110214_cache]
   title: REN  Wald (20110214, source)
-- dimensions: &id062
+- dimensions: &id061
     Time:
       default: '20150422'
       values: ['20150422']
   name: ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_20150422
   sources: [ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_20150422_cache_out]
   title: "P\xE4rke (20150422)"
-- dimensions: *id062
+- dimensions: *id061
   name: ch.bafu.schutzgebiete-paerke_nationaler_bedeutung
   sources: [ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_20150422_cache]
   title: "P\xE4rke ('current')"
-- dimensions: *id062
+- dimensions: *id061
   name: ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_20150422_source
   sources: [ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_20150422_cache]
   title: "P\xE4rke (20150422, source)"
-- dimensions: &id063
+- dimensions: &id062
     Time:
       default: '20110830'
       values: ['20110830']
   name: ch.bafu.schutzgebiete-ramsar_20110830
   sources: [ch.bafu.schutzgebiete-ramsar_20110830_cache_out]
   title: Ramsar (20110830)
-- dimensions: *id063
+- dimensions: *id062
   name: ch.bafu.schutzgebiete-ramsar
   sources: [ch.bafu.schutzgebiete-ramsar_20110830_cache]
   title: Ramsar ('current')
-- dimensions: *id063
+- dimensions: *id062
   name: ch.bafu.schutzgebiete-ramsar_20110830_source
   sources: [ch.bafu.schutzgebiete-ramsar_20110830_cache]
   title: Ramsar (20110830, source)
-- dimensions: &id064
+- dimensions: &id063
     Time:
       default: '20010117'
       values: ['20010117']
   name: ch.bafu.schutzgebiete-schweizerischer_nationalpark_20010117
   sources: [ch.bafu.schutzgebiete-schweizerischer_nationalpark_20010117_cache_out]
   title: Nationalpark (20010117)
-- dimensions: *id064
+- dimensions: *id063
   name: ch.bafu.schutzgebiete-schweizerischer_nationalpark
   sources: [ch.bafu.schutzgebiete-schweizerischer_nationalpark_20010117_cache]
   title: Nationalpark ('current')
-- dimensions: *id064
+- dimensions: *id063
   name: ch.bafu.schutzgebiete-schweizerischer_nationalpark_20010117_source
   sources: [ch.bafu.schutzgebiete-schweizerischer_nationalpark_20010117_cache]
   title: Nationalpark (20010117, source)
-- dimensions: &id065
+- dimensions: &id064
     Time:
       default: '20090917'
       values: ['20090917']
   name: ch.bafu.schutzgebiete-smaragd_20090917
   sources: [ch.bafu.schutzgebiete-smaragd_20090917_cache_out]
   title: Smaragd (20090917)
-- dimensions: *id065
+- dimensions: *id064
   name: ch.bafu.schutzgebiete-smaragd
   sources: [ch.bafu.schutzgebiete-smaragd_20090917_cache]
   title: Smaragd ('current')
-- dimensions: *id065
+- dimensions: *id064
   name: ch.bafu.schutzgebiete-smaragd_20090917_source
   sources: [ch.bafu.schutzgebiete-smaragd_20090917_cache]
   title: Smaragd (20090917, source)
-- dimensions: &id066
+- dimensions: &id065
     Time:
       default: '20150101'
       values: ['20150101']
   name: ch.bafu.showme-gemeinden_hochwasser_20150101
   sources: [ch.bafu.showme-gemeinden_hochwasser_20150101_cache_out]
   title: 'ShowMe Gemeinden: Hochwasser (20150101)'
-- dimensions: *id066
+- dimensions: *id065
   name: ch.bafu.showme-gemeinden_hochwasser
   sources: [ch.bafu.showme-gemeinden_hochwasser_20150101_cache]
   title: 'ShowMe Gemeinden: Hochwasser (''current'')'
-- dimensions: *id066
+- dimensions: *id065
   name: ch.bafu.showme-gemeinden_hochwasser_20150101_source
   sources: [ch.bafu.showme-gemeinden_hochwasser_20150101_cache]
   title: 'ShowMe Gemeinden: Hochwasser (20150101, source)'
-- dimensions: &id067
+- dimensions: &id066
     Time:
       default: '20150101'
       values: ['20150101']
   name: ch.bafu.showme-gemeinden_lawinen_20150101
   sources: [ch.bafu.showme-gemeinden_lawinen_20150101_cache_out]
   title: 'ShowMe Gemeinden: Lawinen (20150101)'
-- dimensions: *id067
+- dimensions: *id066
   name: ch.bafu.showme-gemeinden_lawinen
   sources: [ch.bafu.showme-gemeinden_lawinen_20150101_cache]
   title: 'ShowMe Gemeinden: Lawinen (''current'')'
-- dimensions: *id067
+- dimensions: *id066
   name: ch.bafu.showme-gemeinden_lawinen_20150101_source
   sources: [ch.bafu.showme-gemeinden_lawinen_20150101_cache]
   title: 'ShowMe Gemeinden: Lawinen (20150101, source)'
-- dimensions: &id068
+- dimensions: &id067
     Time:
       default: '20150101'
       values: ['20150101']
   name: ch.bafu.showme-gemeinden_rutschungen_20150101
   sources: [ch.bafu.showme-gemeinden_rutschungen_20150101_cache_out]
   title: 'ShowMe Gemeinden: Rutschungen (20150101)'
-- dimensions: *id068
+- dimensions: *id067
   name: ch.bafu.showme-gemeinden_rutschungen
   sources: [ch.bafu.showme-gemeinden_rutschungen_20150101_cache]
   title: 'ShowMe Gemeinden: Rutschungen (''current'')'
-- dimensions: *id068
+- dimensions: *id067
   name: ch.bafu.showme-gemeinden_rutschungen_20150101_source
   sources: [ch.bafu.showme-gemeinden_rutschungen_20150101_cache]
   title: 'ShowMe Gemeinden: Rutschungen (20150101, source)'
-- dimensions: &id069
+- dimensions: &id068
     Time:
       default: '20150101'
       values: ['20150101']
   name: ch.bafu.showme-gemeinden_sturzprozesse_20150101
   sources: [ch.bafu.showme-gemeinden_sturzprozesse_20150101_cache_out]
   title: 'ShowMe Gemeinden: Sturzprozesse (20150101)'
-- dimensions: *id069
+- dimensions: *id068
   name: ch.bafu.showme-gemeinden_sturzprozesse
   sources: [ch.bafu.showme-gemeinden_sturzprozesse_20150101_cache]
   title: 'ShowMe Gemeinden: Sturzprozesse (''current'')'
-- dimensions: *id069
+- dimensions: *id068
   name: ch.bafu.showme-gemeinden_sturzprozesse_20150101_source
   sources: [ch.bafu.showme-gemeinden_sturzprozesse_20150101_cache]
   title: 'ShowMe Gemeinden: Sturzprozesse (20150101, source)'
-- dimensions: &id070
+- dimensions: &id069
     Time:
       default: '20150101'
       values: ['20150101']
   name: ch.bafu.showme-kantone_hochwasser_20150101
   sources: [ch.bafu.showme-kantone_hochwasser_20150101_cache_out]
   title: 'ShowMe Kantone: Hochwasser (20150101)'
-- dimensions: *id070
+- dimensions: *id069
   name: ch.bafu.showme-kantone_hochwasser
   sources: [ch.bafu.showme-kantone_hochwasser_20150101_cache]
   title: 'ShowMe Kantone: Hochwasser (''current'')'
-- dimensions: *id070
+- dimensions: *id069
   name: ch.bafu.showme-kantone_hochwasser_20150101_source
   sources: [ch.bafu.showme-kantone_hochwasser_20150101_cache]
   title: 'ShowMe Kantone: Hochwasser (20150101, source)'
-- dimensions: &id071
+- dimensions: &id070
     Time:
       default: '20150101'
       values: ['20150101']
   name: ch.bafu.showme-kantone_lawinen_20150101
   sources: [ch.bafu.showme-kantone_lawinen_20150101_cache_out]
   title: 'ShowMe Kantone: Lawinen (20150101)'
-- dimensions: *id071
+- dimensions: *id070
   name: ch.bafu.showme-kantone_lawinen
   sources: [ch.bafu.showme-kantone_lawinen_20150101_cache]
   title: 'ShowMe Kantone: Lawinen (''current'')'
-- dimensions: *id071
+- dimensions: *id070
   name: ch.bafu.showme-kantone_lawinen_20150101_source
   sources: [ch.bafu.showme-kantone_lawinen_20150101_cache]
   title: 'ShowMe Kantone: Lawinen (20150101, source)'
-- dimensions: &id072
+- dimensions: &id071
     Time:
       default: '20150101'
       values: ['20150101']
   name: ch.bafu.showme-kantone_rutschungen_20150101
   sources: [ch.bafu.showme-kantone_rutschungen_20150101_cache_out]
   title: 'ShowMe Kantone: Rutschungen (20150101)'
-- dimensions: *id072
+- dimensions: *id071
   name: ch.bafu.showme-kantone_rutschungen
   sources: [ch.bafu.showme-kantone_rutschungen_20150101_cache]
   title: 'ShowMe Kantone: Rutschungen (''current'')'
-- dimensions: *id072
+- dimensions: *id071
   name: ch.bafu.showme-kantone_rutschungen_20150101_source
   sources: [ch.bafu.showme-kantone_rutschungen_20150101_cache]
   title: 'ShowMe Kantone: Rutschungen (20150101, source)'
-- dimensions: &id073
+- dimensions: &id072
     Time:
       default: '20150101'
       values: ['20150101']
   name: ch.bafu.showme-kantone_sturzprozesse_20150101
   sources: [ch.bafu.showme-kantone_sturzprozesse_20150101_cache_out]
   title: 'ShowMe Kantone: Sturzprozesse (20150101)'
-- dimensions: *id073
+- dimensions: *id072
   name: ch.bafu.showme-kantone_sturzprozesse
   sources: [ch.bafu.showme-kantone_sturzprozesse_20150101_cache]
   title: 'ShowMe Kantone: Sturzprozesse (''current'')'
-- dimensions: *id073
+- dimensions: *id072
   name: ch.bafu.showme-kantone_sturzprozesse_20150101_source
   sources: [ch.bafu.showme-kantone_sturzprozesse_20150101_cache]
   title: 'ShowMe Kantone: Sturzprozesse (20150101, source)'
-- dimensions: &id074
+- dimensions: &id073
     Time:
       default: '20141107'
       values: ['20141107']
   name: ch.bafu.sturm-boeenspitzen_100_20141107
   sources: [ch.bafu.sturm-boeenspitzen_100_20141107_cache_out]
   title: "Sturmgef\xE4hrdung B\xF6enspitzen 100 (20141107)"
-- dimensions: *id074
+- dimensions: *id073
   name: ch.bafu.sturm-boeenspitzen_100
   sources: [ch.bafu.sturm-boeenspitzen_100_20141107_cache]
   title: "Sturmgef\xE4hrdung B\xF6enspitzen 100 ('current')"
-- dimensions: *id074
+- dimensions: *id073
   name: ch.bafu.sturm-boeenspitzen_100_20141107_source
   sources: [ch.bafu.sturm-boeenspitzen_100_20141107_cache]
   title: "Sturmgef\xE4hrdung B\xF6enspitzen 100 (20141107, source)"
-- dimensions: &id075
+- dimensions: &id074
     Time:
       default: '20141107'
       values: ['20141107']
   name: ch.bafu.sturm-boeenspitzen_30_20141107
   sources: [ch.bafu.sturm-boeenspitzen_30_20141107_cache_out]
   title: "Sturmgef\xE4hrdung B\xF6enspitzen 30 (20141107)"
-- dimensions: *id075
+- dimensions: *id074
   name: ch.bafu.sturm-boeenspitzen_30
   sources: [ch.bafu.sturm-boeenspitzen_30_20141107_cache]
   title: "Sturmgef\xE4hrdung B\xF6enspitzen 30 ('current')"
-- dimensions: *id075
+- dimensions: *id074
   name: ch.bafu.sturm-boeenspitzen_30_20141107_source
   sources: [ch.bafu.sturm-boeenspitzen_30_20141107_cache]
   title: "Sturmgef\xE4hrdung B\xF6enspitzen 30 (20141107, source)"
-- dimensions: &id076
+- dimensions: &id075
     Time:
       default: '20141107'
       values: ['20141107']
   name: ch.bafu.sturm-boeenspitzen_300_20141107
   sources: [ch.bafu.sturm-boeenspitzen_300_20141107_cache_out]
   title: "Sturmgef\xE4hrdung B\xF6enspitzen 300 (20141107)"
-- dimensions: *id076
+- dimensions: *id075
   name: ch.bafu.sturm-boeenspitzen_300
   sources: [ch.bafu.sturm-boeenspitzen_300_20141107_cache]
   title: "Sturmgef\xE4hrdung B\xF6enspitzen 300 ('current')"
-- dimensions: *id076
+- dimensions: *id075
   name: ch.bafu.sturm-boeenspitzen_300_20141107_source
   sources: [ch.bafu.sturm-boeenspitzen_300_20141107_cache]
   title: "Sturmgef\xE4hrdung B\xF6enspitzen 300 (20141107, source)"
-- dimensions: &id077
+- dimensions: &id076
     Time:
       default: '20141107'
       values: ['20141107']
   name: ch.bafu.sturm-boeenspitzen_50_20141107
   sources: [ch.bafu.sturm-boeenspitzen_50_20141107_cache_out]
   title: "Sturmgef\xE4hrdung B\xF6enspitzen 50 (20141107)"
-- dimensions: *id077
+- dimensions: *id076
   name: ch.bafu.sturm-boeenspitzen_50
   sources: [ch.bafu.sturm-boeenspitzen_50_20141107_cache]
   title: "Sturmgef\xE4hrdung B\xF6enspitzen 50 ('current')"
-- dimensions: *id077
+- dimensions: *id076
   name: ch.bafu.sturm-boeenspitzen_50_20141107_source
   sources: [ch.bafu.sturm-boeenspitzen_50_20141107_cache]
   title: "Sturmgef\xE4hrdung B\xF6enspitzen 50 (20141107, source)"
-- dimensions: &id078
+- dimensions: &id077
     Time:
       default: '20141107'
       values: ['20141107']
   name: ch.bafu.sturm-staudruck_100_20141107
   sources: [ch.bafu.sturm-staudruck_100_20141107_cache_out]
   title: "Sturmgef\xE4hrdung Staudruck 100 (20141107)"
-- dimensions: *id078
+- dimensions: *id077
   name: ch.bafu.sturm-staudruck_100
   sources: [ch.bafu.sturm-staudruck_100_20141107_cache]
   title: "Sturmgef\xE4hrdung Staudruck 100 ('current')"
-- dimensions: *id078
+- dimensions: *id077
   name: ch.bafu.sturm-staudruck_100_20141107_source
   sources: [ch.bafu.sturm-staudruck_100_20141107_cache]
   title: "Sturmgef\xE4hrdung Staudruck 100 (20141107, source)"
-- dimensions: &id079
+- dimensions: &id078
     Time:
       default: '20141107'
       values: ['20141107']
   name: ch.bafu.sturm-staudruck_30_20141107
   sources: [ch.bafu.sturm-staudruck_30_20141107_cache_out]
   title: "Sturmgef\xE4hrdung Staudruck 30 (20141107)"
-- dimensions: *id079
+- dimensions: *id078
   name: ch.bafu.sturm-staudruck_30
   sources: [ch.bafu.sturm-staudruck_30_20141107_cache]
   title: "Sturmgef\xE4hrdung Staudruck 30 ('current')"
-- dimensions: *id079
+- dimensions: *id078
   name: ch.bafu.sturm-staudruck_30_20141107_source
   sources: [ch.bafu.sturm-staudruck_30_20141107_cache]
   title: "Sturmgef\xE4hrdung Staudruck 30 (20141107, source)"
-- dimensions: &id080
+- dimensions: &id079
     Time:
       default: '20141107'
       values: ['20141107']
   name: ch.bafu.sturm-staudruck_300_20141107
   sources: [ch.bafu.sturm-staudruck_300_20141107_cache_out]
   title: "Sturmgef\xE4hrdung Staudruck 300 (20141107)"
-- dimensions: *id080
+- dimensions: *id079
   name: ch.bafu.sturm-staudruck_300
   sources: [ch.bafu.sturm-staudruck_300_20141107_cache]
   title: "Sturmgef\xE4hrdung Staudruck 300 ('current')"
-- dimensions: *id080
+- dimensions: *id079
   name: ch.bafu.sturm-staudruck_300_20141107_source
   sources: [ch.bafu.sturm-staudruck_300_20141107_cache]
   title: "Sturmgef\xE4hrdung Staudruck 300 (20141107, source)"
-- dimensions: &id081
+- dimensions: &id080
     Time:
       default: '20141107'
       values: ['20141107']
   name: ch.bafu.sturm-staudruck_50_20141107
   sources: [ch.bafu.sturm-staudruck_50_20141107_cache_out]
   title: "Sturmgef\xE4hrdung Staudruck 50 (20141107)"
-- dimensions: *id081
+- dimensions: *id080
   name: ch.bafu.sturm-staudruck_50
   sources: [ch.bafu.sturm-staudruck_50_20141107_cache]
   title: "Sturmgef\xE4hrdung Staudruck 50 ('current')"
-- dimensions: *id081
+- dimensions: *id080
   name: ch.bafu.sturm-staudruck_50_20141107_source
   sources: [ch.bafu.sturm-staudruck_50_20141107_cache]
   title: "Sturmgef\xE4hrdung Staudruck 50 (20141107, source)"
-- dimensions: &id082
+- dimensions: &id081
     Time:
       default: '20080724'
       values: ['20080724']
   name: ch.bafu.unesco-weltnaturerbe_20080724
   sources: [ch.bafu.unesco-weltnaturerbe_20080724_cache_out]
   title: "UNESCO-Welterbe Naturst\xE4tten (20080724)"
-- dimensions: *id082
+- dimensions: *id081
   name: ch.bafu.unesco-weltnaturerbe
   sources: [ch.bafu.unesco-weltnaturerbe_20080724_cache]
   title: "UNESCO-Welterbe Naturst\xE4tten ('current')"
-- dimensions: *id082
+- dimensions: *id081
   name: ch.bafu.unesco-weltnaturerbe_20080724_source
   sources: [ch.bafu.unesco-weltnaturerbe_20080724_cache]
   title: "UNESCO-Welterbe Naturst\xE4tten (20080724, source)"
-- dimensions: &id083
+- dimensions: &id082
     Time:
       default: '20120701'
       values: ['20120701']
   name: ch.bafu.wasser-gebietsauslaesse_20120701
   sources: [ch.bafu.wasser-gebietsauslaesse_20120701_cache_out]
   title: "Gebietsausl\xE4sse (20120701)"
-- dimensions: *id083
+- dimensions: *id082
   name: ch.bafu.wasser-gebietsauslaesse
   sources: [ch.bafu.wasser-gebietsauslaesse_20120701_cache]
   title: "Gebietsausl\xE4sse ('current')"
-- dimensions: *id083
+- dimensions: *id082
   name: ch.bafu.wasser-gebietsauslaesse_20120701_source
   sources: [ch.bafu.wasser-gebietsauslaesse_20120701_cache]
   title: "Gebietsausl\xE4sse (20120701, source)"
-- dimensions: &id084
+- dimensions: &id083
     Time:
       default: '20040101'
       values: ['20040101']
   name: ch.bafu.wasser-leitungen_20040101
   sources: [ch.bafu.wasser-leitungen_20040101_cache_out]
   title: Zuleitung (20040101)
-- dimensions: *id084
+- dimensions: *id083
   name: ch.bafu.wasser-leitungen
   sources: [ch.bafu.wasser-leitungen_20040101_cache]
   title: Zuleitung ('current')
-- dimensions: *id084
+- dimensions: *id083
   name: ch.bafu.wasser-leitungen_20040101_source
   sources: [ch.bafu.wasser-leitungen_20040101_cache]
   title: Zuleitung (20040101, source)
-- dimensions: &id085
+- dimensions: &id084
     Time:
       default: '20040101'
       values: ['20040101']
   name: ch.bafu.wasser-rueckgabe_20040101
   sources: [ch.bafu.wasser-rueckgabe_20040101_cache_out]
   title: "Wasserr\xFCckgabe (20040101)"
-- dimensions: *id085
+- dimensions: *id084
   name: ch.bafu.wasser-rueckgabe
   sources: [ch.bafu.wasser-rueckgabe_20040101_cache]
   title: "Wasserr\xFCckgabe ('current')"
-- dimensions: *id085
+- dimensions: *id084
   name: ch.bafu.wasser-rueckgabe_20040101_source
   sources: [ch.bafu.wasser-rueckgabe_20040101_cache]
   title: "Wasserr\xFCckgabe (20040101, source)"
-- dimensions: &id086
+- dimensions: &id085
     Time:
       default: '20120701'
       values: ['20120701']
   name: ch.bafu.wasser-teileinzugsgebiete_2_20120701
   sources: [ch.bafu.wasser-teileinzugsgebiete_2_20120701_cache_out]
   title: Teileinzugsgebiete 2km2 (20120701)
-- dimensions: *id086
+- dimensions: *id085
   name: ch.bafu.wasser-teileinzugsgebiete_2
   sources: [ch.bafu.wasser-teileinzugsgebiete_2_20120701_cache]
   title: Teileinzugsgebiete 2km2 ('current')
-- dimensions: *id086
+- dimensions: *id085
   name: ch.bafu.wasser-teileinzugsgebiete_2_20120701_source
   sources: [ch.bafu.wasser-teileinzugsgebiete_2_20120701_cache]
   title: Teileinzugsgebiete 2km2 (20120701, source)
-- dimensions: &id087
+- dimensions: &id086
     Time:
       default: '20120701'
       values: ['20120701']
   name: ch.bafu.wasser-teileinzugsgebiete_40_20120701
   sources: [ch.bafu.wasser-teileinzugsgebiete_40_20120701_cache_out]
   title: Teileinzugsgebiete 40km2 (20120701)
-- dimensions: *id087
+- dimensions: *id086
   name: ch.bafu.wasser-teileinzugsgebiete_40
   sources: [ch.bafu.wasser-teileinzugsgebiete_40_20120701_cache]
   title: Teileinzugsgebiete 40km2 ('current')
-- dimensions: *id087
+- dimensions: *id086
   name: ch.bafu.wasser-teileinzugsgebiete_40_20120701_source
   sources: [ch.bafu.wasser-teileinzugsgebiete_40_20120701_cache]
   title: Teileinzugsgebiete 40km2 (20120701, source)
-- dimensions: &id088
+- dimensions: &id087
     Time:
       default: '20120702'
       values: ['20120702']
   name: ch.bafu.wasser-vorfluter_20120702
   sources: [ch.bafu.wasser-vorfluter_20120702_cache_out]
   title: Ablussregimetyp (20120702)
-- dimensions: *id088
+- dimensions: *id087
   name: ch.bafu.wasser-vorfluter
   sources: [ch.bafu.wasser-vorfluter_20120702_cache]
   title: Ablussregimetyp ('current')
-- dimensions: *id088
+- dimensions: *id087
   name: ch.bafu.wasser-vorfluter_20120702_source
   sources: [ch.bafu.wasser-vorfluter_20120702_cache]
   title: Ablussregimetyp (20120702, source)
-- dimensions: &id089
+- dimensions: &id088
     Time:
       default: '20150106'
       values: ['20150106']
   name: ch.bafu.wrz-jagdbanngebiete_select_20150106
   sources: [ch.bafu.wrz-jagdbanngebiete_select_20150106_cache_out]
   title: Wildschutzgebiete (20150106)
-- dimensions: *id089
+- dimensions: *id088
   name: ch.bafu.wrz-jagdbanngebiete_select
   sources: [ch.bafu.wrz-jagdbanngebiete_select_20150106_cache]
   title: Wildschutzgebiete ('current')
-- dimensions: *id089
+- dimensions: *id088
   name: ch.bafu.wrz-jagdbanngebiete_select_20150106_source
   sources: [ch.bafu.wrz-jagdbanngebiete_select_20150106_cache]
   title: Wildschutzgebiete (20150106, source)
-- dimensions: &id090
+- dimensions: &id089
     Time:
       default: '20150106'
       values: ['20150106']
   name: ch.bafu.wrz-wildruhezonen_portal_20150106
   sources: [ch.bafu.wrz-wildruhezonen_portal_20150106_cache_out]
   title: Wildruhezonen (20150106)
-- dimensions: *id090
+- dimensions: *id089
   name: ch.bafu.wrz-wildruhezonen_portal
   sources: [ch.bafu.wrz-wildruhezonen_portal_20150106_cache]
   title: Wildruhezonen ('current')
-- dimensions: *id090
+- dimensions: *id089
   name: ch.bafu.wrz-wildruhezonen_portal_20150106_source
   sources: [ch.bafu.wrz-wildruhezonen_portal_20150106_cache]
   title: Wildruhezonen (20150106, source)
-- dimensions: &id091
+- dimensions: &id090
     Time:
       default: '20110613'
       values: ['20110613']
   name: ch.bag.zecken-lyme_20110613
   sources: [ch.bag.zecken-lyme_20110613_cache_out]
   title: Borreliose Risikogebiete (20110613)
-- dimensions: *id091
+- dimensions: *id090
   name: ch.bag.zecken-lyme
   sources: [ch.bag.zecken-lyme_20110613_cache]
   title: Borreliose Risikogebiete ('current')
-- dimensions: *id091
+- dimensions: *id090
   name: ch.bag.zecken-lyme_20110613_source
   sources: [ch.bag.zecken-lyme_20110613_cache]
   title: Borreliose Risikogebiete (20110613, source)
-- dimensions: &id092
+- dimensions: &id091
     Time:
       default: '20150511'
       values: ['20150511']
   name: ch.bak.bundesinventar-schuetzenswerte-ortsbilder_20150511
   sources: [ch.bak.bundesinventar-schuetzenswerte-ortsbilder_20150511_cache_out]
   title: Bundesinventar ISOS (20150511)
-- dimensions: *id092
+- dimensions: *id091
   name: ch.bak.bundesinventar-schuetzenswerte-ortsbilder
   sources: [ch.bak.bundesinventar-schuetzenswerte-ortsbilder_20150511_cache]
   title: Bundesinventar ISOS ('current')
-- dimensions: *id092
+- dimensions: *id091
   name: ch.bak.bundesinventar-schuetzenswerte-ortsbilder_20150511_source
   sources: [ch.bak.bundesinventar-schuetzenswerte-ortsbilder_20150511_cache]
   title: Bundesinventar ISOS (20150511, source)
-- dimensions: &id093
+- dimensions: &id092
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.anbieter-eigenes_festnetz_20150521
   sources: [ch.bakom.anbieter-eigenes_festnetz_20150521_cache_out]
   title: Anzahl Leitungsanbieter (20150521)
-- dimensions: *id093
+- dimensions: *id092
   name: ch.bakom.anbieter-eigenes_festnetz
   sources: [ch.bakom.anbieter-eigenes_festnetz_20150521_cache]
   title: Anzahl Leitungsanbieter ('current')
-- dimensions: *id093
+- dimensions: *id092
   name: ch.bakom.anbieter-eigenes_festnetz_20150521_source
   sources: [ch.bakom.anbieter-eigenes_festnetz_20150521_cache]
   title: Anzahl Leitungsanbieter (20150521, source)
-- dimensions: &id094
+- dimensions: &id093
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.anschlussart-glasfaser_20150521
   sources: [ch.bakom.anschlussart-glasfaser_20150521_cache_out]
   title: Glasfaser (20150521)
-- dimensions: *id094
+- dimensions: *id093
   name: ch.bakom.anschlussart-glasfaser
   sources: [ch.bakom.anschlussart-glasfaser_20150521_cache]
   title: Glasfaser ('current')
-- dimensions: *id094
+- dimensions: *id093
   name: ch.bakom.anschlussart-glasfaser_20150521_source
   sources: [ch.bakom.anschlussart-glasfaser_20150521_cache]
   title: Glasfaser (20150521, source)
-- dimensions: &id095
+- dimensions: &id094
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.anschlussart-koaxialkabel_20150521
   sources: [ch.bakom.anschlussart-koaxialkabel_20150521_cache_out]
   title: Koaxial-Kabel (20150521)
-- dimensions: *id095
+- dimensions: *id094
   name: ch.bakom.anschlussart-koaxialkabel
   sources: [ch.bakom.anschlussart-koaxialkabel_20150521_cache]
   title: Koaxial-Kabel ('current')
-- dimensions: *id095
+- dimensions: *id094
   name: ch.bakom.anschlussart-koaxialkabel_20150521_source
   sources: [ch.bakom.anschlussart-koaxialkabel_20150521_cache]
   title: Koaxial-Kabel (20150521, source)
-- dimensions: &id096
+- dimensions: &id095
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.anschlussart-kupferdraht_20150521
   sources: [ch.bakom.anschlussart-kupferdraht_20150521_cache_out]
   title: Kupfer-Draht (20150521)
-- dimensions: *id096
+- dimensions: *id095
   name: ch.bakom.anschlussart-kupferdraht
   sources: [ch.bakom.anschlussart-kupferdraht_20150521_cache]
   title: Kupfer-Draht ('current')
-- dimensions: *id096
+- dimensions: *id095
   name: ch.bakom.anschlussart-kupferdraht_20150521_source
   sources: [ch.bakom.anschlussart-kupferdraht_20150521_cache]
   title: Kupfer-Draht (20150521, source)
-- dimensions: &id097
+- dimensions: &id096
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.downlink1_20150521
   sources: [ch.bakom.downlink1_20150521_cache_out]
   title: "Download \u2265 1 Mbit/s (20150521)"
-- dimensions: *id097
+- dimensions: *id096
   name: ch.bakom.downlink1
   sources: [ch.bakom.downlink1_20150521_cache]
   title: "Download \u2265 1 Mbit/s ('current')"
-- dimensions: *id097
+- dimensions: *id096
   name: ch.bakom.downlink1_20150521_source
   sources: [ch.bakom.downlink1_20150521_cache]
   title: "Download \u2265 1 Mbit/s (20150521, source)"
-- dimensions: &id098
+- dimensions: &id097
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.downlink10_20150521
   sources: [ch.bakom.downlink10_20150521_cache_out]
   title: "Download \u2265 10 Mbit/s (20150521)"
-- dimensions: *id098
+- dimensions: *id097
   name: ch.bakom.downlink10
   sources: [ch.bakom.downlink10_20150521_cache]
   title: "Download \u2265 10 Mbit/s ('current')"
-- dimensions: *id098
+- dimensions: *id097
   name: ch.bakom.downlink10_20150521_source
   sources: [ch.bakom.downlink10_20150521_cache]
   title: "Download \u2265 10 Mbit/s (20150521, source)"
-- dimensions: &id099
+- dimensions: &id098
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.downlink100_20150521
   sources: [ch.bakom.downlink100_20150521_cache_out]
   title: "Download \u2265 100 Mbit/s (20150521)"
-- dimensions: *id099
+- dimensions: *id098
   name: ch.bakom.downlink100
   sources: [ch.bakom.downlink100_20150521_cache]
   title: "Download \u2265 100 Mbit/s ('current')"
-- dimensions: *id099
+- dimensions: *id098
   name: ch.bakom.downlink100_20150521_source
   sources: [ch.bakom.downlink100_20150521_cache]
   title: "Download \u2265 100 Mbit/s (20150521, source)"
-- dimensions: &id100
+- dimensions: &id099
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.downlink2_20150521
   sources: [ch.bakom.downlink2_20150521_cache_out]
   title: "Download \u2265 2 Mbit/s (20150521)"
-- dimensions: *id100
+- dimensions: *id099
   name: ch.bakom.downlink2
   sources: [ch.bakom.downlink2_20150521_cache]
   title: "Download \u2265 2 Mbit/s ('current')"
-- dimensions: *id100
+- dimensions: *id099
   name: ch.bakom.downlink2_20150521_source
   sources: [ch.bakom.downlink2_20150521_cache]
   title: "Download \u2265 2 Mbit/s (20150521, source)"
-- dimensions: &id101
+- dimensions: &id100
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.downlink20_20150521
   sources: [ch.bakom.downlink20_20150521_cache_out]
   title: "Download \u2265 20 Mbit/s (20150521)"
-- dimensions: *id101
+- dimensions: *id100
   name: ch.bakom.downlink20
   sources: [ch.bakom.downlink20_20150521_cache]
   title: "Download \u2265 20 Mbit/s ('current')"
-- dimensions: *id101
+- dimensions: *id100
   name: ch.bakom.downlink20_20150521_source
   sources: [ch.bakom.downlink20_20150521_cache]
   title: "Download \u2265 20 Mbit/s (20150521, source)"
-- dimensions: &id102
+- dimensions: &id101
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.downlink50_20150521
   sources: [ch.bakom.downlink50_20150521_cache_out]
   title: "Download \u2265 50 Mbit/s (20150521)"
-- dimensions: *id102
+- dimensions: *id101
   name: ch.bakom.downlink50
   sources: [ch.bakom.downlink50_20150521_cache]
   title: "Download \u2265 50 Mbit/s ('current')"
-- dimensions: *id102
+- dimensions: *id101
   name: ch.bakom.downlink50_20150521_source
   sources: [ch.bakom.downlink50_20150521_cache]
   title: "Download \u2265 50 Mbit/s (20150521, source)"
-- dimensions: &id103
+- dimensions: &id102
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.uplink1_20150521
   sources: [ch.bakom.uplink1_20150521_cache_out]
   title: "Upload \u2265 1 Mbit/s (20150521)"
-- dimensions: *id103
+- dimensions: *id102
   name: ch.bakom.uplink1
   sources: [ch.bakom.uplink1_20150521_cache]
   title: "Upload \u2265 1 Mbit/s ('current')"
-- dimensions: *id103
+- dimensions: *id102
   name: ch.bakom.uplink1_20150521_source
   sources: [ch.bakom.uplink1_20150521_cache]
   title: "Upload \u2265 1 Mbit/s (20150521, source)"
-- dimensions: &id104
+- dimensions: &id103
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.uplink10_20150521
   sources: [ch.bakom.uplink10_20150521_cache_out]
   title: "Upload \u2265 10 Mbit/s (20150521)"
-- dimensions: *id104
+- dimensions: *id103
   name: ch.bakom.uplink10
   sources: [ch.bakom.uplink10_20150521_cache]
   title: "Upload \u2265 10 Mbit/s ('current')"
-- dimensions: *id104
+- dimensions: *id103
   name: ch.bakom.uplink10_20150521_source
   sources: [ch.bakom.uplink10_20150521_cache]
   title: "Upload \u2265 10 Mbit/s (20150521, source)"
-- dimensions: &id105
+- dimensions: &id104
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.uplink100_20150521
   sources: [ch.bakom.uplink100_20150521_cache_out]
   title: ch.bakom.uplink100 (20150521)
-- dimensions: *id105
+- dimensions: *id104
   name: ch.bakom.uplink100
   sources: [ch.bakom.uplink100_20150521_cache]
   title: ch.bakom.uplink100 ('current')
-- dimensions: *id105
+- dimensions: *id104
   name: ch.bakom.uplink100_20150521_source
   sources: [ch.bakom.uplink100_20150521_cache]
   title: ch.bakom.uplink100 (20150521, source)
-- dimensions: &id106
+- dimensions: &id105
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.uplink2_20150521
   sources: [ch.bakom.uplink2_20150521_cache_out]
   title: "Upload \u2265 2 Mbit/s (20150521)"
-- dimensions: *id106
+- dimensions: *id105
   name: ch.bakom.uplink2
   sources: [ch.bakom.uplink2_20150521_cache]
   title: "Upload \u2265 2 Mbit/s ('current')"
-- dimensions: *id106
+- dimensions: *id105
   name: ch.bakom.uplink2_20150521_source
   sources: [ch.bakom.uplink2_20150521_cache]
   title: "Upload \u2265 2 Mbit/s (20150521, source)"
-- dimensions: &id107
+- dimensions: &id106
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.uplink20_20150521
   sources: [ch.bakom.uplink20_20150521_cache_out]
   title: "Upload \u2265 20 Mbit/s (20150521)"
-- dimensions: *id107
+- dimensions: *id106
   name: ch.bakom.uplink20
   sources: [ch.bakom.uplink20_20150521_cache]
   title: "Upload \u2265 20 Mbit/s ('current')"
-- dimensions: *id107
+- dimensions: *id106
   name: ch.bakom.uplink20_20150521_source
   sources: [ch.bakom.uplink20_20150521_cache]
   title: "Upload \u2265 20 Mbit/s (20150521, source)"
-- dimensions: &id108
+- dimensions: &id107
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.uplink50_20150521
   sources: [ch.bakom.uplink50_20150521_cache_out]
   title: "Upload \u2265 50 Mbit/s (20150521)"
-- dimensions: *id108
+- dimensions: *id107
   name: ch.bakom.uplink50
   sources: [ch.bakom.uplink50_20150521_cache]
   title: "Upload \u2265 50 Mbit/s ('current')"
-- dimensions: *id108
+- dimensions: *id107
   name: ch.bakom.uplink50_20150521_source
   sources: [ch.bakom.uplink50_20150521_cache]
   title: "Upload \u2265 50 Mbit/s (20150521, source)"
-- dimensions: &id109
+- dimensions: &id108
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.verfuegbarkeit-hdtv_20150521
   sources: [ch.bakom.verfuegbarkeit-hdtv_20150521_cache_out]
   title: "HDTV-Verf\xFCgbarkeit Festnetz (20150521)"
-- dimensions: *id109
+- dimensions: *id108
   name: ch.bakom.verfuegbarkeit-hdtv
   sources: [ch.bakom.verfuegbarkeit-hdtv_20150521_cache]
   title: "HDTV-Verf\xFCgbarkeit Festnetz ('current')"
-- dimensions: *id109
+- dimensions: *id108
   name: ch.bakom.verfuegbarkeit-hdtv_20150521_source
   sources: [ch.bakom.verfuegbarkeit-hdtv_20150521_cache]
   title: "HDTV-Verf\xFCgbarkeit Festnetz (20150521, source)"
-- dimensions: &id110
+- dimensions: &id109
     Time:
       default: '20150521'
       values: ['20150521']
   name: ch.bakom.verfuegbarkeit-tv_20150521
   sources: [ch.bakom.verfuegbarkeit-tv_20150521_cache_out]
   title: "TV-Verf\xFCgbarkeit via Festnetz (20150521)"
-- dimensions: *id110
+- dimensions: *id109
   name: ch.bakom.verfuegbarkeit-tv
   sources: [ch.bakom.verfuegbarkeit-tv_20150521_cache]
   title: "TV-Verf\xFCgbarkeit via Festnetz ('current')"
-- dimensions: *id110
+- dimensions: *id109
   name: ch.bakom.verfuegbarkeit-tv_20150521_source
   sources: [ch.bakom.verfuegbarkeit-tv_20150521_cache]
   title: "TV-Verf\xFCgbarkeit via Festnetz (20150521, source)"
-- dimensions: &id111
+- dimensions: &id110
     Time:
       default: '20070704'
       values: ['20070704']
   name: ch.bakom.versorgungsgebiet-tv_20070704
   sources: [ch.bakom.versorgungsgebiet-tv_20070704_cache_out]
   title: Versorgungsgebiete TV (20070704)
-- dimensions: *id111
+- dimensions: *id110
   name: ch.bakom.versorgungsgebiet-tv
   sources: [ch.bakom.versorgungsgebiet-tv_20070704_cache]
   title: Versorgungsgebiete TV ('current')
-- dimensions: *id111
+- dimensions: *id110
   name: ch.bakom.versorgungsgebiet-tv_20070704_source
   sources: [ch.bakom.versorgungsgebiet-tv_20070704_cache]
   title: Versorgungsgebiete TV (20070704, source)
-- dimensions: &id112
+- dimensions: &id111
     Time:
       default: '20070704'
       values: ['20070704']
   name: ch.bakom.versorgungsgebiet-ukw_20070704
   sources: [ch.bakom.versorgungsgebiet-ukw_20070704_cache_out]
   title: Versorgungsgebiete Radio (20070704)
-- dimensions: *id112
+- dimensions: *id111
   name: ch.bakom.versorgungsgebiet-ukw
   sources: [ch.bakom.versorgungsgebiet-ukw_20070704_cache]
   title: Versorgungsgebiete Radio ('current')
-- dimensions: *id112
+- dimensions: *id111
   name: ch.bakom.versorgungsgebiet-ukw_20070704_source
   sources: [ch.bakom.versorgungsgebiet-ukw_20070704_cache]
   title: Versorgungsgebiete Radio (20070704, source)
-- dimensions: &id113
+- dimensions: &id112
     Time:
       default: '20120203'
       values: ['20120203']
   name: ch.bak.schutzgebiete-unesco_weltkulturerbe_20120203
   sources: [ch.bak.schutzgebiete-unesco_weltkulturerbe_20120203_cache_out]
   title: "UNESCO-Welterbe Kulturst\xE4tten (20120203)"
-- dimensions: *id113
+- dimensions: *id112
   name: ch.bak.schutzgebiete-unesco_weltkulturerbe
   sources: [ch.bak.schutzgebiete-unesco_weltkulturerbe_20120203_cache]
   title: "UNESCO-Welterbe Kulturst\xE4tten ('current')"
-- dimensions: *id113
+- dimensions: *id112
   name: ch.bak.schutzgebiete-unesco_weltkulturerbe_20120203_source
   sources: [ch.bak.schutzgebiete-unesco_weltkulturerbe_20120203_cache]
   title: "UNESCO-Welterbe Kulturst\xE4tten (20120203, source)"
-- dimensions: &id114
+- dimensions: &id113
     Time:
       default: '20140106'
       values: ['20140106']
   name: ch.bav.laerm-emissionsplan_eisenbahn_nacht_20140106
   sources: [ch.bav.laerm-emissionsplan_eisenbahn_nacht_20140106_cache_out]
   title: "Emissionsplan Eisenbahnl\xE4rm 2015 N (20140106)"
-- dimensions: *id114
+- dimensions: *id113
   name: ch.bav.laerm-emissionsplan_eisenbahn_nacht
   sources: [ch.bav.laerm-emissionsplan_eisenbahn_nacht_20140106_cache]
   title: "Emissionsplan Eisenbahnl\xE4rm 2015 N ('current')"
-- dimensions: *id114
+- dimensions: *id113
   name: ch.bav.laerm-emissionsplan_eisenbahn_nacht_20140106_source
   sources: [ch.bav.laerm-emissionsplan_eisenbahn_nacht_20140106_cache]
   title: "Emissionsplan Eisenbahnl\xE4rm 2015 N (20140106, source)"
-- dimensions: &id115
+- dimensions: &id114
     Time:
       default: '20140106'
       values: ['20140106']
   name: ch.bav.laerm-emissionsplan_eisenbahn_tag_20140106
   sources: [ch.bav.laerm-emissionsplan_eisenbahn_tag_20140106_cache_out]
   title: "Emissionsplan Eisenbahnl\xE4rm 2015 T (20140106)"
-- dimensions: *id115
+- dimensions: *id114
   name: ch.bav.laerm-emissionsplan_eisenbahn_tag
   sources: [ch.bav.laerm-emissionsplan_eisenbahn_tag_20140106_cache]
   title: "Emissionsplan Eisenbahnl\xE4rm 2015 T ('current')"
-- dimensions: *id115
+- dimensions: *id114
   name: ch.bav.laerm-emissionsplan_eisenbahn_tag_20140106_source
   sources: [ch.bav.laerm-emissionsplan_eisenbahn_tag_20140106_cache]
   title: "Emissionsplan Eisenbahnl\xE4rm 2015 T (20140106, source)"
-- dimensions: &id116
+- dimensions: &id115
     Time:
       default: '20150305'
       values: ['20150305']
   name: ch.bazl.luftfahrtkarten-icao_20150305
   sources: [ch.bazl.luftfahrtkarten-icao_20150305_cache_out]
   title: Luftfahrtkarte ICAO (20150305)
-- dimensions: *id116
+- dimensions: *id115
   name: ch.bazl.luftfahrtkarten-icao
   sources: [ch.bazl.luftfahrtkarten-icao_20150305_cache]
   title: Luftfahrtkarte ICAO ('current')
-- dimensions: *id116
+- dimensions: *id115
   name: ch.bazl.luftfahrtkarten-icao_20150305_source
   sources: [ch.bazl.luftfahrtkarten-icao_20150305_cache]
   title: Luftfahrtkarte ICAO (20150305, source)
-- dimensions: &id117
+- dimensions: &id116
     Time:
       default: '20130822'
       values: ['20130822']
   name: ch.bazl.projektierungszonen-flughafenanlagen_20130822
   sources: [ch.bazl.projektierungszonen-flughafenanlagen_20130822_cache_out]
   title: "Projektierungszonen: Flugh\xE4fen (20130822)"
-- dimensions: *id117
+- dimensions: *id116
   name: ch.bazl.projektierungszonen-flughafenanlagen
   sources: [ch.bazl.projektierungszonen-flughafenanlagen_20130822_cache]
   title: "Projektierungszonen: Flugh\xE4fen ('current')"
-- dimensions: *id117
+- dimensions: *id116
   name: ch.bazl.projektierungszonen-flughafenanlagen_20130822_source
   sources: [ch.bazl.projektierungszonen-flughafenanlagen_20130822_cache]
   title: "Projektierungszonen: Flugh\xE4fen (20130822, source)"
-- dimensions: &id118
+- dimensions: &id117
     Time:
       default: '20150305'
       values: ['20150305']
   name: ch.bazl.segelflugkarte_20150305
   sources: [ch.bazl.segelflugkarte_20150305_cache_out]
   title: Segelflugkarte (20150305)
-- dimensions: *id118
+- dimensions: *id117
   name: ch.bazl.segelflugkarte
   sources: [ch.bazl.segelflugkarte_20150305_cache]
   title: Segelflugkarte ('current')
-- dimensions: *id118
+- dimensions: *id117
   name: ch.bazl.segelflugkarte_20150305_source
   sources: [ch.bazl.segelflugkarte_20150305_cache]
   title: Segelflugkarte (20150305, source)
-- dimensions: &id119
+- dimensions: &id118
     Time:
       default: '20120911'
       values: ['20120911']
   name: ch.bfe.kernkraftwerke_20120911
   sources: [ch.bfe.kernkraftwerke_20120911_cache_out]
   title: Kernkraftwerke (20120911)
-- dimensions: *id119
+- dimensions: *id118
   name: ch.bfe.kernkraftwerke
   sources: [ch.bfe.kernkraftwerke_20120911_cache]
   title: Kernkraftwerke ('current')
-- dimensions: *id119
+- dimensions: *id118
   name: ch.bfe.kernkraftwerke_20120911_source
   sources: [ch.bfe.kernkraftwerke_20120911_cache]
   title: Kernkraftwerke (20120911, source)
-- dimensions: &id120
+- dimensions: &id119
     Time:
       default: '20120531'
       values: ['20120531']
   name: ch.bfe.kleinwasserkraftpotentiale_20120531
   sources: [ch.bfe.kleinwasserkraftpotentiale_20120531_cache_out]
   title: Kleinwasserkraftpotentiale (20120531)
-- dimensions: *id120
+- dimensions: *id119
   name: ch.bfe.kleinwasserkraftpotentiale
   sources: [ch.bfe.kleinwasserkraftpotentiale_20120531_cache]
   title: Kleinwasserkraftpotentiale ('current')
-- dimensions: *id120
+- dimensions: *id119
   name: ch.bfe.kleinwasserkraftpotentiale_20120531_source
   sources: [ch.bfe.kleinwasserkraftpotentiale_20120531_cache]
   title: Kleinwasserkraftpotentiale (20120531, source)
-- dimensions: &id121
+- dimensions: &id120
     Time:
       default: '20140101'
       values: ['20140101']
   name: ch.bfe.windenergieanlagen_20140101
   sources: [ch.bfe.windenergieanlagen_20140101_cache_out]
   title: Windenergieanlagen (20140101)
-- dimensions: *id121
+- dimensions: *id120
   name: ch.bfe.windenergieanlagen
   sources: [ch.bfe.windenergieanlagen_20140101_cache]
   title: Windenergieanlagen ('current')
-- dimensions: *id121
+- dimensions: *id120
   name: ch.bfe.windenergieanlagen_20140101_source
   sources: [ch.bfe.windenergieanlagen_20140101_cache]
   title: Windenergieanlagen (20140101, source)
-- dimensions: &id122
+- dimensions: &id121
     Time:
       default: '20131121'
       values: ['20131121']
   name: ch.bfs.arealstatistik-bodenbedeckung_20131121
   sources: [ch.bfs.arealstatistik-bodenbedeckung_20131121_cache_out]
   title: Arealstatistik 2004/09 NOLC04 (20131121)
-- dimensions: *id122
+- dimensions: *id121
   name: ch.bfs.arealstatistik-bodenbedeckung
   sources: [ch.bfs.arealstatistik-bodenbedeckung_20131121_cache]
   title: Arealstatistik 2004/09 NOLC04 ('current')
-- dimensions: *id122
+- dimensions: *id121
   name: ch.bfs.arealstatistik-bodenbedeckung_20131121_source
   sources: [ch.bfs.arealstatistik-bodenbedeckung_20131121_cache]
   title: Arealstatistik 2004/09 NOLC04 (20131121, source)
-- dimensions: &id123
+- dimensions: &id122
     Time:
       default: '20131121'
       values: ['20131121']
   name: ch.bfs.arealstatistik-bodenbedeckung-1985_20131121
   sources: [ch.bfs.arealstatistik-bodenbedeckung-1985_20131121_cache_out]
   title: Arealstatistik 1979/85 NOLC04 (20131121)
-- dimensions: *id123
+- dimensions: *id122
   name: ch.bfs.arealstatistik-bodenbedeckung-1985
   sources: [ch.bfs.arealstatistik-bodenbedeckung-1985_20131121_cache]
   title: Arealstatistik 1979/85 NOLC04 ('current')
-- dimensions: *id123
+- dimensions: *id122
   name: ch.bfs.arealstatistik-bodenbedeckung-1985_20131121_source
   sources: [ch.bfs.arealstatistik-bodenbedeckung-1985_20131121_cache]
   title: Arealstatistik 1979/85 NOLC04 (20131121, source)
-- dimensions: &id124
+- dimensions: &id123
     Time:
       default: '20131121'
       values: ['20131121']
   name: ch.bfs.arealstatistik-bodenbedeckung-1997_20131121
   sources: [ch.bfs.arealstatistik-bodenbedeckung-1997_20131121_cache_out]
   title: Arealstatistik 1992/97 NOLC04 (20131121)
-- dimensions: *id124
+- dimensions: *id123
   name: ch.bfs.arealstatistik-bodenbedeckung-1997
   sources: [ch.bfs.arealstatistik-bodenbedeckung-1997_20131121_cache]
   title: Arealstatistik 1992/97 NOLC04 ('current')
-- dimensions: *id124
+- dimensions: *id123
   name: ch.bfs.arealstatistik-bodenbedeckung-1997_20131121_source
   sources: [ch.bfs.arealstatistik-bodenbedeckung-1997_20131121_cache]
   title: Arealstatistik 1992/97 NOLC04 (20131121, source)
-- dimensions: &id125
+- dimensions: &id124
     Time:
       default: '20131121'
       values: ['20131121']
   name: ch.bfs.arealstatistik-bodennutzung_20131121
   sources: [ch.bfs.arealstatistik-bodennutzung_20131121_cache_out]
   title: Arealstatistik 2004/09 NOLU04  (20131121)
-- dimensions: *id125
+- dimensions: *id124
   name: ch.bfs.arealstatistik-bodennutzung
   sources: [ch.bfs.arealstatistik-bodennutzung_20131121_cache]
   title: Arealstatistik 2004/09 NOLU04  ('current')
-- dimensions: *id125
+- dimensions: *id124
   name: ch.bfs.arealstatistik-bodennutzung_20131121_source
   sources: [ch.bfs.arealstatistik-bodennutzung_20131121_cache]
   title: Arealstatistik 2004/09 NOLU04  (20131121, source)
-- dimensions: &id126
+- dimensions: &id125
     Time:
       default: '20131121'
       values: ['20131121']
   name: ch.bfs.arealstatistik-bodennutzung-1985_20131121
   sources: [ch.bfs.arealstatistik-bodennutzung-1985_20131121_cache_out]
   title: Arealstatistik 1979/85 NOLU04 (20131121)
-- dimensions: *id126
+- dimensions: *id125
   name: ch.bfs.arealstatistik-bodennutzung-1985
   sources: [ch.bfs.arealstatistik-bodennutzung-1985_20131121_cache]
   title: Arealstatistik 1979/85 NOLU04 ('current')
-- dimensions: *id126
+- dimensions: *id125
   name: ch.bfs.arealstatistik-bodennutzung-1985_20131121_source
   sources: [ch.bfs.arealstatistik-bodennutzung-1985_20131121_cache]
   title: Arealstatistik 1979/85 NOLU04 (20131121, source)
-- dimensions: &id127
+- dimensions: &id126
     Time:
       default: '20131121'
       values: ['20131121']
   name: ch.bfs.arealstatistik-bodennutzung-1997_20131121
   sources: [ch.bfs.arealstatistik-bodennutzung-1997_20131121_cache_out]
   title: Arealstatistik 1992/97 NOLU04 (20131121)
-- dimensions: *id127
+- dimensions: *id126
   name: ch.bfs.arealstatistik-bodennutzung-1997
   sources: [ch.bfs.arealstatistik-bodennutzung-1997_20131121_cache]
   title: Arealstatistik 1992/97 NOLU04 ('current')
-- dimensions: *id127
+- dimensions: *id126
   name: ch.bfs.arealstatistik-bodennutzung-1997_20131121_source
   sources: [ch.bfs.arealstatistik-bodennutzung-1997_20131121_cache]
   title: Arealstatistik 1992/97 NOLU04 (20131121, source)
-- dimensions: &id128
+- dimensions: &id127
     Time:
       default: '19970901'
       values: ['19970901']
   name: ch.bfs.arealstatistik-waldmischungsgrad_19970901
   sources: [ch.bfs.arealstatistik-waldmischungsgrad_19970901_cache_out]
   title: Waldmischungsgrad 1990/1992 (19970901)
-- dimensions: *id128
+- dimensions: *id127
   name: ch.bfs.arealstatistik-waldmischungsgrad
   sources: [ch.bfs.arealstatistik-waldmischungsgrad_19970901_cache]
   title: Waldmischungsgrad 1990/1992 ('current')
-- dimensions: *id128
+- dimensions: *id127
   name: ch.bfs.arealstatistik-waldmischungsgrad_19970901_source
   sources: [ch.bfs.arealstatistik-waldmischungsgrad_19970901_cache]
   title: Waldmischungsgrad 1990/1992 (19970901, source)
-- dimensions: &id129
+- dimensions: &id128
     Time:
       default: '20150422'
       values: ['20150422']
   name: ch.blw.alpprodukte_20150422
   sources: [ch.blw.alpprodukte_20150422_cache_out]
   title: Alpprodukte (20150422)
-- dimensions: *id129
+- dimensions: *id128
   name: ch.blw.alpprodukte
   sources: [ch.blw.alpprodukte_20150422_cache]
   title: Alpprodukte ('current')
-- dimensions: *id129
+- dimensions: *id128
   name: ch.blw.alpprodukte_20150422_source
   sources: [ch.blw.alpprodukte_20150422_cache]
   title: Alpprodukte (20150422, source)
-- dimensions: &id130
+- dimensions: &id129
     Time:
       default: '20150422'
       values: ['20150422']
   name: ch.blw.bergprodukte_20150422
   sources: [ch.blw.bergprodukte_20150422_cache_out]
   title: Bergprodukte (20150422)
-- dimensions: *id130
+- dimensions: *id129
   name: ch.blw.bergprodukte
   sources: [ch.blw.bergprodukte_20150422_cache]
   title: Bergprodukte ('current')
-- dimensions: *id130
+- dimensions: *id129
   name: ch.blw.bergprodukte_20150422_source
   sources: [ch.blw.bergprodukte_20150422_cache]
   title: Bergprodukte (20150422, source)
-- dimensions: &id131
+- dimensions: &id130
     Time:
       default: '20091110'
       values: ['20091110']
   name: ch.blw.bewaesserungsbeduerftigkeit_20091110
   sources: [ch.blw.bewaesserungsbeduerftigkeit_20091110_cache_out]
   title: "Bew\xE4sserungsbed\xFCrftigkeit (20091110)"
-- dimensions: *id131
+- dimensions: *id130
   name: ch.blw.bewaesserungsbeduerftigkeit
   sources: [ch.blw.bewaesserungsbeduerftigkeit_20091110_cache]
   title: "Bew\xE4sserungsbed\xFCrftigkeit ('current')"
-- dimensions: *id131
+- dimensions: *id130
   name: ch.blw.bewaesserungsbeduerftigkeit_20091110_source
   sources: [ch.blw.bewaesserungsbeduerftigkeit_20091110_cache]
   title: "Bew\xE4sserungsbed\xFCrftigkeit (20091110, source)"
-- dimensions: &id132
+- dimensions: &id131
     Time:
       default: '20120601'
       values: ['20120601']
   name: ch.blw.bodeneignung-gruendigkeit_20120601
   sources: [ch.blw.bodeneignung-gruendigkeit_20120601_cache_out]
   title: "Gr\xFCndigkeit (20120601)"
-- dimensions: *id132
+- dimensions: *id131
   name: ch.blw.bodeneignung-gruendigkeit
   sources: [ch.blw.bodeneignung-gruendigkeit_20120601_cache]
   title: "Gr\xFCndigkeit ('current')"
-- dimensions: *id132
+- dimensions: *id131
   name: ch.blw.bodeneignung-gruendigkeit_20120601_source
   sources: [ch.blw.bodeneignung-gruendigkeit_20120601_cache]
   title: "Gr\xFCndigkeit (20120601, source)"
-- dimensions: &id133
+- dimensions: &id132
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.bodeneignung-kulturland_20081024
   sources: [ch.blw.bodeneignung-kulturland_20081024_cache_out]
   title: "Bodeneignung f\xFCr Kulturland (20081024)"
-- dimensions: *id133
+- dimensions: *id132
   name: ch.blw.bodeneignung-kulturland
   sources: [ch.blw.bodeneignung-kulturland_20081024_cache]
   title: "Bodeneignung f\xFCr Kulturland ('current')"
-- dimensions: *id133
+- dimensions: *id132
   name: ch.blw.bodeneignung-kulturland_20081024_source
   sources: [ch.blw.bodeneignung-kulturland_20081024_cache]
   title: "Bodeneignung f\xFCr Kulturland (20081024, source)"
-- dimensions: &id134
+- dimensions: &id133
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.bodeneignung-kulturtyp_20081024
   sources: [ch.blw.bodeneignung-kulturtyp_20081024_cache_out]
   title: 'Bodeneignung: Kulturtyp (20081024)'
-- dimensions: *id134
+- dimensions: *id133
   name: ch.blw.bodeneignung-kulturtyp
   sources: [ch.blw.bodeneignung-kulturtyp_20081024_cache]
   title: 'Bodeneignung: Kulturtyp (''current'')'
-- dimensions: *id134
+- dimensions: *id133
   name: ch.blw.bodeneignung-kulturtyp_20081024_source
   sources: [ch.blw.bodeneignung-kulturtyp_20081024_cache]
   title: 'Bodeneignung: Kulturtyp (20081024, source)'
-- dimensions: &id135
+- dimensions: &id134
     Time:
       default: '20120601'
       values: ['20120601']
   name: ch.blw.bodeneignung-naehrstoffspeichervermoegen_20120601
   sources: [ch.blw.bodeneignung-naehrstoffspeichervermoegen_20120601_cache_out]
   title: "N\xE4hrstoffspeicherverm\xF6gen (20120601)"
-- dimensions: *id135
+- dimensions: *id134
   name: ch.blw.bodeneignung-naehrstoffspeichervermoegen
   sources: [ch.blw.bodeneignung-naehrstoffspeichervermoegen_20120601_cache]
   title: "N\xE4hrstoffspeicherverm\xF6gen ('current')"
-- dimensions: *id135
+- dimensions: *id134
   name: ch.blw.bodeneignung-naehrstoffspeichervermoegen_20120601_source
   sources: [ch.blw.bodeneignung-naehrstoffspeichervermoegen_20120601_cache]
   title: "N\xE4hrstoffspeicherverm\xF6gen (20120601, source)"
-- dimensions: &id136
+- dimensions: &id135
     Time:
       default: '20120601'
       values: ['20120601']
   name: ch.blw.bodeneignung-skelettgehalt_20120601
   sources: [ch.blw.bodeneignung-skelettgehalt_20120601_cache_out]
   title: Skelettgehalt (20120601)
-- dimensions: *id136
+- dimensions: *id135
   name: ch.blw.bodeneignung-skelettgehalt
   sources: [ch.blw.bodeneignung-skelettgehalt_20120601_cache]
   title: Skelettgehalt ('current')
-- dimensions: *id136
+- dimensions: *id135
   name: ch.blw.bodeneignung-skelettgehalt_20120601_source
   sources: [ch.blw.bodeneignung-skelettgehalt_20120601_cache]
   title: Skelettgehalt (20120601, source)
-- dimensions: &id137
+- dimensions: &id136
     Time:
       default: '20120601'
       values: ['20120601']
   name: ch.blw.bodeneignung-vernaessung_20120601
   sources: [ch.blw.bodeneignung-vernaessung_20120601_cache_out]
   title: "Vern\xE4ssung (20120601)"
-- dimensions: *id137
+- dimensions: *id136
   name: ch.blw.bodeneignung-vernaessung
   sources: [ch.blw.bodeneignung-vernaessung_20120601_cache]
   title: "Vern\xE4ssung ('current')"
-- dimensions: *id137
+- dimensions: *id136
   name: ch.blw.bodeneignung-vernaessung_20120601_source
   sources: [ch.blw.bodeneignung-vernaessung_20120601_cache]
   title: "Vern\xE4ssung (20120601, source)"
-- dimensions: &id138
+- dimensions: &id137
     Time:
       default: '20120601'
       values: ['20120601']
   name: ch.blw.bodeneignung-wasserdurchlaessigkeit_20120601
   sources: [ch.blw.bodeneignung-wasserdurchlaessigkeit_20120601_cache_out]
   title: "Wasserdurchl\xE4ssigkeit (20120601)"
-- dimensions: *id138
+- dimensions: *id137
   name: ch.blw.bodeneignung-wasserdurchlaessigkeit
   sources: [ch.blw.bodeneignung-wasserdurchlaessigkeit_20120601_cache]
   title: "Wasserdurchl\xE4ssigkeit ('current')"
-- dimensions: *id138
+- dimensions: *id137
   name: ch.blw.bodeneignung-wasserdurchlaessigkeit_20120601_source
   sources: [ch.blw.bodeneignung-wasserdurchlaessigkeit_20120601_cache]
   title: "Wasserdurchl\xE4ssigkeit (20120601, source)"
-- dimensions: &id139
+- dimensions: &id138
     Time:
       default: '20120601'
       values: ['20120601']
   name: ch.blw.bodeneignung-wasserspeichervermoegen_20120601
   sources: [ch.blw.bodeneignung-wasserspeichervermoegen_20120601_cache_out]
   title: "Wasserspeicherverm\xF6gen (20120601)"
-- dimensions: *id139
+- dimensions: *id138
   name: ch.blw.bodeneignung-wasserspeichervermoegen
   sources: [ch.blw.bodeneignung-wasserspeichervermoegen_20120601_cache]
   title: "Wasserspeicherverm\xF6gen ('current')"
-- dimensions: *id139
+- dimensions: *id138
   name: ch.blw.bodeneignung-wasserspeichervermoegen_20120601_source
   sources: [ch.blw.bodeneignung-wasserspeichervermoegen_20120601_cache]
   title: "Wasserspeicherverm\xF6gen (20120601, source)"
-- dimensions: &id140
+- dimensions: &id139
     Time:
       default: '20100103'
       values: ['20100103']
   name: ch.blw.erosion_20100103
   sources: [ch.blw.erosion_20100103_cache_out]
   title: Erosionsrisiko qualitativ 1 (20100103)
-- dimensions: *id140
+- dimensions: *id139
   name: ch.blw.erosion
   sources: [ch.blw.erosion_20100103_cache]
   title: Erosionsrisiko qualitativ 1 ('current')
-- dimensions: *id140
+- dimensions: *id139
   name: ch.blw.erosion_20100103_source
   sources: [ch.blw.erosion_20100103_cache]
   title: Erosionsrisiko qualitativ 1 (20100103, source)
-- dimensions: &id141
+- dimensions: &id140
     Time:
       default: '20100103'
       values: ['20100103']
   name: ch.blw.erosion-mit_bergzonen_20100103
   sources: [ch.blw.erosion-mit_bergzonen_20100103_cache_out]
   title: Erosionsrisiko qualitativ 2 (20100103)
-- dimensions: *id141
+- dimensions: *id140
   name: ch.blw.erosion-mit_bergzonen
   sources: [ch.blw.erosion-mit_bergzonen_20100103_cache]
   title: Erosionsrisiko qualitativ 2 ('current')
-- dimensions: *id141
+- dimensions: *id140
   name: ch.blw.erosion-mit_bergzonen_20100103_source
   sources: [ch.blw.erosion-mit_bergzonen_20100103_cache]
   title: Erosionsrisiko qualitativ 2 (20100103, source)
-- dimensions: &id142
+- dimensions: &id141
     Time:
       default: '20100601'
       values: ['20100601']
   name: ch.blw.erosion-quantitativ_20100601
   sources: [ch.blw.erosion-quantitativ_20100601_cache_out]
   title: Erosionsrisiko quantitativ (20100601)
-- dimensions: *id142
+- dimensions: *id141
   name: ch.blw.erosion-quantitativ
   sources: [ch.blw.erosion-quantitativ_20100601_cache]
   title: Erosionsrisiko quantitativ ('current')
-- dimensions: *id142
+- dimensions: *id141
   name: ch.blw.erosion-quantitativ_20100601_source
   sources: [ch.blw.erosion-quantitativ_20100601_cache]
   title: Erosionsrisiko quantitativ (20100601, source)
-- dimensions: &id143
+- dimensions: &id142
     Time:
       default: '20120601'
       values: ['20120601']
   name: ch.blw.feldblockkarte_20120601
   sources: [ch.blw.feldblockkarte_20120601_cache_out]
   title: Feldblockkarte (20120601)
-- dimensions: *id143
+- dimensions: *id142
   name: ch.blw.feldblockkarte
   sources: [ch.blw.feldblockkarte_20120601_cache]
   title: Feldblockkarte ('current')
-- dimensions: *id143
+- dimensions: *id142
   name: ch.blw.feldblockkarte_20120601_source
   sources: [ch.blw.feldblockkarte_20120601_cache]
   title: Feldblockkarte (20120601, source)
-- dimensions: &id144
+- dimensions: &id143
     Time:
       default: '20121201'
       values: ['20121201']
   name: ch.blw.gewaesseranschlusskarte_20121201
   sources: [ch.blw.gewaesseranschlusskarte_20121201_cache_out]
   title: "Gew\xE4sseranschluss (20121201)"
-- dimensions: *id144
+- dimensions: *id143
   name: ch.blw.gewaesseranschlusskarte
   sources: [ch.blw.gewaesseranschlusskarte_20121201_cache]
   title: "Gew\xE4sseranschluss ('current')"
-- dimensions: *id144
+- dimensions: *id143
   name: ch.blw.gewaesseranschlusskarte_20121201_source
   sources: [ch.blw.gewaesseranschlusskarte_20121201_cache]
   title: "Gew\xE4sseranschluss (20121201, source)"
-- dimensions: &id145
+- dimensions: &id144
     Time:
       default: '20121201'
       values: ['20121201']
   name: ch.blw.gewaesseranschlusskarte-direkt_20121201
   sources: [ch.blw.gewaesseranschlusskarte-direkt_20121201_cache_out]
   title: "Gew\xE4sseranschluss erweitert (20121201)"
-- dimensions: *id145
+- dimensions: *id144
   name: ch.blw.gewaesseranschlusskarte-direkt
   sources: [ch.blw.gewaesseranschlusskarte-direkt_20121201_cache]
   title: "Gew\xE4sseranschluss erweitert ('current')"
-- dimensions: *id145
+- dimensions: *id144
   name: ch.blw.gewaesseranschlusskarte-direkt_20121201_source
   sources: [ch.blw.gewaesseranschlusskarte-direkt_20121201_cache]
   title: "Gew\xE4sseranschluss erweitert (20121201, source)"
-- dimensions: &id146
+- dimensions: &id145
     Time:
       default: '20121231'
       values: ['20121231']
   name: ch.blw.hang_steillagen_20121231
   sources: [ch.blw.hang_steillagen_20121231_cache_out]
   title: Hanglagen (20121231)
-- dimensions: *id146
+- dimensions: *id145
   name: ch.blw.hang_steillagen
   sources: [ch.blw.hang_steillagen_20121231_cache]
   title: Hanglagen ('current')
-- dimensions: *id146
+- dimensions: *id145
   name: ch.blw.hang_steillagen_20121231_source
   sources: [ch.blw.hang_steillagen_20121231_cache]
   title: Hanglagen (20121231, source)
-- dimensions: &id147
+- dimensions: &id146
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.klimaeignung-futterbau_20081024
   sources: [ch.blw.klimaeignung-futterbau_20081024_cache_out]
   title: Klimaeignung Futterbau (20081024)
-- dimensions: *id147
+- dimensions: *id146
   name: ch.blw.klimaeignung-futterbau
   sources: [ch.blw.klimaeignung-futterbau_20081024_cache]
   title: Klimaeignung Futterbau ('current')
-- dimensions: *id147
+- dimensions: *id146
   name: ch.blw.klimaeignung-futterbau_20081024_source
   sources: [ch.blw.klimaeignung-futterbau_20081024_cache]
   title: Klimaeignung Futterbau (20081024, source)
-- dimensions: &id148
+- dimensions: &id147
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.klimaeignung-getreidebau_20081024
   sources: [ch.blw.klimaeignung-getreidebau_20081024_cache_out]
   title: Klimaeignung Getreidebau (20081024)
-- dimensions: *id148
+- dimensions: *id147
   name: ch.blw.klimaeignung-getreidebau
   sources: [ch.blw.klimaeignung-getreidebau_20081024_cache]
   title: Klimaeignung Getreidebau ('current')
-- dimensions: *id148
+- dimensions: *id147
   name: ch.blw.klimaeignung-getreidebau_20081024_source
   sources: [ch.blw.klimaeignung-getreidebau_20081024_cache]
   title: Klimaeignung Getreidebau (20081024, source)
-- dimensions: &id149
+- dimensions: &id148
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.klimaeignung-kartoffeln_20081024
   sources: [ch.blw.klimaeignung-kartoffeln_20081024_cache_out]
   title: Klimaeignung Kartoffeln (20081024)
-- dimensions: *id149
+- dimensions: *id148
   name: ch.blw.klimaeignung-kartoffeln
   sources: [ch.blw.klimaeignung-kartoffeln_20081024_cache]
   title: Klimaeignung Kartoffeln ('current')
-- dimensions: *id149
+- dimensions: *id148
   name: ch.blw.klimaeignung-kartoffeln_20081024_source
   sources: [ch.blw.klimaeignung-kartoffeln_20081024_cache]
   title: Klimaeignung Kartoffeln (20081024, source)
-- dimensions: &id150
+- dimensions: &id149
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.klimaeignung-koernermais_20081024
   sources: [ch.blw.klimaeignung-koernermais_20081024_cache_out]
   title: "Klimaeignung K\xF6rnermais (20081024)"
-- dimensions: *id150
+- dimensions: *id149
   name: ch.blw.klimaeignung-koernermais
   sources: [ch.blw.klimaeignung-koernermais_20081024_cache]
   title: "Klimaeignung K\xF6rnermais ('current')"
-- dimensions: *id150
+- dimensions: *id149
   name: ch.blw.klimaeignung-koernermais_20081024_source
   sources: [ch.blw.klimaeignung-koernermais_20081024_cache]
   title: "Klimaeignung K\xF6rnermais (20081024, source)"
-- dimensions: &id151
+- dimensions: &id150
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.klimaeignung-kulturland_20081024
   sources: [ch.blw.klimaeignung-kulturland_20081024_cache_out]
   title: Klimaeignung Kulturland (20081024)
-- dimensions: *id151
+- dimensions: *id150
   name: ch.blw.klimaeignung-kulturland
   sources: [ch.blw.klimaeignung-kulturland_20081024_cache]
   title: Klimaeignung Kulturland ('current')
-- dimensions: *id151
+- dimensions: *id150
   name: ch.blw.klimaeignung-kulturland_20081024_source
   sources: [ch.blw.klimaeignung-kulturland_20081024_cache]
   title: Klimaeignung Kulturland (20081024, source)
-- dimensions: &id152
+- dimensions: &id151
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.klimaeignung-spezialkulturen_20081024
   sources: [ch.blw.klimaeignung-spezialkulturen_20081024_cache_out]
   title: Klimaeignung Spezialkulturen (20081024)
-- dimensions: *id152
+- dimensions: *id151
   name: ch.blw.klimaeignung-spezialkulturen
   sources: [ch.blw.klimaeignung-spezialkulturen_20081024_cache]
   title: Klimaeignung Spezialkulturen ('current')
-- dimensions: *id152
+- dimensions: *id151
   name: ch.blw.klimaeignung-spezialkulturen_20081024_source
   sources: [ch.blw.klimaeignung-spezialkulturen_20081024_cache]
   title: Klimaeignung Spezialkulturen (20081024, source)
-- dimensions: &id153
+- dimensions: &id152
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.klimaeignung-typ_20081024
   sources: [ch.blw.klimaeignung-typ_20081024_cache_out]
   title: "Klimaeignung \xDCbersicht (20081024)"
-- dimensions: *id153
+- dimensions: *id152
   name: ch.blw.klimaeignung-typ
   sources: [ch.blw.klimaeignung-typ_20081024_cache]
   title: "Klimaeignung \xDCbersicht ('current')"
-- dimensions: *id153
+- dimensions: *id152
   name: ch.blw.klimaeignung-typ_20081024_source
   sources: [ch.blw.klimaeignung-typ_20081024_cache]
   title: "Klimaeignung \xDCbersicht (20081024, source)"
-- dimensions: &id154
+- dimensions: &id153
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.klimaeignung-zwischenfruchtbau_20081024
   sources: [ch.blw.klimaeignung-zwischenfruchtbau_20081024_cache_out]
   title: Klimaeignung Zwischenfruchtbau (20081024)
-- dimensions: *id154
+- dimensions: *id153
   name: ch.blw.klimaeignung-zwischenfruchtbau
   sources: [ch.blw.klimaeignung-zwischenfruchtbau_20081024_cache]
   title: Klimaeignung Zwischenfruchtbau ('current')
-- dimensions: *id154
+- dimensions: *id153
   name: ch.blw.klimaeignung-zwischenfruchtbau_20081024_source
   sources: [ch.blw.klimaeignung-zwischenfruchtbau_20081024_cache]
   title: Klimaeignung Zwischenfruchtbau (20081024, source)
-- dimensions: &id155
+- dimensions: &id154
     Time:
       default: '20150708'
       values: ['20150708']
   name: ch.blw.landwirtschaftliche-zonengrenzen_20150708
   sources: [ch.blw.landwirtschaftliche-zonengrenzen_20150708_cache_out]
   title: Landwirtschaftliche Zonengrenzen (20150708)
-- dimensions: *id155
+- dimensions: *id154
   name: ch.blw.landwirtschaftliche-zonengrenzen
   sources: [ch.blw.landwirtschaftliche-zonengrenzen_20150708_cache]
   title: Landwirtschaftliche Zonengrenzen ('current')
-- dimensions: *id155
+- dimensions: *id154
   name: ch.blw.landwirtschaftliche-zonengrenzen_20150708_source
   sources: [ch.blw.landwirtschaftliche-zonengrenzen_20150708_cache]
   title: Landwirtschaftliche Zonengrenzen (20150708, source)
-- dimensions: &id156
+- dimensions: &id155
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.niederschlagshaushalt_20081024
   sources: [ch.blw.niederschlagshaushalt_20081024_cache_out]
   title: Niederschlagshaushalt (20081024)
-- dimensions: *id156
+- dimensions: *id155
   name: ch.blw.niederschlagshaushalt
   sources: [ch.blw.niederschlagshaushalt_20081024_cache]
   title: Niederschlagshaushalt ('current')
-- dimensions: *id156
+- dimensions: *id155
   name: ch.blw.niederschlagshaushalt_20081024_source
   sources: [ch.blw.niederschlagshaushalt_20081024_cache]
   title: Niederschlagshaushalt (20081024, source)
-- dimensions: &id157
+- dimensions: &id156
     Time:
       default: '20121231'
       values: ['20121231']
   name: ch.blw.steil_terrassenlagen_rebbau_20121231
   sources: [ch.blw.steil_terrassenlagen_rebbau_20121231_cache_out]
   title: "Rebfl\xE4chen in Hanglagen (20121231)"
-- dimensions: *id157
+- dimensions: *id156
   name: ch.blw.steil_terrassenlagen_rebbau
   sources: [ch.blw.steil_terrassenlagen_rebbau_20121231_cache]
   title: "Rebfl\xE4chen in Hanglagen ('current')"
-- dimensions: *id157
+- dimensions: *id156
   name: ch.blw.steil_terrassenlagen_rebbau_20121231_source
   sources: [ch.blw.steil_terrassenlagen_rebbau_20121231_cache]
   title: "Rebfl\xE4chen in Hanglagen (20121231, source)"
-- dimensions: &id158
+- dimensions: &id157
     Time:
       default: '20110805'
       values: ['20110805']
   name: ch.blw.ursprungsbezeichnungen-fleisch_20110805
   sources: [ch.blw.ursprungsbezeichnungen-fleisch_20110805_cache_out]
   title: GGA Fleischware (20110805)
-- dimensions: *id158
+- dimensions: *id157
   name: ch.blw.ursprungsbezeichnungen-fleisch
   sources: [ch.blw.ursprungsbezeichnungen-fleisch_20110805_cache]
   title: GGA Fleischware ('current')
-- dimensions: *id158
+- dimensions: *id157
   name: ch.blw.ursprungsbezeichnungen-fleisch_20110805_source
   sources: [ch.blw.ursprungsbezeichnungen-fleisch_20110805_cache]
   title: GGA Fleischware (20110805, source)
-- dimensions: &id159
+- dimensions: &id158
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.ursprungsbezeichnungen-kaese_20081024
   sources: [ch.blw.ursprungsbezeichnungen-kaese_20081024_cache_out]
   title: "GUB K\xE4se (20081024)"
-- dimensions: *id159
+- dimensions: *id158
   name: ch.blw.ursprungsbezeichnungen-kaese
   sources: [ch.blw.ursprungsbezeichnungen-kaese_20081024_cache]
   title: "GUB K\xE4se ('current')"
-- dimensions: *id159
+- dimensions: *id158
   name: ch.blw.ursprungsbezeichnungen-kaese_20081024_source
   sources: [ch.blw.ursprungsbezeichnungen-kaese_20081024_cache]
   title: "GUB K\xE4se (20081024, source)"
-- dimensions: &id160
+- dimensions: &id159
     Time:
       default: '20150306'
       values: ['20150306']
   name: ch.blw.ursprungsbezeichnungen-konditoreiwaren_20150306
   sources: [ch.blw.ursprungsbezeichnungen-konditoreiwaren_20150306_cache_out]
   title: GGA Konditoreiware (20150306)
-- dimensions: *id160
+- dimensions: *id159
   name: ch.blw.ursprungsbezeichnungen-konditoreiwaren
   sources: [ch.blw.ursprungsbezeichnungen-konditoreiwaren_20150306_cache]
   title: GGA Konditoreiware ('current')
-- dimensions: *id160
+- dimensions: *id159
   name: ch.blw.ursprungsbezeichnungen-konditoreiwaren_20150306_source
   sources: [ch.blw.ursprungsbezeichnungen-konditoreiwaren_20150306_cache]
   title: GGA Konditoreiware (20150306, source)
-- dimensions: &id161
+- dimensions: &id160
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.ursprungsbezeichnungen-pflanzen_20081024
   sources: [ch.blw.ursprungsbezeichnungen-pflanzen_20081024_cache_out]
   title: GUB Pflanzliche Produkte (20081024)
-- dimensions: *id161
+- dimensions: *id160
   name: ch.blw.ursprungsbezeichnungen-pflanzen
   sources: [ch.blw.ursprungsbezeichnungen-pflanzen_20081024_cache]
   title: GUB Pflanzliche Produkte ('current')
-- dimensions: *id161
+- dimensions: *id160
   name: ch.blw.ursprungsbezeichnungen-pflanzen_20081024_source
   sources: [ch.blw.ursprungsbezeichnungen-pflanzen_20081024_cache]
   title: GUB Pflanzliche Produkte (20081024, source)
-- dimensions: &id162
+- dimensions: &id161
     Time:
       default: '20081024'
       values: ['20081024']
   name: ch.blw.ursprungsbezeichnungen-spirituosen_20081024
   sources: [ch.blw.ursprungsbezeichnungen-spirituosen_20081024_cache_out]
   title: GUB Spirituosen (20081024)
-- dimensions: *id162
+- dimensions: *id161
   name: ch.blw.ursprungsbezeichnungen-spirituosen
   sources: [ch.blw.ursprungsbezeichnungen-spirituosen_20081024_cache]
   title: GUB Spirituosen ('current')
-- dimensions: *id162
+- dimensions: *id161
   name: ch.blw.ursprungsbezeichnungen-spirituosen_20081024_source
   sources: [ch.blw.ursprungsbezeichnungen-spirituosen_20081024_cache]
   title: GUB Spirituosen (20081024, source)
-- dimensions: &id163
+- dimensions: &id162
     Time:
       default: '20120101'
       values: ['20120101']
   name: ch.ensi.zonenplan-notfallschutz-kernanlagen_20120101
   sources: [ch.ensi.zonenplan-notfallschutz-kernanlagen_20120101_cache_out]
   title: "Zonenpl\xE4ne f\xFCr den Notfallschutz (20120101)"
-- dimensions: *id163
+- dimensions: *id162
   name: ch.ensi.zonenplan-notfallschutz-kernanlagen
   sources: [ch.ensi.zonenplan-notfallschutz-kernanlagen_20120101_cache]
   title: "Zonenpl\xE4ne f\xFCr den Notfallschutz ('current')"
-- dimensions: *id163
+- dimensions: *id162
   name: ch.ensi.zonenplan-notfallschutz-kernanlagen_20120101_source
   sources: [ch.ensi.zonenplan-notfallschutz-kernanlagen_20120101_cache]
   title: "Zonenpl\xE4ne f\xFCr den Notfallschutz (20120101, source)"
-- dimensions: &id164
+- dimensions: &id163
     Time:
       default: '20150624'
       values: ['20150624']
   name: ch.pronatura.waldreservate_20150624
   sources: [ch.pronatura.waldreservate_20150624_cache_out]
   title: Waldreservate Pro Natura (20150624)
-- dimensions: *id164
+- dimensions: *id163
   name: ch.pronatura.waldreservate
   sources: [ch.pronatura.waldreservate_20150624_cache]
   title: Waldreservate Pro Natura ('current')
-- dimensions: *id164
+- dimensions: *id163
   name: ch.pronatura.waldreservate_20150624_source
   sources: [ch.pronatura.waldreservate_20150624_cache]
   title: Waldreservate Pro Natura (20150624, source)
-- dimensions: &id165
+- dimensions: &id164
     Time:
       default: '20120918'
       values: ['20120918']
   name: ch.sgpk.maechtigkeit-lockergesteine_20120918
   sources: [ch.sgpk.maechtigkeit-lockergesteine_20120918_cache_out]
   title: "M\xE4chtigkeit der Lockergesteine (20120918)"
-- dimensions: *id165
+- dimensions: *id164
   name: ch.sgpk.maechtigkeit-lockergesteine
   sources: [ch.sgpk.maechtigkeit-lockergesteine_20120918_cache]
   title: "M\xE4chtigkeit der Lockergesteine ('current')"
-- dimensions: *id165
+- dimensions: *id164
   name: ch.sgpk.maechtigkeit-lockergesteine_20120918_source
   sources: [ch.sgpk.maechtigkeit-lockergesteine_20120918_cache]
   title: "M\xE4chtigkeit der Lockergesteine (20120918, source)"
-- dimensions: &id166
+- dimensions: &id165
     Time:
       default: '20061231'
       values: ['20061231']
   name: ch.swisstopo.dreiecksvermaschung_20061231
   sources: [ch.swisstopo.dreiecksvermaschung_20061231_cache_out]
   title: LV95 Dreiecksvermaschung (20061231)
-- dimensions: *id166
+- dimensions: *id165
   name: ch.swisstopo.dreiecksvermaschung
   sources: [ch.swisstopo.dreiecksvermaschung_20061231_cache]
   title: LV95 Dreiecksvermaschung ('current')
-- dimensions: *id166
+- dimensions: *id165
   name: ch.swisstopo.dreiecksvermaschung_20061231_source
   sources: [ch.swisstopo.dreiecksvermaschung_20061231_cache]
   title: LV95 Dreiecksvermaschung (20061231, source)
-- dimensions: &id167
+- dimensions: &id166
     Time:
       default: '20140924'
       values: ['20140924']
   name: ch.swisstopo.fixpunkte-agnes_20140924
   sources: [ch.swisstopo.fixpunkte-agnes_20140924_cache_out]
   title: AGNES (20140924)
-- dimensions: *id167
+- dimensions: *id166
   name: ch.swisstopo.fixpunkte-agnes
   sources: [ch.swisstopo.fixpunkte-agnes_20140924_cache]
   title: AGNES ('current')
-- dimensions: *id167
+- dimensions: *id166
   name: ch.swisstopo.fixpunkte-agnes_20140924_source
   sources: [ch.swisstopo.fixpunkte-agnes_20140924_cache]
   title: AGNES (20140924, source)
-- dimensions: &id168
+- dimensions: &id167
     Time:
       default: '20121212'
       values: ['20121212']
   name: ch.swisstopo.fixpunkte-hfp1_20121212
   sources: [ch.swisstopo.fixpunkte-hfp1_20121212_cache_out]
   title: "H\xF6henfixpunkte HFP1 (20121212)"
-- dimensions: *id168
+- dimensions: *id167
   name: ch.swisstopo.fixpunkte-hfp1
   sources: [ch.swisstopo.fixpunkte-hfp1_20121212_cache]
   title: "H\xF6henfixpunkte HFP1 ('current')"
-- dimensions: *id168
+- dimensions: *id167
   name: ch.swisstopo.fixpunkte-hfp1_20121212_source
   sources: [ch.swisstopo.fixpunkte-hfp1_20121212_cache]
   title: "H\xF6henfixpunkte HFP1 (20121212, source)"
-- dimensions: &id169
+- dimensions: &id168
     Time:
       default: '20121212'
       values: ['20121212']
   name: ch.swisstopo.fixpunkte-hfp2_20121212
   sources: [ch.swisstopo.fixpunkte-hfp2_20121212_cache_out]
   title: "H\xF6henfixpunkte HFP2 (20121212)"
-- dimensions: *id169
+- dimensions: *id168
   name: ch.swisstopo.fixpunkte-hfp2
   sources: [ch.swisstopo.fixpunkte-hfp2_20121212_cache]
   title: "H\xF6henfixpunkte HFP2 ('current')"
-- dimensions: *id169
+- dimensions: *id168
   name: ch.swisstopo.fixpunkte-hfp2_20121212_source
   sources: [ch.swisstopo.fixpunkte-hfp2_20121212_cache]
   title: "H\xF6henfixpunkte HFP2 (20121212, source)"
-- dimensions: &id170
+- dimensions: &id169
     Time:
       default: '20121212'
       values: ['20121212']
   name: ch.swisstopo.fixpunkte-lfp1_20121212
   sources: [ch.swisstopo.fixpunkte-lfp1_20121212_cache_out]
   title: Lagefixpunkte LFP1 (20121212)
-- dimensions: *id170
+- dimensions: *id169
   name: ch.swisstopo.fixpunkte-lfp1
   sources: [ch.swisstopo.fixpunkte-lfp1_20121212_cache]
   title: Lagefixpunkte LFP1 ('current')
-- dimensions: *id170
+- dimensions: *id169
   name: ch.swisstopo.fixpunkte-lfp1_20121212_source
   sources: [ch.swisstopo.fixpunkte-lfp1_20121212_cache]
   title: Lagefixpunkte LFP1 (20121212, source)
-- dimensions: &id171
+- dimensions: &id170
     Time:
       default: '20121212'
       values: ['20121212']
   name: ch.swisstopo.fixpunkte-lfp2_20121212
   sources: [ch.swisstopo.fixpunkte-lfp2_20121212_cache_out]
   title: Lagefixpunkte LFP2 (20121212)
-- dimensions: *id171
+- dimensions: *id170
   name: ch.swisstopo.fixpunkte-lfp2
   sources: [ch.swisstopo.fixpunkte-lfp2_20121212_cache]
   title: Lagefixpunkte LFP2 ('current')
-- dimensions: *id171
+- dimensions: *id170
   name: ch.swisstopo.fixpunkte-lfp2_20121212_source
   sources: [ch.swisstopo.fixpunkte-lfp2_20121212_cache]
   title: Lagefixpunkte LFP2 (20121212, source)
-- dimensions: &id172
+- dimensions: &id171
     Time:
       default: '20041231'
       values: ['20041231']
   name: ch.swisstopo.geoidmodell-ch1903_20041231
   sources: [ch.swisstopo.geoidmodell-ch1903_20041231_cache_out]
   title: Geoidmodell in CH1903 (20041231)
-- dimensions: *id172
+- dimensions: *id171
   name: ch.swisstopo.geoidmodell-ch1903
   sources: [ch.swisstopo.geoidmodell-ch1903_20041231_cache]
   title: Geoidmodell in CH1903 ('current')
-- dimensions: *id172
+- dimensions: *id171
   name: ch.swisstopo.geoidmodell-ch1903_20041231_source
   sources: [ch.swisstopo.geoidmodell-ch1903_20041231_cache]
   title: Geoidmodell in CH1903 (20041231, source)
-- dimensions: &id173
+- dimensions: &id172
     Time:
       default: '20041231'
       values: ['20041231']
   name: ch.swisstopo.geoidmodell-etrs89_20041231
   sources: [ch.swisstopo.geoidmodell-etrs89_20041231_cache_out]
   title: Geoidmodell in ETRS89 (20041231)
-- dimensions: *id173
+- dimensions: *id172
   name: ch.swisstopo.geoidmodell-etrs89
   sources: [ch.swisstopo.geoidmodell-etrs89_20041231_cache]
   title: Geoidmodell in ETRS89 ('current')
-- dimensions: *id173
+- dimensions: *id172
   name: ch.swisstopo.geoidmodell-etrs89_20041231_source
   sources: [ch.swisstopo.geoidmodell-etrs89_20041231_cache]
   title: Geoidmodell in ETRS89 (20041231, source)
+- dimensions: &id173
+    Time:
+      default: '19961231'
+      values: ['19961231']
+  name: ch.swisstopo.geologie-dosisleistung-terrestrisch_19961231
+  sources: [ch.swisstopo.geologie-dosisleistung-terrestrisch_19961231_cache_out]
+  title: Terrestrische Strahlung (19961231)
+- dimensions: *id173
+  name: ch.swisstopo.geologie-dosisleistung-terrestrisch
+  sources: [ch.swisstopo.geologie-dosisleistung-terrestrisch_19961231_cache]
+  title: Terrestrische Strahlung ('current')
+- dimensions: *id173
+  name: ch.swisstopo.geologie-dosisleistung-terrestrisch_19961231_source
+  sources: [ch.swisstopo.geologie-dosisleistung-terrestrisch_19961231_cache]
+  title: Terrestrische Strahlung (19961231, source)
 - dimensions: &id174
     Time:
       default: '20081231'
@@ -18748,18 +18761,15 @@ sources:
     transparent: true
     type: tile
     url: http://wmts6.geo.admin.ch/1.0.0/ch.astra.ivs-gelaendekarte/default/19980816/21781/%(z)d/%(y)d/%(x)d.%(format)s
-  ch.astra.ivs-nat-verlaeufe_20100416_source:
+  ch.astra.ivs-nat-verlaeufe_wms_source:
     coverage:
-      bbox: [0, 40, 20, 50]
-      bbox_srs: EPSG:4326
-    grid: swisstopo-pixelkarte
-    http:
-      headers: {Referer: 'http://mapproxy.geo.admin.ch'}
-    on_error:
-      204: {cache: true, response: transparent}
-    transparent: true
-    type: tile
-    url: http://wmts6.geo.admin.ch/1.0.0/ch.astra.ivs-nat-verlaeufe/default/20100416/21781/%(z)d/%(y)d/%(x)d.%(format)s
+      bbox: [420000, 30000, 900000, 350000]
+      bbox_srs: EPSG:21781
+    req: {layers: ch.astra.ivs-nat-verlaeufe, url: 'http://wms.geo.admin.ch/'}
+    supported_srs: ['EPSG:4326', 'CRS:84', 'EPSG:21781', 'EPSG:4258', 'EPSG:3857',
+      'EPSG:2056']
+    type: wms
+    wms_opts: {format: image/png, version: 1.1.1}
   ch.astra.ivs-nat_20100416_source:
     coverage:
       bbox: [0, 40, 20, 50]
@@ -21861,6 +21871,18 @@ sources:
     transparent: true
     type: tile
     url: http://wmts6.geo.admin.ch/1.0.0/ch.swisstopo.geoidmodell-etrs89/default/20041231/21781/%(z)d/%(y)d/%(x)d.%(format)s
+  ch.swisstopo.geologie-dosisleistung-terrestrisch_19961231_source:
+    coverage:
+      bbox: [0, 40, 20, 50]
+      bbox_srs: EPSG:4326
+    grid: swisstopo-pixelkarte
+    http:
+      headers: {Referer: 'http://mapproxy.geo.admin.ch'}
+    on_error:
+      204: {cache: true, response: transparent}
+    transparent: true
+    type: tile
+    url: http://wmts6.geo.admin.ch/1.0.0/ch.swisstopo.geologie-dosisleistung-terrestrisch/default/19961231/21781/%(z)d/%(y)d/%(x)d.%(format)s
   ch.swisstopo.geologie-eiszeit-lgm-raster_20081231_source:
     coverage:
       bbox: [0, 40, 20, 50]

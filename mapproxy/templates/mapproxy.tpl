@@ -40,6 +40,14 @@ layers:
        Time:
           default: "current"
           values: ["current"]
+  - name: "ch.astra.ivs-nat-verlaeufe_20100416"
+    title: "IVS historischer Verlauf"
+    sources: [ch.astra.ivs-nat-verlaeufe_wms_cache]
+    dimensions:
+       Time:
+          default: "20100416"
+          values: ["20100416"]
+
 
 sources:
   osm_tms:
@@ -62,6 +70,18 @@ sources:
     req:
       url: http://wms.geo.admin.ch
       layers: ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill
+  ch.astra.ivs-nat-verlaeufe_wms_source:
+    type: wms
+    wms_opts:
+      version: 1.1.1
+      format: "image/png"
+    supported_srs: ['EPSG:4326', 'CRS:84', 'EPSG:21781', 'EPSG:4258', 'EPSG:3857', 'EPSG:2056']
+    req:
+      url: http://wms.geo.admin.ch/
+      layers: ch.astra.ivs-nat-verlaeufe
+    coverage:
+      bbox: [420000,30000,900000,350000]
+      bbox_srs: EPSG:21781
 
 caches:
   ch.kantone.cadastralwebmap-farbe_wms_cache:
@@ -70,6 +90,12 @@ caches:
      meta_size: [1, 1]
      grids: [epsg_21781, epsg_4258, epsg_4326, epsg_2056, epsg_3857]
      sources: [ch.kantone.cadastralwebmap-farbe_wms_source]
+  ch.astra.ivs-nat-verlaeufe_wms_cache:
+     disable_storage: true
+     format: image/png
+     meta_size: [1, 1]
+     grids: [epsg_21781, epsg_4258, epsg_4326, epsg_2056, epsg_3857]
+     sources: [ch.astra.ivs-nat-verlaeufe_wms_source]
   osm_cache:
     grids: [global_mercator_osm]
     sources: [osm_tms]

@@ -134,7 +134,9 @@ for idx, layersConfig in enumerate(getLayersConfigs(topics=topics)):
         if layersConfig.timestamp is not None and len(set(topics) & set(layersConfig.maps.split(','))) > 0:
             print idx, layersConfig.bod_layer_id
             bod_layer_id = layersConfig.bod_layer_id
-
+            # TODO: fix source image format
+            if bod_layer_id == "ch.astra.ivs-nat-verlaeufe":
+                continue
             timestamps = layersConfig.timestamp.split(',')
             total_timestamps += len(timestamps)
             current_timestamp = timestamps[0]
