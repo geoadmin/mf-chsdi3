@@ -160,7 +160,7 @@ layouts:
 #---------------------------------------
         - !columns
           condition: thirdPartyDataOwner
-          absoluteY: 37
+          absoluteY: 23
           absoluteX: 153
           width: 675
           items:
@@ -204,7 +204,7 @@ layouts:
 # Disclaimer
 #---------------------------------------
         - !columns
-          absoluteY: 30
+          absoluteY: 37
           absoluteX: 153
           width: 675
           items:
@@ -490,42 +490,42 @@ layouts:
 #---------------------------------------
         - !columns
           condition: thirdPartyDataOwner
-          absoluteY: 50
+          absoluteY: 28
           absoluteX: 153
-          width: 675
+          width: 405
           items:
             - !text
               condition: langde
               fontColor: red
-              fontSize: 7
+              fontSize: 6
               align: left
               text: |
                 Warnung: diese Daten kommen von einem Drittanbieter. Verfügbarkeit wird durch Drittanbieter gewährleistet. Es gelten zusätzlich die Bedingungen der entsprechenden Datenherren.
             - !text
               condition: langfr
               fontColor: red
-              fontSize: 7
+              fontSize: 6
               align: left
               text: |
                 Attention: Mise en garde données tierces. La disponibilité des données est assurée par des tiers. Les conditions d’utilisation du propriétaire respectif des données doivent être respectées.
             - !text
               condition: langen
               fontColor: red
-              fontSize: 7
+              fontSize: 6
               align: left
               text: |
                 Warning: Third party data shown. Availability is ensured by third party data provider. The terms and conditions of the third party data owner do apply and have to be respected.
             - !text
               condition: langrm
               fontColor: red
-              fontSize: 7
+              fontSize: 6
               align: left
               text: |
                 Warnung: diese Daten kommen von einem Drittanbieter. Verfügbarkeit wird durch Drittanbieter gewährleistet. Es gelten zusätzlich die Bedingungen der entsprechenden Datenherren.
             - !text
               condition: langit
               fontColor: red
-              fontSize: 7
+              fontSize: 6
               align: left
               text: |
                 Attenzione: questi dati provengono da terze parti. La loro disponibilità è soggetta al provider esterno. I termini e le condizioni dei rispettivi proprietari dei dati devono essere rispettate.
@@ -534,7 +534,7 @@ layouts:
 # Disclaimer
 #---------------------------------------
         - !columns
-          absoluteY: 43
+          absoluteY: 46
           absoluteX: 153
           width: 405
           items:
@@ -783,7 +783,7 @@ layouts:
         - !columns
           absoluteY: 45
           absoluteX: 153
-          width: 675
+          width: 1023
           items:
             - !text
               condition: langde
@@ -821,9 +821,9 @@ layouts:
 #---------------------------------------
         - !columns
           condition: thirdPartyDataOwner
-          absoluteY: 37
+          absoluteY: 24
           absoluteX: 153
-          width: 675
+          width: 1023
           items:
             - !text
               condition: langde
@@ -865,7 +865,7 @@ layouts:
 # Disclaimer
 #---------------------------------------
         - !columns
-          absoluteY: 30
+          absoluteY: 38
           absoluteX: 153
           width: 1023
           items:
@@ -1084,10 +1084,10 @@ layouts:
         - !columns
           absoluteY: 85
           absoluteX: 30
-          width: 300
+          width: 405
           items:
             - !text
-              fontSize: 7
+              fontSize: 6
               align: left
               text: |
                 ${dataOwner}
@@ -1098,12 +1098,12 @@ layouts:
         - !columns
           condition: thirdPartyDataOwner
           absoluteY: 75
-          absoluteX: 30
-          width: 300
+          absoluteX: 67
+          width: 405
           items:
             - !text
               fontColor: red
-              fontSize: 7
+              fontSize: 6
               align: left
               text: |
                 ${thirdPartyDataOwner}
@@ -1114,7 +1114,7 @@ layouts:
         - !columns
           absoluteY: 58
           absoluteX: 153
-          width: 405
+          width: 675
           items:
             - !text
               condition: langde
@@ -1152,42 +1152,42 @@ layouts:
 #---------------------------------------
         - !columns
           condition: thirdPartyDataOwner
-          absoluteY: 50
+          absoluteY: 40
           absoluteX: 153
           width: 675
           items:
             - !text
               condition: langde
               fontColor: red
-              fontSize: 7
+              fontSize: 6
               align: left
               text: |
                 Warnung: diese Daten kommen von einem Drittanbieter. Verfügbarkeit wird durch Drittanbieter gewährleistet. Es gelten zusätzlich die Bedingungen der entsprechenden Datenherren.
             - !text
               condition: langfr
               fontColor: red
-              fontSize: 7
+              fontSize: 6
               align: left
               text: |
                 Attention: Mise en garde données tierces. La disponibilité des données est assurée par des tiers. Les conditions d’utilisation du propriétaire respectif des données doivent être respectées.
             - !text
               condition: langen
               fontColor: red
-              fontSize: 7
+              fontSize: 6
               align: left
               text: |
                 Warning: Third party data shown. Availability is ensured by third party data provider. The terms and conditions of the third party data owner do apply and have to be respected.
             - !text
               condition: langrm
               fontColor: red
-              fontSize: 7
+              fontSize: 6
               align: left
               text: |
                 Warnung: diese Daten kommen von einem Drittanbieter. Verfügbarkeit wird durch Drittanbieter gewährleistet. Es gelten zusätzlich die Bedingungen der entsprechenden Datenherren.
             - !text
               condition: langit
               fontColor: red
-              fontSize: 7
+              fontSize: 6
               align: left
               text: |
                 Attenzione: questi dati provengono da terze parti. La loro disponibilità è soggetta al provider esterno. I termini e le condizioni dei rispettivi proprietari dei dati devono essere rispettate.
@@ -1196,7 +1196,7 @@ layouts:
 # Disclaimer
 #---------------------------------------
         - !columns
-          absoluteY: 43
+          absoluteY: 52
           absoluteX: 153
           width: 675
           items:
