@@ -200,7 +200,7 @@ caches:
     sources: [ch.astra.ivs-nat-verlaeufe_20100416_source]
   ch.astra.ivs-nat-verlaeufe_20100416_cache_out:
     disable_storage: true
-    format: noquantize
+    format: image/png
     grids: [epsg_4258, epsg_4326, epsg_2056, epsg_3857]
     meta_buffer: 0
     meta_size: [1, 1]
@@ -6386,7 +6386,7 @@ caches:
     sources: [ch.swisstopo.swissbuildings3d_19980101_source]
   ch.swisstopo.swissbuildings3d_19980101_cache_out:
     disable_storage: true
-    format: noquantize
+    format: image/png
     grids: [epsg_4258, epsg_4326, epsg_2056, epsg_3857]
     meta_buffer: 0
     meta_size: [1, 1]
@@ -6746,7 +6746,7 @@ caches:
     sources: [ch.swisstopo.vec25-eisenbahnnetz_20090401_source]
   ch.swisstopo.vec25-eisenbahnnetz_20090401_cache_out:
     disable_storage: true
-    format: noquantize
+    format: image/png
     grids: [epsg_4258, epsg_4326, epsg_2056, epsg_3857]
     meta_buffer: 0
     meta_size: [1, 1]
@@ -9012,9 +9012,7 @@ globals:
       image/jpeg:
         encoding_options: {jpeg_quality: 88}
         mode: RGB
-      noquantize:
-        encoding_options: {quantizer: None}
-        format: image/png
+      noquantize: {format: image/png, mode: P, transparent: true}
     paletted: true
     resampling_method: bicubic
   srs:
@@ -11571,15 +11569,15 @@ layers:
       values: ['20110318']
   name: ch.swisstopo.geologie-eiszeit-lgm_20110318
   sources: [ch.swisstopo.geologie-eiszeit-lgm_20110318_cache_out]
-  title: ch.swisstopo.geologie-eiszeit-lgm (20110318)
+  title: Letzteiszeitl. Max. (Vektor) 500 (20110318)
 - dimensions: *id175
   name: ch.swisstopo.geologie-eiszeit-lgm
   sources: [ch.swisstopo.geologie-eiszeit-lgm_20110318_cache]
-  title: ch.swisstopo.geologie-eiszeit-lgm ('current')
+  title: Letzteiszeitl. Max. (Vektor) 500 ('current')
 - dimensions: *id175
   name: ch.swisstopo.geologie-eiszeit-lgm_20110318_source
   sources: [ch.swisstopo.geologie-eiszeit-lgm_20110318_cache]
-  title: ch.swisstopo.geologie-eiszeit-lgm (20110318, source)
+  title: Letzteiszeitl. Max. (Vektor) 500 (20110318, source)
 - dimensions: &id176
     Time:
       default: '20081231'

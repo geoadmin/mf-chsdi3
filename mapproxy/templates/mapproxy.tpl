@@ -152,8 +152,8 @@ globals:
       formats:
          noquantize:
              format: image/png
-             encoding_options:
-                 quantizer: None
+             transparent: True
+             mode: P
          # override setting
          image/jpeg:
              mode: RGB 
