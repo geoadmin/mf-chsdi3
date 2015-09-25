@@ -16,7 +16,7 @@
   pageTitle = _(c.get('title')) + ': ' + featureId
   title += ': ' + pageTitle
   loaderUrl = h.make_agnostic(route_url('ga_api', request))
-  featureUrl = "http:%s/%s/%s/%s/%s" %( h.make_agnostic(route_url('topics',request)) ,'api','MapServer','ch.swisstopo.zeitreihen',featureId+"_"+c.get('release_year'))
+  featureUrl = "https:%s/%s/%s/%s/%s" %( h.make_agnostic(route_url('topics',request)) ,'api','MapServer','ch.swisstopo.zeitreihen',featureId+"_"+c.get('release_year'))
 
 def feature_from_identify(featureUrl):
     result = None
@@ -36,8 +36,36 @@ def feature_from_identify(featureUrl):
 
     return result
 
+  tileUrlBasePath = 'http://historicalmaps.geo.admin.ch/tiles'
+def imagesize_from_metafile(bvnummer):
+    import xml.etree.ElementTree as etree
+    width = None
+    height = None
+    metaurl = tileUrlBasePath + '/' + bvnummer + '/tilemapresource.xml'
+    response = None
+    try:
+        request = urllib2.Request(metaurl)
+        request.add_header('Referer', 'http://admin.ch')
+        response = urllib2.urlopen(request)
+        if response.getcode() == 200:
+            xml = etree.parse(response).getroot()
+            bb = xml.find('BoundingBox')
+            if bb != None:
+                width = abs(int(float(bb.get('maxy'))) - int(float(bb.get('miny'))))
+                height = abs(int(float(bb.get('maxx'))) - int(float(bb.get('minx'))))
+    except:
+        pass
+    finally:
+        if response:
+            response.close()
+    return (width, height)
+
+
+  wh = imagesize_from_metafile(featureId)
+  width = c.get('width') or wh[0]
+  height = c.get('height') or wh[1]
   featureBbox = feature_from_identify(featureUrl)['feature']['bbox']
-  geoadminUrl = "//%s/?layers=ch.swisstopo.zeitreihen&zoom=6&Y=%s&X=%s&time=%s" % (request.registry.settings['geoadminhost'],featureBbox[0]+((featureBbox[2]-featureBbox[0])/2),featureBbox[1]+((featureBbox[3]-featureBbox[1])/2),c.get('release_year')) 
+  geoadminUrl = "//%s/?layers=ch.swisstopo.zeitreihen&zoom=6&Y=%s&X=%s&time=%s" % (request.registry.settings['geoadminhost'],featureBbox[0]+((featureBbox[2]-featureBbox[0])/2),featureBbox[1]+((featureBbox[3]-featureBbox[1])/2),c.get('release_year'))
 %>
 
 <!DOCTYPE html>
@@ -151,8 +179,8 @@ def feature_from_identify(featureUrl):
     <script type="text/javascript" src="${loaderUrl}"></script>
     <script type="text/javascript">
       function init() {
-        ${zeitreise_map.init_map(c.get('bildnummer'), c.get('width'), c.get('height'), c.get('rotation'), 'zeitreihenmap')}
-       
+        ${zeitreise_map.init_map(c.get('bildnummer'), width, height, c.get('rotation'), 'zeitreihenmap')}
+
         // FF/IE
         if ('onbeforeprint' in window) {
           var element = document.getElementById('zeitreihenmap');
@@ -170,7 +198,7 @@ def feature_from_identify(featureUrl):
         if (window.matchMedia) {
           window.matchMedia('print').addListener(function(mql) {
             if (mql.matches) {
-              zeitreihenMap.updateSize(); 
+              zeitreihenMap.updateSize();
             } else {
               window.setTimeout(function(){zeitreihenMap.updateSize()}, 500);
             }
