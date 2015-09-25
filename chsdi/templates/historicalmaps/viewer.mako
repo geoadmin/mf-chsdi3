@@ -2,8 +2,8 @@
 
 <%
   from pyramid.url import route_url
-  from urllib2 import urlopen
-  from json import loads
+  import urllib2
+  import json
 
   c = context
   request = c.get('request')
@@ -16,6 +16,28 @@
   pageTitle = _(c.get('title')) + ': ' + featureId
   title += ': ' + pageTitle
   loaderUrl = h.make_agnostic(route_url('ga_api', request))
+  featureUrl = "http:%s/%s/%s/%s/%s" %( h.make_agnostic(route_url('topics',request)) ,'api','MapServer','ch.swisstopo.zeitreihen',featureId+"_"+c.get('release_year'))
+
+def feature_from_identify(featureUrl):
+    result = None
+    feature = None
+    response = None
+    try:
+        request = urllib2.Request(featureUrl)
+        response = urllib2.urlopen(featureUrl)
+        if response.getcode() == 200:
+            feature = json.loads(response.read())
+            result = feature
+    except:
+        pass
+    finally:
+        if response:
+            response.close()
+
+    return result
+
+  featureBbox = feature_from_identify(featureUrl)['feature']['bbox']
+  geoadminUrl = "//%s/?layers=ch.swisstopo.zeitreihen&zoom=6&Y=%s&X=%s&time=%s" % (request.registry.settings['geoadminhost'],featureBbox[0]+((featureBbox[2]-featureBbox[0])/2),featureBbox[1]+((featureBbox[3]-featureBbox[1])/2),c.get('release_year')) 
 %>
 
 <!DOCTYPE html>
@@ -109,7 +131,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="${h.versioned(request.static_url('chsdi:static/images/favicon.ico'))}">
   </head>
   <body onload="init()">
-    <div class="header">${title}</div>
+    <div class="header">${title} <a class="pull-right" href="${geoadminUrl}" target="_blank">${_('link to geoportal')}</a> </div>
     <div class="wrapper">
       <div id="zeitreihenmap"></div>
     </div>

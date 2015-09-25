@@ -86,7 +86,8 @@ def get_viewer_url(request, params):
         'title': params[2].encode('utf8'),
         'bildnummer': params[3],
         'layer': params[4].encode('utf8'),
-        'lang': params[5]
+        'lang': params[5],
+        'release_year': params[6]
     }
     return h.make_agnostic(route_url('historicalmaps', request)) + '?' + urllib.urlencode(f)
 
@@ -111,7 +112,8 @@ def get_viewer_url(request, params):
         productName,
         c['attributes']['bv_nummer'],
         c['layerBodId'],
-        lang)
+        lang,
+        c['attributes']['release_year'])
 
     viewer_url = get_viewer_url(request, params)
     c['bbox'] = request.params.get('mapExtent')

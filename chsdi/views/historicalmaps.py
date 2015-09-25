@@ -15,6 +15,7 @@ def luftbilder(request):
     bildnummer = request.params.get('bildnummer')
     layer = request.params.get('layer')
     lang = request.params.get('lang')
+    release_year = request.params.get('release_year')
     baseUrl = request.registry.settings.get('geoadminhost')
 
     if None in (width, height, title, bildnummer, layer):
@@ -30,7 +31,8 @@ def luftbilder(request):
             'bildnummer': bildnummer,
             'layer': layer,
             'baseUrl': baseUrl,
-            'lang': lang
+            'lang': lang,
+            'release_year': release_year
         },
         request=request
     )
