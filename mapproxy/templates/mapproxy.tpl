@@ -150,6 +150,10 @@ globals:
       # for 8bits PNG
       paletted: true
       formats:
+         noquantize:
+             format: image/png
+             encoding_options:
+                 quantizer: None
          # override setting
          image/jpeg:
              mode: RGB 

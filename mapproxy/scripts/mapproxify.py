@@ -54,6 +54,9 @@ LANG = 'de'
 STAGING = 'prod'
 topics = ['api']
 
+# Do not try to optimize these layers
+NO_QUANTIZE = ['ch.swisstopo.vec25-eisenbahnnetz', 'ch.swisstopo.swissbuildings3d', 'ch.astra.ivs-nat-verlaeufe']
+
 total_timestamps = 0
 
 EPSG_CODES = ['4258',  # ETRS89 (source: epsg-registry.org, but many WMTS client use 4852)
@@ -168,6 +171,8 @@ for idx, layersConfig in enumerate(getLayersConfigs(topics=topics)):
 
                 if image_format == 'png':
                     cache_format = 'image/png'
+                if bod_layer_id in NO_QUANTIZE:
+                    cache_format = 'noquantize'
                 else:
                     cache_format = 'image/%s' % image_format
                 cache = {"sources": [wmts_cache_name], "format": "%s" % cache_format, "grids": grid_names, "disable_storage": True, "meta_size": [1, 1], "meta_buffer": 0}
