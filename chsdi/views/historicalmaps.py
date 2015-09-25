@@ -18,7 +18,7 @@ def luftbilder(request):
     release_year = request.params.get('release_year')
     baseUrl = request.registry.settings.get('geoadminhost')
 
-    if None in (width, height, title, bildnummer, layer):
+    if None in (title, bildnummer, layer):
         raise exc.HTTPBadRequest('Missing parameter(s)')
 
     return render_to_response(
