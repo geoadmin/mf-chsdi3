@@ -107,6 +107,11 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
         self.assertTrue(resp.content_type == 'application/json')
 
+    def test_invalid_imageDisplay(self):
+        params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=400)
+        resp.mustcontain('Please provide the parameter imageDisplay in a comma separated list of 3 arguments (width,height,dpi)')
+
     def test_identify_valid_topic_all(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
@@ -163,7 +168,7 @@ class TestMapServiceView(TestsBase):
         params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.809670509,170647.93120352627', 'geometryFormat': 'geojson', 'imageDisplay': '1920,734,96', 'mapExtent': '134253,-21102,1382253,455997', 'tolerance': '5',
                   'layers': 'all:ch.swisstopo.zeitreihen', 'timeInstant': '19366'}
         self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
-
+   
     def test_identify_timeinstant_nottimeenabled_layer(self):
         params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.809670509,170647.93120352627', 'geometryFormat': 'geojson', 'imageDisplay': '1920,734,96', 'mapExtent': '134253,-21102,1382253,455997', 'tolerance': '5',
                   'layers': 'all:ch.bafu.bundesinventare-bln', 'timeInstant': '1936'}
