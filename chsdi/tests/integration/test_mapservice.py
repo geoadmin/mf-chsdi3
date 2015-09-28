@@ -107,6 +107,11 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
         self.assertTrue(resp.content_type == 'application/json')
 
+    def test_invalid_imageDisplay(self):
+        params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=400)
+        resp.mustcontain('Please provide the parameter imageDisplay in a comma separated list of 3 arguments (width,height,dpi)')
+
     def test_identify_valid_topic_all(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
@@ -158,6 +163,12 @@ class TestMapServiceView(TestsBase):
                   'tolerance': '5', 'layers': 'all:ch.swisstopo.zeitreihen', 'timeInstant': '1936'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertTrue(resp.content_type == 'application/json')
+
+    def test_invalid_timeinstant(self):
+        params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.809670509,170647.93120352627', 'geometryFormat': 'geojson', 'imageDisplay': '1920,734,96', 'mapExtent': '134253,-21102,1382253,455997',
+                  'tolerance': '5', 'layers': 'all:ch.swisstopo.zeitreihen', 'timeInstant': 'asdf'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
+        resp.mustcontain('Please provide an integer for the parameter timeInstant')
 
     def test_identify_wrong_timeinstant(self):
         params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.809670509,170647.93120352627', 'geometryFormat': 'geojson', 'imageDisplay': '1920,734,96', 'mapExtent': '134253,-21102,1382253,455997', 'tolerance': '5',
@@ -235,6 +246,16 @@ class TestMapServiceView(TestsBase):
         params = {'layers': 'all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 'timeInstant': '2015', 'where': 'gemname ilike \'%aven%\'', 'offset': '12.1'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
         resp.mustcontain('provide an integer')
+
+    def test_searchField_none(self):
+        params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': '1231641'}
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
+        resp.mustcontain('Please provide a searchField')
+
+    def test_searchField_error(self):
+        params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid, bln_fl', 'searchText': '1231641'}
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
+        resp.mustcontain('You can provide only one searchField at a time')
 
     def test_find_scan(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid', 'searchText': '1231641'}
