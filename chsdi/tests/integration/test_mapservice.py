@@ -164,11 +164,17 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertTrue(resp.content_type == 'application/json')
 
+    def test_invalid_timeinstant(self):
+        params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.809670509,170647.93120352627', 'geometryFormat': 'geojson', 'imageDisplay': '1920,734,96', 'mapExtent': '134253,-21102,1382253,455997',
+                  'tolerance': '5', 'layers': 'all:ch.swisstopo.zeitreihen', 'timeInstant': 'asdf'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
+        resp.mustcontain('Please provide an integer for the parameter timeInstant')
+
     def test_identify_wrong_timeinstant(self):
         params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.809670509,170647.93120352627', 'geometryFormat': 'geojson', 'imageDisplay': '1920,734,96', 'mapExtent': '134253,-21102,1382253,455997', 'tolerance': '5',
                   'layers': 'all:ch.swisstopo.zeitreihen', 'timeInstant': '19366'}
         self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
-   
+
     def test_identify_timeinstant_nottimeenabled_layer(self):
         params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.809670509,170647.93120352627', 'geometryFormat': 'geojson', 'imageDisplay': '1920,734,96', 'mapExtent': '134253,-21102,1382253,455997', 'tolerance': '5',
                   'layers': 'all:ch.bafu.bundesinventare-bln', 'timeInstant': '1936'}
