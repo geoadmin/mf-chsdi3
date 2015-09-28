@@ -247,6 +247,11 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
         resp.mustcontain('provide an integer')
 
+    def test_searchField_none(self):
+        params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': '1231641'}
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
+        resp.mustcontain('Please provide a searchField')
+
     def test_find_scan(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid', 'searchText': '1231641'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
