@@ -42,6 +42,11 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=400)
         resp.mustcontain('Please provide the parameter geometry')
 
+    def test_identify_invalid_geometrytype(self):
+        params = {'geometryType': 'Envelope', 'geometry': '548945.5,147956,549402,148103.5', 'imageDisplay': '500,600,96', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=400)
+        resp.mustcontain('Please provide a valid geometry type')
+
     def test_identify_without_geometrytype(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'imageDisplay': '500,600,96', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=400)
