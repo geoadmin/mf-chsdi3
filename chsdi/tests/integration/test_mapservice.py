@@ -195,6 +195,20 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertTrue(resp.content_type == 'application/json')
 
+    def test_identify_query_or(self):
+        params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'state ilike \'%a%\' and abortionaccomplished > \'2014-12-01\''}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+
+    def test_identify_query_and(self):
+        params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'state ilike \'%a%\' or abortionaccomplished > \'2014-12-01\''}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+
+    def test_identify_query_bad_operator(self):
+        params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'state ilike \'%a%\' maybe abortionaccomplished > \'2014-12-01\''}
+        self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
+
     def test_identify_query_and_bbox(self):
         params = {'geometryType': 'esriGeometryEnvelope', 'geometry': '502722,36344,745822,253444', 'imageDisplay': '0,0,0', 'mapExtent': '0,0,0,0', 'tolerance': '0',
                   'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'obstacletype = \'Antenna\''}
