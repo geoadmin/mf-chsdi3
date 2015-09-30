@@ -30,6 +30,11 @@ class TestProfileView(TestsBase):
         self.assertTrue(resp.json[0]['easting'] == 550050)
         self.assertTrue(resp.json[0]['northing'] == 206550)
 
+    def test_profile_json_2_models_notvalid(self):
+        params = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', 'elevation_models': 'DTM25,DTM222'}
+        resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=400)
+        resp.mustcontain('Please provide a valid name for the elevation model DTM25, DTM2 or COMB')
+
     def test_profile_json_with_callback_valid(self):
         params = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', 'callback': 'cb'}
         resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=200)
@@ -68,3 +73,13 @@ class TestProfileView(TestsBase):
     def test_profile_json_invalid_linestring(self):
         resp = self.testapp.get('/rest/services/profile.json', params={'geom': '{"type":"LineString","coordinates":[[550050,206550]]}'}, headers=self.headers, status=400)
         resp.mustcontain('Invalid Linestring syntax')
+
+    def test_profile_json_offset(self):
+        params = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', 'offset': '1'}
+        resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+
+    def test_profile_json_invalid_offset(self):
+        params = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', 'offset': 'asdf'}
+        resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=400)
+        resp.mustcontain("Please provide a numerical value for the parameter 'offset'")
