@@ -130,16 +130,16 @@ class Test_Helpers(unittest.TestCase):
     def test_check_even(self):
         testnumber = 10
         result = check_even(testnumber)
-        self.assertEqual(result, True)
+        self.assertTrue(result)
 
         testnumber = 5
         result = check_even(testnumber)
-        self.assertEqual(result, False)
+        self.assertFalse(result)
 
     def test_round(self):
         testnumber = 4.4
         result = round(testnumber)
-        self.assertTrue(result == 4, result)
+        self.assertEqual(result, 4)
 
     def test_format_search_text(self):
         testinput_str = 'Hallo!'
@@ -153,20 +153,20 @@ class Test_Helpers(unittest.TestCase):
     def test_remove_accents(self):
         testinput_str = None
         result = remove_accents(testinput_str)
-        self.assertTrue(result is None, result)
+        self.assertEqual(result, None)
 
     def test_escape_sphinx_syntax(self):
         testinput_str = None
         result = escape_sphinx_syntax(testinput_str)
-        self.assertTrue(result is None, result)
+        self.assertEqual(result, None)
 
     def test_quoting(self):
         testtext = 'Hallo'
         result = quoting(testtext)
-        self.assertTrue(result == 'Hallo', result)
+        self.assertEqual(result, 'Hallo')
 
     def test_float_raise_nan(self):
         testval = 5
         result = float_raise_nan(testval)
-        self.assertTrue(result == 5.0, result)
-        self.assertFalse(result == 'ValueError', result)
+        self.assertEqual(result, 5.0)
+        self.assertRaises('ValueError')
