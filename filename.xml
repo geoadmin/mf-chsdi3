@@ -1,0 +1,1 @@
+<data>    <country name="Lichtenstein" Typ="10" StrNr="idname">        <Datum>01 September</Datum>        <Zeit>8Uhr</Zeit>        <Wert>141100</Wert>        <StrNr>88888</StrNr>        <neighbor name="Austria" direction="E"/>        <neighbor name="Switzerland" direction="W"/>    </country></data>
