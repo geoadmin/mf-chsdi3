@@ -9,10 +9,37 @@
 Release Notes
 =============
 
+.. _releasenotes_20151007:
+
+Release 20151007 - Wednesday, October 7th 2015
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_150923...r_151007>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_150923...r_151007>`__
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Water & migrant bird reserves <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-vogelreservate>`__ (ch.bafu.bundesinventare-vogelreservate)  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20150923:
 
 Release 20150923 - Wednesday, September 23rd 2015
-------------------------------------------------
+-------------------------------------------------
 
 API & applications
 ******************
