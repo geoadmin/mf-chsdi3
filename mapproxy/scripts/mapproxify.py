@@ -40,6 +40,7 @@ from babel import support
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy import engine_from_config
 from sqlalchemy import or_
+from mako.filters import xml_escape as _
 
 
 from pyramid.paster import get_appsettings
@@ -146,7 +147,7 @@ for idx, layersConfig in enumerate(getLayersConfigs(topics=topics)):
 
             current_timestamps[bod_layer_id] = current_timestamp
 
-            title = tr.ugettext(bod_layer_id)
+            title = _(tr.ugettext(bod_layer_id))
 
             grid_names = []
 
