@@ -18,14 +18,14 @@ API & applications
 ******************
 
 `API <//api3.geo.admin.ch>`__
-'''''''''''''''''''''''''''''
-
+''''''''''''''''''''''''''''' 
+- Support for OR and AND operators in advanced search
 - Bug fixes
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_150923...r_151007>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
-
+- Support for OR and AND operators in advanced search
 - Bug fixes
 - `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_150923...r_151007>`__
 
