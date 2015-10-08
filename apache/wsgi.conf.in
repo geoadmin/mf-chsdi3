@@ -12,16 +12,6 @@
 RewriteEngine on
 ExpiresActive on
 
-# Enabling CORS
-Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS"
-Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, origin, authorization, accept, client-security-token"
-
-# Mapproxy is adding its own CORS headers. 'Set' should be enought, but is not.
-<LocationMatch "^${apache_entry_path}/(?!1\.0\.0)">
-    Header set Access-Control-Allow-Origin "*"
-</LocationMatch>
-
-
 
 AddOutputFilterByType DEFLATE text/css
 AddOutputFilterByType DEFLATE application/x-javascript application/javascript application/json application/xml
@@ -85,6 +75,13 @@ WSGIDaemonProcess mf-chsdi3:${vars:apache_base_path} display-name=%{GROUP} user=
 
 # define the path to the WSGI app
 WSGIScriptAliasMatch ^${apache_entry_path}/ ${buildout:directory/buildout/parts/modwsgi/wsgi}/
+
+
+# Enabling CORS, has to be set after WSGI application
+Header unset Access-control-allow-origin
+Header always  set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS"
+Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, origin, authorization, accept, client-security-token"
 
 # assign the WSGI app instance the process group defined aboven, we put the WSGI
 # app instance in the global application group so it is always executed within
