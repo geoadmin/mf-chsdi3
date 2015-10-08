@@ -13,9 +13,14 @@ RewriteEngine on
 ExpiresActive on
 
 # Enabling CORS
-Header set Access-Control-Allow-Origin "*"
 Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS"
 Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, origin, authorization, accept, client-security-token"
+
+# Mapproxy is adding its own CORS headers. 'Set' should be enought, but is not.
+<LocationMatch "^${apache_entry_path}/(?!1\.0\.0)">
+    Header set Access-Control-Allow-Origin "*"
+</LocationMatch>
+
 
 
 AddOutputFilterByType DEFLATE text/css
