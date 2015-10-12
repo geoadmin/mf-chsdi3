@@ -896,6 +896,9 @@ msgstr "Naturfutterbau: +; Kunstfutterbau, Getreidebau: +/-"
 msgid "blw_farbe_9"
 msgstr "Naturfutterbau: +; Kunstfutterbau, Getreidebau: +/-; Grossviehweide: -"
 
+msgid "bouguer_anomalie"
+msgstr "Bouguer Anomaly"
+
 msgid "ch.are"
 msgstr "ARE"
 
@@ -3848,6 +3851,12 @@ msgstr "InfoGeol-Nr."
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas"
 msgstr "Gravimetric Atlas 1:100000"
 
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte"
+msgstr "Gravimetrische Messpunkte 100"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
+msgstr "Point Number"
+
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr "Division Gravimetric Atlas"
 
@@ -4408,6 +4417,12 @@ msgstr "Inclination [°]"
 
 msgid "contour_totalintensitaet"
 msgstr "Total intensity [nT]"
+
+msgid "coordinate_x"
+msgstr "X-Coordinate"
+
+msgid "coordinate_y"
+msgstr "Y-Coordinate"
 
 msgid "copy_avail"
 msgstr "Zugangsstufe "copy""

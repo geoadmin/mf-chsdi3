@@ -826,6 +826,9 @@ msgstr ""
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
 msgstr ""
 
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-gisgeol-punkte.sgd_nr"
 msgstr ""
 
@@ -1448,6 +1451,9 @@ msgid "ch.swisstopo.geologie-geocover.metadata"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte"
 msgstr ""
 
 msgid "ch.blw.bodeneignung-kulturland"
@@ -4353,6 +4359,12 @@ msgstr ""
 msgid "abkuerzung"
 msgstr ""
 
+msgid "coordinate_x"
+msgstr ""
+
+msgid "coordinate_y"
+msgstr ""
+
 msgid "et_fromatt"
 msgstr ""
 
@@ -4360,6 +4372,9 @@ msgid "et_fromatt_anom"
 msgstr ""
 
 msgid "et_fromatt_bouguer"
+msgstr ""
+
+msgid "bouguer_anomalie"
 msgstr ""
 
 msgid "et_fromatt_ch"
