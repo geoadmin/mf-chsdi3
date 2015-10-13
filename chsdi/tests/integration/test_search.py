@@ -8,6 +8,11 @@ class TestSearchServiceView(TestsBase):
     def test_no_type(self):
         self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'ga'}, status=400)
 
+    def test_unaccepted_type(self):
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'ga', 'type': 'unaccepted'}, status=400)
+        acceptedTypes = ['locations', 'layers', 'featuresearch', 'locations_preview']
+        resp.mustcontain("The type parameter you provided is not valid. Possible values are %s" % (', '.join(acceptedTypes)))
+
     def test_search_layers(self):
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'wand', 'type': 'layers'}, status=200)
         self.assertTrue(resp.content_type == 'application/json')
@@ -37,6 +42,18 @@ class TestSearchServiceView(TestsBase):
     def test_search_locations(self):
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'rue des berges', 'type': 'locations', 'bbox': '551306.5625,167918.328125,551754.125,168514.625'}, status=200)
         self.assertTrue(resp.content_type == 'application/json')
+
+    def test_bbox_wrong_number_coordinates(self):
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'rue des berges', 'type': 'locations', 'bbox': '551306.5625,551754.125,168514.625'}, status=400)
+        resp.mustcontain('Please provide 4 coordinates in a comma separated list')
+
+    def test_bbox_check_first_second_coordinates(self):
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'rue des berges', 'type': 'locations', 'bbox': '420000,420010,551754.125,168514.625'}, status=400)
+        resp.mustcontain('The first coordinate must be higher than the second')
+
+    def test_bbox_check_third_fourth_coordinates(self):
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'rue des berges', 'type': 'locations', 'bbox': '551306.5625,167918.328125,420000,420010'}, status=400)
+        resp.mustcontain('The third coordinate must be higher than the fourth')
 
     def test_search_loactions_with_cb(self):
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'rue des berges', 'type': 'locations', 'bbox': '551306.5625,167918.328125,551754.125,168514.625', 'callback': 'cb'}, status=200)
@@ -188,6 +205,10 @@ class TestSearchServiceView(TestsBase):
         self.assertTrue(resp.content_type == 'application/json')
         self.assertTrue(resp.json['results'][0]['attrs']['origin'] == 'feature')
 
+    def test_nodigit_timeinstant(self):
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': '19810590048970', 'features': 'ch.swisstopo.lubis-luftbilder_farbe', 'type': 'featuresearch', 'bbox': '542199,206799,542201,206801', 'timeInstant': 'four'}, status=400)
+        resp.mustcontain('Please provide an integer for the parameter timeInstant')
+
     def test_features_timestamp(self):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': '19810590048970', 'features': 'ch.swisstopo.lubis-luftbilder_farbe', 'type': 'featuresearch', 'bbox': '542199,206799,542201,206801', 'timeStamps': '1981'}, status=200)
         self.assertTrue(resp.content_type == 'application/json')
@@ -228,6 +249,11 @@ class TestSearchServiceView(TestsBase):
     def test_features_wrong_timestamps(self):
         params = {'searchText': '19810590048970', 'features': 'ch.swisstopo.lubis-luftbilder_farbe', 'type': 'featuresearch', 'bbox': '542200,206800,542200,206800', 'timeStamps': '19522'}
         self.testapp.get('/rest/services/ech/SearchServer', params=params, status=400)
+
+    def test_nondigit_timestamps(self):
+        params = {'searchText': '19810590048970', 'features': 'ch.swisstopo.lubis-luftbilder_farbe', 'type': 'featuresearch', 'bbox': '542200,206800,542200,206800', 'timeStamps': 'four'}
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=400)
+        resp.mustcontain('Please provide integers for timeStamps parameter')
 
     def test_features_wrong_timestamps_2(self):
         params = {'searchText': '19810590048970', 'features': 'ch.swisstopo.lubis-luftbilder_farbe', 'type': 'featuresearch', 'bbox': '542200,206800,542200,206800', 'timeStamps': '1952.00'}
