@@ -896,6 +896,9 @@ msgstr "Cultures fourragères naturelles: +; Cultures fourragères artificielles
 msgid "blw_farbe_9"
 msgstr "Cultures fourragères naturelles:+; Cultures fourragères artificielles, Cultures céréalières: +/-, Pâturages à gros bétail: -"
 
+msgid "bouguer_anomalie"
+msgstr "Anomalie Bouguer"
+
 msgid "ch.are"
 msgstr "ARE"
 
@@ -3537,7 +3540,7 @@ msgid "ch.pronatura.url"
 msgstr "http://www.pronatura.ch/actuel"
 
 msgid "ch.pronatura.waldreservate"
-msgstr "Réserves forestières Pro Natura"
+msgstr "Pro Natura: Réserves forestières"
 
 msgid "ch.pronatura.waldreservate.gisflaeche"
 msgstr "Surface totale [ha]"
@@ -3847,6 +3850,12 @@ msgstr "N° InfoGeol"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas"
 msgstr "Atlas gravimétrique 1:100000"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte"
+msgstr "Points de mesure gravim. 100"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
+msgstr "No de Point"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr "Découpage atlas gravimétrique"
@@ -4408,6 +4417,12 @@ msgstr "Inclinaison [°]"
 
 msgid "contour_totalintensitaet"
 msgstr "Intensité totale [nT]"
+
+msgid "coordinate_x"
+msgstr "Coordonnée x"
+
+msgid "coordinate_y"
+msgstr "Coordonnée y"
 
 msgid "copy_avail"
 msgstr "Niveau d'accès du "copy""

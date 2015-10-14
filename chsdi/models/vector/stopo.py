@@ -44,6 +44,24 @@ class GravimetrischerAtlasMetadata (Base, Vector):
 register('ch.swisstopo.geologie-gravimetrischer_atlas.metadata', GravimetrischerAtlasMetadata)
 
 
+class GravimetrischerAtlasMesspunkte (Base, Vector):
+    __tablename__ = 'gravimetrisch_messpunkte'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/gravimetrischer_atlas_messpunkte.mako'
+    __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte'
+    __queryable_attributes__ = ['stationnam']
+    id = Column('bgdi_id', Integer, primary_key=True)
+    stationnam = Column('stationnam', Text)
+    coordhor = Column('coordhor', Numeric)
+    coordver = Column('coordver', Numeric)
+    altitude = Column('altitude', Numeric)
+    bouguerano = Column('bouguerano', Numeric)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte', GravimetrischerAtlasMesspunkte)
+
+
 class GeologieGeowege (Base, Vector):
     __tablename__ = 'geowege'
     __table_args__ = ({'schema': 'geol', 'autoload': False})

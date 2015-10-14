@@ -896,6 +896,9 @@ msgstr "Naturfutterbau: +; Kunstfutterbau, Getreidebau: +/-"
 msgid "blw_farbe_9"
 msgstr "Naturfutterbau: +; Kunstfutterbau, Getreidebau: +/-; Grossviehweide: -"
 
+msgid "bouguer_anomalie"
+msgstr "Bouguer Anomalie"
+
 msgid "ch.are"
 msgstr "ARE"
 
@@ -3537,7 +3540,7 @@ msgid "ch.pronatura.url"
 msgstr "http://www.pronatura.ch/schutzgebiete"
 
 msgid "ch.pronatura.waldreservate"
-msgstr "Waldreservate Pro Natura"
+msgstr "Pro Natura Waldreservate"
 
 msgid "ch.pronatura.waldreservate.gisflaeche"
 msgstr "Gesamtfläche [ha]"
@@ -3847,6 +3850,12 @@ msgstr "InfoGeol-Nr."
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas"
 msgstr "Gravimetrischer Atlas 1:100000"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte"
+msgstr "Gravimetrische Messpunkte 100"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
+msgstr "Punktnummer"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr "Einteilung gravimetrischer Atlas"
@@ -4408,6 +4417,12 @@ msgstr "Inklination [°]"
 
 msgid "contour_totalintensitaet"
 msgstr "Totalintensität [nT]"
+
+msgid "coordinate_x"
+msgstr "X-Koordinate"
+
+msgid "coordinate_y"
+msgstr "Y-Koordinate"
 
 msgid "copy_avail"
 msgstr "Zugangsstufe "copy""

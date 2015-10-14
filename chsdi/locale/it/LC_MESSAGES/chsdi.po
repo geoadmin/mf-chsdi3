@@ -896,6 +896,9 @@ msgstr "Prati naturali: +; prati artificiali, cerealicoltura: +/-"
 msgid "blw_farbe_9"
 msgstr "Prati naturali:+; prati artificiali, cerealicoltura: +/-; pascolo bestiame grosso: -"
 
+msgid "bouguer_anomalie"
+msgstr "Anomalie Bouguer"
+
 msgid "ch.are"
 msgstr "ARE"
 
@@ -3537,7 +3540,7 @@ msgid "ch.pronatura.url"
 msgstr "http://www.pronatura.ch/attualita"
 
 msgid "ch.pronatura.waldreservate"
-msgstr "Riserve forestali Pro Natura"
+msgstr "Pro Natura: Riserve forestali"
 
 msgid "ch.pronatura.waldreservate.gisflaeche"
 msgstr "Superficie totale [ha]"
@@ -3847,6 +3850,12 @@ msgstr "N° InfoGeol"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas"
 msgstr "Atlante gravimetrico 1:100000"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte"
+msgstr "Points de mesure gravim. 100"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
+msgstr "No de Point"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr "Divisione Atlante gravimetrico"
@@ -4408,6 +4417,12 @@ msgstr "Inclinazione [°]"
 
 msgid "contour_totalintensitaet"
 msgstr "Intensità totale [nT]"
+
+msgid "coordinate_x"
+msgstr "Coordonnée x"
+
+msgid "coordinate_y"
+msgstr "Coordonnée y"
 
 msgid "copy_avail"
 msgstr "Niveau d'accès du "copy""
