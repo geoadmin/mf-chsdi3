@@ -3540,7 +3540,7 @@ msgid "ch.pronatura.url"
 msgstr "http://www.pronatura.ch/attualita"
 
 msgid "ch.pronatura.waldreservate"
-msgstr "Riserve forestali Pro Natura"
+msgstr "Pro Natura: Riserve forestali"
 
 msgid "ch.pronatura.waldreservate.gisflaeche"
 msgstr "Superficie totale [ha]"
