@@ -897,7 +897,7 @@ msgid "blw_farbe_9"
 msgstr "Naturfutterbau: +; Kunstfutterbau, Getreidebau: +/-; Grossviehweide: -"
 
 msgid "bouguer_anomalie"
-msgstr "Bouguer Anomalie"
+msgstr "Bouguer Anomalie [mGal]"
 
 msgid "ch.are"
 msgstr "ARE"
@@ -3853,6 +3853,9 @@ msgstr "Atlas gravimetric 1:100000"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte"
 msgstr "Gravimetrische Messpunkte 100"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.altitude"
+msgstr "Höhe [m]"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
 msgstr "Punktnummer"

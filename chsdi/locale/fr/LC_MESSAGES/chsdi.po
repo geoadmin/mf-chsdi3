@@ -897,7 +897,7 @@ msgid "blw_farbe_9"
 msgstr "Cultures fourragères naturelles:+; Cultures fourragères artificielles, Cultures céréalières: +/-, Pâturages à gros bétail: -"
 
 msgid "bouguer_anomalie"
-msgstr "Anomalie Bouguer"
+msgstr "Anomalie de Bouguer [mGal]"
 
 msgid "ch.are"
 msgstr "ARE"
@@ -3853,6 +3853,9 @@ msgstr "Atlas gravimétrique 1:100000"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte"
 msgstr "Points de mesure gravim. 100"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.altitude"
+msgstr "Altitude [m]"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
 msgstr "No de Point"
