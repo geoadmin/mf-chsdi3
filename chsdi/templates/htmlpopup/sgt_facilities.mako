@@ -2,6 +2,12 @@
 
 <%def name="table_body(c, lang)">
 <% 
+    import datetime
+    try:
+        date_validfrom = datetime.datetime.strptime(c['attributes']['validfrom'].strip(), "%Y-%m-%d").strftime("%d.%m.%Y")
+    except:
+        date_validfrom = '-'
+        
     c['stable_id'] = True 
     lang = lang if lang in ('fr','it') else 'de'
     facname = 'facname_%s' % lang
@@ -12,7 +18,7 @@
     <tr><td class="cell-left">${_('tt_sachplan_facility_name')}</td>              <td>${c['attributes'][facname] or '-'}</td></tr>
     <tr><td class="cell-left">${_('tt_sachplan_facility_anlageart')}</td>         <td>${c['attributes'][fackind_text] or '-'}</td></tr>
 	  <tr><td class="cell-left">${_('tt_sachplan_facility_anlagestatus')}</td>      <td>${c['attributes'][facstatus_text] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('tt_sachplan_facility_beschlussdatum')}</td>    <td>${c['attributes']['validfrom'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('tt_sachplan_facility_beschlussdatum')}</td>    <td>${date_validfrom}</td></tr>
     <tr><td class="cell-left">${_('tt_sachplan_beschreibung')}</td>               <td>${c['attributes']['description'] or '-'}</td></tr>
 % if 'web' in c['attributes']:
     <tr><td class="cell-left">${_('tt_sachplan_weitereinfo')}</td>                <td><a href="${c['attributes']['web'] or '-'}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td></tr>
