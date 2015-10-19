@@ -7007,3 +7007,63 @@ msgstr ""
 
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_ausgangslage.description_rm"
 msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.nr_lsn2004"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.name"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.label"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.type"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.lat_etrs"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.lon_etrs"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.y_lv03"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.x_lv03"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.h_ln02"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.gravity"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.rms"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.vert_grad"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.link_hfp_title"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz.link_lfp_title"
+msgstr ""
+
+msgid "ch.swisstopo.landesschwerenetz"
+msgstr ""
+
+msgid "ABS_landesschwerenetz_type"
+msgstr ""
+
+msgid "ORD1_landesschwerenetz_type"
+msgstr ""
+
+msgid "ORD2_landesschwerenetz_type"
+msgstr ""
+
+msgid "ORD3_landesschwerenetz_type"
+msgstr ""
+
+msgid "EXZ_landesschwerenetz_type"
+msgstr ""

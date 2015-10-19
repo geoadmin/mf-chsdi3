@@ -17,6 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "ABS_landesschwerenetz_type"
+msgstr "station absolue"
+
 msgid "All year"
 msgstr "Toute l'année"
 
@@ -76,6 +79,9 @@ msgstr "Détails"
 
 msgid "Double"
 msgstr "Double"
+
+msgid "EXZ_landesschwerenetz_type"
+msgstr "excentre de la station absolue"
 
 msgid "FL"
 msgstr "Liechstenstein"
@@ -175,6 +181,15 @@ msgstr "Non applicable"
 
 msgid "Nuclear"
 msgstr "Nucléaire"
+
+msgid "ORD1_landesschwerenetz_type"
+msgstr "station de première ordre"
+
+msgid "ORD2_landesschwerenetz_type"
+msgstr "station de deuxième ordre"
+
+msgid "ORD3_landesschwerenetz_type"
+msgstr "station de troisième ordre"
 
 msgid "Observatorium"
 msgstr "Observatoire"
@@ -897,7 +912,7 @@ msgid "blw_farbe_9"
 msgstr "Prati naturali:+; prati artificiali, cerealicoltura: +/-; pascolo bestiame grosso: -"
 
 msgid "bouguer_anomalie"
-msgstr "Anomalie Bouguer"
+msgstr "Anomalie de Bouguer [mGal]"
 
 msgid "ch.are"
 msgstr "ARE"
@@ -3931,6 +3946,51 @@ msgstr "swisstopo, ct."
 
 msgid "ch.swisstopo.kt.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/it/home/swisstopo/org/cartography.html"
+
+msgid "ch.swisstopo.landesschwerenetz"
+msgstr "Réseau de base gravimétrique"
+
+msgid "ch.swisstopo.landesschwerenetz.gravity"
+msgstr "Gravité [mGal]"
+
+msgid "ch.swisstopo.landesschwerenetz.h_ln02"
+msgstr "Altitude (NF02) [m]"
+
+msgid "ch.swisstopo.landesschwerenetz.label"
+msgstr "Label"
+
+msgid "ch.swisstopo.landesschwerenetz.lat_etrs"
+msgstr "Géographique latitude (WGS84) [°]"
+
+msgid "ch.swisstopo.landesschwerenetz.link_hfp_title"
+msgstr "Lien vers le PFA-protocole"
+
+msgid "ch.swisstopo.landesschwerenetz.link_lfp_title"
+msgstr "Lien vers le PFP-protocole"
+
+msgid "ch.swisstopo.landesschwerenetz.lon_etrs"
+msgstr "Géographique longitude (WGS84) [°]"
+
+msgid "ch.swisstopo.landesschwerenetz.name"
+msgstr "Nom du point"
+
+msgid "ch.swisstopo.landesschwerenetz.nr_lsn2004"
+msgstr "Numéro du point"
+
+msgid "ch.swisstopo.landesschwerenetz.rms"
+msgstr "RMS [mgal]"
+
+msgid "ch.swisstopo.landesschwerenetz.type"
+msgstr "Catégorie"
+
+msgid "ch.swisstopo.landesschwerenetz.vert_grad"
+msgstr "Gradient vertical"
+
+msgid "ch.swisstopo.landesschwerenetz.x_lv03"
+msgstr "Coordonnée x (MN03) [m]"
+
+msgid "ch.swisstopo.landesschwerenetz.y_lv03"
+msgstr "Coordonnée y (MN03) [m]"
 
 msgid "ch.swisstopo.lubis-bildstreifen"
 msgstr "Striscie aeree swisstopo"

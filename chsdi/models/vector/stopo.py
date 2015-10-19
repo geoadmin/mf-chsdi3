@@ -44,6 +44,65 @@ class GravimetrischerAtlasMetadata (Base, Vector):
 register('ch.swisstopo.geologie-gravimetrischer_atlas.metadata', GravimetrischerAtlasMetadata)
 
 
+class Landesschwerenetz (Base, Vector):
+    __tablename__ = 'landesschwerenetz'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
+    __bodId__ = 'ch.swisstopo.landesschwerenetz'
+    __queryable_attributes__ = ['nr_lsn2004', 'name', 'type']
+    id = Column('bgdi_id', Integer, primary_key=True)
+    nr_lsn2004 = Column('nr_lsn2004', Text)
+    name = Column('name', Text)
+    label = Column('label', Text)
+    type = Column('type', Text)
+    lat_etrs = Column('lat_etrs', Numeric)
+    lon_etrs = Column('lon_etrs', Numeric)
+    y_lv03 = Column('y_lv03', Numeric)
+    x_lv03 = Column('x_lv03', Numeric)
+    h_ln02 = Column('h_ln02', Numeric)
+    gravity = Column('gravity', Numeric)
+    rms = Column('rms', Numeric)
+    vert_grad = Column('vert_grad', Numeric)
+    link_hfp_title = Column('link_hfp_title', Text)
+    link_hfp_url = Column('link_hfp_url', Text)
+    link_lfp_title = Column('link_lfp_title', Text)
+    link_lfp_url = Column('link_lfp_url', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.swisstopo.landesschwerenetz', Landesschwerenetz)
+
+
+class Landesschwerenetz_Ext (Base, Vector):
+    __tablename__ = 'landesschwerenetz_exz'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
+    __bodId__ = 'ch.swisstopo.landesschwerenetz'
+    __queryable_attributes__ = ['nr_lsn2004', 'name', 'type']
+    __minscale__ = 3000
+    id = Column('bgdi_id', Integer, primary_key=True)
+    nr_lsn2004 = Column('nr_lsn2004', Text)
+    name = Column('name', Text)
+    label = Column('label', Text)
+    type = Column('type', Text)
+    lat_etrs = Column('lat_etrs', Numeric)
+    lon_etrs = Column('lon_etrs', Numeric)
+    y_lv03 = Column('y_lv03', Numeric)
+    x_lv03 = Column('x_lv03', Numeric)
+    h_ln02 = Column('h_ln02', Numeric)
+    gravity = Column('gravity', Numeric)
+    rms = Column('rms', Numeric)
+    vert_grad = Column('vert_grad', Numeric)
+    link_hfp_title = Column('link_hfp_title', Text)
+    link_hfp_url = Column('link_hfp_url', Text)
+    link_lfp_title = Column('link_lfp_title', Text)
+    link_lfp_url = Column('link_lfp_url', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.swisstopo.landesschwerenetz', Landesschwerenetz_Ext)
+
+
 class GravimetrischerAtlasMesspunkte (Base, Vector):
     __tablename__ = 'gravimetrisch_messpunkte'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
