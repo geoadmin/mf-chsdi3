@@ -9,6 +9,27 @@
 Release Notes
 =============
 
+.. _releasenotes_20151021:
+
+Release 20151021 - Wednesday, October 21st 2015
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+''''''''''''''''''''''''''''' 
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | `National Gravity Network <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte>`__ (ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte)  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20151007:
 
 Release 20151007 - Wednesday, October 7th 2015
