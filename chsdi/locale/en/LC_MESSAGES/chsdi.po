@@ -17,6 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "ABS_landesschwerenetz_type"
+msgstr "absolute station"
+
 msgid "All year"
 msgstr "Das ganze Jahr"
 
@@ -76,6 +79,9 @@ msgstr "Detaildaten"
 
 msgid "Double"
 msgstr "Double"
+
+msgid "EXZ_landesschwerenetz_type"
+msgstr "eccentre of the absolute station"
 
 msgid "FL"
 msgstr "Liechstenstein"
@@ -175,6 +181,15 @@ msgstr "Not applicable"
 
 msgid "Nuclear"
 msgstr "Nuclear"
+
+msgid "ORD1_landesschwerenetz_type"
+msgstr "station of first order"
+
+msgid "ORD2_landesschwerenetz_type"
+msgstr "station of second order"
+
+msgid "ORD3_landesschwerenetz_type"
+msgstr "station of third order"
 
 msgid "Observatorium"
 msgstr "Observatorium"
@@ -3934,6 +3949,51 @@ msgstr "swisstopo, ct."
 
 msgid "ch.swisstopo.kt.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/en/home/swisstopo/org/cartography.html"
+
+msgid "ch.swisstopo.landesschwerenetz"
+msgstr "Gravimetric base network"
+
+msgid "ch.swisstopo.landesschwerenetz.gravity"
+msgstr "Gravity [mGal]"
+
+msgid "ch.swisstopo.landesschwerenetz.h_ln02"
+msgstr "Altitude (LN02) [m]"
+
+msgid "ch.swisstopo.landesschwerenetz.label"
+msgstr "Label"
+
+msgid "ch.swisstopo.landesschwerenetz.lat_etrs"
+msgstr "Geographic latitude (WGS84) [°]"
+
+msgid "ch.swisstopo.landesschwerenetz.link_hfp_title"
+msgstr "Link to HFP-Protocol"
+
+msgid "ch.swisstopo.landesschwerenetz.link_lfp_title"
+msgstr "Link to LFP-Protocol"
+
+msgid "ch.swisstopo.landesschwerenetz.lon_etrs"
+msgstr "Geographic longitude (WGS84) [°]"
+
+msgid "ch.swisstopo.landesschwerenetz.name"
+msgstr "Point name"
+
+msgid "ch.swisstopo.landesschwerenetz.nr_lsn2004"
+msgstr "Point number"
+
+msgid "ch.swisstopo.landesschwerenetz.rms"
+msgstr "RMS [mgal]"
+
+msgid "ch.swisstopo.landesschwerenetz.type"
+msgstr "Category"
+
+msgid "ch.swisstopo.landesschwerenetz.vert_grad"
+msgstr "Vertical gradient"
+
+msgid "ch.swisstopo.landesschwerenetz.x_lv03"
+msgstr "X-Coordinate (LV03) [m]"
+
+msgid "ch.swisstopo.landesschwerenetz.y_lv03"
+msgstr "Y-Coordinate (LV03) [m]"
 
 msgid "ch.swisstopo.lubis-bildstreifen"
 msgstr "Image strips swisstopo"

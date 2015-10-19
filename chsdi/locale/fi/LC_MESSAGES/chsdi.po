@@ -17,6 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "ABS_landesschwerenetz_type"
+msgstr "Absolutstation"
+
 msgid "All year"
 msgstr "Das ganze Jahr"
 
@@ -76,6 +79,9 @@ msgstr "Detaildaten"
 
 msgid "Double"
 msgstr "Doppelt"
+
+msgid "EXZ_landesschwerenetz_type"
+msgstr "Exzenter der Absolutstation"
 
 msgid "FL"
 msgstr "Liechtenstein"
@@ -175,6 +181,15 @@ msgstr "nicht anwendbar"
 
 msgid "Nuclear"
 msgstr "Nuclear"
+
+msgid "ORD1_landesschwerenetz_type"
+msgstr "Station erster Ordnung"
+
+msgid "ORD2_landesschwerenetz_type"
+msgstr "Station zweiter Ordnung"
+
+msgid "ORD3_landesschwerenetz_type"
+msgstr "Station dritter Ordnung"
 
 msgid "Observatorium"
 msgstr "Observatorium"
@@ -3934,6 +3949,51 @@ msgstr "swisstopo, Kt."
 
 msgid "ch.swisstopo.kt.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/de/home/swisstopo/org/cartography.html"
+
+msgid "ch.swisstopo.landesschwerenetz"
+msgstr "Schweregrundnetz"
+
+msgid "ch.swisstopo.landesschwerenetz.gravity"
+msgstr "Schwere [mGal]"
+
+msgid "ch.swisstopo.landesschwerenetz.h_ln02"
+msgstr "Height (LN02) [m]"
+
+msgid "ch.swisstopo.landesschwerenetz.label"
+msgstr "Label"
+
+msgid "ch.swisstopo.landesschwerenetz.lat_etrs"
+msgstr "Geografische Breite (WGS84) [°]"
+
+msgid "ch.swisstopo.landesschwerenetz.link_hfp_title"
+msgstr "Link zum HFP-Protokoll"
+
+msgid "ch.swisstopo.landesschwerenetz.link_lfp_title"
+msgstr "Link zum LFP-Protokoll"
+
+msgid "ch.swisstopo.landesschwerenetz.lon_etrs"
+msgstr "Geografische Länge (WGS84) [°]"
+
+msgid "ch.swisstopo.landesschwerenetz.name"
+msgstr "Punktname"
+
+msgid "ch.swisstopo.landesschwerenetz.nr_lsn2004"
+msgstr "Punktnummer"
+
+msgid "ch.swisstopo.landesschwerenetz.rms"
+msgstr "RMS [mgal]"
+
+msgid "ch.swisstopo.landesschwerenetz.type"
+msgstr "Kategorie"
+
+msgid "ch.swisstopo.landesschwerenetz.vert_grad"
+msgstr "Vertikal Gradient"
+
+msgid "ch.swisstopo.landesschwerenetz.x_lv03"
+msgstr "X-Koordinate (LV03) [m]"
+
+msgid "ch.swisstopo.landesschwerenetz.y_lv03"
+msgstr "Y-Koordinate (LV03) [m]"
 
 msgid "ch.swisstopo.lubis-bildstreifen"
 msgstr "Strivlas ord l'aria swisstopo"
