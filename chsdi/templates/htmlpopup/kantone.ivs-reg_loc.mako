@@ -61,7 +61,7 @@
                 ${_('ivs_nat_abschnitt')}: <a href="${webDavHost}/kogis_web/downloads/ivs/beschr/it/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3_Name}</a><br />
             % endif
         % else:
-            ${_('ivs_nat_strecke')}: <a href="/kogis_web/downloads/ivs/beschr/de/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
+            ${_('ivs_nat_strecke')}: <a href="${webDavHost}/kogis_web/downloads/ivs/beschr/de/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
             % if PDF_Level_2_exist <> '00':
                 ${_('ivs_nat_linienfuehrung')}: <a href="${webDavHost}/kogis_web/downloads/ivs/beschr/de/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2_Name}</a><br />
             % endif
@@ -80,5 +80,4 @@
         % endif
     % endif
     </td></tr>
-
 </%def>
