@@ -9,6 +9,35 @@
 Release Notes
 =============
 
+.. _releasenotes_20151021:
+
+Release 20151021 - Wednesday, October 21st 2015
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_151007...r_151021>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_151007...r_151021>`__
+
+Geodata
+*******
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `National Gravity Network <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte>`__ (ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte)  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Gravimetric base network <//map.geo.admin.ch/?layers=ch.swisstopo.landesschwerenetz>`__ (ch.swisstopo.landesschwerenetz)                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Availability of the PLR cadastre <//map.geo.admin.ch/?layers=ch.swisstopo-vd.stand-oerebkataster>`__ (ch.swisstopo-vd.stand-oerebkataster)                                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20151007:
 
 Release 20151007 - Wednesday, October 7th 2015
