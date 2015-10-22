@@ -4173,7 +4173,7 @@ msgid "ch.swisstopo.swisstlm3d-karte-grau"
 msgstr "Carte swissTLM (grise)"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
-msgstr "chemins de randonnée pédestre"
+msgstr "Chemins de randonnée pédestre"
 
 msgid "ch.swisstopo.transformationsgenauigkeit"
 msgstr "MN95 Précision de transformation"

@@ -4173,7 +4173,7 @@ msgid "ch.swisstopo.swisstlm3d-karte-grau"
 msgstr "Map swissTLM (grey)"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
-msgstr "hiking trails"
+msgstr "Hiking trails"
 
 msgid "ch.swisstopo.transformationsgenauigkeit"
 msgstr "LV95 Transformation accuracy"
