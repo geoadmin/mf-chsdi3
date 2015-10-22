@@ -35,7 +35,7 @@ class LayersChecker(object):
         del self.testapp
         return False
 
-    def ilayers(self, queryable=None, hasLegend=None):
+    def ilayers(self, queryable=None, hasLegend=None, searchable=None):
         valNone = None
         query = self.session.query(distinct(LayersConfig.layerBodId)) \
             .filter(LayersConfig.staging == self.staging) \
@@ -44,6 +44,8 @@ class LayersChecker(object):
             query = query.filter(LayersConfig.queryable == queryable)
         if hasLegend is not None:
             query = query.filter(LayersConfig.hasLegend == hasLegend)
+        if searchable is not None:
+            query = query.filter(LayersConfig.searchable == searchable)
         for q in query:
             if self.onlylayer is None or q[0] == self.onlylayer:
                 yield q[0]
@@ -83,6 +85,12 @@ class LayersChecker(object):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
             assert ((layer + '_' + lang) in legendImages), layer + '_' + lang
 
+    def checkSearch(self, layer):
+        # If it fails here, it most probably means given layer does not have sphinx index available
+        link = '/rest/services/all/SearchServer?features=' + layer + '&bbox=600818.7808825106,197290.49919797093,601161.2808825106,197587.99919797093&type=featuresearch&searchText=dummy'
+        resp = self.testapp.get(link)
+        assert resp.status_int == 200, link
+
 
 def test_all_htmlpopups():
     with LayersChecker() as lc:
@@ -106,3 +114,9 @@ def test_all_legends_images():
     with LayersChecker() as lc:
         for layer in lc.ilayers(hasLegend=True):
             yield lc.checkLegendImage, layer, legendImages
+
+
+def test_all_searchable_layers():
+    with LayersChecker() as lc:
+        for layer in lc.ilayers(searchable=True):
+            yield lc.checkSearch, layer
