@@ -81,7 +81,7 @@ class LayersChecker(object):
 
     def checkLegendImage(self, layer, legendImages):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
-            assert ((layer + '_' + lang) in legendImages), layer + lang
+            assert ((layer + '_' + lang) in legendImages), layer + '_' + lang
 
 
 def test_all_htmlpopups():
