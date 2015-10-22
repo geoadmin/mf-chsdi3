@@ -4139,6 +4139,9 @@ msgstr "swisstopo, sgtk"
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
 msgstr "Division Ski Tour Map"
 
+msgid "ch.swisstopo.skitourenkarte-50.metadata.shop"
+msgstr "Division Ski Tour Map"
+
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"
 
@@ -4516,6 +4519,9 @@ msgstr "Date"
 
 msgid "date_time"
 msgstr "Date/Time"
+
+msgid "datenstand"
+msgstr "Data status"
 
 msgid "datumactu"
 msgstr "Datum der letzten Aktualisierung"
@@ -4948,6 +4954,9 @@ msgstr "Canton Code"
 
 msgid "kartenbezug"
 msgstr "Order maps"
+
+msgid "kartenblatt"
+msgstr "Kartenblatt"
 
 msgid "kartenblattname"
 msgstr "Kartenblattname"
@@ -5776,6 +5785,9 @@ msgstr "Zip"
 
 msgid "plz_fr_de"
 msgstr "PLZ"
+
+msgid "preis"
+msgstr "Price"
 
 msgid "print"
 msgstr "Print"
