@@ -326,6 +326,18 @@ msgstr "Abkürzung"
 msgid "abteilung"
 msgstr "Abteilung"
 
+msgid "ads_name_Karst"
+msgstr "Karstgelände: alpin, Jura"
+
+msgid "ads_name_denudativ"
+msgstr "Denudativ: Schutthang, Bergsturz, Sackung, Rutschung, Verflachung"
+
+msgid "ads_name_fluvial"
+msgstr "Fluvial: Hangfläche, Schwemmebene, Schwemmkegel"
+
+msgid "ads_name_glazial"
+msgstr "Glazial: durch Eiszeitvergletscherung geprägt, Grundmoräne, Kar, aktueller Gletscher"
+
 msgid "aktuelle_daten"
 msgstr "Current and previous data"
 
@@ -3730,6 +3742,12 @@ msgstr "Geological Map 500"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr "Geol. Atlas of Switzerland 1:25 000"
+
+msgid "ch.swisstopo.geologie-geomorphologie"
+msgstr "Übersicht Geomorphologie"
+
+msgid "ch.swisstopo.geologie-geomorphologie.ads_name"
+msgstr "Übersicht Geomorphologie: Oberflächenform"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
 msgstr "Aeromagnetics Plateau/Jura"

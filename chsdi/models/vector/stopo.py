@@ -10,6 +10,20 @@ from chsdi.models.vector import Vector, Geometry
 Base = bases['stopo']
 
 
+class GeologieGeomorphologie (Base, Vector):
+    __tablename__ = 'geomorphologie'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geologie-geomorphologie.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geomorphologie'
+    __label__ = 'ads_name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    ads_name = Column('ads_name', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.swisstopo.geologie-geomorphologie', GeologieGeomorphologie)
+
+
 class DosisleistungTerrestrisch (Base, Vector):
     __tablename__ = 'dosisleistung_terrestrisch'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
