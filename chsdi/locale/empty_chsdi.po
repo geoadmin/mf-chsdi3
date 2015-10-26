@@ -211,6 +211,9 @@ msgstr ""
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.doc_title"
 msgstr ""
 
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe_type"
+msgstr ""
+
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_name"
 msgstr ""
 

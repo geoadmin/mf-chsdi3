@@ -3287,6 +3287,9 @@ msgstr "This Website is updated twice a year. If you want to use a site record i
 msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
 msgstr "UNESCO World cultural heritage"
 
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe_type"
+msgstr "Type"
+
 msgid "ch.bak.url"
 msgstr "http://www.bak.admin.ch/index.html?lang=en"
 

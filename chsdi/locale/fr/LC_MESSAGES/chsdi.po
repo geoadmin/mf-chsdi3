@@ -3287,6 +3287,9 @@ msgstr "Ce site est mis à jour deux fois par année. Merci de vous adresser à 
 msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
 msgstr "UNESCO sites culturels"
 
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe_type"
+msgstr "Type"
+
 msgid "ch.bak.url"
 msgstr "http://www.bak.admin.ch/index.html?lang=fr"
 
