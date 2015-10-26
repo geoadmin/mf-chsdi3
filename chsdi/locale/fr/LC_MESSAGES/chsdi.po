@@ -326,6 +326,18 @@ msgstr "Abréviation"
 msgid "abteilung"
 msgstr "Division"
 
+msgid "ads_name_Karst"
+msgstr "Terrain karstique: alpin, du Jura"
+
+msgid "ads_name_denudativ"
+msgstr "Denudatif: voiles d’éboulis, éboulement, tassement, glissement de terrain, aplanissement"
+
+msgid "ads_name_fluvial"
+msgstr "Fluviatile: versants pentus fluvial, plaine alluviale, cône de déjection"
+
+msgid "ads_name_glazial"
+msgstr "Glaciaire: formé par les glaciers de l’époque glaciaire, moraine de fond, cirque glaciaire, glacier"
+
 msgid "aktuelle_daten"
 msgstr "Données actuelles et historiques"
 
@@ -3730,6 +3742,12 @@ msgstr "Carte géologique 500"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr "Atlas géol. de la Suisse 1:25 000"
+
+msgid "ch.swisstopo.geologie-geomorphologie"
+msgstr "Géomorphologie, vue d'ensemble"
+
+msgid "ch.swisstopo.geologie-geomorphologie.ads_name"
+msgstr "Géomorphologie, vue d´ensemble: forme superficielle"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
 msgstr "Aéromagnétique Plateau/Jura"

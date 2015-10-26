@@ -7070,3 +7070,21 @@ msgstr ""
 
 msgid "EXZ_landesschwerenetz_type"
 msgstr ""
+
+msgid "ch.swisstopo.geologie-geomorphologie"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geomorphologie.ads_name"
+msgstr ""
+
+msgid "ads_name_glazial"
+msgstr ""
+
+msgid "ads_name_fluvial"
+msgstr ""
+
+msgid "ads_name_denudativ"
+msgstr ""
+
+msgid "ads_name_Karst"
+msgstr ""
