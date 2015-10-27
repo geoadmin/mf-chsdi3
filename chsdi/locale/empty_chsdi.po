@@ -7088,3 +7088,6 @@ msgstr ""
 
 msgid "ads_name_Karst"
 msgstr ""
+
+msgid "ch.bafu.hydrologie-messstationen_gefahren"
+msgstr ""
