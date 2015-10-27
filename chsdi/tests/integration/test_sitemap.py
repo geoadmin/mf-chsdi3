@@ -50,6 +50,10 @@ class TestSitemapView(TestsBase):
         resp = self.testapp.get('/sitemap?content=wrongthing', status=404)
         resp.mustcontain('Please provide a valid content parameter')
 
+    def test_malformed_parameter_values_failure(self):
+        resp = self.testapp.get('/sitemap?content=base_index_address', status=400)
+        resp.mustcontain('Malformed content parameter')
+
     def test_index_file(self):
         resp = self.testapp.get('/sitemap?content=index', status=200)
         resp.content_type == 'application/xml'
