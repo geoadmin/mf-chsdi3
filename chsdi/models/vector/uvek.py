@@ -488,7 +488,7 @@ register('ch.bfe.energiestaedte-2000watt-aufdemweg', ENERGIESTAEDTE2000AUFDEMWEG
 
 
 class ENERGIEFORSCHUNG(Base, Vector):
-    __tablename__ = 'energieforschung_new'
+    __tablename__ = 'energieforschung'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/energieforschung.mako'
     __bodId__ = 'ch.bfe.energieforschung'
