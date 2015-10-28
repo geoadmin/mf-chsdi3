@@ -6272,6 +6272,9 @@ msgstr "Fläche [ha]"
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_endprotectioncommitment"
 msgstr "Ende Schutzverpflichtung"
 
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_name"
+msgstr "Name"
+
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_objectnumber"
 msgstr "Objektnummer"
 
