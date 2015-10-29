@@ -47,9 +47,8 @@ def _get_releases_params(request):
     params = FeatureParams(request)
     params.imageDisplay = request.params.get('imageDisplay')
     params.mapExtent = request.params.get('mapExtent')
-    # our intersection geometry is the full mapExtent passed
-    params.geometry = request.params.get('mapExtent')
-    params.geometryType = 'esriGeometryEnvelope'
+    params.geometry = request.params.get('geometry')
+    params.geometryType = request.params.get('geometryType')
     params.layer = request.matchdict.get('layerId')
     return params
 
@@ -539,11 +538,14 @@ def releases(request):
 
     # Default timestamp
     timestamps = []
-
+    minYear = 9999
     for f in _get_features_for_filters(params, [models]):
         if hasattr(f, 'release_year') and f.release_year is not None:
             for x in f.release_year:
-                timestamps.append(str(x))
+                if int(x) < minYear:
+                    timestamps.append(str(x))
+                    minYear = int(x)
+
     if len(timestamps) > 0:
         # remove duplicates
         timestamps = list(set(timestamps))
