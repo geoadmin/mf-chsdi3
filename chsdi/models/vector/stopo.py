@@ -93,7 +93,7 @@ class Landesschwerenetz_Ext (Base, Vector):
     __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
     __bodId__ = 'ch.swisstopo.landesschwerenetz'
     __queryable_attributes__ = ['nr_lsn2004', 'name', 'type']
-    __minscale__ = 3000
+    __maxscale__ = 3000
     id = Column('bgdi_id', Integer, primary_key=True)
     nr_lsn2004 = Column('nr_lsn2004', Text)
     name = Column('name', Text)
