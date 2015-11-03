@@ -1049,6 +1049,12 @@ msgstr "IVS Régional et local"
 msgid "ch.astra.kt"
 msgstr "OFROU + canton"
 
+msgid "ch.astra.mountainbikeland"
+msgstr "la Suisse à VTT"
+
+msgid "ch.astra.skatingland"
+msgstr "la Suisse en rollers"
+
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Circulation routière (régional)"
 
@@ -1084,6 +1090,12 @@ msgstr "Accidents avec la part. de motos"
 
 msgid "ch.astra.url"
 msgstr "http://www.astra.admin.ch/index.html?lang=fr"
+
+msgid "ch.astra.veloland"
+msgstr "la Suisse à vélo"
+
+msgid "ch.astra.wanderland"
+msgstr "la Suisse à pied"
 
 msgid "ch.babs"
 msgstr "OFPP"
@@ -4483,6 +4495,18 @@ msgstr "Type milieu récepteur"
 
 msgid "ch_bafu_gee-kla.vsa_kategorie"
 msgstr "Type de traitement (catégorie VSA)"
+
+msgid "chmobil_number"
+msgstr "N°"
+
+msgid "chmobil_title"
+msgstr "Itinéraires"
+
+msgid "chmobil_url_etappe"
+msgstr "Ouvrez l’étape en SuisseMobile"
+
+msgid "chmobil_url_route"
+msgstr "Ouvrez l’itinéraire en SuisseMobile"
 
 msgid "city_name"
 msgstr "Nom de la localité"

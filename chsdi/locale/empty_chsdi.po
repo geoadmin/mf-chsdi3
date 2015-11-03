@@ -7097,3 +7097,27 @@ msgstr ""
 
 msgid "ch.bafu.hydrologie-messstationen_gefahren"
 msgstr ""
+
+msgid "chmobil_url_etappe"
+msgstr ""
+
+msgid "chmobil_url_route"
+msgstr ""
+
+msgid "chmobil_title"
+msgstr ""
+
+msgid "chmobil_number"
+msgstr ""
+
+msgid "ch.astra.veloland"
+msgstr ""
+
+msgid "ch.astra.wanderland"
+msgstr ""
+
+msgid "ch.astra.skatingland"
+msgstr ""
+
+msgid "ch.astra.mountainbikeland"
+msgstr ""

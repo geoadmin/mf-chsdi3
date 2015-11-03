@@ -2243,3 +2243,67 @@ class suel_pl_r_kraft (Base, Vector):
                                dimension=2, srid=21781))
 
 register('ch.bfe.sachplan-uebertragungsleitungen_kraft', suel_pl_r_kraft)
+
+
+class ChmobilVeloland (Base, Vector):
+    __tablename__ = 'chmobil_veloland'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/chmobil.mako'
+    __bodId__ = 'ch.astra.veloland'
+    __label__ = 'chmobil_title'
+    id = Column('full_number', Text, primary_key=True)
+    chmobil_url_etappe = Column('bgdi_url_etappe', Text)
+    chmobil_url_route = Column('bgdi_url_route', Text)
+    chmobil_title = Column('title', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.astra.veloland', ChmobilVeloland)
+
+
+class ChmobilWanderland (Base, Vector):
+    __tablename__ = 'chmobil_wanderland'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/chmobil.mako'
+    __bodId__ = 'ch.astra.wanderland'
+    __label__ = 'chmobil_title'
+    id = Column('full_number', Text, primary_key=True)
+    chmobil_url_etappe = Column('bgdi_url_etappe', Text)
+    chmobil_url_route = Column('bgdi_url_route', Text)
+    chmobil_title = Column('title', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.astra.wanderland', ChmobilWanderland)
+
+
+class ChmobilSkatingland (Base, Vector):
+    __tablename__ = 'chmobil_skatingland'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/chmobil.mako'
+    __bodId__ = 'ch.astra.skatingland'
+    __label__ = 'chmobil_title'
+    id = Column('full_number', Text, primary_key=True)
+    chmobil_url_etappe = Column('bgdi_url_etappe', Text)
+    chmobil_url_route = Column('bgdi_url_route', Text)
+    chmobil_title = Column('title', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.astra.skatingland', ChmobilSkatingland)
+
+
+class ChmobilMountainbikeland (Base, Vector):
+    __tablename__ = 'chmobil_mountainbikeland'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/chmobil.mako'
+    __bodId__ = 'ch.astra.mountainbikeland'
+    __label__ = 'chmobil_title'
+    id = Column('full_number', Text, primary_key=True)
+    chmobil_url_etappe = Column('bgdi_url_etappe', Text)
+    chmobil_url_route = Column('bgdi_url_route', Text)
+    chmobil_title = Column('title', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.astra.mountainbikeland', ChmobilMountainbikeland)
