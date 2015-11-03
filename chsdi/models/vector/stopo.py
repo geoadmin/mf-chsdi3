@@ -64,10 +64,11 @@ class Landesschwerenetz (Base, Vector):
     __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
     __bodId__ = 'ch.swisstopo.landesschwerenetz'
     __queryable_attributes__ = ['nr_lsn2004', 'name', 'type']
+    __label__ = 'label_tt'
     id = Column('bgdi_id', Integer, primary_key=True)
     nr_lsn2004 = Column('nr_lsn2004', Text)
     name = Column('name', Text)
-    label = Column('label', Text)
+    label_tt = Column('label', Text)
     type = Column('type', Text)
     lat_etrs = Column('lat_etrs', Numeric)
     lon_etrs = Column('lon_etrs', Numeric)
@@ -94,10 +95,11 @@ class Landesschwerenetz_Ext (Base, Vector):
     __bodId__ = 'ch.swisstopo.landesschwerenetz'
     __queryable_attributes__ = ['nr_lsn2004', 'name', 'type']
     __maxscale__ = 3000
+    __label__ = 'label_tt'
     id = Column('bgdi_id', Integer, primary_key=True)
     nr_lsn2004 = Column('nr_lsn2004', Text)
     name = Column('name', Text)
-    label = Column('label', Text)
+    label_tt = Column('label', Text)
     type = Column('type', Text)
     lat_etrs = Column('lat_etrs', Numeric)
     lon_etrs = Column('lon_etrs', Numeric)
