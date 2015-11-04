@@ -9,6 +9,46 @@
 Release Notes
 =============
 
+.. _releasenotes_20151104:
+
+Release 20151104 - Wednesday, November 4th 2015
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_151021...r_151104>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_151021...r_151104>`__
+
+
+Geodata
+*******
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Übersicht Geomorphologie <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomorphologie>`__ (ch.swisstopo.geologie-geomorphologie)                    |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Nighttime railway noise <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_nacht>`__ (ch.bafu.laerm-bahnlaerm_nacht)                                    |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Daytime railway noise <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_tag>`__ (ch.bafu.laerm-bahnlaerm_tag)                                          |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cleantech projects <//map.geo.admin.ch/?layers=ch.bfe.energieforschung>`__ (ch.bfe.energieforschung)                                                     |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Energy cities <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte>`__ (ch.bfe.energiestaedte)                                                              |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `2000-Watt Sites <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-2000watt-areale>`__ (ch.bfe.energiestaedte-2000watt-areale)                            |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Energy Cities on the Path 2000-Watt <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-2000watt-aufdemweg>`__ (ch.bfe.energiestaedte-2000watt-aufdemweg)  |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Energy-Regions <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-energieregionen>`__ (ch.bfe.energiestaedte-energieregionen)                             |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20151021:
 
 Release 20151021 - Wednesday, October 21st 2015
