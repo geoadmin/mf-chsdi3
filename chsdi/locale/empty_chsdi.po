@@ -1,3 +1,6 @@
+msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_name"
+msgstr ""
+
 msgid "ch.ensi.url"
 msgstr ""
 
