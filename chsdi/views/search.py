@@ -8,7 +8,9 @@ import pyramid.httpexceptions as exc
 from shapely.geometry import box, Point
 
 from chsdi.lib.validation.search import SearchValidation
-from chsdi.lib.helpers import format_search_text, transformCoordinate
+from chsdi.lib.helpers import (
+    format_search_text, transformCoordinate, parse_box2d, center_from_box2d
+)
 from chsdi.lib.sphinxapi import sphinxapi
 from chsdi.lib import mortonspacekey as msk
 
@@ -256,9 +258,8 @@ class Search(SearchValidation):
             raise exc.HTTPBadRequest('You are not allowed to mix timeStamps and timeInstant parameters')
 
     def _get_geoanchor_from_bbox(self):
-        centerX = (self.bbox[2] + self.bbox[0]) / 2
-        centerY = (self.bbox[3] + self.bbox[1]) / 2
-        wkt = 'POINT(%s %s)' % (centerX, centerY)
+        center = center_from_box2d(self.bbox)
+        wkt = 'POINT(%s %s)' % (center[0], center[1])
         return transformCoordinate(wkt, 21781, 4326)
 
     def _query_fields(self, fields):
@@ -421,8 +422,7 @@ class Search(SearchValidation):
                 return False
         try:
             refbox = box(ref[0], ref[1], ref[2], ref[3]) if not _is_point(ref) else Point(ref[0], ref[1])
-            arr = map(float, result.replace('BOX(', '').replace(')', '')
-                      .replace(',', ' ').split(' '))
+            arr = parse_box2d(result)
             resbox = box(arr[0], arr[1], arr[2], arr[3]) if not _is_point(arr) else Point(arr[0], arr[1])
         except:
             # We bail with True to be conservative and

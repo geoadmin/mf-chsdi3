@@ -6959,6 +6959,9 @@ msgstr "Schutzzeit"
 msgid "tt_wrz_select_zusatz"
 msgstr "Zusatzinformationen"
 
+msgid "tt_zeitreihen_FullResView"
+msgstr "Vista da fegl da la charta geografica original"
+
 msgid "twitter title"
 msgstr "Twitter"
 
