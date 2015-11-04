@@ -3,9 +3,12 @@
 import unittest
 from pyramid import testing
 from pyramid.threadlocal import get_current_registry
-from chsdi.lib.helpers import (make_agnostic, make_api_url, check_url, transformCoordinate, sanitize_url,
-                               check_even, round, format_search_text, remove_accents, escape_sphinx_syntax,
-                               quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator, versioned)
+from chsdi.lib.helpers import (
+    make_agnostic, make_api_url, check_url, transformCoordinate, sanitize_url,
+    check_even, round, format_search_text, remove_accents, escape_sphinx_syntax,
+    quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
+    versioned, parse_box2d, center_from_box2d
+)
 from urlparse import urljoin
 
 
@@ -208,3 +211,24 @@ class Test_Helpers(unittest.TestCase):
         result = float_raise_nan(testval)
         self.assertEqual(result, 5.0)
         self.assertRaises('ValueError')
+
+    def test_parse_box2d(self):
+        strBox2d = 'BOX(1.1 2.2,3.3 4.4)'
+        box2d = parse_box2d(strBox2d)
+        self.assertEqual(box2d[0], 1.1)
+        self.assertEqual(box2d[1], 2.2)
+        self.assertEqual(box2d[2], 3.3)
+        self.assertEqual(box2d[3], 4.4)
+
+    def test_center_from_box2d(self):
+        box2d = [1.1, 2.2, 3.3, 6.6]
+        center = center_from_box2d(box2d)
+        self.assertEqual(center[0], 2.2)
+        self.assertEqual(center[1], 4.4)
+
+    def test_center_from_box2d_wrong(self):
+        box2d = [10.1, 2.2, 3.3, 6.6]
+        try:
+            center_from_box2d(box2d)
+        except ValueError, e:
+            self.assertRaises(e)

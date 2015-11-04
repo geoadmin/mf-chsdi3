@@ -287,6 +287,10 @@ def parse_box2d(stringBox2D):
 
 
 def center_from_box2d(box2D):
+    # Bottom left to top right only
+    if box2D[0] > box2D[2] or box2D[1] > box2D[3]:
+        raise ValueError('Invalid box2D.')
+
     return [
         box2D[0] + ((box2D[2] - box2D[0]) / 2),
         box2D[1] + ((box2D[3] - box2D[1]) / 2)
