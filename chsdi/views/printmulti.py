@@ -42,7 +42,6 @@ def _zeitreihen(d, api_url):
     timestamps = []
 
     http = Http(disable_ssl_certificate_validation=True)
-
     params = urllib.urlencode(d)
     url = 'http:' + api_url + '/rest/services/ech/MapServer/ch.swisstopo.zeitreihen/releases?%s' % params
 
@@ -73,13 +72,14 @@ def _increment_info(l, filename):
         l.release()
 
 
-def _normalize_imageDisplay(mapExtent, display):
-    # We assume x/y to correspond
-    targetDPI = 96
-    inches = abs(mapExtent[0] - mapExtent[2]) * 39.37
-    dpi = inches / display[0]
-    return str(int(display[0] * dpi / targetDPI)) + ',' + \
-        str(int(display[1] * dpi / targetDPI)) + ',' + \
+def _normalize_imageDisplay(display):
+    # Given print size is for 72 dpi: https://github.com/geoadmin/mf-geoadmin3/blob/master/src/components/print/PrintDirective.js#L27
+    sourceDPI = 72.0
+    # Target print dpi is 254
+    targetDPI = 256.0
+    ratio = targetDPI / sourceDPI
+    return str(int(display[0] * ratio)) + ',' + \
+        str(int(display[1] * ratio)) + ',' + \
         str(targetDPI)
 
 
@@ -96,13 +96,22 @@ def _get_timestamps(spec, api_url):
             try:
                 page = spec['pages'][0]
                 display = page['display']
+                center = page['center']
                 bbox = page['bbox']
                 mapExtent = bbox
                 mapExtent[3], mapExtent[1] = mapExtent[1], mapExtent[3]
-                imageDisplay = _normalize_imageDisplay(mapExtent, display)
-                timestamps = _zeitreihen({'mapExtent': ','.join(map(str, mapExtent)), 'imageDisplay': imageDisplay}, api_url)
+                imageDisplay = _normalize_imageDisplay(display)
+                params = {
+                    'mapExtent': ','.join(map(str, mapExtent)),
+                    'imageDisplay': imageDisplay,
+                    'geometry': str(center[0]) + ',' + str(center[1]),
+                    'geometryType': 'esriGeometryPoint'
+                }
+                timestamps = _zeitreihen(params, api_url)
+
                 log.debug('[_get_timestamps] Zeitreichen %s', timestamps)
-            except:
+            except Exception as e:
+                log.debug(str(e))
                 timestamps = lyr['timestamps'] if 'timestamps' in lyr.keys() else None
         else:
             timestamps = lyr['timestamps'] if 'timestamps' in lyr.keys() else None

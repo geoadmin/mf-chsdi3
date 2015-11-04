@@ -594,10 +594,57 @@ class TestGebauedeGeometry(TestsBase):
 class TestReleasesService(TestsBase):
 
     def test_service(self):
-        params = {'imageDisplay': '500,600,96', 'mapExtent': '611399.9999999999,158650,690299.9999999999,198150'}
+        params = {'imageDisplay': '500,600,96',
+                  'mapExtent': '611399.9999999999,158650,690299.9999999999,198150',
+                  'geometry': '650000.0,170000.0',
+                  'geometryType': 'esriGeometryPoint'
+                  }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
         self.assertTrue(resp.content_type == 'application/json')
-        self.assertTrue(len(resp.json['results']) >= 122, len(resp.json['results']))
+        self.assertTrue(len(resp.json['results']) >= 26, len(resp.json['results']))
+
+    # Test cases Oftringen by Kerngruppe Zeitreise
+    def test_scale_100000(self):
+        params = {'imageDisplay': '2851,1884,256.0',
+                  'mapExtent': '620998.611111,231681.388889,649291.388889,250378.611111',
+                  'geometry': '636500.0,241000.0',
+                  'geometryType': 'esriGeometryPoint'
+                  }
+        resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+        self.assertTrue(len(resp.json['results']) >= 25, len(resp.json['results']))
+        ist = resp.json['results']
+        soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231", "18791231", "18821231", "18851231", "18891231", "18931231", "18951231", "18981231", "19021231", "19051231", "19061231", "19081231", "19091231", "19121231", "19221231", "19231231", "19281231", "19331231", "19591231", "19651231", "19701231", "19761231", "19821231", "19881231", "19941231", "20001231", "20071231"]
+        for idx, i in enumerate(ist):
+            self.assertEqual(i, soll[idx], str(idx))
+
+    def test_scale_50000(self):
+        params = {'imageDisplay': '2851,1884,256.0',
+                  'mapExtent': '629426.805556,236325.694444,643573.194444,245674.305556',
+                  'geometry': '636500.0,241000.0',
+                  'geometryType': 'esriGeometryPoint'
+                  }
+        resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+        self.assertTrue(len(resp.json['results']) >= 25, len(resp.json['results']))
+        ist = resp.json['results']
+        soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231", "18791231", "18821231", "18841231", "18961231", "18971231", "19011231", "19131231", "19311231", "19421231", "19571231", "19641231", "19701231", "19761231", "19821231", "19881231", "19941231", "20001231", "20061231", "20121231"]
+        for idx, i in enumerate(ist):
+            self.assertEqual(i, soll[idx], str(idx))
+
+    def test_scale_25000(self):
+        params = {'imageDisplay': '2851,1884,256.0',
+                  'mapExtent': '632963.402778,238662.847222,640036.597222,243337.152778',
+                  'geometry': '636500.0,241000.0',
+                  'geometryType': 'esriGeometryPoint'
+                  }
+        resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+        self.assertTrue(len(resp.json['results']) >= 25, len(resp.json['results']))
+        ist = resp.json['results']
+        soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231", "18791231", "18821231", "18841231", "18961231", "18971231", "19011231", "19131231", "19311231", "19421231", "19551231", "19571231", "19641231", "19701231", "19761231", "19821231", "19881231", "19941231", "20001231", "20061231", "20121231"]
+        for idx, i in enumerate(ist):
+            self.assertEqual(i, soll[idx], str(idx))
 
     def test_missing_params(self):
         params = {'mapExtent': '611399.9999999999,158650,690299.9999999999,198150'}
