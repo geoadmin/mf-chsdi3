@@ -12,13 +12,15 @@ import pyramid.httpexceptions as exc
 def luftbilder(request):
     release_year = request.params.get('release_year')
     if release_year is None:
-        exc.HTTPBadRequest('Please provide a parameter realease_year')
+        raise exc.HTTPBadRequest('Please provide a parameter realease_year')
+    bildnummer = request.params.get('bildnummer')
+    if bildnummer is None:
+        raise exc.HTTPBadRequest('Please provide a map number (param: bildnummer)')
 
     # In order to use the validator and the associated service
     request.matchdict['map'] = 'api'
     layerId = request.params.get('layer')
     request.matchdict['layerId'] = layerId
-    bildnummer = request.params.get('bildnummer')
     featureId = bildnummer + '_' + release_year
     request.matchdict['featureId'] = featureId
 
