@@ -10,6 +10,7 @@ from pyramid.httpexceptions import HTTPBadRequest, HTTPRequestTimeout
 import unicodedata
 from urllib import quote
 from urlparse import urlparse, urlunparse, urljoin
+import xml.etree.ElementTree as etree
 
 
 def versioned(path):
@@ -48,8 +49,8 @@ def make_api_url(request, agnostic=False):
         return ''.join((request.scheme, '://', host))
 
 
-def resource_exists(path):
-    r = requests.head(path)
+def resource_exists(path, headers={}):
+    r = requests.head(path, headers=headers)
     return r.status_code == requests.codes.ok
 
 
@@ -245,6 +246,22 @@ def parseHydroXML(id, root):
     return html_attr
 
 
+def imagesize_from_metafile(tileUrlBasePath, bvnummer):
+    width = None
+    height = None
+    headers = {'Referer': 'http://admin.ch'}
+    metaurl = tileUrlBasePath + '/' + bvnummer + '/tilemapresource.xml'
+    s = requests.Session()
+    response = s.get(metaurl, headers=headers)
+    if response.status_code == requests.codes.ok:
+        xml = etree.fromstring(response.content)
+        bb = xml.find('BoundingBox')
+        if bb is not None:
+            width = abs(int(float(bb.get('maxy'))) - int(float(bb.get('miny'))))
+            height = abs(int(float(bb.get('maxx'))) - int(float(bb.get('minx'))))
+    return (width, height)
+
+
 def transformCoordinate(wkt, srid_from, srid_to):
     srid_in = osr.SpatialReference()
     srid_in.ImportFromEPSG(srid_from)
@@ -262,3 +279,15 @@ def float_raise_nan(val):
     if math.isnan(ret):
         raise ValueError('nan is not considered valid float')
     return ret
+
+
+def parse_box2d(stringBox2D):
+    extent = stringBox2D.replace('BOX(', '').replace(')', '').replace(',', ' ')
+    return map(float, extent.split(' '))
+
+
+def center_from_box2d(box2D):
+    return [
+        box2D[0] + ((box2D[2] - box2D[0]) / 2),
+        box2D[1] + ((box2D[3] - box2D[1]) / 2)
+    ]

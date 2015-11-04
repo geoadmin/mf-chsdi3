@@ -3,7 +3,6 @@
 <%!
 import datetime
 import urllib
-import urllib2
 from pyramid.url import route_url
 import chsdi.lib.helpers as h
 import markupsafe
@@ -21,57 +20,11 @@ def determinePreviewUrl(bvnummer):
     def getZeroTileUrl(bvnummer):
         return tileUrlBasePath + '/' + bvnummer + '/0/0/0.jpg'
 
-    class HeadRequest(urllib2.Request):
-        def get_method(self):
-            return 'HEAD'
-
-    def testForUrl(url):
-        response = None
-        try:
-            request = HeadRequest(url)
-            request.add_header('Referer', 'http://admin.ch')
-            response = urllib2.urlopen(request)
-
-        finally:
-            if response:
-                if response.getcode() != 200:
-                    url = ""
-                response.close()
-            else:
-                url = ""
-            return url
-
-
-    #testing these 2 url could be done more python like
-    url = testForUrl(getPreviewImageUrl(bvnummer))
-    if url == "":
-        url = testForUrl(getZeroTileUrl(bvnummer))
+    headers = {'Referer': 'http://admin.ch'}
+    url = getPreviewImageUrl(bvnummer)
+    if not h.resource_exists(url, headers):
+        url = getZeroTileUrl(bvnummer)
     return h.make_agnostic(url)
-
-
-def imagesize_from_metafile(bvnummer):
-    import xml.etree.ElementTree as etree
-    width = None
-    height = None
-    metaurl = tileUrlBasePath + '/' + bvnummer + '/tilemapresource.xml'
-    response = None
-    try:
-        request = urllib2.Request(metaurl)
-        request.add_header('Referer', 'http://admin.ch')
-        response = urllib2.urlopen(request)
-        if response.getcode() == 200:
-            xml = etree.parse(response).getroot()
-            bb = xml.find('BoundingBox')
-            if bb != None:
-                width = abs(int(float(bb.get('maxy'))) - int(float(bb.get('miny'))))
-                height = abs(int(float(bb.get('maxx'))) - int(float(bb.get('minx'))))
-    except:
-        pass
-    finally:
-        if response:
-            response.close()
-    return (width, height)
-
 
 def date_to_str(datum):
     try:
@@ -102,7 +55,7 @@ def get_viewer_url(request, params):
 
     # Get Image Preview URL and Image Size from Metafile
     preview_url = determinePreviewUrl(c['attributes']['bv_nummer'])
-    wh = imagesize_from_metafile(c['attributes']['bv_nummer'])
+    wh = h.imagesize_from_metafile(tileUrlBasePath, c['attributes']['bv_nummer'])
     image_width = wh[0]
     image_height = wh[1]
 

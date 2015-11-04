@@ -2,70 +2,32 @@
 
 <%
   from pyramid.url import route_url
-  import urllib2
-  import json
+  import requests
 
   c = context
+  topic = 'ech'
   request = c.get('request')
-  baseUrl = '//' + c.get('baseUrl')
-  layerBodId = c.get('layer')
-  featureId = c.get('bildnummer')
-  displayLink = True
-  lang = c.get('lang') if c.get('lang') is not None else 'de'
+  params = c.get('params')
+  release_year = c.get('release_year')
+  center = c.get('center')
+  lang = params.lang
+  layerBodId = params.layerId
+  bildnummer = c.get('bildnummer')
   title = request.translate(layerBodId)
-  pageTitle = _(c.get('title')) + ': ' + featureId
+  pageTitle = _(c.get('title')) + ': ' + bildnummer
   title += ': ' + pageTitle
   loaderUrl = h.make_agnostic(route_url('ga_api', request))
-  featureUrl = "https:%s/%s/%s/%s/%s" %( h.make_agnostic(route_url('topics',request)) ,'api','MapServer','ch.swisstopo.zeitreihen',featureId+"_"+c.get('release_year'))
 
-def feature_from_identify(featureUrl):
-    result = None
-    feature = None
-    response = None
-    try:
-        request = urllib2.Request(featureUrl)
-        response = urllib2.urlopen(featureUrl)
-        if response.getcode() == 200:
-            feature = json.loads(response.read())
-            result = feature
-    except:
-        pass
-    finally:
-        if response:
-            response.close()
+  if c.get('width') is None or c.get('height') is None:
+      wh = h.imagesize_from_metafile(tileUrlBasePath, bildnummer)
+      width = c.get('width') or wh[0]
+      height = c.get('height') or wh[1]
+  else:
+      width = c.get('width')
+      height = c.get('height')
 
-    return result
-
-  tileUrlBasePath = 'http://historicalmaps.geo.admin.ch/tiles'
-def imagesize_from_metafile(bvnummer):
-    import xml.etree.ElementTree as etree
-    width = None
-    height = None
-    metaurl = tileUrlBasePath + '/' + bvnummer + '/tilemapresource.xml'
-    response = None
-    try:
-        request = urllib2.Request(metaurl)
-        request.add_header('Referer', 'http://admin.ch')
-        response = urllib2.urlopen(request)
-        if response.getcode() == 200:
-            xml = etree.parse(response).getroot()
-            bb = xml.find('BoundingBox')
-            if bb != None:
-                width = abs(int(float(bb.get('maxy'))) - int(float(bb.get('miny'))))
-                height = abs(int(float(bb.get('maxx'))) - int(float(bb.get('minx'))))
-    except:
-        pass
-    finally:
-        if response:
-            response.close()
-    return (width, height)
-
-
-  wh = imagesize_from_metafile(featureId)
-  width = c.get('width') or wh[0]
-  height = c.get('height') or wh[1]
-  featureBbox = feature_from_identify(featureUrl)['feature']['bbox']
-  geoadminUrl = "//%s/?layers=ch.swisstopo.zeitreihen&zoom=6&Y=%s&X=%s&time=%s" % (request.registry.settings['geoadminhost'],featureBbox[0]+((featureBbox[2]-featureBbox[0])/2),featureBbox[1]+((featureBbox[3]-featureBbox[1])/2),c.get('release_year'))
+  geoadminUrl = "//%s/?layers=%s&zoom=6&Y=%s&X=%s&time=%s" % (
+      request.registry.settings['geoadminhost'], layerBodId, center[0], center[1], release_year)
 %>
 
 <!DOCTYPE html>
@@ -124,7 +86,7 @@ def imagesize_from_metafile(bvnummer):
         left: 0px;
         height: 30px;
         margin: 10px 0px;
-        text-align:center;
+        text-align: center;
       }
       .footer a {
         padding: 0px 10px;
@@ -135,7 +97,7 @@ def imagesize_from_metafile(bvnummer):
       .link-red {
         color: red;
       }
-      #zeitreihensmap {
+      #zeitreihenmap {
         width: 100%;
         height: 100%;
         font-size: 16px;
@@ -159,7 +121,9 @@ def imagesize_from_metafile(bvnummer):
     <link rel="shortcut icon" type="image/x-icon" href="${h.versioned(request.static_url('chsdi:static/images/favicon.ico'))}">
   </head>
   <body onload="init()">
-    <div class="header">${title} <a class="pull-right" href="${geoadminUrl}" target="_blank">${_('link to geoportal')}</a> </div>
+    <div class="header">${title}
+      <a class="pull-right" href="${geoadminUrl}" target="_blank">${_('link to geoportal')}</a>
+    </div>
     <div class="wrapper">
       <div id="zeitreihenmap"></div>
     </div>
