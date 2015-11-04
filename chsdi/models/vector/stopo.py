@@ -125,6 +125,7 @@ class GravimetrischerAtlasMesspunkte (Base, Vector):
     __template__ = 'templates/htmlpopup/gravimetrischer_atlas_messpunkte.mako'
     __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte'
     __queryable_attributes__ = ['stationnam']
+    __label__ = 'stationnam'
     id = Column('bgdi_id', Integer, primary_key=True)
     stationnam = Column('stationnam', Text)
     coordhor = Column('coordhor', Numeric)
