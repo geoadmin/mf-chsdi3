@@ -31,7 +31,7 @@ API & applications
 Geodata
 *******
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Übersicht Geomorphologie <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomorphologie>`__ (ch.swisstopo.geologie-geomorphologie)                    |
+| New    | `Übersicht Geomorphologie <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomorphologie>`__ (ch.swisstopo.geologie-geomorphologie)                     |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Nighttime railway noise <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_nacht>`__ (ch.bafu.laerm-bahnlaerm_nacht)                                    |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
