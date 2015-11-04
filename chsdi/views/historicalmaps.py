@@ -9,7 +9,7 @@ import pyramid.httpexceptions as exc
 
 
 @view_config(route_name='historicalmaps')
-def luftbilder(request):
+def historical_maps(request):
     release_year = request.params.get('release_year')
     if release_year is None:
         raise exc.HTTPBadRequest('Please provide a parameter realease_year')
