@@ -1856,6 +1856,9 @@ msgstr "Hochwasserwahrscheinlichkeiten"
 msgid "ch.bafu.hydrologie-hydromessstationen"
 msgstr "Mesiraziuns idrologicas"
 
+msgid "ch.bafu.hydrologie-messstationen_gefahren"
+msgstr "Nivels da privel auas grondas"
+
 msgid "ch.bafu.hydrologie-niedrigwasserstatistik"
 msgstr "NQSTAT"
 

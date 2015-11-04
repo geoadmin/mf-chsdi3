@@ -1856,6 +1856,9 @@ msgstr "Probabilité des crues"
 msgid "ch.bafu.hydrologie-hydromessstationen"
 msgstr "Stations hydrométriques"
 
+msgid "ch.bafu.hydrologie-messstationen_gefahren"
+msgstr "Niveaux de danger de crues 24h"
+
 msgid "ch.bafu.hydrologie-niedrigwasserstatistik"
 msgstr "NQSTAT Basses eaux"
 
