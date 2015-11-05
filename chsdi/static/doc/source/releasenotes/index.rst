@@ -9,6 +9,44 @@
 Release Notes
 =============
 
+.. _releasenotes_20151111:
+
+Release 20151111 - Wednesday, November 11th 2015
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_151104...r_151111>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_151104...r_151111>`__
+
+
+Geodata
+*******
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Aerial images swisstopo oblique <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_schraegaufnahmen>`__ (ch.swisstopo.lubis-luftbilder_schraegaufnahmen)      |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.wanderland>`__ (ch.astra.wanderland)                                                                      |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Cycling in Switzerland <//map.geo.admin.ch/?layers=ch.astra.veloland>`__ (ch.astra.veloland)                                                                         |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Skating in Switzerland <//map.geo.admin.ch/?layers=ch.astra.skatingland>`__ (ch.astra.skatingland)                                                                   |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Mountainbiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.mountainbikeland>`__ (ch.astra.mountainbikeland)                                                  |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                                        |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Low distortion area <//map.geo.admin.ch/?layers=ch.swisstopo-vd.spannungsarme-gebiete>`__ (ch.swisstopo-vd.spannungsarme-gebiete)                                    |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20151104:
 
 Release 20151104 - Wednesday, November 4th 2015
