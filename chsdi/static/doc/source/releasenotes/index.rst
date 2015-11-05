@@ -9,6 +9,30 @@
 Release Notes
 =============
 
+.. _releasenotes_20151112:
+
+Release 20151104 - Thursday, November 12th 2015
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+
+
+Geodata
+*******
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Aerial images swisstopo oblique <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_schraegaufnahmen>`__ (ch.swisstopo.lubis-luftbilder_schraegaufnahmen)      |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20151104:
 
 Release 20151104 - Wednesday, November 4th 2015
