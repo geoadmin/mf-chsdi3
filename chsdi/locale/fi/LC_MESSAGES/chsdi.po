@@ -17,6 +17,303 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "<i>Abwasserreinigungsareal</i>"
+msgstr "Serenera"
+
+msgid "<i>Alpiner Gipfel</i>"
+msgstr "Piz alpin"
+
+msgid "<i>Ausfahrt</i>"
+msgstr "Sortida "
+
+msgid "<i>Aussichtspunkt</i>"
+msgstr "Punct panoramic"
+
+msgid "<i>Autofaehre</i>"
+msgstr "Navetta per autos"
+
+msgid "<i>Bildstock</i>"
+msgstr "Sontget "
+
+msgid "<i>Bobbahn</i>"
+msgstr "Bobera"
+
+msgid "<i>Brunnen</i>"
+msgstr "Funtauna "
+
+msgid "<i>Campingplatzareal</i>"
+msgstr "Plazza da campar"
+
+msgid "<i>Denkmal</i>"
+msgstr "Monument "
+
+msgid "<i>Deponieareal</i>"
+msgstr "Deponia"
+
+msgid "<i>Ein- und Ausfahrt</i>"
+msgstr "Entrada e sortida"
+
+msgid "<i>Erratischer Block</i>"
+msgstr "Bloc erratic"
+
+msgid "<i>Felsblock</i>"
+msgstr "Crappun "
+
+msgid "<i>Felskopf</i>"
+msgstr "Grugn "
+
+msgid "<i>Fliessgewaesser</i>"
+msgstr "Currents"
+
+msgid "<i>Flugfeldareal</i>"
+msgstr "Champ d'aviaziun"
+
+msgid "<i>Flughafenareal</i>"
+msgstr "Eroport"
+
+msgid "<i>Flugplatzareal</i>"
+msgstr "Plazza aviatica"
+
+msgid "<i>Flurname swisstopo</i>"
+msgstr "Num da cultira swisstopo"
+
+msgid "<i>Freizeitanlagenareal</i>"
+msgstr "Implant da temp liber"
+
+msgid "<i>Friedhof</i>"
+msgstr "Santeri "
+
+msgid "<i>Gebaeude Einzelhaus</i>"
+msgstr "Edifizi "
+
+msgid "<i>Gebiet</i>"
+msgstr "Territori "
+
+msgid "<i>Gipfel</i>"
+msgstr "Piz"
+
+msgid "<i>Gletscher</i>"
+msgstr "Glatscher "
+
+msgid "<i>Golfplatzareal</i>"
+msgstr "Plazza da golf"
+
+msgid "<i>Gondelbahn</i>"
+msgstr "Telecabina"
+
+msgid "<i>Graben</i>"
+msgstr "Foss"
+
+msgid "<i>Grat</i>"
+msgstr "Cresta "
+
+msgid "<i>Grossregion</i>"
+msgstr "Territori principal"
+
+msgid "<i>Grotte, Hoehle</i>"
+msgstr "Grotta "
+
+msgid "<i>Haltestelle Bahn</i>"
+msgstr "Fermada da viafier"
+
+msgid "<i>Haltestelle Bus</i>"
+msgstr "Fermada da bus "
+
+msgid "<i>Haltestelle Schiff</i>"
+msgstr "Fermada da nav"
+
+msgid "<i>Hauptgipfel</i>"
+msgstr "Piz principal"
+
+msgid "<i>Haupthuegel</i>"
+msgstr "Collina principal"
+
+msgid "<i>Haupttal</i>"
+msgstr "Val principala"
+
+msgid "<i>Heliport</i>"
+msgstr "Champ d'aviaziun per helicopter"
+
+msgid "<i>Historisches Areal</i>"
+msgstr "Areal istoric "
+
+msgid "<i>Huegel</i>"
+msgstr "Collina"
+
+msgid "<i>Huegelzug</i>"
+msgstr "Chadaina da collinas "
+
+msgid "<i>Kapelle</i>"
+msgstr "Chaplutta "
+
+msgid "<i>Kehrichtverbrennungsareal</i>"
+msgstr "Implant per arder rument "
+
+msgid "<i>Kleinbahn</i>"
+msgstr "Viafier a binaris stretgs"
+
+msgid "<i>Klosterareal</i>"
+msgstr "Convent "
+
+msgid "<i>Kraftwerkareal</i>"
+msgstr "Implant electric"
+
+msgid "<i>Landesgrenzstein</i>"
+msgstr "Crap da cunfin naziunal"
+
+msgid "<i>Landschaftsname</i>"
+msgstr "Regiun "
+
+msgid "<i>Lokalname swisstopo</i>"
+msgstr "Num local swisstopo"
+
+msgid "<i>Luftseilbahn</i>"
+msgstr "Pendiculara"
+
+msgid "<i>Massiv</i>"
+msgstr "Massiv "
+
+msgid "<i>Massnahmenvollzugsanstaltsareal</i>"
+msgstr "Praschun "
+
+msgid "<i>Messeareal</i>"
+msgstr "Fiera"
+
+msgid "<i>Normalspur</i>"
+msgstr "Binari normal"
+
+msgid "<i>Oeffentliches Parkareal</i>"
+msgstr "Parc public"
+
+msgid "<i>Oeffentliches Parkplatzareal</i>"
+msgstr "Parcadi public"
+
+msgid "<i>Offenes Gebaeude</i>"
+msgstr "Edifizi avert"
+
+msgid "<i>Ort</i>"
+msgstr "Lieu "
+
+msgid "<i>Ortsteil</i>"
+msgstr "Part da la vischnanca"
+
+msgid "<i>Pass</i>"
+msgstr "Pass"
+
+msgid "<i>Personenfaehre mit Seil</i>"
+msgstr "Navetta cun corda"
+
+msgid "<i>Personenfaehre ohne Seil</i>"
+msgstr "Navetta senza corda"
+
+msgid "<i>Pferderennbahnareal</i>"
+msgstr "Ippodrom"
+
+msgid "<i>Quartier</i>"
+msgstr "Quartier "
+
+msgid "<i>Quartierteil</i>"
+msgstr "Part di quartier "
+
+msgid "<i>Quelle</i>"
+msgstr "Funtauna "
+
+msgid "<i>Rastplatzareal</i>"
+msgstr "Pausadi "
+
+msgid "<i>Rodelbahn</i>"
+msgstr "Via da scarsolar"
+
+msgid "<i>Sakrales Gebaeude</i>"
+msgstr "Edifizi sacrala"
+
+msgid "<i>Schmalspur</i>"
+msgstr "Binari stretg"
+
+msgid "<i>Schul- und Hochschulareal</i>"
+msgstr "Scola"
+
+msgid "<i>Schwimmbadareal</i>"
+msgstr "Bogn "
+
+msgid "<i>See</i>"
+msgstr "Lai"
+
+msgid "<i>Seeinsel</i>"
+msgstr "Insla di lai"
+
+msgid "<i>Seeteil</i>"
+msgstr "Part di lai"
+
+msgid "<i>Sesselbahn</i>"
+msgstr "Sutgera "
+
+msgid "<i>Skilift</i>"
+msgstr "Runal"
+
+msgid "<i>Skisprungschanze</i>"
+msgstr "Schanza sigl cun skis"
+
+msgid "<i>Spitalareal</i>"
+msgstr "Ospital "
+
+msgid "<i>Sportplatzareal</i>"
+msgstr "Plazza da sport "
+
+msgid "<i>Standplatzareal</i>"
+msgstr "Lieu da staziunament "
+
+msgid "<i>Staudamm</i>"
+msgstr "Mir da serra"
+
+msgid "<i>Staumauer</i>"
+msgstr "Mir da fermada "
+
+msgid "<i>Strasse</i>"
+msgstr "Strada"
+
+msgid "<i>Strassenpass</i>"
+msgstr "Pass stradal "
+
+msgid "<i>Tal</i>"
+msgstr "Val"
+
+msgid "<i>Transportseil</i>"
+msgstr "Corda da transport"
+
+msgid "<i>Truppenuebungsplatz</i>"
+msgstr "Plazza da exercizi da truppa"
+
+msgid "<i>Turm</i>"
+msgstr "Tur"
+
+msgid "<i>Uebrige Bahnen</i>"
+msgstr "Ulteriurs  vials"
+
+msgid "<i>Unterwerkareal</i>"
+msgstr "Sutstaziun "
+
+msgid "<i>Verzweigung</i>"
+msgstr "Diromaziun "
+
+msgid "<i>Wasserfall</i>"
+msgstr "Cascada "
+
+msgid "<i>Wehr</i>"
+msgstr "Rempar idraulic "
+
+msgid "<i>Zollamt 24h 24h</i>"
+msgstr "Uffizi da dazi 24h 24h"
+
+msgid "<i>Zollamt 24h eingeschraenkt</i>"
+msgstr "Uffizi da dazi 24h limità"
+
+msgid "<i>Zollamt eingeschraenkt</i>"
+msgstr "Uffizi da dazi  limità"
+
+msgid "<i>Zooareal</i>"
+msgstr "Zoo"
+
 msgid "ABS_landesschwerenetz_type"
 msgstr "Absolutstation"
 

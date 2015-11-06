@@ -17,6 +17,303 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "<i>Abwasserreinigungsareal</i>"
+msgstr "Station d'épuration des eaux usées"
+
+msgid "<i>Alpiner Gipfel</i>"
+msgstr "Sommet alpin"
+
+msgid "<i>Ausfahrt</i>"
+msgstr "Sortie"
+
+msgid "<i>Aussichtspunkt</i>"
+msgstr "Point de vue "
+
+msgid "<i>Autofaehre</i>"
+msgstr "Bac pour véhicule"
+
+msgid "<i>Bildstock</i>"
+msgstr "Oratoire"
+
+msgid "<i>Bobbahn</i>"
+msgstr "Piste de bob"
+
+msgid "<i>Brunnen</i>"
+msgstr "Fontaine"
+
+msgid "<i>Campingplatzareal</i>"
+msgstr "Terrain de camping"
+
+msgid "<i>Denkmal</i>"
+msgstr "Mémorial"
+
+msgid "<i>Deponieareal</i>"
+msgstr "Décharge"
+
+msgid "<i>Ein- und Ausfahrt</i>"
+msgstr "Entrée et sortie"
+
+msgid "<i>Erratischer Block</i>"
+msgstr "Bloc erratique"
+
+msgid "<i>Felsblock</i>"
+msgstr "Bloc de rocher"
+
+msgid "<i>Felskopf</i>"
+msgstr "Tête de rocher"
+
+msgid "<i>Fliessgewaesser</i>"
+msgstr "Cours d’eau"
+
+msgid "<i>Flugfeldareal</i>"
+msgstr "Champ d'aviation"
+
+msgid "<i>Flughafenareal</i>"
+msgstr "Aéroport"
+
+msgid "<i>Flugplatzareal</i>"
+msgstr "Aérodrome"
+
+msgid "<i>Flurname swisstopo</i>"
+msgstr "Lieu-dit swisstopo"
+
+msgid "<i>Freizeitanlagenareal</i>"
+msgstr "Parc de loisir "
+
+msgid "<i>Friedhof</i>"
+msgstr "Cimetière"
+
+msgid "<i>Gebaeude Einzelhaus</i>"
+msgstr "Bâtiment"
+
+msgid "<i>Gebiet</i>"
+msgstr "Territoire"
+
+msgid "<i>Gipfel</i>"
+msgstr "Sommet"
+
+msgid "<i>Gletscher</i>"
+msgstr "Glacier"
+
+msgid "<i>Golfplatzareal</i>"
+msgstr "Terrain de golf"
+
+msgid "<i>Gondelbahn</i>"
+msgstr "Télécabine"
+
+msgid "<i>Graben</i>"
+msgstr "Fossé"
+
+msgid "<i>Grat</i>"
+msgstr "Crête"
+
+msgid "<i>Grossregion</i>"
+msgstr "Grande région"
+
+msgid "<i>Grotte, Hoehle</i>"
+msgstr "Grotte"
+
+msgid "<i>Haltestelle Bahn</i>"
+msgstr "Arrêt de chemin de fer"
+
+msgid "<i>Haltestelle Bus</i>"
+msgstr "Arrêt de bus"
+
+msgid "<i>Haltestelle Schiff</i>"
+msgstr "Arrêt de bateau"
+
+msgid "<i>Hauptgipfel</i>"
+msgstr "Sommet principal"
+
+msgid "<i>Haupthuegel</i>"
+msgstr "Colline principale"
+
+msgid "<i>Haupttal</i>"
+msgstr "Vallée majeur"
+
+msgid "<i>Heliport</i>"
+msgstr "Héliport"
+
+msgid "<i>Historisches Areal</i>"
+msgstr "Site historique"
+
+msgid "<i>Huegel</i>"
+msgstr "Colline"
+
+msgid "<i>Huegelzug</i>"
+msgstr "Groupe de collines"
+
+msgid "<i>Kapelle</i>"
+msgstr "Chapelle"
+
+msgid "<i>Kehrichtverbrennungsareal</i>"
+msgstr "Usine d'incinération des déchets"
+
+msgid "<i>Kleinbahn</i>"
+msgstr "Petit train"
+
+msgid "<i>Klosterareal</i>"
+msgstr "Site de couvent"
+
+msgid "<i>Kraftwerkareal</i>"
+msgstr "Centrale électrique"
+
+msgid "<i>Landesgrenzstein</i>"
+msgstr "Borne de frontière"
+
+msgid "<i>Landschaftsname</i>"
+msgstr "Paysage"
+
+msgid "<i>Lokalname swisstopo</i>"
+msgstr "Nom local swisstopo"
+
+msgid "<i>Luftseilbahn</i>"
+msgstr "Téléphérique"
+
+msgid "<i>Massiv</i>"
+msgstr "Massif"
+
+msgid "<i>Massnahmenvollzugsanstaltsareal</i>"
+msgstr "Etablissement d'exécution des peines."
+
+msgid "<i>Messeareal</i>"
+msgstr "Zone d'exposition"
+
+msgid "<i>Normalspur</i>"
+msgstr "Voie normale"
+
+msgid "<i>Oeffentliches Parkareal</i>"
+msgstr "Parc public"
+
+msgid "<i>Oeffentliches Parkplatzareal</i>"
+msgstr "Place de stationnement publique"
+
+msgid "<i>Offenes Gebaeude</i>"
+msgstr "Bâtiment ouvert"
+
+msgid "<i>Ort</i>"
+msgstr "Lieu"
+
+msgid "<i>Ortsteil</i>"
+msgstr "Partie de lieu"
+
+msgid "<i>Pass</i>"
+msgstr "Col"
+
+msgid "<i>Personenfaehre mit Seil</i>"
+msgstr "Bac avec corde"
+
+msgid "<i>Personenfaehre ohne Seil</i>"
+msgstr "Bac sans corde"
+
+msgid "<i>Pferderennbahnareal</i>"
+msgstr "Hippodrome"
+
+msgid "<i>Quartier</i>"
+msgstr "Quartier"
+
+msgid "<i>Quartierteil</i>"
+msgstr "Partie de quartier"
+
+msgid "<i>Quelle</i>"
+msgstr "Source"
+
+msgid "<i>Rastplatzareal</i>"
+msgstr "Aire de repos"
+
+msgid "<i>Rodelbahn</i>"
+msgstr "Piste de luge"
+
+msgid "<i>Sakrales Gebaeude</i>"
+msgstr "Bâtiment religieux"
+
+msgid "<i>Schmalspur</i>"
+msgstr "Voie étroite"
+
+msgid "<i>Schul- und Hochschulareal</i>"
+msgstr "Ecole"
+
+msgid "<i>Schwimmbadareal</i>"
+msgstr "Piscine"
+
+msgid "<i>See</i>"
+msgstr "Lac"
+
+msgid "<i>Seeinsel</i>"
+msgstr "Ile de lac"
+
+msgid "<i>Seeteil</i>"
+msgstr "Partie de lac"
+
+msgid "<i>Sesselbahn</i>"
+msgstr "Télésiège"
+
+msgid "<i>Skilift</i>"
+msgstr "Skilift"
+
+msgid "<i>Skisprungschanze</i>"
+msgstr "Tremplin de saut à ski"
+
+msgid "<i>Spitalareal</i>"
+msgstr "Hôpital"
+
+msgid "<i>Sportplatzareal</i>"
+msgstr "Terrain de sport"
+
+msgid "<i>Standplatzareal</i>"
+msgstr "Aire avec mobile-homes fixes"
+
+msgid "<i>Staudamm</i>"
+msgstr "Digue de retenue d'eau"
+
+msgid "<i>Staumauer</i>"
+msgstr "Barrage"
+
+msgid "<i>Strasse</i>"
+msgstr "Route"
+
+msgid "<i>Strassenpass</i>"
+msgstr "Col routier"
+
+msgid "<i>Tal</i>"
+msgstr "Vallée"
+
+msgid "<i>Transportseil</i>"
+msgstr "Téléphérique pour matériel"
+
+msgid "<i>Truppenuebungsplatz</i>"
+msgstr "Place d'entraînement militaire"
+
+msgid "<i>Turm</i>"
+msgstr "Tour"
+
+msgid "<i>Uebrige Bahnen</i>"
+msgstr "Autres moyens de transport"
+
+msgid "<i>Unterwerkareal</i>"
+msgstr "Station de transformation électrique"
+
+msgid "<i>Verzweigung</i>"
+msgstr "Echangeur"
+
+msgid "<i>Wasserfall</i>"
+msgstr "Chute d'eau"
+
+msgid "<i>Wehr</i>"
+msgstr "Ecluse"
+
+msgid "<i>Zollamt 24h 24h</i>"
+msgstr "Bureau de douane  24h 24h"
+
+msgid "<i>Zollamt 24h eingeschraenkt</i>"
+msgstr "Bureau de douane 24h restreint"
+
+msgid "<i>Zollamt eingeschraenkt</i>"
+msgstr "Bureau de douane restreint"
+
+msgid "<i>Zooareal</i>"
+msgstr "Zoo"
+
 msgid "ABS_landesschwerenetz_type"
 msgstr "station absolue"
 

@@ -17,6 +17,303 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "<i>Abwasserreinigungsareal</i>"
+msgstr "Wastewater treatment plant   "
+
+msgid "<i>Alpiner Gipfel</i>"
+msgstr "Alpin peak"
+
+msgid "<i>Ausfahrt</i>"
+msgstr "Exit"
+
+msgid "<i>Aussichtspunkt</i>"
+msgstr "Viewpoint"
+
+msgid "<i>Autofaehre</i>"
+msgstr "Car ferry"
+
+msgid "<i>Bildstock</i>"
+msgstr "Oratory"
+
+msgid "<i>Bobbahn</i>"
+msgstr "Bob run"
+
+msgid "<i>Brunnen</i>"
+msgstr "Fountain"
+
+msgid "<i>Campingplatzareal</i>"
+msgstr "Campground"
+
+msgid "<i>Denkmal</i>"
+msgstr "Monument"
+
+msgid "<i>Deponieareal</i>"
+msgstr "Waste disposal"
+
+msgid "<i>Ein- und Ausfahrt</i>"
+msgstr "Entrance and exit"
+
+msgid "<i>Erratischer Block</i>"
+msgstr "Erratic block"
+
+msgid "<i>Felsblock</i>"
+msgstr "Cliff-block"
+
+msgid "<i>Felskopf</i>"
+msgstr "Rocky head"
+
+msgid "<i>Fliessgewaesser</i>"
+msgstr "Water course"
+
+msgid "<i>Flugfeldareal</i>"
+msgstr "Airfield"
+
+msgid "<i>Flughafenareal</i>"
+msgstr "Airport"
+
+msgid "<i>Flugplatzareal</i>"
+msgstr "Aerodrom"
+
+msgid "<i>Flurname swisstopo</i>"
+msgstr "Named location swisstopo"
+
+msgid "<i>Freizeitanlagenareal</i>"
+msgstr "Leisure park"
+
+msgid "<i>Friedhof</i>"
+msgstr "Cemetery"
+
+msgid "<i>Gebaeude Einzelhaus</i>"
+msgstr "Building"
+
+msgid "<i>Gebiet</i>"
+msgstr "Territory"
+
+msgid "<i>Gipfel</i>"
+msgstr "Peak"
+
+msgid "<i>Gletscher</i>"
+msgstr "Glacier"
+
+msgid "<i>Golfplatzareal</i>"
+msgstr "Golf course"
+
+msgid "<i>Gondelbahn</i>"
+msgstr "Gondola lift"
+
+msgid "<i>Graben</i>"
+msgstr "Ditch"
+
+msgid "<i>Grat</i>"
+msgstr "Crest"
+
+msgid "<i>Grossregion</i>"
+msgstr "Main Region"
+
+msgid "<i>Grotte, Hoehle</i>"
+msgstr "Cave"
+
+msgid "<i>Haltestelle Bahn</i>"
+msgstr "Railway stop"
+
+msgid "<i>Haltestelle Bus</i>"
+msgstr "Bus stop"
+
+msgid "<i>Haltestelle Schiff</i>"
+msgstr "Ship stop"
+
+msgid "<i>Hauptgipfel</i>"
+msgstr "Main peak"
+
+msgid "<i>Haupthuegel</i>"
+msgstr "Main hill"
+
+msgid "<i>Haupttal</i>"
+msgstr "Main Valley"
+
+msgid "<i>Heliport</i>"
+msgstr "Heliport"
+
+msgid "<i>Historisches Areal</i>"
+msgstr "Historical area"
+
+msgid "<i>Huegel</i>"
+msgstr "Hill"
+
+msgid "<i>Huegelzug</i>"
+msgstr "Hill range"
+
+msgid "<i>Kapelle</i>"
+msgstr "Chapel"
+
+msgid "<i>Kehrichtverbrennungsareal</i>"
+msgstr "Waste incineration plant"
+
+msgid "<i>Kleinbahn</i>"
+msgstr "Small Train"
+
+msgid "<i>Klosterareal</i>"
+msgstr "Cloister area"
+
+msgid "<i>Kraftwerkareal</i>"
+msgstr "Power plant"
+
+msgid "<i>Landesgrenzstein</i>"
+msgstr "Boundary mark"
+
+msgid "<i>Landschaftsname</i>"
+msgstr "Landscape Name"
+
+msgid "<i>Lokalname swisstopo</i>"
+msgstr "Local name"
+
+msgid "<i>Luftseilbahn</i>"
+msgstr "Cable car"
+
+msgid "<i>Massiv</i>"
+msgstr "Massif"
+
+msgid "<i>Massnahmenvollzugsanstaltsareal</i>"
+msgstr "Prison"
+
+msgid "<i>Messeareal</i>"
+msgstr "Fairground"
+
+msgid "<i>Normalspur</i>"
+msgstr "Standard railway track"
+
+msgid "<i>Oeffentliches Parkareal</i>"
+msgstr "Public Parc"
+
+msgid "<i>Oeffentliches Parkplatzareal</i>"
+msgstr "Public parking ground"
+
+msgid "<i>Offenes Gebaeude</i>"
+msgstr "Open building"
+
+msgid "<i>Ort</i>"
+msgstr "Populated Place"
+
+msgid "<i>Ortsteil</i>"
+msgstr "Part of a populated place"
+
+msgid "<i>Pass</i>"
+msgstr "Pass"
+
+msgid "<i>Personenfaehre mit Seil</i>"
+msgstr "Foot ferry with rope"
+
+msgid "<i>Personenfaehre ohne Seil</i>"
+msgstr "Foot ferry without rope"
+
+msgid "<i>Pferderennbahnareal</i>"
+msgstr "Race course"
+
+msgid "<i>Quartier</i>"
+msgstr "Ward"
+
+msgid "<i>Quartierteil</i>"
+msgstr "Part of a ward"
+
+msgid "<i>Quelle</i>"
+msgstr "Spring"
+
+msgid "<i>Rastplatzareal</i>"
+msgstr "Rest area"
+
+msgid "<i>Rodelbahn</i>"
+msgstr "Toboggan run"
+
+msgid "<i>Sakrales Gebaeude</i>"
+msgstr "Sacred building"
+
+msgid "<i>Schmalspur</i>"
+msgstr "Narrow railway track"
+
+msgid "<i>Schul- und Hochschulareal</i>"
+msgstr "School"
+
+msgid "<i>Schwimmbadareal</i>"
+msgstr "Swimming pool"
+
+msgid "<i>See</i>"
+msgstr "Lake"
+
+msgid "<i>Seeinsel</i>"
+msgstr "Island on a lake"
+
+msgid "<i>Seeteil</i>"
+msgstr "Lake part"
+
+msgid "<i>Sesselbahn</i>"
+msgstr "Chair lift"
+
+msgid "<i>Skilift</i>"
+msgstr "Ski Lift"
+
+msgid "<i>Skisprungschanze</i>"
+msgstr "Ski jump"
+
+msgid "<i>Spitalareal</i>"
+msgstr "Hospital"
+
+msgid "<i>Sportplatzareal</i>"
+msgstr "Sport field"
+
+msgid "<i>Standplatzareal</i>"
+msgstr "Area with fixed mobil-homes"
+
+msgid "<i>Staudamm</i>"
+msgstr "Dyke"
+
+msgid "<i>Staumauer</i>"
+msgstr "Dam"
+
+msgid "<i>Strasse</i>"
+msgstr "Road"
+
+msgid "<i>Strassenpass</i>"
+msgstr "Roadpass"
+
+msgid "<i>Tal</i>"
+msgstr "Valley"
+
+msgid "<i>Transportseil</i>"
+msgstr "Ropeway for goods"
+
+msgid "<i>Truppenuebungsplatz</i>"
+msgstr "Military training ground"
+
+msgid "<i>Turm</i>"
+msgstr "Tower"
+
+msgid "<i>Uebrige Bahnen</i>"
+msgstr "Other transport"
+
+msgid "<i>Unterwerkareal</i>"
+msgstr "Substation"
+
+msgid "<i>Verzweigung</i>"
+msgstr "Interchange"
+
+msgid "<i>Wasserfall</i>"
+msgstr "Waterfall"
+
+msgid "<i>Wehr</i>"
+msgstr "Lock"
+
+msgid "<i>Zollamt 24h 24h</i>"
+msgstr "Costume office 24h 24h"
+
+msgid "<i>Zollamt 24h eingeschraenkt</i>"
+msgstr "Costume office 24h restricted"
+
+msgid "<i>Zollamt eingeschraenkt</i>"
+msgstr "Costume office restricted"
+
+msgid "<i>Zooareal</i>"
+msgstr "Zoo"
+
 msgid "ABS_landesschwerenetz_type"
 msgstr "absolute station"
 

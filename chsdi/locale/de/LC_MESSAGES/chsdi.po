@@ -17,6 +17,303 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "<i>Abwasserreinigungsareal</i>"
+msgstr "Abwasserreinigungsareal"
+
+msgid "<i>Alpiner Gipfel</i>"
+msgstr "Alpiner Gipfel"
+
+msgid "<i>Ausfahrt</i>"
+msgstr "Ausfahrt"
+
+msgid "<i>Aussichtspunkt</i>"
+msgstr "Aussichtspunkt"
+
+msgid "<i>Autofaehre</i>"
+msgstr "Autofaehre"
+
+msgid "<i>Bildstock</i>"
+msgstr "Bildstock"
+
+msgid "<i>Bobbahn</i>"
+msgstr "Bobbahn"
+
+msgid "<i>Brunnen</i>"
+msgstr "Brunnen"
+
+msgid "<i>Campingplatzareal</i>"
+msgstr "Campingplatzareal"
+
+msgid "<i>Denkmal</i>"
+msgstr "Denkmal"
+
+msgid "<i>Deponieareal</i>"
+msgstr "Deponieareal"
+
+msgid "<i>Ein- und Ausfahrt</i>"
+msgstr "Ein- und Ausfahrt"
+
+msgid "<i>Erratischer Block</i>"
+msgstr "Erratischer Block"
+
+msgid "<i>Felsblock</i>"
+msgstr "Felsblock"
+
+msgid "<i>Felskopf</i>"
+msgstr "Felskopf"
+
+msgid "<i>Fliessgewaesser</i>"
+msgstr "Fliessgewaesser"
+
+msgid "<i>Flugfeldareal</i>"
+msgstr "Flugfeldareal"
+
+msgid "<i>Flughafenareal</i>"
+msgstr "Flughafenareal"
+
+msgid "<i>Flugplatzareal</i>"
+msgstr "Flugplatzareal"
+
+msgid "<i>Flurname swisstopo</i>"
+msgstr "Flurname swisstopo"
+
+msgid "<i>Freizeitanlagenareal</i>"
+msgstr "Freizeitanlagenareal"
+
+msgid "<i>Friedhof</i>"
+msgstr "Friedhof"
+
+msgid "<i>Gebaeude Einzelhaus</i>"
+msgstr "Gebaeude Einzelhaus"
+
+msgid "<i>Gebiet</i>"
+msgstr "Gebiet"
+
+msgid "<i>Gipfel</i>"
+msgstr "Gipfel"
+
+msgid "<i>Gletscher</i>"
+msgstr "Gletscher"
+
+msgid "<i>Golfplatzareal</i>"
+msgstr "Golfplatzareal"
+
+msgid "<i>Gondelbahn</i>"
+msgstr "Gondelbahn"
+
+msgid "<i>Graben</i>"
+msgstr "Graben"
+
+msgid "<i>Grat</i>"
+msgstr "Grat"
+
+msgid "<i>Grossregion</i>"
+msgstr "Grossregion"
+
+msgid "<i>Grotte, Hoehle</i>"
+msgstr "Grotte, Hoehle"
+
+msgid "<i>Haltestelle Bahn</i>"
+msgstr "Haltestelle Bahn"
+
+msgid "<i>Haltestelle Bus</i>"
+msgstr "Haltestelle Bus"
+
+msgid "<i>Haltestelle Schiff</i>"
+msgstr "Haltestelle Schiff"
+
+msgid "<i>Hauptgipfel</i>"
+msgstr "Hauptgipfel"
+
+msgid "<i>Haupthuegel</i>"
+msgstr "Haupthuegel"
+
+msgid "<i>Haupttal</i>"
+msgstr "Haupttal"
+
+msgid "<i>Heliport</i>"
+msgstr "Heliport"
+
+msgid "<i>Historisches Areal</i>"
+msgstr "Historisches Areal"
+
+msgid "<i>Huegel</i>"
+msgstr "Huegel"
+
+msgid "<i>Huegelzug</i>"
+msgstr "Huegelzug"
+
+msgid "<i>Kapelle</i>"
+msgstr "Kapelle"
+
+msgid "<i>Kehrichtverbrennungsareal</i>"
+msgstr "Kehrichtverbrennungsareal"
+
+msgid "<i>Kleinbahn</i>"
+msgstr "Kleinbahn"
+
+msgid "<i>Klosterareal</i>"
+msgstr "Klosterareal"
+
+msgid "<i>Kraftwerkareal</i>"
+msgstr "Kraftwerkareal"
+
+msgid "<i>Landesgrenzstein</i>"
+msgstr "Landesgrenzstein"
+
+msgid "<i>Landschaftsname</i>"
+msgstr "Landschaftsname"
+
+msgid "<i>Lokalname swisstopo</i>"
+msgstr "Lokalname swisstopo"
+
+msgid "<i>Luftseilbahn</i>"
+msgstr "Luftseilbahn"
+
+msgid "<i>Massiv</i>"
+msgstr "Massiv"
+
+msgid "<i>Massnahmenvollzugsanstaltsareal</i>"
+msgstr "Massnahmenvollzugsanstaltsareal"
+
+msgid "<i>Messeareal</i>"
+msgstr "Messeareal"
+
+msgid "<i>Normalspur</i>"
+msgstr "Normalspur"
+
+msgid "<i>Oeffentliches Parkareal</i>"
+msgstr "Oeffentliches Parkareal"
+
+msgid "<i>Oeffentliches Parkplatzareal</i>"
+msgstr "Oeffentliches Parkplatzareal"
+
+msgid "<i>Offenes Gebaeude</i>"
+msgstr "Offenes Gebaeude"
+
+msgid "<i>Ort</i>"
+msgstr "Ort"
+
+msgid "<i>Ortsteil</i>"
+msgstr "Ortsteil"
+
+msgid "<i>Pass</i>"
+msgstr "Pass"
+
+msgid "<i>Personenfaehre mit Seil</i>"
+msgstr "Personenfaehre mit Seil"
+
+msgid "<i>Personenfaehre ohne Seil</i>"
+msgstr "Personenfaehre ohne Seil"
+
+msgid "<i>Pferderennbahnareal</i>"
+msgstr "Pferderennbahnareal"
+
+msgid "<i>Quartier</i>"
+msgstr "Quartier"
+
+msgid "<i>Quartierteil</i>"
+msgstr "Quartierteil"
+
+msgid "<i>Quelle</i>"
+msgstr "Quelle"
+
+msgid "<i>Rastplatzareal</i>"
+msgstr "Rastplatzareal"
+
+msgid "<i>Rodelbahn</i>"
+msgstr "Rodelbahn"
+
+msgid "<i>Sakrales Gebaeude</i>"
+msgstr "Sakrales Gebaeude"
+
+msgid "<i>Schmalspur</i>"
+msgstr "Schmalspur"
+
+msgid "<i>Schul- und Hochschulareal</i>"
+msgstr "Schul- und Hochschulareal"
+
+msgid "<i>Schwimmbadareal</i>"
+msgstr "Schwimmbadareal"
+
+msgid "<i>See</i>"
+msgstr "See"
+
+msgid "<i>Seeinsel</i>"
+msgstr "Seeinsel"
+
+msgid "<i>Seeteil</i>"
+msgstr "Seeteil"
+
+msgid "<i>Sesselbahn</i>"
+msgstr "Sesselbahn"
+
+msgid "<i>Skilift</i>"
+msgstr "Skilift"
+
+msgid "<i>Skisprungschanze</i>"
+msgstr "Skisprungschanze"
+
+msgid "<i>Spitalareal</i>"
+msgstr "Spitalareal"
+
+msgid "<i>Sportplatzareal</i>"
+msgstr "Sportplatzareal"
+
+msgid "<i>Standplatzareal</i>"
+msgstr "Standplatzareal"
+
+msgid "<i>Staudamm</i>"
+msgstr "Staudamm"
+
+msgid "<i>Staumauer</i>"
+msgstr "Staumauer"
+
+msgid "<i>Strasse</i>"
+msgstr "Strasse"
+
+msgid "<i>Strassenpass</i>"
+msgstr "Strassenpass"
+
+msgid "<i>Tal</i>"
+msgstr "Tal"
+
+msgid "<i>Transportseil</i>"
+msgstr "Transportseil"
+
+msgid "<i>Truppenuebungsplatz</i>"
+msgstr "Truppenuebungsplatz"
+
+msgid "<i>Turm</i>"
+msgstr "Turm"
+
+msgid "<i>Uebrige Bahnen</i>"
+msgstr "Uebrige Bahnen"
+
+msgid "<i>Unterwerkareal</i>"
+msgstr "Unterwerkareal"
+
+msgid "<i>Verzweigung</i>"
+msgstr "Verzweigung"
+
+msgid "<i>Wasserfall</i>"
+msgstr "Wasserfall"
+
+msgid "<i>Wehr</i>"
+msgstr "Wehr"
+
+msgid "<i>Zollamt 24h 24h</i>"
+msgstr "Zollamt 24h 24h"
+
+msgid "<i>Zollamt 24h eingeschraenkt</i>"
+msgstr "Zollamt 24h eingeschraenkt"
+
+msgid "<i>Zollamt eingeschraenkt</i>"
+msgstr "Zollamt eingeschraenkt"
+
+msgid "<i>Zooareal</i>"
+msgstr "Zooareal"
+
 msgid "ABS_landesschwerenetz_type"
 msgstr "Absolutstation"
 
