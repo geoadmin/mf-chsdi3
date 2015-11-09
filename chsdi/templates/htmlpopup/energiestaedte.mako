@@ -1,6 +1,16 @@
+# -*- coding: utf-8 -*-
+
 <%inherit file="base.mako"/> 
 
 <%def name="table_body(c, lang)">
+<%
+    import datetime
+    try:
+        date_validfrom = datetime.datetime.strptime(c['attributes']['energiestadtseit'].strip(), "%Y-%m-%d").strftime("%d.%m.%Y")
+    except:
+        date_validfrom = '-'
+%>
+
 <tr>
   <td class="cell-left">${_('ch.bfe.energiestaedte.name')}</td>
   <td>${c['attributes']['name'] or '-'}</td>
@@ -15,10 +25,17 @@
 </tr>
 <tr>
   <td class="cell-left">${_('energiestadtseit')}</td> 
-  <td>${c['attributes']['energiestadtseit'] or '-'}</td>
+  <td>${date_validfrom}</td>
 </tr> 
 </%def>
 <%def name="extended_info(c, lang)">
+<%
+    import datetime
+    try:
+        date_validfrom = datetime.datetime.strptime(c['attributes']['energiestadtseit'].strip(), "%Y-%m-%d").strftime("%d.%m.%Y")
+    except:
+        date_validfrom = '-'
+%>
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
   <tr>
     <th class="cell-meta">
@@ -49,7 +66,7 @@
       ${_('energiestadtseit')}
     </th>
     <td>
-      ${c['attributes']['energiestadtseit'] or '-'}
+      ${date_validfrom}
     </td>
   </tr>
   <tr>
