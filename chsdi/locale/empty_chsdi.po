@@ -7094,3 +7094,6 @@ msgstr ""
 
 msgid "tt_zeitreihen_FullResView"
 msgstr ""
+
+msgid "ch.bafu.hydrologie-messstationen_gefahren"
+msgstr ""
