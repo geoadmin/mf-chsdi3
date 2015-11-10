@@ -2,9 +2,10 @@
 
 from sqlalchemy import Column, Text, Integer
 from sqlalchemy.types import Numeric
+from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector, Geometry
+from chsdi.models.vector import Vector
 
 
 Base = bases['kogis']

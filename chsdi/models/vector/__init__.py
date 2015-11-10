@@ -11,18 +11,12 @@ from shapely.geometry import box
 from sqlalchemy.sql import func
 from sqlalchemy.orm.util import class_mapper
 from sqlalchemy.orm.properties import ColumnProperty
-from geoalchemy2.types import Geometry as GeoAlchemyGeometry
 from geoalchemy2.elements import WKBElement
 from geoalchemy2.shape import to_shape
+from geoalchemy2.types import Geometry
 
 import geojson
 from papyrus.geo_interface import GeoInterface
-
-
-class Geometry(GeoAlchemyGeometry):
-
-    def column_expression(self, col):
-        return func.ST_AsEWKB(col, type_=self)
 
 
 def getResolution(imageDisplay, mapExtent):
