@@ -30,6 +30,21 @@ class TestProfileView(TestsBase):
         self.assertTrue(resp.json[0]['easting'] == 550050)
         self.assertTrue(resp.json[0]['northing'] == 206550)
 
+    def test_profile_layers(self):
+        params = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', 'layers': 'DTM25,DTM2'}
+        resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+
+    def test_profile_layers_none(self):
+        params = {'geom': '{"type":"LineString","coordinates":[[0,0],[0,0],[0,0]]}', 'layers': 'DTM25,DTM2'}
+        resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+
+    def test_profile_layers_none2(self):
+        params = {'geom': '{"type":"LineString","coordinates":[[550050,-206550],[556950,204150],[561050,207950]]}', 'layers': 'DTM25,DTM2'}
+        resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+
     def test_profile_json_2_models_notvalid(self):
         params = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', 'elevation_models': 'DTM25,DTM222'}
         resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=400)
@@ -52,6 +67,16 @@ class TestProfileView(TestsBase):
 
     def test_profile_json_nb_points(self):
         params = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', 'nb_points': '150'}
+        resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+
+    def test_profile_json_simplify_linestring(self):
+        params = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', 'nb_points': '1'}
+        resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
+
+    def test_profile_json_nbPoints(self):
+        params = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', 'nbPoints': '150'}
         resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=200)
         self.assertTrue(resp.content_type == 'application/json')
 
