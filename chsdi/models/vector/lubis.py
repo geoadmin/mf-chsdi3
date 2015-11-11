@@ -244,3 +244,28 @@ class bildstreifen(Base, Vector):
     goal = Column('goal', Text)
 
 register('ch.swisstopo.lubis-bildstreifen', bildstreifen)
+
+
+class LuftbilderSchraegaufnahmen(Base, Vector):
+    __tablename__ = 'view_bilder'
+    __table_args__ = ({'schema': 'swisstopo_oblique', 'autoload': False})
+    __template__ = 'templates/htmlpopup/lubis_schraegaufnahmen.mako'
+    __bodId__ = 'ch.swisstopo.lubis-luftbilder_schraegaufnahmen'
+    __timeInstant__ = 'bgdi_flugjahr'
+    # Composite labels
+    __label__ = 'flightdate'
+    __queryable_attributes__ = ['id', 'bgdi_flugjahr', 'medium_format']
+    id = Column('ebkey', Text, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=3, srid=21781))
+    inventory_number = Column('inventory_number', Text)
+    flightdate = Column('flightdate', Text)
+    medium_format = Column('medium_format', Text)
+    filesize_mb = Column('filesize_mb', Text)
+    filename = Column('filename', Text)
+    stereo_couple = Column('stereo_couple', Text)
+    bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
+    x = Column('x', Integer)
+    y = Column('y', Integer)
+
+register('ch.swisstopo.lubis-luftbilder_schraegaufnahmen', LuftbilderSchraegaufnahmen)

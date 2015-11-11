@@ -4082,6 +4082,18 @@ msgstr "Picture number"
 msgid "ch.swisstopo.lubis-luftbilder_infrarot.ort"
 msgstr "Location"
 
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen"
+msgstr "Aerial images swisstopo oblique"
+
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen.bgdi_flugjahr"
+msgstr "Flight date"
+
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen.id"
+msgstr "Picture number"
+
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen.medium_format"
+msgstr "Dimensions of original image"
+
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss"
 msgstr "Aerial Images swisstopo b/w"
 
@@ -6769,6 +6781,15 @@ msgstr "Project"
 
 msgid "tt_lubis_rotation"
 msgstr "Rotation"
+
+msgid "tt_lubis_schraegaufnahmen_stereo_couple"
+msgstr "Correspondent image"
+
+msgid "tt_lubis_schraegaufnahmen_x"
+msgstr "Coordinata X"
+
+msgid "tt_lubis_schraegaufnahmen_y"
+msgstr "Coordinata Y"
 
 msgid "tt_lubis_x"
 msgstr "Centre coordinate X"

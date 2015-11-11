@@ -4082,6 +4082,18 @@ msgstr "Numer da maletg"
 msgid "ch.swisstopo.lubis-luftbilder_infrarot.ort"
 msgstr "Ort"
 
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen"
+msgstr "Luftbilder swisstopo schräg"
+
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen.bgdi_flugjahr"
+msgstr "Data da sgol"
+
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen.id"
+msgstr "Numer da maletg"
+
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen.medium_format"
+msgstr "Resoluziun dal maletg original"
+
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss"
 msgstr "Fotografias ord l'aria alv/nair"
 
@@ -6769,6 +6781,15 @@ msgstr "Project"
 
 msgid "tt_lubis_rotation"
 msgstr "Rotaziun"
+
+msgid "tt_lubis_schraegaufnahmen_stereo_couple"
+msgstr "Maletg segund"
+
+msgid "tt_lubis_schraegaufnahmen_x"
+msgstr "Centre coordinate X"
+
+msgid "tt_lubis_schraegaufnahmen_y"
+msgstr "Centre coordinate Y"
 
 msgid "tt_lubis_x"
 msgstr "Coordinata X"
