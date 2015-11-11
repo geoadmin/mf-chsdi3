@@ -1049,6 +1049,12 @@ msgstr "IHR regional & local"
 msgid "ch.astra.kt"
 msgstr "FEDRO + canton"
 
+msgid "ch.astra.mountainbikeland"
+msgstr "Mountainbiking in Switzerland"
+
+msgid "ch.astra.skatingland"
+msgstr "Skating in Switzerland"
+
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Traffic counting locations local"
 
@@ -1084,6 +1090,12 @@ msgstr "Accidents involving a motorcycle"
 
 msgid "ch.astra.url"
 msgstr "http://www.astra.admin.ch/index.html?lang=en"
+
+msgid "ch.astra.veloland"
+msgstr "Cycling in Switzerland"
+
+msgid "ch.astra.wanderland"
+msgstr "Hiking in Switzerland"
 
 msgid "ch.babs"
 msgstr "UFPP"
@@ -4483,6 +4495,18 @@ msgstr "Vorflutertyp"
 
 msgid "ch_bafu_gee-kla.vsa_kategorie"
 msgstr "Reinigungstyp (VSA-Kategorie)"
+
+msgid "chmobil_number"
+msgstr "Nr."
+
+msgid "chmobil_title"
+msgstr "Percorsi"
+
+msgid "chmobil_url_etappe"
+msgstr "Open stage in Switzerland Mobility"
+
+msgid "chmobil_url_route"
+msgstr "Open route in Switzerland Mobility"
 
 msgid "city_name"
 msgstr "Name der Ortschaft"

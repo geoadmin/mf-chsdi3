@@ -1049,6 +1049,12 @@ msgstr "IVS Regiunal e local"
 msgid "ch.astra.kt"
 msgstr "ASTRA + chantun"
 
+msgid "ch.astra.mountainbikeland"
+msgstr "Mountainbikeland"
+
+msgid "ch.astra.skatingland"
+msgstr "Skatingland"
+
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Dumbraziun traffic (regiunal)"
 
@@ -1084,6 +1090,12 @@ msgstr "Accidents participaziun da motos"
 
 msgid "ch.astra.url"
 msgstr "http://www.astra.admin.ch/index.html?lang=de"
+
+msgid "ch.astra.veloland"
+msgstr "Veloland"
+
+msgid "ch.astra.wanderland"
+msgstr "Wanderand"
 
 msgid "ch.babs"
 msgstr "BABS"
@@ -4483,6 +4495,18 @@ msgstr "Vorflutertyp"
 
 msgid "ch_bafu_gee-kla.vsa_kategorie"
 msgstr "Reinigungstyp (VSA-Kategorie)"
+
+msgid "chmobil_number"
+msgstr "Nr."
+
+msgid "chmobil_title"
+msgstr "Route"
+
+msgid "chmobil_url_etappe"
+msgstr "Öffne Etappe in SchweizMobil"
+
+msgid "chmobil_url_route"
+msgstr "Öffne Route in SchweizMobil"
 
 msgid "city_name"
 msgstr "Name der Ortschaft"
