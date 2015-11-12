@@ -2256,6 +2256,7 @@ class ChmobilVeloland (Base, Vector):
     chmobil_url_etappe = Column('bgdi_url_etappe', Text)
     chmobil_url_route = Column('bgdi_url_route', Text)
     chmobil_title = Column('title', Text)
+    chmobil_route_number = Column('route_number', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
@@ -2272,6 +2273,7 @@ class ChmobilWanderland (Base, Vector):
     chmobil_url_etappe = Column('bgdi_url_etappe', Text)
     chmobil_url_route = Column('bgdi_url_route', Text)
     chmobil_title = Column('title', Text)
+    chmobil_route_number = Column('route_number', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
@@ -2288,6 +2290,7 @@ class ChmobilSkatingland (Base, Vector):
     chmobil_url_etappe = Column('bgdi_url_etappe', Text)
     chmobil_url_route = Column('bgdi_url_route', Text)
     chmobil_title = Column('title', Text)
+    chmobil_route_number = Column('route_number', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
@@ -2304,6 +2307,7 @@ class ChmobilMountainbikeland (Base, Vector):
     chmobil_url_etappe = Column('bgdi_url_etappe', Text)
     chmobil_url_route = Column('bgdi_url_route', Text)
     chmobil_title = Column('title', Text)
+    chmobil_route_number = Column('route_number', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
