@@ -423,10 +423,10 @@ msgid "bafu_standort"
 msgstr "Lebensraum"
 
 msgid "bak_unesco_weltkulturerbe_flaeche"
-msgstr "Fläche [ha]"
+msgstr "Surfatscha [ha]"
 
 msgid "bak_unesco_weltkulturerbe_name"
-msgstr "Name"
+msgstr "Num"
 
 msgid "band_1_2"
 msgstr "Volum 1 | 2"
@@ -3078,7 +3078,7 @@ msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde"
 msgstr "Grevezza da canera 2. ura da notg"
 
 msgid "ch.bazl.landschaftsruhezonen"
-msgstr "Zonas da paus per l'aviatica"
+msgstr "Zonas da paus per la cuntrada"
 
 msgid "ch.bazl.luftfahrthindernis"
 msgstr "Impediments per l'aviatica"
@@ -3632,6 +3632,18 @@ msgstr "Territoris en lavur"
 msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Geometer-revisur"
 
+msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung"
+msgstr "Stadi da la mesiraziun uffiziala"
+
+msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.canton"
+msgstr "Kanton"
+
+msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.description"
+msgstr "Beschreibung"
+
+msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.year"
+msgstr "Jahr der letzten Aktualisierung"
+
 msgid "ch.swisstopo-vd.geometa-standav"
 msgstr "Stadi mesiraziun uffiziala"
 
@@ -3723,7 +3735,7 @@ msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Charta geologica generala"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata"
-msgstr "Einteilung geol. Generalkarte 200"
+msgstr "Geol. Generalkarte 200 - Papier"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
 msgstr "Autor(en)"
@@ -3750,7 +3762,7 @@ msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Anomalias isostaticas"
 
 msgid "ch.swisstopo.geologie-geolkarten500.metadata"
-msgstr "Divisiun GeoChartas 500"
+msgstr "Charta geologica 500 - stampada"
 
 msgid "ch.swisstopo.geologie-geologische_karte"
 msgstr "Geologia 1:500000"
@@ -3909,7 +3921,7 @@ msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
 msgstr "Punktnummer"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
-msgstr "Divisiun Atlas gravimetric"
+msgstr "Atlas gravimetric - stampa"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
 msgstr "Nr."
@@ -3942,7 +3954,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.name_ads"
 msgstr "Localitad"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
-msgstr "Divisiun chartas geol. spez."
+msgstr "Chartas geol. spez. - stampadas"
 
 msgid "ch.swisstopo.geologie-tektonische_karte"
 msgstr "Charta tectonica 500"
