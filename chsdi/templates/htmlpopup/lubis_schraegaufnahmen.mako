@@ -8,11 +8,7 @@ from pyramid.url import route_url
 import chsdi.lib.helpers as h
 import markupsafe
 
-def br(text):
-    return text.replace('\n', markupsafe.Markup('<br />'))
-
 tileUrlBasePath = 'http://aerialimages0.geo.admin.ch/tiles'
-
 
 def determinePreviewUrl(ebkey):
 
