@@ -3,13 +3,6 @@
 <%inherit file="base.mako"/> 
 
 <%def name="table_body(c, lang)">
-<%
-    import datetime
-    try:
-        date_validfrom = datetime.datetime.strptime(c['attributes']['energiestadtseit'].strip(), "%Y-%m-%d").strftime("%d.%m.%Y")
-    except:
-        date_validfrom = '-'
-%>
 
 <tr>
   <td class="cell-left">${_('ch.bfe.energiestaedte.name')}</td>
@@ -25,17 +18,10 @@
 </tr>
 <tr>
   <td class="cell-left">${_('energiestadtseit')}</td> 
-  <td>${date_validfrom}</td>
+  <td>${h.parse_date_string(c['attributes']['energiestadtseit'])}</td>
 </tr> 
 </%def>
 <%def name="extended_info(c, lang)">
-<%
-    import datetime
-    try:
-        date_validfrom = datetime.datetime.strptime(c['attributes']['energiestadtseit'].strip(), "%Y-%m-%d").strftime("%d.%m.%Y")
-    except:
-        date_validfrom = '-'
-%>
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
   <tr>
     <th class="cell-meta">
@@ -66,7 +52,7 @@
       ${_('energiestadtseit')}
     </th>
     <td>
-      ${date_validfrom}
+      ${h.parse_date_string(c['attributes']['energiestadtseit'])}
     </td>
   </tr>
   <tr>
@@ -173,6 +159,6 @@ Das Label Energiestadt ist ein Leistungsausweis für Gemeinden, die eine nachhal
     </td>
 %endif
   </tr>
-<tr><img class="image" src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energiestaedte/${c['attributes']['bfsnr']}.png" alt=""/></tr>
+<tr><img class="image" src="/ogcproxy?url=http://www.bfe-gis.admin.ch/bilder/ch.bfe.energiestaedte/${c['attributes']['bfsnr']}.png" alt=""/></tr>
 </table>
 </%def>

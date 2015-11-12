@@ -3,6 +3,7 @@
 import re
 import math
 import requests
+import datetime
 from osgeo import osr, ogr
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
@@ -295,3 +296,12 @@ def center_from_box2d(box2D):
         box2D[0] + ((box2D[2] - box2D[0]) / 2),
         box2D[1] + ((box2D[3] - box2D[1]) / 2)
     ]
+
+
+def parse_date_string(dateStr):
+    try:
+        return datetime.datetime.strptime(
+            dateStr.strip(), '%Y-%m-%d'
+        ).strftime('%d.%m.%Y')
+    except:
+        return '-'
