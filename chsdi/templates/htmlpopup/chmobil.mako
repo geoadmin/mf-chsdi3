@@ -9,14 +9,14 @@
     <tr><td class="cell-left">${_('chmobil_title')}</td>    <td>${c['attributes']['chmobil_title'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('link')}</td>          <td>
     % if c['attributes']['chmobil_url_route']:
-      <a href="${c['attributes']['chmobil_url_route']}&lang=${lang}" target="_blank" title="${_('chmobil_url_route')}">${_('chmobil_url_route')}</a>
+      <a href="${c['attributes']['chmobil_url_route']}${lang}/route${c['attributes']['chmobil_route_number']}" target="_blank" title="${_('chmobil_url_route')}">${_('chmobil_url_route')}</a>
     % else:
         -
     % endif
     </td></tr>
     <tr><td class="cell-left">${_('link')}</td>          <td>
     % if c['attributes']['chmobil_url_etappe']:
-      <a href="${c['attributes']['chmobil_url_etappe']}&lang=${lang}" target="_blank" title="${_('chmobil_url_route')}">${_('chmobil_url_etappe')}</a>
+      <a href="${c['attributes']['chmobil_url_etappe']}${lang}/etappe${c['featureId']}" target="_blank" title="${_('chmobil_url_route')}">${_('chmobil_url_etappe')}</a>
     % else:
         -
     % endif
