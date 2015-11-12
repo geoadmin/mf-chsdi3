@@ -65,6 +65,11 @@ class TestProfileView(TestsBase):
         resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=400)
         resp.mustcontain('Error loading geometry in JSON string')
 
+    def test_profile_json_wrong_shape(self):
+        params = {'geom': '{"type":"OneShape","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}'}
+        resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=400)
+        resp.mustcontain('Error converting JSON to Shape')
+
     def test_profile_json_nb_points(self):
         params = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', 'nb_points': '150'}
         resp = self.testapp.get('/rest/services/profile.json', params=params, headers=self.headers, status=200)
@@ -94,6 +99,11 @@ class TestProfileView(TestsBase):
         params = {'geom': 'toto'}
         resp = self.testapp.get('/rest/services/profile.csv', params=params, headers=self.headers, status=400)
         resp.mustcontain('Error loading geometry in JSON string')
+
+    def test_profile_csv_wrong_shape(self):
+        params = {'geom': '{"type":"OneShape","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}'}
+        resp = self.testapp.get('/rest/services/profile.csv', params=params, headers=self.headers, status=400)
+        resp.mustcontain('Error converting JSON to Shape')
 
     def test_profile_json_invalid_linestring(self):
         resp = self.testapp.get('/rest/services/profile.json', params={'geom': '{"type":"LineString","coordinates":[[550050,206550]]}'}, headers=self.headers, status=400)
