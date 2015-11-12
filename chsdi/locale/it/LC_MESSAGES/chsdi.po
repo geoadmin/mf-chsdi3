@@ -3078,7 +3078,7 @@ msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde"
 msgstr "Inquinam. fonico 2a ora notte"
 
 msgid "ch.bazl.landschaftsruhezonen"
-msgstr "Zone di calma per l'aviazione"
+msgstr "Zone di calma nel paesaggio"
 
 msgid "ch.bazl.luftfahrthindernis"
 msgstr "Ostacoli alla navigazione aerea"
@@ -3632,6 +3632,18 @@ msgstr "Aree con lavori in corso"
 msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Geometra revisore"
 
+msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung"
+msgstr "Tenuta a giorno periodica"
+
+msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.canton"
+msgstr "Cantone"
+
+msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.description"
+msgstr "Descrizione"
+
+msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.year"
+msgstr "Anno dell’ultima modificazione"
+
 msgid "ch.swisstopo-vd.geometa-standav"
 msgstr "Stato della misurazione ufficiale"
 
@@ -3723,7 +3735,7 @@ msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Carta geologica generale"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata"
-msgstr "Divisione carta geol. generale 200"
+msgstr "Carta geol. generale 200 - stampata"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
 msgstr "Autori"
@@ -3750,7 +3762,7 @@ msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Anomalie isostatiche"
 
 msgid "ch.swisstopo.geologie-geolkarten500.metadata"
-msgstr "Suddivisione GeoCarte 500"
+msgstr "Carta geologica 500 - stampata"
 
 msgid "ch.swisstopo.geologie-geologische_karte"
 msgstr "Carta geologica 500"
@@ -3909,7 +3921,7 @@ msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
 msgstr "No de Point"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
-msgstr "Divisione Atlante gravimetrico"
+msgstr "Atlante gravimetrico - stampato"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
 msgstr "N°"
@@ -3942,7 +3954,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.name_ads"
 msgstr "Località"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
-msgstr "Divisione carte geologiche speciali"
+msgstr "Carte geologiche speciali - stampate"
 
 msgid "ch.swisstopo.geologie-tektonische_karte"
 msgstr "Carta tettonica 500"

@@ -1882,6 +1882,18 @@ msgstr ""
 msgid "ch.swisstopo-vd.geometa-gemeinde"
 msgstr ""
 
+msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung"
+msgstr ""
+
+msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.canton"
+msgstr ""
+
+msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.description"
+msgstr ""
+
+msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.year"
+msgstr ""
+
 msgid "ch.kantone.ivs-reg_loc"
 msgstr ""
 

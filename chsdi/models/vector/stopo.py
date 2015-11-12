@@ -1482,6 +1482,22 @@ class geometaStandAV(Base, Vector):
 register('ch.swisstopo-vd.geometa-standav', geometaStandAV)
 
 
+class geometaPNF(Base, Vector):
+    __tablename__ = 'amopnf_pnf'
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __template__ = 'templates/htmlpopup/metadata_pnf.mako'
+    __bodId__ = 'ch.swisstopo-vd.geometa-periodische_nachfuehrung'
+    __label__ = 'description'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    canton = Column('canton', Text)
+    description = Column('description', Text)
+    year = Column('year', Integer)
+    the_geom = Column('the_geom', Geometry(geometry_type='GEOMETRY',
+                                           dimension=2, srid=21781))
+
+register('ch.swisstopo-vd.geometa-periodische_nachfuehrung', geometaPNF)
+
+
 class geometaLos(Base, Vector):
     __tablename__ = 'amogr_los'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
