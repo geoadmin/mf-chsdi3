@@ -94,17 +94,19 @@ def getTopics():
 def getLayersConfigs(topics=topics):
     session = getSession()
     models = get_wmts_models(LANG)
+    model = models['GetCap']
     conditions = []
     for topic in topics:
-        conditions.append(models['GetCap'].maps.ilike('%{}%'.format(topic)))
+        conditions.append(model.maps.ilike('%{}%'.format(topic)))
 
-    layers_query = session.query(models['GetCap'])
+    layers_query = session.query(model)
     layers_query = layers_query.filter(or_(*conditions))
     layers_query = filter_by_geodata_staging(
         layers_query,
-        models['GetCap'].staging,
+        model.staging,
         STAGING
     )
+    layers_query = layers_query.order_by(model.bod_layer_id)
     session.close()
 
     return [q for q in layers_query.all()]
@@ -129,11 +131,10 @@ if mapproxy_config['layers'] is None:
 
 topics.extend(getTopics())
 
-
 for idx, layersConfig in enumerate(getLayersConfigs(topics=topics)):
     if layersConfig and layersConfig.maps is not None:
         if layersConfig.timestamp is not None and len(set(topics) & set(layersConfig.maps.split(','))) > 0:
-            print idx, layersConfig.bod_layer_id
+            print idx + 1, layersConfig.bod_layer_id
             bod_layer_id = layersConfig.bod_layer_id
 
             timestamps = layersConfig.timestamp.split(',')
