@@ -276,6 +276,16 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
         resp.mustcontain('You can provide only one searchField at a time')
 
+    def test_none_layer(self):
+        params = {'searchField': 'egid', 'searchText': '1231641'}
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
+        resp.mustcontain('Please provide a parameter layer')
+
+    def test_two_layer(self):
+        params = {'layer': 'ch.bfs.gebaeude_wohnungs_register,ch.bazl.luftfahrthindernis', 'searchField': 'egid', 'searchText': '1231641'}
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
+        resp.mustcontain('You can provide only one layer at a time')
+
     def test_find_scan(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid', 'searchText': '1231641'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
