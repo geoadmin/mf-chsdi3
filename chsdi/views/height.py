@@ -5,6 +5,7 @@ from chsdi.lib.raster.georaster import get_raster
 from chsdi.lib.decorators import requires_authorization
 
 from pyramid.view import view_config
+from pyramid.httpexceptions import HTTPBadRequest
 
 
 class Height(HeightValidation):
@@ -40,4 +41,4 @@ class Height(HeightValidation):
             # 10cm accuracy is enough for altitudes
             return round(alt * 10.0) / 10.0
         else:
-            return None
+            raise HTTPBadRequest('Requested coordinate out of bounds')
