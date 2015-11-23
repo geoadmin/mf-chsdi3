@@ -4527,10 +4527,10 @@ msgid "chmobil_title"
 msgstr "Itinéraires"
 
 msgid "chmobil_url_etappe"
-msgstr "Ouvrez l’étape en SuisseMobile"
+msgstr "Info sur l'étape SuisseMobile"
 
 msgid "chmobil_url_route"
-msgstr "Ouvrez l’itinéraire en SuisseMobile"
+msgstr "Info sur l'itinéraire SuisseMobile"
 
 msgid "city_name"
 msgstr "Nom de la localité"
