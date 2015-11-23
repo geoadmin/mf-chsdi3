@@ -14,6 +14,10 @@ class TestHeightView(TestsBase):
         self.assertTrue(resp.content_type == 'application/json')
         self.assertTrue(resp.json['height'] == '560.2')
 
+    def test_height_none(self):
+        resp = self.testapp.get('/rest/services/height', params={'easting': '600000', 'northing': '0'}, headers=self.headers, status=400)
+        resp.mustcontain('Requested coordinate out of bounds')
+
     def test_height_nan(self):
         resp = self.testapp.get('/rest/services/height', params={'easting': 'NaN', 'northing': '200000.1'}, headers=self.headers, status=400)
         resp.mustcontain('Please provide numerical values for the parameter \'easting\'/\'lon\'')
