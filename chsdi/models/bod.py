@@ -86,29 +86,29 @@ class LayersConfig(Base):
     geojsonUrlit = Column('geojson_url_it', Text)
     geojsonUrlrm = Column('geojson_url_rm', Text)
     geojsonUrlen = Column('geojson_url_en', Text)
+    config3d = Column('fk_config3d', Boolean)
+    srid = Column('srid', Text)
 
     def layerConfig(self, params):
         config = {}
         translate = params.translate
-        excludedAttrs = ('geojsonUrlde', 'geojsonUrlfr', 'geojsonUrlit', 'geojsonUrlrm', 'geojsonUrlen')
         wmsHost = params.request.registry.settings['wmshost']
         for k in self.__dict__.keys():
-            if not k.startswith("_") and k not in excludedAttrs and \
-                self.__dict__[k] is not None and \
-                    k not in ('staging'):
+            val = self.__dict__[k]
+            if not k.startswith("_") and not k.startswith('geojsonUrl') and \
+                    val is not None and k not in ('staging', 'srid'):
                 if k == 'maps':
-                    config['topics'] = self.__dict__[k]
+                    config['topics'] = val
                 elif k == 'layerBodId':
-                    config['label'] = translate(self.__dict__[k])
+                    config['label'] = translate(val)
                 elif k == 'attribution':
-                    config[k] = translate(self.__dict__[k])
-                elif k == 'matrixSet':
-                    if self.__dict__[k] != '21781_26':
-                        config['resolutions'] = self._getResolutionsFromMatrixSet(
-                            self.__dict__[k]
-                        )
+                    config[k] = translate(val)
+                elif k == 'matrixSet' and self.__dict__['srid'] != '4326':
+                    config['resolutions'] = self._getResolutionsFromMatrixSet(
+                        val
+                    )
                 else:
-                    config[k] = self.__dict__[k]
+                    config[k] = val
 
         layerStaging = self.__dict__['staging']
         if config['type'] == 'wmts':

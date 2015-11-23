@@ -39,7 +39,8 @@ class LayersChecker(object):
         valNone = None
         query = self.session.query(distinct(LayersConfig.layerBodId)) \
             .filter(LayersConfig.staging == self.staging) \
-            .filter(LayersConfig.parentLayerId == valNone)
+            .filter(LayersConfig.parentLayerId == valNone) \
+            .filter(LayersConfig.srid != '4326')
         if queryable is not None:
             query = query.filter(LayersConfig.queryable == queryable)
         if hasLegend is not None:

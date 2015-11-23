@@ -81,6 +81,7 @@ Here is a list of all the freely accessible layers:
    <script type="text/javascript">
 
    function init() {
+       var suffix3d = '_3d';
        $.getJSON( "../../rest/services/api/MapServer/layersConfig", function( data ) {
           var myInnerHtml_queryable = "<br><table border=\"0\">";
           var myInnerHtml_searchable =  "<br><table border=\"0\">";
@@ -88,7 +89,7 @@ Here is a list of all the freely accessible layers:
           var counterQueryable = 1;
           var counterSearchable = 1;
           for (var layer in layers_api) {
-            if (!layers_api[layer].parentLayerId) {
+            if (!layers_api[layer].parentLayerId && layer.indexOf(suffix3d, layer.length - suffix3d.length) == -1) {
               if (layers_api[layer].queryable) {
                 myInnerHtml_queryable += '<tr><td>' + counterQueryable + '</td><td><a href="http://map3.geo.admin.ch/?layers=' +
                   layer + '" target="new"> ' + layer + '</a>&nbsp('+layers_api[layer].label+')</td></tr>';
@@ -117,7 +118,7 @@ Here is a list of all the freely accessible layers:
              layers_notfree.push({'layerBodId': 'ch.swisstopo.swissimage'});
              for (var i = 0; i < layers_notfree.length; i++) {
                 var nflayer = layers_notfree[i];
-                if (layers_api[nflayer.layerBodId] &&
+                if (layers_api[nflayer.layerBodId] && layer.indexOf(suffix3d, layer.length - suffix3d.length) == -1 &&
                     !layers_api[nflayer.layerBodId].parentLayerId) {
                     myInnerHtml_notfree += '<tr><td>' + counterNotFree + '</td><td><a href="http://map3.geo.admin.ch/?layers=' +
                       nflayer.layerBodId + '" target="new"> ' + nflayer.layerBodId + '</a>&nbsp('+layers_api[nflayer.layerBodId].label+')</td></tr>';
@@ -135,7 +136,7 @@ Here is a list of all the freely accessible layers:
              var counterFree = 1;
              for (var i = 0; i < layers_free.length; i++) {
                 var flayer = layers_free[i];
-                if (layers_api[flayer.layerBodId] &&
+                if (layers_api[flayer.layerBodId] && layer.indexOf(suffix3d, layer.length - suffix3d.length) == -1 &&
                    !layers_api[flayer.layerBodId].parentLayerId) {
                     myInnerHtml_free += '<tr><td>' + counterFree + '</td><td><a href="http://map3.geo.admin.ch/?layers=' +
                       flayer.layerBodId + '" target="new"> ' + flayer.layerBodId + '</a>&nbsp('+layers_api[flayer.layerBodId].label+')</td></tr>';
