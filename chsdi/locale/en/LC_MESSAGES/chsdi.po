@@ -4527,10 +4527,10 @@ msgid "chmobil_title"
 msgstr "Percorsi"
 
 msgid "chmobil_url_etappe"
-msgstr "Open stage in Switzerland Mobility"
+msgstr "SwitzerlandMobility stage information"
 
 msgid "chmobil_url_route"
-msgstr "Open route in Switzerland Mobility"
+msgstr "SwitzerlandMobility route information"
 
 msgid "city_name"
 msgstr "Name der Ortschaft"
