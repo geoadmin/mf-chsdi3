@@ -74,7 +74,7 @@ viewer_url = get_viewer_url(request, params)
 %>
     <tr><td class="cell-left">${_('tt_lubis_ebkey')}</td>                               <td>${c['featureId']}</td></tr>
     <tr><td class="cell-left">${_('tt_lubis_inventarnummer')}</td>                      <td>${c['attributes']['inventory_number']}</td></tr>
-    <tr><td class="cell-left">${_('tt_lubis_Flugdatum')}</td>                           <td>${c['attributes']['flightdate']}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_Flugdatum')}</td>                           <td>${datum}</td></tr>
     <tr><td class="cell-left">${_('tt_lubis_originalsize')}</td>                        <td>${c['attributes']['medium_format']}</td></tr>
     <tr><td class="cell-left">${_('tt_lubis_filesize_mb')}</td>                         <td>${c['attributes']['filesize_mb']} MB</td></tr>
     <tr><td class="cell-left">${_('tt_lubis_bildpfad')}</td>                            <td>${c['attributes']['filename']}</td></tr>
