@@ -2933,6 +2933,36 @@ msgstr "Programmi"
 msgid "ch.bav"
 msgstr "UFT"
 
+msgid "ch.bav.haltestellen-oev"
+msgstr "Stazioni tp"
+
+msgid "ch.bav.haltestellen-oev.all_departures"
+msgstr "Tutte le destinazioni"
+
+msgid "ch.bav.haltestellen-oev.betriebspunkttyp"
+msgstr "Tipo"
+
+msgid "ch.bav.haltestellen-oev.id"
+msgstr "Numero"
+
+msgid "ch.bav.haltestellen-oev.name"
+msgstr "Nome"
+
+msgid "ch.bav.haltestellen-oev.next_departures"
+msgstr "Prossime partenze di"
+
+msgid "ch.bav.haltestellen-oev.nodata"
+msgstr "Nessun dato"
+
+msgid "ch.bav.haltestellen-oev.nodata2"
+msgstr "Nessun dato per questa stazione"
+
+msgid "ch.bav.haltestellen-oev.tuabkuerzung"
+msgstr "IT"
+
+msgid "ch.bav.haltestellen-oev.verkehrsmittel"
+msgstr "Mezzo di trasporto"
+
 msgid "ch.bav.kataster-belasteter-standorte-oev"
 msgstr "Siti inquinati trasporti pubbl."
 

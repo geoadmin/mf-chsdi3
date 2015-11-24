@@ -1,6 +1,36 @@
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_name"
 msgstr ""
 
+msgid "ch.bav.haltestellen-oev.id"
+msgstr ""
+
+msgid "ch.bav.haltestellen-oev.tuabkuerzung"
+msgstr ""
+
+msgid "ch.bav.haltestellen-oev.verkehrsmittel"
+msgstr ""
+
+msgid "ch.bav.haltestellen-oev.name"
+msgstr ""
+
+msgid "ch.bav.haltestellen-oev.betriebspunkttyp"
+msgstr ""
+
+msgid "ch.bav.haltestellen-oev.all_departures"
+msgstr ""
+
+msgid "ch.bav.haltestellen-oev.nodata"
+msgstr ""
+
+msgid "ch.bav.haltestellen-oev.nodata2"
+msgstr ""
+
+msgid "ch.bav.haltestellen-oev"
+msgstr ""
+
+msgid "ch.bav.haltestellen-oev.next_departures"
+msgstr ""
+
 msgid "ch.ensi.url"
 msgstr ""
 

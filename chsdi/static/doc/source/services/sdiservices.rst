@@ -947,3 +947,81 @@ Example
 - Check WMS with Swiss ech-0056 profile (html): `https://api3.geo.admin.ch/owschecker/form?base_url=http%3A%2F%2Fwms.zh.ch%2Fupwms&service=WMS <../../../owschecker/form?base_url=http%3A%2F%2Fwms.zh.ch%2Fupwms&service=WMS>`_
 - Check WMTS with Swiss ech-0056 profile (xml): `https://api3.geo.admin.ch/owschecker/bykvp?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS <../../../owschecker/bykvp?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS>`_
 - Check WMTS with Swiss ech-0056 profile (html): `https://api3.geo.admin.ch/owschecker/form?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS <../../../owschecker/form?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS>`_
+
+
+
+
+.. _stationboard_description:
+
+----------
+
+Stationboard
+------------
+
+This service returns the next connections from a location to a specific destination or all destinations for a given location. 
+This service uses public transportation timetable data and not real time information.
+Warning: these services are subject to changes
+
+URL
+***
+
+::
+
+  https://api3.geo.admin.ch/stationboard/stops/{id} AND
+  https://api3.geo.admin.ch/stationboard/stops/{id}/destinations (List all available destinations)
+
+Input Parameters
+****************
+
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| Parameters                        | Description                                                                               |
++===================================+===========================================================================================+
+| **destination (optional)**        | Specifies the destination name of the departing connection (Defaults to all)              |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **limit (optional)**              | Number of departing connections (Defaults to 5, max 20)                                   |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **callback (optional)**           | The name of the callback function.                                                        |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+
+Examples
+********
+
+- Get the five next connections from a location to all destinations: `https://api3.geo.admin.ch/stationboard/stops/8501120?destination=all <../../../stationboard/stops/8501120?destination=all>`_
+- Get the five next connections from a location to one destination: `https://api3.geo.admin.ch/stationboard/stops/8501120?destination=Genève  <../../../stationboard/stops/8501120?destination=Gen%C3%A8ve>`_
+- Get all the available destinations of a given location: `https://api3.geo.admin.ch/stationboard/stops/8507000/destinations <../../../stationboard/stops/8507000/destinations>`_
+
+Response syntax
+***************
+
+.. code-block:: javascript
+
+  [
+      {
+        destinationId: 8501008,
+        via: "Lausanne; Renens VD; Morges; Allaman; Rolle; Gland; Nyon; Coppet",
+        departureDate: "24/11/2015 17:51",
+        time: "17:51",
+        currentDate: "24/11/2015 17:29",
+        id: 8501120,
+        destinationName: "Genève",
+        label: "RE"
+      }, {
+        destinationId: 8501008,
+        via: "Lausanne; Renens VD; Morges; Allaman; Rolle; Gland; Nyon; Coppet",
+        departureDate: "24/11/2015 18:21",
+        time: "18:21",
+        currentDate: "24/11/2015 17:29",
+        id: 8501120,
+        destinationName: "Genève",
+        label: "RE"
+      }, {
+        destinationId: 8501008,
+        via: "Lausanne; Renens VD; Morges; Allaman; Rolle; Gland; Nyon; Coppet",
+        departureDate: "24/11/2015 18:51",
+        time: "18:51",
+        currentDate: "24/11/2015 17:29",
+        id: 8501120,
+        destinationName: "Genève",
+        label: "RE"
+      }
+  ]

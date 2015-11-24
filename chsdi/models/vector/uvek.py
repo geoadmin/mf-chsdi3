@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer, Date
+from sqlalchemy import Column, Text, Integer, Date, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
 from sqlalchemy.types import Numeric
 from geoalchemy2.types import Geometry
 
@@ -9,6 +10,45 @@ from chsdi.models.vector import Vector
 
 
 Base = bases['uvek']
+
+
+class OevHaltestellen (Base, Vector):
+    __tablename__ = 'oev_haltestellen'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/oev_haltestellen.mako'
+    __bodId__ = 'ch.bav.haltestellen-oev'
+    __label__ = 'name'
+    __extended_info__ = True
+    __queryable_attributes__ = ['id', 'name']
+    id = Column('nummer', Integer, primary_key=True)
+    name = Column('name', Text)
+    tuabkuerzung = Column('tuabkuerzung', Text)
+    betriebspunkttyp = Column('betriebspunkttyp', Text)
+    verkehrsmittel = Column('verkehrsmittel', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bav.haltestellen-oev', OevHaltestellen)
+
+
+class OevDepartures (Base):
+    __tablename__ = 'oev_departures'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/oev_departures.mako'
+    __bodId__ = 'ch.bav.departures-oev'
+    __label__ = 'id'
+    id = Column('oid', Text, primary_key=True)
+    stop = Column('stop', Integer)
+    time = Column('time', DateTime)
+    label = Column('label', Text)
+    destination = Column('destination', Text,
+                         ForeignKey(OevHaltestellen.name))
+    type = Column('type', Integer)
+    via = Column('via', Text)
+    haltestelle = relationship(OevHaltestellen,
+                               primaryjoin=destination == OevHaltestellen.name)
+
+register('ch.bav.departures-oev', OevDepartures)
 
 
 # IVS NAT and REG use the same template

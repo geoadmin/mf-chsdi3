@@ -2933,6 +2933,36 @@ msgstr "Programme"
 msgid "ch.bav"
 msgstr "BAV"
 
+msgid "ch.bav.haltestellen-oev"
+msgstr "öV-Haltestellen"
+
+msgid "ch.bav.haltestellen-oev.all_departures"
+msgstr "Alle Reiseziele"
+
+msgid "ch.bav.haltestellen-oev.betriebspunkttyp"
+msgstr "Typ"
+
+msgid "ch.bav.haltestellen-oev.id"
+msgstr "Nummer"
+
+msgid "ch.bav.haltestellen-oev.name"
+msgstr "Name"
+
+msgid "ch.bav.haltestellen-oev.next_departures"
+msgstr "Nächste Abfahrt von"
+
+msgid "ch.bav.haltestellen-oev.nodata"
+msgstr "Keine Daten"
+
+msgid "ch.bav.haltestellen-oev.nodata2"
+msgstr "Keine Daten für diese Haltestelle"
+
+msgid "ch.bav.haltestellen-oev.tuabkuerzung"
+msgstr "TU"
+
+msgid "ch.bav.haltestellen-oev.verkehrsmittel"
+msgstr "Verkehrsmittel"
+
 msgid "ch.bav.kataster-belasteter-standorte-oev"
 msgstr "Altlasten/belastete Standorte öV"
 
@@ -3633,7 +3663,7 @@ msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Nachführungsgeometer/in"
 
 msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung"
-msgstr "PNF"
+msgstr "Periodische Nachführung"
 
 msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.canton"
 msgstr "Kanton"

@@ -2933,6 +2933,36 @@ msgstr "Programmes"
 msgid "ch.bav"
 msgstr "OFT"
 
+msgid "ch.bav.haltestellen-oev"
+msgstr "Arrêts tp"
+
+msgid "ch.bav.haltestellen-oev.all_departures"
+msgstr "Toutes les destinations"
+
+msgid "ch.bav.haltestellen-oev.betriebspunkttyp"
+msgstr "Type"
+
+msgid "ch.bav.haltestellen-oev.id"
+msgstr "Numéro"
+
+msgid "ch.bav.haltestellen-oev.name"
+msgstr "Nom"
+
+msgid "ch.bav.haltestellen-oev.next_departures"
+msgstr "Prochains départ de"
+
+msgid "ch.bav.haltestellen-oev.nodata"
+msgstr "Pas de données"
+
+msgid "ch.bav.haltestellen-oev.nodata2"
+msgstr "Pas de données pour cet arrêt"
+
+msgid "ch.bav.haltestellen-oev.tuabkuerzung"
+msgstr "ET"
+
+msgid "ch.bav.haltestellen-oev.verkehrsmittel"
+msgstr "Moyen de transport"
+
 msgid "ch.bav.kataster-belasteter-standorte-oev"
 msgstr "Sites pollués transports publics"
 
@@ -3633,7 +3663,7 @@ msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Géomètre-conservateur"
 
 msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung"
-msgstr "MPD"
+msgstr "Mise à jour periodique"
 
 msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.canton"
 msgstr "Canton"

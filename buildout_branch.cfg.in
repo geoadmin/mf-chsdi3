@@ -14,4 +14,3 @@ geodata_staging = ${branch_staging}
 
 [modwsgi]
 config-file = ${buildout:directory}/production.ini
-
