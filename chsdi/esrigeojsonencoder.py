@@ -40,6 +40,11 @@ class EsriGeoJSONEncoder(GeoJSONEncoder):
             ret['spatialReference'] = {'wkid': self.srs}
         return ret
 
+    def _hasZ(self, coord, ret):
+        if len(coord) == 3:
+            ret['hasZ'] = True
+        return ret
+
     def default(self, obj):
         geom_type = None
         if hasattr(obj, '__geo_interface__'):
@@ -82,8 +87,11 @@ class EsriGeoJSONEncoder(GeoJSONEncoder):
 
             if isinstance(obj, (geojson.Point)):
                 ret = dict(obj)
-
-                ret['x'], ret['y'] = coordinates
+                if len(coordinates) == 3:
+                    ret["hasZ"] = True
+                    ret['x'], ret['y'], ret['z'] = coordinates
+                else:
+                    ret['x'], ret['y'] = coordinates
                 ret['type'] = 'esriGeometryPoint'
 
                 return self._cleanup(ret)
@@ -91,19 +99,19 @@ class EsriGeoJSONEncoder(GeoJSONEncoder):
             if isinstance(obj, geojson.geometry.LineString):
                 ret = dict(obj)
 
-                path = coordinates  # ret['coordinates']
-                mapPointList = (lambda s, x, y: (x, y))
-                ret['paths'] = [[mapPointList(21781, *xy) for xy in path]]
+                path = coordinates
+                ret['paths'] = [[xy for xy in path]]
                 ret['type'] = 'esriGeometryPolyline'
+                ret = self._hasZ(xy, ret)
 
                 return self._cleanup(ret)
 
             if isinstance(obj, (geojson.MultiPoint)):
                 ret = dict(obj)
-                mapPointList = (lambda s, x, y: (x, y))
-                points = [mapPointList(21781, *xy) for xy in coordinates]
+                points = [xy for xy in coordinates]
                 ret['points'] = points
                 ret['type'] = 'esriGeometryMultipoint'
+                ret = self._hasZ(xy, ret)
 
                 return self._cleanup(ret)
 
@@ -111,9 +119,9 @@ class EsriGeoJSONEncoder(GeoJSONEncoder):
                 ret = dict(obj)
 
                 paths = coordinates
-                mapPointList = (lambda s, x, y: (x, y))
-                ret['paths'] = [[mapPointList(21781, *xy) for xy in p] for p in paths]
+                ret['paths'] = [[xy for xy in p] for p in paths]
                 ret['type'] = 'esriGeometryPolyline'
+                ret = self._hasZ(xy, ret)
 
                 return self._cleanup(ret)
 
@@ -121,19 +129,19 @@ class EsriGeoJSONEncoder(GeoJSONEncoder):
                 ret = dict(obj)
 
                 rings = coordinates
-                mapPointList = (lambda s, x, y: (x, y))
-                ret['rings'] = [[mapPointList(21781, *xy) for xy in ring] for ring in rings]
+                ret['rings'] = [[xy for xy in ring] for ring in rings]
                 ret['type'] = 'esriGeometryPolygon'
+                ret = self._hasZ(xy, ret)
 
                 return self._cleanup(ret)
 
             if isinstance(obj, geojson.MultiPolygon):
                 ret = dict(obj)
 
-                mapPointList = (lambda s, x, y: (x, y))
                 rings = reduce(add, coordinates)
-                ret['rings'] = [[mapPointList(21781, *xy) for xy in ring] for ring in rings]
+                ret['rings'] = [[xy for xy in ring] for ring in rings]
                 ret['type'] = 'esriGeometryPolygon'
+                ret = self._hasZ(xy, ret)
 
                 return self._cleanup(ret)
 
