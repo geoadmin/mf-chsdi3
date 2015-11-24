@@ -1349,3 +1349,33 @@ layouts:
               classSpace: 5
               backgroundColor: white
               layerFontSize: 9
+#---------------------------------------
+# Print on demand (small)
+#---------------------------------------
+  5 Print On Demand (small):
+    mainPage:
+      rotation: true
+      pageSize: 1303 2494
+      landscape: true
+#---------------------------------------
+# Map
+#---------------------------------------
+      items:
+        - !map
+          width: 2182
+          height: 1250
+#---------------------------------------
+# Print on demand (big)
+#---------------------------------------
+  6 Print On Demand (big):
+    mainPage:
+      rotation: true
+      pageSize: 1984 3118
+      landscape: true
+#---------------------------------------
+# Map
+#---------------------------------------
+      items:
+        - !map
+          width: 2806
+          height: 1950
