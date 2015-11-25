@@ -13,6 +13,9 @@ while getopts "ipa" opt; do
   case "$opt" in
   i) conf_to_use="buildout_nose_int.cfg"
      ;;
+  c) conf_to_use="buildout_nose_ci.cfg"
+     nosetests_options="-I test_links.py -I mapproxy/test_wmtscapabilities.py -I test_wmtsgettile.py -I test_varnish.py"
+     ;;
   p) conf_to_use="buildout_nose_prod.cfg"
      ;;
   a) nosetests_options=" "
