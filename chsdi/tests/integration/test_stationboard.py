@@ -30,12 +30,6 @@ class TestStationboard(TestsBase):
         resp = self.testapp.get('/stationboard/stops/8501120', params=params, status=400)
         resp.mustcontain('The limit parameter must be an integer')
 
-    def test_stationboard_max_limit(self):
-        params = {'limit': '50'}
-        resp = self.testapp.get('/stationboard/stops/8501120', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
-        self.assertTrue(len(resp.json) == 20)
-
     def test_available_destinations(self):
         resp = self.testapp.get('/stationboard/stops/8500109/destinations', status=200)
         self.assertTrue(resp.content_type == 'application/json')
