@@ -3068,6 +3068,9 @@ msgstr "Descrizione"
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_ausgangslage.name"
 msgstr "Nome di progetto"
 
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft"
+msgstr "PS Infrastruttura navigazione"
+
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=it"
 

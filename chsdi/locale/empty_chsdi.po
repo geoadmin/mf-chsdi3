@@ -679,6 +679,9 @@ msgstr ""
 msgid "ch.blw.emapis.typ"
 msgstr ""
 
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft"
+msgstr ""
+
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung"
 msgstr ""
 
