@@ -55,7 +55,7 @@ def check_status_code(url):
     assert resp.status_code in [200, 204, 304]
     assert resp.headers['content-type'] in ['image/png', 'image/jpeg']
     if geodata_staging == 'prod':
-        assert 'wms-bod' not in url
+        assert 'wms.geo.admin.ch' in url
 
 
 def test_generator():
