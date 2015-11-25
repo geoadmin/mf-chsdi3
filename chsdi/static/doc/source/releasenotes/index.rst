@@ -9,6 +9,38 @@
 Release Notes
 =============
 
+.. _releasenotes_20151125:
+
+Release 20151125 - Wednesday, November 25th 2015
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_151111...r_151125>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Profiles now show cummulative ascend and descend numbers
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_151111...r_151125>`__
+
+
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Flood hazard levels 24h <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-messstationen_gefahren>`__ (ch.bafu.hydrologie-messstationen_gefahren)          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Public transport stops <//map.geo.admin.ch/?layers=ch.bav.haltestellen-oev>`__ (ch.bav.haltestellen-oev)                                               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Periodic updating <//map.geo.admin.ch/?layers=ch.swisstopo-vd.geometa-periodische_nachfuehrung>`__ (ch.swisstopo-vd.geometa-periodische_nachfuehrung)  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20151111:
 
 Release 20151111 - Wednesday, November 11th 2015
