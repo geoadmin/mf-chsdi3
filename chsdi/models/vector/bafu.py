@@ -992,13 +992,15 @@ register('ch.bafu.hydrologie-gewaesserzustandsmessstationen', Gewaesserzustandst
 
 
 class Teileinzugsgebiete2 (Base, Vector):
-    __tablename__ = 'ebene_2km'
+    __tablename__ = 'view_ebene_2km_full'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasser-teileinzugsgebiete_2'
     __template__ = 'templates/htmlpopup/teileinzugsgebiete2.mako'
-    __label__ = 'teilezgnr'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    teilezgnr = Column('teilezgnr', Integer)
+    __returnedGeometry__ = 'ext_the_geom'
+    __label__ = 'id'
+    __extended_info__ = True
+    __queryable_attributes__ = ['gwlnr', 'id', 'ext_ezg_flussgb']
+    id = Column('teilezgnr', Integer, primary_key=True)
     gwlnr = Column('gwlnr', Text)
     measure = Column('measure', Integer)
     teilezgfla = Column('teilezgfla', Text)
@@ -1013,8 +1015,42 @@ class Teileinzugsgebiete2 (Base, Vector):
     flussgb_rm = Column('flussgb_rm', Text)
     typ2_en = Column('typ2_en', Text)
     flussgb_en = Column('flussgb_en', Text)
+    ext_gewiss_nr_namen_gewaesser = Column('ext_gewiss_nr_namen_gewaesser', Text)
+    ext_ezg_xy_gebietsauslass = Column('ext_ezg_xy_gebietsauslass', Text)
+    ext_gebietsauslaesse_gemeindename = Column('ext_gebietsauslaesse_gemeindename', Text)
+    ext_ezg_gewissnr = Column('ext_ezg_gewissnr', Integer)
+    ext_ezg_flussgb = Column('ext_ezg_flussgb', Integer)
+    ext_physiogeographie_gesamtflaeche = Column('ext_physiogeographie_gesamtflaeche', Numeric)
+    ext_physiogeographie_anteil_ch = Column('ext_physiogeographie_anteil_ch', Numeric)
+    ext_landnutzung_ant_siedlung = Column('ext_landnutzung_ant_siedlung', Numeric)
+    ext_landnutzung_ant_landwirtschaft = Column('ext_landnutzung_ant_landwirtschaft', Numeric)
+    ext_landnutzung_ant_bestockt = Column('ext_landnutzung_ant_bestockt', Numeric)
+    ext_landnutzung_ant_gewaesser = Column('ext_landnutzung_ant_gewaesser', Numeric)
+    ext_landnutzung_ant_gletscher_firn = Column('ext_landnutzung_ant_gletscher_firn', Numeric)
+    ext_landnutzung_ant_unprod_sonst = Column('ext_landnutzung_ant_unprod_sonst', Numeric)
+    ext_physiogeographie_ch_min_z = Column('ext_physiogeographie_ch_min_z', Numeric)
+    ext_physiogeographie_ch_mean_z = Column('ext_physiogeographie_ch_mean_z', Numeric)
+    ext_physiogeographie_ch_max_z = Column('ext_physiogeographie_ch_max_z', Numeric)
+    ext_abfluesse_regimetyp = Column('ext_abfluesse_regimetyp', Text)
+    ext_abfluesse_mqn_jahr = Column('ext_abfluesse_mqn_jahr', Numeric)
+    ext_abfluesse_mqn_jan = Column('ext_abfluesse_mqn_jan', Numeric)
+    ext_abfluesse_mqn_feb = Column('ext_abfluesse_mqn_feb', Numeric)
+    ext_abfluesse_mqn_mar = Column('ext_abfluesse_mqn_mar', Numeric)
+    ext_abfluesse_mqn_apr = Column('ext_abfluesse_mqn_apr', Numeric)
+    ext_abfluesse_mqn_mai = Column('ext_abfluesse_mqn_mai', Numeric)
+    ext_abfluesse_mqn_jun = Column('ext_abfluesse_mqn_jun', Numeric)
+    ext_abfluesse_mqn_jul = Column('ext_abfluesse_mqn_jul', Numeric)
+    ext_abfluesse_mqn_aug = Column('ext_abfluesse_mqn_aug', Numeric)
+    ext_abfluesse_mqn_sep = Column('ext_abfluesse_mqn_sep', Numeric)
+    ext_abfluesse_mqn_okt = Column('ext_abfluesse_mqn_okt', Numeric)
+    ext_abfluesse_mqn_nov = Column('ext_abfluesse_mqn_nov', Numeric)
+    ext_abfluesse_mqn_dez = Column('ext_abfluesse_mqn_dez', Numeric)
+    ext_ezg_datenausgabe = Column('ext_ezg_datenausgabe', Integer)
+    ext_abfluesse_abflussvar = Column('ext_abfluesse_abflussvar', Numeric)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
+    ext_the_geom = Column('ext_the_geom', Geometry(geometry_type='GEOMETRYCOLLECTION',
+                                                   dimension=2, srid=21781))
 
 register('ch.bafu.wasser-teileinzugsgebiete_2', Teileinzugsgebiete2)
 
