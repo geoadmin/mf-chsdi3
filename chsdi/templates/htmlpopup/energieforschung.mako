@@ -16,7 +16,7 @@
 </tr>
 <tr>
   <td class="cell-left">${_('ch.bfe.energieforschung.beschreibung')}</td>
-  <td>${c['attributes']['beschreibung'] or '-'}</td>
+  <td>${c['attributes']['beschreibung'] or '-'|n}</td>
 </tr>
 <tr>
   <td class="cell-left">${_('ch.bfe.energieforschung.leuchtturm')}</td>
