@@ -1378,4 +1378,4 @@ layouts:
       items:
         - !map
           width: 2806
-          height: 1950
+          height: 1920
