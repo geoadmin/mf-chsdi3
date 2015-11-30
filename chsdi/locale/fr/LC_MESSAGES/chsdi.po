@@ -3071,6 +3071,27 @@ msgstr "Nom du projet"
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft"
 msgstr "PS Infrastrutcutre navigation"
 
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.doc_title"
+msgstr "Autres informations"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.facname_de"
+msgstr "Installation"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.facname_fr"
+msgstr "Installation"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.facname_it"
+msgstr "Installation"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_de"
+msgstr "Mesure"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_fr"
+msgstr "Mesure"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_it"
+msgstr "Mesure"
+
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=fr"
 
