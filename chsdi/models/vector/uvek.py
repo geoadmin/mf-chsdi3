@@ -1733,6 +1733,40 @@ class sif_facilities_a (Base, Vector):
 register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', sif_facilities_a)
 
 
+class sif_facilities_k (Base, Vector):
+    __tablename__ = 'sif_fac_kraft'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __bodId__ = 'ch.bav.sachplan-infrastruktur-schifffahrt_kraft'
+    __template__ = 'templates/htmlpopup/sif_facilities.mako'
+    __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it', 'doc_title']
+    # Translatable labels in fr, it
+    __label__ = 'facname_de'
+    id = Column('stabil_id', Text, primary_key=True)
+    facname_de = Column('facname_de', Text)
+    facname_fr = Column('facname_fr', Text)
+    facname_it = Column('facname_it', Text)
+    fackind_text_de = Column('fackind_text_de', Text)
+    fackind_text_fr = Column('fackind_text_fr', Text)
+    fackind_text_it = Column('fackind_text_it', Text)
+    facstatus_text_de = Column('facstatus_text_de', Text)
+    facstatus_text_fr = Column('facstatus_text_fr', Text)
+    facstatus_text_it = Column('facstatus_text_it', Text)
+    validfrom = Column('validfrom', Text)
+    description_de = Column('description_de', Text)
+    description_fr = Column('description_fr', Text)
+    description_it = Column('description_it', Text)
+    doc_web = Column('doc_web', Text)
+    doc_title = Column('doc_title', Text)
+    objname_de = Column('objname_de', Text)
+    objname_fr = Column('objname_fr', Text)
+    objname_it = Column('objname_it', Text)
+    bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', sif_facilities_k)
+
+
 class sif_planning_a (Base, Vector):
     __tablename__ = 'sif_pl_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
@@ -1773,6 +1807,46 @@ class sif_planning_a (Base, Vector):
 register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', sif_planning_a)
 
 
+class sif_planning_k (Base, Vector):
+    __tablename__ = 'sif_pl_kraft'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/sif_planning.mako'
+    __bodId__ = 'ch.bav.sachplan-infrastruktur-schifffahrt_kraft'
+    __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it', 'doc_title']
+    # Translatable labels in fr, it
+    __label__ = 'facname_de'
+    id = Column('stabil_id', Text, primary_key=True)
+    facname_de = Column('facname_de', Text)
+    facname_fr = Column('facname_fr', Text)
+    facname_it = Column('facname_it', Text)
+    plname_de = Column('plname_de', Text)
+    plname_fr = Column('plname_fr', Text)
+    plname_it = Column('plname_it', Text)
+    meastype_text_de = Column('meastype_text_de', Text)
+    meastype_text_fr = Column('meastype_text_fr', Text)
+    meastype_text_it = Column('meastype_text_it', Text)
+    coordlevel_text_de = Column('coordlevel_text_de', Text)
+    coordlevel_text_fr = Column('coordlevel_text_fr', Text)
+    coordlevel_text_it = Column('coordlevel_text_it', Text)
+    plstatus_text_de = Column('plstatus_text_de', Text)
+    plstatus_text_fr = Column('plstatus_text_fr', Text)
+    plstatus_text_it = Column('plstatus_text_it', Text)
+    validfrom = Column('validfrom', Text)
+    validuntil = Column('validuntil', Text)
+    description_de = Column('description_de', Text)
+    description_fr = Column('description_fr', Text)
+    description_it = Column('description_it', Text)
+    doc_web = Column('doc_web', Text)
+    doc_title = Column('doc_title', Text)
+    bgdi_created = Column('bgdi_created', Text)
+    __minscale__ = 20005
+    __maxscale__ = 500005
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', sif_planning_k)
+
+
 class sif_planning_raster_a (Base, Vector):
     __tablename__ = 'sif_pl_r_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
@@ -1811,6 +1885,46 @@ class sif_planning_raster_a (Base, Vector):
                                dimension=2, srid=21781))
 
 register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', sif_planning_raster_a)
+
+
+class sif_planning_raster_k (Base, Vector):
+    __tablename__ = 'sif_pl_r_kraft'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/sif_planning.mako'
+    __bodId__ = 'ch.bav.sachplan-infrastruktur-schifffahrt_kraft'
+    __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it', 'doc_title']
+    # Translatable labels in fr, it
+    __label__ = 'facname_de'
+    id = Column('stabil_id', Text, primary_key=True)
+    facname_de = Column('facname_de', Text)
+    facname_fr = Column('facname_fr', Text)
+    facname_it = Column('facname_it', Text)
+    plname_de = Column('plname_de', Text)
+    plname_fr = Column('plname_fr', Text)
+    plname_it = Column('plname_it', Text)
+    meastype_text_de = Column('meastype_text_de', Text)
+    meastype_text_fr = Column('meastype_text_fr', Text)
+    meastype_text_it = Column('meastype_text_it', Text)
+    coordlevel_text_de = Column('coordlevel_text_de', Text)
+    coordlevel_text_fr = Column('coordlevel_text_fr', Text)
+    coordlevel_text_it = Column('coordlevel_text_it', Text)
+    plstatus_text_de = Column('plstatus_text_de', Text)
+    plstatus_text_fr = Column('plstatus_text_fr', Text)
+    plstatus_text_it = Column('plstatus_text_it', Text)
+    validfrom = Column('validfrom', Text)
+    validuntil = Column('validuntil', Text)
+    description_de = Column('description_de', Text)
+    description_fr = Column('description_fr', Text)
+    description_it = Column('description_it', Text)
+    doc_web = Column('doc_web', Text)
+    doc_title = Column('doc_title', Text)
+    bgdi_created = Column('bgdi_created', Text)
+    __maxscale__ = 20005
+    __minscale__ = 1
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', sif_planning_raster_k)
 
 
 class sif_ausgangslage (Base, Vector):

@@ -1,3 +1,24 @@
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_it"
+msgstr ""
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_fr"
+msgstr ""
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_de"
+msgstr ""
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.facname_it"
+msgstr ""
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.facname_fr"
+msgstr ""
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.facname_de"
+msgstr ""
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.doc_title"
+msgstr ""
+
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_name"
 msgstr ""
 
@@ -677,6 +698,9 @@ msgid "ch.blw.emapis.status"
 msgstr ""
 
 msgid "ch.blw.emapis.typ"
+msgstr ""
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft"
 msgstr ""
 
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung"

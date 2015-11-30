@@ -3068,6 +3068,30 @@ msgstr "Beschreibung"
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_ausgangslage.name"
 msgstr "Name Anlage"
 
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft"
+msgstr "SP Infrastruktur Schifffahrt"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.doc_title"
+msgstr "Weitere Informationen"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.facname_de"
+msgstr "Anlage"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.facname_fr"
+msgstr "Anlage"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.facname_it"
+msgstr "Anlage"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_de"
+msgstr "Planerische Massnahme"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_fr"
+msgstr "Planerische Massnahme"
+
+msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_it"
+msgstr "Planerische Massnahme"
+
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=de"
 
