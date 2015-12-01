@@ -86,10 +86,21 @@ class LayersChecker(object):
             assert ((layer + '_' + lang) in legendImages), layer + '_' + lang
 
     def checkSearch(self, layer):
+        models = models_from_name(layer)
+        assert (models is not None and len(models) > 0), layer
+        model = models[0]
+        query = self.session.query(model.primary_key_column())
+        expectedStatus = 200
+        # we expect 404 errors for searchable layers without any data
+        if query.first() is None:
+            expectedStatus = 404
+
         # If it fails here, it most probably means given layer does not have sphinx index available
         link = '/rest/services/all/SearchServer?features=' + layer + '&bbox=600818.7808825106,197290.49919797093,601161.2808825106,197587.99919797093&type=featuresearch&searchText=dummy'
-        resp = self.testapp.get(link)
-        assert resp.status_int == 200, link
+        resp = self.testapp.get(link, status=expectedStatus)
+        # If there are no features, we don't expect a sphinx index present
+        if expectedStatus == 404:
+            assert 'unknown local index' in resp.body
 
 
 def test_all_htmlpopups():
