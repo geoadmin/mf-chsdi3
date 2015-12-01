@@ -29,7 +29,7 @@
                                 "fillOpacity": 0,
                                 "rotation": "[nummer]",
                                 "type": "point",
-                                "externalGraphic": "http://map.geo.admin.ch/1433939002/img/maki/alcohol-shop-24@2x.png",
+                                "externalGraphic": "https://map.geo.admin.ch/1433939002/img/maki/alcohol-shop-24@2x.png",
                                 "graphicOpacity": 0.8,
                                 "pointRadius": 16
                             }]
