@@ -89,11 +89,13 @@ class LayersChecker(object):
         models = models_from_name(layer)
         assert (models is not None and len(models) > 0), layer
         model = models[0]
-        query = self.session.query(model.primary_key_column())
         expectedStatus = 200
-        # we expect 404 errors for searchable layers without any data
-        if query.first() is None:
-            expectedStatus = 404
+        # Special treatment for non-distributed sphinx indices (single model)
+        if len(models) == 1:
+            query = self.session.query(model.primary_key_column())
+            # we expect 404 errors for searchable layers without any data (no sphinx index)
+            if query.first() is None:
+                expectedStatus = 404
 
         # If it fails here, it most probably means given layer does not have sphinx index available
         link = '/rest/services/all/SearchServer?features=' + layer + '&bbox=600818.7808825106,197290.49919797093,601161.2808825106,197587.99919797093&type=featuresearch&searchText=dummy'
