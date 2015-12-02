@@ -27,7 +27,7 @@
     % elif c['attributes']['ak'] == 'BE':
         <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://webmap.be-geo.ch/geodaten.php?lang=${lang}&recenter_bbox=${','.join(map(str,c['bbox']))}" target="_blank">BE</a></td></tr>
     % elif c['attributes']['ak'] == 'FR':
-        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://www.geo.fr.ch/index.php?reset_session&linkit=1&switch_id=switch_localisation&layer_select=Adresses,ParcVect,ParcVectnum,GrpMasque,GrpSituation,FondPlanContinu,copyright,Parcellaire,ParcScan&mapsize=0&recenter_bbox=${','.join(map(str,c['bbox']))}" target="_blank">FR</a></td></tr>
+        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://map.geo.fr.ch/?dataTheme=Mensuration officielle&extent=${','.join(map(str,c['bbox']))}" target="_blank">FR</a></td></tr>
     % elif c['attributes']['ak'] == 'GE':
         <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://ge.ch/carte/pro/?mapresources=CADASTRE&extent=${2000000 + c['bbox'][0]},${1000000 + c['bbox'][1]},${2000000 + c['bbox'][2]},${1000000 + c['bbox'][3]}" target="_blank">GE</a></td></tr>
     % elif c['attributes']['ak'] == 'GL':
