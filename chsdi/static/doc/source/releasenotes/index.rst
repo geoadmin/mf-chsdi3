@@ -9,6 +9,25 @@
 Release Notes
 =============
 
+.. _releasenotes_20151202:
+
+Release 20151202 - Wednesday, December 2nd 2015
+-----------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_151125...r_151202>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_151125...r_151202>`__
+
+
 .. _releasenotes_20151125:
 
 Release 20151125 - Wednesday, November 25th 2015
