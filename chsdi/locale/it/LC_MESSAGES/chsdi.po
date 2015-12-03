@@ -17,6 +17,354 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
+msgid "<i>Abwasserreinigungsareal</i>"
+msgstr "Depuratore"
+
+msgid "<i>Alpiner Gipfel</i>"
+msgstr "Cima alpina"
+
+msgid "<i>Ausfahrt</i>"
+msgstr "Uscita"
+
+msgid "<i>Aussichtspunkt</i>"
+msgstr "Punto panoramico"
+
+msgid "<i>Autofaehre</i>"
+msgstr "Traghetto"
+
+msgid "<i>Bildstock</i>"
+msgstr "Oratorio"
+
+msgid "<i>Bobbahn</i>"
+msgstr "Pista da bob"
+
+msgid "<i>Brunnen</i>"
+msgstr "Fontana"
+
+msgid "<i>Campingplatzareal</i>"
+msgstr "Campeggio"
+
+msgid "<i>Denkmal</i>"
+msgstr "Memoriale"
+
+msgid "<i>Deponieareal</i>"
+msgstr "Discarica"
+
+msgid "<i>Ein- und Ausfahrt</i>"
+msgstr "Entrata e uscita"
+
+msgid "<i>Erratischer Block</i>"
+msgstr "Blocco erratico"
+
+msgid "<i>Felsblock</i>"
+msgstr "Masso di roccia"
+
+msgid "<i>Felskopf</i>"
+msgstr "Sperone di roccia"
+
+msgid "<i>Fliessgewaesser</i>"
+msgstr "Corso d'acqua"
+
+msgid "<i>Flugfeldareal</i>"
+msgstr "Campi d'aviazione"
+
+msgid "<i>Flughafenareal</i>"
+msgstr "Aereoporto"
+
+msgid "<i>Flugplatzareal</i>"
+msgstr "Aerodromo"
+
+msgid "<i>Flurname swisstopo</i>"
+msgstr "Nomi di zone"
+
+msgid "<i>Freizeitanlagenareal</i>"
+msgstr "Parco giochi"
+
+msgid "<i>Friedhof</i>"
+msgstr "Cimitero"
+
+msgid "<i>Gebaeude Einzelhaus</i>"
+msgstr "Edificio"
+
+msgid "<i>Gebiet</i>"
+msgstr "Territorio"
+
+msgid "<i>Gipfel</i>"
+msgstr "Cima"
+
+msgid "<i>Gletscher</i>"
+msgstr "Ghiacciaio"
+
+msgid "<i>Golfplatzareal</i>"
+msgstr "Campo da golf"
+
+msgid "<i>Gondelbahn</i>"
+msgstr "Telecabina"
+
+msgid "<i>Graben</i>"
+msgstr "Fossato"
+
+msgid "<i>Grat</i>"
+msgstr "Cresta"
+
+msgid "<i>Grossregion</i>"
+msgstr "Grande regione"
+
+msgid "<i>Grotte, Hoehle</i>"
+msgstr "Grotta"
+
+msgid "<i>Haltestelle Bahn</i>"
+msgstr "Fermata del treno"
+
+msgid "<i>Haltestelle Bus</i>"
+msgstr "Fermata del bus"
+
+msgid "<i>Haltestelle Schiff</i>"
+msgstr "Fermata del battello"
+
+msgid "<i>Haltestellen Bus</i>"
+msgstr "Autobus"
+
+msgid "<i>Haltestellen Bus_Tram</i>"
+msgstr "Autobus, tram"
+
+msgid "<i>Haltestellen Lift</i>"
+msgstr "Ascensore"
+
+msgid "<i>Haltestellen Luftseilbahn</i>"
+msgstr "Funivia"
+
+msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
+msgstr "Funivia, ferrovia"
+
+msgid "<i>Haltestellen Metro</i>"
+msgstr "Metropolitana"
+
+msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
+msgstr "Punto operativo semplice"
+
+msgid "<i>Haltestellen Schiff</i>"
+msgstr "Battello"
+
+msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
+msgstr "Battello e ferrovia a cremagliera"
+
+msgid "<i>Haltestellen Standseilbahn</i>"
+msgstr "Funicolare"
+
+msgid "<i>Haltestellen Standseilbahn_Bus</i>"
+msgstr "Funicolare, autobus"
+
+msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
+msgstr "Funicolare, funivia"
+
+msgid "<i>Haltestellen Standseilbahn_Zug</i>"
+msgstr "Funicolare, ferrovia"
+
+msgid "<i>Haltestellen Tram</i>"
+msgstr "Tram"
+
+msgid "<i>Haltestellen Zahnradbahn</i>"
+msgstr "Ferrovia a cremagliera"
+
+msgid "<i>Haltestellen Zug</i>"
+msgstr "Ferrovia"
+
+msgid "<i>Haltestellen Zug_Tram</i>"
+msgstr "Ferrovia, tram"
+
+msgid "<i>Hauptgipfel</i>"
+msgstr "Cima principale"
+
+msgid "<i>Haupthuegel</i>"
+msgstr "Collina principale"
+
+msgid "<i>Haupttal</i>"
+msgstr "Valle maggiore"
+
+msgid "<i>Heliport</i>"
+msgstr "Eliporto"
+
+msgid "<i>Historisches Areal</i>"
+msgstr "Sito storico"
+
+msgid "<i>Huegel</i>"
+msgstr "Collina "
+
+msgid "<i>Huegelzug</i>"
+msgstr "Gruppo di colline"
+
+msgid "<i>Kapelle</i>"
+msgstr "Cappella"
+
+msgid "<i>Kehrichtverbrennungsareal</i>"
+msgstr "Inceneritore"
+
+msgid "<i>Kleinbahn</i>"
+msgstr "Piccolo treno"
+
+msgid "<i>Klosterareal</i>"
+msgstr "Convento"
+
+msgid "<i>Kraftwerkareal</i>"
+msgstr "Centrale elettrica"
+
+msgid "<i>Landesgrenzstein</i>"
+msgstr "Cippo di confine"
+
+msgid "<i>Landschaftsname</i>"
+msgstr "Regione"
+
+msgid "<i>Lokalname swisstopo</i>"
+msgstr "Nome locale swisstopo"
+
+msgid "<i>Luftseilbahn</i>"
+msgstr "Teleferica"
+
+msgid "<i>Massiv</i>"
+msgstr "Massiccio"
+
+msgid "<i>Massnahmenvollzugsanstaltsareal</i>"
+msgstr "Carcere"
+
+msgid "<i>Messeareal</i>"
+msgstr "Fiera"
+
+msgid "<i>Normalspur</i>"
+msgstr "Ferrovia a scartamento normale"
+
+msgid "<i>Oeffentliches Parkareal</i>"
+msgstr "Parco pubblico"
+
+msgid "<i>Oeffentliches Parkplatzareal</i>"
+msgstr "Parcheggio pubblico"
+
+msgid "<i>Offenes Gebaeude</i>"
+msgstr "Edificio aperto"
+
+msgid "<i>Ort</i>"
+msgstr "Luogo"
+
+msgid "<i>Ortsteil</i>"
+msgstr "Quartiere"
+
+msgid "<i>Pass</i>"
+msgstr "Colle"
+
+msgid "<i>Personenfaehre mit Seil</i>"
+msgstr "Traghetto passeggeri a corda"
+
+msgid "<i>Personenfaehre ohne Seil</i>"
+msgstr "Traghetto passeggeri senza corda "
+
+msgid "<i>Pferderennbahnareal</i>"
+msgstr "Ippodromo"
+
+msgid "<i>Quartier</i>"
+msgstr "Quartiere"
+
+msgid "<i>Quartierteil</i>"
+msgstr "Parte di quartiere"
+
+msgid "<i>Quelle</i>"
+msgstr "Fonte"
+
+msgid "<i>Rastplatzareal</i>"
+msgstr "Area di servizio"
+
+msgid "<i>Rodelbahn</i>"
+msgstr "Pista da slitta"
+
+msgid "<i>Sakrales Gebaeude</i>"
+msgstr "Edificio religioso"
+
+msgid "<i>Schmalspur</i>"
+msgstr "Ferrovia a scartamento ridotto"
+
+msgid "<i>Schul- und Hochschulareal</i>"
+msgstr "Scuola"
+
+msgid "<i>Schwimmbadareal</i>"
+msgstr "Piscina"
+
+msgid "<i>See</i>"
+msgstr "lago"
+
+msgid "<i>Seeinsel</i>"
+msgstr "Isola di lago"
+
+msgid "<i>Seeteil</i>"
+msgstr "Parte di lago"
+
+msgid "<i>Sesselbahn</i>"
+msgstr "Seggiovia"
+
+msgid "<i>Skilift</i>"
+msgstr "Sciovia"
+
+msgid "<i>Skisprungschanze</i>"
+msgstr "Trampolino da salto con gli sci"
+
+msgid "<i>Spitalareal</i>"
+msgstr "Ospedale"
+
+msgid "<i>Sportplatzareal</i>"
+msgstr "Campo da sport"
+
+msgid "<i>Standplatzareal</i>"
+msgstr "Zona di stazionamento camper"
+
+msgid "<i>Staudamm</i>"
+msgstr "Diga di ritenzione idrica"
+
+msgid "<i>Staumauer</i>"
+msgstr "Diga"
+
+msgid "<i>Strasse</i>"
+msgstr "Strada"
+
+msgid "<i>Strassenpass</i>"
+msgstr "Passo"
+
+msgid "<i>Tal</i>"
+msgstr "Valle"
+
+msgid "<i>Transportseil</i>"
+msgstr "Teleferica per materiale"
+
+msgid "<i>Truppenuebungsplatz</i>"
+msgstr "Pizza d'armi"
+
+msgid "<i>Turm</i>"
+msgstr "Torre"
+
+msgid "<i>Uebrige Bahnen</i>"
+msgstr "Altri mezzi di trasporto"
+
+msgid "<i>Unterwerkareal</i>"
+msgstr "Stazione di trasformazione elettrica"
+
+msgid "<i>Verzweigung</i>"
+msgstr "Svincolo"
+
+msgid "<i>Wasserfall</i>"
+msgstr "Cascata"
+
+msgid "<i>Wehr</i>"
+msgstr "Chiusa"
+
+msgid "<i>Zollamt 24h 24h</i>"
+msgstr "Ufficio doganale 24h 24h"
+
+msgid "<i>Zollamt 24h eingeschraenkt</i>"
+msgstr "Ufficio doganale 24h limitato"
+
+msgid "<i>Zollamt eingeschraenkt</i>"
+msgstr "Ufficio doganale limitato"
+
+msgid "<i>Zooareal</i>"
+msgstr "Zoo"
+
 msgid "ABS_landesschwerenetz_type"
 msgstr "station absolue"
 

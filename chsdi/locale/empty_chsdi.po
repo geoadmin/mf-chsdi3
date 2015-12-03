@@ -7208,3 +7208,351 @@ msgstr ""
 
 msgid "tt_lubis_schraegaufnahmen_y"
 msgstr ""
+
+msgid "<i>Abwasserreinigungsareal</i>"
+msgstr ""
+
+msgid "<i>Alpiner Gipfel</i>"
+msgstr ""
+
+msgid "<i>Ausfahrt</i>"
+msgstr ""
+
+msgid "<i>Aussichtspunkt</i>"
+msgstr ""
+
+msgid "<i>Autofaehre</i>"
+msgstr ""
+
+msgid "<i>Bildstock</i>"
+msgstr ""
+
+msgid "<i>Bobbahn</i>"
+msgstr ""
+
+msgid "<i>Brunnen</i>"
+msgstr ""
+
+msgid "<i>Campingplatzareal</i>"
+msgstr ""
+
+msgid "<i>Denkmal</i>"
+msgstr ""
+
+msgid "<i>Deponieareal</i>"
+msgstr ""
+
+msgid "<i>Ein- und Ausfahrt</i>"
+msgstr ""
+
+msgid "<i>Erratischer Block</i>"
+msgstr ""
+
+msgid "<i>Felsblock</i>"
+msgstr ""
+
+msgid "<i>Felskopf</i>"
+msgstr ""
+
+msgid "<i>Fliessgewaesser</i>"
+msgstr ""
+
+msgid "<i>Flugfeldareal</i>"
+msgstr ""
+
+msgid "<i>Flughafenareal</i>"
+msgstr ""
+
+msgid "<i>Flugplatzareal</i>"
+msgstr ""
+
+msgid "<i>Flurname swisstopo</i>"
+msgstr ""
+
+msgid "<i>Freizeitanlagenareal</i>"
+msgstr ""
+
+msgid "<i>Friedhof</i>"
+msgstr ""
+
+msgid "<i>Gebaeude Einzelhaus</i>"
+msgstr ""
+
+msgid "<i>Gebiet</i>"
+msgstr ""
+
+msgid "<i>Gipfel</i>"
+msgstr ""
+
+msgid "<i>Gletscher</i>"
+msgstr ""
+
+msgid "<i>Golfplatzareal</i>"
+msgstr ""
+
+msgid "<i>Gondelbahn</i>"
+msgstr ""
+
+msgid "<i>Graben</i>"
+msgstr ""
+
+msgid "<i>Grat</i>"
+msgstr ""
+
+msgid "<i>Grossregion</i>"
+msgstr ""
+
+msgid "<i>Grotte, Hoehle</i>"
+msgstr ""
+
+msgid "<i>Haltestelle Bahn</i>"
+msgstr ""
+
+msgid "<i>Haltestelle Bus</i>"
+msgstr ""
+
+msgid "<i>Haltestelle Schiff</i>"
+msgstr ""
+
+msgid "<i>Hauptgipfel</i>"
+msgstr ""
+
+msgid "<i>Haupthuegel</i>"
+msgstr ""
+
+msgid "<i>Haupttal</i>"
+msgstr ""
+
+msgid "<i>Heliport</i>"
+msgstr ""
+
+msgid "<i>Historisches Areal</i>"
+msgstr ""
+
+msgid "<i>Huegel</i>"
+msgstr ""
+
+msgid "<i>Huegelzug</i>"
+msgstr ""
+
+msgid "<i>Kapelle</i>"
+msgstr ""
+
+msgid "<i>Kehrichtverbrennungsareal</i>"
+msgstr ""
+
+msgid "<i>Kleinbahn</i>"
+msgstr ""
+
+msgid "<i>Klosterareal</i>"
+msgstr ""
+
+msgid "<i>Kraftwerkareal</i>"
+msgstr ""
+
+msgid "<i>Landesgrenzstein</i>"
+msgstr ""
+
+msgid "<i>Landschaftsname</i>"
+msgstr ""
+
+msgid "<i>Lokalname swisstopo</i>"
+msgstr ""
+
+msgid "<i>Luftseilbahn</i>"
+msgstr ""
+
+msgid "<i>Massiv</i>"
+msgstr ""
+
+msgid "<i>Massnahmenvollzugsanstaltsareal</i>"
+msgstr ""
+
+msgid "<i>Messeareal</i>"
+msgstr ""
+
+msgid "<i>Normalspur</i>"
+msgstr ""
+
+msgid "<i>Oeffentliches Parkareal</i>"
+msgstr ""
+
+msgid "<i>Oeffentliches Parkplatzareal</i>"
+msgstr ""
+
+msgid "<i>Offenes Gebaeude</i>"
+msgstr ""
+
+msgid "<i>Ort</i>"
+msgstr ""
+
+msgid "<i>Ortsteil</i>"
+msgstr ""
+
+msgid "<i>Pass</i>"
+msgstr ""
+
+msgid "<i>Personenfaehre mit Seil</i>"
+msgstr ""
+
+msgid "<i>Personenfaehre ohne Seil</i>"
+msgstr ""
+
+msgid "<i>Pferderennbahnareal</i>"
+msgstr ""
+
+msgid "<i>Quartier</i>"
+msgstr ""
+
+msgid "<i>Quartierteil</i>"
+msgstr ""
+
+msgid "<i>Quelle</i>"
+msgstr ""
+
+msgid "<i>Rastplatzareal</i>"
+msgstr ""
+
+msgid "<i>Rodelbahn</i>"
+msgstr ""
+
+msgid "<i>Sakrales Gebaeude</i>"
+msgstr ""
+
+msgid "<i>Schmalspur</i>"
+msgstr ""
+
+msgid "<i>Schul- und Hochschulareal</i>"
+msgstr ""
+
+msgid "<i>Schwimmbadareal</i>"
+msgstr ""
+
+msgid "<i>See</i>"
+msgstr ""
+
+msgid "<i>Seeinsel</i>"
+msgstr ""
+
+msgid "<i>Seeteil</i>"
+msgstr ""
+
+msgid "<i>Sesselbahn</i>"
+msgstr ""
+
+msgid "<i>Skilift</i>"
+msgstr ""
+
+msgid "<i>Skisprungschanze</i>"
+msgstr ""
+
+msgid "<i>Spitalareal</i>"
+msgstr ""
+
+msgid "<i>Sportplatzareal</i>"
+msgstr ""
+
+msgid "<i>Standplatzareal</i>"
+msgstr ""
+
+msgid "<i>Staudamm</i>"
+msgstr ""
+
+msgid "<i>Staumauer</i>"
+msgstr ""
+
+msgid "<i>Strasse</i>"
+msgstr ""
+
+msgid "<i>Strassenpass</i>"
+msgstr ""
+
+msgid "<i>Tal</i>"
+msgstr ""
+
+msgid "<i>Transportseil</i>"
+msgstr ""
+
+msgid "<i>Truppenuebungsplatz</i>"
+msgstr ""
+
+msgid "<i>Turm</i>"
+msgstr ""
+
+msgid "<i>Uebrige Bahnen</i>"
+msgstr ""
+
+msgid "<i>Unterwerkareal</i>"
+msgstr ""
+
+msgid "<i>Verzweigung</i>"
+msgstr ""
+
+msgid "<i>Wasserfall</i>"
+msgstr ""
+
+msgid "<i>Wehr</i>"
+msgstr ""
+
+msgid "<i>Zollamt 24h 24h</i>"
+msgstr ""
+
+msgid "<i>Zollamt 24h eingeschraenkt</i>"
+msgstr ""
+
+msgid "<i>Zollamt eingeschraenkt</i>"
+msgstr ""
+
+msgid "<i>Zooareal</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Bus</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Bus_Tram</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Lift</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Luftseilbahn</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Metro</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Schiff</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Standseilbahn_Bus</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Standseilbahn</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Standseilbahn_Zug</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Tram</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Zahnradbahn</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Zug</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Zug_Tram</i>"
+msgstr ""

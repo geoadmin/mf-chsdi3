@@ -73,6 +73,11 @@ class Search(SearchValidation):
             )
             # swiss search
             self._swiss_search()
+            # translate some gazetteer categories from swissnames3 tagged with <i>...</i> in the label attribute of the response
+            for key, value in enumerate(self.results['results']):
+                translation = re.search(r'.*(<i>[\s\S]*?<\/i>).*', value['attrs']['label']) or False
+                if translation:
+                    self.results['results'][key]['attrs']['label'] = value['attrs']['label'].replace(translation.group(1), '<i>%s</i>' % str(self.request.translate(translation.group(1)).encode('utf-8')))
         return self.results
 
     def _fuzzy_search(self, searchTextFinal):
