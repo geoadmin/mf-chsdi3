@@ -1,0 +1,410 @@
+pdfConfig: !pdfConfig
+  compressed: false
+  author: "Jeff Konnen"
+  subject: "map.geoportail.lu Print"
+  creator: "Mapfish Print"
+
+throwErrorOnExtraParameters: true
+
+templates:
+  Demo: !template
+    reportTemplate: simpleReport.jrxml
+    attributes:
+      name: !string {}
+      map: !map
+        maxDpi: 400
+        width: 780
+        height: 330
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: map}
+
+
+#===========================================================================
+  lessSimpleReport: !template
+  #===========================================================================
+    reportTemplate: lessSimpleReport.jrxml
+    attributes:
+      name: !string {}
+      map: !map
+        maxDpi: 400
+        width: 780
+        height: 330
+      scalebar: !scalebar
+        width: 240
+        height: 40
+        default:
+          backgroundColor: "rgba(214, 214, 214, 200)"
+          align: "right"
+      northArrowDef: !northArrow
+        size: 50
+        default:
+          graphic: "file://ressources/NorthArrow_10.svg"
+          backgroundColor: "rgba(214, 214, 214, 200)"
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !createNorthArrow
+        inputMapper: {map: map, northArrowDef: northArrow}
+  A4 portrait: !template
+    pdfConfig: !pdfConfig
+      title: "A4 Portrait by geoportail.lu"
+      keywords: ["map"]
+    reportTemplate: a4_portrait.jrxml
+    attributes:
+      name: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {}
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 470
+        height: 650
+        zoomLevels: !zoomLevels
+          scales: [500000, 100000, 50000, 25000, 10000, 5000, 2500, 500, 250, 100]
+      northArrowDef: !northArrow
+        size: 50
+      legend: !legend {}
+      printLegend: !integer {}
+      scalebar: !scalebar
+        width: 150
+        height: 30
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createNorthArrow
+        inputMapper: {map: map, northArrowDef: northArrow}
+    - !createScalebar {}
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+  A4 landscape: !template
+    pdfConfig: !pdfConfig
+      title: "A4 Landscape by geoportail.lu"
+      keywords: ["map"]
+    reportTemplate: a4_landscape.jrxml
+    attributes:
+      name: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {}
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 715
+        height: 395
+        zoomLevels: !zoomLevels
+          scales: [500000, 100000, 50000, 25000, 10000, 5000, 2500, 500, 250, 100]
+      legend: !legend {}
+      scalebar: !scalebar
+        width: 150
+        height: 30
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+  A3 portrait: !template
+    pdfConfig: !pdfConfig
+      title: "A3 Portrait by geoportail.lu"
+      keywords: ["map"]
+    reportTemplate: a3_portrait.jrxml
+    attributes:
+      name: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {}
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 715
+        height: 975
+        zoomLevels: !zoomLevels
+          scales: [500000, 100000, 50000, 25000, 10000, 5000, 2500, 500, 250, 100]
+      legend: !legend {}
+      scalebar: !scalebar
+        width: 230
+        height: 40
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+  A3 landscape: !template
+    pdfConfig: !pdfConfig
+      title: "A3 Landscape by geoportail.lu"
+      keywords: ["map"]
+    reportTemplate: a3_landscape.jrxml
+    attributes:
+      name: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {}
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 1064
+        height: 640
+        zoomLevels: !zoomLevels
+          scales: [500000, 100000, 50000, 25000, 10000, 5000, 2500, 500, 250, 100]
+      legend: !legend {}
+      scalebar: !scalebar
+        width: 230
+        height: 40
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+  A2 portrait: !template
+    pdfConfig: !pdfConfig
+      title: "A2 Portrait by geoportail.lu"
+      keywords: ["map"]
+    reportTemplate: a2_portrait.jrxml
+    attributes:
+      name: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {}
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 1064
+        height: 1475
+        zoomLevels: !zoomLevels
+          scales: [500000, 100000, 50000, 25000, 10000, 5000, 2500, 500, 250, 100]
+      legend: !legend {}
+      scalebar: !scalebar
+        width: 230
+        height: 40
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+  A2 landscape: !template
+    pdfConfig: !pdfConfig
+      title: "A2 Landscape by geoportail.lu"
+      keywords: ["map"]
+    reportTemplate: a2_landscape.jrxml
+    attributes:
+      name: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {}
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 1558
+        height: 985
+        zoomLevels: !zoomLevels
+          scales: [500000, 100000, 50000, 25000, 10000, 5000, 2500, 500, 250, 100]
+      legend: !legend {}
+      scalebar: !scalebar
+        width: 230
+        height: 40
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+  A1 portrait: !template
+    pdfConfig: !pdfConfig
+      title: "A1 Portrait by geoportail.lu"
+      keywords: ["map"]
+    reportTemplate: a1_portrait.jrxml
+    attributes:
+      name: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {}
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 1558
+        height: 2175
+        zoomLevels: !zoomLevels
+          scales: [500000, 100000, 50000, 25000, 10000, 5000, 2500, 500, 250, 100]
+      legend: !legend {}
+      scalebar: !scalebar
+        width: 230
+        height: 40
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+  A1 landscape: !template
+    pdfConfig: !pdfConfig
+      title: "A1 Landscape by geoportail.lu"
+      keywords: ["map"]
+    reportTemplate: a1_landscape.jrxml
+    attributes:
+      name: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {}
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 2255
+        height: 1482
+        zoomLevels: !zoomLevels
+          scales: [500000, 100000, 50000, 25000, 10000, 5000, 2500, 500, 250, 100]
+      legend: !legend {}
+      scalebar: !scalebar
+        width: 230
+        height: 40
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+  A0 portrait: !template
+    pdfConfig: !pdfConfig
+      title: "A0 Portrait by geoportail.lu"
+      keywords: ["map"]
+    reportTemplate: a0_portrait.jrxml
+    attributes:
+      name: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {}
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 2254
+        height: 3155
+        zoomLevels: !zoomLevels
+          scales: [500000, 100000, 50000, 25000, 10000, 5000, 2500, 500, 250, 100]
+      legend: !legend {}
+      scalebar: !scalebar
+        width: 230
+        height: 40
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+  A0 landscape: !template
+    pdfConfig: !pdfConfig
+      title: "A0 Landscape by geoportail.lu"
+      keywords: ["map"]
+    reportTemplate: a0_landscape.jrxml
+    attributes:
+      name: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {}
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 3241
+        height: 2173
+        zoomLevels: !zoomLevels
+          scales: [500000, 100000, 50000, 25000, 10000, 5000, 2500, 500, 250, 100]
+      legend: !legend {}
+      scalebar: !scalebar
+        width: 230
+        height: 40
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper:
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows

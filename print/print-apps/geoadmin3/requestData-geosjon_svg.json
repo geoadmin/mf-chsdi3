@@ -1,0 +1,48 @@
+{
+    "attributes": {
+        "map": {
+            "center": [
+                600000,
+                200000
+            ],
+            "dpi": 300,
+            "layers": [{
+                    "baseURL": "http://wms.geo.admin.ch",
+                    "customParams": {
+                        "TRANSPARENT": "true"
+                    },
+                    "imageFormat": "image/png",
+                    "layers": ["ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"],
+                    "opacity": 0.25,
+                    "styles": ["default"],
+                    "type": "WMS"
+                }, {
+                    "geoJson": "http://wfs.geo.admin.ch/?SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=ch.swisstopo.fixpunkte-lage-lfp1&SRSNAME=EPSG:21781&outputFormat=geojson",
+
+                    "type": "geojson",
+                    "style": {
+                        "*": {"symbolizers": [{
+                            "externalGraphic": "https://raw.githubusercontent.com/qgis/QGIS/131ea80e449832f72b0e3f3e335444f2d9546cf4/images/svg/gpsicons/parachute.svg",
+                            "fillColor": "#FF0000",
+                            "fillOpacity": 0,
+                            "graphicName": "circle",
+                            "graphicOpacity": 0.8,
+                            "pointRadius": 16,
+                            "rotation": "30",
+                            "type": "point"
+                        }]},
+                        "version": "2"
+                    }
+                }
+            ],
+            "projection": "EPSG:21781",
+            "rotation": 0,
+            "scale": 500000
+        },
+        "name": "Test WMS + GeoJSON using SVG graphics",
+        "printLegend": 0,
+        "scale": 300000
+    },
+    "layout": "Demo",
+    "outputFormat": "pdf"
+}
