@@ -3092,6 +3092,18 @@ msgstr "Return flows"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
 msgstr "2km2 sub catchment areas"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2"
+msgstr "2km2 sub catchment areas"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
+msgstr "Name of river basin"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.gwlnr"
+msgstr "Number of the river"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.id"
+msgstr "Sub-catchment area number"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "40km2 sub catchment areas"
 
@@ -7363,6 +7375,117 @@ msgstr "Facility details"
 
 msgid "tt_swissprtr_ort"
 msgstr "Town"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_abflussvar"
+msgstr "Annual runoff variability"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_apr"
+msgstr "April"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_aug"
+msgstr "August"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_dez"
+msgstr "December"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_feb"
+msgstr "February"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jahr"
+msgstr "Mean annual runoff"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jan"
+msgstr "January"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jul"
+msgstr "July"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jun"
+msgstr "June"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_mai"
+msgstr "May"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_mar"
+msgstr "March"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_nov"
+msgstr "November"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_okt"
+msgstr "October"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_set"
+msgstr "September"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_regimetyp"
+msgstr "Flow regime type"
+
+msgid "tt_teileinzugsgebiete_2.download"
+msgstr "Shapefile and .csv"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil1"
+msgstr "GEWISS Watershed-MQ TooI"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil2"
+msgstr "Watershed and landuse"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil3"
+msgstr "Landuse CH [%]"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil4"
+msgstr "Watershed altitude [m]"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil5"
+msgstr "Simulated mean run-off (cf. criteria in the onlinehelp) [m3/s]"
+
+msgid "tt_teileinzugsgebiete_2.gebietsauslaesse_gemeindename"
+msgstr "Commune at basin outlet point"
+
+msgid "tt_teileinzugsgebiete_2.gewissnr"
+msgstr "GEWISS number"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_bestockt"
+msgstr "Forests and shrubs"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_gewaesser"
+msgstr "Lakes and rivers"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_gletscher_firn"
+msgstr "Glaciers and perpetual snow"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_landwirtschaft"
+msgstr "Agricultural areas"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_siedlung"
+msgstr "Artificial surfaces"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_unprod_sonst"
+msgstr "Open spaces with little or no vegetation"
+
+msgid "tt_teileinzugsgebiete_2.namen_gewaesser"
+msgstr "Name of the water body"
+
+msgid "tt_teileinzugsgebiete_2.noinfoforthisobject"
+msgstr "No modelled discharge values are provided for this total catchment area (very small / very large - see online help for criteria)"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_anteil_ch"
+msgstr "Percentage CH of the total watershed area"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_max_z"
+msgstr "Max altitude"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_mean_z"
+msgstr "Mean altitude"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_min_z"
+msgstr "Min altitude"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_gesamtflaeche"
+msgstr "Total watershed area [km2]"
+
+msgid "tt_teileinzugsgebiete_2.xy_gebietsauslass"
+msgstr "Basin outlet point"
 
 msgid "tt_wald_natur"
 msgstr "Forest and semi natural areas"
