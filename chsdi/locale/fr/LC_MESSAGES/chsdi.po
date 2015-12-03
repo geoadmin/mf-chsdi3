@@ -122,6 +122,57 @@ msgstr "Arrêt de bus"
 msgid "<i>Haltestelle Schiff</i>"
 msgstr "Arrêt de bateau"
 
+msgid "<i>Haltestellen Bus</i>"
+msgstr "Bus"
+
+msgid "<i>Haltestellen Bus_Tram</i>"
+msgstr "Bus, Tram"
+
+msgid "<i>Haltestellen Lift</i>"
+msgstr "Ascenseur"
+
+msgid "<i>Haltestellen Luftseilbahn</i>"
+msgstr "Téléphérique"
+
+msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
+msgstr "Téléphérique, chemin de fer"
+
+msgid "<i>Haltestellen Metro</i>"
+msgstr "Métro"
+
+msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
+msgstr "Point d’exploitation simple"
+
+msgid "<i>Haltestellen Schiff</i>"
+msgstr "Bateau"
+
+msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
+msgstr "Bateau, chemin de fer à crémaillère"
+
+msgid "<i>Haltestellen Standseilbahn</i>"
+msgstr "Funiculaire"
+
+msgid "<i>Haltestellen Standseilbahn_Bus</i>"
+msgstr "Funiculaire, bus"
+
+msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
+msgstr "Funiculaire, téléphérique"
+
+msgid "<i>Haltestellen Standseilbahn_Zug</i>"
+msgstr "Funiculaire, chemin de fer"
+
+msgid "<i>Haltestellen Tram</i>"
+msgstr "Tram"
+
+msgid "<i>Haltestellen Zahnradbahn</i>"
+msgstr "Chemin de fer à crémaillère"
+
+msgid "<i>Haltestellen Zug</i>"
+msgstr "Chemin de fer"
+
+msgid "<i>Haltestellen Zug_Tram</i>"
+msgstr "Chemin de ter, tram"
+
 msgid "<i>Hauptgipfel</i>"
 msgstr "Sommet principal"
 

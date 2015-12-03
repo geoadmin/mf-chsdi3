@@ -122,6 +122,57 @@ msgstr "Fermata del bus"
 msgid "<i>Haltestelle Schiff</i>"
 msgstr "Fermata del battello"
 
+msgid "<i>Haltestellen Bus</i>"
+msgstr "Autobus"
+
+msgid "<i>Haltestellen Bus_Tram</i>"
+msgstr "Autobus, tram"
+
+msgid "<i>Haltestellen Lift</i>"
+msgstr "Ascensore"
+
+msgid "<i>Haltestellen Luftseilbahn</i>"
+msgstr "Funivia"
+
+msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
+msgstr "Funivia, ferrovia"
+
+msgid "<i>Haltestellen Metro</i>"
+msgstr "Metropolitana"
+
+msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
+msgstr "Punto operativo semplice"
+
+msgid "<i>Haltestellen Schiff</i>"
+msgstr "Battello"
+
+msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
+msgstr "Battello e ferrovia a cremagliera"
+
+msgid "<i>Haltestellen Standseilbahn</i>"
+msgstr "Funicolare"
+
+msgid "<i>Haltestellen Standseilbahn_Bus</i>"
+msgstr "Funicolare, autobus"
+
+msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
+msgstr "Funicolare, funivia"
+
+msgid "<i>Haltestellen Standseilbahn_Zug</i>"
+msgstr "Funicolare, ferrovia"
+
+msgid "<i>Haltestellen Tram</i>"
+msgstr "Tram"
+
+msgid "<i>Haltestellen Zahnradbahn</i>"
+msgstr "Ferrovia a cremagliera"
+
+msgid "<i>Haltestellen Zug</i>"
+msgstr "Ferrovia"
+
+msgid "<i>Haltestellen Zug_Tram</i>"
+msgstr "Ferrovia, tram"
+
 msgid "<i>Hauptgipfel</i>"
 msgstr "Cima principale"
 

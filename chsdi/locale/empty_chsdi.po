@@ -7505,3 +7505,54 @@ msgstr ""
 
 msgid "<i>Zooareal</i>"
 msgstr ""
+
+msgid "<i>Haltestellen Bus</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Bus_Tram</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Lift</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Luftseilbahn</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Metro</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Schiff</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Standseilbahn_Bus</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Standseilbahn</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Standseilbahn_Zug</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Tram</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Zahnradbahn</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Zug</i>"
+msgstr ""
+
+msgid "<i>Haltestellen Zug_Tram</i>"
+msgstr ""

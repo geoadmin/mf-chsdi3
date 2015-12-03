@@ -122,6 +122,57 @@ msgstr "Bus stop"
 msgid "<i>Haltestelle Schiff</i>"
 msgstr "Ship stop"
 
+msgid "<i>Haltestellen Bus</i>"
+msgstr "Bus"
+
+msgid "<i>Haltestellen Bus_Tram</i>"
+msgstr "Bus, Tram"
+
+msgid "<i>Haltestellen Lift</i>"
+msgstr "Lift"
+
+msgid "<i>Haltestellen Luftseilbahn</i>"
+msgstr "Cablecar"
+
+msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
+msgstr "Cablecar, train"
+
+msgid "<i>Haltestellen Metro</i>"
+msgstr "Metro"
+
+msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
+msgstr "Simple operating point"
+
+msgid "<i>Haltestellen Schiff</i>"
+msgstr "Boat"
+
+msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
+msgstr "Boat, rack railway"
+
+msgid "<i>Haltestellen Standseilbahn</i>"
+msgstr "Funicular"
+
+msgid "<i>Haltestellen Standseilbahn_Bus</i>"
+msgstr "Funicular, bus"
+
+msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
+msgstr "Funicular, cableway"
+
+msgid "<i>Haltestellen Standseilbahn_Zug</i>"
+msgstr "Funicular, train"
+
+msgid "<i>Haltestellen Tram</i>"
+msgstr "Tram"
+
+msgid "<i>Haltestellen Zahnradbahn</i>"
+msgstr "Rack railway"
+
+msgid "<i>Haltestellen Zug</i>"
+msgstr "Train"
+
+msgid "<i>Haltestellen Zug_Tram</i>"
+msgstr "Train, tram"
+
 msgid "<i>Hauptgipfel</i>"
 msgstr "Main peak"
 

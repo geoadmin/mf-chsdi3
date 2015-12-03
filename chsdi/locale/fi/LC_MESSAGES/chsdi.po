@@ -122,6 +122,58 @@ msgstr "Fermada da bus "
 msgid "<i>Haltestelle Schiff</i>"
 msgstr "Fermada da nav"
 
+msgid "<i>Haltestellen Bus</i>"
+msgstr "Bus"
+
+msgid "<i>Haltestellen Bus_Tram</i>"
+msgstr "Bus, tram"
+
+msgid "<i>Haltestellen Lift</i>"
+msgstr "Lift"
+
+msgid "<i>Haltestellen Luftseilbahn</i>"
+msgstr "Luftseilbahn"
+
+msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
+msgstr "Luftseilbahn, Zug"
+
+msgid "<i>Haltestellen Metro</i>"
+msgstr "Metro"
+
+msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
+msgstr "Reiner Betriebspunkt"
+
+msgid "<i>Haltestellen Schiff</i>"
+msgstr "Schiff"
+
+msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
+msgstr "Schiff, Zahnradbahn"
+
+msgid "<i>Haltestellen Standseilbahn</i>"
+msgstr "Standseilbahn"
+
+msgid "<i>Haltestellen Standseilbahn_Bus</i>"
+msgstr "Standseilbahn, Bus"
+
+msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
+msgstr "Standseilbahn, Luftseilbahn"
+
+msgid "<i>Haltestellen Standseilbahn_Zug</i>"
+msgstr "Standseilbahn, Zug"
+
+msgid "<i>Haltestellen Tram</i>"
+msgstr "Tram"
+
+msgid "<i>Haltestellen Zahnradbahn</i>"
+msgstr "Zahnradbahn
+"
+
+msgid "<i>Haltestellen Zug</i>"
+msgstr "Zug"
+
+msgid "<i>Haltestellen Zug_Tram</i>"
+msgstr "Zug, Tram"
+
 msgid "<i>Hauptgipfel</i>"
 msgstr "Piz principal"
 
