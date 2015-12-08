@@ -7506,53 +7506,71 @@ msgstr ""
 msgid "<i>Zooareal</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Bus</i>"
+msgid "<i>haltestellen_aufzug</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Bus_Tram</i>"
+msgid "<i>haltestellen_bus</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Lift</i>"
+msgid "<i>haltestellen_bus_luftseilbahn</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Luftseilbahn</i>"
+msgid "<i>haltestellen_bus_schiff</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
+msgid "<i>haltestellen_bus_standseilbahn_tram</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Metro</i>"
+msgid "<i>haltestellen_bus_tram</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
+msgid "<i>haltestellen_bus_tram_zug</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Schiff</i>"
+msgid "<i>haltestellen_bus_zug</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
+msgid "<i>haltestellen_luftseilbahn</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Standseilbahn_Bus</i>"
+msgid "<i>haltestellen_luftseilbahn_zug</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Standseilbahn</i>"
+msgid "<i>haltestellen_metro</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
+msgid "<i>haltestellen_metro_zug</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Standseilbahn_Zug</i>"
+msgid "<i>haltestellen_schiff</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Tram</i>"
+msgid "<i>haltestellen_schiff_zahnradbahn</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Zahnradbahn</i>"
+msgid "<i>haltestellen_standseilbahn_bus</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Zug</i>"
+msgid "<i>haltestellen_standseilbahn</i>"
 msgstr ""
 
-msgid "<i>Haltestellen Zug_Tram</i>"
+msgid "<i>haltestellen_standseilbahn_luftseilbahn</i>"
+msgstr ""
+
+msgid "<i>haltestellen_standseilbahn_zug</i>"
+msgstr ""
+
+msgid "<i>haltestellen_tram_bus_zahnradbahn</i>"
+msgstr ""
+
+msgid "<i>haltestellen_tram</i>"
+msgstr ""
+
+msgid "<i>haltestellen_zahnradbahn</i>"
+msgstr ""
+
+msgid "<i>haltestellen_zug</i>"
+msgstr ""
+
+msgid "<i>haltestellen_zug_tram</i>"
 msgstr ""

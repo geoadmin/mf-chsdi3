@@ -122,57 +122,6 @@ msgstr "Bus stop"
 msgid "<i>Haltestelle Schiff</i>"
 msgstr "Ship stop"
 
-msgid "<i>Haltestellen Bus</i>"
-msgstr "Bus"
-
-msgid "<i>Haltestellen Bus_Tram</i>"
-msgstr "Bus, Tram"
-
-msgid "<i>Haltestellen Lift</i>"
-msgstr "Lift"
-
-msgid "<i>Haltestellen Luftseilbahn</i>"
-msgstr "Cablecar"
-
-msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
-msgstr "Cablecar, train"
-
-msgid "<i>Haltestellen Metro</i>"
-msgstr "Metro"
-
-msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
-msgstr "Simple operating point"
-
-msgid "<i>Haltestellen Schiff</i>"
-msgstr "Boat"
-
-msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
-msgstr "Boat, rack railway"
-
-msgid "<i>Haltestellen Standseilbahn</i>"
-msgstr "Funicular"
-
-msgid "<i>Haltestellen Standseilbahn_Bus</i>"
-msgstr "Funicular, bus"
-
-msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
-msgstr "Funicular, cableway"
-
-msgid "<i>Haltestellen Standseilbahn_Zug</i>"
-msgstr "Funicular, train"
-
-msgid "<i>Haltestellen Tram</i>"
-msgstr "Tram"
-
-msgid "<i>Haltestellen Zahnradbahn</i>"
-msgstr "Rack railway"
-
-msgid "<i>Haltestellen Zug</i>"
-msgstr "Train"
-
-msgid "<i>Haltestellen Zug_Tram</i>"
-msgstr "Train, tram"
-
 msgid "<i>Hauptgipfel</i>"
 msgstr "Main peak"
 
@@ -364,6 +313,75 @@ msgstr "Costume office restricted"
 
 msgid "<i>Zooareal</i>"
 msgstr "Zoo"
+
+msgid "<i>haltestellen_aufzug</i>"
+msgstr "Lift"
+
+msgid "<i>haltestellen_bus</i>"
+msgstr "Bus"
+
+msgid "<i>haltestellen_bus_luftseilbahn</i>"
+msgstr "Bus, cablecar"
+
+msgid "<i>haltestellen_bus_schiff</i>"
+msgstr "Bus, boat"
+
+msgid "<i>haltestellen_bus_standseilbahn_tram</i>"
+msgstr "Bus, funicular, tram"
+
+msgid "<i>haltestellen_bus_tram</i>"
+msgstr "Bus, tram"
+
+msgid "<i>haltestellen_bus_tram_zug</i>"
+msgstr "Bus, tram, train"
+
+msgid "<i>haltestellen_bus_zug</i>"
+msgstr "Bus, train"
+
+msgid "<i>haltestellen_luftseilbahn</i>"
+msgstr "Cablecar"
+
+msgid "<i>haltestellen_luftseilbahn_zug</i>"
+msgstr "Cablecar, train"
+
+msgid "<i>haltestellen_metro</i>"
+msgstr "Metro"
+
+msgid "<i>haltestellen_metro_zug</i>"
+msgstr "Metro, train"
+
+msgid "<i>haltestellen_schiff</i>"
+msgstr "Boat"
+
+msgid "<i>haltestellen_schiff_zahnradbahn</i>"
+msgstr "Boat, rack railway"
+
+msgid "<i>haltestellen_standseilbahn</i>"
+msgstr "Funicular"
+
+msgid "<i>haltestellen_standseilbahn_bus</i>"
+msgstr "Funicular, bus"
+
+msgid "<i>haltestellen_standseilbahn_luftseilbahn</i>"
+msgstr "Funicular, cableway"
+
+msgid "<i>haltestellen_standseilbahn_zug</i>"
+msgstr "Funicular, train"
+
+msgid "<i>haltestellen_tram</i>"
+msgstr "Tram"
+
+msgid "<i>haltestellen_tram_bus_zahnradbahn</i>"
+msgstr "Tram, bus"
+
+msgid "<i>haltestellen_zahnradbahn</i>"
+msgstr "Rack railway"
+
+msgid "<i>haltestellen_zug</i>"
+msgstr "Train"
+
+msgid "<i>haltestellen_zug_tram</i>"
+msgstr "Train, tram"
 
 msgid "ABS_landesschwerenetz_type"
 msgstr "absolute station"

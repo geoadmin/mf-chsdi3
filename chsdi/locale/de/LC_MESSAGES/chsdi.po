@@ -122,57 +122,6 @@ msgstr "Haltestelle Bus"
 msgid "<i>Haltestelle Schiff</i>"
 msgstr "Haltestelle Schiff"
 
-msgid "<i>Haltestellen Bus</i>"
-msgstr "Bus"
-
-msgid "<i>Haltestellen Bus_Tram</i>"
-msgstr "Bus, Tram"
-
-msgid "<i>Haltestellen Lift</i>"
-msgstr "Lift"
-
-msgid "<i>Haltestellen Luftseilbahn</i>"
-msgstr "Luftseilbahn"
-
-msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
-msgstr "Luftseilbahn, Zug"
-
-msgid "<i>Haltestellen Metro</i>"
-msgstr "Metro"
-
-msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
-msgstr "Reiner Betriebspunkt"
-
-msgid "<i>Haltestellen Schiff</i>"
-msgstr "Schiff"
-
-msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
-msgstr "Schiff, Zahnradbahn"
-
-msgid "<i>Haltestellen Standseilbahn</i>"
-msgstr "Standseilbahn"
-
-msgid "<i>Haltestellen Standseilbahn_Bus</i>"
-msgstr "Standseilbahn, Bus"
-
-msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
-msgstr "Standseilbahn, Luftseilbahn"
-
-msgid "<i>Haltestellen Standseilbahn_Zug</i>"
-msgstr "Standseilbahn, Zug"
-
-msgid "<i>Haltestellen Tram</i>"
-msgstr "Tram"
-
-msgid "<i>Haltestellen Zahnradbahn</i>"
-msgstr "Zahnradbahn"
-
-msgid "<i>Haltestellen Zug</i>"
-msgstr "Zug"
-
-msgid "<i>Haltestellen Zug_Tram</i>"
-msgstr "Zug, Tram"
-
 msgid "<i>Hauptgipfel</i>"
 msgstr "Hauptgipfel"
 
@@ -364,6 +313,75 @@ msgstr "Zollamt eingeschraenkt"
 
 msgid "<i>Zooareal</i>"
 msgstr "Zooareal"
+
+msgid "<i>haltestellen_aufzug</i>"
+msgstr "Lift"
+
+msgid "<i>haltestellen_bus</i>"
+msgstr "Bus"
+
+msgid "<i>haltestellen_bus_luftseilbahn</i>"
+msgstr "Bus, Luftseilbahn"
+
+msgid "<i>haltestellen_bus_schiff</i>"
+msgstr "Bus, Schiff"
+
+msgid "<i>haltestellen_bus_standseilbahn_tram</i>"
+msgstr "Bus, Standseilbahn, Tram"
+
+msgid "<i>haltestellen_bus_tram</i>"
+msgstr "Bus, Tram"
+
+msgid "<i>haltestellen_bus_tram_zug</i>"
+msgstr "Bus, Tram, Zug"
+
+msgid "<i>haltestellen_bus_zug</i>"
+msgstr "Bus, Zug"
+
+msgid "<i>haltestellen_luftseilbahn</i>"
+msgstr "Luftseilbahn"
+
+msgid "<i>haltestellen_luftseilbahn_zug</i>"
+msgstr "Luftseilbahn, Zug"
+
+msgid "<i>haltestellen_metro</i>"
+msgstr "Metro"
+
+msgid "<i>haltestellen_metro_zug</i>"
+msgstr "Metro, Zug"
+
+msgid "<i>haltestellen_schiff</i>"
+msgstr "Schiff"
+
+msgid "<i>haltestellen_schiff_zahnradbahn</i>"
+msgstr "Schiff, Zahnradbahn"
+
+msgid "<i>haltestellen_standseilbahn</i>"
+msgstr "Standseilbahn"
+
+msgid "<i>haltestellen_standseilbahn_bus</i>"
+msgstr "Standseilbahn, Bus"
+
+msgid "<i>haltestellen_standseilbahn_luftseilbahn</i>"
+msgstr "Standseilbahn, Luftseilbahn"
+
+msgid "<i>haltestellen_standseilbahn_zug</i>"
+msgstr "Standseilbahn, Zug"
+
+msgid "<i>haltestellen_tram</i>"
+msgstr "Tram"
+
+msgid "<i>haltestellen_tram_bus_zahnradbahn</i>"
+msgstr "Tram, Bus"
+
+msgid "<i>haltestellen_zahnradbahn</i>"
+msgstr "Zahnradbahn"
+
+msgid "<i>haltestellen_zug</i>"
+msgstr "Zug"
+
+msgid "<i>haltestellen_zug_tram</i>"
+msgstr "Zug, Tram"
 
 msgid "ABS_landesschwerenetz_type"
 msgstr "Absolutstation"
