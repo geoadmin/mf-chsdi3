@@ -122,57 +122,6 @@ msgstr "Fermata del bus"
 msgid "<i>Haltestelle Schiff</i>"
 msgstr "Fermata del battello"
 
-msgid "<i>Haltestellen Bus</i>"
-msgstr "Autobus"
-
-msgid "<i>Haltestellen Bus_Tram</i>"
-msgstr "Autobus, tram"
-
-msgid "<i>Haltestellen Lift</i>"
-msgstr "Ascensore"
-
-msgid "<i>Haltestellen Luftseilbahn</i>"
-msgstr "Funivia"
-
-msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
-msgstr "Funivia, ferrovia"
-
-msgid "<i>Haltestellen Metro</i>"
-msgstr "Metropolitana"
-
-msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
-msgstr "Punto operativo semplice"
-
-msgid "<i>Haltestellen Schiff</i>"
-msgstr "Battello"
-
-msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
-msgstr "Battello e ferrovia a cremagliera"
-
-msgid "<i>Haltestellen Standseilbahn</i>"
-msgstr "Funicolare"
-
-msgid "<i>Haltestellen Standseilbahn_Bus</i>"
-msgstr "Funicolare, autobus"
-
-msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
-msgstr "Funicolare, funivia"
-
-msgid "<i>Haltestellen Standseilbahn_Zug</i>"
-msgstr "Funicolare, ferrovia"
-
-msgid "<i>Haltestellen Tram</i>"
-msgstr "Tram"
-
-msgid "<i>Haltestellen Zahnradbahn</i>"
-msgstr "Ferrovia a cremagliera"
-
-msgid "<i>Haltestellen Zug</i>"
-msgstr "Ferrovia"
-
-msgid "<i>Haltestellen Zug_Tram</i>"
-msgstr "Ferrovia, tram"
-
 msgid "<i>Hauptgipfel</i>"
 msgstr "Cima principale"
 
@@ -364,6 +313,75 @@ msgstr "Ufficio doganale limitato"
 
 msgid "<i>Zooareal</i>"
 msgstr "Zoo"
+
+msgid "<i>haltestellen_aufzug</i>"
+msgstr "Ascenseur"
+
+msgid "<i>haltestellen_bus</i>"
+msgstr "Autobus"
+
+msgid "<i>haltestellen_bus_luftseilbahn</i>"
+msgstr "Autobus, funivia"
+
+msgid "<i>haltestellen_bus_schiff</i>"
+msgstr "Autobus, fattello"
+
+msgid "<i>haltestellen_bus_standseilbahn_tram</i>"
+msgstr "Autobus, funicolare, tram"
+
+msgid "<i>haltestellen_bus_tram</i>"
+msgstr "Autobus, tram"
+
+msgid "<i>haltestellen_bus_tram_zug</i>"
+msgstr "Autobus, tram, ferrovia"
+
+msgid "<i>haltestellen_bus_zug</i>"
+msgstr "Autobus, ferrovia"
+
+msgid "<i>haltestellen_luftseilbahn</i>"
+msgstr "Funivia"
+
+msgid "<i>haltestellen_luftseilbahn_zug</i>"
+msgstr "Funivia, ferrovia"
+
+msgid "<i>haltestellen_metro</i>"
+msgstr "Metropolitana"
+
+msgid "<i>haltestellen_metro_zug</i>"
+msgstr "Metropolitana, ferrovia"
+
+msgid "<i>haltestellen_schiff</i>"
+msgstr "Battello"
+
+msgid "<i>haltestellen_schiff_zahnradbahn</i>"
+msgstr "Battello e ferrovia a cremagliera"
+
+msgid "<i>haltestellen_standseilbahn</i>"
+msgstr "Funicolare"
+
+msgid "<i>haltestellen_standseilbahn_bus</i>"
+msgstr "Funicolare, autobus"
+
+msgid "<i>haltestellen_standseilbahn_luftseilbahn</i>"
+msgstr "Funicolare, funivia"
+
+msgid "<i>haltestellen_standseilbahn_zug</i>"
+msgstr "Funicolare, ferrovia"
+
+msgid "<i>haltestellen_tram</i>"
+msgstr "Tram"
+
+msgid "<i>haltestellen_tram_bus_zahnradbahn</i>"
+msgstr "Tram, autobus"
+
+msgid "<i>haltestellen_zahnradbahn</i>"
+msgstr "Ferrovia a cremagliera"
+
+msgid "<i>haltestellen_zug</i>"
+msgstr "Ferrovia"
+
+msgid "<i>haltestellen_zug_tram</i>"
+msgstr "Ferrovia, tram"
 
 msgid "ABS_landesschwerenetz_type"
 msgstr "station absolue"
