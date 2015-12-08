@@ -13,6 +13,10 @@ class TestSearchServiceView(TestsBase):
         acceptedTypes = ['locations', 'layers', 'featuresearch', 'locations_preview']
         resp.mustcontain("The type parameter you provided is not valid. Possible values are %s" % (', '.join(acceptedTypes)))
 
+    def test_search_none_value(self):
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'type': 'layers'}, status=400)
+        resp.mustcontain("Please provide a search text")
+
     def test_search_layers(self):
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'wand', 'type': 'layers'}, status=200)
         self.assertTrue(resp.content_type == 'application/json')
@@ -218,6 +222,10 @@ class TestSearchServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': '19810590048970', 'features': 'ch.swisstopo.lubis-luftbilder_farbe', 'type': 'featuresearch', 'bbox': '542199,206799,542201,206801', 'timeStamps': ''}, status=200)
         self.assertTrue(resp.content_type == 'application/json')
         self.assertTrue(resp.json['results'][0]['attrs']['origin'] == 'feature')
+
+    def test_features_none_first_timestamp(self):
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': '19810590048970', 'features': 'ch.swisstopo.lubis-luftbilder_farbe', 'type': 'featuresearch', 'bbox': '542199,206799,542201,206801', 'timeStamps': ',1989'}, status=200)
+        self.assertTrue(resp.content_type == 'application/json')
 
     def test_features_multiple_timestamps(self):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': '198', 'features': 'ch.swisstopo.lubis-luftbilder_farbe,ch.swisstopo.lubis-luftbilder_schwarzweiss', 'type': 'featuresearch', 'bbox': '542199,206799,542201,206801', 'timeStamps': '1986,1989', 'timeEnabled': 'true,true'}, status=200)
