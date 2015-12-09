@@ -4386,7 +4386,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Frontiere nazionali GG25"
 
 msgid "ch.swisstopo.hangneigung-ueber_30"
-msgstr "Pendenze maggiori di 30°"
+msgstr "Classi pendenza maggiori 30°"
 
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Carta Dufour Prima edizione"
@@ -7438,7 +7438,7 @@ msgid "tt_teileinzugsgebiete_2.ebene2km_teil4"
 msgstr "Altitudine del bacino imbrifero [m]"
 
 msgid "tt_teileinzugsgebiete_2.ebene2km_teil5"
-msgstr "Deflussi medi simulati ( vd. criteri secnodo Online-Help) [m3/s]"
+msgstr "Deflussi medi simulati ( vd. criteri secondo <a href="https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_it.pdf">aiuto online</a>) [m3/s]"
 
 msgid "tt_teileinzugsgebiete_2.gebietsauslaesse_gemeindename"
 msgstr "Comune della sezione di chiusura"
@@ -7468,7 +7468,7 @@ msgid "tt_teileinzugsgebiete_2.namen_gewaesser"
 msgstr "Nome del corso d'acqua"
 
 msgid "tt_teileinzugsgebiete_2.noinfoforthisobject"
-msgstr "Per questo bacino imbrifero complessivo (molto piccolo / molto grande) non sono disponibili valori di deflusso simulati (cfr. criteri nell’aiuto online)."
+msgstr "Per questo bacino imbrifero complessivo (molto piccolo / molto grande) non sono disponibili valori di deflusso simulati (cfr. criteri nell’<a href="https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_it.pdf">aiuto online</a>)."
 
 msgid "tt_teileinzugsgebiete_2.physiogeographie_anteil_ch"
 msgstr "Percentuale CH della superficie del bacino imbrifero totale"

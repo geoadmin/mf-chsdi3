@@ -105,10 +105,10 @@
       <tr><th class="cell-left" style="font-weight: normal">${_('tt_teileinzugsgebiete_2.physiogeographie_ch_mean_z')}</th>         <td>${int(c['attributes']['ext_physiogeographie_ch_mean_z']) or '-'}</td></tr>
     % endif
       <tr><th class="cell-left" colspan="2"></th></tr>
-      <tr><th class="cell-left" colspan="2">${_('tt_teileinzugsgebiete_2.ebene2km_teil5')}</th></tr>
+      <tr><th class="cell-left" colspan="2">${_('tt_teileinzugsgebiete_2.ebene2km_teil5')|n}</th></tr>
 
     % if c['attributes']['ext_ezg_datenausgabe'] == 0:
-      <tr><th class="cell-left" colspan="2" style="font-weight: normal">${_('tt_teileinzugsgebiete_2.noinfoforthisobject')}</th></tr>
+      <tr><th class="cell-left" colspan="2" style="font-weight: normal">${_('tt_teileinzugsgebiete_2.noinfoforthisobject')|n}</th></tr>
     % elif c['attributes']['ext_ezg_datenausgabe'] == 2:
       <tr><th class="cell-left" style="font-weight: normal">${_('tt_teileinzugsgebiete_2.abfluesse_mqn_jahr')}</th>                 <td>${round(c['attributes']['ext_abfluesse_mqn_jahr'],2) or '-'}</td></tr>
       <tr><th class="cell-left" colspan="2" style="font-weight: normal">${_('tt_teileinzugsgebiete_2.noinfoforthisobject')}</th></tr>

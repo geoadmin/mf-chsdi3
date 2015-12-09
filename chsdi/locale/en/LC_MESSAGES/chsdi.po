@@ -4386,7 +4386,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "National boundaries GG25"
 
 msgid "ch.swisstopo.hangneigung-ueber_30"
-msgstr "Slopes over 30°"
+msgstr "Slope classes over 30°"
 
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Dufour Map First edition"
@@ -7437,7 +7437,7 @@ msgid "tt_teileinzugsgebiete_2.ebene2km_teil4"
 msgstr "Watershed altitude [m]"
 
 msgid "tt_teileinzugsgebiete_2.ebene2km_teil5"
-msgstr "Simulated mean run-off (cf. criteria in the onlinehelp) [m3/s]"
+msgstr "Simulated mean run-off (cf. criteria in the <a href="https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_de.pdf">onlinehelp</a>) [m3/s]"
 
 msgid "tt_teileinzugsgebiete_2.gebietsauslaesse_gemeindename"
 msgstr "Commune at basin outlet point"
@@ -7467,7 +7467,7 @@ msgid "tt_teileinzugsgebiete_2.namen_gewaesser"
 msgstr "Name of the water body"
 
 msgid "tt_teileinzugsgebiete_2.noinfoforthisobject"
-msgstr "No modelled discharge values are provided for this total catchment area (very small / very large - see online help for criteria)"
+msgstr "No modelled discharge values are provided for this total catchment area (very small / very large - see <a href="https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_de.pdf">online help</a> for criteria)"
 
 msgid "tt_teileinzugsgebiete_2.physiogeographie_anteil_ch"
 msgstr "Percentage CH of the total watershed area"
