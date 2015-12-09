@@ -21,6 +21,11 @@ MAPPROXY_URLS = [
     'wmts12.geo.admin.ch',
     'wmts13.geo.admin.ch',
     'wmts14.geo.admin.ch',
+    'wmts20.geo.admin.ch',
+    'wmts21.geo.admin.ch',
+    'wmts22.geo.admin.ch',
+    'wmts23.geo.admin.ch',
+    'wmts24.geo.admin.ch',
 ]
 
 
@@ -87,7 +92,7 @@ class TileChecker(MapProxyTestsBase):
 
         if epsg in tiles.keys():
             capabilities_name = "WMTSCapabilities.EPSG.%d.xml" % epsg if epsg != 21781 else "WMTSCapabilities.xml"
-            resp = requests.get(self.mapproxy_url + '/1.0.0/%s' % capabilities_name, params={'_id': self.hash()},
+            resp = requests.get(self.host_url + '/1.0.0/%s' % capabilities_name, params={'_id': self.hash()},
                                 headers=HEADER_RESULTS[0]['Header'])
 
             root = etree.fromstring(resp.content)
