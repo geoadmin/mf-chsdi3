@@ -32,7 +32,7 @@ class TestWmtsGetTileAuth(TestsBase):
 
     def test_bad_referer_get_capabilties(self):
         # Get Cap is open for all
-        self.check_status_code(self.mp.mapproxy_url + '/1.0.0/WMTSCapabilities.xml', self.mp.BAD_REFERER, 200)
+        self.check_status_code(self.mp.host_url + '/1.0.0/WMTSCapabilities.xml', self.mp.BAD_REFERER, 200)
 
     def test_bad_referer_get_tile(self):
         for path in self.paths:
@@ -40,14 +40,14 @@ class TestWmtsGetTileAuth(TestsBase):
 
     def test_no_referer_get_capabilties(self):
         # Get Cap is open for all
-        self.check_status_code(self.mp.mapproxy_url + '/1.0.0/WMTSCapabilities.xml', None, 200)
+        self.check_status_code(self.mp.host_url + '/1.0.0/WMTSCapabilities.xml', None, 200)
 
     def test_no_referer_get_tile(self):
         for path in self.paths:
             self.check_status_code(self.mp.mapproxy_url + path, None, 403)
 
     def test_good_referer_get_capabilties(self):
-        self.check_status_code(self.mp.mapproxy_url + '/1.0.0/WMTSCapabilities.xml', self.mp.GOOD_REFERER, 200)
+        self.check_status_code(self.mp.host_url + '/1.0.0/WMTSCapabilities.xml', self.mp.GOOD_REFERER, 200)
 
     def test_good_referer_get_tile(self):
         for path in self.paths:

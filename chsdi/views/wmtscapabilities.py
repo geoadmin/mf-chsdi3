@@ -65,15 +65,11 @@ class WMTSCapabilites(MapNameValidation):
             'X-Forwarded-Proto',
             self.request.scheme)
         staging = self.request.registry.settings['geodata_staging']
-        host = self.request.headers.get(
-            'X-Forwarded-Host', self.request.host)
         mapproxyHost = self.request.registry.settings['mapproxyhost']
-        apache_base_path = self.request.registry.settings['apache_base_path']
-        apache_entry_point = '/' if (apache_base_path == 'main' or 'localhost' in host) else '/' + apache_base_path
 
         # Default ressource
         s3_url = sanitize_url("%s://wmts.geo.admin.ch/" % scheme)
-        mapproxy_url = sanitize_url("%s://%s%s/" % (scheme, mapproxyHost, apache_entry_point))
+        mapproxy_url = sanitize_url("%s://%s/" % (scheme, mapproxyHost))
         onlineressources = {'mapproxy': mapproxy_url, 's3': s3_url}
 
         layers_query = self.request.db.query(self.models['GetCap'])

@@ -13,7 +13,8 @@ class MapProxyTestsBase(object):
         try:
             os.environ["http_proxy"] = registry.settings['http_proxy']
             apache_entry_path = registry.settings['apache_entry_path']
-            self.mapproxy_url = "http://" + registry.settings['mapproxyhost'] + apache_entry_path
+            self.mapproxy_url = "http://" + registry.settings['mapproxyhost'] + '/'
+            self.host_url = "http://" + registry.settings['host'] + apache_entry_path
         except KeyError as e:
             raise e
         self.BAD_REFERER = 'http://foo.ch'
