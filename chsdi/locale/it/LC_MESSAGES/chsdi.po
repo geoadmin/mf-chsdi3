@@ -4598,6 +4598,9 @@ msgstr "swisstopo, sgtk"
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
 msgstr "Carta scialpinistica 1:50 000"
 
+msgid "ch.swisstopo.skitourenkarte-50.metadata.shop"
+msgstr "Divisione carta scialpinistica"
+
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"
 
@@ -4987,6 +4990,9 @@ msgstr "Data"
 
 msgid "date_time"
 msgstr "Data/Ora"
+
+msgid "datenstand"
+msgstr "Stato d'attualità"
 
 msgid "datumactu"
 msgstr "Date de la dernière mise à jour"
@@ -5419,6 +5425,9 @@ msgstr "Code cantonal"
 
 msgid "kartenbezug"
 msgstr "Distribuzione delle carte"
+
+msgid "kartenblatt"
+msgstr "Feuille"
 
 msgid "kartenblattname"
 msgstr "Nom de feuille"
@@ -6247,6 +6256,9 @@ msgstr "NPA"
 
 msgid "plz_fr_de"
 msgstr "NPA"
+
+msgid "preis"
+msgstr "Prezzo"
 
 msgid "print"
 msgstr "Stampa"

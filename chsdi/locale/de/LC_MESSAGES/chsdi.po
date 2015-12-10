@@ -4598,6 +4598,9 @@ msgstr "swisstopo, sgtk"
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
 msgstr "Schneeschuh-/Skitouren 1:50 000"
 
+msgid "ch.swisstopo.skitourenkarte-50.metadata.shop"
+msgstr "Einteilung Skitourenkarte"
+
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Reliefschattierung"
 
@@ -4987,6 +4990,9 @@ msgstr "Datum"
 
 msgid "date_time"
 msgstr "Datum/Zeit"
+
+msgid "datenstand"
+msgstr "Datenstand"
 
 msgid "datumactu"
 msgstr "Datum der letzten Aktualisierung"
@@ -5419,6 +5425,9 @@ msgstr "Kantonaler Code"
 
 msgid "kartenbezug"
 msgstr "Kartenbezug"
+
+msgid "kartenblatt"
+msgstr "Kartenblatt"
 
 msgid "kartenblattname"
 msgstr "Kartenblattname"
@@ -6247,6 +6256,9 @@ msgstr "PLZ"
 
 msgid "plz_fr_de"
 msgstr "PLZ"
+
+msgid "preis"
+msgstr "Preis"
 
 msgid "print"
 msgstr "Drucken"

@@ -172,19 +172,30 @@ class GeolSpezialKartenMetadata (Base, Vector):
 register('ch.swisstopo.geologie-spezialkarten_schweiz.metadata', GeolSpezialKartenMetadata)
 
 
-class SkitourenkarteMetadata (Base, Vector):
+class Skitourenkarte(Base, Vector):
     __tablename__ = 'view_gridstand_lkski'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __template__ = 'templates/htmlpopup/skitouren_metadata.mako'
-    __bodId__ = 'ch.swisstopo.skitourenkarte-50.metadata'
     __label__ = 'id'
     id = Column('lknr', Text, primary_key=True)
     name = Column('name', Text)
     legendecms2007 = Column('letzte_publikation', Text)
+    preis = Column('preis', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
+
+class SkitourenkarteMetadata (Skitourenkarte):
+    __template__ = 'templates/htmlpopup/skitouren_metadata.mako'
+    __bodId__ = 'ch.swisstopo.skitourenkarte-50.metadata'
+
 register('ch.swisstopo.skitourenkarte-50.metadata', SkitourenkarteMetadata)
+
+
+class SkitourenkarteMetadataTest (Skitourenkarte):
+    __template__ = 'templates/htmlpopup/skitouren_metadata_test.mako'
+    __bodId__ = 'ch.swisstopo.skitourenkarte-50.metadata.shop'
+
+register('ch.swisstopo.skitourenkarte-50.metadata.shop', SkitourenkarteMetadataTest)
 
 
 class SwissboundariesBezirk(Base, Vector):

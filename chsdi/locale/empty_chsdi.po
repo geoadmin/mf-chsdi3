@@ -2446,6 +2446,9 @@ msgstr ""
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
 msgstr ""
 
+msgid "ch.swisstopo.skitourenkarte-50.metadata.shop"
+msgstr ""
+
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr ""
 
@@ -3139,6 +3142,9 @@ msgstr ""
 msgid "Datenstand"
 msgstr ""
 
+msgid "datenstand"
+msgstr ""
+
 msgid "layer_geocat_text"
 msgstr ""
 
@@ -3565,6 +3571,9 @@ msgstr ""
 msgid  "atlassheetnumber"
 msgstr ""
 
+msgid "kartenblatt"
+msgstr ""
+
 msgid  "kartenblattname"
 msgstr ""
 
@@ -3585,6 +3594,9 @@ msgstr ""
 
 msgid  "Toposhop"
 msgstr  ""
+
+msgid "preis"
+msgstr ""
 
 msgid "Produkt"
 msgstr ""
