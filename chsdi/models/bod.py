@@ -103,10 +103,12 @@ class LayersConfig(Base):
                     config['label'] = translate(val)
                 elif k == 'attribution':
                     config[k] = translate(val)
-                elif k == 'matrixSet' and self.__dict__['srid'] != '4326':
-                    config['resolutions'] = self._getResolutionsFromMatrixSet(
-                        val
-                    )
+                elif k == 'matrixSet':
+                    if self.__dict__['srid'] != '4326':
+                        config['resolutions'] = \
+                            self._getResolutionsFromMatrixSet(
+                                val
+                            )
                 else:
                     config[k] = val
 
