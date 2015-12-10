@@ -16,6 +16,30 @@
   tr:last-child {
     display:none;
   }
+  .oev-info {
+    height:24px;
+    margin:0px;
+  }
+  
+  .col-label {
+    text-align: center;
+    width: 35px !important;
+  }
+  
+  .col-destination, .col-departures, .col-time-diff {
+    vertical-align: middle !important;
+  } 
+
+  .col-label p {
+    border: 1px solid #D8D8D8;
+    border-radius: 4px;
+    width: 30px;
+  }
+  
+  .col-label p, .col-destination p, .col-departures p, .col-time-diff p {
+    padding-top: 5px;
+    margin-bottom: 2px;
+  }
 </style>
 <script>
 
@@ -56,11 +80,11 @@ $(document).ready(function() {
           var then = result2[i].departureDate;
           var diff = moment(then,"DD/MM/YYYY HH:mm").diff(moment(now,"DD/MM/YYYY HH:mm"));
           var d = moment.duration(diff);
-          var s = Math.floor(d.asHours()) + moment.utc(diff).format(":mm");
-          numero += '<p style="height:24px; margin:0px;">' + result2[i].label + '</p>';
-          destination += '<p style="height:24px; margin:0px;">' + result2[i].destinationName + '</p>';
-          departures += '<p style="height:24px; margin:0px;">' + result2[i].time + '</p>';
-          timeDiff += '<p style="height:24px; margin:0px;"><b>' + s +'</b></p>';
+          var s = Math.floor(d.asMinutes()) + moment.utc(diff).format("[']", -1);
+          numero += '<p class="oev-info">' + result2[i].label + '</p>';
+          destination += '<p class="oev-info">' + result2[i].destinationName + '</p>';
+          departures += '<p class="oev-info">' + result2[i].time + '</p>';
+          timeDiff += '<p class="oev-info"><b>' + s +'</b></p>';
         }
       };
       numeroCol.html(numero);
@@ -94,16 +118,16 @@ $(document).ready(function() {
 
 </script>
     <br />
-    <p>${_('ch.bav.haltestellen-oev.next_departures')} <b>${c['attributes']['name'] or '-'}</b></p>
+    <p><b>${c['attributes']['name'] or '-'}</b>, ${_('ch.bav.haltestellen-oev.next_departures')}:</p>
     <select id="selectDestination${id}">
       <option value="all">${_('ch.bav.haltestellen-oev.all_departures')}</option>
     </select>
     <br />
     <tr>
-        <td id="numero${id}"></td>
-        <td id="destination${id}"></td>
-        <td id="departures${id}"></td>
-        <td id="timeDiff${id}"></td>
+        <td id="numero${id}" class="col-label"></td>
+        <td id="destination${id}" class="col-destination"></td>
+        <td id="departures${id}" class="col-departures"></td>
+        <td id="timeDiff${id}" class="col-time-diff"></td>
     </tr>
     <tr>
       <td></td>
@@ -132,16 +156,11 @@ $(document).ready(function() {
         protocol = request.scheme
         lang = request.lang
         topic = request.matchdict.get('map')
-
+        var_verkehrsmittel = '<i>haltestellen_' + c['attributes']['verkehrsmittel'] + '</i>'
+        verkehr = var_verkehrsmittel.lower()
         c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
     %>
 <table>
-  <tr>
-      <td class="cell-meta"></td>
-      <td class="cell-meta"><p><a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic, '&showTooltip=true'))}" target="new">
-        ${_('Link to object')}
-      </a></p></td>
-  </tr>
   <tr>
       <td class="cell-meta">${_('ch.bav.haltestellen-oev.id')}</td>
       <td class="cell-meta">${c['featureId'] or '-'}</td>
@@ -158,10 +177,15 @@ $(document).ready(function() {
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.betriebspunkttyp')}</td>
     <td class="cell-meta">${c['attributes']['betriebspunkttyp']}</td>
   </tr>
-  <tr>
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.verkehrsmittel')}</td>
-    <td class="cell-meta">${c['attributes']['verkehrsmittel']}</td>
-  </tr>  
+    <td class="cell-meta">${_(verkehr)}</td>
+  </tr>
+  <tr>
+      <td class="cell-meta"></td>
+      <td class="cell-meta"><p><a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic, '&showTooltip=true'))}" target="new">
+        ${_('Link to object')}
+      </a></p></td>
+  </tr> 
 </table>
 <br />
 <div>
