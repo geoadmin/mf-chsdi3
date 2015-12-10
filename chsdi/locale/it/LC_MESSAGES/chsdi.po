@@ -3998,6 +3998,9 @@ msgstr "Anomalia aeromagnetica, Argovia, 1500 m [nT]"
 msgid "ch.pronatura"
 msgstr "Pronatura"
 
+msgid "ch.pronatura.naturschutzgebiete"
+msgstr "Pro Natura: Riserve naturali"
+
 msgid "ch.pronatura.url"
 msgstr "http://www.pronatura.ch/attualita"
 
@@ -4392,7 +4395,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Frontiere nazionali GG25"
 
 msgid "ch.swisstopo.hangneigung-ueber_30"
-msgstr "Pendenze maggiori di 30°"
+msgstr "Classi pendenza maggiori 30°"
 
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Carta Dufour Prima edizione"

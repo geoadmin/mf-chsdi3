@@ -79,6 +79,21 @@ class PRONATURA(Base, Vector):
 register('ch.pronatura.waldreservate', PRONATURA)
 
 
+class PRONATURA_Naturschutzgebiete(Base, Vector):
+    __tablename__ = 'naturschutzgebiete'
+    __table_args__ = ({'schema': 'pronatura', 'autoload': False})
+    __template__ = 'templates/htmlpopup/pronatura_schutzge.mako'
+    __bodId__ = 'ch.pronatura.naturschutzgebiete'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    nummer = Column('nummer', Integer)
+    name = Column('name', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.pronatura.naturschutzgebiete', PRONATURA_Naturschutzgebiete)
+
+
 class Aeromagnetische_karte_1500(Base, Vector):
     __tablename__ = 'am_1500'
     __table_args__ = ({'schema': 'nagra', 'autoload': False})

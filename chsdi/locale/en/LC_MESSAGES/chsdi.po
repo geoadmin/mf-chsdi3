@@ -3998,6 +3998,9 @@ msgstr "Aeromagnetic anomalies Aargau, 1500 m [nT]"
 msgid "ch.pronatura"
 msgstr "Pronatura"
 
+msgid "ch.pronatura.naturschutzgebiete"
+msgstr "Pro Natura: Nature Preserves"
+
 msgid "ch.pronatura.url"
 msgstr "http://www.pronatura.ch/79"
 
@@ -4392,7 +4395,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "National boundaries GG25"
 
 msgid "ch.swisstopo.hangneigung-ueber_30"
-msgstr "Slopes over 30°"
+msgstr "Slope classes over 30°"
 
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Dufour Map First edition"
