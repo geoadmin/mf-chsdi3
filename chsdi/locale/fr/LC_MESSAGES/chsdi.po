@@ -3315,7 +3315,7 @@ msgid "ch.bav.haltestellen-oev.name"
 msgstr "Nom"
 
 msgid "ch.bav.haltestellen-oev.next_departures"
-msgstr "Prochains départ de"
+msgstr "prochains départ de"
 
 msgid "ch.bav.haltestellen-oev.nodata"
 msgstr "Pas de données"
@@ -4392,7 +4392,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Frontières nationales GG25"
 
 msgid "ch.swisstopo.hangneigung-ueber_30"
-msgstr "Pentes de plus de 30°"
+msgstr "Classes de pente plus de 30°"
 
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Carte Dufour Première édition"
@@ -4651,6 +4651,24 @@ msgstr "Carte swissTLM (grise)"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Chemins de randonnée pédestre"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe"
+msgstr "HTRANS RAN95-NF02"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.contour"
+msgstr "Différence RAN95 moins NF02 [cm]"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.name"
+msgstr "Nom du point"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.or_ln02_cm"
+msgstr "Différence RAN95 moins NF02 [cm]"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.x"
+msgstr "Coordonnée x"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.y"
+msgstr "Coordonnée y"
 
 msgid "ch.swisstopo.transformationsgenauigkeit"
 msgstr "MN95 Précision de transformation"
