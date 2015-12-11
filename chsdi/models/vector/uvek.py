@@ -607,7 +607,7 @@ class STAUANLAGENBUNDESAUFSICHT(Base, Vector):
     __template__ = 'templates/htmlpopup/stauanlagenbundesaufsicht.mako'
     __bodId__ = 'ch.bfe.stauanlagen-bundesaufsicht'
     __extended_info__ = True
-    __queryable_attributes__ = ['damname', 'damtype_de']
+    __queryable_attributes__ = ['damname', 'damtype_de', 'damtype_fr', 'damtype_en']
     __label__ = 'damname'
     id = Column('dam_stabil_id', Integer, primary_key=True)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
