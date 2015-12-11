@@ -1,9 +1,3 @@
-function qualifyURL(url) {
-  var a = document.createElement('a');
-  a.href = url;
-  return  a.cloneNode(false).href.replace('api3', 'wmts10');
-}
-
 var attributions = [
   new ol.Attribution({
     html: '<a href="http://www.geo.admin.ch/internet/geoportal/en/home.html">' +
@@ -21,7 +15,7 @@ var wmtsCadastre = new ol.layer.Tile({
     layer: 'ch.kantone.cadastralwebmap-farbe',
     crossOrigin: 'anonymous',
     attributions: attributions,
-    url: qualifyURL('..') + '1.0.0/{Layer}/default/current/21781/{TileMatrix}/{TileCol}/{TileRow}.png',
+    url: getWMTSSource() + '/1.0.0/{Layer}/default/current/21781/{TileMatrix}/{TileCol}/{TileRow}.png',
     tileGrid: new ol.tilegrid.WMTS({
       origin: [420000, 350000],
       resolutions: resolutions,

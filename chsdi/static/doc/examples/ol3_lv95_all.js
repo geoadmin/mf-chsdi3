@@ -12,7 +12,7 @@ var lang = getUrlParameter('lang') || 'en';
 var layer = getUrlParameter('layer') || 'ch.swisstopo.pixelkarte-farbe_wmts';
 var timestamp = getUrlParameter('timestamp') || 20140520;
 var format = getUrlParameter('format') || 'jpeg';
-var raw_url = getUrlParameter('base_url') || qualifyURL('..');
+var raw_url = getUrlParameter('base_url') || getWMTSSource();
 
 var BASE_URL = raw_url.replace(/\/+$/, "")
 
@@ -52,7 +52,7 @@ var cadastralCfg = {
 };
 
 $.ajax({
-    url: BASE_URL + "/rest/services/api/MapServer/layersConfig?lang=" + lang
+    url: qualifyURL('..') +  "rest/services/api/MapServer/layersConfig?lang=" + lang
 }).done(function(data) {
     var content = '';
     var layer_nb = 0;
