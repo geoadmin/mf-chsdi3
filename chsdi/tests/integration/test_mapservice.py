@@ -468,6 +468,13 @@ class TestMapServiceView(TestsBase):
         self.assertTrue('topics' in resp.json['ch.swisstopo.pixelkarte-farbe_wmts'])
         self.assertTrue('topics' in resp.json['ch.swisstopo.pixelkarte-farbe'])
 
+    def test_layersconfig_valid_3d(self):
+        resp = self.testapp.get('/rest/services/ech/MapServer/layersConfig', status=200)
+        jsonData = resp.json
+        config3dLayers = [layer for layer in jsonData.iteritems() if 'config3d' in layer]
+        native3dLayers = [layer for layer in config3dLayers if config3dLayers[1]['config3d'] in jsonData]
+        self.assertEqual(len(config3dLayers), len(native3dLayers))
+
     def test_layersconfig_valid_topic_all(self):
         resp = self.testapp.get('/rest/services/all/MapServer/layersConfig', status=200)
         self.assertEqual(resp.content_type, 'application/json')
