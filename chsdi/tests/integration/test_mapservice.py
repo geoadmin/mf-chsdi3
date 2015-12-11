@@ -12,27 +12,27 @@ class TestMapServiceView(TestsBase):
 
     def test_metadata_no_parameters(self):
         resp = self.testapp.get('/rest/services/blw/MapServer', status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_metadata_no_parameters_topic_all(self):
         resp = self.testapp.get('/rest/services/all/MapServer', status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_metadata_with_searchtext(self):
         resp = self.testapp.get('/rest/services/blw/MapServer', params={'searchText': 'wasser'}, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_metadata_with_callback(self):
         resp = self.testapp.get('/rest/services/blw/MapServer', params={'callback': 'cb'}, status=200)
-        self.assertTrue(resp.content_type == 'application/javascript')
+        self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_metadata_chargeable_true(self):
         resp = self.testapp.get('/rest/services/blw/MapServer', params={'chargeable': 'true'}, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_metadata_chargeable_false(self):
         resp = self.testapp.get('/rest/services/blw/MapServer', params={'chargeable': 'false'}, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_no_parameters(self):
         self.testapp.get('/rest/services/ech/MapServer/identify', status=400)
@@ -71,13 +71,13 @@ class TestMapServiceView(TestsBase):
         params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}', 'geometryType': 'esriGeometryPolyline', 'imageDisplay': '500,600,96',
                   'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '0', 'layers': 'all:ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_polygon(self):
         params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}', 'geometryType': 'esriGeometryPolygon', 'imageDisplay': '500,600,96',
                   'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '0', 'layers': 'all:ch.bafu.bundesinventare-bln'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_nan_error(self):
         params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}', 'geometryType': 'esriGeometryPolygon', 'imageDisplay': '500,600,96',
@@ -105,12 +105,12 @@ class TestMapServiceView(TestsBase):
                   'imageDisplay': '1920,452,96', 'layers': 'all:ch.bazl.sachplan-infrastruktur-luftfahrt_kraft',
                   'mapExtent': '679364.12,250588.34,684164.12,251718.34', 'tolerance': '0'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(len(resp.json['results']) == 1)
+        self.assertEqual(len(resp.json['results']), 1)
 
     def test_identify_valid(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_invalid_imageDisplay(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
@@ -120,20 +120,20 @@ class TestMapServiceView(TestsBase):
     def test_identify_valid_topic_all(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_valid_with_callback(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all',
                   'callback': 'cb'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'text/javascript')
+        self.assertEqual(resp.content_type, 'text/javascript')
         resp.mustcontain('cb({')
 
     def test_identify_with_geojson(self):
         params = {'geometry': '600000,200000,631000,210000', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1',
                   'layers': 'all:ch.bafu.bundesinventare-bln', 'geometryFormat': 'geojson'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue('properties' in resp.json['results'][0])
         self.assertTrue('geometry' in resp.json['results'][0])
 
@@ -141,20 +141,20 @@ class TestMapServiceView(TestsBase):
         params = {'geometry': '600000,200000,631000,210000', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1',
                   'layers': 'all:ch.swisstopo.lubis-luftbilder_farbe', 'geometryFormat': 'geojson'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(resp.json['results'][0]['geometry']['type'] in ['Polygon', 'GeometryCollection'])
 
     def test_identify_gen50_geom(self):
         params = {'geometryType': 'esriGeometryPoint', 'returnGeometry': 'false', 'layers': 'all:ch.swisstopo-vd.geometa-gemeinde', 'geometry': '561289,185240', 'mapExtent': '561156.75,185155,561421.25,185325',
                   'imageDisplay': '529,340,96', 'tolerance': '5'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
-        self.assertTrue(len(resp.json['results']) != 0)
+        self.assertNotEqual(len(resp.json['results']), 0)
 
     def test_identify_no_geom(self):
         params = {'geometry': '630000,245000,645000,265000', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96', 'mapExtent': '545132,147068,550132,150568', 'tolerance': '1', 'layers': 'all',
                   'returnGeometry': 'false'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(('geometry' not in resp.json['results'][0]))
         self.assertTrue(('geometryType' not in resp.json['results'][0]))
 
@@ -167,7 +167,7 @@ class TestMapServiceView(TestsBase):
         params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.809670509,170647.93120352627', 'geometryFormat': 'geojson', 'imageDisplay': '1920,734,96', 'mapExtent': '134253,-21102,1382253,455997',
                   'tolerance': '5', 'layers': 'all:ch.swisstopo.zeitreihen', 'timeInstant': '1936'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_invalid_timeinstant(self):
         params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.809670509,170647.93120352627', 'geometryFormat': 'geojson', 'imageDisplay': '1920,734,96', 'mapExtent': '134253,-21102,1382253,455997',
@@ -189,7 +189,7 @@ class TestMapServiceView(TestsBase):
         params = {'geometry': '618953,170093', 'geometryType': 'esriGeometryPoint', 'imageDisplay': '1920,576,96', 'layers': 'all:ch.bav.kataster-belasteter-standorte-oev.oereb',
                   'mapExtent': '671164.31244,253770,690364.31244,259530', 'tolerance': '5', 'geometryFormat': 'interlis'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'text/xml')
+        self.assertEqual(resp.content_type, 'text/xml')
 
     def test_identify_oereb_several_layers(self):
         params = {'geometry': '618953,170093', 'geometryType': 'esriGeometryPoint', 'imageDisplay': '1920,576,96', 'layers': 'all:ch.bav.kataster-belasteter-standorte-oev.oereb,ch.bazl.sicherheitszonenplan.oereb',
@@ -199,27 +199,27 @@ class TestMapServiceView(TestsBase):
     def test_identify_query_time(self):
         params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'abortionaccomplished > \'2014-12-01\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_query_number(self):
         params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'maxheightagl > 210'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_query_text(self):
         params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'state ilike \'%a%\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_query_or(self):
         params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'state ilike \'%a%\' and abortionaccomplished > \'2014-12-01\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_query_and(self):
         params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'state ilike \'%a%\' or abortionaccomplished > \'2014-12-01\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_query_bad_operator(self):
         params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'state ilike \'%a%\' maybe abortionaccomplished > \'2014-12-01\''}
@@ -229,24 +229,24 @@ class TestMapServiceView(TestsBase):
         params = {'geometryType': 'esriGeometryEnvelope', 'geometry': '502722,36344,745822,253444', 'imageDisplay': '0,0,0', 'mapExtent': '0,0,0,0', 'tolerance': '0',
                   'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'obstacletype = \'Antenna\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_query_escape_quote(self):
         params = {'geometryFormat': 'geojson', 'lang': 'en', 'layers': 'all:ch.bafu.hydrologie-wassertemperaturmessstationen', 'time': '2013', 'where': 'name ilike \'%Broye-Payerne, Caserne d\'aviation%\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_query_offset(self):
         params = {'layers': 'all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 'returnGeometry': 'false', 'timeInstant': '2015', 'where': 'gemname ilike \'%a%\''}
         resp1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         params.update({'offset': '2'})
         resp2 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp1.json['results'][2]['featureId'] == resp2.json['results'][0]['featureId'])
-        self.assertTrue(resp1.json['results'][5]['featureId'] == resp2.json['results'][3]['featureId'])
+        self.assertEqual(resp1.json['results'][2]['featureId'], resp2.json['results'][0]['featureId'])
+        self.assertEqual(resp1.json['results'][5]['featureId'], resp2.json['results'][3]['featureId'])
         params.update({'offset': '5'})
         resp3 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp2.json['results'][3]['featureId'] == resp3.json['results'][0]['featureId'])
-        self.assertTrue(resp1.json['results'][5]['featureId'] == resp3.json['results'][0]['featureId'])
+        self.assertEqual(resp2.json['results'][3]['featureId'], resp3.json['results'][0]['featureId'])
+        self.assertEqual(resp1.json['results'][5]['featureId'], resp3.json['results'][0]['featureId'])
 
     def test_identify_bbox_offset(self):
         params = {'layers': 'all:ch.bazl.luftfahrthindernis', 'timeInstant': '2015', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryEnvelope', 'geometry': '573788,93220,750288,192720',
@@ -254,12 +254,12 @@ class TestMapServiceView(TestsBase):
         resp1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         params.update({'offset': '2'})
         resp2 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp1.json['results'][2]['featureId'] == resp2.json['results'][0]['featureId'])
-        self.assertTrue(resp1.json['results'][5]['featureId'] == resp2.json['results'][3]['featureId'])
+        self.assertEqual(resp1.json['results'][2]['featureId'], resp2.json['results'][0]['featureId'])
+        self.assertEqual(resp1.json['results'][5]['featureId'], resp2.json['results'][3]['featureId'])
         params.update({'offset': '4'})
         resp3 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
-        self.assertTrue(resp2.json['results'][2]['featureId'] == resp3.json['results'][0]['featureId'])
-        self.assertTrue(resp1.json['results'][4]['featureId'] == resp3.json['results'][0]['featureId'])
+        self.assertEqual(resp2.json['results'][2]['featureId'], resp3.json['results'][0]['featureId'])
+        self.assertEqual(resp1.json['results'][4]['featureId'], resp3.json['results'][0]['featureId'])
 
     def test_identify_query_wrong_offset(self):
         params = {'layers': 'all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 'timeInstant': '2015', 'where': 'gemname ilike \'%aven%\'', 'offset': '12.1'}
@@ -289,47 +289,47 @@ class TestMapServiceView(TestsBase):
     def test_find_scan(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid', 'searchText': '1231641'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
-        self.assertTrue(len(resp.json['results']) == 1)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(len(resp.json['results']), 1)
 
     def test_find_exact_int(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid', 'searchText': '1231625', 'returnGeometry': 'false', 'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
-        self.assertTrue(len(resp.json['results']) == 1)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(len(resp.json['results']), 1)
 
     def test_find_exact_float(self):
         params = {'layer': 'ch.bafu.bundesinventare-bln', 'searchField': 'bln_fl', 'searchText': '729.092', 'returnGeometry': 'false', 'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
-        self.assertTrue(len(resp.json['results']) == 1)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(len(resp.json['results']), 1)
 
     def test_find_exact_text(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'strname1', 'searchText': 'Beaulieustrasse', 'returnGeometry': 'false', 'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) > 1)
 
     def test_find_exact_date(self):
         params = {'layer': 'ch.bazl.luftfahrthindernis', 'searchField': 'startofconstruction', 'searchText': '1950-01-01', 'returnGeometry': 'false', 'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) > 1)
 
     def test_find_geojson(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid', 'searchText': '1231641', 'geometryFormat': 'geojson'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_find_withcb(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid', 'searchText': '1231641', 'callback': 'cb'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
-        self.assertTrue(resp.content_type == 'text/javascript')
+        self.assertEqual(resp.content_type, 'text/javascript')
 
     def test_find_nogeom(self):
         params = {'layer': 'ch.are.bauzonen', 'searchField': 'bfs_no', 'searchText': '4262', 'returnGeometry': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_find_wrong_searchfield(self):
         params = {'layer': 'ch.are.bauzonen', 'searchField': 'toto', 'searchText': '4262', 'returnGeometry': 'false'}
@@ -346,7 +346,7 @@ class TestMapServiceView(TestsBase):
     def test_find_contains(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': 'Islastrasse', 'searchField': 'strname1', 'returnGeometry': 'false', 'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) > 1)
 
     def test_feature_wrong_idlayer(self):
@@ -362,93 +362,93 @@ class TestMapServiceView(TestsBase):
 
     def test_feature_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362', status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue('attributes' in resp.json['feature'])
         self.assertTrue('geometry' in resp.json['feature'])
-        self.assertTrue(resp.json['feature']['id'] == 362)
+        self.assertEqual(resp.json['feature']['id'], 362)
 
     def test_feature_valid_topic_all(self):
         resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.bundesinventare-bln/362', status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue('attributes' in resp.json['feature'])
         self.assertTrue('geometry' in resp.json['feature'])
-        self.assertTrue(resp.json['feature']['id'] == 362)
+        self.assertEqual(resp.json['feature']['id'], 362)
 
     def test_feature_geojson(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362', params={'geometryFormat': 'geojson'}, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue('properties' in resp.json['feature'])
         self.assertTrue('geometry' in resp.json['feature'])
-        self.assertTrue(resp.json['feature']['id'] == 362)
+        self.assertEqual(resp.json['feature']['id'], 362)
 
     def test_several_features(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362,363', status=200)
-        self.assertTrue(len(resp.json['features']) == 2)
+        self.assertEqual(len(resp.json['features']), 2)
 
     def test_several_features_geojson(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362,363', params={'geometryFormat': 'geojson'}, status=200)
-        self.assertTrue(len(resp.json['features']) == 2)
+        self.assertEqual(len(resp.json['features']), 2)
 
     def test_feature_with_callback(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362', params={'callback': 'cb'}, status=200)
-        self.assertTrue(resp.content_type == 'text/javascript')
+        self.assertEqual(resp.content_type, 'text/javascript')
         resp.mustcontain('cb({')
 
     def test_feature_big_but_good(self):
         resp = self.testapp.get('/rest/services/all/MapServer/ch.swisstopo.geologie-geocover/1080284', params={'geometryFormat': 'geojson'}, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue('geometry' in resp.json['feature'])
 
     def test_htmlpopup_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', status=200)
-        self.assertTrue(resp.content_type == 'text/html')
+        self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 
     def test_htmlpopup_cadastralwebmap(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/14/htmlPopup', params={'mapExtent': '485412.34375,109644.67,512974.44,135580.01999999999', 'imageDisplay': '600,400,96'}, status=200)
-        self.assertTrue(resp.content_type == 'text/html')
+        self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 
     def test_htmlpopup_valid_topic_all(self):
         resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', status=200)
-        self.assertTrue(resp.content_type == 'text/html')
+        self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 
     def test_htmlpopup_valid_with_callback(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', params={'callback': 'cb'}, status=200)
-        self.assertTrue(resp.content_type == 'application/javascript')
+        self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_htmlpopup_missing_feature(self):
         self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', status=404)
 
     def test_extendedhtmlpopup_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/11/extendedHtmlPopup', status=200)
-        self.assertTrue(resp.content_type == 'text/html')
+        self.assertEqual(resp.content_type, 'text/html')
 
     def test_extendedhtmlpopup_valid_lubis(self):
         resp = self.testapp.get('/rest/services/all/MapServer/ch.swisstopo.lubis-luftbilder_farbe/19981551013722/extendedHtmlPopup', status=200)
-        self.assertTrue(resp.content_type == 'text/html')
+        self.assertEqual(resp.content_type, 'text/html')
 
     def test_extendedhtmlpopup_valid_langs(self):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
             resp = self.testapp.get('/rest/services/ech/MapServer/ch.babs.kulturgueter/6967/extendedHtmlPopup', params={'lang': lang}, status=200)
-            self.assertTrue(resp.content_type == 'text/html')
+            self.assertEqual(resp.content_type, 'text/html')
 
     def test_extendedhtmlpopup_valid_with_callback(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/12/extendedHtmlPopup', params={'callback': 'cb'}, status=200)
-        self.assertTrue(resp.content_type == 'application/javascript')
+        self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_extendedhtmlpopup_noinfo(self):
         self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/extendedHtmlPopup', status=404)
 
     def test_legend_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/legend', status=200)
-        self.assertTrue(resp.content_type == 'text/html')
+        self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<div class="legend-header">')
 
     def test_legend_valid_all(self):
         resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.bundesinventare-bln/legend', status=200)
-        self.assertTrue(resp.content_type == 'text/html')
+        self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<div class="legend-header">')
 
     def test_legend_wrong_layer_id(self):
@@ -456,11 +456,11 @@ class TestMapServiceView(TestsBase):
 
     def test_legend_valid_with_callback(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/legend', params={'callback': 'cb'}, status=200)
-        self.assertTrue(resp.content_type == 'application/javascript')
+        self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_layersconfig_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/layersConfig', status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue('ch.swisstopo.pixelkarte-farbe' in resp.json)
         self.assertTrue('attribution' in resp.json['ch.swisstopo.pixelkarte-farbe'])
         self.assertTrue('label' in resp.json['ch.swisstopo.pixelkarte-farbe'])
@@ -470,7 +470,7 @@ class TestMapServiceView(TestsBase):
 
     def test_layersconfig_valid_topic_all(self):
         resp = self.testapp.get('/rest/services/all/MapServer/layersConfig', status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue('ch.swisstopo.pixelkarte-farbe' in resp.json)
         self.assertTrue('attribution' in resp.json['ch.swisstopo.pixelkarte-farbe'])
         self.assertTrue('label' in resp.json['ch.swisstopo.pixelkarte-farbe'])
@@ -482,7 +482,7 @@ class TestMapServiceView(TestsBase):
         jsonData = resp.json
         if 'ch.bafu.hydroweb-messstationen_gefahren' in jsonData:
             layer = jsonData['ch.bafu.hydroweb-messstationen_gefahren']
-            self.assertTrue(layer['type'] == 'geojson')
+            self.assertTrue(layer['type'], 'geojson')
             self.assertTrue('geojsonUrl' in layer)
             self.assertTrue('geojsonUrlDe' not in layer)
             self.assertTrue('styleUrl' in layer)
@@ -517,7 +517,7 @@ class TestMapServiceView(TestsBase):
         path = '/rest/services/all/MapServer/ch.bav.sachplan-infrastruktur-schiene_ausgangslage'
         params = {'lang': lang}
         resp = self.testapp.get(path, params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         fields = resp.json['fields']
         langSpecFields = []
         for field in fields:
@@ -540,12 +540,12 @@ class TestMapServiceView(TestsBase):
 
     def test_layer_attributes_multi_models(self):
         resp = self.testapp.get('/rest/services/api/MapServer/ch.bav.sachplan-infrastruktur-schiene_kraft', status=200)
-        self.assertTrue(resp.content_type == 'application/json')
-        self.assertTrue(len(resp.json['fields']) == 3)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(len(resp.json['fields']), 3)
 
     def test_features_attributes_multi_models(self):
         resp = self.testapp.get('/rest/services/api/MapServer/ch.bav.sachplan-infrastruktur-schiene_kraft/attributes/plname_de', status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
 zlayer = 'ch.swisstopo.zeitreihen'
 
@@ -555,20 +555,20 @@ class TestGebauedeGeometry(TestsBase):
     def test_feature_not_authorized(self):
         headers = {'X-SearchServer-Authorized': 'false'}
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/490830_0', headers=headers, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertFalse('geometry' in resp.json['feature'])
 
     def test_feature_authorized(self):
         headers = {'X-SearchServer-Authorized': 'true'}
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/490830_0', headers=headers, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue('geometry' in resp.json['feature'])
 
     def test_find_not_authorized(self):
         headers = {'X-SearchServer-Authorized': 'false'}
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': 'berges', 'searchField': 'strname1'}
         resp = self.testapp.get('/rest/services/ech/MapServer/find', params=params, headers=headers, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 1)
         self.assertFalse('geometry' in resp.json['results'][0])
 
@@ -576,7 +576,7 @@ class TestGebauedeGeometry(TestsBase):
         headers = {'X-SearchServer-Authorized': 'true'}
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': 'berges', 'searchField': 'strname1'}
         resp = self.testapp.get('/rest/services/ech/MapServer/find', params=params, headers=headers, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 1)
         self.assertTrue('geometry' in resp.json['results'][0])
 
@@ -586,7 +586,7 @@ class TestGebauedeGeometry(TestsBase):
                   'imageDisplay': '1920,623,96', 'layers': 'all:ch.bfs.gebaeude_wohnungs_register', 'mapExtent': '633200,132729.99999999997,671600,145189.99999999997',
                   'tolerance': '5'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=headers, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 1)
         self.assertFalse('geometry' in resp.json['results'][0])
 
@@ -596,7 +596,7 @@ class TestGebauedeGeometry(TestsBase):
                   'imageDisplay': '1920,623,96', 'layers': 'all:ch.bfs.gebaeude_wohnungs_register', 'mapExtent': '633200,132729.99999999997,671600,145189.99999999997',
                   'tolerance': '5'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=headers, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 1)
         self.assertTrue('geometry' in resp.json['results'][0])
 
@@ -610,7 +610,7 @@ class TestReleasesService(TestsBase):
                   'geometryType': 'esriGeometryPoint'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 26, len(resp.json['results']))
 
     # Test cases Oftringen by Kerngruppe Zeitreise
@@ -621,7 +621,7 @@ class TestReleasesService(TestsBase):
                   'geometryType': 'esriGeometryPoint'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 25, len(resp.json['results']))
         ist = resp.json['results']
         soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231", "18791231", "18821231", "18851231", "18891231", "18931231", "18951231", "18981231", "19021231", "19051231", "19061231", "19081231", "19091231", "19121231", "19221231", "19231231", "19281231", "19331231", "19591231", "19651231", "19701231", "19761231", "19821231", "19881231", "19941231", "20001231", "20071231"]
@@ -635,7 +635,7 @@ class TestReleasesService(TestsBase):
                   'geometryType': 'esriGeometryPoint'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 25, len(resp.json['results']))
         ist = resp.json['results']
         soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231", "18791231", "18821231", "18841231", "18961231", "18971231", "19011231", "19131231", "19311231", "19421231", "19571231", "19641231", "19701231", "19761231", "19821231", "19881231", "19941231", "20001231", "20061231", "20121231"]
@@ -649,7 +649,7 @@ class TestReleasesService(TestsBase):
                   'geometryType': 'esriGeometryPoint'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 25, len(resp.json['results']))
         ist = resp.json['results']
         soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231", "18791231", "18821231", "18841231", "18961231", "18971231", "19011231", "19131231", "19311231", "19421231", "19551231", "19571231", "19641231", "19701231", "19761231", "19821231", "19881231", "19941231", "20001231", "20061231", "20121231"]

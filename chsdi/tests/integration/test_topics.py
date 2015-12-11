@@ -19,4 +19,4 @@ class TestTopicsListingView(TestsBase):
 
     def test_topics_with_cb(self):
         resp = self.testapp.get('/rest/services', params={'callback': 'cb'}, status=200)
-        self.assertTrue(resp.content_type == 'application/javascript')
+        self.assertEqual(resp.content_type, 'application/javascript')

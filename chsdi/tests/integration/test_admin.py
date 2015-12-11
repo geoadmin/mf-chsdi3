@@ -7,4 +7,4 @@ class TestAdminkml(TestsBase):
 
     def test_admin_kml(self):
         resp = self.testapp.get('/admin/kml', status=200)
-        self.assertTrue(resp.content_type == 'text/html')
+        self.assertEqual(resp.content_type, 'text/html')
