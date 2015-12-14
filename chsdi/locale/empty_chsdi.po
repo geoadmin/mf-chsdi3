@@ -1,3 +1,127 @@
+msgid "ch.bafu.wasser-teileinzugsgebiete_2"
+msgstr ""
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.id"
+msgstr ""
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.gwlnr"
+msgstr ""
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil1"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.namen_gewaesser"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.xy_gebietsauslass"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.gebietsauslaesse_gemeindename"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.gewissnr"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil2"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_gesamtflaeche"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_anteil_ch"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil3"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_bestockt"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_landwirtschaft"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_unprod_sonst"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_gewaesser"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_gletscher_firn"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_siedlung"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil4"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_min_z"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_max_z"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_mean_z"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil5"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.noinfoforthisobject"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jahr"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_regimetyp"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jan"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_feb"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_mar"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_apr"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_mai"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jun"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jul"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_aug"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_set"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_okt"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_nov"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_dez"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_abflussvar"
+msgstr ""
+
+msgid "tt_teileinzugsgebiete_2.download"
+msgstr ""
+
+
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_it"
 msgstr ""
 

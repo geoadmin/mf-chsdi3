@@ -3110,6 +3110,18 @@ msgstr "Restitution"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
 msgstr "Bassins versants partiels 2km2"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2"
+msgstr "Bassins versants partiels 2km2"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
+msgstr "Nom du bassin fluvial"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.gwlnr"
+msgstr "No. du cours d'eau"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.id"
+msgstr "N° du bassin versant partiel"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "Bassins versants partiels 40km2"
 
@@ -4392,7 +4404,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Frontières nationales GG25"
 
 msgid "ch.swisstopo.hangneigung-ueber_30"
-msgstr "Pentes de plus de 30°"
+msgstr "Classes de pente plus de 30°"
 
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Carte Dufour Première édition"
@@ -7382,6 +7394,117 @@ msgstr "Détails de l’établissement"
 
 msgid "tt_swissprtr_ort"
 msgstr "Lieu"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_abflussvar"
+msgstr "VariabiIité du débit annuel"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_apr"
+msgstr "Avril"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_aug"
+msgstr "Août"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_dez"
+msgstr "Décembre"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_feb"
+msgstr "Février"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jahr"
+msgstr "Débit annuel moyen"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jan"
+msgstr "Janvier"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jul"
+msgstr "Juillet"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jun"
+msgstr "Juin"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_mai"
+msgstr "Mai"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_mar"
+msgstr "Mars"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_nov"
+msgstr "Novembre"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_okt"
+msgstr "Octobre"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_set"
+msgstr "Septembre"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_regimetyp"
+msgstr "Type de régime d‘écoulement"
+
+msgid "tt_teileinzugsgebiete_2.download"
+msgstr "Shapefile et .csv"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil1"
+msgstr "GEWISS Outil BV-MQ"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil2"
+msgstr "Bassin versant et utillisation du sol"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil3"
+msgstr "Utilisation du sol CH [%]"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil4"
+msgstr "Altitude du bassin versant [m]"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil5"
+msgstr "Débits moyens simuIés (voire critères dans l'<a href="https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_fr.pdf">aide en ligne</a>) [m3/s]"
+
+msgid "tt_teileinzugsgebiete_2.gebietsauslaesse_gemeindename"
+msgstr "Commune à I‘exutoire du BV"
+
+msgid "tt_teileinzugsgebiete_2.gewissnr"
+msgstr "No. de GEWISS"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_bestockt"
+msgstr "Surfaces boisées"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_gewaesser"
+msgstr "Lacs et cours d‘eau"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_gletscher_firn"
+msgstr "Glaciers, névés"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_landwirtschaft"
+msgstr "Surfaces agricoles"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_siedlung"
+msgstr "Surfaces d‘habitat et d‘infrastructures"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_unprod_sonst"
+msgstr "Surfaces improductives"
+
+msgid "tt_teileinzugsgebiete_2.namen_gewaesser"
+msgstr "Nom du cours d'eau"
+
+msgid "tt_teileinzugsgebiete_2.noinfoforthisobject"
+msgstr "Pour ce bassin versant entier (très petit / très grand), aucune donnée modélisée sur les débits n'est mise à disposition (voir les critères de l'<a href="https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_fr.pdf">aide en ligne</a>)."
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_anteil_ch"
+msgstr "Pourcentage CH de la sur-face du BV entier"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_max_z"
+msgstr "Altitude max"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_mean_z"
+msgstr "Altitude moyenne"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_min_z"
+msgstr "Altitude min"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_gesamtflaeche"
+msgstr "Surface du BV entier [km2]"
+
+msgid "tt_teileinzugsgebiete_2.xy_gebietsauslass"
+msgstr "Point à I‘exutoire du BV"
 
 msgid "tt_wald_natur"
 msgstr "Forêts et autres surfaces naturelles"

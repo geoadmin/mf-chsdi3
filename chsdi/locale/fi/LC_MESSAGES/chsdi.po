@@ -3110,6 +3110,18 @@ msgstr "Restituziun d'aua"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
 msgstr "Intschess parzials 2km2"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2"
+msgstr "Intschess parzials 2km2"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
+msgstr "Flussgebietsname"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.gwlnr"
+msgstr "Gewässerlaufnummer"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.id"
+msgstr "Teileinzugsgebiets-Nummer"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "Intschess parzials 40km2"
 
@@ -4392,7 +4404,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Cunfins naziunals GG25"
 
 msgid "ch.swisstopo.hangneigung-ueber_30"
-msgstr "Pendenza dapli che 30°"
+msgstr "Cat. da pendenza dapli che 30°"
 
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Charta Dufour Emprima ed."
@@ -7381,6 +7393,117 @@ msgstr "Details Betrieb"
 
 msgid "tt_swissprtr_ort"
 msgstr "Ort"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_abflussvar"
+msgstr "Abflussvariabilität"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_apr"
+msgstr "April"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_aug"
+msgstr "August"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_dez"
+msgstr "Dezember"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_feb"
+msgstr "Februar"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jahr"
+msgstr "Mittlerer Jahresabfluss"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jan"
+msgstr "Januar"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jul"
+msgstr "Juli"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jun"
+msgstr "Juni"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_mai"
+msgstr "Mai"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_mar"
+msgstr "März"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_nov"
+msgstr "November"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_okt"
+msgstr "Oktober"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_set"
+msgstr "September"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_regimetyp"
+msgstr "Abflussregimetyp"
+
+msgid "tt_teileinzugsgebiete_2.download"
+msgstr "Shapefile und .csv"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil1"
+msgstr "GEWISS EZG-MQ TooI"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil2"
+msgstr "Einzugsgebiet und Landnutzung"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil3"
+msgstr "Landnutzung CH [%]"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil4"
+msgstr "Höhenangaben zum EZG [m]"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil5"
+msgstr "Modellierte mittlere Abflüsse (s. Kriterien <a href="https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_de.pdf">Onlinehilfe</a>) [m3/s]"
+
+msgid "tt_teileinzugsgebiete_2.gebietsauslaesse_gemeindename"
+msgstr "Gemeinde am Gebietsauslass"
+
+msgid "tt_teileinzugsgebiete_2.gewissnr"
+msgstr "GEWISS-Nr"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_bestockt"
+msgstr "Bestockte Fläche"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_gewaesser"
+msgstr "Gewässer"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_gletscher_firn"
+msgstr "Gletscher / Firn"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_landwirtschaft"
+msgstr "Landwirtschaftsflächen"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_siedlung"
+msgstr "Siedlungsflächen"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_unprod_sonst"
+msgstr "Unproduktive Flächen"
+
+msgid "tt_teileinzugsgebiete_2.namen_gewaesser"
+msgstr "Gewässername"
+
+msgid "tt_teileinzugsgebiete_2.noinfoforthisobject"
+msgstr "Für dieses Gesamteinzugsgebiet (sehr klein / sehr gross) werden keine modellierten Abflusswerte bereitgestellt (siehe Kriterien in der <a href="https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_de.pdf">Onlinehilfe</a>)"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_anteil_ch"
+msgstr "Flächenanteil Gesamt-EZG % CH"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_max_z"
+msgstr "Maximale Höhe"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_mean_z"
+msgstr "Mittlere Höhe"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_min_z"
+msgstr "Minimale Höhe"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_gesamtflaeche"
+msgstr "Fläche Gesamteinzugsgebiet [km2]"
+
+msgid "tt_teileinzugsgebiete_2.xy_gebietsauslass"
+msgstr "Gewässerpunkt am Gebietsauslass"
 
 msgid "tt_wald_natur"
 msgstr "Naturnahe Flächen, Wald"

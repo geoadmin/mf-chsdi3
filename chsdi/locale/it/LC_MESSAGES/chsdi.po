@@ -3110,6 +3110,18 @@ msgstr "Restituzione"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
 msgstr "Bacini imbriferi 2km2"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2"
+msgstr "Bacini imbriferi 2km2"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
+msgstr "Nome del bacino fluviale:"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.gwlnr"
+msgstr "N° del corso d‘acqua"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.id"
+msgstr "Numero del bacino idrografico"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "Bacini imbriferi 40 km2"
 
@@ -4392,7 +4404,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Frontiere nazionali GG25"
 
 msgid "ch.swisstopo.hangneigung-ueber_30"
-msgstr "Pendenze maggiori di 30°"
+msgstr "Classi pendenza maggiori 30°"
 
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Carta Dufour Prima edizione"
@@ -7382,6 +7394,117 @@ msgstr "Informazioni dettagliate sul complesso/azienda"
 
 msgid "tt_swissprtr_ort"
 msgstr "Luogo"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_abflussvar"
+msgstr "Variabillità del deflusso annuo"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_apr"
+msgstr "Aprile"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_aug"
+msgstr "Agosto"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_dez"
+msgstr "Dicembre"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_feb"
+msgstr "Febbraio"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jahr"
+msgstr "Deflusso annuo medio"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jan"
+msgstr "Gennaio"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jul"
+msgstr "Luglio"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_jun"
+msgstr "Giugno"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_mai"
+msgstr "Maggio"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_mar"
+msgstr "Marzo"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_nov"
+msgstr "Novembre"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_okt"
+msgstr "Ottobre"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_mqn_set"
+msgstr "Settembre"
+
+msgid "tt_teileinzugsgebiete_2.abfluesse_regimetyp"
+msgstr "Tipo di regime di deflusso"
+
+msgid "tt_teileinzugsgebiete_2.download"
+msgstr "Shapefile e .csv"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil1"
+msgstr "GEWISS Strumento BI-MQ"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil2"
+msgstr "Bacino imbrifero e utilizzazione del territorio"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil3"
+msgstr "Utilizzazione del territorio CH [%]"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil4"
+msgstr "Altitudine del bacino imbrifero [m]"
+
+msgid "tt_teileinzugsgebiete_2.ebene2km_teil5"
+msgstr "Deflussi medi simulati ( vd. criteri secondo <a href="https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_it.pdf">aiuto online</a>) [m3/s]"
+
+msgid "tt_teileinzugsgebiete_2.gebietsauslaesse_gemeindename"
+msgstr "Comune della sezione di chiusura"
+
+msgid "tt_teileinzugsgebiete_2.gewissnr"
+msgstr "N° di GEWISS"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_bestockt"
+msgstr "Superflci boscate"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_gewaesser"
+msgstr "Laghi e corsi d'acqua"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_gletscher_firn"
+msgstr "Ghiacciai, nevai"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_landwirtschaft"
+msgstr "Supertici agricole"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_siedlung"
+msgstr "Superflci d‘insediamento"
+
+msgid "tt_teileinzugsgebiete_2.landnutzung_ant_unprod_sonst"
+msgstr "Superflci improduttive"
+
+msgid "tt_teileinzugsgebiete_2.namen_gewaesser"
+msgstr "Nome del corso d'acqua"
+
+msgid "tt_teileinzugsgebiete_2.noinfoforthisobject"
+msgstr "Per questo bacino imbrifero complessivo (molto piccolo / molto grande) non sono disponibili valori di deflusso simulati (cfr. criteri nell’<a href="https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_it.pdf">aiuto online</a>)."
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_anteil_ch"
+msgstr "Percentuale CH della superficie del bacino imbrifero totale"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_max_z"
+msgstr "Altitudine massima"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_mean_z"
+msgstr "Altitudine media"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_ch_min_z"
+msgstr "Altitudine minima"
+
+msgid "tt_teileinzugsgebiete_2.physiogeographie_gesamtflaeche"
+msgstr "Superficie del bacino imbrifero totale [km2]"
+
+msgid "tt_teileinzugsgebiete_2.xy_gebietsauslass"
+msgstr "Sezione di chiusura del bacino imbrifero"
 
 msgid "tt_wald_natur"
 msgstr "Foreste ed alter superfici naturali"
