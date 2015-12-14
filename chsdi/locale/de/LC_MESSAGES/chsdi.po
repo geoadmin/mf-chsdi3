@@ -1490,6 +1490,21 @@ msgstr "Überschwemmung Aquaprotect 250"
 msgid "ch.bafu.aquaprotect_500"
 msgstr "Überschwemmung Aquaprotect 500"
 
+msgid "ch.bafu.auen-vegetationskarten"
+msgstr "Auen Vegetationskarten"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
+msgstr "Jahr der Kartierung"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_k22"
+msgstr "Kartiereinheit der Primärvege-tation"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_name"
+msgstr "Name"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
+msgstr "Objektnummer"
+
 msgid "ch.bafu.biogeographische_regionen"
 msgstr "Biogeographische Regionen"
 
@@ -3327,7 +3342,7 @@ msgid "ch.bav.haltestellen-oev.name"
 msgstr "Name"
 
 msgid "ch.bav.haltestellen-oev.next_departures"
-msgstr "Nächste Abfahrt von"
+msgstr "nächste Abfahrt von"
 
 msgid "ch.bav.haltestellen-oev.nodata"
 msgstr "Keine Daten"

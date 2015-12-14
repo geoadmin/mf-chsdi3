@@ -1490,6 +1490,23 @@ msgstr "Inundaziun Aquaprotect 250"
 msgid "ch.bafu.aquaprotect_500"
 msgstr "Inundaziun Aquaprotect 500"
 
+msgid "ch.bafu.auen-vegetationskarten"
+msgstr "Zonas umidas"
+
+#. TODO
+msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
+msgstr "ch.bafu.auen-vegetationskarten.auveg_jahr"
+
+#. TODO
+msgid "ch.bafu.auen-vegetationskarten.auveg_k22"
+msgstr "ch.bafu.auen-vegetationskarten.auveg_k22"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_name"
+msgstr "Objektname"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
+msgstr "Objektnr."
+
 msgid "ch.bafu.biogeographische_regionen"
 msgstr "Regiuns biogeograficas"
 
@@ -3327,7 +3344,7 @@ msgid "ch.bav.haltestellen-oev.name"
 msgstr "Name"
 
 msgid "ch.bav.haltestellen-oev.next_departures"
-msgstr "Nächste Abfahrt von"
+msgstr "nächste Abfahrt von"
 
 msgid "ch.bav.haltestellen-oev.nodata"
 msgstr "Keine Daten"

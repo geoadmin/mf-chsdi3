@@ -1490,6 +1490,21 @@ msgstr "Aree inondabili Aquaprotect 250"
 msgid "ch.bafu.aquaprotect_500"
 msgstr "Aree inondabili Aquaprotect 500"
 
+msgid "ch.bafu.auen-vegetationskarten"
+msgstr "Zone golenali carte di vegetatizone"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
+msgstr "Anno mappatura"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_k22"
+msgstr "Mappatura unità di vegeta-zione primaria"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_name"
+msgstr "Nome dell'oggetto"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
+msgstr "Numero dell'oggetto"
+
 msgid "ch.bafu.biogeographische_regionen"
 msgstr "Regioni biogeografiche"
 
@@ -3327,7 +3342,7 @@ msgid "ch.bav.haltestellen-oev.name"
 msgstr "Nome"
 
 msgid "ch.bav.haltestellen-oev.next_departures"
-msgstr "Prossime partenze di"
+msgstr "prossime partenze di"
 
 msgid "ch.bav.haltestellen-oev.nodata"
 msgstr "Nessun dato"

@@ -10,6 +10,21 @@ msgstr ""
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
 msgstr ""
 
+msgid "ch.bafu.auen-vegetationskarten"
+msgstr ""
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
+msgstr ""
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_name"
+msgstr ""
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
+msgstr ""
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_k22"
+msgstr ""
+
 msgid "tt_teileinzugsgebiete_2.ebene2km_teil1"
 msgstr ""
 
