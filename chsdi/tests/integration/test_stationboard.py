@@ -25,6 +25,10 @@ class TestStationboard(TestsBase):
         resp = self.testapp.get('/stationboard/stops/toto', status=400)
         resp.mustcontain('The id must be an integer')
 
+    def test_stationboard_wrong_id_stationboard_destination(self):
+        resp = self.testapp.get('/stationboard/stops/toto/destinations', status=400)
+        resp.mustcontain('The id must be an integer')
+
     def test_stationboard_wrong_limit(self):
         params = {'limit': 'toto'}
         resp = self.testapp.get('/stationboard/stops/8501120', params=params, status=400)
