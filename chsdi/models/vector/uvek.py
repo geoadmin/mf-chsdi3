@@ -4,6 +4,7 @@ from sqlalchemy import Column, Text, Integer, Date, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.types import Numeric
 from geoalchemy2.types import Geometry
+from sqlalchemy.dialects import postgresql
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector
@@ -2466,3 +2467,21 @@ class ChmobilMountainbikeland (Base, Vector):
                                dimension=2, srid=21781))
 
 register('ch.astra.mountainbikeland', ChmobilMountainbikeland)
+
+
+class eignungDaecher (Base, Vector):
+    __tablename__ = 'view_solarenergie_daecher_gs'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/solareignungdaecher.mako'
+    __extended_info__ = True
+    __bodId__ = 'ch.bfe.solarenergie-eignung-daecher'
+    __label__ = 'id'
+    id = Column('df_uid', Text, primary_key=True)
+    df_nummer = Column('df_nummer', Integer)
+    a_param = Column('a_param', postgresql.ARRAY(Numeric))
+    klasse = Column('klasse', Text)
+    monats_ertrag = Column('monats_ertrag', postgresql.ARRAY(Numeric))
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bfe.solarenergie-eignung-daecher', eignungDaecher)
