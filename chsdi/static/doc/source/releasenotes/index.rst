@@ -9,6 +9,31 @@
 Release Notes
 =============
 
+.. _releasenotes_20151216:
+
+Release 20151216 - Wednesday, November 16th 2015
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Pro Natura: Nature Preserves <//map.geo.admin.ch/?layers=ch.pronatura.naturschutzgebiete>`__ (ch.pronatura.naturschutzgebiete)                         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `HTRANS LHN95-LN02 <//map.geo.admin.ch/?layers=ch.swisstopo.transformation-bezugsrahmen_hoehe>`__ (ch.swisstopo.transformation-bezugsrahmen_hoehe)      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `LV95 Transformation accuracy <//map.geo.admin.ch/?layers=ch.swisstopo.transformationsgenauigkeit>`__ (ch.swisstopo.transformationsgenauigkeit)         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20151202:
 
 Release 20151202 - Wednesday, December 2nd 2015
