@@ -6,7 +6,7 @@
     lang = lang if lang != 'rm' else 'de'
 %>
 
-    <tr><td class="cell-left">OKKKK</td>                     <td>${c['attributes']['de'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bfe.solarenergie-eignung-daecher_overview')}</td>                     <td>${c['attributes']['de'] or '-'}</td></tr>
 </%def>
 
 
