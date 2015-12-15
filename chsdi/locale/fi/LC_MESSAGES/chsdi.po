@@ -1493,13 +1493,11 @@ msgstr "Inundaziun Aquaprotect 500"
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Zonas umidas"
 
-#. TODO
 msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
-msgstr "ch.bafu.auen-vegetationskarten.auveg_jahr"
+msgstr "Jahr der Kartierung"
 
-#. TODO
 msgid "ch.bafu.auen-vegetationskarten.auveg_k22"
-msgstr "ch.bafu.auen-vegetationskarten.auveg_k22"
+msgstr "Kartiereinheit der Primärvege-tation"
 
 msgid "ch.bafu.auen-vegetationskarten.auveg_name"
 msgstr "Objektname"
@@ -4340,7 +4338,7 @@ msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.sgd_nr"
 msgstr "InfoGeol-Nr."
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2"
-msgstr "Documents geol. (0-10km2)"
+msgstr "Documents geol. (<10km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.sgd_nr"
 msgstr "InfoGeol-Nr."
@@ -4421,7 +4419,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Cunfins naziunals GG25"
 
 msgid "ch.swisstopo.hangneigung-ueber_30"
-msgstr "Cat. da pendenza dapli che 30°"
+msgstr "Classas pendenza dapli che 30°"
 
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Charta Dufour Emprima ed."

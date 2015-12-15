@@ -4338,7 +4338,7 @@ msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.sgd_nr"
 msgstr "N° InfoGeol"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2"
-msgstr "Documents géol. (0-10km2)"
+msgstr "Documents géol. (<10km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.sgd_nr"
 msgstr "N° InfoGeol"
