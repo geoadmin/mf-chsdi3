@@ -37,6 +37,8 @@ API & applications
 Geodata
 *******
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Mapping of Floodplains of National Importance <//map.geo.admin.ch/?layers=ch.bafu.auen-vegetationskarten>`__ (ch.bafu.auen-vegetationskarten)                                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Pro Natura: Nature Preserves <//map.geo.admin.ch/?layers=ch.pronatura.naturschutzgebiete>`__ (ch.pronatura.naturschutzgebiete)                                                                  |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `HTRANS LHN95-LN02 <//map.geo.admin.ch/?layers=ch.swisstopo.transformation-bezugsrahmen_hoehe>`__ (ch.swisstopo.transformation-bezugsrahmen_hoehe)                                               |
