@@ -18,7 +18,7 @@ class Test_PrintMulti(unittest.TestCase):
 
         res = _get_timestamps(spec, '')
 
-        self.assertTrue(len(res) == 3)
+        self.assertEqual(len(res), 3)
 
     def test_proxy_many_timestamps(self):
         spec = {"layers": [{"timestamps": ["2000", "2005", "2010"]},
@@ -26,6 +26,6 @@ class Test_PrintMulti(unittest.TestCase):
 
         res = _get_timestamps(spec, '')
 
-        self.assertTrue(len(res) == 5)
+        self.assertEqual(len(res), 5)
         self.assertEqual(res['2000'], [0, 1])
         self.assertEqual(res['2007'], [1])

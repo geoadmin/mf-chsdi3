@@ -33,7 +33,7 @@ class TestCatalogService(TestsBase):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
             link = '/rest/services/ech/CatalogServer?lang=' + lang
             resp = self.testapp.get(link)
-            self.assertEqual(resp.status_int, 200)
+            self.assertEqual(resp.status_int, 200, link)
 
     def test_all_catalogs(self):
 
