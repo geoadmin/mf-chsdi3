@@ -6,10 +6,11 @@
     lang = lang if lang != 'rm' else 'de'
 %>
 
-    <tr><td class="cell-left">${_('df_uid')}</td>                     <td>${c['featureId'] or '-'}</td></tr>
-% for a_param in c['attributes']['a_param']:
-    <tr><td class="cell-left">${_('a_param')}</td>            <td>${a_param}</td></tr>
-% endfor
+    <tr><td class="cell-left">${_('tt_klasse')}</td>                     <td>${c['attributes']['klasse'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('tt_flaeche')}</td>                     <td>${c['attributes']['flaeche'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('tt_ausrichtung')}</td>                     <td>${c['attributes']['ausrichtung'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('tt_neigung')}</td>                     <td>${c['attributes']['neigung'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('tt_finanzertrag')}</td>                     <td>${c['attributes']['finanzertrag'] or '-'}</td></tr>
 </%def>
 
 
@@ -26,8 +27,13 @@
     }
     window.onload=init();
   </script>
-<tr><td class="cell-left">${_('df_uid')}</td>                     <td>${c['featureId'] or '-'}</td></tr>
-
+  <table class="table-with-border">
+    <tr><th class="cell-left">${_('tt_klasse')}</th>                     <td>${c['attributes']['klasse'] or '-'}</td></tr>
+    <tr><th class="cell-left">${_('tt_flaeche')}</th>                     <td>${c['attributes']['flaeche'] or '-'}</td></tr>
+    <tr><th class="cell-left">${_('tt_ausrichtung')}</th>                     <td>${c['attributes']['ausrichtung'] or '-'}</td></tr>
+    <tr><th class="cell-left">${_('tt_neigung')}</th>                     <td>${c['attributes']['neigung'] or '-'}</td></tr>
+    <tr><th class="cell-left">${_('tt_finanzertrag')}</th>                     <td>${c['attributes']['finanzertrag'] or '-'}</td></tr>
+  </table>
   <div class="chsdi-map-container table-with-border">
     <div id="barChart"></div>
   </div>
