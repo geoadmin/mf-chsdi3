@@ -754,21 +754,21 @@ The GetCapabilites document provides informations about the service, along with 
 Parameters
 **********
 
-Only the RESTFul interface ist implemented. No KVP and SOAP. You *have* to provide a value for the `timestamp` parameter, the keywords `current` or 
+Only the RESTFul interface is implemented. No KVP and SOAP. You *have* to provide a value for the `timestamp` parameter, the keywords `current` or 
 `default` are not supported for now.
 
 A request is in the form:
 
 ::
 
-    <protocol>://<ServerName>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/<TileSetId>/<TileRow>/<TileCol>.<FormatExtension>
+    <Scheme>://<ServerName>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/<TileSetId>/<TileRow>/<TileCol>.<FormatExtension>
 
 with the following parameters:
 
 ===================    =============================   ==========================================================================
 Parameter              Example                         Explanation
 ===================    =============================   ==========================================================================
-Protocol               http ou https                   
+Scheme                 http or https                   The scheme type
 ServerName             wmts[5-9].geo.admin.ch
 Version                1.0.0                           WMTS protocol version
 Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document.
@@ -949,6 +949,97 @@ Example
 - Check WMTS with Swiss ech-0056 profile (html): `https://api3.geo.admin.ch/owschecker/form?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS <../../../owschecker/form?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS>`_
 
 
+.. _terrain_service_description:
+
+---------------
+
+Terrain Service
+---------------
+
+A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `Quantized Mesh <https://github.com/AnalyticalGraphicsInc/quantized-mesh>`_ terrain service.
+Terrain tiles are served according to the `Tile Map Service (TMS) <http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification>`_ layout and global-geodetic profile.
+In order to access the terrain tiles, you require a `swisstopo web access - WMTS documentation <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_.
+
+URL
+***
+
+- https://terrain0.geo.admin.ch
+- https://terrain1.geo.admin.ch
+- https://terrain2.geo.admin.ch
+- https://terrain3.geo.admin.ch
+- https://terrain4.geo.admin.ch
+
+Metadata Service
+****************
+
+The `layer.json` file determines which terrain tiles are available.
+
+- https://3d.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20151231/4326/layer.json
+
+Parameters
+**********
+
+A request is in the form:
+
+::
+
+    https://<ServerName>/<ProtocoleVersion>/ch.swisstopo.terrain.3d/<Stylename>/<Time>/<TileMatrixSetId>/<Zoom>/<X>/<Y>.<FormatExtension>
+
+with the following parameters:
+
+===================    ==================================   ==========================================================================
+Parameter              Example                              Explanation
+===================    ==================================   ==========================================================================
+ServerName             terrain[0-5].geo.admin.ch
+Version                1.0.0                                The terrain service protocol version
+Layername              ch.swisstopo.terrain.3d (constant)   The name of the terrain layer. (only one terrain layer is available)
+StyleName              default                              mostly constant
+Time                   2015311201                           Date of tile generation in (ISO-8601).
+TileMatrixSet          4326 (constant)                      EPSG code for WGS84
+TileSetId              12                                   Zoom level (see below)
+X                      4309                                 The longitue index
+Y                      3111                                 The latitude index
+FormatExtension        terrain                              The file extension (a gzipped binary terrain file)
+===================    ==================================   ==========================================================================
+
+
+The *<TileMatrixSet>* **4326** is defined as follow::
+
+  MinX              5.013926957923385
+  MaxX              11.477436312994008
+  MinY              45.35600133779394
+  MaxY              48.27502358353741
+  TileWidth         256
+
+With the *<tileOrigin>* in the bottom left corner of the bounding box.
+
+=============================== ========= ========================================
+Resoultion [m/pixel at equator] Zoomlevel Availability
+=============================== ========= ========================================
+78271.80469                     0         [-180, -90, 90, 180]
+39135.90234                     1         [-180, -90, 90, 180]
+19567.95117                     2         [-180, -90, 90, 180]
+9783.975586                     3         [-180, -90, 90, 180]
+4891.987793                     4         [-180, -90, 90, 180]
+2445.993896                     5         [-180, -90, 90, 180]
+1222.996948                     6         [-180, -90, 90, 180]
+611.4984741                     7         [-180, -90, 90, 180]
+305.749237                      8         Ranges as defined in the layer.json file
+152.8746185                     9         Ranges as defined in the layer.json file
+76.43730927                     10        Ranges as defined in the layer.json file
+38.21865463                     11        Ranges as defined in the layer.json file
+19.10932732                     12        Ranges as defined in the layer.json file
+9.554663658                     13        Ranges as defined in the layer.json file
+4.777331829                     14        Ranges as defined in the layer.json file
+2.388665915                     15        Ranges as defined in the layer.json file
+1.194332957                     16        Ranges as defined in the layer.json file
+0.597166479                     17        Ranges as defined in the layer.json file
+=============================== ========= ========================================
+
+Example
+*******
+
+* A `Terrain tile <https://terrain2.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20151231/4326/12/4309/3111.terrain>`_
 
 
 .. _stationboard_description:
