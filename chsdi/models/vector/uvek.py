@@ -2478,10 +2478,42 @@ class eignungDaecher (Base, Vector):
     __label__ = 'id'
     id = Column('df_uid', Text, primary_key=True)
     df_nummer = Column('df_nummer', Integer)
-    a_param = Column('a_param', postgresql.ARRAY(Numeric))
-    klasse = Column('klasse', Text)
+    klasse = Column('klasse', Integer)
+    flaeche = Column('flaeche', Numeric)
+    ausrichtung = Column('ausrichtung', Integer)
+    neigung = Column('neigung', Integer)
+    finanzertrag = Column('finanzertrag', Numeric)
     monats_ertrag = Column('monats_ertrag', postgresql.ARRAY(Numeric))
+    gs_serie_start = Column('gs_serie_start', Date)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
 register('ch.bfe.solarenergie-eignung-daecher', eignungDaecher)
+
+
+class globalstrahlung_sis (Base, Vector):
+    __tablename__ = 'meteoschweiz_globalstrahlung_sis'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/globalstrahlung.mako'
+    __bodId__ = 'ch.meteoschweiz.globalstrahlung-monatlich'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    date_start = Column('date_start', Date)
+    sis_array = Column('array_values', postgresql.ARRAY(Numeric))
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.meteoschweiz.globalstrahlung-monatlich', globalstrahlung_sis)
+
+
+class globalstrahlung_sisdir (Base, Vector):
+    __tablename__ = 'meteoschweiz_globalstrahlung_sis'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': 'true'})
+    __template__ = 'templates/htmlpopup/globalstrahlung.mako'
+    __bodId__ = 'ch.meteoschweiz.globalstrahlung-monatlich'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    date_start = Column('date_start', Date)
+    sisdir_array = Column('array_values', postgresql.ARRAY(Numeric))
+
+register('ch.meteoschweiz.globalstrahlung-monatlich', globalstrahlung_sisdir)
