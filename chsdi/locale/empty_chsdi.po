@@ -1871,6 +1871,9 @@ msgstr ""
 msgid "ch.swisstopo.transformationsgenauigkeit"
 msgstr ""
 
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe"
+msgstr ""
+
 msgid "ch.bakom.uplink20"
 msgstr ""
 
@@ -7109,6 +7112,21 @@ msgid "ch.bafu.hydrologischer-atlas_basisgebiete.winttemp_g"
 msgstr ""
 
 msgid "ch.bafu.hydrologischer-atlas_basisgebiete.shape_area"
+msgstr ""
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.or_ln02_cm"
+msgstr ""
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.contour"
+msgstr ""
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.name"
+msgstr ""
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.y"
+msgstr ""
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.x"
 msgstr ""
 
 msgid "ch.swisstopo.cnes"

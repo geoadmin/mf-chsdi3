@@ -1628,6 +1628,54 @@ class oerebkataster(Base, Vector):
 register('ch.swisstopo-vd.stand-oerebkataster', oerebkataster)
 
 
+class transformationBezugsrahmenHoehePunkte(Base, Vector):
+    __tablename__ = 'bezugsrahmen_hoehe_pkt'
+    __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
+    __template__ = 'templates/htmlpopup/transformation_bezugsrahmen_hoehe.mako'
+    __bodId__ = 'ch.swisstopo.transformation-bezugsrahmen_hoehe'
+    __label__ = 'name'
+    __queryable_attributes__ = ['name']
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Text)
+    y = Column('y', Numeric)
+    x = Column('x', Numeric)
+    or_ln02_cm = Column('or_ln02_cm', Numeric)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+
+class transformationBezugsrahmenHoeheLine5cm(Base, Vector):
+    __tablename__ = 'bezugsrahmen_hoehe_line_5cm'
+    __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
+    __template__ = 'templates/htmlpopup/transformation_bezugsrahmen_hoehe.mako'
+    __bodId__ = 'ch.swisstopo.transformation-bezugsrahmen_hoehe'
+    __label__ = 'contour'
+    __maxscale__ = 500000
+    id = Column('bgdi_id', Integer, primary_key=True)
+    contour = Column('contour', Numeric)
+    layer = Column('layer', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+
+class transformationBezugsrahmenHoeheLine10cm(Base, Vector):
+    __tablename__ = 'bezugsrahmen_hoehe_line_10cm'
+    __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
+    __template__ = 'templates/htmlpopup/transformation_bezugsrahmen_hoehe.mako'
+    __bodId__ = 'ch.swisstopo.transformation-bezugsrahmen_hoehe'
+    __label__ = 'contour'
+    __minscale__ = 500000
+    id = Column('bgdi_id', Integer, primary_key=True)
+    contour = Column('contour', Numeric)
+    layer = Column('layer', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.swisstopo.transformation-bezugsrahmen_hoehe', transformationBezugsrahmenHoehePunkte)
+register('ch.swisstopo.transformation-bezugsrahmen_hoehe', transformationBezugsrahmenHoeheLine5cm)
+register('ch.swisstopo.transformation-bezugsrahmen_hoehe', transformationBezugsrahmenHoeheLine10cm)
+
+
 class spannungsarmeGebiete(Base, Vector):
     __tablename__ = 'spannungsarme_gebiete'
     __table_args__ = ({'schema': 'vd', 'autoload': False})

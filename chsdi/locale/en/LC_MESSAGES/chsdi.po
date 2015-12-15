@@ -3327,7 +3327,7 @@ msgid "ch.bav.haltestellen-oev.name"
 msgstr "Name"
 
 msgid "ch.bav.haltestellen-oev.next_departures"
-msgstr "Next departures from"
+msgstr "next departures to"
 
 msgid "ch.bav.haltestellen-oev.nodata"
 msgstr "No data"
@@ -4666,6 +4666,24 @@ msgstr "Map swissTLM (grey)"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Hiking trails"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe"
+msgstr "HTRANS LHN95-LN02"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.contour"
+msgstr "Differerence LHN95 minus LN02 [cm]"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.name"
+msgstr "Point name"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.or_ln02_cm"
+msgstr "Differerence LHN95 minus LN02 [cm]"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.x"
+msgstr "X-Coordinate"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.y"
+msgstr "Y-Coordinate"
 
 msgid "ch.swisstopo.transformationsgenauigkeit"
 msgstr "LV95 Transformation accuracy"

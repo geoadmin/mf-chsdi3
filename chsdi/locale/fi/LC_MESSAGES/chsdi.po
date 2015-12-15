@@ -3327,7 +3327,7 @@ msgid "ch.bav.haltestellen-oev.name"
 msgstr "Name"
 
 msgid "ch.bav.haltestellen-oev.next_departures"
-msgstr "Nächste Abfahrt von"
+msgstr "nächste Abfahrt von"
 
 msgid "ch.bav.haltestellen-oev.nodata"
 msgstr "Keine Daten"
@@ -4666,6 +4666,24 @@ msgstr "Charta swissTLM (grisch)"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Sendas da viandar"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe"
+msgstr "HTRANS LHN95-LN02"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.contour"
+msgstr "Differenz LHN95 minus LN02 [cm]"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.name"
+msgstr "Punktname"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.or_ln02_cm"
+msgstr "Differenz LHN95 minus LN02 [cm]"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.x"
+msgstr "X-Koordinate"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.y"
+msgstr "Y-Koordinate"
 
 msgid "ch.swisstopo.transformationsgenauigkeit"
 msgstr "MN95 Precisaziun da transfurmaziun"

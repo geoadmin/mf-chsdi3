@@ -3327,7 +3327,7 @@ msgid "ch.bav.haltestellen-oev.name"
 msgstr "Nome"
 
 msgid "ch.bav.haltestellen-oev.next_departures"
-msgstr "Prossime partenze di"
+msgstr "prossime partenze di"
 
 msgid "ch.bav.haltestellen-oev.nodata"
 msgstr "Nessun dato"
@@ -4666,6 +4666,24 @@ msgstr "Carta swissTLM (grigio)"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Percorsi escursionistici"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe"
+msgstr "HTRANS RAN95-NF02"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.contour"
+msgstr "Différence RAN95 moins NF02 [cm]"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.name"
+msgstr "Nom du point"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.or_ln02_cm"
+msgstr "Différence RAN95 moins NF02 [cm]"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.x"
+msgstr "Coordonnée x"
+
+msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe.y"
+msgstr "Coordonnée y"
 
 msgid "ch.swisstopo.transformationsgenauigkeit"
 msgstr "MN95 Precisione di trasformazione"
