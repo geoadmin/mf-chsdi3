@@ -14,7 +14,11 @@ try:
     api_url = "http:" + app.registry.settings['api_url']
     base_url = "http://" + app.registry.settings['wmshost'] + '/'
     geodata_staging = app.registry.settings['geodata_staging']
+    max_retry = 1
+    if geodata_staging == 'dev':
+        max_retry = 3
 except KeyError as e:
+    geodata_staging = 'prod'
     base_url = 'http://wms.geo.admin.ch'
 
 
@@ -47,13 +51,16 @@ def build_wms_request(cfg):
                'SERVICE': 'WMS'
                }
 
-    return base_url + '?' + urllib.urlencode(payload)
+    return base_url + '?' + urllib.urlencode(payload), scheme
 
 
-def check_status_code(url):
-    resp = requests.get(url)
-    assert resp.status_code in [200, 204, 304]
-    assert resp.headers['content-type'] in ['image/png', 'image/jpeg']
+def check_status_code(url, scheme):
+    s = requests.Session()
+    a = requests.adapters.HTTPAdapter(max_retries=max_retry)
+    s.mount('%s://' % scheme, a)
+    resp = s.get(url)
+    assert resp.status_code in [200, 204, 304], resp.status_code
+    assert resp.headers['content-type'] in ['image/png', 'image/jpeg'], resp.headers['content-type']
     if geodata_staging == 'prod':
         assert 'wms.geo.admin.ch' in url
 
@@ -61,4 +68,5 @@ def check_status_code(url):
 def test_generator():
     param_list = get_wms_layers()
     for params in param_list:
-        yield check_status_code, build_wms_request(params)
+        url, scheme = build_wms_request(params)
+        yield check_status_code, url, scheme
