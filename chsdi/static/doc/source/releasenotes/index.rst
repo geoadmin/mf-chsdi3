@@ -25,13 +25,18 @@ API & applications
 
 Geodata
 *******
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Pro Natura: Nature Preserves <//map.geo.admin.ch/?layers=ch.pronatura.naturschutzgebiete>`__ (ch.pronatura.naturschutzgebiete)                         |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `HTRANS LHN95-LN02 <//map.geo.admin.ch/?layers=ch.swisstopo.transformation-bezugsrahmen_hoehe>`__ (ch.swisstopo.transformation-bezugsrahmen_hoehe)      |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `LV95 Transformation accuracy <//map.geo.admin.ch/?layers=ch.swisstopo.transformationsgenauigkeit>`__ (ch.swisstopo.transformationsgenauigkeit)         |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Pro Natura: Nature Preserves <//map.geo.admin.ch/?layers=ch.pronatura.naturschutzgebiete>`__ (ch.pronatura.naturschutzgebiete)                                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `HTRANS LHN95-LN02 <//map.geo.admin.ch/?layers=ch.swisstopo.transformation-bezugsrahmen_hoehe>`__ (ch.swisstopo.transformation-bezugsrahmen_hoehe)                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `LV95 Transformation accuracy <//map.geo.admin.ch/?layers=ch.swisstopo.transformationsgenauigkeit>`__ (ch.swisstopo.transformationsgenauigkeit)                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Traffic counting locations local <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal>`__ (ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal)    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Traffic counting locations principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet)  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 
 .. _releasenotes_20151202:
