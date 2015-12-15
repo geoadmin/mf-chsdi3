@@ -1490,6 +1490,21 @@ msgstr "Areas of flooding Aquaprotect 250"
 msgid "ch.bafu.aquaprotect_500"
 msgstr "Areas of flooding Aquaprotect 500"
 
+msgid "ch.bafu.auen-vegetationskarten"
+msgstr "Floodplains vegetation maps"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
+msgstr "Year of mapping"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_k22"
+msgstr "Mapping unit of primary vegetation"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_name"
+msgstr "Object name"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
+msgstr "Object Nr."
+
 msgid "ch.bafu.biogeographische_regionen"
 msgstr "Biogeographical regions"
 
@@ -4326,7 +4341,7 @@ msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.sgd_nr"
 msgstr "InfoGeol-Nr."
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2"
-msgstr "Geol. documents (0-10km2)"
+msgstr "Geol. documents (<10km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.sgd_nr"
 msgstr "InfoGeol-Nr."

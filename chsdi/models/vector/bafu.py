@@ -1121,6 +1121,24 @@ class AU(Base, Vector):
 register('ch.bafu.bundesinventare-auen', AU)
 
 
+class AuenVegetationsKarten(Base, Vector):
+    __tablename__ = 'auen_vegetation'
+    __table_args__ = ({'schema': 'flora', 'autoload': False})
+    __bodId__ = 'ch.bafu.auen-vegetationskarten'
+    __queryable_attributes__ = ['auveg_obj', 'auveg_name', 'auveg_jahr', 'auveg_k22']
+    __template__ = 'templates/htmlpopup/auen_veg.mako'
+    __label__ = 'auveg_name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    auveg_name = Column('auveg_name', Text)
+    auveg_obj = Column('auveg_obj', Integer)
+    auveg_jahr = Column('auveg_jahr', Integer)
+    auveg_k22 = Column('auveg_k22', Integer)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bafu.auen-vegetationskarten', AuenVegetationsKarten)
+
+
 class BLN(Base, Vector):
     __tablename__ = 'bln'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})

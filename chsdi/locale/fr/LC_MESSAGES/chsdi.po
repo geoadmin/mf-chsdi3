@@ -1490,6 +1490,21 @@ msgstr "Inondation Aquaprotect 250"
 msgid "ch.bafu.aquaprotect_500"
 msgstr "Inondation Aquaprotect 500"
 
+msgid "ch.bafu.auen-vegetationskarten"
+msgstr "Végétation dans zones alluviales"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
+msgstr "Année de la cartographie"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_k22"
+msgstr "Unité de cartographie de la végétation primaire"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_name"
+msgstr "Nom de l'objet"
+
+msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
+msgstr "Numéro de l'objet"
+
 msgid "ch.bafu.biogeographische_regionen"
 msgstr "Régions biogéographiques"
 
@@ -4326,7 +4341,7 @@ msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.sgd_nr"
 msgstr "N° InfoGeol"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2"
-msgstr "Documents géol. (0-10km2)"
+msgstr "Documents géol. (<10km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.sgd_nr"
 msgstr "N° InfoGeol"
