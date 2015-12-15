@@ -36,6 +36,8 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Traffic counting locations principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet)  |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Topographical catchment areas of Swiss waterbodies 2km2 <//map.geo.admin.ch/?layers=ch.bafu.wasser-teileinzugsgebiete_2>`__ (ch.bafu.wasser-teileinzugsgebiete_2)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
