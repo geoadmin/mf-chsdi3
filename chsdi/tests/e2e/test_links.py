@@ -18,4 +18,4 @@ class TestLinks(TestsBase):
             for a in soup.findAll('a'):
                 link = a.get('href')
                 r = requests.get(link, timeout=10, headers=headers)
-                self.assertTrue(r.status_code == 200, link)
+                self.assertEqual(r.status_code, 200, link)

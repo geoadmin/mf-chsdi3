@@ -10,7 +10,7 @@ class TestHistoricalMaps(TestsBase):
                   'bildnummer': 'bv80032193', 'layer': 'ch.swisstopo.zeitreihen',
                   'release_year': '1976'}
         resp = self.testapp.get('/historicalmaps/viewer.html', params=params, status=200)
-        self.assertTrue(resp.content_type == 'text/html')
+        self.assertEqual(resp.content_type, 'text/html')
 
     def test_historicalmaps_none_bildnummer(self):
         params = {'width': '4641', 'height': '7000', 'title': 'kartenwerk_lk100',

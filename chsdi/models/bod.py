@@ -113,9 +113,10 @@ class LayersConfig(Base):
                     config[k] = val
 
         layerStaging = self.__dict__['staging']
-        if config['type'] == 'wmts':
+        if config['type'] in ('wmts', 'aggregate', 'geojson'):
             del config['singleTile']
-        elif config['type'] == 'wms':
+
+        if config['type'] == 'wms':
             if layerStaging != 'prod':
                 config['wmsUrl'] = make_agnostic(
                     config['wmsUrl'].replace('wms.geo.admin.ch', wmsHost))
