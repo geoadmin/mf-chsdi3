@@ -4010,6 +4010,9 @@ msgstr "Anomalies aéromagnétique. Argovie, 1500 m [nT]"
 msgid "ch.pronatura"
 msgstr "Pronatura"
 
+msgid "ch.pronatura.naturschutzgebiete"
+msgstr "Pro Natura: Réserves naturelles"
+
 msgid "ch.pronatura.url"
 msgstr "http://www.pronatura.ch/actuel"
 

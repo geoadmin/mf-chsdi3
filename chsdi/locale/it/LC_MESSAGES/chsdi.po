@@ -4010,6 +4010,9 @@ msgstr "Anomalia aeromagnetica, Argovia, 1500 m [nT]"
 msgid "ch.pronatura"
 msgstr "Pronatura"
 
+msgid "ch.pronatura.naturschutzgebiete"
+msgstr "Pro Natura: Riserve naturali"
+
 msgid "ch.pronatura.url"
 msgstr "http://www.pronatura.ch/attualita"
 
