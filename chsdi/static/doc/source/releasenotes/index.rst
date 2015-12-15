@@ -19,9 +19,20 @@ API & applications
 
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
+- Improved search index (better integration of Haltestellen)
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_151202...r_151216>`__
+
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
+- 2.5D ALPHA: first version of a future 3D viewer. ALPHA version is not for operational purposes, use it with care. 2.5D ALPHA might be removed any time.
+- Show walking time in profile drawing
+- New Menu interface for mobile devices
+- More prominent warning in case query tool has more than 200 results
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_151202...r_151216>`__
+
 
 Geodata
 *******
