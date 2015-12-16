@@ -317,8 +317,17 @@ msgstr "Zoo"
 msgid "<i>haltestellen_aufzug</i>"
 msgstr "Lift"
 
+msgid "<i>haltestellen_aufzug</i>"
+msgstr "Lift"
+
 msgid "<i>haltestellen_bus</i>"
 msgstr "Bus"
+
+msgid "<i>haltestellen_bus</i>"
+msgstr "Bus"
+
+msgid "<i>haltestellen_bus_luftseilbahn</i>"
+msgstr "Bus, cablecar"
 
 msgid "<i>haltestellen_bus_luftseilbahn</i>"
 msgstr "Bus, cablecar"
@@ -326,8 +335,17 @@ msgstr "Bus, cablecar"
 msgid "<i>haltestellen_bus_schiff</i>"
 msgstr "Bus, boat"
 
+msgid "<i>haltestellen_bus_schiff</i>"
+msgstr "Bus, boat"
+
 msgid "<i>haltestellen_bus_standseilbahn_tram</i>"
 msgstr "Bus, funicular, tram"
+
+msgid "<i>haltestellen_bus_standseilbahn_tram</i>"
+msgstr "Bus, funicular, tram"
+
+msgid "<i>haltestellen_bus_tram</i>"
+msgstr "Bus, tram"
 
 msgid "<i>haltestellen_bus_tram</i>"
 msgstr "Bus, tram"
@@ -335,8 +353,17 @@ msgstr "Bus, tram"
 msgid "<i>haltestellen_bus_tram_zug</i>"
 msgstr "Bus, tram, train"
 
+msgid "<i>haltestellen_bus_tram_zug</i>"
+msgstr "Bus, tram, train"
+
 msgid "<i>haltestellen_bus_zug</i>"
 msgstr "Bus, train"
+
+msgid "<i>haltestellen_bus_zug</i>"
+msgstr "Bus, train"
+
+msgid "<i>haltestellen_luftseilbahn</i>"
+msgstr "Cablecar"
 
 msgid "<i>haltestellen_luftseilbahn</i>"
 msgstr "Cablecar"
@@ -359,8 +386,17 @@ msgstr "Boat, rack railway"
 msgid "<i>haltestellen_standseilbahn</i>"
 msgstr "Funicular"
 
+msgid "<i>haltestellen_standseilbahn</i>"
+msgstr "Funicular"
+
 msgid "<i>haltestellen_standseilbahn_bus</i>"
 msgstr "Funicular, bus"
+
+msgid "<i>haltestellen_standseilbahn_bus</i>"
+msgstr "Funicular, bus"
+
+msgid "<i>haltestellen_standseilbahn_luftseilbahn</i>"
+msgstr "Funicular, cableway"
 
 msgid "<i>haltestellen_standseilbahn_luftseilbahn</i>"
 msgstr "Funicular, cableway"
@@ -368,8 +404,17 @@ msgstr "Funicular, cableway"
 msgid "<i>haltestellen_standseilbahn_zug</i>"
 msgstr "Funicular, train"
 
+msgid "<i>haltestellen_standseilbahn_zug</i>"
+msgstr "Funicular, train"
+
 msgid "<i>haltestellen_tram</i>"
 msgstr "Tram"
+
+msgid "<i>haltestellen_tram</i>"
+msgstr "Tram"
+
+msgid "<i>haltestellen_tram_bus_zahnradbahn</i>"
+msgstr "Tram, bus"
 
 msgid "<i>haltestellen_tram_bus_zahnradbahn</i>"
 msgstr "Tram, bus"
@@ -377,8 +422,17 @@ msgstr "Tram, bus"
 msgid "<i>haltestellen_zahnradbahn</i>"
 msgstr "Rack railway"
 
+msgid "<i>haltestellen_zahnradbahn</i>"
+msgstr "Rack railway"
+
 msgid "<i>haltestellen_zug</i>"
 msgstr "Train"
+
+msgid "<i>haltestellen_zug</i>"
+msgstr "Train"
+
+msgid "<i>haltestellen_zug_tram</i>"
+msgstr "Train, tram"
 
 msgid "<i>haltestellen_zug_tram</i>"
 msgstr "Train, tram"
