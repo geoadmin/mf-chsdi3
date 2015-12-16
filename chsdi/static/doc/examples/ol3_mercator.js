@@ -1,9 +1,3 @@
-function qualifyURL(url) {
-  var a = document.createElement('a');
-  a.href = url;
-  return a.cloneNode(false).href;
-}
-
 // Reprojected WMTS layer from map.geo.admin.ch
 
 var createLayer = function(layername, timestamp) {
@@ -15,7 +9,7 @@ var createLayer = function(layername, timestamp) {
                  'internet/swisstopo/en/home.html">swisstopo</a>'
            })
          ],
-         url: qualifyURL('..') + '1.0.0/' + layername + '/default/' + timestamp + '/3857/{z}/{x}/{y}.jpeg'
+         url: getWMTSSource() + '/1.0.0/' + layername + '/default/' + timestamp + '/3857/{z}/{x}/{y}.jpeg'
        })
    });
 }

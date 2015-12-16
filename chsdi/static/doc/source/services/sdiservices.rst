@@ -2,6 +2,7 @@
 
   <head>
     <link href="../_static/custom.css" rel="stylesheet" type="text/css" />
+    <script src="../examples/utils.js"></script>
   </head>
 
 
@@ -747,9 +748,9 @@ GetCapabilities
 
 The GetCapabilites document provides informations about the service, along with layer description, both in german and french.
 
-`http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml <../1.0.0/WMTSCapabilities.xml>`_ 
+`http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ 
 
-`http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr <../1.0.0/WMTSCapabilities.xml?lang=fr>`_ 
+`http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr <https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr>`_ 
 
 Parameters
 **********
@@ -860,13 +861,13 @@ Beside, the **LV03** projection, the same tiles are offered in four other *tilem
 These projections are:
 
 * Plate-Carrée WGS1984 (EPSG:4326)
-    `http://wmts10.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml <../EPSG/4326/1.0.0/WMTSCapabilities.xml>`_
+    `http://wmts10.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml <https://wmts10.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml>`_
 * Plate-Carrée ETRS89 (EPSG:4258)
-    `http://wmts10.geo.admin.ch/EPSG/4258/1.0.0/WMTSCapabilities.xml <../EPSG/4258/1.0.0/WMTSCapabilities.xml>`_
+    `http://wmts10.geo.admin.ch/EPSG/4258/1.0.0/WMTSCapabilities.xml <https://wmts10.geo.admin.ch/EPSG/4258/1.0.0/WMTSCapabilities.xml>`_
 * LV95/CH1903+ (EPSG:2056)
-    `http://wmts10.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml <../EPSG/2056/1.0.0/WMTSCapabilities.xml>`_ 
+    `http://wmts10.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml <https://wmts10.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml>`_ 
 * WGS84/Pseudo-Mercator (EPSG:3857, as used in OSM, Bing, Google Map)
-    `http://wmts10.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml <../EPSG/3857/1.0.0/WMTSCapabilities.xml>`_
+    `http://wmts10.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml <https://wmts10.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml>`_
 
 
 Note:
@@ -888,9 +889,9 @@ Note:
 
 Example
 *******
-* At tile: `http://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20140520/3857/9/266/180.jpeg <../1.0.0/ch.swisstopo.pixelkarte-farbe/default/20140520/3857/9/266/180.jpeg>`_
+* At tile: `http://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20140520/3857/9/266/180.jpeg <https://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20140520/3857/9/266/180.jpeg>`_
 
-.. image:: http://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20140520/3857/9/266/180.jpeg
+.. image:: https://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20140520/3857/9/266/180.jpeg
 
 * An OpenLayers3 application using the `pseudo-Mercator projection <../examples/ol3_mercator.html>`_ 
 * An OpenLayers3 example showing the `Cadastralwebmap as WMTS <../examples/cadastralwebmap.html>`_ 
@@ -1116,3 +1117,18 @@ Response syntax
         label: "RE"
       }
   ]
+
+
+.. raw:: html
+
+    <script>
+    var hostname = getWMTSSource();
+
+        var l = document.links;
+        for(var i=0; i<l.length; i++) {
+            var href = l[i].href;
+            if (href.indexOf('wmts10') > -1) {
+                 l[i].href = href.replace(/^https:\/\/wmts10\.geo\.admin\.ch/, hostname);
+            }
+        }
+   </script>

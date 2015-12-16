@@ -8,12 +8,6 @@ var projection = ol.proj.get('EPSG:2056');
 projection.setExtent(extent);
 
 
-function qualifyURL(url) {
-    var a = document.createElement('a');
-    a.href = url;
-    return a.cloneNode(false).href;
-}
-
 var matrixIds = [];
 for (var i = 0; i < RESOLUTIONS.length; i++) {
     matrixIds.push(i);
@@ -34,7 +28,7 @@ var wmtsSource = function(layer, options) {
             html: '<a target="new" href="http://www.swisstopo.admin.ch/' +
                 'internet/swisstopo/en/home.html">swisstopo</a>'
         })],
-        url: (qualifyURL('..') + '1.0.0/{Layer}/default/' +
+        url: (getWMTSSource() + '/1.0.0/{Layer}/default/' +
             timestamp + '/2056/' +
             '{TileMatrix}/{TileCol}/{TileRow}.').replace('http:', location.protocol) + extension,
         tileGrid: tileGrid,
