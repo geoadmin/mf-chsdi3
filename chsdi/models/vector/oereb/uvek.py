@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text
+from geoalchemy2.types import Geometry
 
 from chsdi.models import register_oereb, bases
-from chsdi.models.vector import Vector, Geometry
-
+from chsdi.models.vector import Vector
 
 Base = bases['uvek']
 

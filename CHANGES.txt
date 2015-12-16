@@ -1,15 +1,4 @@
-1
-2
-3
+3.0.1
+-----
 
-0.0
----
-
--  Initial version
-
-
-
-added at end, just for testing git
-
-another
-
+-  Changelog can be found here: http://api3.geo.admin.ch/releasenotes/index.html

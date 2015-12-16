@@ -317,17 +317,8 @@ msgstr "Zoo"
 msgid "<i>haltestellen_aufzug</i>"
 msgstr "Lift"
 
-msgid "<i>haltestellen_aufzug</i>"
-msgstr "Lift"
-
 msgid "<i>haltestellen_bus</i>"
 msgstr "Bus"
-
-msgid "<i>haltestellen_bus</i>"
-msgstr "Bus"
-
-msgid "<i>haltestellen_bus_luftseilbahn</i>"
-msgstr "Bus, Luftseilbahn"
 
 msgid "<i>haltestellen_bus_luftseilbahn</i>"
 msgstr "Bus, Luftseilbahn"
@@ -335,17 +326,8 @@ msgstr "Bus, Luftseilbahn"
 msgid "<i>haltestellen_bus_schiff</i>"
 msgstr "Bus, Schiff"
 
-msgid "<i>haltestellen_bus_schiff</i>"
-msgstr "Bus, Schiff"
-
 msgid "<i>haltestellen_bus_standseilbahn_tram</i>"
 msgstr "Bus, Standseilbahn, Tram"
-
-msgid "<i>haltestellen_bus_standseilbahn_tram</i>"
-msgstr "Bus, Standseilbahn, Tram"
-
-msgid "<i>haltestellen_bus_tram</i>"
-msgstr "Bus, Tram"
 
 msgid "<i>haltestellen_bus_tram</i>"
 msgstr "Bus, Tram"
@@ -353,17 +335,8 @@ msgstr "Bus, Tram"
 msgid "<i>haltestellen_bus_tram_zug</i>"
 msgstr "Bus, Tram, Zug"
 
-msgid "<i>haltestellen_bus_tram_zug</i>"
-msgstr "Bus, Tram, Zug"
-
 msgid "<i>haltestellen_bus_zug</i>"
 msgstr "Bus, Zug"
-
-msgid "<i>haltestellen_bus_zug</i>"
-msgstr "Bus, Zug"
-
-msgid "<i>haltestellen_luftseilbahn</i>"
-msgstr "Luftseilbahn"
 
 msgid "<i>haltestellen_luftseilbahn</i>"
 msgstr "Luftseilbahn"
@@ -386,17 +359,8 @@ msgstr "Schiff, Zahnradbahn"
 msgid "<i>haltestellen_standseilbahn</i>"
 msgstr "Standseilbahn"
 
-msgid "<i>haltestellen_standseilbahn</i>"
-msgstr "Standseilbahn"
-
 msgid "<i>haltestellen_standseilbahn_bus</i>"
 msgstr "Standseilbahn, Bus"
-
-msgid "<i>haltestellen_standseilbahn_bus</i>"
-msgstr "Standseilbahn, Bus"
-
-msgid "<i>haltestellen_standseilbahn_luftseilbahn</i>"
-msgstr "Standseilbahn, Luftseilbahn"
 
 msgid "<i>haltestellen_standseilbahn_luftseilbahn</i>"
 msgstr "Standseilbahn, Luftseilbahn"
@@ -404,17 +368,8 @@ msgstr "Standseilbahn, Luftseilbahn"
 msgid "<i>haltestellen_standseilbahn_zug</i>"
 msgstr "Standseilbahn, Zug"
 
-msgid "<i>haltestellen_standseilbahn_zug</i>"
-msgstr "Standseilbahn, Zug"
-
 msgid "<i>haltestellen_tram</i>"
 msgstr "Tram"
-
-msgid "<i>haltestellen_tram</i>"
-msgstr "Tram"
-
-msgid "<i>haltestellen_tram_bus_zahnradbahn</i>"
-msgstr "Tram, Bus"
 
 msgid "<i>haltestellen_tram_bus_zahnradbahn</i>"
 msgstr "Tram, Bus"
@@ -422,17 +377,8 @@ msgstr "Tram, Bus"
 msgid "<i>haltestellen_zahnradbahn</i>"
 msgstr "Zahnradbahn"
 
-msgid "<i>haltestellen_zahnradbahn</i>"
-msgstr "Zahnradbahn"
-
 msgid "<i>haltestellen_zug</i>"
 msgstr "Zug"
-
-msgid "<i>haltestellen_zug</i>"
-msgstr "Zug"
-
-msgid "<i>haltestellen_zug_tram</i>"
-msgstr "Zug, Tram"
 
 msgid "<i>haltestellen_zug_tram</i>"
 msgstr "Zug, Tram"
@@ -3083,9 +3029,6 @@ msgstr "Restituziun d'aua"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
 msgstr "Intschess parzials 2km2"
 
-msgid "ch.bafu.wasser-teileinzugsgebiete_2"
-msgstr "Intschess parzials 2km2"
-
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
 msgstr "Flussgebietsname"
 
@@ -5343,7 +5286,7 @@ msgid "coordinate_y"
 msgstr "Y-Koordinate"
 
 msgid "copy_avail"
-msgstr "Zugangsstufe "copy""
+msgstr "Zugangsstufe \"copy\""
 
 msgid "ct"
 msgstr "Kt."
@@ -6681,7 +6624,7 @@ msgid "rotation key"
 msgstr "Benutzen Sie Alt + Umschalt + Ziehen um das Bild zu rotieren"
 
 msgid "rotation key apple"
-msgstr "Benutzen Sie \u2325 + Umschalt + Ziehen um das Bild zu rotieren"
+msgstr "Benutzen Sie u2325 + Umschalt + Ziehen um das Bild zu rotieren"
 
 msgid "rotordurchmesser"
 msgstr "Rotor- durchmesser"
@@ -7459,7 +7402,7 @@ msgid "tt_kbs_gemeinde_ehemalige"
 msgstr "Ehemalige Gemeinde"
 
 msgid "tt_kbs_nbr"
-msgstr ""KGS-DS-Nr""
+msgstr "\"KGS-DS-Nr\""
 
 msgid "tt_kbs_objektart"
 msgstr "Objektart"
@@ -7828,7 +7771,7 @@ msgid "tt_teileinzugsgebiete_2.ebene2km_teil4"
 msgstr "Höhenangaben zum EZG [m]"
 
 msgid "tt_teileinzugsgebiete_2.ebene2km_teil5"
-msgstr "Modellierte mittlere Abflüsse (s. Kriterien <a href="https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_de.pdf">Onlinehilfe</a>) [m3/s]"
+msgstr "Modellierte mittlere Abflüsse (s. Kriterien <a href=\"https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_de.pdf\">Onlinehilfe</a>) [m3/s]"
 
 msgid "tt_teileinzugsgebiete_2.gebietsauslaesse_gemeindename"
 msgstr "Gemeinde am Gebietsauslass"
@@ -7858,7 +7801,7 @@ msgid "tt_teileinzugsgebiete_2.namen_gewaesser"
 msgstr "Gewässername"
 
 msgid "tt_teileinzugsgebiete_2.noinfoforthisobject"
-msgstr "Für dieses Gesamteinzugsgebiet (sehr klein / sehr gross) werden keine modellierten Abflusswerte bereitgestellt (siehe Kriterien in der <a href="https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_de.pdf">Onlinehilfe</a>)"
+msgstr "Für dieses Gesamteinzugsgebiet (sehr klein / sehr gross) werden keine modellierten Abflusswerte bereitgestellt (siehe Kriterien in der <a href=\"https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_de.pdf\">Onlinehilfe</a>)"
 
 msgid "tt_teileinzugsgebiete_2.physiogeographie_anteil_ch"
 msgstr "Flächenanteil Gesamt-EZG % CH"
@@ -7975,7 +7918,7 @@ msgid "viel_sub"
 msgstr "Historischer Verlauf mit viel Substanz"
 
 msgid "view_avail"
-msgstr "Zugangsstufe "view""
+msgstr "Zugangsstufe \"view\""
 
 msgid "waldanteil"
 msgstr "Waldanteil [%]"

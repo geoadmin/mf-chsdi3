@@ -24,7 +24,8 @@ def versioned(path):
         if 'localhost:' not in parsedURL.netloc:
             parts = parsedURL.path.split(entry_path, 1)
             if len(parts) > 1:
-                parsedURL = parsedURL._replace(path=parts[0] + entry_path + version + '/' + parts[1])
+                parsedURL = parsedURL._replace(
+                    path=parts[0] + entry_path + version + '/' + parts[1])
                 agnosticPath = urlunparse(parsedURL)
         return agnosticPath
     else:

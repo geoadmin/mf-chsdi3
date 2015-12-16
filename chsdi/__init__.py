@@ -111,5 +111,5 @@ def main(global_config, **settings):
     config.add_static_view('/', 'chsdi:static/doc/build')
 
     # required to find code decorated by view_config
-    config.scan(ignore=['chsdi.tests', 'chsdi.models.bod', 'chsdi.models.vector'])
+    config.scan(ignore=['chsdi.tests', 'chsdi.models.bod'])
     return config.make_wsgi_app()
