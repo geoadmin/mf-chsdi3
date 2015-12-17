@@ -3,13 +3,13 @@
 from functools import wraps
 import xml.parsers.expat
 
-from pyramid.view import view_config
 import pyramid.httpexceptions as exc
 
 import urllib
 
 
 EXPECTED_CONTENT_TYPE = 'application/vnd.google-earth.kml+xml'
+
 
 def requires_authorization():
     def wrapper(f):
@@ -25,6 +25,7 @@ def requires_authorization():
                 return f(self, *args, **kwargs)
         return wrapped
     return wrapper
+
 
 def validate_kml_input():
     def decorator(func):

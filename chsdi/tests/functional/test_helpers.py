@@ -231,7 +231,7 @@ class Test_Helpers(unittest.TestCase):
         box2d = [10.1, 2.2, 3.3, 6.6]
         try:
             center_from_box2d(box2d)
-        except ValueError, e:
+        except ValueError as e:
             self.assertRaises(e)
 
     def test_format_scale(self):

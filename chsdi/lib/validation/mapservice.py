@@ -107,7 +107,7 @@ class MapServiceValidation(MapNameValidation):
 
     @where.setter
     def where(self, value):
-        ## TODO regexp to test validity of sql clause
+        # TODO regexp to test validity of sql clause
         if value is not None:
             self._where = value
 
@@ -141,7 +141,7 @@ class MapServiceValidation(MapNameValidation):
             self._returnGeometry = False
         else:
             if self._where is not None:
-              return
+                return
             self._returnGeometry = True
 
     @imageDisplay.setter

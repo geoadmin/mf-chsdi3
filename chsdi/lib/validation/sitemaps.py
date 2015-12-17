@@ -28,7 +28,7 @@ class SiteMapValidation(object):
         if len(clist) > 2:
             raise HTTPBadRequest('Malformed content parameter')
         if len(clist) == 2:
-            #.lstrip is used to consider also negative numbers as valid numbers and cases of positive numbers with the '+' symbol
+            # .lstrip is used to consider also negative numbers as valid numbers and cases of positive numbers with the '+' symbol
             if str(clist[1]).lstrip('+-').isdigit():
                 self._multi_part = int(clist[1])
             else:

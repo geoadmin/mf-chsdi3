@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import geojson
-
 from pyramid.httpexceptions import HTTPBadRequest
 
 from shapely.geometry import asShape
@@ -33,7 +32,6 @@ class ProfileValidation(object):
 
     @linestring.setter
     def linestring(self, value):
-        import geojson
         if value is None:
             raise HTTPBadRequest("Missing parameter geom")
         try:
@@ -72,7 +70,6 @@ class ProfileValidation(object):
                 self._nb_points = int(value)
             else:
                 raise HTTPBadRequest("Please provide a numerical value for the parameter 'NbPoints'/'nb_points'")
-
 
     @ma_offset.setter
     def ma_offset(self, value):

@@ -22,7 +22,7 @@ from chsdi.models.bod import OerebMetadata, get_bod_model
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
 PROTECTED_GEOMETRY_LAYERS = ['ch.bfs.gebaeude_wohnungs_register']
- 
+
 
 # For several features
 class FeatureParams(MapServiceValidation):

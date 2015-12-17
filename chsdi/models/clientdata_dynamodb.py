@@ -43,6 +43,7 @@ table.delete()
 
 
 class DynamodbConnection:
+
     def __init__(self, region='eu-west-1'):
         self.conn = None
         self.region = region
@@ -57,6 +58,7 @@ class DynamodbConnection:
 
 
 class S3Connection:
+
     def __init__(self, profile_name='geoadmin_filestorage'):
         self.conn = None
         self.profile_name = profile_name

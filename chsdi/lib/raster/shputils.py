@@ -3,14 +3,16 @@
 # file taken from http://indiemaps.com/blog/2008/03/easy-shapefile-loading-in-python/
 
 from struct import unpack
-import dbfutils, math
+import dbfutils
+import math
 XY_POINT_RECORD_LENGTH = 16
 db = []
 
+
 def loadShapefile(file_name):
     global db
-    shp_bounding_box = []
-    shp_type = 0
+    # shp_bounding_box = []
+    # shp_type = 0
     file_name = file_name
     records = []
     # open dbf file and get records as a list
@@ -22,56 +24,64 @@ def loadShapefile(file_name):
 
     # get basic shapefile configuration
     fp.seek(32)
-    shp_type = readAndUnpack('i', fp.read(4))
-    shp_bounding_box = readBoundingBox(fp)
+    # shp_type = readAndUnpack('i', fp.read(4))
+    readAndUnpack('i', fp.read(4))
+    # shp_bounding_box = readBoundingBox(fp)
+    readBoundingBox(fp)
 
     # fetch Records
     fp.seek(100)
     while True:
         shp_record = createRecord(fp)
-        if shp_record == False:
+        if shp_record is False:
             break
         records.append(shp_record)
 
     return records
 
-record_class = {0:'RecordNull', 1:'RecordPoint', 8:'RecordMultiPoint',
-                3:'RecordPolyLine', 5:'RecordPolygon'}
+record_class = {0: 'RecordNull', 1: 'RecordPoint', 8: 'RecordMultiPoint',
+                3: 'RecordPolyLine', 5: 'RecordPolygon'}
+
 
 def createRecord(fp):
-# read header
+    # read header
     record_number = readAndUnpack('>L', fp.read(4))
     if record_number == '':
         return False
-    content_length = readAndUnpack('>L', fp.read(4))
+    # content_length = readAndUnpack('>L', fp.read(4))
+    readAndUnpack('>L', fp.read(4))
     record_shape_type = readAndUnpack('<L', fp.read(4))
 
-    shp_data = readRecordAny(fp,record_shape_type)
+    shp_data = readRecordAny(fp, record_shape_type)
     dbf_data = {}
-    for i in range(0,len(db[record_number+1])):
-        dbf_data[db[0][i]] = db[record_number+1][i]
+    for i in range(0, len(db[record_number + 1])):
+        dbf_data[db[0][i]] = db[record_number + 1][i]
 
-    return {'shp_data':shp_data, 'dbf_data':dbf_data}
+    return {'shp_data': shp_data, 'dbf_data': dbf_data}
 
 # Reading defs
 
+
 def readRecordAny(fp, type):
-    if type==0:
+    if type == 0:
         return readRecordNull(fp)
-    elif type==1:
+    elif type == 1:
         return readRecordPoint(fp)
-    elif type==8:
+    elif type == 8:
         return readRecordMultiPoint(fp)
-    elif type==3 or type==5:
+    elif type == 3 or type == 5:
         return readRecordPolyLine(fp)
     else:
         return False
+
 
 def readRecordNull(fp):
     data = {}
     return data
 
 point_count = 0
+
+
 def readRecordPoint(fp):
     global point_count
     data = {}
@@ -80,12 +90,14 @@ def readRecordPoint(fp):
     point_count += 1
     return data
 
+
 def readRecordMultiPoint(fp):
     data = readBoundingBox(fp)
     data['numpoints'] = readAndUnpack('i', fp.read(4))
-    for i in range(0,data['numpoints']):
+    for i in range(0, data['numpoints']):
         data['points'].append(readRecordPoint(fp))
     return data
+
 
 def readRecordPolyLine(fp):
     data = readBoundingBox(fp)
@@ -97,7 +109,7 @@ def readRecordPolyLine(fp):
     points_initial_index = fp.tell()
     points_read = 0
     for part_index in range(0, data['numparts']):
-        point_index = data['parts'][part_index]
+        # point_index = data['parts'][part_index]
 
         # if(!isset(data['parts'][part_index]['points']) or !is_array(data['parts'][part_index]['points'])):
         data['parts'][part_index] = {}
@@ -120,25 +132,28 @@ def readRecordPolyLine(fp):
 
 # General defs
 
+
 def readBoundingBox(fp):
     data = {}
-    data['xmin'] = readAndUnpack('d',fp.read(8))
-    data['ymin'] = readAndUnpack('d',fp.read(8))
-    data['xmax'] = readAndUnpack('d',fp.read(8))
-    data['ymax'] = readAndUnpack('d',fp.read(8))
+    data['xmin'] = readAndUnpack('d', fp.read(8))
+    data['ymin'] = readAndUnpack('d', fp.read(8))
+    data['xmax'] = readAndUnpack('d', fp.read(8))
+    data['ymax'] = readAndUnpack('d', fp.read(8))
     return data
 
+
 def readAndUnpack(type, data):
-    if data=='': return data
+    if data == '':
+        return data
     return unpack(type, data)[0]
 
 
 ####
-#### additional functions
+# additional functions
 ####
 
 def getCentroids(records, projected=False):
-# for each feature
+    # for each feature
     if projected:
         points = 'projectedPoints'
     else:
@@ -153,17 +168,19 @@ def getCentroids(records, projected=False):
                 cy += point['y']
         cx /= numpoints
         cy /= numpoints
-        feature['shp_data']['centroid'] = {'x':cx, 'y':cy}
+        feature['shp_data']['centroid'] = {'x': cx, 'y': cy}
+
 
 def getBoundCenters(records):
     for feature in records:
-        cx = .5 * (feature['shp_data']['xmax']-feature['shp_data']['xmin']) + feature['shp_data']['xmin']
-        cy = .5 * (feature['shp_data']['ymax']-feature['shp_data']['ymin']) + feature['shp_data']['ymin']
-        feature['shp_data']['boundCenter'] = {'x':cx, 'y':cy}
+        cx = .5 * (feature['shp_data']['xmax'] - feature['shp_data']['xmin']) + feature['shp_data']['xmin']
+        cy = .5 * (feature['shp_data']['ymax'] - feature['shp_data']['ymin']) + feature['shp_data']['ymin']
+        feature['shp_data']['boundCenter'] = {'x': cx, 'y': cy}
+
 
 def getTrueCenters(records, projected=False):
-#gets the true polygonal centroid for each feature (uses largest ring)
-#should be spherical, but isn't
+    # gets the true polygonal centroid for each feature (uses largest ring)
+    # should be spherical, but isn't
 
     if projected:
         points = 'projectedPoints'
@@ -177,13 +194,13 @@ def getTrueCenters(records, projected=False):
             if ringArea > maxarea:
                 maxarea = ringArea
                 biggest = ring
-            #now get the true centroid
-        tempPoint = {'x':0, 'y':0}
-        if biggest[points][0] != biggest[points][len(biggest[points])-1]:
+            # now get the true centroid
+        tempPoint = {'x': 0, 'y': 0}
+        if biggest[points][0] != biggest[points][len(biggest[points]) - 1]:
             print "mug", biggest[points][0], biggest[points][len(biggest[points]
-                    )-1]
-        for i in range(0, len(biggest[points])-1):
-            j = (i + 1) % (len(biggest[points])-1)
+                                                                 ) - 1]
+        for i in range(0, len(biggest[points]) - 1):
+            j = (i + 1) % (len(biggest[points]) - 1)
             tempPoint['x'] -= (biggest[points][i]['x'] + biggest[points][j]['x']) * ((biggest[points][i]['x'] * biggest[points][j]['y']) - (biggest[points][j]['x'] * biggest[points][i]['y']))
             tempPoint['y'] -= (biggest[points][i]['y'] + biggest[points][j]['y']) * ((biggest[points][i]['x'] * biggest[points][j]['y']) - (biggest[points][j]['x'] * biggest[points][i]['y']))
 
@@ -191,54 +208,57 @@ def getTrueCenters(records, projected=False):
         tempPoint['y'] = tempPoint['y'] / ((6) * maxarea)
         feature['shp_data']['truecentroid'] = tempPoint
 
+
 def getArea(ring, points):
-#returns the area of a polygon
-#needs to be spherical area, but isn't
+    # returns the area of a polygon
+    # needs to be spherical area, but isn't
     area = 0
-    for i in range(0,len(ring[points])-1):
-        j = (i + 1) % (len(ring[points])-1)
+    for i in range(0, len(ring[points]) - 1):
+        j = (i + 1) % (len(ring[points]) - 1)
         area += ring[points][i]['x'] * ring[points][j]['y']
         area -= ring[points][i]['y'] * ring[points][j]['x']
 
-    return math.fabs(area/2)
+    return math.fabs(area / 2)
+
 
 def getNeighbors(records):
 
-#for each feature
+    # for each feature
     for i in range(len(records)):
-    #print i, records[i]['dbf_data']['ADMIN_NAME']
-        if not 'neighbors' in records[i]['shp_data']:
+        # print i, records[i]['dbf_data']['ADMIN_NAME']
+        if 'neighbors' not in records[i]['shp_data']:
             records[i]['shp_data']['neighbors'] = []
 
-        #for each other feature
-        for j in range(i+1, len(records)):
+        # for each other feature
+        for j in range(i + 1, len(records)):
             numcommon = 0
-            #first check to see if the bounding boxes overlap
+            # first check to see if the bounding boxes overlap
             if overlap(records[i], records[j]):
-            #if so, check every single point in this feature to see if it matches a point in the other feature
+                # if so, check every single point in this feature to see if it matches a point in the other feature
 
-            #for each part:
+                # for each part:
                 for part in records[i]['shp_data']['parts']:
 
-                #for each point:
+                    # for each point:
                     for point in part['points']:
 
                         for otherPart in records[j]['shp_data']['parts']:
                             if point in otherPart['points']:
                                 numcommon += 1
                                 if numcommon == 2:
-                                    if not 'neighbors' in records[j]['shp_data']:
+                                    if 'neighbors' not in records[j]['shp_data']:
                                         records[j]['shp_data']['neighbors'] = []
                                     records[i]['shp_data']['neighbors'].append(j
-                                            )
+                                                                               )
                                     records[j]['shp_data']['neighbors'].append(i
-                                            )
-                                    #now break out to the next j
+                                                                               )
+                                    # now break out to the next j
                                     break
                         if numcommon == 2:
                             break
                     if numcommon == 2:
                         break
+
 
 def projectShapefile(records, whatProjection, lonCenter=0, latCenter=0):
     print 'projecting to ', whatProjection
@@ -250,18 +270,21 @@ def projectShapefile(records, whatProjection, lonCenter=0, latCenter=0):
                                          latCenter)
                 part['projectedPoints'].append(tempPoint)
 
+
 def projectPoint(fromPoint, whatProjection, lonCenter, latCenter):
-    latRadians = fromPoint['y'] * math.pi/180
-    if latRadians > 1.5: latRadians = 1.5
-    if latRadians < -1.5: latRadians = -1.5
-    lonRadians = fromPoint['x'] * math.pi/180
-    lonCenter = lonCenter * math.pi/180
-    latCenter = latCenter * math.pi/180
+    latRadians = fromPoint['y'] * math.pi / 180
+    if latRadians > 1.5:
+        latRadians = 1.5
+    if latRadians < -1.5:
+        latRadians = -1.5
+    lonRadians = fromPoint['x'] * math.pi / 180
+    lonCenter = lonCenter * math.pi / 180
+    latCenter = latCenter * math.pi / 180
     newPoint = {}
     if whatProjection == "MERCATOR":
-        newPoint['x'] = (180/math.pi) * (lonRadians - lonCenter)
-        newPoint['y'] = (180/math.pi) * math.log(
-                math.tan(latRadians) + (1/math.cos(latRadians)))
+        newPoint['x'] = (180 / math.pi) * (lonRadians - lonCenter)
+        newPoint['y'] = (180 / math.pi) * math.log(
+            math.tan(latRadians) + (1 / math.cos(latRadians)))
         if newPoint['y'] > 200:
             newPoint['y'] = 200
         if newPoint['y'] < -200:
@@ -271,6 +294,7 @@ def projectPoint(fromPoint, whatProjection, lonCenter, latCenter):
         newPoint['x'] = 0
         newPoint['y'] = 0
         return newPoint
+
 
 def overlap(feature1, feature2):
     if (feature1['shp_data']['xmax'] > feature2['shp_data']['xmin'] and feature1['shp_data']['ymax'] > feature2['shp_data']['ymin'] and feature1['shp_data']['xmin'] < feature2['shp_data']['xmax'] and feature1['shp_data']['ymin'] < feature2['shp_data']['ymax']):

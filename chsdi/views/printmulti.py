@@ -214,8 +214,8 @@ def worker(job):
                                  body=json.dumps(tmp_spec), headers=h)
 
     if int(resp.status) == 200:
-    # GetURL '141028163227.pdf.printout', file 'mapfish-print141028163227.pdf.printout'
-    # We only get the pdf name and rely on the fact that they are stored on Zadara
+        # GetURL '141028163227.pdf.printout', file 'mapfish-print141028163227.pdf.printout'
+        # We only get the pdf name and rely on the fact that they are stored on Zadara
         try:
             pdf_url = json.loads(content)['getURL']
             log.debug('[Worker] pdf_url: %s', pdf_url)
