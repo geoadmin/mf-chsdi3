@@ -72,7 +72,7 @@ class TileChecker(MapProxyTestsBase):
         url = rotateUrl(url)
         h = get_header()
         self.session.headers.update(h['Header'])
-        resp = self.session.get(url)
+        resp = self.session.get(url, timeout=(5, 30))
         checkcode = resp.status_code in h['Results']
         if 'ch.astra.ivs-nat-verlaeufe' in path or 'ch.swisstopo.vec25-eisenbahnnetz' in path or 'ch.swisstopo.swissbuildings3d' in path:
             checkcode = (checkcode or resp.status_code == 500)
