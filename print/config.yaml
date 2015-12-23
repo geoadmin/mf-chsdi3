@@ -297,7 +297,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Massstab 1: ${format %,d scale}
+                Druckmassstab 1: ${format %,d scale}
                 Gedruckt am ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -305,7 +305,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Echelle 1: ${format %,d scale}
+                Echelle imprimé 1: ${format %,d scale}
                 Imprimé le ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -313,7 +313,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Scale 1: ${format %,d scale}
+                Print Scale 1: ${format %,d scale}
                 Printed on ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -321,7 +321,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Scala 1: ${format %,d scale}
+                Scala di Stampa 1: ${format %,d scale}
                 Stampà il(s) ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -329,7 +329,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Scala 1: ${format %,d scale}
+                Scala di Stampa 1: ${format %,d scale}
                 Stampato il ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
     lastPage:
@@ -627,7 +627,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Massstab 1: ${format %,d scale}
+                Druckmassstab 1: ${format %,d scale}
                 Gedruckt am ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -635,7 +635,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Echelle 1: ${format %,d scale}
+                Echelle imprimé 1: ${format %,d scale}
                 Imprimé le ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -643,7 +643,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Scale 1: ${format %,d scale}
+                Print Scale 1: ${format %,d scale}
                 Printed on ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -651,7 +651,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Scala 1: ${format %,d scale}
+                Scala di Stampa 1: ${format %,d scale}
                 Stampà il(s) ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -659,7 +659,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Scala 1: ${format %,d scale}
+                Scala di Stampa 1: ${format %,d scale}
                 Stampato il ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
     lastPage:
@@ -959,7 +959,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Massstab 1: ${format %,d scale}
+                Druckmassstab 1: ${format %,d scale}
                 Gedruckt am ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -967,7 +967,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Echelle 1: ${format %,d scale}
+                Echelle imprimé 1: ${format %,d scale}
                 Imprimé le ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -975,7 +975,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Scale 1: ${format %,d scale}
+                Print Scale 1: ${format %,d scale}
                 Printed on ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -983,7 +983,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Scala 1: ${format %,d scale}
+                Scala di Stampa 1: ${format %,d scale}
                 Stampà il(s) ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -991,7 +991,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Scala 1: ${format %,d scale}
+                Scala di Stampa 1: ${format %,d scale}
                 Stampato il ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
     lastPage:
@@ -1289,7 +1289,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Massstab 1: ${format %,d scale}
+                Druckmassstab 1: ${format %,d scale}
                 Gedruckt am ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -1297,7 +1297,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Echelle 1: ${format %,d scale}
+                Echelle imprimé 1: ${format %,d scale}
                 Imprimé le ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -1305,7 +1305,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Scale 1: ${format %,d scale}
+                Print Scale 1: ${format %,d scale}
                 Printed on ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -1313,7 +1313,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Scala 1: ${format %,d scale}
+                Scala di Stampa 1: ${format %,d scale}
                 Stampà il(s) ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
             - !text
@@ -1321,7 +1321,7 @@ layouts:
               fontSize: 7
               align: center
               text: |
-                Scala 1: ${format %,d scale}
+                Scala di Stampa 1: ${format %,d scale}
                 Stampato il ${now dd.MM.yyyy HH:mm}
                 ${shortLink}
     lastPage:
