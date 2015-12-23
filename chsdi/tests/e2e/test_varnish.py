@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import os
-import random
 import requests
+import time
 from chsdi.tests.integration import TestsBase
 
 from chsdi.tests.integration.test_file_storage import VALID_KML, NOT_WELL_FORMED_KML
@@ -19,7 +19,7 @@ class TestVarnish(TestsBase):
         return os.urandom(bits / 8).encode('hex')
 
     def timestamp(self):
-        return random.randrange(20140101, 20141001)
+        return int(round(time.time() * 1000.0))
 
     def setUp(self):
         super(TestVarnish, self).setUp()
