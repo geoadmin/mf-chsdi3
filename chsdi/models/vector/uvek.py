@@ -2476,7 +2476,14 @@ class eignungDaecher (Base, Vector):
     __extended_info__ = True
     __bodId__ = 'ch.bfe.solarenergie-eignung-daecher'
     __label__ = 'id'
+    __queryable_attributes__ = ['df_uid', 'building_id']
     id = Column('df_uid', Text, primary_key=True)
+    building_id = Column('sb_uuid', Text)
+    a_param = Column('a_param', postgresql.ARRAY(Numeric))
+    b_param = Column('b_param', postgresql.ARRAY(Numeric))
+    c_param = Column('c_param', postgresql.ARRAY(Numeric))
+    heizgradtage = Column('heizgradtage', postgresql.ARRAY(Numeric))
+    monate = Column('monat', postgresql.ARRAY(Numeric))
     df_nummer = Column('df_nummer', Integer)
     klasse = Column('klasse', Integer)
     flaeche = Column('flaeche', Numeric)
