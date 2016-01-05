@@ -2529,7 +2529,7 @@ register('ch.meteoschweiz.globalstrahlung-monatlich', globalstrahlung_sis)
 
 
 class globalstrahlung_sisdir (Base, Vector):
-    __tablename__ = 'meteoschweiz_globalstrahlung_sis'
+    __tablename__ = 'meteoschweiz_globalstrahlung_sisdir'
     __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': 'true'})
     __template__ = 'templates/htmlpopup/globalstrahlung.mako'
     __bodId__ = 'ch.meteoschweiz.globalstrahlung-monatlich'
