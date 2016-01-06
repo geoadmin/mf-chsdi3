@@ -68,6 +68,8 @@ def _get_features_params(request):
     params.layers = request.params.get('layers', 'all')
     params.timeInstant = request.params.get('timeInstant')
     params.offset = request.params.get('offset')
+    params.limit = request.params.get('limit')
+    params.order = request.params.get('order')
     return params
 
 
@@ -272,7 +274,7 @@ def _identify(request):
             f = _process_feature(feature, params)
             features.append(f)
 
-            if len(features) > maxFeatures:
+            if len(features) >= maxFeatures:
                 break
 
     return {'results': features}
@@ -360,7 +362,16 @@ def _get_features_for_filters(params, models, maxFeatures=None, where=None):
                 # Can be None because of max and min scale
                 if geomFilter is not None:
                     # TODO Remove code specific clauses
-                    query = query.order_by(model.bgdi_order) if hasattr(model, 'bgdi_order') else query
+                    ordering = model.bgdi_order if hasattr(model, 'bgdi_order') else None
+                    if params.order == 'distance':
+                        ordering = model.order_by_distance(
+                            params.geometry,
+                            params.geometryType,
+                            params.imageDisplay,
+                            params.mapExtent,
+                            params.tolerance
+                        )
+                    query = query.order_by(ordering) if ordering is not None else query
                     query = query.filter(geomFilter)
 
             # Filter by time instant
@@ -369,7 +380,9 @@ def _get_features_for_filters(params, models, maxFeatures=None, where=None):
                 query = query.filter(timeInstantColumn == params.timeInstant)
 
             # Add limit
-            query = query.limit(maxFeatures) if maxFeatures is not None else query
+            limits = [x for x in [maxFeatures, params.limit] if x is not None]
+            flimit = min(limits) if len(limits) > 0 else None
+            query = query.limit(flimit) if flimit is not None else query
 
             # Add offset
             if params.offset is not None:
