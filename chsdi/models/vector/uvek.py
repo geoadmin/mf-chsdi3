@@ -2513,29 +2513,17 @@ class eignungDaecher (Base, Vector):
 register('ch.bfe.solarenergie-eignung-daecher', eignungDaecher)
 
 
-class globalstrahlung_sis (Base, Vector):
-    __tablename__ = 'meteoschweiz_globalstrahlung_sis'
+class globalstrahlung (Base, Vector):
+    __tablename__ = 'meteoschweiz_globalstrahlung_values'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/globalstrahlung.mako'
     __bodId__ = 'ch.meteoschweiz.globalstrahlung-monatlich'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
     date_start = Column('date_start', Date)
-    sis_array = Column('array_values', postgresql.ARRAY(Numeric))
+    sis_array = Column('sis_values', postgresql.ARRAY(Numeric))
+    sisdir_array = Column('sisdir_values', postgresql.ARRAY(Numeric))
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
 register('ch.meteoschweiz.globalstrahlung-monatlich', globalstrahlung_sis)
-
-
-class globalstrahlung_sisdir (Base, Vector):
-    __tablename__ = 'meteoschweiz_globalstrahlung_sisdir'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': 'true'})
-    __template__ = 'templates/htmlpopup/globalstrahlung.mako'
-    __bodId__ = 'ch.meteoschweiz.globalstrahlung-monatlich'
-    __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    date_start = Column('date_start', Date)
-    sisdir_array = Column('array_values', postgresql.ARRAY(Numeric))
-
-register('ch.meteoschweiz.globalstrahlung-monatlich', globalstrahlung_sisdir)
