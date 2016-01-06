@@ -27,6 +27,8 @@
                  'ch.swisstopo.pixelkarte-farbe-pk25.noscale',
                  'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200',
                  'ch.vbs.grunddispositiv-zeus',
+                 'ch.swisstopo-karto.skitouren',
+                 'ch.swisstopo-karto.schneeschuhrouten',
                  'ch.vbs.milairspacechart')
   if c['layerBodId'] in pdf_legends:
       legend_url_pdf = host + '/static/images/legends/' + c['layerBodId'] + '_' + lang + '_big.pdf'

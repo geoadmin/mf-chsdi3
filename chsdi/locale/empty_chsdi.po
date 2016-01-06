@@ -7787,3 +7787,12 @@ msgstr ""
 
 msgid "<i>haltestellen_zug_tram</i>"
 msgstr ""
+
+msgid "ch.swisstopo-karto.skitouren"
+msgstr ""
+
+msgid "ch.swisstopo-karto.hangneigung"
+msgstr ""
+
+msgid "ch.swisstopo-karto.schneeschuhrouten"
+msgstr ""

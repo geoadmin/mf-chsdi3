@@ -3327,10 +3327,10 @@ msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Emplacement des antennes GSM"
 
 msgid "ch.bakom.mobil-antennenstandorte-lte"
-msgstr "Position des antennes 4G (LTE)"
+msgstr "Emplacement des antennes 4G (LTE)"
 
 msgid "ch.bakom.mobil-antennenstandorte-umts"
-msgstr "Position des antennes 3G (UMTS)"
+msgstr "Emplacement des antennes 3G (UMTS)"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emetteurs radio et télévision"
@@ -4120,6 +4120,15 @@ msgstr "Epaisseur des roches meubles [m]"
 
 msgid "ch.swisstopo"
 msgstr "swisstopo"
+
+msgid "ch.swisstopo-karto.hangneigung"
+msgstr "Inclinaison des pentes >30°"
+
+msgid "ch.swisstopo-karto.schneeschuhrouten"
+msgstr "Itinéraires en raquette"
+
+msgid "ch.swisstopo-karto.skitouren"
+msgstr "Itinéraires à ski"
 
 msgid "ch.swisstopo-vd"
 msgstr "Mensuration Officielle Suisse"

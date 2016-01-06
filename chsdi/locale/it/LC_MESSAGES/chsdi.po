@@ -4121,6 +4121,15 @@ msgstr "Spessore dei sedimenti [m]"
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 
+msgid "ch.swisstopo-karto.hangneigung"
+msgstr "Rappresentazione dei pendii >30°"
+
+msgid "ch.swisstopo-karto.schneeschuhrouten"
+msgstr "Itinerari racchette"
+
+msgid "ch.swisstopo-karto.skitouren"
+msgstr "Itinerari di sci"
+
 msgid "ch.swisstopo-vd"
 msgstr "Misurazione Ufficiale Svizzera"
 

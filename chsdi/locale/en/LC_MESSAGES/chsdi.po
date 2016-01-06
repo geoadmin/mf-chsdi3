@@ -4121,6 +4121,15 @@ msgstr "Sediment thickness [m]"
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 
+msgid "ch.swisstopo-karto.hangneigung"
+msgstr "Gradient greater than 30°"
+
+msgid "ch.swisstopo-karto.schneeschuhrouten"
+msgstr "Snowshoe routes"
+
+msgid "ch.swisstopo-karto.skitouren"
+msgstr "Ski routes"
+
 msgid "ch.swisstopo-vd"
 msgstr "Cadastral Surveying Switzerland"
 
