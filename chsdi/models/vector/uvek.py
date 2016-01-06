@@ -2526,4 +2526,4 @@ class globalstrahlung (Base, Vector):
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
-register('ch.meteoschweiz.globalstrahlung-monatlich', globalstrahlung_sis)
+register('ch.meteoschweiz.globalstrahlung-monatlich', globalstrahlung)
