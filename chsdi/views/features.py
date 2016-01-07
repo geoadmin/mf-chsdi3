@@ -496,9 +496,7 @@ def _format_search_text(columnType, searchText):
 
 
 def has_long_geometry(feature):
-    if len(getattr(feature, feature.geometry_column_to_return().name).data) > 1000000:
-        return True
-    return False
+    return bool(len(getattr(feature, feature.geometry_column_to_return().name).data) > 1000000)
 
 
 def _process_feature(feature, params):
