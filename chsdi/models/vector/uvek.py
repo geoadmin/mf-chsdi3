@@ -2505,12 +2505,29 @@ class eignungDaecher (Base, Vector):
     ausrichtung = Column('ausrichtung', Integer)
     neigung = Column('neigung', Integer)
     finanzertrag = Column('finanzertrag', Numeric)
+    stromertrag = Column('stromertrag', Numeric)
     monats_ertrag = Column('monats_ertrag', postgresql.ARRAY(Numeric))
     gs_serie_start = Column('gs_serie_start', Date)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
 register('ch.bfe.solarenergie-eignung-daecher', eignungDaecher)
+
+
+class eignungDaecherOverview (Base, Vector):
+    __tablename__ = 'solarenergie_availability'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/solareignungdaecher_av.mako'
+    __bodId__ = 'ch.bfe.solarenergie-eignung-daecher_overview'
+    __parentLayerId__ = 'ch.bfe.solarenergie-eignung-daecher'
+    __label__ = 'id'
+    id = Column('av_id', Text, primary_key=True)
+    de = Column('de', Text)
+    fr = Column('fr', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bfe.solarenergie-eignung-daecher_overview', eignungDaecherOverview)
 
 
 class globalstrahlung (Base, Vector):
