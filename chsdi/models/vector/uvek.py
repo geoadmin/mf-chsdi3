@@ -2477,6 +2477,7 @@ class eignungDaecher (Base, Vector):
     __bodId__ = 'ch.bfe.solarenergie-eignung-daecher'
     __label__ = 'id'
     __queryable_attributes__ = ['df_uid', 'building_id']
+    __maxscale__ = 100005
     id = Column('df_uid', Text, primary_key=True)
     building_id = Column('sb_uuid', Text)
     a_param = Column('a_param', postgresql.ARRAY(Numeric))
@@ -2518,16 +2519,17 @@ class eignungDaecherOverview (Base, Vector):
     __tablename__ = 'solarenergie_availability'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/solareignungdaecher_av.mako'
-    __bodId__ = 'ch.bfe.solarenergie-eignung-daecher_overview'
+    __bodId__ = 'ch.bfe.solarenergie-eignung-daecher'
     __parentLayerId__ = 'ch.bfe.solarenergie-eignung-daecher'
     __label__ = 'id'
+    __minscale__ = 100005
     id = Column('av_id', Text, primary_key=True)
     de = Column('de', Text)
     fr = Column('fr', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
-register('ch.bfe.solarenergie-eignung-daecher_overview', eignungDaecherOverview)
+register('ch.bfe.solarenergie-eignung-daecher', eignungDaecherOverview)
 
 
 class globalstrahlung (Base, Vector):
