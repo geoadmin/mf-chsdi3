@@ -152,7 +152,7 @@ def htmlpopup(request):
         params,
         request.db.query(layerModel),
         layerModel,
-        layerIds=[params.layerId if not hasattr(vectorModel, '__parentLayerId__') else vectorModel.__parentLayerId__]
+        layerIds=[params.layerId]
     ))
     feature.update({'attribution': layer.get('attributes')['dataOwner']})
     feature.update({'fullName': layer.get('fullName')})
@@ -176,7 +176,7 @@ def extendedhtmlpopup(request):
         params,
         request.db.query(layerModel),
         layerModel,
-        layerIds=[params.layerId if not hasattr(vectorModel, '__parentLayerId__') else vectorModel.__parentLayerId__]
+        layerIds=[params.layerId]
     ))
     feature.update({'attribution': layer.get('attributes')['dataOwner']})
     feature.update({'fullName': layer.get('fullName')})
