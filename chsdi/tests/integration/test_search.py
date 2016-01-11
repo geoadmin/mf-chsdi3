@@ -183,6 +183,11 @@ class TestSearchServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
         self.assertTrue(resp.json['results'][0]['attrs']['origin'] == 'parcel')
 
+    def test_search_locations_prefix_address(self):
+        params = {'searchText': 'address val', 'type': 'locations'}
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
+        self.assertTrue(resp.json['results'][0]['attrs']['origin'] == 'address')
+
     def test_search_locations_parcel_keyword_only(self):
         params = {'searchText': 'parzelle', 'type': 'locations'}
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
@@ -303,4 +308,13 @@ class TestSearchServiceView(TestsBase):
         params = {'searchText': 'birgmasdfasdfa', 'type': 'locations', 'lang': 'de'}
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertTrue(len(resp.json['results']) == 0)
+        self.assertTrue(resp.json['fuzzy'] == 'true')
+        # type : 'locations_preview'
+        params = {'searchText': 'Bettingen', 'type': 'locations_preview'}
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        self.assertTrue(len(resp.json['results']) > 0)
+        # Fuzzy results for locations_preview
+        params = {'searchText': 'birgma', 'type': 'locations_preview', 'lang': 'de'}
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        self.assertTrue(len(resp.json['results']) > 0)
         self.assertTrue(resp.json['fuzzy'] == 'true')
