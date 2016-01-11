@@ -66,6 +66,10 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Copper wire <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-kupferdraht>`__ (ch.bakom.anschlussart-kupferdraht)                                |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20151216:
