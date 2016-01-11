@@ -91,7 +91,7 @@ class Search(SearchValidation):
                 temp = self.sphinx.Query(searchTextFinal, index='swisssearch_preview_fuzzy')
             else:
                 temp = self.sphinx.Query(searchTextFinal, index='swisssearch_fuzzy')
-        except IOError:
+        except IOError:  # pragma: no cover
             raise exc.HTTPGatewayTimeout()
         temp = temp['matches'] if temp is not None else temp
         self.results['fuzzy'] = 'true'
@@ -139,7 +139,7 @@ class Search(SearchValidation):
                 else:
                     temp = self.sphinx.Query(searchTextFinal, index='swisssearch')
 
-            except IOError:
+            except IOError:  # pragma: no cover
                 raise exc.HTTPGatewayTimeout()
             temp = temp['matches'] if temp is not None else temp
 
@@ -181,7 +181,7 @@ class Search(SearchValidation):
         ))
         try:
             temp = self.sphinx.Query(searchText, index=index_name)
-        except IOError:
+        except IOError:  # pragma: no cover
             raise exc.HTTPGatewayTimeout()
         temp = temp['matches'] if temp is not None else temp
         if temp is not None and len(temp) != 0:
@@ -226,7 +226,7 @@ class Search(SearchValidation):
         self._add_feature_queries(searchdText, timeFilter)
         try:
             temp = self.sphinx.RunQueries()
-        except IOError:
+        except IOError:  # pragma: no cover
             raise exc.HTTPGatewayTimeout()
         self.sphinx.ResetFilters()
         self._parse_feature_results(temp)
@@ -327,7 +327,7 @@ class Search(SearchValidation):
         buildRanksList = lambda x: origin2Rank[x]
         try:
             ranks = map(buildRanksList, origins)
-        except KeyError:
+        except KeyError:  # pragma: no cover
             raise exc.HTTPBadRequest('Bad value(s) in parameter origins')
         return ranks
 
@@ -395,7 +395,7 @@ class Search(SearchValidation):
         for i in range(0, len(results)):
             if 'error' in results[i]:
                 if results[i]['error'] != '':
-                    raise exc.HTTPNotFound(results[i]['error'])
+                    raise exc.HTTPNotFound(results[i]['error'])  # pragma: no cover
             if results[i] is not None and 'matches' in results[i]:
                 # Add results to the list
                 for res in results[i]['matches']:
@@ -416,7 +416,7 @@ class Search(SearchValidation):
                              self.bbox[2],
                              self.bbox[3]))
             self.quadindex = quadindex if quadindex != '' else None
-        except ValueError:
+        except ValueError:  # pragma: no cover
             self.quadindex = None
 
     def _bbox_intersection(self, ref, result):
@@ -429,7 +429,7 @@ class Search(SearchValidation):
             refbox = box(ref[0], ref[1], ref[2], ref[3]) if not _is_point(ref) else Point(ref[0], ref[1])
             arr = parse_box2d(result)
             resbox = box(arr[0], arr[1], arr[2], arr[3]) if not _is_point(arr) else Point(arr[0], arr[1])
-        except:
+        except:  # pragma: no cover
             # We bail with True to be conservative and
             # not exclude this geometry from the result
             # set. Only happens if result does not
