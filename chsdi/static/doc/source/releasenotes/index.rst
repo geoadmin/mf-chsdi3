@@ -70,6 +70,8 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                    |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `UNESCO World cultural heritage <//map.geo.admin.ch/?layers=ch.bak.schutzgebiete-unesco_weltkulturerbe>`__ (ch.bak.schutzgebiete-unesco_weltkulturerbe) |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20151216:
