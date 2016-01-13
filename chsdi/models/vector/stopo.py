@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text
-from sqlalchemy.types import Numeric, Boolean, Integer, DateTime
 
-from chsdi.models import register, bases
+from sqlalchemy.types import Numeric, Boolean, Integer, DateTime, Float
+from geoalchemy2.types import Geometry
+
+from chsdi.models import register, register_perimeter, bases
 from chsdi.models.vector import Vector, Geometry2D
 
 
@@ -938,7 +940,17 @@ class GridstandPk25(Base, Vector):
     release = Column('release', Integer)
     the_geom = Column(Geometry2D)
 
+
+class GridStandPK25Perimeter(Base, Vector):
+    __tablename__ = 'shop_perimeter_pk25'
+    __table_args__ = ({'autoload': False})
+    __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk25.noscale'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
 register('ch.swisstopo.pixelkarte-farbe-pk25.noscale', GridstandPk25)
+register_perimeter('ch.swisstopo.pixelkarte-farbe-pk25.noscale', GridStandPK25Perimeter)
 
 
 class GridstandPk25Meta(GridstandPk25):
@@ -958,7 +970,19 @@ class GridstandPk50(Base, Vector):
     release = Column('release', Integer)
     the_geom = Column(Geometry2D)
 
+
+# Only PK50 has a fixed perimeter
+class GridStandPK50Perimeter(Base, Vector):
+    __tablename__ = 'shop_perimeter_pk50'
+    __table_args__ = ({'autoload': False})
+    __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk50.noscale'
+    __totalArea__ = 65520.0
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
 register('ch.swisstopo.pixelkarte-farbe-pk50.noscale', GridstandPk50)
+register_perimeter('ch.swisstopo.pixelkarte-farbe-pk50.noscale', GridStandPK50Perimeter)
 
 
 class GridstandPk50Meta(GridstandPk50):
@@ -978,7 +1002,17 @@ class GridstandPk100(Base, Vector):
     release = Column('release', Integer)
     the_geom = Column(Geometry2D)
 
+
+class GridStandPK100Perimeter(Base, Vector):
+    __tablename__ = 'shop_perimeter_pk100'
+    __table_args__ = ({'autoload': False})
+    __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk100.noscale'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
 register('ch.swisstopo.pixelkarte-farbe-pk100.noscale', GridstandPk100)
+register_perimeter('ch.swisstopo.pixelkarte-farbe-pk100.noscale', GridStandPK100Perimeter)
 
 
 class GridstandPk100Meta(GridstandPk100):
@@ -998,7 +1032,17 @@ class GridstandPk200(Base, Vector):
     release = Column('release', Integer)
     the_geom = Column(Geometry2D)
 
+
+class GridStandPK200Perimeter(Base, Vector):
+    __tablename__ = 'shop_perimeter_pk200'
+    __table_args__ = ({'autoload': False})
+    __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk200.noscale'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
 register('ch.swisstopo.pixelkarte-farbe-pk200.noscale', GridstandPk200)
+register_perimeter('ch.swisstopo.pixelkarte-farbe-pk200.noscale', GridStandPK200Perimeter)
 
 
 class GridstandPk200Meta(GridstandPk200):
@@ -1038,7 +1082,18 @@ class SwissimageProduct(Base, Vector):
     datenstand = Column('datenstand', Text)
     the_geom = Column(Geometry2D)
 
+
+class SwissimageProductPerimeter(Base, Vector):
+    __tablename__ = 'shop_perimeter_swissimage'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.swissimage-product'
+    id = Column('min', Integer, primary_key=True)
+    resolution = Column('resolution', Float)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
 register('ch.swisstopo.swissimage-product', SwissimageProduct)
+register_perimeter('ch.swisstopo.swissimage-product', SwissimageProductPerimeter)
 
 
 class GeolGeocoverMetadata(Base, Vector):
@@ -2361,3 +2416,54 @@ register('ch.swisstopo.swissnames3d', Swissnames3dRaster10)
 register('ch.swisstopo.swissnames3d', Swissnames3dRaster11)
 register('ch.swisstopo.swissnames3d', Swissnames3dRaster12)
 register('ch.swisstopo.swissnames3d', Swissnames3dRaster13)
+
+
+# Perimeter only layers
+
+
+class SwissTLM3dPerimeter(Base, Vector):
+    __tablename__ = 'shop_perimeter_swisstlm3d'
+    __table_args__ = ({'autoload': False})
+    __bodId__ = 'ch.swisstopo.swisstlm3d-karte-farbe'
+    __totalArea__ = 41455.0
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register_perimeter('ch.swisstopo.swisstlm3d-karte-farbe', SwissTLM3dPerimeter)
+
+
+class SwissAlti3dPerimeter(Base, Vector):
+    __tablename__ = 'shop_perimeter_swissalti3d'
+    __table_args__ = ({'autoload': False})
+    __bodId__ = 'ch.swisstopo.swissalti3d-reliefschattierung'
+    __totalArea__ = 41455.0
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register_perimeter('ch.swisstopo.swissalti3d-reliefschattierung', SwissAlti3dPerimeter)
+
+
+class DHM25Perimeter(Base, Vector):
+    __tablename__ = 'shop_perimeter_dhm25'
+    __table_args__ = ({'autoload': False})
+    __bodId__ = 'ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'
+    __totalArea__ = 58500.0
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register_perimeter('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25Perimeter)
+
+
+class SwissBuildings3dPerimeter(Base, Vector):
+    __tablename__ = 'shop_perimeter_swissbuildings3d'
+    __table_args__ = ({'autoload': False})
+    __bodId__ = 'ch.swisstopo.swissbuildings3d'
+    __totalArea__ = 41455.0
+    id = Column('gid', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register_perimeter('ch.swisstopo.swissbuildings3d', SwissBuildings3dPerimeter)

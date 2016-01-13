@@ -10,6 +10,7 @@ engines = {}
 bases = {}
 bodmap = {}
 oerebmap = {}
+perimetermap = {}
 
 for db in dbs:
     bases[db] = declarative_base()
@@ -33,9 +34,21 @@ def register(name, klass):
     bodmap.setdefault(name, []).append(klass)
 
 
+def register_perimeter(name, klass):
+    name = unicode(name)
+    perimetermap.setdefault(name, []).append(klass)
+
+
 def register_oereb(name, klass):
     name = unicode(name)
     oerebmap.setdefault(name, []).append(klass)
+
+
+def perimeter_models_from_bodid(bodId):
+    perimeter_models = perimetermap.get(bodId)
+    if perimeter_models is None:
+        return models_from_bodid(bodId)
+    return perimeter_models
 
 
 def oereb_models_from_bodid(bodId):
