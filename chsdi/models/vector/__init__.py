@@ -153,7 +153,7 @@ class Vector(GeoInterface):
         return cls.__mapper__.columns[cls.__label__] if hasattr(cls, '__label__') else cls.__mapper__.primary_key[0]
 
     @classmethod
-    def geom_filter(cls, geometry, geometryType, imageDisplay, mapExtent, tolerance):
+    def geom_filter(cls, geometry, imageDisplay, mapExtent, tolerance):
         toleranceMeters = getToleranceMeters(imageDisplay, mapExtent, tolerance)
         scale = None
         resolution = None
@@ -167,12 +167,32 @@ class Vector(GeoInterface):
             resolution = getResolution(imageDisplay, mapExtent)
         if (scale is None or (scale > cls.__minscale__ and scale <= cls.__maxscale__)) and \
            (resolution is None or (resolution > cls.__minresolution__ and resolution <= cls.__maxresolution__)):
-            geom = esriRest2Shapely(geometry, geometryType)
+            geom = esriRest2Shapely(geometry)
             wkbGeometry = WKBElement(buffer(geom.wkb), 21781)
             geomColumn = cls.geometry_column()
             geomFilter = func.ST_DWITHIN(geomColumn, wkbGeometry, toleranceMeters)
             return geomFilter
         return None
+
+    @classmethod
+    def geom_intersects(cls, geometry):
+        if not isinstance(geometry, WKBElement):
+            geom = esriRest2Shapely(geometry)
+            wkbGeometry = WKBElement(buffer(geom.wkb), 21781)
+        else:
+            wkbGeometry = geometry
+        geomColumn = cls.geometry_column()
+        return func.ST_Intersects(geomColumn, wkbGeometry)
+
+    @classmethod
+    def geom_intersection(cls, geometry):
+        if not isinstance(geometry, WKBElement):
+            geom = esriRest2Shapely(geometry)
+            wkbGeometry = WKBElement(buffer(geom.wkb), 21781)
+        else:
+            wkbGeometry = geometry
+        geomColumn = cls.geometry_column()
+        return func.ST_Intersection(geomColumn, wkbGeometry)
 
     '''
     The order_by_distance ordering is potentially very costly, depending
@@ -189,7 +209,7 @@ class Vector(GeoInterface):
     def order_by_distance(cls, geometry, geometryType, imageDisplay, mapExtent, tolerance):
         toleranceMeters = getToleranceMeters(imageDisplay, mapExtent, tolerance)
         if toleranceMeters <= 250.0:
-            geom = esriRest2Shapely(geometry, geometryType)
+            geom = esriRest2Shapely(geometry)
             wkbGeometry = WKBElement(buffer(geom.wkb), 21781)
             geomColumn = cls.geometry_column()
             return func.ST_DISTANCE(geomColumn, wkbGeometry)
@@ -267,7 +287,7 @@ def formatAttribute(attribute):
         return attribute
 
 
-def esriRest2Shapely(geometry, geometryType):
+def esriRest2Shapely(geometry):
     try:
         return asShape(geometry)
     except ValueError:

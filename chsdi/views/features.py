@@ -22,10 +22,14 @@ from chsdi.lib.validation.features import (
 )
 from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.validation.identify import IdentifyServiceValidation
+from chsdi.lib.validation.geometryservice import GeometryServiceValidation
 from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d
 from chsdi.lib.filters import full_text_search
-from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.clientdata_dynamodb import get_bucket
+from chsdi.models import (
+    models_from_bodid, perimeter_models_from_bodid,
+    queryable_models_from_bodid, oereb_models_from_bodid
+)
 from chsdi.models.bod import OerebMetadata, get_bod_model
 from chsdi.models.vector import getScale
 from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
@@ -286,12 +290,13 @@ def _get_feature_service(request):
     return features
 
 
-def _get_features(params, extended=False):
+def _get_features(params, extended=False, process=True):
     ''' Returns exactly one feature or raises
     an excpetion '''
     scale = None
-    if all((params.imageDisplay, params.mapExtent)):
-        scale = getScale(params.imageDisplay, params.mapExtent)
+    if hasattr(params, 'imageDisplay') and hasattr(params, 'mapExtent'):
+        if all((params.imageDisplay, params.mapExtent)):
+            scale = getScale(params.imageDisplay, params.mapExtent)
     featureIds = params.featureIds
     gridSpec = get_grid_spec(params.layerId)
     if not gridSpec:
@@ -315,10 +320,10 @@ def _get_features(params, extended=False):
             timestamp = layerProperties.get('timestamp')
             yield _get_feature_grid(col, row, timestamp, grid, bucket, params)
         else:
-            yield _get_feature_db(featureId, params, models)
+            yield _get_feature_db(featureId, params, models, process=process)
 
 
-def _get_feature_db(featureId, params, models):
+def _get_feature_db(featureId, params, models, process=True):
     # One layer can have several models
     for model in models:
         query = params.request.db.query(model)
@@ -336,8 +341,9 @@ def _get_feature_db(featureId, params, models):
 
     if feature is None:
         raise exc.HTTPNotFound('No feature with id %s' % featureId)
-    feature = _process_feature(feature, params)
-    feature = {'feature': feature}
+    if process:
+        feature = _process_feature(feature, params)
+        feature = {'feature': feature}
     return feature, vectorModel
 
 
@@ -378,6 +384,76 @@ def _render_feature_template(vectorModel, feature, request, extended=False):
         }, request=request)
 
 
+def _get_areas_for_params(params, models):
+    ''' Returns a generator function that yields
+    a cut areas, layerIds and group attribute. '''
+    groupbyIdx = 0
+    for vectorLayer in models:
+        bodId = vectorLayer.keys()[0]
+        if params.groupby is not None:
+            models = [
+                m for m in vectorLayer[bodId]['models']
+                if hasattr(m, params.groupby[groupbyIdx])
+            ]
+            if len(models) == 0:
+                raise exc.HTTPBadRequest('Attribute %s not found for layer %s' % (
+                    params.groupby[groupbyIdx], bodId))
+        else:
+            models = vectorLayer[bodId]['models']
+        for model in models:
+            if all((params.geometry, params.geometryType)):
+                geomFilter = model.geom_intersects(
+                    params.geometry
+                )
+                cutGeoms = model.geom_intersection(
+                    params.geometry
+                )
+            elif not params.totalArea:
+                params.layerId = params.clipper[0]
+                params.featureIds = params.clipper[1].split(',')
+                params.returnGeometry = True
+                feature, clipperModel = next(_get_features(params, process=False))
+
+                geomFilter = model.geom_intersects(
+                    feature.the_geom
+                )
+                cutGeoms = model.geom_intersection(
+                    feature.the_geom
+                )
+            if params.groupby is not None:
+                query = params.request.db.query(
+                    getattr(model, params.groupby[groupbyIdx]).label('groupbyValue'),
+                    func.Sum(func.ST_Area(cutGeoms)).label('area')
+                ).filter(
+                    geomFilter
+                ).group_by(
+                    getattr(model, params.groupby[groupbyIdx])
+                )
+            elif params.totalArea:
+                query = params.request.db.query(
+                    func.Sum(func.ST_Area(model.geometry_column())).label('area')
+                )
+            else:
+                query = params.request.db.query(
+                    func.Sum(func.ST_Area(cutGeoms)).label('area')
+                ).filter(
+                    geomFilter
+                )
+            try:
+                for feature in query:
+                    # Per default return all areas even if equal to 0
+                    yield {
+                        bodId: {
+                            'area': round(float(feature.area) / (1000.0 * 1000.0), 2),  # convert to square kilometers
+                            'groupby': params.groupby[groupbyIdx] if params.groupby is not None else None,
+                            'groupbyvalue': feature.groupbyValue if hasattr(feature, 'groupbyValue') else None
+                        }
+                    }
+            except Exception as e:
+                raise Exception(e)
+        groupbyIdx += 1
+
+
 def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None):
     ''' Returns a generator function that yields
     a feature. '''
@@ -406,7 +482,6 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
             if params.geometry is not None:
                 geomFilter = model.geom_filter(
                     params.geometry,
-                    params.geometryType,
                     params.imageDisplay,
                     params.mapExtent,
                     params.tolerance
@@ -562,6 +637,55 @@ def _format_search_text(columnType, searchText):
             raise exc.HTTPBadRequest('Please provide a float')
     elif isinstance(columnType, Geometry):
         raise exc.HTTPBadRequest('Find operations cannot be performed on geometry columns')
+
+
+@view_config(route_name='cut', renderer='jsonp')
+def _cut(request):
+    params = GeometryServiceValidation(request)
+    layerIds = params.layers
+    totalArea = params.totalArea
+
+    results = {}
+    models = []
+    # Organize models per layer
+    for layerId in layerIds:
+        modelsForLayer = perimeter_models_from_bodid(layerId)
+        if totalArea and modelsForLayer:
+            for model in modelsForLayer:
+                if hasattr(model, '__totalArea__'):
+                    results[layerId] = [{
+                        'area': model.__totalArea__,
+                        'groupybyvalue': None,
+                        'groupby': None
+                    }]
+                else:
+                    modelsPerLayer = {layerId: {'models': modelsForLayer}}
+                    models.append(modelsPerLayer)
+        else:
+            if modelsForLayer is not None:
+                modelsPerLayer = {layerId: {'models': modelsForLayer}}
+                models.append(modelsPerLayer)
+
+    if len(results.keys()) == 0 and len(models) == 0:
+        raise exc.HTTPBadRequest(
+            'No GeoTable was found for %s' % ' '.join(layerIds))
+
+    areas_gen = _get_areas_for_params(params, models)
+    while True:
+        try:
+            feature = next(areas_gen)
+        except InternalError as e:  # pragma: no cover
+            raise exc.HTTPInternalServerError(
+                'Your request generated the following database error: %s' % e)
+        except StopIteration:
+            break
+        bodId = feature.keys()[0]
+        if bodId not in results:
+            results[bodId] = [feature[bodId]]
+        else:
+            results[bodId].append(feature[bodId])
+    # In square meters
+    return results
 
 
 def has_long_geometry(feature):
