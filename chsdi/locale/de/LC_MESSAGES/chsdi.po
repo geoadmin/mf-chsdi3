@@ -3287,6 +3287,9 @@ msgstr "Diese Website wird halbjährlich nachgeführt. Falls Sie beabsichtigen, 
 msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
 msgstr "UNESCO-Welterbe Kulturstätten"
 
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe_type"
+msgstr "Typ"
+
 msgid "ch.bak.url"
 msgstr "http://www.bak.admin.ch/index.html?lang=de"
 

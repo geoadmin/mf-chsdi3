@@ -3287,6 +3287,9 @@ msgstr "Questa pagina vegn actualisada mintga mez onn. Sche Vus avais avant da d
 msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
 msgstr "UNESCO patrimoni cultural"
 
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe_type"
+msgstr "Tip"
+
 msgid "ch.bak.url"
 msgstr "http://www.bak.admin.ch/index.html?lang=rm"
 
