@@ -3350,6 +3350,9 @@ msgstr "Upload ≥ 1 Mbit/s"
 msgid "ch.bakom.uplink10"
 msgstr "Upload ≥10 Mbit/s"
 
+msgid "ch.bakom.uplink100"
+msgstr "Upload ≥100 Mbit/s"
+
 msgid "ch.bakom.uplink2"
 msgstr "Upload ≥ 2 Mbit/s"
 
@@ -6981,8 +6984,7 @@ msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beurteilung"
 msgstr "Valutazione dell'UFT"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_katasterauszug"
-msgstr "Estratto del catasto
-"
+msgstr "Estratto del catasto"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_standortname"
 msgstr "Nome del sito"
