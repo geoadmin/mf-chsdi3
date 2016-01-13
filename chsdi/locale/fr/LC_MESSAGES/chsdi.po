@@ -3330,10 +3330,10 @@ msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Emplacement des antennes GSM"
 
 msgid "ch.bakom.mobil-antennenstandorte-lte"
-msgstr "Position des antennes 4G (LTE)"
+msgstr "Emplacement des antennes 4G (LTE)"
 
 msgid "ch.bakom.mobil-antennenstandorte-umts"
-msgstr "Position des antennes 3G (UMTS)"
+msgstr "Emplacement des antennes 3G (UMTS)"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emetteurs radio et télévision"
@@ -3349,6 +3349,9 @@ msgstr "Liaison ≥ 1 Mbit/s ascendante"
 
 msgid "ch.bakom.uplink10"
 msgstr "Liaison ≥ 10 Mbit/s ascendante"
+
+msgid "ch.bakom.uplink100"
+msgstr "Liaison ≥100 Mbit/s ascendante"
 
 msgid "ch.bakom.uplink2"
 msgstr "Liaison ≥ 2 Mbit/s ascendante"
@@ -6981,8 +6984,7 @@ msgid "tt_ch_bav_kataster_belasteter_standorte_oev_beurteilung"
 msgstr "Evaluation de l'OFT"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_katasterauszug"
-msgstr "Extrait du cadastre
-"
+msgstr "Extrait du cadastre"
 
 msgid "tt_ch_bav_kataster_belasteter_standorte_oev_standortname"
 msgstr "Nom du site"

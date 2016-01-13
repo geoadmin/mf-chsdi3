@@ -1,3 +1,6 @@
+msgid "ch.bakom.uplink100"
+msgstr ""
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
 msgstr ""
 

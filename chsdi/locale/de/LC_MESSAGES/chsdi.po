@@ -3350,6 +3350,9 @@ msgstr "Upload ≥ 1 Mbit/s"
 msgid "ch.bakom.uplink10"
 msgstr "Upload ≥ 10 Mbit/s"
 
+msgid "ch.bakom.uplink100"
+msgstr "Upload ≥ 100 Mbit/s"
+
 msgid "ch.bakom.uplink2"
 msgstr "Upload ≥ 2 Mbit/s"
 
