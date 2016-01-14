@@ -21,7 +21,6 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug Fixes
-- GeoJSON output is now available using GetFeatureInfo service using INFO_FORMAT=geojson. `Example of GeoJSON GetFeatureInfo <http://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&BBOX=298500,-137369.92715920915361494,1075500,463369.92715920915361494&CRS=EPSG:21781&WIDTH=961&HEIGHT=743&LAYERS=ch.swisstopo-vd.geometa-gemeinde&STYLES=&FORMAT=image/jpeg&QUERY_LAYERS=ch.swisstopo-vd.geometa-gemeinde&INFO_FORMAT=geojson&I=426&J=383&FEATURE_COUNT=10>`_
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_151216...r_160113>`__
 
 `MAP <//map.geo.admin.ch>`__
