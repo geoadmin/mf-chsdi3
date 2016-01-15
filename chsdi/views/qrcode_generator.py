@@ -37,7 +37,7 @@ def _make_qrcode_img(url):
         output = StringIO.StringIO()
         img = qr.make_image()
         img.save(output)
-    except:
+    except:  # pragma: no cover
         raise HTTPBadRequest('An error occured during the qrcode generation')
     return output.getvalue()
 
