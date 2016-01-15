@@ -66,7 +66,7 @@ class TransportView(object):
                 'destinationName': q.haltestelle.name,
                 'destinationId': q.haltestelle.id
             } for q in query if hasattr(q.haltestelle, 'id')]
-        except OperationalError as e:
+        except OperationalError as e:  # pragma: no cover
             raise HTTPInternalServerError(e)
 
         if not results:
@@ -98,7 +98,7 @@ class DestinationView(object):
                 'id': q.haltestelle.id,
                 'name': q.haltestelle.name
             } for q in query if hasattr(q.haltestelle, 'id')]
-        except OperationalError as e:
+        except OperationalError as e:  # pragma: no cover
             raise HTTPInternalServerError(e)
 
         if not results:
