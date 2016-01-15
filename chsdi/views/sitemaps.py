@@ -40,7 +40,7 @@ def sitemap(request):
         'addresses': addresses
     }
     if params.content not in funcs:
-        raise HTTPNotFound('Missing function definition')
+        raise HTTPNotFound('Missing function definition')  # pragma: no cover
 
     return funcs[params.content](params)
 
@@ -137,7 +137,7 @@ def getTopics(params):
     subreq = Request.blank('/rest/services')
     topicresp = params.request.invoke_subrequest(subreq)
     if topicresp.status_int != 200:
-        raise HTTPInternalServerError('Topics service did not return OK status')
+        raise HTTPInternalServerError('Topics service did not return OK status')  # pragma: no cover
     return json.loads(topicresp.body)['topics']
 
 
