@@ -14,6 +14,8 @@ class TestStationboard(TestsBase):
         params = {'destination': 'myDestination'}
         resp = self.testapp.get('/stationboard/stops/8501120', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(len(resp.json), 1)
+        resp.mustcontain('[{"destination":"nodata"}]')
 
     def test_stationboardi_limit(self):
         params = {'destination': 'Luzern', 'limit': '1'}
@@ -51,3 +53,5 @@ class TestStationboard(TestsBase):
     def test_stationboard_destination_nodata(self):
         resp = self.testapp.get('/stationboard/stops/123/destinations', status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(len(resp.json), 1)
+        resp.mustcontain('[{"destination":"nodata"}]')
