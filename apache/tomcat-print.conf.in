@@ -10,7 +10,12 @@ ProxyPassReverse ${apache_entry_path}/print/ ajp://localhost:8009/print-chsdi3-$
 # Get resulting files directly from filesystem
 AliasMatch ^${apache_entry_path}/print(proxy)?/(\-multi)?([0-9]+\.pdf\.printout)$ ${print_temp_dir}/mapfish-print$2$3
 
+Include  ${buildout:directory/apache/goodip
+
 <LocationMatch ^${apache_entry_path}/print(proxy)?/(\-multi)?([0-9]+\.pdf\.printout)$ >
+  Deny from all
+  Allow from env=GOODIP
+  Allow from 10.
   Header set Content-Disposition "attachment; filename=map.geo.admin.ch.pdf"
   # Try to force IE to open the PDF in a new window
   # overriding what set by the print server
