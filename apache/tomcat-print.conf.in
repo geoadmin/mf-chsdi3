@@ -16,7 +16,7 @@ AliasMatch ^${apache_entry_path}/print(proxy)?/(\-multi)?([0-9]+\.pdf\.printout)
   # overriding what set by the print server
   SetEnvIf Request_URI "\.pdf$" PDF=pdf
   SetEnvIf User-Agent .*MSIE.* IE=1
-  SetEnvIf User-Agent .*MSIE 10.* IE10=1
+  SetEnvIf User-Agent .*MSIE 1[0-9]+.* IE10=1
 
   Header set Content-Disposition "inline" env=IE
   Header set Content-Type "application/octet-stream" env=PDF
