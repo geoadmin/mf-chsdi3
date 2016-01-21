@@ -389,6 +389,7 @@ class Topics(Base):
     backgroundLayers = Column('background_layers', postgresql.ARRAY(Text))
     showCatalog = Column('show_catalog', Boolean)
     staging = Column('staging', Text)
+    plconf = Column('permalink_configuration', Text)
 
 
 class Catalog(Base):
