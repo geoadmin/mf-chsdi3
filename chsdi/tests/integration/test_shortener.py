@@ -35,7 +35,7 @@ class TestShortenerView(TestsBase):
         self.testapp.get('/shorten.json', params={'url': test_url}, status=200)
 
     def test_shortener_shorturl_not_exists(self):
-        self.testapp.get('/shorten/blw', status=400)
+        self.testapp.get('/shorten/blw', status=404)
 
     def test_shortener_moved_permanently(self):
         self.testapp.get('/shorten/6863fbb96f', status=301)

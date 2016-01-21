@@ -2,6 +2,7 @@
 
 from pyramid.view import view_config
 import pyramid.httpexceptions as exc
+import boto.dynamodb2.exceptions as boto_exc
 
 import time
 
@@ -24,8 +25,10 @@ def _add_item(table, url):
                     'timestamp': time.strftime('%Y-%m-%d %X', time.localtime())
                 }
             )
+        except boto_exc.ProvisionedThroughputExceededException as e:
+            raise exc.HTTPInternalServerError('Write units exceeded: %s' % e)  # pragma: no cover
         except Exception as e:
-            raise exc.HTTPBadRequest('Error during put item %s' % e)
+            raise exc.HTTPInternalServerError('Error during put item %s' % e)  # pragam: no cover
         return url_short
     else:
         return url_short
@@ -54,7 +57,7 @@ def shortener(request):
         try:
             table = get_dynamodb_table(table_name='shorturl')
         except Exception as e:
-            raise exc.HTTPBadRequest('Error during connection %s' % e)
+            raise exc.HTTPInternalServerError('Error during connection %s' % e)  # pragma: no cover
 
         url_short = _add_item(table, url)
 
@@ -77,9 +80,15 @@ def shorten_redirect(request):
     table = get_dynamodb_table(table_name='shorturl')
     if url_short == 'toolong':
         raise exc.HTTPFound(location='http://map.geo.admin.ch')
+
     try:
         url_short = table.get_item(url_short=url_short)
         url = url_short.get('url')
+    except boto_exc.ItemNotFound as e:
+        raise exc.HTTPNotFound('This short url doesn\'t exist: s.geo.admin.ch/%s Error is: %s' % (url_short, e))
+    except boto_exc.ProvisionedThroughputExceededException as e:
+        raise exc.HTTPInternalServerError('Read units exceeded: %s' % e)  # pragma: no cover
     except Exception as e:
-        raise exc.HTTPBadRequest('This short url doesn\'t exist: s.geo.admin.ch/%s Error is: %s' % (url_short, e))
+        raise exc.HTTPInternalServerError('Unexpected internal server error: %s' % e)  # pragma: no cover
+
     raise exc.HTTPMovedPermanently(location=url)
