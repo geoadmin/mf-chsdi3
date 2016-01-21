@@ -114,7 +114,7 @@
       <tr><th class="cell-left" colspan="2" style="font-weight: normal">${_('tt_teileinzugsgebiete_2.noinfoforthisobject')}</th></tr>
     % elif c['attributes']['ext_ezg_datenausgabe'] == 3:
       <tr><th class="cell-left" style="font-weight: normal">${_('tt_teileinzugsgebiete_2.abfluesse_regimetyp')}</th>                 <td>${c['attributes']['ext_abfluesse_regimetyp'] or '-'}</td></tr>
-      <tr><th class="cell-left" colspan="2" style="font-weight: normal">${_('tt_teileinzugsgebiete_2.noinfoforthisobject')}</th></tr
+      <tr><th class="cell-left" colspan="2" style="font-weight: normal">${_('tt_teileinzugsgebiete_2.noinfoforthisobject')}</th></tr>
 
     % else:
       <tr><th class="cell-left" style="font-weight: normal">${_('tt_teileinzugsgebiete_2.abfluesse_regimetyp')}</th>                <td>${c['attributes']['ext_abfluesse_regimetyp'] or '-'}</td></tr>
@@ -135,23 +135,30 @@
     % endif
       
     </table>
+
     % if image_exist:
-      <div class="thumbnail-container">
-      <div class="thumbnail">
-        <a href="${img_url}" target="_blank"><img class="image" src="${img_url}" /></a>
-      </div>
+      <div style="width: 100%;">
+        <table class="table-with-border">
+          <tr><td id="image" align="center"><img width=100% height= auto class="image"
+          src="${img_url}"
+          alt=""/></td>
+        </table>
       </div>
     % endif
     % if zip_exist:
-    <table class="table-with-border">
-      <tr><th class="cell-left">Download</th>                              <td><a href="${zip_url}" target="_blank">${_('tt_teileinzugsgebiete_2.download')}</a></td></tr>
-    </table>
+    <div>
+      <table class="table-with-border">
+        <tr><th class="cell-left">Download</th>                              <td><a href="${zip_url}" target="_blank">${_('tt_teileinzugsgebiete_2.download')}</a></td></tr>
+      </table>
+    </div>
     % endif
 
+    <div class="chsdi-map-container table-with-border" style="width: 100%; height: 400px; page-break-inside: avoid;">
+      <div id="map${id}"></div>
+    </div>
+
 </div>
-<div class="chsdi-map-container table-with-border" style="width: 100%; height: 400px; page-break-inside: avoid;">
-  <div id="map${id}"></div>
-</div>
+
 <script type="text/javascript">
     var map = new ga.Map({
       target: 'map${id}',
