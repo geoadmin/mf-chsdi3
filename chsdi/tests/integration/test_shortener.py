@@ -5,7 +5,7 @@ from chsdi.tests.integration import TestsBase
 
 class TestShortenerView(TestsBase):
 
-    def test_shortener_toolong_url(self):
+    def test_shortener_toolong_url_insert(self):
         test_url = 'https://map.geo.admin.ch/?topic=ech&lang=en&bgLayer=ch.swisstopo.pixelkarte-farbe' \
             '&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bafu.wrz-wildruhezonen_portal,' \
             'ch.swisstopo.swisstlm3d-wanderwege,KML%7C%7Chttps:%2F%2Fpublic.geo.admin.ch' \
@@ -32,10 +32,14 @@ class TestShortenerView(TestsBase):
             'ch.swisstopo.pixelkarte-pk50.metadata&layers_timestamp=19961231,,,,,,,,,,,,,,,,,,,,,' \
             '&X=172839.76&Y=662412.05&zoom=3&time=1996&layers_opacity=0.25,1,1,0.4,1,1,1,1,1,1,1,1,1,1,1,' \
             '0.55,0.45,1,1,1,1,1&catalogNodes=457,458'
-        self.testapp.get('/shorten.json', params={'url': test_url}, status=200)
+        resp = self.testapp.get('/shorten.json', params={'url': test_url}, status=200)
+        self.assertTrue(resp.json['shorturl'].endswith('toolong'))
 
     def test_shortener_shorturl_not_exists(self):
         self.testapp.get('/shorten/blw', status=404)
 
     def test_shortener_moved_permanently(self):
         self.testapp.get('/shorten/6863fbb96f', status=301)
+
+    def test_shortener_too_long_get(self):
+        self.testapp.get('/shorten/toolong', status=302)
