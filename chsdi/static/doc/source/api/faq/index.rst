@@ -59,7 +59,7 @@ Which layers are available ?
 
 Some layers can’t be freely used. These layers are accessible by the way of `swisstopo web access - WMTS documentation <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_
 
-The list below includes the layers that require swisstopo web acesss:
+The list below includes the layers that require a swisstopo web acesss:
 
 .. raw:: html
 
@@ -110,7 +110,7 @@ The following list contains all the free accessible layers:
 Which layers have a tooltip?
 ****************************
 
-Not all the layers have a tooltip. Below there is the complete list all the layers that have a tooltip:
+Not all the layers have a tooltip. Below, you can find the complete list all the layers that have a tooltip:
 
 .. raw:: html
 
@@ -123,7 +123,7 @@ Not all the layers have a tooltip. Below there is the complete list all the laye
 Which layers are searchable?
 ****************************
 
-We define a layer as searchable when its features can be searched. Here there is the list of all searchable layers:
+A layer is searchable when its features can be searched. Below, you can find the complete list of all searchable layers:
 
 .. raw:: html
 
