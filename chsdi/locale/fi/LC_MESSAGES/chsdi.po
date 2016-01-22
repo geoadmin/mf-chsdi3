@@ -2154,7 +2154,7 @@ msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Charta da survista idrogeologica"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
-msgstr "NADUF"
+msgstr "Messstandorte Gewässerzustand Bund"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.betriebsbeginn"
 msgstr "Messbeginn"
@@ -2190,7 +2190,7 @@ msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.vergletscherung"
 msgstr "Vergletscherung[%]"
 
 msgid "ch.bafu.hydrologie-gewaesserzustandsmessstationen"
-msgstr "Mesiraziun stadi da las auas"
+msgstr "Mesiraziun stadi da las auas CH"
 
 msgid "ch.bafu.hydrologie-gewaesserzustandsmessstationen.gewaesser"
 msgstr "Name of the surface waters"
@@ -2205,7 +2205,7 @@ msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Charta da fund datas idrologicas"
 
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel"
-msgstr "HWGWP"
+msgstr "Hochwassergrenzwertpegel"
 
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel.datenherkunft"
 msgstr "Datenherkunft"
@@ -2453,53 +2453,65 @@ msgstr "Q347 (P) [l/s]"
 msgid "ch.bafu.hydrologie-untersuchungsgebiete"
 msgstr "HUG Hydro. Untersuchungsgebiete"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antgeb"
-msgstr "Gebäudeareal"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antgeb"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antgew_ms"
-msgstr "Gewässer"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antgew_ms"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antindu"
-msgstr "Industrieareal"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antindu"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antogr"
-msgstr "Obst-, Gemüse-, Rebbau"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antogr"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antunpr"
-msgstr "Unprod. Vegetation"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antunpr"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antv_ab86"
-msgstr "Vergletscherung"
+msgstr "Vergletscherung [%]"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antveg_los_ov"
-msgstr "Vegetationslose Flächen"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antveg_los_ov"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antweid"
-msgstr "Weiden"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antweid"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antwiack"
-msgstr "Wies-, Ackerland"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antwiack"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antws_tot"
-msgstr "Wald"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antws_tot"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.df"
-msgstr "Flussdichte"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.df"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.max_hoe"
-msgstr "H max"
+msgstr "Maximale Höhe [m ü.M.]"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.min_hoe"
-msgstr "H min"
+msgstr "Minimale Höhe [m ü.M.]"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.mit_hoe"
-msgstr "H mittl."
+msgstr "Mittlere Höhe [m ü.M.]"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.mp"
-msgstr "Durchlässigkeit"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.mp"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.ms"
-msgstr "Wasserspeichervermögen"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.ms"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.name"
 msgstr "Name"
@@ -2507,17 +2519,21 @@ msgstr "Name"
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.regimetyp"
 msgstr "Regimetyp"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.sc"
-msgstr "Gerinnegefälle Hauptgerinne"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.sc"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.shape_area"
-msgstr "Fläche"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.shape_area"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.station"
-msgstr "Station"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.station"
 
+#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.url"
-msgstr "Link"
+msgstr "ch.bafu.hydrologie-untersuchungsgebiete.url"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen"
 msgstr "HUG-Messstationen"
@@ -2640,7 +2656,7 @@ msgid "ch.bafu.hydrologischer-atlas_flussgebiete.umfang"
 msgstr "Umfang"
 
 msgid "ch.bafu.hydrologischer-atlas_kantonale-messstationen"
-msgstr "HADES Atlasblatt 5.1.2"
+msgstr "Kantonale und private Messstationen"
 
 msgid "ch.bafu.hydrologischer-atlas_kantonale-messstationen.betriebsbeginn"
 msgstr "Betriebsbeginn"
@@ -4245,7 +4261,7 @@ msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Charta geologica generala"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata"
-msgstr "Geol. Generalkarte 200 - Papier"
+msgstr "Charta geologica generala"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
 msgstr "Autor(en)"
@@ -7330,6 +7346,9 @@ msgstr "Centre coordinate X"
 
 msgid "tt_lubis_schraegaufnahmen_y"
 msgstr "Centre coordinate Y"
+
+msgid "tt_lubis_source_georef"
+msgstr "Genauigkeit AT"
 
 msgid "tt_lubis_x"
 msgstr "Coordinata X"
