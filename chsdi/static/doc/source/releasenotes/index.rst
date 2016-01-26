@@ -10,6 +10,35 @@ Release Notes
 =============
 
 
+.. _releasenotes_20160127:
+
+Release 20160127 - Wednesday, January 27th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160113...r_160127>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160113...r_160127>`__
+
+Geodata
+*******
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `GeoCover - Geological Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Image strips swisstopo <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-bildstreifen>`__ (ch.swisstopo.lubis-bildstreifen)                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images swisstopo oblique <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_schraegaufnahmen>`__ (ch.swisstopo.lubis-luftbilder_schraegaufnahmen)   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20160113:
 
 Release 20160113 - Wednesday, January 13th 2016
