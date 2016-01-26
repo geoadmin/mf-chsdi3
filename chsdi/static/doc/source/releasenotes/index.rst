@@ -37,6 +37,8 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Aerial images swisstopo oblique <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_schraegaufnahmen>`__ (ch.swisstopo.lubis-luftbilder_schraegaufnahmen)   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Availability of the PLR cadastre <//map.geo.admin.ch/?layers=ch.swisstopo-vd.stand-oerebkataster>`__ (ch.swisstopo-vd.stand-oerebkataster)                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20160113:
