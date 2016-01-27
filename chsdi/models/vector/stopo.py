@@ -1937,6 +1937,39 @@ register('ch.swisstopo.transformation-bezugsrahmen_hoehe', transformationBezugsr
 register('ch.swisstopo.transformation-bezugsrahmen_hoehe', transformationBezugsrahmenHoeheLine10cm)
 
 
+class HebungsratenLine(Base, Vector):
+    __tablename__ = 'hebungsraten_line'
+    __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
+    __template__ = 'templates/htmlpopup/hebungsraten.mako'
+    __bodId__ = 'ch.swisstopo.hebungsraten'
+    __label__ = 'contour'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    contour = Column('contour', Numeric)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+
+class HebungsratenPunkt(Base, Vector):
+    __tablename__ = 'hebungsraten_pkt'
+    __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
+    __template__ = 'templates/htmlpopup/hebungsraten.mako'
+    __bodId__ = 'ch.swisstopo.hebungsraten'
+    __label__ = 'ord_nr'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    ord_nr = Column('ord_nr', Text)
+    ort = Column('ort', Text)
+    y = Column('y', Numeric)
+    x = Column('x', Numeric)
+    h = Column('h', Numeric)
+    v = Column('v', Numeric)
+    klasse = Column('klasse', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.swisstopo.hebungsraten', HebungsratenLine)
+register('ch.swisstopo.hebungsraten', HebungsratenPunkt)
+
+
 class spannungsarmeGebiete(Base, Vector):
     __tablename__ = 'spannungsarme_gebiete'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
