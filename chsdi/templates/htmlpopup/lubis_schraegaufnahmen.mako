@@ -10,6 +10,9 @@ import markupsafe
 
 tileUrlBasePath = 'http://aerialimages0.geo.admin.ch/tiles'
 
+def br(text):
+    return text.replace('\n', markupsafe.Markup('<br />'))
+
 def determinePreviewUrl(ebkey):
 
     def getPreviewImageUrl(ebkey):
@@ -95,4 +98,14 @@ viewer_url = get_viewer_url(request, params)
   <td>${_('tt_lubis_noQuickview')}</td>
 </tr>
 % endif
+
+<tr>
+  <td class="cell-left">${_('tt_lubis_bildorder')}</th>
+  <td>
+    ${c['attributes']['contact'] | br }
+    <br/>
+    ${c['attributes']['contact_email']}
+  </td>
+</tr>
+
 </%def>
