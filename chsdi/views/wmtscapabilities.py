@@ -100,7 +100,7 @@ class WMTSCapabilites(MapNameValidation):
             'tilematrixsetDefs': DEFAULT_TILEMATRIXSET
         }
         response = render_to_response(
-            'chsdi:templates/wmtscapabilities.mako',
+            'chsdi:templates/wmtscapabilities/wmtscapabilities.mako',
             wmts,
             request=self.request)
         response.content_type = 'text/xml'
