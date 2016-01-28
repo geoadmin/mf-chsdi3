@@ -39,22 +39,32 @@ class DosisleistungTerrestrisch (Base, Vector):
 
 register('ch.swisstopo.geologie-dosisleistung-terrestrisch', DosisleistungTerrestrisch)
 
-
-class GravimetrischerAtlasMetadata (Base, Vector):
-    __tablename__ = 'gravimetrie_atlas_metadata'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gravimetrischer_atlas_metadata.mako'
-    __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas.metadata'
-    __queryable_attributes__ = ['id', 'titel']
-    __label__ = 'titel'
-    id = Column('nr', Integer, primary_key=True)
-    titel = Column('titel', Text)
-    jahr = Column('jahr', Numeric)
-    autor = Column('autor', Text)
-    formate_de = Column('formate_de', Text)
-    formate_fr = Column('formate_fr', Text)
+class ShopProductGroupClass:
+    __template__ = 'templates/htmlpopup/shop_product_group.mako'
+    __label__ = 'number'
+    __queryable_attributes__ = ['number', 'name', 'release']
+    id = Column('pk_product', Text, primary_key=True)
+    number = Column('s_map_number', Text)
+    name = Column('s_title_de', Text)
+    scale = Column('scale', Integer)
+    price = Column('price', Integer)
+    release = Column('release', Integer)
+    available = Column('available', Boolean)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
+
+
+class SkitourenkarteMetadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_lkski_shop'
+    __bodId__ = 'ch.swisstopo.skitourenkarte-50.metadata'
+
+register('ch.swisstopo.skitourenkarte-50.metadata', SkitourenkarteMetadata)
+
+class GravimetrischerAtlasMetadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'view_gridstand_gravimetrie_atlas_metadata_shop'
+    __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas.metadata'
 
 register('ch.swisstopo.geologie-gravimetrischer_atlas.metadata', GravimetrischerAtlasMetadata)
 

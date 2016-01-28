@@ -2650,6 +2650,15 @@ msgstr ""
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
 msgstr ""
 
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.release"
+msgstr ""
+
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr ""
 
@@ -5269,6 +5278,15 @@ msgid "autor"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.release"
 msgstr ""
 
 msgid "kultur1"

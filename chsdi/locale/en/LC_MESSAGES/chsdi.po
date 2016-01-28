@@ -4445,6 +4445,15 @@ msgstr "Gravimetric Atlas - paper"
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
 msgstr "Nr."
 
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.number"
+msgstr "Number"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.release"
+msgstr "Edition"
+
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
 msgstr "Title"
 
@@ -4696,6 +4705,15 @@ msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
 msgstr "Snowshoe/Ski Tour Maps 1:50 000"
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.number"
+msgstr "Number"
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.release"
+msgstr "Edition"
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"

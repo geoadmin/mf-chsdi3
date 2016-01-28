@@ -4445,6 +4445,15 @@ msgstr "Atlas gravimetric - stampa"
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
 msgstr "Nr."
 
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.release"
+msgstr "Ausgabejahr"
+
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
 msgstr "Title"
 
@@ -4696,6 +4705,15 @@ msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
 msgstr "Charta turas da skis"
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D sumbriva reliev"
