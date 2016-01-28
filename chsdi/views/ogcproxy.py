@@ -72,7 +72,7 @@ class OgcProxy:
             raise HTTPNotAcceptable()
 
         if content.find('encoding=') > 0:
-            m = re.search("encoding=\"(.*?)\\\"", content)
+            m = re.search("encoding=[\\\"|\"|\'](.*?)[\\\"|\"|\']", content)
             doc_encoding = m.group(1)
             if doc_encoding.lower() != DEFAULT_ENCODING:
                 try:

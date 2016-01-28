@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer
+from sqlalchemy.types import Numeric
+
 from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
@@ -41,10 +43,19 @@ class UNESCO(Base, Vector):
     __table_args__ = ({'autoload': False})
     __template__ = 'templates/htmlpopup/unesco_bak.mako'
     __bodId__ = 'ch.bak.schutzgebiete-unesco_weltkulturerbe'
-    __label__ = 'bgdi_name'
+    __label__ = 'name_de'
     id = Column('bgdi_id', Integer, primary_key=True)
-    bgdi_name = Column('bgdi_name', Text)
-    bgdi_surface = Column('bgdi_surface', Text)
+    name_fr = Column('name_fr', Text)
+    name_de = Column('bgdi_name', Text)
+    name_it = Column('name_it', Text)
+    name_en = Column('name_en', Text)
+    name_rm = Column('name_rm', Text)
+    type_fr = Column('type_fr', Text)
+    type_de = Column('type_de', Text)
+    type_it = Column('type_it', Text)
+    type_en = Column('type_en', Text)
+    type_rm = Column('type_rm', Text)
+    bgdi_surface = Column('bgdi_surface', Numeric)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 

@@ -1,3 +1,6 @@
+msgid "ch.bakom.uplink100"
+msgstr ""
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
 msgstr ""
 
@@ -209,6 +212,9 @@ msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.facname_de"
 msgstr ""
 
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.doc_title"
+msgstr ""
+
+msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe_type"
 msgstr ""
 
 msgid "tt_ch.bfe.abgeltung-wasserkraftnutzung_name"
@@ -7420,6 +7426,9 @@ msgid "tt_lubis_schraegaufnahmen_x"
 msgstr ""
 
 msgid "tt_lubis_schraegaufnahmen_y"
+msgstr ""
+
+msgid "tt_lubis_source_georef"
 msgstr ""
 
 msgid "<i>Abwasserreinigungsareal</i>"

@@ -120,8 +120,8 @@ class TestSearchServiceView(TestsBase):
     def test_address_order(self):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'isabelle de montolieu', 'type': 'locations'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin isabelle-de-montolieu 1 1010 lausanne 5586 lausanne ch vd')
-        self.assertEqual(resp.json['results'][0]['attrs']['num'], 1)
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin isabelle-de-montolieu  1010 lausanne 5586 lausanne ch vd')
+        self.assertEqual(resp.json['results'][0]['attrs']['num'], 0)
 
     def test_search_address_with_letters(self):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'Rhonesand 16', 'type': 'locations'}, status=200)
@@ -183,10 +183,15 @@ class TestSearchServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
         self.assertEqual(resp.json['results'][0]['attrs']['origin'], 'parcel')
 
+    def test_search_locations_prefix_address(self):
+        params = {'searchText': 'address val', 'type': 'locations'}
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
+        self.assertEqual(resp.json['results'][0]['attrs']['origin'], 'address')
+
     def test_search_locations_parcel_keyword_only(self):
         params = {'searchText': 'parzelle', 'type': 'locations'}
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
-        self.assertEqual(len(resp.json['results']), 0)
+        self.assertTrue(len(resp.json['results']) == 0)
 
     def test_search_locations_with_bbox(self):
         params = {'type': 'locations', 'searchText': 'buechli tegerfelden', 'bbox': '664100,268443,664150,268643'}
@@ -206,8 +211,8 @@ class TestSearchServiceView(TestsBase):
 
     def test_features_timeinstant(self):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': '19810590048970', 'features': 'ch.swisstopo.lubis-luftbilder_farbe', 'type': 'featuresearch', 'bbox': '542199,206799,542201,206801', 'timeInstant': '1981'}, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['results'][0]['attrs']['origin'], 'feature')
+        self.assertTrue(resp.content_type == 'application/json')
+        self.assertTrue(resp.json['results'][0]['attrs']['origin'] == 'feature')
 
     def test_nodigit_timeinstant(self):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': '19810590048970', 'features': 'ch.swisstopo.lubis-luftbilder_farbe', 'type': 'featuresearch', 'bbox': '542199,206799,542201,206801', 'timeInstant': 'four'}, status=400)
@@ -298,9 +303,18 @@ class TestSearchServiceView(TestsBase):
         params = {'searchText': 'birgma', 'type': 'locations', 'lang': 'de'}
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertTrue(len(resp.json['results']) > 0)
-        self.assertEqual(resp.json['fuzzy'], 'true')
+        self.assertTrue(resp.json['fuzzy'] == 'true')
         # No results
         params = {'searchText': 'birgmasdfasdfa', 'type': 'locations', 'lang': 'de'}
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(len(resp.json['results']), 0)
+        self.assertEqual(resp.json['fuzzy'], 'true')
+        # type : 'locations_preview'
+        params = {'searchText': 'Bettingen', 'type': 'locations_preview'}
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        self.assertTrue(len(resp.json['results']) > 0)
+        # Fuzzy results for locations_preview
+        params = {'searchText': 'birgma', 'type': 'locations_preview', 'lang': 'de'}
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        self.assertTrue(len(resp.json['results']) > 0)
         self.assertEqual(resp.json['fuzzy'], 'true')

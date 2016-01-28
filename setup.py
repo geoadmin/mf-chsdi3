@@ -33,7 +33,6 @@ requires = [
     'pystache',
     'lxml',
     'OWSLib',
-    'MapProxy',
     'qrcode',
     'sphinx_rtd_theme==0.1.6-ga3',
     'boto',

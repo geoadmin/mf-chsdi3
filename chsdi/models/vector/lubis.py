@@ -242,6 +242,7 @@ class bildstreifen(Base, Vector):
     toposhop_end_y = Column('toposhop_end_y', Integer)
     toposhop_date = Column('toposhop_date', Text)
     goal = Column('goal', Text)
+    source_georef = Column('georef_source', Text)
 
 register('ch.swisstopo.lubis-bildstreifen', bildstreifen)
 
@@ -267,5 +268,7 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
     x = Column('x', Integer)
     y = Column('y', Integer)
+    contact = Column('contact', Text)
+    contact_email = Column('contact_email', Text)
 
 register('ch.swisstopo.lubis-luftbilder_schraegaufnahmen', LuftbilderSchraegaufnahmen)
