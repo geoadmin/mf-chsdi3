@@ -77,7 +77,8 @@ class Search(SearchValidation):
             for key, value in enumerate(self.results['results']):
                 translation = re.search(r'.*(<i>[\s\S]*?<\/i>).*', value['attrs']['label']) or False
                 if translation:
-                    self.results['results'][key]['attrs']['label'] = value['attrs']['label'].replace(translation.group(1), '<i>%s</i>' % str(self.request.translate(translation.group(1)).encode('utf-8')))
+                    self.results['results'][key]['attrs']['label'] = value['attrs']['label'].replace(
+                        translation.group(1), '<i>%s</i>' % str(self.request.translate(translation.group(1)).encode('utf-8')))
         return self.results
 
     def _fuzzy_search(self, searchTextFinal):
@@ -167,6 +168,13 @@ class Search(SearchValidation):
         self.sphinx.SetLimits(0, layerLimit)
         self.sphinx.SetRankingMode(sphinxapi.SPH_RANK_WORDCOUNT)
         self.sphinx.SetSortMode(sphinxapi.SPH_SORT_EXTENDED, '@weight DESC')
+        # Weights defaults to 1
+        self.sphinx.SetFieldWeights({
+            '@title': 4,
+            '@detail': 2,
+            '@layer': 1
+        })
+
         index_name = 'layers_%s' % self.lang
         mapName = self.mapName if self.mapName != 'all' else ''
         # Whitelist hack
@@ -175,7 +183,7 @@ class Search(SearchValidation):
         else:
             topicFilter = '(%s | ech)' % mapName
         searchText = ' '.join((
-            self._query_fields('@(detail,layer)'),
+            self._query_fields('@(title,detail,layer)'),
             '& @topics %s' % (topicFilter),  # Filter by to topic if string not empty, ech whitelist hack
             '& %s' % (staging_filter(self.geodataStaging))  # Only layers in correct staging are searched
         ))
