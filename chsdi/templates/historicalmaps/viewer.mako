@@ -1,4 +1,4 @@
-<%namespace name="zeitreise_map" file="../zeitreihen_map.mako"/>
+<%namespace name="zeitreise_map" file="zeitreihen_map.mako"/>
 
 <%
   from pyramid.url import route_url
