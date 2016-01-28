@@ -53,7 +53,7 @@ def index(params):
     }
 
     response = render_to_response(
-        'chsdi:templates/sitemapindex.mako',
+        'chsdi:templates/sitemaps/sitemapindex.mako',
         data,
         request=params.request)
     response.content_type = 'application/xml'
@@ -110,7 +110,7 @@ def address_index(params):
         'sitemaps': map(names, range(max_index))
     }
     response = render_to_response(
-        'chsdi:templates/sitemapindex.mako',
+        'chsdi:templates/sitemaps/sitemapindex.mako',
         data,
         request=params.request)
     response.content_type = 'application/xml'
@@ -147,7 +147,7 @@ def asXml(params, paths):
         'list': paths
     }
     response = render_to_response(
-        'chsdi:templates/sitemapurls.mako',
+        'chsdi:templates/sitemaps/sitemapurls.mako',
         data,
         request=params.request)
     response.content_type = 'application/xml'
