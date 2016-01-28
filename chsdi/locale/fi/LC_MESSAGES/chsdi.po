@@ -4143,6 +4143,15 @@ msgstr "Mächtigkeit der Lockergesteine [m]"
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 
+msgid "ch.swisstopo-karto.hangneigung"
+msgstr "Pendenza dapli che 30°"
+
+msgid "ch.swisstopo-karto.schneeschuhrouten"
+msgstr "Rutas da gianellas"
+
+msgid "ch.swisstopo-karto.skitouren"
+msgstr "Rutas da skis"
+
 msgid "ch.swisstopo-vd"
 msgstr "Mesiraziun Uffiziala Svizra"
 

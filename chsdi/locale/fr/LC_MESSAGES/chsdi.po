@@ -4143,6 +4143,15 @@ msgstr "Epaisseur des roches meubles [m]"
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 
+msgid "ch.swisstopo-karto.hangneigung"
+msgstr "Inclinaison des pentes >30°"
+
+msgid "ch.swisstopo-karto.schneeschuhrouten"
+msgstr "Itinéraires en raquette"
+
+msgid "ch.swisstopo-karto.skitouren"
+msgstr "Itinéraires à ski"
+
 msgid "ch.swisstopo-vd"
 msgstr "Mensuration Officielle Suisse"
 
