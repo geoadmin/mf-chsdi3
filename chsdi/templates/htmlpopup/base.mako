@@ -62,8 +62,6 @@
     % if extended:
       ${self.extended_info(c, lang)}
     % else:
-      <span>${_('Information')}</span>
-      <br>
       <table>
         ${self.table_body(c, lang)}
         % if hasExtendedInfo:
