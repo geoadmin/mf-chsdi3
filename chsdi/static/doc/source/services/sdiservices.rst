@@ -39,7 +39,8 @@ RESTFul interface is available.
 +===================================+===========================================================================================+
 | **searchText (optional)**         | The text to search for in the layer description.                                          |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **lang (optional)**               | The language metadata. Possible values: de (default), fr, it, rm, en.                     |
+| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
+|                                   | does not match any of the possible values)                                                |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -198,6 +199,9 @@ RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | Parameters                        | Description                                                                               |
 +===================================+===========================================================================================+
+| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
+|                                   | does not match any of the possible values)                                                |
++-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 
@@ -230,7 +234,8 @@ No css styling is provided per default so that you can use your own.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | Parameters                        | Description                                                                               |
 +===================================+===========================================================================================+
-| **lang (optional)**               | The language metadata. Possible values: de (default), fr, it, rm, en.                     |
+| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
+|                                   | does not match any of the possible values)                                                |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -292,7 +297,8 @@ No more than 50 features can be retrieved per request.
 | **geometryFormat (optional)**     | Returned geometry format.                                                                 |
 |                                   | Default to ESRI geometry format. Possible values are: "esrijson" or "geojson".            |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **lang (optional)**               | The language (when available). Possible values: de (default), fr, it, rm, en.             |
+| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
+|                                   | does not match any of the possible values)                                                |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -373,12 +379,13 @@ One layer, one search text and one attribute.
 |                                   | match is case sensitive. Otherwise, it searches for a value that contains the searchText  |
 |                                   | string provided. This search is not case sensitive. The default is true.                  |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **lang (optional)**               | The language metadata. Possible values: de (default), fr, it, rm, en.                     |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryFormat (optional)**     | Returned geometry format.                                                                 |
 |                                   | Default to ESRI geometry format. Possible values are: "esrijson" or "geojson".            |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **returnGeometry (optional)**     | This parameter defines whether the geometry is returned or not. Default to "true".        |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
+|                                   | does not match any of the possible values)                                                |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -415,12 +422,13 @@ RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | Parameters                        | Description                                                                               |
 +===================================+===========================================================================================+
-| **lang (optional)**               | The language metadata. Possible values: de (default), fr, it, rm, en.                     |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryFormat (optional)**     | Returned geometry format.                                                                 |
 |                                   | Default to ESRI geometry format. Possible values are: "esrijson" or "geojson".            |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **returnGeometry (optional)**     | This parameter defines whether the geometry is returned or not. Default to "true".        |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
+|                                   | does not match any of the possible values)                                                |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -456,7 +464,8 @@ No css styling is provided per default so that you can use your own.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | Parameters                        | Description                                                                               |
 +===================================+===========================================================================================+
-| **lang (optional)**               | The language. Possible values: de (default), fr, it, rm, en.                              |
+| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
+|                                   | does not match any of the possible values)                                                |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -897,8 +906,6 @@ Example
 * An OpenLayers3 example showing the `Cadastralwebmap as WMTS <../examples/cadastralwebmap.html>`_ 
 * Switzerland is now adopting the new `LV95 frame <../examples/ol3_lv95.html>`_. 
 * All `available layers as WMTS <../examples/ol3_lv95_all.html>`_. 
-
-
 
 
 .. _owschecker_description:
