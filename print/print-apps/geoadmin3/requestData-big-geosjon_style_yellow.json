@@ -1,0 +1,36 @@
+{
+    "attributes": {
+        "map": {
+            "center": [
+                600000,
+                200000
+            ],
+            "dpi": 300,
+            "layers": [
+            {
+                "geoJson": "file://ressources/geol.gk500_lithologie_hauptgruppen.geojson",
+                "type": "geojson",
+                "style": {
+                    "version": "2",
+                    "*": {
+                        "symbolizers": [{
+                            "strokeWidth": 2,
+                            "strokeColor": "#ffff99",
+                            "fillColor": "#ffff99",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    }
+                }
+            }],
+            "projection": "EPSG:21781",
+            "rotation": 0,
+            "scale": 500000
+        },
+        "name": "Test WMS",
+        "printLegend": 0,
+        "scale": 300000
+    },
+    "layout": "Demo",
+    "outputFormat": "pdf"
+}

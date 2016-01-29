@@ -1,0 +1,446 @@
+{
+    "attributes": {
+        "map": {
+            "center": [
+                600000,
+                200000
+            ],
+            "dpi": 300,
+            "layers": [
+                 {
+                    "type": "WMTS",
+                    "baseURL": "http://wmts6.geo.admin.ch/1.0.0/{Layer}/{style}/{Time}/{TileMatrixSet}/{TileMatrix}/{TileRow}/{TileCol}.png",
+                    "opacity": "0.5",
+                    "layer": "ch.swisstopo.swissalti3d-reliefschattierung",
+                    "requestEncoding": "REST",
+                    "version": "1.0.0",
+                    "style": "default",
+                    "imageFormat": "png",
+                    "dimensions": ["Time"],
+                    "dimensionParams": {
+                        "TIME": "20150101"
+                    },
+                    "matrixSet": "21781",
+                    "matrices": [{
+                        "identifier": "0",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 14285750.5715,
+                        "matrixSize": [1, 1]
+                    }, {
+                        "identifier": "1",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 13392891.1608,
+                        "matrixSize": [1, 1]
+                    }, {
+                        "identifier": "2",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 12500031.7501,
+                        "matrixSize": [1, 1]
+                    }, {
+                        "identifier": "3",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 11607172.3393,
+                        "matrixSize": [1, 1]
+                    }, {
+                        "identifier": "4",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 10714312.9286,
+                        "matrixSize": [1, 1]
+                    }, {
+                        "identifier": "5",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 9821453.51791,
+                        "matrixSize": [1, 1]
+                    }, {
+                        "identifier": "6",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 8928594.10719,
+                        "matrixSize": [1, 1]
+                    }, {
+                        "identifier": "7",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 8035734.69647,
+                        "matrixSize": [1, 1]
+                    }, {
+                        "identifier": "8",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 7142875.28575,
+                        "matrixSize": [1, 1]
+                    }, {
+                        "identifier": "9",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 6250015.87503,
+                        "matrixSize": [2, 1]
+                    }, {
+                        "identifier": "10",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 5357156.46431,
+                        "matrixSize": [2, 1]
+                    }, {
+                        "identifier": "11",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 4464297.05359,
+                        "matrixSize": [2, 1]
+                    }, {
+                        "identifier": "12",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 3571437.64288,
+                        "matrixSize": [2, 2]
+                    }, {
+                        "identifier": "13",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 2678578.23216,
+                        "matrixSize": [3, 2]
+                    }, {
+                        "identifier": "14",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 2321434.46787,
+                        "matrixSize": [3, 2]
+                    }, {
+                        "identifier": "15",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 1785718.82144,
+                        "matrixSize": [4, 3]
+                    }, {
+                        "identifier": "16",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 892859.410719,
+                        "matrixSize": [8, 5]
+                    }, {
+                        "identifier": "17",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 357143.764288,
+                        "matrixSize": [19, 13]
+                    }, {
+                        "identifier": "18",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 178571.882144,
+                        "matrixSize": [38, 25]
+                    }, {
+                        "identifier": "19",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 71428.7528575,
+                        "matrixSize": [94, 63]
+                    }, {
+                        "identifier": "20",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 35714.3764288,
+                        "matrixSize": [188, 125]
+                    }, {
+                        "identifier": "21",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 17857.1882144,
+                        "matrixSize": [375, 250]
+                    }, {
+                        "identifier": "22",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 8928.59410719,
+                        "matrixSize": [750, 500]
+                    }, {
+                        "identifier": "23",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 7142.87528575,
+                        "matrixSize": [938, 625]
+                    }, {
+                        "identifier": "24",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 5357.15646431,
+                        "matrixSize": [1250, 834]
+                    }, {
+                        "identifier": "25",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 3571.43764288,
+                        "matrixSize": [1875, 1250]
+                    }, {
+                        "identifier": "26",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 1785.71882144,
+                        "matrixSize": [3750, 2500]
+                    }, {
+                        "identifier": "27",
+                        "tileSize": [256, 256],
+                        "topLeftCorner": [420000.0, 350000.0],
+                        "scaleDenominator": 892.85941072,
+                        "matrixSize": [7500, 5000]
+                    }]
+                },
+                {
+                "geoJson": "file://ressources/geol.gk500_lithologie_hauptgruppen.geojson",
+                "type": "geojson",
+                "opacity": 0.5,
+                "style": {
+                    "version": "2",
+                    "[nr_hauptg = 10]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ffff99",
+                            "fillColor": "#ffff99",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 12]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ccffcc",
+                            "fillColor": "#ccffcc",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 14]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#e0e0e0",
+                            "fillColor": "#e0e0e0",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 20]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#66ff66",
+                            "fillColor": "#66ff66",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 22]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#99cc66",
+                            "fillColor": "#99cc66",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 24]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#996633",
+                            "fillColor": "#996633",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 30]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#cc9966",
+                            "fillColor": "#cc9966",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 40]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#6699cc",
+                            "fillColor": "#6699cc",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 47]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#00ff99",
+                            "fillColor": "#00ff99",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 42]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#006633",
+                            "fillColor": "#006633",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 44]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#66cc66",
+                            "fillColor": "#66cc66",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 50]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ff6600",
+                            "fillColor": "#ff6600",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 52]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#993333",
+                            "fillColor": "#993333",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 53]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#339933",
+                            "fillColor": "#339933",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 54]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ff6699",
+                            "fillColor": "#ff6699",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 32]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#669999",
+                            "fillColor": "#669999",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 48]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#00cccc",
+                            "fillColor": "#00cccc",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 49]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ff9933",
+                            "fillColor": "#ff9933",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 61]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ffcc66",
+                            "fillColor": "#ffcc66",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 62]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ff66ff",
+                            "fillColor": "#ff66ff",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 60]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ff6666",
+                            "fillColor": "#ff6666",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 70]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#663366",
+                            "fillColor": "#663366",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 72]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#cc99cc",
+                            "fillColor": "#cc99cc",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 74]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#660000",
+                            "fillColor": "#660000",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 80]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ccffff",
+                            "fillColor": "#ccffff",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 90]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ffffff",
+                            "fillColor": "#ffffff",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    }
+                }
+            }],
+            "projection": "EPSG:21781",
+            "rotation": 0,
+            "scale": 500000
+        },
+        "name": "Test WMS",
+        "printLegend": 0,
+        "scale": 300000
+    },
+    "layout": "Demo",
+    "outputFormat": "pdf"
+}

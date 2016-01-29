@@ -1,0 +1,63 @@
+{
+    "attributes": {
+        "map": {
+            "center": [
+                600000,
+                200000
+            ],
+            "dpi": 300,
+            "layers": [{
+                "baseURL": "http://wms.geo.admin.ch",
+                "customParams": {
+                    "TRANSPARENT": "true"
+                },
+                "imageFormat": "image/png",
+                "layers": ["ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"],
+                "opacity": 0.25,
+                "styles": ["default"],
+                "type": "WMS"
+            }, {
+                "geoJson": "http://wfs.geo.admin.ch/?SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=ch.swisstopo.fixpunkte-lage-lfp1&SRSNAME=EPSG:21781&outputFormat=geojson",
+                "type": "geojson",
+                "style": {
+                    "version": "2",
+                    "[statuszus = 'verifiziert']": {
+                        "symbolizers": [{
+                            "strokeColor": "#00aa00",
+                            "fillOpacity": 0.6,
+                            "rotation": "30",
+                            "type": "point",
+                            "graphicName": "circle",
+                            "fillColor": "#66ff66",
+                            "graphicOpacity": 0.4,
+                            "pointRadius": 5
+                        }, {
+                            "haloColor": "#123456", 
+                            "haloOpacity": "0.7", 
+                            "haloRadius": "4.0",
+                            "label": "[nummer]",
+                            "type": "text",
+                            "fontFamily": "sans-serif",
+                            "fontSize": "16px",
+                            "fontStyle": "normal",
+                            "fontWeight": "bold",
+                            "labelAlign": "cm", 
+                            "labelRotation": "45", 
+                            "labelXOffset": "-25.0", 
+                            "labelYOffset": "-35.0" 
+                        }]
+                    }
+                }
+            }],
+            "projection": "EPSG:21781",
+            "rotation": 0,
+            "scale": 500000
+        },
+        "name": "Test WMS + styles v2 using text and halo",
+        "printLegend": 0,
+        "scale": 300000
+    },
+    "layout": "Demo",
+        "outputFormat": "pdf"
+
+}
