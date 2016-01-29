@@ -6105,6 +6105,9 @@ msgstr ""
 msgid "pdf_url"
 msgstr ""
 
+msgid "pdf_access"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-gisgeol-punkte"
 msgstr ""
 
