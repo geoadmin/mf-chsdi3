@@ -2473,7 +2473,6 @@ class eignungDaecher (Base, Vector):
     __tablename__ = 'view_solarenergie_daecher_gs'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/solareignungdaecher.mako'
-    __extended_info__ = True
     __bodId__ = 'ch.bfe.solarenergie-eignung-daecher'
     __label__ = 'id'
     __queryable_attributes__ = ['df_uid', 'building_id']
@@ -2509,6 +2508,7 @@ class eignungDaecher (Base, Vector):
     stromertrag = Column('stromertrag', Numeric)
     monats_ertrag = Column('monats_ertrag', postgresql.ARRAY(Numeric))
     gs_serie_start = Column('gs_serie_start', Date)
+    klasse_text = Column('klasse_text', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
