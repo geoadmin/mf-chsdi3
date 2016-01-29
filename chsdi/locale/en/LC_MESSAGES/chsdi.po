@@ -3806,6 +3806,24 @@ msgstr "Measure"
 msgid "ch.bfe.sachplan-uebertragungsleitungen_kraft.plname_it"
 msgstr "Measure"
 
+msgid "ch.bfe.solarenergie-eignung-daecher"
+msgstr "Solarenergie: Eignung Dächer"
+
+msgid "ch.bfe.solarenergie-eignung-daecher.ausrichtung"
+msgstr "Orientation [°]"
+
+msgid "ch.bfe.solarenergie-eignung-daecher.finanzertrag"
+msgstr "Earning [CHF]"
+
+msgid "ch.bfe.solarenergie-eignung-daecher.flaeche"
+msgstr "Roof area [m2]"
+
+msgid "ch.bfe.solarenergie-eignung-daecher.klasse_text"
+msgstr "Suitability"
+
+msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
+msgstr "Inclination [°]"
+
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Hydropower statistics"
 

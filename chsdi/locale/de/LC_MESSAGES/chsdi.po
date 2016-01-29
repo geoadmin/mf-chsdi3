@@ -3806,6 +3806,24 @@ msgstr "Planerische Massnahme"
 msgid "ch.bfe.sachplan-uebertragungsleitungen_kraft.plname_it"
 msgstr "Planerische Massnahme"
 
+msgid "ch.bfe.solarenergie-eignung-daecher"
+msgstr "Solarenergie: Eignung Dächer"
+
+msgid "ch.bfe.solarenergie-eignung-daecher.ausrichtung"
+msgstr "Ausrichtung [°]"
+
+msgid "ch.bfe.solarenergie-eignung-daecher.finanzertrag"
+msgstr "Finanzieller Ertrag [CHF]"
+
+msgid "ch.bfe.solarenergie-eignung-daecher.flaeche"
+msgstr "Dachfläche [m2]"
+
+msgid "ch.bfe.solarenergie-eignung-daecher.klasse_text"
+msgstr "Eignung"
+
+msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
+msgstr "Neigung [°]"
+
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistik Wasserkraft"
 
