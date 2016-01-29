@@ -1,3 +1,21 @@
+msgid "ch.bfe.solarenergie-eignung-daecher.ausrichtung"
+msgstr ""
+
+msgid "ch.bfe.solarenergie-eignung-daecher.finanzertrag"
+msgstr ""
+
+msgid "ch.bfe.solarenergie-eignung-daecher.flaeche"
+msgstr ""
+
+msgid "ch.bfe.solarenergie-eignung-daecher.klasse_text"
+msgstr ""
+
+msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
+msgstr ""
+
+msgid "ch.bfe.solarenergie-eignung-daecher"
+msgstr ""
+
 msgid "ch.bakom.uplink100"
 msgstr ""
 
