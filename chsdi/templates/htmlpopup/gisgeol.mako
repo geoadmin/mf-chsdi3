@@ -21,26 +21,34 @@
     <tr><td class="cell-left">${_('doccreation_date')}</td><td>${c['attributes']['doccreation']}</td></tr>
     <tr><td class="cell-left">${_('copy_avail')}</td><td>${c['attributes']['copy_avail']}</td></tr>
     <tr><td class="cell-left">${_('view_avail')}</td><td>${c['attributes']['view_avail']}</td></tr>
-    <tr><td class="cell-left">${_('pdf_url')}</td>
-        <td>
+    <tr>
     % if len(files) > 0:
       % for fileObject in files:
         % if fileObject['size'] > 200*1024*1024:
-          <a href="mailto:geolinfo@swisstopo.ch?subject=Document order InfoGeol no.: ${fileObject['name']}" target="_blank">
-            geolinfo@swisstopo.ch - ${hbytes(fileObject['size'])}
-          </a>
+          <td class="cell-left">${_('pdf_access')}</td>
+          <td>
+            <a href="mailto:geolinfo@swisstopo.ch?subject=Document order InfoGeol no.: ${fileObject['name']}" target="_blank">
+              geolinfo@swisstopo.ch - ${hbytes(fileObject['size'])}
+            </a>
+            <br>
+          <td>
         % else:
-          <a href="${fileObject['url']}" target="_blank" title="Download ${fileObject['name']} ${hbytes(fileObject['size'])}" target="_blank">
-            ${fileObject['name']} - ${hbytes(fileObject['size'])}
-          </a>
+          <td class="cell-left">${_('pdf_url')}</td>
+          <td>
+            <a href="${fileObject['url']}" target="_blank" title="Download ${fileObject['name']} ${hbytes(fileObject['size'])}" target="_blank">
+              ${fileObject['name']} - ${hbytes(fileObject['size'])}
+            </a>
+            <br>
+          <td>
         % endif
-          <br>
       % endfor
     % else:
-          <a href="mailto:geolinfo@swisstopo.ch?subject=Document order InfoGeol no.: ${c['attributes']['sgd_nr']}" target="_blank">
-            geolinfo@swisstopo.ch - InfoGeol no.: ${c['attributes']['sgd_nr']}
-          </a>
+          <td class="cell-left">${_('pdf_access')}</td>
+          <td>
+            <a href="mailto:geolinfo@swisstopo.ch?subject=Document order InfoGeol no.: ${c['attributes']['sgd_nr']}" target="_blank">
+              geolinfo@swisstopo.ch - InfoGeol no.: ${c['attributes']['sgd_nr']}
+            </a>
+          <td>
     % endif
-        </td>
     </tr>
 </%def>

@@ -2453,65 +2453,53 @@ msgstr "Q347 (P) [l/s]"
 msgid "ch.bafu.hydrologie-untersuchungsgebiete"
 msgstr "HUG Bassins recherches hydro."
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antgeb"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antgeb"
+msgstr "Aires de bâtiments"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antgew_ms"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antgew_ms"
+msgstr "Eaux"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antindu"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antindu"
+msgstr "Aires industrielles"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antogr"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antogr"
+msgstr "Arboricult. frutière, horticult., viticult."
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antunpr"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antunpr"
+msgstr "Végétation improd."
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antv_ab86"
-msgstr "Extension glaciers [%]"
+msgstr "Extension glaciers"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antveg_los_ov"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antveg_los_ov"
+msgstr "Surfaces sans végétation"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antweid"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antweid"
+msgstr "Alpages"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antwiack"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antwiack"
+msgstr "Prés, terres arables"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antws_tot"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.antws_tot"
+msgstr "Forêt"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.df"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.df"
+msgstr "Densité du réseau hydr."
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.max_hoe"
-msgstr "Altitude maximale [m ü.M.]"
+msgstr "Alt. max"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.min_hoe"
-msgstr "Altitude minimale [m ü.M.]"
+msgstr "Alt. min"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.mit_hoe"
-msgstr "Altitude moyenne [m ü.M.]"
+msgstr "Alt. moyenne"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.mp"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.mp"
+msgstr "Perm)éabilité"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.ms"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.ms"
+msgstr "Cap. de rétention hydrique"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.name"
 msgstr "Nom"
@@ -2519,21 +2507,17 @@ msgstr "Nom"
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.regimetyp"
 msgstr "Type de régime"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.sc"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.sc"
+msgstr "Pente du chenal principal"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.shape_area"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.shape_area"
+msgstr "Surface"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.station"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.station"
+msgstr "Station"
 
-#. TODO
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.url"
-msgstr "ch.bafu.hydrologie-untersuchungsgebiete.url"
+msgstr "Lien"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen"
 msgstr "HUG / stations de mesure"
@@ -6353,6 +6337,9 @@ msgstr "Parcella"
 
 msgid "pdf"
 msgstr "PDF"
+
+msgid "pdf_access"
+msgstr "Accesso PDF "
 
 msgid "pdf_dokument_1_2"
 msgstr "PDF 1 | 2"
