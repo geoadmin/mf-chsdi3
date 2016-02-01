@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer
-from sqlalchemy.types import Numeric
+from sqlalchemy.types import Numeric, Boolean
 from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
@@ -39,6 +39,7 @@ class DosisleistungTerrestrisch (Base, Vector):
 
 register('ch.swisstopo.geologie-dosisleistung-terrestrisch', DosisleistungTerrestrisch)
 
+
 class ShopProductGroupClass:
     __template__ = 'templates/htmlpopup/shop_product_group.mako'
     __label__ = 'number'
@@ -60,6 +61,7 @@ class SkitourenkarteMetadata (Base, ShopProductGroupClass, Vector):
     __bodId__ = 'ch.swisstopo.skitourenkarte-50.metadata'
 
 register('ch.swisstopo.skitourenkarte-50.metadata', SkitourenkarteMetadata)
+
 
 class GravimetrischerAtlasMetadata (Base, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
