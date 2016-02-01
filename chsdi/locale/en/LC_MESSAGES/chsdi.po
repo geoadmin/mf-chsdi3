@@ -2499,7 +2499,7 @@ msgid "ch.bafu.hydrologie-untersuchungsgebiete.mp"
 msgstr "Durchlässigkeit"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.ms"
-msgstr "Wasserspeicherverm)ögen"
+msgstr "Wasserspeichervermögen"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.name"
 msgstr "Name"
@@ -4128,7 +4128,7 @@ msgid "ch.swisstopo"
 msgstr "swisstopo"
 
 msgid "ch.swisstopo-karto.hangneigung"
-msgstr "Gradient greater than 30°"
+msgstr "Slope over 30°"
 
 msgid "ch.swisstopo-karto.schneeschuhrouten"
 msgstr "Snowshoe routes"

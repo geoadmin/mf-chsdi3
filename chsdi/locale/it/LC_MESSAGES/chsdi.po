@@ -2496,7 +2496,7 @@ msgid "ch.bafu.hydrologie-untersuchungsgebiete.mit_hoe"
 msgstr "Alt. moyenne"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.mp"
-msgstr "Perm)éabilité"
+msgstr "Perméabilité"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.ms"
 msgstr "Cap. de rétention hydrique"
@@ -4128,7 +4128,7 @@ msgid "ch.swisstopo"
 msgstr "swisstopo"
 
 msgid "ch.swisstopo-karto.hangneigung"
-msgstr "Rappresentazione dei pendii >30°"
+msgstr "Pendenza maggiori 30°"
 
 msgid "ch.swisstopo-karto.schneeschuhrouten"
 msgstr "Itinerari racchette"
