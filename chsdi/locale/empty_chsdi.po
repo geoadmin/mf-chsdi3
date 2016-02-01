@@ -193,6 +193,18 @@ msgstr ""
 msgid "<i>haltestellen_luftseilbahn</i>"
 msgstr ""
 
+msgid "ch.swisstopo.wkt33-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.wkt33-papierkarte.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.wkt33-papierkarte.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.wkt33-papierkarte.metadata.release"
+msgstr ""
+
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_it"
 msgstr ""
 
@@ -1040,6 +1052,273 @@ msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.filmart"
 msgstr ""
 
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.bgdi_flugjahr"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.price"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.lk50-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.lk50-papierkarte.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.lk50-papierkarte.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.lk50-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.lk100-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.lk100-papierkarte.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.lk100-papierkarte.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.lk100-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.lk200-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.lk200-papierkarte.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.lk200-papierkarte.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.lk200-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.wk50-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.wk50-papierkarte.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.wk50-papierkarte.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.wk50-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.lhk100-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.lhk100-papierkarte.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.lhk100-papierkarte.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.lhk100-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.bk200-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.bk200-papierkarte.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.bk200-papierkarte.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.bk200-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.gas25-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.gas25-papierkarte.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.gas25-papierkarte.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.gas25-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.gsk-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.gsk-papierkarte.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.gsk-papierkarte.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.gsk-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.ggk200-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.ggk200-papierkarte.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.ggk200-papierkarte.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.ggk200-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.gk300-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.gk300-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.lk500-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.lk500-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.lk1000-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.lk1000-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.sfk300-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.sfk300-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.stk200-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.stk200-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.area-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.area-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.gkg500-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.gkg500-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.gkt500-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.gkt500-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.gkba500-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.gkba500-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.icao-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.icao-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.gkwvul500-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.gkwvor500-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.gkwvor500-papierkarte.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.gklgm500-papierkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.gklgm500-papierkarte.metadata.release"
+msgstr ""
+
+msgid "shop_availability"
 msgstr ""
 
 msgid "ch.swisstopo.vec200-names-namedlocation.objname1"

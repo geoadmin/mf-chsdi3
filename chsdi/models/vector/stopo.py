@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer
-from sqlalchemy.types import Numeric
+from sqlalchemy import Column, Text
+from sqlalchemy.types import Numeric, Boolean, Integer
 from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
@@ -172,7 +172,7 @@ class GeolSpezialKartenMetadata (Base, Vector):
 register('ch.swisstopo.geologie-spezialkarten_schweiz.metadata', GeolSpezialKartenMetadata)
 
 
-class SkitourenkarteMetadata (Base, Vector):
+class SkitourenkarteMetadata(Base, Vector):
     __tablename__ = 'view_gridstand_lkski'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __template__ = 'templates/htmlpopup/skitouren_metadata.mako'
@@ -185,6 +185,267 @@ class SkitourenkarteMetadata (Base, Vector):
                                dimension=2, srid=21781))
 
 register('ch.swisstopo.skitourenkarte-50.metadata', SkitourenkarteMetadata)
+
+
+class ShopProductGroupClass:
+    __template__ = 'templates/htmlpopup/shop_product_group.mako'
+    __label__ = 'number'
+    __queryable_attributes__ = ['number', 'name', 'release']
+    id = Column('pk_product', Text, primary_key=True)
+    number = Column('s_map_number', Text)
+    name = Column('s_title_de', Text)
+    scale = Column('scale', Integer)
+    price = Column('price', Integer)
+    release = Column('release', Integer)
+    available = Column('available', Boolean)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+
+class Landeskarte25Metadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_lk25_shop'
+    __bodId__ = 'ch.swisstopo.lk25-papierkarte.metadata'
+
+register('ch.swisstopo.lk25-papierkarte.metadata', Landeskarte25Metadata)
+
+
+class Landeskarte25zusMetadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_lk25zus_shop'
+    __bodId__ = 'ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata'
+
+register('ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata', Landeskarte25zusMetadata)
+
+
+class Landeskarte50Metadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_lk50_shop'
+    __bodId__ = 'ch.swisstopo.lk50-papierkarte.metadata'
+
+register('ch.swisstopo.lk50-papierkarte.metadata', Landeskarte50Metadata)
+
+
+class Landeskarte50zusMetadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_lk50zus_shop'
+    __bodId__ = 'ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata'
+
+register('ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata', Landeskarte50zusMetadata)
+
+
+class Scale100Metadata (Base, ShopProductGroupClass, Vector):
+    __tablename__ = 'view_gridstand_lk100_shop'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+
+
+class Landeskarte100Metadata (Scale100Metadata):
+    __bodId__ = 'ch.swisstopo.lk100-papierkarte.metadata'
+
+register('ch.swisstopo.lk100-papierkarte.metadata', Landeskarte100Metadata)
+
+
+class Luftfahrt100Metadata (Scale100Metadata):
+    __bodId__ = 'ch.swisstopo.lhk100-papierkarte.metadata'
+
+register('ch.swisstopo.lhk100-papierkarte.metadata', Luftfahrt100Metadata)
+
+
+class Landeskarte100zusMetadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_lk100zus_shop'
+    __bodId__ = 'ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata'
+
+register('ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata', Landeskarte100zusMetadata)
+
+
+class Landeskarte200Metadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_lk200_shop'
+    __bodId__ = 'ch.swisstopo.lk200-papierkarte.metadata'
+
+register('ch.swisstopo.lk200-papierkarte.metadata', Landeskarte200Metadata)
+
+
+class Wanderkarte50Metadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_lkwander50_shop'
+    __bodId__ = 'ch.swisstopo.wk50-papierkarte.metadata'
+
+register('ch.swisstopo.wk50-papierkarte.metadata', Wanderkarte50Metadata)
+
+
+class WanderkarteT33Metadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_wkt33_shop'
+    __bodId__ = 'ch.swisstopo.wkt33-papierkarte.metadata'
+
+register('ch.swisstopo.wkt33-papierkarte.metadata', WanderkarteT33Metadata)
+
+
+class Wanderkarte50zusMetadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_lkwander50zus_shop'
+    __bodId__ = 'ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata'
+
+register('ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata', Wanderkarte50zusMetadata)
+
+
+class Wanderkarte25zusMetadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_lkwander25zus_shop'
+    __bodId__ = 'ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata'
+
+register('ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata', Wanderkarte25zusMetadata)
+
+
+class BurgenKarte200Metadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_bk200'
+    __bodId__ = 'ch.swisstopo.bk200-papierkarte.metadata'
+
+register('ch.swisstopo.bk200-papierkarte.metadata', BurgenKarte200Metadata)
+
+
+class GeolAtlasMetadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'view_gridstand_gas25'
+    __bodId__ = 'ch.swisstopo.gas25-papierkarte.metadata'
+
+register('ch.swisstopo.gas25-papierkarte.metadata', GeolAtlasMetadata)
+
+
+class GeolSpezialKarteMetadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'view_gridstand_gsk'
+    __bodId__ = 'ch.swisstopo.gsk-papierkarte.metadata'
+
+register('ch.swisstopo.gsk-papierkarte.metadata', GeolSpezialKarteMetadata)
+
+
+class GeolGeneralKarteMetadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'view_gridstand_ggk'
+    __bodId__ = 'ch.swisstopo.ggk200-papierkarte.metadata'
+
+register('ch.swisstopo.ggk200-papierkarte.metadata', GeolGeneralKarteMetadata)
+
+
+class ShopProductClass:
+    __template__ = 'templates/htmlpopup/shop_product.mako'
+    __label__ = 'id'
+    __queryable_attributes__ = ['release']
+    id = Column('pk_product', Text, primary_key=True)
+    scale = Column('scale', Integer)
+    price = Column('price', Integer)
+    release = Column('release', Integer)
+    available = Column('available', Boolean)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+
+class Generalkarte300Metadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_gk300'
+    __bodId__ = 'ch.swisstopo.gk300-papierkarte.metadata'
+
+register('ch.swisstopo.gk300-papierkarte.metadata', Generalkarte300Metadata)
+
+
+class Landeskarte500Metadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_lk500'
+    __bodId__ = 'ch.swisstopo.lk500-papierkarte.metadata'
+
+register('ch.swisstopo.lk500-papierkarte.metadata', Landeskarte500Metadata)
+
+
+class Landeskarte1000Metadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_lk1000'
+    __bodId__ = 'ch.swisstopo.lk1000-papierkarte.metadata'
+
+register('ch.swisstopo.lk1000-papierkarte.metadata', Landeskarte1000Metadata)
+
+
+class SegelFlug300Metadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_sfk300'
+    __bodId__ = 'ch.swisstopo.sfk300-papierkarte.metadata'
+
+register('ch.swisstopo.sfk300-papierkarte.metadata', SegelFlug300Metadata)
+
+
+class StrassenKarte200Metadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_stk200'
+    __bodId__ = 'ch.swisstopo.stk200-papierkarte.metadata'
+
+register('ch.swisstopo.stk200-papierkarte.metadata', StrassenKarte200Metadata)
+
+
+class Area250Metadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_area250'
+    __bodId__ = 'ch.swisstopo.area-papierkarte.metadata'
+
+register('ch.swisstopo.area-papierkarte.metadata', Area250Metadata)
+
+
+class GeolKarte500Metadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'view_gridstand_gkg500'
+    __bodId__ = 'ch.swisstopo.gkg500-papierkarte.metadata'
+
+register('ch.swisstopo.gkg500-papierkarte.metadata', GeolKarte500Metadata)
+
+
+class TektonischeKarte500Metadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'view_gridstand_gkt500'
+    __bodId__ = 'ch.swisstopo.gkt500-papierkarte.metadata'
+
+register('ch.swisstopo.gkt500-papierkarte.metadata', TektonischeKarte500Metadata)
+
+
+class SchwereKarte500Metadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'view_gridstand_gkba500'
+    __bodId__ = 'ch.swisstopo.gkba500-papierkarte.metadata'
+
+register('ch.swisstopo.gkba500-papierkarte.metadata', SchwereKarte500Metadata)
+
+
+class Icao500Metadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __tablename__ = 'view_gridstand_icao500'
+    __bodId__ = 'ch.swisstopo.icao-papierkarte.metadata'
+
+register('ch.swisstopo.icao-papierkarte.metadata', Icao500Metadata)
+
+
+class GrundwasserVulnerabilitaetMetadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'view_gridstand_gkwvul500'
+    __bodId__ = 'ch.swisstopo.gkwvul500-papierkarte.metadata'
+
+register('ch.swisstopo.gkwvul500-papierkarte.metadata', GrundwasserVulnerabilitaetMetadata)
+
+
+class GrundWasserVorkommenMetadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'view_gridstand_gkwvor500'
+    __bodId__ = 'ch.swisstopo.gkwvor500-papierkarte.metadata'
+
+register('ch.swisstopo.gkwvor500-papierkarte.metadata', GrundwasserVulnerabilitaetMetadata)
+
+
+class LetztEisMaxMetadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'view_gridstand_gklgm500'
+    __bodId__ = 'ch.swisstopo.gklgm500-papierkarte.metadata'
+
+register('ch.swisstopo.gklgm500-papierkarte.metadata', LetztEisMaxMetadata)
 
 
 class SwissboundariesBezirk(Base, Vector):

@@ -305,3 +305,21 @@ def parse_date_string(dateStr):
         ).strftime('%d.%m.%Y')
     except:
         return '-'
+
+
+def format_scale(scale):
+    scale_str = str(scale)
+    n = ''
+    while len(scale_str) > 3:
+        scale_prov = int(scale_str) / 1000
+        n = n + "'000"
+        scale_str = str(scale_prov)
+    scale = "1:" + scale_str + n
+    return scale
+
+
+def format_price(price):
+    price_float = price / 100.0
+    price_2dec = format(price_float, '.2f')
+    price = "CHF " + str(price_2dec)
+    return price
