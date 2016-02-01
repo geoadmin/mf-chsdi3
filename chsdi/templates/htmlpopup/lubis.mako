@@ -1,5 +1,5 @@
 <%inherit file="base.mako"/>
-<%namespace name="lubis_map" file="../lubis_map.mako"/>
+<%namespace name="lubis_map" file="../luftbilder/lubis_map.mako"/>
 
 <%!
 import datetime

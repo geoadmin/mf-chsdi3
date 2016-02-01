@@ -1,4 +1,4 @@
-<%namespace name="lubis_map" file="../lubis_map.mako"/>
+<%namespace name="lubis_map" file="lubis_map.mako"/>
 
 <%
   from pyramid.url import route_url
