@@ -2499,7 +2499,7 @@ msgid "ch.bafu.hydrologie-untersuchungsgebiete.mp"
 msgstr "Durchlässigkeit"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.ms"
-msgstr "Wasserspeicherverm)ögen"
+msgstr "Wasserspeichervermögen"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.name"
 msgstr "Name"
