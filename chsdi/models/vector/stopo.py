@@ -1954,6 +1954,7 @@ class HebungsratenPunkt(Base, Vector):
     __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
     __template__ = 'templates/htmlpopup/hebungsraten.mako'
     __bodId__ = 'ch.swisstopo.hebungsraten'
+    __queryable_attributes__ = ['ord_nr', 'ort']
     __label__ = 'ord_nr'
     id = Column('bgdi_id', Integer, primary_key=True)
     ord_nr = Column('ord_nr', Text)
