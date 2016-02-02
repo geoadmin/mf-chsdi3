@@ -1,17 +1,17 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-    <%
-        from pyramid.url import route_url
-        protocol = request.scheme
-        lang = request.lang
-        topic = request.matchdict.get('map')
-        host = h.make_agnostic(request.host_url + request.uscript_name)
-
-        id = c['featureId']
-        c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
-        host = request.registry.settings['api_url']
-    %>
+<%
+    from pyramid.url import route_url
+    protocol = request.scheme
+    lang = request.lang
+    topic = request.matchdict.get('map')
+    host = h.make_agnostic(request.host_url + request.uscript_name)
+    type_station = c['attributes']['betriebspunkttyp']
+    id = c['featureId']
+    c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
+    host = request.registry.settings['api_url']
+%>
 <style>
   tr:last-child {
     display:none;
@@ -20,27 +20,41 @@
     height:24px;
     margin:0px;
   }
-  
   .col-label {
     text-align: center;
     width: 35px !important;
   }
-  
   .col-destination, .col-departures, .col-time-diff {
-    vertical-align: middle !important;
+     vertical-align: middle !important;
   } 
-
   .col-label p {
     border: 1px solid #D8D8D8;
     border-radius: 4px;
     width: 30px;
   }
-  
   .col-label p, .col-destination p, .col-departures p, .col-time-diff p {
-    padding-top: 5px;
-    margin-bottom: 2px;
+     padding-top: 5px;
+     margin-bottom: 2px;
   }
 </style>
+
+% if type_station == 'Bedienpunkt' :
+
+    <p><b>${c['attributes']['name'] or '-'}</b></p> 
+    <p>${_('ch.bav.haltestellen-oev.bedienpunkt')}</p>
+
+% elif type_station == 'Anschlusspunkt' : 
+
+   <p><b>${c['attributes']['name'] or '-'}</b></p>
+   <p>${_('ch.bav.haltestellen-oev.anschlusspunkt')}</p>
+
+% elif type_station == 'reiner_Betriebspunkt' :
+
+   <p><b>${c['attributes']['name'] or '-'}</b></p>
+   <p>${_('ch.bav.haltestellen-oev.reiner_betriebspunkt')}</p>
+
+% else:
+
 <script>
 
 $(document).ready(function() {
@@ -129,6 +143,7 @@ $(document).ready(function() {
         <td id="departures${id}" class="col-departures"></td>
         <td id="timeDiff${id}" class="col-time-diff"></td>
     </tr>
+% endif
     <tr>
       <td></td>
       <td> 

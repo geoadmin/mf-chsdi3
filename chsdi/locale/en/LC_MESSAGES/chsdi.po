@@ -3392,6 +3392,12 @@ msgstr "Public transport stops"
 msgid "ch.bav.haltestellen-oev.all_departures"
 msgstr "All destinations"
 
+msgid "ch.bav.haltestellen-oev.anschlusspunkt"
+msgstr "Siding point"
+
+msgid "ch.bav.haltestellen-oev.bedienpunkt"
+msgstr "Loading point"
+
 msgid "ch.bav.haltestellen-oev.betriebspunkttyp"
 msgstr "Type"
 
@@ -3409,6 +3415,9 @@ msgstr "No data"
 
 msgid "ch.bav.haltestellen-oev.nodata2"
 msgstr "No data for this stop"
+
+msgid "ch.bav.haltestellen-oev.reiner_betriebspunkt"
+msgstr "Simple operating point"
 
 msgid "ch.bav.haltestellen-oev.tuabkuerzung"
 msgstr "TO"
