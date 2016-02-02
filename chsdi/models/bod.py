@@ -4,7 +4,7 @@ from sqlalchemy import Column, Text, Integer, Boolean
 from sqlalchemy.dialects import postgresql
 
 from chsdi.lib.helpers import make_agnostic
-from chsdi.models import bases, models_from_name, get_models_attributes_keys
+from chsdi.models import bases, models_from_bodid, get_models_attributes_keys
 
 Base = bases['bod']
 
@@ -130,7 +130,7 @@ class LayersConfig(Base):
             config['attributionUrl'] = translate(self.__dict__['attribution'] + '.url')
 
         # adding __queryable_attributes__ if they have them
-        models = models_from_name(self.layerBodId)
+        models = models_from_bodid(self.layerBodId)
         if models is not None:
             queryable_attributes = get_models_attributes_keys(models, params.lang, True)
             if len(queryable_attributes) > 0:

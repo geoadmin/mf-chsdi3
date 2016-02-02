@@ -12,7 +12,7 @@ import pyramid.httpexceptions as exc
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 from chsdi.lib.validation.mapservice import MapServiceValidation
-from chsdi.models import models_from_name, get_models_attributes_keys
+from chsdi.models import models_from_bodid, get_models_attributes_keys
 from chsdi.models.bod import LayersConfig, get_bod_model, computeHeader
 from chsdi.lib.filters import full_text_search, filter_by_geodata_staging, filter_by_map_name
 
@@ -116,7 +116,7 @@ def feature_attributes(request):
     attributes of vector layers. '''
     params = LayersParams(request)
     layerId = request.matchdict.get('layerId')
-    models = models_from_name(layerId)
+    models = models_from_bodid(layerId)
     # Models for the same layer have the same attributes
     if models is None:
         raise exc.HTTPBadRequest('No Vector Table was found for %s' % layerId)

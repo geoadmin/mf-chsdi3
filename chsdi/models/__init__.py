@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import engine_from_config
+from sqlalchemy import engine_from_config, Column
 
 
 dbs = ['are', 'bafu', 'bak', 'bod', 'dritte', 'edi', 'evd', 'kogis', 'stopo', 'uvek', 'vbs', 'zeitreihen', 'lubis']
@@ -38,26 +38,20 @@ def register_oereb(name, klass):
     oerebmap.setdefault(name, []).append(klass)
 
 
-def models_from_bodid(bodId):
-    if bodId in bodmap:
-        return bodmap[bodId]
-    else:
-        return None
-
-
 def oereb_models_from_bodid(bodId):
-    if bodId in oerebmap:
-        return oerebmap[bodId]
-    else:
-        return None
+    return oerebmap.get(bodId)
 
 
-def models_from_name(name):
-    models = models_from_bodid(name)
+def models_from_bodid(bodId):
+    return bodmap.get(bodId)
+
+
+def queryable_models_from_bodid(bodId, searchField):
+    models = models_from_bodid(bodId)
     if models is not None:
-        return models
-    else:
-        return None
+        models = [m for m in models if isinstance(m.get_column_by_property_name(searchField), Column)]
+        if len(models) > 0:
+            return models
 
 
 def get_models_attributes_keys(models, lang, attributeOnly):

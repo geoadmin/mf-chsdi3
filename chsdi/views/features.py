@@ -16,7 +16,7 @@ from sqlalchemy import text
 from chsdi.lib.validation.mapservice import MapServiceValidation
 from chsdi.lib.helpers import format_query
 from chsdi.lib.filters import full_text_search
-from chsdi.models import models_from_name, oereb_models_from_bodid
+from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.bod import OerebMetadata, get_bod_model
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 from chsdi.models.vector import Geometry
@@ -253,9 +253,9 @@ def _identify(request):
     else:
         layerIds = params.layers
     models = [
-        models_from_name(layerId) for
+        models_from_bodid(layerId) for
         layerId in layerIds
-        if models_from_name(layerId) is not None
+        if models_from_bodid(layerId) is not None
     ]
     if models is None:
         raise exc.HTTPBadRequest('No GeoTable was found for %s' % ' '.join(layerIds))
@@ -294,7 +294,7 @@ def _get_features(params, extended=False):
     ''' Returns exactly one feature or raises
     an excpetion '''
     featureIds = params.featureIds.split(',')
-    models = models_from_name(params.layerId)
+    models = models_from_bodid(params.layerId)
     if models is None:
         raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
 
@@ -414,7 +414,7 @@ def _attributes(request):
     attributesValues = []
     params = _get_attributes_params(request)
 
-    models = models_from_name(params.layerId)
+    models = models_from_bodid(params.layerId)
 
     if models is None:
         raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
@@ -450,16 +450,15 @@ def _find(request):
     if params.searchText is None:
         raise exc.HTTPBadRequest('Please provide a searchText')
 
-    models = models_from_name(params.layer)
+    models = queryable_models_from_bodid(params.layer, params.searchField)
     features = []
-    findColumn = lambda x: (x, x.get_column_by_property_name(params.searchField))
     if models is None:
-        raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layer)
+        raise exc.HTTPBadRequest(
+            'No Vector Table was found for %s for searchField %s' % (params.layer, params.searchField))
+
     for model in models:
-        vectorModel, searchColumn = findColumn(model)
-        if searchColumn is None:
-            raise exc.HTTPBadRequest('Please provide an existing searchField')
-        query = request.db.query(vectorModel)
+        searchColumn = model.get_column_by_property_name(params.searchField)
+        query = request.db.query(model)
         if params.contains:
             query = full_text_search(
                 query,
@@ -543,7 +542,7 @@ def releases(request):
     # on specially sorted views. We add the _meta part to the given
     # layer name
     # Note that only zeitreihen is currently supported for this service
-    models = models_from_name(params.layer + '_meta')
+    models = models_from_bodid(params.layer + '_meta')
     if models is None:
         raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layer)
 
