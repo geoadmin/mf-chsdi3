@@ -10,6 +10,31 @@ Release Notes
 =============
 
 
+.. _releasenotes_20160202:
+
+Release 20160203 - Wednesday, February 3rd 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160127...r_160203>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160127...r_160203>`__
+
+Geodata
+*******
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `GeoCover - Geological Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20160127:
 
 Release 20160127 - Wednesday, January 27th 2016
@@ -30,8 +55,6 @@ API & applications
 
 Geodata
 *******
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `GeoCover - Geological Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                             |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Image strips swisstopo <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-bildstreifen>`__ (ch.swisstopo.lubis-bildstreifen)                                          |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
