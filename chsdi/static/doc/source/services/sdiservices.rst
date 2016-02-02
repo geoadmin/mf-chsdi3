@@ -982,7 +982,7 @@ Metadata Service
 
 The `layer.json` file determines which terrain tiles are available.
 
-- https://3d.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20151231/4326/layer.json
+- https://3d.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20160115/4326/layer.json
 
 Parameters
 **********
@@ -1047,12 +1047,12 @@ Resoultion [m/pixel at equator] Zoomlevel Availability
 Example
 *******
 
-* A `Terrain tile <https://terrain2.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20151231/4326/12/4309/3111.terrain>`_
+* A `Terrain tile <https://terrain2.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20160115/4326/12/4309/3111.terrain>`_
 
 
 .. _stationboard_description:
 
-----------
+------------
 
 Stationboard
 ------------
