@@ -4589,6 +4589,36 @@ msgstr "Ausgabejahr"
 msgid "ch.swisstopo.hangneigung-ueber_30"
 msgstr "Classas pendenza dapli che 30°"
 
+msgid "ch.swisstopo.hebungsraten"
+msgstr "Vertikalbewegungen"
+
+msgid "ch.swisstopo.hebungsraten.contour"
+msgstr "Höhenänderung pro Jahr [mm/Jahr]"
+
+msgid "ch.swisstopo.hebungsraten.h"
+msgstr "Height (LN02) [m]"
+
+msgid "ch.swisstopo.hebungsraten.klasse"
+msgstr "Punkteigenschaften"
+
+msgid "ch.swisstopo.hebungsraten.mfv"
+msgstr "Standardabweichung [mm/Jahr]"
+
+msgid "ch.swisstopo.hebungsraten.ord_nr"
+msgstr "Punktnummer"
+
+msgid "ch.swisstopo.hebungsraten.ort"
+msgstr "Ort"
+
+msgid "ch.swisstopo.hebungsraten.v"
+msgstr "Höhenänderung pro Jahr [mm/Jahr]"
+
+msgid "ch.swisstopo.hebungsraten.x"
+msgstr "X-Koordinate (LV03) [m]"
+
+msgid "ch.swisstopo.hebungsraten.y"
+msgstr "Y-Koordinate (LV03) [m]"
+
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Charta Dufour Emprima ed."
 

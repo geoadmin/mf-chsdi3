@@ -4589,6 +4589,36 @@ msgstr "Édition"
 msgid "ch.swisstopo.hangneigung-ueber_30"
 msgstr "Classes de pente plus de 30°"
 
+msgid "ch.swisstopo.hebungsraten"
+msgstr "Mouvements verticaux"
+
+msgid "ch.swisstopo.hebungsraten.contour"
+msgstr "Variation annuelle en hauteur [mm/an]"
+
+msgid "ch.swisstopo.hebungsraten.h"
+msgstr "Altitude (NF02) [m]"
+
+msgid "ch.swisstopo.hebungsraten.klasse"
+msgstr "Propriétés de point"
+
+msgid "ch.swisstopo.hebungsraten.mfv"
+msgstr "Déviation standard [mm/an]"
+
+msgid "ch.swisstopo.hebungsraten.ord_nr"
+msgstr "Numéro du point"
+
+msgid "ch.swisstopo.hebungsraten.ort"
+msgstr "Lieu"
+
+msgid "ch.swisstopo.hebungsraten.v"
+msgstr "Variation annuelle en hauteur [mm/an]"
+
+msgid "ch.swisstopo.hebungsraten.x"
+msgstr "Coordonnée x (MN03) [m]"
+
+msgid "ch.swisstopo.hebungsraten.y"
+msgstr "Coordonnée y (MN03) [m]"
+
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Carte Dufour Première édition"
 

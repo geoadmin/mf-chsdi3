@@ -2257,6 +2257,36 @@ msgstr ""
 msgid "ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill"
 msgstr ""
 
+msgid "ch.swisstopo.hebungsraten"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.contour"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.h"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.klasse"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.mfv"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.ord_nr"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.ort"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.v"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.x"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.y"
+msgstr ""
+
 msgid "ch.bafu.wrz-wildruhezonen_portal"
 msgstr ""
 
