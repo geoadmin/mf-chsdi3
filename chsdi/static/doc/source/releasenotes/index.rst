@@ -10,7 +10,7 @@ Release Notes
 =============
 
 
-.. _releasenotes_20160202:
+.. _releasenotes_20160203:
 
 Release 20160203 - Wednesday, February 3rd 2016
 ------------------------------------------------
