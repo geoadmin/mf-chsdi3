@@ -2,6 +2,7 @@
 
   <head>
    <link href="../_static/custom.css" rel="stylesheet" type="text/css" />
+   <link rel="alternate" type="application/rss+xml" title="GeoAdmin RSS Feed" href="rss2.xml"/>
   </head>
 
 .. _releasenotes:
@@ -9,6 +10,9 @@
 Release Notes
 =============
 
+.. raw:: html
+
+    <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 .. _releasenotes_20160210:
 
