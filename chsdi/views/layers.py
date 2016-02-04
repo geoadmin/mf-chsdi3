@@ -3,7 +3,7 @@
 import os
 import decimal
 import datetime
-
+import requests
 
 from pyramid.view import view_config
 from pyramid.renderers import render_to_response
@@ -92,7 +92,8 @@ def legend(request):
                 layerMetadata['attributes']['dataStatus'] = params.translate('None') + params.translate('Datenstand')
     legend = {
         'layer': layerMetadata,
-        'hasLegend': _has_legend(layerId, params.lang)
+        'hasLegend': _has_legend(layerId, params.lang),
+        'datenstand': _get_geojson_datenstand(params, layerId)
     }
     response = render_to_response(
         'chsdi:templates/legend.mako',
@@ -234,3 +235,34 @@ def get_layers_config_for_params(params, query, model, layerIds=None):
 
     for q in query:
         yield q.layerConfig(params)
+
+
+# Layer specific function bad but no choice
+def _get_geojson_datenstand(params, layerId):
+    # White list of GeoJSON layers updated periodically
+    remoteGeoJSONs = ('ch.bafu.hydroweb-messstationen_gefahren',
+                      'ch.bafu.hydroweb-messstationen_temperatur',
+                      'ch.bafu.hydroweb-messstationen_grundwasser',
+                      'ch.bafu.hydroweb-messstationen_vorhersage',
+                      'ch.bafu.hydroweb-warnkarte_regional',
+                      'ch.bafu.hydrologie-messstationen_gefahren',
+                      'ch.bafu.hydroweb-warnkarte_national',
+                      'ch.bafu.hydroweb-messstationen_zustand')
+    if layerId in remoteGeoJSONs:
+        model = LayersConfig
+        query = params.request.db.query(model).filter(
+            model.layerBodId == layerId
+        )
+        try:
+            layer = query.one()
+        except Exception:
+            # Don't impact legend creation
+            return None
+        geojsonUrl = layer.geojsonUrlde
+        try:
+            r = requests.get(geojsonUrl)
+            data = r.json()
+            datenstand = data['timestamp']
+        except Exception:
+            return None
+        return datenstand
