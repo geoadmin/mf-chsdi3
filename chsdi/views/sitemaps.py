@@ -40,7 +40,7 @@ def sitemap(request):
         'addresses': addresses
     }
     if params.content not in funcs:
-        raise HTTPNotFound('Missing function definition')  # pragma: no cover
+        raise HTTPNotFound('Missing function definition')
 
     return funcs[params.content](params)
 
