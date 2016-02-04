@@ -3392,6 +3392,12 @@ msgstr "öV-Haltestellen"
 msgid "ch.bav.haltestellen-oev.all_departures"
 msgstr "Alle Reiseziele"
 
+msgid "ch.bav.haltestellen-oev.anschlusspunkt"
+msgstr "Anschlusspunkt"
+
+msgid "ch.bav.haltestellen-oev.bedienpunkt"
+msgstr "Bedienpunkt"
+
 msgid "ch.bav.haltestellen-oev.betriebspunkttyp"
 msgstr "Typ"
 
@@ -3402,13 +3408,16 @@ msgid "ch.bav.haltestellen-oev.name"
 msgstr "Name"
 
 msgid "ch.bav.haltestellen-oev.next_departures"
-msgstr "nächste Abfahrt von"
+msgstr "nächste Abfahrt"
 
 msgid "ch.bav.haltestellen-oev.nodata"
 msgstr "Keine Daten"
 
 msgid "ch.bav.haltestellen-oev.nodata2"
 msgstr "Keine Daten für diese Haltestelle"
+
+msgid "ch.bav.haltestellen-oev.reiner_betriebspunkt"
+msgstr "Reiner Betriebspunkt"
 
 msgid "ch.bav.haltestellen-oev.tuabkuerzung"
 msgstr "TU"

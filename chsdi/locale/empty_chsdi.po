@@ -1,3 +1,12 @@
+msgid "ch.bav.haltestellen-oev.anschlusspunkt"
+msgstr ""
+
+msgid "ch.bav.haltestellen-oev.bedienpunkt"
+msgstr ""
+
+msgid "ch.bav.haltestellen-oev.reiner_betriebspunkt"
+msgstr ""
+
 msgid "ch.bakom.uplink100"
 msgstr ""
 
