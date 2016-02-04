@@ -437,7 +437,7 @@ class GrundWasserVorkommenMetadata (Base, ShopProductClass, Vector):
     __tablename__ = 'view_gridstand_gkwvor500'
     __bodId__ = 'ch.swisstopo.gkwvor500-papierkarte.metadata'
 
-register('ch.swisstopo.gkwvor500-papierkarte.metadata', GrundwasserVulnerabilitaetMetadata)
+register('ch.swisstopo.gkwvor500-papierkarte.metadata', GrundWasserVorkommenMetadata)
 
 
 class LetztEisMaxMetadata (Base, ShopProductClass, Vector):
