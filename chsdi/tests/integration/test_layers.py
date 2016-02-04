@@ -8,7 +8,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.sql.expression import func
 
 from chsdi.models.bod import LayersConfig
-from chsdi.models import models_from_name
+from chsdi.models import models_from_bodid
 
 
 class LayersChecker(object):
@@ -53,7 +53,7 @@ class LayersChecker(object):
 
     def ilayersWithFeatures(self):
         for layer in self.ilayers(queryable=True):
-            models = models_from_name(layer)
+            models = models_from_bodid(layer)
             assert (models is not None and len(models) > 0), layer
             model = models[0]
             query = self.session.query(model.primary_key_column())
@@ -87,7 +87,7 @@ class LayersChecker(object):
             assert ((layer + '_' + lang) in legendImages), layer + '_' + lang
 
     def checkSearch(self, layer):
-        models = models_from_name(layer)
+        models = models_from_bodid(layer)
         assert (models is not None and len(models) > 0), layer
         model = models[0]
         expectedStatus = 200
