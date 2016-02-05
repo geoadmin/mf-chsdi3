@@ -31,21 +31,3 @@ class TestLoaderJs(TestsBase):
         resp.mustcontain('proj4.js')
         resp.mustcontain('EPSG21781.js')
         resp.mustcontain('EPSG2056.js')
-
-    def test_loaderjs_waf(self):
-        resp = self.testapp.get('/loader.js', params={'mode': 'waf'}, status=200)
-        self.assertTrue(resp.content_type, 'application/javascript')
-        resp.mustcontain('old-ga-waf.js')
-        resp.mustcontain('ga.css')
-        resp.mustcontain('proj4.js')
-        resp.mustcontain('EPSG21781.js')
-        resp.mustcontain('EPSG2056.js')
-
-    def test_loaderjs_wafint(self):
-        resp = self.testapp.get('/loader.js', params={'mode': 'wafint'}, status=200)
-        self.assertTrue(resp.content_type, 'application/javascript')
-        resp.mustcontain('old-ga-wafint.js')
-        resp.mustcontain('ga.css')
-        resp.mustcontain('proj4.js')
-        resp.mustcontain('EPSG21781.js')
-        resp.mustcontain('EPSG2056.js')
