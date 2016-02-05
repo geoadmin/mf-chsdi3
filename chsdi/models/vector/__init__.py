@@ -171,6 +171,27 @@ class Vector(GeoInterface):
             return geomFilter
         return None
 
+    '''
+    The order_by_distance ordering is potentially very costly, depending
+    of the number of results of whole query. To protect against such costly
+    operations, a hard-coded tolerance of 250 meters is implemented. If the
+    passed tolerance is bigger than 250 meters, we simply ignore the odering
+    of the results.
+    The limit parameter can't mitigate this, as sorting is done with all features
+    inside the tolerance before limit is applied.
+    Note that the order_by parameer is an undocumented feature and is used
+    by selected clients only.
+    '''
+    @classmethod
+    def order_by_distance(cls, geometry, geometryType, imageDisplay, mapExtent, tolerance):
+        toleranceMeters = getToleranceMeters(imageDisplay, mapExtent, tolerance)
+        if toleranceMeters <= 250.0:
+            geom = esriRest2Shapely(geometry, geometryType)
+            wkbGeometry = WKBElement(buffer(geom.wkb), 21781)
+            geomColumn = cls.geometry_column()
+            return func.ST_DISTANCE(geomColumn, wkbGeometry)
+        return None
+
     @classmethod
     def get_column_by_property_name(cls, columnPropName):
         if columnPropName in cls.__mapper__.columns:

@@ -4,6 +4,7 @@ from sqlalchemy import Column, Text, Integer, Date, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.types import Numeric
 from geoalchemy2.types import Geometry
+from sqlalchemy.dialects import postgresql
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector
@@ -2466,3 +2467,82 @@ class ChmobilMountainbikeland (Base, Vector):
                                dimension=2, srid=21781))
 
 register('ch.astra.mountainbikeland', ChmobilMountainbikeland)
+
+
+class eignungDaecher (Base, Vector):
+    __tablename__ = 'view_solarenergie_daecher_gs'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/solareignungdaecher.mako'
+    __bodId__ = 'ch.bfe.solarenergie-eignung-daecher'
+    __label__ = 'id'
+    __queryable_attributes__ = ['df_uid', 'building_id']
+    __maxscale__ = 100005
+    id = Column('df_uid', Text, primary_key=True)
+    building_id = Column('sb_uuid', Text)
+    a_param = Column('a_param', postgresql.ARRAY(Numeric))
+    b_param = Column('b_param', postgresql.ARRAY(Numeric))
+    c_param = Column('c_param', postgresql.ARRAY(Numeric))
+    heizgradtage = Column('heizgradtage', postgresql.ARRAY(Numeric))
+    bedarf_heizung = Column('bedarf_heizung', Integer)
+    bedarf_warmwasser = Column('bedarf_warmwasser', Integer)
+    datum_aenderung = Column('datum_aenderung', Date)
+    datum_erstellung = Column('datum_erstellung', Date)
+    dg_heizung = Column('dg_heizung', Integer)
+    dg_waermebedarf = Column('dg_waermebedarf', Integer)
+    duschgaenge = Column('duschgaenge', Integer)
+    flaeche_kollektoren = Column('flaeche_kollektoren', Numeric)
+    gstrahlung = Column('gstrahlung', Integer)
+    mstrahlung = Column('mstrahlung', Integer)
+    sb_datum_aenderung = Column('sb_datum_aenderung', Date)
+    sb_datum_erstellung = Column('sb_datum_erstellung', Date)
+    sb_objektart = Column('sb_objektart', Integer)
+    volumen_speicher = Column('volumen_speicher', Integer)
+    waermeertrag = Column('waermeertrag', Integer)
+    monate = Column('monat', postgresql.ARRAY(Numeric))
+    df_nummer = Column('df_nummer', Integer)
+    klasse = Column('klasse', Integer)
+    flaeche = Column('flaeche', Numeric)
+    ausrichtung = Column('ausrichtung', Integer)
+    neigung = Column('neigung', Integer)
+    finanzertrag = Column('finanzertrag', Numeric)
+    stromertrag = Column('stromertrag', Numeric)
+    monats_ertrag = Column('monats_ertrag', postgresql.ARRAY(Numeric))
+    gs_serie_start = Column('gs_serie_start', Date)
+    klasse_text = Column('klasse_text', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bfe.solarenergie-eignung-daecher', eignungDaecher)
+
+
+class eignungDaecherOverview (Base, Vector):
+    __tablename__ = 'solarenergie_availability'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/solareignungdaecher_av.mako'
+    __bodId__ = 'ch.bfe.solarenergie-eignung-daecher'
+    __parentLayerId__ = 'ch.bfe.solarenergie-eignung-daecher'
+    __label__ = 'id'
+    __minscale__ = 100005
+    id = Column('av_id', Text, primary_key=True)
+    de = Column('de', Text)
+    fr = Column('fr', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bfe.solarenergie-eignung-daecher', eignungDaecherOverview)
+
+
+class globalstrahlung (Base, Vector):
+    __tablename__ = 'meteoschweiz_globalstrahlung_values'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/globalstrahlung.mako'
+    __bodId__ = 'ch.meteoschweiz.globalstrahlung-monatlich'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    date_start = Column('date_start', Date)
+    sis_array = Column('sis_values', postgresql.ARRAY(Numeric))
+    sisdir_array = Column('sisdir_values', postgresql.ARRAY(Numeric))
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.meteoschweiz.globalstrahlung-monatlich', globalstrahlung)

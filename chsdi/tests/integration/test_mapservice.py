@@ -266,6 +266,77 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
         resp.mustcontain('provide an integer')
 
+    def test_identify_result_limit(self):
+        # Assure not more than 201 results are returned
+        params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}', 'geometryType': 'esriGeometryPolyline', 'imageDisplay': '500,600,96',
+                  'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '10', 'layers': 'all:ch.bfs.gebaeude_wohnungs_register'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(201, len(resp.json['results']))
+
+    def test_identify_limit_parameter(self):
+        # No limit parameters
+        params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}', 'geometryType': 'esriGeometryPolyline', 'imageDisplay': '500,600,96',
+                  'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '10', 'layers': 'all:ch.bfs.gebaeude_wohnungs_register'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertLess(10, len(resp.json['results']))
+
+        # Limit parameter
+        params.update({'limit': '5'})
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(5, len(resp.json['results']))
+        params.update({'limit': '1'})
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(1, len(resp.json['results']))
+        params.update({'limit': '0'})
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(0, len(resp.json['results']))
+
+        # Invalid limit parameters
+        params.update({'limit': '-1'})
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
+        resp.mustcontain('provide a positive integer')
+        params.update({'limit': 'a'})
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
+
+    def test_identify_order_by_distance(self):
+        params = {'layers': 'all:ch.bfs.gebaeude_wohnungs_register',
+                  'geometry': '643952.5,164121.24999999997',
+                  'geometryFormat': 'geojson',
+                  'geometryType': 'esriGeometryPoint',
+                  'imageDisplay': '1920,765,96',
+                  'mapExtent': '641960.1008933608,163518.83578498938,646760.1008933608,165431.33578498938',
+                  'tolerance': '50'
+                  }
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertLess(1, len(resp.json['results']))
+        firstBefore = resp.json['results'][0]['attributes']['deinr']
+
+        params.update({'order': 'distance'})
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertLess(1, len(resp.json['results']))
+        firstAfter = resp.json['results'][0]['attributes']['deinr']
+
+        self.assertNotEqual(firstBefore, firstAfter)
+
+        # Wrong order parameter should not have impact
+        params.update({'order': 'x'})
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
+        resp.mustcontain('valid order parameter')
+
+        # order does only work with geometry
+        params.update({'order': 'distance'})
+        params.pop('geometry', None)
+        params.update({'where': 'abortionaccomplished > \'2014-12-01\''})
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
+        resp.mustcontain('together with a geometry')
+
     def test_searchField_none(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': '1231641'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)

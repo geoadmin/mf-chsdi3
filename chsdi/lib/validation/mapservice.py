@@ -34,6 +34,8 @@ class MapServiceValidation(MapNameValidation):
             'esriGeometryPolygon',
             'esriGeometryEnvelope'
         )
+        self._limit = None
+        self._order = None
 
     @property
     def where(self):
@@ -94,6 +96,14 @@ class MapServiceValidation(MapNameValidation):
     @property
     def offset(self):
         return self._offset
+
+    @property
+    def limit(self):
+        return self._limit
+
+    @property
+    def order(self):
+        return self._order
 
     @where.setter
     def where(self, value):
@@ -235,3 +245,20 @@ class MapServiceValidation(MapNameValidation):
                 raise HTTPBadRequest('Please provide an integer as an offset parameter')
             else:
                 self._offset = int(value)
+
+    @limit.setter
+    def limit(self, value):
+        if value is not None:
+            if value.isdigit() and int(value) >= 0:
+                self._limit = int(value)
+            else:
+                raise HTTPBadRequest('Please provide a positive integer for the parameter limit')
+
+    @order.setter
+    def order(self, value):
+        if value is not None:
+            if value != 'distance':
+                raise HTTPBadRequest('Please provide a valid order parameter')
+            if self.geometry is None:
+                raise HTTPBadRequest('The order value can only be used together with a geometry.')
+            self._order = value
