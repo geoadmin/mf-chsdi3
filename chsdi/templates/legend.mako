@@ -113,7 +113,9 @@
     </tr>
     <tr>
       <td>${_('Datenstand')}</td>
-% if times:
+% if legend['datenstand']:
+      <td>${legend['datenstand']}</td>
+% elif times:
   % if len(times) == 4:
       <td>${times}</td>
   % elif len(times) == 6:
