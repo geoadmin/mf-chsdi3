@@ -137,7 +137,7 @@ def getTopics(params):
     subreq = Request.blank('/rest/services')
     topicresp = params.request.invoke_subrequest(subreq)
     if topicresp.status_int != 200:
-        raise HTTPInternalServerError('Topics service did not return OK status')
+        raise HTTPInternalServerError('Topics service did not return OK status')  # pragma: no cover
     return json.loads(topicresp.body)['topics']
 
 
