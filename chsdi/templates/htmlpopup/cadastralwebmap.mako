@@ -10,6 +10,7 @@
       request = context.get('request')
       defaultExtent = '42000,30000,350000,900000'
       defaultImageDisplay = '400,600,96'
+      fallbackLang = 'fr' if request.lang in ('fr', 'it') else 'de'
       class CadastralWebMapParams(MapServiceValidation):
           def __init__(self, request):
               self.mapExtent = request.params.get('mapExtent', defaultExtent)
@@ -27,13 +28,13 @@
     % elif c['attributes']['ak'] == 'BE':
         <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://webmap.be-geo.ch/geodaten.php?lang=${lang}&recenter_bbox=${','.join(map(str,c['bbox']))}" target="_blank">BE</a></td></tr>
     % elif c['attributes']['ak'] == 'FR':
-        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://map.geo.fr.ch/?dataTheme=Mensuration officielle&extent=${','.join(map(str,c['bbox']))}" target="_blank">FR</a></td></tr>
+        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://map.geo.fr.ch/?dataTheme=Mensuration officielle&extent=${','.join(map(str,c['bbox']))}&lang=${fallbackLang}" target="_blank">FR</a></td></tr>
     % elif c['attributes']['ak'] == 'GE':
         <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://ge.ch/carte/pro/?mapresources=CADASTRE&extent=${2000000 + c['bbox'][0]},${1000000 + c['bbox'][1]},${2000000 + c['bbox'][2]},${1000000 + c['bbox'][3]}" target="_blank">GE</a></td></tr>
     % elif c['attributes']['ak'] == 'GL':
         <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="https://map.geo.gl.ch/Public?visibleLayers=CH-Rahmen,BBFlaechen_farbig,projektierte%20BBFlaechen,Flaechenelemente_farbig,Linienelemente,Punktelemente,Grundstuecke%20(Parzellen),Liegenschaftsnummern,Grenzpunkte,BB%20Namen,EO%20Namen,Grundbuecher,Hoheitsgrenzpunkte,Fixpunkte%20Kat%201%202%203,Flur-%20und%20Ortsnamen,Lokalisationen,Gebaeudeadressen&startExtent=${c['bbox'][0]},${c['bbox'][1]},${c['bbox'][2]},${c['bbox'][3]}" target="_blank">GL</a></td></tr>
     % elif c['attributes']['ak'] == 'JU':
-        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://mapfish.jura.ch/main/wsgi/theme/Cadastre?&map_x=${(c['bbox'][0] + c['bbox'][2])/2}&map_y=${(c['bbox'][1] + c['bbox'][3])/2}&map_zoom=8" target="_blank">JU</a></td></tr>
+        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="https://geo.jura.ch/theme/Cadastre?&map_x=${(c['bbox'][0] + c['bbox'][2])/2}&map_y=${(c['bbox'][1] + c['bbox'][3])/2}&map_zoom=8" target="_blank">JU</a></td></tr>
     % elif c['attributes']['ak'] == 'SH':
        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://www.gis.sh.ch/GIS_SH/?idp=1&uid=1&pwd=&map=10&lan=de&typ=3&bmurl=Nav@g@98@u@West@g@${(c['bbox'][0] + c['bbox'][2])/2}@u@Nord@g@${(c['bbox'][1] + c['bbox'][3])/2}@u@B@g@600" target="_blank">SH</a></td></tr>
     % elif c['attributes']['ak'] == 'SZ':
@@ -71,7 +72,7 @@
     % elif c['attributes']['ak'] == 'SG':
         <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://www.sg.ch/" target="_blank">SG</a></td></tr>
     % elif c['attributes']['ak'] == 'VS':
-        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://www.sit-valais.ch/fr/mo-c.html" target="_blnk">VS</a></td></br>
+        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="https://sitonline.vs.ch/urbanisation/mo/${fallbackLang}/" target="_blnk">VS</a></td></br>
     % elif c['attributes']['ak'] == 'FL':
         <tr><td class="cell-left">${_('link to geoportal')}</td><td><a href="http://geodaten.llv.li/geoshop/public.html?zoombox=${c['bbox'][0]},${c['bbox'][1]},${c['bbox'][2]},${c['bbox'][3]}" target="_blank">${_('FL')}</a></td></tr>
     % else:
