@@ -308,18 +308,22 @@ def parse_date_string(dateStr, format_input='%Y-%m-%d', format_output='%d.%m.%Y'
 
 
 def parse_date_datenstand(dateDatenstand):
-    try:
-        result = ""
-        for part in re.split('([-| ])', str(dateDatenstand).strip()):
-            if len(part) == 6 and not ':' in part:
+    result = ''
+    for part in re.split('([-| ])', str(dateDatenstand).strip()):
+        if part.isdigit():
+            if len(part) == 4:
+                result += parse_date_string(part, '%Y', '%Y')
+            elif len(part) == 6 and ':' not in part:
                 result += parse_date_string(part, '%Y%m', '%m.%Y')
-            elif len(part) == 8 and not ':' in part:
+            elif len(part) == 8 and ':' not in part:
                 result += parse_date_string(part, '%Y%m%d', '%d.%m.%Y')
-            else:
-                result += part
-        return result
-    except:
-        return '-'
+        elif part == '-' or part == ' ':
+            result += part
+        elif len(part) == 5 and ':' in part:
+            result += part
+        else:
+            return '-'
+    return result
 
 
 def format_scale(scale):
