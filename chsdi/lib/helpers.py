@@ -298,11 +298,26 @@ def center_from_box2d(box2D):
     ]
 
 
-def parse_date_string(dateStr):
+def parse_date_string(dateStr, format_input='%Y-%m-%d', format_output='%d.%m.%Y'):
     try:
         return datetime.datetime.strptime(
-            dateStr.strip(), '%Y-%m-%d'
-        ).strftime('%d.%m.%Y')
+            dateStr.strip(), format_input
+        ).strftime(format_output)
+    except:
+        return '-'
+
+
+def parse_date_datenstand(dateDatenstand):
+    try:
+        result = ""
+        for part in re.split('([-| ])', str(dateDatenstand).strip()):
+            if len(part) == 6 and not ':' in part:
+                result += parse_date_string(part, '%Y%m', '%m.%Y')
+            elif len(part) == 8 and not ':' in part:
+                result += parse_date_string(part, '%Y%m%d', '%d.%m.%Y')
+            else:
+                result += part
+        return result
     except:
         return '-'
 

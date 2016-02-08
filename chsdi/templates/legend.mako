@@ -113,23 +113,7 @@
     </tr>
     <tr>
       <td>${_('Datenstand')}</td>
-% if times:
-  % if len(times) == 4:
-      <td>${times}</td>
-  % elif len(times) == 6:
-      <td>${times[4:]}.${times[:4]}</td>
-  % elif len(times) == 8:
-      <td>${times[6:]}.${times[4:6]}.${times[:4]}</td>
-  % elif len(times) == 9:
-      <td>${times}</td>
-  % elif len(times) ==13:
-      <td>${times[4:6]}.${times[:4]}-${times[11:]}.${times[7:11]}</td>
-  % elif len(times) ==17:
-      <td>${times[6:8]}.${times[4:6]}.${times[:4]}-${times[15:]}.${times[13:15]}.${times[9:13]}</td>
-  % endif
-% else:
-      <td>-</td>
-% endif
+      <td>${h.parse_date_datenstand(times)}</td>
     </tr>    
   </table>
 </div>
