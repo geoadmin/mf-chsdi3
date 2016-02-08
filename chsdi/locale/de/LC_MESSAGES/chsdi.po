@@ -6491,6 +6491,9 @@ msgstr "Link zum Geoportal"
 msgid "link2dok"
 msgstr "Link zum Dokument"
 
+msgid "link_to_sonnendach"
+msgstr "Weitere Information"
+
 msgid "linkzurbeschreibung"
 msgstr "Detaillierte Beschreibung"
 
@@ -6808,6 +6811,9 @@ msgstr "Vergriffen"
 
 msgid "sia_261_norm"
 msgstr "Baugrundklasse nach SIA 261"
+
+msgid "sonnendach_link"
+msgstr "sonenndach.ch"
 
 msgid "spectralinfolink"
 msgstr "Link zu den vorhandenen Informationen"
@@ -7261,6 +7267,9 @@ msgstr "Schlussbericht"
 
 msgid "tt_ch.bfe.energieforschung_sprachregion"
 msgstr "Sprachregion"
+
+msgid "tt_ch.bfe.solarenergie-eignung-daecher_overview"
+msgstr "Hinweis"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
 msgstr "Inbetriebnahme"
