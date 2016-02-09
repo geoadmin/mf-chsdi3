@@ -7,7 +7,8 @@ from chsdi.lib.helpers import (
     make_agnostic, make_api_url, check_url, transformCoordinate, sanitize_url,
     check_even, round, format_search_text, remove_accents, escape_sphinx_syntax,
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
-    versioned, parse_box2d, center_from_box2d, format_scale, format_price
+    versioned, parse_box2d, center_from_box2d, format_scale, format_price,
+    parse_date_string, parse_date_datenstand
 )
 from urlparse import urljoin
 
@@ -242,3 +243,45 @@ class Test_Helpers(unittest.TestCase):
         price = 1400
         result = format_price(price)
         self.assertEqual(result, "CHF 14.00")
+
+    def test_parse_date_string(self):
+        d = '2014-01-09'
+        result = parse_date_string(d)
+        self.assertEqual(result, '09.01.2014')
+        result = parse_date_string(d, format_output='%Y')
+        self.assertEqual(result, '2014')
+        rand = '!6ndawkdbuhd'
+        result = parse_date_string(rand, format_input='%Y%m', format_output='%m.%Y')
+        self.assertEqual(result, '-')
+
+    def test_parse_date_datenstand(self):
+        digits4 = '2015'
+        result = parse_date_datenstand(digits4)
+        self.assertEqual(result, digits4)
+        digits6 = '201512'
+        result = parse_date_datenstand(digits6)
+        self.assertEqual(result, '12.2015')
+        digits8 = '20151201'
+        result = parse_date_datenstand(digits8)
+        self.assertEqual(result, '01.12.2015')
+        digits9 = '2014-2015'
+        result = parse_date_datenstand(digits9)
+        self.assertEqual(result, '2014-2015')
+        digits13 = '201412-201501'
+        result = parse_date_datenstand(digits13)
+        self.assertEqual(result, '12.2014-01.2015')
+        digits17 = '20141202-20150112'
+        result = parse_date_datenstand(digits17)
+        self.assertEqual(result, '02.12.2014-12.01.2015')
+        nodata = '-'
+        result = parse_date_datenstand(nodata)
+        self.assertEqual(result, nodata)
+        rand = '!6nhd'
+        result = parse_date_datenstand(rand)
+        self.assertEqual(result, '-')
+        fulldate = '20160208 13:50'
+        result = parse_date_datenstand(fulldate)
+        self.assertEqual(result, '08.02.2016 13:50')
+        fulldate2 = '20160208-13:50'
+        result = parse_date_datenstand(fulldate2)
+        self.assertEqual(result, '08.02.2016-13:50')

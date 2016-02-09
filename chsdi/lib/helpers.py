@@ -298,13 +298,32 @@ def center_from_box2d(box2D):
     ]
 
 
-def parse_date_string(dateStr):
+def parse_date_string(dateStr, format_input='%Y-%m-%d', format_output='%d.%m.%Y'):
     try:
         return datetime.datetime.strptime(
-            dateStr.strip(), '%Y-%m-%d'
-        ).strftime('%d.%m.%Y')
+            dateStr.strip(), format_input
+        ).strftime(format_output)
     except:
         return '-'
+
+
+def parse_date_datenstand(dateDatenstand):
+    result = ''
+    for part in re.split('([-| ])', str(dateDatenstand).strip()):
+        if part.isdigit():
+            if len(part) == 4:
+                result += parse_date_string(part, '%Y', '%Y')
+            elif len(part) == 6:
+                result += parse_date_string(part, '%Y%m', '%m.%Y')
+            elif len(part) == 8:
+                result += parse_date_string(part, '%Y%m%d', '%d.%m.%Y')
+        elif part == '-' or part == ' ':
+            result += part
+        elif len(part) == 5 and ':' in part:
+            result += part
+        else:
+            return '-'
+    return result
 
 
 def format_scale(scale):
