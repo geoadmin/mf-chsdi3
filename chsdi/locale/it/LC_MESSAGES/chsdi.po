@@ -3827,6 +3827,10 @@ msgstr "Aptitude"
 msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
 msgstr "Inclination [°]"
 
+#. TODO
+msgid "ch.bfe.solarenergie-eignung-daecher_overview"
+msgstr "ch.bfe.solarenergie-eignung-daecher_overview"
+
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistica idroelettricitá"
 
@@ -4639,6 +4643,21 @@ msgstr "Numéro du point"
 
 msgid "ch.swisstopo.hebungsraten.ort"
 msgstr "Lieu"
+
+msgid "ch.swisstopo.hebungsraten.typ1"
+msgstr "Sur roche"
+
+msgid "ch.swisstopo.hebungsraten.typ2"
+msgstr "Sur un bâtiment sur roche"
+
+msgid "ch.swisstopo.hebungsraten.typ3"
+msgstr "Sur roche (incertain)"
+
+msgid "ch.swisstopo.hebungsraten.typ4"
+msgstr "Pas sur roche"
+
+msgid "ch.swisstopo.hebungsraten.typ99"
+msgstr "Point de référence"
 
 msgid "ch.swisstopo.hebungsraten.v"
 msgstr "Variation annuelle en hauteur [mm/an]"
