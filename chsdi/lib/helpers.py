@@ -313,9 +313,9 @@ def parse_date_datenstand(dateDatenstand):
         if part.isdigit():
             if len(part) == 4:
                 result += parse_date_string(part, '%Y', '%Y')
-            elif len(part) == 6 and ':' not in part:
+            elif len(part) == 6:
                 result += parse_date_string(part, '%Y%m', '%m.%Y')
-            elif len(part) == 8 and ':' not in part:
+            elif len(part) == 8:
                 result += parse_date_string(part, '%Y%m%d', '%d.%m.%Y')
         elif part == '-' or part == ' ':
             result += part
