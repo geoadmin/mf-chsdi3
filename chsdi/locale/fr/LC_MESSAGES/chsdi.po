@@ -6491,6 +6491,9 @@ msgstr "Lien vers le géoportail"
 msgid "link2dok"
 msgstr "Lien vers le document"
 
+msgid "link_to_sonnendach"
+msgstr "Plus d'info"
+
 msgid "linkzurbeschreibung"
 msgstr "Description détaillée"
 
@@ -6808,6 +6811,9 @@ msgstr "Non disponible"
 
 msgid "sia_261_norm"
 msgstr "Classe de sol de fondation selon SIA 261"
+
+msgid "sonnendach_link"
+msgstr "sonenndach.ch"
 
 msgid "spectralinfolink"
 msgstr "Lien vers les informations disponibles"
@@ -7261,6 +7267,9 @@ msgstr "Rapport final"
 
 msgid "tt_ch.bfe.energieforschung_sprachregion"
 msgstr "Zone linguistique"
+
+msgid "tt_ch.bfe.solarenergie-eignung-daecher_overview"
+msgstr "Indication"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
 msgstr "Mise en service"

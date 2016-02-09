@@ -1407,7 +1407,7 @@ msgid "ch.are.reisezeit-miv"
 msgstr "Time of travel IMT 2005"
 
 msgid "ch.are.reisezeit-oev"
-msgstr "Time of travel with PT 2005"
+msgstr "Reisezeit zu Zentren ÖV"
 
 msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=en"
@@ -3378,7 +3378,7 @@ msgid "ch.bakom.versorgungsgebiet-tv.prog"
 msgstr "Channels"
 
 msgid "ch.bakom.versorgungsgebiet-ukw"
-msgstr "Radio coverage areas"
+msgstr "Versorgungsgebiete Radio"
 
 msgid "ch.bakom.versorgungsgebiet-ukw.prog"
 msgstr "Channels"
@@ -6491,6 +6491,9 @@ msgstr "Link to the portal"
 msgid "link2dok"
 msgstr "Link to the document"
 
+msgid "link_to_sonnendach"
+msgstr "More info"
+
 msgid "linkzurbeschreibung"
 msgstr "Detaillierte Beschreibung"
 
@@ -6808,6 +6811,9 @@ msgstr "Out of stock"
 
 msgid "sia_261_norm"
 msgstr "Ground class according to SIA 261"
+
+msgid "sonnendach_link"
+msgstr "sonenndach.ch"
 
 msgid "spectralinfolink"
 msgstr "Link zu den vorhandenen Informationen"
@@ -7261,6 +7267,9 @@ msgstr "Final report"
 
 msgid "tt_ch.bfe.energieforschung_sprachregion"
 msgstr "Language region"
+
+msgid "tt_ch.bfe.solarenergie-eignung-daecher_overview"
+msgstr "Note"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
 msgstr "Beginning of operation"

@@ -1,4 +1,10 @@
-msgid "ch.bfe.solarenergie-eignung-daecher_overview"
+msgid "link_to_sonnendach"
+msgstr ""
+
+msgid "sonnendach_link"
+msgstr ""
+
+msgid "tt_ch.bfe.solarenergie-eignung-daecher_overview"
 msgstr ""
 
 msgid "ch.bav.haltestellen-oev.anschlusspunkt"
