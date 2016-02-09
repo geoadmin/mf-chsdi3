@@ -173,6 +173,7 @@ $(document).ready(function() {
         topic = request.matchdict.get('map')
         var_verkehrsmittel = '<i>haltestellen_' + c['attributes']['verkehrsmittel'] + '</i>'
         verkehr = var_verkehrsmittel.lower()
+        type_station = c['attributes']['betriebspunkttyp']
         c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
     %>
 <table>
@@ -190,8 +191,26 @@ $(document).ready(function() {
   </tr>
   <tr>
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.betriebspunkttyp')}</td>
-    <td class="cell-meta">${c['attributes']['betriebspunkttyp']}</td>
+
+% if type_station == 'Bedienpunkt' :
+
+    <td class="cell-meta">${_('ch.bav.haltestellen-oev.bedienpunkt')}</td>
+
+% elif type_station == 'Anschlusspunkt' :
+
+   <td class="cell-meta">${_('ch.bav.haltestellen-oev.anschlusspunkt')}</td>
+
+% elif type_station == 'reiner_Betriebspunkt' :
+
+   <td class="cell-meta">${_('ch.bav.haltestellen-oev.reiner_betriebspunkt')}</td>
+
+% elif type_station == 'Haltestelle' :
+
+    <td class="cell-meta">${_('ch.bav.haltestellen-oev.haltestelle')}</td>
+
+% endif
   </tr>
+  <tr>
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.verkehrsmittel')}</td>
     <td class="cell-meta">${_(verkehr)}</td>
   </tr>

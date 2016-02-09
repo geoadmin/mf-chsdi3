@@ -3401,6 +3401,9 @@ msgstr "Punto di carico"
 msgid "ch.bav.haltestellen-oev.betriebspunkttyp"
 msgstr "Tipo"
 
+msgid "ch.bav.haltestellen-oev.haltestelle"
+msgstr "Fermata"
+
 msgid "ch.bav.haltestellen-oev.id"
 msgstr "Numero"
 
