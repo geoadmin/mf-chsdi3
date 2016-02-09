@@ -2526,6 +2526,8 @@ class eignungDaecherOverview (Base, Vector):
     id = Column('av_id', Text, primary_key=True)
     de = Column('de', Text)
     fr = Column('fr', Text)
+    it = Column('it', Text)
+    en = Column('en', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
