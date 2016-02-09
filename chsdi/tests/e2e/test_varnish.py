@@ -50,7 +50,7 @@ class TestHeight(TestVarnish):
         payload = {'easting': 600000.0, 'northing': 200000.0, '_id': self.hash()}
         resp = requests.get(self.api_url + '/rest/services/height', params=payload)
 
-        self.assertTrue(resp.status_code == 403)
+        self.assertEqual(resp.status_code, 403)
 
     def test_height_good_referer(self):
 
@@ -58,7 +58,7 @@ class TestHeight(TestVarnish):
         headers = {'referer': 'http://unittest.geo.admin.ch'}
         resp = requests.get(self.api_url + '/rest/services/height', params=payload, headers=headers)
 
-        self.assertTrue(resp.status_code == 200)
+        self.assertEqual(resp.status_code, 200)
 
 
 class TestProfile(TestVarnish):
@@ -68,7 +68,7 @@ class TestProfile(TestVarnish):
         payload = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', '_id': self.hash()}
         resp = requests.get(self.api_url + '/rest/services/profile.json', params=payload)
 
-        self.assertTrue(resp.status_code == 403)
+        self.assertEqual(resp.status_code, 403)
 
     def test_profile_json_good_referer(self):
 
@@ -76,14 +76,14 @@ class TestProfile(TestVarnish):
         headers = {'referer': 'http://unittest.geo.admin.ch'}
         resp = requests.get(self.api_url + '/rest/services/profile.json', params=payload, headers=headers)
 
-        self.assertTrue(resp.status_code == 200)
+        self.assertEqual(resp.status_code, 200)
 
     def test_profile_csv_no_referer(self):
 
         payload = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', '_id': self.hash()}
         resp = requests.get(self.api_url + '/rest/services/profile.csv', params=payload)
 
-        self.assertTrue(resp.status_code == 403)
+        self.assertEqual(resp.status_code, 403)
 
     def test_profile_csv_good_referer(self):
 
@@ -91,7 +91,7 @@ class TestProfile(TestVarnish):
         headers = {'referer': 'http://unittest.geo.admin.ch'}
         resp = requests.get(self.api_url + '/rest/services/profile.csv', params=payload, headers=headers)
 
-        self.assertTrue(resp.status_code == 200)
+        self.assertEqual(resp.status_code, 200)
 
 
 class TestLocation(TestVarnish):
@@ -104,7 +104,7 @@ class TestLocation(TestVarnish):
         returned_attrs = r.json()['results'][0]['attrs'].keys()
 
         self.assertTrue('geom_st_box2d' not in r.json()['results'][0]['attrs'])
-        self.assertTrue(self.has_geometric_attributes(returned_attrs) is False)
+        self.assertEqual(self.has_geometric_attributes(returned_attrs), False)
 
     def test_locations_good_referer(self):
 
@@ -116,7 +116,7 @@ class TestLocation(TestVarnish):
         returned_attrs = r.json()['results'][0]['attrs'].keys()
 
         self.assertTrue('geom_st_box2d' in r.json()['results'][0]['attrs'])
-        self.assertTrue(self.has_geometric_attributes(returned_attrs) is True)
+        self.assertEqual(self.has_geometric_attributes(returned_attrs), True)
 
     def test_location_cached_no_referer(self):
 
@@ -126,7 +126,7 @@ class TestLocation(TestVarnish):
         returned_attrs = r.json()['results'][0]['attrs'].keys()
 
         self.assertTrue('geom_st_box2d' not in r.json()['results'][0]['attrs'])
-        self.assertTrue(self.has_geometric_attributes(returned_attrs) is False)
+        self.assertEqual(self.has_geometric_attributes(returned_attrs), False)
 
     def test_location_cached_good_referer(self):
 
@@ -138,7 +138,7 @@ class TestLocation(TestVarnish):
         returned_attrs = r.json()['results'][0]['attrs'].keys()
 
         self.assertTrue('geom_st_box2d' in r.json()['results'][0]['attrs'])
-        self.assertTrue(self.has_geometric_attributes(returned_attrs) is True)
+        self.assertEqual(self.has_geometric_attributes(returned_attrs), True)
 
 
 class TestGebaeude(TestVarnish):
@@ -192,7 +192,7 @@ class TestMapproxyGetTile(TestVarnish):
 
         resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20111206/3857/13/4265/2883.jpeg', params=payload)
 
-        self.failUnless(resp.status_code == 403)
+        self.assertEqual(resp.status_code, 403)
 
     def test_mapproxy_bad_referer(self):
 
@@ -201,7 +201,7 @@ class TestMapproxyGetTile(TestVarnish):
 
         resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20111206/3857/13/4265/2883.jpeg', params=payload, headers=headers)
 
-        self.failUnless(resp.status_code == 403)
+        self.assertEqual(resp.status_code, 403)
 
     def test_mapproxy_good_referer(self):
 
@@ -210,7 +210,7 @@ class TestMapproxyGetTile(TestVarnish):
 
         resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20111206/3857/13/4265/2883.jpeg', params=payload, headers=headers)
 
-        self.failUnless(resp.status_code == 200)
+        self.assertEqual(resp.status_code, 200)
 
 
 class TestOgcproxy(TestVarnish):
@@ -224,7 +224,7 @@ class TestOgcproxy(TestVarnish):
 
         resp = requests.get(self.api_url + '/ogcproxy?url=http%3A%2F%2Fmapserver1.gr.ch%2Fwms%2Fadmineinteilung%3FSERVICE%3DWMS%26REQUEST%3DGetCapabilities%26VERSION%3D1.3.0', params=payload)
 
-        self.failUnless(resp.status_code == 403)
+        self.assertEqual(resp.status_code, 403)
 
     def test_ogcproxy_bad_referer(self):
 
@@ -233,7 +233,7 @@ class TestOgcproxy(TestVarnish):
 
         resp = requests.get(self.api_url + '/ogcproxy?url=http%3A%2F%2Fmapserver1.gr.ch%2Fwms%2Fadmineinteilung%3FSERVICE%3DWMS%26REQUEST%3DGetCapabilities%26VERSION%3D1.3.0', params=payload, headers=headers)
 
-        self.failUnless(resp.status_code == 403)
+        self.assertEqual(resp.status_code, 403)
 
     def test_ogcproxy_good_referer(self):
 
@@ -242,7 +242,7 @@ class TestOgcproxy(TestVarnish):
 
         resp = requests.get(self.api_url + '/ogcproxy?url=http%3A%2F%2Fmapserver1.gr.ch%2Fwms%2Fadmineinteilung%3FSERVICE%3DWMS%26REQUEST%3DGetCapabilities%26VERSION%3D1.3.0', params=payload, headers=headers)
 
-        self.failUnless(resp.status_code == 200)
+        self.assertEqual(resp.status_code, 200)
 
 
 class TestFilestorage(TestVarnish):
@@ -251,14 +251,14 @@ class TestFilestorage(TestVarnish):
 
         resp = requests.post(self.api_url + '/files', VALID_KML)
 
-        self.failUnless(resp.status_code == 403)
+        self.assertEqual(resp.status_code, 403)
 
     def test_post_filestorage_good_referer(self):
 
         headers = {'Content-Type': 'application/vnd.google-earth.kml+xml', 'Referer': 'http://unittest.geo.admin.ch'}
         resp = requests.post(self.api_url + '/files', VALID_KML, headers=headers)
 
-        self.failUnless(resp.status_code == 200)
+        self.assertEqual(resp.status_code, 200)
         self.assertIn('adminId', resp.json())
         self.assertIn('fileId', resp.json())
 
@@ -267,21 +267,21 @@ class TestFilestorage(TestVarnish):
         headers = {'Content-Type': 'application/vnd.google-earth.kml+xml', 'Referer': 'http://foo.bar'}
         resp = requests.post(self.api_url + '/files', VALID_KML, headers=headers)
 
-        self.assertTrue(resp.status_code == 403)
+        self.assertEqual(resp.status_code, 403)
 
     def test_post_filestorage_wrong_content_type(self):
 
         headers = {'Content-Type': 'application/xml', 'Referer': 'http://unittest.geo.admin.ch'}
         resp = requests.post(self.api_url + '/files', VALID_KML, headers=headers)
 
-        self.assertTrue(resp.status_code == 415)
+        self.assertEqual(resp.status_code, 415)
 
     def test_post_filestorage_not_well_formed(self):
 
         headers = {'Content-Type': 'application/vnd.google-earth.kml+xml', 'Referer': 'http://unittest.geo.admin.ch'}
         resp = requests.post(self.api_url + '/files', NOT_WELL_FORMED_KML, headers=headers)
 
-        self.assertTrue(resp.status_code == 415)
+        self.assertEqual(resp.status_code, 415)
 
     def test_post_filestorage_too_big(self):
 
@@ -292,4 +292,4 @@ class TestFilestorage(TestVarnish):
 
         resp = requests.post(self.api_url + '/files', data, headers=headers)
 
-        self.assertTrue(resp.status_code == 413)
+        self.assertEqual(resp.status_code, 413)
