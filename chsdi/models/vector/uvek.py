@@ -2478,7 +2478,7 @@ class eignungDaecher (Base, Vector):
     __queryable_attributes__ = ['df_uid', 'building_id']
     __maxscale__ = 100005
     id = Column('df_uid', Text, primary_key=True)
-    building_id = Column('sb_uuid', Text)
+    building_id = Column('building_id', Integer)
     a_param = Column('a_param', postgresql.ARRAY(Numeric))
     b_param = Column('b_param', postgresql.ARRAY(Numeric))
     c_param = Column('c_param', postgresql.ARRAY(Numeric))
