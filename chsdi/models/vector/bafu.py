@@ -1586,47 +1586,6 @@ class ramsar(Base, Vector):
 register('ch.bafu.schutzgebiete-ramsar', ramsar)
 
 
-class wildruhezonen_jagdbanngebiete(Base, Vector):
-    __tablename__ = 'wildruhezonen_jagdbanngebiete'
-    __table_args__ = ({'schema': 'schutzge', 'autoload': False})
-    __bodId__ = 'ch.bafu.wildruhezonen-jagdbanngebiete'
-    __template__ = 'templates/htmlpopup/wildruhezonen_jagdbanngebiete.mako'
-    __label__ = 'wrz_name'
-    id = Column('wrz_jb_obj', Text, primary_key=True)
-    wrz_obj = Column('wrz_obj', Integer)
-    wrz_name = Column('wrz_name', Text)
-    jb_obj = Column('jb_obj', Integer)
-    jb_name = Column('jb_name', Text)
-    wrz_status = Column('wrz_status', Text)
-    bestimmung = Column('bestimmung', Text)
-    zeitraum = Column('zeitraum', Text)
-    grundlage = Column('grundlage', Text)
-    zusatzinfo = Column('zusatzinfo', Text)
-    bearbeitungsjahr = Column('bearbeitungsjahr', Text)
-    kanton = Column('kanton', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
-
-register('ch.bafu.wildruhezonen-jagdbanngebiete', wildruhezonen_jagdbanngebiete)
-
-
-class wege_wildruhezonen_jagdbanngebiete(Base, Vector):
-    __tablename__ = 'wege_wildruhezonen_jagdbanngebiete'
-    __table_args__ = ({'schema': 'schutzge', 'autoload': False})
-    __bodId__ = 'ch.bafu.wege-wildruhezonen-jagdbanngebiete'
-    __template__ = 'templates/htmlpopup/wege_wildruhezonen_jagdbanngebiete.mako'
-    __label__ = 'wrz_obj'
-    id = Column('weg_id', Integer, primary_key=True)
-    jb_obj = Column('jb_obj', Integer)
-    wrz_obj = Column('wrz_obj', Integer)
-    length_km = Column('length_km', Numeric)
-    weg_wrz_jb_version = Column('weg_wrz_jb_version', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
-
-register('ch.bafu.wege-wildruhezonen-jagdbanngebiete', wege_wildruhezonen_jagdbanngebiete)
-
-
 class oekom_abschnitte(Base, Vector):
     __tablename__ = 'oekom_abschnitte'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})

@@ -2692,12 +2692,6 @@ msgstr ""
 msgid "ch.bafu.wasser-rueckgabe"
 msgstr ""
 
-msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
-msgstr ""
-
-msgid "ch.bafu.wildruhezonen-jagdbanngebiete"
-msgstr ""
-
 msgid "ch.bak.bundesinventar-schuetzenswerte-ortsbilder"
 msgstr ""
 
