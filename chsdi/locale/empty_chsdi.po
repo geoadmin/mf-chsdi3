@@ -1,3 +1,6 @@
+msgid "ch.bav.haltestellen-oev.haltestelle"
+msgstr ""
+
 msgid "link_to_sonnendach"
 msgstr ""
 

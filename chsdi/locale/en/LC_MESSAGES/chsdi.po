@@ -3401,6 +3401,9 @@ msgstr "Loading point"
 msgid "ch.bav.haltestellen-oev.betriebspunkttyp"
 msgstr "Type"
 
+msgid "ch.bav.haltestellen-oev.haltestelle"
+msgstr "Stop"
+
 msgid "ch.bav.haltestellen-oev.id"
 msgstr "Number"
 
@@ -4626,7 +4629,7 @@ msgid "ch.swisstopo.hebungsraten.h"
 msgstr "Altitude (LN02) [m]"
 
 msgid "ch.swisstopo.hebungsraten.klasse"
-msgstr "Propriétés de point"
+msgstr "Point properties"
 
 msgid "ch.swisstopo.hebungsraten.mfv"
 msgstr "Standard deviation [mm/year]"

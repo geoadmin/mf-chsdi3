@@ -3401,6 +3401,9 @@ msgstr "Bedienpunkt"
 msgid "ch.bav.haltestellen-oev.betriebspunkttyp"
 msgstr "Typ"
 
+msgid "ch.bav.haltestellen-oev.haltestelle"
+msgstr "Haltestelle"
+
 msgid "ch.bav.haltestellen-oev.id"
 msgstr "Nummer"
 
