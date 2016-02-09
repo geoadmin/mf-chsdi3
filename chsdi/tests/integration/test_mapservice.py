@@ -221,6 +221,12 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
 
+    def test_identify_query_models_no_attr(self):
+        params = {'geometry': '663500,224750,698500,281250', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '876,1075,96', 'lang': 'fr',
+                  'layers': 'all:ch.swisstopo.hebungsraten', 'mapExtent': '441000,-78750,879000,458750', 'tolerance': '5', 'where': 'contour < 0.4'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+
     def test_identify_query_bad_operator(self):
         params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'state ilike \'%a%\' maybe abortionaccomplished > \'2014-12-01\''}
         self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
