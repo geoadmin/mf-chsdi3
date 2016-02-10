@@ -3245,12 +3245,6 @@ msgstr "Route_ID"
 msgid "ch.bafu.wasserbau-vermessungsstrecken.streckenid"
 msgstr "StreckenID"
 
-msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
-msgstr "Permitted paths and trails"
-
-msgid "ch.bafu.wildruhezonen-jagdbanngebiete"
-msgstr "Designated wildlife areas"
-
 msgid "ch.bafu.wrz-jagdbanngebiete_select"
 msgstr "Wildlife reserves"
 
@@ -3826,10 +3820,6 @@ msgstr "Suitability"
 
 msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
 msgstr "Inclination [°]"
-
-#. TODO
-msgid "ch.bfe.solarenergie-eignung-daecher_overview"
-msgstr "ch.bfe.solarenergie-eignung-daecher_overview"
 
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Hydropower statistics"

@@ -3245,12 +3245,6 @@ msgstr "Route_ID"
 msgid "ch.bafu.wasserbau-vermessungsstrecken.streckenid"
 msgstr "Tronçon_ID"
 
-msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
-msgstr "Sentieri /itinerari autorizzati"
-
-msgid "ch.bafu.wildruhezonen-jagdbanngebiete"
-msgstr "Zone di tranquillità"
-
 msgid "ch.bafu.wrz-jagdbanngebiete_select"
 msgstr "Siti di prot. della fauna selvatica"
 
@@ -3826,10 +3820,6 @@ msgstr "Aptitude"
 
 msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
 msgstr "Inclination [°]"
-
-#. TODO
-msgid "ch.bfe.solarenergie-eignung-daecher_overview"
-msgstr "ch.bfe.solarenergie-eignung-daecher_overview"
 
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistica idroelettricitá"
