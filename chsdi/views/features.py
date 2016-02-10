@@ -252,6 +252,7 @@ def _identify(request):
             layerIds.append(layer['layerBodId'])
     else:
         layerIds = params.layers
+
     models = [
         models_from_bodid(layerId) for
         layerId in layerIds
@@ -338,17 +339,24 @@ def _get_features_for_filters(params, models, maxFeatures=None, where=None):
     ''' Returns a generator function that yields
     a feature. '''
     for vectorLayer in models:
-        for model in vectorLayer:
-            query = params.request.db.query(model)
+        if where is not None:
+            vLayer = []
+            for m in vectorLayer:
+                txt = format_query(m, where)
+                if txt is not None:
+                    vLayer.append((m, txt))
+            if len(vLayer) == 0:
+                raise exc.HTTPBadRequest('The where clause is not valid.')
+        else:
+            vLayer = [(m, None) for m in vectorLayer]
 
+        for model, where_txt in vLayer:
+            query = params.request.db.query(model)
             # Filter by sql query
             # Only one filter = one layer
-            if where is not None:
-                txt = format_query(model, where)
-                if txt is None:
-                    raise exc.HTTPBadRequest('The where clause is not valid.')
+            if where_txt is not None:
                 query = query.filter(text(
-                    txt
+                    where_txt
                 ))
             # Filter by bbox
             if params.geometry is not None:
