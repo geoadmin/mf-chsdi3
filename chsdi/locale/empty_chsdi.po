@@ -2326,6 +2326,21 @@ msgstr ""
 msgid "ch.swisstopo.hebungsraten.y"
 msgstr ""
 
+msgid "ch.swisstopo.hebungsraten.typ1"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.typ2"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.typ3"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.typ4"
+msgstr ""
+
+msgid "ch.swisstopo.hebungsraten.typ99"
+msgstr ""
+
 msgid "ch.bafu.wrz-wildruhezonen_portal"
 msgstr ""
 

@@ -3827,6 +3827,10 @@ msgstr "Suitability"
 msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
 msgstr "Inclination [°]"
 
+#. TODO
+msgid "ch.bfe.solarenergie-eignung-daecher_overview"
+msgstr "ch.bfe.solarenergie-eignung-daecher_overview"
+
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Hydropower statistics"
 
@@ -4639,6 +4643,21 @@ msgstr "Point number"
 
 msgid "ch.swisstopo.hebungsraten.ort"
 msgstr "Place"
+
+msgid "ch.swisstopo.hebungsraten.typ1"
+msgstr "Bench mark in bed rock"
+
+msgid "ch.swisstopo.hebungsraten.typ2"
+msgstr "Marker at building on bed rock"
+
+msgid "ch.swisstopo.hebungsraten.typ3"
+msgstr "Bed rock uncertain"
+
+msgid "ch.swisstopo.hebungsraten.typ4"
+msgstr "No bed rock"
+
+msgid "ch.swisstopo.hebungsraten.typ99"
+msgstr "Reference point"
 
 msgid "ch.swisstopo.hebungsraten.v"
 msgstr "Annual height change [mm/year]"

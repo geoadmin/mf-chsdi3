@@ -3827,6 +3827,10 @@ msgstr "Eignung"
 msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
 msgstr "Neigung [°]"
 
+#. TODO
+msgid "ch.bfe.solarenergie-eignung-daecher_overview"
+msgstr "ch.bfe.solarenergie-eignung-daecher_overview"
+
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistica implants idraulics"
 
@@ -4639,6 +4643,21 @@ msgstr "Punktnummer"
 
 msgid "ch.swisstopo.hebungsraten.ort"
 msgstr "Ort"
+
+msgid "ch.swisstopo.hebungsraten.typ1"
+msgstr "Direkt auf Fels"
+
+msgid "ch.swisstopo.hebungsraten.typ2"
+msgstr "An einem Gebäude auf Fels"
+
+msgid "ch.swisstopo.hebungsraten.typ3"
+msgstr "Auf Fels (fraglich)"
+
+msgid "ch.swisstopo.hebungsraten.typ4"
+msgstr "Nicht auf Fels"
+
+msgid "ch.swisstopo.hebungsraten.typ99"
+msgstr "Referenzpunkt"
 
 msgid "ch.swisstopo.hebungsraten.v"
 msgstr "Höhenänderung pro Jahr [mm/Jahr]"

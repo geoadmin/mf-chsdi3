@@ -1942,6 +1942,7 @@ class HebungsratenLine(Base, Vector):
     __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
     __template__ = 'templates/htmlpopup/hebungsraten.mako'
     __bodId__ = 'ch.swisstopo.hebungsraten'
+    __queryable_attributes__ = []
     __label__ = 'contour'
     id = Column('bgdi_id', Integer, primary_key=True)
     contour = Column('contour', Numeric)
@@ -1959,10 +1960,8 @@ class HebungsratenPunkt(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     ord_nr = Column('ord_nr', Text)
     ort = Column('ort', Text)
-    y = Column('y', Numeric)
-    x = Column('x', Numeric)
-    h = Column('h', Numeric)
     v = Column('v', Numeric)
+    mfv = Column('mfv', Numeric)
     klasse = Column('klasse', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
