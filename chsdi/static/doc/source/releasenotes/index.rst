@@ -10,6 +10,37 @@ Release Notes
 =============
 
 
+.. _releasenotes_20160210:
+
+Release 20160210 - Wednesday, February 10th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160203...r_160210>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160203...r_160210>`__
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill)   |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `District boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cantonal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-land-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-land-flaeche.fill)            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20160203:
 
 Release 20160203 - Wednesday, February 3rd 2016
