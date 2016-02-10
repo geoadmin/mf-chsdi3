@@ -22,8 +22,8 @@
             <ows:PositionName></ows:PositionName>
             <ows:ContactInfo>
                 <ows:Phone>
-                    <ows:Voice>+41 (0)31 / 963 21 11</ows:Voice>
-                    <ows:Facsimile>+41 (0)31 / 963 24 59</ows:Facsimile>
+                    <ows:Voice>+41 58 469 01 11</ows:Voice>
+                    <ows:Facsimile>+41 58 469 04 59</ows:Facsimile>
                 </ows:Phone>
                 <ows:Address>
                     <ows:DeliveryPoint>swisstopo</ows:DeliveryPoint>
