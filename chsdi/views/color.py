@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os.path
 import Image
 import StringIO
 
@@ -26,12 +27,11 @@ def get_image_colored(request):
     if imgName is None:
         raise HTTPBadRequest('The image to color must be defined')
 
-    mask = Image.open('chsdi/static/images/maki/' + imgName)
+    mask = Image.open(os.path.join(request.registry.settings['install_directory'], 'chsdi/static/images/maki/', imgName))
 
     # This auto conversion gives really bad results
     if mask.mode == 'P':
         mask = mask.convert('RGBA')
-
     img = Image.composite(Image.new("RGB", mask.size, (r, g, b)), mask, mask)
     output = StringIO.StringIO()
     img.save(output, format='PNG')
