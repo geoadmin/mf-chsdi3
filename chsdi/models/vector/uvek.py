@@ -631,6 +631,7 @@ class STAUANLAGENBUNDESAUFSICHT(Base, Vector):
     facaim_en = Column('facaim_en', Text)
     facaim_de = Column('facaim_de', Text)
     has_picture = Column('has_picture', Integer)
+    baujahr = Column('baujahr', Integer)
     facility_stabil_id = Column('facility_stabil_id', Integer)
 
 register('ch.bfe.stauanlagen-bundesaufsicht', STAUANLAGENBUNDESAUFSICHT)
