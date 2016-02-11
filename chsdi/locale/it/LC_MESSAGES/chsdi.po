@@ -2309,110 +2309,14 @@ msgstr "Soglie d'allarme delle piene 24h"
 msgid "ch.bafu.hydrologie-niedrigwasserstatistik"
 msgstr "NQStat Magre"
 
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.anz_jahre"
-msgstr "Nombre d´années"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.beeinflussung"
-msgstr "Influences NQ"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.beginn"
-msgstr "Début de période"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.coord_x"
-msgstr "Coordonnée X"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.coord_y"
-msgstr "Coordonnée Y"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.ende"
-msgstr "Fin de période"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.gebflaeche"
-msgstr "Surface du bassin versant [km2]"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.genauigkeit"
-msgstr "Précision NQ"
-
 msgid "ch.bafu.hydrologie-niedrigwasserstatistik.hyperlink"
-msgstr "Lien en français"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.kennnr"
-msgstr "Numéro"
+msgstr "Données actuelles et historiques"
 
 msgid "ch.bafu.hydrologie-niedrigwasserstatistik.name"
 msgstr "Nom de la station"
 
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm14q10"
-msgstr "NM14Q10"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm14q100"
-msgstr "NM14Q100"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm14q2"
-msgstr "NM14Q2"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm14q20"
-msgstr "NM14Q20"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm14q5"
-msgstr "NM14Q5"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm14q50"
-msgstr "NM14Q50"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm1q10"
-msgstr "NM1Q10"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm1q100"
-msgstr "NM1Q100"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm1q2"
-msgstr "NM1Q2"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm1q20"
-msgstr "NM1Q20"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm1q5"
-msgstr "NM1Q5"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm1q50"
-msgstr "NM1Q50"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm30q10"
-msgstr "NM30Q10"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm30q100"
-msgstr "NM30Q100"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm30q2"
-msgstr "NM30Q2"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm30q20"
-msgstr "NM30Q20"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm30q5"
-msgstr "NM30Q5"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm30q50"
-msgstr "NM30Q50"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm7q10"
-msgstr "NM7Q10"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm7q100"
-msgstr "NM7Q100"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm7q2"
-msgstr "NM7Q2"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm7q20"
-msgstr "NM7Q20"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm7q5"
-msgstr "NM7Q5"
-
-msgid "ch.bafu.hydrologie-niedrigwasserstatistik.nm7q50"
-msgstr "NM7Q50"
+msgid "ch.bafu.hydrologie-niedrigwasserstatistik.url_nqpdf"
+msgstr "Probabilité des étiages"
 
 msgid "ch.bafu.hydrologie-q347"
 msgstr "Q347"
