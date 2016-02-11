@@ -35,6 +35,11 @@ RedirectMatch permanent ^${apache_entry_path}/iipimage/(.*)$ ${apache_entry_path
 # Redirect no-slash target to slashed version
 RedirectMatch ^${apache_entry_path}$ ${apache_entry_path}/
 
+
+# Makes layersConfig looks like a real file
+RewriteRule ^${apache_entry_path}/(rest/services/all/MapServer/layersConfig)\.(de|fr|en|it|rm)\.json ${apache_entry_path}/$1?lang=$2 [PT]
+RewriteRule ^${apache_entry_path}/[0-9]+/(rest/services/all/MapServer/layersConfig)\.(de|fr|en|it|rm)\.json ${apache_entry_path}/$1?lang=$2 [E=${apache_base_path}setyearcache:true,PT]
+
 # If URI has numbers at the start, we cache a year
 # This allows a client to create their own cache and
 # update at his discretion
@@ -52,6 +57,7 @@ RewriteRule ^${apache_entry_path}/robots.txt ${apache_entry_path}/static/${robot
 <LocationMatch ^${apache_entry_path}/static/(robots.txt|robots_prod.txt)>
     Header set Content-type "text/plain"
 </LocationMatch>
+
 
 # WMTS Capabilities
 RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities\.xml$ ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml [PT,NC,QSA,L]
