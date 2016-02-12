@@ -28,8 +28,7 @@ class TestVarnish(TestsBase):
         try:
             os.environ["http_proxy"] = self.registry.settings['http_proxy']
             self.api_url = "http:" + self.registry.settings['api_url']
-            apache_base_path = self.registry.settings['apache_base_path']
-            self.mapproxy_url = "http://" + self.registry.settings['mapproxyhost'] + ('/' + apache_base_path if apache_base_path != 'main' else '')
+            self.mapproxy_url = "http://" + self.registry.settings['mapproxyhost'] + '/'
         except KeyError as e:
             raise e
 
