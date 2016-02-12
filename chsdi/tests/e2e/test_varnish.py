@@ -103,7 +103,7 @@ class TestLocation(TestVarnish):
 
         returned_attrs = r.json()['results'][0]['attrs'].keys()
 
-        self.assertTrue('geom_st_box2d' not in r.json()['results'][0]['attrs'])
+        self.assertNotIn('geom_st_box2d', r.json()['results'][0]['attrs'])
         self.assertEqual(self.has_geometric_attributes(returned_attrs), False)
 
     def test_locations_good_referer(self):
@@ -115,7 +115,7 @@ class TestLocation(TestVarnish):
 
         returned_attrs = r.json()['results'][0]['attrs'].keys()
 
-        self.assertTrue('geom_st_box2d' in r.json()['results'][0]['attrs'])
+        self.assertIn('geom_st_box2d', r.json()['results'][0]['attrs'])
         self.assertEqual(self.has_geometric_attributes(returned_attrs), True)
 
     def test_location_cached_no_referer(self):
@@ -125,7 +125,7 @@ class TestLocation(TestVarnish):
 
         returned_attrs = r.json()['results'][0]['attrs'].keys()
 
-        self.assertTrue('geom_st_box2d' not in r.json()['results'][0]['attrs'])
+        self.assertNotIn('geom_st_box2d', r.json()['results'][0]['attrs'])
         self.assertEqual(self.has_geometric_attributes(returned_attrs), False)
 
     def test_location_cached_good_referer(self):
@@ -137,7 +137,7 @@ class TestLocation(TestVarnish):
 
         returned_attrs = r.json()['results'][0]['attrs'].keys()
 
-        self.assertTrue('geom_st_box2d' in r.json()['results'][0]['attrs'])
+        self.assertIn('geom_st_box2d', r.json()['results'][0]['attrs'])
         self.assertEqual(self.has_geometric_attributes(returned_attrs), True)
 
 
@@ -154,14 +154,14 @@ class TestGebaeude(TestVarnish):
         payload = {'_id': self.hash()}
         r = requests.get(self.api_url + '/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/490830_0', params=payload)
 
-        self.assertTrue('geometry' not in r.json()['feature'].keys())
+        self.assertNotIn('geometry', r.json()['feature'].keys())
 
     def test_find_gebaude_no_referer(self):
 
         payload = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': 'berges', 'searchField': 'strname1', '_id': self.hash()}
         r = requests.get(self.api_url + '/rest/services/ech/MapServer/find', params=payload)
 
-        self.assertTrue('geometry' not in r.json()['results'][0].keys())
+        self.assertNotIn('geometry', r.json()['results'][0].keys())
 
     def test_gebaude_good_referer(self):
 
@@ -170,7 +170,7 @@ class TestGebaeude(TestVarnish):
 
         r = requests.get(self.api_url + '/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/490830_0', params=payload, headers=headers)
 
-        self.assertTrue('geometry' in r.json()['feature'].keys())
+        self.assertIn('geometry', r.json()['feature'].keys())
 
     def test_find_gebaude_good_referer(self):
 
@@ -178,7 +178,7 @@ class TestGebaeude(TestVarnish):
         headers = {'referer': 'http://unittest.geo.admin.ch'}
         r = requests.get(self.api_url + '/rest/services/ech/MapServer/find', params=payload, headers=headers)
 
-        self.assertTrue('geometry' in r.json()['results'][0].keys())
+        self.assertIn('geometry', r.json()['results'][0].keys())
 
 
 class TestMapproxyGetTile(TestVarnish):
