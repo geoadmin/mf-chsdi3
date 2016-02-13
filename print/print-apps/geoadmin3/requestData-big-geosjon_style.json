@@ -1,0 +1,261 @@
+{
+    "attributes": {
+        "map": {
+            "center": [
+                600000,
+                200000
+            ],
+            "dpi": 300,
+            "layers": [
+            {
+                "geoJson": "file://ressources/geol.gk500_lithologie_hauptgruppen.geojson",
+                "type": "geojson",
+                "style": {
+                    "version": "2",
+                    "[nr_hauptg = 10]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ffff99",
+                            "fillColor": "#ffff99",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 12]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ccffcc",
+                            "fillColor": "#ccffcc",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 14]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#e0e0e0",
+                            "fillColor": "#e0e0e0",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 20]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#66ff66",
+                            "fillColor": "#66ff66",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 22]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#99cc66",
+                            "fillColor": "#99cc66",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 24]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#996633",
+                            "fillColor": "#996633",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 30]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#cc9966",
+                            "fillColor": "#cc9966",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 40]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#6699cc",
+                            "fillColor": "#6699cc",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 47]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#00ff99",
+                            "fillColor": "#00ff99",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 42]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#006633",
+                            "fillColor": "#006633",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 44]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#66cc66",
+                            "fillColor": "#66cc66",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 50]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ff6600",
+                            "fillColor": "#ff6600",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 52]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#993333",
+                            "fillColor": "#993333",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 53]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#339933",
+                            "fillColor": "#339933",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 54]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ff6699",
+                            "fillColor": "#ff6699",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 32]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#669999",
+                            "fillColor": "#669999",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 48]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#00cccc",
+                            "fillColor": "#00cccc",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 49]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ff9933",
+                            "fillColor": "#ff9933",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 61]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ffcc66",
+                            "fillColor": "#ffcc66",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 62]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ff66ff",
+                            "fillColor": "#ff66ff",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 60]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ff6666",
+                            "fillColor": "#ff6666",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 70]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#663366",
+                            "fillColor": "#663366",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 72]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#cc99cc",
+                            "fillColor": "#cc99cc",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 74]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#660000",
+                            "fillColor": "#660000",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 80]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ccffff",
+                            "fillColor": "#ccffff",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    },
+                    "[nr_hauptg = 90]": {
+                        "symbolizers": [{
+                            "strokeWidth": 1,
+                            "strokeColor": "#ffffff",
+                            "fillColor": "#ffffff",
+                            "fillOpacity": 0.7,
+                            "type": "polygon"
+                        }]
+                    }
+                }
+            }],
+            "projection": "EPSG:21781",
+            "rotation": 0,
+            "scale": 500000
+        },
+        "name": "Test WMS",
+        "printLegend": 0,
+        "scale": 300000
+    },
+    "layout": "Demo",
+    "outputFormat": "pdf"
+}
