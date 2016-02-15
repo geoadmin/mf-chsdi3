@@ -50,8 +50,12 @@ def data_to_description(data):
 
 if __name__ == '__main__':
     items = []
-    releases = extract_releases('chsdi/static/doc/build/releasenotes/index.html')
- 
+    pathToReleaseNotes = 'chsdi/static/doc/build/releasenotes/index.html'
+    try:
+        releases = extract_releases(pathToReleaseNotes)
+    except IOError as e:
+        print '%s does nor exist' % pathToReleaseNotes
+
     i = 0
     for r in releases:
         # parse information from html
