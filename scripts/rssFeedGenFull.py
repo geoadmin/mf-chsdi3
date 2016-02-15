@@ -80,5 +80,5 @@ if __name__ == '__main__':
  
     # write into xml file
     rss = rss.to_xml('utf-8')
-    xml = open('chsdi/static/doc/build/releasenotes/rss2.xml', 'w')
-    xml.write(rss)
+    with open('chsdi/static/doc/build/releasenotes/rss2.xml', 'w') as xml:
+        xml.write(rss)
