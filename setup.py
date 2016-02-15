@@ -37,8 +37,10 @@ requires = [
     'sphinx_rtd_theme==0.1.6-ga3',
     'boto',
     'PyPDF2',
+    'PyRSS2Gen',
     'requests',
     'pyflakes',
+    'beautifulsoup4',
     ]
 
 setup(name='chsdi',
