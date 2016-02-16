@@ -4,13 +4,18 @@ import time
 import PyRSS2Gen
 import re
 
+
 class NoOutput:
+
     def __init__(self):
         pass
+
     def publish(self, handler):
         pass
 
+
 class MyRSS2(PyRSS2Gen.RSSItem):
+
     def __init__(self, **kwargs):
         PyRSS2Gen.RSSItem.__init__(self, **kwargs)
 
@@ -22,12 +27,14 @@ class MyRSS2(PyRSS2Gen.RSSItem):
     def publish_extensions(self, handler):
         handler._out.write('<%s><![CDATA[%s]]></%s>' % ('description', self.do_not_autooutput_description, 'description'))
 
+
 def extract_releases(html):
     with open(html, 'r') as f:
         soup = BeautifulSoup(f.read(), 'lxml')
-        divRelease = soup.find('div', {'id':'release-notes'})
-        releases = divRelease.findAll('div', {'id':re.compile('release-')})
+        divRelease = soup.find('div', {'id': 'release-notes'})
+        releases = divRelease.findAll('div', {'id': re.compile('release-')})
     return releases
+
 
 def id_to_rss_date(r):
     id_str = r.findNext('span').get('id')
@@ -37,11 +44,13 @@ def id_to_rss_date(r):
     date_rss = datetime.strftime(date_obj, '%a, %d %b %Y %H:%M:%S %z')
     return date_rss
 
+
 def extract_data(r):
     data = r
     for elem in data('h2'):
         elem.extract()
     return data
+
 
 def data_to_description(data):
     data = data.decode('utf-8', 'ignore')
@@ -65,23 +74,24 @@ if __name__ == '__main__':
         description = data_to_description(data)
         # create feeds
         items.append(MyRSS2(
-                title = title,
-                link = '//api3.geo.admin.ch/releasenotes/' + r.findNext('a').get('href'),
-                description = description,
-                guid = '//api3.geo.admin.ch/releasenotes/' + r.findNext('a').get('href'),
-                pubDate = date_rss))
+            title=title,
+            link='//api3.geo.admin.ch/releasenotes/' + r.findNext('a').get('href'),
+            description=description,
+            guid='//api3.geo.admin.ch/releasenotes/' + r.findNext('a').get('href'),
+            pubDate=date_rss))
         i += 1
-        if i == 10: break
- 
+        if i == 10:
+            break
+
     # create rss
     rss = PyRSS2Gen.RSS2(
-        title = 'GeoAdmin - RSS Feed',
-        link = '//api3.geo.admin.ch/releasenotes/',
-        description = "The latest news about GeoAdmin application's changes, new and updated data available on map.geo.admin.ch",
-        lastBuildDate = time.strftime('%a, %d %b %Y %H:%M:%S %z'),
-        items = items
+        title='GeoAdmin - RSS Feed',
+        link='//api3.geo.admin.ch/releasenotes/',
+        description="The latest news about GeoAdmin application's changes, new and updated data available on map.geo.admin.ch",
+        lastBuildDate=time.strftime('%a, %d %b %Y %H:%M:%S %z'),
+        items=items
     )
- 
+
     # write into xml file
     rss = rss.to_xml('utf-8')
     with open('chsdi/static/doc/build/releasenotes/rss2.xml', 'w') as xml:
