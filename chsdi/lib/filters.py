@@ -34,15 +34,15 @@ def filter_by_map_name(query, model, mapName):
     if mapName != 'all':
         clauses = []
         if mapName in ('api', 'swissmaponline'):
-            clauses.append(model.maps.ilike('%%%s%%' % mapName))
+            clauses.append(model.maps.like('%%%s%%' % mapName.lower()))
         else:
             # add background layersConfig
             if model.__tablename__ == LayersConfig.__tablename__:
                 isBgLayer = True
                 clauses.append(model.background == isBgLayer)
             # we also want to always include all 'ech' layers (except for api's)
-            clauses.append(model.maps.ilike('%%%s%%' % mapName))
+            clauses.append(model.maps.like('%%%s%%' % mapName.lower()))
             # whitelist hack
-            clauses.append(model.maps.ilike('%%%s%%' % 'ech'))
+            clauses.append(model.maps.like('%%%s%%' % 'ech'))
         return query.filter(or_(*clauses))
     return query
