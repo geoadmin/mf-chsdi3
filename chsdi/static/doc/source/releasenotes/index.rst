@@ -14,6 +14,33 @@ Release Notes
 
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20160217:
+
+Release 20160217 - Wednesday, February 17th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- RSS Feed for Release Notes
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160210...r_160217>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160210...r_160217>`__
+
+Geodata
+*******
++--------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Dams under federal supervision <//map.geo.admin.ch/?layers=ch.bfe.stauanlagen-bundesaufsicht>`__ (ch.bfe.stauanlagen-bundesaufsicht)   |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20160210:
 
 Release 20160210 - Wednesday, February 10th 2016
