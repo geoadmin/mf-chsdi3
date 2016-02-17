@@ -64,6 +64,7 @@ if __name__ == '__main__':
         releases = extract_releases(pathToReleaseNotes)
     except IOError as e:
         print '%s does nor exist' % pathToReleaseNotes
+        raise IOError(e)
 
     i = 0
     for r in releases:
