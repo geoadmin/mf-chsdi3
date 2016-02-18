@@ -49,6 +49,7 @@ if [ $CREATE_SNAPSHOT == 'true' ]; then
   cd $SNAPSHOTDIR/chsdi3/code/chsdi3/
   git describe --tags --abbrev=0 > .last-release
   git log -1 --pretty=format:"%h - %an, %ar : %s" > .last-commit-ref
+  git rev-parse --symbolic-full-name --abbrev-ref HEAD > .last-git-branch
   rm -rf .git*
 else
   echo "NO Snapshot created. Specify '-s' parameter got create snapshot."

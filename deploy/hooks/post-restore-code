@@ -13,9 +13,7 @@ cd $CODE_DIR
 ##python bootstrap.py --distribute --version 1.5.2 > /dev/null
 
 if [ -f buildout_$TARGET.cfg ]; then
-    buildout/bin/buildout -c buildout_$TARGET.cfg
-else
-    buildout/bin/buildout
+    buildout/bin/buildout -c buildout_$TARGET.cfg install print-config print-war
 fi
 
 if [[ $CODE_DIR == */branch/* ]]; then
