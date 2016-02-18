@@ -31,14 +31,17 @@ API & applications
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
+- New topic 'Energy'
 - Bug Fixes
 - `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160210...r_160217>`__
 
 Geodata
 *******
-+--------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Dams under federal supervision <//map.geo.admin.ch/?layers=ch.bfe.stauanlagen-bundesaufsicht>`__ (ch.bfe.stauanlagen-bundesaufsicht)   |
-+--------+-----------------------------------------------------------------------------------------------------------------------------------------+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Solar Energy - Suitability of roofs <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-daecher>`__ (ch.bfe.solarenergie-eignung-daecher)   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Dams under federal supervision <//map.geo.admin.ch/?layers=ch.bfe.stauanlagen-bundesaufsicht>`__ (ch.bfe.stauanlagen-bundesaufsicht)            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20160210:
