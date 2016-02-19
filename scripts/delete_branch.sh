@@ -11,7 +11,7 @@ if [ "$#" -ne 1 ]; then
             do
                echo ${b}
             done
-        exit 2
+        exit 0
 fi
 
 
@@ -42,6 +42,3 @@ if [ -d "${basedir}" ]
 else 
     echo "branch ${BRANCH} not found"
 fi
-
-
-

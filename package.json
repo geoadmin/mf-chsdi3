@@ -1,0 +1,15 @@
+{
+  "name": "chsdi3",
+  "version": "3.0.1",
+  "description": "API 3 Application",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/geoadmin/mf-chsdi3"
+  },
+  "author": "Swisstopo",
+  "readmeFileName": "README.md",
+  "devDependencies": {
+    "less": "~2.5.0",
+    "less-plugin-clean-css": "~1.5.1"
+  }
+}

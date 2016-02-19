@@ -6,45 +6,10 @@ here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.md')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 
-requires = [
-    'zc.buildout',
-    'webtest',
-    'pyramid_mako',
-    'pyramid',
-    'pyramid_debugtoolbar',
-    'waitress',
-    'psycopg2',
-    'SQLAlchemy',
-    'geoalchemy2',
-    'transaction',
-    'pyramid_tm',
-    'papyrus',
-    'geojson',
-    'shapely',
-    'Babel',
-    'httplib2',
-    'nose',
-    'coverage',
-    'PyYAML',
-    'papyrus_ogcproxy>0.1',
-    'pep8',
-    'autopep8',
-    'regex',
-    'pystache',
-    'lxml',
-    'OWSLib',
-    'qrcode',
-    'sphinx_rtd_theme==0.1.6-ga3',
-    'boto',
-    'PyPDF2',
-    'PyRSS2Gen',
-    'requests',
-    'pyflakes',
-    'beautifulsoup4',
-    ]
+requires = open(os.path.join(here, 'requirements.txt')).read().split('\n')
 
 setup(name='chsdi',
-      version='0.0.1',
+      version='3.0.1',
       description='chsdi',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[

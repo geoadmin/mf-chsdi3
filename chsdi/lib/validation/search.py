@@ -8,6 +8,7 @@ from chsdi.lib.validation import MapNameValidation
 MAX_SPHINX_INDEX_LENGTH = 63
 MAX_SEARCH_TERMS = 10
 
+
 class SearchValidation(MapNameValidation):
 
     def __init__(self):
@@ -137,7 +138,6 @@ class SearchValidation(MapNameValidation):
                         raise HTTPBadRequest('Please provide integers for timeStamps parameter')
             self._timeStamps = result
 
- 
     @returnGeometry.setter
     def returnGeometry(self, value):
         if value is False or value == 'false':
@@ -165,4 +165,4 @@ class SearchValidation(MapNameValidation):
             if value.isdigit():
                 self._limit = int(value)
             else:
-              raise HTTPBadRequest('The limit parameter should be an integer')
+                raise HTTPBadRequest('The limit parameter should be an integer')

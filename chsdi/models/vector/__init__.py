@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from sys import maxsize
 import re
+import geojson
 import datetime
 import decimal
+from sys import maxsize
 import pyramid.httpexceptions as exc
 from pyramid.threadlocal import get_current_registry
 from shapely.geometry import asShape
@@ -14,8 +15,6 @@ from sqlalchemy.orm.properties import ColumnProperty
 from geoalchemy2.elements import WKBElement
 from geoalchemy2.shape import to_shape
 from geoalchemy2.types import Geometry
-
-import geojson
 from papyrus.geo_interface import GeoInterface
 
 

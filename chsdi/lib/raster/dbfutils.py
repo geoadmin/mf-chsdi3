@@ -2,7 +2,11 @@
 
 # file taken from http://indiemaps.com/blog/2008/03/easy-shapefile-loading-in-python/
 
-import struct, datetime, decimal, itertools
+import struct
+import datetime
+import decimal
+import itertools
+
 
 def dbfreader(f):
     """Returns an iterator over records in a Xbase DBF file.
@@ -59,6 +63,7 @@ def dbfreader(f):
             result.append(value)
         yield result
 
+
 def dbfwriter(f, fieldnames, fieldspecs, records):
     """ Return a string suitable for writing directly to a binary dbf file.
 
@@ -80,7 +85,7 @@ def dbfwriter(f, fieldnames, fieldspecs, records):
     # header info
     ver = 3
     now = datetime.datetime.now()
-    yr, mon, day = now.year-1900, now.month, now.day
+    yr, mon, day = now.year - 1900, now.month, now.day
     numrec = len(records)
     numfields = len(fieldspecs)
     lenheader = numfields * 32 + 33

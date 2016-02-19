@@ -17,7 +17,8 @@ SNAPSHOTDIR=/var/www/vhosts/mf-chsdi3/private/snapshots/$1
 cwd=$(pwd)
 
 # Go into snapshot directory to run nose-tests
-cd $SNAPSHOTDIR/chsdi3/code/chsdi3
+SNAPSHOTDIR_CODE=$SNAPSHOTDIR/chsdi3/code/chsdi3
+cd $SNAPSHOTDIR_CODE
 
 # Run nose tests with target cluster db
 if [ -z $3 ] || [ $3 != "notests" ]
@@ -25,21 +26,32 @@ then
     if [ "$2" == "int" ]
     then
       echo "Running nose tests with integration cluster in $SNAPSHOTDIR"
-      ./nose_run.sh -i
+      scripts/nose_run.sh -i
     fi
 
     if [ "$2" == "prod" ]
     then
       echo "Running nose tests with production cluster in $SNAPSHOTDIR"
-      ./nose_run.sh -p
+      scripts/nose_run.sh -p
     fi
 else
     echo "You have disabled nosetests!"
 fi
 
-# back to working directory for the deploy command
+# Deterimine which deploy configuration to use
+if [ -z $4 ] || [ $4 != "from_current_directory" ]
+then
+  echo "Using snapshot deploy configuration"
+  DEPLOYCONFIG=$SNAPSHOTDIR_CODE/deploy/deploy.cfg
+else
+  echo "Using local deploy configuration"
+  DEPLOYCONFIG=deploy/deploy.cfg
+fi
+
+# Back to working directory for the deploy command
 cd $cwd
-sudo -u deploy deploy -r deploy/deploy.cfg $2 $SNAPSHOTDIR
+
+sudo -u deploy deploy -r $DEPLOYCONFIG $2 $SNAPSHOTDIR
 
 T="$(($(date +%s)-T))"
 

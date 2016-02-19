@@ -178,60 +178,6 @@ msgstr ""
 msgid "tt_teileinzugsgebiete_2.download"
 msgstr ""
 
-msgid "<i>haltestellen_standseilbahn_bus</i>"
-msgstr ""
-
-msgid "<i>haltestellen_standseilbahn</i>"
-msgstr ""
-
-msgid "<i>haltestellen_standseilbahn_luftseilbahn</i>"
-msgstr ""
-
-msgid "<i>haltestellen_standseilbahn_zug</i>"
-msgstr ""
-
-msgid "<i>haltestellen_tram_bus_zahnradbahn</i>"
-msgstr ""
-
-msgid "<i>haltestellen_tram</i>"
-msgstr ""
-
-msgid "<i>haltestellen_zahnradbahn</i>"
-msgstr ""
-
-msgid "<i>haltestellen_zug</i>"
-msgstr ""
-
-msgid "<i>haltestellen_zug_tram</i>"
-msgstr ""
-
-msgid "<i>haltestellen_aufzug</i>"
-msgstr ""
-
-msgid "<i>haltestellen_bus</i>"
-msgstr ""
-
-msgid "<i>haltestellen_bus_luftseilbahn</i>"
-msgstr ""
-
-msgid "<i>haltestellen_bus_schiff</i>"
-msgstr ""
-
-msgid "<i>haltestellen_bus_standseilbahn_tram</i>"
-msgstr ""
-
-msgid "<i>haltestellen_bus_tram</i>"
-msgstr ""
-
-msgid "<i>haltestellen_bus_tram_zug</i>"
-msgstr ""
-
-msgid "<i>haltestellen_bus_zug</i>"
-msgstr ""
-
-msgid "<i>haltestellen_luftseilbahn</i>"
-msgstr ""
-
 msgid "ch.swisstopo.wkt33-papierkarte.metadata"
 msgstr ""
 
@@ -2222,9 +2168,6 @@ msgid "ch.bakom.mobil-antennenstandorte-lte"
 msgstr ""
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
-msgstr ""
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2"
 msgstr ""
 
 msgid "ch.bakom.verfuegbarkeit-hdtv"

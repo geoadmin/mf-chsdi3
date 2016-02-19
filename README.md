@@ -1,7 +1,7 @@
 mf-chsdi3
 =========
 
-next generation of api3.geo.admin.ch
+next generation of [http://api3.geo.admin.ch](http://api3.geo.admin.ch)
 
 Jenkins Build Status: [![Jenkins Build Status](https://jenkins.ci.bgdi.ch/buildStatus/icon?job=chsdi3)](https://jenkins.dev.bgdi.ch/job/chsdi3/)
 
@@ -42,24 +42,20 @@ Add .boto to your environment
 Open .boto and Add (`/etc/boto.cfg` for main)
 
     [Credentials]
-    aws_access_key_id = {keyid}
-    aws_secret_access_key = {accesskey}
+    aws_access_key_id = ${keyid}
+    aws_secret_access_key = ${accesskey}
 
 [Nagios Check for Dynamodb Dumps](https://dashboard.bgdi.ch/cgi-bin/nagios3/extinfo.cgi?type=2&host=ip-10-220-4-46.eu-west-1.compute.internal&service=DynamoDB+backup)
 
-Bootstrap your build environment:
-
-    python bootstrap.py --version 1.5.2 --distribute --download-base http://pypi.camptocamp.net/distribute-0.6.22_fix-issue-227/ --setup-source http://pypi.camptocamp.net/distribute-0.6.22_fix-issue-227/distribute_setup.py
-
 Create a developer specific build configuration:
 
-    cp buildout_ltgal.cfg buildout_<username>.cfg
+    cp rc_example rc_user_<username>
 
 Change the port number in the newly created buildout configuration file (In dev mode)
 
-Where "username" is your specific buildout configuration. Don't forget to add this to git. To create the specific build:
+Where "username" is your specific rc configuration. To create the specific build:
 
-    buildout/bin/buildout -c buildout_<username>.cfg
+    make user
 
 If you do this on mf1t, you need to make sure that a correct configuration exists under
     
@@ -69,18 +65,18 @@ that points to your working directory. If all is well, you can reach your pages 
 
     http://mf-chsdi3.dev.bgdi.ch/<username>/
 
-# Deploying to dev, int, prod and demo
+## Deploying to dev, int, prod and demo
 
 Do the following commands **inside your working directory**. Here's how a standard
 deploy process is done.
 
-`./deploydev.sh -s`
+`make deploydev SNAPSHOT=true`
 
 Alternatively use the following command to create a snapshot from a branch (Only for emergency deploy)
 
-`./deploydev.sh -s somebranchname`
+`make deploydev SNAPSHOT=true GIT_BRANCH=mydevbranch`
 
-This updates the source in /var/www...to the latest master branch from github,
+This updates the source in /var/www... to the latest master branch from github,
 creates a snapshot and runs nosetests against the test db. The snapshot directory
 will be shown when the script is done. *Note*: you can omit the `-s` parameter if
 you don't want to create a snapshot e.g. for intermediate releases on dev main.
@@ -88,27 +84,36 @@ you don't want to create a snapshot e.g. for intermediate releases on dev main.
 Once a snapshot has been created, you are able to deploy this snapshot to a
 desired target. For integration, do
 
-`./deploysnapshot.sh 201407031411 int`
+`make deployint SNAPSHOT=201512011411`
 
-This will run the full nose tests **from inside the 201407031411 snapshot directory** against the **integration db cluster**. Only if these tests are successfull, the snapshot is deployed to the integration cluster.
+This will run the full nose tests **from inside the 201512011411 snapshot directory** against the **integration db cluster**. Only if these tests are successfull, the snapshot is deployed to the integration cluster.
 
-`./deploysnapshot.sh 201407031411 prod`
+`make deployprod SNAPSHOT=201512011411`
 
 This will do the corresponding thing for prod (tests will be run **against prod backends**)
 The same is valid for demo too:
-`.\deploysnapshot 201407031411 demo
+
+`make deploydemo SNAPSHOT=201512011411`
 
 You can disable the running of the nosetests against the target backends by adding
 `notests` parameter to the snapshot command. This is handy in an emergency (when
 deploying an old known-to-work snapshot) or when you have to re-deploy
 a snapshot that you know has passed the tests for the given backend.
+To disable the tests, use the following command:
+
+`make deployint SNAPSHOT=201512011411 NO_TESTS=notests`
 
 Use `notests` parameter with care, as it removes a level of tests.
 
-# Deploying a branch
+Per default the deploy command uses the deploy configuration of the snapshot directory.
+If you want to use the deploy configuration of directory from which you are executing this command, you can use:
 
-Call the `./deploybranch.sh` script **in your working directory** to deploy your current
-branch to test (Use `./deploybranch.sh int` to also deploy it to integration).
+`make deployint SNAPSHOT=201512011411 DEPLOYCONFIG=from_current_directory`
+
+## Deploying a branch
+
+Call the `make deploybranch` command **in your working directory** to deploy your current
+branch to test (Use `make deploybranchint` to also deploy it to integration).
 The code for deployment, however, does not come from your working directory,
 but does get cloned (first time) or pulled (if done once) **directly from github**.
 So you'll likely use this command **after** you push your branch to github.
@@ -125,70 +130,59 @@ A deploy to a "demo" instance is possible too (simply use ./deploybranch.sh demo
 Sample path:
 http://mf-chsdi3.int.bgdi.ch/gjn_deploybranch/ (Don't forget the slash at the end)
 
+## Deleting a branch
+
+To list all the deployed branch:
+`make deletebranch`
+
+To delete a given branch:
+`make deletebranch BRANCH_TO_DELETE=my_deployed_branch`
+
 ## Get correct back-link to geoadmin3
 Per default the back-link to geoadmin3 points to the main instance. If you
 want to change that, adapt the `geoadminhost` variable in the
 `buildout_branch.cfg.in` input file and commit it in *your branch*.
 
-## Run nosetests manual on different enviroments
+## Run nosetests manual on different environments
 We are able to run our integration tests against different staging environments
 
 **For this to work, you need to adapt your personal ~/.pgpass file. It has to
 include access information for all clusters (add pgcluster0i and pgcluster0)**
 
 To run against prod environment:
-`./nose_run.sh -p`
+`scripts/nose_run.sh -p`
 
 To run against int environment:
-`./nose_run.sh -i`
+`scripts/nose_run.sh -i`
 
 To run against dev/test environment:
-`./nose_run.sh`
+`scripts/nose_run.sh`
 
 To run against your private environment:
-`./buildout/bin/nosetests`
+`make test`
 
 To execute all tests, including _mapproxy_ and _varnish_ ones, which are deactivated by default:
-`.//nose_run.sh -a`
+`scripts/nose_run.sh -a`
 
-## Updating Mapproxy WMTS service
-Mapproxy provides the same layers as the native WMTS for all available timestamps. When new layers and/or timestamps are added,
-we have to regenerate MapProxy config file `mapproxy/mapproxy.yaml` with the following command:
+## Printing
 
-    buildout/bin/buildout -c buildout_dev.cfg install mapproxy-config
-
-Then, commit `mapproxy/mapproxy.yaml`.
-
-# Clean project
-In order to reinitialize your project and remove unused eggs do the following commands:
-
-    buildout/bin/buildout -c buildout_cleaner.cfg
-    buildout/bin/buildout -c buildout_<username>.cfg
-
-`buildout_cleaner.cfg` will move all the unused eggs into `buildout/old-eggs/`, remove all the `*.mo` translation files, uninstall all the templates and remove all the `*.pyc` files.
-
-If buildout failed previously, you might need to bootstrap the project again, use the following command after the buildout cleaner:
-
-    python bootstrap.py --version 1.5.2 --distribute --download-base http://pypi.camptocamp.net/distribute-0.6.22_fix-issue-227/ --setup-source http://pypi.camptocamp.net/distribute-0.6.22_fix-issue-227/distribute_setup.py
-
-# Printing
 Per default, printing is handled by one single war file on an instances. This war is installed and handled by the 'main' installation.
 
-If you need to work on printing and use your own war, you have to add the following to your personal buildout configuration:
+If you need to work on printing and use your own war, you have to add the following to your personal configuration (rc_user_xxx file):
 
-In the [buildout] section
 ```
-parts += print-war
-```
-
-In the [vars] section
-```
-print_war = ltxxx
+export PRINT_WAR=ltxxx
 ```
 
-# Python Code Styling
+In order to create the shared war use:
 
-We are currently using the PEP 8 convention for Python code.
+```
+make printwar APACHE_BASE_PATH=main
+```
+
+## Python Code Styling
+
+We are currently using the FLAKES 8 convention for Python code.
 You can find more information about our code styling here:
 
     http://www.python.org/dev/peps/pep-0008/
@@ -197,6 +191,18 @@ You can find more information about our code styling here:
 You can find additional information about autopep8 here:
 
     https://pypi.python.org/pypi/autopep8/
+
+To check the code styling:
+
+  ```bash
+make lint
+  ```
+
+To autocorrect most linting mistakes
+
+  ```bash
+make autolint
+  ```
 
 *Add a pre-commit hook*
 
@@ -211,7 +217,7 @@ touch .git/hooks/pre-commit
   ```bash
 #!/bin/bash
 
-./buildout/bin/buildout -c buildout_dev.cfg install validate-py
+make lint
 if [[ $? != 0 ]];
 then
   echo "$(tput setaf 1) Nothing has been commited because of styling issues, please fix it according to the comments above $(tput sgr0)"

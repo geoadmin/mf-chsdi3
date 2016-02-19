@@ -1,0 +1,5 @@
+source rc_dev
+export APACHE_BASE_PATH=ltgal
+export API_URL=//mf-chsdi3.dev.bgdi.ch/ltgal
+export GEOADMINHOST=mf-geoadmin3.dev.bgdi.ch/ltgal
+export SERVER_PORT=9000

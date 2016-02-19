@@ -137,7 +137,10 @@ for lang in config["langs"]:
     for var_msgid in var_arr:
         myMsgId = "msgid \"" + var_msgid + "\"\n"
         try:
-            myMsgStr = "msgstr \"" + translationDict[lang][unicode(var_msgid)] + "\"\n\n"
+            myMsgStr = translationDict[lang][unicode(var_msgid)]
+            myMsgStr = myMsgStr.replace('\\', '')
+            myMsgStr = myMsgStr.replace('"', '\\"')
+            myMsgStr = "msgstr \"" + myMsgStr + "\"\n\n"
         except:
             myMsgStr = "msgstr \"" + var_msgid + "\"\n\n"
             myString += "#. TODO\n"

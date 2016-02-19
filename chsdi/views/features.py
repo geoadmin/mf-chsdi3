@@ -12,6 +12,7 @@ from sqlalchemy.exc import InternalError, DataError
 from sqlalchemy.sql.expression import cast, func
 from sqlalchemy import Text, Integer, Boolean, Numeric, Date
 from sqlalchemy import text
+from geoalchemy2.types import Geometry
 
 from chsdi.lib.validation.mapservice import MapServiceValidation
 from chsdi.lib.helpers import format_query
@@ -19,7 +20,6 @@ from chsdi.lib.filters import full_text_search
 from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.bod import OerebMetadata, get_bod_model
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
-from chsdi.models.vector import Geometry
 
 PROTECTED_GEOMETRY_LAYERS = ['ch.bfs.gebaeude_wohnungs_register']
 

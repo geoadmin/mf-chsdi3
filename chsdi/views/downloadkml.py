@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 
 from chsdi.lib.decorators import requires_authorization
@@ -66,7 +66,7 @@ class DownloadKML:
         make_sure_path_exists(self.tmpdir)
         delete_old_files(self.tmpdir)
 
-        #create the file in the tmp dir
+        # create the file in the tmp dir
         try:
             with open(self.tmpdir + '/' + filename, 'w') as file_:
                 file_.write(kml.encode('utf8'))

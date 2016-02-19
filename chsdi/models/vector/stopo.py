@@ -767,7 +767,7 @@ class Vec200Namedlocation(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_namedlocation.mako'
     __bodId__ = 'ch.swisstopo.vec200-names-namedlocation'
     __queryable_attributes__ = ['objname1', 'id']
-     # Composite labels coalesce(objname1,'')||' '||coalesce(objname2,'')
+    # Composite labels coalesce(objname1,'')||' '||coalesce(objname2,'')
     __label__ = 'objname1'
     id = Column('gtdboid', Text, primary_key=True)
     objname1 = Column('objname1', Text)

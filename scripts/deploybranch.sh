@@ -2,7 +2,7 @@
 
 T="$(date +%s)"
 
-#bail out on any error
+# Bail out on any error
 set -o errexit
 
 BASE_DIR=/var/www/vhosts/mf-chsdi3
@@ -13,19 +13,26 @@ if ! [ -f $CODE_DIR/.git/config ];
 then
     git clone https://github.com/geoadmin/mf-chsdi3 $CODE_DIR
     cd $CODE_DIR
-    python bootstrap.py --version 1.5.2 --distribute --download-base http://pypi.camptocamp.net/distribute-0.6.22_fix-issue-227/ --setup-source http://pypi.camptocamp.net/distribute-0.6.22_fix-issue-227/distribute_setup.py
 fi
 
 cd $CODE_DIR
-# remove all local changes and get latest GITBRANCH from remote
+# Remove all local changes and get latest GITBRANCH from remote
 git fetch origin && git reset --hard && git checkout $GIT_BRANCH && git reset --hard origin/$GIT_BRANCH
+# Clean all in case the branch was deployed previously
+make cleanall
+
 # This creates the branch configuration
-buildout/bin/buildout -c buildout_dev.cfg
-# Use the branch configuration
-buildout/bin/buildout -c buildout_branch.cfg
+make setup
+make rc_branch DEPLOY_TARGET=dev
+source rc_branch
+make all
+make deploy/deploy-branch.cfg
+make deploy/conf/00-branch.conf
+
 # Copy the apache configuration for the branch
 cp deploy/conf/00-branch.conf $BASE_DIR/conf/00-$GIT_BRANCH.conf
-# deploy to int if 'int' is specified
+
+# Deploy to int if 'int' is specified
 if [ $1 -a $1 == 'int' ];
 then
     sudo -u deploy deploy -r deploy/deploy-branch.cfg int;
