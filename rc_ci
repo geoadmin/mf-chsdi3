@@ -4,4 +4,4 @@ export DEPLOY_TARGET=ci
 export GEODATA_STAGING=prod
 export GEOADMINHOST=mf-geoadmin3.ci.bgdi.ch
 export HOST=mf-chsdi3.ci.bgdi.ch
-export MAPPROXYHOST=mf-chsdi3.ci.bgdi.ch
+export MAPPROXYHOST=wmts20.dev.bgdi.ch
