@@ -364,12 +364,11 @@ production.ini: production.ini.in
 requirements.txt:
 	@echo "${GREEN}File requirements.txt has changed${RESET}";
 .venv: requirements.txt
-	@echo "${GREEN}Install Cython before any deps as some need it to compile with optimizations...${RESET}";
+	@echo "${GREEN}Setting up virtual environement...${RESET}";
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv $(INSTALL_DIRECTORY); \
 		${PIP_CMD} install -U pip; \
-		${PIP_CMD} install Cython; \
 	fi
 	${PYTHON_CMD} setup.py develop
 	${PIP_CMD} install Pillow==3.1.0
