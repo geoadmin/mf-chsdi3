@@ -36,7 +36,7 @@ PYTHON_CMD := $(INSTALL_DIRECTORY)/bin/python
 SPHINX_CMD := $(INSTALL_DIRECTORY)/bin/sphinx-build
 
 # Linting rules
-PEP8_IGNORE := "E128,E221,E241,E251,E272,E501,E711"
+PEP8_IGNORE := "E128,E221,E241,E251,E272,E501,E711,E731"
 
 # E128: continuation line under-indented for visual indent
 # E221: multiple spaces before operator
@@ -45,6 +45,7 @@ PEP8_IGNORE := "E128,E221,E241,E251,E272,E501,E711"
 # E272: multiple spaces before keyword
 # E501: line length 79 per default
 # E711: comparison to None should be 'if cond is None:' (SQLAlchemy's filter syntax requires this ignore!)
+# E731: do not assign a lambda expression, use a def
 
 # Colors
 RESET := $(shell tput sgr0)
@@ -97,7 +98,7 @@ help:
 	@echo
 
 .PHONY: all
-all: setup chsdi/static/css/extended.min.css templates potomo rss fixrights
+all: setup chsdi/static/css/extended.min.css templates potomo rss lint fixrights
 
 setup: .venv gdal node_modules
 
