@@ -74,6 +74,10 @@ $('#search').on('typeahead:selected', function(evt, location, suggName) {
     sn25: 8,
     feature: 7
   };
+  if (!(location.attrs.geom_st_box2d || location.attrs.x || location.attrs.y)){
+    alert("GeoAdmin's addresses service is protected. The Swiss cantons only allow websites of the federal government to use the addresses search service. Please try a LESS DETAILED LOCATION or contact us: geodata@swisstopo.ch");
+  } else {
+  
   var view = map.getView();
   var origin = location.attrs.origin;
   var extent = [0,0,0,0];
@@ -94,6 +98,7 @@ $('#search').on('typeahead:selected', function(evt, location, suggName) {
   } else {
     popup.setPosition([0,0]);
     view.fitExtent(extent, map.getSize());
+  }
   }
 });
 
