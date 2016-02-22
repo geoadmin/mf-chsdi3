@@ -5,9 +5,7 @@ var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
 // Listen to message from child window
 eventer(messageEvent, function(e) {
-  var data = e.data.split('#');
-  var layerId = data[0];
-  var featureId = data[1];
-  $('.layer-id').html(layerId);
-  $('.feature-id').html(featureId);
+  $('.feature-id').html(e.data.id);
+  $('.feature-name').html(e.data.properties.name);
+  $('.layer-id').html(e.data.properties.layerId);
 }, false);
