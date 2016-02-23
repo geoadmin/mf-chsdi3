@@ -102,7 +102,7 @@ all: setup chsdi/static/css/extended.min.css templates potomo rss lint fixrights
 
 setup: .venv gdal node_modules
 
-templates: apache/wsgi.conf apache/tomcat-print.conf development.ini production.ini
+templates: apache/wsgi.conf apache/tomcat-print.conf print/WEB-INF/web.xml development.ini production.ini
 
 .PHONY: user
 user:
@@ -299,6 +299,13 @@ apache/tomcat-print.conf: apache/tomcat-print.conf.in
 		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
 		--var "print_temp_dir=$(PRINT_TEMP_DIR)" $< > $@
 
+print/WEB-INF/web.xml.in:
+	@echo "${GREEN}Template file print/WEB-INF/web.xml has changed${RESET}"
+print/WEB-INF/web.xml: print/WEB-INF/web.xml.in
+	@echo "${GREEN}Creating print/WEB-INF/web.xml${RESET}"
+	${MAKO_CMD} \
+		--var "print_temp_dir=$(PRINT_TEMP_DIR)" $< > $@
+
 apache/application.wsgi.mako:
 	@echo "${GREEN}Template file apache/application.wsgi.mako has changed${RESET}";
 apache/application.wsgi: apache/application.wsgi.mako
@@ -397,6 +404,7 @@ clean:
 	rm -rf development.ini
 	rm -rf apache/wsgi.conf
 	rm -rf apache/tomcat-print.conf
+	rm -rf print/WEB-INF/web.xml
 	rm -rf apache/application.wsgi
 	rm -rf chsdi/static/css/extended.min.css
 	rm -rf rc_branch
