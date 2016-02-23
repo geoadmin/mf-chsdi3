@@ -76,7 +76,7 @@ help:
 	@echo "- deploybranch       Deploy current branch to dev (must be pushed before hand)"
 	@echo "- deploybranchint    Deploy current branch to dev and int (must be pushed before hand)"
 	@echo "- deploybranchdemo   Deploy current branch to dev and demo (must be pushed before hand)"
-	@echo "- deletedbranch      List deployed branches or delete a deployed branch (BRANCH_TO_DELETE=...)"
+	@echo "- deletebranch       List deployed branches or delete a deployed branch (BRANCH_TO_DELETE=...)"
 	@echo "- updateapi          Updates geoadmin api source code (ol3 fork)"
 	@echo "- printconfig        Set tomcat print env variables"
 	@echo "- printwar           Creates the .jar print file (only one per env per default)"
