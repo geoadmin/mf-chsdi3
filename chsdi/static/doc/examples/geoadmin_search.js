@@ -78,16 +78,16 @@ $('#search').on('typeahead:selected', function(evt, location, suggName) {
     alert("GeoAdmin's addresses service is protected. The Swiss cantons only allow websites of the federal government to use the addresses search service. Please try a LESS DETAILED LOCATION or contact us: geodata@swisstopo.ch");
   } else {
   
-  var view = map.getView();
-  var origin = location.attrs.origin;
-  var extent = [0,0,0,0];
-  if(location.attrs.geom_st_box2d) {
-    extent = parseExtent(location.attrs.geom_st_box2d);
-  } else if (location.attrs.x && location.attrs.y) {
-    var x = location.attrs.y;
-    var y = location.attrs.x
-    extent = [x,y,x,y]; 
-  }
+    var view = map.getView();
+    var origin = location.attrs.origin;
+    var extent = [0,0,0,0];
+    if(location.attrs.geom_st_box2d) {
+      extent = parseExtent(location.attrs.geom_st_box2d);
+    } else if (location.attrs.x && location.attrs.y) {
+      var x = location.attrs.y;
+      var y = location.attrs.x
+      extent = [x,y,x,y]; 
+    }
 
   if(originZoom.hasOwnProperty(origin)) {
     var zoom = originZoom[origin];
