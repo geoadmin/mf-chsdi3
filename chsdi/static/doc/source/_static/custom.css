@@ -14,19 +14,19 @@ td {
   padding-bottom: 8px;
 }
 
-#free {
+#notChargeableLayers {
   font-size: smaller;
 }
 
-#notfree {
+#chargeableLayers {
   font-size: smaller;
 }
 
-#queryable {
+#tooltipLayers {
   font-size: smaller;
 }
 
-#searchable {
+#searchableLayers {
   font-size: smaller;
 }
 

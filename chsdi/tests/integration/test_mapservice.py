@@ -34,6 +34,14 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/blw/MapServer', params={'chargeable': 'false'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
 
+    def test_faqlist(self):
+        resp = self.testapp.get('/rest/services/api/faqlist', status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+
+    def test_faqlist_topic_all(self):
+        resp = self.testapp.get('/rest/services/all/faqlist', status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+
     def test_identify_no_parameters(self):
         self.testapp.get('/rest/services/ech/MapServer/identify', status=400)
 

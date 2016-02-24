@@ -160,6 +160,51 @@ def feature_attributes(request):
     return {'id': layerId, 'name': params.translate(layerId), 'fields': fields}
 
 
+@view_config(route_name='faqlist', renderer='jsonp')
+def faqlist(request):
+    params = LayersParams(request)
+    params.geodataStaging = 'prod'
+    translations = {}
+
+    # That there is a geometry behind
+    queryableLayers = []
+    # That there is a tooltip
+    tooltipLayers = []
+    # That you can search in layer search
+    searchableLayers = []
+    # That you need to pay for
+    chargeableLayers = []
+    # Free layers
+    notChargeableLayers = []
+
+    query = params.request.db.query(LayersConfig)
+    for layer in get_layers_config_for_params(params, query, LayersConfig):
+        k = layer.keys().pop()
+        l = layer.values().pop()
+        if 'parentLayerId' not in l and not k.endswith('_3d'):
+            if k not in translations:
+                translations[k] = request.translate(k)
+            if 'queryable' in l and l['queryable']:
+                queryableLayers.append(k)
+            if 'tooltip' in l and l['tooltip']:
+                tooltipLayers.append(k)
+            if 'searchable' in l and l['searchable']:
+                searchableLayers.append(k)
+            if 'chargeable' in l and l['chargeable']:
+                chargeableLayers.append(k)
+            if 'chargeable' in l and not l['chargeable']:
+                notChargeableLayers.append(k)
+
+    return {
+        'translations': translations,
+        'queryableLayers': sorted(queryableLayers),
+        'tooltipLayers': sorted(tooltipLayers),
+        'searchableLayers': sorted(searchableLayers),
+        'chargeableLayers': sorted(chargeableLayers),
+        'notChargeableLayers': sorted(notChargeableLayers)
+    }
+
+
 def _has_legend(layerId, lang):
     legendsDir = os.path.join(os.path.dirname(__file__), '../static/images/legends')
     image = "%s_%s.png" % (layerId, lang)
@@ -185,7 +230,7 @@ def get_layer(query, model, layerId):
         layer = query.one()
     except NoResultFound:
         raise exc.HTTPNotFound('No layer with id %s' % layerId)
-    except MultipleResultsFound:
+    except MultipleResultsFound:  # pragma: no cover
         raise exc.HTTPInternalServerError('Multiple layers found for the same id %s' % layerId)
 
     return layer
@@ -213,7 +258,7 @@ def get_layers_metadata_for_params(params, query, model, layerIds=None):
         yield q.layerMetadata()
 
 
-def get_layers_config_for_params(params, query, model, layerIds=None):
+def get_layers_config_for_params(params, query, model):
     ''' Returns a generator function that yields
     layer config dictionaries. '''
     model = LayersConfig
@@ -227,10 +272,6 @@ def get_layers_config_for_params(params, query, model, layerIds=None):
         model.staging,
         params.geodataStaging
     )
-    if layerIds is not None:
-        for layerId in layerIds:
-            layer = get_layer(query, model, layerId)
-            yield layer.layerConfig(params)
 
     for q in query:
         yield q.layerConfig(params)

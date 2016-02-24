@@ -93,6 +93,7 @@ def main(global_config, **settings):
     config.add_route('adminkml', '/admin/kml')
     config.add_route('stationboard', '/stationboard/stops/{id}')
     config.add_route('stationboard_destination', '/stationboard/stops/{id}/destinations')
+    config.add_route('faqlist', '/rest/services/{map}/faqlist')
 
     # Some views for specific routes
     config.add_view(route_name='dev', renderer='chsdi:templates/index.mako')
