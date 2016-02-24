@@ -244,7 +244,7 @@ printwar: printconfig print/WEB-INF/web.xml.in
 	jar uf print-chsdi3-$(APACHE_BASE_PATH).war ${PRINT_INPUT} && \
 	echo "${GREEN}Print war creation was successful.${RESET}" && \
 	rm -rf $(PRINT_OUTPUT) $(PRINT_OUTPUT_BASE) && \
-	cp -f print-chsdi3-$(APACHE_BASE_PATH).war $(PRINT_OUTPUT) && cd .. && \
+	cp -f print-chsdi3-$(APACHE_BASE_PATH).war $(PRINT_OUTPUT) && chmod 666 $(PRINT_OUTPUT) && cd .. && \
 	echo "${GREEN}Removing temp directory${RESET}" && \
 	rm -rf temp_$(APP_VERSION) && \
 	echo "${GREEN}Restarting tomcat...${RESET}" && \
