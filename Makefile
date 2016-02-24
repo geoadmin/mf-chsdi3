@@ -13,7 +13,7 @@ INSTALL_DIRECTORY := .venv
 MODWSGI_USER := www-data
 NO_TESTS ?= withtests
 NODE_DIRECTORY := node_modules
-PRINT_INPUT := $(BASEWAR) *.yaml *.png WEB-INF
+PRINT_INPUT := *.yaml *.png WEB-INF
 PRINT_OUTPUT_BASE := /srv/tomcat/tomcat1/webapps/print-chsdi3-$(APACHE_BASE_PATH)
 PRINT_OUTPUT := $(PRINT_OUTPUT_BASE).war
 PRINT_TEMP_DIR := /var/cache/print
@@ -235,17 +235,21 @@ printconfig:
 
 .PHONY: printwar
 printwar: printconfig
-	mkdir temp_$(APP_VERSION)
-	@echo "${GREEN}Updating print war...${RESET}"
-	cd print && jar cf ../temp_$(APP_VERSION)/print-chsdi3-$(APACHE_BASE_PATH).war $(PRINT_INPUT)
-	@echo "${GREEN}Print war creation was successful.${RESET}"
-	rm -rf $(PRINT_OUTPUT) $(PRINT_OUTPUT_BASE) # because of cp -i alias
-	cp -f temp_$(APP_VERSION)/print-chsdi3-$(APACHE_BASE_PATH).war $(PRINT_OUTPUT)
-	@echo "${GREEN}Removing temp directory${RESET}"
-	rm -rf temp_$(APP_VERSION)
-	@echo "${GREEN}Restarting tomcat...${RESET}"
-	sudo /etc/init.d/tomcat-tomcat1 restart
-	@echo "${GREEN}It may take a few seconds for $(PRINT_OUTPUT) directory to appear...${RESET}"
+	cd print && \
+	mkdir temp_$(APP_VERSION) && \
+	echo "${GREEN}Updating print war...${RESET}" && \
+	cp -f ${BASEWAR} temp_$(APP_VERSION)/print-chsdi3-$(APACHE_BASE_PATH).war && \
+	cp -fr ${PRINT_INPUT} temp_$(APP_VERSION)/ && \
+	cd temp_$(APP_VERSION) && \
+	jar uf print-chsdi3-$(APACHE_BASE_PATH).war ${PRINT_INPUT} && \
+	echo "${GREEN}Print war creation was successful.${RESET}" && \
+	rm -rf $(PRINT_OUTPUT) $(PRINT_OUTPUT_BASE) && \
+	cp -f print-chsdi3-$(APACHE_BASE_PATH).war $(PRINT_OUTPUT) && cd .. && \
+	echo "${GREEN}Removing temp directory${RESET}" && \
+	rm -rf temp_$(APP_VERSION) && \
+	echo "${GREEN}Restarting tomcat...${RESET}" && \
+	sudo /etc/init.d/tomcat-tomcat1 restart && \
+	echo "${GREEN}It may take a few seconds for $(PRINT_OUTPUT_BASE) directory to appear...${RESET}";
 
 # Remove when ready to be merged
 .PHONY: deploydev
@@ -302,7 +306,7 @@ apache/tomcat-print.conf: apache/tomcat-print.conf.in
 print/WEB-INF/web.xml.in:
 	@echo "${GREEN}Template file print/WEB-INF/web.xml has changed${RESET}"
 print/WEB-INF/web.xml: print/WEB-INF/web.xml.in
-	@echo "${GREEN}Creating print/WEB-INF/web.xml${RESET}"
+	@echo "${GREEN}Creating print/WEB-INF/web.xml...${RESET}"
 	${MAKO_CMD} \
 		--var "print_temp_dir=$(PRINT_TEMP_DIR)" $< > $@
 
