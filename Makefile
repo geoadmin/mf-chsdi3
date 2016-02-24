@@ -234,7 +234,7 @@ printconfig:
 	@echo 'export JAVA_XMX="2G"'  >> /srv/tomcat/tomcat1/bin/setenv-local.sh
 
 .PHONY: printwar
-printwar: printconfig
+printwar: printconfig print/WEB-INF/web.xml.in
 	cd print && \
 	mkdir temp_$(APP_VERSION) && \
 	echo "${GREEN}Updating print war...${RESET}" && \
