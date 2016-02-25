@@ -500,13 +500,12 @@ register('ch.swisstopo.swissboundaries3d-kanton-flaeche.fill', SwissboundariesKa
 
 
 class CadastralWebMap(Base, Vector):
-    __tablename__ = 'kantone25plus'
-    __table_args__ = ({'autoload': False})
+    __tablename__ = 'swissboundaries_kantone'
+    __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __template__ = 'templates/htmlpopup/cadastralwebmap.mako'
     __bodId__ = 'ch.kantone.cadastralwebmap-farbe'
     __label__ = 'ak'
-    id = Column('gid', Integer, primary_key=True)
-    kantonsnr = Column('kantonsnr', Integer)
+    id = Column('kantonsnr', Integer, primary_key=True)
     ak = Column('ak', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
