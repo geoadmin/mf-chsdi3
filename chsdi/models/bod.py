@@ -50,6 +50,9 @@ class Bod(object):
 
 
 class LayersConfig(Base):
+
+    defaultMatrixSet21781 = '21781_26'
+
     __tablename__ = 'view_layers_js'
     __table_args__ = ({'schema': 're3', 'autoload': False})
     layerBodId = Column('layer_id', Text, primary_key=True)
@@ -105,11 +108,10 @@ class LayersConfig(Base):
                 elif k == 'attribution':
                     config[k] = translate(val)
                 elif k == 'matrixSet':
-                    if self.__dict__['srid'] != '4326':
-                        config['resolutions'] = \
-                            self._getResolutionsFromMatrixSet(
-                                val
-                        )
+                    if val != self.defaultMatrixSet21781 and \
+                            self.__dict__['srid'] != '4326':
+                        config['resolutions'] = self._getResolutionsFromMatrixSet(
+                            val)
                 else:
                     config[k] = val
 
@@ -144,8 +146,11 @@ class LayersConfig(Base):
         return self.__dict__['geojsonUrl%s' % lang]
 
     def _getResolutionsFromMatrixSet(self, matrixSet):
-        resolutions = [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250, 2000, 1750, 1500, 1250,
-                       1000, 750, 650, 500, 250, 100, 50, 20, 10, 5, 2.5, 2, 1.5, 1, 0.5, 0.25, 0.1]
+        resolutions = [4000, 3750, 3500, 3250, 3000, 2750, 2500, 2250,
+                       2000, 1750, 1500, 1250, 1000, 750, 650, 500,
+                       250, 100, 50, 20, 10, 5, 2.5, 2, 1.5, 1, 0.5,
+                       0.25, 0.1]
+
         matrixSet = int(matrixSet.split('_')[1])
         return resolutions[0:matrixSet + 1]
 
