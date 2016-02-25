@@ -409,37 +409,7 @@ msgstr ""
 msgid "ch.bafu.hydrologie-untersuchungsgebiete"
 msgstr ""
 
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antgeb"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antgew_ms"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antindu"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antogr"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antunpr"
-msgstr ""
-
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antv_ab86"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antveg_los_ov"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antweid"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antwiack"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antws_tot"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.df"
 msgstr ""
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.max_hoe"
@@ -451,28 +421,10 @@ msgstr ""
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.mit_hoe"
 msgstr ""
 
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.mp"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.ms"
-msgstr ""
-
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.name"
 msgstr ""
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.regimetyp"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.sc"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.shape_area"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.station"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.url"
 msgstr ""
 
 msgid "ch.bafu.hydrologischer-atlas_kantonale-messstationen"
@@ -523,22 +475,13 @@ msgstr ""
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.hoehe"
 msgstr ""
 
-msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.mittlerehoehe"
-msgstr ""
-
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.name"
 msgstr ""
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.rechtswert"
 msgstr ""
 
-msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.stationierung"
-msgstr ""
-
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.url"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.vergletscherung"
 msgstr ""
 
 msgid "ch.bafu.mittlere-abfluesse"
@@ -637,64 +580,10 @@ msgstr ""
 msgid "ch.bafu.feststoffe-geschiebemessnetz"
 msgstr ""
 
-msgid "ch.bafu.hydrologie-hochwasserstatistik.coordX"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.coordY"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.dimension"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.einzugsgebietsflaeche"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.mittlerehoehe"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq2"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq5"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq10"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq30"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq50"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq100"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq300"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.kenn_nr"
-msgstr ""
-
 msgid "ch.bafu.hydrologie-hochwasserstatistik.name"
 msgstr ""
 
-msgid "ch.bafu.hydrologie-hochwasserstatistik.regimename"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.statj_anf"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.statj_end"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.statj_tot"
-msgstr ""
-
 msgid "ch.bafu.hydrologie-hochwasserstatistik.url"
-msgstr ""
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.urlhq"
 msgstr ""
 
 msgid "ch.bafu.hydrologie-hochwasserstatistik"
