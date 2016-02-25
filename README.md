@@ -223,6 +223,14 @@ then
   echo "$(tput setaf 1) Nothing has been commited because of styling issues, please fix it according to the comments above $(tput sgr0)"
   exit 1
 fi
+
+git ls-files -m | grep . &> /dev/null
+if [[ $? != 1 ]];
+then
+    echo "$(tput setaf 1)You have the following modified files, please add or revert them first. $(tput sgr0)"
+    git ls-files -m
+    exit 1
+fi
   ```
 
 3. Make this it executable
