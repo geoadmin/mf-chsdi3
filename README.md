@@ -72,10 +72,6 @@ deploy process is done.
 
 `make deploydev SNAPSHOT=true`
 
-Alternatively use the following command to create a snapshot from a branch (Only for emergency deploy)
-
-`make deploydev SNAPSHOT=true GIT_BRANCH=mydevbranch`
-
 This updates the source in /var/www... to the latest master branch from github,
 creates a snapshot and runs nosetests against the test db. The snapshot directory
 will be shown when the script is done. *Note*: you can omit the `-s` parameter if
