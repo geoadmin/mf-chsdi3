@@ -1734,7 +1734,7 @@ msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw"
 msgstr "Année"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347"
-msgstr "ARA-DB - Eaux usées en Q347"
+msgstr "ARA - Eaux usées en Q347"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -1863,7 +1863,7 @@ msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347.vsa_kategorie"
 msgstr "Type de traitement (catégorie VSA)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse"
-msgstr "ARA-DB - Capacité EH 60g DBO5"
+msgstr "ARA - Capacité EH 60g DBO5"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -1971,7 +1971,7 @@ msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse.vsa_kategorie"
 msgstr "Type de traitement (catégorie VSA)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp"
-msgstr "ARA-DB - Type de traitement"
+msgstr "ARA - Type de traitement"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -2186,64 +2186,10 @@ msgstr "Coordonnée X"
 msgid "ch.bafu.hydrologie-hochwasserstatistik"
 msgstr "HQStat Piene"
 
-msgid "ch.bafu.hydrologie-hochwasserstatistik.coordX"
-msgstr "Coordonnée X"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.coordY"
-msgstr "Coordonnée Y"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.dimension"
-msgstr "Dimension"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.einzugsgebietsflaeche"
-msgstr "Surface du bassin versant [km2]"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq10"
-msgstr "HQ10"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq100"
-msgstr "HQ100"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq2"
-msgstr "HQ2"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq30"
-msgstr "HQ30"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq300"
-msgstr "HQ300"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq5"
-msgstr "HQ5"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.hq50"
-msgstr "HQ50"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.kenn_nr"
-msgstr "Numéro"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.mittlerehoehe"
-msgstr "Altitude moyenne [m s.m.]"
-
 msgid "ch.bafu.hydrologie-hochwasserstatistik.name"
 msgstr "Nom de la station"
 
-msgid "ch.bafu.hydrologie-hochwasserstatistik.regimename"
-msgstr "Régime d'écoulement"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.statj_anf"
-msgstr "Début de période"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.statj_end"
-msgstr "Fin de période"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.statj_tot"
-msgstr "Nombre d'années"
-
 msgid "ch.bafu.hydrologie-hochwasserstatistik.url"
-msgstr "Lien en français"
-
-msgid "ch.bafu.hydrologie-hochwasserstatistik.urlhq"
 msgstr "Probabilité des crues"
 
 msgid "ch.bafu.hydrologie-hydromessstationen"
@@ -2303,71 +2249,23 @@ msgstr "Q347 (P) [l/s]"
 msgid "ch.bafu.hydrologie-untersuchungsgebiete"
 msgstr "HUG Bassins recherches hydro."
 
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antgeb"
-msgstr "Aires de bâtiments"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antgew_ms"
-msgstr "Eaux"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antindu"
-msgstr "Aires industrielles"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antogr"
-msgstr "Arboricult. frutière, horticult., viticult."
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antunpr"
-msgstr "Végétation improd."
-
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antv_ab86"
-msgstr "Extension glaciers"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antveg_los_ov"
-msgstr "Surfaces sans végétation"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antweid"
-msgstr "Alpages"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antwiack"
-msgstr "Prés, terres arables"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.antws_tot"
-msgstr "Forêt"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.df"
-msgstr "Densité du réseau hydr."
+msgstr "Extension glaciers [%]"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.max_hoe"
-msgstr "Alt. max"
+msgstr "Altitude maximale [m s.m.]"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.min_hoe"
-msgstr "Alt. min"
+msgstr "Altitude minimale [m s.m.]"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.mit_hoe"
-msgstr "Alt. moyenne"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.mp"
-msgstr "Perméabilité"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.ms"
-msgstr "Cap. de rétention hydrique"
+msgstr "Altitude moyenne [m s.m.]"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.name"
 msgstr "Nom"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.regimetyp"
 msgstr "Type de régime"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.sc"
-msgstr "Pente du chenal principal"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.shape_area"
-msgstr "Surface"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.station"
-msgstr "Station"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete.url"
-msgstr "Lien"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen"
 msgstr "HUG / stations de mesure"
@@ -2387,23 +2285,14 @@ msgstr "Coordonnée Y"
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.hoehe"
 msgstr "Altitude de la station [m s.m.]"
 
-msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.mittlerehoehe"
-msgstr "Altitude moyenne [m s.m.]"
-
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.name"
 msgstr "Nom de la station"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.rechtswert"
 msgstr "Coordonnée X"
 
-msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.stationierung"
-msgstr "Distance de l'embouchure ou de la frontière suisse [km]"
-
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.url"
-msgstr "Lien en français"
-
-msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.vergletscherung"
-msgstr "Extension glacier [%]"
+msgstr "Données actuelles et historiques"
 
 msgid "ch.bafu.hydrologie-wassertemperaturmessstationen"
 msgstr "Stazioni misurazione temperatura"
@@ -4119,7 +4008,7 @@ msgid "ch.swisstopo.fixpunkte-lfp2.id"
 msgstr "Numero"
 
 msgid "ch.swisstopo.gas25-papierkarte.metadata"
-msgstr "Atlante geol. Svizz. 1:25000 - stamp."
+msgstr "Atlante geologico AG25 - stamp."
 
 msgid "ch.swisstopo.gas25-papierkarte.metadata.name"
 msgstr "Nome"
@@ -4146,16 +4035,16 @@ msgid "ch.swisstopo.geologie-eiszeit-lgm"
 msgstr "Ultimo mass. glaciale (vettor.) 500"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
-msgstr "Ultimo massimo glaciale 500"
+msgstr "Ultimo mass. glaciale (carta) 500"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm.ads_name"
 msgstr "Altitudine del ghiaccio durante l’ultimo massimo glaciale LGM [m s.l.m.]"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
-msgstr "Carta geologica generale"
+msgstr "Carta geol. generale 200"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata"
-msgstr "Carta geologica generale"
+msgstr "Carta geol. generale 200"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
 msgstr "Autori"
@@ -4170,25 +4059,25 @@ msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.titel"
 msgstr "Titolo"
 
 msgid "ch.swisstopo.geologie-geocover"
-msgstr "GeoCover - Dati geol. vettoriali"
+msgstr "GeoCover - dati vettoriali"
 
 msgid "ch.swisstopo.geologie-geocover.metadata"
-msgstr "Divisione GeoCover"
+msgstr "Divisione GeoCover / AG25"
 
 msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
 msgstr "Anomalia di Bouguer 500"
 
 msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
-msgstr "Anomalie isostatiche"
+msgstr "Anomalie isostatiche 500"
 
 msgid "ch.swisstopo.geologie-geolkarten500.metadata"
-msgstr "Carta geologica 500 - stampata"
+msgstr "Geologia 500 - stampata"
 
 msgid "ch.swisstopo.geologie-geologische_karte"
-msgstr "Carta geologica 500"
+msgstr "Geologia 500"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas"
-msgstr "Atlante geol. della Svizz. 1:25 000"
+msgstr "Atlante geologico AG25"
 
 msgid "ch.swisstopo.geologie-geomorphologie"
 msgstr "Géomorphologie, vue d'ensemble"
@@ -4197,37 +4086,37 @@ msgid "ch.swisstopo.geologie-geomorphologie.ads_name"
 msgstr "Géomorphologie, vue d´ensemble: forme superficielle"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
-msgstr "Aeromagnetismo Altipiano/Giura"
+msgstr "Aeromagnetismo Altipiano/Giura 500"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
-msgstr "Aeromagnetismo"
+msgstr "Aeromagnetismo 500"
 
 msgid "ch.swisstopo.geologie-geophysik-deklination"
-msgstr "Declinazione"
+msgstr "Declinazione 500"
 
 msgid "ch.swisstopo.geologie-geophysik-geothermie"
-msgstr "Geotermia"
+msgstr "Densità di flusso termico 500"
 
 msgid "ch.swisstopo.geologie-geophysik-inklination"
-msgstr "Inclinazione"
+msgstr "Inclinazione 500"
 
 msgid "ch.swisstopo.geologie-geophysik-totalintensitaet"
-msgstr "Intensità campo magnetico"
+msgstr "Intensità campo magnetico 500"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk200"
-msgstr "Geotecnica e rocce"
+msgstr "Carta geotecnica 200"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk500-genese"
-msgstr "Origine delle rocce"
+msgstr "Origine delle rocce 500"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"
-msgstr "Classificazione delle rocce"
+msgstr "Classificazione delle rocce 500"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
-msgstr "Gruppi litologici principali"
+msgstr "Litologia (gruppi principali) 500"
 
 msgid "ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200"
-msgstr "Risorse minerali"
+msgstr "Materie prime minerali 200"
 
 msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1915"
 msgstr "Cave 1915"
@@ -4245,10 +4134,10 @@ msgid "ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke"
 msgstr "Pietre dei monumenti storici"
 
 msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1965"
-msgstr "Industria dei leganti 1965"
+msgstr "Industria dei cementi 1965"
 
 msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1995"
-msgstr "Industria dei leganti 1995"
+msgstr "Industria dei cementi 1995"
 
 msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
 msgstr "Mattonifici 1907"
@@ -4329,7 +4218,7 @@ msgid "ch.swisstopo.geologie-gisgeol-punkte.sgd_nr"
 msgstr "N° InfoGeol"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas"
-msgstr "Atlante gravimetrico 1:100000"
+msgstr "Atlante gravimetrico 100"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte"
 msgstr "Points de mesure gravim. 100"
@@ -4341,7 +4230,7 @@ msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
 msgstr "No de Point"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
-msgstr "Atlante gravimetrico - stampato"
+msgstr "Atlante gravimetrico 100 - stampato"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
 msgstr "N°"
@@ -4377,7 +4266,7 @@ msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Carte geologiche speciali - stampate"
 
 msgid "ch.swisstopo.geologie-tektonische_karte"
-msgstr "Carta tettonica 500"
+msgstr "Tettonica 500"
 
 msgid "ch.swisstopo.gg25-bezirk-flaeche.fill"
 msgstr "Limiti di distretto GG25"
@@ -4416,19 +4305,19 @@ msgid "ch.swisstopo.gkba500-papierkarte.metadata.release"
 msgstr "Edizione"
 
 msgid "ch.swisstopo.gkg500-papierkarte.metadata"
-msgstr "Carta geologica 500 - stampata"
+msgstr "Geologia 500 - stampata"
 
 msgid "ch.swisstopo.gkg500-papierkarte.metadata.release"
 msgstr "Edizione"
 
 msgid "ch.swisstopo.gklgm500-papierkarte.metadata"
-msgstr "Ultimo massimo glaciale - stampata"
+msgstr "Ultimo mass. glaciale 500 - stamp."
 
 msgid "ch.swisstopo.gklgm500-papierkarte.metadata.release"
 msgstr "Edizione"
 
 msgid "ch.swisstopo.gkt500-papierkarte.metadata"
-msgstr "Carta tettonica 500 - stampata"
+msgstr "Tettonica 500 - stampata"
 
 msgid "ch.swisstopo.gkt500-papierkarte.metadata.release"
 msgstr "Edizione"
