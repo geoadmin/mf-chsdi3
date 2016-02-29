@@ -2192,6 +2192,9 @@ msgstr "Nom de la station"
 msgid "ch.bafu.hydrologie-hochwasserstatistik.url"
 msgstr "Probabilité des crues"
 
+msgid "ch.bafu.hydrologie-hochwasserstatistik.urlpdf"
+msgstr "Données actuelles et historiques"
+
 msgid "ch.bafu.hydrologie-hydromessstationen"
 msgstr "Stazioni idrologiche"
 
@@ -2252,6 +2255,12 @@ msgstr "HUG Bassins recherches hydro."
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antv_ab86"
 msgstr "Extension glaciers [%]"
 
+msgid "ch.bafu.hydrologie-untersuchungsgebiete.einzugsgebietsflaeche"
+msgstr "Surface du bassin versant [km2]"
+
+msgid "ch.bafu.hydrologie-untersuchungsgebiete.hyperlink"
+msgstr "Totaux mensuels et annuels"
+
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.max_hoe"
 msgstr "Altitude maximale [m s.m.]"
 
@@ -2266,6 +2275,9 @@ msgstr "Nom"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.regimetyp"
 msgstr "Type de régime"
+
+msgid "ch.bafu.hydrologie-untersuchungsgebiete.stationseite"
+msgstr "Données actuelles et historiques"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen"
 msgstr "HUG / stations de mesure"
