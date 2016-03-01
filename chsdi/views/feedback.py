@@ -77,7 +77,8 @@ def feedback(self, request):
     permalink = getParam('permalink', 'No permalink provided')
     feedback = getParam('feedback', 'No feedback provided')
     email = getParam('email', 'Anonymous')
-    text = u'%s sent a feedback:\n %s. \nPermalink: %s. \n\nUser-Agent: %s'
+    version = getParam('version', 'No version provided')
+    text = u'%s sent a feedback:\n %s.\n\nPermalink: %s.\n\nUser-Agent: %s\n\nApplication Version: %s'
     attachement = getParam('attachement', None)
     kml = getParam('kml', None)
     now = datetime.datetime.now()
@@ -103,7 +104,7 @@ def feedback(self, request):
         mail(
             defaultRecipient,
             defaultSubject,
-            text % (email, feedback, permalink, ua),
+            text % (email, feedback, permalink, ua, version),
             attachement,
             kml,
             kmlfilename,
