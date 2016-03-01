@@ -5,6 +5,7 @@ boto==2.38
 coverage==4.0.3
 decorator==3.4.0
 flake8
+gatilegrid==0.0.4
 geoalchemy2==0.3.0.dev1
 geojson==1.0.1
 httplib2==0.9
