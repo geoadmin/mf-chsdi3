@@ -16,6 +16,15 @@ class TestMapServiceView(TestsBase):
 
     def test_metadata_no_parameters_topic_all(self):
         resp = self.testapp.get('/rest/services/all/MapServer', status=200)
+        lods = resp.json['tileInfo']['lods']
+        self.assertEqual(lods[0]['level'], 0)
+        self.assertEqual(lods[0]['resolution'], 4000.0)
+        self.assertEqual(lods[0]['width'], 1)
+        self.assertEqual(lods[0]['height'], 1)
+        self.assertEqual(lods[9]['level'], 9)
+        self.assertEqual(lods[9]['resolution'], 1750.0)
+        self.assertEqual(lods[9]['width'], 2)
+        self.assertEqual(lods[9]['height'], 1)
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_metadata_with_searchtext(self):
