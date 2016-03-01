@@ -32,9 +32,15 @@ API & applications
 
 Geodata
 *******
-+--------+---------------------------------------------------------------------------------------------+
-| Update | `PCP Inventory <//map.geo.admin.ch/?layers=ch.babs.kulturgueter>`__ (ch.babs.kulturgueter)  |
-+--------+---------------------------------------------------------------------------------------------+
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `PCP Inventory <//map.geo.admin.ch/?layers=ch.babs.kulturgueter>`__ (ch.babs.kulturgueter)                                                                |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `HQStat <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-hochwasserstatistik>`__ (ch.bafu.hydrologie-hochwasserstatistik)                                   |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `HUG-Messstationen <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-untersuchungsgebiete_stationen>`__ (ch.bafu.hydrologie-untersuchungsgebiete_stationen)  |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `HUG Hydro. Untersuchungsgebiete <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-untersuchungsgebiete>`__ (ch.bafu.hydrologie-untersuchungsgebiete)        |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20160217:
