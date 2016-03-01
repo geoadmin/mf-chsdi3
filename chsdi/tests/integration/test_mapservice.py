@@ -34,6 +34,36 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/blw/MapServer', params={'chargeable': 'false'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
 
+    def test_faqlist(self):
+        resp = self.testapp.get('/rest/services/api/faqlist', status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('ch.astra.ivs-nat', resp.json['searchableLayers'])
+        self.assertIn('ch.are.agglomerationen_isolierte_staedte', resp.json['tooltipLayers'])
+        self.assertIn('ch.astra.ausnahmetransportrouten', resp.json['queryableLayers'])
+        self.assertIn('ch.swisstopo-karto.hangneigung', resp.json['chargeableLayers'])
+        self.assertIn('ch.are.alpenkonvention', resp.json['notChargeableLayers'])
+        self.assertTrue(len(resp.json['searchableLayers']) > 20)
+        self.assertTrue(len(resp.json['tooltipLayers']) > 20)
+        self.assertTrue(len(resp.json['queryableLayers']) > 20)
+        self.assertTrue(len(resp.json['chargeableLayers']) > 20)
+        self.assertTrue(len(resp.json['notChargeableLayers']) > 20)
+        self.assertTrue(len(resp.json['translations']) > 20)
+
+    def test_faqlist_topic_all(self):
+        resp = self.testapp.get('/rest/services/all/faqlist', status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('ch.astra.ivs-nat', resp.json['searchableLayers'])
+        self.assertIn('ch.are.agglomerationen_isolierte_staedte', resp.json['tooltipLayers'])
+        self.assertIn('ch.astra.ausnahmetransportrouten', resp.json['queryableLayers'])
+        self.assertIn('ch.swisstopo-karto.hangneigung', resp.json['chargeableLayers'])
+        self.assertIn('ch.are.alpenkonvention', resp.json['notChargeableLayers'])
+        self.assertTrue(len(resp.json['searchableLayers']) > 20)
+        self.assertTrue(len(resp.json['tooltipLayers']) > 20)
+        self.assertTrue(len(resp.json['queryableLayers']) > 20)
+        self.assertTrue(len(resp.json['chargeableLayers']) > 20)
+        self.assertTrue(len(resp.json['notChargeableLayers']) > 20)
+        self.assertTrue(len(resp.json['translations']) > 20)
+
     def test_identify_no_parameters(self):
         self.testapp.get('/rest/services/ech/MapServer/identify', status=400)
 

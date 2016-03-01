@@ -59,20 +59,20 @@ Which layers are available ?
 
 Some layers can’t be freely used. These layers are accessible by the way of `swisstopo web access - WMTS documentation <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_
 
-Here is a list of the layers that requires a swisstopo web acesss:
+The list below includes the layers that require swisstopo web acesss:
 
 .. raw:: html
 
    <body>
-      <div id="notfree" style="margin-left:10px;margin-bottom:24px;"></div>
+      <div id="chargeableLayers" style="margin-left:10px;margin-bottom:24px;"></div>
    </body>
 
-Here is a list of all the freely accessible layers:
+The following list contains all the free accessible layers:
 
 .. raw:: html
 
    <body>
-      <div id="free" style="margin-left:10px;margin-bottom:24px"></div>
+      <div id="notChargeableLayers" style="margin-left:10px;margin-bottom:24px"></div>
    </body>
 
 
@@ -81,73 +81,23 @@ Here is a list of all the freely accessible layers:
    <script type="text/javascript">
 
    function init() {
-       var suffix3d = '_3d';
-       $.getJSON( "../../rest/services/api/MapServer/layersConfig", function( data ) {
-          var myInnerHtml_queryable = "<br><table border=\"0\">";
-          var myInnerHtml_searchable =  "<br><table border=\"0\">";
-          var layers_api = data;
-          var counterQueryable = 1;
-          var counterSearchable = 1;
-          for (var layer in layers_api) {
-            if (!layers_api[layer].parentLayerId && layer.indexOf(suffix3d, layer.length - suffix3d.length) == -1) {
-              if (layers_api[layer].queryable) {
-                myInnerHtml_queryable += '<tr><td>' + counterQueryable + '</td><td><a href="http://map3.geo.admin.ch/?layers=' +
-                  layer + '" target="new"> ' + layer + '</a>&nbsp('+layers_api[layer].label+')</td></tr>';
-                counterQueryable++;
-              }
-              if (layers_api[layer].searchable) {
-                myInnerHtml_searchable += '<tr><td>' + counterSearchable + '</td><td><a href="http://map3.geo.admin.ch/?layers=' +
-                  layer + '" target="new"> ' + layer + '</a>&nbsp('+layers_api[layer].label+')</td></tr>';
-                counterSearchable++;
-              }
-            }
-          }
-          document.getElementById("queryable").innerHTML=myInnerHtml_queryable;
-          document.getElementById("searchable").innerHTML=myInnerHtml_searchable;
-
-          //Now we get the not free layers. We have to use metadata service for
-          //this layersonfig service does not contain free/not-free designation
-          $.getJSON( "../../rest/services/api/MapServer",
-              { chargeable: 'true' },
-              function( metadata ) {
-             var myInnerHtml_notfree =  "<br><table border=\"0\">";
-             var layers_notfree = metadata.layers;
-             var counterNotFree = 1;
-             layers_notfree.push({'layerBodId': 'ch.swisstopo.pixelkarte-grau'});
-             layers_notfree.push({'layerBodId': 'ch.swisstopo.pixelkarte-farbe'});
-             layers_notfree.push({'layerBodId': 'ch.swisstopo.swissimage'});
-             for (var i = 0; i < layers_notfree.length; i++) {
-                var nflayer = layers_notfree[i];
-                if (layers_api[nflayer.layerBodId] && layer.indexOf(suffix3d, layer.length - suffix3d.length) == -1 &&
-                    !layers_api[nflayer.layerBodId].parentLayerId) {
-                    myInnerHtml_notfree += '<tr><td>' + counterNotFree + '</td><td><a href="http://map3.geo.admin.ch/?layers=' +
-                      nflayer.layerBodId + '" target="new"> ' + nflayer.layerBodId + '</a>&nbsp('+layers_api[nflayer.layerBodId].label+')</td></tr>';
-                    counterNotFree++;
-                }
-             }
-             document.getElementById("notfree").innerHTML=myInnerHtml_notfree;
-          });
-
-          $.getJSON( "../../rest/services/api/MapServer",
-              { chargeable: 'false' },
-              function( metadata ) {
-             var myInnerHtml_free =  "<br><table border=\"0\">";
-             var layers_free = metadata.layers;
-             var counterFree = 1;
-             for (var i = 0; i < layers_free.length; i++) {
-                var flayer = layers_free[i];
-                if (layers_api[flayer.layerBodId] && layer.indexOf(suffix3d, layer.length - suffix3d.length) == -1 &&
-                   !layers_api[flayer.layerBodId].parentLayerId) {
-                    myInnerHtml_free += '<tr><td>' + counterFree + '</td><td><a href="http://map3.geo.admin.ch/?layers=' +
-                      flayer.layerBodId + '" target="new"> ' + flayer.layerBodId + '</a>&nbsp('+layers_api[flayer.layerBodId].label+')</td></tr>';
-                    counterFree++;
-                }
-             }
-             document.getElementById("free").innerHTML=myInnerHtml_free;
-          });
-
-        });
-
+    $.getJSON( "../../rest/services/api/faqlist", function( data ) {
+      var layersApi = data;
+      var translationsApi = data.translations;
+      var names = ["chargeableLayers", "notChargeableLayers", "tooltipLayers", "searchableLayers"];
+      for (var index=0; index < names.length; index++) {
+        var name = names[index];
+        var newInner = "<br><table border=\"0\">";
+        var counter = 1;
+        for (var layer in layersApi[name]) {
+          newInner += '<tr><td>' + counter + '</td><td><a href="http://map3.geo.admin.ch/?layers=' +
+                layersApi[name][layer] + '" target="new"> ' + layersApi[name][layer] + '</a>&nbsp('+translationsApi[layersApi[name][layer]]+')</td></tr>';
+          counter++;
+        }
+        document.getElementById(name).innerHTML = newInner;
+        newInner = [];
+      }
+    });
    }
 
    </script>
@@ -160,12 +110,12 @@ Here is a list of all the freely accessible layers:
 Which layers have a tooltip?
 ****************************
 
-Not all the layers have a tooltip. Here is a complete list of all the layers that have a tooltip:
+Not all the layers have a tooltip. Below there is the complete list all the layers that have a tooltip:
 
 .. raw:: html
 
   <body>
-    <div id="queryable" style="margin-left:10px;margin-bottom:24px;"></div>
+    <div id="tooltipLayers" style="margin-left:10px;margin-bottom:24px;"></div>
   </body>
 
 .. _searchable_layers:
@@ -173,16 +123,16 @@ Not all the layers have a tooltip. Here is a complete list of all the layers tha
 Which layers are searchable?
 ****************************
 
-We define a layer as searchable when its features can be searched. Here is a list of all searchable layers:
+We define a layer as searchable when its features can be searched. Here there is the list of all searchable layers:
 
 .. raw:: html
 
   <body>
-    <div id="searchable" style="margin-left:10px;margin-bottom:24px;"></div>
+    <div id="searchableLayers" style="margin-left:10px;margin-bottom:24px;"></div>
   </body>
 
-How can I accessed the tiles ?
-******************************
+How can I have access to the tiles ?
+************************************
 
 The tiles used in the GeoAdmin API are generated by `TileCache <http://www.tilecache.org>`_ and are stored according to
 a RESTful OGC `Web Map Tile Service <http://www.opengeospatial.org/standards/wmts>`_ Implementation Standard schema.
