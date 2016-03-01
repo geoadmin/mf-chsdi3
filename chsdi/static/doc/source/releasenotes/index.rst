@@ -41,6 +41,20 @@ Geodata
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `HUG Hydro. Untersuchungsgebiete <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-untersuchungsgebiete>`__ (ch.bafu.hydrologie-untersuchungsgebiete)        |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE Product <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product>`__ (ch.swisstopo.swissimage-product)                                     |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE <//map.geo.admin.ch/?bgLayer=ch.swisstopo.swissimage>`__ (ch.swisstopo.swissimage)                                                            |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:100'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk100.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk100.noscale)         |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:50'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk50.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk50.noscale)            |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk25.noscale)            |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Color Map <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-farbe>`__ (ch.swisstopo.pixelkarte-farbe)                                                 |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Grey Map <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-grau>`__ (ch.swisstopo.pixelkarte-grau)                                                    |
++-----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20160217:
