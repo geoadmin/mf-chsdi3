@@ -409,6 +409,15 @@ msgstr ""
 msgid "ch.bafu.hydrologie-untersuchungsgebiete"
 msgstr ""
 
+msgid "ch.bafu.hydrologie-untersuchungsgebiete.stationseite"
+msgstr ""
+
+msgid "ch.bafu.hydrologie-untersuchungsgebiete.einzugsgebietsflaeche"
+msgstr ""
+
+msgid "ch.bafu.hydrologie-untersuchungsgebiete.hyperlink"
+msgstr ""
+
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antv_ab86"
 msgstr ""
 
@@ -584,6 +593,9 @@ msgid "ch.bafu.hydrologie-hochwasserstatistik.name"
 msgstr ""
 
 msgid "ch.bafu.hydrologie-hochwasserstatistik.url"
+msgstr ""
+
+msgid "ch.bafu.hydrologie-hochwasserstatistik.urlpdf"
 msgstr ""
 
 msgid "ch.bafu.hydrologie-hochwasserstatistik"

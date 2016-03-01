@@ -2192,6 +2192,9 @@ msgstr "Name der Station"
 msgid "ch.bafu.hydrologie-hochwasserstatistik.url"
 msgstr "Hochwasserwahrscheinlichkeiten"
 
+msgid "ch.bafu.hydrologie-hochwasserstatistik.urlpdf"
+msgstr "Aktuelle und historische Daten"
+
 msgid "ch.bafu.hydrologie-hydromessstationen"
 msgstr "Mesiraziuns idrologicas"
 
@@ -2252,6 +2255,12 @@ msgstr "HUG Hydro. Untersuchungsgebiete"
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antv_ab86"
 msgstr "Vergletscherung [%]"
 
+msgid "ch.bafu.hydrologie-untersuchungsgebiete.einzugsgebietsflaeche"
+msgstr "Einzugsgebietsfläche [km2]"
+
+msgid "ch.bafu.hydrologie-untersuchungsgebiete.hyperlink"
+msgstr "Monats- und Jahressummen"
+
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.max_hoe"
 msgstr "Maximale Höhe [m ü.M.]"
 
@@ -2266,6 +2275,9 @@ msgstr "Name"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.regimetyp"
 msgstr "Regimetyp"
+
+msgid "ch.bafu.hydrologie-untersuchungsgebiete.stationseite"
+msgstr "Aktuelle und historische Daten"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen"
 msgstr "HUG-Messstationen"

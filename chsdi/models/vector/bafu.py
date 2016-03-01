@@ -33,33 +33,20 @@ class Untersuchungsgebiete(Base, Vector):
     __tablename__ = 'hydrologie_untersuchungsgebiete'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-untersuchungsgebiete'
-    __queryable_attributes__ = ['name', 'shape_area', 'max_hoe', 'min_hoe', 'mit_hoe', 'station', 'regimetyp', 'df', 'sc', 'ms', 'mp', 'antws_tot', 'antwiack', 'antogr', 'antweid', 'antunpr', 'antgeb', 'antindu', 'antgew_ms', 'antveg_los_ov', 'antv_ab86']
+    __queryable_attributes__ = ['name', 'max_hoe', 'min_hoe', 'mit_hoe', 'antv_ab86', 'einzugsgebietsflaeche', 'regimtyp']
     __template__ = 'templates/htmlpopup/hug.mako'
-    __extended_info__ = True
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Text)
     max_hoe = Column('max_hoe', Integer)
     min_hoe = Column('min_hoe', Integer)
     mit_hoe = Column('mit_hoe', Integer)
-    station = Column('station', Text)
     regimtyp = Column('regimetyp', Text)
-    df = Column('df', Numeric)
-    sc = Column('sc', Numeric)
-    ms = Column('ms', Numeric)
-    mp = Column('mp', Numeric)
-    antws_tot = Column('antws_tot', Numeric)
-    antogr = Column('antogr', Numeric)
-    antwiack = Column('antwiack', Numeric)
-    antweid = Column('antweid', Numeric)
-    antunpr = Column('antunpr', Numeric)
-    antgeb = Column('antgeb', Numeric)
-    antindu = Column('antindu', Numeric)
-    antgew_ms = Column('antgew_ms', Numeric)
-    antveg_los_ov = Column('antveg_los_ov', Numeric)
     antv_ab86 = Column('antv_ab86', Numeric)
     hyperlink = Column('hyperlink', Text)
-    shape_area = Column('shape_area', Numeric)
+    einzugsgebietsflaeche = Column('einzugsgebietsflaeche', Numeric)
+    stationsseite_de = Column('stationsseite_de', Text)
+    stationsseite_fr = Column('stationsseite_fr', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
@@ -442,10 +429,9 @@ class HUG_stationen(Base, Vector):
     __tablename__ = 'hydrologie_untersuchungsgebiete_stationen'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-untersuchungsgebiete_stationen'
-    __queryable_attributes__ = ['name', 'hoehe', 'betriebsbeginn', 'einzugsgebietsflaeche', 'mittlerehoehe', 'vergletscherung', 'stationierung', 'flussgebiet']
+    __queryable_attributes__ = ['name', 'hoehe', 'betriebsbeginn', 'einzugsgebietsflaeche', 'flussgebiet']
     __template__ = 'templates/htmlpopup/hug_stationen.mako'
     __label__ = 'name'
-    __extended_info__ = True
     id = Column('geodb_oid', Integer, primary_key=True)
     name = Column('name', Text)
     hochwert = Column('hochwert', Integer)
@@ -453,9 +439,6 @@ class HUG_stationen(Base, Vector):
     hoehe = Column('hoehe', Integer)
     betriebsbeginn = Column('betriebsbeginn', Integer)
     einzugsgebietsflaeche = Column('einzugsgebietsflaeche', Numeric)
-    mittlerehoehe = Column('mittlerehoehe', Integer)
-    vergletscherung = Column('vergletscherung', Numeric)
-    stationierung = Column('stationierung', Numeric)
     flussgebiet = Column('flussgebiet', Text)
     hyperlink_f = Column('hyperlink_f', Text)
     hyperlink_d = Column('hyperlink_d', Text)
@@ -2234,32 +2217,14 @@ class Hochwasserstatistik(Base, Vector):
     __tablename__ = 'hochwasserstatistik'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-hochwasserstatistik'
-    __queryable_attributes__ = ['name', 'einzugsgebietsflaeche', 'dimension', 'kenn_nr', 'statj_anf', 'statj_end', 'statj_tot', 'hq2', 'hq5', 'hq10', 'hq30', 'hq50', 'hq100', 'hq300', 'mittlerehoehe', 'regimename']
+    __queryable_attributes__ = ['name']
     __template__ = 'templates/htmlpopup/hochwasserstatistik.mako'
-    __extended_info__ = True
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Text)
-    x_koord = Column('x_koord', Integer)
-    y_koord = Column('y_koord', Integer)
-    einzugsgebietsflaeche = Column('einzugsgebietsflaeche', Numeric)
-    dimension = Column('dimension', Text)
-    kenn_nr = Column('kenn_nr', Integer)
-    statj_anf = Column('statj_anf', Integer)
-    statj_end = Column('statj_end', Integer)
-    statj_tot = Column('statj_tot', Integer)
-    hq2 = Column('hq2', Numeric)
-    hq5 = Column('hq5', Numeric)
-    hq10 = Column('hq10', Numeric)
-    hq30 = Column('hq30', Numeric)
-    hq50 = Column('hq50', Numeric)
-    hq100 = Column('hq100', Numeric)
-    hq300 = Column('hq300', Numeric)
-    mittlerehoehe = Column('mittlerehoehe', Numeric)
-    regimename = Column('regimename', Text)
     url_fr = Column('url_fr', Text)
     url_de = Column('url_de', Text)
-    urlhqpdf = Column('urlhqpdf', Text)
+    url_hqpdf = Column('url_hqpdf', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
