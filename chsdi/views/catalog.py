@@ -22,7 +22,7 @@ class CatalogService(MapNameValidation):
     def catalog(self):
         model = Catalog
         query = self.request.db.query(model)\
-            .filter(model.topic.ilike('%%%s%%' % self.mapName))\
+            .filter(model.topic.like('%%%s%%' % self.mapName.lower()))\
             .order_by(model.depth)\
             .order_by(model.orderKey)\
             .order_by(remove_accents(model.get_name_from_lang(self.lang)))
