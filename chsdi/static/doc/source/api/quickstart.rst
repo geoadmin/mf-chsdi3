@@ -139,5 +139,5 @@ The next part of the Map object is the View. The view allow to specify the cente
   
 You will notice that the center specified is in Swiss coordinate system (EPSG:21781). 
 
-(Quickstart adapted of the `OpenLayers 3 Quickstart <http://ol3js.org/en/master/doc/quickstart.html>`_)
+(Quickstart adapted of the `OpenLayers 3 Quickstart <http://openlayers.org/en/v3.6.0/doc/quickstart.html>`_)
 
