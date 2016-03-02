@@ -31,6 +31,7 @@ API & applications
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
+- New topic 'Cadastre'
 - Bug Fixes
 - `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160217...r_160302>`__
 
