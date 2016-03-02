@@ -410,7 +410,6 @@ clean:
 	rm -rf apache/tomcat-print.conf
 	rm -rf print/WEB-INF/web.xml
 	rm -rf apache/application.wsgi
-	rm -rf chsdi/static/css/extended.min.css
 	rm -rf rc_branch
 	rm -rf deploy/deploy-branch.cfg
 	rm -rf deploy/conf/00-branch.conf
@@ -419,6 +418,7 @@ clean:
 cleanall: clean
 	rm -rf .venv
 	rm -rf node_modules
+	rm -rf chsdi/static/css/extended.min.css
 	rm -rf chsdi/locale/en/LC_MESSAGES/chsdi.mo
 	rm -rf chsdi/locale/fr/LC_MESSAGES/chsdi.mo
 	rm -rf chsdi/locale/de/LC_MESSAGES/chsdi.mo
