@@ -14,6 +14,57 @@ Release Notes
 
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+
+.. _releasenotes_20160302:
+
+Release 20160302 - Wednesday, March 2nd 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160217...r_160302>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- New topic 'Cadastre'
+- WMS Import now supports non-LV03 coordinate system WMS Services
+- Layer Manager now allows the rearranging of layers via Drag and Drop
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160217...r_160302>`__
+
+
+Geodata
+*******
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `PCP Inventory <//map.geo.admin.ch/?layers=ch.babs.kulturgueter>`__ (ch.babs.kulturgueter)                                                                |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `HQStat <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-hochwasserstatistik>`__ (ch.bafu.hydrologie-hochwasserstatistik)                                   |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `HUG-Messstationen <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-untersuchungsgebiete_stationen>`__ (ch.bafu.hydrologie-untersuchungsgebiete_stationen)  |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `HUG Hydro. Untersuchungsgebiete <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-untersuchungsgebiete>`__ (ch.bafu.hydrologie-untersuchungsgebiete)        |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE Product <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product>`__ (ch.swisstopo.swissimage-product)                                     |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE <//map.geo.admin.ch/?bgLayer=ch.swisstopo.swissimage>`__ (ch.swisstopo.swissimage)                                                            |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:100'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk100.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk100.noscale)         |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:50'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk50.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk50.noscale)            |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk25.noscale)            |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Color Map <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-farbe>`__ (ch.swisstopo.pixelkarte-farbe)                                                 |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Grey Map <//map.geo.admin.ch/?bgLayer=ch.swisstopo.pixelkarte-grau>`__ (ch.swisstopo.pixelkarte-grau)                                                    |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20160217:
 
 Release 20160217 - Wednesday, February 17th 2016
