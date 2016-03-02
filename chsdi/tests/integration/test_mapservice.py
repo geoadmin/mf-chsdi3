@@ -231,6 +231,16 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
 
+    def test_identify_query_null(self):
+        params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp', 'where': 'andere_stoffe is null'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+
+    def test_identify_query_not_null(self):
+        params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp', 'where': 'andere_stoffe is not null'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+
     def test_identify_query_number(self):
         params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'maxheightagl > 210'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
@@ -266,14 +276,18 @@ class TestMapServiceView(TestsBase):
                   'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'obstacletype = \'Antenna\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertGreater(len(resp.json['results']), 0)
 
     def test_identify_query_escape_quote(self):
-        params = {'geometryFormat': 'geojson', 'lang': 'en', 'layers': 'all:ch.bafu.hydrologie-wassertemperaturmessstationen', 'time': '2013', 'where': 'name ilike \'%Broye-Payerne, Caserne d\'aviation%\''}
+        params = {'geometryFormat': 'geojson', 'lang': 'en', 'layers': 'all:ch.bafu.hydrologie-wassertemperaturmessstationen',
+                  'time': '2013', 'where': "name ilike \'%Broye-Payerne, Caserne d'aviation%\' or name ilike \'%Aare-Bern, Schönau%\'"}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertGreater(len(resp.json['results']), 0)
 
     def test_identify_query_offset(self):
-        params = {'layers': 'all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 'returnGeometry': 'false', 'timeInstant': '2015', 'where': 'gemname ilike \'%a%\''}
+        params = {'layers': 'all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', 'returnGeometry': 'false', 'timeInstant': '2015',
+                  'where': 'gemname ilike \'%a%\''}
         resp1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         params.update({'offset': '2'})
         resp2 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
@@ -285,7 +299,8 @@ class TestMapServiceView(TestsBase):
         self.assertEqual(resp1.json['results'][5]['featureId'], resp3.json['results'][0]['featureId'])
 
     def test_identify_bbox_offset(self):
-        params = {'layers': 'all:ch.bazl.luftfahrthindernis', 'timeInstant': '2015', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryEnvelope', 'geometry': '573788,93220,750288,192720',
+        params = {'layers': 'all:ch.bazl.luftfahrthindernis', 'timeInstant': '2015', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryEnvelope',
+                  'geometry': '573788,93220,750288,192720',
                   'imageDisplay': '1920,778,96', 'mapExtent': '107788,-5279,1067788,383720', 'tolerance': '0'}
         resp1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         params.update({'offset': '2'})
@@ -304,7 +319,8 @@ class TestMapServiceView(TestsBase):
 
     def test_identify_result_limit(self):
         # Assure not more than 201 results are returned
-        params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}', 'geometryType': 'esriGeometryPolyline', 'imageDisplay': '500,600,96',
+        params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
+                  'geometryType': 'esriGeometryPolyline', 'imageDisplay': '500,600,96',
                   'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '10', 'layers': 'all:ch.bfs.gebaeude_wohnungs_register'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
@@ -312,7 +328,8 @@ class TestMapServiceView(TestsBase):
 
     def test_identify_limit_parameter(self):
         # No limit parameters
-        params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}', 'geometryType': 'esriGeometryPolyline', 'imageDisplay': '500,600,96',
+        params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
+                  'geometryType': 'esriGeometryPolyline', 'imageDisplay': '500,600,96',
                   'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '10', 'layers': 'all:ch.bfs.gebaeude_wohnungs_register'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')

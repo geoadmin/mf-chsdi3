@@ -165,7 +165,7 @@ def format_query(model, value):
                 match.group(2),
                 match.group(3),
                 match.group(4).replace(u'\\', u'\\\\')
-                              .replace(u'\'', u'\\\'')
+                              .replace(u'\'', u"\''")
                               .replace(u'_', u'\\_'),
                 match.group(5)
             ))
@@ -181,7 +181,11 @@ def format_query(model, value):
             res.append(val)
         return res
 
-    extractMatches = lambda x: x[0] if x[0] != '' else x[1]
+    def extractMatches(x):
+        for v in x:
+            if v != '':
+                return v
+        return v
 
     def getOperator(values):
         supportedOperators = [' and ', ' or ']
@@ -193,10 +197,12 @@ def format_query(model, value):
             return operator
         return ''
 
-    regEx = r'(\w+\s(?:ilike|not ilike)\s(?:\'%)[^\'%]+(?:%\'))|(\w+\s(?:=|\!=|>=|<=|>|<)\s[^\s]+)'
+    regEx = r'(\w+\s(?:ilike|not ilike)\s(?:\'%)[^\%]+(?:%\'))|(\w+\s(?:=|\!=|>=|<=|>|<)\s[^\s]+)|(\w+\s(?:is null|is not null))'
 
     try:
         values = map(extractMatches, re.findall(regEx, value))
+        if len(values) == 0:
+            return None
         operator = getOperator(values)
         values = map(escapeSQL, values)
         values = replacePropByColumnName(model, values)
