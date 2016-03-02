@@ -31,9 +31,6 @@ API & applications
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
-- New topic 'Cadastre'
-- WMS Import now supports non-LV03 coordinate system WMS Services
-- Layer Manager now allows the rearranging of layers via Drag and Drop
 - Bug Fixes
 - `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160217...r_160302>`__
 
