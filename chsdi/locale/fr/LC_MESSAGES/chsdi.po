@@ -2186,8 +2186,14 @@ msgstr "Coordonnée X"
 msgid "ch.bafu.hydrologie-hochwasserstatistik"
 msgstr "Statistiques des crues"
 
+msgid "ch.bafu.hydrologie-hochwasserstatistik.link"
+msgstr "Lien"
+
 msgid "ch.bafu.hydrologie-hochwasserstatistik.name"
 msgstr "Nom de la station"
+
+msgid "ch.bafu.hydrologie-hochwasserstatistik.pdf"
+msgstr "PDF"
 
 msgid "ch.bafu.hydrologie-hochwasserstatistik.url"
 msgstr "Probabilité des crues"
@@ -2589,7 +2595,7 @@ msgid "ch.bafu.schutzgebiete-luftfahrt"
 msgstr "Zones protégées MIL"
 
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
-msgstr "Parcs"
+msgstr "Parcs (Perimetre)"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr "Ramsar"
