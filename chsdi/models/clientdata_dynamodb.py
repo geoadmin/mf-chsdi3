@@ -59,7 +59,7 @@ class DynamodbConnection:
 
 class S3Connection:
 
-    def __init__(self, profile_name='geoadmin_filestorage'):
+    def __init__(self, profile_name):
         self.conn = None
         self.profile_name = profile_name
 
@@ -73,7 +73,6 @@ class S3Connection:
 
 
 dynamodb_connection = DynamodbConnection()
-s3_connection = S3Connection()
 
 
 def get_dynamodb_table(table_name='shorturl'):
@@ -85,9 +84,9 @@ def get_dynamodb_table(table_name='shorturl'):
     return table
 
 
-def get_bucket(request):
+def get_bucket(profile_name='geoadmin_filestorage', bucket_name=None):
+    s3_connection = S3Connection(profile_name)
     conn = s3_connection.get()
-    bucket_name = request.registry.settings['geoadmin_file_storage_bucket']
     try:
         bucket = conn.get_bucket(bucket_name)
     except Exception as e:
