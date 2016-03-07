@@ -115,7 +115,7 @@ class Vector(GeoInterface):
             # For ESRI
             layerBodId=self.__bodId__,
             layerName='',
-            featureId=self.id,
+            featureId=self.id,  # Remove me?
             geometryType=feature.type
         )
 
@@ -124,7 +124,7 @@ class Vector(GeoInterface):
         return {
             "layerBodId": self.__bodId__,
             "layerName": '',
-            "featureId": self.id,
+            "featureId": self.id,  # Remove me?
             "attributes": self.getAttributes()
         }
 

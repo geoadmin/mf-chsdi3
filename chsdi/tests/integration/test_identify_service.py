@@ -105,8 +105,16 @@ class TestIdentifyService(TestsBase):
                   'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('results', resp.json)
         self.assertIn('attributes', resp.json['results'][0])
         self.assertIn('geometry', resp.json['results'][0])
+
+    def test_identify_valid_on_grid(self):
+        params = {'geometry': '555000,171125', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryPoint', 'imageDisplay': '1920,793,96', 'layers': 'all:ch.bfe.windenergie-geschwindigkeit_h50',
+                  'mapExtent': '346831.18224960007,86207.5717544,826831.1822496001,284457.57175440004', 'returnGeometry': 'true', 'tolerance': '10'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('results', resp.json)
 
     def test_invalid_imageDisplay(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600',
