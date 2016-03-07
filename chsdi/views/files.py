@@ -98,7 +98,7 @@ class FileView(object):
 
     def __init__(self, request):
         self.request = request
-        self.bucket = get_bucket(request)
+        self.bucket = get_bucket(bucket_name=request.registry.settings['geoadmin_file_storage_bucket'])
         if request.matched_route.name == 'files':
             self.admin_id = None
             self.key = None
