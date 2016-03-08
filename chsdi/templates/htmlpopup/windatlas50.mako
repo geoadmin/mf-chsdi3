@@ -23,10 +23,12 @@ endif
 %>
 
 <!-- html output -->
-<tr><td class="cell-left">${_('v_mean')}</td>    <td>${c['properties']['v_mean'] or '-'}</td></tr
 <tr><td class="cell-left">${_('altitude')}</td>    <td>${altitude}</td></tr>
-<tr><td class="cell-left">${_('height')}</td>    <td>${test}</td></tr>
-<tr><td class="cell-left">all attributes</td>    <td>${c['properties']}</td></tr>
-<tr><td class="cell-left">windrose</td>    <td><div id="rose"></div></td></tr>
+<tr><td class="cell-left">${_('height')}</td>      <td>xxx</td></tr>
+<tr><td class="cell-left">all attributes</td>      <td></td></tr>
+% for key in c['properties']:
+<tr><td class="cell-left">${key}</td>              <td>${c['properties'][key]}</td></tr>
+% endfor
+<tr><td class="cell-left">windrose</td>            <td><div id="rose"></div></td></tr>
 
 </%def>
