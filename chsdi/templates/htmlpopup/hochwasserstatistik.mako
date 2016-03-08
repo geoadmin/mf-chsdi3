@@ -19,10 +19,10 @@
     </tr>
     <tr>
       <td class="cell-left">${_('ch.bafu.hydrologie-hochwasserstatistik.url')}</td>
-      <td><a href="${c['attributes'][url] or '-'}" target="_blank">${_('ch.bafu.hydrologie-hochwasserstatistik.url')}</a></td>
+      <td><a href="${c['attributes']['url_hqpdf'] or '-'}" target="_blank">${_('ch.bafu.hydrologie-hochwasserstatistik.pdf')}</a></td>
     </tr>
     <tr>
       <td class="cell-left">${_('ch.bafu.hydrologie-hochwasserstatistik.urlpdf')}</td>
-      <td><a href="${c['attributes']['url_hqpdf'] or '-'}" target="_blank">${_('ch.bafu.hydrologie-hochwasserstatistik.urlpdf')}</a></td>
+      <td><a href="${c['attributes'][url] or '-'}" target="_blank">${_('ch.bafu.hydrologie-hochwasserstatistik.link')}</a></td>
     </tr>
 </%def>

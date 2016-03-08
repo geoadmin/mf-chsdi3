@@ -598,6 +598,12 @@ msgstr ""
 msgid "ch.bafu.hydrologie-hochwasserstatistik.urlpdf"
 msgstr ""
 
+msgid "ch.bafu.hydrologie-hochwasserstatistik.pdf"
+msgstr ""
+
+msgid "ch.bafu.hydrologie-hochwasserstatistik.link"
+msgstr ""
+
 msgid "ch.bafu.hydrologie-hochwasserstatistik"
 msgstr ""
 
