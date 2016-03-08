@@ -440,8 +440,8 @@ def _render_feature_template(vectorModel, feature, request, extended=False):
             raise exc.HTTPNotFound('No extended info has been found for %s' % vectorModel.__bodId__)
         template = vectorModel.__template__
     else:
+        hasExtendedInfo = False
         template = get_grid_layer_template(feature['layerBodId'])
-
     return render_to_response(
         'chsdi:%s' % template,
         {
