@@ -300,9 +300,15 @@ def _identify_grid(params, layerBodIds):
     extent = geometry.coordinates
     if len(extent) == 2:
         extent = extent + extent
-        extent = extend_box2d(extent, toleranceMeters)
+        try:
+            extent = extend_box2d(extent, toleranceMeters)
+        except ValueError as e:
+            raise exc.HTTPBadRequest(e)
     elif len(extent) == 4:
-        extent = extend_box2d(extent, toleranceMeters)
+        try:
+            extent = extend_box2d(extent, toleranceMeters)
+        except ValueError as e:
+            raise exc.HTTPBadRequest(e)
     else:
         return features
 
@@ -310,6 +316,7 @@ def _identify_grid(params, layerBodIds):
     bucket = get_bucket(profile_name='ltgal_aws_admin', bucket_name='waf-wmts-test')
     for layer in layerBodIds:
         [layerBodId, gridSpec] = next(layer.iteritems())
+        params.layerId = layerBodId
         timestamp = get_grid_layer_timestamp(layerBodId)
         grid = Grid(gridSpec.get('extent'),
                     gridSpec.get('resolutionX'),
@@ -319,18 +326,8 @@ def _identify_grid(params, layerBodIds):
             for row in xrange(rowFrom, rowTo + 1):
                 if len(features) >= maxFeatures:
                     return features
-
-                featureS3KeyName = 'tooltip/%s/default/%s/%s/%s/data.json' % (layerBodId, timestamp, col, row)
-                featureS3Key = bucket.get_key(featureS3KeyName)
-                # Fail gracefully if the key doesn't exist
-                if featureS3Key:
-                    featureJson = featureS3Key.get_contents_as_string()
-                    # Beacause of esriJSON design and papyrus no esrijson support for now
-                    feature = geojson.loads(featureJson)
-                    if not params.returnGeometry:
-                        del feature['geometry']
-                    feature['layerBodId'] = layerBodId
-                    feature['layerName'] = params.translate(layerBodId)
+                feature, none = _get_feature_grid(col, row, timestamp, grid, bucket, params)
+                if feature and not none:
                     features.append(feature)
 
     return features
