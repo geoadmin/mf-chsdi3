@@ -17,7 +17,7 @@ from sqlalchemy import text
 from geoalchemy2.types import Geometry
 
 from chsdi.lib.validation.mapservice import MapServiceValidation
-from chsdi.lib.helpers import format_query
+from chsdi.lib.helpers import format_query, extend_box2d
 from chsdi.lib.filters import full_text_search
 from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.clientdata_dynamodb import get_bucket
@@ -287,7 +287,7 @@ def _identify_grid(params, layerBodIds):
     features = []
     if len(layerBodIds) == 0:
         return features
-    maxFeatures = 21
+    maxFeatures = 11
     mapExtent = params.mapExtent
     imageDisplay = params.imageDisplay
     tolerance = params.tolerance
@@ -299,15 +299,10 @@ def _identify_grid(params, layerBodIds):
     # intersection for grid types
     extent = geometry.coordinates
     if len(extent) == 2:
-        extent = [extent[0] - toleranceMeters,
-                  extent[1] - toleranceMeters,
-                  extent[0] + toleranceMeters,
-                  extent[1] + toleranceMeters]
+        extent = extent + extent
+        extent = extend_box2d(extent, toleranceMeters)
     elif len(extent) == 4:
-        extent = [extent[0] - toleranceMeters,
-                  extent[1] - toleranceMeters,
-                  extent[2] + toleranceMeters,
-                  extent[3] + toleranceMeters]
+        extent = extend_box2d(extent, toleranceMeters)
     else:
         return features
 
@@ -319,15 +314,9 @@ def _identify_grid(params, layerBodIds):
         grid = Grid(gridSpec.get('extent'),
                     gridSpec.get('resolutionX'),
                     gridSpec.get('resolutionY'))
-        # TODO move this code in gatilegrid module
-        fromCellCoordinate = extent[:2]
-        toCellCoordinate = extent[2:4]
-        [colFrom, rowFrom] = \
-            grid.cellAddressFromPointCoordinate(fromCellCoordinate)
-        [colTo, rowTo] = \
-            grid.cellAddressFromPointCoordinate(toCellCoordinate)
-        for col in xrange(min(colFrom, colTo), max(colFrom, colTo) + 1):
-            for row in xrange(min(rowFrom, rowTo), max(rowFrom, rowTo) + 1):
+        [colFrom, rowFrom, colTo, rowTo] = grid.getExtentAddress(extent)
+        for col in xrange(colFrom, colTo + 1):
+            for row in xrange(rowFrom, rowTo + 1):
                 if len(features) >= maxFeatures:
                     return features
 
