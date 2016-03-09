@@ -4244,11 +4244,13 @@ msgstr "No de Point"
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr "Atlante gravimetrico 100 - stampato"
 
+#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
-msgstr "N°"
+msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
 
+#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
-msgstr "Titolo"
+msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Falde acquifere 500"
@@ -6761,9 +6763,8 @@ msgstr "Rosa dei venti raffigurante la distribuzione delle velocità del vento p
 msgid "tt_bfe_windrose_help"
 msgstr "La rosa dei venti indica la distribuzione delle velocità del vento per direzione di provenienza. Muovete il mouse sulla rosa dei venti per avere i valori esatti per ogni settore di provenienza."
 
-#. TODO
-msgid "tt_bfe_windtaerke_info"
-msgstr "tt_bfe_windtaerke_info"
+msgid "tt_bfe_windstaerke_info"
+msgstr "La velocità del vento è soggetta a continue oscillazioni. Per la pianificazione di impianti eolici serve pertanto conoscere una distribuzione statistica delle velocità del vento, una cosiddetta distribuzione di Weibull."
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Numero del corridoio"
