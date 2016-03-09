@@ -361,6 +361,6 @@ def format_price(price):
 
 
 def filter_alt(alt):
-    if alt is not None:
+    if alt is not None and alt > 0.0:
         # 10cm accuracy is enough for altitudes
-        return round(alt * 10.0) / 10.0
+        return round(alt, 1)
