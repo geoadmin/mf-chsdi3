@@ -22,7 +22,7 @@ from chsdi.lib.validation.features import (
 )
 from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.validation.identify import IdentifyServiceValidation
-from chsdi.lib.helpers import format_query, extend_box2d
+from chsdi.lib.helpers import format_query
 from chsdi.lib.filters import full_text_search
 from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.clientdata_dynamodb import get_bucket
@@ -190,13 +190,16 @@ def _identify(request):
                 layersDB.append({layerBodId: models})
             else:
                 gridSpec = get_grid_spec(layerBodId)
-                if gridSpec:
+                if gridSpec and params.geometryType == 'esriGeometryPoint':
                     layersGrid.append({layerBodId: gridSpec})
     else:
         layerBodIds = params.layers
         for layerBodId in layerBodIds:
             gridSpec = get_grid_spec(layerBodId)
             if gridSpec:
+                if params.geometryType != 'esriGeometryPoint':
+                    raise exc.HTTPBadRequest(
+                        'Only esriGeometryPoint is support for geometryType parameter for grid like data')
                 layersGrid.append({layerBodId: gridSpec})
             else:
                 models = models_from_bodid(layerBodId)
@@ -214,30 +217,10 @@ def _identify_grid(params, layerBodIds):
     features = []
     if len(layerBodIds) == 0:
         return features
-    maxFeatures = 11
-    mapExtent = params.mapExtent
-    imageDisplay = params.imageDisplay
-    tolerance = params.tolerance
     geometry = params.geometry
     # TODO support min/max scale and min/max resolution?
-    toleranceMeters = getToleranceMeters(imageDisplay, mapExtent, tolerance)
 
-    # TODO check the geometry type as we only support bbox and points
-    # intersection for grid types
-    extent = geometry.coordinates
-    if len(extent) == 2:
-        extent = extent + extent
-        try:
-            extent = extend_box2d(extent, toleranceMeters)
-        except ValueError as e:
-            raise exc.HTTPBadRequest(e)
-    elif len(extent) == 4:
-        try:
-            extent = extend_box2d(extent, toleranceMeters)
-        except ValueError as e:
-            raise exc.HTTPBadRequest(e)
-    else:
-        return features
+    pointCoordinates = geometry.coordinates
 
     # TODO change bucket and profile names
     # To work with pserve use your own profilename
@@ -251,16 +234,12 @@ def _identify_grid(params, layerBodIds):
         grid = Grid(gridSpec.get('extent'),
                     gridSpec.get('resolutionX'),
                     gridSpec.get('resolutionY'))
-        [colFrom, rowFrom, colTo, rowTo] = grid.getExtentAddress(extent)
-        for col in xrange(colFrom, colTo + 1):
-            for row in xrange(rowFrom, rowTo + 1):
-                if len(features) >= maxFeatures:
-                    return features
-                feature, none = _get_feature_grid(col, row, timestamp, grid, bucket, params)
-                if feature and not none:
-                    # For some reason we define the id twice..
-                    feature['featureId'] = feature['id']
-                    features.append(feature)
+        [col, row] = grid.cellAddressFromPointCoordinate(pointCoordinates)
+        feature, none = _get_feature_grid(col, row, timestamp, grid, bucket, params)
+        if feature and not none:
+            # For some reason we define the id twice..
+            feature['featureId'] = feature['id']
+            features.append(feature)
 
     return features
 
