@@ -1,7 +1,10 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-  <iframe src="/rest/services/all/MapServer/${c['layerBodId']}/${c['id']}/extendedHtmlPopup?lang=${lang}" width="400" height="400" frameborder="0"  style="border: 0"></iframe>
+  <%
+    baseUrl = request.registry.settings['api_url']
+  %>
+  <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['id']}/extendedHtmlPopup?lang=${lang}" width="100%" height="400" frameborder="0"  style="border: 0"></iframe>
 </%def>
 
 <%def name="extended_info(c, lang)">
@@ -15,6 +18,7 @@
   topRight = coordinates[2]
   center = [(bottomLeft[0] + topRight[0]) / 2, (bottomLeft[1] + topRight[1]) / 2]
   dhm_altitude = h.filter_alt(r.getVal(center[0], center[1]))
+  center = ', '.join([str(round(center[0], 2)), str(round(center[1], 2))])
   altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
  
   props = c['properties']
