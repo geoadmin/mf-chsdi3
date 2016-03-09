@@ -3,7 +3,6 @@
 import math
 from pyramid.view import view_config
 
-from chsdi.lib.helpers import round
 from chsdi.lib.validation.profile import ProfileValidation
 from chsdi.lib.raster.georaster import get_raster
 from chsdi.lib.decorators import requires_authorization
@@ -157,14 +156,14 @@ class Profile(ProfileValidation):
     def _filter_alt(self, alt):
         if alt is not None and alt > 0.0:
             # 10cm accuracy is enough for altitudes
-            return round(alt * 10.0) / 10.0
+            return round(alt, 1)
         else:
             return None
 
     def _filter_dist(self, dist):
         # 10cm accuracy is enough for distances
-        return round(dist * 10.0) / 10.0
+        return round(dist, 1)
 
     def _filter_coordinate(self, coords):
         # 1mm accuracy is enough for distances
-        return round(coords * 1000.0) / 1000.0
+        return round(coords, 3)
