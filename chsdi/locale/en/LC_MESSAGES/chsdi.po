@@ -2589,7 +2589,7 @@ msgid "ch.bafu.schutzgebiete-luftfahrt"
 msgstr "Protected areas MIL"
 
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
-msgstr "Parks"
+msgstr "Parks (Perimeter)"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr "Ramsar"
@@ -6727,6 +6727,43 @@ msgstr "Removal accomplished"
 
 msgid "tt_bebautefl"
 msgstr "Artificial surfaces"
+
+msgid "tt_bfe_geschw_wind_durchschnitt"
+msgstr "Average wind speed"
+
+msgid "tt_bfe_geschwindigkeit"
+msgstr "Speed (m/s)"
+
+msgid "tt_bfe_haeufigkeit"
+msgstr "Frequency (%)"
+
+msgid "tt_bfe_hoehe_gelaende"
+msgstr "Altitude"
+
+msgid "tt_bfe_hoehe_ueber_grund"
+msgstr "Height above ground"
+
+msgid "tt_bfe_koordinaten"
+msgstr "Coordinates (X / Y)"
+
+msgid "tt_bfe_mittlere_geschw"
+msgstr "Average speed"
+
+msgid "tt_bfe_windrichtung"
+msgstr "Wind direction"
+
+msgid "tt_bfe_windrichtung_weibullverteilung"
+msgstr "Weibull distribution independent of wind direction"
+
+msgid "tt_bfe_windrose_geschwverteilung"
+msgstr "Wind rose with wind speed distribution per wind direction sector"
+
+msgid "tt_bfe_windrose_help"
+msgstr "The wind rose shows the wind speed distribution per wind sector. If you move the mouse over the wind rose you can obtain precise data for each sector."
+
+#. TODO
+msgid "tt_bfe_windtaerke_info"
+msgstr "tt_bfe_windtaerke_info"
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Corridor number"

@@ -2589,7 +2589,7 @@ msgid "ch.bafu.schutzgebiete-luftfahrt"
 msgstr "Zone protette MIL"
 
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
-msgstr "Parchi"
+msgstr "Parchi (Perimetro)"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr "Ramsar"
@@ -6727,6 +6727,43 @@ msgstr "Eliminazione effettuata"
 
 msgid "tt_bebautefl"
 msgstr "Superfici costruite"
+
+msgid "tt_bfe_geschw_wind_durchschnitt"
+msgstr "Velocità media del vento"
+
+msgid "tt_bfe_geschwindigkeit"
+msgstr "Velocità (m/s)"
+
+msgid "tt_bfe_haeufigkeit"
+msgstr "Frequenza (%)"
+
+msgid "tt_bfe_hoehe_gelaende"
+msgstr "Altitudine"
+
+msgid "tt_bfe_hoehe_ueber_grund"
+msgstr "Altezza sul livello del terreno"
+
+msgid "tt_bfe_koordinaten"
+msgstr "Coordinate (X / Y)"
+
+msgid "tt_bfe_mittlere_geschw"
+msgstr "Velocità media"
+
+msgid "tt_bfe_windrichtung"
+msgstr "Direzione del vento"
+
+msgid "tt_bfe_windrichtung_weibullverteilung"
+msgstr "Distribuzione di Weibull indipendente dalla direzione del vento."
+
+msgid "tt_bfe_windrose_geschwverteilung"
+msgstr "Rosa dei venti raffigurante la distribuzione delle velocità del vento per direzione di provenienza"
+
+msgid "tt_bfe_windrose_help"
+msgstr "La rosa dei venti indica la distribuzione delle velocità del vento per direzione di provenienza. Muovete il mouse sulla rosa dei venti per avere i valori esatti per ogni settore di provenienza."
+
+#. TODO
+msgid "tt_bfe_windtaerke_info"
+msgstr "tt_bfe_windtaerke_info"
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Numero del corridoio"

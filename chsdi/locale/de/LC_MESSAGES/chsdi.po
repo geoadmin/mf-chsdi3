@@ -2589,7 +2589,7 @@ msgid "ch.bafu.schutzgebiete-luftfahrt"
 msgstr "Schutzgebiete MIL"
 
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
-msgstr "Pärke"
+msgstr "Pärke (Perimeter)"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr "Ramsar"
@@ -6727,6 +6727,43 @@ msgstr "Abbruch ausgeführt"
 
 msgid "tt_bebautefl"
 msgstr "Bebaute Flächen"
+
+msgid "tt_bfe_geschw_wind_durchschnitt"
+msgstr "Durchscnittliche Windgeschwindigkeit"
+
+msgid "tt_bfe_geschwindigkeit"
+msgstr "Geschwindigkeit (m/s)"
+
+msgid "tt_bfe_haeufigkeit"
+msgstr "Häufigkeit (%)"
+
+msgid "tt_bfe_hoehe_gelaende"
+msgstr "Höhe Gelände"
+
+msgid "tt_bfe_hoehe_ueber_grund"
+msgstr "Höhe über Grund"
+
+msgid "tt_bfe_koordinaten"
+msgstr "Koordinaten (X / Y)"
+
+msgid "tt_bfe_mittlere_geschw"
+msgstr "Mittlere Geschwindigkeit"
+
+msgid "tt_bfe_windrichtung"
+msgstr "Windrichtung"
+
+msgid "tt_bfe_windrichtung_weibullverteilung"
+msgstr "Windrichtungsunabhängige Weibull-Verteilung"
+
+msgid "tt_bfe_windrose_geschwverteilung"
+msgstr "Windrose mit der Windgeschwindigkeits-verteilung pro Windrichtungssektor"
+
+msgid "tt_bfe_windrose_help"
+msgstr "Die Windrose zeigt die Windgeschwindigkeits-verteilung pro Windsektor. Bewegen Sie die Maus über die Windrose und Sie erhalten genaue Werte für den jeweiligen Sektor."
+
+#. TODO
+msgid "tt_bfe_windtaerke_info"
+msgstr "tt_bfe_windtaerke_info"
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Korridor Nummer"

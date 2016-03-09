@@ -363,3 +363,9 @@ def format_price(price):
     price_2dec = format(price_float, '.2f')
     price = "CHF " + str(price_2dec)
     return price
+
+
+def filter_alt(alt):
+    if alt is not None:
+        # 10cm accuracy is enough for altitudes
+        return round(alt * 10.0) / 10.0
