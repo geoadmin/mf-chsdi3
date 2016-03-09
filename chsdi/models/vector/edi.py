@@ -218,8 +218,6 @@ class fsme_faelle(Base, Vector):
                                dimension=2, srid=21781))
     gemname = Column('gemname', Integer)
     bfsnr = Column('bfsnr', Integer)
-    bezirksnr = Column('bezirksnr', Integer)
-    kantonsnr = Column('kantonsnr', Integer)
 
 register('ch.bag.zecken-fsme-faelle', fsme_faelle)
 
@@ -235,7 +233,5 @@ class fsme_impfung(Base, Vector):
                                dimension=2, srid=21781))
     gemname = Column('gemname', Integer)
     bfsnr = Column('bfsnr', Integer)
-    bezirksnr = Column('bezirksnr', Integer)
-    kantonsnr = Column('kantonsnr', Integer)
 
 register('ch.bag.zecken-fsme-impfung', fsme_impfung)
