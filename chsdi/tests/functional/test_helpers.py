@@ -8,7 +8,7 @@ from chsdi.lib.helpers import (
     check_even, format_search_text, remove_accents, escape_sphinx_syntax,
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
     versioned, parse_box2d, center_from_box2d, format_scale, format_price,
-    parse_date_string, parse_date_datenstand
+    parse_date_string, parse_date_datenstand, filter_alt
 )
 from urlparse import urljoin
 
@@ -280,3 +280,13 @@ class Test_Helpers(unittest.TestCase):
         fulldate2 = '20160208-13:50'
         result = parse_date_datenstand(fulldate2)
         self.assertEqual(result, '08.02.2016-13:50')
+
+    def test_filter_alt(self):
+        alt = 100.0
+        self.assertEqual(alt, filter_alt(alt))
+        alt = -100.0
+        self.assertEqual(None, filter_alt(alt))
+        alt = None
+        self.assertEqual(alt, filter_alt(alt))
+        alt = 100.111
+        self.assertEqual(100.1, filter_alt(alt))
