@@ -313,7 +313,9 @@ def _identify_grid(params, layerBodIds):
         return features
 
     # TODO change bucket and profile names
-    bucket = get_bucket(profile_name='ltgal_aws_admin', bucket_name='waf-wmts-test')
+    # To work with pserve use your own profilename
+    testProfilename = params.request.registry.settings['boto_test_profilename']
+    bucket = get_bucket(profile_name=testProfilename, bucket_name='waf-wmts-test')
     for layer in layerBodIds:
         [layerBodId, gridSpec] = next(layer.iteritems())
         params.layerId = layerBodId
@@ -374,9 +376,11 @@ def _get_features(params, extended=False):
 
     for featureId in featureIds:
         if gridSpec:
-            # By convention
             # TODO change bucket and profile names
-            bucket = get_bucket(profile_name='ltgal_aws_admin', bucket_name='waf-wmts-test')
+            # To work with pserve use your own profilename
+            testProfilename = params.request.registry.settings['boto_test_profilename']
+            bucket = get_bucket(profile_name=testProfilename, bucket_name='waf-wmts-test')
+            # By convention
             col, row = featureId.split('_')
             grid = Grid(gridSpec.get('extent'),
                         gridSpec.get('resolutionX'),
