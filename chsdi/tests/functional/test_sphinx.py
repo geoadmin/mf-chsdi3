@@ -14,7 +14,7 @@ class Test_SphinxApi(unittest.TestCase):
         api = self._callFUT()
         docs = ['this is my test text to be highlighted', 'this is another test text to be highlighted']
         words = 'test text'
-        index = 'test1'
+        index = 'layers'
         opts = {'before_match': '<b>', 'after_match': '</b>', 'chunk_separator': ' ... ', 'limit': 400, 'around': 15}
         res = api.BuildExcerpts(docs, index, words, opts)
         self.assertFalse(res)
