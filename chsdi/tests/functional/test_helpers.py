@@ -5,10 +5,10 @@ from pyramid import testing
 from pyramid.threadlocal import get_current_registry
 from chsdi.lib.helpers import (
     make_agnostic, make_api_url, check_url, transformCoordinate, sanitize_url,
-    check_even, round, format_search_text, remove_accents, escape_sphinx_syntax,
+    check_even, format_search_text, remove_accents, escape_sphinx_syntax,
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
     versioned, parse_box2d, center_from_box2d, format_scale, format_price,
-    parse_date_string, parse_date_datenstand
+    parse_date_string, parse_date_datenstand, filter_alt
 )
 from urlparse import urljoin
 
@@ -144,17 +144,17 @@ class Test_Helpers(unittest.TestCase):
     def test_parseHydroXML(self):
         import xml.etree.ElementTree as ET
 
-        tree = ET.parse('chsdi/tests/integration/filename.xml')
+        tree = ET.parse('chsdi/tests/functional/filename.xml')
         root = tree.getroot()
         test_result = parseHydroXML('idname', root)
         self.assertEqual({'date_time': '01 September 8Uhr', 'wasserstand': '-', 'wassertemperatur': '-', 'abfluss': '141100'}, test_result)
 
-        tree2 = ET.parse('chsdi/tests/integration/filename2.xml')
+        tree2 = ET.parse('chsdi/tests/functional/filename2.xml')
         root2 = tree2.getroot()
         test_result2 = parseHydroXML('idname', root2)
         self.assertEqual({'date_time': '04 Oktober 11 Uhr', 'wasserstand': '59900', 'wassertemperatur': '-', 'abfluss': '-'}, test_result2)
 
-        tree3 = ET.parse('chsdi/tests/integration/filename3.xml')
+        tree3 = ET.parse('chsdi/tests/functional/filename3.xml')
         root3 = tree3.getroot()
         test_result3 = parseHydroXML('idname', root3)
         self.assertEqual({'date_time': '16 Mai 18 Uhr', 'wasserstand': '-', 'wassertemperatur': '59900', 'abfluss': '-'}, test_result3)
@@ -285,3 +285,13 @@ class Test_Helpers(unittest.TestCase):
         fulldate2 = '20160208-13:50'
         result = parse_date_datenstand(fulldate2)
         self.assertEqual(result, '08.02.2016-13:50')
+
+    def test_filter_alt(self):
+        alt = 100.0
+        self.assertEqual(alt, filter_alt(alt))
+        alt = -100.0
+        self.assertEqual(None, filter_alt(alt))
+        alt = None
+        self.assertEqual(alt, filter_alt(alt))
+        alt = 100.111
+        self.assertEqual(100.1, filter_alt(alt))
