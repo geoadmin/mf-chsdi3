@@ -1,7 +1,7 @@
 msgid "tt_bfe_windrichtung_weibullverteilung"
 msgstr ""
 
-msgid "tt_bfe_windtaerke_info"
+msgid "tt_bfe_windstaerke_info"
 msgstr ""
 
 msgid "tt_bfe_hoehe_ueber_grund"

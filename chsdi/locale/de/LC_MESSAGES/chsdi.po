@@ -4250,11 +4250,13 @@ msgstr "Punktnummer"
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr "Gravimetrischer Atlas 100 - Papier"
 
+#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
-msgstr "Nr."
+msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
 
+#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
-msgstr "Titel"
+msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Grundwasservorkommen 500"
@@ -4740,7 +4742,7 @@ msgid "ch.swisstopo.sgtk"
 msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
-msgstr "Schneeschuh-/Skitouren 1:50 000"
+msgstr "Schneeschuh- und Skitourenkarten 1:50 000"
 
 msgid "ch.swisstopo.stk200-papierkarte.metadata"
 msgstr "Strassenkarte"
@@ -6767,9 +6769,8 @@ msgstr "Windrose mit der Windgeschwindigkeits-verteilung pro Windrichtungssektor
 msgid "tt_bfe_windrose_help"
 msgstr "Die Windrose zeigt die Windgeschwindigkeits-verteilung pro Windsektor. Bewegen Sie die Maus über die Windrose und Sie erhalten genaue Werte für den jeweiligen Sektor."
 
-#. TODO
-msgid "tt_bfe_windtaerke_info"
-msgstr "tt_bfe_windtaerke_info"
+msgid "tt_bfe_windstaerke_info"
+msgstr "Der Wind unterliegt ständiger Geschwindigkeitsschwankungen. Aus diesem Grund wird für die Planung von Windenergieanlagen eine statistische Verteilung der Windgeschwindigkeiten eine sog. Weibull-Verteilung benötigt."
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Korridor Nummer"

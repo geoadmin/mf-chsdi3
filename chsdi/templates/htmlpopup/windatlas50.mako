@@ -234,7 +234,7 @@
   </tr>
   <tr>
     <td colspan="2">
-      <b>${_('tt_bfe_windrichtung_weibullverteilung')}</b><br/>${_('tt_bfe_windtaerke_info')}<br/><div id="weibull"></div>
+      <b>${_('tt_bfe_windrichtung_weibullverteilung')}</b><br/>${_('tt_bfe_windstaerke_info')}<br/><div id="weibull"></div>
       <table id="windrichtung">
         <tr>
           <td>${_('tt_bfe_geschwindigkeit')}</td>

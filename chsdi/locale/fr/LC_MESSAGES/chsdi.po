@@ -4250,11 +4250,13 @@ msgstr "No de Point"
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr "Atlas gravimétrique 100 - papier"
 
+#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
-msgstr "N°"
+msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
 
+#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
-msgstr "Titre"
+msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Réservoirs aquifères 500"
@@ -6767,9 +6769,8 @@ msgstr "Rose des vents avec distribution de la vitesse du vent en fonction de la
 msgid "tt_bfe_windrose_help"
 msgstr "La rose des vents illustre la distribution de la vitesse du vent en fonction de la direction du vent. En déplaçant la souris sur la rose des vents, vous pouvez faire apparaître les valeurs exactes du secteur concerné."
 
-#. TODO
-msgid "tt_bfe_windtaerke_info"
-msgstr "tt_bfe_windtaerke_info"
+msgid "tt_bfe_windstaerke_info"
+msgstr "Le vent est soumis à de constantes variations de vitesse. Pour la planification d’installations éoliennes, on a ainsi recourt à une distribution statistique des vitesses du vent appelée «distribution de Weibull»."
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Numéro du couloir"
