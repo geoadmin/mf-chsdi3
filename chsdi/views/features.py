@@ -219,13 +219,10 @@ def _identify_oereb(request):
     data_created = layerMetadata.data_created
     data_imported = layerMetadata.data_imported
 
-    comments = render(
-        'chsdi:templates/oereb_timestamps.mako',
-        {
-            'data_imported': data_imported,
-            'data_created': data_created
-        }
-    )
+    comments = render('chsdi:templates/oereb_timestamps.mako', {
+        'data_imported': data_imported,
+        'data_created': data_created
+    })
     header = insertTimestamps(header, comments)
 
     # Only relation 1 to 1 is needed at the moment
@@ -330,6 +327,8 @@ def _identify_grid(params, layerBodIds):
                     return features
                 feature, none = _get_feature_grid(col, row, timestamp, grid, bucket, params)
                 if feature and not none:
+                    # For some reason we define the id twice..
+                    feature['featureId'] = feature['id']
                     features.append(feature)
 
     return features
