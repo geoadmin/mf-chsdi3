@@ -17,12 +17,12 @@ from sqlalchemy import text
 from geoalchemy2.types import Geometry
 
 from chsdi.lib.validation.mapservice import MapServiceValidation
-from chsdi.lib.helpers import format_query, extend_box2d
+from chsdi.lib.helpers import format_query  # , extend_box2d
 from chsdi.lib.filters import full_text_search
 from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.clientdata_dynamodb import get_bucket
 from chsdi.models.bod import OerebMetadata, get_bod_model
-from chsdi.models.vector import getToleranceMeters
+# from chsdi.models.vector import getToleranceMeters
 from chsdi.models.grid import get_grid_spec, get_grid_layer_timestamp, get_grid_layer_template
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
@@ -284,30 +284,33 @@ def _identify_grid(params, layerBodIds):
     features = []
     if len(layerBodIds) == 0:
         return features
-    maxFeatures = 11
-    mapExtent = params.mapExtent
-    imageDisplay = params.imageDisplay
-    tolerance = params.tolerance
+    maxFeatures = 1
+    # mapExtent = params.mapExtent
+    # imageDisplay = params.imageDisplay
+    # tolerance = params.tolerance
     geometry = params.geometry
     # TODO support min/max scale and min/max resolution?
-    toleranceMeters = getToleranceMeters(imageDisplay, mapExtent, tolerance)
+    # toleranceMeters = getToleranceMeters(imageDisplay, mapExtent, tolerance)
 
     # TODO check the geometry type as we only support bbox and points
     # intersection for grid types
     extent = geometry.coordinates
-    if len(extent) == 2:
-        extent = extent + extent
-        try:
-            extent = extend_box2d(extent, toleranceMeters)
-        except ValueError as e:
-            raise exc.HTTPBadRequest(e)
-    elif len(extent) == 4:
-        try:
-            extent = extend_box2d(extent, toleranceMeters)
-        except ValueError as e:
-            raise exc.HTTPBadRequest(e)
-    else:
-        return features
+    extent = extent + extent
+    # Limit to one feature only for now
+
+    # if len(extent) == 2:
+    #     extent = extent + extent
+    #     try:
+    #         extent = extend_box2d(extent, toleranceMeters)
+    #     except ValueError as e:
+    #         raise exc.HTTPBadRequest(e)
+    # elif len(extent) == 4:
+    #     try:
+    #         extent = extend_box2d(extent, toleranceMeters)
+    #     except ValueError as e:
+    #         raise exc.HTTPBadRequest(e)
+    # else:
+    #     return features
 
     # TODO change bucket and profile names
     # To work with pserve use your own profilename
