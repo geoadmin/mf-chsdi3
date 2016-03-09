@@ -2589,7 +2589,7 @@ msgid "ch.bafu.schutzgebiete-luftfahrt"
 msgstr "Zones protégées MIL"
 
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
-msgstr "Parcs"
+msgstr "Parcs (Perimetre)"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr "Ramsar"
@@ -4244,11 +4244,13 @@ msgstr "No de Point"
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr "Atlas gravimétrique 100 - papier"
 
+#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
-msgstr "N°"
+msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
 
+#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
-msgstr "Titre"
+msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Réservoirs aquifères 500"
@@ -6727,6 +6729,42 @@ msgstr "Démontage effectué"
 
 msgid "tt_bebautefl"
 msgstr "Surfaces bâties"
+
+msgid "tt_bfe_geschw_wind_durchschnitt"
+msgstr "Vitesse moyenne du vent"
+
+msgid "tt_bfe_geschwindigkeit"
+msgstr "Vitesse (m/s)"
+
+msgid "tt_bfe_haeufigkeit"
+msgstr "Fréquence (%)"
+
+msgid "tt_bfe_hoehe_gelaende"
+msgstr "Altitude"
+
+msgid "tt_bfe_hoehe_ueber_grund"
+msgstr "Hauteur au-dessus du niveau du sol"
+
+msgid "tt_bfe_koordinaten"
+msgstr "Coordonnées (X / Y)"
+
+msgid "tt_bfe_mittlere_geschw"
+msgstr "Vitesse moyenne"
+
+msgid "tt_bfe_windrichtung"
+msgstr "Direction du vent"
+
+msgid "tt_bfe_windrichtung_weibullverteilung"
+msgstr "Distribution de Weibull, indépendante de la direction du vent"
+
+msgid "tt_bfe_windrose_geschwverteilung"
+msgstr "Rose des vents avec distribution de la vitesse du vent en fonction de la direction du vent"
+
+msgid "tt_bfe_windrose_help"
+msgstr "La rose des vents illustre la distribution de la vitesse du vent en fonction de la direction du vent. En déplaçant la souris sur la rose des vents, vous pouvez faire apparaître les valeurs exactes du secteur concerné."
+
+msgid "tt_bfe_windstaerke_info"
+msgstr "Le vent est soumis à de constantes variations de vitesse. Pour la planification d’installations éoliennes, on a ainsi recourt à une distribution statistique des vitesses du vent appelée «distribution de Weibull»."
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Numéro du couloir"

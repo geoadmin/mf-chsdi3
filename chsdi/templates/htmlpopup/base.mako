@@ -11,16 +11,20 @@
 
   c = {}
 
-  if hasattr(feature['feature'], 'properties'):
-    c.update(feature['feature']);
-    c['attributes'] =  feature['feature'].properties
-    c['attributes'].update(feature['feature'].extra);
-    c['bbox'] =  feature['feature'].extra['bbox']
-
+  if 'feature' in feature:
+      if hasattr(feature['feature'], 'properties'):
+        c.update(feature['feature']);
+        c['attributes'] =  feature['feature'].properties
+        c['attributes'].update(feature['feature'].extra);
+        c['bbox'] =  feature['feature'].extra['bbox']
+      else:
+        c = feature['feature']
+        c['bbox'] = feature.get('bbox')
+        c['scale'] = feature.get('scale')
   else:
-    c = feature['feature']
-    c['bbox'] = feature.get('bbox')
-    c['scale'] = feature.get('scale')
+      # For raster layers
+      c = feature
+      c['featureId'] = c['id']
   
   c['stable_id'] = False
   c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))

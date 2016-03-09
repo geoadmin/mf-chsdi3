@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from chsdi.lib.helpers import filter_alt
 from chsdi.lib.validation.height import HeightValidation
 from chsdi.lib.raster.georaster import get_raster
 from chsdi.lib.decorators import requires_authorization
@@ -32,13 +33,8 @@ class Height(HeightValidation):
     @view_config(route_name='height', renderer='jsonp', http_cache=0)
     def height(self):
         rasters = [get_raster(layer) for layer in self.layers]
-        alt = self._filter_alt(rasters[0].getVal(self.lon, self.lat))
+        alt = filter_alt(rasters[0].getVal(self.lon, self.lat))
+        if alt is None:
+            raise HTTPBadRequest('Requested coordinate out of bounds')
 
         return {'height': str(alt)}
-
-    def _filter_alt(self, alt):
-        if alt is not None and alt > 0.0:
-            # 10cm accuracy is enough for altitudes
-            return round(alt * 10.0) / 10.0
-        else:
-            raise HTTPBadRequest('Requested coordinate out of bounds')

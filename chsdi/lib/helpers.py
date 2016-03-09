@@ -107,11 +107,6 @@ def check_even(number):
     return False
 
 
-def round(val):
-    import math
-    return math.floor(val + 0.5)
-
-
 def format_search_text(input_str):
     return remove_accents(
         escape_sphinx_syntax(input_str)
@@ -294,15 +289,29 @@ def parse_box2d(stringBox2D):
     return map(float, extent.split(' '))
 
 
-def center_from_box2d(box2D):
+def is_box2d(box2D):
     # Bottom left to top right only
-    if box2D[0] > box2D[2] or box2D[1] > box2D[3]:
+    if box2D[0] > box2D[2] or box2D[1] > box2D[3] or len(box2D) != 4:
         raise ValueError('Invalid box2D.')
+    return True
 
-    return [
-        box2D[0] + ((box2D[2] - box2D[0]) / 2),
-        box2D[1] + ((box2D[3] - box2D[1]) / 2)
-    ]
+
+def extend_box2d(box2D, distance):
+    if is_box2d(box2D):
+        return [
+            box2D[0] - distance,
+            box2D[1] - distance,
+            box2D[2] + distance,
+            box2D[3] + distance
+        ]
+
+
+def center_from_box2d(box2D):
+    if is_box2d(box2D):
+        return [
+            box2D[0] + ((box2D[2] - box2D[0]) / 2),
+            box2D[1] + ((box2D[3] - box2D[1]) / 2)
+        ]
 
 
 def parse_date_string(dateStr, format_input='%Y-%m-%d', format_output='%d.%m.%Y'):
@@ -349,3 +358,9 @@ def format_price(price):
     price_2dec = format(price_float, '.2f')
     price = "CHF " + str(price_2dec)
     return price
+
+
+def filter_alt(alt):
+    if alt is not None and alt > 0.0:
+        # 10cm accuracy is enough for altitudes
+        return round(alt, 1)
