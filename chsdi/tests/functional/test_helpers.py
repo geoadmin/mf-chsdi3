@@ -144,17 +144,17 @@ class Test_Helpers(unittest.TestCase):
     def test_parseHydroXML(self):
         import xml.etree.ElementTree as ET
 
-        tree = ET.parse('chsdi/tests/integration/filename.xml')
+        tree = ET.parse('chsdi/tests/functional/filename.xml')
         root = tree.getroot()
         test_result = parseHydroXML('idname', root)
         self.assertEqual({'date_time': '01 September 8Uhr', 'wasserstand': '-', 'wassertemperatur': '-', 'abfluss': '141100'}, test_result)
 
-        tree2 = ET.parse('chsdi/tests/integration/filename2.xml')
+        tree2 = ET.parse('chsdi/tests/functional/filename2.xml')
         root2 = tree2.getroot()
         test_result2 = parseHydroXML('idname', root2)
         self.assertEqual({'date_time': '04 Oktober 11 Uhr', 'wasserstand': '59900', 'wassertemperatur': '-', 'abfluss': '-'}, test_result2)
 
-        tree3 = ET.parse('chsdi/tests/integration/filename3.xml')
+        tree3 = ET.parse('chsdi/tests/functional/filename3.xml')
         root3 = tree3.getroot()
         test_result3 = parseHydroXML('idname', root3)
         self.assertEqual({'date_time': '16 Mai 18 Uhr', 'wasserstand': '-', 'wassertemperatur': '59900', 'abfluss': '-'}, test_result3)
