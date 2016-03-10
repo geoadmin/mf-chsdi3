@@ -1,37 +1,52 @@
 <%inherit file="base.mako"/>
+<%!
+from chsdi.lib.raster.georaster import get_raster
+r = get_raster('COMB')
+%>
+
 
 <%def name="table_body(c, lang)">
-  <%
-    baseUrl = request.registry.settings['api_url']
-  %>
-  <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['id']}/extendedHtmlPopup?lang=${lang}" width="100%" height="400" frameborder="0"  style="border: 0"></iframe>
+<%
+coordinates = c['geometry']['coordinates'][0]
+bottomLeft = coordinates[0]
+topRight = coordinates[2]
+center = [(bottomLeft[0] + topRight[0]) / 2, (bottomLeft[1] + topRight[1]) / 2]
+dhm_altitude = h.filter_alt(r.getVal(center[0], center[1]))
+center = ', '.join([str(round(center[0], 2)), str(round(center[1], 2))])
+altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
+
+props = c['properties']
+
+baseUrl = request.registry.settings['api_url']
+
+%>
+<!-- html output -->
+    <tr><th class="cell-left">${_('tt_bfe_hoehe_ueber_grund')}</th>         <td>${altitude or '-'}</td></tr>
+    <tr><th class="cell-left">${_('tt_bfe_koordinaten')}</th>               <td>todo load grid module with col/row</td></tr>
+    <tr><th class="cell-left">${_('tt_bfe_hoehe_gelaende')}</th>            <td>${dhm_altitude or '-'}</td></tr>
+    <tr><th class="cell-left">${_('tt_bfe_geschw_wind_durchschnitt')}</th>  <td>${props['v_mean']}</td></tr>
+    <tr><td colspan=2><iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="400" frameborder="0"  style="border: 0" ></iframe></td></tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
 
 <%
-  from chsdi.lib.raster.georaster import get_raster
+coordinates = c['geometry']['coordinates'][0]
+bottomLeft = coordinates[0]
+topRight = coordinates[2]
+center = [(bottomLeft[0] + topRight[0]) / 2, (bottomLeft[1] + topRight[1]) / 2]
+dhm_altitude = h.filter_alt(r.getVal(center[0], center[1]))
+center = ', '.join([str(round(center[0], 2)), str(round(center[1], 2))])
+altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
 
-  r = get_raster('COMB')
-  coordinates = c['geometry']['coordinates'][0]
-  bottomLeft = coordinates[0]
-  topRight = coordinates[2]
-  center = [(bottomLeft[0] + topRight[0]) / 2, (bottomLeft[1] + topRight[1]) / 2]
-  dhm_altitude = h.filter_alt(r.getVal(center[0], center[1]))
-  center = ', '.join([str(round(center[0], 2)), str(round(center[1], 2))])
-  altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
- 
-  props = c['properties']
-  # Temp until all prop are converted to floats
-  for key in props:
-    props[key] = round(props[key], 1)
-  
-  freq_total = props['freq_0']    + props['freq_30']
-  freq_total += props['freq_60']  + props['freq_90']
-  freq_total += props['freq_120'] + props['freq_150']
-  freq_total += props['freq_180'] + props['freq_210']
-  freq_total += props['freq_240'] + props['freq_270']
-  freq_total += props['freq_300'] + props['freq_330']
+props = c['properties']
+
+freq_total = props['freq_0']    + props['freq_30']
+freq_total += props['freq_60']  + props['freq_90']
+freq_total += props['freq_120'] + props['freq_150']
+freq_total += props['freq_180'] + props['freq_210']
+freq_total += props['freq_240'] + props['freq_270']
+freq_total += props['freq_300'] + props['freq_330']
 %>
 
 <title>${_('tt_lubis_ebkey')}: ${c['layerBodId']}</title>
