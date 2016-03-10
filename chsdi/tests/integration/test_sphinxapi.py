@@ -1,10 +1,10 @@
 # -*- coding: utf-8  -*-
 
-import unittest
+from chsdi.tests.integration import TestsBase
 from chsdi.lib.sphinxapi import sphinxapi
 
 
-class Test_SphinxApi(unittest.TestCase):
+class Test_SphinxApi(TestsBase):
 
     def _callFUT(self):
         api = sphinxapi.SphinxClient()
@@ -21,9 +21,9 @@ class Test_SphinxApi(unittest.TestCase):
 
     def test_sphinx_api_query(self):
         api = self._callFUT()
-        q = ''
+        q = 'doma'
         mode = sphinxapi.SPH_MATCH_EXTENDED
-        host = 'service-sphinxsearch.dev.bgdi.ch'
+        host = self.testapp.app.registry.settings['sphinxhost']
         port = 9312
         index = 'swisssearch_preview'
         filtercol = 'rank'
@@ -45,4 +45,4 @@ class Test_SphinxApi(unittest.TestCase):
         if limit:
             api.SetLimits(0, limit, max(limit, 1000))
         res = api.Query(q, index=index)
-        self.assertTrue(isinstance(res, dict))
+        self.assertIsInstance(res, dict)
