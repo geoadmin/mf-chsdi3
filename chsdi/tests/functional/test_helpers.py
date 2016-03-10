@@ -5,7 +5,7 @@ from pyramid import testing
 from pyramid.threadlocal import get_current_registry
 from chsdi.lib.helpers import (
     make_agnostic, make_api_url, check_url, transformCoordinate, sanitize_url,
-    check_even, round, format_search_text, remove_accents, escape_sphinx_syntax,
+    check_even, format_search_text, remove_accents, escape_sphinx_syntax,
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
     versioned, parse_box2d, center_from_box2d, format_scale, format_price,
     parse_date_string, parse_date_datenstand
@@ -177,11 +177,6 @@ class Test_Helpers(unittest.TestCase):
         testnumber = 5
         result = check_even(testnumber)
         self.assertFalse(result)
-
-    def test_round(self):
-        testnumber = 4.4
-        result = round(testnumber)
-        self.assertEqual(result, 4)
 
     def test_format_search_text(self):
         testinput_str = 'Hallo!'

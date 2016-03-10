@@ -107,11 +107,6 @@ def check_even(number):
     return False
 
 
-def round(val):
-    import math
-    return math.floor(val + 0.5)
-
-
 def format_search_text(input_str):
     return remove_accents(
         escape_sphinx_syntax(input_str)
