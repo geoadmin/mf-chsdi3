@@ -20,58 +20,18 @@ class Test_SphinxApi(unittest.TestCase):
         self.assertFalse(res)
 
     def test_sphinx_api_query(self):
-        import sys
         api = self._callFUT()
         q = ''
-        mode = sphinxapi.SPH_MATCH_ALL
+        mode = sphinxapi.SPH_MATCH_EXTENDED
         host = 'service-sphinxsearch.dev.bgdi.ch'
         port = 9312
-        index = '*'
-        filtercol = 'group_id'
-        filtervals = []
+        index = 'swisssearch_preview'
+        filtercol = 'rank'
+        filtervals = [1, 2]
         sortby = ''
         groupby = ''
-        groupsort = '@group desc'
-        limit = 0
-        i = 1
-        while (i < len(sys.argv)):
-            arg = sys.argv[i]
-            if arg == '-h' or arg == '--host':
-                i += 1
-                host = sys.argv[i]
-            elif arg == '-p' or arg == '--port':
-                i += 1
-                port = int(sys.argv[i])
-            elif arg == '-i':
-                i += 1
-                index = sys.argv[i]
-            elif arg == '-s':
-                i += 1
-                sortby = sys.argv[i]
-            elif arg == '-a' or arg == '--any':
-                mode = sphinxapi.SPH_MATCH_ANY
-            elif arg == '-b' or arg == '--boolean':
-                mode = sphinxapi.SPH_MATCH_BOOLEAN
-            elif arg == '-e' or arg == '--extended':
-                mode = sphinxapi.SPH_MATCH_EXTENDED
-            elif arg == '-f' or arg == '--filter':
-                i += 1
-                filtercol = sys.argv[i]
-            elif arg == '-v' or arg == '--value':
-                i += 1
-                filtervals.append(int(sys.argv[i]))
-            elif arg == '-g' or arg == '--groupby':
-                i += 1
-                groupby = sys.argv[i]
-            elif arg == '-gs' or arg == '--groupsort':
-                i += 1
-                groupsort = sys.argv[i]
-            elif arg == '-l' or arg == '--limit':
-                i += 1
-                limit = int(sys.argv[i])
-            else:
-                q = '%s%s ' % (q, arg)
-            i += 1
+        groupsort = '@rank ASC'
+        limit = 1
 
         api.SetServer(host, port)
         api.SetWeights([100, 1])
@@ -84,5 +44,5 @@ class Test_SphinxApi(unittest.TestCase):
             api.SetSortMode(sphinxapi.SPH_SORT_EXTENDED, sortby)
         if limit:
             api.SetLimits(0, limit, max(limit, 1000))
-        res = api.Query(q, index)
+        res = api.Query(q, index=index)
         self.assertTrue(isinstance(res, dict))
