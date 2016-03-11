@@ -546,7 +546,7 @@ class TestMapServiceView(TestsBase):
         resp.mustcontain('<table')
 
     def test_htmlpopup_valid_for_grid(self):
-        resp = self.testapp.get('/rest/services/all/MapServer/ch.bfe.windenergie-geschwindigkeit_h50/671_1229/htmlPopup', status=200)
+        resp = self.testapp.get('/rest/services/all/MapServer/ch.bfe.windenergie-geschwindigkeit_h50/1153_1530/htmlPopup', status=200)
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 
