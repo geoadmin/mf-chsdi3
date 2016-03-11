@@ -2,35 +2,41 @@
 <%!
 from chsdi.lib.raster.georaster import get_raster
 r = get_raster('COMB')
+
+from gatilegrid.grid import Grid
+from chsdi.models.grid import get_grid_spec
 %>
 
 
 <%def name="table_body(c, lang)">
 <%
-coordinates = c['geometry']['coordinates'][0]
-bottomLeft = coordinates[0]
-topRight = coordinates[2]
-center = [(bottomLeft[0] + topRight[0]) / 2, (bottomLeft[1] + topRight[1]) / 2]
-dhm_altitude = h.filter_alt(r.getVal(center[0], center[1]))
-center = ', '.join([str(round(center[0], 2)), str(round(center[1], 2))])
 altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
 
+# center coordinates and dhm altitude from feature id
+gridSpec = get_grid_spec(c['layerBodId'])
+col, row = [int(x) for x in c['featureId'].split("_")]
+grid = Grid(gridSpec.get('extent'), gridSpec.get('resolutionX'), gridSpec.get('resolutionY'))
+extent = grid.cellExtent(col,row)
+center = [(extent[0] + extent[2])/2,(extent[1] + extent[3])/2]
+dhm_altitude = h.filter_alt(r.getVal(center[0], center[1]))
+center = ', '.join([str(round(center[0], 2)), str(round(center[1], 2))])
+
 props = c['properties']
-
 baseUrl = request.registry.settings['api_url']
-
 %>
 <!-- html output -->
     <tr><th class="cell-left">${_('tt_bfe_hoehe_ueber_grund')}</th>         <td>${altitude or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_bfe_koordinaten')}</th>               <td>todo load grid module with col/row</td></tr>
+    <tr><th class="cell-left">${_('tt_bfe_koordinaten')}</th>               <td>${center}</td></tr>
     <tr><th class="cell-left">${_('tt_bfe_hoehe_gelaende')}</th>            <td>${dhm_altitude or '-'}</td></tr>
     <tr><th class="cell-left">${_('tt_bfe_geschw_wind_durchschnitt')}</th>  <td>${props['v_mean']}</td></tr>
-    <tr><td colspan=2><iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="400" frameborder="0"  style="border: 0" ></iframe></td></tr>
+    <tr><th colspan=2><iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="230" frameborder="0" style="border: 0" scrolling="no" ></iframe></th></tr>
 </%def>
 
-<%def name="extended_info(c, lang)">
 
+<%def name="extended_info(c, lang)">
 <%
+# some python
+
 coordinates = c['geometry']['coordinates'][0]
 bottomLeft = coordinates[0]
 topRight = coordinates[2]
@@ -47,9 +53,18 @@ freq_total += props['freq_120'] + props['freq_150']
 freq_total += props['freq_180'] + props['freq_210']
 freq_total += props['freq_240'] + props['freq_270']
 freq_total += props['freq_300'] + props['freq_330']
-%>
 
-<title>${_('tt_lubis_ebkey')}: ${c['layerBodId']}</title>
+# gracefully check if url request has get parameter iframe
+try:
+    iframe = request.GET['iframe'] if request.GET['iframe'] else False
+except:
+    iframe=False
+    pass
+
+%>
+<!-- html output -->
+<title>${c['fullName']}</title>
+
 <!-- custom css for windrose/weibull -->
 <style>
 .axis path,
@@ -125,8 +140,33 @@ freq_total += props['freq_300'] + props['freq_330']
   font-size: initial;
 }
 </style>
+
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.3/d3-tip.min.js"></script>
+
+% if iframe:
+<style>
+.chsdi-htmlpopup-container {
+    visibility: hidden;
+}
+.htmlpopup-header {
+    visibility: hidden;
+}
+.htmlpopup-content {
+    visibility: hidden;
+}
+.htmlpopup-footer {
+    visibility: hidden;
+}
+#rose {
+    color: blue;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+}
+</style>
+% endif
+
 <body>
 <table class="table-with-border kernkraftwerke-extended">
   <tr>
@@ -143,7 +183,7 @@ freq_total += props['freq_300'] + props['freq_330']
   </tr>
   <tr>
     <th class="cell-left">${_('tt_bfe_geschw_wind_durchschnitt')}</th>
-    <td>${c['properties']['v_mean']}</td>
+    <td>${props['v_mean']}</td>
   </tr>
   <tr>
     <td colspan="2"><b>${_('tt_bfe_windrose_geschwverteilung')}</b><br/>${_('tt_bfe_windrose_help')}<br/><div id="rose"></div>
@@ -391,6 +431,7 @@ freq_total += props['freq_300'] + props['freq_330']
     </td>
   </tr>
 </table>
+
 <script>
 //WINDROSE DATA
 var data = [
@@ -407,20 +448,30 @@ var data = [
   {"speed":${props['v_mean_300']},"frequency":${props['freq_300']},"weight":1,"color":"#045a8d","orientation":"285° –315°"},
   {"speed":${props['v_mean_330']},"frequency":${props['freq_330']},"weight":1,"color":"#f1eef6","orientation":"315° – 345°"},
 ];
+
+
 //WINDROSE
+% if iframe:
+var width = 172,
+    height = 172,
+% else:
 var width = 300,
     height = 300,
+% endif
     radius = Math.min(width, height) / 2,
     innerRadius = 0.05 * radius;
+
 var pie = d3.layout.pie()
     .sort(null)
     .value(function(d) { return d.width; });
+
 var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([0, 0])
   .html(function(d) {
     return d.data.orientation + ": <br><span style='color:orangered'>" + d.data.frequency + " %<br>" + d.data.speed + " m/s</span>";
   });
+
 //Kuchenstuecke definieren
 var arc = d3.svg.arc()
   .innerRadius(innerRadius)
@@ -429,13 +480,21 @@ var arc = d3.svg.arc()
   })
   .startAngle(function(d) { return d.startAngle + Math.PI*1.9166667; }) //Alle um 345 schieben
   .endAngle(function(d) { return d.endAngle + Math.PI*1.9166667; }); //Alle um 345 schieben
+
 //svg definieren
 var svg = d3.select("#rose").append("svg")
+% if iframe:
+    .attr("width", width + 48 + 110) //+140 damit rechts noch Legende Platz hat
+    .attr("height", height + 48)
+% else:
     .attr("width", width + 48 + 140) //+140 damit rechts noch Legende Platz hat
     .attr("height", height + 48)
+% endif
     .append("g")
     .attr("transform", "translate(" + (width + 48) / 2 + "," + (height + 48) / 2 + ")");
+
 svg.call(tip);
+
   data.forEach(function(d) {
     d.speed  = +d.speed;
     d.weight = +d.weight;
@@ -443,7 +502,7 @@ svg.call(tip);
     d.width  = +d.weight;
     d.orientation  =  d.orientation;
   });
- 
+
   //Kuchenstuecke hinzufuegen
   var path = svg.selectAll(".solidArc")
       .data(pie(data))
@@ -476,56 +535,92 @@ svg.call(tip);
       .attr("d", arc)
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide);
+
+//Beschriftungen Windrose
     svg.append("text")
     .text("0°")
+% if iframe:
+    .attr("x", "0")
+    .attr("y", (-3-radius))
+% else:
     .attr("x", "-3")
     .attr("y", "-153")
+% endif
     .style("font-size", "10px")
     .attr("fill", "grey");
-    
+
     svg.append("text")
     .text("180°")
     .attr("x", "-10")
+% if iframe:
+    .attr("y", (10+radius))
+% else:
     .attr("y", "161")
+% endif
     .style("font-size", "10px")
     .attr("fill", "grey");
-    
+
     svg.append("text")
     .text("90°")
+% if iframe:
+    .attr("x", (3+radius))
+    .attr("y", "0")
+% else:
     .attr("x", "153")
     .attr("y", "3")
-    .style("font-size", "10px")
-    .attr("fill", "grey");  
-    svg.append("text")
-    .text("270°")
-    .attr("x", "-174")
-    .attr("y", "3")
+% endif
     .style("font-size", "10px")
     .attr("fill", "grey");
+
+    svg.append("text")
+    .text("270°")
+% if iframe:
+    .attr("x", (-24-radius))
+    .attr("y", "0")
+% else:
+    .attr("x", "-174")
+    .attr("y", "3")
+% endif
+    .style("font-size", "10px")
+    .attr("fill", "grey");
+
     svg.append("text")
     .text("Häufigkeit")
     .style("font-size", "10px")
     .style("text-align", "center")
     .attr("fill", "grey")
-    .attr("transform", "translate(108,-126) rotate(45)");   
-    
+% if iframe:
+    .attr("transform", "translate(67,-82) rotate(45)");
+% else:
+    .attr("transform", "translate(108,-126) rotate(45)");
+% endif
     svg.append("text")
     .text("20 %")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(108,-108) rotate(45)");   
+% if iframe:
+    .attr("transform", "translate(63,-63) rotate(45)");
+% else:
+    .attr("transform", "translate(108,-108) rotate(45)");
+% endif
     svg.append("text")
     .text("15 %")
     .style("font-size", "10px")
     .attr("fill", "grey")
+% if iframe:
+    .attr("transform", "translate(47,-47) rotate(45)");
+% else:
     .attr("transform", "translate(80,-80) rotate(45)");
-    
+% endif
     svg.append("text")
     .text("10 %")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(55,-55) rotate(45)");     
-    
+% if iframe:
+    .attr("transform", "translate(32,-32) rotate(45)");
+% else:
+    .attr("transform", "translate(55,-55) rotate(45)");
+% endif
     svg.append("circle")
     .attr("cx", "0")
     .attr("cy", "0")
@@ -533,14 +628,15 @@ svg.call(tip);
     .attr("stroke", "grey")
     .attr("stroke-width", "1")
     .attr("fill", "none");
-    
+
     svg.append("circle")
     .attr("cx", "0")
     .attr("cy", "0")
     .attr("r", (radius / 2))
     .attr("stroke", "grey")
     .attr("stroke-width", "1")
-    .attr("fill", "none");  
+    .attr("fill", "none");
+
     svg.append("circle")
     .attr("cx", "0")
     .attr("cy", "0")
@@ -548,134 +644,267 @@ svg.call(tip);
     .attr("stroke", "grey")
     .attr("stroke-width", "1")
     .attr("fill", "none");
-    
-//Legende
+
+//Legende rechts
+
+% if iframe:
+    var posX = 120;
+    var posXdist = 15;
+    var posY = 86;
+    var posYdist = 12;
+    var posYlabelkorr = 8;
+% endif
+
     svg.append("rect")
+% if iframe:
+    .attr("x", posX)
+    .attr("y", posY)
+    .attr("width", 10)
+% else:
     .attr("x", "190")
     .attr("y", "121") //-15
     .attr("width", 20)
+% endif
     .attr("height", 10)
     .style("fill", "rgb(187,8,5)")
     .style("stroke-width", "0");
+
     svg.append("text")
     .text("≥ 8.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
+% if iframe:
+    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr) + ")");
+% else:
     .attr("transform", "translate(215,130)"); //0,-15
+% endif
     svg.append("rect")
+% if iframe:
+    .attr("x", posX)
+    .attr("y", posY - (posYdist * 1)) //-15
+    .attr("width", 10)
+% else:
     .attr("x", "190")
     .attr("y", "106") //-15
     .attr("width", 20)
+% endif
     .attr("height", 10)
     .style("fill", "rgb(204,30,24)")
     .style("stroke-width", "0");
+
     svg.append("text")
     .text("≥ 7.5 – < 8.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
+% if iframe:
+    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 1)) + ")"); //0,-15
+% else:
     .attr("transform", "translate(215,115)"); //0,-15
+% endif
+
     svg.append("rect")
+% if iframe:
+    .attr("x", posX)
+    .attr("y", posY - (posYdist * 2)) //-15
+    .attr("width", 10)
+% else:
     .attr("x", "190")
     .attr("y", "91") //-15
     .attr("width", 20)
+% endif
     .attr("height", 10)
     .style("fill", "rgb(181,56,75)")
     .style("stroke-width", "0");
+
     svg.append("text")
     .text("≥ 7.0 – < 7.5 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
+% if iframe:
+    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 2)) + ")"); //0,-15
+% else:
     .attr("transform", "translate(215,100)"); //0,-15
+% endif
+
     svg.append("rect")
+% if iframe:
+    .attr("x", posX)
+    .attr("y", posY - (posYdist * 3)) //-15
+    .attr("width", 10)
+% else:
     .attr("x", "190")
     .attr("y", "76") //-15
     .attr("width", 20)
+% endif
     .attr("height", 10)
     .style("fill", "rgb(155,77,101)")
     .style("stroke-width", "0");
+
     svg.append("text")
     .text("≥ 6.5 – < 7.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
+% if iframe:
+    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 3)) + ")"); //0,-15
+% else:
     .attr("transform", "translate(215,85)"); //0,-15
+% endif
+
     svg.append("rect")
+% if iframe:
+    .attr("x", posX)
+    .attr("y", posY - (posYdist * 4)) //-15
+    .attr("width", 10)
+    .attr("height", 10)
+    .style("fill", "rgb(133,86,143)")
+% else:
     .attr("x", "190")
     .attr("y", "61") //-15
     .attr("width", 20)
     .attr("height", 10)
     .style("fill", "rgb(133,86,148)")
+% endif
     .style("stroke-width", "0");
+
     svg.append("text")
     .text("≥ 6.0 – < 6.5 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
+% if iframe:
+    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 4)) + ")"); //0,-15
+% else:
     .attr("transform", "translate(215,70)"); //0,-15
+% endif
+
     svg.append("rect")
+% if iframe:
+    .attr("x", posX)
+    .attr("y", posY - (posYdist * 5)) //-15
+    .attr("width", 10)
+% else:
     .attr("x", "190")
     .attr("y", "46") //-15
     .attr("width", 20)
+% endif
     .attr("height", 10)
     .style("fill", "rgb(54,105,188)")
     .style("stroke-width", "0");
+
     svg.append("text")
     .text("≥ 5.5 – < 6.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
+% if iframe:
+    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 5)) + ")"); //0,-15
+% else:
     .attr("transform", "translate(215,55)"); //0,-15
+% endif
+
     svg.append("rect")
+% if iframe:
+    .attr("x", posX)
+    .attr("y", posY - (posYdist * 6)) //-15
+    .attr("width", 10)
+% else:
     .attr("x", "190")
     .attr("y", "31") //-15
     .attr("width", 20)
+% endif
     .attr("height", 10)
     .style("fill", "rgb(47,144,225)")
     .style("stroke-width", "0");
+
     svg.append("text")
     .text("≥ 5.0 – < 5.5 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(215,40)"); //0,-15
+% if iframe:
+    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 6)) + ")"); //0,-15
+% else:
+     .attr("transform", "translate(215,40)"); //0,-15
+% endif
+
     svg.append("rect")
+% if iframe:
+    .attr("x", posX)
+    .attr("y", posY - (posYdist * 7)) //-15
+    .attr("width", 10)
+% else:
     .attr("x", "190")
     .attr("y", "16") //-15
     .attr("width", 20)
+% endif
     .attr("height", 10)
     .style("fill", "rgb(78,200,244)")
     .style("stroke-width", "0");
+
     svg.append("text")
     .text("≥ 4.5 – < 5.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
+% if iframe:
+    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 7)) + ")"); //0,-15
+% else:
     .attr("transform", "translate(215,25)"); //0,-15
+% endif
+
     svg.append("rect")
+% if iframe:
+    .attr("x", posX)
+    .attr("y", posY - (posYdist * 8)) //-15
+    .attr("width", 10)
+% else:
     .attr("x", "190")
     .attr("y", "1") //-15
     .attr("width", 20)
+% endif
     .attr("height", 10)
     .style("fill", "rgb(122,212,241)")
     .style("stroke-width", "0");
+
     svg.append("text")
     .text("≥ 4.0 – < 4.5 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
+% if iframe:
+    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 8)) + ")"); //0,-15
+% else:
     .attr("transform", "translate(215,10)"); //0,-15
+% endif
+
     svg.append("rect")
+% if iframe:
+    .attr("x", posX)
+    .attr("y", posY - (posYdist * 9)) //-15
+    .attr("width", 10)
+% else:
     .attr("x", "190")
     .attr("y", "-14") //-15
     .attr("width", 20)
+% endif
     .attr("height", 10)
     .style("fill", "rgb(201,233,246)")
     .style("stroke-width", "0");
+
     svg.append("text")
     .text("< 4.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
+% if iframe:
+    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 9)) + ")"); //0,-15
+% else:
     .attr("transform", "translate(215,-5)"); //0,-15
+% endif
+
     svg.append("text")
     .text("Windgeschwindigkeit")
     .style("font-size", "10px")
     .attr("fill", "grey")
+% if iframe:
+    .attr("transform", "translate(" + posX + "," + (posY + posYlabelkorr - (posYdist * 10)) + ")");
+% else:
     .attr("transform", "translate(190,-20)");
-
+% endif
 
 //WEIBULL
 // Daten fuer Darstellung der Weibull-Funktion generieren
@@ -685,7 +914,7 @@ var data = [],
     A = ${props['wei_a']};
 var probability;
 var probabilitySum = 0;
-    
+
 for (var i = 0; i < 21; i++) {
     probability = (k/A) * Math.pow((i/A),(k-1)) * Math.pow(Math.E,-Math.pow((i/A),k));
     probabilitySum = probabilitySum + probability;
@@ -697,8 +926,8 @@ document.getElementById("windsumme").innerHTML = (Math.round(probabilitySum * 10
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 488 - margin.left - margin.right,
     height = 250 - margin.top - margin.bottom;
-var formatAsPercentage = d3.format("%");    
-    
+var formatAsPercentage = d3.format("%");
+
 var x = d3.scale.linear()
     .range([0, width]);
 var y = d3.scale.linear()
@@ -719,7 +948,7 @@ var svg_weibull = d3.select("#weibull").append("svg")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    
+
   x.domain(d3.extent(data, function(d) { return d.x; }));
   y.domain(d3.extent(data, function(d) { return d.y; }));
   svg_weibull.append("g")
@@ -739,15 +968,14 @@ var svg_weibull = d3.select("#weibull").append("svg")
     .style("text-align", "center")
     .attr("fill", "black")
     .attr("transform", "translate(-35,130) rotate(270)");
-      
+
   svg_weibull.append("text")
     .text("Windgeschwindigkeit [m/s]")
     .style("font-size", "10px")
     .style("text-align", "center")
     .attr("fill", "black")
     .attr("transform", "translate(140,228)");
-    
+
 </script>
 </body>
-
 </%def>
