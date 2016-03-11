@@ -1,3 +1,273 @@
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenttype_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenttype_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenttype_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenttypecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentyear"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.severitycategory_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.severitycategory_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.severitycategory_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.severitycategorycode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.roadtype_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.roadtype_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.roadtype_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.roadtypecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.canton"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.fsocommunecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenttype_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenttype_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenttype_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenttypecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentyear"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.severitycategory_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.severitycategory_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.severitycategory_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.severitycategorycode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.roadtype_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.roadtype_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.roadtype_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.roadtypecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.canton"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.fsocommunecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenttype_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenttype_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenttype_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenttypecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentyear"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.severitycategory_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.severitycategory_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.severitycategory_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.severitycategorycode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.roadtype_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.roadtype_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.roadtype_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.roadtypecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.canton"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.fsocommunecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenttype_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenttype_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenttype_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenttypecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentyear"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.severitycategory_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.severitycategory_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.severitycategory_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.severitycategorycode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.roadtype_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.roadtype_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.roadtype_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.roadtypecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.canton"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.fsocommunecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenttype_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenttype_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenttype_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenttypecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidentyear"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.severitycategory_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.severitycategory_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.severitycategory_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.severitycategorycode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.roadtype_de"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.roadtype_fr"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.roadtype_it"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.roadtypecode"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.canton"
+msgstr ""
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.fsocommunecode"
+msgstr ""
+
 msgid "ch.bav.haltestellen-oev.haltestelle"
 msgstr ""
 

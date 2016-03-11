@@ -1544,17 +1544,287 @@ msgstr "Posti di contaggio"
 msgid "ch.astra.unfaelle-personenschaeden_alle"
 msgstr "Incidenti con danni personali"
 
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_de"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_fr"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_it"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenttype_de"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenttype_fr"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenttype_it"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenttypecode"
+msgstr "Code - Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidentyear"
+msgstr "Anno"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.canton"
+msgstr "Cantone"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.fsocommunecode"
+msgstr "N. UST Comune"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.roadtype_de"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.roadtype_fr"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.roadtype_it"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.roadtypecode"
+msgstr "Code - Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.severitycategory_de"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.severitycategory_fr"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.severitycategory_it"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.severitycategorycode"
+msgstr "Code - Categoria della gravità dell'incidente"
+
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder"
 msgstr "Incidenti che coinvol. biciclette"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_de"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_fr"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_it"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenttype_de"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenttype_fr"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenttype_it"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenttypecode"
+msgstr "Code - Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentyear"
+msgstr "Anno"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.canton"
+msgstr "Cantone"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.fsocommunecode"
+msgstr "N. UST Comune"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.roadtype_de"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.roadtype_fr"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.roadtype_it"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.roadtypecode"
+msgstr "Code - Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.severitycategory_de"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.severitycategory_fr"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.severitycategory_it"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.severitycategorycode"
+msgstr "Code - Categoria della gravità dell'incidente"
 
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger"
 msgstr "Incidenti che coinvol. pedoni"
 
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_de"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_fr"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_it"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenttype_de"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenttype_fr"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenttype_it"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenttypecode"
+msgstr "Code - Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentyear"
+msgstr "Anno"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.canton"
+msgstr "Cantone"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.fsocommunecode"
+msgstr "N. UST Comune"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.roadtype_de"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.roadtype_fr"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.roadtype_it"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.roadtypecode"
+msgstr "Code - Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.severitycategory_de"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.severitycategory_fr"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.severitycategory_it"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.severitycategorycode"
+msgstr "Code - Categoria della gravità dell'incidente"
+
 msgid "ch.astra.unfaelle-personenschaeden_getoetete"
 msgstr "Incidenti mortali"
 
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_de"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_fr"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_it"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenttype_de"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenttype_fr"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenttype_it"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenttypecode"
+msgstr "Code - Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentyear"
+msgstr "Anno"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.canton"
+msgstr "Cantone"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.fsocommunecode"
+msgstr "N. UST Comune"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.roadtype_de"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.roadtype_fr"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.roadtype_it"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.roadtypecode"
+msgstr "Code - Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.severitycategory_de"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.severitycategory_fr"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.severitycategory_it"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.severitycategorycode"
+msgstr "Code - Categoria della gravità dell'incidente"
+
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder"
 msgstr "Incidenti che coinvol. motocicli"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_de"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_fr"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_it"
+msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenttype_de"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenttype_fr"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenttype_it"
+msgstr "Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenttypecode"
+msgstr "Code - Tipo d'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentyear"
+msgstr "Anno"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.canton"
+msgstr "Cantone"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.fsocommunecode"
+msgstr "N. UST Comune"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.roadtype_de"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.roadtype_fr"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.roadtype_it"
+msgstr "Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.roadtypecode"
+msgstr "Code - Genere di strada"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.severitycategory_de"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.severitycategory_fr"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.severitycategory_it"
+msgstr "Categoria della gravità dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.severitycategorycode"
+msgstr "Code - Categoria della gravità dell'incidente"
 
 msgid "ch.astra.url"
 msgstr "http://www.astra.admin.ch/index.html?lang=it"
