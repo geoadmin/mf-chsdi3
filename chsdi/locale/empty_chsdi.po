@@ -1,3 +1,39 @@
+msgid "tt_bfe_windrichtung_weibullverteilung"
+msgstr ""
+
+msgid "tt_bfe_windstaerke_info"
+msgstr ""
+
+msgid "tt_bfe_hoehe_ueber_grund"
+msgstr ""
+
+msgid "tt_bfe_koordinaten"
+msgstr ""
+
+msgid "tt_bfe_hoehe_gelaende"
+msgstr ""
+
+msgid "tt_bfe_geschw_wind_durchschnitt"
+msgstr ""
+
+msgid "tt_bfe_windrose_geschwverteilung"
+msgstr ""
+
+msgid "tt_bfe_windrose_help"
+msgstr ""
+
+msgid "tt_bfe_windrichtung"
+msgstr ""
+
+msgid "tt_bfe_haeufigkeit"
+msgstr ""
+
+msgid "tt_bfe_mittlere_geschw"
+msgstr ""
+
+msgid "tt_bfe_geschwindigkeit"
+msgstr ""
+
 msgid "ch.bav.haltestellen-oev.haltestelle"
 msgstr ""
 

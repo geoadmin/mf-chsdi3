@@ -16,6 +16,15 @@ class TestMapServiceView(TestsBase):
 
     def test_metadata_no_parameters_topic_all(self):
         resp = self.testapp.get('/rest/services/all/MapServer', status=200)
+        lods = resp.json['tileInfo']['lods']
+        self.assertEqual(lods[0]['level'], 0)
+        self.assertEqual(lods[0]['resolution'], 4000.0)
+        self.assertEqual(lods[0]['width'], 1)
+        self.assertEqual(lods[0]['height'], 1)
+        self.assertEqual(lods[9]['level'], 9)
+        self.assertEqual(lods[9]['resolution'], 1750.0)
+        self.assertEqual(lods[9]['width'], 2)
+        self.assertEqual(lods[9]['height'], 1)
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_metadata_with_searchtext(self):
@@ -141,6 +150,14 @@ class TestMapServiceView(TestsBase):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('results', resp.json)
+
+    def test_identify_valid_on_grid(self):
+        params = {'geometry': '555000,171125', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryPoint', 'imageDisplay': '1920,793,96', 'layers': 'all:ch.bfe.windenergie-geschwindigkeit_h50',
+                  'mapExtent': '346831.18224960007,86207.5717544,826831.1822496001,284457.57175440004', 'returnGeometry': 'true', 'tolerance': '10'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('results', resp.json)
 
     def test_invalid_imageDisplay(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600', 'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
@@ -525,6 +542,11 @@ class TestMapServiceView(TestsBase):
 
     def test_htmlpopup_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', status=200)
+        self.assertEqual(resp.content_type, 'text/html')
+        resp.mustcontain('<table')
+
+    def test_htmlpopup_valid_for_grid(self):
+        resp = self.testapp.get('/rest/services/all/MapServer/ch.bfe.windenergie-geschwindigkeit_h50/671_1229/htmlPopup', status=200)
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 

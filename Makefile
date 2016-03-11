@@ -4,6 +4,7 @@ APP_VERSION := $(shell python -c "print __import__('time').strftime('%s')")
 BASEWAR := print-servlet-2.0-SNAPSHOT-IMG-MAGICK.war
 BRANCH_STAGING := $(shell if [ '$(DEPLOY_TARGET)' = 'dev' ]; then echo 'test'; else echo 'integration'; fi)
 BRANCH_TO_DELETE :=
+BOTO_TEST_PROFILENAME ?= waf-wmts-test
 CURRENT_DIRECTORY := $(shell pwd)
 DEPLOYCONFIG ?=
 DEPLOY_TARGET ?=
@@ -371,6 +372,7 @@ production.ini: production.ini.in
 		--var "http_proxy=$(HTTP_PROXY)" \
 		--var "geoadmin_file_storage_bucket=$(GEOADMIN_FILE_STORAGE_BUCKET)" \
 		--var "shortener_allowed_hosts=$(SHORTENER_ALLOWED_HOSTS)" \
+		--var "boto_test_profilename=$(BOTO_TEST_PROFILENAME)" \
 		--var "shortener_allowed_domains=$(SHORTENER_ALLOWED_DOMAINS)" $< > $@
 
 requirements.txt:

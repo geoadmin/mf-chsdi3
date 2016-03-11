@@ -4250,11 +4250,13 @@ msgstr "Point Number"
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr "Gravimetric Atlas 100 - paper"
 
+#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
-msgstr "Nr."
+msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
 
+#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
-msgstr "Title"
+msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Groundwater Resources 500"
@@ -6733,6 +6735,42 @@ msgstr "Removal accomplished"
 
 msgid "tt_bebautefl"
 msgstr "Artificial surfaces"
+
+msgid "tt_bfe_geschw_wind_durchschnitt"
+msgstr "Average wind speed"
+
+msgid "tt_bfe_geschwindigkeit"
+msgstr "Speed (m/s)"
+
+msgid "tt_bfe_haeufigkeit"
+msgstr "Frequency (%)"
+
+msgid "tt_bfe_hoehe_gelaende"
+msgstr "Altitude"
+
+msgid "tt_bfe_hoehe_ueber_grund"
+msgstr "Height above ground"
+
+msgid "tt_bfe_koordinaten"
+msgstr "Coordinates (X / Y)"
+
+msgid "tt_bfe_mittlere_geschw"
+msgstr "Average speed"
+
+msgid "tt_bfe_windrichtung"
+msgstr "Wind direction"
+
+msgid "tt_bfe_windrichtung_weibullverteilung"
+msgstr "Weibull distribution independent of wind direction"
+
+msgid "tt_bfe_windrose_geschwverteilung"
+msgstr "Wind rose with wind speed distribution per wind direction sector"
+
+msgid "tt_bfe_windrose_help"
+msgstr "The wind rose shows the wind speed distribution per wind sector. If you move the mouse over the wind rose you can obtain precise data for each sector."
+
+msgid "tt_bfe_windstaerke_info"
+msgstr "Wind is constantly subject to speed fluctuations. For this reason, a static distribution of wind speeds (Weibull distribution) is required for the planning of wind energy plants."
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Corridor number"
