@@ -28,7 +28,7 @@ baseUrl = request.registry.settings['api_url']
     <tr><th class="cell-left">${_('tt_bfe_hoehe_ueber_grund')}</th>         <td>${altitude or '-'}</td></tr>
     <tr><th class="cell-left">${_('tt_bfe_koordinaten')}</th>               <td>${center}</td></tr>
     <tr><th class="cell-left">${_('tt_bfe_hoehe_gelaende')}</th>            <td>${dhm_altitude or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_bfe_geschw_wind_durchschnitt')}</th>  <td>${props['v_mean']}</td></tr>
+    <tr><th class="cell-left">${_('tt_bfe_geschw_wind_durchschnitt')}</th>  <td>${round(props['v_mean'], 2)}</td></tr>
     <tr><th colspan=2><iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="230" frameborder="0" style="border: 0" scrolling="no" ></iframe></th></tr>
 </%def>
 
@@ -469,7 +469,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([0, 0])
   .html(function(d) {
-    return d.data.orientation + ": <br><span style='color:orangered'>" + d.data.frequency + " %<br>" + d.data.speed + " m/s</span>";
+    return d.data.orientation + ": <br><span style='color:orangered'>" + d.data.frequency.toFixed(2) + " %<br>" + d.data.speed.toFixed(2) + " m/s</span>";
   });
 
 //Kuchenstuecke definieren
