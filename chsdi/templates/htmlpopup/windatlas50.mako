@@ -1,15 +1,16 @@
 <%inherit file="base.mako"/>
 <%!
 from chsdi.lib.raster.georaster import get_raster
-r = get_raster('COMB')
 
-from gatilegrid.grid import Grid
-from chsdi.models.grid import get_grid_spec
+r = get_raster('COMB')
 %>
 
 
 <%def name="table_body(c, lang)">
 <%
+from gatilegrid.grid import Grid
+from chsdi.models.grid import get_grid_spec
+
 altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
 
 # center coordinates and dhm altitude from feature id
@@ -25,18 +26,32 @@ props = c['properties']
 baseUrl = request.registry.settings['api_url']
 %>
 <!-- html output -->
-    <tr><th class="cell-left">${_('tt_bfe_hoehe_ueber_grund')}</th>         <td>${altitude or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_bfe_koordinaten')}</th>               <td>${center}</td></tr>
-    <tr><th class="cell-left">${_('tt_bfe_hoehe_gelaende')}</th>            <td>${dhm_altitude or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_bfe_geschw_wind_durchschnitt')}</th>  <td>${round(props['v_mean'], 2)}</td></tr>
-    <tr><th colspan=2><iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="230" frameborder="0" style="border: 0" scrolling="no" ></iframe></th></tr>
+    <tr>
+      <th class="cell-left">${_('tt_bfe_hoehe_ueber_grund')}</th>
+      <td>${altitude or '-'}</td>
+    </tr>
+    <tr>
+      <th class="cell-left">${_('tt_bfe_koordinaten')}</th>
+      <td>${center}</td>
+    </tr>
+    <tr>
+      <th class="cell-left">${_('tt_bfe_hoehe_gelaende')}</th>
+      <td>${dhm_altitude or '-'}</td>
+    </tr>
+    <tr>
+      <th class="cell-left">${_('tt_bfe_geschw_wind_durchschnitt')}</th>
+      <td>${round(props['v_mean'], 2)}</td>
+    </tr>
+    <tr>
+      <th colspan=2>
+        <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="230" frameborder="0" style="border: 0" scrolling="no"></iframe>
+      </th>
+    </tr>
 </%def>
 
 
 <%def name="extended_info(c, lang)">
 <%
-# some python
-
 coordinates = c['geometry']['coordinates'][0]
 bottomLeft = coordinates[0]
 topRight = coordinates[2]
@@ -139,6 +154,12 @@ except:
   border-collapse: collapse;
   font-size: initial;
 }
+#weibull {
+  margin-bottom: 20px;
+}
+td.inner-table {
+  padding: 10px !important;
+}
 </style>
 
 <script src="//d3js.org/d3.v3.min.js"></script>
@@ -186,114 +207,114 @@ except:
     <td>${props['v_mean']}</td>
   </tr>
   <tr>
-    <td colspan="2"><b>${_('tt_bfe_windrose_geschwverteilung')}</b><br/>${_('tt_bfe_windrose_help')}<br/><div id="rose"></div>
+    <td class="inner-table" colspan="2"><b>${_('tt_bfe_windrose_geschwverteilung')}</b><br/>${_('tt_bfe_windrose_help')}<br/><div id="rose"></div>
       <table id="windrichtung">
         <tr>
-          <td>${_('tt_bfe_windrichtung')}</td>
-          <td>${_('tt_bfe_haeufigkeit')}</td>
-          <td>${_('tt_bfe_mittlere_geschw')}</td>
-          <td>A</td>
-          <td>k</td>
+          <th>${_('tt_bfe_windrichtung')}</th>
+          <th>${_('tt_bfe_haeufigkeit')}</th>
+          <th>${_('tt_bfe_mittlere_geschw')}</th>
+          <th>A</th>
+          <th>k</th>
         </tr>
         <tr>
           <td>total</td>
-          <td>${freq_total} %</td>
-          <td>${props['v_mean']}</td>
-          <td>${props['wei_a']}</td>
-          <td>${props['wei_k']}</td>
+          <td>${round(freq_total, 3)} %</td>
+          <td>${round(props['v_mean'], 3)}</td>
+          <td>${round(props['wei_a'], 3)}</td>
+          <td>${round(props['wei_k'], 3)}</td>
         </tr>
         <tr>
           <td>345° - 15°</td>
-          <td>${props['freq_0']} %</td>
-          <td>${props['v_mean_0']}</td>
-          <td>${props['wei_a_0']}</td>
-          <td>${props['wei_k_0']}</td>
+          <td>${round(props['freq_0'], 3)} %</td>
+          <td>${round(props['v_mean_0'], 3)}</td>
+          <td>${round(props['wei_a_0'], 3)}</td>
+          <td>${round(props['wei_k_0'], 3)}</td>
         </tr>
         <tr>
           <td>15° - 45°</td>
-          <td>${props['freq_30']} %</td>
-          <td>${props['v_mean_30']}</td>
-          <td>${props['wei_a_30']}</td>
-          <td>${props['wei_k_30']}</td>
+          <td>${round(props['freq_30'], 3)} %</td>
+          <td>${round(props['v_mean_30'], 3)}</td>
+          <td>${round(props['wei_a_30'], 3)}</td>
+          <td>${round(props['wei_k_30'], 3)}</td>
         </tr>
         <tr><td>45° - 75°</td>
-          <td>${props['freq_60']} %</td>
-          <td>${props['v_mean_60']}</td>
-          <td>${props['wei_a_60']}</td>
-          <td>${props['wei_k_60']}</td>
+          <td>${round(props['freq_60'], 3)} %</td>
+          <td>${round(props['v_mean_60'], 3)}</td>
+          <td>${round(props['wei_a_60'], 3)}</td>
+          <td>${round(props['wei_k_60'], 3)}</td>
         </tr>
         <tr>
           <td>75° - 105°</td>
-          <td>${props['freq_90']} %</td>
-          <td>${props['v_mean_90']}</td>
-          <td>${props['wei_a_90']}</td>
-          <td>${props['wei_k_90']}</td>
+          <td>${round(props['freq_90'], 3)} %</td>
+          <td>${round(props['v_mean_90'], 3)}</td>
+          <td>${round(props['wei_a_90'], 3)}</td>
+          <td>${round(props['wei_k_90'], 3)}</td>
         </tr>
         <tr>
           <td>105° - 135°</td>
-          <td>${props['freq_120']} %</td>
-          <td>${props['v_mean_120']}</td>
-          <td>${props['wei_a_120']}</td>
-          <td>${props['wei_k_120']}</td>
+          <td>${round(props['freq_120'], 3)} %</td>
+          <td>${round(props['v_mean_120'], 3)}</td>
+          <td>${round(props['wei_a_120'], 3)}</td>
+          <td>${round(props['wei_k_120'], 3)}</td>
         </tr>
         <tr>
           <td>135° - 165°</td>
-          <td>${props['freq_150']} %</td>
-          <td>${props['v_mean_150']}</td>
-          <td>${props['wei_a_150']}</td>
-          <td>${props['wei_k_150']}</td>
+          <td>${round(props['freq_150'], 3)} %</td>
+          <td>${round(props['v_mean_150'], 3)}</td>
+          <td>${round(props['wei_a_150'], 3)}</td>
+          <td>${round(props['wei_k_150'], 3)}</td>
         </tr>
         <tr>
           <td>165° - 195°</td>
-          <td>${props['freq_180']} %</td>
-          <td>${props['v_mean_180']}</td>
-          <td>${props['wei_a_180']}</td>
-          <td>${props['wei_k_180']}</td>
+          <td>${round(props['freq_180'], 3)} %</td>
+          <td>${round(props['v_mean_180'], 3)}</td>
+          <td>${round(props['wei_a_180'], 3)}</td>
+          <td>${round(props['wei_k_180'], 3)}</td>
         </tr>
         <tr>
           <td>195° - 225°</td>
-          <td>${props['freq_210']} %</td>
-          <td>${props['v_mean_210']}</td>
-          <td>${props['wei_a_210']}</td>
-          <td>${props['wei_k_210']}</td>
+          <td>${round(props['freq_210'], 3)} %</td>
+          <td>${round(props['v_mean_210'], 3)}</td>
+          <td>${round(props['wei_a_210'], 3)}</td>
+          <td>${round(props['wei_k_210'], 3)}</td>
         </tr>
         <tr>
           <td>225° - 255°</td>
-          <td>${props['freq_240']} %</td>
-          <td>${props['v_mean_240']}</td>
-          <td>${props['wei_a_240']}</td>
-          <td>${props['wei_k_240']}</td>
+          <td>${round(props['freq_240'], 3)} %</td>
+          <td>${round(props['v_mean_240'], 3)}</td>
+          <td>${round(props['wei_a_240'], 3)}</td>
+          <td>${round(props['wei_k_240'], 3)}</td>
         </tr>
         <tr>
           <td>255° - 285°</td>
-          <td>${props['freq_270']} %</td>
-          <td>${props['v_mean_270']}</td>
-          <td>${props['wei_a_270']}</td>
-          <td>${props['wei_k_270']}</td>
+          <td>${round(props['freq_270'], 3)} %</td>
+          <td>${round(props['v_mean_270'], 3)}</td>
+          <td>${round(props['wei_a_270'], 3)}</td>
+          <td>${round(props['wei_k_270'], 3)}</td>
         </tr>
         <tr>
           <td>285° - 315°</td>
-          <td>${props['freq_300']} %</td>
-          <td>${props['v_mean_300']}</td>
-          <td>${props['wei_a_300']}</td>
-          <td>${props['wei_k_300']}</td></tr>
+          <td>${round(props['freq_300'], 3)} %</td>
+          <td>${round(props['v_mean_300'], 3)}</td>
+          <td>${round(props['wei_a_300'], 3)}</td>
+          <td>${round(props['wei_k_300'], 3)}</td></tr>
         <tr>
           <td>315° - 345°</td>
-          <td>${props['freq_330']} %</td>
-          <td>${props['v_mean_330']}</td>
-          <td>${props['wei_a_330']}</td>
-          <td>${props['wei_k_330']}</td>
+          <td>${round(props['freq_330'], 3)} %</td>
+          <td>${round(props['v_mean_330'], 3)}</td>
+          <td>${round(props['wei_a_330'], 3)}</td>
+          <td>${round(props['wei_k_330'], 3)}</td>
         </tr>
       </table>
     </td>
   </tr>
   <tr>
-    <td colspan="2">
+    <td class="inner-table" colspan="2">
       <b>${_('tt_bfe_windrichtung_weibullverteilung')}</b><br/>${_('tt_bfe_windstaerke_info')}<br/><div id="weibull"></div>
       <table id="windrichtung">
         <tr>
-          <td>${_('tt_bfe_geschwindigkeit')}</td>
-          <td style="text-align:right">${_('tt_bfe_haeufigkeit')}</td>
+          <th>${_('tt_bfe_geschwindigkeit')}</th>
+          <th style="text-align:right">${_('tt_bfe_haeufigkeit')}</th>
         </tr>
         <tr>
           <td>0 m/s</td>
