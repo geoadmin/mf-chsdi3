@@ -15,6 +15,33 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20160316:
+
+Release 20160316 - Wednesday, March 16th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160303...r_160316>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160303...r_160316>`__
+
+
+Geodata
+*******
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update    | `swissALTI3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d-reliefschattierung>`__ (ch.swisstopo.swissalti3d-reliefschattierung)                                   |
++-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20160302:
 
 Release 20160302 - Wednesday, March 2nd 2016
