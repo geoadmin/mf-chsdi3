@@ -1,7 +1,8 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-<% 
+<%
+    c['stable_id'] = True 
     if lang == ('de') : 
         url = 'url_de'
     elif lang == ('fr') : 
