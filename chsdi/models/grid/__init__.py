@@ -37,12 +37,12 @@ def get_grid_layer_properties(layerBodId):
 
 # Windatlas layers
 register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h50', gridId='1', extended=True,
-                      timestamp='20160303', template='templates/htmlpopup/windatlas50.mako')
+                      timestamp='20160223', template='templates/htmlpopup/windatlas50.mako')
 register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h75', gridId='1', extended=True,
-                      timestamp='20160303', template='templates/htmlpopup/windatlas50.mako')
+                      timestamp='20160223', template='templates/htmlpopup/windatlas50.mako')
 register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h100', gridId='1', extended=True,
-                      timestamp='20160303', template='templates/htmlpopup/windatlas50.mako')
+                      timestamp='20160223', template='templates/htmlpopup/windatlas50.mako')
 register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h125', gridId='1', extended=True,
-                      timestamp='20160303', template='templates/htmlpopup/windatlas50.mako')
+                      timestamp='20160223', template='templates/htmlpopup/windatlas50.mako')
 register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h150', gridId='1', extended=True,
-                      timestamp='20160303', template='templates/htmlpopup/windatlas50.mako')
+                      timestamp='20160223', template='templates/htmlpopup/windatlas50.mako')

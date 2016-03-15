@@ -4,6 +4,8 @@ import re
 import math
 import requests
 import datetime
+import gzip
+import StringIO
 from osgeo import osr, ogr
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
@@ -381,3 +383,8 @@ def filter_alt(alt):
 
 def get_loaderjs_url(request):
     make_agnostic(route_url('ga_api', request))
+
+
+def decompress_gzipped_string(string):
+    content = gzip.GzipFile(fileobj=StringIO.StringIO(string))
+    return content.read()

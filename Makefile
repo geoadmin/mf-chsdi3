@@ -6,7 +6,6 @@ VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '
 BASEWAR := print-servlet-2.0-SNAPSHOT-IMG-MAGICK.war
 BRANCH_STAGING := $(shell if [ '$(DEPLOY_TARGET)' = 'dev' ]; then echo 'test'; else echo 'integration'; fi)
 BRANCH_TO_DELETE :=
-BOTO_TEST_PROFILENAME ?= waf-wmts-test
 CURRENT_DIRECTORY := $(shell pwd)
 DEPLOYCONFIG ?=
 DEPLOY_TARGET ?=
@@ -373,7 +372,6 @@ production.ini: production.ini.in
 		--var "http_proxy=$(HTTP_PROXY)" \
 		--var "geoadmin_file_storage_bucket=$(GEOADMIN_FILE_STORAGE_BUCKET)" \
 		--var "shortener_allowed_hosts=$(SHORTENER_ALLOWED_HOSTS)" \
-		--var "boto_test_profilename=$(BOTO_TEST_PROFILENAME)" \
 		--var "shortener_allowed_domains=$(SHORTENER_ALLOWED_DOMAINS)" $< > $@
 
 requirements.txt:
@@ -397,6 +395,11 @@ package.json:
 node_modules: package.json
 	@echo "${GREEN}Installing node packages...${RESET}";
 	npm install
+	cp -f node_modules/jquery/dist/jquery.min.js chsdi/static/js/jquery.min.js
+	cp -f node_modules/blueimp-gallery/js/blueimp-gallery.min.js chsdi/static/js/blueimp-gallery.min.js
+	cp -f node_modules/d3/d3.min.js chsdi/static/js/d3.min.js
+	cp -f node_modules/d3-tip/index.js chsdi/static/js/d3-tip.js
+	cp -f node_modules/blueimp-gallery/css/blueimp-gallery.min.css chsdi/static/js/blueimp-gallery.min.css
 
 chsdi/static/less/extended.less:
 	@echo "${GREEN}File chsdi/static/less/extended.less has changed${RESET}";
@@ -431,3 +434,7 @@ cleanall: clean
 	rm -rf chsdi/locale/de/LC_MESSAGES/chsdi.mo
 	rm -rf chsdi/locale/fi/LC_MESSAGES/chsdi.mo
 	rm -rf chsdi/locale/it/LC_MESSAGES/chsdi.mo
+	rm -rf chsdi/static/js/jquery.min.js
+	rm -rf chsdi/static/js/blueimp-gallery.min.js
+	rm -rf chsdi/static/js/d3.min.js
+	rm -rf chsdi/static/js/d3-tip.js
