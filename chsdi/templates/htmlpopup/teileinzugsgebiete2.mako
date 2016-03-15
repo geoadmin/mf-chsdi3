@@ -49,25 +49,8 @@
   zip_url = webDavHost + "/bafu/ch.bafu.wasser-teileinzugsgebiete_2/downloads/" + str(100000+c['featureId']) + ".zip"
   image = None
   zip = None
-
-  try:
-      image = urlopen(img_url)
-      image_exist = True
-  except:
-      image_exist = False
-  finally:
-      if image:
-          image.close()
-
-  try:
-      zip = urlopen(zip_url)
-      zip_exist = True
-  except urllib2.HTTPError:
-      zip_exist = False
-  finally:
-      if zip:
-          zip.close()
-
+  image_exist = h.resource_exists(img_url)
+  zip_exist = h.resource_exists(zip_url)
 
   id = c['featureId']
   

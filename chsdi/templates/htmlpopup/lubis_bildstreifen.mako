@@ -22,6 +22,7 @@ from pyramid.url import route_url
 c['stable_id'] = True
 %>
 <title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
+<script type="text/javascript" src="${h.get_loaderjs_url(request)}"></script>
 <body onload="init()">
 
     <table class="table-with-border kernkraftwerke-extended">

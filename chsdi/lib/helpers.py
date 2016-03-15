@@ -7,6 +7,7 @@ import datetime
 from osgeo import osr, ogr
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
+from pyramid.url import route_url
 from pyramid.httpexceptions import HTTPBadRequest, HTTPRequestTimeout
 import unicodedata
 from urllib import quote
@@ -376,3 +377,7 @@ def filter_alt(alt):
     if alt is not None and alt > 0.0:
         # 10cm accuracy is enough for altitudes
         return round(alt, 1)
+
+
+def get_loaderjs_url(request):
+    make_agnostic(route_url('ga_api', request))

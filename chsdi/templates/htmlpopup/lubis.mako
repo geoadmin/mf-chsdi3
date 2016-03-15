@@ -153,6 +153,7 @@ viewer_url = get_viewer_url(request, params)
 
 
 <%def name="extended_info(c, lang)">
+<script type="text/javascript" src="${h.get_loaderjs_url(request)}"></script>
 <%
 c['stable_id'] = True
 if c['layerBodId'] == 'ch.swisstopo.lubis-luftbilder_farbe':
@@ -202,6 +203,7 @@ params = (
 viewer_url = get_viewer_url(request, params)
 %>
 <title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
+
 <body onload="init()">
   <table class="table-with-border kernkraftwerke-extended">
     <tr><th class="cell-left">${_('tt_lubis_ebkey')}</th>            <td>${c['featureId'] or '-'}</td></tr>

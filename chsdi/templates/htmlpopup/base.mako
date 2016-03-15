@@ -33,7 +33,6 @@
   c['attribution'] = feature['attribution']
   c['fullName'] = feature['fullName']
   extended = feature['extended']
-  loader_url = h.make_agnostic(route_url('ga_api', request))
  %>
 
 % if extended:
@@ -48,10 +47,6 @@
   <link rel="apple-touch-icon" sizes="120x120" href="${h.versioned(request.static_url('chsdi:static/images/touch-icon-bund-120x120.png'))}"/>
   <link rel="apple-touch-icon" sizes="152x152" href="${h.versioned(request.static_url('chsdi:static/images/touch-icon-bund-152x152.png'))}"/>
   <link rel="stylesheet" type="text/css" href="${h.versioned(request.static_url('chsdi:static/css/extended.min.css'))}"/>
-  <link rel="stylesheet" type="text/css" href="${h.versioned(request.static_url('chsdi:static/css/blueimp-gallery-2.11.0.min.css'))}"/>
-  <script src="${h.versioned(request.static_url('chsdi:static/js/jquery-2.0.3.min.js'))}"></script>
-  <script src="${h.versioned(request.static_url('chsdi:static/js/blueimp-gallery-2.11.5.min.js'))}"></script>
-  <script type="text/javascript" src="${loader_url}"></script>
 </head>
 % endif
 

@@ -14,6 +14,7 @@
 </%def>
 
 <%def name="extended_info(c, lang)">
+<script type="text/javascript" src="${h.get_loaderjs_url(request)}"></script>
 <title>Verkehrszaehlstellen</title> 
 <body onload="init()">
   <table class="table-with-border kernkraftwerke-extended">

@@ -14,7 +14,6 @@
     lang = 'fr' if lang in ('fr', 'it') else 'de'
     url_uebersicht = 'url_uebersicht_%s' % lang
 %>
-
 <table class="table-with-border kernkraftwerke-extended">
 <tr>
 <td width="20%">&nbsp;</td>

@@ -24,6 +24,7 @@ from pyramid.url import route_url
 <tr><td class="cell-left">${_('tt_ch.bazl.markierung')}</td>              <td>${sanctiontext}</td></tr>
 </%def>
 <%def name="extended_info(c, lang)">
+<script type="text/javascript" src="${h.get_loaderjs_url(request)}"></script>
 <%
   c['last'] = False
   wms_url = 'http://' + request.registry.settings['wmshost']

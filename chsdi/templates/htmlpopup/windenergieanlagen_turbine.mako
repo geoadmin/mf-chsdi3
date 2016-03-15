@@ -22,6 +22,7 @@
 </%def>
 
 <%def name="extended_info(c, lang)">
+<script type="text/javascript" src="${{h.get_loaderjs_url(request)}"></script>
 <title>${_('ch.bfe.windenergieanlagen')}</title>
 <body onload="init()">
 <div class="zsborder">
@@ -173,7 +174,7 @@ alt=""/></td>
            // Define a coordinate CH1903 (EPSG:21781) for the center of the view
            center: [${c['attributes']['tur_y']},${c['attributes']['tur_x']}]
            }),
-           tooltip: false,
+           tooltip: false
 //           interactions: ol.interaction.defaults({doubleClickZoom: false, dragPan: false, mouseWheelZoom: false})
        });
 

@@ -12,6 +12,8 @@
 </%def>
 
 <%def name="extended_info(c, lang)">
+    <script src="${h.versioned(request.static_url('chsdi:static/js/jquery-2.0.3.min.js'))}"></script>
+    <script src="${h.versioned(request.static_url('chsdi:static/js/blueimp-gallery-2.11.5.min.js'))}"></script>
     <%
         c['stable_id'] = True
         objarts = c['attributes']['objektart'].split(',')
