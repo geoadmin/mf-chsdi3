@@ -7160,6 +7160,9 @@ msgstr "Koordinaten (X / Y)"
 msgid "tt_bfe_mittlere_geschw"
 msgstr "Mittlere Geschwindigkeit"
 
+msgid "tt_bfe_windgeschwindigkeit"
+msgstr "Windgeschwindigkeit"
+
 msgid "tt_bfe_windrichtung"
 msgstr "Windrichtung"
 

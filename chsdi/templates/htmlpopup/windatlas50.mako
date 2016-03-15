@@ -7,6 +7,7 @@ r = get_raster('COMB')
 
 
 <%def name="table_body(c, lang)">
+<% c['stable_id'] = True %>
 <%
 from gatilegrid.grid import Grid
 from chsdi.models.grid import get_grid_spec
@@ -606,7 +607,7 @@ svg.call(tip);
     .attr("fill", "grey");
 
     svg.append("text")
-    .text("Häufigkeit")
+    .text("${_('tt_bfe_haeufigkeit')}")
     .style("font-size", "10px")
     .style("text-align", "center")
     .attr("fill", "grey")
@@ -918,7 +919,7 @@ svg.call(tip);
 % endif
 
     svg.append("text")
-    .text("Windgeschwindigkeit")
+    .text("${_('tt_bfe_windgeschwindigkeit')}")
     .style("font-size", "10px")
     .attr("fill", "grey")
 % if iframe:
@@ -984,14 +985,14 @@ var svg_weibull = d3.select("#weibull").append("svg")
       .attr("class", "line")
       .attr("d", line);
   svg_weibull.append("text")
-    .text("Häufigkeit")
+    .text("${_('tt_bfe_haeufigkeit')}")
     .style("font-size", "10px")
     .style("text-align", "center")
     .attr("fill", "black")
     .attr("transform", "translate(-35,130) rotate(270)");
 
   svg_weibull.append("text")
-    .text("Windgeschwindigkeit [m/s]")
+    .text("${_('tt_bfe_windgeschwindigkeit')} [m/s]")
     .style("font-size", "10px")
     .style("text-align", "center")
     .attr("fill", "black")

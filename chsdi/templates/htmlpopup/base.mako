@@ -86,8 +86,12 @@
         % endif
         % if c['stable_id'] is True:
           <tr>
+          % if isGridLayer:
+            <td colspan="2">
+          % else:
             <td class="cell-left"></td>
             <td>
+          % endif
               <a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic))}" target="new">
                 ${_('Link to object')}
               </a>

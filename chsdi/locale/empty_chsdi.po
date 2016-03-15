@@ -306,6 +306,9 @@ msgstr ""
 msgid "tt_bfe_geschwindigkeit"
 msgstr ""
 
+msgid "tt_bfe_windgeschwindigkeit"
+msgstr ""
+
 msgid "ch.bav.haltestellen-oev.haltestelle"
 msgstr ""
 
