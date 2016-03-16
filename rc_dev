@@ -8,6 +8,7 @@ export GEODATA_STAGING=test
 export GEOADMIN_FILE_STORAGE_BUCKET=public.dev.bgdi.ch
 export GEOADMINHOST=mf-geoadmin3.dev.bgdi.ch
 export HOST=mf-chsdi3.dev.bgdi.ch
+export KEEP_VERSION=false
 export MAPPROXYHOST=wmts20.dev.bgdi.ch
 export MODWSGI_CONFIG=production.ini
 export PRINT_WAR=main

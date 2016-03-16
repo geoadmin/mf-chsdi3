@@ -1,6 +1,8 @@
 # Variables
 APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''; else echo /$(APACHE_BASE_PATH); fi)
-APP_VERSION := $(shell python -c "print __import__('time').strftime('%s')")
+KEEP_VERSION ?= 'false'
+LAST_APP_VERSION := $(shell if [ -f '.venv/last-version' ]; then cat .venv/last-version 2> /dev/null; else echo '-none-'; fi)
+APP_VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '-none-' ]; then echo $(LAST_APP_VERSION); else python -c "print __import__('time').strftime('%s')"; fi)
 BASEWAR := print-servlet-2.0-SNAPSHOT-IMG-MAGICK.war
 BRANCH_STAGING := $(shell if [ '$(DEPLOY_TARGET)' = 'dev' ]; then echo 'test'; else echo 'integration'; fi)
 BRANCH_TO_DELETE :=
