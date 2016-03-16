@@ -26,6 +26,7 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug Fixes
+- Examples migrated to CodePen
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160303...r_160316>`__
 
 
