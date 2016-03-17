@@ -1,0 +1,224 @@
+pdfConfig: !pdfConfig
+  compressed: false
+  author: "Jeff Konnen"
+  subject: "map.geoportail.lu Print"
+  creator: "Mapfish Print"
+
+throwErrorOnExtraParameters: true
+
+templates:
+
+#===========================================================================
+  1 A4 landscape: !template
+  #===========================================================================
+    pdfConfig: !pdfConfig
+      title: "A4 Landscape"
+      keywords: ["map.geoadmin.ch"]
+    reportTemplate: A4_landscape_template.jrxml
+    attributes:
+      name: !string {}
+      description: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {} 
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 802 
+        height: 530 
+        zoomLevels: !zoomLevels
+          scales: [2500000, 1500000, 1000000, 500000, 300000, 200000, 100000, 50000, 25000, 20000, 10000, 5000, 2500, 1000, 500] 
+      scalebar: !scalebar
+        width: 140
+        height: 16 
+        default:
+          backgroundColor: "rgba(255, 255, 255, 0)"
+          labelDistance: 2
+          align: "right"
+          barSize: 2 
+      northArrowSubReport: !northArrow
+        size: 30
+        default:
+          backgroundColor: "rgba(255, 255, 255, 0)"
+          graphic: "file://north_arrow.png"
+      legend: !legend {}
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      maxWidth: 148
+      dpi: 100
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper: 
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !createNorthArrow
+      inputMapper: {map: map, northArrowSubReport: northArrow}
+
+#===========================================================================
+  2 A4 portrait: !template
+  #===========================================================================
+    pdfConfig: !pdfConfig
+      title: "A4 Portrait"
+      keywords: ["map.geoadmin.ch"]
+    reportTemplate: A4_portrait_template.jrxml
+    attributes:
+      name: !string {}
+      description: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {} 
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 555 
+        height: 755 
+        zoomLevels: !zoomLevels
+          scales: [2500000, 1500000, 1000000, 500000, 300000, 200000, 100000, 50000, 25000, 20000, 10000, 5000, 2500, 1000, 500] 
+      scalebar: !scalebar
+        width: 140
+        height: 16 
+        default:
+          backgroundColor: "rgba(255, 255, 255, 0)"
+          labelDistance: 2
+          align: "right"
+          barSize: 2 
+      northArrowSubReport: !northArrow
+        size: 30
+        default:
+          backgroundColor: "rgba(255, 255, 255, 0)"
+          graphic: "file://north_arrow.png"
+      legend: !legend {}
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      maxWidth: 148
+      dpi: 100
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper: 
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !createNorthArrow
+      inputMapper: {map: map, northArrowSubReport: northArrow}
+
+#===========================================================================
+  3 A3 landscape: !template
+  #===========================================================================
+    pdfConfig: !pdfConfig
+      title: "A3 Landscape"
+      keywords: ["map.geoadmin.ch"]
+    reportTemplate: A3_landscape_template.jrxml
+    attributes:
+      name: !string {}
+      description: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {} 
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 1150 
+        height: 776
+        zoomLevels: !zoomLevels
+          scales: [2500000, 1500000, 1000000, 500000, 300000, 200000, 100000, 50000, 25000, 20000, 10000, 5000, 2500, 1000, 500] 
+      scalebar: !scalebar
+        width: 140
+        height: 16 
+        default:
+          backgroundColor: "rgba(255, 255, 255, 0)"
+          labelDistance: 2
+          align: "right"
+          barSize: 2 
+      northArrowSubReport: !northArrow
+        size: 30
+        default:
+          backgroundColor: "rgba(255, 255, 255, 0)"
+          graphic: "file://north_arrow.png"
+      legend: !legend {}
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      maxWidth: 148
+      dpi: 100
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper: 
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !createNorthArrow
+      inputMapper: {map: map, northArrowSubReport: northArrow}
+
+#===========================================================================
+  4 A3 portrait: !template
+  #===========================================================================
+    pdfConfig: !pdfConfig
+      title: "A3 Portrait"
+      keywords: ["map.geoadmin.ch"]
+    reportTemplate: A3_portrait_template.jrxml
+    attributes:
+      name: !string {}
+      description: !string {}
+      scale: !string {}
+      url: !string {}
+      qrimage: !string {} 
+      map: !map
+        maxDpi: 400
+        dpiSuggestions: [72, 91, 128, 254, 300, 400]
+        width: 802
+        height: 1124
+        zoomLevels: !zoomLevels
+          scales: [2500000, 1500000, 1000000, 500000, 300000, 200000, 100000, 50000, 25000, 20000, 10000, 5000, 2500, 1000, 500] 
+      scalebar: !scalebar
+        width: 140
+        height: 16 
+        default:
+          backgroundColor: "rgba(255, 255, 255, 0)"
+          labelDistance: 2
+          align: "right"
+          barSize: 2 
+      northArrowSubReport: !northArrow
+        size: 30
+        default:
+          backgroundColor: "rgba(255, 255, 255, 0)"
+          graphic: "file://north_arrow.png"
+      legend: !legend {}
+    processors:
+    - !reportBuilder # compile all reports in current directory
+      directory: '.'
+    - !prepareLegend # create a datasource for the report with the 'legend' attribute
+      maxWidth: 148
+      dpi: 100
+      template: legend.jrxml
+      inputMapper: {legend: legend}
+      outputMapper: 
+        legend: legend
+        legendSubReport: legendSubReport
+        numberOfLegendRows: numberOfLegendRows
+    - !createMap
+      inputMapper: {map: map}
+      outputMapper: {mapSubReport: mapSubReport}
+    - !createScalebar {}
+    - !createNorthArrow
+      inputMapper: {map: map, northArrowSubReport: northArrow}
+
+#===============================================================
+
