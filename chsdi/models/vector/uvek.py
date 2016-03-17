@@ -393,6 +393,88 @@ class unf_pers_velo(Base, Vector):
 register('ch.astra.unfaelle-personenschaeden_fahrraeder', unf_pers_velo)
 
 
+class schwerverunf_kanton_alkohol(Base, Vector):
+    __tablename__ = 'unf_schwer'
+    __table_args__ = ({'schema': 'astra', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/astra_schwerverunf_kanton_alkohol.mako'
+    __bodId__ = 'ch.astra.schwerverunfallte-kanton_alkohol'
+    __label__ = 'canton'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+    canton = Column('canton', Text)
+    year = Column('year', Integer)
+    population = Column('population', Numeric)
+    accalcohol_ugt = Column('accalcohol_ugt', Integer)
+    accalcohol_usv = Column('accalcohol_usv', Integer)
+    accalcohol_ugt_usv = Column('accalcohol_ugt_usv', Integer)
+    accalcohol_ugt_usv_perpopulation = Column('accalcohol_ugt_usv_perpopulation', Numeric)
+
+register('ch.astra.schwerverunfallte-kanton_alkohol', schwerverunf_kanton_alkohol)
+
+
+class schwerverunf_kanton_geschwindig(Base, Vector):
+    __tablename__ = 'unf_schwer'
+    __table_args__ = ({'schema': 'astra', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/astra_schwerverunf_kanton_geschwindig.mako'
+    __bodId__ = 'ch.astra.schwerverunfallte-kanton_geschwindigkeit'
+    __label__ = 'canton'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+    canton = Column('canton', Text)
+    year = Column('year', Integer)
+    population = Column('population', Numeric)
+    accspeed_ugt = Column('accspeed_ugt', Integer)
+    accspeed_usv = Column('accspeed_usv', Integer)
+    accspeed_ugt_usv = Column('accspeed_ugt_usv', Integer)
+    accspeed_ugt_usv_perpopulation = Column('accspeed_ugt_usv_perpopulation', Numeric)
+
+register('ch.astra.schwerverunfallte-kanton_geschwindigkeit', schwerverunf_kanton_geschwindig)
+
+
+class schwerverunf_kanton_jahresvergleich(Base, Vector):
+    __tablename__ = 'unf_schwer'
+    __table_args__ = ({'schema': 'astra', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/astra_schwerverunf_kanton_jahresvergleich.mako'
+    __bodId__ = 'ch.astra.schwerverunfallte-kanton_jahresvergleich'
+    __label__ = 'canton'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+    canton = Column('canton', Text)
+    year = Column('year', Integer)
+    acc_ugt = Column('acc_ugt', Integer)
+    acc_usv = Column('acc_usv', Integer)
+    acc_ugt_usv = Column('acc_ugt_usv', Integer)
+    acc_ugt_lastyear = Column('acc_ugt_lastyear', Integer)
+    acc_usv_lastyear = Column('acc_usv_lastyear', Integer)
+    acc_ugt_usv_lastyear = Column('acc_ugt_usv_lastyear', Integer)
+    acc_ugt_usv_yearchangepercent = Column('acc_ugt_usv_yearchangepercent', Numeric)
+
+register('ch.astra.schwerverunfallte-kanton_jahresvergleich', schwerverunf_kanton_jahresvergleich)
+
+
+class schwerverunf_kanton_pro_einwohner(Base, Vector):
+    __tablename__ = 'unf_schwer'
+    __table_args__ = ({'schema': 'astra', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/astra_schwerverunf_kanton_pro_einwohner.mako'
+    __bodId__ = 'ch.astra.schwerverunfallte-kanton_pro_einwohner'
+    __label__ = 'canton'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+    canton = Column('canton', Text)
+    year = Column('year', Integer)
+    population = Column('population', Numeric)
+    acc_ugt = Column('acc_ugt', Integer)
+    acc_usv = Column('acc_usv', Integer)
+    acc_ugt_usv = Column('acc_ugt_usv', Integer)
+    acc_ugt_usv_perpopulation = Column('acc_ugt_usv_perpopulation', Numeric)
+
+register('ch.astra.schwerverunfallte-kanton_pro_einwohner', schwerverunf_kanton_pro_einwohner)
+
+
 class KATASTERBELASTETERSTANDORTE(Base, Vector):
     __tablename__ = 'kataster_belasteter_standorte_oev'
     __table_args__ = ({'schema': 'bav', 'autoload': False})

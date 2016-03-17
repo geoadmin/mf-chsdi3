@@ -1418,6 +1418,108 @@ msgstr "ASTRA + Kanton"
 msgid "ch.astra.mountainbikeland"
 msgstr "Mountainbikeland"
 
+msgid "ch.astra.schwerverunfallte-kanton_alkohol"
+msgstr "Unfälle pro Einwohner - Alkohol"
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.accalcohol_ugt"
+msgstr "Unfälle mit Getöteten und Hauptursache Alkohol"
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.accalcohol_ugt_usv"
+msgstr "Unfälle mit Schwerverunfallten und Hauptursache Alkohol"
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.accalcohol_ugt_usv_perpopulation"
+msgstr "Unfälle mit Schwerverunfallten und Hauptursache Alkohol pro 10'000 Einwohner"
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.accalcohol_usv"
+msgstr "Unfälle mit Schwerverletzten und Hauptursache Alkohol"
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.canton"
+msgstr "Kanton"
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.population"
+msgstr "Einwohner"
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.year"
+msgstr "Jahr"
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit"
+msgstr "Unfälle pro Einwohner - Geschwindig"
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.accspeed_ugt"
+msgstr "Unfälle mit Getöteten und Hauptursache Geschwindigkeit"
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.accspeed_ugt_usv"
+msgstr "Unfälle mit Schwerverunfallten und Hauptursache Geschwindigkeit"
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.accspeed_ugt_usv_perpopulation"
+msgstr "Unfälle mit Schwerverunfallten und Hauptursache Geschwindigkeit pro 10'000 Einwohner"
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.accspeed_usv"
+msgstr "Unfälle mit Schwerverletzten und Hauptursache Geschwindigkeit"
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.canton"
+msgstr "Kanton"
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.population"
+msgstr "Einwohner"
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.year"
+msgstr "Jahr"
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich"
+msgstr "Unfälle im Jahresvergleich"
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_ugt"
+msgstr "Unfälle mit Getöteten"
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_ugt_lastyear"
+msgstr "Unfälle mit Getöteten im Vorjahr"
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_ugt_usv"
+msgstr "Unfälle mit Schwerverunfallten"
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_ugt_usv_lastyear"
+msgstr "Unfälle mit Schwerverunfallten im Vorjahr"
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_ugt_usv_yearchangepercent"
+msgstr "Veränderung der Unfälle mit Schwerverunfallten im Jahr / Vorjahr"
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_usv"
+msgstr "Unfälle mit Schwerverletzten"
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_usv_lastyear"
+msgstr "Unfälle mit Schwerverletzten im Vorjahr"
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.canton"
+msgstr "Kanton"
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.year"
+msgstr "Jahr"
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner"
+msgstr "Unfälle pro Einwohner"
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.acc_ugt"
+msgstr "Unfälle mit Getöteten"
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.acc_ugt_usv"
+msgstr "Unfälle mit Schwerverunfallten"
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.acc_ugt_usv_perpopulation"
+msgstr "Unfälle mit Schwerverunfallten pro 10'000 Einwohner"
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.acc_usv"
+msgstr "Unfälle mit Schwerverletzten"
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.canton"
+msgstr "Kanton"
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.population"
+msgstr "Einwohner"
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.year"
+msgstr "Jahr"
+
 msgid "ch.astra.skatingland"
 msgstr "Skatingland"
 
@@ -4250,11 +4352,13 @@ msgstr "Punktnummer"
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr "Gravimetrischer Atlas 100 - Papier"
 
+#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
-msgstr "Nr."
+msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
 
+#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
-msgstr "Titel"
+msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Grundwasservorkommen 500"
@@ -4740,7 +4844,7 @@ msgid "ch.swisstopo.sgtk"
 msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
-msgstr "Schneeschuh-/Skitouren 1:50 000"
+msgstr "Schneeschuh- und Skitourenkarten 1:50 000"
 
 msgid "ch.swisstopo.stk200-papierkarte.metadata"
 msgstr "Strassenkarte"
