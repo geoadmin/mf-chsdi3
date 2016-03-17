@@ -1,0 +1,39 @@
+{
+    "attributes": {
+        "map": {
+            "center": [
+                600000,
+                200000
+            ],
+            "dpi": 300,
+            "layers": [
+            /*{
+                "baseURL": "http://wms.geo.admin.ch",
+                "customParams": {"TRANSPARENT": "true"},
+                "imageFormat": "image/png",
+                "layers": ["ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"],
+                "opacity": 0.25,
+                "styles": ["default"],
+                "type": "WMS"
+            },*/
+{
+            "geoJson": "file://ressources/geol.gk500_lithologie_hauptgruppen.geojson",
+            style: "file://ressources/geol.gk500_lithologie_hauptgruppen_style.json",
+            "type": "geojson",
+            "renderAsSvg": true
+        }
+
+
+],
+            "projection": "EPSG:21781",
+            "rotation": 0,
+            "scale": 500000
+        },
+        "name": "Test big geojson rendered as SVG",
+        "printLegend": 0,
+        "scale": 300000
+    },
+    "layout": "Demo",
+     "outputFormat": "pdf"
+
+}

@@ -1,7 +1,7 @@
 # Variables
 APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''; else echo /$(APACHE_BASE_PATH); fi)
 APP_VERSION := $(shell python -c "print __import__('time').strftime('%s')")
-BASEWAR := print-servlet-2.0-SNAPSHOT-IMG-MAGICK.war
+BASEWAR := print-servlet-3.3-SNAPSHOT.war
 BRANCH_STAGING := $(shell if [ '$(DEPLOY_TARGET)' = 'dev' ]; then echo 'test'; else echo 'integration'; fi)
 BRANCH_TO_DELETE :=
 CURRENT_DIRECTORY := $(shell pwd)
@@ -13,7 +13,7 @@ INSTALL_DIRECTORY := .venv
 MODWSGI_USER := www-data
 NO_TESTS ?= withtests
 NODE_DIRECTORY := node_modules
-PRINT_INPUT := *.yaml *.png WEB-INF
+PRINT_INPUT := print-apps
 PRINT_OUTPUT_BASE := /srv/tomcat/tomcat1/webapps/print-chsdi3-$(APACHE_BASE_PATH)
 PRINT_OUTPUT := $(PRINT_OUTPUT_BASE).war
 PRINT_TEMP_DIR := /var/cache/print
@@ -95,6 +95,7 @@ help:
 	@echo "GEOADMINHOST:        ${GEOADMINHOST}"
 	@echo "GIT_BRANCH:          ${GIT_BRANCH}"
 	@echo "SERVER_PORT:         ${SERVER_PORT}"
+	@echo "PRINT_WAR:           ${PRINT_WAR}"
 	@echo
 
 .PHONY: all

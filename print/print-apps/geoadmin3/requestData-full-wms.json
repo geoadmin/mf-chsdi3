@@ -1,0 +1,52 @@
+{
+    "outputFormat": "pdf", 
+    "layout": "A4_landscape_template",
+    "attributes": {
+      "name": "",
+      "scale": 300000,
+      "url": "https://s.geo.admin.ch/68b21a36c4",
+      "qrimage":"http://dev.geoportail.lu/shorten/qr?url=http://g-o.lu/0mf4r",
+      "scalebar": {
+        "type": "line",
+        "fontSize": "8"
+      },
+      
+      "legend": {
+        "name": "",
+        "classes": [{
+          "name": "Hiking trails",
+          "icons": ["https://api3.geo.admin.ch/static/images/legends/ch.swisstopo.swisstlm3d-wanderwege_en.png"]
+        }, {
+          "name": "Alea",
+          "icons": ["https://api3.geo.admin.ch/static/images/legends/ch.blw.bodeneignung-vernaessung_en.png"]
+        }, {
+          "name": "Designated wildlife areas",
+          "icons": ["https://api3.geo.admin.ch/static/images/legends/ch.bafu.wrz-wildruhezonen_portal_en.png"]
+        }]
+      },
+      
+      "map": {
+        "center": [
+            600000,
+            200000
+        ],
+        "dpi": 300,
+        "layers": [
+            {
+                "baseURL": "http://wms.geo.admin.ch",
+                "customParams": {"TRANSPARENT": "true"},
+                "imageFormat": "image/png",
+                "layers": ["ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"],
+                "opacity": 1,
+                "styles": ["default"],
+                "type": "WMS"
+            }
+        ],
+        "projection": "EPSG:21781",
+        "rotation": 0,
+        "scale": 500000
+      },
+
+    "description": "A map showing..."
+    }
+}
