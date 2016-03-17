@@ -8,6 +8,7 @@ export GEODATA_STAGING=prod
 export GEOADMIN_FILE_STORAGE_BUCKET=public.geo.admin.ch
 export GEOADMINHOST=map.geo.admin.ch
 export HOST=api3.geo.admin.ch
+export KEEP_VERSION=true
 export MAPPROXYHOST=wmts20.geo.admin.ch
 export MODWSGI_CONFIG=production.ini
 export PRINT_WAR=main
