@@ -16,6 +16,8 @@ ExpiresActive on
 AddOutputFilterByType DEFLATE text/css
 AddOutputFilterByType DEFLATE application/x-javascript application/javascript application/json application/xml
 AddOutputFilterByType DEFLATE text/html text/plain text/xml
+# Default ogcproxy output
+AddOutputFilterByType DEFLATE application/vnd.google-earth.kml+xml
 
 # uncomment this if you need HTTP authentication/authorization to work (with
 # repoze.who or any other security toolkit), see the Apache mod_wsgi FAQ to
