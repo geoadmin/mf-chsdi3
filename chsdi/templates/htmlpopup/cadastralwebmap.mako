@@ -78,4 +78,38 @@
     % else:
         <tr><td class="cell-left">${_('link to canton geoportal')}</td><td>${_('Canton has provided no link to portal')}</td></tr>
     % endif
+    <%
+        import requests
+        import time
+        param_coord = request.params.get('coord')
+        coord = param_coord.split(',')
+        lat = coord[0]
+        lon = coord[1]
+        geodata = "http://geodata01.admin.ch/order/jPqrueQazrt/av_pdf.igs?pos=" + lat + '/' + lon
+
+        def get_url_data(url, max_tries=20):
+            for n in range(max_tries):
+                    r3 = requests.head(url)
+                    if r3.status_code == 200:
+                        return r3
+                    else:
+                      if n == max_tries - 1:
+                        raise
+                      time.sleep(.5)
+        r = requests.get(geodata)
+        if r.status_code == 200:
+           url = r.text.strip()
+           r2 = get_url_data(url)
+           pdf = True
+        elif r.text.strip() == 'no object found' :
+           pdf = False
+    %>
+    <tr>
+      <td class="cell-left">data</td>
+    % if pdf == True: 
+      <td><a href="${url}" target="_blank">PDF</a></td>
+    % elif pdf == False: 
+      <td>no pdf</td>
+    % endif
+    </tr>
 </%def>
