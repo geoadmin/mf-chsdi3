@@ -15,6 +15,64 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20160330:
+
+Release 20160330 - Wednesday, March 30th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160316...r_160330>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160316...r_160330>`__
+
+
+Geodata
+*******
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Accidents per inhabitant - Alcohol <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_alkohol>`__ (ch.astra.schwerverunfallte-kanton_alkohol)                         |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Accidents per inhabitant - Speeding <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_geschwindigkeit>`__ (ch.astra.schwerverunfallte-kanton_geschwindigkeit)        |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Accidents in the annual comparison <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_jahresvergleich>`__ (ch.astra.schwerverunfallte-kanton_jahresvergleich)         |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Accidents per inhabitant <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_pro_einwohner>`__ (ch.astra.schwerverunfallte-kanton_pro_einwohner)                       |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents with personal injury <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_alle>`__ (ch.astra.unfaelle-personenschaeden_alle)                                 |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a bicycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fahrraeder>`__ (ch.astra.unfaelle-personenschaeden_fahrraeder)                      |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a pedestrian <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fussgaenger>`__ (ch.astra.unfaelle-personenschaeden_fussgaenger)                 |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents with fatalities <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_getoetete>`__ (ch.astra.unfaelle-personenschaeden_getoetete)                            |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a motorcycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_motorraeder>`__ (ch.astra.unfaelle-personenschaeden_motorraeder)                 |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Messstandorte Gewässerzustand Bund <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser>`__ (ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser)   |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mirelandscapes AuLaV <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-aulav_moorlandschaften>`__ (ch.bafu.schutzgebiete-aulav_moorlandschaften)                                 |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Other protected areas AuLaV <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-aulav_uebrige>`__ (ch.bafu.schutzgebiete-aulav_uebrige)                                            |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `TBE: cluster <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                               |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `TBE: recommendation of vaccination <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-impfung>`__ (ch.bag.zecken-fsme-impfung)                                                       |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aeronautical Chart ICAO <//map.geo.admin.ch/?layers=ch.bazl.luftfahrtkarten-icao>`__ (ch.bazl.luftfahrtkarten-icao)                                                              |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Glider Chart <//map.geo.admin.ch/?layers=ch.bazl.segelflugkarte>`__ (ch.bazl.segelflugkarte)                                                                                     |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mil Airspace Chart <//map.geo.admin.ch/?layers=ch.vbs.milairspacechart>`__ (ch.vbs.milairspacechart)                                                                             |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20160316:
 
 Release 20160316 - Wednesday, March 16th 2016
