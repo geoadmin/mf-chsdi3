@@ -147,11 +147,7 @@ class OWSCheck(object):
         if isinstance(base_url, (str, unicode)) and isinstance(service, (str, unicode)):
             self.base_url = base_url
             self.service = service.upper()
-            if version:
-                self.version_given = True
-            else:
-                self.version_given = False
-                
+            self.version_given = bool(version)
             self.version = version
             self.version_requested = version
         else:
