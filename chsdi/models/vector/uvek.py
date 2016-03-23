@@ -260,6 +260,7 @@ class unf_pers_alle(Base, Vector):
     __template__ = 'templates/htmlpopup/astra_unfaelle.mako'
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_alle'
     __label__ = 'accidenttype_de'
+    __timeInstant__ = 'accidentyear'
     __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it', 'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it', 'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it', 'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it', 'roadtypecode', 'canton', 'fsocommunecode']
     id = Column('uuid', Integer, primary_key=True)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
@@ -293,6 +294,7 @@ class unf_pers_casualties(Base, Vector):
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_getoetete'
     # Translatable labels in fr, it
     __label__ = 'accidentday_de'
+    __timeInstant__ = 'accidentyear'
     __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it', 'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it', 'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it', 'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it', 'roadtypecode', 'canton', 'fsocommunecode']
     id = Column('uuid', Integer, primary_key=True)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
@@ -326,6 +328,7 @@ class unf_pers_fuss(Base, Vector):
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_fussgaenger'
     # Translatable labels in fr, it
     __label__ = 'accidenttype_de'
+    __timeInstant__ = 'accidentyear'
     __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it', 'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it', 'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it', 'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it', 'roadtypecode', 'canton', 'fsocommunecode']
 
     id = Column('uuid', Integer, primary_key=True)
@@ -360,6 +363,7 @@ class unf_pers_moto(Base, Vector):
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_motorraeder'
     # Translatable labels in fr, it
     __label__ = 'accidenttype_de'
+    __timeInstant__ = 'accidentyear'
     __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it', 'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it', 'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it', 'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it', 'roadtypecode', 'canton', 'fsocommunecode']
     id = Column('uuid', Integer, primary_key=True)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
@@ -393,6 +397,7 @@ class unf_pers_velo(Base, Vector):
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_fahrraeder'
     # Translatable labels in fr,it
     __label__ = 'accidentday_de'
+    __timeInstant__ = 'accidentyear'
     __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it', 'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it', 'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it', 'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it', 'roadtypecode', 'canton', 'fsocommunecode']
     id = Column('uuid', Integer, primary_key=True)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
