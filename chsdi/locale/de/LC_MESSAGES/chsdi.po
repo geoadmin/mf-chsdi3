@@ -4740,7 +4740,7 @@ msgid "ch.swisstopo.sgtk"
 msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
-msgstr "Schneeschuh-/Skitouren 1:50 000"
+msgstr "Schneeschuh- und Skitourenkarten 1:50 000"
 
 msgid "ch.swisstopo.stk200-papierkarte.metadata"
 msgstr "Strassenkarte"
@@ -6675,7 +6675,7 @@ msgid "tt_bafu_aulav_fm_typ"
 msgstr "Flachmoor"
 
 msgid "tt_bafu_aulav_hm_typ"
-msgstr "Hochmoorund Übergagngsmoor"
+msgstr "Hochmoor und Übergangsmoor"
 
 msgid "tt_bafu_aulav_jagdbanngebiete_general"
 msgstr "Aussenlandungen in Jagdbanngebieten sind unter Vorbehalt von Art. 19 Abs. 3, Art. 28 sowie Art. 46 Abs. 4 nicht zulässig. Aussenlandungen für die Abwehr von Naturgefahren, die Wald- und Landwirtschaft, die Versorgung öffentlich zugänglicher Hütten, für den Bau oder den Unterhalt von Bauten und Anlagen im öffentlichen Interesse,  Aussenlandungen und Schwebeflüge bei Ausbildungsflügen sowie Aussenlandungen im Auftrag der zuständigen kantonalen Behörden und von diesen Behördn bewilligte Aussenlandungen für den Bau oder Unterhalt von Bauten und Anlagen sind zulässig. Für Flüge zu anderen Arbeitszwecken gilt das Verbot nur vom 1. November bis zum 31. Juli."
