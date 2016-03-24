@@ -14,20 +14,52 @@ Base = bases['uvek']
 
 
 class OevHaltestellen (Base, Vector):
-    __tablename__ = 'oev_haltestellen'
+    __tablename__ = 'oev_haltestellen_tooltip'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/oev_haltestellen.mako'
     __bodId__ = 'ch.bav.haltestellen-oev'
     __label__ = 'name'
     __extended_info__ = True
     __queryable_attributes__ = ['id', 'name']
+    __returnedGeometry__ = 'the_geom_point'
     id = Column('nummer', Integer, primary_key=True)
     name = Column('name', Text)
     tuabkuerzung = Column('tuabkuerzung', Text)
     betriebspunkttyp = Column('betriebspunkttyp', Text)
     verkehrsmittel = Column('verkehrsmittel', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+    # polygon geometry spatial selection
+    the_geom = Column('bgdi_geom_poly', Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
+    # point geometry hilight
+    the_geom_point = Column('the_geom', Geometry(geometry_type='GEOMETRY',
+                                                               dimension=2, srid=21781))
+    __minscale__ = 1
+    __maxscale__ = 3000
+
+register('ch.bav.haltestellen-oev', OevHaltestellen)
+
+
+class OevHaltestellen (Base, Vector):
+    __tablename__ = 'oev_haltestellen_tooltip'
+    __table_args__ = ({'schema': 'bav', 'autoload': False,  'extend_existing': True})
+    __template__ = 'templates/htmlpopup/oev_haltestellen.mako'
+    __bodId__ = 'ch.bav.haltestellen-oev'
+    __label__ = 'name'
+    __extended_info__ = True
+    __queryable_attributes__ = ['id', 'name']
+    __returnedGeometry__ = 'the_geom_point'
+    id = Column('nummer', Integer, primary_key=True)
+    name = Column('name', Text)
+    tuabkuerzung = Column('tuabkuerzung', Text)
+    betriebspunkttyp = Column('betriebspunkttyp', Text)
+    verkehrsmittel = Column('verkehrsmittel', Text)
+    # polygon geometry spatial selection
+    the_geom = Column('bgdi_geom_poly_overview', Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+    # point geometry hilight
+    the_geom_point = Column('the_geom', Geometry(geometry_type='GEOMETRY',
+                                                               dimension=2, srid=21781))
+    __minscale__ = 3000
 
 register('ch.bav.haltestellen-oev', OevHaltestellen)
 
