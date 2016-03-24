@@ -14,6 +14,31 @@ Release Notes
 
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20160316:
+
+Release 20160330 - Wednesday, March 30th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160316...r_160330>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160316...r_160330>`__
+
+
+Geodata
+*******
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Messstandorte Gewäerzustand Bund <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser`__ (ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser)  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mil Airspace Chart <//map.geo.admin.ch/?layers=ch.vbs.milairspacechart>`__ (ch.vbs.milairspacechart)                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20160316:
 
