@@ -970,6 +970,15 @@ msgstr ""
 msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr ""
 
+msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.author"
+msgstr ""
+
 msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata"
 msgstr ""
 
@@ -1255,10 +1264,16 @@ msgstr ""
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.name_ads"
 msgstr ""
 
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr ""
 
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.release"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
@@ -2861,6 +2876,15 @@ msgid "ch.swisstopo.pixelkarte-pk500.metadata"
 msgstr ""
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
+msgstr ""
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.release"
 msgstr ""
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
@@ -5479,9 +5503,6 @@ msgid "format_de"
 msgstr ""
 
 msgid "autor"
-msgstr ""
-
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr ""
 
 msgid "kultur1"

@@ -4256,11 +4256,14 @@ msgstr "Punktnummer"
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr "Gravimetrischer Atlas 100 - Papier"
 
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
-msgstr "Nr."
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.name"
+msgstr "Name"
 
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
-msgstr "Titel"
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Grundwasservorkommen 500"
@@ -4559,6 +4562,15 @@ msgstr "Ausgabejahr"
 msgid "ch.swisstopo.lk25-papierkarte.metadata"
 msgstr "Landeskarte 1:25'000 Papier"
 
+msgid "ch.swisstopo.lk25-papierkarte.metadata.author"
+msgstr "Autor(en)"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
+msgstr "Nachführungsstand"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
+msgstr "ISBN-Nummer "
+
 msgid "ch.swisstopo.lk25-papierkarte.metadata.name"
 msgstr "Name"
 
@@ -4746,7 +4758,16 @@ msgid "ch.swisstopo.sgtk"
 msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
-msgstr "Schneeschuh-/Skitouren 1:50 000"
+msgstr "Schneeschuh- und Skitourenkarten 1:50 000"
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.stk200-papierkarte.metadata"
 msgstr "Strassenkarte"
