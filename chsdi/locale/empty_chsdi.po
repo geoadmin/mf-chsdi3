@@ -1477,6 +1477,108 @@ msgstr ""
 msgid "ch.astra.unfaelle-personenschaeden_alle"
 msgstr ""
 
+msgid "ch.astra.schwerverunfallte-kanton_alkohol"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.canton"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.year"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.population"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.accalcohol_ugt"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.accalcohol_usv"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.accalcohol_ugt_usv"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_alkohol.accalcohol_ugt_usv_perpopulation"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.canton"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.year"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.population"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.accspeed_ugt"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.accspeed_usv"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.accspeed_ugt_usv"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.accspeed_ugt_usv_perpopulation"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.canton"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.year"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_ugt"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_usv"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_ugt_usv"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_ugt_lastyear"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_usv_lastyear"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_ugt_usv_lastyear"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_ugt_usv_yearchangepercent"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.canton"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.year"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.population"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.acc_ugt"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.acc_usv"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.acc_ugt_usv"
+msgstr ""
+
+msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.acc_ugt_usv_perpopulation"
+msgstr ""
+
 msgid "astra_unf_acctype"
 msgstr ""
 
