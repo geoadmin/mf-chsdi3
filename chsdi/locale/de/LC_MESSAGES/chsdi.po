@@ -5130,7 +5130,7 @@ msgid "ch.swisstopo.sgtk"
 msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
-msgstr "Schneeschuh- und Skitourenkarten 1:50 000"
+msgstr "Schneeschuh-/Skitouren 1:50 000"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
 msgstr "Name"
