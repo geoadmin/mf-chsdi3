@@ -336,7 +336,7 @@ class Schwerverunf:
 class SchwerverunfKantonAlkohol(Base, Schwerverunf, Vector):
     __template__ = 'templates/htmlpopup/astra_schwerverunf_kanton_alkohol.mako'
     __bodId__ = 'ch.astra.schwerverunfallte-kanton_alkohol'
-    population = Column('population', Numeric)
+    population = Column('population', Integer)
     accalcohol_ugt = Column('accalcohol_ugt', Integer)
     accalcohol_usv = Column('accalcohol_usv', Integer)
     accalcohol_ugt_usv = Column('accalcohol_ugt_usv', Integer)
@@ -348,7 +348,7 @@ register('ch.astra.schwerverunfallte-kanton_alkohol', SchwerverunfKantonAlkohol)
 class SchwerverunfKantonGeschwindig(Base, Schwerverunf, Vector):
     __template__ = 'templates/htmlpopup/astra_schwerverunf_kanton_geschwindig.mako'
     __bodId__ = 'ch.astra.schwerverunfallte-kanton_geschwindigkeit'
-    population = Column('population', Numeric)
+    population = Column('population', Integer)
     accspeed_ugt = Column('accspeed_ugt', Integer)
     accspeed_usv = Column('accspeed_usv', Integer)
     accspeed_ugt_usv = Column('accspeed_ugt_usv', Integer)
@@ -374,7 +374,7 @@ register('ch.astra.schwerverunfallte-kanton_jahresvergleich', SchwerverunfKanton
 class SchwerverunfKantonProEinwohner(Base, Schwerverunf, Vector):
     __template__ = 'templates/htmlpopup/astra_schwerverunf_kanton_pro_einwohner.mako'
     __bodId__ = 'ch.astra.schwerverunfallte-kanton_pro_einwohner'
-    population = Column('population', Numeric)
+    population = Column('population', Integer)
     acc_ugt = Column('acc_ugt', Integer)
     acc_usv = Column('acc_usv', Integer)
     acc_ugt_usv = Column('acc_ugt_usv', Integer)
