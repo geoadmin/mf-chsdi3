@@ -388,6 +388,12 @@ msgstr ""
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink"
 msgstr ""
 
+msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink_daten"
+msgstr ""
+
+msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.xls"
+msgstr ""
+
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.betriebsbeginn"
 msgstr ""
 

@@ -124,6 +124,7 @@ class Daueruntersuchung_fliessgewaesser(Base, Vector):
     flussgebiet = Column('flussgebiet', Text)
     hyperlink_d = Column('hyperlink_d', Text)
     hyperlink_f = Column('hyperlink_f', Text)
+    hyperlink_daten = Column('hyperlink_daten', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 

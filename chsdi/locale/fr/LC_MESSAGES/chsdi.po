@@ -2120,6 +2120,9 @@ msgstr "Altitude de la station [m s.m.]"
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink"
 msgstr "Lien en français"
 
+msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink_daten"
+msgstr "Données historiques de la chimie des eaux (fichier Excel de l’EAWAG)"
+
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.mittlerehoehe"
 msgstr "Altitude moyenne [m s.m.]"
 
@@ -2134,6 +2137,9 @@ msgstr "Distance de l'embouchure ou de la frontière suisse [km]"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.vergletscherung"
 msgstr "Extension glacier [%]"
+
+msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.xls"
+msgstr "fichier Excel "
 
 msgid "ch.bafu.hydrologie-gewaesserzustandsmessstationen"
 msgstr "Mesure état des eaux CH"
