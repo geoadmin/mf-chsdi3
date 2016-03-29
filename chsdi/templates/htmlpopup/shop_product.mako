@@ -18,23 +18,28 @@
         if ap in c['attributes']:
             if c['attributes'][ap]:
                 attr.append(ap)
-    rowspan = len(attr)
+    rowspan = len(attr) + 1
 %>
 % for a in attr:
+  <tr style="height: 25px;">
   % if attr.index(a) == 0:
-    <tr>
-      <td height=10 class=\"cell-left\">${_('ch.swisstopo.lk25-papierkarte.metadata.%s' % a)}</td>
-      <td>${c['attributes'][a]}</td> <td rowspan=${rowspan}><img src="${image}" height="150" width="102" align="right"></td>
-    </tr>
+    <td class="cell-left">${_('ch.swisstopo.lk25-papierkarte.metadata.%s' % a)}</td>
+    <td>${c['attributes'][a]}</td>
+    <td rowspan=${rowspan}><img src="${image}" height="150" width="102" align="right"></td>
   % else:
-    <tr>
-      <td valign="top" class="cell-left">${_('ch.swisstopo.lk25-papierkarte.metadata.%s' % a)}</td>
-      <td valign="top">${c['attributes'][a]}</td>
-    </tr>
+    <td valign="top" class="cell-left">${_('ch.swisstopo.lk25-papierkarte.metadata.%s' % a)}</td>
+    <td valign="top">${c['attributes'][a]}</td>
   % endif
+  </tr>
 % endfor
+  <tr style="height: 100%;">
+    <td></td>
 % if c['attributes']['available'] == False:
-  <tr><td></td><td valign="top">_('shop_availability')</td></tr>
+    <td valign="top">${_('shop_availability')}
+% else:
+    <td valign="top">
 % endif
+    </td>
+  </tr>
 
 </%def>
