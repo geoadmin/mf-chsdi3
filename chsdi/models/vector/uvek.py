@@ -254,174 +254,72 @@ class ZAEHLSTELLENUEBER(Base, Vector):
 register('ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet', ZAEHLSTELLENUEBER)
 
 
-class unf_pers_alle(Base, Vector):
+class Unf:
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/astra_unfaelle.mako'
+    __label__ = 'accidenttype_de'
+    __timeInstant__ = 'accidentyear'
+    __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it',
+                                'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it',
+                                'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it',
+                                'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it',
+                                'roadtypecode', 'canton', 'fsocommunecode']
+    id = Column('uuid', Integer, primary_key=True)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+    accidenttype_de = Column('accidenttype_de', Text)
+    accidenttype_fr = Column('accidenttype_fr', Text)
+    accidenttype_it = Column('accidenttype_it', Text)
+    accidenttypecode = Column('accidenttypecode', Integer)
+    accidentday_de = Column('accidentday_de', Text)
+    accidentday_fr = Column('accidentday_fr', Text)
+    accidentday_it = Column('accidentday_it', Text)
+    accidentyear = Column('accidentyear', Integer)
+    severitycategory_de = Column('severitycategory_de', Text)
+    severitycategory_fr = Column('severitycategory_fr', Text)
+    severitycategory_it = Column('severitycategory_it', Text)
+    severitycategorycode = Column('severitycategorycode', Text)
+    roadtype_de = Column('roadtype_de', Text)
+    roadtype_fr = Column('roadtype_fr', Text)
+    roadtype_it = Column('roadtype_it', Text)
+    roadtypecode = Column('roadtypecode', Integer)
+    canton = Column('canton', Text)
+    fsocommunecode = Column('fsocommunecode', Text)
+
+
+class UnfPersAlle(Base, Unf, Vector):
     __tablename__ = 'unf_pers_alle'
-    __table_args__ = ({'schema': 'astra', 'autoload': False})
-    __template__ = 'templates/htmlpopup/astra_unfaelle.mako'
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_alle'
-    __label__ = 'accidenttype_de'
-    __timeInstant__ = 'accidentyear'
-    __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it', 'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it', 'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it', 'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it', 'roadtypecode', 'canton', 'fsocommunecode']
-    id = Column('uuid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
-    accidenttype_de = Column('accidenttype_de', Text)
-    accidenttype_fr = Column('accidenttype_fr', Text)
-    accidenttype_it = Column('accidenttype_it', Text)
-    accidenttypecode = Column('accidenttypecode', Integer)
-    accidentday_de = Column('accidentday_de', Text)
-    accidentday_fr = Column('accidentday_fr', Text)
-    accidentday_it = Column('accidentday_it', Text)
-    accidentyear = Column('accidentyear', Integer)
-    severitycategory_de = Column('severitycategory_de', Text)
-    severitycategory_fr = Column('severitycategory_fr', Text)
-    severitycategory_it = Column('severitycategory_it', Text)
-    severitycategorycode = Column('severitycategorycode', Text)
-    roadtype_de = Column('roadtype_de', Text)
-    roadtype_fr = Column('roadtype_fr', Text)
-    roadtype_it = Column('roadtype_it', Text)
-    roadtypecode = Column('roadtypecode', Integer)
-    canton = Column('canton', Text)
-    fsocommunecode = Column('fsocommunecode', Text)
 
-register('ch.astra.unfaelle-personenschaeden_alle', unf_pers_alle)
+register('ch.astra.unfaelle-personenschaeden_alle', UnfPersAlle)
 
 
-class unf_pers_casualties(Base, Vector):
+class UnfPersCasualties(Base, Unf, Vector):
     __tablename__ = 'unf_pers_getoetete'
-    __table_args__ = ({'schema': 'astra', 'autoload': False})
-    __template__ = 'templates/htmlpopup/astra_unfaelle.mako'
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_getoetete'
-    # Translatable labels in fr, it
-    __label__ = 'accidentday_de'
-    __timeInstant__ = 'accidentyear'
-    __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it', 'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it', 'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it', 'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it', 'roadtypecode', 'canton', 'fsocommunecode']
-    id = Column('uuid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
-    accidenttype_de = Column('accidenttype_de', Text)
-    accidenttype_fr = Column('accidenttype_fr', Text)
-    accidenttype_it = Column('accidenttype_it', Text)
-    accidenttypecode = Column('accidenttypecode', Integer)
-    accidentday_de = Column('accidentday_de', Text)
-    accidentday_fr = Column('accidentday_fr', Text)
-    accidentday_it = Column('accidentday_it', Text)
-    accidentyear = Column('accidentyear', Integer)
-    severitycategory_de = Column('severitycategory_de', Text)
-    severitycategory_fr = Column('severitycategory_fr', Text)
-    severitycategory_it = Column('severitycategory_it', Text)
-    severitycategorycode = Column('severitycategorycode', Text)
-    roadtype_de = Column('roadtype_de', Text)
-    roadtype_fr = Column('roadtype_fr', Text)
-    roadtype_it = Column('roadtype_it', Text)
-    roadtypecode = Column('roadtypecode', Integer)
-    canton = Column('canton', Text)
-    fsocommunecode = Column('fsocommunecode', Text)
 
-register('ch.astra.unfaelle-personenschaeden_getoetete', unf_pers_casualties)
+register('ch.astra.unfaelle-personenschaeden_getoetete', UnfPersCasualties)
 
 
-class unf_pers_fuss(Base, Vector):
+class UnfPersFuss(Base, Unf, Vector):
     __tablename__ = 'unf_pers_fussgaenger'
-    __table_args__ = ({'schema': 'astra', 'autoload': False})
-    __template__ = 'templates/htmlpopup/astra_unfaelle.mako'
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_fussgaenger'
-    # Translatable labels in fr, it
-    __label__ = 'accidenttype_de'
-    __timeInstant__ = 'accidentyear'
-    __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it', 'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it', 'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it', 'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it', 'roadtypecode', 'canton', 'fsocommunecode']
 
-    id = Column('uuid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
-    accidenttype_de = Column('accidenttype_de', Text)
-    accidenttype_fr = Column('accidenttype_fr', Text)
-    accidenttype_it = Column('accidenttype_it', Text)
-    accidenttypecode = Column('accidenttypecode', Integer)
-    accidentday_de = Column('accidentday_de', Text)
-    accidentday_fr = Column('accidentday_fr', Text)
-    accidentday_it = Column('accidentday_it', Text)
-    accidentyear = Column('accidentyear', Integer)
-    severitycategory_de = Column('severitycategory_de', Text)
-    severitycategory_fr = Column('severitycategory_fr', Text)
-    severitycategory_it = Column('severitycategory_it', Text)
-    severitycategorycode = Column('severitycategorycode', Text)
-    roadtype_de = Column('roadtype_de', Text)
-    roadtype_fr = Column('roadtype_fr', Text)
-    roadtype_it = Column('roadtype_it', Text)
-    roadtypecode = Column('roadtypecode', Integer)
-    canton = Column('canton', Text)
-    fsocommunecode = Column('fsocommunecode', Text)
-
-register('ch.astra.unfaelle-personenschaeden_fussgaenger', unf_pers_fuss)
+register('ch.astra.unfaelle-personenschaeden_fussgaenger', UnfPersFuss)
 
 
-class unf_pers_moto(Base, Vector):
+class UnfPersMoto(Base, Unf, Vector):
     __tablename__ = 'unf_pers_motorraeder'
-    __table_args__ = ({'schema': 'astra', 'autoload': False})
-    __template__ = 'templates/htmlpopup/astra_unfaelle.mako'
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_motorraeder'
-    # Translatable labels in fr, it
-    __label__ = 'accidenttype_de'
-    __timeInstant__ = 'accidentyear'
-    __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it', 'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it', 'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it', 'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it', 'roadtypecode', 'canton', 'fsocommunecode']
-    id = Column('uuid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
-    accidenttype_de = Column('accidenttype_de', Text)
-    accidenttype_fr = Column('accidenttype_fr', Text)
-    accidenttype_it = Column('accidenttype_it', Text)
-    accidenttypecode = Column('accidenttypecode', Integer)
-    accidentday_de = Column('accidentday_de', Text)
-    accidentday_fr = Column('accidentday_fr', Text)
-    accidentday_it = Column('accidentday_it', Text)
-    accidentyear = Column('accidentyear', Integer)
-    severitycategory_de = Column('severitycategory_de', Text)
-    severitycategory_fr = Column('severitycategory_fr', Text)
-    severitycategory_it = Column('severitycategory_it', Text)
-    severitycategorycode = Column('severitycategorycode', Text)
-    roadtype_de = Column('roadtype_de', Text)
-    roadtype_fr = Column('roadtype_fr', Text)
-    roadtype_it = Column('roadtype_it', Text)
-    roadtypecode = Column('roadtypecode', Integer)
-    canton = Column('canton', Text)
-    fsocommunecode = Column('fsocommunecode', Text)
 
-register('ch.astra.unfaelle-personenschaeden_motorraeder', unf_pers_moto)
+register('ch.astra.unfaelle-personenschaeden_motorraeder', UnfPersMoto)
 
 
-class unf_pers_velo(Base, Vector):
+class UnfPersVelo(Base, Unf, Vector):
     __tablename__ = 'unf_pers_fahrraeder'
-    __table_args__ = ({'schema': 'astra', 'autoload': False})
-    __template__ = 'templates/htmlpopup/astra_unfaelle.mako'
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_fahrraeder'
-    # Translatable labels in fr,it
-    __label__ = 'accidentday_de'
-    __timeInstant__ = 'accidentyear'
-    __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it', 'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it', 'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it', 'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it', 'roadtypecode', 'canton', 'fsocommunecode']
-    id = Column('uuid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
-    accidenttype_de = Column('accidenttype_de', Text)
-    accidenttype_fr = Column('accidenttype_fr', Text)
-    accidenttype_it = Column('accidenttype_it', Text)
-    accidenttypecode = Column('accidenttypecode', Integer)
-    accidentday_de = Column('accidentday_de', Text)
-    accidentday_fr = Column('accidentday_fr', Text)
-    accidentday_it = Column('accidentday_it', Text)
-    accidentyear = Column('accidentyear', Integer)
-    severitycategory_de = Column('severitycategory_de', Text)
-    severitycategory_fr = Column('severitycategory_fr', Text)
-    severitycategory_it = Column('severitycategory_it', Text)
-    severitycategorycode = Column('severitycategorycode', Text)
-    roadtype_de = Column('roadtype_de', Text)
-    roadtype_fr = Column('roadtype_fr', Text)
-    roadtype_it = Column('roadtype_it', Text)
-    roadtypecode = Column('roadtypecode', Integer)
-    canton = Column('canton', Text)
-    fsocommunecode = Column('fsocommunecode', Text)
 
-register('ch.astra.unfaelle-personenschaeden_fahrraeder', unf_pers_velo)
+register('ch.astra.unfaelle-personenschaeden_fahrraeder', UnfPersVelo)
 
 
 class Schwerverunf:
