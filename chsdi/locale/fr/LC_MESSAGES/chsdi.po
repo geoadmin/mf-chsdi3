@@ -4352,13 +4352,11 @@ msgstr "No de Point"
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
 msgstr "Atlas gravimétrique 100 - papier"
 
-#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
-msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.id"
+msgstr "N°"
 
-#. TODO
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
-msgstr "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
+msgstr "Titre"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Réservoirs aquifères 500"
@@ -4385,7 +4383,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.name_ads"
 msgstr "Localité"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
-msgstr "Cartes géol. spéciales - papier"
+msgstr "Cartes géologiques spéciales"
 
 msgid "ch.swisstopo.geologie-tektonische_karte"
 msgstr "Tectonique 500"
@@ -4601,7 +4599,7 @@ msgid "ch.swisstopo.lhk100-papierkarte.metadata.release"
 msgstr "Édition"
 
 msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata"
-msgstr "Carte nationale 1:100'000 Ass. papier"
+msgstr "Carte nationale 1:100'000 Assembl."
 
 msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.name"
 msgstr "Nom"
@@ -4643,7 +4641,7 @@ msgid "ch.swisstopo.lk200-papierkarte.metadata.release"
 msgstr "Édition"
 
 msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata"
-msgstr "Carte nationale 1:25'000 Ass. papier"
+msgstr "Carte nationale 1:25'000 Assemblage"
 
 msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.name"
 msgstr "Nom"
@@ -4673,7 +4671,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Echelle"
 
 msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata"
-msgstr "Carte nationale 1:50'000 Ass. papier"
+msgstr "Carte nationale 1:50'000 Assemblage"
 
 msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.name"
 msgstr "Nom"
