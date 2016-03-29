@@ -1,9 +1,5 @@
 <%inherit file="base.mako"/>
 <%def name="table_body(c, lang)">
-<%
-   import locale
-   locale.setlocale(locale.LC_ALL, 'fr_CH.utf-8')
-%>
    <colgroup>
       <col width=80%>
       <col width=20%>
