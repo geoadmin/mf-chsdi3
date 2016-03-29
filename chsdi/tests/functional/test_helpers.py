@@ -52,7 +52,7 @@ class Test_Helpers(unittest.TestCase):
         test_result = resource_exists(test_path)
         self.assertTrue(test_result)
 
-        test_path2 = 'http://dummy.com'
+        test_path2 = 'http://dummy.ch'
         test_result2 = resource_exists(test_path2)
         self.assertTrue(test_result2)
 
@@ -91,7 +91,7 @@ class Test_Helpers(unittest.TestCase):
         except Exception as e:
             self.assertTrue(isinstance(e, HTTPBadRequest))
 
-        url = 'http://dummy.com'
+        url = 'http://dummy.ch'
 
         try:
             check_url(url, config)
