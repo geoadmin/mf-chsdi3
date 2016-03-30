@@ -2490,10 +2490,13 @@ msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hoehe"
 msgstr "Altitude de la station [m s.m.]"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink"
-msgstr "Lien en français"
+msgstr "Lien"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink_daten"
 msgstr "Données historiques de la chimie des eaux (fichier Excel de l’EAWAG)"
+
+msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink_name"
+msgstr "Données actuelles et historiques"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.mittlerehoehe"
 msgstr "Altitude moyenne [m s.m.]"
