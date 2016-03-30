@@ -326,7 +326,6 @@ apache/wsgi.conf.in:
 apache/wsgi.conf: apache/wsgi.conf.in apache/application.wsgi
 	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
 	${MAKO_CMD} \
-		--var "app_version=$(APP_VERSION)" \
 		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
 		--var "apache_base_path=$(APACHE_BASE_PATH)" \
 		--var "robots_file=$(ROBOTS_FILE)" \
