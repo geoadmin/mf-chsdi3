@@ -13,6 +13,11 @@
     else :
         url = 'hyperlink_d'
 %>
+<style>
+.cell-left {
+  width: 200px !important; 
+}
+</style>
     <tr>
       <td class="cell-left">${_('ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.name')}</td>
       <td>${c['attributes']['name'] or '-'}</td>
@@ -34,7 +39,7 @@
       <td>${c['attributes']['einzugsgebietsflaeche'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_('ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink')}</td>
+      <td class="cell-left">${_('ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink_name')}</td>
       <td><a href="${c['attributes'][url] or '-'}" target="_blank">${_('ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink')}</a></td>
     </tr>
     <tr>
@@ -100,7 +105,7 @@
     <td class="cell-meta">${c['attributes']['vergletscherung'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${_('ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink')}</td>
+    <td class="cell-meta">${_('ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink_name')}</td>
     <td class="cell-meta"><a href="${c['attributes'][url] or '-'}" target="_blank">${_('ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hyperlink')}</a></td>
   </tr>
   <tr>
