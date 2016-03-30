@@ -344,3 +344,15 @@ def format_price(price):
     price_2dec = format(price_float, '.2f')
     price = "CHF " + str(price_2dec)
     return price
+
+
+def int_with_apostrophe(x):
+    if type(x) not in [type(0), type(0L)]:
+        return '-'
+    if x < 0:
+        return '-' + int_with_apostrophe(-x)
+    result = ''
+    while x >= 1000:
+        x, r = divmod(x, 1000)
+        result = "'%03d%s" % (r, result)
+    return "%d%s" % (x, result)
