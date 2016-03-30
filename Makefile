@@ -104,7 +104,7 @@ all: setup chsdi/static/css/extended.min.css templates potomo rss lint fixrights
 
 setup: .venv gdal node_modules
 
-templates: apache/wsgi.conf apache/tomcat-print.conf print/WEB-INF/web.xml development.ini production.ini
+templates: .venv/last-version apache/wsgi.conf apache/tomcat-print.conf print/WEB-INF/web.xml development.ini production.ini
 
 .PHONY: user
 user:
@@ -326,7 +326,6 @@ apache/wsgi.conf.in:
 apache/wsgi.conf: apache/wsgi.conf.in apache/application.wsgi
 	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
 	${MAKO_CMD} \
-		--var "app_version=$(APP_VERSION)" \
 		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
 		--var "apache_base_path=$(APACHE_BASE_PATH)" \
 		--var "robots_file=$(ROBOTS_FILE)" \
@@ -386,6 +385,9 @@ requirements.txt:
 	fi
 	${PYTHON_CMD} setup.py develop
 	${PIP_CMD} install Pillow==3.1.0
+
+.venv/last-version:
+	test $(VERSION) != $(LAST_VERSION) && echo $(VERSION) > .venv/last-version || :
 
 package.json:
 	@echo "${GREEN}File package.json has changed${RESET}";
