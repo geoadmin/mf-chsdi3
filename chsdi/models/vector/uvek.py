@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer, Date, DateTime, ForeignKey
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, remote
 from sqlalchemy.types import Numeric
 from geoalchemy2.types import Geometry
 from sqlalchemy.dialects import postgresql
@@ -13,26 +13,43 @@ from chsdi.models.vector import Vector
 Base = bases['uvek']
 
 
-class OevHaltestellen (Base, Vector):
-    __tablename__ = 'oev_haltestellen'
-    __table_args__ = ({'schema': 'bav', 'autoload': False})
+class OevHaltestellen:
+    __tablename__ = 'oev_haltestellen_tooltip'
+    __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/oev_haltestellen.mako'
     __bodId__ = 'ch.bav.haltestellen-oev'
     __label__ = 'name'
     __extended_info__ = True
     __queryable_attributes__ = ['id', 'name']
+    __returnedGeometry__ = 'the_geom_point'
     id = Column('nummer', Integer, primary_key=True)
     name = Column('name', Text)
     tuabkuerzung = Column('tuabkuerzung', Text)
     betriebspunkttyp = Column('betriebspunkttyp', Text)
     verkehrsmittel = Column('verkehrsmittel', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+    # point geometry hilight
+    the_geom_point = Column('the_geom', Geometry(geometry_type='GEOMETRY',
+                                                               dimension=2, srid=21781))
+
+
+class OevHaltestellenZoom1(Base, OevHaltestellen, Vector):
+    __minscale__ = 1
+    __maxscale__ = 3000
+    the_geom = Column('bgdi_geom_poly', Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
-register('ch.bav.haltestellen-oev', OevHaltestellen)
+register('ch.bav.haltestellen-oev', OevHaltestellenZoom1)
 
 
-class OevDepartures (Base):
+class OevHaltestellenZoom2(Base, OevHaltestellen, Vector):
+    __minscale__ = 3000
+    the_geom = Column('bgdi_geom_poly_overview', Geometry(geometry_type='GEOMETRY',
+                                       dimension=2, srid=21781))
+
+register('ch.bav.haltestellen-oev', OevHaltestellenZoom2)
+
+
+class OevDepartures(Base):
     __tablename__ = 'oev_departures'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/oev_departures.mako'
@@ -42,14 +59,13 @@ class OevDepartures (Base):
     stop = Column('stop', Integer)
     time = Column('time', DateTime)
     label = Column('label', Text)
-    destination = Column('destination', Text,
-                         ForeignKey(OevHaltestellen.name))
     type = Column('type', Integer)
     via = Column('via', Text)
-    haltestelle = relationship(OevHaltestellen,
-                               primaryjoin=destination == OevHaltestellen.name)
-
-register('ch.bav.departures-oev', OevDepartures)
+    destination = Column('destination', Text,
+                         ForeignKey(OevHaltestellenZoom1.name))
+    haltestelle = relationship(OevHaltestellenZoom1,
+                               primaryjoin=destination == remote(OevHaltestellenZoom1.name),
+                               viewonly=True)
 
 
 # IVS NAT and REG use the same template
