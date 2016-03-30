@@ -2484,7 +2484,7 @@ msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.flussgebiet"
 msgstr "Flussgebiet"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hochwert"
-msgstr "Koordinate Y"
+msgstr "Koordinaten Y"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.hoehe"
 msgstr "Stationshöhe [m ü.M.]"
