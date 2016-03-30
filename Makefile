@@ -1,8 +1,8 @@
 # Variables
 APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''; else echo /$(APACHE_BASE_PATH); fi)
 KEEP_VERSION ?= 'false'
-LAST_APP_VERSION := $(shell if [ -f '.venv/last-version' ]; then cat .venv/last-version 2> /dev/null; else echo '-none-'; fi)
-APP_VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '-none-' ]; then echo $(LAST_APP_VERSION); else python -c "print __import__('time').strftime('%s')"; fi)
+LAST_VERSION := $(shell if [ -f '.venv/last-version' ]; then cat .venv/last-version 2> /dev/null; else echo '-none-'; fi)
+VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '-none-' ]; then echo $(LAST_VERSION); else python -c "print __import__('time').strftime('%s')"; fi)
 BASEWAR := print-servlet-2.0-SNAPSHOT-IMG-MAGICK.war
 BRANCH_STAGING := $(shell if [ '$(DEPLOY_TARGET)' = 'dev' ]; then echo 'test'; else echo 'integration'; fi)
 BRANCH_TO_DELETE :=
@@ -238,17 +238,17 @@ printconfig:
 .PHONY: printwar
 printwar: printconfig print/WEB-INF/web.xml.in
 	cd print && \
-	mkdir temp_$(APP_VERSION) && \
+	mkdir temp_$(VERSION) && \
 	echo "${GREEN}Updating print war...${RESET}" && \
-	cp -f ${BASEWAR} temp_$(APP_VERSION)/print-chsdi3-$(APACHE_BASE_PATH).war && \
-	cp -fr ${PRINT_INPUT} temp_$(APP_VERSION)/ && \
-	cd temp_$(APP_VERSION) && \
+	cp -f ${BASEWAR} temp_$(VERSION)/print-chsdi3-$(APACHE_BASE_PATH).war && \
+	cp -fr ${PRINT_INPUT} temp_$(VERSION)/ && \
+	cd temp_$(VERSION) && \
 	jar uf print-chsdi3-$(APACHE_BASE_PATH).war ${PRINT_INPUT} && \
 	echo "${GREEN}Print war creation was successful.${RESET}" && \
 	rm -rf $(PRINT_OUTPUT) $(PRINT_OUTPUT_BASE) && \
 	cp -f print-chsdi3-$(APACHE_BASE_PATH).war $(PRINT_OUTPUT) && chmod 666 $(PRINT_OUTPUT) && cd .. && \
 	echo "${GREEN}Removing temp directory${RESET}" && \
-	rm -rf temp_$(APP_VERSION) && \
+	rm -rf temp_$(VERSION) && \
 	echo "${GREEN}Restarting tomcat...${RESET}" && \
 	sudo /etc/init.d/tomcat-tomcat1 restart && \
 	echo "${GREEN}It may take a few seconds for $(PRINT_OUTPUT_BASE) directory to appear...${RESET}";
@@ -343,7 +343,7 @@ development.ini.in:
 development.ini: development.ini.in
 	@echo "${GREEN}Creating development.ini....${RESET}";
 	${MAKO_CMD} \
-		--var "app_version=$(APP_VERSION)" \
+		--var "app_version=$(VERSION)" \
 		--var "server_port=$(SERVER_PORT)" $< > $@
 
 production.ini.in:
@@ -351,7 +351,7 @@ production.ini.in:
 production.ini: production.ini.in
 	@echo "${GREEN}Creating production.ini...${RESET}";
 	${MAKO_CMD} \
-		--var "app_version=$(APP_VERSION)" \
+		--var "app_version=$(VERSION)" \
 		--var "server_port=$(SERVER_PORT)" \
 		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
 		--var "apache_base_path=$(APACHE_BASE_PATH)" \
@@ -386,7 +386,8 @@ requirements.txt:
 	${PYTHON_CMD} setup.py develop
 	${PIP_CMD} install Pillow==3.1.0
 
-.venv/last-version:
+.venv/last-version::
+	mkdir -p $(dir $@)
 	test $(VERSION) != $(LAST_VERSION) && echo $(VERSION) > .venv/last-version || :
 
 package.json:
