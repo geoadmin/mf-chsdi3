@@ -556,13 +556,22 @@ def releases(request):
 
     # Default timestamp
     timestamps = []
+    timestamps_bgdi_ordered = {}
     minYear = 9999
+    # group timestamps by bgdi_order
     for f in _get_features_for_filters(params, [models]):
-        if hasattr(f, 'release_year') and f.release_year is not None:
-            for x in f.release_year:
-                if int(x) < minYear:
-                    timestamps.append(str(x))
-                    minYear = int(x)
+        if hasattr(f, 'release_year') and f.release_year is not None and hasattr(f, 'bgdi_order') and f.bgdi_order is not None:
+            if f.bgdi_order in timestamps_bgdi_ordered:
+                for year in f.release_year:
+                    timestamps_bgdi_ordered[f.bgdi_order].append(year)
+            else:
+                timestamps_bgdi_ordered[f.bgdi_order] = f.release_year
+
+    for key, values in timestamps_bgdi_ordered.items():
+        for x in sorted(set(values), reverse=True):
+            if int(x) < minYear:
+                timestamps.append(str(x))
+                minYear = int(x)
 
     if len(timestamps) > 0:
         # remove duplicates
