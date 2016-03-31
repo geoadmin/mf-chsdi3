@@ -327,7 +327,6 @@ class Search(SearchValidation):
             'gg25': 2,
             'district': 3,
             'kantone': 4,
-            'sn25': 5,
             'gazetteer': 5,
             'address': 6,
             'parcel': 10
