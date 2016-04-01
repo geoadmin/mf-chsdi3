@@ -290,6 +290,8 @@ def _get_features(params, extended=False):
             profileName = params.request.registry.settings['vector_profilename']
             bucket = get_bucket(profile_name=profileName, bucket_name=bucketName)
             # By convention
+            if featureId.find('_') == -1:
+                raise exc.HTTPBadRequest('Unexpected id formatting')
             col, row = featureId.split('_')
             grid = Grid(gridSpec.get('extent'),
                         gridSpec.get('resolutionX'),
