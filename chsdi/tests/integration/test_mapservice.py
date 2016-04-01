@@ -741,7 +741,7 @@ class TestReleasesService(TestsBase):
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertTrue(len(resp.json['results']) >= 26, len(resp.json['results']))
+        self.assertTrue(len(resp.json['results']) >= 22, len(resp.json['results']))
 
     # Test cases Oftringen by Kerngruppe Zeitreise
     def test_scale_100000(self):
