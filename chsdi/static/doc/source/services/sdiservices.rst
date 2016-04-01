@@ -529,7 +529,7 @@ Only RESTFul interface is available.
 | **returnGeometry (optional)**       | This parameter defines whether the geometry is returned or not. Default to "true".        |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **origins (optional)**              | A comma separated list of origins. Possible origins are:                                  |
-|                                     | zipcode,gg25,district,kantone,sn25,address,parcel                                         |
+|                                     | zipcode,gg25,district,kantone,gazetteer,address,parcel                                    |
 |                                     | A description of the origins can be found hereunder. Per default all origins are used.    |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **limit (optional)**                | The maximum number of results to retrive per request (Max and default limit=50)           |
@@ -620,7 +620,7 @@ Here is a list of possible origins sorted in ascending ranking order:
 - gg25 (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill)
 - district (ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)
 - kantone (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)
-- sn25 (ch.swisstopo.vec200-names-namedlocation, note that this layer is an approximation of what can be found in the locations search)
+- gazetteer (ch.swisstopo.swissnames3d, ch.bav.haltestellen-oev)
 - address (ch.bfs.gebaeude_wohnungs_register with EGID or use prefix 'addresse', 'adresse', 'indirizzo', 'address' without EGID)
 - parcel (use prefix "parcel", "parzelle", "parcelle" or "parcella" in your requests to filter out other origins)
 
