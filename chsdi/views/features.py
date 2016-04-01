@@ -22,6 +22,7 @@ from chsdi.models.bod import OerebMetadata, get_bod_model
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
 PROTECTED_GEOMETRY_LAYERS = ['ch.bfs.gebaeude_wohnungs_register']
+MAX_FEATURES = 201
 
 
 # For several features
@@ -261,7 +262,7 @@ def _identify(request):
     if models is None:
         raise exc.HTTPBadRequest('No GeoTable was found for %s' % ' '.join(layerIds))
 
-    maxFeatures = 201
+    maxFeatures = MAX_FEATURES
     features = []
     feature_gen = _get_features_for_filters(params, models, maxFeatures=maxFeatures, where=params.where)
     while True:
@@ -400,22 +401,17 @@ def _get_features_for_filters(params, models, maxFeatures=None, where=None):
             # This probably needs refactoring...
             if where is not None or geomFilter is not None:
                 # TODO remove layer specific code
-                if model.__bodId__ == 'ch.swisstopo.zeitreihen':
+                if model.__bodId__ == 'ch.swisstopo.zeitreihen' and maxFeatures == MAX_FEATURES:
                     # standard identify show first bgdi_order only
-                    if maxFeatures == 201:
-                        counter = 0
-                        bgdi_order = 0
-                        for feature in query:
-                            counter += 1
-                            if counter > 1:
-                                if bgdi_order < feature.bgdi_order:
-                                    continue
-                            bgdi_order = feature.bgdi_order
-                            yield feature
-                    else:
-                        # release service has the same bod_id now and uses maxfeatures=1000, return all features in that case
-                        for feature in query:
-                            yield feature
+                    counter = 0
+                    bgdi_order = 0
+                    for feature in query:
+                        counter += 1
+                        if counter > 1:
+                            if bgdi_order < feature.bgdi_order:
+                                continue
+                        bgdi_order = feature.bgdi_order
+                        yield feature
                 else:
                     for feature in query:
                         yield feature
