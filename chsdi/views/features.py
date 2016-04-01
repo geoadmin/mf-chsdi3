@@ -401,15 +401,21 @@ def _get_features_for_filters(params, models, maxFeatures=None, where=None):
             if where is not None or geomFilter is not None:
                 # TODO remove layer specific code
                 if model.__bodId__ == 'ch.swisstopo.zeitreihen':
-                    counter = 0
-                    bgdi_order = 0
-                    for feature in query:
-                        counter += 1
-                        if counter > 1:
-                            if bgdi_order < feature.bgdi_order:
-                                continue
-                        bgdi_order = feature.bgdi_order
-                        yield feature
+                    # standard identify show first bgdi_order only
+                    if maxFeatures == 201:
+                        counter = 0
+                        bgdi_order = 0
+                        for feature in query:
+                            counter += 1
+                            if counter > 1:
+                                if bgdi_order < feature.bgdi_order:
+                                    continue
+                            bgdi_order = feature.bgdi_order
+                            yield feature
+                    else:
+                        # release service has the same bod_id now and uses maxfeatures=1000, return all features in that case
+                        for feature in query:
+                            yield feature
                 else:
                     for feature in query:
                         yield feature
@@ -550,7 +556,7 @@ def releases(request):
     # on specially sorted views. We add the _meta part to the given
     # layer name
     # Note that only zeitreihen is currently supported for this service
-    models = models_from_bodid(params.layer + '_meta')
+    models = models_from_bodid(params.layer)
     if models is None:
         raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layer)
 
@@ -559,13 +565,13 @@ def releases(request):
     timestamps_bgdi_ordered = {}
     minYear = 9999
     # group timestamps by bgdi_order
-    for f in _get_features_for_filters(params, [models]):
-        if hasattr(f, 'release_year') and f.release_year is not None and hasattr(f, 'bgdi_order') and f.bgdi_order is not None:
+    for f in _get_features_for_filters(params, [models], maxFeatures=1000):
+        if hasattr(f, 'array_release_years') and f.array_release_years is not None and hasattr(f, 'bgdi_order') and f.bgdi_order is not None:
             if f.bgdi_order in timestamps_bgdi_ordered:
-                for year in f.release_year:
+                for year in f.array_release_years:
                     timestamps_bgdi_ordered[f.bgdi_order].append(year)
             else:
-                timestamps_bgdi_ordered[f.bgdi_order] = f.release_year
+                timestamps_bgdi_ordered[f.bgdi_order] = f.array_release_years
 
     for key, values in timestamps_bgdi_ordered.items():
         for x in sorted(set(values), reverse=True):

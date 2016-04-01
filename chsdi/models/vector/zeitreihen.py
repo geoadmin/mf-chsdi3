@@ -2,10 +2,12 @@
 
 from sqlalchemy import Column, Text, Integer
 from sqlalchemy.types import Numeric
+from sqlalchemy.dialects import postgresql
 from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector
+
 
 Base = bases['zeitreihen']
 
@@ -29,6 +31,7 @@ class Zeitreihen_15(Base, Vector):
     years = Column('years', Integer)
     bv_nummer = Column('bv_nummer', Text)
     bgdi_order = Column('bgdi_order', Integer)
+    array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
     box2d = Column('box2d', Text)
 
 
@@ -51,6 +54,7 @@ class Zeitreihen_20(Base, Vector):
     years = Column('years', Integer)
     bv_nummer = Column('bv_nummer', Text)
     bgdi_order = Column('bgdi_order', Integer)
+    array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
     box2d = Column('box2d', Text)
 
 
@@ -73,6 +77,7 @@ class Zeitreihen_21(Base, Vector):
     years = Column('years', Integer)
     bv_nummer = Column('bv_nummer', Text)
     bgdi_order = Column('bgdi_order', Integer)
+    array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
     box2d = Column('box2d', Text)
 
 
@@ -95,6 +100,7 @@ class Zeitreihen_22(Base, Vector):
     years = Column('years', Integer)
     bv_nummer = Column('bv_nummer', Text)
     bgdi_order = Column('bgdi_order', Integer)
+    array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
     box2d = Column('box2d', Text)
 
 
