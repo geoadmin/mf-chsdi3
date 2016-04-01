@@ -163,8 +163,6 @@ td.inner-table {
 }
 </style>
 
-<script src="h.versioned(request.static_url('chsdi:static/js/d3.min.js')"></script>
-<script src="h.versioned(request.static_url('chsdi:static/js/d3-tip.js')"></script>
 
 % if iframe:
 <style>
@@ -1000,4 +998,10 @@ var svg_weibull = d3.select("#weibull").append("svg")
 
 </script>
 </body>
+</%def>
+
+
+<%def name="extended_resources(c, lang)">
+  <script src="h.versioned(request.static_url('chsdi:static/js/d3.min.js')"></script>
+  <script src="h.versioned(request.static_url('chsdi:static/js/d3-tip.js')"></script>
 </%def>

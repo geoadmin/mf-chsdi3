@@ -13,9 +13,6 @@
 </%def>
 
 <%def name="extended_info(c, lang)">
-  <link rel="stylesheet" type="text/css" href="${h.versioned(request.static_url('chsdi:static/css/blueimp-gallery.min.css'))}"/>
-  <script src="${h.versioned(request.static_url('chsdi:static/js/jquery-2.0.3.min.js'))}"></script>
-  <script src="${h.versioned(request.static_url('chsdi:static/js/blueimp-gallery-2.11.5.min.js'))}"></script>
   <table class="table-with-border kernkraftwerke-extended">
     <tr>
       <td width="25%">&nbsp;</td>
@@ -150,4 +147,11 @@
       <td>${c['attributes']['gwlnr'] or '-'}</td>
     </tr>
   </table>
+</%def>
+
+
+<%def name="extended_resources(c, lang)">
+  <link rel="stylesheet" type="text/css" href="${h.versioned(request.static_url('chsdi:static/css/blueimp-gallery.min.css'))}"/>
+  <script src="${h.versioned(request.static_url('chsdi:static/js/jquery.min.js'))}"></script>
+  <script src="${h.versioned(request.static_url('chsdi:static/js/blueimp-gallery.min.js'))}"></script>
 </%def>

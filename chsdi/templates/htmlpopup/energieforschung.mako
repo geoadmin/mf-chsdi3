@@ -43,9 +43,6 @@ unterthema = 'unterthema_%s' %lang
 date_beginn = datetime.datetime.strptime(c['attributes']['projektbeginn'].strip(), "%Y-%m-%d").strftime("%d.%m.%Y")
 date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "%Y-%m-%d").strftime("%d.%m.%Y")
 %>
-<link rel="stylesheet" type="text/css" href="${h.versioned(request.static_url('chsdi:static/css/blueimp-gallery.min.css'))}"/>
-<script src="${h.versioned(request.static_url('chsdi:static/js/jquery.min.js'))}"></script>
-<script src="${h.versioned(request.static_url('chsdi:static/js/blueimp-gallery.min.js'))}"></script>
 <table>
  <colgroup>
   <col width=40%>
@@ -211,4 +208,11 @@ $('.thumbnail-container').on('click', function (event) {
 });
 </script>
 
+</%def>
+
+
+<%def name="extended_resources(c, lang)">
+  <link rel="stylesheet" type="text/css" href="${h.versioned(request.static_url('chsdi:static/css/blueimp-gallery.min.css'))}"/>
+  <script src="${h.versioned(request.static_url('chsdi:static/js/jquery.min.js'))}"></script>
+  <script src="${h.versioned(request.static_url('chsdi:static/js/blueimp-gallery.min.js'))}"></script>
 </%def>

@@ -21,7 +21,6 @@
 </%def>
 
 <%def name="extended_info(c, lang)">
-<script type="text/javascript" src="{h.get_loaderjs_url(request)"></script>
 <title>${_('ch.bfe.windenergieanlagen')}</title>
 <body onload="init()">
 <div class="zsborder">
@@ -184,4 +183,9 @@ alt=""/></td>
      }
    </script>
 </body>
+</%def>
+
+
+<%def name="extended_resources(c, lang)">
+  <script type="text/javascript" src="{h.get_loaderjs_url(request)"></script>
 </%def>

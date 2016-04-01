@@ -153,7 +153,6 @@ viewer_url = get_viewer_url(request, params)
 
 
 <%def name="extended_info(c, lang)">
-<script type="text/javascript" src="${h.get_loaderjs_url(request)}"></script>
 <%
 c['stable_id'] = True
 if c['layerBodId'] == 'ch.swisstopo.lubis-luftbilder_farbe':
@@ -283,4 +282,9 @@ viewer_url = get_viewer_url(request, params)
   </script>
 
 </body>
+</%def>
+
+
+<%def name="extended_resources(c, lang)">
+  <script type="text/javascript" src="${h.get_loaderjs_url(request)}"></script>
 </%def>
