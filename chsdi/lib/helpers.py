@@ -382,7 +382,7 @@ def filter_alt(alt):
 
 
 def get_loaderjs_url(request):
-    make_agnostic(route_url('ga_api', request))
+    return make_agnostic(route_url('ga_api', request))
 
 
 def decompress_gzipped_string(string):
