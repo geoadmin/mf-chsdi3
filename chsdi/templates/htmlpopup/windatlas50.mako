@@ -1,17 +1,20 @@
 <%inherit file="base.mako"/>
 <%!
-from chsdi.lib.raster.georaster import get_raster
-
-r = get_raster('COMB')
+import requests
+def getAltitude(baseUrl, center):
+    fullUrl = 'http:' + baseUrl +'/rest/services/height'
+    response = requests.get(
+        fullUrl + '?easting=%s&northing=%s&elevation_model=COMB' % (center[0], center[1]),
+        headers={'Referer': fullUrl})
+    result = response.json()
+    return result['height']
 %>
-
 
 <%def name="table_body(c, lang)">
 <% c['stable_id'] = True %>
 <%
 from gatilegrid.grid import Grid
 from chsdi.models.grid import get_grid_spec
-
 altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
 
 # center coordinates and dhm altitude from feature id
@@ -20,11 +23,11 @@ col, row = [int(x) for x in c['featureId'].split("_")]
 grid = Grid(gridSpec.get('extent'), gridSpec.get('resolutionX'), gridSpec.get('resolutionY'))
 extent = grid.cellExtent(col,row)
 center = [(extent[0] + extent[2])/2,(extent[1] + extent[3])/2]
-dhm_altitude = h.filter_alt(r.getVal(center[0], center[1]))
+baseUrl = request.registry.settings['api_url']
+dhm_altitude = getAltitude(baseUrl, center)
 center = ', '.join([str(round(center[0], 2)), str(round(center[1], 2))])
 
 props = c['properties']
-baseUrl = request.registry.settings['api_url']
 %>
 <!-- html output -->
     <tr>
@@ -53,11 +56,12 @@ baseUrl = request.registry.settings['api_url']
 
 <%def name="extended_info(c, lang)">
 <%
-coordinates = c['geometry']['coordinates'][0]
+coordinates = c['geometry']['coordinates']
 bottomLeft = coordinates[0]
 topRight = coordinates[2]
 center = [(bottomLeft[0] + topRight[0]) / 2, (bottomLeft[1] + topRight[1]) / 2]
-dhm_altitude = h.filter_alt(r.getVal(center[0], center[1]))
+baseUrl = request.registry.settings['api_url']
+dhm_altitude = getAltitude(baseUrl, center)
 center = ', '.join([str(round(center[0], 2)), str(round(center[1], 2))])
 altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
 
@@ -1002,6 +1006,6 @@ var svg_weibull = d3.select("#weibull").append("svg")
 
 
 <%def name="extended_resources(c, lang)">
-  <script src="h.versioned(request.static_url('chsdi:static/js/d3.min.js')"></script>
-  <script src="h.versioned(request.static_url('chsdi:static/js/d3-tip.js')"></script>
+  <script src="${h.versioned(request.static_url('chsdi:static/js/d3.min.js'))}"></script>
+  <script src="${h.versioned(request.static_url('chsdi:static/js/d3-tip.js'))}"></script>
 </%def>
