@@ -401,7 +401,7 @@ node_modules: package.json
 	cp -f node_modules/blueimp-gallery/js/blueimp-gallery.min.js chsdi/static/js/blueimp-gallery.min.js
 	cp -f node_modules/d3/d3.min.js chsdi/static/js/d3.min.js
 	cp -f node_modules/d3-tip/index.js chsdi/static/js/d3-tip.js
-	cp -f node_modules/blueimp-gallery/css/blueimp-gallery.min.css chsdi/static/js/blueimp-gallery.min.css
+	cp -f node_modules/blueimp-gallery/css/blueimp-gallery.min.css chsdi/static/css/blueimp-gallery.min.css
 
 chsdi/static/less/extended.less:
 	@echo "${GREEN}File chsdi/static/less/extended.less has changed${RESET}";
