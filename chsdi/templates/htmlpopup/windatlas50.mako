@@ -163,8 +163,8 @@ td.inner-table {
 }
 </style>
 
-<script src="//d3js.org/d3.v3.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.3/d3-tip.min.js"></script>
+<script src="h.versioned(request.static_url('chsdi:static/js/d3.min.js')"></script>
+<script src="h.versioned(request.static_url('chsdi:static/js/d3-tip.js')"></script>
 
 % if iframe:
 <style>
