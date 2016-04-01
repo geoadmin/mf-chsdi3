@@ -21,7 +21,7 @@ def getDefaultTileMatrixSet():
             gagrid.getResolution(zoom),
             gagrid.numberOfXTilesAtZoom(zoom),
             gagrid.numberOfYTilesAtZoom(zoom),
-            gagrid.getScale(zoom, dpi=96.0)
+            gagrid.getScale(zoom, dpi=90.7)
         ]
     return tilematrixSet
 

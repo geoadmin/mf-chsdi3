@@ -322,12 +322,13 @@ def computeHeader(mapName):
     gagrid = GeoadminTileGrid()
     minZoom = 0
     maxZoom = 28
+    dpi = 90.7
     lods = []
     for zoom in range(minZoom, maxZoom + 1):
         lods.append(
             {'level': zoom,
              'resolution': gagrid.getResolution(zoom),
-             'scale': gagrid.getScale(zoom),
+             'scale': gagrid.getScale(zoom, dpi=dpi),
              'width': gagrid.numberOfXTilesAtZoom(zoom),
              'height': gagrid.numberOfYTilesAtZoom(zoom)}
         )
@@ -339,14 +340,14 @@ def computeHeader(mapName):
         'layers': [],
         'spatialReference': {"wkid": gagrid.spatialReference},
         'tileInfo': {
-            'rows': gagrid.tileSizePx,  # tile width in pixel
-            'cols': gagrid.tileSizePx,
-            'dpi': 96,
+            'rows': int(gagrid.tileSizePx),  # tile width in pixel
+            'cols': int(gagrid.tileSizePx),
+            'dpi': dpi,
             'format': 'PNG,JPEG',
             'compressionQuality': None,
-            'origin': {'x': gagrid.origin[0], 'y': gagrid.origin[1],
-                       'spatialReference': {'wkid': gagrid.spatialReference}},
-            'spatialReference': {'wkid': 21781},
+            'origin': {'x': gagrid.origin[0],
+                       'y': gagrid.origin[1]},
+            'spatialReference': {'wkid': gagrid.spatialReference},
             'lods': lods
         },
         'initialExtent': {
