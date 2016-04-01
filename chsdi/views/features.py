@@ -221,8 +221,9 @@ def _identify_grid(params, layerBodIds):
     # TODO support min/max scale and min/max resolution?
 
     pointCoordinates = geometry.coordinates
-
-    bucket = get_bucket(profile_name='chsdi_aws_admin_ro', bucket_name='mwks6dv2y5dsbbgg-vectortiles')
+    bucketName = params.request.registry.settings['vector_bucket']
+    profileName = params.request.registry.settings['vector_profilename']
+    bucket = get_bucket(profile_name=profileName, bucket_name=bucketName)
     for layer in layerBodIds:
         [layerBodId, gridSpec] = next(layer.iteritems())
         params.layerId = layerBodId
@@ -285,7 +286,9 @@ def _get_features(params, extended=False):
 
     for featureId in featureIds:
         if gridSpec:
-            bucket = get_bucket(profile_name='chsdi_aws_admin_ro', bucket_name='mwks6dv2y5dsbbgg-vectortiles')
+            bucketName = params.request.registry.settings['vector_bucket']
+            profileName = params.request.registry.settings['vector_profilename']
+            bucket = get_bucket(profile_name=profileName, bucket_name=bucketName)
             # By convention
             col, row = featureId.split('_')
             grid = Grid(gridSpec.get('extent'),

@@ -372,6 +372,8 @@ production.ini: production.ini.in
 		--var "http_proxy=$(HTTP_PROXY)" \
 		--var "geoadmin_file_storage_bucket=$(GEOADMIN_FILE_STORAGE_BUCKET)" \
 		--var "shortener_allowed_hosts=$(SHORTENER_ALLOWED_HOSTS)" \
+		--var "vector_bucket=$(VECTOR_BUCKET)" \
+		--var "vector_profilename=$(VECTOR_PROFILENAME)" \
 		--var "shortener_allowed_domains=$(SHORTENER_ALLOWED_DOMAINS)" $< > $@
 
 requirements.txt:
