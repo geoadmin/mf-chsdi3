@@ -87,7 +87,7 @@
         lon = coord[1]
         geodata = "http://geodata01.admin.ch/order/jPqrueQazrt/av_pdf.igs?pos=" + lat + '/' + lon
 
-        def get_url_data(url, max_tries=20):
+        def get_url_data(url, max_tries=50):
             for n in range(max_tries):
                     r3 = requests.head(url)
                     if r3.status_code == 200:
@@ -95,7 +95,7 @@
                     else:
                       if n == max_tries - 1:
                         raise
-                      time.sleep(.5)
+                      time.sleep(.1)
         r = requests.get(geodata)
         if r.status_code == 200:
            url = r.text.strip()
