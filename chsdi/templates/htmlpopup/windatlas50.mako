@@ -48,8 +48,8 @@ props = c['properties']
     </tr>
     <tr>
       <th class="cell-left">${_('tt_bfe_windrose')}</th>
-      <td >
-        <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="230" frameborder="0" style="border: 0" scrolling="no"></iframe>
+      <td>
+        <div style="margin-left:-40px"><iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="230" frameborder="0" style="border: 0;" scrolling="no"></iframe></div>
       </td>
     </tr>
 </%def>
