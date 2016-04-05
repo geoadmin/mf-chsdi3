@@ -303,6 +303,9 @@ msgstr ""
 msgid "tt_bfe_geschw_wind_durchschnitt"
 msgstr ""
 
+msgid "tt_bfe_windrose"
+msgstr "Windrose"
+
 msgid "tt_bfe_windrose_geschwverteilung"
 msgstr ""
 

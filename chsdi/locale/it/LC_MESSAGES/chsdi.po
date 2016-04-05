@@ -7184,6 +7184,9 @@ msgstr "Direzione del vento"
 msgid "tt_bfe_windrichtung_weibullverteilung"
 msgstr "Distribuzione di Weibull indipendente dalla direzione del vento."
 
+msgid "tt_bfe_windrose"
+msgstr "Rosa dei venti"
+
 msgid "tt_bfe_windrose_geschwverteilung"
 msgstr "Rosa dei venti raffigurante la distribuzione delle velocità del vento per direzione di provenienza"
 

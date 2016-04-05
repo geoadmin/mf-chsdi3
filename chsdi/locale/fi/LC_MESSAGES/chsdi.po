@@ -7185,6 +7185,9 @@ msgstr "Windrichtung"
 msgid "tt_bfe_windrichtung_weibullverteilung"
 msgstr "Windrichtungsunabhängige Weibull-Verteilung"
 
+msgid "tt_bfe_windrose"
+msgstr "Windrose"
+
 msgid "tt_bfe_windrose_geschwverteilung"
 msgstr "Windrose mit der Windgeschwindigkeits-verteilung pro Windrichtungssektor"
 
