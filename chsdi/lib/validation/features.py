@@ -99,5 +99,21 @@ class GetFeatureServiceValidation(HtmlPopupServiceValidation):
     def __init__(self, request):
         super(GetFeatureServiceValidation, self).__init__(request)
 
-        self.returnGeometry = request.params.get('returnGeometry', True)
+        self.returnGeometry = request.params.get('returnGeometry')
         self.geometryFormat = request.params.get('geometryFormat', 'esrijson')
+
+    @property
+    def returnGeometry(self):
+        return self._returnGeometry
+
+    @returnGeometry.setter
+    def returnGeometry(self, value):
+        if value is None:
+            self._returnGeometry = True
+        else:
+            if type(value) == str and value.lower() == 'true':
+                self._returnGeometry = True
+            elif type(value) == str and value.lower() == 'false':
+                self._returnGeometry = False
+            else:
+                self._returnGeometry = True

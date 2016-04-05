@@ -16,6 +16,7 @@ from geoalchemy2.types import Geometry
 
 from chsdi.lib.validation.mapservice import MapServiceValidation
 from chsdi.lib.validation.features import HtmlPopupServiceValidation, ExtendedHtmlPopupServiceValidation, GetFeatureServiceValidation
+from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.helpers import format_query
 from chsdi.lib.filters import full_text_search
 from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
@@ -73,15 +74,6 @@ def _get_features_params(request):
     params.offset = request.params.get('offset')
     params.limit = request.params.get('limit')
     params.order = request.params.get('order')
-    return params
-
-
-def _get_find_params(request):
-    params = FeatureParams(request)
-    params.layer = request.params.get('layer')
-    params.searchText = request.params.get('searchText')
-    params.searchField = request.params.get('searchField')
-    params.contains = request.params.get('contains')
     return params
 
 
@@ -451,7 +443,7 @@ def _attributes(request):
 
 def _find(request):
     MaxFeatures = 50
-    params = _get_find_params(request)
+    params = FindServiceValidation(request)
     if params.searchText is None:
         raise exc.HTTPBadRequest('Please provide a searchText')
 

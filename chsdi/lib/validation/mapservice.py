@@ -22,10 +22,7 @@ class MapServiceValidation(MapNameValidation):
         self._tolerance = None
         self._timeInstant = None
         self._layers = None
-        self._layer = None
         self._searchText = None
-        self._searchField = None
-        self._contains = None
         self._chargeable = None
         self._offset = None
         self.esriGeometryTypes = (
@@ -76,18 +73,6 @@ class MapServiceValidation(MapNameValidation):
     @property
     def layers(self):
         return self._layers
-
-    @property
-    def layer(self):
-        return self._layer
-
-    @property
-    def searchField(self):
-        return self._searchField
-
-    @property
-    def contains(self):
-        return self._contains
 
     @property
     def chargeable(self):
@@ -152,7 +137,9 @@ class MapServiceValidation(MapNameValidation):
             raise HTTPBadRequest('Please provide the parameter imageDisplay  (Required)')
         value = value.split(',')
         if len(value) != 3:
-            raise HTTPBadRequest('Please provide the parameter imageDisplay in a comma separated list of 3 arguments (width,height,dpi)')
+            raise HTTPBadRequest(
+                'Please provide the parameter imageDisplay in a comma separated list of 3 arguments '
+                '(width,height,dpi)')
         try:
             self._imageDisplay = map(float_raise_nan, value)
         except ValueError:
@@ -206,29 +193,6 @@ class MapServiceValidation(MapNameValidation):
                 self._layers = layers.split(',')
             except:
                 HTTPBadRequest('There is an error in the parameter layers')
-
-    @layer.setter
-    def layer(self, value):
-        if value is None:
-            raise HTTPBadRequest('Please provide a parameter layer')
-        if len(value.split(',')) > 1:
-            raise HTTPBadRequest('You can provide only one layer at a time')
-        self._layer = value
-
-    @searchField.setter
-    def searchField(self, value):
-        if value is None:
-            raise HTTPBadRequest('Please provide a searchField')
-        if len(value.split(',')) > 1:
-            raise HTTPBadRequest('You can provide only one searchField at a time')
-        self._searchField = value
-
-    @contains.setter
-    def contains(self, value):
-        if value is None or value.lower() == 'true':
-            self._contains = True
-        else:
-            self._contains = False
 
     @chargeable.setter
     def chargeable(self, value):
