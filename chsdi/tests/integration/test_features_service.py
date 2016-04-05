@@ -165,6 +165,14 @@ class TestFeaturesView(TestsBase):
     def test_htmlpopup_missing_feature(self):
         self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', status=404)
 
+    def test_htmlpopup_scale_dependent(self):
+        params = {'mapExtent': '559349.7,127280.7,695549.7,241180.7', 'imageDisplay': '1362,1139,96', 'lang': 'fr'}
+        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.schutzgebiete-aulav_uebrige/400/htmlPopup', params=params, status=200)
+        resp.mustcontain('Les atterrissages en campagne')
+        params = {'mapExtent': '654998,188636.6,657722,190914.6', 'imageDisplay': '1362,1139,96', 'lang': 'fr'}
+        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.schutzgebiete-aulav_uebrige/400/htmlPopup', params=params, status=200)
+        resp.mustcontain('Haut-marais')
+
     def test_extendedhtmlpopup_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/11/extendedHtmlPopup', status=200)
         self.assertEqual(resp.content_type, 'text/html')
