@@ -47,9 +47,10 @@ props = c['properties']
       <td>${round(props['v_mean'], 2)}</td>
     </tr>
     <tr>
-      <th colspan=2>
+      <th class="cell-left">${_('tt_bfe_windrose')}</th>
+      <td >
         <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="230" frameborder="0" style="border: 0" scrolling="no"></iframe>
-      </th>
+      </td>
     </tr>
 </%def>
 
@@ -476,8 +477,8 @@ var data = [
 
 //WINDROSE
 % if iframe:
-var width = 172,
-    height = 172,
+var width = 175,
+    height = 175,
 % else:
 var width = 300,
     height = 300,
@@ -508,12 +509,11 @@ var arc = d3.svg.arc()
 //svg definieren
 var svg = d3.select("#rose").append("svg")
 % if iframe:
-    .attr("width", width + 48 + 110) //+140 damit rechts noch Legende Platz hat
-    .attr("height", height + 48)
+    .attr("width", width + 58) 
 % else:
     .attr("width", width + 48 + 140) //+140 damit rechts noch Legende Platz hat
-    .attr("height", height + 48)
 % endif
+    .attr("height", height + 48)
     .append("g")
     .attr("transform", "translate(" + (width + 48) / 2 + "," + (height + 48) / 2 + ")");
 
@@ -670,25 +670,10 @@ svg.call(tip);
     .attr("fill", "none");
 
 //Legende rechts
-
-% if iframe:
-    var posX = 120;
-    var posXdist = 15;
-    var posY = 86;
-    var posYdist = 12;
-    var posYlabelkorr = 8;
-% endif
-
     svg.append("rect")
-% if iframe:
-    .attr("x", posX)
-    .attr("y", posY)
-    .attr("width", 10)
-% else:
     .attr("x", "190")
     .attr("y", "121") //-15
     .attr("width", 20)
-% endif
     .attr("height", 10)
     .style("fill", "rgb(187,8,5)")
     .style("stroke-width", "0");
@@ -697,21 +682,11 @@ svg.call(tip);
     .text("≥ 8.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-% if iframe:
-    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr) + ")");
-% else:
     .attr("transform", "translate(215,130)"); //0,-15
-% endif
     svg.append("rect")
-% if iframe:
-    .attr("x", posX)
-    .attr("y", posY - (posYdist * 1)) //-15
-    .attr("width", 10)
-% else:
     .attr("x", "190")
     .attr("y", "106") //-15
     .attr("width", 20)
-% endif
     .attr("height", 10)
     .style("fill", "rgb(204,30,24)")
     .style("stroke-width", "0");
@@ -720,22 +695,12 @@ svg.call(tip);
     .text("≥ 7.5 – < 8.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-% if iframe:
-    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 1)) + ")"); //0,-15
-% else:
     .attr("transform", "translate(215,115)"); //0,-15
-% endif
 
     svg.append("rect")
-% if iframe:
-    .attr("x", posX)
-    .attr("y", posY - (posYdist * 2)) //-15
-    .attr("width", 10)
-% else:
     .attr("x", "190")
     .attr("y", "91") //-15
     .attr("width", 20)
-% endif
     .attr("height", 10)
     .style("fill", "rgb(181,56,75)")
     .style("stroke-width", "0");
@@ -744,22 +709,12 @@ svg.call(tip);
     .text("≥ 7.0 – < 7.5 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-% if iframe:
-    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 2)) + ")"); //0,-15
-% else:
     .attr("transform", "translate(215,100)"); //0,-15
-% endif
 
     svg.append("rect")
-% if iframe:
-    .attr("x", posX)
-    .attr("y", posY - (posYdist * 3)) //-15
-    .attr("width", 10)
-% else:
     .attr("x", "190")
     .attr("y", "76") //-15
     .attr("width", 20)
-% endif
     .attr("height", 10)
     .style("fill", "rgb(155,77,101)")
     .style("stroke-width", "0");
@@ -768,48 +723,26 @@ svg.call(tip);
     .text("≥ 6.5 – < 7.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-% if iframe:
-    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 3)) + ")"); //0,-15
-% else:
     .attr("transform", "translate(215,85)"); //0,-15
-% endif
 
     svg.append("rect")
-% if iframe:
-    .attr("x", posX)
-    .attr("y", posY - (posYdist * 4)) //-15
-    .attr("width", 10)
-    .attr("height", 10)
-    .style("fill", "rgb(133,86,143)")
-% else:
     .attr("x", "190")
     .attr("y", "61") //-15
     .attr("width", 20)
     .attr("height", 10)
     .style("fill", "rgb(133,86,148)")
-% endif
     .style("stroke-width", "0");
 
     svg.append("text")
     .text("≥ 6.0 – < 6.5 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-% if iframe:
-    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 4)) + ")"); //0,-15
-% else:
     .attr("transform", "translate(215,70)"); //0,-15
-% endif
 
     svg.append("rect")
-% if iframe:
-    .attr("x", posX)
-    .attr("y", posY - (posYdist * 5)) //-15
-    .attr("width", 10)
-% else:
     .attr("x", "190")
     .attr("y", "46") //-15
     .attr("width", 20)
-% endif
     .attr("height", 10)
     .style("fill", "rgb(54,105,188)")
     .style("stroke-width", "0");
@@ -818,22 +751,12 @@ svg.call(tip);
     .text("≥ 5.5 – < 6.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-% if iframe:
-    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 5)) + ")"); //0,-15
-% else:
     .attr("transform", "translate(215,55)"); //0,-15
-% endif
 
     svg.append("rect")
-% if iframe:
-    .attr("x", posX)
-    .attr("y", posY - (posYdist * 6)) //-15
-    .attr("width", 10)
-% else:
     .attr("x", "190")
     .attr("y", "31") //-15
     .attr("width", 20)
-% endif
     .attr("height", 10)
     .style("fill", "rgb(47,144,225)")
     .style("stroke-width", "0");
@@ -842,22 +765,12 @@ svg.call(tip);
     .text("≥ 5.0 – < 5.5 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-% if iframe:
-    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 6)) + ")"); //0,-15
-% else:
      .attr("transform", "translate(215,40)"); //0,-15
-% endif
 
     svg.append("rect")
-% if iframe:
-    .attr("x", posX)
-    .attr("y", posY - (posYdist * 7)) //-15
-    .attr("width", 10)
-% else:
     .attr("x", "190")
     .attr("y", "16") //-15
     .attr("width", 20)
-% endif
     .attr("height", 10)
     .style("fill", "rgb(78,200,244)")
     .style("stroke-width", "0");
@@ -866,22 +779,12 @@ svg.call(tip);
     .text("≥ 4.5 – < 5.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-% if iframe:
-    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 7)) + ")"); //0,-15
-% else:
     .attr("transform", "translate(215,25)"); //0,-15
-% endif
 
     svg.append("rect")
-% if iframe:
-    .attr("x", posX)
-    .attr("y", posY - (posYdist * 8)) //-15
-    .attr("width", 10)
-% else:
     .attr("x", "190")
     .attr("y", "1") //-15
     .attr("width", 20)
-% endif
     .attr("height", 10)
     .style("fill", "rgb(122,212,241)")
     .style("stroke-width", "0");
@@ -890,22 +793,12 @@ svg.call(tip);
     .text("≥ 4.0 – < 4.5 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-% if iframe:
-    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 8)) + ")"); //0,-15
-% else:
     .attr("transform", "translate(215,10)"); //0,-15
-% endif
 
     svg.append("rect")
-% if iframe:
-    .attr("x", posX)
-    .attr("y", posY - (posYdist * 9)) //-15
-    .attr("width", 10)
-% else:
     .attr("x", "190")
     .attr("y", "-14") //-15
     .attr("width", 20)
-% endif
     .attr("height", 10)
     .style("fill", "rgb(201,233,246)")
     .style("stroke-width", "0");
@@ -914,21 +807,13 @@ svg.call(tip);
     .text("< 4.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-% if iframe:
-    .attr("transform", "translate(" + (posX + posXdist) + "," + (posY + posYlabelkorr - (posYdist * 9)) + ")"); //0,-15
-% else:
     .attr("transform", "translate(215,-5)"); //0,-15
-% endif
 
     svg.append("text")
     .text("${_('tt_bfe_windgeschwindigkeit')}")
     .style("font-size", "10px")
     .attr("fill", "grey")
-% if iframe:
-    .attr("transform", "translate(" + posX + "," + (posY + posYlabelkorr - (posYdist * 10)) + ")");
-% else:
     .attr("transform", "translate(190,-20)");
-% endif
 
 //WEIBULL
 // Daten fuer Darstellung der Weibull-Funktion generieren
