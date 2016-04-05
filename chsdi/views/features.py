@@ -15,10 +15,12 @@ from sqlalchemy import text
 from geoalchemy2.types import Geometry
 
 from chsdi.lib.validation.mapservice import MapServiceValidation
+from chsdi.lib.validation.features import HtmlPopupServiceValidation, ExtendedHtmlPopupServiceValidation, GetFeatureServiceValidation
 from chsdi.lib.helpers import format_query
 from chsdi.lib.filters import full_text_search
 from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.bod import OerebMetadata, get_bod_model
+from chsdi.models.vector import getScale
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
 PROTECTED_GEOMETRY_LAYERS = ['ch.bfs.gebaeude_wohnungs_register']
@@ -71,14 +73,6 @@ def _get_features_params(request):
     params.offset = request.params.get('offset')
     params.limit = request.params.get('limit')
     params.order = request.params.get('order')
-    return params
-
-
-# For feature, htmlPopup and extendedHtmlPopup services
-def _get_feature_params(request):
-    params = FeatureParams(request)
-    params.layerId = request.matchdict.get('layerId')
-    params.featureIds = request.matchdict.get('featureId')
     return params
 
 
@@ -144,8 +138,7 @@ def view_attribute_values_geojson(request):
 
 @view_config(route_name='htmlPopup', renderer='jsonp')
 def htmlpopup(request):
-    params = _get_feature_params(request)
-    params.returnGeometry = False
+    params = HtmlPopupServiceValidation(request)
     feature, vectorModel = next(_get_features(params))
 
     layerModel = get_bod_model(params.lang)
@@ -168,8 +161,7 @@ def htmlpopup(request):
 
 @view_config(route_name='extendedHtmlPopup', renderer='jsonp')
 def extendedhtmlpopup(request):
-    params = _get_feature_params(request)
-    params.returnGeometry = True
+    params = ExtendedHtmlPopupServiceValidation(request)
     feature, vectorModel = next(_get_features(params))
 
     layerModel = get_bod_model(params.lang)
@@ -283,7 +275,7 @@ def _identify(request):
 
 
 def _get_feature_service(request):
-    params = _get_feature_params(request)
+    params = GetFeatureServiceValidation(request)
     features = []
     for feature, vectorModel in _get_features(params):
         features.append(feature)
@@ -295,12 +287,15 @@ def _get_feature_service(request):
 def _get_features(params, extended=False):
     ''' Returns exactly one feature or raises
     an excpetion '''
-    featureIds = params.featureIds.split(',')
-    models = models_from_bodid(params.layerId)
+    scale = None
+    if all((params.imageDisplay, params.mapExtent)):
+        scale = getScale(params.imageDisplay, params.mapExtent)
+    models = models_from_bodid(params.layerId, scale)
+
     if models is None:
         raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
 
-    for featureId in featureIds:
+    for featureId in params.featureIds:
         # One layer can have several models
         for model in models:
             query = params.request.db.query(model)
