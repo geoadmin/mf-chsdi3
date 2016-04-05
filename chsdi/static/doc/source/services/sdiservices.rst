@@ -764,8 +764,8 @@ The GetCapabilites document provides informations about the service, along with 
 Parameters
 **********
 
-Only the RESTFul interface is implemented. No KVP and SOAP. You *have* to provide a value for the `timestamp` parameter, the keywords `current` or 
-`default` are not supported for now.
+Only the RESTFul interface is implemented. No KVP and SOAP. You *have* to provide a value for the `timestamp` parameter. The keyword `current`
+is supported for some layers. Please refer to the WMTS GetCapabilities Document for further information.
 
 A request is in the form:
 
