@@ -15,7 +15,10 @@ from sqlalchemy import text
 from geoalchemy2.types import Geometry
 
 from chsdi.lib.validation.mapservice import MapServiceValidation
-from chsdi.lib.validation.features import HtmlPopupServiceValidation, ExtendedHtmlPopupServiceValidation, GetFeatureServiceValidation
+from chsdi.lib.validation.features import (
+    HtmlPopupServiceValidation, ExtendedHtmlPopupServiceValidation,
+    GetFeatureServiceValidation, AttributesServiceValidation
+)
 from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.helpers import format_query
 from chsdi.lib.filters import full_text_search
@@ -74,14 +77,6 @@ def _get_features_params(request):
     params.offset = request.params.get('offset')
     params.limit = request.params.get('limit')
     params.order = request.params.get('order')
-    return params
-
-
-def _get_attributes_params(request):
-    params = FeatureParams(request)
-    params.layerId = request.matchdict.get('layerId')
-    params.attribute = request.matchdict.get('attribute')
-
     return params
 
 
@@ -409,7 +404,7 @@ def _attributes(request):
     and an attribute name (mapped in the model) '''
     MAX_ATTR_VALUES = 50
     attributesValues = []
-    params = _get_attributes_params(request)
+    params = AttributesServiceValidation(request)
 
     models = models_from_bodid(params.layerId)
 

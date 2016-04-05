@@ -5,14 +5,14 @@ from pyramid.httpexceptions import HTTPBadRequest
 from shapely.geometry import asShape
 
 from chsdi.lib.helpers import float_raise_nan
-from chsdi.lib.validation import MapNameValidation
+from chsdi.lib.validation import BaseFeaturesValidation
 from chsdi.esrigeojsonencoder import loads
 
 
-class HtmlPopupServiceValidation(MapNameValidation):
+class HtmlPopupServiceValidation(BaseFeaturesValidation):
 
     def __init__(self, request):
-        super(HtmlPopupServiceValidation, self).__init__()
+        super(HtmlPopupServiceValidation, self).__init__(request)
         self._layerId = None
         self._featureIds = None
         self._imageDisplay = None
@@ -23,14 +23,7 @@ class HtmlPopupServiceValidation(MapNameValidation):
         self.imageDisplay = request.params.get('imageDisplay')
         self.mapExtent = request.params.get('mapExtent')
 
-        self.mapName = request.matchdict.get('map')
         self.returnGeometry = False
-        self.request = request
-        self.lang = request.lang
-        self.translate = request.translate
-        self.cbName = request.params.get('callback')
-        self.geodataStaging = request.registry.settings['geodata_staging']
-        self.varnish_authorized = request.headers.get('X-SearchServer-Authorized', 'false').lower() == 'true'
 
     @property
     def layerId(self):
@@ -69,7 +62,8 @@ class HtmlPopupServiceValidation(MapNameValidation):
             value = value.split(',')
             if len(value) != 3:
                 raise HTTPBadRequest(
-                    'Please provide the parameter imageDisplay in a comma separated list of 3 arguments (width,height,dpi)')
+                    'Please provide the parameter imageDisplay in a comma separated list of 3 arguments '
+                    '(width,height,dpi)')
             try:
                 self._imageDisplay = map(float_raise_nan, value)
             except ValueError:
@@ -111,9 +105,18 @@ class GetFeatureServiceValidation(HtmlPopupServiceValidation):
         if value is None:
             self._returnGeometry = True
         else:
-            if type(value) == str and value.lower() == 'true':
+            if isinstance(value, str) and value.lower() == 'true':
                 self._returnGeometry = True
-            elif type(value) == str and value.lower() == 'false':
+            elif isinstance(value, str) and value.lower() == 'false':
                 self._returnGeometry = False
             else:
                 self._returnGeometry = True
+
+
+class AttributesServiceValidation(BaseFeaturesValidation):
+
+    def __init__(self, request):
+        super(AttributesServiceValidation, self).__init__(request)
+
+        self.layerId = request.matchdict.get('layerId')
+        self.attribute = request.matchdict.get('attribute')
