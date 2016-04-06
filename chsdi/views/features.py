@@ -14,12 +14,12 @@ from sqlalchemy import Text, Integer, Boolean, Numeric, Date
 from sqlalchemy import text
 from geoalchemy2.types import Geometry
 
-from chsdi.lib.validation.mapservice import MapServiceValidation
 from chsdi.lib.validation.features import (
     HtmlPopupServiceValidation, ExtendedHtmlPopupServiceValidation,
     GetFeatureServiceValidation, AttributesServiceValidation
 )
 from chsdi.lib.validation.find import FindServiceValidation
+from chsdi.lib.validation.identify import IdentifyServiceValidation
 from chsdi.lib.helpers import format_query
 from chsdi.lib.filters import full_text_search
 from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
@@ -29,55 +29,6 @@ from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
 PROTECTED_GEOMETRY_LAYERS = ['ch.bfs.gebaeude_wohnungs_register']
 MAX_FEATURES = 201
-
-
-# For several features
-class FeatureParams(MapServiceValidation):
-
-    def __init__(self, request):
-        super(FeatureParams, self).__init__()
-        # Map and topic represent the same resource
-        self.mapName = request.matchdict.get('map')
-        self.hasMap(request.db, self.mapName)
-        self.cbName = request.params.get('callback')
-        self.lang = request.lang
-        self.geodataStaging = request.registry.settings['geodata_staging']
-        self.returnGeometry = request.params.get('returnGeometry')
-        self.translate = request.translate
-        self.request = request
-        self.varnish_authorized = request.headers.get('X-SearchServer-Authorized', 'false').lower() == 'true'
-
-# for releases requests
-
-
-def _get_releases_params(request):
-    params = FeatureParams(request)
-    params.imageDisplay = request.params.get('imageDisplay')
-    params.mapExtent = request.params.get('mapExtent')
-    params.geometry = request.params.get('geometry')
-    params.geometryType = request.params.get('geometryType')
-    params.layer = request.matchdict.get('layerId')
-    return params
-
-# For identify services
-
-
-def _get_features_params(request):
-    params = FeatureParams(request)
-    # where must come first order matters, see MapServiceValidation
-    params.where = request.params.get('where')
-    params.searchText = request.params.get('searchText')
-    params.geometry = request.params.get('geometry')
-    params.geometryType = request.params.get('geometryType')
-    params.imageDisplay = request.params.get('imageDisplay')
-    params.mapExtent = request.params.get('mapExtent')
-    params.tolerance = request.params.get('tolerance')
-    params.layers = request.params.get('layers', 'all')
-    params.timeInstant = request.params.get('timeInstant')
-    params.offset = request.params.get('offset')
-    params.limit = request.params.get('limit')
-    params.order = request.params.get('order')
-    return params
 
 
 @view_config(route_name='identify', request_param='geometryFormat=interlis')
@@ -178,7 +129,7 @@ def _identify_oereb(request):
             header[pos:]
         ))
 
-    params = _get_features_params(request)
+    params = IdentifyServiceValidation(request)
     # At the moment only one layer at a time and no support of all
     if params.layers == 'all' or len(params.layers) > 1:
         raise exc.HTTPBadRequest('Please specify the id of the layer you want to query')
@@ -222,7 +173,7 @@ def _identify_oereb(request):
 
 
 def _identify(request):
-    params = _get_features_params(request)
+    params = IdentifyServiceValidation(request)
 
     if params.layers == 'all':
         model = get_bod_model(params.lang)
@@ -529,14 +480,14 @@ def _process_feature(feature, params):
 
 @view_config(route_name='releases', renderer='geojson')
 def releases(request):
-    params = _get_releases_params(request)
+    params = IdentifyServiceValidation(request, service='releases')
     # For this sevice, we have to use different models based
     # on specially sorted views. We add the _meta part to the given
     # layer name
     # Note that only zeitreihen is currently supported for this service
-    models = models_from_bodid(params.layer)
+    models = models_from_bodid(params.layerId)
     if models is None:
-        raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layer)
+        raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
 
     # Default timestamp
     timestamps = []
