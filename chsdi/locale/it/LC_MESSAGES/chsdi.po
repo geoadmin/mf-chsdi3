@@ -6821,6 +6821,9 @@ msgstr "Numero ufficiale di punto"
 msgid "optionaler_name"
 msgstr "Nom optionel"
 
+msgid "org.epsg.grid_2056"
+msgstr "Coordinate CH1903+/MN95"
+
 msgid "org.epsg.grid_21781"
 msgstr "Coordinate CH1903/MN03"
 
