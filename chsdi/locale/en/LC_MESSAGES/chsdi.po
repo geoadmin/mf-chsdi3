@@ -4731,7 +4731,7 @@ msgid "ch.swisstopo.gkwvor500-papierkarte.metadata.release"
 msgstr "Edition"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata"
-msgstr "Groundwater Vulnerability 500 - paper"
+msgstr "Groundwater Vulnerability 500 paper"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
 msgstr "Edition"
@@ -6820,6 +6820,9 @@ msgstr "Official point  number"
 
 msgid "optionaler_name"
 msgstr "Optionaler Name"
+
+msgid "org.epsg.grid_2056"
+msgstr "Coordinate grid CH1903+/LV95"
 
 msgid "org.epsg.grid_21781"
 msgstr "Coordinate grid CH1903/LV03"

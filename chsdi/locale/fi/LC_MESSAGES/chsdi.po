@@ -4731,7 +4731,7 @@ msgid "ch.swisstopo.gkwvor500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata"
-msgstr "Vulnerabil. aua sutterrana - stampada"
+msgstr "Vulnerabil. aua sutterrana stampada"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -6820,6 +6820,9 @@ msgstr "Offizielle Punktnummer"
 
 msgid "optionaler_name"
 msgstr "Optionaler Name"
+
+msgid "org.epsg.grid_2056"
+msgstr "Rait coordinatas CH1903+/MN95"
 
 msgid "org.epsg.grid_21781"
 msgstr "Rait coordinatas CH1903/MN03"
