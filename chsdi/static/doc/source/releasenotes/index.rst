@@ -15,6 +15,39 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20160413:
+
+Release 20160413 - Wednesday, April 13th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `New cache control service for WMTS tiles invalidation <../../../services/sdiservices.html#cache-update>`__
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160330...r_160413>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160330...r_160413>`__
+
+
+Geodata
+*******
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `Coordinate grid CH1903+/LV95 <//map.geo.admin.ch/?layers=org.epsg.grid_2056>`__ (org.epsg.grid_2056)      |
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `Coordinate grid CH1903/LV03 <//map.geo.admin.ch/?layers=org.epsg.grid_21781>`__ (org.epsg.grid_21781)     |
++--------+------------------------------------------------------------------------------------------------------------+
+| New    | `Coordinate grid WGS84 <//map.geo.admin.ch/?layers=org.epsg.grid_4326>`__ (org.epsg.grid_4326)             |
++--------+------------------------------------------------------------------------------------------------------------+
+| Update | `Wind energy plants <//map.geo.admin.ch/?layers=ch.bfe.windenergieanlagen>`__ (ch.bfe.windenergieanlagen)  |
++--------+------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20160330:
 
 Release 20160330 - Wednesday, March 30th 2016
