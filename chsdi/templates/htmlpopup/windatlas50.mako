@@ -56,7 +56,7 @@ props = c['properties']
 
 <%def name="extended_info(c, lang)">
 <%
-coordinates = c['geometry']['coordinates']
+coordinates = c['geometry']['coordinates'][0]
 bottomLeft = coordinates[0]
 topRight = coordinates[2]
 center = [(bottomLeft[0] + topRight[0]) / 2, (bottomLeft[1] + topRight[1]) / 2]
