@@ -299,16 +299,6 @@ def is_box2d(box2D):
     return True
 
 
-def extend_box2d(box2D, distance):
-    if is_box2d(box2D):
-        return [
-            box2D[0] - distance,
-            box2D[1] - distance,
-            box2D[2] + distance,
-            box2D[3] + distance
-        ]
-
-
 def center_from_box2d(box2D):
     if is_box2d(box2D):
         return [
