@@ -83,7 +83,7 @@ GeoAdmin iframe examples
       link: 'http://openlayers.org/en/v3.6.0/examples/',
       cat: 2 
     }, {
-      label: 'Communication between a KML layer in iframe and the parent window',
+      label: 'Communication between a GeoJSON layer in iframe and the parent window',
       codepen: 'yOBzqM',
       cat: 3
     }];
