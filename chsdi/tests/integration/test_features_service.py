@@ -49,16 +49,22 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(len(resp.json['results']), 1)
 
     def test_find_exact_text(self):
-        params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'strname1', 'searchText': 'Beaulieustrasse', 'returnGeometry': 'false', 'contains': 'false'}
+        params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'strname1', 'searchText': 'Beaulieustrasse',
+                  'returnGeometry': 'false', 'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) > 1)
+        self.assertIn('attributes', resp.json['results'][0])
+        self.assertNotIn('geometry', resp.json['results'][0])
 
     def test_find_exact_date(self):
-        params = {'layer': 'ch.bazl.luftfahrthindernis', 'searchField': 'startofconstruction', 'searchText': '1950-01-01', 'returnGeometry': 'false', 'contains': 'false'}
+        params = {'layer': 'ch.bazl.luftfahrthindernis', 'searchField': 'startofconstruction', 'searchText': '1950-01-01', 'returnGeometry': 'false',
+                  'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) > 1)
+        self.assertIn('attributes', resp.json['results'][0])
+        self.assertNotIn('geometry', resp.json['results'][0])
 
     def test_find_geojson(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid', 'searchText': '1231641', 'geometryFormat': 'geojson'}
@@ -88,10 +94,12 @@ class TestFeaturesView(TestsBase):
         self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
 
     def test_find_contains(self):
-        params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': 'Islastrasse', 'searchField': 'strname1', 'returnGeometry': 'false', 'contains': 'false'}
+        params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': 'Islastrasse', 'searchField': 'strname1', 'returnGeometry': 'false',
+                  'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) > 1)
+        self.assertNotIn('geometry', resp.json['results'][0])
 
     def test_feature_wrong_idlayer(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/toto/362', status=400)
@@ -148,8 +156,17 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 
+    def test_htmlpopup_scale_dependent(self):
+        params = {'mapExtent': '559349.7,127280.7,695549.7,241180.7', 'imageDisplay': '1362,1139,96', 'lang': 'fr'}
+        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.schutzgebiete-aulav_uebrige/400/htmlPopup', params=params, status=200)
+        resp.mustcontain('Les atterrissages en campagne')
+        params = {'mapExtent': '654998,188636.6,657722,190914.6', 'imageDisplay': '1362,1139,96', 'lang': 'fr'}
+        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.schutzgebiete-aulav_uebrige/400/htmlPopup', params=params, status=200)
+        resp.mustcontain('Haut-marais')
+
     def test_htmlpopup_cadastralwebmap(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/14/htmlPopup', params={'mapExtent': '485412.34375,109644.67,512974.44,135580.01999999999', 'imageDisplay': '600,400,96'}, status=200)
+        params = {'mapExtent': '485412.34375,109644.67,512974.44,135580.01999999999', 'imageDisplay': '600,400,96'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/14/htmlPopup', params=params, status=200)
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 
@@ -164,14 +181,6 @@ class TestFeaturesView(TestsBase):
 
     def test_htmlpopup_missing_feature(self):
         self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', status=404)
-
-    def test_htmlpopup_scale_dependent(self):
-        params = {'mapExtent': '559349.7,127280.7,695549.7,241180.7', 'imageDisplay': '1362,1139,96', 'lang': 'fr'}
-        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.schutzgebiete-aulav_uebrige/400/htmlPopup', params=params, status=200)
-        resp.mustcontain('Les atterrissages en campagne')
-        params = {'mapExtent': '654998,188636.6,657722,190914.6', 'imageDisplay': '1362,1139,96', 'lang': 'fr'}
-        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.schutzgebiete-aulav_uebrige/400/htmlPopup', params=params, status=200)
-        resp.mustcontain('Haut-marais')
 
     def test_extendedhtmlpopup_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/11/extendedHtmlPopup', status=200)
@@ -226,8 +235,8 @@ class TestGebauedeGeometry(TestsBase):
 
     def test_identify_not_authorized(self):
         headers = {'X-SearchServer-Authorized': 'false'}
-        params = {'geometry': '653199.9999999999,137409.99999999997', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryPoint',
-                  'imageDisplay': '1920,623,96', 'layers': 'all:ch.bfs.gebaeude_wohnungs_register', 'mapExtent': '633200,132729.99999999997,671600,145189.99999999997',
+        params = {'geometry': '653199.9,137409.9', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryPoint',
+                  'imageDisplay': '1920,623,96', 'layers': 'all:ch.bfs.gebaeude_wohnungs_register', 'mapExtent': '633200,132729.9,671600,145189.9',
                   'tolerance': '5'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=headers, status=200)
         self.assertEqual(resp.content_type, 'application/json')
@@ -236,8 +245,8 @@ class TestGebauedeGeometry(TestsBase):
 
     def test_identify_authorized(self):
         headers = {'X-SearchServer-Authorized': 'true'}
-        params = {'geometry': '653199.9999999999,137409.99999999997', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryPoint',
-                  'imageDisplay': '1920,623,96', 'layers': 'all:ch.bfs.gebaeude_wohnungs_register', 'mapExtent': '633200,132729.99999999997,671600,145189.99999999997',
+        params = {'geometry': '653199.9,137409.9', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryPoint',
+                  'imageDisplay': '1920,623,96', 'layers': 'all:ch.bfs.gebaeude_wohnungs_register', 'mapExtent': '633200,132729.9,671600,145189.9',
                   'tolerance': '5'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=headers, status=200)
         self.assertEqual(resp.content_type, 'application/json')
@@ -270,7 +279,11 @@ class TestReleasesService(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 25, len(resp.json['results']))
         ist = resp.json['results']
-        soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231", "18791231", "18821231", "18851231", "18891231", "18931231", "18951231", "18981231", "19021231", "19051231", "19061231", "19081231", "19091231", "19121231", "19221231", "19231231", "19281231", "19331231", "19591231", "19651231", "19701231", "19761231", "19821231", "19881231", "19941231", "20001231", "20071231"]
+        soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231",
+                "18791231", "18821231", "18851231", "18891231", "18931231", "18951231",
+                "18981231", "19021231", "19051231", "19061231", "19081231", "19091231",
+                "19121231", "19221231", "19231231", "19281231", "19331231", "19591231",
+                "19651231", "19701231", "19761231", "19821231", "19881231", "19941231", "20001231", "20071231"]
         for idx, i in enumerate(ist):
             self.assertEqual(i, soll[idx], str(idx))
 
@@ -284,7 +297,10 @@ class TestReleasesService(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 25, len(resp.json['results']))
         ist = resp.json['results']
-        soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231", "18791231", "18821231", "18841231", "18961231", "18971231", "19011231", "19131231", "19311231", "19421231", "19571231", "19641231", "19701231", "19761231", "19821231", "19881231", "19941231", "20001231", "20061231", "20121231"]
+        soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231",
+                "18791231", "18821231", "18841231", "18961231", "18971231", "19011231",
+                "19131231", "19311231", "19421231", "19571231", "19641231", "19701231",
+                "19761231", "19821231", "19881231", "19941231", "20001231", "20061231", "20121231"]
         for idx, i in enumerate(ist):
             self.assertEqual(i, soll[idx], str(idx))
 
@@ -298,7 +314,10 @@ class TestReleasesService(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 25, len(resp.json['results']))
         ist = resp.json['results']
-        soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231", "18791231", "18821231", "18841231", "18961231", "18971231", "19011231", "19131231", "19311231", "19421231", "19551231", "19571231", "19641231", "19701231", "19761231", "19821231", "19881231", "19941231", "20001231", "20061231", "20121231"]
+        soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231",
+                "18791231", "18821231", "18841231", "18961231", "18971231", "19011231",
+                "19131231", "19311231", "19421231", "19551231", "19571231", "19641231",
+                "19701231", "19761231", "19821231", "19881231", "19941231", "20001231", "20061231", "20121231"]
         for idx, i in enumerate(ist):
             self.assertEqual(i, soll[idx], str(idx))
 
