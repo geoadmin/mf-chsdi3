@@ -1,3 +1,18 @@
+msgid "ch.bfe.windenergie-geschwindigkeit_h50"
+msgstr ""
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h75"
+msgstr ""
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h100"
+msgstr ""
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h125"
+msgstr ""
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h150"
+msgstr ""
+
 msgid "org.epsg.grid_2056"
 msgstr ""
 

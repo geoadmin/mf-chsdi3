@@ -3971,6 +3971,21 @@ msgstr "Dam Type"
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=en"
 
+msgid "ch.bfe.windenergie-geschwindigkeit_h100"
+msgstr "Wind speed 100 metres above ground"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h125"
+msgstr "Wind speed 125 metres above ground"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h150"
+msgstr "Wind speed 150 metres above ground"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h50"
+msgstr "Wind speed 50 metres above ground"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h75"
+msgstr "Wind speed 75 metres above ground"
+
 msgid "ch.bfe.windenergieanlagen"
 msgstr "Wind energy plants"
 

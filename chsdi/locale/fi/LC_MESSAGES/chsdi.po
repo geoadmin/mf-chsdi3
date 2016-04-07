@@ -3971,6 +3971,21 @@ msgstr "Sperrentyp"
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=de"
 
+msgid "ch.bfe.windenergie-geschwindigkeit_h100"
+msgstr "Windgeschwindigkeit 100 m Höhe"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h125"
+msgstr "Windgeschwindigkeit 125 m Höhe"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h150"
+msgstr "Windgeschwindigkeit 150 m Höhe"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h50"
+msgstr "Windgeschwindigkeit 50 m Höhe"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h75"
+msgstr "Windgeschwindigkeit 75 m Höhe"
+
 msgid "ch.bfe.windenergieanlagen"
 msgstr "Implants d'energia dal vent"
 

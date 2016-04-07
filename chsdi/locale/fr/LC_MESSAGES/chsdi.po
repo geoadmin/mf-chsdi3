@@ -3971,6 +3971,21 @@ msgstr "Type de barrage"
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=fr"
 
+msgid "ch.bfe.windenergie-geschwindigkeit_h100"
+msgstr "Vitesse du vent à 100 m du sol"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h125"
+msgstr "Vitesse du vent à 125 m du sol"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h150"
+msgstr "Vitesse du vent à 150 m du sol"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h50"
+msgstr "Vitesse du vent à 50 m du sol"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h75"
+msgstr "Vitesse du vent à 75 m du sol"
+
 msgid "ch.bfe.windenergieanlagen"
 msgstr "Installations éoliennes"
 
