@@ -29,6 +29,11 @@ center = ', '.join([str(round(center[0], 2)), str(round(center[1], 2))])
 
 props = c['properties']
 %>
+<style>
+.htmlpopup-container {
+  max-width: 400px;
+}
+</style>
 <!-- html output -->
     <tr>
       <th class="cell-left">${_('tt_bfe_hoehe_ueber_grund')}</th>
@@ -47,9 +52,11 @@ props = c['properties']
       <td>${round(props['v_mean'], 2)}</td>
     </tr>
     <tr>
-      <th class="cell-left">${_('tt_bfe_windrose')}</th>
-      <td>
-        <div style="margin-left:-40px"><iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="230" frameborder="0" style="border: 0;" scrolling="no"></iframe></div>
+      <th colspan=2 class="cell-meta-one">${_('tt_bfe_windrose')}</th>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="230" frameborder="0" style="border: 0;" scrolling="no"></iframe>
       </td>
     </tr>
 </%def>
@@ -172,22 +179,23 @@ td.inner-table {
 % if iframe:
 <style>
 .chsdi-htmlpopup-container {
-    visibility: hidden;
+  visibility: hidden;
 }
 .htmlpopup-header {
-    visibility: hidden;
+  visibility: hidden;
 }
 .htmlpopup-content {
-    visibility: hidden;
+  visibility: hidden;
 }
 .htmlpopup-footer {
-    visibility: hidden;
+  visibility: hidden;
 }
 #rose {
-    color: blue;
-    visibility: visible;
-    position: fixed;
-    top: 0;
+  color: blue;
+  visibility: visible;
+  position: fixed;
+  top: 0;
+  right: 15px;
 }
 </style>
 % endif
