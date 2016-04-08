@@ -11,7 +11,7 @@ import pyramid.httpexceptions as exc
 
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
-from chsdi.lib.validation.mapservice import MapServiceValidation
+from chsdi.lib.validation import BaseLayersValidation
 from chsdi.models import models_from_bodid, get_models_attributes_keys
 from chsdi.models.bod import LayersConfig, get_bod_model, computeHeader
 from chsdi.lib.filters import full_text_search, filter_by_geodata_staging, filter_by_map_name
@@ -20,28 +20,9 @@ SAMPLE_SIZE = 100
 MAX_ATTRIBUTES_VALUES = 5
 
 
-class LayersParams(MapServiceValidation):
-
-    def __init__(self, request):
-        super(LayersParams, self).__init__()
-
-        # Map and topic represent the same resource
-        self.mapName = request.matchdict.get('map')
-        self.hasMap(request.db, self.mapName)
-        self.cbName = request.params.get('callback')
-        self.lang = request.lang
-        self.searchText = request.params.get('searchText')
-        # Not to be published in doc
-        self.chargeable = request.params.get('chargeable')
-        self.geodataStaging = request.registry.settings['geodata_staging']
-
-        self.translate = request.translate
-        self.request = request
-
-
 @view_config(route_name='mapservice', renderer='jsonp')
 def metadata(request):
-    params = LayersParams(request)
+    params = BaseLayersValidation(request)
     model = get_bod_model(params.lang)
     query = params.request.db.query(model)
     query = _filter_on_chargeable_attr(params, query, model)
@@ -63,7 +44,7 @@ def metadata(request):
 
 @view_config(route_name='layersConfig', renderer='jsonp')
 def layers_config(request):
-    params = LayersParams(request)
+    params = BaseLayersValidation(request)
     query = params.request.db.query(LayersConfig)
     layers = {}
     for layer in get_layers_config_for_params(params, query, LayersConfig):
@@ -73,7 +54,7 @@ def layers_config(request):
 
 @view_config(route_name='legend', renderer='jsonp')
 def legend(request):
-    params = LayersParams(request)
+    params = BaseLayersValidation(request)
     layerId = request.matchdict.get('layerId')
     model = get_bod_model(params.lang)
     query = params.request.db.query(model)
@@ -114,7 +95,7 @@ def _find_type(model, colProp):
 def feature_attributes(request):
     ''' This service is used to expose the
     attributes of vector layers. '''
-    params = LayersParams(request)
+    params = BaseLayersValidation(request)
     layerId = request.matchdict.get('layerId')
     models = models_from_bodid(layerId)
     # Models for the same layer have the same attributes
@@ -162,7 +143,7 @@ def feature_attributes(request):
 
 @view_config(route_name='faqlist', renderer='jsonp')
 def faqlist(request):
-    params = LayersParams(request)
+    params = BaseLayersValidation(request)
     params.geodataStaging = 'prod'
     translations = {}
 

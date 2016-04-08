@@ -14,89 +14,21 @@ from sqlalchemy import Text, Integer, Boolean, Numeric, Date
 from sqlalchemy import text
 from geoalchemy2.types import Geometry
 
-from chsdi.lib.validation.mapservice import MapServiceValidation
+from chsdi.lib.validation.features import (
+    HtmlPopupServiceValidation, ExtendedHtmlPopupServiceValidation,
+    GetFeatureServiceValidation, AttributesServiceValidation
+)
+from chsdi.lib.validation.find import FindServiceValidation
+from chsdi.lib.validation.identify import IdentifyServiceValidation
 from chsdi.lib.helpers import format_query
 from chsdi.lib.filters import full_text_search
 from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.bod import OerebMetadata, get_bod_model
+from chsdi.models.vector import getScale
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
 PROTECTED_GEOMETRY_LAYERS = ['ch.bfs.gebaeude_wohnungs_register']
 MAX_FEATURES = 201
-
-
-# For several features
-class FeatureParams(MapServiceValidation):
-
-    def __init__(self, request):
-        super(FeatureParams, self).__init__()
-        # Map and topic represent the same resource
-        self.mapName = request.matchdict.get('map')
-        self.hasMap(request.db, self.mapName)
-        self.cbName = request.params.get('callback')
-        self.lang = request.lang
-        self.geodataStaging = request.registry.settings['geodata_staging']
-        self.returnGeometry = request.params.get('returnGeometry')
-        self.translate = request.translate
-        self.request = request
-        self.varnish_authorized = request.headers.get('X-SearchServer-Authorized', 'false').lower() == 'true'
-
-# for releases requests
-
-
-def _get_releases_params(request):
-    params = FeatureParams(request)
-    params.imageDisplay = request.params.get('imageDisplay')
-    params.mapExtent = request.params.get('mapExtent')
-    params.geometry = request.params.get('geometry')
-    params.geometryType = request.params.get('geometryType')
-    params.layer = request.matchdict.get('layerId')
-    return params
-
-# For identify services
-
-
-def _get_features_params(request):
-    params = FeatureParams(request)
-    # where must come first order matters, see MapServiceValidation
-    params.where = request.params.get('where')
-    params.searchText = request.params.get('searchText')
-    params.geometry = request.params.get('geometry')
-    params.geometryType = request.params.get('geometryType')
-    params.imageDisplay = request.params.get('imageDisplay')
-    params.mapExtent = request.params.get('mapExtent')
-    params.tolerance = request.params.get('tolerance')
-    params.layers = request.params.get('layers', 'all')
-    params.timeInstant = request.params.get('timeInstant')
-    params.offset = request.params.get('offset')
-    params.limit = request.params.get('limit')
-    params.order = request.params.get('order')
-    return params
-
-
-# For feature, htmlPopup and extendedHtmlPopup services
-def _get_feature_params(request):
-    params = FeatureParams(request)
-    params.layerId = request.matchdict.get('layerId')
-    params.featureIds = request.matchdict.get('featureId')
-    return params
-
-
-def _get_find_params(request):
-    params = FeatureParams(request)
-    params.layer = request.params.get('layer')
-    params.searchText = request.params.get('searchText')
-    params.searchField = request.params.get('searchField')
-    params.contains = request.params.get('contains')
-    return params
-
-
-def _get_attributes_params(request):
-    params = FeatureParams(request)
-    params.layerId = request.matchdict.get('layerId')
-    params.attribute = request.matchdict.get('attribute')
-
-    return params
 
 
 @view_config(route_name='identify', request_param='geometryFormat=interlis')
@@ -144,8 +76,7 @@ def view_attribute_values_geojson(request):
 
 @view_config(route_name='htmlPopup', renderer='jsonp')
 def htmlpopup(request):
-    params = _get_feature_params(request)
-    params.returnGeometry = False
+    params = HtmlPopupServiceValidation(request)
     feature, vectorModel = next(_get_features(params))
 
     layerModel = get_bod_model(params.lang)
@@ -168,8 +99,7 @@ def htmlpopup(request):
 
 @view_config(route_name='extendedHtmlPopup', renderer='jsonp')
 def extendedhtmlpopup(request):
-    params = _get_feature_params(request)
-    params.returnGeometry = True
+    params = ExtendedHtmlPopupServiceValidation(request)
     feature, vectorModel = next(_get_features(params))
 
     layerModel = get_bod_model(params.lang)
@@ -199,7 +129,7 @@ def _identify_oereb(request):
             header[pos:]
         ))
 
-    params = _get_features_params(request)
+    params = IdentifyServiceValidation(request)
     # At the moment only one layer at a time and no support of all
     if params.layers == 'all' or len(params.layers) > 1:
         raise exc.HTTPBadRequest('Please specify the id of the layer you want to query')
@@ -243,7 +173,7 @@ def _identify_oereb(request):
 
 
 def _identify(request):
-    params = _get_features_params(request)
+    params = IdentifyServiceValidation(request)
 
     if params.layers == 'all':
         model = get_bod_model(params.lang)
@@ -283,7 +213,7 @@ def _identify(request):
 
 
 def _get_feature_service(request):
-    params = _get_feature_params(request)
+    params = GetFeatureServiceValidation(request)
     features = []
     for feature, vectorModel in _get_features(params):
         features.append(feature)
@@ -295,12 +225,15 @@ def _get_feature_service(request):
 def _get_features(params, extended=False):
     ''' Returns exactly one feature or raises
     an excpetion '''
-    featureIds = params.featureIds.split(',')
-    models = models_from_bodid(params.layerId)
+    scale = None
+    if all((params.imageDisplay, params.mapExtent)):
+        scale = getScale(params.imageDisplay, params.mapExtent)
+    models = models_from_bodid(params.layerId, scale)
+
     if models is None:
         raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
 
-    for featureId in featureIds:
+    for featureId in params.featureIds:
         # One layer can have several models
         for model in models:
             query = params.request.db.query(model)
@@ -422,7 +355,7 @@ def _attributes(request):
     and an attribute name (mapped in the model) '''
     MAX_ATTR_VALUES = 50
     attributesValues = []
-    params = _get_attributes_params(request)
+    params = AttributesServiceValidation(request)
 
     models = models_from_bodid(params.layerId)
 
@@ -456,7 +389,7 @@ def _attributes(request):
 
 def _find(request):
     MaxFeatures = 50
-    params = _get_find_params(request)
+    params = FindServiceValidation(request)
     if params.searchText is None:
         raise exc.HTTPBadRequest('Please provide a searchText')
 
@@ -547,14 +480,14 @@ def _process_feature(feature, params):
 
 @view_config(route_name='releases', renderer='geojson')
 def releases(request):
-    params = _get_releases_params(request)
+    params = IdentifyServiceValidation(request, service='releases')
     # For this sevice, we have to use different models based
     # on specially sorted views. We add the _meta part to the given
     # layer name
     # Note that only zeitreihen is currently supported for this service
-    models = models_from_bodid(params.layer)
+    models = models_from_bodid(params.layerId)
     if models is None:
-        raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layer)
+        raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
 
     # Default timestamp
     timestamps = []

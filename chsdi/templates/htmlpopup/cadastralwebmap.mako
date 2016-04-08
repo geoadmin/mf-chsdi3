@@ -6,12 +6,12 @@
 <%def name="table_body(c, lang)">
     <%
       from chsdi.models.vector import getScale
-      from chsdi.lib.validation.mapservice import MapServiceValidation
+      from chsdi.lib.validation.features import IdentifyServiceValidation
       request = context.get('request')
       defaultExtent = '42000,30000,350000,900000'
       defaultImageDisplay = '400,600,96'
       fallbackLang = 'fr' if request.lang in ('fr', 'it') else 'de'
-      class CadastralWebMapParams(MapServiceValidation):
+      class CadastralWebMapParams(IdentifyServiceValidation):
           def __init__(self, request):
               self.mapExtent = request.params.get('mapExtent', defaultExtent)
               self.imageDisplay = request.params.get('imageDisplay', defaultImageDisplay)

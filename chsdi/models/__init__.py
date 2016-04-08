@@ -42,8 +42,26 @@ def oereb_models_from_bodid(bodId):
     return oerebmap.get(bodId)
 
 
-def models_from_bodid(bodId):
-    return bodmap.get(bodId)
+def models_from_bodid(bodId, scale=None):
+    models = bodmap.get(bodId)
+    if scale and models:
+        filteredModels = []
+        for m in models:
+            hasMinScale = hasattr(m, '__minscale__')
+            hasMaxScale = hasattr(m, '__maxscale__')
+            if hasMinScale and hasMaxScale:
+                if m.__minscale__ < scale and m.__maxscale__ > scale:
+                    filteredModels.append(m)
+            elif hasMinScale:
+                if m.__minscale__ < scale:
+                    filteredModels.append(m)
+            elif hasMaxScale:
+                if m.__maxscale__ > scale:
+                    filteredModels.append(m)
+        if len(filteredModels) > 0:
+            return filteredModels
+    else:
+        return models
 
 
 def queryable_models_from_bodid(bodId, searchField):

@@ -347,7 +347,7 @@ def format_price(price):
 
 
 def int_with_apostrophe(x):
-    if type(x) not in [type(0), type(0L)]:
+    if type(x) not in [type(0), type(long(0))]:
         return '-'
     if x < 0:
         return '-' + int_with_apostrophe(-x)

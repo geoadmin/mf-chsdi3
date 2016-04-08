@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from chsdi.lib.helpers import parse_box2d, center_from_box2d
-from chsdi.views.features import _get_feature_params, _get_features
+from chsdi.lib.validation.features import ExtendedHtmlPopupServiceValidation
+from chsdi.views.features import _get_features
 from pyramid.view import view_config
 
 from pyramid.renderers import render_to_response
@@ -25,7 +26,7 @@ def historical_maps(request):
     request.matchdict['featureId'] = featureId
 
     # Call service directly
-    params = _get_feature_params(request)
+    params = ExtendedHtmlPopupServiceValidation(request)
     feature, vectorModel = next(_get_features(params))
     featureBbox = parse_box2d(feature['feature'].properties['box2d'])
     center = center_from_box2d(featureBbox)

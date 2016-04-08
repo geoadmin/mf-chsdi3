@@ -1,57 +1,64 @@
 # -*- coding: utf-8 -*-
 
 
-from shapely.geometry import asShape
 from pyramid.httpexceptions import HTTPBadRequest
+from shapely.geometry import asShape
 
 from chsdi.lib.helpers import float_raise_nan
-from chsdi.lib.validation import MapNameValidation
+from chsdi.lib.validation import BaseFeaturesValidation
 from chsdi.esrigeojsonencoder import loads
 
 
-class MapServiceValidation(MapNameValidation):
+class IdentifyServiceValidation(BaseFeaturesValidation):
 
-    def __init__(self):
-        super(MapServiceValidation, self).__init__()
+    def __init__(self, request, service=None):
+        super(IdentifyServiceValidation, self).__init__(request)
         self._where = None
         self._geometry = None
         self._geometryType = None
-        self._returnGeometry = None
         self._imageDisplay = None
         self._mapExtent = None
+        self._returnGeometry = None
         self._tolerance = None
         self._timeInstant = None
         self._layers = None
-        self._layer = None
-        self._searchText = None
-        self._searchField = None
-        self._contains = None
-        self._chargeable = None
         self._offset = None
+        self._limit = None
+        self._order = None
+
         self.esriGeometryTypes = (
             'esriGeometryPoint',
             'esriGeometryPolyline',
             'esriGeometryPolygon',
             'esriGeometryEnvelope'
         )
-        self._limit = None
-        self._order = None
+        self.where = request.params.get('where')
+        self.geometry = request.params.get('geometry')
+        self.geometryType = request.params.get('geometryType')
+        self.imageDisplay = request.params.get('imageDisplay')
+        self.mapExtent = request.params.get('mapExtent')
+        self.returnGeometry = request.params.get('returnGeometry')
+        if service != 'releases':
+            self.tolerance = request.params.get('tolerance')
+        if service == 'releases':
+            self.layerId = request.matchdict.get('layerId')
+        self.layers = request.params.get('layers', 'all')
+        self.timeInstant = request.params.get('timeInstant')
+        self.offset = request.params.get('offset')
+        self.limit = request.params.get('limit')
+        self.order = request.params.get('order')
 
     @property
     def where(self):
         return self._where
 
     @property
-    def geometry(self):
-        return self._geometry
-
-    @property
     def geometryType(self):
         return self._geometryType
 
     @property
-    def returnGeometry(self):
-        return self._returnGeometry
+    def geometry(self):
+        return self._geometry
 
     @property
     def imageDisplay(self):
@@ -62,6 +69,10 @@ class MapServiceValidation(MapNameValidation):
         return self._mapExtent
 
     @property
+    def returnGeometry(self):
+        return self._returnGeometry
+
+    @property
     def tolerance(self):
         return self._tolerance
 
@@ -70,28 +81,8 @@ class MapServiceValidation(MapNameValidation):
         return self._timeInstant
 
     @property
-    def models(self):
-        return self._models
-
-    @property
     def layers(self):
         return self._layers
-
-    @property
-    def layer(self):
-        return self._layer
-
-    @property
-    def searchField(self):
-        return self._searchField
-
-    @property
-    def contains(self):
-        return self._contains
-
-    @property
-    def chargeable(self):
-        return self._chargeable
 
     @property
     def offset(self):
@@ -111,6 +102,16 @@ class MapServiceValidation(MapNameValidation):
         if value is not None:
             self._where = value
 
+    @geometryType.setter
+    def geometryType(self, value):
+        if value is None and self._where is not None:
+            return
+        elif value is None and self._where is None:
+            raise HTTPBadRequest('Please provide the parameter geometryType  (Required)')
+        if value not in self.esriGeometryTypes:
+            raise HTTPBadRequest('Please provide a valid geometry type')
+        self._geometryType = value
+
     @geometry.setter
     def geometry(self, value):
         if value is None and self._where is not None:
@@ -123,27 +124,6 @@ class MapServiceValidation(MapNameValidation):
             except ValueError:
                 raise HTTPBadRequest('Please provide a valid geometry')
 
-    @geometryType.setter
-    def geometryType(self, value):
-        if value is None and self._where is not None:
-            return
-        elif value is None and self._where is None:
-            raise HTTPBadRequest('Please provide the parameter geometryType  (Required)')
-        if value not in self.esriGeometryTypes:
-            raise HTTPBadRequest('Please provide a valid geometry type')
-        self._geometryType = value
-
-    @returnGeometry.setter
-    def returnGeometry(self, value):
-        if value is None and self._where is not None:
-            return
-        elif value is False or value == 'false':
-            self._returnGeometry = False
-        else:
-            if self._where is not None:
-                return
-            self._returnGeometry = True
-
     @imageDisplay.setter
     def imageDisplay(self, value):
         if value is None and self._where is not None:
@@ -152,7 +132,9 @@ class MapServiceValidation(MapNameValidation):
             raise HTTPBadRequest('Please provide the parameter imageDisplay  (Required)')
         value = value.split(',')
         if len(value) != 3:
-            raise HTTPBadRequest('Please provide the parameter imageDisplay in a comma separated list of 3 arguments (width,height,dpi)')
+            raise HTTPBadRequest(
+                'Please provide the parameter imageDisplay in a comma separated list of 3 arguments '
+                '(width,height,dpi)')
         try:
             self._imageDisplay = map(float_raise_nan, value)
         except ValueError:
@@ -170,6 +152,18 @@ class MapServiceValidation(MapNameValidation):
                 self._mapExtent = asShape(feat)
             except ValueError:
                 raise HTTPBadRequest('Please provide numerical values for the parameter mapExtent')
+
+    @returnGeometry.setter
+    def returnGeometry(self, value):
+        if value is None:
+            self._returnGeometry = True
+        else:
+            if isinstance(value, unicode) and value.lower() == 'true':
+                self._returnGeometry = True
+            elif isinstance(value, unicode) and value.lower() == 'false':
+                self._returnGeometry = False
+            else:
+                self._returnGeometry = True
 
     @tolerance.setter
     def tolerance(self, value):
@@ -206,37 +200,6 @@ class MapServiceValidation(MapNameValidation):
                 self._layers = layers.split(',')
             except:
                 HTTPBadRequest('There is an error in the parameter layers')
-
-    @layer.setter
-    def layer(self, value):
-        if value is None:
-            raise HTTPBadRequest('Please provide a parameter layer')
-        if len(value.split(',')) > 1:
-            raise HTTPBadRequest('You can provide only one layer at a time')
-        self._layer = value
-
-    @searchField.setter
-    def searchField(self, value):
-        if value is None:
-            raise HTTPBadRequest('Please provide a searchField')
-        if len(value.split(',')) > 1:
-            raise HTTPBadRequest('You can provide only one searchField at a time')
-        self._searchField = value
-
-    @contains.setter
-    def contains(self, value):
-        if value is None or value.lower() == 'true':
-            self._contains = True
-        else:
-            self._contains = False
-
-    @chargeable.setter
-    def chargeable(self, value):
-        if value is not None:
-            if value.lower() == 'true':
-                self._chargeable = True
-            elif value.lower() == 'false':
-                self._chargeable = False
 
     @offset.setter
     def offset(self, value):
