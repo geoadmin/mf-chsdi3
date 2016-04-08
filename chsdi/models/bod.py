@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer, Boolean
+from sqlalchemy import Column, Text, Integer, Boolean, DateTime
 from sqlalchemy.dialects import postgresql
 
 from chsdi.lib.helpers import make_agnostic
@@ -504,3 +504,12 @@ def get_wmts_models(lang):
             'GetCapThemes': GetCapThemesDe,
             'ServiceMetadata': ServiceMetadataDe
         }
+
+
+class CacheUpdate(Base):
+    __dbname__ = 'bod'
+    __tablename__ = 'dataset_cache'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    id = Column('layer_id', Text, primary_key=True)
+    cache_type = Column('cache_type', Text)
+    cache_modified = Column('cache_modified', DateTime)
