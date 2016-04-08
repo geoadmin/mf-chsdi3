@@ -27,7 +27,7 @@ from chsdi.lib.filters import full_text_search
 from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.clientdata_dynamodb import get_bucket
 from chsdi.models.bod import OerebMetadata, get_bod_model
-from chsdi.models.vector import getScale, getToleranceMeters
+from chsdi.models.vector import getScale
 from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
@@ -277,7 +277,7 @@ def _get_features(params, extended=False):
     scale = None
     if all((params.imageDisplay, params.mapExtent)):
         scale = getScale(params.imageDisplay, params.mapExtent)
-    featureIds = params.featureIds.split(',')
+    featureIds = params.featureIds
     gridSpec = get_grid_spec(params.layerId)
     if not gridSpec:
         models = models_from_bodid(params.layerId, scale=scale)
