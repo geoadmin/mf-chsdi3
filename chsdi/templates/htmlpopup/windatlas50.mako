@@ -195,7 +195,7 @@ td.inner-table {
   visibility: visible;
   position: fixed;
   top: 0;
-  right: 15px;
+  left: 15px;
 }
 </style>
 % endif
