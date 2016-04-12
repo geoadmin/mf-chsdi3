@@ -13,7 +13,7 @@ from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 
 from chsdi.lib.validation import BaseLayersValidation
 from chsdi.models import models_from_bodid, get_models_attributes_keys
-from chsdi.models.bod import LayersConfig, get_bod_model, computeHeader
+from chsdi.models.bod import LayersConfig, get_bod_model, computeHeader, CacheUpdate
 from chsdi.lib.filters import full_text_search, filter_by_geodata_staging, filter_by_map_name
 
 SAMPLE_SIZE = 100
@@ -256,3 +256,25 @@ def get_layers_config_for_params(params, query, model):
 
     for q in query:
         yield q.layerConfig(params)
+
+
+@view_config(route_name='cacheUpdate', renderer='geojson')
+def cacheUpdate(request):
+    params = BaseLayersValidation(request)
+    layerId = request.matchdict.get('layerId')
+    model = CacheUpdate
+    query = params.request.db.query(model)
+
+    query = query.filter(model.id == layerId)
+
+    try:
+        layer = query.one()
+    except NoResultFound:
+        raise exc.HTTPNotFound('No layer with id %s' % layerId)
+    except MultipleResultsFound:  # pragma: no cover
+        raise exc.HTTPInternalServerError('Multiple layers found for the same id %s' % layerId)
+
+    return {
+        'cache_type': layer.cache_type,
+        'cache_update': layer.cache_modified
+    }

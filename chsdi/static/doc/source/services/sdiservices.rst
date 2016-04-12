@@ -729,9 +729,9 @@ Example
 - A profile in JSON: `https://api3.geo.admin.ch/rest/services/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <../../../rest/services/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
 - A profile in CSV: `https://api3.geo.admin.ch/rest/services/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <../../../rest/services/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
 
-.. _wmts_description:
-
 ----------
+
+.. _wmts_description:
 
 WMTS
 ----
@@ -764,10 +764,7 @@ The GetCapabilites document provides informations about the service, along with 
 Parameters
 **********
 
-Only the RESTFul interface is implemented. No KVP and SOAP. You *have* to provide a value for the `timestamp` parameter. The keyword `current`
-is supported for some layers. Please refer to the WMTS GetCapabilities Document for further information.
-
-A request is in the form:
+Only the RESTFul interface is implemented. No KVP and SOAP.
 
 ::
 
@@ -782,8 +779,8 @@ Scheme                 http or https                   The scheme type
 ServerName             wmts[5-9].geo.admin.ch
 Version                1.0.0                           WMTS protocol version
 Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document.
-StyleName              default                         mostly constant
-Time                   2010, 2010-01                   Date of tile generation in (ISO-8601). Some dataset will be updated quite often.
+StyleName              default                         Only **default** is supported.
+Time                   2010, 2010-01                   Date of tile generation in (ISO-8601) or logical value like **current**. A list of available values is provided in the `GetCapabilities <//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document under the <Dimension> tag. We recommend to use the value under the <Default> tag. Note that these values might change frequently - **check for updates regularly**.
 TileMatrixSet          21781 (constant)                EPSG code for LV03/CH1903
 TileSetId              22                              Zoom level (see below)
 TileRow                236
@@ -851,6 +848,7 @@ Resolution [m]   Zoomlevel Map zoom  Tile width m Tiles X  Tiles Y    Tiles     
    use the usual **col/row** order. The exception being *ch.kantone.cadastralwebmap-farbe* which always use
    the **col/row** order.
    However, most desktop GIS allow you to either use the advertized order or to override it.
+#. The tiles of a given layer might be updated **withtout** resulting in a new <Time> dimension in the GetCapabilities dimension. In case your application is caching tiles locally, you need to invalidate your local cache for this layer. To check the latest change of any layer, use the `Cache Update`_ service. 
 
 Result
 ******
@@ -907,6 +905,27 @@ Example
 * Switzerland is now adopting the new `LV95 frame <../examples/ol3_lv95.html>`_. 
 * All `available layers as WMTS <../examples/ol3_lv95_all.html>`_. 
 
+.. _cacheupdate_description:
+
+----------
+
+Cache Update
+------------
+
+As noted in the :ref:`wmts_description` service, the Tiles of a given <Time> dimension might be updated for technical reasons. If you are caching Tiles locally, this might result in your cache being outdated. Use the Cache Update service to query the Date of the last update for a given layer. If your cache is older than the returned Date, you have to clear your local cache.
+
+URL
+***
+
+::
+
+  https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/cacheUpdate
+
+
+Example
+*******
+
+- The the latest Cache Update for SwissImage Product: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissimage-product/cacheUpdate <../../../rest/services/api/MapServer/ch.swisstopo.swissimage-product/cacheUpdate>`_
 
 .. _owschecker_description:
 
