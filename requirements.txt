@@ -1,7 +1,7 @@
 autopep8
 Babel==0.9.6
 beautifulsoup4>=4.4.1
-boto==2.38
+boto==2.39
 coverage==4.0.3
 decorator==3.4.0
 flake8

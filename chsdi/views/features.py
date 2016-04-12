@@ -22,7 +22,7 @@ from chsdi.lib.validation.features import (
 )
 from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.validation.identify import IdentifyServiceValidation
-from chsdi.lib.helpers import format_query, decompress_gzipped_string
+from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d
 from chsdi.lib.filters import full_text_search
 from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.clientdata_dynamodb import get_bucket
@@ -197,9 +197,10 @@ def _identify(request):
         for layerBodId in layerBodIds:
             gridSpec = get_grid_spec(layerBodId)
             if gridSpec:
-                if params.geometryType != 'esriGeometryPoint':
+                if params.geometryType not in ('esriGeometryPoint', 'esriGeometryEnvelope'):
                     raise exc.HTTPBadRequest(
-                        'Only esriGeometryPoint is support for geometryType parameter for grid like data')
+                        'Only esriGeometryPoint or esriGeometryEnvelope'
+                        'are supported for geometryType parameter for grid like data')
                 layersGrid.append({layerBodId: gridSpec})
             else:
                 models = models_from_bodid(layerBodId)
@@ -220,7 +221,20 @@ def _identify_grid(params, layerBodIds):
     geometry = params.geometry
     # TODO support min/max scale and min/max resolution?
 
-    pointCoordinates = geometry.coordinates
+    # For select by rectangle
+    if params.geometryType == 'esriGeometryEnvelope':
+        coords = geometry.coordinates[0]
+        minx = miny = float('inf')
+        maxx = maxy = float('-inf')
+        for x, y in coords:
+            minx = min(minx, x)
+            miny = min(miny, y)
+            maxx = max(maxx, x)
+            maxy = max(maxy, y)
+        bbox = [minx, miny, maxx, maxy]
+        pointCoordinates = center_from_box2d(bbox)
+    else:
+        pointCoordinates = geometry.coordinates
     bucketName = params.request.registry.settings['vector_bucket']
     profileName = params.request.registry.settings['vector_profilename']
     bucket = get_bucket(profile_name=profileName, bucket_name=bucketName)
@@ -237,6 +251,7 @@ def _identify_grid(params, layerBodIds):
         if feature and not none:
             # For some reason we define the id twice..
             feature['featureId'] = feature['id']
+            feature['properties']['label'] = feature['id']
             features.append(feature)
 
     return features
