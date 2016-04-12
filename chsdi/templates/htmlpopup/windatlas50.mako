@@ -527,46 +527,71 @@ var svg = d3.select("#rose").append("svg")
 
 svg.call(tip);
 
-  data.forEach(function(d) {
-    d.speed  = +d.speed;
-    d.weight = +d.weight;
-    d.frequency  = +d.frequency;
-    d.width  = +d.weight;
-    d.orientation  =  d.orientation;
-  });
+data.forEach(function(d) {
+  d.speed  = +d.speed;
+  d.weight = +d.weight;
+  d.frequency  = +d.frequency;
+  d.width  = +d.weight;
+  d.orientation  =  d.orientation;
+});
 
-  //Kuchenstuecke hinzufuegen
-  var path = svg.selectAll(".solidArc")
-      .data(pie(data))
-    .enter().append("path")
-      .attr("fill", function(d) {
-        if (d.data.speed < 4.0) {
-            return "rgb(201,233,246)";
-        } else if (d.data.speed < 4.5 & d.data.speed >= 4.0) {
-            return "rgb(122,212,241)";
-        } else if (d.data.speed < 5.0 & d.data.speed >= 4.5) {
-            return "rgb(78,200,244)";
-        } else if (d.data.speed < 5.5 & d.data.speed >= 5.0) {
-            return "rgb(47,144,225)";
-        } else if (d.data.speed < 6.0 & d.data.speed >= 5.5) {
-            return "rgb(54,105,188)";
-        } else if (d.data.speed < 6.5 & d.data.speed >= 6.0) {
-            return "rgb(133,86,148)";
-        } else if (d.data.speed < 7.0 & d.data.speed >= 6.5) {
-            return "rgb(155,77,101)";
-        } else if (d.data.speed < 7.5 & d.data.speed >= 7.0) {
-            return "rgb(181,56,75)";
-        } else if (d.data.speed < 8.0 & d.data.speed >= 7.5) {
-            return "rgb(204,30,24)";
-        } else if (d.data.speed >= 8.0) {
-            return "rgb(187,8,5)";
-        }
-      })
-      .attr("class", "solidArc")
-      .attr("stroke", "gray")
-      .attr("d", arc)
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide);
+svg.append("circle")
+.attr("cx", "0")
+.attr("cy", "0")
+.attr("r", radius)
+.attr("stroke", "grey")
+.attr("stroke-width", "1")
+.attr("fill", "none");
+
+svg.append("circle")
+.attr("cx", "0")
+.attr("cy", "0")
+.attr("r", (radius / 2))
+.attr("stroke", "grey")
+.attr("stroke-width", "1")
+.attr("fill", "none");
+
+svg.append("circle")
+.attr("cx", "0")
+.attr("cy", "0")
+.attr("r", (radius / 4 * 3))
+.attr("stroke", "grey")
+.attr("stroke-width", "1")
+.attr("fill", "none");
+
+//Kuchenstuecke hinzufuegen
+var path = svg.selectAll(".solidArc")
+    .data(pie(data))
+  .enter().append("path")
+    .attr("fill", function(d) {
+      if (d.data.speed < 4.0) {
+          return "rgb(201,233,246)";
+      } else if (d.data.speed < 4.5 & d.data.speed >= 4.0) {
+          return "rgb(122,212,241)";
+      } else if (d.data.speed < 5.0 & d.data.speed >= 4.5) {
+          return "rgb(78,200,244)";
+      } else if (d.data.speed < 5.5 & d.data.speed >= 5.0) {
+          return "rgb(47,144,225)";
+      } else if (d.data.speed < 6.0 & d.data.speed >= 5.5) {
+          return "rgb(54,105,188)";
+      } else if (d.data.speed < 6.5 & d.data.speed >= 6.0) {
+          return "rgb(133,86,148)";
+      } else if (d.data.speed < 7.0 & d.data.speed >= 6.5) {
+          return "rgb(155,77,101)";
+      } else if (d.data.speed < 7.5 & d.data.speed >= 7.0) {
+          return "rgb(181,56,75)";
+      } else if (d.data.speed < 8.0 & d.data.speed >= 7.5) {
+          return "rgb(204,30,24)";
+      } else if (d.data.speed >= 8.0) {
+          return "rgb(187,8,5)";
+      }
+    })
+    .attr("class", "solidArc")
+    .attr("stroke", "gray")
+    .attr("d", arc)
+    .on('mouseover', tip.show)
+    .on('mouseout', tip.hide);
+
 
 //Beschriftungen Windrose
     svg.append("text")
@@ -653,29 +678,6 @@ svg.call(tip);
 % else:
     .attr("transform", "translate(55,-55) rotate(45)");
 % endif
-    svg.append("circle")
-    .attr("cx", "0")
-    .attr("cy", "0")
-    .attr("r", radius)
-    .attr("stroke", "grey")
-    .attr("stroke-width", "1")
-    .attr("fill", "none");
-
-    svg.append("circle")
-    .attr("cx", "0")
-    .attr("cy", "0")
-    .attr("r", (radius / 2))
-    .attr("stroke", "grey")
-    .attr("stroke-width", "1")
-    .attr("fill", "none");
-
-    svg.append("circle")
-    .attr("cx", "0")
-    .attr("cy", "0")
-    .attr("r", (radius / 4 * 3))
-    .attr("stroke", "grey")
-    .attr("stroke-width", "1")
-    .attr("fill", "none");
 
 //Legende rechts
     svg.append("rect")
