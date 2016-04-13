@@ -28,6 +28,7 @@ API & applications
 - Bug Fixes
 - `New cache control service for WMTS tiles invalidation <../../../services/sdiservices.html#cache-update>`__
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160330...r_160413>`__
+- `SearchServer <../../../services/sdiservices.html#search>`__ : sn25 origin has been replaced with gazetteer. Using sn25 as origin parameter will result in a 400 Bad Request error.
 
 
 `MAP <//map.geo.admin.ch>`__
