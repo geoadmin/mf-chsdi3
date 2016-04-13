@@ -3971,6 +3971,21 @@ msgstr "Tipo dell'opera di sbarramento"
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=it"
 
+msgid "ch.bfe.windenergie-geschwindigkeit_h100"
+msgstr "Velocità vento a 100 m dal suolo"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h125"
+msgstr "Velocità vento a 125 m dal suolo"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h150"
+msgstr "Velocità vento a 150 m dal suolo"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h50"
+msgstr "Velocità vento a 50 m dal suolo"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h75"
+msgstr "Velocità vento a 75 m dal suolo"
+
 msgid "ch.bfe.windenergieanlagen"
 msgstr "Impianti eolici"
 
@@ -7138,6 +7153,48 @@ msgstr "Eliminazione effettuata"
 
 msgid "tt_bebautefl"
 msgstr "Superfici costruite"
+
+msgid "tt_bfe_geschw_wind_durchschnitt"
+msgstr "Velocità media del vento"
+
+msgid "tt_bfe_geschwindigkeit"
+msgstr "Velocità (m/s)"
+
+msgid "tt_bfe_haeufigkeit"
+msgstr "Frequenza (%)"
+
+msgid "tt_bfe_hoehe_gelaende"
+msgstr "Altitudine"
+
+msgid "tt_bfe_hoehe_ueber_grund"
+msgstr "Altezza sul livello del terreno"
+
+msgid "tt_bfe_koordinaten"
+msgstr "Coordinate (X / Y)"
+
+msgid "tt_bfe_mittlere_geschw"
+msgstr "Velocità media"
+
+msgid "tt_bfe_windgeschwindigkeit"
+msgstr "Velocità del vento"
+
+msgid "tt_bfe_windrichtung"
+msgstr "Direzione del vento"
+
+msgid "tt_bfe_windrichtung_weibullverteilung"
+msgstr "Distribuzione di Weibull indipendente dalla direzione del vento."
+
+msgid "tt_bfe_windrose"
+msgstr "Rosa dei venti"
+
+msgid "tt_bfe_windrose_geschwverteilung"
+msgstr "Rosa dei venti raffigurante la distribuzione delle velocità del vento per direzione di provenienza"
+
+msgid "tt_bfe_windrose_help"
+msgstr "La rosa dei venti indica la distribuzione delle velocità del vento per direzione di provenienza. Muovete il mouse sulla rosa dei venti per avere i valori esatti per ogni settore di provenienza."
+
+msgid "tt_bfe_windstaerke_info"
+msgstr "La velocità del vento è soggetta a continue oscillazioni. Per la pianificazione di impianti eolici serve pertanto conoscere una distribuzione statistica delle velocità del vento, una cosiddetta distribuzione di Weibull."
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Numero del corridoio"

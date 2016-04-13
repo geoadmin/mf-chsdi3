@@ -3,11 +3,6 @@
 from chsdi.tests.integration import TestsBase
 
 
-def getLayers(query):
-    for q in query:
-        yield q[0]
-
-
 class TestIdentifyService(TestsBase):
 
     def test_identify_no_parameters(self):
@@ -105,8 +100,33 @@ class TestIdentifyService(TestsBase):
                   'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('results', resp.json)
         self.assertIn('attributes', resp.json['results'][0])
         self.assertIn('geometry', resp.json['results'][0])
+
+    def test_identify_valid_on_grid(self):
+        params = {'geometry': '555000,171125', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryPoint',
+                  'imageDisplay': '1920,793,96', 'layers': 'all:ch.bfe.windenergie-geschwindigkeit_h50',
+                  'mapExtent': '346831.18,86207.571,826831.18,284457.57', 'returnGeometry': 'true', 'tolerance': '10'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('results', resp.json)
+        self.assertEqual(len(resp.json['results']), 1)
+
+    def test_identify_valid_envelope_on_grid(self):
+        params = {'geometry': '555000,171125,556000,172125', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryEnvelope',
+                  'imageDisplay': '1920,793,96', 'layers': 'all:ch.bfe.windenergie-geschwindigkeit_h50',
+                  'mapExtent': '346831.18,86207.57,826831.18,284457.57', 'returnGeometry': 'true', 'tolerance': '10'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('results', resp.json)
+        self.assertEqual(len(resp.json['results']), 1)
+
+    def test_identify_invalid_geom_type_on_grid(self):
+        params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
+                  'geometryType': 'esriGeometryPolyline', 'imageDisplay': '500,600,96', 'layers': 'all:ch.bfe.windenergie-geschwindigkeit_h100',
+                  'mapExtent': '346831.18,86207.57,826831.18,284457.57', 'returnGeometry': 'true', 'tolerance': '10'}
+        self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
 
     def test_invalid_imageDisplay(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600',

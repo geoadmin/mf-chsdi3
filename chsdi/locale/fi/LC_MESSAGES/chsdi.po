@@ -3971,6 +3971,21 @@ msgstr "Sperrentyp"
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=de"
 
+msgid "ch.bfe.windenergie-geschwindigkeit_h100"
+msgstr "Windgeschwindigkeit 100 m Höhe"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h125"
+msgstr "Windgeschwindigkeit 125 m Höhe"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h150"
+msgstr "Windgeschwindigkeit 150 m Höhe"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h50"
+msgstr "Windgeschwindigkeit 50 m Höhe"
+
+msgid "ch.bfe.windenergie-geschwindigkeit_h75"
+msgstr "Windgeschwindigkeit 75 m Höhe"
+
 msgid "ch.bfe.windenergieanlagen"
 msgstr "Implants d'energia dal vent"
 
@@ -7139,6 +7154,48 @@ msgstr "Abbruch ausgeführt"
 
 msgid "tt_bebautefl"
 msgstr "Bebaute Flächen"
+
+msgid "tt_bfe_geschw_wind_durchschnitt"
+msgstr "Durchschnittliche Windgeschwindigkeit"
+
+msgid "tt_bfe_geschwindigkeit"
+msgstr "Geschwindigkeit (m/s)"
+
+msgid "tt_bfe_haeufigkeit"
+msgstr "Häufigkeit (%)"
+
+msgid "tt_bfe_hoehe_gelaende"
+msgstr "Höhe Gelände"
+
+msgid "tt_bfe_hoehe_ueber_grund"
+msgstr "Höhe über Grund"
+
+msgid "tt_bfe_koordinaten"
+msgstr "Koordinaten (X / Y)"
+
+msgid "tt_bfe_mittlere_geschw"
+msgstr "Mittlere Geschwindigkeit"
+
+msgid "tt_bfe_windgeschwindigkeit"
+msgstr "Windgeschwindigkeit"
+
+msgid "tt_bfe_windrichtung"
+msgstr "Windrichtung"
+
+msgid "tt_bfe_windrichtung_weibullverteilung"
+msgstr "Windrichtungsunabhängige Weibull-Verteilung"
+
+msgid "tt_bfe_windrose"
+msgstr "Windrose"
+
+msgid "tt_bfe_windrose_geschwverteilung"
+msgstr "Windrose mit der Windgeschwindigkeits-verteilung pro Windrichtungssektor"
+
+msgid "tt_bfe_windrose_help"
+msgstr "Die Windrose zeigt die Windgeschwindigkeits-verteilung pro Windsektor. Bewegen Sie die Maus über die Windrose und Sie erhalten genaue Werte für den jeweiligen Sektor."
+
+msgid "tt_bfe_windstaerke_info"
+msgstr "Der Wind unterliegt ständiger Geschwindigkeitsschwankungen. Aus diesem Grund wird für die Planung von Windenergieanlagen eine statistische Verteilung der Windgeschwindigkeiten eine sog. Weibull-Verteilung benötigt."
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Korridor Nummer"

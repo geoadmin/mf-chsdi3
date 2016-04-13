@@ -222,3 +222,8 @@ from pyramid.url import route_url
   $(document).ready(init${id});
 </script>
 </%def>
+
+
+<%def name="extended_resources(c, lang)">
+  <script type="text/javascript" src="${h.get_loaderjs_url(request)}"></script>
+</%def>

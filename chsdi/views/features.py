@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import re
+import geojson
+from gatilegrid.grid import Grid
 
 from pyramid.view import view_config
 from pyramid.renderers import render, render_to_response
@@ -20,11 +22,13 @@ from chsdi.lib.validation.features import (
 )
 from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.validation.identify import IdentifyServiceValidation
-from chsdi.lib.helpers import format_query
+from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d
 from chsdi.lib.filters import full_text_search
 from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
+from chsdi.models.clientdata_dynamodb import get_bucket
 from chsdi.models.bod import OerebMetadata, get_bod_model
 from chsdi.models.vector import getScale
+from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
 PROTECTED_GEOMETRY_LAYERS = ['ch.bfs.gebaeude_wohnungs_register']
@@ -145,17 +149,14 @@ def _identify_oereb(request):
     data_created = layerMetadata.data_created
     data_imported = layerMetadata.data_imported
 
-    comments = render(
-        'chsdi:templates/oereb_timestamps.mako',
-        {
-            'data_imported': data_imported,
-            'data_created': data_created
-        }
-    )
+    comments = render('chsdi:templates/oereb_timestamps.mako', {
+        'data_imported': data_imported,
+        'data_created': data_created
+    })
     header = insertTimestamps(header, comments)
 
     # Only relation 1 to 1 is needed at the moment
-    layerVectorModel = [[oereb_models_from_bodid(layerBodId)[0]]]
+    layerVectorModel = [{layerBodId: [oereb_models_from_bodid(layerBodId)[0]]}]
     features = []
     for feature in _get_features_for_filters(params, layerVectorModel):
         temp = feature.xmlData.split('##')
@@ -174,28 +175,96 @@ def _identify_oereb(request):
 
 def _identify(request):
     params = IdentifyServiceValidation(request)
+    # Determine layer types
+    layersGrid = []
+    layersDB = []
 
     if params.layers == 'all':
         model = get_bod_model(params.lang)
         query = params.request.db.query(model)
-        layerIds = []
+        layerBodIds = []
         for layer in get_layers_metadata_for_params(params, query, model):
-            layerIds.append(layer['layerBodId'])
+            layerBodId = layer['layerBodId']
+            models = models_from_bodid(layerBodId)
+            if models:
+                layersDB.append({layerBodId: models})
+            else:
+                gridSpec = get_grid_spec(layerBodId)
+                if gridSpec and params.geometryType == 'esriGeometryPoint':
+                    layersGrid.append({layerBodId: gridSpec})
     else:
-        layerIds = params.layers
+        layerBodIds = params.layers
+        for layerBodId in layerBodIds:
+            gridSpec = get_grid_spec(layerBodId)
+            if gridSpec:
+                if params.geometryType not in ('esriGeometryPoint', 'esriGeometryEnvelope'):
+                    raise exc.HTTPBadRequest(
+                        'Only esriGeometryPoint or esriGeometryEnvelope'
+                        'are supported for geometryType parameter for grid like data')
+                layersGrid.append({layerBodId: gridSpec})
+            else:
+                models = models_from_bodid(layerBodId)
+                if models is None:
+                    raise exc.HTTPBadRequest('No GeoTable was found for %s' % layerBodId)
+                layersDB.append({layerBodId: models})
 
-    models = [
-        models_from_bodid(layerId) for
-        layerId in layerIds
-        if models_from_bodid(layerId) is not None
-    ]
-    if models is None:
-        raise exc.HTTPBadRequest('No GeoTable was found for %s' % ' '.join(layerIds))
+    featuresGrid = _identify_grid(params, layersGrid)
+    featuresDB = _identify_db(params, layersDB)
 
+    return {'results': featuresGrid + featuresDB}
+
+
+def _identify_grid(params, layerBodIds):
+    features = []
+    if len(layerBodIds) == 0:
+        return features
+    geometry = params.geometry
+    # TODO support min/max scale and min/max resolution?
+
+    # For select by rectangle
+    if params.geometryType == 'esriGeometryEnvelope':
+        coords = geometry.coordinates[0]
+        minx = miny = float('inf')
+        maxx = maxy = float('-inf')
+        for x, y in coords:
+            minx = min(minx, x)
+            miny = min(miny, y)
+            maxx = max(maxx, x)
+            maxy = max(maxy, y)
+        bbox = [minx, miny, maxx, maxy]
+        pointCoordinates = center_from_box2d(bbox)
+    else:
+        pointCoordinates = geometry.coordinates
+    bucketName = params.request.registry.settings['vector_bucket']
+    profileName = params.request.registry.settings['vector_profilename']
+    bucket = get_bucket(profile_name=profileName, bucket_name=bucketName)
+    for layer in layerBodIds:
+        [layerBodId, gridSpec] = next(layer.iteritems())
+        params.layerId = layerBodId
+        layerProperties = get_grid_layer_properties(layerBodId)
+        timestamp = layerProperties.get('timestamp')
+        grid = Grid(gridSpec.get('extent'),
+                    gridSpec.get('resolutionX'),
+                    gridSpec.get('resolutionY'))
+        [col, row] = grid.cellAddressFromPointCoordinate(pointCoordinates)
+        feature, none = _get_feature_grid(col, row, timestamp, grid, bucket, params)
+        if feature and not none:
+            # For some reason we define the id twice..
+            feature['featureId'] = feature['id']
+            feature['properties']['label'] = feature['id']
+            features.append(feature)
+
+    return features
+
+
+def _identify_db(params, layerBodIds):
     maxFeatures = MAX_FEATURES
     features = []
-    feature_gen = _get_features_for_filters(params, models, maxFeatures=maxFeatures, where=params.where)
-    while True:
+    if len(layerBodIds) == 0:
+        return features
+    feature_gen = _get_features_for_filters(
+        params, layerBodIds, maxFeatures=maxFeatures, where=params.where)
+    while len(features) <= maxFeatures:
         try:
             feature = next(feature_gen)
         except InternalError as e:
@@ -203,13 +272,8 @@ def _identify(request):
         except StopIteration:
             break
         else:
-            f = _process_feature(feature, params)
-            features.append(f)
-
-            if len(features) >= maxFeatures:
-                break
-
-    return {'results': features}
+            features.append(_process_feature(feature, params))
+    return features
 
 
 def _get_feature_service(request):
@@ -228,63 +292,109 @@ def _get_features(params, extended=False):
     scale = None
     if all((params.imageDisplay, params.mapExtent)):
         scale = getScale(params.imageDisplay, params.mapExtent)
-    models = models_from_bodid(params.layerId, scale)
+    featureIds = params.featureIds
+    gridSpec = get_grid_spec(params.layerId)
+    if not gridSpec:
+        models = models_from_bodid(params.layerId, scale=scale)
+        if models is None:
+            raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
 
-    if models is None:
-        raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
+    for featureId in featureIds:
+        if gridSpec:
+            bucketName = params.request.registry.settings['vector_bucket']
+            profileName = params.request.registry.settings['vector_profilename']
+            bucket = get_bucket(profile_name=profileName, bucket_name=bucketName)
+            # By convention
+            if featureId.find('_') == -1:
+                raise exc.HTTPBadRequest('Unexpected id formatting')
+            col, row = featureId.split('_')
+            grid = Grid(gridSpec.get('extent'),
+                        gridSpec.get('resolutionX'),
+                        gridSpec.get('resolutionY'))
+            layerProperties = get_grid_layer_properties(params.layerId)
+            timestamp = layerProperties.get('timestamp')
+            yield _get_feature_grid(col, row, timestamp, grid, bucket, params)
+        else:
+            yield _get_feature_db(featureId, params, models)
 
-    for featureId in params.featureIds:
-        # One layer can have several models
-        for model in models:
-            query = params.request.db.query(model)
-            query = query.filter(model.id == featureId)
-            try:
-                feature = query.one()
-            except (NoResultFound, DataError):
-                feature = None
-            except MultipleResultsFound:
-                raise exc.HTTPInternalServerError('Multiple features found for the same id %s' % featureId)
 
-            if feature is not None:
-                vectorModel = model
-                break
+def _get_feature_db(featureId, params, models):
+    # One layer can have several models
+    for model in models:
+        query = params.request.db.query(model)
+        query = query.filter(model.id == featureId)
+        try:
+            feature = query.one()
+        except (NoResultFound, DataError):
+            feature = None
+        except MultipleResultsFound:
+            raise exc.HTTPInternalServerError('Multiple features found for the same id %s' % featureId)
 
-        if feature is None:
-            raise exc.HTTPNotFound('No feature with id %s' % featureId)
-        feature = _process_feature(feature, params)
-        feature = {'feature': feature}
-        yield feature, vectorModel
+        if feature is not None:
+            vectorModel = model
+            break
+
+    if feature is None:
+        raise exc.HTTPNotFound('No feature with id %s' % featureId)
+    feature = _process_feature(feature, params)
+    feature = {'feature': feature}
+    return feature, vectorModel
+
+
+def _get_feature_grid(col, row, timestamp, grid, bucket, params):
+    feature = None
+    col = str(col)
+    row = str(row)
+    timestamp = str(timestamp)
+    layerBodId = params.layerId
+    featureS3KeyName = 'tooltip/%s/default/%s/%s/%s/data.json' % (layerBodId, timestamp, col, row)
+    featureS3Key = bucket.get_key(featureS3KeyName)
+    # Fail gracefully if the key doesn't exist
+    if featureS3Key:
+        featureJson = decompress_gzipped_string(featureS3Key.get_contents_as_string())
+        # Beacause of esriJSON design and papyrus no esrijson support for now
+        feature = geojson.loads(featureJson)
+        if not params.returnGeometry:
+            del feature['geometry']
+        feature['layerBodId'] = layerBodId
+        feature['layerName'] = params.translate(layerBodId)
+    return feature, None
 
 
 def _render_feature_template(vectorModel, feature, request, extended=False):
-    hasExtendedInfo = True if hasattr(vectorModel, '__extended_info__') else False
-    if extended and not hasExtendedInfo:
-        raise exc.HTTPNotFound('No extended info has been found for %s' % vectorModel.__bodId__)
+    if vectorModel:
+        hasExtendedInfo = True if hasattr(vectorModel, '__extended_info__') else False
+        if extended and not hasExtendedInfo:
+            raise exc.HTTPNotFound('No extended info has been found for %s' % vectorModel.__bodId__)
+        template = vectorModel.__template__
+    else:
+        layerProperties = get_grid_layer_properties(feature['layerBodId'])
+        template = layerProperties.get('template')
+        hasExtendedInfo = layerProperties.get('extended')
     return render_to_response(
-        'chsdi:%s' % vectorModel.__template__,
-        {
+        'chsdi:%s' % template, {
             'feature': feature,
             'hasExtendedInfo': hasExtendedInfo
-        },
-        request=request)
+        }, request=request)
 
 
-def _get_features_for_filters(params, models, maxFeatures=None, where=None):
+def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None):
     ''' Returns a generator function that yields
     a feature. '''
-    for vectorLayer in models:
+    for layer in layerBodIds:
+        layerBodId, models = next(layer.iteritems())
         if where is not None:
-            vLayer = []
-            for m in vectorLayer:
-                txt = format_query(m, where)
+            vectorLayer = []
+            for model in models:
+                txt = format_query(model, where)
                 if txt is not None:
-                    vLayer.append((m, txt))
-            if len(vLayer) == 0:
-                raise exc.HTTPBadRequest('The where clause is not valid.')
+                    vectorLayer.append((model, txt))
+            if len(vectorLayer) == 0:
+                raise exc.HTTPBadRequest('The where clause is not valid for %s.' % layerBodId)
         else:
-            vLayer = [(m, None) for m in vectorLayer]
+            vectorLayer = [(model, None) for model in models]
 
-        for model, where_txt in vLayer:
+        for model, where_txt in vectorLayer:
             query = params.request.db.query(model)
             # Filter by sql query
             # Only one filter = one layer
@@ -494,8 +604,9 @@ def releases(request):
     timestamps_bgdi_ordered = {}
     minYear = 9999
     # group timestamps by bgdi_order
-    for f in _get_features_for_filters(params, [models], maxFeatures=1000):
-        if hasattr(f, 'array_release_years') and f.array_release_years is not None and hasattr(f, 'bgdi_order') and f.bgdi_order is not None:
+    for f in _get_features_for_filters(params, [{params.layerId: models}], maxFeatures=1000):
+        if hasattr(f, 'array_release_years') and f.array_release_years is not None and \
+                hasattr(f, 'bgdi_order') and f.bgdi_order is not None:
             if f.bgdi_order in timestamps_bgdi_ordered:
                 for year in f.array_release_years:
                     timestamps_bgdi_ordered[f.bgdi_order].append(year)

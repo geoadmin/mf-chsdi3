@@ -24,15 +24,7 @@
 
         from urllib2 import urlopen
         img_url = "http://www.bfe-gis.admin.ch/bilder/ch.bfe.stauanlagen-bundesaufsicht/"+str(c['attributes']['facility_stabil_id'])+".jpg"
-        response = None
-        try:
-            response = urlopen(img_url)
-            image_exist = True
-        except:
-            image_exist = False
-        finally:
-            if response:
-                response.close()
+        image_exists = h.resource_exists(img_url)
     %>
     <h1>${_('tt_ch.bfe.stauanlagen-bundesaufsicht_stauanlage')} ${c['attributes']['facilityname']}</h1>
     <table class="table-with-border kernkraftwerke-extended">

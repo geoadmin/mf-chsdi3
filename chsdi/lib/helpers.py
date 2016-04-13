@@ -4,9 +4,12 @@ import re
 import math
 import requests
 import datetime
+import gzip
+import StringIO
 from osgeo import osr, ogr
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
+from pyramid.url import route_url
 from pyramid.httpexceptions import HTTPBadRequest, HTTPRequestTimeout
 import unicodedata
 from urllib import quote
@@ -289,15 +292,19 @@ def parse_box2d(stringBox2D):
     return map(float, extent.split(' '))
 
 
-def center_from_box2d(box2D):
+def is_box2d(box2D):
     # Bottom left to top right only
-    if box2D[0] > box2D[2] or box2D[1] > box2D[3]:
+    if box2D[0] > box2D[2] or box2D[1] > box2D[3] or len(box2D) != 4:
         raise ValueError('Invalid box2D.')
+    return True
 
-    return [
-        box2D[0] + ((box2D[2] - box2D[0]) / 2),
-        box2D[1] + ((box2D[3] - box2D[1]) / 2)
-    ]
+
+def center_from_box2d(box2D):
+    if is_box2d(box2D):
+        return [
+            box2D[0] + ((box2D[2] - box2D[0]) / 2),
+            box2D[1] + ((box2D[3] - box2D[1]) / 2)
+        ]
 
 
 def parse_date_string(dateStr, format_input='%Y-%m-%d', format_output='%d.%m.%Y'):
@@ -356,3 +363,18 @@ def int_with_apostrophe(x):
         x, r = divmod(x, 1000)
         result = "'%03d%s" % (r, result)
     return "%d%s" % (x, result)
+
+
+def filter_alt(alt):
+    if alt is not None and alt > 0.0:
+        # 10cm accuracy is enough for altitudes
+        return round(alt, 1)
+
+
+def get_loaderjs_url(request):
+    return make_agnostic(route_url('ga_api', request))
+
+
+def decompress_gzipped_string(string):
+    content = gzip.GzipFile(fileobj=StringIO.StringIO(string))
+    return content.read()

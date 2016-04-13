@@ -16,9 +16,14 @@ apache/tomcat-print.conf
 chsdi.egg-info
 chsdi/static/doc/build/
 chsdi/static/css/extended.min.css
+chsdi/static/css/blueimp-gallery.min.css
 chsdi/static/js/ol3/
 chsdi/static/js/layersconfig.*.js
 chsdi/static/js/serverconfig.js
+chsdi/static/js/jquery.min.js
+chsdi/static/js/blueimp-gallery.min.js
+chsdi/static/js/d3.min.js
+chsdi/static/js/d3-tip.js
 chsdi/static/js/*.css
 deploy/hooks/pre-create-code
 node_modules

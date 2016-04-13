@@ -202,6 +202,7 @@ params = (
 viewer_url = get_viewer_url(request, params)
 %>
 <title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
+
 <body onload="init()">
   <table class="table-with-border kernkraftwerke-extended">
     <tr><th class="cell-left">${_('tt_lubis_ebkey')}</th>            <td>${c['featureId'] or '-'}</td></tr>
@@ -281,4 +282,9 @@ viewer_url = get_viewer_url(request, params)
   </script>
 
 </body>
+</%def>
+
+
+<%def name="extended_resources(c, lang)">
+  <script type="text/javascript" src="${h.get_loaderjs_url(request)}"></script>
 </%def>
