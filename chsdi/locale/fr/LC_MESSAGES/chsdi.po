@@ -4220,6 +4220,9 @@ msgstr "http://www.cadastre.ch/internet/cadastre/fr/home/products/webmap/cwm.htm
 msgid "ch.kantone.cadastralwebmap-farbe"
 msgstr "CadastralWebMap"
 
+msgid "ch.kantone.cadastralwebmap-farbe.plan"
+msgstr "Plan du registre foncier"
+
 msgid "ch.kantone.ivs-reg_loc"
 msgstr "IVS Canton de Berne"
 
@@ -6840,7 +6843,7 @@ msgid "org.epsg.grid_2056"
 msgstr "Coordonnées CH1903+/MN95"
 
 msgid "org.epsg.grid_21781"
-msgstr "Coordonnées CH1903/MN03"
+msgstr "Réseau de coordonnées CH1903/MN03"
 
 msgid "org.epsg.grid_4326"
 msgstr "Réseau de coordonnées WGS84"

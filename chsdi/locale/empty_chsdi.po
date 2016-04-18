@@ -16,6 +16,9 @@ msgstr ""
 msgid "org.epsg.grid_2056"
 msgstr ""
 
+msgid "ch.kantone.cadastralwebmap-farbe.plan"
+msgstr ""
+
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenttype_de"
 msgstr ""
 

@@ -10,6 +10,9 @@
       request = context.get('request')
       defaultExtent = '42000,30000,350000,900000'
       defaultImageDisplay = '400,600,96'
+      baseUrl = request.registry.settings['api_url']
+      lang = request.lang
+      topic = request.matchdict.get('map')
       fallbackLang = 'fr' if request.lang in ('fr', 'it') else 'de'
       class CadastralWebMapParams(IdentifyServiceValidation):
           def __init__(self, request):
@@ -19,6 +22,127 @@
       c['bbox'] = params.mapExtent.bounds
       c['scale']  = getScale(params.imageDisplay, params.mapExtent)
     %>
+
+<style>
+tr:last-child {
+  display:none;
+ }
+
+#circleG{
+    width:49px;
+    margin:auto;
+}
+
+.circleG{
+    background-color:rgb(255,255,255);
+    float:left;
+    height:10px;
+    margin-left:6px;
+    width:10px;
+    animation-name:bounce_circleG;
+        -o-animation-name:bounce_circleG;
+        -ms-animation-name:bounce_circleG;
+        -webkit-animation-name:bounce_circleG;
+        -moz-animation-name:bounce_circleG;
+    animation-duration:2.24s;
+        -o-animation-duration:2.24s;
+        -ms-animation-duration:2.24s;
+        -webkit-animation-duration:2.24s;
+        -moz-animation-duration:2.24s;
+    animation-iteration-count:infinite;
+        -o-animation-iteration-count:infinite;
+        -ms-animation-iteration-count:infinite;
+        -webkit-animation-iteration-count:infinite;
+        -moz-animation-iteration-count:infinite;
+    animation-direction:normal;
+        -o-animation-direction:normal;
+        -ms-animation-direction:normal;
+        -webkit-animation-direction:normal;
+        -moz-animation-direction:normal;
+    border-radius:7px;
+        -o-border-radius:7px;
+        -ms-border-radius:7px;
+        -webkit-border-radius:7px;
+        -moz-border-radius:7px;
+}
+
+#circleG_1{
+    animation-delay:0.45s;
+        -o-animation-delay:0.45s;
+        -ms-animation-delay:0.45s;
+        -webkit-animation-delay:0.45s;
+        -moz-animation-delay:0.45s;
+}
+
+#circleG_2{
+    animation-delay:1.05s;
+        -o-animation-delay:1.05s;
+        -ms-animation-delay:1.05s;
+        -webkit-animation-delay:1.05s;
+        -moz-animation-delay:1.05s;
+}
+
+#circleG_3{
+    animation-delay:1.35s;
+        -o-animation-delay:1.35s;
+        -ms-animation-delay:1.35s;
+        -webkit-animation-delay:1.35s;
+        -moz-animation-delay:1.35s;
+}
+
+
+
+@keyframes bounce_circleG{
+    0%{}
+
+    50%{
+        background-color:rgb(0,0,0);
+    }
+
+    100%{}
+}
+
+@-o-keyframes bounce_circleG{
+    0%{}
+
+    50%{
+        background-color:rgb(0,0,0);
+    }
+
+    100%{}
+}
+
+@-ms-keyframes bounce_circleG{
+    0%{}
+
+    50%{
+        background-color:rgb(0,0,0);
+    }
+
+    100%{}
+}
+
+@-webkit-keyframes bounce_circleG{
+    0%{}
+
+    50%{
+        background-color:rgb(0,0,0);
+    }
+
+    100%{}
+}
+
+@-moz-keyframes bounce_circleG{
+    0%{}
+
+    50%{
+        background-color:rgb(0,0,0);
+    }
+
+    100%{}
+}
+</style>
+
     % if c['attributes']['ak'] in ['D','I','F','AUT']:
         <tr><td class="cell-left">${_('No info outside CH and FL')}</td><td></td></tr>
     % elif c['attributes']['ak'] == 'AG':
@@ -78,38 +202,99 @@
     % else:
         <tr><td class="cell-left">${_('link to canton geoportal')}</td><td>${_('Canton has provided no link to portal')}</td></tr>
     % endif
-    <%
-        import requests
-        import time
-        param_coord = request.params.get('coord')
-        coord = param_coord.split(',')
-        lat = coord[0]
-        lon = coord[1]
-        geodata = "http://geodata01.admin.ch/order/jPqrueQazrt/av_pdf.igs?pos=" + lat + '/' + lon
+       <tr>
+       <td class="cell-left">${_('ch.kantone.cadastralwebmap-farbe.plan')}</td>
+       <td style="height: 20px;">
+         <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&geometry=${request.params.get('coord')}&iframe=true" width="100%" height="20" frameborder="0" style="border: 0; position:absolute;" scrolling="no"></iframe>
+         <div style="position: absolute; z-index:-1; margin-top: 5px">
+           <div id="circleG">
+             <div id="circleG_1" class="circleG"></div>
+             <div id="circleG_2" class="circleG"></div>
+             <div id="circleG_3" class="circleG"></div>
+           </div>
+         </div>
+       </td>
+       </tr>
 
-        def get_url_data(url, max_tries=50):
-            for n in range(max_tries):
-                    r3 = requests.head(url)
-                    if r3.status_code == 200:
-                        return r3
-                    else:
-                      if n == max_tries - 1:
-                        raise
-                      time.sleep(.1)
-        r = requests.get(geodata)
-        if r.status_code == 200:
-           url = r.text.strip()
-           r2 = get_url_data(url)
-           pdf = True
-        elif r.text.strip() == 'no object found' :
-           pdf = False
-    %>
-    <tr>
-      <td class="cell-left">data</td>
-    % if pdf == True: 
-      <td><a href="${url}" target="_blank">PDF</a></td>
-    % elif pdf == False: 
-      <td>no pdf</td>
-    % endif
-    </tr>
+       <tr>
+          <td class="cell-left"></td>
+          <td>
+            <a href="${h.make_agnostic(request.route_url('extendedHtmlPopup', map=topic, layerId=c['layerBodId'], featureId=str(c['featureId'])))}?lang=${lang}&geometry=${request.params.get('coord')}" target="_blank">${_('zusatzinfo')}&nbsp;<img src="${h.versioned(request.static_url('chsdi:static/images/ico_extern.gif'))}" /></a>
+          </td>
+        </tr>
+</%def>
+
+<%def name="extended_info(c, lang)">
+<%
+    import requests
+    import time
+    param_coord = request.params.get('geometry')
+    coord = param_coord.split(',')
+    lat = coord[0]
+    lon = coord[1]
+    geodata = "http://geodata01.admin.ch/order/jPqrueQazrt/av_pdf.igs?pos=" + lat + '/' + lon
+
+    def get_url_data(url, max_tries=50):
+        for n in range(max_tries):
+            r3 = requests.head(url)
+            if r3.status_code == 200:
+                return r3
+            elif r3.status_code != 200:
+                pdf = 'Wait'
+                if n == max_tries - 1:
+                    raise
+                time.sleep(.1)
+    r = requests.get(geodata)
+    if r.status_code == 200:
+        url = r.text.strip()
+        r2 = get_url_data(url)
+        pdf = True
+    elif r.text.strip() == 'no object found' :
+        pdf = False 
+  
+    try:
+        iframe = request.GET['iframe'] if request.GET['iframe'] else False
+    except:
+        iframe=False
+        pass
+%>
+
+% if iframe:
+<style>
+.chsdi-htmlpopup-container {
+  visibility: hidden;
+}
+.htmlpopup-header {
+  visibility: hidden;
+}
+.htmlpopup-footer {
+  visibility: hidden;
+}
+#file {
+  visibility: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+</style>
+% endif
+  <td>data</td>
+% if pdf == True:
+  <td>
+    <div id="file">
+      <p style="position:absolute;margin-top: 2px;margin-bottom: 0px; font-size: 11px; color:#069 !important;">
+        <a href="${url}" target="_blank">PDF</a>
+      </p>
+      <div style="background-color:#fff;height: 20px;width: 100px;z-index: 1;"></div>
+    </div>
+  </td>
+% elif pdf == False:
+  <td>
+    <div id="file">
+      <p style="position:absolute;margin-top: 2px;margin-bottom: 0px;">-</p>
+      <div style="background-color:#fff;height: 20px;width: 100px;z-index: 1;"></div>
+    </div>
+  </td>
+% endif
 </%def>

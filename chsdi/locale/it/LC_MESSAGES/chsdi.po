@@ -4220,6 +4220,9 @@ msgstr "http://www.cadastre.ch/internet/cadastre/it/home/products/webmap/cwm.htm
 msgid "ch.kantone.cadastralwebmap-farbe"
 msgstr "CadastralWebMap"
 
+msgid "ch.kantone.cadastralwebmap-farbe.plan"
+msgstr "Piano per il registro"
+
 msgid "ch.kantone.ivs-reg_loc"
 msgstr "IVS Cantone di Berna"
 

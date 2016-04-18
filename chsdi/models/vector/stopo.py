@@ -493,6 +493,7 @@ class CadastralWebMap(Base, Vector):
     __template__ = 'templates/htmlpopup/cadastralwebmap.mako'
     __bodId__ = 'ch.kantone.cadastralwebmap-farbe'
     __label__ = 'ak'
+    __extended_info__ = True
     id = Column('kantonsnr', Integer, primary_key=True)
     ak = Column('ak', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
