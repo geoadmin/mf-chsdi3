@@ -4223,6 +4223,9 @@ msgstr "CadastralWebMap"
 msgid "ch.kantone.cadastralwebmap-farbe.plan"
 msgstr "Plan für das Grundbuch"
 
+msgid "ch.kantone.cadastralwebmap-farbe.wait"
+msgstr "Vorbereitung des Plans"
+
 msgid "ch.kantone.ivs-reg_loc"
 msgstr "IVS Kanton Bern"
 
