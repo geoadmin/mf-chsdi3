@@ -15,6 +15,84 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20160427:
+
+Release 20160427 - Wednesday, April 27th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160413...r_160427>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160413...r_160427>`__
+
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geol. Dokumente (1000-21000km2) <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2>`__ (ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2)  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geol. Dokumente (100-1000km2) <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2>`__ (ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2)        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geol. Dokumente (10-100km2) <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gisgeol-flaechen-10to100km2>`__ (ch.swisstopo.geologie-gisgeol-flaechen-10to100km2)              |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geol. documents (10x10km) <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gisgeol-flaechen-10x10km>`__ (ch.swisstopo.geologie-gisgeol-flaechen-10x10km)                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geol. documents (1x1km) <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gisgeol-flaechen-1x1km>`__ (ch.swisstopo.geologie-gisgeol-flaechen-1x1km)                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geol. documents (>21,000km2) <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2>`__ (ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2)             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geol. documents (<10km2) <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gisgeol-flaechen-lt10km2>`__ (ch.swisstopo.geologie-gisgeol-flaechen-lt10km2)                       |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geol. documents (lines) <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gisgeol-linien>`__ (ch.swisstopo.geologie-gisgeol-linien)                                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geol. documents (points) <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gisgeol-punkte>`__ (ch.swisstopo.geologie-gisgeol-punkte)                                           |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Glider Chart Switzerland 1:300'000 <//map.geo.admin.ch/?layers=ch.bazl.segelflugkarte>`__ (ch.bazl.segelflugkarte)                                                             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aeronautical Chart ICAO Switzerland 1:500'000 <//map.geo.admin.ch/?layers=ch.bazl.luftfahrtkarten-icao>`__ (ch.bazl.luftfahrtkarten-icao)                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:500'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk500.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk500.noscale)                               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `General Geological Map of Switzerland 1:200,000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-generalkarte-ggk200>`__ (ch.swisstopo.geologie-generalkarte-ggk200)          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division of Geological Vector Datasets 1:25,000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas of Switzerland 1:25000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: floods <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_hochwasser>`__ (ch.bafu.showme-gemeinden_hochwasser)                                              |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: avalanches <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_lawinen>`__ (ch.bafu.showme-gemeinden_lawinen)                                                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: landslides <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_rutschungen>`__ (ch.bafu.showme-gemeinden_rutschungen)                                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: rockfall <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_sturzprozesse>`__ (ch.bafu.showme-gemeinden_sturzprozesse)                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: floods <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_hochwasser>`__ (ch.bafu.showme-kantone_hochwasser)                                                   |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: avalanches <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_lawinen>`__ (ch.bafu.showme-kantone_lawinen)                                                     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: landslides <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_rutschungen>`__ (ch.bafu.showme-kantone_rutschungen)                                             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: rockfall <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_sturzprozesse>`__ (ch.bafu.showme-kantone_sturzprozesse)                                           |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Parks <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                                    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wind energy plants <//map.geo.admin.ch/?layers=ch.bfe.windenergieanlagen>`__ (ch.bfe.windenergieanlagen)                                                                       |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Parks (Perimeter) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Railway network <//map.geo.admin.ch/?layers=ch.bav.schienennetz>`__ (ch.bav.schienennetz)                                                                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20160413:
 
 Release 20160413 - Wednesday, April 13th 2016
@@ -27,8 +105,8 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug Fixes
 - `New cache control service for WMTS tiles invalidation <../../../services/sdiservices.html#cache-update>`__
-- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160330...r_160413>`__
 - `SearchServer <../../../services/sdiservices.html#search>`__ : sn25 origin has been replaced with gazetteer. Using sn25 as origin parameter will result in a 400 Bad Request error.
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160330...r_160413>`__
 
 
 `MAP <//map.geo.admin.ch>`__
