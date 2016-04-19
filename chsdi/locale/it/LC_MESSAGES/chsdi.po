@@ -3767,6 +3767,9 @@ msgstr "Lunghezza totale [m]"
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Carta aeronautica OACI"
 
+msgid "ch.bazl.luftfahrtkarten-icao.release"
+msgstr "Edizione"
+
 msgid "ch.bazl.points-of-interest"
 msgstr "Punti d'interesse"
 
@@ -3781,6 +3784,9 @@ msgstr "PS Infrastruttura aeronautica"
 
 msgid "ch.bazl.segelflugkarte"
 msgstr "Carta volo a vela"
+
+msgid "ch.bazl.segelflugkarte.release"
+msgstr "Edizione"
 
 msgid "ch.bazl.sicherheitszonenplan"
 msgstr "Piano delle zone di sicurezza"
@@ -4472,11 +4478,29 @@ msgstr "numero di carta"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.titel"
 msgstr "Titolo"
 
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.name"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
+msgstr "Numero"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
+msgstr "Edizione"
+
 msgid "ch.swisstopo.geologie-geocover"
 msgstr "GeoCover - dati vettoriali"
 
 msgid "ch.swisstopo.geologie-geocover.metadata"
 msgstr "Divisione GeoCover / AG25"
+
+msgid "ch.swisstopo.geologie-geocover.name"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-geocover.number"
+msgstr "Numero"
+
+msgid "ch.swisstopo.geologie-geocover.release"
+msgstr "Edizione"
 
 msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
 msgstr "Anomalia di Bouguer 500"
@@ -4492,6 +4516,15 @@ msgstr "Geologia 500"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr "Atlante geologico AG25"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.name"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.number"
+msgstr "Numero"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.release"
+msgstr "Edizione"
 
 msgid "ch.swisstopo.geologie-geomorphologie"
 msgstr "Géomorphologie, vue d'ensemble"
@@ -5107,6 +5140,9 @@ msgstr "Carta nazionale 1:50'000 | CN50"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
 msgstr "Carta nazionale 1:500'000 | CN500"
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale.release"
+msgstr "Edizione"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Carta nazionale 1:25'000 | CN25"

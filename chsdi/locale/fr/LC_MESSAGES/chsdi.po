@@ -3767,6 +3767,9 @@ msgstr "Longueur totale [m]"
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Carte aéronautique OACI"
 
+msgid "ch.bazl.luftfahrtkarten-icao.release"
+msgstr "Édition"
+
 msgid "ch.bazl.points-of-interest"
 msgstr "Points d'intérêt"
 
@@ -3781,6 +3784,9 @@ msgstr "PS Infrastructure aéronautique"
 
 msgid "ch.bazl.segelflugkarte"
 msgstr "Carte vol à voile"
+
+msgid "ch.bazl.segelflugkarte.release"
+msgstr "Édition"
 
 msgid "ch.bazl.sicherheitszonenplan"
 msgstr "Plan de la zone de sécurité"
@@ -4472,11 +4478,29 @@ msgstr "Nombre de la feuille"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.titel"
 msgstr "Nom de feuille"
 
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.name"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
+msgstr "Numéro"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
+msgstr "Édition"
+
 msgid "ch.swisstopo.geologie-geocover"
 msgstr "GeoCover - données vectorielles"
 
 msgid "ch.swisstopo.geologie-geocover.metadata"
 msgstr "Découpage GeoCover / AG25"
+
+msgid "ch.swisstopo.geologie-geocover.name"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-geocover.number"
+msgstr "Numéro"
+
+msgid "ch.swisstopo.geologie-geocover.release"
+msgstr "Édition"
 
 msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
 msgstr "Anomalies de Bouguer 500"
@@ -4492,6 +4516,15 @@ msgstr "Géologie 500"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr "Atlas géologique AG25"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.name"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.number"
+msgstr "Numéro"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.release"
+msgstr "Édition"
 
 msgid "ch.swisstopo.geologie-geomorphologie"
 msgstr "Géomorphologie, vue d'ensemble"
@@ -5107,6 +5140,9 @@ msgstr "Carte nationale 1:50'000 | CN50"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
 msgstr "Carte nationale 1:500'000 | CN500"
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale.release"
+msgstr "Édition"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Carte nationale 1:25'000 | CN25"
@@ -6837,10 +6873,10 @@ msgid "optionaler_name"
 msgstr "Nom optionnel"
 
 msgid "org.epsg.grid_2056"
-msgstr "Coordonnées CH1903+/MN95"
+msgstr "Réseau de coordonnées CH1903+/MN95"
 
 msgid "org.epsg.grid_21781"
-msgstr "Coordonnées CH1903/MN03"
+msgstr "Réseau de coordonnées CH1903/MN03"
 
 msgid "org.epsg.grid_4326"
 msgstr "Réseau de coordonnées WGS84"

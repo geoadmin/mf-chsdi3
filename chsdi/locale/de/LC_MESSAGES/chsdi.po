@@ -3767,6 +3767,9 @@ msgstr "Gesamtlänge [m]"
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Luftfahrtkarte ICAO"
 
+msgid "ch.bazl.luftfahrtkarten-icao.release"
+msgstr "Ausgabejahr"
+
 msgid "ch.bazl.points-of-interest"
 msgstr "Points of Interest"
 
@@ -3781,6 +3784,9 @@ msgstr "SP Infrastruktur Luftfahrt"
 
 msgid "ch.bazl.segelflugkarte"
 msgstr "Segelflugkarte"
+
+msgid "ch.bazl.segelflugkarte.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.bazl.sicherheitszonenplan"
 msgstr "Sicherheitszonenplan"
@@ -4472,11 +4478,29 @@ msgstr "Kartenblatt"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.titel"
 msgstr "Titel"
 
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
+msgstr "Ausgabejahr"
+
 msgid "ch.swisstopo.geologie-geocover"
 msgstr "GeoCover - Vektordaten"
 
 msgid "ch.swisstopo.geologie-geocover.metadata"
 msgstr "Einteilung GeoCover / GA25"
+
+msgid "ch.swisstopo.geologie-geocover.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geocover.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.geologie-geocover.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
 msgstr "Bouguer-Anomalien 500"
@@ -4492,6 +4516,15 @@ msgstr "Geologie 500"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr "Geologischer Atlas GA25"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-geomorphologie"
 msgstr "Übersicht Geomorphologie"
@@ -5107,6 +5140,9 @@ msgstr "Landeskarte 1:50'000 | LK50"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
 msgstr "Landeskarte 1:500'000 | LK500"
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Landeskarte 1:25'000 | LK25"

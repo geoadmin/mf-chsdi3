@@ -44,6 +44,7 @@ mapproxyhost = ${mapproxyhost}
 geoadminhost = ${geoadminhost}
 webdav_host = ${webdav_host}
 api_url = ${api_url}
+shop_url = ${shop_url}
 install_directory = ${current_directory}
 host = ${host}
 apache_base_path = ${apache_base_path}
