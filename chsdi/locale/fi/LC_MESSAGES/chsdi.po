@@ -2976,6 +2976,9 @@ msgid "ch.bafu.schutzgebiete-luftfahrt"
 msgstr "Territoris protegids MIL"
 
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
+msgstr "Parcs"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter"
 msgstr "Parcs (Perimeter)"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
@@ -6122,6 +6125,18 @@ msgstr "Kartiereinheiten"
 msgid "kategorie"
 msgstr "Categoria"
 
+msgid "kategorie_NE"
+msgstr "Naturerlebnispark"
+
+msgid "kategorie_NP"
+msgstr "Nationalpark"
+
+msgid "kategorie_RN"
+msgstr "Regionaler Naturpark"
+
+msgid "kategorie_SNP"
+msgstr "Schweizerischer Nationalpark"
+
 msgid "kbbez"
 msgstr "Indicaziun da fegl"
 
@@ -6851,6 +6866,9 @@ msgstr "Objektname"
 msgid "objektnr"
 msgstr "Objektnr."
 
+msgid "objnummer"
+msgstr "ObjektNr."
+
 msgid "oeffentlich"
 msgstr "Öffentlich"
 
@@ -6959,6 +6977,15 @@ msgstr "Qualitätsstandard"
 msgid "raeumliche_qualitaeten"
 msgstr "Qualitads spazialas"
 
+msgid "rechtsgrundlage"
+msgstr "Rechtsgrundlage"
+
+msgid "rechtsgrundlage_1"
+msgstr "Nationalparkgesetz, Kantonale Verordnung"
+
+msgid "rechtsgrundlage_2"
+msgstr "NHG; Pärkeverordnung"
+
 msgid "regional"
 msgstr "regional"
 
@@ -7065,6 +7092,12 @@ msgstr "Stationsnummer"
 msgid "status"
 msgstr "Status"
 
+msgid "status_K"
+msgstr "Parkkandidat"
+
+msgid "status_P"
+msgstr "Park in Betrieb"
+
 msgid "status_fp"
 msgstr "Status"
 
@@ -7100,6 +7133,9 @@ msgstr "Fläche Teileinzugsgebiet [km2]"
 
 msgid "teilobjektnr"
 msgstr "Teilobjektnr."
+
+msgid "teilobjnummer"
+msgstr "TeilobjektNr."
 
 msgid "telephon_fr_de"
 msgstr "Telephon"
@@ -8426,6 +8462,30 @@ msgstr "Zielhafen"
 
 msgid "zone"
 msgstr "zone"
+
+msgid "zone_NE_KZ"
+msgstr "Naturerlebnispark Kernzone"
+
+msgid "zone_NE_UEZ"
+msgstr "Naturerlebnispark Übergangszone"
+
+msgid "zone_NE_ZND"
+msgstr "Naturerlebnispark Zonierung nicht definiert"
+
+msgid "zone_NP_KZ"
+msgstr "Nationalpark Kernzone"
+
+msgid "zone_NP_UMZ"
+msgstr "Nationalpark Umgebungszone"
+
+msgid "zone_NP_ZND"
+msgstr "Nationalpark Zonierung nicht definiert"
+
+msgid "zone_RN"
+msgstr "Regionaler Naturpark"
+
+msgid "zone_SNP"
+msgstr "Schweizerischer Nationalpark"
 
 msgid "zugang"
 msgstr "Zugang"
