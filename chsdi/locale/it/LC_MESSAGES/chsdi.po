@@ -6978,7 +6978,7 @@ msgid "raeumliche_qualitaeten"
 msgstr "Qualità spaziali"
 
 msgid "rechtsgrundlage"
-msgstr "Base légal"
+msgstr "Base Guiridica"
 
 msgid "rechtsgrundlage_1"
 msgstr "Legge sul Parco nazionale, ordinanza cantonale"
@@ -8460,7 +8460,7 @@ msgid "zielhafen"
 msgstr "Destination"
 
 msgid "zone"
-msgstr "zona"
+msgstr "Zona"
 
 msgid "zone_NE_KZ"
 msgstr "Zona centrale parco naturale periurbano"

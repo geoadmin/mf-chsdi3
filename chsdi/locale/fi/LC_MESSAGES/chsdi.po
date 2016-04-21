@@ -8461,7 +8461,7 @@ msgid "zielhafen"
 msgstr "Zielhafen"
 
 msgid "zone"
-msgstr "zone"
+msgstr "Zone"
 
 msgid "zone_NE_KZ"
 msgstr "Naturerlebnispark Kernzone"

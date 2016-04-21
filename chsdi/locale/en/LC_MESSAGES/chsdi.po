@@ -6978,13 +6978,13 @@ msgid "raeumliche_qualitaeten"
 msgstr "Spatial qualities"
 
 msgid "rechtsgrundlage"
-msgstr "Rechtsgrundlage"
+msgstr "Legal Basis"
 
 msgid "rechtsgrundlage_1"
-msgstr "-"
+msgstr "National Parc Law, Cantonal Ordinance"
 
 msgid "rechtsgrundlage_2"
-msgstr "-"
+msgstr "NHL, Parcs Ordinance"
 
 msgid "regional"
 msgstr "regional"
@@ -7089,7 +7089,7 @@ msgid "stationsnr"
 msgstr "Station number"
 
 msgid "status"
-msgstr "Status"
+msgstr "State"
 
 msgid "status_K"
 msgstr "Candidate park"
@@ -8460,7 +8460,7 @@ msgid "zielhafen"
 msgstr "Zielhafen"
 
 msgid "zone"
-msgstr "zone"
+msgstr "Zone"
 
 msgid "zone_NE_KZ"
 msgstr "Nature discovery park core zone"
