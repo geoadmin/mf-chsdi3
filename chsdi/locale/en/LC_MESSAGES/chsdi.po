@@ -6980,13 +6980,11 @@ msgstr "Spatial qualities"
 msgid "rechtsgrundlage"
 msgstr "Rechtsgrundlage"
 
-#. TODO
 msgid "rechtsgrundlage_1"
-msgstr "rechtsgrundlage_1"
+msgstr "-"
 
-#. TODO
 msgid "rechtsgrundlage_2"
-msgstr "rechtsgrundlage_2"
+msgstr "-"
 
 msgid "regional"
 msgstr "regional"

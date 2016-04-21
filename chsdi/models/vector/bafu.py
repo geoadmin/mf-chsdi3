@@ -1503,21 +1503,40 @@ register('ch.bafu.schutzgebiete-aulav_uebrige', schutzgebiete_aulav_uebrige_gene
 
 
 class paerke_nationaler_bedeutung(Base, Vector):
-    __tablename__ = 'paerke_nationaler_bedeutung'
+    __tablename__ = 'paerke_nationaler_bedeutung_zonen'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung'
     __template__ = 'templates/htmlpopup/paerke_nationaler_bedeutung.mako'
-    __label__ = 'park_name'
+    __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    park_name = Column('park_name', Text)
-    park_nr = Column('park_nr', Numeric)
-    park_statu = Column('park_statu', Text)
-    park_fl = Column('park_fl', Numeric)
-    park_gf = Column('park_gf', Numeric)
+    name = Column('park_name', Text)
+    kategorie = Column('kategorie', Text)
+    objektnummer = Column('objektnummer', Integer)
+    rechtsgrundlage = Column('rechtsgrundlage', Integer)
+    status = Column('status', Text)
+    teil_nummer = Column('teil_nummer', Integer)
+    zone = Column('zone', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
 register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung', paerke_nationaler_bedeutung)
+
+
+class paerke_nationaler_bedeutung_perimeter(Base, Vector):
+    __tablename__ = 'paerke_nationaler_bedeutung_perimeter'
+    __table_args__ = ({'schema': 'schutzge', 'autoload': False})
+    __bodId__ = 'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter'
+    __template__ = 'templates/htmlpopup/paerke_nationaler_bedeutung_perimeter.mako'
+    __label__ = 'name'
+    id = Column('objektnummer', Integer, primary_key=True)
+    name = Column('park_name', Text)
+    kategorie = Column('kategorie', Text)
+    rechtsgrundlage = Column('rechtsgrundlage', Integer)
+    status = Column('status', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter', paerke_nationaler_bedeutung_perimeter)
 
 
 class ramsar(Base, Vector):
