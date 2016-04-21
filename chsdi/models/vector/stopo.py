@@ -2069,8 +2069,9 @@ class gisgeol_punkte(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-punkte'
-    __queryable_attributes__ = ['sgd_nr']
+    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
     __label__ = 'title'
+    __timeInstant__ = 'year'
     id = Column('gid', Integer, primary_key=True)
     sgd_nr = Column('sgd_nr', Integer)
     title = Column('title', Text)
@@ -2083,6 +2084,7 @@ class gisgeol_punkte(Base, Vector):
     view_avail = Column('view_avail', Text)
     pdf_url = Column('pdf_url', Text)
     bgdi_data_status = Column('bgdi_data_status', Text)
+    year = Column('year', Integer)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
@@ -2094,8 +2096,9 @@ class gisgeol_linien(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-linien'
-    __queryable_attributes__ = ['sgd_nr']
+    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
     __label__ = 'title'
+    __timeInstant__ = 'year'
     id = Column('gid', Integer, primary_key=True)
     sgd_nr = Column('sgd_nr', Integer)
     title = Column('title', Text)
@@ -2108,6 +2111,7 @@ class gisgeol_linien(Base, Vector):
     view_avail = Column('view_avail', Text)
     pdf_url = Column('pdf_url', Text)
     bgdi_data_status = Column('bgdi_data_status', Text)
+    year = Column('year', Integer)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
@@ -2119,8 +2123,9 @@ class gisgeol_flaechen_1x1km(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-1x1km'
-    __queryable_attributes__ = ['sgd_nr']
+    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
     __label__ = 'title'
+    __timeInstant__ = 'year'
     id = Column('gid', Integer, primary_key=True)
     sgd_nr = Column('sgd_nr', Integer)
     title = Column('title', Text)
@@ -2133,6 +2138,7 @@ class gisgeol_flaechen_1x1km(Base, Vector):
     view_avail = Column('view_avail', Text)
     pdf_url = Column('pdf_url', Text)
     bgdi_data_status = Column('bgdi_data_status', Text)
+    year = Column('year', Integer)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
@@ -2144,8 +2150,9 @@ class gisgeol_flaechen_10x10km(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-10x10km'
-    __queryable_attributes__ = ['sgd_nr']
+    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
     __label__ = 'title'
+    __timeInstant__ = 'year'
     id = Column('gid', Integer, primary_key=True)
     sgd_nr = Column('sgd_nr', Integer)
     title = Column('title', Text)
@@ -2158,6 +2165,7 @@ class gisgeol_flaechen_10x10km(Base, Vector):
     view_avail = Column('view_avail', Text)
     pdf_url = Column('pdf_url', Text)
     bgdi_data_status = Column('bgdi_data_status', Text)
+    year = Column('year', Integer)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
@@ -2169,8 +2177,9 @@ class gisgeol_flaechen_10to100km2(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-10to100km2'
-    __queryable_attributes__ = ['sgd_nr']
+    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
     __label__ = 'title'
+    __timeInstant__ = 'year'
     id = Column('gid', Integer, primary_key=True)
     sgd_nr = Column('sgd_nr', Integer)
     title = Column('title', Text)
@@ -2183,6 +2192,7 @@ class gisgeol_flaechen_10to100km2(Base, Vector):
     view_avail = Column('view_avail', Text)
     pdf_url = Column('pdf_url', Text)
     bgdi_data_status = Column('bgdi_data_status', Text)
+    year = Column('year', Integer)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
@@ -2192,8 +2202,9 @@ class gisgeol_flaechen_100to1000km2(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2'
-    __queryable_attributes__ = ['sgd_nr']
+    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
     __label__ = 'title'
+    __timeInstant__ = 'year'
     id = Column('gid', Integer, primary_key=True)
     sgd_nr = Column('sgd_nr', Integer)
     title = Column('title', Text)
@@ -2206,6 +2217,7 @@ class gisgeol_flaechen_100to1000km2(Base, Vector):
     view_avail = Column('view_avail', Text)
     pdf_url = Column('pdf_url', Text)
     bgdi_data_status = Column('bgdi_data_status', Text)
+    year = Column('year', Integer)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
@@ -2215,8 +2227,9 @@ class gisgeol_flaechen_1000to21000km2(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2'
-    __queryable_attributes__ = ['sgd_nr']
+    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
     __label__ = 'title'
+    __timeInstant__ = 'year'
     id = Column('gid', Integer, primary_key=True)
     sgd_nr = Column('sgd_nr', Integer)
     title = Column('title', Text)
@@ -2229,6 +2242,7 @@ class gisgeol_flaechen_1000to21000km2(Base, Vector):
     view_avail = Column('view_avail', Text)
     pdf_url = Column('pdf_url', Text)
     bgdi_data_status = Column('bgdi_data_status', Text)
+    year = Column('year', Integer)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
@@ -2242,8 +2256,9 @@ class gisgeol_flaechen_gt21000km2(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2'
-    __queryable_attributes__ = ['sgd_nr']
+    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
     __label__ = 'title'
+    __timeInstant__ = 'year'
     id = Column('gid', Integer, primary_key=True)
     sgd_nr = Column('sgd_nr', Integer)
     title = Column('title', Text)
@@ -2256,6 +2271,7 @@ class gisgeol_flaechen_gt21000km2(Base, Vector):
     view_avail = Column('view_avail', Text)
     pdf_url = Column('pdf_url', Text)
     bgdi_data_status = Column('bgdi_data_status', Text)
+    year = Column('year', Integer)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
@@ -2267,8 +2283,9 @@ class gisgeol_flaechen_lt10km2(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-lt10km2'
-    __queryable_attributes__ = ['sgd_nr']
+    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
     __label__ = 'title'
+    __timeInstant__ = 'year'
     id = Column('gid', Integer, primary_key=True)
     sgd_nr = Column('sgd_nr', Integer)
     title = Column('title', Text)
@@ -2281,6 +2298,7 @@ class gisgeol_flaechen_lt10km2(Base, Vector):
     view_avail = Column('view_avail', Text)
     pdf_url = Column('pdf_url', Text)
     bgdi_data_status = Column('bgdi_data_status', Text)
+    year = Column('year', Integer)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
