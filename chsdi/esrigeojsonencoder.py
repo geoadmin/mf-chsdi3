@@ -21,20 +21,16 @@ class EsriGeoJSONEncoder(GeoJSONEncoder):
     srs = 21781
 
     def _cleanup(self, ret):
-        if 'coordinates' in ret.keys():
-            del ret['coordinates']
-        if 'type' in ret.keys():
-            del ret['type']
-
-        if 'properties' in ret.keys():
-            if len(ret['properties']) > 0:
-                if 'attributes' not in ret.keys():
-                    ret['attributes'] = {}
-                ret['attributes'].update(ret['properties'])
-            del ret['properties']
-        if 'crs' in ret.keys():
+        ret.pop('coordinates', None)  # works like `del ret[key]` with no KeyErrors
+        ret.pop('type', None)
+        props = ret.pop('properties', None)
+        if props:
+            if 'attributes' not in ret:
+                ret['attributes'] = {}
+            ret['attributes'].update(props)
+        if 'crs' in ret:
             crs = ret['crs']
-            if crs['type'] == 'name':
+            if crs['type'] == 'name':  # these two lines confuse me!!
                 pass
         else:
             ret['spatialReference'] = {'wkid': self.srs}
@@ -59,7 +55,7 @@ class EsriGeoJSONEncoder(GeoJSONEncoder):
 
         if isinstance(obj, (geojson.GeoJSON)):
             ret = dict(obj)
-            if 'coordinates' in ret.keys():
+            if 'coordinates' in ret:
                 coordinates = ret['coordinates']
 
             if isinstance(obj, (geojson.Feature, geojson.feature.Feature)) or geom_type == 'Feature':
@@ -68,19 +64,16 @@ class EsriGeoJSONEncoder(GeoJSONEncoder):
                 ret = dict(obj)
                 ret['geometry'] = geometry
                 esriType = 'esriGeometryPoint'
-                if 'rings' in geometry.keys():
+                if 'rings' in geometry:
                     esriType = 'esriGeometryPolygon'
-                if 'paths' in geometry.keys():
+                if 'paths' in geometry:
                     esriType = 'esriGeometryPolyline'
                 ret['geometryType'] = esriType
 
                 return self._cleanup(ret)
 
             if isinstance(obj, (geojson.FeatureCollection)):
-                features = []
-                for feature in obj.features:
-                    features.append(self.default(feature))
-
+                features = [self.default(feature) for feature in obj.features]
                 ret = dict(obj)
                 ret['features'] = features
                 return self._cleanup(ret)
@@ -152,10 +145,7 @@ class EsriSimple():
 
     @classmethod
     def to_instance(cls, ob, default=None, strict=False):
-        if isinstance(ob, list):
-            coords = ob
-        else:
-            coords = [float_raise_nan(x.strip()) for x in ob.split(',')]
+        coords = ob if isinstance(ob, list) else [float_raise_nan(x.strip()) for x in ob.split(',')]
 
         wkid = 21781
         if len(coords) == 2:
@@ -172,7 +162,6 @@ class EsriSimple():
             minx, miny, maxx, maxy = coords
 
             return geojson.geometry.Polygon([[[minx, miny], [minx, maxy], [maxx, maxy], [maxx, miny], [minx, miny]]], crs=crs)
-
         else:
             raise ValueError("%r is not a simplified esri geometry", coords)
 
@@ -187,30 +176,30 @@ class EsriGeoJSON(dict):
         d = dict((str(k), mapping[k]) for k in mapping)
 
         wkid = 21781
-        if 'spatialReference' in d.keys():
+        if 'spatialReference' in d:
             ref = d['spatialReference']
-            if 'wkid' in ref.keys():
+            if 'wkid' in ref:
                 wkid = ref['wkid']
 
         crs = Named(properties=dict(name="urn:ogc:def:crs:EPSG:%d" % wkid))
 
-        if 'x' in d.keys():
+        if 'x' in d:
             coords = [d['x'], d['y']]
 
             return geojson.geometry.Point(coords, crs=crs)
 
-        if 'xmin' in d.keys():
+        if 'xmin' in d:
             minx, miny, maxx, maxy = [d.get(k) for k in ['xmin', 'ymin', 'xmax', 'ymax']]
             coords = [[[minx, miny], [maxx, miny], [maxx, maxy], [minx, maxy], [minx, miny]]]
 
             return geojson.geometry.Polygon(coords, crs=crs)
 
-        if 'paths' in d.keys():
+        if 'paths' in d:
             coords = d['paths'][0]
 
             return geojson.geometry.LineString(coords, crs=crs)
 
-        if 'rings' in d.keys():
+        if 'rings' in d:
             coords = d['rings']
 
             return geojson.geometry.Polygon(coords, crs=crs)
