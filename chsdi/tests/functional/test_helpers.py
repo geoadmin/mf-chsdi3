@@ -206,7 +206,7 @@ class Test_Helpers(unittest.TestCase):
         testval = 5
         result = float_raise_nan(testval)
         self.assertEqual(result, 5.0)
-        self.assertRaises('ValueError')
+        self.assertRaises(ValueError, float_raise_nan, 'no_number')
 
     def test_parse_box2d(self):
         strBox2d = 'BOX(1.1 2.2,3.3 4.4)'
@@ -224,10 +224,9 @@ class Test_Helpers(unittest.TestCase):
 
     def test_center_from_box2d_wrong(self):
         box2d = [10.1, 2.2, 3.3, 6.6]
-        try:
-            center_from_box2d(box2d)
-        except ValueError as e:
-            self.assertRaises(e)
+        self.assertRaises(ValueError, center_from_box2d, box2d)
+        box2d = [1.1, 2.2, 3.3]
+        self.assertRaises(ValueError, center_from_box2d, box2d)
 
     def test_format_scale(self):
         scale = 50000
