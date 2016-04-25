@@ -2064,11 +2064,9 @@ class steine_hist_bauwerke(Base, Vector):
 register('ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke', steine_hist_bauwerke)
 
 
-class gisgeol_punkte(Base, Vector):
-    __tablename__ = 'view_gisgeol_points'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
+class gisGeol_base:
     __template__ = 'templates/htmlpopup/gisgeol.mako'
-    __bodId__ = 'ch.swisstopo.geologie-gisgeol-punkte'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
     __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
     __label__ = 'title'
     __timeInstant__ = 'year'
@@ -2087,220 +2085,65 @@ class gisgeol_punkte(Base, Vector):
     year = Column('year', Integer)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
+
+
+class gisgeol_punkte(Base, gisGeol_base, Vector):
+    __tablename__ = 'view_gisgeol_points'
+    __bodId__ = 'ch.swisstopo.geologie-gisgeol-punkte'
 
 register('ch.swisstopo.geologie-gisgeol-punkte', gisgeol_punkte)
 
 
-class gisgeol_linien(Base, Vector):
+class gisgeol_linien(Base, gisGeol_base, Vector):
     __tablename__ = 'view_gisgeol_lines'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-linien'
-    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
-    __label__ = 'title'
-    __timeInstant__ = 'year'
-    id = Column('gid', Integer, primary_key=True)
-    sgd_nr = Column('sgd_nr', Integer)
-    title = Column('title', Text)
-    orig_id = Column('original_document_id', Text)
-    author = Column('author', Text)
-    report_structure = Column('report_structure', Text)
-    aux_info = Column('auxiliary_information', Text)
-    doccreation = Column('doccreation_date', Text)
-    copy_avail = Column('copy_avail', Text)
-    view_avail = Column('view_avail', Text)
-    pdf_url = Column('pdf_url', Text)
-    bgdi_data_status = Column('bgdi_data_status', Text)
-    year = Column('year', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
 
 register('ch.swisstopo.geologie-gisgeol-linien', gisgeol_linien)
 
 
-class gisgeol_flaechen_1x1km(Base, Vector):
+class gisgeol_flaechen_1x1km(Base, gisGeol_base, Vector):
     __tablename__ = 'view_gisgeol_surfaces_1x1km'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-1x1km'
-    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
-    __label__ = 'title'
-    __timeInstant__ = 'year'
-    id = Column('gid', Integer, primary_key=True)
-    sgd_nr = Column('sgd_nr', Integer)
-    title = Column('title', Text)
-    orig_id = Column('original_document_id', Text)
-    author = Column('author', Text)
-    report_structure = Column('report_structure', Text)
-    aux_info = Column('auxiliary_information', Text)
-    doccreation = Column('doccreation_date', Text)
-    copy_avail = Column('copy_avail', Text)
-    view_avail = Column('view_avail', Text)
-    pdf_url = Column('pdf_url', Text)
-    bgdi_data_status = Column('bgdi_data_status', Text)
-    year = Column('year', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
 
 register('ch.swisstopo.geologie-gisgeol-flaechen-1x1km', gisgeol_flaechen_1x1km)
 
 
-class gisgeol_flaechen_10x10km(Base, Vector):
+class gisgeol_flaechen_10x10km(Base, gisGeol_base, Vector):
     __tablename__ = 'view_gisgeol_surfaces_10x10km'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-10x10km'
-    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
-    __label__ = 'title'
-    __timeInstant__ = 'year'
-    id = Column('gid', Integer, primary_key=True)
-    sgd_nr = Column('sgd_nr', Integer)
-    title = Column('title', Text)
-    orig_id = Column('original_document_id', Text)
-    author = Column('author', Text)
-    report_structure = Column('report_structure', Text)
-    aux_info = Column('auxiliary_information', Text)
-    doccreation = Column('doccreation_date', Text)
-    copy_avail = Column('copy_avail', Text)
-    view_avail = Column('view_avail', Text)
-    pdf_url = Column('pdf_url', Text)
-    bgdi_data_status = Column('bgdi_data_status', Text)
-    year = Column('year', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
 
 register('ch.swisstopo.geologie-gisgeol-flaechen-10x10km', gisgeol_flaechen_10x10km)
 
 
-class gisgeol_flaechen_10to100km2(Base, Vector):
+class gisgeol_flaechen_10to100km2(Base, gisGeol_base, Vector):
     __tablename__ = 'view_gisgeol_surfaces_10to100km2'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-10to100km2'
-    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
-    __label__ = 'title'
-    __timeInstant__ = 'year'
-    id = Column('gid', Integer, primary_key=True)
-    sgd_nr = Column('sgd_nr', Integer)
-    title = Column('title', Text)
-    orig_id = Column('original_document_id', Text)
-    author = Column('author', Text)
-    report_structure = Column('report_structure', Text)
-    aux_info = Column('auxiliary_information', Text)
-    doccreation = Column('doccreation_date', Text)
-    copy_avail = Column('copy_avail', Text)
-    view_avail = Column('view_avail', Text)
-    pdf_url = Column('pdf_url', Text)
-    bgdi_data_status = Column('bgdi_data_status', Text)
-    year = Column('year', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
 
 
-class gisgeol_flaechen_100to1000km2(Base, Vector):
+class gisgeol_flaechen_100to1000km2(Base, gisGeol_base, Vector):
     __tablename__ = 'view_gisgeol_surfaces_100to1000km2'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2'
-    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
-    __label__ = 'title'
-    __timeInstant__ = 'year'
-    id = Column('gid', Integer, primary_key=True)
-    sgd_nr = Column('sgd_nr', Integer)
-    title = Column('title', Text)
-    orig_id = Column('original_document_id', Text)
-    author = Column('author', Text)
-    report_structure = Column('report_structure', Text)
-    aux_info = Column('auxiliary_information', Text)
-    doccreation = Column('doccreation_date', Text)
-    copy_avail = Column('copy_avail', Text)
-    view_avail = Column('view_avail', Text)
-    pdf_url = Column('pdf_url', Text)
-    bgdi_data_status = Column('bgdi_data_status', Text)
-    year = Column('year', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
 
 
-class gisgeol_flaechen_1000to21000km2(Base, Vector):
+class gisgeol_flaechen_1000to21000km2(Base, gisGeol_base, Vector):
     __tablename__ = 'view_gisgeol_surfaces_1000to21000km2'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2'
-    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
-    __label__ = 'title'
-    __timeInstant__ = 'year'
-    id = Column('gid', Integer, primary_key=True)
-    sgd_nr = Column('sgd_nr', Integer)
-    title = Column('title', Text)
-    orig_id = Column('original_document_id', Text)
-    author = Column('author', Text)
-    report_structure = Column('report_structure', Text)
-    aux_info = Column('auxiliary_information', Text)
-    doccreation = Column('doccreation_date', Text)
-    copy_avail = Column('copy_avail', Text)
-    view_avail = Column('view_avail', Text)
-    pdf_url = Column('pdf_url', Text)
-    bgdi_data_status = Column('bgdi_data_status', Text)
-    year = Column('year', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
 
 register('ch.swisstopo.geologie-gisgeol-flaechen-10to100km2', gisgeol_flaechen_10to100km2)
 register('ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2', gisgeol_flaechen_100to1000km2)
 register('ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2', gisgeol_flaechen_1000to21000km2)
 
 
-class gisgeol_flaechen_gt21000km2(Base, Vector):
+class gisgeol_flaechen_gt21000km2(Base, gisGeol_base, Vector):
     __tablename__ = 'view_gisgeol_surfaces_gt21000km2'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2'
-    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
-    __label__ = 'title'
-    __timeInstant__ = 'year'
-    id = Column('gid', Integer, primary_key=True)
-    sgd_nr = Column('sgd_nr', Integer)
-    title = Column('title', Text)
-    orig_id = Column('original_document_id', Text)
-    author = Column('author', Text)
-    report_structure = Column('report_structure', Text)
-    aux_info = Column('auxiliary_information', Text)
-    doccreation = Column('doccreation_date', Text)
-    copy_avail = Column('copy_avail', Text)
-    view_avail = Column('view_avail', Text)
-    pdf_url = Column('pdf_url', Text)
-    bgdi_data_status = Column('bgdi_data_status', Text)
-    year = Column('year', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
 
 register('ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2', gisgeol_flaechen_gt21000km2)
 
 
-class gisgeol_flaechen_lt10km2(Base, Vector):
+class gisgeol_flaechen_lt10km2(Base, gisGeol_base, Vector):
     __tablename__ = 'view_gisgeol_surfaces_lt10km2'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gisgeol.mako'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-lt10km2'
-    __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
-    __label__ = 'title'
-    __timeInstant__ = 'year'
-    id = Column('gid', Integer, primary_key=True)
-    sgd_nr = Column('sgd_nr', Integer)
-    title = Column('title', Text)
-    orig_id = Column('original_document_id', Text)
-    author = Column('author', Text)
-    report_structure = Column('report_structure', Text)
-    aux_info = Column('auxiliary_information', Text)
-    doccreation = Column('doccreation_date', Text)
-    copy_avail = Column('copy_avail', Text)
-    view_avail = Column('view_avail', Text)
-    pdf_url = Column('pdf_url', Text)
-    bgdi_data_status = Column('bgdi_data_status', Text)
-    year = Column('year', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
 
 register('ch.swisstopo.geologie-gisgeol-flaechen-lt10km2', gisgeol_flaechen_lt10km2)
 
