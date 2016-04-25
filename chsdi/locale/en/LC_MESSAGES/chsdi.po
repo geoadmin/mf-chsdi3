@@ -3767,6 +3767,9 @@ msgstr "Total length [m]"
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Aeronautical Chart ICAO"
 
+msgid "ch.bazl.luftfahrtkarten-icao.release"
+msgstr "Edition"
+
 msgid "ch.bazl.points-of-interest"
 msgstr "Points of interest"
 
@@ -3781,6 +3784,9 @@ msgstr "SP Aviation infrastructure"
 
 msgid "ch.bazl.segelflugkarte"
 msgstr "Glider Chart"
+
+msgid "ch.bazl.segelflugkarte.release"
+msgstr "Edition"
 
 msgid "ch.bazl.sicherheitszonenplan"
 msgstr "Safety zone plan"
@@ -4472,11 +4478,29 @@ msgstr "Sheet number"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.titel"
 msgstr "Map title"
 
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
+msgstr "Number"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
+msgstr "Edition"
+
 msgid "ch.swisstopo.geologie-geocover"
 msgstr "GeoCover - Vector Datasets"
 
 msgid "ch.swisstopo.geologie-geocover.metadata"
 msgstr "Division GeoCover / GA25"
+
+msgid "ch.swisstopo.geologie-geocover.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geocover.number"
+msgstr "Number"
+
+msgid "ch.swisstopo.geologie-geocover.release"
+msgstr "Edition"
 
 msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
 msgstr "Bouguer anomalies 500"
@@ -4492,6 +4516,15 @@ msgstr "Geology 500"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr "Geological Atlas GA25"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.number"
+msgstr "Number"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.release"
+msgstr "Edition"
 
 msgid "ch.swisstopo.geologie-geomorphologie"
 msgstr "Übersicht Geomorphologie"
@@ -5107,6 +5140,9 @@ msgstr "National Map 1:50'000"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
 msgstr "National Map 1:500'000"
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale.release"
+msgstr "Edition"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "National Map 1:25'000"

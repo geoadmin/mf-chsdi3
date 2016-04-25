@@ -3767,6 +3767,9 @@ msgstr "Gesamtlänge [m]"
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr "Charta d'aviatica OACI"
 
+msgid "ch.bazl.luftfahrtkarten-icao.release"
+msgstr "Ausgabejahr"
+
 msgid "ch.bazl.points-of-interest"
 msgstr "Puncts interessants"
 
@@ -3781,6 +3784,9 @@ msgstr "PS Infrastructura aviatica"
 
 msgid "ch.bazl.segelflugkarte"
 msgstr "Charta da sgol senza motor"
+
+msgid "ch.bazl.segelflugkarte.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.bazl.sicherheitszonenplan"
 msgstr "Plan da zonas da segirezza"
@@ -4472,11 +4478,29 @@ msgstr "Kartenblatt"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.titel"
 msgstr "Titel"
 
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
+msgstr "Ausgabejahr"
+
 msgid "ch.swisstopo.geologie-geocover"
 msgstr "GeoCover - datas vectorialas"
 
 msgid "ch.swisstopo.geologie-geocover.metadata"
 msgstr "Divisiun GeoCover / AG25"
+
+msgid "ch.swisstopo.geologie-geocover.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geocover.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.geologie-geocover.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
 msgstr "Anomalias da Bouguer"
@@ -4492,6 +4516,15 @@ msgstr "Geologia 500"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr "Atlas geologic AG25"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-geomorphologie"
 msgstr "Übersicht Geomorphologie"
@@ -5107,6 +5140,9 @@ msgstr "Charta naziunala 1:50'000 | CN50"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
 msgstr "Charta naziunala 1:500'000 | CN500"
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Charta naziunala 1:25'000 | CN25"

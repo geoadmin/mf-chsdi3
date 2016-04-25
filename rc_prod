@@ -1,5 +1,6 @@
 export APACHE_BASE_PATH=main
 export API_URL=//api3.geo.admin.ch
+export SHOP_URL=//beta.shop.swisstopo.ch
 export DBHOST=pg.bgdi.ch
 export DBPORT=5432
 export DBSTAGING=prod

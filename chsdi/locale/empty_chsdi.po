@@ -2334,6 +2334,15 @@ msgstr ""
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr ""
 
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.name"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-geocover.metadata"
 msgstr ""
 
@@ -3024,10 +3033,16 @@ msgstr ""
 msgid "ch.bazl.luftfahrtkarten-icao"
 msgstr ""
 
+msgid "ch.bazl.luftfahrtkarten-icao.release"
+msgstr ""
+
 msgid "ch.bazl.projektierungszonen-flughafenanlagen"
 msgstr ""
 
 msgid "ch.bazl.segelflugkarte"
+msgstr ""
+
+msgid "ch.bazl.segelflugkarte.release"
 msgstr ""
 
 msgid "ch.bfe.abgeltung-wasserkraftnutzung"
@@ -3168,6 +3183,15 @@ msgstr ""
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr ""
 
+msgid "ch.swisstopo.geologie-geologischer_atlas.name"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.number"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.release"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
 msgstr ""
 
@@ -3283,6 +3307,9 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr ""
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale"
+msgstr ""
+
+msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale.release"
 msgstr ""
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk1000.noscale"
@@ -6876,6 +6903,15 @@ msgid "ch.pronatura.url"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-geocover"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geocover.name"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geocover.number"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geocover.release"
 msgstr ""
 
 msgid "geocover_azimut"

@@ -361,6 +361,7 @@ production.ini: production.ini.in
 		--var "dbstaging=$(DBSTAGING)" \
 		--var "zadara_dir=$(ZADARA_DIR)" \
 		--var "api_url=$(API_URL)" \
+		--var "shop_url=$(SHOP_URL)" \
 		--var "geodata_staging=$(GEODATA_STAGING)" \
 		--var "sphinxhost=$(SPHINXHOST)" \
 		--var "wmshost=$(WMSHOST)" \

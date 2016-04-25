@@ -378,3 +378,9 @@ def get_loaderjs_url(request):
 def decompress_gzipped_string(string):
     content = gzip.GzipFile(fileobj=StringIO.StringIO(string))
     return content.read()
+
+
+def order_mapsheet(request, lang):
+    shopUrl = 'https:' + request.registry.settings['shop_url']
+    shopUrl = shopUrl + '/' + lang + '/dispatcher?'
+    return shopUrl
