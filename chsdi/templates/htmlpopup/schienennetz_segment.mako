@@ -2,11 +2,6 @@
 
 <%def name="table_body(c, lang)">
 
-<%
-
-  abreviationet = c['attributes']['abreviationet']
-
-%>
 
     <tr><td class="cell-left">${_('ch.bav.schienennetz.xtf_id')}</td>                                            
 	<td>${c['attributes']['xtf_id'] or '-'}</td></tr>
@@ -19,11 +14,7 @@
     <tr><td class="cell-left">${_('ch.bav.schienennetz.numeroet')}</td>
     <td>${c['attributes']['numeroet'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.schienennetz.abreviationet')}</td>
-% if abreviationet == 'SBBCFFFFS':
-    <td>SBB-CFF-FFS</td></tr>
-% else: 
     <td>${c['attributes']['abreviationet'] or '-'}</td></tr>
-% endif
     <tr><td class="cell-left">${_('ch.bav.schienennetz.nombrevoies')}</td>
     <td>${c['attributes']['nombrevoies'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.schienennetz.ecartement')}</td>
