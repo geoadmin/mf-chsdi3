@@ -11,7 +11,6 @@ def getAltitude(baseUrl, center):
 %>
 
 <%def name="table_body(c, lang)">
-<% c['stable_id'] = True %>
 <%
 from gatilegrid.grid import Grid
 from chsdi.models.grid import get_grid_spec
@@ -24,8 +23,8 @@ grid = Grid(gridSpec.get('extent'), gridSpec.get('resolutionX'), gridSpec.get('r
 extent = grid.cellExtent(col,row)
 center = [(extent[0] + extent[2])/2,(extent[1] + extent[3])/2]
 baseUrl = request.registry.settings['api_url']
-dhm_altitude = getAltitude(baseUrl, center)
-center = ', '.join([str(round(center[0], 2)), str(round(center[1], 2))])
+dhm_altitude = int(round(float(getAltitude(baseUrl, center)),0))
+center = '2%s, 1%s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
 
 props = c['properties']
 %>
@@ -37,7 +36,7 @@ props = c['properties']
 <!-- html output -->
     <tr>
       <th class="cell-left">${_('tt_bfe_hoehe_ueber_grund')}</th>
-      <td>${altitude or '-'}</td>
+      <td>${altitude or '-'} m</td>
     </tr>
     <tr>
       <th class="cell-left">${_('tt_bfe_koordinaten')}</th>
@@ -45,11 +44,11 @@ props = c['properties']
     </tr>
     <tr>
       <th class="cell-left">${_('tt_bfe_hoehe_gelaende')}</th>
-      <td>${dhm_altitude or '-'}</td>
+      <td>${dhm_altitude or '-'} ${_('abk_meter_ueber_meer')}</td>
     </tr>
     <tr>
       <th class="cell-left">${_('tt_bfe_geschw_wind_durchschnitt')}</th>
-      <td>${round(props['v_mean'], 2)}</td>
+      <td>${round(props['v_mean'], 1)} m/s</td>
     </tr>
     <tr>
       <th colspan=2 class="cell-meta-one">${_('tt_bfe_windrose')}</th>
@@ -69,8 +68,8 @@ bottomLeft = coordinates[0]
 topRight = coordinates[2]
 center = [(bottomLeft[0] + topRight[0]) / 2, (bottomLeft[1] + topRight[1]) / 2]
 baseUrl = request.registry.settings['api_url']
-dhm_altitude = getAltitude(baseUrl, center)
-center = ', '.join([str(round(center[0], 2)), str(round(center[1], 2))])
+dhm_altitude = int(round(float(getAltitude(baseUrl, center)),0))
+center = '2%s, 1%s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
 altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
 
 props = c['properties']
@@ -173,6 +172,10 @@ except:
 td.inner-table {
   padding: 10px !important;
 }
+table#windrichtung  td.align-right {
+    text-align: right;
+    padding-right: 3px;
+}
 </style>
 
 
@@ -191,7 +194,6 @@ td.inner-table {
   visibility: hidden;
 }
 #rose {
-  color: blue;
   visibility: visible;
   position: fixed;
   top: 0;
@@ -204,7 +206,7 @@ td.inner-table {
 <table class="table-with-border kernkraftwerke-extended">
   <tr>
     <th class="cell-left">${_('tt_bfe_hoehe_ueber_grund')}</th>
-    <td>${altitude or '-'}</td>
+    <td>${altitude or '-'} m</td>
   </tr>
   <tr>
     <th class="cell-left">${_('tt_bfe_koordinaten')}</th>
@@ -212,11 +214,11 @@ td.inner-table {
   </tr>
   <tr>
     <th class="cell-left">${_('tt_bfe_hoehe_gelaende')}</th>
-    <td>${dhm_altitude or '-'}</td>
+    <td>${dhm_altitude or '-'} ${_('abk_meter_ueber_meer')}</td>
   </tr>
   <tr>
     <th class="cell-left">${_('tt_bfe_geschw_wind_durchschnitt')}</th>
-    <td>${props['v_mean']}</td>
+    <td>${round(props['v_mean'],1)} m/s</td>
   </tr>
   <tr>
     <td class="inner-table" colspan="2"><b>${_('tt_bfe_windrose_geschwverteilung')}</b><br/>${_('tt_bfe_windrose_help')}<br/><div id="rose"></div>
@@ -230,92 +232,92 @@ td.inner-table {
         </tr>
         <tr>
           <td>total</td>
-          <td>${round(freq_total, 3)} %</td>
-          <td>${round(props['v_mean'], 3)}</td>
-          <td>${round(props['wei_a'], 3)}</td>
-          <td>${round(props['wei_k'], 3)}</td>
+          <td class="align-right">${round(freq_total, 1)} %</td>
+          <td class="align-right">${round(props['v_mean'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k'], 1)}</td>
         </tr>
         <tr>
           <td>345° - 15°</td>
-          <td>${round(props['freq_0'], 3)} %</td>
-          <td>${round(props['v_mean_0'], 3)}</td>
-          <td>${round(props['wei_a_0'], 3)}</td>
-          <td>${round(props['wei_k_0'], 3)}</td>
+          <td class="align-right">${round(props['freq_0'], 1)} %</td>
+          <td class="align-right">${round(props['v_mean_0'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a_0'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k_0'], 1)}</td>
         </tr>
         <tr>
           <td>15° - 45°</td>
-          <td>${round(props['freq_30'], 3)} %</td>
-          <td>${round(props['v_mean_30'], 3)}</td>
-          <td>${round(props['wei_a_30'], 3)}</td>
-          <td>${round(props['wei_k_30'], 3)}</td>
+          <td class="align-right">${round(props['freq_30'], 1)} %</td>
+          <td class="align-right">${round(props['v_mean_30'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a_30'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k_30'], 1)}</td>
         </tr>
         <tr><td>45° - 75°</td>
-          <td>${round(props['freq_60'], 3)} %</td>
-          <td>${round(props['v_mean_60'], 3)}</td>
-          <td>${round(props['wei_a_60'], 3)}</td>
-          <td>${round(props['wei_k_60'], 3)}</td>
+          <td class="align-right">${round(props['freq_60'], 1)} %</td>
+          <td class="align-right">${round(props['v_mean_60'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a_60'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k_60'], 1)}</td>
         </tr>
         <tr>
           <td>75° - 105°</td>
-          <td>${round(props['freq_90'], 3)} %</td>
-          <td>${round(props['v_mean_90'], 3)}</td>
-          <td>${round(props['wei_a_90'], 3)}</td>
-          <td>${round(props['wei_k_90'], 3)}</td>
+          <td class="align-right">${round(props['freq_90'], 1)} %</td>
+          <td class="align-right">${round(props['v_mean_90'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a_90'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k_90'], 1)}</td>
         </tr>
         <tr>
           <td>105° - 135°</td>
-          <td>${round(props['freq_120'], 3)} %</td>
-          <td>${round(props['v_mean_120'], 3)}</td>
-          <td>${round(props['wei_a_120'], 3)}</td>
-          <td>${round(props['wei_k_120'], 3)}</td>
+          <td class="align-right">${round(props['freq_120'], 1)} %</td>
+          <td class="align-right">${round(props['v_mean_120'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a_120'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k_120'], 1)}</td>
         </tr>
         <tr>
           <td>135° - 165°</td>
-          <td>${round(props['freq_150'], 3)} %</td>
-          <td>${round(props['v_mean_150'], 3)}</td>
-          <td>${round(props['wei_a_150'], 3)}</td>
-          <td>${round(props['wei_k_150'], 3)}</td>
+          <td class="align-right">${round(props['freq_150'], 1)} %</td>
+          <td class="align-right">${round(props['v_mean_150'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a_150'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k_150'], 1)}</td>
         </tr>
         <tr>
           <td>165° - 195°</td>
-          <td>${round(props['freq_180'], 3)} %</td>
-          <td>${round(props['v_mean_180'], 3)}</td>
-          <td>${round(props['wei_a_180'], 3)}</td>
-          <td>${round(props['wei_k_180'], 3)}</td>
+          <td class="align-right">${round(props['freq_180'], 1)} %</td>
+          <td class="align-right">${round(props['v_mean_180'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a_180'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k_180'], 1)}</td>
         </tr>
         <tr>
           <td>195° - 225°</td>
-          <td>${round(props['freq_210'], 3)} %</td>
-          <td>${round(props['v_mean_210'], 3)}</td>
-          <td>${round(props['wei_a_210'], 3)}</td>
-          <td>${round(props['wei_k_210'], 3)}</td>
+          <td class="align-right">${round(props['freq_210'], 1)} %</td>
+          <td class="align-right">${round(props['v_mean_210'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a_210'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k_210'], 1)}</td>
         </tr>
         <tr>
           <td>225° - 255°</td>
-          <td>${round(props['freq_240'], 3)} %</td>
-          <td>${round(props['v_mean_240'], 3)}</td>
-          <td>${round(props['wei_a_240'], 3)}</td>
-          <td>${round(props['wei_k_240'], 3)}</td>
+          <td class="align-right">${round(props['freq_240'], 1)} %</td>
+          <td class="align-right">${round(props['v_mean_240'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a_240'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k_240'], 1)}</td>
         </tr>
         <tr>
           <td>255° - 285°</td>
-          <td>${round(props['freq_270'], 3)} %</td>
-          <td>${round(props['v_mean_270'], 3)}</td>
-          <td>${round(props['wei_a_270'], 3)}</td>
-          <td>${round(props['wei_k_270'], 3)}</td>
+          <td class="align-right">${round(props['freq_270'], 1)} %</td>
+          <td class="align-right">${round(props['v_mean_270'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a_270'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k_270'], 1)}</td>
         </tr>
         <tr>
           <td>285° - 315°</td>
-          <td>${round(props['freq_300'], 3)} %</td>
-          <td>${round(props['v_mean_300'], 3)}</td>
-          <td>${round(props['wei_a_300'], 3)}</td>
-          <td>${round(props['wei_k_300'], 3)}</td></tr>
+          <td class="align-right">${round(props['freq_300'], 1)} %</td>
+          <td class="align-right">${round(props['v_mean_300'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a_300'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k_300'], 1)}</td></tr>
         <tr>
           <td>315° - 345°</td>
-          <td>${round(props['freq_330'], 3)} %</td>
-          <td>${round(props['v_mean_330'], 3)}</td>
-          <td>${round(props['wei_a_330'], 3)}</td>
-          <td>${round(props['wei_k_330'], 3)}</td>
+          <td class="align-right">${round(props['freq_330'], 1)} %</td>
+          <td class="align-right">${round(props['v_mean_330'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_a_330'], 1)} m/s</td>
+          <td class="align-right">${round(props['wei_k_330'], 1)}</td>
         </tr>
       </table>
     </td>
@@ -330,133 +332,133 @@ td.inner-table {
         </tr>
         <tr>
           <td>0 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind0"></div>
           </td>
         </tr>
         <tr>
           <td>1 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind1"></div>
           </td>
         </tr>
         <tr>
           <td>2 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind2"></div>
           </td>
         </tr>
         <tr>
           <td>3 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind3"></div>
           </td>
         </tr>
         <tr>
           <td>4 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind4"></div>
           </td>
         </tr>
         <tr>
           <td>5 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind5"></div>
           </td>
         </tr>
         <tr>
           <td>6 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind6"></div>
           </td>
         </tr>
         <tr>
           <td>7 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind7"></div>
           </td>
         </tr>
         <tr>
           <td>8 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind8"></div>
           </td>
         </tr>
         <tr>
           <td>9 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind9"></div>
           </td>
         </tr>
         <tr>
           <td>10 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind10"></div>
           </td>
         </tr>
         <tr>
           <td>11 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind11"></div>
           </td>
         </tr>
         <tr>
           <td>12 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind12"></div>
           </td>
         </tr>
         <tr>
           <td>13 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind13"></div>
           </td>
         </tr>
         <tr>
           <td>14 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind14"></div>
           </td>
         </tr>
         <tr>
           <td>15 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind15"></div>
           </td>
         </tr>
         <tr>
           <td>16 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind16"></div>
           </td>
         </tr>
         <tr>
           <td>17 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind17"></div>
           </td>
         </tr>
         <tr>
           <td>18 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind18"></div>
           </td>
         </tr>
         <tr>
           <td>19 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind19"></div>
           </td>
         </tr>
         <tr>
           <td>20 m/s</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="wind20"></div>
           </td>
         </tr>
         <tr>
           <td>Summe</td>
-          <td style="text-align:right">
+          <td class="align-right">
             <div id="windsumme"></div>
           </td>
         </tr>
@@ -838,9 +840,9 @@ for (var i = 0; i < 21; i++) {
     probability = (k/A) * Math.pow((i/A),(k-1)) * Math.pow(Math.E,-Math.pow((i/A),k));
     probabilitySum = probabilitySum + probability;
     data.push({x: i, y: probability});
-    document.getElementById("wind" + i).innerHTML = (probability * 100).toFixed(2) + " %";
+    document.getElementById("wind" + i).innerHTML = (probability * 100).toFixed(1) + " %";
 }
-document.getElementById("windsumme").innerHTML = (Math.round(probabilitySum * 100)).toFixed(2) + " %";
+document.getElementById("windsumme").innerHTML = (Math.round(probabilitySum * 100)).toFixed(1) + " %";
 // Ende Weibull-Daten
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 488 - margin.left - margin.right,
