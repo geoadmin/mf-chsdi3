@@ -2976,6 +2976,9 @@ msgid "ch.bafu.schutzgebiete-luftfahrt"
 msgstr "Zones protégées MIL"
 
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
+msgstr "Parcs"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter"
 msgstr "Parcs (Perimetre)"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
@@ -6122,6 +6125,18 @@ msgstr "Unité de cartographie"
 msgid "kategorie"
 msgstr "Catégorie"
 
+msgid "kategorie_NE"
+msgstr "Parc naturel périurbain"
+
+msgid "kategorie_NP"
+msgstr "Parc national"
+
+msgid "kategorie_RN"
+msgstr "Parc naturel régional"
+
+msgid "kategorie_SNP"
+msgstr "Parc national Suisse"
+
 msgid "kbbez"
 msgstr "Nom de feuille"
 
@@ -6851,6 +6866,9 @@ msgstr "Nom de l'objet"
 msgid "objektnr"
 msgstr "Numéro de l'objet"
 
+msgid "objnummer"
+msgstr "ObjetNr."
+
 msgid "oeffentlich"
 msgstr "Public"
 
@@ -6959,6 +6977,15 @@ msgstr "Standard de qualité"
 msgid "raeumliche_qualitaeten"
 msgstr "Qualités spatiales"
 
+msgid "rechtsgrundlage"
+msgstr "Base Juridique"
+
+msgid "rechtsgrundlage_1"
+msgstr "Loi sur le Parc National, ordonnance cantonale"
+
+msgid "rechtsgrundlage_2"
+msgstr "LPN, Ordonnance sur les parcs"
+
 msgid "regional"
 msgstr "Régionale"
 
@@ -7064,6 +7091,12 @@ msgstr "Numéro de la station"
 msgid "status"
 msgstr "Statut"
 
+msgid "status_K"
+msgstr "Projets candidats"
+
+msgid "status_P"
+msgstr "Parc en phase opérationelle"
+
 msgid "status_fp"
 msgstr "Nom officiel (si existant)"
 
@@ -7099,6 +7132,9 @@ msgstr "Superficie du bassin versant partiel [km2]"
 
 msgid "teilobjektnr"
 msgstr "Numéro du sous-objet"
+
+msgid "teilobjnummer"
+msgstr "SubobjetNo."
 
 msgid "telephon_fr_de"
 msgstr "Téléphone"
@@ -8424,7 +8460,31 @@ msgid "zielhafen"
 msgstr "Destination"
 
 msgid "zone"
-msgstr "zone"
+msgstr "Zone"
+
+msgid "zone_NE_KZ"
+msgstr "Zone centrale parc naturel périurbain"
+
+msgid "zone_NE_UEZ"
+msgstr "Zone de transition parc naturel périurbain"
+
+msgid "zone_NE_ZND"
+msgstr "Parc naturel périurbain (zones pas définis)"
+
+msgid "zone_NP_KZ"
+msgstr "Zone centrale parc national"
+
+msgid "zone_NP_UMZ"
+msgstr "Zone périphérique parc national"
+
+msgid "zone_NP_ZND"
+msgstr "Parc national (zones pas définis)"
+
+msgid "zone_RN"
+msgstr "Parc naturel régional"
+
+msgid "zone_SNP"
+msgstr "Parc national Suisse"
 
 msgid "zugang"
 msgstr "Accessible"

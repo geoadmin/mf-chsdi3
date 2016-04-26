@@ -1502,22 +1502,36 @@ class schutzgebiete_aulav_uebrige_general(Base, Vector):
 register('ch.bafu.schutzgebiete-aulav_uebrige', schutzgebiete_aulav_uebrige_general)
 
 
-class paerke_nationaler_bedeutung(Base, Vector):
-    __tablename__ = 'paerke_nationaler_bedeutung'
+class paerke:
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
-    __bodId__ = 'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung'
-    __template__ = 'templates/htmlpopup/paerke_nationaler_bedeutung.mako'
-    __label__ = 'park_name'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    park_name = Column('park_name', Text)
-    park_nr = Column('park_nr', Numeric)
-    park_statu = Column('park_statu', Text)
-    park_fl = Column('park_fl', Numeric)
-    park_gf = Column('park_gf', Numeric)
+    __label__ = 'name'
+    name = Column('park_name', Text)
+    kategorie = Column('kategorie', Text)
+    rechtsgrundlage = Column('rechtsgrundlage', Integer)
+    status = Column('status', Text)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
 
-register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung', paerke_nationaler_bedeutung)
+
+class paerkeNationalerBedeutung (Base, paerke, Vector):
+    __tablename__ = 'paerke_nationaler_bedeutung_zonen'
+    __bodId__ = 'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung'
+    __template__ = 'templates/htmlpopup/paerke_nationaler_bedeutung.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    teil_nummer = Column('teil_nummer', Integer)
+    objektnummer = Column('objektnummer', Integer)
+    zone = Column('zone', Text)
+
+register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung', paerkeNationalerBedeutung)
+
+
+class paerkeNationalerBedeutungPerimeter(Base, paerke, Vector):
+    __tablename__ = 'paerke_nationaler_bedeutung_perimeter'
+    __bodId__ = 'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter'
+    __template__ = 'templates/htmlpopup/paerke_nationaler_bedeutung_perimeter.mako'
+    id = Column('objektnummer', Integer, primary_key=True)
+
+register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter', paerkeNationalerBedeutungPerimeter)
 
 
 class ramsar(Base, Vector):

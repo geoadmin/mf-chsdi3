@@ -2967,6 +2967,9 @@ msgstr ""
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr ""
 
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter"
+msgstr ""
+
 msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr ""
 
@@ -8415,4 +8418,61 @@ msgid "ch.swisstopo-karto.hangneigung"
 msgstr ""
 
 msgid "ch.swisstopo-karto.schneeschuhrouten"
+msgstr ""
+
+msgid "objnummer"
+msgstr ""
+
+msgid "teilobjnummer"
+msgstr ""
+
+msgid "rechtsgrundlage"
+msgstr ""
+
+msgid "kategorie_SNP"
+msgstr ""
+
+msgid "kategorie_NP"
+msgstr ""
+
+msgid "kategorie_RN"
+msgstr ""
+
+msgid "kategorie_NE"
+msgstr ""
+
+msgid "zone_SNP"
+msgstr ""
+
+msgid "zone_NP_KZ"
+msgstr ""
+
+msgid "zone_NE_KZ"
+msgstr ""
+
+msgid "zone_NP_UMZ"
+msgstr ""
+
+msgid "zone_NE_UEZ"
+msgstr ""
+
+msgid "zone_NP_ZND"
+msgstr ""
+
+msgid "zone_NE_ZND"
+msgstr ""
+
+msgid "zone_RN"
+msgstr ""
+
+msgid "status_P"
+msgstr ""
+
+msgid "status_K"
+msgstr ""
+
+msgid "rechtsgrundlage_1"
+msgstr ""
+
+msgid "rechtsgrundlage_2"
 msgstr ""

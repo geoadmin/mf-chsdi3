@@ -2976,6 +2976,9 @@ msgid "ch.bafu.schutzgebiete-luftfahrt"
 msgstr "Zone protette MIL"
 
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
+msgstr "Parchi"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter"
 msgstr "Parchi (Perimetro)"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
@@ -6122,6 +6125,18 @@ msgstr "Unité de cartographie"
 msgid "kategorie"
 msgstr "Categoria"
 
+msgid "kategorie_NE"
+msgstr "Parco naturale periurbano"
+
+msgid "kategorie_NP"
+msgstr "Parco nazionale"
+
+msgid "kategorie_RN"
+msgstr "Parco naturale regionale"
+
+msgid "kategorie_SNP"
+msgstr "Parco nazionale Svizzero"
+
 msgid "kbbez"
 msgstr "Denominazione di foglio"
 
@@ -6851,6 +6866,9 @@ msgstr "Nome dell'oggetto"
 msgid "objektnr"
 msgstr "Numero dell'oggetto"
 
+msgid "objnummer"
+msgstr "OgettoNo."
+
 msgid "oeffentlich"
 msgstr "Pubblico"
 
@@ -6959,6 +6977,15 @@ msgstr "Standard de qualité"
 msgid "raeumliche_qualitaeten"
 msgstr "Qualità spaziali"
 
+msgid "rechtsgrundlage"
+msgstr "Base Guiridica"
+
+msgid "rechtsgrundlage_1"
+msgstr "Legge sul Parco nazionale, ordinanza cantonale"
+
+msgid "rechtsgrundlage_2"
+msgstr "LPN, Ordinanza sui parchi"
+
 msgid "regional"
 msgstr "Importanza regionale"
 
@@ -7064,6 +7091,12 @@ msgstr "Numéro de la station"
 msgid "status"
 msgstr "Stato"
 
+msgid "status_K"
+msgstr "Parco candidato"
+
+msgid "status_P"
+msgstr "Parco in fase gestione"
+
 msgid "status_fp"
 msgstr "Nome ufficiale (se esistente)"
 
@@ -7099,6 +7132,9 @@ msgstr "Superficie del bacino idrografico [km2]"
 
 msgid "teilobjektnr"
 msgstr "Numero del sotto-oggetto"
+
+msgid "teilobjnummer"
+msgstr "SubogettoNo."
 
 msgid "telephon_fr_de"
 msgstr "Téléphone"
@@ -8424,7 +8460,31 @@ msgid "zielhafen"
 msgstr "Destination"
 
 msgid "zone"
-msgstr "zona"
+msgstr "Zona"
+
+msgid "zone_NE_KZ"
+msgstr "Zona centrale parco naturale periurbano"
+
+msgid "zone_NE_UEZ"
+msgstr "Zona transizione parco naturale periurbano"
+
+msgid "zone_NE_ZND"
+msgstr "Parco naturale periurbano (zone non definite)"
+
+msgid "zone_NP_KZ"
+msgstr "Zona centrale parco nazionale"
+
+msgid "zone_NP_UMZ"
+msgstr "Zona periferica parco nazionale"
+
+msgid "zone_NP_ZND"
+msgstr "Parco nazionale (zone non definite)"
+
+msgid "zone_RN"
+msgstr "Parco naturale regionale"
+
+msgid "zone_SNP"
+msgstr "Parco nazionale Svizzero"
 
 msgid "zugang"
 msgstr "Accessible"
