@@ -119,27 +119,7 @@ if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
         </Layer>
   % endfor
   ## End main loop
-    % if epsg in ['2056']:
-    %     for zoom in range(17, 29):
-          <TileMatrixSet>
-              <ows:Identifier>2056_${zoom}</ows:Identifier>
-              <ows:SupportedCRS>EPSG:${epsg}</ows:SupportedCRS>
-    %         for z in range(zoom + 1):
-               <TileMatrix>
-                   <ows:Identifier>${z|pad}</ows:Identifier>
-                   <ScaleDenominator>${tmsDefs[z][3]}</ScaleDenominator>
-                   <TopLeftCorner>2420000.0 1350000.0</TopLeftCorner>
-                   <TileWidth>256</TileWidth>
-                   <TileHeight>256</TileHeight>
-                   <MatrixWidth>${tmsDefs[z][1]}</MatrixWidth>
-                   <MatrixHeight>${tmsDefs[z][2]}</MatrixHeight>
-               </TileMatrix>
-    %         endfor
-          </TileMatrixSet>
-    %     endfor
-    % else:
-        <%include file="${TileMatrixSet_epsg}"/>
-    % endif
+        <%include file="${TileMatrixSet_epsg}" args="tmsDefs=tmsDefs"/>
     </Contents>
     <Themes>
     ## Main loop for the themes
