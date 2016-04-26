@@ -13,6 +13,52 @@ from chsdi.models.vector import Vector
 Base = bases['uvek']
 
 
+class SchienennetzPoint(Base, Vector):
+    __tablename__ = 'schienennetz_point'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/schienennetz_point.mako'
+    __bodId__ = 'ch.bav.schienennetz'
+    __label__ = 'nom_point'
+    __queryable_attributes__ = ['numero', 'nom_point', 'abreviation']
+    id = Column('xtf_id', Integer, primary_key=True)
+    numero = Column('numero', Integer)
+    nom_point = Column('nom_point', Text)
+    abreviation = Column('abreviation', Text)
+    respdonneesabreviation = Column('respdonneesabreviation', Text)
+    debutvalidite = Column('debutvalidite', Text)
+    finvalidite = Column('finvalidite', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bav.schienennetz', SchienennetzPoint)
+
+
+class SchienennetzSegment(Base, Vector):
+    __tablename__ = 'schienennetz_segment'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/schienennetz_segment.mako'
+    __bodId__ = 'ch.bav.schienennetz'
+    __label__ = 'nom_segment'
+    __queryable_attributes__ = ['nom_segment']
+    id = Column('id', Integer, primary_key=True)
+    xtf_id = Column('xtf_id', Integer)
+    numeroet = Column('numeroet', Integer)
+    nom_segment = Column('nom_segment', Text)
+    kmdebut = Column('kmdebut', Numeric)
+    kmfin = Column('kmfin', Numeric)
+    abreviationet = Column('abreviationet', Text)
+    nombrevoies = Column('nombrevoies', Integer)
+    ecartement = Column('ecartement', Text)
+    electrification_fr = Column('electrification_fr', Text)
+    electrification_de = Column('electrification_de', Text)
+    debutvalidite = Column('debutvalidite', Text)
+    finvalidite = Column('finvalidite', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bav.schienennetz', SchienennetzSegment)
+
+
 class OevHaltestellen:
     __tablename__ = 'oev_haltestellen_tooltip'
     __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})

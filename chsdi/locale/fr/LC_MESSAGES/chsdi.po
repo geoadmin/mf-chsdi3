@@ -3686,6 +3686,54 @@ msgstr "Mesure"
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_it"
 msgstr "Mesure"
 
+msgid "ch.bav.schienennetz"
+msgstr "Réseau ferré"
+
+msgid "ch.bav.schienennetz.abreviation"
+msgstr "Abr. PE"
+
+msgid "ch.bav.schienennetz.abreviationet"
+msgstr "Abr. GI"
+
+msgid "ch.bav.schienennetz.debutvalidite"
+msgstr "Début Validité"
+
+msgid "ch.bav.schienennetz.ecartement"
+msgstr "Écartement"
+
+msgid "ch.bav.schienennetz.electrification"
+msgstr "Électrification"
+
+msgid "ch.bav.schienennetz.finvalidite"
+msgstr "Fin Validité"
+
+msgid "ch.bav.schienennetz.kmdebut"
+msgstr "Km début"
+
+msgid "ch.bav.schienennetz.kmfin"
+msgstr "Km fin"
+
+msgid "ch.bav.schienennetz.nom_point"
+msgstr "Nom PE"
+
+msgid "ch.bav.schienennetz.nom_segment"
+msgstr "Nom de segment"
+
+msgid "ch.bav.schienennetz.nombrevoies"
+msgstr "No. Voies"
+
+msgid "ch.bav.schienennetz.numero"
+msgstr "No. PE"
+
+msgid "ch.bav.schienennetz.numeroet"
+msgstr "No. GI"
+
+msgid "ch.bav.schienennetz.respdonneesabreviation"
+msgstr "Autorité Abr. PE"
+
+msgid "ch.bav.schienennetz.xtf_id"
+msgstr "ID"
+
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=fr"
 

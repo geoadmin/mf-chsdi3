@@ -166,6 +166,54 @@ msgstr ""
 msgid "gisgeol_auskunft_info"
 msgstr ""
 
+msgid "ch.bav.schienennetz"
+msgstr ""
+
+msgid "ch.bav.schienennetz.abreviation"
+msgstr ""
+
+msgid "ch.bav.schienennetz.abreviationet"
+msgstr ""
+
+msgid "ch.bav.schienennetz.debutvalidite"
+msgstr ""
+
+msgid "ch.bav.schienennetz.ecartement"
+msgstr ""
+
+msgid "ch.bav.schienennetz.electrification"
+msgstr ""
+
+msgid "ch.bav.schienennetz.finvalidite"
+msgstr ""
+
+msgid "ch.bav.schienennetz.kmdebut"
+msgstr ""
+
+msgid "ch.bav.schienennetz.kmfin"
+msgstr ""
+
+msgid "ch.bav.schienennetz.nombrevoies"
+msgstr ""
+
+msgid "ch.bav.schienennetz.nom_point"
+msgstr ""
+
+msgid "ch.bav.schienennetz.nom_segment"
+msgstr ""
+
+msgid "ch.bav.schienennetz.numero"
+msgstr ""
+
+msgid "ch.bav.schienennetz.numeroet"
+msgstr ""
+
+msgid "ch.bav.schienennetz.respdonneesabreviation"
+msgstr ""
+
+msgid "ch.bav.schienennetz.xtf_id"
+msgstr ""
+
 msgid "ch.bfe.windenergie-geschwindigkeit_h50"
 msgstr ""
 

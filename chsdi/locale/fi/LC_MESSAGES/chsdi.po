@@ -3686,6 +3686,54 @@ msgstr "Planerische Massnahme"
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_it"
 msgstr "Planerische Massnahme"
 
+msgid "ch.bav.schienennetz"
+msgstr "Schienennetz"
+
+msgid "ch.bav.schienennetz.abreviation"
+msgstr "PB-Abk."
+
+msgid "ch.bav.schienennetz.abreviationet"
+msgstr "ISB-Abk."
+
+msgid "ch.bav.schienennetz.debutvalidite"
+msgstr "BeginnGueltigkeit"
+
+msgid "ch.bav.schienennetz.ecartement"
+msgstr "Spurweite"
+
+msgid "ch.bav.schienennetz.electrification"
+msgstr "Elektrifizierung"
+
+msgid "ch.bav.schienennetz.finvalidite"
+msgstr "EndeGueltigkeit"
+
+msgid "ch.bav.schienennetz.kmdebut"
+msgstr "KmAnfang"
+
+msgid "ch.bav.schienennetz.kmfin"
+msgstr "KmEnde"
+
+msgid "ch.bav.schienennetz.nom_point"
+msgstr "BP-Name"
+
+msgid "ch.bav.schienennetz.nom_segment"
+msgstr "Segment-Name"
+
+msgid "ch.bav.schienennetz.nombrevoies"
+msgstr "Anz. Gleise"
+
+msgid "ch.bav.schienennetz.numero"
+msgstr "BP-Nr."
+
+msgid "ch.bav.schienennetz.numeroet"
+msgstr "ISB-Nr."
+
+msgid "ch.bav.schienennetz.respdonneesabreviation"
+msgstr "PB-Abk-Datenherr"
+
+msgid "ch.bav.schienennetz.xtf_id"
+msgstr "ID"
+
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=de"
 
