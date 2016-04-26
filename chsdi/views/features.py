@@ -12,7 +12,7 @@ import pyramid.httpexceptions as exc
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 from sqlalchemy.exc import InternalError, DataError
 from sqlalchemy.sql.expression import cast, func
-from sqlalchemy import Text, Integer, Boolean, Numeric, Date
+from sqlalchemy import Text, Integer, Boolean, Numeric, Date, Float
 from sqlalchemy import text
 from geoalchemy2.types import Geometry
 
@@ -318,21 +318,33 @@ def _get_features(params, extended=False):
             yield _get_feature_db(featureId, params, models)
 
 
+def is_valid_id_value(column, value):
+    column_type = column.type
+    python_type = column_type.python_type
+    try:
+        python_type(value)
+    except:
+        return False
+    return True
+
+
 def _get_feature_db(featureId, params, models):
     # One layer can have several models
+    feature = None
     for model in models:
-        query = params.request.db.query(model)
-        query = query.filter(model.id == featureId)
-        try:
-            feature = query.one()
-        except (NoResultFound, DataError):
-            feature = None
-        except MultipleResultsFound:
-            raise exc.HTTPInternalServerError('Multiple features found for the same id %s' % featureId)
+        if is_valid_id_value(model.id, featureId):
+            query = params.request.db.query(model)
+            query = query.filter(model.id == featureId)
+            try:
+                feature = query.one()
+            except (NoResultFound, DataError):
+                feature = None
+            except MultipleResultsFound:
+                raise exc.HTTPInternalServerError('Multiple features found for the same id %s' % featureId)
 
-        if feature is not None:
-            vectorModel = model
-            break
+            if feature is not None:
+                vectorModel = model
+                break
 
     if feature is None:
         raise exc.HTTPNotFound('No feature with id %s' % featureId)
@@ -551,7 +563,7 @@ def _format_search_text(columnType, searchText):
             return int(searchText)
         else:
             raise exc.HTTPBadRequest('Please provide an integer')
-    elif isinstance(columnType, Numeric):
+    elif isinstance(columnType, Numeric) or isinstance(columnType, Float):
         if re.match('^\d+?\.\d+?$', searchText) is not None:
             return float(searchText)
         else:
