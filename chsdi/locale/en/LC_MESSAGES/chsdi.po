@@ -4742,6 +4742,9 @@ msgstr "Content description"
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.doccreation"
 msgstr "Document creation date"
 
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.orig_id"
+msgstr "Original ID"
+
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.report_structure"
 msgstr "Content/scope of rapport"
 

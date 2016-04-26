@@ -1,3 +1,6 @@
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.orig_id"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-gisgeol-punkte.orig_id"
 msgstr ""
 
