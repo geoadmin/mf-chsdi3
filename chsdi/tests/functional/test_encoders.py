@@ -27,7 +27,7 @@ class Test_EsriGeoJSON(unittest.TestCase):
         point = Point([600000, 200000], properties={'name': 'toto'})
 
         result = esri_dumps(point)
-        self.assertEqual(result, '{"spatialReference": {"wkid": 21781}, "attributes": {"name": "toto"}, "y": 200000, "x": 600000}')
+        self.assertEqual(result, '{"attributes": {"name": "toto"}, "y": 200000, "x": 600000, "spatialReference": {"wkid": 21781}}')
 
     def test_dumps_point3D(self):
         from chsdi.esrigeojsonencoder import dumps as esri_dumps
@@ -51,7 +51,7 @@ class Test_EsriGeoJSON(unittest.TestCase):
         point = MultiPoint([(600000, 200000, 450), (650000, 250000, 650)], properties={'name': 'toto'})
 
         result = esri_dumps(point)
-        self.assertEqual(result, '{"spatialReference": {"wkid": 21781}, "points": [[600000, 200000, 450], [650000, 250000, 650]], "hasZ": true, "attributes": {"name": "toto"}}')
+        self.assertEqual(result, '{"points": [[600000, 200000, 450], [650000, 250000, 650]], "hasZ": true, "attributes": {"name": "toto"}, "spatialReference": {"wkid": 21781}}')
 
     def test_dumps_line2D(self):
         from chsdi.esrigeojsonencoder import dumps as esri_dumps
@@ -67,7 +67,7 @@ class Test_EsriGeoJSON(unittest.TestCase):
         point = LineString([(600000, 200000, 450), (650000, 250000, 500)], properties={'name': 'toto'})
 
         result = esri_dumps(point)
-        self.assertEqual(result, '{"paths": [[[600000, 200000, 450], [650000, 250000, 500]]], "spatialReference": {"wkid": 21781}, "hasZ": true, "attributes": {"name": "toto"}}')
+        self.assertEqual(result, '{"paths": [[[600000, 200000, 450], [650000, 250000, 500]]], "hasZ": true, "attributes": {"name": "toto"}, "spatialReference": {"wkid": 21781}}')
 
     def test_dumps_multiline2D(self):
         from chsdi.esrigeojsonencoder import dumps as esri_dumps
@@ -83,15 +83,16 @@ class Test_EsriGeoJSON(unittest.TestCase):
         point = MultiLineString([[(600000, 200000, 555), (650000, 250000, 555)], [(700000, 230000, 666), (800000, 340000, 666)]], properties={'name': 'toto'})
 
         result = esri_dumps(point)
-        self.assertEqual(result, '{"paths": [[[600000, 200000, 555], [650000, 250000, 555]], [[700000, 230000, 666], [800000, 340000, 666]]], "spatialReference": {"wkid": 21781}, "hasZ": true, "attributes": {"name": "toto"}}')
+        self.assertEqual(result, '{"paths": [[[600000, 200000, 555], [650000, 250000, 555]], [[700000, 230000, 666], [800000, 340000, 666]]], "hasZ": true, "attributes": {"name": "toto"}, '
+                                 '"spatialReference": {"wkid": 21781}}')
 
     def test_dumps_polygon2D(self):
         from chsdi.esrigeojsonencoder import dumps as esri_dumps
         from geojson import Polygon
-        point = Polygon([[(600000, 200000), (650000, 250000), (700000, 250000), (600000, 2000)]], properties={'name': 'toto'})
+        point = Polygon([[(600000, 200000), (650000, 250000), (700000, 250000), (600000, 200000)]], properties={'name': 'toto'})
 
         result = esri_dumps(point)
-        self.assertEqual(result, '{"attributes": {"name": "toto"}, "rings": [[[600000, 200000], [650000, 250000], [700000, 250000], [600000, 2000]]], "spatialReference": {"wkid": 21781}}')
+        self.assertEqual(result, '{"attributes": {"name": "toto"}, "rings": [[[600000, 200000], [650000, 250000], [700000, 250000], [600000, 200000]]], "spatialReference": {"wkid": 21781}}')
 
     def test_dumps_polygon3D(self):
         from chsdi.esrigeojsonencoder import dumps as esri_dumps
@@ -99,29 +100,35 @@ class Test_EsriGeoJSON(unittest.TestCase):
         point = Polygon([[(600000, 200000, 500), (650000, 250000, 400), (700000, 250000, 670), (600000, 2000, 500)]], properties={'name': 'toto'})
 
         result = esri_dumps(point)
-        self.assertEqual(result, '{"rings": [[[600000, 200000, 500], [650000, 250000, 400], [700000, 250000, 670], [600000, 2000, 500]]], "spatialReference": {"wkid": 21781}, "hasZ": true, "attributes": {"name": "toto"}}')
+        self.assertEqual(result, '{"hasZ": true, "attributes": {"name": "toto"}, "rings": [[[600000, 200000, 500], [650000, 250000, 400], [700000, 250000, 670], [600000, 2000, 500]]], "spatialReference": {"wkid": 21781}}')
 
     def test_dumps_multipolygon2D(self):
         from chsdi.esrigeojsonencoder import dumps as esri_dumps
         from geojson import MultiPolygon
         point = MultiPolygon([
-            ([(600000, 200000), (650000, 250000), (700000, 250000), (600000, 2000)],),
-            ([(600000, 200000), (650000, 250000), (700000, 250000), (600000, 2000)],)
+            ([(600000, 200000), (650000, 250000), (700000, 250000), (600000, 200000)],),
+            ([(600000, 200000), (650000, 250000), (700000, 250000), (600000, 200000)],)
         ], properties={'name': 'toto'})
 
         result = esri_dumps(point)
-        self.assertEqual(result, '{"attributes": {"name": "toto"}, "rings": [[[600000, 200000], [650000, 250000], [700000, 250000], [600000, 2000]], [[600000, 200000], [650000, 250000], [700000, 250000], [600000, 2000]]], "spatialReference": {"wkid": 21781}}')
+        self.assertEqual(result, '{"attributes": {"name": "toto"}, '
+                                 '"rings": [[[600000, 200000], [650000, 250000], [700000, 250000], [600000, 200000]], '
+                                 '[[600000, 200000], [650000, 250000], [700000, 250000], [600000, 200000]]], '
+                                 '"spatialReference": {"wkid": 21781}}')
 
     def test_dumps_multipolygon3D(self):
         from chsdi.esrigeojsonencoder import dumps as esri_dumps
         from geojson import MultiPolygon
         point = MultiPolygon([
-            ([(600000, 200000, 200), (650000, 250000, 200), (700000, 250000, 200), (600000, 2000, 200)],),
-            ([(600000, 200000, 300), (650000, 250000, 300), (700000, 250000, 300), (600000, 2000, 300)],)
+            ([(600000, 200000, 200), (650000, 250000, 200), (700000, 250000, 200), (600000, 200000, 200)],),
+            ([(600000, 200000, 300), (650000, 250000, 300), (700000, 250000, 300), (600000, 200000, 300)],)
         ], properties={'name': 'toto'})
 
         result = esri_dumps(point)
-        self.assertEqual(result, '{"rings": [[[600000, 200000, 200], [650000, 250000, 200], [700000, 250000, 200], [600000, 2000, 200]], [[600000, 200000, 300], [650000, 250000, 300], [700000, 250000, 300], [600000, 2000, 300]]], "spatialReference": {"wkid": 21781}, "hasZ": true, "attributes": {"name": "toto"}}')
+        self.assertEqual(result, '{"hasZ": true, "attributes": {"name": "toto"}, '
+                                 '"rings": [[[600000, 200000, 200], [650000, 250000, 200], [700000, 250000, 200], [600000, 200000, 200]], '
+                                 '[[600000, 200000, 300], [650000, 250000, 300], [700000, 250000, 300], [600000, 200000, 300]]], '
+                                 '"spatialReference": {"wkid": 21781}}')
 
     # Testing loading EsriGeometries
     def test_loads_simple_point(self):
