@@ -1,3 +1,171 @@
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.orig_id"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-punkte.orig_id"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-punkte.title"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-punkte.author"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-punkte.aux_info"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-punkte.doccreation"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-punkte.report_structure"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-linien.orig_id"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-linien.title"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-linien.author"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-linien.aux_info"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-linien.doccreation"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-linien.report_structure"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.orig_id"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.title"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.author"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.aux_info"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.doccreation"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.report_structure"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.title"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.author"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.aux_info"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.doccreation"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.report_structure"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.orig_id"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.title"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.author"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.aux_info"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.doccreation"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.report_structure"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.orig_id"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.title"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.author"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.aux_info"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.doccreation"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.report_structure"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.orig_id"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.title"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.author"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.aux_info"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.doccreation"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.report_structure"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.orig_id"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.title"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.author"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.aux_info"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.doccreation"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.report_structure"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.orig_id"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.title"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.author"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.aux_info"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.doccreation"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.report_structure"
+msgstr ""
+
+msgid "gisgeol_auskunft"
+msgstr ""
+
+msgid "gisgeol_auskunft_info"
+msgstr ""
+
 msgid "ch.bfe.windenergie-geschwindigkeit_h50"
 msgstr ""
 
@@ -6785,12 +6953,6 @@ msgstr ""
 msgid "author"
 msgstr ""
 
-msgid "report_structure"
-msgstr ""
-
-msgid "auxiliary_information"
-msgstr ""
-
 msgid "doccreation_date"
 msgstr ""
 
@@ -6948,9 +7110,6 @@ msgid "geocover_tecto"
 msgstr ""
 
 msgid "geocover_basisdatensatz"
-msgstr ""
-
-msgid "original_document_id"
 msgstr ""
 
 msgid "ch.bazl.luftfahrthindernis.sanctiontext"

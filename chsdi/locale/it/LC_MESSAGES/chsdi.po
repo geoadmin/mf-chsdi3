@@ -762,13 +762,10 @@ msgid "ausgabejahr"
 msgstr "Anno di pubblicazione"
 
 msgid "author"
-msgstr "Auteur"
+msgstr "Autore"
 
 msgid "autor"
 msgstr "Autore"
-
-msgid "auxiliary_information"
-msgstr "Description du contenu"
 
 msgid "azimut"
 msgstr "Azimut"
@@ -4616,56 +4613,218 @@ msgstr "Sentieri geologici"
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2"
 msgstr "Documents géol. (1000-21000km2)"
 
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.author"
+msgstr "Autore"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.aux_info"
+msgstr "Descrizione del contenuto"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.doccreation"
+msgstr "Data di creazione del documento"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.orig_id"
+msgstr "ID originale"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.report_structure"
+msgstr "Contenuto/portata del rapporto"
+
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.sgd_nr"
 msgstr "N° InfoGeol"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.title"
+msgstr "Titolo"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2"
 msgstr "Documents géol. (100-1000km2)"
 
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.author"
+msgstr "Autore"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.aux_info"
+msgstr "Descrizione del contenuto"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.doccreation"
+msgstr "Data di creazione del documento"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.orig_id"
+msgstr "ID originale"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.report_structure"
+msgstr "Contenuto/portata del rapporto"
+
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.sgd_nr"
 msgstr "N° InfoGeol"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.title"
+msgstr "Titolo"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2"
 msgstr "Documents géol. (10-100km2)"
 
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.author"
+msgstr "Autore"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.aux_info"
+msgstr "Descrizione del contenuto"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.doccreation"
+msgstr "Data di creazione del documento"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.orig_id"
+msgstr "ID originale"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.report_structure"
+msgstr "Contenuto/portata del rapporto"
+
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.sgd_nr"
 msgstr "N° InfoGeol"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.title"
+msgstr "Titolo"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km"
 msgstr "Documenti geologici (10x10km)"
 
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.author"
+msgstr "Autore"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.aux_info"
+msgstr "Descrizione del contenuto"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.doccreation"
+msgstr "Data di creazione del documento"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.orig_id"
+msgstr "ID originale"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.report_structure"
+msgstr "Contenuto/portata del rapporto"
+
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.sgd_nr"
 msgstr "N° InfoGeol"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-10x10km.title"
+msgstr "Titolo"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km"
 msgstr "Documenti geologici (1x1km)"
 
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.author"
+msgstr "Autore"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.aux_info"
+msgstr "Descrizione del contenuto"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.doccreation"
+msgstr "Data di creazione del documento"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.orig_id"
+msgstr "ID originale"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.report_structure"
+msgstr "Contenuto/portata del rapporto"
+
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.sgd_nr"
 msgstr "N° InfoGeol"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-1x1km.title"
+msgstr "Titolo"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2"
 msgstr "Documenti geologici (>21000km2)"
 
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.author"
+msgstr "Autore"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.aux_info"
+msgstr "Descrizione del contenuto"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.doccreation"
+msgstr "Data di creazione del documento"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.orig_id"
+msgstr "ID originale"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.report_structure"
+msgstr "Contenuto/portata del rapporto"
+
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.sgd_nr"
 msgstr "N° InfoGeol"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.title"
+msgstr "Titolo"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2"
 msgstr "Documenti geologici (<10km2)"
 
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.author"
+msgstr "Autore"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.aux_info"
+msgstr "Descrizione del contenuto"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.doccreation"
+msgstr "Data di creazione del documento"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.orig_id"
+msgstr "ID originale"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.report_structure"
+msgstr "Contenuto/portata del rapporto"
+
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.sgd_nr"
 msgstr "N° InfoGeol"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.title"
+msgstr "Titolo"
 
 msgid "ch.swisstopo.geologie-gisgeol-linien"
 msgstr "Documenti geologici (linee)"
 
+msgid "ch.swisstopo.geologie-gisgeol-linien.author"
+msgstr "Autore"
+
+msgid "ch.swisstopo.geologie-gisgeol-linien.aux_info"
+msgstr "Descrizione del contenuto"
+
+msgid "ch.swisstopo.geologie-gisgeol-linien.doccreation"
+msgstr "Data di creazione del documento"
+
+msgid "ch.swisstopo.geologie-gisgeol-linien.orig_id"
+msgstr "ID originale"
+
+msgid "ch.swisstopo.geologie-gisgeol-linien.report_structure"
+msgstr "Contenuto/portata del rapporto"
+
 msgid "ch.swisstopo.geologie-gisgeol-linien.sgd_nr"
 msgstr "N° InfoGeol"
+
+msgid "ch.swisstopo.geologie-gisgeol-linien.title"
+msgstr "Titolo"
 
 msgid "ch.swisstopo.geologie-gisgeol-punkte"
 msgstr "Documenti geologici (punti)"
 
+msgid "ch.swisstopo.geologie-gisgeol-punkte.author"
+msgstr "Autore"
+
+msgid "ch.swisstopo.geologie-gisgeol-punkte.aux_info"
+msgstr "Descrizione del contenuto"
+
+msgid "ch.swisstopo.geologie-gisgeol-punkte.doccreation"
+msgstr "Data di creazione del documento"
+
+msgid "ch.swisstopo.geologie-gisgeol-punkte.orig_id"
+msgstr "ID originale"
+
+msgid "ch.swisstopo.geologie-gisgeol-punkte.report_structure"
+msgstr "Contenuto/portata del rapporto"
+
 msgid "ch.swisstopo.geologie-gisgeol-punkte.sgd_nr"
 msgstr "N° InfoGeol"
+
+msgid "ch.swisstopo.geologie-gisgeol-punkte.title"
+msgstr "Titolo"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas"
 msgstr "Atlante gravimetrico 100"
@@ -5682,7 +5841,7 @@ msgid "district"
 msgstr "distretto"
 
 msgid "doccreation_date"
-msgstr "Date de création du document"
+msgstr "Data di creazione del documento"
 
 msgid "durationofeffect"
 msgstr "Durata dell'effetto"
@@ -5917,6 +6076,12 @@ msgstr "Numéro GEWISS"
 
 msgid "gin_nummer"
 msgstr "Numéro GIN attribué"
+
+msgid "gisgeol_auskunft"
+msgstr "Informazioni"
+
+msgid "gisgeol_auskunft_info"
+msgstr "Per l'accesso ai dati, vogliate rivolgervi al Cantone competente o direttamente all'autore"
 
 msgid "gmde"
 msgstr "Numéro de commune OFS (état 2006)"
@@ -6899,9 +7064,6 @@ msgstr "Coordinate CH1903/MN03"
 msgid "org.epsg.grid_4326"
 msgstr "Coordinate WGS84"
 
-msgid "original_document_id"
-msgstr "Original-ID"
-
 msgid "originator"
 msgstr "Nome del richiedente"
 
@@ -6924,7 +7086,7 @@ msgid "pdf"
 msgstr "PDF"
 
 msgid "pdf_access"
-msgstr "Accesso PDF "
+msgstr "Link verso il documento PDF"
 
 msgid "pdf_dokument_1_2"
 msgstr "PDF 1 | 2"
@@ -7000,9 +7162,6 @@ msgstr "Stato d'attualità"
 
 msgid "report problem"
 msgstr "Segnala un problema"
-
-msgid "report_structure"
-msgstr "Contenu/étendue du rapport"
 
 msgid "richtungsgetrennt"
 msgstr "A carregiate separate"
