@@ -88,7 +88,7 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Wind energy plants <//map.geo.admin.ch/?layers=ch.bfe.windenergieanlagen>`__ (ch.bfe.windenergieanlagen)                                                                       |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Parks (Perimeter) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                        |
+| New    | `Parks (Perimeter) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter)    |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Railway network <//map.geo.admin.ch/?layers=ch.bav.schienennetz>`__ (ch.bav.schienennetz)                                                                                      |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
