@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text
-from sqlalchemy.types import Numeric, Boolean, Integer
+from sqlalchemy.types import Numeric, Boolean, Integer, DateTime
 from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
@@ -2077,7 +2077,7 @@ class gisGeol_base:
     author = Column('author', Text)
     report_structure = Column('report_structure', Text)
     aux_info = Column('auxiliary_information', Text)
-    doccreation = Column('doccreation_date', Text)
+    doccreation = Column('doccreation_date', DateTime)
     copy_avail = Column('copy_avail', Text)
     view_avail = Column('view_avail', Text)
     pdf_url = Column('pdf_url', Text)
