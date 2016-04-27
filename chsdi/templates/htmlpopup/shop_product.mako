@@ -36,11 +36,14 @@
 
 <head>
   <style>
-@media only screen and (max-width:480px) {
- .image_mako {
- display:none;
- }
-}
+    .htmlpopup-content .image_mako {
+      vertical-align: middle;
+    }
+    @media only screen and (max-width:480px) {
+      .htmlpopup-content .image_mako {
+        display: none;
+      }
+    }
   </style>
 </head>
 
@@ -50,7 +53,7 @@
     <td class="cell-left">${_('ch.swisstopo.lk25-papierkarte.metadata.%s' % a)}</td>
     <td>${c['attributes'][a]}</td>
     % if image_exists == True:
-        <td class="image_mako htmlpopup-content htmlpopup-header" rowspan=${rowspan}><img src="${image}" height="150" width="102" align="right"></td>
+        <td class="image_mako" rowspan=${rowspan}><img src="${image}" height="150" width="102" align="right"></td>
     % endif
   % else:
       % if a == 'url_legend':
