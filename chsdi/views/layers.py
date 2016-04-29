@@ -147,8 +147,6 @@ def faqlist(request):
     params.geodataStaging = 'prod'
     translations = {}
 
-    # That there is a geometry behind
-    queryableLayers = []
     # That there is a tooltip
     tooltipLayers = []
     # That you can search in layer search
@@ -165,8 +163,6 @@ def faqlist(request):
         if 'parentLayerId' not in l and not k.endswith('_3d'):
             if k not in translations:
                 translations[k] = request.translate(k)
-            if 'queryable' in l and l['queryable']:
-                queryableLayers.append(k)
             if 'tooltip' in l and l['tooltip']:
                 tooltipLayers.append(k)
             if 'searchable' in l and l['searchable']:
@@ -178,7 +174,6 @@ def faqlist(request):
 
     return {
         'translations': translations,
-        'queryableLayers': sorted(queryableLayers),
         'tooltipLayers': sorted(tooltipLayers),
         'searchableLayers': sorted(searchableLayers),
         'chargeableLayers': sorted(chargeableLayers),
