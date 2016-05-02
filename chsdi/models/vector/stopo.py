@@ -539,6 +539,17 @@ class SwissboundariesKanton(Base, Vector):
 register('ch.swisstopo.swissboundaries3d-kanton-flaeche.fill', SwissboundariesKanton)
 
 
+class SwissBoundariesLand(Base, Vector):
+    __tablename__ = 'swissboundaries_land'
+    __table_args__ = ({'schema': 'tlm', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.swissboundaries3d-land-flaeche.fill'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    displayname = Column('displayname', Text)
+
+
+register('ch.swisstopo.swissboundaries3d-land-flaeche.fill', SwissBoundariesLand)
+
+
 class CadastralWebMap(Base, Vector):
     __tablename__ = 'swissboundaries_kantone'
     __table_args__ = ({'schema': 'tlm', 'autoload': False, 'extend_existing': True})
