@@ -111,3 +111,29 @@ class TestWmtsCapabilitiesView(TestsBase):
                         self.assertFalse(is_normal_order)
                     else:
                         self.assertTrue(is_normal_order)
+
+    def test_layers_refs_are_defined(self):
+        import xml.etree.ElementTree as etree
+        resp = self.testapp.get('/rest/services/inspire/1.0.0/WMTSCapabilities.xml', status=200)
+        root = etree.fromstring(resp.body)
+
+        layers_refs = []
+        defined_layers = []
+
+        # Get all Layers Refs
+        themes = root.findall(('.//{http://www.opengis.net/wmts/1.0}Themes'))
+        for theme in themes:
+            refs = theme.findall('.//{http://www.opengis.net/wmts/1.1}LayerRef')
+            for ref in refs:
+                lr = ref.text
+                if lr not in layers_refs:
+                    layers_refs.append(lr)
+
+        # Get all Layers
+        layers = root.findall('.//{http://www.opengis.net/wmts/1.0}Layer')
+        for layer in layers:
+            bodid = layer.find('./{http://www.opengis.net/ows/1.1}Identifier').text
+            if bodid not in defined_layers:
+                defined_layers.append(bodid)
+
+        self.assertTrue(set(layers_refs).issubset(defined_layers))
