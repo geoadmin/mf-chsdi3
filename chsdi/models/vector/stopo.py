@@ -545,6 +545,8 @@ class SwissBoundariesLand(Base, Vector):
     __bodId__ = 'ch.swisstopo.swissboundaries3d-land-flaeche.fill'
     id = Column('bgdi_id', Integer, primary_key=True)
     displayname = Column('displayname', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
 
 
 register('ch.swisstopo.swissboundaries3d-land-flaeche.fill', SwissBoundariesLand)
