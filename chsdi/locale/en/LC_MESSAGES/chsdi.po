@@ -2468,6 +2468,9 @@ msgstr "Wood increment (NFI)"
 msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Hydrogeological sketch"
 
+msgid "ch.bafu.hydrogeologische-karte_100"
+msgstr "Hydrogeological map 100"
+
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
 msgstr "Messstandorte Gewässerzustand Bund"
 
@@ -3825,7 +3828,7 @@ msgid "ch.bazl.projektierungszonen-flughafenanlagen"
 msgstr "Planning zones: airports"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
-msgstr "SAIP in consultation"
+msgstr "SAIP consultation"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"
 msgstr "SP Aviation infrastructure"
@@ -5061,7 +5064,7 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Siegfried Map First edition"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
-msgstr "Aeronautical Chart ICAO"
+msgstr "Aeronautical Chart ICAO printed"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata.release"
 msgstr "Edition"
@@ -5382,7 +5385,7 @@ msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata"
-msgstr "Glider Chart"
+msgstr "Glider Chart printed"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata.release"
 msgstr "Edition"

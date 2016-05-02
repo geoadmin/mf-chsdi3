@@ -2468,6 +2468,9 @@ msgstr "Holzzuwachs (LFI)"
 msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Übersichtskarte Hydrogeologie"
 
+msgid "ch.bafu.hydrogeologische-karte_100"
+msgstr "Hydrogeologische Karte 100"
+
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
 msgstr "Messstandorte Gewässerzustand Bund"
 
@@ -5061,7 +5064,7 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Siegfriedkarte Erstausgabe"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
-msgstr "Luftfahrtkarte ICAO"
+msgstr "Luftfahrtkarte ICAO Papier"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5382,7 +5385,7 @@ msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata"
-msgstr "Segelflugkarte"
+msgstr "Segelflugkarte Papier"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata.release"
 msgstr "Ausgabejahr"

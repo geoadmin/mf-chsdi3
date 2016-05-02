@@ -2468,6 +2468,9 @@ msgstr "Accroissement annuel de bois (IFN)"
 msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Esquisse hydrogéologique"
 
+msgid "ch.bafu.hydrogeologische-karte_100"
+msgstr "Carte hydrogéologique au 100"
+
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
 msgstr "Mesure état des eaux Confédération"
 
@@ -5061,7 +5064,7 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Carte Siegfried Première édition"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
-msgstr "Carte aéronautique OACI"
+msgstr "Carte aéronautique OACI papier"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata.release"
 msgstr "Édition"
@@ -5382,7 +5385,7 @@ msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata"
-msgstr "Carte vol à voile"
+msgstr "Carte vol à voile papier"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata.release"
 msgstr "Édition"

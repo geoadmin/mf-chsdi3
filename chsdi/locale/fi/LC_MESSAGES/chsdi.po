@@ -2468,6 +2468,9 @@ msgstr "Creschientscha annuala da laina"
 msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Charta da survista idrogeologica"
 
+msgid "ch.bafu.hydrogeologische-karte_100"
+msgstr "Hydrogeologische Karte 100"
+
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
 msgstr "Messstandorte Gewässerzustand Bund"
 
@@ -3768,7 +3771,7 @@ msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde"
 msgstr "Grevezza da canera ultima ura notg"
 
 msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt"
-msgstr "Grev. canera aviatica mil. (tut.)"
+msgstr "Grev. da canera aviatica mil. (tut)"
 
 msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde"
 msgstr "Grevezza da canera 2. ura da notg"
@@ -3777,7 +3780,7 @@ msgid "ch.bazl.landschaftsruhezonen"
 msgstr "Zonas da paus per la cuntrada"
 
 msgid "ch.bazl.luftfahrthindernis"
-msgstr "Impediments per l'aviatica"
+msgstr "Obstachels da l'aviatica"
 
 msgid "ch.bazl.luftfahrthindernis.abortionaccomplished"
 msgstr "Abbruch ausgeführt"
@@ -5061,7 +5064,7 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Charta Siegfried Emprima ed."
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
-msgstr "Charta d'aviatica OACI"
+msgstr "Charta d'aviatica OACI stampada"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5382,7 +5385,7 @@ msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata"
-msgstr "Charta da sgol senza motor"
+msgstr "Charta da sgol senza motor stampada"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5598,7 +5601,7 @@ msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.wk50-papierkarte.metadata"
-msgstr "Wanderkarten 1:50'000"
+msgstr "Chartas da viandar 1:50'000"
 
 msgid "ch.swisstopo.wk50-papierkarte.metadata.name"
 msgstr "Name"

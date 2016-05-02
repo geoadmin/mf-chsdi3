@@ -11,6 +11,22 @@ from chsdi.models.vector import Vector, Geometry2D
 Base = bases['bafu']
 
 
+class Hydrogeologischekarte100(Base, Vector):
+    __tablename__ = 'hydrogeologische_karte_100'
+    __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
+    __bodId__ = 'ch.bafu.hydrogeologische-karte_100'
+    __queryable_attributes__ = ['name', 'pdf_list']
+    __template__ = 'templates/htmlpopup/hydrogeologische-karte_100.mako'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('raster_name', Text)
+    pdf_list = Column('pdf_list', Text)
+    the_geom = Column(Geometry(geometry_type='GEOMETRY',
+                               dimension=2, srid=21781))
+
+register('ch.bafu.hydrogeologische-karte_100', Hydrogeologischekarte100)
+
+
 class Vec25_gewaessernetz_2000(Base, Vector):
     __tablename__ = 'gewaessernetz_2000'
     __table_args__ = ({'schema': 'vec25', 'autoload': False})
