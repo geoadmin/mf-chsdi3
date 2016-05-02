@@ -816,6 +816,12 @@ msgstr ""
 msgid "ch.vbs.bundestankstellen-bebeco"
 msgstr ""
 
+msgid "ch.vbs.bundestankstellen-bebeco.strasse"
+msgstr ""
+
+msgid "ch.vbs.bundestankstellen-bebeco.plz"
+msgstr ""
+
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr ""
 

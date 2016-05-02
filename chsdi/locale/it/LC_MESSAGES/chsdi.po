@@ -5651,6 +5651,12 @@ msgstr "Stazioni di servizio BEBECO"
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Luogo"
 
+msgid "ch.vbs.bundestankstellen-bebeco.plz"
+msgstr "CAP"
+
+msgid "ch.vbs.bundestankstellen-bebeco.strasse"
+msgstr "Strada"
+
 msgid "ch.vbs.grunddispositiv-zeus"
 msgstr "Carta \"Zeus\""
 
