@@ -232,89 +232,89 @@ table#windrichtung  td.align-right {
         </tr>
         <tr>
           <td>total</td>
-          <td class="align-right">${round(freq_total, 1)} %</td>
+          <td class="align-right">100 %</td>
           <td class="align-right">${round(props['v_mean'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k'], 1)}</td>
         </tr>
         <tr>
           <td>345° - 15°</td>
-          <td class="align-right">${round(props['freq_0'], 1)} %</td>
+          <td class="align-right">${int(props['freq_0'])} %</td>
           <td class="align-right">${round(props['v_mean_0'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_0'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_0'], 1)}</td>
         </tr>
         <tr>
           <td>15° - 45°</td>
-          <td class="align-right">${round(props['freq_30'], 1)} %</td>
+          <td class="align-right">${int(props['freq_30'])} %</td>
           <td class="align-right">${round(props['v_mean_30'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_30'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_30'], 1)}</td>
         </tr>
         <tr><td>45° - 75°</td>
-          <td class="align-right">${round(props['freq_60'], 1)} %</td>
+          <td class="align-right">${int(props['freq_60'])} %</td>
           <td class="align-right">${round(props['v_mean_60'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_60'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_60'], 1)}</td>
         </tr>
         <tr>
           <td>75° - 105°</td>
-          <td class="align-right">${round(props['freq_90'], 1)} %</td>
+          <td class="align-right">${int(props['freq_90'])} %</td>
           <td class="align-right">${round(props['v_mean_90'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_90'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_90'], 1)}</td>
         </tr>
         <tr>
           <td>105° - 135°</td>
-          <td class="align-right">${round(props['freq_120'], 1)} %</td>
+          <td class="align-right">${int(props['freq_120'])} %</td>
           <td class="align-right">${round(props['v_mean_120'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_120'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_120'], 1)}</td>
         </tr>
         <tr>
           <td>135° - 165°</td>
-          <td class="align-right">${round(props['freq_150'], 1)} %</td>
+          <td class="align-right">${int(props['freq_150'])} %</td>
           <td class="align-right">${round(props['v_mean_150'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_150'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_150'], 1)}</td>
         </tr>
         <tr>
           <td>165° - 195°</td>
-          <td class="align-right">${round(props['freq_180'], 1)} %</td>
+          <td class="align-right">${int(props['freq_180'])} %</td>
           <td class="align-right">${round(props['v_mean_180'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_180'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_180'], 1)}</td>
         </tr>
         <tr>
           <td>195° - 225°</td>
-          <td class="align-right">${round(props['freq_210'], 1)} %</td>
+          <td class="align-right">${int(props['freq_210'])} %</td>
           <td class="align-right">${round(props['v_mean_210'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_210'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_210'], 1)}</td>
         </tr>
         <tr>
           <td>225° - 255°</td>
-          <td class="align-right">${round(props['freq_240'], 1)} %</td>
+          <td class="align-right">${int(props['freq_240'])} %</td>
           <td class="align-right">${round(props['v_mean_240'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_240'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_240'], 1)}</td>
         </tr>
         <tr>
           <td>255° - 285°</td>
-          <td class="align-right">${round(props['freq_270'], 1)} %</td>
+          <td class="align-right">${int(props['freq_270'])} %</td>
           <td class="align-right">${round(props['v_mean_270'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_270'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_270'], 1)}</td>
         </tr>
         <tr>
           <td>285° - 315°</td>
-          <td class="align-right">${round(props['freq_300'], 1)} %</td>
+          <td class="align-right">${int(props['freq_300'])} %</td>
           <td class="align-right">${round(props['v_mean_300'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_300'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_300'], 1)}</td></tr>
         <tr>
           <td>315° - 345°</td>
-          <td class="align-right">${round(props['freq_330'], 1)} %</td>
+          <td class="align-right">${int(props['freq_330'])} %</td>
           <td class="align-right">${round(props['v_mean_330'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_330'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_330'], 1)}</td>
