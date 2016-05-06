@@ -69,8 +69,6 @@ class LayersConfig(Base):
     maxResolution = Column('maxresolution', postgresql.DOUBLE_PRECISION)
     parentLayerId = Column('parentlayerid', Text)
     searchable = Column('searchable', Boolean)
-    queryable = Column('queryable', Boolean)
-    selectbyrectangle = Column('selectbyrectangle', Boolean)
     tooltip = Column('tooltip', Boolean)
     serverLayerName = Column('server_layername', Text)
     singleTile = Column('singletile', Boolean)

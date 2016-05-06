@@ -35,14 +35,14 @@ class LayersChecker(object):
         del self.testapp
         return False
 
-    def ilayers(self, queryable=None, hasLegend=None, searchable=None):
+    def ilayers(self, tooltip=None, hasLegend=None, searchable=None):
         valNone = None
         query = self.session.query(distinct(LayersConfig.layerBodId)) \
             .filter(LayersConfig.staging == self.staging) \
             .filter(LayersConfig.parentLayerId == valNone) \
             .filter(LayersConfig.srid != '4326')
-        if queryable is not None:
-            query = query.filter(LayersConfig.queryable == queryable)
+        if tooltip is not None:
+            query = query.filter(LayersConfig.tooltip == tooltip)
         if hasLegend is not None:
             query = query.filter(LayersConfig.hasLegend == hasLegend)
         if searchable is not None:
@@ -52,7 +52,7 @@ class LayersChecker(object):
                 yield q[0]
 
     def ilayersWithFeatures(self):
-        for layer in self.ilayers(queryable=True):
+        for layer in self.ilayers(tooltip=True):
             models = models_from_bodid(layer)
             assert (models is not None and len(models) > 0), layer
             model = models[0]
