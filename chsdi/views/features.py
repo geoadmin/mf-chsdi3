@@ -556,7 +556,7 @@ def _format_search_text(columnType, searchText):
             return float(searchText)
         else:
             raise exc.HTTPBadRequest('Please provide a float')
-    elif isinstance(columnType, Geometry):
+    elif isinstance(columnType, Geometry):  # pragma: no cover
         raise exc.HTTPBadRequest('Find operations cannot be performed on geometry columns')
 
 
