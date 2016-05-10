@@ -15,6 +15,32 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20160511:
+
+Release 20160511 - Wednesday, May 11th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                              |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SÜL Anhörung <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)       |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Übertragungsleitungen <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)   |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20160427:
 
 Release 20160427 - Wednesday, April 27th 2016
