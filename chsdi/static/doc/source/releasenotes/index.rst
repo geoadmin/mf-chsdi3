@@ -40,6 +40,8 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `SP Übertragungsleitungen <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)   |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20160427:
 
