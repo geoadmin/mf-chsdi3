@@ -101,6 +101,33 @@ class TestFeaturesView(TestsBase):
         self.assertTrue(len(resp.json['results']) > 1)
         self.assertNotIn('geometry', resp.json['results'][0])
 
+    def test_find_non_float(self):
+        params = {'layer': 'ch.bafu.bundesinventare-bln', 'searchField': 'bln_fl', 'searchText': '1740', 'returnGeometry': 'false', 'contains': 'false'}
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
+        resp.mustcontain('Please provide a float')
+
+    def test_find_non_integer(self):
+        params = {'layer': 'ch.bafu.bundesinventare-bln', 'searchField': 'bln_obj', 'searchText': '1201.0', 'returnGeometry': 'false', 'contains': 'false'}
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
+        resp.mustcontain('Please provide an integer')
+
+    def test_find_boolean_true(self):
+        params = {'layer': 'ch.swisstopo.lubis-luftbilder_farbe', 'searchField': 'orientierung', 'searchText': 'True', 'returnGeometry': 'false', 'contains': 'false'}
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertTrue(len(resp.json['results']) > 1)
+
+    def test_find_boolean_false(self):
+        params = {'layer': 'ch.swisstopo.lubis-luftbilder_farbe', 'searchField': 'orientierung', 'searchText': 'FALSE', 'returnGeometry': 'false', 'contains': 'false'}
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertTrue(len(resp.json['results']) > 1)
+
+    def test_find_wrong_boolean(self):
+        params = {'layer': 'ch.swisstopo.lubis-luftbilder_farbe', 'searchField': 'orientierung', 'searchText': '3190', 'returnGeometry': 'false', 'contains': 'false'}
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
+        resp.mustcontain('Please provide a boolean value (true/false)')
+
     def test_feature_wrong_idlayer(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/toto/362', status=400)
         resp.mustcontain('No Vector Table was found for')
@@ -267,6 +294,14 @@ class TestReleasesService(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 22, len(resp.json['results']))
+
+    def test_service_dummyLayer(self):
+        params = {'imageDisplay': '500,600,96',
+                  'mapExtent': '611399.9999999999,158650,690299.9999999999,198150',
+                  'geometry': '650000.0,170000.0',
+                  'geometryType': 'esriGeometryPoint'
+                  }
+        self.testapp.get('/rest/services/all/MapServer/dummyLayer/releases', params=params, status=400)
 
     # Test cases Oftringen by Kerngruppe Zeitreise
     def test_scale_100000(self):
