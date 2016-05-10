@@ -33,15 +33,17 @@ API & applications
 
 Geodata
 *******
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                              |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `SÜL Anhörung <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)       |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `SP Übertragungsleitungen <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)   |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                        |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Gravimetric Atlas 100 - paper <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas.metadata>`__ (ch.swisstopo.geologie-gravimetrischer_atlas.metadata) |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SÜL Anhörung <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Übertragungsleitungen <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20160427:
 
