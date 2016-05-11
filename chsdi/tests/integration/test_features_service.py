@@ -133,6 +133,13 @@ class TestFeaturesView(TestsBase):
         self.assertIn('geometry', resp.json['feature'])
         self.assertEqual(resp.json['feature']['id'], 362)
 
+    def test_feature_pkey_type(self):
+        resp = self.testapp.get('/rest/services/all/MapServer/ch.swisstopo.geologie-geocover/GC-V-28', status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('attributes', resp.json['feature'])
+        self.assertIn('geometry', resp.json['feature'])
+        self.assertEqual(resp.json['feature']['id'], 'GC-V-28')
+
     def test_several_features(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362,363', status=200)
         self.assertEqual(len(resp.json['features']), 2)
