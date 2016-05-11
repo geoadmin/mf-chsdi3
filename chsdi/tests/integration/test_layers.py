@@ -9,6 +9,7 @@ from sqlalchemy.sql.expression import func
 
 from chsdi.models.bod import LayersConfig
 from chsdi.models import models_from_bodid
+from chsdi.models.grid import get_grid_spec
 
 
 class LayersChecker(object):
@@ -53,18 +54,20 @@ class LayersChecker(object):
 
     def ilayersWithFeatures(self):
         for layer in self.ilayers(tooltip=True):
-            models = models_from_bodid(layer)
-            assert (models is not None and len(models) > 0), layer
-            model = models[0]
-            query = self.session.query(model.primary_key_column())
-            # Depending on db size, random row is slow
-            if self.randomFeatures:
-                query = query.order_by(func.random())
-            if isinstance(self.nrOfFeatures, (int, long)):
-                query = query.limit(self.nrOfFeatures)
-            hasExtended = model.__extended_info__ if hasattr(model, '__extended_info__') else False
-            for q in query:
-                yield (layer, str(q[0]), hasExtended)
+            gridSpec = get_grid_spec(layer)
+            if gridSpec is None:
+                models = models_from_bodid(layer)
+                assert (models is not None and len(models) > 0), layer
+                model = models[0]
+                query = self.session.query(model.primary_key_column())
+                # Depending on db size, random row is slow
+                if self.randomFeatures:
+                    query = query.order_by(func.random())
+                if isinstance(self.nrOfFeatures, (int, long)):
+                    query = query.limit(self.nrOfFeatures)
+                hasExtended = model.__extended_info__ if hasattr(model, '__extended_info__') else False
+                for q in query:
+                    yield (layer, str(q[0]), hasExtended)
 
     def checkHtmlPopup(self, layer, feature, extended):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
