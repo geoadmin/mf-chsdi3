@@ -25,10 +25,14 @@ API & applications
 
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160427...r_160511>`__
 
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160427...r_160511>`__
 
 
 Geodata
@@ -54,10 +58,6 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                           |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-
-
 
 .. _releasenotes_20160427:
 
