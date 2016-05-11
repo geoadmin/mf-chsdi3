@@ -15,6 +15,7 @@ import unicodedata
 from urllib import quote
 from urlparse import urlparse, urlunparse, urljoin
 import xml.etree.ElementTree as etree
+from requests.exceptions import ConnectionError
 
 
 def versioned(path):
@@ -55,7 +56,10 @@ def make_api_url(request, agnostic=False):
 
 
 def resource_exists(path, headers={}):
-    r = requests.head(path, headers=headers)
+    try:
+        r = requests.head(path, headers=headers)
+    except ConnectionError:
+        return False
     return r.status_code == requests.codes.ok
 
 

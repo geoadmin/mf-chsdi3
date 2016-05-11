@@ -52,9 +52,9 @@ class Test_Helpers(unittest.TestCase):
         test_result = resource_exists(test_path)
         self.assertTrue(test_result)
 
-        test_path2 = 'http://dummy.ch'
+        test_path2 = 'http://junodummyducolozouzlouwioiii.ch'
         test_result2 = resource_exists(test_path2)
-        self.assertTrue(test_result2)
+        self.assertFalse(test_result2)
 
     def test_make_api_url(self):
         request = testing.DummyRequest()
