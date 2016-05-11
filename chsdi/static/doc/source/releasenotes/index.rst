@@ -34,6 +34,16 @@ API & applications
 Geodata
 *******
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 50 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h50>`__ (ch.bfe.windenergie-geschwindigkeit_h50)                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 75 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h75>`__ (ch.bfe.windenergie-geschwindigkeit_h75)                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 100 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h100>`__ (ch.bfe.windenergie-geschwindigkeit_h100)                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 125 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h125>`__ (ch.bfe.windenergie-geschwindigkeit_h125)                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 150 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h150>`__ (ch.bfe.windenergie-geschwindigkeit_h150)                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Gravimetric Atlas 100 - paper <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas.metadata>`__ (ch.swisstopo.geologie-gravimetrischer_atlas.metadata) |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                 |
@@ -44,6 +54,10 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                           |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
+
 
 .. _releasenotes_20160427:
 
