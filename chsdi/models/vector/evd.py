@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer
-from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector
+from chsdi.models.vector import Vector, Geometry2D
 
 Base = bases['evd']
 
@@ -17,10 +16,9 @@ class BODENEIGNUNG(Base, Vector):
     # __queryable_attributes__ = ['farbe']
     __label__ = 'symb_color'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     farbe = Column('farbe', Integer)
     symb_color = Column('symb_color', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.blw.bodeneignung-kulturtyp', BODENEIGNUNG)
 
@@ -32,8 +30,6 @@ class emapis_beizugsgebiet(Base, Vector):
     __bodId__ = 'ch.blw.emapis-beizugsgebiet'
     __label__ = 'typ'
     id = Column('xtf_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     typ = Column('typ', Text)
     typ_de = Column('typ_de', Text)
     typ_fr = Column('typ_fr', Text)
@@ -42,6 +38,7 @@ class emapis_beizugsgebiet(Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     geschaeftsnummer = Column('geschaeftsnummer', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.blw.emapis-beizugsgebiet', emapis_beizugsgebiet)
 
@@ -53,8 +50,6 @@ class emapis_bewaesserung(Base, Vector):
     __bodId__ = 'ch.blw.emapis-bewaesserung'
     __label__ = 'typ'
     id = Column('xtf_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     typ = Column('typ', Text)
     typ_de = Column('typ_de', Text)
     typ_fr = Column('typ_fr', Text)
@@ -63,6 +58,7 @@ class emapis_bewaesserung(Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     geschaeftsnummer = Column('geschaeftsnummer', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.blw.emapis-bewaesserung', emapis_bewaesserung)
 
@@ -74,8 +70,6 @@ class emapis_elektrizitaetsversorgung(Base, Vector):
     __bodId__ = 'ch.blw.emapis-elektrizitaetsversorgung'
     __label__ = 'typ'
     id = Column('xtf_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     typ = Column('typ', Text)
     typ_de = Column('typ_de', Text)
     typ_fr = Column('typ_fr', Text)
@@ -84,6 +78,7 @@ class emapis_elektrizitaetsversorgung(Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     geschaeftsnummer = Column('geschaeftsnummer', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.blw.emapis-elektrizitaetsversorgung', emapis_elektrizitaetsversorgung)
 
@@ -95,8 +90,6 @@ class emapis_entwaesserung(Base, Vector):
     __bodId__ = 'ch.blw.emapis-entwaesserung'
     __label__ = 'typ'
     id = Column('xtf_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     typ = Column('typ', Text)
     typ_de = Column('typ_de', Text)
     typ_fr = Column('typ_fr', Text)
@@ -105,6 +98,7 @@ class emapis_entwaesserung(Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     geschaeftsnummer = Column('geschaeftsnummer', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.blw.emapis-entwaesserung', emapis_entwaesserung)
 
@@ -116,8 +110,6 @@ class emapis_hochbau(Base, Vector):
     __bodId__ = 'ch.blw.emapis-hochbau'
     __label__ = 'typ'
     id = Column('xtf_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     typ = Column('typ', Text)
     typ_de = Column('typ_de', Text)
     typ_fr = Column('typ_fr', Text)
@@ -126,6 +118,7 @@ class emapis_hochbau(Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     geschaeftsnummer = Column('geschaeftsnummer', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.blw.emapis-hochbau', emapis_hochbau)
 
@@ -137,8 +130,6 @@ class emapis_milchleitung(Base, Vector):
     __bodId__ = 'ch.blw.emapis-milchleitung'
     __label__ = 'typ'
     id = Column('xtf_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     typ = Column('typ', Text)
     typ_de = Column('typ_de', Text)
     typ_fr = Column('typ_fr', Text)
@@ -147,6 +138,7 @@ class emapis_milchleitung(Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     geschaeftsnummer = Column('geschaeftsnummer', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.blw.emapis-milchleitung', emapis_milchleitung)
 
@@ -158,8 +150,6 @@ class emapis_oekologie(Base, Vector):
     __bodId__ = 'ch.blw.emapis-oekologie'
     __label__ = 'typ'
     id = Column('xtf_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     typ = Column('typ', Text)
     typ_de = Column('typ_de', Text)
     typ_fr = Column('typ_fr', Text)
@@ -168,6 +158,7 @@ class emapis_oekologie(Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     geschaeftsnummer = Column('geschaeftsnummer', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.blw.emapis-oekologie', emapis_oekologie)
 
@@ -179,8 +170,6 @@ class emapis_projektschwerpunkt(Base, Vector):
     __bodId__ = 'ch.blw.emapis-projektschwerpunkt'
     __label__ = 'typ'
     id = Column('xtf_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     typ = Column('typ', Text)
     typ_de = Column('typ_de', Text)
     typ_fr = Column('typ_fr', Text)
@@ -189,6 +178,7 @@ class emapis_projektschwerpunkt(Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     geschaeftsnummer = Column('geschaeftsnummer', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.blw.emapis-projektschwerpunkt', emapis_projektschwerpunkt)
 
@@ -200,8 +190,6 @@ class emapis_seilbahnen(Base, Vector):
     __bodId__ = 'ch.blw.emapis-seilbahnen'
     __label__ = 'typ'
     id = Column('xtf_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     typ = Column('typ', Text)
     typ_de = Column('typ_de', Text)
     typ_fr = Column('typ_fr', Text)
@@ -210,6 +198,7 @@ class emapis_seilbahnen(Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     geschaeftsnummer = Column('geschaeftsnummer', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.blw.emapis-seilbahnen', emapis_seilbahnen)
 
@@ -221,8 +210,6 @@ class emapis_wasserversorgung(Base, Vector):
     __bodId__ = 'ch.blw.emapis-wasserversorgung'
     __label__ = 'typ'
     id = Column('xtf_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     typ = Column('typ', Text)
     typ_de = Column('typ_de', Text)
     typ_fr = Column('typ_fr', Text)
@@ -231,6 +218,7 @@ class emapis_wasserversorgung(Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     geschaeftsnummer = Column('geschaeftsnummer', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.blw.emapis-wasserversorgung', emapis_wasserversorgung)
 
@@ -242,8 +230,6 @@ class emapis_wegebau(Base, Vector):
     __bodId__ = 'ch.blw.emapis-wegebau'
     __label__ = 'typ'
     id = Column('xtf_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     typ = Column('typ', Text)
     typ_de = Column('typ_de', Text)
     typ_fr = Column('typ_fr', Text)
@@ -252,5 +238,6 @@ class emapis_wegebau(Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     geschaeftsnummer = Column('geschaeftsnummer', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.blw.emapis-wegebau', emapis_wegebau)

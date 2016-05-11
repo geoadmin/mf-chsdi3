@@ -3,11 +3,10 @@
 from sqlalchemy import Column, Text, Integer, Date, DateTime, ForeignKey
 from sqlalchemy.orm import relationship, remote
 from sqlalchemy.types import Numeric
-from geoalchemy2.types import Geometry
 from sqlalchemy.dialects import postgresql
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector
+from chsdi.models.vector import Vector, Geometry2D
 
 
 Base = bases['uvek']
@@ -27,8 +26,7 @@ class SchienennetzPoint(Base, Vector):
     respdonneesabreviation = Column('respdonneesabreviation', Text)
     debutvalidite = Column('debutvalidite', Text)
     finvalidite = Column('finvalidite', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.schienennetz', SchienennetzPoint)
 
@@ -53,8 +51,7 @@ class SchienennetzSegment(Base, Vector):
     electrification_de = Column('electrification_de', Text)
     debutvalidite = Column('debutvalidite', Text)
     finvalidite = Column('finvalidite', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.schienennetz', SchienennetzSegment)
 
@@ -74,23 +71,20 @@ class OevHaltestellen:
     betriebspunkttyp = Column('betriebspunkttyp', Text)
     verkehrsmittel = Column('verkehrsmittel', Text)
     # point geometry hilight
-    the_geom_point = Column('the_geom', Geometry(geometry_type='GEOMETRY',
-                                                               dimension=2, srid=21781))
+    the_geom_point = Column('the_geom', Geometry2D)
 
 
 class OevHaltestellenZoom1(Base, OevHaltestellen, Vector):
     __minscale__ = 1
     __maxscale__ = 3000
-    the_geom = Column('bgdi_geom_poly', Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column('bgdi_geom_poly', Geometry2D)
 
 register('ch.bav.haltestellen-oev', OevHaltestellenZoom1)
 
 
 class OevHaltestellenZoom2(Base, OevHaltestellen, Vector):
     __minscale__ = 3000
-    the_geom = Column('bgdi_geom_poly_overview', Geometry(geometry_type='GEOMETRY',
-                                       dimension=2, srid=21781))
+    the_geom = Column('bgdi_geom_poly_overview', Geometry2D)
 
 register('ch.bav.haltestellen-oev', OevHaltestellenZoom2)
 
@@ -123,8 +117,6 @@ class SicherheitsZonenPlan (Base, Vector):
     __extended_info__ = True
     __label__ = 'id'
     id = Column('stabil_id', Text, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     zone = Column('zone', Text)
     zonetype_tid = Column('zonetype_tid', Text)
     type_id = Column('type_id', Text)
@@ -148,6 +140,7 @@ class SicherheitsZonenPlan (Base, Vector):
     latest_modification = Column('latest_modification', Text)
     doc_description = Column('doc_description', Text)
     doc_id = Column('doc_id', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.sicherheitszonenplan', SicherheitsZonenPlan)
 
@@ -160,8 +153,6 @@ class IVS_NAT(Base, Vector):
     __queryable_attributes__ = ['ivs_slaname', 'ivs_nummer', 'ivs_signatur']
     __label__ = 'id'
     id = Column('nat_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     ivs_slaname = Column('ivs_slaname', Text)
     ivs_nummer = Column('ivs_nummer', Text)
     ivs_signatur = Column('ivs_signatur', Text)
@@ -173,6 +164,7 @@ class IVS_NAT(Base, Vector):
     ivs_sladatemorph = Column('ivs_sladatemorph', Integer)
     ivs_slabedeutung = Column('ivs_slabedeutung', Integer)
     ivs_sortsla = Column('ivs_sortsla', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.astra.ivs-nat', IVS_NAT)
 register('ch.astra.ivs-nat-verlaeufe', IVS_NAT)
@@ -186,8 +178,6 @@ class IVS_REG_LOC(Base, Vector):
     __queryable_attributes__ = ['ivs_slaname', 'ivs_nummer', 'ivs_signatur']
     __label__ = 'ivs_nummer'
     id = Column('reg_loc_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     ivs_slaname = Column('ivs_slaname', Text)
     ivs_nummer = Column('ivs_nummer', Text)
     ivs_signatur = Column('ivs_signatur', Text)
@@ -200,6 +190,7 @@ class IVS_REG_LOC(Base, Vector):
     ivs_slabedeutung = Column('ivs_slabedeutung', Integer)
     ivs_sortsla = Column('ivs_sortsla', Text)
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.astra.ivs-reg_loc', IVS_REG_LOC)
 register('ch.astra.ivs-reg_loc.sub', IVS_REG_LOC)
@@ -213,8 +204,6 @@ class KANTONE_REG_LOC(Base, Vector):
     __queryable_attributes__ = ['ivs_slaname', 'ivs_nummer', 'ivs_signatur']
     __label__ = 'ivs_nummer'
     id = Column('reg_loc_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     ivs_slaname = Column('ivs_slaname', Text)
     ivs_nummer = Column('ivs_nummer', Text)
     ivs_signatur = Column('ivs_signatur', Text)
@@ -226,6 +215,7 @@ class KANTONE_REG_LOC(Base, Vector):
     ivs_sladatemorph = Column('ivs_sladatemorph', Integer)
     ivs_slabedeutung = Column('ivs_slabedeutung', Integer)
     ivs_sortsla = Column('ivs_sortsla', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.kantone.ivs-reg_loc', KANTONE_REG_LOC)
 
@@ -237,13 +227,12 @@ class AUSNAHMETRANSPORTROUTEN(Base, Vector):
     __bodId__ = 'ch.astra.ausnahmetransportrouten'
     __label__ = 'id'
     id = Column('id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     bgdi_id = Column('bgdi_id', Integer)
     ri_getrenn = Column('ri_getrenn', Text)
     anz_spuren = Column('anz_spuren', Integer)
     strassen_typ = Column('strassen_typ', Text)
     routentyp_id = Column('routentyp_id', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.astra.ausnahmetransportrouten', AUSNAHMETRANSPORTROUTEN)
 
@@ -257,8 +246,6 @@ class ZAEHLSTELLENREGLOC(Base, Vector):
     __extended_info__ = True
     __label__ = 'zaehlstellen_bezeichnung'
     id = Column('nr', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     zaehlstellen_bezeichnung = Column('zaehlstellen_bezeichnung', Text)
     uno_zaehlstelle = Column('uno_zaehlstelle', Text)
     zst_physisch_virtuell = Column('zst_physisch_virtuell', Text)
@@ -278,6 +265,7 @@ class ZAEHLSTELLENREGLOC(Base, Vector):
     ssvz_2005 = Column('ssvz_2005', Text)
     jahresauswertung = Column('jahresauswertung', Text)
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal', ZAEHLSTELLENREGLOC)
 
@@ -291,8 +279,6 @@ class ZAEHLSTELLENUEBER(Base, Vector):
     __extended_info__ = True
     __label__ = 'zaehlstellen_bezeichnung'
     id = Column('nr', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     zaehlstellen_bezeichnung = Column('zaehlstellen_bezeichnung', Text)
     uno_zaehlstelle = Column('uno_zaehlstelle', Text)
     zst_physisch_virtuell = Column('zst_physisch_virtuell', Text)
@@ -312,6 +298,7 @@ class ZAEHLSTELLENUEBER(Base, Vector):
     ssvz_2005 = Column('ssvz_2005', Text)
     jahresauswertung = Column('jahresauswertung', Text)
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet', ZAEHLSTELLENUEBER)
 
@@ -327,8 +314,6 @@ class Unf:
                                 'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it',
                                 'roadtypecode', 'canton', 'fsocommunecode']
     id = Column('uuid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     accidenttype_de = Column('accidenttype_de', Text)
     accidenttype_fr = Column('accidenttype_fr', Text)
     accidenttype_it = Column('accidenttype_it', Text)
@@ -347,6 +332,7 @@ class Unf:
     roadtypecode = Column('roadtypecode', Integer)
     canton = Column('canton', Text)
     fsocommunecode = Column('fsocommunecode', Text)
+    the_geom = Column(Geometry2D)
 
 
 class UnfPersAlle(Base, Unf, Vector):
@@ -389,10 +375,9 @@ class Schwerverunf:
     __table_args__ = ({'schema': 'astra', 'autoload': False, 'extend_existing': True})
     __label__ = 'canton'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     canton = Column('canton', Text)
     year = Column('year', Integer)
+    the_geom = Column(Geometry2D)
 
 
 class SchwerverunfKantonAlkohol(Base, Schwerverunf, Vector):
@@ -453,8 +438,6 @@ class KATASTERBELASTETERSTANDORTE(Base, Vector):
     __queryable_attributes__ = ['katasternummer']
     __label__ = 'id'
     id = Column('vflz_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     katasternummer = Column('katasternummer', Text)
     standorttyp_de = Column('standorttyp_de', Text)
     standorttyp_fr = Column('standorttyp_fr', Text)
@@ -467,6 +450,7 @@ class KATASTERBELASTETERSTANDORTE(Base, Vector):
     untersuchungsstand_it = Column('untersuchungsstand_it', Text)
     url = Column('url', Text)
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.kataster-belasteter-standorte-oev', KATASTERBELASTETERSTANDORTE)
 
@@ -479,13 +463,12 @@ class ABGELTUNGWASSERKRAFTNUTZUNG(Base, Vector):
     __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('objectnumber', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     area = Column('area', Numeric)
     name = Column('name', Text)
     perimeter = Column('perimeter', Numeric)
     startprotectioncommitment = Column('startprotectioncommitment', Text)
     endprotectioncommitment = Column('endprotectioncommitment', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.abgeltung-wasserkraftnutzung', ABGELTUNGWASSERKRAFTNUTZUNG)
 
@@ -499,8 +482,6 @@ class ENERGIESTAEDTE(Base, Vector):
     __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     name = Column('name', Text)
     bfsnr = Column('bfsnr', Integer)
     punktezahl = Column('punktezahl', Numeric)
@@ -512,6 +493,7 @@ class ENERGIESTAEDTE(Base, Vector):
     linkberater = Column('linkberater', Text)
     linkfaktenblatt = Column('linkfaktenblatt', Text)
     linkenergiestadtweb = Column('linkenergiestadtweb', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.energiestaedte', ENERGIESTAEDTE)
 
@@ -525,14 +507,13 @@ class ENERGIESTAEDTEREGIONEN(Base, Vector):
     __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     name = Column('name', Text)
     kategorie = Column('kategorie', Text)
     bet_energiestaedte = Column('bet_energiestaedte', Text)
     bet_traegerverein = Column('bet_traegerverein', Text)
     berater = Column('berater', Text)
     linkberater = Column('linkberater', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.energiestaedte-energieregionen', ENERGIESTAEDTEREGIONEN)
 
@@ -546,8 +527,6 @@ class ENERGIESTAEDTE2000WATTAREALE(Base, Vector):
     __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     name = Column('name', Text)
     kategorie = Column('kategorie', Text)
     gemeinde = Column('gemeinde', Text)
@@ -557,6 +536,7 @@ class ENERGIESTAEDTE2000WATTAREALE(Base, Vector):
     linkfaktenblatt_fr = Column('linkfaktenblatt_fr', Text)
     linkfaktenblatt_it = Column('linkfaktenblatt_it', Text)
     linkfaktenblatt_en = Column('linkfaktenblatt_en', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.energiestaedte-2000watt-areale', ENERGIESTAEDTE2000WATTAREALE)
 
@@ -570,13 +550,12 @@ class ENERGIESTAEDTE2000AUFDEMWEG(Base, Vector):
     __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     name = Column('name', Text)
     kategorie = Column('kategorie', Text)
     berater = Column('berater', Text)
     linkberater = Column('linkberater', Text)
     linkfaktenblatt = Column('linkfaktenblatt', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.energiestaedte-2000watt-aufdemweg', ENERGIESTAEDTE2000AUFDEMWEG)
 
@@ -619,8 +598,7 @@ class ENERGIEFORSCHUNG(Base, Vector):
     bild0 = Column('bild0', Text)
     bild1 = Column('bild1', Text)
     bild2 = Column('bild2', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.energieforschung', ENERGIEFORSCHUNG)
 
@@ -633,8 +611,6 @@ class STATISTIKWASSERKRAFTANLAGEN(Base, Vector):
     __extended_info__ = True
     __label__ = 'name'
     id = Column('wastanumber', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     name = Column('name', Text)
     location = Column('location', Text)
     canton = Column('canton', Text)
@@ -650,6 +626,7 @@ class STATISTIKWASSERKRAFTANLAGEN(Base, Vector):
     produktionserwartung = Column('produktionserwartung', Numeric)
     leistungsaufnahme_pumpen = Column('leistungsaufnahme_pumpen', Numeric)
     energiebedarf_motore = Column('energiebedarf_motore', Numeric)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.statistik-wasserkraftanlagen', STATISTIKWASSERKRAFTANLAGEN)
 
@@ -663,8 +640,6 @@ class STAUANLAGENBUNDESAUFSICHT(Base, Vector):
     __queryable_attributes__ = ['damname', 'damtype_de', 'damtype_fr', 'damtype_en']
     __label__ = 'damname'
     id = Column('dam_stabil_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     damname = Column('damname', Text)
     damtype_fr = Column('damtype_fr', Text)
     damtype_en = Column('damtype_en', Text)
@@ -685,6 +660,7 @@ class STAUANLAGENBUNDESAUFSICHT(Base, Vector):
     has_picture = Column('has_picture', Integer)
     baujahr = Column('baujahr', Integer)
     facility_stabil_id = Column('facility_stabil_id', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.stauanlagen-bundesaufsicht', STAUANLAGENBUNDESAUFSICHT)
 
@@ -696,11 +672,10 @@ class kleinwasserkraftpotentiale(Base, Vector):
     __bodId__ = 'ch.bfe.kleinwasserkraftpotentiale'
     __label__ = 'gwlnr'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     kwprometer = Column('kwprometer', Numeric)
     laenge = Column('laenge', Numeric)
     gwlnr = Column('gwlnr', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.kleinwasserkraftpotentiale', kleinwasserkraftpotentiale)
 
@@ -714,7 +689,6 @@ class WindenergieanlagenFacility(Base, Vector):
     __queryable_attributes__ = ['fac_name']
     __label__ = 'fac_name'
     id = Column('fac_id', Text, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY', dimension=2, srid=21781))
     fac_name = Column('fac_name', Text)
     fac_type_de = Column('fac_type_de', Text)
     fac_type_fr = Column('fac_type_fr', Text)
@@ -727,6 +701,7 @@ class WindenergieanlagenFacility(Base, Vector):
     fac_y = Column('fac_y', Integer)
     fac_x = Column('fac_x', Integer)
     turbines = Column('turbines', Text)
+    the_geom = Column(Geometry2D)
     __minscale__ = 100005
     __maxscale__ = 100000005
 
@@ -742,7 +717,6 @@ class WindenergieanlagenTurbine(Base, Vector):
     __queryable_attributes__ = ['fac_name']
     __label__ = 'tur_year'
     id = Column('tur_id', Text, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY', dimension=2, srid=21781))
     fac_name = Column('fac_name', Text)
     fac_type_de = Column('fac_type_de', Text)
     fac_type_fr = Column('fac_type_fr', Text)
@@ -762,6 +736,7 @@ class WindenergieanlagenTurbine(Base, Vector):
     tur_power = Column('tur_power', Text)
     tur_altitude = Column('tur_altitude', Text)
     tur_year = Column('tur_year', Numeric)
+    the_geom = Column(Geometry2D)
     __minscale__ = 1
     __maxscale__ = 100005
 
@@ -777,8 +752,6 @@ class bakomfernsehsender(Base, Vector):
     __queryable_attributes__ = ['name', 'code']
     __label__ = 'code'
     id = Column('id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     name = Column('name', Text)
     code = Column('code', Text)
     power = Column('power', Text)
@@ -786,6 +759,7 @@ class bakomfernsehsender(Base, Vector):
     program = Column('program', Text)
     freqchan = Column('freqchan', Text)
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bakom.radio-fernsehsender', bakomfernsehsender)
 
@@ -797,10 +771,9 @@ class bakomgsm(Base, Vector):
     __bodId__ = 'ch.bakom.mobil-antennenstandorte-gsm'
     __label__ = 'powercode'
     id = Column('id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     powercode = Column('powercode', Text)
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bakom.mobil-antennenstandorte-gsm', bakomgsm)
 
@@ -812,10 +785,9 @@ class bakomumts(Base, Vector):
     __bodId__ = 'ch.bakom.mobil-antennenstandorte-umts'
     __label__ = 'powercode'
     id = Column('id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     powercode = Column('powercode', Text)
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bakom.mobil-antennenstandorte-umts', bakomumts)
 
@@ -827,10 +799,9 @@ class bakomlte(Base, Vector):
     __bodId__ = 'ch.bakom.mobil-antennenstandorte-lte'
     __label__ = 'powercode'
     id = Column('id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     powercode = Column('powercode', Text)
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bakom.mobil-antennenstandorte-lte', bakomlte)
 
@@ -843,9 +814,8 @@ class bakomtv(Base, Vector):
     __queryable_attributes__ = ['prog']
     __label__ = 'prog'
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     prog = Column('prog', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bakom.versorgungsgebiet-tv', bakomtv)
 
@@ -858,9 +828,8 @@ class bakomukw(Base, Vector):
     __queryable_attributes__ = ['prog']
     __label__ = 'prog'
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     prog = Column('prog', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bakom.versorgungsgebiet-ukw', bakomukw)
 
@@ -872,8 +841,6 @@ class ProjFlughafenanlagen(Base, Vector):
     __bodId__ = 'ch.bazl.projektierungszonen-flughafenanlagen'
     __label__ = 'municipality'
     id = Column('stabil_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     zonekind_text_de = Column('zonekind_text_de', Text)
     zonekind_text_fr = Column('zonekind_text_fr', Text)
     zonekind_text_it = Column('zonekind_text_it', Text)
@@ -888,6 +855,7 @@ class ProjFlughafenanlagen(Base, Vector):
     description = Column('description', Text)
     weblink_ref = Column('weblink_ref', Text)
     bgdi_id = Column('bgdi_id', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.projektierungszonen-flughafenanlagen', ProjFlughafenanlagen)
 
@@ -914,10 +882,9 @@ class Luftfahrthindernis(Base, Vector):
     startofconstruction = Column('startofconstruction', Date)
     duration = Column('duration', Text)
     geomtype = Column('geomtype', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     abortionaccomplished = Column('abortionaccomplished', Date)
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.luftfahrthindernis', Luftfahrthindernis)
 
@@ -949,8 +916,7 @@ class sgt_facilities(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 80005
     __maxscale__ = 100000005
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-geologie-tiefenlager', sgt_facilities)
 
@@ -964,8 +930,7 @@ class sgt_planning(Base, Vector):
     # Translatable labels in fr, it
     __label__ = 'facname_de'
     id = Column('stabil_id', Text, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
     facname_de = Column('facname_de', Text)
@@ -1023,8 +988,7 @@ class sgt_planning_raster(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-geologie-tiefenlager', sgt_planning_raster)
 
@@ -1055,8 +1019,7 @@ class sgt_facilities_td(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 80005
     __maxscale__ = 100000005
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', sgt_facilities_td)
 
@@ -1091,8 +1054,7 @@ class sgt_planning_td(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 20005
     __maxscale__ = 500005
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', sgt_planning_td)
 
@@ -1127,8 +1089,7 @@ class sgt_planning_raster_td(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', sgt_planning_raster_td)
 
@@ -1159,8 +1120,7 @@ class sil_facilities_a(Base, Vector):
     objectname_fr = Column('objectname_fr', Text)
     objectname_it = Column('objectname_it', Text)
     bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', sil_facilities_a)
 
@@ -1197,8 +1157,7 @@ class sil_planning_a(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 20005
     __maxscale__ = 500005
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', sil_planning_a)
 
@@ -1235,8 +1194,7 @@ class sil_planning_raster_a(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', sil_planning_raster_a)
 
@@ -1267,8 +1225,7 @@ class sil_facilities_k(Base, Vector):
     objectname_fr = Column('objectname_fr', Text)
     objectname_it = Column('objectname_it', Text)
     bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_facilities_k)
 
@@ -1305,8 +1262,7 @@ class sil_planning_k(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 20005
     __maxscale__ = 500005
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_planning_k)
 
@@ -1343,8 +1299,7 @@ class sil_planning_raster_k(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_planning_raster_k)
 
@@ -1359,8 +1314,7 @@ class nga_anbieter (Base, Vector):
     alias = Column('alias', Text)
     fdaurl = Column('fdaurl', Text)
     nbofprovider = Column('nbofprovider', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bakom.anbieter-eigenes_festnetz', nga_anbieter)
 
@@ -1408,8 +1362,7 @@ class kernkraftwerke (Base, Vector):
     operation_phase = Column('operation_phase', Text)
     decontamination_phase = Column('decontamination_phase', Text)
     dismantling_phase = Column('dismantling_phase', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.kernkraftwerke', kernkraftwerke)
 
@@ -1442,8 +1395,7 @@ class sis_facilities_a (Base, Vector):
     objname_fr = Column('objname_fr', Text)
     objname_it = Column('objname_it', Text)
     bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schiene_anhorung', sis_facilities_a)
 
@@ -1482,8 +1434,7 @@ class sis_planning_a (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 20005
     __maxscale__ = 500005
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schiene_anhorung', sis_planning_a)
 
@@ -1509,8 +1460,7 @@ class sis_angaben (Base, Vector):
     valid_from = Column('valid_from', Text)
     doc_title = Column('doc_title', Text)
     bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schiene_ausgangslage', sis_angaben)
 
@@ -1549,8 +1499,7 @@ class sis_planning_raster_a (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schiene_anhorung', sis_planning_raster_a)
 
@@ -1583,8 +1532,7 @@ class sis_facilities_k (Base, Vector):
     objname_fr = Column('objname_fr', Text)
     objname_it = Column('objname_it', Text)
     bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schiene_kraft', sis_facilities_k)
 
@@ -1622,8 +1570,7 @@ class sis_planning_k (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 20005
     __maxscale__ = 500005
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schiene_kraft', sis_planning_k)
 
@@ -1662,8 +1609,7 @@ class sis_planning_raster_k (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schiene_kraft', sis_planning_raster_k)
 
@@ -1676,8 +1622,6 @@ class kbs_zivilflugpl(Base, Vector):
     __queryable_attributes__ = ['katasternummer']
     __label__ = 'katasternummer'
     id = Column('vflz_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     katasternummer = Column('katasternummer', Text)
     standorttyp_de = Column('standorttyp_de', Text)
     standorttyp_fr = Column('standorttyp_fr', Text)
@@ -1689,6 +1633,7 @@ class kbs_zivilflugpl(Base, Vector):
     untersuchungsstand_fr = Column('untersuchungsstand_fr', Text)
     untersuchungsstand_it = Column('untersuchungsstand_it', Text)
     url = Column('url', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.kataster-belasteter-standorte-zivilflugplaetze', kbs_zivilflugpl)
 
@@ -1717,8 +1662,7 @@ class laerm_emissionsplan_eisenbahn_tag(Base, Vector):
     grund2 = Column('grund2', Text)
     typ_aender = Column('typ_aender', Text)
     datum = Column('datum', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.laerm-emissionsplan_eisenbahn_tag', laerm_emissionsplan_eisenbahn_tag)
 
@@ -1747,8 +1691,7 @@ class laerm_emissionsplan_eisenbahn_nacht(Base, Vector):
     grund2 = Column('grund2', Text)
     typ_aender = Column('typ_aender', Text)
     datum = Column('datum', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.laerm-emissionsplan_eisenbahn_nacht', laerm_emissionsplan_eisenbahn_nacht)
 
@@ -1781,8 +1724,7 @@ class sif_facilities_a (Base, Vector):
     objname_fr = Column('objname_fr', Text)
     objname_it = Column('objname_it', Text)
     bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', sif_facilities_a)
 
@@ -1815,8 +1757,7 @@ class sif_facilities_k (Base, Vector):
     objname_fr = Column('objname_fr', Text)
     objname_it = Column('objname_it', Text)
     bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', sif_facilities_k)
 
@@ -1855,8 +1796,7 @@ class sif_planning_a (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 20005
     __maxscale__ = 500005
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', sif_planning_a)
 
@@ -1895,8 +1835,7 @@ class sif_planning_k (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 20005
     __maxscale__ = 500005
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', sif_planning_k)
 
@@ -1935,8 +1874,7 @@ class sif_planning_raster_a (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', sif_planning_raster_a)
 
@@ -1975,8 +1913,7 @@ class sif_planning_raster_k (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', sif_planning_raster_k)
 
@@ -1997,8 +1934,7 @@ class sif_ausgangslage (Base, Vector):
     fackind = Column('fackind', Text)
     valid_from = Column('valid_from', Text)
     bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schifffahrt_ausgangslage', sif_ausgangslage)
 
@@ -2016,8 +1952,7 @@ class bazl_laerm_erste_nachtstunde (Base, Vector):
     exposuregroup_exposuretype = Column('exposuregroup_exposuretype', Text)
     exposurecurve_level_db = Column('exposurecurve_level_db', Text)
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde', bazl_laerm_erste_nachtstunde)
 
@@ -2035,8 +1970,7 @@ class bazl_laerm_helikopter_maximalpegel (Base, Vector):
     exposuregroup_exposuretype = Column('exposuregroup_exposuretype', Text)
     exposurecurve_level_db = Column('exposurecurve_level_db', Text)
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel', bazl_laerm_helikopter_maximalpegel)
 
@@ -2054,8 +1988,7 @@ class bazl_laerm_helikopter (Base, Vector):
     exposuregroup_exposuretype = Column('exposuregroup_exposuretype', Text)
     exposurecurve_level_db = Column('exposurecurve_level_db', Text)
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter', bazl_laerm_helikopter)
 
@@ -2073,8 +2006,7 @@ class bazl_laerm_klein_grossflugzeuge (Base, Vector):
     exposuregroup_exposuretype = Column('exposuregroup_exposuretype', Text)
     exposurecurve_level_db = Column('exposurecurve_level_db', Text)
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge', bazl_laerm_klein_grossflugzeuge)
 
@@ -2092,8 +2024,7 @@ class bazl_laerm_kleinluftfahrzeuge (Base, Vector):
     exposuregroup_exposuretype = Column('exposuregroup_exposuretype', Text)
     exposurecurve_level_db = Column('exposurecurve_level_db', Text)
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge', bazl_laerm_kleinluftfahrzeuge)
 
@@ -2111,8 +2042,7 @@ class bazl_laerm_letzte_nachtstunde (Base, Vector):
     exposuregroup_exposuretype = Column('exposuregroup_exposuretype', Text)
     exposurecurve_level_db = Column('exposurecurve_level_db', Text)
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde', bazl_laerm_letzte_nachtstunde)
 
@@ -2130,8 +2060,7 @@ class bazl_laerm_militaer_gesamt (Base, Vector):
     exposuregroup_exposuretype = Column('exposuregroup_exposuretype', Text)
     exposurecurve_level_db = Column('exposurecurve_level_db', Text)
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt', bazl_laerm_militaer_gesamt)
 
@@ -2149,8 +2078,7 @@ class bazl_laerm_zweite_nachtstunde (Base, Vector):
     exposuregroup_exposuretype = Column('exposuregroup_exposuretype', Text)
     exposurecurve_level_db = Column('exposurecurve_level_db', Text)
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde', bazl_laerm_zweite_nachtstunde)
 
@@ -2183,8 +2111,7 @@ class suel_fac_anhorung (Base, Vector):
     objname_fr = Column('objname_fr', Text)
     objname_it = Column('objname_it', Text)
     bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', suel_fac_anhorung)
 
@@ -2223,8 +2150,7 @@ class suel_pl_anhorung (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 20005
     __maxscale__ = 500005
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', suel_pl_anhorung)
 
@@ -2259,8 +2185,7 @@ class suel_fac_r_anhorung (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', suel_fac_r_anhorung)
 
@@ -2299,8 +2224,7 @@ class suel_pl_r_anhorung (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', suel_pl_r_anhorung)
 
@@ -2333,8 +2257,7 @@ class suel_fac_kraft (Base, Vector):
     objname_fr = Column('objname_fr', Text)
     objname_it = Column('objname_it', Text)
     bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-uebertragungsleitungen_kraft', suel_fac_kraft)
 
@@ -2372,8 +2295,7 @@ class suel_pl_kraft (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 20005
     __maxscale__ = 500005
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-uebertragungsleitungen_kraft', suel_pl_kraft)
 
@@ -2408,8 +2330,7 @@ class suel_fac_r_kraft (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-uebertragungsleitungen_kraft', suel_fac_r_kraft)
 
@@ -2448,8 +2369,7 @@ class suel_pl_r_kraft (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.sachplan-uebertragungsleitungen_kraft', suel_pl_r_kraft)
 
@@ -2465,8 +2385,7 @@ class ChmobilVeloland (Base, Vector):
     chmobil_url_route = Column('bgdi_url_route', Text)
     chmobil_title = Column('title', Text)
     chmobil_route_number = Column('route_number', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.astra.veloland', ChmobilVeloland)
 
@@ -2482,8 +2401,7 @@ class ChmobilWanderland (Base, Vector):
     chmobil_url_route = Column('bgdi_url_route', Text)
     chmobil_title = Column('title', Text)
     chmobil_route_number = Column('route_number', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.astra.wanderland', ChmobilWanderland)
 
@@ -2499,8 +2417,7 @@ class ChmobilSkatingland (Base, Vector):
     chmobil_url_route = Column('bgdi_url_route', Text)
     chmobil_title = Column('title', Text)
     chmobil_route_number = Column('route_number', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.astra.skatingland', ChmobilSkatingland)
 
@@ -2516,8 +2433,7 @@ class ChmobilMountainbikeland (Base, Vector):
     chmobil_url_route = Column('bgdi_url_route', Text)
     chmobil_title = Column('title', Text)
     chmobil_route_number = Column('route_number', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.astra.mountainbikeland', ChmobilMountainbikeland)
 
@@ -2562,8 +2478,7 @@ class eignungDaecher (Base, Vector):
     monats_ertrag = Column('monats_ertrag', postgresql.ARRAY(Numeric))
     gs_serie_start = Column('gs_serie_start', Date)
     klasse_text = Column('klasse_text', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.solarenergie-eignung-daecher', eignungDaecher)
 
@@ -2581,8 +2496,7 @@ class eignungDaecherOverview (Base, Vector):
     fr = Column('fr', Text)
     it = Column('it', Text)
     en = Column('en', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfe.solarenergie-eignung-daecher', eignungDaecherOverview)
 
@@ -2597,7 +2511,6 @@ class globalstrahlung (Base, Vector):
     date_start = Column('date_start', Date)
     sis_array = Column('sis_values', postgresql.ARRAY(Numeric))
     sisdir_array = Column('sisdir_values', postgresql.ARRAY(Numeric))
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.meteoschweiz.globalstrahlung-monatlich', globalstrahlung)

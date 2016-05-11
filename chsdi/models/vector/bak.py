@@ -3,10 +3,8 @@
 from sqlalchemy import Column, Text, Integer
 from sqlalchemy.types import Numeric
 
-from geoalchemy2.types import Geometry
-
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector
+from chsdi.models.vector import Vector, Geometry2D
 
 
 Base = bases['bak']
@@ -32,8 +30,7 @@ class ISOS(Base, Vector):
     publikationsjahr_2 = Column('publikationsjahr_2', Text)
     pdf_dokument_1 = Column('pdf_dokument_1', Text)
     pdf_dokument_2 = Column('pdf_dokument_2', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', ISOS)
 
@@ -56,7 +53,6 @@ class UNESCO(Base, Vector):
     type_en = Column('type_en', Text)
     type_rm = Column('type_rm', Text)
     bgdi_surface = Column('bgdi_surface', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bak.schutzgebiete-unesco_weltkulturerbe', UNESCO)

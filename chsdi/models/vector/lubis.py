@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer, Boolean, Numeric
-from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector
+from chsdi.models.vector import Vector, Geometry2D, Geometry3D
 
 Base = bases['lubis']
 
@@ -21,10 +20,6 @@ class luftbilder_swisstopo_farbe(Base, Vector):
     # Composite labels
     __label__ = 'flugdatum'
     id = Column('ebkey', Text, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
-    the_geom_footprint = Column('the_geom_footprint', Geometry(geometry_type='GEOMETRY',
-                                                               dimension=3, srid=21781))
     filename = Column('filename', Text)
     inventarnummer = Column('inventarnummer', Integer)
     bildnummer = Column('bildnummer', Integer)
@@ -45,6 +40,8 @@ class luftbilder_swisstopo_farbe(Base, Vector):
     bgdi_imagemode = Column('bgdi_imagemode', Text)
     image_height = Column('image_height', Integer)
     image_width = Column('image_width', Integer)
+    the_geom_footprint = Column('the_geom_footprint', Geometry3D)
+    the_geom = Column(Geometry3D)
 
 register('ch.swisstopo.lubis-luftbilder_farbe', luftbilder_swisstopo_farbe)
 
@@ -61,10 +58,6 @@ class luftbilder_swisstopo_ir(Base, Vector):
     # Composite labels
     __label__ = 'flugdatum'
     id = Column('ebkey', Text, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
-    the_geom_footprint = Column('the_geom_footprint', Geometry(geometry_type='GEOMETRY',
-                                                               dimension=3, srid=21781))
     filename = Column('filename', Text)
     inventarnummer = Column('inventarnummer', Integer)
     bildnummer = Column('bildnummer', Integer)
@@ -85,6 +78,8 @@ class luftbilder_swisstopo_ir(Base, Vector):
     bgdi_imagemode = Column('bgdi_imagemode', Text)
     image_height = Column('image_height', Integer)
     image_width = Column('image_width', Integer)
+    the_geom_footprint = Column('the_geom_footprint', Geometry3D)
+    the_geom = Column(Geometry3D)
 
 register('ch.swisstopo.lubis-luftbilder_infrarot', luftbilder_swisstopo_ir)
 
@@ -101,10 +96,6 @@ class luftbilder_swisstopo_sw(Base, Vector):
     # Composite labels
     __label__ = 'flugdatum'
     id = Column('ebkey', Text, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
-    the_geom_footprint = Column('the_geom_footprint', Geometry(geometry_type='GEOMETRY',
-                                                               dimension=3, srid=21781))
     filename = Column('filename', Text)
     inventarnummer = Column('inventarnummer', Integer)
     bildnummer = Column('bildnummer', Integer)
@@ -125,6 +116,8 @@ class luftbilder_swisstopo_sw(Base, Vector):
     bgdi_imagemode = Column('bgdi_imagemode', Text)
     image_height = Column('image_height', Integer)
     image_width = Column('image_width', Integer)
+    the_geom_footprint = Column('the_geom_footprint', Geometry3D)
+    the_geom = Column(Geometry3D)
 
 register('ch.swisstopo.lubis-luftbilder_schwarzweiss', luftbilder_swisstopo_sw)
 
@@ -141,10 +134,6 @@ class luftbilder_dritte_firmen(Base, Vector):
     # Composite labels
     __label__ = 'flugdatum'
     id = Column('ebkey', Text, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
-    the_geom_footprint = Column('the_geom_footprint', Geometry(geometry_type='GEOMETRY',
-                                                               dimension=2, srid=21781))
     filename = Column('filename', Text)
     inventarnummer = Column('inventarnummer', Integer)
     bildnummer = Column('bildnummer', Integer)
@@ -166,6 +155,8 @@ class luftbilder_dritte_firmen(Base, Vector):
     contact_email = Column('contact_email', Text)
     contact_web = Column('contact_web', Text)
     bgdi_imagemode = Column('bgdi_imagemode', Text)
+    the_geom_footprint = Column('the_geom_footprint', Geometry2D)
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.lubis-luftbilder-dritte-firmen', luftbilder_dritte_firmen)
 
@@ -182,10 +173,6 @@ class luftbilder_dritte_kantone(Base, Vector):
     # Composite labels
     __label__ = 'flugdatum'
     id = Column('ebkey', Text, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
-    the_geom_footprint = Column('the_geom_footprint', Geometry(geometry_type='GEOMETRY',
-                                                               dimension=2, srid=21781))
     filename = Column('filename', Text)
     inventarnummer = Column('inventarnummer', Integer)
     bildnummer = Column('bildnummer', Integer)
@@ -207,6 +194,8 @@ class luftbilder_dritte_kantone(Base, Vector):
     contact_email = Column('contact_email', Text)
     contact_web = Column('contact_web', Text)
     bgdi_imagemode = Column('bgdi_imagemode', Text)
+    the_geom_footprint = Column('the_geom_footprint', Geometry2D)
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.lubis-luftbilder-dritte-kantone', luftbilder_dritte_kantone)
 
@@ -223,10 +212,6 @@ class bildstreifen(Base, Vector):
     # Composite labels
     __label__ = 'flugdatum'
     id = Column('bildstreifen_nr', Text, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
-    the_geom_footprint = Column('the_geom_footprint', Geometry(geometry_type='GEOMETRY',
-                                                               dimension=3, srid=21781))
     flugdatum = Column('flugdatum', Text)
     firma = Column('firma', Text)
     filmart = Column('filmart', Text)
@@ -243,6 +228,8 @@ class bildstreifen(Base, Vector):
     toposhop_date = Column('toposhop_date', Text)
     goal = Column('goal', Text)
     source_georef = Column('georef_source', Text)
+    the_geom_footprint = Column('the_geom_footprint', Geometry3D)
+    the_geom = Column(Geometry3D)
 
 register('ch.swisstopo.lubis-bildstreifen', bildstreifen)
 
@@ -257,8 +244,6 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     __label__ = 'flightdate'
     __queryable_attributes__ = ['id', 'bgdi_flugjahr', 'medium_format']
     id = Column('ebkey', Text, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
     inventory_number = Column('inventory_number', Text)
     flightdate = Column('flightdate', Text)
     medium_format = Column('medium_format', Text)
@@ -270,5 +255,6 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     y = Column('y', Integer)
     contact = Column('contact', Text)
     contact_email = Column('contact_email', Text)
+    the_geom = Column(Geometry3D)
 
 register('ch.swisstopo.lubis-luftbilder_schraegaufnahmen', LuftbilderSchraegaufnahmen)

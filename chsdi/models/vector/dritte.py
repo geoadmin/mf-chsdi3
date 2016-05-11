@@ -2,10 +2,9 @@
 
 from sqlalchemy import Column, Text, Integer
 from sqlalchemy.types import Numeric
-from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector
+from chsdi.models.vector import Vector, Geometry2D
 
 
 Base = bases['dritte']
@@ -19,8 +18,7 @@ class Maechtigkeit_lockergesteine(Base, Vector):
     __label__ = 'id'
     id = Column('id', Integer, primary_key=True)
     maechtigkeit = Column('maechtigkeit', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.sgpk.maechtigkeit-lockergesteine', Maechtigkeit_lockergesteine)
 
@@ -38,8 +36,7 @@ class FEUERSTELLEN(Base, Vector):
     karte = Column('karte', Text)
     url = Column('url', Text)
     koordinate_lv03 = Column('koordinate_lv03', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.tamedia.schweizerfamilie-feuerstellen', FEUERSTELLEN)
 
@@ -54,8 +51,7 @@ class NOTFALLSCHUTZ(Base, Vector):
     name = Column('name', Text)
     zone = Column('zone', Text)
     sektor = Column('sektor', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.ensi.zonenplan-notfallschutz-kernanlagen', NOTFALLSCHUTZ)
 
@@ -73,8 +69,7 @@ class PRONATURA(Base, Vector):
     gisflaeche = Column('obj_gisflaeche', Numeric)
     gisteilobjekt = Column('obj_gisteilobjekt', Numeric)
     mcpfe = Column('mcpfe', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.pronatura.waldreservate', PRONATURA)
 
@@ -88,8 +83,7 @@ class PRONATURA_Naturschutzgebiete(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     nummer = Column('nummer', Integer)
     name = Column('name', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.pronatura.naturschutzgebiete', PRONATURA_Naturschutzgebiete)
 
@@ -102,8 +96,7 @@ class Aeromagnetische_karte_1500(Base, Vector):
     __label__ = 'id'
     id = Column('et_id', Integer, primary_key=True)
     et_fromatt_1500 = Column('et_fromatt_1500', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.nagra.aeromagnetische-karte_1500', Aeromagnetische_karte_1500)
 
@@ -116,7 +109,6 @@ class Aeromagnetische_karte_1100(Base, Vector):
     __label__ = 'id'
     id = Column('et_id', Integer, primary_key=True)
     et_fromatt_1100 = Column('et_fromatt_1100', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.nagra.aeromagnetische-karte_1100', Aeromagnetische_karte_1100)
