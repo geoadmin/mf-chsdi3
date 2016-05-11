@@ -153,25 +153,6 @@ class GeolSpezialKartenMetadata (Base, Vector):
 register('ch.swisstopo.geologie-spezialkarten_schweiz.metadata', GeolSpezialKartenMetadata)
 
 
-class GravimetrischerAtlasMetadata (Base, Vector):
-    __tablename__ = 'gravimetrie_atlas_metadata'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gravimetrischer_atlas_metadata.mako'
-    __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas.metadata'
-    __queryable_attributes__ = ['id', 'titel']
-    __label__ = 'titel'
-    id = Column('nr', Integer, primary_key=True)
-    titel = Column('titel', Text)
-    jahr = Column('jahr', Numeric)
-    autor = Column('autor', Text)
-    formate_de = Column('formate_de', Text)
-    formate_fr = Column('formate_fr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
-
-register('ch.swisstopo.geologie-gravimetrischer_atlas.metadata', GravimetrischerAtlasMetadata)
-
-
 class ShopProductClass:
     __template__ = 'templates/htmlpopup/shop_product.mako'
     __label__ = 'id'
@@ -185,6 +166,16 @@ class ShopProductClass:
     available = Column('available', Boolean)
     the_geom = Column(Geometry(geometry_type='GEOMETRY',
                                dimension=2, srid=21781))
+
+
+class GravimetrischerAtlasMetadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'view_gridstand_gravimetrie_atlas_metadata_shop'
+    __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas.metadata'
+    price = Column('price', Integer)
+
+
+register('ch.swisstopo.geologie-gravimetrischer_atlas.metadata', GravimetrischerAtlasMetadata)
 
 
 class Generalkarte300Metadata (Base, ShopProductClass, Vector):
