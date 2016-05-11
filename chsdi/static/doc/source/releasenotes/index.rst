@@ -15,6 +15,50 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20160511:
+
+Release 20160511 - Wednesday, May 11th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160427...r_160511>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160427...r_160511>`__
+
+
+Geodata
+*******
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 50 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h50>`__ (ch.bfe.windenergie-geschwindigkeit_h50)                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 75 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h75>`__ (ch.bfe.windenergie-geschwindigkeit_h75)                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 100 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h100>`__ (ch.bfe.windenergie-geschwindigkeit_h100)                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 125 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h125>`__ (ch.bfe.windenergie-geschwindigkeit_h125)                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 150 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h150>`__ (ch.bfe.windenergie-geschwindigkeit_h150)                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Gravimetric Atlas 100 - paper <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas.metadata>`__ (ch.swisstopo.geologie-gravimetrischer_atlas.metadata) |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SÜL Anhörung <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Übertragungsleitungen <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20160427:
 
 Release 20160427 - Wednesday, April 27th 2016
