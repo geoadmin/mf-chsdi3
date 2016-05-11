@@ -1,6 +1,6 @@
 // OpenLayers 3. See http://openlayers.org/
 // License: https://raw.githubusercontent.com/openlayers/ol3/master/LICENSE.md
-// Version: v3.6.0-563-g649a789
+// Version: v3.6.0-567-g3bee7d6
 
 (function (root, factory) {
   if (typeof define === "function" && define.amd) {
@@ -57721,9 +57721,9 @@ ga.layer.create = function(layer, options) {
         return layerConfig['label'];
       }
     },
-    queryable: {
+    tooltip: {
       get: function() {
-        return layerConfig['queryable'];
+        return layerConfig['tooltip'];
       }
     },
     searchable: {
@@ -57792,9 +57792,9 @@ ga.layer.create = function(layer, options) {
         return layer;
       }
     },
-    internal_queryable: {
+    internal_tooltip: {
       get: function() {
-        return layerConfig['queryable'];
+        return layerConfig['tooltip'];
       }
     }
   });
@@ -106207,7 +106207,7 @@ ga.Tooltip.prototype.handleClick_ = function(mapBrowserEvent) {
   var layer;
   for (var i = 0, ii = this.map_.getLayers().getArray().length; i < ii; i++) {
     layer = this.map_.getLayers().getArray()[i];
-    if (layer.internal_queryable && layer.getVisible() && layer.internal_id) {
+    if (layer.internal_tooltip && layer.getVisible() && layer.internal_id) {
       layerList.push(layer.internal_id);
     }
   }
