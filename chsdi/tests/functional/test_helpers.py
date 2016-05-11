@@ -11,6 +11,8 @@ from chsdi.lib.helpers import (
     parse_date_string, parse_date_datenstand, filter_alt
 )
 from urlparse import urljoin
+from requests.exceptions import ConnectionError
+import requests
 
 
 class Test_Helpers(unittest.TestCase):
@@ -52,9 +54,11 @@ class Test_Helpers(unittest.TestCase):
         test_result = resource_exists(test_path)
         self.assertTrue(test_result)
 
-        test_path2 = 'http://dummy.ch'
-        test_result2 = resource_exists(test_path2)
-        self.assertTrue(test_result2)
+        test_path2 = 'http://junodummyducolozouzlouwioiii.ch'
+        try:
+            requests.get(test_path2)
+        except ConnectionError:
+            self.assertRaises(ConnectionError)
 
     def test_make_api_url(self):
         request = testing.DummyRequest()
