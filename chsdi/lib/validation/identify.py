@@ -179,12 +179,21 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
     @timeInstant.setter
     def timeInstant(self, value):
         if value is not None:
-            if len(value) != 4:
-                raise HTTPBadRequest('Only years are supported as timeInstant parameter')
-            if value.isdigit():
-                self._timeInstant = int(value)
-            else:
-                raise HTTPBadRequest('Please provide an integer for the parameter timeInstant')
+            instants = []
+            timeInstants = value.split(',')
+            for instant in timeInstants:
+                if len(instant) not in (0, 4):
+                    raise HTTPBadRequest(
+                        'Only years are supported as timeInstant parameter: provided value %s' % instant)
+                if instant.isdigit():
+                    instant = int(instant)
+                elif len(instant) == 0:
+                    instant = None
+                else:
+                    raise HTTPBadRequest(
+                        'Please provide an integer for the parameter timeInstant: provided value %s' % instant)
+                instants.append(instant)
+            self._timeInstant = instants
         else:
             self._timeInstant = value
 
