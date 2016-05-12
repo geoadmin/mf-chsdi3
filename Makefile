@@ -102,7 +102,7 @@ help:
 .PHONY: all
 all: setup chsdi/static/css/extended.min.css templates potomo rss lint fixrights
 
-setup: .venv gdal node_modules
+setup: .venv gdal node_modules .venv/hooks
 
 templates: .venv/last-version apache/wsgi.conf apache/tomcat-print.conf print/WEB-INF/web.xml development.ini production.ini
 
@@ -376,6 +376,11 @@ production.ini: production.ini.in
 		--var "vector_profilename=$(VECTOR_PROFILENAME)" \
 		--var "shortener_allowed_domains=$(SHORTENER_ALLOWED_DOMAINS)" $< > $@
 
+.venv/hooks: .venv/bin/git-secrets ./scripts/install-git-hooks.sh
+	@echo "${GREEN}Installing git hooks${RESET}";
+	./scripts/install-git-hooks.sh
+	touch $@
+
 requirements.txt:
 	@echo "${GREEN}File requirements.txt has changed${RESET}";
 .venv: requirements.txt
@@ -387,6 +392,14 @@ requirements.txt:
 	fi
 	${PYTHON_CMD} setup.py develop
 	${PIP_CMD} install Pillow==3.1.0
+
+.venv/bin/git-secrets: .venv
+	@echo "${GREEN}Installing git secrets${RESET}";
+	rm -rf .venv/git-secrets
+	git clone https://github.com/awslabs/git-secrets .venv/git-secrets
+	cd .venv/git-secrets && make install PREFIX=..
+	(git config --local --get-regexp secret && git config --remove-section secrets) || cd
+	.venv/bin/git-secrets --register-aws
 
 .venv/last-version::
 	mkdir -p $(dir $@)

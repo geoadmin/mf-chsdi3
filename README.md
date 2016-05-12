@@ -198,31 +198,24 @@ To autocorrect most linting mistakes
 make autolint
   ```
 
-*Add a pre-commit hook*
+## Git hooks
 
-1. Create a pre-commit file
+3 git hooks are installed automatically when `make user` is called.
 
-  ```bash
-touch .git/hooks/pre-commit
-  ```
+All the hooks check that we don't accidently publish sensitive AWS keys to
+github - in the files as well as in the commit messages. We also execute
+`make lint` in the pre-commit hook.
 
-2. Copy/paste the following script
+Other checks can be added freely to any hook.
 
-  ```bash
-#!/bin/bash
+### `pre-commit` hook
 
-make lint
-if [[ $? != 0 ]];
-then
-  echo "$(tput setaf 1) Nothing has been commited because of styling issues, please fix it according to the comments above $(tput sgr0)"
-  exit 1
-fi
-  ```
+Called before committing changes locally. The commands in the `scripts/pre-commit.sh` script are executed.
 
-3. Make this it executable
+### `commit-msg` hook
 
-  ```bash
-chmod +x .git/hooks/pre-commit
-  ```
+Called before comitting changes locally and checks the commit message. The commands in the `scripts/commit-msg.sh` script are executed.
 
-Now commits will be aborted if styling is not respected
+### `prepare-commit-msg` hook
+
+Called before comitting changes locally and checks pre-commit messages (usually from --fast-forward merges. The commands in the `scripts/prepare-commit-msg.sh` are executed.
