@@ -18,6 +18,10 @@ from geoalchemy2.types import Geometry
 from papyrus.geo_interface import GeoInterface
 
 
+Geometry2D = Geometry(geometry_type='GEOMETRY', dimension=2, srid=21781)
+Geometry3D = Geometry(geometry_type='GEOMETRY', dimension=3, srid=21781)
+
+
 def getResolution(imageDisplay, mapExtent):
     bounds = mapExtent.bounds
     mapMeterWidth = abs(bounds[0] - bounds[2])

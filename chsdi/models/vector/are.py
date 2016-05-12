@@ -2,10 +2,9 @@
 
 from sqlalchemy import Column, Text, Integer
 from sqlalchemy.types import Numeric
-from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector
+from chsdi.models.vector import Vector, Geometry2D, Geometry3D
 
 
 Base = bases['are']
@@ -26,8 +25,7 @@ class Landschaftstypen(Base, Vector):
     object_are = Column('object_are', Numeric)
     typ_area = Column('typ_area', Numeric)
     stand = Column('stand', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.are.landschaftstypen', Landschaftstypen)
 
@@ -39,10 +37,9 @@ class Alpenkonvention(Base, Vector):
     __bodId__ = 'ch.are.alpenkonvention'
     __label__ = 'stand'
     id = Column('row_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
     flaeche_ha = Column('flaeche_ha', Numeric)
     stand = Column('stand', Numeric)
+    the_geom = Column(Geometry3D)
 
 register('ch.are.alpenkonvention', Alpenkonvention)
 
@@ -54,12 +51,11 @@ class AggloIsoStaedte(Base, Vector):
     __bodId__ = 'ch.are.agglomerationen_isolierte_staedte'
     __label__ = 'name'
     id = Column('row_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     name = Column('name', Text)
     klasse_de = Column('klasse_de', Text)
     klasse_fr = Column('klasse_fr', Text)
     flaeche_ha = Column('flaeche_ha', Numeric)
+    the_geom = Column(Geometry2D)
 
 register('ch.are.agglomerationen_isolierte_staedte', AggloIsoStaedte)
 
@@ -73,8 +69,7 @@ class GueteklasseOev(Base, Vector):
     id = Column('id', Integer, primary_key=True)
     klasse_de = Column('klasse_de', Text)
     klasse_fr = Column('klasse_fr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.are.gueteklassen_oev', GueteklasseOev)
 
@@ -88,8 +83,7 @@ class Bevoelkerungsdichte(Base, Vector):
     id = Column('row_id', Integer, primary_key=True)
     popt_ha = Column('popt_ha', Numeric)
     stand = Column('stand', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.are.bevoelkerungsdichte', Bevoelkerungsdichte)
 
@@ -103,8 +97,7 @@ class Beschaeftigtendichte(Base, Vector):
     id = Column('row_id', Integer, primary_key=True)
     empt_ha = Column('empt_ha', Numeric)
     stand = Column('stand', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.are.beschaeftigtendichte', Beschaeftigtendichte)
 
@@ -120,8 +113,7 @@ class Bauzonen(Base, Vector):
     nutz_fr = Column('nutz_fr', Text)
     kt_kz = Column('kt_kz', Text)
     flaeche_qm = Column('flaeche_qm', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.are.bauzonen-2007', Bauzonen)
 
@@ -141,8 +133,7 @@ class Bauzonen_2012(Base, Vector):
     flaeche = Column('flaeche', Numeric)
     ch_bez_f = Column('ch_bez_f', Text)
     ch_bez_d = Column('ch_bez_d', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.are.bauzonen', Bauzonen_2012)
 
@@ -156,8 +147,7 @@ class Gemeindetyp(Base, Vector):
     id = Column('gde_no', Integer, primary_key=True)
     name = Column('name', Text)
     nom = Column('nom', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.are.gemeindetyp-1990-9klassen', Gemeindetyp)
 
@@ -177,7 +167,6 @@ class Gemeindetypen_2012(Base, Vector):
     kt_no = Column('kt_no', Text)
     kt_kz = Column('kt_kz', Text)
     flaeche_ha = Column('flaeche_ha', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.are.gemeindetypen', Gemeindetypen_2012)

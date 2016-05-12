@@ -5,7 +5,7 @@ from sqlalchemy.types import Numeric
 from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector
+from chsdi.models.vector import Vector, Geometry2D
 
 
 Base = bases['bafu']
@@ -23,8 +23,7 @@ class Vec25_gewaessernetz_2000(Base, Vector):
     objectval = Column('objectval', Text)
     gewissnr = Column('gewissnr', Integer)
     gwlnr = Column('gwlnr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.vec25-gewaessernetz_2000', Vec25_gewaessernetz_2000)
 
@@ -47,8 +46,7 @@ class Untersuchungsgebiete(Base, Vector):
     einzugsgebietsflaeche = Column('einzugsgebietsflaeche', Numeric)
     stationsseite_de = Column('stationsseite_de', Text)
     stationsseite_fr = Column('stationsseite_fr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologie-untersuchungsgebiete', Untersuchungsgebiete)
 
@@ -72,13 +70,12 @@ class Hochwassergrenzwertpegel(Base, Vector):
     fluss = Column('fluss', Text)
     m_beginn = Column('m_beginn', Text)
     m_ende = Column('m_ende', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologie-hochwassergrenzwertpegel', Hochwassergrenzwertpegel)
 
 
-class Atlas_kantonale_messstationen(Base, Vector):
+class AtlasKantonaleMessstationen(Base, Vector):
     __tablename__ = 'hydro_atlas_kant_messstationen'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologischer-atlas_kantonale-messstationen'
@@ -97,10 +94,9 @@ class Atlas_kantonale_messstationen(Base, Vector):
     einzugsgebietsflaeche = Column('einzugsgebietsflaeche', Numeric)
     bilanzgebietsnummer = Column('bilanzgebietsnummer', Integer)
     vergletscherung = Column('vergletscherung', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
-register('ch.bafu.hydrologischer-atlas_kantonale-messstationen', Atlas_kantonale_messstationen)
+register('ch.bafu.hydrologischer-atlas_kantonale-messstationen', AtlasKantonaleMessstationen)
 
 
 class Daueruntersuchung_fliessgewaesser(Base, Vector):
@@ -125,8 +121,7 @@ class Daueruntersuchung_fliessgewaesser(Base, Vector):
     hyperlink_d = Column('hyperlink_d', Text)
     hyperlink_f = Column('hyperlink_f', Text)
     hyperlink_daten = Column('hyperlink_daten', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser', Daueruntersuchung_fliessgewaesser)
 
@@ -153,8 +148,7 @@ class Vec25_seen(Base, Vector):
     hoehenlage_muem = Column('hoehenlage_muem', Integer)
     uferlaenge_m = Column('uferlaenge_m', Integer)
     gwlnr = Column('gwlnr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.vec25-seen', Vec25_seen)
 
@@ -172,8 +166,7 @@ class Hydro_Atlas_Flussgebiete(Base, Vector):
     flussgebiet = Column('flussgebiet', Integer)
     shape_area = Column('shape_area', Numeric)
     umfang = Column('umfang', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologischer-atlas_flussgebiete', Hydro_Atlas_Flussgebiete)
 
@@ -191,8 +184,7 @@ class Hydro_Atlas_Bilanzgebiete(Base, Vector):
     flussgebiet = Column('flussgebiet', Integer)
     shape_area = Column('shape_area', Numeric)
     umfang = Column('umfang', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologischer-atlas_bilanzgebiete', Hydro_Atlas_Bilanzgebiete)
 
@@ -218,8 +210,7 @@ class Hydro_Atlas_Basisgebiete(Base, Vector):
     jahrtemp_g = Column('jahrtemp_g', Numeric)
     winttemp_g = Column('winttemp_g', Numeric)
     shape_area = Column('shape_area', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologischer-atlas_basisgebiete', Hydro_Atlas_Basisgebiete)
 
@@ -236,8 +227,7 @@ class Niedrigwasserstatistik(Base, Vector):
     url_nqpdf = Column('url_nqpdf', Text)
     hyperlink_de = Column('hyperlink_d', Text)
     hyperlink_fr = Column('hyperlink_f', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologie-niedrigwasserstatistik', Niedrigwasserstatistik)
 
@@ -267,8 +257,7 @@ class Typ_fliessgewaesser(Base, Vector):
     url_uebersicht_de = Column('url_uebersicht_de', Text)
     url_uebersicht_fr = Column('url_uebersicht_fr', Text)
     name = Column('name', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.typisierung-fliessgewaesser', Typ_fliessgewaesser)
 
@@ -295,8 +284,7 @@ class Wasser_Vermessungsstrecken(Base, Vector):
     aufnahme_intervall = Column('aufnahme_intervall', Integer)
     aufnahme_letzte = Column('aufnahme_letzte', Integer)
     gwlnr = Column('gwlnr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasserbau-vermessungsstrecken', Wasser_Vermessungsstrecken)
 
@@ -305,7 +293,8 @@ class Mittlere_abfluesse(Base, Vector):
     __tablename__ = 'mittlere_abfluesse'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.mittlere-abfluesse'
-    __queryable_attributes__ = ['mqn_jahr', 'mqn_jan', 'mqn_feb', 'mqn_mar', 'mqn_apr', 'mqn_mai', 'mqn_jun', 'mqn_jul', 'mqn_aug', 'mqn_sep', 'mqn_okt', 'mqn_nov', 'mqn_dez', 'regimetyp', 'regimenummer', 'abflussvar']
+    __queryable_attributes__ = ['mqn_jahr', 'mqn_jan', 'mqn_feb', 'mqn_mar', 'mqn_apr', 'mqn_mai', 'mqn_jun', 'mqn_jul',
+                                'mqn_aug', 'mqn_sep', 'mqn_okt', 'mqn_nov', 'mqn_dez', 'regimetyp', 'regimenummer', 'abflussvar']
     __template__ = 'templates/htmlpopup/mittlere_abfluesse.mako'
     __extended_info__ = True
     __label__ = 'regimenummer'
@@ -326,7 +315,7 @@ class Mittlere_abfluesse(Base, Vector):
     regimetyp = Column('regimetyp', Text)
     regimenummer = Column('regimenummer', Integer)
     abflussvar = Column('abflussvar', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY', dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.mittlere-abfluesse', Mittlere_abfluesse)
 
@@ -347,7 +336,7 @@ class Wasserbau_querprofilmarken(Base, Vector):
     azimut = Column('azimut', Integer)
     herkunft = Column('herkunft', Text)
     bemerkung = Column('bemerkung', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY', dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasserbau-querprofilmarken', Wasserbau_querprofilmarken)
 
@@ -394,7 +383,7 @@ class Feststoffe_geschiebemessnetz(Base, Vector):
     lage_fr = Column('lage_fr', Text)
     platz_de = Column('platz_de', Text)
     platz_fr = Column('platz_fr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY', dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.feststoffe-geschiebemessnetz', Feststoffe_geschiebemessnetz)
 
@@ -421,8 +410,8 @@ class Hydro_q347(Base, Vector):
     qmod = Column('qmod', Numeric)
     bemerkung = Column('bemerkung', Text)
     symbolisierung = Column('symbolisierung', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
+
 register('ch.bafu.hydrologie-q347', Hydro_q347)
 
 
@@ -443,8 +432,7 @@ class HUG_stationen(Base, Vector):
     flussgebiet = Column('flussgebiet', Text)
     hyperlink_f = Column('hyperlink_f', Text)
     hyperlink_d = Column('hyperlink_d', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologie-untersuchungsgebiete_stationen', HUG_stationen)
 
@@ -456,8 +444,7 @@ class Hintergrundkarte(Base, Vector):
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologie-hintergrundkarte', Hintergrundkarte)
 
@@ -476,13 +463,12 @@ class Strukturguete_hochrhein_linkesufer(Base, Vector):
     lufer = Column('l_ufer', Integer)
     rufer = Column('r_ufer', Integer)
     sohle = Column('sohle', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.strukturguete-hochrhein_linkesufer', Strukturguete_hochrhein_linkesufer)
 
 
-class Strukturguete_hochrhein_linkesumfeld(Base, Vector):
+class StrukturgueteHochrheinLinkesumfeld(Base, Vector):
     __tablename__ = 'strukturguete_hochrhein'
     __table_args__ = ({'schema': 'wasser', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.strukturguete-hochrhein_linkesumfeld'
@@ -496,13 +482,12 @@ class Strukturguete_hochrhein_linkesumfeld(Base, Vector):
     lufer = Column('l_ufer', Integer)
     rufer = Column('r_ufer', Integer)
     sohle = Column('sohle', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
-register('ch.bafu.strukturguete-hochrhein_linkesumfeld', Strukturguete_hochrhein_linkesumfeld)
+register('ch.bafu.strukturguete-hochrhein_linkesumfeld', StrukturgueteHochrheinLinkesumfeld)
 
 
-class Strukturguete_hochrhein_rechtesumfeld(Base, Vector):
+class StrukturgueteHochrheinRechtesumfeld(Base, Vector):
     __tablename__ = 'strukturguete_hochrhein'
     __table_args__ = ({'schema': 'wasser', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.strukturguete-hochrhein_rechtesumfeld'
@@ -516,13 +501,12 @@ class Strukturguete_hochrhein_rechtesumfeld(Base, Vector):
     lufer = Column('l_ufer', Integer)
     rufer = Column('r_ufer', Integer)
     sohle = Column('sohle', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
-register('ch.bafu.strukturguete-hochrhein_rechtesumfeld', Strukturguete_hochrhein_rechtesumfeld)
+register('ch.bafu.strukturguete-hochrhein_rechtesumfeld', StrukturgueteHochrheinRechtesumfeld)
 
 
-class Strukturguete_hochrhein_rechtesufer(Base, Vector):
+class StrukturgueteHochrheinRechtesufer(Base, Vector):
     __tablename__ = 'strukturguete_hochrhein'
     __table_args__ = ({'schema': 'wasser', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.strukturguete-hochrhein_rechtesufer'
@@ -536,13 +520,12 @@ class Strukturguete_hochrhein_rechtesufer(Base, Vector):
     lufer = Column('l_ufer', Integer)
     rufer = Column('r_ufer', Integer)
     sohle = Column('sohle', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
-register('ch.bafu.strukturguete-hochrhein_rechtesufer', Strukturguete_hochrhein_rechtesufer)
+register('ch.bafu.strukturguete-hochrhein_rechtesufer', StrukturgueteHochrheinRechtesufer)
 
 
-class Strukturguete_hochrhein_sohle(Base, Vector):
+class StrukturgueteHochrheinSohle(Base, Vector):
     __tablename__ = 'strukturguete_hochrhein'
     __table_args__ = ({'schema': 'wasser', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.strukturguete-hochrhein_sohle'
@@ -556,13 +539,12 @@ class Strukturguete_hochrhein_sohle(Base, Vector):
     lufer = Column('l_ufer', Integer)
     rufer = Column('r_ufer', Integer)
     sohle = Column('sohle', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
-register('ch.bafu.strukturguete-hochrhein_sohle', Strukturguete_hochrhein_sohle)
+register('ch.bafu.strukturguete-hochrhein_sohle', StrukturgueteHochrheinSohle)
 
 
-class Gewaesserschutz_badewasserqualitaet(Base, Vector):
+class GewaesserschutzBadewasserqualitaet(Base, Vector):
     __tablename__ = 'gewaesserschutz_badewasserqualitaet'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.gewaesserschutz-badewasserqualitaet'
@@ -586,10 +568,9 @@ class Gewaesserschutz_badewasserqualitaet(Base, Vector):
     kanton = Column('kanton', Text)
     latbw = Column('longitude', Numeric)
     lonbw = Column('latitude', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
-register('ch.bafu.gewaesserschutz-badewasserqualitaet', Gewaesserschutz_badewasserqualitaet)
+register('ch.bafu.gewaesserschutz-badewasserqualitaet', GewaesserschutzBadewasserqualitaet)
 
 
 class AM_G(Base, Vector):
@@ -600,8 +581,7 @@ class AM_G(Base, Vector):
     __label__ = 'am_g_name'
     id = Column('am_g_obj', Integer, primary_key=True)
     am_g_name = Column('am_g_name', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-amphibien_wanderobjekte', AM_G)
 
@@ -618,8 +598,7 @@ class AM_L(Base, Vector):
     am_l_fl = Column('am_l_fl', Text)
     am_l_berei = Column('am_l_berei', Text)
     am_l_gf = Column('am_l_gf', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-amphibien', AM_L)
 
@@ -632,8 +611,7 @@ class LHG(Base, Vector):
     __label__ = 'lhg_name'
     id = Column('edv_nr4', Text, primary_key=True)
     lhg_name = Column('lhg_name', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologie-hydromessstationen', LHG)
 
@@ -648,181 +626,88 @@ class Temperaturmessnetz(Base, Vector):
     id = Column('nr', Integer, primary_key=True)
     url = Column('url', Text)
     name = Column('name', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologie-wassertemperaturmessstationen', Temperaturmessnetz)
 
 
-class Klaeranlagen_q347(Base, Vector):
-    __tablename__ = 'klaeranlagen'
+class GewaesserschutzTemplate:
     __table_args__ = ({'schema': 'wasser', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/klaeranlagen.mako'
+    __extended_info__ = True
+    __label__ = 'name'
+    __queryable_attributes__ = ['nummer', 'name', 'ort', 'name_vorfluter', 'gewiss_nr', 'reinigungstyp', 'abw_tagesmittel', 'abw_tagesspitze',
+                                'spitzenbelastung_regen', 'rohabwasser_tag', 'frischschlamm_tag', 'stabilisierter_schlamm_tag', 'bsb5anteil',
+                                'bsb5absolut', 'csbanteil', 'csbabsolut', 'docanteil', 'docabsolut', 'nh4_nanteil', 'nh4_nabsolut', 'nh4_n_ganzjaehrig',
+                                'nanteil', 'nabsolut', 'n_abwassertemperatur', 'gesamtpanteil', 'gesamtpabsolut', 'gesamt_ungel_stoffe_absolut',
+                                'andere_stoffe', 'kanton', 'vsa_kategorie', 'ausbaugroesse_egw', 'anzahl_nat_einwohner', 'jahr_nat_einwohner', 'abwasseranteil_q347', 'gwlnr']
+    id = Column('nummer', Integer, primary_key=True)
+    name = Column('name', Text)
+    rechtswert = Column('rechtswert', Integer)
+    hochwert = Column('hochwert', Integer)
+    hoehe = Column('hoehe', Integer)
+    adresse = Column('adresse', Text)
+    plz = Column('plz', Integer)
+    ort = Column('ort', Text)
+    tel_nr = Column('tel_nr', Text)
+    vorfluterbez = Column('vorfluterbez', Text)
+    name_vorfluter = Column('name_vorfluter', Text)
+    gewiss_nr = Column('gewiss_nr', Integer)
+    reinigungstyp = Column('reinigungstyp', Text)
+    abw_tagesmittel = Column('abw_tagesmittel', Integer)
+    abw_tagesspitze = Column('abw_tagesspitze', Integer)
+    spitzenbelastung_regen = Column('spitzenbelastung_regen', Integer)
+    rohabwasser_tag = Column('rohabwasser_tag', Integer)
+    frischschlamm_tag = Column('frischschlamm_tag', Integer)
+    stabilisierter_schlamm_tag = Column('stabilisierter_schlamm_tag', Integer)
+    bsb5anteil = Column('bsb5anteil', Integer)
+    bsb5absolut = Column('bsb5absolut', Integer)
+    csbanteil = Column('csbanteil', Integer)
+    csbabsolut = Column('csbabsolut', Integer)
+    docanteil = Column('docanteil', Integer)
+    docabsolut = Column('docabsolut', Integer)
+    nh4_nanteil = Column('nh4_nanteil', Integer)
+    nh4_nabsolut = Column('nh4_nabsolut', Integer)
+    nh4_n_ganzjaehrig = Column('nh4_n_ganzjaehrig', Text)
+    nanteil = Column('nanteil', Integer)
+    nabsolut = Column('nabsolut', Integer)
+    n_abwassertemperatur = Column('n_abwassertemperatur', Integer)
+    gesamtpanteil = Column('gesamtpanteil', Integer)
+    gesamtpabsolut = Column('gesamtpabsolut', Numeric)
+    gesamt_ungel_stoffe_absolut = Column('gesamt_ungel_stoffe_absolut', Integer)
+    andere_stoffe = Column('andere_stoffe', Text)
+    kanton = Column('kanton', Text)
+    vsa_kategorie = Column('vsa_kategorie', Text)
+    ausbaugroesse_egw = Column('ausbaugroesse_egw', Integer)
+    anzahl_nat_einwohner = Column('anzahl_nat_einwohner', Integer)
+    jahr_nat_einwohner = Column('jahr_nat_einwohner', Integer)
+    abwasseranteil_q347 = Column('abwasseranteil_q347', Numeric)
+    gwlnr = Column('gwlnr', Text)
+    the_geom = Column(Geometry2D)
+
+
+class KlaeranlagenQ347(Base, GewaesserschutzTemplate, Vector):
+    __tablename__ = 'klaeranlagen'
     __bodId__ = 'ch.bafu.gewaesserschutz-klaeranlagen_anteilq347'
-    __queryable_attributes__ = ['nummer', 'name', 'ort', 'name_vorfluter', 'gewiss_nr', 'reinigungstyp', 'abw_tagesmittel', 'abw_tagesspitze', 'spitzenbelastung_regen', 'rohabwasser_tag', 'frischschlamm_tag', 'stabilisierter_schlamm_tag', 'bsb5anteil', 'bsb5absolut', 'csbanteil', 'csbabsolut', 'docanteil', 'docabsolut', 'nh4_nanteil', 'nh4_nabsolut', 'nh4_n_ganzjaehrig', 'nanteil', 'nabsolut', 'n_abwassertemperatur', 'gesamtpanteil', 'gesamtpabsolut', 'gesamt_ungel_stoffe_absolut', 'andere_stoffe', 'kanton', 'vsa_kategorie', 'ausbaugroesse_egw', 'anzahl_nat_einwohner', 'jahr_nat_einwohner', 'abwasseranteil_q347', 'gwlnr']
-    __template__ = 'templates/htmlpopup/klaeranlagen.mako'
-    __extended_info__ = True
-    __label__ = 'name'
-    id = Column('nummer', Integer, primary_key=True)
-    name = Column('name', Text)
-    rechtswert = Column('rechtswert', Integer)
-    hochwert = Column('hochwert', Integer)
-    hoehe = Column('hoehe', Integer)
-    adresse = Column('adresse', Text)
-    plz = Column('plz', Integer)
-    ort = Column('ort', Text)
-    tel_nr = Column('tel_nr', Text)
-    vorfluterbez = Column('vorfluterbez', Text)
-    name_vorfluter = Column('name_vorfluter', Text)
-    gewiss_nr = Column('gewiss_nr', Integer)
-    reinigungstyp = Column('reinigungstyp', Text)
-    abw_tagesmittel = Column('abw_tagesmittel', Integer)
-    abw_tagesspitze = Column('abw_tagesspitze', Integer)
-    spitzenbelastung_regen = Column('spitzenbelastung_regen', Integer)
-    rohabwasser_tag = Column('rohabwasser_tag', Integer)
-    frischschlamm_tag = Column('frischschlamm_tag', Integer)
-    stabilisierter_schlamm_tag = Column('stabilisierter_schlamm_tag', Integer)
-    bsb5anteil = Column('bsb5anteil', Integer)
-    bsb5absolut = Column('bsb5absolut', Integer)
-    csbanteil = Column('csbanteil', Integer)
-    csbabsolut = Column('csbabsolut', Integer)
-    docanteil = Column('docanteil', Integer)
-    docabsolut = Column('docabsolut', Integer)
-    nh4_nanteil = Column('nh4_nanteil', Integer)
-    nh4_nabsolut = Column('nh4_nabsolut', Integer)
-    nh4_n_ganzjaehrig = Column('nh4_n_ganzjaehrig', Text)
-    nanteil = Column('nanteil', Integer)
-    nabsolut = Column('nabsolut', Integer)
-    n_abwassertemperatur = Column('n_abwassertemperatur', Integer)
-    gesamtpanteil = Column('gesamtpanteil', Integer)
-    gesamtpabsolut = Column('gesamtpabsolut', Numeric)
-    gesamt_ungel_stoffe_absolut = Column('gesamt_ungel_stoffe_absolut', Integer)
-    andere_stoffe = Column('andere_stoffe', Text)
-    kanton = Column('kanton', Text)
-    vsa_kategorie = Column('vsa_kategorie', Text)
-    ausbaugroesse_egw = Column('ausbaugroesse_egw', Integer)
-    anzahl_nat_einwohner = Column('anzahl_nat_einwohner', Integer)
-    jahr_nat_einwohner = Column('jahr_nat_einwohner', Integer)
-    abwasseranteil_q347 = Column('abwasseranteil_q347', Numeric)
-    gwlnr = Column('gwlnr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
 
-register('ch.bafu.gewaesserschutz-klaeranlagen_anteilq347', Klaeranlagen_q347)
+register('ch.bafu.gewaesserschutz-klaeranlagen_anteilq347', KlaeranlagenQ347)
 
 
-class Reinigungstyp(Base, Vector):
+class Reinigungstyp(Base, GewaesserschutzTemplate, Vector):
     __tablename__ = 'klaeranlagen'
-    __table_args__ = ({'schema': 'wasser', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp'
-    __queryable_attributes__ = ['nummer', 'name', 'ort', 'name_vorfluter', 'gewiss_nr', 'reinigungstyp', 'abw_tagesmittel', 'abw_tagesspitze', 'spitzenbelastung_regen', 'rohabwasser_tag', 'frischschlamm_tag', 'stabilisierter_schlamm_tag', 'bsb5anteil', 'bsb5absolut', 'csbanteil', 'csbabsolut', 'docanteil', 'docabsolut', 'nh4_nanteil', 'nh4_nabsolut', 'nh4_n_ganzjaehrig', 'nanteil', 'nabsolut', 'n_abwassertemperatur', 'gesamtpanteil', 'gesamtpabsolut', 'gesamt_ungel_stoffe_absolut', 'andere_stoffe', 'kanton', 'vsa_kategorie', 'ausbaugroesse_egw', 'anzahl_nat_einwohner', 'jahr_nat_einwohner', 'abwasseranteil_q347', 'gwlnr']
-    __template__ = 'templates/htmlpopup/klaeranlagen.mako'
-    __extended_info__ = True
-    __label__ = 'name'
-    id = Column('nummer', Integer, primary_key=True)
-    name = Column('name', Text)
-    rechtswert = Column('rechtswert', Integer)
-    hochwert = Column('hochwert', Integer)
-    hoehe = Column('hoehe', Integer)
-    adresse = Column('adresse', Text)
-    plz = Column('plz', Integer)
-    ort = Column('ort', Text)
-    tel_nr = Column('tel_nr', Text)
-    vorfluterbez = Column('vorfluterbez', Text)
-    name_vorfluter = Column('name_vorfluter', Text)
-    gewiss_nr = Column('gewiss_nr', Integer)
-    reinigungstyp = Column('reinigungstyp', Text)
-    abw_tagesmittel = Column('abw_tagesmittel', Integer)
-    abw_tagesspitze = Column('abw_tagesspitze', Integer)
-    spitzenbelastung_regen = Column('spitzenbelastung_regen', Integer)
-    rohabwasser_tag = Column('rohabwasser_tag', Integer)
-    frischschlamm_tag = Column('frischschlamm_tag', Integer)
-    stabilisierter_schlamm_tag = Column('stabilisierter_schlamm_tag', Integer)
-    bsb5anteil = Column('bsb5anteil', Integer)
-    bsb5absolut = Column('bsb5absolut', Integer)
-    csbanteil = Column('csbanteil', Integer)
-    csbabsolut = Column('csbabsolut', Integer)
-    docanteil = Column('docanteil', Integer)
-    docabsolut = Column('docabsolut', Integer)
-    nh4_nanteil = Column('nh4_nanteil', Integer)
-    nh4_nabsolut = Column('nh4_nabsolut', Integer)
-    nh4_n_ganzjaehrig = Column('nh4_n_ganzjaehrig', Text)
-    nanteil = Column('nanteil', Integer)
-    nabsolut = Column('nabsolut', Integer)
-    n_abwassertemperatur = Column('n_abwassertemperatur', Integer)
-    gesamtpanteil = Column('gesamtpanteil', Integer)
-    gesamtpabsolut = Column('gesamtpabsolut', Numeric)
-    gesamt_ungel_stoffe_absolut = Column('gesamt_ungel_stoffe_absolut', Integer)
-    andere_stoffe = Column('andere_stoffe', Text)
-    kanton = Column('kanton', Text)
-    vsa_kategorie = Column('vsa_kategorie', Text)
-    ausbaugroesse_egw = Column('ausbaugroesse_egw', Integer)
-    anzahl_nat_einwohner = Column('anzahl_nat_einwohner', Integer)
-    jahr_nat_einwohner = Column('jahr_nat_einwohner', Integer)
-    abwasseranteil_q347 = Column('abwasseranteil_q347', Numeric)
-    gwlnr = Column('gwlnr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
 
 register('ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp', Reinigungstyp)
 
 
-class Klaeranlagen_ausbaugroesse(Base, Vector):
+class KlaeranlagenAusbaugroesse(Base, GewaesserschutzTemplate, Vector):
     __tablename__ = 'klaeranlagen'
-    __table_args__ = ({'schema': 'wasser', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse'
-    __queryable_attributes__ = ['nummer', 'name', 'ort', 'name_vorfluter', 'gewiss_nr', 'reinigungstyp', 'abw_tagesmittel', 'abw_tagesspitze', 'spitzenbelastung_regen', 'rohabwasser_tag', 'frischschlamm_tag', 'stabilisierter_schlamm_tag', 'bsb5anteil', 'bsb5absolut', 'csbanteil', 'csbabsolut', 'docanteil', 'docabsolut', 'nh4_nanteil', 'nh4_nabsolut', 'nh4_n_ganzjaehrig', 'nanteil', 'nabsolut', 'n_abwassertemperatur', 'gesamtpanteil', 'gesamtpabsolut', 'gesamt_ungel_stoffe_absolut', 'andere_stoffe', 'kanton', 'vsa_kategorie', 'ausbaugroesse_egw', 'anzahl_nat_einwohner', 'jahr_nat_einwohner', 'abwasseranteil_q347', 'gwlnr']
-    __template__ = 'templates/htmlpopup/klaeranlagen.mako'
-    __extended_info__ = True
-    __label__ = 'name'
-    id = Column('nummer', Integer, primary_key=True)
-    name = Column('name', Text)
-    rechtswert = Column('rechtswert', Integer)
-    hochwert = Column('hochwert', Integer)
-    hoehe = Column('hoehe', Integer)
-    adresse = Column('adresse', Text)
-    plz = Column('plz', Integer)
-    ort = Column('ort', Text)
-    tel_nr = Column('tel_nr', Text)
-    vorfluterbez = Column('vorfluterbez', Text)
-    name_vorfluter = Column('name_vorfluter', Text)
-    gewiss_nr = Column('gewiss_nr', Integer)
-    reinigungstyp = Column('reinigungstyp', Text)
-    abw_tagesmittel = Column('abw_tagesmittel', Integer)
-    abw_tagesspitze = Column('abw_tagesspitze', Integer)
-    spitzenbelastung_regen = Column('spitzenbelastung_regen', Integer)
-    rohabwasser_tag = Column('rohabwasser_tag', Integer)
-    frischschlamm_tag = Column('frischschlamm_tag', Integer)
-    stabilisierter_schlamm_tag = Column('stabilisierter_schlamm_tag', Integer)
-    bsb5anteil = Column('bsb5anteil', Integer)
-    bsb5absolut = Column('bsb5absolut', Integer)
-    csbanteil = Column('csbanteil', Integer)
-    csbabsolut = Column('csbabsolut', Integer)
-    docanteil = Column('docanteil', Integer)
-    docabsolut = Column('docabsolut', Integer)
-    nh4_nanteil = Column('nh4_nanteil', Integer)
-    nh4_nabsolut = Column('nh4_nabsolut', Integer)
-    nh4_n_ganzjaehrig = Column('nh4_n_ganzjaehrig', Text)
-    nanteil = Column('nanteil', Integer)
-    nabsolut = Column('nabsolut', Integer)
-    n_abwassertemperatur = Column('n_abwassertemperatur', Integer)
-    gesamtpanteil = Column('gesamtpanteil', Integer)
-    gesamtpabsolut = Column('gesamtpabsolut', Numeric)
-    gesamt_ungel_stoffe_absolut = Column('gesamt_ungel_stoffe_absolut', Integer)
-    andere_stoffe = Column('andere_stoffe', Text)
-    kanton = Column('kanton', Text)
-    vsa_kategorie = Column('vsa_kategorie', Text)
-    ausbaugroesse_egw = Column('ausbaugroesse_egw', Integer)
-    anzahl_nat_einwohner = Column('anzahl_nat_einwohner', Integer)
-    jahr_nat_einwohner = Column('jahr_nat_einwohner', Integer)
-    abwasseranteil_q347 = Column('abwasseranteil_q347', Numeric)
-    gwlnr = Column('gwlnr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
 
-register('ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse', Klaeranlagen_ausbaugroesse)
+register('ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse', KlaeranlagenAusbaugroesse)
 
 
-class Flussordnungszahlen_strahler(Base, Vector):
+class FlussordnungszahlenStrahler(Base, Vector):
     __tablename__ = 'flussordnungszahlen'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.flussordnungszahlen-strahler'
@@ -832,13 +717,12 @@ class Flussordnungszahlen_strahler(Base, Vector):
     arc_id = Column('arc_id', Integer)
     floz = Column('floz', Integer)
     main_len = Column('main_len', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
-register('ch.bafu.flussordnungszahlen-strahler', Flussordnungszahlen_strahler)
+register('ch.bafu.flussordnungszahlen-strahler', FlussordnungszahlenStrahler)
 
 
-class Grundwasserschutzareale (Base, Vector):
+class Grundwasserschutzareale(Base, Vector):
     __tablename__ = 'grundwasserschutzareale'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.grundwasserschutzareale'
@@ -856,13 +740,12 @@ class Grundwasserschutzareale (Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     status_en = Column('status_en', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.grundwasserschutzareale', Grundwasserschutzareale)
 
 
-class Grundwasserschutzzonen (Base, Vector):
+class Grundwasserschutzzonen(Base, Vector):
     __tablename__ = 'grundwasserschutzzonen'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.grundwasserschutzzonen'
@@ -880,8 +763,7 @@ class Grundwasserschutzzonen (Base, Vector):
     status_fr = Column('status_fr', Text)
     status_it = Column('status_it', Text)
     status_en = Column('status_en', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.grundwasserschutzzonen', Grundwasserschutzzonen)
 
@@ -899,8 +781,7 @@ class Gewaesserschutzbereiche (Base, Vector):
     typ_it = Column('typ_it', Text)
     typ_en = Column('typ_en', Text)
     source = Column('source', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.gewaesserschutzbereiche', Gewaesserschutzbereiche)
 
@@ -919,8 +800,7 @@ class Vorfluter (Base, Vector):
     name = Column('name', Text)
     regimenr = Column('regimenr', Integer)
     regimetyp = Column('regimetyp', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasser-vorfluter', Vorfluter)
 
@@ -936,8 +816,7 @@ class Gewaesserzustandst (Base, Vector):
     name = Column('name', Text)
     nr = Column('nr', Numeric)
     gewaesser = Column('gewaesser', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologie-gewaesserzustandsmessstationen', Gewaesserzustandst)
 
@@ -998,8 +877,7 @@ class Teileinzugsgebiete2 (Base, Vector):
     ext_abfluesse_mqn_dez = Column('ext_abfluesse_mqn_dez', Numeric)
     ext_ezg_datenausgabe = Column('ext_ezg_datenausgabe', Integer)
     ext_abfluesse_abflussvar = Column('ext_abfluesse_abflussvar', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
     ext_the_geom = Column('ext_the_geom', Geometry(geometry_type='GEOMETRYCOLLECTION',
                                                    dimension=2, srid=21781))
 
@@ -1015,8 +893,7 @@ class Teileinzugsgebiete40 (Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     tezgnr40 = Column('tezgnr40', Integer)
     teilezgfla = Column('teilezgfla', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasser-teileinzugsgebiete_40', Teileinzugsgebiete40)
 
@@ -1048,8 +925,7 @@ class Gebietsauslaesse (Base, Vector):
     bebautefl = Column('bebautefl', Text)
     landwirtsc = Column('landwirtsc', Text)
     wald_natur = Column('wald_natur', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasser-gebietsauslaesse', Gebietsauslaesse)
 
@@ -1066,8 +942,7 @@ class AU(Base, Vector):
     au_obj = Column('au_obj', Integer)
     au_objtyp = Column('au_objtyp', Text)
     au_fl = Column('au_fl', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-auen', AU)
 
@@ -1084,8 +959,7 @@ class AuenVegetationsKarten(Base, Vector):
     auveg_obj = Column('auveg_obj', Integer)
     auveg_jahr = Column('auveg_jahr', Integer)
     auveg_k22 = Column('auveg_k22', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.auen-vegetationskarten', AuenVegetationsKarten)
 
@@ -1098,11 +972,10 @@ class BLN(Base, Vector):
     __template__ = 'templates/htmlpopup/bln.mako'
     __label__ = 'bln_name'
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     bln_name = Column('bln_name', Text)
     bln_obj = Column('bln_obj', Integer)
     bln_fl = Column('bln_fl', Numeric)
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-bln', BLN)
 
@@ -1119,8 +992,7 @@ class HM(Base, Vector):
     hm_typ = Column('hm_typ', Integer)
     hm_fl = Column('hm_fl', Numeric)
     hm_ke = Column('hm_ke', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-hochmoore', HM)
 
@@ -1136,8 +1008,7 @@ class HMA(Base, Vector):
     obj_name = Column('obj_name', Text)
     tobj_type = Column('tobj_type', Text)
     flaeche = Column('flaeche', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-hochmoore_anhoerung', HMA)
 
@@ -1152,8 +1023,7 @@ class TTA(Base, Vector):
     obj_nr = Column('obj_nr', Text)
     obj_name = Column('obj_name', Text)
     flaeche = Column('flaeche', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung', TTA)
 
@@ -1168,8 +1038,7 @@ class MLA(Base, Vector):
     obj_nr = Column('obj_nr', Text)
     obj_name = Column('obj_name', Text)
     flaeche = Column('flaeche', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-moorlandschaften_anhoerung', MLA)
 
@@ -1184,8 +1053,7 @@ class FMA(Base, Vector):
     obj_nr = Column('obj_nr', Text)
     obj_name = Column('obj_name', Text)
     flaeche = Column('flaeche', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-flachmoore_anhoerung', FMA)
 
@@ -1200,8 +1068,7 @@ class AA(Base, Vector):
     obj_nr = Column('obj_nr', Text)
     obj_name = Column('obj_name', Text)
     flaeche = Column('flaeche', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-auen_anhoerung', AA)
 
@@ -1215,8 +1082,7 @@ class AWA(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     obj_nr = Column('obj_nr', Text)
     obj_name = Column('obj_name', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung', AWA)
 
@@ -1232,8 +1098,7 @@ class AMA(Base, Vector):
     obj_name = Column('obj_name', Text)
     bereich = Column('bereich', Text)
     flaeche = Column('flaeche', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-amphibien_anhoerung', AMA)
 
@@ -1246,13 +1111,12 @@ class JB(Base, Vector):
     __template__ = 'templates/htmlpopup/jb.mako'
     __label__ = 'jb_name'  # Composite labels
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     jb_name = Column('jb_name', Text)
     jb_obj = Column('jb_obj', Integer)
     jb_kat = Column('jb_kat', Text)
     jb_fl = Column('jb_fl', Numeric)
     jb_gf = Column('jb_gf', Numeric)
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-jagdbanngebiete', JB)
 
@@ -1267,8 +1131,7 @@ class ML(Base, Vector):
     ml_name = Column('ml_name', Text)
     ml_obj = Column('ml_obj', Integer)
     ml_fl = Column('ml_fl', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-moorlandschaften', ML)
 
@@ -1285,8 +1148,7 @@ class WV(Base, Vector):
     wv_kat = Column('wv_kat', Text)
     wv_fl = Column('wv_fl', Numeric)
     wv_gf = Column('wv_gf', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-vogelreservate', WV)
 
@@ -1303,8 +1165,7 @@ class wasserentnahmeAll(Base, Vector):
     kantoncode = Column('kantoncode', Text)
     ent_gew = Column('ent_gew', Text)
     link = Column('link', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasser-entnahme', wasserentnahmeAll)
 
@@ -1319,8 +1180,7 @@ class wasserleitungen(Base, Vector):
     kanton = Column('kanton', Text)
     kantoncode = Column('kantoncode', Text)
     rwknr = Column('rwknr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasser-leitungen', wasserleitungen)
 
@@ -1335,8 +1195,7 @@ class wasserrueckgabe(Base, Vector):
     kanton = Column('kanton', Text)
     kantoncode = Column('kantoncode', Text)
     rwknr = Column('rwknr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasser-rueckgabe', wasserrueckgabe)
 
@@ -1351,8 +1210,7 @@ class flachmoore(Base, Vector):
     fm_name = Column('fm_name', Text)
     fm_obj = Column('fm_obj', Text)
     fm_gf = Column('fm_gf', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-flachmoore', flachmoore)
 
@@ -1367,8 +1225,7 @@ class flachmooreReg(Base, Vector):
     fmreg_name = Column('fmreg_name', Text)
     fmreg_obj = Column('fmreg_obj', Text)
     fmreg_gf = Column('fmreg_gf', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-flachmoore_regional', flachmooreReg)
 
@@ -1384,8 +1241,7 @@ class schutzgebiete_aulav_auen(Base, Vector):
     key_name = Column('au_name', Text)
     key_version = Column('au_version', Text)
     typ = Column('typ', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-aulav_auen', schutzgebiete_aulav_auen)
 
@@ -1398,8 +1254,7 @@ class schutzgebiete_aulav_auen_general(Base, Vector):
     __minscale__ = 10001
     __maxscale__ = 5000000
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-aulav_auen', schutzgebiete_aulav_auen_general)
 
@@ -1415,8 +1270,7 @@ class schutzgebiete_aulav_jagdbanngebiete(Base, Vector):
     key_name = Column('jb_name', Text)
     key_version = Column('jb_version', Text)
     typ = Column('typ', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-aulav_jagdbanngebiete', schutzgebiete_aulav_jagdbanngebiete)
 
@@ -1429,8 +1283,7 @@ class schutzgebiete_aulav_jagdbanngebiete_general(Base, Vector):
     __minscale__ = 10001
     __maxscale__ = 5000000
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-aulav_jagdbanngebiete', schutzgebiete_aulav_jagdbanngebiete_general)
 
@@ -1446,8 +1299,7 @@ class schutzgebiete_aulav_moorlandschaften(Base, Vector):
     key_name = Column('ml_name', Text)
     key_version = Column('ml_version', Text)
     typ = Column('typ', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-aulav_moorlandschaften', schutzgebiete_aulav_moorlandschaften)
 
@@ -1460,8 +1312,7 @@ class schutzgebiete_aulav_moorlandschaften_general(Base, Vector):
     __minscale__ = 10001
     __maxscale__ = 5000000
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-aulav_moorlandschaften', schutzgebiete_aulav_moorlandschaften_general)
 
@@ -1482,8 +1333,7 @@ class schutzgebiete_aulav_uebrige(Base, Vector):
     hm_name = Column('hm_name', Text)
     np_name = Column('np_name', Text)
     typ = Column('typ', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-aulav_uebrige', schutzgebiete_aulav_uebrige)
 
@@ -1496,8 +1346,7 @@ class schutzgebiete_aulav_uebrige_general(Base, Vector):
     __minscale__ = 10001
     __maxscale__ = 5000000
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-aulav_uebrige', schutzgebiete_aulav_uebrige_general)
 
@@ -1509,8 +1358,7 @@ class paerke:
     kategorie = Column('kategorie', Text)
     rechtsgrundlage = Column('rechtsgrundlage', Integer)
     status = Column('status', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 
 class paerkeNationalerBedeutung (Base, paerke, Vector):
@@ -1545,8 +1393,7 @@ class ramsar(Base, Vector):
     ra_obj = Column('ra_obj', Integer)
     ra_fl = Column('ra_fl', Text)
     ra_gf = Column('ra_gf', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-ramsar', ramsar)
 
@@ -1611,8 +1458,7 @@ class oekom_abschnitte(Base, Vector):
     oekomklasse = Column('oekomklasse', Numeric)
     sohlmat_de = Column('sohlmat_de', Text)
     sohlmat_fr = Column('sohlmat_fr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.oekomorphologie-f_abschnitte', oekom_abschnitte)
 
@@ -1642,8 +1488,7 @@ class oekom_abstuerze(Base, Vector):
     datum = Column('datum', Text)
     absttyp = Column('absttyp', Numeric)
     abstmat = Column('abstmat', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.oekomorphologie-f_abstuerze', oekom_abstuerze)
 
@@ -1669,8 +1514,7 @@ class oekom_bauwerke(Base, Vector):
     translid = Column('translid', Numeric)
     loc_angle_geo = Column('loc_angle_geo', Numeric)
     datum = Column('datum', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.oekomorphologie-f_bauwerke', oekom_bauwerke)
 
@@ -1687,8 +1531,7 @@ class steinbockkolonien(Base, Vector):
     sb_kt = Column('sb_kt', Text)
     sb_fl = Column('sb_fl', Numeric)
     sb_gf = Column('sb_gf', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.fauna-steinbockkolonien', steinbockkolonien)
 
@@ -1703,8 +1546,7 @@ class SWISSPRTR(Base, Vector):
     betrieb = Column('betrieb', Text)
     ort = Column('ort', Text)
     jahr = Column('jahr', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.swissprtr', SWISSPRTR)
 
@@ -1719,8 +1561,7 @@ class HOLZVORRAT(Base, Vector):
     fid = Column('id', Integer)
     vorrat = Column('vorrat', Numeric)
     wireg_ = Column('wireg_', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.holzvorrat', HOLZVORRAT)
 
@@ -1734,8 +1575,7 @@ class HOLZZUWACHS(Base, Vector):
     id = Column('gid', Integer, primary_key=True)
     wirtschaftsregion = Column('wirtschaftsregion', Text)
     holzzuwachs = Column('holzzuwachs', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.holzzuwachs', HOLZZUWACHS)
 
@@ -1749,8 +1589,7 @@ class HOLZNUTZUNG(Base, Vector):
     id = Column('gid', Integer, primary_key=True)
     wireg_ = Column('wireg_', Text)
     nutzung = Column('nutzung', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.holznutzung', HOLZNUTZUNG)
 
@@ -1767,8 +1606,7 @@ class NABEL(Base, Vector):
     typ_fr = Column('typ_fr', Text)
     desc_de = Column('desc_de', Text)
     desc_fr = Column('desc_fr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.nabelstationen', NABEL)
 
@@ -1785,8 +1623,7 @@ class krebspest(Base, Vector):
     art_lat = Column('art_lat', Text)
     jahr = Column('jahr', Text)
     ort = Column('ort', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.fischerei-krebspest', krebspest)
 
@@ -1803,8 +1640,7 @@ class biogeoreg(Base, Vector):
     biogreg_r1 = Column('biogreg_r1', Text)
     biogreg_c6 = Column('biogreg_c6', Integer)
     biogreg_c1 = Column('biogreg_c1', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.biogeographische_regionen', biogeoreg)
 
@@ -1819,8 +1655,7 @@ class smaragd(Base, Vector):
     em_name = Column('em_name', Text)
     em_obj = Column('em_obj', Numeric)
     em_gf = Column('em_gf', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-smaragd', smaragd)
 
@@ -1837,8 +1672,7 @@ class biosphaerenreservate(Base, Vector):
     biores_gf = Column('biores_gf', Text)
     biores_nam = Column('biores_nam', Text)
     biores_obj = Column('biores_obj', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-biosphaerenreservate', biosphaerenreservate)
 
@@ -1856,8 +1690,7 @@ class moose(Base, Vector):
     standort = Column('standort', Text)
     rl_text = Column('rl_text', Text)
     nhv_text = Column('nhv_text', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.moose', moose)
 
@@ -1872,8 +1705,7 @@ class weltensutter(Base, Vector):
     nom = Column('nom', Text)
     no_surface = Column('no_surface', Numeric)
     ty_surface = Column('ty_surface', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.flora-weltensutter_atlas', weltensutter)
 
@@ -1889,8 +1721,7 @@ class baumarten(Base, Vector):
     anteil_lau = Column('anteil_lau', Numeric)
     anteil_nad = Column('anteil_nad', Numeric)
     vorrat = Column('vorrat', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.landesforstinventar-baumarten', baumarten)
 
@@ -1904,8 +1735,7 @@ class waldanteil(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     wirtschaft = Column('wirtschaft', Text)
     waldflaech = Column('waldflaech', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.landesforstinventar-waldanteil', waldanteil)
 
@@ -1919,8 +1749,7 @@ class totholz(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     wirtschaft = Column('wirtschaft', Text)
     totholzvol = Column('totholzvol', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.landesforstinventar-totholz', totholz)
 
@@ -1937,8 +1766,7 @@ class histerdbeben(Base, Vector):
     intensity = Column('intensity', Text)
     magnitude = Column('magnitude', Numeric)
     date_time = Column('date_time', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.gefahren-historische_erdbeben', histerdbeben)
 
@@ -1953,8 +1781,7 @@ class spektral(Base, Vector):
     fid = Column('id', Integer)
     spectral_3 = Column('spectral_3', Text)
     spectral_4 = Column('spectral_4', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.gefahren-spektral', spektral)
 
@@ -1971,8 +1798,7 @@ class trockenwiesenundweiden(Base, Vector):
     tww_gf = Column('tww_gf', Numeric)
     tww_obj = Column('tww_obj', Numeric)
     tww_tobj = Column('tww_tobj', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden', trockenwiesenundweiden)
 
@@ -1987,8 +1813,7 @@ class trockenwiesenundweiden_anhang2(Base, Vector):
     tww_name = Column('tww_name', Text)
     tww_obj = Column('tww_obj', Numeric)
     tww_tobj = Column('tww_tobj', Numeric)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2', trockenwiesenundweiden_anhang2)
 
@@ -2002,8 +1827,7 @@ class amphibien_anhang4(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Text)
     obnr = Column('obnr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-amphibien_anhang4', amphibien_anhang4)
 
@@ -2016,8 +1840,7 @@ class baugrundklassen(Base, Vector):
     __label__ = 'bgk'
     id = Column('_count', Integer, primary_key=True)
     bgk = Column('bgk', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.gefahren-baugrundklassen', baugrundklassen)
 
@@ -2037,8 +1860,7 @@ class wrzselect(Base, Vector):
     grundlage = Column('grundlage', Text)
     zusatzinformation = Column('zusatzinformation', Text)
     kanton = Column('kanton', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.wrz-jagdbanngebiete_select', wrzselect)
 
@@ -2059,8 +1881,7 @@ class wrzportal(Base, Vector):
     beschlussjahr = Column('beschlussjahr', Text)
     zusatzinformation = Column('zusatzinformation', Text)
     kanton = Column('kanton', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.wrz-wildruhezonen_portal', wrzportal)
 
@@ -2075,8 +1896,7 @@ class wildtier(Base, Vector):
     nr = Column('nr', Text)
     zusta_dt = Column('zusta_dt', Text)
     zusta_fr = Column('zusta_fr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.fauna-wildtierkorridor_national', wildtier)
 
@@ -2094,8 +1914,7 @@ class waldreservate(Base, Vector):
     name = Column('name', Text)
     gisflaeche = Column('obj_gisflaeche', Numeric)
     mcpfe = Column('mcpfe_class', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.waldreservate', waldreservate)
 
@@ -2111,8 +1930,7 @@ class sturm_staudruck_30(Base, Vector):
     staudruck_50 = Column('staudruck_50', Text)
     staudruck_100 = Column('staudruck_100', Text)
     staudruck_300 = Column('staudruck_300', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.sturm-staudruck_30', sturm_staudruck_30)
 
@@ -2128,8 +1946,7 @@ class sturm_staudruck_50(Base, Vector):
     staudruck_50 = Column('staudruck_50', Text)
     staudruck_100 = Column('staudruck_100', Text)
     staudruck_300 = Column('staudruck_300', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.sturm-staudruck_50', sturm_staudruck_50)
 
@@ -2145,8 +1962,7 @@ class sturm_staudruck_100(Base, Vector):
     staudruck_50 = Column('staudruck_50', Text)
     staudruck_100 = Column('staudruck_100', Text)
     staudruck_300 = Column('staudruck_300', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.sturm-staudruck_100', sturm_staudruck_100)
 
@@ -2162,8 +1978,7 @@ class sturm_staudruck_300(Base, Vector):
     staudruck_50 = Column('staudruck_50', Text)
     staudruck_100 = Column('staudruck_100', Text)
     staudruck_300 = Column('staudruck_300', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.sturm-staudruck_300', sturm_staudruck_300)
 
@@ -2177,8 +1992,7 @@ class sturm_boeenspitzen_30(Base, Vector):
     id = Column('oid', Integer, primary_key=True)
     boenspitzen_kmh_30 = Column('boenspitzen_kmh_30', Text)
     boenspitzen_ms_30 = Column('boenspitzen_ms_30', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.sturm-boeenspitzen_30', sturm_boeenspitzen_30)
 
@@ -2192,8 +2006,7 @@ class sturm_boeenspitzen_50(Base, Vector):
     id = Column('oid', Integer, primary_key=True)
     boenspitzen_kmh_50 = Column('boenspitzen_kmh_50', Text)
     boenspitzen_ms_50 = Column('boenspitzen_ms_50', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.sturm-boeenspitzen_50', sturm_boeenspitzen_50)
 
@@ -2207,8 +2020,7 @@ class sturm_boeenspitzen_100(Base, Vector):
     id = Column('oid', Integer, primary_key=True)
     boenspitzen_kmh_100 = Column('boenspitzen_kmh_100', Text)
     boenspitzen_ms_100 = Column('boenspitzen_ms_100', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.sturm-boeenspitzen_100', sturm_boeenspitzen_100)
 
@@ -2222,8 +2034,7 @@ class sturm_boeenspitzen_300(Base, Vector):
     id = Column('oid', Integer, primary_key=True)
     boenspitzen_kmh_300 = Column('boenspitzen_kmh_300', Text)
     boenspitzen_ms_300 = Column('boenspitzen_ms_300', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.sturm-boeenspitzen_300', sturm_boeenspitzen_300)
 
@@ -2240,7 +2051,6 @@ class Hochwasserstatistik(Base, Vector):
     url_fr = Column('url_fr', Text)
     url_de = Column('url_de', Text)
     url_hqpdf = Column('url_hqpdf', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologie-hochwasserstatistik', Hochwasserstatistik)

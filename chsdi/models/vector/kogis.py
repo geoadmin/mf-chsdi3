@@ -2,10 +2,9 @@
 
 from sqlalchemy import Column, Text, Integer
 from sqlalchemy.types import Numeric
-from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector
+from chsdi.models.vector import Vector, Geometry2D
 
 
 Base = bases['kogis']
@@ -35,8 +34,7 @@ class Gebaeuderegister(Base, Vector):
     gdenr = Column('gdenr', Integer)
     ggbkr = Column('ggbkr', Text)
     bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)
 
@@ -50,8 +48,7 @@ class AGNES(Base, Vector):
     id = Column('no', Text, primary_key=True)
     url = Column('url', Text)
     bgdi_id = Column('bgdi_id', Integer)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-agnes', AGNES)
 
@@ -75,9 +72,8 @@ class FIXPUNKTE_LFP1(Base, Vector):
     h02 = Column('h02', Numeric)
     zugang = Column('zugang', Text)
     url = Column('url', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-lfp1', FIXPUNKTE_LFP1)
 
@@ -101,9 +97,8 @@ class FIXPUNKTE_LFP2(Base, Vector):
     h02 = Column('h02', Numeric)
     zugang = Column('zugang', Text)
     url = Column('url', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-lfp2', FIXPUNKTE_LFP2)
 
@@ -128,9 +123,8 @@ class FIXPUNKTE_HFP1(Base, Vector):
     h02 = Column('h02', Numeric)
     zugang = Column('zugang', Text)
     url = Column('url', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-hfp1', FIXPUNKTE_HFP1)
 
@@ -154,9 +148,8 @@ class FIXPUNKTE_HFP2(Base, Vector):
     h02 = Column('h02', Numeric)
     zugang = Column('zugang', Text)
     url = Column('url', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     bgdi_created = Column('bgdi_created', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-hfp2', FIXPUNKTE_HFP2)
 

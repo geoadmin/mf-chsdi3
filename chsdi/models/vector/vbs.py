@@ -2,10 +2,9 @@
 
 from sqlalchemy import Column, Text, Integer
 from sqlalchemy.types import Numeric
-from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector
+from chsdi.models.vector import Vector, Geometry2D, Geometry3D
 
 Base = bases['vbs']
 
@@ -19,8 +18,6 @@ class Kulturgueter(Base, Vector):
     __extended_info__ = True
     __label__ = 'zkob'
     id = Column('kgs_nr', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     zkob = Column('zkob', Text)
     x = Column('x', Numeric)
     y = Column('y', Numeric)
@@ -39,6 +36,7 @@ class Kulturgueter(Base, Vector):
     link_2_title = Column('link_2_title', Text)
     link_3_uri = Column('link_3_uri', Text)
     link_3_title = Column('link_3_title', Text)
+    the_geom = Column(Geometry2D)
 
 register('ch.babs.kulturgueter', Kulturgueter)
 
@@ -50,9 +48,8 @@ class TERRITORIALREGIONEN(Base, Vector):
     __bodId__ = 'ch.vbs.territorialregionen'
     __label__ = 'name'
     id = Column('terreg_nr', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
     name = Column('name', Text)
+    the_geom = Column(Geometry3D)
 
 register('ch.vbs.territorialregionen', TERRITORIALREGIONEN)
 
@@ -64,9 +61,8 @@ class Patrouilledesglaciers_z(Base, Vector):
     __bodId__ = 'ch.vbs.patrouilledesglaciers-z_rennen'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
     name = Column('name', Text)
+    the_geom = Column(Geometry3D)
 
 register('ch.vbs.patrouilledesglaciers-z_rennen', Patrouilledesglaciers_z)
 
@@ -78,9 +74,8 @@ class Patrouilledesglaciers_a(Base, Vector):
     __bodId__ = 'ch.vbs.patrouilledesglaciers-a_rennen'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
     name = Column('name', Text)
+    the_geom = Column(Geometry3D)
 
 register('ch.vbs.patrouilledesglaciers-a_rennen', Patrouilledesglaciers_a)
 
@@ -93,10 +88,10 @@ class Retablierungsstellen(Base, Vector):
     __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
     name = Column('name', Text)
     url = Column('url', Text)
+    the_geom = Column(Geometry3D)
+
 register('ch.vbs.retablierungsstellen', Retablierungsstellen)
 
 
@@ -108,12 +103,12 @@ class Armeelogistikcenter(Base, Vector):
     __queryable_attributes__ = ['name', 'abkuerzung']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
     name = Column('name', Text)
     abkuerzung = Column('abkuerzung', Text)
     mail = Column('email', Text)
     url = Column('url', Text)
+    the_geom = Column(Geometry3D)
+
 register('ch.vbs.armeelogistikcenter', Armeelogistikcenter)
 
 
@@ -125,9 +120,9 @@ class Bundestankstellen_bebeco(Base, Vector):
     __queryable_attributes__ = ['ort']
     __label__ = 'ort'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
     ort = Column('ort', Text)
+    the_geom = Column(Geometry3D)
+
 register('ch.vbs.bundestankstellen-bebeco', Bundestankstellen_bebeco)
 
 
@@ -139,8 +134,8 @@ class Logistikraeume_armeelogistikcenter(Base, Vector):
     __queryable_attributes__ = ['kanton', 'region']
     __label__ = 'kanton'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=3, srid=21781))
     kanton = Column('kantone', Text)
     region = Column('region', Text)
+    the_geom = Column(Geometry3D)
+
 register('ch.vbs.logistikraeume-armeelogistikcenter', Logistikraeume_armeelogistikcenter)

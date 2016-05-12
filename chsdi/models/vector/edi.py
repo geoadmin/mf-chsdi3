@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Integer
-from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector
+from chsdi.models.vector import Vector, Geometry2D
 
 Base = bases['edi']
 
@@ -19,14 +18,13 @@ class Arealstatistik2009(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     fj85 = Column('fj85', Integer)
     fj97 = Column('fj97', Integer)
     fj09 = Column('fj09', Integer)
     id_arealstatistik_85 = Column('id_arealstatistik_85', Integer)
     id_arealstatistik_97 = Column('id_arealstatistik_97', Integer)
     id_arealstatistik_09 = Column('id_arealstatistik_09', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik', Arealstatistik2009)
 
@@ -41,14 +39,13 @@ class Arealstatistik1985(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     fj85 = Column('fj85', Integer)
     fj97 = Column('fj97', Integer)
     fj09 = Column('fj09', Integer)
     id_arealstatistik_85 = Column('id_arealstatistik_85', Integer)
     id_arealstatistik_97 = Column('id_arealstatistik_97', Integer)
     id_arealstatistik_09 = Column('id_arealstatistik_09', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik-1985', Arealstatistik1985)
 
@@ -63,14 +60,13 @@ class Arealstatistik1997(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     fj85 = Column('fj85', Integer)
     fj97 = Column('fj97', Integer)
     fj09 = Column('fj09', Integer)
     id_arealstatistik_85 = Column('id_arealstatistik_85', Integer)
     id_arealstatistik_97 = Column('id_arealstatistik_97', Integer)
     id_arealstatistik_09 = Column('id_arealstatistik_09', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik-1997', Arealstatistik1997)
 
@@ -85,14 +81,13 @@ class ArealstatistikBodenbedeckung2009(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     fj85 = Column('fj85', Integer)
     fj97 = Column('fj97', Integer)
     fj09 = Column('fj09', Integer)
     id_arealstatistik_nolc_85 = Column('id_arealstatistik_nolc_85', Integer)
     id_arealstatistik_nolc_97 = Column('id_arealstatistik_nolc_97', Integer)
     id_arealstatistik_nolc_09 = Column('id_arealstatistik_nolc_09', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik-bodenbedeckung', ArealstatistikBodenbedeckung2009)
 
@@ -107,14 +102,13 @@ class ArealstatistikBodenbedeckung1997(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     fj85 = Column('fj85', Integer)
     fj97 = Column('fj97', Integer)
     fj09 = Column('fj09', Integer)
     id_arealstatistik_nolc_85 = Column('id_arealstatistik_nolc_85', Integer)
     id_arealstatistik_nolc_97 = Column('id_arealstatistik_nolc_97', Integer)
     id_arealstatistik_nolc_09 = Column('id_arealstatistik_nolc_09', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik-bodenbedeckung-1997', ArealstatistikBodenbedeckung1997)
 
@@ -129,14 +123,13 @@ class ArealstatistikBodenbedeckung1985(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     fj85 = Column('fj85', Integer)
     fj97 = Column('fj97', Integer)
     fj09 = Column('fj09', Integer)
     id_arealstatistik_nolc_85 = Column('id_arealstatistik_nolc_85', Integer)
     id_arealstatistik_nolc_97 = Column('id_arealstatistik_nolc_97', Integer)
     id_arealstatistik_nolc_09 = Column('id_arealstatistik_nolc_09', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik-bodenbedeckung-1985', ArealstatistikBodenbedeckung1985)
 
@@ -151,14 +144,13 @@ class ArealstatistikBodennutzung(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     fj85 = Column('fj85', Integer)
     fj97 = Column('fj97', Integer)
     fj09 = Column('fj09', Integer)
     id_arealstatistik_nolu_85 = Column('id_arealstatistik_nolu_85', Integer)
     id_arealstatistik_nolu_97 = Column('id_arealstatistik_nolu_97', Integer)
     id_arealstatistik_nolu_09 = Column('id_arealstatistik_nolu_09', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik-bodennutzung', ArealstatistikBodennutzung)
 
@@ -173,14 +165,13 @@ class ArealstatistikBodennutzung1997(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     fj85 = Column('fj85', Integer)
     fj97 = Column('fj97', Integer)
     fj09 = Column('fj09', Integer)
     id_arealstatistik_nolu_85 = Column('id_arealstatistik_nolu_85', Integer)
     id_arealstatistik_nolu_97 = Column('id_arealstatistik_nolu_97', Integer)
     id_arealstatistik_nolu_09 = Column('id_arealstatistik_nolu_09', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik-bodennutzung-1997', ArealstatistikBodennutzung1997)
 
@@ -195,14 +186,13 @@ class ArealstatistikBodennutzung1985(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     fj85 = Column('fj85', Integer)
     fj97 = Column('fj97', Integer)
     fj09 = Column('fj09', Integer)
     id_arealstatistik_nolu_85 = Column('id_arealstatistik_nolu_85', Integer)
     id_arealstatistik_nolu_97 = Column('id_arealstatistik_nolu_97', Integer)
     id_arealstatistik_nolu_09 = Column('id_arealstatistik_nolu_09', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik-bodennutzung-1985', ArealstatistikBodennutzung1985)
 
@@ -214,8 +204,7 @@ class fsme_faelle(Base, Vector):
     __bodId__ = 'ch.bag.zecken-fsme-faelle'
     __label__ = 'gemname'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
     gemname = Column('gemname', Integer)
     bfsnr = Column('bfsnr', Integer)
 
@@ -229,9 +218,8 @@ class fsme_impfung(Base, Vector):
     __bodId__ = 'ch.bag.zecken-fsme-impfung'
     __label__ = 'gemname'
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
     gemname = Column('gemname', Integer)
     bfsnr = Column('bfsnr', Integer)
+    the_geom = Column(Geometry2D)
 
 register('ch.bag.zecken-fsme-impfung', fsme_impfung)
