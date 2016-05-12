@@ -1,126 +1,23 @@
-    <TileMatrixSet>
-        <ows:Identifier>21781_17</ows:Identifier>
-        <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-        <%include file="TileMatrixSet.mako"/>
-    </TileMatrixSet>
-    <TileMatrixSet>
-        <ows:Identifier>21781_18</ows:Identifier>
-        <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-        <%include file="TileMatrixSet.mako"/>
-        <%include file="TileMatrixSet_18.mako"/>
-    </TileMatrixSet>
-    <TileMatrixSet>
-        <ows:Identifier>21781_19</ows:Identifier>
-        <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-        <%include file="TileMatrixSet.mako"/>
-        <%include file="TileMatrixSet_18.mako"/>
-        <%include file="TileMatrixSet_19.mako"/>
-    </TileMatrixSet>
-    <TileMatrixSet>
-        <ows:Identifier>21781_20</ows:Identifier>
-        <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-        <%include file="TileMatrixSet.mako"/>
-        <%include file="TileMatrixSet_18.mako"/>
-        <%include file="TileMatrixSet_19.mako"/>
-        <%include file="TileMatrixSet_20.mako"/>
-    </TileMatrixSet>
-    <TileMatrixSet>
-        <ows:Identifier>21781_21</ows:Identifier>
-        <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-        <%include file="TileMatrixSet.mako"/>
-        <%include file="TileMatrixSet_18.mako"/>
-        <%include file="TileMatrixSet_19.mako"/>
-        <%include file="TileMatrixSet_20.mako"/>
-        <%include file="TileMatrixSet_21.mako"/>
-    </TileMatrixSet>
-    <TileMatrixSet>
-        <ows:Identifier>21781_22</ows:Identifier>
-        <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-        <%include file="TileMatrixSet.mako"/>
-        <%include file="TileMatrixSet_18.mako"/>
-        <%include file="TileMatrixSet_19.mako"/>
-        <%include file="TileMatrixSet_20.mako"/>
-        <%include file="TileMatrixSet_21.mako"/>
-        <%include file="TileMatrixSet_22.mako"/>
-    </TileMatrixSet>
-    <TileMatrixSet>
-        <ows:Identifier>21781_23</ows:Identifier>
-        <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-        <%include file="TileMatrixSet.mako"/>
-        <%include file="TileMatrixSet_18.mako"/>
-        <%include file="TileMatrixSet_19.mako"/>
-        <%include file="TileMatrixSet_20.mako"/>
-        <%include file="TileMatrixSet_21.mako"/>
-        <%include file="TileMatrixSet_22.mako"/>
-        <%include file="TileMatrixSet_23.mako"/>
-    </TileMatrixSet>
-    <TileMatrixSet>
-        <ows:Identifier>21781_24</ows:Identifier>
-        <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-        <%include file="TileMatrixSet.mako"/>
-        <%include file="TileMatrixSet_18.mako"/>
-        <%include file="TileMatrixSet_19.mako"/>
-        <%include file="TileMatrixSet_20.mako"/>
-        <%include file="TileMatrixSet_21.mako"/>
-        <%include file="TileMatrixSet_22.mako"/>
-        <%include file="TileMatrixSet_23.mako"/>
-        <%include file="TileMatrixSet_24.mako"/>
-    </TileMatrixSet>
-    <TileMatrixSet>
-        <ows:Identifier>21781_25</ows:Identifier>
-        <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-        <%include file="TileMatrixSet.mako"/>
-        <%include file="TileMatrixSet_18.mako"/>
-        <%include file="TileMatrixSet_19.mako"/>
-        <%include file="TileMatrixSet_20.mako"/>
-        <%include file="TileMatrixSet_21.mako"/>
-        <%include file="TileMatrixSet_22.mako"/>
-        <%include file="TileMatrixSet_23.mako"/>
-        <%include file="TileMatrixSet_24.mako"/>
-        <%include file="TileMatrixSet_25.mako"/>
-    </TileMatrixSet>
-    <TileMatrixSet>
-        <ows:Identifier>21781_26</ows:Identifier>
-        <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-        <%include file="TileMatrixSet.mako"/>
-        <%include file="TileMatrixSet_18.mako"/>
-        <%include file="TileMatrixSet_19.mako"/>
-        <%include file="TileMatrixSet_20.mako"/>
-        <%include file="TileMatrixSet_21.mako"/>
-        <%include file="TileMatrixSet_22.mako"/>
-        <%include file="TileMatrixSet_23.mako"/>
-        <%include file="TileMatrixSet_24.mako"/>
-        <%include file="TileMatrixSet_25.mako"/>
-        <%include file="TileMatrixSet_26.mako"/>
-    </TileMatrixSet>
-    <TileMatrixSet>
-        <ows:Identifier>21781_27</ows:Identifier>
-        <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-        <%include file="TileMatrixSet.mako"/>
-        <%include file="TileMatrixSet_18.mako"/>
-        <%include file="TileMatrixSet_19.mako"/>
-        <%include file="TileMatrixSet_20.mako"/>
-        <%include file="TileMatrixSet_21.mako"/>
-        <%include file="TileMatrixSet_22.mako"/>
-        <%include file="TileMatrixSet_23.mako"/>
-        <%include file="TileMatrixSet_24.mako"/>
-        <%include file="TileMatrixSet_25.mako"/>
-        <%include file="TileMatrixSet_26.mako"/>
-        <%include file="TileMatrixSet_27.mako"/>
-    </TileMatrixSet>
-    <TileMatrixSet>
-        <ows:Identifier>21781_28</ows:Identifier>
-        <ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
-        <%include file="TileMatrixSet.mako"/>
-        <%include file="TileMatrixSet_18.mako"/>
-        <%include file="TileMatrixSet_19.mako"/>
-        <%include file="TileMatrixSet_20.mako"/>
-        <%include file="TileMatrixSet_21.mako"/>
-        <%include file="TileMatrixSet_22.mako"/>
-        <%include file="TileMatrixSet_23.mako"/>
-        <%include file="TileMatrixSet_24.mako"/>
-        <%include file="TileMatrixSet_25.mako"/>
-        <%include file="TileMatrixSet_26.mako"/>
-        <%include file="TileMatrixSet_27.mako"/>
-        <%include file="TileMatrixSet_28.mako"/>
-    </TileMatrixSet>
+<%page args="tmsDefs"/>
+
+% for zoom in range(17, len(tmsDefs)):
+<TileMatrixSet>
+<ows:Identifier>21781_${zoom}</ows:Identifier>
+<ows:SupportedCRS>urn:ogc:def:crs:EPSG:21781</ows:SupportedCRS>
+<!-- This tileMatrixSet in **only** for tiles generated through TileGenerator ! -->
+    % for z in range(0,zoom + 1):
+<TileMatrix>
+<ows:Identifier>${z}</ows:Identifier>
+<% scale = tmsDefs[z][3] %>
+<ScaleDenominator>${scale}</ScaleDenominator>
+<TopLeftCorner>420000.0 350000.0</TopLeftCorner>
+<TileWidth>256</TileWidth>
+<TileHeight>256</TileHeight>
+<% matrix_width = tmsDefs[z][1] %>
+<MatrixWidth>${matrix_width}</MatrixWidth>
+<% matrix_height = tmsDefs[z][2] %>
+<MatrixHeight>${matrix_height}</MatrixHeight>
+</TileMatrix>
+    % endfor
+</TileMatrixSet>
+% endfor
