@@ -201,15 +201,14 @@ updateapi:
 	rm -rf chsdi/static/js/ol3 && \
 	cd chsdi/static/js/ && \
 	git clone https://github.com/geoadmin/ol3.git && \
-	cd chsdi/static/js/ol3 && \
+	cd ol3 && \
 	git remote add upstream https://github.com/openlayers/ol3 && \
 	git fetch upstream && \
 	npm install && \
 	API_URL=$(API_URL) make -f Makefile-ga build-ga && \
-	make -f Makefile-ga build-ga chsdi/static/css/ && \
-	cp build/ga.css chsdi/static/css/ && \
-	cp build/ga*.js chsdi/static/js/ && \
-	cp resources/EPSG* chsdi/static/js/
+	cp build/ga.css ../../css/ && \
+	cp build/ga*.js ../../js/ && \
+	cp resources/EPSG* ../../js/;
 
 .PHONY: deploybranch
 deploybranch:
