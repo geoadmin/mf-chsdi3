@@ -1,3 +1,4 @@
+SHELL = /bin/bash
 # Variables
 APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''; else echo /$(APACHE_BASE_PATH); fi)
 KEEP_VERSION ?= 'false'
@@ -23,7 +24,7 @@ PYTHON_FILES := $(shell find chsdi/* -path chsdi/static -prune -o -type f -name 
 SHORTENER_ALLOWED_DOMAINS := admin.ch, swisstopo.ch, bgdi.ch
 SHORTENER_ALLOWED_HOSTS :=
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
-USERNAME := $(shell whoami)
+USER_SOURCE ?= rc_user
 WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
 ZADARA_DIR := /var/local/cartoweb/downloads/
 
@@ -66,8 +67,8 @@ help:
 	@echo "Usage: make <target>"
 	@echo
 	@echo "Possible targets:"
-	@echo "- all                Build the app"
 	@echo "- user               Build the user specific version of the app"
+	@echo "- all                Build the app"
 	@echo "- serve              Serve the application with pserve"
 	@echo "- test               Launch the tests (no e2e tests)"
 	@echo "- teste2e            Launch end-to-end tests"
@@ -99,6 +100,11 @@ help:
 	@echo "SERVER_PORT:         ${SERVER_PORT}"
 	@echo
 
+
+.PHONY: user
+user:
+	source $(USER_SOURCE) && make all
+
 .PHONY: all
 all: setup chsdi/static/css/extended.min.css templates potomo rss lint fixrights
 
@@ -106,21 +112,17 @@ setup: .venv gdal node_modules .venv/hooks
 
 templates: .venv/last-version apache/wsgi.conf apache/tomcat-print.conf print/WEB-INF/web.xml development.ini production.ini
 
-.PHONY: user
-user:
-	./scripts/build.sh $(USERNAME)
-
 .PHONY: dev
 dev:
-	./scripts/build.sh dev
+	source rc_dev && make all
 
 .PHONY: int
 int:
-	./scripts/build.sh int
+	source rc_int && make all
 
 .PHONY: prod
 prod:
-	./scripts/build.sh prod
+	source rc_prod && make all
 
 .PHONY: serve
 serve:
