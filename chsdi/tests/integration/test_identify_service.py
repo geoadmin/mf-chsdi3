@@ -201,6 +201,24 @@ class TestIdentifyService(TestsBase):
         self.assertIn('properties', resp.json['results'][0])
         self.assertIn('geometry', resp.json['results'][0])
 
+    def test_identify_one_timeinstant_several_layers(self):
+        params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.8,170647.9', 'geometryFormat': 'geojson',
+                  'imageDisplay': '1920,734,96', 'mapExtent': '134253,-21102,1382253,455997', 'tolerance': '5',
+                  'layers': 'all:ch.swisstopo.zeitreihen,ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.bazl.luftfahrthindernis',
+                  'timeInstant': '2000'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('properties', resp.json['results'][0])
+        self.assertIn('geometry', resp.json['results'][0])
+
+    def test_identify_nbtimeinstants_nblayers_mismatch(self):
+        params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.8,170647.9', 'geometryFormat': 'geojson',
+                  'imageDisplay': '1920,734,96', 'mapExtent': '134253,-21102,1382253,455997', 'tolerance': '5',
+                  'layers': 'all:ch.swisstopo.zeitreihen,ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.bazl.luftfahrthindernis',
+                  'timeInstant': '2000,2002'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
+        resp.mustcontain('Number of timInstants')
+
     def test_identify_several_timeinstants(self):
         params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.8,170647.9', 'geometryFormat': 'geojson',
                   'imageDisplay': '1920,734,96', 'mapExtent': '134253,-21102,1382253,455997', 'tolerance': '5',

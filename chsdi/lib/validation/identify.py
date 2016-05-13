@@ -178,21 +178,33 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
 
     @timeInstant.setter
     def timeInstant(self, value):
+        def validateTimeinstant(instant):
+            if len(instant) not in (0, 4):
+                raise HTTPBadRequest(
+                    'Only years are supported as timeInstant parameter: provided value %s' % instant)
+            if instant.isdigit():
+                instant = int(instant)
+            elif len(instant) == 0:
+                instant = None
+            else:
+                raise HTTPBadRequest(
+                    'Please provide an integer for the parameter timeInstant: provided value %s' % instant)
+            return instant
+
         if value is not None:
             instants = []
             timeInstants = value.split(',')
-            for instant in timeInstants:
-                if len(instant) not in (0, 4):
-                    raise HTTPBadRequest(
-                        'Only years are supported as timeInstant parameter: provided value %s' % instant)
-                if instant.isdigit():
-                    instant = int(instant)
-                elif len(instant) == 0:
-                    instant = None
-                else:
-                    raise HTTPBadRequest(
-                        'Please provide an integer for the parameter timeInstant: provided value %s' % instant)
-                instants.append(instant)
+            nbTimeInstants = len(timeInstants)
+            nbLayers = len(self.layers)
+            if nbTimeInstants == nbLayers:
+                for instant in timeInstants:
+                    instants.append(validateTimeinstant(instant))
+            elif nbTimeInstants == 1:
+                instant = validateTimeinstant(timeInstants[0])
+                instants = [instant for i in range(0, len(self.layers) + 1)]
+            else:
+                raise HTTPBadRequest(
+                    'Number of timInstants (%s) and layers (%s) mismatch' % (nbTimeInstants, nbLayers))
             self._timeInstant = instants
         else:
             self._timeInstant = value
