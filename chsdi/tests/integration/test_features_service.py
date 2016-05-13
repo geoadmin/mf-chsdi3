@@ -273,6 +273,14 @@ class TestFeaturesView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=404)
         resp.mustcontain('No feature with id toto')
 
+    def test_cut_outside_extent(self):
+        params = {'layers': 'all:ch.swisstopo.swissimage-product',
+                  'geometryType': 'esriGeometryEnvelope',
+                  'geometry': '478968,280720,486572,292875'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
+        self.assertEqual(resp.json.keys()[0], 'ch.swisstopo.swissimage-product')
+        self.assertEqual(resp.json['ch.swisstopo.swissimage-product'][0]['area'], 0)
+
 
 class TestGebauedeGeometry(TestsBase):
 
