@@ -5061,7 +5061,7 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Carte Siegfried Première édition"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
-msgstr "Carte aéronautique OACI"
+msgstr "Carte aéronautique OACI papier"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata.release"
 msgstr "Édition"
@@ -5382,7 +5382,7 @@ msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata"
-msgstr "Carte vol à voile"
+msgstr "Carte vol à voile papier"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata.release"
 msgstr "Édition"
@@ -7435,6 +7435,9 @@ msgstr "Surfaces bâties"
 
 msgid "tt_bfe_geschw_wind_durchschnitt"
 msgstr "Vitesse moyenne du vent"
+
+msgid "tt_bfe_geschw_wind_exttooltip"
+msgstr "Rose des vents et distribution de Weibull"
 
 msgid "tt_bfe_geschwindigkeit"
 msgstr "Vitesse (m/s)"
