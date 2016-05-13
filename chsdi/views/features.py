@@ -441,10 +441,11 @@ def _get_areas_for_params(params, models):
                 )
             try:
                 for feature in query:
+                    area = feature.area if feature.area is not None else 0.0
                     # Per default return all areas even if equal to 0
                     yield {
                         bodId: {
-                            'area': round(float(feature.area) / (1000.0 * 1000.0), 2),  # convert to square kilometers
+                            'area': round(float(area) / (1000.0 * 1000.0), 2),  # convert to square kilometers
                             'groupby': params.groupby[groupbyIdx] if params.groupby is not None else None,
                             'groupbyvalue': feature.groupbyValue if hasattr(feature, 'groupbyValue') else None
                         }
