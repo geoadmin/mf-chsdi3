@@ -665,7 +665,7 @@ class STAUANLAGENBUNDESAUFSICHT(Base, Vector):
 register('ch.bfe.stauanlagen-bundesaufsicht', STAUANLAGENBUNDESAUFSICHT)
 
 
-class kleinwasserkraftpotentiale(Base, Vector):
+class Kleinwasserkraftpotentiale(Base, Vector):
     __tablename__ = 'kleinwasserkraftpotentiale'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/kleinwasserkraftpotentiale.mako'
@@ -677,7 +677,7 @@ class kleinwasserkraftpotentiale(Base, Vector):
     gwlnr = Column('gwlnr', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.kleinwasserkraftpotentiale', kleinwasserkraftpotentiale)
+register('ch.bfe.kleinwasserkraftpotentiale', Kleinwasserkraftpotentiale)
 
 
 class WindenergieanlagenFacility(Base, Vector):
@@ -743,7 +743,7 @@ class WindenergieanlagenTurbine(Base, Vector):
 register('ch.bfe.windenergieanlagen', WindenergieanlagenTurbine)
 
 
-class bakomfernsehsender(Base, Vector):
+class Bakomfernsehsender(Base, Vector):
     __tablename__ = 'nisdb_bro_tooltip'
     __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/bakomfernsehsender.mako'
@@ -761,10 +761,10 @@ class bakomfernsehsender(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.radio-fernsehsender', bakomfernsehsender)
+register('ch.bakom.radio-fernsehsender', Bakomfernsehsender)
 
 
-class bakomgsm(Base, Vector):
+class Bakomgsm(Base, Vector):
     __tablename__ = 'nisdb_gsm'
     __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/bakomgsm.mako'
@@ -775,10 +775,10 @@ class bakomgsm(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.mobil-antennenstandorte-gsm', bakomgsm)
+register('ch.bakom.mobil-antennenstandorte-gsm', Bakomgsm)
 
 
-class bakomumts(Base, Vector):
+class Bakomumts(Base, Vector):
     __tablename__ = 'nisdb_umts'
     __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/bakomumts.mako'
@@ -789,10 +789,10 @@ class bakomumts(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.mobil-antennenstandorte-umts', bakomumts)
+register('ch.bakom.mobil-antennenstandorte-umts', Bakomumts)
 
 
-class bakomlte(Base, Vector):
+class Bakomlte(Base, Vector):
     __tablename__ = 'nisdb_lte'
     __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/bakomlte.mako'
@@ -803,10 +803,10 @@ class bakomlte(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.mobil-antennenstandorte-lte', bakomlte)
+register('ch.bakom.mobil-antennenstandorte-lte', Bakomlte)
 
 
-class bakomtv(Base, Vector):
+class Bakomtv(Base, Vector):
     __tablename__ = 'tv_gebiet'
     __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/bakomtv.mako'
@@ -817,10 +817,10 @@ class bakomtv(Base, Vector):
     prog = Column('prog', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.versorgungsgebiet-tv', bakomtv)
+register('ch.bakom.versorgungsgebiet-tv', Bakomtv)
 
 
-class bakomukw(Base, Vector):
+class Bakomukw(Base, Vector):
     __tablename__ = 'ukw_gebiet'
     __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/bakomukw.mako'
@@ -831,7 +831,7 @@ class bakomukw(Base, Vector):
     prog = Column('prog', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.versorgungsgebiet-ukw', bakomukw)
+register('ch.bakom.versorgungsgebiet-ukw', Bakomukw)
 
 
 class ProjFlughafenanlagen(Base, Vector):
@@ -889,7 +889,7 @@ class Luftfahrthindernis(Base, Vector):
 register('ch.bazl.luftfahrthindernis', Luftfahrthindernis)
 
 
-class sgt_facilities(Base, Vector):
+class SgtFacilities(Base, Vector):
     __tablename__ = 'geologische_tiefenlager_fac'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/sgt_facilities.mako'
@@ -918,10 +918,8 @@ class sgt_facilities(Base, Vector):
     __maxscale__ = 100000005
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-geologie-tiefenlager', sgt_facilities)
 
-
-class sgt_planning(Base, Vector):
+class SgtPlanning(Base, Vector):
     __tablename__ = 'geologische_tiefenlager'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/sgt_planning.mako'
@@ -954,10 +952,8 @@ class sgt_planning(Base, Vector):
     __minscale__ = 20005
     __maxscale__ = 500005
 
-register('ch.bfe.sachplan-geologie-tiefenlager', sgt_planning)
 
-
-class sgt_planning_raster(Base, Vector):
+class SgtPlanningRaster(Base, Vector):
     __tablename__ = 'geologische_tiefenlager_raster'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/sgt_planning.mako'
@@ -990,10 +986,12 @@ class sgt_planning_raster(Base, Vector):
     __minscale__ = 1
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-geologie-tiefenlager', sgt_planning_raster)
+register('ch.bfe.sachplan-geologie-tiefenlager', SgtFacilities)
+register('ch.bfe.sachplan-geologie-tiefenlager', SgtPlanning)
+register('ch.bfe.sachplan-geologie-tiefenlager', SgtPlanningRaster)
 
 
-class sgt_facilities_td(Base, Vector):
+class SgtFacilitiesTd(Base, Vector):
     __tablename__ = 'geologische_tiefenlager_fac'
     __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/sgt_facilities.mako'
@@ -1021,10 +1019,8 @@ class sgt_facilities_td(Base, Vector):
     __maxscale__ = 100000005
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', sgt_facilities_td)
 
-
-class sgt_planning_td(Base, Vector):
+class SgtPlanningTd(Base, Vector):
     __tablename__ = 'geologische_tiefenlager'
     __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/sgt_planning.mako'
@@ -1056,10 +1052,8 @@ class sgt_planning_td(Base, Vector):
     __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', sgt_planning_td)
 
-
-class sgt_planning_raster_td(Base, Vector):
+class SgtPlanningRasterTd(Base, Vector):
     __tablename__ = 'geologische_tiefenlager_raster'
     __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/sgt_planning.mako'
@@ -1091,10 +1085,12 @@ class sgt_planning_raster_td(Base, Vector):
     __minscale__ = 1
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', sgt_planning_raster_td)
+register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', SgtFacilitiesTd)
+register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', SgtPlanningTd)
+register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', SgtPlanningRasterTd)
 
 
-class sil_facilities_a(Base, Vector):
+class SilFacilitiesA(Base, Vector):
     __tablename__ = 'sachplan_inf_luft_facilities_anhorung'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/sil_facilities.mako'
@@ -1122,10 +1118,8 @@ class sil_facilities_a(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', sil_facilities_a)
 
-
-class sil_planning_a(Base, Vector):
+class SilPlanningA(Base, Vector):
     __tablename__ = 'sachplan_inf_luft_plmeasures_anhorung'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/sil_planning.mako'
@@ -1159,10 +1153,8 @@ class sil_planning_a(Base, Vector):
     __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', sil_planning_a)
 
-
-class sil_planning_raster_a(Base, Vector):
+class SilPlanningRasterA(Base, Vector):
     __tablename__ = 'sachplan_inf_luft_plmeasures_r_anhorung'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/sil_planning.mako'
@@ -1196,17 +1188,19 @@ class sil_planning_raster_a(Base, Vector):
     __minscale__ = 1
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', sil_planning_raster_a)
+register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', SilFacilitiesA)
+register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', SilPlanningA)
+register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', SilPlanningRasterA)
 
 
-class sil_facilities_k(Base, Vector):
+class SilFacilitiesK(Base, Vector):
     __tablename__ = 'sachplan_inf_luft_facilities_kraft'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/sil_facilities.mako'
     __bodId__ = 'ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Integer, primary_key=True)
+    id = Column('stabil_id', Text, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1227,10 +1221,8 @@ class sil_facilities_k(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_facilities_k)
 
-
-class sil_planning_k(Base, Vector):
+class SilPlanningK(Base, Vector):
     __tablename__ = 'sachplan_inf_luft_plmeasures_kraft'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/sil_planning.mako'
@@ -1264,17 +1256,15 @@ class sil_planning_k(Base, Vector):
     __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_planning_k)
 
-
-class sil_planning_raster_k(Base, Vector):
+class SilPlanningRasterK(Base, Vector):
     __tablename__ = 'sachplan_inf_luft_plmeasures_r_kraft'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/sil_planning.mako'
     __bodId__ = 'ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Integer, primary_key=True)
+    id = Column('stabil_id', Text, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1301,10 +1291,13 @@ class sil_planning_raster_k(Base, Vector):
     __minscale__ = 1
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', sil_planning_raster_k)
+
+register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', SilFacilitiesK)
+register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', SilPlanningK)
+register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', SilPlanningRasterK)
 
 
-class nga_anbieter (Base, Vector):
+class NgaAnbieter(Base, Vector):
     __tablename__ = 'nga_anbieter'
     __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/ngamapping.mako'
@@ -1316,10 +1309,10 @@ class nga_anbieter (Base, Vector):
     nbofprovider = Column('nbofprovider', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.anbieter-eigenes_festnetz', nga_anbieter)
+register('ch.bakom.anbieter-eigenes_festnetz', NgaAnbieter)
 
 
-class kernkraftwerke (Base, Vector):
+class Kernkraftwerke(Base, Vector):
     __tablename__ = 'kernkraftwerke'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/kernkraftwerke.mako'
@@ -1364,10 +1357,10 @@ class kernkraftwerke (Base, Vector):
     dismantling_phase = Column('dismantling_phase', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.kernkraftwerke', kernkraftwerke)
+register('ch.bfe.kernkraftwerke', Kernkraftwerke)
 
 
-class sis_facilities_a (Base, Vector):
+class SisFacilitiesA(Base, Vector):
     __tablename__ = 'sis_fac_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __bodId__ = 'ch.bav.sachplan-infrastruktur-schiene_anhorung'
@@ -1397,10 +1390,10 @@ class sis_facilities_a (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schiene_anhorung', sis_facilities_a)
+register('ch.bav.sachplan-infrastruktur-schiene_anhorung', SisFacilitiesA)
 
 
-class sis_planning_a (Base, Vector):
+class SisPlanningA(Base, Vector):
     __tablename__ = 'sis_pl_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/sis_planning.mako'
@@ -1436,10 +1429,10 @@ class sis_planning_a (Base, Vector):
     __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schiene_anhorung', sis_planning_a)
+register('ch.bav.sachplan-infrastruktur-schiene_anhorung', SisPlanningA)
 
 
-class sis_angaben (Base, Vector):
+class SisAngaben(Base, Vector):
     __tablename__ = 'sis_angaben'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/sis_angaben.mako'
@@ -1462,10 +1455,10 @@ class sis_angaben (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schiene_ausgangslage', sis_angaben)
+register('ch.bav.sachplan-infrastruktur-schiene_ausgangslage', SisAngaben)
 
 
-class sis_planning_raster_a (Base, Vector):
+class SisPlanningRasterA(Base, Vector):
     __tablename__ = 'sis_pl_r_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/sis_planning.mako'
@@ -1501,10 +1494,10 @@ class sis_planning_raster_a (Base, Vector):
     __minscale__ = 1
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schiene_anhorung', sis_planning_raster_a)
+register('ch.bav.sachplan-infrastruktur-schiene_anhorung', SisPlanningRasterA)
 
 
-class sis_facilities_k (Base, Vector):
+class SisFacilitiesK(Base, Vector):
     __tablename__ = 'sis_fac_kraft'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/sis_facilities.mako'
@@ -1534,10 +1527,10 @@ class sis_facilities_k (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schiene_kraft', sis_facilities_k)
+register('ch.bav.sachplan-infrastruktur-schiene_kraft', SisFacilitiesK)
 
 
-class sis_planning_k (Base, Vector):
+class SisPlanningK(Base, Vector):
     __tablename__ = 'sis_pl_kraft'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/sis_planning.mako'
@@ -1572,10 +1565,10 @@ class sis_planning_k (Base, Vector):
     __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schiene_kraft', sis_planning_k)
+register('ch.bav.sachplan-infrastruktur-schiene_kraft', SisPlanningK)
 
 
-class sis_planning_raster_k (Base, Vector):
+class SisPlanningRasterK(Base, Vector):
     __tablename__ = 'sis_pl_r_kraft'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/sis_planning.mako'
@@ -1611,10 +1604,10 @@ class sis_planning_raster_k (Base, Vector):
     __minscale__ = 1
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schiene_kraft', sis_planning_raster_k)
+register('ch.bav.sachplan-infrastruktur-schiene_kraft', SisPlanningRasterK)
 
 
-class kbs_zivilflugpl(Base, Vector):
+class KbsZivilflugpl(Base, Vector):
     __tablename__ = 'kataster_belasteter_standorte_zivflpl'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/kataster_belasteter_standorte_zivflpl.mako'
@@ -1635,10 +1628,10 @@ class kbs_zivilflugpl(Base, Vector):
     url = Column('url', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.kataster-belasteter-standorte-zivilflugplaetze', kbs_zivilflugpl)
+register('ch.bazl.kataster-belasteter-standorte-zivilflugplaetze', KbsZivilflugpl)
 
 
-class laerm_emissionsplan_eisenbahn_tag(Base, Vector):
+class LaermEmissionsplanEisenbahnTag(Base, Vector):
     __tablename__ = 'laerm_emissionsplan_eisenbahn_tag'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/laerm_emissionsplan_eisenbahn_tag.mako'
@@ -1664,10 +1657,10 @@ class laerm_emissionsplan_eisenbahn_tag(Base, Vector):
     datum = Column('datum', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.laerm-emissionsplan_eisenbahn_tag', laerm_emissionsplan_eisenbahn_tag)
+register('ch.bav.laerm-emissionsplan_eisenbahn_tag', LaermEmissionsplanEisenbahnTag)
 
 
-class laerm_emissionsplan_eisenbahn_nacht(Base, Vector):
+class LaermEmissionsplanEisenbahnNacht(Base, Vector):
     __tablename__ = 'laerm_emissionsplan_eisenbahn_nacht'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/laerm_emissionsplan_eisenbahn_nacht.mako'
@@ -1693,10 +1686,10 @@ class laerm_emissionsplan_eisenbahn_nacht(Base, Vector):
     datum = Column('datum', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.laerm-emissionsplan_eisenbahn_nacht', laerm_emissionsplan_eisenbahn_nacht)
+register('ch.bav.laerm-emissionsplan_eisenbahn_nacht', LaermEmissionsplanEisenbahnNacht)
 
 
-class sif_facilities_a (Base, Vector):
+class SifFacilitiesA(Base, Vector):
     __tablename__ = 'sif_fac_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __bodId__ = 'ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung'
@@ -1726,10 +1719,10 @@ class sif_facilities_a (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', sif_facilities_a)
+register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', SifFacilitiesA)
 
 
-class sif_facilities_k (Base, Vector):
+class SifFacilitiesK(Base, Vector):
     __tablename__ = 'sif_fac_kraft'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __bodId__ = 'ch.bav.sachplan-infrastruktur-schifffahrt_kraft'
@@ -1759,10 +1752,10 @@ class sif_facilities_k (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', sif_facilities_k)
+register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', SifFacilitiesK)
 
 
-class sif_planning_a (Base, Vector):
+class SifPlanningA(Base, Vector):
     __tablename__ = 'sif_pl_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/sif_planning.mako'
@@ -1798,10 +1791,10 @@ class sif_planning_a (Base, Vector):
     __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', sif_planning_a)
+register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', SifPlanningA)
 
 
-class sif_planning_k (Base, Vector):
+class SifPlanningK(Base, Vector):
     __tablename__ = 'sif_pl_kraft'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/sif_planning.mako'
@@ -1837,10 +1830,10 @@ class sif_planning_k (Base, Vector):
     __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', sif_planning_k)
+register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', SifPlanningK)
 
 
-class sif_planning_raster_a (Base, Vector):
+class SifPlanningRasterA(Base, Vector):
     __tablename__ = 'sif_pl_r_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/sif_planning.mako'
@@ -1876,10 +1869,10 @@ class sif_planning_raster_a (Base, Vector):
     __minscale__ = 1
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', sif_planning_raster_a)
+register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', SifPlanningRasterA)
 
 
-class sif_planning_raster_k (Base, Vector):
+class SifPlanningRasterK(Base, Vector):
     __tablename__ = 'sif_pl_r_kraft'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/sif_planning.mako'
@@ -1915,10 +1908,10 @@ class sif_planning_raster_k (Base, Vector):
     __minscale__ = 1
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', sif_planning_raster_k)
+register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', SifPlanningRasterK)
 
 
-class sif_ausgangslage (Base, Vector):
+class SifAusgangslage(Base, Vector):
     __tablename__ = 'sif_ausgangslage'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/sif_angaben.mako'
@@ -1936,10 +1929,10 @@ class sif_ausgangslage (Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schifffahrt_ausgangslage', sif_ausgangslage)
+register('ch.bav.sachplan-infrastruktur-schifffahrt_ausgangslage', SifAusgangslage)
 
 
-class bazl_laerm_erste_nachtstunde (Base, Vector):
+class BazlLaermErsteNachtstunde(Base, Vector):
     __tablename__ = 'laermbelastungskataster_zivilflugplaetze_erste_nachtstunde'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/bazl_laerm.mako'
@@ -1954,7 +1947,7 @@ class bazl_laerm_erste_nachtstunde (Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde', bazl_laerm_erste_nachtstunde)
+register('ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde', BazlLaermErsteNachtstunde)
 
 
 class bazl_laerm_helikopter_maximalpegel (Base, Vector):
