@@ -38,6 +38,9 @@ msgstr "Sontget "
 msgid "<i>Bobbahn</i>"
 msgstr "Bobera"
 
+msgid "<i>Bruecke gedeckt</i>"
+msgstr "Strada"
+
 msgid "<i>Brunnen</i>"
 msgstr "Funtauna "
 
@@ -110,6 +113,9 @@ msgstr "Cresta "
 msgid "<i>Grossregion</i>"
 msgstr "Territori principal"
 
+msgid "<i>Grotte Hoehle</i>"
+msgstr "Grotta"
+
 msgid "<i>Grotte, Hoehle</i>"
 msgstr "Grotta "
 
@@ -122,6 +128,9 @@ msgstr "Fermada da bus "
 msgid "<i>Haltestelle Schiff</i>"
 msgstr "Fermada da nav"
 
+msgid "<i>Haltestelle Uebrige Bahnen</i>"
+msgstr "Ulteriurs vials"
+
 msgid "<i>Hauptgipfel</i>"
 msgstr "Piz principal"
 
@@ -133,6 +142,9 @@ msgstr "Val principala"
 
 msgid "<i>Heliport</i>"
 msgstr "Champ d'aviaziun per helicopter"
+
+msgid "<i>Historische Baute</i>"
+msgstr "Areal istoric"
 
 msgid "<i>Historisches Areal</i>"
 msgstr "Areal istoric "
@@ -223,6 +235,9 @@ msgstr "Pausadi "
 
 msgid "<i>Rodelbahn</i>"
 msgstr "Via da scarsolar"
+
+msgid "<i>Sakraler Turm</i>"
+msgstr "Edifizi sacrala"
 
 msgid "<i>Sakrales Gebaeude</i>"
 msgstr "Edifizi sacrala"
@@ -5086,6 +5101,12 @@ msgstr "swisstopo, Kt."
 
 msgid "ch.swisstopo.kt.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/de/home/swisstopo/org/cartography.html"
+
+msgid "ch.swisstopo.landeskarte-farbe-10"
+msgstr "Charta naziunala 1:10'000 (colur)"
+
+msgid "ch.swisstopo.landeskarte-grau-10"
+msgstr "Charta naziunala 1:10'000 (grisch)"
 
 msgid "ch.swisstopo.landesschwerenetz"
 msgstr "Schweregrundnetz"

@@ -38,6 +38,9 @@ msgstr "Oratory"
 msgid "<i>Bobbahn</i>"
 msgstr "Bob run"
 
+msgid "<i>Bruecke gedeckt</i>"
+msgstr "Road"
+
 msgid "<i>Brunnen</i>"
 msgstr "Fountain"
 
@@ -110,6 +113,9 @@ msgstr "Crest"
 msgid "<i>Grossregion</i>"
 msgstr "Main Region"
 
+msgid "<i>Grotte Hoehle</i>"
+msgstr "Cave"
+
 msgid "<i>Grotte, Hoehle</i>"
 msgstr "Cave"
 
@@ -122,6 +128,9 @@ msgstr "Bus stop"
 msgid "<i>Haltestelle Schiff</i>"
 msgstr "Ship stop"
 
+msgid "<i>Haltestelle Uebrige Bahnen</i>"
+msgstr "Other transport"
+
 msgid "<i>Hauptgipfel</i>"
 msgstr "Main peak"
 
@@ -133,6 +142,9 @@ msgstr "Main Valley"
 
 msgid "<i>Heliport</i>"
 msgstr "Heliport"
+
+msgid "<i>Historische Baute</i>"
+msgstr "Historical area"
 
 msgid "<i>Historisches Areal</i>"
 msgstr "Historical area"
@@ -223,6 +235,9 @@ msgstr "Rest area"
 
 msgid "<i>Rodelbahn</i>"
 msgstr "Toboggan run"
+
+msgid "<i>Sakraler Turm</i>"
+msgstr "Sacred building"
 
 msgid "<i>Sakrales Gebaeude</i>"
 msgstr "Sacred building"
@@ -5086,6 +5101,12 @@ msgstr "swisstopo, ct."
 
 msgid "ch.swisstopo.kt.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/en/home/swisstopo/org/cartography.html"
+
+msgid "ch.swisstopo.landeskarte-farbe-10"
+msgstr "National Map 1:10'000 (color)"
+
+msgid "ch.swisstopo.landeskarte-grau-10"
+msgstr "National Map 1:10'000 (grey)"
 
 msgid "ch.swisstopo.landesschwerenetz"
 msgstr "Gravimetric base network"
