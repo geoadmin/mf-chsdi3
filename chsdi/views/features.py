@@ -429,7 +429,11 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
             # Filter by time instant
             if params.timeInstant is not None and hasattr(model, '__timeInstant__'):
                 timeInstantColumn = model.time_instant_column()
-                query = query.filter(timeInstantColumn == params.timeInstant)
+                timeInstantIndex = layerBodIds.index(layer)
+                timeInstant = params.timeInstant[timeInstantIndex]
+                if timeInstant:
+                    query = query.filter(
+                        timeInstantColumn == timeInstant)
 
             # Add limit
             limits = [x for x in [maxFeatures, params.limit] if x is not None]
