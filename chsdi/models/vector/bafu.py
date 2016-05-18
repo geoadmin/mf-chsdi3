@@ -21,8 +21,7 @@ class Hydrogeologischekarte100(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('raster_name', Text)
     pdf_list = Column('pdf_list', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrogeologische-karte_100', Hydrogeologischekarte100)
 
