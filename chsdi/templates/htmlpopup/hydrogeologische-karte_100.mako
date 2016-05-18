@@ -18,16 +18,19 @@
           i = i+1
 
         arr_len = len(pdf_link_new)  
-
      else:
         arr_len = 0
 %>
 <tr>
   <td class="cell-meta-small">&nbsp;</td>
   <td class="cell-meta-big">
+% if pdf_link_list != None:
 % for i in range(arr_len):
-    <a href="http://data.geo.admin.ch/ch.bafu.hydrogeologische-karte_100/legends/${pdf_link_new[i]}"  target="_blank">${pdf_link_new[i]}</a><br />
+        <a href="http://data.geo.admin.ch/ch.bafu.hydrogeologische-karte_100/legends/${pdf_link_new[i]}"  target="_blank">${pdf_link_new[i]}</a><br />
 % endfor
+% else:
+-
+% endif
   </td>
 </tr>
 </%def>
