@@ -117,9 +117,11 @@ class Bundestankstellen_bebeco(Base, Vector):
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
     __template__ = 'templates/htmlpopup/bundestankstellen.mako'
     __bodId__ = 'ch.vbs.bundestankstellen-bebeco'
-    __queryable_attributes__ = ['ort']
+    __queryable_attributes__ = ['ort', 'plz', 'strasse']
     __label__ = 'ort'
     id = Column('bgdi_id', Integer, primary_key=True)
+    strasse = Column('strasse', Text)
+    plz = Column('plz', Integer)
     ort = Column('ort', Text)
     the_geom = Column(Geometry3D)
 

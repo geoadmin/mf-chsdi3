@@ -5598,7 +5598,7 @@ msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.wk50-papierkarte.metadata"
-msgstr "Wanderkarten 1:50'000"
+msgstr "Chartas da viandar 1:50'000"
 
 msgid "ch.swisstopo.wk50-papierkarte.metadata.name"
 msgstr "Name"
@@ -5650,6 +5650,12 @@ msgstr "Tankstellen BEBECO"
 
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Ort"
+
+msgid "ch.vbs.bundestankstellen-bebeco.plz"
+msgstr "PLZ"
+
+msgid "ch.vbs.bundestankstellen-bebeco.strasse"
+msgstr "Strasse"
 
 msgid "ch.vbs.grunddispositiv-zeus"
 msgstr "Zeus Karte"

@@ -5651,6 +5651,12 @@ msgstr "Filling stations BEBECO"
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Location"
 
+msgid "ch.vbs.bundestankstellen-bebeco.plz"
+msgstr "ZIP"
+
+msgid "ch.vbs.bundestankstellen-bebeco.strasse"
+msgstr "Street"
+
 msgid "ch.vbs.grunddispositiv-zeus"
 msgstr "Zeus map"
 
