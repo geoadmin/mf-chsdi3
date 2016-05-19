@@ -52,7 +52,7 @@ class DynamodbConnection:
         if self.conn is None:
             try:
                 self.conn = connect_to_region(self.region)
-            except Exception as e:
+            except Exception as e:  # pragma: no cover
                 raise exc.HTTPBadRequest('DynamoDB: Error during connection init %s' % e)
         return self.conn
 
@@ -79,7 +79,7 @@ def get_dynamodb_table(table_name='shorturl'):
     conn = dynamodb_connection.get()
     try:
         table = Table(table_name, connection=conn)
-    except Exception as e:
+    except Exception as e:  # pragma: no cover
         raise exc.HTTPBadRequest('Error during connection to the table %s' % e)
     return table
 
