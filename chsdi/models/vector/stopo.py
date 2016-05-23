@@ -3,7 +3,6 @@
 from sqlalchemy import Column, Text
 
 from sqlalchemy.types import Numeric, Boolean, Integer, DateTime, Float
-from geoalchemy2.types import Geometry
 
 from chsdi.models import register, register_perimeter, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -145,25 +144,6 @@ class GeolSpezialKartenMetadata(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-spezialkarten_schweiz.metadata', GeolSpezialKartenMetadata)
-
-
-class GravimetrischerAtlasMetadata(Base, Vector):
-    __tablename__ = 'gravimetrie_atlas_metadata'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gravimetrischer_atlas_metadata.mako'
-    __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas.metadata'
-    __queryable_attributes__ = ['id', 'titel']
-    __label__ = 'titel'
-    id = Column('nr', Integer, primary_key=True)
-    titel = Column('titel', Text)
-    jahr = Column('jahr', Numeric)
-    autor = Column('autor', Text)
-    formate_de = Column('formate_de', Text)
-    formate_fr = Column('formate_fr', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
-
-register('ch.swisstopo.geologie-gravimetrischer_atlas.metadata', GravimetrischerAtlasMetadata)
 
 
 class ShopProductClass:
@@ -545,9 +525,7 @@ class SwissBoundariesLand(Base, Vector):
     __bodId__ = 'ch.swisstopo.swissboundaries3d-land-flaeche.fill'
     id = Column('bgdi_id', Integer, primary_key=True)
     displayname = Column('displayname', Text)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
-
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissboundaries3d-land-flaeche.fill', SwissBoundariesLand)
 
@@ -965,8 +943,7 @@ class GridstandTemplate:
 class GridstandPermiterTemplate:
     __table_args__ = ({'autoload': False})
     id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 
 # PK 25
@@ -1110,8 +1087,7 @@ class SwissimageProductPerimeter(Base, Vector):
     __bodId__ = 'ch.swisstopo.swissimage-product'
     id = Column('min', Integer, primary_key=True)
     resolution = Column('resolution', Float)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissimage-product', SwissimageProduct)
 register_perimeter('ch.swisstopo.swissimage-product', SwissimageProductPerimeter)
@@ -2436,8 +2412,7 @@ class SwissTLM3dPerimeter(Base, Vector):
     __bodId__ = 'ch.swisstopo.swisstlm3d-karte-farbe'
     __totalArea__ = 41455.0
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register_perimeter('ch.swisstopo.swisstlm3d-karte-farbe', SwissTLM3dPerimeter)
 
@@ -2448,8 +2423,7 @@ class SwissAlti3dPerimeter(Base, Vector):
     __bodId__ = 'ch.swisstopo.swissalti3d-reliefschattierung'
     __totalArea__ = 41455.0
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register_perimeter('ch.swisstopo.swissalti3d-reliefschattierung', SwissAlti3dPerimeter)
 
@@ -2460,8 +2434,7 @@ class DHM25Perimeter(Base, Vector):
     __bodId__ = 'ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'
     __totalArea__ = 58500.0
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register_perimeter('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25Perimeter)
 
@@ -2472,7 +2445,6 @@ class SwissBuildings3dPerimeter(Base, Vector):
     __bodId__ = 'ch.swisstopo.swissbuildings3d'
     __totalArea__ = 41455.0
     id = Column('gid', Integer, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
 
 register_perimeter('ch.swisstopo.swissbuildings3d', SwissBuildings3dPerimeter)
