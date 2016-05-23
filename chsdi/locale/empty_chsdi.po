@@ -1,3 +1,6 @@
+msgid "tt_bfe_geschw_wind_exttooltip"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.orig_id"
 msgstr ""
 

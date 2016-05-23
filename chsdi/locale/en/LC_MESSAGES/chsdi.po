@@ -3825,7 +3825,7 @@ msgid "ch.bazl.projektierungszonen-flughafenanlagen"
 msgstr "Planning zones: airports"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
-msgstr "SAIP in consultation"
+msgstr "SAIP consultation"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"
 msgstr "SP Aviation infrastructure"
@@ -5061,7 +5061,7 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Siegfried Map First edition"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
-msgstr "Aeronautical Chart ICAO"
+msgstr "Aeronautical Chart ICAO printed"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata.release"
 msgstr "Edition"
@@ -5382,7 +5382,7 @@ msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata"
-msgstr "Glider Chart"
+msgstr "Glider Chart printed"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata.release"
 msgstr "Edition"
@@ -7441,6 +7441,9 @@ msgstr "Artificial surfaces"
 
 msgid "tt_bfe_geschw_wind_durchschnitt"
 msgstr "Average wind speed"
+
+msgid "tt_bfe_geschw_wind_exttooltip"
+msgstr "Wind rose and distribution of Weibull"
 
 msgid "tt_bfe_geschwindigkeit"
 msgstr "Speed (m/s)"

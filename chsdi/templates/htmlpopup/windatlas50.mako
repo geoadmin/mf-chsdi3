@@ -51,6 +51,10 @@ props = c['properties']
       <td>${round(props['v_mean'], 1)} m/s</td>
     </tr>
     <tr>
+      <th class="cell-left">${_('zusatzinfo')}</th>
+      <td><a href="${baseUrl}/rest/services/ech/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}" target="_blank">${_('tt_bfe_geschw_wind_exttooltip')}</a></td>
+    </tr>
+    <tr>
       <th colspan=2 class="cell-meta-one">${_('tt_bfe_windrose')}</th>
     </tr>
     <tr>

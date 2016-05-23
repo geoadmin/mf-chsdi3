@@ -5061,7 +5061,7 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Siegfriedkarte Erstausgabe"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
-msgstr "Luftfahrtkarte ICAO"
+msgstr "Luftfahrtkarte ICAO Papier"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5382,7 +5382,7 @@ msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata"
-msgstr "Segelflugkarte"
+msgstr "Segelflugkarte Papier"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -7441,6 +7441,9 @@ msgstr "Bebaute Flächen"
 
 msgid "tt_bfe_geschw_wind_durchschnitt"
 msgstr "Durchschnittliche Windgeschwindigkeit"
+
+msgid "tt_bfe_geschw_wind_exttooltip"
+msgstr "Windrose und Weibullverteilung"
 
 msgid "tt_bfe_geschwindigkeit"
 msgstr "Geschwindigkeit (m/s)"
