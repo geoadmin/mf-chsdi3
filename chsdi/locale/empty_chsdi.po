@@ -8692,3 +8692,6 @@ msgstr ""
 
 msgid "rechtsgrundlage_2"
 msgstr ""
+
+msgid "ch.bafu.hydrogeologische-karte_100"
+msgstr ""

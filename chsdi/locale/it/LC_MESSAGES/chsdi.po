@@ -2468,6 +2468,9 @@ msgstr "Incremento del legno (IFN)"
 msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Schizzo idrogeologico"
 
+msgid "ch.bafu.hydrogeologische-karte_100"
+msgstr "Carta idrogeologica 100"
+
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
 msgstr "Mesure état des eaux Confédération"
 

@@ -2468,6 +2468,9 @@ msgstr "Wood increment (NFI)"
 msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Hydrogeological sketch"
 
+msgid "ch.bafu.hydrogeologische-karte_100"
+msgstr "Hydrogeological map 100"
+
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
 msgstr "Messstandorte Gewässerzustand Bund"
 

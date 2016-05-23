@@ -2468,6 +2468,9 @@ msgstr "Accroissement annuel de bois (IFN)"
 msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Esquisse hydrogéologique"
 
+msgid "ch.bafu.hydrogeologische-karte_100"
+msgstr "Carte hydrogéologique au 100"
+
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
 msgstr "Mesure état des eaux Confédération"
 

@@ -2468,6 +2468,9 @@ msgstr "Creschientscha annuala da laina"
 msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Charta da survista idrogeologica"
 
+msgid "ch.bafu.hydrogeologische-karte_100"
+msgstr "Hydrogeologische Karte 100"
+
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
 msgstr "Messstandorte Gewässerzustand Bund"
 
