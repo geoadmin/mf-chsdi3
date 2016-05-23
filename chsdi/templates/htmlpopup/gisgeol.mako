@@ -39,6 +39,11 @@
           </td>
     </tr>
     % else:
+          <td class="cell-left">${_('pdf_url')}</td>
+          <td> -
+          </td>
+    </tr>
+
         % if (c['attributes']['copy_avail']) == 'free' and (c['attributes']['view_avail']) == 'free':
                 <tr><td class="cell-left">${_('gisgeol_auskunft')}</td>
           <td>
