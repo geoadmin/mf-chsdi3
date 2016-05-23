@@ -202,6 +202,85 @@ class TestFeaturesView(TestsBase):
     def test_extendedhtmlpopup_noinfo(self):
         self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/extendedHtmlPopup', status=404)
 
+    def test_cut_no_group_geom_only(self):
+        params = {'geometryType': 'esriGeometryEnvelope', 'geometry': '545000,145000,555000,170005', 'layers': 'all:ch.swisstopo.images-swissimage.metadata'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
+        self.assertIn('ch.swisstopo.images-swissimage.metadata', resp.json)
+        self.assertIn('area', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
+        self.assertIn('groupby', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
+        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
+        params = {'geometryType': 'esriGeometryEnvelope', 'geometry': '545000,145000,555000,170005', 'layers': 'all:ch.swisstopo.pixelkarte-farbe-pk50.noscale'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
+        self.assertIn('ch.swisstopo.pixelkarte-farbe-pk50.noscale', resp.json)
+        self.assertIn('area', resp.json['ch.swisstopo.pixelkarte-farbe-pk50.noscale'][0])
+        self.assertIn('groupby', resp.json['ch.swisstopo.pixelkarte-farbe-pk50.noscale'][0])
+        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.pixelkarte-farbe-pk50.noscale'][0])
+
+    def test_cut_bad_geom(self):
+        params = {'geometryType': 'esriGeometryEnvelope', 'geometry': '545000,145000,555000', 'layers': 'all:ch.swisstopo.images-swissimage.metadata'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=400)
+        resp.mustcontain('Please provide a valid geometry')
+
+    def test_cut_bad_geom_type(self):
+        params = {'geometryType': 'esriGeometryPoint', 'geometry': '545000,145000,555000,170005', 'layers': 'all:ch.swisstopo.images-swissimage.metadata'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=400)
+        resp.mustcontain('Please provide a valid geometry type. Available: (esriGeometryPolygon, esriGeometryEnvelope)')
+
+    def test_cut_with_group_geom_only(self):
+        params = {'geometryType': 'esriGeometryEnvelope', 'geometry': '545000,145000,555000,170005',
+                  'layers': 'all:ch.swisstopo.images-swissimage.metadata', 'groupby': 'datenstand'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
+        self.assertIn('ch.swisstopo.images-swissimage.metadata', resp.json)
+        self.assertGreater(len(resp.json['ch.swisstopo.images-swissimage.metadata']), 1)
+        self.assertIn('area', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
+        self.assertIn('groupby', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
+        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
+
+    def test_cut_with_feature_clipper(self):
+        params = {'clipper': 'ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill:2222', 'layers': 'all:ch.swisstopo.swisstlm3d-karte-farbe'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
+        self.assertIn('ch.swisstopo.swisstlm3d-karte-farbe', resp.json)
+        self.assertEqual(len(resp.json['ch.swisstopo.swisstlm3d-karte-farbe']), 1)
+
+    def test_cut_total_area(self):
+        params = {'layers': 'all:ch.swisstopo.swisstlm3d-karte-farbe'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
+        self.assertIn('ch.swisstopo.swisstlm3d-karte-farbe', resp.json)
+        self.assertEqual(len(resp.json['ch.swisstopo.swisstlm3d-karte-farbe']), 1)
+
+    def test_cut_complex_polygon_and_two_layers_with_groups(self):
+        params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
+                  'geometryType': 'esriGeometryPolygon', 'layers': 'all:ch.swisstopo.images-swissimage.metadata,ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
+                  'groupby': 'datenstand,kanton'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
+        self.assertIn('ch.swisstopo.images-swissimage.metadata', resp.json)
+        self.assertIn('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', resp.json)
+        self.assertEqual('datenstand', resp.json['ch.swisstopo.images-swissimage.metadata'][0]['groupby'])
+
+    def test_cut_total_wrong_id(self):
+        params = {'layers': 'all:foo'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=400)
+        resp.mustcontain('No GeoTable was found for foo')
+
+    def test_cut_bad_clipper_layer_id(self):
+        params = {'clipper': 'foo:2222', 'layers': 'all:ch.swisstopo.swisstlm3d-karte-farbe'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=400)
+        resp.mustcontain('No Vector Table was found for foo')
+
+    def test_cut_bad_clipper_feature_id(self):
+        params = {'clipper': 'ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill:toto',
+                  'layers': 'all:ch.swisstopo.images-swissimage.metadata', 'groupby': 'datenstand'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=404)
+        resp.mustcontain('No feature with id toto')
+
+    def test_cut_outside_extent(self):
+        params = {'layers': 'all:ch.swisstopo.swissimage-product',
+                  'geometryType': 'esriGeometryEnvelope',
+                  'geometry': '478968,280720,486572,292875'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
+        self.assertEqual(resp.json.keys()[0], 'ch.swisstopo.swissimage-product')
+        self.assertEqual(resp.json['ch.swisstopo.swissimage-product'][0]['area'], 0)
+
 
 class TestGebauedeGeometry(TestsBase):
 

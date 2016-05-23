@@ -12,12 +12,11 @@ CODE_DIR=$BASE_DIR/private/branch/$GIT_BRANCH
 if ! [ -f $CODE_DIR/.git/config ];
 then
     git clone https://github.com/geoadmin/mf-chsdi3 $CODE_DIR
-    cd $CODE_DIR
 fi
 
 cd $CODE_DIR
 # Remove all local changes and get latest GITBRANCH from remote
-git fetch origin && git reset --hard && git checkout $GIT_BRANCH && git reset --hard origin/$GIT_BRANCH
+git fetch origin && git reset --hard && git checkout $GIT_BRANCH && git reset --hard origin/$GIT_BRANCH && git clean -fxd .
 # Clean all in case the branch was deployed previously
 make cleanall
 
