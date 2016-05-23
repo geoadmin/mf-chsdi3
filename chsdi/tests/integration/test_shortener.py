@@ -43,3 +43,20 @@ class TestShortenerView(TestsBase):
 
     def test_shortener_too_long_get(self):
         self.testapp.get('/shorten/toolong', status=302)
+
+    def test_url_short(self):
+        test_url = 'https://map.geo.admin.ch/?topic=ech&lang=en&bgLayer=ch.swisstopo.pixelkarte-farbe&layers' \
+            '=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bafu.wrz-wildruhezonen_portal,' \
+            'ch.swisstopo.swisstlm3d-wanderwege&layers_visibility=false,false,false,false&layers_timestamp=' \
+            '18641231,,,&X=214128.92&Y=823805.99&zoom=2'
+        self.testapp.get('/shorten.json', params={'url': test_url}, status=200)
+
+    def test_shorten_json_example(self):
+        test_url = 'http://api3.geo.admin.ch/shorten.json?url=https:%2F%2Fmf-geoadmin3.int.bgdi.ch' \
+            '%2F%3FX%3D164565.22%26Y%3D620538.74%26zoom%3D2%26lang%3Den%26topic%3Dlubis%26bgLayer%3Dch.' \
+            'swisstopo.pixelkarte-grau%26catalogNodes%3D1179,1180,1184,1186%26layers%3Dch.swisstopo.lubis-bildstreifen'
+        self.testapp.get('/shorten.json', params={'url': test_url}, status=200)
+
+    def test_request_host(self):
+        test_url = 'http://s.geo.admin.ch/shorten/6bea6cebcd'
+        self.testapp.get('/shorten.json', params={'url': test_url}, status=200)
