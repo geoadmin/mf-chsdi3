@@ -4439,6 +4439,9 @@ msgstr "CNES, Spot Image, swisstopo, NPOC"
 msgid "ch.swisstopo.cnes.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/fr/home.html"
 
+msgid "ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung"
+msgstr "MNT25 estompage du relief"
+
 msgid "ch.swisstopo.dreiecksvermaschung"
 msgstr "MN95 Maillage triangulaire"
 
@@ -5207,8 +5210,18 @@ msgstr "Etat de mise à jour"
 msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
 msgstr "Numéro ISBN "
 
-msgid "ch.swisstopo.lk25-papierkarte.metadata.name"
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_de"
 msgstr "Nom"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_fr"
+msgstr "Nom"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_it"
+msgstr "Nom"
+
+#. TODO
+msgid "ch.swisstopo.lk25-papierkarte.metadata.namefr"
+msgstr "ch.swisstopo.lk25-papierkarte.metadata.namefr"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.number"
 msgstr "Numéro"
@@ -5449,6 +5462,9 @@ msgstr "Frontières nationales"
 
 msgid "ch.swisstopo.swissbuildings3d"
 msgstr "Les bâtiments en 3D simplifiés"
+
+msgid "ch.swisstopo.swissbuildings3d-2.metadata"
+msgstr "Disponibilité swissBUILDINGS3D 2.0"
 
 msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE"
