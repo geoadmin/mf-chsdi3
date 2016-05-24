@@ -350,13 +350,6 @@ def format_scale(scale):
     return scale
 
 
-def format_price(price):
-    price_float = price / 100.0
-    price_2dec = format(price_float, '.2f')
-    price = "CHF " + str(price_2dec)
-    return price
-
-
 def int_with_apostrophe(x):
     if type(x) not in [type(0), type(long(0))]:
         return '-'
@@ -382,9 +375,3 @@ def get_loaderjs_url(request):
 def decompress_gzipped_string(string):
     content = gzip.GzipFile(fileobj=StringIO.StringIO(string))
     return content.read()
-
-
-def order_mapsheet(request, lang):
-    shopUrl = 'https:' + request.registry.settings['shop_url']
-    shopUrl = shopUrl + '/' + lang + '/dispatcher?'
-    return shopUrl

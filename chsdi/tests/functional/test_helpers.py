@@ -7,7 +7,7 @@ from chsdi.lib.helpers import (
     make_agnostic, make_api_url, check_url, transformCoordinate, sanitize_url,
     check_even, format_search_text, remove_accents, escape_sphinx_syntax,
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
-    versioned, parse_box2d, center_from_box2d, format_scale, format_price,
+    versioned, parse_box2d, center_from_box2d, format_scale,
     parse_date_string, parse_date_datenstand, filter_alt
 )
 from urlparse import urljoin
@@ -232,11 +232,6 @@ class Test_Helpers(unittest.TestCase):
         scale = 50000
         result = format_scale(scale)
         self.assertEqual(result, "1:50'000")
-
-    def test_format_price(self):
-        price = 1400
-        result = format_price(price)
-        self.assertEqual(result, "CHF 14.00")
 
     def test_parse_date_string(self):
         d = '2014-01-09'

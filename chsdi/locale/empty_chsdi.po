@@ -1,6 +1,12 @@
 msgid "tt_bfe_geschw_wind_exttooltip"
 msgstr ""
 
+msgid "ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung"
+msgstr ""
+
+msgid "ch.swisstopo.swissbuildings3d-2.metadata"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2.orig_id"
 msgstr ""
 
@@ -1512,8 +1518,18 @@ msgstr ""
 msgid "ch.swisstopo.lk25-papierkarte.metadata"
 msgstr ""
 
-msgid "ch.swisstopo.lk25-papierkarte.metadata.name"
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_de"
 msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.namefr"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_fr"
+msgstr ""
+
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.number"
 msgstr ""
