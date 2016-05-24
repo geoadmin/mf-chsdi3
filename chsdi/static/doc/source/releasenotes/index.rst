@@ -46,6 +46,9 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Federal Inventory ISOS <//map.geo.admin.ch/?layers=ch.bak.bundesinventar-schuetzenswerte-ortsbilder>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder) |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20160511:
 
 Release 20160511 - Wednesday, May 11th 2016
