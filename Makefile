@@ -395,6 +395,7 @@ requirements.txt:
 
 .venv/bin/git-secrets: .venv
 	@echo "${GREEN}Installing git secrets${RESET}";
+	if [ ! -d ".git" ]; then git init; fi
 	rm -rf .venv/git-secrets
 	git clone https://github.com/awslabs/git-secrets .venv/git-secrets
 	cd .venv/git-secrets && make install PREFIX=..
