@@ -48,6 +48,23 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                      |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Simplified 3D buildings <//map.geo.admin.ch/?layers=ch.swisstopo.swissbuildings3d>`__ (ch.swisstopo.swissbuildings3d)                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk25.noscale)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:50'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk50.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk50.noscale)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:100'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk100.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk100.noscale)           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:200'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk200.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk200.noscale)           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product>`__ (ch.swisstopo.swissimage-product)                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map swissTLM (color) <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-farbe>`__ (ch.swisstopo.swisstlm3d-karte-farbe)                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissALTI3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d-reliefschattierung>`__ (ch.swisstopo.swissalti3d-reliefschattierung)            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 .. _releasenotes_20160511:
 
