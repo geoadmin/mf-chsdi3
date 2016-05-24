@@ -5,15 +5,17 @@
 <%
     layer = c['layerBodId']
     lang = lang if lang in ('fr','it','en') else 'de'
-    fid = c['featureId']
+    fid = str(c['featureId'])
     webDavHost = request.registry.settings['webdav_host']
-    if isinstance(fid, str):
-        image = webDavHost + '/swisstopoproducts/250/' + fid + '.jpg'
+    image = webDavHost + '/swisstopoproducts/250/' + fid + '.jpg'
+    if 'pk_product' not in c['attributes']:
         if h.resource_exists(image):
             image_exists = True
+        else:
+            image_exists = False
     else:
         image_exists = False
-        
+       
     name = 'name_%s' % lang
     if 'scale' in c['attributes']:
         if c['attributes']['scale']:

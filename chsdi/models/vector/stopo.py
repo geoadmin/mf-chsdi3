@@ -162,6 +162,7 @@ class ShopProductClass:
 
 class ShopStandardClass:
     __template__ = 'templates/htmlpopup/shop_product.mako'
+    pk_product = Column('pk_product', Text)
     name_de = Column('s_title_de', Text)
     available = Column('available', Boolean)
     name_fr = Column('s_title_fr', Text)
