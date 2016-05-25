@@ -164,3 +164,7 @@
 </script>
 
 </%def>
+
+<%def name="extended_resources(c, lang)">
+  <script type="text/javascript" src="${h.get_loaderjs_url(request)}"></script>
+</%def>
