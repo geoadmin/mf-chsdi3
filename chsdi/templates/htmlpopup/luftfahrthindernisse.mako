@@ -226,4 +226,5 @@ from pyramid.url import route_url
 
 <%def name="extended_resources(c, lang)">
   <script type="text/javascript" src="${h.get_loaderjs_url(request)}"></script>
+  <script src="${h.versioned(request.static_url('chsdi:static/js/jquery.min.js'))}"></script>
 </%def>
