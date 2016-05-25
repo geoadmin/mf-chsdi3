@@ -15,6 +15,57 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20160525:
+
+Release 20160525 - Wednesday, May 25th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160511...r_160525>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160511...r_160525>`__
+
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hydrogeological map 100 <//map.geo.admin.ch/?layers=ch.bafu.hydrogeologische-karte_100>`__ (ch.bafu.hydrogeologische-karte_100)                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Filling stations BEBECO <//map.geo.admin.ch/?layers=ch.vbs.bundestankstellen-bebeco>`__ (ch.vbs.bundestankstellen-bebeco)                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cleantech projects <//map.geo.admin.ch/?layers=ch.bfe.energieforschung>`__ (ch.bfe.energieforschung)                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Federal Inventory ISOS <//map.geo.admin.ch/?layers=ch.bak.bundesinventar-schuetzenswerte-ortsbilder>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder) |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Simplified 3D buildings <//map.geo.admin.ch/?layers=ch.swisstopo.swissbuildings3d>`__ (ch.swisstopo.swissbuildings3d)                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk25.noscale)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:50'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk50.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk50.noscale)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:100'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk100.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk100.noscale)           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:200'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk200.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk200.noscale)           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product>`__ (ch.swisstopo.swissimage-product)                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map swissTLM (color) <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-farbe>`__ (ch.swisstopo.swisstlm3d-karte-farbe)                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissALTI3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d-reliefschattierung>`__ (ch.swisstopo.swissalti3d-reliefschattierung)            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20160511:
 
 Release 20160511 - Wednesday, May 11th 2016
