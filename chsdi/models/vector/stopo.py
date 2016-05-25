@@ -2413,7 +2413,7 @@ class SwissBuildings3d2Perimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_swissbuilding3d_2'
     __table_args__ = ({'autoload': False})
     __bodId__ = 'ch.swisstopo.swissbuildings3d-2.metadata'
-    id = Column('pk_product', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissbuildings3d-2.metadata', SwissBuildings3d2Perimeter)
