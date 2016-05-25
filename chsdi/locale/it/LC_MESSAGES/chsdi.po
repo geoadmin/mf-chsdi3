@@ -3018,16 +3018,16 @@ msgid "ch.bafu.showme-kantone_sturzprozesse"
 msgstr "ShowMe cantoni: crollo"
 
 msgid "ch.bafu.silvaprotect-hangmuren"
-msgstr "Colata detritica"
+msgstr "Colata detritica di versante"
 
 msgid "ch.bafu.silvaprotect-lawinen"
 msgstr "Valanghe"
 
 msgid "ch.bafu.silvaprotect-murgang"
-msgstr "Lava torrentizia"
+msgstr "Colata detritica"
 
 msgid "ch.bafu.silvaprotect-sturz"
-msgstr "Caduta di massi"
+msgstr "Crolli"
 
 msgid "ch.bafu.silvaprotect-uebersarung"
 msgstr "Alluvionamento da sedimento"
@@ -5213,15 +5213,14 @@ msgstr "Codice ISBN "
 msgid "ch.swisstopo.lk25-papierkarte.metadata.name_de"
 msgstr "Nome"
 
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_en"
+msgstr "Nome"
+
 msgid "ch.swisstopo.lk25-papierkarte.metadata.name_fr"
 msgstr "Nome"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.name_it"
 msgstr "Nome"
-
-#. TODO
-msgid "ch.swisstopo.lk25-papierkarte.metadata.namefr"
-msgstr "ch.swisstopo.lk25-papierkarte.metadata.namefr"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.number"
 msgstr "Numero"

@@ -5213,15 +5213,14 @@ msgstr "ISBN number"
 msgid "ch.swisstopo.lk25-papierkarte.metadata.name_de"
 msgstr "Name"
 
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_en"
+msgstr "Name"
+
 msgid "ch.swisstopo.lk25-papierkarte.metadata.name_fr"
 msgstr "Name"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.name_it"
 msgstr "Name"
-
-#. TODO
-msgid "ch.swisstopo.lk25-papierkarte.metadata.namefr"
-msgstr "ch.swisstopo.lk25-papierkarte.metadata.namefr"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.number"
 msgstr "Number"
