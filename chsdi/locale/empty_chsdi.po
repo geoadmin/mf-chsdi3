@@ -1521,7 +1521,7 @@ msgstr ""
 msgid "ch.swisstopo.lk25-papierkarte.metadata.name_de"
 msgstr ""
 
-msgid "ch.swisstopo.lk25-papierkarte.metadata.namefr"
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_en"
 msgstr ""
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.name_it"
@@ -1529,7 +1529,6 @@ msgstr ""
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.name_fr"
 msgstr ""
-
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.number"
 msgstr ""
