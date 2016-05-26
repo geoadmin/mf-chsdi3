@@ -15,6 +15,35 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20160601:
+
+Release 20160601 - Wednesday, June 1st 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160525...r_160601>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160525...r_160601>`__
+
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `National Map 1:10'000 (color) <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte-farbe-10>`__ (ch.swisstopo.landeskarte-farbe-10)                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `National Map 1:10'000 (grey) <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte-grau-10>`__ (ch.swisstopo.landeskarte-grau-10)                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20160525:
 
 Release 20160525 - Wednesday, May 25th 2016
