@@ -2409,11 +2409,22 @@ register('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25Perim
 register_perimeter('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25Perimeter)
 
 
+class spotMosaicPerimeter(Base, ShopStandardClass, Vector):
+    __tablename__ = 'view_gridstand_spot5_metadata'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.images-spot-5.metadata'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.images-spot-5.metadata', spotMosaicPerimeter)
+register_perimeter('ch.swisstopo.images-spot-5.metadata', spotMosaicPerimeter)
+
+
 class SwissBuildings3d2Perimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_swissbuilding3d_2'
     __table_args__ = ({'autoload': False})
     __bodId__ = 'ch.swisstopo.swissbuildings3d-2.metadata'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissbuildings3d-2.metadata', SwissBuildings3d2Perimeter)

@@ -4,6 +4,9 @@ msgstr ""
 msgid "ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung"
 msgstr ""
 
+msgid "ch.swisstopo.images-spot-5.metadata"
+msgstr ""
+
 msgid "ch.swisstopo.swissbuildings3d-2.metadata"
 msgstr ""
 

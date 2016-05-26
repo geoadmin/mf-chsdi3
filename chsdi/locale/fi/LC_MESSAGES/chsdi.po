@@ -5087,6 +5087,9 @@ msgstr "Charta d'aviatica OACI stampada"
 msgid "ch.swisstopo.icao-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
+msgid "ch.swisstopo.images-spot-5.metadata"
+msgstr "Spot Mosaic Ausdehnung"
+
 msgid "ch.swisstopo.images-swissimage"
 msgstr "Fotografia or da l'aria"
 

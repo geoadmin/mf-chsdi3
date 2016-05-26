@@ -5087,6 +5087,9 @@ msgstr "Carta aeronautica OACI stampata"
 msgid "ch.swisstopo.icao-papierkarte.metadata.release"
 msgstr "Edizione"
 
+msgid "ch.swisstopo.images-spot-5.metadata"
+msgstr "Spot Mosaic estensione"
+
 msgid "ch.swisstopo.images-swissimage"
 msgstr "SWISSIMAGE"
 

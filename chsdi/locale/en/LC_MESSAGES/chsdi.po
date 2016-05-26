@@ -5087,6 +5087,9 @@ msgstr "Aeronautical Chart ICAO printed"
 msgid "ch.swisstopo.icao-papierkarte.metadata.release"
 msgstr "Edition"
 
+msgid "ch.swisstopo.images-spot-5.metadata"
+msgstr "Spot Mosaic Extend"
+
 msgid "ch.swisstopo.images-swissimage"
 msgstr "SWISSIMAGE"
 
