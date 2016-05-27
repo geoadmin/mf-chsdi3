@@ -12,6 +12,10 @@ class Test_Box(unittest.TestCase):
         box = msk.BBox(420000, 30000, 900000, 510000)
         return box
 
+    def test_callFUT(self):
+        box = self._callFUT()
+        self.assertEqual('BBox(420000.0,30000.0,900000.0,510000.0)', str(box))
+
     def test_contains(self):
         box = self._callFUT()
         self.assertTrue(box.contains(600000, 200000))
@@ -30,6 +34,12 @@ class Test_Box(unittest.TestCase):
         self.assertNotEqual(msk.BBox(420000, 30000, 900001, 510000), box)
         self.assertNotEqual(msk.BBox(420000, 30000, 900000, 510001), box)
 
+    def test_no_equality(self):
+        box1 = self._callFUT()
+        box2 = msk.BBox(920000, 40000, 950000, 520000)
+        result = msk.BBox.__eq__(box1, box2)
+        self.assertEqual(result, False)
+
     def test_createQuads(self):
         box = self._callFUT()
         box = box.create_quads()
@@ -38,6 +48,16 @@ class Test_Box(unittest.TestCase):
         self.assertEqual(msk.BBox(420000, 30000, 660000, 270000), box[2])
         self.assertEqual(msk.BBox(660000, 30000, 900000, 270000), box[3])
 
+    def test_get_intersection(self):
+        box1 = self._callFUT()
+        box2 = msk.BBox(920000, 30000, 950000, 510000)
+        result = msk.BBox.getIntersection(box1, box2)
+        self.assertEqual(result, box2)
+
+        box3 = msk.BBox(2000, 6000, 950000, 520000)
+        result2 = msk.BBox.getIntersection(box1, box3)
+        self.assertEqual(result2, box3)
+
 
 class Test_QuadTree(unittest.TestCase):
 
@@ -45,6 +65,10 @@ class Test_QuadTree(unittest.TestCase):
         box = msk.BBox(420000, 30000, 900000, 510000)
         quadtree = msk.QuadTree(box, 20)
         return quadtree
+
+    def test_callFUT(self):
+        quadtree = self._callFUT()
+        self.assertEqual('QuadTree(BBox(420000.0,30000.0,900000.0,510000.0),20)', str(quadtree))
 
     def randBBox(self):
         box = msk.BBox(420000, 30000, 900000, 510000)
@@ -60,6 +84,12 @@ class Test_QuadTree(unittest.TestCase):
     def test_resolution(self):
         quadtree = self._callFUT()
         self.assertEqual(0.45, math.floor(quadtree.resolution() * 100) / 100)
+
+    def test_points_to_morton_zero_levels(self):
+        box = msk.BBox(420000, 30000, 900000, 510000)
+        quadtree = msk.QuadTree(box, 0)
+        result = quadtree.points_to_morton([msk.Point(420000, 30000), msk.Point(900000, 510000)])
+        self.assertEqual(result, '0')
 
     def test_single_algorithm(self):
         quadtree = self._callFUT()
@@ -114,7 +144,7 @@ class Test_QuadTree(unittest.TestCase):
         self.assertEqual('', quadtree._single_points_all(bbox))
         bbox = msk.BBox(420000.1, 30000.1, 899999.9, 509999.9)
         self.assertEqual('0', quadtree._single_points_all(bbox))
-        # that's the worst case...smalles bbox but biggest result
+        # that's the worst case...smaller bbox but bigger result
         bbox = msk.BBox(659999.9, 269999.9, 660000.1, 270000.1)
         self.assertEqual('0', quadtree._single_points_all(bbox))
         bbox = msk.BBox(420000, 30000, 420000.1, 30000.1)
