@@ -38,6 +38,9 @@ msgstr "Bildstock"
 msgid "<i>Bobbahn</i>"
 msgstr "Bobbahn"
 
+msgid "<i>Bruecke gedeckt</i>"
+msgstr "Strasse"
+
 msgid "<i>Brunnen</i>"
 msgstr "Brunnen"
 
@@ -110,6 +113,9 @@ msgstr "Grat"
 msgid "<i>Grossregion</i>"
 msgstr "Grossregion"
 
+msgid "<i>Grotte Hoehle</i>"
+msgstr "Grotte, Höhle"
+
 msgid "<i>Grotte, Hoehle</i>"
 msgstr "Grotte, Hoehle"
 
@@ -122,6 +128,9 @@ msgstr "Haltestelle Bus"
 msgid "<i>Haltestelle Schiff</i>"
 msgstr "Haltestelle Schiff"
 
+msgid "<i>Haltestelle Uebrige Bahnen</i>"
+msgstr "Übrige Bahnen"
+
 msgid "<i>Hauptgipfel</i>"
 msgstr "Hauptgipfel"
 
@@ -133,6 +142,9 @@ msgstr "Haupttal"
 
 msgid "<i>Heliport</i>"
 msgstr "Heliport"
+
+msgid "<i>Historische Baute</i>"
+msgstr "Historisches Areal"
 
 msgid "<i>Historisches Areal</i>"
 msgstr "Historisches Areal"
@@ -223,6 +235,9 @@ msgstr "Rastplatzareal"
 
 msgid "<i>Rodelbahn</i>"
 msgstr "Rodelbahn"
+
+msgid "<i>Sakraler Turm</i>"
+msgstr "Sakrales Gebäude"
 
 msgid "<i>Sakrales Gebaeude</i>"
 msgstr "Sakrales Gebaeude"
@@ -5086,6 +5101,12 @@ msgstr "swisstopo, Kt."
 
 msgid "ch.swisstopo.kt.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/de/home/swisstopo/org/cartography.html"
+
+msgid "ch.swisstopo.landeskarte-farbe-10"
+msgstr "Landeskarte 1:10'000 (farbig)"
+
+msgid "ch.swisstopo.landeskarte-grau-10"
+msgstr "Landeskarte 1:10'000 (grau)"
 
 msgid "ch.swisstopo.landesschwerenetz"
 msgstr "Schweregrundnetz"

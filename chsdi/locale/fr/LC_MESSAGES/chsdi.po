@@ -38,6 +38,9 @@ msgstr "Oratoire"
 msgid "<i>Bobbahn</i>"
 msgstr "Piste de bob"
 
+msgid "<i>Bruecke gedeckt</i>"
+msgstr "Route"
+
 msgid "<i>Brunnen</i>"
 msgstr "Fontaine"
 
@@ -110,6 +113,9 @@ msgstr "Crête"
 msgid "<i>Grossregion</i>"
 msgstr "Grande région"
 
+msgid "<i>Grotte Hoehle</i>"
+msgstr "Grotte"
+
 msgid "<i>Grotte, Hoehle</i>"
 msgstr "Grotte"
 
@@ -122,6 +128,9 @@ msgstr "Arrêt de bus"
 msgid "<i>Haltestelle Schiff</i>"
 msgstr "Arrêt de bateau"
 
+msgid "<i>Haltestelle Uebrige Bahnen</i>"
+msgstr "Autres moyens de transport"
+
 msgid "<i>Hauptgipfel</i>"
 msgstr "Sommet principal"
 
@@ -133,6 +142,9 @@ msgstr "Vallée majeur"
 
 msgid "<i>Heliport</i>"
 msgstr "Héliport"
+
+msgid "<i>Historische Baute</i>"
+msgstr "Site historique"
 
 msgid "<i>Historisches Areal</i>"
 msgstr "Site historique"
@@ -223,6 +235,9 @@ msgstr "Aire de repos"
 
 msgid "<i>Rodelbahn</i>"
 msgstr "Piste de luge"
+
+msgid "<i>Sakraler Turm</i>"
+msgstr "Bâtiment religieux"
 
 msgid "<i>Sakrales Gebaeude</i>"
 msgstr "Bâtiment religieux"
@@ -5086,6 +5101,12 @@ msgstr "swisstopo, ct."
 
 msgid "ch.swisstopo.kt.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/fr/home/swisstopo/org/cartography.html"
+
+msgid "ch.swisstopo.landeskarte-farbe-10"
+msgstr "Carte nationale 1:10'000 (couleur)"
+
+msgid "ch.swisstopo.landeskarte-grau-10"
+msgstr "Carte nationale 1:10'000 (grise)"
 
 msgid "ch.swisstopo.landesschwerenetz"
 msgstr "Réseau de base gravimétrique"

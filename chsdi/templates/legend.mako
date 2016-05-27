@@ -25,6 +25,8 @@
                  'ch.swisstopo.pixelkarte-farbe-pk100.noscale', 
                  'ch.swisstopo.pixelkarte-farbe-pk50.noscale',
                  'ch.swisstopo.pixelkarte-farbe-pk25.noscale',
+                 'ch.swisstopo.landeskarte-farbe-10',
+                 'ch.swisstopo.landeskarte-grau-10',
                  'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200',
                  'ch.vbs.grunddispositiv-zeus',
                  'ch.swisstopo-karto.skitouren',

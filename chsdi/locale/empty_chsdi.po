@@ -8642,6 +8642,21 @@ msgstr ""
 msgid "<i>haltestellen_zug_tram</i>"
 msgstr ""
 
+msgid "<i>Bruecke gedeckt</i>"
+msgstr ""
+
+msgid "<i>Grotte Hoehle</i>"
+msgstr ""
+
+msgid "<i>Haltestelle Uebrige Bahnen</i>"
+msgstr ""
+
+msgid "<i>Historische Baute</i>"
+msgstr ""
+
+msgid "<i>Sakraler Turm</i>"
+msgstr ""
+
 msgid "ch.swisstopo-karto.skitouren"
 msgstr ""
 
@@ -8709,4 +8724,10 @@ msgid "rechtsgrundlage_2"
 msgstr ""
 
 msgid "ch.bafu.hydrogeologische-karte_100"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte-farbe-10"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte-grau-10"
 msgstr ""
