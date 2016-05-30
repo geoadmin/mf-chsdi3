@@ -136,6 +136,7 @@ class Vector(GeoInterface):
             'layerBodId': self.__bodId__,
             'layerName': '',
             'featureId': self.id,
+            'id': self.id,
             attrsName: self.getAttributes()
         }
 

@@ -270,7 +270,7 @@ class TestIdentifyService(TestsBase):
         self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
 
     def test_identify_query_time(self):
-        params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bafu.gefahren-historische_erdbeben', 'where': "date_time < '1905/04/29'"}
+        params = {'geometryFormat': 'geojson', 'layers': 'all:ch.bazl.luftfahrthindernis', 'where': 'startofconstruction > \'2014-12-01\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn('properties', resp.json['results'][0])
@@ -436,13 +436,13 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertLess(1, len(resp.json['results']))
-        firstBefore = resp.json['results'][0]['attributes']['deinr']
+        firstBefore = resp.json['results'][0]['properties']['deinr']
 
         params.update({'order': 'distance'})
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertLess(1, len(resp.json['results']))
-        firstAfter = resp.json['results'][0]['attributes']['deinr']
+        firstAfter = resp.json['results'][0]['properties']['deinr']
 
         self.assertNotEqual(firstBefore, firstAfter)
 
