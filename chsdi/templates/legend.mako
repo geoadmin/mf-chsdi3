@@ -38,6 +38,10 @@
       legend_url_pdf = False
   legend_url = host + '/static/images/legends/' + c['layerBodId'] + '_' + lang + '.png'
   times = c['attributes']['dataStatus'] if 'dataStatus' in c['attributes'] else '-'
+
+  wms_urls = str(c['attributes']['wmsUrlResource'])
+  wms_url = wms_urls.split(' ', 1)[0] 
+
 %>
 <div class="legend-container">
 <div class="legend-header">
@@ -108,7 +112,7 @@
     <tr>
       <td>${_('WMS Dienst')}</td>
 % if 'wmsUrlResource' in c['attributes']:
-      <td><a href="${c['attributes']['wmsUrlResource']}" target="new">${_('wms_resource_text')}</a></td>
+      <td><a href="${wms_url}" target="new">${_('wms_resource_text')}</a></td>
 % else:
       <td>-</td>
 % endif
