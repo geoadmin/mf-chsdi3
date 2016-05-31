@@ -163,8 +163,8 @@ class ShopProductClass:
 class ShopStandardClass:
     __template__ = 'templates/htmlpopup/shop_product.mako'
     pk_product = Column('pk_product', Text)
-    name_de = Column('s_title_de', Text)
     available = Column('available', Boolean)
+    name_de = Column('s_title_de', Text)
     name_fr = Column('s_title_fr', Text)
     name_it = Column('s_title_it', Text)
     name_en = Column('s_title_en', Text)
@@ -947,7 +947,6 @@ class GridstandPk25Meta(Base, GridstandTemplate, Vector):
 
 
 register('ch.swisstopo.pixelkarte-farbe-pk25.noscale', GridstandPK25Perimeter)
-register_perimeter('ch.swisstopo.pixelkarte-farbe-pk25.noscale', GridstandPK25Perimeter)
 register('ch.swisstopo.pixelkarte-pk25.metadata', GridstandPk25Meta)
 
 # PK 50
@@ -969,7 +968,6 @@ class GridstandPk50Meta(Base, GridstandTemplate, Vector):
     __template__ = 'templates/htmlpopup/pk50_metadata.mako'
 
 register('ch.swisstopo.pixelkarte-farbe-pk50.noscale', GridstandPK50Perimeter)
-register_perimeter('ch.swisstopo.pixelkarte-farbe-pk50.noscale', GridstandPK50Perimeter)
 register('ch.swisstopo.pixelkarte-pk50.metadata', GridstandPk50Meta)
 
 # PK 100
@@ -989,7 +987,6 @@ class GridstandPk100Meta(Base, GridstandTemplate, Vector):
     __template__ = 'templates/htmlpopup/pk100_metadata.mako'
 
 register('ch.swisstopo.pixelkarte-farbe-pk100.noscale', GridstandPK100Perimeter)
-register_perimeter('ch.swisstopo.pixelkarte-farbe-pk100.noscale', GridstandPK100Perimeter)
 register('ch.swisstopo.pixelkarte-pk100.metadata', GridstandPk100Meta)
 
 # PK 200
@@ -1009,7 +1006,6 @@ class GridstandPk200Meta(Base, GridstandTemplate, Vector):
     __template__ = 'templates/htmlpopup/pk200_metadata.mako'
 
 register('ch.swisstopo.pixelkarte-farbe-pk200.noscale', GridstandPK200Perimeter)
-register_perimeter('ch.swisstopo.pixelkarte-farbe-pk200.noscale', GridstandPK200Perimeter)
 register('ch.swisstopo.pixelkarte-pk200.metadata', GridstandPk200Meta)
 
 # PK 500
@@ -1048,7 +1044,15 @@ class GridstandSwissimage(Base, Vector):
 register('ch.swisstopo.images-swissimage.metadata', GridstandSwissimage)
 
 
-class SwissimageProductPerimeter(Base, ShopStandardClass, Vector):
+class SwissimageProduct(Base, ShopStandardClass, Vector):
+    __tablename__ = 'shop_swissimage'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.swissimage-product'
+    id = Column('min', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+
+class SwissimageProductPerimeter(Base, Vector):
     __tablename__ = 'shop_perimeter_swissimage'
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __bodId__ = 'ch.swisstopo.swissimage-product'
@@ -1056,7 +1060,7 @@ class SwissimageProductPerimeter(Base, ShopStandardClass, Vector):
     resolution = Column('resolution', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.swissimage-product', SwissimageProductPerimeter)
+register('ch.swisstopo.swissimage-product', SwissimageProduct)
 register_perimeter('ch.swisstopo.swissimage-product', SwissimageProductPerimeter)
 
 
@@ -2382,7 +2386,6 @@ class SwissTLM3dPerimeter(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swisstlm3d-karte-farbe', SwissTLM3dPerimeter)
-register_perimeter('ch.swisstopo.swisstlm3d-karte-farbe', SwissTLM3dPerimeter)
 
 
 class SwissAlti3dPerimeter(Base, ShopStandardClass, Vector):
@@ -2394,7 +2397,6 @@ class SwissAlti3dPerimeter(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissalti3d-reliefschattierung', SwissAlti3dPerimeter)
-register_perimeter('ch.swisstopo.swissalti3d-reliefschattierung', SwissAlti3dPerimeter)
 
 
 class DHM25Perimeter(Base, ShopStandardClass, Vector):
@@ -2406,7 +2408,6 @@ class DHM25Perimeter(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25Perimeter)
-register_perimeter('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25Perimeter)
 
 
 class spotMosaicPerimeter(Base, ShopStandardClass, Vector):
@@ -2417,7 +2418,6 @@ class spotMosaicPerimeter(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.images-spot-5.metadata', spotMosaicPerimeter)
-register_perimeter('ch.swisstopo.images-spot-5.metadata', spotMosaicPerimeter)
 
 
 class SwissBuildings3d2Perimeter(Base, ShopStandardClass, Vector):
@@ -2428,7 +2428,6 @@ class SwissBuildings3d2Perimeter(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissbuildings3d-2.metadata', SwissBuildings3d2Perimeter)
-register_perimeter('ch.swisstopo.swissbuildings3d-2.metadata', SwissBuildings3d2Perimeter)
 
 
 class SwissBuildings3dPerimeter(Base, ShopStandardClass, Vector):
@@ -2440,4 +2439,3 @@ class SwissBuildings3dPerimeter(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissbuildings3d', SwissBuildings3dPerimeter)
-register_perimeter('ch.swisstopo.swissbuildings3d', SwissBuildings3dPerimeter)
