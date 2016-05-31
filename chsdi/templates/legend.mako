@@ -39,8 +39,9 @@
   legend_url = host + '/static/images/legends/' + c['layerBodId'] + '_' + lang + '.png'
   times = c['attributes']['dataStatus'] if 'dataStatus' in c['attributes'] else '-'
 
-  wms_urls = str(c['attributes']['wmsUrlResource'])
-  wms_url = wms_urls.split(' ', 1)[0] 
+  if 'wmsUrlResource' in c['attributes']:
+      wms_urls = c['attributes']['wmsUrlResource']
+      wms_url = wms_urls.split(' ', 1)[0]
 
 %>
 <div class="legend-container">
