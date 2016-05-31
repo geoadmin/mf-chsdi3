@@ -2399,7 +2399,15 @@ class SwissAlti3dPerimeter(Base, ShopStandardClass, Vector):
 register('ch.swisstopo.swissalti3d-reliefschattierung', SwissAlti3dPerimeter)
 
 
-class DHM25Perimeter(Base, ShopStandardClass, Vector):
+class DHM25(Base, ShopStandardClass, Vector):
+    __tablename__ = 'shop_dhm25'
+    __table_args__ = ({'autoload': False})
+    __bodId__ = 'ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'
+    id = Column('grat25', Text, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+
+class DHM25Perimeter(Base, Vector):
     __tablename__ = 'shop_perimeter_dhm25'
     __table_args__ = ({'autoload': False})
     __bodId__ = 'ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'
@@ -2407,7 +2415,8 @@ class DHM25Perimeter(Base, ShopStandardClass, Vector):
     id = Column('min', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25Perimeter)
+register('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25)
+register_perimeter('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25Perimeter)
 
 
 class spotMosaicPerimeter(Base, ShopStandardClass, Vector):
