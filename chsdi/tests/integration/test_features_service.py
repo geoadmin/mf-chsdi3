@@ -229,6 +229,14 @@ class TestFeaturesView(TestsBase):
     def test_extendedhtmlpopup_noinfo(self):
         self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/extendedHtmlPopup', status=404)
 
+    def test_cut_all_dataset(self):
+        params = {'layers': 'all:ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
+        self.assertIn('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', resp.json)
+        self.assertIn('groupby', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
+        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
+        self.assertIn('area', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
+
     def test_cut_no_group_geom_only(self):
         params = {'geometryType': 'esriGeometryEnvelope', 'geometry': '545000,145000,555000,170005', 'layers': 'all:ch.swisstopo.images-swissimage.metadata'}
         resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
@@ -306,7 +314,7 @@ class TestFeaturesView(TestsBase):
                   'geometry': '478968,280720,486572,292875'}
         resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
         self.assertEqual(resp.json.keys()[0], 'ch.swisstopo.swissimage-product')
-        self.assertEqual(resp.json['ch.swisstopo.swissimage-product'][0]['area'], 0)
+        self.assertEqual(resp.json['ch.swisstopo.swissimage-product'][0]['area'], 0.0)
 
 
 class TestGebauedeGeometry(TestsBase):

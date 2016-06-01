@@ -384,6 +384,14 @@ def _render_feature_template(vectorModel, feature, request, extended=False):
         }, request=request)
 
 
+def _get_cut_response_template(area, groupby, groupbyvalue):
+    return {
+        'area': area,
+        'groupby': groupby,
+        'groupbyvalue': groupbyvalue
+    }
+
+
 def _get_areas_for_params(params, models):
     ''' Returns a generator function that yields
     a cut areas, layerIds and group attribute. '''
@@ -442,13 +450,13 @@ def _get_areas_for_params(params, models):
             try:
                 for feature in query:
                     area = feature.area if feature.area is not None else 0.0
+                    area = round(float(area) / (1000.0 * 1000.0), 2)  # convert to square kilometers
+                    groupby = params.groupby[groupbyIdx] if params.groupby is not None else None
+                    groupbyvalue = feature.groupbyValue if hasattr(feature, 'groupbyValue') else None
+                    resp = _get_cut_response_template(area, groupby, groupbyvalue)
                     # Per default return all areas even if equal to 0
                     yield {
-                        bodId: {
-                            'area': round(float(area) / (1000.0 * 1000.0), 2),  # convert to square kilometers
-                            'groupby': params.groupby[groupbyIdx] if params.groupby is not None else None,
-                            'groupbyvalue': feature.groupbyValue if hasattr(feature, 'groupbyValue') else None
-                        }
+                        bodId: resp
                     }
             except Exception as e:
                 raise Exception(e)
@@ -654,11 +662,9 @@ def _cut(request):
         if totalArea and modelsForLayer:
             for model in modelsForLayer:
                 if hasattr(model, '__totalArea__'):
-                    results[layerId] = [{
-                        'area': model.__totalArea__,
-                        'groupybyvalue': None,
-                        'groupby': None
-                    }]
+                    results[layerId] = [
+                        _get_cut_response_template(model.__totalArea__, None, None)
+                    ]
                 else:
                     modelsPerLayer = {layerId: {'models': modelsForLayer}}
                     models.append(modelsPerLayer)
