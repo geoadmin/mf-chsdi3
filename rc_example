@@ -1,8 +1,0 @@
-source rc_dev
-export APACHE_BASE_PATH=ltgal
-export API_URL=//mf-chsdi3.dev.bgdi.ch/ltgal
-export GEOADMINHOST=mf-geoadmin3.dev.bgdi.ch/ltgal
-export MODWSGI_CONFIG=development.ini
-export SERVER_PORT=9000
-# Uncomment to access vector bucket behind pserve
-# export VECTOR_PROFILENAME=ltgal_aws_admin
