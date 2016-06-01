@@ -23,11 +23,6 @@ class Search(SearchValidation):
 
     def __init__(self, request):
         super(Search, self).__init__()
-        self.quadtree = msk.QuadTree(
-            msk.BBox(420000, 30000, 900000, 510000), 20)
-        self.sphinx = sphinxapi.SphinxClient()
-        self.sphinx.SetServer(request.registry.settings['sphinxhost'], 9312)
-        self.sphinx.SetMatchMode(sphinxapi.SPH_MATCH_EXTENDED)
 
         self.mapName = request.matchdict.get('map')
         self.hasMap(request.db, self.mapName)
@@ -48,6 +43,12 @@ class Search(SearchValidation):
         self.geodataStaging = request.registry.settings['geodata_staging']
         self.results = {'results': []}
         self.request = request
+
+        self.quadtree = msk.QuadTree(
+            msk.BBox(420000, 30000, 900000, 510000), 20)
+        self.sphinx = sphinxapi.SphinxClient()
+        self.sphinx.SetServer(request.registry.settings['sphinxhost'], 9312)
+        self.sphinx.SetMatchMode(sphinxapi.SPH_MATCH_EXTENDED)
 
     @view_config(route_name='search', renderer='jsonp')
     def search(self):
@@ -99,8 +100,6 @@ class Search(SearchValidation):
         return temp
 
     def _swiss_search(self):
-        if len(self.searchText) < 1 and self.bbox is None:
-            raise exc.HTTPBadRequest('You must at least provide a bbox or a searchText parameter')
         limit = self.limit if self.limit and self.limit <= self.LOCATION_LIMIT else self.LOCATION_LIMIT
         self.sphinx.SetLimits(0, limit)
 
