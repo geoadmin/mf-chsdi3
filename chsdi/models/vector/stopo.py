@@ -567,30 +567,6 @@ register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200ShipKu
 register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200Railway)
 
 
-class treasurehunt(Base, Vector):
-    __tablename__ = 'treasurehunt'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __template__ = 'templates/htmlpopup/treasurehunt.mako'
-    __maxscale__ = 2505
-    __bodId__ = 'ch.swisstopo.treasurehunt'
-    # Translatable labels in fr,it
-    __label__ = 'title_de'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    title_de = Column('title_de', Text)
-    title_fr = Column('title_fr', Text)
-    title_it = Column('title_it', Text)
-    info_de = Column('info_de', Text)
-    info_fr = Column('info_fr', Text)
-    info_it = Column('info_it', Text)
-    link_de = Column('link_de', Text)
-    link_fr = Column('link_fr', Text)
-    link_it = Column('link_it', Text)
-    type_coord = Column('type_coord', Text)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.treasurehunt', treasurehunt)
-
-
 class Vec200Trafficinfo(Base, Vector):
     __tablename__ = 'vec200_trafficinfo'
     __table_args__ = ({'autoload': False})
