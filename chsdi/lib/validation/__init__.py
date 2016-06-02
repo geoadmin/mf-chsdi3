@@ -57,6 +57,20 @@ class BaseFeaturesValidation(BaseLayersValidation):
 
     def __init__(self, request):
         super(BaseFeaturesValidation, self).__init__(request)
+        self._geometryFormat = None
 
+        self.geometryFormat = request.params.get('geometryFormat')
         self.varnish_authorized = request.headers.get(
             'X-SearchServer-Authorized', 'false').lower() == 'true'
+
+    @property
+    def geometryFormat(self):
+        return self._geometryFormat
+
+    @geometryFormat.setter
+    def geometryFormat(self, value):
+        if value is not None:
+            if value == 'geojson':
+                self._geometryFormat = value
+            else:
+                self._geometryFormat = 'esrijson'

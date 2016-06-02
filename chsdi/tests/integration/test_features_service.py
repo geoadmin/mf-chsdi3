@@ -70,6 +70,7 @@ class TestFeaturesView(TestsBase):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid', 'searchText': '1231641', 'geometryFormat': 'geojson'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('properties', resp.json['results'][0])
 
     def test_find_withcb(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid', 'searchText': '1231641', 'callback': 'cb'}
@@ -158,6 +159,13 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn('properties', resp.json['feature'])
         self.assertIn('geometry', resp.json['feature'])
+        self.assertEqual(resp.json['feature']['id'], 362)
+
+    def test_feature_geojson_nogeom(self):
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362', params={'geometryFormat': 'geojson', 'returnGeometry': 'false'}, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('properties', resp.json['feature'])
+        self.assertNotIn('geometry', resp.json['feature'])
         self.assertEqual(resp.json['feature']['id'], 362)
 
     def test_several_features(self):

@@ -124,12 +124,20 @@ class Vector(GeoInterface):
         )
 
     @property
-    def __interface__(self):
+    def __esrijson_interface__(self):
+        return self._no_geom_template()
+
+    @property
+    def __geojson_interface__(self):
+        return self._no_geom_template(attrsName='properties')
+
+    def _no_geom_template(self, attrsName='attributes'):
         return {
-            "layerBodId": self.__bodId__,
-            "layerName": '',
-            "featureId": self.id,  # Remove me?
-            "attributes": self.getAttributes()
+            'layerBodId': self.__bodId__,
+            'layerName': '',
+            'featureId': self.id,
+            'id': self.id,
+            attrsName: self.getAttributes()
         }
 
     @classmethod

@@ -700,20 +700,24 @@ def has_long_geometry(feature):
 
 
 def _process_feature(feature, params):
-    # TODO find a way to use translate directly in the model
+    def convert_no_geom(feature, geometryFormat):
+        if geometryFormat == 'geojson':
+            f = feature.__geojson_interface__
+        else:
+            f = feature.__esrijson_interface__
+        return f
+
     if params.returnGeometry and not has_long_geometry(feature):
-        f = feature.__geo_interface__
         # Filter out this layer individually, disregarding of the global returnGeometry
         # setting
-        if not params.varnish_authorized:
-            if hasattr(params, 'layers') and feature.__bodId__ in PROTECTED_GEOMETRY_LAYERS:
-                f = feature.__interface__
-            if hasattr(params, 'layer') and params.layer in PROTECTED_GEOMETRY_LAYERS:
-                f = feature.__interface__
-            if hasattr(params, 'layerId') and params.layerId in PROTECTED_GEOMETRY_LAYERS:
-                f = feature.__interface__
+        if not params.varnish_authorized and \
+                feature.__bodId__ in PROTECTED_GEOMETRY_LAYERS:
+            f = convert_no_geom(feature, params.geometryFormat)
+        else:
+            f = feature.__geo_interface__
     else:
-        f = feature.__interface__
+        f = convert_no_geom(feature, params.geometryFormat)
+    # TODO find a way to use translate directly in the model
     if hasattr(f, 'extra'):
         layerBodId = f.extra['layerBodId']
         f.extra['layerName'] = params.translate(layerBodId)
