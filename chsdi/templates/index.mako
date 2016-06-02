@@ -40,6 +40,11 @@
       <h2 id="shorten">Shorten url</h2>
           <a href="shorten.json?url=https:%2F%2Fmf-geoadmin3.int.bgdi.ch%2F%3FX%3D164565.22%26Y%3D620538.74%26zoom%3D2%26lang%3Den%26topic%3Dlubis%26bgLayer%3Dch.swisstopo.pixelkarte-grau%26catalogNodes%3D1179,1180,1184,1186%26layers%3Dch.swisstopo.lubis-bildstreifen">Shorten Example</a> <br>
           <a href="shorten/5f9f3359d3">Shorten link redirection</a> <br>
+      <h2>Geometry Server</h2>
+          <h3>Cut</h3>
+          <a href="rest/services/ech/GeometryServer/cut?geometryType=esriGeometryEnvelope&geometry=545000,145000,555000,170005&layers=all:ch.swisstopo.pixelkarte-farbe-pk25.noscale">Clip with a bbox no groupby</a> <br>
+          <a href="rest/services/ech/GeometryServer/cut?clipper=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill:2222&layers=all:ch.swisstopo.images-swissimage.metadata">Clip with Broye Vully no groupby</a> <br>
+          <a href="rest/services/ech/GeometryServer/cut?clipper=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill:2221&layers=all:ch.swisstopo.swissimage-product&groupby=resolution">Clip with Aigle and groupby resolution</a> <br>
       <h2 id="mapservices">Map Services</h2> 
           <h3>Mapservice (Layer metadata)</h3>
           <a href="rest/services/ech/MapServer">Topic (ech)</a> <br>
