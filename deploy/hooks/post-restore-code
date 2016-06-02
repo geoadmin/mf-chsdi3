@@ -22,6 +22,14 @@ elif [[ -f rc_$TARGET ]]; then
   source rc_$TARGET
   make templates
   make printwar APACHE_BASE_PATH=main
+elif [[ "$TARGET" == "int_no_print" ]]; then
+  make clean
+  source rc_int
+  make templates
+elif [[ "$TARGET" == "prod_no_print" ]]; then
+  make clean
+  source rc_prod
+  make templates
 fi
 
 exit $?

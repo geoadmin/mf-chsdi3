@@ -5,12 +5,16 @@ T="$(date +%s)"
 #bail out on any error
 set -o errexit
 
-# Check if snapshot parameter is supplied and there are 2 parameters
-if [ "$2" != "int" ] && [ "$2" != "prod" ] && [ "$2" != "demo" ]
-then
+contains () {
+  local e;
+  for e in "${@:2}"; do [[ "$e" == "$1" ]] && return 0; done
   echo "Error: Please specify 1) snapshot directoy and 2) target."
   exit 1
-fi
+}
+
+# Check if snapshot parameter is supplied and there are 2 parameters
+VALID_TARGETS=("int int_no_print prod prod_no_print demo")
+contains $2 $VALID_TARGETS
 
 SNAPSHOTDIR=/var/www/vhosts/mf-chsdi3/private/snapshots/$1
 
@@ -23,13 +27,13 @@ cd $SNAPSHOTDIR_CODE
 # Run nose tests with target cluster db
 if [ -z $3 ] || [ $3 != "notests" ]
 then
-    if [ "$2" == "int" ]
+    if [[ "$2" == "int" ]] || [[ "$2" == "int_no_print" ]]
     then
       echo "Running nose tests with integration cluster in $SNAPSHOTDIR"
       scripts/nose_run.sh -i
     fi
 
-    if [ "$2" == "prod" ]
+    if [[ "$2" == "prod" ]] || [[ "$2" == "prod_no_print" ]]
     then
       echo "Running nose tests with production cluster in $SNAPSHOTDIR"
       scripts/nose_run.sh -p
