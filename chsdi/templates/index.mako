@@ -48,7 +48,7 @@
           <a href="rest/services/ech/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=545000,145000,555000,155000&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bafu.bundesinventare-bln">Identify using an envelope (bbox)</a> <br>
           <a href="rest/services/ech/MapServer/identify?geometryType=esriGeometryPoint&geometry=653246,173129&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln">Identify using a simple point and a tolerance of 5 pixels</a> <br>
           <a href='rest/services/ech/MapServer/identify?geometryType=esriGeometryPoint&geometry={"x":653246,"y":173129,"spatialReference":{"wkid":21781}}&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln'>Identify using a complexe point  {x:, y:, spatialReference: } </a> <br>
-          <a href='rest/services/ech/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=630000,245000,645000,265000&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln'>Identify using an bbox= </a> <br>
+          <a href='rest/services/ech/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=630000,245000,645000,265000&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln'>Identify using an bbox and tolerance of 5 pixels </a> <br>
           <a href='rest/services/all/MapServer/identify?geometryType=esriGeometryPoint&geometry=630853.809670509,170647.93120352627&geometryFormat=geojson&imageDisplay=1920,734,96&mapExtent=134253.80967050896,-21102.06879647367,1382253.8096705088,455997.9312035263&tolerance=5&layers=all:ch.swisstopo.zeitreihen&timeInstant=1936'>Identify using time instant on layer zeitreihen</a> <br>
           <a href='rest/services/ech/MapServer/identify?geometryType=esriGeometryPolygon&geometry={"rings"%20:%20[[%20[630000,%20245000],%20[645000,245000],%20[645000,265000],%20[630000,265000],%20[630000,%20245000]%20]],"spatialReference"%20:%20{"wkid"%20:%2021781}}&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bafu.bundesinventare-bln'>Identify using a polygon</a> <br>
           <a href="rest/services/ech/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=630000,245000,645000,265000&imageDisplay=500,600,96&layers=all:ch.bafu.bundesinventare-bln&mapExtent=548945.5,147956,549402,148103.5&tolerance=1">Identify (default to esri geojson)</a> <br>
@@ -58,8 +58,7 @@
           <a href="/rest/services/ech/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=630000,245000,645000,265000&imageDisplay=500,600,96&mapExtent=545132.87362333,147068.69380758,550132.87362333,150568.69380758&tolerance=1&layers=all&returnGeometry=false">Identify - without geometry</a> <br>
           <a href="/rest/services/api/MapServer/identify?geometry=618953,170093&geometryType=esriGeometryPoint&imageDisplay=1920,576,96&layers=all:ch.bav.kataster-belasteter-standorte-oev.oereb&mapExtent=671164.31244,253770,690364.31244,259530&tolerance=5&geometryFormat=interlis">Identify - geometryFormat=interlis on Oereb layers</a>
           <h3>Indentify: with query</h3>
-          <a href="/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=502722.0065086734,36344.074765040714,745822.0065086735,253444.07476504074&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.bazl.luftfahrthindernis&returnGeometry=true&geometryFormat=geojson&where=obstacletype=%27Antenna%27">Query 'ch.bazl.luftfahrthindernis' for 'Antenna' with a bbox</a> <br>
-          <a href="/rest/services/api/MapServer/identify?layers=all:ch.bazl.luftfahrthindernis&returnGeometry=true&geometryFormat=geojson&where=obstacletype=%27Antenna%27">Query 'ch.bazl.luftfahrthindernis' for 'Antenna'</a> <br>
+          <a href="/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=502722.0065086734,36344.074765040714,745822.0065086735,253444.07476504074&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.bazl.luftfahrthindernis&returnGeometry=true&geometryFormat=geojson&obstacletype=%27Antenna%27">Query 'ch.bazl.luftfahrthindernis' for 'Antenna' with a bbox</a> <br>
           <a href="rest/services/api/MapServer/ch.bazl.luftfahrthindernis/attributes/obstacletype">Get some values for attribute 'obstacletype'</a> <br>
           <h3>Get the attributes of layer</h3>
           <a href="/rest/services/ech/MapServer/ch.swisstopo.geologie-gravimetrischer_atlas.metadata">Returns all the attributes of the layer ch.swisstopo.geologie-gravimetrischer_atlas.metadata</a>
@@ -68,9 +67,9 @@
           <a href="/rest/services/ech/MapServer/find?layer=ch.are.agglomerationen_isolierte_staedte&searchText=15&searchField=flaeche_ha">Find 15 in field flaeche_ha of layer ch.are.agglomerationen_isolierte_staedte (pre-infix match)</a> <br>
           <a href="/rest/services/ech/MapServer/find?layer=ch.bafu.bundesinventare-bln&searchText=1740.478&searchField=bln_fl&returnGeometry=false&contains=false">Find a exact match for 1740.478 in the field bln_fl</a>
           <h3>Releases Service</h3>
-          <a href="rest/services/ech/MapServer/ch.swisstopo.zeitreihen/releases?mapExtent=611399.9999999999,158650,690299.9999999999,198150&imageDisplay=500,500,96">Zeitreihen Layer</a> <br>
+          <a href="rest/services/ech/MapServer/ch.swisstopo.zeitreihen/releases?geometry=548945.5,147956,549402,148103.5&geometryType=esriGeometryEnvelope&mapExtent=611399.9999999999,158650,690299.9999999999,198150&imageDisplay=500,500,96">Zeitreihen Layer</a> <br>
           <a
-          href="rest/services/ech/MapServer/ch.swisstopo.zeitreihen/releases?mapExtent=647570.722,187429.722,653229.277,183690.277&imageDisplay=800,530,96">Zeitreihen
+          href="rest/services/ech/MapServer/ch.swisstopo.zeitreihen/releases?geometry=618953,170093&geometryType=esriGeometryPoint&mapExtent=647570.722,187429.722,653229.277,183690.277&imageDisplay=800,530,96">Zeitreihen
           Layer2</a> <br>
 
           <h3>Varia</h3>
@@ -78,9 +77,9 @@
           <a href="rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup">Html Popup Ex 1</a> <br>
           <a href="rest/services/ech/MapServer/ch.bafu.bundesinventare-jagdbanngebiete/1/htmlPopup?lang=fr&callback=cb">Html Popup Ex 2 with callback</a> <br>
           <a href="rest/services/ech/MapServer/ch.astra.ivs-reg_loc/54967/htmlPopup">Html Popup Ex 3</a> <br>
-          <a href="rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/11/htmlPopup?imageDisplay=600,400,96&mapExtent=573090.125,142393.0625,573097.625,142400.5625">Html popup Ex 4 cadastral web map</a> <br>
-          <a href="rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/5/extendedHtmlPopup?imageDisplay=600,400,96&mapExtent=573090.125,142393.0625,573097.625,142400.5625">Extended html content Ex 1</a> <br>
-          <a href="rest/services/ech/MapServer/ch.bfe.energieforschung/4/extendedHtmlPopup?imageDisplay=600,400,96&mapExtent=573090.125,142393.0625,573097.625,142400.5625">Extended html content Ex 2 with images</a> <br>
+          <a href="rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/11/htmlPopup?lang=it">Html popup Ex 4 cadastral web map</a> <br>
+          <a href="rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/5/extendedHtmlPopup">Extended html content Ex 1</a> <br>
+          <a href="rest/services/ech/MapServer/ch.bfe.energieforschung/35/extendedHtmlPopup">Extended html content Ex 2 with images</a> <br>
           <a href="rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/legend">Get Legend Ex 1</a> <br>
           <a href="rest/services/ech/MapServer/ch.bafu.bundesinventare-jagdbanngebiete/legend?lang=fr&callback=cb">Get Legend Ex 2 with callback</a> <br>
           <a href="rest/services/height?easting=600000&northing=200000">Height example</a> <br>
