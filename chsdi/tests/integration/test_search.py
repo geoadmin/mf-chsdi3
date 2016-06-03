@@ -10,11 +10,31 @@ class TestSearchServiceView(TestsBase):
 
     def test_unaccepted_type(self):
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'ga', 'type': 'unaccepted'}, status=400)
-        acceptedTypes = ['locations', 'layers', 'featuresearch', 'locations_preview']
+        acceptedTypes = ['locations', 'locations_preview', 'layers', 'featuresearch']
         resp.mustcontain("The type parameter you provided is not valid. Possible values are %s" % (', '.join(acceptedTypes)))
 
-    def test_search_none_value(self):
+    def test_searchtext_none_value_layers(self):
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'type': 'layers'}, status=400)
+        resp.mustcontain("Please provide a search text")
+
+    def test_searchtext_empty_string_layers(self):
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'type': 'layers', 'searchText': '  '}, status=400)
+        resp.mustcontain("Please provide a search text")
+
+    def test_searchtext_none_locations(self):
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'type': 'locations'}, status=400)
+        resp.mustcontain("Please provide a search text")
+
+    def test_searchtext_none_value_locations(self):
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'type': 'locations', 'searchText': '  '}, status=400)
+        resp.mustcontain("Please provide a search text")
+
+    def test_searchtext_none_featuresearch(self):
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'type': 'featuresearch'}, status=400)
+        resp.mustcontain("Please provide a search text")
+
+    def test_searchtext_none_value_featuresearch(self):
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'type': 'featuresearch', 'searchText': '  '}, status=400)
         resp.mustcontain("Please provide a search text")
 
     def test_search_layers(self):
@@ -153,7 +173,7 @@ class TestSearchServiceView(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue('geom_st_box2d' in resp.json['results'][0]['attrs'].keys())
 
-    def test_search_locations_authorizedi_not_set(self):
+    def test_search_locations_authorized_not_set(self):
         self.testapp.extra_environ = {}
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'Beaulieustrasse 2', 'type': 'locations'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')

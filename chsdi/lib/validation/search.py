@@ -13,6 +13,11 @@ class SearchValidation(MapNameValidation):
 
     def __init__(self):
         super(SearchValidation, self).__init__()
+        self.locationTypes = ['locations', 'locations_preview']
+        self.layerTypes = ['layers']
+        self.featureTypes = ['featuresearch']
+        self.supportedTypes = self.locationTypes + self.layerTypes + self.featureTypes
+
         self._searchText = None
         self._featureIndexes = None
         self._timeInstant = None
@@ -81,7 +86,9 @@ class SearchValidation(MapNameValidation):
 
     @searchText.setter
     def searchText(self, value):
-        if value is None:
+        isSearchTextRequired = not bool(self.bbox is not None and
+            bool(set(self.locationTypes) & set([self.typeInfo])))
+        if (value is None or value.strip() == '') and isSearchTextRequired:
             raise HTTPBadRequest("Please provide a search text")
         searchTextList = value.split(' ')
         # Remove empty strings
@@ -152,11 +159,12 @@ class SearchValidation(MapNameValidation):
 
     @typeInfo.setter
     def typeInfo(self, value):
-        acceptedTypes = ['locations', 'layers', 'featuresearch', 'locations_preview']
         if value is None:
-            raise HTTPBadRequest('Please provide a type parameter. Possible values are %s' % (', '.join(acceptedTypes)))
-        elif value not in acceptedTypes:
-            raise HTTPBadRequest('The type parameter you provided is not valid. Possible values are %s' % (', '.join(acceptedTypes)))
+            raise HTTPBadRequest(
+                'Please provide a type parameter. Possible values are %s' % (', '.join(self.supportedTypes)))
+        elif value not in self.supportedTypes:
+            raise HTTPBadRequest(
+                'The type parameter you provided is not valid. Possible values are %s' % (', '.join(self.supportedTypes)))
         self._typeInfo = value
 
     @limit.setter
