@@ -141,3 +141,22 @@ class Logistikraeume_armeelogistikcenter(Base, Vector):
     the_geom = Column(Geometry3D)
 
 register('ch.vbs.logistikraeume-armeelogistikcenter', Logistikraeume_armeelogistikcenter)
+
+
+class Waldschaden(Base, Vector):
+    __tablename__ = 'projektil'
+    __table_args__ = ({'schema': 'wascha', 'autoload': False})
+    __template__ = 'templates/htmlpopup/waldschadenkarte.mako'
+    __bodId__ = 'ch.vbs.waldschadenkarte'
+    __queryable_attributes__ = ['lauf_nr', 'jahr_schad', 'gde_name', 'lokalname', 'x_koord', 'y_koord']
+    __label__ = 'lauf_nr'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+    lauf_nr = Column('lauf_nr', Text)
+    jahr_schad = Column('jahr_schad', Text)
+    gde_name = Column('gde_name', Text)
+    lokalname = Column('lokalname', Text)
+    x_koord = Column('x_koord', Integer)
+    y_koord = Column('y_koord', Integer)
+
+register('ch.vbs.waldschadenkarte', Waldschaden)

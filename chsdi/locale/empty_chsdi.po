@@ -43,6 +43,27 @@ msgstr ""
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.verunreinigung_tage"
 msgstr ""
 
+msgid "ch.vbs.waldschadenkarte.lauf_nr"
+msgstr ""
+
+msgid "ch.vbs.waldschadenkarte.jahr_schad"
+msgstr ""
+
+msgid "ch.vbs.waldschadenkarte.gde_name"
+msgstr ""
+
+msgid "ch.vbs.waldschadenkarte.lokalname"
+msgstr ""
+
+msgid "ch.vbs.waldschadenkarte.x_koord"
+msgstr ""
+
+msgid "ch.vbs.waldschadenkarte.y_koord"
+msgstr ""
+
+msgid "ch.vbs.waldschadenkarte"
+msgstr ""
+
 msgid "tt_bfe_geschw_wind_exttooltip"
 msgstr ""
 
