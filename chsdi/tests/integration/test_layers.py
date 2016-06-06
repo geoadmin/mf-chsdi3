@@ -36,7 +36,7 @@ class LayersChecker(object):
         del self.testapp
         return False
 
-    def ilayers(self, tooltip=None, hasLegend=None, searchable=None):
+    def ilayers(self, tooltip=None, hasLegend=None, searchable=None, geojson=None):
         valNone = None
         query = self.session.query(distinct(LayersConfig.layerBodId)) \
             .filter(LayersConfig.staging == self.staging) \
@@ -48,12 +48,17 @@ class LayersChecker(object):
             query = query.filter(LayersConfig.hasLegend == hasLegend)
         if searchable is not None:
             query = query.filter(LayersConfig.searchable == searchable)
+        if geojson is not None:
+            if geojson:
+                query = query.filter(LayersConfig.type == 'geojson')
+            else:
+                query = query.filter(LayersConfig.type != 'geojson')
         for q in query:
             if self.onlylayer is None or q[0] == self.onlylayer:
                 yield q[0]
 
     def ilayersWithFeatures(self):
-        for layer in self.ilayers(tooltip=True):
+        for layer in self.ilayers(tooltip=True, geojson=False):
             gridSpec = get_grid_spec(layer)
             if gridSpec is None:
                 models = models_from_bodid(layer)
