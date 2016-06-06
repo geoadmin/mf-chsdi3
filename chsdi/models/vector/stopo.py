@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text
-
-from sqlalchemy.types import Numeric, Boolean, Integer, DateTime, Float
+from sqlalchemy.types import Numeric, Boolean, Integer, Float
 
 from chsdi.models import register, register_perimeter, bases
+from chsdi.models.types import DateTimeChsdi
 from chsdi.models.vector import Vector, Geometry2D
 
 
@@ -1948,7 +1948,7 @@ class steine_hist_bauwerke(Base, Vector):
 register('ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke', steine_hist_bauwerke)
 
 
-class gisGeol_base:
+class GisGeolBase:
     __template__ = 'templates/htmlpopup/gisgeol.mako'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __queryable_attributes__ = ['sgd_nr', 'orig_id', 'title', 'author', 'aux_info', 'doccreation']
@@ -1961,7 +1961,7 @@ class gisGeol_base:
     author = Column('author', Text)
     report_structure = Column('report_structure', Text)
     aux_info = Column('auxiliary_information', Text)
-    doccreation = Column('doccreation_date', DateTime)
+    doccreation = Column('doccreation_date', DateTimeChsdi)
     copy_avail = Column('copy_avail', Text)
     view_avail = Column('view_avail', Text)
     pdf_url = Column('pdf_url', Text)
@@ -1970,63 +1970,63 @@ class gisGeol_base:
     the_geom = Column(Geometry2D)
 
 
-class gisgeol_punkte(Base, gisGeol_base, Vector):
+class gisgeol_punkte(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_points'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-punkte'
 
 register('ch.swisstopo.geologie-gisgeol-punkte', gisgeol_punkte)
 
 
-class gisgeol_linien(Base, gisGeol_base, Vector):
+class gisgeol_linien(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_lines'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-linien'
 
 register('ch.swisstopo.geologie-gisgeol-linien', gisgeol_linien)
 
 
-class gisgeol_flaechen_1x1km(Base, gisGeol_base, Vector):
+class gisgeol_flaechen_1x1km(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_1x1km'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-1x1km'
 
 register('ch.swisstopo.geologie-gisgeol-flaechen-1x1km', gisgeol_flaechen_1x1km)
 
 
-class gisgeol_flaechen_10x10km(Base, gisGeol_base, Vector):
+class gisgeol_flaechen_10x10km(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_10x10km'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-10x10km'
 
 register('ch.swisstopo.geologie-gisgeol-flaechen-10x10km', gisgeol_flaechen_10x10km)
 
 
-class gisgeol_flaechen_10to100km2(Base, gisGeol_base, Vector):
+class gisgeol_flaechen_10to100km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_10to100km2'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-10to100km2'
 
 register('ch.swisstopo.geologie-gisgeol-flaechen-10to100km2', gisgeol_flaechen_10to100km2)
 
 
-class gisgeol_flaechen_100to1000km2(Base, gisGeol_base, Vector):
+class gisgeol_flaechen_100to1000km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_100to1000km2'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2'
 
 register('ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2', gisgeol_flaechen_100to1000km2)
 
 
-class gisgeol_flaechen_1000to21000km2(Base, gisGeol_base, Vector):
+class gisgeol_flaechen_1000to21000km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_1000to21000km2'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2'
 
 register('ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2', gisgeol_flaechen_1000to21000km2)
 
 
-class gisgeol_flaechen_gt21000km2(Base, gisGeol_base, Vector):
+class gisgeol_flaechen_gt21000km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_gt21000km2'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2'
 
 register('ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2', gisgeol_flaechen_gt21000km2)
 
 
-class gisgeol_flaechen_lt10km2(Base, gisGeol_base, Vector):
+class gisgeol_flaechen_lt10km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_lt10km2'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-lt10km2'
 
