@@ -2075,11 +2075,23 @@ msgstr "Badegewässerqualität"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.aeussereraspekt"
 msgstr "Äusserer Aspekt"
 
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.anzahlmessungen"
+msgstr "Messungen (pro Saison)"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat"
+msgstr "Badeplatz-Kategorie"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat_l"
+msgstr "See"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat_r"
+msgstr "Fliessgewässer"
+
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.bwid"
 msgstr "Badeplatz ID"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.bwname"
-msgstr "Name"
+msgstr "Badeplatz Name"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.ch1903x"
 msgstr "Koordinaten X"
@@ -2087,8 +2099,26 @@ msgstr "Koordinaten X"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.ch1903y"
 msgstr "Koordinaten Y"
 
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.coord_ch"
+msgstr "Koordinaten"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz"
+msgstr "Daten werden an EUA geliefert"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz_ja"
+msgstr "Ja"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz_nein"
+msgstr "Nein"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.gemeinde"
+msgstr "Gemeinde"
+
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.groupid"
 msgstr "Badeplatzgruppe"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.image"
+msgstr "Foto"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.kanton"
 msgstr "Kanton"
@@ -2099,8 +2129,17 @@ msgstr "Koordinaten Y (ETRS 89)"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.lonbw"
 msgstr "Koordinaten X (ETRS 89)"
 
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.noimage"
+msgstr "Das Foto ist nich verfügbar"
+
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.nwunitname"
 msgstr "Gewässer"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_ch"
+msgstr "Qualität (CH-Einstufung)"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_eua"
+msgstr "Qualität (EUA–Einstufung)"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaetklasse"
 msgstr "Qualität (Klassierung nach EUA)"
@@ -2112,7 +2151,13 @@ msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.rbdsuname"
 msgstr "Flussgebiet"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.url"
+msgstr "Kantonale Fachstelle"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.urllien"
 msgstr "Link"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.verunreinigung_tage"
+msgstr "Tage mit kurzzeitiger Verunreinigung"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw"
 msgstr "Jahr"
@@ -3525,7 +3570,7 @@ msgid "ch.bakom.versorgungsgebiet-tv.prog"
 msgstr "Channels"
 
 msgid "ch.bakom.versorgungsgebiet-ukw"
-msgstr "Versorgungsgebiete Radio"
+msgstr "Radio coverage areas"
 
 msgid "ch.bakom.versorgungsgebiet-ukw.prog"
 msgstr "Channels"
@@ -5106,10 +5151,10 @@ msgid "ch.swisstopo.kt.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/en/home/swisstopo/org/cartography.html"
 
 msgid "ch.swisstopo.landeskarte-farbe-10"
-msgstr "National Map 1:10'000 (color)"
+msgstr "National Maps (color)"
 
 msgid "ch.swisstopo.landeskarte-grau-10"
-msgstr "National Map 1:10'000 (grey)"
+msgstr "National Maps (grey)"
 
 msgid "ch.swisstopo.landesschwerenetz"
 msgstr "Gravimetric base network"

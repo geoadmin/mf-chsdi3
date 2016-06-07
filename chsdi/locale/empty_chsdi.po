@@ -1,3 +1,48 @@
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz_nein"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat_r"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat_l"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz_ja"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.noimage"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.urllien"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.image"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.gemeinde"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.anzahlmessungen"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.coord_ch"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_ch"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_eua"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.verunreinigung_tage"
+msgstr ""
+
 msgid "tt_bfe_geschw_wind_exttooltip"
 msgstr ""
 

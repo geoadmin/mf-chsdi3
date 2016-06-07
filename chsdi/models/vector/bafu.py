@@ -560,29 +560,31 @@ register('ch.bafu.strukturguete-hochrhein_sohle', StrukturgueteHochrheinSohle)
 
 
 class GewaesserschutzBadewasserqualitaet(Base, Vector):
-    __tablename__ = 'gewaesserschutz_badewasserqualitaet'
+    __tablename__ = 'baqua'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.gewaesserschutz-badewasserqualitaet'
-    __queryable_attributes__ = ['rbdsuname', 'groupid', 'bwname', 'nwunitname', 'rbdname']
+    __queryable_attributes__ = ['id', 'bwname', 'groupid', 'nwunitname', 'rbdsuname',
+                                'gemeinde', 'canton', 'bwatercat', 'qualitaet_ch']
     __template__ = 'templates/htmlpopup/gewaesserschutz_badewasserqualitaet.mako'
     __extended_info__ = True
     __label__ = 'bwname'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    bwid = Column('bwid', Text)
-    bwname = Column('bwname', Text)
-    aeussereraspekt = Column('aeussereraspekt', Text)
-    yearbw = Column('year_bw', Integer)
-    ch1903x = Column('rechtswert', Integer)
-    ch1903y = Column('hochwert', Integer)
-    groupid = Column('groupid', Text)
-    qualitaetklasse = Column('qualitaetsklasse', Text)
-    rbdname = Column('rbdname', Text)
-    rbdsuname = Column('rbdsuname', Text)
-    nwunitname = Column('nwunitname', Text)
-    url = Column('hyperlink', Text)
-    kanton = Column('kanton', Text)
-    latbw = Column('longitude', Numeric)
-    lonbw = Column('latitude', Numeric)
+    id = Column('bwid', Text, primary_key=True, nullable=False)
+    bwname = Column('bwname', Text, nullable=False)
+    groupid = Column('groupid', Text, nullable=True)
+    rbdsuname = Column('rbdsuname', Text, nullable=False)
+    nwunitname = Column('nwunitname', Text, nullable=False)
+    yearbw = Column('year_bw', Integer, nullable=False)
+    bwatercat = Column('bwatercat', Text, nullable=False)
+    url = Column('url', Text, nullable=True)
+    canton = Column('canton', Text, nullable=False)
+    eua_badeplatz = Column('eua_badeplatz', Integer, nullable=False)
+    gemeinde = Column('gemeinde', Text, nullable=False)
+    qualitaet_ch = Column('qualitaet_ch', Text, nullable=False)
+    qualitaet_eua = Column('qualitaet_eua', Text, nullable=True)
+    anzahlmessungen = Column('anzahlmessungen', Integer, nullable=False)
+    verunreinigung_tage = Column('verunreinigung_tage', Integer, nullable=False)
+    coord_ch = Column('coord_ch', Text, nullable=False)
+    baquaimg = Column('baquaimg', Text, nullable=True)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.gewaesserschutz-badewasserqualitaet', GewaesserschutzBadewasserqualitaet)
