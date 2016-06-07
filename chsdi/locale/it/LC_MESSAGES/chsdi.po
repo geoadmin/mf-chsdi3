@@ -4139,6 +4139,9 @@ msgstr "Abbandono dell'idroelettricitá"
 msgid "ch.bfe.abgeltung-wasserkraftnutzung.name"
 msgstr "Nom"
 
+msgid "ch.bfe.bikesharing"
+msgstr "Bikesharing e ciclonoleggio"
+
 msgid "ch.bfe.energieforschung"
 msgstr "Progetti Cleantech"
 
@@ -7772,6 +7775,9 @@ msgstr "Volume total de bois mort [m3/ha]"
 msgid "treasure_hunt"
 msgstr "Bravo! Clicca qui per trovare l'indizio successivo!"
 
+msgid "tt_address"
+msgstr "Indirizzo"
+
 msgid "tt_anteil_ch"
 msgstr "Percentuale della superficie in Svizzera"
 
@@ -8282,6 +8288,9 @@ msgstr "Valutazione dell'UFAC"
 msgid "tt_ch_bazl_kataster_belasteter_standorte_zivflpl_standortnummer"
 msgstr "Numero UFAC del sito"
 
+msgid "tt_description"
+msgstr "Informazioni"
+
 msgid "tt_document"
 msgstr "Altre informazioni"
 
@@ -8537,6 +8546,9 @@ msgstr "Organo regolatore"
 msgid "tt_landwirtsc"
 msgstr "Superfici agricole"
 
+msgid "tt_link"
+msgstr "Sito web"
+
 msgid "tt_lubis_Filmart"
 msgstr "Emulsione"
 
@@ -8663,11 +8675,20 @@ msgstr "Interventi minimi"
 msgid "tt_pronatura_e3"
 msgstr "Promozione delle biodiversità per mezzo di interventi specifici"
 
+msgid "tt_provider"
+msgstr "Operatore"
+
 msgid "tt_regimenr"
 msgstr "Numero del regime di scorrimento"
 
 msgid "tt_regimetyp"
 msgstr "Tipo del regime di scorrimento"
+
+msgid "tt_rent"
+msgstr "Costi"
+
+msgid "tt_return"
+msgstr "Restituzione"
 
 msgid "tt_sachplan-infrastruktur-schiene_aus_anlage"
 msgstr "Nome di progetto"
@@ -8881,6 +8902,9 @@ msgstr "Superficie del bacino imbrifero totale [km2]"
 
 msgid "tt_teileinzugsgebiete_2.xy_gebietsauslass"
 msgstr "Sezione di chiusura del bacino imbrifero"
+
+msgid "tt_time"
+msgstr "Orario di apertura"
 
 msgid "tt_wald_natur"
 msgstr "Foreste ed alter superfici naturali"

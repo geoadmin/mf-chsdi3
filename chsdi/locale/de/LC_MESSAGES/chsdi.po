@@ -4139,6 +4139,9 @@ msgstr "Verzicht Wasserkraftnutzung"
 msgid "ch.bfe.abgeltung-wasserkraftnutzung.name"
 msgstr "Name"
 
+msgid "ch.bfe.bikesharing"
+msgstr "Bikesharing- und Veloverleihsysteme"
+
 msgid "ch.bfe.energieforschung"
 msgstr "Cleantech-Projekte"
 
@@ -7772,6 +7775,9 @@ msgstr "Totholzvolumen [m3/ha]"
 msgid "treasure_hunt"
 msgstr "Bravo! Klicke hier um den nächsten Hinweis zu erhalten!"
 
+msgid "tt_address"
+msgstr "Adresse"
+
 msgid "tt_anteil_ch"
 msgstr "Flächenanteil in der Schweiz"
 
@@ -8282,6 +8288,9 @@ msgstr "Beurteilung BAZL"
 msgid "tt_ch_bazl_kataster_belasteter_standorte_zivflpl_standortnummer"
 msgstr "BAZL Standortnummer"
 
+msgid "tt_description"
+msgstr "Informationen"
+
 msgid "tt_document"
 msgstr "Weitere Informationen "
 
@@ -8537,6 +8546,9 @@ msgstr "Aufsichtsbehörde"
 msgid "tt_landwirtsc"
 msgstr "Landwirtschaft"
 
+msgid "tt_link"
+msgstr "Webseite"
+
 msgid "tt_lubis_Filmart"
 msgstr "Filmart"
 
@@ -8663,11 +8675,20 @@ msgstr "Minimale Eingriffe "
 msgid "tt_pronatura_e3"
 msgstr "Biodiversitätsförderung durch gezielte Eingriffe"
 
+msgid "tt_provider"
+msgstr "Anbieter"
+
 msgid "tt_regimenr"
 msgstr "Abflussregimenummer"
 
 msgid "tt_regimetyp"
 msgstr "Abflussregimetyp"
+
+msgid "tt_rent"
+msgstr "Kosten"
+
+msgid "tt_return"
+msgstr "Rückgabe"
 
 msgid "tt_sachplan-infrastruktur-schiene_aus_anlage"
 msgstr "Anlage"
@@ -8881,6 +8902,9 @@ msgstr "Fläche Gesamteinzugsgebiet [km2]"
 
 msgid "tt_teileinzugsgebiete_2.xy_gebietsauslass"
 msgstr "Gewässerpunkt am Gebietsauslass"
+
+msgid "tt_time"
+msgstr "Öffnungszeiten"
 
 msgid "tt_wald_natur"
 msgstr "Naturnahe Flächen, Wald"
