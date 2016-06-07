@@ -2168,6 +2168,36 @@ msgstr "Nombre de jours avec une pollution à court terme"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw"
 msgstr "Année"
 
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen"
+msgstr "Diatomee"
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_fische"
+msgstr "Pesci"
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten"
+msgstr "Macrofite"
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos"
+msgstr "Macrobenthos"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_ammonium"
+msgstr "Ammonio"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_doc"
+msgstr "Carbonio organico disciolto (DOC)"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_nitrat"
+msgstr "Nitrato"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_nitrit"
+msgstr "Nitrito"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphat"
+msgstr "Fosfato"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt"
+msgstr "Fosforo totale"
+
 msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor"
 msgstr "Immissioni diffuse di fosforo"
 
@@ -3078,37 +3108,37 @@ msgid "ch.bafu.showme-gemeinden_lawinen"
 msgstr "ShowMe comuni: valanghe"
 
 msgid "ch.bafu.showme-gemeinden_rutschungen"
-msgstr "ShowMe comuni: scivolamento"
+msgstr "ShowMe comuni: scivolamenti"
 
 msgid "ch.bafu.showme-gemeinden_sturzprozesse"
-msgstr "ShowMe comuni: crollo"
+msgstr "ShowMe comuni: processi di crollo"
 
 msgid "ch.bafu.showme-kantone_hochwasser"
 msgstr "ShowMe cantoni: piene"
 
 msgid "ch.bafu.showme-kantone_lawinen"
-msgstr "ShowMe cantoni: valanghe"
+msgstr "ShowMe cantoni : valanghe"
 
 msgid "ch.bafu.showme-kantone_rutschungen"
-msgstr "ShowMe cantoni: scivolamento"
+msgstr "ShowMe cantoni: scivolamenti"
 
 msgid "ch.bafu.showme-kantone_sturzprozesse"
-msgstr "ShowMe cantoni: crollo"
+msgstr "ShowMe cantoni: processi di crollo"
 
 msgid "ch.bafu.silvaprotect-hangmuren"
-msgstr "Colata detritica di versante"
+msgstr "Colata detritica di versante (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-lawinen"
-msgstr "Valanghe"
+msgstr "Valanghe (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-murgang"
-msgstr "Colata detritica"
+msgstr "Colata detritica (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-sturz"
-msgstr "Crolli"
+msgstr "Crolli (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-uebersarung"
-msgstr "Alluvionamento da sedimento"
+msgstr "Alluvionamento da sedimento (SilvaProtect-CH)"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesufer"
 msgstr "Qualité str. rive gauche"
@@ -6229,6 +6259,12 @@ msgstr "Nome del corso d’acqua"
 
 msgid "gewaessername"
 msgstr "Nom du plan d’eau"
+
+msgid "gewaesserschutz_gewaesser"
+msgstr "Corso d'acqua"
+
+msgid "gewaesserschutz_klasse"
+msgstr "Stato ecologico"
 
 msgid "gewissnr"
 msgstr "Numéro GEWISS"
