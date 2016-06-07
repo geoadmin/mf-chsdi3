@@ -4,7 +4,6 @@ APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''
 KEEP_VERSION ?= 'false'
 LAST_VERSION := $(shell if [ -f '.venv/last-version' ]; then cat .venv/last-version 2> /dev/null; else echo '-none-'; fi)
 VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '-none-' ]; then echo $(LAST_VERSION); else python -c "print __import__('time').strftime('%s')"; fi)
-BASEWAR := print-servlet-2.0-SNAPSHOT-IMG-MAGICK.war
 BRANCH_STAGING := $(shell if [ '$(DEPLOY_TARGET)' = 'dev' ]; then echo 'test'; else echo 'integration'; fi)
 BRANCH_TO_DELETE :=
 CURRENT_DIRECTORY := $(shell pwd)
@@ -16,10 +15,6 @@ INSTALL_DIRECTORY := .venv
 MODWSGI_USER := www-data
 NO_TESTS ?= withtests
 NODE_DIRECTORY := node_modules
-PRINT_INPUT := *.yaml *.png WEB-INF
-PRINT_OUTPUT_BASE := /srv/tomcat/tomcat1/webapps/print-chsdi3-$(APACHE_BASE_PATH)
-PRINT_OUTPUT := $(PRINT_OUTPUT_BASE).war
-PRINT_TEMP_DIR := /var/cache/print
 PYTHON_FILES := $(shell find chsdi/* -path chsdi/static -prune -o -type f -name "*.py" -print)
 SHORTENER_ALLOWED_DOMAINS := admin.ch, swisstopo.ch, bgdi.ch
 SHORTENER_ALLOWED_HOSTS :=
@@ -83,8 +78,6 @@ help:
 	@echo "- deploybranchdemo   Deploy current branch to dev and demo (must be pushed before hand)"
 	@echo "- deletebranch       List deployed branches or delete a deployed branch (BRANCH_TO_DELETE=...)"
 	@echo "- updateapi          Updates geoadmin api source code (ol3 fork)"
-	@echo "- printconfig        Set tomcat print env variables"
-	@echo "- printwar           Creates the .jar print file (only one per env per default)"
 	@echo "- deploydev          Deploys master to dev (SNAPSHOT=true to also create a snapshot)"
 	@echo "- deployint          Deploys a snapshot to integration (SNAPSHOT=201512021146)"
 	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"
@@ -112,7 +105,7 @@ all: setup chsdi/static/css/extended.min.css templates potomo rss lint fixrights
 
 setup: .venv gdal node_modules .venv/hooks
 
-templates: .venv/last-version apache/wsgi.conf apache/tomcat-print.conf print/WEB-INF/web.xml development.ini production.ini
+templates: .venv/last-version apache/wsgi.conf development.ini production.ini
 
 .PHONY: dev
 dev:
@@ -237,29 +230,6 @@ deploybranchdemo:
 	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev and demo...${RESET}";
 	./scripts/deploybranch.sh demo
 
-.PHONY: printconfig
-printconfig:
-	@echo '# File managed by zc.buildout mf-chsdi3'  > /srv/tomcat/tomcat1/bin/setenv-local.sh
-	@echo 'export JAVA_XMX="2G"'  >> /srv/tomcat/tomcat1/bin/setenv-local.sh
-
-.PHONY: printwar
-printwar: printconfig print/WEB-INF/web.xml.in
-	cd print && \
-	mkdir temp_$(VERSION) && \
-	echo "${GREEN}Updating print war...${RESET}" && \
-	cp -f ${BASEWAR} temp_$(VERSION)/print-chsdi3-$(APACHE_BASE_PATH).war && \
-	cp -fr ${PRINT_INPUT} temp_$(VERSION)/ && \
-	cd temp_$(VERSION) && \
-	jar uf print-chsdi3-$(APACHE_BASE_PATH).war ${PRINT_INPUT} && \
-	echo "${GREEN}Print war creation was successful.${RESET}" && \
-	rm -rf $(PRINT_OUTPUT) $(PRINT_OUTPUT_BASE) && \
-	cp -f print-chsdi3-$(APACHE_BASE_PATH).war $(PRINT_OUTPUT) && chmod 666 $(PRINT_OUTPUT) && cd .. && \
-	echo "${GREEN}Removing temp directory${RESET}" && \
-	rm -rf temp_$(VERSION) && \
-	echo "${GREEN}Restarting tomcat...${RESET}" && \
-	sudo /etc/init.d/tomcat-tomcat1 restart && \
-	echo "${GREEN}It may take a few seconds for $(PRINT_OUTPUT_BASE) directory to appear...${RESET}";
-
 # Remove when ready to be merged
 .PHONY: deploydev
 deploydev:
@@ -302,22 +272,6 @@ deploy/conf/00-branch.conf.in:
 deploy/conf/00-branch.conf: deploy/conf/00-branch.conf.in
 	@echo "${GREEN}Creating deploy/conf/00-branch.conf...${RESET}"
 	${MAKO_CMD} --var "git_branch=$(GIT_BRANCH)" $< > $@
-
-apache/tomcat-print.conf.in:
-	@echo "${GREEN}Template file apache/tomcat-print.conf.in has changed${RESET}";
-apache/tomcat-print.conf: apache/tomcat-print.conf.in
-	@echo "${GREEN}Creating apache/tomcat-print.conf...${RESET}";
-	${MAKO_CMD} \
-		--var "print_war=$(PRINT_WAR)" \
-		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
-		--var "print_temp_dir=$(PRINT_TEMP_DIR)" $< > $@
-
-print/WEB-INF/web.xml.in:
-	@echo "${GREEN}Template file print/WEB-INF/web.xml has changed${RESET}"
-print/WEB-INF/web.xml: print/WEB-INF/web.xml.in
-	@echo "${GREEN}Creating print/WEB-INF/web.xml...${RESET}"
-	${MAKO_CMD} \
-		--var "print_temp_dir=$(PRINT_TEMP_DIR)" $< > $@
 
 apache/application.wsgi.mako:
 	@echo "${GREEN}Template file apache/application.wsgi.mako has changed${RESET}";
@@ -441,10 +395,8 @@ clean:
 	rm -rf production.ini
 	rm -rf development.ini
 	rm -rf apache/wsgi.conf
-	rm -rf apache/tomcat-print.conf
-	rm -rf print/WEB-INF/web.xml
-	rm -rf apache/application.wsgi
 	rm -rf rc_branch
+	rm -rf apache/application.wsgi
 	rm -rf deploy/deploy-branch.cfg
 	rm -rf deploy/conf/00-branch.conf
 

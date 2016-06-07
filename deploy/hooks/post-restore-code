@@ -21,7 +21,6 @@ elif [[ -f rc_$TARGET ]]; then
   make clean
   source rc_$TARGET
   make templates
-  make printwar APACHE_BASE_PATH=main
 fi
 
 exit $?

@@ -50,9 +50,6 @@ def main(global_config, **settings):
 
     # route definitions
     config.add_route('ogcproxy', '/ogcproxy')
-    config.add_route('print_create', '/printmulti/create.json')
-    config.add_route('print_progress', '/printprogress')
-    config.add_route('print_cancel', '/printcancel')
     config.add_route('dev', '/dev')
     config.add_route('ga_api', '/loader.js')
     config.add_route('testi18n', '/testi18n')
