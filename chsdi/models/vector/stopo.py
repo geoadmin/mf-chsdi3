@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text
-from sqlalchemy.types import Numeric, Boolean, Integer, Float
+
+from sqlalchemy.types import Numeric, Boolean, Integer, Float, Unicode
 
 from chsdi.models import register, register_perimeter, bases
 from chsdi.models.types import DateTimeChsdi
@@ -135,7 +136,7 @@ class GeolSpezialKartenMetadata(Base, Vector):
     __template__ = 'templates/htmlpopup/gsk_metadata.mako'
     __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz.metadata'
     __label__ = 'id'
-    id = Column('nr', Integer, primary_key=True)
+    id = Column('nr', Unicode, primary_key=True)
     titel = Column('titel', Text)
     jahr = Column('jahr', Numeric)
     author = Column('author', Text)
@@ -150,7 +151,7 @@ class ShopProductClass:
     __template__ = 'templates/htmlpopup/shop_product.mako'
     __label__ = 'id'
     __queryable_attributes__ = ['release']
-    id = Column('pk_product', Text, primary_key=True)
+    id = Column('pk_product', Unicode, primary_key=True)
     scale = Column('scale', Integer)
     release = Column('release', Integer)
     data = Column('data', Integer)
@@ -532,7 +533,7 @@ class Vec200Terminal(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_terminal.mako'
     __bodId__ = 'ch.swisstopo.vec200-transportation-oeffentliche-verkehr'
     __label__ = 'objval'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     objval = Column('objval', Text)
     the_geom = Column(Geometry2D)
 
@@ -543,7 +544,7 @@ class Vec200ShipKursschiff(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_ship_kursschiff_linie.mako'
     __bodId__ = 'ch.swisstopo.vec200-transportation-oeffentliche-verkehr'
     __label__ = 'objval'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     objval = Column('objval', Text)
     detn = Column('detn', Text)
     rsu = Column('rsu', Text)
@@ -557,7 +558,7 @@ class Vec200Railway(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_railway.mako'
     __bodId__ = 'ch.swisstopo.vec200-transportation-oeffentliche-verkehr'
     __label__ = 'objval'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     objval = Column('objval', Text)
     construct = Column('construct', Text)
     the_geom = Column(Geometry2D)
@@ -573,7 +574,7 @@ class Vec200Trafficinfo(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_trafficinfo.mako'
     __bodId__ = 'ch.swisstopo.vec200-transportation-strassennetz'
     __label__ = 'objname'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     objname = Column('objname', Text)
     objval = Column('objval', Text)
     the_geom = Column(Geometry2D)
@@ -585,7 +586,7 @@ class Vec200ShipAutofaehre(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_ship_autofaehre.mako'
     __bodId__ = 'ch.swisstopo.vec200-transportation-strassennetz'
     __label__ = 'detn'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     use = Column('use', Text)
     rsu = Column('rsu', Text)
     detn = Column('detn', Text)
@@ -598,7 +599,7 @@ class Vec200Road(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_road.mako'
     __bodId__ = 'ch.swisstopo.vec200-transportation-strassennetz'
     __label__ = 'objval'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     construct = Column('construct', Text)
     objval = Column('objval', Text)
     toll = Column('toll', Text)
@@ -611,7 +612,7 @@ class Vec200Ramp(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_ramp.mako'
     __bodId__ = 'ch.swisstopo.vec200-transportation-strassennetz'
     __label__ = 'objval'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     construct = Column('construct', Text)
     objval = Column('objval', Text)
     toll = Column('toll', Text)
@@ -624,7 +625,7 @@ class Vec200Customsoffice(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_customsoffice.mako'
     __bodId__ = 'ch.swisstopo.vec200-transportation-strassennetz'
     __label__ = 'ojbname'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     objname = Column('objname', Text)
     the_geom = Column(Geometry2D)
 
@@ -641,7 +642,7 @@ class Vec200Protectedarea(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_protectedarea.mako'
     __bodId__ = 'ch.swisstopo.vec200-adminboundaries-protectedarea'
     __label__ = 'name'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     name = Column('name', Text)
     the_geom = Column(Geometry2D)
 
@@ -654,7 +655,7 @@ class Vec200Flowingwater(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_flowingwater.mako'
     __bodId__ = 'ch.swisstopo.vec200-hydrography'
     __label__ = 'name'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     name = Column('name', Text)
     exs = Column('exs', Text)
     hoc = Column('hoc', Text)
@@ -667,7 +668,7 @@ class Vec200Stagnantwater(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_stagnantwater.mako'
     __bodId__ = 'ch.swisstopo.vec200-hydrography'
     __label__ = 'name'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     name = Column('name', Text)
     seesph = Column('seesph', Numeric)
     the_geom = Column(Geometry2D)
@@ -682,7 +683,7 @@ class Vec200Landcover(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_landcover.mako'
     __bodId__ = 'ch.swisstopo.vec200-landcover'
     __label__ = 'objname1'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     objname1 = Column('objname1', Text)
     objval = Column('objval', Text)
     the_geom = Column(Geometry2D)
@@ -696,7 +697,7 @@ class Vec200Builtupp(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_builtupp.mako'
     __bodId__ = 'ch.swisstopo.vec200-miscellaneous'
     __label__ = 'objname'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     objname = Column('objname', Text)
     ppi = Column('ppi', Text)
     the_geom = Column(Geometry2D)
@@ -708,7 +709,7 @@ class Vec200Poi(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_poi.mako'
     __bodId__ = 'ch.swisstopo.vec200-miscellaneous'
     __label__ = 'objname'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     objname = Column('objname', Text)
     objval = Column('objval', Text)
     ppc = Column('ppc', Text)
@@ -722,7 +723,7 @@ class Vec200Supply(Base, Vector):
     __template__ = 'templates/htmlpopup/vec200_supply.mako'
     __bodId__ = 'ch.swisstopo.vec200-miscellaneous'
     __label__ = 'fco'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     fco = Column('fco', Text)
     loc = Column('loc', Text)
     pro = Column('pro', Text)
@@ -741,7 +742,7 @@ class Vec200Namedlocation(Base, Vector):
     __queryable_attributes__ = ['objname1', 'id']
     # Composite labels coalesce(objname1,'')||' '||coalesce(objname2,'')
     __label__ = 'objname1'
-    id = Column('gtdboid', Text, primary_key=True)
+    id = Column('gtdboid', Unicode, primary_key=True)
     objname1 = Column('objname1', Text)
     objname2 = Column('objname2', Text)
     altitude = Column('altitude', Integer)
@@ -893,7 +894,7 @@ register('ch.swisstopo.dreiecksvermaschung', Dreiecksvermaschung)
 class GridstandTemplate:
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __label__ = 'lk_name'
-    id = Column('kbnum', Text, primary_key=True)
+    id = Column('kbnum', Unicode, primary_key=True)
     lk_name = Column('lk_name', Text)
     release = Column('release', Integer)
     the_geom = Column(Geometry2D)
@@ -1012,7 +1013,7 @@ class GridstandSwissimage(Base, Vector):
     __template__ = 'templates/htmlpopup/images_metadata.mako'
     __bodId__ = 'ch.swisstopo.images-swissimage.metadata'
     __label__ = 'lk25_name'
-    id = Column('tilenumber', Text, primary_key=True)
+    id = Column('tilenumber', Unicode, primary_key=True)
     lk25_name = Column('lk25_name', Text)
     datenstand = Column('datenstand', Text)
     the_geom = Column(Geometry2D)
@@ -1094,7 +1095,7 @@ class GeologischeKarteLine(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geologische_karte'
     # Translatable labels in fr
     __label__ = 'type_de'
-    id = Column('fid', Text, primary_key=True)
+    id = Column('fid', Integer, primary_key=True)
     gid = Column('id', Integer)
     type_de = Column('type_de', Text)
     type_fr = Column('type_fr', Text)
@@ -1107,7 +1108,7 @@ class GeologischeKartePlg(Base, Vector):
     __template__ = 'templates/htmlpopup/geologische_karte_plg.mako'
     __bodId__ = 'ch.swisstopo.geologie-geologische_karte'
     __label__ = 'leg_geol_d'
-    id = Column('id', Text, primary_key=True)
+    id = Column('id', Integer, primary_key=True)
     leg_geol_d = Column('leg_geol_d', Text)
     leg_geol_f = Column('leg_geol_f', Text)
     the_geom = Column(Geometry2D)
@@ -1637,7 +1638,7 @@ class PLZOrtschaften(Base, Vector):
     __bodId__ = 'ch.swisstopo-vd.ortschaftenverzeichnis_plz'
     __queryable_attributes__ = ['plz', 'langtext']
     __label__ = 'plz'
-    id = Column('os_uuid', Text, primary_key=True)
+    id = Column('os_uuid', Unicode, primary_key=True)
     plz = Column('plz', Integer)
     zusziff = Column('zusziff', Text)
     langtext = Column('langtext', Text)
@@ -1882,7 +1883,7 @@ class spannungsarmeGebiete(Base, Vector):
     __template__ = 'templates/htmlpopup/spannungsarme_gebiete.mako'
     __bodId__ = 'ch.swisstopo.transformationsgenauigkeit'
     __label__ = 'sg_name'
-    id = Column('identifier', Text, primary_key=True)
+    id = Column('identifier', Unicode, primary_key=True)
     sg_name = Column('sg_name', Text)
     vali_date = Column('vali_date', Text)
     the_geom = Column(Geometry2D)
@@ -2379,7 +2380,7 @@ class DHM25(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_dhm25'
     __table_args__ = ({'autoload': False})
     __bodId__ = 'ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'
-    id = Column('grat25', Text, primary_key=True)
+    id = Column('grat25', Unicode, primary_key=True)
     the_geom = Column(Geometry2D)
 
 

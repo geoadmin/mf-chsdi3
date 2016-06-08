@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer, Date, DateTime, ForeignKey
+from sqlalchemy import Column, Text, Unicode, Integer, Date, DateTime, ForeignKey
 from sqlalchemy.orm import relationship, remote
-from sqlalchemy.types import Numeric
+from sqlalchemy.types import Numeric, BigInteger
 from sqlalchemy.dialects import postgresql
 
 from chsdi.models import register, bases
@@ -92,7 +92,6 @@ register('ch.bav.haltestellen-oev', OevHaltestellenZoom2)
 class OevDepartures(Base):
     __tablename__ = 'oev_departures'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
-    __template__ = 'templates/htmlpopup/oev_departures.mako'
     __bodId__ = 'ch.bav.departures-oev'
     __label__ = 'id'
     id = Column('oid', Text, primary_key=True)
@@ -116,7 +115,7 @@ class SicherheitsZonenPlan (Base, Vector):
     __bodId__ = 'ch.bazl.sicherheitszonenplan'
     __extended_info__ = True
     __label__ = 'id'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     zone = Column('zone', Text)
     zonetype_tid = Column('zonetype_tid', Text)
     type_id = Column('type_id', Text)
@@ -313,7 +312,7 @@ class Unf:
                                 'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it',
                                 'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it',
                                 'roadtypecode', 'canton', 'fsocommunecode']
-    id = Column('uuid', Integer, primary_key=True)
+    id = Column('uuid', Unicode, primary_key=True)
     accidenttype_de = Column('accidenttype_de', Text)
     accidenttype_fr = Column('accidenttype_fr', Text)
     accidenttype_it = Column('accidenttype_it', Text)
@@ -688,7 +687,7 @@ class WindenergieanlagenFacility(Base, Vector):
     __extended_info__ = True
     __queryable_attributes__ = ['fac_name']
     __label__ = 'fac_name'
-    id = Column('fac_id', Text, primary_key=True)
+    id = Column('fac_id', Unicode, primary_key=True)
     fac_name = Column('fac_name', Text)
     fac_type_de = Column('fac_type_de', Text)
     fac_type_fr = Column('fac_type_fr', Text)
@@ -716,7 +715,7 @@ class WindenergieanlagenTurbine(Base, Vector):
     __extended_info__ = True
     __queryable_attributes__ = ['fac_name']
     __label__ = 'tur_year'
-    id = Column('tur_id', Text, primary_key=True)
+    id = Column('tur_id', Unicode, primary_key=True)
     fac_name = Column('fac_name', Text)
     fac_type_de = Column('fac_type_de', Text)
     fac_type_fr = Column('fac_type_fr', Text)
@@ -927,7 +926,7 @@ class SgtPlanning(Base, Vector):
     __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it']
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1097,7 +1096,7 @@ class SilFacilitiesA(Base, Vector):
     __bodId__ = 'ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung'
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1126,7 +1125,7 @@ class SilPlanningA(Base, Vector):
     __bodId__ = 'ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung'
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1161,7 +1160,7 @@ class SilPlanningRasterA(Base, Vector):
     __bodId__ = 'ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung'
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1200,7 +1199,7 @@ class SilFacilitiesK(Base, Vector):
     __bodId__ = 'ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1229,7 +1228,7 @@ class SilPlanningK(Base, Vector):
     __bodId__ = 'ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1264,7 +1263,7 @@ class SilPlanningRasterK(Base, Vector):
     __bodId__ = 'ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1319,7 +1318,7 @@ class Kernkraftwerke(Base, Vector):
     __bodId__ = 'ch.bfe.kernkraftwerke'
     __extended_info__ = True
     __label__ = 'name'
-    id = Column('plant_id', Text, primary_key=True)
+    id = Column('plant_id', Integer, primary_key=True)
     name = Column('name', Text)
     operator = Column('operator', Text)
     owner = Column('owner', Text)
@@ -1368,7 +1367,7 @@ class SisFacilitiesA(Base, Vector):
     __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it', 'doc_title']
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1401,7 +1400,7 @@ class SisPlanningA(Base, Vector):
     __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it', 'doc_title']
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1439,7 +1438,7 @@ class SisAngaben(Base, Vector):
     __bodId__ = 'ch.bav.sachplan-infrastruktur-schiene_ausgangslage'
     __queryable_attributes__ = ['name', 'description_fr', 'description_it', 'description_de']
     __label__ = 'name'
-    id = Column('anlage_id', Text, primary_key=True)
+    id = Column('anlage_id', Unicode, primary_key=True)
     name = Column('name', Text)
     description_de = Column('description_de', Text)
     description_fr = Column('description_fr', Text)
@@ -1466,7 +1465,7 @@ class SisPlanningRasterA(Base, Vector):
     __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it', 'doc_title']
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1505,7 +1504,7 @@ class SisFacilitiesK(Base, Vector):
     __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it', 'doc_title']
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1537,7 +1536,7 @@ class SisPlanningK(Base, Vector):
     __bodId__ = 'ch.bav.sachplan-infrastruktur-schiene_kraft'
     __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it', 'doc_title']
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1576,7 +1575,7 @@ class SisPlanningRasterK(Base, Vector):
     __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it', 'doc_title']
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1689,37 +1688,37 @@ class LaermEmissionsplanEisenbahnNacht(Base, Vector):
 register('ch.bav.laerm-emissionsplan_eisenbahn_nacht', LaermEmissionsplanEisenbahnNacht)
 
 
-class SifFacilitiesA(Base, Vector):
-    __tablename__ = 'sif_fac_anhorung'
-    __table_args__ = ({'schema': 'bav', 'autoload': False})
-    __bodId__ = 'ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung'
-    __template__ = 'templates/htmlpopup/sif_facilities.mako'
-    __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it', 'doc_title']
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
-    facname_de = Column('facname_de', Text)
-    facname_fr = Column('facname_fr', Text)
-    facname_it = Column('facname_it', Text)
-    fackind_text_de = Column('fackind_text_de', Text)
-    fackind_text_fr = Column('fackind_text_fr', Text)
-    fackind_text_it = Column('fackind_text_it', Text)
-    facstatus_text_de = Column('facstatus_text_de', Text)
-    facstatus_text_fr = Column('facstatus_text_fr', Text)
-    facstatus_text_it = Column('facstatus_text_it', Text)
-    validfrom = Column('validfrom', Text)
-    description_de = Column('description_de', Text)
-    description_fr = Column('description_fr', Text)
-    description_it = Column('description_it', Text)
-    doc_web = Column('doc_web', Text)
-    doc_title = Column('doc_title', Text)
-    objname_de = Column('objname_de', Text)
-    objname_fr = Column('objname_fr', Text)
-    objname_it = Column('objname_it', Text)
-    bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry2D)
-
-register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', SifFacilitiesA)
+# class SifFacilitiesA(Base, Vector):
+#     __tablename__ = 'sif_fac_anhorung'
+#     __table_args__ = ({'schema': 'bav', 'autoload': False})
+#     __bodId__ = 'ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung'
+#     __template__ = 'templates/htmlpopup/sif_facilities.mako'
+#     __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it', 'doc_title']
+#     # Translatable labels in fr, it
+#     __label__ = 'facname_de'
+#     id = Column('stabil_id', Text, primary_key=True)
+#     facname_de = Column('facname_de', Text)
+#     facname_fr = Column('facname_fr', Text)
+#     facname_it = Column('facname_it', Text)
+#     fackind_text_de = Column('fackind_text_de', Text)
+#     fackind_text_fr = Column('fackind_text_fr', Text)
+#     fackind_text_it = Column('fackind_text_it', Text)
+#     facstatus_text_de = Column('facstatus_text_de', Text)
+#     facstatus_text_fr = Column('facstatus_text_fr', Text)
+#     facstatus_text_it = Column('facstatus_text_it', Text)
+#     validfrom = Column('validfrom', Text)
+#     description_de = Column('description_de', Text)
+#     description_fr = Column('description_fr', Text)
+#     description_it = Column('description_it', Text)
+#     doc_web = Column('doc_web', Text)
+#     doc_title = Column('doc_title', Text)
+#     objname_de = Column('objname_de', Text)
+#     objname_fr = Column('objname_fr', Text)
+#     objname_it = Column('objname_it', Text)
+#     bgdi_created = Column('bgdi_created', Text)
+#     the_geom = Column(Geometry2D)
+#
+# register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', SifFacilitiesA)
 
 
 class SifFacilitiesK(Base, Vector):
@@ -1730,7 +1729,7 @@ class SifFacilitiesK(Base, Vector):
     __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it', 'doc_title']
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1754,44 +1753,44 @@ class SifFacilitiesK(Base, Vector):
 
 register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', SifFacilitiesK)
 
-
-class SifPlanningA(Base, Vector):
-    __tablename__ = 'sif_pl_anhorung'
-    __table_args__ = ({'schema': 'bav', 'autoload': False})
-    __template__ = 'templates/htmlpopup/sif_planning.mako'
-    __bodId__ = 'ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung'
-    __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it', 'doc_title']
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
-    facname_de = Column('facname_de', Text)
-    facname_fr = Column('facname_fr', Text)
-    facname_it = Column('facname_it', Text)
-    plname_de = Column('plname_de', Text)
-    plname_fr = Column('plname_fr', Text)
-    plname_it = Column('plname_it', Text)
-    meastype_text_de = Column('meastype_text_de', Text)
-    meastype_text_fr = Column('meastype_text_fr', Text)
-    meastype_text_it = Column('meastype_text_it', Text)
-    coordlevel_text_de = Column('coordlevel_text_de', Text)
-    coordlevel_text_fr = Column('coordlevel_text_fr', Text)
-    coordlevel_text_it = Column('coordlevel_text_it', Text)
-    plstatus_text_de = Column('plstatus_text_de', Text)
-    plstatus_text_fr = Column('plstatus_text_fr', Text)
-    plstatus_text_it = Column('plstatus_text_it', Text)
-    validfrom = Column('validfrom', Text)
-    validuntil = Column('validuntil', Text)
-    description_de = Column('description_de', Text)
-    description_fr = Column('description_fr', Text)
-    description_it = Column('description_it', Text)
-    doc_web = Column('doc_web', Text)
-    doc_title = Column('doc_title', Text)
-    bgdi_created = Column('bgdi_created', Text)
-    __minscale__ = 20005
-    __maxscale__ = 500005
-    the_geom = Column(Geometry2D)
-
-register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', SifPlanningA)
+# Layer on hold, ask ltfoa or ltgal if you need further informations
+# class SifPlanningA(Base, Vector):
+#     __tablename__ = 'sif_pl_anhorung'
+#     __table_args__ = ({'schema': 'bav', 'autoload': False})
+#     __template__ = 'templates/htmlpopup/sif_planning.mako'
+#     __bodId__ = 'ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung'
+#     __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it', 'doc_title']
+#     # Translatable labels in fr, it
+#     __label__ = 'facname_de'
+#     id = Column('stabil_id', Text, primary_key=True)
+#     facname_de = Column('facname_de', Text)
+#     facname_fr = Column('facname_fr', Text)
+#     facname_it = Column('facname_it', Text)
+#     plname_de = Column('plname_de', Text)
+#     plname_fr = Column('plname_fr', Text)
+#     plname_it = Column('plname_it', Text)
+#     meastype_text_de = Column('meastype_text_de', Text)
+#     meastype_text_fr = Column('meastype_text_fr', Text)
+#     meastype_text_it = Column('meastype_text_it', Text)
+#     coordlevel_text_de = Column('coordlevel_text_de', Text)
+#     coordlevel_text_fr = Column('coordlevel_text_fr', Text)
+#     coordlevel_text_it = Column('coordlevel_text_it', Text)
+#     plstatus_text_de = Column('plstatus_text_de', Text)
+#     plstatus_text_fr = Column('plstatus_text_fr', Text)
+#     plstatus_text_it = Column('plstatus_text_it', Text)
+#     validfrom = Column('validfrom', Text)
+#     validuntil = Column('validuntil', Text)
+#     description_de = Column('description_de', Text)
+#     description_fr = Column('description_fr', Text)
+#     description_it = Column('description_it', Text)
+#     doc_web = Column('doc_web', Text)
+#     doc_title = Column('doc_title', Text)
+#     bgdi_created = Column('bgdi_created', Text)
+#     __minscale__ = 20005
+#     __maxscale__ = 500005
+#     the_geom = Column(Geometry2D)
+#
+# register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', SifPlanningA)
 
 
 class SifPlanningK(Base, Vector):
@@ -1802,7 +1801,7 @@ class SifPlanningK(Base, Vector):
     __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it', 'doc_title']
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1833,43 +1832,44 @@ class SifPlanningK(Base, Vector):
 register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', SifPlanningK)
 
 
-class SifPlanningRasterA(Base, Vector):
-    __tablename__ = 'sif_pl_r_anhorung'
-    __table_args__ = ({'schema': 'bav', 'autoload': False})
-    __template__ = 'templates/htmlpopup/sif_planning.mako'
-    __bodId__ = 'ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung'
-    __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it', 'doc_title']
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
-    facname_de = Column('facname_de', Text)
-    facname_fr = Column('facname_fr', Text)
-    facname_it = Column('facname_it', Text)
-    plname_de = Column('plname_de', Text)
-    plname_fr = Column('plname_fr', Text)
-    plname_it = Column('plname_it', Text)
-    meastype_text_de = Column('meastype_text_de', Text)
-    meastype_text_fr = Column('meastype_text_fr', Text)
-    meastype_text_it = Column('meastype_text_it', Text)
-    coordlevel_text_de = Column('coordlevel_text_de', Text)
-    coordlevel_text_fr = Column('coordlevel_text_fr', Text)
-    coordlevel_text_it = Column('coordlevel_text_it', Text)
-    plstatus_text_de = Column('plstatus_text_de', Text)
-    plstatus_text_fr = Column('plstatus_text_fr', Text)
-    plstatus_text_it = Column('plstatus_text_it', Text)
-    validfrom = Column('validfrom', Text)
-    validuntil = Column('validuntil', Text)
-    description_de = Column('description_de', Text)
-    description_fr = Column('description_fr', Text)
-    description_it = Column('description_it', Text)
-    doc_web = Column('doc_web', Text)
-    doc_title = Column('doc_title', Text)
-    bgdi_created = Column('bgdi_created', Text)
-    __maxscale__ = 20005
-    __minscale__ = 1
-    the_geom = Column(Geometry2D)
-
-register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', SifPlanningRasterA)
+# Layer on hold, ask ltfoa or ltgal if you need further informations
+# class SifPlanningRasterA(Base, Vector):
+#     __tablename__ = 'sif_pl_r_anhorung'
+#     __table_args__ = ({'schema': 'bav', 'autoload': False})
+#     __template__ = 'templates/htmlpopup/sif_planning.mako'
+#     __bodId__ = 'ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung'
+#     __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it', 'doc_title']
+#     # Translatable labels in fr, it
+#     __label__ = 'facname_de'
+#     id = Column('stabil_id', Text, primary_key=True)
+#     facname_de = Column('facname_de', Text)
+#     facname_fr = Column('facname_fr', Text)
+#     facname_it = Column('facname_it', Text)
+#     plname_de = Column('plname_de', Text)
+#     plname_fr = Column('plname_fr', Text)
+#     plname_it = Column('plname_it', Text)
+#     meastype_text_de = Column('meastype_text_de', Text)
+#     meastype_text_fr = Column('meastype_text_fr', Text)
+#     meastype_text_it = Column('meastype_text_it', Text)
+#     coordlevel_text_de = Column('coordlevel_text_de', Text)
+#     coordlevel_text_fr = Column('coordlevel_text_fr', Text)
+#     coordlevel_text_it = Column('coordlevel_text_it', Text)
+#     plstatus_text_de = Column('plstatus_text_de', Text)
+#     plstatus_text_fr = Column('plstatus_text_fr', Text)
+#     plstatus_text_it = Column('plstatus_text_it', Text)
+#     validfrom = Column('validfrom', Text)
+#     validuntil = Column('validuntil', Text)
+#     description_de = Column('description_de', Text)
+#     description_fr = Column('description_fr', Text)
+#     description_it = Column('description_it', Text)
+#     doc_web = Column('doc_web', Text)
+#     doc_title = Column('doc_title', Text)
+#     bgdi_created = Column('bgdi_created', Text)
+#     __maxscale__ = 20005
+#     __minscale__ = 1
+#     the_geom = Column(Geometry2D)
+#
+# register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', SifPlanningRasterA)
 
 
 class SifPlanningRasterK(Base, Vector):
@@ -1880,7 +1880,7 @@ class SifPlanningRasterK(Base, Vector):
     __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it', 'doc_title']
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -1918,7 +1918,7 @@ class SifAusgangslage(Base, Vector):
     __bodId__ = 'ch.bav.sachplan-infrastruktur-schifffahrt_ausgangslage'
     __queryable_attributes__ = ['name', 'description_fr', 'description_it', 'description_de']
     __label__ = 'name'
-    id = Column('anlage_id', Text, primary_key=True)
+    id = Column('anlage_id', Unicode, primary_key=True)
     name = Column('name', Text)
     description_de = Column('description_de', Text)
     description_fr = Column('description_fr', Text)
@@ -2076,150 +2076,153 @@ class bazl_laerm_zweite_nachtstunde (Base, Vector):
 register('ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde', bazl_laerm_zweite_nachtstunde)
 
 
-class suel_fac_anhorung (Base, Vector):
-    __tablename__ = 'suel_fac_anhorung'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __bodId__ = 'ch.bfe.sachplan-uebertragungsleitungen_anhoerung'
-    __template__ = 'templates/htmlpopup/suel_facilities.mako'
-    __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it']
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
-    facname_de = Column('facname_de', Text)
-    facname_fr = Column('facname_fr', Text)
-    facname_it = Column('facname_it', Text)
-    fackind_text_de = Column('fackind_text_de', Text)
-    fackind_text_fr = Column('fackind_text_fr', Text)
-    fackind_text_it = Column('fackind_text_it', Text)
-    facstatus_text_de = Column('facstatus_text_de', Text)
-    facstatus_text_fr = Column('facstatus_text_fr', Text)
-    facstatus_text_it = Column('facstatus_text_it', Text)
-    validfrom = Column('validfrom', Text)
-    description_de = Column('description_de', Text)
-    description_fr = Column('description_fr', Text)
-    description_it = Column('description_it', Text)
-    doc_web = Column('doc_web', Text)
-    doc_title = Column('doc_title', Text)
-    objname_de = Column('objname_de', Text)
-    objname_fr = Column('objname_fr', Text)
-    objname_it = Column('objname_it', Text)
-    bgdi_created = Column('bgdi_created', Text)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', suel_fac_anhorung)
-
-
-class suel_pl_anhorung (Base, Vector):
-    __tablename__ = 'suel_pl_anhorung'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/suel_planning.mako'
-    __bodId__ = 'ch.bfe.sachplan-uebertragungsleitungen_anhoerung'
-    __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it']
-    # Translatable labels in fr, it
-    __label__ = 'plname_de'
-    id = Column('stabil_id', Text, primary_key=True)
-    facname_de = Column('facname_de', Text)
-    facname_fr = Column('facname_fr', Text)
-    facname_it = Column('facname_it', Text)
-    plname_de = Column('plname_de', Text)
-    plname_fr = Column('plname_fr', Text)
-    plname_it = Column('plname_it', Text)
-    meastype_text_de = Column('meastype_text_de', Text)
-    meastype_text_fr = Column('meastype_text_fr', Text)
-    meastype_text_it = Column('meastype_text_it', Text)
-    coordlevel_text_de = Column('coordlevel_text_de', Text)
-    coordlevel_text_fr = Column('coordlevel_text_fr', Text)
-    coordlevel_text_it = Column('coordlevel_text_it', Text)
-    plstatus_text_de = Column('plstatus_text_de', Text)
-    plstatus_text_fr = Column('plstatus_text_fr', Text)
-    plstatus_text_it = Column('plstatus_text_it', Text)
-    validfrom = Column('validfrom', Text)
-    validuntil = Column('validuntil', Text)
-    description_de = Column('description_de', Text)
-    description_fr = Column('description_fr', Text)
-    description_it = Column('description_it', Text)
-    doc_web = Column('doc_web', Text)
-    doc_title = Column('doc_title', Text)
-    bgdi_created = Column('bgdi_created', Text)
-    __minscale__ = 20005
-    __maxscale__ = 500005
-    the_geom = Column(Geometry2D)
-
-register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', suel_pl_anhorung)
+# Layer on hold, ask ltfoa or ltgal if you need further informations
+# class suel_fac_anhorung (Base, Vector):
+#     __tablename__ = 'suel_fac_anhorung'
+#     __table_args__ = ({'schema': 'bfe', 'autoload': False})
+#     __bodId__ = 'ch.bfe.sachplan-uebertragungsleitungen_anhoerung'
+#     __template__ = 'templates/htmlpopup/suel_facilities.mako'
+#     __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it']
+#     # Translatable labels in fr, it
+#     __label__ = 'facname_de'
+#     id = Column('stabil_id', Text, primary_key=True)
+#     facname_de = Column('facname_de', Text)
+#     facname_fr = Column('facname_fr', Text)
+#     facname_it = Column('facname_it', Text)
+#     fackind_text_de = Column('fackind_text_de', Text)
+#     fackind_text_fr = Column('fackind_text_fr', Text)
+#     fackind_text_it = Column('fackind_text_it', Text)
+#     facstatus_text_de = Column('facstatus_text_de', Text)
+#     facstatus_text_fr = Column('facstatus_text_fr', Text)
+#     facstatus_text_it = Column('facstatus_text_it', Text)
+#     validfrom = Column('validfrom', Text)
+#     description_de = Column('description_de', Text)
+#     description_fr = Column('description_fr', Text)
+#     description_it = Column('description_it', Text)
+#     doc_web = Column('doc_web', Text)
+#     doc_title = Column('doc_title', Text)
+#     objname_de = Column('objname_de', Text)
+#     objname_fr = Column('objname_fr', Text)
+#     objname_it = Column('objname_it', Text)
+#     bgdi_created = Column('bgdi_created', Text)
+#     the_geom = Column(Geometry2D)
+#
+# register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', suel_fac_anhorung)
 
 
-class suel_fac_r_anhorung (Base, Vector):
-    __tablename__ = 'suel_fac_r_anhorung'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/suel_facilities.mako'
-    __bodId__ = 'ch.bfe.sachplan-uebertragungsleitungen_anhoerung'
-    __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it']
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
-    facname_de = Column('facname_de', Text)
-    facname_fr = Column('facname_fr', Text)
-    facname_it = Column('facname_it', Text)
-    fackind_text_de = Column('fackind_text_de', Text)
-    fackind_text_fr = Column('fackind_text_fr', Text)
-    fackind_text_it = Column('fackind_text_it', Text)
-    facstatus_text_de = Column('facstatus_text_de', Text)
-    facstatus_text_fr = Column('facstatus_text_fr', Text)
-    facstatus_text_it = Column('facstatus_text_it', Text)
-    validfrom = Column('validfrom', Text)
-    description_de = Column('description_de', Text)
-    description_fr = Column('description_fr', Text)
-    description_it = Column('description_it', Text)
-    doc_web = Column('doc_web', Text)
-    doc_title = Column('doc_title', Text)
-    objname_de = Column('objname_de', Text)
-    objname_fr = Column('objname_fr', Text)
-    objname_it = Column('objname_it', Text)
-    bgdi_created = Column('bgdi_created', Text)
-    __maxscale__ = 20005
-    __minscale__ = 1
-    the_geom = Column(Geometry2D)
+# Layer on hold, ask ltfoa or ltgal if you need further informations
+# class suel_pl_anhorung (Base, Vector):
+#     __tablename__ = 'suel_pl_anhorung'
+#     __table_args__ = ({'schema': 'bfe', 'autoload': False})
+#     __template__ = 'templates/htmlpopup/suel_planning.mako'
+#     __bodId__ = 'ch.bfe.sachplan-uebertragungsleitungen_anhoerung'
+#     __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it']
+#     # Translatable labels in fr, it
+#     __label__ = 'plname_de'
+#     id = Column('stabil_id', Text, primary_key=True)
+#     facname_de = Column('facname_de', Text)
+#     facname_fr = Column('facname_fr', Text)
+#     facname_it = Column('facname_it', Text)
+#     plname_de = Column('plname_de', Text)
+#     plname_fr = Column('plname_fr', Text)
+#     plname_it = Column('plname_it', Text)
+#     meastype_text_de = Column('meastype_text_de', Text)
+#     meastype_text_fr = Column('meastype_text_fr', Text)
+#     meastype_text_it = Column('meastype_text_it', Text)
+#     coordlevel_text_de = Column('coordlevel_text_de', Text)
+#     coordlevel_text_fr = Column('coordlevel_text_fr', Text)
+#     coordlevel_text_it = Column('coordlevel_text_it', Text)
+#     plstatus_text_de = Column('plstatus_text_de', Text)
+#     plstatus_text_fr = Column('plstatus_text_fr', Text)
+#     plstatus_text_it = Column('plstatus_text_it', Text)
+#     validfrom = Column('validfrom', Text)
+#     validuntil = Column('validuntil', Text)
+#     description_de = Column('description_de', Text)
+#     description_fr = Column('description_fr', Text)
+#     description_it = Column('description_it', Text)
+#     doc_web = Column('doc_web', Text)
+#     doc_title = Column('doc_title', Text)
+#     bgdi_created = Column('bgdi_created', Text)
+#     __minscale__ = 20005
+#     __maxscale__ = 500005
+#     the_geom = Column(Geometry2D)
+#
+# register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', suel_pl_anhorung)
+#
+#
+# class suel_fac_r_anhorung (Base, Vector):
+#     __tablename__ = 'suel_fac_r_anhorung'
+#     __table_args__ = ({'schema': 'bfe', 'autoload': False})
+#     __template__ = 'templates/htmlpopup/suel_facilities.mako'
+#     __bodId__ = 'ch.bfe.sachplan-uebertragungsleitungen_anhoerung'
+#     __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it']
+#     # Translatable labels in fr, it
+#     __label__ = 'facname_de'
+#     id = Column('stabil_id', Text, primary_key=True)
+#     facname_de = Column('facname_de', Text)
+#     facname_fr = Column('facname_fr', Text)
+#     facname_it = Column('facname_it', Text)
+#     fackind_text_de = Column('fackind_text_de', Text)
+#     fackind_text_fr = Column('fackind_text_fr', Text)
+#     fackind_text_it = Column('fackind_text_it', Text)
+#     facstatus_text_de = Column('facstatus_text_de', Text)
+#     facstatus_text_fr = Column('facstatus_text_fr', Text)
+#     facstatus_text_it = Column('facstatus_text_it', Text)
+#     validfrom = Column('validfrom', Text)
+#     description_de = Column('description_de', Text)
+#     description_fr = Column('description_fr', Text)
+#     description_it = Column('description_it', Text)
+#     doc_web = Column('doc_web', Text)
+#     doc_title = Column('doc_title', Text)
+#     objname_de = Column('objname_de', Text)
+#     objname_fr = Column('objname_fr', Text)
+#     objname_it = Column('objname_it', Text)
+#     bgdi_created = Column('bgdi_created', Text)
+#     __maxscale__ = 20005
+#     __minscale__ = 1
+#     the_geom = Column(Geometry2D)
+#
+# register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', suel_fac_r_anhorung)
 
-register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', suel_fac_r_anhorung)
 
-
-class suel_pl_r_anhorung (Base, Vector):
-    __tablename__ = 'suel_pl_r_anhorung'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/suel_planning.mako'
-    __bodId__ = 'ch.bfe.sachplan-uebertragungsleitungen_anhoerung'
-    __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it']
-    # Translatable labels in fr, it
-    __label__ = 'plname_de'
-    id = Column('stabil_id', Text, primary_key=True)
-    facname_de = Column('facname_de', Text)
-    facname_fr = Column('facname_fr', Text)
-    facname_it = Column('facname_it', Text)
-    plname_de = Column('plname_de', Text)
-    plname_fr = Column('plname_fr', Text)
-    plname_it = Column('plname_it', Text)
-    meastype_text_de = Column('meastype_text_de', Text)
-    meastype_text_fr = Column('meastype_text_fr', Text)
-    meastype_text_it = Column('meastype_text_it', Text)
-    coordlevel_text_de = Column('coordlevel_text_de', Text)
-    coordlevel_text_fr = Column('coordlevel_text_fr', Text)
-    coordlevel_text_it = Column('coordlevel_text_it', Text)
-    plstatus_text_de = Column('plstatus_text_de', Text)
-    plstatus_text_fr = Column('plstatus_text_fr', Text)
-    plstatus_text_it = Column('plstatus_text_it', Text)
-    validfrom = Column('validfrom', Text)
-    validuntil = Column('validuntil', Text)
-    description_de = Column('description_de', Text)
-    description_fr = Column('description_fr', Text)
-    description_it = Column('description_it', Text)
-    doc_web = Column('doc_web', Text)
-    doc_title = Column('doc_title', Text)
-    bgdi_created = Column('bgdi_created', Text)
-    __maxscale__ = 20005
-    __minscale__ = 1
-    the_geom = Column(Geometry2D)
-
-register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', suel_pl_r_anhorung)
+# Layer on hold, ask ltfoa or ltgal if you need further informations
+# class suel_pl_r_anhorung (Base, Vector):
+#     __tablename__ = 'suel_pl_r_anhorung'
+#     __table_args__ = ({'schema': 'bfe', 'autoload': False})
+#     __template__ = 'templates/htmlpopup/suel_planning.mako'
+#     __bodId__ = 'ch.bfe.sachplan-uebertragungsleitungen_anhoerung'
+#     __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it']
+#     # Translatable labels in fr, it
+#     __label__ = 'plname_de'
+#     id = Column('stabil_id', Text, primary_key=True)
+#     facname_de = Column('facname_de', Text)
+#     facname_fr = Column('facname_fr', Text)
+#     facname_it = Column('facname_it', Text)
+#     plname_de = Column('plname_de', Text)
+#     plname_fr = Column('plname_fr', Text)
+#     plname_it = Column('plname_it', Text)
+#     meastype_text_de = Column('meastype_text_de', Text)
+#     meastype_text_fr = Column('meastype_text_fr', Text)
+#     meastype_text_it = Column('meastype_text_it', Text)
+#     coordlevel_text_de = Column('coordlevel_text_de', Text)
+#     coordlevel_text_fr = Column('coordlevel_text_fr', Text)
+#     coordlevel_text_it = Column('coordlevel_text_it', Text)
+#     plstatus_text_de = Column('plstatus_text_de', Text)
+#     plstatus_text_fr = Column('plstatus_text_fr', Text)
+#     plstatus_text_it = Column('plstatus_text_it', Text)
+#     validfrom = Column('validfrom', Text)
+#     validuntil = Column('validuntil', Text)
+#     description_de = Column('description_de', Text)
+#     description_fr = Column('description_fr', Text)
+#     description_it = Column('description_it', Text)
+#     doc_web = Column('doc_web', Text)
+#     doc_title = Column('doc_title', Text)
+#     bgdi_created = Column('bgdi_created', Text)
+#     __maxscale__ = 20005
+#     __minscale__ = 1
+#     the_geom = Column(Geometry2D)
+#
+# register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', suel_pl_r_anhorung)
 
 
 class suel_fac_kraft (Base, Vector):
@@ -2230,7 +2233,7 @@ class suel_fac_kraft (Base, Vector):
     __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it']
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -2262,7 +2265,7 @@ class suel_pl_kraft (Base, Vector):
     __bodId__ = 'ch.bfe.sachplan-uebertragungsleitungen_kraft'
     __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it']
     __label__ = 'plname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -2301,7 +2304,7 @@ class suel_fac_r_kraft (Base, Vector):
     __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it']
     # Translatable labels in fr, it
     __label__ = 'facname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -2336,7 +2339,7 @@ class suel_pl_r_kraft (Base, Vector):
     __queryable_attributes__ = ['plname_de', 'plname_fr', 'plname_it']
     # Translatable labels in fr, it
     __label__ = 'plname_de'
-    id = Column('stabil_id', Text, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Text)
     facname_fr = Column('facname_fr', Text)
     facname_it = Column('facname_it', Text)
@@ -2373,7 +2376,7 @@ class ChmobilVeloland (Base, Vector):
     __template__ = 'templates/htmlpopup/chmobil.mako'
     __bodId__ = 'ch.astra.veloland'
     __label__ = 'chmobil_title'
-    id = Column('full_number', Text, primary_key=True)
+    id = Column('full_number', Unicode, primary_key=True)
     chmobil_url_etappe = Column('bgdi_url_etappe', Text)
     chmobil_url_route = Column('bgdi_url_route', Text)
     chmobil_title = Column('title', Text)
@@ -2389,7 +2392,7 @@ class ChmobilWanderland (Base, Vector):
     __template__ = 'templates/htmlpopup/chmobil.mako'
     __bodId__ = 'ch.astra.wanderland'
     __label__ = 'chmobil_title'
-    id = Column('full_number', Text, primary_key=True)
+    id = Column('full_number', Unicode, primary_key=True)
     chmobil_url_etappe = Column('bgdi_url_etappe', Text)
     chmobil_url_route = Column('bgdi_url_route', Text)
     chmobil_title = Column('title', Text)
@@ -2405,7 +2408,7 @@ class ChmobilSkatingland (Base, Vector):
     __template__ = 'templates/htmlpopup/chmobil.mako'
     __bodId__ = 'ch.astra.skatingland'
     __label__ = 'chmobil_title'
-    id = Column('full_number', Text, primary_key=True)
+    id = Column('full_number', Unicode, primary_key=True)
     chmobil_url_etappe = Column('bgdi_url_etappe', Text)
     chmobil_url_route = Column('bgdi_url_route', Text)
     chmobil_title = Column('title', Text)
@@ -2421,7 +2424,7 @@ class ChmobilMountainbikeland (Base, Vector):
     __template__ = 'templates/htmlpopup/chmobil.mako'
     __bodId__ = 'ch.astra.mountainbikeland'
     __label__ = 'chmobil_title'
-    id = Column('full_number', Text, primary_key=True)
+    id = Column('full_number', Unicode, primary_key=True)
     chmobil_url_etappe = Column('bgdi_url_etappe', Text)
     chmobil_url_route = Column('bgdi_url_route', Text)
     chmobil_title = Column('title', Text)
@@ -2439,7 +2442,7 @@ class eignungDaecher (Base, Vector):
     __label__ = 'id'
     __queryable_attributes__ = ['df_uid', 'building_id']
     __maxscale__ = 100005
-    id = Column('df_uid', Text, primary_key=True)
+    id = Column('df_uid', BigInteger, primary_key=True)
     building_id = Column('building_id', Integer)
     a_param = Column('a_param', postgresql.ARRAY(Numeric))
     b_param = Column('b_param', postgresql.ARRAY(Numeric))
@@ -2484,7 +2487,7 @@ class eignungDaecherOverview (Base, Vector):
     __parentLayerId__ = 'ch.bfe.solarenergie-eignung-daecher'
     __label__ = 'id'
     __minscale__ = 100005
-    id = Column('av_id', Text, primary_key=True)
+    id = Column('av_id', Integer, primary_key=True)
     de = Column('de', Text)
     fr = Column('fr', Text)
     it = Column('it', Text)

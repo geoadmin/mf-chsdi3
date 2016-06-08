@@ -59,7 +59,7 @@ class LayersChecker(object):
                 yield q[0]
 
     def ilayersAllModels(self):
-        for layer in self.ilayers(tooltip=True):
+        for layer in self.ilayers(tooltip=True, geojson=False):
             gridSpec = get_grid_spec(layer)
             if gridSpec is None:
                 models = models_from_bodid(layer)

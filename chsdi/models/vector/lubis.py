@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer, Boolean, Numeric
-
+from sqlalchemy.types import Unicode
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D, Geometry3D
 
@@ -19,7 +19,7 @@ class luftbilder_swisstopo_farbe(Base, Vector):
     __extended_info__ = True
     # Composite labels
     __label__ = 'flugdatum'
-    id = Column('ebkey', Text, primary_key=True)
+    id = Column('ebkey', Unicode, primary_key=True)
     filename = Column('filename', Text)
     inventarnummer = Column('inventarnummer', Integer)
     bildnummer = Column('bildnummer', Integer)
@@ -57,7 +57,7 @@ class luftbilder_swisstopo_ir(Base, Vector):
     __extended_info__ = True
     # Composite labels
     __label__ = 'flugdatum'
-    id = Column('ebkey', Text, primary_key=True)
+    id = Column('ebkey', Unicode, primary_key=True)
     filename = Column('filename', Text)
     inventarnummer = Column('inventarnummer', Integer)
     bildnummer = Column('bildnummer', Integer)
@@ -95,7 +95,7 @@ class luftbilder_swisstopo_sw(Base, Vector):
     __extended_info__ = True
     # Composite labels
     __label__ = 'flugdatum'
-    id = Column('ebkey', Text, primary_key=True)
+    id = Column('ebkey', Unicode, primary_key=True)
     filename = Column('filename', Text)
     inventarnummer = Column('inventarnummer', Integer)
     bildnummer = Column('bildnummer', Integer)
@@ -133,7 +133,7 @@ class luftbilder_dritte_firmen(Base, Vector):
     __extended_info__ = True
     # Composite labels
     __label__ = 'flugdatum'
-    id = Column('ebkey', Text, primary_key=True)
+    id = Column('ebkey', Unicode, primary_key=True)
     filename = Column('filename', Text)
     inventarnummer = Column('inventarnummer', Integer)
     bildnummer = Column('bildnummer', Integer)
@@ -172,7 +172,7 @@ class luftbilder_dritte_kantone(Base, Vector):
     __extended_info__ = True
     # Composite labels
     __label__ = 'flugdatum'
-    id = Column('ebkey', Text, primary_key=True)
+    id = Column('ebkey', Unicode, primary_key=True)
     filename = Column('filename', Text)
     inventarnummer = Column('inventarnummer', Integer)
     bildnummer = Column('bildnummer', Integer)
@@ -211,7 +211,7 @@ class bildstreifen(Base, Vector):
     __extended_info__ = True
     # Composite labels
     __label__ = 'flugdatum'
-    id = Column('bildstreifen_nr', Text, primary_key=True)
+    id = Column('bildstreifen_nr', Unicode, primary_key=True)
     flugdatum = Column('flugdatum', Text)
     firma = Column('firma', Text)
     filmart = Column('filmart', Text)
@@ -243,7 +243,7 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     # Composite labels
     __label__ = 'flightdate'
     __queryable_attributes__ = ['id', 'bgdi_flugjahr', 'medium_format']
-    id = Column('ebkey', Text, primary_key=True)
+    id = Column('ebkey', Unicode, primary_key=True)
     inventory_number = Column('inventory_number', Text)
     flightdate = Column('flightdate', Text)
     medium_format = Column('medium_format', Text)

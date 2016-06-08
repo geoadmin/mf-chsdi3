@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer
-from sqlalchemy.types import Numeric
+from sqlalchemy.types import Numeric, Unicode
 from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
@@ -594,7 +594,7 @@ class AM_G(Base, Vector):
     __bodId__ = 'ch.bafu.bundesinventare-amphibien_wanderobjekte'
     __template__ = 'templates/htmlpopup/bundinv_amphibien_w.mako'
     __label__ = 'am_g_name'
-    id = Column('am_g_obj', Text, primary_key=True)
+    id = Column('am_g_obj', Unicode, primary_key=True)
     am_g_name = Column('am_g_name', Text)
     the_geom = Column(Geometry2D)
 
@@ -607,7 +607,7 @@ class AM_L(Base, Vector):
     __bodId__ = 'ch.bafu.bundesinventare-amphibien'
     __template__ = 'templates/htmlpopup/bundinv_amphibien.mako'
     __label__ = 'am_l_name'
-    id = Column('bgdi_id', Text, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     am_l_obj = Column('am_l_obj', Text)
     am_l_name = Column('am_l_name', Text)
     am_l_fl = Column('am_l_fl', Text)
@@ -624,7 +624,7 @@ class LHG(Base, Vector):
     __bodId__ = 'ch.bafu.hydrologie-hydromessstationen'
     __template__ = 'templates/htmlpopup/hydromessstationen.mako'
     __label__ = 'lhg_name'
-    id = Column('edv_nr4', Text, primary_key=True)
+    id = Column('edv_nr4', Integer, primary_key=True)
     lhg_name = Column('lhg_name', Text)
     the_geom = Column(Geometry2D)
 
@@ -1174,7 +1174,7 @@ class wasserentnahmeAll(Base, Vector):
     __bodId__ = 'ch.bafu.wasser-entnahme'
     __template__ = 'templates/htmlpopup/wasserentnahme.mako'
     __label__ = 'rwknr'
-    id = Column('gid', Text, primary_key=True)
+    id = Column('gid', Integer, primary_key=True)
     rwknr = Column('rwknr', Text)
     kanton = Column('kanton', Text)
     kantoncode = Column('kantoncode', Text)
@@ -1557,7 +1557,7 @@ class SWISSPRTR(Base, Vector):
     __bodId__ = 'ch.bafu.swissprtr'
     __template__ = 'templates/htmlpopup/swissprtr.mako'
     __label__ = 'betrieb'
-    id = Column('prtrnr', Numeric, primary_key=True)
+    id = Column('prtrnr', Integer, primary_key=True)
     betrieb = Column('betrieb', Text)
     ort = Column('ort', Text)
     jahr = Column('jahr', Integer)
@@ -1615,7 +1615,7 @@ class NABEL(Base, Vector):
     __bodId__ = 'ch.bafu.nabelstationen'
     __template__ = 'templates/htmlpopup/nabel.mako'
     __label__ = 'name'
-    id = Column('id_stat', Text, primary_key=True)
+    id = Column('id_stat', Unicode, primary_key=True)
     name = Column('name', Text)
     typ_de = Column('typ_de', Text)
     typ_fr = Column('typ_fr', Text)
@@ -1916,7 +1916,7 @@ class wildtier(Base, Vector):
 register('ch.bafu.fauna-wildtierkorridor_national', wildtier)
 
 
-class waldreservate(Base, Vector):
+class Waldreservate(Base, Vector):
     __tablename__ = 'waldreservate'
     __table_args__ = ({'schema': 'wald', 'autoload': False})
     __template__ = 'templates/htmlpopup/bafu_waldreservate.mako'
@@ -1931,74 +1931,74 @@ class waldreservate(Base, Vector):
     mcpfe = Column('mcpfe_class', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.waldreservate', waldreservate)
+register('ch.bafu.waldreservate', Waldreservate)
 
 
-class sturm_staudruck_30(Base, Vector):
+class SturmStaudruck30(Base, Vector):
     __tablename__ = 'data_staudruck'
     __table_args__ = ({'schema': 'diverse', 'autoload': False})
     __bodId__ = 'ch.bafu.sturm-staudruck_30'
     __template__ = 'templates/htmlpopup/sturm_staudruck.mako'
     __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('oid', Integer, primary_key=True)
     staudruck_30 = Column('staudruck_30', Text)
     staudruck_50 = Column('staudruck_50', Text)
     staudruck_100 = Column('staudruck_100', Text)
     staudruck_300 = Column('staudruck_300', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.sturm-staudruck_30', sturm_staudruck_30)
+register('ch.bafu.sturm-staudruck_30', SturmStaudruck30)
 
 
-class sturm_staudruck_50(Base, Vector):
+class SturmStaudruck50(Base, Vector):
     __tablename__ = 'data_staudruck'
     __table_args__ = ({'schema': 'diverse', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.sturm-staudruck_50'
     __template__ = 'templates/htmlpopup/sturm_staudruck.mako'
     __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('oid', Integer, primary_key=True)
     staudruck_30 = Column('staudruck_30', Text)
     staudruck_50 = Column('staudruck_50', Text)
     staudruck_100 = Column('staudruck_100', Text)
     staudruck_300 = Column('staudruck_300', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.sturm-staudruck_50', sturm_staudruck_50)
+register('ch.bafu.sturm-staudruck_50', SturmStaudruck50)
 
 
-class sturm_staudruck_100(Base, Vector):
+class SturmStaudruck100(Base, Vector):
     __tablename__ = 'data_staudruck'
     __table_args__ = ({'schema': 'diverse', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.sturm-staudruck_100'
     __template__ = 'templates/htmlpopup/sturm_staudruck.mako'
     __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('oid', Integer, primary_key=True)
     staudruck_30 = Column('staudruck_30', Text)
     staudruck_50 = Column('staudruck_50', Text)
     staudruck_100 = Column('staudruck_100', Text)
     staudruck_300 = Column('staudruck_300', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.sturm-staudruck_100', sturm_staudruck_100)
+register('ch.bafu.sturm-staudruck_100', SturmStaudruck100)
 
 
-class sturm_staudruck_300(Base, Vector):
+class SturmStaudruck300(Base, Vector):
     __tablename__ = 'data_staudruck'
     __table_args__ = ({'schema': 'diverse', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.sturm-staudruck_300'
     __template__ = 'templates/htmlpopup/sturm_staudruck.mako'
     __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('oid', Integer, primary_key=True)
     staudruck_30 = Column('staudruck_30', Text)
     staudruck_50 = Column('staudruck_50', Text)
     staudruck_100 = Column('staudruck_100', Text)
     staudruck_300 = Column('staudruck_300', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.sturm-staudruck_300', sturm_staudruck_300)
+register('ch.bafu.sturm-staudruck_300', SturmStaudruck300)
 
 
-class sturm_boeenspitzen_30(Base, Vector):
+class SturmBoeenspitzen30(Base, Vector):
     __tablename__ = 'data_boeenspitzen'
     __table_args__ = ({'schema': 'diverse', 'autoload': False})
     __bodId__ = 'ch.bafu.sturm-boeenspitzen_30'
@@ -2009,10 +2009,10 @@ class sturm_boeenspitzen_30(Base, Vector):
     boenspitzen_ms_30 = Column('boenspitzen_ms_30', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.sturm-boeenspitzen_30', sturm_boeenspitzen_30)
+register('ch.bafu.sturm-boeenspitzen_30', SturmBoeenspitzen30)
 
 
-class sturm_boeenspitzen_50(Base, Vector):
+class SturmBoeenspitzen50(Base, Vector):
     __tablename__ = 'data_boeenspitzen'
     __table_args__ = ({'schema': 'diverse', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.sturm-boeenspitzen_50'
@@ -2023,10 +2023,10 @@ class sturm_boeenspitzen_50(Base, Vector):
     boenspitzen_ms_50 = Column('boenspitzen_ms_50', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.sturm-boeenspitzen_50', sturm_boeenspitzen_50)
+register('ch.bafu.sturm-boeenspitzen_50', SturmBoeenspitzen50)
 
 
-class sturm_boeenspitzen_100(Base, Vector):
+class SturmBoeenspitzen100(Base, Vector):
     __tablename__ = 'data_boeenspitzen'
     __table_args__ = ({'schema': 'diverse', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.sturm-boeenspitzen_100'
@@ -2037,10 +2037,10 @@ class sturm_boeenspitzen_100(Base, Vector):
     boenspitzen_ms_100 = Column('boenspitzen_ms_100', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.sturm-boeenspitzen_100', sturm_boeenspitzen_100)
+register('ch.bafu.sturm-boeenspitzen_100', SturmBoeenspitzen100)
 
 
-class sturm_boeenspitzen_300(Base, Vector):
+class SturmBoeenspitzen300(Base, Vector):
     __tablename__ = 'data_boeenspitzen'
     __table_args__ = ({'schema': 'diverse', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.sturm-boeenspitzen_300'
@@ -2051,7 +2051,7 @@ class sturm_boeenspitzen_300(Base, Vector):
     boenspitzen_ms_300 = Column('boenspitzen_ms_300', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.sturm-boeenspitzen_300', sturm_boeenspitzen_300)
+register('ch.bafu.sturm-boeenspitzen_300', SturmBoeenspitzen300)
 
 
 class Hochwasserstatistik(Base, Vector):
