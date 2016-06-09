@@ -8,7 +8,8 @@ from chsdi.lib.helpers import (
     check_even, format_search_text, remove_accents, escape_sphinx_syntax,
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
     versioned, parse_box2d, center_from_box2d, format_scale,
-    parse_date_string, parse_date_datenstand, filter_alt
+    parse_date_string, parse_date_datenstand, filter_alt,
+    int_with_apostrophe
 )
 from urlparse import urljoin
 
@@ -131,7 +132,7 @@ class Test_Helpers(unittest.TestCase):
         self.assertTrue(test_result2, 'fi')
 
         request.params['lang'] = None
-        request.accept_language = False  # I cannot check line 95
+        request.accept_language = False
         test_result3 = locale_negotiator(request)
         self.assertTrue(test_result3, 'en')
 
@@ -284,3 +285,11 @@ class Test_Helpers(unittest.TestCase):
         self.assertEqual(alt, filter_alt(alt))
         alt = 100.111
         self.assertEqual(100.1, filter_alt(alt))
+
+    def test_int_with_apostrophe(self):
+        x1 = 'toto'
+        result1 = int_with_apostrophe(x1)
+        self.assertEqual(result1, '-')
+        x2 = -5
+        result2 = int_with_apostrophe(x2)
+        self.assertEqual(result2, str(x2))
