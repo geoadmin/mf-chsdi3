@@ -174,6 +174,7 @@ class GravimetrischerAtlasMetadata (Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __tablename__ = 'view_gridstand_gravimetrie_atlas_metadata_shop'
     __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas.metadata'
+    id = Column('s_map_number', Integer, primary_key=True)
 
 
 register('ch.swisstopo.geologie-gravimetrischer_atlas.metadata', GravimetrischerAtlasMetadata)
@@ -215,6 +216,7 @@ class StrassenKarte200Metadata(Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __tablename__ = 'view_gridstand_stk200'
     __bodId__ = 'ch.swisstopo.stk200-papierkarte.metadata'
+    id = Column('s_map_number', Integer, primary_key=True)
 
 register('ch.swisstopo.stk200-papierkarte.metadata', StrassenKarte200Metadata)
 
