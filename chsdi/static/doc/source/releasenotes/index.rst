@@ -15,9 +15,9 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
-.. _releasenotes_20160605:
+.. _releasenotes_20160615:
 
-Release 20160601 - Wednesday, June 15th 2016
+Release 20160615 - Wednesday, June 15th 2016
 ------------------------------------------------
 
 API & applications
@@ -37,8 +37,6 @@ API & applications
 
 Geodata
 *******
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|  New   | `Spot Mosaic Extend <//map.geo.admin.ch/?layers=ch.swisstopo.images-spot-5.metadata>`__ (ch.swisstopo.images-spot-5.metadata)                                          |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Badegewässerqualität <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-badewasserqualitaet>`__ (ch.bafu.gewaesserschutz-badewasserqualitaet)                        |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
