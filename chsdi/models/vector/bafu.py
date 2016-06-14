@@ -568,7 +568,7 @@ class GewaesserschutzBadewasserqualitaet(Base, Vector):
     __template__ = 'templates/htmlpopup/gewaesserschutz_badewasserqualitaet.mako'
     __extended_info__ = True
     __label__ = 'bwname'
-    id = Column('bwid', Text, primary_key=True, nullable=False)
+    id = Column('bwid', Unicode, primary_key=True, nullable=False)
     bwname = Column('bwname', Text, nullable=False)
     groupid = Column('groupid', Text, nullable=True)
     rbdsuname = Column('rbdsuname', Text, nullable=False)
