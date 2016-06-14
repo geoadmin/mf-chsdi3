@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer
-from sqlalchemy.types import Numeric
+from sqlalchemy.types import Numeric, Unicode
 from sqlalchemy.dialects import postgresql
 
 from chsdi.models import register, bases
@@ -20,7 +20,7 @@ class Zeitreihen_15(Base, Vector):
     __maxresolution__ = 500005
     __timeInstant__ = 'years'
     __label__ = 'release_year'
-    id = Column('bgdi_id', Text, primary_key=True)
+    id = Column('bgdi_id', Unicode, primary_key=True)
     kbbez = Column('kbbez', Text)
     produkt = Column('produkt', Text)
     kbnum = Column('kbnum', Text)
@@ -42,7 +42,7 @@ class Zeitreihen_20(Base, Vector):
     __maxresolution__ = 10.05
     __timeInstant__ = 'years'
     __label__ = 'release_year'
-    id = Column('bgdi_id', Text, primary_key=True)
+    id = Column('bgdi_id', Unicode, primary_key=True)
     kbbez = Column('kbbez', Text)
     produkt = Column('produkt', Text)
     kbnum = Column('kbnum', Text)
@@ -64,7 +64,7 @@ class Zeitreihen_21(Base, Vector):
     __maxresolution__ = 5.05
     __timeInstant__ = 'years'
     __label__ = 'release_year'
-    id = Column('bgdi_id', Text, primary_key=True)
+    id = Column('bgdi_id', Unicode, primary_key=True)
     kbbez = Column('kbbez', Text)
     produkt = Column('produkt', Text)
     kbnum = Column('kbnum', Text)
@@ -86,7 +86,7 @@ class Zeitreihen_22(Base, Vector):
     __maxresolution__ = 2.55
     __timeInstant__ = 'years'
     __label__ = 'release_year'
-    id = Column('bgdi_id', Text, primary_key=True)
+    id = Column('bgdi_id', Unicode, primary_key=True)
     kbbez = Column('kbbez', Text)
     produkt = Column('produkt', Text)
     kbnum = Column('kbnum', Text)
@@ -105,7 +105,7 @@ class DufourErst(Base, Vector):
     __template__ = 'templates/htmlpopup/dufour_erst.mako'
     __bodId__ = 'ch.swisstopo.hiks-dufour'
     __label__ = 'datenstand'
-    id = Column('tilenumber', Text, primary_key=True)
+    id = Column('tilenumber', Unicode, primary_key=True)
     kbbez = Column('kbbez', Text)
     datenstand = Column('datenstand', Integer)
     bv_nummer = Column('bv_nummer', Text)
@@ -118,7 +118,7 @@ class SiegfriedErst(Base, Vector):
     __template__ = 'templates/htmlpopup/siegfried_erst.mako'
     __bodId__ = 'ch.swisstopo.hiks-siegfried'
     __label__ = 'datenstand'
-    id = Column('tilenumber', Text, primary_key=True)
+    id = Column('tilenumber', Unicode, primary_key=True)
     kbbez = Column('kbbez', Text)
     datenstand = Column('datenstand', Numeric)
     bv_nummer = Column('bv_nummer', Text)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer
-from sqlalchemy.types import Numeric
+from sqlalchemy.types import Numeric, Unicode
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -20,7 +20,7 @@ class Gebaeuderegister(Base, Vector):
     # due to https://redmine.bgdi.admin.ch/issues/3146 ltmoc  __maxscale__ = 25000
     # Composite labels
     __label__ = 'strname1'
-    id = Column('egid_edid', Text, primary_key=True)
+    id = Column('egid_edid', Unicode, primary_key=True)
     egid = Column('egid', Integer)
     strname1 = Column('strname1', Text)
     deinr = Column('deinr', Text)
@@ -45,7 +45,7 @@ class AGNES(Base, Vector):
     __template__ = 'templates/htmlpopup/agnes.mako'
     __bodId__ = 'ch.swisstopo.fixpunkte-agnes'
     __label__ = 'id'
-    id = Column('no', Text, primary_key=True)
+    id = Column('no', Unicode, primary_key=True)
     url = Column('url', Text)
     bgdi_id = Column('bgdi_id', Integer)
     the_geom = Column(Geometry2D)
@@ -60,7 +60,7 @@ class FIXPUNKTE_LFP1(Base, Vector):
     __bodId__ = 'ch.swisstopo.fixpunkte-lfp1'
     __queryable_attributes__ = ['id']
     __label__ = 'id'
-    id = Column('pointid', Text, primary_key=True)
+    id = Column('pointid', Unicode, primary_key=True)
     punktname = Column('punktname', Text)
     nummer = Column('nummer', Text)
     status = Column('status', Text)
@@ -85,7 +85,7 @@ class FIXPUNKTE_LFP2(Base, Vector):
     __bodId__ = 'ch.swisstopo.fixpunkte-lfp2'
     __queryable_attributes__ = ['id']
     __label__ = 'id'
-    id = Column('pointid', Text, primary_key=True)
+    id = Column('pointid', Unicode, primary_key=True)
     nbident = Column('nbident', Text)
     punktname = Column('punktname', Text)
     status = Column('status', Text)
@@ -110,7 +110,7 @@ class FIXPUNKTE_HFP1(Base, Vector):
     __bodId__ = 'ch.swisstopo.fixpunkte-hfp1'
     __queryable_attributes__ = ['id', 'bgdi_label']
     __label__ = 'id'
-    id = Column('pointid', Text, primary_key=True)
+    id = Column('pointid', Unicode, primary_key=True)
     bgdi_label = Column('bgdi_label', Text)
     nbident = Column('nbident', Text)
     punktname = Column('punktname', Text)
@@ -136,7 +136,7 @@ class FIXPUNKTE_HFP2(Base, Vector):
     __bodId__ = 'ch.swisstopo.fixpunkte-hfp2'
     __queryable_attributes__ = ['id']
     __label__ = 'id'
-    id = Column('pointid', Text, primary_key=True)
+    id = Column('pointid', Unicode, primary_key=True)
     nbident = Column('nbident', Text)
     punktname = Column('punktname', Text)
     status = Column('status', Text)

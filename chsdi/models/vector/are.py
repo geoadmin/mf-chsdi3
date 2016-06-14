@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer
-from sqlalchemy.types import Numeric
+from sqlalchemy.types import Numeric, Unicode
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D, Geometry3D
@@ -16,7 +16,7 @@ class Landschaftstypen(Base, Vector):
     __template__ = 'templates/htmlpopup/landschaftstypen.mako'
     __bodId__ = 'ch.are.landschaftstypen'
     __label__ = 'typ_nr'
-    id = Column('object', Text, primary_key=True)
+    id = Column('object', Unicode, primary_key=True)
     typ_nr = Column('typ_nr', Integer)
     typname_de = Column('typname_de', Text)
     typname_fr = Column('typname_fr', Text)

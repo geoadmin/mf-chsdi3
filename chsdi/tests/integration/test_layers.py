@@ -5,6 +5,7 @@ from webtest import TestApp
 from pyramid.paster import get_app
 from sqlalchemy import distinct
 from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.sql.expression import func
 
 from chsdi.models.bod import LayersConfig
@@ -56,6 +57,22 @@ class LayersChecker(object):
         for q in query:
             if self.onlylayer is None or q[0] == self.onlylayer:
                 yield q[0]
+
+    def ilayersAllModels(self):
+        for layer in self.ilayers(tooltip=True, geojson=False):
+            gridSpec = get_grid_spec(layer)
+            if gridSpec is None:
+                models = models_from_bodid(layer)
+                assert (models is not None and len(models) > 0), layer
+                for model in models:
+                    primaryKeyColumn = model.primary_key_column()
+                    query = self.session.query(primaryKeyColumn)
+                    query = query.limit(1)
+                    try:
+                        featureId = query.one()[0]
+                    except NoResultFound:
+                        featureId = None
+                    yield layer, featureId, model, primaryKeyColumn
 
     def ilayersWithFeatures(self):
         for layer in self.ilayers(tooltip=True, geojson=False):
@@ -113,6 +130,14 @@ class LayersChecker(object):
         if expectedStatus == 404:
             assert 'unknown local index' in resp.body
 
+    def checkPrimaryKeyColumnTypeMapping(self, layerId, featureId, model, primaryKeyColumn):
+        schema = 'public' if 'schema' not in model.__table_args__ else model.__table_args__['schema']
+        assert featureId is not None, 'No feature was found in table %s for layer %s' % (
+            schema + '.' + model.__tablename__, layerId)
+        pythonType = primaryKeyColumn.type.python_type
+        assert type(featureId) == pythonType, 'Expected %s; Got: %s; For layer %s and GeoTable %s' % (
+            pythonType, type(featureId), layerId, schema + '.' + model.__tablename__)
+
 
 def test_all_htmlpopups():
     with LayersChecker() as lc:
@@ -124,6 +149,12 @@ def test_all_legends():
     with LayersChecker() as lc:
         for layer in lc.ilayers(hasLegend=True):
             yield lc.checkLegend, layer
+
+
+def test_all_ids_mapping():
+    with LayersChecker() as lc:
+        for layerId, featureId, model, primaryKeyColumn in lc.ilayersAllModels():
+            yield lc.checkPrimaryKeyColumnTypeMapping, layerId, featureId, model, primaryKeyColumn
 
 
 def test_all_legends_images():
