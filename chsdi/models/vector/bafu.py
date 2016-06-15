@@ -563,12 +563,13 @@ class GewaesserschutzBadewasserqualitaet(Base, Vector):
     __tablename__ = 'baqua'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.gewaesserschutz-badewasserqualitaet'
-    __queryable_attributes__ = ['id', 'bwname', 'groupid', 'nwunitname', 'rbdsuname',
+    __queryable_attributes__ = ['bwid', 'bwname', 'groupid', 'nwunitname', 'rbdsuname',
                                 'gemeinde', 'canton', 'bwatercat', 'qualitaet_ch']
     __template__ = 'templates/htmlpopup/gewaesserschutz_badewasserqualitaet.mako'
     __extended_info__ = True
     __label__ = 'bwname'
-    id = Column('bwid', Unicode, primary_key=True, nullable=False)
+    bwid = Column('bwid', Unicode, nullable=False)
+    id = Column('bgdi_id', Integer, primary_key=True)
     bwname = Column('bwname', Text, nullable=False)
     groupid = Column('groupid', Text, nullable=True)
     rbdsuname = Column('rbdsuname', Text, nullable=False)
