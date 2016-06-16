@@ -14,8 +14,8 @@
 	<tr><td class="cell-left">${_('tt_sachplan_facility_anlagestatus')}</td>      <td>${c['attributes'][facstatus_text] or '-'}</td></tr>
     <tr><td class="cell-left">${_('tt_sachplan_facility_beschlussdatum')}</td>    <td>${h.parse_date_string(c['attributes']['validfrom'])}</td></tr>
     <tr><td class="cell-left">${_('tt_sachplan_beschreibung')}</td>               <td>${c['attributes']['description'] or '-'}</td></tr>
-% if 'web' in c['attributes']:
-    <tr><td class="cell-left">${_('tt_sachplan_weitereinfo')}</td>                <td><a href="${c['attributes']['web'] or '-'}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td></tr>
+% if c['attributes']['web']:
+    <tr><td class="cell-left">${_('tt_sachplan_weitereinfo')}</td>                <td><a href="${c['attributes']['web']}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td></tr>
 % else:
     <tr><td class="cell-left">${_('tt_sachplan_weitereinfo')}</td>                <td> - </td></tr>
 %endif

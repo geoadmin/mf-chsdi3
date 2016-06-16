@@ -39,10 +39,10 @@
       <td class="cell-left">${_('tt_sachplan_beschreibung')}</td>
       <td>${c['attributes'][description_text] or '-'}</td>
     </tr>
-% if 'document_web' in c['attributes']:
+% if c['attributes']['document_web']:
     <tr>
       <td class="cell-left">${_('tt_sachplan_weitereinfo')}</td>
-      <td><a href="${c['attributes']['document_web'] or '-'}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td></tr>
+      <td><a href="${c['attributes']['document_web']}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td></tr>
 % else:
     <tr>
       <td class="cell-left">${_('tt_sachplan_weitereinfo')}</td>
