@@ -408,7 +408,10 @@ class Nawa:
     __template__ = 'templates/htmlpopup/nawa.mako'
     __timeInstant__ = 'jahr'
     id = Column('bgdi_id', Integer, primary_key=True)
-    klasse = Column('klasse', Integer)
+    klasse_de = Column('klasse_de', Unicode)
+    klasse_fr = Column('klasse_fr', Unicode)
+    klasse_it = Column('klasse_it', Unicode)
+    klasse_en = Column('klasse_en', Unicode)
     gewaesser = Column('gewaesser_', Unicode)
     stelle_neu = Column('stelle_neu', Unicode)
     jahr = Column('jahr', Integer)
