@@ -15,9 +15,9 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
-.. _releasenotes_20160628:
+.. _releasenotes_20160629:
 
-Release 20160628 - Wednesday, June 28th 2016
+Release 20160629 - Wednesday, June 29th 2016
 ------------------------------------------------
 
 API & applications
@@ -26,13 +26,13 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug Fixes
-- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160615...r_160628>`__
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160615...r_160629>`__
 
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug Fixes
-- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160615...r_160628>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160615...r_160629>`__
 
 
 Geodata
@@ -45,6 +45,8 @@ Geodata
 | Update | `Skating in Switzerland <//map.geo.admin.ch/?layers=ch.astra.skatingland>`__ (ch.astra.skatingland)                                                                   |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Mountainbiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.mountainbikeland>`__ (ch.astra.mountainbikeland)                                                  |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Solar Energy - Suitability of roofs <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-daecher>`__ (ch.bfe.solarenergie-eignung-daecher)                        |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
