@@ -11,7 +11,7 @@ Base = bases['kogis']
 
 
 class Gebaeuderegister(Base, Vector):
-    __tablename__ = 'adr'
+    __tablename__ = 'view_adr'
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
     __template__ = 'templates/htmlpopup/gebaeuderegister.mako'
     __bodId__ = 'ch.bfs.gebaeude_wohnungs_register'
@@ -24,7 +24,8 @@ class Gebaeuderegister(Base, Vector):
     egid = Column('egid', Integer)
     strname1 = Column('strname1', Text)
     deinr = Column('deinr', Text)
-    plz4 = Column('plz4', Integer)
+    plz4 = Column('plz4', Integer, nullable=False)
+    plz6 = Column('plz6', Integer, nullable=False)
     plzname = Column('plzname', Text)
     gdename = Column('gdename', Text)
     gdekt = Column('gdekt', Text)
