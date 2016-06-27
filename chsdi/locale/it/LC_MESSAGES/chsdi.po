@@ -1301,6 +1301,12 @@ msgstr "Prati naturali: +; prati artificiali, cerealicoltura: +/-"
 msgid "blw_farbe_9"
 msgstr "Prati naturali:+; prati artificiali, cerealicoltura: +/-; pascolo bestiame grosso: -"
 
+msgid "bodeneignung_eignungsei"
+msgstr "Unità attitudinali"
+
+msgid "bodeneignung_id"
+msgstr "Id"
+
 msgid "bouguer_anomalie"
 msgstr "Anomalie de Bouguer [mGal]"
 
@@ -5151,10 +5157,10 @@ msgid "ch.swisstopo.kt.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/it/home/swisstopo/org/cartography.html"
 
 msgid "ch.swisstopo.landeskarte-farbe-10"
-msgstr "Carte nazionali (colori)"
+msgstr "Carta nazionale 1:10'000 (colori)"
 
 msgid "ch.swisstopo.landeskarte-grau-10"
-msgstr "Carte nazionali (grigio)"
+msgstr "Carta nazionale 1:10'000 (grigio)"
 
 msgid "ch.swisstopo.landesschwerenetz"
 msgstr "Réseau de base gravimétrique"
@@ -5415,7 +5421,7 @@ msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Luogo"
 
 msgid "ch.swisstopo.pixelkarte-farbe"
-msgstr "Carta nazionale 1:25'000 | CN25"
+msgstr "Carte nazionali (colori)"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
 msgstr "Carta nazionale 1:100'000 | CN100"
@@ -5439,7 +5445,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale.release"
 msgstr "Edizione"
 
 msgid "ch.swisstopo.pixelkarte-grau"
-msgstr "Carta nazionale 1:25'000 | CN25"
+msgstr "Carte nazionali (grigio)"
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata"
 msgstr "Divisione carte nazionali 1:100'000"
@@ -5733,7 +5739,7 @@ msgid "ch.vbs.armeelogistikcenter.url"
 msgstr "Link"
 
 msgid "ch.vbs.bundestankstellen-bebeco"
-msgstr "Stazioni di servizio BEBECO"
+msgstr "Distributori di carburante BEBECO"
 
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Luogo"
@@ -6457,6 +6463,12 @@ msgstr "Centrale nucleare"
 
 msgid "klasse"
 msgstr "Classe"
+
+msgid "klimaeignung_be"
+msgstr "Classi attitudinali"
+
+msgid "klimaeignung_zone"
+msgstr "Zona"
 
 msgid "klwkp_gwlnr"
 msgstr "Numero del corso d’acqua"

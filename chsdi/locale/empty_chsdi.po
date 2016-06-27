@@ -8779,3 +8779,15 @@ msgstr ""
 
 msgid "ch.swisstopo.landeskarte-grau-10"
 msgstr ""
+
+msgid "bodeneignung_id"
+msgstr ""
+
+msgid "bodeneignung_eignungsei"
+msgstr ""
+
+msgid "klimaeignung_be"
+msgstr ""
+
+msgid "klimaeignung_zone"
+msgstr ""

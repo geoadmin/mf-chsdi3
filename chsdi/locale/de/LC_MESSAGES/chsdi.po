@@ -1301,6 +1301,12 @@ msgstr "Naturfutterbau: +; Kunstfutterbau, Getreidebau: +/-"
 msgid "blw_farbe_9"
 msgstr "Naturfutterbau: +; Kunstfutterbau, Getreidebau: +/-; Grossviehweide: -"
 
+msgid "bodeneignung_eignungsei"
+msgstr "Eignungseinheit"
+
+msgid "bodeneignung_id"
+msgstr "Id"
+
 msgid "bouguer_anomalie"
 msgstr "Bouguer Anomalie [mGal]"
 
@@ -5151,10 +5157,10 @@ msgid "ch.swisstopo.kt.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/de/home/swisstopo/org/cartography.html"
 
 msgid "ch.swisstopo.landeskarte-farbe-10"
-msgstr "Landeskarten (farbig)"
+msgstr "Landeskarte 1:10'000 (farbig)"
 
 msgid "ch.swisstopo.landeskarte-grau-10"
-msgstr "Landeskarten (grau)"
+msgstr "Landeskarte 1:10'000 (grau)"
 
 msgid "ch.swisstopo.landesschwerenetz"
 msgstr "Schweregrundnetz"
@@ -5415,7 +5421,7 @@ msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Ort"
 
 msgid "ch.swisstopo.pixelkarte-farbe"
-msgstr "Landeskarte 1:25'000 | LK25"
+msgstr "Landeskarten (farbig)"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
 msgstr "Landeskarte 1:100'000 | LK100"
@@ -5439,7 +5445,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.pixelkarte-grau"
-msgstr "Landeskarte 1:25'000 | LK25"
+msgstr "Landeskarten (grau)"
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata"
 msgstr "Einteilung Landeskarte 1:100'000"
@@ -6457,6 +6463,12 @@ msgstr "KKW"
 
 msgid "klasse"
 msgstr "Klasse"
+
+msgid "klimaeignung_be"
+msgstr "Eignungsklasse"
+
+msgid "klimaeignung_zone"
+msgstr "Zone"
 
 msgid "klwkp_gwlnr"
 msgstr "Gewässerlaufnummer"

@@ -17,10 +17,235 @@ class BODENEIGNUNG(Base, Vector):
     __label__ = 'symb_color'
     id = Column('bgdi_id', Integer, primary_key=True)
     farbe = Column('farbe', Integer)
+    eignungsei = Column('eignungsei', Text)
     symb_color = Column('symb_color', Text)
     the_geom = Column(Geometry2D)
 
 register('ch.blw.bodeneignung-kulturtyp', BODENEIGNUNG)
+
+
+class Bodeneignung_gruendigkeit(Base, Vector):
+    __tablename__ = 'bodeneignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+    __bodId__ = 'ch.blw.bodeneignung-gruendigkeit'
+    __label__ = 'farbe'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    farbe = Column('farbe', Integer)
+    eignungsei = Column('eignungsei', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.bodeneignung-gruendigkeit', Bodeneignung_gruendigkeit)
+
+
+class Bodeneignung_skelettgehalt(Base, Vector):
+    __tablename__ = 'bodeneignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+    __bodId__ = 'ch.blw.bodeneignung-skelettgehalt'
+    __label__ = 'farbe'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    farbe = Column('farbe', Integer)
+    eignungsei = Column('eignungsei', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.bodeneignung-skelettgehalt', Bodeneignung_skelettgehalt)
+
+
+class Bodeneignung_wasserspeichervermoegen(Base, Vector):
+    __tablename__ = 'bodeneignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+    __bodId__ = 'ch.blw.bodeneignung-wasserspeichervermoegen'
+    __label__ = 'farbe'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    farbe = Column('farbe', Integer)
+    eignungsei = Column('eignungsei', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.bodeneignung-wasserspeichervermoegen', Bodeneignung_wasserspeichervermoegen)
+
+
+class Bodeneignung_naehrstoffspeichervermoegen(Base, Vector):
+    __tablename__ = 'bodeneignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+    __bodId__ = 'ch.blw.bodeneignung-naehrstoffspeichervermoegen'
+    __label__ = 'farbe'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    farbe = Column('farbe', Integer)
+    eignungsei = Column('eignungsei', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.bodeneignung-naehrstoffspeichervermoegen', Bodeneignung_naehrstoffspeichervermoegen)
+
+
+class Bodeneignung_wasserdurchlaessigkeit(Base, Vector):
+    __tablename__ = 'bodeneignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+    __bodId__ = 'ch.blw.bodeneignung-wasserdurchlaessigkeit'
+    __label__ = 'farbe'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    farbe = Column('farbe', Integer)
+    eignungsei = Column('eignungsei', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.bodeneignung-wasserdurchlaessigkeit', Bodeneignung_wasserdurchlaessigkeit)
+
+
+class Bodeneignung_vernaessung(Base, Vector):
+    __tablename__ = 'bodeneignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+    __bodId__ = 'ch.blw.bodeneignung-vernaessung'
+    __label__ = 'farbe'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    farbe = Column('farbe', Integer)
+    eignungsei = Column('eignungsei', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.bodeneignung-vernaessung', Bodeneignung_vernaessung)
+
+
+class Bodeneignung_kulturland(Base, Vector):
+    __tablename__ = 'bodeneignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+    __bodId__ = 'ch.blw.bodeneignung-kulturland'
+    __label__ = 'farbe'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    farbe = Column('farbe', Integer)
+    eignungsei = Column('eignungsei', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.bodeneignung-kulturland', Bodeneignung_kulturland)
+
+
+class klimaeignung_typ(Base, Vector):
+    __tablename__ = 'klimaeignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+    __bodId__ = 'ch.blw.klimaeignung-typ'
+    __label__ = 'klimeig_be'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    klimeig_be = Column('klimeig_be', Text)
+    zone = Column('zone', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.klimaeignung-typ', klimaeignung_typ)
+
+
+class klimaeignung_koernermais(Base, Vector):
+    __tablename__ = 'klimaeignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+    __bodId__ = 'ch.blw.klimaeignung-koernermais'
+    __label__ = 'klimeig_be'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    klimeig_be = Column('klimeig_be', Text)
+    zone = Column('zone', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.klimaeignung-koernermais', klimaeignung_koernermais)
+
+
+class klimaeignung_spezialkulturen(Base, Vector):
+    __tablename__ = 'klimaeignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+    __bodId__ = 'ch.blw.klimaeignung-spezialkulturen'
+    __label__ = 'klimeig_be'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    klimeig_be = Column('klimeig_be', Text)
+    zone = Column('zone', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.klimaeignung-spezialkulturen', klimaeignung_spezialkulturen)
+
+
+class klimaeignung_zwischenfruchtbau(Base, Vector):
+    __tablename__ = 'klimaeignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+    __bodId__ = 'ch.blw.klimaeignung-zwischenfruchtbau'
+    __label__ = 'klimeig_be'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    klimeig_be = Column('klimeig_be', Text)
+    zone = Column('zone', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.klimaeignung-zwischenfruchtbau', klimaeignung_zwischenfruchtbau)
+
+
+class klimaeignung_kartoffeln(Base, Vector):
+    __tablename__ = 'klimaeignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+    __bodId__ = 'ch.blw.klimaeignung-kartoffeln'
+    __label__ = 'klimeig_be'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    klimeig_be = Column('klimeig_be', Text)
+    zone = Column('zone', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.klimaeignung-kartoffeln', klimaeignung_kartoffeln)
+
+
+class klimaeignung_getreidebau(Base, Vector):
+    __tablename__ = 'klimaeignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+    __bodId__ = 'ch.blw.klimaeignung-getreidebau'
+    __label__ = 'klimeig_be'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    klimeig_be = Column('klimeig_be', Text)
+    zone = Column('zone', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.klimaeignung-getreidebau', klimaeignung_getreidebau)
+
+
+class klimaeignung_futterbau(Base, Vector):
+    __tablename__ = 'klimaeignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+    __bodId__ = 'ch.blw.klimaeignung-futterbau'
+    __label__ = 'klimeig_be'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    klimeig_be = Column('klimeig_be', Text)
+    zone = Column('zone', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.klimaeignung-futterbau', klimaeignung_futterbau)
+
+
+class klimaeignung_kulturland(Base, Vector):
+    __tablename__ = 'klimaeignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+    __bodId__ = 'ch.blw.klimaeignung-kulturland'
+    __label__ = 'klimeig_be'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    klimeig_be = Column('klimeig_be', Text)
+    zone = Column('zone', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.klimaeignung-kulturland', klimaeignung_kulturland)
+
+
+class niederschlagshaushalt(Base, Vector):
+    __tablename__ = 'klimaeignung'
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+    __bodId__ = 'ch.blw.niederschlagshaushalt'
+    __label__ = 'klimeig_be'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    klimeig_be = Column('klimeig_be', Text)
+    zone = Column('zone', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.niederschlagshaushalt', niederschlagshaushalt)
 
 
 class emapis_beizugsgebiet(Base, Vector):
