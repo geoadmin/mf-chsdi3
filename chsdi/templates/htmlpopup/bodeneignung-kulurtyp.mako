@@ -16,6 +16,11 @@
     <td>${_(Key_To_Translate)}</td>
   </tr>
   <tr>
+    <td>${_('bodeneignung_id')}</td>
+    <td>&nbsp;</td>
+    <td>${c['attributes']['farbe'] or '-'}</td>
+  </tr>
+  <tr>
     <td colspan="3">&nbsp;</td>
   </tr>
 </%def>

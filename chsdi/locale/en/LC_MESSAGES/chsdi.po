@@ -1301,6 +1301,12 @@ msgstr "Naturfutterbau: +; Kunstfutterbau, Getreidebau: +/-"
 msgid "blw_farbe_9"
 msgstr "Naturfutterbau: +; Kunstfutterbau, Getreidebau: +/-; Grossviehweide: -"
 
+msgid "bodeneignung_eignungsei"
+msgstr "Eignungseinheit"
+
+msgid "bodeneignung_id"
+msgstr "Id"
+
 msgid "bouguer_anomalie"
 msgstr "Bouguer Anomaly [mGal]"
 
@@ -5151,10 +5157,10 @@ msgid "ch.swisstopo.kt.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/en/home/swisstopo/org/cartography.html"
 
 msgid "ch.swisstopo.landeskarte-farbe-10"
-msgstr "National Maps (color)"
+msgstr "National Map 1:10'000 (color)"
 
 msgid "ch.swisstopo.landeskarte-grau-10"
-msgstr "National Maps (grey)"
+msgstr "National Map 1:10'000 (grey)"
 
 msgid "ch.swisstopo.landesschwerenetz"
 msgstr "Gravimetric base network"
@@ -5415,7 +5421,7 @@ msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Town"
 
 msgid "ch.swisstopo.pixelkarte-farbe"
-msgstr "National Map 1:25'000"
+msgstr "National Maps (color)"
 
 msgid "ch.swisstopo.pixelkarte-farbe-pk100.noscale"
 msgstr "National Map 1:100'000"
@@ -5439,7 +5445,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk500.noscale.release"
 msgstr "Edition"
 
 msgid "ch.swisstopo.pixelkarte-grau"
-msgstr "National Map 1:25'000"
+msgstr "National Maps (grey)"
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata"
 msgstr "Division National Map 1:100'000"
@@ -6457,6 +6463,12 @@ msgstr "Atomic power plant"
 
 msgid "klasse"
 msgstr "Klasse"
+
+msgid "klimaeignung_be"
+msgstr "Eignungsklasse"
+
+msgid "klimaeignung_zone"
+msgstr "Zone"
 
 msgid "klwkp_gwlnr"
 msgstr "Waterbody number"
