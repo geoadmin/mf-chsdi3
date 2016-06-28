@@ -18,6 +18,13 @@
   title += ': ' + pageTitle
   loaderUrl = h.make_agnostic(route_url('ga_api', request))
 
+  if c.get('title') == 'kartenwerk_lk25':
+      zoomlevel = 8
+  elif c.get('title') == 'kartenwerk_lk50':
+      zoomlevel = 7
+  else:
+      zoomlevel = 6
+
   if c.get('width') is None or c.get('height') is None:
       wh = h.imagesize_from_metafile(tileUrlBasePath, bildnummer)
       width = c.get('width') or wh[0]
@@ -26,8 +33,8 @@
       width = c.get('width')
       height = c.get('height')
 
-  geoadminUrl = "//%s/?layers=%s&zoom=6&Y=%s&X=%s&time=%s" % (
-      request.registry.settings['geoadminhost'], layerBodId, center[0], center[1], release_year)
+  geoadminUrl = "//%s/?layers=%s&zoom=%s&Y=%s&X=%s&time=%s" % (
+      request.registry.settings['geoadminhost'], layerBodId, zoomlevel, center[0], center[1], release_year)
 %>
 
 <!DOCTYPE html>
