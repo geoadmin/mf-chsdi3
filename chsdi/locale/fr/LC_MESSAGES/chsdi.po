@@ -2168,6 +2168,18 @@ msgstr "Nombre de jours avec une pollution à court terme"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw"
 msgstr "Année"
 
+msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor"
+msgstr "Apports diffus de phosphore"
+
+msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor.phosphor"
+msgstr "Phosphore, pertes accumulées [kg / ha * a] "
+
+msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff"
+msgstr "Apports diffus d'azote"
+
+msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff.stickstoff"
+msgstr "Azote, pertes cummulées [kg / ha * a]"
+
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347"
 msgstr "ARA - Eaux usées en Q347"
 

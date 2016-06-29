@@ -939,6 +939,18 @@ msgstr ""
 msgid "ch.bafu.waldreservate.gisteilobjekt"
 msgstr ""
 
+msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor.phosphor"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff.stickstoff"
+msgstr ""
+
 msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr ""
 
