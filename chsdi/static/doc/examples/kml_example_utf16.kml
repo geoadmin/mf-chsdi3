@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-16" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Folder><name>acces</name>
+<Schema name="acces" id="acces">
+  <SimpleField name="Name" type="string"></SimpleField>
+  <SimpleField name="Description" type="string"></SimpleField>
+  <SimpleField name="Name" type="string"></SimpleField>
+  <SimpleField name="Descriptio" type="string"></SimpleField>
+</Schema>
+  <Placemark>
+  <name>Millau</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Millau</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.078397836634196,44.100488400079186</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>La Cavalerie</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">La Cavalerie</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.159765329309997,44.008948687807198</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>La Couvertoirade</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">La Couvertoirade</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.313917245813899,43.914547010494474</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Le Caylar</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Le Caylar</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.319753732630317,43.863577046257113</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>L'Hospitalet du Larzac</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">L'Hospitalet du Larzac</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.195814218470142,43.972639095929324</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Montpaon</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Montpaon</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.109811868616719,43.868516682872645</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>de Ceilhes - Roqueronde</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">de Ceilhes - Roqueronde</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.15495881075538,43.812335863622629</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Cabrils</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Cabrils</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.186093893000341,43.779645680736607</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Le Vigan</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Le Vigan</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.602050867030048,43.985682998993944</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Alès</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Alès</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>4.084076013514478,44.127896084939472</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Saint-Ambroix</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Saint-Ambroix</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>4.197458352992066,44.259573048408186</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Saint-Jean du Gard</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Saint-Jean du Gard</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.884305086085338,44.104359659723713</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Mende</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Mende</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.493990030238296,44.513028412737803</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Chanac</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Chanac</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.345159616419862,44.473433147423052</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Le Monastier</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Le Monastier</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.25280579561907,44.508945401698405</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Bagnols-Chadenet</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Bagnols-Chadenet</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.628400888392612,44.528669359548893</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Florac</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Florac</SimpleData>
+    <SimpleData name="Descriptio">No description available</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.591493692347762,44.328335480723439</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Tournemire</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Tournemire</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.018422707420439,43.968329060121576</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Sainte-Enimie</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Sainte-Enimie</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.41107672455187,44.365782966823787</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Ispagnac</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Ispagnac</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.535492699445371,44.370312731614284</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Saint-Etienne du Valdonnais</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
+    <SimpleData name="Name">Saint-Etienne du Valdonnais</SimpleData>
+  </SchemaData></ExtendedData>
+      <Point><coordinates>3.562530466485045,44.455650683833248</coordinates></Point>
+  </Placemark>
+  <Placemark>
+  <name>Cassagnas</name>
+  <ExtendedData><SchemaData schemaUrl="#acces">
