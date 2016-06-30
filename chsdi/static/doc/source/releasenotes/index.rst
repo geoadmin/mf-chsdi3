@@ -15,6 +15,34 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20160713:
+
+Release 20160713 - Wednesday, July 13th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- WMTS GetCapabilities old timestamps of ch.swisstopo.pixelkarte-farbe and ch.swisstopo.pixelkarte-grau have been removed
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160629...r_160713>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160629...r_160713>`__
+
+
+Geodata
+*******
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| TODO   |                                                           |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20160629:
 
 Release 20160629 - Wednesday, June 29th 2016
