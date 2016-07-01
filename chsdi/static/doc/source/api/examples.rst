@@ -20,8 +20,10 @@ OpenLayers 3 examples
 
   <ul id="cat2"></ul>
 
-GeoAdmin iframe examples
+`map.geo.admin.ch <https://map.geo.admin.ch>`_ Iframe examples
 ------------------------
+
+Communication between Iframe-embeded map and parent window
 
 .. raw:: html
 
@@ -83,7 +85,7 @@ GeoAdmin iframe examples
       link: 'http://openlayers.org/en/v3.6.0/examples/',
       cat: 2 
     }, {
-      label: 'Communication between a GeoJSON layer in iframe and the parent window',
+      label: 'Feature selection of KML and GeoJSON layers',
       codepen: 'yOBzqM',
       cat: 3
     }];
