@@ -21,7 +21,7 @@
 
 --------------------
 
-Welcome to GeoAdmin API's documentation!
+Welcome to Ariadni's API documentation!
 ========================================
 
 .. meta::
