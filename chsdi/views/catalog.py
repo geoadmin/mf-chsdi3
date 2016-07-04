@@ -2,11 +2,81 @@
 
 from pyramid.view import view_config
 from pyramid.httpexceptions import HTTPNotFound
+import networkx as nx
+from itertools import chain
+from pyramid.httpexceptions import HTTPInternalServerError
 
 from chsdi.models.bod import Catalog
 from chsdi.lib.validation import MapNameValidation
 from chsdi.lib.sqlalchemy_customs import remove_accents
 from chsdi.lib.filters import filter_by_geodata_staging
+
+
+# https://github.com/networkx/networkx/blob/master/networkx/readwrite/json_graph/tree.py#L16
+def tree_data(G, root, attrs, meta):
+    if G.number_of_nodes() != G.number_of_edges() + 1:
+        raise TypeError("G is not a tree.")
+    if not G.is_directed():
+        raise TypeError("G is not directed.")
+
+    id_ = attrs['id']
+    children = attrs['children']
+    if id_ == children:
+        raise nx.NetworkXError('Attribute names are not unique.')
+
+    def add_children(n, G):
+        nbrs = G[n]
+        if len(nbrs) == 0:
+            return []
+        children_ = []
+        nbrs = sorted(nbrs)
+        for child in nbrs:
+            d = dict(chain(G.node[child].items(), [(id_, child)]))
+            d['category'] = meta[d['id']]['category']
+            d['staging'] = meta[d['id']]['staging']
+            d['label'] = meta[d['id']]['label']
+            # only for sorting according to 'orderKey'
+            if ('orderKey' in meta[d['id']]):
+                d['orderKey'] = meta[d['id']]['orderKey']
+            if (d['category'] == 'layer'):
+                d['layerBodId'] = meta[d['id']]['layerBodId']
+            else:
+                d['selectedOpen'] = meta[d['id']]['selectedOpen']
+            c = add_children(child, G)
+            if c:
+                d[children] = c
+            children_.append(d)
+            if ('orderKey' in d):
+                order_key = lambda x: x['orderKey']
+                children_ = sorted(children_, key=order_key)
+        for d in children_:
+            d.pop('orderKey', None)
+        return children_
+
+    data = dict(chain(G.node[root].items(), [(id_, root)]))
+    data[children] = add_children(root, G)
+    return data
+
+
+def initialize_graph(G, rows, lang, stage):
+    meta = {}
+    for r in rows:
+        node_parent_id = getattr(r, 'parentId')
+        node_id = getattr(r, 'id')
+        if node_id not in meta:
+            meta[node_id] = r.to_dict(lang)
+        G.add_edge(node_parent_id, node_id)
+        if not node_parent_id:
+            root_id = node_id
+    return G, meta, root_id
+
+
+def create_digraph(rows, lang, stage):
+    G = nx.DiGraph()
+    graph, meta, root_id = initialize_graph(G, rows, lang, stage)
+    edge_list = list(nx.bfs_edges(graph, root_id))
+    G = nx.DiGraph(edge_list)
+    return G, meta, root_id
 
 
 class CatalogService(MapNameValidation):
@@ -21,105 +91,24 @@ class CatalogService(MapNameValidation):
     @view_config(route_name='catalog', renderer='jsonp')
     def catalog(self):
         model = Catalog
+        # The root of topic 'dev' has dev staging
+        if (self.mapName.lower() == 'dev'):
+            raise HTTPInternalServerError('Topic dev is not in prod')
         query = self.request.db.query(model)\
             .filter(model.topic.like('%%%s%%' % self.mapName.lower()))\
-            .order_by(model.depth)\
             .order_by(model.orderKey)\
             .order_by(remove_accents(model.get_name_from_lang(self.lang)))
         rows = filter_by_geodata_staging(query, model.staging, self.staging).all()
         if len(rows) == 0:
             raise HTTPNotFound('No catalog with id %s is available' % self.mapName)
+        lang = self.lang
 
-        return {'results': self.tree(rows)}
+        G, meta, root_id = create_digraph(rows, lang, self.staging)
 
-    def tree(self, rows=[]):
-        nodes_all = []  # index equal depth
-        nodes_depth = []
-        current_depth = 0
-
-        def getListIndexFromPath(list_nodes, category):
-            for i, node in enumerate(list_nodes):
-                if 'category' in node:
-                    if node['category'] == category:
-                        return i
-            return None
-
-        def cleanNode(node):
-            # Remove useless info
-            node.pop('path', None)
-            node.pop('depth', None)
-            node.pop('topic', None)
-            node.pop('orderKey', None)
-            node.pop('parentId', None)
-            if node['category'] == 'layer':
-                node.pop('selectedOpen', None)
-            return node
-
-        nodes_final = {}
-
-        for row in rows:
-            depth = row.depth
-
-            if current_depth == depth:
-                node = row.to_dict(self.lang)
-                if node['category'] != 'layer':
-                    node['children'] = []
-                nodes_depth.append(node)
-            else:
-                nodes_all.append(nodes_depth)
-
-                nodes_depth = []
-                current_depth = depth  # e.g. +1
-
-                node = row.to_dict(self.lang)
-                if node['category'] != 'layer':
-                    node['children'] = []
-                nodes_depth.append(node)
-
-        # Append the last list
-        nodes_all.append(nodes_depth)
-
-        # At this point nodes are classified by hierachical level
-        # The children property must contain an array of nodes
-        for i in range(0, len(nodes_all)):
-            for node in nodes_all[i]:
-                if 'path' in node:
-                    path = node['path'].split('/')
-                    if len(path) > 0:
-                        root = path[0]
-                else:
-                    return nodes_final
-                node = cleanNode(node)
-                if i == 0:
-                    nodes_final[root] = node
-                elif i == 1:
-                    nodes_final[root]['children'].append(node)
-                elif i == 2:
-                    if len(path) >= 1:
-                        idx = getListIndexFromPath(nodes_final[path[0]]['children'], path[1])
-                        if idx is not None:
-                            try:
-                                nodes_final[root]['children'][idx]['children'].append(node)
-                            except:
-                                pass
-                elif i == 3:
-                    if len(path) >= 2:
-                        idx_1 = getListIndexFromPath(nodes_final[path[0]]['children'], path[1])
-                        idx_2 = getListIndexFromPath(nodes_final[path[0]]['children'][idx_1]['children'], path[2])
-                        if idx_1 is not None and idx_2 is not None:
-                            try:
-                                nodes_final[root]['children'][idx_1]['children'][idx_2]['children'].append(node)
-                            except:
-                                pass
-                elif i == 4:
-                    if len(path) >= 3:
-                        idx_1 = getListIndexFromPath(nodes_final[path[0]]['children'], path[1])
-                        idx_2 = getListIndexFromPath(nodes_final[path[0]]['children'][idx_1]['children'], path[2])
-                        idx_3 = getListIndexFromPath(nodes_final[path[0]]['children'][idx_1]['children'][idx_2]['children'], path[3])
-                        if idx_1 is not None and idx_2 is not None and idx_3 is not None:
-                            try:
-                                nodes_final[root]['children'][idx_1]['children'][idx_2]['children'][idx_3]['children'].append(node)
-                            except:
-                                pass
-
-        return nodes_final
+        if len(rows) != len(G.nodes()):
+            raise HTTPInternalServerError('Catalog tree for topic %s has unconnected leaves' % self.mapName)
+        data = tree_data(G, root_id, {'children': 'children', 'id': 'id'}, meta)
+        data['category'] = meta[root_id]['category']
+        data['staging'] = meta[root_id]['staging']
+        data = {'results': {'root': data}}
+        return data
