@@ -90,10 +90,10 @@ def sanitize_url(url):
 def locale_negotiator(request):
     try:
         lang = request.params.get('lang')
-    except UnicodeDecodeError:
+    except UnicodeDecodeError:  # pragma: no cover
         raise HTTPBadRequest('Could not parse URL and parameters. Request send must be encoded in utf-8.')
     # This might happen if a POST request is aborted before all the data could be transmitted
-    except IOError:
+    except IOError:  # pragma: no cover
         raise HTTPRequestTimeout('Request was aborted. Didn\'t receive full request')
 
     settings = get_current_registry().settings
