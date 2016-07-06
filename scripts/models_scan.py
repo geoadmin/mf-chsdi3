@@ -36,6 +36,7 @@ def getPGTables(layerId, engine, dbname, schema, tablename):
 def getTableReferences(dbmap, engines):
     for layerId, models in dbmap.iteritems():
         tmp = []
+        tmpColumns = []
         for model in models:
             dbname = re.match(
                 '^.*\/{1}([a-z]*)',
@@ -43,21 +44,24 @@ def getTableReferences(dbmap, engines):
             engine = engines.get(dbname)
             schema = model.__table_args__['schema'] if 'schema' in model.__table_args__ else 'public'
             tablename = model.__tablename__
+            columnNames = [k.name for k in model.__table__.columns]
             tmp.append(getPGTables(layerId, engine, dbname, schema, tablename))
+            tmpColumns += columnNames
         result = [item for sublist in tmp for item in sublist]
         result = sorted(list(set(result)))
-        yield layerId, result
+        resultColumns = sorted(list(set(tmpColumns)))
+        yield layerId, result, resultColumns
 
 
 def main():
     # Load app to register the models
     app = get_app('production.ini')
     from chsdi.models import bodmap, oerebmap, perimetermap, engines
-    print 'layerId|data'
+    print 'layerId|data|columns'
     dbsmap = [bodmap, oerebmap, perimetermap]
     for dbmap in dbsmap:
-        for layerId, ref in getTableReferences(dbmap, engines):
-            print '%s|%s' %(layerId, ','.join(ref))
+        for layerId, ref, refColumns in getTableReferences(dbmap, engines):
+            print '%s|%s|%s' %(layerId, ','.join(ref), ','.join(refColumns))
 
 
 if __name__ == '__main__':
