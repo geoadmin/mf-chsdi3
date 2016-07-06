@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer
+from sqlalchemy import Column, Unicode, Integer
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -8,461 +8,222 @@ from chsdi.models.vector import Vector, Geometry2D
 Base = bases['evd']
 
 
-class BODENEIGNUNG(Base, Vector):
+class Bodeneignung:
     __tablename__ = 'bodeneignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False})
+    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+    __label__ = 'farbe'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    farbe = Column('farbe', Integer)
+    eignungsei = Column('eignungsei', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class Kulturtyp(Base, Bodeneignung, Vector):
     __template__ = 'templates/htmlpopup/bodeneignung-kulurtyp.mako'
     __bodId__ = 'ch.blw.bodeneignung-kulturtyp'
     # __queryable_attributes__ = ['farbe']
     __label__ = 'symb_color'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    farbe = Column('farbe', Integer)
-    eignungsei = Column('eignungsei', Text)
-    symb_color = Column('symb_color', Text)
-    the_geom = Column(Geometry2D)
+    symb_color = Column('symb_color', Unicode)
 
-register('ch.blw.bodeneignung-kulturtyp', BODENEIGNUNG)
+register('ch.blw.bodeneignung-kulturtyp', Kulturtyp)
 
 
-class Bodeneignung_gruendigkeit(Base, Vector):
-    __tablename__ = 'bodeneignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+class Gruendigkeit(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-gruendigkeit'
-    __label__ = 'farbe'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    farbe = Column('farbe', Integer)
-    eignungsei = Column('eignungsei', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.bodeneignung-gruendigkeit', Bodeneignung_gruendigkeit)
+register('ch.blw.bodeneignung-gruendigkeit', Gruendigkeit)
 
 
-class Bodeneignung_skelettgehalt(Base, Vector):
-    __tablename__ = 'bodeneignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+class Skelettgehalt(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-skelettgehalt'
-    __label__ = 'farbe'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    farbe = Column('farbe', Integer)
-    eignungsei = Column('eignungsei', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.bodeneignung-skelettgehalt', Bodeneignung_skelettgehalt)
+register('ch.blw.bodeneignung-skelettgehalt', Skelettgehalt)
 
 
-class Bodeneignung_wasserspeichervermoegen(Base, Vector):
-    __tablename__ = 'bodeneignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+class Wasserspeichervermoegen(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-wasserspeichervermoegen'
-    __label__ = 'farbe'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    farbe = Column('farbe', Integer)
-    eignungsei = Column('eignungsei', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.bodeneignung-wasserspeichervermoegen', Bodeneignung_wasserspeichervermoegen)
+register('ch.blw.bodeneignung-wasserspeichervermoegen', Wasserspeichervermoegen)
 
 
-class Bodeneignung_naehrstoffspeichervermoegen(Base, Vector):
-    __tablename__ = 'bodeneignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+class Naehrstoffspeichervermoegen(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-naehrstoffspeichervermoegen'
-    __label__ = 'farbe'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    farbe = Column('farbe', Integer)
-    eignungsei = Column('eignungsei', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.bodeneignung-naehrstoffspeichervermoegen', Bodeneignung_naehrstoffspeichervermoegen)
+register('ch.blw.bodeneignung-naehrstoffspeichervermoegen', Naehrstoffspeichervermoegen)
 
 
-class Bodeneignung_wasserdurchlaessigkeit(Base, Vector):
-    __tablename__ = 'bodeneignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+class Wasserdurchlaessigkeit(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-wasserdurchlaessigkeit'
-    __label__ = 'farbe'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    farbe = Column('farbe', Integer)
-    eignungsei = Column('eignungsei', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.bodeneignung-wasserdurchlaessigkeit', Bodeneignung_wasserdurchlaessigkeit)
+register('ch.blw.bodeneignung-wasserdurchlaessigkeit', Wasserdurchlaessigkeit)
 
 
-class Bodeneignung_vernaessung(Base, Vector):
-    __tablename__ = 'bodeneignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+class Vernaessung(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-vernaessung'
-    __label__ = 'farbe'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    farbe = Column('farbe', Integer)
-    eignungsei = Column('eignungsei', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.bodeneignung-vernaessung', Bodeneignung_vernaessung)
+register('ch.blw.bodeneignung-vernaessung', Vernaessung)
 
 
-class Bodeneignung_kulturland(Base, Vector):
-    __tablename__ = 'bodeneignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/bodeneignung.mako'
+class Kulturland(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-kulturland'
-    __label__ = 'farbe'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    farbe = Column('farbe', Integer)
-    eignungsei = Column('eignungsei', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.bodeneignung-kulturland', Bodeneignung_kulturland)
+register('ch.blw.bodeneignung-kulturland', Kulturland)
 
 
-class klimaeignung_typ(Base, Vector):
+class Klimaeignung:
     __tablename__ = 'klimaeignung'
     __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/klimaeignung.mako'
+    __label__ = 'klimeig_be'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    klimeig_be = Column('klimeig_be', Unicode)
+    zone = Column('zone', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class KlimaeignungTyp(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-typ'
-    __label__ = 'klimeig_be'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    klimeig_be = Column('klimeig_be', Text)
-    zone = Column('zone', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.klimaeignung-typ', klimaeignung_typ)
+register('ch.blw.klimaeignung-typ', KlimaeignungTyp)
 
 
-class klimaeignung_koernermais(Base, Vector):
-    __tablename__ = 'klimaeignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+class KlimaeignungKoernermais(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-koernermais'
-    __label__ = 'klimeig_be'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    klimeig_be = Column('klimeig_be', Text)
-    zone = Column('zone', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.klimaeignung-koernermais', klimaeignung_koernermais)
+register('ch.blw.klimaeignung-koernermais', KlimaeignungKoernermais)
 
 
-class klimaeignung_spezialkulturen(Base, Vector):
-    __tablename__ = 'klimaeignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+class KlimaeignungSpezialkulturen(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-spezialkulturen'
-    __label__ = 'klimeig_be'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    klimeig_be = Column('klimeig_be', Text)
-    zone = Column('zone', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.klimaeignung-spezialkulturen', klimaeignung_spezialkulturen)
+register('ch.blw.klimaeignung-spezialkulturen', KlimaeignungSpezialkulturen)
 
 
-class klimaeignung_zwischenfruchtbau(Base, Vector):
-    __tablename__ = 'klimaeignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+class KlimaeignungZwischenfruchtbau(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-zwischenfruchtbau'
-    __label__ = 'klimeig_be'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    klimeig_be = Column('klimeig_be', Text)
-    zone = Column('zone', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.klimaeignung-zwischenfruchtbau', klimaeignung_zwischenfruchtbau)
+register('ch.blw.klimaeignung-zwischenfruchtbau', KlimaeignungZwischenfruchtbau)
 
 
-class klimaeignung_kartoffeln(Base, Vector):
-    __tablename__ = 'klimaeignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+class KlimaeignungKartoffeln(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-kartoffeln'
-    __label__ = 'klimeig_be'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    klimeig_be = Column('klimeig_be', Text)
-    zone = Column('zone', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.klimaeignung-kartoffeln', klimaeignung_kartoffeln)
+register('ch.blw.klimaeignung-kartoffeln', KlimaeignungKartoffeln)
 
 
-class klimaeignung_getreidebau(Base, Vector):
-    __tablename__ = 'klimaeignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+class KlimaeignungGetreidebau(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-getreidebau'
-    __label__ = 'klimeig_be'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    klimeig_be = Column('klimeig_be', Text)
-    zone = Column('zone', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.klimaeignung-getreidebau', klimaeignung_getreidebau)
+register('ch.blw.klimaeignung-getreidebau', KlimaeignungGetreidebau)
 
 
-class klimaeignung_futterbau(Base, Vector):
-    __tablename__ = 'klimaeignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+class KlimaeignungFutterbau(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-futterbau'
-    __label__ = 'klimeig_be'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    klimeig_be = Column('klimeig_be', Text)
-    zone = Column('zone', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.klimaeignung-futterbau', klimaeignung_futterbau)
+register('ch.blw.klimaeignung-futterbau', KlimaeignungFutterbau)
 
 
-class klimaeignung_kulturland(Base, Vector):
-    __tablename__ = 'klimaeignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+class KlimaeignungKulturland(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-kulturland'
-    __label__ = 'klimeig_be'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    klimeig_be = Column('klimeig_be', Text)
-    zone = Column('zone', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.klimaeignung-kulturland', klimaeignung_kulturland)
+register('ch.blw.klimaeignung-kulturland', KlimaeignungKulturland)
 
 
-class niederschlagshaushalt(Base, Vector):
-    __tablename__ = 'klimaeignung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/klimaeignung.mako'
+class Niederschlagshaushalt(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.niederschlagshaushalt'
-    __label__ = 'klimeig_be'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    klimeig_be = Column('klimeig_be', Text)
-    zone = Column('zone', Text)
+
+register('ch.blw.niederschlagshaushalt', Niederschlagshaushalt)
+
+
+class Emapis:
+    __table_args__ = ({'schema': 'blw', 'autoload': False})
+    __label__ = 'typ'
+    __template__ = 'templates/htmlpopup/emapis.mako'
+    id = Column('xtf_id', Integer, primary_key=True)
+    typ = Column('typ', Unicode)
+    typ_de = Column('typ_de', Unicode)
+    typ_fr = Column('typ_fr', Unicode)
+    typ_it = Column('typ_it', Unicode)
+    status_de = Column('status_de', Unicode)
+    status_fr = Column('status_fr', Unicode)
+    status_it = Column('status_it', Unicode)
+    geschaeftsnummer = Column('geschaeftsnummer', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.blw.niederschlagshaushalt', niederschlagshaushalt)
 
-
-class emapis_beizugsgebiet(Base, Vector):
+class EmapisBeizugsgebiet(Base, Emapis, Vector):
     __tablename__ = 'emapis_beizugsgebiet'
-    __table_args__ = ({'schema': 'blw', 'autoload': False})
-    __template__ = 'templates/htmlpopup/emapis.mako'
     __bodId__ = 'ch.blw.emapis-beizugsgebiet'
-    __label__ = 'typ'
-    id = Column('xtf_id', Integer, primary_key=True)
-    typ = Column('typ', Text)
-    typ_de = Column('typ_de', Text)
-    typ_fr = Column('typ_fr', Text)
-    typ_it = Column('typ_it', Text)
-    status_de = Column('status_de', Text)
-    status_fr = Column('status_fr', Text)
-    status_it = Column('status_it', Text)
-    geschaeftsnummer = Column('geschaeftsnummer', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.emapis-beizugsgebiet', emapis_beizugsgebiet)
+register('ch.blw.emapis-beizugsgebiet', EmapisBeizugsgebiet)
 
 
-class emapis_bewaesserung(Base, Vector):
+class EmapisBewaesserung(Base, Emapis, Vector):
     __tablename__ = 'emapis_bewaesserung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False})
-    __template__ = 'templates/htmlpopup/emapis.mako'
     __bodId__ = 'ch.blw.emapis-bewaesserung'
-    __label__ = 'typ'
-    id = Column('xtf_id', Integer, primary_key=True)
-    typ = Column('typ', Text)
-    typ_de = Column('typ_de', Text)
-    typ_fr = Column('typ_fr', Text)
-    typ_it = Column('typ_it', Text)
-    status_de = Column('status_de', Text)
-    status_fr = Column('status_fr', Text)
-    status_it = Column('status_it', Text)
-    geschaeftsnummer = Column('geschaeftsnummer', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.emapis-bewaesserung', emapis_bewaesserung)
+register('ch.blw.emapis-bewaesserung', EmapisBewaesserung)
 
 
-class emapis_elektrizitaetsversorgung(Base, Vector):
+class EmapisElektrizitaetsversorgung(Base, Emapis, Vector):
     __tablename__ = 'emapis_elektrizitaetsversorgung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False})
-    __template__ = 'templates/htmlpopup/emapis.mako'
     __bodId__ = 'ch.blw.emapis-elektrizitaetsversorgung'
-    __label__ = 'typ'
-    id = Column('xtf_id', Integer, primary_key=True)
-    typ = Column('typ', Text)
-    typ_de = Column('typ_de', Text)
-    typ_fr = Column('typ_fr', Text)
-    typ_it = Column('typ_it', Text)
-    status_de = Column('status_de', Text)
-    status_fr = Column('status_fr', Text)
-    status_it = Column('status_it', Text)
-    geschaeftsnummer = Column('geschaeftsnummer', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.emapis-elektrizitaetsversorgung', emapis_elektrizitaetsversorgung)
+register('ch.blw.emapis-elektrizitaetsversorgung', EmapisElektrizitaetsversorgung)
 
 
-class emapis_entwaesserung(Base, Vector):
+class EmapisEntwaesserung(Base, Emapis, Vector):
     __tablename__ = 'emapis_entwaesserung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False})
-    __template__ = 'templates/htmlpopup/emapis.mako'
     __bodId__ = 'ch.blw.emapis-entwaesserung'
-    __label__ = 'typ'
-    id = Column('xtf_id', Integer, primary_key=True)
-    typ = Column('typ', Text)
-    typ_de = Column('typ_de', Text)
-    typ_fr = Column('typ_fr', Text)
-    typ_it = Column('typ_it', Text)
-    status_de = Column('status_de', Text)
-    status_fr = Column('status_fr', Text)
-    status_it = Column('status_it', Text)
-    geschaeftsnummer = Column('geschaeftsnummer', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.emapis-entwaesserung', emapis_entwaesserung)
+register('ch.blw.emapis-entwaesserung', EmapisEntwaesserung)
 
 
-class emapis_hochbau(Base, Vector):
+class EmapisHochbau(Base, Emapis, Vector):
     __tablename__ = 'emapis_hochbau'
-    __table_args__ = ({'schema': 'blw', 'autoload': False})
-    __template__ = 'templates/htmlpopup/emapis.mako'
     __bodId__ = 'ch.blw.emapis-hochbau'
-    __label__ = 'typ'
-    id = Column('xtf_id', Integer, primary_key=True)
-    typ = Column('typ', Text)
-    typ_de = Column('typ_de', Text)
-    typ_fr = Column('typ_fr', Text)
-    typ_it = Column('typ_it', Text)
-    status_de = Column('status_de', Text)
-    status_fr = Column('status_fr', Text)
-    status_it = Column('status_it', Text)
-    geschaeftsnummer = Column('geschaeftsnummer', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.emapis-hochbau', emapis_hochbau)
+register('ch.blw.emapis-hochbau', EmapisHochbau)
 
 
-class emapis_milchleitung(Base, Vector):
+class EmapisMilchleitung(Base, Emapis, Vector):
     __tablename__ = 'emapis_milchleitung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False})
-    __template__ = 'templates/htmlpopup/emapis.mako'
     __bodId__ = 'ch.blw.emapis-milchleitung'
-    __label__ = 'typ'
-    id = Column('xtf_id', Integer, primary_key=True)
-    typ = Column('typ', Text)
-    typ_de = Column('typ_de', Text)
-    typ_fr = Column('typ_fr', Text)
-    typ_it = Column('typ_it', Text)
-    status_de = Column('status_de', Text)
-    status_fr = Column('status_fr', Text)
-    status_it = Column('status_it', Text)
-    geschaeftsnummer = Column('geschaeftsnummer', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.emapis-milchleitung', emapis_milchleitung)
+register('ch.blw.emapis-milchleitung', EmapisMilchleitung)
 
 
-class emapis_oekologie(Base, Vector):
+class EmapisOekologie(Base, Emapis, Vector):
     __tablename__ = 'emapis_oekologie'
-    __table_args__ = ({'schema': 'blw', 'autoload': False})
-    __template__ = 'templates/htmlpopup/emapis.mako'
     __bodId__ = 'ch.blw.emapis-oekologie'
-    __label__ = 'typ'
-    id = Column('xtf_id', Integer, primary_key=True)
-    typ = Column('typ', Text)
-    typ_de = Column('typ_de', Text)
-    typ_fr = Column('typ_fr', Text)
-    typ_it = Column('typ_it', Text)
-    status_de = Column('status_de', Text)
-    status_fr = Column('status_fr', Text)
-    status_it = Column('status_it', Text)
-    geschaeftsnummer = Column('geschaeftsnummer', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.emapis-oekologie', emapis_oekologie)
+register('ch.blw.emapis-oekologie', EmapisOekologie)
 
 
-class emapis_projektschwerpunkt(Base, Vector):
+class EmapisProjektschwerpunkt(Base, Emapis, Vector):
     __tablename__ = 'emapis_projektschwerpunkt'
-    __table_args__ = ({'schema': 'blw', 'autoload': False})
-    __template__ = 'templates/htmlpopup/emapis.mako'
     __bodId__ = 'ch.blw.emapis-projektschwerpunkt'
-    __label__ = 'typ'
-    id = Column('xtf_id', Integer, primary_key=True)
-    typ = Column('typ', Text)
-    typ_de = Column('typ_de', Text)
-    typ_fr = Column('typ_fr', Text)
-    typ_it = Column('typ_it', Text)
-    status_de = Column('status_de', Text)
-    status_fr = Column('status_fr', Text)
-    status_it = Column('status_it', Text)
-    geschaeftsnummer = Column('geschaeftsnummer', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.emapis-projektschwerpunkt', emapis_projektschwerpunkt)
+register('ch.blw.emapis-projektschwerpunkt', EmapisProjektschwerpunkt)
 
 
-class emapis_seilbahnen(Base, Vector):
+class EmapisSeilbahnen(Base, Emapis, Vector):
     __tablename__ = 'emapis_seilbahnen'
-    __table_args__ = ({'schema': 'blw', 'autoload': False})
-    __template__ = 'templates/htmlpopup/emapis.mako'
     __bodId__ = 'ch.blw.emapis-seilbahnen'
-    __label__ = 'typ'
-    id = Column('xtf_id', Integer, primary_key=True)
-    typ = Column('typ', Text)
-    typ_de = Column('typ_de', Text)
-    typ_fr = Column('typ_fr', Text)
-    typ_it = Column('typ_it', Text)
-    status_de = Column('status_de', Text)
-    status_fr = Column('status_fr', Text)
-    status_it = Column('status_it', Text)
-    geschaeftsnummer = Column('geschaeftsnummer', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.emapis-seilbahnen', emapis_seilbahnen)
+register('ch.blw.emapis-seilbahnen', EmapisSeilbahnen)
 
 
-class emapis_wasserversorgung(Base, Vector):
+class EmapisWasserversorgung(Base, Emapis, Vector):
     __tablename__ = 'emapis_wasserversorgung'
-    __table_args__ = ({'schema': 'blw', 'autoload': False})
-    __template__ = 'templates/htmlpopup/emapis.mako'
     __bodId__ = 'ch.blw.emapis-wasserversorgung'
-    __label__ = 'typ'
-    id = Column('xtf_id', Integer, primary_key=True)
-    typ = Column('typ', Text)
-    typ_de = Column('typ_de', Text)
-    typ_fr = Column('typ_fr', Text)
-    typ_it = Column('typ_it', Text)
-    status_de = Column('status_de', Text)
-    status_fr = Column('status_fr', Text)
-    status_it = Column('status_it', Text)
-    geschaeftsnummer = Column('geschaeftsnummer', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.emapis-wasserversorgung', emapis_wasserversorgung)
+register('ch.blw.emapis-wasserversorgung', EmapisWasserversorgung)
 
 
-class emapis_wegebau(Base, Vector):
+class EmapisWegebau(Base, Emapis, Vector):
     __tablename__ = 'emapis_wegebau'
-    __table_args__ = ({'schema': 'blw', 'autoload': False})
-    __template__ = 'templates/htmlpopup/emapis.mako'
     __bodId__ = 'ch.blw.emapis-wegebau'
-    __label__ = 'typ'
-    id = Column('xtf_id', Integer, primary_key=True)
-    typ = Column('typ', Text)
-    typ_de = Column('typ_de', Text)
-    typ_fr = Column('typ_fr', Text)
-    typ_it = Column('typ_it', Text)
-    status_de = Column('status_de', Text)
-    status_fr = Column('status_fr', Text)
-    status_it = Column('status_it', Text)
-    geschaeftsnummer = Column('geschaeftsnummer', Text)
-    the_geom = Column(Geometry2D)
 
-register('ch.blw.emapis-wegebau', emapis_wegebau)
+register('ch.blw.emapis-wegebau', EmapisWegebau)
