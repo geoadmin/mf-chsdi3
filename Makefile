@@ -35,6 +35,7 @@ MAKO_CMD := $(INSTALL_DIRECTORY)/bin/mako-render
 NOSE_CMD := $(INSTALL_DIRECTORY)/bin/nosetests
 PIP_CMD := $(INSTALL_DIRECTORY)/bin/pip
 PSERVE_CMD := $(INSTALL_DIRECTORY)/bin/pserve
+PSHELL_CMD := $(INSTALL_DIRECTORY)/bin/pshell
 PYTHON_CMD := $(INSTALL_DIRECTORY)/bin/python
 SPHINX_CMD := $(INSTALL_DIRECTORY)/bin/sphinx-build
 
@@ -70,6 +71,7 @@ help:
 	@echo "- user               Build the user specific version of the app"
 	@echo "- all                Build the app"
 	@echo "- serve              Serve the application with pserve"
+	@echo "- shell              Enter interactive shell with app loaded in the background"
 	@echo "- test               Launch the tests (no e2e tests)"
 	@echo "- teste2e            Launch end-to-end tests"
 	@echo "- lint               Run the linter"
@@ -127,6 +129,10 @@ prod:
 .PHONY: serve
 serve:
 	PYTHONPATH=${PYTHONPATH} ${PSERVE_CMD} development.ini --reload
+
+.PHONY: shell
+shell:
+	PYTHONPATH=${PYTHONPATH} ${PSHELL_CMD} development.ini
 
 .PHONY: test
 test:
