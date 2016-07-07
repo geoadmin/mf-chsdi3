@@ -21,7 +21,7 @@ OpenLayers 3 examples
   <ul id="cat2"></ul>
 
 `map.geo.admin.ch <https://map.geo.admin.ch>`_ Iframe examples
-------------------------
+--------------------------------------------------------------
 
 Communication between Iframe-embeded map and parent window
 
