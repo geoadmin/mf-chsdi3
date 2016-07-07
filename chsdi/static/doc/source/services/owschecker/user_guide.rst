@@ -41,7 +41,7 @@ The eCH-0056 Checker can be used via a HTML form and as a web service.
 -------------
 The HTML form is available at the following address:
 
- * http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/ech0056.html
+ * https://www.geo.admin.ch/de/geo-dienstleistungen/geodienste/pruefdienste.html
 
 The form inputs are:
 

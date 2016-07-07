@@ -1863,7 +1863,7 @@ msgid "ch.babs.kulturgueter.zkob"
 msgstr "Description"
 
 msgid "ch.babs.url"
-msgstr "http://www.bevoelkerungsschutz.admin.ch/internet/bs/it/home/das_babs.html"
+msgstr "http://www.babs.admin.ch/it/home.html"
 
 msgid "ch.bafu"
 msgstr "UFAM"
@@ -3561,7 +3561,7 @@ msgid "ch.bakom.uplink50"
 msgstr "Upload ≥50 Mbit/s"
 
 msgid "ch.bakom.url"
-msgstr "http://www.bakom.admin.ch/index.html"
+msgstr "https://www.bakom.admin.ch/bakom/it/pagina-iniziale.html"
 
 msgid "ch.bakom.verfuegbarkeit-hdtv"
 msgstr "Disponibilità TV HD rete fissa"
@@ -3909,7 +3909,7 @@ msgid "ch.bazl.sicherheitszonenplan"
 msgstr "Piano delle zone di sicurezza"
 
 msgid "ch.bazl.url"
-msgstr "http://www.bazl.admin.ch/index.html?lang=it"
+msgstr "https://www.bazl.admin.ch/bazl/it/home.html"
 
 msgid "ch.bfe"
 msgstr "UFE"
@@ -4329,7 +4329,7 @@ msgid "ch.ensi"
 msgstr "IFSN"
 
 msgid "ch.ensi.url"
-msgstr "http://www.ensi.ch/it/"
+msgstr "https://www.ensi.ch/it/?noredirect=it_IT"
 
 msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Piani delle zone d'urgenza"
@@ -4338,7 +4338,7 @@ msgid "ch.kanton.av"
 msgstr "Misurazione ufficiale svizzera / FL"
 
 msgid "ch.kanton.av.url"
-msgstr "http://www.cadastre.ch/internet/cadastre/it/home/products/webmap/cwm.html"
+msgstr "http://www.cadastre.ch/internet/kataster/it/home/services/service/wms/cwm.html"
 
 msgid "ch.kantone.cadastralwebmap-farbe"
 msgstr "CadastralWebMap"
@@ -5583,7 +5583,7 @@ msgid "ch.swisstopo.treasurehunt"
 msgstr "Mappa-Tesoro"
 
 msgid "ch.swisstopo.url"
-msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/it/home.html"
+msgstr "https://www.swisstopo.admin.ch/it/home.html"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
 msgstr "Siti protetti VECTOR200"

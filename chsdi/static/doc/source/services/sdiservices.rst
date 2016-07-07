@@ -149,12 +149,12 @@ Here is a description of the data one can find in the above response.
 
   - **wmsResource**: the WMS resource of the layer
   - **scaleLimit**: the scale at which the layer is valid
-  - **inspireUpperAbstract**: the abstract of the `INSPIRE <http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/mission/inspire.html>`_ category (first level)
-  - **inprireName**: the name of the `INSPIRE <http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/mission/inspire.html>`_ category
+  - **inspireUpperAbstract**: the abstract of the `INSPIRE <https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html>`_ category (first level)
+  - **inprireName**: the name of the `INSPIRE <https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html>`_ category
   - **urlDetails**: link to the official details page
   - **bundCollectionNumber**: the collection number
   - **dataOwner**: the data owner
-  - **inprieAbstract**: the abstract of the `INSPIRE <http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/mission/inspire.html>`_ category the layer belongs to
+  - **inprieAbstract**: the abstract of the `INSPIRE <https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html>`_ category the layer belongs to
   - **absctract**: the layer absctract
   - **wmsContactAbbreviation**: the abbreviation contact for the WMS resource
   - **downloadUrl**: the link where the data can be downloaded
@@ -162,7 +162,7 @@ Here is a description of the data one can find in the above response.
   - **wmsContactName**: the contact name for the WMS resource
   - **dataStatus**: the date of the latest data update
   - **bundCollectionName**: the collection name
-  - **inspireUpperName**: the name of the `INSPIRE <http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin/mission/inspire.html>`_ category (first level)
+  - **inspireUpperName**: the name of the `INSPIRE <https://www.geo.admin.ch/en/geo-information-switzerland/geodata-index-inspire.html>`_ category (first level)
   - **urlApplication**: the application where this layer is published
   - **tileInfo**: WMTS general information in json format. Note that this section is always identical and is not tied to a particular "map" like in ESRI specifications.
 
@@ -499,7 +499,7 @@ The search service is separated in 3 various categories or types:
 * The **location search** which is composed of the following geocoded locations:
 
   * Cantons, Cities and communes
-  * All names as printed on the national map (`SwissNames <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/landscape/toponymy.html>`_)
+  * All names as printed on the national map (`SwissNames <https://shop.swisstopo.admin.ch/de/products/landscape/names3D>`_)
   * The districts
   * The ZIP codes
   * The addresses (!! the Swiss cantons only allow websites of the federal government to use the addresses search service !!)
@@ -650,7 +650,7 @@ Height
 ------
 
 This service allows to obtain elevation information for a point. **Note: this service is not freely accessible (fee required).** `Please Contact us <mailto:geodata@swisstopo.ch>`_
-See `Height models <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/height.html>`_ for more details about data used by this service.
+See `Height models <https://shop.swisstopo.admin.ch/de/products/height_models/alti3D>`_ for more details about data used by this service.
 
 URL
 ***
@@ -690,7 +690,7 @@ Profile
 -------
 
 This service allows to obtain elevation information for a polyline in CSV format. **Note: this service is not freely accessible (fee required).** `Please Contact us <mailto:geodata@swisstopo.ch>`_
-See `Height models <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/height.html>`_ for more details about data used by this service.
+See `Height models <https://shop.swisstopo.admin.ch/de/products/height_models/alti3D>`_ for more details about data used by this service.
 
 URL
 ***
@@ -738,7 +738,7 @@ WMTS
 
 A RESTFul implementation of the `WMTS <http://www.opengeospatial.org/standards/wmts>`_ `OGC <http://www.opengeospatial.org/>`_ standard.
 For detailed information, see `WMTS OGC standard <http://www.opengeospatial.org/standards/wmts>`_
-In order to have access to the WMTS, you require a `swisstopo web access - WMTS documentation <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_, 
+In order to have access to the WMTS, you require a `swisstopo web access - WMTS documentation <https://www.swisstopo.ch/webaccess>`_, 
 despite the fact that most layers are free to use. See :ref:`available_layers` for a list of all available layers.
 
 
@@ -889,7 +889,7 @@ Note:
 * Reprojected tiles are generated *on-the-fly* with `MapProxy <http://mapproxy.org>`_. If you plan to heavily use this service, please
   inform us in advance.
 * *MapProxy* uses the `Proj.4 <http://trac.osgeo.org/proj/>`_ library internaly to transform between datum, except for the reframe from  
-  **LV03/MN03** tiles which is *NTv2* grid based (`CHENyx06 <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/software/products/chenyx06.html>`_)
+  **LV03/MN03** tiles which is *NTv2* grid based (`CHENyx06 <https://www.swisstopo.admin.ch/en/knowledge-facts/surveying-geodesy/reference-frames/local.html>`_)
 * Source for these reprojected tiles are the *native* **LV03/MN03** ones. The only exception is *ch.kantone.cadastralwebmap-farbe* that uses a WMS service as its source.
 * Note that all layers are available at all scales. You have to check for which **tileMatrixSets** a particuliar layer is defined. Your WMTS client may either stretch the
   tiles from the last available level or display nothing.
@@ -985,7 +985,7 @@ Terrain Service
 
 A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `Quantized Mesh <https://github.com/AnalyticalGraphicsInc/quantized-mesh>`_ terrain service.
 Terrain tiles are served according to the `Tile Map Service (TMS) <http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification>`_ layout and global-geodetic profile.
-In order to access the terrain tiles, you require a `swisstopo web access - WMTS documentation <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_.
+In order to access the terrain tiles, you require a `swisstopo web access - WMTS documentation <https://www.swisstopo.ch/webaccess>`_.
 
 URL
 ***

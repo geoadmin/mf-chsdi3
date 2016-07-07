@@ -64,7 +64,7 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
 
 
 .. warning::
-    The GeoAdmin API and all GeoAdmin services can be used in both HTTP and HTTPS contexts. Though most layers are freely accessible, a `swisstopo web access <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_ is required for some of them. For a list of all available layers and their accessibility please refer to the `FAQ <api/faq/index.html#which-layers-are-available>`_.
+    The GeoAdmin API and all GeoAdmin services can be used in both HTTP and HTTPS contexts. Though most layers are freely accessible, a `swisstopo web access <https://www.swisstopo.ch/webaccess>`_ is required for some of them. For a list of all available layers and their accessibility please refer to the `FAQ <api/faq/index.html#which-layers-are-available>`_.
 
 
 API
@@ -98,7 +98,7 @@ Terms of use
    api/terms_of_use
 
 .. note::
-    The GeoAdmin API terms of use are accessible here: `Terms of Use <http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/display_services/api_services/order_form.html>`_
+    The GeoAdmin API terms of use are accessible here: `Terms of Use <https://www.geo.admin.ch/de/geo-services/geo-services/portrayal-services-web-mapping/programming-interface-api/order_form.html>`_
 
 .. About Geoadmin API section
 
@@ -106,4 +106,4 @@ Terms of use
    :maxdepth: 1
    :hidden:
 
-   About Geoadmin API <http://www.geo.admin.ch/internet/geoportal/en/home/geoadmin.html>
+   About Geoadmin API <https://www.geo.admin.ch/>
