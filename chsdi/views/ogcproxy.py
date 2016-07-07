@@ -48,7 +48,7 @@ class OgcProxy:
         try:
             resp, content = http.request(url, method=self.request.method,
                                          body=self.request.body, headers=h)
-        except:
+        except:  # pragma: no cover
             raise HTTPBadGateway()
 
         #  All content types are allowed
@@ -63,12 +63,12 @@ class OgcProxy:
                     for line in zipfile.open(zipfile.namelist()[0]).readlines():
                         content = content + line
                     ct = 'application/vnd.google-earth.kml+xml'
-                except:
+                except:  # pragma: no cover
                     raise HTTPBadGateway()
                 finally:
                     if zipfile:
                         zipurl.close()
-        else:
+        else:  # pragma: no cover
             raise HTTPNotAcceptable()
 
         if content.find('encoding=') > 0:

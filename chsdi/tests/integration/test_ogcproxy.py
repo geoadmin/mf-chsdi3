@@ -21,3 +21,14 @@ class TestOGCproxyView(TestsBase):
 
     def test_proxy_no_url(self):
         self.testapp.get('/ogcproxy', headers=self.headers, status=400)
+
+    def test_proxy_no_parsed_url(self):
+        params = {'url': 'www.geo.admin.ch/'}
+        self.testapp.get('/ogcproxy', params=params, headers=self.headers, status=400)
+
+    def test_proxy_url_content(self):
+        params = {'url': 'http://mf-chsdi3.dev.bgdi.ch/examples/bln-style.kmz'}
+        self.testapp.get('/ogcproxy', params=params, headers=self.headers, status=200)
+
+        params = {'url': 'http://mf-chsdi3.dev.bgdi.ch/examples/kml_example_utf16.kml'}
+        self.testapp.get('/ogcproxy', params=params, headers=self.headers, status=200)
