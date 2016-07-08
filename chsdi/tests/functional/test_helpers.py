@@ -139,8 +139,8 @@ class Test_Helpers(unittest.TestCase):
     def test_sanitize_url_throws_ValueError(self):
         # ValueError
         url2 = None
-        result2 = sanitize_url(url2)
-        self.assertRaises(ValueError, result2)
+        res2 = sanitize_url(url2)
+        self.assertEqual(url2, res2)
 
     def test_parseHydroXML(self):
         import xml.etree.ElementTree as ET
@@ -207,7 +207,8 @@ class Test_Helpers(unittest.TestCase):
         testval = 5
         result = float_raise_nan(testval)
         self.assertEqual(result, 5.0)
-        self.assertRaises(ValueError, float_raise_nan, 'no_number')
+        with self.assertRaises(ValueError):
+            float_raise_nan(float('nan'))
 
     def test_parse_box2d(self):
         strBox2d = 'BOX(1.1 2.2,3.3 4.4)'
@@ -225,9 +226,11 @@ class Test_Helpers(unittest.TestCase):
 
     def test_center_from_box2d_wrong(self):
         box2d = [10.1, 2.2, 3.3, 6.6]
-        self.assertRaises(ValueError, center_from_box2d, box2d)
+        with self.assertRaises(ValueError):
+            center_from_box2d(box2d)
         box2d = [1.1, 2.2, 3.3]
-        self.assertRaises(ValueError, center_from_box2d, box2d)
+        with self.assertRaises(ValueError):
+            center_from_box2d(box2d)
 
     def test_format_scale(self):
         scale = 50000
