@@ -4,11 +4,12 @@
     <link href="../_static/custom.css" rel="stylesheet" type="text/css" />
   </head>
 
-API Examples
-============
+`API Examples <http://codepen.io/geoadmin/collections/popular/>`_
+=================================================================
 
 JS API examples
 ---------------
+
 .. raw:: html
 
   <ul id="cat1"></ul>
@@ -28,6 +29,20 @@ Communication between Iframe-embeded map and parent window
 .. raw:: html
 
   <ul id="cat3"></ul>
+
+CesiumJS examples
+-----------------
+
+.. raw:: html
+
+  <ul id="cat4"></ul>
+
+Other JS web mapping APIs integration
+-------------------------------------
+
+.. raw:: html
+
+  <ul id="cat5"></ul>
  
 .. raw:: html
 
@@ -88,9 +103,21 @@ Communication between Iframe-embeded map and parent window
       label: 'Feature selection of KML and GeoJSON layers',
       codepen: 'yOBzqM',
       cat: 3
+    }, {
+      label: 'Geoadmin Terrain and WMTS CesiumJS integration',
+      codepen: 'zBEYGE',
+      cat: 4
+    }, {
+      label: 'WMTS in EPSG:3857 using Leaflet',
+      codepen: 'grGOLV',
+      cat: 5
+    }, {
+      label: 'WMS in EPSG:3857 using Leaflet',
+      codepen: 'JKAjWk',
+      cat: 5
     }];
     var tpl = '<li><a href="{link}" target="_blank">{label}</a></li>';
-    var cat1 = '', cat2 = '', cat3 = '';
+    var cat1 = '', cat2 = '', cat3 = '', cat4 = '', cat5 = '';
     conf.forEach(function(item) {
       if (item.codepen) {
         item.link = '//codepen.io/geoadmin/pen/' + item.codepen + '?editors=0010';
@@ -107,11 +134,19 @@ Communication between Iframe-embeded map and parent window
         case 3:
           cat3 += link;
           break;
+        case 4:
+          cat4 += link;
+          break;
+        case 5:
+          cat5 += link;
+          break;
       };
     });
     document.getElementById('cat1').innerHTML = cat1;
     document.getElementById('cat2').innerHTML = cat2;
     document.getElementById('cat3').innerHTML = cat3;
+    document.getElementById('cat4').innerHTML = cat4;
+    document.getElementById('cat5').innerHTML = cat5;
   </script>
 
 

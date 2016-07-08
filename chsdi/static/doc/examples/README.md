@@ -4,11 +4,13 @@ API Examples
 
 All the examples have been created with [codepen](//codepen.io/).
 
-These examples are grouped on codepen in 3 collections:
+These examples are grouped on codepen in 5 collections:
 
 - [JS API examples](//codepen.io/collection/nZQKoZ)
 - [OpenLayers 3 examples](//codepen.io/collection/nZQyQB/)
 - [GeoAdmin iframe examples](//codepen.io/collection/nkkwYY/)
+- [CesiumJS examples](http://codepen.io/collection/nGqWbY/)
+- [Other JS web mapping APIs](http://codepen.io/collection/XOEprd/)
     
     
 All the collections are available [here](//codepen.io/geoadmin/collections/popular/).
