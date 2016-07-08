@@ -30,6 +30,7 @@ class LayersChecker(object):
         self.onlylayer = os.environ.get('CHSDI_ONLY_LAYER')
         self.randomFeatures = os.environ.get('CHSDI_RANDOM_FEATURES') == 'True'
         self.nrOfFeatures = num(os.environ.get('CHSDI_NUM_FEATURES')) if os.environ.get('CHSDI_NUM_FEATURES') is not None else 1
+        self.emptyGeoTables = self.testapp.app.registry.settings.get('empty_geotables').split(',')
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
@@ -61,7 +62,7 @@ class LayersChecker(object):
     def ilayersAllModels(self):
         for layer in self.ilayers(tooltip=True, geojson=False):
             gridSpec = get_grid_spec(layer)
-            if gridSpec is None:
+            if gridSpec is None and layer not in self.emptyGeoTables:
                 models = models_from_bodid(layer)
                 assert (models is not None and len(models) > 0), layer
                 for model in models:
@@ -77,7 +78,7 @@ class LayersChecker(object):
     def ilayersWithFeatures(self):
         for layer in self.ilayers(tooltip=True, geojson=False):
             gridSpec = get_grid_spec(layer)
-            if gridSpec is None:
+            if gridSpec is None and layer not in self.emptyGeoTables:
                 models = models_from_bodid(layer)
                 assert (models is not None and len(models) > 0), layer
                 model = models[0]
