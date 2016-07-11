@@ -57,7 +57,7 @@ GREEN := $(shell tput setaf 2)
 # Versions
 # We need GDAL which is hard to install in a venv, modify PYTHONPATH to use the
 # system wide version.
-GDAL_VERSION ?= 1.9.0
+GDAL_VERSION ?= 1.10.0
 PYTHON_VERSION := $(shell python --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
 PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
 
