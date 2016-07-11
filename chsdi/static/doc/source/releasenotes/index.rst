@@ -38,9 +38,30 @@ API & applications
 
 Geodata
 *******
-+--------+------------------------------------------------------------------------------------------------------------------+
-| New    | `Waldschadenkarte - Projektil <//map.geo.admin.ch/?layers=ch.vbs.waldschadenkarte>`__ (ch.vbs.waldschadenkarte)  |
-+--------+------------------------------------------------------------------------------------------------------------------+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Diatoms <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen)                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Fish <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_fische>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_fische)                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Macrophytes <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Macrozoobenthos <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos)  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Ammonium <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_ammonium>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_ammonium)                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Dissolved Organic Carbon (DOC) <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_doc>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_doc)               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Nitrate <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_nitrat>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_nitrat)                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Nitrite <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_nitrit>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_nitrit)                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Phosphate <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_phosphat>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_phosphat)                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Total Phosphorus <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt)     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Waldschadenkarte - Projektil <//map.geo.admin.ch/?layers=ch.vbs.waldschadenkarte>`__ (ch.vbs.waldschadenkarte)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 .. _releasenotes_20160629:
 
