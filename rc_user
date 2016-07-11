@@ -1,11 +1,15 @@
 source rc_dev
-export USERNAME='$(shell whoami)'
+export USERNAME=$(whoami)
 export APACHE_BASE_PATH=$USERNAME
 export API_URL=//mf-chsdi3.dev.bgdi.ch/$USERNAME
 export GEOADMINHOST=mf-geoadmin3.dev.bgdi.ch/$USERNAME
 export MODWSGI_CONFIG=development.ini
-if [ -f rc_user_'$USERNAME' ]; then
+if [ -f rc_user_$USERNAME ]; then
+  echo 'Sourcing:'
+  echo rc_user_$USERNAME
   source rc_user_$USERNAME;
+else
+  echo 'Please provide a custom config file using the pattern rc_user_$USERNAME'
 fi
 # Uncomment to access vector bucket behind pserve
 # export VECTOR_PROFILENAME=ltgal_aws_admin
