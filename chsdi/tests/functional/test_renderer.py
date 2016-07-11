@@ -28,11 +28,11 @@ class Test_EsriGeoJSON(unittest.TestCase):
         self.assertEqual(request.response.content_type, 'application/json')
 
     def test_jsonp(self):
-        renderer = self._callFUT(jsonp_param_name="cb")
+        renderer = self._callFUT(jsonp_param_name="callback")
         from geojson import Point
         f = Point([600000, 200000], properties={'name': 'toto'})
         request = testing.DummyRequest()
-        request.params['cb'] = 'jsonp_cb'
+        request.params['callback'] = 'jsonp_cb'
         result = renderer(f, {'request': request})
         self.assertEqual(result, 'jsonp_cb({"attributes": {"name": "toto"}, "y": 200000, "x": 600000, "spatialReference": {"wkid": 21781}});')
         self.assertEqual(request.response.content_type, 'text/javascript')

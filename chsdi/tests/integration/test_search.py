@@ -43,8 +43,9 @@ class TestSearchServiceView(TestsBase):
         self.assertEqual(resp.json['results'][0]['attrs']['lang'], 'de')
 
     def test_search_layers_with_cb(self):
-        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'wand', 'type': 'layers', 'callback': 'cb'}, status=200)
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'wand', 'type': 'layers', 'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
+        resp.mustcontain('cb_(')
 
     def test_search_layers_all_langs(self):
         langs = ('de', 'fr', 'it', 'en', 'rm')
@@ -80,7 +81,7 @@ class TestSearchServiceView(TestsBase):
         resp.mustcontain('The third coordinate must be higher than the fourth')
 
     def test_search_loactions_with_cb(self):
-        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'rue des berges', 'type': 'locations', 'bbox': '551306.5625,167918.328125,551754.125,168514.625', 'callback': 'cb'}, status=200)
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'rue des berges', 'type': 'locations', 'bbox': '551306.5625,167918.328125,551754.125,168514.625', 'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_search_locations_all_langs(self):

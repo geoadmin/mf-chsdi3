@@ -11,7 +11,7 @@ from smtplib import SMTPException
 
 # http://kutuma.blogspot.com/2007/08/sending-emails-via-gmail-with-python.html
 @view_config(route_name='feedback', renderer='json', request_method='POST')
-def feedback(self, request):
+def feedback(context, request):
     defaultRecipient = 'webgis@swisstopo.ch'
     defaultSubject = 'Customer feedback'
 

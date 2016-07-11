@@ -19,5 +19,6 @@ class TestTopicsListingView(TestsBase):
             self.assertTrue('plConfig' in topic)
 
     def test_topics_with_cb(self):
-        resp = self.testapp.get('/rest/services', params={'callback': 'cb'}, status=200)
+        resp = self.testapp.get('/rest/services', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
+        resp.mustcontain('cb_(')

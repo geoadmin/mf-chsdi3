@@ -32,7 +32,7 @@ class TestMapServiceView(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_metadata_with_callback(self):
-        resp = self.testapp.get('/rest/services/blw/MapServer', params={'callback': 'cb'}, status=200)
+        resp = self.testapp.get('/rest/services/blw/MapServer', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_metadata_chargeable_true(self):
@@ -83,8 +83,9 @@ class TestMapServiceView(TestsBase):
         self.testapp.get('/rest/services/ech/MapServer/dummylayer/legend', status=404)
 
     def test_legend_valid_with_callback(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/legend', params={'callback': 'cb'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/legend', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
+        resp.mustcontain('cb_(')
 
     def test_layersconfig_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/layersConfig', status=200)
@@ -123,8 +124,9 @@ class TestMapServiceView(TestsBase):
             self.assertIn('updateDelay', layer)
 
     def test_layersconfig_with_callback(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/layersConfig', params={'callback': 'cb'}, status=200)
-        self.assertTrue(resp.content_type == 'application/javascript')
+        resp = self.testapp.get('/rest/services/ech/MapServer/layersConfig', params={'callback': 'cb_'}, status=200)
+        self.assertEqual(resp.content_type, 'application/javascript')
+        resp.mustcontain('cb_(')
 
     def test_layersconfig_wrong_map(self):
         self.testapp.get('/rest/services/foo/MapServer/layersConfig', status=400)
