@@ -11,5 +11,5 @@ Terms of use
 ============
 
 .. note::
-    The GeoAdmin API terms of use are accessible here: `Terms of Use <http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/display_services/api_services/order_form.html>`_
+    The GeoAdmin API terms of use are accessible here: `Terms of Use <https://www.geo.admin.ch/de/geo-services/geo-services/portrayal-services-web-mapping/programming-interface-api/order_form.html>`_
 

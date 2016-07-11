@@ -9,7 +9,7 @@ API Quick start
 
 .. note::
 
-  The GeoAdmin API and all GeoAdmin services can be used in both HTTP and HTTPS contexts. Though most layers are freely accessible, a `swisstopo web access <http://www.swisstopo.admin.ch/internet/swisstopo/en/home/products/services/web_services/webaccess.html>`_ is required for some of them. For a list of all available layers and their accessibility please refer to the `FAQ <faq/index.html#which-layers-are-available>`_.
+  The GeoAdmin API and all GeoAdmin services can be used in both HTTP and HTTPS contexts. Though most layers are freely accessible, a `swisstopo web access <https://www.swisstopo.ch/webaccess>`_ is required for some of them. For a list of all available layers and their accessibility please refer to the `FAQ <faq/index.html#which-layers-are-available>`_.
 
 .. raw:: html
 

@@ -2366,7 +2366,7 @@ API & applications
 
 - Udpate documentation to include description of output parameters in services
 - Lubis tooltips and viewer now contains backlink to object in map
-- Add reverse geoconding on locations. Note: this service needs registering. `Read our terms <http://www.geo.admin.ch/internet/geoportal/de/home/services/geoservices/display_services/api_services/order_form.html>`__.
+- Add reverse geoconding on locations. Note: this service needs registering. `Read our terms <https://www.geo.admin.ch/de/geo-services/geo-services/portrayal-services-web-mapping/programming-interface-api/order_form.html>`__.
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/rel_140702...r_140717>`__
 
 `MAP <//map.geo.admin.ch>`__
