@@ -25,7 +25,7 @@ class MyRSS2(PyRSS2Gen.RSSItem):
         PyRSS2Gen.RSSItem.publish(self, handler)
 
     def publish_extensions(self, handler):
-        handler._out.write('<%s><![CDATA[%s]]></%s>' % ('description', self.do_not_autooutput_description, 'description'))
+        handler._write(u'<%s><![CDATA[%s]]></%s>' % ('description', self.do_not_autooutput_description, 'description'))
 
 
 def extract_releases(html):
