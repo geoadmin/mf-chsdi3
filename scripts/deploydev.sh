@@ -90,4 +90,6 @@ fi
 T="$(($(date +%s)-T))"
 
 printf "Deploy time: %02d:%02d:%02d\n" "$((T/3600%24))" "$((T/60%60))" "$((T%60))"
-printf "Snapshot timestamp: $SNAPSHOT\n"
+if [ $CREATE_SNAPSHOT == 'true' ]; then
+  printf "Snapshot timestamp: $SNAPSHOT\n"
+fi
