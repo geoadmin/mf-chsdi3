@@ -2168,6 +2168,18 @@ msgstr "Tage mit kurzzeitiger Verunreinigung"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw"
 msgstr "Jahr"
 
+msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor"
+msgstr "Diffuse Phosphoreinträge"
+
+msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor.phosphor"
+msgstr "Phosphor, aufsummierte Verluste [kg / ha * a]"
+
+msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff"
+msgstr "Diffuse Stickstoffeinträge"
+
+msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff.stickstoff"
+msgstr "Stickstoff, aufsummierte Verluste [kg / ha * a]"
+
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347"
 msgstr "ARA - Abwasserant. an Q347"
 
