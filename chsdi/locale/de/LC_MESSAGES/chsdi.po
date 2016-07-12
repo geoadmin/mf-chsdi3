@@ -5834,6 +5834,27 @@ msgstr "Territorialregionen"
 msgid "ch.vbs.url"
 msgstr "http://www.vbs.admin.ch/internet/vbs/de/home.html"
 
+msgid "ch.vbs.waldschadenkarte"
+msgstr "Waldschadenkarte - Projektil"
+
+msgid "ch.vbs.waldschadenkarte.gde_name"
+msgstr "Gemeinde"
+
+msgid "ch.vbs.waldschadenkarte.jahr_schad"
+msgstr "Schadenjahr"
+
+msgid "ch.vbs.waldschadenkarte.lauf_nr"
+msgstr "Schadennummer"
+
+msgid "ch.vbs.waldschadenkarte.lokalname"
+msgstr "Lokalname"
+
+msgid "ch.vbs.waldschadenkarte.x_koord"
+msgstr "OW"
+
+msgid "ch.vbs.waldschadenkarte.y_koord"
+msgstr "NS"
+
 msgid "ch_bafu_gee-kla.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
 
