@@ -1389,6 +1389,42 @@ msgstr ""
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw"
 msgstr ""
 
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_nitrat"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_nitrit"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_ammonium"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_doc"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_fische"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen"
+msgstr ""
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphat"
+msgstr ""
+
+msgid "gewaesserschutz_klasse"
+msgstr ""
+
+msgid "gewaesserschutz_gewaesser"
+msgstr ""
+
 msgid "ch.blw.emapis-wegebau"
 msgstr ""
 

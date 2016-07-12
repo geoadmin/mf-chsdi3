@@ -2168,6 +2168,36 @@ msgstr "Tage mit kurzzeitiger Verunreinigung"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw"
 msgstr "Jahr"
 
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen"
+msgstr "Diatoms"
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_fische"
+msgstr "Fish"
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten"
+msgstr "Macrophytes"
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos"
+msgstr "Macrozoobenthos"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_ammonium"
+msgstr "Ammonium"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_doc"
+msgstr "Dissolved Organic Carbon (DOC)"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_nitrat"
+msgstr "Nitrate"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_nitrit"
+msgstr "Nitrite"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphat"
+msgstr "Phosphate"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt"
+msgstr "Total Phosphorus"
+
 msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor"
 msgstr "Diffuse phosphorus inputs"
 
@@ -3081,34 +3111,34 @@ msgid "ch.bafu.showme-gemeinden_rutschungen"
 msgstr "ShowMe communes: landslides"
 
 msgid "ch.bafu.showme-gemeinden_sturzprozesse"
-msgstr "ShowMe communes: rockfall"
+msgstr "ShowMe communes: fall processes"
 
 msgid "ch.bafu.showme-kantone_hochwasser"
 msgstr "ShowMe cantons: floods"
 
 msgid "ch.bafu.showme-kantone_lawinen"
-msgstr "ShowMe cantons: avalanches"
+msgstr "ShowMe cantons : avalanches"
 
 msgid "ch.bafu.showme-kantone_rutschungen"
 msgstr "ShowMe cantons: landslides"
 
 msgid "ch.bafu.showme-kantone_sturzprozesse"
-msgstr "ShowMe cantons: rockfall"
+msgstr "ShowMe cantons: fall processes"
 
 msgid "ch.bafu.silvaprotect-hangmuren"
-msgstr "Landslide"
+msgstr "Landslide (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-lawinen"
-msgstr "Snow avalanches"
+msgstr "Snow avalanches (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-murgang"
-msgstr "Debris flow"
+msgstr "Debris flow (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-sturz"
-msgstr "Rockfall"
+msgstr "Rockfall (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-uebersarung"
-msgstr "Overbank sedimentation"
+msgstr "Overbank sedimentation (SilvaProtect-CH)"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesufer"
 msgstr "Strukturgüte Linkes Ufer"
@@ -6229,6 +6259,12 @@ msgstr "Waterbody name"
 
 msgid "gewaessername"
 msgstr "Waterbody name"
+
+msgid "gewaesserschutz_gewaesser"
+msgstr "Water course"
+
+msgid "gewaesserschutz_klasse"
+msgstr "Ecological state"
 
 msgid "gewissnr"
 msgstr "GEWISS number"

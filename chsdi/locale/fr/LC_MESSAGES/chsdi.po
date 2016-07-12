@@ -2168,6 +2168,36 @@ msgstr "Nombre de jours avec une pollution à court terme"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw"
 msgstr "Année"
 
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen"
+msgstr "Diatomées"
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_fische"
+msgstr "Poissons"
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten"
+msgstr "Macrophytes"
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos"
+msgstr "Macrozoobenthos"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_ammonium"
+msgstr "Ammonium"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_doc"
+msgstr "Carbone organique dissous (COD)"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_nitrat"
+msgstr "Nitrates"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_nitrit"
+msgstr "Nitrites"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphat"
+msgstr "Phosphates"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt"
+msgstr "Phosphore total"
+
 msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor"
 msgstr "Apports diffus de phosphore"
 
@@ -3081,7 +3111,7 @@ msgid "ch.bafu.showme-gemeinden_rutschungen"
 msgstr "ShowMe communes: glissements"
 
 msgid "ch.bafu.showme-gemeinden_sturzprozesse"
-msgstr "ShowMe communes: chutes"
+msgstr "ShowMe communes: processus de chute"
 
 msgid "ch.bafu.showme-kantone_hochwasser"
 msgstr "ShowMe cantons: crues"
@@ -3093,22 +3123,22 @@ msgid "ch.bafu.showme-kantone_rutschungen"
 msgstr "ShowMe cantons: glissements"
 
 msgid "ch.bafu.showme-kantone_sturzprozesse"
-msgstr "ShowMe cantons: chutes"
+msgstr "ShowMe cantons : processus de chute"
 
 msgid "ch.bafu.silvaprotect-hangmuren"
-msgstr "Coulées de boue"
+msgstr "Coulées de boue (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-lawinen"
-msgstr "Avalanches"
+msgstr "Avalanches (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-murgang"
-msgstr "Laves torrentielles"
+msgstr "Laves torrentielles (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-sturz"
-msgstr "Chutes de pierre"
+msgstr "Chutes de pierre (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-uebersarung"
-msgstr "Épandages d’alluvions"
+msgstr "Épandages d’alluvions (SilvaProtect-CH)"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesufer"
 msgstr "Qualité str. rive gauche"
@@ -6229,6 +6259,12 @@ msgstr "Nom du cours d’eau"
 
 msgid "gewaessername"
 msgstr "Nom du plan d’eau"
+
+msgid "gewaesserschutz_gewaesser"
+msgstr "Cours d'eau"
+
+msgid "gewaesserschutz_klasse"
+msgstr "Etat écologique"
 
 msgid "gewissnr"
 msgstr "Numéro GEWISS"

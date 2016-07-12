@@ -403,6 +403,83 @@ class Feststoffe_geschiebemessnetz(Base, Vector):
 register('ch.bafu.feststoffe-geschiebemessnetz', Feststoffe_geschiebemessnetz)
 
 
+class Nawa:
+    __table_args__ = ({'schema': 'wasser', 'autoload': False})
+    __template__ = 'templates/htmlpopup/nawa.mako'
+    __timeInstant__ = 'jahr'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    klasse_de = Column('klasse_de', Unicode)
+    klasse_fr = Column('klasse_fr', Unicode)
+    klasse_it = Column('klasse_it', Unicode)
+    klasse_en = Column('klasse_en', Unicode)
+    gewaesser = Column('gewaesser_', Unicode)
+    stelle_neu = Column('stelle_neu', Unicode)
+    jahr = Column('jahr', Integer)
+    kanton = Column('kanton', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class NawaNitrat(Base, Nawa, Vector):
+    __tablename__ = 'gewaesserschutz_nitrat'
+    __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_nitrat'
+
+
+class NawaNitrit(Base, Nawa, Vector):
+    __tablename__ = 'gewaesserschutz_nitrit'
+    __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_nitrit'
+
+
+class NawaAmmonium(Base, Nawa, Vector):
+    __tablename__ = 'gewaesserschutz_ammonium'
+    __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_ammonium'
+
+
+class NawaDoc(Base, Nawa, Vector):
+    __tablename__ = 'gewaesserschutz_doc'
+    __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_doc'
+
+
+class NawaPhosphorGesamt(Base, Nawa, Vector):
+    __tablename__ = 'gewaesserschutz_phosphor_gesamt'
+    __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt'
+
+
+class NawaFische(Base, Nawa, Vector):
+    __tablename__ = 'gewaesserschutz_fische'
+    __bodId__ = 'ch.bafu.gewaesserschutz-biologischer_zustand_fische'
+
+
+class NawaMakrozoobenthos(Base, Nawa, Vector):
+    __tablename__ = 'gewaessweschutz_makrozoobenthos'
+    __bodId__ = 'ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos'
+
+
+class NawaMakrophyten(Base, Nawa, Vector):
+    __tablename__ = 'gewaesserschutz_makrophyten'
+    __bodId__ = 'ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten'
+
+
+class NawaDiatomeen(Base, Nawa, Vector):
+    __tablename__ = 'gewaesserschutz_diatomeen'
+    __bodId__ = 'ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen'
+
+
+class NawaPhosphat(Base, Nawa, Vector):
+    __tablename__ = 'gewaesserschutz_phosphat'
+    __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_phosphat'
+
+register('ch.bafu.gewaesserschutz-chemischer_zustand_nitrat', NawaNitrat)
+register('ch.bafu.gewaesserschutz-chemischer_zustand_nitrit', NawaNitrit)
+register('ch.bafu.gewaesserschutz-chemischer_zustand_ammonium', NawaAmmonium)
+register('ch.bafu.gewaesserschutz-chemischer_zustand_doc', NawaDoc)
+register('ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt', NawaPhosphorGesamt)
+register('ch.bafu.gewaesserschutz-biologischer_zustand_fische', NawaFische)
+register('ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos', NawaMakrozoobenthos)
+register('ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten', NawaMakrophyten)
+register('ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen', NawaDiatomeen)
+register('ch.bafu.gewaesserschutz-chemischer_zustand_phosphat', NawaPhosphat)
+
+
 class Hydro_q347(Base, Vector):
     __tablename__ = 'hydro_q347'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})

@@ -2168,6 +2168,36 @@ msgstr "Tage mit kurzzeitiger Verunreinigung"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw"
 msgstr "Jahr"
 
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen"
+msgstr "Kieselalgen (Diatomeen)"
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_fische"
+msgstr "Fische"
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten"
+msgstr "Wasserpflanzen (Makrophyten)"
+
+msgid "ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos"
+msgstr "Makrozoobenthos"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_ammonium"
+msgstr "Ammonium"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_doc"
+msgstr "Gelöster organ. Kohlenstoff (DOC)"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_nitrat"
+msgstr "Nitrat"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_nitrit"
+msgstr "Nitrit"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphat"
+msgstr "Phosphat"
+
+msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt"
+msgstr "Gesamt-Phosphor"
+
 msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor"
 msgstr "Diffuse Phosphoreinträge"
 
@@ -3075,7 +3105,7 @@ msgid "ch.bafu.showme-gemeinden_hochwasser"
 msgstr "ShowMe Gemeinden: Hochwasser"
 
 msgid "ch.bafu.showme-gemeinden_lawinen"
-msgstr "ShowMe Gemeinden: Lawinen"
+msgstr "ShowMe Gemeinden : Lawinen"
 
 msgid "ch.bafu.showme-gemeinden_rutschungen"
 msgstr "ShowMe Gemeinden: Rutschungen"
@@ -3096,19 +3126,19 @@ msgid "ch.bafu.showme-kantone_sturzprozesse"
 msgstr "ShowMe Kantone: Sturzprozesse"
 
 msgid "ch.bafu.silvaprotect-hangmuren"
-msgstr "Hangmuren"
+msgstr "Hangmuren (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-lawinen"
-msgstr "Lawinen"
+msgstr "Lawinen (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-murgang"
-msgstr "Murgang"
+msgstr "Murgang (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-sturz"
-msgstr "Sturz"
+msgstr "Sturz (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-uebersarung"
-msgstr "Übersarung"
+msgstr "Übersarung (SilvaProtect-CH)"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesufer"
 msgstr "Strukturgüte Linkes Ufer"
@@ -6229,6 +6259,12 @@ msgstr "Gewässername"
 
 msgid "gewaessername"
 msgstr "Gewässername"
+
+msgid "gewaesserschutz_gewaesser"
+msgstr "Gewässerlauf"
+
+msgid "gewaesserschutz_klasse"
+msgstr "Ökologischer Zustand"
 
 msgid "gewissnr"
 msgstr "GEWISS-Nummer"
