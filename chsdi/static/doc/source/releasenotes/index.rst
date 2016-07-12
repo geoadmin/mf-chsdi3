@@ -61,6 +61,10 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Waldschadenkarte - Projektil <//map.geo.admin.ch/?layers=ch.vbs.waldschadenkarte>`__ (ch.vbs.waldschadenkarte)                                                               |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Diffuse phosphorus inputs <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor>`__ (ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor)            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Diffuse nitrogen inputs <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff>`__ (ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff)          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20160629:
