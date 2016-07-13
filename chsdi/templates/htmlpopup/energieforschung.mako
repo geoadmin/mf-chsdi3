@@ -176,22 +176,22 @@ date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "
 <div class="thumbnail-container">
 % if c['attributes']['bild0']:
   <div class="thumbnail">
-    <a href="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energieforschung/${c['attributes']['bild0']}.jpeg">
-      <img class="image" src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energieforschung/${c['attributes']['bild0']}.jpeg" alt=""/>
+    <a href="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energieforschung/${c['attributes']['bild0']}.jpg">
+      <img class="image" src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energieforschung/${c['attributes']['bild0']}.jpg" alt=""/>
     </a>
   </div>
 % endif
 % if c['attributes']['bild1']:
   <div class="thumbnail">
-    <a href="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energieforschung/${c['attributes']['bild1']}.jpeg">
-      <img class="image" src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energieforschung/${c['attributes']['bild1']}.jpeg" alt=""/>
+    <a href="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energieforschung/${c['attributes']['bild1']}.jpg">
+      <img class="image" src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energieforschung/${c['attributes']['bild1']}.jpg" alt=""/>
     </a>
   </div>
 % endif
 % if c['attributes']['bild2']:
   <div class="thumbnail">
-    <a href="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energieforschung/${c['attributes']['bild2']}.jpeg">
-      <img class="image" src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energieforschung/${c['attributes']['bild2']}.jpeg" alt=""/>
+    <a href="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energieforschung/${c['attributes']['bild2']}.jpg">
+      <img class="image" src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.energieforschung/${c['attributes']['bild2']}.jpg" alt=""/>
     </a>
   </div>
 % endif
