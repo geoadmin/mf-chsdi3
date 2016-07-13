@@ -95,7 +95,9 @@ class LayersConfig(Base):
     def layerConfig(self, params):
         config = {}
         translate = params.translate
-        wmsHost = params.request.registry.settings['wmshost']
+        settings = params.request.registry.settings
+        geodataStaging = settings['geodata_staging']
+        wmsHost = settings['wmshost']
         for k in self.__dict__.keys():
             val = self.__dict__[k]
             if not k.startswith("_") and not k.startswith('geojsonUrl') and \
@@ -114,12 +116,11 @@ class LayersConfig(Base):
                 else:
                     config[k] = val
 
-        layerStaging = self.__dict__['staging']
         if config['type'] in ('wmts', 'aggregate', 'geojson'):
             del config['singleTile']
 
         if config['type'] == 'wms':
-            if layerStaging != 'prod':
+            if geodataStaging != 'prod':
                 config['wmsUrl'] = make_agnostic(
                     config['wmsUrl'].replace('wms.geo.admin.ch', wmsHost))
         elif config['type'] == 'geojson':
