@@ -189,7 +189,7 @@ class TestMapproxyGetTile(TestVarnish):
 
         payload = {'_id': self.hash()}
 
-        resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20111206/3857/13/4265/2883.jpeg', params=payload)
+        resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload)
 
         self.assertEqual(resp.status_code, 403)
 
@@ -198,7 +198,7 @@ class TestMapproxyGetTile(TestVarnish):
         payload = {'_id': self.hash()}
         headers = {'referer': 'http://gooffy-referer.ch'}
 
-        resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20111206/3857/13/4265/2883.jpeg', params=payload, headers=headers)
+        resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload, headers=headers)
 
         self.assertEqual(resp.status_code, 403)
 
@@ -207,7 +207,7 @@ class TestMapproxyGetTile(TestVarnish):
         payload = {'_id': self.hash()}
         headers = {'referer': 'http://unittest.geo.admin.ch'}
 
-        resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20111206/3857/13/4265/2883.jpeg', params=payload, headers=headers)
+        resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload, headers=headers)
 
         self.assertEqual(resp.status_code, 200)
 
