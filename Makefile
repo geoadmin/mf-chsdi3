@@ -88,6 +88,8 @@ help:
 	@echo "- deploydev          Deploys master to dev (SNAPSHOT=true to also create a snapshot)"
 	@echo "- deployint          Deploys a snapshot to integration (SNAPSHOT=201512021146)"
 	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"
+	@echo "- deployintnoprint   Deploys a snapshot to integration without print and profile"
+	@echo "- deployprodnoprint  Deploys a snapshot to production without print and profile"
 	@echo "- clean              Remove generated files"
 	@echo "- cleanall           Remove all the build artefacts"
 	@echo
@@ -274,9 +276,17 @@ deploydev:
 deployint:
 	scripts/deploysnapshot.sh $(SNAPSHOT) int $(NO_TESTS) $(DEPLOYCONFIG)
 
+.PHONY: deployintnoprint
+deployintnoprint:
+	scripts/deploysnapshot.sh $(SNAPSHOT) int_no_print $(NO_TESTS) $(DEPLOYCONFIG)
+
 .PHONY: deployprod
 deployprod:
 	scripts/deploysnapshot.sh $(SNAPSHOT) prod $(NO_TESTS) $(DEPLOYCONFIG)
+
+.PHONY: deployprodnoprint
+deployprodnoprint:
+	scripts/deploysnapshot.sh $(SNAPSHOT) prod_no_print $(NO_TESTS) $(DEPLOYCONFIG)
 
 .PHONY: deploydemo
 deploydemo:

@@ -84,9 +84,17 @@ desired target. For integration, do
 
 `make deployint SNAPSHOT=201512011411`
 
+the same deploy command is available to ommit the update on the print and profile instances using:
+
+`make deployintnoprint SNAPSHOT=201512011411`
+
 This will run the full nose tests **from inside the 201512011411 snapshot directory** against the **integration db cluster**. Only if these tests are successfull, the snapshot is deployed to the integration cluster.
 
 `make deployprod SNAPSHOT=201512011411`
+
+the same deploy command is available to ommit the update on the print and profile instances using:
+
+`make deployprodnoprint SNAPSHOT=201512011411`
 
 This will do the corresponding thing for prod (tests will be run **against prod backends**)
 The same is valid for demo too:
