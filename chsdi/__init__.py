@@ -9,7 +9,6 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from chsdi.renderers import EsriJSON, CSVRenderer
 from chsdi.models import initialize_sql
 from papyrus.renderers import GeoJSON
-from chsdi.lib.raster.georaster import init_rasterfiles
 
 
 def db(request):
@@ -30,9 +29,6 @@ def main(global_config, **settings):
     settings['app_version'] = app_version
     config = Configurator(settings=settings)
     config.include('pyramid_mako')
-
-    # init raster files for height/profile and preload COMB file
-    init_rasterfiles(settings.get('dtm_base_path'), ['COMB'])
 
     # configure 'locale' dir as the translation dir for chsdi app
     config.add_translation_dirs('chsdi:locale/')
@@ -76,9 +72,6 @@ def main(global_config, **settings):
     config.add_route('extendedHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/extendedHtmlPopup')
     config.add_route('search', '/rest/services/{map}/SearchServer')
     config.add_route('wmtscapabilities', '/rest/services/{map}/1.0.0/WMTSCapabilities.xml')
-    config.add_route('profile_json', '/rest/services/profile.json')
-    config.add_route('profile_csv', '/rest/services/profile.csv')
-    config.add_route('height', '/rest/services/height')
     config.add_route('feedback', '/feedback')
     config.add_route('owschecker_bykvp', '/owschecker/bykvp')
     config.add_route('owschecker_form', '/owschecker/form')
