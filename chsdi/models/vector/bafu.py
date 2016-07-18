@@ -626,9 +626,11 @@ class LHG(Base, Vector):
     __bodId__ = 'ch.bafu.hydrologie-hydromessstationen'
     __template__ = 'templates/htmlpopup/hydromessstationen.mako'
     __label__ = 'lhg_name'
+    __returnedGeometry__ = 'the_geom_highlight'
     id = Column('edv_nr4', Integer, primary_key=True)
     lhg_name = Column('lhg_name', Text)
     the_geom = Column(Geometry2D)
+    the_geom_highlight = Column('the_geom_highlight', Geometry2D)
 
 register('ch.bafu.hydrologie-hydromessstationen', LHG)
 
