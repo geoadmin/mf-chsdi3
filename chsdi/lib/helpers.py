@@ -362,12 +362,6 @@ def int_with_apostrophe(x):
     return "%d%s" % (x, result)
 
 
-def filter_alt(alt):
-    if alt is not None and alt > 0.0:
-        # 10cm accuracy is enough for altitudes
-        return round(alt, 1)
-
-
 def get_loaderjs_url(request):
     return make_agnostic(route_url('ga_api', request))
 
