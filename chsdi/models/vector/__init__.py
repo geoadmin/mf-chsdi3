@@ -5,8 +5,8 @@ import geojson
 import datetime
 import decimal
 from sys import maxsize
-import pyramid.httpexceptions as exc
 from pyramid.threadlocal import get_current_registry
+from chsdi.lib.exceptions import HTTPBandwidthLimited
 from shapely.geometry import asShape
 from shapely.geometry import box
 from sqlalchemy.sql import func
@@ -50,11 +50,6 @@ def getToleranceMeters(imageDisplay, mapExtent, tolerance):
     return 0.0
 
 
-class HTTPBandwidtLimited(exc.HTTPServerError):
-    code = 509
-    title = 'Bandwidth Limit Exceeded'
-
-
 class Vector(GeoInterface):
     __minscale__ = 0
     __maxscale__ = maxsize
@@ -80,7 +75,7 @@ class Vector(GeoInterface):
                         geom = self._shape
                     elif val is not None:
                         if len(val.data) > 1000000:
-                            raise HTTPBandwidtLimited('Feature ID %s: is too large' % self.id)
+                            raise HTTPBandwidthLimited('Feature ID %s: is too large' % self.id)
                         geom = to_shape(val)
                 elif not col.foreign_keys and not isinstance(col.type, Geometry):
                     properties[p.key] = val

@@ -136,7 +136,7 @@ class LayersChecker(object):
         assert featureId is not None, 'No feature was found in table %s for layer %s' % (
             schema + '.' + model.__tablename__, layerId)
         pythonType = primaryKeyColumn.type.python_type
-        assert type(featureId) == pythonType, 'Expected %s; Got: %s; For layer %s and GeoTable %s' % (
+        assert isinstance(featureId, pythonType), 'Expected %s; Got: %s; For layer %s and GeoTable %s' % (
             pythonType, type(featureId), layerId, schema + '.' + model.__tablename__)
 
 

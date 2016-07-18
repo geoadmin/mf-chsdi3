@@ -24,6 +24,7 @@ from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.validation.identify import IdentifyServiceValidation
 from chsdi.lib.validation.geometryservice import GeometryServiceValidation
 from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d
+from chsdi.lib.exceptions import HTTPBandwidthLimited
 from chsdi.lib.filters import full_text_search
 from chsdi.models.clientdata_dynamodb import get_bucket
 from chsdi.models import (
@@ -707,7 +708,10 @@ def _process_feature(feature, params):
             f = feature.__esrijson_interface__
         return f
 
-    if params.returnGeometry and not has_long_geometry(feature):
+    if has_long_geometry(feature):
+        raise HTTPBandwidthLimited('Feature ID %s: is too large' % feature.id)
+
+    if params.returnGeometry:
         # Filter out this layer individually, disregarding of the global returnGeometry
         # setting
         if not params.varnish_authorized and \
