@@ -11,10 +11,10 @@ class TestWmtsGetTileAuth(TestsBase):
         super(TestWmtsGetTileAuth, self).setUp()
         self.mp = MapProxyTestsBase()
         self.mp.setUp()
-        self.paths = ['/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20151231/3857/7/67/45.jpeg',
-                      '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20151231/2056/17/5/6.jpeg',
-                      '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20151231/4258/10/6/4.jpeg',
-                      '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20151231/4326/12/132/180.jpeg']
+        self.paths = ['/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/7/67/45.jpeg',
+                      '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/2056/17/5/6.jpeg',
+                      '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/4258/10/6/4.jpeg',
+                      '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/4326/12/132/180.jpeg']
 
     def tearDown(self):
         self.mp.tearDown()
