@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from pyramid.view import view_config
-from pyramid.httpexceptions import HTTPNotFound
 import networkx as nx
 from itertools import chain
-from pyramid.httpexceptions import HTTPInternalServerError
+from pyramid.httpexceptions import HTTPInternalServerError, HTTPNotFound
 
 from chsdi.models.bod import Catalog
 from chsdi.lib.validation import MapNameValidation
@@ -58,7 +57,8 @@ def tree_data(G, root, attrs, meta):
     return data
 
 
-def initialize_graph(G, rows, lang, stage):
+def initialize_graph(G, rows, lang):
+    root_id = None
     meta = {}
     for r in rows:
         node_parent_id = getattr(r, 'parentId')
@@ -66,14 +66,16 @@ def initialize_graph(G, rows, lang, stage):
         if node_id not in meta:
             meta[node_id] = r.to_dict(lang)
         G.add_edge(node_parent_id, node_id)
-        if not node_parent_id:
+        if getattr(r, 'category') == 'root':
             root_id = node_id
+    if root_id is None:
+        raise HTTPInternalServerError('%s is missing root_id!' % r.topic)
     return G, meta, root_id
 
 
-def create_digraph(rows, lang, stage):
+def create_digraph(rows, lang):
     G = nx.DiGraph()
-    graph, meta, root_id = initialize_graph(G, rows, lang, stage)
+    graph, meta, root_id = initialize_graph(G, rows, lang)
     edge_list = list(nx.bfs_edges(graph, root_id))
     G = nx.DiGraph(edge_list)
     return G, meta, root_id
@@ -91,9 +93,6 @@ class CatalogService(MapNameValidation):
     @view_config(route_name='catalog', renderer='jsonp')
     def catalog(self):
         model = Catalog
-        # The root of topic 'dev' has dev staging
-        if (self.mapName.lower() == 'dev'):
-            raise HTTPInternalServerError('Topic dev is not in prod')
         query = self.request.db.query(model)\
             .filter(model.topic.like('%%%s%%' % self.mapName.lower()))\
             .order_by(model.orderKey)\
@@ -103,7 +102,7 @@ class CatalogService(MapNameValidation):
             raise HTTPNotFound('No catalog with id %s is available' % self.mapName)
         lang = self.lang
 
-        G, meta, root_id = create_digraph(rows, lang, self.staging)
+        G, meta, root_id = create_digraph(rows, lang)
 
         if len(rows) != len(G.nodes()):
             raise HTTPInternalServerError('Catalog tree for topic %s has unconnected leaves' % self.mapName)

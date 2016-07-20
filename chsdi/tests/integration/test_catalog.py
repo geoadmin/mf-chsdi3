@@ -4,22 +4,24 @@ from chsdi.tests.integration import TestsBase
 from chsdi.models.bod import Catalog
 from sqlalchemy.orm import scoped_session, sessionmaker
 from chsdi.views.catalog import create_digraph
+from chsdi.lib.filters import filter_by_geodata_staging
 
 
 class TestCatalogService(TestsBase):
 
     def test_nodes_connection(self):
         try:
+            geodata_staging = self.testapp.app.registry.settings['geodata_staging']
             session = scoped_session(sessionmaker())
             topics = self.testapp.get('/rest/services', status=200)
             for t in topics.json['topics']:
                 topic = t.get('id')
                 query = session.query(Catalog).filter(Catalog.topic == topic)\
-                    .filter(Catalog.staging == 'prod')\
                     .order_by(Catalog.orderKey)
+                query = filter_by_geodata_staging(query, Catalog.staging, geodata_staging)
                 rows = query.all()
                 if (rows):
-                    graph, meta, root_id = create_digraph(rows, 'fr', 'prod')
+                    graph, meta, root_id = create_digraph(rows, 'fr')
                     nodes = graph.nodes()
                     if len(nodes) != len(rows):
                         for row in rows:
@@ -46,9 +48,6 @@ class TestCatalogService(TestsBase):
 
     def test_catalog_wrong_map(self):
         self.testapp.get('/rest/services/foo/CatalogServer', status=400)
-
-    def test_catalog_topic_dev(self):
-        self.testapp.get('/rest/services/dev/CatalogServer', status=500)
 
     def test_catalog_ordering(self):
         resp = self.testapp.get('/rest/services/inspire/CatalogServer', params={'lang': 'en'}, status=200)
