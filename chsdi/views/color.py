@@ -1,15 +1,18 @@
 # -*- coding: utf-8 -*-
 
 import os.path
-import Image
 import StringIO
 
+from chsdi.lib.decorators import requires_authorization
+
+from PIL import Image
 from pyramid.httpexceptions import HTTPBadRequest
 from pyramid.view import view_config
 from pyramid.response import Response
 
 
 @view_config(route_name='color')
+@requires_authorization()
 def get_image_colored(request):
     r = request.matchdict['r']
     if r.isdigit() is False:
@@ -18,17 +21,17 @@ def get_image_colored(request):
     if g.isdigit() is False:
         raise HTTPBadRequest('The green channel must be an integer.')
     b = request.matchdict['b']
-    if g.isdigit() is False:
+    if b.isdigit() is False:
         raise HTTPBadRequest('The blue channel must be an integer.')
     r = int(r)
     g = int(g)
     b = int(b)
     imgName = request.matchdict['image']
-    if imgName is None:
-        raise HTTPBadRequest('The image to color must be defined')
+    path = os.path.join(request.registry.settings['install_directory'], 'chsdi/static/images/maki/', imgName)
+    if not os.path.isfile(path):
+        raise HTTPBadRequest('The image to color doesn\'t exist')
 
-    mask = Image.open(os.path.join(request.registry.settings['install_directory'], 'chsdi/static/images/maki/', imgName))
-
+    mask = Image.open(path)
     # This auto conversion gives really bad results
     if mask.mode == 'P':
         mask = mask.convert('RGBA')
