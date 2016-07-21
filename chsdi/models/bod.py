@@ -394,8 +394,6 @@ class Catalog(Base):
     nameEn = Column('name_en', Text)
     orderKey = Column('order_key', Integer)
     selectedOpen = Column('selected_open', Boolean)
-    path = Column('path', Text)
-    depth = Column('depth', Integer)
     staging = Column('staging', Text)
 
     def to_dict(self, lang):

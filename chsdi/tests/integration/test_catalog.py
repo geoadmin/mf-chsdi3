@@ -1,9 +1,35 @@
 # -*- coding: utf-8 -*-
 
 from chsdi.tests.integration import TestsBase
+from chsdi.models.bod import Catalog
+from sqlalchemy.orm import scoped_session, sessionmaker
+from chsdi.views.catalog import create_digraph
+from chsdi.lib.filters import filter_by_geodata_staging
 
 
 class TestCatalogService(TestsBase):
+
+    def test_nodes_connection(self):
+        try:
+            geodata_staging = self.testapp.app.registry.settings['geodata_staging']
+            session = scoped_session(sessionmaker())
+            topics = self.testapp.get('/rest/services', status=200)
+            for t in topics.json['topics']:
+                topic = t.get('id')
+                query = session.query(Catalog).filter(Catalog.topic == topic)\
+                    .order_by(Catalog.orderKey)
+                query = filter_by_geodata_staging(query, Catalog.staging, geodata_staging)
+                rows = query.all()
+                if (rows):
+                    graph, meta, root_id = create_digraph(rows, 'fr')
+                    nodes = graph.nodes()
+                    if len(nodes) != len(rows):
+                        for row in rows:
+                            if row.id not in nodes:
+                                raise Exception('%s %ss is unconnected leaf' % (row.category, row.layerBodId))
+        finally:
+            if session:
+                session.close()
 
     def test_catalog_no_params(self):
         resp = self.testapp.get('/rest/services/blw/CatalogServer', status=200)
@@ -34,6 +60,10 @@ class TestCatalogService(TestsBase):
             link = '/rest/services/ech/CatalogServer?lang=' + lang
             resp = self.testapp.get(link)
             self.assertEqual(resp.status_int, 200, link)
+
+    def test_layersconfig_with_callback(self):
+        resp = self.testapp.get('/rest/services/blw/MapServer/layersConfig', params={'callback': 'cb'}, status=200)
+        self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_all_catalogs(self):
 
