@@ -3,7 +3,6 @@
 # Each time that this script is executed, this script does the following: 
 # - One commit is done for the copy of the files at production phase
 # - One commit is done for the copy of the same files at integration phase
-# - The output github link shows the differences between production-integration phase for each file
 
 set -e
 
@@ -13,30 +12,29 @@ red=`tput setaf 1`
 reset=`tput sgr0`
 background=`tput setab 7`
 
-# **************************** !!IMPORTANT!! *************************************
-# THE FIRST TIME BEFORE EXECUTING THE SCRIPT :
-# (re-)initialize Git repository & clone the <prod_vs_int_review> branch of the db project from github
-# git init
-# git clone -b prod_vs_int_review --single-branch git@github.com:geoadmin/db.git 
-# ********************************************************************************
-
 # If permission is denied when executing the bash script, do: chmod u+x <name>
 # At the <prod_vs_int_preview> branch all the changes are commited between the different phases (production - integration phases)
 # for different dates (a history of changes between the different phases is being kept)
 
-git stash
-git init
+
+oldpwd=$(pwd)
+tempdir=/tmp/$(date +%s)
+
+if [ ! -d ${tempdir} ]; then
+  mkdir -p ${tempdir}
+fi
+
+cd ${tempdir}
+# A disconnected git branch has a parent that is not related to your project history.
 git clone --no-checkout git@github.com:geoadmin/db.git
 
-cd ../db
-git checkout --orphan prod_vs_int
+cd db
+git checkout --orphan prod_vs_int_review
+# At this point there are no commit sbut lots of files from whatever branch you were on.
+# Have git remove those files
+git rm -rf .
 mkdir prod_vs_int_review
 cd prod_vs_int_review
-
-# Now we are inside geoadmin/db and here the script is executable 
-# mkdir -p prod_vs_int_review 
-#cd prod_vs_int_review
-#dir=`mktemp -d` && cd $dir
 
 # Date and time of executing the script
 now=$(date +%Y-%m-%d--%H:%M:%S)
@@ -79,8 +77,6 @@ for json in $jsons
 do
   # split string to take fisrt and last field
   wget $prodDomain${json%|*} -O ${json##*|}
-  #echo $prodDomain${json%|*}
-  #echo ${json##*|}
   # each json is one line, so here it is being separated at commas to be comparable
   perl -pi -e 's/,/,\n/g' ${json##*|}  
   NUMOFLINES=$[$NUMOFLINES+$(wc -l < ${json##*|})]
@@ -134,13 +130,10 @@ echo "${background}${black}Git-commit at integration phase${reset}"
 git commit -m "Integration $now"
 echo "${background}${black}Current Git-status${reset}"
 git status
-echo "${background}${black}The differences are:${reset}"
-
-git show
+cd ${oldpwd}
+# git show
 # Id number of the last commit
 #var=$(git log -1 --pretty=format:%H)
-
 #echo "${background}${black}Check the differences between the two phases at ${red}https://github.com/geoadmin/bod/commit/$var ${reset}"
-
-cd ../mf-chsdi3/ 
-git stash apply stash@{0}
+echo "${background}${black}Please go to ${tempdir}/db/prod_vs_int_review${reset}"
+echo "${background}${black}And then there you can push the new branch to origin and check the differences between commits at github${reset}"
