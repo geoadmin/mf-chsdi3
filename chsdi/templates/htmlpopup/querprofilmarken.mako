@@ -64,7 +64,7 @@
 <td>${c['attributes']['herkunft'] or '-'}</td>
 </tr>
 <tr>
-<th class="cell-left">${_('ch_bafu_wasserbau_vermessungsstrecken.bemerkung')}</th>
+<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.bemerkung')}</th>
 <td>${c['attributes']['bemerkung'] or '-'}</td>
 </tr>
 </table>
