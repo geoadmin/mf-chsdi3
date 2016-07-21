@@ -11,7 +11,8 @@ from chsdi.lib.sqlalchemy_customs import remove_accents
 from chsdi.lib.filters import filter_by_geodata_staging
 
 
-# https://github.com/networkx/networkx/blob/master/networkx/readwrite/json_graph/tree.py#L16
+# Custom networkx like function
+# Inspired by https://github.com/networkx/networkx/blob/master/networkx/readwrite/json_graph/tree.py#L16
 def tree_data(G, root, attrs, meta):
     if G.number_of_nodes() != G.number_of_edges() + 1:
         raise TypeError("G is not a tree.")
