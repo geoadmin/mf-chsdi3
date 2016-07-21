@@ -209,9 +209,10 @@ class Vector(GeoInterface):
     by selected clients only.
     '''
     @classmethod
-    def order_by_distance(cls, geometry, geometryType, imageDisplay, mapExtent, tolerance):
+    def order_by_distance(cls, geometry, geometryType, imageDisplay, mapExtent, tolerance, limit):
         toleranceMeters = getToleranceMeters(imageDisplay, mapExtent, tolerance)
-        if toleranceMeters <= 250.0:
+        # If limit is equal to 1 we have to be accurate
+        if toleranceMeters <= 250.0 or limit == 1:
             geom = esriRest2Shapely(geometry)
             wkbGeometry = WKBElement(buffer(geom.wkb), 21781)
             geomColumn = cls.geometry_column()

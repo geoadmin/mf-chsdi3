@@ -469,6 +469,10 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
     a feature. '''
     for layer in layerBodIds:
         layerBodId, models = next(layer.iteritems())
+        # Determine the limit
+        limits = [x for x in [maxFeatures, params.limit] if x is not None]
+        flimit = min(limits) if len(limits) > 0 else None
+
         if where is not None:
             vectorLayer = []
             for model in models:
@@ -506,7 +510,8 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                             params.geometryType,
                             params.imageDisplay,
                             params.mapExtent,
-                            params.tolerance
+                            params.tolerance,
+                            flimit
                         )
                     query = query.order_by(ordering) if ordering is not None else query
                     query = query.filter(geomFilter)
@@ -521,8 +526,6 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                         timeInstantColumn == timeInstant)
 
             # Add limit
-            limits = [x for x in [maxFeatures, params.limit] if x is not None]
-            flimit = min(limits) if len(limits) > 0 else None
             query = query.limit(flimit) if flimit is not None else query
 
             # Add offset
