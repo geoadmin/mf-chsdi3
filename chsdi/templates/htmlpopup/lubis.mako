@@ -121,12 +121,6 @@ viewer_url = get_viewer_url(request, params)
 </tr>
 % endif
 
-% if 'contact_web' not in c['attributes']:
-<tr>
-  <th class="cell-left">${_('link')} Toposhop</th>
-  <td><a href="http://www.toposhop.admin.ch/${lang}/shop/satair/lubis_1?ext=1&pics=${c['featureId']},${imgtype},${c['attributes']['ort'] | trim},${c['attributes']['x']},${c['attributes']['y']},${toposhopscan}" target="toposhop">Toposhop</a></td>
-</tr>
-% endif
 % if 'contact_web' in c['attributes']:
 <tr>
   <th class="cell-left">${_('tt_lubis_bildorder')}</th>
@@ -222,7 +216,8 @@ viewer_url = get_viewer_url(request, params)
 % if 'contact_web' not in c['attributes']:
   <tr class="chsdi-no-print">
     <th class="cell-left">${_('link')} Toposhop</th>
-    <td><a href="http://www.toposhop.admin.ch/${lang}/shop/satair/lubis_1?ext=1&pics=${c['featureId']},${imgtype},${c['attributes']['ort'] | trim},${c['attributes']['x']},${c['attributes']['y']},${toposhopscan}" target="toposhop">Toposhop</a></td>
+    <td><a href="https://shop.swisstopo.admin.ch/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
+    target="toposhop">Toposhop</a></td>
   </tr>
 % endif
 % if 'contact_web' in c['attributes']:
