@@ -45,6 +45,8 @@ def tree_data(G, root, attrs, meta):
             c = add_children(child, G)
             if c:
                 d[children] = c
+            elif d['category'] != 'layer':
+                d[children] = []
             children_.append(d)
             if ('orderKey' in d):
                 order_key = lambda x: x['orderKey']
