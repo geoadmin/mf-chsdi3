@@ -15,6 +15,41 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20160803:
+
+Release 20160803 - Wednesday, August 3rd 2016
+---------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160713...r_160803>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160713...r_160803>`__
+
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Waldschadenkarten Projektil <//map.geo.admin.ch/?layers=ch.vbs.waldschadenkarte>`__ (ch.vbs.waldschadenkarte)                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas of Switzerland 1:25000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydrological gauging stations <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-hydromessstationen>`__ (ch.bafu.hydrologie-hydromessstationen)                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cant. routes for exceptional loads <//map.geo.admin.ch/?layers=ch.astra.ausnahmetransportrouten>`__ (ch.astra.ausnahmetransportrouten)                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Broadband maps <//map.geo.admin.ch/?topic=nga>`__ (Broadband Maps)                                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20160713:
 
 Release 20160713 - Wednesday, July 13th 2016
