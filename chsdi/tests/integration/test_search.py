@@ -124,7 +124,7 @@ class TestSearchServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'seftigenstrasse', 'type': 'locations'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         results_addresses = filter(lambda x: x if x['attrs']['origin'] == 'address' else False, resp.json['results'])
-        self.assertTrue(len(results_addresses) <= 50)
+        self.assertLessEqual(len(results_addresses), 50)
 
     def test_search_locations_no_geometry(self):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'seftigenstrasse 264', 'type': 'locations', 'returnGeometry': 'false'}, status=200)
@@ -157,6 +157,12 @@ class TestSearchServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': '4331', 'type': 'featuresearch', 'features': 'ch.bafu.hydrologie-gewaesserzustandsmessstationen'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
 
+    def test_search_features_searchtext_limit(self):
+        params = {'searchText': '43', 'type': 'featuresearch', 'features': 'ch.bafu.hydrologie-gewaesserzustandsmessstationen', 'limit': '1'}
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(len(resp.json['results']), 1)
+
     def test_search_locations_not_authorized(self):
         self.testapp.extra_environ = {'HTTP_X_SEARCHSERVER_AUTHORIZED': 'false'}
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'Beaulieustrasse 2', 'type': 'locations'}, status=200)
@@ -165,7 +171,7 @@ class TestSearchServiceView(TestsBase):
 
     def test_search_locations_escape_charachters(self):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'Biel/Bienne', 'type': 'locations'}, status=200)
-        self.assertTrue(len(resp.json['results']) > 0)
+        self.assertGreater(len(resp.json['results']), 0)
 
     def test_search_locations_authorized(self):
         self.testapp.extra_environ = {'HTTP_X_SEARCHSERVER_AUTHORIZED': 'true'}
@@ -223,7 +229,7 @@ class TestSearchServiceView(TestsBase):
         params = {'type': 'locations', 'bbox': '664126,268543,664126,268543'}
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertTrue(len(resp.json['results']) > 1)
+        self.assertGreater(len(resp.json['results']), 1)
 
     def test_search_locations_noparams(self):
         params = {'type': 'locations'}
@@ -317,12 +323,12 @@ class TestSearchServiceView(TestsBase):
         # Standard results
         params = {'searchText': 'brigmat', 'type': 'locations', 'lang': 'de'}
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
-        self.assertTrue(len(resp.json['results']) > 0)
+        self.assertGreater(len(resp.json['results']), 0)
         self.assertTrue(not hasattr(resp.json, 'fuzzy'))
         # Fuzzy results
         params = {'searchText': 'birgma', 'type': 'locations', 'lang': 'de'}
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
-        self.assertTrue(len(resp.json['results']) > 0)
+        self.assertGreater(len(resp.json['results']), 0)
         self.assertTrue(resp.json['fuzzy'] == 'true')
         # No results
         params = {'searchText': 'birgmasdfasdfa', 'type': 'locations', 'lang': 'de'}
@@ -332,9 +338,9 @@ class TestSearchServiceView(TestsBase):
         # type : 'locations_preview'
         params = {'searchText': 'Bettingen', 'type': 'locations_preview'}
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
-        self.assertTrue(len(resp.json['results']) > 0)
+        self.assertGreater(len(resp.json['results']), 0)
         # Fuzzy results for locations_preview
         params = {'searchText': 'birgma', 'type': 'locations_preview', 'lang': 'de'}
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
-        self.assertTrue(len(resp.json['results']) > 0)
+        self.assertGreater(len(resp.json['results']), 0)
         self.assertEqual(resp.json['fuzzy'], 'true')

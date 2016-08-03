@@ -215,7 +215,7 @@ class Search(SearchValidation):
         if self.featureIndexes is None:
             # we need bounding box and layernames. FIXME: this should be error
             return
-        featureLimit = self.limit if self.limit and self.limit <= self.FEAUTRE_LIMIT else self.FEATURE_LIMIT
+        featureLimit = self.limit if self.limit and self.limit <= self.FEATURE_LIMIT else self.FEATURE_LIMIT
         self.sphinx.SetLimits(0, featureLimit)
         self.sphinx.SetRankingMode(sphinxapi.SPH_RANK_WORDCOUNT)
         if self.bbox:
