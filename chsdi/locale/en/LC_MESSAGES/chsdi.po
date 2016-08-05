@@ -1371,7 +1371,7 @@ msgid "ch.are.reisezeit-miv"
 msgstr "Time of travel IMT 2005"
 
 msgid "ch.are.reisezeit-oev"
-msgstr "Reisezeit zu Zentren ÖV"
+msgstr "Public transport travel time"
 
 msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=en"
@@ -1980,7 +1980,7 @@ msgid "ch.bafu.fauna-wildtierkorridor_national"
 msgstr "Interregional wildlife corridor"
 
 msgid "ch.bafu.feststoffe-geschiebemessnetz"
-msgstr "SOLID Bund, Geschiebe"
+msgstr "Total bedload database (CH)"
 
 msgid "ch.bafu.feststoffe-geschiebemessnetz.amt"
 msgstr "Amt"
@@ -2076,7 +2076,7 @@ msgid "ch.bafu.gefahren-spektral"
 msgstr "Spectral micro-zoning"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet"
-msgstr "Badegewässerqualität"
+msgstr "Bathing water quality"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.aeussereraspekt"
 msgstr "Äusserer Aspekt"
@@ -2211,7 +2211,7 @@ msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff.stickstoff"
 msgstr "Nitrogen, total loss [kg / ha * a]"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347"
-msgstr "ARA - Abwasserant. an Q347"
+msgstr "ARA - percentage waste water"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -2340,7 +2340,7 @@ msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347.vsa_kategorie"
 msgstr "Reinigungstyp (VSA-Kategorie)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse"
-msgstr "ARA - Ausbaugrösse (EGW)"
+msgstr "ARA - capacity (PE)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -2448,7 +2448,7 @@ msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse.vsa_kategorie"
 msgstr "Reinigungstyp (VSA-Kategorie)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp"
-msgstr "ARA - Reinigungstyp"
+msgstr "ARA - cleaning type"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -2580,7 +2580,7 @@ msgid "ch.bafu.hydrogeologische-karte_100"
 msgstr "Hydrogeological map 100"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
-msgstr "Messstandorte Gewässerzustand Bund"
+msgstr "Water status monitoring stations CH"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.betriebsbeginn"
 msgstr "Messbeginn"
@@ -2640,7 +2640,7 @@ msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Background map hydrol. data"
 
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel"
-msgstr "Hochwassergrenzwertpegel"
+msgstr "Flood crest gauge"
 
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel.datenherkunft"
 msgstr "Datenherkunft"
@@ -2673,7 +2673,7 @@ msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel.rechtswert"
 msgstr "X-Koordinate"
 
 msgid "ch.bafu.hydrologie-hochwasserstatistik"
-msgstr "HQStat"
+msgstr "Flood statistics"
 
 msgid "ch.bafu.hydrologie-hochwasserstatistik.link"
 msgstr "Link"
@@ -2697,7 +2697,7 @@ msgid "ch.bafu.hydrologie-messstationen_gefahren"
 msgstr "Flood hazard levels 24h"
 
 msgid "ch.bafu.hydrologie-niedrigwasserstatistik"
-msgstr "NQStat"
+msgstr "Low-flow statistics"
 
 msgid "ch.bafu.hydrologie-niedrigwasserstatistik.hyperlink"
 msgstr "Aktuelle und historische Daten"
@@ -2709,7 +2709,7 @@ msgid "ch.bafu.hydrologie-niedrigwasserstatistik.url_nqpdf"
 msgstr "Niedrigwasserwahrscheinlichkeiten"
 
 msgid "ch.bafu.hydrologie-q347"
-msgstr "Q347"
+msgstr "Basis for determining Q347"
 
 msgid "ch.bafu.hydrologie-q347.basisid"
 msgstr "Nr. Basisgebiet"
@@ -2745,7 +2745,7 @@ msgid "ch.bafu.hydrologie-q347.qp"
 msgstr "Q347 (P) [l/s]"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete"
-msgstr "HUG Hydro. Untersuchungsgebiete"
+msgstr "HUG hydrological study areas"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antv_ab86"
 msgstr "Vergletscherung [%]"
@@ -2775,7 +2775,7 @@ msgid "ch.bafu.hydrologie-untersuchungsgebiete.stationseite"
 msgstr "Aktuelle und historische Daten"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen"
-msgstr "HUG-Messstationen"
+msgstr "HUG gauging stations"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.betriebsbeginn"
 msgstr "Messbeginn"
@@ -2811,7 +2811,7 @@ msgid "ch.bafu.hydrologie-wassertemperaturmessstationen.name"
 msgstr "Station name"
 
 msgid "ch.bafu.hydrologischer-atlas_basisgebiete"
-msgstr "Basisgebiet"
+msgstr "Base areas"
 
 msgid "ch.bafu.hydrologischer-atlas_basisgebiete.bemerkung"
 msgstr "Kanton"
@@ -2850,7 +2850,7 @@ msgid "ch.bafu.hydrologischer-atlas_basisgebiete.winttemp_g"
 msgstr "durchschnittl. Wintertemp."
 
 msgid "ch.bafu.hydrologischer-atlas_bilanzgebiete"
-msgstr "Bilanzgebiet"
+msgstr "Balance areas"
 
 msgid "ch.bafu.hydrologischer-atlas_bilanzgebiete.flussgebiet"
 msgstr "Flussgebiet"
@@ -2868,7 +2868,7 @@ msgid "ch.bafu.hydrologischer-atlas_bilanzgebiete.umfang"
 msgstr "Umfang"
 
 msgid "ch.bafu.hydrologischer-atlas_flussgebiete"
-msgstr "Flussgebiet"
+msgstr "River basins"
 
 msgid "ch.bafu.hydrologischer-atlas_flussgebiete.flussgebiet"
 msgstr "Flussgebiet"
@@ -2886,7 +2886,7 @@ msgid "ch.bafu.hydrologischer-atlas_flussgebiete.umfang"
 msgstr "Umfang"
 
 msgid "ch.bafu.hydrologischer-atlas_kantonale-messstationen"
-msgstr "Kantonale und private Messstationen"
+msgstr "Cantonal & private gauging stations"
 
 msgid "ch.bafu.hydrologischer-atlas_kantonale-messstationen.betriebsbeginn"
 msgstr "Betriebsbeginn"
@@ -2961,7 +2961,7 @@ msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Percentage of forest area (NFI)"
 
 msgid "ch.bafu.mittlere-abfluesse"
-msgstr "Mittlere Abflüsse (m³/s)"
+msgstr "Mean runoff (m³/s)"
 
 msgid "ch.bafu.mittlere-abfluesse.abflussvar"
 msgstr "Abflussvariabilität (%)"
@@ -3141,7 +3141,7 @@ msgid "ch.bafu.silvaprotect-uebersarung"
 msgstr "Overbank sedimentation (SilvaProtect-CH)"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesufer"
-msgstr "Strukturgüte Linkes Ufer"
+msgstr "Structural quality left bank"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesufer.datenherkunft"
 msgstr "BUWAL/LfU Karlsruhe"
@@ -3162,7 +3162,7 @@ msgid "ch.bafu.strukturguete-hochrhein_linkesufer.sohle"
 msgstr "Sohle"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesumfeld"
-msgstr "Strukturgüte Linkes Umfeld"
+msgstr "Structural quality left area"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesumfeld.datenherkunft"
 msgstr "BUWAL/LfU Karlsruhe"
@@ -3183,7 +3183,7 @@ msgid "ch.bafu.strukturguete-hochrhein_linkesumfeld.sohle"
 msgstr "Sohle"
 
 msgid "ch.bafu.strukturguete-hochrhein_rechtesufer"
-msgstr "Strukturgüte Rechtes Ufer"
+msgstr "Strucutral quality right bank"
 
 msgid "ch.bafu.strukturguete-hochrhein_rechtesufer.datenherkunft"
 msgstr "BUWAL/LfU Karlsruhe"
@@ -3204,7 +3204,7 @@ msgid "ch.bafu.strukturguete-hochrhein_rechtesufer.sohle"
 msgstr "Sohle"
 
 msgid "ch.bafu.strukturguete-hochrhein_rechtesumfeld"
-msgstr "Strukturgüte Rechtes Umfeld"
+msgstr "Structural quality right area"
 
 msgid "ch.bafu.strukturguete-hochrhein_rechtesumfeld.datenherkunft"
 msgstr "BUWAL/LfU Karlsruhe"
@@ -3225,7 +3225,7 @@ msgid "ch.bafu.strukturguete-hochrhein_rechtesumfeld.sohle"
 msgstr "Sohle"
 
 msgid "ch.bafu.strukturguete-hochrhein_sohle"
-msgstr "Strukturgüte Sohle"
+msgstr "Structural quality bed"
 
 msgid "ch.bafu.strukturguete-hochrhein_sohle.datenherkunft"
 msgstr "BUWAL/LfU Karlsruhe"
@@ -3324,7 +3324,7 @@ msgid "ch.bafu.url"
 msgstr "http://www.bafu.admin.ch/index.html?lang=en"
 
 msgid "ch.bafu.vec25-gewaessernetz_2000"
-msgstr "Gewässernetz 1:2 Mio."
+msgstr "Water network 1:2,000,000"
 
 msgid "ch.bafu.vec25-gewaessernetz_2000.gewissnr"
 msgstr "GEWISS-Nr."
@@ -3339,7 +3339,7 @@ msgid "ch.bafu.vec25-gewaessernetz_2000.objectval"
 msgstr "Swisstopo-Objectval"
 
 msgid "ch.bafu.vec25-seen"
-msgstr "Seen"
+msgstr "Lakes"
 
 msgid "ch.bafu.vec25-seen.ausgleichsbecken"
 msgstr "Ausgleichsbecken"
@@ -3441,10 +3441,10 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "40km2 sub catchment areas"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Ablussregimetyp"
+msgstr "Type of flow regime"
 
 msgid "ch.bafu.wasserbau-querprofilmarken"
-msgstr "Querprofilmarke"
+msgstr "Cross section securing point"
 
 msgid "ch.bafu.wasserbau-querprofilmarken.herkunft"
 msgstr "Herkunft"
@@ -3798,7 +3798,7 @@ msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_it"
 msgstr "Measure"
 
 msgid "ch.bav.schienennetz"
-msgstr "Railway network"
+msgstr "Railway network | Rait da viafier"
 
 msgid "ch.bav.schienennetz.abreviation"
 msgstr "PB-Abk."
@@ -4056,7 +4056,7 @@ msgid "ch.bfe.sachplan-geologie-tiefenlager.facname_it"
 msgstr "Facility"
 
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung"
-msgstr "SÜL Anhörung"
+msgstr "Consultation"
 
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung.doc_title"
 msgstr "More information"
@@ -4080,7 +4080,7 @@ msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung.plname_it"
 msgstr "Measure"
 
 msgid "ch.bfe.sachplan-uebertragungsleitungen_kraft"
-msgstr "SP Übertragungsleitungen"
+msgstr "Electricity lines sectoral plan"
 
 msgid "ch.bfe.sachplan-uebertragungsleitungen_kraft.doc_title"
 msgstr "More information"
@@ -4704,7 +4704,7 @@ msgid "ch.swisstopo.geologie-geophysik-deklination"
 msgstr "Declination 500"
 
 msgid "ch.swisstopo.geologie-geophysik-geothermie"
-msgstr "Heat Flux 500"
+msgstr "Heat flux 500"
 
 msgid "ch.swisstopo.geologie-geophysik-inklination"
 msgstr "Inclination 500"
@@ -4773,7 +4773,7 @@ msgid "ch.swisstopo.geologie-geowege"
 msgstr "Geological Hiking Trails"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2"
-msgstr "Geol. Dokumente (1000-21000km2)"
+msgstr "Geol. documents (1000-21000km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.author"
 msgstr "Author"
@@ -4797,7 +4797,7 @@ msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.title"
 msgstr "Title"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2"
-msgstr "Geol. Dokumente (100-1000km2)"
+msgstr "Geol. documents (100-1000km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.author"
 msgstr "Author"
@@ -4821,7 +4821,7 @@ msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.title"
 msgstr "Title"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2"
-msgstr "Geol. Dokumente (10-100km2)"
+msgstr "Geol. documents (10-100km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.author"
 msgstr "Author"
@@ -5103,7 +5103,7 @@ msgid "ch.swisstopo.gkwvor500-papierkarte.metadata.release"
 msgstr "Edition"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata"
-msgstr "Groundwater Vulnerability 500 paper"
+msgstr "Groundwater Vulnerability 500 - paper"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
 msgstr "Edition"
@@ -5262,7 +5262,7 @@ msgid "ch.swisstopo.lhk100-papierkarte.metadata.release"
 msgstr "Edition"
 
 msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata"
-msgstr "National Map 1:100'000 Composites"
+msgstr "National Map 1:100'000 comp. printed"
 
 msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.name"
 msgstr "Name"
@@ -5304,7 +5304,7 @@ msgid "ch.swisstopo.lk200-papierkarte.metadata.release"
 msgstr "Edition"
 
 msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata"
-msgstr "National Map 1:25'000 Composites"
+msgstr "National Map 1:25'000 comp. printed"
 
 msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.name"
 msgstr "Name"
@@ -5352,7 +5352,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Scale"
 
 msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata"
-msgstr "National Map 1:50'000 Composites"
+msgstr "National Map 1:50'000 comp. printed"
 
 msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.name"
 msgstr "Name"

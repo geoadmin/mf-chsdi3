@@ -1881,7 +1881,7 @@ msgid "ch.bafu.aquaprotect_500"
 msgstr "Aree inondabili Aquaprotect 500"
 
 msgid "ch.bafu.auen-vegetationskarten"
-msgstr "Zone golenali carte di vegetatizone"
+msgstr "Zone golenali carte di vegetazione"
 
 msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
 msgstr "Anno mappatura"
@@ -1980,7 +1980,7 @@ msgid "ch.bafu.fauna-wildtierkorridor_national"
 msgstr "Corridoi faunistici sovraregionale"
 
 msgid "ch.bafu.feststoffe-geschiebemessnetz"
-msgstr "SOLID fédéral, alluvions fluv."
+msgstr "SOLID federale, solido di fondo"
 
 msgid "ch.bafu.feststoffe-geschiebemessnetz.amt"
 msgstr "Office"
@@ -2076,7 +2076,7 @@ msgid "ch.bafu.gefahren-spektral"
 msgstr "Microzonazione spettrale"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet"
-msgstr "Eaux de baignade (qualité)"
+msgstr "Acque balneabili (qualità)"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.aeussereraspekt"
 msgstr "Aspect général"
@@ -2211,7 +2211,7 @@ msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff.stickstoff"
 msgstr "Azoto, perdite cumulate [kg / ha * a]"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347"
-msgstr "ARA - Eaux usées en Q347"
+msgstr "ARA - Acque di scarico in Q347"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -2340,7 +2340,7 @@ msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347.vsa_kategorie"
 msgstr "Type de traitement (catégorie VSA)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse"
-msgstr "ARA - Capacité EH 60g DBO5"
+msgstr "ARA - Capacità (EA)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -2448,7 +2448,7 @@ msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse.vsa_kategorie"
 msgstr "Type de traitement (catégorie VSA)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp"
-msgstr "ARA - Type de traitement"
+msgstr "ARA - Tipo di trattamento"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -2580,7 +2580,7 @@ msgid "ch.bafu.hydrogeologische-karte_100"
 msgstr "Carta idrogeologica 100"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
-msgstr "Mesure état des eaux Confédération"
+msgstr "Monitoraggio corsi d'acqua svizzeri"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.betriebsbeginn"
 msgstr "Début des mesures"
@@ -2640,7 +2640,7 @@ msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Carta base dati idrologici"
 
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel"
-msgstr "Limnimètres à maximum"
+msgstr "Limnigrafo di piena"
 
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel.datenherkunft"
 msgstr "Propriétaire"
@@ -2673,7 +2673,7 @@ msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel.rechtswert"
 msgstr "Coordonnée X"
 
 msgid "ch.bafu.hydrologie-hochwasserstatistik"
-msgstr "HQStat Piene"
+msgstr "Statistica delle piene"
 
 msgid "ch.bafu.hydrologie-hochwasserstatistik.link"
 msgstr "Lien"
@@ -2697,7 +2697,7 @@ msgid "ch.bafu.hydrologie-messstationen_gefahren"
 msgstr "Soglie d'allarme delle piene 24h"
 
 msgid "ch.bafu.hydrologie-niedrigwasserstatistik"
-msgstr "NQStat Magre"
+msgstr "Statistica delle magre"
 
 msgid "ch.bafu.hydrologie-niedrigwasserstatistik.hyperlink"
 msgstr "Données actuelles et historiques"
@@ -2709,7 +2709,7 @@ msgid "ch.bafu.hydrologie-niedrigwasserstatistik.url_nqpdf"
 msgstr "Probabilité des étiages"
 
 msgid "ch.bafu.hydrologie-q347"
-msgstr "Q347"
+msgstr "Basi per determinare Q347"
 
 msgid "ch.bafu.hydrologie-q347.basisid"
 msgstr "Nr. bassin de base"
@@ -2745,7 +2745,7 @@ msgid "ch.bafu.hydrologie-q347.qp"
 msgstr "Q347 (P) [l/s]"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete"
-msgstr "HUG Bassins recherches hydro."
+msgstr "Bacini di ricerche idrologiche HUG"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antv_ab86"
 msgstr "Extension glaciers [%]"
@@ -2775,7 +2775,7 @@ msgid "ch.bafu.hydrologie-untersuchungsgebiete.stationseite"
 msgstr "Données actuelles et historiques"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen"
-msgstr "HUG / stations de mesure"
+msgstr "Stazioni di misurazione HUG"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.betriebsbeginn"
 msgstr "Début des mesures"
@@ -2811,7 +2811,7 @@ msgid "ch.bafu.hydrologie-wassertemperaturmessstationen.name"
 msgstr "Nome della stazione"
 
 msgid "ch.bafu.hydrologischer-atlas_basisgebiete"
-msgstr "Bassin de base"
+msgstr "Bacino di base"
 
 msgid "ch.bafu.hydrologischer-atlas_basisgebiete.bemerkung"
 msgstr "Canton"
@@ -2850,7 +2850,7 @@ msgid "ch.bafu.hydrologischer-atlas_basisgebiete.winttemp_g"
 msgstr "Température moyenne hiverale"
 
 msgid "ch.bafu.hydrologischer-atlas_bilanzgebiete"
-msgstr "Bassin de bilan"
+msgstr "Bacino di bilancio"
 
 msgid "ch.bafu.hydrologischer-atlas_bilanzgebiete.flussgebiet"
 msgstr "Bassin versant"
@@ -2868,7 +2868,7 @@ msgid "ch.bafu.hydrologischer-atlas_bilanzgebiete.umfang"
 msgstr "Périmètre"
 
 msgid "ch.bafu.hydrologischer-atlas_flussgebiete"
-msgstr "Bassin fluvial"
+msgstr "Bacino fluviale"
 
 msgid "ch.bafu.hydrologischer-atlas_flussgebiete.flussgebiet"
 msgstr "Bassin versant"
@@ -2886,7 +2886,7 @@ msgid "ch.bafu.hydrologischer-atlas_flussgebiete.umfang"
 msgstr "Périmètre"
 
 msgid "ch.bafu.hydrologischer-atlas_kantonale-messstationen"
-msgstr "Stations cantonales et privées"
+msgstr "Stazioni cantonali e private"
 
 msgid "ch.bafu.hydrologischer-atlas_kantonale-messstationen.betriebsbeginn"
 msgstr "Mise en service"
@@ -2925,7 +2925,7 @@ msgid "ch.bafu.hydroweb-messstationen_temperatur"
 msgstr "Temperature dei fiumi"
 
 msgid "ch.bafu.hydroweb-messstationen_vorhersage"
-msgstr "Stationi previsione hydrologico"
+msgstr "Stazioni previsioni idrologiche"
 
 msgid "ch.bafu.hydroweb-messstationen_zustand"
 msgstr "Situazione di fiumi e ruscelli"
@@ -2961,7 +2961,7 @@ msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Percentuale di bosco (IFN)"
 
 msgid "ch.bafu.mittlere-abfluesse"
-msgstr "Débit naturel (m³/s)"
+msgstr "Deflussi medi (m³/s)"
 
 msgid "ch.bafu.mittlere-abfluesse.abflussvar"
 msgstr "Variabilité du débit (%)"
@@ -3141,7 +3141,7 @@ msgid "ch.bafu.silvaprotect-uebersarung"
 msgstr "Alluvionamento da sedimento (SilvaProtect-CH)"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesufer"
-msgstr "Qualité str. rive gauche"
+msgstr "Qualità strutt. riva sinistra"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesufer.datenherkunft"
 msgstr "OFEFEP/Lfu Karlsruhe"
@@ -3162,7 +3162,7 @@ msgid "ch.bafu.strukturguete-hochrhein_linkesufer.sohle"
 msgstr "Lit mineur"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesumfeld"
-msgstr "Qualité str. zone riveraine gauche"
+msgstr "Qualità strutt. zona riva sinistra"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesumfeld.datenherkunft"
 msgstr "OFEFEP/Lfu Karlsruhe"
@@ -3183,7 +3183,7 @@ msgid "ch.bafu.strukturguete-hochrhein_linkesumfeld.sohle"
 msgstr "Lit mineur"
 
 msgid "ch.bafu.strukturguete-hochrhein_rechtesufer"
-msgstr "Qualité str. rive droite"
+msgstr "Qualità strutt. riva destra"
 
 msgid "ch.bafu.strukturguete-hochrhein_rechtesufer.datenherkunft"
 msgstr "OFEFEP/Lfu Karlsruhe"
@@ -3204,7 +3204,7 @@ msgid "ch.bafu.strukturguete-hochrhein_rechtesufer.sohle"
 msgstr "Lit mineur"
 
 msgid "ch.bafu.strukturguete-hochrhein_rechtesumfeld"
-msgstr "Qualité str. zone riveraine droite"
+msgstr "Qualità strutt. zona riva destra"
 
 msgid "ch.bafu.strukturguete-hochrhein_rechtesumfeld.datenherkunft"
 msgstr "OFEFEP/Lfu Karlsruhe"
@@ -3225,7 +3225,7 @@ msgid "ch.bafu.strukturguete-hochrhein_rechtesumfeld.sohle"
 msgstr "Lit mineur"
 
 msgid "ch.bafu.strukturguete-hochrhein_sohle"
-msgstr "Qualité str. lit"
+msgstr "Qualità strutt. letto"
 
 msgid "ch.bafu.strukturguete-hochrhein_sohle.datenherkunft"
 msgstr "OFEFEP/Lfu Karlsruhe"
@@ -3324,7 +3324,7 @@ msgid "ch.bafu.url"
 msgstr "http://www.bafu.admin.ch/index.html?lang=it"
 
 msgid "ch.bafu.vec25-gewaessernetz_2000"
-msgstr "Réseau hydrographique 1:2 Mio."
+msgstr "Rete idrografica 1:2 mio."
 
 msgid "ch.bafu.vec25-gewaessernetz_2000.gewissnr"
 msgstr "Numéro GEWISS"
@@ -3339,7 +3339,7 @@ msgid "ch.bafu.vec25-gewaessernetz_2000.objectval"
 msgstr "Objectval swisstopo"
 
 msgid "ch.bafu.vec25-seen"
-msgstr "Lacs"
+msgstr "Laghi"
 
 msgid "ch.bafu.vec25-seen.ausgleichsbecken"
 msgstr "Bassin de compensation"
@@ -3441,10 +3441,10 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "Bacini imbriferi 40 km2"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Type de régime d'écoulement"
+msgstr "Tipo di regime di deflusso"
 
 msgid "ch.bafu.wasserbau-querprofilmarken"
-msgstr "Point fixe du profil en travers"
+msgstr "Punto fisso del profilo trasversale"
 
 msgid "ch.bafu.wasserbau-querprofilmarken.herkunft"
 msgstr "Origine"
@@ -4104,7 +4104,7 @@ msgid "ch.bfe.sachplan-uebertragungsleitungen_kraft.plname_it"
 msgstr "Misura"
 
 msgid "ch.bfe.solarenergie-eignung-daecher"
-msgstr "Solaire: aptitude des toitures"
+msgstr "Solare: idoneità dei tetti"
 
 msgid "ch.bfe.solarenergie-eignung-daecher.ausrichtung"
 msgstr "Orientation [°]"
@@ -4695,7 +4695,7 @@ msgid "ch.swisstopo.geologie-geomorphologie.ads_name"
 msgstr "Géomorphologie, vue d´ensemble: forme superficielle"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
-msgstr "Aeromagnetismo Altipiano/Giura 500"
+msgstr "Aeromagnetismo Altopiano/Giura 500"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
 msgstr "Aeromagnetismo 500"
@@ -4773,7 +4773,7 @@ msgid "ch.swisstopo.geologie-geowege"
 msgstr "Sentieri geologici"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2"
-msgstr "Documents géol. (1000-21000km2)"
+msgstr "Documenti geologici (1000-21000km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.author"
 msgstr "Autore"
@@ -4797,7 +4797,7 @@ msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.title"
 msgstr "Titolo"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2"
-msgstr "Documents géol. (100-1000km2)"
+msgstr "Documenti geologici (100-1000km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.author"
 msgstr "Autore"
@@ -4821,7 +4821,7 @@ msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.title"
 msgstr "Titolo"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2"
-msgstr "Documents géol. (10-100km2)"
+msgstr "Documenti geologici (10-100km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.author"
 msgstr "Autore"
@@ -5124,7 +5124,7 @@ msgid "ch.swisstopo.hangneigung-ueber_30"
 msgstr "Classi pendenza maggiori 30°"
 
 msgid "ch.swisstopo.hebungsraten"
-msgstr "Mouvements verticaux"
+msgstr "Movimenti verticali"
 
 msgid "ch.swisstopo.hebungsraten.contour"
 msgstr "Variation annuelle en hauteur [mm/an]"
@@ -5205,7 +5205,7 @@ msgid "ch.swisstopo.landeskarte-grau-10"
 msgstr "Carta nazionale 1:10'000 (grigio)"
 
 msgid "ch.swisstopo.landesschwerenetz"
-msgstr "Réseau de base gravimétrique"
+msgstr "Rete gravimetrica di base"
 
 msgid "ch.swisstopo.landesschwerenetz.gravity"
 msgstr "Gravité [mGal]"
@@ -5262,7 +5262,7 @@ msgid "ch.swisstopo.lhk100-papierkarte.metadata.release"
 msgstr "Edizione"
 
 msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata"
-msgstr "Carta nazionale 1:100'000 Comp."
+msgstr "Carta nazionale 1:100'000 Comp. Stampata"
 
 msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.name"
 msgstr "Nome"
@@ -5304,7 +5304,7 @@ msgid "ch.swisstopo.lk200-papierkarte.metadata.release"
 msgstr "Edizione"
 
 msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata"
-msgstr "Carta nazionale 1:25'000 Comp."
+msgstr "Carta nazionale 1:25'000 stampata"
 
 msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.name"
 msgstr "Nome"
@@ -5352,7 +5352,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Scala"
 
 msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata"
-msgstr "Carta nazionale 1:50'000 Comp."
+msgstr "Carta nazionale 1:50'000 Comp. Stampata"
 
 msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.name"
 msgstr "Nome"
@@ -5781,7 +5781,7 @@ msgid "ch.vbs.armeelogistikcenter.url"
 msgstr "Link"
 
 msgid "ch.vbs.bundestankstellen-bebeco"
-msgstr "Distributori di carburante BEBECO"
+msgstr "Stazioni di servizio BEBECO"
 
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Luogo"

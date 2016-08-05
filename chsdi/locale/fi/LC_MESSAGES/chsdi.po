@@ -1365,7 +1365,7 @@ msgid "ch.are.kt"
 msgstr "ARE + chantun"
 
 msgid "ch.are.landschaftstypen"
-msgstr "Tipologia cuntradas svizras"
+msgstr "Tipologia da cuntradas svizras"
 
 msgid "ch.are.reisezeit-miv"
 msgstr "Temp da viadi ad in center TIM"
@@ -1434,10 +1434,10 @@ msgid "ch.astra.kt"
 msgstr "ASTRA + chantun"
 
 msgid "ch.astra.mountainbikeland"
-msgstr "Mountainbikeland"
+msgstr "La Svizra cun velo da muntogna"
 
 msgid "ch.astra.schwerverunfallte-kanton_alkohol"
-msgstr "Unfälle pro Einwohner - Alkohol"
+msgstr "Accidents per abitants – alcohol"
 
 msgid "ch.astra.schwerverunfallte-kanton_alkohol.accalcohol_ugt"
 msgstr "Unfälle mit Getöteten und Hauptursache Alkohol"
@@ -1461,7 +1461,7 @@ msgid "ch.astra.schwerverunfallte-kanton_alkohol.year"
 msgstr "Jahr"
 
 msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit"
-msgstr "Unfälle pro Einwohner - Geschwindig"
+msgstr "Accidents per abitants – sveltezza"
 
 msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.accspeed_ugt"
 msgstr "Unfälle mit Getöteten und Hauptursache Geschwindigkeit"
@@ -1485,7 +1485,7 @@ msgid "ch.astra.schwerverunfallte-kanton_geschwindigkeit.year"
 msgstr "Jahr"
 
 msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich"
-msgstr "Unfälle im Jahresvergleich"
+msgstr "Accidents cumparegliaziun annuala"
 
 msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.acc_ugt"
 msgstr "Unfälle mit Getöteten"
@@ -1515,7 +1515,7 @@ msgid "ch.astra.schwerverunfallte-kanton_jahresvergleich.year"
 msgstr "Jahr"
 
 msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner"
-msgstr "Unfälle pro Einwohner"
+msgstr "Accidents per abitant"
 
 msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.acc_ugt"
 msgstr "Unfälle mit Getöteten"
@@ -1539,7 +1539,7 @@ msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.year"
 msgstr "Jahr"
 
 msgid "ch.astra.skatingland"
-msgstr "Skatingland"
+msgstr "La Svizra cun skates"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Dumbraziun traffic (regiunal)"
@@ -1848,10 +1848,10 @@ msgid "ch.astra.url"
 msgstr "http://www.astra.admin.ch/index.html?lang=de"
 
 msgid "ch.astra.veloland"
-msgstr "Veloland"
+msgstr "La Svizra cun velo"
 
 msgid "ch.astra.wanderland"
-msgstr "Wanderand"
+msgstr "La Svizra a pe"
 
 msgid "ch.babs"
 msgstr "BABS"
@@ -1902,16 +1902,16 @@ msgid "ch.bafu.bundesinventare-amphibien"
 msgstr "Amfibis, objects fixs"
 
 msgid "ch.bafu.bundesinventare-amphibien_anhang4"
-msgstr "Amfibis - agiunta 4"
+msgstr "Amfibis – agiunta 4"
 
 msgid "ch.bafu.bundesinventare-amphibien_anhoerung"
-msgstr "Amfibis - audiziun 2015"
+msgstr "Amfibis – audiziun 2015"
 
 msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte"
 msgstr "Amfibis, objects movibels"
 
 msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung"
-msgstr "Amfibis - objects movibels 2015"
+msgstr "Amfibis – objects movibels 2015"
 
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Zonas umidas"
@@ -1923,7 +1923,7 @@ msgid "ch.bafu.bundesinventare-auen.au_obj"
 msgstr "Objektnummer"
 
 msgid "ch.bafu.bundesinventare-auen_anhoerung"
-msgstr "Zonas umidas - audiziun 2015"
+msgstr "Zonas umidas – audiziun 2015"
 
 msgid "ch.bafu.bundesinventare-bln"
 msgstr "IFC"
@@ -1935,7 +1935,7 @@ msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Palids planivas"
 
 msgid "ch.bafu.bundesinventare-flachmoore_anhoerung"
-msgstr "Palids planivas - audiziun 2015"
+msgstr "Palids planivas – audiziun 2015"
 
 msgid "ch.bafu.bundesinventare-flachmoore_regional"
 msgstr "Palids planivas regiunal"
@@ -1944,7 +1944,7 @@ msgid "ch.bafu.bundesinventare-hochmoore"
 msgstr "Palids autas"
 
 msgid "ch.bafu.bundesinventare-hochmoore_anhoerung"
-msgstr "Palids autas - audiziun 2015"
+msgstr "Palids autas – audiziun 2015"
 
 msgid "ch.bafu.bundesinventare-jagdbanngebiete"
 msgstr "Asils da selvaschina"
@@ -1956,19 +1956,19 @@ msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Cuntradas da palì"
 
 msgid "ch.bafu.bundesinventare-moorlandschaften_anhoerung"
-msgstr "Cuntradas da palì - audiziun 2015"
+msgstr "Cuntradas da palì – audiziun 2015"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr "Pastgiras e prads sitgs (PPS)"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
-msgstr "PPS - agiunta 2"
+msgstr "PPS – agiunta 2"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung"
-msgstr "PPS - audiziun 2015"
+msgstr "PPS – audiziun 2015"
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
-msgstr "Reservats d'utschels: aua e migrants"
+msgstr "Reservats d'utschels: aua, migrants"
 
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonias da capricorns"
@@ -1980,7 +1980,7 @@ msgid "ch.bafu.fauna-wildtierkorridor_national"
 msgstr "Corridors selvaschina surregiunal"
 
 msgid "ch.bafu.feststoffe-geschiebemessnetz"
-msgstr "SOLID Bund, Geschiebe"
+msgstr "SOLID Confederaziun, gera"
 
 msgid "ch.bafu.feststoffe-geschiebemessnetz.amt"
 msgstr "Amt"
@@ -2028,16 +2028,16 @@ msgid "ch.bafu.feststoffe-geschiebemessnetz.station"
 msgstr "Name der Messstation"
 
 msgid "ch.bafu.fischerei-aeschen_kernzonen"
-msgstr "Litschalas: Zonas centralas"
+msgstr "Litschalas: zonas centralas"
 
 msgid "ch.bafu.fischerei-aeschen_laichplaetze"
-msgstr "Litschalas: Plazzas da fregar"
+msgstr "Litschalas: plazzas da fregar"
 
 msgid "ch.bafu.fischerei-aeschen_larvenhabitate"
-msgstr "Litschalas: Habitats da larvas"
+msgstr "Litschalas: habitats da larvas"
 
 msgid "ch.bafu.fischerei-aeschen_verbreitungsgebiet"
-msgstr "Litschalas: Territori da derasaziun"
+msgstr "Litschalas: territori da derasaziun"
 
 msgid "ch.bafu.fischerei-krebspest"
 msgstr "Pesta da giombers"
@@ -2076,7 +2076,7 @@ msgid "ch.bafu.gefahren-spektral"
 msgstr "Microzonaziun spectrala"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet"
-msgstr "Badegewässerqualität"
+msgstr "Qualitad da l'aua dals bogns"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.aeussereraspekt"
 msgstr "Äusserer Aspekt"
@@ -2199,19 +2199,19 @@ msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt"
 msgstr "Gesamt-Phosphor"
 
 msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor"
-msgstr "Diffuse Phosphoreinträge"
+msgstr "Immissiuns diffusas da fosfor"
 
 msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor.phosphor"
 msgstr "Phosphor, aufsummierte Verluste [kg / ha * a]"
 
 msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff"
-msgstr "Diffuse Stickstoffeinträge"
+msgstr "Immissiuns diffusas da nitrogen"
 
 msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff.stickstoff"
 msgstr "Stickstoff, aufsummierte Verluste [kg / ha * a]"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347"
-msgstr "ARA - Abwasserant. an Q347"
+msgstr "Sereneras – procentuala da Q347"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -2340,7 +2340,7 @@ msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347.vsa_kategorie"
 msgstr "Reinigungstyp (VSA-Kategorie)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse"
-msgstr "ARA - Ausbaugrösse (EGW)"
+msgstr "Sereneras – capacitad (valur abit.)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -2448,7 +2448,7 @@ msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse.vsa_kategorie"
 msgstr "Reinigungstyp (VSA-Kategorie)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp"
-msgstr "ARA - Reinigungstyp"
+msgstr "Sereneras – tip da nettegiament"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -2580,7 +2580,7 @@ msgid "ch.bafu.hydrogeologische-karte_100"
 msgstr "Hydrogeologische Karte 100"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
-msgstr "Messstandorte Gewässerzustand Bund"
+msgstr "Mesiraziun stadi da las auas Conf."
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.betriebsbeginn"
 msgstr "Messbeginn"
@@ -2640,7 +2640,7 @@ msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Charta da fund datas idrologicas"
 
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel"
-msgstr "Hochwassergrenzwertpegel"
+msgstr "Idrometers da l'aua gronda maximala"
 
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel.datenherkunft"
 msgstr "Datenherkunft"
@@ -2673,7 +2673,7 @@ msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel.rechtswert"
 msgstr "X-Koordinate"
 
 msgid "ch.bafu.hydrologie-hochwasserstatistik"
-msgstr "HQStat"
+msgstr "Statistica d'auas grondas"
 
 msgid "ch.bafu.hydrologie-hochwasserstatistik.link"
 msgstr "Link"
@@ -2694,10 +2694,10 @@ msgid "ch.bafu.hydrologie-hydromessstationen"
 msgstr "Mesiraziuns idrologicas"
 
 msgid "ch.bafu.hydrologie-messstationen_gefahren"
-msgstr "Nivels da privel auas grondas"
+msgstr "Nivels da privel auas grondas 24h"
 
 msgid "ch.bafu.hydrologie-niedrigwasserstatistik"
-msgstr "NQSTAT"
+msgstr "Statistica d'auas bassas"
 
 msgid "ch.bafu.hydrologie-niedrigwasserstatistik.hyperlink"
 msgstr "Aktuelle und historische Daten"
@@ -2709,7 +2709,7 @@ msgid "ch.bafu.hydrologie-niedrigwasserstatistik.url_nqpdf"
 msgstr "Niedrigwasserwahrscheinlichkeiten"
 
 msgid "ch.bafu.hydrologie-q347"
-msgstr "Q347"
+msgstr "Basas per determinar la Q347"
 
 msgid "ch.bafu.hydrologie-q347.basisid"
 msgstr "Nr. Basisgebiet"
@@ -2745,7 +2745,7 @@ msgid "ch.bafu.hydrologie-q347.qp"
 msgstr "Q347 (P) [l/s]"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete"
-msgstr "HUG Hydro. Untersuchungsgebiete"
+msgstr "HUG Territoris retschertgas idrol."
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete.antv_ab86"
 msgstr "Vergletscherung [%]"
@@ -2775,7 +2775,7 @@ msgid "ch.bafu.hydrologie-untersuchungsgebiete.stationseite"
 msgstr "Aktuelle und historische Daten"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen"
-msgstr "HUG-Messstationen"
+msgstr "HUG Staziuns da mesiraziun"
 
 msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.betriebsbeginn"
 msgstr "Messbeginn"
@@ -2802,7 +2802,7 @@ msgid "ch.bafu.hydrologie-untersuchungsgebiete_stationen.url"
 msgstr "Aktuelle und historische Daten"
 
 msgid "ch.bafu.hydrologie-wassertemperaturmessstationen"
-msgstr "Staz. mesiraziun Temperatura aua"
+msgstr "Staz. mesiraziun temperatura aua"
 
 msgid "ch.bafu.hydrologie-wassertemperaturmessstationen.id"
 msgstr "Stationsnummer"
@@ -2811,7 +2811,7 @@ msgid "ch.bafu.hydrologie-wassertemperaturmessstationen.name"
 msgstr "Stationsname"
 
 msgid "ch.bafu.hydrologischer-atlas_basisgebiete"
-msgstr "Basisgebiet"
+msgstr "Territoris da basa"
 
 msgid "ch.bafu.hydrologischer-atlas_basisgebiete.bemerkung"
 msgstr "Kanton"
@@ -2850,7 +2850,7 @@ msgid "ch.bafu.hydrologischer-atlas_basisgebiete.winttemp_g"
 msgstr "durchschnittl. Wintertemp."
 
 msgid "ch.bafu.hydrologischer-atlas_bilanzgebiete"
-msgstr "Bilanzgebiet"
+msgstr "Territoris da bilantscha"
 
 msgid "ch.bafu.hydrologischer-atlas_bilanzgebiete.flussgebiet"
 msgstr "Flussgebiet"
@@ -2868,7 +2868,7 @@ msgid "ch.bafu.hydrologischer-atlas_bilanzgebiete.umfang"
 msgstr "Umfang"
 
 msgid "ch.bafu.hydrologischer-atlas_flussgebiete"
-msgstr "Flussgebiet"
+msgstr "Territoris fluvials"
 
 msgid "ch.bafu.hydrologischer-atlas_flussgebiete.flussgebiet"
 msgstr "Flussgebiet"
@@ -2886,7 +2886,7 @@ msgid "ch.bafu.hydrologischer-atlas_flussgebiete.umfang"
 msgstr "Umfang"
 
 msgid "ch.bafu.hydrologischer-atlas_kantonale-messstationen"
-msgstr "Kantonale und private Messstationen"
+msgstr "Staziuns chantunalas e privatas"
 
 msgid "ch.bafu.hydrologischer-atlas_kantonale-messstationen.betriebsbeginn"
 msgstr "Betriebsbeginn"
@@ -2928,7 +2928,7 @@ msgid "ch.bafu.hydroweb-messstationen_vorhersage"
 msgstr "Staziuns idrologicas cun prognosas"
 
 msgid "ch.bafu.hydroweb-messstationen_zustand"
-msgstr "Situaziun auas currentas e lais"
+msgstr "Situaziun curs d'aua e lais"
 
 msgid "ch.bafu.hydroweb-warnkarte_national"
 msgstr "Charta d'avertiment auas naziunalas"
@@ -2961,7 +2961,7 @@ msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Quota da guaud (IFN)"
 
 msgid "ch.bafu.mittlere-abfluesse"
-msgstr "Mittlere Abflüsse (m³/s)"
+msgstr "Deflussiuns mesaunas (m³/s)"
 
 msgid "ch.bafu.mittlere-abfluesse.abflussvar"
 msgstr "Abflussvariabilität (%)"
@@ -3051,7 +3051,7 @@ msgid "ch.bafu.ren-feuchtgebiete"
 msgstr "REN  Zona umida"
 
 msgid "ch.bafu.ren-fliessgewaesser_seen"
-msgstr "REN  Auas currentas / lais"
+msgstr "REN Curs d'aua / lais"
 
 msgid "ch.bafu.ren-trockenstandorte"
 msgstr "REN  Lieu sitg"
@@ -3099,7 +3099,7 @@ msgid "ch.bafu.schutzgebiete-smaragd"
 msgstr "Smaragd"
 
 msgid "ch.bafu.schutzgebiete-wildruhezonen"
-msgstr "Zonas da paus per la selvaschina"
+msgstr "Asils da selvaschina"
 
 msgid "ch.bafu.showme-gemeinden_hochwasser"
 msgstr "ShowMe vischnancas: aua gronda"
@@ -3141,7 +3141,7 @@ msgid "ch.bafu.silvaprotect-uebersarung"
 msgstr "Sedimentaziuns alluvialas (SilvaProtect-CH)"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesufer"
-msgstr "Strukturgüte Linkes Ufer"
+msgstr "Qualitad structurala riva sanestra"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesufer.datenherkunft"
 msgstr "BUWAL/LfU Karlsruhe"
@@ -3162,7 +3162,7 @@ msgid "ch.bafu.strukturguete-hochrhein_linkesufer.sohle"
 msgstr "Sohle"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesumfeld"
-msgstr "Strukturgüte Linkes Umfeld"
+msgstr "Qualitad structurala zona sanestra"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesumfeld.datenherkunft"
 msgstr "BUWAL/LfU Karlsruhe"
@@ -3183,7 +3183,7 @@ msgid "ch.bafu.strukturguete-hochrhein_linkesumfeld.sohle"
 msgstr "Sohle"
 
 msgid "ch.bafu.strukturguete-hochrhein_rechtesufer"
-msgstr "Strukturgüte Rechtes Ufer"
+msgstr "Qualitad structurala riva dretga"
 
 msgid "ch.bafu.strukturguete-hochrhein_rechtesufer.datenherkunft"
 msgstr "BUWAL/LfU Karlsruhe"
@@ -3204,7 +3204,7 @@ msgid "ch.bafu.strukturguete-hochrhein_rechtesufer.sohle"
 msgstr "Sohle"
 
 msgid "ch.bafu.strukturguete-hochrhein_rechtesumfeld"
-msgstr "Strukturgüte Rechtes Umfeld"
+msgstr "Qualitad structurala zona dretga"
 
 msgid "ch.bafu.strukturguete-hochrhein_rechtesumfeld.datenherkunft"
 msgstr "BUWAL/LfU Karlsruhe"
@@ -3225,7 +3225,7 @@ msgid "ch.bafu.strukturguete-hochrhein_rechtesumfeld.sohle"
 msgstr "Sohle"
 
 msgid "ch.bafu.strukturguete-hochrhein_sohle"
-msgstr "Strukturgüte Sohle"
+msgstr "Qualitad structurala letg"
 
 msgid "ch.bafu.strukturguete-hochrhein_sohle.datenherkunft"
 msgstr "BUWAL/LfU Karlsruhe"
@@ -3270,10 +3270,10 @@ msgid "ch.bafu.sturm-staudruck_50"
 msgstr "Stemprads pressiun dinamica 50"
 
 msgid "ch.bafu.swissprtr"
-msgstr "Emissiuns subst. nuschaivlas"
+msgstr "Substanzas nuschaivlas (SwissPRTR)"
 
 msgid "ch.bafu.typisierung-fliessgewaesser"
-msgstr "Tipisaziun da las auas currentas"
+msgstr "Tipisaziun dals curs d'aua"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.abfluss"
 msgstr "Abfluss"
@@ -3324,7 +3324,7 @@ msgid "ch.bafu.url"
 msgstr "http://www.bafu.admin.ch/index.html?lang=de"
 
 msgid "ch.bafu.vec25-gewaessernetz_2000"
-msgstr "Gewässernetz 1:2 Mio."
+msgstr "Rait d'auas 1:2 miu."
 
 msgid "ch.bafu.vec25-gewaessernetz_2000.gewissnr"
 msgstr "GEWISS-Nr."
@@ -3339,7 +3339,7 @@ msgid "ch.bafu.vec25-gewaessernetz_2000.objectval"
 msgstr "Swisstopo-Objectval"
 
 msgid "ch.bafu.vec25-seen"
-msgstr "Seen"
+msgstr "Lais"
 
 msgid "ch.bafu.vec25-seen.ausgleichsbecken"
 msgstr "Ausgleichsbecken"
@@ -3381,7 +3381,7 @@ msgid "ch.bafu.vec25-seen.uferlaenge_m"
 msgstr "Uferlänge m"
 
 msgid "ch.bafu.waldreservate"
-msgstr "Reservats da guaud"
+msgstr "Reservats da guaud"
 
 msgid "ch.bafu.waldreservate.gisflaeche"
 msgstr "Gesamtfläche [ha]"
@@ -3441,10 +3441,10 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "Intschess parzials 40km2"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Ablussregimetyp"
+msgstr "Tip d'urden da deflussiun"
 
 msgid "ch.bafu.wasserbau-querprofilmarken"
-msgstr "Querprofilmarke"
+msgstr "Marca dals profils traversals"
 
 msgid "ch.bafu.wasserbau-querprofilmarken.herkunft"
 msgstr "Herkunft"
@@ -3492,7 +3492,7 @@ msgid "ch.bafu.wasserbau-vermessungsstrecken.streckenid"
 msgstr "StreckenID"
 
 msgid "ch.bafu.wrz-jagdbanngebiete_select"
-msgstr "Zonas da paus per la selvaschina"
+msgstr "Asils da selvaschina"
 
 msgid "ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen"
 msgstr "Vias e rutas permessas"
@@ -3525,7 +3525,7 @@ msgid "ch.bak.isos.warning"
 msgstr "Questa pagina vegn actualisada mintga mez onn. Sche Vus avais avant da duvrar in maletg dad ISOS en ina procedura giuridica, contactai ppl. l’uffizi federal cumpetent (isos@bak.admin.ch). © Datas: UFC, Berna"
 
 msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe"
-msgstr "UNESCO patrimoni cultural"
+msgstr "UNESCO Patrimoni cultural"
 
 msgid "ch.bak.schutzgebiete-unesco_weltkulturerbe_type"
 msgstr "Tip"
@@ -3627,7 +3627,7 @@ msgid "ch.bav"
 msgstr "BAV"
 
 msgid "ch.bav.haltestellen-oev"
-msgstr "öV-Haltestellen"
+msgstr "Fermadas dal traffic public"
 
 msgid "ch.bav.haltestellen-oev.all_departures"
 msgstr "Alle Reiseziele"
@@ -3681,7 +3681,7 @@ msgid "ch.bav.laerm-emissionsplan_eisenbahn_tag"
 msgstr "Emissiuns canera da viafiers 2015 D"
 
 msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung"
-msgstr "SIS Consultaziun"
+msgstr "SIS Audiziun"
 
 msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung.doc_title"
 msgstr "Weitere Informationen"
@@ -3744,7 +3744,7 @@ msgid "ch.bav.sachplan-infrastruktur-schiene_kraft.plname_it"
 msgstr "Planerische Massnahme"
 
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung"
-msgstr "SIF Consultaziun"
+msgstr "SIF Audiziun"
 
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung.facname_de"
 msgstr "Anlage"
@@ -3774,7 +3774,7 @@ msgid "ch.bav.sachplan-infrastruktur-schifffahrt_ausgangslage.name"
 msgstr "Name Anlage"
 
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft"
-msgstr "PS infrastructura navigaziun"
+msgstr "PS Infrastructura navigaziun"
 
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.doc_title"
 msgstr "Weitere Informationen"
@@ -3963,7 +3963,7 @@ msgid "ch.bfe.abgeltung-wasserkraftnutzung.name"
 msgstr "Name"
 
 msgid "ch.bfe.energieforschung"
-msgstr "Cleantech-Projekte"
+msgstr "Projects cleantech"
 
 msgid "ch.bfe.energieforschung.bericht"
 msgstr "Bericht"
@@ -4044,7 +4044,7 @@ msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "PS Deposits geologics profunds"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"
-msgstr "PS Deposits geol. profunds: p.t."
+msgstr "PS Deposits geol. profunds: p.tecn."
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager.facname_de"
 msgstr "Anlage"
@@ -4056,7 +4056,7 @@ msgid "ch.bfe.sachplan-geologie-tiefenlager.facname_it"
 msgstr "Anlage"
 
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung"
-msgstr "SÜL Anhörung"
+msgstr "PSL Audiziun"
 
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung.doc_title"
 msgstr "Weitere Informationen"
@@ -4080,7 +4080,7 @@ msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung.plname_it"
 msgstr "Planerische Massnahme"
 
 msgid "ch.bfe.sachplan-uebertragungsleitungen_kraft"
-msgstr "SP Übertragungsleitungen"
+msgstr "PS Lingias da transmissiun"
 
 msgid "ch.bfe.sachplan-uebertragungsleitungen_kraft.doc_title"
 msgstr "Weitere Informationen"
@@ -4104,7 +4104,7 @@ msgid "ch.bfe.sachplan-uebertragungsleitungen_kraft.plname_it"
 msgstr "Planerische Massnahme"
 
 msgid "ch.bfe.solarenergie-eignung-daecher"
-msgstr "Solarenergie: Eignung Dächer"
+msgstr "Energia solara: tetgs adattads"
 
 msgid "ch.bfe.solarenergie-eignung-daecher.ausrichtung"
 msgstr "Ausrichtung [°]"
@@ -4137,19 +4137,19 @@ msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=de"
 
 msgid "ch.bfe.windenergie-geschwindigkeit_h100"
-msgstr "Windgeschwindigkeit 100 m Höhe"
+msgstr "Sveltezza dal vent autezza 100 m"
 
 msgid "ch.bfe.windenergie-geschwindigkeit_h125"
-msgstr "Windgeschwindigkeit 125 m Höhe"
+msgstr "Sveltezza dal vent autezza 125 m"
 
 msgid "ch.bfe.windenergie-geschwindigkeit_h150"
-msgstr "Windgeschwindigkeit 150 m Höhe"
+msgstr "Sveltezza dal vent autezza 150 m"
 
 msgid "ch.bfe.windenergie-geschwindigkeit_h50"
-msgstr "Windgeschwindigkeit 50 m Höhe"
+msgstr "Sveltezza dal vent autezza 50 m"
 
 msgid "ch.bfe.windenergie-geschwindigkeit_h75"
-msgstr "Windgeschwindigkeit 75 m Höhe"
+msgstr "Sveltezza dal vent autezza 75 m"
 
 msgid "ch.bfe.windenergieanlagen"
 msgstr "Implants d'energia dal vent"
@@ -4158,31 +4158,31 @@ msgid "ch.bfs"
 msgstr "BFS"
 
 msgid "ch.bfs.arealstatistik"
-msgstr "Stat. d'areals 2004/09 NOAS04"
+msgstr "Statistica d'areals 2004/09 NOAS04"
 
 msgid "ch.bfs.arealstatistik-1985"
-msgstr "Stat. d'areals 1979/85 NOAS04"
+msgstr "Statistica d'areals 1979/85 NOAS04"
 
 msgid "ch.bfs.arealstatistik-1997"
-msgstr "Stat. d'areals 1992/97 NOAS04"
+msgstr "Statistica d'areals 1992/97 NOAS04"
 
 msgid "ch.bfs.arealstatistik-bodenbedeckung"
-msgstr "Stat. d'areals 2004/09 NOLC04"
+msgstr "Statistica d'areals 2004/09 NOLC04"
 
 msgid "ch.bfs.arealstatistik-bodenbedeckung-1985"
-msgstr "Stat. d'areals 1979/85 NOLC04"
+msgstr "Statistica d'areals 1979/85 NOLC04"
 
 msgid "ch.bfs.arealstatistik-bodenbedeckung-1997"
-msgstr "Stat. d'areals 1992/97 NOLC04"
+msgstr "Statistica d'areals 1992/97 NOLC04"
 
 msgid "ch.bfs.arealstatistik-bodennutzung"
-msgstr "Stat. d'areals 2004/09 NOLU04"
+msgstr "Statistica d'areals 2004/09 NOLU04"
 
 msgid "ch.bfs.arealstatistik-bodennutzung-1985"
-msgstr "Stat. d'areals 1979/85 NOLU04"
+msgstr "Statistica d'areals 1979/85 NOLU04"
 
 msgid "ch.bfs.arealstatistik-bodennutzung-1997"
-msgstr "Stat. d'areals 1992/97 NOLU04"
+msgstr "Statistica d'areals 1992/97 NOLU04"
 
 msgid "ch.bfs.arealstatistik-hintergrund"
 msgstr "Utilisaziun simplifitgada terren"
@@ -4233,10 +4233,10 @@ msgid "ch.blw.bodeneignung-kulturland"
 msgstr "Adattaziun sco terren cultivà"
 
 msgid "ch.blw.bodeneignung-kulturtyp"
-msgstr "Terren: Tip da cultura"
+msgstr "Terren: tip da cultura"
 
 msgid "ch.blw.bodeneignung-naehrstoffspeichervermoegen"
-msgstr "Retenziun subst. nutritivas"
+msgstr "Retenziun substanzas nutritivas"
 
 msgid "ch.blw.bodeneignung-skelettgehalt"
 msgstr "Pedrusitad"
@@ -4359,7 +4359,7 @@ msgid "ch.blw.ursprungsbezeichnungen-kaese"
 msgstr "Chaschiel DOP"
 
 msgid "ch.blw.ursprungsbezeichnungen-konditoreiwaren"
-msgstr "Products da plantas DOP"
+msgstr "Pastizarias IGP"
 
 msgid "ch.blw.ursprungsbezeichnungen-pflanzen"
 msgstr "Products da plantas DOP"
@@ -4425,7 +4425,7 @@ msgid "ch.pronatura"
 msgstr "Pronatura"
 
 msgid "ch.pronatura.naturschutzgebiete"
-msgstr "Pro Natura Naturschutzgebiete"
+msgstr "Protecziun da la natira Pro natura"
 
 msgid "ch.pronatura.url"
 msgstr "http://www.pronatura.ch/schutzgebiete"
@@ -4491,7 +4491,7 @@ msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Geometer-revisur"
 
 msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung"
-msgstr "Stadi da la mesiraziun uffiziala"
+msgstr "Actualisaziun periodica"
 
 msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.canton"
 msgstr "Kanton"
@@ -4530,7 +4530,7 @@ msgid "ch.swisstopo.area-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.bk200-papierkarte.metadata"
-msgstr "Burgenkarte Papier"
+msgstr "Charta dals chastels – stampà"
 
 msgid "ch.swisstopo.bk200-papierkarte.metadata.name"
 msgstr "Name"
@@ -4590,7 +4590,7 @@ msgid "ch.swisstopo.fixpunkte-lfp2.id"
 msgstr "Nummer"
 
 msgid "ch.swisstopo.gas25-papierkarte.metadata"
-msgstr "Atlas geologic AG25 - stampa"
+msgstr "Atlas geologic AG25 – stampà"
 
 msgid "ch.swisstopo.gas25-papierkarte.metadata.name"
 msgstr "Name"
@@ -4608,16 +4608,16 @@ msgid "ch.swisstopo.geoidmodell-etrs89"
 msgstr "Geoid en ETRS89"
 
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
-msgstr "Terrestrische Strahlung"
+msgstr "Radiaziun terrestra"
 
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch.contour"
 msgstr "Terrestrische Dosisleistung [nSv/h]"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm"
-msgstr "Letzteiszeitl. Max. (Vektor) 500"
+msgstr "Ultim temp da glatsch max. (vectur) 500"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
-msgstr "Max. dal'ultim temp da glatsch 500"
+msgstr "Ultim temp da glatsch max. (charta) 500"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm.ads_name"
 msgstr "Eisoberfläche während des letzteiszeitlichen Maximums LGM [m ü.M.]"
@@ -4650,7 +4650,7 @@ msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-geocover"
-msgstr "GeoCover - datas vectorialas"
+msgstr "GeoCover – datas vectorialas"
 
 msgid "ch.swisstopo.geologie-geocover.metadata"
 msgstr "Divisiun GeoCover / AG25"
@@ -4665,13 +4665,13 @@ msgid "ch.swisstopo.geologie-geocover.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
-msgstr "Anomalias da Bouguer"
+msgstr "Anomalias da Bouguer 500"
 
 msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Anomalias isostaticas 500"
 
 msgid "ch.swisstopo.geologie-geolkarten500.metadata"
-msgstr "Geologia 500 - stampada"
+msgstr "Geologia 500 – stampà"
 
 msgid "ch.swisstopo.geologie-geologische_karte"
 msgstr "Geologia 500"
@@ -4695,7 +4695,7 @@ msgid "ch.swisstopo.geologie-geomorphologie.ads_name"
 msgstr "Übersicht Geomorphologie: Oberflächenform"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
-msgstr "Eromagnetica Prealps/Giura 500"
+msgstr "Eromagnetica Svizra Bassa/Giura 500"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
 msgstr "Eromagnetica 500"
@@ -4704,7 +4704,7 @@ msgid "ch.swisstopo.geologie-geophysik-deklination"
 msgstr "Declinaziun 500"
 
 msgid "ch.swisstopo.geologie-geophysik-geothermie"
-msgstr "Fluss da chalur 500"
+msgstr "Densitad dal fluss da chalur 500"
 
 msgid "ch.swisstopo.geologie-geophysik-inklination"
 msgstr "Inclinaziun 500"
@@ -4743,10 +4743,10 @@ msgid "ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke"
 msgstr "Crappa da monuments istorics"
 
 msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1965"
-msgstr "Industria da cements 1965"
+msgstr "Industria da cement 1965"
 
 msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1995"
-msgstr "Industria da cements 1995"
+msgstr "Industria da cement 1995"
 
 msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1907"
 msgstr "Fabricas da quadrels 1907"
@@ -4770,10 +4770,10 @@ msgid "ch.swisstopo.geologie-geotope"
 msgstr "Geotops svizzers"
 
 msgid "ch.swisstopo.geologie-geowege"
-msgstr ""
+msgstr "Sendas da viandar geologicas"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2"
-msgstr "Geol. Dokumente (1000-21000km2)"
+msgstr "Documents geol. (1000-21000km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.author"
 msgstr "Autor"
@@ -4797,7 +4797,7 @@ msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2.title"
 msgstr "Titel"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2"
-msgstr "Geol. Dokumente (100-1000km2)"
+msgstr "Documents geol. (100-1000km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.author"
 msgstr "Autor"
@@ -4821,7 +4821,7 @@ msgid "ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2.title"
 msgstr "Titel"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2"
-msgstr "Geol. Dokumente (10-100km2)"
+msgstr "Documents geol. (10-100km2)"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-10to100km2.author"
 msgstr "Autor"
@@ -5001,7 +5001,7 @@ msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
 msgstr "Punktnummer"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
-msgstr "Atlas gravimetric 100 - stampa"
+msgstr "Atlas gravimetric 100 – stampà"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.name"
 msgstr "Name"
@@ -5013,10 +5013,10 @@ msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
-msgstr "Resursas d'aua sutterrana"
+msgstr "Resursas d'aua sutterrana 500"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet"
-msgstr "Vulnerabilitad aua sutterrana"
+msgstr "Vulnerabilitad aua sutterrana 500"
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
 msgstr "Minerals industrials"
@@ -5055,7 +5055,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Cunfins naziunals GG25"
 
 msgid "ch.swisstopo.ggk200-papierkarte.metadata"
-msgstr "Geol. Generalkarte 200 - Papier"
+msgstr "Charta geol. generala 200 – stampà"
 
 msgid "ch.swisstopo.ggk200-papierkarte.metadata.name"
 msgstr "Name"
@@ -5067,49 +5067,49 @@ msgid "ch.swisstopo.ggk200-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gk300-papierkarte.metadata"
-msgstr "Charta 1:300'000 stampada"
+msgstr "Charta 1:300'000 – stampà"
 
 msgid "ch.swisstopo.gk300-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkba500-papierkarte.metadata"
-msgstr "Anomalias da Bouguer - stampada"
+msgstr "Anomalias da Bouguer 500 – stampà"
 
 msgid "ch.swisstopo.gkba500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkg500-papierkarte.metadata"
-msgstr "Geologia 500 - stampada"
+msgstr "Geologia 500 – stampà"
 
 msgid "ch.swisstopo.gkg500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gklgm500-papierkarte.metadata"
-msgstr "Max. dal temp da glatsch - stampada"
+msgstr "Ultim temp da glatsch max. 500 – stampà"
 
 msgid "ch.swisstopo.gklgm500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkt500-papierkarte.metadata"
-msgstr "Tectonica 500 - stampada"
+msgstr "Tectonica 500 – stampà"
 
 msgid "ch.swisstopo.gkt500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkwvor500-papierkarte.metadata"
-msgstr "Resursas d'aua sutterrana - stampada"
+msgstr "Resursas d'aua sutterrana 500 stampà"
 
 msgid "ch.swisstopo.gkwvor500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata"
-msgstr "Vulnerabil. aua sutterrana stampada"
+msgstr "Vulnerab. aua sutterrana 500 stampà"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gsk-papierkarte.metadata"
-msgstr "Chartas geol. spez. - stampadas"
+msgstr "Chartas geol. spezialas – stampà"
 
 msgid "ch.swisstopo.gsk-papierkarte.metadata.name"
 msgstr "Name"
@@ -5124,7 +5124,7 @@ msgid "ch.swisstopo.hangneigung-ueber_30"
 msgstr "Classas pendenza dapli che 30°"
 
 msgid "ch.swisstopo.hebungsraten"
-msgstr "Vertikalbewegungen"
+msgstr "Moviments verticals"
 
 msgid "ch.swisstopo.hebungsraten.contour"
 msgstr "Höhenänderung pro Jahr [mm/Jahr]"
@@ -5169,10 +5169,10 @@ msgid "ch.swisstopo.hebungsraten.y"
 msgstr "Y-Koordinate (LV03) [m]"
 
 msgid "ch.swisstopo.hiks-dufour"
-msgstr "Charta Dufour Emprima ed."
+msgstr "Charta Dufour Emprima ediziun"
 
 msgid "ch.swisstopo.hiks-siegfried"
-msgstr "Charta Siegfried Emprima ed."
+msgstr "Charta Siegfried Emprima ediziun"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
 msgstr "Charta d'aviatica OACI stampada"
@@ -5205,7 +5205,7 @@ msgid "ch.swisstopo.landeskarte-grau-10"
 msgstr "Charta naziunala 1:10'000 (grisch)"
 
 msgid "ch.swisstopo.landesschwerenetz"
-msgstr "Schweregrundnetz"
+msgstr "Rait da basa gravimetrica"
 
 msgid "ch.swisstopo.landesschwerenetz.gravity"
 msgstr "Schwere [mGal]"
@@ -5262,7 +5262,7 @@ msgid "ch.swisstopo.lhk100-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata"
-msgstr "Charta naziunala 1:100'000 Cump."
+msgstr "Charta naziunala 1:100'000 cump."
 
 msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.name"
 msgstr "Name"
@@ -5274,7 +5274,7 @@ msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk100-papierkarte.metadata"
-msgstr "Charta naziunala 1:100'000 stampada"
+msgstr "Charta naziunala 1:100'000 stampà"
 
 msgid "ch.swisstopo.lk100-papierkarte.metadata.name"
 msgstr "Name"
@@ -5286,13 +5286,13 @@ msgid "ch.swisstopo.lk100-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk1000-papierkarte.metadata"
-msgstr "Charta naziunala 1:1'000'000 stampada"
+msgstr "Charta naziunala 1:1 miu. stampà"
 
 msgid "ch.swisstopo.lk1000-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk200-papierkarte.metadata"
-msgstr "Charta naziunala 1:200'000 stampada"
+msgstr "Charta naziunala 1:200'000 stampà"
 
 msgid "ch.swisstopo.lk200-papierkarte.metadata.name"
 msgstr "Name"
@@ -5304,7 +5304,7 @@ msgid "ch.swisstopo.lk200-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata"
-msgstr "Charta naziunala 1:25'000 Cump."
+msgstr "Charta naziunala 1:25'000 cump."
 
 msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.name"
 msgstr "Name"
@@ -5316,7 +5316,7 @@ msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata"
-msgstr "Charta naziunala 1:25'000"
+msgstr "Charta naziunala 1:25'000 stampà"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.author"
 msgstr "Autori"
@@ -5352,7 +5352,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Massstab"
 
 msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata"
-msgstr "Charta naziunala 1:50'000 Cump."
+msgstr "Charta naziunala 1:50'000 cump."
 
 msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.name"
 msgstr "Name"
@@ -5364,7 +5364,7 @@ msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk50-papierkarte.metadata"
-msgstr "Charta naziunala 1:50'000 stampada"
+msgstr "Charta naziunala 1:50'000 stampà"
 
 msgid "ch.swisstopo.lk50-papierkarte.metadata.name"
 msgstr "Name"
@@ -5376,7 +5376,7 @@ msgid "ch.swisstopo.lk50-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk500-papierkarte.metadata"
-msgstr "Charta naziunala 1:500'000 stampada"
+msgstr "Charta naziunala 1:500'000 stampà"
 
 msgid "ch.swisstopo.lk500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5427,7 +5427,7 @@ msgid "ch.swisstopo.lubis-luftbilder_farbe.ort"
 msgstr "Ort"
 
 msgid "ch.swisstopo.lubis-luftbilder_infrarot"
-msgstr "Fotografias ord l'aria IR"
+msgstr "Fotografias ord l'aria infracotsch."
 
 msgid "ch.swisstopo.lubis-luftbilder_infrarot.id"
 msgstr "Numer da maletg"
@@ -5436,7 +5436,7 @@ msgid "ch.swisstopo.lubis-luftbilder_infrarot.ort"
 msgstr "Ort"
 
 msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen"
-msgstr "Luftbilder swisstopo schräg"
+msgstr "Fotografias ord l'aria inclinà"
 
 msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen.bgdi_flugjahr"
 msgstr "Data da sgol"
@@ -5526,7 +5526,7 @@ msgid "ch.swisstopo.sgtk"
 msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
-msgstr "Charta turas da skis"
+msgstr "Charta turas da skis 1:50'000"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
 msgstr "Name"
@@ -5538,13 +5538,13 @@ msgid "ch.swisstopo.skitourenkarte-50.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.stk200-papierkarte.metadata"
-msgstr "Strassenkarte"
+msgstr "Charta da las vias"
 
 msgid "ch.swisstopo.stk200-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
-msgstr "swissALTI3D sumbriva reliev"
+msgstr "swissALTI3D Sumbriva reliev"
 
 msgid "ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill"
 msgstr "Cunfins districtuals"
@@ -5589,7 +5589,7 @@ msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.swissnames3d"
-msgstr "Geografische Namen swissNAMES3D"
+msgstr "Nums geografics swissNAMES3D"
 
 msgid "ch.swisstopo.swisstlm3d-karte-farbe"
 msgstr "Charta swissTLM (colur)"
@@ -5631,7 +5631,7 @@ msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
 msgstr "Territoris protegids VECTOR200"
 
 msgid "ch.swisstopo.vec200-building"
-msgstr "Edifizis VECTOR200"
+msgstr "Edifizis generalisads VECTOR200"
 
 msgid "ch.swisstopo.vec200-hydrography"
 msgstr "Idrologia VECTOR200"
@@ -5643,10 +5643,10 @@ msgid "ch.swisstopo.vec200-landcover-wald"
 msgstr "Surfatschas da guaud"
 
 msgid "ch.swisstopo.vec200-miscellaneous"
-msgstr "Divers Objects VECTOR200"
+msgstr "Objects singuls VECTOR200"
 
 msgid "ch.swisstopo.vec200-miscellaneous-geodpoint"
-msgstr "Puncts d'autezza VECTOR200"
+msgstr "Cotas d'autezza VECTOR200"
 
 msgid "ch.swisstopo.vec200-names-namedlocation"
 msgstr "Nums VECTOR200"
@@ -5676,7 +5676,7 @@ msgid "ch.swisstopo.vec25-gebaeude"
 msgstr "Edifizis VECTOR25"
 
 msgid "ch.swisstopo.vec25-gewaessernetz"
-msgstr "Idrologia VECTOR25"
+msgstr "Rait idrografica VECTOR25"
 
 msgid "ch.swisstopo.vec25-heckenbaeume"
 msgstr "Saivs vivas e bostgs VECTOR25"
@@ -5709,7 +5709,7 @@ msgid "ch.swisstopo.verschiebungsvektoren-tsp2.name"
 msgstr "Offizielle Punktnummer"
 
 msgid "ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata"
-msgstr "Charta naziunala 1:25'000"
+msgstr "Charta naziunala 1:25'000 cump."
 
 msgid "ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata.name"
 msgstr "Name"
@@ -5721,7 +5721,7 @@ msgid "ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata"
-msgstr "Charta naziunala 1:25'000"
+msgstr "Charta naziunala 1:50'000 cump."
 
 msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.name"
 msgstr "Name"
@@ -5745,7 +5745,7 @@ msgid "ch.swisstopo.wk50-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.wkt33-papierkarte.metadata"
-msgstr "Wanderkarte 1:33'333"
+msgstr "Chartas da viandar 1:33'333"
 
 msgid "ch.swisstopo.wkt33-papierkarte.metadata.name"
 msgstr "Name"
@@ -5757,7 +5757,7 @@ msgid "ch.swisstopo.wkt33-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.zeitreihen"
-msgstr "Viadi en il temp - chartas"
+msgstr "Viadi en il temp – chartas"
 
 msgid "ch.tamedia"
 msgstr "tamedia"
@@ -5766,7 +5766,7 @@ msgid "ch.vbs"
 msgstr "VBS"
 
 msgid "ch.vbs.armeelogistikcenter"
-msgstr "Armeelogistikcenter ALC"
+msgstr "Centers logistics da l'armada CLA"
 
 msgid "ch.vbs.armeelogistikcenter.abkuerzung"
 msgstr "Abkürzung"
@@ -5781,7 +5781,7 @@ msgid "ch.vbs.armeelogistikcenter.url"
 msgstr "Link"
 
 msgid "ch.vbs.bundestankstellen-bebeco"
-msgstr "Tankstellen BEBECO"
+msgstr "Tancadis BEBECO"
 
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Ort"
@@ -5793,10 +5793,10 @@ msgid "ch.vbs.bundestankstellen-bebeco.strasse"
 msgstr "Strasse"
 
 msgid "ch.vbs.grunddispositiv-zeus"
-msgstr "Zeus Karte"
+msgstr "Charta Zeus"
 
 msgid "ch.vbs.logistikraeume-armeelogistikcenter"
-msgstr "Logistikräume ALC"
+msgstr "Secturs logistics CLA"
 
 msgid "ch.vbs.logistikraeume-armeelogistikcenter.kanton"
 msgstr "Chantuns"
@@ -5808,19 +5808,19 @@ msgid "ch.vbs.milairspacechart"
 msgstr "Mil Airspace Chart"
 
 msgid "ch.vbs.patrouilledesglaciers-a_rennen"
-msgstr "Patrouille des Glaciers (A Rennen)"
+msgstr "Patrouille des Glaciers (cursa A)"
 
 msgid "ch.vbs.patrouilledesglaciers-a_rennen.name"
 msgstr "Name"
 
 msgid "ch.vbs.patrouilledesglaciers-z_rennen"
-msgstr "Patrouille des Glaciers (Z Rennen)"
+msgstr "Patrouille des Glaciers (cursa Z)"
 
 msgid "ch.vbs.patrouilledesglaciers-z_rennen.name"
 msgstr "Name"
 
 msgid "ch.vbs.retablierungsstellen"
-msgstr "Retablierungsstellen"
+msgstr "Posts da restabiliment"
 
 msgid "ch.vbs.retablierungsstellen.name"
 msgstr "Num"
