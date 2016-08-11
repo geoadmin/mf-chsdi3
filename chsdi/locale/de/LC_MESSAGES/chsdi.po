@@ -3099,7 +3099,7 @@ msgid "ch.bafu.schutzgebiete-smaragd"
 msgstr "Smaragd"
 
 msgid "ch.bafu.schutzgebiete-wildruhezonen"
-msgstr "Wildtierschutzgebiete"
+msgstr "Wildschutzgebiete"
 
 msgid "ch.bafu.showme-gemeinden_hochwasser"
 msgstr "ShowMe Gemeinden: Hochwasser"
@@ -3492,7 +3492,7 @@ msgid "ch.bafu.wasserbau-vermessungsstrecken.streckenid"
 msgstr "StreckenID"
 
 msgid "ch.bafu.wrz-jagdbanngebiete_select"
-msgstr "Wildtierschutzgebiete"
+msgstr "Wildschutzgebiete"
 
 msgid "ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen"
 msgstr "Erlaubte Wege und Routen"
@@ -4695,7 +4695,7 @@ msgid "ch.swisstopo.geologie-geomorphologie.ads_name"
 msgstr "Übersicht Geomorphologie: Oberflächenform"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
-msgstr "Aeromagnetik Voralpen/Jura 500"
+msgstr "Aeromagnetik Mittelland/Jura 500"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
 msgstr "Aeromagnetik 500"
@@ -5103,7 +5103,7 @@ msgid "ch.swisstopo.gkwvor500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata"
-msgstr "Grundwasservulnerabil. 500 - Papier"
+msgstr "Grundwasservulnerabilität 500 - Papier"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"

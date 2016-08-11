@@ -2211,7 +2211,7 @@ msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff.stickstoff"
 msgstr "Azote, pertes cummulées [kg / ha * a]"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347"
-msgstr "ARA - Eaux usées en Q347"
+msgstr "ARA - Eaux usées dans Q347"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -2340,7 +2340,7 @@ msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347.vsa_kategorie"
 msgstr "Type de traitement (catégorie VSA)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse"
-msgstr "ARA - Capacité EH 60g DBO5"
+msgstr "ARA - Capacité (EH)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse.abw_tagesmittel"
 msgstr "Q24 (m3/d)"
@@ -2940,16 +2940,16 @@ msgid "ch.bafu.kt"
 msgstr "OFEV + canton"
 
 msgid "ch.bafu.laerm-bahnlaerm_nacht"
-msgstr "Bruit ferroviaire la nuit"
+msgstr "Bruit ferroviaire nuit"
 
 msgid "ch.bafu.laerm-bahnlaerm_tag"
-msgstr "Bruit ferroviaire en journée"
+msgstr "Bruit ferroviaire jour"
 
 msgid "ch.bafu.laerm-strassenlaerm_nacht"
-msgstr "Bruit du trafic routier la nuit"
+msgstr "Bruit du trafic routier nuit"
 
 msgid "ch.bafu.laerm-strassenlaerm_tag"
-msgstr "Bruit routier en journée"
+msgstr "Bruit du trafic routier jour"
 
 msgid "ch.bafu.landesforstinventar-baumarten"
 msgstr "Essences (IFN)"
@@ -5103,7 +5103,7 @@ msgid "ch.swisstopo.gkwvor500-papierkarte.metadata.release"
 msgstr "Édition"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata"
-msgstr "Vulnérabilité aquifères 500 - papier"
+msgstr "Vulnérabilité des aquifères 500 - papier"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
 msgstr "Édition"
@@ -5262,7 +5262,7 @@ msgid "ch.swisstopo.lhk100-papierkarte.metadata.release"
 msgstr "Édition"
 
 msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata"
-msgstr "Carte nationale 1:100'000 Assembl."
+msgstr "Carte nationale 1:100'000 Ass. papier"
 
 msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.name"
 msgstr "Nom"
@@ -5304,7 +5304,7 @@ msgid "ch.swisstopo.lk200-papierkarte.metadata.release"
 msgstr "Édition"
 
 msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata"
-msgstr "Carte nationale 1:25'000 Assemblage"
+msgstr "Carte nationale 1:25'000 Ass. papier"
 
 msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.name"
 msgstr "Nom"
@@ -5352,7 +5352,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Echelle"
 
 msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata"
-msgstr "Carte nationale 1:50'000 Assemblage"
+msgstr "Carte nationale 1:50'000 Ass. papier"
 
 msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.name"
 msgstr "Nom"
