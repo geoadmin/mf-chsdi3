@@ -59,13 +59,13 @@ class TestSitemapView(TestsBase):
         resp.content_type == 'application/xml'
         # contains all links
         for urlbase in self.sitemaps_with_urls:
-            resp.mustcontain('sitemap_' + urlbase + '.xml')
+            resp.mustcontain('/sitemap?content=base')
         # does not contain
         for urlbase in self.sitemaps_notin_index:
-            self.assertTrue('sitemap_' + urlbase + '.xml' not in resp.body)
+            self.assertNotIn('/sitemap?content=' + urlbase, resp.body)
 
         # contains correct domain
-        self.assertTrue(self.testapp.app.registry.settings.get('geoadminhost') in resp.body)
+        self.assertIn(self.testapp.app.registry.settings.get('host'), resp.body)
         # validate scheme
         self.assertEqual(0, _validate_scheme('siteindex.xsd', resp.body))
 
@@ -122,17 +122,14 @@ class TestSitemapView(TestsBase):
     def test_addresses_index_file(self):
         resp = self.testapp.get('/sitemap?content=addresses', status=200)
         resp.content_type == 'application/xml'
-        # shouldn't contain empty
-        self.assertTrue('sitemap_addresses.xml' not in resp.body)
-        self.assertTrue('sitemap_addresses_.xml' not in resp.body)
-        # shouldn't contain too big (this might theoreticyll fail if address db grew
-        self.assertTrue('sitemap_addresses_500.xml' not in resp.body)
+        # shouldn't contain too big (this might theoretically fail if address db grew)
+        self.assertNotIn('/sitemap?content=addresses_500', resp.body)
         # check for first link
-        resp.mustcontain('sitemap_addresses_0.xml')
+        resp.mustcontain('/sitemap?content=addresses_0')
         # check for last link (this might change depending on size of db
-        resp.mustcontain('sitemap_addresses_387.xml')
+        resp.mustcontain('/sitemap?content=addresses_387')
         # contains correct domain
-        self.assertTrue(self.testapp.app.registry.settings.get('geoadminhost') in resp.body)
+        self.assertIn(self.testapp.app.registry.settings.get('host'), resp.body)
         # validate scheme
         self.assertEqual(0, _validate_scheme('siteindex.xsd', resp.body))
 

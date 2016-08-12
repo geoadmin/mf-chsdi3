@@ -20,7 +20,8 @@ class SiteMaps(SiteMapValidation):
         super(SiteMaps, self).__init__()
         self.content = request.params.get('content')
         self.basename = 'sitemap'
-        self.host = request.registry.settings['geoadminhost']
+        self.host = request.registry.settings['api_url'].replace('//', '')
+        self.geoadminhost = request.registry.settings['geoadminhost']
         self.staging = request.registry.settings['geodata_staging']
         self.request = request
         self.langs = ['de', 'fr', 'it', 'rm', 'en']
@@ -46,7 +47,7 @@ def sitemap(request):
 
 
 def index(params):
-    buildFileNames = lambda x: params.basename + '_' + x + '.xml'
+    buildFileNames = lambda x: params.basename + '?content=' + x
     data = {
         'host': params.host,
         'sitemaps': map(buildFileNames, params.in_index)
@@ -62,7 +63,7 @@ def index(params):
 
 def base(params):
     paths = toAllLanguages(params.langs, ['?'], '', '')
-    return asXml(params, paths)
+    return asXml(params, paths, params.geoadminhost)
 
 
 def topics(params):
@@ -73,7 +74,7 @@ def topics(params):
         pathstart = '?topic=' + topic['id']
         paths.extend(toAllLanguages(langs, [pathstart], '&', ''))
 
-    return asXml(params, paths)
+    return asXml(params, paths, params.geoadminhost)
 
 
 def layers(params):
@@ -89,7 +90,7 @@ def layers(params):
         layerlinks = map(buildlink, query.all())
         paths.extend(toAllLanguages(topic['langs'].split(','), layerlinks, '&', ''))
 
-    return asXml(params, paths)
+    return asXml(params, paths, params.geoadminhost)
 
 
 def addresses(params):
@@ -104,7 +105,7 @@ def address_index(params):
     session = params.request.db
     count = session.query(SitemapGebaeuderegister).count()
     max_index = int(math.ceil(count / __MAX_NUM_URLS__))
-    names = lambda x: params.basename + '_addresses_' + str(x) + '.xml'
+    names = lambda x: params.basename + '?content=addresses_' + str(x)
     data = {
         'host': params.host,
         'sitemaps': map(names, range(max_index))
@@ -129,7 +130,7 @@ def address_part(params):
                      '&X=' + str(int(res.X)) +
                      '&Y=' + str(int(res.Y)) +
                      '&zoom=9')
-    return asXml(params, paths)
+    return asXml(params, paths, params.geoadminhost)
 
 
 def getTopics(params):
@@ -141,9 +142,9 @@ def getTopics(params):
     return json.loads(topicresp.body)['topics']
 
 
-def asXml(params, paths):
+def asXml(params, paths, host):
     data = {
-        'host': params.host,
+        'host': host,
         'list': paths
     }
     response = render_to_response(
