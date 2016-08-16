@@ -6,7 +6,7 @@
 <%def name="table_body(c, lang)">
     <%
       from chsdi.models.vector import getScale
-      from chsdi.lib.validation.features import IdentifyServiceValidation
+      from chsdi.lib.validation.identify import IdentifyServiceValidation
       request = context.get('request')
       defaultExtent = '42000,30000,350000,900000'
       defaultImageDisplay = '400,600,96'
