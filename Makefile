@@ -85,6 +85,7 @@ help:
 	@echo "- updateapi          Updates geoadmin api source code (ol3 fork)"
 	@echo "- printconfig        Set tomcat print env variables"
 	@echo "- printwar           Creates the .jar print file (only one per env per default)"
+	@echo "- prodvsint          Returns the differences for WMTSCapabilities, layersConfig, apiMapserver and faqlist between production and integration phase"
 	@echo "- deploydev          Deploys master to dev (SNAPSHOT=true to also create a snapshot)"
 	@echo "- deployint          Deploys a snapshot to integration (SNAPSHOT=201512021146)"
 	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"
@@ -166,6 +167,10 @@ rss: doc chsdi/static/doc/build/releasenotes/index.html
 translate:
 	@echo "${GREEN}Updating translations...${RESET}";
 	${PYTHON_CMD} translations/translation2po.py chsdi/locale/;
+
+.PHONY: prodvsint
+prodvsint:
+	./scripts/prod_vs_int.sh
 
 chsdi/locale/en/LC_MESSAGES/chsdi.po:
 chsdi/locale/en/LC_MESSAGES/chsdi.mo: chsdi/locale/en/LC_MESSAGES/chsdi.po
