@@ -46,14 +46,14 @@ class HtmlPopupServiceValidation(BaseFeaturesValidation):
         if value is not None:
             self._layerId = value
         else:
-            raise HTTPBadRequest('Please provide a featureId')
+            raise HTTPBadRequest('Please provide a layerId')
 
     @featureIds.setter
     def featureIds(self, value):
         if value is not None:
             self._featureIds = value.split(',')
         else:
-            raise HTTPBadRequest('Please provide a layerId')
+            raise HTTPBadRequest('Please provide featureIds')
 
     # Optional
     @imageDisplay.setter
