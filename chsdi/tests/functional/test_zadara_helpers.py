@@ -41,7 +41,7 @@ class Test_ZadaraHelpers(unittest.TestCase):
         request.scheme = 'http'
         request.registry.settings = {}
         request.registry.settings['apache_base_path'] = 'main'
-        request.registry.settings['zadara_dir'] = '/var/local/cartoweb/downloads/'
+        request.registry.settings['zadara_dir'] = '/var/local/geodata/downloads/'
         layerBodId = 'ch.swisstopo.geologie-gisgeol'
         fileName = os.listdir(request.registry.settings['zadara_dir'] + layerBodId)[0]
         for f in find_files(request, layerBodId, fileName):
