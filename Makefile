@@ -21,7 +21,7 @@ SHORTENER_ALLOWED_HOSTS :=
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
 USER_SOURCE ?= rc_user
 WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
-ZADARA_DIR := /var/local/cartoweb/downloads/
+ZADARA_DIR := /var/local/geodata/downloads/
 
 # Commands
 AUTOPEP8_CMD := $(INSTALL_DIRECTORY)/bin/autopep8
