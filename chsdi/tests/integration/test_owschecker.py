@@ -4,6 +4,7 @@ from chsdi.tests.integration import TestsBase
 from nose.plugins.capture import Capture
 from chsdi.views import owschecker as ows
 from chsdi.views.owschecker import to_bunch
+from pyramid.paster import get_app
 
 
 class TestOwsChecker(TestsBase):
@@ -18,23 +19,28 @@ class TestOwsChecker(TestsBase):
         del self.capture
 
     def _callFUT(self):
-        base_url = 'http://wms.geo.admin.ch'
+        app = get_app('production.ini')
+        base_url = "http://" + app.registry.settings['wmshost'] + '/'
         dictionary = {'service': 'WMS', 'base_url': base_url}
         bunch = ows.Bunch(dictionary)
         return bunch
 
     def test_bunch(self):
         bunch = self._callFUT()
-        self.assertEqual({'base_url': 'http://wms.geo.admin.ch', 'service': 'WMS'}, bunch)
+        app = get_app('production.ini')
+        base_url = "http://" + app.registry.settings['wmshost'] + '/'
+        self.assertEqual({'base_url': base_url, 'service': 'WMS'}, bunch)
 
     def test_to_bunch(self):
-        dictionary_1 = {'base_url': 'http://wms.geo.admin.ch', 'service': 'WMS'}
+        app = get_app('production.ini')
+        base_url = "http://" + app.registry.settings['wmshost'] + '/'
+        dictionary_1 = {'base_url': base_url, 'service': 'WMS'}
         bunch_1 = to_bunch(dictionary_1)
-        self.assertEqual(bunch_1, {'base_url': 'http://wms.geo.admin.ch', 'service': 'WMS'})
+        self.assertEqual(bunch_1, {'base_url': base_url, 'service': 'WMS'})
 
-        dictionary_2 = {'base_url': 'http://wms.geo.admin.ch', 'service': {'service1': 'WMS', 'service2': 'WMTS'}}
+        dictionary_2 = {'base_url': base_url, 'service': {'service1': 'WMS', 'service2': 'WMTS'}}
         bunch_2 = to_bunch(dictionary_2)
-        self.assertEqual(bunch_2, {'base_url': 'http://wms.geo.admin.ch', 'service': {'service2': 'WMTS', 'service1': 'WMS'}})
+        self.assertEqual(bunch_2, {'base_url': base_url, 'service': {'service2': 'WMTS', 'service1': 'WMS'}})
 
     def test_bykvp_no_args(self):
         self.testapp.get('/owschecker/bykvp', status=400)
@@ -45,7 +51,8 @@ class TestOwsChecker(TestsBase):
         resp.mustcontain("Hint: Don't use tailing")
 
     def test_bykvp_minimal_wms_request(self):
-        base_url = 'http://wms.geo.admin.ch'
+        app = get_app('production.ini')
+        base_url = "http://" + app.registry.settings['wmshost'] + '/'
         resp = self.testapp.get('/owschecker/bykvp', params={'service': 'WMS', 'base_url': base_url}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         resp.mustcontain("Checked Service: WMS")
@@ -63,11 +70,13 @@ class TestOwsChecker(TestsBase):
         resp.mustcontain("Checked Service: WFS")
 
     def test_bykvp_wms_request_restful(self):
-        base_url = 'http://wms.geo.admin.ch'
+        app = get_app('production.ini')
+        base_url = "http://" + app.registry.settings['wmshost'] + '/'
         resp = self.testapp.get('/owschecker/bykvp', params={'service': 'WMS', 'base_url': base_url, 'restful': True}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_form_params(self):
-        base_url = 'http://wms.geo.admin.ch'
+        app = get_app('production.ini')
+        base_url = "http://" + app.registry.settings['wmshost'] + '/'
         resp = self.testapp.get('/owschecker/form', params={'service': 'WMS', 'base_url': base_url}, status=200)
         self.assertEqual(resp.content_type, 'text/html')
