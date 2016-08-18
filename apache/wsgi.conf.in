@@ -112,15 +112,15 @@ Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, 
 # kml file downloads
 AliasMatch ^${apache_entry_path}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${print_temp_dir}/kml/$1
 
-# static downloads from zadara
-<Directory ${zadara_dir}>
+# static downloads from efs
+<Directory ${download_dir}>
     AllowOverride None
     Order allow,deny
     Allow from all
 </Directory>
 
 # Zadara downloads
-AliasMatch ^${apache_entry_path}/downloads/ch.(.*)$ ${zadara_dir}ch.$1
+AliasMatch ^${apache_entry_path}/downloads/ch.(.*)$ ${download_dir}ch.$1
 
 # KML admin
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
