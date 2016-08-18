@@ -4,7 +4,7 @@ import unittest
 
 from pyramid import testing
 
-from chsdi.lib.zadara_helpers import find_files, hbytes
+from chsdi.lib.download_helpers import find_files, hbytes
 
 
 class Test_ZadaraHelpers(unittest.TestCase):
@@ -41,9 +41,9 @@ class Test_ZadaraHelpers(unittest.TestCase):
         request.scheme = 'http'
         request.registry.settings = {}
         request.registry.settings['apache_base_path'] = 'main'
-        request.registry.settings['zadara_dir'] = '/var/local/cartoweb/downloads/'
+        request.registry.settings['download_dir'] = '/var/local/geodata/downloads/'
         layerBodId = 'ch.swisstopo.geologie-gisgeol'
-        fileName = os.listdir(request.registry.settings['zadara_dir'] + layerBodId)[0]
+        fileName = os.listdir(request.registry.settings['download_dir'] + layerBodId)[0]
         for f in find_files(request, layerBodId, fileName):
             self.assertTrue('name' in f)
             self.assertTrue('size' in f)

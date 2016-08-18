@@ -35,8 +35,7 @@ sqlalchemy.lubis.url = postgresql://${dbhost}:${dbport}/lubis_${dbstaging}
 # Mako specific
 mako.directories = chsdi:templates
 
-dtm_base_path = /var/local/profile/
-zadara_dir = ${zadara_dir}
+download_dir = ${download_dir}
 geodata_staging = ${geodata_staging}
 sphinxhost = ${sphinxhost}
 wmshost = ${wmshost}

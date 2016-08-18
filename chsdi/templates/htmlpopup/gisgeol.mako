@@ -3,7 +3,7 @@
 <%def name="table_body(c,lang)">
 <%
     import markupsafe
-    from chsdi.lib.zadara_helpers import find_files, hbytes
+    from chsdi.lib.download_helpers import find_files, hbytes
 
     c['stable_id'] = False
     sgd_nr = c['layerBodId'] + '.' + 'sgd_nr'

@@ -16,7 +16,7 @@ def hbytes(num):
 
 def find_files(request, layerBodId, FilePattern):
     settings = request.registry.settings
-    downloadFolder = ''.join((settings['zadara_dir'], layerBodId))
+    downloadFolder = ''.join((settings['download_dir'], layerBodId))
     for filePath in glob.glob('/'.join((downloadFolder, FilePattern))):
         fileName = os.path.basename(filePath)
         fileSize = os.path.getsize(filePath)
