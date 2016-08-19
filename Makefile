@@ -12,6 +12,7 @@ DEPLOY_TARGET ?=
 GIT_BRANCH := $(shell if [ -f '.venv/deployed-git-branch' ]; then cat .venv/deployed-git-branch 2> /dev/null; else git rev-parse --symbolic-full-name --abbrev-ref HEAD; fi)
 HTTP_PROXY := http://ec2-52-28-118-239.eu-central-1.compute.amazonaws.com:80
 INSTALL_DIRECTORY := .venv
+KML_TEMP_DIR := /var/local/print/kml
 MODWSGI_USER := www-data
 NO_TESTS ?= withtests
 NODE_DIRECTORY := node_modules
@@ -297,7 +298,7 @@ apache/wsgi.conf: apache/wsgi.conf.in apache/application.wsgi
 		--var "wsgi_threads=$(WSGI_THREADS)" \
 		--var "wsgi_app=$(WSGI_APP)" \
 		--var "download_dir=$(DOWNLOAD_DIR)" \
-		--var "print_temp_dir=$(PRINT_TEMP_DIR)" $< > $@
+		--var "kml_temp_dir=$(KML_TEMP_DIR)" $< > $@
 
 development.ini.in:
 	@echo "${GREEN}Template file development.ini.in has changed${RESET}";
@@ -330,7 +331,7 @@ production.ini: production.ini.in
 		--var "mapproxyhost=$(MAPPROXYHOST)" \
 		--var "geoadminhost=$(GEOADMINHOST)" \
 		--var "host=$(HOST)" \
-		--var "print_temp_dir=$(PRINT_TEMP_DIR)" \
+		--var "kml_temp_dir=$(KML_TEMP_DIR)" \
 		--var "http_proxy=$(HTTP_PROXY)" \
 		--var "geoadmin_file_storage_bucket=$(GEOADMIN_FILE_STORAGE_BUCKET)" \
 		--var "shortener_allowed_hosts=$(SHORTENER_ALLOWED_HOSTS)" \

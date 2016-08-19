@@ -110,7 +110,7 @@ Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, 
 </LocationMatch>
 
 # kml file downloads
-AliasMatch ^${apache_entry_path}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${print_temp_dir}/kml/$1
+AliasMatch ^${apache_entry_path}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${kml_temp_dir}/$1
 
 # static downloads from efs
 <Directory ${download_dir}>

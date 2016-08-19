@@ -18,7 +18,7 @@ def make_sure_path_exists(path):
         os.makedirs(path)
     except OSError as exception:
         if exception.errno != errno.EEXIST:
-            raise
+            raise HTTPInternalServerError(path)
 
 
 def delete_old_files(path):
@@ -40,7 +40,7 @@ class DownloadKML:
 
     def __init__(self, request):
         self.request = request
-        self.tmpdir = request.registry.settings['print_temp_dir'] + '/kml'
+        self.tmpdir = request.registry.settings['kml_temp_dir']
         self.host = request.registry.settings['api_url'] + '/kml'
 
     @requires_authorization()
@@ -70,8 +70,8 @@ class DownloadKML:
         try:
             with open(self.tmpdir + '/' + filename, 'w') as file_:
                 file_.write(kml.encode('utf8'))
-        except EnvironmentError:
-            raise HTTPInternalServerError()
+        except EnvironmentError as e:
+            raise HTTPInternalServerError(e)
 
         return {
             'url': self.host + '/' + filename
