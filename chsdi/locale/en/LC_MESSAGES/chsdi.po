@@ -2060,6 +2060,9 @@ msgstr "Welten&Sutter atlas"
 msgid "ch.bafu.flussordnungszahlen-strahler"
 msgstr "Stream order"
 
+msgid "ch.bafu.gefahren-basiskarte"
+msgstr "Basiskarte GIN"
+
 msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Seismic subsoil classes"
 

@@ -2060,6 +2060,9 @@ msgstr "Atlas Welten&Sutter"
 msgid "ch.bafu.flussordnungszahlen-strahler"
 msgstr "Ordre des cours d’eau"
 
+msgid "ch.bafu.gefahren-basiskarte"
+msgstr "Carte de base pour GIN"
+
 msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Classes de sols de fondation"
 
