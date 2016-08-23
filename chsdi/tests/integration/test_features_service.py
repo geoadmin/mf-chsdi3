@@ -168,6 +168,13 @@ class TestFeaturesView(TestsBase):
         self.assertNotIn('geometry', resp.json['feature'])
         self.assertEqual(resp.json['feature']['id'], 362)
 
+    def test_feature_geojson_geom(self):
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362', params={'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('properties', resp.json['feature'])
+        self.assertIn('geometry', resp.json['feature'])
+        self.assertEqual(resp.json['feature']['id'], 362)
+
     def test_several_features(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362,363', status=200)
         self.assertEqual(len(resp.json['features']), 2)
@@ -204,6 +211,22 @@ class TestFeaturesView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/14/htmlPopup', params=params, status=200)
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
+
+    def test_htmlpopup_bad_request_image_display(self):
+        params = {'mapExtent': '485412.34375,109644.67,512974.44,135580.01999999999', 'imageDisplay': '600,96'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/14/htmlPopup', params=params, status=400)
+        resp.mustcontain('Please provide the parameter imageDisplay in a comma separated list of 3 arguments '
+                         '(width,height,dpi)')
+
+    def test_htmlpopup_nan_image_display(self):
+        params = {'mapExtent': '485412.34375,109644.67,512974.44,135580.01999999999', 'imageDisplay': '600,96,None'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/14/htmlPopup', params=params, status=400)
+        resp.mustcontain('Please provide numerical values for the parameter imageDisplay')
+
+    def test_htmlpopup_bad_request_map_extent(self):
+        params = {'mapExtent': 'quite_big_extent', 'imageDisplay': '1362,1139,96', 'lang': 'fr'}
+        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.schutzgebiete-aulav_uebrige/400/htmlPopup', params=params, status=400)
+        resp.mustcontain('Please provide numerical values for the parameter mapExtent')
 
     def test_htmlpopup_valid_topic_all(self):
         resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', status=200)
