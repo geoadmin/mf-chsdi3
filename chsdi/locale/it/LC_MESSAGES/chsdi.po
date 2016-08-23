@@ -6126,7 +6126,7 @@ msgid "epizentralzone"
 msgstr "Zone épicentrale"
 
 msgid "est"
-msgstr "Ovest"
+msgstr "Est"
 
 msgid "et_fromatt"
 msgstr "Anomalie aeromagnet. Altipiano/Giura [nT]"
