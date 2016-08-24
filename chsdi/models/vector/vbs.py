@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer
+from sqlalchemy import Column, Text, Integer, Unicode
 from sqlalchemy.types import Numeric
 
 from chsdi.models import register, bases
@@ -160,3 +160,109 @@ class Waldschaden(Base, Vector):
     y_koord = Column('y_koord', Integer)
 
 register('ch.vbs.waldschadenkarte', Waldschaden)
+
+
+class SimFacilities:
+    __table_args__ = ({'schema': 'militaer', 'autoload': False})
+    __template__ = 'templates/htmlpopup/sim_facilities.mako'
+    id = Column('stabil_id', Unicode, primary_key=True)
+    facility = Column('facility', Unicode)
+    facname_de = Column('facname_de', Unicode)
+    facname_fr = Column('facname_fr', Unicode)
+    facname_it = Column('facname_it', Unicode)
+    fackind_text_de = Column('fackind_text_de', Unicode)
+    fackind_text_fr = Column('fackind_text_fr', Unicode)
+    fackind_text_it = Column('fackind_text_it', Unicode)
+    facstatus_text_de = Column('facstatus_text_de', Unicode)
+    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
+    facstatus_text_it = Column('facstatus_text_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    doc_web = Column('doc_web', Unicode)
+    objname_de = Column('objname_de', Unicode)
+    objname_fr = Column('objname_fr', Unicode)
+    objname_it = Column('objname_it', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class SimFacilitiesA(Base, SimFacilities, Vector):
+    __tablename__ = 'sim_fac_anhoerung'
+    __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_anhorung'
+
+register('ch.vbs.sachplan-infrastruktur-militaer_anhorung', SimFacilitiesA)
+
+
+class SimFacilitiesK(Base, SimFacilities, Vector):
+    __tablename__ = 'sim_fac_kraft'
+    __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_kraft'
+
+register('ch.vbs.sachplan-infrastruktur-militaer_kraft', SimFacilitiesK)
+
+
+class SimPlanning:
+    __table_args__ = ({'schema': 'militaer', 'autoload': False})
+    __template__ = 'templates/htmlpopup/sim_planning.mako'
+    __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_kraft'
+    id = Column('stabil_id', Unicode, primary_key=True)
+    facname_de = Column('facname_de', Unicode)
+    facname_fr = Column('facname_fr', Unicode)
+    facname_it = Column('facname_it', Unicode)
+    plname_de = Column('plname_de', Unicode)
+    plname_fr = Column('plname_fr', Unicode)
+    plname_it = Column('plname_it', Unicode)
+    meastype_text_de = Column('meastype_text_de', Unicode)
+    meastype_text_fr = Column('meastype_text_fr', Unicode)
+    meastype_text_it = Column('meastype_text_it', Unicode)
+    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
+    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
+    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
+    plstatus_text_de = Column('plstatus_text_de', Unicode)
+    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
+    plstatus_text_it = Column('plstatus_text_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    validuntil = Column('validuntil', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    doc_web = Column('doc_web', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class SimPlanningK(Base, SimPlanning, Vector):
+    __tablename__ = 'sim_pl_kraft'
+    __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_kraft'
+    __minscale__ = 20005
+    __maxscale__ = 500005
+
+register('ch.vbs.sachplan-infrastruktur-militaer_kraft', SimPlanningK)
+
+
+class SimPlanningA(Base, SimPlanning, Vector):
+    __tablename__ = 'sim_pl_anhoerung'
+    __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_anhorung'
+    __minscale__ = 20005
+    __maxscale__ = 500005
+
+register('ch.vbs.sachplan-infrastruktur-militaer_anhorung', SimPlanningA)
+
+
+class SimPlanningRasterA(Base, SimPlanning, Vector):
+    __tablename__ = 'sim_pl_r_anhoerung'
+    __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_anhorung'
+    __maxscale__ = 20005
+    __minscale__ = 1
+
+register('ch.vbs.sachplan-infrastruktur-militaer_anhorung', SimPlanningRasterA)
+
+
+class SimPlanningRasterK(Base, SimPlanning, Vector):
+    __tablename__ = 'sim_pl_r_kraft'
+    __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_kraft'
+    __maxscale__ = 20005
+    __minscale__ = 1
+
+register('ch.vbs.sachplan-infrastruktur-militaer_kraft', SimPlanningRasterK)

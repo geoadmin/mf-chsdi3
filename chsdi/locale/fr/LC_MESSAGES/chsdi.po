@@ -5990,6 +5990,12 @@ msgstr "Itinéraires"
 msgid "chmobil_url_etappe"
 msgstr "Info sur l'étape SuisseMobile"
 
+msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
+msgstr "PSM consultation"
+
+msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
+msgstr "Plan sectoriel militaire"
+
 msgid "chmobil_url_route"
 msgstr "Info sur l'itinéraire SuisseMobile"
 
@@ -8461,6 +8467,9 @@ msgstr "Date de l`arrêt"
 
 msgid "tt_sachplan_facility_name"
 msgstr "Installation"
+
+msgid "tt_sachplan_facility_number"
+msgstr "Numéro installation"
 
 msgid "tt_sachplan_facility_uberobjekt"
 msgstr "Objet d`appartenance"
