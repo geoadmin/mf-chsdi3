@@ -1970,6 +1970,12 @@ msgstr "PPS - Consultazione 2015"
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Riserve di uccelli acquatici"
 
+msgid "ch.bafu.eua"
+msgstr "UFAM / AEA"
+
+msgid "ch.bafu.eua.url"
+msgstr "http://www.eea.europa.eu/it"
+
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonie di stambecchi"
 

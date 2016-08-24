@@ -1970,6 +1970,12 @@ msgstr "PPS – audiziun 2015"
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Reservats d'utschels: aua, migrants"
 
+msgid "ch.bafu.eua"
+msgstr "BAFU / EUA"
+
+msgid "ch.bafu.eua.url"
+msgstr "http://www.eea.europa.eu/de"
+
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonias da capricorns"
 

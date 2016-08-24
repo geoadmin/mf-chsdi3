@@ -1970,6 +1970,12 @@ msgstr "PPS consultation 2015"
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Réserves d'oiseaux d'eau"
 
+msgid "ch.bafu.eua"
+msgstr "OFEV / AEE"
+
+msgid "ch.bafu.eua.url"
+msgstr "http://www.eea.europa.eu/fr"
+
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonies de bouquetins"
 
