@@ -1970,6 +1970,12 @@ msgstr "TWW - Anhörung 2015"
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Wasser- und Zugvogelreservate"
 
+msgid "ch.bafu.eua"
+msgstr "BAFU / EUA"
+
+msgid "ch.bafu.eua.url"
+msgstr "http://www.eea.europa.eu/de"
+
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Steinbockkolonien"
 
@@ -2059,6 +2065,9 @@ msgstr "Atlas Welten&Sutter"
 
 msgid "ch.bafu.flussordnungszahlen-strahler"
 msgstr "Flussordnung"
+
+msgid "ch.bafu.gefahren-basiskarte"
+msgstr "Basiskarte GIN"
 
 msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Seismische Baugrundklassen"

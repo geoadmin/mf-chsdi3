@@ -1970,6 +1970,12 @@ msgstr "PPS - Consultazione 2015"
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Riserve di uccelli acquatici"
 
+msgid "ch.bafu.eua"
+msgstr "UFAM / AEA"
+
+msgid "ch.bafu.eua.url"
+msgstr "http://www.eea.europa.eu/it"
+
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonie di stambecchi"
 
@@ -2059,6 +2065,9 @@ msgstr "Atlante Welten&Sutter"
 
 msgid "ch.bafu.flussordnungszahlen-strahler"
 msgstr "Numerazione dei segmenti fluviali"
+
+msgid "ch.bafu.gefahren-basiskarte"
+msgstr "Carte de base pour GIN"
 
 msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Classe dei terreni di fondazione"

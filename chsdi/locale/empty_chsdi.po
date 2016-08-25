@@ -8860,3 +8860,12 @@ msgstr ""
 
 msgid "klimaeignung_zone"
 msgstr ""
+
+msgid "ch.bafu.gefahren-basiskarte"
+msgstr ""
+
+msgid "ch.bafu.eua"
+msgstr ""
+
+msgid "ch.bafu.eua.url"
+msgstr ""

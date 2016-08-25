@@ -1970,6 +1970,12 @@ msgstr "PPS consultation 2015"
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Réserves d'oiseaux d'eau"
 
+msgid "ch.bafu.eua"
+msgstr "OFEV / AEE"
+
+msgid "ch.bafu.eua.url"
+msgstr "http://www.eea.europa.eu/fr"
+
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonies de bouquetins"
 
@@ -2059,6 +2065,9 @@ msgstr "Atlas Welten&Sutter"
 
 msgid "ch.bafu.flussordnungszahlen-strahler"
 msgstr "Ordre des cours d’eau"
+
+msgid "ch.bafu.gefahren-basiskarte"
+msgstr "Carte de base pour GIN"
 
 msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Classes de sols de fondation"
