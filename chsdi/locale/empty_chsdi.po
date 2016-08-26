@@ -1,6 +1,15 @@
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz_nein"
 msgstr ""
 
+msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
+msgstr ""
+
+msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
+msgstr ""
+
+msgid "ch.bafu.hydrologie-hintergrundkarte"
+msgstr ""
+
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat_r"
 msgstr ""
 
@@ -4150,6 +4159,9 @@ msgid "tt_ch.bazl.startofconstruction"
 msgstr ""
 
 msgid "tt_ch.bazl.registrationnummer"
+msgstr ""
+
+msgid "tt_sachplan_facility_number"
 msgstr ""
 
 msgid "tt_sachplan-infrastruktur-schiene_aus_anlage"

@@ -5996,6 +5996,12 @@ msgstr "Nr."
 msgid "chmobil_title"
 msgstr "Route"
 
+msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
+msgstr "SPM Anhörung"
+
+msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
+msgstr "Sachplan Militär"
+
 msgid "chmobil_url_etappe"
 msgstr "Info zur Etappe von SchweizMobil"
 
@@ -8470,6 +8476,9 @@ msgstr "Beschlussdatum"
 
 msgid "tt_sachplan_facility_name"
 msgstr "Anlage"
+
+msgid "tt_sachplan_facility_number"
+msgstr "Anlagenummer"
 
 msgid "tt_sachplan_facility_uberobjekt"
 msgstr "Übergeordnetes Objekt"

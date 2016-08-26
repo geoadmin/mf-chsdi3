@@ -5999,6 +5999,12 @@ msgstr "Percorsi"
 msgid "chmobil_url_etappe"
 msgstr "SwitzerlandMobility stage information"
 
+msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
+msgstr "SPM Anhörung"
+
+msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
+msgstr "Sachplan Militär"
+
 msgid "chmobil_url_route"
 msgstr "SwitzerlandMobility route information"
 
@@ -8470,6 +8476,9 @@ msgstr "Valid from"
 
 msgid "tt_sachplan_facility_name"
 msgstr "Facility"
+
+msgid "tt_sachplan_facility_number"
+msgstr "Facility number"
 
 msgid "tt_sachplan_facility_uberobjekt"
 msgstr "Belongs to object"
