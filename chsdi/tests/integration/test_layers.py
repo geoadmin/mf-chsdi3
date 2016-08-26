@@ -94,7 +94,7 @@ class LayersChecker(object):
 
     def checkHtmlPopup(self, layer, feature, extended):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
-            link = '/rest/services/all/MapServer/' + layer + '/' + feature + '/htmlPopup?callback=cb&lang=' + lang
+            link = '/rest/services/all/MapServer/' + layer + '/' + feature + '/htmlPopup?callback=cb_&lang=' + lang
             resp = self.testapp.get(link)
             assert resp.status_int == 200, link
             if extended:
@@ -104,7 +104,7 @@ class LayersChecker(object):
 
     def checkLegend(self, layer):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
-            link = '/rest/services/all/MapServer/' + layer + '/legend?callback=cb&lang=' + lang
+            link = '/rest/services/all/MapServer/' + layer + '/legend?callback=cb_&lang=' + lang
             resp = self.testapp.get(link)
             assert resp.status_int == 200, link
 

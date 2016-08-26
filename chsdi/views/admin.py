@@ -11,11 +11,12 @@ LIMIT = 50
 
 
 @view_config(route_name='adminkml', renderer='json')
-def admin_kml(self):
-    bucket_name = self.registry.settings.get('geoadmin_file_storage_bucket')
-    api_url = self.registry.settings.get('api_url')
+def admin_kml(context, request):
+    settings = request.registry.settings
+    bucket_name = settings.get('geoadmin_file_storage_bucket')
+    api_url = settings.get('api_url')
     files = kml_load(api_url=api_url, bucket_name=bucket_name)
-    kmls = {'files': files, 'count': len(files), 'bucket': api_url, 'host': self.registry.settings.get('geoadminhost')}
+    kmls = {'files': files, 'count': len(files), 'bucket': api_url, 'host': settings.get('geoadminhost')}
 
     response = render_to_response(
         'chsdi:templates/adminkml.mako',

@@ -73,7 +73,7 @@ class TestFeaturesView(TestsBase):
         self.assertIn('properties', resp.json['results'][0])
 
     def test_find_withcb(self):
-        params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid', 'searchText': '1231641', 'callback': 'cb'}
+        params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchField': 'egid', 'searchText': '1231641', 'callback': 'cb_'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
         self.assertEqual(resp.content_type, 'text/javascript')
 
@@ -184,9 +184,9 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(len(resp.json['features']), 2)
 
     def test_feature_with_callback(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362', params={'callback': 'cb'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'text/javascript')
-        resp.mustcontain('cb({')
+        resp.mustcontain('cb_({')
 
     def test_feature_big_but_good(self):
         resp = self.testapp.get('/rest/services/all/MapServer/ch.swisstopo.geologie-geocover/1080284', params={'geometryFormat': 'geojson'}, status=200)
@@ -234,7 +234,7 @@ class TestFeaturesView(TestsBase):
         resp.mustcontain('<table')
 
     def test_htmlpopup_valid_with_callback(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', params={'callback': 'cb'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_htmlpopup_missing_feature(self):
@@ -254,7 +254,7 @@ class TestFeaturesView(TestsBase):
             self.assertEqual(resp.content_type, 'text/html')
 
     def test_extendedhtmlpopup_valid_with_callback(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/12/extendedHtmlPopup', params={'callback': 'cb'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/12/extendedHtmlPopup', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_extendedhtmlpopup_noinfo(self):

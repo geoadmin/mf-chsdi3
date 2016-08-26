@@ -24,9 +24,10 @@ class TestStationboard(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_stationboard_with_cb(self):
-        params = {'destination': 'Luzern', 'callback': 'cb'}
+        params = {'destination': 'Luzern', 'callback': 'cb_'}
         resp = self.testapp.get('/stationboard/stops/8501120', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
+        resp.mustcontain('cb_(')
 
     def test_stationboard_wrong_id(self):
         resp = self.testapp.get('/stationboard/stops/toto', status=400)
@@ -46,9 +47,10 @@ class TestStationboard(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_available_destinations_with_cb(self):
-        params = {'callback': 'cb'}
+        params = {'callback': 'cb_'}
         resp = self.testapp.get('/stationboard/stops/8500109/destinations', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
+        resp.mustcontain('cb_(')
 
     def test_stationboard_destination_nodata(self):
         resp = self.testapp.get('/stationboard/stops/123/destinations', status=200)

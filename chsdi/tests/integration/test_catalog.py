@@ -40,7 +40,7 @@ class TestCatalogService(TestsBase):
         self.assertTrue('category' in resp.json['results']['root'])
 
     def test_catalog_with_callback(self):
-        resp = self.testapp.get('/rest/services/blw/CatalogServer', params={'callback': 'cb'}, status=200)
+        resp = self.testapp.get('/rest/services/blw/CatalogServer', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_catalog_existing_map_no_catalog(self):
@@ -62,7 +62,7 @@ class TestCatalogService(TestsBase):
             self.assertEqual(resp.status_int, 200, link)
 
     def test_layersconfig_with_callback(self):
-        resp = self.testapp.get('/rest/services/blw/MapServer/layersConfig', params={'callback': 'cb'}, status=200)
+        resp = self.testapp.get('/rest/services/blw/MapServer/layersConfig', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_all_catalogs(self):
