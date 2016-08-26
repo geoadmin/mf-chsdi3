@@ -8881,3 +8881,33 @@ msgstr ""
 
 msgid "ch.bafu.eua.url"
 msgstr ""
+
+msgid "ch.swisstopo.lotabweichungen.eta_ch"
+msgstr ""
+
+msgid "ch.swisstopo.lotabweichungen.eta_etrf"
+msgstr ""
+
+msgid "ch.swisstopo.lotabweichungen.instrument"
+msgstr ""
+
+msgid "ch.swisstopo.lotabweichungen.land"
+msgstr ""
+
+msgid "ch.swisstopo.lotabweichungen.messjahr"
+msgstr ""
+
+msgid "ch.swisstopo.lotabweichungen.name"
+msgstr ""
+
+msgid "ch.swisstopo.lotabweichungen.symbol"
+msgstr ""
+
+msgid "ch.swisstopo.lotabweichungen.xi_ch"
+msgstr ""
+
+msgid "ch.swisstopo.lotabweichungen.xi_etrf"
+msgstr ""
+
+msgid "ch.swisstopo.lotabweichungen"
+msgstr ""

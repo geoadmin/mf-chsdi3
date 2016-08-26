@@ -5390,6 +5390,9 @@ msgstr "National Map 1:500'000 printed"
 msgid "ch.swisstopo.lk500-papierkarte.metadata.release"
 msgstr "Edition"
 
+msgid "ch.swisstopo.lotabweichungen"
+msgstr "Deviations of the vertical"
+
 msgid "ch.swisstopo.lubis-bildstreifen"
 msgstr "Image strips swisstopo"
 
@@ -8123,6 +8126,12 @@ msgstr "Von"
 msgid "tt_endmeasure"
 msgstr "Finish address (’waterbody kilometre’)"
 
+msgid "tt_eta_ch"
+msgstr "Eta (CH1903) [arcseconds]"
+
+msgid "tt_eta_etrf"
+msgstr "Eta (ETRS89) [arcseconds]"
+
 msgid "tt_ezgflaeche"
 msgstr "Catchment area size [km2]"
 
@@ -8212,6 +8221,9 @@ msgstr "Map number"
 
 msgid "tt_gsk_meta_publikation"
 msgstr "Publication year"
+
+msgid "tt_instrument"
+msgstr "Instrument"
 
 msgid "tt_kanal"
 msgstr "Waterbody type"
@@ -8314,6 +8326,9 @@ msgstr "Reactor type"
 
 msgid "tt_kkw_regulatory"
 msgstr "Regulatory body"
+
+msgid "tt_land"
+msgstr "Country"
 
 msgid "tt_landwirtsc"
 msgstr "Agricultural areas"
@@ -8426,8 +8441,14 @@ msgstr "Start address (’waterbody kilometre’)"
 msgid "tt_measure_2"
 msgstr "Address (’waterbody kilometre’)"
 
+msgid "tt_messjahr"
+msgstr "Year of measurement"
+
 msgid "tt_mq_jahr"
 msgstr "Mean annual discharge, modelled [m3/s]"
+
+msgid "tt_name"
+msgstr "Name"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
@@ -8551,6 +8572,9 @@ msgstr "Facility details"
 
 msgid "tt_swissprtr_ort"
 msgstr "Town"
+
+msgid "tt_symbol"
+msgstr "Type of measurement station"
 
 msgid "tt_teileinzugsgebiete_2.abfluesse_abflussvar"
 msgstr "Annual runoff variability"
@@ -8719,6 +8743,12 @@ msgstr "Protection period"
 
 msgid "tt_wrz_select_zusatz"
 msgstr "More info"
+
+msgid "tt_xi_ch"
+msgstr "Xi (CH1903) [arcseconds]"
+
+msgid "tt_xi_etrf"
+msgstr "Xi (ETRS89) [arcseconds]"
 
 msgid "tt_zeitreihen_FullResView"
 msgstr "View of the original map"
