@@ -5390,6 +5390,9 @@ msgstr "Carte nationale 1:500'000 papier"
 msgid "ch.swisstopo.lk500-papierkarte.metadata.release"
 msgstr "Édition"
 
+msgid "ch.swisstopo.lotabweichungen"
+msgstr "Déviations de la verticale"
+
 msgid "ch.swisstopo.lubis-bildstreifen"
 msgstr "Bandes d'images aériennes swisstopo"
 
@@ -8123,6 +8126,12 @@ msgstr "de"
 msgid "tt_endmeasure"
 msgstr "Adresse d’arrivée (kilométrage d’eau)"
 
+msgid "tt_eta_ch"
+msgstr "Eta (CH1903) [Secondes d‘arc]"
+
+msgid "tt_eta_etrf"
+msgstr "Eta (ETRS89) [Secondes d‘arc]"
+
 msgid "tt_ezgflaeche"
 msgstr "Superficie du bassin versant complet [km2]"
 
@@ -8212,6 +8221,9 @@ msgstr "Numéro de feuille"
 
 msgid "tt_gsk_meta_publikation"
 msgstr "Année de publication"
+
+msgid "tt_instrument"
+msgstr "Instrument"
 
 msgid "tt_kanal"
 msgstr "Type de cours d’eau"
@@ -8314,6 +8326,9 @@ msgstr "Type de réacteur"
 
 msgid "tt_kkw_regulatory"
 msgstr "Organe régulateur"
+
+msgid "tt_land"
+msgstr "Pays"
 
 msgid "tt_landwirtsc"
 msgstr "Surfaces agricoles"
@@ -8426,8 +8441,14 @@ msgstr "Adresse de départ (kilométrage d’eau)"
 msgid "tt_measure_2"
 msgstr "Adresse (’kilométrage d’eau’)"
 
+msgid "tt_messjahr"
+msgstr "Année de mesure"
+
 msgid "tt_mq_jahr"
 msgstr "Débit moyen modélisé annuel [m3/s]"
+
+msgid "tt_name"
+msgstr "Nom"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
@@ -8551,6 +8572,9 @@ msgstr "Détails de l’établissement"
 
 msgid "tt_swissprtr_ort"
 msgstr "Lieu"
+
+msgid "tt_symbol"
+msgstr "Type de station"
 
 msgid "tt_teileinzugsgebiete_2.abfluesse_abflussvar"
 msgstr "VariabiIité du débit annuel"
@@ -8719,6 +8743,12 @@ msgstr "Période de protection"
 
 msgid "tt_wrz_select_zusatz"
 msgstr "Informations supplémentaires"
+
+msgid "tt_xi_ch"
+msgstr "Xi (CH1903) [Secondes d‘arc]"
+
+msgid "tt_xi_etrf"
+msgstr "Xi (ETRS89) [Secondes d‘arc]"
 
 msgid "tt_zeitreihen_FullResView"
 msgstr "Vue de la feuille originale"

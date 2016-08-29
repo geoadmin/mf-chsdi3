@@ -2427,3 +2427,24 @@ class SwissBuildings3dPerimeter(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissbuildings3d', SwissBuildings3dPerimeter)
+
+
+class Lotabweichungen(Base, Vector):
+    __tablename__ = 'lotabweichungen_nur_punkte'
+    __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
+    __template__ = 'templates/htmlpopup/lotabweichungen.mako'
+    __bodId__ = 'ch.swisstopo.lotabweichungen'
+    __label__ = 'name'
+    id = Column('id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    land = Column('land', Unicode)
+    messjahr = Column('messjahr', Integer)
+    instrument = Column('instrument', Unicode)
+    xi_ch = Column('xi_ch', Float)
+    eta_ch = Column('eta_ch', Float)
+    xi_etrf = Column('xi_etrf', Float)
+    eta_etrf = Column('eta_etrf', Float)
+    symbol = Column('symbol', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.lotabweichungen', Lotabweichungen)
