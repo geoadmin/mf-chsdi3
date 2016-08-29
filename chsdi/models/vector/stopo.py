@@ -1043,23 +1043,6 @@ register('ch.swisstopo.swissimage-product', SwissimageProduct)
 register_perimeter('ch.swisstopo.swissimage-product', SwissimageProductPerimeter)
 
 
-class GeolGeocoverMetadata(Base, Vector):
-    __tablename__ = 'kv_geocover'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/geocover_metadata.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geocover.metadata'
-    __label__ = 'nr'
-    id = Column('gid', Integer, primary_key=True)
-    nr = Column('nr', Text)
-    titel = Column('titel', Text)
-    basis = Column('basis', Text)
-    vektorisierung_jahr = Column('vektorisierung_jahr', Integer)
-    grat25 = Column('grat25', Text)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geocover.metadata', GeolGeocoverMetadata)
-
-
 class GeolGenKarteGGK200Meta(Base, Vector):
     __tablename__ = 'kv_ggk_pk'
     __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
@@ -2131,6 +2114,16 @@ register('ch.swisstopo.geologie-geocover', GeocoverPolygonAux2)
 register('ch.swisstopo.geologie-geocover', GeocoverPolygonMain)
 register('ch.swisstopo.geologie-geocover', GeocoverGridShop)
 register_perimeter('ch.swisstopo.geologie-geocover', GeocoverGridShop)
+
+
+class GeolGeocoverMetadata(Base, Geocover, ShopProductGroupClass, Vector):
+    __tablename__ = 'view_geocover_grid_shop'
+    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
+    __bodId__ = 'ch.swisstopo.geologie-geocover.metadata'
+    __label__ = 'name_de'
+
+
+register('ch.swisstopo.geologie-geocover.metadata', GeolGeocoverMetadata)
 
 
 class Ga25Atlas:
