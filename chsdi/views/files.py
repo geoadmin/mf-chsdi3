@@ -150,11 +150,10 @@ class FileView(object):
     def _save_to_s3(self, data, mime, update=False, compress=True):
         ziped_data = None
         content_encoding = None
-        headers = {}
+        headers = {'Cache-Control': 'no-cache, must-revalidate'}
         if compress and mime == 'application/vnd.google-earth.kml+xml':
             ziped_data = self._gzip_data(data)
             content_encoding = 'gzip'
-            headers['Content-Encoding'] = 'gzip'
 
         if not update:
             if content_encoding == 'gzip' and ziped_data is not None:
@@ -166,7 +165,7 @@ class FileView(object):
                 k.content_type = mime
                 k.content_encoding = content_encoding
                 k.set_metadata('Content-Encoding', content_encoding)
-                k.set_contents_from_string(data, replace=False)
+                k.set_contents_from_string(data, headers=headers, replace=False)
                 key = self.bucket.get_key(k.key)
                 last_updated = parse_ts(key.last_modified)
             except Exception as e:
@@ -183,7 +182,7 @@ class FileView(object):
                 # Inconsistant behaviour with metadata, see https://github.com/boto/boto/issues/2798
                 self.key.content_encoding = content_encoding
                 self.key.set_metadata('Content-Encoding', content_encoding)
-                self.key.set_contents_from_string(data, replace=True)
+                self.key.set_contents_from_string(data, headers=headers, replace=True)
                 key = self.bucket.get_key(self.key.key)
                 last_updated = parse_ts(key.last_modified)
             except Exception as e:
