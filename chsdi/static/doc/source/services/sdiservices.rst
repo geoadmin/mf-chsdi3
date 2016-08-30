@@ -632,7 +632,7 @@ Examples
 - Search for locations matching the word “wabern”: `https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations <../../../rest/services/api/SearchServer?searchText=wabern&type=locations>`_
 - Search for locations of type "parcel" and "district" (the origins): `https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=bern&origins=parcel,district&type=locations <../../../rest/services/api/SearchServer?searchText=bern&origins=parcel,district&type=locations>`_
 - Search for locations within a given map extent (the `bbox`): `https://api3.geo.admin.ch/rest/services/api/SearchServer?bbox=551306.5625,167918.328125,551754.125,168514.625&type=locations  <../../../rest/services/api/SearchServer?bbox=551306.5625,167918.328125,551754.125,168514.625&type=locations>`_
-- Search for layers in French matching the word “géoïde” in their description: `https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr <../../../rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr>`_ 
+- Search for layers in French matching the word “géoïde” in their description: `https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr <../../../rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr>`_
 - Search for features matching word "433" in their description: `https://api3.geo.admin.ch/rest/services/api/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433 <../../../rest/services/api/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433>`_
 
 Example of feature search usage with other services
@@ -717,7 +717,7 @@ RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **offset (optional)**             | The offset value (INTEGER) in order to use the `exponential moving algorithm              |
 |                                   | <http://en.wikipedia.org/wiki/Moving_average#Exponential_moving_average>`_ . For a given  |
-|                                   | value the offset value specify the number of values before and after used to calculate    | 
+|                                   | value the offset value specify the number of values before and after used to calculate    |
 |                                   | the average.                                                                              |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | Only available for **profile.json**. The name of the callback function.                   |
@@ -738,7 +738,7 @@ WMTS
 
 A RESTFul implementation of the `WMTS <http://www.opengeospatial.org/standards/wmts>`_ `OGC <http://www.opengeospatial.org/>`_ standard.
 For detailed information, see `WMTS OGC standard <http://www.opengeospatial.org/standards/wmts>`_
-In order to have access to the WMTS, you require a `swisstopo web access - WMTS documentation <https://www.swisstopo.ch/webaccess>`_, 
+In order to have access to the WMTS, you require a `swisstopo web access - WMTS documentation <https://www.swisstopo.ch/webaccess>`_,
 despite the fact that most layers are free to use. See :ref:`available_layers` for a list of all available layers.
 
 
@@ -757,9 +757,9 @@ GetCapabilities
 
 The GetCapabilites document provides informations about the service, along with layer description, both in german and french.
 
-`http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ 
+`http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_
 
-`http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr <https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr>`_ 
+`http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr <https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr>`_
 
 Parameters
 **********
@@ -826,7 +826,7 @@ Resolution [m]   Zoomlevel Map zoom  Tile width m Tiles X  Tiles Y    Tiles     
          5           21        7            1280      375      250          93'750    1 : 18'898
        2.5           22        8             640      750      500         375'000    1 : 9'449
          2           23        9             512      938      625         586'250    1 : 7'559
-       1.5           24                      384     1250      834       1'042'500             
+       1.5           24                      384     1250      834       1'042'500
          1           25       10             256     1875     1250       2'343'750    1 : 3'780
        0.5           26       11             128     3750     2500       9'375'000    1 : 1'890
        0.25          27       12              64     7500     5000      37'500'000    1 : 945
@@ -840,15 +840,15 @@ Resolution [m]   Zoomlevel Map zoom  Tile width m Tiles X  Tiles Y    Tiles     
 #. The projection for the tiles is **LV03** (EPSG:21781). Other projection are supported, see further down.
 #. The tiles are pregenerated and stored in a way it supports a heavy load (many hundreds requests per second)
 #. The zoom level 24 (resolution 1.5m) has been generated, but is not currently used in the API.
-#. The zoom levels 27 and 28 (resolution 0.25m and 0.1m) are only available for a few layers, 
+#. The zoom levels 27 and 28 (resolution 0.25m and 0.1m) are only available for a few layers,
    e.g. swissimage or cadastral web map. For the others layers it is only a client zoom (tiles are stretched).
-#. You **have** to use the `<ResourceURL>` to construct the `GetTile` request. 
+#. You **have** to use the `<ResourceURL>` to construct the `GetTile` request.
 #. **Axis order**: EPSG:21781 native WMTS tiles (*pregenerated* and stored in S3) use the
    non-standard **row/col** order, while the Mapproxy reprojected ones (all other projections)
    use the usual **col/row** order. The exception being *ch.kantone.cadastralwebmap-farbe* which always use
    the **col/row** order.
    However, most desktop GIS allow you to either use the advertized order or to override it.
-#. The tiles of a given layer might be updated **withtout** resulting in a new <Time> dimension in the GetCapabilities dimension. In case your application is caching tiles locally, you need to invalidate your local cache for this layer. To check the latest change of any layer, use the `Cache Update`_ service. 
+#. The tiles of a given layer might be updated **withtout** resulting in a new <Time> dimension in the GetCapabilities dimension. In case your application is caching tiles locally, you need to invalidate your local cache for this layer. To check the latest change of any layer, use the `Cache Update`_ service.
 
 Result
 ******
@@ -872,7 +872,7 @@ These projections are:
 * Plate-Carrée ETRS89 (EPSG:4258)
     `http://wmts10.geo.admin.ch/EPSG/4258/1.0.0/WMTSCapabilities.xml <https://wmts10.geo.admin.ch/EPSG/4258/1.0.0/WMTSCapabilities.xml>`_
 * LV95/CH1903+ (EPSG:2056)
-    `http://wmts10.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml <https://wmts10.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml>`_ 
+    `http://wmts10.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml <https://wmts10.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml>`_
 * WGS84/Pseudo-Mercator (EPSG:3857, as used in OSM, Bing, Google Map)
     `http://wmts10.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml <https://wmts10.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml>`_
 
@@ -884,11 +884,11 @@ Note:
   using native tiles and which are using reporjected tiles.
 * The same access restrictions apply as above.
 * The same `timestamps` are available in all projection. New `timestamp` are added to the former ones.
-* Some older WMTS client do not support `EPSG:4258 <http://www.epsg-registry.org/export.htm?wkt=urn:ogc:def:crs:EPSG::4258>`_ 
+* Some older WMTS client do not support `EPSG:4258 <http://www.epsg-registry.org/export.htm?wkt=urn:ogc:def:crs:EPSG::4258>`_
   and use mistakenly *EPSG:4852*.
 * Reprojected tiles are generated *on-the-fly* with `MapProxy <http://mapproxy.org>`_. If you plan to heavily use this service, please
   inform us in advance.
-* *MapProxy* uses the `Proj.4 <http://trac.osgeo.org/proj/>`_ library internaly to transform between datum, except for the reframe from  
+* *MapProxy* uses the `Proj.4 <http://trac.osgeo.org/proj/>`_ library internaly to transform between datum, except for the reframe from
   **LV03/MN03** tiles which is *NTv2* grid based (`CHENyx06 <https://www.swisstopo.admin.ch/en/knowledge-facts/surveying-geodesy/reference-frames/local.html>`_)
 * Source for these reprojected tiles are the *native* **LV03/MN03** ones. The only exception is *ch.kantone.cadastralwebmap-farbe* that uses a WMS service as its source.
 * Note that all layers are available at all scales. You have to check for which **tileMatrixSets** a particuliar layer is defined. Your WMTS client may either stretch the
@@ -896,14 +896,14 @@ Note:
 
 Example
 *******
-* At tile: `http://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20140520/3857/9/266/180.jpeg <https://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20140520/3857/9/266/180.jpeg>`_
+* At tile: `http://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg <https://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg>`_
 
-.. image:: https://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20140520/3857/9/266/180.jpeg
+.. image:: https://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg
 
-* An OpenLayers3 application using the `pseudo-Mercator projection <../examples/ol3_mercator.html>`_ 
-* An OpenLayers3 example showing the `Cadastralwebmap as WMTS <../examples/cadastralwebmap.html>`_ 
-* Switzerland is now adopting the new `LV95 frame <../examples/ol3_lv95.html>`_. 
-* All `available layers as WMTS <../examples/ol3_lv95_all.html>`_. 
+* An OpenLayers3 application using the `pseudo-Mercator projection <../examples/ol3_mercator.html>`_
+* An OpenLayers3 example showing the `Cadastralwebmap as WMTS <../examples/cadastralwebmap.html>`_
+* Switzerland is now adopting the new `LV95 frame <../examples/ol3_lv95.html>`_.
+* All `available layers as WMTS <../examples/ol3_lv95_all.html>`_.
 
 .. _cacheupdate_description:
 
@@ -970,7 +970,7 @@ A JSON file containing all the tests and their status OR an html page.
 Example
 *******
 
-- Check WMS with Swiss ech-0056 profile (xml): `https://api3.geo.admin.ch/owschecker/bykvp?base_url=http%3A%2F%2Fwms.zh.ch%2Fupwms&service=WMS <../../../owschecker/bykvp?base_url=http%3A%2F%2Fwms.zh.ch%2Fupwms&service=WMS>`_ 
+- Check WMS with Swiss ech-0056 profile (xml): `https://api3.geo.admin.ch/owschecker/bykvp?base_url=http%3A%2F%2Fwms.zh.ch%2Fupwms&service=WMS <../../../owschecker/bykvp?base_url=http%3A%2F%2Fwms.zh.ch%2Fupwms&service=WMS>`_
 - Check WMS with Swiss ech-0056 profile (html): `https://api3.geo.admin.ch/owschecker/form?base_url=http%3A%2F%2Fwms.zh.ch%2Fupwms&service=WMS <../../../owschecker/form?base_url=http%3A%2F%2Fwms.zh.ch%2Fupwms&service=WMS>`_
 - Check WMTS with Swiss ech-0056 profile (xml): `https://api3.geo.admin.ch/owschecker/bykvp?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS <../../../owschecker/bykvp?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS>`_
 - Check WMTS with Swiss ech-0056 profile (html): `https://api3.geo.admin.ch/owschecker/form?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS <../../../owschecker/form?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS>`_
@@ -1076,7 +1076,7 @@ Example
 Stationboard
 ------------
 
-This service returns the next connections from a location to a specific destination or all destinations for a given location. 
+This service returns the next connections from a location to a specific destination or all destinations for a given location.
 This service uses public transportation timetable data and not real time information.
 Warning: these services are subject to changes
 
