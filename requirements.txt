@@ -40,3 +40,4 @@ WebOb==1.6.1
 WebTest==2.0.21
 toml
 lxml==2.3.0
+zope.interface==4.2.0
