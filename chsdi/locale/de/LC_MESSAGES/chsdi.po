@@ -2648,9 +2648,6 @@ msgstr "Stationsnummer"
 msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Hintergrundkarte hydrol. Daten"
 
-msgid "ch.bafu.hydrologie-hintergrundkarte"
-msgstr "Hintergrundkarte hydrol. Daten"
-
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel"
 msgstr "Hochwassergrenzwertpegel"
 

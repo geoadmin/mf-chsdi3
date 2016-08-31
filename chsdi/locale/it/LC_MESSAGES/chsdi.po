@@ -2648,9 +2648,6 @@ msgstr "Numero della stazione"
 msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Carta base dati idrologici"
 
-msgid "ch.bafu.hydrologie-hintergrundkarte"
-msgstr "Carta base dati idrologici"
-
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel"
 msgstr "Limnigrafo di piena"
 

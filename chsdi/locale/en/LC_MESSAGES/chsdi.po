@@ -2648,9 +2648,6 @@ msgstr "Station number"
 msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Background map hydrol. data"
 
-msgid "ch.bafu.hydrologie-hintergrundkarte"
-msgstr "Background map hydrol. data"
-
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel"
 msgstr "Flood crest gauge"
 
