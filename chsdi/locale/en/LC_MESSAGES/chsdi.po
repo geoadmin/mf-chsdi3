@@ -2648,6 +2648,9 @@ msgstr "Station number"
 msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Background map hydrol. data"
 
+msgid "ch.bafu.hydrologie-hintergrundkarte"
+msgstr "Background map hydrol. data"
+
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel"
 msgstr "Flood crest gauge"
 
@@ -5393,6 +5396,33 @@ msgstr "Edition"
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Deviations of the vertical"
 
+msgid "ch.swisstopo.lotabweichungen.eta_ch"
+msgstr "Eta (CH1903) [arcseconds]"
+
+msgid "ch.swisstopo.lotabweichungen.eta_etrf"
+msgstr "Xi (ETRS89) [arcseconds]"
+
+msgid "ch.swisstopo.lotabweichungen.instrument"
+msgstr "Instrument"
+
+msgid "ch.swisstopo.lotabweichungen.land"
+msgstr "Country"
+
+msgid "ch.swisstopo.lotabweichungen.messjahr"
+msgstr "Year of measurement"
+
+msgid "ch.swisstopo.lotabweichungen.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.lotabweichungen.symbol"
+msgstr "Type of measurement station"
+
+msgid "ch.swisstopo.lotabweichungen.xi_ch"
+msgstr "Xi (CH1903) [arcseconds]"
+
+msgid "ch.swisstopo.lotabweichungen.xi_etrf"
+msgstr "Xi (ETRS89) [arcseconds]"
+
 msgid "ch.swisstopo.lubis-bildstreifen"
 msgstr "Image strips swisstopo"
 
@@ -5840,6 +5870,12 @@ msgstr "Name"
 msgid "ch.vbs.retablierungsstellen.url"
 msgstr "Link"
 
+msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
+msgstr "SPM consultation"
+
+msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
+msgstr "Sectoral Plan Military"
+
 msgid "ch.vbs.territorialregionen"
 msgstr "Territorial regions"
 
@@ -6001,12 +6037,6 @@ msgstr "Percorsi"
 
 msgid "chmobil_url_etappe"
 msgstr "SwitzerlandMobility stage information"
-
-msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
-msgstr "SPM Anhörung"
-
-msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
-msgstr "Sachplan Militär"
 
 msgid "chmobil_url_route"
 msgstr "SwitzerlandMobility route information"
@@ -8126,12 +8156,6 @@ msgstr "Von"
 msgid "tt_endmeasure"
 msgstr "Finish address (’waterbody kilometre’)"
 
-msgid "tt_eta_ch"
-msgstr "Eta (CH1903) [arcseconds]"
-
-msgid "tt_eta_etrf"
-msgstr "Eta (ETRS89) [arcseconds]"
-
 msgid "tt_ezgflaeche"
 msgstr "Catchment area size [km2]"
 
@@ -8221,9 +8245,6 @@ msgstr "Map number"
 
 msgid "tt_gsk_meta_publikation"
 msgstr "Publication year"
-
-msgid "tt_instrument"
-msgstr "Instrument"
 
 msgid "tt_kanal"
 msgstr "Waterbody type"
@@ -8326,9 +8347,6 @@ msgstr "Reactor type"
 
 msgid "tt_kkw_regulatory"
 msgstr "Regulatory body"
-
-msgid "tt_land"
-msgstr "Country"
 
 msgid "tt_landwirtsc"
 msgstr "Agricultural areas"
@@ -8441,14 +8459,8 @@ msgstr "Start address (’waterbody kilometre’)"
 msgid "tt_measure_2"
 msgstr "Address (’waterbody kilometre’)"
 
-msgid "tt_messjahr"
-msgstr "Year of measurement"
-
 msgid "tt_mq_jahr"
 msgstr "Mean annual discharge, modelled [m3/s]"
-
-msgid "tt_name"
-msgstr "Name"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
@@ -8572,9 +8584,6 @@ msgstr "Facility details"
 
 msgid "tt_swissprtr_ort"
 msgstr "Town"
-
-msgid "tt_symbol"
-msgstr "Type of measurement station"
 
 msgid "tt_teileinzugsgebiete_2.abfluesse_abflussvar"
 msgstr "Annual runoff variability"
@@ -8743,12 +8752,6 @@ msgstr "Protection period"
 
 msgid "tt_wrz_select_zusatz"
 msgstr "More info"
-
-msgid "tt_xi_ch"
-msgstr "Xi (CH1903) [arcseconds]"
-
-msgid "tt_xi_etrf"
-msgstr "Xi (ETRS89) [arcseconds]"
 
 msgid "tt_zeitreihen_FullResView"
 msgstr "View of the original map"

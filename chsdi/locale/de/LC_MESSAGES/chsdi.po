@@ -1974,7 +1974,7 @@ msgid "ch.bafu.eua"
 msgstr "BAFU / EUA"
 
 msgid "ch.bafu.eua.url"
-msgstr "http://www.eea.europa.eu/de"
+msgstr "http://www.eea.europa.eu"
 
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Steinbockkolonien"
@@ -2644,6 +2644,9 @@ msgstr "Name Messstandort"
 
 msgid "ch.bafu.hydrologie-gewaesserzustandsmessstationen.nr"
 msgstr "Stationsnummer"
+
+msgid "ch.bafu.hydrologie-hintergrundkarte"
+msgstr "Hintergrundkarte hydrol. Daten"
 
 msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Hintergrundkarte hydrol. Daten"
@@ -5393,6 +5396,33 @@ msgstr "Ausgabejahr"
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Lotabweichungen"
 
+msgid "ch.swisstopo.lotabweichungen.eta_ch"
+msgstr "Eta (CH1903) [Bogensekunden]"
+
+msgid "ch.swisstopo.lotabweichungen.eta_etrf"
+msgstr "Eta (ETRS89) [Bogensekunden]"
+
+msgid "ch.swisstopo.lotabweichungen.instrument"
+msgstr "Instrument"
+
+msgid "ch.swisstopo.lotabweichungen.land"
+msgstr "Land"
+
+msgid "ch.swisstopo.lotabweichungen.messjahr"
+msgstr "Messjahr"
+
+msgid "ch.swisstopo.lotabweichungen.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.lotabweichungen.symbol"
+msgstr "Typ der Messstation "
+
+msgid "ch.swisstopo.lotabweichungen.xi_ch"
+msgstr "Xi (CH1903) [Bogensekunden]"
+
+msgid "ch.swisstopo.lotabweichungen.xi_etrf"
+msgstr "Eta (ETRS89) [Bogensekunden]"
+
 msgid "ch.swisstopo.lubis-bildstreifen"
 msgstr "Luftbildstreifen swisstopo"
 
@@ -5840,6 +5870,12 @@ msgstr "Name"
 msgid "ch.vbs.retablierungsstellen.url"
 msgstr "Link"
 
+msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
+msgstr "SPM Anhörung"
+
+msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
+msgstr "Sachplan Militär"
+
 msgid "ch.vbs.territorialregionen"
 msgstr "Territorialregionen"
 
@@ -5998,12 +6034,6 @@ msgstr "Nr."
 
 msgid "chmobil_title"
 msgstr "Route"
-
-msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
-msgstr "SPM Anhörung"
-
-msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
-msgstr "Sachplan Militär"
 
 msgid "chmobil_url_etappe"
 msgstr "Info zur Etappe von SchweizMobil"
@@ -8126,12 +8156,6 @@ msgstr "Von"
 msgid "tt_endmeasure"
 msgstr "Endadresse (’Gewässerkilometer’)"
 
-msgid "tt_eta_ch"
-msgstr "Eta (CH1903) [Bogensekunden]"
-
-msgid "tt_eta_etrf"
-msgstr "Eta (ETRS89) [Bogensekunden]"
-
 msgid "tt_ezgflaeche"
 msgstr "Fläche Gesamteinzugsgebiet [km2]"
 
@@ -8221,9 +8245,6 @@ msgstr "Blattnummer"
 
 msgid "tt_gsk_meta_publikation"
 msgstr "Publikationsjahr"
-
-msgid "tt_instrument"
-msgstr "Instrument"
 
 msgid "tt_kanal"
 msgstr "Gewässertyp"
@@ -8326,9 +8347,6 @@ msgstr "Reaktortyp"
 
 msgid "tt_kkw_regulatory"
 msgstr "Aufsichtsbehörde"
-
-msgid "tt_land"
-msgstr "Land"
 
 msgid "tt_landwirtsc"
 msgstr "Landwirtschaft"
@@ -8441,14 +8459,8 @@ msgstr "Anfangsadresse (’Gewässerkilometer’)"
 msgid "tt_measure_2"
 msgstr "Adresse (’Gewässerkilometer’)"
 
-msgid "tt_messjahr"
-msgstr "Messjahr"
-
 msgid "tt_mq_jahr"
 msgstr "Mittl. jährl. Abfluss [m3/s], modelliert"
-
-msgid "tt_name"
-msgstr "Name"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
@@ -8572,9 +8584,6 @@ msgstr "Details Betrieb"
 
 msgid "tt_swissprtr_ort"
 msgstr "Ort"
-
-msgid "tt_symbol"
-msgstr "Typ der Messstation "
 
 msgid "tt_teileinzugsgebiete_2.abfluesse_abflussvar"
 msgstr "Abflussvariabilität"
@@ -8743,12 +8752,6 @@ msgstr "Schutzzeit"
 
 msgid "tt_wrz_select_zusatz"
 msgstr "Zusatzinformationen"
-
-msgid "tt_xi_ch"
-msgstr "Xi (CH1903) [Bogensekunden]"
-
-msgid "tt_xi_etrf"
-msgstr "Xi (ETRS89) [Bogensekunden]"
 
 msgid "tt_zeitreihen_FullResView"
 msgstr "Ansicht des originalen Kartenblatts"
