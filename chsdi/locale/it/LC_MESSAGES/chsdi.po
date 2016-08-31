@@ -1974,7 +1974,7 @@ msgid "ch.bafu.eua"
 msgstr "UFAM / AEA"
 
 msgid "ch.bafu.eua.url"
-msgstr "http://www.eea.europa.eu/it"
+msgstr "http://www.eea.europa.eu"
 
 msgid "ch.bafu.fauna-steinbockkolonien"
 msgstr "Colonie di stambecchi"
@@ -2644,6 +2644,9 @@ msgstr "Nome del sito di prova"
 
 msgid "ch.bafu.hydrologie-gewaesserzustandsmessstationen.nr"
 msgstr "Numero della stazione"
+
+msgid "ch.bafu.hydrologie-hintergrundkarte"
+msgstr "Carta base dati idrologici"
 
 msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Carta base dati idrologici"
@@ -5393,6 +5396,42 @@ msgstr "Edizione"
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Deviazione della verticale"
 
+#. TODO
+msgid "ch.swisstopo.lotabweichungen.eta_ch"
+msgstr "ch.swisstopo.lotabweichungen.eta_ch"
+
+#. TODO
+msgid "ch.swisstopo.lotabweichungen.eta_etrf"
+msgstr "ch.swisstopo.lotabweichungen.eta_etrf"
+
+#. TODO
+msgid "ch.swisstopo.lotabweichungen.instrument"
+msgstr "ch.swisstopo.lotabweichungen.instrument"
+
+#. TODO
+msgid "ch.swisstopo.lotabweichungen.land"
+msgstr "ch.swisstopo.lotabweichungen.land"
+
+#. TODO
+msgid "ch.swisstopo.lotabweichungen.messjahr"
+msgstr "ch.swisstopo.lotabweichungen.messjahr"
+
+#. TODO
+msgid "ch.swisstopo.lotabweichungen.name"
+msgstr "ch.swisstopo.lotabweichungen.name"
+
+#. TODO
+msgid "ch.swisstopo.lotabweichungen.symbol"
+msgstr "ch.swisstopo.lotabweichungen.symbol"
+
+#. TODO
+msgid "ch.swisstopo.lotabweichungen.xi_ch"
+msgstr "ch.swisstopo.lotabweichungen.xi_ch"
+
+#. TODO
+msgid "ch.swisstopo.lotabweichungen.xi_etrf"
+msgstr "ch.swisstopo.lotabweichungen.xi_etrf"
+
 msgid "ch.swisstopo.lubis-bildstreifen"
 msgstr "Striscie aeree swisstopo"
 
@@ -5840,6 +5879,12 @@ msgstr "Nome"
 msgid "ch.vbs.retablierungsstellen.url"
 msgstr "Link"
 
+msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
+msgstr "PSM consultazione"
+
+msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
+msgstr "Piano settoriale militare"
+
 msgid "ch.vbs.territorialregionen"
 msgstr "Regioni territoriali"
 
@@ -6001,12 +6046,6 @@ msgstr "Route"
 
 msgid "chmobil_url_etappe"
 msgstr "Informazioni sulla tappa SvizzeraMobile"
-
-msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
-msgstr "PSM consultazione"
-
-msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
-msgstr "Piano settoriale militare"
 
 msgid "chmobil_url_route"
 msgstr "Informazioni sul percorso SvizzeraMobile"
@@ -8126,12 +8165,6 @@ msgstr "de"
 msgid "tt_endmeasure"
 msgstr "Indirizzo d’arrivo (chilometraggio dell’acqua)"
 
-msgid "tt_eta_ch"
-msgstr "Eta (CH1903) [Secondes d‘arc]"
-
-msgid "tt_eta_etrf"
-msgstr "Eta (ETRS89) [Secondes d‘arc]"
-
 msgid "tt_ezgflaeche"
 msgstr "Superficie del bacino idrografico completo [km2]"
 
@@ -8221,9 +8254,6 @@ msgstr "Numero del foglio"
 
 msgid "tt_gsk_meta_publikation"
 msgstr "Anno di pubblicazione"
-
-msgid "tt_instrument"
-msgstr "Instrument"
 
 msgid "tt_kanal"
 msgstr "Tipo del corso d’acqua"
@@ -8326,9 +8356,6 @@ msgstr "Tipo di reattore"
 
 msgid "tt_kkw_regulatory"
 msgstr "Organo regolatore"
-
-msgid "tt_land"
-msgstr "Pays"
 
 msgid "tt_landwirtsc"
 msgstr "Superfici agricole"
@@ -8441,14 +8468,8 @@ msgstr "Indirizzo di partenza (chilometraggio dell’acqua)"
 msgid "tt_measure_2"
 msgstr "Indirizzo (chilometraggio dell’acqua)"
 
-msgid "tt_messjahr"
-msgstr "Année de mesure"
-
 msgid "tt_mq_jahr"
 msgstr "Deflusso medio annuale, modellizzato [m3/s]"
-
-msgid "tt_name"
-msgstr "Nom"
 
 msgid "tt_ngamapping_provider"
 msgstr "Provider"
@@ -8572,9 +8593,6 @@ msgstr "Informazioni dettagliate sul complesso/azienda"
 
 msgid "tt_swissprtr_ort"
 msgstr "Luogo"
-
-msgid "tt_symbol"
-msgstr "Type de station"
 
 msgid "tt_teileinzugsgebiete_2.abfluesse_abflussvar"
 msgstr "Variabillità del deflusso annuo"
@@ -8743,12 +8761,6 @@ msgstr "Periodo di protezione"
 
 msgid "tt_wrz_select_zusatz"
 msgstr "Ulteriori informazioni"
-
-msgid "tt_xi_ch"
-msgstr "Xi (CH1903) [Secondes d‘arc]"
-
-msgid "tt_xi_etrf"
-msgstr "Xi (ETRS89) [Secondes d‘arc]"
 
 msgid "tt_zeitreihen_FullResView"
 msgstr "Visualizzare il foglio originale"
