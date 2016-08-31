@@ -30,6 +30,7 @@ API & applications
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
+- New design of draw tools
 - Bug Fixes
 - `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160817...r_160831>`__
 
