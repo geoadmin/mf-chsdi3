@@ -16,7 +16,7 @@ Release Notes
 
 .. _releasenotes_20160831:
 
-Release 20160803 - Wednesday, August 31st 2016
+Release 20160831 - Wednesday, August 31st 2016
 ---------------------------------------------
 
 API & applications
