@@ -1506,9 +1506,6 @@ msgstr ""
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_ausgangslage"
 msgstr ""
 
-msgid "ch.bafu.hydrologie-hintergrundkarte"
-msgstr ""
-
 msgid "ch.pronatura.naturschutzgebiete"
 msgstr ""
 

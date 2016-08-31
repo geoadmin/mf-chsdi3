@@ -2648,9 +2648,6 @@ msgstr "Numéro de la station"
 msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Arrière-plan hydrologique"
 
-msgid "ch.bafu.hydrologie-hintergrundkarte"
-msgstr "Arrière-plan hydrologique"
-
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel"
 msgstr "Limnimètres à maximum"
 
