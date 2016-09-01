@@ -5393,41 +5393,32 @@ msgstr "Edizione"
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Deviazione della verticale"
 
-#. TODO
 msgid "ch.swisstopo.lotabweichungen.eta_ch"
-msgstr "ch.swisstopo.lotabweichungen.eta_ch"
+msgstr "Eta (CH1903) [Secondes d‘arc]"
 
-#. TODO
 msgid "ch.swisstopo.lotabweichungen.eta_etrf"
-msgstr "ch.swisstopo.lotabweichungen.eta_etrf"
+msgstr "Eta (ETRS89) [Secondes d‘arc]"
 
-#. TODO
 msgid "ch.swisstopo.lotabweichungen.instrument"
-msgstr "ch.swisstopo.lotabweichungen.instrument"
+msgstr "Instrument"
 
-#. TODO
 msgid "ch.swisstopo.lotabweichungen.land"
-msgstr "ch.swisstopo.lotabweichungen.land"
+msgstr "Pays"
 
-#. TODO
 msgid "ch.swisstopo.lotabweichungen.messjahr"
-msgstr "ch.swisstopo.lotabweichungen.messjahr"
+msgstr "Année de mesure"
 
-#. TODO
 msgid "ch.swisstopo.lotabweichungen.name"
-msgstr "ch.swisstopo.lotabweichungen.name"
+msgstr "Nom"
 
-#. TODO
 msgid "ch.swisstopo.lotabweichungen.symbol"
-msgstr "ch.swisstopo.lotabweichungen.symbol"
+msgstr "Type de station"
 
-#. TODO
 msgid "ch.swisstopo.lotabweichungen.xi_ch"
-msgstr "ch.swisstopo.lotabweichungen.xi_ch"
+msgstr "Xi (CH1903) [Secondes d‘arc]"
 
-#. TODO
 msgid "ch.swisstopo.lotabweichungen.xi_etrf"
-msgstr "ch.swisstopo.lotabweichungen.xi_etrf"
+msgstr "Xi (ETRS89) [Secondes d‘arc]"
 
 msgid "ch.swisstopo.lubis-bildstreifen"
 msgstr "Striscie aeree swisstopo"
