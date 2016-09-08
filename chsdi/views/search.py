@@ -299,7 +299,7 @@ class Search(SearchValidation):
                 '%s "%s"~5'  % (fields, preNonDigit),
                 '%s "%s"'    % (fields, infNonDigit),
                 '%s "^%s"'   % (fields, infNonDigit),
-                '%s "%s"~5'  % (fields, infNonDigit),
+                '%s "%s"~5'  % (fields, infNonDigit)
             ]
 
         if hasDigit:
@@ -337,8 +337,8 @@ class Search(SearchValidation):
             'gg25': 2,
             'district': 3,
             'kantone': 4,
-            'gazetteer': 5,  # Not used, also 6
-            'address': 7,
+            'gazetteer': 5,  # Not used, also 7
+            'address': 6,
             'parcel': 10
         }
         buildRanksList = lambda x: origin2Rank[x]
