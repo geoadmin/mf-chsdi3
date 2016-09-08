@@ -17,7 +17,7 @@ Release Notes
 .. _releasenotes_20160831:
 
 Release 20160831 - Wednesday, August 31st 2016
----------------------------------------------
+----------------------------------------------
 
 API & applications
 ******************
@@ -43,7 +43,7 @@ Geodata
 | New    | `Sectoral Plan Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                                       |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Vertical Deflections <//map.geo.admin.ch/?layers=ch.swisstopo.lotabweichungen>`__ (ch.swisstopo.lotabweichungen)                                                                                                         |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Building generalized VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-building>`__ (ch.swisstopo.vec200-building)                                                                                               |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Elevations VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-miscellaneous-geodpoint>`__ (ch.swisstopo.vec200-miscellaneous-geodpoint)                                                                           |
@@ -1082,7 +1082,7 @@ API & applications
 ******************
 
 `API <//api3.geo.admin.ch>`__
-''''''''''''''''''''''''''''' 
+'''''''''''''''''''''''''''''
 - Support for OR and AND operators in advanced search
 - Bug fixes
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_150923...r_151007>`__
@@ -1831,7 +1831,7 @@ API & applications
 '''''''''''''''''''''''''''''
 - Update API version of OL3 to `v3.2.0 <https://github.com/openlayers/ol3/releases/tag/v3.2.0>`__
 - Query tool improvement
-- Base Python libraries update 
+- Base Python libraries update
 - Bug fixes
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_150128...r_150211>`__
 
@@ -2179,7 +2179,7 @@ API & applications
 
 - Import/export KML text labels
 - Improves social media sharing
-- Improves responsive design with a small height screen 
+- Improves responsive design with a small height screen
 - Bug fixes
 - `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_141015...r_141030>`__
 
@@ -2268,7 +2268,7 @@ Geodata
 | Update    | `Energy Cities on the Path 2000-Watt <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-2000watt-aufdemweg>`__ (ch.bfe.energiestaedte-2000watt-aufdemweg)                                          |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update    | `Energy-Regions <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-energieregionen>`__ (ch.bfe.energiestaedte-energieregionen)                                                                     |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update    | `Agnes <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-agnes>`__ (ch.swisstopo.fixpunkte-agnes)                                                                                                |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -2326,7 +2326,7 @@ Geodata
 | New    | `Energy Cities on the Path 2000-Watt <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-2000watt-aufdemweg>`__ (ch.bfe.energiestaedte-2000watt-aufdemweg)                                             |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Energy-Regions <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-energieregionen>`__ (ch.bfe.energiestaedte-energieregionen)                                                                        |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ 
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Polluted sites civil aerodromes <//map.geo.admin.ch/?layers=ch.bazl.kataster-belasteter-standorte-zivilflugplaetze>`__ (ch.bazl.kataster-belasteter-standorte-zivilflugplaetze)                     |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Updated| `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                                                     |
@@ -2746,7 +2746,7 @@ API & applications
 
 - New API `searchbox example <//api3.geo.admin.ch/examples/geoadmin_search.html>`__
 - Fix api layers shown in FAQ
-- MapProxy migration from previous project 
+- MapProxy migration from previous project
 - Fixing issue in the WMTS GetCapabilities document (themes, legends)
 - API: new map creation parameter to activate/deactivate tooltip
 - Minor bug fixes
