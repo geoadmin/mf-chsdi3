@@ -5397,7 +5397,7 @@ msgid "ch.swisstopo.lotabweichungen.eta_ch"
 msgstr "Eta (CH1903) [arcseconds]"
 
 msgid "ch.swisstopo.lotabweichungen.eta_etrf"
-msgstr "Xi (ETRS89) [arcseconds]"
+msgstr "Eta (ETRS89) [arcseconds]"
 
 msgid "ch.swisstopo.lotabweichungen.instrument"
 msgstr "Instrument"
