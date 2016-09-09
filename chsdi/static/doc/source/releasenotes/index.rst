@@ -14,6 +14,46 @@ Release Notes
 
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20160921:
+
+Release 20160921 - Wednesday, September 21st 2016
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_160831...r_160921>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_160831...r_160921>`__
+
+
+Geodata
+*******
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Image strips swisstopo <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-bildstreifen>`__ (ch.swisstopo.lubis-bildstreifen)                                                                            |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial Images swisstopo color <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_farbe>`__ (ch.swisstopo.lubis-luftbilder_farbe)                                                             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial Images swisstopo b / w <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_schwarzweiss>`__ (ch.swisstopo.lubis-luftbilder_schwarzweiss)                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial Images swisstopo infrared <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_infrarot>`__ (ch.swisstopo.lubis-luftbilder_infrarot)                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images privates <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-firmen>`__ (ch.swisstopo.lubis-luftbilder-dritte-firmen)                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SÜL Anhörung <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Electricity lines sectoral plan <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)                                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Vertical Deflections <//map.geo.admin.ch/?layers=ch.swisstopo.lotabweichungen>`__ (ch.swisstopo.lotabweichungen)                                                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20160831:
 
 Release 20160831 - Wednesday, August 31st 2016
@@ -66,7 +106,6 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `SP aviation infrastructure <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung)                                                         |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 .. _releasenotes_20160817:
 
