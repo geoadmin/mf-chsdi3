@@ -5418,7 +5418,7 @@ msgid "ch.swisstopo.lotabweichungen.xi_ch"
 msgstr "Xi (CH1903) [Bogensekunden]"
 
 msgid "ch.swisstopo.lotabweichungen.xi_etrf"
-msgstr "Eta (ETRS89) [Bogensekunden]"
+msgstr "Xi (ETRS89) [Bogensekunden]"
 
 msgid "ch.swisstopo.lubis-bildstreifen"
 msgstr "Strivlas ord l'aria swisstopo"
