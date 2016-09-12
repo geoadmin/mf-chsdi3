@@ -149,6 +149,13 @@ class TestSearchServiceView(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         self.assertEqual(resp.json['results'][1]['attrs']['detail'], 'rhonesandstrasse 16a 3900 brig 6002 brig-glis ch vs')
 
+    def test_search_ranking(self):
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'gstaad', 'type': 'locations'}, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'gstaad')
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'gstaad 10', 'type': 'locations'}, status=200)
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'gstaadstrasse 10 3792 saanen 843 saanen ch be')
+
     def test_search_features_identify(self):
         params = {'searchText': 'vd 446', 'type': 'featuresearch', 'bbox': '551306.5625,167918.328125,551754.125,168514.625', 'features': 'ch.astra.ivs-reg_loc'}
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)

@@ -275,36 +275,47 @@ class Search(SearchValidation):
         return transformCoordinate(wkt, 21781, 4326)
 
     def _query_fields(self, fields):
-        exact_nondigit_prefix_digit = lambda x: ''.join((x, '*')) if x.isdigit() else x
-        prefix_nondigit_exact_digit = lambda x: x if x.isdigit() else ''.join((x, '*'))
-        prefix_match_all = lambda x: ''.join((x, '*'))
-        infix_nondigit_prefix_digit = lambda x: ''.join((x, '*')) if x.isdigit() else ''.join(('*', x, '*'))
+        # 10a, 10b needs to be interpreted as digit
+        q = []
+        isdigit = lambda x: bool(re.match('^[0-9]', x))
+        hasDigit = bool(len([x for x in self.searchText if isdigit(x)]) > 0)
+        hasNonDigit = bool(len([x for x in self.searchText if not isdigit(x)]) > 0)
 
-        exactAll = ' '.join(self.searchText)
-        exactNonDigitPreDigit = ' '.join(
-            map(exact_nondigit_prefix_digit, self.searchText))
-        preNonDigitExactDigit = ' '.join(
-            map(prefix_nondigit_exact_digit, self.searchText))
-        preNonDigitPreDigit = ' '.join(
-            map(prefix_match_all, self.searchText))
-        infNonDigitPreDigit = ' '.join(
-            map(infix_nondigit_prefix_digit, self.searchText))
+        prefix_non_digit = lambda x: x if isdigit(x) else ''.join((x, '*'))
+        infix_non_digit = lambda x: x if isdigit(x) else ''.join(('*', x, '*'))
 
-        finalQuery = ' | '.join((
-            '%s "^%s"' % (fields, exactAll),
-            '%s "%s"' % (fields, exactAll),
-            '%s "%s"~5' % (fields, exactAll),
-            '%s "%s"' % (fields, exactNonDigitPreDigit),
-            '%s "%s"~5' % (fields, exactNonDigitPreDigit),
-            '%s "%s"' % (fields, preNonDigitExactDigit),
-            '%s "%s"~5' % (fields, preNonDigitExactDigit),
-            '%s "^%s"' % (fields, preNonDigitPreDigit),
-            '%s "%s"' % (fields, preNonDigitPreDigit),
-            '%s "%s"~5' % (fields, preNonDigitPreDigit),
-            '%s "%s"' % (fields, infNonDigitPreDigit),
-            '%s "%s"~5' % (fields, infNonDigitPreDigit)
-        ))
+        if hasNonDigit:
+            exactAll = ' '.join(self.searchText)
+            preNonDigit = ' '.join([prefix_non_digit(w) for w in self.searchText])
+            infNonDigit = ' '.join([infix_non_digit(w) for w in self.searchText])
+            q = [
+                '%s "%s"'    % (fields, exactAll),
+                '%s "^%s"'   % (fields, exactAll),
+                '%s "%s$"'   % (fields, exactAll),
+                '%s "^%s$"'  % (fields, exactAll),
+                '%s "%s"~5'  % (fields, exactAll),
+                '%s "%s"'    % (fields, preNonDigit),
+                '%s "^%s"'   % (fields, preNonDigit),
+                '%s "%s"~5'  % (fields, preNonDigit),
+                '%s "%s"'    % (fields, infNonDigit),
+                '%s "^%s"'   % (fields, infNonDigit),
+                '%s "%s"~5'  % (fields, infNonDigit)
+            ]
 
+        if hasDigit:
+            prefix_digit = lambda x: x if not isdigit(x) else ''.join((x, '*'))
+            prefix_all = lambda x: ''.join((x, '*'))
+            preDigit = ' '.join([prefix_digit(w) for w in self.searchText])
+            preNonDigitAndPreDigit = ' '.join([prefix_all(w) for w in self.searchText])
+            infNonDigitAndPreDigit = ' '.join([prefix_digit(infix_non_digit(w)) for w in self.searchText])
+            q = q + [
+                '%s "%s"'   % (fields, preDigit),
+                '%s "^%s"'  % (fields, preDigit),
+                '%s "%s"'   % (fields, preNonDigitAndPreDigit),
+                '%s "%s"~5' % (fields, preNonDigitAndPreDigit),
+                '%s "%s"'   % (fields, infNonDigitAndPreDigit)
+            ]
+        finalQuery = ' | '.join(q)
         return finalQuery
 
     def _origin_to_layerbodid(self, origin):
@@ -326,7 +337,7 @@ class Search(SearchValidation):
             'gg25': 2,
             'district': 3,
             'kantone': 4,
-            'gazetteer': 5,
+            'gazetteer': 5,  # Not used, also 7
             'address': 6,
             'parcel': 10
         }
