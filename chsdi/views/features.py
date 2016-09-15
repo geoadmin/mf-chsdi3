@@ -32,7 +32,7 @@ from chsdi.models import (
     queryable_models_from_bodid, oereb_models_from_bodid
 )
 from chsdi.models.bod import OerebMetadata, get_bod_model
-from chsdi.models.vector import getScale
+from chsdi.models.vector import getScale, getResolution, hasBuffer
 from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
@@ -160,8 +160,10 @@ def _identify_oereb(request):
     })
     header = insertTimestamps(header, comments)
 
+    isScaleDependent = hasBuffer(params.imageDisplay, params.mapExtent, params.tolerance)
+    scale = getScale(params.imageDisplay, params.mapExtent) if isScaleDependent else None
     # Only relation 1 to 1 is needed at the moment
-    layerVectorModel = [{layerBodId: [oereb_models_from_bodid(layerBodId)[0]]}]
+    layerVectorModel = [{layerBodId: [oereb_models_from_bodid(layerBodId, scale=scale)[0]]}]
     features = []
     for feature in _get_features_for_filters(params, layerVectorModel):
         temp = feature.xmlData.split('##')
@@ -181,16 +183,17 @@ def _identify_oereb(request):
 def _identify(request):
     params = IdentifyServiceValidation(request)
     # Determine layer types
-    layersGrid = []
+    # Grid layers are serverless
     layersDB = []
-
+    layersGrid = []
+    isScaleDependent = hasBuffer(params.imageDisplay, params.mapExtent, params.tolerance)
+    scale = getScale(params.imageDisplay, params.mapExtent) if isScaleDependent else None
     if params.layers == 'all':
         model = get_bod_model(params.lang)
         query = params.request.db.query(model)
-        layerBodIds = []
         for layer in get_layers_metadata_for_params(params, query, model):
             layerBodId = layer['layerBodId']
-            models = models_from_bodid(layerBodId)
+            models = models_from_bodid(layerBodId, scale=scale)
             if models:
                 layersDB.append({layerBodId: models})
             else:
@@ -198,8 +201,7 @@ def _identify(request):
                 if gridSpec and params.geometryType == 'esriGeometryPoint':
                     layersGrid.append({layerBodId: gridSpec})
     else:
-        layerBodIds = params.layers
-        for layerBodId in layerBodIds:
+        for layerBodId in params.layers:
             gridSpec = get_grid_spec(layerBodId)
             if gridSpec:
                 if params.geometryType not in ('esriGeometryPoint', 'esriGeometryEnvelope'):
@@ -208,11 +210,10 @@ def _identify(request):
                         'are supported for geometryType parameter for grid like data')
                 layersGrid.append({layerBodId: gridSpec})
             else:
-                models = models_from_bodid(layerBodId)
-                if models is None:
+                models = models_from_bodid(layerBodId, scale=scale)
+                if models is None or len(models) == 0:
                     raise exc.HTTPBadRequest('No GeoTable was found for %s' % layerBodId)
                 layersDB.append({layerBodId: models})
-
     featuresGrid = _identify_grid(params, layersGrid)
     featuresDB = _identify_db(params, layersDB)
 
@@ -662,6 +663,7 @@ def _cut(request):
     models = []
     # Organize models per layer
     for layerId in layerIds:
+        # Never scale dependant
         modelsForLayer = perimeter_models_from_bodid(layerId)
         if totalArea and modelsForLayer:
             for model in modelsForLayer:
@@ -741,7 +743,9 @@ def releases(request):
     # on specially sorted views. We add the _meta part to the given
     # layer name
     # Note that only zeitreihen is currently supported for this service
-    models = models_from_bodid(params.layerId)
+    # Use scale rather than resolutions for zeitreihen like the other layers
+    resolution = getResolution(params.imageDisplay, params.mapExtent)
+    models = models_from_bodid(params.layerId, resolution=resolution)
     if models is None:
         raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
 

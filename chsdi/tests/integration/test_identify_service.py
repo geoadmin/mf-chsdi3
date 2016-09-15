@@ -418,6 +418,20 @@ class TestIdentifyService(TestsBase):
         params.update({'limit': 'a'})
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
 
+    def test_identify_quer_spatial_filters_scale_dep(self):
+        params = {'layers': 'all:ch.bav.haltestellen-oev',
+                  'geometry': '643952.5,164121.24999999997',
+                  'geometryFormat': 'geojson',
+                  'geometryType': 'esriGeometryEnvelope',
+                  'imageDisplay': '1641,867,96',
+                  'mapExtent': '533750,136249.99999999994,550250,174249.99999999997',
+                  'tolerance': '5',
+                  'where': 'name ilike \'%dietikon%\''
+                  }
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(len(resp.json['results']), 0)
+
     def test_identify_order_by_distance(self):
         params = {'layers': 'all:ch.bfs.gebaeude_wohnungs_register',
                   'geometry': '643952.5,164121.24999999997',

@@ -44,6 +44,22 @@ def register_oereb(name, klass):
     oerebmap.setdefault(name, []).append(klass)
 
 
+def min_resolution(m):
+    return m.__minresolution__ if hasattr(m, '__minresolution__') else 0.0
+
+
+def max_resolution(m):
+    return m.__maxresolution__ if hasattr(m, '__maxresolution__') else float('inf')
+
+
+def min_scale(m):
+    return m.__minscale__ if hasattr(m, '__minscale__') else 0.0
+
+
+def max_scale(m):
+    return m.__maxscale__ if hasattr(m, '__maxscale__') else float('inf')
+
+
 def perimeter_models_from_bodid(bodId):
     perimeter_models = perimetermap.get(bodId)
     if perimeter_models is None:
@@ -51,30 +67,21 @@ def perimeter_models_from_bodid(bodId):
     return perimeter_models
 
 
-def oereb_models_from_bodid(bodId):
-    return oerebmap.get(bodId)
+def oereb_models_from_bodid(bodId, scale=None):
+    models = oerebmap.get(bodId)
+    if scale is not None:
+        models = [m for m in models if scale < max_scale(m) and scale >= min_scale(m)]
+    return models
 
 
-def models_from_bodid(bodId, scale=None):
+def models_from_bodid(bodId, scale=None, resolution=None):
     models = bodmap.get(bodId)
-    if scale and models:
-        filteredModels = []
-        for m in models:
-            hasMinScale = hasattr(m, '__minscale__')
-            hasMaxScale = hasattr(m, '__maxscale__')
-            if hasMinScale and hasMaxScale:
-                if m.__minscale__ < scale and m.__maxscale__ > scale:
-                    filteredModels.append(m)
-            elif hasMinScale:
-                if m.__minscale__ < scale:
-                    filteredModels.append(m)
-            elif hasMaxScale:
-                if m.__maxscale__ > scale:
-                    filteredModels.append(m)
-        if len(filteredModels) > 0:
-            return filteredModels
-    else:
-        return models
+    if models:
+        if scale is not None:
+            models = [m for m in models if scale < max_scale(m) and scale >= min_scale(m)]
+        elif resolution is not None:
+            models = [m for m in models if resolution < max_resolution(m) and resolution >= min_resolution(m)]
+    return models
 
 
 def queryable_models_from_bodid(bodId, searchField):
