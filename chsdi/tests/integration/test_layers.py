@@ -2,6 +2,7 @@
 
 import os
 from webtest import TestApp
+from PIL import Image
 from pyramid.paster import get_app
 from sqlalchemy import distinct
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -108,9 +109,16 @@ class LayersChecker(object):
             resp = self.testapp.get(link)
             assert resp.status_int == 200, link
 
-    def checkLegendImage(self, layer, legendImages):
+    def checkLegendImage(self, layer, legendsPath, legendImages):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
-            assert ((layer + '_' + lang) in legendImages), layer + '_' + lang
+            key = layer + '_' + lang
+            images = [l for l in legendImages if l.startswith(key)]
+            assert (len(images) > 0), 'Prefix "%s" not found in %s' % (key, legendImages)
+            for img in images:
+                if 'big' not in img:
+                    with Image.open(os.path.join(legendsPath, img)) as im:
+                        width, height = im.size
+                        assert (width <= 480), '%s image is too big, %spx instead of 480px' % (img, width)
 
     def checkSearch(self, layer):
         models = models_from_bodid(layer)
@@ -162,12 +170,13 @@ def test_all_legends_images():
     # Get list of layers from existing legend images
     legendsPath = os.getcwd() + '/chsdi/static/images/legends/'
     legendNames = os.listdir(legendsPath)
-    parseLegendNames = lambda x: x[:-4] if 'big' not in x else x[:-8]
-    legendImages = list(set(map(parseLegendNames, legendNames)))
-
+    parseLegendNames = lambda x: x[:-7] if 'big' not in x else x[:-11]
+    legendImages = {}
+    for l in legendNames:
+        legendImages.setdefault(parseLegendNames(l), []).append(l)
     with LayersChecker() as lc:
         for layer in lc.ilayers(hasLegend=True):
-            yield lc.checkLegendImage, layer, legendImages
+            yield lc.checkLegendImage, layer, legendsPath, legendImages.pop(layer)
 
 
 def test_all_searchable_layers():
