@@ -47,9 +47,9 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Aerial images privates <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-firmen>`__ (ch.swisstopo.lubis-luftbilder-dritte-firmen)                                                    |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `SÜL Anhörung <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)                                                    |
+| Update | `SÜL Anhörung <//map.geo.admin.ch/?topic=sachplan&layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)                                     |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Electricity lines sectoral plan <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)                                         |
+| Update | `Electricity lines sectoral plan <//map.geo.admin.ch/?topic=sachplan&layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)                          |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Vertical Deflections <//map.geo.admin.ch/?layers=ch.swisstopo.lotabweichungen>`__ (ch.swisstopo.lotabweichungen)                                                                                    |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
