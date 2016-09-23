@@ -7,7 +7,6 @@ from pyramid.httpexceptions import HTTPInternalServerError, HTTPNotFound
 
 from chsdi.models.bod import Catalog
 from chsdi.lib.validation import MapNameValidation
-from chsdi.lib.sqlalchemy_customs import remove_accents
 from chsdi.lib.filters import filter_by_geodata_staging
 
 
@@ -25,6 +24,8 @@ def tree_data(G, root, attrs, meta):
         raise nx.NetworkXError('Attribute names are not unique.')
 
     def add_children(n, G):
+        order_key = lambda x: x['orderKey']
+        label_key = lambda x: x['label'].replace(u'Ü', u'U').replace(u'Ä', u'A')
         nbrs = G[n]
         if len(nbrs) == 0:
             return []
@@ -49,8 +50,9 @@ def tree_data(G, root, attrs, meta):
                 d[children] = []
             children_.append(d)
             if ('orderKey' in d):
-                order_key = lambda x: x['orderKey']
                 children_ = sorted(children_, key=order_key)
+            else:
+                children_ = sorted(children_, key=label_key)
         for d in children_:
             d.pop('orderKey', None)
         return children_
@@ -97,15 +99,12 @@ class CatalogService(MapNameValidation):
     def catalog(self):
         model = Catalog
         query = self.request.db.query(model)\
-            .filter(model.topic.like('%%%s%%' % self.mapName.lower()))\
-            .order_by(model.orderKey)\
-            .order_by(remove_accents(model.get_name_from_lang(self.lang)))
+            .filter(model.topic.like('%%%s%%' % self.mapName.lower()))
         rows = filter_by_geodata_staging(query, model.staging, self.staging).all()
         if len(rows) == 0:
             raise HTTPNotFound('No catalog with id %s is available' % self.mapName)
-        lang = self.lang
 
-        G, meta, root_id = create_digraph(rows, lang)
+        G, meta, root_id = create_digraph(rows, self.lang)
 
         if len(rows) != len(G.nodes()):
             raise HTTPInternalServerError('Catalog tree for topic %s has unconnected leaves' % self.mapName)
