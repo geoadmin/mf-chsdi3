@@ -5723,6 +5723,12 @@ msgstr "Divisione carta stradale Stampa"
 msgid "ch.swisstopo.strassenkarte200_papier.metadata.release"
 msgstr "Edizione"
 
+msgid "ch.swisstopo.swiss-map-vector1000.metadata"
+msgstr "Divisione Swiss Map Vector 1000"
+
+msgid "ch.swisstopo.swiss-map-vector500.metadata"
+msgstr "Divisione Swiss Map Vector 500"
+
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"
 
@@ -7627,6 +7633,15 @@ msgstr "Esaurito"
 
 msgid "sia_261_norm"
 msgstr "Classe di terreno de fondatione sulla base di SIA 261"
+
+msgid "smv.price"
+msgstr "Prezzo al pezzo"
+
+msgid "smv.release"
+msgstr "Edizione"
+
+msgid "smv.scale"
+msgstr "Scala"
 
 msgid "sonnendach_link"
 msgstr "sonenndach.ch"

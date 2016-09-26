@@ -5723,6 +5723,12 @@ msgstr "Division road map Paper"
 msgid "ch.swisstopo.strassenkarte200_papier.metadata.release"
 msgstr "Edition"
 
+msgid "ch.swisstopo.swiss-map-vector1000.metadata"
+msgstr "Division Swiss Map Vector 1000"
+
+msgid "ch.swisstopo.swiss-map-vector500.metadata"
+msgstr "Division Swiss Map Vector 500"
+
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"
 
@@ -7627,6 +7633,15 @@ msgstr "Out of stock"
 
 msgid "sia_261_norm"
 msgstr "Ground class according to SIA 261"
+
+msgid "smv.price"
+msgstr "Unit price"
+
+msgid "smv.release"
+msgstr "Edition"
+
+msgid "smv.scale"
+msgstr "Scale"
 
 msgid "sonnendach_link"
 msgstr "sonenndach.ch"

@@ -5723,6 +5723,12 @@ msgstr "Divisiun charta da las vias Stampa"
 msgid "ch.swisstopo.strassenkarte200_papier.metadata.release"
 msgstr "Ausgabejahr"
 
+msgid "ch.swisstopo.swiss-map-vector1000.metadata"
+msgstr "Divisiun Swiss Map Vector 1000"
+
+msgid "ch.swisstopo.swiss-map-vector500.metadata"
+msgstr "Divisiun Swiss Map Vector 500"
+
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Sumbriva reliev"
 
@@ -7628,6 +7634,15 @@ msgstr "shop_availability"
 
 msgid "sia_261_norm"
 msgstr "Categoria dal fundament segund SIA 261"
+
+msgid "smv.price"
+msgstr "Stückpreis"
+
+msgid "smv.release"
+msgstr "Ausgabejahr"
+
+msgid "smv.scale"
+msgstr "Massstab"
 
 msgid "sonnendach_link"
 msgstr "sonenndach.ch"

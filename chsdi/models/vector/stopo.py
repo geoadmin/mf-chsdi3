@@ -39,6 +39,34 @@ class DosisleistungTerrestrisch(Base, Vector):
 register('ch.swisstopo.geologie-dosisleistung-terrestrisch', DosisleistungTerrestrisch)
 
 
+class Smv1000(Base, Vector):
+    __tablename__ = 'smv1000'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __template__ = 'templates/htmlpopup/smv.mako'
+    __bodId__ = 'ch.swisstopo.swiss-map-vector1000.metadata'
+    id = Column('perimeter', Integer, primary_key=True)
+    scale = Column('n_scale', Integer)
+    price = Column('n_price', Integer)
+    release = Column('dt_release', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swiss-map-vector1000.metadata', Smv1000)
+
+
+class Smv500(Base, Vector):
+    __tablename__ = 'smv500'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __template__ = 'templates/htmlpopup/smv.mako'
+    __bodId__ = 'ch.swisstopo.swiss-map-vector500.metadata'
+    id = Column('perimeter', Integer, primary_key=True)
+    scale = Column('n_scale', Integer)
+    price = Column('n_price', Integer)
+    release = Column('dt_release', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swiss-map-vector500.metadata', Smv500)
+
+
 class Landesschwerenetz(Base, Vector):
     __tablename__ = 'landesschwerenetz'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
