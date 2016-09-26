@@ -5723,6 +5723,12 @@ msgstr "Einteilung Strassenkarte Papier"
 msgid "ch.swisstopo.strassenkarte200_papier.metadata.release"
 msgstr "Ausgabejahr"
 
+msgid "ch.swisstopo.swiss-map-vector1000.metadata"
+msgstr "Einteilung Landeskarte 1000 Vector"
+
+msgid "ch.swisstopo.swiss-map-vector500.metadata"
+msgstr "Einteilung Landeskarte 500 Vector"
+
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Reliefschattierung"
 
@@ -7627,6 +7633,15 @@ msgstr "Vergriffen"
 
 msgid "sia_261_norm"
 msgstr "Baugrundklasse nach SIA 261"
+
+msgid "smv.price"
+msgstr "Stückpreis"
+
+msgid "smv.release"
+msgstr "Ausgabejahr"
+
+msgid "smv.scale"
+msgstr "Massstab"
 
 msgid "sonnendach_link"
 msgstr "sonenndach.ch"

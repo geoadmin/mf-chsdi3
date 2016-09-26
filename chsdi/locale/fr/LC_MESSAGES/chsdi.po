@@ -5723,6 +5723,12 @@ msgstr "Découpage carte routière Papier"
 msgid "ch.swisstopo.strassenkarte200_papier.metadata.release"
 msgstr "Édition"
 
+msgid "ch.swisstopo.swiss-map-vector1000.metadata"
+msgstr "Découpage Swiss Map Vector 1000"
+
+msgid "ch.swisstopo.swiss-map-vector500.metadata"
+msgstr "Découpage Swiss Map Vector 500"
+
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D estompage du relief"
 
@@ -7627,6 +7633,15 @@ msgstr "Non disponible"
 
 msgid "sia_261_norm"
 msgstr "Classe de sol de fondation selon SIA 261"
+
+msgid "smv.price"
+msgstr "Prix unitaire"
+
+msgid "smv.release"
+msgstr "Édition"
+
+msgid "smv.scale"
+msgstr "Echelle"
 
 msgid "sonnendach_link"
 msgstr "sonenndach.ch"

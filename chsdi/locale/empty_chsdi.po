@@ -1,3 +1,18 @@
+msgid "ch.swisstopo.swiss-map-vector1000.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.swiss-map-vector500.metadata"
+msgstr ""
+
+msgid "smv.price"
+msgstr ""
+
+msgid "smv.release"
+msgstr ""
+
+msgid "smv.scale"
+msgstr ""
+
 msgid "tt_wrz_portal_best"
 msgstr ""
 
