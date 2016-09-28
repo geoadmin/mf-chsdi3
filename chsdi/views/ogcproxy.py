@@ -54,7 +54,8 @@ class OgcProxy:
         #  All content types are allowed
         if "content-type" in resp:
             ct = resp["content-type"]
-            if resp["content-type"] == "application/vnd.google-earth.kmz":
+            if ct == "application/vnd.google-earth.kmz" or \
+                    (ct == "application/octet-stream" and resp["content-location"].endswith(".kmz")):
                 zipfile = None
                 try:
                     zipurl = urlopen(url)
