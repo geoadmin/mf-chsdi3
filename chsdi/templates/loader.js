@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 
 <%
-from chsdi.lib.helpers import versioned
-
 lang = pageargs['lang']
-mode = pageargs['mode']
 data = pageargs['data']
 api_url = pageargs['api_url']
 layersconfig = """window.GeoAdmin.getConfig  = function(){ return %s } """ % data
@@ -14,15 +11,12 @@ if (typeof window['GeoAdmin'] == 'undefined') window.GeoAdmin = {};
 window.GeoAdmin.lang = "${lang}";
 window.GeoAdmin.serviceUrl = "${api_url}";
 ${layersconfig|n}
-// Load js
-document.write('<link rel="stylesheet" type="text/css" href="' + "${h.versioned(request.static_url('chsdi:static/css/ga.css'))}" + '" />');
-document.write('<scr' + 'ipt type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/proj4js/2.2.1/proj4.js"></scr' + 'ipt>');
-document.write('<scr' + 'ipt type="text/javascript" src="' + "${h.versioned(request.static_url('chsdi:static/js/EPSG21781.js'))}" + '"></scr' + 'ipt>');
-document.write('<scr' + 'ipt type="text/javascript" src="' + "${h.versioned(request.static_url('chsdi:static/js/EPSG2056.js'))}" + '"></scr' + 'ipt>');
-% if mode == 'debug':
-document.write('<scr' + 'ipt type="text/javascript" src="' + "${h.versioned(request.static_url('chsdi:static/js/ga-debug.js'))}" + '"></scr' + 'ipt>');
-% else:
-document.write('<scr' + 'ipt type="text/javascript" src="' + "${h.versioned(request.static_url('chsdi:static/js/ga.js'))}" + '"></scr' + 'ipt>');
-% endif
-})();
 
+document.write('<link rel="stylesheet" type="text/css" href="${ol_css}" />');
+document.write('<link rel="stylesheet" type="text/css" href="${ga_css}" />');
+document.write('<scr' + 'ipt type="text/javascript" src="//cdn.polyfill.io/v2/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,URL"></scr' + 'ipt>');
+document.write('<scr' + 'ipt type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/proj4js/2.2.1/proj4.js"></scr' + 'ipt>');
+document.write('<scr' + 'ipt type="text/javascript" src="${epsg_21781_js}"></scr' + 'ipt>');
+document.write('<scr' + 'ipt type="text/javascript" src="${epsg_2056_js}"></scr' + 'ipt>');
+document.write('<scr' + 'ipt type="text/javascript" src="${ga_js}"></scr' + 'ipt>');
+})();
