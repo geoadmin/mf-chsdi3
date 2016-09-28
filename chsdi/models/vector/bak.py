@@ -41,6 +41,7 @@ class UNESCO(Base, Vector):
     __template__ = 'templates/htmlpopup/unesco_bak.mako'
     __bodId__ = 'ch.bak.schutzgebiete-unesco_weltkulturerbe'
     __label__ = 'name_de'
+    __returnedGeometry__ = 'the_geom_simplified_tolerance_3'
     id = Column('bgdi_id', Integer, primary_key=True)
     name_fr = Column('name_fr', Text)
     name_de = Column('bgdi_name', Text)
@@ -54,5 +55,6 @@ class UNESCO(Base, Vector):
     type_rm = Column('type_rm', Text)
     bgdi_surface = Column('bgdi_surface', Numeric)
     the_geom = Column(Geometry2D)
+    the_geom_simplified_tolerance_3 = Column('the_geom_simplified_tolerance_3', Geometry2D)
 
 register('ch.bak.schutzgebiete-unesco_weltkulturerbe', UNESCO)
