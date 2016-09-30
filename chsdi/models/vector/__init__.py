@@ -4,7 +4,6 @@ import re
 import geojson
 import datetime
 import decimal
-from sys import maxsize
 from pyramid.threadlocal import get_current_registry
 from chsdi.lib.exceptions import HTTPBandwidthLimited
 from shapely.geometry import asShape
@@ -36,25 +35,24 @@ def getScale(imageDisplay, mapExtent):
     return resolution * 39.37 * imageDisplay[2]
 
 
-def getToleranceMeters(imageDisplay, mapExtent, tolerance):
-    bounds = mapExtent.bounds
-    mapMeterWidth = abs(bounds[0] - bounds[2])
-    mapMeterHeight = abs(bounds[1] - bounds[3])
-    imgPixelWidth = imageDisplay[0]
-    imgPixelHeight = imageDisplay[1]
+def hasBuffer(imageDisplay, mapExtent, tolerance):
+    return bool(imageDisplay and mapExtent and tolerance is not None and
+        all(val != 0 for val in imageDisplay) and mapExtent.area != 0)
 
-    # Test for null values
-    if all((tolerance, imgPixelWidth, mapMeterWidth, imgPixelHeight, mapMeterHeight)):
+
+def getToleranceMeters(imageDisplay, mapExtent, tolerance):
+    if hasBuffer(imageDisplay, mapExtent, tolerance):
+        bounds = mapExtent.bounds
+        mapMeterWidth = abs(bounds[0] - bounds[2])
+        mapMeterHeight = abs(bounds[1] - bounds[3])
+        imgPixelWidth = imageDisplay[0]
+        imgPixelHeight = imageDisplay[1]
         toleranceMeters = max(mapMeterWidth / imgPixelWidth, mapMeterHeight / imgPixelHeight) * tolerance
         return toleranceMeters
     return 0.0
 
 
 class Vector(GeoInterface):
-    __minscale__ = 0
-    __maxscale__ = maxsize
-    __minresolution__ = 0
-    __maxresolution__ = maxsize
     attributes = {}
 
     # Overrides GeoInterface
@@ -158,24 +156,11 @@ class Vector(GeoInterface):
     @classmethod
     def geom_filter(cls, geometry, imageDisplay, mapExtent, tolerance):
         toleranceMeters = getToleranceMeters(imageDisplay, mapExtent, tolerance)
-        scale = None
-        resolution = None
-        minScale = cls.__minscale__ if hasattr(cls, '__minscale__') else None
-        maxScale = cls.__maxscale__ if hasattr(cls, '__maxscale__') else None
-        minResolution = cls.__minresolution__ if hasattr(cls, '__minresolution__') else None
-        maxResolution = cls.__maxresolution__ if hasattr(cls, '__maxresolution__') else None
-        if None not in (minScale, maxScale) and all(val != 0.0 for val in imageDisplay) and mapExtent.area != 0.0:
-            scale = getScale(imageDisplay, mapExtent)
-        if None not in (minResolution, maxResolution) and all(val != 0.0 for val in imageDisplay) and mapExtent.area != 0.0:
-            resolution = getResolution(imageDisplay, mapExtent)
-        if (scale is None or (scale > cls.__minscale__ and scale <= cls.__maxscale__)) and \
-           (resolution is None or (resolution > cls.__minresolution__ and resolution <= cls.__maxresolution__)):
-            geom = esriRest2Shapely(geometry)
-            wkbGeometry = WKBElement(buffer(geom.wkb), 21781)
-            geomColumn = cls.geometry_column()
-            geomFilter = func.ST_DWITHIN(geomColumn, wkbGeometry, toleranceMeters)
-            return geomFilter
-        return None
+        geom = esriRest2Shapely(geometry)
+        wkbGeometry = WKBElement(buffer(geom.wkb), 21781)
+        geomColumn = cls.geometry_column()
+        geomFilter = func.ST_DWITHIN(geomColumn, wkbGeometry, toleranceMeters)
+        return geomFilter
 
     @classmethod
     def geom_intersects(cls, geometry):
