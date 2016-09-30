@@ -9043,3 +9043,15 @@ msgstr ""
 
 msgid "ch.swisstopo.hiks-siegfried-ta50.metadata"
 msgstr ""
+
+msgid "ch.bazl.spitallandeplaetze"
+msgstr ""
+
+msgid "canton"
+msgstr ""
+
+msgid "arp_east"
+msgstr ""
+
+msgid "arp_north"
+msgstr ""

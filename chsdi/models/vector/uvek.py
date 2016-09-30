@@ -2540,7 +2540,7 @@ class eignungDaecherOverview (Base, Vector):
 register('ch.bfe.solarenergie-eignung-daecher', eignungDaecherOverview)
 
 
-class flugplaetze_heliports (Base, Vector):
+class FlugplaetzeHeliports(Base, Vector):
     __tablename__ = 'flugplaetze_heliports'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/flugplaetze_heliports.mako'
@@ -2555,10 +2555,10 @@ class flugplaetze_heliports (Base, Vector):
     elevation = Column('elevation', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.flugplaetze-heliports', flugplaetze_heliports)
+register('ch.bazl.flugplaetze-heliports', FlugplaetzeHeliports)
 
 
-class gebirgslandeplaetze (Base, Vector):
+class Gebirgslandeplaetze(Base, Vector):
     __tablename__ = 'gebirgslandeplaetze'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/gebirgslandeplaetze.mako'
@@ -2575,4 +2575,20 @@ class gebirgslandeplaetze (Base, Vector):
     elevation = Column('elevation', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.gebirgslandeplaetze', gebirgslandeplaetze)
+register('ch.bazl.gebirgslandeplaetze', Gebirgslandeplaetze)
+
+
+class Spitallandeplaetze(Base, Vector):
+    __tablename__ = 'spitallandeplaetze'
+    __table_args__ = ({'schema': 'bazl', 'autoload': True})
+    __template__ = 'templates/htmlpopup/spitallandeplaetze.mako'
+    __bodId__ = 'ch.bazl.spitallandeplaetze'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode, nullable=False)
+    location = Column('location', Unicode, nullable=False)
+    canton = Column('canton', Unicode, nullable=False)
+    arp_east = Column('arp_east', Integer, nullable=False)
+    arp_north = Column('arp_north', Integer, nullable=False)
+
+register('ch.bazl.spitallandeplaetze', Spitallandeplaetze)
