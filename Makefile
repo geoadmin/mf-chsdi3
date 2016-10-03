@@ -9,6 +9,7 @@ BRANCH_TO_DELETE :=
 CURRENT_DIRECTORY := $(shell pwd)
 DEPLOYCONFIG ?=
 DEPLOY_TARGET ?=
+BODID ?=
 GIT_BRANCH := $(shell if [ -f '.venv/deployed-git-branch' ]; then cat .venv/deployed-git-branch 2> /dev/null; else git rev-parse --symbolic-full-name --abbrev-ref HEAD; fi)
 HTTP_PROXY := http://ec2-52-28-118-239.eu-central-1.compute.amazonaws.com:80
 INSTALL_DIRECTORY := .venv
@@ -73,10 +74,10 @@ help:
 	@echo "- lint               Run the linter"
 	@echo "- autolint           Run the autolinter"
 	@echo "- translate          Generate the translation files"
+	@echo "- legends            Downloads and optimizes all WMS legend images (make legends BODID=ch.foo)"
 	@echo "- doc                Generate the doc for api3.geo.admin.ch"
 	@echo "- deploybranch       Deploy current branch to dev (must be pushed before hand)"
 	@echo "- deploybranchint    Deploy current branch to dev and int (must be pushed before hand)"
-	@echo "- deploybranchdemo   Deploy current branch to dev and demo (must be pushed before hand)"
 	@echo "- deletebranch       List deployed branches or delete a deployed branch (BRANCH_TO_DELETE=...)"
 	@echo "- updateapi          Updates geoadmin api source code (ol3 fork)"
 	@echo "- deploydev          Deploys master to dev (SNAPSHOT=true to also create a snapshot)"
@@ -88,6 +89,7 @@ help:
 	@echo "Variables:"
 	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
 	@echo "API_URL:             ${API_URL}"
+	@echo "WMSHOST:             ${WMSHOST}"
 	@echo "BRANCH_STAGING:      ${BRANCH_STAGING}"
 	@echo "DBHOST:              ${DBHOST}"
 	@echo "DBSTAGING:           ${DBSTAGING}"
@@ -160,6 +162,7 @@ rss: doc chsdi/static/doc/build/releasenotes/index.html
 translate:
 	@echo "${GREEN}Updating translations...${RESET}";
 	${PYTHON_CMD} translations/translation2po.py chsdi/locale/;
+	make potomo;
 
 chsdi/locale/en/LC_MESSAGES/chsdi.po:
 chsdi/locale/en/LC_MESSAGES/chsdi.mo: chsdi/locale/en/LC_MESSAGES/chsdi.po
@@ -218,18 +221,13 @@ deploybranch:
 	./scripts/deploybranch.sh
 
 .PHONY: deletebranch
-deletebranch:
+deletebranch: guard-BRANCH_TO_DELETE
 	./scripts/delete_branch.sh $(BRANCH_TO_DELETE)
 
 .PHONY: deploybranchint
 deploybranchint:
 	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev and int...${RESET}";
 	./scripts/deploybranch.sh int
-
-.PHONY: deploybranchdemo
-deploybranchdemo:
-	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev and demo...${RESET}";
-	./scripts/deploybranch.sh demo
 
 # Remove when ready to be merged
 .PHONY: deploydev
@@ -242,16 +240,16 @@ deploydev:
 	fi
 
 .PHONY: deployint
-deployint:
+deployint: guard-SNAPSHOT
 	scripts/deploysnapshot.sh $(SNAPSHOT) int $(NO_TESTS) $(DEPLOYCONFIG)
 
 .PHONY: deployprod
-deployprod:
+deployprod: guard-SNAPSHOT
 	scripts/deploysnapshot.sh $(SNAPSHOT) prod $(NO_TESTS) $(DEPLOYCONFIG)
 
-.PHONY: deploydemo
-deploydemo:
-	scritps/deploysnapshot.sh $(SNAPSHOT) demo
+.PHONY: legends
+legends: guard-BODID guard-WMSHOST
+	source rc_user && scripts/downloadlegends.sh $(WMSHOST) $(BODID)
 
 rc_branch.mako:
 	@echo "${GREEN}Branch has changed${RESET}";
@@ -390,6 +388,12 @@ fixrights:
 	@echo "${GREEN}Fixing rights...${RESET}";
 	chgrp -f -R geodata . || :
 	chmod -f -R g+srwX . || :
+
+guard-%:
+	@ if test "${${*}}" = ""; then \
+	  echo "Environment variable $* not set. Add it to your command."; \
+	  exit 1; \
+	fi
 
 .PHONY: clean
 clean:
