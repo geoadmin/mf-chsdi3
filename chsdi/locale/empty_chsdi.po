@@ -49,6 +49,36 @@ msgstr ""
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz_nein"
 msgstr ""
 
+msgid "ch.astra.nationalstrassenachsen.eigentuemer"
+msgstr ""
+
+msgid "ch.astra.nationalstrassenachsen.segmentname"
+msgstr ""
+
+msgid "ch.astra.nationalstrassenachsen.strassennummer"
+msgstr ""
+
+msgid "ch.astra.nationalstrassenachsen.bezeichnung"
+msgstr ""
+
+msgid "ch.astra.nationalstrassenachsen.positionscode"
+msgstr ""
+
+msgid "ch.astra.nationalstrassenachsen"
+msgstr ""
+
+msgid "ch.astra.nationalstrassenachsen.kilometerwert"
+msgstr ""
+
+msgid "ch.astra.nationalstrassenachsen.name"
+msgstr ""
+
+msgid "ch.astra.nationalstrassenachsen.sektorlaenge"
+msgstr ""
+
+msgid "ch.astra.nationalstrassenachsen.sortnr"
+msgstr ""
+
 msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
 msgstr ""
 

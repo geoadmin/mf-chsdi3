@@ -12,6 +12,29 @@ from chsdi.models.vector import Vector, Geometry2D
 Base = bases['uvek']
 
 
+class Nsa(Base, Vector):
+    __tablename__ = 'nsa'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/nsa.mako'
+    __bodId__ = 'ch.astra.nationalstrassenachsen'
+    __label__ = 'id'
+    __queryable_attributes__ = ['strassennummer', 'name']
+    id = Column('bgdi_id', Unicode, primary_key=True)
+    eigentuemer = Column('eigentuemer', Unicode)
+    segmentname = Column('segmentname', Unicode)
+    strassennummer = Column('strassennummer', Unicode)
+    bezeichnung = Column('bezeichnung', Unicode)
+    positionscode = Column('positionscode', Unicode)
+    name = Column('name', Unicode)
+    sortnr = Column('sortnr', Unicode)
+    kilometerwert = Column('kilometerwert', Unicode)
+    sektorlaenge = Column('sektorlaenge', Unicode)
+    type_geom = Column('type_geom', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.astra.nationalstrassenachsen', Nsa)
+
+
 class SchienennetzPoint(Base, Vector):
     __tablename__ = 'schienennetz_point'
     __table_args__ = ({'schema': 'bav', 'autoload': False})

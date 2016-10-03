@@ -621,7 +621,7 @@ msgid "Solar"
 msgstr "Solaire"
 
 msgid "Spital"
-msgstr "Hôpital"
+msgstr "Ospedale"
 
 msgid "Stadion"
 msgstr "Stade"
@@ -1435,6 +1435,36 @@ msgstr "USTRA + cantone"
 
 msgid "ch.astra.mountainbikeland"
 msgstr "La Svizzera in mountain bike"
+
+msgid "ch.astra.nationalstrassenachsen"
+msgstr "Asse delle strade nazionali"
+
+msgid "ch.astra.nationalstrassenachsen.bezeichnung"
+msgstr "Indicazione"
+
+msgid "ch.astra.nationalstrassenachsen.eigentuemer"
+msgstr "Proprietario"
+
+msgid "ch.astra.nationalstrassenachsen.kilometerwert"
+msgstr "Chilometro [km]"
+
+msgid "ch.astra.nationalstrassenachsen.name"
+msgstr "Nome del punto di riferi-mento"
+
+msgid "ch.astra.nationalstrassenachsen.positionscode"
+msgstr "Codice di posizione"
+
+msgid "ch.astra.nationalstrassenachsen.segmentname"
+msgstr "Nome di sementi "
+
+msgid "ch.astra.nationalstrassenachsen.sektorlaenge"
+msgstr "Lunghezza [m]"
+
+msgid "ch.astra.nationalstrassenachsen.sortnr"
+msgstr "Sequenza no"
+
+msgid "ch.astra.nationalstrassenachsen.strassennummer"
+msgstr "No della strada"
 
 msgid "ch.astra.schwerverunfallte-kanton_alkohol"
 msgstr "Incidenti per abitante - Alcol"
@@ -4635,7 +4665,7 @@ msgid "ch.swisstopo.fixpunkte-lfp2.id"
 msgstr "Numero"
 
 msgid "ch.swisstopo.gas25-papierkarte.metadata"
-msgstr "Atlante geologico AG25 - stamp."
+msgstr "Divisione atlante geologico 25 Stampa"
 
 msgid "ch.swisstopo.gas25-papierkarte.metadata.name"
 msgstr "Nome"
@@ -5100,7 +5130,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Frontiere nazionali GG25"
 
 msgid "ch.swisstopo.ggk200-papierkarte.metadata"
-msgstr "Carta geol. generale 200 - stampata"
+msgstr "Divisione carta geologica generale 200 Stampa"
 
 msgid "ch.swisstopo.ggk200-papierkarte.metadata.name"
 msgstr "Nome"
@@ -5154,7 +5184,7 @@ msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
 msgstr "Edizione"
 
 msgid "ch.swisstopo.gsk-papierkarte.metadata"
-msgstr "Carte geologiche speciali - stampate"
+msgstr "Divisione carte geologiche speciali Stampa"
 
 msgid "ch.swisstopo.gsk-papierkarte.metadata.name"
 msgstr "Nome"
@@ -5565,19 +5595,19 @@ msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Carte nazionali (grigio)"
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata"
-msgstr "Divisione carte nazionali 1:100'000"
+msgstr "Divisione Swiss Map Raster 100"
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
 msgstr "Divisione carte nazionali 1:1 milione"
 
 msgid "ch.swisstopo.pixelkarte-pk200.metadata"
-msgstr "Divisione carta nazionale 1:200'000"
+msgstr "Divisione Swiss Map Raster 200"
 
 msgid "ch.swisstopo.pixelkarte-pk25.metadata"
-msgstr "Divisione carta nazionale 1:25'000"
+msgstr "Divisione Swiss Map Raster 25"
 
 msgid "ch.swisstopo.pixelkarte-pk50.metadata"
-msgstr "Divisione carta nazionale 1:50'000"
+msgstr "Divisione Swiss Map Raster 50"
 
 msgid "ch.swisstopo.pixelkarte-pk500.metadata"
 msgstr "Divisione carta nazionale 1:500'000"

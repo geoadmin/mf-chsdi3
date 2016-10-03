@@ -1436,6 +1436,36 @@ msgstr "ASTRA + chantun"
 msgid "ch.astra.mountainbikeland"
 msgstr "La Svizra cun velo da muntogna"
 
+msgid "ch.astra.nationalstrassenachsen"
+msgstr "Nationalstrassenachsen"
+
+msgid "ch.astra.nationalstrassenachsen.bezeichnung"
+msgstr "Bezeichnung"
+
+msgid "ch.astra.nationalstrassenachsen.eigentuemer"
+msgstr "Eigentümer"
+
+msgid "ch.astra.nationalstrassenachsen.kilometerwert"
+msgstr "Kilometerwert [km]"
+
+msgid "ch.astra.nationalstrassenachsen.name"
+msgstr "Bezugspunkt Name"
+
+msgid "ch.astra.nationalstrassenachsen.positionscode"
+msgstr "Positionscode"
+
+msgid "ch.astra.nationalstrassenachsen.segmentname"
+msgstr "Segmentname"
+
+msgid "ch.astra.nationalstrassenachsen.sektorlaenge"
+msgstr "Sektorlänge [m]"
+
+msgid "ch.astra.nationalstrassenachsen.sortnr"
+msgstr "Sequenz"
+
+msgid "ch.astra.nationalstrassenachsen.strassennummer"
+msgstr "Strassennummer"
+
 msgid "ch.astra.schwerverunfallte-kanton_alkohol"
 msgstr "Accidents per abitants – alcohol"
 
@@ -4635,7 +4665,7 @@ msgid "ch.swisstopo.fixpunkte-lfp2.id"
 msgstr "Nummer"
 
 msgid "ch.swisstopo.gas25-papierkarte.metadata"
-msgstr "Atlas geologic AG25 – stampà"
+msgstr "Divisiun atlas geologic 25 Stampa"
 
 msgid "ch.swisstopo.gas25-papierkarte.metadata.name"
 msgstr "Name"
@@ -5100,7 +5130,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Cunfins naziunals GG25"
 
 msgid "ch.swisstopo.ggk200-papierkarte.metadata"
-msgstr "Charta geol. generala 200 – stampà"
+msgstr "Divisiun charta geologica generala 200 Stampa"
 
 msgid "ch.swisstopo.ggk200-papierkarte.metadata.name"
 msgstr "Name"
@@ -5154,7 +5184,7 @@ msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gsk-papierkarte.metadata"
-msgstr "Chartas geol. spezialas – stampà"
+msgstr "Divisiun chartas geologicas spezialas Stampa"
 
 msgid "ch.swisstopo.gsk-papierkarte.metadata.name"
 msgstr "Name"
@@ -5565,19 +5595,19 @@ msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Charta naziunala (grisch)"
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata"
-msgstr "Divisiun charta naziunala 1:100'000"
+msgstr "Divisiun Swiss Map Raster 100"
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
 msgstr "Divisiun charta naziunala 1:1 miu."
 
 msgid "ch.swisstopo.pixelkarte-pk200.metadata"
-msgstr "Divisiun charta naziunala 1:200'000"
+msgstr "Divisiun Swiss Map Raster 200"
 
 msgid "ch.swisstopo.pixelkarte-pk25.metadata"
-msgstr "Divisiun charta naziunala 1:25'000"
+msgstr "Divisiun Swiss Map Raster 25"
 
 msgid "ch.swisstopo.pixelkarte-pk50.metadata"
-msgstr "Divisiun charta naziunala 1:50'000"
+msgstr "Divisiun Swiss Map Raster 50"
 
 msgid "ch.swisstopo.pixelkarte-pk500.metadata"
 msgstr "Divisiun charta naziunala 1:500'000"
