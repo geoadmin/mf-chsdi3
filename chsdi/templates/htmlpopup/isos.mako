@@ -17,14 +17,21 @@
     <tr><td class="cell-left">${_('band_1_2')}</td>                   <td>${c['attributes']['band_1'] or '-'} | ${c['attributes']['band_2'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('publikationsjahr_1_2')}</td>       <td>${c['attributes']['publikationsjahr_1'] or '-'} | ${c['attributes']['publikationsjahr_2'] or '-'}</td></tr>
 <%
-    webDavHost = request.registry.settings['webdav_host']
-    if c['attributes']['pdf_dokument_1'] is not None:
-        url_pdf = webDavHost + '/isos/' + c['attributes']['pdf_dokument_1'] + '.pdf'
-    if c['attributes']['pdf_dokument_2'] is not None:
-        url_pdf2 = webDavHost + '/isos/' + c['attributes']['pdf_dokument_2'] + '.pdf'
-%>
+dataHost = request.registry.settings['datageoadminhost']
+dataPath = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder/PDF'
+url_pdf = None
+url_pdf2 = None
+if c['attributes']['pdf_dokument_1']:
+  url_pdf = '//%s/%s/%s.pdf' % (dataHost, dataPath, c['attributes']['pdf_dokument_1'])
+if c['attributes']['pdf_dokument_2']:
+  url_pdf2 = '//%s/%s/%s.pdf' % (dataHost, dataPath, c['attributes']['pdf_dokument_2'])
 
+pdfname = []
+if c['attributes']['pdfspecial'] is not None:
+    pdfname = [l for l in c['attributes']['pdfspecial'].split(',')]
+%>
     <tr>
+      % if  c['attributes']['pdf_dokument_1'] != 'ISOS_5800':
       <td class="cell-left">${_('pdf_dokument_1_2')}</td>
       <td>
         % if c['attributes']['pdf_dokument_1']:
@@ -38,6 +45,14 @@
             &nbsp;-
         % endif
       </td>
+      % elif c['attributes']['pdf_dokument_1'] == 'ISOS_5800' :
+      <td class="cell-left" style="vertical-align: top;">PDFs</td>
+      <td> 
+          % for name in pdfname:
+          <a href="https://${dataHost}/${dataPath}/ISOS_5800_${name}.pdf"  target="_blank">ISOS_5800_${name}.pdf<a/><br>
+          % endfor
+      </td>
+      % endif
     </tr>
     <tr><td colspan=2>${_('ch.bak.isos.warning')}</td></td></tr>
 </%def>

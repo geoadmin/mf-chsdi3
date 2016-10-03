@@ -24,6 +24,7 @@ TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
 USER_SOURCE ?= rc_user
 WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
 DOWNLOAD_DIR := /var/local/geodata/downloads/
+DATAGEOADMINHOST ?= data.geo.admin.ch
 
 # Commands
 AUTOPEP8_CMD := $(INSTALL_DIRECTORY)/bin/autopep8
@@ -335,6 +336,7 @@ production.ini: production.ini.in
 		--var "shortener_allowed_hosts=$(SHORTENER_ALLOWED_HOSTS)" \
 		--var "vector_bucket=$(VECTOR_BUCKET)" \
 		--var "vector_profilename=$(VECTOR_PROFILENAME)" \
+        --var "datageoadminhost=$(DATAGEOADMINHOST)" \
 		--var "shortener_allowed_domains=$(SHORTENER_ALLOWED_DOMAINS)" $< > $@
 
 .venv/hooks: .venv/bin/git-secrets ./scripts/install-git-hooks.sh
