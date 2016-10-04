@@ -1436,6 +1436,36 @@ msgstr "OFROU + canton"
 msgid "ch.astra.mountainbikeland"
 msgstr "la Suisse à VTT"
 
+msgid "ch.astra.nationalstrassenachsen"
+msgstr "Axes des routes nationales"
+
+msgid "ch.astra.nationalstrassenachsen.bezeichnung"
+msgstr "Description"
+
+msgid "ch.astra.nationalstrassenachsen.eigentuemer"
+msgstr "Propriétaire"
+
+msgid "ch.astra.nationalstrassenachsen.kilometerwert"
+msgstr "Valeur kilométrique  [km]"
+
+msgid "ch.astra.nationalstrassenachsen.name"
+msgstr "Nom du point de repère"
+
+msgid "ch.astra.nationalstrassenachsen.positionscode"
+msgstr "Code de position"
+
+msgid "ch.astra.nationalstrassenachsen.segmentname"
+msgstr "Nom de segment"
+
+msgid "ch.astra.nationalstrassenachsen.sektorlaenge"
+msgstr "Longueur de secteur [m]"
+
+msgid "ch.astra.nationalstrassenachsen.sortnr"
+msgstr "Séquence"
+
+msgid "ch.astra.nationalstrassenachsen.strassennummer"
+msgstr "No de route"
+
 msgid "ch.astra.schwerverunfallte-kanton_alkohol"
 msgstr "Accidents par habitant - Alcool"
 
@@ -4635,7 +4665,7 @@ msgid "ch.swisstopo.fixpunkte-lfp2.id"
 msgstr "Numéro"
 
 msgid "ch.swisstopo.gas25-papierkarte.metadata"
-msgstr "Atlas géologique AG25 - papier"
+msgstr "Découpage atlas géologique 25 Papier"
 
 msgid "ch.swisstopo.gas25-papierkarte.metadata.name"
 msgstr "Nom"
@@ -5100,7 +5130,7 @@ msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Frontières nationales GG25"
 
 msgid "ch.swisstopo.ggk200-papierkarte.metadata"
-msgstr "Carte géol. générale 200 - papier"
+msgstr "Découpage carte géologique générale 200 Papier"
 
 msgid "ch.swisstopo.ggk200-papierkarte.metadata.name"
 msgstr "Nom"
@@ -5154,7 +5184,7 @@ msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
 msgstr "Édition"
 
 msgid "ch.swisstopo.gsk-papierkarte.metadata"
-msgstr "Cartes géol. spéciales - papier"
+msgstr "Découpage cartes géologiques spéciales Papier"
 
 msgid "ch.swisstopo.gsk-papierkarte.metadata.name"
 msgstr "Nom"
@@ -5565,19 +5595,19 @@ msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Cartes nationales (grise)"
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata"
-msgstr "Découpage carte nationale 1:100’000"
+msgstr "Découpage Swiss Map Raster 100"
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
 msgstr "Découpage carte nationale 1:1 million"
 
 msgid "ch.swisstopo.pixelkarte-pk200.metadata"
-msgstr "Découpage carte nationale 1:200’000"
+msgstr "Découpage Swiss Map Raster 200"
 
 msgid "ch.swisstopo.pixelkarte-pk25.metadata"
-msgstr "Découpage carte nationale 1:25’000"
+msgstr "Découpage Swiss Map Raster 25"
 
 msgid "ch.swisstopo.pixelkarte-pk50.metadata"
-msgstr "Découpage carte nationale 1:50’000"
+msgstr "Découpage Swiss Map Raster 50"
 
 msgid "ch.swisstopo.pixelkarte-pk500.metadata"
 msgstr "Découpage carte nationale 1:500’000"
