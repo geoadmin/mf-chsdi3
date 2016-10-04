@@ -2928,7 +2928,7 @@ msgid "ch.bafu.hydroweb-messstationen_gefahren"
 msgstr "Soglie d'allarme delle piene"
 
 msgid "ch.bafu.hydroweb-messstationen_grundwasser"
-msgstr "Acque sotterranee: livelli/portate"
+msgstr "NAQUA-QUANT Stazioni di misura"
 
 msgid "ch.bafu.hydroweb-messstationen_temperatur"
 msgstr "Temperature dei fiumi"
@@ -3503,11 +3503,47 @@ msgstr "Tronçon_ID"
 msgid "ch.bafu.wrz-jagdbanngebiete_select"
 msgstr "Siti di prot. della fauna selvatica"
 
+msgid "ch.bafu.wrz-jagdbanngebiete_select.beschlussjahr"
+msgstr "Anno della decisione"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.jb_name"
+msgstr "Nome della bandita"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.kanton"
+msgstr "Cantone"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_de"
+msgstr "Numero dell'oggetto"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_fr"
+msgstr "Numero dell'oggetto"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_it"
+msgstr "Numero dell'oggetto"
+
 msgid "ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen"
 msgstr "Sentieri /itinerari autorizzati"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal"
 msgstr "Zone di tranquillità"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.beschlussjahr"
+msgstr "Anno della decisione"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.kanton"
+msgstr "Cantone"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_de"
+msgstr "Numero dell'oggetto"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_fr"
+msgstr "Numero dell'oggetto"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_it"
+msgstr "Numero dell'oggetto"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.wrz_name"
+msgstr "Nome della zona"
 
 msgid "ch.bag"
 msgstr "UFSP"
@@ -8699,23 +8735,11 @@ msgstr "Foreste ed alter superfici naturali"
 msgid "tt_wasserflae"
 msgstr "Superfici acquatiche"
 
-msgid "tt_wrz_portal_beschluss"
-msgstr "Anno della decisione"
-
 msgid "tt_wrz_portal_best"
 msgstr "Disposizioni"
 
 msgid "tt_wrz_portal_grundlage"
 msgstr "Basi di decisione"
-
-msgid "tt_wrz_portal_kanton"
-msgstr "Cantone"
-
-msgid "tt_wrz_portal_name"
-msgstr "Nome della zona"
-
-msgid "tt_wrz_portal_obj"
-msgstr "Numero dell'oggetto"
 
 msgid "tt_wrz_portal_schutz"
 msgstr "Stato della protezione"
@@ -8731,15 +8755,6 @@ msgstr "Disposizioni"
 
 msgid "tt_wrz_select_grundlage"
 msgstr "Basi di decisione"
-
-msgid "tt_wrz_select_kanton"
-msgstr "Cantone"
-
-msgid "tt_wrz_select_name"
-msgstr "Nome della bandita"
-
-msgid "tt_wrz_select_obj"
-msgstr "Numero dell'oggetto"
 
 msgid "tt_wrz_select_schutz"
 msgstr "Stato della protezione"

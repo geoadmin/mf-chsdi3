@@ -2928,7 +2928,7 @@ msgid "ch.bafu.hydroweb-messstationen_gefahren"
 msgstr "Flood hazard levels"
 
 msgid "ch.bafu.hydroweb-messstationen_grundwasser"
-msgstr "Groundwater level/spring discharge"
+msgstr "NAQUA-QUANT Monitoring sites"
 
 msgid "ch.bafu.hydroweb-messstationen_temperatur"
 msgstr "Water temperature rivers"
@@ -3503,11 +3503,47 @@ msgstr "StreckenID"
 msgid "ch.bafu.wrz-jagdbanngebiete_select"
 msgstr "Wildlife reserves"
 
+msgid "ch.bafu.wrz-jagdbanngebiete_select.beschlussjahr"
+msgstr "Decision year"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.jb_name"
+msgstr "Reserve name"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.kanton"
+msgstr "Canton"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_de"
+msgstr "Object number"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_fr"
+msgstr "Object number"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_it"
+msgstr "Object number"
+
 msgid "ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen"
 msgstr "Permitted paths and trails"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal"
 msgstr "Designated wildlife areas"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.beschlussjahr"
+msgstr "Decision year"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.kanton"
+msgstr "Canton"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_de"
+msgstr "Object number"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_fr"
+msgstr "Object number"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_it"
+msgstr "Object number"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.wrz_name"
+msgstr "Zone name"
 
 msgid "ch.bag"
 msgstr "FOPH"
@@ -8699,26 +8735,14 @@ msgstr "Forest and semi natural areas"
 msgid "tt_wasserflae"
 msgstr "Waterbodies"
 
-msgid "tt_wrz_portal_beschluss"
-msgstr "Decision year"
-
 msgid "tt_wrz_portal_best"
 msgstr "Dispositions"
 
 msgid "tt_wrz_portal_grundlage"
 msgstr "Decision basis"
 
-msgid "tt_wrz_portal_kanton"
-msgstr "Canton"
-
-msgid "tt_wrz_portal_name"
-msgstr "Zone name"
-
-msgid "tt_wrz_portal_obj"
-msgstr "Object number"
-
 msgid "tt_wrz_portal_schutz"
-msgstr "Protection status"
+msgstr "Schutzstatus"
 
 msgid "tt_wrz_portal_schutzzeit"
 msgstr "Protection period"
@@ -8731,15 +8755,6 @@ msgstr "Dispositions"
 
 msgid "tt_wrz_select_grundlage"
 msgstr "Decision basis"
-
-msgid "tt_wrz_select_kanton"
-msgstr "Canton"
-
-msgid "tt_wrz_select_name"
-msgstr "Reserve name"
-
-msgid "tt_wrz_select_obj"
-msgstr "Object number"
 
 msgid "tt_wrz_select_schutz"
 msgstr "Protection status"

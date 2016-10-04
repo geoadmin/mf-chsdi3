@@ -2928,7 +2928,7 @@ msgid "ch.bafu.hydroweb-messstationen_gefahren"
 msgstr "Hochwasser Gefahrenstufen"
 
 msgid "ch.bafu.hydroweb-messstationen_grundwasser"
-msgstr "Grundwasserstände/Quellschüttungen"
+msgstr "NAQUA-QUANT Messstellen"
 
 msgid "ch.bafu.hydroweb-messstationen_temperatur"
 msgstr "Wassertemperatur der Flüsse"
@@ -3503,11 +3503,47 @@ msgstr "StreckenID"
 msgid "ch.bafu.wrz-jagdbanngebiete_select"
 msgstr "Wildschutzgebiete"
 
+msgid "ch.bafu.wrz-jagdbanngebiete_select.beschlussjahr"
+msgstr "Beschlussjahr"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.jb_name"
+msgstr "Jagdbanngebiet"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.kanton"
+msgstr "Kanton"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_de"
+msgstr "Objektnummer"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_fr"
+msgstr "Objektnummer"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_it"
+msgstr "Objektnummer"
+
 msgid "ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen"
 msgstr "Erlaubte Wege und Routen"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal"
 msgstr "Wildruhezonen"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.beschlussjahr"
+msgstr "Beschlussjahr"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.kanton"
+msgstr "Kanton"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_de"
+msgstr "Objektnummer"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_fr"
+msgstr "Objektnummer"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_it"
+msgstr "Objektnummer"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.wrz_name"
+msgstr "Wildruhezone"
 
 msgid "ch.bag"
 msgstr "BAG"
@@ -8699,23 +8735,11 @@ msgstr "Naturnahe Flächen, Wald"
 msgid "tt_wasserflae"
 msgstr "Wasserflächen"
 
-msgid "tt_wrz_portal_beschluss"
-msgstr "Beschlussjahr"
-
 msgid "tt_wrz_portal_best"
 msgstr "Bestimmungen"
 
 msgid "tt_wrz_portal_grundlage"
 msgstr "Grundlage"
-
-msgid "tt_wrz_portal_kanton"
-msgstr "Kanton"
-
-msgid "tt_wrz_portal_name"
-msgstr "Wildruhezone"
-
-msgid "tt_wrz_portal_obj"
-msgstr "Objektnummer"
 
 msgid "tt_wrz_portal_schutz"
 msgstr "Schutzstatus "
@@ -8731,15 +8755,6 @@ msgstr "Bestimmungen"
 
 msgid "tt_wrz_select_grundlage"
 msgstr "Grundlage"
-
-msgid "tt_wrz_select_kanton"
-msgstr "Kanton"
-
-msgid "tt_wrz_select_name"
-msgstr "Jagdbanngebiet"
-
-msgid "tt_wrz_select_obj"
-msgstr "Objektnummer"
 
 msgid "tt_wrz_select_schutz"
 msgstr "Schutzstatus "

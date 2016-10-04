@@ -3503,11 +3503,47 @@ msgstr "StreckenID"
 msgid "ch.bafu.wrz-jagdbanngebiete_select"
 msgstr "Asils da selvaschina"
 
+msgid "ch.bafu.wrz-jagdbanngebiete_select.beschlussjahr"
+msgstr "Beschlussjahr"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.jb_name"
+msgstr "Jagdbanngebiet"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.kanton"
+msgstr "Kanton"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_de"
+msgstr "Objektnummer"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_fr"
+msgstr "Objektnummer"
+
+msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_it"
+msgstr "Objektnummer"
+
 msgid "ch.bafu.wrz-wildruhezonen-jagdbanngebiete-wege-routen"
 msgstr "Vias e rutas permessas"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal"
 msgstr "Zonas da paus per la selvaschina"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.beschlussjahr"
+msgstr "Beschlussjahr"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.kanton"
+msgstr "Kanton"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_de"
+msgstr "Objektnummer"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_fr"
+msgstr "Objektnummer"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_it"
+msgstr "Objektnummer"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.wrz_name"
+msgstr "Wildruhezone"
 
 msgid "ch.bag"
 msgstr "BAG"
@@ -8700,26 +8736,14 @@ msgstr "Naturnahe Flächen, Wald"
 msgid "tt_wasserflae"
 msgstr "Wasserflächen"
 
-msgid "tt_wrz_portal_beschluss"
-msgstr "Beschlussjahr"
-
 msgid "tt_wrz_portal_best"
 msgstr "Bestimmungen"
 
 msgid "tt_wrz_portal_grundlage"
 msgstr "Grundlage"
 
-msgid "tt_wrz_portal_kanton"
-msgstr "Kanton"
-
-msgid "tt_wrz_portal_name"
-msgstr "Wildruhezone"
-
-msgid "tt_wrz_portal_obj"
-msgstr "Objektnummer"
-
 msgid "tt_wrz_portal_schutz"
-msgstr "Schutzstatus "
+msgstr "Schutzstatus"
 
 msgid "tt_wrz_portal_schutzzeit"
 msgstr "Schutzzeit"
@@ -8732,15 +8756,6 @@ msgstr "Bestimmungen"
 
 msgid "tt_wrz_select_grundlage"
 msgstr "Grundlage"
-
-msgid "tt_wrz_select_kanton"
-msgstr "Kanton"
-
-msgid "tt_wrz_select_name"
-msgstr "Jagdbanngebiet"
-
-msgid "tt_wrz_select_obj"
-msgstr "Objektnummer"
 
 msgid "tt_wrz_select_schutz"
 msgstr "Schutzstatus "
