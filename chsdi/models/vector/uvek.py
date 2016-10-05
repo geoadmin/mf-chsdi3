@@ -19,7 +19,7 @@ class Nsa(Base, Vector):
     __bodId__ = 'ch.astra.nationalstrassenachsen'
     __label__ = 'id'
     __queryable_attributes__ = ['strassennummer', 'name']
-    id = Column('bgdi_id', Unicode, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     eigentuemer = Column('eigentuemer', Unicode)
     segmentname = Column('segmentname', Unicode)
     strassennummer = Column('strassennummer', Unicode)
