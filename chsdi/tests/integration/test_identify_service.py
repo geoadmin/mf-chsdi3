@@ -98,7 +98,7 @@ class TestIdentifyService(TestsBase):
     def test_identify_valid(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96',
                   'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
-        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=509)
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'text/plain')
 
     def test_identify_valid_on_grid(self):
