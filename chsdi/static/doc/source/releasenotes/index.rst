@@ -43,7 +43,7 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                                                           |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `UNESCO World cultural heritage <//map.geo.admin.ch/?layers=ch.bak.schutzgebiete-unesco_weltkulturerbe>`__ (ch.bak.schutzgebiete-unesco_weltkulturerbe)                                                                           |
+| Update | `UNESCO World cultural heritage <//map.geo.admin.ch/?layers=ch.bak.schutzgebiete-unesco_weltkulturerbe>`__ (ch.bak.schutzgebiete-unesco_weltkulturerbe)                                              |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 

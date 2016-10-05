@@ -4605,7 +4605,7 @@ msgid "ch.swisstopo.area-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.bk200-papierkarte.metadata"
-msgstr "Charta dals chastels – stampà"
+msgstr "Divisiun charta dals chastels Stampa"
 
 msgid "ch.swisstopo.bk200-papierkarte.metadata.name"
 msgstr "Name"
@@ -4728,7 +4728,7 @@ msgid "ch.swisstopo.geologie-geocover"
 msgstr "GeoCover – datas vectorialas"
 
 msgid "ch.swisstopo.geologie-geocover.metadata"
-msgstr "Divisiun GeoCover / AG25"
+msgstr "Divisiun GeoCover"
 
 msgid "ch.swisstopo.geologie-geocover.name"
 msgstr "Name"
@@ -4746,7 +4746,7 @@ msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Anomalias isostaticas 500"
 
 msgid "ch.swisstopo.geologie-geolkarten500.metadata"
-msgstr "Geologia 500 – stampà"
+msgstr "Divisiun charta geologica 500 Stampa"
 
 msgid "ch.swisstopo.geologie-geologische_karte"
 msgstr "Geologia 500"
@@ -5076,7 +5076,7 @@ msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
 msgstr "Punktnummer"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
-msgstr "Atlas gravimetric 100 – stampà"
+msgstr "Divisiun atlas gravimetric 100 Stampa"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.name"
 msgstr "Name"
@@ -5142,13 +5142,13 @@ msgid "ch.swisstopo.ggk200-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gk300-papierkarte.metadata"
-msgstr "Charta 1:300'000 – stampà"
+msgstr "Divisiun charta generala 300 Stampa"
 
 msgid "ch.swisstopo.gk300-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkba500-papierkarte.metadata"
-msgstr "Anomalias da Bouguer 500 – stampà"
+msgstr "Divisiun anomalias da Bouguer 500 Stampa"
 
 msgid "ch.swisstopo.gkba500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5160,25 +5160,25 @@ msgid "ch.swisstopo.gkg500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gklgm500-papierkarte.metadata"
-msgstr "Ultim temp da glatsch max. 500 – stampà"
+msgstr "Divisiun Ultim temp da glatsch max. 500 Stampa"
 
 msgid "ch.swisstopo.gklgm500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkt500-papierkarte.metadata"
-msgstr "Tectonica 500 – stampà"
+msgstr "Divisiun charta tectonica 500 Stampa"
 
 msgid "ch.swisstopo.gkt500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkwvor500-papierkarte.metadata"
-msgstr "Resursas d'aua sutterrana 500 stampà"
+msgstr "Divisiun resursas d'aua sutterrana 500 Stampa"
 
 msgid "ch.swisstopo.gkwvor500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata"
-msgstr "Vulnerab. aua sutterrana 500 stampà"
+msgstr "Divisiun Vulnerabilità acquiferi 500 Stampa"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5250,19 +5250,19 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Charta Siegfried Emprima ediziun"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
-msgstr "Charta d'aviatica OACI stampada"
+msgstr "Divisiun charta aviatica Stampa"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.images-spot-5.metadata"
-msgstr "Spot Mosaic Ausdehnung"
+msgstr "Divisiun Spot Mosaic Raster"
 
 msgid "ch.swisstopo.images-swissimage"
 msgstr "Fotografia or da l'aria"
 
 msgid "ch.swisstopo.images-swissimage.metadata"
-msgstr "Divisiun quadrels SWISSIMAGE"
+msgstr "Divisiun SWISSIMAGE Raster"
 
 msgid "ch.swisstopo.koordinatenaenderung"
 msgstr "MN95 Midada da coordinatas"
@@ -5349,7 +5349,7 @@ msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk100-papierkarte.metadata"
-msgstr "Charta naziunala 1:100'000 stampà"
+msgstr "Divisiun charta naziunala 100 Stampa"
 
 msgid "ch.swisstopo.lk100-papierkarte.metadata.name"
 msgstr "Name"
@@ -5361,13 +5361,13 @@ msgid "ch.swisstopo.lk100-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk1000-papierkarte.metadata"
-msgstr "Charta naziunala 1:1 miu. stampà"
+msgstr "Divisiun charta naziunala 1000 Stampa"
 
 msgid "ch.swisstopo.lk1000-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk200-papierkarte.metadata"
-msgstr "Charta naziunala 1:200'000 stampà"
+msgstr "Divisiun charta naziunala 200 Stampa"
 
 msgid "ch.swisstopo.lk200-papierkarte.metadata.name"
 msgstr "Name"
@@ -5391,7 +5391,7 @@ msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata"
-msgstr "Charta naziunala 1:25'000 stampà"
+msgstr "Divisiun charta naziunala 25 Stampa"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.author"
 msgstr "Autori"
@@ -5439,7 +5439,7 @@ msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk50-papierkarte.metadata"
-msgstr "Charta naziunala 1:50'000 stampà"
+msgstr "Divisiun charta naziunala 50 Stampa"
 
 msgid "ch.swisstopo.lk50-papierkarte.metadata.name"
 msgstr "Name"
@@ -5451,7 +5451,7 @@ msgid "ch.swisstopo.lk50-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk500-papierkarte.metadata"
-msgstr "Charta naziunala 1:500'000 stampà"
+msgstr "Divisiun charta naziunala 500 Stampa"
 
 msgid "ch.swisstopo.lk500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5595,22 +5595,22 @@ msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Charta naziunala (grisch)"
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata"
-msgstr "Divisiun Swiss Map Raster 100"
+msgstr "Divisiun charta naziunala 100 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
 msgstr "Divisiun charta naziunala 1:1 miu."
 
 msgid "ch.swisstopo.pixelkarte-pk200.metadata"
-msgstr "Divisiun Swiss Map Raster 200"
+msgstr "Divisiun charta naziunala 200 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk25.metadata"
-msgstr "Divisiun Swiss Map Raster 25"
+msgstr "Divisiun charta naziunala 25 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk50.metadata"
-msgstr "Divisiun Swiss Map Raster 50"
+msgstr "Divisiun charta naziunala 50 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk500.metadata"
-msgstr "Divisiun charta naziunala 1:500'000"
+msgstr "Divisiun charta naziunala 500 Raster"
 
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv."
@@ -5619,7 +5619,7 @@ msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata"
-msgstr "Charta da sgol senza motor stampada"
+msgstr "Divisiun charta da sgol senza motor Stampa"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5631,7 +5631,7 @@ msgid "ch.swisstopo.sgtk"
 msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
-msgstr "Charta turas da skis 1:50'000"
+msgstr "Divisiun charta turas da skis 50 Stampa"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
 msgstr "Name"
@@ -5643,7 +5643,7 @@ msgid "ch.swisstopo.skitourenkarte-50.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.stk200-papierkarte.metadata"
-msgstr "Charta da las vias"
+msgstr "Divisiun charta da las vias Stampa"
 
 msgid "ch.swisstopo.stk200-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5685,7 +5685,7 @@ msgid "ch.swisstopo.swissbuildings3d"
 msgstr "Edifizis simplifitgads en 3D"
 
 msgid "ch.swisstopo.swissbuildings3d-2.metadata"
-msgstr "Verfügbarkeit swissBUILDINGS3D 2.0"
+msgstr "Divisiun swissBUILDINGS3D 2.0 Vector"
 
 msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE"
@@ -5814,7 +5814,7 @@ msgid "ch.swisstopo.verschiebungsvektoren-tsp2.name"
 msgstr "Offizielle Punktnummer"
 
 msgid "ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata"
-msgstr "Charta naziunala 1:25'000 cump."
+msgstr "Divisiun charta da viandar 25 Stampa"
 
 msgid "ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata.name"
 msgstr "Name"
@@ -5838,7 +5838,7 @@ msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.wk50-papierkarte.metadata"
-msgstr "Chartas da viandar 1:50'000"
+msgstr "Divisiun charta da viandar 50 Stampa"
 
 msgid "ch.swisstopo.wk50-papierkarte.metadata.name"
 msgstr "Name"
@@ -5850,7 +5850,7 @@ msgid "ch.swisstopo.wk50-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.wkt33-papierkarte.metadata"
-msgstr "Chartas da viandar 1:33'333"
+msgstr "Divisiun charta da viandar 1:33'333 Stampa"
 
 msgid "ch.swisstopo.wkt33-papierkarte.metadata.name"
 msgstr "Name"
@@ -5943,7 +5943,7 @@ msgid "ch.vbs.territorialregionen"
 msgstr "Regiuns territorialas"
 
 msgid "ch.vbs.url"
-msgstr "http://www.vbs.admin.ch/internet/vbs/de/home.html"
+msgstr "http://www.vbs.admin.ch/rm/home.html"
 
 msgid "ch.vbs.waldschadenkarte"
 msgstr "Waldschadenkarte - Projektil"

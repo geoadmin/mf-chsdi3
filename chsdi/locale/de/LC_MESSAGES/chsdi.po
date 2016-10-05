@@ -4605,7 +4605,7 @@ msgid "ch.swisstopo.area-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.bk200-papierkarte.metadata"
-msgstr "Burgenkarte Papier"
+msgstr "Einteilung Burgenkarte Papier"
 
 msgid "ch.swisstopo.bk200-papierkarte.metadata.name"
 msgstr "Name"
@@ -4728,7 +4728,7 @@ msgid "ch.swisstopo.geologie-geocover"
 msgstr "GeoCover - Vektordaten"
 
 msgid "ch.swisstopo.geologie-geocover.metadata"
-msgstr "Einteilung GeoCover / GA25"
+msgstr "Einteilung GeoCover"
 
 msgid "ch.swisstopo.geologie-geocover.name"
 msgstr "Name"
@@ -4746,7 +4746,7 @@ msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Isostatische Anomalien 500"
 
 msgid "ch.swisstopo.geologie-geolkarten500.metadata"
-msgstr "Geologie 500 - Papier"
+msgstr "Einteilung Geologische Karte 500 Papier"
 
 msgid "ch.swisstopo.geologie-geologische_karte"
 msgstr "Geologie 500"
@@ -5076,7 +5076,7 @@ msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
 msgstr "Punktnummer"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
-msgstr "Gravimetrischer Atlas 100 - Papier"
+msgstr "Einteilung Gravimetrischer Atlas 100 Papier"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.name"
 msgstr "Name"
@@ -5142,13 +5142,13 @@ msgid "ch.swisstopo.ggk200-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gk300-papierkarte.metadata"
-msgstr "Generalkarte 1:300'000 Papier"
+msgstr "Einteilung Generalkarte 300 Papier"
 
 msgid "ch.swisstopo.gk300-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkba500-papierkarte.metadata"
-msgstr "Bouguer-Anomalien 500 - Papier"
+msgstr "Einteilung Bouguer-Anomalien 500 Papier"
 
 msgid "ch.swisstopo.gkba500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5160,25 +5160,25 @@ msgid "ch.swisstopo.gkg500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gklgm500-papierkarte.metadata"
-msgstr "Letzteiszeitl. Max. 500 - Papier"
+msgstr "Einteilung Letzteiszeitlisches Max. 500 Papier"
 
 msgid "ch.swisstopo.gklgm500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkt500-papierkarte.metadata"
-msgstr "Tektonik 500 - Papier"
+msgstr "Einteilung Tektonische Karte 500 Papier"
 
 msgid "ch.swisstopo.gkt500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkwvor500-papierkarte.metadata"
-msgstr "Grundwasservorkommen 500 - Papier"
+msgstr "Einteilung Grundwasservorkommen 500 Papier"
 
 msgid "ch.swisstopo.gkwvor500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata"
-msgstr "Grundwasservulnerabilität 500 - Papier"
+msgstr "Einteilung Grundwasservulnerabilität 500 Papier"
 
 msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5250,19 +5250,19 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Siegfriedkarte Erstausgabe"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
-msgstr "Luftfahrtkarte ICAO Papier"
+msgstr "Einteilung Luftfahrtkarte ICAO Papier"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.images-spot-5.metadata"
-msgstr "Spot Mosaic Ausdehnung"
+msgstr "Einteilung Spot Mosaic Raster"
 
 msgid "ch.swisstopo.images-swissimage"
 msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.images-swissimage.metadata"
-msgstr "Kachelung SWISSIMAGE"
+msgstr "Einteilung SWISSIMAGE Raster"
 
 msgid "ch.swisstopo.koordinatenaenderung"
 msgstr "LV95 Koordinatenänderung"
@@ -5349,7 +5349,7 @@ msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk100-papierkarte.metadata"
-msgstr "Landeskarte 1:100'000 Papier"
+msgstr "Einteilung Landeskarte 100 Papier"
 
 msgid "ch.swisstopo.lk100-papierkarte.metadata.name"
 msgstr "Name"
@@ -5361,13 +5361,13 @@ msgid "ch.swisstopo.lk100-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk1000-papierkarte.metadata"
-msgstr "Landeskarte 1:1'000'000 Papier"
+msgstr "Einteilung Landeskarte 1000 Papier"
 
 msgid "ch.swisstopo.lk1000-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk200-papierkarte.metadata"
-msgstr "Landeskarte 1:200'000 Papier"
+msgstr "Einteilung Landeskarte 200 Papier"
 
 msgid "ch.swisstopo.lk200-papierkarte.metadata.name"
 msgstr "Name"
@@ -5391,7 +5391,7 @@ msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata"
-msgstr "Landeskarte 1:25'000 Papier"
+msgstr "Einteilung Landeskarte 25 Papier"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.author"
 msgstr "Autor(en)"
@@ -5439,7 +5439,7 @@ msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk50-papierkarte.metadata"
-msgstr "Landeskarte 1:50'000 Papier"
+msgstr "Einteilung Landeskarte 50 Papier"
 
 msgid "ch.swisstopo.lk50-papierkarte.metadata.name"
 msgstr "Name"
@@ -5451,7 +5451,7 @@ msgid "ch.swisstopo.lk50-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk500-papierkarte.metadata"
-msgstr "Landeskarte 1:500'000 Papier"
+msgstr "Einteilung Landeskarte 500 Papier"
 
 msgid "ch.swisstopo.lk500-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5595,22 +5595,22 @@ msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Landeskarten (grau)"
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata"
-msgstr "Einteilung Swiss Map Raster 100"
+msgstr "Einteilung Landeskarte 100 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
 msgstr "Einteilung Landeskarte 1:1 Mio."
 
 msgid "ch.swisstopo.pixelkarte-pk200.metadata"
-msgstr "Einteilung Swiss Map Raster 200"
+msgstr "Einteilung Landeskarte 200 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk25.metadata"
-msgstr "Einteilung Swiss Map Raster 25"
+msgstr "Einteilung Landeskarte 25 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk50.metadata"
-msgstr "Einteilung Swiss Map Raster 50"
+msgstr "Einteilung Landeskarte 50 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk500.metadata"
-msgstr "Einteilung Landeskarte 1:500'000"
+msgstr "Einteilung Landeskarte 500 Raster"
 
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, Prv."
@@ -5619,7 +5619,7 @@ msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata"
-msgstr "Segelflugkarte Papier"
+msgstr "Einteilung Segelflugkarte Papier"
 
 msgid "ch.swisstopo.sfk300-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5631,7 +5631,7 @@ msgid "ch.swisstopo.sgtk"
 msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
-msgstr "Schneeschuh-/Skitouren 1:50 000"
+msgstr "Einteilung Schneeschuh-/Skitouren 50 Papier"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
 msgstr "Name"
@@ -5643,7 +5643,7 @@ msgid "ch.swisstopo.skitourenkarte-50.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.stk200-papierkarte.metadata"
-msgstr "Strassenkarte"
+msgstr "Einteilung Strassenkarte Papier"
 
 msgid "ch.swisstopo.stk200-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
@@ -5685,7 +5685,7 @@ msgid "ch.swisstopo.swissbuildings3d"
 msgstr "Vereinfachte 3D-Gebäude"
 
 msgid "ch.swisstopo.swissbuildings3d-2.metadata"
-msgstr "Verfügbarkeit swissBUILDINGS3D 2.0"
+msgstr "Einteilung swissBUILDINGS3D 2.0 Vector"
 
 msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE"
@@ -5814,7 +5814,7 @@ msgid "ch.swisstopo.verschiebungsvektoren-tsp2.name"
 msgstr "Offizielle Punktnummer"
 
 msgid "ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata"
-msgstr "Wanderkarte 1:25'000 Zus. Papier"
+msgstr "Einteilung Wanderkarte 25 Papier"
 
 msgid "ch.swisstopo.wk25-papierkarte-zusammensetzung.metadata.name"
 msgstr "Name"
@@ -5838,7 +5838,7 @@ msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.wk50-papierkarte.metadata"
-msgstr "Wanderkarten 1:50'000"
+msgstr "Einteilung Wanderkarte 50 Papier"
 
 msgid "ch.swisstopo.wk50-papierkarte.metadata.name"
 msgstr "Name"
@@ -5850,7 +5850,7 @@ msgid "ch.swisstopo.wk50-papierkarte.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.wkt33-papierkarte.metadata"
-msgstr "Wanderkarte 1:33'333"
+msgstr "Einteilung Wanderkarte 1:33'333 Papier"
 
 msgid "ch.swisstopo.wkt33-papierkarte.metadata.name"
 msgstr "Name"
@@ -5943,7 +5943,7 @@ msgid "ch.vbs.territorialregionen"
 msgstr "Territorialregionen"
 
 msgid "ch.vbs.url"
-msgstr "http://www.vbs.admin.ch/internet/vbs/de/home.html"
+msgstr "http://www.vbs.admin.ch/de/home.html"
 
 msgid "ch.vbs.waldschadenkarte"
 msgstr "Waldschadenkarte - Projektil"
