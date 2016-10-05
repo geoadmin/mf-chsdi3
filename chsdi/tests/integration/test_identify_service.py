@@ -99,7 +99,7 @@ class TestIdentifyService(TestsBase):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96',
                   'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
-        self.assertEqual(resp.content_type, 'text/plain')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_valid_on_grid(self):
         params = {'geometry': '555000,171125', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryPoint',
@@ -134,8 +134,8 @@ class TestIdentifyService(TestsBase):
     def test_identify_valid_topic_all(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96',
                   'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
-        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=509)
-        self.assertEqual(resp.content_type, 'text/plain')
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_valid_with_callback(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96',
