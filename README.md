@@ -60,14 +60,14 @@ Where "username" is your specific rc configuration. To create the specific build
     make user
 
 If you do this on mf1t, you need to make sure that a correct configuration exists under
-    
+
     /var/www/vhosts/mf-chsdi3/conf
 
 that points to your working directory. If all is well, you can reach your pages at:
 
     http://mf-chsdi3.dev.bgdi.ch/<username>/
 
-## Deploying to dev, int, prod and demo
+## Deploying to dev, int, and prod
 
 Do the following commands **inside your working directory**. Here's how a standard
 deploy process is done.
@@ -87,11 +87,6 @@ desired target. For integration, do
 This will run the full nose tests **from inside the 201512011411 snapshot directory** against the **integration db cluster**. Only if these tests are successfull, the snapshot is deployed to the integration cluster.
 
 `make deployprod SNAPSHOT=201512011411`
-
-This will do the corresponding thing for prod (tests will be run **against prod backends**)
-The same is valid for demo too:
-
-`make deploydemo SNAPSHOT=201512011411`
 
 You can disable the running of the nosetests against the target backends by adding
 `notests` parameter to the snapshot command. This is handy in an emergency (when
@@ -118,12 +113,11 @@ So you'll likely use this command **after** you push your branch to github.
 
 The first time you use the command will take some time to execute.
 
-The code of the deployed branch is in a specific directory 
+The code of the deployed branch is in a specific directory
 `/var/www/vhosts/mf-geoadmin3/private/branch` on both test and integration.
 The command adds a branch specific configuration to
 `/var/www/vhosts/mf-geoadmin3/conf`. This way, the deployed branch
 behaves exactly the same as any user specific deploy.
-A deploy to a "demo" instance is possible too (simply use ./deploybranch.sh demo).
 
 Sample path:
 http://mf-chsdi3.int.bgdi.ch/gjn_deploybranch/ (Don't forget the slash at the end)
@@ -162,21 +156,15 @@ To run against your private environment:
 To execute all tests, including _mapproxy_ and _varnish_ ones, which are deactivated by default:
 `scripts/nose_run.sh -a`
 
-## Printing
+## Download WMS image legends
 
-Per default, printing is handled by one single war file on an instances. This war is installed and handled by the 'main' installation.
+In order to download all images of a layer in the correct format and with the correct dimensions, simply use:
 
-If you need to work on printing and use your own war, you have to add the following to your personal configuration (rc_user_xxx file):
-
-```
-export PRINT_WAR=ltxxx
+```bash
+make legends BODID=ch.layername
 ```
 
-In order to create the shared war use:
-
-```
-make printwar APACHE_BASE_PATH=main
-```
+Make sure, you're using the desired `echo $WMSHOST` project variable (`source rc_xxx` or `export WMSHOST=xxx`)
 
 ## Python Code Styling
 
