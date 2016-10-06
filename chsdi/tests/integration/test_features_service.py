@@ -198,6 +198,13 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 
+    def test_htmlpopup_lang(self):
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', params={'lang': 'fr'}, status=200)
+        self.assertEqual(resp.content_type, 'text/html')
+        msgids = [u'Nom de l&#39;objet', u'Numéro de l&#39;objet', u'Surface [ha]']
+        for msgid in msgids:
+            self.assertIn(msgid, resp.text)
+
     def test_htmlpopup_scale_dependent(self):
         params = {'mapExtent': '559349.7,127280.7,695549.7,241180.7', 'imageDisplay': '1362,1139,96', 'lang': 'fr'}
         resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.schutzgebiete-aulav_uebrige/400/htmlPopup', params=params, status=200)
