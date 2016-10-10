@@ -4460,6 +4460,12 @@ msgstr "http://www.cadastre.ch/internet/kataster/en/home/services/service/wms/cw
 msgid "ch.kantone.cadastralwebmap-farbe"
 msgstr "CadastralWebMap"
 
+msgid "ch.kantone.cadastralwebmap-farbe.plan"
+msgstr "Plan for land registry"
+
+msgid "ch.kantone.cadastralwebmap-farbe.wait"
+msgstr "Preparing plan"
+
 msgid "ch.kantone.ivs-reg_loc"
 msgstr "IHR Canton of Bern"
 

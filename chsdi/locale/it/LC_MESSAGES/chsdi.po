@@ -4460,6 +4460,12 @@ msgstr "http://www.cadastre.ch/internet/kataster/it/home/services/service/wms/cw
 msgid "ch.kantone.cadastralwebmap-farbe"
 msgstr "CadastralWebMap"
 
+msgid "ch.kantone.cadastralwebmap-farbe.plan"
+msgstr "Piano per il registro"
+
+msgid "ch.kantone.cadastralwebmap-farbe.wait"
+msgstr "Preparazione del piano"
+
 msgid "ch.kantone.ivs-reg_loc"
 msgstr "IVS Cantone di Berna"
 
