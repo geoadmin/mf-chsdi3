@@ -109,6 +109,12 @@ class LayersChecker(object):
             resp = self.testapp.get(link)
             assert resp.status_int == 200, link
 
+    def checkIdentify(self, layer):
+        link = '/rest/services/all/MapServer/identify?geometry=558945.5,147956,559402,148103.5&geometryType=esriGeometryEnvelope&imageDisplay=500,600,96&mapExtent=558945.5,147956,559402,148103.5&tolerance=1&layers=all:' + layer
+        resp = self.testapp.get(link)
+        assert resp.status_int == 200, link
+        assert resp.content_type == 'application/json', link
+
     def checkLegendImage(self, layer, legendsPath, legendImages):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
             key = layer + '_' + lang
@@ -158,6 +164,12 @@ def test_all_legends():
     with LayersChecker() as lc:
         for layer in lc.ilayers(hasLegend=True):
             yield lc.checkLegend, layer
+
+
+def test_all_identify():
+    with LayersChecker() as lc:
+        for layer in lc.ilayers(tooltip=True, geojson=False):
+            yield lc.checkIdentify, layer
 
 
 def test_all_ids_mapping():

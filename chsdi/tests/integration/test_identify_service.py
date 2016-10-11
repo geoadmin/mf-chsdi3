@@ -97,7 +97,7 @@ class TestIdentifyService(TestsBase):
 
     def test_identify_valid(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96',
-                  'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
+                  'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all:ch.swisstopo.fixpunkte-agnes'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
 
@@ -131,18 +131,18 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=400)
         resp.mustcontain('Please provide the parameter imageDisplay in a comma separated list of 3 arguments (width,height,dpi)')
 
-    def test_identify_valid_topic_all(self):
+    def test_identify_valid_topic(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96',
-                  'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all'}
+                  'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all:ch.swisstopo.fixpunkte-agnes'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_identify_valid_with_callback(self):
         params = {'geometry': '548945.5,147956,549402,148103.5', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96',
-                  'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all',
+                  'mapExtent': '548945.5,147956,549402,148103.5', 'tolerance': '1', 'layers': 'all:ch.swisstopo.fixpunkte-agnes',
                   'callback': 'cb_'}
-        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=509)
-        self.assertEqual(resp.content_type, 'text/plain')
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'text/javascript')
 
     def test_identify_with_geojson(self):
         params = {'geometry': '600000,200000,631000,210000', 'geometryType': 'esriGeometryEnvelope', 'imageDisplay': '500,600,96',
