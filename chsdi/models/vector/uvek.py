@@ -856,6 +856,30 @@ class Bakomukw(Base, Vector):
 register('ch.bakom.versorgungsgebiet-ukw', Bakomukw)
 
 
+class EinschraenkungenDrohnen(Base, Vector):
+    __tablename__ = 'einschraenkungen_drohnen'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __template__ = 'templates/htmlpopup/einschraenkungen_drohnen.mako'
+    __bodId__ = 'ch.bazl.einschraenkungen-drohnen'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    restr_de = Column('restr_de', Unicode)
+    restr_fr = Column('restr_fr', Unicode)
+    restr_it = Column('restr_it', Unicode)
+    restr_en = Column('restr_en', Unicode)
+    bew_st_de = Column('bew_st_de', Unicode)
+    bew_st_fr = Column('bew_st_fr', Unicode)
+    bew_st_it = Column('bew_st_it', Unicode)
+    bew_st_en = Column('bew_st_en', Unicode)
+    bew_li_de = Column('bew_li_de', Unicode)
+    bew_li_fr = Column('bew_li_fr', Unicode)
+    bew_li_it = Column('bew_li_it', Unicode)
+    bew_li_en = Column('bew_li_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bazl.einschraenkungen-drohnen', EinschraenkungenDrohnen)
+
+
 class ProjFlughafenanlagen(Base, Vector):
     __tablename__ = 'projektierungszonen'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})

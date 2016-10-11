@@ -2220,6 +2220,24 @@ msgstr ""
 msgid "ch.bav.sachplan-infrastruktur-schiene_ausgangslage.description_it"
 msgstr ""
 
+msgid "ch.bazl.einschraenkungen-drohnen"
+msgstr ""
+
+msgid "ch.bazl.einschraenkungen-drohnen.bew_li_url"
+msgstr ""
+
+msgid "ch.bazl.einschraenkungen-drohnen.name"
+msgstr ""
+
+msgid "ch.bazl.einschraenkungen-drohnen.restr"
+msgstr ""
+
+msgid "ch.bazl.einschraenkungen-drohnen.bew_st"
+msgstr ""
+
+msgid "ch.bazl.einschraenkungen-drohnen.bew_li"
+msgstr ""
+
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.katasternummer"
 msgstr ""
 

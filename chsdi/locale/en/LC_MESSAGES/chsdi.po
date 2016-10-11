@@ -3926,6 +3926,24 @@ msgstr "http://www.bav.admin.ch/?lang=en"
 msgid "ch.bazl"
 msgstr "FOCA"
 
+msgid "ch.bazl.einschraenkungen-drohnen"
+msgstr "Restrictions for drones"
+
+msgid "ch.bazl.einschraenkungen-drohnen.bew_li"
+msgstr "Further information:"
+
+msgid "ch.bazl.einschraenkungen-drohnen.bew_li_url"
+msgstr "Authorisation"
+
+msgid "ch.bazl.einschraenkungen-drohnen.bew_st"
+msgstr "Granting authority"
+
+msgid "ch.bazl.einschraenkungen-drohnen.name"
+msgstr "Designation"
+
+msgid "ch.bazl.einschraenkungen-drohnen.restr"
+msgstr "Restriction"
+
 msgid "ch.bazl.flugplaetze-heliports"
 msgstr "Aerodromes + Heliports"
 
