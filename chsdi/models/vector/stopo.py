@@ -2441,3 +2441,39 @@ class Lotabweichungen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.lotabweichungen', Lotabweichungen)
+
+
+class HiksDufourMetadata(Base, ShopStandardClass, Vector):
+    __tablename__ = 'view_gridstand_dufour_shop'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.hiks-dufour.metadata'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    number = Column('s_map_number', Unicode)
+    scale = Column('scale', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.hiks-dufour.metadata', HiksDufourMetadata)
+
+
+class HiksSiegfriedTa25Metadata(Base, ShopStandardClass, Vector):
+    __tablename__ = 'view_gridstand_siegfried_ta25_shop'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.hiks-siegfried-ta25.metadata'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    number = Column('s_map_number', Unicode)
+    scale = Column('scale', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.hiks-siegfried-ta25.metadata', HiksSiegfriedTa25Metadata)
+
+
+class HiksSiegfriedTa50Metadata(Base, ShopStandardClass, Vector):
+    __tablename__ = 'view_gridstand_siegfried_ta50_shop'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.hiks-siegfried-ta50.metadata'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    number = Column('s_map_number', Unicode)
+    scale = Column('scale', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.hiks-siegfried-ta50.metadata', HiksSiegfriedTa50Metadata)

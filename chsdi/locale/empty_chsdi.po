@@ -9002,3 +9002,11 @@ msgstr ""
 msgid "ch.bazl.gebirgslandeplaetze.name"
 msgstr ""
 
+msgid "ch.swisstopo.hiks-dufour.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.hiks-siegfried-ta25.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.hiks-siegfried-ta50.metadata"
+msgstr ""

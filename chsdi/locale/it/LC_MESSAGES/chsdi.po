@@ -5294,8 +5294,17 @@ msgstr "Coordonnée y (MN03) [m]"
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Carta Dufour Prima edizione"
 
+msgid "ch.swisstopo.hiks-dufour.metadata"
+msgstr "Divisione carta Dufour Raster"
+
 msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Carta Siegfried Prima edizione"
+
+msgid "ch.swisstopo.hiks-siegfried-ta25.metadata"
+msgstr "Divisione carta Siegfried 25 Raster"
+
+msgid "ch.swisstopo.hiks-siegfried-ta50.metadata"
+msgstr "Divisione carta Siegfried 50 Raster"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
 msgstr "Divisione carta aeronautica ICAO Stampa"
