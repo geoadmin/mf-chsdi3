@@ -164,6 +164,12 @@ In order to download all images of a layer in the correct format and with the co
 make legends BODID=ch.layername
 ```
 
+Alternatively, you can also download a WMS legend for a specific scale.
+
+```bash
+make legends BODID=ch.layername WMSSCALELEGEND=1000
+```
+
 Make sure, you're using the desired `echo $WMSHOST` project variable (`source rc_xxx` or `export WMSHOST=xxx`)
 
 ## Python Code Styling
