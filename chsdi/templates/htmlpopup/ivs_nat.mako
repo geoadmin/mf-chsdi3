@@ -33,7 +33,7 @@
 <%
     from urllib2 import urlopen
     from chsdi.lib.helpers import resource_exists
-    webDavHost = request.registry.settings['webdav_host']
+    dataGeoAdminHost = 'https://data.geo.admin.ch'
     pdf = None
     if c['attributes']['ivs_sortsla'] is not None:
         PDF_Full = c['attributes']['ivs_sortsla']
@@ -45,37 +45,19 @@
         PDF_Level_3_exist = PDF_Full[8:10] 
         PDF_Level_3 = PDF_Full 
         PDF_Level_3_Name = PDF_Level_2_Name + '.' + str(int(PDF_Full[8:10]))
-        url = webDavHost + "/kogis_web/downloads/ivs/beschr/de/" + c['attributes']['ivs_sortsla'] + ".pdf"
+        url = dataGeoAdminHost + "/ch.astra.ivs-nat/PDF/" + c['attributes']['ivs_sortsla'] + ".pdf"
         pdf = resource_exists(url)
 %>
 
 % if pdf: 
     <td>
-    % if lang =='fr': 
-        ${_('ivs_nat_strecke')}: <a href="${webDavHost}/kogis_web/downloads/ivs/beschr/fr/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
+      ${_('ivs_nat_strecke')}: <a href="${dataGeoAdminHost}/ch.astra.ivs-nat/PDF/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
       % if PDF_Level_2_exist <> '00':
-        ${_('ivs_nat_linienfuehrung')}: <a href="${webDavHost}/kogis_web/downloads/ivs/beschr/fr/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2_Name}</a><br />
+        ${_('ivs_nat_linienfuehrung')}: <a href="${dataGeoAdminHost}/ch.astra.ivs-nat/PDF/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2_Name}</a><br />
       % endif
       % if PDF_Level_3_exist <> '00':
-        ${_('ivs_nat_abschnitt')}: <a href="${webDavHost}/kogis_web/downloads/ivs/beschr/fr/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3_Name}</a><br />
+        ${_('ivs_nat_abschnitt')}: <a href="${dataGeoAdminHost}/ch.astra.ivs-nat/PDF/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3_Name}</a><br />
       % endif
-    % elif lang == 'it':
-      ${_('ivs_nat_strecke')}: <a href="${webDavHost}/kogis_web/downloads/ivs/beschr/it/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
-      % if PDF_Level_2_exist <> '00':
-        ${_('ivs_nat_linienfuehrung')}: <a href="${webDavHost}/kogis_web/downloads/ivs/beschr/it/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2_Name}</a><br />
-      % endif
-      % if PDF_Level_3_exist <> '00':
-        ${_('ivs_nat_abschnitt')}: <a href="${webDavHost}/kogis_web/downloads/ivs/beschr/it/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3_Name}</a><br />
-      % endif
-    % else:
-      ${_('ivs_nat_strecke')}: <a href="${webDavHost}/kogis_web/downloads/ivs/beschr/de/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
-      % if PDF_Level_2_exist <> '00':
-        ${_('ivs_nat_linienfuehrung')}: <a href="${webDavHost}/kogis_web/downloads/ivs/beschr/de/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2_Name}</a><br />
-      % endif
-      % if PDF_Level_3_exist <> '00':
-        ${_('ivs_nat_abschnitt')}: <a href="${webDavHost}/kogis_web/downloads/ivs/beschr/de/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3_Name}</a><br />
-      % endif
-    % endif
     </td></tr>
 % else:
     <td><a>-</a></td></tr>
