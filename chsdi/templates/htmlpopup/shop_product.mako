@@ -3,42 +3,36 @@
 <%def name="table_body(c, lang)">
 
 <%
-    layer = c['layerBodId']
-    lang = lang if lang in ('fr','it','en') else 'de'
-    fid = str(c['featureId'])
-    webDavHost = request.registry.settings['webdav_host']
-    if layer == 'ch.swisstopo.geologie-gravimetrischer_atlas.metadata':
-        img_id = 'GRAV-DRG' + fid
-    elif layer == 'ch.swisstopo.stk200-papierkarte.metadata':
-        img_id = 'Strassenkarte' + fid
-    else:
-        img_id = fid
 
-    image = webDavHost + '/swisstopoproducts/250/' + img_id + '.jpg'
-    if 'pk_product' not in c['attributes']:
-        if h.resource_exists(image):
-            image_exists = True
-        else:
-            image_exists = False
-    else:
-        image_exists = False
-       
-    name = 'name_%s' % lang
-    if 'scale' in c['attributes']:
-        if c['attributes']['scale']:
-            c['attributes']['scale'] = h.format_scale(c['attributes']['scale'])
-    
-    attr = []
-    attr_poss = ['number', name, 'scale', 'release', 'data', 'isbn', 'author', 'url_legend']
-    for ap in attr_poss:
-        if ap in c['attributes']:
-            if c['attributes'][ap]:
-                attr.append(ap)
-    rowspan = len(attr) + 1
-    if image_exists == True:
-        colspan = 3
-    else:
-        colspan = 2
+layer = c['layerBodId']
+lang = lang if lang in ('fr','it','en') else 'de'
+fid = str(c['featureId'])
+webDavHost = request.registry.settings['webdav_host']
+img_id = fid
+if layer == 'ch.swisstopo.geologie-gravimetrischer_atlas.metadata':
+    img_id = 'GRAV-DRG' + fid
+elif layer == 'ch.swisstopo.stk200-papierkarte.metadata':
+    img_id = 'Strassenkarte' + fid
+
+image = webDavHost + '/swisstopoproducts/250/' + img_id + '.jpg'
+if 'pk_product' not in c['attributes']:
+    image_exists = h.resource_exists(image):
+else:
+    image_exists = False
+   
+name = 'name_%s' % lang
+if 'scale' in c['attributes']:
+    if c['attributes']['scale']:
+        c['attributes']['scale'] = h.format_scale(c['attributes']['scale'])
+
+attr = []
+attr_poss = ['number', name, 'scale', 'release', 'data', 'isbn', 'author', 'url_legend']
+for ap in attr_poss:
+    if ap in c['attributes']:
+        if c['attributes'][ap]:
+            attr.append(ap)
+rowspan = len(attr) + 1
+colspan = 3 if image_exists else 2
 
 %>
 
