@@ -8953,3 +8953,52 @@ msgstr ""
 
 msgid "ch.swisstopo.lotabweichungen"
 msgstr ""
+
+msgid "ch.bazl.flugplaetze-heliports"
+msgstr ""
+
+msgid "ch.bazl.flugplaetze-heliports.arp_east"
+msgstr ""
+
+msgid "ch.bazl.flugplaetze-heliports.arp_north"
+msgstr ""
+
+msgid "ch.bazl.flugplaetze-heliports.canton"
+msgstr ""
+
+msgid "ch.bazl.flugplaetze-heliports.elevation"
+msgstr ""
+
+msgid "ch.bazl.flugplaetze-heliports.icao"
+msgstr ""
+
+msgid "ch.bazl.flugplaetze-heliports.location"
+msgstr ""
+
+msgid "ch.bazl.flugplaetze-heliports.name"
+msgstr ""
+
+msgid "ch.bazl.gebirgslandeplaetze"
+msgstr ""
+
+msgid "ch.bazl.gebirgslandeplaetze.arp_east"
+msgstr ""
+
+msgid "ch.bazl.gebirgslandeplaetze.arp_north"
+msgstr ""
+
+msgid "ch.bazl.gebirgslandeplaetze.canton"
+msgstr ""
+
+msgid "ch.bazl.gebirgslandeplaetze.description"
+msgstr ""
+
+msgid "ch.bazl.gebirgslandeplaetze.elevation"
+msgstr ""
+
+msgid "ch.bazl.gebirgslandeplaetze.icao"
+msgstr ""
+
+msgid "ch.bazl.gebirgslandeplaetze.name"
+msgstr ""
+
