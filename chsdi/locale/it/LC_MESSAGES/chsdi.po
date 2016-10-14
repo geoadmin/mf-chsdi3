@@ -3926,6 +3926,24 @@ msgstr "http://www.bav.admin.ch/?lang=it"
 msgid "ch.bazl"
 msgstr "UFAC"
 
+msgid "ch.bazl.einschraenkungen-drohnen"
+msgstr "Restrizioni per droni"
+
+msgid "ch.bazl.einschraenkungen-drohnen.bew_li"
+msgstr "Informazioni supplementari:"
+
+msgid "ch.bazl.einschraenkungen-drohnen.bew_li_url"
+msgstr "Autorizzazione"
+
+msgid "ch.bazl.einschraenkungen-drohnen.bew_st"
+msgstr "Autorità di decisione"
+
+msgid "ch.bazl.einschraenkungen-drohnen.name"
+msgstr "Designazione"
+
+msgid "ch.bazl.einschraenkungen-drohnen.restr"
+msgstr "Restrizione"
+
 msgid "ch.bazl.flugplaetze-heliports"
 msgstr "Aerodromi + Eliporti"
 
