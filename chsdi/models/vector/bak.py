@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer
-from sqlalchemy.types import Numeric
+from sqlalchemy.types import Numeric, Unicode
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -30,6 +30,7 @@ class ISOS(Base, Vector):
     publikationsjahr_2 = Column('publikationsjahr_2', Text)
     pdf_dokument_1 = Column('pdf_dokument_1', Text)
     pdf_dokument_2 = Column('pdf_dokument_2', Text)
+    pdfspecial = Column('pdfspecial', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', ISOS)

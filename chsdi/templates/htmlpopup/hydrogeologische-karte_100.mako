@@ -4,21 +4,22 @@
 
 <%def name="table_body(c, lang)">
 <%
-     if c['attributes']['pdf_list']:
-        pdf_link = c['attributes']['pdf_list'].split('##')
-     else :
-        pdf_link = ''
-
+dataHost = request.registry.settings['datageoadminhost']
+dataPath = 'ch.bafu.hydrogeologische-karte_100/legends'
+pdf_links = []
+if c['attributes']['pdf_list']:
+  pdf_links = [l for l in c['attributes']['pdf_list'].split('##')]
 %>
 <tr>
   <td class="cell-left">${_('tt_document')}</td>
   <td class="cell-meta-big">
-% if pdf_link != '':
-% for link in pdf_link:
-        <a href="http://data.geo.admin.ch/ch.bafu.hydrogeologische-karte_100/legends/${link}"  target="_blank">${link}</a><br />
+% if pdf_links != '':
+% for link in pdf_links:
+        <a href="//${dataHost}/${dataPath}/${link}"  target="_blank">${link}</a><br />
 % endfor
-% else:
--
+% endif
+% if not pdf_links:
+ -
 % endif
   </td>
 </tr>
