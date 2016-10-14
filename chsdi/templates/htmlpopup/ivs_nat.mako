@@ -61,7 +61,7 @@
       % endif
     </td></tr>
 % else:
-    <td><a>-</a></td></tr>
+    <td>-</td></tr>
 % endif
 
 </%def>

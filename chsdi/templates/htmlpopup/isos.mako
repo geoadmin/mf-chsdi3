@@ -28,7 +28,7 @@ if c['attributes']['pdf_dokument_2']:
 
 pdfname = []
 if c['attributes']['pdfspecial'] is not None:
-    pdfname = [l for l in c['attributes']['pdfspecial'].split(',')]
+    pdfname = c['attributes']['pdfspecial'].split(',')
 %>
     <tr>
       % if  c['attributes']['pdf_dokument_1'] != 'ISOS_5800':
