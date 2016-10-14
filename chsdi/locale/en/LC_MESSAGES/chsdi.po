@@ -5294,8 +5294,17 @@ msgstr "Y-Coordinate (LV03) [m]"
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Dufour Map First edition"
 
+msgid "ch.swisstopo.hiks-dufour.metadata"
+msgstr "Division Dufour Map Raster"
+
 msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Siegfried Map First edition"
+
+msgid "ch.swisstopo.hiks-siegfried-ta25.metadata"
+msgstr "Division Siegfried Map 25 Raster"
+
+msgid "ch.swisstopo.hiks-siegfried-ta50.metadata"
+msgstr "Division Siegfried Map 50 Raster"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
 msgstr "Division aeronautical chart ICAO Paper"

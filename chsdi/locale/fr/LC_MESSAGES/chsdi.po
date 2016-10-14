@@ -5294,8 +5294,17 @@ msgstr "Coordonnée y (MN03) [m]"
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Carte Dufour Première édition"
 
+msgid "ch.swisstopo.hiks-dufour.metadata"
+msgstr "Découpage carte Dufour Raster"
+
 msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Carte Siegfried Première édition"
+
+msgid "ch.swisstopo.hiks-siegfried-ta25.metadata"
+msgstr "Découpage carte Siegfried 25 Raster"
+
+msgid "ch.swisstopo.hiks-siegfried-ta50.metadata"
+msgstr "Découpage carte Siegfried 50 Raster"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
 msgstr "Découpage cartes aéronautiques OACI Papier"

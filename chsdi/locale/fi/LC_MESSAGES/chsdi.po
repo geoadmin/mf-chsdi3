@@ -5294,8 +5294,17 @@ msgstr "Y-Koordinate (LV03) [m]"
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Charta Dufour Emprima ediziun"
 
+msgid "ch.swisstopo.hiks-dufour.metadata"
+msgstr "Einteilung Dufourkarte Raster"
+
 msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Charta Siegfried Emprima ediziun"
+
+msgid "ch.swisstopo.hiks-siegfried-ta25.metadata"
+msgstr "Einteilung Siegfriedkarte 25 Raster"
+
+msgid "ch.swisstopo.hiks-siegfried-ta50.metadata"
+msgstr "Einteilung Siegfriedkarte 50 Raster"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
 msgstr "Divisiun charta aviatica Stampa"
