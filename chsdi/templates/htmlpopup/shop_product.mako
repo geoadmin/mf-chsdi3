@@ -16,10 +16,10 @@ elif layer == 'ch.swisstopo.stk200-papierkarte.metadata':
 
 image = webDavHost + '/swisstopoproducts/250/' + img_id + '.jpg'
 if 'pk_product' not in c['attributes']:
-    image_exists = h.resource_exists(image):
+    image_exists = h.resource_exists(image)
 else:
     image_exists = False
-   
+
 name = 'name_%s' % lang
 if 'scale' in c['attributes']:
     if c['attributes']['scale']:
