@@ -3926,6 +3926,54 @@ msgstr "http://www.bav.admin.ch/?lang=de"
 msgid "ch.bazl"
 msgstr "UFAC"
 
+msgid "ch.bazl.flugplaetze-heliports"
+msgstr "Flugplätze + Heliports"
+
+msgid "ch.bazl.flugplaetze-heliports.arp_east"
+msgstr "Koordinate (Ost)"
+
+msgid "ch.bazl.flugplaetze-heliports.arp_north"
+msgstr "Koordinate (Nord)"
+
+msgid "ch.bazl.flugplaetze-heliports.canton"
+msgstr "Kanton"
+
+msgid "ch.bazl.flugplaetze-heliports.elevation"
+msgstr "Höhe AMSL [m]"
+
+msgid "ch.bazl.flugplaetze-heliports.icao"
+msgstr "ICAO"
+
+msgid "ch.bazl.flugplaetze-heliports.location"
+msgstr "Gemeinde"
+
+msgid "ch.bazl.flugplaetze-heliports.name"
+msgstr "Name"
+
+msgid "ch.bazl.gebirgslandeplaetze"
+msgstr "Plazzas d'atterrament da muntogna"
+
+msgid "ch.bazl.gebirgslandeplaetze.arp_east"
+msgstr "Koordinate (Ost)"
+
+msgid "ch.bazl.gebirgslandeplaetze.arp_north"
+msgstr "Koordinate (Nord)"
+
+msgid "ch.bazl.gebirgslandeplaetze.canton"
+msgstr "Kanton"
+
+msgid "ch.bazl.gebirgslandeplaetze.description"
+msgstr "Beschreibung"
+
+msgid "ch.bazl.gebirgslandeplaetze.elevation"
+msgstr "Höhe AMSL [m]"
+
+msgid "ch.bazl.gebirgslandeplaetze.icao"
+msgstr "ICAO"
+
+msgid "ch.bazl.gebirgslandeplaetze.name"
+msgstr "Name"
+
 msgid "ch.bazl.heliports-gebirgslandeplaetze"
 msgstr "Heliports/pl. atterrament muntogna"
 

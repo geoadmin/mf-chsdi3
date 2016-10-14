@@ -3926,6 +3926,54 @@ msgstr "http://www.bav.admin.ch/?lang=it"
 msgid "ch.bazl"
 msgstr "UFAC"
 
+msgid "ch.bazl.flugplaetze-heliports"
+msgstr "Aerodromi + Eliporti"
+
+msgid "ch.bazl.flugplaetze-heliports.arp_east"
+msgstr "Coordinata (est)"
+
+msgid "ch.bazl.flugplaetze-heliports.arp_north"
+msgstr "Coordinata (nord)"
+
+msgid "ch.bazl.flugplaetze-heliports.canton"
+msgstr "Cantone"
+
+msgid "ch.bazl.flugplaetze-heliports.elevation"
+msgstr "Altitudine AMSL [m]"
+
+msgid "ch.bazl.flugplaetze-heliports.icao"
+msgstr "ICAO"
+
+msgid "ch.bazl.flugplaetze-heliports.location"
+msgstr "Comune"
+
+msgid "ch.bazl.flugplaetze-heliports.name"
+msgstr "Nome"
+
+msgid "ch.bazl.gebirgslandeplaetze"
+msgstr "Aree d'atterraggio in montagna"
+
+msgid "ch.bazl.gebirgslandeplaetze.arp_east"
+msgstr "Coordinata (est)"
+
+msgid "ch.bazl.gebirgslandeplaetze.arp_north"
+msgstr "Coordinata (nord)"
+
+msgid "ch.bazl.gebirgslandeplaetze.canton"
+msgstr "Cantone"
+
+msgid "ch.bazl.gebirgslandeplaetze.description"
+msgstr "Descrizione"
+
+msgid "ch.bazl.gebirgslandeplaetze.elevation"
+msgstr "Altitudine AMSL [m]"
+
+msgid "ch.bazl.gebirgslandeplaetze.icao"
+msgstr "ICAO"
+
+msgid "ch.bazl.gebirgslandeplaetze.name"
+msgstr "Nome"
+
 msgid "ch.bazl.heliports-gebirgslandeplaetze"
 msgstr "Eliporti/aree d'atterr. in montagna"
 

@@ -2,7 +2,7 @@
 
 from sqlalchemy import Column, Text, Unicode, Integer, Date, DateTime, ForeignKey
 from sqlalchemy.orm import relationship, remote
-from sqlalchemy.types import Numeric, BigInteger
+from sqlalchemy.types import Numeric, BigInteger, Float
 from sqlalchemy.dialects import postgresql
 
 from chsdi.models import register, bases
@@ -2529,3 +2529,41 @@ class globalstrahlung (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.meteoschweiz.globalstrahlung-monatlich', globalstrahlung)
+
+
+class flugplaetze_heliports (Base, Vector):
+    __tablename__ = 'flugplaetze_heliports'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __template__ = 'templates/htmlpopup/flugplaetze_heliports.mako'
+    __bodId__ = 'ch.bazl.flugplaetze-heliports'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    icao = Column('icao', Unicode)
+    name = Column('name', Unicode)
+    location = Column('location', Unicode)
+    canton = Column('canton', Unicode)
+    arp_east = Column('arp_east', Float)
+    arp_north = Column('arp_north', Float)
+    elevation = Column('elevation', Float)
+    the_geom = Column(Geometry2D)
+
+register('ch.bazl.flugplaetze-heliports', flugplaetze_heliports)
+
+
+class gebirgslandeplaetze (Base, Vector):
+    __tablename__ = 'gebirgslandeplaetze'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __template__ = 'templates/htmlpopup/gebirgslandeplaetze.mako'
+    __bodId__ = 'ch.bazl.gebirgslandeplaetze'
+    id = Column('oid', Integer, primary_key=True)
+    icao = Column('icao', Unicode)
+    name = Column('name', Unicode)
+    canton = Column('canton', Unicode)
+    descrip_de = Column('descrip_de', Unicode)
+    descrip_fr = Column('descrip_fr', Unicode)
+    descrip_it = Column('descrip_it', Unicode)
+    arp_east = Column('arp_east', Float)
+    arp_north = Column('arp_north', Float)
+    elevation = Column('elevation', Float)
+    the_geom = Column(Geometry2D)
+
+register('ch.bazl.gebirgslandeplaetze', gebirgslandeplaetze)
