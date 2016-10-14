@@ -15,7 +15,7 @@ if c['attributes']['pdf_list']:
   <td class="cell-meta-big">
 % if pdf_links != '':
 % for link in pdf_links:
-        <a href="https://${dataHost}/${dataPath}/${link}"  target="_blank">${link}</a><br />
+        <a href="//${dataHost}/${dataPath}/${link}"  target="_blank">${link}</a><br />
 % endfor
 % endif
 % if not pdf_links:

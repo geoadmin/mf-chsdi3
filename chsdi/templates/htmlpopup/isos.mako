@@ -47,9 +47,9 @@ if c['attributes']['pdfspecial'] is not None:
       </td>
       % elif c['attributes']['pdf_dokument_1'] == 'ISOS_5800' :
       <td class="cell-left" style="vertical-align: top;">PDFs</td>
-      <td> 
+      <td>
           % for name in pdfname:
-          <a href="https://${dataHost}/${dataPath}/ISOS_5800_${name}.pdf"  target="_blank">ISOS_5800_${name}.pdf<a/><br>
+          <a href="//${dataHost}/${dataPath}/ISOS_5800_${name}.pdf"  target="_blank">ISOS_5800_${name}.pdf<a/><br>
           % endfor
       </td>
       % endif
