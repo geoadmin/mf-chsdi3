@@ -10,6 +10,7 @@ CURRENT_DIRECTORY := $(shell pwd)
 DEPLOYCONFIG ?=
 DEPLOY_TARGET ?=
 BODID ?=
+WMSSCALELEGEND ?=
 GIT_BRANCH := $(shell if [ -f '.venv/deployed-git-branch' ]; then cat .venv/deployed-git-branch 2> /dev/null; else git rev-parse --symbolic-full-name --abbrev-ref HEAD; fi)
 HTTP_PROXY := http://ec2-52-28-118-239.eu-central-1.compute.amazonaws.com:80
 INSTALL_DIRECTORY := .venv
@@ -75,7 +76,7 @@ help:
 	@echo "- lint               Run the linter"
 	@echo "- autolint           Run the autolinter"
 	@echo "- translate          Generate the translation files"
-	@echo "- legends            Downloads and optimizes all WMS legend images (make legends BODID=ch.foo)"
+	@echo "- legends            Downloads and optimizes all WMS legend images (make legends BODID=ch.foo WMSSCALELEGEND=)"
 	@echo "- doc                Generate the doc for api3.geo.admin.ch"
 	@echo "- deploybranch       Deploy current branch to dev (must be pushed before hand)"
 	@echo "- deploybranchint    Deploy current branch to dev and int (must be pushed before hand)"
@@ -250,7 +251,7 @@ deployprod: guard-SNAPSHOT
 
 .PHONY: legends
 legends: guard-BODID guard-WMSHOST
-	source rc_user && scripts/downloadlegends.sh $(WMSHOST) $(BODID)
+	source rc_user && scripts/downloadlegends.sh $(WMSHOST) $(BODID) $(WMSSCALELEGEND)
 
 rc_branch.mako:
 	@echo "${GREEN}Branch has changed${RESET}";
