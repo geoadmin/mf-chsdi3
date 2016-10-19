@@ -2540,21 +2540,6 @@ class eignungDaecherOverview (Base, Vector):
 register('ch.bfe.solarenergie-eignung-daecher', eignungDaecherOverview)
 
 
-class globalstrahlung (Base, Vector):
-    __tablename__ = 'meteoschweiz_globalstrahlung_values'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/globalstrahlung.mako'
-    __bodId__ = 'ch.meteoschweiz.globalstrahlung-monatlich'
-    __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    date_start = Column('date_start', Date)
-    sis_array = Column('sis_values', postgresql.ARRAY(Numeric))
-    sisdir_array = Column('sisdir_values', postgresql.ARRAY(Numeric))
-    the_geom = Column(Geometry2D)
-
-register('ch.meteoschweiz.globalstrahlung-monatlich', globalstrahlung)
-
-
 class flugplaetze_heliports (Base, Vector):
     __tablename__ = 'flugplaetze_heliports'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
