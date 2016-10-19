@@ -752,6 +752,12 @@ msgstr "Located in municipality / city"
 msgid "areal_watt"
 msgstr "2000-Watt area"
 
+msgid "arp_east"
+msgstr "Coordinate (east)"
+
+msgid "arp_north"
+msgstr "Coordinate (north)"
+
 msgid "astra_unf_accday"
 msgstr "Unfalltag"
 
@@ -1309,6 +1315,9 @@ msgstr "Id"
 
 msgid "bouguer_anomalie"
 msgstr "Bouguer Anomaly [mGal]"
+
+msgid "canton"
+msgstr "Canton"
 
 msgid "ch.are"
 msgstr "ARE"
@@ -4090,6 +4099,9 @@ msgstr "Edition"
 
 msgid "ch.bazl.sicherheitszonenplan"
 msgstr "Safety zone plan"
+
+msgid "ch.bazl.spitallandeplaetze"
+msgstr "Place d'atterissage d‘hôpital"
 
 msgid "ch.bazl.url"
 msgstr "https://www.bazl.admin.ch/bazl/en/home.html"
