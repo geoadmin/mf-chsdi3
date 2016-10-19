@@ -2621,6 +2621,33 @@ msgstr "Provvigione di legname (IFN)"
 msgid "ch.bafu.holzzuwachs"
 msgstr "Incremento del legno (IFN)"
 
+msgid "ch.bafu.hydrogeologie-markierversuche"
+msgstr "Prove con traccianti"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.datum"
+msgstr "Data"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.markierstoff"
+msgstr "Tracciante"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.menge_einheit"
+msgstr "Quantità"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.milieu"
+msgstr "Ambiente"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.nr_meldeblatt"
+msgstr "Numero d'iniezione"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.ort"
+msgstr "Località"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.x"
+msgstr "Coordinata X"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.y"
+msgstr "Coordinata Y"
+
 msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Schizzo idrogeologico"
 
