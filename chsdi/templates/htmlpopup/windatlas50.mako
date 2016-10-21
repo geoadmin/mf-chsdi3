@@ -89,7 +89,7 @@ freq_total += props['freq_300'] + props['freq_330']
 try:
     iframe = request.GET['iframe'] if request.GET['iframe'] else False
 except:
-    iframe=False
+    iframe = False
     pass
 
 %>
@@ -523,7 +523,7 @@ var arc = d3.svg.arc()
 //svg definieren
 var svg = d3.select("#rose").append("svg")
 % if iframe:
-    .attr("width", width + 58) 
+    .attr("width", width + 58)
 % else:
     .attr("width", width + 48 + 140) //+140 damit rechts noch Legende Platz hat
 % endif

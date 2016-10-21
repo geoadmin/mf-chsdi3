@@ -66,6 +66,7 @@ def main(global_config, **settings):
     config.add_route('featureAttributes', '/rest/services/{map}/MapServer/{layerId}')
     config.add_route('feature', '/rest/services/{map}/MapServer/{layerId}/{featureId}')
     config.add_route('htmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/htmlPopup')
+    config.add_route('iframeHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/iframeHtmlPopup')
     config.add_route('extendedHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/extendedHtmlPopup')
     config.add_route('search', '/rest/services/{map}/SearchServer')
     config.add_route('wmtscapabilities', '/rest/services/{map}/1.0.0/WMTSCapabilities.xml')

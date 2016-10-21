@@ -2,6 +2,14 @@
 
 <%def name="table_body(c, lang)">
 <%
+baseUrl = request.registry.settings['api_url']
+%>
+  <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/iframeHtmlPopup?lang=${lang}" width="100%" height="235" frameborder="0" style="border: 0;" scrolling="no"></iframe>
+</%def>
+
+
+<%def name="iframe_content(c, lang)">
+<%
     from pyramid.url import route_url
     protocol = request.scheme
     lang = request.lang
@@ -26,7 +34,7 @@
   }
   .col-destination, .col-departures, .col-time-diff {
      vertical-align: middle !important;
-  } 
+  }
   .col-label p {
     border: 1px solid #D8D8D8;
     border-radius: 4px;
@@ -40,10 +48,10 @@
 
 % if type_station == 'Bedienpunkt' :
 
-    <p><b>${c['attributes']['name'] or '-'}</b></p> 
+    <p><b>${c['attributes']['name'] or '-'}</b></p>
     <p>${_('ch.bav.haltestellen-oev.bedienpunkt')}</p>
 
-% elif type_station == 'Anschlusspunkt' : 
+% elif type_station == 'Anschlusspunkt' :
 
    <p><b>${c['attributes']['name'] or '-'}</b></p>
    <p>${_('ch.bav.haltestellen-oev.anschlusspunkt')}</p>
@@ -65,7 +73,7 @@ $(document).ready(function() {
   var destinationCol = $('#destination' + id);
   var departuresCol = $('#departures' + id);
   var timeDiffCol = $('#timeDiff' + id);
-    
+
   select.change(function() {
     onSelect(this.value);
   });
@@ -105,14 +113,14 @@ $(document).ready(function() {
       destinationCol.html(destination);
       departuresCol.html(departures);
       timeDiffCol.html(timeDiff);
-    }); 
+    });
   };
 
   var onSelect = function(val) {
     if (refresh) {
       clearInterval(refresh);
     }
-    getInfos(val); 
+    getInfos(val);
     refresh = setInterval(getInfos, 60000);
   };
 
@@ -121,7 +129,7 @@ $(document).ready(function() {
     for (var i = 0; i < result.length; i++) {
       if (result[i].destination == 'nodata') {
         selectDestination += '<option value="' + result[i].destination + '">${_("ch.bav.haltestellen-oev.nodata")}</option>';
-      } else { 
+      } else {
         selectDestination += '<option value="' + result[i].name + '">' + result[i].name + '</option>';
       }
     };
@@ -137,6 +145,7 @@ $(document).ready(function() {
       <option value="all">${_('ch.bav.haltestellen-oev.all_departures')}</option>
     </select>
     <br />
+  <table>
     <tr>
         <td id="numero${id}" class="col-label"></td>
         <td id="destination${id}" class="col-destination"></td>
@@ -146,36 +155,21 @@ $(document).ready(function() {
 % endif
     <tr>
       <td></td>
-      <td> 
-        <p style="margin:10px 0 0 0;">
-          <a href="${h.make_agnostic(request.route_url('extendedHtmlPopup', map=topic, layerId=c['layerBodId'], featureId=str(c['featureId'])))}?lang=${lang}"
-             target="_blank">${_('zusatzinfo')}&nbsp;<img src="${h.versioned(request.static_url('chsdi:static/images/ico_extern.gif'))}" />
-          </a>
-        </p>
-      </td>
-    </tr>
-    <tr>
       <td></td>
-      <td>
-        <p style="margin:0;">
-          <a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic, '&showTooltip=true'))}" target="new">
-            ${_('Link to object')}
-          </a>
-        </p>
-      </td>
     </tr>
+  </table>
 </%def>
 
 <%def name="extended_info(c, lang)">
-    <%
-        protocol = request.scheme
-        lang = request.lang
-        topic = request.matchdict.get('map')
-        var_verkehrsmittel = '<i>haltestellen_' + c['attributes']['verkehrsmittel'] + '</i>'
-        verkehr = var_verkehrsmittel.lower()
-        type_station = c['attributes']['betriebspunkttyp']
-        c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
-    %>
+<%
+    protocol = request.scheme
+    lang = request.lang
+    topic = request.matchdict.get('map')
+    var_verkehrsmittel = '<i>haltestellen_' + c['attributes']['verkehrsmittel'] + '</i>'
+    verkehr = var_verkehrsmittel.lower()
+    type_station = c['attributes']['betriebspunkttyp']
+    c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
+%>
 <table>
   <tr>
       <td class="cell-meta">${_('ch.bav.haltestellen-oev.id')}</td>
@@ -219,10 +213,16 @@ $(document).ready(function() {
       <td class="cell-meta"><p><a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic, '&showTooltip=true'))}" target="new">
         ${_('Link to object')}
       </a></p></td>
-  </tr> 
+  </tr>
 </table>
 <br />
 <div>
  <iframe src="${''.join((c['baseUrl'], '/embed.html', '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic))}" width='580' height='300' style="width: 100%;" frameborder='0' style='border:0'></iframe>
 </div>
+</%def>
+
+<%def name="extended_resources(c, lang)">
+  <link rel="stylesheet" href="//map.geo.admin.ch/master/2afd257/1610191614/1610191614/style/app.css">
+  <script src="${h.versioned(request.static_url('chsdi:static/js/jquery.min.js'))}"></script>
+  <script src="//map.geo.admin.ch/master/2afd257/1610191614/src/lib/moment-with-customlocales.min.js"></script>
 </%def>

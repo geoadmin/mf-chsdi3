@@ -83,11 +83,8 @@ def view_attribute_values_geojson(request):
     return _attributes(request)
 
 
-@view_config(route_name='htmlPopup', renderer='jsonp')
-def htmlpopup(request):
-    params = HtmlPopupServiceValidation(request)
+def _get_feature_for_popup(request, params, isExtended=False, isIframe=False):
     feature, vectorModel = next(_get_features(params))
-
     layerModel = get_bod_model(params.lang)
     layer = next(get_layers_metadata_for_params(
         params,
@@ -97,8 +94,15 @@ def htmlpopup(request):
     ))
     feature.update({'attribution': layer.get('attributes')['dataOwner']})
     feature.update({'fullName': layer.get('fullName')})
-    feature.update({'extended': False})
+    feature.update({'isExtended': isExtended})
+    feature.update({'isIframe': isIframe})
+    return feature, vectorModel
 
+
+@view_config(route_name='htmlPopup', renderer='jsonp')
+def htmlpopup(request):
+    params = HtmlPopupServiceValidation(request)
+    feature, vectorModel = _get_feature_for_popup(request, params)
     response = _render_feature_template(vectorModel, feature, request)
 
     if params.cbName is None:
@@ -109,20 +113,19 @@ def htmlpopup(request):
 @view_config(route_name='extendedHtmlPopup', renderer='jsonp')
 def extendedhtmlpopup(request):
     params = ExtendedHtmlPopupServiceValidation(request)
-    feature, vectorModel = next(_get_features(params))
+    feature, vectorModel = _get_feature_for_popup(request, params, isExtended=True)
+    response = _render_feature_template(vectorModel, feature, request)
 
-    layerModel = get_bod_model(params.lang)
-    layer = next(get_layers_metadata_for_params(
-        params,
-        request.db.query(layerModel),
-        layerModel,
-        layerIds=[params.layerId]
-    ))
-    feature.update({'attribution': layer.get('attributes')['dataOwner']})
-    feature.update({'fullName': layer.get('fullName')})
-    feature.update({'extended': True})
+    if params.cbName is None:
+        return response
+    return response.body
 
-    response = _render_feature_template(vectorModel, feature, request, True)
+
+@view_config(route_name='iframeHtmlPopup', renderer='jsonp')
+def iframeHtmlPopup(request):
+    params = ExtendedHtmlPopupServiceValidation(request)
+    feature, vectorModel = _get_feature_for_popup(request, params, isIframe=True)
+    response = _render_feature_template(vectorModel, feature, request)
 
     if params.cbName is None:
         return response
@@ -369,10 +372,13 @@ def _get_feature_grid(col, row, timestamp, grid, bucket, params):
     return feature, None
 
 
-def _render_feature_template(vectorModel, feature, request, extended=False):
+def _render_feature_template(vectorModel, feature, request):
+    # Determine if we should render the extended tooltip or the iframe
+    isIframe = feature.get('isIframe')
+    isExtended = feature.get('isExtended')
     if vectorModel:
         hasExtendedInfo = True if hasattr(vectorModel, '__extended_info__') else False
-        if extended and not hasExtendedInfo:
+        if isExtended and not hasExtendedInfo:
             raise exc.HTTPNotFound('No extended info has been found for %s' % vectorModel.__bodId__)
         template = vectorModel.__template__
     else:
@@ -382,6 +388,8 @@ def _render_feature_template(vectorModel, feature, request, extended=False):
     return render_to_response(
         'chsdi:%s' % template, {
             'feature': feature,
+            'isExtended': isExtended,
+            'isFrame': isIframe,
             'hasExtendedInfo': hasExtendedInfo
         }, request=request)
 

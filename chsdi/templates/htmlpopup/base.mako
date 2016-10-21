@@ -27,20 +27,21 @@
       c = feature
       c['featureId'] = c['id']
       isGridLayer = True
-  
+
   c['stable_id'] = False
   c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
   c['attribution'] = feature['attribution']
   c['fullName'] = feature['fullName']
-  extended = feature['extended']
+  isExtended = feature['isExtended']
+  isIframe = feature['isIframe']
  %>
 
-% if extended:
+% if isExtended or isIframe:
 <head>
   <!--[if !HTML5]>
   <meta http-equiv="X-UA-Compatible" content="IE=9,IE=10,IE=edge,chrome=1"/>
   <![endif]-->
-  <title>${c['fullName']}</title> 
+  <title>${c['fullName']}</title>
   <meta name="viewport" content="initial-scale=1.0"/>
   <link rel="shortcut icon" type="image/x-icon" href="${h.versioned(request.static_url('chsdi:static/images/favicon.ico'))}">
   <link rel="apple-touch-icon" sizes="76x76" href="${h.versioned(request.static_url('chsdi:static/images/touch-icon-bund-76x76.png'))}"/>
@@ -53,18 +54,26 @@
 </head>
 % endif
 
-% if extended:
+% if isExtended:
 <body>
   <div class="chsdi-htmlpopup-container">
 % else:
   <div id="${c['layerBodId']}#${c['featureId']}" class="htmlpopup-container">
 % endif
+
+% if not isIframe:
   <div class="htmlpopup-header">
     <span>${c['fullName']}</span> (${c['attribution']})
   </div>
+% endif
+
   <div class="htmlpopup-content">
-    % if extended:
+    % if isExtended:
       ${self.extended_info(c, lang)}
+    % elif isIframe:
+      % if hasattr(self, 'iframe_content'):
+        ${self.iframe_content(c, lang)}
+      % endif
     % else:
       <table>
         ${self.table_body(c, lang)}
@@ -99,7 +108,7 @@
       </table>
     % endif
   </div>
-  % if extended:
+  % if isExtended:
   <div class="htmlpopup-footer">
     <a href="${_('disclaimer url')}" target="_blank">
       ${_('disclaimer title')}
@@ -119,6 +128,6 @@
   </div>
   % endif
 </div>
-% if extended:
+% if isExtended:
 </body>
 % endif
