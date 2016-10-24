@@ -27,11 +27,11 @@ from pyramid.url import route_url
 <%
   c['last'] = False
   wms_url = 'http://' + request.registry.settings['wmshost']
-  attr = c['attributes'] 
+  attr = c['attributes']
   startofconstruction = str(attr['startofconstruction'].day) + '.' + str(attr['startofconstruction'].month) + '.' + str(attr['startofconstruction'].year)
   datenstand = str(attr['bgdi_created'].day) + '.' + str(attr['bgdi_created'].month) + '.' + str(attr['bgdi_created'].year)
 
-  if attr['bbox'][0] !=  attr['bbox'][2]:
+  if c['bbox'][0] !=  c['bbox'][2]:
     bbox = True
   else:
     bbox = False
@@ -46,7 +46,7 @@ from pyramid.url import route_url
   else:
     sanctiontext = attr['sanctiontext']
   
-  id = attr['featureId']
+  id = c['featureId']
   geometry = c['geometry']
 
 %>
