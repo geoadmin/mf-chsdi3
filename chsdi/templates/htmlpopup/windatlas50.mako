@@ -59,13 +59,16 @@ props = c['properties']
     </tr>
     <tr>
       <td colspan=2>
-        <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="230" frameborder="0" style="border: 0;" scrolling="no"></iframe>
+        <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/iframeHtmlPopup?lang=${lang}" width="100%" height="230" frameborder="0" style="border: 0;" scrolling="no"></iframe>
       </td>
     </tr>
 </%def>
 
+<%def name="iframe_content(c, lang)">
+  ${self.extended_info(c, lang, iframe=True)}
+</%def>
 
-<%def name="extended_info(c, lang)">
+<%def name="extended_info(c, lang, iframe=False)">
 <%
 coordinates = c['geometry']['coordinates'][0]
 bottomLeft = coordinates[0]
@@ -84,13 +87,6 @@ freq_total += props['freq_120'] + props['freq_150']
 freq_total += props['freq_180'] + props['freq_210']
 freq_total += props['freq_240'] + props['freq_270']
 freq_total += props['freq_300'] + props['freq_330']
-
-# gracefully check if url request has get parameter iframe
-try:
-    iframe = request.GET['iframe'] if request.GET['iframe'] else False
-except:
-    iframe = False
-    pass
 
 %>
 <!-- html output -->
