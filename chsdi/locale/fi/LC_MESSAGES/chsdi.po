@@ -1436,9 +1436,6 @@ msgstr "Substanzgrad"
 msgid "ch.astra.ivs-reg_loc.ivs_slaname"
 msgstr "Strecke"
 
-msgid "ch.astra.ivs-reg_loc.sub"
-msgstr "IVS Regiunal e local"
-
 msgid "ch.astra.kt"
 msgstr "ASTRA + chantun"
 
@@ -3135,7 +3132,7 @@ msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Parcs suisses (Zones)"
 
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter"
-msgstr "Parcs (Perimeter)"
+msgstr "Parcs suisses (Perimetre)"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr "Ramsar"
@@ -4537,18 +4534,6 @@ msgstr "http://www.cadastre.ch/internet/kataster/de/home/services/service/wms/cw
 
 msgid "ch.kantone.cadastralwebmap-farbe"
 msgstr "CadastralWebMap"
-
-msgid "ch.kantone.ivs-reg_loc"
-msgstr "IVS Chantun Berna"
-
-msgid "ch.kantone.ivs-reg_loc.ivs_nummer"
-msgstr "IVS-Objekt"
-
-msgid "ch.kantone.ivs-reg_loc.ivs_signatur"
-msgstr "Substanzgrad"
-
-msgid "ch.kantone.ivs-reg_loc.ivs_slaname"
-msgstr "Strecke"
 
 msgid "ch.kt"
 msgstr "Kantone"

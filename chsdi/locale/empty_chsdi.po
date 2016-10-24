@@ -2871,9 +2871,6 @@ msgstr ""
 msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"
 msgstr ""
 
-msgid "ch.astra.ivs-reg_loc.sub"
-msgstr ""
-
 msgid "ch.bafu.silvaprotect-uebersarung"
 msgstr ""
 
@@ -3301,9 +3298,6 @@ msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.description"
 msgstr ""
 
 msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung.year"
-msgstr ""
-
-msgid "ch.kantone.ivs-reg_loc"
 msgstr ""
 
 msgid "ch.bav.kataster-belasteter-standorte-oev"
@@ -8319,15 +8313,6 @@ msgid "ch.swisstopo.vec200-names-namedlocation.id"
 msgstr ""
 
 msgid "ch.swisstopo.verschiebungsvektoren-tsp2.id"
-msgstr ""
-
-msgid "ch.kantone.ivs-reg_loc.ivs_slaname"
-msgstr ""
-
-msgid "ch.kantone.ivs-reg_loc.ivs_nummer"
-msgstr ""
-
-msgid "ch.kantone.ivs-reg_loc.ivs_signatur"
 msgstr ""
 
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_ausgangslage.name"
