@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer
-from sqlalchemy.types import Numeric, Unicode
+from sqlalchemy.types import Numeric, Unicode, Float
 from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
+from chsdi.models.types import DateTimeChsdi
 from chsdi.models.vector import Vector, Geometry2D
 
 
@@ -2161,3 +2162,24 @@ class Hochwasserstatistik(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrologie-hochwasserstatistik', Hochwasserstatistik)
+
+
+class HydrogeologieMarkierversuche(Base, Vector):
+    __tablename__ = 'hydrogeologie_markierversuche'
+    __table_args__ = ({'schema': 'hydrogeolog', 'autoload': False})
+    __bodId__ = 'ch.bafu.hydrogeologie-markierversuche'
+    __template__ = 'templates/htmlpopup/hydrogeologie_markierversuche.mako'
+    __queryable_attributes__ = ['ort', 'milieu', 'markierstoff']
+    __label__ = 'id'
+    id = Column('id', Integer, primary_key=True)
+    nummer_ein = Column('nummer_ein', Integer)
+    y = Column('y', Float)
+    x = Column('x', Float)
+    ort = Column('ort', Unicode)
+    datum = Column('datum', DateTimeChsdi)
+    milieu = Column('milieu', Unicode)
+    markierstoff = Column('markierstoff', Unicode)
+    menge_einheit = Column('menge_einheit', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bafu.hydrogeologie-markierversuche', HydrogeologieMarkierversuche)

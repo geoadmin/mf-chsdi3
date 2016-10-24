@@ -2621,6 +2621,33 @@ msgstr "Holzvorrat (LFI)"
 msgid "ch.bafu.holzzuwachs"
 msgstr "Holzzuwachs (LFI)"
 
+msgid "ch.bafu.hydrogeologie-markierversuche"
+msgstr "Markierversuche"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.datum"
+msgstr "Datum"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.markierstoff"
+msgstr "Markierstoff"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.menge_einheit"
+msgstr "Menge"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.milieu"
+msgstr "Milieu"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.nr_meldeblatt"
+msgstr "Nummer Eingabe"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.ort"
+msgstr "Örtlichkeit"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.x"
+msgstr "X-Koordinate"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.y"
+msgstr "Y-Koordinate"
+
 msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Übersichtskarte Hydrogeologie"
 

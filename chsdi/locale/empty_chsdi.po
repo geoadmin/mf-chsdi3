@@ -9055,3 +9055,30 @@ msgstr ""
 
 msgid "arp_north"
 msgstr ""
+
+msgid "ch.bafu.hydrogeologie-markierversuche"
+msgstr ""
+
+msgid "ch.bafu.hydrogeologie-markierversuche.datum"
+msgstr ""
+
+msgid "ch.bafu.hydrogeologie-markierversuche.markierstoff"
+msgstr ""
+
+msgid "ch.bafu.hydrogeologie-markierversuche.menge_einheit"
+msgstr ""
+
+msgid "ch.bafu.hydrogeologie-markierversuche.milieu"
+msgstr ""
+
+msgid "ch.bafu.hydrogeologie-markierversuche.nr_meldeblatt"
+msgstr ""
+
+msgid "ch.bafu.hydrogeologie-markierversuche.ort"
+msgstr ""
+
+msgid "ch.bafu.hydrogeologie-markierversuche.x"
+msgstr ""
+
+msgid "ch.bafu.hydrogeologie-markierversuche.y"
+msgstr ""

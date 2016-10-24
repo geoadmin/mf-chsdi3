@@ -2621,6 +2621,33 @@ msgstr "Volume de bois (IFN)"
 msgid "ch.bafu.holzzuwachs"
 msgstr "Accroissement annuel de bois (IFN)"
 
+msgid "ch.bafu.hydrogeologie-markierversuche"
+msgstr "Essais de traçage"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.datum"
+msgstr "Date"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.markierstoff"
+msgstr "Traceur"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.menge_einheit"
+msgstr "Quantité"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.milieu"
+msgstr "Milieu"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.nr_meldeblatt"
+msgstr "Numéro d'injection"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.ort"
+msgstr "Localité"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.x"
+msgstr "Coordonnée X"
+
+msgid "ch.bafu.hydrogeologie-markierversuche.y"
+msgstr "Coordonnée Y"
+
 msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Esquisse hydrogéologique"
 
