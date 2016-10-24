@@ -5,35 +5,13 @@
   import chsdi.lib.helpers as h
 %>
 <%
-  protocol = request.scheme
   lang = request.lang
   topic = request.matchdict.get('map')
-  isGridLayer = False
-
-  c = {}
-
-  if 'feature' in feature:
-      if hasattr(feature['feature'], 'properties'):
-          c.update(feature['feature']);
-          c['attributes'] = feature['feature'].properties
-          c['attributes'].update(feature['feature'].extra);
-          c['bbox'] =  feature['feature'].extra['bbox']
-      else:
-          c = feature['feature']
-          c['bbox'] = feature.get('bbox')
-          c['scale'] = feature.get('scale')
-  else:
-      # For grid layers
-      c = feature
-      c['featureId'] = c['id']
-      isGridLayer = True
-
   c['stable_id'] = False
-  c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
-  c['attribution'] = feature['attribution']
-  c['fullName'] = feature['fullName']
-  isExtended = feature['isExtended']
-  isIframe = feature['isIframe']
+  hasExtendedInfo = c.get('hasExtendedInfo')
+  isExtended = c.get('isExtended')
+  isIframe = c.get('isIframe')
+  isGridLayer = c.get('isGridLayer')
  %>
 
 % if isExtended or isIframe:

@@ -51,8 +51,15 @@ def make_api_url(request, agnostic=False):
     host = request.host + base_path if 'localhost' not in request.host else request.host
     if agnostic:
         return ''.join(('//', host))
-    else:
-        return ''.join((request.scheme, '://', host))
+    return ''.join((request.scheme, '://', host))
+
+
+def make_geoadmin_url(request, agnostic=False):
+    protocol = request.scheme
+    base_url = ''.join((protocol, '://', request.registry.settings['geoadminhost']))
+    if agnostic:
+        return make_agnostic(base_url)
+    return base_url
 
 
 def resource_exists(path, headers={}):

@@ -24,6 +24,7 @@ class HtmlPopupServiceValidation(BaseFeaturesValidation):
         self.mapExtent = request.params.get('mapExtent')
 
         self.returnGeometry = False
+        self.geometryFormat = 'geojson'
 
     @property
     def layerId(self):
