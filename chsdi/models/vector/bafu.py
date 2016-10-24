@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer, Date
+from sqlalchemy import Column, Text, Integer
 from sqlalchemy.types import Numeric, Unicode, Float
 from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
+from chsdi.models.types import DateTimeChsdi
 from chsdi.models.vector import Vector, Geometry2D
 
 
@@ -2171,15 +2172,14 @@ class HydrogeologieMarkierversuche(Base, Vector):
     __queryable_attributes__ = ['ort', 'milieu', 'markierstoff']
     __label__ = 'id'
     id = Column('id', Integer, primary_key=True)
-    nr_meldeblatt = Column('nr_meldeblatt', Integer)
+    nummer_ein = Column('nummer_ein', Integer)
     y = Column('y', Float)
     x = Column('x', Float)
     ort = Column('ort', Unicode)
-    datum = Column('datum', Date)
+    datum = Column('datum', DateTimeChsdi)
     milieu = Column('milieu', Unicode)
     markierstoff = Column('markierstoff', Unicode)
     menge_einheit = Column('menge_einheit', Unicode)
-    code = Column('code', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrogeologie-markierversuche', HydrogeologieMarkierversuche)
