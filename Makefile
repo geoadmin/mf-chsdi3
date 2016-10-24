@@ -223,7 +223,7 @@ deploybranch:
 	./scripts/deploybranch.sh
 
 .PHONY: deletebranch
-deletebranch: guard-BRANCH_TO_DELETE
+deletebranch:
 	./scripts/delete_branch.sh $(BRANCH_TO_DELETE)
 
 .PHONY: deploybranchint
