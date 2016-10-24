@@ -26,7 +26,7 @@ baseUrl = request.registry.settings['api_url']
 dhm_altitude = int(round(float(getAltitude(baseUrl, center)),0))
 center = '2%s, 1%s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
 
-props = c['properties']
+props = c['attributes']
 %>
 <style>
 .htmlpopup-container {
@@ -79,7 +79,7 @@ dhm_altitude = int(round(float(getAltitude(baseUrl, center)),0))
 center = '2%s, 1%s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
 altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
 
-props = c['properties']
+props = c['attributes']
 
 freq_total = props['freq_0']    + props['freq_30']
 freq_total += props['freq_60']  + props['freq_90']
