@@ -4193,6 +4193,15 @@ msgstr "Centrales nucléaires"
 msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Potentiel petite hydraulique"
 
+msgid "ch.bfe.meteorologische-vereisung"
+msgstr "Fréquence de givrage"
+
+msgid "ch.bfe.meteorologische-vereisung.hoehe"
+msgstr "Hauteur au-dessus du niveau du sol"
+
+msgid "ch.bfe.meteorologische-vereisung.vereisung"
+msgstr "Fréquence de givrage"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "PS Dépôts couches géol. profondes"
 

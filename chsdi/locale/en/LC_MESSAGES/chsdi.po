@@ -4193,6 +4193,15 @@ msgstr "Nuclear Power Plants"
 msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Water power potential"
 
+msgid "ch.bfe.meteorologische-vereisung"
+msgstr "Icing Frequency"
+
+msgid "ch.bfe.meteorologische-vereisung.hoehe"
+msgstr "Height above ground"
+
+msgid "ch.bfe.meteorologische-vereisung.vereisung"
+msgstr "Icing Frequency"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "SP Deep Geol. Repositories"
 

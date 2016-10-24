@@ -4193,6 +4193,15 @@ msgstr "Ovras nuclearas"
 msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Potenzials d'ovras pitschnas"
 
+msgid "ch.bfe.meteorologische-vereisung"
+msgstr "Vereisungshäufigkeit"
+
+msgid "ch.bfe.meteorologische-vereisung.hoehe"
+msgstr "Höhe über Grund"
+
+msgid "ch.bfe.meteorologische-vereisung.vereisung"
+msgstr "Vereisungshäufigkeit"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "PS Deposits geologics profunds"
 
