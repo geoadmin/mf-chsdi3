@@ -9,7 +9,7 @@ The output format is a csv with | delimiter and it contains the following attrib
 
 Usage:
 
-  .venv/bin/python scripts/scan_models.py > results.csv
+  .venv/bin/python scripts/models_scan.py > results.csv
 """
 
 import re
