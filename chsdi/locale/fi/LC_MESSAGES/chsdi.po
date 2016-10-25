@@ -4211,6 +4211,126 @@ msgstr "Charta d'aviatica OACI"
 msgid "ch.bazl.luftfahrtkarten-icao.release"
 msgstr "Ausgabejahr"
 
+msgid "ch.bazl.luftraeume-fluginformationsgebiet"
+msgstr "Lufträume - FIR"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.designator"
+msgstr "Bezeichnung"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.loli_type"
+msgstr "Untergrenze [Typ]"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.loli_value"
+msgstr "Untergrenze [Wert]"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.name"
+msgstr "Name"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.type"
+msgstr "Typ"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.upli_type"
+msgstr "Obergrenze [Typ]"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.upli_value"
+msgstr "Obergrenze [Wert]"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen"
+msgstr "Lufträume - FIZ"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.designator"
+msgstr "Bezeichnung"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.loli_type"
+msgstr "Untergrenze [Typ]"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.loli_value"
+msgstr "Untergrenze [Wert]"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.name"
+msgstr "Name"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.type"
+msgstr "Typ"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.upli_type"
+msgstr "Obergrenze [Typ]"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.upli_value"
+msgstr "Obergrenze [Wert]"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke"
+msgstr "Lufträume - CTA"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.designator"
+msgstr "Bezeichnung"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.loli_type"
+msgstr "Untergrenze [Typ]"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.loli_value"
+msgstr "Untergrenze [Wert]"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.name"
+msgstr "Name"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.type"
+msgstr "Typ"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.upli_type"
+msgstr "Obergrenze [Typ]"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.upli_value"
+msgstr "Obergrenze [Wert]"
+
+msgid "ch.bazl.luftraeume-kontrollzonen"
+msgstr "Lufträume - CTR"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.designator"
+msgstr "Bezeichnung"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.loli_type"
+msgstr "Untergrenze [Typ]"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.loli_value"
+msgstr "Untergrenze [Wert]"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.name"
+msgstr "Name"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.type"
+msgstr "Typ"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.upli_type"
+msgstr "Obergrenze [Typ]"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.upli_value"
+msgstr "Obergrenze [Wert]"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke"
+msgstr "Lufträume - TMA"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.designator"
+msgstr "Bezeichnung"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.loli_type"
+msgstr "Untergrenze [Typ]"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.loli_value"
+msgstr "Untergrenze [Wert]"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.name"
+msgstr "Name"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.type"
+msgstr "Typ"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.upli_type"
+msgstr "Obergrenze [Typ]"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.upli_value"
+msgstr "Obergrenze [Wert]"
+
 msgid "ch.bazl.projektierungszonen-flughafenanlagen"
 msgstr "Zonas projectaziun: eroports"
 
