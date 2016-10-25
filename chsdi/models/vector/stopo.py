@@ -1979,6 +1979,7 @@ class GisGeolBase:
     copy_avail = Column('copy_avail', Text)
     view_avail = Column('view_avail', Text)
     pdf_url = Column('pdf_url', Text)
+    pdf_size = Column('pdf_size', Text)
     bgdi_data_status = Column('bgdi_data_status', Text)
     year = Column('year', Integer)
     the_geom = Column(Geometry2D)

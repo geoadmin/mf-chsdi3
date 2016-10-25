@@ -24,7 +24,6 @@ SHORTENER_ALLOWED_HOSTS :=
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
 USER_SOURCE ?= rc_user
 WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
-DOWNLOAD_DIR := /var/local/geodata/downloads/
 DATAGEOADMINHOST ?= data.geo.admin.ch
 
 # Commands
@@ -297,7 +296,6 @@ apache/wsgi.conf: apache/wsgi.conf.in apache/application.wsgi
 		--var "modwsgi_user=$(MODWSGI_USER)" \
 		--var "wsgi_threads=$(WSGI_THREADS)" \
 		--var "wsgi_app=$(WSGI_APP)" \
-		--var "download_dir=$(DOWNLOAD_DIR)" \
 		--var "kml_temp_dir=$(KML_TEMP_DIR)" $< > $@
 
 development.ini.in:
@@ -321,7 +319,6 @@ production.ini: production.ini.in
 		--var "dbhost=$(DBHOST)" \
 		--var "dbport=$(DBPORT)" \
 		--var "dbstaging=$(DBSTAGING)" \
-		--var "download_dir=$(DOWNLOAD_DIR)" \
 		--var "api_url=$(API_URL)" \
 		--var "shop_url=$(SHOP_URL)" \
 		--var "geodata_staging=$(GEODATA_STAGING)" \
