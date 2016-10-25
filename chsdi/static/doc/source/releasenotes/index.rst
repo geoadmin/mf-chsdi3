@@ -15,6 +15,57 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20161026:
+
+Release 20161026 - Wednesday, October 26th 2016
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_161019...r_161026>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_161019...r_161026>`__
+
+
+Geodata
+*******
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Restrictions for drones <//map.geo.admin.ch/?layers=ch.bazl.einschraenkungen-drohnen>`__ (ch.bazl.einschraenkungen-drohnen)                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Aerodromes + Heliports <//map.geo.admin.ch/?layers=ch.bazl.flugplaetze-heliports>`__ (ch.bazl.flugplaetze-heliports)                                              |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Mountain landing sites <//map.geo.admin.ch/?layers=ch.bazl.gebirgslandeplaetze>`__ (ch.bazl.gebirgslandeplaetze)                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division Siegfried Map 50 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-siegfried-ta50.metadata>`__ (ch.swisstopo.hiks-siegfried-ta50.metadata)            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division Siegfried Map 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-siegfried-ta25.metadata>`__ (ch.swisstopo.hiks-siegfried-ta25.metadata)            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division Dufour Map Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-dufour.metadata>`__ (ch.swisstopo.hiks-dufour.metadata)                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Tracer tests <//map.geo.admin.ch/?layers=ch.bafu.hydrogeologie-markierversuche>`__ (ch.bafu.hydrogeologie-markierversuche)                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Spitallandeplätze <//map.geo.admin.ch?layers=ch.bazl.spitallandeplaetze>`__ (ch.bazl.spitallandeplaetze)                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division Swiss Map Vector 1000 <//map.geo.admin.ch?layers=ch.swisstopo.swiss-map-vector1000.metadata>`__ (ch.swisstopo.swiss-map-vector1000.metadata)             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division Swiss Map Vector 500 <//map.geo.admin.ch?layers=ch.swisstopo.swiss-map-vector500.metadata>`__ (ch.swisstopo.swiss-map-vector500.metadata)                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `SPM consultation <//map.geo.admin.ch?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung&topic=sachplan>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Sectoral Plan Military <//map.geo.admin.ch/?layers=ch.astra.ivs-gelaendekarte>`__ (ch.astra.ivs-gelaendekarte)                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Inventory historical routes terrain map <//map.geo.admin.ch/?layers=ch.astra.ivs-gelaendekarte>`__ (ch.astra.ivs-gelaendekarte)                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20161019:
 
 Release 20161019 - Wednesday, October 19th 2016
