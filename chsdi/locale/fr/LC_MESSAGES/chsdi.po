@@ -4103,6 +4103,126 @@ msgstr "Carte aéronautique OACI"
 msgid "ch.bazl.luftfahrtkarten-icao.release"
 msgstr "Édition"
 
+msgid "ch.bazl.luftraeume-fluginformationsgebiet"
+msgstr "FIR - Espaces aériens"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.designator"
+msgstr "Designation"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.loli_type"
+msgstr "Limite inférieure [type]"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.loli_value"
+msgstr "Limite inférieure [valeur]"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.name"
+msgstr "Nom"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.type"
+msgstr "Type"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.upli_type"
+msgstr "Limite supérieure [type]"
+
+msgid "ch.bazl.luftraeume-fluginformationsgebiet.upli_value"
+msgstr "Limite supérieure [valeur]"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen"
+msgstr "FIZ - Espaces aériens"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.designator"
+msgstr "Designation"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.loli_type"
+msgstr "Limite inférieure [type]"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.loli_value"
+msgstr "Limite inférieure [valeur]"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.name"
+msgstr "Nom"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.type"
+msgstr "Type"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.upli_type"
+msgstr "Limite supérieure [type]"
+
+msgid "ch.bazl.luftraeume-fluginformationszonen.upli_value"
+msgstr "Limite supérieure [valeur]"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke"
+msgstr "CTA - Espaces aériens"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.designator"
+msgstr "Designation"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.loli_type"
+msgstr "Limite inférieure [type]"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.loli_value"
+msgstr "Limite inférieure [valeur]"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.name"
+msgstr "Nom"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.type"
+msgstr "Type"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.upli_type"
+msgstr "Limite supérieure [type]"
+
+msgid "ch.bazl.luftraeume-kontrollbezirke.upli_value"
+msgstr "Limite supérieure [valeur]"
+
+msgid "ch.bazl.luftraeume-kontrollzonen"
+msgstr "CTR - Espaces aériens"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.designator"
+msgstr "Designation"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.loli_type"
+msgstr "Limite inférieure [type]"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.loli_value"
+msgstr "Limite inférieure [valeur]"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.name"
+msgstr "Nom"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.type"
+msgstr "Type"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.upli_type"
+msgstr "Limite supérieure [type]"
+
+msgid "ch.bazl.luftraeume-kontrollzonen.upli_value"
+msgstr "Limite supérieure [valeur]"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke"
+msgstr "TMA - Espaces aériens"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.designator"
+msgstr "Designation"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.loli_type"
+msgstr "Limite inférieure [type]"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.loli_value"
+msgstr "Limite inférieure [valeur]"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.name"
+msgstr "Nom"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.type"
+msgstr "Type"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.upli_type"
+msgstr "Limite supérieure [type]"
+
+msgid "ch.bazl.luftraeume-nahkontrollbezirke.upli_value"
+msgstr "Limite supérieure [valeur]"
+
 msgid "ch.bazl.points-of-interest"
 msgstr "Points d'intérêt"
 

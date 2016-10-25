@@ -923,6 +923,59 @@ class Luftfahrthindernis(Base, Vector):
 register('ch.bazl.luftfahrthindernis', Luftfahrthindernis)
 
 
+class LuftraeumeBase:
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __template__ = 'templates/htmlpopup/luftraeume_fluginformationsgebiet.mako'
+    __label__ = u'name'
+    __returnedGeometry__ = 'the_geom_highlight'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    designator = Column('designator', Unicode)
+    type = Column('type', Unicode)
+    loli_value = Column('loli_value', Integer)
+    loli_type = Column('loli_type', Unicode)
+    upli_value = Column('upli_value', Integer)
+    upli_type = Column('upli_type', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    the_geom = Column(Geometry2D)
+    the_geom_highlight = Column('the_geom_highlight', Geometry2D)
+
+
+class LuftraeumeFluginformationsGebiet(Base, LuftraeumeBase, Vector):
+    __tablename__ = 'luftraeume_fluginformationsgebiet'
+    __bodId__ = 'ch.bazl.luftraeume-fluginformationsgebiet'
+
+register('ch.bazl.luftraeume-fluginformationsgebiet', LuftraeumeFluginformationsGebiet)
+
+
+class LuftraeumeFluginformationsZonen(Base, LuftraeumeBase, Vector):
+    __tablename__ = 'luftraeume_fluginformationszonen'
+    __bodId__ = 'ch.bazl.luftraeume-fluginformationszonen'
+
+register('ch.bazl.luftraeume-fluginformationszonen', LuftraeumeFluginformationsZonen)
+
+
+class LuftraeumeKontrollBezirke(Base, LuftraeumeBase, Vector):
+    __tablename__ = 'luftraeume_kontrollbezirke'
+    __bodId__ = 'ch.bazl.luftraeume-kontrollbezirke'
+
+register('ch.bazl.luftraeume-kontrollbezirke', LuftraeumeKontrollBezirke)
+
+
+class LuftraeumeKontrollZonen(Base, LuftraeumeBase, Vector):
+    __tablename__ = 'luftraeume_kontrollzonen'
+    __bodId__ = 'ch.bazl.luftraeume-kontrollzonen'
+
+register('ch.bazl.luftraeume-kontrollzonen', LuftraeumeKontrollZonen)
+
+
+class LuftraeumeNahKontrollBezirke(Base, LuftraeumeBase, Vector):
+    __tablename__ = 'luftraeume_nahkontrollbezirke'
+    __bodId__ = 'ch.bazl.luftraeume-nahkontrollbezirke'
+
+register('ch.bazl.luftraeume-nahkontrollbezirke', LuftraeumeNahKontrollBezirke)
+
+
 class SgtFacilities(Base, Vector):
     __tablename__ = 'geologische_tiefenlager_fac'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
