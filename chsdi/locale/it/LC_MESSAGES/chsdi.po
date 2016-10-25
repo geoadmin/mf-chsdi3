@@ -4220,6 +4220,15 @@ msgstr "Centrali nucleari"
 msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Potenz. piccole centr. idraul."
 
+msgid "ch.bfe.meteorologische-vereisung"
+msgstr "Frequenza formazione ghiaccio"
+
+msgid "ch.bfe.meteorologische-vereisung.hoehe"
+msgstr "Altezza sul livello del terreno"
+
+msgid "ch.bfe.meteorologische-vereisung.vereisung"
+msgstr "Frequenza formazione ghiaccio"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "PS Depositi strati geol. profondi"
 

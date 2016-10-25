@@ -765,6 +765,19 @@ class WindenergieanlagenTurbine(Base, Vector):
 register('ch.bfe.windenergieanlagen', WindenergieanlagenTurbine)
 
 
+class MeteoVereisung(Base, Vector):
+    __tablename__ = 'meteorologische_vereisung'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/meteo_vereisung.mako'
+    __bodId__ = 'ch.bfe.meteorologische-vereisung'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    vereisung = Column('vereisung', Integer, nullable=False)
+    hoehe = Column('hoehe', Unicode, nullable=False)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.meteorologische-vereisung', MeteoVereisung)
+
+
 class Bakomfernsehsender(Base, Vector):
     __tablename__ = 'nisdb_bro_tooltip'
     __table_args__ = ({'schema': 'bakom', 'autoload': False})
