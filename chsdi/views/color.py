@@ -3,8 +3,6 @@
 import os.path
 import StringIO
 
-from chsdi.lib.decorators import requires_authorization
-
 from PIL import Image
 from pyramid.httpexceptions import HTTPBadRequest
 from pyramid.view import view_config
@@ -16,7 +14,6 @@ class ColorService:
     def __init__(self, request):
         self.request = request
 
-    @requires_authorization()
     @view_config(route_name='color')
     def get_image_colored(self):
         r = self.request.matchdict['r']
