@@ -1436,9 +1436,6 @@ msgstr "Substanzgrad"
 msgid "ch.astra.ivs-reg_loc.ivs_slaname"
 msgstr "Strecke"
 
-msgid "ch.astra.ivs-reg_loc.sub"
-msgstr "IVS Regional und Lokal"
-
 msgid "ch.astra.kt"
 msgstr "ASTRA + Kanton"
 
@@ -3162,7 +3159,7 @@ msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Schweizer Pärke (Zonierung)"
 
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter"
-msgstr "Pärke (Perimeter)"
+msgstr "Schweizer Pärke (Perimeter)"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr "Ramsar"
@@ -4573,18 +4570,6 @@ msgstr "http://www.cadastre.ch/internet/kataster/de/home/services/service/wms/cw
 
 msgid "ch.kantone.cadastralwebmap-farbe"
 msgstr "CadastralWebMap"
-
-msgid "ch.kantone.ivs-reg_loc"
-msgstr "IVS Kanton Bern"
-
-msgid "ch.kantone.ivs-reg_loc.ivs_nummer"
-msgstr "IVS-Objekt"
-
-msgid "ch.kantone.ivs-reg_loc.ivs_signatur"
-msgstr "Substanzgrad"
-
-msgid "ch.kantone.ivs-reg_loc.ivs_slaname"
-msgstr "Strecke"
 
 msgid "ch.kt"
 msgstr "Kantone"
