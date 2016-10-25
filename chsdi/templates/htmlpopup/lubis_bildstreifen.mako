@@ -10,9 +10,7 @@ from pyramid.url import route_url
     <tr><td class="cell-left">${_('ch.swisstopo.lubis-bildstreifen.id')}</td>          <td>${c['featureId']}</td></tr>
     <tr><td class="cell-left">${_('tt_lubis_Flugdatum')}</td>       <td>${c['attributes']['flugdatum']}</td></tr>
     <tr><td class="cell-left">${_('tt_lubis_auflosung')}</td>       <td>${c['attributes']['resolution']}</td></tr>
-% if   c['attributes']['gsd'] == 0.25 or c['attributes']['gsd'] == 0.5:
-    <tr><td class="cell-left">${_('link')} Toposhop</td>            <td><a href="http://www.toposhop.admin.ch/de/shop/satair/lubis_1?ext=1&bs=${c['featureId']},${c['attributes']['toposhop_date']},${c['attributes']['toposhop_length']},${c['attributes']['resolution']},${c['attributes']['toposhop_start_x']},${c['attributes']['toposhop_start_y']},${c['attributes']['toposhop_end_x']},${c['attributes']['toposhop_end_y']}" target="toposhop">Toposhop</a></td></tr>
-% else:
+% if   c['attributes']['gsd'] != 0.25 and c['attributes']['gsd'] != 0.5:
     <tr><td class="cell-left">${_('tt_firmen_Link ')}</td>          <td><a href="mailto:geodata@swisstopo.ch?subject=${_('tt_firmen_Link ')} ebkey:${c['featureId']}">geodata@swisstopo.ch</a></td></tr>
 % endif    
 </%def>
@@ -36,7 +34,9 @@ c['stable_id'] = True
         <tr><th class="cell-left">${_('tt_lubis_project')}</th>             <td>${c['attributes']['goal'] or '-'}</td></tr>
         <tr><th class="cell-left">${_('tt_lubis_source_georef')}</th>       <td>${c['attributes']['source_georef'] or '-'}</td></tr>
 % if   c['attributes']['gsd'] == 0.25 or c['attributes']['gsd'] == 0.5:
-        <tr><th class="cell-left">${_('link')} Toposhop</th>                <td><a href="http://www.toposhop.admin.ch/de/shop/satair/lubis_1?ext=1&bs=${c['featureId']},${c['attributes']['toposhop_date']},${c['attributes']['toposhop_length']},${c['attributes']['resolution']},${c['attributes']['toposhop_start_x']},${c['attributes']['toposhop_start_y']},${c['attributes']['toposhop_end_x']},${c['attributes']['toposhop_end_y']}" target="toposhop">Toposhop</a></td></tr>
+        <tr><th class="cell-left">${_('link')} Toposhop</th>
+        <td><a href="https://shop.swisstopo.admin.ch/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
+target="toposhop">Toposhop</a></td></tr>
 % else:
         <tr><th class="cell-left">${_('tt_firmen_Link ')}</th>              <td><a href="mailto:geodata@swisstopo.ch?subject=${_('tt_firmen_Link ')} ebkey:${c['featureId']}">geodata@swisstopo.ch</a></td></tr>
 % endif
