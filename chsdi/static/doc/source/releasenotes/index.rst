@@ -60,7 +60,7 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `SPM consultation <//map.geo.admin.ch?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung&topic=sachplan>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Sectoral Plan Military <//map.geo.admin.ch/?layers=ch.astra.ivs-gelaendekarte>`__ (ch.astra.ivs-gelaendekarte)                                                    |
+| Update | `Sectoral Plan Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft&topic=sachplan>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft) |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Inventory historical routes terrain map <//map.geo.admin.ch/?layers=ch.astra.ivs-gelaendekarte>`__ (ch.astra.ivs-gelaendekarte)                                   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
