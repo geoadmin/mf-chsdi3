@@ -44,7 +44,7 @@ class Smv1000(Base, Vector):
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __template__ = 'templates/htmlpopup/smv.mako'
     __bodId__ = 'ch.swisstopo.swiss-map-vector1000.metadata'
-    id = Column('perimeter', Integer, primary_key=True)
+    id = Column('perimeter', Unicode, primary_key=True)
     scale = Column('n_scale', Integer)
     price = Column('n_price', Integer)
     release = Column('dt_release', Unicode)
@@ -58,7 +58,7 @@ class Smv500(Base, Vector):
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __template__ = 'templates/htmlpopup/smv.mako'
     __bodId__ = 'ch.swisstopo.swiss-map-vector500.metadata'
-    id = Column('perimeter', Integer, primary_key=True)
+    id = Column('perimeter', Unicode, primary_key=True)
     scale = Column('n_scale', Integer)
     price = Column('n_price', Integer)
     release = Column('dt_release', Unicode)

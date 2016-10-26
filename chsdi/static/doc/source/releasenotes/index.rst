@@ -58,7 +58,9 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Division Swiss Map Vector 500 <//map.geo.admin.ch?layers=ch.swisstopo.swiss-map-vector500.metadata>`__ (ch.swisstopo.swiss-map-vector500.metadata)                |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `SPM consultation <//map.geo.admin.ch?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung&topic=sachplan>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung |
+| New    | `SPM consultation <//map.geo.admin.ch?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung&topic=sachplan>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)|
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Icing frequency <//map.geo.admin.ch?layers=ch.bfe.meteorologische-vereisung>`__ (ch.bfe.meteorologische-vereisung)                                                |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Sectoral Plan Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft&topic=sachplan>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft) |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
