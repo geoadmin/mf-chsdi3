@@ -125,9 +125,9 @@ viewer_url = get_viewer_url(request, params)
 <tr>
   <th class="cell-left">${_('tt_lubis_bildorder')}</th>
   <td>
-    ${c['attributes']['contact'] | br } 
-    <br/> 
-    ${c['attributes']['contact_email']} 
+    ${c['attributes']['contact'] | br }
+    <br/>
+    ${c['attributes']['contact_email']}
     <br/>
 
 % if  c['attributes']['contact_web'] != '-':
@@ -185,8 +185,8 @@ if image_rotation is None:
   image_rotation = 0
 
 params = (
-    image_width, 
-    image_height, 
+    image_width,
+    image_height,
     _('tt_lubis_ebkey'),
     c['featureId'],
     c['attributes']['firma'],
@@ -194,6 +194,7 @@ params = (
     lang,
     image_rotation)
 viewer_url = get_viewer_url(request, params)
+shop_url = request.registry.settings['shop_url']
 %>
 <title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
 
@@ -216,7 +217,7 @@ viewer_url = get_viewer_url(request, params)
 % if 'contact_web' not in c['attributes']:
   <tr class="chsdi-no-print">
     <th class="cell-left">${_('link')} Toposhop</th>
-    <td><a href="https://shop.swisstopo.admin.ch/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
+    <td><a href="https:${shop_url}/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
     target="toposhop">Toposhop</a></td>
   </tr>
 % endif
