@@ -175,27 +175,6 @@ msgstr ""
 msgid "ch.vbs.waldschadenkarte"
 msgstr ""
 
-msgid "tt_provider"
-msgstr ""
-
-msgid "tt_address"
-msgstr ""
-
-msgid "tt_time"
-msgstr ""
-
-msgid "tt_description"
-msgstr ""
-
-msgid "tt_rent"
-msgstr ""
-
-msgid "tt_link"
-msgstr ""
-
-msgid "tt_return"
-msgstr ""
-
 msgid "tt_bfe_geschw_wind_exttooltip"
 msgstr ""
 

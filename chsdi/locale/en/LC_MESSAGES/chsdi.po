@@ -4125,7 +4125,7 @@ msgid "ch.bazl.sicherheitszonenplan"
 msgstr "Safety zone plan"
 
 msgid "ch.bazl.spitallandeplaetze"
-msgstr "Place d'atterissage d‘hôpital"
+msgstr "Hospital landing sites"
 
 msgid "ch.bazl.url"
 msgstr "https://www.bazl.admin.ch/bazl/en/home.html"
@@ -7775,9 +7775,6 @@ msgstr "Totholzvolumen [m3/ha]"
 msgid "treasure_hunt"
 msgstr "Bravo! Klicke hier um den nächsten Hinweis zu erhalten!"
 
-msgid "tt_address"
-msgstr "Address"
-
 msgid "tt_anteil_ch"
 msgstr "Catchment areas percentage in Switzerland"
 
@@ -8288,9 +8285,6 @@ msgstr "Beurteilung BAZL"
 msgid "tt_ch_bazl_kataster_belasteter_standorte_zivflpl_standortnummer"
 msgstr "BAZL Standortnummer"
 
-msgid "tt_description"
-msgstr "Information"
-
 msgid "tt_document"
 msgstr "Weitere Informationen "
 
@@ -8546,9 +8540,6 @@ msgstr "Regulatory body"
 msgid "tt_landwirtsc"
 msgstr "Agricultural areas"
 
-msgid "tt_link"
-msgstr "Website"
-
 msgid "tt_lubis_Filmart"
 msgstr "Film type"
 
@@ -8675,20 +8666,11 @@ msgstr "Minimum Intervention"
 msgid "tt_pronatura_e3"
 msgstr "Conservation through active management"
 
-msgid "tt_provider"
-msgstr "Provider"
-
 msgid "tt_regimenr"
 msgstr "River regime number"
 
 msgid "tt_regimetyp"
 msgstr "River regime type"
-
-msgid "tt_rent"
-msgstr "Costs"
-
-msgid "tt_return"
-msgstr "Return"
 
 msgid "tt_sachplan-infrastruktur-schiene_aus_anlage"
 msgstr "Facility name"
@@ -8902,9 +8884,6 @@ msgstr "Total watershed area [km2]"
 
 msgid "tt_teileinzugsgebiete_2.xy_gebietsauslass"
 msgstr "Basin outlet point"
-
-msgid "tt_time"
-msgstr "Hours of business"
 
 msgid "tt_wald_natur"
 msgstr "Forest and semi natural areas"

@@ -4125,7 +4125,7 @@ msgid "ch.bazl.sicherheitszonenplan"
 msgstr "Plan de la zone de sécurité"
 
 msgid "ch.bazl.spitallandeplaetze"
-msgstr "Place d'atterissage d‘hôpital"
+msgstr "Places d'atterrissage d'hôpitaux"
 
 msgid "ch.bazl.url"
 msgstr "https://www.bazl.admin.ch/bazl/fr/home.html"
@@ -7775,9 +7775,6 @@ msgstr "Volume total de bois mort [m3/ha]"
 msgid "treasure_hunt"
 msgstr "Bravo! Clique ici afin de découvrir l'indice suivant!"
 
-msgid "tt_address"
-msgstr "Adresse"
-
 msgid "tt_anteil_ch"
 msgstr "Pourcentage du b.v. en Suisse"
 
@@ -8288,9 +8285,6 @@ msgstr "Evaluation de l'OFAC"
 msgid "tt_ch_bazl_kataster_belasteter_standorte_zivflpl_standortnummer"
 msgstr "No de site OFAC"
 
-msgid "tt_description"
-msgstr "Informations"
-
 msgid "tt_document"
 msgstr "Autres informations"
 
@@ -8546,9 +8540,6 @@ msgstr "Organe régulateur"
 msgid "tt_landwirtsc"
 msgstr "Surfaces agricoles"
 
-msgid "tt_link"
-msgstr "Site Internet"
-
 msgid "tt_lubis_Filmart"
 msgstr "Emulsion"
 
@@ -8675,20 +8666,11 @@ msgstr "Interventions minimales"
 msgid "tt_pronatura_e3"
 msgstr "Promotion de la biodiversité par des interventions ciblées"
 
-msgid "tt_provider"
-msgstr "Prestataire"
-
 msgid "tt_regimenr"
 msgstr "N° de régime d’écoulement"
 
 msgid "tt_regimetyp"
 msgstr "Type de régime d’écoulement"
-
-msgid "tt_rent"
-msgstr "Coûts"
-
-msgid "tt_return"
-msgstr "Restitution"
 
 msgid "tt_sachplan-infrastruktur-schiene_aus_anlage"
 msgstr "Projet"
@@ -8902,9 +8884,6 @@ msgstr "Surface du BV entier [km2]"
 
 msgid "tt_teileinzugsgebiete_2.xy_gebietsauslass"
 msgstr "Point à I‘exutoire du BV"
-
-msgid "tt_time"
-msgstr "Horaires d’ouverture"
 
 msgid "tt_wald_natur"
 msgstr "Forêts et autres surfaces naturelles"
