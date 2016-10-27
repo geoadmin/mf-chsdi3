@@ -4125,7 +4125,7 @@ msgid "ch.bazl.sicherheitszonenplan"
 msgstr "Plan da zonas da segirezza"
 
 msgid "ch.bazl.spitallandeplaetze"
-msgstr "Spitallandeplätze"
+msgstr "Plazzas d'atterrar d'in ospital"
 
 msgid "ch.bazl.url"
 msgstr "https://www.bazl.admin.ch/bazl/de/home.html"

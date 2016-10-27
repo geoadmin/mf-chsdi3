@@ -4125,7 +4125,7 @@ msgid "ch.bazl.sicherheitszonenplan"
 msgstr "Plan de la zone de sécurité"
 
 msgid "ch.bazl.spitallandeplaetze"
-msgstr "Place d'atterissage d‘hôpital"
+msgstr "Places d'atterrissage d'hôpitaux"
 
 msgid "ch.bazl.url"
 msgstr "https://www.bazl.admin.ch/bazl/fr/home.html"
@@ -4200,7 +4200,7 @@ msgid "ch.bfe.energiestaedte-2000watt-aufdemweg"
 msgstr "Cités de l’énergie vers 2000 watts"
 
 msgid "ch.bfe.energiestaedte-2000watt-aufdemweg.name"
-msgstr "Commune / Cité"
+msgstr "Commune / ville"
 
 msgid "ch.bfe.energiestaedte-energieregionen"
 msgstr "Régions-Energie"
@@ -4209,7 +4209,7 @@ msgid "ch.bfe.energiestaedte-energieregionen.name"
 msgstr "Régions-Energie"
 
 msgid "ch.bfe.energiestaedte.name"
-msgstr "Commune / Cité"
+msgstr "Commune / ville"
 
 msgid "ch.bfe.kernkraftwerke"
 msgstr "Centrales nucléaires"
