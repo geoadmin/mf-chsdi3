@@ -2,8 +2,7 @@
 
 from sqlalchemy import Column, Text, Unicode, Integer, Date, DateTime, ForeignKey
 from sqlalchemy.orm import relationship, remote
-from sqlalchemy.types import Numeric, BigInteger, Float
-from sqlalchemy.dialects import postgresql
+from sqlalchemy.types import Numeric, Float
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -2463,69 +2462,6 @@ class ChmobilMountainbikeland (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.astra.mountainbikeland', ChmobilMountainbikeland)
-
-
-class eignungDaecher (Base, Vector):
-    __tablename__ = 'view_solarenergie_daecher_gs'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/solareignungdaecher.mako'
-    __bodId__ = 'ch.bfe.solarenergie-eignung-daecher'
-    __label__ = 'id'
-    __queryable_attributes__ = ['df_uid', 'building_id']
-    __maxscale__ = 100005
-    id = Column('df_uid', BigInteger, primary_key=True)
-    building_id = Column('building_id', Integer)
-    a_param = Column('a_param', postgresql.ARRAY(Numeric))
-    b_param = Column('b_param', postgresql.ARRAY(Numeric))
-    c_param = Column('c_param', postgresql.ARRAY(Numeric))
-    heizgradtage = Column('heizgradtage', postgresql.ARRAY(Numeric))
-    bedarf_heizung = Column('bedarf_heizung', Integer)
-    bedarf_warmwasser = Column('bedarf_warmwasser', Integer)
-    datum_aenderung = Column('datum_aenderung', Date)
-    datum_erstellung = Column('datum_erstellung', Date)
-    dg_heizung = Column('dg_heizung', Integer)
-    dg_waermebedarf = Column('dg_waermebedarf', Integer)
-    duschgaenge = Column('duschgaenge', Integer)
-    flaeche_kollektoren = Column('flaeche_kollektoren', Numeric)
-    gstrahlung = Column('gstrahlung', Integer)
-    mstrahlung = Column('mstrahlung', Integer)
-    sb_datum_aenderung = Column('sb_datum_aenderung', Date)
-    sb_datum_erstellung = Column('sb_datum_erstellung', Date)
-    sb_objektart = Column('sb_objektart', Integer)
-    volumen_speicher = Column('volumen_speicher', Integer)
-    waermeertrag = Column('waermeertrag', Integer)
-    monate = Column('monat', postgresql.ARRAY(Numeric))
-    df_nummer = Column('df_nummer', Integer)
-    klasse = Column('klasse', Integer)
-    flaeche = Column('flaeche', Numeric)
-    ausrichtung = Column('ausrichtung', Integer)
-    neigung = Column('neigung', Integer)
-    finanzertrag = Column('finanzertrag', Numeric)
-    stromertrag = Column('stromertrag', Numeric)
-    monats_ertrag = Column('monats_ertrag', postgresql.ARRAY(Numeric))
-    gs_serie_start = Column('gs_serie_start', Date)
-    klasse_text = Column('klasse_text', Text)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfe.solarenergie-eignung-daecher', eignungDaecher)
-
-
-class eignungDaecherOverview (Base, Vector):
-    __tablename__ = 'solarenergie_availability'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/solareignungdaecher_av.mako'
-    __bodId__ = 'ch.bfe.solarenergie-eignung-daecher'
-    __parentLayerId__ = 'ch.bfe.solarenergie-eignung-daecher'
-    __label__ = 'id'
-    __minscale__ = 100005
-    id = Column('av_id', Integer, primary_key=True)
-    de = Column('de', Text)
-    fr = Column('fr', Text)
-    it = Column('it', Text)
-    en = Column('en', Text)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfe.solarenergie-eignung-daecher', eignungDaecherOverview)
 
 
 class FlugplaetzeHeliports(Base, Vector):
