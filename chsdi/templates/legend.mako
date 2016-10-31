@@ -76,8 +76,10 @@
 % if 'idGeoCat' in c:
   % if lang in ('de', 'rm'):
       <td><a target="_blank" href="http://www.geocat.ch/geonetwork/srv/deu/metadata.show?uuid=${c['idGeoCat']}&currTab=simple">
-  % elif lang in ('fr', 'it'):
+  % elif lang == 'fr':
       <td><a target="_blank" href="http://www.geocat.ch/geonetwork/srv/fra/metadata.show?uuid=${c['idGeoCat']}&currTab=simple">
+  % elif lang == 'it':
+      <td><a target="_blank" href="http://www.geocat.ch/geonetwork/srv/ita/metadata.show?uuid=${c['idGeoCat']}&currTab=simple">
   % else:
       <td><a target="_blank" href="http://www.geocat.ch/geonetwork/srv/eng/metadata.show?uuid=${c['idGeoCat']}&currTab=simple">
   % endif
