@@ -133,16 +133,16 @@ class TestSearchServiceView(TestsBase):
         self.assertTrue('geom_st_box2d' not in resp.json['results'][0]['attrs'].keys())
 
     def test_locations_searchtext_apostrophe(self):
-        resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'av mont d\'or lausanne', 'type': 'locations'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'av mont d\'or lausanne 1', 'type': 'locations'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'avenue du mont-d\'or 1 1007 lausanne 5586 lausanne ch vd')
         self.assertEqual(resp.json['results'][0]['attrs']['num'], 1)
 
     def test_address_order(self):
-        resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'isabelle de montolieu', 'type': 'locations'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'isabelle de montolieu 2', 'type': 'locations'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin isabelle-de-montolieu 1 1010 lausanne 5586 lausanne ch vd')
-        self.assertEqual(resp.json['results'][0]['attrs']['num'], 1)
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin isabelle-de-montolieu 2 1010 lausanne 5586 lausanne ch vd')
+        self.assertEqual(resp.json['results'][0]['attrs']['num'], 2)
 
     def test_search_address_with_letters(self):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'Rhonesand 16', 'type': 'locations'}, status=200)
