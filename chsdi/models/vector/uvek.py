@@ -927,7 +927,6 @@ class LuftraeumeBase:
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/luftraeume_fluginformationsgebiet.mako'
     __label__ = u'name'
-    __returnedGeometry__ = 'the_geom_highlight'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     designator = Column('designator', Unicode)
@@ -938,12 +937,13 @@ class LuftraeumeBase:
     upli_type = Column('upli_type', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
-    the_geom_highlight = Column('the_geom_highlight', Geometry2D)
 
 
 class LuftraeumeFluginformationsGebiet(Base, LuftraeumeBase, Vector):
+    __returnedGeometry__ = 'the_geom_highlight'
     __tablename__ = 'luftraeume_fluginformationsgebiet'
     __bodId__ = 'ch.bazl.luftraeume-fluginformationsgebiet'
+    the_geom_highlight = Column('the_geom_highlight', Geometry2D)
 
 register('ch.bazl.luftraeume-fluginformationsgebiet', LuftraeumeFluginformationsGebiet)
 
@@ -956,8 +956,10 @@ register('ch.bazl.luftraeume-fluginformationszonen', LuftraeumeFluginformationsZ
 
 
 class LuftraeumeKontrollBezirke(Base, LuftraeumeBase, Vector):
+    __returnedGeometry__ = 'the_geom_highlight'
     __tablename__ = 'luftraeume_kontrollbezirke'
     __bodId__ = 'ch.bazl.luftraeume-kontrollbezirke'
+    the_geom_highlight = Column('the_geom_highlight', Geometry2D)
 
 register('ch.bazl.luftraeume-kontrollbezirke', LuftraeumeKontrollBezirke)
 
