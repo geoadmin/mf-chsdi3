@@ -255,16 +255,6 @@ class GetCapThemesEn(Base, GetCapThemes):
     __table_args__ = ({'schema': 're3', 'autoload': False})
 
 
-class GetCapThemesIt(Base, GetCapThemes):
-    __tablename__ = 'view_bod_wmts_getcapabilities_themes_it'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
-
-
-class GetCapThemesRm(Base, GetCapThemes):
-    __tablename__ = 'view_bod_wmts_getcapabilities_themes_rm'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
-
-
 class ServiceMetadata(object):
     id = Column('wms_id', Text, primary_key=True)
     pk_map_name = Column('pk_map_name', Text)
@@ -275,8 +265,6 @@ class ServiceMetadata(object):
     fee = Column('fee', Text)
     accessconstraint = Column('accessconstraint', Text)
     encoding = Column('encoding', Text)
-    feature_info_mime_type = Column('feature_info_mime_type', Text)
-    map_projection = Column('map_projection', Text)
     fk_contact_id = Column('fk_contact_id', Integer)
     addresstype = Column('addresstype', Text)
     address = Column('address', Text)
