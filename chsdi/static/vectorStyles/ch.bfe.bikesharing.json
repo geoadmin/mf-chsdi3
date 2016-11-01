@@ -1,0 +1,55 @@
+{
+  "type": "unique",
+  "property": "idSystem",
+  "values": [
+    {
+      "geomType": "point",
+      "value": "11",
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/11.png",
+        "anchor": [0.5, 1]
+      }
+    }, {
+      "geomType": "point",
+      "value": "12",
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/12.png",
+        "anchor": [0.5, 1]
+      }
+    }, {
+      "geomType": "point",
+      "value": "13",
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/13.png",
+        "anchor": [0.5, 1]
+      }
+    }, {
+      "geomType": "point",
+      "value": "14",
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/14.png",
+        "anchor": [0.5, 1]
+      }
+    }, {
+      "geomType": "point",
+      "value": "15",
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/15.png",
+        "anchor": [0.5, 1]
+      }
+    }, {
+      "geomType": "point",
+      "value": "16",
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/16.png",
+        "anchor": [0.5, 1]
+      }
+    }
+  ]
+}

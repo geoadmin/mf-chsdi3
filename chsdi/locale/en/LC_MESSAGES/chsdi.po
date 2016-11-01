@@ -4139,6 +4139,9 @@ msgstr "Abandonment of hydropower"
 msgid "ch.bfe.abgeltung-wasserkraftnutzung.name"
 msgstr "Name"
 
+msgid "ch.bfe.bikesharing"
+msgstr "Bike sharing and bicycle hire"
+
 msgid "ch.bfe.energieforschung"
 msgstr "Cleantech projects"
 

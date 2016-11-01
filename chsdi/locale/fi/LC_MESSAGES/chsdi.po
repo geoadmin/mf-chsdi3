@@ -4139,6 +4139,9 @@ msgstr "Renunzia a forza idraulica"
 msgid "ch.bfe.abgeltung-wasserkraftnutzung.name"
 msgstr "Name"
 
+msgid "ch.bfe.bikesharing"
+msgstr "Bikesharing- und Veloverleihsysteme"
+
 msgid "ch.bfe.energieforschung"
 msgstr "Projects cleantech"
 

@@ -406,6 +406,9 @@ msgstr ""
 msgid "ch.bfe.windenergie-geschwindigkeit_h50"
 msgstr ""
 
+msgid "ch.bfe.bikesharing"
+msgstr ""
+
 msgid "ch.bfe.windenergie-geschwindigkeit_h75"
 msgstr ""
 

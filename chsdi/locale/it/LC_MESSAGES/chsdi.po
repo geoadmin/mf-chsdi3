@@ -4139,6 +4139,9 @@ msgstr "Abbandono dell'idroelettricitá"
 msgid "ch.bfe.abgeltung-wasserkraftnutzung.name"
 msgstr "Nom"
 
+msgid "ch.bfe.bikesharing"
+msgstr "Bikesharing e ciclonoleggio"
+
 msgid "ch.bfe.energieforschung"
 msgstr "Progetti Cleantech"
 
