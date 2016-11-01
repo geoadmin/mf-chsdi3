@@ -3008,6 +3008,93 @@ msgstr "Carte vigilance crues"
 msgid "ch.bafu.hydroweb-warnkarte_regional"
 msgstr "Carte vigilance régionales"
 
+msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen"
+msgstr "Nappes d'eau souterraine karstiques"
+
+msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen.nk_hdyn"
+msgstr "Etat hydrodynamique"
+
+msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen.nk_level"
+msgstr "Position de la nappe karstique"
+
+msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen.nk_type"
+msgstr "Type de nappe karstique"
+
+msgid "ch.bafu.karst-einzugsgebiete"
+msgstr "Bassins d'alimentation karstiques"
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_alt_max"
+msgstr "Altitude maximale [msm]"
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_alt_min"
+msgstr "Altitude minimale [msm]"
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_alt_moy"
+msgstr "Altitude moyenne [msm]"
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_name"
+msgstr "Nom du bassin d’alimentation"
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_surf"
+msgstr "Surface [km2]"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten"
+msgstr "Unités de bassin karstique"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.shape_area"
+msgstr "Surface [km2]"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_alt_max"
+msgstr "Altitude maximale [msm]"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_alt_min"
+msgstr "Altitude minimale [msm]"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_alt_moy"
+msgstr "Altitude moyenne [msm]"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_flux"
+msgstr "Type de drainage"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_type"
+msgstr "Type de surface"
+
+msgid "ch.bafu.karst-quellen_schwinden"
+msgstr "Sources karstiques et pertes"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_exp"
+msgstr "Exploitation"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_name"
+msgstr "Nom"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_qclass"
+msgstr "Classe de débit"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_reg"
+msgstr "Régime"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_type"
+msgstr "Type"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_x"
+msgstr "Coordonnées X"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_y"
+msgstr "Coordonnées Y"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_z"
+msgstr "Coordonnées Z"
+
+msgid "ch.bafu.karst-unterirdische_fliesswege"
+msgstr "Ecoulements souterrains"
+
+msgid "ch.bafu.karst-unterirdische_fliesswege.ei_hdyn"
+msgstr "Etat hydrodynamique"
+
+msgid "ch.bafu.karst-unterirdische_fliesswege.ei_type"
+msgstr "Type d‘écoulement"
+
 msgid "ch.bafu.kt"
 msgstr "OFEV + canton"
 
@@ -3771,7 +3858,7 @@ msgid "ch.bav.haltestellen-oev.reiner_betriebspunkt"
 msgstr "Point d’exploitation simple"
 
 msgid "ch.bav.haltestellen-oev.tuabkuerzung"
-msgstr "ET"
+msgstr "GI"
 
 msgid "ch.bav.haltestellen-oev.verkehrsmittel"
 msgstr "Moyen de transport"

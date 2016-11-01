@@ -3008,6 +3008,93 @@ msgstr "Warnkarte nationale Gewässer"
 msgid "ch.bafu.hydroweb-warnkarte_regional"
 msgstr "Warnkarte regionale Flüsse"
 
+msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen"
+msgstr "Karstwasservorkommen"
+
+msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen.nk_hdyn"
+msgstr "Hydrodynamische Situation"
+
+msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen.nk_level"
+msgstr "Lage Karstwasservorkommen"
+
+msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen.nk_type"
+msgstr "Karstgrundwassertyp"
+
+msgid "ch.bafu.karst-einzugsgebiete"
+msgstr "Karst-Einzugsgebiete"
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_alt_max"
+msgstr "Maximale Höhe [m ü.M.]"
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_alt_min"
+msgstr "Minimale Höhe [m ü.M.]"
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_alt_moy"
+msgstr "Mittlere Höhe [m ü.M.]"
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_name"
+msgstr "Name des Einzugsgebiets"
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_surf"
+msgstr "Fläche [km2]"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten"
+msgstr "Karst-Einzugsgebietseinheiten"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.shape_area"
+msgstr "Fläche [km2]"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_alt_max"
+msgstr "Maximale Höhe [m ü.M.]"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_alt_min"
+msgstr "Minimale Höhe [m ü.M.]"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_alt_moy"
+msgstr "Mittlere Höhe [m ü.M.]"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_flux"
+msgstr "Art der Entwässerung"
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_type"
+msgstr "Art der Oberfläche"
+
+msgid "ch.bafu.karst-quellen_schwinden"
+msgstr "Karstquellen und Schwinden"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_exp"
+msgstr "Nutzung"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_name"
+msgstr "Name"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_qclass"
+msgstr "Schüttungsklasse"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_reg"
+msgstr "Regime"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_type"
+msgstr "Typ"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_x"
+msgstr "X-Koordinate"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_y"
+msgstr "Y-Koordinate"
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_z"
+msgstr "Z-Koordinate"
+
+msgid "ch.bafu.karst-unterirdische_fliesswege"
+msgstr "Unterirdische Fliesswege"
+
+msgid "ch.bafu.karst-unterirdische_fliesswege.ei_hdyn"
+msgstr "Hydrodynamische Situation"
+
+msgid "ch.bafu.karst-unterirdische_fliesswege.ei_type"
+msgstr "Fliesstyp"
+
 msgid "ch.bafu.kt"
 msgstr "BAFU + Kanton"
 
