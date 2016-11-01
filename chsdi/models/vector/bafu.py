@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer
-from sqlalchemy.types import Numeric, Unicode, Float
+from sqlalchemy.types import Numeric, Unicode, Float, SmallInteger
 from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
@@ -25,6 +25,140 @@ class Hydrogeologischekarte100(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrogeologische-karte_100', Hydrogeologischekarte100)
+
+
+class KarstFliesswege(Base, Vector):
+    __tablename__ = 'karst_fliesswege'
+    __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
+    __template__ = 'templates/htmlpopup/karst-unterirdische_fliesswege.mako'
+    __bodId__ = 'ch.bafu.karst-unterirdische_fliesswege'
+    __label__ = 'id'
+    __queryable_attributes__ = ['ei_type', 'ei_hdyn']
+    id = Column('objectid', Integer, primary_key=True)
+    ei_id = Column('ei_id', Unicode)
+    ei_hdyn = Column('ei_hdyn', SmallInteger)
+    ei_type = Column('ei_type', SmallInteger)
+    ei_type_fr = Column('ei_type_fr', Unicode)
+    ei_type_de = Column('ei_type_de', Unicode)
+    ei_type_it = Column('ei_type_it', Unicode)
+    ei_type_en = Column('ei_type_en', Unicode)
+    ei_hdyn_fr = Column('ei_hdyn_fr', Unicode)
+    ei_hdyn_de = Column('ei_hdyn_de', Unicode)
+    ei_hdyn_it = Column('ei_hdyn_it', Unicode)
+    ei_hdyn_en = Column('ei_hdyn_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bafu.karst-unterirdische_fliesswege', KarstFliesswege)
+
+
+class KarstEinzugsgebieteinheiten(Base, Vector):
+    __tablename__ = 'karst_einzugsgebieteinheiten'
+    __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
+    __template__ = 'templates/htmlpopup/karst-einzugsgebietseinheiten.mako'
+    __bodId__ = 'ch.bafu.karst-einzugsgebietseinheiten'
+    __label__ = 'id'
+    __queryable_attributes__ = ['ub_type', 'ub_flux']
+    id = Column('objectid', Integer, primary_key=True)
+    ub_name = Column('ub_name', Unicode)
+    ub_type = Column('ub_type', SmallInteger)
+    ub_flux = Column('ub_flux', SmallInteger)
+    shape_area = Column('shape_area', Numeric)
+    ub_alt_min = Column('ub_alt_min', SmallInteger)
+    ub_alt_moy = Column('ub_alt_moy', SmallInteger)
+    ub_alt_max = Column('ub_alt_max', SmallInteger)
+    ub_type_fr = Column('ub_type_fr', Unicode)
+    ub_type_de = Column('ub_type_de', Unicode)
+    ub_type_it = Column('ub_type_it', Unicode)
+    ub_type_en = Column('ub_type_en', Unicode)
+    ub_flux_fr = Column('ub_flux_fr', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bafu.karst-einzugsgebietseinheiten', KarstEinzugsgebieteinheiten)
+
+
+class KarstGrundwasservorkommen(Base, Vector):
+    __tablename__ = 'karst_grundwasservorkommen'
+    __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
+    __template__ = 'templates/htmlpopup/karst-ausdehnung_grundwasservorkommen.mako'
+    __bodId__ = 'ch.bafu.karst-ausdehnung_grundwasservorkommen'
+    __label__ = 'id'
+    __queryable_attributes__ = ['nk_type', 'nk_level', 'nk_hdyn']
+    id = Column('objectid', Integer, primary_key=True)
+    nk_hdyn = Column('nk_hdyn', SmallInteger)
+    nk_type = Column('nk_type', SmallInteger)
+    nk_level = Column('nk_level', SmallInteger)
+    nk_hdyn_fr = Column('nk_hdyn_fr', Unicode)
+    nk_hdyn_de = Column('nk_hdyn_de', Unicode)
+    nk_hdyn_it = Column('nk_hdyn_it', Unicode)
+    nk_hdyn_en = Column('nk_hdyn_en', Unicode)
+    nk_type_fr = Column('nk_type_fr', Unicode)
+    nk_type_de = Column('nk_type_de', Unicode)
+    nk_type_it = Column('nk_type_it', Unicode)
+    nk_type_en = Column('nk_type_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bafu.karst-ausdehnung_grundwasservorkommen', KarstGrundwasservorkommen)
+
+
+class KarstEinzugsgebiete(Base, Vector):
+    __tablename__ = 'karst_einzugsgebiete'
+    __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
+    __template__ = 'templates/htmlpopup/karst-einzugsgebiete.mako'
+    __bodId__ = 'ch.bafu.karst-einzugsgebiete'
+    __label__ = 'ba_name'
+    __queryable_attributes__ = ['ba_name']
+    __returnedGeometry__ = 'the_geom_highlight'
+    id = Column('objectid', Integer, primary_key=True)
+    ba_id = Column('ba_id', Unicode)
+    ba_name = Column('ba_name', Unicode)
+    ba_alt_min = Column('ba_alt_min', SmallInteger)
+    ba_alt_moy = Column('ba_alt_moy', SmallInteger)
+    ba_alt_max = Column('ba_alt_max', SmallInteger)
+    ba_surf = Column('ba_surf', Numeric)
+    the_geom = Column(Geometry2D)
+    the_geom_highlight = Column('the_geom_highlight', Geometry2D)
+
+register('ch.bafu.karst-einzugsgebiete', KarstEinzugsgebiete)
+
+
+class KarstQuellenschwinden(Base, Vector):
+    __tablename__ = 'karst_quellen_schwinden'
+    __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
+    __template__ = 'templates/htmlpopup/karst-quellen.mako'
+    __bodId__ = 'ch.bafu.karst-quellen_schwinden'
+    __label__ = 'ip_name'
+    __returnedGeometry__ = 'the_geom_highlight'
+    __queryable_attributes__ = ['ip_type', 'ip_name', 'ip_qclass', 'ip_reg', 'ip_exp']
+    id = Column('objectid', Integer, primary_key=True)
+    ip_id = Column('ip_id', Unicode)
+    ip_name = Column('ip_name', Unicode)
+    ip_type = Column('ip_type', SmallInteger)
+    ip_qclass = Column('ip_qclass', SmallInteger)
+    ip_reg = Column('ip_reg', SmallInteger)
+    ip_exp = Column('ip_exp', SmallInteger)
+    ip_type_fr = Column('ip_type_fr', Unicode)
+    ip_type_de = Column('ip_type_de', Unicode)
+    ip_type_it = Column('ip_type_it', Unicode)
+    ip_type_en = Column('ip_type_en', Unicode)
+    ip_qclass_fr = Column('ip_qclass_fr', Unicode)
+    ip_qclass_de = Column('ip_qclass_de', Unicode)
+    ip_qclass_it = Column('ip_qclass_it', Unicode)
+    ip_qclass_en = Column('ip_qclass_en', Unicode)
+    ip_reg_fr = Column('ip_reg_fr', Unicode)
+    ip_reg_de = Column('ip_reg_de', Unicode)
+    ip_reg_it = Column('ip_reg_it', Unicode)
+    ip_reg_en = Column('ip_reg_en', Unicode)
+    ip_exp_fr = Column('ip_exp_fr', Unicode)
+    ip_exp_de = Column('ip_exp_de', Unicode)
+    ip_exp_it = Column('ip_exp_it', Unicode)
+    ip_exp_en = Column('ip_exp_en', Unicode)
+    ip_x = Column('ip_x', Integer)
+    ip_y = Column('ip_y', Integer)
+    ip_z = Column('ip_z', Integer)
+    the_geom = Column(Geometry2D)
+    the_geom_highlight = Column('the_geom_highlight', Geometry2D)
+
+register('ch.bafu.karst-quellen_schwinden', KarstQuellenschwinden)
 
 
 class Vec25_gewaessernetz_2000(Base, Vector):

@@ -268,13 +268,40 @@ msgstr ""
 msgid "ch.swisstopo.swissalti3d.metadata"
 msgstr ""
 
-msgid "ch.swisstopo.digitales-hoehenmodell_25.metadata"
+msgid "ch.swisstopo.swisstlm3d.metadata"
 msgstr ""
 
 msgid "ch.swisstopo.swissbuildings3d_1.metadata"
 msgstr ""
 
-msgid "ch.swisstopo.swisstlm3d.metadata"
+msgid "ch.swisstopo.digitales-hoehenmodell_25.metadata"
+msgstr ""
+
+msgid "ch.bafu.karst-quellen_schwinden"
+msgstr ""
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_type"
+msgstr ""
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_name"
+msgstr ""
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_qclass"
+msgstr ""
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_reg"
+msgstr ""
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_exp"
+msgstr ""
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_x"
+msgstr ""
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_y"
+msgstr ""
+
+msgid "ch.bafu.karst-quellen_schwinden.ip_z"
 msgstr ""
 
 msgid "ch.swisstopo.landeskarte1000_papier.metadata"
@@ -299,6 +326,66 @@ msgid "ch.swisstopo.landeskarte50_papier.metadata"
 msgstr ""
 
 msgid "ch.swisstopo.wanderkarte50_papier.metadata"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebiete"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_name"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_surf"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_alt_min"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_alt_moy"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebiete.ba_alt_max"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_type"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_flux"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.shape_area"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_alt_min"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_alt_moy"
+msgstr ""
+
+msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_alt_max"
+msgstr ""
+
+msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen"
+msgstr ""
+
+msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen.nk_type"
+msgstr ""
+
+msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen.nk_level"
+msgstr ""
+
+msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen.nk_hdyn"
+msgstr ""
+
+msgid "ch.bafu.karst-unterirdische_fliesswege"
+msgstr ""
+
+msgid "ch.bafu.karst-unterirdische_fliesswege.ei_type"
+msgstr ""
+
+msgid "ch.bafu.karst-unterirdische_fliesswege.ei_hdyn"
 msgstr ""
 
 msgid "ch.bfe.meteorologische-vereisung"
