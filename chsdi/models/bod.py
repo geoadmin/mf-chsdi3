@@ -81,7 +81,6 @@ class LayersConfig(Base):
     chargeable = Column('chargeable', Boolean)
     staging = Column('staging', Text)
     wmsLayers = Column('wms_layers', Text)
-    wmsUrl = Column('wms_url', Text)
     updateDelay = Column('geojson_update_delay', Integer)
     geojsonUrlde = Column('geojson_url_de', Text)
     geojsonUrlfr = Column('geojson_url_fr', Text)
@@ -96,7 +95,6 @@ class LayersConfig(Base):
         config = {}
         translate = params.translate
         settings = params.request.registry.settings
-        geodataStaging = settings['geodata_staging']
         wmsHost = settings['wmshost']
         for k in self.__dict__.keys():
             val = self.__dict__[k]
@@ -120,9 +118,7 @@ class LayersConfig(Base):
             del config['singleTile']
 
         if config['type'] == 'wms':
-            if geodataStaging != 'prod':
-                config['wmsUrl'] = make_agnostic(
-                    config['wmsUrl'].replace('wms.geo.admin.ch', wmsHost))
+            config['wmsUrl'] = 'https://%s' % wmsHost
         elif config['type'] == 'geojson':
             api_url = params.request.registry.settings['api_url']
             config['styleUrl'] = make_agnostic(
