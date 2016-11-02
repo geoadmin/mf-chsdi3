@@ -78,12 +78,6 @@ viewer_url = get_viewer_url(request, params)
     <tr><td class="cell-left">${_('tt_lubis_ebkey')}</td>                               <td>${c['featureId']}</td></tr>
     <tr><td class="cell-left">${_('tt_lubis_inventarnummer')}</td>                      <td>${c['attributes']['inventory_number']}</td></tr>
     <tr><td class="cell-left">${_('tt_lubis_Flugdatum')}</td>                           <td>${datum}</td></tr>
-    <tr><td class="cell-left">${_('tt_lubis_originalsize')}</td>                        <td>${c['attributes']['medium_format']}</td></tr>
-    <tr><td class="cell-left">${_('tt_lubis_filesize_mb')}</td>                         <td>${c['attributes']['filesize_mb']} MB</td></tr>
-    <tr><td class="cell-left">${_('tt_lubis_bildpfad')}</td>                            <td>${c['attributes']['filename']}</td></tr>
-    <tr><td class="cell-left">${_('tt_lubis_schraegaufnahmen_stereo_couple')}</td>      <td>${c['attributes']['stereo_couple']}</td></tr>
-    <tr><td class="cell-left">${_('tt_lubis_schraegaufnahmen_x')}</td>                  <td>${c['attributes']['x']}</td></tr>
-    <tr><td class="cell-left">${_('tt_lubis_schraegaufnahmen_y')}</td>                  <td>${c['attributes']['y']}</td></tr>
 
 % if preview_url != "" and image_width != None:
 <tr>
@@ -99,13 +93,71 @@ viewer_url = get_viewer_url(request, params)
 </tr>
 % endif
 
-<tr>
-  <td class="cell-left">${_('tt_lubis_bildorder')}</th>
-  <td>
-    ${c['attributes']['contact'] | br }
-    <br/>
-    ${c['attributes']['contact_email']}
-  </td>
 </tr>
+</%def>
 
+<%def name="extended_info(c, lang)">
+<%
+c['stable_id'] = True
+protocol = request.scheme
+c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
+topic = request.matchdict.get('map')
+lang = request.lang
+
+preview_url = determinePreviewUrl(c['featureId'])
+image_rotation = 0
+wh = h.imagesize_from_metafile(tileUrlBasePath, c['featureId'])
+image_width = wh[0]
+image_height = wh[1]
+datum = date_to_str(c['attributes']['flightdate'])
+params = (
+    image_width,
+    image_height,
+    _('tt_lubis_ebkey'),
+    c['featureId'],
+    'swisstopo',
+    c['layerBodId'],
+    lang,
+    image_rotation)
+viewer_url = get_viewer_url(request, params)
+%>
+
+<title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
+
+<body onload="init()">
+  <table class="table-with-border kernkraftwerke-extended">
+    <tr><th class="cell-left">${_('tt_lubis_ebkey')}</th>                               <td>${c['featureId']}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_inventarnummer')}</th>                      <td>${c['attributes']['inventory_number']}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_Flugdatum')}</th>                           <td>${datum}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_originalsize')}</th>                        <td>${c['attributes']['medium_format']}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_filesize_mb')}</th>                         <td>${c['attributes']['filesize_mb']} MB</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_bildpfad')}</th>                            <td>${c['attributes']['filename']}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_schraegaufnahmen_stereo_couple')}</th>      <td>${c['attributes']['stereo_couple']}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_schraegaufnahmen_x')}</th>                  <td>${c['attributes']['x']}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_schraegaufnahmen_y')}</th>                  <td>${c['attributes']['y']}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_bildorder')}</th>                           <td>${c['attributes']['contact'] | br } <br/>${c['attributes']['contact_email']}</td></tr>
+  </table>
+  <br>
+<div class="chsdi-map-container table-with-border">
+ <iframe src="${''.join((c['baseUrl'], '/embed.html', '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic,'&bgLayer=ch.swisstopo.pixelkarte-grau'))}" width='580' height='300' style="width: 100%;" frameborder='0' style='border:0'></iframe>
+</div>
+  <br>
+% if preview_url != "" and image_width != None:
+<div class="chsdi-map-container table-with-border">
+    <div id="lubismap"></div>
+  </div>
+% endif
+  <script type="text/javascript">
+    function init() {
+% if preview_url != "" and image_width != None:
+     ${lubis_map.init_map(c['featureId'], image_width, image_height, image_rotation, 'lubismap')}
+%endif
+    }
+  </script>
+
+</body>
+</%def>
+
+<%def name="extended_resources(c, lang)">
+  <script type="text/javascript" src="${h.get_loaderjs_url(request)}"></script>
 </%def>

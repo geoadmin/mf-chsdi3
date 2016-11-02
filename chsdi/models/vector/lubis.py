@@ -240,6 +240,7 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     __template__ = 'templates/htmlpopup/lubis_schraegaufnahmen.mako'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_schraegaufnahmen'
     __timeInstant__ = 'bgdi_flugjahr'
+    __extended_info__ = True
     # Composite labels
     __label__ = 'flightdate'
     __queryable_attributes__ = ['id', 'bgdi_flugjahr', 'medium_format']
