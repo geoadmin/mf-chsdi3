@@ -22,6 +22,10 @@ shop_url = request.registry.settings['shop_url']
 <%
 c['stable_id'] = True
 shop_url = request.registry.settings['shop_url']
+protocol = request.scheme
+c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
+topic = request.matchdict.get('map')
+lang = request.lang
 %>
 <title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
 <body onload="init()">
@@ -45,38 +49,10 @@ target="toposhop">Toposhop</a></td></tr>
         <tr><th class="cell-left">${_('tt_firmen_Link ')}</th>              <td><a href="mailto:geodata@swisstopo.ch?subject=${_('tt_firmen_Link ')} ebkey:${c['featureId']}">geodata@swisstopo.ch</a></td></tr>
 % endif
 </table>
-
-  <div class="chsdi-map-container table-with-border" >
-    <div id="map"></div>
-  </div>
-  <script type="text/javascript">
-    function init() {
-      // Create a GeoAdmin Map
-      var map = new ga.Map({
-        // Define the div where the map is placed
-        target: 'map',
-        tooltip: false,
-        view: new ol.View({
-          // Define the default resolution
-          // 10 means that one pixel is 10m width and height
-          // List of resolution of the WMTS layers:
-          // 650, 500, 250, 100, 50, 20, 10, 5, 2.5, 2, 1, 0.5, 0.25, 0.1
-          resolution: 10
-        })
-      });
-      // Create a background layer
-      var lyr1 = ga.layer.create('ch.swisstopo.pixelkarte-grau');
-      // Create an overlay layer
-      var lyr2 = ga.layer.create('${c['layerBodId']}');
-
-      // Add the layers in the map
-      map.addLayer(lyr1);
-      map.addLayer(lyr2);
-
-      map.highlightFeature('${c['layerBodId']}', '${c['featureId']}');
-      map.recenterFeature('${c['layerBodId']}', '${c['featureId']}');
-    }
-  </script>
+  <br>
+<div class="chsdi-map-container table-with-border">
+ <iframe src="${''.join((c['baseUrl'], '/embed.html', '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic,'&bgLayer=ch.swisstopo.pixelkarte-grau'))}" width='580' height='300' style="width: 100%;" frameborder='0' style='border:0'></iframe>
+</div>
 
 </body>
 

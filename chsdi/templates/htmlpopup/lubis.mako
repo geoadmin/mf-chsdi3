@@ -19,7 +19,7 @@ def determinePreviewUrl(ebkey):
         return tileUrlBasePath + '/' + ebkey + '/quickview.jpg'
 
     def getZeroTileUrl(ebkey):
-        return tileUrlBasePath + '/' + ebkey + '/0/0/0.jpg'
+        return tileUrlBasePath + '/' + ebkey + '/1/0/0.jpg'
 
     headers = {'Referer': 'http://admin.ch'}
     url = getPreviewImageUrl(ebkey)
@@ -156,6 +156,10 @@ elif c['layerBodId'] == 'ch.swisstopo.lubis-luftbilder_infrarot':
 else:
     imgtype = 0
 endif
+protocol = request.scheme
+c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
+topic = request.matchdict.get('map')
+lang = request.lang
 
 preview_url = determinePreviewUrl(c['featureId'])
 
@@ -228,52 +232,22 @@ shop_url = request.registry.settings['shop_url']
   </tr>
 % endif
   </table>
-  <div class="chsdi-map-container table-with-border" >
-    <div id="map"></div>
-  </div>
   <br>
-
+<div class="chsdi-map-container table-with-border">
+ <iframe src="${''.join((c['baseUrl'], '/embed.html', '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic,'&bgLayer=ch.swisstopo.pixelkarte-grau'))}" width='580' height='300' style="width: 100%;" frameborder='0' style='border:0'></iframe>
+</div>
+  <br>
 % if preview_url != "" and image_width != None:
-  <span class="chsdi-no-print">${_('tt_luftbilderOL')}<a href="${viewer_url}" target="_blank" alt="Fullscreen">(fullscreen)</a></span>
-  <div class="chsdi-map-container table-with-border">
+  <div class="chsdi-map-container table-with-border" >
     <div id="lubismap"></div>
   </div>
 % endif
-
+  <br>
   <script type="text/javascript">
     function init() {
-      // Create a GeoAdmin Map
-      var map = new ga.Map({
-        // Define the div where the map is placed
-        target: 'map',
-        tooltip: false,
-        view: new ol.View({
-          // Define the default resolution
-          // 10 means that one pixel is 10m width and height
-          // List of resolution of the WMTS layers:
-          // 650, 500, 250, 100, 50, 20, 10, 5, 2.5, 2, 1, 0.5, 0.25, 0.1
-          resolution: 10,
-          // Define a coordinate CH1903 (EPSG:21781) for the center of the view
-          center: [${c['attributes']['x']},${c['attributes']['y']}]
-        })
-      });
-
-      // Create a background layer
-      var lyr1 = ga.layer.create('ch.swisstopo.pixelkarte-grau');
-      // Create an overlay layer
-      var lyr2 = ga.layer.create('${c['layerBodId']}');
-
-      // Add the layers in the map
-      map.addLayer(lyr1);
-      map.addLayer(lyr2);
-
-      map.highlightFeature('${c['layerBodId']}', '${c['featureId']}');
-      map.recenterFeature('${c['layerBodId']}', '${c['featureId']}');
-
 % if preview_url != "" and image_width != None:
      ${lubis_map.init_map(c['featureId'], image_width, image_height, image_rotation, 'lubismap')}
 %endif
-
     }
   </script>
 
