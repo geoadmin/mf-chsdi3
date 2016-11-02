@@ -54,6 +54,33 @@ Geodata
 
 .. _releasenotes_20161026:
 
+Release 20161116 - Wednesday, November 16th 2016
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_161026...r_161116>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_161026...r_161116>`__
+
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------------------+
+| New    | `Bike sharing and bicycle hire <//map.geo.admin.ch/?layers=ch.bfe.bikesharing>`__ (ch.bfe.bikesharing)  |
++--------+---------------------------------------------------------------------------------------------------------+
+
+
+.. _releasenotes_20161026:
+
 Release 20161026 - Wednesday, October 26th 2016
 -------------------------------------------------
 
