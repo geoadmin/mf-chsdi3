@@ -20,6 +20,7 @@ def topics(request):
         'backgroundLayers': q.backgroundLayers,
         'selectedLayers': q.selectedLayers,
         'activatedLayers': q.activatedLayers,
+        'topicGroup': q.topicGroup,
         'plConfig': q.plconf
     } for q in query]
     return {'topics': results}
