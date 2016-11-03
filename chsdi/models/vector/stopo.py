@@ -1898,7 +1898,7 @@ class spannungsarmeGebiete(Base, Vector):
     __label__ = 'sg_name'
     id = Column('identifier', Unicode, primary_key=True)
     sg_name = Column('sg_name', Text)
-    vali_date = Column('vali_date', Text)
+    vali_date = Column('vali_date', DateTimeChsdi)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.transformationsgenauigkeit', spannungsarmeGebiete)
