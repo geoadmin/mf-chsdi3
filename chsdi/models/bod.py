@@ -365,6 +365,7 @@ class Topics(Base):
     staging = Column('staging', Text)
     plconf = Column('permalink_configuration', Text)
     topicGroup = Column('topic_group', Integer)
+    topicFallback = Column('topic_fallback', Text)
 
 
 class Catalog(Base):

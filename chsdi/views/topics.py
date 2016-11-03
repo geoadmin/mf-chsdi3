@@ -21,6 +21,7 @@ def topics(request):
         'selectedLayers': q.selectedLayers,
         'activatedLayers': q.activatedLayers,
         'topicGroup': q.topicGroup,
+        'topicFallback': q.topicFallback,
         'plConfig': q.plconf
     } for q in query]
     return {'topics': results}
