@@ -128,7 +128,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="${h.versioned(request.static_url('chsdi:static/images/favicon.ico'))}">
   </head>
   <body onload="init()">
-    <div class="header">${title}
+    <div class="header">
+      <div class="pull-left">${title}</div>
       <a class="pull-right" href="${geoadminUrl}" target="_blank">${_('link to geoportal')}</a>
     </div>
     <div class="wrapper">
