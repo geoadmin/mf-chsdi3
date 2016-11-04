@@ -200,13 +200,21 @@ class ShopStandardClass:
 
 
 class GravimetrischerAtlasMetadata (Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     __tablename__ = 'view_gridstand_gravimetrie_atlas_metadata_shop'
     __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas.metadata'
     id = Column('s_map_number', Integer, primary_key=True)
 
-
 register('ch.swisstopo.geologie-gravimetrischer_atlas.metadata', GravimetrischerAtlasMetadata)
+
+
+class GravimetrischerAtlasPapierMetadata (Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'view_gridstand_gravimetrie_atlas_metadata_shop'
+    __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata'
+    id = Column('s_map_number', Integer, primary_key=True)
+
+register('ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata', GravimetrischerAtlasPapierMetadata)
 
 
 class Generalkarte300Metadata(Base, ShopProductClass, Vector):
@@ -226,11 +234,19 @@ register('ch.swisstopo.landeskarte500_papier.metadata', Landeskarte500Metadata)
 
 
 class Landeskarte1000Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False, 'extend_existing': True})
     __tablename__ = 'view_gridstand_lk1000'
     __bodId__ = 'ch.swisstopo.lk1000-papierkarte.metadata'
 
 register('ch.swisstopo.lk1000-papierkarte.metadata', Landeskarte1000Metadata)
+
+
+class Landeskarte1000PapierMetadata(Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'view_gridstand_lk1000'
+    __bodId__ = 'ch.swisstopo.landeskarte1000_papier.metadata'
+
+register('ch.swisstopo.landeskarte1000_papier.metadata', Landeskarte1000PapierMetadata)
 
 
 class SegelFlug300Metadata(Base, ShopProductClass, Vector):
@@ -290,8 +306,16 @@ class Icao500Metadata(Base, ShopProductClass, Vector):
 register('ch.swisstopo.icao-papierkarte.metadata', Icao500Metadata)
 
 
+class GrundwasserVulnerabilitaetPapierMetadata(Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'view_gridstand_gkwvul500'
+    __bodId__ = 'ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata'
+
+register('ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata', GrundwasserVulnerabilitaetPapierMetadata)
+
+
 class GrundwasserVulnerabilitaetMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     __tablename__ = 'view_gridstand_gkwvul500'
     __bodId__ = 'ch.swisstopo.gkwvul500-papierkarte.metadata'
 
