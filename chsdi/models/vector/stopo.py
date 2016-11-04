@@ -311,6 +311,14 @@ class GrundwasserVulnerabilitaetPapierMetadata(Base, ShopProductClass, Vector):
 register('ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata', GrundwasserVulnerabilitaetPapierMetadata)
 
 
+class IcaoPapierMetadata(Base, ShopProductClass, Vector):
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __tablename__ = 'icao_papier'
+    __bodId__ = 'ch.swisstopo.luftfahrtkarten-icao_papier.metadata'
+
+register('ch.swisstopo.luftfahrtkarten-icao_papier.metadata', IcaoPapierMetadata)
+
+
 class GrundwasserVulnerabilitaetMetadata(Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     __tablename__ = 'view_gridstand_gkwvul500'
@@ -353,7 +361,7 @@ register('ch.bazl.segelflugkarte', SegelFlug300Digital)
 class ShopProductGroupClass(ShopProductClass):
     __label__ = 'number'
     __queryable_attributes__ = ['number', 'name_de', 'release']
-    number = Column('s_map_label', Unicode)
+    number = Column('s_map_number', Unicode)
     name_de = Column('s_title_de', Unicode)
     name_fr = Column('s_title_fr', Unicode)
     name_it = Column('s_title_it', Unicode)
@@ -376,6 +384,14 @@ class Landeskarte25Metadata(Base, ShopProductGroupClass, Vector):
 register('ch.swisstopo.lk25-papierkarte.metadata', Landeskarte25Metadata)
 
 
+class Landeskarte25PapierMetadata(Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __tablename__ = 'lk25_papier'
+    __bodId__ = 'ch.swisstopo.landeskarte25_papier.metadata'
+
+register('ch.swisstopo.landeskarte25_papier.metadata', Landeskarte25PapierMetadata)
+
+
 class Landeskarte25zusMetadata(Base, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __tablename__ = 'view_gridstand_lk25zus_shop'
@@ -390,6 +406,14 @@ class Landeskarte50Metadata (Base, ShopProductGroupClass, Vector):
     __bodId__ = 'ch.swisstopo.lk50-papierkarte.metadata'
 
 register('ch.swisstopo.lk50-papierkarte.metadata', Landeskarte50Metadata)
+
+
+class Landeskarte50PapierMetadata (Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __tablename__ = 'lk50_papier'
+    __bodId__ = 'ch.swisstopo.landeskarte50_papier.metadata'
+
+register('ch.swisstopo.landeskarte50_papier.metadata', Landeskarte50PapierMetadata)
 
 
 class Landeskarte50zusMetadata(Base, ShopProductGroupClass, Vector):
@@ -409,6 +433,14 @@ class Landeskarte100Metadata(Scale100Metadata):
     __bodId__ = 'ch.swisstopo.lk100-papierkarte.metadata'
 
 register('ch.swisstopo.lk100-papierkarte.metadata', Landeskarte100Metadata)
+
+
+class Landeskarte100PapierMetadata(Base, ShopProductGroupClass, Vector):
+    __tablename__ = 'lk100_papier'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.landeskarte100_papier.metadata'
+
+register('ch.swisstopo.landeskarte100_papier.metadata', Landeskarte100PapierMetadata)
 
 
 class Luftfahrt100Metadata(Scale100Metadata):
@@ -439,6 +471,14 @@ class Wanderkarte50Metadata(Base, ShopProductGroupClass, Vector):
     __bodId__ = 'ch.swisstopo.wk50-papierkarte.metadata'
 
 register('ch.swisstopo.wk50-papierkarte.metadata', Wanderkarte50Metadata)
+
+
+class Wanderkarte50PapierMetadata(Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __tablename__ = 'lkwander50_papier'
+    __bodId__ = 'ch.swisstopo.wanderkarte50_papier.metadata'
+
+register('ch.swisstopo.wanderkarte50_papier.metadata', Wanderkarte50PapierMetadata)
 
 
 class WanderkarteT33Metadata (Base, ShopProductGroupClass, Vector):
@@ -2486,7 +2526,7 @@ class HiksDufourMetadata(Base, ShopStandardClass, Vector):
     __tablename__ = 'view_gridstand_dufour_shop'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-dufour.metadata'
-    number = Column('s_map_label', Unicode)
+    number = Column('s_map_number', Unicode)
     scale = Column('scale', Integer)
     the_geom = Column(Geometry2D)
 
@@ -2497,7 +2537,7 @@ class HiksSiegfriedTa25Metadata(Base, ShopStandardClass, Vector):
     __tablename__ = 'view_gridstand_siegfried_ta25_shop'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta25.metadata'
-    number = Column('s_map_label', Unicode)
+    number = Column('s_map_number', Unicode)
     scale = Column('scale', Integer)
     the_geom = Column(Geometry2D)
 
@@ -2508,7 +2548,7 @@ class HiksSiegfriedTa50Metadata(Base, ShopStandardClass, Vector):
     __tablename__ = 'view_gridstand_siegfried_ta50_shop'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta50.metadata'
-    number = Column('s_map_label', Unicode)
+    number = Column('s_map_number', Unicode)
     scale = Column('scale', Integer)
     the_geom = Column(Geometry2D)
 

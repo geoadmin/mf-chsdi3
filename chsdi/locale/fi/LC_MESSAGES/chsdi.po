@@ -4803,7 +4803,7 @@ msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Charta geol. generala 200"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata"
-msgstr "Charta geol. generala 200"
+msgstr "Divisiun charta geologica generala 200 Raster"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
 msgstr "Autor(en)"
@@ -5390,6 +5390,9 @@ msgstr "Charta naziunala 1:10'000 (colur)"
 msgid "ch.swisstopo.landeskarte-grau-10"
 msgstr "Charta naziunala 1:10'000 (grisch)"
 
+msgid "ch.swisstopo.landeskarte100_papier.metadata"
+msgstr "Divisiun charta naziunala 100 Stampa"
+
 msgid "ch.swisstopo.landeskarte200_papier.metadata"
 msgstr "Divisiun charta naziunala 200 Stampa"
 
@@ -5402,11 +5405,17 @@ msgstr "Nummer"
 msgid "ch.swisstopo.landeskarte200_papier.metadata.release"
 msgstr "Ausgabejahr"
 
+msgid "ch.swisstopo.landeskarte25_papier.metadata"
+msgstr "Divisiun charta naziunala 25 Stampa"
+
 msgid "ch.swisstopo.landeskarte500_papier.metadata"
 msgstr "Divisiun charta naziunala 500 Stampa"
 
 msgid "ch.swisstopo.landeskarte500_papier.metadata.release"
 msgstr "Ausgabejahr"
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata"
+msgstr "Divisiun charta naziunala 50 Stampa"
 
 msgid "ch.swisstopo.landesschwerenetz"
 msgstr "Rait da basa gravimetrica"
@@ -5677,6 +5686,9 @@ msgstr "Numer da maletg"
 
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Ort"
+
+msgid "ch.swisstopo.luftfahrtkarten-icao_papier.metadata"
+msgstr "Divisiun charta aviatica Stampa"
 
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Charta naziunala (colur)"
@@ -5953,6 +5965,9 @@ msgstr "Nummer"
 
 msgid "ch.swisstopo.wanderkarte33_papier.metadata.release"
 msgstr "Ausgabejahr"
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata"
+msgstr "Divisiun charta da viandar 50 Stampa"
 
 msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata"
 msgstr "Charta naziunala 1:50'000 cump."

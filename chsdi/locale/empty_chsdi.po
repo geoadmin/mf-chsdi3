@@ -1,3 +1,18 @@
+msgid "ch.swisstopo.luftfahrtkarten-icao_papier.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte100_papier.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte25_papier.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata"
+msgstr ""
+
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr ""
 

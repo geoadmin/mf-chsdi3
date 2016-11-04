@@ -4803,7 +4803,7 @@ msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Carte géol. générale 200"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata"
-msgstr "Carte géol. générale 200"
+msgstr "Découpage carte géologique générale 200 Raster"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
 msgstr "Auteur(s)"
@@ -5256,7 +5256,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.name_ads"
 msgstr "Localité"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
-msgstr "Cartes géologiques spéciales"
+msgstr "Découpage cartes géologiques spéciales Raster"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata"
 msgstr "Découpage cartes géologiques spéciales Papier"
@@ -5390,6 +5390,9 @@ msgstr "Carte nationale 1:10'000 (couleur)"
 msgid "ch.swisstopo.landeskarte-grau-10"
 msgstr "Carte nationale 1:10'000 (grise)"
 
+msgid "ch.swisstopo.landeskarte100_papier.metadata"
+msgstr "Découpage carte nationale 100 Papier"
+
 msgid "ch.swisstopo.landeskarte200_papier.metadata"
 msgstr "Découpage carte nationale 200 Papier"
 
@@ -5402,11 +5405,17 @@ msgstr "Numéro"
 msgid "ch.swisstopo.landeskarte200_papier.metadata.release"
 msgstr "Édition"
 
+msgid "ch.swisstopo.landeskarte25_papier.metadata"
+msgstr "Découpage carte nationale 25 Papier"
+
 msgid "ch.swisstopo.landeskarte500_papier.metadata"
 msgstr "Découpage carte nationale 500 Papier"
 
 msgid "ch.swisstopo.landeskarte500_papier.metadata.release"
 msgstr "Édition"
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata"
+msgstr "Découpage carte nationale 50 Papier"
 
 msgid "ch.swisstopo.landesschwerenetz"
 msgstr "Réseau de base gravimétrique"
@@ -5677,6 +5686,9 @@ msgstr "No de l'image"
 
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Lieu"
+
+msgid "ch.swisstopo.luftfahrtkarten-icao_papier.metadata"
+msgstr "Découpage cartes aéronautiques OACI Papier"
 
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Cartes nationales (couleur)"
@@ -5953,6 +5965,9 @@ msgstr "Numéro"
 
 msgid "ch.swisstopo.wanderkarte33_papier.metadata.release"
 msgstr "Édition"
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata"
+msgstr "Découpage carte d'excursions 50 Papier"
 
 msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata"
 msgstr "Cartes d'excursions 1:50'000 Ass."
@@ -8601,7 +8616,7 @@ msgid "tt_lubis_rotation"
 msgstr "Rotation"
 
 msgid "tt_lubis_schraegaufnahmen_stereo_couple"
-msgstr "Prise de vue cor-réspondente"
+msgstr "Prise de vue correspondante"
 
 msgid "tt_lubis_schraegaufnahmen_x"
 msgstr "Coordonnée centre X"
