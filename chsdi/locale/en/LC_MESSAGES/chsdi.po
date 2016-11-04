@@ -4803,7 +4803,7 @@ msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "General Geol. Map 200"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata"
-msgstr "General Geol. Map 200"
+msgstr "Division general geological map 200 Raster"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
 msgstr "Author(s)"
@@ -5256,7 +5256,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.name_ads"
 msgstr "Site"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
-msgstr "Special Geological Maps"
+msgstr "Division special geological maps Raster"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata"
 msgstr "Division special geological maps Paper"
@@ -5390,6 +5390,9 @@ msgstr "National Map 1:10'000 (color)"
 msgid "ch.swisstopo.landeskarte-grau-10"
 msgstr "National Map 1:10'000 (grey)"
 
+msgid "ch.swisstopo.landeskarte100_papier.metadata"
+msgstr "Division national map 100 Paper"
+
 msgid "ch.swisstopo.landeskarte200_papier.metadata"
 msgstr "Division national map 200 Paper"
 
@@ -5402,11 +5405,17 @@ msgstr "Number"
 msgid "ch.swisstopo.landeskarte200_papier.metadata.release"
 msgstr "Edition"
 
+msgid "ch.swisstopo.landeskarte25_papier.metadata"
+msgstr "Division national map 25 Paper"
+
 msgid "ch.swisstopo.landeskarte500_papier.metadata"
 msgstr "Division national map 500 Paper"
 
 msgid "ch.swisstopo.landeskarte500_papier.metadata.release"
 msgstr "Edition"
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata"
+msgstr "Division national map 50 Raster"
 
 msgid "ch.swisstopo.landesschwerenetz"
 msgstr "Gravimetric base network"
@@ -5677,6 +5686,9 @@ msgstr "Picture number"
 
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Town"
+
+msgid "ch.swisstopo.luftfahrtkarten-icao_papier.metadata"
+msgstr "Division aeronautical chart ICAO Paper"
 
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "National Maps (color)"
@@ -5953,6 +5965,9 @@ msgstr "Number"
 
 msgid "ch.swisstopo.wanderkarte33_papier.metadata.release"
 msgstr "Edition"
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata"
+msgstr "Division hiking map 50 Paper"
 
 msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata"
 msgstr "Hiking maps 1:50'000 comp."
