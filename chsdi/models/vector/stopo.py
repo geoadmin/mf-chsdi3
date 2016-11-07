@@ -203,7 +203,7 @@ class GravimetrischerAtlasMetadata (Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     __tablename__ = 'view_gridstand_gravimetrie_atlas_metadata_shop'
     __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas.metadata'
-    id = Column('s_map_number', Integer, primary_key=True)
+    id = Column('s_map_label', Integer, primary_key=True)
 
 register('ch.swisstopo.geologie-gravimetrischer_atlas.metadata', GravimetrischerAtlasMetadata)
 
@@ -212,7 +212,7 @@ class GravimetrischerAtlasPapierMetadata (Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     __tablename__ = 'view_gridstand_gravimetrie_atlas_metadata_shop'
     __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata'
-    id = Column('s_map_number', Integer, primary_key=True)
+    id = Column('s_map_label', Integer, primary_key=True)
 
 register('ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata', GravimetrischerAtlasPapierMetadata)
 
@@ -261,7 +261,7 @@ class StrassenKarte200Metadata(Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __tablename__ = 'view_gridstand_stk200'
     __bodId__ = 'ch.swisstopo.strassenkarte200_papier.metadata'
-    id = Column('s_map_number', Integer, primary_key=True)
+    id = Column('s_map_label', Integer, primary_key=True)
 
 register('ch.swisstopo.strassenkarte200_papier.metadata', StrassenKarte200Metadata)
 
@@ -356,7 +356,7 @@ register('ch.bazl.segelflugkarte', SegelFlug300Digital)
 class ShopProductGroupClass(ShopProductClass):
     __label__ = 'number'
     __queryable_attributes__ = ['number', 'name_de', 'release']
-    number = Column('s_map_number', Text)
+    number = Column('s_map_label', Text)
     name_de = Column('s_title_de', Text)
     name_fr = Column('s_title_fr', Text)
     name_it = Column('s_title_it', Text)
@@ -2501,7 +2501,7 @@ class HiksDufourMetadata(Base, ShopStandardClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-dufour.metadata'
     id = Column('bgdi_id', Integer, primary_key=True)
-    number = Column('s_map_number', Unicode)
+    number = Column('s_map_label', Unicode)
     scale = Column('scale', Integer)
     the_geom = Column(Geometry2D)
 
@@ -2513,7 +2513,7 @@ class HiksSiegfriedTa25Metadata(Base, ShopStandardClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta25.metadata'
     id = Column('bgdi_id', Integer, primary_key=True)
-    number = Column('s_map_number', Unicode)
+    number = Column('s_map_label', Unicode)
     scale = Column('scale', Integer)
     the_geom = Column(Geometry2D)
 
@@ -2525,7 +2525,7 @@ class HiksSiegfriedTa50Metadata(Base, ShopStandardClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta50.metadata'
     id = Column('bgdi_id', Integer, primary_key=True)
-    number = Column('s_map_number', Unicode)
+    number = Column('s_map_label', Unicode)
     scale = Column('scale', Integer)
     the_geom = Column(Geometry2D)
 
