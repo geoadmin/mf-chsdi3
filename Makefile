@@ -191,7 +191,7 @@ gdal: .venv
 	then \
 		echo "${GREEN}Installing GDAL...${RESET}"; \
 		mkdir -p $(INSTALL_DIRECTORY)/build && \
-		${PIP_CMD} install --download $(INSTALL_DIRECTORY)/build GDAL==$(GDAL_VERSION) && \
+		${PIP_CMD} download -d $(INSTALL_DIRECTORY)/build GDAL==$(GDAL_VERSION) && \
 		cd $(INSTALL_DIRECTORY)/build && \
 		tar -xzf GDAL-$(GDAL_VERSION).tar.gz && \
 		cd GDAL-$(GDAL_VERSION) && \
