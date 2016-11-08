@@ -349,10 +349,9 @@ requirements.txt:
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install -U pip; \
+		${PIP_CMD} install -U pip setuptools; \
 	fi
-	${PYTHON_CMD} setup.py develop
-	${PIP_CMD} install Pillow==3.1.0
+	${PIP_CMD} install --find-links local_eggs/ -e .
 
 .venv/bin/git-secrets: .venv
 	@echo "${GREEN}Installing git secrets${RESET}";
