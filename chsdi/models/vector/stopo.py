@@ -203,7 +203,6 @@ class GravimetrischerAtlasMetadata (Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     __tablename__ = 'view_gridstand_gravimetrie_atlas_metadata_shop'
     __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas.metadata'
-    id = Column('s_map_label', Integer, primary_key=True)
 
 register('ch.swisstopo.geologie-gravimetrischer_atlas.metadata', GravimetrischerAtlasMetadata)
 
@@ -212,7 +211,6 @@ class GravimetrischerAtlasPapierMetadata (Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     __tablename__ = 'view_gridstand_gravimetrie_atlas_metadata_shop'
     __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata'
-    id = Column('s_map_label', Integer, primary_key=True)
 
 register('ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata', GravimetrischerAtlasPapierMetadata)
 
@@ -261,7 +259,6 @@ class StrassenKarte200Metadata(Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __tablename__ = 'view_gridstand_stk200'
     __bodId__ = 'ch.swisstopo.strassenkarte200_papier.metadata'
-    id = Column('s_map_label', Integer, primary_key=True)
 
 register('ch.swisstopo.strassenkarte200_papier.metadata', StrassenKarte200Metadata)
 
@@ -356,11 +353,11 @@ register('ch.bazl.segelflugkarte', SegelFlug300Digital)
 class ShopProductGroupClass(ShopProductClass):
     __label__ = 'number'
     __queryable_attributes__ = ['number', 'name_de', 'release']
-    number = Column('s_map_label', Text)
-    name_de = Column('s_title_de', Text)
-    name_fr = Column('s_title_fr', Text)
-    name_it = Column('s_title_it', Text)
-    name_en = Column('s_title_en', Text)
+    number = Column('s_map_label', Unicode)
+    name_de = Column('s_title_de', Unicode)
+    name_fr = Column('s_title_fr', Unicode)
+    name_it = Column('s_title_it', Unicode)
+    name_en = Column('s_title_en', Unicode)
 
 
 class SkitourenkarteMetadata(Base, ShopProductGroupClass, Vector):
