@@ -44,6 +44,9 @@ baseUrl = request.registry.settings['api_url']
      padding-top: 5px;
      margin-bottom: 2px;
   }
+  select.form-control {
+    font-size: 12px;
+  }
 </style>
 
 % if type_station == 'Bedienpunkt' :
@@ -141,7 +144,7 @@ $(document).ready(function() {
 </script>
     <br />
     <p><b>${c['attributes']['name'] or '-'}</b>, ${_('ch.bav.haltestellen-oev.next_departures')}:</p>
-    <select id="selectDestination${id}">
+    <select id="selectDestination${id}" class="form-control">
       <option value="all">${_('ch.bav.haltestellen-oev.all_departures')}</option>
     </select>
     <br />
@@ -222,7 +225,7 @@ $(document).ready(function() {
 </%def>
 
 <%def name="extended_resources(c, lang)">
-  <link rel="stylesheet" href="//map.geo.admin.ch/master/2afd257/1610191614/1610191614/style/app.css">
-  <script src="${h.versioned(request.static_url('chsdi:static/js/jquery.min.js'))}"></script>
-  <script src="//map.geo.admin.ch/master/2afd257/1610191614/src/lib/moment-with-customlocales.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
 </%def>
