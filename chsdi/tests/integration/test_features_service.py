@@ -267,6 +267,16 @@ class TestFeaturesView(TestsBase):
     def test_extendedhtmlpopup_noinfo(self):
         self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/extendedHtmlPopup', status=404)
 
+    def test_iframehtmlpopup(self):
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bav.haltestellen-oev/8573140/iframeHtmlPopup', status=200)
+        self.assertEqual(resp.content_type, 'text/html')
+        resp.mustcontain('<script src=')
+
+    def test_htmlpopup_with_iframeservice(self):
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bav.haltestellen-oev/8573140/htmlPopup', status=200)
+        self.assertEqual(resp.content_type, 'text/html')
+        resp.mustcontain('<iframe src=')
+
     def test_cut_all_dataset(self):
         params = {'layers': 'all:ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'}
         resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)

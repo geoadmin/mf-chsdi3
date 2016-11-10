@@ -1,4 +1,4 @@
-html, body, div, span, p, 
+html, body, div, span, p,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 dl, dt, dd, ol, ul, li,
 table, caption, tbody, tfoot, thead, tr, th, td {
@@ -10,7 +10,7 @@ body {
   overflow: auto!important;
 }
 .chsdi-htmlpopup-container {
-  width: 580px; /* size for A4 print */ 
+  width: 580px; /* size for A4 print */
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   margin: auto;
   color: #333333;
@@ -164,7 +164,7 @@ body {
       display: none;
     }
   }
-  
+
   .chsdi-map-container {
     width: 100%;
     height: 300px;
@@ -174,6 +174,47 @@ body {
       position: relative;
       width: 100%;
       height: 100%;
+    }
+  }
+}
+// ****** HTMLPOPUP
+.htmlpopup-container {
+  width: 100%;
+  font-size: 11px;
+
+  span {
+    font-weight: bold;
+  }
+
+  .htmlpopup-header {
+    background-color: #E9E9E9;
+    padding: 7px;
+    margin-bottom: 7px;
+  }
+
+  .htmlpopup-content {
+    padding: 0 7px 7px;
+
+    iframe {
+      border: none;
+    }
+
+    table {
+      font-size: 11px;
+      width: 100%;
+      border: 0;
+
+      td {
+        vertical-align: top;
+      }
+
+      .cell-left {
+        width: 150px;
+      }
+
+      .cell-left-large {
+        width: 320px;
+      }
     }
   }
 }

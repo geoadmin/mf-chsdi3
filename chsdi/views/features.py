@@ -23,7 +23,7 @@ from chsdi.lib.validation.features import (
 from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.validation.identify import IdentifyServiceValidation
 from chsdi.lib.validation.geometryservice import GeometryServiceValidation
-from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d
+from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d, make_geoadmin_url
 from chsdi.lib.exceptions import HTTPBandwidthLimited
 from chsdi.lib.filters import full_text_search
 from chsdi.models.clientdata_dynamodb import get_bucket
@@ -83,11 +83,8 @@ def view_attribute_values_geojson(request):
     return _attributes(request)
 
 
-@view_config(route_name='htmlPopup', renderer='jsonp')
-def htmlpopup(request):
-    params = HtmlPopupServiceValidation(request)
+def _get_feature_info_for_popup(request, params, isExtended=False, isIframe=False):
     feature, vectorModel = next(_get_features(params))
-
     layerModel = get_bod_model(params.lang)
     layer = next(get_layers_metadata_for_params(
         params,
@@ -95,38 +92,58 @@ def htmlpopup(request):
         layerModel,
         layerIds=[params.layerId]
     ))
-    feature.update({'attribution': layer.get('attributes')['dataOwner']})
-    feature.update({'fullName': layer.get('fullName')})
-    feature.update({'extended': False})
+    options = {}
+    if 'feature' in feature:
+        options.update(feature.pop('feature'))
+    else:
+        options.update(feature)
 
-    response = _render_feature_template(vectorModel, feature, request)
+    # Regular html popup don't return a geometry
+    if 'properties' in options:
+        if hasattr(options, 'extra'):
+            options['properties'].update(options['properties'].extra)
+            options['bbox'] = options.extra['bbox']
+        options['attributes'] = options.pop('properties')
+
+    options.update({
+        'featureId': options.get('featureId') or options.get('id'),  # For grid layer
+        'attributes': options['attributes'],
+        'scale': options.get('scale'),
+        'attribution': layer.get('attributes')['dataOwner'],
+        'fullName': layer.get('fullName'),
+        'vectorModel': vectorModel,
+        'isExtended': isExtended,
+        'isIframe': isIframe
+    })
+    return options
+
+
+def _prepare_popup_response(params, request, isExtended=False, isIframe=False):
+    options = _get_feature_info_for_popup(
+        request, params, isExtended=isExtended, isIframe=isIframe)
+    response = _render_feature_template(options, request)
 
     if params.cbName is None:
         return response
     return response.body
+
+
+@view_config(route_name='htmlPopup', renderer='jsonp')
+def htmlpopup(request):
+    params = HtmlPopupServiceValidation(request)
+    return _prepare_popup_response(params, request)
 
 
 @view_config(route_name='extendedHtmlPopup', renderer='jsonp')
 def extendedhtmlpopup(request):
     params = ExtendedHtmlPopupServiceValidation(request)
-    feature, vectorModel = next(_get_features(params))
+    return _prepare_popup_response(params, request, isExtended=True)
 
-    layerModel = get_bod_model(params.lang)
-    layer = next(get_layers_metadata_for_params(
-        params,
-        request.db.query(layerModel),
-        layerModel,
-        layerIds=[params.layerId]
-    ))
-    feature.update({'attribution': layer.get('attributes')['dataOwner']})
-    feature.update({'fullName': layer.get('fullName')})
-    feature.update({'extended': True})
 
-    response = _render_feature_template(vectorModel, feature, request, True)
-
-    if params.cbName is None:
-        return response
-    return response.body
+@view_config(route_name='iframeHtmlPopup', renderer='jsonp')
+def iframeHtmlPopup(request):
+    params = ExtendedHtmlPopupServiceValidation(request)
+    return _prepare_popup_response(params, request, isIframe=True)
 
 
 def _identify_oereb(request):
@@ -369,20 +386,33 @@ def _get_feature_grid(col, row, timestamp, grid, bucket, params):
     return feature, None
 
 
-def _render_feature_template(vectorModel, feature, request, extended=False):
+def _has_extended_info(isExtended, hasExtendedInfo, bodId):
+    if isExtended and not hasExtendedInfo:
+        raise exc.HTTPNotFound('No extended info has been found for %s' % bodId)
+
+
+def _render_feature_template(options, request):
+    # Determine if we should render the extended tooltip or the iframe
+    isExtended = options.get('isExtended')
+    vectorModel = options.get('vectorModel')
     if vectorModel:
-        hasExtendedInfo = True if hasattr(vectorModel, '__extended_info__') else False
-        if extended and not hasExtendedInfo:
-            raise exc.HTTPNotFound('No extended info has been found for %s' % vectorModel.__bodId__)
         template = vectorModel.__template__
+        options['hasExtendedInfo'] = hasattr(vectorModel, '__extended_info__')
     else:
-        layerProperties = get_grid_layer_properties(feature['layerBodId'])
+        # For grid like models
+        layerProperties = get_grid_layer_properties(options['layerBodId'])
         template = layerProperties.get('template')
-        hasExtendedInfo = layerProperties.get('extended')
+        options['hasExtendedInfo'] = layerProperties.get('extended')
+        options['isGridLayer'] = True
+
+    # We can't test earlier, some features may or may not have extended info for
+    # the same layer.
+    _has_extended_info(isExtended, options['hasExtendedInfo'], options['layerBodId'])
+
+    options['baseUrl'] = make_geoadmin_url(request)
     return render_to_response(
         'chsdi:%s' % template, {
-            'feature': feature,
-            'hasExtendedInfo': hasExtendedInfo
+            'c': options
         }, request=request)
 
 

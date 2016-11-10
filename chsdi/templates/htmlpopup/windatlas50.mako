@@ -26,7 +26,7 @@ baseUrl = request.registry.settings['api_url']
 dhm_altitude = int(round(float(getAltitude(baseUrl, center)),0))
 center = '2%s, 1%s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
 
-props = c['properties']
+props = c['attributes']
 %>
 <style>
 .htmlpopup-container {
@@ -59,13 +59,16 @@ props = c['properties']
     </tr>
     <tr>
       <td colspan=2>
-        <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}&iframe=true" width="100%" height="230" frameborder="0" style="border: 0;" scrolling="no"></iframe>
+        <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/iframeHtmlPopup?lang=${lang}" width="100%" height="230" frameborder="0" style="border: 0;" scrolling="no"></iframe>
       </td>
     </tr>
 </%def>
 
+<%def name="iframe_content(c, lang)">
+  ${self.extended_info(c, lang, iframe=True)}
+</%def>
 
-<%def name="extended_info(c, lang)">
+<%def name="extended_info(c, lang, iframe=False)">
 <%
 coordinates = c['geometry']['coordinates'][0]
 bottomLeft = coordinates[0]
@@ -76,7 +79,7 @@ dhm_altitude = int(round(float(getAltitude(baseUrl, center)),0))
 center = '2%s, 1%s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
 altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
 
-props = c['properties']
+props = c['attributes']
 
 freq_total = props['freq_0']    + props['freq_30']
 freq_total += props['freq_60']  + props['freq_90']
@@ -84,13 +87,6 @@ freq_total += props['freq_120'] + props['freq_150']
 freq_total += props['freq_180'] + props['freq_210']
 freq_total += props['freq_240'] + props['freq_270']
 freq_total += props['freq_300'] + props['freq_330']
-
-# gracefully check if url request has get parameter iframe
-try:
-    iframe = request.GET['iframe'] if request.GET['iframe'] else False
-except:
-    iframe=False
-    pass
 
 %>
 <!-- html output -->
@@ -523,7 +519,7 @@ var arc = d3.svg.arc()
 //svg definieren
 var svg = d3.select("#rose").append("svg")
 % if iframe:
-    .attr("width", width + 58) 
+    .attr("width", width + 58)
 % else:
     .attr("width", width + 48 + 140) //+140 damit rechts noch Legende Platz hat
 % endif
