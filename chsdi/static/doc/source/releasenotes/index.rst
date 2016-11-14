@@ -16,6 +16,7 @@ Release Notes
 
 
 .. _releasenotes_20161116:
+*******
 
 Release 20161116 - Wednesday, November 16th 2016
 -------------------------------------------------
@@ -49,35 +50,6 @@ Geodata
 | Update | `Energy Cities on the Path 2000-Watt <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-2000watt-aufdemweg>`__ (ch.bfe.energiestaedte-2000watt-aufdemweg)    |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Energy-Regions <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-energieregionen>`__ (ch.bfe.energiestaedte-energieregionen)                               |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-.. _releasenotes_20161026:
-
-Release 20161116 - Wednesday, November 16th 2016
--------------------------------------------------
-
-API & applications
-******************
-
-`API <//api3.geo.admin.ch>`__
-'''''''''''''''''''''''''''''
-- Bug Fixes
-- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_161026...r_161116>`__
-
-
-`MAP <//map.geo.admin.ch>`__
-'''''''''''''''''''''''''''''
-- Bug Fixes
-- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_161026...r_161116>`__
-
-
-Geodata
-*******
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Bike sharing and bicycle hire <//map.geo.admin.ch/?layers=ch.bfe.bikesharing>`__ (ch.bfe.bikesharing)                                                      |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Solar energy: suitability of roofs <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-daecher&topic=energie>`__ (ch.bfe.solarenergie-eignung-daecher) |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
