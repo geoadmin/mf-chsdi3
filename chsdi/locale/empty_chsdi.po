@@ -2949,9 +2949,6 @@ msgstr ""
 msgid "ch.bakom.anschlussart-kupferdraht"
 msgstr ""
 
-msgid "ch.bazl.points-of-interest"
-msgstr ""
-
 msgid "ch.bafu.moose"
 msgstr ""
 
@@ -2989,9 +2986,6 @@ msgid "ch.swisstopo.geoidmodell-ch1903"
 msgstr ""
 
 msgid "ch.blw.bergprodukte"
-msgstr ""
-
-msgid "ch.bazl.heliports-gebirgslandeplaetze"
 msgstr ""
 
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone"
