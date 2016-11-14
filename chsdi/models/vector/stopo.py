@@ -191,7 +191,7 @@ class ShopProductClass:
 
 class ShopStandardClass:
     __template__ = 'templates/htmlpopup/shop_product.mako'
-    pk_product = Column('pk_product', Text)
+    id = Column('pk_product', Unicode, primary_key=True)
     available = Column('available', Boolean)
     name_de = Column('s_title_de', Text)
     name_fr = Column('s_title_fr', Text)
@@ -964,7 +964,6 @@ class GridstandPK25Perimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_pk25'
     __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk25.noscale'
     __table_args__ = ({'autoload': False})
-    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 
@@ -986,7 +985,6 @@ class GridstandPK50Perimeter(Base, ShopStandardClass, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk50.noscale'
     __totalArea__ = 65520.0
     __table_args__ = ({'autoload': False})
-    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 
@@ -1005,7 +1003,6 @@ class GridstandPK100Perimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_pk100'
     __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk100.noscale'
     __table_args__ = ({'autoload': False})
-    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 
@@ -1024,7 +1021,6 @@ class GridstandPK200Perimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_pk200'
     __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk200.noscale'
     __table_args__ = ({'autoload': False})
-    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 
@@ -1076,7 +1072,6 @@ class SwissimageProduct(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_swissimage'
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __bodId__ = 'ch.swisstopo.swissimage-product'
-    id = Column('min', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 
@@ -2404,7 +2399,6 @@ class SwissTLM3dPerimeter(Base, ShopStandardClass, Vector):
     __table_args__ = ({'autoload': False})
     __bodId__ = 'ch.swisstopo.swisstlm3d-karte-farbe'
     __totalArea__ = 41455.0
-    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swisstlm3d-karte-farbe', SwissTLM3dPerimeter)
@@ -2415,7 +2409,6 @@ class SwissAlti3dPerimeter(Base, ShopStandardClass, Vector):
     __table_args__ = ({'autoload': False})
     __bodId__ = 'ch.swisstopo.swissalti3d-reliefschattierung'
     __totalArea__ = 41455.0
-    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissalti3d-reliefschattierung', SwissAlti3dPerimeter)
@@ -2425,7 +2418,6 @@ class DHM25(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_dhm25'
     __table_args__ = ({'autoload': False})
     __bodId__ = 'ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'
-    id = Column('grat25', Unicode, primary_key=True)
     the_geom = Column(Geometry2D)
 
 
@@ -2445,7 +2437,6 @@ class spotMosaicPerimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'view_gridstand_spot5_metadata'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.images-spot-5.metadata'
-    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.images-spot-5.metadata', spotMosaicPerimeter)
@@ -2455,7 +2446,6 @@ class SwissBuildings3d2Perimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_swissbuilding3d_2'
     __table_args__ = ({'autoload': False})
     __bodId__ = 'ch.swisstopo.swissbuildings3d_2.metadata'
-    id = Column('id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissbuildings3d_2.metadata', SwissBuildings3d2Perimeter)
@@ -2466,7 +2456,6 @@ class SwissBuildings3dPerimeter(Base, ShopStandardClass, Vector):
     __table_args__ = ({'autoload': False})
     __bodId__ = 'ch.swisstopo.swissbuildings3d'
     __totalArea__ = 41455.0
-    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissbuildings3d', SwissBuildings3dPerimeter)
@@ -2497,7 +2486,6 @@ class HiksDufourMetadata(Base, ShopStandardClass, Vector):
     __tablename__ = 'view_gridstand_dufour_shop'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-dufour.metadata'
-    id = Column('bgdi_id', Integer, primary_key=True)
     number = Column('s_map_label', Unicode)
     scale = Column('scale', Integer)
     the_geom = Column(Geometry2D)
@@ -2509,7 +2497,6 @@ class HiksSiegfriedTa25Metadata(Base, ShopStandardClass, Vector):
     __tablename__ = 'view_gridstand_siegfried_ta25_shop'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta25.metadata'
-    id = Column('bgdi_id', Integer, primary_key=True)
     number = Column('s_map_label', Unicode)
     scale = Column('scale', Integer)
     the_geom = Column(Geometry2D)
@@ -2521,7 +2508,6 @@ class HiksSiegfriedTa50Metadata(Base, ShopStandardClass, Vector):
     __tablename__ = 'view_gridstand_siegfried_ta50_shop'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta50.metadata'
-    id = Column('bgdi_id', Integer, primary_key=True)
     number = Column('s_map_label', Unicode)
     scale = Column('scale', Integer)
     the_geom = Column(Geometry2D)
