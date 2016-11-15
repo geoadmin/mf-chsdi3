@@ -53,6 +53,14 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Low distortion area <//map.geo.admin.ch/?layers=ch.swisstopo-vd.spannungsarme-gebiete>`__ (ch.swisstopo-vd.spannungsarme-gebiete)                          |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Slope classes over 30° <//map.geo.admin.ch/?layers=ch.swisstopo.hangneigung-ueber_30>`__ (ch.swisstopo.hangneigung-ueber_30)                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Slope over 30° <//map.geo.admin.ch/?layers=ch.swisstopo-karto.hangneigung>`__ (ch.swisstopo-karto.hangneigung)                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20161026:
@@ -717,7 +725,7 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Division of Hydrogeological Map: Vulnerability of Groundwater Resources 1:500000 <//map.geo.admin.ch/?layers=ch.swisstopo.gkwvul500-papierkarte.metadata>`__ (ch.swisstopo.gkwvul500-papierkarte.metadata)|
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Paper Map: Aeronautical Map of Switzerland 1:500'000 <//map.geo.admin.ch/?layers=ch.swisstopo.icao-papierkarte.metadata>`__ (ch.swisstopo.icao-papierkarte.metadata)                                      |
+| New    | `Division aeronautical chart ICAO Paper <//map.geo.admin.ch/?layers=ch.swisstopo.luftfahrtkarten-icao_papier.metadata>`__ (ch.swisstopo.luftfahrtkarten-icao_papier.metadata)                              |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Div. of Grav. Map (Bouguer) 1:500000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata>`__ (ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata)|
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -725,39 +733,29 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Division of Geological Map 1:500000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologische_karte_papier.metadata>`__ (ch.swisstopo.geologie-geologische_karte_papier.metadata)                     |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Paper Map: Area Chart ICAO Zurich / Geneva 1:250'000 <//map.geo.admin.ch/?layers=ch.swisstopo.area-papierkarte.metadata>`__ (ch.swisstopo.area-papierkarte.metadata)                                      |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Printed Map: Road Map 1:200'000 <//map.geo.admin.ch/?layers=ch.swisstopo.strassenkarte200_papier.metadata>`__ (ch.swisstopo.strassenkarte200_papier.metadata)                                             |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Paper Map: Castles map of Switzerland 1:200'000 <//map.geo.admin.ch/?layers=ch.swisstopo.burgenkarte200_papier.metadata>`__ (ch.swisstopo.burgenkarte200_papier.metadata)                                 |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Paper map: Hiking Maps 1:33'333 <//map.geo.admin.ch/?layers=ch.swisstopo.wanderkarte33_papier.metadata>`__ (ch.swisstopo.wanderkarte33_papier.metadata)                                                   |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Paper map: National Map 1:50'000 <//map.geo.admin.ch/?layers=ch.swisstopo.lk50-papierkarte.metadata>`__ (ch.swisstopo.lk50-papierkarte.metadata)                                                          |
+| New    | `Division national map 50 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte50_papier.metadata>`__ (ch.swisstopo.landeskarte50_papier.metadata)                                                   |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Paper map: National Map 1:100'000 <//map.geo.admin.ch/?layers=ch.swisstopo.lk100-papierkarte.metadata>`__ (ch.swisstopo.lk100-papierkarte.metadata)                                                       |
+| New    | `Division national map 100 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte100_papier.metadata>`__ (ch.swisstopo.landeskarte100_papier.metadata)                                                 |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Paper map: General Map 1:300'000 <//map.geo.admin.ch/?layers=ch.swisstopo.generalkarte300_papier.metadata>`__ (ch.swisstopo.gk300-papierkarte.metadata)                                                   |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Paper map: Composites Hiking Maps 1:50'000 <//map.geo.admin.ch/?layers=ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata>`__ (ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata)                |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Paper Map: Hiking Map Serie "T" 1:50'000 <//map.geo.admin.ch/?layers=ch.swisstopo.wk50-papierkarte.metadata>`__ (ch.swisstopo.wk50-papierkarte.metadata)                                                  |
+| New    | `Division hiking map 50 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.wanderkarte50_papier.metadata>`__ (ch.swisstopo.wanderkarte50_papier.metadata)                                                      |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Paper map: Composites Hiking Maps 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.wanderkarte25-zus_papier.metadata>`__ (ch.swisstopo.wanderkarte25-zus_papier.metadata)                                |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Paper Map: Glider Chart Switzerland 1:300'000 <//map.geo.admin.ch/?layers=ch.swisstopo.segelflugkarte_papier.metadata>`__ (ch.swisstopo.segelflugkarte_papier.metadata)                                   |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Paper map: Composites National Map 1:50'000 <//map.geo.admin.ch/?layers=ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata>`__ (ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata)               |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Paper map: National Map 1:500'000 <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte500_papier.metadata>`__ (ch.swisstopo.landeskarte500_papier.metadata)                                               |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Paper map: Composites National Map 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata>`__ (ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata)               |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Paper map: National Map 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.lk25-papierkarte.metadata>`__ (ch.swisstopo.lk25-papierkarte.metadata)                                                          |
+| New    | `Division national map 25 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte25_papier.metadata>`__ (ch.swisstopo.landeskarte25_papier.metadata)                                                    |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Paper map: National Map 1:200'000 <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte200_papier.metadata>`__ (ch.swisstopo.landeskarte200_papier.metadata)                                               |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Paper map: Composites National Map 1:100'000 <//map.geo.admin.ch/?layers=ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata>`__ (ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata)            |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Paper map: National Map 1:1'000'000  <//map.geo.admin.ch/?layers=ch.swisstopo.lk1000-papierkarte.metadata>`__ (ch.swisstopo.lk1000-papierkarte.metadata)                                                  |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
