@@ -4025,9 +4025,6 @@ msgstr "ICAO"
 msgid "ch.bazl.gebirgslandeplaetze.name"
 msgstr "Name"
 
-msgid "ch.bazl.heliports-gebirgslandeplaetze"
-msgstr "Heliports/mountain landing sites"
-
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze"
 msgstr "Polluted sites civil aerodromes"
 
@@ -4102,9 +4099,6 @@ msgstr "Aeronautical Chart ICAO"
 
 msgid "ch.bazl.luftfahrtkarten-icao.release"
 msgstr "Edition"
-
-msgid "ch.bazl.points-of-interest"
-msgstr "Points of interest"
 
 msgid "ch.bazl.projektierungszonen-flughafenanlagen"
 msgstr "Planning zones: airports"
@@ -4227,7 +4221,7 @@ msgid "ch.bfe.meteorologische-vereisung.hoehe"
 msgstr "Height above ground"
 
 msgid "ch.bfe.meteorologische-vereisung.vereisung"
-msgstr "Icing Frequency"
+msgstr "Icing Frequency [days per year]"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "SP Deep Geol. Repositories"
@@ -4803,7 +4797,7 @@ msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "General Geol. Map 200"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata"
-msgstr "General Geol. Map 200"
+msgstr "Division general geological map 200 Raster"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
 msgstr "Author(s)"
@@ -5256,7 +5250,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.name_ads"
 msgstr "Site"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
-msgstr "Special Geological Maps"
+msgstr "Division special geological maps Raster"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata"
 msgstr "Division special geological maps Paper"
