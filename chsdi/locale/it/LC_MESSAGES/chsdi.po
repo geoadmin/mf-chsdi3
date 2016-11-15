@@ -4649,6 +4649,36 @@ msgstr "Itinerari di sci"
 msgid "ch.swisstopo-vd"
 msgstr "Misurazione Ufficiale Svizzera"
 
+msgid "ch.swisstopo-vd.amtliche-vermessung"
+msgstr "RF-plan"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.itf"
+msgstr "Download Interlis-File (Comune)"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.noitf"
+msgstr "Interlis-File non disponibile"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.nopdf"
+msgstr "PDF non disponibile"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.noshape"
+msgstr "Shape-File non disponibile"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.pdf"
+msgstr "Estratto «Piano di situa-zione»"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.shape"
+msgstr "Download Shape-File (Comune)"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waititf"
+msgstr "Preparazione del Interlis-File"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waitpdf"
+msgstr "Attendere mentre il documento viene preparato per la Download..."
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waitshape"
+msgstr "Preparazione del Shape-File"
+
 msgid "ch.swisstopo-vd.geometa-gemeinde"
 msgstr "Informazioni sul Comune"
 

@@ -9100,3 +9100,33 @@ msgstr ""
 
 msgid "ch.bafu.hydrogeologie-markierversuche.y"
 msgstr ""
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.pdf"
+msgstr ""
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waitpdf"
+msgstr ""
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.nopdf"
+msgstr ""
+
+msgid "ch.swisstopo-vd.amtliche-vermessung"
+msgstr ""
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.shape"
+msgstr ""
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waitshape"
+msgstr ""
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.noshape"
+msgstr ""
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.itf"
+msgstr ""
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waititf"
+msgstr ""
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.noitf"
+msgstr ""

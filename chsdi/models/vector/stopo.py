@@ -612,10 +612,25 @@ class CadastralWebMap(Base, Vector):
     __bodId__ = 'ch.kantone.cadastralwebmap-farbe'
     __label__ = 'ak'
     id = Column('kantonsnr', Integer, primary_key=True)
-    ak = Column('ak', Text)
+    ak = Column('ak', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.kantone.cadastralwebmap-farbe', CadastralWebMap)
+
+
+class CadastralWebMapOpenData(Base, Vector):
+    __tablename__ = 'swissboundaries_gemeinden_vd_opendata'
+    __table_args__ = ({'schema': 'tlm', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/cadastralwebmap_opendata.mako'
+    __bodId__ = 'ch.swisstopo-vd.amtliche-vermessung'
+    __label__ = 'name'
+    __extended_info__ = True
+    id = Column('bfsnr', Integer, primary_key=True)
+    ak = Column('ak', Unicode)
+    name = Column('name', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo-vd.amtliche-vermessung', CadastralWebMapOpenData)
 
 
 class Vec200Terminal(Base, Vector):

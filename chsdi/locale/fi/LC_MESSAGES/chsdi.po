@@ -4649,6 +4649,36 @@ msgstr "Rutas da skis"
 msgid "ch.swisstopo-vd"
 msgstr "Mesiraziun Uffiziala Svizra"
 
+msgid "ch.swisstopo-vd.amtliche-vermessung"
+msgstr "GB-Plan"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.itf"
+msgstr "Download Interlis-File (Gemeinde)"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.noitf"
+msgstr "Interlis-File betg a disposiziun"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.nopdf"
+msgstr "PDF betg a disposiziun"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.noshape"
+msgstr "Shape-File betg a disposiziun"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.pdf"
+msgstr "Auszug «Situationsplan»"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.shape"
+msgstr "Download Shape-File (Gemeinde)"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waititf"
+msgstr "Vorbereitung des Interlis-File"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waitpdf"
+msgstr "Bitte warten Sie, während das Dokument zum Download vorbereitet wird ..."
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waitshape"
+msgstr "Vorbereitung des Shape-File"
+
 msgid "ch.swisstopo-vd.geometa-gemeinde"
 msgstr "Infurmaziuns vischnanca"
 
