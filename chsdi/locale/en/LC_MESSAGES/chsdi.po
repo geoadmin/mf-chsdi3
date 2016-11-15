@@ -4649,6 +4649,36 @@ msgstr "Ski routes"
 msgid "ch.swisstopo-vd"
 msgstr "Cadastral Surveying Switzerland"
 
+msgid "ch.swisstopo-vd.amtliche-vermessung"
+msgstr "GB-Plan"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.itf"
+msgstr "Download Interlis-File (Commune)"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.noitf"
+msgstr "Interlis-File not available"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.nopdf"
+msgstr "PDF not available"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.noshape"
+msgstr "Shape-File not available"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.pdf"
+msgstr "Extract «General plan of location»"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.shape"
+msgstr "Download Shape-File (Commune)"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waititf"
+msgstr "Preparing Interlis-File"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waitpdf"
+msgstr "Please wait until your document is ready for download ... "
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waitshape"
+msgstr "Preparing Shape-File"
+
 msgid "ch.swisstopo-vd.geometa-gemeinde"
 msgstr "Information about Municipality"
 

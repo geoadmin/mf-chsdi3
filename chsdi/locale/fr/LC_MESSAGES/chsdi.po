@@ -4649,6 +4649,36 @@ msgstr "Itinéraires à ski"
 msgid "ch.swisstopo-vd"
 msgstr "Mensuration Officielle Suisse"
 
+msgid "ch.swisstopo-vd.amtliche-vermessung"
+msgstr "RF-plan"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.itf"
+msgstr "Download Interlis-File (Commune)"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.noitf"
+msgstr "Interlis-File pas disponible"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.nopdf"
+msgstr "PDF pas disponible"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.noshape"
+msgstr "Shape-File pas disponible"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.pdf"
+msgstr "Extrait «Plan de situation»"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.shape"
+msgstr "Download Shape-File (Commune)"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waititf"
+msgstr "Préparation du Interlis-File"
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waitpdf"
+msgstr "Veuillez patienter pendant la préparation de ce document pour le téléchargement..."
+
+msgid "ch.swisstopo-vd.amtliche-vermessung.waitshape"
+msgstr "Préparation du Shape-File"
+
 msgid "ch.swisstopo-vd.geometa-gemeinde"
 msgstr "Informations sur la commune"
 
