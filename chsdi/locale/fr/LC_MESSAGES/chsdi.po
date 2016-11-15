@@ -4025,9 +4025,6 @@ msgstr "OACI"
 msgid "ch.bazl.gebirgslandeplaetze.name"
 msgstr "Nom"
 
-msgid "ch.bazl.heliports-gebirgslandeplaetze"
-msgstr "Héliports/places d'atterr. en mtgne"
-
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze"
 msgstr "Sites pollués aérodromes civils"
 
@@ -4102,9 +4099,6 @@ msgstr "Carte aéronautique OACI"
 
 msgid "ch.bazl.luftfahrtkarten-icao.release"
 msgstr "Édition"
-
-msgid "ch.bazl.points-of-interest"
-msgstr "Points d'intérêt"
 
 msgid "ch.bazl.projektierungszonen-flughafenanlagen"
 msgstr "Zones réservées: aéroports"
@@ -4227,7 +4221,7 @@ msgid "ch.bfe.meteorologische-vereisung.hoehe"
 msgstr "Hauteur au-dessus du niveau du sol"
 
 msgid "ch.bfe.meteorologische-vereisung.vereisung"
-msgstr "Fréquence de givrage"
+msgstr "Fréquence de givrage [Jours par année]"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "PS Dépôts couches géol. profondes"
