@@ -900,10 +900,10 @@ Example
 
 .. image:: https://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg
 
-* An OpenLayers3 application using the `pseudo-Mercator projection <../examples/ol3_mercator.html>`_
-* An OpenLayers3 example showing the `Cadastralwebmap as WMTS <../examples/cadastralwebmap.html>`_
-* Switzerland is now adopting the new `LV95 frame <../examples/ol3_lv95.html>`_.
-* All `available layers as WMTS <../examples/ol3_lv95_all.html>`_.
+* An OpenLayers3 application using the `pseudo-Mercator projection <http://codepen.io/geoadmin/pen/pyzwwL?editors=0010>`_
+* An OpenLayers3 example showing the `Cadastralwebmap as WMTS <http://codepen.io/geoadmin/pen/xVKLdV?editors=0010>`_
+* Switzerland is now adopting the new `LV95 frame <http://codepen.io/geoadmin/pen/GZKEam?editors=0010>`_.
+* All `available layers as WMTS <http://codepen.io/geoadmin/pen/MyYYXR?editors=0010>`_.
 
 .. _cacheupdate_description:
 
