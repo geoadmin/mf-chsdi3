@@ -558,27 +558,27 @@ API & applications
 
 Geodata
 *******
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Wind speed 50 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h50>`__ (ch.bfe.windenergie-geschwindigkeit_h50)                         |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Wind speed 75 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h75>`__ (ch.bfe.windenergie-geschwindigkeit_h75)                         |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Wind speed 100 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h100>`__ (ch.bfe.windenergie-geschwindigkeit_h100)                      |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Wind speed 125 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h125>`__ (ch.bfe.windenergie-geschwindigkeit_h125)                      |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Wind speed 150 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h150>`__ (ch.bfe.windenergie-geschwindigkeit_h150)                      |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Gravimetric Atlas 100 - paper <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas.metadata>`__ (ch.swisstopo.geologie-gravimetrischer_atlas.metadata) |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                 |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `SÜL Anhörung <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)                          |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `SP Übertragungsleitungen <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)                      |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                           |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 50 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h50>`__ (ch.bfe.windenergie-geschwindigkeit_h50)                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 75 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h75>`__ (ch.bfe.windenergie-geschwindigkeit_h75)                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 100 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h100>`__ (ch.bfe.windenergie-geschwindigkeit_h100)                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 125 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h125>`__ (ch.bfe.windenergie-geschwindigkeit_h125)                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind speed 150 metres above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h150>`__ (ch.bfe.windenergie-geschwindigkeit_h150)                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Gravimetric Atlas 100 - paper <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata>`__ (ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata) |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SÜL Anhörung <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Übertragungsleitungen <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20160427:
 
@@ -723,7 +723,7 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Div. of Hydrogeol. Map: Groundwater Res. 1:500000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-grundwasservorkommen_papier.metadata>`__ (ch.swisstopo.geologie-grundwasservorkommen_papier.metadata) |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Division of Hydrogeological Map: Vulnerability of Groundwater Resources 1:500000 <//map.geo.admin.ch/?layers=ch.swisstopo.gkwvul500-papierkarte.metadata>`__ (ch.swisstopo.gkwvul500-papierkarte.metadata)|
+| New    | `Div grundwater vulnerability 500 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata>`__ (ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata)|
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Division aeronautical chart ICAO Paper <//map.geo.admin.ch/?layers=ch.swisstopo.luftfahrtkarten-icao_papier.metadata>`__ (ch.swisstopo.luftfahrtkarten-icao_papier.metadata)                              |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -757,7 +757,7 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Paper map: National Map 1:200'000 <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte200_papier.metadata>`__ (ch.swisstopo.landeskarte200_papier.metadata)                                               |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Paper map: National Map 1:1'000'000  <//map.geo.admin.ch/?layers=ch.swisstopo.lk1000-papierkarte.metadata>`__ (ch.swisstopo.lk1000-papierkarte.metadata)                                                  |
+| New    | `Division national map 100 Paper  <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte1000_papier.metadata>`__ (ch.swisstopo.landeskarte1000_papier.metadata)                                              |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Accidents per inhabitant - Alcohol <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_alkohol>`__ (ch.astra.schwerverunfallte-kanton_alkohol)                                                  |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3387,7 +3387,7 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Number of connection providers <//map3.geo.admin.ch/?layers=ch.bakom.anbieter-eigenes_festnetz>`__ (ch.bakom.anbieter-eigenes_festnetz)                                                                |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Division of the Gravimetric Atlas of Switzerland 1:100000 <//map3.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas.metadata>`__  (ch.swisstopo.geologie-gravimetrischer_atlas.metadata)|
+| New    | `Division gravimetric atlas 100 Paper <//map3.geo.admin.ch/?layers=ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata>`__  (ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata)       |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Listing all publicly available layers of the Geoadmin API :
