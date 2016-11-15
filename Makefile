@@ -38,7 +38,7 @@ PYTHON_CMD := $(INSTALL_DIRECTORY)/bin/python
 SPHINX_CMD := $(INSTALL_DIRECTORY)/bin/sphinx-build
 
 # Linting rules
-PEP8_IGNORE := "E128,E221,E241,E251,E272,E501,E711,E731"
+PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731"
 
 # E128: continuation line under-indented for visual indent
 # E221: multiple spaces before operator
