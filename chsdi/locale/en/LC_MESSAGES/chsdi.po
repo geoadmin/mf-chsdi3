@@ -5219,11 +5219,17 @@ msgstr "Number"
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.release"
 msgstr "Edition"
 
+msgid "ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata"
+msgstr "Division gravimetric atlas 100 Paper"
+
 msgid "ch.swisstopo.geologie-grundwasservorkommen_papier.metadata"
 msgstr "Division grundwater resources 500 Paper"
 
 msgid "ch.swisstopo.geologie-grundwasservorkommen_papier.metadata.release"
 msgstr "Edition"
+
+msgid "ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata"
+msgstr "Division grundwater vulnerability 500 Paper"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Groundwater Resources 500"
@@ -5383,6 +5389,9 @@ msgstr "National Map 1:10'000 (color)"
 
 msgid "ch.swisstopo.landeskarte-grau-10"
 msgstr "National Map 1:10'000 (grey)"
+
+msgid "ch.swisstopo.landeskarte1000_papier.metadata"
+msgstr "Division national map 100 Paper"
 
 msgid "ch.swisstopo.landeskarte100_papier.metadata"
 msgstr "Division national map 100 Paper"
