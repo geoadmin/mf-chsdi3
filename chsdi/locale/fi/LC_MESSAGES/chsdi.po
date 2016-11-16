@@ -5390,8 +5390,8 @@ msgstr "Charta naziunala 1:10'000 (colur)"
 msgid "ch.swisstopo.landeskarte-grau-10"
 msgstr "Charta naziunala 1:10'000 (grisch)"
 
-msgid "ch.swisstopo.landeskarte100_papier.metadata"
-msgstr "Divisiun charta naziunala 100 Stampa"
+msgid "ch.swisstopo.landeskarte1000_papier.metadata"
+msgstr "Divisiun charta naziunala 1000 Stampa"
 
 msgid "ch.swisstopo.landeskarte100_papier.metadata"
 msgstr "Divisiun charta naziunala 100 Stampa"

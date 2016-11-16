@@ -5390,8 +5390,8 @@ msgstr "Landeskarte 1:10'000 (farbig)"
 msgid "ch.swisstopo.landeskarte-grau-10"
 msgstr "Landeskarte 1:10'000 (grau)"
 
-msgid "ch.swisstopo.landeskarte100_papier.metadata"
-msgstr "Einteilung Landeskarte 100 Papier"
+msgid "ch.swisstopo.landeskarte1000_papier.metadata"
+msgstr "Einteilung Landeskarte 1000 Papier"
 
 msgid "ch.swisstopo.landeskarte100_papier.metadata"
 msgstr "Einteilung Landeskarte 100 Papier"

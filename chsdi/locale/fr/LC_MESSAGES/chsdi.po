@@ -5390,8 +5390,8 @@ msgstr "Carte nationale 1:10'000 (couleur)"
 msgid "ch.swisstopo.landeskarte-grau-10"
 msgstr "Carte nationale 1:10'000 (grise)"
 
-msgid "ch.swisstopo.landeskarte100_papier.metadata"
-msgstr "Découpage carte nationale 100 Papier"
+msgid "ch.swisstopo.landeskarte1000_papier.metadata"
+msgstr "Découpage carte nationale 1000 Papier"
 
 msgid "ch.swisstopo.landeskarte100_papier.metadata"
 msgstr "Découpage carte nationale 100 Papier"

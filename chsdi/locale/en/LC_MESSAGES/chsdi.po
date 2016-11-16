@@ -5390,7 +5390,7 @@ msgstr "National Map 1:10'000 (color)"
 msgid "ch.swisstopo.landeskarte-grau-10"
 msgstr "National Map 1:10'000 (grey)"
 
-msgid "ch.swisstopo.landeskarte100_papier.metadata"
+msgid "ch.swisstopo.landeskarte1000_papier.metadata"
 msgstr "Division national map 100 Paper"
 
 msgid "ch.swisstopo.landeskarte100_papier.metadata"
