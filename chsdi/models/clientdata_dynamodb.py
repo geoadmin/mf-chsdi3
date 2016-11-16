@@ -2,9 +2,9 @@
 
 import pyramid.httpexceptions as exc
 
-from boto import connect_s3
-from boto.dynamodb2 import connect_to_region
 from boto.dynamodb2.table import Table
+from boto.dynamodb2 import connect_to_region
+from boto.s3.connection import S3Connection, OrdinaryCallingFormat
 
 '''
 CREATE a table
@@ -57,18 +57,21 @@ class DynamodbConnection:
         return self.conn
 
 
-class S3Connection:
+class S3Connect:
 
     def __init__(self, profile_name):
         self.conn = None
         self.profile_name = profile_name
 
     def get(self):
+        # Work around because of https://github.com/boto/boto/issues/2836
+        S3Connection.DefaultHost = 's3-eu-west-1.amazonaws.com'
         if self.conn is None:
             try:
-                self.conn = connect_s3(profile_name=self.profile_name)
-            except Exception as e:
-                raise exc.HTTPBadRequest('S3: Error during connection %s' % e)
+                self.conn = S3Connection(
+                    profile_name=self.profile_name, calling_format=OrdinaryCallingFormat())
+            except Exception as e:  # pragma: no cover
+                raise exc.HTTPInternalServerError('Error during connection to the table %s' % e)
         return self.conn
 
 
@@ -80,15 +83,15 @@ def get_dynamodb_table(table_name='shorturl'):
     try:
         table = Table(table_name, connection=conn)
     except Exception as e:  # pragma: no cover
-        raise exc.HTTPBadRequest('Error during connection to the table %s' % e)
+        raise exc.HTTPInternalServerError('Error during connection to the table %s' % e)
     return table
 
 
 def get_bucket(profile_name='geoadmin_filestorage', bucket_name=None):
-    s3_connection = S3Connection(profile_name)
+    s3_connection = S3Connect(profile_name)
     conn = s3_connection.get()
     try:
         bucket = conn.get_bucket(bucket_name)
-    except Exception as e:
-        raise exc.HTTPBadRequest('Error during connection %s' % e)
+    except Exception as e:  # pragma: no cover
+        raise exc.HTTPInternalServerError('Error during connection to the bucket %s' % e)
     return bucket
