@@ -50,7 +50,7 @@ Below you'll find a complete working example. Create a new file, copy/paste the 
       </script>
     </body>
   </html>
-  
+
 Understanding what is going on
 ------------------------------
 
@@ -67,6 +67,19 @@ Include the GeoAdmin JavaScript API
 
   <script src="http://api3.geo.admin.ch/loader.js?lang=en" type="text/javascript"></script>
 
+One can use different versions of GeoAdmin Api using the version parameter.
+
+.. code-block:: html
+
+  <script src="http://api3.geo.admin.ch/loader.js?lang=en&version=3.18.2" type="text/javascript"></script>
+
+Default version is based on ol version 3.6.0.
+
+Available versions are (which are all based on ol3 releases):
+
+- 3.6.0
+- 3.18.2
+
 The first part is to include the GeoAdmin API library. This loader will load all necessary JavaScript and CSS code. You can force the language (en, de, fr, it, rm) or let the navigator language be used.
 
 <div> to contain the map
@@ -75,7 +88,7 @@ The first part is to include the GeoAdmin API library. This loader will load all
 .. code-block:: html
 
   <div id="map" class="map"></div>
-  
+
 The map in the application is contained in a <div> HTML element. Through this <div> the map properties like width, height and border can be controlled through CSS. Here's the CSS element used to make the map 400 pixels high and as wide as the browser window.
 
 .. code-block:: html
@@ -86,7 +99,7 @@ The map in the application is contained in a <div> HTML element. Through this <d
       width: 100%;
     }
   </style>
-  
+
 JavaScript to create a simple map with a layer
 ----------------------------------------------
 
@@ -101,7 +114,7 @@ JavaScript to create a simple map with a layer
         center: [670000, 160000]
       })
     });
-    
+
 With this JavaScript code, a map object is created with a GeoAdmin layer (full list available `here <http://api3.geo.admin.ch/api/faq/index.html#which-layers-are-available>`_ ). Let's break this down:
 
 The following line creates a GeoAdmin layer:
@@ -109,26 +122,26 @@ The following line creates a GeoAdmin layer:
 .. code-block:: javascript
 
   var layer = ga.layer.create('ch.swisstopo.pixelkarte-farbe');
-  
+
 The following line creates an OpenLayers Map object. It is preconfigured with the Swiss coordinate system.
 
 .. code-block:: javascript
 
   var map = new ga.Map({ ... });
-  
+
 To attach the map object to the <div>, the map object takes a target into arguments. The value is the id of the <div>:
 
 .. code-block:: javascript
 
   target: 'map',
-  
+
 The layers: [ ... ] array is used to define the list of layers available in the map.
 
 .. code-block:: javascript
 
   layers: [layer],
 
-The next part of the Map object is the View. The view allow to specify the center, resolution, and rotation of the map. Right now, only 2D View is supported, but other views should be available at some point. The simplest way to define a view is to define a center point and a resolution. The GeoAdmin API supports the following resolution: 650, 500, 250, 100, 50, 20, 10, 5, 2.5, 2, 1, 0.5, 0.25, 0.1 but intermediate resolutions can be used without problems. The resolution corresponds to the real size (on the earth) of one pixel. 
+The next part of the Map object is the View. The view allow to specify the center, resolution, and rotation of the map. Right now, only 2D View is supported, but other views should be available at some point. The simplest way to define a view is to define a center point and a resolution. The GeoAdmin API supports the following resolution: 650, 500, 250, 100, 50, 20, 10, 5, 2.5, 2, 1, 0.5, 0.25, 0.1 but intermediate resolutions can be used without problems. The resolution corresponds to the real size (on the earth) of one pixel.
 
 .. code-block:: javascript
 
@@ -136,8 +149,8 @@ The next part of the Map object is the View. The view allow to specify the cente
     resolution: 500,
     center: [670000, 160000]
   })
-  
-You will notice that the center specified is in Swiss coordinate system (EPSG:21781). 
+
+You will notice that the center specified is in Swiss coordinate system (EPSG:21781).
 
 (Quickstart adapted of the `OpenLayers 3 Quickstart <http://openlayers.org/en/v3.6.0/doc/quickstart.html>`_)
 
