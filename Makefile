@@ -161,7 +161,7 @@ rss: doc chsdi/static/doc/build/releasenotes/index.html
 .PHONY: translate
 translate:
 	@echo "${GREEN}Updating translations...${RESET}";
-	${PYTHON_CMD} translations/translation2po.py chsdi/locale/;
+	source rc_dev && ${PYTHON_CMD} scripts/translation2po.py chsdi/locale/;
 	make potomo;
 
 chsdi/locale/en/LC_MESSAGES/chsdi.po:
