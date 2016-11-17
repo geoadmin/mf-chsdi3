@@ -5783,6 +5783,9 @@ msgstr "Divisiun Swiss Map Vector 500"
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Sumbriva reliev"
 
+msgid "ch.swisstopo.swissalti3d.metadata"
+msgstr "swissALTI3D Sumbriva reliev"
+
 msgid "ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill"
 msgstr "Cunfins districtuals"
 
