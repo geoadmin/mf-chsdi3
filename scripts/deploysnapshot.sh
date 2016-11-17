@@ -38,15 +38,8 @@ else
     echo "You have disabled nosetests!"
 fi
 
-# Deterimine which deploy configuration to use
-if [ -z $4 ] || [ $4 != "from_current_directory" ]
-then
-  echo "Using snapshot deploy configuration"
-  DEPLOYCONFIG=$SNAPSHOTDIR_CODE/deploy/deploy.cfg
-else
-  echo "Using local deploy configuration"
-  DEPLOYCONFIG=deploy/deploy.cfg
-fi
+echo "Using local deploy configuration"
+DEPLOYCONFIG=deploy/deploy.cfg
 
 # Back to working directory for the deploy command
 cd $cwd

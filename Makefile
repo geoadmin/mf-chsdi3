@@ -7,7 +7,6 @@ VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '
 BRANCH_STAGING := $(shell if [ '$(DEPLOY_TARGET)' = 'dev' ]; then echo 'test'; else echo 'integration'; fi)
 BRANCH_TO_DELETE :=
 CURRENT_DIRECTORY := $(shell pwd)
-DEPLOYCONFIG ?=
 DEPLOY_TARGET ?=
 BODID ?=
 WMSSCALELEGEND ?=
@@ -242,11 +241,11 @@ deploydev:
 
 .PHONY: deployint
 deployint: guard-SNAPSHOT
-	scripts/deploysnapshot.sh $(SNAPSHOT) int $(NO_TESTS) $(DEPLOYCONFIG)
+	scripts/deploysnapshot.sh $(SNAPSHOT) int $(NO_TESTS)
 
 .PHONY: deployprod
 deployprod: guard-SNAPSHOT
-	scripts/deploysnapshot.sh $(SNAPSHOT) prod $(NO_TESTS) $(DEPLOYCONFIG)
+	scripts/deploysnapshot.sh $(SNAPSHOT) prod $(NO_TESTS)
 
 .PHONY: legends
 legends: guard-BODID guard-WMSHOST
