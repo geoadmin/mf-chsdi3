@@ -19,13 +19,6 @@ dest = /var/www/vhosts/mf-chsdi3/conf/00-${git_branch}.conf
 content = Include /var/www/vhosts/mf-chsdi3/private/branch/${git_branch}/apache/*.conf
 
 [remote_hosts]
-# mf0i
-int = ip-10-220-6-221.eu-west-1.compute.internal,
-      ip-10-220-6-41.eu-west-1.compute.internal,
-      ip-10-220-6-105.eu-west-1.compute.internal,
-      ip-10-220-6-208.eu-west-1.compute.internal
-
-# demo
-demo = ip-10-220-5-174.eu-west-1.compute.internal
-# NO PROD FOR BRANCH
-
+# mf1i
+int = ip-10-220-6-131.eu-west-1.compute.internal,
+      ip-10-220-5-106.eu-west-1.compute.internal
