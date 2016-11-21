@@ -5783,6 +5783,9 @@ msgstr "Découpage Swiss Map Vector 500"
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D estompage du relief"
 
+msgid "ch.swisstopo.swissalti3d.metadata"
+msgstr "swissALTI3D estompage du relief"
+
 msgid "ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill"
 msgstr "Limites de district"
 

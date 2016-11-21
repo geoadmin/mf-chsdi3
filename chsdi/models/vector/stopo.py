@@ -2482,6 +2482,16 @@ class spotMosaicPerimeter(Base, ShopStandardClass, Vector):
 register('ch.swisstopo.images-spot-5.metadata', spotMosaicPerimeter)
 
 
+class SwissAlti3dMetadataPerimeter(Base, ShopStandardClass, Vector):
+    __tablename__ = 'shop_perimeter_swissalti3d'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.swissalti3d.metadata'
+    __totalArea__ = 41455.0
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swissalti3d.metadata', SwissAlti3dMetadataPerimeter)
+
+
 class SwissBuildings3d2Perimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_swissbuilding3d_2'
     __table_args__ = ({'autoload': False})

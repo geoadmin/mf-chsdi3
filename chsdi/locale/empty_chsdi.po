@@ -1,3 +1,6 @@
+msgid "ch.swisstopo.swissalti3d.metadata"
+msgstr ""
+
 msgid "ch.swisstopo.landeskarte1000_papier.metadata"
 msgstr ""
 
