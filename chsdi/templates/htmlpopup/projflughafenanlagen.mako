@@ -15,8 +15,8 @@
     <tr><td class="cell-left">${_('modif_validfrom')}</td>            <td>${c['attributes']['validfrom'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('durationofeffect')}</td>           <td>${c['attributes']['durationofeffect'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('descriptionText')}</td>            <td>${c['attributes']['description'] or '-'}</td></tr>
-%if c['attributes']['weblink_ref']:
-    <tr><td class="cell-left">${_('legalregulationlink')}</td>        <td><a target="_blank" href="${c['attributes']['weblink_ref']}">${_('legalregulationlink') or '-'}</a></td></tr>
+%if c['attributes']['weblink_origin']:
+    <tr><td class="cell-left">${_('legalregulationlink')}</td>        <td><a target="_blank" href="${c['attributes']['weblink_origin']}">${_('legalregulationlink') or '-'}</a></td></tr>
 % else:
     <tr><td class="cell-left">${_('legalregulationlink')}</td>        <td> - </td></tr>
 %endif
