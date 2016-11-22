@@ -886,7 +886,7 @@ class ProjFlughafenanlagen(Base, Vector):
     validfrom = Column('validfrom', Text)
     durationofeffect = Column('durationofeffect', Text)
     description = Column('description', Text)
-    weblink_ref = Column('weblink_ref', Text)
+    weblink_origin = Column('weblink_origin', Text)
     bgdi_id = Column('bgdi_id', Integer)
     the_geom = Column(Geometry2D)
 
