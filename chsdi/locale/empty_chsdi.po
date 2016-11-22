@@ -1770,102 +1770,6 @@ msgstr ""
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.bgdi_flugjahr"
 msgstr ""
 
-msgid "ch.swisstopo.lk25-papierkarte.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.name_de"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.name_en"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.name_it"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.name_fr"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.number"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.price"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.release"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.author"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.name"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.number"
-msgstr ""
-
-msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.release"
-msgstr ""
-
-msgid "ch.swisstopo.lk50-papierkarte.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.lk50-papierkarte.metadata.name"
-msgstr ""
-
-msgid "ch.swisstopo.lk50-papierkarte.metadata.number"
-msgstr ""
-
-msgid "ch.swisstopo.lk50-papierkarte.metadata.release"
-msgstr ""
-
-msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.name"
-msgstr ""
-
-msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.number"
-msgstr ""
-
-msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.release"
-msgstr ""
-
-msgid "ch.swisstopo.lk100-papierkarte.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.lk100-papierkarte.metadata.name"
-msgstr ""
-
-msgid "ch.swisstopo.lk100-papierkarte.metadata.number"
-msgstr ""
-
-msgid "ch.swisstopo.lk100-papierkarte.metadata.release"
-msgstr ""
-
-msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.name"
-msgstr ""
-
-msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.number"
-msgstr ""
-
-msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.release"
-msgstr ""
-
 msgid "ch.swisstopo.landeskarte200_papier.metadata"
 msgstr ""
 
@@ -1876,30 +1780,6 @@ msgid "ch.swisstopo.landeskarte200_papier.metadata.number"
 msgstr ""
 
 msgid "ch.swisstopo.landeskarte200_papier.metadata.release"
-msgstr ""
-
-msgid "ch.swisstopo.wk50-papierkarte.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.wk50-papierkarte.metadata.name"
-msgstr ""
-
-msgid "ch.swisstopo.wk50-papierkarte.metadata.number"
-msgstr ""
-
-msgid "ch.swisstopo.wk50-papierkarte.metadata.release"
-msgstr ""
-
-msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.name"
-msgstr ""
-
-msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.number"
-msgstr ""
-
-msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.release"
 msgstr ""
 
 msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata"
@@ -1986,12 +1866,6 @@ msgstr ""
 msgid "ch.swisstopo.landeskarte500_papier.metadata.release"
 msgstr ""
 
-msgid "ch.swisstopo.lk1000-papierkarte.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.lk1000-papierkarte.metadata.release"
-msgstr ""
-
 msgid "ch.swisstopo.segelflugkarte_papier.metadata"
 msgstr ""
 
@@ -2002,12 +1876,6 @@ msgid "ch.swisstopo.strassenkarte200_papier.metadata"
 msgstr ""
 
 msgid "ch.swisstopo.strassenkarte200_papier.metadata.release"
-msgstr ""
-
-msgid "ch.swisstopo.area-papierkarte.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.area-papierkarte.metadata.release"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-geologische_karte_papier.metadata"
@@ -2026,18 +1894,6 @@ msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata.release"
-msgstr ""
-
-msgid "ch.swisstopo.icao-papierkarte.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.icao-papierkarte.metadata.release"
-msgstr ""
-
-msgid "ch.swisstopo.gkwvul500-papierkarte.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-grundwasservorkommen_papier.metadata"
@@ -2089,24 +1945,6 @@ msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.name_ads"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.name_ads"
-msgstr ""
-
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
-msgstr ""
-
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.name"
-msgstr ""
-
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.number"
-msgstr ""
-
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.release"
-msgstr ""
-
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
-msgstr ""
-
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.altitude"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-gisgeol-punkte.sgd_nr"

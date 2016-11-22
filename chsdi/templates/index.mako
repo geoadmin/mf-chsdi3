@@ -66,7 +66,7 @@
           <a href="/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=502722.0065086734,36344.074765040714,745822.0065086735,253444.07476504074&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.bazl.luftfahrthindernis&returnGeometry=true&geometryFormat=geojson&obstacletype=%27Antenna%27">Query 'ch.bazl.luftfahrthindernis' for 'Antenna' with a bbox</a> <br>
           <a href="rest/services/api/MapServer/ch.bazl.luftfahrthindernis/attributes/obstacletype">Get some values for attribute 'obstacletype'</a> <br>
           <h3>Get the attributes of layer</h3>
-          <a href="/rest/services/ech/MapServer/ch.swisstopo.geologie-gravimetrischer_atlas.metadata">Returns all the attributes of the layer ch.swisstopo.geologie-gravimetrischer_atlas.metadata</a>
+          <a href="/rest/services/ech/MapServer/ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata">Returns all the attributes of the layer ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata</a>
           <h3>Find</h3>
           <a href="rest/services/ech/MapServer/find?layer=ch.bafu.bundesinventare-bln&searchText=Lavaux&searchField=bln_name&returnGeometry=false">Find Lavaux in the field bln_name of the layer ch.bafu.bundesinventare-bln</a> <br>
           <a href="/rest/services/ech/MapServer/find?layer=ch.are.agglomerationen_isolierte_staedte&searchText=15&searchField=flaeche_ha">Find 15 in field flaeche_ha of layer ch.are.agglomerationen_isolierte_staedte (pre-infix match)</a> <br>

@@ -184,11 +184,11 @@ class TestMapServiceView(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_features_attributes_multi_models_integer_colType(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.swisstopo.geologie-gravimetrischer_atlas.metadata/attributes/id', status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata/attributes/id', status=200)
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_layer_attributes_none_models(self):
         self.testapp.get('/rest/services/ech/MapServer/wrongLayerId/attributes/id', status=400)
 
     def test_layer_attributes_none_modelToQuery(self):
-        self.testapp.get('/rest/services/ech/MapServer/ch.swisstopo.geologie-gravimetrischer_atlas.metadata/attributes/wrongAttribute', status=400)
+        self.testapp.get('/rest/services/ech/MapServer/ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata/attributes/wrongAttribute', status=400)

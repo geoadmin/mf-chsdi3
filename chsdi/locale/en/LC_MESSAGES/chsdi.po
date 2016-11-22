@@ -4694,12 +4694,6 @@ msgstr "Availability of the PLR cadastre"
 msgid "ch.swisstopo-vd.url"
 msgstr "http://www.cadastre.ch"
 
-msgid "ch.swisstopo.area-papierkarte.metadata"
-msgstr "Area Chart ICAO"
-
-msgid "ch.swisstopo.area-papierkarte.metadata.release"
-msgstr "Edition"
-
 msgid "ch.swisstopo.burgenkarte200_papier.metadata"
 msgstr "Division castles map Paper"
 
@@ -5201,24 +5195,6 @@ msgstr "Gravimetric Atlas 100"
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte"
 msgstr "Gravimetrische Messpunkte 100"
 
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.altitude"
-msgstr "Altitude [m]"
-
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.stationnam"
-msgstr "Point Number"
-
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata"
-msgstr "Division gravimetric atlas 100 Paper"
-
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.name"
-msgstr "Name"
-
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.number"
-msgstr "Number"
-
-msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.release"
-msgstr "Edition"
-
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata"
 msgstr "Division gravimetric atlas 100 Paper"
 
@@ -5291,12 +5267,6 @@ msgstr "Cantonal boundaries GG25"
 msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "National boundaries GG25"
 
-msgid "ch.swisstopo.gkwvul500-papierkarte.metadata"
-msgstr "Division grundwater vulnerability 500 Paper"
-
-msgid "ch.swisstopo.gkwvul500-papierkarte.metadata.release"
-msgstr "Edition"
-
 msgid "ch.swisstopo.hangneigung-ueber_30"
 msgstr "Slope classes over 30°"
 
@@ -5359,12 +5329,6 @@ msgstr "Division Siegfried Map 25 Raster"
 
 msgid "ch.swisstopo.hiks-siegfried-ta50.metadata"
 msgstr "Division Siegfried Map 50 Raster"
-
-msgid "ch.swisstopo.icao-papierkarte.metadata"
-msgstr "Division aeronautical chart ICAO Paper"
-
-msgid "ch.swisstopo.icao-papierkarte.metadata.release"
-msgstr "Edition"
 
 msgid "ch.swisstopo.images-spot-5.metadata"
 msgstr "Division Spot Mosaic Raster"
@@ -5475,108 +5439,6 @@ msgid "ch.swisstopo.lhk100-papierkarte.metadata.number"
 msgstr "Number"
 
 msgid "ch.swisstopo.lhk100-papierkarte.metadata.release"
-msgstr "Edition"
-
-msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata"
-msgstr "National Map 1:100'000 comp. printed"
-
-msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.name"
-msgstr "Name"
-
-msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.number"
-msgstr "Number"
-
-msgid "ch.swisstopo.lk100-papierkarte-zusammensetzung.metadata.release"
-msgstr "Edition"
-
-msgid "ch.swisstopo.lk100-papierkarte.metadata"
-msgstr "Division national map 100 Paper"
-
-msgid "ch.swisstopo.lk100-papierkarte.metadata.name"
-msgstr "Name"
-
-msgid "ch.swisstopo.lk100-papierkarte.metadata.number"
-msgstr "Number"
-
-msgid "ch.swisstopo.lk100-papierkarte.metadata.release"
-msgstr "Edition"
-
-msgid "ch.swisstopo.lk1000-papierkarte.metadata"
-msgstr "Division national map 100 Paper"
-
-msgid "ch.swisstopo.lk1000-papierkarte.metadata.release"
-msgstr "Edition"
-
-msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata"
-msgstr "National Map 1:25'000 comp. printed"
-
-msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.name"
-msgstr "Name"
-
-msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.number"
-msgstr "Number"
-
-msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata.release"
-msgstr "Edition"
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata"
-msgstr "Division national map 25 Paper"
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.author"
-msgstr "Author(s)"
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
-msgstr "State of updates"
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
-msgstr "ISBN number"
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.name_de"
-msgstr "Name"
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.name_en"
-msgstr "Name"
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.name_fr"
-msgstr "Name"
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.name_it"
-msgstr "Name"
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.number"
-msgstr "Number"
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.price"
-msgstr "Unit price"
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.release"
-msgstr "Edition"
-
-msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
-msgstr "Scale"
-
-msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata"
-msgstr "National Map 1:50'000 comp. printed"
-
-msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.name"
-msgstr "Name"
-
-msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.number"
-msgstr "Number"
-
-msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.release"
-msgstr "Edition"
-
-msgid "ch.swisstopo.lk50-papierkarte.metadata"
-msgstr "Division national map 50 Raster"
-
-msgid "ch.swisstopo.lk50-papierkarte.metadata.name"
-msgstr "Name"
-
-msgid "ch.swisstopo.lk50-papierkarte.metadata.number"
-msgstr "Number"
-
-msgid "ch.swisstopo.lk50-papierkarte.metadata.release"
 msgstr "Edition"
 
 msgid "ch.swisstopo.lotabweichungen"
@@ -5974,30 +5836,6 @@ msgstr "Edition"
 
 msgid "ch.swisstopo.wanderkarte50_papier.metadata"
 msgstr "Division hiking map 50 Paper"
-
-msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata"
-msgstr "Hiking maps 1:50'000 comp."
-
-msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.name"
-msgstr "Name"
-
-msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.number"
-msgstr "Number"
-
-msgid "ch.swisstopo.wk50-papierkarte-zusammensetzung.metadata.release"
-msgstr "Edition"
-
-msgid "ch.swisstopo.wk50-papierkarte.metadata"
-msgstr "Division hiking map 50 Paper"
-
-msgid "ch.swisstopo.wk50-papierkarte.metadata.name"
-msgstr "Name"
-
-msgid "ch.swisstopo.wk50-papierkarte.metadata.number"
-msgstr "Number"
-
-msgid "ch.swisstopo.wk50-papierkarte.metadata.release"
-msgstr "Edition"
 
 msgid "ch.swisstopo.zeitreihen"
 msgstr "Journey through time - Maps"
