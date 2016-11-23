@@ -5471,6 +5471,39 @@ msgstr "Numero"
 msgid "ch.swisstopo.lhk100-papierkarte.metadata.release"
 msgstr "Edizione"
 
+msgid "ch.swisstopo.lk25-papierkarte.metadata.author"
+msgstr "Autore"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
+msgstr "Stato di aggiornamento"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
+msgstr "Codice ISBN"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_de"
+msgstr "Nome"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_en"
+msgstr "Nome"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_fr"
+msgstr "Nome"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.name_it"
+msgstr "Nome"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.number"
+msgstr "Numero"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.price"
+msgstr "Prezzo al pezzo"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.release"
+msgstr "Edizione"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
+msgstr "Scala"
+
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Deviazione della verticale"
 
