@@ -4650,7 +4650,7 @@ msgid "ch.swisstopo-vd"
 msgstr "Mesiraziun Uffiziala Svizra"
 
 msgid "ch.swisstopo-vd.amtliche-vermessung"
-msgstr "GB-Plan"
+msgstr "OpenData-MU"
 
 msgid "ch.swisstopo-vd.amtliche-vermessung.itf"
 msgstr "Download Interlis-File (Gemeinde)"
