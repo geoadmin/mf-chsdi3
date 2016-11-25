@@ -4650,7 +4650,7 @@ msgid "ch.swisstopo-vd"
 msgstr "Misurazione Ufficiale Svizzera"
 
 msgid "ch.swisstopo-vd.amtliche-vermessung"
-msgstr "RF-plan"
+msgstr "OpenData-MU"
 
 msgid "ch.swisstopo-vd.amtliche-vermessung.itf"
 msgstr "Download Interlis-File (Comune)"
