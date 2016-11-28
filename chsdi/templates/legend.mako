@@ -6,23 +6,23 @@
   host = h.make_agnostic(request.host_url + request.uscript_name)
   lang = request.lang
   pdf_legends = ('ch.bafu.typisierung-fliessgewaesser',
-                 'ch.swisstopo.geologie-eiszeit-lgm-raster', 
+                 'ch.swisstopo.geologie-eiszeit-lgm-raster',
                  'ch.swisstopo.geologie-geologische_karte',
                  'ch.swisstopo.geologie-gravimetrischer_atlas',
                  'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen',
                  'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet',
-                 'ch.swisstopo.geologie-tektonische_karte', 
+                 'ch.swisstopo.geologie-tektonische_karte',
                  'ch.astra.ivs-gelaendekarte',
-                 'ch.astra.ausnahmetransportrouten', 
+                 'ch.astra.ausnahmetransportrouten',
                  'ch.bazl.luftfahrtkarten-icao',
-                 'ch.bazl.segelflugkarte', 
+                 'ch.bazl.segelflugkarte',
                  'ch.kantone.cadastralwebmap-farbe',
                  'ch.swisstopo.swisstlm3d-karte-farbe',
-                 'ch.swisstopo.swisstlm3d-karte-grau', 
+                 'ch.swisstopo.swisstlm3d-karte-grau',
                  'ch.swisstopo.pixelkarte-farbe-pk1000.noscale',
-                 'ch.swisstopo.pixelkarte-farbe-pk500.noscale', 
+                 'ch.swisstopo.pixelkarte-farbe-pk500.noscale',
                  'ch.swisstopo.pixelkarte-farbe-pk200.noscale',
-                 'ch.swisstopo.pixelkarte-farbe-pk100.noscale', 
+                 'ch.swisstopo.pixelkarte-farbe-pk100.noscale',
                  'ch.swisstopo.pixelkarte-farbe-pk50.noscale',
                  'ch.swisstopo.pixelkarte-farbe-pk25.noscale',
                  'ch.swisstopo.landeskarte-farbe-10',
@@ -58,7 +58,7 @@
   <br>
   <span>${_('Legend')}</span><br>
 % if legend_url_pdf:
-  <a href="${legend_url_pdf}" target="_blank"><img src="${legend_url}"></img></a><br> 
+  <a href="${legend_url_pdf}" target="_blank"><img src="${legend_url}"></img></a><br>
 % else:
   <div class="img-container">
     <img src=${legend_url} alt="layer legend img"/>
@@ -123,7 +123,7 @@
     <tr>
       <td>${_('Datenstand')}</td>
       <td>${h.parse_date_datenstand(times)}</td>
-    </tr>    
+    </tr>
   </table>
 </div>
 </div>
