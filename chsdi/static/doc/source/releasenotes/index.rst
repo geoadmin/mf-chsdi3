@@ -15,6 +15,34 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20161130:
+   *******
+
+Release 20161116 - Wednesday, November 30th 2016
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+
+
+Geodata
+*******
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Nuclear Power Plants <//map.geo.admin.ch/?layers=ch.bfe.kernkraftwerke>`__ (ch.bfe.kernkraftwerke)                                                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wind energy plants <//map.geo.admin.ch/?layers=ch.bfe.windenergieanlagen>`__ (ch.bfe.windenergieanlagen)                                                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20161116:
 *******
 
