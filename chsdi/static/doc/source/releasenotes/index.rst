@@ -36,13 +36,17 @@ API & applications
 
 Geodata
 *******
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Nuclear Power Plants <//map.geo.admin.ch/?layers=ch.bfe.kernkraftwerke>`__ (ch.bfe.kernkraftwerke)                                                      |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Wind energy plants <//map.geo.admin.ch/?layers=ch.bfe.windenergieanlagen>`__ (ch.bfe.windenergieanlagen)                                                |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `OpenData-Surveying <//map.geo.admin.ch/?layers=ch.swisstopo-vd.amtliche-vermessung>`__ (ch.swisstopo-vd.amtliche-vermessung)                            |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+--------------------------------------------------------------------------------------------------------------------------------+
+| New    | `OpenData-Surveying <//map.geo.admin.ch/?layers=ch.swisstopo-vd.amtliche-vermessung>`__ (ch.swisstopo-vd.amtliche-vermessung)  |
++--------+--------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Nuclear Power Plants <//map.geo.admin.ch/?layers=ch.bfe.kernkraftwerke>`__ (ch.bfe.kernkraftwerke)                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wind energy plants <//map.geo.admin.ch/?layers=ch.bfe.windenergieanlagen>`__ (ch.bfe.windenergieanlagen)                      |
++--------+--------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)   |
++--------+--------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20161116:
