@@ -4742,6 +4742,9 @@ msgstr "CNES, Spot Image, swisstopo, NPOC"
 msgid "ch.swisstopo.cnes.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/fr/home.html"
 
+msgid "ch.swisstopo.digitales-hoehenmodell_25.metadata"
+msgstr "Découpage MNT25 Raster"
+
 msgid "ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung"
 msgstr "MNT25 estompage du relief"
 
@@ -5744,6 +5747,9 @@ msgstr "Frontières nationales"
 msgid "ch.swisstopo.swissbuildings3d"
 msgstr "Les bâtiments en 3D simplifiés"
 
+msgid "ch.swisstopo.swissbuildings3d_1.metadata"
+msgstr "Découpage swissBUILDINGS3D 1.0 Vector"
+
 msgid "ch.swisstopo.swissbuildings3d_2.metadata"
 msgstr "Découpage swissBUILDINGS3D 2.0 Vector"
 
@@ -5764,6 +5770,9 @@ msgstr "Carte swissTLM (grise)"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Chemins de randonnée pédestre"
+
+msgid "ch.swisstopo.swisstlm3d.metadata"
+msgstr "Découpage swissTLM3D Vector"
 
 msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe"
 msgstr "HTRANS RAN95-NF02"

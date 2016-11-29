@@ -34,6 +34,15 @@ msgstr ""
 msgid "ch.swisstopo.swissalti3d.metadata"
 msgstr ""
 
+msgid "ch.swisstopo.digitales-hoehenmodell_25.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.swissbuildings3d_1.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.swisstlm3d.metadata"
+msgstr ""
+
 msgid "ch.swisstopo.landeskarte1000_papier.metadata"
 msgstr ""
 

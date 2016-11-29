@@ -2398,12 +2398,39 @@ register('ch.swisstopo.images-spot-5.metadata', spotMosaicPerimeter)
 
 class SwissAlti3dMetadataPerimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_swissalti3d'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.swisstopo.swissalti3d.metadata'
     __totalArea__ = 41455.0
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissalti3d.metadata', SwissAlti3dMetadataPerimeter)
+
+
+class SwissTlm3dMetadataPerimeter(Base, ShopStandardClass, Vector):
+    __tablename__ = 'shop_perimeter_swisstlm3d'
+    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
+    __bodId__ = 'ch.swisstopo.swisstlm3d.metadata'
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swisstlm3d.metadata', SwissTlm3dMetadataPerimeter)
+
+
+class SwissBuildings3d1MetadataPerimeter(Base, ShopStandardClass, Vector):
+    __tablename__ = 'shop_perimeter_swissbuildings3d'
+    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
+    __bodId__ = 'ch.swisstopo.swissbuildings3d_1.metadata'
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swissbuildings3d_1.metadata', SwissBuildings3d1MetadataPerimeter)
+
+
+class Dhm25MetadataPerimeter(Base, ShopStandardClass, Vector):
+    __tablename__ = 'shop_perimeter_dhm25'
+    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
+    __bodId__ = 'ch.swisstopo.digitales-hoehenmodell_25.metadata'
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.digitales-hoehenmodell_25.metadata', Dhm25MetadataPerimeter)
 
 
 class SwissBuildings3d2Perimeter(Base, ShopStandardClass, Vector):

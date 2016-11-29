@@ -4742,6 +4742,9 @@ msgstr "CNES, Spot Image, swisstopo, NPOC"
 msgid "ch.swisstopo.cnes.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/de/home.html"
 
+msgid "ch.swisstopo.digitales-hoehenmodell_25.metadata"
+msgstr "Divisiun MDT25 Raster"
+
 msgid "ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung"
 msgstr "DHM25 Reliefschattierung"
 
@@ -5744,6 +5747,9 @@ msgstr "Cunfins naziunals"
 msgid "ch.swisstopo.swissbuildings3d"
 msgstr "Edifizis simplifitgads en 3D"
 
+msgid "ch.swisstopo.swissbuildings3d_1.metadata"
+msgstr "Divisiun swissBUILDINGS3D 1.0 Vector"
+
 msgid "ch.swisstopo.swissbuildings3d_2.metadata"
 msgstr "Divisiun swissBUILDINGS3D 2.0 Vector"
 
@@ -5764,6 +5770,9 @@ msgstr "Charta swissTLM (grisch)"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Sendas da viandar"
+
+msgid "ch.swisstopo.swisstlm3d.metadata"
+msgstr "Divisiun swissTLM3D Vector"
 
 msgid "ch.swisstopo.transformation-bezugsrahmen_hoehe"
 msgstr "HTRANS LHN95-LN02"
