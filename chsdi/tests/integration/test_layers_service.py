@@ -111,7 +111,7 @@ class TestMapServiceView(TestsBase):
         self.assertIn('label', resp.json['ch.swisstopo.pixelkarte-farbe'])
         self.assertIn('background', resp.json['ch.swisstopo.pixelkarte-farbe'])
 
-    def test_layersconfig_geojson_layer(self):
+    def test_layersconfig_geojson_and_extent_layer(self):
         resp = self.testapp.get('/rest/services/all/MapServer/layersConfig', status=200)
         self.assertTrue(resp.content_type == 'application/json')
         jsonData = resp.json
@@ -122,6 +122,14 @@ class TestMapServiceView(TestsBase):
             self.assertNotIn('geojsonUrlDe', layer)
             self.assertIn('styleUrl', layer)
             self.assertIn('updateDelay', layer)
+        if 'ch.swisstopo.swiss-map-vector1000.metadata' in jsonData:
+            layer = jsonData['ch.swisstopo.swiss-map-vector1000.metadata']
+            self.assertIn('extent', layer)
+            self.assertEqual(len(layer['extent']), 4)
+            self.assertIsInstance(layer['extent'][0], float)
+            self.assertIsInstance(layer['extent'][1], float)
+            self.assertIsInstance(layer['extent'][2], float)
+            self.assertIsInstance(layer['extent'][3], float)
 
     def test_layersconfig_with_callback(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/layersConfig', params={'callback': 'cb_'}, status=200)
