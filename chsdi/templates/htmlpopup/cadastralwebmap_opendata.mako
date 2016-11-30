@@ -17,6 +17,7 @@
   protocol = request.scheme
   defaultExtent = '42000,30000,350000,900000'
   defaultImageDisplay = '400,600,96'
+  defaultCoord = ['600000', '200000']
   fallbackLang = 'fr' if request.lang in ('fr', 'it') else 'de'
   class CadastralWebMapParams(IdentifyServiceValidation):
       def __init__(self, request):
@@ -28,7 +29,7 @@
   c['scale']  = getScale(params.imageDisplay, params.mapExtent)
   topic = request.matchdict.get('map')
   baseUrl = request.registry.settings['api_url']
-  coord = request.params.get('coord').split(',')
+  coord = request.params.get('coord').split(',') if request.params.get('coord') else defaultCoord
   lat = coord[0]
   lon = coord[1]
   pdf_url = "%s://geodata01.admin.ch/order/jPqrueQazrt/av_pdf.igs?pos=%s/%s" % (protocol, lat, lon)
