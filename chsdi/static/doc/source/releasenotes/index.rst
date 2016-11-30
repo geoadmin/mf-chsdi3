@@ -15,6 +15,41 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20161130:
+   *******
+
+Release 20161116 - Wednesday, November 30th 2016
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_161116...r_161130>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_161116...r_161130>`__
+
+
+Geodata
+*******
++--------+--------------------------------------------------------------------------------------------------------------------------------+
+| New    | `OpenData-Surveying <//map.geo.admin.ch/?layers=ch.swisstopo-vd.amtliche-vermessung>`__ (ch.swisstopo-vd.amtliche-vermessung)  |
++--------+--------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Nuclear Power Plants <//map.geo.admin.ch/?layers=ch.bfe.kernkraftwerke>`__ (ch.bfe.kernkraftwerke)                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wind energy plants <//map.geo.admin.ch/?layers=ch.bfe.windenergieanlagen>`__ (ch.bfe.windenergieanlagen)                      |
++--------+--------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)   |
++--------+--------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20161116:
 *******
 
