@@ -18,7 +18,7 @@ Release Notes
 .. _releasenotes_20161130:
    *******
 
-Release 20161116 - Wednesday, November 30th 2016
+Release 20161130 - Wednesday, November 30th 2016
 -------------------------------------------------
 
 API & applications
