@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from gatilegrid import GeoadminTileGrid
-from sqlalchemy import Column, Text, Integer, Boolean, DateTime
+from sqlalchemy import Column, Text, Integer, Boolean, DateTime, Float
 from sqlalchemy.dialects import postgresql
 
 from chsdi.lib.helpers import make_agnostic
@@ -90,6 +90,7 @@ class LayersConfig(Base):
     config3d = Column('fk_config3d', Boolean)
     srid = Column('srid', Text)
     shop = Column('shop_option_arr', postgresql.ARRAY(Text))
+    extent = Column('extent', postgresql.ARRAY(Float))
 
     def layerConfig(self, params):
         config = {}
