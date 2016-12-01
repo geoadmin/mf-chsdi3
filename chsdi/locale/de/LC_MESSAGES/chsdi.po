@@ -1398,7 +1398,7 @@ msgid "ch.astra.ivs-nat"
 msgstr "IVS National"
 
 msgid "ch.astra.ivs-nat-verlaeufe"
-msgstr "IVS nationale Bed.hist. Verlauf."
+msgstr "IVS nationale Bed. hist. Verlauf"
 
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_nummer"
 msgstr "IVS-Objekt"

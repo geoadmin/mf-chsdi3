@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 <%inherit file="base.mako"/>
+<%namespace name="partials" file="cadastralwebmap.include.mako"/>
 
 <%def name="table_body(c, lang)">
 <style>
@@ -37,7 +38,7 @@
   itf_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/ITF/%s/%s.zip" % (protocol, request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['featureId'])
 %>
 
-<%include file="cadastralwebmap.include.mako"/>
+${partials.table_body_cadastral(c, lang, fallbackLang)}
 
 <tr>
     <td class="cell-left">${_('ch.swisstopo-vd.amtliche-vermessung.pdf')}</td><td>
