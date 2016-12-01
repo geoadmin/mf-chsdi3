@@ -34,8 +34,8 @@
   lat = coord[0]
   lon = coord[1]
   pdf_url = "%s://geodata01.admin.ch/order/jPqrueQazrt/av_pdf.igs?pos=%s/%s" % (protocol, lat, lon)
-  shp_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/SHP/%s/%s.zip" % (protocol, request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['featureId'])
-  itf_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/ITF/%s/%s.zip" % (protocol, request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['featureId'])
+  shp_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/SHP/%s/%s.zip" % (protocol, request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['attributes']['bfsnr'])
+  itf_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/ITF/%s/%s.zip" % (protocol, request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['attributes']['bfsnr'])
   defaultCoord = [(c['bbox'][0]+c['bbox'][2])/2, (c['bbox'][1]+c['bbox'][3])/2]
   clickCoord = request.params.get('coord').split(',') if request.params.get('coord') else defaultCoord
 %>
