@@ -2434,7 +2434,7 @@ register('ch.swisstopo.digitales-hoehenmodell_25.metadata', Dhm25MetadataPerimet
 
 
 class SwissBuildings3d2Perimeter(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_perimeter_swissbuilding3d_2'
+    __tablename__ = 'shop_perimeter_build3d2'
     __table_args__ = ({'autoload': False})
     __bodId__ = 'ch.swisstopo.swissbuildings3d_2.metadata'
     the_geom = Column(Geometry2D)
