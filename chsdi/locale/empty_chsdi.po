@@ -3525,9 +3525,6 @@ msgstr ""
 msgid "ch.swisstopo-vd.geometa-los"
 msgstr ""
 
-msgid "ch.swisstopo.geologie-geolkarten500.metadata"
-msgstr ""
-
 msgid "ch.swisstopo.swisstlm3d-karte-grau"
 msgstr ""
 
