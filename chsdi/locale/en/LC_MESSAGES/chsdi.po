@@ -5480,6 +5480,9 @@ msgstr "Author(s)"
 msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
 msgstr "State of updates"
 
+msgid "ch.swisstopo.lk25-papierkarte.metadata.datenstand"
+msgstr "Data status"
+
 msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
 msgstr "ISBN number"
 
@@ -5506,6 +5509,9 @@ msgstr "Edition"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Scale"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
+msgstr "Sheet number"
 
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Deviations of the vertical"

@@ -1,3 +1,9 @@
+msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
+msgstr ""
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.datenstand"
+msgstr ""
+
 msgid "ch.swisstopo.lk25-papierkarte.metadata.author"
 msgstr ""
 

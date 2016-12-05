@@ -1008,14 +1008,14 @@ register_perimeter('ch.swisstopo.pixelkarte-farbe-pk500.noscale', GridstandPk500
 register('ch.swisstopo.pixelkarte-pk500.metadata', GridstandPk500Meta)
 
 
-class GridstandSwissimage(Base, Vector):
+class GridstandSwissimage(Base, ShopStandardClass, Vector):
     __tablename__ = 'view_gridstand_datenhaltung_swissimage_tilecache'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __template__ = 'templates/htmlpopup/images_metadata.mako'
     __bodId__ = 'ch.swisstopo.images-swissimage.metadata'
     __label__ = 'lk25_name'
     id = Column('tilenumber', Unicode, primary_key=True)
-    lk25_name = Column('lk25_name', Text)
+    tileid = Column('tileid', Unicode)
+    lk25_name  = Column('lk25_name', Text)
     datenstand = Column('datenstand', Text)
     the_geom = Column(Geometry2D)
 
