@@ -1008,6 +1008,15 @@ register_perimeter('ch.swisstopo.pixelkarte-farbe-pk500.noscale', GridstandPk500
 register('ch.swisstopo.pixelkarte-pk500.metadata', GridstandPk500Meta)
 
 
+class SwissimageProductPerimeter(Base, Vector):
+    __tablename__ = 'shop_perimeter_swissimage'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.images-swissimage.metadata'
+    id = Column('min', Integer, primary_key=True)
+    resolution = Column('resolution', Float)
+    the_geom = Column(Geometry2D)
+
+
 class GridstandSwissimage(Base, ShopStandardClass, Vector):
     __tablename__ = 'view_gridstand_datenhaltung_swissimage_tilecache'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
@@ -1020,6 +1029,7 @@ class GridstandSwissimage(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.images-swissimage.metadata', GridstandSwissimage)
+register_perimeter('ch.swisstopo.images-swissimage.metadata', SwissimageProductPerimeter)
 
 
 class SwissimageProduct(Base, ShopStandardClass, Vector):
@@ -1028,17 +1038,7 @@ class SwissimageProduct(Base, ShopStandardClass, Vector):
     __bodId__ = 'ch.swisstopo.swissimage-product'
     the_geom = Column(Geometry2D)
 
-
-class SwissimageProductPerimeter(Base, Vector):
-    __tablename__ = 'shop_perimeter_swissimage'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.swissimage-product'
-    id = Column('min', Integer, primary_key=True)
-    resolution = Column('resolution', Float)
-    the_geom = Column(Geometry2D)
-
 register('ch.swisstopo.swissimage-product', SwissimageProduct)
-register_perimeter('ch.swisstopo.swissimage-product', SwissimageProductPerimeter)
 
 
 class GeolGenKarteGGK200Meta(Base, Vector):
