@@ -7,14 +7,14 @@
 layer = c['layerBodId']
 lang = lang if lang in ('fr','it','en') else 'de'
 fid = str(c['featureId'])
-webDavHost = request.registry.settings['webdav_host']
+cmsGeoadminHost = request.registry.settings['cmsgeoadminhost']
 img_id = fid
 if layer == 'ch.swisstopo.geologie-gravimetrischer_atlas.metadata':
     img_id = 'GRAV-DRG' + fid
 elif layer == 'ch.swisstopo.stk200-papierkarte.metadata':
     img_id = 'Strassenkarte' + fid
 
-image = webDavHost + '/swisstopoproducts/250/' + img_id + '.jpg'
+image = cmsGeoadminHost + '/www.swisstopo.admin.ch/shop/swisstopoproducts/250/' + img_id + '.jpg'
 if 'pk_product' not in c['attributes']:
     image_exists = h.resource_exists(image)
 else:
