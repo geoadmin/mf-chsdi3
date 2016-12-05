@@ -26,7 +26,7 @@ if 'scale' in c['attributes']:
         c['attributes']['scale'] = h.format_scale(c['attributes']['scale'])
 
 attr = []
-attr_poss = ['number', name, 'scale', 'release', 'data', 'isbn', 'author', 'url_legend']
+attr_poss = ['number', name, 'tileid', 'datenstand', 'scale', 'release', 'data', 'isbn', 'author', 'url_legend']
 for ap in attr_poss:
     if ap in c['attributes']:
         if c['attributes'][ap]:

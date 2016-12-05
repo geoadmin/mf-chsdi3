@@ -5480,6 +5480,9 @@ msgstr "Autor(en)"
 msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
 msgstr "Nachführungsstand"
 
+msgid "ch.swisstopo.lk25-papierkarte.metadata.datenstand"
+msgstr "Datenstand"
+
 msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
 msgstr "ISBN-Nummer"
 
@@ -5506,6 +5509,9 @@ msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Massstab"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
+msgstr "Blattnummer"
 
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Lotabweichungen"
