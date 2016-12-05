@@ -21,3 +21,4 @@ export VECTOR_PROFILENAME=chsdi_aws_admin_ro
 export WEBDAV_HOST=https://dav0.bgdi.admin.ch
 export WMSHOST=wms-bgdi.dev.bgdi.ch
 export WSGI_THREADS=15
+export CMSGEOADMINHOST=https://cms.geo.admin.ch

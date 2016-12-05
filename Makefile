@@ -334,6 +334,7 @@ production.ini: production.ini.in
 		--var "vector_bucket=$(VECTOR_BUCKET)" \
 		--var "vector_profilename=$(VECTOR_PROFILENAME)" \
 		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
+		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
 		--var "shortener_allowed_domains=$(SHORTENER_ALLOWED_DOMAINS)" $< > $@
 
 .venv/hooks: .venv/bin/git-secrets ./scripts/install-git-hooks.sh
