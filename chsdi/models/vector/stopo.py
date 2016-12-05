@@ -1059,18 +1059,6 @@ class GeolGenKarteGGK200Meta(Base, Vector):
 register('ch.swisstopo.geologie-generalkarte-ggk200.metadata', GeolGenKarteGGK200Meta)
 
 
-class GeolKarten500Metadata(Base, Vector):
-    __tablename__ = 'gk500'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __template__ = 'templates/htmlpopup/geolkarten500_metadata.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geolkarten500.metadata'
-    __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geolkarten500.metadata', GeolKarten500Metadata)
-
-
 class GeologischeKarteLine(Base, Vector):
     __tablename__ = 'geologische_karte_line'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
