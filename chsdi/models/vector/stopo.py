@@ -1029,7 +1029,6 @@ class GridstandSwissimage(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.images-swissimage.metadata', GridstandSwissimage)
-register_perimeter('ch.swisstopo.images-swissimage.metadata', SwissimageProductPerimeter)
 
 
 class SwissimageProduct(Base, ShopStandardClass, Vector):
