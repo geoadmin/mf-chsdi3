@@ -1039,6 +1039,7 @@ class SwissimageProduct(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissimage-product', SwissimageProduct)
+register_perimeter('ch.swisstopo.swissimage-product', SwissimageProductPerimeter)
 
 
 class GeolGenKarteGGK200Meta(Base, Vector):
