@@ -914,21 +914,23 @@ class GridstandPermiterTemplate:
 # PK 25
 
 
-class GridstandPK25Perimeter(Base, ShopStandardClass, Vector):
+class GridstandPK25Perimeter(Base, Vector):
     __tablename__ = 'shop_perimeter_pk25'
     __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk25.noscale'
     __table_args__ = ({'autoload': False})
     the_geom = Column(Geometry2D)
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
 
 
-class GridstandPk25Meta(Base, GridstandTemplate, Vector):
+class GridstandPk25Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk25.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk25_tilecache'
-    __template__ = 'templates/htmlpopup/pk25_metadata.mako'
+    tileid = Column('tileid', Unicode)
 
 
-register('ch.swisstopo.pixelkarte-farbe-pk25.noscale', GridstandPK25Perimeter)
 register('ch.swisstopo.pixelkarte-pk25.metadata', GridstandPk25Meta)
+register_perimeter('ch.swisstopo.pixelkarte-farbe-pk25.noscale', GridstandPK25Perimeter)
 
 # PK 50
 
