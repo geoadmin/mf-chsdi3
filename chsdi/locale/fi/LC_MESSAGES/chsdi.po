@@ -4886,9 +4886,6 @@ msgstr "Ausgabejahr"
 msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Anomalias isostaticas 500"
 
-msgid "ch.swisstopo.geologie-geolkarten500.metadata"
-msgstr "Divisiun charta geologica 500 Stampa"
-
 msgid "ch.swisstopo.geologie-geologische_karte"
 msgstr "Geologia 500"
 
@@ -5372,6 +5369,18 @@ msgstr "Fotografia or da l'aria"
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Divisiun SWISSIMAGE Raster"
 
+msgid "ch.swisstopo.images-swissimage.metadata.name_de"
+msgstr "Kachelname"
+
+msgid "ch.swisstopo.images-swissimage.metadata.name_en"
+msgstr "Kachelname"
+
+msgid "ch.swisstopo.images-swissimage.metadata.name_fr"
+msgstr "Kachelname"
+
+msgid "ch.swisstopo.images-swissimage.metadata.name_it"
+msgstr "Kachelname"
+
 msgid "ch.swisstopo.koordinatenaenderung"
 msgstr "MN95 Midada da coordinatas"
 
@@ -5481,7 +5490,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
 msgstr "Nachführungsstand"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.datenstand"
-msgstr "Stadi da las datas"
+msgstr "Datenstand der Kachel"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
 msgstr "ISBN-Nummer"
@@ -5511,7 +5520,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Massstab"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
-msgstr "Blattnummer"
+msgstr "Kachelnummer"
 
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Lotabweichungen"

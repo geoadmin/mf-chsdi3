@@ -1,3 +1,16 @@
+msgid "ch.swisstopo.images-swissimage.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.images-swissimage.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.images-swissimage.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.images-swissimage.metadata.name_it"
+msgstr ""
+
+
 msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
 msgstr ""
 

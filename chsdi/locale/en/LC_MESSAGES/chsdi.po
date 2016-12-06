@@ -4886,9 +4886,6 @@ msgstr "Edition"
 msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Isostatic anomalies 500"
 
-msgid "ch.swisstopo.geologie-geolkarten500.metadata"
-msgstr "Division geologic map 500 Paper"
-
 msgid "ch.swisstopo.geologie-geologische_karte"
 msgstr "Geology 500"
 
@@ -5372,6 +5369,18 @@ msgstr "SWISSIMAGE"
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Division SWISSIMAGE Raster"
 
+msgid "ch.swisstopo.images-swissimage.metadata.name_de"
+msgstr "Tile name"
+
+msgid "ch.swisstopo.images-swissimage.metadata.name_en"
+msgstr "Tile name"
+
+msgid "ch.swisstopo.images-swissimage.metadata.name_fr"
+msgstr "Tile name"
+
+msgid "ch.swisstopo.images-swissimage.metadata.name_it"
+msgstr "Tile name"
+
 msgid "ch.swisstopo.koordinatenaenderung"
 msgstr "LV95 Coordinate changes"
 
@@ -5481,7 +5490,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
 msgstr "State of updates"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.datenstand"
-msgstr "Data status"
+msgstr "Data status of tile"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
 msgstr "ISBN number"
@@ -5511,7 +5520,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Scale"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
-msgstr "Sheet number"
+msgstr "Tile number"
 
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Deviations of the vertical"

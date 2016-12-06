@@ -52,8 +52,12 @@ colspan = 3 if image_exists else 2
 % for a in attr:
   <tr style="height: 25px;">
   % if attr.index(a) == 0:
-    <td class="cell-left">${_('ch.swisstopo.lk25-papierkarte.metadata.%s' % a)}</td>
-    <td>${c['attributes'][a]}</td>
+      % if layer == 'ch.swisstopo.images-swissimage.metadata' :
+          <td class="cell-left">${_('ch.swisstopo.images-swissimage.metadata.%s' % a)}</td>
+      % else: 
+          <td class="cell-left">${_('ch.swisstopo.lk25-papierkarte.metadata.%s' % a)}</td>   
+      % endif
+          <td>${c['attributes'][a]}</td>
     % if image_exists == True:
         <td class="image_mako" rowspan=${rowspan}><img src="${image}" height="150" width="102" align="right"></td>
     % endif
