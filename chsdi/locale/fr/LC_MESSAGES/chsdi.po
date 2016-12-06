@@ -4886,9 +4886,6 @@ msgstr "Édition"
 msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Anomalies isostatiques 500"
 
-msgid "ch.swisstopo.geologie-geolkarten500.metadata"
-msgstr "Découpage carte géologique 500 Papier"
-
 msgid "ch.swisstopo.geologie-geologische_karte"
 msgstr "Géologie 500"
 
@@ -5372,6 +5369,18 @@ msgstr "SWISSIMAGE"
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Découpage SWISSIMAGE Raster"
 
+msgid "ch.swisstopo.images-swissimage.metadata.name_de"
+msgstr "Nom de la tuile"
+
+msgid "ch.swisstopo.images-swissimage.metadata.name_en"
+msgstr "Nom de la tuile"
+
+msgid "ch.swisstopo.images-swissimage.metadata.name_fr"
+msgstr "Nom de la tuile"
+
+msgid "ch.swisstopo.images-swissimage.metadata.name_it"
+msgstr "Nom de la tuile"
+
 msgid "ch.swisstopo.koordinatenaenderung"
 msgstr "MN95 Changements de coordonnées"
 
@@ -5481,7 +5490,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
 msgstr "Etat de mise à jour"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.datenstand"
-msgstr "État d'actualité"
+msgstr "État d'actualité de la tuile"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
 msgstr "Numéro ISBN"
@@ -5511,7 +5520,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Échelle"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
-msgstr "Numéro de feuille"
+msgstr "Numéro de la tuile"
 
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Déviations de la verticale"
