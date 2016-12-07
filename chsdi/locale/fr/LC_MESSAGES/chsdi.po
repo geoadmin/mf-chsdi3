@@ -3908,6 +3908,15 @@ msgstr "Mesure"
 msgid "ch.bav.schienennetz"
 msgstr "Réseau ferré"
 
+msgid "ch.bav.schienennetz-kilometrierungslinien.nom"
+msgstr "Nom ligne de kilom."
+
+msgid "ch.bav.schienennetz-kilometrierungslinien.numero"
+msgstr "No. de ligne de kilom."
+
+msgid "ch.bav.schienennetz-kilometrierungslinien.xtf_id"
+msgstr "ID de segment"
+
 msgid "ch.bav.schienennetz.abreviation"
 msgstr "Abr. PE"
 
@@ -3931,6 +3940,22 @@ msgstr "Km début"
 
 msgid "ch.bav.schienennetz.kmfin"
 msgstr "Km fin"
+
+#. TODO
+msgid "ch.bav.schienennetz.kmnumero"
+msgstr "ch.bav.schienennetz.kmnumero"
+
+msgid "ch.bav.schienennetz.no_debut"
+msgstr "No. PE début"
+
+msgid "ch.bav.schienennetz.no_fin"
+msgstr "No. PE fin"
+
+msgid "ch.bav.schienennetz.nom_debut"
+msgstr "Nom PE début"
+
+msgid "ch.bav.schienennetz.nom_fin"
+msgstr "Nom PE fin"
 
 msgid "ch.bav.schienennetz.nom_point"
 msgstr "Nom PE"

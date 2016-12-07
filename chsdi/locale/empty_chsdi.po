@@ -685,10 +685,34 @@ msgstr ""
 msgid "ch.bav.schienennetz.kmfin"
 msgstr ""
 
+msgid "ch.bav.schienennetz-kilometrierungslinien.xtf_id"
+msgstr ""
+
+msgid "ch.bav.schienennetz-kilometrierungslinien.nom"
+msgstr ""
+
+msgid "ch.bav.schienennetz-kilometrierungslinien.numero"
+msgstr ""
+
+msgid "ch.bav.schienennetz.kmnumero"
+msgstr ""
+
 msgid "ch.bav.schienennetz.nombrevoies"
 msgstr ""
 
 msgid "ch.bav.schienennetz.nom_point"
+msgstr ""
+
+msgid "ch.bav.schienennetz.no_debut"
+msgstr ""
+
+msgid "ch.bav.schienennetz.nom_debut"
+msgstr ""
+
+msgid "ch.bav.schienennetz.no_fin"
+msgstr ""
+
+msgid "ch.bav.schienennetz.nom_fin"
 msgstr ""
 
 msgid "ch.bav.schienennetz.nom_segment"

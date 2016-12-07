@@ -41,16 +41,17 @@ class SchienennetzPoint(Base, Vector):
     __bodId__ = 'ch.bav.schienennetz'
     __label__ = 'nom_point'
     __queryable_attributes__ = ['numero', 'nom_point', 'abreviation']
-    id = Column('xtf_id', Integer, primary_key=True)
+    id = Column('id', Integer, primary_key=True)
+    xtf_id = Column('xtf_id', Unicode)
     numero = Column('numero', Integer)
-    nom_point = Column('nom_point', Text)
-    abreviation = Column('abreviation', Text)
-    respdonneesabreviation = Column('respdonneesabreviation', Text)
-    debutvalidite = Column('debutvalidite', Text)
-    finvalidite = Column('finvalidite', Text)
+    nom_point = Column('nom_point', Unicode)
+    abreviation = Column('abreviation', Unicode)
+    respdonneesabreviation = Column('respdonneesabreviation', Unicode)
+    debutvalidite = Column('debutvalidite', Unicode)
+    finvalidite = Column('finvalidite', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.schienennetz', SchienennetzPoint)
+register(SchienennetzPoint.__bodId__, SchienennetzPoint)
 
 
 class SchienennetzSegment(Base, Vector):
@@ -60,22 +61,28 @@ class SchienennetzSegment(Base, Vector):
     __bodId__ = 'ch.bav.schienennetz'
     __label__ = 'nom_segment'
     __queryable_attributes__ = ['nom_segment']
-    id = Column('id', Integer, primary_key=True)
-    xtf_id = Column('xtf_id', Integer)
+    id = Column('bgdi_id', Integer, primary_key=True)
+    xtf_id = Column('xtf_id', Unicode)
     numeroet = Column('numeroet', Integer)
-    nom_segment = Column('nom_segment', Text)
+    nom_segment = Column('nom_segment', Unicode)
+    point_debut_nom = Column('point_debut_nom', Unicode)
+    point_debut_nummero = Column('point_debut_nummero', Unicode)
+    point_fin_nom = Column('point_fin_nom', Unicode)
+    point_fin_nummero = Column('point_fin_nummero', Unicode)
     kmdebut = Column('kmdebut', Numeric)
     kmfin = Column('kmfin', Numeric)
-    abreviationet = Column('abreviationet', Text)
+    kmtext = Column('kmtext', Unicode)
+    kmnummero = Column('kmnumero', Unicode)
+    abreviationet = Column('abreviationet', Unicode)
     nombrevoies = Column('nombrevoies', Integer)
-    ecartement = Column('ecartement', Text)
-    electrification_fr = Column('electrification_fr', Text)
-    electrification_de = Column('electrification_de', Text)
-    debutvalidite = Column('debutvalidite', Text)
-    finvalidite = Column('finvalidite', Text)
+    ecartement = Column('ecartement', Unicode)
+    electrification_fr = Column('electrification_fr', Unicode)
+    electrification_de = Column('electrification_de', Unicode)
+    debutvalidite = Column('debutvalidite', Unicode)
+    finvalidite = Column('finvalidite', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.schienennetz', SchienennetzSegment)
+register(SchienennetzSegment.__bodId__, SchienennetzSegment)
 
 
 class OevHaltestellen:

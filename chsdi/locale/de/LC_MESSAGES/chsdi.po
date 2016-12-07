@@ -3908,6 +3908,15 @@ msgstr "Planerische Massnahme"
 msgid "ch.bav.schienennetz"
 msgstr "Schienennetz"
 
+msgid "ch.bav.schienennetz-kilometrierungslinien.nom"
+msgstr "KM-Linie Name"
+
+msgid "ch.bav.schienennetz-kilometrierungslinien.numero"
+msgstr "KM-Linie Nr."
+
+msgid "ch.bav.schienennetz-kilometrierungslinien.xtf_id"
+msgstr "Segement-ID"
+
 msgid "ch.bav.schienennetz.abreviation"
 msgstr "PB-Abk."
 
@@ -3931,6 +3940,21 @@ msgstr "Km Anfang"
 
 msgid "ch.bav.schienennetz.kmfin"
 msgstr "Km Ende"
+
+msgid "ch.bav.schienennetz.kmnumero"
+msgstr "ch.bav.schienennetz.kmnumero"
+
+msgid "ch.bav.schienennetz.no_debut"
+msgstr "BP-Nr. Anfang"
+
+msgid "ch.bav.schienennetz.no_fin"
+msgstr "BP-Nr. Ende"
+
+msgid "ch.bav.schienennetz.nom_debut"
+msgstr "BP-Name Anfang"
+
+msgid "ch.bav.schienennetz.nom_fin"
+msgstr "BP-Name Ende"
 
 msgid "ch.bav.schienennetz.nom_point"
 msgstr "BP-Name"
