@@ -3909,7 +3909,7 @@ msgid "ch.bav.schienennetz"
 msgstr "Rete ferroviaria"
 
 msgid "ch.bav.schienennetz.abreviation"
-msgstr "Abr. PE"
+msgstr "Abbrev. di PE"
 
 msgid "ch.bav.schienennetz.abreviationet"
 msgstr "Abr. GI"
@@ -3927,13 +3927,13 @@ msgid "ch.bav.schienennetz.finvalidite"
 msgstr "Fin Validité"
 
 msgid "ch.bav.schienennetz.kmdebut"
-msgstr "Km début"
+msgstr "Km inizio"
 
 msgid "ch.bav.schienennetz.kmfin"
-msgstr "Km fin"
+msgstr "Km fine"
 
 msgid "ch.bav.schienennetz.nom_point"
-msgstr "Nom PE"
+msgstr "Nome di PE"
 
 msgid "ch.bav.schienennetz.nom_segment"
 msgstr "Nom de segment"
@@ -3942,7 +3942,7 @@ msgid "ch.bav.schienennetz.nombrevoies"
 msgstr "No. Voies"
 
 msgid "ch.bav.schienennetz.numero"
-msgstr "No. PE"
+msgstr "No di PE"
 
 msgid "ch.bav.schienennetz.numeroet"
 msgstr "No. GI"
@@ -3951,7 +3951,7 @@ msgid "ch.bav.schienennetz.respdonneesabreviation"
 msgstr "Autorité Abr. PE"
 
 msgid "ch.bav.schienennetz.xtf_id"
-msgstr "ID"
+msgstr "ID di nodo"
 
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=it"
@@ -5727,7 +5727,7 @@ msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"
 
 msgid "ch.swisstopo.swissalti3d.metadata"
-msgstr "swissALTI3D Hillshade"
+msgstr "Divisione swissALTI3D Raster"
 
 msgid "ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill"
 msgstr "Limiti di distretto"

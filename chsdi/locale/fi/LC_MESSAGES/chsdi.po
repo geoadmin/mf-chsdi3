@@ -3927,10 +3927,10 @@ msgid "ch.bav.schienennetz.finvalidite"
 msgstr "EndeGueltigkeit"
 
 msgid "ch.bav.schienennetz.kmdebut"
-msgstr "KmAnfang"
+msgstr "Km Anfang"
 
 msgid "ch.bav.schienennetz.kmfin"
-msgstr "KmEnde"
+msgstr "Km Ende"
 
 msgid "ch.bav.schienennetz.nom_point"
 msgstr "BP-Name"
@@ -3951,7 +3951,7 @@ msgid "ch.bav.schienennetz.respdonneesabreviation"
 msgstr "PB-Abk-Datenherr"
 
 msgid "ch.bav.schienennetz.xtf_id"
-msgstr "ID"
+msgstr "Netzknoten-ID"
 
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=de"
@@ -5727,7 +5727,7 @@ msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Sumbriva reliev"
 
 msgid "ch.swisstopo.swissalti3d.metadata"
-msgstr "swissALTI3D Sumbriva reliev"
+msgstr "Divisiun swissALTI3D Raster"
 
 msgid "ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill"
 msgstr "Cunfins districtuals"

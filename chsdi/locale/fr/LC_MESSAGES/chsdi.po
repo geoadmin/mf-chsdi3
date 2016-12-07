@@ -3951,7 +3951,7 @@ msgid "ch.bav.schienennetz.respdonneesabreviation"
 msgstr "Autorité Abr. PE"
 
 msgid "ch.bav.schienennetz.xtf_id"
-msgstr "ID"
+msgstr "ID de noeud-réseau"
 
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=fr"
@@ -5727,7 +5727,7 @@ msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D estompage du relief"
 
 msgid "ch.swisstopo.swissalti3d.metadata"
-msgstr "swissALTI3D estompage du relief"
+msgstr "Découpage swissALTI3D Raster"
 
 msgid "ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill"
 msgstr "Limites de district"
