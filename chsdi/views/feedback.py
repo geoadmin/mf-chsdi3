@@ -60,6 +60,7 @@ def feedback(context, request):
         # Attach kml if there
         if kml is not None and kml is not '':
             part = MIMEBase('application', 'vnd.google-earth.kml+xml')
+            kml = kml.encode('UTF-8')
             part.set_payload(kml)
             Encoders.encode_base64(part)
             part.add_header('Content-Disposition', 'attachment; filename=' + kmlfilename)
