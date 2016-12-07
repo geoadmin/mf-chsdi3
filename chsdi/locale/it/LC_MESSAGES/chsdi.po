@@ -3908,6 +3908,15 @@ msgstr "Misura"
 msgid "ch.bav.schienennetz"
 msgstr "Rete ferroviaria"
 
+msgid "ch.bav.schienennetz-kilometrierungslinien.nom"
+msgstr "Nome di linea km"
+
+msgid "ch.bav.schienennetz-kilometrierungslinien.numero"
+msgstr "No. di linea km"
+
+msgid "ch.bav.schienennetz-kilometrierungslinien.xtf_id"
+msgstr "ID di segmento"
+
 msgid "ch.bav.schienennetz.abreviation"
 msgstr "Abbrev. di PE"
 
@@ -3931,6 +3940,21 @@ msgstr "Km inizio"
 
 msgid "ch.bav.schienennetz.kmfin"
 msgstr "Km fine"
+
+msgid "ch.bav.schienennetz.kmnumero"
+msgstr "ch.bav.schienennetz.kmnumero"
+
+msgid "ch.bav.schienennetz.no_debut"
+msgstr "No. di PE inizio"
+
+msgid "ch.bav.schienennetz.no_fin"
+msgstr "No. di PE fine"
+
+msgid "ch.bav.schienennetz.nom_debut"
+msgstr "Nome di PE inzio"
+
+msgid "ch.bav.schienennetz.nom_fin"
+msgstr "Nome di PE fine"
 
 msgid "ch.bav.schienennetz.nom_point"
 msgstr "Nome di PE"

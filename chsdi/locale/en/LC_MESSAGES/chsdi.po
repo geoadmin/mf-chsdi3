@@ -3908,6 +3908,15 @@ msgstr "Measure"
 msgid "ch.bav.schienennetz"
 msgstr "Railway network | Rait da viafier"
 
+msgid "ch.bav.schienennetz-kilometrierungslinien.nom"
+msgstr "Km line name"
+
+msgid "ch.bav.schienennetz-kilometrierungslinien.numero"
+msgstr "Km line nr."
+
+msgid "ch.bav.schienennetz-kilometrierungslinien.xtf_id"
+msgstr "Segment ID"
+
 msgid "ch.bav.schienennetz.abreviation"
 msgstr "OP abbrev."
 
@@ -3931,6 +3940,21 @@ msgstr "Km beginning"
 
 msgid "ch.bav.schienennetz.kmfin"
 msgstr "Km end"
+
+msgid "ch.bav.schienennetz.kmnumero"
+msgstr "ch.bav.schienennetz.kmnumero"
+
+msgid "ch.bav.schienennetz.no_debut"
+msgstr "Beginning OP nr."
+
+msgid "ch.bav.schienennetz.no_fin"
+msgstr "End OP nr."
+
+msgid "ch.bav.schienennetz.nom_debut"
+msgstr "Beginning OP name"
+
+msgid "ch.bav.schienennetz.nom_fin"
+msgstr "End OP name"
 
 msgid "ch.bav.schienennetz.nom_point"
 msgstr "OP name"
