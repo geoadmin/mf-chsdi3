@@ -80,6 +80,12 @@ Available versions are (which are all based on ol3 releases):
 - 3.6.0
 - 3.18.2
 
+The loader is including a polyfill that might conflict with other JavaScript libraries and frameworks you are using in your application. For such cases, you can specify the ignore_polyfill parameter to not include the polyfill.
+
+.. code-block:: html
+
+  <script src="http://api3.geo.admin.ch/loader.js?ignore_polyfill=true" type="text/javascript"></script>
+
 The first part is to include the GeoAdmin API library. This loader will load all necessary JavaScript and CSS code. You can force the language (en, de, fr, it, rm) or let the navigator language be used.
 
 <div> to contain the map

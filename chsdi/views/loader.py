@@ -13,6 +13,7 @@ available_versions = ['3.6.0', '3.18.2']
 @view_config(route_name='ga_api', renderer='json')
 def loadjs(request):
     mode = request.params.get('mode')
+    ignore_polyfill = request.params.get('ignore_polyfill')
     # Determined automatically in subscriber
     lang = request.lang
     geoadmin_file_storage_bucket = 'public.geo.admin.ch'
@@ -52,6 +53,7 @@ def loadjs(request):
             'epsg_21781_js': epsg_21781_js,
             'epsg_2056_js': epsg_2056_js,
             'api_url': request.path_url.replace('/loader.js', ''),
+            'ignore_polyfill': ignore_polyfill,
             'data': json.dumps(data, separators=(',', ':'))
         },
         request=request
