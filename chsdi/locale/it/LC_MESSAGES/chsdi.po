@@ -3912,16 +3912,16 @@ msgid "ch.bav.schienennetz.abreviation"
 msgstr "Abbrev. di PE"
 
 msgid "ch.bav.schienennetz.abreviationet"
-msgstr "Abr. GI"
+msgstr "Abbr. Di GI"
 
 msgid "ch.bav.schienennetz.debutvalidite"
 msgstr "Début Validité"
 
 msgid "ch.bav.schienennetz.ecartement"
-msgstr "Écartement"
+msgstr "Scartamento"
 
 msgid "ch.bav.schienennetz.electrification"
-msgstr "Électrification"
+msgstr "Elettrificazione"
 
 msgid "ch.bav.schienennetz.finvalidite"
 msgstr "Fin Validité"
@@ -3936,10 +3936,10 @@ msgid "ch.bav.schienennetz.nom_point"
 msgstr "Nome di PE"
 
 msgid "ch.bav.schienennetz.nom_segment"
-msgstr "Nom de segment"
+msgstr "Nome di segmento"
 
 msgid "ch.bav.schienennetz.nombrevoies"
-msgstr "No. Voies"
+msgstr "No. di binari"
 
 msgid "ch.bav.schienennetz.numero"
 msgstr "No di PE"
@@ -5370,16 +5370,16 @@ msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Divisione SWISSIMAGE Raster"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_de"
-msgstr "Denominazione di tile "
+msgstr "Denominazione di foglio"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_en"
-msgstr "Denominazione di tile "
+msgstr "Denominazione di foglio"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_fr"
-msgstr "Denominazione di tile "
+msgstr "Denominazione di foglio"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_it"
-msgstr "Denominazione di tile "
+msgstr "Denominazione di foglio"
 
 msgid "ch.swisstopo.koordinatenaenderung"
 msgstr "MN95 Cambiamenti di coordinate"
@@ -5490,7 +5490,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
 msgstr "Stato di aggiornamento"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.datenstand"
-msgstr "Stato d'attualità di tile"
+msgstr "Stato d'attualità di foglio"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
 msgstr "Codice ISBN"
@@ -5520,7 +5520,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Scala"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
-msgstr "Numero di tile"
+msgstr "Numero di foglio"
 
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Deviazione della verticale"

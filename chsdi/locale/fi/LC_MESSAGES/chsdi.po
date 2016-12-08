@@ -5370,16 +5370,16 @@ msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Divisiun SWISSIMAGE Raster"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_de"
-msgstr "Kachelname"
+msgstr "Blattbezeichnung"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_en"
-msgstr "Kachelname"
+msgstr "Blattbezeichnung"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_fr"
-msgstr "Kachelname"
+msgstr "Blattbezeichnung"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_it"
-msgstr "Kachelname"
+msgstr "Blattbezeichnung"
 
 msgid "ch.swisstopo.koordinatenaenderung"
 msgstr "MN95 Midada da coordinatas"
@@ -5490,7 +5490,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
 msgstr "Nachführungsstand"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.datenstand"
-msgstr "Datenstand der Kachel"
+msgstr "Datenstand des Blattes"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
 msgstr "ISBN-Nummer"
@@ -5520,7 +5520,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Massstab"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
-msgstr "Kachelnummer"
+msgstr "Blattnummer"
 
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Lotabweichungen"

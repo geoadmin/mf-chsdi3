@@ -27,8 +27,14 @@ if 'scale' in c['attributes']:
     if c['attributes']['scale']:
         c['attributes']['scale'] = h.format_scale(c['attributes']['scale'])
 
+layerTile = ['ch.swisstopo.images-swissimage.metadata', 
+             'ch.swisstopo.pixelkarte-pk25.metadata',
+             'ch.swisstopo.pixelkarte-pk50.metadata', 
+             'ch.swisstopo.pixelkarte-pk100.metadata', 
+             'ch.swisstopo.pixelkarte-pk200.metadata']
+
 attr = []
-attr_poss = ['number', name, 'tileid', 'datenstand', 'scale', 'release', 'data', 'isbn', 'author', 'url_legend']
+attr_poss = ['number', name, 'mapsheetid', 'tileid', 'datenstand', 'scale', 'release', 'data', 'isbn', 'author', 'url_legend']
 for ap in attr_poss:
     if ap in c['attributes']:
         if c['attributes'][ap]:
@@ -54,7 +60,7 @@ colspan = 3 if image_exists else 2
 % for a in attr:
   <tr style="height: 25px;">
   % if attr.index(a) == 0:
-      % if layer == 'ch.swisstopo.images-swissimage.metadata' :
+      % if layer in layerTile :
           <td class="cell-left">${_('ch.swisstopo.images-swissimage.metadata.%s' % a)}</td>
       % else: 
           <td class="cell-left">${_('ch.swisstopo.lk25-papierkarte.metadata.%s' % a)}</td>   
