@@ -3939,7 +3939,7 @@ msgid "ch.bav.schienennetz.nom_segment"
 msgstr "Nom de segment"
 
 msgid "ch.bav.schienennetz.nombrevoies"
-msgstr "No. Voies"
+msgstr "No. voies"
 
 msgid "ch.bav.schienennetz.numero"
 msgstr "No. PE"
@@ -5370,16 +5370,16 @@ msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Découpage SWISSIMAGE Raster"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_de"
-msgstr "Nom de la tuile"
+msgstr "Nom de la feuille"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_en"
-msgstr "Nom de la tuile"
+msgstr "Nom de la feuille"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_fr"
-msgstr "Nom de la tuile"
+msgstr "Nom de la feuille"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_it"
-msgstr "Nom de la tuile"
+msgstr "Nom de la feuille"
 
 msgid "ch.swisstopo.koordinatenaenderung"
 msgstr "MN95 Changements de coordonnées"
@@ -5490,7 +5490,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
 msgstr "Etat de mise à jour"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.datenstand"
-msgstr "État d'actualité de la tuile"
+msgstr "État d'actualité de la feuille"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
 msgstr "Numéro ISBN"
@@ -5520,7 +5520,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Échelle"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
-msgstr "Numéro de la tuile"
+msgstr "Numéro de la feuille"
 
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Déviations de la verticale"

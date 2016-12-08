@@ -3909,19 +3909,19 @@ msgid "ch.bav.schienennetz"
 msgstr "Railway network | Rait da viafier"
 
 msgid "ch.bav.schienennetz.abreviation"
-msgstr "PB-Abk."
+msgstr "OP abbrev."
 
 msgid "ch.bav.schienennetz.abreviationet"
-msgstr "ISB-Abk."
+msgstr "IM abbrev."
 
 msgid "ch.bav.schienennetz.debutvalidite"
 msgstr "BeginnGueltigkeit"
 
 msgid "ch.bav.schienennetz.ecartement"
-msgstr "Spurweite"
+msgstr "Gauge"
 
 msgid "ch.bav.schienennetz.electrification"
-msgstr "Elektrifizierung"
+msgstr "Electrification"
 
 msgid "ch.bav.schienennetz.finvalidite"
 msgstr "EndeGueltigkeit"
@@ -3936,13 +3936,13 @@ msgid "ch.bav.schienennetz.nom_point"
 msgstr "OP name"
 
 msgid "ch.bav.schienennetz.nom_segment"
-msgstr "Segment-Name"
+msgstr "Segment name"
 
 msgid "ch.bav.schienennetz.nombrevoies"
-msgstr "Anz. Gleise"
+msgstr "NO of tracks"
 
 msgid "ch.bav.schienennetz.numero"
-msgstr "OP nr"
+msgstr "OP nr."
 
 msgid "ch.bav.schienennetz.numeroet"
 msgstr "ISB-Nr."
@@ -5370,16 +5370,16 @@ msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Division SWISSIMAGE Raster"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_de"
-msgstr "Tile name"
+msgstr "Mapsheet name"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_en"
-msgstr "Tile name"
+msgstr "Mapsheet name"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_fr"
-msgstr "Tile name"
+msgstr "Mapsheet name"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_it"
-msgstr "Tile name"
+msgstr "Mapsheet name"
 
 msgid "ch.swisstopo.koordinatenaenderung"
 msgstr "LV95 Coordinate changes"
@@ -5490,7 +5490,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
 msgstr "State of updates"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.datenstand"
-msgstr "Data status of tile"
+msgstr "Data status of mapsheet"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.isbn"
 msgstr "ISBN number"
@@ -5520,7 +5520,7 @@ msgid "ch.swisstopo.lk25-papierkarte.metadata.scale"
 msgstr "Scale"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
-msgstr "Tile number"
+msgstr "Mapsheet number"
 
 msgid "ch.swisstopo.lotabweichungen"
 msgstr "Deviations of the vertical"

@@ -901,7 +901,7 @@ class GridstandTemplate:
     __label__ = 'lk_name'
     id = Column('kbnum', Unicode, primary_key=True)
     lk_name = Column('lk_name', Text)
-    release = Column('release', Integer)
+    datenstand = Column('release', Integer)
     the_geom = Column(Geometry2D)
 
 
@@ -936,57 +936,61 @@ register_perimeter('ch.swisstopo.pixelkarte-farbe-pk25.noscale', GridstandPK25Pe
 
 
 # Only PK50 has a fixed perimeter
-class GridstandPK50Perimeter(Base, ShopStandardClass, Vector):
+class GridstandPK50Perimeter(Base, Vector):
     __tablename__ = 'shop_perimeter_pk50'
     __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk50.noscale'
     __totalArea__ = 65520.0
     __table_args__ = ({'autoload': False})
+    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 
-class GridstandPk50Meta(Base, GridstandTemplate, Vector):
+class GridstandPk50Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk50.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk50_tilecache'
-    __template__ = 'templates/htmlpopup/pk50_metadata.mako'
+    tileid = Column('tileid', Unicode)
 
-register('ch.swisstopo.pixelkarte-farbe-pk50.noscale', GridstandPK50Perimeter)
+
 register('ch.swisstopo.pixelkarte-pk50.metadata', GridstandPk50Meta)
+register_perimeter('ch.swisstopo.pixelkarte-farbe-pk50.noscale', GridstandPK50Perimeter)
 
 # PK 100
 
 
-class GridstandPK100Perimeter(Base, ShopStandardClass, Vector):
+class GridstandPK100Perimeter(Base, Vector):
     __tablename__ = 'shop_perimeter_pk100'
     __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk100.noscale'
     __table_args__ = ({'autoload': False})
+    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 
-class GridstandPk100Meta(Base, GridstandTemplate, Vector):
+class GridstandPk100Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk100.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk100_tilecache'
-    __template__ = 'templates/htmlpopup/pk100_metadata.mako'
+    tileid = Column('tileid', Unicode)
 
-register('ch.swisstopo.pixelkarte-farbe-pk100.noscale', GridstandPK100Perimeter)
 register('ch.swisstopo.pixelkarte-pk100.metadata', GridstandPk100Meta)
+register_perimeter('ch.swisstopo.pixelkarte-farbe-pk100.noscale', GridstandPK100Perimeter)
 
 # PK 200
 
 
-class GridstandPK200Perimeter(Base, ShopStandardClass, Vector):
+class GridstandPK200Perimeter(Base, Vector):
     __tablename__ = 'shop_perimeter_pk200'
     __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk200.noscale'
     __table_args__ = ({'autoload': False})
+    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 
-class GridstandPk200Meta(Base, GridstandTemplate, Vector):
+class GridstandPk200Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk200.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk200_tilecache'
-    __template__ = 'templates/htmlpopup/pk200_metadata.mako'
+    tileid = Column('tileid', Unicode)
 
-register('ch.swisstopo.pixelkarte-farbe-pk200.noscale', GridstandPK200Perimeter)
 register('ch.swisstopo.pixelkarte-pk200.metadata', GridstandPk200Meta)
+register_perimeter('ch.swisstopo.pixelkarte-farbe-pk200.noscale', GridstandPK200Perimeter)
 
 # PK 500
 
