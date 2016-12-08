@@ -4826,25 +4826,22 @@ msgstr "Carte géol. générale 200"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata"
 msgstr "Découpage carte géologique générale 200 Raster"
 
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
-msgstr "Auteur(s)"
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.jahr"
-msgstr "Année de publication"
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.nr"
-msgstr "Nombre de la feuille"
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.titel"
-msgstr "Nom de feuille"
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.name"
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.name_de"
 msgstr "Nom"
 
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.name_en"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.name_fr"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.name_it"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.number"
 msgstr "Numéro"
 
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.release"
 msgstr "Édition"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata"
@@ -4897,6 +4894,27 @@ msgstr "Édition"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas"
 msgstr "Atlas géologique AG25"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata"
+msgstr "Découpage atlas géologique 25 Raster"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata.name_de"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata.name_en"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata.name_fr"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata.name_it"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata.number"
+msgstr "Numéro"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata.release"
+msgstr "Édition"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas.name"
 msgstr "Nom"
@@ -5264,6 +5282,24 @@ msgstr "Localité"
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Découpage cartes géologiques spéciales Raster"
 
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.name_de"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.name_en"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.name_fr"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.name_it"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.number"
+msgstr "Numéro"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.release"
+msgstr "Édition"
+
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata"
 msgstr "Découpage cartes géologiques spéciales Papier"
 
@@ -5274,6 +5310,27 @@ msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.number"
 msgstr "Numéro"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.release"
+msgstr "Édition"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata"
+msgstr "Découpage cartes géologiques spéciales Vector"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.name_de"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.name_en"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.name_fr"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.name_it"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.number"
+msgstr "Numéro"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.release"
 msgstr "Édition"
 
 msgid "ch.swisstopo.geologie-tektonische_karte"
@@ -5633,6 +5690,9 @@ msgstr "No de l'image"
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Lieu"
 
+msgid "ch.swisstopo.luftfahrtkarten-icao.metadata"
+msgstr "Découpage carte aéronautique OACI Raster"
+
 msgid "ch.swisstopo.luftfahrtkarten-icao_papier.metadata"
 msgstr "Découpage cartes aéronautiques OACI Papier"
 
@@ -5686,6 +5746,9 @@ msgstr "swisstopo, prv"
 
 msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
+
+msgid "ch.swisstopo.segelflugkarte.metadata"
+msgstr "Découpage carte vol à voile Raster"
 
 msgid "ch.swisstopo.segelflugkarte_papier.metadata"
 msgstr "Découpage carte vol à voile Papier"
