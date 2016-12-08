@@ -50,7 +50,7 @@ ${partials.table_body_cadastral(c, lang, fallbackLang, clickCoord)}
 </tr>
 <tr>
     <td class="cell-left">${_('ch.swisstopo-vd.amtliche-vermessung.shape')}</td><td>
-% if requests.get(shp_url).status_code == 200:
+% if requests.head(shp_url, headers={'User-Agent': 'mf-geoadmin/python'}).status_code == 200:
         <a href="${shp_url}" target="_blank">
             SHP</a>
 % else:
@@ -60,7 +60,7 @@ ${partials.table_body_cadastral(c, lang, fallbackLang, clickCoord)}
 </tr>
 <tr>
     <td class="cell-left">${_('ch.swisstopo-vd.amtliche-vermessung.itf')}</td><td>
-% if requests.get(itf_url).status_code == 200:
+% if requests.head(itf_url, headers={'User-Agent': 'mf-geoadmin/python'}).status_code == 200:
         <a href="${itf_url}" target="_blank">
             ITF</a>
 % else:
