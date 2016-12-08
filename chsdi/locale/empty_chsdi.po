@@ -1,3 +1,51 @@
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.segelflugkarte.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.luftfahrtkarten-icao.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.number"
+msgstr ""
+
 msgid "ch.swisstopo.images-swissimage.metadata.name_en"
 msgstr ""
 
@@ -9,7 +57,6 @@ msgstr ""
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_it"
 msgstr ""
-
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
 msgstr ""
@@ -2744,15 +2791,6 @@ msgid "ch.bafu.fischerei-nasenlaichplaetze"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
-msgstr ""
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.name"
-msgstr ""
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
-msgstr ""
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
 msgstr ""
 
 msgid "ch.swisstopo.geologie-geocover.metadata"
@@ -6966,6 +7004,24 @@ msgstr ""
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr ""
 
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.name_it"
+msgstr ""
+
 msgid "tt_gsk_meta_name"
 msgstr ""
 
@@ -8196,16 +8252,22 @@ msgstr ""
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata"
 msgstr ""
 
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.name_it"
 msgstr ""
 
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.nr"
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.name_fr"
 msgstr ""
 
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.jahr"
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.name_en"
 msgstr ""
 
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.titel"
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.number"
 msgstr ""
 
 msgid "ch.bafu.neophyten-japanisches_geissblatt"
