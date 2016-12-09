@@ -35,13 +35,13 @@ def rotateUrl(url):
 HEADER_RESULTS = [{
     # NOTE Varnish transforms all non 200 status code into 204 (even 404)!
     'Results': [200, 204, 304],
-    'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': 'http://unittest.geo.admin.ch'}
+    'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
 }, {
     'Results': [403],
-    'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': None}
+    'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': None, 'User-Agent': 'mf-geaodmin/python'}
 }, {
     'Results': [403],
-    'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': 'http://foonogood.ch'}
+    'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': 'http://foonogood.ch', 'User-Agent': 'mf-geoadmin/python'}
 }
 ]
 

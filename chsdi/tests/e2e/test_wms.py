@@ -23,7 +23,7 @@ except KeyError as e:
 
 
 def get_wms_layers():
-    resp = requests.get(api_url + '/rest/services/all/MapServer/layersConfig')
+    resp = requests.get(api_url + '/rest/services/all/MapServer/layersConfig', headers={'User-Agent': 'mf-geoadmin/python'})
     layers = resp.json()
 
     return [layers[k] for k in layers.keys() if layers[k]['type'] == 'wms']
@@ -58,7 +58,7 @@ def check_status_code(url, scheme):
     s = requests.Session()
     a = requests.adapters.HTTPAdapter(max_retries=max_retry)
     s.mount('%s://' % scheme, a)
-    resp = s.get(url)
+    resp = s.get(url, headers={'User-Agent': 'mf-geoadmin/python'})
     assert resp.status_code in [200, 204, 304], resp.status_code
     assert resp.headers['content-type'] in ['image/png', 'image/jpeg'], resp.headers['content-type']
     if geodata_staging == 'prod':

@@ -266,7 +266,7 @@ def parseHydroXML(id, root):
 def imagesize_from_metafile(tileUrlBasePath, bvnummer):
     width = None
     height = None
-    headers = {'Referer': 'http://admin.ch'}
+    headers = {'Referer': 'http://admin.ch', 'User-Agent': 'mf-geoadmin/python'}
     metaurl = tileUrlBasePath + '/' + bvnummer + '/tilemapresource.xml'
     s = requests.Session()
     response = s.get(metaurl, headers=headers)
