@@ -52,7 +52,7 @@
     % elif c['attributes']['ak'] == 'SG':
         <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://www.sg.ch/" target="_blank">SG</a></td></tr>
     % elif c['attributes']['ak'] == 'VS':
-        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="https://sitonline.vs.ch/urbanisation/mo/${c['fallbackLang']}/" target="_blnk">VS</a></td></br>
+        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="https://sitonline.vs.ch/urbanisation/mo/${fallbackLang}/" target="_blnk">VS</a></td></br>
     % elif c['attributes']['ak'] == 'FL':
         <tr><td class="cell-left">${_('link to geoportal')}</td><td><a href="http://geodaten.llv.li/geoshop/public.html?zoombox=${c['bbox'][0]},${c['bbox'][1]},${c['bbox'][2]},${c['bbox'][3]}" target="_blank">${_('FL')}</a></td></tr>
     % else:
