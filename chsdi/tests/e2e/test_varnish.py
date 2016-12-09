@@ -47,14 +47,14 @@ class TestHeight(TestVarnish):
     def test_height_no_referer(self):
 
         payload = {'easting': 600000.0, 'northing': 200000.0, '_id': self.hash()}
-        resp = requests.get(self.api_url + '/rest/services/height', params=payload)
+        resp = requests.get(self.api_url + '/rest/services/height', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
 
         self.assertEqual(resp.status_code, 403)
 
     def test_height_good_referer(self):
 
         payload = {'easting': 600000.0, 'northing': 200000.0, '_id': self.hash()}
-        headers = {'referer': 'http://unittest.geo.admin.ch'}
+        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
         resp = requests.get(self.api_url + '/rest/services/height', params=payload, headers=headers)
 
         self.assertEqual(resp.status_code, 200)
@@ -65,14 +65,14 @@ class TestProfile(TestVarnish):
     def test_profile_json_no_referer(self):
 
         payload = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', '_id': self.hash()}
-        resp = requests.get(self.api_url + '/rest/services/profile.json', params=payload)
+        resp = requests.get(self.api_url + '/rest/services/profile.json', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
 
         self.assertEqual(resp.status_code, 403)
 
     def test_profile_json_good_referer(self):
 
         payload = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', '_id': self.hash()}
-        headers = {'referer': 'http://unittest.geo.admin.ch'}
+        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
         resp = requests.get(self.api_url + '/rest/services/profile.json', params=payload, headers=headers)
 
         self.assertEqual(resp.status_code, 200)
@@ -80,14 +80,14 @@ class TestProfile(TestVarnish):
     def test_profile_csv_no_referer(self):
 
         payload = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', '_id': self.hash()}
-        resp = requests.get(self.api_url + '/rest/services/profile.csv', params=payload)
+        resp = requests.get(self.api_url + '/rest/services/profile.csv', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
 
         self.assertEqual(resp.status_code, 403)
 
     def test_profile_csv_good_referer(self):
 
         payload = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', '_id': self.hash()}
-        headers = {'referer': 'http://unittest.geo.admin.ch'}
+        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
         resp = requests.get(self.api_url + '/rest/services/profile.csv', params=payload, headers=headers)
 
         self.assertEqual(resp.status_code, 200)
@@ -98,7 +98,7 @@ class TestLocation(TestVarnish):
     def test_locations_no_referer(self):
 
         payload = {'type': 'locations', 'searchText': 'fontenay 10 lausanne', '_id': self.hash()}
-        r = requests.get(self.api_url + '/rest/services/api/SearchServer', params=payload)
+        r = requests.get(self.api_url + '/rest/services/api/SearchServer', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
 
         returned_attrs = r.json()['results'][0]['attrs'].keys()
 
@@ -108,7 +108,7 @@ class TestLocation(TestVarnish):
     def test_locations_good_referer(self):
 
         payload = {'type': 'locations', 'searchText': 'fontenay 10 lausanne', '_id': self.hash()}
-        headers = {'referer': 'http://unittest.geo.admin.ch'}
+        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
 
         r = requests.get(self.api_url + '/rest/services/api/SearchServer', params=payload, headers=headers)
 
@@ -120,7 +120,7 @@ class TestLocation(TestVarnish):
     def test_location_cached_no_referer(self):
 
         payload = {'type': 'locations', 'searchText': 'fontenay 10 lausanne'}
-        r = requests.get(self.api_url + '/%d/rest/services/api/SearchServer' % self.timestamp(), params=payload)
+        r = requests.get(self.api_url + '/%d/rest/services/api/SearchServer' % self.timestamp(), params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
 
         returned_attrs = r.json()['results'][0]['attrs'].keys()
 
@@ -130,7 +130,7 @@ class TestLocation(TestVarnish):
     def test_location_cached_good_referer(self):
 
         payload = {'type': 'locations', 'searchText': 'fontenay 10 lausanne'}
-        headers = {'referer': 'http://unittest.geo.admin.ch'}
+        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
 
         r = requests.get(self.api_url + '/%d/rest/services/api/SearchServer' % self.timestamp(), params=payload, headers=headers)
 
@@ -151,21 +151,21 @@ class TestGebaeude(TestVarnish):
     def test_gebaude_no_referer(self):
 
         payload = {'_id': self.hash()}
-        r = requests.get(self.api_url + '/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/490830_0', params=payload)
+        r = requests.get(self.api_url + '/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/490830_0', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
 
         self.assertNotIn('geometry', r.json()['feature'].keys())
 
     def test_find_gebaude_no_referer(self):
 
         payload = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': 'berges', 'searchField': 'strname1', '_id': self.hash()}
-        r = requests.get(self.api_url + '/rest/services/ech/MapServer/find', params=payload)
+        r = requests.get(self.api_url + '/rest/services/ech/MapServer/find', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
 
         self.assertNotIn('geometry', r.json()['results'][0].keys())
 
     def test_gebaude_good_referer(self):
 
         payload = {'type': 'location', 'searchText': 'dorf', '_id': self.hash()}
-        headers = {'referer': 'http://unittest.geo.admin.ch'}
+        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
 
         r = requests.get(self.api_url + '/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/490830_0', params=payload, headers=headers)
 
@@ -174,7 +174,7 @@ class TestGebaeude(TestVarnish):
     def test_find_gebaude_good_referer(self):
 
         payload = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': 'berges', 'searchField': 'strname1', '_id': self.hash()}
-        headers = {'referer': 'http://unittest.geo.admin.ch'}
+        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
         r = requests.get(self.api_url + '/rest/services/ech/MapServer/find', params=payload, headers=headers)
 
         self.assertIn('geometry', r.json()['results'][0].keys())
@@ -189,14 +189,14 @@ class TestMapproxyGetTile(TestVarnish):
 
         payload = {'_id': self.hash()}
 
-        resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload)
+        resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
 
         self.assertEqual(resp.status_code, 403)
 
     def test_mapproxy_bad_referer(self):
 
         payload = {'_id': self.hash()}
-        headers = {'referer': 'http://gooffy-referer.ch'}
+        headers = {'referer': 'http://gooffy-referer.ch', 'User-Agent': 'mf-geoadmin/python'}
 
         resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload, headers=headers)
 
@@ -205,7 +205,7 @@ class TestMapproxyGetTile(TestVarnish):
     def test_mapproxy_good_referer(self):
 
         payload = {'_id': self.hash()}
-        headers = {'referer': 'http://unittest.geo.admin.ch'}
+        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
 
         resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload, headers=headers)
 
@@ -221,14 +221,14 @@ class TestOgcproxy(TestVarnish):
 
         payload = {'_id': self.hash()}
 
-        resp = requests.get(self.api_url + '/ogcproxy?url=http%3A%2F%2Fmapserver1.gr.ch%2Fwms%2Fadmineinteilung%3FSERVICE%3DWMS%26REQUEST%3DGetCapabilities%26VERSION%3D1.3.0', params=payload)
+        resp = requests.get(self.api_url + '/ogcproxy?url=http%3A%2F%2Fmapserver1.gr.ch%2Fwms%2Fadmineinteilung%3FSERVICE%3DWMS%26REQUEST%3DGetCapabilities%26VERSION%3D1.3.0', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
 
         self.assertEqual(resp.status_code, 403)
 
     def test_ogcproxy_bad_referer(self):
 
         payload = {'_id': self.hash()}
-        headers = {'referer': 'http://goofy-referer.ch'}
+        headers = {'referer': 'http://goofy-referer.ch', 'User-Agent': 'mf-geoadmin/python'}
 
         resp = requests.get(self.api_url + '/ogcproxy?url=http%3A%2F%2Fmapserver1.gr.ch%2Fwms%2Fadmineinteilung%3FSERVICE%3DWMS%26REQUEST%3DGetCapabilities%26VERSION%3D1.3.0', params=payload, headers=headers)
 
@@ -237,7 +237,7 @@ class TestOgcproxy(TestVarnish):
     def test_ogcproxy_good_referer(self):
 
         payload = {'_id': self.hash()}
-        headers = {'referer': 'http://unittest.geo.admin.ch'}
+        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
 
         resp = requests.get(self.api_url + '/ogcproxy?url=http%3A%2F%2Fmapserver1.gr.ch%2Fwms%2Fadmineinteilung%3FSERVICE%3DWMS%26REQUEST%3DGetCapabilities%26VERSION%3D1.3.0', params=payload, headers=headers)
 
@@ -248,13 +248,13 @@ class TestFilestorage(TestVarnish):
 
     def test_post_filestorage_no_referer(self):
 
-        resp = requests.post(self.api_url + '/files', VALID_KML)
+        resp = requests.post(self.api_url + '/files', VALID_KML, headers={'User-Agent': 'mf-geoadmin/python'})
 
         self.assertEqual(resp.status_code, 403)
 
     def test_post_filestorage_good_referer(self):
 
-        headers = {'Content-Type': 'application/vnd.google-earth.kml+xml', 'Referer': 'http://unittest.geo.admin.ch'}
+        headers = {'Content-Type': 'application/vnd.google-earth.kml+xml', 'Referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
         resp = requests.post(self.api_url + '/files', VALID_KML, headers=headers)
 
         self.assertEqual(resp.status_code, 200)
@@ -263,28 +263,28 @@ class TestFilestorage(TestVarnish):
 
     def test_post_filestorage_wrong_referer(self):
 
-        headers = {'Content-Type': 'application/vnd.google-earth.kml+xml', 'Referer': 'http://foo.bar'}
+        headers = {'Content-Type': 'application/vnd.google-earth.kml+xml', 'Referer': 'http://foo.bar', 'User-Agent': 'mf-geaodmin/python'}
         resp = requests.post(self.api_url + '/files', VALID_KML, headers=headers)
 
         self.assertEqual(resp.status_code, 403)
 
     def test_post_filestorage_wrong_content_type(self):
 
-        headers = {'Content-Type': 'application/xml', 'Referer': 'http://unittest.geo.admin.ch'}
+        headers = {'Content-Type': 'application/xml', 'Referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
         resp = requests.post(self.api_url + '/files', VALID_KML, headers=headers)
 
         self.assertEqual(resp.status_code, 415)
 
     def test_post_filestorage_not_well_formed(self):
 
-        headers = {'Content-Type': 'application/vnd.google-earth.kml+xml', 'Referer': 'http://unittest.geo.admin.ch'}
+        headers = {'Content-Type': 'application/vnd.google-earth.kml+xml', 'Referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
         resp = requests.post(self.api_url + '/files', NOT_WELL_FORMED_KML, headers=headers)
 
         self.assertEqual(resp.status_code, 415)
 
     def test_post_filestorage_too_big(self):
 
-        headers = {'Content-Type': 'application/vnd.google-earth.kml+xml', 'Referer': 'http://unittest.geo.admin.ch'}
+        headers = {'Content-Type': 'application/vnd.google-earth.kml+xml', 'Referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
         current_dir = os.path.dirname(os.path.abspath(__file__))
         with open(os.path.join(current_dir, '../integration', 'big.kml')) as f:
             data = f.read()

@@ -14,7 +14,7 @@ except KeyError as e:
 
 
 def test_getcap_21781():
-    resp = requests.get(api_url + '/1.0.0/WMTSCapabilities.xml?lang=de')
+    resp = requests.get(api_url + '/1.0.0/WMTSCapabilities.xml?lang=de', headers={'User-Agent': 'mf-geoadmin/python'})
 
     words = ['Alpenkonvention', 'Schweiz', 'Verkehrswege ', 'Flachmoor']
     for w in words:
@@ -22,7 +22,7 @@ def test_getcap_21781():
 
 
 def test_getcap_de():
-    resp = requests.get(api_url + '/1.0.0/WMTSCapabilities.EPSG.4326.xml?lang=de')
+    resp = requests.get(api_url + '/1.0.0/WMTSCapabilities.EPSG.4326.xml?lang=de', headers={'User-Agent': 'mf-geoadmin/python'})
 
     words = ['Alpenkonvention', 'Schweiz', 'Verkehrswege ', 'Flachmoor']
     for w in words:
@@ -30,7 +30,7 @@ def test_getcap_de():
 
 
 def test_getcap_fr():
-    resp = requests.get(api_url + '/1.0.0/WMTSCapabilities.EPSG.4326.xml?lang=fr')
+    resp = requests.get(api_url + '/1.0.0/WMTSCapabilities.EPSG.4326.xml?lang=fr', headers={'User-Agent': 'mf-geoadmin/python'})
 
     words = ['Convention', 'Suisse', 'voies', u'marécage']
     for w in words:

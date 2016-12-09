@@ -23,10 +23,10 @@ class TestWmtsGetTileAuth(TestsBase):
     def check_status_code(self, url, referer, code):
         headers = None
         if referer:
-            headers = {'Referer': referer}
+            headers = {'Referer': referer, 'User-Agent': 'mf-geoadmin/python'}
             resp = requests.get(url, params={'_id': self.mp.hash()}, headers=headers)
         else:
-            resp = requests.get(url, params={'_id': self.mp.hash()})
+            resp = requests.get(url, params={'_id': self.mp.hash()}, headers={'User-Agent': 'mf-geoadmin/python'})
 
         assert (resp.status_code == code), 'Called Url: ' + url + ' [referer: ' + str(referer) + '] with return code: ' + str(resp.status_code)
 

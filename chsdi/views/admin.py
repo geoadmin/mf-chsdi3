@@ -33,7 +33,7 @@ def kml_load(api_url='//api3.geo.admin.ch', bucket_name='public.geo.admin.ch'):
     results = table.query_2(bucket__eq=bucket_name, timestamp__beginswith=date, index='bucketTimestampIndex', limit=LIMIT * 4, reverse=True)
     for f in results:
         try:
-            resp = requests.head("http:" + api_url + "/files/" + f['fileId'])
+            resp = requests.head("http:" + api_url + "/files/" + f['fileId'], headers={'User-Agent': 'mf-geoadmin/python'})
             if int(resp.status_code) == 200:
                 fileids.append((f['fileId'], f['adminId'], f['timestamp']))
         except RequestException:
