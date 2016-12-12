@@ -4730,6 +4730,18 @@ msgstr "Einteilung Burgenkarte Papier"
 msgid "ch.swisstopo.burgenkarte200_papier.metadata.name"
 msgstr "Name"
 
+msgid "ch.swisstopo.burgenkarte200_papier.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.burgenkarte200_papier.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.burgenkarte200_papier.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.burgenkarte200_papier.metadata.name_it"
+msgstr "Name"
+
 msgid "ch.swisstopo.burgenkarte200_papier.metadata.number"
 msgstr "Nummer"
 
@@ -4850,6 +4862,18 @@ msgstr "Einteilung Geologische Generalkarte 200 Papier"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name"
 msgstr "Name"
 
+msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name_it"
+msgstr "Name"
+
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.number"
 msgstr "Nummer"
 
@@ -4929,6 +4953,18 @@ msgid "ch.swisstopo.geologie-geologischer_atlas_papier.metadata"
 msgstr "Einteilung Geologischer Atlas 25 Papier"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas_papier.metadata.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_papier.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_papier.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_papier.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_papier.metadata.name_it"
 msgstr "Name"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas_papier.metadata.number"
@@ -5306,6 +5342,18 @@ msgstr "Einteilung Geologische Spezialkarten Papier"
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.name"
 msgstr "Name"
 
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.name_it"
+msgstr "Name"
+
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.number"
 msgstr "Nummer"
 
@@ -5459,10 +5507,40 @@ msgstr "Einteilung Landeskarte 1000 Papier"
 msgid "ch.swisstopo.landeskarte100_papier.metadata"
 msgstr "Einteilung Landeskarte 100 Papier"
 
+msgid "ch.swisstopo.landeskarte100_papier.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte100_papier.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte100_papier.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte100_papier.metadata.name_it"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte100_papier.metadata.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.landeskarte100_papier.metadata.release"
+msgstr "Ausgabejahr"
+
 msgid "ch.swisstopo.landeskarte200_papier.metadata"
 msgstr "Einteilung Landeskarte 200 Papier"
 
 msgid "ch.swisstopo.landeskarte200_papier.metadata.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte200_papier.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte200_papier.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte200_papier.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte200_papier.metadata.name_it"
 msgstr "Name"
 
 msgid "ch.swisstopo.landeskarte200_papier.metadata.number"
@@ -5474,6 +5552,24 @@ msgstr "Ausgabejahr"
 msgid "ch.swisstopo.landeskarte25_papier.metadata"
 msgstr "Einteilung Landeskarte 25 Papier"
 
+msgid "ch.swisstopo.landeskarte25_papier.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte25_papier.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte25_papier.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte25_papier.metadata.name_it"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte25_papier.metadata.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.landeskarte25_papier.metadata.release"
+msgstr "Ausgabejahr"
+
 msgid "ch.swisstopo.landeskarte500_papier.metadata"
 msgstr "Einteilung Landeskarte 500 Papier"
 
@@ -5482,6 +5578,24 @@ msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.landeskarte50_papier.metadata"
 msgstr "Einteilung Landeskarte 50 Papier"
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata.name_it"
+msgstr "Name"
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.landesschwerenetz"
 msgstr "Schweregrundnetz"
@@ -5768,6 +5882,18 @@ msgstr "Einteilung Schneeschuh-/Skitouren 50 Papier"
 msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
 msgstr "Name"
 
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name_it"
+msgstr "Name"
+
 msgid "ch.swisstopo.skitourenkarte-50.metadata.number"
 msgstr "Nummer"
 
@@ -5966,6 +6092,18 @@ msgstr "Einteilung Wanderkarte 25 Papier"
 msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.name"
 msgstr "Name"
 
+msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.name_it"
+msgstr "Name"
+
 msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.number"
 msgstr "Nummer"
 
@@ -5978,6 +6116,18 @@ msgstr "Einteilung Wanderkarte 1:33'333 Papier"
 msgid "ch.swisstopo.wanderkarte33_papier.metadata.name"
 msgstr "Name"
 
+msgid "ch.swisstopo.wanderkarte33_papier.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.wanderkarte33_papier.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.wanderkarte33_papier.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.wanderkarte33_papier.metadata.name_it"
+msgstr "Name"
+
 msgid "ch.swisstopo.wanderkarte33_papier.metadata.number"
 msgstr "Nummer"
 
@@ -5986,6 +6136,24 @@ msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.wanderkarte50_papier.metadata"
 msgstr "Einteilung Wanderkarte 50 Papier"
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata.name_it"
+msgstr "Name"
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata.number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata.release"
+msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.zeitreihen"
 msgstr "Zeitreise - Kartenwerke"

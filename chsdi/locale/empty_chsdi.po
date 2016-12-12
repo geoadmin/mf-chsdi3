@@ -1,3 +1,171 @@
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.skitourenkarte-50.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte25_papier.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte25_papier.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte25_papier.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte25_papier.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte25_papier.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte25_papier.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte50_papier.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte100_papier.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte100_papier.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte100_papier.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte100_papier.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte100_papier.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte100_papier.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte200_papier.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte200_papier.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte200_papier.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.landeskarte200_papier.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata.release"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte50_papier.metadata.number"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte33_papier.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte33_papier.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte33_papier.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte33_papier.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.burgenkarte200_papier.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.burgenkarte200_papier.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.burgenkarte200_papier.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.burgenkarte200_papier.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_papier.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_papier.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_papier.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_papier.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.name_en"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name_de"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name_fr"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name_it"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name_en"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-geologischer_atlas.metadata"
 msgstr ""
 
