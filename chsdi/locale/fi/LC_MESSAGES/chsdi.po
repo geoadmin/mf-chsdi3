@@ -4691,6 +4691,9 @@ msgstr "Territoris en lavur"
 msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Geometer-revisur"
 
+msgid "ch.swisstopo-vd.geometa-nfgeom.stellvertreter"
+msgstr "Stellvertreter"
+
 msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung"
 msgstr "Actualisaziun periodica"
 

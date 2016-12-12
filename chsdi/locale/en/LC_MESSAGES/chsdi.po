@@ -4691,6 +4691,9 @@ msgstr "Cadastral surveying lots."
 msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Cadastral surveyor"
 
+msgid "ch.swisstopo-vd.geometa-nfgeom.stellvertreter"
+msgstr "Stellvertreter"
+
 msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung"
 msgstr "Periodic updating"
 

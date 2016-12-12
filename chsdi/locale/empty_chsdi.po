@@ -9256,3 +9256,6 @@ msgstr ""
 
 msgid "ch.swisstopo-vd.amtliche-vermessung.noitf"
 msgstr ""
+
+msgid "ch.swisstopo-vd.geometa-nfgeom.stellvertreter"
+msgstr ""
