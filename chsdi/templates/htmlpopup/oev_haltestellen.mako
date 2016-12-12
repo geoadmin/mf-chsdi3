@@ -183,6 +183,10 @@ $(document).ready(function() {
     <td class="cell-meta">${c['attributes']['name'] or '-'}</td>
   </tr>
   <tr>
+    <td class="cell-meta">${_('ch.bav.haltestellen-oev.abkuerzung')}</td>
+    <td class="cell-meta">${c['attributes']['abkuerzung'] or '-'}</td>
+  </tr>
+  <tr>
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.tuabkuerzung')}</td>
     <td class="cell-meta">${c['attributes']['tuabkuerzung'] or '-'}</td>
   </tr>

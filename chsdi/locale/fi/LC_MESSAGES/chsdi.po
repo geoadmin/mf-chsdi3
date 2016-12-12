@@ -3737,6 +3737,9 @@ msgstr "BAV"
 msgid "ch.bav.haltestellen-oev"
 msgstr "Fermadas dal traffic public"
 
+msgid "ch.bav.haltestellen-oev.abkuerzung"
+msgstr "Abkürzung"
+
 msgid "ch.bav.haltestellen-oev.all_departures"
 msgstr "Alle Reiseziele"
 
@@ -3908,15 +3911,6 @@ msgstr "Planerische Massnahme"
 msgid "ch.bav.schienennetz"
 msgstr "Schienennetz"
 
-msgid "ch.bav.schienennetz-kilometrierungslinien.nom"
-msgstr "KM-Linie Name"
-
-msgid "ch.bav.schienennetz-kilometrierungslinien.numero"
-msgstr "KM-Linie Nr."
-
-msgid "ch.bav.schienennetz-kilometrierungslinien.xtf_id"
-msgstr "Segment-ID"
-
 msgid "ch.bav.schienennetz.abreviation"
 msgstr "PB-Abk."
 
@@ -3942,7 +3936,10 @@ msgid "ch.bav.schienennetz.kmfin"
 msgstr "Km Ende"
 
 msgid "ch.bav.schienennetz.kmnumero"
-msgstr "ch.bav.schienennetz.kmnumero"
+msgstr "KM-Linie Nr."
+
+msgid "ch.bav.schienennetz.kmtext"
+msgstr "KM-Linie Name"
 
 msgid "ch.bav.schienennetz.no_debut"
 msgstr "BP-Nr. Anfang"
@@ -3976,6 +3973,9 @@ msgstr "PB-Abk-Datenherr"
 
 msgid "ch.bav.schienennetz.xtf_id"
 msgstr "Netzknoten-ID"
+
+msgid "ch.bav.schienennetz.xtf_id_tooltip"
+msgstr "Segment-ID"
 
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=de"

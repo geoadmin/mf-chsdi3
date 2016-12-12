@@ -41,14 +41,11 @@ class SchienennetzPoint(Base, Vector):
     __bodId__ = 'ch.bav.schienennetz'
     __label__ = 'nom_point'
     __queryable_attributes__ = ['numero', 'nom_point', 'abreviation']
-    id = Column('id', Integer, primary_key=True)
-    xtf_id = Column('xtf_id', Unicode)
+    id = Column('xtf_id', Integer, primary_key=True)
+    xtf_id_tooltip = Column('xtf_id_tooltip', Unicode)
     numero = Column('numero', Integer)
     nom_point = Column('nom_point', Unicode)
     abreviation = Column('abreviation', Unicode)
-    respdonneesabreviation = Column('respdonneesabreviation', Unicode)
-    debutvalidite = Column('debutvalidite', Unicode)
-    finvalidite = Column('finvalidite', Unicode)
     the_geom = Column(Geometry2D)
 
 register(SchienennetzPoint.__bodId__, SchienennetzPoint)
@@ -61,8 +58,8 @@ class SchienennetzSegment(Base, Vector):
     __bodId__ = 'ch.bav.schienennetz'
     __label__ = 'nom_segment'
     __queryable_attributes__ = ['nom_segment']
-    id = Column('bgdi_id', Integer, primary_key=True)
-    xtf_id = Column('xtf_id', Unicode)
+    id = Column('id', Integer, primary_key=True)
+    xtf_id_tooltip = Column('xtf_id_tooltip', Unicode)
     numeroet = Column('numeroet', Integer)
     nom_segment = Column('nom_segment', Unicode)
     point_debut_nom = Column('point_debut_nom', Unicode)
@@ -96,9 +93,10 @@ class OevHaltestellen:
     __returnedGeometry__ = 'the_geom_point'
     id = Column('nummer', Integer, primary_key=True)
     name = Column('name', Text)
-    tuabkuerzung = Column('tuabkuerzung', Text)
-    betriebspunkttyp = Column('betriebspunkttyp', Text)
-    verkehrsmittel = Column('verkehrsmittel', Text)
+    abkuerzung = Column('abkuerzung', Unicode)
+    tuabkuerzung = Column('tuabkuerzung', Unicode)
+    betriebspunkttyp = Column('betriebspunkttyp', Unicode)
+    verkehrsmittel = Column('verkehrsmittel', Unicode)
     # point geometry hilight
     the_geom_point = Column('the_geom', Geometry2D)
 
@@ -108,14 +106,14 @@ class OevHaltestellenZoom1(Base, OevHaltestellen, Vector):
     __maxscale__ = 3000
     the_geom = Column('bgdi_geom_poly', Geometry2D)
 
-register('ch.bav.haltestellen-oev', OevHaltestellenZoom1)
+register(OevHaltestellen.__bodId__, OevHaltestellenZoom1)
 
 
 class OevHaltestellenZoom2(Base, OevHaltestellen, Vector):
     __minscale__ = 3000
     the_geom = Column('bgdi_geom_poly_overview', Geometry2D)
 
-register('ch.bav.haltestellen-oev', OevHaltestellenZoom2)
+register(OevHaltestellen.__bodId__, OevHaltestellenZoom2)
 
 
 class OevDepartures(Base):

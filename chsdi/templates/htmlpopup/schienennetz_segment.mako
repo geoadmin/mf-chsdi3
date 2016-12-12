@@ -1,8 +1,8 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-    <tr><td class="cell-left">${_('ch.bav.schienennetz-kilometrierungslinien.xtf_id')}</td>
-  	<td>${c['attributes']['xtf_id'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bav.schienennetz.xtf_id_tooltip')}</td>
+  	<td>${c['attributes']['xtf_id_tooltip'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.schienennetz.nom_segment')}</td>
     <td>${c['attributes']['nom_segment'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.schienennetz.no_debut')}</td>
@@ -13,9 +13,9 @@
     <td>${c['attributes']['point_fin_nummero'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.schienennetz.nom_fin')}</td>
     <td>${c['attributes']['point_fin_nom'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bav.schienennetz-kilometrierungslinien.numero')}</td>
+    <tr><td class="cell-left">${_('ch.bav.schienennetz.kmnumero')}</td>
     <td>${c['attributes']['kmnummero'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bav.schienennetz-kilometrierungslinien.nom')}</td>
+    <tr><td class="cell-left">${_('ch.bav.schienennetz.kmtext')}</td>
     <td>${c['attributes']['kmtext'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.schienennetz.kmdebut')}</td>
     <td>${c['attributes']['kmdebut'] or '-'}</td></tr>

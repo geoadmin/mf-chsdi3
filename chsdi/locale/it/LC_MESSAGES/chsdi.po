@@ -3737,6 +3737,9 @@ msgstr "UFT"
 msgid "ch.bav.haltestellen-oev"
 msgstr "Stazioni tp"
 
+msgid "ch.bav.haltestellen-oev.abkuerzung"
+msgstr "Abbreviazione"
+
 msgid "ch.bav.haltestellen-oev.all_departures"
 msgstr "Tutte le destinazioni"
 
@@ -3771,7 +3774,7 @@ msgid "ch.bav.haltestellen-oev.reiner_betriebspunkt"
 msgstr "Punto operativo semplice"
 
 msgid "ch.bav.haltestellen-oev.tuabkuerzung"
-msgstr "IT"
+msgstr "GI"
 
 msgid "ch.bav.haltestellen-oev.verkehrsmittel"
 msgstr "Mezzo di trasporto"
@@ -3908,15 +3911,6 @@ msgstr "Misura"
 msgid "ch.bav.schienennetz"
 msgstr "Rete ferroviaria"
 
-msgid "ch.bav.schienennetz-kilometrierungslinien.nom"
-msgstr "Nome di linea km"
-
-msgid "ch.bav.schienennetz-kilometrierungslinien.numero"
-msgstr "No. di linea km"
-
-msgid "ch.bav.schienennetz-kilometrierungslinien.xtf_id"
-msgstr "ID di segmento"
-
 msgid "ch.bav.schienennetz.abreviation"
 msgstr "Abbrev. di PE"
 
@@ -3942,7 +3936,10 @@ msgid "ch.bav.schienennetz.kmfin"
 msgstr "Km fine"
 
 msgid "ch.bav.schienennetz.kmnumero"
-msgstr "ch.bav.schienennetz.kmnumero"
+msgstr "No. di linea km"
+
+msgid "ch.bav.schienennetz.kmtext"
+msgstr "Nome di linea km"
 
 msgid "ch.bav.schienennetz.no_debut"
 msgstr "No. di PE inizio"
@@ -3966,7 +3963,7 @@ msgid "ch.bav.schienennetz.nombrevoies"
 msgstr "No. di binari"
 
 msgid "ch.bav.schienennetz.numero"
-msgstr "No di PE"
+msgstr "No. di PE"
 
 msgid "ch.bav.schienennetz.numeroet"
 msgstr "No. GI"
@@ -3976,6 +3973,9 @@ msgstr "Autorité Abr. PE"
 
 msgid "ch.bav.schienennetz.xtf_id"
 msgstr "ID di nodo"
+
+msgid "ch.bav.schienennetz.xtf_id_tooltip"
+msgstr "ID di segmento"
 
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=it"

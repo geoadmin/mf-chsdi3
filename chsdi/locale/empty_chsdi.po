@@ -685,13 +685,7 @@ msgstr ""
 msgid "ch.bav.schienennetz.kmfin"
 msgstr ""
 
-msgid "ch.bav.schienennetz-kilometrierungslinien.xtf_id"
-msgstr ""
-
-msgid "ch.bav.schienennetz-kilometrierungslinien.nom"
-msgstr ""
-
-msgid "ch.bav.schienennetz-kilometrierungslinien.numero"
+msgid "ch.bav.schienennetz.kmtext"
 msgstr ""
 
 msgid "ch.bav.schienennetz.kmnumero"
@@ -728,6 +722,9 @@ msgid "ch.bav.schienennetz.respdonneesabreviation"
 msgstr ""
 
 msgid "ch.bav.schienennetz.xtf_id"
+msgstr ""
+
+msgid "ch.bav.schienennetz.xtf_id_tooltip"
 msgstr ""
 
 msgid "ch.bfe.windenergie-geschwindigkeit_h50"
@@ -1285,6 +1282,9 @@ msgid "ch.bav.haltestellen-oev.id"
 msgstr ""
 
 msgid "ch.bav.haltestellen-oev.tuabkuerzung"
+msgstr ""
+
+msgid "ch.bav.haltestellen-oev.abkuerzung"
 msgstr ""
 
 msgid "ch.bav.haltestellen-oev.verkehrsmittel"
