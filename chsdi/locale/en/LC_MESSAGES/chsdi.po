@@ -3737,6 +3737,9 @@ msgstr "FOT"
 msgid "ch.bav.haltestellen-oev"
 msgstr "Public transport stops"
 
+msgid "ch.bav.haltestellen-oev.abkuerzung"
+msgstr "Abreviation"
+
 msgid "ch.bav.haltestellen-oev.all_departures"
 msgstr "All destinations"
 
@@ -3771,7 +3774,7 @@ msgid "ch.bav.haltestellen-oev.reiner_betriebspunkt"
 msgstr "Simple operating point"
 
 msgid "ch.bav.haltestellen-oev.tuabkuerzung"
-msgstr "TO"
+msgstr "IM"
 
 msgid "ch.bav.haltestellen-oev.verkehrsmittel"
 msgstr "Means of transport"
@@ -3908,15 +3911,6 @@ msgstr "Measure"
 msgid "ch.bav.schienennetz"
 msgstr "Railway network | Rait da viafier"
 
-msgid "ch.bav.schienennetz-kilometrierungslinien.nom"
-msgstr "Km line name"
-
-msgid "ch.bav.schienennetz-kilometrierungslinien.numero"
-msgstr "Km line nr."
-
-msgid "ch.bav.schienennetz-kilometrierungslinien.xtf_id"
-msgstr "Segment ID"
-
 msgid "ch.bav.schienennetz.abreviation"
 msgstr "OP abbrev."
 
@@ -3942,7 +3936,10 @@ msgid "ch.bav.schienennetz.kmfin"
 msgstr "Km end"
 
 msgid "ch.bav.schienennetz.kmnumero"
-msgstr "ch.bav.schienennetz.kmnumero"
+msgstr "Km line nr."
+
+msgid "ch.bav.schienennetz.kmtext"
+msgstr "Km line name"
 
 msgid "ch.bav.schienennetz.no_debut"
 msgstr "Beginning OP nr."
@@ -3976,6 +3973,9 @@ msgstr "PB-Abk-Datenherr"
 
 msgid "ch.bav.schienennetz.xtf_id"
 msgstr "Node ID"
+
+msgid "ch.bav.schienennetz.xtf_id_tooltip"
+msgstr "Segment ID"
 
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=en"

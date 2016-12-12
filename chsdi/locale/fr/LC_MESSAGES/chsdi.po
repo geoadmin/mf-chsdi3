@@ -3737,6 +3737,9 @@ msgstr "OFT"
 msgid "ch.bav.haltestellen-oev"
 msgstr "Arrêts tp"
 
+msgid "ch.bav.haltestellen-oev.abkuerzung"
+msgstr "Abréviation"
+
 msgid "ch.bav.haltestellen-oev.all_departures"
 msgstr "Toutes les destinations"
 
@@ -3771,7 +3774,7 @@ msgid "ch.bav.haltestellen-oev.reiner_betriebspunkt"
 msgstr "Point d’exploitation simple"
 
 msgid "ch.bav.haltestellen-oev.tuabkuerzung"
-msgstr "ET"
+msgstr "GI"
 
 msgid "ch.bav.haltestellen-oev.verkehrsmittel"
 msgstr "Moyen de transport"
@@ -3908,15 +3911,6 @@ msgstr "Mesure"
 msgid "ch.bav.schienennetz"
 msgstr "Réseau ferré"
 
-msgid "ch.bav.schienennetz-kilometrierungslinien.nom"
-msgstr "Nom ligne de kilom."
-
-msgid "ch.bav.schienennetz-kilometrierungslinien.numero"
-msgstr "No. de ligne de kilom."
-
-msgid "ch.bav.schienennetz-kilometrierungslinien.xtf_id"
-msgstr "ID de segment"
-
 msgid "ch.bav.schienennetz.abreviation"
 msgstr "Abr. PE"
 
@@ -3941,9 +3935,11 @@ msgstr "Km début"
 msgid "ch.bav.schienennetz.kmfin"
 msgstr "Km fin"
 
-#. TODO
 msgid "ch.bav.schienennetz.kmnumero"
-msgstr "ch.bav.schienennetz.kmnumero"
+msgstr "No. ligne de kilom."
+
+msgid "ch.bav.schienennetz.kmtext"
+msgstr "Nom ligne de kilom."
 
 msgid "ch.bav.schienennetz.no_debut"
 msgstr "No. PE début"
@@ -3977,6 +3973,9 @@ msgstr "Autorité Abr. PE"
 
 msgid "ch.bav.schienennetz.xtf_id"
 msgstr "ID de noeud-réseau"
+
+msgid "ch.bav.schienennetz.xtf_id_tooltip"
+msgstr "ID de segment"
 
 msgid "ch.bav.url"
 msgstr "http://www.bav.admin.ch/?lang=fr"

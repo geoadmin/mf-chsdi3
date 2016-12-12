@@ -2,7 +2,7 @@
 
 <%def name="table_body(c, lang)">
     <tr><td class="cell-left">${_('ch.bav.schienennetz.xtf_id')}</td>
-	  <td>${c['attributes']['xtf_id'] or '-'}</td></tr>
+	  <td>${c['attributes']['xtf_id_tooltip'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.schienennetz.numero')}</td>
     <td>${c['attributes']['numero'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.schienennetz.nom_point')}</td>
