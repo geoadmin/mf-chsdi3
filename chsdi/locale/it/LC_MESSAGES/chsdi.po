@@ -4691,6 +4691,9 @@ msgstr "Aree con lavori in corso"
 msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Geometra revisore"
 
+msgid "ch.swisstopo-vd.geometa-nfgeom.stellvertreter"
+msgstr "sostituto"
+
 msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung"
 msgstr "Tenuta a giorno periodica"
 

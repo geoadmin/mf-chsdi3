@@ -1743,6 +1743,7 @@ class geometaNfgeom(Base, Vector):
     adresse = Column('adresse', Text)
     telefon = Column('telefon', Text)
     email = Column('email', Text)
+    stellvertreter = Column('ist_stellvertreter', Boolean)
     bgdi_created = Column('bgdi_created', Text)
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)

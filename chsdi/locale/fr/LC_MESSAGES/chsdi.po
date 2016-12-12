@@ -4691,6 +4691,9 @@ msgstr "Secteurs en travaux"
 msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Géomètre-conservateur"
 
+msgid "ch.swisstopo-vd.geometa-nfgeom.stellvertreter"
+msgstr "remplaçant"
+
 msgid "ch.swisstopo-vd.geometa-periodische_nachfuehrung"
 msgstr "Mise à jour periodique"
 

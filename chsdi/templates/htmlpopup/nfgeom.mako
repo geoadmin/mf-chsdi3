@@ -2,7 +2,11 @@
 
 <%def name="table_body(c,lang)">
     <tr><td class="cell-left">${_('nffirmenname')}</td>    <td>${c['attributes']['firmenname'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('nfname')}</td>    <td>${c['attributes']['name'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('nfname')}</td>    <td>${c['attributes']['name'] or '-'}
+      % if c['attributes']['stellvertreter']:
+           (${_('ch.swisstopo-vd.geometa-nfgeom.stellvertreter')})
+      % endif
+    </td></tr>
     <tr><td class="cell-left">${_('grundadresse')}</td>
       % if c['attributes']['adresse'].strip() == '#':
            <td>-</td>
