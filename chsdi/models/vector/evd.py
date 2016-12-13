@@ -140,7 +140,7 @@ class Emapis:
     __table_args__ = ({'schema': 'blw', 'autoload': False})
     __label__ = 'typ'
     __template__ = 'templates/htmlpopup/emapis.mako'
-    id = Column('xtf_id', Integer, primary_key=True)
+    id = Column('xtf_id', Unicode, primary_key=True)
     typ = Column('typ', Unicode)
     typ_de = Column('typ_de', Unicode)
     typ_fr = Column('typ_fr', Unicode)
