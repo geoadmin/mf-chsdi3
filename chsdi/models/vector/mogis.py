@@ -13,7 +13,7 @@ Base = bases['mogis']
 
 class CadastralWebMap(Base, Vector):
     __tablename__ = 'view_os_realestate_cwm'
-    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
+    __table_args__ = ({'schema': 'public', 'autoload': False})
     __template__ = 'templates/htmlpopup/cadastralwebmap.mako'
     __bodId__ = 'ch.kantone.cadastralwebmap-farbe'
     __label__ = 'ak'
@@ -26,7 +26,7 @@ register('ch.kantone.cadastralwebmap-farbe', CadastralWebMap)
 
 class CadastralWebMapOpenData(Base, Vector):
     __tablename__ = 'view_os_realestate_vd_opendata'
-    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
+    __table_args__ = ({'schema': 'public', 'autoload': False})
     __template__ = 'templates/htmlpopup/cadastralwebmap_opendata.mako'
     __bodId__ = 'ch.swisstopo-vd.amtliche-vermessung'
     __label__ = 'name'
