@@ -2402,15 +2402,7 @@ class SwissBuildings3d2Meta(Base, ShopStandardClass, Vector):
     __bodId__ = 'ch.swisstopo.swissbuildings3d_2.metadata'
     the_geom = Column(Geometry2D)
 
-
-class SwissBuildings3d2Perimeter(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_perimeter_swissbuilding3d_2'
-    __table_args__ = ({'autoload': False})
-    __bodId__ = 'ch.swisstopo.swissbuildings3d_2.metadata'
-    the_geom = Column(Geometry2D)
-
 register('ch.swisstopo.swissbuildings3d_2.metadata', SwissBuildings3d2Meta)
-register_perimeter('ch.swisstopo.swissbuildings3d_2.metadata', SwissBuildings3d2Perimeter)
 
 
 class SwissBuildings3dPerimeter(Base, ShopStandardClass, Vector):
