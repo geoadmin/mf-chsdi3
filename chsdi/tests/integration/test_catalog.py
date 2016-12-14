@@ -26,7 +26,7 @@ class TestCatalogService(TestsBase):
                     if len(nodes) != len(rows):
                         for row in rows:
                             if row.id not in nodes:
-                                raise Exception('%s %s %s is unconnected leaf' % (Catalog.topic, row.category, row.layerBodId))
+                                raise Exception('%s %s %s is unconnected leaf' % (topic, row.category, row.layerBodId))
         finally:
             if session:
                 session.close()
