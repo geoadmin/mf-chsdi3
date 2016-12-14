@@ -14,6 +14,142 @@ Release Notes
 
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20161214:
+   *******
+
+Release 20161214 - Wednesday, December 14th 2016
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Add ignore_polyfill parameter to the loader.js, see `doc <http://api3.geo.admin.ch/api/quickstart.html#include-the-geoadmin-javascript-api>`__.
+- Bug Fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_161130...r_161214>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug Fixes
+- Ability to order `digital products from map.geo.admin.ch <https://map.geo.admin.ch?topic=ech&lang=fr&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.pixelkarte-pk25.metadata&X=192510.47&Y=682227.64&zoom=2>`__
+- New topic `emapis <https://map.geo.admin.ch?topic=emapis>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_161130...r_161214>`__
+
+Geodata
+*******
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Karst water resources <//map.geo.admin.ch/?layers=ch.bafu.karst-ausdehnung_grundwasservorkommen>`__ (ch.bafu.karst-ausdehnung_grundwasservorkommen)                                                |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Karst catchments <//map.geo.admin.ch/?layers=ch.bafu.karst-einzugsgebiete>`__ (ch.bafu.karst-einzugsgebiete)                                                                                       |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Karst catchment units <//map.geo.admin.ch/?layers=ch.bafu.karst-einzugsgebietseinheiten>`__ (ch.bafu.karst-einzugsgebietseinheiten)                                                                |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Karst springs and swallow holes <//map.geo.admin.ch/?layers=ch.bafu.karst-quellen_schwinden>`__ (ch.bafu.karst-quellen_schwinden)                                                                  |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Underground flow paths <//map.geo.admin.ch/?layers=ch.bafu.karst-unterirdische_fliesswege>`__ (ch.bafu.karst-unterirdische_fliesswege)                                                             |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Beizugsgebiet <//map.geo.admin.ch/?layers=ch.blw.emapis-beizugsgebiet&topic=emapis>`__ (ch.blw.emapis-beizugsgebiet)                                                                               |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bewässerung <//map.geo.admin.ch/?layers=ch.blw.emapis-bewaesserung&topic=emapis>`__ (ch.blw.emapis-bewaesserung EMPTY LAYER)                                                                       |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Elektrizitätsversorgung <//map.geo.admin.ch/?layers=ch.blw.emapis-elektrizitaetsversorgung&topic=emapis>`__ (ch.blw.emapis-elektrizitaetsversorgung EMPTY LAYER)                                   |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Water balance, soil structure <//map.geo.admin.ch/?layers=ch.blw.emapis-entwaesserung&topic=emapis>`__ (ch.blw.emapis-entwaesserung)                                                               |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hochbau <//map.geo.admin.ch/?layers=ch.blw.emapis-hochbau&topic=emapis>`__ (ch.blw.emapis-hochbau)                                                                                                 |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Milchleitung <//map.geo.admin.ch/?layers=ch.blw.emapis-milchleitung&topic=emapis>`__ (ch.blw.emapis-milchleitung EMPTY LAYER)                                                                      |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Oekologie <//map.geo.admin.ch/?layers=ch.blw.emapis-oekologie&topic=emapis>`__ (ch.blw.emapis-oekologie)                                                                                           |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Projektschwerpunkt <//map.geo.admin.ch/?layers=ch.blw.emapis-projektschwerpunkt&topic=emapis>`__ (ch.blw.emapis-projektschwerpunkt)                                                                |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Agricultural and alpine cableways <//map.geo.admin.ch/?layers=ch.blw.emapis-seilbahnen&topic=emapis>`__ (ch.blw.emapis-seilbahnen EMPTY LAYER)                                                     |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wasserversorgung <//map.geo.admin.ch/?layers=ch.blw.emapis-wasserversorgung&topic=emapis>`__ (ch.blw.emapis-wasserversorgung)                                                                      |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Road construction <//map.geo.admin.ch/?layers=ch.blw.emapis-wegebau&topic=emapis>`__ (ch.blw.emapis-wegebau)                                                                                       |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division DHM25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.digitales-hoehenmodell_25.metadata>`__ (ch.swisstopo.digitales-hoehenmodell_25.metadata)                                            |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division general geological map 200 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-generalkarte-ggk200.metadata>`__ (ch.swisstopo.geologie-generalkarte-ggk200.metadata)                 |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division geological atlas 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas.metadata)                          |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division special geological maps Vector <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata>`__ (ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata)  |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division Spot Mosaic Raster <//map.geo.admin.ch/?layers=ch.swisstopo.images-spot-5.metadata>`__ (ch.swisstopo.images-spot-5.metadata)                                                              |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division SWISSIMAGE Raster <//map.geo.admin.ch/?layers=ch.swisstopo.images-swissimage.metadata>`__ (ch.swisstopo.images-swissimage.metadata)                                                       |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division Aeronautical Chart ICAO Raster <//map.geo.admin.ch/?layers=ch.swisstopo.luftfahrtkarten-icao.metadata>`__ (ch.swisstopo.luftfahrtkarten-icao.metadata)                                    |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division national map 100 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-pk100.metadata>`__ (ch.swisstopo.pixelkarte-pk100.metadata)                                                   |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division national map 200 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-pk200.metadata>`__ (ch.swisstopo.pixelkarte-pk200.metadata)                                                   |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division national map 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-pk25.metadata>`__ (ch.swisstopo.pixelkarte-pk25.metadata)                                                      |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division national map 50 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-pk50.metadata>`__ (ch.swisstopo.pixelkarte-pk50.metadata)                                                      |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division Glider Chart Raster <//map.geo.admin.ch/?layers=ch.swisstopo.segelflugkarte.metadata>`__ (ch.swisstopo.segelflugkarte.metadata)                                                           |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division swissALTI3D Raster <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d.metadata>`__ (ch.swisstopo.swissalti3d.metadata)                                                                  |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division swissBUILDINGS3D 1.0 Vector <//map.geo.admin.ch/?layers=ch.swisstopo.swissbuildings3d_1.metadata>`__ (ch.swisstopo.swissbuildings3d_1.metadata)                                           |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division swissTLM3D Vector <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d.metadata>`__ (ch.swisstopo.swisstlm3d.metadata)                                                                     |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Seismic subsoil classes <//map.geo.admin.ch/?layers=ch.bafu.gefahren-baugrundklassen>`__ (ch.bafu.gefahren-baugrundklassen)                                                                        |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Spectral micro-zoning <//map.geo.admin.ch/?layers=ch.bafu.gefahren-spektral>`__ (ch.bafu.gefahren-spektral)                                                                                        |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Number of connection providers <//map.geo.admin.ch/?layers=ch.bakom.anbieter-eigenes_festnetz>`__ (ch.bakom.anbieter-eigenes_festnetz)                                                             |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Optical fibre <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-glasfaser>`__ (ch.bakom.anschlussart-glasfaser)                                                                                    |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Coaxial cable <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-koaxialkabel>`__ (ch.bakom.anschlussart-koaxialkabel)                                                                              |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Copper wire <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-kupferdraht>`__ (ch.bakom.anschlussart-kupferdraht)                                                                                  |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink1>`__ (ch.bakom.downlink1)                                                                                                        |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink10>`__ (ch.bakom.downlink10)                                                                                                     |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink100>`__ (ch.bakom.downlink100)                                                                                                  |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 2 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink2>`__ (ch.bakom.downlink2)                                                                                                        |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 20 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink20>`__ (ch.bakom.downlink20)                                                                                                     |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 50 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink50>`__ (ch.bakom.downlink50)                                                                                                     |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink1>`__ (ch.bakom.uplink1)                                                                                                              |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink10>`__ (ch.bakom.uplink10)                                                                                                           |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink100>`__ (ch.bakom.uplink100)                                                                                                        |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 2 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink2>`__ (ch.bakom.uplink2)                                                                                                              |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 20 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink20>`__ (ch.bakom.uplink20)                                                                                                           |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 50 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink50>`__ (ch.bakom.uplink50)                                                                                                           |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Availability HDTV fixed netw. <//map.geo.admin.ch/?layers=ch.bakom.verfuegbarkeit-hdtv>`__ (ch.bakom.verfuegbarkeit-hdtv)                                                                          |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Availability TV fixed network <//map.geo.admin.ch/?layers=ch.bakom.verfuegbarkeit-tv>`__ (ch.bakom.verfuegbarkeit-tv)                                                                              |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport stops <//map.geo.admin.ch/?layers=ch.bav.haltestellen-oev>`__ (ch.bav.haltestellen-oev)                                                                                           |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway network | Rait da viafier <//map.geo.admin.ch/?layers=ch.bav.schienennetz>`__ (ch.bav.schienennetz)                                                                                        |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division special geological maps Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-spezialkarten_schweiz.metadata>`__ (ch.swisstopo.geologie-spezialkarten_schweiz.metadata)                |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division swissBUILDINGS3D 2.0 Vector <//map.geo.admin.ch/?layers=ch.swisstopo.swissbuildings3d_2.metadata>`__ (ch.swisstopo.swissbuildings3d_2.metadata)                                           |
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 .. _releasenotes_20161130:
    *******
