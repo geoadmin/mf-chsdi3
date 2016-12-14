@@ -91,7 +91,7 @@ Geodata
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division special geological maps Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-spezialkarten_schweiz.metadata>`__ (ch.swisstopo.geologie-spezialkarten_schweiz.metadata)                |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division snowshoe/ski tour maps 50 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.skitourenkarte-50.metadata` (ch.swisstopo.skitourenkarte-50.metadata)                                            |
+| Update | `Division snowshoe/ski tour maps 50 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.skitourenkarte-50.metadata`__ (ch.swisstopo.skitourenkarte-50.metadata)                                          |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division national map 100 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-pk100.metadata>`__ (ch.swisstopo.pixelkarte-pk100.metadata)                                                   |
 +--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
