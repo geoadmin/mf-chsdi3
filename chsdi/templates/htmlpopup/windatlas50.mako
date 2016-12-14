@@ -2,7 +2,7 @@
 <%!
 import requests
 def getAltitude(baseUrl, center):
-    fullUrl = 'http:' + baseUrl +'/rest/services/height'
+    fullUrl = 'http://' + baseUrl +'/rest/services/height'
     response = requests.get(
         fullUrl + '?easting=%s&northing=%s&elevation_model=COMB' % (center[0], center[1]),
         headers={'Referer': fullUrl, 'User-Agent': 'mf-geoadmin/python'})
