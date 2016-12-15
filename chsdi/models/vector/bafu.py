@@ -2069,9 +2069,11 @@ class baugrundklassen(Base, Vector):
     __bodId__ = 'ch.bafu.gefahren-baugrundklassen'
     __template__ = 'templates/htmlpopup/baugrundklassen.mako'
     __label__ = 'bgk'
+    __returnedGeometry__ = 'the_geom_highlight'
     id = Column('_count', Integer, primary_key=True)
     bgk = Column('bgk', Text)
     the_geom = Column(Geometry2D)
+    the_geom_highlight = Column('the_geom_highlight', Geometry2D)
 
 register('ch.bafu.gefahren-baugrundklassen', baugrundklassen)
 
