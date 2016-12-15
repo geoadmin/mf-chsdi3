@@ -30,8 +30,10 @@ class Gebaeuderegister(Base, Vector):
     gdename = Column('gdename', Text)
     gdekt = Column('gdekt', Text)
     dstrid = Column('dstrid', Integer)
+    gkplaus = Column('gkplaus', Integer)
     gstat = Column('gstat', Integer)
     gdenr = Column('gdenr', Integer)
+    ggbkr = Column('ggbkr', Text)
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
