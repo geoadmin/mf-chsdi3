@@ -121,8 +121,8 @@ RewriteRule ^${apache_entry_path}/admin         https://%{HTTP_HOST}%{REQUEST_UR
     AuthName "Your IWI credential"
     # Optional line:
     AuthBasicProvider file
-    AuthUserFile "/var/www/vhosts/mf-chsdi3/private/htpasswd"
-    AuthGroupFile "/var/www/vhosts/mf-chsdi3/private/htgroup"
+    AuthUserFile "/etc/apache2/htpasswd"
+    AuthGroupFile "/etc/apache2/htgroup"
     Require group iwi-team bgdi-team
 </LocationMatch>
 
