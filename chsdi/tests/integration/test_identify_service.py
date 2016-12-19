@@ -465,3 +465,17 @@ class TestIdentifyService(TestsBase):
         params.update({'where': 'abortionaccomplished > \'2014-12-01\''})
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
         resp.mustcontain('together with a geometry')
+
+    def test_identify_outside_extent(self):
+        params = dict(geometryType="esriGeometryPoint",
+                      geometry="516750,307656.25",
+                      geometryFormat="geojson",
+                      imageDisplay="671,600,96",
+                      mapExtent="492250,35000,827750,335000",
+                      tolerance=10,
+                      layers="all:ch.bfe.windenergie-geschwindigkeit_h125",
+                      lang="de"
+                      )
+        resp = self.testapp.get('/rest/services/api/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(0, len(resp.json['results']))
