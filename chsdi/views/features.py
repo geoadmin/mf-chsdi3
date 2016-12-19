@@ -270,12 +270,13 @@ def _identify_grid(params, layerBodIds):
                     gridSpec.get('resolutionX'),
                     gridSpec.get('resolutionY'))
         [col, row] = grid.cellAddressFromPointCoordinate(pointCoordinates)
-        feature, none = _get_feature_grid(col, row, timestamp, grid, bucket, params)
-        if feature and not none:
-            # For some reason we define the id twice..
-            feature['featureId'] = feature['id']
-            feature['properties']['label'] = feature['id']
-            features.append(feature)
+        if col is not None and row is not None:
+            feature, none = _get_feature_grid(col, row, timestamp, grid, bucket, params)
+            if feature and not none:
+                # For some reason we define the id twice..
+                feature['featureId'] = feature['id']
+                feature['properties']['label'] = feature['id']
+                features.append(feature)
 
     return features
 

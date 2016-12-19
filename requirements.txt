@@ -9,7 +9,7 @@ docutils==0.12
 enum34==1.1.6
 flake8==3.0.4
 future==0.16.0
-gatilegrid==0.0.5
+gatilegrid==0.0.6
 GeoAlchemy2==0.3.0
 geojson==1.0.1
 httplib2==0.9
