@@ -3324,6 +3324,30 @@ msgstr ""
 msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr ""
 
+msgid "ch.mobility.standorte"
+msgstr ""
+
+msgid "ch.mobility.standorte.categories"
+msgstr ""
+
+msgid "ch.mobility.standorte.lat"
+msgstr ""
+
+msgid "ch.mobility.standorte.lon"
+msgstr ""
+
+msgid "ch.mobility.standorte.link"
+msgstr ""
+
+msgid "ch.mobility.standorte.location"
+msgstr ""
+
+msgid "ch.mobility.standorte.name"
+msgstr ""
+
+msgid "ch.mobility.standorte.number"
+msgstr ""
+
 msgid "ch.bakom.downlink50"
 msgstr ""
 

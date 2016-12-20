@@ -4691,6 +4691,30 @@ msgstr "http://www.bafu.admin.ch/index.html?lang=en"
 msgid "ch.lw"
 msgstr "AF"
 
+msgid "ch.mobility.standorte"
+msgstr "Carsharing"
+
+msgid "ch.mobility.standorte.categories"
+msgstr "Number of vehicles per category"
+
+msgid "ch.mobility.standorte.lat"
+msgstr "Y: latitude WGS84"
+
+msgid "ch.mobility.standorte.link"
+msgstr "Link to the station"
+
+msgid "ch.mobility.standorte.location"
+msgstr "Address"
+
+msgid "ch.mobility.standorte.lon"
+msgstr "X: longitude WGS84"
+
+msgid "ch.mobility.standorte.name"
+msgstr "Mobility station"
+
+msgid "ch.mobility.standorte.number"
+msgstr "Station ID"
+
 msgid "ch.nagra.aeromagnetische-karte_1100"
 msgstr "Aeromagnetik Aargau 1100 m 100"
 
