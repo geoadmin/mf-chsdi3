@@ -4644,7 +4644,7 @@ msgid "ch.blw.steil_terrassenlagen_rebbau"
 msgstr "Viticulture in steep areas"
 
 msgid "ch.blw.url"
-msgstr "http://www.blw.admin.ch/index.html?lang=en"
+msgstr "https://www.blw.admin.ch/blw/en/home.html"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "PGI meat products"

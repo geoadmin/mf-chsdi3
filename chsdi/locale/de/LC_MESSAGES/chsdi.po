@@ -4644,7 +4644,7 @@ msgid "ch.blw.steil_terrassenlagen_rebbau"
 msgstr "Rebflächen in Hanglagen"
 
 msgid "ch.blw.url"
-msgstr "http://www.blw.admin.ch/index.html?lang=de"
+msgstr "https://www.blw.admin.ch/blw/de/home.html"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "GGA Fleischware"

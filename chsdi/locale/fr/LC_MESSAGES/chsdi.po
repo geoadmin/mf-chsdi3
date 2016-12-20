@@ -4644,7 +4644,7 @@ msgid "ch.blw.steil_terrassenlagen_rebbau"
 msgstr "Vignobles en pente"
 
 msgid "ch.blw.url"
-msgstr "http://www.blw.admin.ch/index.html?lang=fr"
+msgstr "https://www.blw.admin.ch/blw/fr/home.html"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "IGP produits à base de viande"
