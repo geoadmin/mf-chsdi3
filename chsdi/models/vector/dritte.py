@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer
+from sqlalchemy import Column, Text, Unicode, Integer, Float
 from sqlalchemy.types import Numeric
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
-
 
 Base = bases['dritte']
 
@@ -39,6 +38,40 @@ class FEUERSTELLEN(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.tamedia.schweizerfamilie-feuerstellen', FEUERSTELLEN)
+
+
+class MobilityStandorte:
+    __tablename__ = 'standorte_tooltip'
+    __table_args__ = ({'schema': 'mobility', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/mobility_standorte.mako'
+    __bodId__ = 'ch.mobility.standorte'
+    __label__ = 'name'
+    __returnedGeometry__ = 'the_geom_point'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    number = Column('number', Integer)
+    location = Column('location', Unicode)
+    lat = Column('lat', Float)
+    lon = Column('lon', Float)
+    street = Column('street', Unicode)
+    city = Column('city', Unicode)
+    categories = Column('categories', Unicode)
+    the_geom_point = Column('the_geom', Geometry2D)
+
+
+class MobilityStandorteZoom1(Base, MobilityStandorte, Vector):
+    __minscale__ = 1
+    __maxscale__ = 4000
+    the_geom = Column('the_geom_click', Geometry2D)
+
+register(MobilityStandorte.__bodId__, MobilityStandorteZoom1)
+
+
+class MobilityStandorteZoom2(Base, MobilityStandorte, Vector):
+    __minscale__ = 4000
+    the_geom = Column('the_geom_click_overview', Geometry2D)
+
+register(MobilityStandorte.__bodId__, MobilityStandorteZoom2)
 
 
 class NOTFALLSCHUTZ(Base, Vector):
@@ -110,5 +143,6 @@ class Aeromagnetische_karte_1100(Base, Vector):
     id = Column('et_id', Integer, primary_key=True)
     et_fromatt_1100 = Column('et_fromatt_1100', Numeric)
     the_geom = Column(Geometry2D)
+
 
 register('ch.nagra.aeromagnetische-karte_1100', Aeromagnetische_karte_1100)

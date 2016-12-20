@@ -3258,7 +3258,7 @@ msgid "ch.bafu.schutzgebiete-smaragd"
 msgstr "Smaragd"
 
 msgid "ch.bafu.schutzgebiete-wildruhezonen"
-msgstr "Wildschutzgebiete"
+msgstr "Wildtierschutzgebiete"
 
 msgid "ch.bafu.showme-gemeinden_hochwasser"
 msgstr "ShowMe Gemeinden: Hochwasser"
@@ -4690,6 +4690,30 @@ msgstr "http://www.bafu.admin.ch/index.html?lang=de"
 
 msgid "ch.lw"
 msgstr "LW"
+
+msgid "ch.mobility.standorte"
+msgstr "Carsharing"
+
+msgid "ch.mobility.standorte.categories"
+msgstr "Anzahl Fahrzeuge pro Kategorie"
+
+msgid "ch.mobility.standorte.lat"
+msgstr "Y: Breitengrad WGS84"
+
+msgid "ch.mobility.standorte.link"
+msgstr "Link zur Station"
+
+msgid "ch.mobility.standorte.location"
+msgstr "Adresse"
+
+msgid "ch.mobility.standorte.lon"
+msgstr "X: Längengrad WGS84"
+
+msgid "ch.mobility.standorte.name"
+msgstr "Mobility-Standort"
+
+msgid "ch.mobility.standorte.number"
+msgstr "Standort-ID"
 
 msgid "ch.nagra.aeromagnetische-karte_1100"
 msgstr "Aeromagnetik Aargau 1100 m 100"

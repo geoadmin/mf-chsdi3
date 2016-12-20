@@ -4691,6 +4691,30 @@ msgstr "http://www.bafu.admin.ch/index.html?lang=it"
 msgid "ch.lw"
 msgstr "FA"
 
+msgid "ch.mobility.standorte"
+msgstr "Carsharing"
+
+msgid "ch.mobility.standorte.categories"
+msgstr "Numero di veicoli per categoria"
+
+msgid "ch.mobility.standorte.lat"
+msgstr "Y: grado di latitudine WGS84"
+
+msgid "ch.mobility.standorte.link"
+msgstr "Link verso l'ubicazione"
+
+msgid "ch.mobility.standorte.location"
+msgstr "Indirizzo"
+
+msgid "ch.mobility.standorte.lon"
+msgstr "X: longitudine WGS84"
+
+msgid "ch.mobility.standorte.name"
+msgstr "Ubicazione Mobility"
+
+msgid "ch.mobility.standorte.number"
+msgstr "Ubicazione ID"
+
 msgid "ch.nagra.aeromagnetische-karte_1100"
 msgstr "Aéromagn. Argovie 1100 m 100"
 
