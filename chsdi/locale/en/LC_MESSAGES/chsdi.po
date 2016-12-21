@@ -4439,6 +4439,21 @@ msgstr "Suitability"
 msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
 msgstr "Inclination [°]"
 
+msgid "ch.bfe.solarenergie-eignung-fassaden"
+msgstr "Solarenergie: Eignung Fassaden"
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.ausrichtung"
+msgstr "Orientation [°]"
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.finanzertrag"
+msgstr "Earning [CHF]"
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.flaeche"
+msgstr "Area [m2]"
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.klasse"
+msgstr "Suitability"
+
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Hydropower statistics"
 
@@ -8065,6 +8080,9 @@ msgstr "Scale"
 
 msgid "sonnendach_link"
 msgstr "sonnendach.ch"
+
+msgid "sonnenfassaden_link"
+msgstr "sonnenfassade.ch"
 
 msgid "spectralinfolink"
 msgstr "Link zu den vorhandenen Informationen"

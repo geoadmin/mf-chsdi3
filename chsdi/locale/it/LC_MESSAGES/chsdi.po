@@ -4439,6 +4439,21 @@ msgstr "Aptitude"
 msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
 msgstr "Inclination [°]"
 
+msgid "ch.bfe.solarenergie-eignung-fassaden"
+msgstr "Energia solare: idoneità delle facciate"
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.ausrichtung"
+msgstr "Orientation [°]"
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.finanzertrag"
+msgstr "Rapport [CHF]"
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.flaeche"
+msgstr "Surface [m2]"
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.klasse"
+msgstr "Aptitude"
+
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistica idroelettricitá"
 
@@ -8065,6 +8080,9 @@ msgstr "Scala"
 
 msgid "sonnendach_link"
 msgstr "sonnendach.ch"
+
+msgid "sonnenfassaden_link"
+msgstr "facciatasolare.ch"
 
 msgid "spectralinfolink"
 msgstr "Lien vers les informations disponibles"
