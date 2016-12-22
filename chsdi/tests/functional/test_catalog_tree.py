@@ -27,6 +27,35 @@ class Test_CatalogTree(unittest.TestCase):
         G = nx.DiGraph()
         edge_list = [(15006, 457), (457, 458), (457, 491)]
         G = nx.DiGraph(edge_list)
-        meta = {457: {u'category': u'cat72', u'staging': u'prod', 'selectedOpen': False, 'label': u'Grundlagen und Planung', u'topic': u'ech', u'depth': 1, 'orderKey': 1, 'parentId': 15006, u'path': u'root/cat72', 'id': 457}, 458: {u'category': u'cat73', u'staging': u'prod', 'selectedOpen': False, 'label': u'Basiskarten', u'topic': u'ech', u'depth': 2, 'orderKey': 1, 'parentId': 457, u'path': u'root/cat72/cat73', 'id': 458}, 491: {u'category': u'cat76', u'staging': u'prod', 'selectedOpen': False, 'label': u'Ortsangaben, Referenzsysteme', u'topic': u'ech', u'depth': 2, 'orderKey': 4, 'parentId': 457, u'path': u'root/cat72/cat76', 'id': 491}}
+        meta = {457: {
+            u'category': u'cat72',
+            u'staging': u'prod',
+                        u'selectedOpen': False,
+                        u'label': u'Grundlagen und Planung',
+                        u'topic': u'ech',
+                        u'orderKey': 1,
+                        u'parentId': 15006,
+                        u'id': 457
+        },
+            458: {
+            u'category': u'cat73',
+            u'staging': u'prod',
+                        u'selectedOpen': False,
+                        u'label': u'Basiskarten',
+                        u'topic': u'ech',
+                        u'orderKey': 1,
+                        u'parentId': 457,
+                        u'id': 458},
+            491: {
+            u'category': u'cat76',
+            u'staging': u'prod',
+                        u'selectedOpen': False,
+                        u'label': u'Ortsangaben, Referenzsysteme',
+                        u'topic': u'ech',
+                        u'orderKey': 4,
+                        u'parentId': 457,
+                        u'id': 491
+        }
+        }
         with self.assertRaises(nx.NetworkXError):
             tree_data(G, 15006, {'children': 'children', 'id': 'children'}, meta)
