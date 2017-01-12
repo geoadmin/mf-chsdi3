@@ -79,7 +79,7 @@ def models_from_bodid(bodId, scale=None, resolution=None):
     if models:
         if scale is not None:
             models = [m for m in models if scale < max_scale(m) and scale >= min_scale(m)]
-        elif resolution is not None:
+        if resolution is not None:
             models = [m for m in models if resolution < max_resolution(m) and resolution >= min_resolution(m)]
     return models
 
