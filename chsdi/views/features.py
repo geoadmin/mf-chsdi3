@@ -524,6 +524,7 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                 query = query.filter(text(
                     where_txt
                 ))
+
             # Filter by bbox
             if params.geometry is not None:
                 geomFilter = model.geom_filter(
@@ -532,21 +533,7 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                     params.mapExtent,
                     params.tolerance
                 )
-                # Can be None because of max and min scale
-                if geomFilter is not None:
-                    # TODO Remove code specific clauses
-                    ordering = model.bgdi_order if hasattr(model, 'bgdi_order') else None
-                    if params.order == 'distance':
-                        ordering = model.order_by_distance(
-                            params.geometry,
-                            params.geometryType,
-                            params.imageDisplay,
-                            params.mapExtent,
-                            params.tolerance,
-                            flimit
-                        )
-                    query = query.order_by(ordering) if ordering is not None else query
-                    query = query.filter(geomFilter)
+                query = query.filter(geomFilter)
 
             # Filter by time instant
             if params.timeInstant is not None and hasattr(model, '__timeInstant__'):
@@ -557,6 +544,20 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                     query = query.filter(
                         timeInstantColumn == timeInstant)
 
+            if hasattr(model, 'bgdi_order'):
+                # bgdi_order used only in zeitreihen at the moment
+                query = query.order_by(model.bgdi_order)
+            elif params.order == 'distance':
+                ordering = model.order_by_distance(
+                    params.geometry,
+                    params.geometryType,
+                    params.imageDisplay,
+                    params.mapExtent,
+                    params.tolerance,
+                    flimit
+                )
+                query = query.order_by(ordering)
+
             # Add limit
             query = query.limit(flimit) if flimit is not None else query
 
@@ -565,19 +566,16 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                 query = query.offset(params.offset)
 
             # We need either where or geomFilter (geomFilter especially for zeitreihen layer)
-            # This probably needs refactoring...
             if where is not None or geomFilter is not None:
-                # TODO remove layer specific code
-                if model.__bodId__ == 'ch.swisstopo.zeitreihen' and maxFeatures == MAX_FEATURES:
+                # bgdi_order used only in zeitreihen at the moment
+                if hasattr(model, 'bgdi_order'):
                     # standard identify show first bgdi_order only
-                    counter = 0
-                    bgdi_order = 0
+                    bgdi_order = None
                     for feature in query:
-                        counter += 1
-                        if counter > 1:
-                            if bgdi_order < feature.bgdi_order:
-                                continue
-                        bgdi_order = feature.bgdi_order
+                        if bgdi_order is None:
+                            bgdi_order = feature.bgdi_order
+                        if bgdi_order < feature.bgdi_order:
+                            continue
                         yield feature
                 else:
                     for feature in query:
@@ -767,6 +765,27 @@ def _process_feature(feature, params):
     return f
 
 
+def _get_features_releases(model, params):
+    maxFeatures = 1000
+    query = params.request.db.query(model).distinct(model.bgdi_order)
+    if params.geometry is not None:
+        geomFilter = model.geom_filter(
+            params.geometry,
+            params.imageDisplay,
+            params.mapExtent,
+            params.tolerance
+        )
+        query = query.filter(geomFilter)
+    if params.timeInstant is not None and hasattr(model, '__timeInstant__'):
+        timeInstantColumn = model.time_instant_column()
+        if params.timeInstant:
+            query = query.filter(timeInstantColumn == params.timeInstant)
+    query = query.order_by(model.bgdi_order)
+    query = query.limit(maxFeatures)
+    for feature in query:
+        yield feature
+
+
 @view_config(route_name='releases', renderer='geojson')
 def releases(request):
     params = IdentifyServiceValidation(request, service='releases')
@@ -780,32 +799,23 @@ def releases(request):
     if models is None:
         raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
 
+    minYear = float('inf')
     # Default timestamp
     timestamps = []
-    timestamps_bgdi_ordered = {}
-    minYear = 9999
     # group timestamps by bgdi_order
-    for f in _get_features_for_filters(params, [{params.layerId: models}], maxFeatures=1000):
+    for f in _get_features_releases(models[0], params):
         if hasattr(f, 'array_release_years') and f.array_release_years is not None and \
                 hasattr(f, 'bgdi_order') and f.bgdi_order is not None:
-            if f.bgdi_order in timestamps_bgdi_ordered:
-                for year in f.array_release_years:
-                    timestamps_bgdi_ordered[f.bgdi_order].append(year)
-            else:
-                timestamps_bgdi_ordered[f.bgdi_order] = f.array_release_years
+            # Here we use some kind of filtering technique
+            # to avoid returning too many results (used in service-print only)
+            for y in f.array_release_years:
+                if y < minYear:
+                    timestamps.append(y)
+                    minYear = y
 
-    for key, values in timestamps_bgdi_ordered.items():
-        for x in sorted(set(values), reverse=True):
-            if int(x) < minYear:
-                timestamps.append(str(x))
-                minYear = int(x)
-
-    if len(timestamps) > 0:
-        # remove duplicates
-        timestamps = list(set(timestamps))
-        # add day to have full timestamp
-        timestamps = sorted([int(ts + '1231') for ts in timestamps])
-        # transform back to string
-        timestamps = [str(ts) for ts in timestamps]
-
+    timestamps = list(set(timestamps))
+    # add day to have full timestamp
+    timestamps = sorted([int(str(ts) + '1231') for ts in timestamps])
+    # transform back to string
+    timestamps = [str(ts) for ts in timestamps]
     return {'results': timestamps}
