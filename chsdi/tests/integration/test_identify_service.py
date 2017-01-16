@@ -194,6 +194,18 @@ class TestIdentifyService(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn('properties', resp.json['results'][0])
         self.assertIn('geometry', resp.json['results'][0])
+        self.assertEqual(len(resp.json['results']), 2)
+
+    def test_identify_timeinstant_zeitreihen(self):
+        params = {'geometryType': 'esriGeometryPoint', 'geometry': '614277,188148', 'geometryFormat': 'geojson',
+                  'imageDisplay': '1920,573,96', 'mapExtent': '570727,172398,666727,201048', 'tolerance': '10', 'timeInstant': '2000',
+                  'returnGeometry': 'true', 'layers': 'all:ch.swisstopo.zeitreihen'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('properties', resp.json['results'][0])
+        self.assertIn('geometry', resp.json['results'][0])
+        self.assertEqual(resp.json['results'][0]['properties']['produkt'], 'lk25')
+        self.assertEqual(len(resp.json['results']), 1)
 
     def test_identify_one_timeinstant_several_layers(self):
         params = {'geometryType': 'esriGeometryPoint', 'geometry': '630853.8,170647.9', 'geometryFormat': 'geojson',

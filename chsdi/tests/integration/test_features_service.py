@@ -447,7 +447,7 @@ class TestReleasesService(TestsBase):
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertTrue(len(resp.json['results']) >= 25, len(resp.json['results']))
+        self.assertGreaterEqual(len(resp.json['results']), 25)
         ist = resp.json['results']
         soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231",
                 "18791231", "18821231", "18851231", "18891231", "18931231", "18951231",
@@ -465,7 +465,7 @@ class TestReleasesService(TestsBase):
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertTrue(len(resp.json['results']) >= 25, len(resp.json['results']))
+        self.assertGreaterEqual(len(resp.json['results']), 25)
         ist = resp.json['results']
         soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231",
                 "18791231", "18821231", "18841231", "18961231", "18971231", "19011231",
@@ -482,7 +482,7 @@ class TestReleasesService(TestsBase):
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertTrue(len(resp.json['results']) >= 25, len(resp.json['results']))
+        self.assertGreaterEqual(len(resp.json['results']), 25)
         ist = resp.json['results']
         soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231",
                 "18791231", "18821231", "18841231", "18961231", "18971231", "19011231",
