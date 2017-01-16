@@ -778,8 +778,7 @@ def _get_features_releases(model, params):
         query = query.filter(geomFilter)
     if params.timeInstant is not None and hasattr(model, '__timeInstant__'):
         timeInstantColumn = model.time_instant_column()
-        if params.timeInstant:
-            query = query.filter(timeInstantColumn == params.timeInstant)
+        query = query.filter(timeInstantColumn == params.timeInstant)
     query = query.order_by(model.bgdi_order)
     query = query.limit(maxFeatures)
     for feature in query:
