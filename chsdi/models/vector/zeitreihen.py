@@ -18,6 +18,7 @@ class Zeitreihen_15(Base, Vector):
     __bodId__ = 'ch.swisstopo.zeitreihen'
     __minresolution__ = 10.05
     __maxresolution__ = 500005
+    __minscale__ = 37984.176
     __timeInstant__ = 'years'
     __label__ = 'release_year'
     id = Column('bgdi_id', Unicode, primary_key=True)
@@ -40,6 +41,8 @@ class Zeitreihen_20(Base, Vector):
     __bodId__ = 'ch.swisstopo.zeitreihen'
     __minresolution__ = 5.05
     __maxresolution__ = 10.05
+    __minscale__ = 19086.576
+    __maxscale__ = 37984.176
     __timeInstant__ = 'years'
     __label__ = 'release_year'
     id = Column('bgdi_id', Unicode, primary_key=True)
@@ -62,6 +65,8 @@ class Zeitreihen_21(Base, Vector):
     __bodId__ = 'ch.swisstopo.zeitreihen'
     __minresolution__ = 2.55
     __maxresolution__ = 5.05
+    __minscale__ = 9637.776
+    __maxscale__ = 19086.576
     __timeInstant__ = 'years'
     __label__ = 'release_year'
     id = Column('bgdi_id', Unicode, primary_key=True)
@@ -84,6 +89,8 @@ class Zeitreihen_22(Base, Vector):
     __bodId__ = 'ch.swisstopo.zeitreihen'
     __minresolution__ = 0
     __maxresolution__ = 2.55
+    __minscale__ = 0
+    __maxscale__ = 9637.776
     __timeInstant__ = 'years'
     __label__ = 'release_year'
     id = Column('bgdi_id', Unicode, primary_key=True)
