@@ -14,10 +14,10 @@ Release Notes
 
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
-.. _releasenotes_20170118:
+.. _releasenotes_20170125:
    *******
 
-Release 20170118 - Wednesday, January 18th 2017 
+Release 20170125 - Wednesday, January 25th 2017 
 ------------------------------------------------
 
 API & applications
