@@ -205,12 +205,13 @@ def _identify(request):
     layersGrid = []
     isScaleDependent = hasBuffer(params.imageDisplay, params.mapExtent, params.tolerance)
     scale = getScale(params.imageDisplay, params.mapExtent) if isScaleDependent else None
+    resolution = getResolution(params.imageDisplay, params.mapExtent) if isScaleDependent else None
     if params.layers == 'all':
         model = get_bod_model(params.lang)
         query = params.request.db.query(model)
         for layer in get_layers_metadata_for_params(params, query, model):
             layerBodId = layer['layerBodId']
-            models = models_from_bodid(layerBodId, scale=scale)
+            models = models_from_bodid(layerBodId, scale=scale, resolution=resolution)
             if models:
                 layersDB.append({layerBodId: models})
             else:
@@ -227,7 +228,7 @@ def _identify(request):
                         'are supported for geometryType parameter for grid like data')
                 layersGrid.append({layerBodId: gridSpec})
             else:
-                models = models_from_bodid(layerBodId, scale=scale)
+                models = models_from_bodid(layerBodId, scale=scale, resolution=resolution)
                 if models is None or len(models) == 0:
                     raise exc.HTTPBadRequest('No GeoTable was found for %s' % layerBodId)
                 layersDB.append({layerBodId: models})
@@ -564,21 +565,17 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
             if params.offset is not None:
                 query = query.offset(params.offset)
 
-            # We need either where or geomFilter (geomFilter especially for zeitreihen layer)
-            # This probably needs refactoring...
             if where is not None or geomFilter is not None:
-                # TODO remove layer specific code
-                if model.__bodId__ == 'ch.swisstopo.zeitreihen' and maxFeatures == MAX_FEATURES:
+                # the bgdi_order
+                if hasattr(model, 'bgdi_order') and maxFeatures == MAX_FEATURES:
                     # standard identify show first bgdi_order only
-                    counter = 0
-                    bgdi_order = 0
+                    bgdi_order = None
                     for feature in query:
-                        counter += 1
-                        if counter > 1:
-                            if bgdi_order < feature.bgdi_order:
-                                continue
-                        bgdi_order = feature.bgdi_order
-                        yield feature
+                        if feature.bgdi_order < bgdi_order or bgdi_order is None:
+                            return_feature = feature
+                            bgdi_order = feature.bgdi_order
+                            continue
+                    yield return_feature
                 else:
                     for feature in query:
                         yield feature
