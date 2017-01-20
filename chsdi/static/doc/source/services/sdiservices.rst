@@ -1069,6 +1069,35 @@ Example
 * A `Terrain tile <https://terrain2.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20160115/4326/12/4309/3111.terrain>`_
 
 
+.. _tiles3d_description:
+
+----------
+
+3D Tiles
+----------
+A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `3D Tiles specification <https://github.com/AnalyticalGraphicsInc/3d-tiles>`_.
+In order to access the 3D tiles, you require a `swisstopo web access - WMTS documentation <https://www.swisstopo.ch/webaccess>`_.
+
+URL
+***
+
+- https://vectortiles100.geo.admin.ch
+
+Metadata Service
+****************
+
+The `tileset.json` file describes the available set of tiles. In order to use this service, you must currently use a fork of CesiumJS, `the 3d-tiles branch <https://github.com/AnalyticalGraphicsInc/cesium/tree/3d-tiles>`_. Stay informed and have a look at the current `RoadMap for 3D Tiles <https://github.com/AnalyticalGraphicsInc/cesium/issues/3241>`_.
+
+Currently, a single technical layer (ch.swisstopo.swisstlm3d.3d) is available and contains all availbale 3D objects. Subset of this layer / additional layers will be available in the future. Partial 3D buildings model coverage can be vizsualised `here <https://s.geo.admin.ch/70fb32e692>`_.
+
+- https://vectortiles100.geo.admin.ch/ch.swisstopo.swisstlm3d.3d/20161217/tileset.json
+
+Example
+*******
+
+* A `3D tile <https://vectortiles100.geo.admin.ch/ch.swisstopo.swisstlm3d.3d/20161217/8/41/41.b3dm?v=1.0>`_
+
+
 .. _stationboard_description:
 
 ------------
