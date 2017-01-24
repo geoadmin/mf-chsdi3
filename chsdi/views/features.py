@@ -199,6 +199,7 @@ def _identify_oereb(request):
 
 def _identify(request):
     params = IdentifyServiceValidation(request)
+    response = {'results': []}
     # Determine layer types
     # Grid layers are serverless
     layersDB = []
@@ -228,13 +229,17 @@ def _identify(request):
                 layersGrid.append({layerBodId: gridSpec})
             else:
                 models = models_from_bodid(layerBodId, scale=scale)
-                if models is None or len(models) == 0:
+                # The layer has a model but not at the right scale
+                if len(models) == 0:
+                    return response
+                # There is no model for this layer
+                elif models is None:
                     raise exc.HTTPBadRequest('No GeoTable was found for %s' % layerBodId)
                 layersDB.append({layerBodId: models})
     featuresGrid = _identify_grid(params, layersGrid)
     featuresDB = _identify_db(params, layersDB)
-
-    return {'results': featuresGrid + featuresDB}
+    response['results'] = featuresGrid + featuresDB
+    return response
 
 
 def _identify_grid(params, layerBodIds):
