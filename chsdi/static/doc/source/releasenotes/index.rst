@@ -39,8 +39,17 @@ API & applications
 
 Geodata
 *******
+
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Traffic counting locations local <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal>`__ (ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal)    |
+| New    | `Mobility Carsharing <//map.geo.admin.ch/?layers=ch.mobility.standorte>`__ (ch.mobility.standorte)                                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                                                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                                                     |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Traffic counting locations principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet)  |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
