@@ -479,15 +479,43 @@ class TestIdentifyService(TestsBase):
         resp.mustcontain('together with a geometry')
 
     def test_identify_outside_extent(self):
-        params = dict(geometryType="esriGeometryPoint",
-                      geometry="516750,307656.25",
-                      geometryFormat="geojson",
-                      imageDisplay="671,600,96",
-                      mapExtent="492250,35000,827750,335000",
+        params = dict(geometryType='esriGeometryPoint',
+                      geometry='516750,307656.25',
+                      geometryFormat='geojson',
+                      imageDisplay='671,600,96',
+                      mapExtent='492250,35000,827750,335000',
                       tolerance=10,
-                      layers="all:ch.bfe.windenergie-geschwindigkeit_h125",
-                      lang="de"
+                      layers='all:ch.bfe.windenergie-geschwindigkeit_h125',
+                      lang='de'
                       )
         resp = self.testapp.get('/rest/services/api/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(0, len(resp.json['results']))
+        self.assertEqual(len(resp.json['results']), 0)
+
+    def test_identify_treasurehunt_good_scale(self):
+        params = dict(geometryType='esriGeometryPoint',
+                      geometry='612824.615589634,177050.20813678828',
+                      geometryFormat='geojson',
+                      imageDisplay='1920,730,96',
+                      layers='all:ch.swisstopo.treasurehunt',
+                      mapExtent='612648.615589634,176979.45813678828,613128.615589634,177161.95813678828',
+                      returnGeometry='true',
+                      tolerance='10',
+                      lang='fr')
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(len(resp.json['results']), 1)
+
+    def test_identify_treasurehunt_not_in_scale_range(self):
+        params = dict(geometryType='esriGeometryPoint',
+                      geometry='612824.615589634,177050.95813678834',
+                      geometryFormat='geojson',
+                      imageDisplay='1920,730,96',
+                      layers='all:ch.swisstopo.treasurehunt',
+                      mapExtent='612451.115589634,176912.45813678834,613411.115589634,177277.45813678834',
+                      returnGeometry='true',
+                      tolerance='10',
+                      lang='fr')
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(len(resp.json['results']), 0)
