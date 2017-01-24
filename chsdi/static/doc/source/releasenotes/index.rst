@@ -14,6 +14,38 @@ Release Notes
 
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20170125:
+   *******
+
+Release 20170125 - Wednesday, January 25th 2017 
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+Geodata
+*******
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Traffic counting locations local <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal>`__ (ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal)    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Traffic counting locations principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet)  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Treasurehunt <//map.geo.admin.ch/?layers=ch.swisstopo.treasurehunt>`__ (ch.swisstopo.treasurehunt)                                                                                              |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Parks (Zones) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Parks (Perimeter) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter)               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `LV95 Transformation accuracy <//map.geo.admin.ch/?layers=ch.swisstopo.transformationsgenauigkeit>`__ (ch.swisstopo.transformationsgenauigkeit)                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20161214:
    *******
 
