@@ -2486,6 +2486,6 @@ class Treasurehunt(Base, Vector):
     link_it = Column('link_it', Unicode)
     type_coord = Column('type_coord', Unicode)
     the_geom = Column(Geometry2D)
-    __maxscale__ = 25000000
+    __maxscale__ = 1500
 
 register('ch.swisstopo.treasurehunt', Treasurehunt)
