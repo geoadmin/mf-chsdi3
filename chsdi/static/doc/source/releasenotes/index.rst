@@ -53,6 +53,8 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Traffic counting locations principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet)  |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Traffic counting locations local <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal>`__ (ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal)    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Treasurehunt <//map.geo.admin.ch/?layers=ch.swisstopo.treasurehunt>`__ (ch.swisstopo.treasurehunt)                                                                                              |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Swiss Parks (Zones) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                                       |
