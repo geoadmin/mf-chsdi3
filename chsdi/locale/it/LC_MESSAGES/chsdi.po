@@ -4577,6 +4577,9 @@ msgstr "Acquedotto"
 msgid "ch.blw.emapis-wegebau"
 msgstr "Costruzione di strade"
 
+msgid "ch.blw.emapis-zusammenfassung"
+msgstr "Sviluppo rurale"
+
 msgid "ch.blw.emapis.geschaeftsnummer"
 msgstr "Numero di riferimento"
 

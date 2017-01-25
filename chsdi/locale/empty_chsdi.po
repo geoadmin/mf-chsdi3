@@ -2016,6 +2016,9 @@ msgstr ""
 msgid "ch.blw.emapis.typ"
 msgstr ""
 
+msgid "ch.blw.emapis-zusammenfassung"
+msgstr ""
+
 msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft"
 msgstr ""
 

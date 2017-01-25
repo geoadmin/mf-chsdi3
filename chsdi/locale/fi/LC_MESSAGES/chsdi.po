@@ -4577,6 +4577,9 @@ msgstr "Wasserversorgung"
 msgid "ch.blw.emapis-wegebau"
 msgstr "Construcziun da vias champestras"
 
+msgid "ch.blw.emapis-zusammenfassung"
+msgstr "Ländliche Entwicklung"
+
 msgid "ch.blw.emapis.geschaeftsnummer"
 msgstr "Geschäftsnummer"
 

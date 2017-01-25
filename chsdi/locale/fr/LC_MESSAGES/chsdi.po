@@ -4577,6 +4577,9 @@ msgstr "Adduction d’eau"
 msgid "ch.blw.emapis-wegebau"
 msgstr "Construction de chemins"
 
+msgid "ch.blw.emapis-zusammenfassung"
+msgstr "Développement rural"
+
 msgid "ch.blw.emapis.geschaeftsnummer"
 msgstr "Numéro de référence"
 
