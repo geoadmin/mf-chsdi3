@@ -4334,6 +4334,30 @@ msgstr "Hauteur au-dessus du niveau du sol"
 msgid "ch.bfe.meteorologische-vereisung.vereisung"
 msgstr "Fréquence de givrage [Jours par année]"
 
+msgid "ch.bfe.minergiegebaeude"
+msgstr "Minergie"
+
+msgid "ch.bfe.minergiegebaeude.adresse"
+msgstr "Adresse"
+
+msgid "ch.bfe.minergiegebaeude.energiebezugsflaeche"
+msgstr "Surface de référence énergétique"
+
+msgid "ch.bfe.minergiegebaeude.gebaeude"
+msgstr "Bâtiment"
+
+msgid "ch.bfe.minergiegebaeude.kanton"
+msgstr "Canton"
+
+msgid "ch.bfe.minergiegebaeude.standard"
+msgstr "Standard"
+
+msgid "ch.bfe.minergiegebaeude.weitere_informationen"
+msgstr "Informations supplémentaires"
+
+msgid "ch.bfe.minergiegebaeude.zertifikat"
+msgstr "Certificate"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "PS Dépôts couches géol. profondes"
 

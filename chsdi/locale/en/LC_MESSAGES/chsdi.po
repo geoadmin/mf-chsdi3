@@ -4334,6 +4334,30 @@ msgstr "Height above ground"
 msgid "ch.bfe.meteorologische-vereisung.vereisung"
 msgstr "Icing Frequency [days per year]"
 
+msgid "ch.bfe.minergiegebaeude"
+msgstr "Minergie"
+
+msgid "ch.bfe.minergiegebaeude.adresse"
+msgstr "Address"
+
+msgid "ch.bfe.minergiegebaeude.energiebezugsflaeche"
+msgstr "Energy reference area"
+
+msgid "ch.bfe.minergiegebaeude.gebaeude"
+msgstr "Building"
+
+msgid "ch.bfe.minergiegebaeude.kanton"
+msgstr "Canton"
+
+msgid "ch.bfe.minergiegebaeude.standard"
+msgstr "Standard"
+
+msgid "ch.bfe.minergiegebaeude.weitere_informationen"
+msgstr "Further information"
+
+msgid "ch.bfe.minergiegebaeude.zertifikat"
+msgstr "Certificate"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "SP Deep Geol. Repositories"
 

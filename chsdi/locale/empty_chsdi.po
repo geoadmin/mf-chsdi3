@@ -388,6 +388,30 @@ msgstr ""
 msgid "ch.bafu.karst-unterirdische_fliesswege.ei_hdyn"
 msgstr ""
 
+msgid "ch.bfe.minergiegebaeude"
+msgstr ""
+
+msgid "ch.bfe.minergiegebaeude.adresse"
+msgstr ""
+
+msgid "ch.bfe.minergiegebaeude.energiebezugsflaeche"
+msgstr ""
+
+msgid "ch.bfe.minergiegebaeude.gebaeude"
+msgstr ""
+
+msgid "ch.bfe.minergiegebaeude.kanton"
+msgstr ""
+
+msgid "ch.bfe.minergiegebaeude.standard"
+msgstr ""
+
+msgid "ch.bfe.minergiegebaeude.weitere_informationen"
+msgstr ""
+
+msgid "ch.bfe.minergiegebaeude.zertifikat"
+msgstr ""
+
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr ""
 

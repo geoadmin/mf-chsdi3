@@ -4334,6 +4334,30 @@ msgstr "Altezza sul livello del terreno"
 msgid "ch.bfe.meteorologische-vereisung.vereisung"
 msgstr "Frequenza formazione ghiaccio [giorni all'anno]"
 
+msgid "ch.bfe.minergiegebaeude"
+msgstr "Minergie"
+
+msgid "ch.bfe.minergiegebaeude.adresse"
+msgstr "Indirizzo"
+
+msgid "ch.bfe.minergiegebaeude.energiebezugsflaeche"
+msgstr "Superficie di riferimento energetico"
+
+msgid "ch.bfe.minergiegebaeude.gebaeude"
+msgstr "Edificio"
+
+msgid "ch.bfe.minergiegebaeude.kanton"
+msgstr "Cantone"
+
+msgid "ch.bfe.minergiegebaeude.standard"
+msgstr "Standard"
+
+msgid "ch.bfe.minergiegebaeude.weitere_informationen"
+msgstr "Ulteriori informazioni"
+
+msgid "ch.bfe.minergiegebaeude.zertifikat"
+msgstr "Certificato"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "PS Depositi strati geol. profondi"
 
