@@ -4334,6 +4334,30 @@ msgstr "Höhe über Grund"
 msgid "ch.bfe.meteorologische-vereisung.vereisung"
 msgstr "Vereisungshäufigkeit [Tage pro Jahr]"
 
+msgid "ch.bfe.minergiegebaeude"
+msgstr "Minergie"
+
+msgid "ch.bfe.minergiegebaeude.adresse"
+msgstr "Adresse"
+
+msgid "ch.bfe.minergiegebaeude.energiebezugsflaeche"
+msgstr "Energiebezugsfläche"
+
+msgid "ch.bfe.minergiegebaeude.gebaeude"
+msgstr "Gebäude"
+
+msgid "ch.bfe.minergiegebaeude.kanton"
+msgstr "Kanton"
+
+msgid "ch.bfe.minergiegebaeude.standard"
+msgstr "Standard"
+
+msgid "ch.bfe.minergiegebaeude.weitere_informationen"
+msgstr "Weitere Informationen"
+
+msgid "ch.bfe.minergiegebaeude.zertifikat"
+msgstr "Zertifikat"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "SP Geologische Tiefenlager"
 

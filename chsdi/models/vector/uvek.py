@@ -604,6 +604,35 @@ class ENERGIEFORSCHUNG(Base, Vector):
 register('ch.bfe.energieforschung', ENERGIEFORSCHUNG)
 
 
+class MinergieGebaeude(Base, Vector):
+    __tablename__ = 'minergiegebaeude'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/minergiegebaeude.mako'
+    __bodId__ = 'ch.bfe.minergiegebaeude'
+    __extended_info__ = False
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    certificate = Column('certificate', Text)
+    standard = Column('standard', Text)
+    street = Column('street', Text)
+    streetnr = Column('streetnr', Text)
+    postcode = Column('postcode', Numeric)
+    place = Column('place', Text)
+    canton = Column('canton', Text)
+    buildinginfo_de = Column('buildinginfo_de', Text)
+    buildinginfo_fr = Column('buildinginfo_fr', Text)
+    buildinginfo_it = Column('buildinginfo_it', Text)
+    buildinginfo_en = Column('buildinginfo_en', Text)
+    ebf = Column('ebf', Numeric)
+    http_de = Column('http_de', Text)
+    http_fr = Column('http_fr', Text)
+    http_it = Column('http_it', Text)
+    http_en = Column('http_en', Text)
+    the_geom = Column(Geometry2D)
+
+register(MinergieGebaeude.__bodId__, MinergieGebaeude)
+
+
 class STATISTIKWASSERKRAFTANLAGEN(Base, Vector):
     __tablename__ = 'statistik_wasserkraftanlagen_powerplant'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
