@@ -227,3 +227,10 @@ class EmapisWegebau(Base, Emapis, Vector):
     __bodId__ = 'ch.blw.emapis-wegebau'
 
 register('ch.blw.emapis-wegebau', EmapisWegebau)
+
+
+class EmapisZusammenfassung(Base, Emapis, Vector):
+    __tablename__ = 'emapis'
+    __bodId__ = 'ch.blw.emapis-zusammenfassung'
+
+register('ch.blw.emapis-zusammenfassung', EmapisZusammenfassung)
