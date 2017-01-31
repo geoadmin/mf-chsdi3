@@ -622,7 +622,7 @@ class MinergieGebaeude(Base, Vector):
     buildinginfo_fr = Column('buildinginfo_fr', Unicode)
     buildinginfo_it = Column('buildinginfo_it', Unicode)
     buildinginfo_en = Column('buildinginfo_en', Unicode)
-    ebf = Column('ebf', Numeric)
+    ebf = Column('ebf', Integer)
     http_de = Column('http_de', Unicode)
     http_fr = Column('http_fr', Unicode)
     http_it = Column('http_it', Unicode)
