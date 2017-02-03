@@ -6195,7 +6195,7 @@ msgid "ch.swisstopo.vec200-names-namedlocation"
 msgstr "Names VECTOR200"
 
 msgid "ch.swisstopo.vec200-names-namedlocation.id"
-msgstr "Official point  number"
+msgstr "Object number"
 
 msgid "ch.swisstopo.vec200-names-namedlocation.objname1"
 msgstr "Name in der 1. Sprache"
