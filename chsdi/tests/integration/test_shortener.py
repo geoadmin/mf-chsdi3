@@ -1,9 +1,15 @@
 # -*- coding: utf-8 -*-
 
+import time
+from random import randint
 from chsdi.tests.integration import TestsBase
 
 
 class TestShortenerView(TestsBase):
+
+    # 1 read capacity unit = 4 KB read capacity per second
+    def tearDown(self):
+        time.sleep(randint(1, 10))
 
     def test_shortener_toolong_url_insert(self):
         test_url = 'https://map.geo.admin.ch/?topic=ech&lang=en&bgLayer=ch.swisstopo.pixelkarte-farbe' \
