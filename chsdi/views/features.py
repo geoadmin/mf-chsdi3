@@ -230,7 +230,7 @@ def _identify(request):
             else:
                 models = models_from_bodid(layerBodId, scale=scale)
                 # The layer has a model but not at the right scale
-                if len(models) == 0:
+                if models is not None and len(models) == 0:
                     return response
                 # There is no model for this layer
                 elif models is None:
