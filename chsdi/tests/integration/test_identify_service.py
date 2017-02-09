@@ -519,3 +519,15 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertEqual(len(resp.json['results']), 0)
+
+    def test_identify_no_geotable(self):
+        params = dict(geometryType='esriGeometryPoint',
+                      geometry='612824.615589634,177050.95813678834',
+                      geometryFormat='geojson',
+                      imageDisplay='1920,730,96',
+                      layers='all:ch.bakom.anschlussart-glasfaser',
+                      mapExtent='659174.774934163,256650.066299024,663974.774934163,259240.066299024',
+                      returnGeometry='true',
+                      tolerance='10',
+                      lang='fr')
+        self.testapp.get('/rest/services/all/MapServer/identify', params=params, status=400)
