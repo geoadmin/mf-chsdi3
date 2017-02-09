@@ -26,15 +26,9 @@ import time
 
 utc=pytz.UTC
 
-
-begin_naive = datetime.datetime(2017,01,26)
-#end_naive = datetime.datetime(2017,01,27)
-
 begin_naive = datetime.datetime(2016,10,25)
-end_naive = datetime.datetime(2017,01,27)
-
-
 begin = utc.localize(begin_naive) 
+end_naive = datetime.datetime(2017,01,27)
 end = utc.localize(end_naive) 
 
 
@@ -54,7 +48,7 @@ start_time = time.time()
 for objSummary in bucket.objects.all():
     
     # if objSummary.last_modified > begin and objSummary.key == 'H-3eRDgiSN2pZTTYxU7DOQ' and objSummary.last_modified < end:
-    if objSummary.last_modified > begin: # and objSummary.key == '3f2YaEnTSFmv-tNqfVN_0g':
+    if objSummary.last_modified > begin:
         obj = objSummary.Object();
         try : 
             # Get file content
@@ -89,17 +83,9 @@ for objSummary in bucket.objects.all():
                 # Send to int bucket
                 f = open('tmp/kml_replaced/' + obj.key, 'rb')
                 f.seek(0)
-                bucket.delete_objects(
-                   Delete={
-                       'Objects': [{
-                            'Key': obj.key
-                        }]
-                   }
-                )
                 bucket.put_object(
                     Key=obj.key,
                     Body=f,
-                    # ContentMD5=base64.encodestring(md5.digest()),
                     ContentEncoding='gzip',
                     ContentType='application/vnd.google-earth.kml+xml'
                 )
