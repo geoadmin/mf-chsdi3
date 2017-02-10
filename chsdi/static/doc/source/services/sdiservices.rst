@@ -1081,7 +1081,7 @@ In order to access the 3D tiles, you require a `swisstopo web access - WMTS docu
 URL
 ***
 
-- https://vectortiles100.geo.admin.ch
+- https://vectortiles.geo.admin.ch
 
 Metadata Service
 ****************
@@ -1090,12 +1090,12 @@ The `tileset.json` file describes the available set of tiles. In order to use th
 
 Currently, a single technical layer (ch.swisstopo.swisstlm3d.3d) is available and contains all available 3D objects. Subset of this layer / additional layers will be available in the future. Partial 3D buildings model coverage can be vizsualised `here <https://s.geo.admin.ch/70fb32e692>`_.
 
-- https://vectortiles100.geo.admin.ch/ch.swisstopo.swisstlm3d.3d/20161217/tileset.json
+- https://vectortiles.geo.admin.ch/ch.swisstopo.swisstlm3d.3d/20161217/tileset.json
 
 Example
 *******
 
-* A `3D tile <https://vectortiles100.geo.admin.ch/ch.swisstopo.swisstlm3d.3d/20161217/8/41/41.b3dm?v=1.0>`_
+* A `3D tile <https://vectortiles.geo.admin.ch/ch.swisstopo.swisstlm3d.3d/20161217/8/41/41.b3dm?v=1.0>`_
 
 
 .. _stationboard_description:
