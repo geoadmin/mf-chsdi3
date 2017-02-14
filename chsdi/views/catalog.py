@@ -24,6 +24,7 @@ def tree_data(G, root, attrs, meta):
         raise nx.NetworkXError('Attribute names are not unique.')
 
     def add_children(n, G):
+        distinct_order_keys = set()
         order_key = lambda x: x['orderKey']
         label_key = lambda x: x['label'].replace(u'Ü', u'U').replace(u'Ä', u'A')
         nbrs = G[n]
@@ -37,7 +38,7 @@ def tree_data(G, root, attrs, meta):
             d['staging'] = meta[d['id']]['staging']
             d['label'] = meta[d['id']]['label']
             # only for sorting according to 'orderKey'
-            if ('orderKey' in meta[d['id']]):
+            if 'orderKey' in meta[d['id']]:
                 d['orderKey'] = meta[d['id']]['orderKey']
             if (d['category'] == 'layer'):
                 d['layerBodId'] = meta[d['id']]['layerBodId']
@@ -49,10 +50,14 @@ def tree_data(G, root, attrs, meta):
             elif d['category'] != 'layer':
                 d[children] = []
             children_.append(d)
-            if ('orderKey' in d):
-                children_ = sorted(children_, key=order_key)
-            else:
-                children_ = sorted(children_, key=label_key)
+            if 'orderKey' in d:
+                distinct_order_keys.add(d['orderKey'])
+
+        if len(distinct_order_keys) > 1:
+            children_ = sorted(children_, key=order_key)
+        else:
+            children_ = sorted(children_, key=label_key)
+
         for d in children_:
             d.pop('orderKey', None)
         return children_
