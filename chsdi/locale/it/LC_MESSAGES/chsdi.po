@@ -9254,6 +9254,9 @@ msgstr "Disposizioni"
 msgid "tt_wrz_select_grundlage"
 msgstr "Basi di decisione"
 
+msgid "tt_wrz_select_obj"
+msgstr "Numero dell'oggetto"
+
 msgid "tt_wrz_select_schutz"
 msgstr "Stato della protezione"
 

@@ -9255,6 +9255,9 @@ msgstr "Bestimmungen"
 msgid "tt_wrz_select_grundlage"
 msgstr "Grundlage"
 
+msgid "tt_wrz_select_obj"
+msgstr "Objektnummer"
+
 msgid "tt_wrz_select_schutz"
 msgstr "Schutzstatus "
 
