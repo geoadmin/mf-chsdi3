@@ -74,10 +74,20 @@ def oereb_models_from_bodid(bodId, scale=None):
     return models
 
 
-def models_from_bodid(bodId, scale=None, resolution=None):
+# Returns None is the bodId is not registered and an empty list if the bodId is registered but
+# the scale filtered all models out. orderScale orders by scale validity
+def models_from_bodid(bodId, scale=None, resolution=None, orderScale=None):
     models = bodmap.get(bodId)
     if models:
-        if scale is not None:
+        if orderScale is not None:
+            mdls = []
+            for m in models:
+                if orderScale < max_scale(m) and orderScale  >= min_scale(m):
+                    mdls.insert(0, m)
+                else:
+                    mdls.append(m)
+            models = mdls
+        elif scale is not None:
             models = [m for m in models if scale < max_scale(m) and scale >= min_scale(m)]
         elif resolution is not None:
             models = [m for m in models if resolution < max_resolution(m) and resolution >= min_resolution(m)]

@@ -318,17 +318,17 @@ def _get_feature_service(request):
 def _get_features(params, extended=False, process=True):
     ''' Returns exactly one feature or raises
     an excpetion '''
+    featureIds = params.featureIds
     scale = None
     if hasattr(params, 'imageDisplay') and hasattr(params, 'mapExtent'):
         if all((params.imageDisplay, params.mapExtent)):
             scale = getScale(params.imageDisplay, params.mapExtent)
-    featureIds = params.featureIds
-    gridSpec = get_grid_spec(params.layerId)
-    if not gridSpec:
-        models = models_from_bodid(params.layerId, scale=scale)
-        if models is None:
-            raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
 
+    models = models_from_bodid(params.layerId, orderScale=scale)
+    gridSpec = get_grid_spec(params.layerId)
+    if models is None and gridSpec is None:
+        raise exc.HTTPBadRequest(
+            'No Vector Table was found for %s' % params.layerId)
     for featureId in featureIds:
         if gridSpec:
             bucketName = params.request.registry.settings['vector_bucket']
@@ -348,22 +348,26 @@ def _get_features(params, extended=False, process=True):
             yield _get_feature_db(featureId, params, models, process=process)
 
 
+def _get_feature_by_id(featureId, params, model):
+    query = params.request.db.query(model) \
+                             .filter(model.id == featureId)
+    try:
+        return query.one()
+    except (NoResultFound, DataError):
+        return None
+    except MultipleResultsFound:
+        raise exc.HTTPInternalServerError(
+            'Multiple features found for the same id %s' % featureId)
+
+
 def _get_feature_db(featureId, params, models, process=True):
+    feature = None
     # One layer can have several models
     for model in models:
-        query = params.request.db.query(model)
-        query = query.filter(model.id == featureId)
-        try:
-            feature = query.one()
-        except (NoResultFound, DataError):
-            feature = None
-        except MultipleResultsFound:
-            raise exc.HTTPInternalServerError('Multiple features found for the same id %s' % featureId)
-
+        feature = _get_feature_by_id(featureId, params, model)
         if feature is not None:
             vectorModel = model
             break
-
     if feature is None:
         raise exc.HTTPNotFound('No feature with id %s' % featureId)
     if process:
