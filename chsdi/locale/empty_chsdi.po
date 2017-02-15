@@ -217,6 +217,48 @@ msgstr ""
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.number"
 msgstr ""
 
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.name"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.owner"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.status"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.system"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.use"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.canton"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.community"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.depth"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.temp"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.power"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.produc"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.weblink"
+msgstr ""
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.id_project"
+msgstr ""
+
 msgid "ch.swisstopo.images-swissimage.metadata.name_en"
 msgstr ""
 

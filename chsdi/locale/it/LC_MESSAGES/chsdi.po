@@ -5555,6 +5555,48 @@ msgstr "Divisione carta tettonica 500 Stampa"
 msgid "ch.swisstopo.geologie-tektonische_karte_papier.metadata.release"
 msgstr "Edizione"
 
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte"
+msgstr "Projets de géothermie profonde"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.canton"
+msgstr "Canton"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.community"
+msgstr "Communes concernées"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.depth"
+msgstr "Measured depth (MD) max. des forages [m]"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.id_project"
+msgstr "ID_Project"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.name"
+msgstr "Nom du projet"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.owner"
+msgstr "Mandant"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.power"
+msgstr "Puissance [MW]"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.produc"
+msgstr "Chaleur produite [MWh/a]"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.status"
+msgstr "Statut"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.system"
+msgstr "Système"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.temp"
+msgstr "Température maximale [°C]"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.use"
+msgstr "Utilisation"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.weblink"
+msgstr "Lien Web"
+
 msgid "ch.swisstopo.gg25-bezirk-flaeche.fill"
 msgstr "Limiti di distretto GG25"
 
