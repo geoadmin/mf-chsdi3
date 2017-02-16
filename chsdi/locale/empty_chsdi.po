@@ -1260,6 +1260,12 @@ msgstr ""
 msgid "ch.bakom.uplink100"
 msgstr ""
 
+msgid "ch.bakom.richtfunkverbindungen"
+msgstr ""
+
+msgid "ch.bakom.richtfunkverbindungen.link_class"
+msgstr ""
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
 msgstr ""
 

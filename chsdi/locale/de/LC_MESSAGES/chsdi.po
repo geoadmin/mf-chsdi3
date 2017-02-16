@@ -3779,6 +3779,12 @@ msgstr "Code"
 msgid "ch.bakom.radio-fernsehsender.name"
 msgstr "Name"
 
+msgid "ch.bakom.richtfunkverbindungen"
+msgstr "Richtfunkstrecken"
+
+msgid "ch.bakom.richtfunkverbindungen.link_class"
+msgstr "Richtfunkverbindung"
+
 msgid "ch.bakom.uplink1"
 msgstr "Upload ≥ 1 Mbit/s"
 

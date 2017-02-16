@@ -848,6 +848,19 @@ class Bakomlte(Base, Vector):
 register('ch.bakom.mobil-antennenstandorte-lte', Bakomlte)
 
 
+class RichtfunkVerbindungen(Base, Vector):
+    __tablename__ = 'richtfunkverbindungen'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __template__ = 'templates/htmlpopup/richtfunkverbindungen.mako'
+    __bodId__ = 'ch.bakom.richtfunkverbindungen'
+    __label__ = 'link_class'
+    id = Column('id', Integer, primary_key=True)
+    link_class = Column('link_class', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(RichtfunkVerbindungen.__bodId__, RichtfunkVerbindungen)
+
+
 class Bakomtv(Base, Vector):
     __tablename__ = 'tv_gebiet'
     __table_args__ = ({'schema': 'bakom', 'autoload': False})

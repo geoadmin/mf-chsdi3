@@ -3779,6 +3779,12 @@ msgstr "Code"
 msgid "ch.bakom.radio-fernsehsender.name"
 msgstr "Nom"
 
+msgid "ch.bakom.richtfunkverbindungen"
+msgstr "Faisceaux Hertziens"
+
+msgid "ch.bakom.richtfunkverbindungen.link_class"
+msgstr "Liaisons faisceaux hertizien"
+
 msgid "ch.bakom.uplink1"
 msgstr "Liaison ≥ 1 Mbit/s ascendante"
 

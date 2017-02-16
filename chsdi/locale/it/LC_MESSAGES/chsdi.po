@@ -3779,6 +3779,12 @@ msgstr "Code"
 msgid "ch.bakom.radio-fernsehsender.name"
 msgstr "Nome"
 
+msgid "ch.bakom.richtfunkverbindungen"
+msgstr "Ponte Radio"
+
+msgid "ch.bakom.richtfunkverbindungen.link_class"
+msgstr "Collegamento in ponte radio"
+
 msgid "ch.bakom.uplink1"
 msgstr "Upload ≥ 1 Mbit/s"
 
