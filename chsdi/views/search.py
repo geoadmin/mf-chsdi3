@@ -333,17 +333,19 @@ class Search(SearchValidation):
 
     def _origins_to_ranks(self, origins):
         origin2Rank = {
-            'zipcode': 1,
-            'gg25': 2,
-            'district': 3,
-            'kantone': 4,
-            'gazetteer': 5,  # Not used, also 7
-            'address': 6,
-            'parcel': 10
+            'zipcode': [1],
+            'gg25': [2],
+            'district': [3],
+            'kantone': [4],
+            'gazetteer': [5, 6],  # Not used, also 7
+            'address': [7],
+            'hatestellen': [8],
+            'parcel': [10]
         }
-        buildRanksList = lambda x: origin2Rank[x]
+        ranks = []
         try:
-            ranks = map(buildRanksList, origins)
+            for origin in origins:
+                ranks += origin2Rank[origin]
         except KeyError:  # pragma: no cover
             raise exc.HTTPBadRequest('Bad value(s) in parameter origins')
         return ranks
