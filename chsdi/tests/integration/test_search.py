@@ -152,7 +152,7 @@ class TestSearchServiceView(TestsBase):
     def test_search_ranking(self):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'gstaad', 'type': 'locations'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'gstaad')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'gstaad saanen')
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'gstaad 10', 'type': 'locations'}, status=200)
         self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'gstaadstrasse 10 3792 saanen 843 saanen ch be')
 
