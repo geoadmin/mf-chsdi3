@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer, Unicode
-from sqlalchemy.types import Numeric
+from sqlalchemy import Column, Unicode, Integer, Float
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D, Geometry3D
@@ -18,24 +17,24 @@ class Kulturgueter(Base, Vector):
     __extended_info__ = True
     __label__ = 'zkob'
     id = Column('kgs_nr', Integer, primary_key=True)
-    zkob = Column('zkob', Text)
-    x = Column('x', Numeric)
-    y = Column('y', Numeric)
-    kategorie = Column('kategorie', Text)
-    gemeinde = Column('gemeinde', Text)
-    gemeinde_ehemalig = Column('gemeinde_ehemalig', Text)
-    objektart = Column('objektart', Text)
-    hausnr = Column('hausnr', Text)
-    adresse = Column('adresse', Text)
-    kurztexte = Column('kurztexte', Text)
-    kt_kz = Column('kt_kz', Text)
-    pdf_list = Column('pdf_list', Text)
-    link_uri = Column('link_uri', Text)
-    link_title = Column('link_title', Text)
-    link_2_uri = Column('link_2_uri', Text)
-    link_2_title = Column('link_2_title', Text)
-    link_3_uri = Column('link_3_uri', Text)
-    link_3_title = Column('link_3_title', Text)
+    zkob = Column('zkob', Unicode)
+    x = Column('x', Float)
+    y = Column('y', Float)
+    kategorie = Column('kategorie', Unicode)
+    gemeinde = Column('gemeinde', Unicode)
+    gemeinde_ehemalig = Column('gemeinde_ehemalig', Unicode)
+    objektart = Column('objektart', Unicode)
+    hausnr = Column('hausnr', Unicode)
+    adresse = Column('adresse', Unicode)
+    kurztexte = Column('kurztexte', Unicode)
+    kt_kz = Column('kt_kz', Unicode)
+    pdf_list = Column('pdf_list', Unicode)
+    link_uri = Column('link_uri', Unicode)
+    link_title = Column('link_title', Unicode)
+    link_2_uri = Column('link_2_uri', Unicode)
+    link_2_title = Column('link_2_title', Unicode)
+    link_3_uri = Column('link_3_uri', Unicode)
+    link_3_title = Column('link_3_title', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.babs.kulturgueter', Kulturgueter)
@@ -48,7 +47,7 @@ class TERRITORIALREGIONEN(Base, Vector):
     __bodId__ = 'ch.vbs.territorialregionen'
     __label__ = 'name'
     id = Column('terreg_nr', Integer, primary_key=True)
-    name = Column('name', Text)
+    name = Column('name', Unicode)
     the_geom = Column(Geometry3D)
 
 register('ch.vbs.territorialregionen', TERRITORIALREGIONEN)
@@ -61,7 +60,7 @@ class Patrouilledesglaciers_z(Base, Vector):
     __bodId__ = 'ch.vbs.patrouilledesglaciers-z_rennen'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Text)
+    name = Column('name', Unicode)
     the_geom = Column(Geometry3D)
 
 register('ch.vbs.patrouilledesglaciers-z_rennen', Patrouilledesglaciers_z)
@@ -74,7 +73,7 @@ class Patrouilledesglaciers_a(Base, Vector):
     __bodId__ = 'ch.vbs.patrouilledesglaciers-a_rennen'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Text)
+    name = Column('name', Unicode)
     the_geom = Column(Geometry3D)
 
 register('ch.vbs.patrouilledesglaciers-a_rennen', Patrouilledesglaciers_a)
@@ -88,8 +87,8 @@ class Retablierungsstellen(Base, Vector):
     __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Text)
-    url = Column('url', Text)
+    name = Column('name', Unicode)
+    url = Column('url', Unicode)
     the_geom = Column(Geometry3D)
 
 register('ch.vbs.retablierungsstellen', Retablierungsstellen)
@@ -103,10 +102,10 @@ class Armeelogistikcenter(Base, Vector):
     __queryable_attributes__ = ['name', 'abkuerzung']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Text)
-    abkuerzung = Column('abkuerzung', Text)
-    mail = Column('email', Text)
-    url = Column('url', Text)
+    name = Column('name', Unicode)
+    abkuerzung = Column('abkuerzung', Unicode)
+    mail = Column('email', Unicode)
+    url = Column('url', Unicode)
     the_geom = Column(Geometry3D)
 
 register('ch.vbs.armeelogistikcenter', Armeelogistikcenter)
@@ -120,9 +119,9 @@ class Bundestankstellen_bebeco(Base, Vector):
     __queryable_attributes__ = ['ort', 'plz', 'strasse']
     __label__ = 'ort'
     id = Column('bgdi_id', Integer, primary_key=True)
-    strasse = Column('strasse', Text)
+    strasse = Column('strasse', Unicode)
     plz = Column('plz', Integer)
-    ort = Column('ort', Text)
+    ort = Column('ort', Unicode)
     the_geom = Column(Geometry3D)
 
 register('ch.vbs.bundestankstellen-bebeco', Bundestankstellen_bebeco)
@@ -136,8 +135,8 @@ class Logistikraeume_armeelogistikcenter(Base, Vector):
     __queryable_attributes__ = ['kanton', 'region']
     __label__ = 'kanton'
     id = Column('bgdi_id', Integer, primary_key=True)
-    kanton = Column('kantone', Text)
-    region = Column('region', Text)
+    kanton = Column('kantone', Unicode)
+    region = Column('region', Unicode)
     the_geom = Column(Geometry3D)
 
 register('ch.vbs.logistikraeume-armeelogistikcenter', Logistikraeume_armeelogistikcenter)
@@ -152,10 +151,10 @@ class Waldschaden(Base, Vector):
     __label__ = 'lauf_nr'
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
-    lauf_nr = Column('lauf_nr', Text)
-    jahr_schad = Column('jahr_schad', Text)
-    gde_name = Column('gde_name', Text)
-    lokalname = Column('lokalname', Text)
+    lauf_nr = Column('lauf_nr', Unicode)
+    jahr_schad = Column('jahr_schad', Unicode)
+    gde_name = Column('gde_name', Unicode)
+    lokalname = Column('lokalname', Unicode)
     x_koord = Column('x_koord', Integer)
     y_koord = Column('y_koord', Integer)
 
