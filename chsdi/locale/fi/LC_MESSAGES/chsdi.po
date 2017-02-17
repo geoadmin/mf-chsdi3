@@ -8065,7 +8065,7 @@ msgid "smv.scale"
 msgstr "Massstab"
 
 msgid "sonnendach_link"
-msgstr "sonenndach.ch"
+msgstr "sonnendach.ch"
 
 msgid "spectralinfolink"
 msgstr "Link zu den vorhandenen Informationen"
