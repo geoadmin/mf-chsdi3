@@ -51,6 +51,7 @@ def main(global_config, **settings):
     # route definitions
     config.add_route('ogcproxy', '/ogcproxy')
     config.add_route('dev', '/dev')
+    config.add_route('iframe', '/iframe')
     config.add_route('ga_api', '/loader.js')
     config.add_route('testi18n', '/testi18n')
     config.add_route('topics', '/rest/services')
@@ -92,6 +93,7 @@ def main(global_config, **settings):
     # Some views for specific routes
     config.add_view(route_name='dev', renderer='chsdi:templates/index.mako')
     config.add_view(route_name='testi18n', renderer='chsdi:templates/testi18n.mako')
+    config.add_view(route_name='iframe', renderer='chsdi:templates/iframe.mako')
 
     # Shortener
     config.add_route('shorten', '/shorten.json')
