@@ -39,8 +39,6 @@ Geodata
 *******
 
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Recent earthquakes <//map.geo.admin.ch/?layers=ch.bafu.gefahren-aktuelle_erdbeben>`__ (ch.bafu.gefahren-aktuelle_erdbeben)                                                                      |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Solarenergie: Eignung Fassaden <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-fassaden>`__ (ch.bfe.solarenergie-eignung-fassaden)                                                      |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill)                                |
