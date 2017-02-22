@@ -1224,6 +1224,9 @@ msgstr ""
 msgid "sonnendach_link"
 msgstr ""
 
+msgid "sonnenfassaden_link"
+msgstr ""
+
 msgid "tt_ch.bfe.solarenergie-eignung-daecher_overview"
 msgstr ""
 
@@ -9465,4 +9468,19 @@ msgid "ch.swisstopo-vd.amtliche-vermessung.noitf"
 msgstr ""
 
 msgid "ch.swisstopo-vd.geometa-nfgeom.stellvertreter"
+msgstr ""
+
+msgid "ch.bfe.solarenergie-eignung-fassaden"
+msgstr ""
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.ausrichtung"
+msgstr ""
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.finanzertrag"
+msgstr ""
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.flaeche"
+msgstr ""
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.klasse"
 msgstr ""

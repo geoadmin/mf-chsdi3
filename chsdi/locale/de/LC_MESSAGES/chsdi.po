@@ -4439,6 +4439,21 @@ msgstr "Eignung"
 msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
 msgstr "Neigung [°]"
 
+msgid "ch.bfe.solarenergie-eignung-fassaden"
+msgstr "Solarenergie: Eignung Fassaden"
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.ausrichtung"
+msgstr "Ausrichtung [°]"
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.finanzertrag"
+msgstr "Finanzieller Ertrag [CHF]"
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.flaeche"
+msgstr "Fläche [m2]"
+
+msgid "ch.bfe.solarenergie-eignung-fassaden.klasse"
+msgstr "Eignung"
+
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistik Wasserkraft"
 
@@ -8065,6 +8080,9 @@ msgstr "Massstab"
 
 msgid "sonnendach_link"
 msgstr "sonnendach.ch"
+
+msgid "sonnenfassaden_link"
+msgstr "sonnenfassade.ch"
 
 msgid "spectralinfolink"
 msgstr "Link zu den vorhandenen Informationen"
