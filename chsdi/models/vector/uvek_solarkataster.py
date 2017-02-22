@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Text, Integer, Date
-from sqlalchemy.types import Numeric
 from sqlalchemy.dialects import postgresql
+from sqlalchemy.types import Numeric, BigInteger
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -64,7 +64,7 @@ class eignungDaecher (Base, SolarClass, Vector):
     __template__ = 'templates/htmlpopup/solareignungdaecher.mako'
     __bodId__ = 'ch.bfe.solarenergie-eignung-daecher'
     __queryable_attributes__ = ['df_uid', 'building_id']
-    id = Column('df_uid', Integer, primary_key=True)
+    id = Column('df_uid', BigInteger, primary_key=True)
     df_nummer = Column('df_nummer', Integer)
     neigung = Column('neigung', Integer)
 
@@ -85,7 +85,7 @@ class eignungFassaden (Base, SolarClass, Vector):
     __template__ = 'templates/htmlpopup/solareignungfassaden.mako'
     __bodId__ = 'ch.bfe.solarenergie-eignung-fassaden'
     __queryable_attributes__ = ['ff_nummer', 'gwr_egid', 'building_id']
-    id = Column('ff_uuid', Integer, primary_key=True)
+    id = Column('ff_uuid', BigInteger, primary_key=True)
     ff_nummer = Column('ff_nummer', Integer)
     gwr_egid = Column('gwr_egid', Integer)
 
