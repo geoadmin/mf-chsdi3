@@ -8,6 +8,7 @@ from sqlalchemy import distinct
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.sql.expression import func
+from sqlalchemy.types import BigInteger
 
 from chsdi.models.bod import LayersConfig
 from chsdi.models import models_from_bodid
@@ -149,7 +150,7 @@ class LayersChecker(object):
         schema = 'public' if 'schema' not in model.__table_args__ else model.__table_args__['schema']
         assert featureId is not None, 'No feature was found in table %s for layer %s' % (
             schema + '.' + model.__tablename__, layerId)
-        pythonType = primaryKeyColumn.type.python_type
+        pythonType = primaryKeyColumn.type.python_type if not isinstance(primaryKeyColumn.type, BigInteger) else (int, long)
         assert isinstance(featureId, pythonType), 'Expected %s; Got: %s; For layer %s and GeoTable %s' % (
             pythonType, type(featureId), layerId, schema + '.' + model.__tablename__)
 
