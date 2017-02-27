@@ -4,7 +4,7 @@
 <% c['stable_id'] = True %>
     <tr>
       <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwid')}</td>
-      <td>${c['featureId']}</td>
+      <td>${c['attributes']['bwid']}</td>
     </tr>
     <tr>
       <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwname')}</td>
@@ -49,7 +49,7 @@ lang = request.lang
   </tr>
   <tr>
       <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwid')}</td>
-      <td class="cell-meta">${c['featureId']}</td>
+      <td class="cell-meta">${c['attributes']['bwid']}</td>
   </tr>
   <tr>
     <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwname')}</td>
