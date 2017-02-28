@@ -3996,7 +3996,7 @@ msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_it"
 msgstr "Measure"
 
 msgid "ch.bav.schienennetz"
-msgstr "Railway network | Rait da viafier"
+msgstr "Railway network"
 
 msgid "ch.bav.schienennetz.abreviation"
 msgstr "OP abbrev."
