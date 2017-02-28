@@ -1096,6 +1096,7 @@ class TiefenGeothermieProjekte(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-tiefengeothermie_projekte'
     __label__ = 'name'
     __extended_info__ = True
+    __queryable_attributes__ = ['name']
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     owner = Column('owner', Unicode)
