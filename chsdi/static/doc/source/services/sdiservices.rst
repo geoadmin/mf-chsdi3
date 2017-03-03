@@ -1204,7 +1204,7 @@ URL
 ::
 
   https://sparql.geo.admin.ch/sparql
-  https://ld.geo.admin.ch/sparql/
+  https://ld.geo.admin.ch/sparql/ (YASGUI)
 
 Available datasets
 ******************
