@@ -1187,3 +1187,35 @@ Response syntax
             }
         }
    </script>
+
+
+.. _sparql_description:
+
+--------------
+
+SPARQL Service
+--------------
+
+This service enables the connection of geodata from different sources as Linked Data. It uses the open query language `SPARQL <https://www.w3.org/TR/sparql11-overview/>`_.
+
+URL
+***
+
+::
+
+  https://sparql.geo.admin.ch/sparql
+  https://ld.geo.admin.ch/sparql/
+
+Available datasets
+******************
+
+- `swissBOUNDARIES3D <https://ld.geo.admin.ch/data/swissBOUNDARIES3D>`_
+
+Examples
+********
+
+- `Get the top five most populated municipalities in 2016 <https://goo.gl/QyNuZj>`_
+- `Get the 2016 version of the administrative units at coordinate (lon,lat) 7.43, 46.95 <https://goo.gl/4aQUyI>`_
+- `Get all the districts by canton number and year <https://goo.gl/wwSWDf>`_
+- `Get all the versions of a resource by URI <https://goo.gl/OXaf9l>`_
+- `Get the corresponding resource in Wikidata and GeoNames (Municipality) <https://goo.gl/RfKwmA>`_
