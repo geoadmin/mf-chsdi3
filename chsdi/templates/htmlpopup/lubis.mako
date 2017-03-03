@@ -107,6 +107,13 @@ viewer_url = get_viewer_url(request, params)
   <td>${c['attributes']['filmart'] or '-'}</td>
 </tr>
 
+% if 'contact_image_url' in c['attributes'] and c['attributes']['contact_image_url']:
+<tr>
+  <td class="cell-left">${_('url')}</td>
+  <td><a href="${c['attributes']['contact_image_url']}" target="_blank">${c['attributes']['contact_image_url']}</a></td>
+</tr>
+% endif
+
 % if preview_url != "" and image_width != None:
 <tr>
   <td class="cell-left">${_('tt_lubis_Quickview')}</td>
@@ -212,6 +219,14 @@ shop_url = request.registry.settings['shop_url']
     <tr><th class="cell-left">${_('tt_lubis_y')}</th>                <td>${c['attributes']['x'] or '-'}</td></tr>
     <tr><th class="cell-left">${_('tt_lubis_x')}</th>                <td>${c['attributes']['y'] or '-'}</td></tr>
     <tr><th class="cell-left">${_('tt_lubis_Filmart')}</th>          <td>${c['attributes']['filmart'] or '-'}</td></tr>
+
+% if 'contact_image_url' in c['attributes'] and c['attributes']['contact_image_url']:
+<tr>
+  <th class="cell-left">${_('url')}</th>
+  <td><a href="${c['attributes']['contact_image_url']}" target="_blank">${c['attributes']['contact_image_url']}</a></td>
+</tr>
+% endif
+
     <tr><th class="cell-left">${_('tt_lubis_originalsize')}</th>     <td>${c['attributes']['originalsize'] or '-'}</td></tr>
     <tr><th class="cell-left">${_('tt_lubis_filesize_mb')}</th>      <td>${filesize_mb or '-'}</td></tr>
     <tr><th class="cell-left">${_('tt_lubis_bildpfad')}</th>         <td>${filename or '-'}</td></tr>
