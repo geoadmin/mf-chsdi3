@@ -1,5 +1,5 @@
 .. GeoAdmin API documentation master file, created by
-   sphinx-quickstart on Wed Jul 21 07:44:14 2010.      
+   sphinx-quickstart on Wed Jul 21 07:44:14 2010.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
@@ -7,7 +7,7 @@
 
   <head>
     <link href="_static/custom.css" rel="stylesheet" type="text/css" />
-    <link rel="apple-touch-icon" sizes="76x76" href="_static/touch-icon-bund-76x76.png"/> 
+    <link rel="apple-touch-icon" sizes="76x76" href="_static/touch-icon-bund-76x76.png"/>
     <link rel="apple-touch-icon" sizes="120x120" href="_static/touch-icon-bund-120x120.png"/>
     <link rel="apple-touch-icon" sizes="152x152" href="_static/touch-icon-bund-152x152.png"/>
   </head>
@@ -59,7 +59,7 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
       });
     </script>
   </body>
-  
+
 `Do you want to see the code? <api/quickstart.html>`_
 
 
@@ -79,13 +79,13 @@ API
    services/sdiservices
    api/faq/index
    api/status
-   
+
 Release notes
 =============
 
 .. toctree::
-   :maxdepth: 1 
- 
+   :maxdepth: 1
+
    releasenotes/index
 
 Terms of use
