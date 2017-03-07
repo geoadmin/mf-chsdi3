@@ -7337,6 +7337,9 @@ msgstr ""
 msgid "tt_lubis_project"
 msgstr ""
 
+msgid "tt_lubis_url_canton"
+msgstr ""
+
 msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung"
 msgstr ""
 

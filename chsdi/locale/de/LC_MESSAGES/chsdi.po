@@ -9014,6 +9014,9 @@ msgstr "Zentrumskoordinate Y"
 msgid "tt_lubis_source_georef"
 msgstr "Genauigkeit AT"
 
+msgid "tt_lubis_url_canton"
+msgstr "Link auf kantonales Portal"
+
 msgid "tt_lubis_x"
 msgstr "Zentrumskoordinate X"
 
