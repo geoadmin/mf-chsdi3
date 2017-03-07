@@ -109,7 +109,7 @@ viewer_url = get_viewer_url(request, params)
 
 % if 'contact_image_url' in c['attributes'] and c['attributes']['contact_image_url']:
 <tr>
-  <td class="cell-left">${_('url')}</td>
+  <td class="cell-left">${_('tt_lubis_url_canton')}</td>
   <td><a href="${c['attributes']['contact_image_url']}" target="_blank">${c['attributes']['contact_image_url']}</a></td>
 </tr>
 % endif
@@ -222,7 +222,7 @@ shop_url = request.registry.settings['shop_url']
 
 % if 'contact_image_url' in c['attributes'] and c['attributes']['contact_image_url']:
 <tr>
-  <th class="cell-left">${_('url')}</th>
+  <th class="cell-left">${_('tt_lubis_url_canton')}</th>
   <td><a href="${c['attributes']['contact_image_url']}" target="_blank">${c['attributes']['contact_image_url']}</a></td>
 </tr>
 % endif
