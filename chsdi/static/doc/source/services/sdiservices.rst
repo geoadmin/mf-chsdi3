@@ -1219,4 +1219,4 @@ Examples
 - `Get all the districts by canton number and year <https://tinyurl.com/jghhphw>`_
 - `Get all the versions of a resource by URI <https://tinyurl.com/hvw2zhq>`_
 - `Get the corresponding resource in Wikidata and GeoNames (Municipality) <https://tinyurl.com/jqkkwrv>`_
-- `Get the Wikipedia abstract (Municipality) <https://tinyurl.com/zppnamk>`_
+- `Get the Wikipedia abstract (Municipality) <https://tinyurl.com/z42lts9>`_
