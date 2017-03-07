@@ -15,10 +15,10 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
-.. _releasenotes_20170315:
+.. _releasenotes_20170313:
    *******
 
-Release 20170315 - Wednesday, March 15th 2017
+Release 20170313 - Monday, March 13th 2017
 ------------------------------------------------
 
 Geodata
