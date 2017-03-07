@@ -1214,8 +1214,9 @@ Available datasets
 Examples
 ********
 
-- `Get the top five most populated municipalities in 2016 <https://goo.gl/QyNuZj>`_
-- `Get the 2016 version of the administrative units at coordinate (lon,lat) 7.43, 46.95 <https://goo.gl/4aQUyI>`_
-- `Get all the districts by canton number and year <https://goo.gl/wwSWDf>`_
-- `Get all the versions of a resource by URI <https://goo.gl/OXaf9l>`_
-- `Get the corresponding resource in Wikidata and GeoNames (Municipality) <https://goo.gl/RfKwmA>`_
+- `Get the top five most populated municipalities in 2016 <https://tinyurl.com/hxzfqel>`_
+- `Get the 2016 version of the administrative units at coordinate (lon,lat) 7.43, 46.95 <https://tinyurl.com/jjtk9a5>`_
+- `Get all the districts by canton number and year <https://tinyurl.com/jghhphw>`_
+- `Get all the versions of a resource by URI <https://tinyurl.com/hvw2zhq>`_
+- `Get the corresponding resource in Wikidata and GeoNames (Municipality) <https://tinyurl.com/jqkkwrv>`_
+- `Get the Wikipedia abstract (Municipality) <https://tinyurl.com/zppnamk>`_
