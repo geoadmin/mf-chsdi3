@@ -4144,7 +4144,6 @@ class OWSCheck(object):
         
         .. seealso::
 
-            * :ref:`rili-wfs-51`
             * If Filters are used in the SSXML, OGC Filter Specification is also fulfilled but not mentioned in the results.
 
         :rtype: :py:class:`ResponseDict <ows_checker._helpers.ResponseDict>` with results

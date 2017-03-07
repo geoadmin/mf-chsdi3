@@ -898,7 +898,9 @@ Example
 *******
 * At tile: `http://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg <https://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg>`_
 
-.. image:: https://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg
+.. raw:: html
+
+       <img src="https://wmts10.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg" />
 
 * An OpenLayers3 application using the `pseudo-Mercator projection <http://codepen.io/geoadmin/pen/pyzwwL?editors=0010>`_
 * An OpenLayers3 example showing the `Cadastralwebmap as WMTS <http://codepen.io/geoadmin/pen/xVKLdV?editors=0010>`_

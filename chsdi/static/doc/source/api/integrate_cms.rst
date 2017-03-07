@@ -1,3 +1,5 @@
+:orphan:
+
 .. raw:: html
 
   <head>
@@ -35,10 +37,12 @@ Modify the map
 
 
 - At this point the map doesn't exist yet. We must fill in the Javascript-Part. To do so, we have two possibilities:
-#. First possibility: Generate a new paragraph
-#. Open the side like: http://cmsr.*.admin.ch
-#. Possibly: Fill in the keyword and the username
-#. Show the picture below:
+
+  * First possibility: Generate a new paragraph
+  * Open the side like: http://cmsr.*.admin.ch
+  * Possibly: Fill in the keyword and the username
+  * Show the picture below:
+
 
 .. image:: image/new_site.jpg
 

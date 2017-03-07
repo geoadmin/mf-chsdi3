@@ -151,7 +151,7 @@ autolint:
 .PHONY: doc
 doc: chsdi/static/css/extended.min.css
 	@echo "${GREEN}Building the documentation...${RESET}";
-	cd chsdi/static/doc && ../../../${SPHINX_CMD} -b html source build
+	cd chsdi/static/doc && ../../../${SPHINX_CMD} -W -b html source build || exit 1 ;
 
 .PHONY:
 rss: doc chsdi/static/doc/build/releasenotes/index.html
