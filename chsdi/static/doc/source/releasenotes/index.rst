@@ -21,6 +21,19 @@ Release Notes
 Release 20170313 - Monday, March 13th 2017
 ------------------------------------------------
 
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170301...r_170313>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170201...r_170313>`__
+
 Geodata
 *******
 
@@ -52,6 +65,24 @@ Geodata
 | Update | `Noise exp. light / large aircrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge)    |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Noise exp. milit. aerodr. (tot.) <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt)                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents with personal injury <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_alle>`__ (ch.astra.unfaelle-personenschaeden_alle)                                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents with fatalities <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_getoetete>`__ (ch.astra.unfaelle-personenschaeden_getoetete)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a pedestrian <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fussgaenger>`__ (ch.astra.unfaelle-personenschaeden_fussgaenger)                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a bicycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fahrraeder>`__ (ch.astra.unfaelle-personenschaeden_fahrraeder)                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a motorcycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_motorraeder>`__ (ch.astra.unfaelle-personenschaeden_motorraeder)                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents per inhabitant <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_pro_einwohner>`__ (ch.astra.schwerverunfallte-kanton_pro_einwohner)                                                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents in the annual comparison <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_jahresvergleich>`__ (ch.astra.schwerverunfallte-kanton_jahresvergleich)                                            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents per inhabitant - Speeding <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_geschwindigkeit>`__ (ch.astra.schwerverunfallte-kanton_geschwindigkeit)                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents per inhabitant - Alcohol <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_alkohol>`__ (ch.astra.schwerverunfallte-kanton_alkohol)                                                            |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20170301:
