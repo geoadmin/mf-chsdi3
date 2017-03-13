@@ -31,7 +31,6 @@
                     pic_list.append(map(lambda x: x.decode('cp1252'), row))
         finally:
             csv_file.close()
-        ttoto['a']
     %>
     <script>
         $(document).ready(function(){
