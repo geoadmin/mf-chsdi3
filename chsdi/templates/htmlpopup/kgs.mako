@@ -31,6 +31,7 @@
                     pic_list.append(map(lambda x: x.decode('cp1252'), row))
         finally:
             csv_file.close()
+        ttoto['a']
     %>
     <script>
         $(document).ready(function(){
@@ -87,7 +88,7 @@
         <tr>
             <th class="cell-left">${_('Feature tooltip')}:</th>
             <td>
-	        % for pdf in c['attributes']['pdf_list'].split('##'):
+	        % for pdf in c['attributes']['pdf_list'].split(','):
                 <a href="${webDavHost}/kogis_web/downloads/kgs/matrizen/${pdf}" target="_blank">${pdf}</a><br />
 	        % endfor
             </td>
