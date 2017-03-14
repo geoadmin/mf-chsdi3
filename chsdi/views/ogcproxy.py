@@ -67,7 +67,7 @@ class OgcProxy:
 
         #  All content types are allowed
         headers = dict(resp.headers)
-        ct = headers.get('Content-Type')
+        ct = headers.get('content-type')
         if ct is not None:
             content = resp.content if hasattr(resp, 'content') else None
             if ct == "application/vnd.google-earth.kmz" or \
