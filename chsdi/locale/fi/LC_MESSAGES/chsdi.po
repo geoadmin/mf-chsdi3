@@ -1385,6 +1385,9 @@ msgstr "Temp da viadi ad in center TP"
 msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=de"
 
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
+msgstr "Inventar d'abitaziuns"
+
 msgid "ch.astra"
 msgstr "ASTRA"
 
@@ -8297,6 +8300,24 @@ msgstr "Die Windrose zeigt die Windgeschwindigkeits-verteilung pro Windsektor. B
 
 msgid "tt_bfe_windstaerke_info"
 msgstr "Der Wind unterliegt ständiger Geschwindigkeitsschwankungen. Aus diesem Grund wird für die Planung von Windenergieanlagen eine statistische Verteilung der Windgeschwindigkeiten eine sog. Weibull-Verteilung benötigt."
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
+msgstr "Dumber d’emprimas abitaziuns"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3100"
+msgstr "Dumber d’abitaziuns equivalentas ad emprimas abitaziuns"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3110"
+msgstr "Quota d’emprimas abitaziuns"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3120"
+msgstr "Quota d’abitaziuns secundaras"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3150"
+msgstr "Total da tut las abitaziuns"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3200"
+msgstr "Procedura en elavuraziun"
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Korridor Nummer"
