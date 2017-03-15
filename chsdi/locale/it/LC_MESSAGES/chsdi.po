@@ -1385,6 +1385,9 @@ msgstr "Tempo di viaggio con TP 2005"
 msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=it"
 
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
+msgstr "Inventario delle abitazioni"
+
 msgid "ch.astra"
 msgstr "USTRA"
 
@@ -8290,6 +8293,24 @@ msgstr "La rosa dei venti indica la distribuzione delle velocità del vento per 
 
 msgid "tt_bfe_windstaerke_info"
 msgstr "La velocità del vento è soggetta a continue oscillazioni. Per la pianificazione di impianti eolici serve pertanto conoscere una distribuzione statistica delle velocità del vento, una cosiddetta distribuzione di Weibull."
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
+msgstr "numero delle abitazioni primarie"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3100"
+msgstr "Numero delle abitazioni equiparate alle abitazioni primarie"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3110"
+msgstr "quota delle abitazioni primarie"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3120"
+msgstr "quota di abitazioni secondarie"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3150"
+msgstr "tutte le abitazioni"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3200"
+msgstr "procedimento"
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Numero del corridoio"

@@ -9487,3 +9487,24 @@ msgstr ""
 
 msgid "ch.bfe.solarenergie-eignung-fassaden.klasse"
 msgstr ""
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
+msgstr ""
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
+msgstr ""
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3100"
+msgstr ""
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3110"
+msgstr ""
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3120"
+msgstr ""
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3150"
+msgstr ""
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3200"
+msgstr ""

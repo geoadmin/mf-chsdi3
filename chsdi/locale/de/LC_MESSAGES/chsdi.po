@@ -1385,6 +1385,9 @@ msgstr "Reisezeit zu Zentren ÖV"
 msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=de"
 
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
+msgstr "Wohnungsinventar"
+
 msgid "ch.astra"
 msgstr "ASTRA"
 
@@ -8290,6 +8293,24 @@ msgstr "Die Windrose zeigt die Windgeschwindigkeitsverteilung pro Windsektor. Be
 
 msgid "tt_bfe_windstaerke_info"
 msgstr "Der Wind unterliegt ständiger Geschwindigkeitsschwankungen. Aus diesem Grund wird für die Planung von Windenergieanlagen eine statistische Verteilung der Windgeschwindigkeiten eine sog. Weibull-Verteilung benötigt."
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
+msgstr "Anzahl Erstwohnungen"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3100"
+msgstr "Anzahl Erstwohnungen gleichgestellte Wohnungen"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3110"
+msgstr "Erstwohnungsanteil"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3120"
+msgstr "Zweitwohnungsanteil"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3150"
+msgstr "Gesamtzahl aller Wohnungen"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3200"
+msgstr "Verfahren"
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Korridor Nummer"

@@ -1385,6 +1385,9 @@ msgstr "Public transport travel time"
 msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=en"
 
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
+msgstr "Housing inventory"
+
 msgid "ch.astra"
 msgstr "FEDRO"
 
@@ -8290,6 +8293,24 @@ msgstr "The wind rose shows the wind speed distribution per wind sector. If you 
 
 msgid "tt_bfe_windstaerke_info"
 msgstr "Wind is constantly subject to speed fluctuations. For this reason, a static distribution of wind speeds (Weibull distribution) is required for the planning of wind energy plants."
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
+msgstr "Number of primary homes"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3100"
+msgstr "Total number of appartements considered as primary homes"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3110"
+msgstr "Primary home ratio"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3120"
+msgstr "Secondary home ratio"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3150"
+msgstr "Total number of homes"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3200"
+msgstr "Case"
 
 msgid "tt_ch.bafu.fauna-wildtierkorridor_national_nr"
 msgstr "Corridor number"

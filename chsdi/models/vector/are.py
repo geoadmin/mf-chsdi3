@@ -170,3 +170,25 @@ class Gemeindetypen_2012(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.are.gemeindetypen', Gemeindetypen_2012)
+
+
+class ZweitwohnungsAnteil(Base, Vector):
+    __tablename__ = 'wohnungsinventar_zweitwohnungsanteil'
+    __table_args__ = ({'schema': 'raumplanung', 'autoload': False})
+    __template__ = 'templates/htmlpopup/zweitwohnungsanteil.mako'
+    __bodId__ = 'ch.are.wohnungsinventar-zweitwohnungsanteil'
+    __label__ = 'id'
+    id = Column('objectid', Integer, primary_key=True)
+    zwg_3150 = Column('zwg_3150', Integer)
+    zwg_3010 = Column('zwg_3010', Integer)
+    zwg_3100 = Column('zwg_3100', Integer)
+    zwg_3110 = Column('zwg_3110', Numeric)
+    zwg_3120 = Column('zwg_3120', Numeric)
+    zwg_3200_de = Column('zwg_3200_de', Text)
+    zwg_3200_fr = Column('zwg_3200_fr', Text)
+    zwg_3200_it = Column('zwg_3200_it', Text)
+    zwg_3200_rm = Column('zwg_3200_rm', Text)
+    zwg_3200_en = Column('zwg_3200_en', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.are.wohnungsinventar-zweitwohnungsanteil', ZweitwohnungsAnteil)
