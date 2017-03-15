@@ -5,7 +5,7 @@
 
 <%def name="table_body(c, lang)">
 <style>
-    table tr:nth-last-child(1) {
+    .${c['htmlpopup_class']} table tr:nth-last-child(1) {
         display: none;
     }
 </style>

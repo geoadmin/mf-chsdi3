@@ -12,6 +12,7 @@
   isExtended = c.get('isExtended')
   isIframe = c.get('isIframe')
   isGridLayer = c.get('isGridLayer')
+  c['htmlpopup_class'] = c['layerBodId'].replace('.', '')
  %>
 
 % if isExtended or isIframe:
@@ -36,7 +37,7 @@
 <body>
   <div class="chsdi-htmlpopup-container">
 % else:
-  <div id="${c['layerBodId']}#${c['featureId']}" class="htmlpopup-container">
+  <div id="${c['layerBodId']}#${c['featureId']}" class="${c['htmlpopup_class']} htmlpopup-container">
 % endif
 
 % if not isIframe:
