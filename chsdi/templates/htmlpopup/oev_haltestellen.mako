@@ -21,30 +21,30 @@ baseUrl = request.registry.settings['api_url']
     host = request.registry.settings['api_url']
 %>
 <style>
-  tr:last-child {
+  .${c['htmlpopup_class']} tr:last-child {
     display:none;
   }
-  .oev-info {
+  .${c['htmlpopup_class']} .oev-info {
     height:24px;
     margin:0px;
   }
-  .col-label {
+  .${c['htmlpopup_class']} .col-label {
     text-align: center;
     width: 35px !important;
   }
-  .col-destination, .col-departures, .col-time-diff {
+  .${c['htmlpopup_class']} .col-destination, .${c['htmlpopup_class']} .col-departures, .${c['htmlpopup_class']} .col-time-diff {
      vertical-align: middle !important;
   }
-  .col-label p {
+  .${c['htmlpopup_class']} .col-label p {
     border: 1px solid #D8D8D8;
     border-radius: 4px;
     width: 30px;
   }
-  .col-label p, .col-destination p, .col-departures p, .col-time-diff p {
+  .${c['htmlpopup_class']} .col-label p, .${c['htmlpopup_class']} .col-destination p, .${c['htmlpopup_class']} .col-departures p, .${c['htmlpopup_class']} .col-time-diff p {
      padding-top: 5px;
      margin-bottom: 2px;
   }
-  select.form-control {
+  .${c['htmlpopup_class']} select.form-control {
     font-size: 12px;
   }
 </style>
