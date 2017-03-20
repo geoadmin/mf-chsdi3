@@ -4,7 +4,7 @@
     {
       "geomType": "point",
       "minResolution": 0,
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "circle",
         "radius": 9,
@@ -36,7 +36,7 @@
       }
     }, {
       "geomType": "point",
-      "minResolution": 250,
+      "minResolution": 100,
       "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
