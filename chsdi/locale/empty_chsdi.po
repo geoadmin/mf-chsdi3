@@ -8663,6 +8663,36 @@ msgstr ""
 msgid "ch.bafu.neophyten-riesenbaerenklau"
 msgstr ""
 
+msgid "ch.bafu.neophyten-vielblaettrige_lupine"
+msgstr ""
+
+msgid "ch.bafu.neophyten-seidiger_hornstrauch"
+msgstr ""
+
+msgid "ch.bafu.neophyten-suedafrikanisches_greiskraut"
+msgstr ""
+
+msgid "ch.bafu.neophyten-spaetbluehende_goldrute"
+msgstr ""
+
+msgid "ch.bafu.neophyten-vielaehriger_knoeterich"
+msgstr ""
+
+msgid "ch.bafu.neophyten-syrische_seidenpflanze"
+msgstr ""
+
+msgid "ch.bafu.neophyten-verlotscher_beifuss"
+msgstr ""
+
+msgid "ch.bafu.neophyten-topinambur"
+msgstr ""
+
+msgid "ch.bafu.neophyten-sachalin_staudenknoeterich"
+msgstr ""
+
+msgid "ch.bafu.neophyten-schmetterlingsstrauch"
+msgstr ""
+
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
 msgstr ""
 

@@ -3191,6 +3191,36 @@ msgstr "Chèvrefeuille du Japon"
 msgid "ch.bafu.neophyten-riesenbaerenklau"
 msgstr "Berce du Caucase"
 
+msgid "ch.bafu.neophyten-sachalin_staudenknoeterich"
+msgstr "Renouée de Sakhaline"
+
+msgid "ch.bafu.neophyten-schmetterlingsstrauch"
+msgstr "Buddléia de David"
+
+msgid "ch.bafu.neophyten-seidiger_hornstrauch"
+msgstr "Cornouiller soyeux"
+
+msgid "ch.bafu.neophyten-spaetbluehende_goldrute"
+msgstr "Solidage géant"
+
+msgid "ch.bafu.neophyten-suedafrikanisches_greiskraut"
+msgstr "Séneçon sud-africain"
+
+msgid "ch.bafu.neophyten-syrische_seidenpflanze"
+msgstr "Asclépiade de Syrie"
+
+msgid "ch.bafu.neophyten-topinambur"
+msgstr "Topinambour"
+
+msgid "ch.bafu.neophyten-verlotscher_beifuss"
+msgstr "Armoise des frères Verlot"
+
+msgid "ch.bafu.neophyten-vielaehriger_knoeterich"
+msgstr "Renouée à épis nombreux"
+
+msgid "ch.bafu.neophyten-vielblaettrige_lupine"
+msgstr "Lupin à folioles nombreuses"
+
 msgid "ch.bafu.oekomorphologie-f_abschnitte"
 msgstr "Ecomorphologie R - Tronçons"
 
@@ -3780,7 +3810,7 @@ msgid "ch.bakom.radio-fernsehsender.name"
 msgstr "Nom"
 
 msgid "ch.bakom.richtfunkverbindungen"
-msgstr "Faisceaux Hertziens"
+msgstr "Faisceaux hertziens"
 
 msgid "ch.bakom.richtfunkverbindungen.link_class"
 msgstr "Liaisons faisceaux hertizien"
