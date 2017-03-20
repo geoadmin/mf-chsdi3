@@ -8300,6 +8300,9 @@ msgstr "The wind rose shows the wind speed distribution per wind sector. If you 
 msgid "tt_bfe_windstaerke_info"
 msgstr "Wind is constantly subject to speed fluctuations. For this reason, a static distribution of wind speeds (Weibull distribution) is required for the planning of wind energy plants."
 
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_gemeinde"
+msgstr "Commune"
+
 msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
 msgstr "Number of primary homes"
 

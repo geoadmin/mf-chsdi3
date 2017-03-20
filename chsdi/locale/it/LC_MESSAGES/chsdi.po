@@ -8300,6 +8300,9 @@ msgstr "La rosa dei venti indica la distribuzione delle velocità del vento per 
 msgid "tt_bfe_windstaerke_info"
 msgstr "La velocità del vento è soggetta a continue oscillazioni. Per la pianificazione di impianti eolici serve pertanto conoscere una distribuzione statistica delle velocità del vento, una cosiddetta distribuzione di Weibull."
 
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_gemeinde"
+msgstr "Comune"
+
 msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
 msgstr "numero delle abitazioni primarie"
 

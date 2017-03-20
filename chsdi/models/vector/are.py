@@ -179,6 +179,7 @@ class ZweitwohnungsAnteil(Base, Vector):
     __bodId__ = 'ch.are.wohnungsinventar-zweitwohnungsanteil'
     __label__ = 'id'
     id = Column('objectid', Integer, primary_key=True)
+    gemeinde_name = Column('gemeinde_name', Unicode)
     zwg_3150 = Column('zwg_3150', Integer)
     zwg_3010 = Column('zwg_3010', Integer)
     zwg_3100 = Column('zwg_3100', Integer)
