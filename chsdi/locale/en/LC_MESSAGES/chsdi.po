@@ -3194,6 +3194,36 @@ msgstr "Lonicera japonica"
 msgid "ch.bafu.neophyten-riesenbaerenklau"
 msgstr "Heracleum mantegazzianum"
 
+msgid "ch.bafu.neophyten-sachalin_staudenknoeterich"
+msgstr "Reynoutria sachalinensis"
+
+msgid "ch.bafu.neophyten-schmetterlingsstrauch"
+msgstr "Buddleja davidii"
+
+msgid "ch.bafu.neophyten-seidiger_hornstrauch"
+msgstr "Cornus sericea"
+
+msgid "ch.bafu.neophyten-spaetbluehende_goldrute"
+msgstr "Solidago gigantea"
+
+msgid "ch.bafu.neophyten-suedafrikanisches_greiskraut"
+msgstr "Senecio inaequidens"
+
+msgid "ch.bafu.neophyten-syrische_seidenpflanze"
+msgstr "Asclepias syriaca"
+
+msgid "ch.bafu.neophyten-topinambur"
+msgstr "Helianthus tuberosus"
+
+msgid "ch.bafu.neophyten-verlotscher_beifuss"
+msgstr "Artemisia verlotiorum"
+
+msgid "ch.bafu.neophyten-vielaehriger_knoeterich"
+msgstr "Polygonum polystachyum"
+
+msgid "ch.bafu.neophyten-vielblaettrige_lupine"
+msgstr "Lupinus polyphyllus"
+
 msgid "ch.bafu.oekomorphologie-f_abschnitte"
 msgstr "Ecomorphology F – River reaches"
 

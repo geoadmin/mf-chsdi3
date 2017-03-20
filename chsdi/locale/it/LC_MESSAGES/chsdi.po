@@ -3194,6 +3194,36 @@ msgstr "Caprifoglio giapponese"
 msgid "ch.bafu.neophyten-riesenbaerenklau"
 msgstr "Panace di Mantegazzi"
 
+msgid "ch.bafu.neophyten-sachalin_staudenknoeterich"
+msgstr "Poligono di Sachalin"
+
+msgid "ch.bafu.neophyten-schmetterlingsstrauch"
+msgstr "Buddleja"
+
+msgid "ch.bafu.neophyten-seidiger_hornstrauch"
+msgstr "Corniolo serico"
+
+msgid "ch.bafu.neophyten-spaetbluehende_goldrute"
+msgstr "Verga d'oro maggiore"
+
+msgid "ch.bafu.neophyten-suedafrikanisches_greiskraut"
+msgstr "Senecione sudafricano"
+
+msgid "ch.bafu.neophyten-syrische_seidenpflanze"
+msgstr "Albero della seta"
+
+msgid "ch.bafu.neophyten-topinambur"
+msgstr "Girasole del Canada"
+
+msgid "ch.bafu.neophyten-verlotscher_beifuss"
+msgstr "Assenzio dei fratelli Verlot"
+
+msgid "ch.bafu.neophyten-vielaehriger_knoeterich"
+msgstr "Poligono con spighe numerose"
+
+msgid "ch.bafu.neophyten-vielblaettrige_lupine"
+msgstr "Lupino fogliuto"
+
 msgid "ch.bafu.oekomorphologie-f_abschnitte"
 msgstr "Ecomorfologia R - Tratti"
 

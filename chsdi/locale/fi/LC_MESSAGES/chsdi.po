@@ -3194,6 +3194,36 @@ msgstr "Chagliamorta giapunaisa"
 msgid "ch.bafu.neophyten-riesenbaerenklau"
 msgstr "Darsvenna giganta"
 
+msgid "ch.bafu.neophyten-sachalin_staudenknoeterich"
+msgstr "Sachalin-Staudenknöterich"
+
+msgid "ch.bafu.neophyten-schmetterlingsstrauch"
+msgstr "Schmetterlingsstrauch"
+
+msgid "ch.bafu.neophyten-seidiger_hornstrauch"
+msgstr "Seidiger Hornstrauch"
+
+msgid "ch.bafu.neophyten-spaetbluehende_goldrute"
+msgstr "Spätblühende Goldrute"
+
+msgid "ch.bafu.neophyten-suedafrikanisches_greiskraut"
+msgstr "Südafrikanisches Greiskraut"
+
+msgid "ch.bafu.neophyten-syrische_seidenpflanze"
+msgstr "Syrische Seidenpflanze"
+
+msgid "ch.bafu.neophyten-topinambur"
+msgstr "Topinambur"
+
+msgid "ch.bafu.neophyten-verlotscher_beifuss"
+msgstr "Verlotscher Beifuss"
+
+msgid "ch.bafu.neophyten-vielaehriger_knoeterich"
+msgstr "Vielähriger Knöterich"
+
+msgid "ch.bafu.neophyten-vielblaettrige_lupine"
+msgstr "Vielblättrige Lupine"
+
 msgid "ch.bafu.oekomorphologie-f_abschnitte"
 msgstr "Ecomorfologia F – trajects"
 
