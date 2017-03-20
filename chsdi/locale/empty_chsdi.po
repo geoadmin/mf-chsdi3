@@ -9491,6 +9491,9 @@ msgstr ""
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
 msgstr ""
 
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_gemeinde"
+msgstr ""
+
 msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
 msgstr ""
 

@@ -8295,6 +8295,9 @@ msgstr "Die Windrose zeigt die Windgeschwindigkeits-verteilung pro Windsektor. B
 msgid "tt_bfe_windstaerke_info"
 msgstr "Der Wind unterliegt ständiger Geschwindigkeitsschwankungen. Aus diesem Grund wird für die Planung von Windenergieanlagen eine statistische Verteilung der Windgeschwindigkeiten eine sog. Weibull-Verteilung benötigt."
 
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_gemeinde"
+msgstr "Vischnanca"
+
 msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
 msgstr "Dumber d’emprimas abitaziuns"
 
