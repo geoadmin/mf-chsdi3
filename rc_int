@@ -12,7 +12,6 @@ export HOST=mf-chsdi3.int.bgdi.ch
 export KEEP_VERSION=true
 export MAPPROXYHOST=wmts20.int.bgdi.ch
 export MODWSGI_CONFIG=production.ini
-export PRINT_WAR=main
 export ROBOTS_FILE=robots.txt
 export SERVER_PORT=6543
 export SPHINXHOST=service-sphinxsearch.int.bgdi.ch
