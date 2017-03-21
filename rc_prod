@@ -12,7 +12,6 @@ export HOST=api3.geo.admin.ch
 export KEEP_VERSION=true
 export MAPPROXYHOST=wmts20.geo.admin.ch
 export MODWSGI_CONFIG=production.ini
-export PRINT_WAR=main
 export ROBOTS_FILE=robots_prod.txt
 export SERVER_PORT=6543
 export SPHINXHOST=service-sphinxsearch.prod.bgdi.ch
