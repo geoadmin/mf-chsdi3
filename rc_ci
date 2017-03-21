@@ -1,4 +1,5 @@
 source rc_dev
+export ALTI_URL=//mf-chsdi3.ci.bgdi.ch
 export API_URL=//mf-chsdi3.ci.bgdi.ch
 export DEPLOY_TARGET=ci
 export GEODATA_STAGING=prod
