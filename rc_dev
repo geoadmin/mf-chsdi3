@@ -1,4 +1,5 @@
 export APACHE_BASE_PATH=main
+export ALTI_URL=//service-alti.dev.bgdi.ch
 export API_URL=//mf-chsdi3.dev.bgdi.ch
 export SHOP_URL=//shop-bgdi.dev.bgdi.ch
 export DBHOST=pg-sandbox.bgdi.ch

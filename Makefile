@@ -318,6 +318,7 @@ production.ini: production.ini.in
 		--var "dbhost=$(DBHOST)" \
 		--var "dbport=$(DBPORT)" \
 		--var "dbstaging=$(DBSTAGING)" \
+		--var "alti_url=$(ALTI_URL)" \
 		--var "api_url=$(API_URL)" \
 		--var "shop_url=$(SHOP_URL)" \
 		--var "geodata_staging=$(GEODATA_STAGING)" \
