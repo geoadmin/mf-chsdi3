@@ -27,20 +27,18 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/ TODO >`__
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170313...r_170322>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/ TODO >`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170313...r_170322>`__
 
 Geodata
 *******
 
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New | `Microwave links <//map.geo.admin.ch/?layers=ch.bakom.richtfunkverbindungen>`__ (ch.bakom.richtfunkverbindungen)                                                                                                        |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `TODO ... <//map.geo.admin.ch/?layers=TODO>`__ (TODO)                                                                                                                                                                |
+| New    | `Microwave links <//map.geo.admin.ch/?layers=ch.bakom.richtfunkverbindungen>`__ (ch.bakom.richtfunkverbindungen)                                                                                                        |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `TBE: cluster <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                                                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
