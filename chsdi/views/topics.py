@@ -12,8 +12,7 @@ def topics(request):
     geodataStaging = request.registry.settings['geodata_staging']
     showCatalog = True
     query = request.db.query(model).filter(model.showCatalog == showCatalog) \
-                                   .order_by(model.groupId) \
-                                   .order_by(model.orderKey)
+                                   .order_by(model.groupId)
     query = filter_by_geodata_staging(query, model.staging, geodataStaging)
     results = [{
         'id': q.id,
