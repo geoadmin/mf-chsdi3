@@ -352,7 +352,6 @@ class Topics(Base):
     __tablename__ = 'topics'
     __table_args__ = ({'schema': 're3', 'autoload': False})
     id = Column('topic', Text, primary_key=True)
-    orderKey = Column('order_key', Integer)
     availableLangs = Column('lang', Text)
     selectedLayers = Column('selected_layers', postgresql.ARRAY(Text))
     defaultBackground = Column('default_background', Text)
