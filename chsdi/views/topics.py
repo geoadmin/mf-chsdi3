@@ -11,7 +11,9 @@ def topics(request):
     model = Topics
     geodataStaging = request.registry.settings['geodata_staging']
     showCatalog = True
-    query = request.db.query(model).filter(model.showCatalog == showCatalog).order_by(model.orderKey)
+    query = request.db.query(model).filter(model.showCatalog == showCatalog) \
+                                   .order_by(model.groupId) \
+                                   .order_by(model.orderKey)
     query = filter_by_geodata_staging(query, model.staging, geodataStaging)
     results = [{
         'id': q.id,
@@ -20,6 +22,7 @@ def topics(request):
         'backgroundLayers': q.backgroundLayers,
         'selectedLayers': q.selectedLayers,
         'activatedLayers': q.activatedLayers,
-        'plConfig': q.plconf
+        'plConfig': q.plconf,
+        'groupId': q.groupId
     } for q in query]
     return {'topics': results}

@@ -361,6 +361,7 @@ class Topics(Base):
     showCatalog = Column('show_catalog', Boolean)
     staging = Column('staging', Text)
     plconf = Column('permalink_configuration', Text)
+    groupId = Column('group_id', Integer)
 
 
 class Catalog(Base):
