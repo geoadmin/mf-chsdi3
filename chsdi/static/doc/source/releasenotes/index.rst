@@ -27,10 +27,12 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
+- `Compare with last release <https://github.com/geoadmin/mf-chsdi3/compare/r_170322...r_170329>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
+- `Compare with last release <https://github.com/geoadmin/mf-geoadmin3/compare/r_170322...r_170329>`__
 
 Geodata
 *******
