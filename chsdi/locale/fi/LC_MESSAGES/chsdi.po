@@ -6258,10 +6258,10 @@ msgid "ch.swisstopo.strassenkarte200_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.swiss-map-vector1000.metadata"
-msgstr "Divisiun Swiss Map Vector 1000"
+msgstr "Divisiun charta naziunala 1000 Vectur"
 
 msgid "ch.swisstopo.swiss-map-vector500.metadata"
-msgstr "Divisiun Swiss Map Vector 500"
+msgstr "Divisiun charta naziunala 500 Vectur"
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Sumbriva reliev"

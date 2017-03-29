@@ -6258,10 +6258,10 @@ msgid "ch.swisstopo.strassenkarte200_papier.metadata.release"
 msgstr "Edizione"
 
 msgid "ch.swisstopo.swiss-map-vector1000.metadata"
-msgstr "Divisione Swiss Map Vector 1000"
+msgstr "Divisione carta nazionale 1000 Vettore"
 
 msgid "ch.swisstopo.swiss-map-vector500.metadata"
-msgstr "Divisione Swiss Map Vector 500"
+msgstr "Divisione carta nazionale 500 Vettore"
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"
