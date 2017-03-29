@@ -36,15 +36,16 @@
 <%
 protocol = request.scheme
 c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
+datageoadminUrl = 'https://' + request.registry.settings['datageoadminhost'] + '/ch.bafu.gewaesserschutz-badewasserqualitaet/image/'
 topic = request.matchdict.get('map')
 lang = request.lang
 %>
 <table class="table-with-border  kernkraftwerke-extended">
   <tr>
 % if c['attributes']['baquaimg'] is None:
-      <span></span>     
+      <span></span>
 % else:
-      <div><center><img style="width: 70%; height:auto" src="${c['attributes']['baquaimg'] or '-'}"/></center></div><br/> 
+      <div><center><img style="width: 70%; height:auto" src="${datageoadminUrl + c['attributes']['baquaimg'] or '-'}"/></center></div><br/>
 % endif
   </tr>
   <tr>
