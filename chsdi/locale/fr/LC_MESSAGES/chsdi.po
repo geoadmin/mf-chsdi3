@@ -6258,10 +6258,10 @@ msgid "ch.swisstopo.strassenkarte200_papier.metadata.release"
 msgstr "Édition"
 
 msgid "ch.swisstopo.swiss-map-vector1000.metadata"
-msgstr "Découpage Swiss Map Vector 1000"
+msgstr "Découpage carte nationale 1000 Vecteur"
 
 msgid "ch.swisstopo.swiss-map-vector500.metadata"
-msgstr "Découpage Swiss Map Vector 500"
+msgstr "Découpage carte nationale 500 Vecteur"
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D estompage du relief"
