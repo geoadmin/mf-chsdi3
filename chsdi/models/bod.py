@@ -118,6 +118,9 @@ class LayersConfig(Base):
         if config['type'] in ('wmts', 'aggregate', 'geojson'):
             del config['singleTile']
 
+        if not config['timeEnabled']:
+            del config['timeBehaviour']
+
         if config['type'] == 'wms':
             config['wmsUrl'] = 'https://%s' % wmsHost
         elif config['type'] == 'geojson':
@@ -125,6 +128,7 @@ class LayersConfig(Base):
             config['styleUrl'] = make_agnostic(
                 api_url + '/static/vectorStyles/' + self.layerBodId + '.json')
             config['geojsonUrl'] = self._getGeoJsonUrl(params.lang)
+            del config['format']
         # sublayers don't have attributions
         if 'attribution' in config:
             config['attributionUrl'] = translate(self.__dict__['attribution'] + '.url')

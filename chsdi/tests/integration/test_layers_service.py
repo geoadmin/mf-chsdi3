@@ -110,6 +110,14 @@ class TestMapServiceView(TestsBase):
         self.assertIn('attribution', resp.json['ch.swisstopo.pixelkarte-farbe'])
         self.assertIn('label', resp.json['ch.swisstopo.pixelkarte-farbe'])
         self.assertIn('background', resp.json['ch.swisstopo.pixelkarte-farbe'])
+        # Test geojson config
+        self.assertIn('ch.bafu.hydroweb-messstationen_gefahren', resp.json)
+        self.assertIn('label', resp.json['ch.bafu.hydroweb-messstationen_gefahren'])
+        self.assertIn('geojsonUrl', resp.json['ch.bafu.hydroweb-messstationen_gefahren'])
+        self.assertIn('updateDelay', resp.json['ch.bafu.hydroweb-messstationen_gefahren'])
+        self.assertIn('styleUrl', resp.json['ch.bafu.hydroweb-messstationen_gefahren'])
+        self.assertNotIn('format', resp.json['ch.bafu.hydroweb-messstationen_gefahren'])
+        self.assertNotIn('timeBehaviour', resp.json['ch.bafu.hydroweb-messstationen_gefahren'])
 
     def test_layersconfig_geojson_and_extent_layer(self):
         resp = self.testapp.get('/rest/services/all/MapServer/layersConfig', status=200)
