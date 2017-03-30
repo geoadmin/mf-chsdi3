@@ -3,6 +3,7 @@
 import os
 from webtest import TestApp
 from PIL import Image
+from contextlib import contextmanager
 from pyramid.paster import get_app
 from sqlalchemy import distinct
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -25,7 +26,6 @@ class LayersChecker(object):
                 return s
 
         self.testapp = TestApp(get_app('development.ini'))
-        self.session = scoped_session(sessionmaker())
 
         # configuration via environment. Default is None for all
         self.staging = os.environ.get('CHSDI_STAGING') if os.environ.get('CHSDI_STAGING') is not None else 'prod'
@@ -36,30 +36,36 @@ class LayersChecker(object):
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
-        self.session.close()
         del self.testapp
         return False
 
+    @contextmanager
+    def getSession(self):
+        session = scoped_session(sessionmaker())
+        yield session
+        session.close()
+
     def ilayers(self, tooltip=None, hasLegend=None, searchable=None, geojson=None):
-        valNone = None
-        query = self.session.query(distinct(LayersConfig.layerBodId)) \
-            .filter(LayersConfig.staging == self.staging) \
-            .filter(LayersConfig.parentLayerId == valNone) \
-            .filter(LayersConfig.srid != '4326')
-        if tooltip is not None:
-            query = query.filter(LayersConfig.tooltip == tooltip)
-        if hasLegend is not None:
-            query = query.filter(LayersConfig.hasLegend == hasLegend)
-        if searchable is not None:
-            query = query.filter(LayersConfig.searchable == searchable)
-        if geojson is not None:
-            if geojson:
-                query = query.filter(LayersConfig.type == 'geojson')
-            else:
-                query = query.filter(LayersConfig.type != 'geojson')
-        for q in query:
-            if self.onlylayer is None or q[0] == self.onlylayer:
-                yield q[0]
+        with self.getSession() as session:
+            valNone = None
+            query = session.query(distinct(LayersConfig.layerBodId)) \
+                .filter(LayersConfig.staging == self.staging) \
+                .filter(LayersConfig.parentLayerId == valNone) \
+                .filter(LayersConfig.srid != '4326')
+            if tooltip is not None:
+                query = query.filter(LayersConfig.tooltip == tooltip)
+            if hasLegend is not None:
+                query = query.filter(LayersConfig.hasLegend == hasLegend)
+            if searchable is not None:
+                query = query.filter(LayersConfig.searchable == searchable)
+            if geojson is not None:
+                if geojson:
+                    query = query.filter(LayersConfig.type == 'geojson')
+                else:
+                    query = query.filter(LayersConfig.type != 'geojson')
+            for q in query:
+                if self.onlylayer is None or q[0] == self.onlylayer:
+                    yield q[0]
 
     def ilayersAllModels(self):
         for layer in self.ilayers(tooltip=True, geojson=False):
@@ -69,12 +75,13 @@ class LayersChecker(object):
                 assert (models is not None and len(models) > 0), layer
                 for model in models:
                     primaryKeyColumn = model.primary_key_column()
-                    query = self.session.query(primaryKeyColumn)
-                    query = query.limit(1)
-                    try:
-                        featureId = query.one()[0]
-                    except NoResultFound:
-                        featureId = None
+                    with self.getSession() as session:
+                        query = session.query(primaryKeyColumn)
+                        query = query.limit(1)
+                        try:
+                            featureId = query.one()[0]
+                        except NoResultFound:
+                            featureId = None
                     yield layer, featureId, model, primaryKeyColumn
 
     def ilayersWithFeatures(self):
@@ -84,15 +91,16 @@ class LayersChecker(object):
                 models = models_from_bodid(layer)
                 assert (models is not None and len(models) > 0), layer
                 model = models[0]
-                query = self.session.query(model.primary_key_column())
-                # Depending on db size, random row is slow
-                if self.randomFeatures:
-                    query = query.order_by(func.random())
-                if isinstance(self.nrOfFeatures, (int, long)):
-                    query = query.limit(self.nrOfFeatures)
-                hasExtended = model.__extended_info__ if hasattr(model, '__extended_info__') else False
-                for q in query:
-                    yield (layer, str(q[0]), hasExtended)
+                with self.getSession() as session:
+                    query = session.query(model.primary_key_column())
+                    # Depending on db size, random row is slow
+                    if self.randomFeatures:
+                        query = query.order_by(func.random())
+                    if isinstance(self.nrOfFeatures, (int, long)):
+                        query = query.limit(self.nrOfFeatures)
+                    hasExtended = model.__extended_info__ if hasattr(model, '__extended_info__') else False
+                    for q in query:
+                        yield (layer, str(q[0]), hasExtended)
 
     def checkHtmlPopup(self, layer, feature, extended):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
@@ -134,10 +142,11 @@ class LayersChecker(object):
         expectedStatus = 200
         # Special treatment for non-distributed sphinx indices (single model)
         if len(models) == 1:
-            query = self.session.query(model.primary_key_column())
-            # we expect 404 errors for searchable layers without any data (no sphinx index)
-            if query.first() is None:
-                expectedStatus = 404
+            with self.getSession() as session:
+                query = session.query(model.primary_key_column())
+                # we expect 404 errors for searchable layers without any data (no sphinx index)
+                if query.first() is None:
+                    expectedStatus = 404
 
         # If it fails here, it most probably means given layer does not have sphinx index available
         link = '/rest/services/all/SearchServer?features=' + layer + '&bbox=600818.7808825106,197290.49919797093,601161.2808825106,197587.99919797093&type=featuresearch&searchText=dummy'
