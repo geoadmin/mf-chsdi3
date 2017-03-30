@@ -12,7 +12,7 @@
  </colgroup>
 <tr>
   <td class="cell-left">${_('ch.bfe.energieforschung.titel')}</td>
-  <td>${c['attributes']['titel'] or '-'}</td>
+  <td>${c['attributes']['titel'] or '-'|n}</td>
 </tr>
 <tr>
   <td class="cell-left">${_('ch.bfe.energieforschung.beschreibung')}</td>
@@ -50,12 +50,12 @@ date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "
  </colgroup>
   <tr>
     <td class="cell-meta-one" colspan="2">
-      <h1>${c['attributes']['titel'] or '-'}</h1>
+      <h1>${c['attributes']['titel'] or '-'|n}</h1>
     </td>
   </tr>
   <tr>
     <td class="cell-meta-one" colspan="2">
-      ${c['attributes']['beschreibung'] or '-'}
+      ${c['attributes']['beschreibung'] or '-'|n}
     </td>
   </tr>
   <tr>
