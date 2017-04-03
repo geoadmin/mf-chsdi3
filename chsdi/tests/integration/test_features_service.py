@@ -142,7 +142,7 @@ class TestFeaturesView(TestsBase):
 
     def test_feature_htmlpopup_not_scale_dep(self):
         params = {'imageDisplay': '960,700,96', 'lang': 'it', 'mapExtent': '642389,81044,882389,256044'}
-        resp = self.testapp.get('/rest/services/swisstopo/MapServer/ch.swisstopo.treasurehunt/734/htmlPopup', params=params, status=200)
+        resp = self.testapp.get('/rest/services/swisstopo/MapServer/ch.swisstopo.treasurehunt/1/htmlPopup', params=params, status=200)
         self.assertEqual(resp.content_type, 'text/html')
 
     def test_feature_valid(self):
