@@ -53,7 +53,7 @@ register_oereb(BaulinienEisenbahnanlagenOereb.__bodId__, BaulinienEisenbahnanlag
 
 # BAZL
 class ProjektierungszonenOereb(Base, OerebBase, Vector):
-    __tablename__ = 'projektierungszonen_oereb'
+    __tablename__ = 'projektierungszonen_oereb_test'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __bodId__ = 'ch.bazl.projektierungszonen-flughafenanlagen.oereb'
 
