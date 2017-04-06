@@ -632,6 +632,37 @@ class MinergieGebaeude(Base, Vector):
 register(MinergieGebaeude.__bodId__, MinergieGebaeude)
 
 
+class STATISTIKWASSERKRAFTANLAGEN_NEW(Base, Vector):
+    __tablename__ = 'statistik_wasserkraftanlagen_powerplant_new'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/statistikwasserkraftanlagen_new.mako'
+    __bodId__ = 'ch.bfe.statistik-wasserkraftanlagen'
+    __extended_info__ = True
+    __label__ = 'name'
+    id = Column('wastanumber', Integer, primary_key=True)
+    name = Column('name', Text)
+    location = Column('location', Text)
+    canton = Column('canton', Text)
+    hydropowerplantoperationalstatus_it = Column('hydropowerplantoperationalstatus_it', Text)
+    hydropowerplanttype_it = Column('hydropowerplanttype_it', Text)
+    hydropowerplantoperationalstatus_fr = Column('hydropowerplantoperationalstatus_fr', Text)
+    hydropowerplanttype_fr = Column('hydropowerplanttype_fr', Text)
+    hydropowerplantoperationalstatus_de = Column('hydropowerplantoperationalstatus_de', Text)
+    hydropowerplanttype_de = Column('hydropowerplanttype_de', Text)
+    beginningofoperation = Column('beginningofoperation', Integer)
+    endofoperation = Column('endofoperation', Integer)
+    dateofstatistic = Column('dateofstatistic', Text)
+    performanceturbinemaximum = Column('performanceturbinemaximum', Numeric)
+    performancegeneratormaximum = Column('performancegeneratormaximum', Numeric)
+    productionexpected = Column('productionexpected', Numeric)
+    pumpspowerinputmaximum = Column('pumpspowerinputmaximum', Numeric)
+    enginepowerdemand = Column('enginepowerdemand', Numeric)
+    fallheight = Column('fallheight', Text)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.statistik-wasserkraftanlagen', STATISTIKWASSERKRAFTANLAGEN_NEW)
+
+
 class STATISTIKWASSERKRAFTANLAGEN(Base, Vector):
     __tablename__ = 'statistik_wasserkraftanlagen_powerplant'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
@@ -657,7 +688,7 @@ class STATISTIKWASSERKRAFTANLAGEN(Base, Vector):
     energiebedarf_motore = Column('energiebedarf_motore', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.statistik-wasserkraftanlagen', STATISTIKWASSERKRAFTANLAGEN)
+# register('ch.bfe.statistik-wasserkraftanlagen', STATISTIKWASSERKRAFTANLAGEN)
 
 
 class STAUANLAGENBUNDESAUFSICHT(Base, Vector):

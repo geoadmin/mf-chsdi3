@@ -8786,10 +8786,19 @@ msgstr "Inbetriebnahme"
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_canton"
 msgstr "Standortkanton"
 
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_dateofstatistic"
+msgstr "Stichdatum der Statistik"
+
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
 msgstr "Stilllegung"
 
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_enginepowerdemand"
+msgstr "Energiebedarf Motoren"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_fallheight"
+msgstr "Mittlere Fallhöhe Brutto"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus"
 msgstr "Operativer Status"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
@@ -8800,6 +8809,18 @@ msgstr "Standort"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_name"
 msgstr "Name"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_performancegeneratormaximum"
+msgstr "Leistung Generator"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_performanceturbinemaximum"
+msgstr "Leistung Turbine"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_productionexpected"
+msgstr "Produktionserwartung pro Jahr"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_pumpspowerinputmaximum"
+msgstr "Leistungsaufnahme Pumpen"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
 msgstr "WASTA-Nummer"
