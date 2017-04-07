@@ -42,11 +42,10 @@
 <%def name="extended_info(c, lang)">
 <%
   from urllib2 import urlopen
-
-  webDavHost = request.registry.settings['webdav_host']
+  dataGeoAdminHost = request.registry.settings['datageoadminhost']
   
-  img_url = webDavHost + "/bafu/ch.bafu.wasser-teileinzugsgebiete_2/images/" + str(c['featureId']) + ".png"
-  zip_url = webDavHost + "/bafu/ch.bafu.wasser-teileinzugsgebiete_2/downloads/" + str(100000+c['featureId']) + ".zip"
+  img_url = "https://" + dataGeoAdminHost + "/ch.bafu.wasser-teileinzugsgebiete_2/image/" + str(c['featureId']) + ".png"
+  zip_url = "https://" + dataGeoAdminHost + "/ch.bafu.wasser-teileinzugsgebiete_2/downloads/" + str(100000+c['featureId']) + ".zip"
   image = None
   zip = None
   image_exist = h.resource_exists(img_url)

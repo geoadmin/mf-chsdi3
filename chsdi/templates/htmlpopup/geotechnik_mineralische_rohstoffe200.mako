@@ -2,8 +2,9 @@
 
 <%def name="table_body(c,lang)">
 <%
-    webDavHost = request.registry.settings['webdav_host']
-    url_pdf = webDavHost + '/kogis_web/downloads/geologie/geotechnik/' + c['attributes']['legend']
+    dataGeoAdminHost = request.registry.settings['datageoadminhost']
+    dataPath = 'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200/PDF'
+    url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/"  + c['attributes']['legend']
 %>
     <tr><td colspan="3">&nbsp;</tr>
     <tr>

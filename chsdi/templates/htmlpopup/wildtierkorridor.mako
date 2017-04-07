@@ -7,8 +7,9 @@
     zusta = 'zusta_%s' % lang
 
     if c['attributes']['nr'] is not None:
-        webDavHost = request.registry.settings['webdav_host']
-        url_pdf = webDavHost + '/kogis_web/downloads/bafu/' + c['attributes']['nr'] + '.pdf'
+        dataGeoAdminHost = request.registry.settings['datageoadminhost']
+        dataPath = 'ch.bafu.fauna-wildtierkorridor_national/PDF'
+        url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/"  + c['attributes']['nr'] + '.pdf'
 %>
 
     <tr><td class="cell-left">${_('tt_ch.bafu.fauna-wildtierkorridor_national_nr')}</td>       <td>${c['attributes']['nr'] or '-'}</td></tr>

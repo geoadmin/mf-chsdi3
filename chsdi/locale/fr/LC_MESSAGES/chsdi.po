@@ -9390,7 +9390,7 @@ msgid "tt_teileinzugsgebiete_2.ebene2km_teil4"
 msgstr "Altitude du bassin versant [m]"
 
 msgid "tt_teileinzugsgebiete_2.ebene2km_teil5"
-msgstr "Débits moyens simuIés (voire critères dans l'<a href=\"https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_fr.pdf\">aide en ligne</a>) [m3/s]"
+msgstr "Débits moyens simuIés (voire critères dans l'<a href=\"https://data.geo.admin.ch/ch.bafu.wasser-teileinzugsgebiete_2/onlinehelp/online_help_fr.pdf\">aide en ligne</a>) [m3/s]"
 
 msgid "tt_teileinzugsgebiete_2.gebietsauslaesse_gemeindename"
 msgstr "Commune à I‘exutoire du BV"
@@ -9420,7 +9420,7 @@ msgid "tt_teileinzugsgebiete_2.namen_gewaesser"
 msgstr "Nom du cours d'eau"
 
 msgid "tt_teileinzugsgebiete_2.noinfoforthisobject"
-msgstr "Pour ce bassin versant entier (très petit / très grand), aucune donnée modélisée sur les débits n'est mise à disposition (voir les critères de l'<a href=\"https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_fr.pdf\">aide en ligne</a>)."
+msgstr "Pour ce bassin versant entier (très petit / très grand), aucune donnée modélisée sur les débits n'est mise à disposition (voir les critères de l'<a href=\"https://data.geo.admin.ch/ch.bafu.wasser-teileinzugsgebiete_2/onlinehelp/online_help_fr.pdf\">aide en ligne</a>)."
 
 msgid "tt_teileinzugsgebiete_2.physiogeographie_anteil_ch"
 msgstr "Pourcentage CH de la sur-face du BV entier"

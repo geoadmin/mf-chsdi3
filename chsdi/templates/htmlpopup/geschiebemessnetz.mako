@@ -12,8 +12,9 @@
 <tr><td class="cell-left">${_('ch.bafu.feststoffe-geschiebemessnetz.institut')}</td><td>${c['attributes']['institut'] or '-'}</td></tr>
 <tr><td class="cell-left">${_('ch.bafu.feststoffe-geschiebemessnetz.amt')}</td><td>${c['attributes']['amt'] or '-'}</td></tr>
 <%
-    webDavHost = request.registry.settings['webdav_host']
-    url_pdf = webDavHost + '/kogis_web/downloads/bafu/geschiebemessnetz/' + c['attributes']['pdf_file']
+    dataGeoAdminHost = request.registry.settings['datageoadminhost']
+    dataPath = 'ch.bafu.feststoffe-geschiebemessnetz/PDF'
+    url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['pdf_file']
 %>
 <tr><td class="cell-left">${_('link')}</td>
     <td>
@@ -159,8 +160,9 @@
     from chsdi.lib.helpers import resource_exists
     pdf = None
     if c['attributes']['pdf_file'] is not None:
-        webDavHost = request.registry.settings['webdav_host']
-        url_pdf = webDavHost + '/kogis_web/downloads/bafu/geschiebemessnetz/' + c['attributes']['pdf_file']
+        dataGeoAdminHost = request.registry.settings['datageoadminhost']
+        dataPath = 'ch.bafu.feststoffe-geschiebemessnetz/PDF'
+        url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['pdf_file']
         pdf = resource_exists(url_pdf)
 %>
 <th class="cell-left">${_('link')}</th>
