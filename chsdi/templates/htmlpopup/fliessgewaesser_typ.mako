@@ -12,10 +12,11 @@
 <tr><td class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.geo')}</td>              <td>${c['attributes']['geo'] or '-'}</td></tr>
 <%
     from chsdi.lib.helpers import resource_exists
+    dataPath = 'ch.bafu.typisierung-fliessgewaesser/PDF'
     pdf = None
     if c['attributes']['url_portraits'] is not None:
-        webDavHost = request.registry.settings['webdav_host']
-        url_pdf = webDavHost + '/bafu/' + c['attributes']['url_portraits']
+        dataGeoAdminHost = request.registry.settings['datageoadminhost']
+        url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['url_portraits']
         pdf = resource_exists(url_pdf)
 %>
 <tr>
@@ -33,17 +34,18 @@
 <%def name="extended_info(c, lang)">
 <%
     from chsdi.lib.helpers import resource_exists
+    dataPath = 'ch.bafu.typisierung-fliessgewaesser/PDF'
     lang = 'fr' if lang in ('fr', 'it') else 'de'
     url_uebersicht = 'url_uebersicht_%s' % lang
-    webDavHost = request.registry.settings['webdav_host']
+    dataGeoAdminHost = request.registry.settings['datageoadminhost']
     pdf = None
     pdf_legend = None
 
     if c['attributes']['url_portraits'] is not None:
-        url_pdf = webDavHost + '/bafu/' + c['attributes']['url_portraits']
+        url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['url_portraits']
         pdf = resource_exists(url_pdf)
     if c['attributes'][url_uebersicht] is not None:
-        url_legend_pdf = webDavHost + '/bafu/' +c['attributes'][url_uebersicht]
+        url_legend_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes'][url_uebersicht]
         pdf_legend = resource_exists(url_legend_pdf)
 %>
 

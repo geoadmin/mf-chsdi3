@@ -9390,7 +9390,7 @@ msgid "tt_teileinzugsgebiete_2.ebene2km_teil4"
 msgstr "Höhenangaben zum EZG [m]"
 
 msgid "tt_teileinzugsgebiete_2.ebene2km_teil5"
-msgstr "Modellierte mittlere Abflüsse (s. Kriterien <a href=\"https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_de.pdf\">Onlinehilfe</a>) [m3/s]"
+msgstr "Modellierte mittlere Abflüsse (s. Kriterien <a href=\"https://data.geo.admin.ch/ch.bafu.wasser-teileinzugsgebiete_2/onlinehelp/online_help_de.pdf\">Onlinehilfe</a>) [m3/s]"
 
 msgid "tt_teileinzugsgebiete_2.gebietsauslaesse_gemeindename"
 msgstr "Gemeinde am Gebietsauslass"
@@ -9420,7 +9420,7 @@ msgid "tt_teileinzugsgebiete_2.namen_gewaesser"
 msgstr "Gewässername"
 
 msgid "tt_teileinzugsgebiete_2.noinfoforthisobject"
-msgstr "Für dieses Gesamteinzugsgebiet (sehr klein / sehr gross) werden keine modellierten Abflusswerte bereitgestellt (siehe Kriterien in der <a href=\"https://dav0.bgdi.admin.ch/bafu/ch.bafu.wasser-teileinzugsgebiete_2/online_help_de.pdf\">Onlinehilfe</a>)"
+msgstr "Für dieses Gesamteinzugsgebiet (sehr klein / sehr gross) werden keine modellierten Abflusswerte bereitgestellt (siehe Kriterien in der <a href=\"https://data.geo.admin.ch/ch.bafu.wasser-teileinzugsgebiete_2/onlinehelp/online_help_de.pdf\">Onlinehilfe</a>)"
 
 msgid "tt_teileinzugsgebiete_2.physiogeographie_anteil_ch"
 msgstr "Flächenanteil Gesamt-EZG % CH"
