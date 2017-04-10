@@ -4,6 +4,7 @@
 <% 
     c['stable_id'] = True
     lang = lang if lang in ('fr','it') else 'de'
+    hydropowerplanttype = 'hydropowerplanttype_%s' % lang
 %>
     <tr>
       <td class="cell-left">${_('tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber')}</td>
