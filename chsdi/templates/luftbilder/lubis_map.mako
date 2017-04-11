@@ -55,7 +55,7 @@
             maxZoom: resolutions.length + 1 // The min resolution of the pyramid is 1, so we add 2 client zoom equivalent to resolutions 0.5 and 0.25
           })
         });
-        lubisMap.getView().fitExtent([0, 0, width, height], lubisMap.getSize());
+        lubisMap.getView().fit([0, 0, width, height], lubisMap.getSize());
         lubisMap.getView().setRotation(rotation);
 </%def>
 

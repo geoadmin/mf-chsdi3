@@ -147,7 +147,7 @@
       </div>
   % endif
     </div>
-    <script type="text/javascript" src="${loaderUrl}"></script>
+    <script type="text/javascript" src="${loaderUrl}?version=3.18.2"></script>
     <script type="text/javascript">
       function init() {
         ${lubis_map.init_map(c.get('bildnummer'), c.get('width'), c.get('height'), c.get('rotation'), 'lubismap')}
