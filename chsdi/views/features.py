@@ -35,6 +35,8 @@ from chsdi.models.bod import OerebMetadata, get_bod_model
 from chsdi.models.vector import getScale, getResolution, hasBuffer
 from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
+from chsdi.views.httpexception_json import exception_view_json
+
 
 PROTECTED_GEOMETRY_LAYERS = ['ch.bfs.gebaeude_wohnungs_register']
 MAX_FEATURES = 201
@@ -61,8 +63,10 @@ def view_get_feature_geojson(request):
     return _get_feature_service(request)
 
 
+@exception_view_json
 @view_config(route_name='feature', renderer='esrijson')
 def view_get_feature_esrijson(request):
+    raise exc.HTTPException('Please specify the id of the layer you want to query')
     return _get_feature_service(request)
 
 
