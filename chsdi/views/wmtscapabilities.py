@@ -5,9 +5,11 @@ from pyramid.httpexceptions import HTTPBadRequest, HTTPNotFound
 from gatilegrid import GeoadminTileGrid
 
 from chsdi.models.bod import get_wmts_models
-from chsdi.lib.helpers import sanitize_url
+from chsdi.lib.helpers import sanitize_url, is_valid_hostname
 from chsdi.lib.validation import MapNameValidation
 from chsdi.lib.filters import filter_by_geodata_staging, filter_by_map_name
+
+WMTS_DEFAULT_HOST = 'wmts.geo.admin.ch'
 
 
 def getDefaultTileMatrixSet():
@@ -51,10 +53,14 @@ class WMTSCapabilites(MapNameValidation):
             'X-Forwarded-Proto',
             self.request.scheme)
         staging = self.request.registry.settings['geodata_staging']
-        mapproxyHost = self.request.registry.settings['mapproxyhost']
+        wmts_host = self.request.params.get('wmts_host')
+        if wmts_host is not None and is_valid_hostname(wmts_host):
+            mapproxyHost = wmts_host
+        else:
+            mapproxyHost = self.request.registry.settings['mapproxyhost']
 
         # Default ressource
-        s3_url = sanitize_url("%s://wmts.geo.admin.ch/" % scheme)
+        s3_url = sanitize_url("%s://%s/" % (scheme, WMTS_DEFAULT_HOST))
         mapproxy_url = sanitize_url("%s://%s/" % (scheme, mapproxyHost))
         onlineressources = {'mapproxy': mapproxy_url, 's3': s3_url}
 
