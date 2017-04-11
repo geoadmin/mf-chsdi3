@@ -4619,6 +4619,30 @@ msgstr "Suitability"
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Hydropower statistics"
 
+msgid "ch.bfe.statistik-wasserkraftanlagen.dateofstatistic"
+msgstr "Stichdatum der Statistik"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.enginepowerdemand"
+msgstr "Energiebedarf Motoren"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.fallheight"
+msgstr "Mittlere Fallhöhe Brutto"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.hydropowerplantoperationalstatus"
+msgstr "Operativer Status"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.performancegeneratormaximum"
+msgstr "Leistung Generator"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.performanceturbinemaximum"
+msgstr "Leistung Turbine"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.productionexpected"
+msgstr "Produktionserwartung pro Jahr"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.pumpspowerinputmaximum"
+msgstr "Leistungsaufnahme Pumpen"
+
 msgid "ch.bfe.stauanlagen-bundesaufsicht"
 msgstr "Dam"
 
@@ -8786,20 +8810,8 @@ msgstr "Beginning of operation"
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_canton"
 msgstr "Canton"
 
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_dateofstatistic"
-msgstr "Stichdatum der Statistik"
-
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
 msgstr "End of operation"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_enginepowerdemand"
-msgstr "Energiebedarf Motoren"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_fallheight"
-msgstr "Mittlere Fallhöhe Brutto"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus"
-msgstr "Operativer Status"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
 msgstr "Type"
@@ -8809,18 +8821,6 @@ msgstr "Location"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_name"
 msgstr "Name"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_performancegeneratormaximum"
-msgstr "Leistung Generator"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_performanceturbinemaximum"
-msgstr "Leistung Turbine"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_productionexpected"
-msgstr "Produktionserwartung pro Jahr"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_pumpspowerinputmaximum"
-msgstr "Leistungsaufnahme Pumpen"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
 msgstr "WASTA-Number"

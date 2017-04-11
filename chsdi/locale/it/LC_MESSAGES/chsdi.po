@@ -4619,6 +4619,30 @@ msgstr "Aptitude"
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistica idroelettricitá"
 
+msgid "ch.bfe.statistik-wasserkraftanlagen.dateofstatistic"
+msgstr "Data della statistica"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.enginepowerdemand"
+msgstr "Fabbisogno energetico dei motori"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.fallheight"
+msgstr "Altezza di caduta lorda mezzo"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.hydropowerplantoperationalstatus"
+msgstr "Statut operativo"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.performancegeneratormaximum"
+msgstr "Potenza massima disponibile ai morsetti dei generatori:"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.performanceturbinemaximum"
+msgstr "Potenza installata totale delle turbine:"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.productionexpected"
+msgstr "Produzione media prevista:  Anno"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.pumpspowerinputmaximum"
+msgstr "Fabbisogno energetico delle pompe"
+
 msgid "ch.bfe.stauanlagen-bundesaufsicht"
 msgstr "Impianti di sbarramento"
 
@@ -8786,20 +8810,8 @@ msgstr "Messa in esercizio"
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_canton"
 msgstr "Cantone"
 
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_dateofstatistic"
-msgstr "Data della statistica"
-
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
 msgstr "Messa fuori servizio"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_enginepowerdemand"
-msgstr "Fabbisogno energetico dei motori"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_fallheight"
-msgstr "Altezza di caduta lorda mezzo"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus"
-msgstr "Statut operativo"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
 msgstr "Tipo di installazione idroelettrica"
@@ -8809,18 +8821,6 @@ msgstr "Sito"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_name"
 msgstr "Nom"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_performancegeneratormaximum"
-msgstr "Potenza massima disponibile ai morsetti dei generatori:"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_performanceturbinemaximum"
-msgstr "Potenza installata totale delle turbine:"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_productionexpected"
-msgstr "Produzione media prevista:  Anno"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_pumpspowerinputmaximum"
-msgstr "Fabbisogno energetico delle pompe"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
 msgstr "Numero SAHE"

@@ -5831,25 +5831,25 @@ msgstr ""
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation"
 msgstr ""
 
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_dateofstatistic"
+msgid "ch.bfe.statistik-wasserkraftanlagen.dateofstatistic"
 msgstr ""
 
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_fallheight"
+msgid "ch.bfe.statistik-wasserkraftanlagen.fallheight"
 msgstr ""
 
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_enginepowerdemand"
+msgid "ch.bfe.statistik-wasserkraftanlagen.enginepowerdemand"
 msgstr ""
 
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_performancegeneratormaximum"
+msgid "ch.bfe.statistik-wasserkraftanlagen.performancegeneratormaximum"
 msgstr ""
 
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_performanceturbinemaximum"
+msgid "ch.bfe.statistik-wasserkraftanlagen.performanceturbinemaximum"
 msgstr ""
 
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_productionexpected"
+msgid "ch.bfe.statistik-wasserkraftanlagen.productionexpected"
 msgstr ""
 
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_pumpspowerinputmaximum"
+msgid "ch.bfe.statistik-wasserkraftanlagen.pumpspowerinputmaximum"
 msgstr ""
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_canton"
@@ -5858,7 +5858,7 @@ msgstr ""
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
 msgstr ""
 
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus"
+msgid "ch.bfe.statistik-wasserkraftanlagen.hydropowerplantoperationalstatus"
 msgstr ""
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
