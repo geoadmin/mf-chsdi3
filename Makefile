@@ -324,7 +324,6 @@ production.ini: production.ini.in
 		--var "geodata_staging=$(GEODATA_STAGING)" \
 		--var "sphinxhost=$(SPHINXHOST)" \
 		--var "wmshost=$(WMSHOST)" \
-		--var "webdav_host=$(WEBDAV_HOST)" \
 		--var "mapproxyhost=$(MAPPROXYHOST)" \
 		--var "geoadminhost=$(GEOADMINHOST)" \
 		--var "host=$(HOST)" \
