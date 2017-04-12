@@ -36,6 +36,7 @@ from chsdi.models.vector import getScale, getResolution, hasBuffer
 from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
+
 PROTECTED_GEOMETRY_LAYERS = ['ch.bfs.gebaeude_wohnungs_register']
 MAX_FEATURES = 201
 
