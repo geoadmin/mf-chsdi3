@@ -15,6 +15,51 @@ Release Notes
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20170412:
+   *******
+
+Release 20170412 - Wednesday, April 12th 2017
+---------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170329...r_170412>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- New, consolidated import tool
+- Bug fixes
+- `Compare with last release <https://github.com/geoadmin/mf-geoadmin3/compare/r_170329...r_170412>`__
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Solar energy: suitability of roofs <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-daecher>`__ (ch.bfe.solarenergie-eignung-daecher)     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: floods <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_hochwasser>`__ (ch.bafu.showme-gemeinden_hochwasser)                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: floods <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_hochwasser>`__ (ch.bafu.showme-gemeinden_hochwasser)                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: avalanches <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_lawinen>`__ (ch.bafu.showme-gemeinden_lawinen)                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: landslides <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_rutschungen>`__ (ch.bafu.showme-gemeinden_rutschungen)          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: fall processes <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_sturzprozesse>`__ (ch.bafu.showme-gemeinden_sturzprozesse)  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: floods <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_hochwasser>`__ (ch.bafu.showme-kantone_hochwasser)                     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons : avalanches <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_lawinen>`__ (ch.bafu.showme-kantone_lawinen)                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: landslides <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_rutschungen>`__ (ch.bafu.showme-kantone_rutschungen)               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: fall processes <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_sturzprozesse>`__ (ch.bafu.showme-kantone_sturzprozesse)       |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20170329:
    *******
 
