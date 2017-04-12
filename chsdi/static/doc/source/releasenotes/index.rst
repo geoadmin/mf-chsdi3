@@ -18,7 +18,7 @@ Release Notes
 .. _releasenotes_20170412:
    *******
 
-Release 20170412 - Wednesday, April 12nd 2017
+Release 20170412 - Wednesday, April 12th 2017
 ---------------------------------------------
 
 API & applications
@@ -27,10 +27,13 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170329...r_170412>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
+- New, consolidated import tool
 - Bug fixes
+- `Compare with last release <https://github.com/geoadmin/mf-geoadmin3/compare/r_170329...r_170412>`__
 
 Geodata
 *******
