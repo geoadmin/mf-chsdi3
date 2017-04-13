@@ -1553,33 +1553,19 @@ class schutzgebiete_aulav_uebrige(Base, Vector):
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.schutzgebiete-aulav_uebrige'
     __template__ = 'templates/htmlpopup/bafu_schutzge_aulav_uebrige.mako'
-    __maxscale__ = 10000
     id = Column('bgdi_id', Integer, primary_key=True)
-    wv_obj = Column('wv_obj', Numeric)
-    wv_name = Column('wv_name', Text)
-    nat_park = Column('nat_park', Numeric)
-    fm_obj = Column('fm_obj', Numeric)
-    fm_name = Column('fm_name', Text)
-    hm_obj = Column('hm_obj', Numeric)
-    hm_name = Column('hm_name', Text)
-    np_name = Column('np_name', Text)
-    typ = Column('typ', Text)
+    wv_obj = Column('wv_obj', Integer)
+    wv_name = Column('wv_name', Unicode)
+    nat_park = Column('nat_park', Integer)
+    fm_obj = Column('fm_obj', Integer)
+    fm_name = Column('fm_name', Unicode)
+    hm_obj = Column('hm_obj', Integer)
+    hm_name = Column('hm_name', Unicode)
+    np_name = Column('np_name', Unicode)
+    typ = Column('typ', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-aulav_uebrige', schutzgebiete_aulav_uebrige)
-
-
-class schutzgebiete_aulav_uebrige_general(Base, Vector):
-    __tablename__ = 'uebrige_gebiete_general'
-    __table_args__ = ({'schema': 'schutzge', 'autoload': False})
-    __bodId__ = 'ch.bafu.schutzgebiete-aulav_uebrige'
-    __template__ = 'templates/htmlpopup/bafu_schutzge_aulav_uebrige_general.mako'
-    __minscale__ = 10001
-    __maxscale__ = 5000000
-    id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry2D)
-
-register('ch.bafu.schutzgebiete-aulav_uebrige', schutzgebiete_aulav_uebrige_general)
 
 
 class paerke:
