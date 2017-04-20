@@ -23,7 +23,7 @@
         damtype = 'damtype_%s' % lang
 
         from urllib2 import urlopen
-        img_url = "http://www.bfe-gis.admin.ch/bilder/ch.bfe.stauanlagen-bundesaufsicht/"+str(c['attributes']['facility_stabil_id'])+".jpg"
+        img_url = "http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.stauanlagen-bundesaufsicht/"+str(c['attributes']['facility_stabil_id'])+".jpg"
         image_exists = h.resource_exists(img_url)
     %>
     <h1>${_('tt_ch.bfe.stauanlagen-bundesaufsicht_stauanlage')} ${c['attributes']['facilityname']}</h1>
