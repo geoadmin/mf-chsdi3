@@ -22,7 +22,7 @@ make cleanall
 
 # This creates the branch configuration
 make setup
-make rc_branch DEPLOY_TARGET=dev
+make rc_branch DEPLOY_TARGET=dev GIT_BRANCH=$GIT_BRANCH
 source rc_branch
 make all
 make deploy/deploy-branch.cfg
