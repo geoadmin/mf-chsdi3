@@ -73,8 +73,8 @@
     </table>
     <div class="thumbnail-container">
         <div class="thumbnail">
-            <a href="http://www.bfe-gis.admin.ch/bilder/ch.bfe.kernkraftwerke/plant${c['featureId']}.jpg">
-                <img class="image" src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.kernkraftwerke/plant${c['featureId']}.jpg" />
+            <a href="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.kernkraftwerke/plant${c['featureId']}.jpg">
+                <img class="image" src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.kernkraftwerke/plant${c['featureId']}.jpg" />
             </a>
             Bild copyright ENSI
         </div>

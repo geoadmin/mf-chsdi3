@@ -109,7 +109,7 @@
 </table>
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
 <tr style="max-width: 100%;height: auto;"><img class="image"
-src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.windenergieanlagen/chart_${c['attributes']['fac_initial']}.png" alt=""/></tr>
+src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.windenergieanlagen/chart_${c['attributes']['fac_initial']}.png" alt=""/></tr>
 </table>
 % else:
 <h3> - </h3>
@@ -151,7 +151,7 @@ src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.windenergieanlagen/chart_${c['att
 <br>
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
 <tr><td id="image" align="center"><img width=100% height= auto class="image"
-src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.windenergieanlagen/img_${c['attributes']['fac_initial']}.jpg"
+src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.windenergieanlagen/img_${c['attributes']['fac_initial']}.jpg"
 alt=""/></td>
 <td id="map" height=400px></td>
 </tr>
