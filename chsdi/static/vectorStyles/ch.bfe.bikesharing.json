@@ -50,6 +50,14 @@
         "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/16.png",
         "anchor": [0.5, 1]
       }
+    }, {
+      "geomType": "point",
+      "value": "17",
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/17.png",
+        "anchor": [0.5, 1]
+      }
     }
   ]
 }
