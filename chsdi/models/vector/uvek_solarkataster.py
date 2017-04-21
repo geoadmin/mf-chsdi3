@@ -15,7 +15,7 @@ class SolarClass:
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __label__ = 'id'
     __maxscale__ = 100005
-    building_id = Column('building_id', Integer)
+    building_id = Column('bgdi_id', Integer)
     a_param = Column('a_param', postgresql.ARRAY(Numeric))
     b_param = Column('b_param', postgresql.ARRAY(Numeric))
     c_param = Column('c_param', postgresql.ARRAY(Numeric))
