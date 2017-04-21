@@ -3557,17 +3557,20 @@ msgstr "Tipo di superficie protetta"
 msgid "ch.bafu.waldreservate.name"
 msgstr "Nome"
 
+msgid "ch.bafu.waldreservate.obj_gesflaeche"
+msgstr "Superficie del contratto [ha]"
+
 msgid "ch.bafu.waldreservate.objnummer"
 msgstr "Numero della riserva"
 
 msgid "ch.bafu.waldreservate.waldreservate_1_1"
-msgstr "Nessun intervento attivo"
+msgstr "MCPFE1.1 Nessun intervento attivo"
 
 msgid "ch.bafu.waldreservate.waldreservate_1_2"
-msgstr "Interventi minimi"
+msgstr "MCPFE1.2 Interventi minimi"
 
 msgid "ch.bafu.waldreservate.waldreservate_1_3"
-msgstr "Promozione delle biodiversità per mezzo di interventi specifici"
+msgstr "MCPFE1.3 Promozione delle biodiversità per mezzo di interventi specifici"
 
 msgid "ch.bafu.waldschadenflaechen-lothar"
 msgstr "Aree boschive danneggiate Lothar"
@@ -4922,17 +4925,20 @@ msgstr "Tipo di superficie protetta"
 msgid "ch.pronatura.waldreservate.name"
 msgstr "Nome"
 
-msgid "ch.pronatura.waldreservate.sg_nr"
+msgid "ch.pronatura.waldreservate.obj_gesflaeche"
+msgstr "Superficie del contratto [ha]"
+
+msgid "ch.pronatura.waldreservate.objnummer"
 msgstr "Numero della riserva"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e1"
-msgstr "Nessun intervento attivo"
+msgstr "MCPFE1.1 Nessun intervento attivo"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e2"
-msgstr "Interventi minimi"
+msgstr "MCPFE1.2 Interventi minimi"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
-msgstr "Promozione delle biodiversità per mezzo di interventi specifici"
+msgstr "MCPFE1.3 Promozione delle biodiversità per mezzo di interventi specifici"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Spessore dei sedimenti"
