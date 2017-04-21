@@ -2112,10 +2112,13 @@ msgstr ""
 msgid "ch.pronatura.waldreservate.gisflaeche"
 msgstr ""
 
+msgid "ch.pronatura.waldreservate.obj_gesflaeche"
+msgstr ""
+
 msgid "ch.pronatura.waldreservate.name"
 msgstr ""
 
-msgid "ch.pronatura.waldreservate.sg_nr"
+msgid "ch.pronatura.waldreservate.objnummer"
 msgstr ""
 
 msgid "ch.pronatura.waldreservate.mcpfe"
@@ -7809,6 +7812,9 @@ msgid "ch.bafu.waldreservate.objnummer"
 msgstr ""
 
 msgid "ch.bafu.waldreservate.gisflaeche"
+msgstr ""
+
+msgid "ch.bafu.waldreservate.obj_gesflaeche"
 msgstr ""
 
 msgid "ch.bafu.waldreservate.waldreservate_1_1"

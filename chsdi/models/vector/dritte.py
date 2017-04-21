@@ -89,22 +89,23 @@ class NOTFALLSCHUTZ(Base, Vector):
 register('ch.ensi.zonenplan-notfallschutz-kernanlagen', NOTFALLSCHUTZ)
 
 
-class PRONATURA(Base, Vector):
+class PronaturaWaldreservate(Base, Vector):
     __tablename__ = 'waldreservate'
     __table_args__ = ({'schema': 'pronatura', 'autoload': False})
     __template__ = 'templates/htmlpopup/pronatura.mako'
     __bodId__ = 'ch.pronatura.waldreservate'
-    __queryable_attributes__ = ['name', 'sg_nr', 'gisflaeche', 'gisteilobjekt', 'mcpfe']
+    __queryable_attributes__ = ['name', 'objnummer', 'gesflaeche', 'gesflaeche', 'gisteilobjekt', 'mcpfe']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    sg_nr = Column('sg_nr', Numeric)
-    name = Column('name', Text)
-    gisflaeche = Column('obj_gisflaeche', Numeric)
-    gisteilobjekt = Column('obj_gisteilobjekt', Numeric)
-    mcpfe = Column('mcpfe', Text)
+    objnummer = Column('objnummer', Integer)
+    name = Column('name', Unicode)
+    gisflaeche = Column('obj_gisflaeche', Float)
+    gesflaeche = Column('obj_gesflaeche', Float)
+    gisteilobjekt = Column('obj_gisteilobjekt', Float)
+    mcpfe = Column('mcpfe', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.pronatura.waldreservate', PRONATURA)
+register(PronaturaWaldreservate.__bodId__, PronaturaWaldreservate)
 
 
 class PRONATURA_Naturschutzgebiete(Base, Vector):

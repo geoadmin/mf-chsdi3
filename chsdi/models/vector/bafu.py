@@ -2150,17 +2150,18 @@ class Waldreservate(Base, Vector):
     __table_args__ = ({'schema': 'wald', 'autoload': False})
     __template__ = 'templates/htmlpopup/bafu_waldreservate.mako'
     __bodId__ = 'ch.bafu.waldreservate'
-    __queryable_attributes__ = ['objnummer', 'name', 'gisflaeche', 'gisteilobjekt', 'mcpfe']
+    __queryable_attributes__ = ['objnummer', 'name', 'gisflaeche', 'gesflaeche', 'gisteilobjekt', 'mcpfe']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    objnummer = Column('objnummer', Text)
-    gisteilobjekt = Column('obj_gisteilobjekt', Numeric)
-    name = Column('name', Text)
-    gisflaeche = Column('obj_gisflaeche', Numeric)
-    mcpfe = Column('mcpfe_class', Text)
+    objnummer = Column('objnummer', Unicode)
+    gisteilobjekt = Column('obj_gisteilobjekt', Float)
+    name = Column('name', Unicode)
+    gisflaeche = Column('obj_gisflaeche', Float)
+    gesflaeche = Column('obj_gesflaeche', Float)
+    mcpfe = Column('mcpfe_class', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.waldreservate', Waldreservate)
+register(Waldreservate.__bodId__, Waldreservate)
 
 
 class SturmStaudruck30(Base, Vector):

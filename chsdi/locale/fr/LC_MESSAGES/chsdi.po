@@ -3557,17 +3557,20 @@ msgstr "Type de l’aire protégé"
 msgid "ch.bafu.waldreservate.name"
 msgstr "Nom"
 
+msgid "ch.bafu.waldreservate.obj_gesflaeche"
+msgstr "Surface du contrat [ha]"
+
 msgid "ch.bafu.waldreservate.objnummer"
 msgstr "Numéro de la réserve"
 
 msgid "ch.bafu.waldreservate.waldreservate_1_1"
-msgstr "Pas d’interventions actives"
+msgstr "MCPFE1.1 Pas d’interventions actives"
 
 msgid "ch.bafu.waldreservate.waldreservate_1_2"
-msgstr "Interventions minimales"
+msgstr "MCPFE1.2 Interventions minimales"
 
 msgid "ch.bafu.waldreservate.waldreservate_1_3"
-msgstr "Promotion de la biodiversité par des interventions ciblées"
+msgstr "MCPFE1.3 Promotion de la biodiversité par des interventions ciblées"
 
 msgid "ch.bafu.waldschadenflaechen-lothar"
 msgstr "Dégâts de tempête Lothar"
@@ -4922,17 +4925,20 @@ msgstr "Type de l’aire protégé"
 msgid "ch.pronatura.waldreservate.name"
 msgstr "Nom"
 
-msgid "ch.pronatura.waldreservate.sg_nr"
+msgid "ch.pronatura.waldreservate.obj_gesflaeche"
+msgstr "Surface du contrat [ha]"
+
+msgid "ch.pronatura.waldreservate.objnummer"
 msgstr "Numéro de la réserve"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e1"
-msgstr "Pas d’interventions actives"
+msgstr "MCPFE1.1 Pas d’interventions actives"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e2"
-msgstr "Interventions minimales"
+msgstr "MCPFE1.2 Interventions minimales"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
-msgstr "Promotion de la biodiversité par des interventions ciblées"
+msgstr "MCPFE1.3 Promotion de la biodiversité par des interventions ciblées"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Epaisseur des roches meubles"

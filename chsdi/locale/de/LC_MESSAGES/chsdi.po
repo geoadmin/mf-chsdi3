@@ -3546,10 +3546,10 @@ msgid "ch.bafu.waldreservate"
 msgstr "Waldreservate"
 
 msgid "ch.bafu.waldreservate.gisflaeche"
-msgstr "Gesamtfläche [ha]"
+msgstr "Gesamtfläche Perimeter [ha]"
 
 msgid "ch.bafu.waldreservate.gisteilobjekt"
-msgstr "Fläche [ha]"
+msgstr "Teilfläche Perimeter [ha]"
 
 msgid "ch.bafu.waldreservate.mcpfe"
 msgstr "Schutzflächentyp"
@@ -3557,17 +3557,20 @@ msgstr "Schutzflächentyp"
 msgid "ch.bafu.waldreservate.name"
 msgstr "Name"
 
+msgid "ch.bafu.waldreservate.obj_gesflaeche"
+msgstr "Gesamtfläche Vertrag [ha]"
+
 msgid "ch.bafu.waldreservate.objnummer"
 msgstr "Reservatsnummer"
 
 msgid "ch.bafu.waldreservate.waldreservate_1_1"
-msgstr "Keine aktiven Eingriffe"
+msgstr "MCPFE1.1 Keine aktiven Eingriffe"
 
 msgid "ch.bafu.waldreservate.waldreservate_1_2"
-msgstr "Minimale Eingriffe"
+msgstr "MCPFE1.2 Minimale Eingriffe"
 
 msgid "ch.bafu.waldreservate.waldreservate_1_3"
-msgstr "Biodiversitätsförderung durch gezielte Eingriffe"
+msgstr "MCPFE1.3 Biodiversitätsförderung durch gezielte Eingriffe"
 
 msgid "ch.bafu.waldschadenflaechen-lothar"
 msgstr "Sturmschaden Lothar"
@@ -4911,10 +4914,10 @@ msgid "ch.pronatura.waldreservate"
 msgstr "Pro Natura Waldreservate"
 
 msgid "ch.pronatura.waldreservate.gisflaeche"
-msgstr "Gesamtfläche [ha]"
+msgstr "Gesamtfläche Perimeter [ha]"
 
 msgid "ch.pronatura.waldreservate.gisteilobjekt"
-msgstr "Fläche [ha]"
+msgstr "Teilfläche Perimeter [ha]"
 
 msgid "ch.pronatura.waldreservate.mcpfe"
 msgstr "Schutzflächentyp"
@@ -4922,17 +4925,20 @@ msgstr "Schutzflächentyp"
 msgid "ch.pronatura.waldreservate.name"
 msgstr "Name"
 
-msgid "ch.pronatura.waldreservate.sg_nr"
+msgid "ch.pronatura.waldreservate.obj_gesflaeche"
+msgstr "Gesamtfläche Vertrag [ha]"
+
+msgid "ch.pronatura.waldreservate.objnummer"
 msgstr "Reservatsnummer"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e1"
-msgstr "Keine aktiven Eingriffe"
+msgstr "MCPFE1.1 Keine aktiven Eingriffe"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e2"
-msgstr "Minimale Eingriffe "
+msgstr "MCPFE1.2 Minimale Eingriffe"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
-msgstr "Biodiversitätsförderung durch gezielte Eingriffe"
+msgstr "MCPFE1.3 Biodiversitätsförderung durch gezielte Eingriffe"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Mächtigkeit der Lockergesteine"

@@ -3557,17 +3557,20 @@ msgstr "Type of protected area"
 msgid "ch.bafu.waldreservate.name"
 msgstr "Name"
 
+msgid "ch.bafu.waldreservate.obj_gesflaeche"
+msgstr "Area contracted [ha]"
+
 msgid "ch.bafu.waldreservate.objnummer"
 msgstr "Number oft he reserve"
 
 msgid "ch.bafu.waldreservate.waldreservate_1_1"
-msgstr "No active intervention"
+msgstr "MCPFE1.1 No active intervention"
 
 msgid "ch.bafu.waldreservate.waldreservate_1_2"
-msgstr "Minimum Intervention"
+msgstr "MCPFE1.2 Minimum Intervention"
 
 msgid "ch.bafu.waldreservate.waldreservate_1_3"
-msgstr "Conservation through active management"
+msgstr "MCPFE1.3 Conservation through active management"
 
 msgid "ch.bafu.waldschadenflaechen-lothar"
 msgstr "Lothar storm damage"
@@ -4341,7 +4344,7 @@ msgid "ch.bazl.luftraeume-nahkontrollbezirke.upli_value"
 msgstr "Upper limit [value]"
 
 msgid "ch.bazl.projektierungszonen-flughafenanlagen"
-msgstr "Planning zones: airports"
+msgstr "Reserved zones: airports"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
 msgstr "SAIP consultation"
@@ -4922,17 +4925,20 @@ msgstr "Type of protected area"
 msgid "ch.pronatura.waldreservate.name"
 msgstr "Name"
 
-msgid "ch.pronatura.waldreservate.sg_nr"
+msgid "ch.pronatura.waldreservate.obj_gesflaeche"
+msgstr "Area contracted [ha]"
+
+msgid "ch.pronatura.waldreservate.objnummer"
 msgstr "Number oft he reserve"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e1"
-msgstr "No active intervention"
+msgstr "MCPFE1.1 No active intervention"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e2"
-msgstr "Minimum Intervention"
+msgstr "MCPFE1.2 Minimum Intervention"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
-msgstr "Conservation through active management"
+msgstr "MCPFE1.3 Conservation through active management"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Sediment thickness"
