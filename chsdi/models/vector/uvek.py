@@ -633,9 +633,9 @@ register(MinergieGebaeude.__bodId__, MinergieGebaeude)
 
 
 class StatistikwasserkraftanlagenNew(Base, Vector):
-    __tablename__ = 'statistik_wasserkraftanlagen_powerplant_new'
+    __tablename__ = 'statistik_wasserkraftanlagen_powerplant'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/statistikwasserkraftanlagen_new.mako'
+    __template__ = 'templates/htmlpopup/statistikwasserkraftanlagen.mako'
     __bodId__ = 'ch.bfe.statistik-wasserkraftanlagen'
     __extended_info__ = True
     __label__ = 'name'
