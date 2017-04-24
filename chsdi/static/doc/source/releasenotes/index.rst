@@ -14,6 +14,31 @@ Release Notes
 
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20170426:
+   *******
+
+Release 20170412 - Wednesday, April 26th 2017
+---------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- TODO: Bug fixes
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- TODO: Bug fixes
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Forest Reserves <//map.geo.admin.ch/?layers=ch.bafu.waldreservate>`__ (ch.bafu.waldreservate)                                                    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Pro Natura: Forest Reserves <//map.geo.admin.ch/?layers=ch.pronatura.waldreservate>`__ (ch.pronatura.waldreservate)                              |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 .. _releasenotes_20170412:
    *******
