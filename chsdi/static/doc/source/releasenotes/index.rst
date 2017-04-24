@@ -33,21 +33,23 @@ API & applications
 
 Geodata
 *******
-+--------+-----------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Forest Reserves <//map.geo.admin.ch/?layers=ch.bafu.waldreservate>`__ (ch.bafu.waldreservate)                                    |
-+--------+-----------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Pro Natura: Forest Preserves <//map.geo.admin.ch/?layers=ch.pronatura.waldreservate>`__ (ch.pronatura.waldreservate)             |
-+--------+-----------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Hiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.wanderland>`__ (ch.astra.wanderland)                                  |
-+--------+-----------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Cycling in Switzerland <//map.geo.admin.ch/?layers=ch.astra.veloland>`__ (ch.astra.veloland)                                     |
-+--------+-----------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Skating in Switzerland <//map.geo.admin.ch/?layers=ch.astra.skatingland>`__ (ch.astra.skatingland)                               |
-+--------+-----------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Mountainbiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.mountainbikeland>`__ (ch.astra.mountainbikeland)              |
-+--------+-----------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)  |
-+--------+-----------------------------------------------------------------------------------------------------------------------------------+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Forest Reserves <//map.geo.admin.ch/?layers=ch.bafu.waldreservate>`__ (ch.bafu.waldreservate)                                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Pro Natura: Forest Preserves <//map.geo.admin.ch/?layers=ch.pronatura.waldreservate>`__ (ch.pronatura.waldreservate)                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.wanderland>`__ (ch.astra.wanderland)                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cycling in Switzerland <//map.geo.admin.ch/?layers=ch.astra.veloland>`__ (ch.astra.veloland)                                                            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Skating in Switzerland <//map.geo.admin.ch/?layers=ch.astra.skatingland>`__ (ch.astra.skatingland)                                                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mountainbiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.mountainbikeland>`__ (ch.astra.mountainbikeland)                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `UNESCO World cultural heritage <//map.geo.admin.ch/?layers=ch.bak.schutzgebiete-unesco_weltkulturerbe>`__ (ch.bak.schutzgebiete-unesco_weltkulturerbe)  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20170412:
