@@ -210,14 +210,6 @@ class TestFeaturesView(TestsBase):
         for msgid in msgids:
             self.assertIn(msgid, resp.text)
 
-    def test_htmlpopup_scale_dependent(self):
-        params = {'mapExtent': '559349.7,127280.7,695549.7,241180.7', 'imageDisplay': '1362,1139,96', 'lang': 'fr'}
-        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.schutzgebiete-aulav_uebrige/400/htmlPopup', params=params, status=200)
-        resp.mustcontain('Les atterrissages en campagne')
-        params = {'mapExtent': '654998,188636.6,657722,190914.6', 'imageDisplay': '1362,1139,96', 'lang': 'fr'}
-        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.schutzgebiete-aulav_uebrige/400/htmlPopup', params=params, status=200)
-        resp.mustcontain('Haut-marais')
-
     def test_htmlpopup_cadastralwebmap(self):
         params = {'mapExtent': '485412.34375,109644.67,512974.44,135580.01999999999', 'imageDisplay': '600,400,96'}
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/21648723/htmlPopup', params=params, status=200)
