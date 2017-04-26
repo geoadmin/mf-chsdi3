@@ -8786,10 +8786,19 @@ msgstr "Messa in esercizio"
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_canton"
 msgstr "Cantone"
 
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_dateofstatistic"
+msgstr "Data della statistica"
+
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
 msgstr "Messa fuori servizio"
 
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_enginepowerdemand"
+msgstr "Fabbisogno energetico dei motori"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_fallheight"
+msgstr "Altezza di caduta lorda mezzo"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus"
 msgstr "Statut operativo"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
@@ -8800,6 +8809,18 @@ msgstr "Sito"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_name"
 msgstr "Nom"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_performancegeneratormaximum"
+msgstr "Potenza massima disponibile ai morsetti dei generatori:"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_performanceturbinemaximum"
+msgstr "Potenza installata totale delle turbine:"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_productionexpected"
+msgstr "Produzione media prevista:  Anno"
+
+msgid "tt_ch.bfe.statistik-wasserkraftanlagen_pumpspowerinputmaximum"
+msgstr "Fabbisogno energetico delle pompe"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber"
 msgstr "Numero SAHE"
