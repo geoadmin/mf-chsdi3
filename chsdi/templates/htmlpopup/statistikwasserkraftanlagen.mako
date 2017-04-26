@@ -45,7 +45,7 @@
     import urllib2
     has_picture = True
     headers = {'Referer': 'http://admin.ch'}
-    url = "http://www.bfe-gis.admin.ch/bilder/ch.bfe.statistik-wasserkraftanlagen/%d.jpg" % c['featureId']
+    url = "http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.statistik-wasserkraftanlagen/%d.jpg" % c['featureId']
     if not h.resource_exists(url, headers):
         has_picture = False
 
@@ -155,8 +155,8 @@
 </div>
 <div class="thumbnail-container">
   <div class="thumbnail">
-    <a href="http://www.bfe-gis.admin.ch/bilder/ch.bfe.statistik-wasserkraftanlagen/${c['featureId']}.jpg">
-      <img class="image" src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.statistik-wasserkraftanlagen/${c['featureId']}.jpg" alt=""/>
+    <a href="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.statistik-wasserkraftanlagen/${c['featureId']}.jpg">
+      <img class="image" src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.statistik-wasserkraftanlagen/${c['featureId']}.jpg" alt=""/>
     </a>
   </div>
 </div>
