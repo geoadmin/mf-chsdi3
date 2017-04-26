@@ -663,34 +663,6 @@ class StatistikwasserkraftanlagenNew(Base, Vector):
 register('ch.bfe.statistik-wasserkraftanlagen', StatistikwasserkraftanlagenNew)
 
 
-class STATISTIKWASSERKRAFTANLAGEN(Base, Vector):
-    __tablename__ = 'statistik_wasserkraftanlagen_powerplant'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/statistikwasserkraftanlagen.mako'
-    __bodId__ = 'ch.bfe.statistik-wasserkraftanlagen'
-    __extended_info__ = True
-    __label__ = 'name'
-    id = Column('wastanumber', Integer, primary_key=True)
-    name = Column('name', Text)
-    location = Column('location', Text)
-    canton = Column('canton', Text)
-    hydropowerplantoperationalstatus_it = Column('hydropowerplantoperationalstatus_it', Text)
-    hydropowerplanttype_it = Column('hydropowerplanttype_it', Text)
-    hydropowerplantoperationalstatus_fr = Column('hydropowerplantoperationalstatus_fr', Text)
-    hydropowerplanttype_fr = Column('hydropowerplanttype_fr', Text)
-    hydropowerplantoperationalstatus_de = Column('hydropowerplantoperationalstatus_de', Text)
-    hydropowerplanttype_de = Column('hydropowerplanttype_de', Text)
-    beginningofoperation = Column('beginningofoperation', Integer)
-    endofoperation = Column('endofoperation', Integer)
-    leistung = Column('leistung', Numeric)
-    produktionserwartung = Column('produktionserwartung', Numeric)
-    leistungsaufnahme_pumpen = Column('leistungsaufnahme_pumpen', Numeric)
-    energiebedarf_motore = Column('energiebedarf_motore', Numeric)
-    the_geom = Column(Geometry2D)
-
-# register('ch.bfe.statistik-wasserkraftanlagen', STATISTIKWASSERKRAFTANLAGEN)
-
-
 class STAUANLAGENBUNDESAUFSICHT(Base, Vector):
     __tablename__ = 'stauanlagen_bundesaufsicht'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
