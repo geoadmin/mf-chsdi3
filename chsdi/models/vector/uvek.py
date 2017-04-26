@@ -632,7 +632,7 @@ class MinergieGebaeude(Base, Vector):
 register(MinergieGebaeude.__bodId__, MinergieGebaeude)
 
 
-class STATISTIKWASSERKRAFTANLAGEN(Base, Vector):
+class StatistikwasserkraftanlagenNew(Base, Vector):
     __tablename__ = 'statistik_wasserkraftanlagen_powerplant'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/statistikwasserkraftanlagen.mako'
@@ -640,24 +640,27 @@ class STATISTIKWASSERKRAFTANLAGEN(Base, Vector):
     __extended_info__ = True
     __label__ = 'name'
     id = Column('wastanumber', Integer, primary_key=True)
-    name = Column('name', Text)
-    location = Column('location', Text)
-    canton = Column('canton', Text)
-    hydropowerplantoperationalstatus_it = Column('hydropowerplantoperationalstatus_it', Text)
-    hydropowerplanttype_it = Column('hydropowerplanttype_it', Text)
-    hydropowerplantoperationalstatus_fr = Column('hydropowerplantoperationalstatus_fr', Text)
-    hydropowerplanttype_fr = Column('hydropowerplanttype_fr', Text)
-    hydropowerplantoperationalstatus_de = Column('hydropowerplantoperationalstatus_de', Text)
-    hydropowerplanttype_de = Column('hydropowerplanttype_de', Text)
+    name = Column('name', Unicode)
+    location = Column('location', Unicode)
+    canton = Column('canton', Unicode)
+    hydropowerplantoperationalstatus_it = Column('hydropowerplantoperationalstatus_it', Unicode)
+    hydropowerplanttype_it = Column('hydropowerplanttype_it', Unicode)
+    hydropowerplantoperationalstatus_fr = Column('hydropowerplantoperationalstatus_fr', Unicode)
+    hydropowerplanttype_fr = Column('hydropowerplanttype_fr', Unicode)
+    hydropowerplantoperationalstatus_de = Column('hydropowerplantoperationalstatus_de', Unicode)
+    hydropowerplanttype_de = Column('hydropowerplanttype_de', Unicode)
     beginningofoperation = Column('beginningofoperation', Integer)
     endofoperation = Column('endofoperation', Integer)
-    leistung = Column('leistung', Numeric)
-    produktionserwartung = Column('produktionserwartung', Numeric)
-    leistungsaufnahme_pumpen = Column('leistungsaufnahme_pumpen', Numeric)
-    energiebedarf_motore = Column('energiebedarf_motore', Numeric)
+    dateofstatistic = Column('dateofstatistic', Unicode)
+    performanceturbinemaximum = Column('performanceturbinemaximum', Float)
+    performancegeneratormaximum = Column('performancegeneratormaximum', Float)
+    productionexpected = Column('productionexpected', Float)
+    pumpspowerinputmaximum = Column('pumpspowerinputmaximum', Float)
+    enginepowerdemand = Column('enginepowerdemand', Float)
+    fallheight = Column('fallheight', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.statistik-wasserkraftanlagen', STATISTIKWASSERKRAFTANLAGEN)
+register('ch.bfe.statistik-wasserkraftanlagen', StatistikwasserkraftanlagenNew)
 
 
 class STAUANLAGENBUNDESAUFSICHT(Base, Vector):

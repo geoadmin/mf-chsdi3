@@ -4619,6 +4619,30 @@ msgstr "Eignung"
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistica implants idraulics"
 
+msgid "ch.bfe.statistik-wasserkraftanlagen.dateofstatistic"
+msgstr "Stichdatum der Statistik"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.enginepowerdemand"
+msgstr "Energiebedarf Motoren"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.fallheight"
+msgstr "Mittlere Fallhöhe Brutto"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.hydropowerplantoperationalstatus"
+msgstr "Status"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.performancegeneratormaximum"
+msgstr "Leistung Generator"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.performanceturbinemaximum"
+msgstr "Leistung Turbine"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.productionexpected"
+msgstr "Produktionserwartung pro Jahr"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.pumpspowerinputmaximum"
+msgstr "Leistungsaufnahme Pumpen"
+
 msgid "ch.bfe.stauanlagen-bundesaufsicht"
 msgstr "Stabiliments d'accumulaziun"
 
@@ -8789,9 +8813,6 @@ msgstr "Standortkanton"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
 msgstr "Stilllegung"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
-msgstr "Operativer Status"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
 msgstr "Wasserkraftanlagetyp"

@@ -4619,6 +4619,30 @@ msgstr "Aptitude"
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistique hydroélectricité"
 
+msgid "ch.bfe.statistik-wasserkraftanlagen.dateofstatistic"
+msgstr "Date des statistiques"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.enginepowerdemand"
+msgstr "Besoin énergétique des moteurs"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.fallheight"
+msgstr "Chute brute moyenne"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.hydropowerplantoperationalstatus"
+msgstr "Statut opérationnel"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.performancegeneratormaximum"
+msgstr "Puissance maximale disponible aux bornes des alternateurs:"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.performanceturbinemaximum"
+msgstr "Puissance installée totale des turbines:"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.productionexpected"
+msgstr "Production moyenne escomptée: Année"
+
+msgid "ch.bfe.statistik-wasserkraftanlagen.pumpspowerinputmaximum"
+msgstr "Besoin énergétique des pompes"
+
 msgid "ch.bfe.stauanlagen-bundesaufsicht"
 msgstr "Ouvrages d’accumulation"
 
@@ -8788,9 +8812,6 @@ msgstr "Canton"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation"
 msgstr "Mise hors service"
-
-msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de"
-msgstr "Statut opérationnel"
 
 msgid "tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype"
 msgstr "Type d'aménagement hydroélectrique"

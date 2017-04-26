@@ -2,9 +2,10 @@
 
 <%def name="table_body(c, lang)">
 <% 
+    import chsdi.lib.helpers as h
+
     c['stable_id'] = True
     lang = lang if lang in ('fr','it') else 'de'
-    hydropowerplantoperationalstatus = 'hydropowerplantoperationalstatus_%s' % lang
     hydropowerplanttype = 'hydropowerplanttype_%s' % lang
 %>
     <tr>
@@ -22,10 +23,6 @@
     <tr>
       <td class="cell-left">${_('tt_ch.bfe.statistik-wasserkraftanlagen_canton')}</td>
       <td>${c['attributes']['canton'] or '-'}</td>
-    </tr>
-    <tr>
-      <td class="cell-left">${_('tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de')}</td>
-      <td>${c['attributes'][hydropowerplantoperationalstatus] or '-'}</td>
     </tr>
     <tr>
       <td class="cell-left">${_('tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype')}</td>
@@ -47,14 +44,10 @@
     lang = 'de' if lang in ('de', 'rm', 'en') else lang
     import urllib2
     has_picture = True
-    xml_file = None
-    try:
-        xml_file == urllib2.urlopen("http://www.bfe-gis.admin.ch/bilder/ch.bfe.statistik-wasserkraftanlagen/%d.jpg" % c['featureId'])
-    except:
+    headers = {'Referer': 'http://admin.ch'}
+    url = "http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.statistik-wasserkraftanlagen/%d.jpg" % c['featureId']
+    if not h.resource_exists(url, headers):
         has_picture = False
-    finally:
-        if xml_file:
-            xml_file.close()
 
 %>
 <table>
@@ -78,10 +71,6 @@
     <td class="cell-meta">${c['attributes']['canton'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${_('tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplantoperationalstatus_de')}</td>
-    <td class="cell-meta">${c['attributes']['hydropowerplantoperationalstatus_%s' %lang] or '-'}</td>
-  </tr>
-  <tr>
     <td class="cell-meta">${_('tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype')}</td>
     <td class="cell-meta">${c['attributes']['hydropowerplanttype_%s' %lang] or '-'}</td>
   <tr>
@@ -99,20 +88,56 @@
     <td class="cell-meta-one" colspan="2"><strong>${_('technische_angaben')}</strong></td>
   </tr>
   <tr>
-    <td class="cell-meta">${_('leistung')}</td>
-    <td class="cell-meta">${round(c['attributes']['leistung'],2) or '-'}&nbsp;MW</td>
+    <td class="cell-meta">${_('ch.bfe.statistik-wasserkraftanlagen.dateofstatistic')}</td>
+    <td class="cell-meta">${c['attributes']['dateofstatistic'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${_('produktionserwartung')}</td>
-    <td class="cell-meta">${round(c['attributes']['produktionserwartung'],2) or '-'}&nbsp;GWh</td>
+    <td class="cell-meta">${_('ch.bfe.statistik-wasserkraftanlagen.hydropowerplantoperationalstatus')}</td>
+    <td class="cell-meta">${c['attributes']['hydropowerplantoperationalstatus_%s' %lang] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${_('leistungsaufnahme_pumpen')}</td>
-    <td class="cell-meta">${round(c['attributes']['leistungsaufnahme_pumpen'],2) or '-'}&nbsp;MW</td>
+    <td class="cell-meta">${_('ch.bfe.statistik-wasserkraftanlagen.performancegeneratormaximum')}</td>
+    % if c['attributes']['performancegeneratormaximum'] != None:
+        <td class="cell-meta">${round(c['attributes']['performancegeneratormaximum'],2) or '-'}&nbsp;MW</td>
+    % else:
+        <td class="cell-meta">-</td>
+    % endif
   </tr>
   <tr>
-    <td class="cell-meta">${_('energiebedarf_motoren')}</td>
-    <td class="cell-meta">${round(c['attributes']['energiebedarf_motore'],2) or '-'}&nbsp;GWh</td>
+    <td class="cell-meta">${_('ch.bfe.statistik-wasserkraftanlagen.performanceturbinemaximum')}</td>
+    % if c['attributes']['performanceturbinemaximum'] != None:
+        <td class="cell-meta">${round(c['attributes']['performanceturbinemaximum'],2) or '-'}&nbsp;GWh</td>
+    % else:
+        <td class="cell-meta">-</td>
+    % endif
+  </tr>
+  <tr>
+    <td class="cell-meta">${_('ch.bfe.statistik-wasserkraftanlagen.productionexpected')}</td>
+    % if c['attributes']['productionexpected'] != None:
+        <td class="cell-meta">${round(c['attributes']['productionexpected'],2) or '-'}&nbsp;MW</td>
+    % else:
+        <td class="cell-meta">-</td>
+    % endif
+  </tr>
+  <tr>
+    <td class="cell-meta">${_('ch.bfe.statistik-wasserkraftanlagen.pumpspowerinputmaximum')}</td>
+    % if c['attributes']['pumpspowerinputmaximum'] != None:
+        <td class="cell-meta">${round(c['attributes']['pumpspowerinputmaximum'],2) or '-'}&nbsp;MW</td>
+    % else:
+        <td class="cell-meta">-</td>
+    % endif
+  </tr>
+  <tr>
+    <td class="cell-meta">${_('ch.bfe.statistik-wasserkraftanlagen.enginepowerdemand')}</td>
+    % if c['attributes']['enginepowerdemand'] != None:
+        <td class="cell-meta">${round(c['attributes']['enginepowerdemand'],2) or '-'}&nbsp;MW</td>
+    % else:
+        <td class="cell-meta">-</td>
+    % endif
+  </tr>
+  <tr>
+    <td class="cell-meta">${_('ch.bfe.statistik-wasserkraftanlagen.fallheight')}</td>
+    <td class="cell-meta">${c['attributes']['fallheight'] or '-'}</td>
   </tr>
   <tr>
     <td class="cell-meta-one" colspan="2">&nbsp;</td>
@@ -130,8 +155,8 @@
 </div>
 <div class="thumbnail-container">
   <div class="thumbnail">
-    <a href="http://www.bfe-gis.admin.ch/bilder/ch.bfe.statistik-wasserkraftanlagen/${c['featureId']}.jpg">
-      <img class="image" src="http://www.bfe-gis.admin.ch/bilder/ch.bfe.statistik-wasserkraftanlagen/${c['featureId']}.jpg" alt=""/>
+    <a href="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.statistik-wasserkraftanlagen/${c['featureId']}.jpg">
+      <img class="image" src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.statistik-wasserkraftanlagen/${c['featureId']}.jpg" alt=""/>
     </a>
   </div>
 </div>
