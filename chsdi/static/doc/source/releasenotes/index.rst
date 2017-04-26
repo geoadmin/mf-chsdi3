@@ -14,6 +14,65 @@ Release Notes
 
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20170426:
+   *******
+
+Release 20170426 - Wednesday, April 26th 2017
+---------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170412...r_170426>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+- `Compare with last release <https://github.com/geoadmin/mf-geoadmin3/compare/r_170412...r_170426>`__
+
+Geodata
+*******
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Reynoutria sachalinensis <//map.geo.admin.ch/?layers=ch.bafu.neophyten-sachalin_staudenknoeterich>`__ (ch.bafu.neophyten-sachalin_staudenknoeterich)    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Buddleja davidii <//map.geo.admin.ch/?layers=ch.bafu.neophyten-schmetterlingsstrauch>`__ (ch.bafu.neophyten-schmetterlingsstrauch)                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Cornus sericea <//map.geo.admin.ch/?layers=ch.bafu.neophyten-seidiger_hornstrauch>`__ (ch.bafu.neophyten-seidiger_hornstrauch)                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Solidago gigantea <//map.geo.admin.ch/?layers=ch.bafu.neophyten-spaetbluehende_goldrute>`__ (ch.bafu.neophyten-spaetbluehende_goldrute)                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Senecio inaequidens <//map.geo.admin.ch/?layers=ch.bafu.neophyten-suedafrikanisches_greiskraut>`__ (ch.bafu.neophyten-suedafrikanisches_greiskraut)     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Asclepias syriaca <//map.geo.admin.ch/?layers=ch.bafu.neophyten-syrische_seidenpflanze>`__ (ch.bafu.neophyten-syrische_seidenpflanze)                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Helianthus tuberosus <//map.geo.admin.ch/?layers=ch.bafu.neophyten-topinambur>`__ (ch.bafu.neophyten-topinambur)                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Artemisia verlotiorum <//map.geo.admin.ch/?layers=ch.bafu.neophyten-verlotscher_beifuss>`__ (ch.bafu.neophyten-verlotscher_beifuss)                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Polygonum polystachyum <//map.geo.admin.ch/?layers=ch.bafu.neophyten-vielaehriger_knoeterich>`__ (ch.bafu.neophyten-vielaehriger_knoeterich)            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Lupinus polyphyllus <//map.geo.admin.ch/?layers=ch.bafu.neophyten-vielblaettrige_lupine>`__ (ch.bafu.neophyten-vielblaettrige_lupine)                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mountainbiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.mountainbikeland>`__ (ch.astra.mountainbikeland)                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Skating in Switzerland <//map.geo.admin.ch/?layers=ch.astra.skatingland>`__ (ch.astra.skatingland)                                                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cycling in Switzerland <//map.geo.admin.ch/?layers=ch.astra.veloland>`__ (ch.astra.veloland)                                                            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.wanderland>`__ (ch.astra.wanderland)                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Forest Reserves <//map.geo.admin.ch/?layers=ch.bafu.waldreservate>`__ (ch.bafu.waldreservate)                                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `UNESCO World cultural heritage <//map.geo.admin.ch/?layers=ch.bak.schutzgebiete-unesco_weltkulturerbe>`__ (ch.bak.schutzgebiete-unesco_weltkulturerbe)  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Pro Natura: Forest Preserves <//map.geo.admin.ch/?layers=ch.pronatura.waldreservate>`__ (ch.pronatura.waldreservate)                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 .. _releasenotes_20170412:
    *******
