@@ -11,7 +11,7 @@ from chsdi.models.vector import Vector, Geometry2D
 Base = bases['zeitreihen']
 
 
-class Zeitreihen_15(Base, Vector):
+class Zeitreihen15(Base, Vector):
     __tablename__ = 'tooltip_15'
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __template__ = 'templates/htmlpopup/zeitreihen.mako'
@@ -34,7 +34,7 @@ class Zeitreihen_15(Base, Vector):
     the_geom = Column(Geometry2D)
 
 
-class Zeitreihen_20(Base, Vector):
+class Zeitreihen20(Base, Vector):
     __tablename__ = 'tooltip_20'
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __template__ = 'templates/htmlpopup/zeitreihen.mako'
@@ -58,7 +58,7 @@ class Zeitreihen_20(Base, Vector):
     the_geom = Column(Geometry2D)
 
 
-class Zeitreihen_21(Base, Vector):
+class Zeitreihen21(Base, Vector):
     __tablename__ = 'tooltip_21'
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __template__ = 'templates/htmlpopup/zeitreihen.mako'
@@ -82,7 +82,7 @@ class Zeitreihen_21(Base, Vector):
     the_geom = Column(Geometry2D)
 
 
-class Zeitreihen_22(Base, Vector):
+class Zeitreihen22(Base, Vector):
     __tablename__ = 'tooltip_22'
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __template__ = 'templates/htmlpopup/zeitreihen.mako'
@@ -134,7 +134,7 @@ class SiegfriedErst(Base, Vector):
 
 register('ch.swisstopo.hiks-siegfried', SiegfriedErst)
 register('ch.swisstopo.hiks-dufour', DufourErst)
-register('ch.swisstopo.zeitreihen', Zeitreihen_15)
-register('ch.swisstopo.zeitreihen', Zeitreihen_20)
-register('ch.swisstopo.zeitreihen', Zeitreihen_21)
-register('ch.swisstopo.zeitreihen', Zeitreihen_22)
+register('ch.swisstopo.zeitreihen', Zeitreihen15)
+register('ch.swisstopo.zeitreihen', Zeitreihen20)
+register('ch.swisstopo.zeitreihen', Zeitreihen21)
+register('ch.swisstopo.zeitreihen', Zeitreihen22)

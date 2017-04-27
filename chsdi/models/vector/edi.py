@@ -197,7 +197,7 @@ class ArealstatistikBodennutzung1985(Base, Vector):
 register('ch.bfs.arealstatistik-bodennutzung-1985', ArealstatistikBodennutzung1985)
 
 
-class fsme_faelle(Base, Vector):
+class FsmeFaelle(Base, Vector):
     __tablename__ = 'fsme_faelle'
     __table_args__ = ({'schema': 'bag', 'autoload': False})
     __template__ = 'templates/htmlpopup/fsme.mako'
@@ -208,10 +208,10 @@ class fsme_faelle(Base, Vector):
     gemname = Column('gemname', Integer)
     bfsnr = Column('bfsnr', Integer)
 
-register('ch.bag.zecken-fsme-faelle', fsme_faelle)
+register('ch.bag.zecken-fsme-faelle', FsmeFaelle)
 
 
-class fsme_impfung(Base, Vector):
+class FsmeImpfung(Base, Vector):
     __tablename__ = 'fsme_impfung'
     __table_args__ = ({'schema': 'bag', 'autoload': False})
     __template__ = 'templates/htmlpopup/fsme.mako'
@@ -222,4 +222,4 @@ class fsme_impfung(Base, Vector):
     bfsnr = Column('bfsnr', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bag.zecken-fsme-impfung', fsme_impfung)
+register('ch.bag.zecken-fsme-impfung', FsmeImpfung)

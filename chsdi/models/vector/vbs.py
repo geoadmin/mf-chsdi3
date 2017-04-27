@@ -40,7 +40,7 @@ class Kulturgueter(Base, Vector):
 register('ch.babs.kulturgueter', Kulturgueter)
 
 
-class TERRITORIALREGIONEN(Base, Vector):
+class Territorialregionen(Base, Vector):
     __tablename__ = 'territorialregionen'
     __table_args__ = ({'autoload': False})
     __template__ = 'templates/htmlpopup/territorialregionen.mako'
@@ -50,10 +50,10 @@ class TERRITORIALREGIONEN(Base, Vector):
     name = Column('name', Unicode)
     the_geom = Column(Geometry3D)
 
-register('ch.vbs.territorialregionen', TERRITORIALREGIONEN)
+register('ch.vbs.territorialregionen', Territorialregionen)
 
 
-class Patrouilledesglaciers_z(Base, Vector):
+class PatrouilledesglaciersZ(Base, Vector):
     __tablename__ = 'patrouille_z'
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
     __template__ = 'templates/htmlpopup/patrouilledesglaciers_z.mako'
@@ -63,10 +63,10 @@ class Patrouilledesglaciers_z(Base, Vector):
     name = Column('name', Unicode)
     the_geom = Column(Geometry3D)
 
-register('ch.vbs.patrouilledesglaciers-z_rennen', Patrouilledesglaciers_z)
+register('ch.vbs.patrouilledesglaciers-z_rennen', PatrouilledesglaciersZ)
 
 
-class Patrouilledesglaciers_a(Base, Vector):
+class PatrouilledesglaciersA(Base, Vector):
     __tablename__ = 'patrouille_a'
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
     __template__ = 'templates/htmlpopup/patrouilledesglaciers_a.mako'
@@ -76,7 +76,7 @@ class Patrouilledesglaciers_a(Base, Vector):
     name = Column('name', Unicode)
     the_geom = Column(Geometry3D)
 
-register('ch.vbs.patrouilledesglaciers-a_rennen', Patrouilledesglaciers_a)
+register('ch.vbs.patrouilledesglaciers-a_rennen', PatrouilledesglaciersA)
 
 
 class Retablierungsstellen(Base, Vector):
@@ -111,7 +111,7 @@ class Armeelogistikcenter(Base, Vector):
 register('ch.vbs.armeelogistikcenter', Armeelogistikcenter)
 
 
-class Bundestankstellen_bebeco(Base, Vector):
+class BundestankstellenBebeco(Base, Vector):
     __tablename__ = 'bundestankstellen_bebeco'
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
     __template__ = 'templates/htmlpopup/bundestankstellen.mako'
@@ -124,10 +124,10 @@ class Bundestankstellen_bebeco(Base, Vector):
     ort = Column('ort', Unicode)
     the_geom = Column(Geometry3D)
 
-register('ch.vbs.bundestankstellen-bebeco', Bundestankstellen_bebeco)
+register('ch.vbs.bundestankstellen-bebeco', BundestankstellenBebeco)
 
 
-class Logistikraeume_armeelogistikcenter(Base, Vector):
+class LogistikraeumeArmeelogistikcenter(Base, Vector):
     __tablename__ = 'abschnittsregionen_armeelogistikzentren'
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
     __template__ = 'templates/htmlpopup/logistikraeume.mako'
@@ -139,7 +139,7 @@ class Logistikraeume_armeelogistikcenter(Base, Vector):
     region = Column('region', Unicode)
     the_geom = Column(Geometry3D)
 
-register('ch.vbs.logistikraeume-armeelogistikcenter', Logistikraeume_armeelogistikcenter)
+register('ch.vbs.logistikraeume-armeelogistikcenter', LogistikraeumeArmeelogistikcenter)
 
 
 class Waldschaden(Base, Vector):

@@ -1117,7 +1117,7 @@ class TiefenGeothermieProjekte(Base, Vector):
 register(TiefenGeothermieProjekte.__bodId__, TiefenGeothermieProjekte)
 
 
-class Gk500_Gensese (Base, Vector):
+class Gk500Gensese (Base, Vector):
     __tablename__ = 'gk500_genese'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gk500-genese.mako'
@@ -1133,10 +1133,10 @@ class Gk500_Gensese (Base, Vector):
     bgdi_tooltip_color = Column('bgdi_tooltip_color', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotechnik-gk500-genese', Gk500_Gensese)
+register('ch.swisstopo.geologie-geotechnik-gk500-genese', Gk500Gensese)
 
 
-class Gk500_Gesteinsklassierung (Base, Vector):
+class Gk500Gesteinsklassierung (Base, Vector):
     __tablename__ = 'gk500_gesteinsklassierung'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gk500-gesteinsklassierung.mako'
@@ -1153,10 +1153,10 @@ class Gk500_Gesteinsklassierung (Base, Vector):
     bgdi_tooltip_color = Column('bgdi_tooltip_color', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung', Gk500_Gesteinsklassierung)
+register('ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung', Gk500Gesteinsklassierung)
 
 
-class Gk500_lithologie_hauptgruppen(Base, Vector):
+class Gk500LithologieHauptgruppen(Base, Vector):
     __tablename__ = 'gk500_lithologie_hauptgruppen'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/lithologie_hauptgruppen.mako'
@@ -1172,7 +1172,7 @@ class Gk500_lithologie_hauptgruppen(Base, Vector):
     bgdi_tooltip_color = Column('bgdi_tooltip_color', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen', Gk500_lithologie_hauptgruppen)
+register('ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen', Gk500LithologieHauptgruppen)
 
 
 class GeologieGeotechnikSteinbrueche1915(Base, Vector):
@@ -1370,7 +1370,7 @@ class Geologischer_Inklination(Base, Vector):
 register('ch.swisstopo.geologie-geophysik-inklination', Geologischer_Inklination)
 
 
-class Geologischer_Aeromagnetik_Jura(Base, Vector):
+class GeologischerAeromagnetikJura(Base, Vector):
     __tablename__ = 'gravimetrie_aeromagnetik_jura'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/aeromagnetik_jura.mako'
@@ -1381,10 +1381,10 @@ class Geologischer_Aeromagnetik_Jura(Base, Vector):
     et_fromatt = Column('et_fromatt', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura', Geologischer_Aeromagnetik_Jura)
+register('ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura', GeologischerAeromagnetikJura)
 
 
-class Geologischer_Aeromagnetik_CH(Base, Vector):
+class GeologischerAeromagnetikCh(Base, Vector):
     __tablename__ = 'gravimetrie_aeromagnetik_ch'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/aeromagnetik_schweiz.mako'
@@ -1395,7 +1395,7 @@ class Geologischer_Aeromagnetik_CH(Base, Vector):
     et_fromatt = Column('et_fromatt', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz', Geologischer_Aeromagnetik_CH)
+register('ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz', GeologischerAeromagnetikCh)
 
 
 class GeologieIsostatischeAnomalien(Base, Vector):
@@ -1621,7 +1621,7 @@ class PLZOrtschaften(Base, Vector):
 register('ch.swisstopo-vd.ortschaftenverzeichnis_plz', PLZOrtschaften)
 
 
-class geometaStandAV(Base, Vector):
+class GeometaStandAV(Base, Vector):
     __tablename__ = 'amogr_standav'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/standav.mako'
@@ -1635,10 +1635,10 @@ class geometaStandAV(Base, Vector):
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.swisstopo-vd.geometa-standav', geometaStandAV)
+register('ch.swisstopo-vd.geometa-standav', GeometaStandAV)
 
 
-class geometaPNF(Base, Vector):
+class GeometaPNF(Base, Vector):
     __tablename__ = 'amopnf_pnf'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/metadata_pnf.mako'
@@ -1650,10 +1650,10 @@ class geometaPNF(Base, Vector):
     year = Column('year', Integer)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.swisstopo-vd.geometa-periodische_nachfuehrung', geometaPNF)
+register('ch.swisstopo-vd.geometa-periodische_nachfuehrung', GeometaPNF)
 
 
-class geometaLos(Base, Vector):
+class GeometaLos(Base, Vector):
     __tablename__ = 'amogr_los'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/los.mako'
@@ -1675,12 +1675,12 @@ class geometaLos(Base, Vector):
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.swisstopo-vd.geometa-los', geometaLos)
+register('ch.swisstopo-vd.geometa-los', GeometaLos)
 
 # link sur le pdf ne fontionne pas...
 
 
-class geometaGemeinde(Base, Vector):
+class GeometaGemeinde(Base, Vector):
     __tablename__ = 'amogr_gemeinde'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/gemeinde.mako'
@@ -1699,10 +1699,10 @@ class geometaGemeinde(Base, Vector):
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.swisstopo-vd.geometa-gemeinde', geometaGemeinde)
+register('ch.swisstopo-vd.geometa-gemeinde', GeometaGemeinde)
 
 
-class geometaGrundbuch(Base, Vector):
+class GeometaGrundbuch(Base, Vector):
     __tablename__ = 'amogr_grundbuch'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/grundbuch.mako'
@@ -1723,10 +1723,10 @@ class geometaGrundbuch(Base, Vector):
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.swisstopo-vd.geometa-grundbuch', geometaGrundbuch)
+register('ch.swisstopo-vd.geometa-grundbuch', GeometaGrundbuch)
 
 
-class geometaNfgeom(Base, Vector):
+class GeometaNfGeom(Base, Vector):
     __tablename__ = 'amogr_nfgeom'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/nfgeom.mako'
@@ -1744,10 +1744,10 @@ class geometaNfgeom(Base, Vector):
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.swisstopo-vd.geometa-nfgeom', geometaNfgeom)
+register('ch.swisstopo-vd.geometa-nfgeom', GeometaNfGeom)
 
 
-class oerebkataster(Base, Vector):
+class Oerebkataster(Base, Vector):
     __tablename__ = 'view_oereb_nfgeom'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/oerebkataster.mako'
@@ -1772,10 +1772,10 @@ class oerebkataster(Base, Vector):
     url_oereb = Column('url_oereb', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo-vd.stand-oerebkataster', oerebkataster)
+register('ch.swisstopo-vd.stand-oerebkataster', Oerebkataster)
 
 
-class transformationBezugsrahmenHoehePunkte(Base, Vector):
+class TransformationBezugsrahmenHoehePunkte(Base, Vector):
     __tablename__ = 'bezugsrahmen_hoehe_pkt'
     __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
     __template__ = 'templates/htmlpopup/transformation_bezugsrahmen_hoehe.mako'
@@ -1790,7 +1790,7 @@ class transformationBezugsrahmenHoehePunkte(Base, Vector):
     the_geom = Column(Geometry2D)
 
 
-class transformationBezugsrahmenHoeheLine5cm(Base, Vector):
+class TransformationBezugsrahmenHoeheLine5cm(Base, Vector):
     __tablename__ = 'bezugsrahmen_hoehe_line_5cm'
     __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
     __template__ = 'templates/htmlpopup/transformation_bezugsrahmen_hoehe.mako'
@@ -1803,7 +1803,7 @@ class transformationBezugsrahmenHoeheLine5cm(Base, Vector):
     the_geom = Column(Geometry2D)
 
 
-class transformationBezugsrahmenHoeheLine10cm(Base, Vector):
+class TransformationBezugsrahmenHoeheLine10cm(Base, Vector):
     __tablename__ = 'bezugsrahmen_hoehe_line_10cm'
     __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
     __template__ = 'templates/htmlpopup/transformation_bezugsrahmen_hoehe.mako'
@@ -1815,9 +1815,9 @@ class transformationBezugsrahmenHoeheLine10cm(Base, Vector):
     layer = Column('layer', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.transformation-bezugsrahmen_hoehe', transformationBezugsrahmenHoehePunkte)
-register('ch.swisstopo.transformation-bezugsrahmen_hoehe', transformationBezugsrahmenHoeheLine5cm)
-register('ch.swisstopo.transformation-bezugsrahmen_hoehe', transformationBezugsrahmenHoeheLine10cm)
+register('ch.swisstopo.transformation-bezugsrahmen_hoehe', TransformationBezugsrahmenHoehePunkte)
+register('ch.swisstopo.transformation-bezugsrahmen_hoehe', TransformationBezugsrahmenHoeheLine5cm)
+register('ch.swisstopo.transformation-bezugsrahmen_hoehe', TransformationBezugsrahmenHoeheLine10cm)
 
 
 class HebungsratenLine(Base, Vector):
@@ -1851,7 +1851,7 @@ register('ch.swisstopo.hebungsraten', HebungsratenLine)
 register('ch.swisstopo.hebungsraten', HebungsratenPunkt)
 
 
-class spannungsarmeGebiete(Base, Vector):
+class SpannungsarmeGebiete(Base, Vector):
     __tablename__ = 'spannungsarme_gebiete'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/spannungsarme_gebiete.mako'
@@ -1862,16 +1862,16 @@ class spannungsarmeGebiete(Base, Vector):
     vali_date = Column('vali_date', DateTimeChsdi)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.transformationsgenauigkeit', spannungsarmeGebiete)
+register('ch.swisstopo.transformationsgenauigkeit', SpannungsarmeGebiete)
 
 
-class spannungsarmeGebieteVD(spannungsarmeGebiete):
+class SpannungsarmeGebieteVD(SpannungsarmeGebiete):
     __bodId__ = 'ch.swisstopo-vd.spannungsarme-gebiete'
 
-register('ch.swisstopo-vd.spannungsarme-gebiete', spannungsarmeGebieteVD)
+register('ch.swisstopo-vd.spannungsarme-gebiete', SpannungsarmeGebieteVD)
 
 
-class geologieGeotopePunkte(Base, Vector):
+class GeologieGeotopePunkte(Base, Vector):
     __tablename__ = 'geotope_pkt'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geotope.mako'
@@ -1884,7 +1884,7 @@ class geologieGeotopePunkte(Base, Vector):
     the_geom = Column(Geometry2D)
 
 
-class geologieGeotopeFlaechen(Base, Vector):
+class GeologieGeotopeFlaechen(Base, Vector):
     __tablename__ = 'geotope_plg'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geotope.mako'
@@ -1896,11 +1896,11 @@ class geologieGeotopeFlaechen(Base, Vector):
     nummer = Column('nummer', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotope', geologieGeotopePunkte)
-register('ch.swisstopo.geologie-geotope', geologieGeotopeFlaechen)
+register('ch.swisstopo.geologie-geotope', GeologieGeotopePunkte)
+register('ch.swisstopo.geologie-geotope', GeologieGeotopeFlaechen)
 
 
-class steine_hist_bauwerke(Base, Vector):
+class SteineHistBauwerke(Base, Vector):
     __tablename__ = 'geotechnik_steine_historische_bauwerke'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geol_steine_hist_bauwerke.mako'
@@ -1920,7 +1920,7 @@ class steine_hist_bauwerke(Base, Vector):
     bemerkung = Column('bemerkung', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke', steine_hist_bauwerke)
+register('ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke', SteineHistBauwerke)
 
 
 class GisGeolBase:
@@ -1946,67 +1946,67 @@ class GisGeolBase:
     the_geom = Column(Geometry2D)
 
 
-class gisgeol_punkte(Base, GisGeolBase, Vector):
+class GisgeolPunkte(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_points'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-punkte'
 
-register('ch.swisstopo.geologie-gisgeol-punkte', gisgeol_punkte)
+register('ch.swisstopo.geologie-gisgeol-punkte', GisgeolPunkte)
 
 
-class gisgeol_linien(Base, GisGeolBase, Vector):
+class GisgeolLinien(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_lines'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-linien'
 
-register('ch.swisstopo.geologie-gisgeol-linien', gisgeol_linien)
+register('ch.swisstopo.geologie-gisgeol-linien', GisgeolLinien)
 
 
-class gisgeol_flaechen_1x1km(Base, GisGeolBase, Vector):
+class GisgeolFlaechen1x1km(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_1x1km'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-1x1km'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-1x1km', gisgeol_flaechen_1x1km)
+register('ch.swisstopo.geologie-gisgeol-flaechen-1x1km', GisgeolFlaechen1x1km)
 
 
-class gisgeol_flaechen_10x10km(Base, GisGeolBase, Vector):
+class GisgeolFlaechen10x10km(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_10x10km'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-10x10km'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-10x10km', gisgeol_flaechen_10x10km)
+register('ch.swisstopo.geologie-gisgeol-flaechen-10x10km', GisgeolFlaechen10x10km)
 
 
-class gisgeol_flaechen_10to100km2(Base, GisGeolBase, Vector):
+class GisgeolFlaechen10to100km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_10to100km2'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-10to100km2'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-10to100km2', gisgeol_flaechen_10to100km2)
+register('ch.swisstopo.geologie-gisgeol-flaechen-10to100km2', GisgeolFlaechen10to100km2)
 
 
-class gisgeol_flaechen_100to1000km2(Base, GisGeolBase, Vector):
+class GisgeolFlaechen100to1000km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_100to1000km2'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2', gisgeol_flaechen_100to1000km2)
+register('ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2', GisgeolFlaechen100to1000km2)
 
 
-class gisgeol_flaechen_1000to21000km2(Base, GisGeolBase, Vector):
+class GisgeolFlaechen1000to21000km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_1000to21000km2'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2', gisgeol_flaechen_1000to21000km2)
+register('ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2', GisgeolFlaechen1000to21000km2)
 
 
-class gisgeol_flaechen_gt21000km2(Base, GisGeolBase, Vector):
+class GisgeolFlaechenGt21000km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_gt21000km2'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2', gisgeol_flaechen_gt21000km2)
+register('ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2', GisgeolFlaechenGt21000km2)
 
 
-class gisgeol_flaechen_lt10km2(Base, GisGeolBase, Vector):
+class GisgeolFlaechenLt10km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_lt10km2'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-lt10km2'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-lt10km2', gisgeol_flaechen_lt10km2)
+register('ch.swisstopo.geologie-gisgeol-flaechen-lt10km2', GisgeolFlaechenLt10km2)
 
 
 class Geocover:
@@ -2378,13 +2378,13 @@ register('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25)
 register_perimeter('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25Perimeter)
 
 
-class spotMosaicPerimeter(Base, ShopStandardClass, Vector):
+class SpotMosaicPerimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'view_gridstand_spot5_metadata'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.images-spot-5.metadata'
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.images-spot-5.metadata', spotMosaicPerimeter)
+register('ch.swisstopo.images-spot-5.metadata', SpotMosaicPerimeter)
 
 
 class SwissAlti3dMetadataPerimeter(Base, ShopStandardClass, Vector):

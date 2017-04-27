@@ -38,37 +38,37 @@ class LuftbilderBase:
     the_geom = Column(Geometry3D)
 
 
-class luftbilder_swisstopo_farbe(Base, LuftbilderBase, Vector):
+class LuftbilderSwisstopoFarbe(Base, LuftbilderBase, Vector):
     __tablename__ = 'luftbilder_swisstopo_color'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_farbe'
     __queryable_attributes__ = ['id', 'ort']
     image_height = Column('image_height', Integer)
     image_width = Column('image_width', Integer)
 
-register('ch.swisstopo.lubis-luftbilder_farbe', luftbilder_swisstopo_farbe)
+register('ch.swisstopo.lubis-luftbilder_farbe', LuftbilderSwisstopoFarbe)
 
 
-class luftbilder_swisstopo_ir(Base, LuftbilderBase, Vector):
+class LuftbilderSwisstopoIr(Base, LuftbilderBase, Vector):
     __tablename__ = 'luftbilder_swisstopo_ir'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_infrarot'
     __queryable_attributes__ = ['id', 'ort']
     image_height = Column('image_height', Integer)
     image_width = Column('image_width', Integer)
 
-register('ch.swisstopo.lubis-luftbilder_infrarot', luftbilder_swisstopo_ir)
+register('ch.swisstopo.lubis-luftbilder_infrarot', LuftbilderSwisstopoIr)
 
 
-class luftbilder_swisstopo_sw(Base, LuftbilderBase, Vector):
+class LuftbilderSwisstopoSw(Base, LuftbilderBase, Vector):
     __tablename__ = 'luftbilder_swisstopo_bw'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_schwarzweiss'
     __queryable_attributes__ = ['id', 'ort', 'filmart', 'bgdi_flugjahr']
     image_height = Column('image_height', Integer)
     image_width = Column('image_width', Integer)
 
-register('ch.swisstopo.lubis-luftbilder_schwarzweiss', luftbilder_swisstopo_sw)
+register('ch.swisstopo.lubis-luftbilder_schwarzweiss', LuftbilderSwisstopoSw)
 
 
-class luftbilder_dritte_firmen(Base, LuftbilderBase, Vector):
+class LuftbilderDritteFirmen(Base, LuftbilderBase, Vector):
     __tablename__ = 'luftbilder_dritte_firmen'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder-dritte-firmen'
     __queryable_attributes__ = ['id', 'ort', 'filmart', 'bgdi_flugjahr']
@@ -76,10 +76,10 @@ class luftbilder_dritte_firmen(Base, LuftbilderBase, Vector):
     contact_email = Column('contact_email', Text)
     contact_web = Column('contact_web', Text)
 
-register('ch.swisstopo.lubis-luftbilder-dritte-firmen', luftbilder_dritte_firmen)
+register('ch.swisstopo.lubis-luftbilder-dritte-firmen', LuftbilderDritteFirmen)
 
 
-class luftbilder_dritte_kantone(Base, LuftbilderBase, Vector):
+class LuftbilderDritteKantone(Base, LuftbilderBase, Vector):
     __tablename__ = 'luftbilder_dritte_kantone'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder-dritte-kantone'
     __queryable_attributes__ = ['id', 'ort', 'filmart', 'bgdi_flugjahr']
@@ -88,10 +88,10 @@ class luftbilder_dritte_kantone(Base, LuftbilderBase, Vector):
     contact_web = Column('contact_web', Text)
     contact_image_url = Column('url', Text)
 
-register('ch.swisstopo.lubis-luftbilder-dritte-kantone', luftbilder_dritte_kantone)
+register('ch.swisstopo.lubis-luftbilder-dritte-kantone', LuftbilderDritteKantone)
 
 
-class bildstreifen(Base, Vector):
+class Bildstreifen(Base, Vector):
     __tablename__ = 'view_bildstreifen'
     __table_args__ = ({'schema': 'ads40', 'autoload': False})
     __template__ = 'templates/htmlpopup/lubis_bildstreifen.mako'
@@ -122,7 +122,7 @@ class bildstreifen(Base, Vector):
     the_geom_footprint = Column('the_geom_footprint', Geometry3D)
     the_geom = Column(Geometry3D)
 
-register('ch.swisstopo.lubis-bildstreifen', bildstreifen)
+register('ch.swisstopo.lubis-bildstreifen', Bildstreifen)
 
 
 class LuftbilderSchraegaufnahmen(Base, Vector):

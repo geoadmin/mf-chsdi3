@@ -59,7 +59,7 @@ class SolarOverview:
     the_geom = Column(Geometry2D)
 
 
-class eignungDaecher (Base, SolarClass, Vector):
+class EignungDaecher(Base, SolarClass, Vector):
     __tablename__ = 'view_solarenergie_daecher_gs'
     __template__ = 'templates/htmlpopup/solareignungdaecher.mako'
     __bodId__ = 'ch.bfe.solarenergie-eignung-daecher'
@@ -68,19 +68,19 @@ class eignungDaecher (Base, SolarClass, Vector):
     df_nummer = Column('df_nummer', Integer)
     neigung = Column('neigung', Integer)
 
-register(eignungDaecher.__bodId__, eignungDaecher)
+register(EignungDaecher.__bodId__, EignungDaecher)
 
 
-class eignungDaecherOverview (Base, SolarOverview, Vector):
+class EignungDaecherOverview(Base, SolarOverview, Vector):
     __tablename__ = 'solarenergie_availability'
     __template__ = 'templates/htmlpopup/solareignungdaecher_av.mako'
-    __parentLayerId__ = eignungDaecher.__bodId__
+    __parentLayerId__ = EignungDaecher.__bodId__
     __bodId__ = 'ch.bfe.solarenergie-eignung-daecher'
 
-register(eignungDaecherOverview.__bodId__, eignungDaecherOverview)
+register(EignungDaecherOverview.__bodId__, EignungDaecherOverview)
 
 
-class eignungFassaden (Base, SolarClass, Vector):
+class EignungFassaden(Base, SolarClass, Vector):
     __tablename__ = 'view_solarenergie_fassaden_gs'
     __template__ = 'templates/htmlpopup/solareignungfassaden.mako'
     __bodId__ = 'ch.bfe.solarenergie-eignung-fassaden'
@@ -89,13 +89,13 @@ class eignungFassaden (Base, SolarClass, Vector):
     ff_nummer = Column('ff_nummer', Integer)
     gwr_egid = Column('gwr_egid', Integer)
 
-register(eignungFassaden.__bodId__, eignungFassaden)
+register(EignungFassaden.__bodId__, EignungFassaden)
 
 
-class eignungFassadenOverview (Base, SolarOverview, Vector):
+class EignungFassadenOverview(Base, SolarOverview, Vector):
     __tablename__ = 'solarenergie_fassaden_availability'
     __template__ = 'templates/htmlpopup/solareignungdaecher_av.mako'
-    __parentLayerId__ = eignungFassaden.__bodId__
+    __parentLayerId__ = EignungFassaden.__bodId__
     __bodId__ = 'ch.bfe.solarenergie-eignung-fassaden'
 
-register(eignungFassadenOverview.__bodId__, eignungFassadenOverview)
+register(EignungFassadenOverview.__bodId__, EignungFassadenOverview)
