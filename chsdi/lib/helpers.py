@@ -369,8 +369,8 @@ def int_with_apostrophe(x):
     return "%d%s" % (x, result)
 
 
-def get_loaderjs_url(request):
-    return make_agnostic(route_url('ga_api', request))
+def get_loaderjs_url(request, version='3.6.0'):
+    return make_agnostic(route_url('ga_api', request)) + '?version=' + version
 
 
 def decompress_gzipped_string(string):

@@ -159,5 +159,5 @@ viewer_url = get_viewer_url(request, params)
 </%def>
 
 <%def name="extended_resources(c, lang)">
-  <script type="text/javascript" src="${h.get_loaderjs_url(request)}"></script>
+  <script type="text/javascript" src="${h.get_loaderjs_url(request, '3.18.2')}"></script>
 </%def>

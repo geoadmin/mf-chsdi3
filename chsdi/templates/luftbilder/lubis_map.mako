@@ -10,7 +10,7 @@
         var resolutions = [1]; // 1 is the min resolution of the pyramid (for all images)
         var curResolution = resolutions[0];
         var maxResolution = Math.max(width, height) / TILE_SIZE;
-        
+
         while (curResolution < maxResolution) {
           curResolution *= 2;
           resolutions.unshift(curResolution);
