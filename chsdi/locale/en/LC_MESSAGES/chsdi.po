@@ -4374,7 +4374,7 @@ msgid "ch.bazl.luftraeume-nahkontrollbezirke.upli_value"
 msgstr "Upper limit [value]"
 
 msgid "ch.bazl.projektierungszonen-flughafenanlagen"
-msgstr "Reserved zones: airports"
+msgstr "Reserved zones airports"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
 msgstr "SAIP consultation"

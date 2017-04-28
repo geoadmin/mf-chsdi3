@@ -4113,7 +4113,7 @@ msgid "ch.bazl"
 msgstr "UFAC"
 
 msgid "ch.bazl.einschraenkungen-drohnen"
-msgstr "Einschränkungen für Drohnen"
+msgstr "Restricziuns per dronas"
 
 msgid "ch.bazl.einschraenkungen-drohnen.bew_li"
 msgstr "Weitere Informationen:"
@@ -4131,7 +4131,7 @@ msgid "ch.bazl.einschraenkungen-drohnen.restr"
 msgstr "Einschränkung"
 
 msgid "ch.bazl.flugplaetze-heliports"
-msgstr "Flugplätze + Heliports"
+msgstr "Plazzas aviaticas + heliports"
 
 msgid "ch.bazl.flugplaetze-heliports.arp_east"
 msgstr "Koordinate (Ost)"
@@ -4254,7 +4254,7 @@ msgid "ch.bazl.luftfahrtkarten-icao.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.bazl.luftraeume-fluginformationsgebiet"
-msgstr "Lufträume - FIR"
+msgstr "Spazis d'aria – FIR"
 
 msgid "ch.bazl.luftraeume-fluginformationsgebiet.designator"
 msgstr "Bezeichnung"
@@ -4278,7 +4278,7 @@ msgid "ch.bazl.luftraeume-fluginformationsgebiet.upli_value"
 msgstr "Obergrenze [Wert]"
 
 msgid "ch.bazl.luftraeume-fluginformationszonen"
-msgstr "Lufträume - FIZ"
+msgstr "Spazis d'aria - FIZ"
 
 msgid "ch.bazl.luftraeume-fluginformationszonen.designator"
 msgstr "Bezeichnung"
@@ -4302,7 +4302,7 @@ msgid "ch.bazl.luftraeume-fluginformationszonen.upli_value"
 msgstr "Obergrenze [Wert]"
 
 msgid "ch.bazl.luftraeume-kontrollbezirke"
-msgstr "Lufträume - CTA"
+msgstr "Spazis d'aria - CTA"
 
 msgid "ch.bazl.luftraeume-kontrollbezirke.designator"
 msgstr "Bezeichnung"
@@ -4326,7 +4326,7 @@ msgid "ch.bazl.luftraeume-kontrollbezirke.upli_value"
 msgstr "Obergrenze [Wert]"
 
 msgid "ch.bazl.luftraeume-kontrollzonen"
-msgstr "Lufträume - CTR"
+msgstr "Spazis d'aria - CTR"
 
 msgid "ch.bazl.luftraeume-kontrollzonen.designator"
 msgstr "Bezeichnung"
@@ -4350,7 +4350,7 @@ msgid "ch.bazl.luftraeume-kontrollzonen.upli_value"
 msgstr "Obergrenze [Wert]"
 
 msgid "ch.bazl.luftraeume-nahkontrollbezirke"
-msgstr "Lufträume - TMA"
+msgstr "Spazis d'aria - TMA"
 
 msgid "ch.bazl.luftraeume-nahkontrollbezirke.designator"
 msgstr "Bezeichnung"
@@ -4374,7 +4374,7 @@ msgid "ch.bazl.luftraeume-nahkontrollbezirke.upli_value"
 msgstr "Obergrenze [Wert]"
 
 msgid "ch.bazl.projektierungszonen-flughafenanlagen"
-msgstr "Zonas projectaziun: eroports"
+msgstr "Zonas projectaziun eroports"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
 msgstr "PSIA audiziun"
