@@ -106,7 +106,7 @@
   <tr>
     <td class="cell-meta">${_('ch.bfe.statistik-wasserkraftanlagen.performanceturbinemaximum')}</td>
     % if c['attributes']['performanceturbinemaximum'] != None:
-        <td class="cell-meta">${round(c['attributes']['performanceturbinemaximum'],2) or '-'}&nbsp;GWh</td>
+        <td class="cell-meta">${round(c['attributes']['performanceturbinemaximum'],2) or '-'}&nbsp;MW</td>
     % else:
         <td class="cell-meta">-</td>
     % endif
@@ -114,7 +114,7 @@
   <tr>
     <td class="cell-meta">${_('ch.bfe.statistik-wasserkraftanlagen.productionexpected')}</td>
     % if c['attributes']['productionexpected'] != None:
-        <td class="cell-meta">${round(c['attributes']['productionexpected'],2) or '-'}&nbsp;MW</td>
+        <td class="cell-meta">${round(c['attributes']['productionexpected'],2) or '-'}&nbsp;GWh</td>
     % else:
         <td class="cell-meta">-</td>
     % endif
