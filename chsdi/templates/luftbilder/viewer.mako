@@ -151,7 +151,7 @@
     <script type="text/javascript">
       function init() {
         ${lubis_map.init_map(c.get('bildnummer'), c.get('width'), c.get('height'), c.get('rotation'), 'lubismap')}
-       
+
         // FF/IE
         if ('onbeforeprint' in window) {
           var element = document.getElementById('lubismap');
@@ -169,7 +169,7 @@
         if (window.matchMedia) {
           window.matchMedia('print').addListener(function(mql) {
             if (mql.matches) {
-              lubisMap.updateSize(); 
+              lubisMap.updateSize();
             } else {
               window.setTimeout(function(){lubisMap.updateSize()}, 500);
             }

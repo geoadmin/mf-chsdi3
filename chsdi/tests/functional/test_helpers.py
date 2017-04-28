@@ -8,7 +8,7 @@ from chsdi.lib.helpers import (
     check_even, format_search_text, remove_accents, escape_sphinx_syntax,
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
     versioned, parse_box2d, center_from_box2d, format_scale,
-    parse_date_string, parse_date_datenstand, int_with_apostrophe
+    parse_date_string, parse_date_datenstand, int_with_apostrophe, get_loaderjs_url
 )
 from urlparse import urljoin
 
@@ -285,3 +285,14 @@ class Test_Helpers(unittest.TestCase):
         x2 = -5
         result2 = int_with_apostrophe(x2)
         self.assertEqual(result2, str(x2))
+
+    def test_get_loaderjs_url(self):
+        api_url = '//example.com'
+        config = testing.setUp()
+        config.add_route('ga_api', '/loader.js')
+        request = testing.DummyRequest()
+        url = get_loaderjs_url(request)
+        self.assertEqual(url, '%s/loader.js?version=3.6.0' % api_url)
+        url = get_loaderjs_url(request, version='3.18.2')
+        self.assertEqual(url, '%s/loader.js?version=3.18.2' % api_url)
+        testing.tearDown()
