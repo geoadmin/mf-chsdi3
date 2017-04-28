@@ -161,7 +161,7 @@ class KarstQuellenschwinden(Base, Vector):
 register('ch.bafu.karst-quellen_schwinden', KarstQuellenschwinden)
 
 
-class Vec25_gewaessernetz_2000(Base, Vector):
+class Vec25Gewaessernetz2000(Base, Vector):
     __tablename__ = 'gewaessernetz_2000'
     __table_args__ = ({'schema': 'vec25', 'autoload': False})
     __bodId__ = 'ch.bafu.vec25-gewaessernetz_2000'
@@ -175,7 +175,7 @@ class Vec25_gewaessernetz_2000(Base, Vector):
     gwlnr = Column('gwlnr', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.vec25-gewaessernetz_2000', Vec25_gewaessernetz_2000)
+register('ch.bafu.vec25-gewaessernetz_2000', Vec25Gewaessernetz2000)
 
 
 class Untersuchungsgebiete(Base, Vector):

@@ -10,7 +10,7 @@ from chsdi.models.vector import Vector, Geometry2D
 Base = bases['bak']
 
 
-class ISOS(Base, Vector):
+class Isos(Base, Vector):
     __tablename__ = 'isos'
     __table_args__ = ({'autoload': False})
     __template__ = 'templates/htmlpopup/isos.mako'
@@ -33,10 +33,10 @@ class ISOS(Base, Vector):
     pdfspecial = Column('pdfspecial', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', ISOS)
+register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', Isos)
 
 
-class UNESCO(Base, Vector):
+class Unesco(Base, Vector):
     __tablename__ = 'unesco'
     __table_args__ = ({'autoload': False})
     __template__ = 'templates/htmlpopup/unesco_bak.mako'
@@ -58,4 +58,4 @@ class UNESCO(Base, Vector):
     the_geom = Column(Geometry2D)
     the_geom_simplified_tolerance_3 = Column('the_geom_simplified_tolerance_3', Geometry2D)
 
-register('ch.bak.schutzgebiete-unesco_weltkulturerbe', UNESCO)
+register('ch.bak.schutzgebiete-unesco_weltkulturerbe', Unesco)

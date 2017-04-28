@@ -171,7 +171,7 @@ class SicherheitsZonenPlan (Base, Vector):
 register('ch.bazl.sicherheitszonenplan', SicherheitsZonenPlan)
 
 
-class IVS_NAT(Base, Vector):
+class IVSNat(Base, Vector):
     __tablename__ = 'ivs_nat'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/ivs_nat.mako'
@@ -192,11 +192,11 @@ class IVS_NAT(Base, Vector):
     ivs_sortsla = Column('ivs_sortsla', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.ivs-nat', IVS_NAT)
-register('ch.astra.ivs-nat-verlaeufe', IVS_NAT)
+register('ch.astra.ivs-nat', IVSNat)
+register('ch.astra.ivs-nat-verlaeufe', IVSNat)
 
 
-class IVS_REG_LOC(Base, Vector):
+class IVSRegLoc(Base, Vector):
     __tablename__ = 'ivs_reg_loc'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/ivs_nat.mako'
@@ -218,10 +218,10 @@ class IVS_REG_LOC(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.ivs-reg_loc', IVS_REG_LOC)
+register('ch.astra.ivs-reg_loc', IVSRegLoc)
 
 
-class AUSNAHMETRANSPORTROUTEN(Base, Vector):
+class Ausnahmetransportrouten(Base, Vector):
     __tablename__ = 'ausnahmetransportrouten'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/ausnahmetransportrouten.mako'
@@ -235,10 +235,10 @@ class AUSNAHMETRANSPORTROUTEN(Base, Vector):
     routentyp_id = Column('routentyp_id', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.ausnahmetransportrouten', AUSNAHMETRANSPORTROUTEN)
+register('ch.astra.ausnahmetransportrouten', Ausnahmetransportrouten)
 
 
-class ZAEHLSTELLENREGLOC(Base, Vector):
+class Zaehlstellenregloc(Base, Vector):
     __tablename__ = 'verkehr_reg_loc'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/verkehrszaehlstellen.mako'
@@ -268,10 +268,10 @@ class ZAEHLSTELLENREGLOC(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal', ZAEHLSTELLENREGLOC)
+register('ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal', Zaehlstellenregloc)
 
 
-class ZAEHLSTELLENUEBER(Base, Vector):
+class Zaehstellenueber(Base, Vector):
     __tablename__ = 'verkehr_ueber'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/verkehrszaehlstellen.mako'
@@ -301,7 +301,7 @@ class ZAEHLSTELLENUEBER(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet', ZAEHLSTELLENUEBER)
+register('ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet', Zaehstellenueber)
 
 
 class Unf:
@@ -431,7 +431,7 @@ class SchwerverunfKantonProEinwohner(Base, Schwerverunf, Vector):
 register('ch.astra.schwerverunfallte-kanton_pro_einwohner', SchwerverunfKantonProEinwohner)
 
 
-class KATASTERBELASTETERSTANDORTE(Base, Vector):
+class KatasterBelasteterStandorte(Base, Vector):
     __tablename__ = 'kataster_belasteter_standorte_oev'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/kataster_belasteter_standorte_oev.mako'
@@ -453,10 +453,10 @@ class KATASTERBELASTETERSTANDORTE(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.kataster-belasteter-standorte-oev', KATASTERBELASTETERSTANDORTE)
+register('ch.bav.kataster-belasteter-standorte-oev', KatasterBelasteterStandorte)
 
 
-class ABGELTUNGWASSERKRAFTNUTZUNG(Base, Vector):
+class AbgeltungWasserkraftnutzung(Base, Vector):
     __tablename__ = 'abgeltung_wasserkraftnutzung'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/abgeltungwasserkraftnutzung.mako'
@@ -471,10 +471,10 @@ class ABGELTUNGWASSERKRAFTNUTZUNG(Base, Vector):
     endprotectioncommitment = Column('endprotectioncommitment', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.abgeltung-wasserkraftnutzung', ABGELTUNGWASSERKRAFTNUTZUNG)
+register('ch.bfe.abgeltung-wasserkraftnutzung', AbgeltungWasserkraftnutzung)
 
 
-class ENERGIESTAEDTE(Base, Vector):
+class Energiestaedte(Base, Vector):
     __tablename__ = 'energiestaedte'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/energiestaedte.mako'
@@ -496,10 +496,10 @@ class ENERGIESTAEDTE(Base, Vector):
     linkenergiestadtweb = Column('linkenergiestadtweb', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.energiestaedte', ENERGIESTAEDTE)
+register('ch.bfe.energiestaedte', Energiestaedte)
 
 
-class ENERGIESTAEDTEREGIONEN(Base, Vector):
+class EnergiestaedteRegionen(Base, Vector):
     __tablename__ = 'energiestaedte_energieregionen'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/energiestaedte_energieregionen.mako'
@@ -516,10 +516,10 @@ class ENERGIESTAEDTEREGIONEN(Base, Vector):
     linkberater = Column('linkberater', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.energiestaedte-energieregionen', ENERGIESTAEDTEREGIONEN)
+register('ch.bfe.energiestaedte-energieregionen', EnergiestaedteRegionen)
 
 
-class ENERGIESTAEDTE2000WATTAREALE(Base, Vector):
+class Energiestaedte2000wattAreale(Base, Vector):
     __tablename__ = 'energiestaedte_2000watt_areale'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/energiestaedte_2000watt_areale.mako'
@@ -539,10 +539,10 @@ class ENERGIESTAEDTE2000WATTAREALE(Base, Vector):
     linkfaktenblatt_en = Column('linkfaktenblatt_en', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.energiestaedte-2000watt-areale', ENERGIESTAEDTE2000WATTAREALE)
+register('ch.bfe.energiestaedte-2000watt-areale', Energiestaedte2000wattAreale)
 
 
-class ENERGIESTAEDTE2000AUFDEMWEG(Base, Vector):
+class EnergiestaedteAufdemweg2000watt(Base, Vector):
     __tablename__ = 'energiestaedte_aufdemweg_2000watt'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/energiestaedte_2000watt_auf_dem_weg.mako'
@@ -558,10 +558,10 @@ class ENERGIESTAEDTE2000AUFDEMWEG(Base, Vector):
     linkfaktenblatt = Column('linkfaktenblatt', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.energiestaedte-2000watt-aufdemweg', ENERGIESTAEDTE2000AUFDEMWEG)
+register('ch.bfe.energiestaedte-2000watt-aufdemweg', EnergiestaedteAufdemweg2000watt)
 
 
-class ENERGIEFORSCHUNG(Base, Vector):
+class Energieforschung(Base, Vector):
     __tablename__ = 'energieforschung'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/energieforschung.mako'
@@ -601,7 +601,7 @@ class ENERGIEFORSCHUNG(Base, Vector):
     bild2 = Column('bild2', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.energieforschung', ENERGIEFORSCHUNG)
+register('ch.bfe.energieforschung', Energieforschung)
 
 
 class MinergieGebaeude(Base, Vector):
@@ -663,7 +663,7 @@ class StatistikwasserkraftanlagenNew(Base, Vector):
 register('ch.bfe.statistik-wasserkraftanlagen', StatistikwasserkraftanlagenNew)
 
 
-class STAUANLAGENBUNDESAUFSICHT(Base, Vector):
+class StauanlagenBundesaufsicht(Base, Vector):
     __tablename__ = 'stauanlagen_bundesaufsicht'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/stauanlagenbundesaufsicht.mako'
@@ -694,7 +694,7 @@ class STAUANLAGENBUNDESAUFSICHT(Base, Vector):
     facility_stabil_id = Column('facility_stabil_id', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.stauanlagen-bundesaufsicht', STAUANLAGENBUNDESAUFSICHT)
+register('ch.bfe.stauanlagen-bundesaufsicht', StauanlagenBundesaufsicht)
 
 
 class Kleinwasserkraftpotentiale(Base, Vector):
@@ -2087,7 +2087,7 @@ class BazlLaermErsteNachtstunde(Base, Vector):
 register('ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde', BazlLaermErsteNachtstunde)
 
 
-class bazl_laerm_helikopter_maximalpegel (Base, Vector):
+class BazlLaermHelikopterMaximalpegel(Base, Vector):
     __tablename__ = 'laermbelastungskataster_zivilflugplaetze_helikopter_maxpegel'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/bazl_laerm.mako'
@@ -2102,10 +2102,10 @@ class bazl_laerm_helikopter_maximalpegel (Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel', bazl_laerm_helikopter_maximalpegel)
+register('ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel', BazlLaermHelikopterMaximalpegel)
 
 
-class bazl_laerm_helikopter (Base, Vector):
+class BazlLaermHelikopter(Base, Vector):
     __tablename__ = 'laermbelastungskataster_zivilflugplaetze_helikopter'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/bazl_laerm.mako'
@@ -2120,10 +2120,10 @@ class bazl_laerm_helikopter (Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter', bazl_laerm_helikopter)
+register('ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter', BazlLaermHelikopter)
 
 
-class bazl_laerm_klein_grossflugzeuge (Base, Vector):
+class BazlLaermKleinGrossflugzeuge(Base, Vector):
     __tablename__ = 'laermbelastungskataster_zivilflugplaetze_klein_grossflugzeuge'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/bazl_laerm.mako'
@@ -2138,10 +2138,10 @@ class bazl_laerm_klein_grossflugzeuge (Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge', bazl_laerm_klein_grossflugzeuge)
+register('ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge', BazlLaermKleinGrossflugzeuge)
 
 
-class bazl_laerm_kleinluftfahrzeuge (Base, Vector):
+class BazlLaermKleinluftfahrzeuge(Base, Vector):
     __tablename__ = 'laermbelastungskataster_zivilflugplaetze_kleinluftfahrzeuge'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/bazl_laerm.mako'
@@ -2156,10 +2156,10 @@ class bazl_laerm_kleinluftfahrzeuge (Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge', bazl_laerm_kleinluftfahrzeuge)
+register('ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge', BazlLaermKleinluftfahrzeuge)
 
 
-class bazl_laerm_letzte_nachtstunde (Base, Vector):
+class BazlLaermLetzteNachtstunde(Base, Vector):
     __tablename__ = 'laermbelastungskataster_zivilflugplaetze_letzte_nachtstunde'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/bazl_laerm.mako'
@@ -2174,10 +2174,10 @@ class bazl_laerm_letzte_nachtstunde (Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde', bazl_laerm_letzte_nachtstunde)
+register('ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde', BazlLaermLetzteNachtstunde)
 
 
-class bazl_laerm_militaer_gesamt (Base, Vector):
+class BazlLaermMilitaerGesamt(Base, Vector):
     __tablename__ = 'laermbelastungskataster_zivilflugplaetze_militaer_gesamt'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/bazl_laerm.mako'
@@ -2192,10 +2192,10 @@ class bazl_laerm_militaer_gesamt (Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt', bazl_laerm_militaer_gesamt)
+register('ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt', BazlLaermMilitaerGesamt)
 
 
-class bazl_laerm_zweite_nachtstunde (Base, Vector):
+class BazlLaermZweiteNachtstunde(Base, Vector):
     __tablename__ = 'laermbelastungskataster_zivilflugplaetze_zweite_nachtstunde'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/bazl_laerm.mako'
@@ -2210,7 +2210,7 @@ class bazl_laerm_zweite_nachtstunde (Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde', bazl_laerm_zweite_nachtstunde)
+register('ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde', BazlLaermZweiteNachtstunde)
 
 
 class SuelFacAnhorung(Base, Vector):

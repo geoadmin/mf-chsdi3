@@ -9,7 +9,7 @@ from chsdi.models.vector import Vector, Geometry2D
 Base = bases['dritte']
 
 
-class Maechtigkeit_lockergesteine(Base, Vector):
+class MaechtigkeitLockergesteine(Base, Vector):
     __tablename__ = 'maechtigkeit_lockergesteine'
     __table_args__ = ({'schema': 'sgpk', 'autoload': False})
     __template__ = 'templates/htmlpopup/maechtigkeit_lockergesteine.mako'
@@ -19,10 +19,10 @@ class Maechtigkeit_lockergesteine(Base, Vector):
     maechtigkeit = Column('maechtigkeit', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.sgpk.maechtigkeit-lockergesteine', Maechtigkeit_lockergesteine)
+register('ch.sgpk.maechtigkeit-lockergesteine', MaechtigkeitLockergesteine)
 
 
-class FEUERSTELLEN(Base, Vector):
+class Feuerstellen(Base, Vector):
     __tablename__ = 'feuerstellen'
     __table_args__ = ({'schema': 'tamedia', 'autoload': False})
     __template__ = 'templates/htmlpopup/swissmap_online_feuerstellen.mako'
@@ -37,7 +37,7 @@ class FEUERSTELLEN(Base, Vector):
     koordinate_lv03 = Column('koordinate_lv03', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.tamedia.schweizerfamilie-feuerstellen', FEUERSTELLEN)
+register('ch.tamedia.schweizerfamilie-feuerstellen', Feuerstellen)
 
 
 class MobilityStandorte:
@@ -74,7 +74,7 @@ class MobilityStandorteZoom2(Base, MobilityStandorte, Vector):
 register(MobilityStandorte.__bodId__, MobilityStandorteZoom2)
 
 
-class NOTFALLSCHUTZ(Base, Vector):
+class Notfallschutz(Base, Vector):
     __tablename__ = 'zonenplan_kernanlagen'
     __table_args__ = ({'schema': 'ensi', 'autoload': False})
     __template__ = 'templates/htmlpopup/zonenplan_kernanlagen.mako'
@@ -86,7 +86,7 @@ class NOTFALLSCHUTZ(Base, Vector):
     sektor = Column('sektor', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.ensi.zonenplan-notfallschutz-kernanlagen', NOTFALLSCHUTZ)
+register('ch.ensi.zonenplan-notfallschutz-kernanlagen', Notfallschutz)
 
 
 class PronaturaWaldreservate(Base, Vector):
@@ -108,7 +108,7 @@ class PronaturaWaldreservate(Base, Vector):
 register(PronaturaWaldreservate.__bodId__, PronaturaWaldreservate)
 
 
-class PRONATURA_Naturschutzgebiete(Base, Vector):
+class PronaturaNaturschutzgebiete(Base, Vector):
     __tablename__ = 'naturschutzgebiete'
     __table_args__ = ({'schema': 'pronatura', 'autoload': False})
     __template__ = 'templates/htmlpopup/pronatura_schutzge.mako'
@@ -119,10 +119,10 @@ class PRONATURA_Naturschutzgebiete(Base, Vector):
     name = Column('name', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.pronatura.naturschutzgebiete', PRONATURA_Naturschutzgebiete)
+register('ch.pronatura.naturschutzgebiete', PronaturaNaturschutzgebiete)
 
 
-class Aeromagnetische_karte_1500(Base, Vector):
+class AeromagnetischeKarte1500(Base, Vector):
     __tablename__ = 'am_1500'
     __table_args__ = ({'schema': 'nagra', 'autoload': False})
     __template__ = 'templates/htmlpopup/aeromagnetische_karte.mako'
@@ -132,10 +132,10 @@ class Aeromagnetische_karte_1500(Base, Vector):
     et_fromatt_1500 = Column('et_fromatt_1500', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.nagra.aeromagnetische-karte_1500', Aeromagnetische_karte_1500)
+register('ch.nagra.aeromagnetische-karte_1500', AeromagnetischeKarte1500)
 
 
-class Aeromagnetische_karte_1100(Base, Vector):
+class AeromagnetischeKarte1100(Base, Vector):
     __tablename__ = 'am_1100'
     __table_args__ = ({'schema': 'nagra', 'autoload': False})
     __template__ = 'templates/htmlpopup/aeromagnetische_karte.mako'
@@ -146,4 +146,4 @@ class Aeromagnetische_karte_1100(Base, Vector):
     the_geom = Column(Geometry2D)
 
 
-register('ch.nagra.aeromagnetische-karte_1100', Aeromagnetische_karte_1100)
+register('ch.nagra.aeromagnetische-karte_1100', AeromagnetischeKarte1100)

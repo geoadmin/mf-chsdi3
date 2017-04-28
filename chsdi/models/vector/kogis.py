@@ -40,7 +40,7 @@ class Gebaeuderegister(Base, Vector):
 register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)
 
 
-class AGNES(Base, Vector):
+class Agnes(Base, Vector):
     __tablename__ = 'agnes'
     __table_args__ = ({'schema': 'fpds', 'autoload': False})
     __template__ = 'templates/htmlpopup/agnes.mako'
@@ -51,10 +51,10 @@ class AGNES(Base, Vector):
     bgdi_id = Column('bgdi_id', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.fixpunkte-agnes', AGNES)
+register('ch.swisstopo.fixpunkte-agnes', Agnes)
 
 
-class FIXPUNKTE_LFP1(Base, Vector):
+class FixpunkteLfp1(Base, Vector):
     __tablename__ = 'punkt_lage_lfp1'
     __table_args__ = ({'schema': 'fpds', 'autoload': False})
     __template__ = 'templates/htmlpopup/fixpunkte.mako'
@@ -76,10 +76,10 @@ class FIXPUNKTE_LFP1(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.fixpunkte-lfp1', FIXPUNKTE_LFP1)
+register('ch.swisstopo.fixpunkte-lfp1', FixpunkteLfp1)
 
 
-class FIXPUNKTE_LFP2(Base, Vector):
+class FixpunkteLfp2(Base, Vector):
     __tablename__ = 'punkt_lage_lfp2'
     __table_args__ = ({'schema': 'fpds', 'autoload': False})
     __template__ = 'templates/htmlpopup/fixpunkte.mako'
@@ -101,10 +101,10 @@ class FIXPUNKTE_LFP2(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.fixpunkte-lfp2', FIXPUNKTE_LFP2)
+register('ch.swisstopo.fixpunkte-lfp2', FixpunkteLfp2)
 
 
-class FIXPUNKTE_HFP1(Base, Vector):
+class FixpunkteHfp1(Base, Vector):
     __tablename__ = 'punkt_hoehe_hfp1'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
     __template__ = 'templates/htmlpopup/fixpunkte.mako'
@@ -127,10 +127,10 @@ class FIXPUNKTE_HFP1(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.fixpunkte-hfp1', FIXPUNKTE_HFP1)
+register('ch.swisstopo.fixpunkte-hfp1', FixpunkteHfp1)
 
 
-class FIXPUNKTE_HFP2(Base, Vector):
+class FixpunkteHfp2(Base, Vector):
     __tablename__ = 'punkt_hoehe_hfp2'
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
     __template__ = 'templates/htmlpopup/fixpunkte.mako'
@@ -152,7 +152,7 @@ class FIXPUNKTE_HFP2(Base, Vector):
     bgdi_created = Column('bgdi_created', Text)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.fixpunkte-hfp2', FIXPUNKTE_HFP2)
+register('ch.swisstopo.fixpunkte-hfp2', FixpunkteHfp2)
 
 
 # This address model is just used in the sitemap service
