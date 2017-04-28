@@ -2,11 +2,12 @@
 
 import re
 from urlparse import urlparse
-from httplib2 import Http
+import requests
+from requests.exceptions import Timeout, ConnectionError
 
 from pyramid.view import view_config
 
-from pyramid.httpexceptions import HTTPBadRequest, HTTPBadGateway, HTTPNotAcceptable
+from pyramid.httpexceptions import HTTPBadRequest, HTTPBadGateway, HTTPNotAcceptable, HTTPRequestTimeout
 from pyramid.response import Response
 
 from StringIO import StringIO
@@ -19,6 +20,7 @@ allowed_hosts = (
 )
 
 DEFAULT_ENCODING = 'utf-8'
+DEFAULT_REQUEST_TIMEOUT = 30
 
 
 class OgcProxy:
@@ -26,7 +28,7 @@ class OgcProxy:
     def __init__(self, request):
         self.request = request
 
-    @view_config(route_name='ogcproxy')
+    @view_config(route_name='ogcproxy', request_method=['GET', 'POST'])
     def ogcproxy(self):
 
         url = self.request.params.get("url")
@@ -39,20 +41,37 @@ class OgcProxy:
             raise HTTPBadRequest()
 
         # forward request to target (without Host Header)
-        http = Http(disable_ssl_certificate_validation=True)
         h = dict(self.request.headers)
         h.pop("Host", h)
         try:
-            resp, content = http.request(url, method=self.request.method,
-                                         body=self.request.body, headers=h)
+            if self.request.method.upper() == 'GET':
+                resp = requests.get(url,
+                             stream=False,
+                             timeout=DEFAULT_REQUEST_TIMEOUT,
+                             params=self.request.params,
+                             headers=h,
+                             verify=False)
+            else:
+                resp = requests.post(url,
+                             stream=False,
+                             timeout=DEFAULT_REQUEST_TIMEOUT,
+                             params=self.request.params,
+                             headers=h,
+                             verify=False)
+        except Timeout:
+            raise HTTPRequestTimeout('Proxied request %s timed out after %s seconds.' % (url, DEFAULT_REQUEST_TIMEOUT))
+        except ConnectionError:
+            HTTPBadGateway('Bad Gateway for url %s' % url)
         except:  # pragma: no cover
             raise HTTPBadGateway()
 
         #  All content types are allowed
-        if "content-type" in resp:
-            ct = resp["content-type"]
+        headers = dict(resp.headers)
+        ct = headers.get('content-type')
+        if ct is not None:
+            content = resp.content if hasattr(resp, 'content') else None
             if ct == "application/vnd.google-earth.kmz" or \
-                    (ct == "application/octet-stream" and resp["content-location"].endswith(".kmz")):
+                    (ct == "application/octet-stream" and headers.get("Content-Location").endswith(".kmz")):
                 zipfile = None
                 try:
                     zipurl = urlopen(url)
@@ -80,7 +99,7 @@ class OgcProxy:
                 content = data.encode(DEFAULT_ENCODING)
                 content = content.replace(doc_encoding, DEFAULT_ENCODING)
 
-        response = Response(content, status=resp.status,
+        response = Response(content, status=str(resp.status_code),
                             headers={"Content-Type": ct})
 
         return response
