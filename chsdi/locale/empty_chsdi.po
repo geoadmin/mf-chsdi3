@@ -322,6 +322,51 @@ msgstr ""
 msgid "ch.swisstopo.digitales-hoehenmodell_25.metadata"
 msgstr ""
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_0"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_145"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1000"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1001"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1002"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_145"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.kontname"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.konttel"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.name"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.refverhalten"
+msgstr ""
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.refverhalten_code_1"
+msgstr ""
+
 msgid "ch.bafu.karst-quellen_schwinden"
 msgstr ""
 
