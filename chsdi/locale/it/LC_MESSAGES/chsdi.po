@@ -4898,6 +4898,36 @@ msgstr "https://www.ensi.ch/it/?noredirect=it_IT"
 msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Piani delle zone d'urgenza"
 
+msgid "ch.ezv.lohnbrennereien"
+msgstr "Distillerie per conto di terzi"
+
+msgid "ch.ezv.lohnbrennereien.adresse"
+msgstr "Indirizzo"
+
+msgid "ch.ezv.lohnbrennereien.bemerkung"
+msgstr "Nota"
+
+msgid "ch.ezv.lohnbrennereien.email"
+msgstr "e-Mail"
+
+msgid "ch.ezv.lohnbrennereien.homepage"
+msgstr "Homepage"
+
+msgid "ch.ezv.lohnbrennereien.kanton"
+msgstr "Cantone"
+
+msgid "ch.ezv.lohnbrennereien.mobile"
+msgstr "Mobile"
+
+msgid "ch.ezv.lohnbrennereien.name"
+msgstr "Nome"
+
+msgid "ch.ezv.lohnbrennereien.ort"
+msgstr "Ubicazione della distelleria"
+
+msgid "ch.ezv.lohnbrennereien.telefon"
+msgstr "Telefono"
+
 msgid "ch.kanton.av"
 msgstr "Misurazione ufficiale svizzera / FL"
 

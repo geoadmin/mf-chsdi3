@@ -4898,6 +4898,36 @@ msgstr "https://www.ensi.ch/en/?noredirect=en_US"
 msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Plans for Emergency protection"
 
+msgid "ch.ezv.lohnbrennereien"
+msgstr "Lohnbrennereien"
+
+msgid "ch.ezv.lohnbrennereien.adresse"
+msgstr "Address"
+
+msgid "ch.ezv.lohnbrennereien.bemerkung"
+msgstr "Note"
+
+msgid "ch.ezv.lohnbrennereien.email"
+msgstr "e-Mail"
+
+msgid "ch.ezv.lohnbrennereien.homepage"
+msgstr "Homepage"
+
+msgid "ch.ezv.lohnbrennereien.kanton"
+msgstr "Canton"
+
+msgid "ch.ezv.lohnbrennereien.mobile"
+msgstr "Mobile"
+
+msgid "ch.ezv.lohnbrennereien.name"
+msgstr "Name"
+
+msgid "ch.ezv.lohnbrennereien.ort"
+msgstr "Distillery location"
+
+msgid "ch.ezv.lohnbrennereien.telefon"
+msgstr "Telephone"
+
 msgid "ch.kanton.av"
 msgstr "Cadastral Surveying Switzerland / FL"
 

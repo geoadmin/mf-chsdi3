@@ -24,6 +24,7 @@ sqlalchemy.bak.url = postgresql://${dbhost}:${dbport}/bak_${dbstaging}
 sqlalchemy.bod.url = postgresql://${dbhost}:${dbport}/bod_${dbstaging}
 sqlalchemy.dritte.url = postgresql://${dbhost}:${dbport}/dritte_${dbstaging}
 sqlalchemy.edi.url = postgresql://${dbhost}:${dbport}/edi_${dbstaging}
+sqlalchemy.efd.url = postgresql://${dbhost}:${dbport}/efd_${dbstaging}
 sqlalchemy.evd.url = postgresql://${dbhost}:${dbport}/evd_${dbstaging}
 sqlalchemy.kogis.url = postgresql://${dbhost}:${dbport}/kogis_${dbstaging}
 sqlalchemy.stopo.url = postgresql://${dbhost}:${dbport}/stopo_${dbstaging}

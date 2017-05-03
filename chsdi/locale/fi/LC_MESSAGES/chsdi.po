@@ -4898,6 +4898,36 @@ msgstr "https://www.ensi.ch/de/"
 msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Plans da las zonas d'urgenza"
 
+msgid "ch.ezv.lohnbrennereien"
+msgstr "Lohnbrennereien"
+
+msgid "ch.ezv.lohnbrennereien.adresse"
+msgstr "Adresse"
+
+msgid "ch.ezv.lohnbrennereien.bemerkung"
+msgstr "Bemerkung"
+
+msgid "ch.ezv.lohnbrennereien.email"
+msgstr "e-Mail"
+
+msgid "ch.ezv.lohnbrennereien.homepage"
+msgstr "Homepage"
+
+msgid "ch.ezv.lohnbrennereien.kanton"
+msgstr "Kanton"
+
+msgid "ch.ezv.lohnbrennereien.mobile"
+msgstr "Mobile"
+
+msgid "ch.ezv.lohnbrennereien.name"
+msgstr "Name"
+
+msgid "ch.ezv.lohnbrennereien.ort"
+msgstr "Ort der Brennerei"
+
+msgid "ch.ezv.lohnbrennereien.telefon"
+msgstr "Telefon"
+
 msgid "ch.kanton.av"
 msgstr "Mesiraziun uffiziala svizra / FL"
 

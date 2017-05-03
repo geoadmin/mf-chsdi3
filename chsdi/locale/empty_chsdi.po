@@ -463,6 +463,36 @@ msgstr ""
 msgid "ch.bfe.meteorologische-vereisung.hoehe"
 msgstr ""
 
+msgid "ch.ezv.lohnbrennereien"
+msgstr ""
+
+msgid "ch.ezv.lohnbrennereien.adresse"
+msgstr ""
+
+msgid "ch.ezv.lohnbrennereien.bemerkung"
+msgstr ""
+
+msgid "ch.ezv.lohnbrennereien.email"
+msgstr ""
+
+msgid "ch.ezv.lohnbrennereien.homepage"
+msgstr ""
+
+msgid "ch.ezv.lohnbrennereien.kanton"
+msgstr ""
+
+msgid "ch.ezv.lohnbrennereien.mobile"
+msgstr ""
+
+msgid "ch.ezv.lohnbrennereien.name"
+msgstr ""
+
+msgid "ch.ezv.lohnbrennereien.ort"
+msgstr ""
+
+msgid "ch.ezv.lohnbrennereien.telefon"
+msgstr ""
+
 msgid "ch.bfe.meteorologische-vereisung.vereisung"
 msgstr ""
 
