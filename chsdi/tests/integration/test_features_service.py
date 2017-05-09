@@ -210,6 +210,14 @@ class TestFeaturesView(TestsBase):
         for msgid in msgids:
             self.assertIn(msgid, resp.text)
 
+    def test_htmlpopup_scale_dependent(self):
+        params = {'mapExtent': '625622.5,210705,629147.5,212922.5', 'imageDisplay': '1410,887,96', 'lang': 'fr'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfe.windenergieanlagen/turbine_21/htmlPopup', params=params, status=200)
+        resp.mustcontain('Puissance')
+        params = {'mapExtent': '588187.5,183652.5,658687.5,228002.5', 'imageDisplay': '1410,887,96', 'lang': 'fr'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfe.windenergieanlagen/facility_SCH/htmlPopup', params=params, status=200)
+        resp.mustcontain('Type')
+
     def test_htmlpopup_cadastralwebmap(self):
         params = {'mapExtent': '485412.34375,109644.67,512974.44,135580.01999999999', 'imageDisplay': '600,400,96'}
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/21648723/htmlPopup', params=params, status=200)
