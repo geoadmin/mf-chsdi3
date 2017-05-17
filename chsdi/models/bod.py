@@ -128,7 +128,8 @@ class LayersConfig(Base):
             config['styleUrl'] = make_agnostic(
                 api_url + '/static/vectorStyles/' + self.layerBodId + '.json')
             config['geojsonUrl'] = self._getGeoJsonUrl(params.lang)
-            del config['format']
+            if 'format' in config:
+                del config['format']
         # sublayers don't have attributions
         if 'attribution' in config:
             config['attributionUrl'] = translate(self.__dict__['attribution'] + '.url')

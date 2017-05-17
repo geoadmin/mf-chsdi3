@@ -7,12 +7,12 @@
       "value": "1",
       "vectorOptions": {
         "type": "circle",
-        "radius": 8,
+        "radius": 9,
         "fill": {
-          "color": "#747778"
+          "color": "rgb(255, 0, 0)"
         },
         "stroke": {
-          "color": "#FFFFFF",
+          "color": "rgb(255, 255, 255)",
           "width": 1
         }
       }
@@ -21,12 +21,12 @@
       "value": "2",
       "vectorOptions": {
         "type": "circle",
-        "radius": 8,
+        "radius": 9,
         "fill": {
-          "color": "#58AD28"
+          "color": "rgb(255, 170, 0)"
         },
         "stroke": {
-          "color": "#FFFFFF",
+          "color": "rgb(255, 255, 255)",
           "width": 1
         }
       }
@@ -35,12 +35,12 @@
       "value": "3",
       "vectorOptions": {
         "type": "circle",
-        "radius": 8,
+        "radius": 9,
         "fill": {
-          "color": "#3A741A"
+          "color": "rgb(85, 255, 0)"
         },
         "stroke": {
-          "color": "#FFFFFF",
+          "color": "rgb(255, 255, 255)",
           "width": 1
         }
       }
@@ -49,12 +49,12 @@
       "value": "4",
       "vectorOptions": {
         "type": "circle",
-        "radius": 8,
+        "radius": 9,
         "fill": {
-          "color": "#EE9F12"
+          "color": "rgb(156, 156, 156)"
         },
         "stroke": {
-          "color": "#FFFFFF",
+          "color": "rgb(255, 255, 255)",
           "width": 1
         }
       }
