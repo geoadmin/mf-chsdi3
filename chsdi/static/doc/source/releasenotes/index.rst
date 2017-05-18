@@ -14,6 +14,28 @@ Release Notes
 
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20170524:
+   *******
+
+Release 20170524 - Wednesday, May 24th 2017
+---------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+Geodata
+*******
++--------+--------------------------------------------------------------------------------------------------------+
+| Update | `Pollutant releases (SwissPRTR) <//map.geo.admin.ch/?layers=ch.bafu.swissprtr>`__ (ch.bafu.swissprtr)  |
++--------+--------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20170426:
    *******
 
