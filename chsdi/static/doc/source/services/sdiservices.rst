@@ -522,9 +522,11 @@ Only RESTFul interface is available.
 | **type (required)**                 | The type of performed search. Specify `locations` to perform a location search.           |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **bbox (required/optional)**        | Must be provided if the `searchText` is not. A comma separated list of 4 coordinates      |
-|                                     | representing the bounding box on which features should be filtered (SRID: 21781). If      |
-|                                     | this parameter is defined, the ranking of the results is performed according to the       |
-|                                     | distance between the locations and the center of the bounding box.                        |
+|                                     | representing the bounding box on which features should be filtered (SRID: 21781).         |
++-------------------------------------+-------------------------------------------------------------------------------------------+
+| **sortbbox (optional)**             | When `bbox` is specified and this parameter is "true", then the ranking of the results is |
+|                                     | performed according to the distance between the locations and the center of the bounding  |
+|                                     | box. Default to "true".                                                                   |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **returnGeometry (optional)**       | This parameter defines whether the geometry is returned or not. Default to "true".        |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
@@ -564,6 +566,10 @@ Only RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **bbox (optional)**               | A comma separated list of 4 coordinates representing the bounding box according to which  |
 |                                   | features should be ordered (SRID: 21781).                                                 |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **sortbbox (optional)**           | When `bbox` is specified and this parameter is "true", then the ranking of the results is |
+|                                   | performed according to the distance between the locations and the center of the bounding  |
+|                                   | box. Default to "true".                                                                   |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **features (required)**           | A comma separated list of technical layer names.                                          |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
