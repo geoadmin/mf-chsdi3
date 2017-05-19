@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-<%inherit file="base.mako"/> 
+<%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
 
@@ -17,9 +17,9 @@
   <td>${int(c['attributes']['einwohner']) or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${_('energiestadtseit')}</td> 
+  <td class="cell-left">${_('energiestadtseit')}</td>
   <td>${h.parse_date_string(c['attributes']['energiestadtseit'])}</td>
-</tr> 
+</tr>
 </%def>
 <%def name="extended_info(c, lang)">
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
@@ -122,7 +122,7 @@ Le label «Cité de l’énergie» atteste les performances des communes qui pra
       ${_('link')}
     </th>
     <td class="cell-meta">
-      <a target="_blank" href="http://www.citedelenergie.ch/fr/">Cités de l'énergie</a>
+      <a target="_blank" href="https://www.citedelenergie.ch/fr/">Cités de l'énergie</a>
     </td>
   % elif lang=='it' :
     <td class="cell-meta" colspan="2"><p align="justify">
@@ -133,7 +133,7 @@ Il label «Città dell’energia» è un riconoscimento per i Comuni che adottan
       ${_('link')}
     </th>
     <td class="cell-meta">
-      <a target="_blank" href="http://www.citedelenergie.ch/it/">Città dell’energia</a>
+      <a target="_blank" href="https://www.citedelenergie.ch/it/">Città dell’energia</a>
     </td>
   % elif lang=='en' :
     <td class="cell-meta" colspan="2"><p align="justify">
@@ -144,10 +144,10 @@ The Energy City label is an instrument that is applied to certify municipalities
       ${_('link')}
     </th>
     <td class="cell-meta">
-      <a target="_blank" href="http://www.energiestadt.ch/de/">Energy cities</a>
+      <a target="_blank" href="https://www.energiestadt.ch/de/">Energy cities</a>
     </td>
   % else :
-    <td class="cell-meta" colspan="2"><p align="justify"> 
+    <td class="cell-meta" colspan="2"><p align="justify">
 Das Label Energiestadt ist ein Leistungsausweis für Gemeinden, die eine nachhaltige kommunale Energiepolitik vorleben und umsetzen. Energiestädte fördern erneuerbare Energien, umweltverträgliche Mobilität und setzen auf eine effiziente Nutzung der Ressourcen. Um das Label Energiestadt zu erreichen, muss eine Gemeinde mindestens 50% ihres energiepolitischen Handlungsspielraums, ermittelt anhand des Energiestadt-Katalogs, realisiert oder beschlossen haben. Die höchste Auszeichnung ist der «European Energy Award®GOLD». Diese Ehrung erhalten Energiestädte, die 75 Prozent oder mehr der Massnahmen des beim Zertifizierungsverfahren erstellten Katalogs umgesetzt haben. Mit dem GOLD-Award krönen Energiestädte ihr Engagement für eine nachhaltige Energiezukunft. Das Label beruht auf der Beurteilung der kommunalen Energiepolitik in Entwicklungsplanung und Raumordnung, kommunaler Gebäude und Anlagen, der Versorgung und Entsorgung, der Mobilität, der internen Organisation sowie von Kommunikation und Kooperation.
     </p></td>
     </tr>
@@ -155,10 +155,10 @@ Das Label Energiestadt ist ein Leistungsausweis für Gemeinden, die eine nachhal
       ${_('link')}
     </th>
     <td class="cell-meta">
-      <a target="_blank" href="http://www.energiestadt.ch/de/">Energiestädte</a>
+      <a target="_blank" href="https://www.energiestadt.ch/de/">Energiestädte</a>
     </td>
 %endif
   </tr>
-<tr><img class="image" src="/ogcproxy?url=http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.energiestaedte/${c['attributes']['bfsnr']}.png" alt=""/></tr>
+<tr><img class="image" src="https://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.energiestaedte/${c['attributes']['bfsnr']}.png" alt=""/></tr>
 </table>
 </%def>

@@ -34,7 +34,7 @@
           <a href="sitemap?content=addresses_33">Sample address index</a> <br>
       <h2 id="checkers">Checkers</h2>
           <a href="checker">Checker for home page</a> <br>
-          <a href="checker_dev">Checker for dev page</a> <br> 
+          <a href="checker_dev">Checker for dev page</a> <br>
       <h2 id="qrcode">QRCode service</h2>
           <a href="qrcodegenerator?url=https://s.geo.admin.ch/e83c57af1">QRCode service</a> <br>
       <h2 id="shorten">Shorten url</h2>
@@ -45,7 +45,7 @@
           <a href="rest/services/ech/GeometryServer/cut?geometryType=esriGeometryEnvelope&geometry=545000,145000,555000,170005&layers=all:ch.swisstopo.pixelkarte-farbe-pk25.noscale">Clip with a bbox no groupby</a> <br>
           <a href="rest/services/ech/GeometryServer/cut?clipper=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill:2222&layers=all:ch.swisstopo.images-swissimage.metadata">Clip with Broye Vully no groupby</a> <br>
           <a href="rest/services/ech/GeometryServer/cut?clipper=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill:2221&layers=all:ch.swisstopo.swissimage-product&groupby=resolution">Clip with Aigle and groupby resolution</a> <br>
-      <h2 id="mapservices">Map Services</h2> 
+      <h2 id="mapservices">Map Services</h2>
           <h3>Mapservice (Layer metadata)</h3>
           <a href="rest/services/ech/MapServer">Topic (ech)</a> <br>
           <a href="rest/services/ech/MapServer?searchText=bern">Topic with fulltext search on the column "volltextsuche, bod id and geocat id"</a> <br>
@@ -95,9 +95,7 @@
       <h2>Layers Configuration</h2>
           <a href='rest/services/ech/MapServer/layersConfig'>Get the layers configuration for topic ech</a> <br>
           <a href='rest/services/all/MapServer/layersConfig'>Get the layers configuration for all topics</a> <br>
-          
-      <h2>Ogcproxy</h2>
-          <a href="ogcproxy?url=http%3A%2F%2Fmapserver1.gr.ch%2Fwms%2Fadmineinteilung%3FSERVICE%3DWMS%26REQUEST%3DGetCapabilities%26VERSION%3D1.3.0">Get Capabilities using ogcproxy</a>
+
       <h2>WMTS</h2>
           <h3>Raw GetCapabilities (Pyramid pur)</h3>
           <a href="rest/services/api/1.0.0/WMTSCapabilities.xml">GetCapabilities for EPSG:21781</a><br />

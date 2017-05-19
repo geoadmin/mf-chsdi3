@@ -12,7 +12,6 @@ future==0.16.0
 gatilegrid==0.0.6
 GeoAlchemy2==0.3.0
 geojson==1.0.1
-httplib2==0.9
 Jinja2==2.8
 lxml==2.3
 Mako==1.0.0

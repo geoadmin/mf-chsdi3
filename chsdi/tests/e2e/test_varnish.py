@@ -213,38 +213,6 @@ class TestMapproxyGetTile(TestVarnish):
         self.assertEqual(resp.status_code, 200)
 
 
-class TestOgcproxy(TestVarnish):
-
-    ''' See https://github.com/geoadmin/mf-chsdi3/issues/873
-    '''
-
-    def test_ogcproxy_no_referer(self):
-
-        payload = {'_id': self.hash()}
-
-        resp = requests.get(self.api_url + '/ogcproxy?url=http%3A%2F%2Fmapserver1.gr.ch%2Fwms%2Fadmineinteilung%3FSERVICE%3DWMS%26REQUEST%3DGetCapabilities%26VERSION%3D1.3.0', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
-
-        self.assertEqual(resp.status_code, 403)
-
-    def test_ogcproxy_bad_referer(self):
-
-        payload = {'_id': self.hash()}
-        headers = {'referer': 'http://goofy-referer.ch', 'User-Agent': 'mf-geoadmin/python'}
-
-        resp = requests.get(self.api_url + '/ogcproxy?url=http%3A%2F%2Fmapserver1.gr.ch%2Fwms%2Fadmineinteilung%3FSERVICE%3DWMS%26REQUEST%3DGetCapabilities%26VERSION%3D1.3.0', params=payload, headers=headers)
-
-        self.assertEqual(resp.status_code, 403)
-
-    def test_ogcproxy_good_referer(self):
-
-        payload = {'_id': self.hash()}
-        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
-
-        resp = requests.get(self.api_url + '/ogcproxy?url=http%3A%2F%2Fmapserver1.gr.ch%2Fwms%2Fadmineinteilung%3FSERVICE%3DWMS%26REQUEST%3DGetCapabilities%26VERSION%3D1.3.0', params=payload, headers=headers)
-
-        self.assertEqual(resp.status_code, 200)
-
-
 class TestFilestorage(TestVarnish):
 
     def test_post_filestorage_no_referer(self):

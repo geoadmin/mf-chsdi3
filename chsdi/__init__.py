@@ -49,7 +49,6 @@ def main(global_config, **settings):
     initialize_sql(settings)
 
     # route definitions
-    config.add_route('ogcproxy', '/ogcproxy')
     config.add_route('dev', '/dev')
     config.add_route('ga_api', '/loader.js')
     config.add_route('testi18n', '/testi18n')
