@@ -80,23 +80,16 @@ class Test_Helpers(unittest.TestCase):
         from pyramid.httpexceptions import HTTPBadRequest
         url = None
         config = {'shortener.allowed_hosts': 'admin.ch,swisstopo.ch,bgdi.ch'}
-        try:
+        with self.assertRaises(HTTPBadRequest):
             check_url(url, config)
-        except Exception as e:
-            self.assertTrue(isinstance(e, HTTPBadRequest))
 
         url = 'dummy'
-        try:
+        with self.assertRaises(HTTPBadRequest):
             check_url(url, config)
-        except Exception as e:
-            self.assertTrue(isinstance(e, HTTPBadRequest))
 
         url = 'http://dummy.ch'
-
-        try:
+        with self.assertRaises(HTTPBadRequest):
             check_url(url, config)
-        except Exception as e:
-            self.assertTrue(isinstance(e, HTTPBadRequest))
 
         url = 'http://admin.ch'
         self.assertEqual(url, check_url(url, config))
