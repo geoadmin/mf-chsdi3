@@ -15,7 +15,7 @@ class Gebaeuderegister(Base, Vector):
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
     __template__ = 'templates/htmlpopup/gebaeuderegister.mako'
     __bodId__ = 'ch.bfs.gebaeude_wohnungs_register'
-    __queryable_attributes__ = ['strname1', 'deinr', 'plz4', 'plzname', 'gdename', 'egid']
+    __queryable_attributes__ = ['strname1', 'deinr', 'plz4', 'plzname', 'gdename', 'egid', 'gdenr']
     # __minscale__ = 5001
     # due to https://redmine.bgdi.admin.ch/issues/3146 ltmoc  __maxscale__ = 25000
     # Composite labels
