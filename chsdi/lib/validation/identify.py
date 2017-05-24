@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
 
+import esrijson
 from pyramid.httpexceptions import HTTPBadRequest
-from shapely.geometry import asShape
 
 from chsdi.lib.helpers import float_raise_nan
 from chsdi.lib.validation import BaseFeaturesValidation
-from chsdi.esrigeojsonencoder import loads
 
 
 class IdentifyServiceValidation(BaseFeaturesValidation):
@@ -33,8 +32,8 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
             u'esriGeometryEnvelope'
         )
         self.where = request.params.get('where')
-        self.geometry = request.params.get('geometry')
         self.geometryType = request.params.get('geometryType')
+        self.geometry = request.params.get('geometry')
         self.imageDisplay = request.params.get('imageDisplay')
         self.mapExtent = request.params.get('mapExtent')
         self.returnGeometry = request.params.get('returnGeometry')
@@ -120,8 +119,14 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
             raise HTTPBadRequest('Please provide the parameter geometry  (Required)')
         else:
             try:
-                self._geometry = loads(value)
-            except ValueError:
+                if self._geometryType == 'esriGeometryEnvelope':
+                    self._geometry = esrijson.to_shape([float_raise_nan(c) for c in value.split(',')])
+                elif self._geometryType == 'esriGeometryPoint':
+                    value = [float_raise_nan(c) for c in value.split(',')]
+                    self._geometry = esrijson.to_shape({'x': value[0], 'y': value[1]})
+                else:
+                    self._geometry = esrijson.to_shape(esrijson.loads(value))
+            except:
                 raise HTTPBadRequest('Please provide a valid geometry')
 
     @imageDisplay.setter
@@ -148,9 +153,8 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
             raise HTTPBadRequest('Please provide the parameter mapExtent  (Required)')
         else:
             try:
-                feat = loads(value)
-                self._mapExtent = asShape(feat)
-            except ValueError:
+                self._mapExtent = esrijson.to_shape([float_raise_nan(c) for c in value.split(',')])
+            except:
                 raise HTTPBadRequest('Please provide numerical values for the parameter mapExtent')
 
     @returnGeometry.setter

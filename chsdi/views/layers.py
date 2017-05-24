@@ -36,7 +36,7 @@ def metadata(request):
             ],
             params.searchText
         )
-    results = computeHeader(params.mapName)
+    results = computeHeader(params.mapName, params.srid)
     for layer in get_layers_metadata_for_params(params, query, model):
         results['layers'].append(layer)
     return results
@@ -97,7 +97,7 @@ def feature_attributes(request):
     attributes of vector layers. '''
     params = BaseLayersValidation(request)
     layerId = request.matchdict.get('layerId')
-    models = models_from_bodid(layerId)
+    models = models_from_bodid(layerId, srid=params.srid)
     # Models for the same layer have the same attributes
     if models is None:
         raise exc.HTTPBadRequest('No Vector Table was found for %s' % layerId)
@@ -107,7 +107,7 @@ def feature_attributes(request):
     trackAttributesNames = []
     fields = []
 
-    def insertValueAt(field, attrName, value):
+    def insert_value_at(field, attrName, value):
         if field['name'] == attrName:
             if len(field['values']) < MAX_ATTRIBUTES_VALUES and \
                value not in field['values']:
@@ -122,7 +122,7 @@ def feature_attributes(request):
         for rowIndex, row in enumerate(query):
             # attrName as defined in the model
             for attrIndex, attrName in enumerate(attributes):
-                featureAttrs = row.getAttributes(excludePkey=False)
+                featureAttrs = row.get_attributes(exclude_pkey=False)
                 if attrName not in trackAttributesNames and \
                    attrName in featureAttrs:
                     fieldType = _find_type(model(), attrName)
@@ -136,7 +136,7 @@ def feature_attributes(request):
                         value = featureAttrs[attrName]
                         if isinstance(value, (decimal.Decimal, datetime.date, datetime.datetime)):
                             value = str(value)
-                        fields[fieldsIndex] = insertValueAt(field, attrName, value)
+                        fields[fieldsIndex] = insert_value_at(field, attrName, value)
 
     return {'id': layerId, 'name': params.translate(layerId), 'fields': fields}
 

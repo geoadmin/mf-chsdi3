@@ -10,13 +10,7 @@ def getLayers(query):
 
 class TestMapServiceView(TestsBase):
 
-    def test_metadata_no_parameters(self):
-        resp = self.testapp.get('/rest/services/blw/MapServer', status=200)
-        self.assertEqual(resp.content_type, 'application/json')
-
-    def test_metadata_no_parameters_topic_all(self):
-        resp = self.testapp.get('/rest/services/all/MapServer', status=200)
-        lods = resp.json['tileInfo']['lods']
+    def assertLods(self, lods):
         self.assertEqual(lods[0]['level'], 0)
         self.assertEqual(lods[0]['resolution'], 4000.0)
         self.assertEqual(lods[0]['width'], 1)
@@ -25,11 +19,60 @@ class TestMapServiceView(TestsBase):
         self.assertEqual(lods[9]['resolution'], 1750.0)
         self.assertEqual(lods[9]['width'], 2)
         self.assertEqual(lods[9]['height'], 1)
+
+    def assertSpatialReference(self, res, wkid):
+        self.assertEqual(res['spatialReference']['wkid'], wkid)
+        self.assertEqual(res['initialExtent']['spatialReference']['wkid'], wkid)
+        self.assertEqual(res['fullExtent']['spatialReference']['wkid'], wkid)
+        self.assertEqual(res['tileInfo']['spatialReference']['wkid'], wkid)
+
+    def assertLayersConfigGroup(self, res, bod_id):
+        self.assertIn(bod_id, res)
+        self.assertIn('attribution', res[bod_id])
+        self.assertIn('label', res[bod_id])
+        self.assertIn('background', res[bod_id])
+        self.assertIn('topics', res['%s_wmts' % bod_id])
+        self.assertIn('topics', res[bod_id])
+        self.assertNotIn('srid', res[bod_id])
+        self.assertNotIn('srid', res['%s_wmts' % bod_id])
+        self.assertNotIn('staging', res[bod_id])
+        self.assertNotIn('staging', res[bod_id])
+        self.assertNotIn('matrixSet', res[bod_id])
+        self.assertNotIn('matrixSet', res['%s_wmts' % bod_id])
+
+    def test_metadata_no_parameters(self):
+        resp = self.testapp.get('/rest/services/blw/MapServer', status=200)
         self.assertEqual(resp.content_type, 'application/json')
+
+    def test_metadata_no_parameters_topic_all(self):
+        resp = self.testapp.get('/rest/services/all/MapServer', status=200)
+        result = resp.json
+        lods = result['tileInfo']['lods']
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertLods(lods)
+        self.assertSpatialReference(result, 21781)
+
+        resp = self.testapp.get('/rest/services/all/MapServer', params={'sr': '2056'}, status=200)
+        result = resp.json
+        lods = result['tileInfo']['lods']
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertLods(lods)
+        self.assertSpatialReference(result, 2056)
 
     def test_metadata_with_searchtext(self):
         resp = self.testapp.get('/rest/services/blw/MapServer', params={'searchText': 'wasser'}, status=200)
+        result = resp.json
+        lods = result['tileInfo']['lods']
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertLods(lods)
+        self.assertSpatialReference(result, 21781)
+
+        resp = self.testapp.get('/rest/services/blw/MapServer', params={'searchText': 'wasser', 'sr': '2056'}, status=200)
+        result = resp.json
+        lods = result['tileInfo']['lods']
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertLods(lods)
+        self.assertSpatialReference(result, 2056)
 
     def test_metadata_with_callback(self):
         resp = self.testapp.get('/rest/services/blw/MapServer', params={'callback': 'cb_'}, status=200)
@@ -50,11 +93,11 @@ class TestMapServiceView(TestsBase):
         self.assertIn('ch.are.agglomerationen_isolierte_staedte', resp.json['tooltipLayers'])
         self.assertIn('ch.swisstopo-karto.hangneigung', resp.json['chargeableLayers'])
         self.assertIn('ch.are.alpenkonvention', resp.json['notChargeableLayers'])
-        self.assertTrue(len(resp.json['searchableLayers']) > 20)
-        self.assertTrue(len(resp.json['tooltipLayers']) > 20)
-        self.assertTrue(len(resp.json['chargeableLayers']) > 20)
-        self.assertTrue(len(resp.json['notChargeableLayers']) > 20)
-        self.assertTrue(len(resp.json['translations']) > 20)
+        self.assertGreater(len(resp.json['searchableLayers']), 20)
+        self.assertGreater(len(resp.json['tooltipLayers']), 20)
+        self.assertGreater(len(resp.json['chargeableLayers']), 20)
+        self.assertGreater(len(resp.json['notChargeableLayers']), 20)
+        self.assertGreater(len(resp.json['translations']), 20)
 
     def test_faqlist_topic_all(self):
         resp = self.testapp.get('/rest/services/all/faqlist', status=200)
@@ -63,11 +106,11 @@ class TestMapServiceView(TestsBase):
         self.assertIn('ch.are.agglomerationen_isolierte_staedte', resp.json['tooltipLayers'])
         self.assertIn('ch.swisstopo-karto.hangneigung', resp.json['chargeableLayers'])
         self.assertIn('ch.are.alpenkonvention', resp.json['notChargeableLayers'])
-        self.assertTrue(len(resp.json['searchableLayers']) > 20)
-        self.assertTrue(len(resp.json['tooltipLayers']) > 20)
-        self.assertTrue(len(resp.json['chargeableLayers']) > 20)
-        self.assertTrue(len(resp.json['notChargeableLayers']) > 20)
-        self.assertTrue(len(resp.json['translations']) > 20)
+        self.assertGreater(len(resp.json['searchableLayers']), 20)
+        self.assertGreater(len(resp.json['tooltipLayers']), 20)
+        self.assertGreater(len(resp.json['chargeableLayers']), 20)
+        self.assertGreater(len(resp.json['notChargeableLayers']), 20)
+        self.assertGreater(len(resp.json['translations']), 20)
 
     def test_legend_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/legend', status=200)
@@ -89,19 +132,16 @@ class TestMapServiceView(TestsBase):
 
     def test_layersconfig_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/layersConfig', status=200)
+        result = resp.json
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertIn('ch.swisstopo.pixelkarte-farbe', resp.json)
-        self.assertIn('attribution', resp.json['ch.swisstopo.pixelkarte-farbe'])
-        self.assertIn('label', resp.json['ch.swisstopo.pixelkarte-farbe'])
-        self.assertIn('background', resp.json['ch.swisstopo.pixelkarte-farbe'])
-        self.assertIn('topics', resp.json['ch.swisstopo.pixelkarte-farbe_wmts'])
-        self.assertIn('topics', resp.json['ch.swisstopo.pixelkarte-farbe'])
-        self.assertNotIn('srid', resp.json['ch.swisstopo.pixelkarte-farbe'])
-        self.assertNotIn('srid', resp.json['ch.swisstopo.pixelkarte-farbe_wmts'])
-        self.assertNotIn('staging', resp.json['ch.swisstopo.pixelkarte-farbe'])
-        self.assertNotIn('staging', resp.json['ch.swisstopo.pixelkarte-farbe_wmts'])
-        self.assertNotIn('matrixSet', resp.json['ch.swisstopo.pixelkarte-farbe'])
-        self.assertNotIn('matrixSet', resp.json['ch.swisstopo.pixelkarte-farbe_wmts'])
+        self.assertLayersConfigGroup(result, 'ch.swisstopo.pixelkarte-farbe')
+        self.assertLayersConfigGroup(result, 'ch.swisstopo.pixelkarte-grau')
+
+        resp = self.testapp.get('/rest/services/ech/MapServer/layersConfig', params={'sr': '2056'}, status=200)
+        result = resp.json
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertLayersConfigGroup(result, 'ch.swisstopo.pixelkarte-farbe')
+        self.assertLayersConfigGroup(result, 'ch.swisstopo.pixelkarte-grau')
 
     def test_layersconfig_valid_topic_all(self):
         resp = self.testapp.get('/rest/services/all/MapServer/layersConfig', status=200)
@@ -121,23 +161,44 @@ class TestMapServiceView(TestsBase):
 
     def test_layersconfig_geojson_and_extent_layer(self):
         resp = self.testapp.get('/rest/services/all/MapServer/layersConfig', status=200)
-        self.assertTrue(resp.content_type == 'application/json')
-        jsonData = resp.json
-        if 'ch.bafu.hydroweb-messstationen_gefahren' in jsonData:
-            layer = jsonData['ch.bafu.hydroweb-messstationen_gefahren']
-            self.assertTrue(layer['type'], 'geojson')
+        self.assertEqual(resp.content_type, 'application/json')
+        res = resp.json
+        if 'ch.bafu.hydroweb-messstationen_gefahren' in res:
+            layer = res['ch.bafu.hydroweb-messstationen_gefahren']
+            self.assertEqual(layer['type'], 'geojson')
             self.assertIn('geojsonUrl', layer)
             self.assertNotIn('geojsonUrlDe', layer)
             self.assertIn('styleUrl', layer)
             self.assertIn('updateDelay', layer)
-        if 'ch.swisstopo.swiss-map-vector1000.metadata' in jsonData:
-            layer = jsonData['ch.swisstopo.swiss-map-vector1000.metadata']
+        if 'ch.swisstopo.swiss-map-vector1000.metadata' in res:
+            layer = res['ch.swisstopo.swiss-map-vector1000.metadata']
             self.assertIn('extent', layer)
-            self.assertEqual(len(layer['extent']), 4)
-            self.assertIsInstance(layer['extent'][0], float)
-            self.assertIsInstance(layer['extent'][1], float)
-            self.assertIsInstance(layer['extent'][2], float)
-            self.assertIsInstance(layer['extent'][3], float)
+            extent = layer['extent']
+            self.assertEqual(len(extent), 4)
+            self.assertIsInstance(extent[0], float)
+            self.assertIsInstance(extent[1], float)
+            self.assertIsInstance(extent[2], float)
+            self.assertIsInstance(extent[3], float)
+
+        resp = self.testapp.get('/rest/services/all/MapServer/layersConfig', params={'sr': '2056'}, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        res = resp.json
+        if 'ch.bafu.hydroweb-messstationen_gefahren' in res:
+            layer = res['ch.bafu.hydroweb-messstationen_gefahren']
+            self.assertEqual(layer['type'], 'geojson')
+            self.assertIn('geojsonUrl', layer)
+            self.assertNotIn('geojsonUrlDe', layer)
+            self.assertIn('styleUrl', layer)
+            self.assertIn('updateDelay', layer)
+        if 'ch.swisstopo.swiss-map-vector1000.metadata' in res:
+            layer = res['ch.swisstopo.swiss-map-vector1000.metadata']
+            self.assertIn('extent', layer)
+            extent = layer['extent']
+            self.assertEqual(len(extent), 4)
+            self.assertIsInstance(extent[0], float)
+            self.assertIsInstance(extent[1], float)
+            self.assertIsInstance(extent[2], float)
+            self.assertIsInstance(extent[3], float)
 
     def test_layersconfig_with_callback(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/layersConfig', params={'callback': 'cb_'}, status=200)
@@ -149,12 +210,12 @@ class TestMapServiceView(TestsBase):
 
     def test_layersconfig_queryable_attributes(self):
         resp = self.testapp.get('/rest/services/all/MapServer/layersConfig', status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
         jsonData = resp.json
         self.assertIn('ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp', jsonData)
         layer = jsonData['ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp']
         self.assertIn('queryableAttributes', layer)
-        self.assertTrue(len(layer['queryableAttributes']) > 0)
+        self.assertGreater(len(layer['queryableAttributes']), 0)
         # Should not have
         self.assertIn('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', jsonData)
         layer = jsonData['ch.swisstopo.vec200-transportation-oeffentliche-verkehr']
@@ -162,7 +223,7 @@ class TestMapServiceView(TestsBase):
 
     def test_layer_attributes(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln', status=200)
-        self.assertTrue(resp.content_type == 'application/json')
+        self.assertEqual(resp.content_type, 'application/json')
 
     def test_layer_attributes_lang_specific(self):
         lang = 'de'
@@ -175,7 +236,7 @@ class TestMapServiceView(TestsBase):
         for field in fields:
             if field['name'].endswith('_%s' % lang):
                 langSpecFields.append(field)
-        self.assertTrue(len(langSpecFields) > 0)
+        self.assertGreater(len(langSpecFields), 0)
         langNotAvailable = 'rm'
         params = {'lang': langNotAvailable}
         resp = self.testapp.get(path, params=params, status=200)
@@ -185,7 +246,7 @@ class TestMapServiceView(TestsBase):
         for field in fields:
             if field['name'].endswith('_%s' % lang):
                 langSpecFields.append(field)
-        self.assertTrue(len(langSpecFields) > 0)
+        self.assertGreater(len(langSpecFields), 0)
 
     def test_layer_attributes_wrong_layer(self):
         self.testapp.get('/rest/services/ech/MapServer/dummy', status=400)

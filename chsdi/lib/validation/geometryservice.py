@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
 
+import esrijson
 from pyramid.httpexceptions import HTTPBadRequest
 
 from chsdi.lib.validation import BaseFeaturesValidation
-from chsdi.esrigeojsonencoder import loads
+from chsdi.lib.helpers import float_raise_nan
 
 
 class GeometryServiceValidation(BaseFeaturesValidation):
@@ -23,8 +24,8 @@ class GeometryServiceValidation(BaseFeaturesValidation):
         self._chargeable = None
 
         clipper = request.params.get('clipper')
-        geometry = request.params.get('geometry')
         geometryType = request.params.get('geometryType')
+        geometry = request.params.get('geometry')
 
         self.esriGeometryTypes = (
             u'esriGeometryPolygon',
@@ -41,8 +42,8 @@ class GeometryServiceValidation(BaseFeaturesValidation):
 
         if not self.totalArea:
             if not clipper:
-                self.geometry = geometry
                 self.geometryType = geometryType
+                self.geometry = geometry
             self.clipper = clipper
             self.groupby = request.params.get('groupby')
         self.layers = request.params.get('layers', u'all')
@@ -85,17 +86,6 @@ class GeometryServiceValidation(BaseFeaturesValidation):
         else:
             self._clipper = temp
 
-    @geometry.setter
-    def geometry(self, value):
-        if self._clipper:
-            return
-        if value is None:
-            raise HTTPBadRequest('Please provide the parameter geometry (Required if clipper is not defined)')
-        try:
-            self._geometry = loads(value)
-        except ValueError:
-            raise HTTPBadRequest('Please provide a valid geometry')
-
     @geometryType.setter
     def geometryType(self, value):
         if self._clipper:
@@ -106,6 +96,20 @@ class GeometryServiceValidation(BaseFeaturesValidation):
             raise HTTPBadRequest(
                 'Please provide a valid geometry type. Available: (%s)' % ', '.join(self.esriGeometryTypes))
         self._geometryType = value
+
+    @geometry.setter
+    def geometry(self, value):
+        if self._clipper:
+            return
+        if value is None:
+            raise HTTPBadRequest('Please provide the parameter geometry (Required if clipper is not defined)')
+        try:
+            if self._geometryType == 'esriGeometryEnvelope':
+                self._geometry = esrijson.to_shape([float_raise_nan(c) for c in value.split(',')])
+            else:
+                self._geometry = esrijson.to_shape(esrijson.loads(value))
+        except:
+            raise HTTPBadRequest('Please provide a valid geometry')
 
     @layers.setter
     def layers(self, value):

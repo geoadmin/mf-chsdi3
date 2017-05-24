@@ -279,7 +279,7 @@ def imagesize_from_metafile(tileUrlBasePath, bvnummer):
     return (width, height)
 
 
-def transformCoordinate(wkt, srid_from, srid_to):
+def transform_coordinate(wkt, srid_from, srid_to):
     srid_in = osr.SpatialReference()
     srid_in.ImportFromEPSG(srid_from)
     srid_out = osr.SpatialReference()
@@ -316,6 +316,21 @@ def center_from_box2d(box2D):
             box2D[0] + ((box2D[2] - box2D[0]) / 2),
             box2D[1] + ((box2D[3] - box2D[1]) / 2)
         ]
+
+
+def shift_to(coords, srid):
+    cds = []
+    x_offset = 2e6
+    y_offset = 1e6
+    while len(coords) > 0:
+        c = coords.pop(0)
+        if not isinstance(c, (int, float)):
+            raise TypeError('Coordinates should be of type int or float')
+        if srid == 2056:
+            cds.append(c + x_offset if len(coords) % 2 else c + y_offset)
+        elif srid == 21781:
+            cds.append(c - x_offset if len(coords) % 2 else c - y_offset)
+    return cds
 
 
 def parse_date_string(dateStr, format_input='%Y-%m-%d', format_output='%d.%m.%Y'):

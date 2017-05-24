@@ -16,23 +16,16 @@ from sqlalchemy import Text, Unicode, Integer, Boolean, Numeric, Date
 from sqlalchemy import text
 from geoalchemy2.types import Geometry
 
-from chsdi.lib.validation.features import (
-    HtmlPopupServiceValidation, ExtendedHtmlPopupServiceValidation,
-    GetFeatureServiceValidation, AttributesServiceValidation
-)
+from chsdi.lib.validation.features import HtmlPopupServiceValidation, ExtendedHtmlPopupServiceValidation, GetFeatureServiceValidation, AttributesServiceValidation
 from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.validation.identify import IdentifyServiceValidation
 from chsdi.lib.validation.geometryservice import GeometryServiceValidation
-from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d, make_geoadmin_url
-from chsdi.lib.exceptions import HTTPBandwidthLimited
+from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d, make_geoadmin_url, shift_to
 from chsdi.lib.filters import full_text_search
 from chsdi.models.clientdata_dynamodb import get_bucket
-from chsdi.models import (
-    models_from_bodid, perimeter_models_from_bodid,
-    queryable_models_from_bodid, oereb_models_from_bodid
-)
+from chsdi.models import models_from_bodid, perimeter_models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.bod import OerebMetadata, get_bod_model
-from chsdi.models.vector import getScale, getResolution, hasBuffer
+from chsdi.models.vector import get_scale, get_resolution, has_buffer
 from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
@@ -84,7 +77,7 @@ def view_attribute_values_geojson(request):
 
 
 def _get_feature_info_for_popup(request, params, isExtended=False, isIframe=False):
-    feature, vectorModel = next(_get_features(params))
+    feature, vector_model = next(_get_features(params))
     layerModel = get_bod_model(params.lang)
     layer = next(get_layers_metadata_for_params(
         params,
@@ -111,7 +104,7 @@ def _get_feature_info_for_popup(request, params, isExtended=False, isIframe=Fals
         'scale': options.get('scale'),
         'attribution': layer.get('attributes')['dataOwner'],
         'fullName': layer.get('fullName'),
-        'vectorModel': vectorModel,
+        'vector_model': vector_model,
         'isExtended': isExtended,
         'isIframe': isIframe
     })
@@ -177,10 +170,10 @@ def _identify_oereb(request):
     })
     header = insertTimestamps(header, comments)
 
-    isScaleDependent = hasBuffer(params.imageDisplay, params.mapExtent, params.tolerance)
-    scale = getScale(params.imageDisplay, params.mapExtent) if isScaleDependent else None
+    isScaleDependent = has_buffer(params.imageDisplay, params.mapExtent, params.tolerance)
+    scale = get_scale(params.imageDisplay, params.mapExtent) if isScaleDependent else None
     # Only relation 1 to 1 is needed at the moment
-    layerVectorModel = [{layerBodId: [oereb_models_from_bodid(layerBodId, scale=scale)[0]]}]
+    layerVectorModel = [{layerBodId: [oereb_models_from_bodid(layerBodId, scale=scale, srid=params.srid)[0]]}]
     features = []
     for feature in _get_features_for_filters(params, layerVectorModel):
         temp = feature.xmlData.split('##')
@@ -204,14 +197,14 @@ def _identify(request):
     # Grid layers are serverless
     layersDB = []
     layersGrid = []
-    isScaleDependent = hasBuffer(params.imageDisplay, params.mapExtent, params.tolerance)
-    scale = getScale(params.imageDisplay, params.mapExtent) if isScaleDependent else None
+    isScaleDependent = has_buffer(params.imageDisplay, params.mapExtent, params.tolerance)
+    scale = get_scale(params.imageDisplay, params.mapExtent) if isScaleDependent else None
     if params.layers == 'all':
         model = get_bod_model(params.lang)
         query = params.request.db.query(model)
         for layer in get_layers_metadata_for_params(params, query, model):
             layerBodId = layer['layerBodId']
-            models = models_from_bodid(layerBodId, scale=scale)
+            models = models_from_bodid(layerBodId, scale=scale, srid=params.srid)
             if models:
                 layersDB.append({layerBodId: models})
             else:
@@ -228,7 +221,7 @@ def _identify(request):
                         'are supported for geometryType parameter for grid like data')
                 layersGrid.append({layerBodId: gridSpec})
             else:
-                models = models_from_bodid(layerBodId, scale=scale)
+                models = models_from_bodid(layerBodId, scale=scale, srid=params.srid)
                 # The layer has a model but not at the right scale
                 if models is not None and len(models) == 0:
                     return response
@@ -251,7 +244,7 @@ def _identify_grid(params, layerBodIds):
 
     # For select by rectangle
     if params.geometryType == 'esriGeometryEnvelope':
-        coords = geometry.coordinates[0]
+        coords = list(geometry.exterior.coords)
         minx = miny = float('inf')
         maxx = maxy = float('-inf')
         for x, y in coords:
@@ -262,7 +255,9 @@ def _identify_grid(params, layerBodIds):
         bbox = [minx, miny, maxx, maxy]
         pointCoordinates = center_from_box2d(bbox)
     else:
-        pointCoordinates = geometry.coordinates
+        pointCoordinates = list(list(geometry.coords)[0])
+    if params.srid == 2056:
+        pointCoordinates = shift_to(pointCoordinates, 21781)
     bucketName = params.request.registry.settings['vector_bucket']
     profileName = params.request.registry.settings['vector_profilename']
     bucket = get_bucket(profile_name=profileName, bucket_name=bucketName)
@@ -278,9 +273,16 @@ def _identify_grid(params, layerBodIds):
         if col is not None and row is not None:
             feature, none = _get_feature_grid(col, row, timestamp, grid, bucket, params)
             if feature and not none:
+                feature['bbox'] = grid.cellExtent(col, row)
                 # For some reason we define the id twice..
                 feature['featureId'] = feature['id']
                 feature['properties']['label'] = feature['id']
+                if params.srid == 2056:
+                    feature['bbox'] = shift_to(feature['bbox'], 2056)
+                    # Coords are always simple polygons
+                    coords = feature['geometry']['coordinates']
+                    coords = [[shift_to(c, 2056) for c in coords[0]]]
+                    feature['geometry']['coordinates'] = coords
                 features.append(feature)
 
     return features
@@ -308,8 +310,11 @@ def _identify_db(params, layerBodIds):
 def _get_feature_service(request):
     params = GetFeatureServiceValidation(request)
     features = []
-    for feature, vectorModel in _get_features(params):
-        features.append(feature)
+    for feature, vector_model in _get_features(params):
+        if hasattr(params, 'featureIds') and len(params.featureIds) > 1:
+            features.append(feature['feature'])
+        else:
+            features.append(feature)
     if len(features) == 1:
         return features[0]
     return features
@@ -322,9 +327,9 @@ def _get_features(params, extended=False, process=True):
     scale = None
     if hasattr(params, 'imageDisplay') and hasattr(params, 'mapExtent'):
         if all((params.imageDisplay, params.mapExtent)):
-            scale = getScale(params.imageDisplay, params.mapExtent)
+            scale = get_scale(params.imageDisplay, params.mapExtent)
 
-    models = models_from_bodid(params.layerId, orderScale=scale)
+    models = models_from_bodid(params.layerId, orderScale=scale, srid=params.srid)
     gridSpec = get_grid_spec(params.layerId)
     if models is None and gridSpec is None:
         raise exc.HTTPBadRequest(
@@ -366,14 +371,14 @@ def _get_feature_db(featureId, params, models, process=True):
     for model in models:
         feature = _get_feature_by_id(featureId, params, model)
         if feature is not None:
-            vectorModel = model
+            vector_model = model
             break
     if feature is None:
         raise exc.HTTPNotFound('No feature with id %s' % featureId)
     if process:
         feature = _process_feature(feature, params)
         feature = {'feature': feature}
-    return feature, vectorModel
+    return feature, vector_model
 
 
 def _get_feature_grid(col, row, timestamp, grid, bucket, params):
@@ -404,10 +409,10 @@ def _has_extended_info(isExtended, hasExtendedInfo, bodId):
 def _render_feature_template(options, request):
     # Determine if we should render the extended tooltip or the iframe
     isExtended = options.get('isExtended')
-    vectorModel = options.get('vectorModel')
-    if vectorModel:
-        template = vectorModel.__template__
-        options['hasExtendedInfo'] = hasattr(vectorModel, '__extended_info__')
+    vector_model = options.get('vector_model')
+    if vector_model:
+        template = vector_model.__template__
+        options['hasExtendedInfo'] = hasattr(vector_model, '__extended_info__')
     else:
         # For grid like models
         layerProperties = get_grid_layer_properties(options['layerBodId'])
@@ -453,10 +458,12 @@ def _get_areas_for_params(params, models):
         for model in models:
             if all((params.geometry, params.geometryType)):
                 geomFilter = model.geom_intersects(
-                    params.geometry
+                    params.geometry,
+                    params.srid
                 )
                 cutGeoms = model.geom_intersection(
-                    params.geometry
+                    params.geometry,
+                    params.srid
                 )
             elif not params.totalArea:
                 params.layerId = params.clipper[0]
@@ -465,10 +472,12 @@ def _get_areas_for_params(params, models):
                 feature, clipperModel = next(_get_features(params, process=False))
 
                 geomFilter = model.geom_intersects(
-                    feature.the_geom
+                    feature.the_geom,
+                    params.srid
                 )
                 cutGeoms = model.geom_intersection(
-                    feature.the_geom
+                    feature.the_geom,
+                    params.srid
                 )
             if params.groupby is not None:
                 query = params.request.db.query(
@@ -540,7 +549,8 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                     params.geometry,
                     params.imageDisplay,
                     params.mapExtent,
-                    params.tolerance
+                    params.tolerance,
+                    params.srid
                 )
                 query = query.filter(geomFilter)
 
@@ -563,7 +573,8 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                     params.imageDisplay,
                     params.mapExtent,
                     params.tolerance,
-                    flimit
+                    flimit,
+                    params.srid
                 )
                 query = query.order_by(ordering)
 
@@ -595,37 +606,37 @@ def _attributes(request):
     ''' This service exposes preview values based on a layer Id
     and an attribute name (mapped in the model) '''
     MAX_ATTR_VALUES = 50
-    attributesValues = []
+    attributes_values = []
     params = AttributesServiceValidation(request)
 
-    models = models_from_bodid(params.layerId)
+    models = models_from_bodid(params.layerId, srid=params.srid)
 
     if models is None:
         raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
 
     # Check that the attribute provided is found at least in one model
-    modelToQuery = None
+    model_to_query = None
     for model in models:
-        attributes = model().getAttributesKeys()
+        attributes = model().get_attributes_keys()
         if params.attribute in attributes:
-            modelToQuery = model
+            model_to_query = model
             break
-    if modelToQuery is None:
+    if model_to_query is None:
         raise exc.HTTPBadRequest('No attribute %s was found for %s' % (params.attribute, params.layerId))
 
-    col = modelToQuery.get_column_by_property_name(params.attribute)
-    colType = str(col.type)
-    if colType in ['DATE', 'INTEGER', 'NUMERIC']:
+    col = model_to_query.get_column_by_property_name(params.attribute)
+    col_type = str(col.type)
+    if col_type in ('DATE', 'INTEGER', 'NUMERIC'):
         query = request.db.query(func.max(col).label('max'), func.min(col).label('min'))
         res = query.one()
         return {'values': [res.min, res.max]}
-    else:
-        query = request.db.query(col).distinct().order_by(col)
-        query = query.limit(MAX_ATTR_VALUES)
-        for attr in query:
-            if len(attr):
-                attributesValues.append(attr[0])
-        return {'values': sorted(attributesValues)}
+    # Return a sample of values otherwise
+    query = request.db.query(col).distinct().order_by(col)
+    query = query.limit(MAX_ATTR_VALUES)
+    for attr in query:
+        if len(attr):
+            attributes_values.append(attr[0])
+    return {'values': sorted(attributes_values)}
 
 
 def _find(request):
@@ -634,7 +645,7 @@ def _find(request):
     if params.searchText is None:
         raise exc.HTTPBadRequest('Please provide a searchText')
 
-    models = queryable_models_from_bodid(params.layer, params.searchField)
+    models = queryable_models_from_bodid(params.layer, params.searchField, srid=params.srid)
     features = []
     if models is None:
         raise exc.HTTPBadRequest(
@@ -703,7 +714,7 @@ def _cut(request):
     # Organize models per layer
     for layerId in layerIds:
         # Never scale dependant
-        modelsForLayer = perimeter_models_from_bodid(layerId)
+        modelsForLayer = perimeter_models_from_bodid(layerId, srid=params.srid)
         if totalArea and modelsForLayer:
             for model in modelsForLayer:
                 if hasattr(model, '__totalArea__'):
@@ -740,33 +751,12 @@ def _cut(request):
     return results
 
 
-def has_long_geometry(feature):
-    return bool(len(getattr(feature, feature.geometry_column_to_return().name).data) > 1000000)
-
-
 def _process_feature(feature, params):
-    def convert_no_geom(feature, geometryFormat):
-        if geometryFormat == 'geojson':
-            f = feature.__geojson_interface__
-        else:
-            f = feature.__esrijson_interface__
-        return f
-
-    if has_long_geometry(feature):
-        raise HTTPBandwidthLimited('Feature ID %s: is too large' % feature.id)
-
-    if params.returnGeometry:
-        f = feature.__geo_interface__
-    else:
-        f = convert_no_geom(feature, params.geometryFormat)
-    # TODO find a way to use translate directly in the model
-    if hasattr(f, 'extra'):
-        layerBodId = f.extra['layerBodId']
-        f.extra['layerName'] = params.translate(layerBodId)
-    else:
-        layerBodId = f.get('layerBodId')
-        f['layerName'] = params.translate(layerBodId)
-    return f
+    if params.geometryFormat == 'geojson':
+        return feature.to_geojson(params.translate,
+                           params.returnGeometry)
+    return feature.to_esrijson(params.translate,
+                               params.returnGeometry)
 
 
 def _get_features_releases(model, params):
@@ -777,7 +767,8 @@ def _get_features_releases(model, params):
             params.geometry,
             params.imageDisplay,
             params.mapExtent,
-            params.tolerance
+            params.tolerance,
+            params.srid
         )
         query = query.filter(geomFilter)
     if params.timeInstant is not None and hasattr(model, '__timeInstant__'):
@@ -797,8 +788,8 @@ def releases(request):
     # layer name
     # Note that only zeitreihen is currently supported for this service
     # Use scale rather than resolutions for zeitreihen like the other layers
-    resolution = getResolution(params.imageDisplay, params.mapExtent)
-    models = models_from_bodid(params.layerId, resolution=resolution)
+    resolution = get_resolution(params.imageDisplay, params.mapExtent)
+    models = models_from_bodid(params.layerId, resolution=resolution, srid=params.srid)
     if models is None:
         raise exc.HTTPBadRequest('No Vector Table was found for %s' % params.layerId)
 

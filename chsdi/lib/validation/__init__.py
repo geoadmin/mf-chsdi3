@@ -34,10 +34,12 @@ class BaseLayersValidation(BaseValidation):
     def __init__(self, request):
         super(BaseLayersValidation, self).__init__(request)
         self._chargeable = None
+        self._srid = 21781
 
         # Not to be published in doc
         self.chargeable = request.params.get('chargeable')
         self.searchText = request.params.get('searchText')
+        self.srid = request.params.get('sr')
 
     @property
     def chargeable(self):
@@ -50,6 +52,17 @@ class BaseLayersValidation(BaseValidation):
                 self._chargeable = True
             elif value.lower() == u'false':
                 self._chargeable = False
+
+    @property
+    def srid(self):
+        return self._srid
+
+    @srid.setter
+    def srid(self, value):
+        if value in ('2056', '21781'):
+            self._srid = int(value)
+        elif value is not None:
+            raise HTTPBadRequest('Unsupported spatial reference %s' % value)
 
 
 class BaseFeaturesValidation(BaseLayersValidation):

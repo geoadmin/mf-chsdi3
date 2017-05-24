@@ -5,10 +5,10 @@ from pyramid.events import BeforeRender, NewRequest
 from chsdi.subscribers import add_localizer, add_renderer_globals
 from pyramid.renderers import JSONP
 from sqlalchemy.orm import scoped_session, sessionmaker
+from papyrus.renderers import GeoJSON
 
 from chsdi.renderers import EsriJSON, CSVRenderer
 from chsdi.models import initialize_sql
-from papyrus.renderers import GeoJSON
 
 
 def db(request):
