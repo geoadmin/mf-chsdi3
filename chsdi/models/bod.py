@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from gatilegrid import GeoadminTileGrid
+from gatilegrid import getTileGrid
 from sqlalchemy import Column, Unicode, Integer, Boolean, DateTime, Float
 from sqlalchemy.dialects import postgresql
 
-from chsdi.lib.helpers import make_agnostic
+from chsdi.lib.helpers import make_agnostic, shift_to
 from chsdi.models import bases, models_from_bodid, get_models_attributes_keys
 
 Base = bases['bod']
@@ -50,9 +50,11 @@ class Bod(object):
         return meta
 
 
-class LayersConfig(Base):
+def get_default_tilematrixset_id(srid):
+    return '%s_26' % srid
 
-    defaultMatrixSet21781 = '21781_26'
+
+class LayersConfig(Base):
 
     __tablename__ = 'view_layers_js'
     __table_args__ = ({'schema': 're3', 'autoload': False})
@@ -97,6 +99,7 @@ class LayersConfig(Base):
         translate = params.translate
         settings = params.request.registry.settings
         wmsHost = settings['wmshost']
+        defaultMatrixSet = get_default_tilematrixset_id(params.srid)
         for k in self.__dict__.keys():
             val = self.__dict__[k]
             if not k.startswith("_") and not k.startswith('geojsonUrl') and \
@@ -108,10 +111,15 @@ class LayersConfig(Base):
                 elif k == 'attribution':
                     config[k] = translate(val)
                 elif k == 'matrixSet':
-                    if val != self.defaultMatrixSet21781 and \
+                    if val != defaultMatrixSet and \
                             self.__dict__['srid'] != u'4326':
                         config['resolutions'] = self._getResolutionsFromMatrixSet(
-                            val)
+                            val, params.srid)
+                elif k == 'extent':  # Used for the shop, are still in lv03
+                    if val and params.srid == 2056:
+                        config['extent'] = shift_to(val, 2056)
+                    else:
+                        config['extent'] = val
                 else:
                     config[k] = val
 
@@ -147,8 +155,8 @@ class LayersConfig(Base):
     def _getGeoJsonUrl(self, lang):
         return self.__dict__['geojsonUrl%s' % lang]
 
-    def _getResolutionsFromMatrixSet(self, matrixSet):
-        gagrid = GeoadminTileGrid()
+    def _getResolutionsFromMatrixSet(self, matrixSet, srid):
+        gagrid = getTileGrid(srid)()
         matrixSet = int(matrixSet.split('_')[1])
         return gagrid.RESOLUTIONS[0:matrixSet + 1]
 
@@ -307,8 +315,8 @@ class ServiceMetadataEn(Base, ServiceMetadata):
     __table_args__ = ({'schema': 're3', 'autoload': False})
 
 
-def computeHeader(mapName):
-    gagrid = GeoadminTileGrid()
+def computeHeader(mapName, srid):
+    gagrid = getTileGrid(srid)()
     minZoom = 0
     maxZoom = 28
     dpi = 90.7
@@ -340,7 +348,8 @@ def computeHeader(mapName):
             'lods': lods
         },
         'initialExtent': {
-            'xmin': 458000, 'ymin': 76375, 'xmax': 862500, 'ymax': 289125,
+            'xmin': gagrid.extent[0] + 38000.0, 'ymin': gagrid.extent[1] + 46375.0,
+            'xmax': gagrid.extent[2] - 60875.0, 'ymax': gagrid.extent[3] - 37500.0,
             'spatialReference': {'wkid': gagrid.spatialReference}
         },
         'fullExtent': {

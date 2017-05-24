@@ -3,6 +3,7 @@
 from sqlalchemy.ext.compiler import compiles
 from sqlalchemy.sql.expression import FunctionElement
 
+
 """
 -- custom postgres sql function remove_accents
 

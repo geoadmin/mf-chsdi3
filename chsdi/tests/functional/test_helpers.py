@@ -4,7 +4,7 @@ import unittest
 from pyramid import testing
 from pyramid.threadlocal import get_current_registry
 from chsdi.lib.helpers import (
-    make_agnostic, make_api_url, check_url, transformCoordinate, sanitize_url,
+    make_agnostic, make_api_url, check_url, transform_coordinate, sanitize_url,
     check_even, format_search_text, remove_accents, escape_sphinx_syntax,
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
     versioned, parse_box2d, center_from_box2d, format_scale,
@@ -152,12 +152,12 @@ class Test_Helpers(unittest.TestCase):
         test_result3 = parseHydroXML('idname', root3)
         self.assertEqual({'date_time': '16 Mai 18 Uhr', 'wasserstand': '-', 'wassertemperatur': '59900', 'abfluss': '-'}, test_result3)
 
-    def test_transformCoordinate(self):
+    def test_transform_coordinate(self):
         from osgeo.ogr import Geometry
         wkt = 'POINT (7.37840 45.91616)'
         srid_from = 4326
         srid_to = 21781
-        wkt_21781 = transformCoordinate(wkt, srid_from, srid_to)
+        wkt_21781 = transform_coordinate(wkt, srid_from, srid_to)
         self.assertTrue(isinstance(wkt_21781, Geometry))
         self.assertEqual(int(wkt_21781.GetX()), 595324)
         self.assertEqual(int(wkt_21781.GetY()), 84952)

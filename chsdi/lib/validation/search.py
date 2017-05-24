@@ -23,6 +23,7 @@ class SearchValidation(MapNameValidation):
         self._timeInstant = None
         self._timeEnabled = None
         self._timeStamps = None
+        self._srid = None
         self._bbox = None
         self._returnGeometry = None
         self._origins = None
@@ -52,6 +53,10 @@ class SearchValidation(MapNameValidation):
     @property
     def timeStamps(self):
         return self._timeStamps
+
+    @property
+    def srid(self):
+        return self._srid
 
     @property
     def returnGeometry(self):
@@ -144,6 +149,13 @@ class SearchValidation(MapNameValidation):
                     else:
                         raise HTTPBadRequest('Please provide integers for timeStamps parameter')
             self._timeStamps = result
+
+    @srid.setter
+    def srid(self, value):
+        if value in ('2056', '21781'):
+            self._srid = int(value)
+        elif value is not None:
+            raise HTTPBadRequest('Unsupported spatial reference %s' % value)
 
     @returnGeometry.setter
     def returnGeometry(self, value):

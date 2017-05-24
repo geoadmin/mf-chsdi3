@@ -14,12 +14,14 @@ class FindServiceValidation(MapNameValidation):
         self._searchField = None
         self._contains = None
         self._returnGeometry = None
+        self._srid = 21781
 
         self.layer = request.params.get('layer')
         self.searchText = request.params.get('searchText')
         self.searchField = request.params.get('searchField')
         self.contains = request.params.get('contains')
         self.returnGeometry = request.params.get('returnGeometry')
+        self.srid = request.params.get('sr')
 
         self.geometryFormat = request.params.get('geometryFormat', u'esrijson')
         self.mapName = request.matchdict.get('map')
@@ -48,6 +50,10 @@ class FindServiceValidation(MapNameValidation):
     @property
     def returnGeometry(self):
         return self._returnGeometry
+
+    @property
+    def srid(self):
+        return self._srid
 
     @layer.setter
     def layer(self, value):
@@ -89,3 +95,10 @@ class FindServiceValidation(MapNameValidation):
                 self._returnGeometry = False
             else:
                 self._returnGeometry = True
+
+    @srid.setter
+    def srid(self, value):
+        if value in ('2056', '21781'):
+            self._srid = int(value)
+        elif value is not None:
+            raise HTTPBadRequest('Unsupported spatial reference %s' % value)

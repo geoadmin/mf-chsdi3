@@ -2,7 +2,6 @@
 
 from sqlalchemy import Column, Integer
 from sqlalchemy.types import Numeric, Unicode, Float, SmallInteger
-from geoalchemy2.types import Geometry
 
 from chsdi.models import register, bases
 from chsdi.models.types import DateTimeChsdi
@@ -1128,8 +1127,7 @@ class Teileinzugsgebiete2 (Base, Vector):
     ext_ezg_datenausgabe = Column('ext_ezg_datenausgabe', Integer)
     ext_abfluesse_abflussvar = Column('ext_abfluesse_abflussvar', Numeric)
     the_geom = Column(Geometry2D)
-    ext_the_geom = Column('ext_the_geom', Geometry(geometry_type='GEOMETRYCOLLECTION',
-                                                   dimension=2, srid=21781))
+    ext_the_geom = Column('ext_the_geom', Geometry2D)
 
 register('ch.bafu.wasser-teileinzugsgebiete_2', Teileinzugsgebiete2)
 

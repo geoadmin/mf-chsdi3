@@ -1,16 +1,14 @@
 # -*- coding: utf-8 -*-
 
 import re
-
-from pyramid.view import view_config
 import pyramid.httpexceptions as exc
+from pyramid.view import view_config
 
 from shapely.geometry import box, Point
 
 from chsdi.lib.validation.search import SearchValidation
-from chsdi.lib.helpers import (
-    format_search_text, transformCoordinate, parse_box2d, center_from_box2d
-)
+from chsdi.lib.helpers import format_search_text, transform_coordinate, parse_box2d
+from chsdi.lib.helpers import shift_to, center_from_box2d
 from chsdi.lib.sphinxapi import sphinxapi
 from chsdi.lib import mortonspacekey as msk
 
@@ -30,6 +28,7 @@ class Search(SearchValidation):
         self.cbName = request.params.get('callback')
         self.bbox = request.params.get('bbox')
         self.sortbbox = request.params.get('sortbbox', 'true').lower() == 'true'
+        self.srid = request.params.get('sr', '21781')
         self.returnGeometry = request.params.get('returnGeometry', 'true').lower() == 'true'
         self.quadindex = None
         self.origins = request.params.get('origins')
@@ -44,8 +43,11 @@ class Search(SearchValidation):
         self.results = {'results': []}
         self.request = request
 
+        morton_box = [420000, 30000, 900000, 510000]
+        if self.srid == 2056:
+            morton_box = shift_to(morton_box, 2056)
         self.quadtree = msk.QuadTree(
-            msk.BBox(420000, 30000, 900000, 510000), 20)
+            msk.BBox(*morton_box), 20)
         self.sphinx = sphinxapi.SphinxClient()
         self.sphinx.SetServer(request.registry.settings['sphinxhost'], 9312)
         self.sphinx.SetMatchMode(sphinxapi.SPH_MATCH_EXTENDED)
@@ -75,11 +77,6 @@ class Search(SearchValidation):
             # swiss search
             self._swiss_search()
             # translate some gazetteer categories from swissnames3 tagged with <i>...</i> in the label attribute of the response
-            for key, value in enumerate(self.results['results']):
-                translation = re.search(r'.*(<i>[\s\S]*?<\/i>).*', value['attrs']['label']) or False
-                if translation:
-                    self.results['results'][key]['attrs']['label'] = value['attrs']['label'].replace(
-                        translation.group(1), '<i>%s</i>' % str(self.request.translate(translation.group(1)).encode('utf-8')))
         return self.results
 
     def _fuzzy_search(self, searchTextFinal):
@@ -272,7 +269,7 @@ class Search(SearchValidation):
     def _get_geoanchor_from_bbox(self):
         center = center_from_box2d(self.bbox)
         wkt = 'POINT(%s %s)' % (center[0], center[1])
-        return transformCoordinate(wkt, 21781, 4326)
+        return transform_coordinate(wkt, self.srid, 4326)
 
     def _query_fields(self, fields):
         # 10a, 10b needs to be interpreted as digit
@@ -391,38 +388,75 @@ class Search(SearchValidation):
 
     def _parse_location_results(self, results):
         nb_address = 0
-        for res in results:
-            origin = res['attrs']['origin']
-            layerBodId = self._origin_to_layerbodid(origin)
-            if layerBodId is not None:
-                res['attrs']['layerBodId'] = layerBodId
-                res['attrs']['featureId'] = res['attrs']['feature_id']
+        for result in self._yield_matches(results):
+            origin = result['attrs']['origin']
+            layer_bod_id = self._origin_to_layerbodid(origin)
+            if layer_bod_id is not None:
+                result['attrs']['layerBodId'] = layer_bod_id
+                # Backward compatible
+                result['attrs']['featureId'] = result['attrs']['feature_id']
+                result['attrs'].pop('layerBodId', None)
+            result['attrs'].pop('feature_id', None)
+            result['attrs']['label'] = self._translate_label(result['attrs']['label'])
+            if (origin == 'address' and
+                nb_address < self.LOCATION_LIMIT and
+               (not self.bbox or self._bbox_intersection(self.bbox,
+                                                         result['attrs']['geom_st_box2d']))):
+                result['attrs'] = self._parse_address(result['attrs'])
+                self.results['results'].append(result)
+                nb_address += 1
             else:
-                res['attrs'].pop('layerBodId', None)
-            res['attrs'].pop('feature_id', None)
-            if origin == 'address':
-                if nb_address < self.LOCATION_LIMIT:
-                    if not self.bbox or self._bbox_intersection(self.bbox, res['attrs']['geom_st_box2d']):
-                        res['attrs'] = self._parse_address(res['attrs'])
-                        self.results['results'].append(res)
-                        nb_address += 1
-            else:
-                if not self.bbox or self._bbox_intersection(self.bbox, res['attrs']['geom_st_box2d']):
-                    self.results['results'].append(res)
+                if not self.bbox or self._bbox_intersection(self.bbox,
+                                                            result['attrs']['geom_st_box2d']):
+                    self.results['results'].append(result)
 
     def _parse_feature_results(self, results):
-        for i in range(0, len(results)):
-            if 'error' in results[i]:
-                if results[i]['error'] != '':
-                    raise exc.HTTPNotFound(results[i]['error'])  # pragma: no cover
-            if results[i] is not None and 'matches' in results[i]:
-                # Add results to the list
-                for res in results[i]['matches']:
-                    if 'feature_id' in res['attrs']:
-                        res['attrs']['featureId'] = res['attrs']['feature_id']
+        for idx, result in self._yield_results(results):
+            if 'error' in result:
+                if result['error'] != '':
+                    raise exc.HTTPNotFound(result['error'])  # pragma: no cover
+            if result is not None and 'matches' in result:
+                for match in self._yield_matches(result['matches']):
+                    # Backward compatible
+                    if 'feature_id' in match['attrs']:
+                        match['attrs']['featureId'] = match['attrs']['feature_id']
                     if self.typeInfo == 'featuresearch' or not self.bbox or \
-                            self._bbox_intersection(self.bbox, res['attrs']['geom_st_box2d']):
-                        self.results['results'].append(res)
+                            self._bbox_intersection(self.bbox, match['attrs']['geom_st_box2d']):
+                        self.results['results'].append(match)
+
+    def _yield_results(self, results):
+        for idx, result in enumerate(results):
+            yield idx, result
+
+    def _yield_matches(self, matches):
+        for match in matches:
+            yield self._choose_srid(match)
+
+    def _choose_srid(self, match):
+        geom_entries = ['geom_st_box2d', 'x', 'y']
+        if self.srid == 2056:
+            for geom_entry in geom_entries:
+                match = self._choose_lv95_coords(match, geom_entry)
+        else:
+            for geom_entry in geom_entries:
+                geom_entry = '%s_lv95' % geom_entry
+                if geom_entry in match['attrs']:
+                    del match['attrs'][geom_entry]
+        return match
+
+    def _choose_lv95_coords(self, match, prefix):
+        attr = '%s_lv95' % prefix
+        if attr in match['attrs']:
+            match['attrs'][prefix] = match['attrs'][attr]
+            del match['attrs'][attr]
+        return match
+
+    def _translate_label(self, label):
+        translation = re.search(r'.*(<i>[\s\S]*?<\/i>).*', label) or False
+        if translation:
+            label = label.replace(translation.group(1),
+                                  '<i>%s</i>' % str(self.request.translate(translation.group(1)).encode('utf-8')))
+        return label
 
     def _get_quad_index(self):
         try:
@@ -438,10 +472,7 @@ class Search(SearchValidation):
 
     def _bbox_intersection(self, ref, result):
         def _is_point(bbox):
-            if bbox[0] == bbox[2] and bbox[1] == bbox[3]:
-                return True
-            else:
-                return False
+            return bbox[0] == bbox[2] and bbox[1] == bbox[3]
         try:
             refbox = box(ref[0], ref[1], ref[2], ref[3]) if not _is_point(ref) else Point(ref[0], ref[1])
             arr = parse_box2d(result)

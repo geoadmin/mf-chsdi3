@@ -12,7 +12,7 @@
 
 <%
   import requests
-  from chsdi.models.vector import getScale
+  from chsdi.models.vector import get_scale
   from chsdi.lib.validation.identify import IdentifyServiceValidation
   request = context.get('request')
   protocol = request.scheme
@@ -27,7 +27,7 @@
   params = CadastralWebMapParams(request)
   c['bbox'] = params.mapExtent.bounds
   c['bboxlv95'] = [2000000 + c['bbox'][0], 1000000 + c['bbox'][1], 2000000 + c['bbox'][2], 1000000 + c['bbox'][3]]
-  c['scale']  = getScale(params.imageDisplay, params.mapExtent)
+  c['scale']  = get_scale(params.imageDisplay, params.mapExtent)
   topic = request.matchdict.get('map')
   baseUrl = request.registry.settings['api_url']
   coord = request.params.get('coord').split(',') if request.params.get('coord') else defaultCoord

@@ -60,29 +60,39 @@ def max_scale(m):
     return m.__maxscale__ if hasattr(m, '__maxscale__') else float('inf')
 
 
-def perimeter_models_from_bodid(bodId):
+def set_models_srid(models, srid):
+    if models is None:
+        return models
+    ms = []
+    for m in models:
+        m.set_geometry_srid_out(srid)
+        ms.append(m)
+    return ms
+
+
+def perimeter_models_from_bodid(bodId, srid=21781):
     perimeter_models = perimetermap.get(bodId)
     if perimeter_models is None:
-        return models_from_bodid(bodId)
-    return perimeter_models
+        return models_from_bodid(bodId, srid=srid)
+    return set_models_srid(perimeter_models, srid)
 
 
-def oereb_models_from_bodid(bodId, scale=None):
+def oereb_models_from_bodid(bodId, scale=None, srid=21781):
     models = oerebmap.get(bodId)
     if scale is not None:
         models = [m for m in models if scale < max_scale(m) and scale >= min_scale(m)]
-    return models
+    return set_models_srid(models, srid)
 
 
 # Returns None is the bodId is not registered and an empty list if the bodId is registered but
 # the scale filtered all models out. orderScale orders by scale validity
-def models_from_bodid(bodId, scale=None, resolution=None, orderScale=None):
+def models_from_bodid(bodId, scale=None, resolution=None, orderScale=None, srid=21781):
     models = bodmap.get(bodId)
     if models:
         if orderScale is not None:
             mdls = []
             for m in models:
-                if orderScale < max_scale(m) and orderScale  >= min_scale(m):
+                if orderScale < max_scale(m) and orderScale >= min_scale(m):
                     mdls.insert(0, m)
                 else:
                     mdls.append(m)
@@ -91,24 +101,24 @@ def models_from_bodid(bodId, scale=None, resolution=None, orderScale=None):
             models = [m for m in models if scale < max_scale(m) and scale >= min_scale(m)]
         elif resolution is not None:
             models = [m for m in models if resolution < max_resolution(m) and resolution >= min_resolution(m)]
-    return models
+    return set_models_srid(models, srid)
 
 
-def queryable_models_from_bodid(bodId, searchField):
-    models = models_from_bodid(bodId)
+def queryable_models_from_bodid(bodId, searchField, srid=21781):
+    models = models_from_bodid(bodId, srid=srid)
     if models is not None:
         models = [m for m in models if isinstance(m.get_column_by_property_name(searchField), Column)]
         if len(models) > 0:
             return models
 
 
-def get_models_attributes_keys(models, lang, attributeOnly):
-    allAttributes = []
+def get_models_attributes_keys(models, lang, attribute_only):
+    all_attributes = []
     for model in models:
         attributes = []
         if hasattr(model, '__queryable_attributes__'):
             attributes = model.get_queryable_attributes_keys(lang)
-        elif not attributeOnly:
-            attributes = model().getAttributesKeys()
-        allAttributes = allAttributes + attributes
-    return list(set(allAttributes))
+        elif not attribute_only:
+            attributes = model().get_attributes_keys()
+        all_attributes = all_attributes + attributes
+    return list(set(all_attributes))

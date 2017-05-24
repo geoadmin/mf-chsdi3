@@ -39,8 +39,9 @@ RESTFul interface is available.
 +===================================+===========================================================================================+
 | **searchText (optional)**         | The text to search for in the layer description.                                          |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
-|                                   | does not match any of the possible values)                                                |
+| **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -199,7 +200,7 @@ RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | Parameters                        | Description                                                                               |
 +===================================+===========================================================================================+
-| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
+| **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. (Defaults to de if browser language  |
 |                                   | does not match any of the possible values)                                                |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
@@ -234,7 +235,7 @@ No css styling is provided per default so that you can use your own.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | Parameters                        | Description                                                                               |
 +===================================+===========================================================================================+
-| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
+| **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. (Defaults to de if browser language  |
 |                                   | does not match any of the possible values)                                                |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
@@ -276,7 +277,7 @@ No more than 50 features can be retrieved per request.
 |                                   | geometries                                                                                |
 |                                   | <http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000n1000000>`_)  |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **geometryType (required)**       | The type of geometry to identify on. Possible values are:                                 |
+| **geometryType (required)**       | The type of geometry to identify on. Supported values are:                                |
 |                                   | esriGeometryPoint or esriGeometryPolyline or esriGeometryPolygon or esriGeometryEnvelope. |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **layers (optional)**             | The layers to perform the identify operation on. Per default query all the layers in the  |
@@ -295,10 +296,11 @@ No more than 50 features can be retrieved per request.
 | **returnGeometry (optional)**     | This parameter defines whether the geometry is returned or not. Default to "true".        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryFormat (optional)**     | Returned geometry format.                                                                 |
-|                                   | Default to ESRI geometry format. Possible values are: "esrijson" or "geojson".            |
+|                                   | Default to ESRI geometry format. Supported values are: "esrijson" or "geojson".           |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
-|                                   | does not match any of the possible values)                                                |
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -380,12 +382,13 @@ One layer, one search text and one attribute.
 |                                   | string provided. This search is not case sensitive. The default is true.                  |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryFormat (optional)**     | Returned geometry format.                                                                 |
-|                                   | Default to ESRI geometry format. Possible values are: "esrijson" or "geojson".            |
+|                                   | Default to ESRI geometry format. Supported values are: "esrijson" or "geojson".           |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **returnGeometry (optional)**     | This parameter defines whether the geometry is returned or not. Default to "true".        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
-|                                   | does not match any of the possible values)                                                |
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -423,12 +426,13 @@ RESTFul interface is available.
 | Parameters                        | Description                                                                               |
 +===================================+===========================================================================================+
 | **geometryFormat (optional)**     | Returned geometry format.                                                                 |
-|                                   | Default to ESRI geometry format. Possible values are: "esrijson" or "geojson".            |
+|                                   | Default to ESRI geometry format. Supported values are: "esrijson" or "geojson".           |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **returnGeometry (optional)**     | This parameter defines whether the geometry is returned or not. Default to "true".        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
-|                                   | does not match any of the possible values)                                                |
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -464,8 +468,9 @@ No css styling is provided per default so that you can use your own.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | Parameters                        | Description                                                                               |
 +===================================+===========================================================================================+
-| **lang (optional)**               | The language. Possible values: de, fr, it , rm, en. (Defaults to de if browser language   |
-|                                   | does not match any of the possible values)                                                |
+| **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -536,6 +541,8 @@ Only RESTFul interface is available.
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **limit (optional)**                | The maximum number of results to retrive per request (Max and default limit=50)           |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
+| **sr (optional)**                   | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
++-------------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**             | The name of the callback function.                                                        |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 
@@ -548,9 +555,11 @@ Only RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **type (required)**               | The type of performed search. Specify `layers` to perform a layer search.                 |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **lang (optional)**               | The language metadata. Possible values: de (default), fr, it, rm, en.                     |
+| **lang (optional)**               | The language metadata. Supported values: de (default), fr, it, rm, en.                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **limit (optional)**              | The maximum number of results to retrive per request (Max and default limit=30)           |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -574,6 +583,8 @@ Only RESTFul interface is available.
 | **features (required)**           | A comma separated list of technical layer names.                                          |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **limit (optional)**              | The maximum number of results to retrive per request (Max and default limit=20)           |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+

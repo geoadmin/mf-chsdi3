@@ -2,7 +2,7 @@
 
 from pyramid.view import view_config
 from pyramid.httpexceptions import HTTPBadRequest
-from gatilegrid import GeoadminTileGrid
+from gatilegrid import getTileGrid
 
 from chsdi.models.bod import get_wmts_models
 from chsdi.lib.helpers import sanitize_url
@@ -15,7 +15,7 @@ def getDefaultTileMatrixSet():
 
     minZoom = 0
     maxZoom = 28
-    gagrid = GeoadminTileGrid()
+    gagrid = getTileGrid(21781)()
     for zoom in range(minZoom, maxZoom + 1):
         tilematrixSet[zoom] = [
             gagrid.getResolution(zoom),

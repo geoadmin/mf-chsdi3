@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
 
+import esrijson
 from pyramid.httpexceptions import HTTPBadRequest
-from shapely.geometry import asShape
 
 from chsdi.lib.helpers import float_raise_nan
 from chsdi.lib.validation import BaseFeaturesValidation
-from chsdi.esrigeojsonencoder import loads
 
 
 class HtmlPopupServiceValidation(BaseFeaturesValidation):
@@ -75,8 +74,7 @@ class HtmlPopupServiceValidation(BaseFeaturesValidation):
     def mapExtent(self, value):
         if value is not None:
             try:
-                feat = loads(value)
-                self._mapExtent = asShape(feat)
+                self._mapExtent = esrijson.to_shape([float_raise_nan(c) for c in value.split(',')])
             except ValueError:
                 raise HTTPBadRequest('Please provide numerical values for the parameter mapExtent')
 
