@@ -1070,6 +1070,9 @@ msgstr "ch.are.reisezeit-oev-reisezeit"
 msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=it"
 
+msgid "ch.are.windenergie-bundesinteressen"
+msgstr "Eolico: interessi della Confederazione"
+
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
 msgstr "Inventario delle abitazioni"
 
@@ -2526,7 +2529,7 @@ msgid "ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp.vsa_kategorie"
 msgstr "Type de traitement (catégorie VSA)"
 
 msgid "ch.bafu.grundwasserkoerper"
-msgstr "Masses d'eau souterraine"
+msgstr "Corpi idrici sotterranei"
 
 msgid "ch.bafu.grundwasserschutzareale"
 msgstr "Aree di protezione"
@@ -2941,6 +2944,12 @@ msgstr "Descrizione"
 
 msgid "ch.bafu.hydroweb-messstationen_grundwasserzustand"
 msgstr "Acque sotterranee: livelli/portate"
+
+msgid "ch.bafu.hydroweb-messstationen_grundwasserzustand.description"
+msgstr "Descrizione"
+
+msgid "ch.bafu.hydroweb-messstationen_grundwasserzustand.quantile"
+msgstr "Percentili"
 
 msgid "ch.bafu.hydroweb-messstationen_temperatur"
 msgstr "Temperature dei fiumi"
