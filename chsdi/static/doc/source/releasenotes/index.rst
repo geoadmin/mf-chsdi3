@@ -32,7 +32,7 @@ API & applications
 '''''''''''''''''''''''''''''
 -  Add WMTS import
 -  Bug fixes
-- `Compare with last release <https://github.com/geoadmin/mf-geoadmin3/compare/r_170426...r_170531>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170426...r_170531>`__
 
 Geodata
 *******
@@ -58,7 +58,7 @@ API & applications
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
-- `Compare with last release <https://github.com/geoadmin/mf-geoadmin3/compare/r_170412...r_170426>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170412...r_170426>`__
 
 Geodata
 *******
@@ -119,7 +119,7 @@ API & applications
 '''''''''''''''''''''''''''''
 - New, consolidated import tool
 - Bug fixes
-- `Compare with last release <https://github.com/geoadmin/mf-geoadmin3/compare/r_170329...r_170412>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170329...r_170412>`__
 
 Geodata
 *******
@@ -158,12 +158,12 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- `Compare with last release <https://github.com/geoadmin/mf-chsdi3/compare/r_170322...r_170329>`__
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170322...r_170329>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- `Compare with last release <https://github.com/geoadmin/mf-geoadmin3/compare/r_170322...r_170329>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170322...r_170329>`__
 
 Geodata
 *******
