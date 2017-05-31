@@ -14,10 +14,10 @@ Release Notes
 
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
-.. _releasenotes_20170524:
+.. _releasenotes_20170531:
    *******
 
-Release 20170524 - Wednesday, May 24th 2017
+Release 20170531 - Wednesday, May 31st 2017
 ---------------------------------------------
 
 API & applications
@@ -25,9 +25,14 @@ API & applications
 
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170426...r_170531>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
+-  Add WMTS import
+-  Bug fixes
+- `Compare with last release <https://github.com/geoadmin/mf-geoadmin3/compare/r_170426...r_170531>`__
 
 Geodata
 *******
