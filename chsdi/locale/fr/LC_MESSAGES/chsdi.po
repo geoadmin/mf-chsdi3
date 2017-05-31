@@ -1070,6 +1070,9 @@ msgstr "ch.are.reisezeit-oev-reisezeit"
 msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=fr"
 
+msgid "ch.are.windenergie-bundesinteressen"
+msgstr "Eolien : intérêts de la Confédération"
+
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
 msgstr "inventaire des logements"
 
@@ -2941,6 +2944,12 @@ msgstr "Description"
 
 msgid "ch.bafu.hydroweb-messstationen_grundwasserzustand"
 msgstr "Eaux souterraines : niveaux/débits"
+
+msgid "ch.bafu.hydroweb-messstationen_grundwasserzustand.description"
+msgstr "Description"
+
+msgid "ch.bafu.hydroweb-messstationen_grundwasserzustand.quantile"
+msgstr "Percentiles"
 
 msgid "ch.bafu.hydroweb-messstationen_temperatur"
 msgstr "Température des cours d'eau"

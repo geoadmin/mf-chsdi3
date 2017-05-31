@@ -1070,6 +1070,9 @@ msgstr "ch.are.reisezeit-oev-reisezeit"
 msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=de"
 
+msgid "ch.are.windenergie-bundesinteressen"
+msgstr "Vent: interess federals"
+
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
 msgstr "Inventar d'abitaziuns"
 
@@ -2526,7 +2529,7 @@ msgid "ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp.vsa_kategorie"
 msgstr "Reinigungstyp (VSA-Kategorie)"
 
 msgid "ch.bafu.grundwasserkoerper"
-msgstr "Grundwasserkörper"
+msgstr "Corps d'auas sutterranas"
 
 msgid "ch.bafu.grundwasserschutzareale"
 msgstr "Areals da protecziun"
@@ -2941,6 +2944,12 @@ msgstr "Bezeichnung"
 
 msgid "ch.bafu.hydroweb-messstationen_grundwasserzustand"
 msgstr "Rait da mesiraziun NAQUA"
+
+msgid "ch.bafu.hydroweb-messstationen_grundwasserzustand.description"
+msgstr "Bezeichnung"
+
+msgid "ch.bafu.hydroweb-messstationen_grundwasserzustand.quantile"
+msgstr "Perzentile"
 
 msgid "ch.bafu.hydroweb-messstationen_temperatur"
 msgstr "Temperatura da l'aua dals flums"
