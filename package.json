@@ -9,7 +9,7 @@
   "author": "Swisstopo",
   "readmeFileName": "README.md",
   "devDependencies": {
-    "less": "~2.5.0",
+    "less": "~2.7.0",
     "less-plugin-clean-css": "~1.5.1",
     "jquery": "~2.1.0",
     "blueimp-gallery": "~2.12",
