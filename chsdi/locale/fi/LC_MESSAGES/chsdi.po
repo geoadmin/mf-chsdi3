@@ -1071,7 +1071,7 @@ msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=de"
 
 msgid "ch.are.windenergie-bundesinteressen"
-msgstr "Vent: interess federals"
+msgstr "Zona da construcziun cun zona da plimatsch  (protecziun cunter canera)"
 
 msgid "ch.are.windenergie-bundesinteressen.bik1"
 msgstr "Ulteriuras restricziuns"
@@ -1084,6 +1084,9 @@ msgstr "Zonas d'exclusiun per princip"
 
 msgid "ch.are.windenergie-bundesinteressen.bik4"
 msgstr "Zonas resalvadas (betg cumplet)"
+
+msgid "ch.are.windenergie-bundesinteressen.bik5"
+msgstr "Ulteriuras restricziuns"
 
 msgid "ch.are.windenergie-bundesinteressen.kbik"
 msgstr "Restricziuns relativas als interess da la Confederaziun"
@@ -5698,6 +5701,9 @@ msgstr "Geoid en CH1903"
 
 msgid "ch.swisstopo.geoidmodell-etrs89"
 msgstr "Geoid en ETRS89"
+
+msgid "ch.swisstopo.geologie-bodenunruhe"
+msgstr "Anthrop. Bodenunruhe CH"
 
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
 msgstr "Radiaziun terrestra"

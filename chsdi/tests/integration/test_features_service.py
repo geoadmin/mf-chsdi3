@@ -43,7 +43,7 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(len(resp.json['results']), 1)
 
     def test_find_exact_float(self):
-        params = {'layer': 'ch.bafu.bundesinventare-bln', 'searchField': 'bln_fl', 'searchText': '729.092', 'returnGeometry': 'false', 'contains': 'false'}
+        params = {'layer': 'ch.bafu.bundesinventare-bln', 'searchField': 'bln_fl', 'searchText': '7317.978', 'returnGeometry': 'false', 'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertEqual(len(resp.json['results']), 1)
@@ -146,50 +146,50 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(resp.content_type, 'text/html')
 
     def test_feature_valid(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362', status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1', status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn('attributes', resp.json['feature'])
         self.assertIn('geometry', resp.json['feature'])
-        self.assertEqual(resp.json['feature']['id'], 362)
+        self.assertEqual(resp.json['feature']['id'], 1)
 
     def test_feature_valid_topic_all(self):
-        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.bundesinventare-bln/362', status=200)
+        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.bundesinventare-bln/1', status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn('attributes', resp.json['feature'])
         self.assertIn('geometry', resp.json['feature'])
-        self.assertEqual(resp.json['feature']['id'], 362)
+        self.assertEqual(resp.json['feature']['id'], 1)
 
     def test_feature_geojson(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362', params={'geometryFormat': 'geojson'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1', params={'geometryFormat': 'geojson'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn('properties', resp.json['feature'])
         self.assertIn('geometry', resp.json['feature'])
-        self.assertEqual(resp.json['feature']['id'], 362)
+        self.assertEqual(resp.json['feature']['id'], 1)
 
     def test_feature_geojson_nogeom(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362', params={'geometryFormat': 'geojson', 'returnGeometry': 'false'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1', params={'geometryFormat': 'geojson', 'returnGeometry': 'false'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn('properties', resp.json['feature'])
         self.assertNotIn('geometry', resp.json['feature'])
-        self.assertEqual(resp.json['feature']['id'], 362)
+        self.assertEqual(resp.json['feature']['id'], 1)
 
     def test_feature_geojson_geom(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362', params={'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1', params={'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn('properties', resp.json['feature'])
         self.assertIn('geometry', resp.json['feature'])
-        self.assertEqual(resp.json['feature']['id'], 362)
+        self.assertEqual(resp.json['feature']['id'], 1)
 
     def test_several_features(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362,363', status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1,2', status=200)
         self.assertEqual(len(resp.json['features']), 2)
 
     def test_several_features_geojson(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362,363', params={'geometryFormat': 'geojson'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1,2', params={'geometryFormat': 'geojson'}, status=200)
         self.assertEqual(len(resp.json['features']), 2)
 
     def test_feature_with_callback(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362', params={'callback': 'cb_'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'text/javascript')
         resp.mustcontain('cb_({')
 
@@ -199,14 +199,14 @@ class TestFeaturesView(TestsBase):
         self.assertIn('geometry', resp.json['feature'])
 
     def test_htmlpopup_valid(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', status=200)
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 
     def test_htmlpopup_lang(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', params={'lang': 'fr'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', params={'lang': 'fr'}, status=200)
         self.assertEqual(resp.content_type, 'text/html')
-        msgids = [u'Nom de l&#39;objet', u'Numéro de l&#39;objet', u'Surface [ha]']
+        msgids = [u'No.', u'Nom', u'Partie-No', u'Partie', u'Surface [ha]']
         for msgid in msgids:
             self.assertIn(msgid, resp.text)
 
@@ -241,16 +241,16 @@ class TestFeaturesView(TestsBase):
         resp.mustcontain('Please provide numerical values for the parameter mapExtent')
 
     def test_htmlpopup_valid_topic_all(self):
-        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', status=200)
+        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', status=200)
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 
     def test_htmlpopup_valid_with_callback(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', params={'callback': 'cb_'}, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_htmlpopup_missing_feature(self):
-        self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', status=404)
+        self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/0/htmlPopup', status=404)
 
     def test_extendedhtmlpopup_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/11/extendedHtmlPopup', status=200)
@@ -270,7 +270,7 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_extendedhtmlpopup_noinfo(self):
-        self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/extendedHtmlPopup', status=404)
+        self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/extendedHtmlPopup', status=404)
 
     def test_iframehtmlpopup(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bav.haltestellen-oev/8573140/iframeHtmlPopup', status=200)

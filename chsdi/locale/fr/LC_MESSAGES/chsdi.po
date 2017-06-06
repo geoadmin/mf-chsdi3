@@ -1074,7 +1074,7 @@ msgid "ch.are.windenergie-bundesinteressen"
 msgstr "Eolien : intérêts de la Confédération"
 
 msgid "ch.are.windenergie-bundesinteressen.bik1"
-msgstr "Autres restrictions"
+msgstr "Zones à bâtir avec zone tampon (protection contre le bruit)"
 
 msgid "ch.are.windenergie-bundesinteressen.bik2"
 msgstr "Zones de protection sans pesée des intérêts"
@@ -1084,6 +1084,9 @@ msgstr "Zones en principe à exclure"
 
 msgid "ch.are.windenergie-bundesinteressen.bik4"
 msgstr "Zones sous réserve de coordination (non exhaustif)"
+
+msgid "ch.are.windenergie-bundesinteressen.bik5"
+msgstr "Autres restrictions"
 
 msgid "ch.are.windenergie-bundesinteressen.kbik"
 msgstr "Restrictions dues aux intérêts de la Confédération"
@@ -5698,6 +5701,9 @@ msgstr "Géoïde en CH1903"
 
 msgid "ch.swisstopo.geoidmodell-etrs89"
 msgstr "Géoïde en ETRS89"
+
+msgid "ch.swisstopo.geologie-bodenunruhe"
+msgstr "Bruit sismique CH"
 
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
 msgstr "Radiation terrestre"

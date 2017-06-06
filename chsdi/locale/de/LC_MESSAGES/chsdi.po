@@ -1074,7 +1074,7 @@ msgid "ch.are.windenergie-bundesinteressen"
 msgstr "Wind: Bundesinteressen"
 
 msgid "ch.are.windenergie-bundesinteressen.bik1"
-msgstr "Weitere Einschränkungen"
+msgstr "Bauzonen mit Puffer (Lärmschutz)"
 
 msgid "ch.are.windenergie-bundesinteressen.bik2"
 msgstr "Schutzgebiete ohne Interessenabwägung"
@@ -1084,6 +1084,9 @@ msgstr "Grundsätzliche Ausschlussgebiete"
 
 msgid "ch.are.windenergie-bundesinteressen.bik4"
 msgstr "Vorbehaltsgebiete (Nicht abschliessend)"
+
+msgid "ch.are.windenergie-bundesinteressen.bik5"
+msgstr "Weitere Einschränkungen"
 
 msgid "ch.are.windenergie-bundesinteressen.kbik"
 msgstr "Einschränkungen durch Bundesinteressen"
@@ -5698,6 +5701,9 @@ msgstr "Geoidmodell in CH1903"
 
 msgid "ch.swisstopo.geoidmodell-etrs89"
 msgstr "Geoidmodell in ETRS89"
+
+msgid "ch.swisstopo.geologie-bodenunruhe"
+msgstr "Anthrop. Bodenunruhe CH"
 
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
 msgstr "Terrestrische Strahlung"
