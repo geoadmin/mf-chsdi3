@@ -1073,6 +1073,30 @@ msgstr "http://www.are.admin.ch/index.html?lang=de"
 msgid "ch.are.windenergie-bundesinteressen"
 msgstr "Vent: interess federals"
 
+msgid "ch.are.windenergie-bundesinteressen.bik1"
+msgstr "Ulteriuras restricziuns"
+
+msgid "ch.are.windenergie-bundesinteressen.bik2"
+msgstr "Zonas da protecziun senza consideraziun dals interess"
+
+msgid "ch.are.windenergie-bundesinteressen.bik3"
+msgstr "Zonas d'exclusiun per princip"
+
+msgid "ch.are.windenergie-bundesinteressen.bik4"
+msgstr "Zonas resalvadas (betg cumplet)"
+
+msgid "ch.are.windenergie-bundesinteressen.kbik"
+msgstr "Restricziuns relativas als interess da la Confederaziun"
+
+msgid "ch.are.windenergie-bundesinteressen.tt_info"
+msgstr "Mit dieser Abfrage erfolgt keine abschliessende Auflistung aller Bundesinteressen. Eine leere Liste bedeutet nicht, dass kein Koordinationsbedarf mit Bundesinteressen vorliegt. Die nachfolgende Auflistung weist für alle berücksichtigten Bundesinteressen,"
+
+msgid "ch.are.windenergie-bundesinteressen.tt_info_footer"
+msgstr "Die Methodenbeschreibung der Karte mit Auflistung der einzelnen Geotdatensätze finden Sie unter"
+
+msgid "ch.are.windenergie-bundesinteressen.tt_short_info"
+msgstr "Die Einschränkungen durch Bundesinteresse bei der Planung von Windenergieanlagen werden pro Zelle von 500m x 500m einer bestimmten Kategorie zugeteilt. Die Zuteilung berücksichtigt den rechtlichen Status der verschiedenen, in der Zelle vorkommenden Bundes"
+
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
 msgstr "Inventar d'abitaziuns"
 
@@ -1760,8 +1784,23 @@ msgstr "Objektnummer"
 msgid "ch.bafu.bundesinventare-bln"
 msgstr "IFC"
 
+msgid "ch.bafu.bundesinventare-bln.bln_fl"
+msgstr "Fläche [qm]"
+
 msgid "ch.bafu.bundesinventare-bln.bln_name"
-msgstr "Objektnummer"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-bln.bln_obj"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-bln.linkurldescription"
+msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-bln.subareaname"
+msgstr "Teilraum"
+
+msgid "ch.bafu.bundesinventare-bln.subareanumber"
+msgstr "Teilobjekt-Nr."
 
 msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Palids planivas"
@@ -4886,6 +4925,9 @@ msgstr "Sveltezza dal vent autezza 50 m"
 msgid "ch.bfe.windenergie-geschwindigkeit_h75"
 msgstr "Sveltezza dal vent autezza 75 m"
 
+msgid "ch.bfe.windenergie-potenzialgebiete"
+msgstr "Windpotenzialgebiete"
+
 msgid "ch.bfs"
 msgstr "BFS"
 
@@ -7331,6 +7373,12 @@ msgstr "Nums geografics swissNAMES3D"
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Geografische Namen swissNAMES3D"
 
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz"
+msgstr "Eisenbahn swissTLM3D"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz"
+msgstr "Gewässer swissTLM3D"
+
 msgid "ch.swisstopo.swisstlm3d-karte"
 msgstr "Model cuntrada topo."
 
@@ -7351,6 +7399,12 @@ msgstr "Model cuntrada topo."
 
 msgid "ch.swisstopo.swisstlm3d.metadata"
 msgstr "Divisiun swissTLM3D Vector"
+
+msgid "ch.swisstopo.swisstlm3d-strassen"
+msgstr "Strassen und Wege swissTLM3D"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr"
+msgstr "Seilbahnen swissTLM3D"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Sendas da viandar"
