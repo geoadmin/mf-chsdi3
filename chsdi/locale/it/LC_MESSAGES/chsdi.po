@@ -1020,13 +1020,16 @@ msgid "ch.are.windenergie-bundesinteressen.kbik"
 msgstr "Restrizioni riguardanti gli interessi della Confederazione"
 
 msgid "ch.are.windenergie-bundesinteressen.tt_info"
-msgstr "Mit dieser Abfrage erfolgt keine abschliessende Auflistung aller Bundesinteressen. Eine leere Liste bedeutet nicht, dass kein Koordinationsbedarf mit Bundesinteressen vorliegt. Die nachfolgende Auflistung weist für alle berücksichtigten Bundesinteressen,"
+msgstr "Con questa ricerca non si ottiene un elenco esaustivo di tutti gli interessi della Confederazione. Un elenco vuoto non significa che non vi sia la necessità di un coordinamento con degli interessi della Confederazione. Il seguente elenco indica le proporz"
 
 msgid "ch.are.windenergie-bundesinteressen.tt_info_footer"
-msgstr "Die Methodenbeschreibung der Karte mit Auflistung der einzelnen Geotdatensätze finden Sie unter"
+msgstr "La descrizione del metodo della carta e l'elenco dei singoli set di geodati sono consultabili sul sito"
+
+msgid "ch.are.windenergie-bundesinteressen.tt_link"
+msgstr "www.are.admin.ch/energiaeolica"
 
 msgid "ch.are.windenergie-bundesinteressen.tt_short_info"
-msgstr "Die Einschränkungen durch Bundesinteresse bei der Planung von Windenergieanlagen werden pro Zelle von 500m x 500m einer bestimmten Kategorie zugeteilt. Die Zuteilung berücksichtigt den rechtlichen Status der verschiedenen, in der Zelle vorkommenden Bundes"
+msgstr "Per ogni cella di 500m x 500m, le restrizioni legate agli interessi della Confederazione nell'ambito della pianificazione di impianti eolici sono attribuite a una determinata categoria. L'attribuzione tiene conto dello status giuridico dei diversi interes"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
 msgstr "Inventario delle abitazioni"
@@ -3100,6 +3103,15 @@ msgstr "Legno morto (IFN)"
 
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Percentuale di bosco (IFN)"
+
+msgid "ch.bafu.luftreinhaltung-ammoniakkonzentration"
+msgstr "Concentrazione di ammoniaca"
+
+msgid "ch.bafu.luftreinhaltung-stickstoffdeposition"
+msgstr "Deposizione di azoto"
+
+msgid "ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag"
+msgstr "CLN Exceedances"
 
 msgid "ch.bafu.mittlere-abfluesse"
 msgstr "Deflussi medi (m³/s)"

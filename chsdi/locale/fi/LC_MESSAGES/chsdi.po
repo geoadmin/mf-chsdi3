@@ -999,7 +999,7 @@ msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=de"
 
 msgid "ch.are.windenergie-bundesinteressen"
-msgstr "Zona da construcziun cun zona da plimatsch  (protecziun cunter canera)"
+msgstr "Vent: interess federals"
 
 msgid "ch.are.windenergie-bundesinteressen.bik1"
 msgstr "Ulteriuras restricziuns"
@@ -1020,13 +1020,16 @@ msgid "ch.are.windenergie-bundesinteressen.kbik"
 msgstr "Restricziuns relativas als interess da la Confederaziun"
 
 msgid "ch.are.windenergie-bundesinteressen.tt_info"
-msgstr "Mit dieser Abfrage erfolgt keine abschliessende Auflistung aller Bundesinteressen. Eine leere Liste bedeutet nicht, dass kein Koordinationsbedarf mit Bundesinteressen vorliegt. Die nachfolgende Auflistung weist für alle berücksichtigten Bundesinteressen,"
+msgstr "Cun questa retschertga na vegnan betg enumerads tut ils interess federals. Ina glista vida na vul betg dir ch'i na dettia nagin basegn da coordinaziun cun interess federals. La suandanta enumeraziun mussa las parts da la surfatscha per tut ils interess fe"
 
 msgid "ch.are.windenergie-bundesinteressen.tt_info_footer"
-msgstr "Die Methodenbeschreibung der Karte mit Auflistung der einzelnen Geotdatensätze finden Sie unter"
+msgstr "La descripziun da la metoda da la charta cun l'enumeraziun da las singulas unitads da geodatas chattais Vus sut"
+
+msgid "ch.are.windenergie-bundesinteressen.tt_link"
+msgstr "www.are.admin.ch/windenergie"
 
 msgid "ch.are.windenergie-bundesinteressen.tt_short_info"
-msgstr "Die Einschränkungen durch Bundesinteresse bei der Planung von Windenergieanlagen werden pro Zelle von 500m x 500m einer bestimmten Kategorie zugeteilt. Die Zuteilung berücksichtigt den rechtlichen Status der verschiedenen, in der Zelle vorkommenden Bundes"
+msgstr "Las restricziuns tras interess federals tar la planisaziun d'implants d'energia da vent vegnan attribuidas per mintga cella da 500m x 500m ad ina categoria determinada. L'attribuziun resguarda il status giuridic dals differents interess federals ch'exista"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
 msgstr "Inventar d'abitaziuns"
@@ -3100,6 +3103,15 @@ msgstr "Laina morta (IFN)"
 
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Quota da guaud (IFN)"
+
+msgid "ch.bafu.luftreinhaltung-ammoniakkonzentration"
+msgstr "Ammoniakkonzentration"
+
+msgid "ch.bafu.luftreinhaltung-stickstoffdeposition"
+msgstr "Stickstoffdeposition"
+
+msgid "ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag"
+msgstr "CLN Exceedances"
 
 msgid "ch.bafu.mittlere-abfluesse"
 msgstr "Deflussiuns mesaunas (m³/s)"

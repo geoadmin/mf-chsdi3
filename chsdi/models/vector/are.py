@@ -172,6 +172,32 @@ class Gemeindetypen_2012(Base, Vector):
 register('ch.are.gemeindetypen', Gemeindetypen_2012)
 
 
+class WindenergieBundesinteressen(Base, Vector):
+    __tablename__ = 'windenergie_bundesinteressen'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
+    __template__ = 'templates/htmlpopup/windenergie_bundesinteressen.mako'
+    __bodId__ = 'ch.are.windenergie-bundesinteressen'
+    __label__ = 'kbik'
+    __extended_info__ = True
+    id = Column('bgdi_id', Integer, primary_key=True)
+    kbik = Column('kbik', Integer)
+    bik1_5_d = Column('bik1_5_d', Unicode)
+    bik1_5_fr = Column('bik1_5_fr', Unicode)
+    bik1_5_it = Column('bik1_5_it', Unicode)
+    bik2_d = Column('bik2_d', Unicode)
+    bik2_fr = Column('bik2_fr', Unicode)
+    bik2_it = Column('bik2_it', Unicode)
+    bik3_d = Column('bik3_d', Unicode)
+    bik3_fr = Column('bik3_fr', Unicode)
+    bik3_it = Column('bik3_it', Unicode)
+    bik4_d = Column('bik4_d', Unicode)
+    bik4_fr = Column('bik4_fr', Unicode)
+    bik4_it = Column('bik4_it', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(WindenergieBundesinteressen.__bodId__, WindenergieBundesinteressen)
+
+
 class ZweitwohnungsAnteil(Base, Vector):
     __tablename__ = 'wohnungsinventar_zweitwohnungsanteil'
     __table_args__ = ({'schema': 'raumplanung', 'autoload': False})
