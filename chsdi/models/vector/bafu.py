@@ -1215,16 +1215,19 @@ register('ch.bafu.auen-vegetationskarten', AuenVegetationsKarten)
 
 
 class BLN(Base, Vector):
-    __tablename__ = 'bln'
+    __tablename__ = 'bln_v2'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-bln'
     __queryable_attributes__ = ['bln_name']
     __template__ = 'templates/htmlpopup/bln.mako'
     __label__ = 'bln_name'
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     bln_name = Column('bln_name', Text)
     bln_obj = Column('bln_obj', Integer)
     bln_fl = Column('bln_fl', Numeric)
+    subareanumber = Column('subareanumber', Integer)
+    subareaname = Column('subareaname', Text)
+    linkurldescription = Column('linkurldescription', Text)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-bln', BLN)

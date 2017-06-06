@@ -1074,7 +1074,7 @@ msgid "ch.are.windenergie-bundesinteressen"
 msgstr "Eolico: interessi della Confederazione"
 
 msgid "ch.are.windenergie-bundesinteressen.bik1"
-msgstr "Altre restrizioni"
+msgstr "Zone edificabili con zona cuscinetto (protezione contro l’inquinamento fonico)"
 
 msgid "ch.are.windenergie-bundesinteressen.bik2"
 msgstr "Zone di protezione senza ponderazione degli interessi"
@@ -1084,6 +1084,9 @@ msgstr "Zone in principio da escludere"
 
 msgid "ch.are.windenergie-bundesinteressen.bik4"
 msgstr "Zone con riserva di coordinamento (non esaustivo)"
+
+msgid "ch.are.windenergie-bundesinteressen.bik5"
+msgstr "Altre restrizioni"
 
 msgid "ch.are.windenergie-bundesinteressen.kbik"
 msgstr "Restrizioni riguardanti gli interessi della Confederazione"
@@ -1785,7 +1788,7 @@ msgid "ch.bafu.bundesinventare-bln"
 msgstr "IFP"
 
 msgid "ch.bafu.bundesinventare-bln.bln_fl"
-msgstr "Area [ha]"
+msgstr "Superficie [ha]"
 
 msgid "ch.bafu.bundesinventare-bln.bln_name"
 msgstr "Nome"
@@ -5698,6 +5701,9 @@ msgstr "Geoide in CH1903"
 
 msgid "ch.swisstopo.geoidmodell-etrs89"
 msgstr "Geoide in ETRS89"
+
+msgid "ch.swisstopo.geologie-bodenunruhe"
+msgstr "Bruit sismique CH"
 
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
 msgstr "Radiazione terrestre"
