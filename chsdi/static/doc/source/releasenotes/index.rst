@@ -14,6 +14,64 @@ Release Notes
 
     <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20170614:
+   *******
+
+Release 20170614 - Tuesday, June 13th 2017
+---------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170426...r170613>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170426...r170613>`__
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Alps with guard dogs <//map.geo.admin.ch/?layers=ch.bafu.alpweiden-herdenschutzhunde>`__ (ch.bafu.alpweiden-herdenschutzhunde)                                                 |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Diatoms <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen)                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Fish <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_fische>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_fische)                                 |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Macrophytes <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten)                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Macrozoobenthos <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos)    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ammonium <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_ammonium>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_ammonium)                             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Dissolved Organic Carbon (DOC) <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_doc>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_doc)                 |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Nitrate <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_nitrat>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_nitrat)                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Nitrite <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_nitrit>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_nitrit)                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Phosphate <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_phosphat>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_phosphat)                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Total Phosphorus <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt)       |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ILNM <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-bln>`__ (ch.bafu.bundesinventare-bln)                                                                                 |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:10'000 (color) <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte-farbe-10>`__ (ch.swisstopo.landeskarte-farbe-10)                                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:10'000 (grey) <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte-grau-10>`__ (ch.swisstopo.landeskarte-grau-10)                                               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SPM consultation <//map.geo.admin.ch?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung&topic=sachplan>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Sectoral Plan Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft&topic=sachplan>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)              |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20170531:
    *******
 
