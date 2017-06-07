@@ -2618,5 +2618,6 @@ class Spitallandeplaetze(Base, Vector):
     canton = Column('canton', Unicode, nullable=False)
     arp_east = Column('arp_east', Integer, nullable=False)
     arp_north = Column('arp_north', Integer, nullable=False)
+    the_geom = Column(Geometry2D)
 
 register('ch.bazl.spitallandeplaetze', Spitallandeplaetze)
