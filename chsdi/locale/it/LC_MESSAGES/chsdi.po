@@ -1785,7 +1785,7 @@ msgid "ch.bafu.bundesinventare-bln"
 msgstr "IFP"
 
 msgid "ch.bafu.bundesinventare-bln.bln_fl"
-msgstr "Area [m2]"
+msgstr "Area [ha]"
 
 msgid "ch.bafu.bundesinventare-bln.bln_name"
 msgstr "Nome"
@@ -1794,7 +1794,7 @@ msgid "ch.bafu.bundesinventare-bln.bln_obj"
 msgstr "No."
 
 msgid "ch.bafu.bundesinventare-bln.linkurldescription"
-msgstr "Descrizione dell’oggetto"
+msgstr "Descrizione dell´oggetto"
 
 msgid "ch.bafu.bundesinventare-bln.subareaname"
 msgstr "Sottozona"
