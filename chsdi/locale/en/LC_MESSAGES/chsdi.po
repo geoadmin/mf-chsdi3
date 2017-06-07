@@ -1785,7 +1785,7 @@ msgid "ch.bafu.bundesinventare-bln"
 msgstr "ILNM"
 
 msgid "ch.bafu.bundesinventare-bln.bln_fl"
-msgstr "Superficie [m2]"
+msgstr "Superficie [ha]"
 
 msgid "ch.bafu.bundesinventare-bln.bln_name"
 msgstr "Name"

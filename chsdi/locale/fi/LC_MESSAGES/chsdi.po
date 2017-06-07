@@ -1785,7 +1785,7 @@ msgid "ch.bafu.bundesinventare-bln"
 msgstr "IFC"
 
 msgid "ch.bafu.bundesinventare-bln.bln_fl"
-msgstr "Fläche [qm]"
+msgstr "Fläche [ha]"
 
 msgid "ch.bafu.bundesinventare-bln.bln_name"
 msgstr "Objektname"
