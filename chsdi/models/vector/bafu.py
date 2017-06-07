@@ -12,6 +12,25 @@ from chsdi.models.vector import Vector, Geometry2D
 Base = bases['bafu']
 
 
+class AlpweidenHerdenschutzhunde(Base, Vector):
+    __tablename__ = 'alpenweiden_herdenschutzhunde'
+    __table_args__ = ({'schema': 'fauna', 'autoload': False})
+    __bodId__ = 'ch.bafu.alpweiden-herdenschutzhunde'
+    __template__ = 'templates/htmlpopup/alpweiden_herdenschutzhunde.mako'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    kontname = Column('kontname', Unicode)
+    konttel = Column('konttel', Unicode)
+    kontemail = Column('kontemail', Unicode)
+    code_refverhalten = Column('code_refverhalten', Integer)
+    code_hundepraesenz = Column('code_hundepraesenz', Integer)
+    code_hinweis = Column('code_hinweis', Integer)
+    the_geom = Column(Geometry2D)
+
+register(AlpweidenHerdenschutzhunde.__bodId__, AlpweidenHerdenschutzhunde)
+
+
 class Hydrogeologischekarte100(Base, Vector):
     __tablename__ = 'hydrogeologische_karte_100'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})

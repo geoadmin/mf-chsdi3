@@ -1073,6 +1073,30 @@ msgstr "http://www.are.admin.ch/index.html?lang=fr"
 msgid "ch.are.windenergie-bundesinteressen"
 msgstr "Eolien : intérêts de la Confédération"
 
+msgid "ch.are.windenergie-bundesinteressen.bik1"
+msgstr "Autres restrictions"
+
+msgid "ch.are.windenergie-bundesinteressen.bik2"
+msgstr "Zones de protection sans pesée des intérêts"
+
+msgid "ch.are.windenergie-bundesinteressen.bik3"
+msgstr "Zones en principe à exclure"
+
+msgid "ch.are.windenergie-bundesinteressen.bik4"
+msgstr "Zones sous réserve de coordination (non exhaustif)"
+
+msgid "ch.are.windenergie-bundesinteressen.kbik"
+msgstr "Restrictions dues aux intérêts de la Confédération"
+
+msgid "ch.are.windenergie-bundesinteressen.tt_info"
+msgstr "Mit dieser Abfrage erfolgt keine abschliessende Auflistung aller Bundesinteressen. Eine leere Liste bedeutet nicht, dass kein Koordinationsbedarf mit Bundesinteressen vorliegt. Die nachfolgende Auflistung weist für alle berücksichtigten Bundesinteressen,"
+
+msgid "ch.are.windenergie-bundesinteressen.tt_info_footer"
+msgstr "Die Methodenbeschreibung der Karte mit Auflistung der einzelnen Geotdatensätze finden Sie unter"
+
+msgid "ch.are.windenergie-bundesinteressen.tt_short_info"
+msgstr "Die Einschränkungen durch Bundesinteresse bei der Planung von Windenergieanlagen werden pro Zelle von 500m x 500m einer bestimmten Kategorie zugeteilt. Die Zuteilung berücksichtigt den rechtlichen Status der verschiedenen, in der Zelle vorkommenden Bundes"
+
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
 msgstr "inventaire des logements"
 
@@ -1680,7 +1704,7 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Contact E-mail"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontname"
-msgstr "Nome de Contact"
+msgstr "Nom de Contact"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.konttel"
 msgstr "Contact Téléphone"
@@ -1760,8 +1784,23 @@ msgstr "Numéro de l´objet"
 msgid "ch.bafu.bundesinventare-bln"
 msgstr "IFP"
 
+msgid "ch.bafu.bundesinventare-bln.bln_fl"
+msgstr "Surface [m2]"
+
 msgid "ch.bafu.bundesinventare-bln.bln_name"
-msgstr "Numéro de l´objet"
+msgstr "Nom"
+
+msgid "ch.bafu.bundesinventare-bln.bln_obj"
+msgstr "No."
+
+msgid "ch.bafu.bundesinventare-bln.linkurldescription"
+msgstr "Description d’objet"
+
+msgid "ch.bafu.bundesinventare-bln.subareaname"
+msgstr "Partie"
+
+msgid "ch.bafu.bundesinventare-bln.subareanumber"
+msgstr "Partie-No."
 
 msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Bas-marais"
@@ -4886,6 +4925,9 @@ msgstr "Vitesse du vent à 50 m du sol"
 msgid "ch.bfe.windenergie-geschwindigkeit_h75"
 msgstr "Vitesse du vent à 75 m du sol"
 
+msgid "ch.bfe.windenergie-potenzialgebiete"
+msgstr "Zones à potentiel éolien"
+
 msgid "ch.bfs"
 msgstr "OFS"
 
@@ -7331,6 +7373,12 @@ msgstr "Noms géographiques swissNAMES3D"
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Noms géographiques swissNAMES3D"
 
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz"
+msgstr "Chemin de fer swissTLM3D"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz"
+msgstr "Hydrographie swissTLM3D"
+
 msgid "ch.swisstopo.swisstlm3d-karte"
 msgstr "Modèle topographique du paysage"
 
@@ -7351,6 +7399,12 @@ msgstr "Modèle topographique du paysage"
 
 msgid "ch.swisstopo.swisstlm3d.metadata"
 msgstr "Découpage swissTLM3D Vector"
+
+msgid "ch.swisstopo.swisstlm3d-strassen"
+msgstr "Routes et chemins swissTLM3D"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr"
+msgstr "Transports à câble swissTLM3D"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Chemins de randonnée pédestre"
