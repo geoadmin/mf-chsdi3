@@ -3,6 +3,10 @@ from datetime import datetime
 import time
 import PyRSS2Gen
 import re
+import sys
+import pytz
+from lxml import etree
+from lxml.etree import Element, SubElement, QName, tostring
 
 
 class NoOutput:
@@ -12,6 +16,9 @@ class NoOutput:
 
     def publish(self, handler):
         pass
+
+class XMLNamespaces:
+    atom = "http://www.w3.org/2005/Atom"
 
 
 class MyRSS2(PyRSS2Gen.RSSItem):
@@ -41,7 +48,8 @@ def id_to_rss_date(r):
     date_str = id_str.split('-')[1]
     date_str = date_str + ' 00:00:00'
     date_obj = datetime.strptime(date_str, '%Y%m%d %H:%M:%S')
-    date_rss = datetime.strftime(date_obj, '%a, %d %b %Y %H:%M:%S %z')
+    localtz = pytz.timezone('Europe/Zurich')
+    date_rss = datetime.strftime(localtz.localize(date_obj), '%a, %d %b %Y %H:%M:%S %z')
     return date_rss
 
 
@@ -58,6 +66,13 @@ def data_to_description(data):
     return description
 
 if __name__ == '__main__':
+    if len(sys.argv) <2:
+        print "Error. You must set API_URL"
+        sys.exit(2)
+
+    api_url = sys.argv[1] + '/'
+    print "RSS feed url: {}".format(api_url)
+    
     items = []
     pathToReleaseNotes = 'chsdi/static/doc/build/releasenotes/index.html'
     try:
@@ -76,9 +91,9 @@ if __name__ == '__main__':
         # create feeds
         items.append(MyRSS2(
             title=title,
-            link='//api3.geo.admin.ch/releasenotes/' + r.findNext('a').get('href'),
+            link= api_url + r.findNext('a').get('href'),
             description=description,
-            guid='//api3.geo.admin.ch/releasenotes/' + r.findNext('a').get('href'),
+            guid=api_url + r.findNext('a').get('href'),
             pubDate=date_rss))
         i += 1
         if i == 10:
@@ -87,13 +102,25 @@ if __name__ == '__main__':
     # create rss
     rss = PyRSS2Gen.RSS2(
         title='GeoAdmin - RSS Feed',
-        link='//api3.geo.admin.ch/releasenotes/',
+        link=api_url + 'releasenotes/',
         description="The latest news about GeoAdmin application's changes, new and updated data available on map.geo.admin.ch",
         lastBuildDate=time.strftime('%a, %d %b %Y %H:%M:%S %z'),
         items=items
     )
 
-    # write into xml file
+    # Make the feed validate (https://validator.w3.org/feed/check.cgi?)
     rss = rss.to_xml('utf-8')
+    root = etree.fromstring(rss)
+    new_root = Element('rss', nsmap={'atom':XMLNamespaces.atom})
+    new_root.attrib['version'] = '2.0'
+    channel = root[0]
+    atom_link  = Element(QName(XMLNamespaces.atom, 'link'))
+    atom_link.attrib['type'] = "application/rss+xml"
+    atom_link.attrib['rel'] = "self"
+    atom_link.attrib['href'] = api_url + 'releasenotes/rss2.xml'
+    link = channel.find("link")
+    link.addnext(atom_link)
+    new_root.append(channel)
+
     with open('chsdi/static/doc/build/releasenotes/rss2.xml', 'w') as xml:
-        xml.write(rss)
+        xml.write(etree.tostring(new_root, pretty_print=True))

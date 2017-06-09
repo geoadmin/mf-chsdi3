@@ -12,7 +12,7 @@ Release Notes
 
 .. raw:: html
 
-    <p><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
+    <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 .. _releasenotes_20170614:
    *******
@@ -4058,3 +4058,25 @@ API & applications
 - Add WMS servers
 - Adding graticule option to print
 - Various minor fixes and improvements
+
+
+.. raw:: html
+
+    <script>
+        function relativeToAbsolute(relativeUrl) {
+          var a = document.createElement('a');
+            a.href = relativeUrl;
+              return a.href;
+              }
+       var rss_url = relativeToAbsolute('rss2.xml').replace(/^http:\/\//i, 'https://');;
+       
+       setTimeout(function() {  
+       jQuery('<a>', {
+           id: 'foo',
+           href: "https://validator.w3.org/feed/check.cgi?url=" + rss_url,
+           title: 'Validate my RSS feed', 
+           html: ' <img src="https://validator.w3.org/feed/images/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed" />',
+           alt: "[Valid RSS]"}).appendTo('#rss-feed');
+
+       }, 1000)
+    </script>
