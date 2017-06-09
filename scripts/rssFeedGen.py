@@ -115,6 +115,8 @@ if __name__ == '__main__':
     new_root.attrib['version'] = '2.0'
     channel = root[0]
     atom_link  = Element(QName(XMLNamespaces.atom, 'link'))
+    # Ugly hack to force closing open/close tag style
+    atom_link.text=''
     atom_link.attrib['type'] = "application/rss+xml"
     atom_link.attrib['rel'] = "self"
     atom_link.attrib['href'] = api_url + 'releasenotes/rss2.xml'
