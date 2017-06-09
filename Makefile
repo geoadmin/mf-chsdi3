@@ -156,7 +156,7 @@ doc: chsdi/static/css/extended.min.css
 .PHONY:
 rss: doc chsdi/static/doc/build/releasenotes/index.html
 	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
-	${PYTHON_CMD} scripts/rssFeedGen.py
+	${PYTHON_CMD} scripts/rssFeedGen.py "https:${API_URL}${APACHE_ENTRY_PATH}"
 
 .PHONY: translate
 translate:
