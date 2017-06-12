@@ -78,8 +78,8 @@
           Layer2</a> <br>
 
           <h3>Varia</h3>
-          <a href="rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362">Get Feature with id 362</a> <br>
-          <a href="rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup">Html Popup Ex 1</a> <br>
+          <a href="rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1">Get Feature with id 362</a> <br>
+          <a href="rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup">Html Popup Ex 1</a> <br>
           <a href="rest/services/ech/MapServer/ch.bafu.bundesinventare-jagdbanngebiete/1/htmlPopup?lang=fr&callback=cb">Html Popup Ex 2 with callback</a> <br>
           <a href="rest/services/ech/MapServer/ch.astra.ivs-reg_loc/54967/htmlPopup">Html Popup Ex 3</a> <br>
           <a href="rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/11/htmlPopup?lang=it">Html popup Ex 4 cadastral web map</a> <br>
