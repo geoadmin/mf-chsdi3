@@ -295,7 +295,7 @@ class Daueruntersuchung_fliessgewaesser(Base, Vector):
 register('ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser', Daueruntersuchung_fliessgewaesser)
 
 
-class Vec25_seen(Base, Vector):
+class Vec25Seen(Base, Vector):
     __tablename__ = 'seen'
     __table_args__ = ({'schema': 'vec25', 'autoload': False})
     __bodId__ = 'ch.bafu.vec25-seen'
@@ -319,10 +319,10 @@ class Vec25_seen(Base, Vector):
     gwlnr = Column('gwlnr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.vec25-seen', Vec25_seen)
+register('ch.bafu.vec25-seen', Vec25Seen)
 
 
-class Hydro_Atlas_Flussgebiete(Base, Vector):
+class HydroAtlasFlussgebiete(Base, Vector):
     __tablename__ = 'atlas_flussgebiete'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologischer-atlas_flussgebiete'
@@ -337,10 +337,10 @@ class Hydro_Atlas_Flussgebiete(Base, Vector):
     umfang = Column('umfang', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.hydrologischer-atlas_flussgebiete', Hydro_Atlas_Flussgebiete)
+register('ch.bafu.hydrologischer-atlas_flussgebiete', HydroAtlasFlussgebiete)
 
 
-class Hydro_Atlas_Bilanzgebiete(Base, Vector):
+class HydroAtlasBilanzgebiete(Base, Vector):
     __tablename__ = 'atlas_bilanzgebiete'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologischer-atlas_bilanzgebiete'
@@ -355,10 +355,10 @@ class Hydro_Atlas_Bilanzgebiete(Base, Vector):
     umfang = Column('umfang', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.hydrologischer-atlas_bilanzgebiete', Hydro_Atlas_Bilanzgebiete)
+register('ch.bafu.hydrologischer-atlas_bilanzgebiete', HydroAtlasBilanzgebiete)
 
 
-class Hydro_Atlas_Basisgebiete(Base, Vector):
+class HydroAtlasBasisgebiete(Base, Vector):
     __tablename__ = 'atlas_basisgebiete'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologischer-atlas_basisgebiete'
@@ -381,7 +381,7 @@ class Hydro_Atlas_Basisgebiete(Base, Vector):
     shape_area = Column('shape_area', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.hydrologischer-atlas_basisgebiete', Hydro_Atlas_Basisgebiete)
+register('ch.bafu.hydrologischer-atlas_basisgebiete', HydroAtlasBasisgebiete)
 
 
 class Niedrigwasserstatistik(Base, Vector):
@@ -401,7 +401,7 @@ class Niedrigwasserstatistik(Base, Vector):
 register('ch.bafu.hydrologie-niedrigwasserstatistik', Niedrigwasserstatistik)
 
 
-class Typ_fliessgewaesser(Base, Vector):
+class TypFliessgewaesser(Base, Vector):
     __tablename__ = 'typ_fliessgewaesser'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.typisierung-fliessgewaesser'
@@ -428,10 +428,10 @@ class Typ_fliessgewaesser(Base, Vector):
     name = Column('name', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.typisierung-fliessgewaesser', Typ_fliessgewaesser)
+register('ch.bafu.typisierung-fliessgewaesser', TypFliessgewaesser)
 
 
-class Wasser_Vermessungsstrecken(Base, Vector):
+class WasserVermessungsstrecken(Base, Vector):
     __tablename__ = 'vermessungsstrecken'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasserbau-vermessungsstrecken'
@@ -455,10 +455,10 @@ class Wasser_Vermessungsstrecken(Base, Vector):
     gwlnr = Column('gwlnr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.wasserbau-vermessungsstrecken', Wasser_Vermessungsstrecken)
+register('ch.bafu.wasserbau-vermessungsstrecken', WasserVermessungsstrecken)
 
 
-class Mittlere_abfluesse(Base, Vector):
+class MittlereAbfluesse(Base, Vector):
     __tablename__ = 'mittlere_abfluesse'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.mittlere-abfluesse'
@@ -486,10 +486,10 @@ class Mittlere_abfluesse(Base, Vector):
     abflussvar = Column('abflussvar', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.mittlere-abfluesse', Mittlere_abfluesse)
+register('ch.bafu.mittlere-abfluesse', MittlereAbfluesse)
 
 
-class Wasserbau_querprofilmarken(Base, Vector):
+class WasserbauQuerprofilmarken(Base, Vector):
     __tablename__ = 'querprofilmarken'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasserbau-querprofilmarken'
@@ -507,10 +507,10 @@ class Wasserbau_querprofilmarken(Base, Vector):
     bemerkung = Column('bemerkung', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.wasserbau-querprofilmarken', Wasserbau_querprofilmarken)
+register('ch.bafu.wasserbau-querprofilmarken', WasserbauQuerprofilmarken)
 
 
-class Feststoffe_geschiebemessnetz(Base, Vector):
+class FeststoffeGeschiebemessnetz(Base, Vector):
     __tablename__ = 'geschiebemessnetz'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.feststoffe-geschiebemessnetz'
@@ -554,7 +554,7 @@ class Feststoffe_geschiebemessnetz(Base, Vector):
     platz_fr = Column('platz_fr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.feststoffe-geschiebemessnetz', Feststoffe_geschiebemessnetz)
+register('ch.bafu.feststoffe-geschiebemessnetz', FeststoffeGeschiebemessnetz)
 
 
 class Nawa:
@@ -634,7 +634,7 @@ register('ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen', NawaDiatomeen
 register('ch.bafu.gewaesserschutz-chemischer_zustand_phosphat', NawaPhosphat)
 
 
-class Hydro_q347(Base, Vector):
+class HydroQ347(Base, Vector):
     __tablename__ = 'hydro_q347'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-q347'
@@ -658,10 +658,10 @@ class Hydro_q347(Base, Vector):
     symbolisierung = Column('symbolisierung', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.hydrologie-q347', Hydro_q347)
+register('ch.bafu.hydrologie-q347', HydroQ347)
 
 
-class HUG_stationen(Base, Vector):
+class HugStationen(Base, Vector):
     __tablename__ = 'hydrologie_untersuchungsgebiete_stationen'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-untersuchungsgebiete_stationen'
@@ -680,7 +680,7 @@ class HUG_stationen(Base, Vector):
     hyperlink_d = Column('hyperlink_d', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.hydrologie-untersuchungsgebiete_stationen', HUG_stationen)
+register('ch.bafu.hydrologie-untersuchungsgebiete_stationen', HugStationen)
 
 
 class Hintergrundkarte(Base, Vector):
@@ -695,7 +695,7 @@ class Hintergrundkarte(Base, Vector):
 register('ch.bafu.hydrologie-hintergrundkarte', Hintergrundkarte)
 
 
-class Strukturguete_hochrhein_linkesufer(Base, Vector):
+class StrukturgueteHochrheinLinkesufer(Base, Vector):
     __tablename__ = 'strukturguete_hochrhein'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.strukturguete-hochrhein_linkesufer'
@@ -711,7 +711,7 @@ class Strukturguete_hochrhein_linkesufer(Base, Vector):
     sohle = Column('sohle', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.strukturguete-hochrhein_linkesufer', Strukturguete_hochrhein_linkesufer)
+register('ch.bafu.strukturguete-hochrhein_linkesufer', StrukturgueteHochrheinLinkesufer)
 
 
 class StrukturgueteHochrheinLinkesumfeld(Base, Vector):
@@ -821,7 +821,7 @@ class GewaesserschutzBadewasserqualitaet(Base, Vector):
 register('ch.bafu.gewaesserschutz-badewasserqualitaet', GewaesserschutzBadewasserqualitaet)
 
 
-class AM_G(Base, Vector):
+class AmG(Base, Vector):
     __tablename__ = 'am_g'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-amphibien_wanderobjekte'
@@ -831,10 +831,10 @@ class AM_G(Base, Vector):
     am_g_name = Column('am_g_name', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.bundesinventare-amphibien_wanderobjekte', AM_G)
+register('ch.bafu.bundesinventare-amphibien_wanderobjekte', AmG)
 
 
-class AM_L(Base, Vector):
+class AmL(Base, Vector):
     __tablename__ = 'am_l'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-amphibien'
@@ -848,10 +848,10 @@ class AM_L(Base, Vector):
     am_l_gf = Column('am_l_gf', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.bundesinventare-amphibien', AM_L)
+register('ch.bafu.bundesinventare-amphibien', AmL)
 
 
-class LHG(Base, Vector):
+class Lhg(Base, Vector):
     __tablename__ = 'lhg'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-hydromessstationen'
@@ -863,7 +863,7 @@ class LHG(Base, Vector):
     the_geom = Column(Geometry2D)
     the_geom_highlight = Column('the_geom_highlight', Geometry2D)
 
-register('ch.bafu.hydrologie-hydromessstationen', LHG)
+register('ch.bafu.hydrologie-hydromessstationen', Lhg)
 
 
 class Temperaturmessnetz(Base, Vector):
@@ -1406,7 +1406,7 @@ class WV(Base, Vector):
 register('ch.bafu.bundesinventare-vogelreservate', WV)
 
 
-class wasserentnahmeAll(Base, Vector):
+class WasserentnahmeAll(Base, Vector):
     __tablename__ = 'entnahme'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasser-entnahme'
@@ -1420,10 +1420,10 @@ class wasserentnahmeAll(Base, Vector):
     link = Column('link', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.wasser-entnahme', wasserentnahmeAll)
+register('ch.bafu.wasser-entnahme', WasserentnahmeAll)
 
 
-class wasserleitungen(Base, Vector):
+class Wasserleitungen(Base, Vector):
     __tablename__ = 'leitungen'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasser-leitungen'
@@ -1435,10 +1435,10 @@ class wasserleitungen(Base, Vector):
     rwknr = Column('rwknr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.wasser-leitungen', wasserleitungen)
+register('ch.bafu.wasser-leitungen', Wasserleitungen)
 
 
-class wasserrueckgabe(Base, Vector):
+class Wasserrueckgabe(Base, Vector):
     __tablename__ = 'rueckgabe'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasser-rueckgabe'
@@ -1450,10 +1450,10 @@ class wasserrueckgabe(Base, Vector):
     rwknr = Column('rwknr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.wasser-rueckgabe', wasserrueckgabe)
+register('ch.bafu.wasser-rueckgabe', Wasserrueckgabe)
 
 
-class flachmoore(Base, Vector):
+class Flachmoore(Base, Vector):
     __tablename__ = 'fm'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-flachmoore'
@@ -1465,10 +1465,10 @@ class flachmoore(Base, Vector):
     fm_gf = Column('fm_gf', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.bundesinventare-flachmoore', flachmoore)
+register('ch.bafu.bundesinventare-flachmoore', Flachmoore)
 
 
-class flachmooreReg(Base, Vector):
+class FlachmooreReg(Base, Vector):
     __tablename__ = 'flachmoore_regional'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-flachmoore_regional'
@@ -1480,10 +1480,10 @@ class flachmooreReg(Base, Vector):
     fmreg_gf = Column('fmreg_gf', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.bundesinventare-flachmoore_regional', flachmooreReg)
+register('ch.bafu.bundesinventare-flachmoore_regional', FlachmooreReg)
 
 
-class schutzgebiete_aulav_auen(Base, Vector):
+class SchutzgebieteAulavAuen(Base, Vector):
     __tablename__ = 'auengebiete'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.schutzgebiete-aulav_auen'
@@ -1496,10 +1496,10 @@ class schutzgebiete_aulav_auen(Base, Vector):
     typ = Column('typ', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.schutzgebiete-aulav_auen', schutzgebiete_aulav_auen)
+register('ch.bafu.schutzgebiete-aulav_auen', SchutzgebieteAulavAuen)
 
 
-class schutzgebiete_aulav_auen_general(Base, Vector):
+class SchutzgebieteAulavAuenGeneral(Base, Vector):
     __tablename__ = 'auengebiete_general'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.schutzgebiete-aulav_auen'
@@ -1509,10 +1509,10 @@ class schutzgebiete_aulav_auen_general(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.schutzgebiete-aulav_auen', schutzgebiete_aulav_auen_general)
+register('ch.bafu.schutzgebiete-aulav_auen', SchutzgebieteAulavAuenGeneral)
 
 
-class schutzgebiete_aulav_jagdbanngebiete(Base, Vector):
+class SchutzgebieteAulavJagdbanngebiete(Base, Vector):
     __tablename__ = 'jagdbanngebiete'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.schutzgebiete-aulav_jagdbanngebiete'
@@ -1525,10 +1525,10 @@ class schutzgebiete_aulav_jagdbanngebiete(Base, Vector):
     typ = Column('typ', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.schutzgebiete-aulav_jagdbanngebiete', schutzgebiete_aulav_jagdbanngebiete)
+register('ch.bafu.schutzgebiete-aulav_jagdbanngebiete', SchutzgebieteAulavJagdbanngebiete)
 
 
-class schutzgebiete_aulav_jagdbanngebiete_general(Base, Vector):
+class SchutzgebieteAulavJagdbanngebieteGeneral(Base, Vector):
     __tablename__ = 'jagdbanngebiete_general'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.schutzgebiete-aulav_jagdbanngebiete'
@@ -1538,10 +1538,10 @@ class schutzgebiete_aulav_jagdbanngebiete_general(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.schutzgebiete-aulav_jagdbanngebiete', schutzgebiete_aulav_jagdbanngebiete_general)
+register('ch.bafu.schutzgebiete-aulav_jagdbanngebiete', SchutzgebieteAulavJagdbanngebieteGeneral)
 
 
-class schutzgebiete_aulav_moorlandschaften(Base, Vector):
+class SchutzgebieteAulavMoorlandschaften(Base, Vector):
     __tablename__ = 'moorlandschaften'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.schutzgebiete-aulav_moorlandschaften'
@@ -1554,10 +1554,10 @@ class schutzgebiete_aulav_moorlandschaften(Base, Vector):
     typ = Column('typ', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.schutzgebiete-aulav_moorlandschaften', schutzgebiete_aulav_moorlandschaften)
+register('ch.bafu.schutzgebiete-aulav_moorlandschaften', SchutzgebieteAulavMoorlandschaften)
 
 
-class schutzgebiete_aulav_moorlandschaften_general(Base, Vector):
+class SchutzgebieteAulavMoorlandschaftenGeneral(Base, Vector):
     __tablename__ = 'moorlandschaften_general'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.schutzgebiete-aulav_moorlandschaften'
@@ -1567,10 +1567,10 @@ class schutzgebiete_aulav_moorlandschaften_general(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.schutzgebiete-aulav_moorlandschaften', schutzgebiete_aulav_moorlandschaften_general)
+register('ch.bafu.schutzgebiete-aulav_moorlandschaften', SchutzgebieteAulavMoorlandschaftenGeneral)
 
 
-class schutzgebiete_aulav_uebrige(Base, Vector):
+class SchutzgebieteAulavUebrige(Base, Vector):
     __tablename__ = 'uebrige_gebiete'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.schutzgebiete-aulav_uebrige'
@@ -1587,10 +1587,10 @@ class schutzgebiete_aulav_uebrige(Base, Vector):
     typ = Column('typ', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.schutzgebiete-aulav_uebrige', schutzgebiete_aulav_uebrige)
+register('ch.bafu.schutzgebiete-aulav_uebrige', SchutzgebieteAulavUebrige)
 
 
-class paerke:
+class Paerke:
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __label__ = 'name'
     name = Column('park_name', Unicode)
@@ -1600,7 +1600,7 @@ class paerke:
     the_geom = Column(Geometry2D)
 
 
-class paerkeNationalerBedeutung (Base, paerke, Vector):
+class PaerkeNationalerBedeutung (Base, Paerke, Vector):
     __tablename__ = 'paerke_nationaler_bedeutung_zonen'
     __bodId__ = 'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung'
     __template__ = 'templates/htmlpopup/paerke_nationaler_bedeutung.mako'
@@ -1609,19 +1609,19 @@ class paerkeNationalerBedeutung (Base, paerke, Vector):
     objektnummer = Column('objektnummer', Integer)
     zone = Column('zone', Unicode)
 
-register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung', paerkeNationalerBedeutung)
+register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung', PaerkeNationalerBedeutung)
 
 
-class paerkeNationalerBedeutungPerimeter(Base, paerke, Vector):
+class PaerkeNationalerBedeutungPerimeter(Base, Paerke, Vector):
     __tablename__ = 'paerke_nationaler_bedeutung_perimeter'
     __bodId__ = 'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter'
     __template__ = 'templates/htmlpopup/paerke_nationaler_bedeutung_perimeter.mako'
     id = Column('objektnummer', Integer, primary_key=True)
 
-register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter', paerkeNationalerBedeutungPerimeter)
+register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter', PaerkeNationalerBedeutungPerimeter)
 
 
-class ramsar(Base, Vector):
+class Ramsar(Base, Vector):
     __tablename__ = 'ramsar'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.schutzgebiete-ramsar'
@@ -1634,10 +1634,10 @@ class ramsar(Base, Vector):
     ra_gf = Column('ra_gf', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.schutzgebiete-ramsar', ramsar)
+register('ch.bafu.schutzgebiete-ramsar', Ramsar)
 
 
-class oekom_abschnitte(Base, Vector):
+class OekomAbschnitte(Base, Vector):
     __tablename__ = 'oekom_abschnitte'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.oekomorphologie-f_abschnitte'
@@ -1699,10 +1699,10 @@ class oekom_abschnitte(Base, Vector):
     sohlmat_fr = Column('sohlmat_fr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.oekomorphologie-f_abschnitte', oekom_abschnitte)
+register('ch.bafu.oekomorphologie-f_abschnitte', OekomAbschnitte)
 
 
-class oekom_abstuerze(Base, Vector):
+class OekomAbstuerze(Base, Vector):
     __tablename__ = 'oekom_abstuerze'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.oekomorphologie-f_abstuerze'
@@ -1729,10 +1729,10 @@ class oekom_abstuerze(Base, Vector):
     abstmat = Column('abstmat', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.oekomorphologie-f_abstuerze', oekom_abstuerze)
+register('ch.bafu.oekomorphologie-f_abstuerze', OekomAbstuerze)
 
 
-class oekom_bauwerke(Base, Vector):
+class OekomBauwerke(Base, Vector):
     __tablename__ = 'oekom_bauwerke'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.oekomorphologie-f_bauwerke'
@@ -1755,10 +1755,10 @@ class oekom_bauwerke(Base, Vector):
     datum = Column('datum', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.oekomorphologie-f_bauwerke', oekom_bauwerke)
+register('ch.bafu.oekomorphologie-f_bauwerke', OekomBauwerke)
 
 
-class steinbockkolonien(Base, Vector):
+class Steinbockkolonien(Base, Vector):
     __tablename__ = 'sb'
     __table_args__ = ({'schema': 'fauna', 'autoload': False})
     __bodId__ = 'ch.bafu.fauna-steinbockkolonien'
@@ -1772,10 +1772,10 @@ class steinbockkolonien(Base, Vector):
     sb_gf = Column('sb_gf', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.fauna-steinbockkolonien', steinbockkolonien)
+register('ch.bafu.fauna-steinbockkolonien', Steinbockkolonien)
 
 
-class SWISSPRTR(Base, Vector):
+class Swissprtr(Base, Vector):
     __tablename__ = 'swissprtr'
     __table_args__ = ({'schema': 'prtr', 'autoload': False})
     __bodId__ = 'ch.bafu.swissprtr'
@@ -1787,10 +1787,10 @@ class SWISSPRTR(Base, Vector):
     jahr = Column('jahr', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.swissprtr', SWISSPRTR)
+register('ch.bafu.swissprtr', Swissprtr)
 
 
-class HOLZVORRAT(Base, Vector):
+class Holzvorrat(Base, Vector):
     __tablename__ = 'holzvorrat'
     __table_args__ = ({'schema': 'wald', 'autoload': False})
     __bodId__ = 'ch.bafu.holzvorrat'
@@ -1802,10 +1802,10 @@ class HOLZVORRAT(Base, Vector):
     wireg_ = Column('wireg_', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.holzvorrat', HOLZVORRAT)
+register('ch.bafu.holzvorrat', Holzvorrat)
 
 
-class HOLZZUWACHS(Base, Vector):
+class Holzzuwachs(Base, Vector):
     __tablename__ = 'holzzuwachs'
     __table_args__ = ({'schema': 'wald', 'autoload': False})
     __bodId__ = 'ch.bafu.holzzuwachs'
@@ -1816,10 +1816,10 @@ class HOLZZUWACHS(Base, Vector):
     holzzuwachs = Column('holzzuwachs', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.holzzuwachs', HOLZZUWACHS)
+register('ch.bafu.holzzuwachs', Holzzuwachs)
 
 
-class HOLZNUTZUNG(Base, Vector):
+class Holnutzung(Base, Vector):
     __tablename__ = 'holznutzung'
     __table_args__ = ({'schema': 'wald', 'autoload': False})
     __bodId__ = 'ch.bafu.holznutzung'
@@ -1830,10 +1830,10 @@ class HOLZNUTZUNG(Base, Vector):
     nutzung = Column('nutzung', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.holznutzung', HOLZNUTZUNG)
+register('ch.bafu.holznutzung', Holnutzung)
 
 
-class NABEL(Base, Vector):
+class Nabel(Base, Vector):
     __tablename__ = 'nabel'
     __table_args__ = ({'schema': 'luft', 'autoload': False})
     __bodId__ = 'ch.bafu.nabelstationen'
@@ -1847,10 +1847,10 @@ class NABEL(Base, Vector):
     desc_fr = Column('desc_fr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.nabelstationen', NABEL)
+register('ch.bafu.nabelstationen', Nabel)
 
 
-class krebspest(Base, Vector):
+class Krebspest(Base, Vector):
     __tablename__ = 'krebspest'
     __table_args__ = ({'schema': 'fischerei', 'autoload': False})
     __bodId__ = 'ch.bafu.fischerei-krebspest'
@@ -1864,10 +1864,10 @@ class krebspest(Base, Vector):
     ort = Column('ort', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.fischerei-krebspest', krebspest)
+register('ch.bafu.fischerei-krebspest', Krebspest)
 
 
-class biogeoreg(Base, Vector):
+class Biogeoreg(Base, Vector):
     __tablename__ = 'biogeoreg'
     __table_args__ = ({'schema': 'diverse', 'autoload': False})
     __bodId__ = 'ch.bafu.biogeographische_regionen'
@@ -1881,10 +1881,10 @@ class biogeoreg(Base, Vector):
     biogreg_c1 = Column('biogreg_c1', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.biogeographische_regionen', biogeoreg)
+register('ch.bafu.biogeographische_regionen', Biogeoreg)
 
 
-class smaragd(Base, Vector):
+class Smaragd(Base, Vector):
     __tablename__ = 'smaragd'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.schutzgebiete-smaragd'
@@ -1896,10 +1896,10 @@ class smaragd(Base, Vector):
     em_gf = Column('em_gf', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.schutzgebiete-smaragd', smaragd)
+register('ch.bafu.schutzgebietessmaragd', Smaragd)
 
 
-class biosphaerenreservate(Base, Vector):
+class Biosphaerenreservate(Base, Vector):
     __tablename__ = 'biores'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.schutzgebiete-biosphaerenreservate'
@@ -1913,10 +1913,10 @@ class biosphaerenreservate(Base, Vector):
     biores_obj = Column('biores_obj', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.schutzgebiete-biosphaerenreservate', biosphaerenreservate)
+register('ch.bafu.schutzgebiete-biosphaerenreservate', Biosphaerenreservate)
 
 
-class moose(Base, Vector):
+class Moose(Base, Vector):
     __tablename__ = 'mooseflora'
     __table_args__ = ({'schema': 'flora', 'autoload': False})
     __bodId__ = 'ch.bafu.moose'
@@ -1931,10 +1931,10 @@ class moose(Base, Vector):
     nhv_text = Column('nhv_text', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.moose', moose)
+register('ch.bafu.moose', Moose)
 
 
-class weltensutter(Base, Vector):
+class Weltensutter(Base, Vector):
     __tablename__ = 'ws'
     __table_args__ = ({'schema': 'flora', 'autoload': False})
     __bodId__ = 'ch.bafu.flora-weltensutter_atlas'
@@ -1946,10 +1946,10 @@ class weltensutter(Base, Vector):
     ty_surface = Column('ty_surface', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.flora-weltensutter_atlas', weltensutter)
+register('ch.bafu.flora-weltensutter_atlas', Weltensutter)
 
 
-class baumarten(Base, Vector):
+class Baumarten(Base, Vector):
     __tablename__ = 'baumartenmischung'
     __table_args__ = ({'schema': 'wald', 'autoload': False})
     __bodId__ = 'ch.bafu.landesforstinventar-baumarten'
@@ -1962,10 +1962,10 @@ class baumarten(Base, Vector):
     vorrat = Column('vorrat', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.landesforstinventar-baumarten', baumarten)
+register('ch.bafu.landesforstinventar-baumarten', Baumarten)
 
 
-class waldanteil(Base, Vector):
+class Waldanteil(Base, Vector):
     __tablename__ = 'waldanteil'
     __table_args__ = ({'schema': 'wald', 'autoload': False})
     __bodId__ = 'ch.bafu.landesforstinventar-waldanteil'
@@ -1976,10 +1976,10 @@ class waldanteil(Base, Vector):
     waldflaech = Column('waldflaech', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.landesforstinventar-waldanteil', waldanteil)
+register('ch.bafu.landesforstinventar-waldanteil', Waldanteil)
 
 
-class totholz(Base, Vector):
+class Totholz(Base, Vector):
     __tablename__ = 'totholzvolumen'
     __table_args__ = ({'schema': 'wald', 'autoload': False})
     __bodId__ = 'ch.bafu.landesforstinventar-totholz'
@@ -1990,10 +1990,10 @@ class totholz(Base, Vector):
     totholzvol = Column('totholzvol', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.landesforstinventar-totholz', totholz)
+register('ch.bafu.landesforstinventar-totholz', Totholz)
 
 
-class histerdbeben(Base, Vector):
+class Histerdbeben(Base, Vector):
     __tablename__ = 'historische_erdbeben'
     __table_args__ = ({'schema': 'gefahren', 'autoload': False})
     __bodId__ = 'ch.bafu.gefahren-historische_erdbeben'
@@ -2007,10 +2007,10 @@ class histerdbeben(Base, Vector):
     date_time = Column('date_time', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.gefahren-historische_erdbeben', histerdbeben)
+register('ch.bafu.gefahren-historische_erdbeben', Histerdbeben)
 
 
-class spektral(Base, Vector):
+class Spektral(Base, Vector):
     __tablename__ = 'baugrundkl_spectral'
     __table_args__ = ({'schema': 'gefahren', 'autoload': False})
     __bodId__ = 'ch.bafu.gefahren-spektral'
@@ -2022,10 +2022,10 @@ class spektral(Base, Vector):
     spectral_4 = Column('spectral_4', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.gefahren-spektral', spektral)
+register('ch.bafu.gefahren-spektral', Spektral)
 
 
-class trockenwiesenundweiden(Base, Vector):
+class Trockenwiesenundweiden(Base, Vector):
     __tablename__ = 'tww'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-trockenwiesen_trockenweiden'
@@ -2039,10 +2039,10 @@ class trockenwiesenundweiden(Base, Vector):
     tww_tobj = Column('tww_tobj', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden', trockenwiesenundweiden)
+register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden', Trockenwiesenundweiden)
 
 
-class trockenwiesenundweiden_anhang2(Base, Vector):
+class TrockenwiesenundweidenAnhang2(Base, Vector):
     __tablename__ = 'trockenwiesen_weiden_anhang2'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2'
@@ -2054,10 +2054,10 @@ class trockenwiesenundweiden_anhang2(Base, Vector):
     tww_tobj = Column('tww_tobj', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2', trockenwiesenundweiden_anhang2)
+register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2', TrockenwiesenundweidenAnhang2)
 
 
-class amphibien_anhang4(Base, Vector):
+class AmphibienAnhang4(Base, Vector):
     __tablename__ = 'amphibien_anhang4'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-amphibien_anhang4'
@@ -2068,10 +2068,10 @@ class amphibien_anhang4(Base, Vector):
     obnr = Column('obnr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.bundesinventare-amphibien_anhang4', amphibien_anhang4)
+register('ch.bafu.bundesinventare-amphibien_anhang4', AmphibienAnhang4)
 
 
-class baugrundklassen(Base, Vector):
+class Baugrundklassen(Base, Vector):
     __tablename__ = 'baugrundklassen'
     __table_args__ = ({'schema': 'gefahren', 'autoload': False})
     __bodId__ = 'ch.bafu.gefahren-baugrundklassen'
@@ -2083,10 +2083,10 @@ class baugrundklassen(Base, Vector):
     the_geom = Column(Geometry2D)
     the_geom_highlight = Column('the_geom_highlight', Geometry2D)
 
-register('ch.bafu.gefahren-baugrundklassen', baugrundklassen)
+register('ch.bafu.gefahren-baugrundklassen', Baugrundklassen)
 
 
-class wrzselect(Base, Vector):
+class Wrzselect(Base, Vector):
     __tablename__ = 'jgd_select'
     __table_args__ = ({'schema': 'wrzportal', 'autoload': False})
     __bodId__ = 'ch.bafu.wrz-jagdbanngebiete_select'
@@ -2109,10 +2109,10 @@ class wrzselect(Base, Vector):
     kanton = Column('kanton', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.wrz-jagdbanngebiete_select', wrzselect)
+register('ch.bafu.wrz-jagdbanngebiete_select', Wrzselect)
 
 
-class wrzportal(Base, Vector):
+class Wrzportal(Base, Vector):
     __tablename__ = 'wrz_portal'
     __table_args__ = ({'schema': 'wrzportal', 'autoload': False})
     __bodId__ = 'ch.bafu.wrz-wildruhezonen_portal'
@@ -2135,10 +2135,10 @@ class wrzportal(Base, Vector):
     kanton = Column('kanton', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.wrz-wildruhezonen_portal', wrzportal)
+register('ch.bafu.wrz-wildruhezonen_portal', Wrzportal)
 
 
-class wildtier(Base, Vector):
+class Wildtier(Base, Vector):
     __tablename__ = 'wildtierkorridore'
     __table_args__ = ({'schema': 'fauna', 'autoload': False})
     __bodId__ = 'ch.bafu.fauna-wildtierkorridor_national'
@@ -2150,7 +2150,7 @@ class wildtier(Base, Vector):
     zusta_fr = Column('zusta_fr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.fauna-wildtierkorridor_national', wildtier)
+register('ch.bafu.fauna-wildtierkorridor_national', Wildtier)
 
 
 class Waldreservate(Base, Vector):
