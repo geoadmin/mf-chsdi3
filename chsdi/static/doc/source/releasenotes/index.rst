@@ -38,6 +38,8 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Alps with guard dogs <//map.geo.admin.ch/?layers=ch.bafu.alpweiden-herdenschutzhunde>`__ (ch.bafu.alpweiden-herdenschutzhunde)                                                 |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Notifications for maps and geodata <//map.geo.admin.ch/?layers=ch.swisstopo.meldungen-karten_geodaten>`__ (ch.swisstopo.meldungen-karten_geodaten)                             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Diatoms <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen)                        |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Fish <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_fische>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_fische)                                 |
