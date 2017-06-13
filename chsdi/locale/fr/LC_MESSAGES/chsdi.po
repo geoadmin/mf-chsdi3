@@ -1844,6 +1844,24 @@ msgstr "PPS consultation 2015"
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Réserves d'oiseaux d'eau"
 
+msgid "ch.bafu.bundesinventare-vogelreservate.name"
+msgstr "Nom"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.obj_gisflaeche"
+msgstr "Surface totale [ha]"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.objnummer"
+msgstr "No."
+
+msgid "ch.bafu.bundesinventare-vogelreservate.schutzkategorie"
+msgstr "Catégorie de Protection"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.shape_area"
+msgstr "Surface [m2]"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.teilgebiet"
+msgstr "Partie"
+
 msgid "ch.bafu.eua"
 msgstr "OFEV / AEE"
 

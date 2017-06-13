@@ -1844,6 +1844,24 @@ msgstr "Dry grasslands - consultation 2015"
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Water & migrant bird reserves"
 
+msgid "ch.bafu.bundesinventare-vogelreservate.name"
+msgstr "Name"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.obj_gisflaeche"
+msgstr "Total area [ha]"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.objnummer"
+msgstr "No."
+
+msgid "ch.bafu.bundesinventare-vogelreservate.schutzkategorie"
+msgstr "Protection category"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.shape_area"
+msgstr "Area [m2]"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.teilgebiet"
+msgstr "Subarea"
+
 msgid "ch.bafu.eua"
 msgstr "FOEN / EEA"
 
