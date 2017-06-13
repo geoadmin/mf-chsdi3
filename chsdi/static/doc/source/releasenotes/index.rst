@@ -17,7 +17,7 @@ Release Notes
 .. _releasenotes_20170614:
    *******
 
-Release 20170614 - Tuesday, June 13th 2017
+Release 20170613 - Tuesday, June 13th 2017
 ---------------------------------------------
 
 API & applications
@@ -26,12 +26,12 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
-- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170426...r170613>`__
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170531...r170613>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
-- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170426...r170613>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170531...r170613>`__
 
 Geodata
 *******
