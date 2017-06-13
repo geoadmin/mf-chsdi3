@@ -17,56 +17,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
-msgid "17a659d0-45c8-4a12-a7b3-a726e14776a2"
-msgstr "17a659d0-45c8-4a12-a7b3-a726e14776a2"
-
 msgid "1 A4 landscape"
 msgstr "A4 Orizzontale"
 
 msgid "2 A4 portrait"
 msgstr "A4 Verticale"
 
-msgid "352ca828-47d3-49ce-8ae8-daa07cd319ee"
-msgstr "352ca828-47d3-49ce-8ae8-daa07cd319ee"
-
 msgid "3 A3 landscape"
 msgstr "A3 Paesaggio"
 
-msgid "43a069dd-93ef-4459-81ca-d2cdd7f3b56f"
-msgstr "43a069dd-93ef-4459-81ca-d2cdd7f3b56f"
-
 msgid "4 A3 portrait"
 msgstr "A3 Ritratto"
-
-msgid "4bdecb2b-c692-4050-a08a-45e2041358ed"
-msgstr "4bdecb2b-c692-4050-a08a-45e2041358ed"
-
-msgid "52a80350-0a23-487b-a164-8d5e7686336e"
-msgstr "52a80350-0a23-487b-a164-8d5e7686336e"
-
-msgid "595cf684-fb65-41b7-b4ca-786cbe092fe6"
-msgstr "595cf684-fb65-41b7-b4ca-786cbe092fe6"
-
-msgid "62ccbb04-e95f-468a-aec7-e325090d35d1"
-msgstr "62ccbb04-e95f-468a-aec7-e325090d35d1"
-
-msgid "6b3abe3d-90a6-444d-ae9a-3b21ce73b13d"
-msgstr "6b3abe3d-90a6-444d-ae9a-3b21ce73b13d"
-
-msgid "81fa93b5-278e-4722-929b-cb388248e1a5"
-msgstr "81fa93b5-278e-4722-929b-cb388248e1a5"
-
-msgid "93e6ad22-c902-42a4-9ab7-f311a91c21ea"
-msgstr "93e6ad22-c902-42a4-9ab7-f311a91c21ea"
-
-msgid "a5024779-07a8-4773-8459-05b19253b6e1"
-msgstr "a5024779-07a8-4773-8459-05b19253b6e1"
-
-msgid "a670958a-604f-4982-98a3-3d88cc93196c"
-msgstr "a670958a-604f-4982-98a3-3d88cc93196c"
-
-msgid "ab73acf2-95dc-4f49-a3b9-76fcaefa1bed"
-msgstr "ab73acf2-95dc-4f49-a3b9-76fcaefa1bed"
 
 msgid "abfluss"
 msgstr "Portata m3/s"
@@ -286,9 +247,6 @@ msgstr "Autore"
 
 msgid "azimut"
 msgstr "Azimut"
-
-msgid "Azimut:"
-msgstr "Azimut:"
 
 msgid "Back"
 msgstr "Indietro"
@@ -764,9 +722,6 @@ msgstr "Numéro OFS"
 msgid "bg_chooser_label"
 msgstr "Sfondo"
 
-msgid "bggt"
-msgstr "bggt"
-
 msgid "Biogeografische Regionen"
 msgstr "Regioni biogeografiche"
 
@@ -1028,44 +983,17 @@ msgstr "ARE + cantone"
 msgid "ch.are.landschaftstypen"
 msgstr "Tipologia dei paesaggi svizzeri"
 
-msgid "ch.are.landschaftstypen-min_0"
-msgstr "ch.are.landschaftstypen-min_0"
-
-msgid "ch.are.landschaftstypen-min_100000"
-msgstr "ch.are.landschaftstypen-min_100000"
-
-msgid "ch.are.metropolen-miv"
-msgstr "ch.are.metropolen-miv"
-
-msgid "ch.are.metropolen-oev"
-msgstr "ch.are.metropolen-oev"
-
 msgid "ch.are.reisezeit-miv"
 msgstr "Tempo di viaggio TIM 2005"
 
 msgid "ch.are.reisezeit_miv-2005"
 msgstr "Tempo di viaggio TIM 2005"
 
-msgid "ch.are.reisezeit_miv-2005-reisezeit"
-msgstr "ch.are.reisezeit_miv-2005-reisezeit"
-
-msgid "ch.are.reisezeit-miv-reisezeit"
-msgstr "ch.are.reisezeit-miv-reisezeit"
-
-msgid "ch.are.reisezeit_oev"
-msgstr "ch.are.reisezeit_oev"
-
 msgid "ch.are.reisezeit-oev"
 msgstr "Tempo di viaggio con TP 2005"
 
 msgid "ch.are.reisezeit_oev-2005"
 msgstr "Tempo di viaggio con TP 2005"
-
-msgid "ch.are.reisezeit_oev-2005-reisezeit"
-msgstr "ch.are.reisezeit_oev-2005-reisezeit"
-
-msgid "ch.are.reisezeit-oev-reisezeit"
-msgstr "ch.are.reisezeit-oev-reisezeit"
 
 msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=it"
@@ -2594,9 +2522,6 @@ msgstr "Corpi idrici sotterranei"
 msgid "ch.bafu.grundwasserschutzareale"
 msgstr "Aree di protezione"
 
-msgid "ch.bafu.grundwasserschutzareale_TEST"
-msgstr "ch.bafu.grundwasserschutzareale_TEST"
-
 msgid "ch.bafu.grundwasserschutzzonen"
 msgstr "Zone di protezione"
 
@@ -2704,9 +2629,6 @@ msgstr "Numero della stazione"
 
 msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Carta base dati idrologici"
-
-msgid "ch.bafu.hydrologie-hintergrundkarte_wmts1"
-msgstr "ch.bafu.hydrologie-hintergrundkarte_wmts1"
 
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel"
 msgstr "Limnigrafo di piena"
@@ -3995,9 +3917,6 @@ msgstr "Numero UFT del sito"
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
 msgstr "Siti inquinati trasporti pubbl. RDPP"
 
-msgid "ch.bav.kataster-belasteter-standorte-oev_polygon"
-msgstr "ch.bav.kataster-belasteter-standorte-oev_polygon"
-
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Piano delle emissioni 2015"
 
@@ -4031,9 +3950,6 @@ msgstr "Installazione"
 msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung.facname_it"
 msgstr "Installazione"
 
-msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung_lines"
-msgstr "ch.bav.sachplan-infrastruktur-schiene_anhorung_lines"
-
 msgid "ch.bav.sachplan-infrastruktur-schiene_anhorung.plname_de"
 msgstr "Misura"
 
@@ -4055,14 +3971,8 @@ msgstr "Descrizione"
 msgid "ch.bav.sachplan-infrastruktur-schiene_ausgangslage.description_it"
 msgstr "Descrizione"
 
-msgid "ch.bav.sachplan-infrastruktur-schiene_ausgangslage_lines"
-msgstr "ch.bav.sachplan-infrastruktur-schiene_ausgangslage_lines"
-
 msgid "ch.bav.sachplan-infrastruktur-schiene_ausgangslage.name"
 msgstr "Nome di progetto"
-
-msgid "ch.bav.sachplan-infrastruktur-schiene_ausgangslage_point"
-msgstr "ch.bav.sachplan-infrastruktur-schiene_ausgangslage_point"
 
 msgid "ch.bav.sachplan-infrastruktur-schiene_kraft"
 msgstr "PS Infrastruttura ferroviaria"
@@ -4388,17 +4298,11 @@ msgstr "Ostacoli alla navigazione aerea"
 msgid "ch.bazl.luftfahrthindernis.abortionaccomplished"
 msgstr "Durata dell'installazione"
 
-msgid "ch.bazl.luftfahrthindernis.bgdi_created"
-msgstr "ch.bazl.luftfahrthindernis.bgdi_created"
-
 msgid "ch.bazl.luftfahrthindernis.duration"
 msgstr "Durata dell'installazione"
 
 msgid "ch.bazl.luftfahrthindernis.geomtype"
 msgstr "Geometria"
-
-msgid "ch.bazl.luftfahrthindernis_line"
-msgstr "ch.bazl.luftfahrthindernis_line"
 
 msgid "ch.bazl.luftfahrthindernis.lk100"
 msgstr "Numero della carta [CN100]"
@@ -4408,12 +4312,6 @@ msgstr "Altezza massima AGL [m]"
 
 msgid "ch.bazl.luftfahrthindernis.obstacletype"
 msgstr "Tipo di ostacolo"
-
-msgid "ch.bazl.luftfahrthindernis_point"
-msgstr "ch.bazl.luftfahrthindernis_point"
-
-msgid "ch.bazl.luftfahrthindernis_poly"
-msgstr "ch.bazl.luftfahrthindernis_poly"
 
 msgid "ch.bazl.luftfahrthindernis.registrationnumber"
 msgstr "Numero di registrazione"
@@ -4565,44 +4463,11 @@ msgstr "Zone riservate aeroporti"
 msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb"
 msgstr "Zone riservate aeroporti RDPP"
 
-msgid "ch.bazl.sachplan_inf_luft_plmeasures_anhorung"
-msgstr "ch.bazl.sachplan_inf_luft_plmeasures_anhorung"
-
-msgid "ch.bazl.sachplan_inf_luft_plmeasures_anhorung_points"
-msgstr "ch.bazl.sachplan_inf_luft_plmeasures_anhorung_points"
-
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
 msgstr "PSIA consultazione"
 
-msgid "ch.bazl.sachplan_infrastruktur_luftfahrt_anhorung_points"
-msgstr "ch.bazl.sachplan_infrastruktur_luftfahrt_anhorung_points"
-
-msgid "ch.bazl.sachplan_infrastruktur-luftfahrt_anhorung_points"
-msgstr "ch.bazl.sachplan_infrastruktur-luftfahrt_anhorung_points"
-
-msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung_points"
-msgstr "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung_points"
-
-msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung_surfaces"
-msgstr "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung_surfaces"
-
-msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung_surfaces_raster"
-msgstr "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung_surfaces_raster"
-
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"
 msgstr "PS Infrastruttura aeronautica"
-
-msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft_points"
-msgstr "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft_points"
-
-msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft_surfaces"
-msgstr "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft_surfaces"
-
-msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft_surfaces_raster"
-msgstr "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft_surfaces_raster"
-
-msgid "ch.bazl.sachplan_infrastruktur_luftfahrt_plmeasures_anhorung_points"
-msgstr "ch.bazl.sachplan_infrastruktur_luftfahrt_plmeasures_anhorung_points"
 
 msgid "ch.bazl.segelflugkarte"
 msgstr "Carta volo a vela"
@@ -4769,9 +4634,6 @@ msgstr "Certificato"
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "PS Depositi strati geol. profondi"
 
-msgid "ch.bfe.sachplan-geologie-tiefenlager_facilities"
-msgstr "ch.bfe.sachplan-geologie-tiefenlager_facilities"
-
 msgid "ch.bfe.sachplan-geologie-tiefenlager.facname_de"
 msgstr "Installazione"
 
@@ -4784,23 +4646,8 @@ msgstr "Installazione"
 msgid "ch.bfe.sachplan-geologie-tiefenlager.name"
 msgstr "Installazione"
 
-msgid "ch.bfe.sachplan-geologie-tiefenlager_planning"
-msgstr "ch.bfe.sachplan-geologie-tiefenlager_planning"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_planning_raster"
-msgstr "ch.bfe.sachplan-geologie-tiefenlager_planning_raster"
-
 msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"
 msgstr "PS depositi strati geol.prof.: p.t."
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung_facilities"
-msgstr "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung_facilities"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung_planning"
-msgstr "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung_planning"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung_planning_raster"
-msgstr "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung_planning_raster"
 
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung"
 msgstr "PSE consultazione"
@@ -4885,9 +4732,6 @@ msgstr "Surface [m2]"
 
 msgid "ch.bfe.solarenergie-eignung-fassaden.klasse"
 msgstr "Aptitude"
-
-msgid "ch.bfe.solarkataster"
-msgstr "ch.bfe.solarkataster"
 
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistica idroelettricitá"
@@ -4985,9 +4829,6 @@ msgstr "ASTAT 97 - 4 domaines principaux"
 msgid "ch.bfs.arealstatistik-1997-15"
 msgstr "ASTAT 97 - 15 modes d`utilisation agrégés"
 
-msgid "ch.bfs.arealstatistik-1997_2"
-msgstr "ch.bfs.arealstatistik-1997_2"
-
 msgid "ch.bfs.arealstatistik-1997-25"
 msgstr "ASTAT 97 - 25 modes d`utilisation agrégés"
 
@@ -5000,65 +4841,11 @@ msgstr "ASTAT 09 - 04 Grundkategorien"
 msgid "ch.bfs.arealstatistik-bodenbedeckung"
 msgstr "Stat. superficie 04/09 NOLC04"
 
-msgid "ch.bfs.arealstatistik-bodenbedeckung-06"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-06"
-
 msgid "ch.bfs.arealstatistik-bodenbedeckung-1985"
 msgstr "Stat. superficie 79/85 NOLC04"
 
-msgid "ch.bfs.arealstatistik-bodenbedeckung-1985-06"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-1985-06"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-1985-27"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-1985-27"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-1985-27_3-5"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-1985-27_3-5"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-1985-27_6-14"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-1985-27_6-14"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-1985-27_6-7"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-1985-27_6-7"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-1985-punkte"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-1985-punkte"
-
 msgid "ch.bfs.arealstatistik-bodenbedeckung-1997"
 msgstr "Stat. superficie 92/97 NOAS04"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-1997-06"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-1997-06"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-1997-27"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-1997-27"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-1997-27_3-5"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-1997-27_3-5"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-1997-27_6-14"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-1997-27_6-14"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-1997-27_6-7"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-1997-27_6-7"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-1997-punkte"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-1997-punkte"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-27"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-27"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-27_3-5"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-27_3-5"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-27_6-14"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-27_6-14"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-27_6-7"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-27_6-7"
-
-msgid "ch.bfs.arealstatistik-bodenbedeckung-punkte"
-msgstr "ch.bfs.arealstatistik-bodenbedeckung-punkte"
 
 msgid "ch.bfs.arealstatistik-bodennutzung"
 msgstr "Stat. superficie 04/09 NOLU04"
@@ -5072,44 +4859,14 @@ msgstr "Stat. superficie 2004/09 NOLU04"
 msgid "ch.bfs.arealstatistik-bodennutzung-1985"
 msgstr "Stat. superficie 79/85 NOAS04"
 
-msgid "ch.bfs.arealstatistik-bodennutzung-1985-04"
-msgstr "ch.bfs.arealstatistik-bodennutzung-1985-04"
-
-msgid "ch.bfs.arealstatistik-bodennutzung-1985-10"
-msgstr "ch.bfs.arealstatistik-bodennutzung-1985-10"
-
-msgid "ch.bfs.arealstatistik-bodennutzung-1985-punkte"
-msgstr "ch.bfs.arealstatistik-bodennutzung-1985-punkte"
-
 msgid "ch.bfs.arealstatistik-bodennutzung-1997"
 msgstr "Stat. superficie 92/97 NOLU04"
-
-msgid "ch.bfs.arealstatistik-bodennutzung-1997-04"
-msgstr "ch.bfs.arealstatistik-bodennutzung-1997-04"
-
-msgid "ch.bfs.arealstatistik-bodennutzung-1997-10"
-msgstr "ch.bfs.arealstatistik-bodennutzung-1997-10"
-
-msgid "ch.bfs.arealstatistik-bodennutzung-1997-punkte"
-msgstr "ch.bfs.arealstatistik-bodennutzung-1997-punkte"
 
 msgid "ch.bfs.arealstatistik-bodennutzung-punkte"
 msgstr "Stat. superficie 2004/09 NOLU04"
 
 msgid "ch.bfs.arealstatistik-hintergrund"
 msgstr "Utilizzo semplificato del suolo"
-
-msgid "ch.bfs.arealstatistik-hintergrund-gen1"
-msgstr "ch.bfs.arealstatistik-hintergrund-gen1"
-
-msgid "ch.bfs.arealstatistik-hintergrund-gen2"
-msgstr "ch.bfs.arealstatistik-hintergrund-gen2"
-
-msgid "ch.bfs.arealstatistik-hintergrund-gen3"
-msgstr "ch.bfs.arealstatistik-hintergrund-gen3"
-
-msgid "ch.bfs.arealstatistik-hintergrund-gen4"
-msgstr "ch.bfs.arealstatistik-hintergrund-gen4"
 
 msgid "ch.bfs.arealstatistik-punkte"
 msgstr "ASTAT 09 - 04 Grundkategorien"
@@ -5129,9 +4886,6 @@ msgstr "EGID"
 msgid "ch.bfs.gebaeude_wohnungs_register.gdename"
 msgstr "Commune"
 
-msgid "ch.bfs.gebaeude_wohnungs_register-label"
-msgstr "ch.bfs.gebaeude_wohnungs_register-label"
-
 msgid "ch.bfs.gebaeude_wohnungs_register.plz4"
 msgstr "NPA"
 
@@ -5140,9 +4894,6 @@ msgstr "Località"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.strname1"
 msgstr "Rue"
-
-msgid "ch.bfs.gebaeude_wohnungs_register-without_label"
-msgstr "ch.bfs.gebaeude_wohnungs_register-without_label"
 
 msgid "ch.bfs.url"
 msgstr "http://www.bfs.admin.ch/bfs/portal/it/index.html"
@@ -5191,9 +4942,6 @@ msgstr "Permeabilità"
 
 msgid "ch.blw.bodeneignung-wasserspeichervermoegen"
 msgstr "Capacità di stoccaggio idrico"
-
-msgid "ch.blw.emapis"
-msgstr "ch.blw.emapis"
 
 msgid "ch.blw.emapis-beizugsgebiet"
 msgstr "Comprensorio"
@@ -5360,9 +5108,6 @@ msgstr "Etivaz (DOP)"
 msgid "ch.blw.ursprungsbezeichnungen-kaese-formaggio_d_alpe_ti"
 msgstr "Formaggio d`alpe ti (DOP)"
 
-msgid "ch.blw.ursprungsbezeichnungen-kaese-glarner_alpkaese"
-msgstr "ch.blw.ursprungsbezeichnungen-kaese-glarner_alpkaese"
-
 msgid "ch.blw.ursprungsbezeichnungen-kaese-gruyere"
 msgstr "Gruyère/Gruyère d'Alpage (DOP)"
 
@@ -5434,9 +5179,6 @@ msgstr "DOP distillati"
 
 msgid "ch.blw.ursprungsbezeichnungen-spirituosen_OLD"
 msgstr "DOP distillati"
-
-msgid "ch.blw.ursprungsbezeichnungen-spirituosen-zuger_kirsch"
-msgstr "ch.blw.ursprungsbezeichnungen-spirituosen-zuger_kirsch"
 
 msgid "Chemical"
 msgstr "Chimique"
@@ -5747,9 +5489,6 @@ msgstr "Edizione"
 msgid "ch.swisstopo.geologie-erlebnis_geologie"
 msgstr "Avventura geologia"
 
-msgid "ch.swisstopo.geologie-felsoberflaeche"
-msgstr "ch.swisstopo.geologie-felsoberflaeche"
-
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Carta geol. generale 200"
 
@@ -5758,9 +5497,6 @@ msgstr "Divisione carta geologica generale 200 Raster"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
 msgstr "Autori"
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.ggk_nr"
-msgstr "ch.swisstopo.geologie-generalkarte-ggk200.metadata.ggk_nr"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.jahr"
 msgstr "L'anno di edizione"
@@ -5948,9 +5684,6 @@ msgstr "Inclinazione 500"
 msgid "ch.swisstopo.geologie-geophysik-totalintensitaet"
 msgstr "Intensità campo magnetico 500"
 
-msgid "ch.swisstopo.geologie-geotechnick-steinbrueche_1980"
-msgstr "ch.swisstopo.geologie-geotechnick-steinbrueche_1980"
-
 msgid "ch.swisstopo.geologie-geotechnik-gk200"
 msgstr "Carta geotecnica 200"
 
@@ -6007,12 +5740,6 @@ msgstr "Nome della fabbrica da quadrels"
 
 msgid "ch.swisstopo.geologie-geotope"
 msgstr "Geotopi svizzeri"
-
-msgid "ch.swisstopo.geologie-geotope_flaechen"
-msgstr "ch.swisstopo.geologie-geotope_flaechen"
-
-msgid "ch.swisstopo.geologie-geotope_punkte"
-msgstr "ch.swisstopo.geologie-geotope_punkte"
 
 msgid "ch.swisstopo.geologie-geowege"
 msgstr "Sentieri geologici"
@@ -6443,35 +6170,14 @@ msgstr "ch.swisstopo.geologie-tiefenlager"
 msgid "ch.swisstopo.gg25-bezirk-flaeche.fill"
 msgstr "Limiti di distretto GG25"
 
-msgid "ch.swisstopo.gg25-bezirk-grenze"
-msgstr "ch.swisstopo.gg25-bezirk-grenze"
-
-msgid "ch.swisstopo.gg25-bezirk-name"
-msgstr "ch.swisstopo.gg25-bezirk-name"
-
 msgid "ch.swisstopo.gg25-gemeinde-flaeche.fill"
 msgstr "Frontiere comunali GG25"
-
-msgid "ch.swisstopo.gg25-gemeinde-grenze"
-msgstr "ch.swisstopo.gg25-gemeinde-grenze"
-
-msgid "ch.swisstopo.gg25-gemeinde-name"
-msgstr "ch.swisstopo.gg25-gemeinde-name"
 
 msgid "ch.swisstopo.gg25-kanton-flaeche.fill"
 msgstr "Frontiere cantonali GG25"
 
-msgid "ch.swisstopo.gg25-kanton-grenze"
-msgstr "ch.swisstopo.gg25-kanton-grenze"
-
-msgid "ch.swisstopo.gg25-kanton-name"
-msgstr "ch.swisstopo.gg25-kanton-name"
-
 msgid "ch.swisstopo.gg25-land-flaeche.fill"
 msgstr "Frontiere nazionali GG25"
-
-msgid "ch.swisstopo.gg25-land-grenze"
-msgstr "ch.swisstopo.gg25-land-grenze"
 
 msgid "ch.swisstopo.ggk200-papierkarte.metadata"
 msgstr "Divisione carta geologica generale 200 Stampa"
@@ -6551,9 +6257,6 @@ msgstr "Coordonnée x (MN03) [m]"
 msgid "ch.swisstopo.hebungsraten.y"
 msgstr "Coordonnée y (MN03) [m]"
 
-msgid "ch.swisstopo.hiks"
-msgstr "ch.swisstopo.hiks"
-
 msgid "ch.swisstopo.hiks-dufour"
 msgstr "Carta Dufour Prima edizione"
 
@@ -6563,14 +6266,8 @@ msgstr "Divisione carta Dufour Raster"
 msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Carta Siegfried Prima edizione"
 
-msgid "ch.swisstopo.hiks-siegfried-ta25"
-msgstr "ch.swisstopo.hiks-siegfried-ta25"
-
 msgid "ch.swisstopo.hiks-siegfried-ta25.metadata"
 msgstr "Divisione carta Siegfried 25 Raster"
-
-msgid "ch.swisstopo.hiks-siegfried-ta50"
-msgstr "ch.swisstopo.hiks-siegfried-ta50"
 
 msgid "ch.swisstopo.hiks-siegfried-ta50.metadata"
 msgstr "Divisione carta Siegfried 50 Raster"
@@ -6586,9 +6283,6 @@ msgstr "Mosaico Landsat 25"
 
 msgid "ch.swisstopo.images-spot-5.metadata"
 msgstr "Divisione Spot Mosaic Raster"
-
-msgid "ch.swisstopo.images-spotimage"
-msgstr "ch.swisstopo.images-spotimage"
 
 msgid "ch.swisstopo.images-swissimage"
 msgstr "SWISSIMAGE"
@@ -7115,9 +6809,6 @@ msgstr "Edizione"
 msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "Carta nazionale 1:50'000 | CN50"
 
-msgid "ch.swisstopo.pixelkarte-farbe_wmts"
-msgstr "ch.swisstopo.pixelkarte-farbe_wmts"
-
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Carte nazionali (grigio)"
 
@@ -7144,9 +6835,6 @@ msgstr "Carta nazionale 1:50'000 (grigio)"
 
 msgid "ch.swisstopo.pixelkarte-grau-pk500"
 msgstr "Carta nazionale 1:500'000 (grigio)"
-
-msgid "ch.swisstopo.pixelkarte-grau_wmts"
-msgstr "ch.swisstopo.pixelkarte-grau_wmts"
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
 msgstr "Divisione carte nazionali 1:1 milione"
@@ -7196,9 +6884,6 @@ msgstr "Nom de la feuille 1:25000"
 msgid "ch.swisstopo.pixelkarte-pk25.metadata-kartenblatt_nummer"
 msgstr "Numéro de la feuille 1:25000"
 
-msgid "ch.swisstopo.pixelkarte-pk25.zeitreihen.metadata"
-msgstr "ch.swisstopo.pixelkarte-pk25.zeitreihen.metadata"
-
 msgid "ch.swisstopo.pixelkarte-pk500.metadata"
 msgstr "Divisione carta nazionale 500 Raster"
 
@@ -7222,9 +6907,6 @@ msgstr "Nom de la feuille 1:50000"
 
 msgid "ch.swisstopo.pixelkarte-pk50.metadata-kartenblatt_nummer"
 msgstr "Numéro de la feuille 1:50000"
-
-msgid "ch.swisstopo.pixelkarte.zeitreihen.metadata"
-msgstr "ch.swisstopo.pixelkarte.zeitreihen.metadata"
 
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv."
@@ -7363,15 +7045,6 @@ msgstr "Divisione swissBUILDINGS3D 2.0 Vector"
 
 msgid "ch.swisstopo.swissbuildings3d-2.metadata"
 msgstr "Divisione swissBUILDINGS3D 2.0 Vector"
-
-msgid "ch.swisstopo.swissbuildings3d_dach"
-msgstr "ch.swisstopo.swissbuildings3d_dach"
-
-msgid "ch.swisstopo.swissbuildings3d_grundriss"
-msgstr "ch.swisstopo.swissbuildings3d_grundriss"
-
-msgid "ch.swisstopo.swissbuildings3d_linien"
-msgstr "ch.swisstopo.swissbuildings3d_linien"
 
 msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE"
@@ -7865,9 +7538,6 @@ msgstr "Regione"
 msgid "ch.vbs.milairspacechart"
 msgstr "Mil Airspace Chart"
 
-msgid "ch.vbs.patrouilledesglaciers"
-msgstr "ch.vbs.patrouilledesglaciers"
-
 msgid "ch.vbs.patrouilledesglaciers_a_rennen"
 msgstr "Patrouille des Glaciers"
 
@@ -8228,9 +7898,6 @@ msgstr "Durata dell'effetto"
 msgid "E"
 msgstr "E"
 
-msgid "e7b49ee2-32a8-4c4b-a79d-d1a504898b75"
-msgstr "e7b49ee2-32a8-4c4b-a79d-d1a504898b75"
-
 msgid "ech"
 msgstr "Geocatalogo"
 
@@ -8369,9 +8036,6 @@ msgstr "Errore"
 msgid "Error whilst transmitting your feedback"
 msgstr "Trasmissione fallita"
 
-msgid "ersr"
-msgstr "ersr"
-
 msgid "est"
 msgstr "Est"
 
@@ -8407,12 +8071,6 @@ msgstr "Fuori dagli attuali limiti della carta"
 
 msgid "EXZ_landesschwerenetz_type"
 msgstr "excentre de la station absolue"
-
-msgid "f0ef32c7-2b74-4d01-a84f-a576a6c264c6"
-msgstr "f0ef32c7-2b74-4d01-a84f-a576a6c264c6"
-
-msgid "f12ca01c-3b29-4045-8857-645f20b5685a"
-msgstr "f12ca01c-3b29-4045-8857-645f20b5685a"
 
 msgid "facebook_tooltip"
 msgstr "Condivida la carta con i suoi amici"
@@ -9320,9 +8978,6 @@ msgstr "Puissance installée"
 msgid "intern"
 msgstr "Interno"
 
-msgid "International"
-msgstr "International"
-
 msgid "Invalid email provided"
 msgstr "Indirizzo email non valido"
 
@@ -10184,9 +9839,6 @@ msgstr "Lunghezza [m]"
 msgid "laenge_strecke_m"
 msgstr "Longueur du tronçon [m]"
 
-msgid "laerm-emissionsplan_eisenbahn_tag"
-msgstr "laerm-emissionsplan_eisenbahn_tag"
-
 msgid "lage_objekt"
 msgstr "Situation de l’objet par rapport au sol"
 
@@ -10598,9 +10250,6 @@ msgstr "Comuni toccati"
 msgid "Museum"
 msgstr "Musée"
 
-msgid "N"
-msgstr "N"
-
 msgid "nabeltyp"
 msgstr "Emplacement"
 
@@ -10648,9 +10297,6 @@ msgstr "Nome del livello"
 
 msgid "national"
 msgstr "Importanza nazionale"
-
-msgid "National"
-msgstr "National"
 
 msgid "Nationales Maps"
 msgstr "Carte nazionali"
@@ -10723,9 +10369,6 @@ msgstr "Nessun informazione fuori della Svizzera e Liechstenstein"
 
 msgid "nom_dreieck"
 msgstr "PAT affini"
-
-msgid "none"
-msgstr "none"
 
 msgid "None"
 msgstr "Nessuna"
@@ -11294,9 +10937,6 @@ msgstr "Ruine historique"
 msgid "rwknr"
 msgstr "Débit résiduel N°"
 
-msgid "S"
-msgstr "S"
-
 msgid "sachbearb"
 msgstr "Personne compétente"
 
@@ -11633,12 +11273,6 @@ msgstr "Suspendu"
 msgid "Swiss Coordinate"
 msgstr "CH03"
 
-msgid "Swissnames"
-msgstr "Swissnames"
-
-msgid "swisstopo"
-msgstr "swisstopo"
-
 msgid "swisstopo_help_link_href"
 msgstr "http://www.geo.admin.ch/internet/geoportal/it/commons/help/viewer_help.html"
 
@@ -11731,9 +11365,6 @@ msgstr "Tooltip"
 
 msgid "topelevationamsll"
 msgstr "Altezza massima AMSL [m]"
-
-msgid "Toposhop"
-msgstr "Toposhop"
 
 msgid "totallength"
 msgstr "Lunghezza [m]"
@@ -13169,9 +12800,6 @@ msgstr "Angolo in alto a destra"
 msgid "url"
 msgstr "URL"
 
-msgid "URL"
-msgstr "URL"
-
 msgid "url_download"
 msgstr "Distribution des données"
 
@@ -13276,9 +12904,6 @@ msgstr "Vi preghiamo di utilizzare una versione più recente."
 
 msgid "werte"
 msgstr "Valeurs disponibles"
-
-msgid "WGS 84"
-msgstr "WGS 84"
 
 msgid "What problem with the map do you want to report?"
 msgstr "Cosa desidera annunciare a swisstopo?"
