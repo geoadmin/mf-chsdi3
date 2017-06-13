@@ -1896,7 +1896,7 @@ class Smaragd(Base, Vector):
     em_gf = Column('em_gf', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.schutzgebietessmaragd', Smaragd)
+register('ch.bafu.schutzgebiete-smaragd', Smaragd)
 
 
 class Biosphaerenreservate(Base, Vector):
