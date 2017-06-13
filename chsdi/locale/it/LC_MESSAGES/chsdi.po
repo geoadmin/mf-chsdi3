@@ -1844,6 +1844,24 @@ msgstr "PPS - Consultazione 2015"
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Riserve di uccelli acquatici"
 
+msgid "ch.bafu.bundesinventare-vogelreservate.name"
+msgstr "Nome"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.obj_gisflaeche"
+msgstr "Superficie totale [ha]"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.objnummer"
+msgstr "No."
+
+msgid "ch.bafu.bundesinventare-vogelreservate.schutzkategorie"
+msgstr "Categoria di Protezione"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.shape_area"
+msgstr "Superficie [m2]"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.teilgebiet"
+msgstr "Sottozona"
+
 msgid "ch.bafu.eua"
 msgstr "UFAM / AEA"
 

@@ -1844,6 +1844,24 @@ msgstr "PPS – audiziun 2015"
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Reservats d'utschels: aua, migrants"
 
+msgid "ch.bafu.bundesinventare-vogelreservate.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.obj_gisflaeche"
+msgstr "Gesamtfläche [ha]"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-vogelreservate.schutzkategorie"
+msgstr "Schutzkategorie"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.shape_area"
+msgstr "Fläche [qm]"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.teilgebiet"
+msgstr "Teilgebiet"
+
 msgid "ch.bafu.eua"
 msgstr "BAFU / EUA"
 
