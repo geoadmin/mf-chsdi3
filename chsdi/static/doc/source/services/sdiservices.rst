@@ -11,7 +11,7 @@
 API REST Services
 =================
 
-Most services are implementing or are heavily inspired by `ESRI GeoServices REST Specification <http://www.esri.com/industries/landing-pages/geoservices/geoservices>`_
+Most services are implementing or are heavily inspired by `ESRI GeoServices REST Specification <http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r300000054000000>`_
 or by the `Open Geospatial Consortium (OGC) <http://opengeospatial.org>`_.
 
 .. _metadata_description:
