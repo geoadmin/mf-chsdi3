@@ -11,7 +11,11 @@ class DateTimeChsdi(types.TypeDecorator):
         return value
 
     def process_result_value(self, value, dialect):
-        return value.strftime('%d.%m.%Y')
+        if value:
+            m = '0%s' % value.month if value.month < 10 else '%s' % value.month
+            d = '0%s' % value.day if value.day < 10 else '%s' % value.day
+            return '%s.%s.%s' % (d, m, value.year)
+        return '-'
 
     def copy(self):
         return DateTimeChsdi()
