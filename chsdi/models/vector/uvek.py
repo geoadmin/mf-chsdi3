@@ -1249,6 +1249,7 @@ class SilFacilitiesA(Base, Vector):
     description_text_fr = Column('description_text_fr', Text)
     description_text_it = Column('description_text_it', Text)
     document_web = Column('document_web', Text)
+    document_title = Column('document_title', Text)
     objectname_de = Column('objectname_de', Text)
     objectname_fr = Column('objectname_fr', Text)
     objectname_it = Column('objectname_it', Text)
@@ -1285,6 +1286,7 @@ class SilPlanningA(Base, Vector):
     description_text_fr = Column('description_text_fr', Text)
     description_text_it = Column('description_text_it', Text)
     document_web = Column('document_web', Text)
+    document_title = Column('document_title', Text)
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 20005
     __maxscale__ = 500005
@@ -1320,6 +1322,7 @@ class SilPlanningRasterA(Base, Vector):
     description_text_fr = Column('description_text_fr', Text)
     description_text_it = Column('description_text_it', Text)
     document_web = Column('document_web', Text)
+    document_title = Column('document_title', Text)
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
@@ -1352,6 +1355,7 @@ class SilFacilitiesK(Base, Vector):
     description_text_fr = Column('description_text_fr', Text)
     description_text_it = Column('description_text_it', Text)
     document_web = Column('document_web', Text)
+    document_title = Column('document_title', Text)
     objectname_de = Column('objectname_de', Text)
     objectname_fr = Column('objectname_fr', Text)
     objectname_it = Column('objectname_it', Text)
@@ -1388,6 +1392,7 @@ class SilPlanningK(Base, Vector):
     description_text_fr = Column('description_text_fr', Text)
     description_text_it = Column('description_text_it', Text)
     document_web = Column('document_web', Text)
+    document_title = Column('document_title', Text)
     bgdi_created = Column('bgdi_created', Text)
     __minscale__ = 20005
     __maxscale__ = 500005
@@ -1423,6 +1428,7 @@ class SilPlanningRasterK(Base, Vector):
     description_text_fr = Column('description_text_fr', Text)
     description_text_it = Column('description_text_it', Text)
     document_web = Column('document_web', Text)
+    document_title = Column('document_title', Text)
     bgdi_created = Column('bgdi_created', Text)
     __maxscale__ = 20005
     __minscale__ = 1
