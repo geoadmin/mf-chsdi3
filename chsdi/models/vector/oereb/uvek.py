@@ -61,7 +61,7 @@ register_oereb(ProjektierungszonenOereb.__bodId__, ProjektierungszonenOereb)
 
 
 class SichereitszonenOereb(Base, OerebBase, Vector):
-    __tablename__ = 'sichereitszonen_oereb'
+    __tablename__ = 'sichereitszonen_oereb_test'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __bodId__ = 'ch.bazl.sicherheitszonenplan.oereb'
 
