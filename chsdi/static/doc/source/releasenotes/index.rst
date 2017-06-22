@@ -14,8 +14,29 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
-.. _releasenotes_20170614:
+.. _releasenotes_20170627:
    *******
+
+Release 20170627 - Tuesday, June 27th 2017
+---------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Windpotenzialgebiete <//map.geo.admin.ch/?layers=ch.bfe.windenergie-potenzialgebiete>`__ (ch.bfe.windenergie-potenzialgebiete)                                                 |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 Release 20170613 - Tuesday, June 13th 2017
 ---------------------------------------------
