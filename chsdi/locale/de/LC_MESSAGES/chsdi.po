@@ -1025,6 +1025,9 @@ msgstr "Mit dieser Abfrage erfolgt keine abschliessende Auflistung aller Bundesi
 msgid "ch.are.windenergie-bundesinteressen.tt_info_footer"
 msgstr "Die Methodenbeschreibung der Karte mit Auflistung der einzelnen Geotdatensätze finden Sie unter"
 
+msgid "ch.are.windenergie-bundesinteressen.tt_link"
+msgstr "www.are.admin.ch/windenergie"
+
 msgid "ch.are.windenergie-bundesinteressen.tt_short_info"
 msgstr "Die Einschränkungen durch Bundesinteresse bei der Planung von Windenergieanlagen werden pro Zelle von 500m x 500m einer bestimmten Kategorie zugeteilt. Die Zuteilung berücksichtigt den rechtlichen Status der verschiedenen, in der Zelle vorkommenden Bundes"
 
@@ -3100,6 +3103,15 @@ msgstr "Totholz (LFI)"
 
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Waldanteil (LFI)"
+
+msgid "ch.bafu.luftreinhaltung-ammoniakkonzentration"
+msgstr "Ammoniakkonzentration"
+
+msgid "ch.bafu.luftreinhaltung-stickstoffdeposition"
+msgstr "Stickstoffdeposition"
+
+msgid "ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag"
+msgstr "CLN Exceedances"
 
 msgid "ch.bafu.mittlere-abfluesse"
 msgstr "Mittlere Abflüsse (m³/s)"

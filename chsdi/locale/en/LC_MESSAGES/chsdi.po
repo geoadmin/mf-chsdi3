@@ -999,7 +999,7 @@ msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=en"
 
 msgid "ch.are.windenergie-bundesinteressen"
-msgstr "Building zones with buffer (noise abatement)"
+msgstr "Wind: federal government interests"
 
 msgid "ch.are.windenergie-bundesinteressen.bik1"
 msgstr "Other restrictions"
@@ -1020,13 +1020,16 @@ msgid "ch.are.windenergie-bundesinteressen.kbik"
 msgstr "Restrictions due to interests of Federal Government"
 
 msgid "ch.are.windenergie-bundesinteressen.tt_info"
-msgstr "Mit dieser Abfrage erfolgt keine abschliessende Auflistung aller Bundesinteressen. Eine leere Liste bedeutet nicht, dass kein Koordinationsbedarf mit Bundesinteressen vorliegt. Die nachfolgende Auflistung weist für alle berücksichtigten Bundesinteressen,"
+msgstr "This query does not result in an exhaustive list of all federal government interests. An empty list therefore does not mean that there is no need to coordinate with federal government interests. The list that follows shows the shares of the area in the ch"
 
 msgid "ch.are.windenergie-bundesinteressen.tt_info_footer"
-msgstr "Die Methodenbeschreibung der Karte mit Auflistung der einzelnen Geotdatensätze finden Sie unter"
+msgstr "A description of the method used to produce the map, along with a list of the individual sets of geodata, can be found at"
+
+msgid "ch.are.windenergie-bundesinteressen.tt_link"
+msgstr "www.are.admin.ch/windenergie"
 
 msgid "ch.are.windenergie-bundesinteressen.tt_short_info"
-msgstr "Die Einschränkungen durch Bundesinteresse bei der Planung von Windenergieanlagen werden pro Zelle von 500m x 500m einer bestimmten Kategorie zugeteilt. Die Zuteilung berücksichtigt den rechtlichen Status der verschiedenen, in der Zelle vorkommenden Bundes"
+msgstr "The restrictions that federal government interests place on the planning of wind energy plants are allocated to a specific category for each cell measuring 500m x 500m. This allocation takes into account the legal status of the various federal government"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
 msgstr "Housing inventory"
@@ -3100,6 +3103,15 @@ msgstr "Dead wood (NFI)"
 
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Percentage of forest area (NFI)"
+
+msgid "ch.bafu.luftreinhaltung-ammoniakkonzentration"
+msgstr "Ammonia Concentration"
+
+msgid "ch.bafu.luftreinhaltung-stickstoffdeposition"
+msgstr "Nitrogen Deposition"
+
+msgid "ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag"
+msgstr "CLN Exceedances"
 
 msgid "ch.bafu.mittlere-abfluesse"
 msgstr "Mean runoff (m³/s)"
