@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from pyramid.view import view_config
-from pyramid.httpexceptions import HTTPBadRequest, HTTPNotFound
+from pyramid.httpexceptions import HTTPBadRequest
 from gatilegrid import GeoadminTileGrid
 
 from chsdi.models.bod import get_wmts_models
@@ -37,12 +37,9 @@ class WMTSCapabilites(MapNameValidation):
         self.request = request
         epsg = request.params.get('epsg', '21781')
         available_epsg_codes = ['21781', '4326', '2056', '4258', '3857']
-        if epsg in available_epsg_codes:
-            if self.mapName != 'api' and epsg != '21781':
-                raise HTTPNotFound("EPSG:%s only available for topic 'api'" % epsg)
-            self.tileMatrixSet = epsg
-        else:
+        if epsg not in available_epsg_codes:
             raise HTTPBadRequest('EPSG:%s not found. Must be one of %s' % (epsg, ", ".join(available_epsg_codes)))
+        self.tileMatrixSet = epsg
 
     @view_config(route_name='wmtscapabilities', http_cache=0)
     def wmtscapabilities(self):

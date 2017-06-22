@@ -62,8 +62,8 @@ if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
     layer.arr_all_formats = 'jpeg'
 %>
         <Layer>
-            <ows:Title>${layer.kurzbezeichnung|n,x,trim}</ows:Title>
-            <ows:Abstract>${layer.abstract|n,x,trim}</ows:Abstract>
+            <ows:Title>${layer.kurzbezeichnung or '-'|n,x,trim}</ows:Title>
+            <ows:Abstract>${layer.abstract or '-'|n,x,trim}</ows:Abstract>
             <ows:WGS84BoundingBox>
                 <ows:LowerCorner>5.140242 45.398181</ows:LowerCorner>
                 <ows:UpperCorner>11.47757 48.230651</ows:UpperCorner>
@@ -71,11 +71,11 @@ if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
             <ows:Identifier>${layer.id|n,x,trim}</ows:Identifier>
             <ows:Metadata xlink:href="http://www.geocat.ch/geonetwork/srv/deu/metadata.show?uuid=${layer.idGeoCat}"/>
             <Style>
-                <ows:Title>${layer.kurzbezeichnung|n,x,trim}</ows:Title>
-                <ows:Identifier>${layer.id|n,x,trim}</ows:Identifier>
+                <ows:Title>${layer.kurzbezeichnung or '-'|n,x,trim}</ows:Title>
+                <ows:Identifier>${layer.id or '-'|n,x,trim}</ows:Identifier>
                 ## TODO relative path
                 <% legendName = "/var/www/vhosts/mf-chsdi3/private/chsdi/chsdi/static/images/legends/" + layer.id + "_" + request.lang + ".png" %>
-                <%! import os.path %> 
+                <%! import os.path %>
                 <% hasLegend = os.path.isfile(legendName) %>
                 % if hasLegend:
                 <LegendURL format="image/png" xlink:href="${scheme}://api3.geo.admin.ch/static/images/legends/${layer.id|n,x,trim}_${request.lang|n,x,trim}.png" />
@@ -130,15 +130,15 @@ if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
    ## Oberthema
        % if not(pre_oberthema== theme.oberthema_id):
            <Theme>
-               <ows:Title>${theme.inspire_oberthema_name|n,x,trim}</ows:Title>
-               <ows:Abstract>${theme.inspire_oberthema_abstract|n,x,trim}</ows:Abstract>
-               <ows:Identifier>${theme.oberthema_id|n,x,trim}</ows:Identifier>
+               <ows:Title>${theme.inspire_oberthema_name or '-'|n,x,trim}</ows:Title>
+               <ows:Abstract>${theme.inspire_oberthema_abstract or '-'|n,x,trim}</ows:Abstract>
+               <ows:Identifier>${theme.oberthema_id or '-'|n,x,trim}</ows:Identifier>
        % endif
        ## Second level Thema
                <Theme>
-                   <ows:Title>${theme.inspire_name|n,x,trim}</ows:Title>
-                   <ows:Abstract>${theme.inspire_abstract|n,x,trim}</ows:Abstract>
-                   <ows:Identifier>${theme.id|n,x,trim}</ows:Identifier>
+                   <ows:Title>${theme.inspire_name or '-'|n,x,trim}</ows:Title>
+                   <ows:Abstract>${theme.inspire_abstract or '-'|n,x,trim}</ows:Abstract>
+                   <ows:Identifier>${theme.id or '-'|n,x,trim}</ows:Identifier>
                    ## Refs
                    <% layers = theme.fk_dataset_id.split(',')  %>
                    % for i in range(len(layers)):

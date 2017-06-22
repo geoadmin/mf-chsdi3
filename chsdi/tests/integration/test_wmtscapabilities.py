@@ -8,17 +8,13 @@ EPSGS = [21781, 4326, 4258, 2056, 3857]
 class TestWmtsCapabilitiesView(TestsBase):
 
     def test_valid_wmtscapabilities(self):
-        resp = self.testapp.get('/rest/services/inspire/1.0.0/WMTSCapabilities.xml', status=200)
+        resp = self.testapp.get('/rest/services/all/1.0.0/WMTSCapabilities.xml', status=200)
         self.assertEqual(resp.content_type, 'text/xml')
         resp.mustcontain('TileMatrixSet')
 
     def test_wrong_map_wmtscapabilities(self):
         resp = self.testapp.get('/rest/services/toto/1.0.0/WMTSCapabilities.xml', status=400)
         resp.mustcontain('The map you provided does not exist')
-
-    def test_wrong_map_epsg_wmtscapabilities(self):
-        resp = self.testapp.get('/rest/services/bafu/1.0.0/WMTSCapabilities.xml?epsg=4326', status=404)
-        resp.mustcontain("EPSG:4326 only available for topic 'api'")
 
     def test_wrong_epsg_wmtscapabilities(self):
         resp = self.testapp.get('/rest/services/bafu/1.0.0/WMTSCapabilities.xml?epsg=9999', status=400)
