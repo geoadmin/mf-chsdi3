@@ -37,7 +37,6 @@ from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
 
-PROTECTED_GEOMETRY_LAYERS = ['ch.bfs.gebaeude_wohnungs_register']
 MAX_FEATURES = 201
 
 
@@ -757,13 +756,7 @@ def _process_feature(feature, params):
         raise HTTPBandwidthLimited('Feature ID %s: is too large' % feature.id)
 
     if params.returnGeometry:
-        # Filter out this layer individually, disregarding of the global returnGeometry
-        # setting
-        if not params.varnish_authorized and \
-                feature.__bodId__ in PROTECTED_GEOMETRY_LAYERS:
-            f = convert_no_geom(feature, params.geometryFormat)
-        else:
-            f = feature.__geo_interface__
+        f = feature.__geo_interface__
     else:
         f = convert_no_geom(feature, params.geometryFormat)
     # TODO find a way to use translate directly in the model

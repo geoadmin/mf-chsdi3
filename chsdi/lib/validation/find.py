@@ -28,7 +28,6 @@ class FindServiceValidation(MapNameValidation):
         self.translate = request.translate
         self.cbName = request.params.get('callback')
         self.geodataStaging = request.registry.settings['geodata_staging']
-        self.varnish_authorized = request.headers.get('X-SearchServer-Authorized', 'false').lower() == u'true'
 
     @property
     def layer(self):

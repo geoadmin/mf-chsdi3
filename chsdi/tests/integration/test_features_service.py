@@ -372,50 +372,23 @@ class TestFeaturesView(TestsBase):
 
 class TestGebauedeGeometry(TestsBase):
 
-    def test_feature_not_authorized(self):
-        headers = {'X-SearchServer-Authorized': 'false'}
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/490830_0', headers=headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
-        self.assertNotIn('geometry', resp.json['feature'])
-
     def test_feature_authorized(self):
-        headers = {'X-SearchServer-Authorized': 'true'}
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/490830_0', headers=headers, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register/490830_0', status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn('geometry', resp.json['feature'])
 
-    def test_find_not_authorized(self):
-        headers = {'X-SearchServer-Authorized': 'false'}
-        params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': 'berges', 'searchField': 'strname1'}
-        resp = self.testapp.get('/rest/services/ech/MapServer/find', params=params, headers=headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
-        self.assertTrue(len(resp.json['results']) >= 1)
-        self.assertNotIn('geometry', resp.json['results'][0])
-
     def test_find_authorized(self):
-        headers = {'X-SearchServer-Authorized': 'true'}
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register', 'searchText': 'berges', 'searchField': 'strname1'}
-        resp = self.testapp.get('/rest/services/ech/MapServer/find', params=params, headers=headers, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/find', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 1)
         self.assertIn('geometry', resp.json['results'][0])
 
-    def test_identify_not_authorized(self):
-        headers = {'X-SearchServer-Authorized': 'false'}
-        params = {'geometry': '653199.9,137409.9', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryPoint',
-                  'imageDisplay': '1920,623,96', 'layers': 'all:ch.bfs.gebaeude_wohnungs_register', 'mapExtent': '633200,132729.9,671600,145189.9',
-                  'tolerance': '5'}
-        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
-        self.assertTrue(len(resp.json['results']) >= 1)
-        self.assertNotIn('geometry', resp.json['results'][0])
-
     def test_identify_authorized(self):
-        headers = {'X-SearchServer-Authorized': 'true'}
         params = {'geometry': '653199.9,137409.9', 'geometryFormat': 'geojson', 'geometryType': 'esriGeometryPoint',
                   'imageDisplay': '1920,623,96', 'layers': 'all:ch.bfs.gebaeude_wohnungs_register', 'mapExtent': '633200,132729.9,671600,145189.9',
                   'tolerance': '5'}
-        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=headers, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 1)
         self.assertIn('geometry', resp.json['results'][0])

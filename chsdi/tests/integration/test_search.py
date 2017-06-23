@@ -171,32 +171,14 @@ class TestSearchServiceView(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         self.assertEqual(len(resp.json['results']), 1)
 
-    def test_search_locations_not_authorized(self):
-        self.testapp.extra_environ = {'HTTP_X_SEARCHSERVER_AUTHORIZED': 'false'}
-        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'Beaulieustrasse 2', 'type': 'locations'}, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
-        self.assertTrue('geom_st_box2d' not in resp.json['results'][0]['attrs'].keys())
-
     def test_search_locations_escape_charachters(self):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params={'searchText': 'Biel/Bienne', 'type': 'locations'}, status=200)
         self.assertGreater(len(resp.json['results']), 0)
 
     def test_search_locations_authorized(self):
-        self.testapp.extra_environ = {'HTTP_X_SEARCHSERVER_AUTHORIZED': 'true'}
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'Beaulieustrasse 2', 'type': 'locations'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue('geom_st_box2d' in resp.json['results'][0]['attrs'].keys())
-
-    def test_search_locations_authorized_not_set(self):
-        self.testapp.extra_environ = {}
-        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'Beaulieustrasse 2', 'type': 'locations'}, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
-        self.assertTrue('geom_st_box2d' not in resp.json['results'][0]['attrs'].keys())
-
-    def test_search_locations_authorized_no_geometry(self):
-        resp = self.testapp.get('/rest/services/inspire/SearchServer', params={'searchText': 'Beaulieustrasse 2', 'type': 'locations', 'returnGeometry': 'false'}, headers=dict(HTTP_X_SEARCHSERVER_AUTHORIZED='true'), status=200)
-        self.assertEqual(resp.content_type, 'application/json')
-        self.assertTrue('geom_st_box2d' not in resp.json['results'][0]['attrs'].keys())
 
     def test_search_locations_one_origin(self):
         params = {'searchText': 'vaud', 'type': 'locations', 'origins': 'gg25'}

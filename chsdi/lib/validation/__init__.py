@@ -59,8 +59,6 @@ class BaseFeaturesValidation(BaseLayersValidation):
         self._geometryFormat = None
 
         self.geometryFormat = request.params.get('geometryFormat')
-        self.varnish_authorized = request.headers.get(
-            'X-SearchServer-Authorized', 'false').lower() == 'true'
 
     @property
     def geometryFormat(self):
