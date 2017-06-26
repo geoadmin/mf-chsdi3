@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer
+from sqlalchemy import Column, Integer
 from sqlalchemy.types import Numeric, Unicode
 from sqlalchemy.dialects import postgresql
 
@@ -22,15 +22,15 @@ class Zeitreihen15(Base, Vector):
     __timeInstant__ = 'years'
     __label__ = 'release_year'
     id = Column('bgdi_id', Unicode, primary_key=True)
-    kbbez = Column('kbbez', Text)
-    produkt = Column('produkt', Text)
-    kbnum = Column('kbnum', Text)
+    kbbez = Column('kbbez', Unicode)
+    produkt = Column('produkt', Unicode)
+    kbnum = Column('kbnum', Unicode)
     release_year = Column('release_year', Integer)
     years = Column('years', Integer)
-    bv_nummer = Column('bv_nummer', Text)
+    bv_nummer = Column('bv_nummer', Unicode)
     bgdi_order = Column('bgdi_order', Integer)
     array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
-    box2d = Column('box2d', Text)
+    box2d = Column('box2d', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -46,15 +46,15 @@ class Zeitreihen20(Base, Vector):
     __timeInstant__ = 'years'
     __label__ = 'release_year'
     id = Column('bgdi_id', Unicode, primary_key=True)
-    kbbez = Column('kbbez', Text)
-    produkt = Column('produkt', Text)
-    kbnum = Column('kbnum', Text)
+    kbbez = Column('kbbez', Unicode)
+    produkt = Column('produkt', Unicode)
+    kbnum = Column('kbnum', Unicode)
     release_year = Column('release_year', Integer)
     years = Column('years', Integer)
-    bv_nummer = Column('bv_nummer', Text)
+    bv_nummer = Column('bv_nummer', Unicode)
     bgdi_order = Column('bgdi_order', Integer)
     array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
-    box2d = Column('box2d', Text)
+    box2d = Column('box2d', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -70,15 +70,15 @@ class Zeitreihen21(Base, Vector):
     __timeInstant__ = 'years'
     __label__ = 'release_year'
     id = Column('bgdi_id', Unicode, primary_key=True)
-    kbbez = Column('kbbez', Text)
-    produkt = Column('produkt', Text)
-    kbnum = Column('kbnum', Text)
+    kbbez = Column('kbbez', Unicode)
+    produkt = Column('produkt', Unicode)
+    kbnum = Column('kbnum', Unicode)
     release_year = Column('release_year', Integer)
     years = Column('years', Integer)
-    bv_nummer = Column('bv_nummer', Text)
+    bv_nummer = Column('bv_nummer', Unicode)
     bgdi_order = Column('bgdi_order', Integer)
     array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
-    box2d = Column('box2d', Text)
+    box2d = Column('box2d', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -94,15 +94,15 @@ class Zeitreihen22(Base, Vector):
     __timeInstant__ = 'years'
     __label__ = 'release_year'
     id = Column('bgdi_id', Unicode, primary_key=True)
-    kbbez = Column('kbbez', Text)
-    produkt = Column('produkt', Text)
-    kbnum = Column('kbnum', Text)
+    kbbez = Column('kbbez', Unicode)
+    produkt = Column('produkt', Unicode)
+    kbnum = Column('kbnum', Unicode)
     release_year = Column('release_year', Integer)
     years = Column('years', Integer)
-    bv_nummer = Column('bv_nummer', Text)
+    bv_nummer = Column('bv_nummer', Unicode)
     bgdi_order = Column('bgdi_order', Integer)
     array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
-    box2d = Column('box2d', Text)
+    box2d = Column('box2d', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -113,9 +113,9 @@ class DufourErst(Base, Vector):
     __bodId__ = 'ch.swisstopo.hiks-dufour'
     __label__ = 'datenstand'
     id = Column('tilenumber', Unicode, primary_key=True)
-    kbbez = Column('kbbez', Text)
+    kbbez = Column('kbbez', Unicode)
     datenstand = Column('datenstand', Integer)
-    bv_nummer = Column('bv_nummer', Text)
+    bv_nummer = Column('bv_nummer', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -126,9 +126,9 @@ class SiegfriedErst(Base, Vector):
     __bodId__ = 'ch.swisstopo.hiks-siegfried'
     __label__ = 'datenstand'
     id = Column('tilenumber', Unicode, primary_key=True)
-    kbbez = Column('kbbez', Text)
+    kbbez = Column('kbbez', Unicode)
     datenstand = Column('datenstand', Numeric)
-    bv_nummer = Column('bv_nummer', Text)
+    bv_nummer = Column('bv_nummer', Unicode)
     the_geom = Column(Geometry2D)
 
 

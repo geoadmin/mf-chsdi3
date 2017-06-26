@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer, Date
+from sqlalchemy import Column, Unicode, Integer, Date
 from sqlalchemy.dialects import postgresql
 from sqlalchemy.types import Numeric, BigInteger
 
@@ -43,7 +43,7 @@ class SolarClass:
     stromertrag = Column('stromertrag', Integer)
     monats_ertrag = Column('monats_ertrag', postgresql.ARRAY(Numeric))
     gs_serie_start = Column('gs_serie_start', Date)
-    klasse_text = Column('klasse_text', Text)
+    klasse_text = Column('klasse_text', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -52,10 +52,10 @@ class SolarOverview:
     __label__ = 'id'
     __minscale__ = 100005
     id = Column('av_id', Integer, primary_key=True)
-    de = Column('de', Text)
-    fr = Column('fr', Text)
-    it = Column('it', Text)
-    en = Column('en', Text)
+    de = Column('de', Unicode)
+    fr = Column('fr', Unicode)
+    it = Column('it', Unicode)
+    en = Column('en', Unicode)
     the_geom = Column(Geometry2D)
 
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer, Boolean, Numeric
+from sqlalchemy import Column, Integer, Boolean, Numeric
 from sqlalchemy.types import Unicode
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry3D
@@ -16,24 +16,24 @@ class LuftbilderBase:
     __extended_info__ = True
     __label__ = 'flugdatum'
     id = Column('ebkey', Unicode, primary_key=True)
-    filename = Column('filename', Text)
+    filename = Column('filename', Unicode)
     inventarnummer = Column('inventarnummer', Integer)
     bildnummer = Column('bildnummer', Integer)
-    flugdatum = Column('flugdatum', Text)
-    firma = Column('firma', Text)
-    filmart = Column('filmart', Text)
+    flugdatum = Column('flugdatum', Unicode)
+    firma = Column('firma', Unicode)
+    filmart = Column('filmart', Unicode)
     bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
     orientierung = Column('orientierung', Boolean)
     rotation = Column('rotation', Integer)
-    orthophoto = Column('orthophoto', Text)
-    originalsize = Column('originalsize', Text)
+    orthophoto = Column('orthophoto', Unicode)
+    originalsize = Column('originalsize', Unicode)
     x = Column('x', Integer)
     y = Column('y', Integer)
     flughoehe = Column('flughoehe', Integer)
-    ort = Column('ort', Text)
+    ort = Column('ort', Unicode)
     massstab = Column('massstab', Integer)
-    filesize_mb = Column('filesize_mb', Text)
-    bgdi_imagemode = Column('bgdi_imagemode', Text)
+    filesize_mb = Column('filesize_mb', Unicode)
+    bgdi_imagemode = Column('bgdi_imagemode', Unicode)
     the_geom_footprint = Column('the_geom_footprint', Geometry3D)
     the_geom = Column(Geometry3D)
 
@@ -72,9 +72,9 @@ class LuftbilderDritteFirmen(Base, LuftbilderBase, Vector):
     __tablename__ = 'luftbilder_dritte_firmen'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder-dritte-firmen'
     __queryable_attributes__ = ['id', 'ort', 'filmart', 'bgdi_flugjahr']
-    contact = Column('contact', Text)
-    contact_email = Column('contact_email', Text)
-    contact_web = Column('contact_web', Text)
+    contact = Column('contact', Unicode)
+    contact_email = Column('contact_email', Unicode)
+    contact_web = Column('contact_web', Unicode)
 
 register('ch.swisstopo.lubis-luftbilder-dritte-firmen', LuftbilderDritteFirmen)
 
@@ -83,10 +83,10 @@ class LuftbilderDritteKantone(Base, LuftbilderBase, Vector):
     __tablename__ = 'luftbilder_dritte_kantone'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder-dritte-kantone'
     __queryable_attributes__ = ['id', 'ort', 'filmart', 'bgdi_flugjahr']
-    contact = Column('contact', Text)
-    contact_email = Column('contact_email', Text)
-    contact_web = Column('contact_web', Text)
-    contact_image_url = Column('url', Text)
+    contact = Column('contact', Unicode)
+    contact_email = Column('contact_email', Unicode)
+    contact_web = Column('contact_web', Unicode)
+    contact_image_url = Column('url', Unicode)
 
 register('ch.swisstopo.lubis-luftbilder-dritte-kantone', LuftbilderDritteKantone)
 
@@ -103,22 +103,22 @@ class Bildstreifen(Base, Vector):
     # Composite labels
     __label__ = 'flugdatum'
     id = Column('bildstreifen_nr', Unicode, primary_key=True)
-    flugdatum = Column('flugdatum', Text)
-    firma = Column('firma', Text)
-    filmart = Column('filmart', Text)
+    flugdatum = Column('flugdatum', Unicode)
+    firma = Column('firma', Unicode)
+    filmart = Column('filmart', Unicode)
     bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
-    resolution = Column('resolution', Text)
-    objectid = Column('objectid', Text)
-    area = Column('area', Text)
+    resolution = Column('resolution', Unicode)
+    objectid = Column('objectid', Unicode)
+    area = Column('area', Unicode)
     gsd = Column('gsd', Numeric)
     toposhop_length = Column('toposhop_length', Numeric)
     toposhop_start_x = Column('toposhop_start_x', Integer)
     toposhop_start_y = Column('toposhop_start_y', Integer)
     toposhop_end_x = Column('toposhop_end_x', Integer)
     toposhop_end_y = Column('toposhop_end_y', Integer)
-    toposhop_date = Column('toposhop_date', Text)
-    goal = Column('goal', Text)
-    source_georef = Column('georef_source', Text)
+    toposhop_date = Column('toposhop_date', Unicode)
+    goal = Column('goal', Unicode)
+    source_georef = Column('georef_source', Unicode)
     the_geom_footprint = Column('the_geom_footprint', Geometry3D)
     the_geom = Column(Geometry3D)
 
@@ -136,17 +136,17 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     __label__ = 'flightdate'
     __queryable_attributes__ = ['id', 'bgdi_flugjahr', 'medium_format']
     id = Column('ebkey', Unicode, primary_key=True)
-    inventory_number = Column('inventory_number', Text)
-    flightdate = Column('flightdate', Text)
-    medium_format = Column('medium_format', Text)
-    filesize_mb = Column('filesize_mb', Text)
-    filename = Column('filename', Text)
-    stereo_couple = Column('stereo_couple', Text)
+    inventory_number = Column('inventory_number', Unicode)
+    flightdate = Column('flightdate', Unicode)
+    medium_format = Column('medium_format', Unicode)
+    filesize_mb = Column('filesize_mb', Unicode)
+    filename = Column('filename', Unicode)
+    stereo_couple = Column('stereo_couple', Unicode)
     bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
     x = Column('x', Integer)
     y = Column('y', Integer)
-    contact = Column('contact', Text)
-    contact_email = Column('contact_email', Text)
+    contact = Column('contact', Unicode)
+    contact_email = Column('contact_email', Unicode)
     the_geom = Column(Geometry3D)
 
 register('ch.swisstopo.lubis-luftbilder_schraegaufnahmen', LuftbilderSchraegaufnahmen)
