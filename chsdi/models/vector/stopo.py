@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text
+from sqlalchemy import Column
 
 from sqlalchemy.types import Numeric, Boolean, Integer, Float, Unicode
 
@@ -19,7 +19,7 @@ class GeologieGeomorphologie(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geomorphologie'
     __label__ = 'ads_name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    ads_name = Column('ads_name', Text)
+    ads_name = Column('ads_name', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geomorphologie', GeologieGeomorphologie)
@@ -75,10 +75,10 @@ class Landesschwerenetz(Base, Vector):
     __queryable_attributes__ = ['nr_lsn2004', 'name', 'type']
     __label__ = 'label_tt'
     id = Column('bgdi_id', Integer, primary_key=True)
-    nr_lsn2004 = Column('nr_lsn2004', Text)
-    name = Column('name', Text)
-    label_tt = Column('label', Text)
-    type = Column('type', Text)
+    nr_lsn2004 = Column('nr_lsn2004', Unicode)
+    name = Column('name', Unicode)
+    label_tt = Column('label', Unicode)
+    type = Column('type', Unicode)
     lat_etrs = Column('lat_etrs', Numeric)
     lon_etrs = Column('lon_etrs', Numeric)
     y_lv03 = Column('y_lv03', Numeric)
@@ -87,10 +87,10 @@ class Landesschwerenetz(Base, Vector):
     gravity = Column('gravity', Numeric)
     rms = Column('rms', Numeric)
     vert_grad = Column('vert_grad', Numeric)
-    link_hfp_title = Column('link_hfp_title', Text)
-    link_hfp_url = Column('link_hfp_url', Text)
-    link_lfp_title = Column('link_lfp_title', Text)
-    link_lfp_url = Column('link_lfp_url', Text)
+    link_hfp_title = Column('link_hfp_title', Unicode)
+    link_hfp_url = Column('link_hfp_url', Unicode)
+    link_lfp_title = Column('link_lfp_title', Unicode)
+    link_lfp_url = Column('link_lfp_url', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.landesschwerenetz', Landesschwerenetz)
@@ -105,10 +105,10 @@ class LandesschwerenetzExt(Base, Vector):
     __maxscale__ = 3000
     __label__ = 'label_tt'
     id = Column('bgdi_id', Integer, primary_key=True)
-    nr_lsn2004 = Column('nr_lsn2004', Text)
-    name = Column('name', Text)
-    label_tt = Column('label', Text)
-    type = Column('type', Text)
+    nr_lsn2004 = Column('nr_lsn2004', Unicode)
+    name = Column('name', Unicode)
+    label_tt = Column('label', Unicode)
+    type = Column('type', Unicode)
     lat_etrs = Column('lat_etrs', Numeric)
     lon_etrs = Column('lon_etrs', Numeric)
     y_lv03 = Column('y_lv03', Numeric)
@@ -117,10 +117,10 @@ class LandesschwerenetzExt(Base, Vector):
     gravity = Column('gravity', Numeric)
     rms = Column('rms', Numeric)
     vert_grad = Column('vert_grad', Numeric)
-    link_hfp_title = Column('link_hfp_title', Text)
-    link_hfp_url = Column('link_hfp_url', Text)
-    link_lfp_title = Column('link_lfp_title', Text)
-    link_lfp_url = Column('link_lfp_url', Text)
+    link_hfp_title = Column('link_hfp_title', Unicode)
+    link_hfp_url = Column('link_hfp_url', Unicode)
+    link_lfp_title = Column('link_lfp_title', Unicode)
+    link_lfp_url = Column('link_lfp_url', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.landesschwerenetz', LandesschwerenetzExt)
@@ -134,7 +134,7 @@ class GravimetrischerAtlasMesspunkte(Base, Vector):
     __queryable_attributes__ = ['stationnam']
     __label__ = 'stationnam'
     id = Column('bgdi_id', Integer, primary_key=True)
-    stationnam = Column('stationnam', Text)
+    stationnam = Column('stationnam', Unicode)
     coordhor = Column('coordhor', Numeric)
     coordver = Column('coordver', Numeric)
     altitude = Column('altitude', Numeric)
@@ -150,9 +150,9 @@ class GeologieGeowege(Base, Vector):
     __template__ = 'templates/htmlpopup/geologie_geowege.mako'
     __bodId__ = 'ch.swisstopo.geologie-geowege'
     id = Column('bgdi_id', Integer, primary_key=True)
-    titel_1 = Column('titel_1', Text)
-    titel_2 = Column('titel_2', Text)
-    link = Column('link', Text)
+    titel_1 = Column('titel_1', Unicode)
+    titel_2 = Column('titel_2', Unicode)
+    link = Column('link', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geowege', GeologieGeowege)
@@ -166,8 +166,8 @@ class ShopProductClass:
     scale = Column('scale', Integer)
     release = Column('release', Integer)
     data = Column('data', Integer)
-    isbn = Column('s_isbn', Text)
-    author = Column('s_author', Text)
+    isbn = Column('s_isbn', Unicode)
+    author = Column('s_author', Unicode)
     available = Column('available', Boolean)
     the_geom = Column(Geometry2D)
 
@@ -467,7 +467,7 @@ class SwissboundariesBezirk(Base, Vector):
     __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('id', Integer, primary_key=True)
-    name = Column('name', Text)
+    name = Column('name', Unicode)
     flaeche = Column('flaeche', Numeric)
     the_geom = Column(Geometry2D)
 
@@ -482,10 +482,10 @@ class SwissboundariesGemeinde(Base, Vector):
     __queryable_attributes__ = ['gemname', 'id']
     __label__ = 'gemname'
     id = Column('id', Integer, primary_key=True)
-    gemname = Column('gemname', Text)
+    gemname = Column('gemname', Unicode)
     gemflaeche = Column('gemflaeche', Numeric)
     perimeter = Column('perimeter', Numeric)
-    kanton = Column('kanton', Text)
+    kanton = Column('kanton', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', SwissboundariesGemeinde)
@@ -499,8 +499,8 @@ class SwissboundariesKanton(Base, Vector):
     __queryable_attributes__ = ['id', 'ak', 'name']
     __label__ = 'name'
     id = Column('kantonsnr', Integer, primary_key=True)
-    ak = Column('ak', Text)
-    name = Column('name', Text)
+    ak = Column('ak', Unicode)
+    name = Column('name', Unicode)
     flaeche = Column('flaeche', Numeric)
     the_geom = Column(Geometry2D)
 
@@ -512,7 +512,7 @@ class SwissBoundariesLand(Base, Vector):
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __bodId__ = 'ch.swisstopo.swissboundaries3d-land-flaeche.fill'
     id = Column('bgdi_id', Integer, primary_key=True)
-    displayname = Column('displayname', Text)
+    displayname = Column('displayname', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissboundaries3d-land-flaeche.fill', SwissBoundariesLand)
@@ -525,7 +525,7 @@ class Vec200Terminal(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-transportation-oeffentliche-verkehr'
     __label__ = 'objval'
     id = Column('gtdboid', Unicode, primary_key=True)
-    objval = Column('objval', Text)
+    objval = Column('objval', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -536,10 +536,10 @@ class Vec200ShipKursschiff(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-transportation-oeffentliche-verkehr'
     __label__ = 'objval'
     id = Column('gtdboid', Unicode, primary_key=True)
-    objval = Column('objval', Text)
-    detn = Column('detn', Text)
-    rsu = Column('rsu', Text)
-    use = Column('use', Text)
+    objval = Column('objval', Unicode)
+    detn = Column('detn', Unicode)
+    rsu = Column('rsu', Unicode)
+    use = Column('use', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -550,8 +550,8 @@ class Vec200Railway(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-transportation-oeffentliche-verkehr'
     __label__ = 'objval'
     id = Column('gtdboid', Unicode, primary_key=True)
-    objval = Column('objval', Text)
-    construct = Column('construct', Text)
+    objval = Column('objval', Unicode)
+    construct = Column('construct', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200Terminal)
@@ -566,8 +566,8 @@ class Vec200Trafficinfo(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-transportation-strassennetz'
     __label__ = 'objname'
     id = Column('gtdboid', Unicode, primary_key=True)
-    objname = Column('objname', Text)
-    objval = Column('objval', Text)
+    objname = Column('objname', Unicode)
+    objval = Column('objval', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -578,9 +578,9 @@ class Vec200ShipAutofaehre(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-transportation-strassennetz'
     __label__ = 'detn'
     id = Column('gtdboid', Unicode, primary_key=True)
-    use = Column('use', Text)
-    rsu = Column('rsu', Text)
-    detn = Column('detn', Text)
+    use = Column('use', Unicode)
+    rsu = Column('rsu', Unicode)
+    detn = Column('detn', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -591,9 +591,9 @@ class Vec200Road(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-transportation-strassennetz'
     __label__ = 'objval'
     id = Column('gtdboid', Unicode, primary_key=True)
-    construct = Column('construct', Text)
-    objval = Column('objval', Text)
-    toll = Column('toll', Text)
+    construct = Column('construct', Unicode)
+    objval = Column('objval', Unicode)
+    toll = Column('toll', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -604,9 +604,9 @@ class Vec200Ramp(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-transportation-strassennetz'
     __label__ = 'objval'
     id = Column('gtdboid', Unicode, primary_key=True)
-    construct = Column('construct', Text)
-    objval = Column('objval', Text)
-    toll = Column('toll', Text)
+    construct = Column('construct', Unicode)
+    objval = Column('objval', Unicode)
+    toll = Column('toll', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -617,7 +617,7 @@ class Vec200Customsoffice(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-transportation-strassennetz'
     __label__ = 'ojbname'
     id = Column('gtdboid', Unicode, primary_key=True)
-    objname = Column('objname', Text)
+    objname = Column('objname', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Trafficinfo)
@@ -634,7 +634,7 @@ class Vec200Protectedarea(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-adminboundaries-protectedarea'
     __label__ = 'name'
     id = Column('gtdboid', Unicode, primary_key=True)
-    name = Column('name', Text)
+    name = Column('name', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.vec200-adminboundaries-protectedarea', Vec200Protectedarea)
@@ -647,9 +647,9 @@ class Vec200Flowingwater(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-hydrography'
     __label__ = 'name'
     id = Column('gtdboid', Unicode, primary_key=True)
-    name = Column('name', Text)
-    exs = Column('exs', Text)
-    hoc = Column('hoc', Text)
+    name = Column('name', Unicode)
+    exs = Column('exs', Unicode)
+    hoc = Column('hoc', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -660,7 +660,7 @@ class Vec200Stagnantwater(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-hydrography'
     __label__ = 'name'
     id = Column('gtdboid', Unicode, primary_key=True)
-    name = Column('name', Text)
+    name = Column('name', Unicode)
     seesph = Column('seesph', Numeric)
     the_geom = Column(Geometry2D)
 
@@ -675,8 +675,8 @@ class Vec200Landcover(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-landcover'
     __label__ = 'objname1'
     id = Column('gtdboid', Unicode, primary_key=True)
-    objname1 = Column('objname1', Text)
-    objval = Column('objval', Text)
+    objname1 = Column('objname1', Unicode)
+    objval = Column('objval', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.vec200-landcover', Vec200Landcover)
@@ -689,8 +689,8 @@ class Vec200Builtupp(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-miscellaneous'
     __label__ = 'objname'
     id = Column('gtdboid', Unicode, primary_key=True)
-    objname = Column('objname', Text)
-    ppi = Column('ppi', Text)
+    objname = Column('objname', Unicode)
+    ppi = Column('ppi', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -701,10 +701,10 @@ class Vec200Poi(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-miscellaneous'
     __label__ = 'objname'
     id = Column('gtdboid', Unicode, primary_key=True)
-    objname = Column('objname', Text)
-    objval = Column('objval', Text)
-    ppc = Column('ppc', Text)
-    pro = Column('pro', Text)
+    objname = Column('objname', Unicode)
+    objval = Column('objval', Unicode)
+    ppc = Column('ppc', Unicode)
+    pro = Column('pro', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -715,9 +715,9 @@ class Vec200Supply(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec200-miscellaneous'
     __label__ = 'fco'
     id = Column('gtdboid', Unicode, primary_key=True)
-    fco = Column('fco', Text)
-    loc = Column('loc', Text)
-    pro = Column('pro', Text)
+    fco = Column('fco', Unicode)
+    loc = Column('loc', Unicode)
+    pro = Column('pro', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.vec200-miscellaneous', Vec200Builtupp)
@@ -734,8 +734,8 @@ class Vec200Namedlocation(Base, Vector):
     # Composite labels coalesce(objname1,'')||' '||coalesce(objname2,'')
     __label__ = 'objname1'
     id = Column('gtdboid', Unicode, primary_key=True)
-    objname1 = Column('objname1', Text)
-    objname2 = Column('objname2', Text)
+    objname1 = Column('objname1', Unicode)
+    objname2 = Column('objname2', Unicode)
     altitude = Column('altitude', Integer)
     the_geom = Column(Geometry2D)
 
@@ -816,9 +816,9 @@ class Vec25Gewaessernetz(Base, Vector):
     __bodId__ = 'ch.swisstopo.vec25-gewaessernetz'
     __label__ = 'name'
     id = Column('objectid', Integer, primary_key=True)
-    objectval = Column('objectval', Text)
+    objectval = Column('objectval', Unicode)
     gewissnr = Column('gewissnr', Numeric)
-    name = Column('name', Text)
+    name = Column('name', Unicode)
     length = Column('length', Numeric)
     the_geom = Column(Geometry2D)
 
@@ -872,9 +872,9 @@ class Dreiecksvermaschung(Base, Vector):
     __bodId__ = 'ch.swisstopo.dreiecksvermaschung'
     __label__ = 'nom'
     id = Column('bgdi_id', Integer, primary_key=True)
-    nom = Column('nom', Text)
-    num = Column('num', Text)
-    type = Column('type', Text)
+    nom = Column('nom', Unicode)
+    num = Column('num', Unicode)
+    type = Column('type', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.dreiecksvermaschung', Dreiecksvermaschung)
@@ -886,7 +886,7 @@ class GridstandTemplate:
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __label__ = 'lk_name'
     id = Column('kbnum', Unicode, primary_key=True)
-    lk_name = Column('lk_name', Text)
+    lk_name = Column('lk_name', Unicode)
     datenstand = Column('release', Integer)
     the_geom = Column(Geometry2D)
 
@@ -1016,8 +1016,8 @@ class GridstandSwissimage(Base, ShopStandardClass, Vector):
     __label__ = 'lk25_name'
     id = Column('tilenumber', Unicode, primary_key=True)
     tileid = Column('tileid', Unicode)
-    lk25_name  = Column('lk25_name', Text)
-    datenstand = Column('datenstand', Text)
+    lk25_name  = Column('lk25_name', Unicode)
+    datenstand = Column('datenstand', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.images-swissimage.metadata', GridstandSwissimage)
@@ -1042,8 +1042,8 @@ class GeologischeKarteLine(Base, Vector):
     __label__ = 'type_de'
     id = Column('fid', Integer, primary_key=True)
     gid = Column('id', Integer)
-    type_de = Column('type_de', Text)
-    type_fr = Column('type_fr', Text)
+    type_de = Column('type_de', Unicode)
+    type_fr = Column('type_fr', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -1054,8 +1054,8 @@ class GeologischeKartePlg(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geologische_karte'
     __label__ = 'leg_geol_d'
     id = Column('id', Integer, primary_key=True)
-    leg_geol_d = Column('leg_geol_d', Text)
-    leg_geol_f = Column('leg_geol_f', Text)
+    leg_geol_d = Column('leg_geol_d', Unicode)
+    leg_geol_f = Column('leg_geol_f', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geologische_karte', GeologischeKarteLine)
@@ -1069,8 +1069,8 @@ class GeologieMineralischeRohstoffe200(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200'
     __label__ = 'area_name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    legend = Column('legend', Text)
-    area_name = Column('area_name', Text)
+    legend = Column('legend', Unicode)
+    area_name = Column('area_name', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200', GeologieMineralischeRohstoffe200)
@@ -1083,7 +1083,7 @@ class GeologieGeotechnikGk200(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geotechnik-gk200'
     __label__ = 'file_name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    file_name = Column('file_name', Text)
+    file_name = Column('file_name', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-gk200', GeologieGeotechnikGk200)
@@ -1125,12 +1125,12 @@ class Gk500Gensese (Base, Vector):
     # Translatable labels in fr, it, rm, it
     __label__ = 'genese_de'
     id = Column('bgdi_id', Integer, primary_key=True)
-    genese_de = Column('genese_de', Text)
-    genese_fr = Column('genese_fr', Text)
-    genese_en = Column('genese_en', Text)
-    genese_it = Column('genese_it', Text)
-    genese_rm = Column('genese_rm', Text)
-    bgdi_tooltip_color = Column('bgdi_tooltip_color', Text)
+    genese_de = Column('genese_de', Unicode)
+    genese_fr = Column('genese_fr', Unicode)
+    genese_en = Column('genese_en', Unicode)
+    genese_it = Column('genese_it', Unicode)
+    genese_rm = Column('genese_rm', Unicode)
+    bgdi_tooltip_color = Column('bgdi_tooltip_color', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-gk500-genese', Gk500Gensese)
@@ -1145,12 +1145,12 @@ class Gk500Gesteinsklassierung (Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     # Translatable labels in fr, it, rm, it
     __label__ = 'gestkl_de'
-    gestkl_de = Column('gestkl_de', Text)
-    gestkl_fr = Column('gestkl_fr', Text)
-    gestkl_en = Column('gestkl_en', Text)
-    gestkl_it = Column('gestkl_it', Text)
-    gestkl_rm = Column('gestkl_rm', Text)
-    bgdi_tooltip_color = Column('bgdi_tooltip_color', Text)
+    gestkl_de = Column('gestkl_de', Unicode)
+    gestkl_fr = Column('gestkl_fr', Unicode)
+    gestkl_en = Column('gestkl_en', Unicode)
+    gestkl_it = Column('gestkl_it', Unicode)
+    gestkl_rm = Column('gestkl_rm', Unicode)
+    bgdi_tooltip_color = Column('bgdi_tooltip_color', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung', Gk500Gesteinsklassierung)
@@ -1164,12 +1164,12 @@ class Gk500LithologieHauptgruppen(Base, Vector):
     # Translatable labels in fr, it, rm, it
     __label__ = 'bgdi_tooltip_de'
     id = Column('bgdi_id', Integer, primary_key=True)
-    bgdi_tooltip_de = Column('bgdi_tooltip_de', Text)
-    bgdi_tooltip_fr = Column('bgdi_tooltip_fr', Text)
-    bgdi_tooltip_en = Column('bgdi_tooltip_en', Text)
-    bgdi_tooltip_it = Column('bgdi_tooltip_it', Text)
-    bgdi_tooltip_rm = Column('bgdi_tooltip_rm', Text)
-    bgdi_tooltip_color = Column('bgdi_tooltip_color', Text)
+    bgdi_tooltip_de = Column('bgdi_tooltip_de', Unicode)
+    bgdi_tooltip_fr = Column('bgdi_tooltip_fr', Unicode)
+    bgdi_tooltip_en = Column('bgdi_tooltip_en', Unicode)
+    bgdi_tooltip_it = Column('bgdi_tooltip_it', Unicode)
+    bgdi_tooltip_rm = Column('bgdi_tooltip_rm', Unicode)
+    bgdi_tooltip_color = Column('bgdi_tooltip_color', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen', Gk500LithologieHauptgruppen)
@@ -1182,8 +1182,8 @@ class GeologieGeotechnikSteinbrueche1915(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geotechnik-steinbrueche_1915'
     __label__ = 'gesteinsgr'
     id = Column('id', Integer, primary_key=True)
-    gesteinsgr = Column('gesteinsgr', Text)
-    gestein = Column('gestein', Text)
+    gesteinsgr = Column('gesteinsgr', Unicode)
+    gestein = Column('gestein', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-steinbrueche_1915', GeologieGeotechnikSteinbrueche1915)
@@ -1196,8 +1196,8 @@ class GeologieGeotechnikSteinbrueche1965(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geotechnik-steinbrueche_1965'
     __label__ = 'gesteinsgr'
     id = Column('id', Integer, primary_key=True)
-    gesteinsgr = Column('gesteinsgr', Text)
-    gestein = Column('gestein', Text)
+    gesteinsgr = Column('gesteinsgr', Unicode)
+    gestein = Column('gestein', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-steinbrueche_1965', GeologieGeotechnikSteinbrueche1965)
@@ -1210,8 +1210,8 @@ class GeologieGeotechnikSteinbrueche1980(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geotechnik-steinbrueche_1980'
     __label__ = 'gesteinsgr'
     id = Column('id', Integer, primary_key=True)
-    gesteinsgr = Column('gesteinsgr', Text)
-    gestein = Column('gestein', Text)
+    gesteinsgr = Column('gesteinsgr', Unicode)
+    gestein = Column('gestein', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-steinbrueche_1980', GeologieGeotechnikSteinbrueche1980)
@@ -1224,8 +1224,8 @@ class GeologieGeotechnikSteinbrueche1995(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geotechnik-steinbrueche_1995'
     __label__ = 'gesteinsgr'
     id = Column('id', Integer, primary_key=True)
-    gesteinsgr = Column('gesteinsgr', Text)
-    gestein = Column('gestein', Text)
+    gesteinsgr = Column('gesteinsgr', Unicode)
+    gestein = Column('gestein', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-steinbrueche_1995', GeologieGeotechnikSteinbrueche1995)
@@ -1238,7 +1238,7 @@ class GeologieGeotechnikZementindustrie1965(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geotechnik-zementindustrie_1965'
     __label__ = 'stoff'
     id = Column('id', Integer, primary_key=True)
-    stoff = Column('stoff', Text)
+    stoff = Column('stoff', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-zementindustrie_1965', GeologieGeotechnikZementindustrie1965)
@@ -1251,7 +1251,7 @@ class GeologieGeotechnikZementindustrie1995(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geotechnik-zementindustrie_1995'
     __label__ = 'stoff'
     id = Column('id', Integer, primary_key=True)
-    stoff = Column('stoff', Text)
+    stoff = Column('stoff', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-zementindustrie_1995', GeologieGeotechnikZementindustrie1995)
@@ -1265,7 +1265,7 @@ class GeologieGeotechnikZiegeleien1907(Base, Vector):
     __queryable_attributes__ = ['ziegelei_2']
     __label__ = 'ziegelei_2'
     id = Column('id', Integer, primary_key=True)
-    ziegelei_2 = Column('ziegelei_2', Text)
+    ziegelei_2 = Column('ziegelei_2', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-ziegeleien_1907', GeologieGeotechnikZiegeleien1907)
@@ -1279,7 +1279,7 @@ class GeologieGeotechnikZiegeleien1965(Base, Vector):
     __queryable_attributes__ = ['ziegelei']
     __label__ = 'ziegelei'
     id = Column('id', Integer, primary_key=True)
-    ziegelei = Column('ziegelei', Text)
+    ziegelei = Column('ziegelei', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-ziegeleien_1965', GeologieGeotechnikZiegeleien1965)
@@ -1293,8 +1293,8 @@ class GeologieGeotechnikZiegeleien1995(Base, Vector):
     __queryable_attributes__ = ['ziegeleien']
     __label__ = 'ziegeleien'
     id = Column('id', Integer, primary_key=True)
-    ziegeleien = Column('ziegeleien', Text)
-    produkt = Column('produkt', Text)
+    ziegeleien = Column('ziegeleien', Unicode)
+    produkt = Column('produkt', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-ziegeleien_1995', GeologieGeotechnikZiegeleien1995)
@@ -1308,8 +1308,8 @@ class GeologieHydroKarteGrundwasservorkommen(Base, Vector):
     # Translatable labels in fr
     __label__ = 'type_de'
     id = Column('bgdi_id', Integer, primary_key=True)
-    type_de = Column('type_de', Text)
-    type_fr = Column('type_fr', Text)
+    type_de = Column('type_de', Unicode)
+    type_fr = Column('type_fr', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen', GeologieHydroKarteGrundwasservorkommen)
@@ -1323,8 +1323,8 @@ class GeologieHydroKarteGrundwasservulneabilitaet(Base, Vector):
     # Translatable labels in fr
     __label__ = 'type_de'
     id = Column('bgdi_id', Integer, primary_key=True)
-    type_de = Column('type_de', Text)
-    type_fr = Column('type_fr', Text)
+    type_de = Column('type_de', Unicode)
+    type_fr = Column('type_fr', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet', GeologieHydroKarteGrundwasservulneabilitaet)
@@ -1447,8 +1447,8 @@ class GeologieRohstoffeIndustrieminerale(Base, Vector):
     __queryable_attributes__ = ['name_ads']
     __label__ = 'name_ads'
     id = Column('id', Integer, primary_key=True)
-    rohstoff = Column('rohstoff', Text)
-    name_ads = Column('name_ads', Text)
+    rohstoff = Column('rohstoff', Unicode)
+    name_ads = Column('name_ads', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-rohstoffe-industrieminerale', GeologieRohstoffeIndustrieminerale)
@@ -1462,8 +1462,8 @@ class GeologieRohstoffeKohlenBitumenErdgas(Base, Vector):
     __queryable_attributes__ = ['name_ads']
     __label__ = 'name_ads'
     id = Column('id', Integer, primary_key=True)
-    rohstoff = Column('rohstoff', Text)
-    name_ads = Column('name_ads', Text)
+    rohstoff = Column('rohstoff', Unicode)
+    name_ads = Column('name_ads', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas', GeologieRohstoffeKohlenBitumenErdgas)
@@ -1477,8 +1477,8 @@ class GeologieRohstoffeVererzungen(Base, Vector):
     __queryable_attributes__ = ['name_ads']
     __label__ = 'name_ads'
     id = Column('id', Integer, primary_key=True)
-    rohstoff = Column('rohstoff', Text)
-    name_ads = Column('name_ads', Text)
+    rohstoff = Column('rohstoff', Unicode)
+    name_ads = Column('name_ads', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-rohstoffe-vererzungen', GeologieRohstoffeVererzungen)
@@ -1493,8 +1493,8 @@ class GeologieTektonischeKarteLine(Base, Vector):
     __label__ = 'type_de'
     id = Column('fid', Integer, primary_key=True)
     line_id = Column('line_id', Integer)
-    type_de = Column('type_de', Text)
-    type_fr = Column('type_fr', Text)
+    type_de = Column('type_de', Unicode)
+    type_fr = Column('type_fr', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -1507,8 +1507,8 @@ class GeologieTektonischeKartePoly(Base, Vector):
     __label__ = 'type_de'
     id = Column('fid', Integer, primary_key=True)
     t2_id = Column('t2_id', Integer)
-    type_de = Column('type_de', Text)
-    type_fr = Column('type_fr', Text)
+    type_de = Column('type_de', Unicode)
+    type_fr = Column('type_fr', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-tektonische_karte', GeologieTektonischeKarteLine)
@@ -1522,7 +1522,7 @@ class GeologieEiszeitLgm(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-eiszeit-lgm'
     __label__ = 'ads_name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    ads_name = Column('ads_name', Text)
+    ads_name = Column('ads_name', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-eiszeit-lgm', GeologieEiszeitLgm)
@@ -1535,9 +1535,9 @@ class Swisstlm3dWanderwege(Base, Vector):
     __bodId__ = 'ch.swisstopo.swisstlm3d-wanderwege'
     __label__ = 'id'
     id = Column('nr', Integer, primary_key=True)
-    hikingtype = Column('hikingtype', Text)
-    bridgetype = Column('bridgetype', Text)
-    tunneltype = Column('tunneltype', Text)
+    hikingtype = Column('hikingtype', Unicode)
+    bridgetype = Column('bridgetype', Unicode)
+    tunneltype = Column('tunneltype', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swisstlm3d-wanderwege', Swisstlm3dWanderwege)
@@ -1552,8 +1552,8 @@ class VerschiebungsvektorenTsp1(Base, Vector):
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     fid = Column('id', Integer)
-    name = Column('name', Text)
-    type = Column('type', Text)
+    name = Column('name', Unicode)
+    type = Column('type', Unicode)
     e_lv03 = Column('e_lv03', Numeric)
     e_lv95 = Column('e_lv95', Numeric)
     n_lv03 = Column('n_lv03', Numeric)
@@ -1575,8 +1575,8 @@ class VerschiebungsvektorenTsp2(Base, Vector):
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     fid = Column('id', Integer)
-    name = Column('name', Text)
-    type = Column('type', Text)
+    name = Column('name', Unicode)
+    type = Column('type', Unicode)
     e_lv03 = Column('e_lv03', Numeric)
     e_lv95 = Column('e_lv95', Numeric)
     n_lv03 = Column('n_lv03', Numeric)
@@ -1596,9 +1596,9 @@ class SwissmapOnlineWanderwege(Base, Vector):
     __bodId__ = 'ch.swisstopo-karto.wanderwege'
     __label__ = 'id'
     id = Column('nr', Integer, primary_key=True)
-    hikingtype = Column('hikingtype', Text)
-    bridgetype = Column('bridgetype', Text)
-    tunneltype = Column('tunneltype', Text)
+    hikingtype = Column('hikingtype', Unicode)
+    bridgetype = Column('bridgetype', Unicode)
+    tunneltype = Column('tunneltype', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo-karto.wanderwege', SwissmapOnlineWanderwege)
@@ -1613,9 +1613,9 @@ class PLZOrtschaften(Base, Vector):
     __label__ = 'plz'
     id = Column('os_uuid', Unicode, primary_key=True)
     plz = Column('plz', Integer)
-    zusziff = Column('zusziff', Text)
-    langtext = Column('langtext', Text)
-    bgdi_created = Column('bgdi_created', Text)
+    zusziff = Column('zusziff', Unicode)
+    langtext = Column('langtext', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo-vd.ortschaftenverzeichnis_plz', PLZOrtschaften)
@@ -1630,8 +1630,8 @@ class GeometaStandAV(Base, Vector):
     __returnedGeometry__ = 'the_geom_gen50'
     id = Column('gid', Integer, primary_key=True)
     fid = Column('id', Integer)
-    quality = Column('quality', Text)
-    frame = Column('frame', Text)
+    quality = Column('quality', Unicode)
+    frame = Column('frame', Unicode)
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
@@ -1645,8 +1645,8 @@ class GeometaPNF(Base, Vector):
     __bodId__ = 'ch.swisstopo-vd.geometa-periodische_nachfuehrung'
     __label__ = 'description'
     id = Column('bgdi_id', Integer, primary_key=True)
-    canton = Column('canton', Text)
-    description = Column('description', Text)
+    canton = Column('canton', Unicode)
+    description = Column('description', Unicode)
     year = Column('year', Integer)
     the_geom = Column('the_geom', Geometry2D)
 
@@ -1662,16 +1662,16 @@ class GeometaLos(Base, Vector):
     __returnedGeometry__ = 'the_geom_gen50'
     id = Column('gid', Integer, primary_key=True)
     fid = Column('id', Integer)
-    neu_id = Column('neu_id', Text)
-    operatsname = Column('operatsname', Text)
-    losnr = Column('losnr', Text)
-    taetigkeit_d = Column('taetigkeit_d', Text)
-    taetigkeit_f = Column('taetigkeit_f', Text)
-    taetigkeit_i = Column('taetigkeit_i', Text)
-    quality = Column('quality', Text)
-    flaeche_vertrag = Column('flaeche_vertrag', Text)
-    frame = Column('frame', Text)
-    bgdi_created = Column('bgdi_created', Text)
+    neu_id = Column('neu_id', Unicode)
+    operatsname = Column('operatsname', Unicode)
+    losnr = Column('losnr', Unicode)
+    taetigkeit_d = Column('taetigkeit_d', Unicode)
+    taetigkeit_f = Column('taetigkeit_f', Unicode)
+    taetigkeit_i = Column('taetigkeit_i', Unicode)
+    quality = Column('quality', Unicode)
+    flaeche_vertrag = Column('flaeche_vertrag', Unicode)
+    frame = Column('frame', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
@@ -1689,13 +1689,13 @@ class GeometaGemeinde(Base, Vector):
     __returnedGeometry__ = 'the_geom_gen50'
     id = Column('gid', Integer, primary_key=True)
     fid = Column('id', Integer)
-    gemeindename = Column('gemeindename', Text)
-    kanton = Column('kanton', Text)
-    flaeche_ha = Column('flaeche_ha', Text)
+    gemeindename = Column('gemeindename', Unicode)
+    kanton = Column('kanton', Unicode)
+    flaeche_ha = Column('flaeche_ha', Unicode)
     bfs_nr = Column('bfs_nr', Integer)
-    pdf_liste = Column('pdf_liste', Text)
-    abgabestelle = Column('abgabestelle', Text)
-    bgdi_created = Column('bgdi_created', Text)
+    pdf_liste = Column('pdf_liste', Unicode)
+    abgabestelle = Column('abgabestelle', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
@@ -1711,15 +1711,15 @@ class GeometaGrundbuch(Base, Vector):
     __returnedGeometry__ = 'the_geom_gen50'
     id = Column('gid', Integer, primary_key=True)
     fid = Column('id', Integer)
-    ortsteil_grundbuch = Column('ortsteil_grundbuch', Text)
-    grundbuchfuehrung_d = Column('grundbuchfuehrung_d', Text)
-    grundbuchfuehrung_f = Column('grundbuchfuehrung_f', Text)
-    grundbuchfuehrung_i = Column('grundbuchfuehrung_i', Text)
-    grundbuchkreis = Column('grundbuchkreis', Text)
-    adresse = Column('adresse', Text)
-    telefon = Column('telefon', Text)
-    email = Column('email', Text)
-    bgdi_created = Column('bgdi_created', Text)
+    ortsteil_grundbuch = Column('ortsteil_grundbuch', Unicode)
+    grundbuchfuehrung_d = Column('grundbuchfuehrung_d', Unicode)
+    grundbuchfuehrung_f = Column('grundbuchfuehrung_f', Unicode)
+    grundbuchfuehrung_i = Column('grundbuchfuehrung_i', Unicode)
+    grundbuchkreis = Column('grundbuchkreis', Unicode)
+    adresse = Column('adresse', Unicode)
+    telefon = Column('telefon', Unicode)
+    email = Column('email', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
@@ -1734,13 +1734,13 @@ class GeometaNfGeom(Base, Vector):
     __label__ = 'name'
     __returnedGeometry__ = 'the_geom_gen50'
     id = Column('gid', Integer, primary_key=True)
-    name = Column('name', Text)
-    firmenname = Column('firmenname', Text)
-    adresse = Column('adresse', Text)
-    telefon = Column('telefon', Text)
-    email = Column('email', Text)
+    name = Column('name', Unicode)
+    firmenname = Column('firmenname', Unicode)
+    adresse = Column('adresse', Unicode)
+    telefon = Column('telefon', Unicode)
+    email = Column('email', Unicode)
     stellvertreter = Column('ist_stellvertreter', Boolean)
-    bgdi_created = Column('bgdi_created', Text)
+    bgdi_created = Column('bgdi_created', Unicode)
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
@@ -1755,21 +1755,21 @@ class Oerebkataster(Base, Vector):
     __label__ = 'gemeindename'
     id = Column('gid', Integer, primary_key=True)
     fid = Column('id', Integer)
-    gemeindename = Column('gemeindename', Text)
-    kanton = Column('kanton', Text)
-    oereb_status_de = Column('oereb_status_de', Text)
-    oereb_status_fr = Column('oereb_status_fr', Text)
-    oereb_status_it = Column('oereb_status_it', Text)
-    oereb_status_rm = Column('oereb_status_rm', Text)
-    oereb_status_en = Column('oereb_status_en', Text)
+    gemeindename = Column('gemeindename', Unicode)
+    kanton = Column('kanton', Unicode)
+    oereb_status_de = Column('oereb_status_de', Unicode)
+    oereb_status_fr = Column('oereb_status_fr', Unicode)
+    oereb_status_it = Column('oereb_status_it', Unicode)
+    oereb_status_rm = Column('oereb_status_rm', Unicode)
+    oereb_status_en = Column('oereb_status_en', Unicode)
     bfs_nr = Column('bfs_nr', Integer)
-    firmenname = Column('firmenname', Text)
-    adresszeile = Column('adresszeile', Text)
+    firmenname = Column('firmenname', Unicode)
+    adresszeile = Column('adresszeile', Unicode)
     plz = Column('plz', Integer)
-    ort = Column('ort', Text)
-    telefon = Column('telefon', Text)
-    email = Column('email', Text)
-    url_oereb = Column('url_oereb', Text)
+    ort = Column('ort', Unicode)
+    telefon = Column('telefon', Unicode)
+    email = Column('email', Unicode)
+    url_oereb = Column('url_oereb', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo-vd.stand-oerebkataster', Oerebkataster)
@@ -1783,7 +1783,7 @@ class TransformationBezugsrahmenHoehePunkte(Base, Vector):
     __label__ = 'name'
     __queryable_attributes__ = ['name']
     id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Text)
+    name = Column('name', Unicode)
     y = Column('y', Numeric)
     x = Column('x', Numeric)
     or_ln02_cm = Column('or_ln02_cm', Numeric)
@@ -1799,7 +1799,7 @@ class TransformationBezugsrahmenHoeheLine5cm(Base, Vector):
     __maxscale__ = 500000
     id = Column('bgdi_id', Integer, primary_key=True)
     contour = Column('contour', Numeric)
-    layer = Column('layer', Text)
+    layer = Column('layer', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -1812,7 +1812,7 @@ class TransformationBezugsrahmenHoeheLine10cm(Base, Vector):
     __minscale__ = 500000
     id = Column('bgdi_id', Integer, primary_key=True)
     contour = Column('contour', Numeric)
-    layer = Column('layer', Text)
+    layer = Column('layer', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.transformation-bezugsrahmen_hoehe', TransformationBezugsrahmenHoehePunkte)
@@ -1840,11 +1840,11 @@ class HebungsratenPunkt(Base, Vector):
     __queryable_attributes__ = ['ord_nr', 'ort']
     __label__ = 'ord_nr'
     id = Column('bgdi_id', Integer, primary_key=True)
-    ord_nr = Column('ord_nr', Text)
-    ort = Column('ort', Text)
+    ord_nr = Column('ord_nr', Unicode)
+    ort = Column('ort', Unicode)
     v = Column('v', Numeric)
     mfv = Column('mfv', Numeric)
-    klasse = Column('klasse', Text)
+    klasse = Column('klasse', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.hebungsraten', HebungsratenLine)
@@ -1858,7 +1858,7 @@ class SpannungsarmeGebiete(Base, Vector):
     __bodId__ = 'ch.swisstopo.transformationsgenauigkeit'
     __label__ = 'sg_name'
     id = Column('identifier', Unicode, primary_key=True)
-    sg_name = Column('sg_name', Text)
+    sg_name = Column('sg_name', Unicode)
     vali_date = Column('vali_date', DateTimeChsdi)
     the_geom = Column(Geometry2D)
 
@@ -1878,8 +1878,8 @@ class GeologieGeotopePunkte(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geotope'
     __label__ = 'nom'
     id = Column('objectid', Integer, primary_key=True)
-    nom = Column('nom', Text)
-    fix_id = Column('fix_id', Text)
+    nom = Column('nom', Unicode)
+    fix_id = Column('fix_id', Unicode)
     nummer = Column('nummer', Integer)
     the_geom = Column(Geometry2D)
 
@@ -1891,8 +1891,8 @@ class GeologieGeotopeFlaechen(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geotope'
     __label__ = 'nom'
     id = Column('objectid', Integer, primary_key=True)
-    nom = Column('nom', Text)
-    fix_id = Column('fix_id', Text)
+    nom = Column('nom', Unicode)
+    fix_id = Column('fix_id', Unicode)
     nummer = Column('nummer', Integer)
     the_geom = Column(Geometry2D)
 
@@ -1908,16 +1908,16 @@ class SteineHistBauwerke(Base, Vector):
     __extended_info__ = True
     __label__ = 'objekt'
     id = Column('bgdi_id', Integer, primary_key=True)
-    objekt = Column('objekt', Text)
-    obtyp = Column('obtyp', Text)
-    ort = Column('ort', Text)
-    objektteil = Column('objektteil', Text)
-    age = Column('age', Text)
-    gestart = Column('gestart', Text)
-    referenz = Column('referenz', Text)
-    hyperlink = Column('hyperlink', Text)
-    abbauort = Column('abbauort', Text)
-    bemerkung = Column('bemerkung', Text)
+    objekt = Column('objekt', Unicode)
+    obtyp = Column('obtyp', Unicode)
+    ort = Column('ort', Unicode)
+    objektteil = Column('objektteil', Unicode)
+    age = Column('age', Unicode)
+    gestart = Column('gestart', Unicode)
+    referenz = Column('referenz', Unicode)
+    hyperlink = Column('hyperlink', Unicode)
+    abbauort = Column('abbauort', Unicode)
+    bemerkung = Column('bemerkung', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke', SteineHistBauwerke)
@@ -1931,17 +1931,17 @@ class GisGeolBase:
     __timeInstant__ = 'year'
     id = Column('gid', Integer, primary_key=True)
     sgd_nr = Column('sgd_nr', Integer)
-    title = Column('title', Text)
-    orig_id = Column('original_document_id', Text)
-    author = Column('author', Text)
-    report_structure = Column('report_structure', Text)
-    aux_info = Column('auxiliary_information', Text)
+    title = Column('title', Unicode)
+    orig_id = Column('original_document_id', Unicode)
+    author = Column('author', Unicode)
+    report_structure = Column('report_structure', Unicode)
+    aux_info = Column('auxiliary_information', Unicode)
     doccreation = Column('doccreation_date', DateTimeChsdi)
-    copy_avail = Column('copy_avail', Text)
-    view_avail = Column('view_avail', Text)
-    pdf_url = Column('pdf_url', Text)
-    pdf_size = Column('pdf_size', Text)
-    bgdi_data_status = Column('bgdi_data_status', Text)
+    copy_avail = Column('copy_avail', Unicode)
+    view_avail = Column('view_avail', Unicode)
+    pdf_url = Column('pdf_url', Unicode)
+    pdf_size = Column('pdf_size', Unicode)
+    bgdi_data_status = Column('bgdi_data_status', Unicode)
     year = Column('year', Integer)
     the_geom = Column(Geometry2D)
 
@@ -2018,8 +2018,8 @@ class Geocover:
 class GeocoverFeatures(Geocover):
     __label__ = 'description'
     id = Column('bgdi_id', Integer, primary_key=True)
-    basisdatensatz = Column('basisdatensatz', Text)
-    description = Column('description', Text)
+    basisdatensatz = Column('basisdatensatz', Unicode)
+    description = Column('description', Unicode)
     __maxscale__ = 70000
     __queryable_attributes__ = []
 
@@ -2027,34 +2027,34 @@ class GeocoverFeatures(Geocover):
 class GeocoverLineAux(Base, GeocoverFeatures, Vector):
     __tablename__ = 'view_geocover_line_aux'
     __template__ = 'templates/htmlpopup/geocover_line_aux.mako'
-    spec_description = Column('spec_description', Text)
+    spec_description = Column('spec_description', Unicode)
 
 
 class GeocoverPointHydro(Base, GeocoverFeatures, Vector):
     __tablename__ = 'view_geocover_point_hydro'
     __template__ = 'templates/htmlpopup/geocover_point_hydro.mako'
-    spec_description = Column('spec_description', Text)
-    azimut = Column('azimut', Text)
-    depth = Column('depth', Text)
+    spec_description = Column('spec_description', Unicode)
+    azimut = Column('azimut', Unicode)
+    depth = Column('depth', Unicode)
 
 
 class GeocoverPointGeol(Base, GeocoverFeatures, Vector):
     __tablename__ = 'view_geocover_point_geol'
     __template__ = 'templates/htmlpopup/geocover_point_hydro.mako'
-    spec_description = Column('spec_description', Text)
-    azimut = Column('azimut', Text)
-    depth = Column('depth', Text)
+    spec_description = Column('spec_description', Unicode)
+    azimut = Column('azimut', Unicode)
+    depth = Column('depth', Unicode)
 
 
 class GeocoverPointDrill(Base, GeocoverFeatures, Vector):
     __tablename__ = 'view_geocover_point_drill'
     __template__ = 'templates/htmlpopup/geocover_point_drill.mako'
-    spec_description = Column('spec_description', Text)
-    azimut = Column('azimut', Text)
-    depth_1 = Column('depth_1', Text)
-    description_1 = Column('description_1', Text)
-    depth_2 = Column('depth_2', Text)
-    description_2 = Column('description_2', Text)
+    spec_description = Column('spec_description', Unicode)
+    azimut = Column('azimut', Unicode)
+    depth_1 = Column('depth_1', Unicode)
+    description_1 = Column('description_1', Unicode)
+    depth_2 = Column('depth_2', Unicode)
+    description_2 = Column('description_2', Unicode)
 
 
 class GeocoverPointInfo(Base, GeocoverFeatures, Vector):
@@ -2065,27 +2065,27 @@ class GeocoverPointInfo(Base, GeocoverFeatures, Vector):
 class GeocoverPointStruct(Base, GeocoverFeatures, Vector):
     __tablename__ = 'view_geocover_point_struct'
     __template__ = 'templates/htmlpopup/geocover_point_struct.mako'
-    spec_description = Column('spec_description', Text)
-    azimut = Column('azimut', Text)
-    dip = Column('dip', Text)
+    spec_description = Column('spec_description', Unicode)
+    azimut = Column('azimut', Unicode)
+    dip = Column('dip', Unicode)
 
 
 class GeocoverPolygonAux1(Base, GeocoverFeatures, Vector):
     __tablename__ = 'view_geocover_polygon_aux_1'
     __template__ = 'templates/htmlpopup/geocover_polygon.mako'
-    tecto = Column('tecto', Text)
+    tecto = Column('tecto', Unicode)
 
 
 class GeocoverPolygonAux2(Base, GeocoverFeatures, Vector):
     __tablename__ = 'view_geocover_polygon_aux_2'
     __template__ = 'templates/htmlpopup/geocover_polygon.mako'
-    tecto = Column('tecto', Text)
+    tecto = Column('tecto', Unicode)
 
 
 class GeocoverPolygonMain(Base, GeocoverFeatures, Vector):
     __tablename__ = 'view_geocover_polygon_main'
     __template__ = 'templates/htmlpopup/geocover_polygon.mako'
-    tecto = Column('tecto', Text)
+    tecto = Column('tecto', Unicode)
 
 
 class GeocoverGridShop (Base, Geocover, ShopProductGroupClass, Vector):
@@ -2125,8 +2125,8 @@ class Ga25Atlas:
 class Ga25Features(Ga25Atlas):
     __label__ = 'description'
     id = Column('bgdi_id', Integer, primary_key=True)
-    basisdatensatz = Column('basisdatensatz', Text)
-    description = Column('description', Text)
+    basisdatensatz = Column('basisdatensatz', Unicode)
+    description = Column('description', Unicode)
     __maxscale__ = 70000
     __queryable_attributes__ = []
 
@@ -2134,74 +2134,74 @@ class Ga25Features(Ga25Atlas):
 class Ga25LineAux(Base, Ga25Features, Vector):
     __tablename__ = 'view_ga25_line_aux'
     __template__ = 'templates/htmlpopup/ga25_line_aux.mako'
-    spec_description = Column('spec_description', Text)
-    url_legend = Column('url_legende', Text)
+    spec_description = Column('spec_description', Unicode)
+    url_legend = Column('url_legende', Unicode)
 
 
 class Ga25PointHydro(Base, Ga25Features, Vector):
     __tablename__ = 'view_ga25_point_hydro'
     __template__ = 'templates/htmlpopup/ga25_point_hydro.mako'
-    spec_description = Column('spec_description', Text)
-    azimut = Column('azimut', Text)
-    depth = Column('depth', Text)
-    url_legend = Column('url_legende', Text)
+    spec_description = Column('spec_description', Unicode)
+    azimut = Column('azimut', Unicode)
+    depth = Column('depth', Unicode)
+    url_legend = Column('url_legende', Unicode)
 
 
 class Ga25PointGeol(Base, Ga25Features, Vector):
     __tablename__ = 'view_ga25_point_geol'
     __template__ = 'templates/htmlpopup/ga25_point_hydro.mako'
-    spec_description = Column('spec_description', Text)
-    azimut = Column('azimut', Text)
-    depth = Column('depth', Text)
-    url_legend = Column('url_legende', Text)
+    spec_description = Column('spec_description', Unicode)
+    azimut = Column('azimut', Unicode)
+    depth = Column('depth', Unicode)
+    url_legend = Column('url_legende', Unicode)
 
 
 class Ga25PointDrill(Base, Ga25Features, Vector):
     __tablename__ = 'view_ga25_point_drill'
     __template__ = 'templates/htmlpopup/ga25_point_drill.mako'
-    spec_description = Column('spec_description', Text)
-    azimut = Column('azimut', Text)
-    depth_1 = Column('depth_1', Text)
-    description_1 = Column('description_1', Text)
-    depth_2 = Column('depth_2', Text)
-    description_2 = Column('description_2', Text)
-    url_legend = Column('url_legende', Text)
+    spec_description = Column('spec_description', Unicode)
+    azimut = Column('azimut', Unicode)
+    depth_1 = Column('depth_1', Unicode)
+    description_1 = Column('description_1', Unicode)
+    depth_2 = Column('depth_2', Unicode)
+    description_2 = Column('description_2', Unicode)
+    url_legend = Column('url_legende', Unicode)
 
 
 class Ga25PointInfo(Base, Ga25Features, Vector):
     __tablename__ = 'view_ga25_point_info'
     __template__ = 'templates/htmlpopup/ga25_point_info.mako'
-    url_legend = Column('url_legende', Text)
+    url_legend = Column('url_legende', Unicode)
 
 
 class Ga25PointStruct(Base, Ga25Features, Vector):
     __tablename__ = 'view_ga25_point_struct'
     __template__ = 'templates/htmlpopup/ga25_point_struct.mako'
-    spec_description = Column('spec_description', Text)
-    azimut = Column('azimut', Text)
-    dip = Column('dip', Text)
-    url_legend = Column('url_legende', Text)
+    spec_description = Column('spec_description', Unicode)
+    azimut = Column('azimut', Unicode)
+    dip = Column('dip', Unicode)
+    url_legend = Column('url_legende', Unicode)
 
 
 class Ga25PolygonAux1(Base, Ga25Features, Vector):
     __tablename__ = 'view_ga25_polygon_aux_1'
     __template__ = 'templates/htmlpopup/ga25_polygon.mako'
-    tecto = Column('tecto', Text)
-    url_legend = Column('url_legende', Text)
+    tecto = Column('tecto', Unicode)
+    url_legend = Column('url_legende', Unicode)
 
 
 class Ga25PolygonAux2(Base, Ga25Features, Vector):
     __tablename__ = 'view_ga25_polygon_aux_2'
     __template__ = 'templates/htmlpopup/ga25_polygon.mako'
-    tecto = Column('tecto', Text)
-    url_legend = Column('url_legende', Text)
+    tecto = Column('tecto', Unicode)
+    url_legend = Column('url_legende', Unicode)
 
 
 class Ga25PolygonMain(Base, Ga25Features, Vector):
     __tablename__ = 'view_ga25_polygon_main'
     __template__ = 'templates/htmlpopup/ga25_polygon.mako'
-    tecto = Column('tecto', Text)
-    url_legend = Column('url_legende', Text)
+    tecto = Column('tecto', Unicode)
+    url_legend = Column('url_legende', Unicode)
 
 
 class Ga25GridShop(Base, Ga25Atlas, ShopProductGroupClass, Vector):
@@ -2228,11 +2228,11 @@ class Swissnames3d:
     __template__ = 'templates/htmlpopup/swissnames3d.mako'
     __bodId__ = 'ch.swisstopo.swissnames3d'
     id = Column('bgdi_id', Integer, primary_key=True)
-    objektart = Column('objektart', Text)
-    objektklasse = Column('objektklasse', Text)
-    name = Column('name', Text)
-    sprachcode = Column('sprachcode', Text)
-    namen_typ = Column('namen_typ', Text)
+    objektart = Column('objektart', Unicode)
+    objektklasse = Column('objektklasse', Unicode)
+    name = Column('name', Unicode)
+    sprachcode = Column('sprachcode', Unicode)
+    namen_typ = Column('namen_typ', Unicode)
     the_geom = Column(Geometry2D)
 
 

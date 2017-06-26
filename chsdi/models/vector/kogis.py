@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Integer
+from sqlalchemy import Column, Integer
 from sqlalchemy.types import Numeric, Unicode
 
 from chsdi.models import register, bases
@@ -22,19 +22,19 @@ class Gebaeuderegister(Base, Vector):
     __label__ = 'strname1'
     id = Column('egid_edid', Unicode, primary_key=True)
     egid = Column('egid', Integer)
-    strname1 = Column('strname1', Text)
-    deinr = Column('deinr', Text)
+    strname1 = Column('strname1', Unicode)
+    deinr = Column('deinr', Unicode)
     plz4 = Column('plz4', Integer, nullable=False)
     plz6 = Column('plz6', Integer, nullable=False)
-    plzname = Column('plzname', Text)
-    gdename = Column('gdename', Text)
-    gdekt = Column('gdekt', Text)
+    plzname = Column('plzname', Unicode)
+    gdename = Column('gdename', Unicode)
+    gdekt = Column('gdekt', Unicode)
     dstrid = Column('dstrid', Integer)
     gkplaus = Column('gkplaus', Integer)
     gstat = Column('gstat', Integer)
     gdenr = Column('gdenr', Integer)
-    ggbkr = Column('ggbkr', Text)
-    bgdi_created = Column('bgdi_created', Text)
+    ggbkr = Column('ggbkr', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)
@@ -47,7 +47,7 @@ class Agnes(Base, Vector):
     __bodId__ = 'ch.swisstopo.fixpunkte-agnes'
     __label__ = 'id'
     id = Column('no', Unicode, primary_key=True)
-    url = Column('url', Text)
+    url = Column('url', Unicode)
     bgdi_id = Column('bgdi_id', Integer)
     the_geom = Column(Geometry2D)
 
@@ -62,18 +62,18 @@ class FixpunkteLfp1(Base, Vector):
     __queryable_attributes__ = ['id']
     __label__ = 'id'
     id = Column('pointid', Unicode, primary_key=True)
-    punktname = Column('punktname', Text)
-    nummer = Column('nummer', Text)
-    status = Column('status', Text)
-    nbident = Column('nbident', Text)
+    punktname = Column('punktname', Unicode)
+    nummer = Column('nummer', Unicode)
+    status = Column('status', Unicode)
+    nbident = Column('nbident', Unicode)
     x03 = Column('x03', Numeric)
     y03 = Column('y03', Numeric)
     n95 = Column('n95', Numeric)
     e95 = Column('e95', Numeric)
     h02 = Column('h02', Numeric)
-    zugang = Column('zugang', Text)
-    url = Column('url', Text)
-    bgdi_created = Column('bgdi_created', Text)
+    zugang = Column('zugang', Unicode)
+    url = Column('url', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-lfp1', FixpunkteLfp1)
@@ -87,18 +87,18 @@ class FixpunkteLfp2(Base, Vector):
     __queryable_attributes__ = ['id']
     __label__ = 'id'
     id = Column('pointid', Unicode, primary_key=True)
-    nbident = Column('nbident', Text)
-    punktname = Column('punktname', Text)
-    status = Column('status', Text)
-    nummer = Column('nummer', Text)
+    nbident = Column('nbident', Unicode)
+    punktname = Column('punktname', Unicode)
+    status = Column('status', Unicode)
+    nummer = Column('nummer', Unicode)
     x03 = Column('x03', Numeric)
     y03 = Column('y03', Numeric)
     n95 = Column('n95', Numeric)
     e95 = Column('e95', Numeric)
     h02 = Column('h02', Numeric)
-    zugang = Column('zugang', Text)
-    url = Column('url', Text)
-    bgdi_created = Column('bgdi_created', Text)
+    zugang = Column('zugang', Unicode)
+    url = Column('url', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-lfp2', FixpunkteLfp2)
@@ -112,19 +112,19 @@ class FixpunkteHfp1(Base, Vector):
     __queryable_attributes__ = ['id', 'bgdi_label']
     __label__ = 'id'
     id = Column('pointid', Unicode, primary_key=True)
-    bgdi_label = Column('bgdi_label', Text)
-    nbident = Column('nbident', Text)
-    punktname = Column('punktname', Text)
-    status = Column('status', Text)
-    nummer = Column('nummer', Text)
+    bgdi_label = Column('bgdi_label', Unicode)
+    nbident = Column('nbident', Unicode)
+    punktname = Column('punktname', Unicode)
+    status = Column('status', Unicode)
+    nummer = Column('nummer', Unicode)
     x03 = Column('x03', Numeric)
     y03 = Column('y03', Numeric)
     n95 = Column('n95', Numeric)
     e95 = Column('e95', Numeric)
     h02 = Column('h02', Numeric)
-    zugang = Column('zugang', Text)
-    url = Column('url', Text)
-    bgdi_created = Column('bgdi_created', Text)
+    zugang = Column('zugang', Unicode)
+    url = Column('url', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-hfp1', FixpunkteHfp1)
@@ -138,18 +138,18 @@ class FixpunkteHfp2(Base, Vector):
     __queryable_attributes__ = ['id']
     __label__ = 'id'
     id = Column('pointid', Unicode, primary_key=True)
-    nbident = Column('nbident', Text)
-    punktname = Column('punktname', Text)
-    status = Column('status', Text)
-    nummer = Column('nummer', Text)
+    nbident = Column('nbident', Unicode)
+    punktname = Column('punktname', Unicode)
+    status = Column('status', Unicode)
+    nummer = Column('nummer', Unicode)
     x03 = Column('x03', Numeric)
     y03 = Column('y03', Numeric)
     n95 = Column('n95', Numeric)
     e95 = Column('e95', Numeric)
     h02 = Column('h02', Numeric)
-    zugang = Column('zugang', Text)
-    url = Column('url', Text)
-    bgdi_created = Column('bgdi_created', Text)
+    zugang = Column('zugang', Unicode)
+    url = Column('url', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-hfp2', FixpunkteHfp2)

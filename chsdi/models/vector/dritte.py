@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Text, Unicode, Integer, Float
+from sqlalchemy import Column, Unicode, Integer, Float
 from sqlalchemy.types import Numeric
 
 from chsdi.models import register, bases
@@ -29,12 +29,12 @@ class Feuerstellen(Base, Vector):
     __bodId__ = 'ch.tamedia.schweizerfamilie-feuerstellen'
     __label__ = 'gemeinde'
     id = Column('nr', Integer, primary_key=True)
-    gemeinde = Column('gemeinde', Text)
-    ort = Column('ort', Text)
-    kanton = Column('kanton', Text)
-    karte = Column('karte', Text)
-    url = Column('url', Text)
-    koordinate_lv03 = Column('koordinate_lv03', Text)
+    gemeinde = Column('gemeinde', Unicode)
+    ort = Column('ort', Unicode)
+    kanton = Column('kanton', Unicode)
+    karte = Column('karte', Unicode)
+    url = Column('url', Unicode)
+    koordinate_lv03 = Column('koordinate_lv03', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.tamedia.schweizerfamilie-feuerstellen', Feuerstellen)
@@ -81,9 +81,9 @@ class Notfallschutz(Base, Vector):
     __bodId__ = 'ch.ensi.zonenplan-notfallschutz-kernanlagen'
     __label__ = 'name'
     id = Column('nr', Integer, primary_key=True)
-    name = Column('name', Text)
-    zone = Column('zone', Text)
-    sektor = Column('sektor', Text)
+    name = Column('name', Unicode)
+    zone = Column('zone', Unicode)
+    sektor = Column('sektor', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.ensi.zonenplan-notfallschutz-kernanlagen', Notfallschutz)
@@ -116,7 +116,7 @@ class PronaturaNaturschutzgebiete(Base, Vector):
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     nummer = Column('nummer', Integer)
-    name = Column('name', Text)
+    name = Column('name', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.pronatura.naturschutzgebiete', PronaturaNaturschutzgebiete)
