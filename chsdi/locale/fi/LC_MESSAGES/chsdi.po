@@ -3111,7 +3111,7 @@ msgid "ch.bafu.luftreinhaltung-stickstoffdeposition"
 msgstr "Stickstoffdeposition"
 
 msgid "ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag"
-msgstr "CLN Exceedances"
+msgstr "CLN Überschreitung"
 
 msgid "ch.bafu.mittlere-abfluesse"
 msgstr "Deflussiuns mesaunas (m³/s)"
@@ -3873,7 +3873,7 @@ msgid "ch.bav"
 msgstr "BAV"
 
 msgid "ch.bav.baulinien-eisenbahnanlagen.oereb"
-msgstr "Baulinien Eisenbahnen ÖREB"
+msgstr "Lingias construcziun viafiers RPDP"
 
 msgid "ch.bav.haltestellen-oev"
 msgstr "Fermadas dal traffic public"
@@ -3939,7 +3939,7 @@ msgid "ch.bav.laerm-emissionsplan_eisenbahn_tag"
 msgstr "Emissiuns canera da viafiers 2015 D"
 
 msgid "ch.bav.projektierungszonen-eisenbahnanlagen.oereb"
-msgstr "Projektierungszonen Eisenbahnen ÖREB"
+msgstr "Zonas projectaziun viafiers RPDP"
 
 msgid "ch.bav.sachplan-infrastruktur-schiene_anhoerung"
 msgstr "SIS Consultaziun"
@@ -4512,7 +4512,7 @@ msgid "ch.bfe.abgeltung-wasserkraftnutzung.name"
 msgstr "Name"
 
 msgid "ch.bfe.bikesharing"
-msgstr "Bikesharing- und Veloverleihsysteme"
+msgstr "Bikesharing ed emprest da velos"
 
 msgid "ch.bfe.energieforschung"
 msgstr "Projects cleantech"
@@ -4611,7 +4611,7 @@ msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Potenzials d'ovras pitschnas"
 
 msgid "ch.bfe.meteorologische-vereisung"
-msgstr "Vereisungshäufigkeit"
+msgstr "Frequenza d'englatschament"
 
 msgid "ch.bfe.meteorologische-vereisung.hoehe"
 msgstr "Höhe über Grund"
@@ -4731,7 +4731,7 @@ msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
 msgstr "Neigung [°]"
 
 msgid "ch.bfe.solarenergie-eignung-fassaden"
-msgstr "Solarenergie: Eignung Fassaden"
+msgstr "Energia solara: qualificaziun fatschadas"
 
 msgid "ch.bfe.solarenergie-eignung-fassaden.ausrichtung"
 msgstr "Ausrichtung [°]"
@@ -4956,13 +4956,13 @@ msgid "ch.blw.bodeneignung-wasserspeichervermoegen"
 msgstr "Capacitad da retegnair l'aua"
 
 msgid "ch.blw.emapis-beizugsgebiet"
-msgstr "Beizugsgebiet"
+msgstr "Territori cumpiglià"
 
 msgid "ch.blw.emapis-bewaesserung"
-msgstr "Bewässerung"
+msgstr "Sauaziun"
 
 msgid "ch.blw.emapis-elektrizitaetsversorgung"
-msgstr "Elektrizitätsversorgung"
+msgstr "Provediment d'electricitad"
 
 msgid "ch.blw.emapis-entwaesserung"
 msgstr "Bilantscha d'aua, structura terren"
@@ -4971,16 +4971,16 @@ msgid "ch.blw.emapis.geschaeftsnummer"
 msgstr "Geschäftsnummer"
 
 msgid "ch.blw.emapis-hochbau"
-msgstr "Hochbau"
+msgstr "Construcziun auta"
 
 msgid "ch.blw.emapis-milchleitung"
-msgstr "Milchleitung"
+msgstr "Conduct da latg"
 
 msgid "ch.blw.emapis-oekologie"
-msgstr "Oekologie"
+msgstr "Ecologia"
 
 msgid "ch.blw.emapis-projektschwerpunkt"
-msgstr "Projektschwerpunkt"
+msgstr "Punct central da projects"
 
 msgid "ch.blw.emapis-seilbahnen"
 msgstr "Pendicularas agricultura ed alps"
@@ -4992,13 +4992,13 @@ msgid "ch.blw.emapis.typ"
 msgstr "Element"
 
 msgid "ch.blw.emapis-wasserversorgung"
-msgstr "Wasserversorgung"
+msgstr "Provediment d'aua"
 
 msgid "ch.blw.emapis-wegebau"
 msgstr "Construcziun da vias champestras"
 
 msgid "ch.blw.emapis-zusammenfassung"
-msgstr "Ländliche Entwicklung"
+msgstr "Svilup rural"
 
 msgid "ch.blw.erosion"
 msgstr "Ristga d'erosiun qualitativa 1"
@@ -5418,7 +5418,7 @@ msgid "ch.swisstopo.digitales-hoehenmodell_25.metadata"
 msgstr "Divisiun MDT25 Raster"
 
 msgid "ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung"
-msgstr "DHM25 Reliefschattierung"
+msgstr "DHM25 sumbriva dal reliev"
 
 msgid "ch.swisstopo.dreiecksvermaschung"
 msgstr "MN95 Rait triangulara"
@@ -5499,7 +5499,7 @@ msgid "ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-erlebnis_geologie"
-msgstr "Erlebnis Geologie"
+msgstr "Aventura geologia"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Charta geol. generala 200"
@@ -5673,7 +5673,7 @@ msgid "ch.swisstopo.geologie-geologischer_atlas.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-geomorphologie"
-msgstr "Übersicht Geomorphologie"
+msgstr "Survista da la geomorfologia"
 
 msgid "ch.swisstopo.geologie-geomorphologie.ads_name"
 msgstr "Übersicht Geomorphologie: Oberflächenform"
@@ -6069,7 +6069,7 @@ msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata"
-msgstr "Divisiun chartas geologicas spezialas Stampa"
+msgstr "Divisiun da chartas geologicas spezialas Palpiri"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.name"
 msgstr "Name"
@@ -6135,7 +6135,7 @@ msgid "ch.swisstopo.geologie-terrestrische_strahlung"
 msgstr "Terrestrische Strahlung"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte"
-msgstr "Tiefengeothermie-Projekte"
+msgstr "Projects da geotermia profunda"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.canton"
 msgstr "Kanton"
@@ -6273,16 +6273,16 @@ msgid "ch.swisstopo.hiks-dufour"
 msgstr "Charta Dufour Emprima ediziun"
 
 msgid "ch.swisstopo.hiks-dufour.metadata"
-msgstr "Einteilung Dufourkarte Raster"
+msgstr "Divisiun Charta Dufour Raster"
 
 msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Charta Siegfried Emprima ediziun"
 
 msgid "ch.swisstopo.hiks-siegfried-ta25.metadata"
-msgstr "Einteilung Siegfriedkarte 25 Raster"
+msgstr "Divisiun Charta Siegfried 25 Raster"
 
 msgid "ch.swisstopo.hiks-siegfried-ta50.metadata"
-msgstr "Einteilung Siegfriedkarte 50 Raster"
+msgstr "Divisiun Charta Siegfried 50 Raster"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
 msgstr "Divisiun charta aviatica Stampa"
@@ -6624,7 +6624,7 @@ msgid "ch.swisstopo.lk50-papierkarte-zusammensetzung.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.lotabweichungen"
-msgstr "Lotabweichungen"
+msgstr "Deviaziuns da la verticala"
 
 msgid "ch.swisstopo.lotabweichungen.eta_ch"
 msgstr "Eta (CH1903) [Bogensekunden]"
@@ -7614,7 +7614,7 @@ msgid "ch.vbs.url"
 msgstr "http://www.vbs.admin.ch/rm/home.html"
 
 msgid "ch.vbs.waldschadenkarte"
-msgstr "Waldschadenkarte - Projektil"
+msgstr "Charta donns da guaud - projectil"
 
 msgid "ch.vbs.waldschadenkarte.gde_name"
 msgstr "Gemeinde"

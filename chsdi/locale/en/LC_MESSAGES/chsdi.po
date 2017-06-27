@@ -1131,7 +1131,7 @@ msgid "ch.astra.mountainbikeland"
 msgstr "Mountainbiking in Switzerland"
 
 msgid "ch.astra.nationalstrassenachsen"
-msgstr "Axis of national routes"
+msgstr "Axis of national routes | Axas da las vias naziunalas"
 
 msgid "ch.astra.nationalstrassenachsen.bezeichnung"
 msgstr "Description"
@@ -3111,7 +3111,7 @@ msgid "ch.bafu.luftreinhaltung-stickstoffdeposition"
 msgstr "Nitrogen Deposition"
 
 msgid "ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag"
-msgstr "CLN Exceedances"
+msgstr "CLN Exceedance"
 
 msgid "ch.bafu.mittlere-abfluesse"
 msgstr "Mean runoff (m³/s)"
@@ -4956,10 +4956,10 @@ msgid "ch.blw.bodeneignung-wasserspeichervermoegen"
 msgstr "Water storage capacity"
 
 msgid "ch.blw.emapis-beizugsgebiet"
-msgstr "Beizugsgebiet"
+msgstr "Perimeters"
 
 msgid "ch.blw.emapis-bewaesserung"
-msgstr "Bewässerung"
+msgstr "Irrigation"
 
 msgid "ch.blw.emapis-elektrizitaetsversorgung"
 msgstr "Elektrizitätsversorgung"
@@ -4971,16 +4971,16 @@ msgid "ch.blw.emapis.geschaeftsnummer"
 msgstr "Geschäftsnummer"
 
 msgid "ch.blw.emapis-hochbau"
-msgstr "Hochbau"
+msgstr "Structural engineering"
 
 msgid "ch.blw.emapis-milchleitung"
-msgstr "Milchleitung"
+msgstr "Milk pipeline"
 
 msgid "ch.blw.emapis-oekologie"
-msgstr "Oekologie"
+msgstr "Ecology"
 
 msgid "ch.blw.emapis-projektschwerpunkt"
-msgstr "Projektschwerpunkt"
+msgstr "Project focus"
 
 msgid "ch.blw.emapis-seilbahnen"
 msgstr "Agricultural and alpine cableways"
@@ -4992,7 +4992,7 @@ msgid "ch.blw.emapis.typ"
 msgstr "Element"
 
 msgid "ch.blw.emapis-wasserversorgung"
-msgstr "Wasserversorgung"
+msgstr "Water supply"
 
 msgid "ch.blw.emapis-wegebau"
 msgstr "Road construction"
@@ -5307,13 +5307,13 @@ msgid "chmobil_url_route"
 msgstr "SwitzerlandMobility route information"
 
 msgid "ch.nagra.aeromagnetische-karte_1100"
-msgstr "Aeromagnetik Aargau 1100 m 100"
+msgstr "Aeromagnetic Aargau 1100 m 100 | Eromagnetica Argovia 1100 m 100"
 
 msgid "ch.nagra.aeromagnetische-karte_1100.aeromagnetisme"
 msgstr "Aeromagnetic anomalies Aargau, 1100 m [nT]"
 
 msgid "ch.nagra.aeromagnetische-karte_1500"
-msgstr "Aeromagnetik Aargau 1500 m 100"
+msgstr "Aeromagnetic Aargau 1500 m 100 | Eromagnetica Argovia 1500 m 100"
 
 msgid "ch.nagra.aeromagnetische-karte_1500.aeromagnetisme"
 msgstr "Aeromagnetic anomalies Aargau, 1500 m [nT]"
@@ -5673,7 +5673,7 @@ msgid "ch.swisstopo.geologie-geologischer_atlas.release"
 msgstr "Edition"
 
 msgid "ch.swisstopo.geologie-geomorphologie"
-msgstr "Übersicht Geomorphologie"
+msgstr "Overview of geomorphology"
 
 msgid "ch.swisstopo.geologie-geomorphologie.ads_name"
 msgstr "Übersicht Geomorphologie: Oberflächenform"
@@ -5979,7 +5979,7 @@ msgid "ch.swisstopo.geologie-gravimetrischer_atlas"
 msgstr "Gravimetric Atlas 100"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte"
-msgstr "Gravimetrische Messpunkte 100"
+msgstr "Gravimetric measuring points 100 | Puncts da mesiraziun gravimetrics 100"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.altitude"
 msgstr "Altitude [m]"
@@ -7614,7 +7614,7 @@ msgid "ch.vbs.url"
 msgstr "http://www.vbs.admin.ch/en/home.html"
 
 msgid "ch.vbs.waldschadenkarte"
-msgstr "Waldschadenkarte - Projektil"
+msgstr "Map of forest damage – projectile"
 
 msgid "ch.vbs.waldschadenkarte.gde_name"
 msgstr "Gemeinde"
