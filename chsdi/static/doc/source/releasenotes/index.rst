@@ -44,33 +44,37 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Copper wire <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-kupferdraht>`__ (ch.bakom.anschlussart-kupferdraht)                                                         |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink1>`__ (ch.bakom.downlink1)                                                                             |
+| Update | `Download ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink1>`__ (ch.bakom.downlink1)                                                                               |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink10>`__ (ch.bakom.downlink10)                                                                          |
+| Update | `Download ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink10>`__ (ch.bakom.downlink10)                                                                            |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink100>`__ (ch.bakom.downlink100)                                                                       |
+| Update | `Download ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink100>`__ (ch.bakom.downlink100)                                                                         |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 2 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink2>`__ (ch.bakom.downlink2)                                                                             |
+| Update | `Download ≥ 2 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink2>`__ (ch.bakom.downlink2)                                                                               |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 20 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink20>`__ (ch.bakom.downlink20)                                                                          |
+| Update | `Download ≥ 20 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink20>`__ (ch.bakom.downlink20)                                                                            |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 50 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink50>`__ (ch.bakom.downlink50)                                                                          |
+| Update | `Download ≥ 50 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink50>`__ (ch.bakom.downlink50)                                                                            |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Upload ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink1>`__ (ch.bakom.uplink1)                                                                                   |
+| Update | `Upload ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink1>`__ (ch.bakom.uplink1)                                                                                     |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Upload ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink10>`__ (ch.bakom.uplink10)                                                                                |
+| Update | `Upload ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink10>`__ (ch.bakom.uplink10)                                                                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Upload ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink100>`__ (ch.bakom.uplink100)                                                                             |
+| Update | `Upload ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink100>`__ (ch.bakom.uplink100)                                                                               |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Upload ≥ 2 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink2>`__ (ch.bakom.uplink2)                                                                                   |
+| Update | `Upload ≥ 2 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink2>`__ (ch.bakom.uplink2)                                                                                     |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Upload ≥ 20 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink20>`__ (ch.bakom.uplink20)                                                                                |
+| Update | `Upload ≥ 20 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink20>`__ (ch.bakom.uplink20)                                                                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Upload ≥ 50 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink50>`__ (ch.bakom.uplink50)                                                                                |
+| Update | `Upload ≥ 50 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink50>`__ (ch.bakom.uplink50)                                                                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Availability HDTV fixed netw. <//map.geo.admin.ch/?layers=ch.bakom.verfuegbarkeit-hdtv>`__ (ch.bakom.verfuegbarkeit-hdtv)                                                 |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Availability TV fixed network <//map.geo.admin.ch/?layers=ch.bakom.verfuegbarkeit-tv>`__ (ch.bakom.verfuegbarkeit-tv)                                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SAIP in consultation <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_kraft>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_kraft)                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP aviation infrastructure <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung)          |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
