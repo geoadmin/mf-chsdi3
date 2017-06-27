@@ -3111,7 +3111,7 @@ msgid "ch.bafu.luftreinhaltung-stickstoffdeposition"
 msgstr "Dépôts azotés"
 
 msgid "ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag"
-msgstr "CLN Exceedances"
+msgstr "Dépassement CLN"
 
 msgid "ch.bafu.mittlere-abfluesse"
 msgstr "Débit naturel (m³/s)"
@@ -3750,7 +3750,7 @@ msgid "ch.bag.zecken-fsme-faelle"
 msgstr "FSME - zones à fréquence accrue"
 
 msgid "ch.bag.zecken-fsme-impfung"
-msgstr "MEVE - vaccination recommandée"
+msgstr "FSME - vaccination recommandée"
 
 msgid "ch.bag.zecken-lyme"
 msgstr "Zones à risque de Borréliose"

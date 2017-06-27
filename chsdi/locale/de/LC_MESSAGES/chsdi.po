@@ -3111,7 +3111,7 @@ msgid "ch.bafu.luftreinhaltung-stickstoffdeposition"
 msgstr "Stickstoffdeposition"
 
 msgid "ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag"
-msgstr "CLN Exceedances"
+msgstr "CLN Überschreitung"
 
 msgid "ch.bafu.mittlere-abfluesse"
 msgstr "Mittlere Abflüsse (m³/s)"

@@ -3111,7 +3111,7 @@ msgid "ch.bafu.luftreinhaltung-stickstoffdeposition"
 msgstr "Deposizione di azoto"
 
 msgid "ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag"
-msgstr "CLN Exceedances"
+msgstr "Superamento CLN"
 
 msgid "ch.bafu.mittlere-abfluesse"
 msgstr "Deflussi medi (m³/s)"
@@ -3750,7 +3750,7 @@ msgid "ch.bag.zecken-fsme-faelle"
 msgstr "FSME - zone a frequenza aumentata"
 
 msgid "ch.bag.zecken-fsme-impfung"
-msgstr "MEVE - vaccinazione raccomandata"
+msgstr "FSME - vaccinazione raccomandata"
 
 msgid "ch.bag.zecken-lyme"
 msgstr "Zone a rischio di Borreliosi"
@@ -5307,13 +5307,13 @@ msgid "chmobil_url_route"
 msgstr "Informazioni sul percorso SvizzeraMobile"
 
 msgid "ch.nagra.aeromagnetische-karte_1100"
-msgstr "Aéromagn. Argovie 1100 m 100"
+msgstr "Carta aeromagn. Argovia 1100 m 100"
 
 msgid "ch.nagra.aeromagnetische-karte_1100.aeromagnetisme"
 msgstr "Anomalia aeromagnetica, Argovia, 1100 m [nT]"
 
 msgid "ch.nagra.aeromagnetische-karte_1500"
-msgstr "Aéromagn. Argovie 1500 m 100"
+msgstr "Carta aeromagn. Argovia 1500 m 100"
 
 msgid "ch.nagra.aeromagnetische-karte_1500.aeromagnetisme"
 msgstr "Anomalia aeromagnetica, Argovia, 1500 m [nT]"
@@ -5673,7 +5673,7 @@ msgid "ch.swisstopo.geologie-geologischer_atlas.release"
 msgstr "Edizione"
 
 msgid "ch.swisstopo.geologie-geomorphologie"
-msgstr "Géomorphologie, vue d'ensemble"
+msgstr "Geomorfologia, visione d'insieme"
 
 msgid "ch.swisstopo.geologie-geomorphologie.ads_name"
 msgstr "Géomorphologie, vue d´ensemble: forme superficielle"
@@ -5979,7 +5979,7 @@ msgid "ch.swisstopo.geologie-gravimetrischer_atlas"
 msgstr "Atlante gravimetrico 100"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte"
-msgstr "Points de mesure gravim. 100"
+msgstr "Punti di misurazione gravim. 100"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.altitude"
 msgstr "Altitude [m]"
@@ -6135,7 +6135,7 @@ msgid "ch.swisstopo.geologie-terrestrische_strahlung"
 msgstr "Radiazione terrestre"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte"
-msgstr "Projets de géothermie profonde"
+msgstr "Progetti di geotermia profonda"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.canton"
 msgstr "Canton"
