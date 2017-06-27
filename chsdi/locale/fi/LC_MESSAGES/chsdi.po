@@ -1161,7 +1161,7 @@ msgid "ch.astra.nationalstrassenachsen.strassennummer"
 msgstr "Strassennummer"
 
 msgid "ch.astra.projektierungszonen-nationalstrassen.oereb"
-msgstr "Projektierungszonen Autobahnen ÖREB"
+msgstr "Zonas projectaziun autostradas RPDP"
 
 msgid "ch.astra.schwerverunfallte-kanton_alkohol"
 msgstr "Accidents per abitants – alcohol"
@@ -2019,7 +2019,7 @@ msgid "ch.bafu.gefahren-aktuelle_erdbeben"
 msgstr "Terratrembels istorics"
 
 msgid "ch.bafu.gefahren-basiskarte"
-msgstr "Basiskarte GIN"
+msgstr "Charta da basa GIN"
 
 msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Classas da sulom seismicas"
@@ -2133,22 +2133,22 @@ msgid "ch.bafu.gewaesserschutzbereiche"
 msgstr "Secturs da protecziun da las auas"
 
 msgid "ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen"
-msgstr "Kieselalgen (Diatomeen)"
+msgstr "Diatoms"
 
 msgid "ch.bafu.gewaesserschutz-biologischer_zustand_fische"
-msgstr "Fische"
+msgstr "Peschs"
 
 msgid "ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten"
-msgstr "Wasserpflanzen (Makrophyten)"
+msgstr "Plantas da l'aua (macrofits)"
 
 msgid "ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos"
-msgstr "Makrozoobenthos"
+msgstr "Macrozoobentos"
 
 msgid "ch.bafu.gewaesserschutz-chemischer_zustand_ammonium"
 msgstr "Ammonium"
 
 msgid "ch.bafu.gewaesserschutz-chemischer_zustand_doc"
-msgstr "Gelöster organ. Kohlenstoff (DOC)"
+msgstr "Carbon organic dissolvì (DOC)"
 
 msgid "ch.bafu.gewaesserschutz-chemischer_zustand_nitrat"
 msgstr "Nitrat"
@@ -2157,10 +2157,10 @@ msgid "ch.bafu.gewaesserschutz-chemischer_zustand_nitrit"
 msgstr "Nitrit"
 
 msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphat"
-msgstr "Phosphat"
+msgstr "Fosfat"
 
 msgid "ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt"
-msgstr "Gesamt-Phosphor"
+msgstr "Total da fosfor"
 
 msgid "ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor"
 msgstr "Immissiuns diffusas da fosfor"
@@ -2538,7 +2538,7 @@ msgid "ch.bafu.holzzuwachs"
 msgstr "Creschientscha annuala da laina"
 
 msgid "ch.bafu.hydrogeologie-markierversuche"
-msgstr "Markierversuche"
+msgstr "Provas da marcaziun"
 
 msgid "ch.bafu.hydrogeologie-markierversuche.datum"
 msgstr "Datum"
@@ -2571,7 +2571,7 @@ msgid "ch.bafu.hydrogeologie-uebersichtskarte"
 msgstr "Charta da survista idrogeologica"
 
 msgid "ch.bafu.hydrogeologische-karte_100"
-msgstr "Hydrogeologische Karte 100"
+msgstr "Charta idrogeologica 100"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
 msgstr "Mesiraziun stadi da las auas Conf."
@@ -2994,7 +2994,7 @@ msgid "ch.bafu.hydroweb-warnkarte_regional.validuntil"
 msgstr "Gültig von"
 
 msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen"
-msgstr "Karstwasservorkommen"
+msgstr "Resursas d'aua da carst"
 
 msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen.nk_hdyn"
 msgstr "Hydrodynamische Situation"
@@ -3006,7 +3006,7 @@ msgid "ch.bafu.karst-ausdehnung_grundwasservorkommen.nk_type"
 msgstr "Karstgrundwassertyp"
 
 msgid "ch.bafu.karst-einzugsgebiete"
-msgstr "Karst-Einzugsgebiete"
+msgstr "Intschess da carst"
 
 msgid "ch.bafu.karst-einzugsgebiete.ba_alt_max"
 msgstr "Maximale Höhe [m ü.M.]"
@@ -3024,7 +3024,7 @@ msgid "ch.bafu.karst-einzugsgebiete.ba_surf"
 msgstr "Fläche [km2]"
 
 msgid "ch.bafu.karst-einzugsgebietseinheiten"
-msgstr "Karst-Einzugsgebietseinheiten"
+msgstr "Unitads d'intschess da carst"
 
 msgid "ch.bafu.karst-einzugsgebietseinheiten.shape_area"
 msgstr "Fläche [km2]"
@@ -3045,7 +3045,7 @@ msgid "ch.bafu.karst-einzugsgebietseinheiten.ub_type"
 msgstr "Art der Oberfläche"
 
 msgid "ch.bafu.karst-quellen_schwinden"
-msgstr "Karstquellen und Schwinden"
+msgstr "Funtaunas da carst e perditas"
 
 msgid "ch.bafu.karst-quellen_schwinden.ip_exp"
 msgstr "Nutzung"
@@ -3072,7 +3072,7 @@ msgid "ch.bafu.karst-quellen_schwinden.ip_z"
 msgstr "Z-Koordinate"
 
 msgid "ch.bafu.karst-unterirdische_fliesswege"
-msgstr "Unterirdische Fliesswege"
+msgstr "Vias da deflussiun d'aua sutterrana"
 
 msgid "ch.bafu.karst-unterirdische_fliesswege.ei_hdyn"
 msgstr "Hydrodynamische Situation"
@@ -3186,34 +3186,34 @@ msgid "ch.bafu.neophyten-riesenbaerenklau"
 msgstr "Darsvenna giganta"
 
 msgid "ch.bafu.neophyten-sachalin_staudenknoeterich"
-msgstr "Sachalin-Staudenknöterich"
+msgstr "Badalestg da Sachalin"
 
 msgid "ch.bafu.neophyten-schmetterlingsstrauch"
-msgstr "Schmetterlingsstrauch"
+msgstr "Budleja"
 
 msgid "ch.bafu.neophyten-seidiger_hornstrauch"
-msgstr "Seidiger Hornstrauch"
+msgstr "Corniol da saida"
 
 msgid "ch.bafu.neophyten-spaetbluehende_goldrute"
-msgstr "Spätblühende Goldrute"
+msgstr "Saldagen tardiv"
 
 msgid "ch.bafu.neophyten-suedafrikanisches_greiskraut"
-msgstr "Südafrikanisches Greiskraut"
+msgstr "Sanetsch sidafrican"
 
 msgid "ch.bafu.neophyten-syrische_seidenpflanze"
-msgstr "Syrische Seidenpflanze"
+msgstr "Asclepias siriaca"
 
 msgid "ch.bafu.neophyten-topinambur"
 msgstr "Topinambur"
 
 msgid "ch.bafu.neophyten-verlotscher_beifuss"
-msgstr "Verlotscher Beifuss"
+msgstr "Assens dals frars Verlot"
 
 msgid "ch.bafu.neophyten-vielaehriger_knoeterich"
-msgstr "Vielähriger Knöterich"
+msgstr "Badalestg cun spias numerusas"
 
 msgid "ch.bafu.neophyten-vielblaettrige_lupine"
-msgstr "Vielblättrige Lupine"
+msgstr "Lupina cun feglia numerusa"
 
 msgid "ch.bafu.oekomorphologie-f_abschnitte"
 msgstr "Ecomorfologia F – trajects"

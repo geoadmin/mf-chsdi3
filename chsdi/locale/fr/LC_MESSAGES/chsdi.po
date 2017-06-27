@@ -3747,7 +3747,7 @@ msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=fr"
 
 msgid "ch.bag.zecken-fsme-faelle"
-msgstr "MEVE - zones à fréquence accrue"
+msgstr "FSME - zones à fréquence accrue"
 
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "MEVE - vaccination recommandée"

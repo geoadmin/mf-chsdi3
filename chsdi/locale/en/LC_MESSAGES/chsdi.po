@@ -2019,7 +2019,7 @@ msgid "ch.bafu.gefahren-aktuelle_erdbeben"
 msgstr "Recent earthquakes"
 
 msgid "ch.bafu.gefahren-basiskarte"
-msgstr "Basiskarte GIN"
+msgstr "GIN base map"
 
 msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Seismic subsoil classes"

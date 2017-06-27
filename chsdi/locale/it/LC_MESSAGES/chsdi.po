@@ -2019,7 +2019,7 @@ msgid "ch.bafu.gefahren-aktuelle_erdbeben"
 msgstr "Terremoti recenti"
 
 msgid "ch.bafu.gefahren-basiskarte"
-msgstr "Carte de base pour GIN"
+msgstr "Carta di base GIN"
 
 msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Classe dei terreni di fondazione"
@@ -3747,7 +3747,7 @@ msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=it"
 
 msgid "ch.bag.zecken-fsme-faelle"
-msgstr "MEVE - zone a frequenza aumentata"
+msgstr "FSME - zone a frequenza aumentata"
 
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "MEVE - vaccinazione raccomandata"
