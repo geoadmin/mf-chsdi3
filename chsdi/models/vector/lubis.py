@@ -3,7 +3,7 @@
 from sqlalchemy import Column, Integer, Boolean, Numeric
 from sqlalchemy.types import Unicode
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector, Geometry3D
+from chsdi.models.vector import Vector, Geometry2D
 
 Base = bases['lubis']
 
@@ -34,8 +34,8 @@ class LuftbilderBase:
     massstab = Column('massstab', Integer)
     filesize_mb = Column('filesize_mb', Unicode)
     bgdi_imagemode = Column('bgdi_imagemode', Unicode)
-    the_geom_footprint = Column('the_geom_footprint', Geometry3D)
-    the_geom = Column(Geometry3D)
+    the_geom_footprint = Column('the_geom_footprint', Geometry2D)
+    the_geom = Column(Geometry2D)
 
 
 class LuftbilderSwisstopoFarbe(Base, LuftbilderBase, Vector):
@@ -119,8 +119,8 @@ class Bildstreifen(Base, Vector):
     toposhop_date = Column('toposhop_date', Unicode)
     goal = Column('goal', Unicode)
     source_georef = Column('georef_source', Unicode)
-    the_geom_footprint = Column('the_geom_footprint', Geometry3D)
-    the_geom = Column(Geometry3D)
+    the_geom_footprint = Column('the_geom_footprint', Geometry2D)
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.lubis-bildstreifen', Bildstreifen)
 
@@ -147,6 +147,6 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     y = Column('y', Integer)
     contact = Column('contact', Unicode)
     contact_email = Column('contact_email', Unicode)
-    the_geom = Column(Geometry3D)
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.lubis-luftbilder_schraegaufnahmen', LuftbilderSchraegaufnahmen)
