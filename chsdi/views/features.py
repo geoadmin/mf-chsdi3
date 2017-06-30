@@ -12,7 +12,7 @@ import pyramid.httpexceptions as exc
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
 from sqlalchemy.exc import InternalError, DataError
 from sqlalchemy.sql.expression import cast, func
-from sqlalchemy import Text, Integer, Boolean, Numeric, Date
+from sqlalchemy import Text, Unicode, Integer, Boolean, Numeric, Date
 from sqlalchemy import text
 from geoalchemy2.types import Geometry
 
@@ -669,7 +669,7 @@ def _find(request):
 
 
 def _format_search_text(columnType, searchText):
-    if isinstance(columnType, Text):
+    if isinstance(columnType, (Text, Unicode)):
         return searchText
     elif isinstance(columnType, Boolean):
         if searchText.lower() == 'true':
@@ -690,6 +690,7 @@ def _format_search_text(columnType, searchText):
             raise exc.HTTPBadRequest('Please provide a float')
     elif isinstance(columnType, Geometry):
         raise exc.HTTPBadRequest('Find operations cannot be performed on geometry columns')
+    return searchText
 
 
 @view_config(route_name='cut', renderer='jsonp')
