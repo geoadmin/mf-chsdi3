@@ -26,13 +26,17 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170627...r_170705>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170627...r_170705>`__
 
 Geodata
 *******
++--------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Anthrop. seismic noise CH <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-bodenunruhe>`__ (ch.swisstopo.geologie-bodenunruhe)             |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Solarenergie: Eignung Fassaden <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-fassaden>`__ (ch.bfe.solarenergie-eignung-fassaden)  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -50,10 +54,12 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170613...r_170627>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170613...r_170627>`__
 
 Geodata
 *******
