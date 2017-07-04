@@ -1131,7 +1131,7 @@ msgid "ch.astra.mountainbikeland"
 msgstr "La Svizra cun velo da muntogna"
 
 msgid "ch.astra.nationalstrassenachsen"
-msgstr "Nationalstrassenachsen"
+msgstr "Axas da las vias naziunalas"
 
 msgid "ch.astra.nationalstrassenachsen.bezeichnung"
 msgstr "Bezeichnung"
@@ -4101,7 +4101,7 @@ msgid "ch.bav.sachplan-infrastruktur-schifffahrt_kraft.plname_it"
 msgstr "Planerische Massnahme"
 
 msgid "ch.bav.schienennetz"
-msgstr "Schienennetz"
+msgstr "Rait da viafier"
 
 msgid "ch.bav.schienennetz.abreviation"
 msgstr "PB-Abk."
@@ -4122,7 +4122,7 @@ msgid "ch.bav.schienennetz.finvalidite"
 msgstr "EndeGueltigkeit"
 
 msgid "ch.bav.schienennetz-kilometrierungslinien"
-msgstr "Kilometrierungslinien"
+msgstr "Lingias da kilometraziun"
 
 msgid "ch.bav.schienennetz-kilometrierungslinien.debutvalidite"
 msgstr "BeginnGueltigkeit"
@@ -5367,7 +5367,7 @@ msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
 msgstr "MCPFE1.3 Biodiversitätsförderung durch gezielte Eingriffe"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
-msgstr "Mächtigkeit der Lockergesteine"
+msgstr "Autezza da la crappa lucca"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine.epaisseur"
 msgstr "Mächtigkeit der Lockergesteine [m]"
@@ -6048,7 +6048,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.name_ads"
 msgstr "Localitad"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
-msgstr "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
+msgstr "Divisiun da chartas geologicas spezialas Retagl"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.name_de"
 msgstr "Name"
@@ -6093,7 +6093,7 @@ msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata"
-msgstr "Einteilung Geologische Spezialkarten Vector"
+msgstr "Divisiun da chartas geologicas spezialas Vectur"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.name_de"
 msgstr "Name"
@@ -7084,6 +7084,84 @@ msgstr "Geografische Namen swissNAMES3D"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz"
 msgstr "Eisenbahn swissTLM3D"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.ausser_betrieb"
+msgstr "Ausser Betrieb"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_-"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.objektart"
+msgstr "Typ"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_0"
+msgstr "Normalspur"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_2"
+msgstr "Schmalspur"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_4"
+msgstr "Schmalspur mit Normalspur"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_5"
+msgstr "Kleinbahn"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.standseilbahn"
+msgstr "Standseilbahn"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_1"
+msgstr "Falsch"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_2"
+msgstr "Wahr"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_999997"
+msgstr "ub"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_999998"
+msgstr "k_W"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.verkehrsmittel"
+msgstr "Verkehrsmittel"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_100"
+msgstr "Bahn"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_200"
+msgstr "Tram"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_300"
+msgstr "Metro"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_999997"
+msgstr "ub"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_999998"
+msgstr "k_W"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.zahnradbahn"
+msgstr "Zahnradbahn"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_1"
+msgstr "Falsch"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_2"
+msgstr "Wahr"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_999997"
+msgstr "ub"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_999998"
+msgstr "k_W"
 
 msgid "ch.swisstopo.swisstlm3d-gewaessernetz"
 msgstr "Gewässer swissTLM3D"
