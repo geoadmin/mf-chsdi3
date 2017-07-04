@@ -8,10 +8,10 @@ class SiteMapValidation(object):
 
     def __init__(self):
         self._content = None
-        self._in_index = ['base', 'topics', 'layers']
-        self._multi_sitemaps = ['addresses']
+        self._in_index = [u'base', u'topics', u'layers']
+        self._multi_sitemaps = [u'addresses']
         self._multi_part = None
-        self._contents = ['index'] + self._in_index + self._multi_sitemaps
+        self._contents = [u'index'] + self._in_index + self._multi_sitemaps
 
     @property
     def content(self):

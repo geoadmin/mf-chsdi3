@@ -27,12 +27,12 @@ class GeometryServiceValidation(BaseFeaturesValidation):
         geometryType = request.params.get('geometryType')
 
         self.esriGeometryTypes = (
-            'esriGeometryPolygon',
-            'esriGeometryEnvelope'
+            u'esriGeometryPolygon',
+            u'esriGeometryEnvelope'
         )
         self.geometryTypes = (
-            'Polygon',
-            'MultiPolygon'
+            u'Polygon',
+            u'MultiPolygon'
         )
 
         # No parameter -> we want the totalPerimeter
@@ -45,7 +45,7 @@ class GeometryServiceValidation(BaseFeaturesValidation):
                 self.geometryType = geometryType
             self.clipper = clipper
             self.groupby = request.params.get('groupby')
-        self.layers = request.params.get('layers', 'all')
+        self.layers = request.params.get('layers', u'all')
 
     @property
     def clipper(self):
@@ -111,7 +111,7 @@ class GeometryServiceValidation(BaseFeaturesValidation):
     def layers(self, value):
         if value is None:
             raise HTTPBadRequest('Please provide a parameter layers')
-        if value == 'all':
+        if value == u'all':
             self._layers = value
         else:
             try:
@@ -128,7 +128,7 @@ class GeometryServiceValidation(BaseFeaturesValidation):
     @chargeable.setter
     def chargeable(self, value):
         if value is not None:
-            if value.lower() == 'true':
+            if value.lower() == u'true':
                 self._chargeable = True
-            elif value.lower() == 'false':
+            elif value.lower() == u'false':
                 self._chargeable = False
