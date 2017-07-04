@@ -1131,7 +1131,7 @@ msgid "ch.astra.mountainbikeland"
 msgstr "Mountainbiking in Switzerland"
 
 msgid "ch.astra.nationalstrassenachsen"
-msgstr "Axis of national routes | Axas da las vias naziunalas"
+msgstr "Axis of national routes"
 
 msgid "ch.astra.nationalstrassenachsen.bezeichnung"
 msgstr "Description"
@@ -7084,6 +7084,84 @@ msgstr "Geografische Namen swissNAMES3D"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz"
 msgstr "Railway swissTLM3D"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.ausser_betrieb"
+msgstr "Out of service"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_-"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.objektart"
+msgstr "Type"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_0"
+msgstr "Normalspur"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_2"
+msgstr "Schmalspur"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_4"
+msgstr "Schmalspur mit Normalspur"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_5"
+msgstr "Kleinbahn"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.standseilbahn"
+msgstr "Funiculare railway"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_1"
+msgstr "Falsch"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_2"
+msgstr "Wahr"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_999997"
+msgstr "ub"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_999998"
+msgstr "k_W"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.verkehrsmittel"
+msgstr "Mode of transport"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_100"
+msgstr "Bahn"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_200"
+msgstr "Tram"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_300"
+msgstr "Metro"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_999997"
+msgstr "ub"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_999998"
+msgstr "k_W"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.zahnradbahn"
+msgstr "Rack-rail"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_1"
+msgstr "Falsch"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_2"
+msgstr "Wahr"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_999997"
+msgstr "ub"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_999998"
+msgstr "k_W"
 
 msgid "ch.swisstopo.swisstlm3d-gewaessernetz"
 msgstr "Hydography swissTLM3D"

@@ -7085,6 +7085,84 @@ msgstr "Noms géographiques swissNAMES3D"
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz"
 msgstr "Chemin de fer swissTLM3D"
 
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.ausser_betrieb"
+msgstr "Hors service"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_-"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.objektart"
+msgstr "Type"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_0"
+msgstr "Voie normale (1435mm)"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_2"
+msgstr "Chemin de fer à voie étroite à largeur entre 750mm et 1435mm"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_4"
+msgstr "Voie utilisable par deux types de train, soit à voie normale et étroite (voie avec 3 rails)."
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_5"
+msgstr "Chemin de fer avec un écartement des rails compris entre 500mm et 750mm"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_"
+msgstr "Non saisi"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.standseilbahn"
+msgstr "Funiculaire"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_1"
+msgstr "Faux"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_2"
+msgstr "Vrai"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_999997"
+msgstr "Inconnu"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_999998"
+msgstr "Pas de valeur"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_"
+msgstr "Non saisi"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.verkehrsmittel"
+msgstr "Moyen de transport"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_100"
+msgstr "Train"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_200"
+msgstr "Tram"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_300"
+msgstr "Métro"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_999997"
+msgstr "Inconnu"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_verkehrsmittel_999998"
+msgstr "Pas de valeur"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_"
+msgstr "Non saisi"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.zahnradbahn"
+msgstr "Crémaillère"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_1"
+msgstr "Faux"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_2"
+msgstr "Vrai"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_999997"
+msgstr "Inconnu"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_999998"
+msgstr "Pas de valeur"
+
 msgid "ch.swisstopo.swisstlm3d-gewaessernetz"
 msgstr "Hydrographie swissTLM3D"
 
