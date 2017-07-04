@@ -85,7 +85,7 @@ def layers(params):
     for topic in topics:
         query = (session.query(Catalog)
                  .filter(Catalog.topic.ilike('%%%s%%' % topic['id']))
-                 .filter(Catalog.category.ilike('%%layer%%')))
+                 .filter(Catalog.category.ilike(u'%%layer%%')))
         query = filter_by_geodata_staging(query, Catalog.staging, params.staging)
         layerlinks = map(buildlink, query.all())
         paths.extend(toAllLanguages(topic['langs'].split(','), layerlinks, '&', ''))

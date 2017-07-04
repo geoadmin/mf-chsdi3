@@ -89,7 +89,7 @@ class TestCatalogService(TestsBase):
         DBSession = scoped_session(sessionmaker())
         old_staging = self.testapp.app.registry.settings['geodata_staging']
         # We fix staging for next calls to prod
-        self.testapp.app.registry.settings['geodata_staging'] = 'prod'
+        self.testapp.app.registry.settings['geodata_staging'] = u'prod'
         try:
             topics = self.testapp.get('/rest/services', status=200)
             for t in topics.json['topics']:
@@ -97,7 +97,7 @@ class TestCatalogService(TestsBase):
                 # Get catalog
                 catalog = self.testapp.get('/rest/services/' + topic + '/CatalogServer', status=200)
                 # Get flat catalog table entries
-                query = DBSession.query(Catalog).filter(Catalog.topic == topic).filter(Catalog.staging == 'prod')
+                query = DBSession.query(Catalog).filter(Catalog.topic == topic).filter(Catalog.staging == u'prod')
                 entries = query.all()
                 # Check if every node in the catalog is in view_catalog of db
                 self.assertTrue(existInList(catalog.json['results']['root'], entries))
@@ -133,7 +133,7 @@ class TestCatalogService(TestsBase):
         DBSession = scoped_session(sessionmaker())
         old_staging = self.testapp.app.registry.settings['geodata_staging']
         # We fix staging for next calls to prod
-        self.testapp.app.registry.settings['geodata_staging'] = 'prod'
+        self.testapp.app.registry.settings['geodata_staging'] = u'prod'
         try:
             topics = self.testapp.get('/rest/services', status=200)
             for t in topics.json['topics']:

@@ -21,14 +21,14 @@ class FindServiceValidation(MapNameValidation):
         self.contains = request.params.get('contains')
         self.returnGeometry = request.params.get('returnGeometry')
 
-        self.geometryFormat = request.params.get('geometryFormat', 'esrijson')
+        self.geometryFormat = request.params.get('geometryFormat', u'esrijson')
         self.mapName = request.matchdict.get('map')
         self.request = request
         self.lang = request.lang
         self.translate = request.translate
         self.cbName = request.params.get('callback')
         self.geodataStaging = request.registry.settings['geodata_staging']
-        self.varnish_authorized = request.headers.get('X-SearchServer-Authorized', 'false').lower() == 'true'
+        self.varnish_authorized = request.headers.get('X-SearchServer-Authorized', 'false').lower() == u'true'
 
     @property
     def layer(self):
@@ -74,7 +74,7 @@ class FindServiceValidation(MapNameValidation):
 
     @contains.setter
     def contains(self, value):
-        if value is None or value.lower() == 'true':
+        if value is None or value.lower() == u'true':
             self._contains = True
         else:
             self._contains = False
@@ -84,9 +84,9 @@ class FindServiceValidation(MapNameValidation):
         if value is None:
             self._returnGeometry = True
         else:
-            if value.lower() == 'true':
+            if value.lower() == u'true':
                 self._returnGeometry = True
-            elif value.lower() == 'false':
+            elif value.lower() == u'false':
                 self._returnGeometry = False
             else:
                 self._returnGeometry = True

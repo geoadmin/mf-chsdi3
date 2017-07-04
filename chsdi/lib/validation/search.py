@@ -13,9 +13,9 @@ class SearchValidation(MapNameValidation):
 
     def __init__(self):
         super(SearchValidation, self).__init__()
-        self.locationTypes = ['locations', 'locations_preview']
-        self.layerTypes = ['layers']
-        self.featureTypes = ['featuresearch']
+        self.locationTypes = [u'locations', u'locations_preview']
+        self.layerTypes = [u'layers']
+        self.featureTypes = [u'featuresearch']
         self.supportedTypes = self.locationTypes + self.layerTypes + self.featureTypes
 
         self._searchText = None
@@ -81,7 +81,7 @@ class SearchValidation(MapNameValidation):
             values = value.split(',')
             result = []
             for val in values:
-                result.append(True if val.lower() in ['true', 't', '1'] else False)
+                result.append(True if val.lower() in [u'true', u't', u'1'] else False)
             self._timeEnabled = result
 
     @searchText.setter
@@ -147,7 +147,7 @@ class SearchValidation(MapNameValidation):
 
     @returnGeometry.setter
     def returnGeometry(self, value):
-        if value is False or value == 'false':
+        if value is False or value == u'false':
             self._returnGeometry = False
         else:
             self._returnGeometry = True

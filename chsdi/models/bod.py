@@ -109,7 +109,7 @@ class LayersConfig(Base):
                     config[k] = translate(val)
                 elif k == 'matrixSet':
                     if val != self.defaultMatrixSet21781 and \
-                            self.__dict__['srid'] != '4326':
+                            self.__dict__['srid'] != u'4326':
                         config['resolutions'] = self._getResolutionsFromMatrixSet(
                             val)
                 else:

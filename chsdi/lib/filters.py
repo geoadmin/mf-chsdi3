@@ -22,10 +22,10 @@ def filter_by_geodata_staging(query, ormColumn, staging):
     return {
         'test': query,
         'integration': query.filter(or_(
-                                    ormColumn == 'integration',
-                                    ormColumn == 'prod'
+                                    ormColumn == u'integration',
+                                    ormColumn == u'prod'
                                     )),
-        'prod': query.filter(ormColumn == staging)
+        'prod': query.filter(ormColumn == u'%s' % staging)
     }[staging]
 
 
@@ -34,15 +34,15 @@ def filter_by_map_name(query, model, mapName):
     if mapName != 'all':
         clauses = []
         if mapName in ('api', 'swissmaponline'):
-            clauses.append(model.maps.like('%%%s%%' % mapName.lower()))
+            clauses.append(model.maps.like(u'%%%s%%' % mapName.lower()))
         else:
             # add background layersConfig
             if model.__tablename__ == LayersConfig.__tablename__:
                 isBgLayer = True
                 clauses.append(model.background == isBgLayer)
             # we also want to always include all 'ech' layers (except for api's)
-            clauses.append(model.maps.like('%%%s%%' % mapName.lower()))
+            clauses.append(model.maps.like(u'%%%s%%' % mapName.lower()))
             # whitelist hack
-            clauses.append(model.maps.like('%%%s%%' % 'ech'))
+            clauses.append(model.maps.like(u'%%ech%%'))
         return query.filter(or_(*clauses))
     return query

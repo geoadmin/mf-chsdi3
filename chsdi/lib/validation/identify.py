@@ -27,10 +27,10 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         self._order = None
 
         self.esriGeometryTypes = (
-            'esriGeometryPoint',
-            'esriGeometryPolyline',
-            'esriGeometryPolygon',
-            'esriGeometryEnvelope'
+            u'esriGeometryPoint',
+            u'esriGeometryPolyline',
+            u'esriGeometryPolygon',
+            u'esriGeometryEnvelope'
         )
         self.where = request.params.get('where')
         self.geometry = request.params.get('geometry')
@@ -158,9 +158,9 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         if value is None:
             self._returnGeometry = True
         else:
-            if isinstance(value, unicode) and value.lower() == 'true':
+            if isinstance(value, unicode) and value.lower() == u'true':
                 self._returnGeometry = True
-            elif isinstance(value, unicode) and value.lower() == 'false':
+            elif isinstance(value, unicode) and value.lower() == u'false':
                 self._returnGeometry = False
             else:
                 self._returnGeometry = True
@@ -213,7 +213,7 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
     def layers(self, value):
         if value is None:
             raise HTTPBadRequest('Please provide a parameter layers')
-        if value == 'all':
+        if value == u'all':
             self._layers = value
         else:
             try:
@@ -241,7 +241,7 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
     @order.setter
     def order(self, value):
         if value is not None:
-            if value != 'distance':
+            if value != u'distance':
                 raise HTTPBadRequest('Please provide a valid order parameter')
             if self.geometry is None:
                 raise HTTPBadRequest('The order value can only be used together with a geometry.')
