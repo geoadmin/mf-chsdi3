@@ -1528,6 +1528,72 @@ class GeologieEiszeitLgm(Base, Vector):
 register('ch.swisstopo.geologie-eiszeit-lgm', GeologieEiszeitLgm)
 
 
+class Swisstlm3dEisenbahn(Base, Vector):
+    __tablename__ = 'eisenbahn'
+    __table_args__ = ({'schema': 'tlm', 'autoload': False})
+    __template__ = 'templates/htmlpopup/swisstlm3d-eisenbahn.mako'
+    __bodId__ = 'ch.swisstopo.swisstlm3d-eisenbahnnetz'
+    __label__ = 'objektart'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objectid = Column('objectid', Integer)
+    objektart = Column('objektart', Integer)
+    verkehrsmittel = Column('verkehrsmittel', Integer)
+    standseilbahn = Column('standseilbahn', Integer)
+    zahnradbahn = Column('zahnradbahn', Integer)
+    ausser_betrieb = Column('ausser_betrieb', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swisstlm3d-eisenbahnnetz', Swisstlm3dEisenbahn)
+
+
+class Swisstlm3dUebrigerverkehr(Base, Vector):
+    __tablename__ = 'uebrige_bahn'
+    __table_args__ = ({'schema': 'tlm', 'autoload': False})
+    __template__ = 'templates/htmlpopup/swisstlm3d-uebrige_bahn.mako'
+    __bodId__ = 'ch.swisstopo.swisstlm3d-uebrigerverkehr'
+    __label__ = 'objektart'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objektart = Column('objektart', Integer)
+    name = Column('name', Unicode)
+    ausser_betrieb = Column('ausser_betrieb', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swisstlm3d-uebrigerverkehr', Swisstlm3dUebrigerverkehr)
+
+
+class Swisstlm3dGewaessernetz(Base, Vector):
+    __tablename__ = 'fliessgewaesser'
+    __table_args__ = ({'schema': 'tlm', 'autoload': False})
+    __template__ = 'templates/htmlpopup/swisstlm3d-fliessgewaesser.mako'
+    __bodId__ = 'ch.swisstopo.swisstlm3d-gewaessernetz'
+    __label__ = 'objektart'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objektart = Column('objektart', Integer)
+    name = Column('name', Unicode)
+    gwl_nr = Column('gwl_nr', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swisstlm3d-gewaessernetz', Swisstlm3dGewaessernetz)
+
+
+class Swisstlm3dStrassen(Base, Vector):
+    __tablename__ = 'strasse'
+    __table_args__ = ({'schema': 'tlm', 'autoload': False})
+    __template__ = 'templates/htmlpopup/swisstlm3d-strassen.mako'
+    __bodId__ = 'ch.swisstopo.swisstlm3d-strassen'
+    __label__ = 'objektart'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objektart = Column('objektart', Integer)
+    belagsart_resolved = Column('belagsart_resolved', Unicode)
+    eigentuemer_resolved = Column('eigentuemer_resolved', Unicode)
+    verkehrsbedeutung_resolved = Column('verkehrsbedeutung_resolved', Unicode)
+    eigentuemer_resolved = Column('eigentuemer_resolved', Unicode)
+    verkehrsbeschraenkung_resolved = Column('verkehrsbeschraenkung_resolved', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen)
+
+
 class Swisstlm3dWanderwege(Base, Vector):
     __tablename__ = 'wanderwege_swissmap'
     __table_args__ = ({'schema': 'karto', 'autoload': False})
