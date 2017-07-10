@@ -1,10 +1,18 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-    <tr><td class="cell-left">${_('objektname')}</td>         <td>${c['attributes']['wv_name']}</td></tr>
-    <tr><td class="cell-left">${_('objektnr')}</td>          <td>${c['attributes']['wv_obj'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('kategorie')}</td>         <td>${c['attributes']['wv_kat'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('flaeche_ha')}</td>          <td>${round(c['attributes']['wv_fl']) or '-'}</td></tr>
-    <tr><td class="cell-left">${_('gesamtflaeche_ha')}</td>         <td>${round(c['attributes']['wv_gf']) or '-'}</td></tr>
+
+<%
+    lang = lang if lang in ('fr','it') else 'de'
+    schutzkat = 'schutzkategorie_%s' % lang
+%>
+
+    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.name')}</td>         <td>${c['attributes']['name']}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.objnummer')}</td>          <td>${c['attributes']['objnummer'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.teilgebiet')}</td>         <td>${c['attributes']['teilgebiet'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.schutzkategorie')}</td>         <td>${c['attributes'][schutzkat] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.shape_area')}</td>          <td>${round(c['attributes']['shape_area']/10000) or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.obj_gisflaeche')}</td>         <td>${round(c['attributes']['obj_gisflaeche']) or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.refobjblatt')}</td>        <td><a target="_blank" href="${c['attributes']['refobjblatt']}">${_('link') or '-'}</a></td></tr>
 </%def>
 
