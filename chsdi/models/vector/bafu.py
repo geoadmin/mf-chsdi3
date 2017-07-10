@@ -1388,17 +1388,21 @@ register('ch.bafu.bundesinventare-moorlandschaften', ML)
 
 
 class WV(Base, Vector):
-    __tablename__ = 'wv'
+    __tablename__ = 'vogelreservate'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-vogelreservate'
     __template__ = 'templates/htmlpopup/vogelreservate.mako'
-    __label__ = 'wv_name'
-    id = Column('gid', Integer, primary_key=True)
-    wv_name = Column('wv_name', Unicode)
-    wv_obj = Column('wv_obj', Integer)
-    wv_kat = Column('wv_kat', Unicode)
-    wv_fl = Column('wv_fl', Numeric)
-    wv_gf = Column('wv_gf', Numeric)
+    __label__ = 'name'
+    id = Column('objectid', Integer, primary_key=True)
+    name = Column('name', Text)
+    objnummer = Column('objnummer', Integer)
+    teilgebiet = Column('teilgebiet', Text)
+    schutzkategorie_de = Column('schutzkategorie_de', Text)
+    schutzkategorie_fr = Column('schutzkategorie_fr', Text)
+    schutzkategorie_it = Column('schutzkategorie_it', Text)
+    refobjblatt = Column('refobjblatt', Text)
+    shape_area = Column('shape_area', Numeric)
+    obj_gisflaeche = Column('obj_gisflaeche', Numeric)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-vogelreservate', WV)
