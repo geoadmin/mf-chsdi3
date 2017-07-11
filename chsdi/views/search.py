@@ -422,8 +422,6 @@ class Search(SearchValidation):
                         res['attrs']['featureId'] = res['attrs']['feature_id']
                     if self.typeInfo == 'featuresearch' or not self.bbox or \
                             self._bbox_intersection(self.bbox, res['attrs']['geom_st_box2d']):
-                        if res['attrs']['layer'] == 'ch.bfs.gebaeude_wohnungs_register':
-                            res['attrs'] = self._parse_address(res['attrs'])
                         self.results['results'].append(res)
 
     def _get_quad_index(self):
