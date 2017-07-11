@@ -16,7 +16,6 @@ def topics(request):
     query = filter_by_geodata_staging(query, model.staging, geodataStaging)
     results = [{
         'id': q.id,
-        'langs': q.availableLangs,
         'defaultBackground': q.defaultBackground,
         'backgroundLayers': q.backgroundLayers,
         'selectedLayers': q.selectedLayers,

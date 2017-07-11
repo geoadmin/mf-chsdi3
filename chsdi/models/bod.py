@@ -357,7 +357,6 @@ class Topics(Base):
     __tablename__ = 'topics'
     __table_args__ = ({'schema': 're3', 'autoload': False})
     id = Column('topic', Unicode, primary_key=True)
-    availableLangs = Column('lang', Unicode)
     selectedLayers = Column('selected_layers', postgresql.ARRAY(Unicode))
     defaultBackground = Column('default_background', Unicode)
     activatedLayers = Column('activated_layers', postgresql.ARRAY(Unicode))
