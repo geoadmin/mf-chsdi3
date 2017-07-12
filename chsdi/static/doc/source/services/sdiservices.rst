@@ -502,7 +502,7 @@ The search service is separated in 3 various categories or types:
   * All names as printed on the national map (`SwissNames <https://shop.swisstopo.admin.ch/de/products/landscape/names3D>`_)
   * The districts
   * The ZIP codes
-  * The addresses (!! the Swiss cantons only allow websites of the federal government to use the addresses search service !!)
+  * The addresses
   * The cadastral parcels
 * The **layer search** wich enables the search of layers belonging to the GeoAdmin API.
 * The **feature search** which is used to search through features descriptions. Note: you can also specify a bounding box to filter the features. (`Searchable layers <../../../api/faq/index.html#which-layers-are-searchable>`_)
