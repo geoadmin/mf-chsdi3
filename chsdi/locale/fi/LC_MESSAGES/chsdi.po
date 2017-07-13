@@ -4853,6 +4853,9 @@ msgstr "Anlage"
 msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"
 msgstr "PS Deposits geol. profunds: p.tecn."
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung"
+msgstr "SGT Vernehmlassung Etappe 2"
+
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung"
 msgstr "PSL Audiziun"
 
@@ -5505,7 +5508,7 @@ msgid "ch.nagra.aeromagnetische-karte_1100.aeromagnetisme"
 msgstr "Aeromagnetische Anomalien Aargau, 1100 m [nT]"
 
 msgid "ch.nagra.aeromagnetische-karte_1500"
-msgstr "Aeromagnetik Aargau 1500 m 100"
+msgstr "Eromagnetica Argovia 1500 m 100"
 
 msgid "ch.nagra.aeromagnetische-karte_1500.aeromagnetisme"
 msgstr "Aeromagnetische Anomalien Aargau, 1500 m [nT]"
@@ -5557,6 +5560,12 @@ msgstr "MCPFE1.2 Minimale Eingriffe"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
 msgstr "MCPFE1.3 Biodiversitätsförderung durch gezielte Eingriffe"
+
+msgid "ch.sem.sachplan-asyl_anhoerung"
+msgstr "SPA Anhörung"
+
+msgid "ch.sem.sachplan-asyl_kraft"
+msgstr "SPA Asyl"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Autezza da la crappa lucca"
@@ -7442,6 +7451,12 @@ msgstr "Bisse Suone"
 msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_1"
 msgstr "Druckleitung einfach"
 
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_100"
+msgstr "Insel"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_101"
+msgstr "See"
+
 msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_2"
 msgstr "Druckleitung mehrfach"
 
@@ -7478,11 +7493,53 @@ msgstr "Divisiun swissTLM3D Vector"
 msgid "ch.swisstopo.swisstlm3d-strassen"
 msgstr "Strassen und Wege swissTLM3D"
 
+msgid "ch.swisstopo.swisstlm3d-strassen_belagsart_"
+msgstr "-"
+
 msgid "ch.swisstopo.swisstlm3d-strassen.belagsart"
 msgstr "Belag"
 
+msgid "ch.swisstopo.swisstlm3d-strassen_belagsart_100"
+msgstr "Hart"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_belagsart_200"
+msgstr "Natur"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_belagsart_999997"
+msgstr "ub"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_belagsart_999998"
+msgstr "k_W"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_eigentuemer_"
+msgstr "-"
+
 msgid "ch.swisstopo.swisstlm3d-strassen.eigentuemer"
 msgstr "Eigentümer"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_eigentuemer_100"
+msgstr "Bund"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_eigentuemer_200"
+msgstr "Kanton"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_eigentuemer_300"
+msgstr "Gemeinde"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_eigentuemer_400"
+msgstr "Genossenschaft"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_eigentuemer_500"
+msgstr "Privat"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_eigentuemer_999997"
+msgstr "ub"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_eigentuemer_999998"
+msgstr "k_W"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_"
+msgstr "-"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_objektart_-"
 msgstr "-"
@@ -7556,11 +7613,101 @@ msgstr "10m Strasse"
 msgid "ch.swisstopo.swisstlm3d-strassen_objektart_9"
 msgstr "6m Strasse"
 
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbedeutung_"
+msgstr "-"
+
 msgid "ch.swisstopo.swisstlm3d-strassen.verkehrsbedeutung"
 msgstr "Bedeutung"
 
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbedeutung_100"
+msgstr "Hochleistungsstrasse"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbedeutung_200"
+msgstr "Durchgangsstrasse"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbedeutung_300"
+msgstr "Verbindungsstrasse"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbedeutung_999997"
+msgstr "k_W"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbedeutung_999998"
+msgstr "k_W"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_"
+msgstr "-"
+
 msgid "ch.swisstopo.swisstlm3d-strassen.verkehrsbeschraenkung"
 msgstr "Beschränkung"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_100"
+msgstr "Keine"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_1000"
+msgstr "Radweg und Fussweg"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_1100"
+msgstr "Reitweg"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_1200"
+msgstr "Reitweg und Fussweg"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_1300"
+msgstr "Rennstrecke"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_1400"
+msgstr "Panzerpiste"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_1500"
+msgstr "Wohnstrasse"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_1600"
+msgstr "Teststrecke"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_1700"
+msgstr "Wintersperre"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_1800"
+msgstr "Zeitlich geregelt"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_1900"
+msgstr "Allgemeine Verkehrsbeschraenkung"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_200"
+msgstr "Allgemeines Fahrverbot"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_2000"
+msgstr "Gesperrt"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_300"
+msgstr "Fussweg"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_400"
+msgstr "Fussgängerzone"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_500"
+msgstr "Gebührenpflichtig"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_600"
+msgstr "Gesicherte Kletterpartie"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_700"
+msgstr "Lastwagenfahrverbot"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_800"
+msgstr "Militaerstrasse"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_900"
+msgstr "Radweg"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_999997"
+msgstr "ub"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_999998"
+msgstr "k_W"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_None"
+msgstr "-"
 
 msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr"
 msgstr "Seilbahnen swissTLM3D"
@@ -7609,9 +7756,6 @@ msgstr "Foerderband"
 
 msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_5"
 msgstr "Skilift"
-
-msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_7"
-msgstr "Lift"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Sendas da viandar"
