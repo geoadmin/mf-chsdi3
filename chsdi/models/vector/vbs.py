@@ -48,7 +48,7 @@ class Territorialregionen(Base, Vector):
     __label__ = 'name'
     id = Column('terreg_nr', Integer, primary_key=True)
     name = Column('name', Unicode)
-    the_geom = Column(Geometry3D)
+    the_geom = Column(Geometry2D)
 
 register('ch.vbs.territorialregionen', Territorialregionen)
 
@@ -61,7 +61,7 @@ class PatrouilledesglaciersZ(Base, Vector):
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
-    the_geom = Column(Geometry3D)
+    the_geom = Column(Geometry2D)
 
 register('ch.vbs.patrouilledesglaciers-z_rennen', PatrouilledesglaciersZ)
 
@@ -74,7 +74,7 @@ class PatrouilledesglaciersA(Base, Vector):
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
-    the_geom = Column(Geometry3D)
+    the_geom = Column(Geometry2D)
 
 register('ch.vbs.patrouilledesglaciers-a_rennen', PatrouilledesglaciersA)
 
@@ -89,7 +89,7 @@ class Retablierungsstellen(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     url = Column('url', Unicode)
-    the_geom = Column(Geometry3D)
+    the_geom = Column(Geometry2D)
 
 register('ch.vbs.retablierungsstellen', Retablierungsstellen)
 
@@ -106,7 +106,7 @@ class Armeelogistikcenter(Base, Vector):
     abkuerzung = Column('abkuerzung', Unicode)
     mail = Column('email', Unicode)
     url = Column('url', Unicode)
-    the_geom = Column(Geometry3D)
+    the_geom = Column(Geometry2D)
 
 register('ch.vbs.armeelogistikcenter', Armeelogistikcenter)
 
@@ -122,7 +122,7 @@ class BundestankstellenBebeco(Base, Vector):
     strasse = Column('strasse', Unicode)
     plz = Column('plz', Integer)
     ort = Column('ort', Unicode)
-    the_geom = Column(Geometry3D)
+    the_geom = Column(Geometry2D)
 
 register('ch.vbs.bundestankstellen-bebeco', BundestankstellenBebeco)
 
