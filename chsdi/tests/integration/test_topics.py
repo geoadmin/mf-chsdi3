@@ -11,14 +11,13 @@ class TestTopicsListingView(TestsBase):
         topics = resp.json['topics']
         i = 1
         for topic in topics:
-            self.assertTrue('id' in topic)
-            self.assertTrue('backgroundLayers' in topic)
-            self.assertTrue('langs' in topic)
-            self.assertTrue('selectedLayers' in topic)
-            self.assertTrue('defaultBackground' in topic)
-            self.assertTrue('activatedLayers' in topic)
-            self.assertTrue('plConfig' in topic)
-            self.assertTrue('groupId' in topic)
+            self.assertIn('id', topic)
+            self.assertIn('backgroundLayers', topic)
+            self.assertIn('selectedLayers', topic)
+            self.assertIn('defaultBackground', topic)
+            self.assertIn('activatedLayers', topic)
+            self.assertIn('plConfig', topic)
+            self.assertIn('groupId', topic)
             if i != len(topics):
                 self.assertGreaterEqual(topics[i]['groupId'], topics[i - 1]['groupId'])
             i += 1
