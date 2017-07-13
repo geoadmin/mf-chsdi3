@@ -70,9 +70,8 @@ def topics(params):
     topics = getTopics(params)
     paths = []
     for topic in topics:
-        langs = topic['langs'].split(',')
         pathstart = '?topic=' + topic['id']
-        paths.extend(toAllLanguages(langs, [pathstart], '&', ''))
+        paths.extend(toAllLanguages(params.langs, [pathstart], '&', ''))
 
     return asXml(params, paths, params.geoadminhost)
 
@@ -88,7 +87,7 @@ def layers(params):
                  .filter(Catalog.category.ilike(u'%%layer%%')))
         query = filter_by_geodata_staging(query, Catalog.staging, params.staging)
         layerlinks = map(buildlink, query.all())
-        paths.extend(toAllLanguages(topic['langs'].split(','), layerlinks, '&', ''))
+        paths.extend(toAllLanguages(params.langs, layerlinks, '&', ''))
 
     return asXml(params, paths, params.geoadminhost)
 
