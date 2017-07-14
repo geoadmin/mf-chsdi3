@@ -14,6 +14,22 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20170719:
+   *******
+
+Release 20170719 - Wednesday, July 19th 2017
+---------------------------------------------
+
+API & applications
+******************
+
+Geodata
+*******
++--------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `AGNES <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-agnes>`__ (ch.swisstopo.fixpunkte-agnes)                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20170705:
    *******
 
