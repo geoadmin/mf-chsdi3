@@ -23,6 +23,20 @@ Release 20170719 - Wednesday, July 19th 2017
 API & applications
 ******************
 
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Removed OWSChecker
+-  Removed address geometry protection
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170705...r_170719>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170705...r_170719>`__
+
+
 Geodata
 *******
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------+
