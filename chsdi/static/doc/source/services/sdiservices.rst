@@ -935,54 +935,6 @@ Example
 
 - The the latest Cache Update for SwissImage Product: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissimage-product/cacheUpdate <../../../rest/services/api/MapServer/ch.swisstopo.swissimage-product/cacheUpdate>`_
 
-.. _owschecker_description:
-
-----------
-
-OWSChecker: check conformity with ech-0056
-------------------------------------------
-
-This service check the conformity of various OGC services with the Swiss ech-0056 profile.
-See the :doc:`OWSChecker Documentation <owschecker/index>` and the :doc:`OWSChecker User Guide <owschecker/user_guide>` for more details.
-
-URL
-***
-
-::
-
-  https://api3.geo.admin.ch/owschecker/bykvp OR
-  https://api3.geo.admin.ch/owschecker/form
-
-Input parameters
-****************
-
-Here is a list of available parameters.
-
-+-----------------------------------+-------------------------------------------------------------------------------------------+
-| Parameters                        | Description                                                                               |
-+===================================+===========================================================================================+
-| **base_url (required)**           | The URL of the service to test                                                            |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
-| **service (required)**            | type of service to test, one of WMS, WFS, WMTS, WCS or CSW                                |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
-| **ssurl (optional)**              | server setting url                                                                        |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
-| **restful (optional)**            | restful-only service                                                                      |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
-
-Result
-******
-
-A JSON file containing all the tests and their status OR an html page.
-
-Example
-*******
-
-- Check WMS with Swiss ech-0056 profile (xml): `https://api3.geo.admin.ch/owschecker/bykvp?base_url=http%3A%2F%2Fwms.zh.ch%2Fupwms&service=WMS <../../../owschecker/bykvp?base_url=http%3A%2F%2Fwms.zh.ch%2Fupwms&service=WMS>`_
-- Check WMS with Swiss ech-0056 profile (html): `https://api3.geo.admin.ch/owschecker/form?base_url=http%3A%2F%2Fwms.zh.ch%2Fupwms&service=WMS <../../../owschecker/form?base_url=http%3A%2F%2Fwms.zh.ch%2Fupwms&service=WMS>`_
-- Check WMTS with Swiss ech-0056 profile (xml): `https://api3.geo.admin.ch/owschecker/bykvp?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS <../../../owschecker/bykvp?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS>`_
-- Check WMTS with Swiss ech-0056 profile (html): `https://api3.geo.admin.ch/owschecker/form?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS <../../../owschecker/form?base_url=http%3A%2F%2Ftile1-sitn.ne.ch%2Fmapproxy%2Fservice&service=WMTS>`_
-
 
 .. _terrain_service_description:
 

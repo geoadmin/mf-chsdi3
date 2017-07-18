@@ -70,8 +70,6 @@ def main(global_config, **settings):
     config.add_route('search', '/rest/services/{map}/SearchServer')
     config.add_route('wmtscapabilities', '/rest/services/{map}/1.0.0/WMTSCapabilities.xml')
     config.add_route('feedback', '/feedback')
-    config.add_route('owschecker_bykvp', '/owschecker/bykvp')
-    config.add_route('owschecker_form', '/owschecker/form')
     config.add_route('qrcodegenerator', '/qrcodegenerator')
     config.add_route('sitemap', '/sitemap')
     config.add_route('luftbilder', '/luftbilder/viewer.html')

@@ -1,3 +1,0 @@
-Swisstopo Web GUI
-=================
-

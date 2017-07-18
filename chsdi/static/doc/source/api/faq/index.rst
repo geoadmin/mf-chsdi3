@@ -162,11 +162,6 @@ Can I use http://localhost to test my developments ?
 
 Yes, localhost can be used to test the developments. In all cases, you have to follow the `Terms of Use <https://www.geo.admin.ch/de/geo-services/geo-services/portrayal-services-web-mapping/programming-interface-api/order_form.html>`_.
 
-Where can I get information about OWSChecker ?
-**********************************************
-
-These information can be found in the `API REST Services <../../services/sdiservices.html#owschecker-check-conformity-with-ech-0056>`_ section.
-
 Where can I get information about OEREB/RDPPF Feature Service ?
 ***************************************************************
 These information can be found on the `OEREB/RDPPF: Feature Service <../../services/oerebservices.html>`_ page.
