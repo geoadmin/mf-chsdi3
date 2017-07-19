@@ -1784,6 +1784,9 @@ msgstr "Superficie totale [ha]"
 msgid "ch.bafu.bundesinventare-vogelreservate.objnummer"
 msgstr "No."
 
+msgid "ch.bafu.bundesinventare-vogelreservate.refobjblatt"
+msgstr "Descrizione dell'oggetto"
+
 msgid "ch.bafu.bundesinventare-vogelreservate.schutzkategorie"
 msgstr "Categoria di Protezione"
 
@@ -3179,11 +3182,44 @@ msgstr "Acque sotterranee : Pesticidi"
 msgid "ch.bafu.naqua-grundwasser_voc"
 msgstr "Acque sotterranee : COV"
 
+msgid "ch.bafu.neophyten-auslaeuferbildendes_fettkraut"
+msgstr "Borracina stoloniferus"
+
 msgid "ch.bafu.neophyten-japanisches_geissblatt"
 msgstr "Caprifoglio giapponese"
 
+msgid "ch.bafu.neophyten-kaukasus_fettkraut"
+msgstr "Borracina caucasica"
+
+msgid "ch.bafu.neophyten-kirschlorbeer"
+msgstr "Lauroceraso"
+
+msgid "ch.bafu.neophyten-kletternder_giftsumach"
+msgstr "Edera velenosa"
+
+msgid "ch.bafu.neophyten-kopoubohne"
+msgstr "Pueraria irsuta"
+
+msgid "ch.bafu.neophyten-mahonie"
+msgstr "Maonia"
+
+msgid "ch.bafu.neophyten-nadelkraut"
+msgstr "Erba grassa di Helms"
+
+msgid "ch.bafu.neophyten-nuttalls_wasserpest"
+msgstr "Peste d'acqua di Nuttall"
+
+msgid "ch.bafu.neophyten-portulak_heusenkraut"
+msgstr "Porracchia plepoide"
+
 msgid "ch.bafu.neophyten-riesenbaerenklau"
 msgstr "Panace di Mantegazzi"
+
+msgid "ch.bafu.neophyten-robinie"
+msgstr "Robinia"
+
+msgid "ch.bafu.neophyten-runzelblaettriger_schneeball"
+msgstr "Viburno rugoso"
 
 msgid "ch.bafu.neophyten-sachalin_staudenknoeterich"
 msgstr "Poligono di Sachalin"
@@ -3928,6 +3964,18 @@ msgstr "Numero UFT del sito"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
 msgstr "Siti inquinati trasporti pubbl. RDPP"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
+msgstr "Rumore dei treni, emissioni N eff."
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag"
+msgstr "Rumore dei treni, emissioni D stab."
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht"
+msgstr "Rumore dei treni, emissioni N eff."
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag"
+msgstr "Rumore dei treni, emissioni D eff."
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Piano delle emissioni 2015"
@@ -5476,6 +5524,9 @@ msgstr "Geoide in ETRS89"
 
 msgid "ch.swisstopo.geologie-bodenunruhe"
 msgstr "Bruit sismique CH"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500"
+msgstr "Forages > 500 m"
 
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
 msgstr "Radiazione terrestre"
@@ -7085,8 +7136,23 @@ msgstr "Nomi geografici swissNAMES3D"
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz"
 msgstr "Linee ferroviarie swissTLM3D"
 
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_"
+msgstr "Non saisi"
+
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.ausser_betrieb"
 msgstr "Fuori uso"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_1"
+msgstr "Faux"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_2"
+msgstr "Vrai"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_999997"
+msgstr "Inconnu"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_999998"
+msgstr "Pas de valeur"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_-"
 msgstr "-"
@@ -7166,6 +7232,36 @@ msgstr "Pas de valeur"
 msgid "ch.swisstopo.swisstlm3d-gewaessernetz"
 msgstr "Idrografia swissTLM3D"
 
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz.gwl_nr"
+msgstr "Numero di corso d’acqua"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz.name"
+msgstr "Nome"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_-"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz.objektart"
+msgstr "Tipo"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_0"
+msgstr "Canal d’irrigation à flanc de vallée"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_1"
+msgstr "Conduite forcée simple"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_2"
+msgstr "Conduite forcée multiple"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_3"
+msgstr "Galerie sous pression"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_4"
+msgstr "Cours d’eau. Rivière ou ruisseau où de l’eau coule la grande partie de l’année. Longueur minimale 100m"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_6"
+msgstr "Axe fictif d’un cours d’eau à travers un lac. L’axe est placé au centre du lac."
+
 msgid "ch.swisstopo.swisstlm3d-karte"
 msgstr "Modello topo. del paesaggio"
 
@@ -7190,8 +7286,140 @@ msgstr "Divisione swissTLM3D Vector"
 msgid "ch.swisstopo.swisstlm3d-strassen"
 msgstr "Strade e sentieri swissTLM3D"
 
+msgid "ch.swisstopo.swisstlm3d-strassen.belagsart"
+msgstr "Rivestimento"
+
+msgid "ch.swisstopo.swisstlm3d-strassen.eigentuemer"
+msgstr "Proprietario"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_-"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-strassen.objektart"
+msgstr "Tipo"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_0"
+msgstr "Sortie"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_1"
+msgstr "Entrée"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_10"
+msgstr "Route 4m"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_11"
+msgstr "Route 3m"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_12"
+msgstr "Place"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_13"
+msgstr "Trains d´autos"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_14"
+msgstr "Bac"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_15"
+msgstr "Chemin 2m"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_16"
+msgstr "Chemin 1m"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_17"
+msgstr "Fragment de chemin 1m"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_18"
+msgstr "Fragment de chemin 2m"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_19"
+msgstr "Trace marquée"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_2"
+msgstr "Autoroute conformément à l’annexe 1 de l’ordonnance concernant les routes de grand transit."
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_20"
+msgstr "Route 8m"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_21"
+msgstr "Semi-autoroute conformément à l’annexe 1 de l’ordonnance concernant les routes de grand transit"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_22"
+msgstr "Via Ferrata"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_3"
+msgstr "Aire de repos"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_4"
+msgstr "Liaison"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_5"
+msgstr "Accès"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_6"
+msgstr "Accès de service aux autoroutes, semi-autoroutes et aux aires de repos"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_8"
+msgstr "Route 10m"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_9"
+msgstr "Route 6m"
+
+msgid "ch.swisstopo.swisstlm3d-strassen.verkehrsbedeutung"
+msgstr "Importanza"
+
+msgid "ch.swisstopo.swisstlm3d-strassen.verkehrsbeschraenkung"
+msgstr "Restizione"
+
 msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr"
 msgstr "Trasporti a fune swissTLM3D"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_ausser_betrieb_"
+msgstr "Non saisi"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr.ausser_betrieb"
+msgstr "Fuori uso"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_ausser_betrieb_1"
+msgstr "Faux"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_ausser_betrieb_2"
+msgstr "Vrai"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_ausser_betrieb_999997"
+msgstr "Inconnu"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_ausser_betrieb_999998"
+msgstr "Pas de valeur"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr.name"
+msgstr "Nome"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_-"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr.objektart"
+msgstr "Tipo"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_0"
+msgstr "Téléphérique avec une ou plusieurs cabines"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_1"
+msgstr "Télécabine avec cabines fixes ou amovibles"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_2"
+msgstr "Télésiège"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_3"
+msgstr "Téléphérique avec caisse de transport de matériel permanent p. ex. sur un alpage"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_4"
+msgstr "Tapis roulant pour le transport de marchandises dans l´industrie et particulièrement dans les gravières et carrières."
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_5"
+msgstr "Téléski"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_7"
+msgstr "Ascenseur vertical et public qui n´est pas intégré dans un bâtiment"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Percorsi escursionistici"
