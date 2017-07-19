@@ -1784,6 +1784,9 @@ msgstr "Total area [ha]"
 msgid "ch.bafu.bundesinventare-vogelreservate.objnummer"
 msgstr "No."
 
+msgid "ch.bafu.bundesinventare-vogelreservate.refobjblatt"
+msgstr "Objectsheet"
+
 msgid "ch.bafu.bundesinventare-vogelreservate.schutzkategorie"
 msgstr "Protection category"
 
@@ -3179,11 +3182,44 @@ msgstr "Groundwater: Pesticides"
 msgid "ch.bafu.naqua-grundwasser_voc"
 msgstr "Groundwater: VOC"
 
+msgid "ch.bafu.neophyten-auslaeuferbildendes_fettkraut"
+msgstr "Sedum stoloniferum"
+
 msgid "ch.bafu.neophyten-japanisches_geissblatt"
 msgstr "Lonicera japonica"
 
+msgid "ch.bafu.neophyten-kaukasus_fettkraut"
+msgstr "Sedum spurium"
+
+msgid "ch.bafu.neophyten-kirschlorbeer"
+msgstr "Prunus laurocerasus"
+
+msgid "ch.bafu.neophyten-kletternder_giftsumach"
+msgstr "Toxicodendron radicans"
+
+msgid "ch.bafu.neophyten-kopoubohne"
+msgstr "Pueraria lobata"
+
+msgid "ch.bafu.neophyten-mahonie"
+msgstr "N.N."
+
+msgid "ch.bafu.neophyten-nadelkraut"
+msgstr "Crassula helmsii"
+
+msgid "ch.bafu.neophyten-nuttalls_wasserpest"
+msgstr "Elodea nuttallii"
+
+msgid "ch.bafu.neophyten-portulak_heusenkraut"
+msgstr "Ludwigia peploides"
+
 msgid "ch.bafu.neophyten-riesenbaerenklau"
 msgstr "Heracleum mantegazzianum"
+
+msgid "ch.bafu.neophyten-robinie"
+msgstr "Robinia pseudoacacia"
+
+msgid "ch.bafu.neophyten-runzelblaettriger_schneeball"
+msgstr "Viburnum rhytidophyllum"
 
 msgid "ch.bafu.neophyten-sachalin_staudenknoeterich"
 msgstr "Reynoutria sachalinensis"
@@ -3928,6 +3964,18 @@ msgstr "BAV Standortnummer"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
 msgstr "Polluted sites - pub. transp. OeREB"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
+msgstr "Eisenbahnlärm, festgel. Emission N"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag"
+msgstr "Eisenbahnlärm, festgel. Emission T"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht"
+msgstr "Eisenbahnlärm, tats. Emission N"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag"
+msgstr "Eisenbahnlärm, tats. Emission T"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Emissions Plan 2015"
@@ -5476,6 +5524,9 @@ msgstr "Geoid in ETRS89"
 
 msgid "ch.swisstopo.geologie-bodenunruhe"
 msgstr "Anthrop. seismic noise CH"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500"
+msgstr "Wells > 500 m"
 
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
 msgstr "Terrestrial Radiation"
@@ -7085,8 +7136,23 @@ msgstr "Geografische Namen swissNAMES3D"
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz"
 msgstr "Railway swissTLM3D"
 
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_"
+msgstr "-"
+
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.ausser_betrieb"
 msgstr "Out of service"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_1"
+msgstr "Falsch"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_2"
+msgstr "Wahr"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_999997"
+msgstr "ub"
+
+msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_999998"
+msgstr "k_W"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_-"
 msgstr "-"
@@ -7166,6 +7232,36 @@ msgstr "k_W"
 msgid "ch.swisstopo.swisstlm3d-gewaessernetz"
 msgstr "Hydography swissTLM3D"
 
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz.gwl_nr"
+msgstr "Watercourse number"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_-"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz.objektart"
+msgstr "Type"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_0"
+msgstr "Bisse Suone"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_1"
+msgstr "Druckleitung einfach"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_2"
+msgstr "Druckleitung mehrfach"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_3"
+msgstr "Druckstollen"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_4"
+msgstr "Fliessgewässer"
+
+msgid "ch.swisstopo.swisstlm3d-gewaessernetz_objektart_6"
+msgstr "Seeachse"
+
 msgid "ch.swisstopo.swisstlm3d-karte"
 msgstr "Topographical landscape model"
 
@@ -7190,8 +7286,140 @@ msgstr "Division swissTLM3D Vector"
 msgid "ch.swisstopo.swisstlm3d-strassen"
 msgstr "Roads and Tracks swissTLM3D"
 
+msgid "ch.swisstopo.swisstlm3d-strassen.belagsart"
+msgstr "Surfacing"
+
+msgid "ch.swisstopo.swisstlm3d-strassen.eigentuemer"
+msgstr "Owner"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_-"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-strassen.objektart"
+msgstr "Type"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_0"
+msgstr "Ausfahrt"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_1"
+msgstr "Einfahrt"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_10"
+msgstr "4m Strasse"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_11"
+msgstr "3m Strasse"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_12"
+msgstr "Platz"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_13"
+msgstr "Autozug"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_14"
+msgstr "Faehre"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_15"
+msgstr "2m Weg"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_16"
+msgstr "1m Weg"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_17"
+msgstr "1m Wegfragment"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_18"
+msgstr "2m Wegfragment"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_19"
+msgstr "Markierte Spur"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_2"
+msgstr "Autobahn"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_20"
+msgstr "8m Strasse"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_21"
+msgstr "Autostrasse"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_22"
+msgstr "Klettersteig"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_3"
+msgstr "Raststaette"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_4"
+msgstr "Verbindung"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_5"
+msgstr "Zufahrt"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_6"
+msgstr "Dienstzufahrt"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_8"
+msgstr "10m Strasse"
+
+msgid "ch.swisstopo.swisstlm3d-strassen_objektart_9"
+msgstr "6m Strasse"
+
+msgid "ch.swisstopo.swisstlm3d-strassen.verkehrsbedeutung"
+msgstr "Importance"
+
+msgid "ch.swisstopo.swisstlm3d-strassen.verkehrsbeschraenkung"
+msgstr "Restriction"
+
 msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr"
 msgstr "Cableways swissTLM3D"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_ausser_betrieb_"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr.ausser_betrieb"
+msgstr "Out of service"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_ausser_betrieb_1"
+msgstr "Falsch"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_ausser_betrieb_2"
+msgstr "Wahr"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_ausser_betrieb_999997"
+msgstr "ub"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_ausser_betrieb_999998"
+msgstr "k_W"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_-"
+msgstr "-"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr.objektart"
+msgstr "Type"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_0"
+msgstr "Luftseilbahn"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_1"
+msgstr "Gondelbahn"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_2"
+msgstr "Sesselbahn"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_3"
+msgstr "Transportseil"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_4"
+msgstr "Foerderband"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_5"
+msgstr "Skilift"
+
+msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_7"
+msgstr "Lift"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Hiking trails"
