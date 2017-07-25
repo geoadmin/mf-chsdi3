@@ -440,8 +440,8 @@ RESTFul interface is available.
 Example
 *******
 
-- Get the feature with the ID 342 belonging to ch.bafu.bundesinventare-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.bundesinventare-bln/362 <../../../rest/services/api/MapServer/ch.bafu.bundesinventare-bln/362>`_
-- Get several features with IDs 342 and 341 belonging to ch.bafu.bundesinventar-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.bundesinventare-bln/362,363 <../../../rest/services/api/MapServer/ch.bafu.bundesinventare-bln/362,363>`_
+- Get the feature with the ID 342 belonging to ch.bafu.bundesinventare-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.bundesinventare-bln/72 <../../../rest/services/api/MapServer/ch.bafu.bundesinventare-bln/72>`_
+- Get several features with IDs 342 and 341 belonging to ch.bafu.bundesinventar-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.bundesinventare-bln/72,73 <../../../rest/services/api/MapServer/ch.bafu.bundesinventare-bln/72,73>`_
 
 .. _htmlpopup_description:
 
@@ -478,7 +478,7 @@ No css styling is provided per default so that you can use your own.
 Example
 *******
 
-- Get the html popup with the feature ID 342 belonging to layer ch.bafu.bundesinventare-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup <../../../rest/services/api/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup>`_
+- Get the html popup with the feature ID 342 belonging to layer ch.bafu.bundesinventare-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.bundesinventare-bln/72/htmlPopup <../../../rest/services/api/MapServer/ch.bafu.bundesinventare-bln/72/htmlPopup>`_
 
 .. _search_description:
 
