@@ -2525,6 +2525,27 @@ msgstr "Reinigungstyp (VSA-Kategorie)"
 msgid "ch.bafu.grundwasserkoerper"
 msgstr "Groundwater bodies"
 
+msgid "ch.bafu.grundwasserkoerper.area"
+msgstr "Surface area (km2)"
+
+msgid "ch.bafu.grundwasserkoerper.flussgebiet"
+msgstr "River basin"
+
+msgid "ch.bafu.grundwasserkoerper.grundwasserleitertyp"
+msgstr "Aquifer type"
+
+msgid "ch.bafu.grundwasserkoerper.grundwasserregime"
+msgstr "Groundwater regime"
+
+msgid "ch.bafu.grundwasserkoerper.gwkid"
+msgstr "Identification"
+
+msgid "ch.bafu.grundwasserkoerper.gwkname"
+msgstr "Name"
+
+msgid "ch.bafu.grundwasserkoerper.naturraum"
+msgstr "Geographical region"
+
 msgid "ch.bafu.grundwasserschutzareale"
 msgstr "Protection areas"
 
