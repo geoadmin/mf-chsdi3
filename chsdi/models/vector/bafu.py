@@ -971,6 +971,25 @@ class FlussordnungszahlenStrahler(Base, Vector):
 register('ch.bafu.flussordnungszahlen-strahler', FlussordnungszahlenStrahler)
 
 
+class Grundwasserkoerper(Base, Vector):
+    __tablename__ = 'gwk'
+    __table_args__ = ({'schema': 'wasser', 'autoload': False})
+    __bodId__ = 'ch.bafu.grundwasserkoerper'
+    __template__ = 'templates/htmlpopup/grundwasserkoerper.mako'
+    __label__ = 'gwkname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    gwkid = Column('gwkid', Unicode)
+    gwkname = Column('gwkname', Unicode)
+    flussgebiet = Column('flussgebiet', Unicode)
+    grundwasserleitertyp = Column('grundwasserleitertyp', Unicode)
+    naturraum = Column('naturraum', Unicode)
+    grundwasserregime = Column('grundwasserregime', Unicode)
+    area = Column('area', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bafu.grundwasserkoerper', Grundwasserkoerper)
+
+
 class Grundwasserschutzareale(Base, Vector):
     __tablename__ = 'grundwasserschutzareale'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
