@@ -110,7 +110,7 @@ class Vector(object):
                                    bbox=bbox,
                                    layerBodId=self.__bodId__,
                                    layerName=trans(self.__bodId__))
-        return self._no_geom_template()
+        return self._no_geom_template(trans)
 
     def to_geojson(self, trans, returnGeometry):
         if returnGeometry:
@@ -122,12 +122,12 @@ class Vector(object):
                                    bbox=bbox,
                                    layerBodId=self.__bodId__,
                                    layerName=trans(self.__bodId__))
-        return self._no_geom_template(attrs_name='properties')
+        return self._no_geom_template(trans, attrs_name='properties')
 
-    def _no_geom_template(self, attrs_name='attributes'):
+    def _no_geom_template(self, trans, attrs_name='attributes'):
         return {
             'layerBodId': self.__bodId__,
-            'layerName': '',
+            'layerName': trans(self.__bodId__),
             'featureId': self.id,
             'id': self.id,
             attrs_name: self.get_attributes()
