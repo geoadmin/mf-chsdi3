@@ -36,6 +36,8 @@ class TestsBase(TestCase):
         self.assertIn('id', feature)
         self.assertIn('properties', feature)
         self.assertNotIn('attributes', feature)
+        self.assertIn('layerBodId', feature)
+        self.assertIn('layerName', feature)
         if hasGeometry:
             self.assertIn('geometry', feature)
             self.assertIn('type', feature)
@@ -47,6 +49,8 @@ class TestsBase(TestCase):
         self.assertIn('id', feature)
         self.assertNotIn('properties', feature)
         self.assertIn('attributes', feature)
+        self.assertIn('layerBodId', feature)
+        self.assertIn('layerName', feature)
         if hasGeometry:
             self.assertIn('geometry', feature)
             self.assertIn('bbox', feature)
