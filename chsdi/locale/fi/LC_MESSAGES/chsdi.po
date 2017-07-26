@@ -2525,6 +2525,27 @@ msgstr "Reinigungstyp (VSA-Kategorie)"
 msgid "ch.bafu.grundwasserkoerper"
 msgstr "Corps d'auas sutterranas"
 
+msgid "ch.bafu.grundwasserkoerper.area"
+msgstr "Fläche (km2)"
+
+msgid "ch.bafu.grundwasserkoerper.flussgebiet"
+msgstr "Flussgebiet"
+
+msgid "ch.bafu.grundwasserkoerper.grundwasserleitertyp"
+msgstr "Grundwasserleitertyp"
+
+msgid "ch.bafu.grundwasserkoerper.grundwasserregime"
+msgstr "Grundwasserregime"
+
+msgid "ch.bafu.grundwasserkoerper.gwkid"
+msgstr "Bezeichnung"
+
+msgid "ch.bafu.grundwasserkoerper.gwkname"
+msgstr "Name"
+
+msgid "ch.bafu.grundwasserkoerper.naturraum"
+msgstr "Naturraum"
+
 msgid "ch.bafu.grundwasserschutzareale"
 msgstr "Areals da protecziun"
 

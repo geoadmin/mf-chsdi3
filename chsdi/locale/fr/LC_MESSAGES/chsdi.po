@@ -2525,6 +2525,27 @@ msgstr "Type de traitement (catégorie VSA)"
 msgid "ch.bafu.grundwasserkoerper"
 msgstr "Masses d'eau souterraine"
 
+msgid "ch.bafu.grundwasserkoerper.area"
+msgstr "Surface (km2)"
+
+msgid "ch.bafu.grundwasserkoerper.flussgebiet"
+msgstr "Bassin versant"
+
+msgid "ch.bafu.grundwasserkoerper.grundwasserleitertyp"
+msgstr "Type d’aquifère"
+
+msgid "ch.bafu.grundwasserkoerper.grundwasserregime"
+msgstr "Régime d’eau souterraine"
+
+msgid "ch.bafu.grundwasserkoerper.gwkid"
+msgstr "Identifiant"
+
+msgid "ch.bafu.grundwasserkoerper.gwkname"
+msgstr "Nom"
+
+msgid "ch.bafu.grundwasserkoerper.naturraum"
+msgstr "Région géographique"
+
 msgid "ch.bafu.grundwasserschutzareale"
 msgstr "Périmètres de protection"
 

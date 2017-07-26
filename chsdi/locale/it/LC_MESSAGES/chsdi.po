@@ -2525,6 +2525,27 @@ msgstr "Type de traitement (catégorie VSA)"
 msgid "ch.bafu.grundwasserkoerper"
 msgstr "Corpi idrici sotterranei"
 
+msgid "ch.bafu.grundwasserkoerper.area"
+msgstr "Superficie (km2)"
+
+msgid "ch.bafu.grundwasserkoerper.flussgebiet"
+msgstr "Bacino imbrifero"
+
+msgid "ch.bafu.grundwasserkoerper.grundwasserleitertyp"
+msgstr "Tipo di acquifero"
+
+msgid "ch.bafu.grundwasserkoerper.grundwasserregime"
+msgstr "Regime delle acque sotterranee"
+
+msgid "ch.bafu.grundwasserkoerper.gwkid"
+msgstr "Identificativo"
+
+msgid "ch.bafu.grundwasserkoerper.gwkname"
+msgstr "Nome"
+
+msgid "ch.bafu.grundwasserkoerper.naturraum"
+msgstr "Regione geographica"
+
 msgid "ch.bafu.grundwasserschutzareale"
 msgstr "Aree di protezione"
 
