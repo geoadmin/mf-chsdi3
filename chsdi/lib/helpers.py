@@ -6,7 +6,6 @@ import requests
 import datetime
 import gzip
 import StringIO
-from osgeo import osr, ogr
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
 from pyramid.url import route_url
@@ -15,6 +14,7 @@ import unicodedata
 from urllib import quote
 from urlparse import urlparse, urlunparse, urljoin
 import xml.etree.ElementTree as etree
+from pyproj import Proj, transform
 from requests.exceptions import ConnectionError
 
 
@@ -279,15 +279,10 @@ def imagesize_from_metafile(tileUrlBasePath, bvnummer):
     return (width, height)
 
 
-def transform_coordinate(wkt, srid_from, srid_to):
-    srid_in = osr.SpatialReference()
-    srid_in.ImportFromEPSG(srid_from)
-    srid_out = osr.SpatialReference()
-    srid_out.ImportFromEPSG(srid_to)
-    geom = ogr.CreateGeometryFromWkt(wkt)
-    geom.AssignSpatialReference(srid_in)
-    geom.TransformTo(srid_out)
-    return geom
+def transform_coordinate(coords, srid_from, srid_to):
+    srid_in = Proj(init='epsg:%s' % srid_from)
+    srid_out = Proj(init='epsg:%s' % srid_to)
+    return transform(srid_in, srid_out, coords[0], coords[1])
 
 
 # float('NaN') does not raise an Exception. This function does.

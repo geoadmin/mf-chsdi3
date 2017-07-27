@@ -102,8 +102,8 @@ class Search(SearchValidation):
 
         # Define ranking mode
         if self.bbox is not None and self.sortbbox:
-            geoAnchor = self._get_geoanchor_from_bbox()
-            self.sphinx.SetGeoAnchor('lat', 'lon', geoAnchor.GetY(), geoAnchor.GetX())
+            coords = self._get_geoanchor_from_bbox()
+            self.sphinx.SetGeoAnchor('lat', 'lon', coords[1], coords[0])
             self.sphinx.SetSortMode(sphinxapi.SPH_SORT_EXTENDED, '@geodist ASC')
         else:
             self.sphinx.SetRankingMode(sphinxapi.SPH_RANK_WORDCOUNT)
@@ -216,8 +216,8 @@ class Search(SearchValidation):
         self.sphinx.SetLimits(0, featureLimit)
         self.sphinx.SetRankingMode(sphinxapi.SPH_RANK_WORDCOUNT)
         if self.bbox and self.sortbbox:
-            geoAnchor = self._get_geoanchor_from_bbox()
-            self.sphinx.SetGeoAnchor('lat', 'lon', geoAnchor.GetY(), geoAnchor.GetX())
+            coords = self._get_geoanchor_from_bbox()
+            self.sphinx.SetGeoAnchor('lat', 'lon', coords[1], coords[0])
             self.sphinx.SetSortMode(sphinxapi.SPH_SORT_EXTENDED, '@weight DESC, @geodist ASC')
         else:
             self.sphinx.SetSortMode(sphinxapi.SPH_SORT_EXTENDED, '@weight DESC')
@@ -268,8 +268,7 @@ class Search(SearchValidation):
 
     def _get_geoanchor_from_bbox(self):
         center = center_from_box2d(self.bbox)
-        wkt = 'POINT(%s %s)' % (center[0], center[1])
-        return transform_coordinate(wkt, self.srid, 4326)
+        return transform_coordinate(center, self.srid, 4326)
 
     def _query_fields(self, fields):
         # 10a, 10b needs to be interpreted as digit

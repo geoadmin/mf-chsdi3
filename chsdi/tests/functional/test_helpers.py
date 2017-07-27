@@ -153,14 +153,11 @@ class Test_Helpers(unittest.TestCase):
         self.assertEqual({'date_time': '16 Mai 18 Uhr', 'wasserstand': '-', 'wassertemperatur': '59900', 'abfluss': '-'}, test_result3)
 
     def test_transform_coordinate(self):
-        from osgeo.ogr import Geometry
-        wkt = 'POINT (7.37840 45.91616)'
         srid_from = 4326
         srid_to = 21781
-        wkt_21781 = transform_coordinate(wkt, srid_from, srid_to)
-        self.assertTrue(isinstance(wkt_21781, Geometry))
-        self.assertEqual(int(wkt_21781.GetX()), 595324)
-        self.assertEqual(int(wkt_21781.GetY()), 84952)
+        coords = transform_coordinate([7.37840, 45.91616], srid_from, srid_to)
+        self.assertEqual(int(coords[0]), 595324)
+        self.assertEqual(int(coords[1]), 84952)
 
     def test_check_even(self):
         testnumber = 10
