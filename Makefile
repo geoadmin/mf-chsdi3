@@ -106,7 +106,7 @@ user:
 .PHONY: all
 all: setup chsdi/static/css/extended.min.css templates potomo rss lint fixrights
 
-setup: .venv gdal node_modules .venv/hooks
+setup: .venv node_modules .venv/hooks
 
 templates: .venv/last-version apache/wsgi.conf development.ini production.ini
 
@@ -183,22 +183,6 @@ chsdi/locale/it/LC_MESSAGES/chsdi.mo: chsdi/locale/it/LC_MESSAGES/chsdi.po
 potomo: chsdi/locale/en/LC_MESSAGES/chsdi.mo chsdi/locale/fr/LC_MESSAGES/chsdi.mo \
         chsdi/locale/de/LC_MESSAGES/chsdi.mo chsdi/locale/fi/LC_MESSAGES/chsdi.mo \
         chsdi/locale/it/LC_MESSAGES/chsdi.mo
-
-.PHONY: gdal
-gdal: .venv
-	@if [ ! -d $(INSTALL_DIRECTORY)/build ]; \
-	then \
-		echo "${GREEN}Installing GDAL...${RESET}"; \
-		mkdir -p $(INSTALL_DIRECTORY)/build && \
-		${PIP_CMD} download -d $(INSTALL_DIRECTORY)/build GDAL==$(GDAL_VERSION) && \
-		cd $(INSTALL_DIRECTORY)/build && \
-		tar -xzf GDAL-$(GDAL_VERSION).tar.gz && \
-		cd GDAL-$(GDAL_VERSION) && \
-		../../../${PYTHON_CMD} setup.py build_ext --gdal-config=/usr/bin/gdal-config-64 --library-dirs=/usr/lib --include-dirs=/usr/include/gdal && \
-		../../../${PYTHON_CMD} setup.py install --root / && \
-		cd ../../.. && \
-		${PYTHON_CMD} -c "from osgeo import gdal; print('GDAL installed'); print(gdal.__version__, gdal.__file__)"; \
-	fi
 
 .PHONY: updateapi
 updateapi:
