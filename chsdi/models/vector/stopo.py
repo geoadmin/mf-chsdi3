@@ -2415,6 +2415,24 @@ class SwissBuildings3d1MetadataPerimeter(Base, ShopStandardClass, Vector):
 register('ch.swisstopo.swissbuildings3d_1.metadata', SwissBuildings3d1MetadataPerimeter)
 
 
+class SwissMapVector10MetadataPerimeter(Base, ShopStandardClass, Vector):
+    __tablename__ = 'shop_perimeter_vector10'
+    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
+    __bodId__ = 'ch.swisstopo.swiss-map-vector10.metadata'
+    the_geom = Column(Geometry2D)
+
+register(SwissMapVector10MetadataPerimeter.__bodId__, SwissMapVector10MetadataPerimeter)
+
+
+class SwissMapRaster10MetadataPerimeter(Base, ShopStandardClass, Vector):
+    __tablename__ = 'shop_perimeter_raster10'
+    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
+    __bodId__ = 'ch.swisstopo.swiss-map-raster10.metadata'
+    the_geom = Column(Geometry2D)
+
+register(SwissMapRaster10MetadataPerimeter.__bodId__, SwissMapRaster10MetadataPerimeter)
+
+
 class Dhm25MetadataPerimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_dhm25'
     __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
