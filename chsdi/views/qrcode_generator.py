@@ -44,7 +44,7 @@ def _make_qrcode_img(url):
 def _shorten_url(request, url):
     API3_SHORTEN_URL = make_api_url(request) + '/shorten.json?url=%s'
     try:
-        resp = requests.get(API3_SHORTEN_URL % url, verify=False)
+        resp = requests.get(API3_SHORTEN_URL % url)
         data = resp.json()
         return data['shorturl']
     except:

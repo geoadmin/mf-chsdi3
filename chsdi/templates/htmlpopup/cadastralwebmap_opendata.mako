@@ -81,7 +81,7 @@ ${partials.table_body_cadastral(c, lang, fallbackLang, clickCoord)}
     download_url = context.get('request').params.get('download_url')
     pdf = False
     try:
-        r = requests.get(download_url, verify=False)
+        r = requests.get(download_url)
         download_url = h.make_agnostic(r.text.strip())
         if r.status_code == 200:
             pdf = True
