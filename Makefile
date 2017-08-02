@@ -1,6 +1,9 @@
 SHELL = /bin/bash
 # Variables
+APACHE_BASE_PATH ?=
+LAST_APACHE_BASE_PATH := $(shell if [ -f .venv/last-apache-base-path ]; then cat .venv/last-apache-base-path 2> /dev/null; else echo '-none-'; fi)
 APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''; else echo /$(APACHE_BASE_PATH); fi)
+LAST_APACHE_ENTRY_PATH := $(shell if [ -f .venv/last-apache-entry-path ]; then cat .venv/last-apache-entry-path 2> /dev/null; else echo '-none-'; fi)
 KEEP_VERSION ?= 'false'
 LAST_VERSION := $(shell if [ -f '.venv/last-version' ]; then cat .venv/last-version 2> /dev/null; else echo '-none-'; fi)
 VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '-none-' ]; then echo $(LAST_VERSION); else python -c "print __import__('time').strftime('%s')"; fi)
@@ -262,16 +265,18 @@ apache/application.wsgi: apache/application.wsgi.mako
 	@echo "${GREEN}Creating apache/application.wsgi...${RESET}";
 	${MAKO_CMD} \
 		--var "current_directory=$(CURRENT_DIRECTORY)" \
-		--var "apache_base_path=$(APACHE_BASE_PATH)" \
 		--var "modwsgi_config=$(MODWSGI_CONFIG)" $< > $@
 
 apache/wsgi.conf.in:
 	@echo "${GREEN}Template file apache/wsgi.conf.in has changed${RESET}";
-apache/wsgi.conf: apache/wsgi.conf.in apache/application.wsgi
+apache/wsgi.conf: apache/wsgi.conf.in \
+                  apache/application.wsgi \
+                  .venv/last-apache-base-path \
+                  .venv/last-apache-entry-path
 	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
 	${MAKO_CMD} \
-		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
 		--var "apache_base_path=$(APACHE_BASE_PATH)" \
+		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
 		--var "robots_file=$(ROBOTS_FILE)" \
 		--var "branch_staging=$(BRANCH_STAGING)" \
 		--var "git_branch=$(GIT_BRANCH)" \
@@ -291,13 +296,15 @@ development.ini: development.ini.in
 
 production.ini.in:
 	@echo "${GREEN}Template file production.ini.in has changed${RESET}";
-production.ini: production.ini.in
+production.ini: production.ini.in \
+                .venv/last-apache-base-path \
+                .venv/last-apache-entry-path
 	@echo "${GREEN}Creating production.ini...${RESET}";
 	${MAKO_CMD} \
 		--var "app_version=$(VERSION)" \
 		--var "server_port=$(SERVER_PORT)" \
-		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
 		--var "apache_base_path=$(APACHE_BASE_PATH)" \
+		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
 		--var "current_directory=$(CURRENT_DIRECTORY)" \
 		--var "dbhost=$(DBHOST)" \
 		--var "dbport=$(DBPORT)" \
@@ -366,6 +373,16 @@ chsdi/static/less/extended.less:
 chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 	@echo "${GREEN}Generating new css file...${RESET}";
 	node_modules/.bin/lessc -ru --clean-css $< $@
+
+.venv/last-apache-base-path::
+	mkdir -p $(dir $@)
+	test "$(APACHE_BASE_PATH)" != "$(LAST_APACHE_BASE_PATH)" && \
+	    echo $(APACHE_BASE_PATH) > .venv/last-apache-base-path || :
+
+.venv/last-apache-entry-path::
+	mkdir -p $(dir $@)
+	test "$(APACHE_ENTRY_PATH)" != "$(LAST_APACHE_ENTRY_PATH)" && \
+	    echo $(APACHE_ENTRY_PATH) > .venv/last-apache-entry-path || :
 
 fixrights:
 	@echo "${GREEN}Fixing rights...${RESET}";
