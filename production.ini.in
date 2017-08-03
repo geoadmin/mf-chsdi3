@@ -43,6 +43,7 @@ wmshost = ${wmshost}
 mapproxyhost = ${mapproxyhost}
 geoadminhost = ${geoadminhost}
 cmsgeoadminhost = ${cmsgeoadminhost}
+linkeddatahost = ${linkeddatahost}
 alti_url = ${alti_url}
 api_url = ${api_url}
 shop_url = ${shop_url}
