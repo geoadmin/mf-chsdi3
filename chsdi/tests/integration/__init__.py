@@ -4,6 +4,9 @@ from unittest import TestCase
 from pyramid import testing
 from webtest import TestApp
 from gatilegrid import getTileGrid
+from contextlib import contextmanager
+from chsdi.models import models_from_bodid
+from sqlalchemy.orm import scoped_session, sessionmaker
 
 
 def shift_to_lv95(string_coords):
@@ -31,6 +34,19 @@ class TestsBase(TestCase):
         testing.tearDown()
         del self.testapp
         del self.grids
+
+    @contextmanager
+    def getSession(self):
+        session = scoped_session(sessionmaker())
+        yield session
+        session.close()
+
+    def getRandomFeatureId(self, bodId):
+        models = models_from_bodid(bodId)
+        with self.getSession() as session:
+            query = session.query(models[0]).limit(1)
+            reslt = query.one()
+        return reslt.id
 
     def assertGeojsonFeature(self, feature, srid, hasGeometry=True):
         self.assertIn('id', feature)
