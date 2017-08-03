@@ -83,9 +83,11 @@ class TestFeaturesView(TestsBase):
         self.assertEsrijsonFeature(resp.json['results'][0], 21781, hasGeometry=False)
 
     def test_find_exact_float(self):
-        params = {'layer': 'ch.bafu.bundesinventare-bln',
-                  'searchField': 'bln_fl',
-                  'searchText': '7317.978',
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        params = {'layer': bodId,
+                  'searchField': 'id',
+                  'searchText': '%s' % featureId,
                   'returnGeometry': 'false',
                   'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
@@ -241,60 +243,76 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(resp.content_type, 'text/html')
 
     def test_feature_valid(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1', status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['feature']['id'], 1)
+        self.assertEqual(resp.json['feature']['id'], featureId)
         self.assertEsrijsonFeature(resp.json['feature'], 21781)
 
     def test_feature_valid_topic_all(self):
-        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.bundesinventare-bln/1', status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/all/MapServer/%s/%s' % (bodId, featureId), status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['feature']['id'], 1)
+        self.assertEqual(resp.json['feature']['id'], featureId)
         self.assertEsrijsonFeature(resp.json['feature'], 21781)
 
     def test_feature_geojson(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1', params={'geometryFormat': 'geojson'}, status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['feature']['id'], 1)
+        self.assertEqual(resp.json['feature']['id'], featureId)
         self.assertGeojsonFeature(resp.json['feature'], 21781)
 
     def test_feature_geojson_nogeom(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1', params={'geometryFormat': 'geojson', 'returnGeometry': 'false'}, status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson', 'returnGeometry': 'false'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['feature']['id'], 1)
+        self.assertEqual(resp.json['feature']['id'], featureId)
         self.assertGeojsonFeature(resp.json['feature'], 21781, hasGeometry=False)
 
     def test_feature_geojson_geom(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1', params={'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['feature']['id'], 1)
+        self.assertEqual(resp.json['feature']['id'], featureId)
         self.assertGeojsonFeature(resp.json['feature'], 21781)
 
     def test_several_features(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1,2', status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s,%s' % (bodId, featureId, featureId + 1), status=200)
         features = resp.json['features']
         feature1 = features[0]
         feature2 = features[1]
         self.assertEqual(len(features), 2)
-        self.assertEqual(feature1['id'], 1)
-        self.assertEqual(feature2['id'], 2)
+        self.assertEqual(feature1['id'], featureId)
+        self.assertEqual(feature2['id'], featureId + 1)
         self.assertEsrijsonFeature(feature1, 21781)
         self.assertEsrijsonFeature(feature2, 21781)
 
     def test_several_features_geojson(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1,2', params={'geometryFormat': 'geojson'}, status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s,%s' % (bodId, featureId, featureId + 1), params={'geometryFormat': 'geojson'}, status=200)
         self.assertEqual(len(resp.json['features']), 2)
         features = resp.json['features']
         feature1 = features[0]
         feature2 = features[1]
         self.assertEqual(len(features), 2)
-        self.assertEqual(feature1['id'], 1)
-        self.assertEqual(feature2['id'], 2)
+        self.assertEqual(feature1['id'], featureId)
+        self.assertEqual(feature2['id'], featureId + 1)
         self.assertGeojsonFeature(feature1, 21781)
         self.assertGeojsonFeature(feature2, 21781)
 
     def test_feature_with_callback(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1', params={'callback': 'cb_'}, status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'text/javascript')
         resp.mustcontain('cb_({')
 
@@ -308,17 +326,23 @@ class TestFeaturesView(TestsBase):
         resp.mustcontain('Unsupported spatial reference')
 
     def test_htmlpopup_valid(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s/htmlPopup' % (bodId, featureId), status=200)
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 
     def test_htmlpopup_valid_lv95(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', params={'sr': '2056'}, status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s/htmlPopup' % (bodId, featureId), params={'sr': '2056'}, status=200)
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 
     def test_htmlpopup_lang(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', params={'lang': 'fr'}, status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s/htmlPopup' % (bodId, featureId), params={'lang': 'fr'}, status=200)
         self.assertEqual(resp.content_type, 'text/html')
         msgids = [u'No.', u'Nom', u'Partie-No', u'Partie', u'Surface [ha]']
         for msgid in msgids:
@@ -363,12 +387,16 @@ class TestFeaturesView(TestsBase):
         resp.mustcontain('Please provide numerical values for the parameter mapExtent')
 
     def test_htmlpopup_valid_topic_all(self):
-        resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/all/MapServer/%s/%s/htmlPopup' % (bodId, featureId), status=200)
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 
     def test_htmlpopup_valid_with_callback(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/htmlPopup', params={'callback': 'cb_'}, status=200)
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s/htmlPopup' % (bodId, featureId), params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_htmlpopup_missing_feature(self):
