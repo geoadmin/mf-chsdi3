@@ -4,6 +4,44 @@ APACHE_BASE_PATH ?=
 LAST_APACHE_BASE_PATH := $(shell if [ -f .venv/last-apache-base-path ]; then cat .venv/last-apache-base-path 2> /dev/null; else echo '-none-'; fi)
 APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''; else echo /$(APACHE_BASE_PATH); fi)
 LAST_APACHE_ENTRY_PATH := $(shell if [ -f .venv/last-apache-entry-path ]; then cat .venv/last-apache-entry-path 2> /dev/null; else echo '-none-'; fi)
+DBHOST ?=
+LAST_DBHOST := $(shell if [ -f .venv/last-dbhost ]; then cat .venv/last-dbhost 2> /dev/null; else echo '-none-'; fi)
+DBPORT ?=
+LAST_DBPORT := $(shell if [ -f .venv/last-dbport ]; then cat .venv/last-dbport 2> /dev/null; else echo '-none-'; fi)
+DBSTAGING ?=
+LAST_DBSTAGING := $(shell if [ -f .venv/last-dbstaging ]; then cat .venv/last-dbstaging 2> /dev/null; else echo '-none-'; fi)
+GEODATA_STAGING ?=
+LAST_GEODATA_STAGING := $(shell if [ -f .venv/last-geodata-staging ]; then cat .venv/last-geodata-staging 2> /dev/null; else echo '-none-'; fi)
+SPHINXHOST ?=
+LAST_SPHINXHOST := $(shell if [ -f .venv/last-sphinxhost ]; then cat .venv/last-sphinxhost 2> /dev/null; else echo '-none-'; fi)
+WMSHOST ?=
+LAST_WMSHOST := $(shell if [ -f .venv/last-wmshost ]; then cat .venv/last-wmshost 2> /dev/null; else echo '-none-'; fi)
+MAPPROXYHOST ?=
+LAST_MAPPROXYHOST := $(shell if [ -f .venv/last-mapproxyhost ]; then cat .venv/last-mapproxyhost 2> /dev/null; else echo '-none-'; fi)
+GEOADMINHOST ?=
+LAST_GEOADMINHOST := $(shell if [ -f .venv/last-geoadminhost ]; then cat .venv/last-geoadminhost 2> /dev/null; else echo '-none-'; fi)
+CMSGEOADMINHOST ?=
+LAST_CMSGEOADMINHOST := $(shell if [ -f .venv/last-cmsgeoadminhost ]; then cat .venv/last-cmsgeoadminhost 2> /dev/null; else echo '-none-'; fi)
+ALTI_URL ?=
+LAST_ALTI_URL := $(shell if [ -f .venv/last-alti-url ]; then cat .venv/last-alti-url 2> /dev/null; else echo '-none-'; fi)
+API_URL ?=
+LAST_API_URL := $(shell if [ -f .venv/last-api-url ]; then cat .venv/last-api-url 2> /dev/null; else echo '-none-'; fi)
+SHOP_URL ?=
+LAST_SHOP_URL := $(shell if [ -f .venv/last-shop-url ]; then cat .venv/last-shop-url 2> /dev/null; else echo '-none-'; fi)
+CURRENT_DIRECTORY ?=
+LAST_CURRENT_DIRECTORY := $(shell if [ -f .venv/last-current-directory ]; then cat .venv/last-current-directory 2> /dev/null; else echo '-none-'; fi)
+HOST ?=
+LAST_HOST := $(shell if [ -f .venv/last-host ]; then cat .venv/last-host 2> /dev/null; else echo '-none-'; fi)
+GEOADMIN_FILE_STORAGE_BUCKET ?=
+LAST_GEOADMIN_FILE_STORAGE_BUCKET := $(shell if [ -f .venv/last-geoadmin-file-storage-bucket ]; then cat .venv/last-geoadmin-file-storage-bucket 2> /dev/null; else echo '-none-'; fi)
+VECTOR_BUCKET ?=
+LAST_VECTOR_BUCKET := $(shell if [ -f .venv/last-vector-bucket ]; then cat .venv/last-vector-bucket 2> /dev/null; else echo '-none-'; fi)
+VECTOR_PROFILNAME ?=
+LAST_VECTOR_PROFILNAME := $(shell if [ -f .venv/last-vector-profilname ]; then cat .venv/last-vector-profilname 2> /dev/null; else echo '-none-'; fi)
+ROBOTS_FILE ?=
+LAST_ROBOTS_FILE := $(shell if [ -f .venv/last-robots-file ]; then cat .venv/last-robots-file 2> /dev/null; else echo '-none-'; fi)
+WSGI_THREADS ?=
+LAST_WSGI_THREADS := $(shell if [ -f .venv/last-wsgi-threads ]; then cat .venv/last-wsgi-threads 2> /dev/null; else echo '-none-'; fi)
 KEEP_VERSION ?= 'false'
 LAST_VERSION := $(shell if [ -f '.venv/last-version' ]; then cat .venv/last-version 2> /dev/null; else echo '-none-'; fi)
 VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '-none-' ]; then echo $(LAST_VERSION); else python -c "print __import__('time').strftime('%s')"; fi)
@@ -15,18 +53,25 @@ BODID ?=
 WMSSCALELEGEND ?=
 GIT_BRANCH := $(shell if [ -f '.venv/deployed-git-branch' ]; then cat .venv/deployed-git-branch 2> /dev/null; else git rev-parse --symbolic-full-name --abbrev-ref HEAD; fi)
 HTTP_PROXY := http://ec2-52-28-118-239.eu-central-1.compute.amazonaws.com:80
+LAST_HTTP_PPROXY := $(shell if [ -f .venv/last-kml-http-proxy ]; then cat .venv/last-http-proxy 2> /dev/null; else echo '-none-'; fi)
 INSTALL_DIRECTORY := .venv
 KML_TEMP_DIR := /var/local/print/kml
+LAST_KML_TEMP_DIR := $(shell if [ -f .venv/last-kml-temp-dir ]; then cat .venv/last-kml-temp-dir 2> /dev/null; else echo '-none-'; fi)
 MODWSGI_USER := www-data
+LAST_MODWSGI_USER := $(shell if [ -f .venv/last-modwsgi-user ]; then cat .venv/last-modwsgi-user 2> /dev/null; else echo '-none-'; fi)
 NO_TESTS ?= withtests
 NODE_DIRECTORY := node_modules
 PYTHON_FILES := $(shell find chsdi/* -path chsdi/static -prune -o -type f -name "*.py" -print)
 SHORTENER_ALLOWED_DOMAINS := admin.ch, swisstopo.ch, bgdi.ch
+LAST__SHORTENER_ALLOWED_DOMAINS := $(shell if [ -f .venv/last-shortener-allowed-domains ]; then cat .venv/last-shortener-allowed-domains 2> /dev/null; else echo '-none-'; fi)
 SHORTENER_ALLOWED_HOSTS :=
+LAST_SHORTENER_ALLOWED_HOSTS := $(shell if [ -f .venv/last-shortener-allowed-hosts ]; then cat .venv/last-shortener-allowed-hosts 2> /dev/null; else echo '-none-'; fi)
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
 USER_SOURCE ?= rc_user
 WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
+LAST_WSGI_APP := $(shell if [ -f .venv/last-wsgi-app ]; then cat .venv/last-wsgi-app 2> /dev/null; else echo '-none-'; fi)
 DATAGEOADMINHOST ?= data.geo.admin.ch
+LAST_DATAGEOADMINHOST := $(shell if [ -f .venv/last-datageoadminhost ]; then cat .venv/last-datageoadminhost 2> /dev/null; else echo '-none-'; fi)
 
 # Commands
 AUTOPEP8_CMD := $(INSTALL_DIRECTORY)/bin/autopep8
@@ -272,7 +317,13 @@ apache/wsgi.conf.in:
 apache/wsgi.conf: apache/wsgi.conf.in \
                   apache/application.wsgi \
                   .venv/last-apache-base-path \
-                  .venv/last-apache-entry-path
+                  .venv/last-apache-entry-path \
+                  .venv/last-robots-file \
+                  .venv/last-current-directory \
+                  .venv/last-modwsgi-user \
+                  .venv/last-wsgi-threads \
+                  .venv/last-wsgi-app \
+                  .venv/last-kml_temp_dir
 	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
 	${MAKO_CMD} \
 		--var "apache_base_path=$(APACHE_BASE_PATH)" \
@@ -298,7 +349,29 @@ production.ini.in:
 	@echo "${GREEN}Template file production.ini.in has changed${RESET}";
 production.ini: production.ini.in \
                 .venv/last-apache-base-path \
-                .venv/last-apache-entry-path
+                .venv/last-apache-entry-path \
+                .venv/last-dbhost \
+                .venv/last-dbport \
+                .venv/last-dbstaging \
+                .venv/last-geodata-staging \
+                .venv/last-sphinxhost \
+                .venv/last-wmshost \
+                .venv/last-mapproxyhost \
+                .venv/last-geoadminhost \
+                .venv/last-cmsgeoadminhost \
+                .venv/last-alti-url \
+                .venv/last-api-url \
+                .venv/last-shop-url \
+                .venv/last-current-directory \
+                .venv/last-host \
+                .venv/last-kml-temp-dir \
+                .venv/last-http-proxy \
+                .venv/last-geoadmin-file-storage-bucket \
+                .venv/last-vector-bucket \
+                .venv/last-vector-profilname \
+                .venv/last-datageoadminhost \
+                .venv/last-shortener-allowed-hosts \
+                .venv/last-shortener-allowed-domains
 	@echo "${GREEN}Creating production.ini...${RESET}";
 	${MAKO_CMD} \
 		--var "app_version=$(VERSION)" \
