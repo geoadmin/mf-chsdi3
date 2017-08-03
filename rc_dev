@@ -21,3 +21,4 @@ export VECTOR_PROFILENAME=chsdi_aws_admin_ro
 export WMSHOST=wms-bgdi.dev.bgdi.ch
 export WSGI_THREADS=15
 export CMSGEOADMINHOST=https://cms.geo.admin.ch
+export LINKEDDATAHOST=https://ld.geo.admin.ch
