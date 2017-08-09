@@ -5481,7 +5481,7 @@ msgid "ch.swisstopo.cnes"
 msgstr "CNES, Spot Image, swisstopo, NPOC"
 
 msgid "ch.swisstopo.cnes.url"
-msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/de/home.html"
+msgstr "https://www.swisstopo.admin.ch/de/home.html"
 
 msgid "ch.swisstopo.digitales-hoehenmodell_25.metadata"
 msgstr "Einteilung DHM25 Raster"
