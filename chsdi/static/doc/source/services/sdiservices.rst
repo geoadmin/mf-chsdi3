@@ -244,8 +244,8 @@ No css styling is provided per default so that you can use your own.
 Example
 *******
 
-- Get the legend for ch.bafu.bundesinventare-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.bundesinventare-bln/legend <../../../rest/services/api/MapServer/ch.bafu.bundesinventare-bln/legend>`_
-- Get the same legend using JSONP: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.bundesinventare-bln/legend?callback=callback <../../../rest/services/api/MapServer/ch.bafu.bundesinventare-bln/legend?callback=callback>`_
+- Get the legend for ch.bafu.nabelstationen: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/legend <../../../rest/services/api/MapServer/ch.bafu.nabelstationen/legend>`_
+- Get the same legend using JSONP: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/legend?callback=callback <../../../rest/services/api/MapServer/ch.bafu.nabelstationen/legend?callback=callback>`_
 
 .. _identify_description:
 
@@ -308,7 +308,7 @@ No more than 50 features can be retrieved per request.
 Examples
 ********
 
-- Identify all the features belonging to ch.bafu.bundesinventare-bln using a tolerance of 5 pixels around a point: `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=653246,173129&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=653246,173129&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln>`_
+- Identify all the features belonging to ch.bafu.nabelstationen using a tolerance of 5 pixels around a point: `https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=678250,213000&geometryFormat=geojson&geometryType=esriGeometryPoint&imageDisplay=1391,1070,96&lang=fr&layers=all:ch.bafu.nabelstationen&mapExtent=312250,-77500,1007750,457500&returnGeometry=true&tolerance=5 <../../../rest/services/all/MapServer/identify?geometry=678250,213000&geometryFormat=geojson&geometryType=esriGeometryPoint&imageDisplay=1391,1070,96&lang=fr&layers=all:ch.bafu.nabelstationen&mapExtent=312250,-77500,1007750,457500&returnGeometry=true&tolerance=5>`_
 - Identify all the features belonging to ch.bfs.arealstatistik-1985 intersecting an enveloppe (or bounding box): `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik-1985 <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik-1985>`_
 - Identify all the features belonging to ch.bafu.bundesinventare-bln a polyline: `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"paths":[[[675000,245000],[660000,260000],[620000,250000]]]}&geometryType=esriGeometryPolyline&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln <../../../rest/services/api/MapServer/identify?geometry={"paths":[[[675000,245000],[660000,260000],[620000,250000]]]}&geometryType=esriGeometryPolyline&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln>`_
 - Identify all the features belonging to ch.bafu.bundesinventare-bln intersecting a polygon: `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}&geometryType=esriGeometryPolygon&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln <../../../rest/services/api/MapServer/identify?geometry={"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}&geometryType=esriGeometryPolygon&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln>`_
@@ -440,8 +440,8 @@ RESTFul interface is available.
 Example
 *******
 
-- Get the feature with the ID 342 belonging to ch.bafu.bundesinventare-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.bundesinventare-bln/72 <../../../rest/services/api/MapServer/ch.bafu.bundesinventare-bln/72>`_
-- Get several features with IDs 342 and 341 belonging to ch.bafu.bundesinventar-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.bundesinventare-bln/72,73 <../../../rest/services/api/MapServer/ch.bafu.bundesinventare-bln/72,73>`_
+- Get the feature with the ID RIG belonging to ch.bafu.nabelstationen: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG <../../../rest/services/api/MapServer/ch.bafu.nabelstationen/RIG>`_
+- Get several features with IDs RIG and LAU belonging to ch.bafu.bundesinventar-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU <../../../rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU>`_
 
 .. _htmlpopup_description:
 
@@ -478,7 +478,7 @@ No css styling is provided per default so that you can use your own.
 Example
 *******
 
-- Get the html popup with the feature ID 342 belonging to layer ch.bafu.bundesinventare-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.bundesinventare-bln/72/htmlPopup <../../../rest/services/api/MapServer/ch.bafu.bundesinventare-bln/72/htmlPopup>`_
+- Get the html popup with the feature ID RIG belonging to layer ch.bafu.nabelstationen: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG/htmlPopup <../../../rest/services/api/MapServer/ch.bafu.nabelstationen/RIG/htmlPopup>`_
 
 .. _search_description:
 
