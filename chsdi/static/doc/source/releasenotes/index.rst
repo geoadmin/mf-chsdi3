@@ -14,6 +14,33 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20170816:
+   *******
+
+Release 20170816 - Wednesday, August 16th 2017
+---------------------------------------------
+
+API & applications
+******************
+
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/TODO>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/TODO>`__
+
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Minergie <//map.geo.admin.ch/?layers=ch.bfe.minergiegebaeude>`__ (ch.bfe.minergiegebaeude)                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20170726:
    *******
 
