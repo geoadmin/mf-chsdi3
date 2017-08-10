@@ -284,28 +284,30 @@ class TestFeaturesView(TestsBase):
 
     def test_several_features(self):
         bodId = 'ch.bafu.bundesinventare-bln'
-        featureId = self.getRandomFeatureId(bodId)
-        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s,%s' % (bodId, featureId, featureId + 1), status=200)
+        featureId1 = self.getRandomFeatureId(bodId)
+        featureId2 = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s,%s' % (bodId, featureId1, featureId2), status=200)
         features = resp.json['features']
         feature1 = features[0]
         feature2 = features[1]
         self.assertEqual(len(features), 2)
-        self.assertEqual(feature1['id'], featureId)
-        self.assertEqual(feature2['id'], featureId + 1)
+        self.assertEqual(feature1['id'], featureId1)
+        self.assertEqual(feature2['id'], featureId2)
         self.assertEsrijsonFeature(feature1, 21781)
         self.assertEsrijsonFeature(feature2, 21781)
 
     def test_several_features_geojson(self):
         bodId = 'ch.bafu.bundesinventare-bln'
-        featureId = self.getRandomFeatureId(bodId)
-        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s,%s' % (bodId, featureId, featureId + 1), params={'geometryFormat': 'geojson'}, status=200)
+        featureId1 = self.getRandomFeatureId(bodId)
+        featureId2 = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s,%s' % (bodId, featureId1, featureId2), params={'geometryFormat': 'geojson'}, status=200)
         self.assertEqual(len(resp.json['features']), 2)
         features = resp.json['features']
         feature1 = features[0]
         feature2 = features[1]
         self.assertEqual(len(features), 2)
-        self.assertEqual(feature1['id'], featureId)
-        self.assertEqual(feature2['id'], featureId + 1)
+        self.assertEqual(feature1['id'], featureId1)
+        self.assertEqual(feature2['id'], featureId2)
         self.assertGeojsonFeature(feature1, 21781)
         self.assertGeojsonFeature(feature2, 21781)
 
