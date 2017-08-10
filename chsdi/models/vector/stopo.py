@@ -2516,7 +2516,7 @@ register('ch.swisstopo.hiks-siegfried-ta50.metadata', HiksSiegfriedTa50Metadata)
 
 
 class Treasurehunt(Base, Vector):
-    __tablename__ = 'treasurehunt'
+    __tablename__ = 'treasurehunt_new'
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __template__ = 'templates/htmlpopup/treasurehunt.mako'
     __bodId__ = 'ch.swisstopo.treasurehunt'
