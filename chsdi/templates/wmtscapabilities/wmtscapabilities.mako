@@ -97,10 +97,8 @@ if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
                 % endfor
             </Dimension>
             <TileMatrixSetLink>
-                % if epsg == '21781':
-                    <TileMatrixSet>${str(layer.tile_matrix_set_id).split(',')[0]}_${str(layer.zoomlevel_max)|validate_tilematrixset}</TileMatrixSet>
-                % elif epsg == '2056':
-                    <TileMatrixSet>${epsg}_${str(layer.zoomlevel_max)}</TileMatrixSet>
+                % if epsg == '21781' or epsg == '2056':
+                    <TileMatrixSet>${epsg}_${str(layer.getZoom(epsg, layer.resolution_max))|validate_tilematrixset}</TileMatrixSet>
                 % else:
                     <TileMatrixSet>${epsg}</TileMatrixSet>
                 % endif
