@@ -18,7 +18,7 @@ Release Notes
    *******
 
 Release 20170816 - Wednesday, August 16th 2017
----------------------------------------------
+----------------------------------------------
 
 API & applications
 ******************
@@ -38,7 +38,13 @@ API & applications
 Geodata
 *******
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Minergie <//map.geo.admin.ch/?layers=ch.bfe.minergiegebaeude>`__ (ch.bfe.minergiegebaeude)                        |
+| New    | `Ammonia Concentration <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-ammoniakkonzentration>`__ (ch.bafu.luftreinhaltung-ammoniakkonzentration)                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Nitrogen Deposition <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-stickstoffdeposition>`__ (ch.bafu.luftreinhaltung-stickstoffdeposition)                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `CLN Exceedance <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag>`__ (ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag)                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Minergie <//map.geo.admin.ch/?layers=ch.bfe.minergiegebaeude>`__ (ch.bfe.minergiegebaeude)                                                                                         |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20170726:
