@@ -757,11 +757,11 @@ class TestIdentifyService(TestsBase):
 
     def test_identify_treasurehunt_good_scale(self):
         params = dict(geometryType='esriGeometryPoint',
-                      geometry='612824.615589634,177050.20813678828',
+                      geometry='611334,271015',
                       geometryFormat='geojson',
                       imageDisplay='1920,730,96',
                       layers='all:ch.swisstopo.treasurehunt',
-                      mapExtent='612648.615589634,176979.45813678828,613128.615589634,177161.95813678828',
+                      mapExtent='611163,270868,611504,271135',
                       returnGeometry='true',
                       tolerance='10',
                       lang='fr')
@@ -771,11 +771,11 @@ class TestIdentifyService(TestsBase):
 
     def test_identify_treasurehunt_not_in_scale_range(self):
         params = dict(geometryType='esriGeometryPoint',
-                      geometry='612824.615589634,177050.95813678834',
+                      geometry='611334,271015',
                       geometryFormat='geojson',
                       imageDisplay='1920,730,96',
                       layers='all:ch.swisstopo.treasurehunt',
-                      mapExtent='612451.115589634,176912.45813678834,613411.115589634,177277.45813678834',
+                      mapExtent='601163,260868,621504,281135',
                       returnGeometry='true',
                       tolerance='10',
                       lang='fr')
