@@ -1076,6 +1076,66 @@ class GeologieMineralischeRohstoffe200(Base, Vector):
 register('ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200', GeologieMineralischeRohstoffe200)
 
 
+class GeologieBohrungenTiefer500(Base, Vector):
+    __tablename__ = 'bohrungen_500'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/bohrungen_tiefer_500.mako'
+    __bodId__ = 'ch.swisstopo.geologie-bohrungen_tiefer_500'
+    __queryable_attributes__ = ['name']
+    __label__ = 'name'
+    __extended_info__ = True
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    auftraggeb_de = Column('auftraggeb_de', Unicode)
+    auftraggeb_fr = Column('auftraggeb_fr', Unicode)
+    auftraggeb_en = Column('auftraggeb_en', Unicode)
+    auftraggeb_it = Column('auftraggeb_it', Unicode)
+    auftraggeb_rm = Column('auftraggeb_rm', Unicode)
+    rechtein_de = Column('rechtein_de', Unicode)
+    rechtein_fr = Column('rechtein_fr', Unicode)
+    rechtein_en = Column('rechtein_en', Unicode)
+    rechtein_it = Column('rechtein_it', Unicode)
+    rechtein_rm = Column('rechtein_rm', Unicode)
+    inhalt_de = Column('inhalt_de', Unicode)
+    inhalt_fr = Column('inhalt_fr', Unicode)
+    inhalt_en = Column('inhalt_en', Unicode)
+    inhalt_it = Column('inhalt_it', Unicode)
+    inhalt_rm = Column('inhalt_rm', Unicode)
+    download = Column('download', Unicode)
+    auskunft_de = Column('auskunft_de', Unicode)
+    auskunft_fr = Column('auskunft_fr', Unicode)
+    auskunft_en = Column('auskunft_en', Unicode)
+    auskunft_it = Column('auskunft_it', Unicode)
+    auskunft_rm = Column('auskunft_rm', Unicode)
+    tiefe_md = Column('tiefe_md', Float)
+    bohrzweck_de = Column('bohrzweck_de', Unicode)
+    bohrzweck_fr = Column('bohrzweck_fr', Unicode)
+    bohrzweck_en = Column('bohrzweck_en', Unicode)
+    bohrzweck_it = Column('bohrzweck_it', Unicode)
+    bohrzweck_rm = Column('bohrzweck_rm', Unicode)
+    status_de = Column('status_de', Unicode)
+    status_fr = Column('status_fr', Unicode)
+    status_en = Column('status_en', Unicode)
+    status_it = Column('status_it', Unicode)
+    status_rm = Column('status_rm', Unicode)
+    startdate = Column('startdate', Unicode)
+    enddate = Column('enddate', Unicode)
+    height = Column('height', Float)
+    land_de = Column('land_de', Unicode)
+    land_fr = Column('land_fr', Unicode)
+    land_en = Column('land_en', Unicode)
+    land_it = Column('land_it', Unicode)
+    land_rm = Column('land_rm', Unicode)
+    kanton_de = Column('kanton_de', Unicode)
+    kanton_fr = Column('kanton_fr', Unicode)
+    kanton_en = Column('kanton_en', Unicode)
+    kanton_it = Column('kanton_it', Unicode)
+    kanton_rm = Column('kanton_rm', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-bohrungen_tiefer_500', GeologieBohrungenTiefer500)
+
+
 class GeologieGeotechnikGk200(Base, Vector):
     __tablename__ = 'geotechnik_gk200_lgd'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
