@@ -3206,8 +3206,35 @@ msgstr "Eaux souterraines : COV"
 msgid "ch.bafu.neophyten-auslaeuferbildendes_fettkraut"
 msgstr "Orpin stolonifère"
 
+msgid "ch.bafu.neophyten-grosser_wassernabel"
+msgstr "Hydrocotyle à feuilles de renoncule"
+
+msgid "ch.bafu.neophyten-haargurke"
+msgstr "Sicyos anguleux"
+
+msgid "ch.bafu.neophyten-henrys_geissblatt"
+msgstr "Chèvrefeuille de Henry"
+
+msgid "ch.bafu.neophyten-herbst_traubenkirsche"
+msgstr "Merisier tardif"
+
+msgid "ch.bafu.neophyten-igelgurke"
+msgstr "Échinocyste lobé"
+
+msgid "ch.bafu.neophyten-japanischer_staudenknoeterich"
+msgstr "Renouée du Japon"
+
 msgid "ch.bafu.neophyten-japanisches_geissblatt"
 msgstr "Chèvrefeuille du Japon"
+
+msgid "ch.bafu.neophyten-kanadische_goldrute"
+msgstr "Solidage du Canada"
+
+msgid "ch.bafu.neophyten-kanadische_wasserpest"
+msgstr "Elodée du Canada"
+
+msgid "ch.bafu.neophyten-karolina_haarnixe"
+msgstr "Cabomba de Caroline"
 
 msgid "ch.bafu.neophyten-kaukasus_fettkraut"
 msgstr "Orpin bâtard"
@@ -3987,7 +4014,31 @@ msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
 msgstr "Sites pollués transports publics RDPPF"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
-msgstr "Bruit ferrov., émissions eff. N"
+msgstr "Bruit ferrov., émissions fixées N"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_from"
+msgstr "Km début"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.kml_number"
+msgstr "No. ligne de kilom."
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_to"
+msgstr "Km fin"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_date"
+msgstr "Date de la décision"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_night"
+msgstr "Emission Lr,e fixée nuit [dBA]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_remark"
+msgstr "Dénom. de la décision"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_year"
+msgstr "Année de référence"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_remark"
+msgstr "Remarques"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_from"
 msgstr "Km début"
@@ -4029,7 +4080,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_date"
 msgstr "Date de la décision"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_day"
-msgstr "Emission Lr,e fixée jour [dB(A)]"
+msgstr "Emission Lr,e fixée jour [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_remark"
 msgstr "Dénom. de la décision"
@@ -4056,16 +4107,16 @@ msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.km_to"
 msgstr "Km fin"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.level_correction_night"
-msgstr "Correction de niveau nuit [dB(A)]"
+msgstr "Corr. de niveau nuit [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.lre_night"
-msgstr "Emission eff. Lr,e nuit [dB(A)]"
+msgstr "Emission eff. Lr,e nuit [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.lre_remark"
 msgstr "Remarques"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_number_freight_n"
-msgstr "No. de trains marchandises nuit"
+msgstr "No. de trains march. nuit"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_number_night"
 msgstr "No. de trains nuit"
@@ -4086,10 +4137,10 @@ msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.km_to"
 msgstr "Km fin"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.level_correction_day"
-msgstr "Correction de niveau jour [dB(A)]"
+msgstr "Corr. de niveau jour [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.lre_day"
-msgstr "Emission Lr,e eff. jour [dB(A)]"
+msgstr "Emission Lr,e eff. jour [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.lre_remark"
 msgstr "Remarques"
@@ -4098,7 +4149,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.train_number
 msgstr "No. de trains jour"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.train_number_freight_d"
-msgstr "No. de trains marchandises jour"
+msgstr "No. de trains march. jour"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Plan des émissions en 2015"

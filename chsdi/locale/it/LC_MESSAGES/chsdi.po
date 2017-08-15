@@ -3206,8 +3206,35 @@ msgstr "Acque sotterranee : COV"
 msgid "ch.bafu.neophyten-auslaeuferbildendes_fettkraut"
 msgstr "Borracina stoloniferus"
 
+msgid "ch.bafu.neophyten-grosser_wassernabel"
+msgstr "Soldinella reniforme"
+
+msgid "ch.bafu.neophyten-haargurke"
+msgstr "Sicios angoloso"
+
+msgid "ch.bafu.neophyten-henrys_geissblatt"
+msgstr "Caprifoglio di Henry"
+
+msgid "ch.bafu.neophyten-herbst_traubenkirsche"
+msgstr "Pruno autunnale"
+
+msgid "ch.bafu.neophyten-igelgurke"
+msgstr "Echinocistis lobata"
+
+msgid "ch.bafu.neophyten-japanischer_staudenknoeterich"
+msgstr "Poligono del Giappone"
+
 msgid "ch.bafu.neophyten-japanisches_geissblatt"
 msgstr "Caprifoglio giapponese"
+
+msgid "ch.bafu.neophyten-kanadische_goldrute"
+msgstr "Verga d'oro del Canada"
+
+msgid "ch.bafu.neophyten-kanadische_wasserpest"
+msgstr "Peste d'acqua comune"
+
+msgid "ch.bafu.neophyten-karolina_haarnixe"
+msgstr "Cabomba della Carolina"
 
 msgid "ch.bafu.neophyten-kaukasus_fettkraut"
 msgstr "Borracina caucasica"
@@ -3987,7 +4014,31 @@ msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
 msgstr "Siti inquinati trasporti pubbl. RDPP"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
-msgstr "Rumore dei treni, emissioni N eff."
+msgstr "Rumore dei treni, emissioni N stab."
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_from"
+msgstr "Km inizio"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.kml_number"
+msgstr "No. di linea km"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_to"
+msgstr "Km fine"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_date"
+msgstr "Dato della decisione"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_night"
+msgstr "Emissione Lr,e stab. notte [dBA]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_remark"
+msgstr "Denom. della decisione"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_year"
+msgstr "Anno di riferimento"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_remark"
+msgstr "Osservazioni"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_from"
 msgstr "Km inizio"
@@ -4029,7 +4080,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_date"
 msgstr "Dato della decisione"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_day"
-msgstr "Emissione Lr,e stab. giorno [dB(A)]"
+msgstr "Emissione Lr,e stab. giorno [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_remark"
 msgstr "Denom. della decisione"
@@ -4056,10 +4107,10 @@ msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.km_to"
 msgstr "Km fine"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.level_correction_night"
-msgstr "Correzione di livello notte [dB(A)]"
+msgstr "Correz. di livello notte [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.lre_night"
-msgstr "Emissione eff. Lr,e notte [dB(A)]"
+msgstr "Emissione eff. Lr,e notte [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.lre_remark"
 msgstr "Osservazioni"
@@ -4086,10 +4137,10 @@ msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.km_to"
 msgstr "Km fine"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.level_correction_day"
-msgstr "Correzione di livello [dB(A)]"
+msgstr "Correz. di livello [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.lre_day"
-msgstr "Emissione Lr,e eff. giorno [dB(A)]"
+msgstr "Emissione Lr,e eff. giorno [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.lre_remark"
 msgstr "Osservazioni"
@@ -4275,7 +4326,7 @@ msgid "ch.bav.schienennetz"
 msgstr "Rete ferroviaria"
 
 msgid "ch.bav.schienennetz.abreviation"
-msgstr "Abbrev. di PE"
+msgstr "Abr. PE"
 
 msgid "ch.bav.schienennetz.abreviationet"
 msgstr "Abbr. Di GI"

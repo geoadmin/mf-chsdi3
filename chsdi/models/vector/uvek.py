@@ -1832,6 +1832,96 @@ class LaermEmissionsplanEisenbahnNacht(Base, Vector):
 register('ch.bav.laerm-emissionsplan_eisenbahn_nacht', LaermEmissionsplanEisenbahnNacht)
 
 
+class LaermBelastungEinsenbahnTatsaechlicheEmissionTag(Base, Vector):
+    __tablename__ = 'laerm_eisenbahn_tatsaechliche_emissionen_tag'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/laerm_eisenbahn_tatsaechliche_emissionen_tag.mako'
+    __bodId__ = 'ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    kml_number = Column('kml_number', Integer)
+    km_from = Column('km_from', Float)
+    km_to = Column('km_to', Float)
+    lre_day = Column('lre_day', Float)
+    enmodel_railway = Column('enmodel_railway', Unicode)
+    enmodelrailway_de = Column('enmodelrailway_de', Unicode)
+    enmodelrailway_fr = Column('enmodelrailway_fr', Unicode)
+    enmodelrailway_it = Column('enmodelrailway_it', Unicode)
+    enmodelrailway_en = Column('enmodelrailway_en', Unicode)
+    level_correction_day = Column('level_correction_day', Float)
+    train_number_day = Column('train_number_day', Float)
+    train_number_freight_d = Column('train_number_freight_d', Float)
+    lre_remark = Column('lre_remark', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag', LaermBelastungEinsenbahnTatsaechlicheEmissionTag)
+
+
+class LaermBelastungEinsenbahnTatsaechlicheEmissionNacht(Base, Vector):
+    __tablename__ = 'laerm_eisenbahn_tatsaechliche_emissionen_nacht'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/laerm_eisenbahn_tatsaechliche_emissionen_nacht.mako'
+    __bodId__ = 'ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    kml_number = Column('kml_number', Integer)
+    km_from = Column('km_from', Float)
+    km_to = Column('km_to', Float)
+    lre_night = Column('lre_night', Float)
+    enmodel_railway = Column('enmodel_railway', Unicode)
+    enmodelrailway_de = Column('enmodelrailway_de', Unicode)
+    enmodelrailway_fr = Column('enmodelrailway_fr', Unicode)
+    enmodelrailway_it = Column('enmodelrailway_it', Unicode)
+    enmodelrailway_en = Column('enmodelrailway_en', Unicode)
+    level_correction_night = Column('level_correction_night', Float)
+    train_number_night = Column('train_number_night', Float)
+    train_number_freight_n = Column('train_number_freight_n', Float)
+    lre_remark = Column('lre_remark', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht', LaermBelastungEinsenbahnTatsaechlicheEmissionNacht)
+
+
+class LaermBelastungEinsenbahnFestgelegteEmissionTag(Base, Vector):
+    __tablename__ = 'laerm_eisenbahn_festgelegte_emissionen_tag'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/laerm_eisenbahn_festgelegte_emissionen_tag.mako'
+    __bodId__ = 'ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    kml_number = Column('kml_number', Integer)
+    km_from = Column('km_from', Float)
+    km_to = Column('km_to', Float)
+    lre_max_day = Column('lre_max_day', Float)
+    lre_max_remark = Column('lre_max_remark', Unicode)
+    lre_max_date = Column('lre_max_date', Date)
+    lre_max_year = Column('lre_max_year', Integer)
+    lre_remark = Column('lre_remark', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag', LaermBelastungEinsenbahnFestgelegteEmissionTag)
+
+
+class LaermBelastungEinsenbahnFestgelegteEmissionNacht(Base, Vector):
+    __tablename__ = 'laerm_eisenbahn_festgelegte_emissionen_nacht'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/laerm_eisenbahn_festgelegte_emissionen_nacht.mako'
+    __bodId__ = 'ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    kml_number = Column('kml_number', Integer)
+    km_from = Column('km_from', Float)
+    km_to = Column('km_to', Float)
+    lre_max_night = Column('lre_max_night', Float)
+    lre_max_remark = Column('lre_max_remark', Unicode)
+    lre_max_date = Column('lre_max_date', Date)
+    lre_max_year = Column('lre_max_year', Integer)
+    lre_remark = Column('lre_remark', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht', LaermBelastungEinsenbahnFestgelegteEmissionNacht)
+
+
 class SifFacilitiesA(Base, Vector):
     __tablename__ = 'sif_fac_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
