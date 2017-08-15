@@ -3206,8 +3206,35 @@ msgstr "Grundwasser: VOC"
 msgid "ch.bafu.neophyten-auslaeuferbildendes_fettkraut"
 msgstr "Ausläuferbildendes Fettkraut"
 
+msgid "ch.bafu.neophyten-grosser_wassernabel"
+msgstr "Grosser Wassernabel"
+
+msgid "ch.bafu.neophyten-haargurke"
+msgstr "Haargurke"
+
+msgid "ch.bafu.neophyten-henrys_geissblatt"
+msgstr "Henrys Geissblatt"
+
+msgid "ch.bafu.neophyten-herbst_traubenkirsche"
+msgstr "Herbst-Traubenkirsche"
+
+msgid "ch.bafu.neophyten-igelgurke"
+msgstr "Igelgurke"
+
+msgid "ch.bafu.neophyten-japanischer_staudenknoeterich"
+msgstr "Japanischer Staudenknöterich"
+
 msgid "ch.bafu.neophyten-japanisches_geissblatt"
 msgstr "Japanisches Geissblatt"
+
+msgid "ch.bafu.neophyten-kanadische_goldrute"
+msgstr "Kanadische Goldrute"
+
+msgid "ch.bafu.neophyten-kanadische_wasserpest"
+msgstr "Kanadische Wasserpest"
+
+msgid "ch.bafu.neophyten-karolina_haarnixe"
+msgstr "Karolina-Haarnixe"
 
 msgid "ch.bafu.neophyten-kaukasus_fettkraut"
 msgstr "Kaukasus-Fettkraut"
@@ -4002,7 +4029,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_date
 msgstr "Datum der Verfügung"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_night"
-msgstr "Festgel. Emission Lr,e Nacht [dB(A)]"
+msgstr "Festgel. Emission Lr,e Nacht [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_remark"
 msgstr "Bezeichnung der Verfügung"
@@ -4029,7 +4056,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_date"
 msgstr "Datum der Verfügung"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_day"
-msgstr "Festgel. Emission Lr,e Tag [dB(A)]"
+msgstr "Festgel. Emission Lr,e Tag [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_remark"
 msgstr "Bezeichnung der Verfügung"
@@ -4056,10 +4083,10 @@ msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.km_to"
 msgstr "Km bis"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.level_correction_night"
-msgstr "Pegelkorrektur Nacht [dB(A)]"
+msgstr "Pegelkorrektur Nacht [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.lre_night"
-msgstr "tats. Emission Lr,e Nacht [dB(A)]"
+msgstr "tats. Emission Lr,e Nacht [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.lre_remark"
 msgstr "Bemerkungen"
@@ -4086,10 +4113,10 @@ msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.km_to"
 msgstr "Km bis"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.level_correction_day"
-msgstr "Pegelkorrektur Tag [dB(A)]"
+msgstr "Pegelkorrektur Tag [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.lre_day"
-msgstr "Tats. Emission Lr,e Tag [dB(A)]"
+msgstr "Tats. Emission Lr,e Tag [dBA]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.lre_remark"
 msgstr "Bemerkungen"
@@ -4275,7 +4302,7 @@ msgid "ch.bav.schienennetz"
 msgstr "Schienennetz"
 
 msgid "ch.bav.schienennetz.abreviation"
-msgstr "PB-Abk."
+msgstr "BP-Abk."
 
 msgid "ch.bav.schienennetz.abreviationet"
 msgstr "ISB-Abk."
@@ -4356,7 +4383,7 @@ msgid "ch.bav.schienennetz.numeroet"
 msgstr "ISB-Nr."
 
 msgid "ch.bav.schienennetz.respdonneesabreviation"
-msgstr "PB-Abk-Datenherr"
+msgstr "BP-Abk-Datenherr"
 
 msgid "ch.bav.schienennetz.xtf_id"
 msgstr "Netzknoten-ID"
