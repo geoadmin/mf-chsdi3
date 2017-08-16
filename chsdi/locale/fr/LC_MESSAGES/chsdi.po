@@ -3989,14 +3989,116 @@ msgstr "Sites pollués transports publics RDPPF"
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Bruit ferrov., émissions eff. N"
 
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_from"
+msgstr "Km début"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.kml_number"
+msgstr "No. ligne de kilom."
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_to"
+msgstr "Km fin"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_date"
+msgstr "Date de la décision"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_night"
+msgstr "Emission Lr,e fixée nuit [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_remark"
+msgstr "Dénom. de la décision"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_year"
+msgstr "Année de référence"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_remark"
+msgstr "Remarques"
+
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag"
 msgstr "Bruit ferrov., émissions fixées J"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.km_from"
+msgstr "Km début"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.kml_number"
+msgstr "No. ligne de kilom."
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.km_to"
+msgstr "Km fin"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_date"
+msgstr "Date de la décision"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_day"
+msgstr "Emission Lr,e fixée jour [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_remark"
+msgstr "Dénom. de la décision"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_year"
+msgstr "Année de référence"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_remark"
+msgstr "Remarques"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht"
 msgstr "Bruit ferrov., émissions eff. N"
 
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.enmodel_railway"
+msgstr "Modèle d’émission"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.km_from"
+msgstr "Km début"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.kml_number"
+msgstr "No. ligne de kilom."
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.km_to"
+msgstr "Km fin"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.level_correction_night"
+msgstr "Correction de niveau nuit [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.lre_night"
+msgstr "Emission eff. Lr,e nuit [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.lre_remark"
+msgstr "Remarques"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_number_freight_n"
+msgstr "No. de trains marchandises nuit"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_number_night"
+msgstr "No. de trains nuit"
+
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag"
 msgstr "Bruit ferrov., émissions eff. J"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.enmodel_railway"
+msgstr "Modèle d’émission"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.km_from"
+msgstr "Km début"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.kml_number"
+msgstr "No. ligne de kilom."
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.km_to"
+msgstr "Km fin"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.level_correction_day"
+msgstr "Correction de niveau jour [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.lre_day"
+msgstr "Emission Lr,e eff. jour [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.lre_remark"
+msgstr "Remarques"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.train_number_day"
+msgstr "No. de trains jour"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.train_number_freight_d"
+msgstr "No. de trains marchandises jour"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Plan des émissions en 2015"
@@ -5548,6 +5650,54 @@ msgstr "Bruit sismique CH"
 
 msgid "ch.swisstopo.geologie-bohrungen_tiefer_500"
 msgstr "Forages > 500 m"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.auftraggeb_de"
+msgstr "Mandant"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.auskunft"
+msgstr "Renseignement complémentaire"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.bohrzweck"
+msgstr "But du forage"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.download"
+msgstr "Téléchargement"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.enddate"
+msgstr "Date de fin du forage"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.height"
+msgstr "Altitude de référence (niveau du terrain) [m s.m.]"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.inhalt"
+msgstr "Contenu de la documentation"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.kanton"
+msgstr "Canton"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.koord_e"
+msgstr "Coordonnée E"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.koord_n"
+msgstr "Coordonnée N"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.land"
+msgstr "Pays"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.name"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.rechtein"
+msgstr "Propriétaire des droits"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.startdate"
+msgstr "Date de début du forage"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.status"
+msgstr "Statut du forage"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.tiefe_md"
+msgstr "Profondeur mesurée (MD) maxi-male depuis le niveau du terrain [m]"
 
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
 msgstr "Radiation terrestre"
