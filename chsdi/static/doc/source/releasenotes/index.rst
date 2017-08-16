@@ -27,24 +27,24 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
-- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/TODO>`__
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170726...r_170816>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
-- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/TODO>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170726...r_170816>`__
 
 
 Geodata
 *******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Minergie <//map.geo.admin.ch/?layers=ch.bfe.minergiegebaeude>`__ (ch.bfe.minergiegebaeude)                                                                                         |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Ammonia Concentration <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-ammoniakkonzentration>`__ (ch.bafu.luftreinhaltung-ammoniakkonzentration)                                |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Nitrogen Deposition <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-stickstoffdeposition>`__ (ch.bafu.luftreinhaltung-stickstoffdeposition)                                    |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `CLN Exceedance <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag>`__ (ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag)                       |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Minergie <//map.geo.admin.ch/?layers=ch.bfe.minergiegebaeude>`__ (ch.bfe.minergiegebaeude)                                                                                         |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20170726:
