@@ -3989,14 +3989,116 @@ msgstr "Altlasten/belastete Standorte öV ÖREB"
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Eisenbahnlärm, festgel. Emission N"
 
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_from"
+msgstr "Km von"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.kml_number"
+msgstr "Km-Linie Nr."
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_to"
+msgstr "Km bis"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_date"
+msgstr "Datum der Verfügung"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_night"
+msgstr "Festgel. Emission Lr,e Nacht [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_remark"
+msgstr "Bezeichnung der Verfügung"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_year"
+msgstr "Zeithorizont"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_remark"
+msgstr "Bemerkungen"
+
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag"
 msgstr "Eisenbahnlärm, festgel. Emission T"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.km_from"
+msgstr "Km von"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.kml_number"
+msgstr "Km-Linie Nr."
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.km_to"
+msgstr "Km bis"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_date"
+msgstr "Datum der Verfügung"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_day"
+msgstr "Festgel. Emission Lr,e Tag [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_remark"
+msgstr "Bezeichnung der Verfügung"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_max_year"
+msgstr "Zeithorizont"
+
+msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_remark"
+msgstr "Bemerkungen"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht"
 msgstr "Eisenbahnlärm, tats. Emission N"
 
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.enmodel_railway"
+msgstr "Emissionsmodell"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.km_from"
+msgstr "Km von"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.kml_number"
+msgstr "Km-Linie Nr."
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.km_to"
+msgstr "Km bis"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.level_correction_night"
+msgstr "Pegelkorrektur Nacht [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.lre_night"
+msgstr "tats. Emission Lr,e Nacht [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.lre_remark"
+msgstr "Bemerkungen"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_number_freight_n"
+msgstr "Anz. Güterzüge Nacht"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_number_night"
+msgstr "Anz. Züge Nacht"
+
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag"
 msgstr "Eisenbahnlärm, tats. Emission T"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.enmodel_railway"
+msgstr "Emissionsmodell"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.km_from"
+msgstr "Km von"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.kml_number"
+msgstr "Km-Linie Nr."
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.km_to"
+msgstr "Km bis"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.level_correction_day"
+msgstr "Pegelkorrektur Tag [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.lre_day"
+msgstr "Tats. Emission Lr,e Tag [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.lre_remark"
+msgstr "Bemerkungen"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.train_number_day"
+msgstr "Anz. Züge Tag"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.train_number_freight_d"
+msgstr "Anz. Güterzüge Tag"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Emissionsplan Eisenbahn 2015"
@@ -5548,6 +5650,54 @@ msgstr "Anthrop. Bodenunruhe CH"
 
 msgid "ch.swisstopo.geologie-bohrungen_tiefer_500"
 msgstr "Bohrungen > 500 m"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.auftraggeb_de"
+msgstr "Auftraggeber"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.auskunft"
+msgstr "Weitere Auskunft"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.bohrzweck"
+msgstr "Bohrzweck"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.download"
+msgstr "Download"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.enddate"
+msgstr "Datum Bohrende"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.height"
+msgstr "Ansatzhöhe (Oberkante Terrain) [m ü.M.]"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.inhalt"
+msgstr "Inhalt der Dokumentation"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.kanton"
+msgstr "Kanton"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.koord_e"
+msgstr "E-Koordinate"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.koord_n"
+msgstr "N-Koordinate"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.land"
+msgstr "Land"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.rechtein"
+msgstr "Rechteinhaber"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.startdate"
+msgstr "Datum Bohrbeginn"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.status"
+msgstr "Status Bohrloch"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.tiefe_md"
+msgstr "Maximal gemessene Tiefe (MD) ab Oberkante Terrain [m]"
 
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
 msgstr "Terrestrische Strahlung"
