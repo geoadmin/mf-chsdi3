@@ -7,13 +7,15 @@
     rechtein = 'rechtein_%s' % lang
     inhalt = 'inhalt_%s' % lang
     auskunft = 'auskunft_%s' % lang
-
+    download = c['attributes']['download'] 
 %>
      <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.name')}</td>       <td>${c['attributes']['name'] or '-'}</td></tr>
      <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.auftraggeb_de')}</td>       <td>${c['attributes'][auftraggeb] or '-'}</td></tr>
      <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.rechtein')}</td>       <td>${c['attributes'][rechtein] or '-'}</td></tr>
      <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.inhalt')}</td>       <td>${c['attributes'][inhalt] or '-'}</td></tr>
-     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.download')}</td>       <td><a href="${c['attributes']['download'] or '-'}" target="_blank">Link</a></td></tr>
+     % if download is not None:
+     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.download')}</td>       <td><a href="${download}" target="_blank">Link</a></td></tr>
+     % endif
      <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.auskunft')}</td>       <td>${c['attributes'][auskunft] or '-'}</td></tr>
 
 

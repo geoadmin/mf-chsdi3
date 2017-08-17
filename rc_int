@@ -4,10 +4,9 @@ export API_URL=//mf-chsdi3.int.bgdi.ch
 export SHOP_URL=//shop-bgdi.int.bgdi.ch
 export DBHOST=pg-sandbox.bgdi.ch
 export DBPORT=5432
-#TODO revert when merging
-export DBSTAGING=dev
+export DBSTAGING=int
 export DEPLOY_TARGET=int
-export GEODATA_STAGING=test
+export GEODATA_STAGING=integration
 export GEOADMIN_FILE_STORAGE_BUCKET=public.int.bgdi.ch
 export GEOADMINHOST=mf-geoadmin3.int.bgdi.ch
 export HOST=mf-chsdi3.int.bgdi.ch
