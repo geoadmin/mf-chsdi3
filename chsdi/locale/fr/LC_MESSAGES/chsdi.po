@@ -4040,30 +4040,6 @@ msgstr "Année de référence"
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_remark"
 msgstr "Remarques"
 
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_from"
-msgstr "Km début"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.kml_number"
-msgstr "No. ligne de kilom."
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_to"
-msgstr "Km fin"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_date"
-msgstr "Date de la décision"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_night"
-msgstr "Emission Lr,e fixée nuit [dB(A)]"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_remark"
-msgstr "Dénom. de la décision"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_year"
-msgstr "Année de référence"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_remark"
-msgstr "Remarques"
-
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag"
 msgstr "Bruit ferrov., émissions fixées J"
 
