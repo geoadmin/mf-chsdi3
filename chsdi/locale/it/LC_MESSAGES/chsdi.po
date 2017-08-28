@@ -4040,30 +4040,6 @@ msgstr "Anno di riferimento"
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_remark"
 msgstr "Osservazioni"
 
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_from"
-msgstr "Km inizio"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.kml_number"
-msgstr "No. di linea km"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_to"
-msgstr "Km fine"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_date"
-msgstr "Dato della decisione"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_night"
-msgstr "Emissione Lr,e stab. notte [dB(A)]"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_remark"
-msgstr "Denom. della decisione"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_max_year"
-msgstr "Anno di riferimento"
-
-msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_remark"
-msgstr "Osservazioni"
-
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag"
 msgstr "Rumore dei treni, emissioni D stab."
 
