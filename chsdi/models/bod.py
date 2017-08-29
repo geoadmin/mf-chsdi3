@@ -212,7 +212,8 @@ class GetCap(object):
     idGeoCat = Column('idgeocat', Unicode)
 
     def getClosestZoom(self, epsg, resolution):
-        tilegrid = getTileGrid(int(epsg))()
+        epsg = int(epsg) if int(epsg) != 4258 else 4326
+        tilegrid = getTileGrid(epsg)()
         return tilegrid.getClosestZoom(float(resolution))
 
 
