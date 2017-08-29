@@ -211,9 +211,9 @@ class GetCap(object):
     chargeable = Column('chargeable', Boolean)
     idGeoCat = Column('idgeocat', Unicode)
 
-    def getZoom(self, epsg, resolution):
+    def getClosestZoom(self, epsg, resolution):
         tilegrid = getTileGrid(int(epsg))()
-        return tilegrid.getZoom(resolution)
+        return tilegrid.getClosestZoom(float(resolution))
 
 
 class GetCapFr(Base, GetCap):
