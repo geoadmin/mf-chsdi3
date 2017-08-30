@@ -2218,7 +2218,6 @@ register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointStruct)
 register('ch.swisstopo.geologie-geologischer_atlas', Ga25PolygonAux1)
 register('ch.swisstopo.geologie-geologischer_atlas', Ga25PolygonAux2)
 register('ch.swisstopo.geologie-geologischer_atlas', Ga25PolygonMain)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25GridShop)
 register_perimeter('ch.swisstopo.geologie-geologischer_atlas', Ga25GridShop)
 
 
