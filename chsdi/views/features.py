@@ -360,6 +360,8 @@ def _get_feature_by_id(featureId, params, model):
         return query.one()
     except (NoResultFound, DataError):
         return None
+    except InternalError:
+        raise exc.HTTPBadRequest('Invalid format for feature id %s' % featureId)
     except MultipleResultsFound:
         raise exc.HTTPInternalServerError(
             'Multiple features found for the same id %s' % featureId)
