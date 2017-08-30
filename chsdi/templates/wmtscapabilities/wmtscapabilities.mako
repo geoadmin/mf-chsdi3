@@ -93,7 +93,11 @@ if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
                 % endfor
             </Dimension>
             <TileMatrixSetLink>
-              <TileMatrixSet>${epsg}_${str(layer.getClosestZoom(epsg, layer.resolution_max))}</TileMatrixSet>
+              % if str(epsg) in ('21781', '2056'):
+                <TileMatrixSet>${epsg}_${str(layer.getClosestZoom(epsg, layer.resolution_max))}</TileMatrixSet>
+              % else:
+                 <TileMatrixSet>${epsg}</TileMatrixSet>
+              % endif
             </TileMatrixSetLink>
             ## Zeitreihen has two formats available 'png' (desktop GIS) and (pngjpeg) web gis
             % if layer.id == 'ch.swisstopo.zeitreihen' and epsg == '21781':
