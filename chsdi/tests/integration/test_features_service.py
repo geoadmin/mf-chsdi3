@@ -327,6 +327,11 @@ class TestFeaturesView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', params={'sr': '111'}, status=400)
         resp.mustcontain('Unsupported spatial reference')
 
+    def test_htmlpopup_invalid_id_format(self):
+        bodId = 'ch.swisstopo.geologie-geologischer_atlas'
+        featureId = 'GA25-PK-140'
+        self.testapp.get('/rest/services/ech/MapServer/%s/%s/htmlPopup' % (bodId, featureId), status=400)
+
     def test_htmlpopup_valid(self):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureId = self.getRandomFeatureId(bodId)
