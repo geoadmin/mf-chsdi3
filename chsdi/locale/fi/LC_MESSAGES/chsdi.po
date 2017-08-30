@@ -6545,6 +6545,9 @@ msgstr "Mosaic Landsat 25"
 msgid "ch.swisstopo.images-spot-5.metadata"
 msgstr "Divisiun Spot Mosaic Raster"
 
+msgid "ch.swisstopo.images-spotimage"
+msgstr "ch.swisstopo.images-spotimage"
+
 msgid "ch.swisstopo.images-swissimage"
 msgstr "Fotografia or da l'aria"
 

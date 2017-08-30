@@ -6545,6 +6545,9 @@ msgstr "Landsat Mosaique 25"
 msgid "ch.swisstopo.images-spot-5.metadata"
 msgstr "Découpage Spot Mosaic Raster"
 
+msgid "ch.swisstopo.images-spotimage"
+msgstr "ch.swisstopo.images-spotimage"
+
 msgid "ch.swisstopo.images-swissimage"
 msgstr "SWISSIMAGE"
 
