@@ -9,10 +9,6 @@
   tmsDefs = pageargs['tilematrixsetDefs']
   epsg = tilematrixset
   TileMatrixSet_epsg = "TileMatrixSet_%s.mako" % epsg
-  def validate_tilematrixset(id):
-      if int(id) in range(17, 29):
-          return id
-      return '26'
   def pad(num):
       return str(num).zfill(2)
 %>
@@ -97,13 +93,7 @@ if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
                 % endfor
             </Dimension>
             <TileMatrixSetLink>
-                % if epsg == '21781':
-                    <TileMatrixSet>${str(layer.tile_matrix_set_id).split(',')[0]}_${str(layer.zoomlevel_max)|validate_tilematrixset}</TileMatrixSet>
-                % elif epsg == '2056':
-                    <TileMatrixSet>${epsg}_${str(layer.zoomlevel_max)}</TileMatrixSet>
-                % else:
-                    <TileMatrixSet>${epsg}</TileMatrixSet>
-                % endif
+              <TileMatrixSet>${epsg}_${str(layer.getClosestZoom(epsg, layer.resolution_max))}</TileMatrixSet>
             </TileMatrixSetLink>
             ## Zeitreihen has two formats available 'png' (desktop GIS) and (pngjpeg) web gis
             % if layer.id == 'ch.swisstopo.zeitreihen' and epsg == '21781':

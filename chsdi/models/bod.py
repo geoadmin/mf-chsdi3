@@ -190,7 +190,6 @@ class GetCap(object):
     __dbname__ = 'bod'
     id = Column('fk_dataset_id', Unicode, primary_key=True)
     arr_all_formats = Column('format', Unicode)
-    tile_matrix_set_id = Column('tile_matrix_set_id', Unicode)
     timestamp = Column('timestamp', Unicode)
     sswmts = Column('sswmts', Integer)
     bod_layer_id = Column('bod_layer_id', Unicode)
@@ -206,11 +205,16 @@ class GetCap(object):
     datenherr = Column('datenherr', Unicode)
     wms_kontakt_abkuerzung = Column('wms_kontakt_abkuerzung', Unicode)
     wms_kontakt_name = Column('wms_kontakt_name', Unicode)
-    zoomlevel_min = Column('zoomlevel_min', Integer)
-    zoomlevel_max = Column('zoomlevel_max', Integer)
+    resolution_min = Column('resolution_min', Integer)
+    resolution_max = Column('resolution_max', Integer)
     maps = Column('topics', Unicode)  # the topics
     chargeable = Column('chargeable', Boolean)
     idGeoCat = Column('idgeocat', Unicode)
+
+    def getClosestZoom(self, epsg, resolution):
+        epsg = int(epsg) if int(epsg) != 4258 else 4326
+        tilegrid = getTileGrid(epsg)()
+        return tilegrid.getClosestZoom(float(resolution))
 
 
 class GetCapFr(Base, GetCap):
