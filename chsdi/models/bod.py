@@ -50,10 +50,6 @@ class Bod(object):
         return meta
 
 
-def get_default_tilematrixset_id(srid):
-    return '%s_26' % srid
-
-
 class LayersConfig(Base):
 
     __tablename__ = 'view_layers_js'
@@ -75,7 +71,7 @@ class LayersConfig(Base):
     serverLayerName = Column('server_layername', Unicode)
     singleTile = Column('singletile', Boolean)
     subLayersIds = Column('sublayersids', postgresql.ARRAY(Unicode))
-    matrixSet = Column('tilematrixsetid', Unicode)
+    tilematrix_resolution_max = Column('tilematrix_resolution_max', postgresql.DOUBLE_PRECISION)
     timeEnabled = Column('timeenabled', Boolean)
     timestamps = Column('timestamps', postgresql.ARRAY(Unicode))
     timeBehaviour = Column('time_behaviour', Unicode)
@@ -99,7 +95,7 @@ class LayersConfig(Base):
         translate = params.translate
         settings = params.request.registry.settings
         wmsHost = settings['wmshost']
-        defaultMatrixSet = get_default_tilematrixset_id(params.srid)
+        defaultResolution = 0.5
         for k in self.__dict__.keys():
             val = self.__dict__[k]
             if not k.startswith("_") and not k.startswith('geojsonUrl') and \
@@ -110,8 +106,8 @@ class LayersConfig(Base):
                     config['label'] = translate(val)
                 elif k == 'attribution':
                     config[k] = translate(val)
-                elif k == 'matrixSet':
-                    if val != defaultMatrixSet and \
+                elif k == 'tilematrix_resolution_max':
+                    if val != defaultResolution and \
                             self.__dict__['srid'] != u'4326':
                         config['resolutions'] = self._getResolutionsFromMatrixSet(
                             val, params.srid)
@@ -155,10 +151,10 @@ class LayersConfig(Base):
     def _getGeoJsonUrl(self, lang):
         return self.__dict__['geojsonUrl%s' % lang]
 
-    def _getResolutionsFromMatrixSet(self, matrixSet, srid):
+    def _getResolutionsFromMatrixSet(self, Resolution, srid):
         gagrid = getTileGrid(srid)()
-        matrixSet = int(matrixSet.split('_')[1])
-        return gagrid.RESOLUTIONS[0:matrixSet + 1]
+        zoomlevel = gagrid.getClosestZoom(Resolution)
+        return gagrid.RESOLUTIONS[0:zoomlevel + 1]
 
 
 class BodLayerDe(Base, Bod):
