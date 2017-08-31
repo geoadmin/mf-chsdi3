@@ -8,15 +8,24 @@ from pyramid.request import Request
 
 
 available_versions = ['3.6.0', '3.18.2']
+available_sr = ['2056', '21781']
 
 
 @view_config(route_name='ga_api', renderer='json')
 def loadjs(request):
+    sr_switch = ''
     mode = request.params.get('mode')
     ignore_polyfill = request.params.get('ignore_polyfill')
     # Determined automatically in subscriber
     lang = request.lang
     geoadmin_file_storage_bucket = 'public.geo.admin.ch'
+    # Get requested sr
+    sr_str = request.params.get('sr', available_sr[1])
+    if sr_str not in available_sr:
+        raise HTTPNotFound(
+            'Version %s you request is not available, available sr are %s.' % (sr_str, ', '.join(available_sr)))
+    elif sr_str == '2056':
+        sr_switch = 'lv95/'
 
     # If version not provided fallback to the first entry
     version_str = request.params.get('version', available_versions[0])
@@ -33,13 +42,13 @@ def loadjs(request):
     s3_resources_path = 'resources/api/%s' % version_str
     mode_str = '-debug' if mode is not None else ''
 
-    def get_resource_url(filename, extension, mode_str=''):
-        return 'https://%s/%s/%s%s.%s' % (
-            geoadmin_file_storage_bucket, s3_resources_path, filename, mode_str, extension)
+    def get_resource_url(filename, extension, sr_switch='', mode_str=''):
+        return 'https://%s/%s/%s%s%s.%s' % (
+            geoadmin_file_storage_bucket, s3_resources_path, sr_switch, filename, mode_str, extension)
 
     ol_css = get_resource_url('ol', 'css')
     ga_css = get_resource_url('ga', 'css')
-    ga_js = get_resource_url('ga', 'js', mode_str)
+    ga_js = get_resource_url('ga', 'js', sr_switch, mode_str)
     epsg_21781_js = get_resource_url('EPSG21781', 'js')
     epsg_2056_js = get_resource_url('EPSG2056', 'js')
 
