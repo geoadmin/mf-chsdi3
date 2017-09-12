@@ -81,7 +81,9 @@ ${partials.table_body_cadastral(c, lang, fallbackLang, clickCoord)}
     download_url = context.get('request').params.get('download_url')
     pdf = False
     try:
-        r = requests.get(download_url)
+        # For some reason, the new SSL certificate can't be verified. So we do
+        # without verification
+        r = requests.get(download_url, verify = False)
         download_url = h.make_agnostic(r.text.strip())
         if r.status_code == 200:
             pdf = True
