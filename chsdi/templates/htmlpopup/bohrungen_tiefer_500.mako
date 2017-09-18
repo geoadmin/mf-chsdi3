@@ -13,7 +13,11 @@
      <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.auftraggeb_de')}</td>       <td>${c['attributes'][auftraggeb] or '-'}</td></tr>
      <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.rechtein')}</td>       <td>${c['attributes'][rechtein] or '-'}</td></tr>
      <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.inhalt')}</td>       <td>${c['attributes'][inhalt] or '-'}</td></tr>
-     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.download')}</td>       <td>${<a href="${download}" target="_blank">Link</a> or '-'}</td></tr>
+     % if download != '-':
+     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.download')}</td>       <td><a href="${download}" target="_blank">Link</a></td></tr>
+     % else:
+     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.download')}</td>       <td>-</td></tr>
+     % endif
      <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.auskunft')}</td>       <td>${c['attributes'][auskunft] or '-'}</td></tr>
 
 
@@ -37,12 +41,16 @@
 %>
 
 <table class="table-with-border bohrungen_tiefer_500-extended">
-     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.name')}</td>       <td>${c['attributes']['name'] or '-'}</td></tr>
-     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.auftraggeb_de')}</td>       <td>${c['attributes'][auftraggeb] or '-'}</td></tr>
-     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.rechtein')}</td>       <td>${c['attributes'][rechtein] or '-'}</td></tr>
-     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.inhalt')}</td>       <td>${c['attributes'][inhalt] or '-'}</td></tr>
-     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.download')}</td>       <td>${<a href="${download}" target="_blank">Link</a> or '-'}</td></tr>
-     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.auskunft')}</td>       <td>${c['attributes'][auskunft] or '-'}</td></tr>
+     <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.name')}</th>       <td>${c['attributes']['name'] or '-'}</td></tr>
+     <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.auftraggeb_de')}</th>       <td>${c['attributes'][auftraggeb] or '-'}</td></tr>
+     <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.rechtein')}</th>       <td>${c['attributes'][rechtein] or '-'}</td></tr>
+     <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.inhalt')}</th>       <td>${c['attributes'][inhalt] or '-'}</td></tr>
+      % if download != '-':
+     <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.download')}</th>       <td><a href="${download}" target="_blank">Link</a></td></tr>
+     % else:
+     <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.download')}</th>       <td>-</td></tr>
+     % endif
+     <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.auskunft')}</th>       <td>${c['attributes'][auskunft] or '-'}</td></tr>
      <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.tiefe_md')}</th><td>${c['attributes']['tiefe_md'] or '-'}</td></tr>
      <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.bohrzweck')}</th><td>${c['attributes'][bohrzweck] or '-'}</td></tr>
      <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.status')}</th><td>${c['attributes'][status] or '-'}</td></tr>
