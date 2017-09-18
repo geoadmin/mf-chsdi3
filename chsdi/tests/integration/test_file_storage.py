@@ -6,30 +6,89 @@ from chsdi.tests.integration import TestsBase
 
 WRONG_CONTENT_TYPE = 'nasty type'
 
-
 VALID_KML = '''<?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Placemark>
     <name>Simple placemark</name>
-    <description>Attached to the ground. Intelligently places itself
-       at the height of the underlying terrain.</description>
+    <description>Attached to the ground. 
+       Intelligently places itself
+       at the height of the underlying terrain. 
+    </description>
+    <Point>
+      <coordinates>7.0,46.0,0</coordinates>
+    </Point>
+  </Placemark>
+</kml>''' # noqa
+
+URLENCODED_KML = '%3Ckml+xmlns=%22http%3A%2F%2Fwww.opengis.net%2Fkml%2F2.2%22+xmlns%3Axsi%3D%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema-instance%22+xsi%3AschemaLocation%3D%22http%3A%2F%2Fwww.opengis.net%2Fkml%2F2.2+https%3A%2F%2Fdevelopers.google.com%2Fkml%2Fschema%2Fkml22gx.xsd%22%3E%3CDocument%3E%3Cname%3EDrawing%3C%2Fname%3E%3CPlacemark%3E%3CStyle%3E%3CIconStyle%3E%3Cscale%3E0.25%3C%2Fscale%3E%3CIcon%3E%3Chref%3Ehttps%3A%2F%2Fmf-geoadmin3.dev.bgdi.ch%2Fltjeg%2F1432804593%2Fimg%2Fmaki%2Fcircle-24%402x.png%3C%2Fhref%3E%3Cgx%3Aw+xmlns%3Agx%3D%22http%3A%2F%2Fwww.google.com%2Fkml%2Fext%2F2.2%22%3E48%3C%2Fgx%3Aw%3E%3Cgx%3Ah+xmlns%3Agx%3D%22http%3A%2F%2Fwww.google.com%2Fkml%2Fext%2F2.2%22%3E48%3C%2Fgx%3Ah%3E%3C%2FIcon%3E%3ChotSpot+x%3D%2224%22+y%3D%2224%22+xunits%3D%22pixels%22+yunits%3D%22pixels%22+%2F%3E%3C%2FIconStyle%3E%3C%2FStyle%3E%3CPoint%3E%3Ccoordinates%3E6.724650291365927%2C46.804920188214076%3C%2Fcoordinates%3E%3C%2FPoint%3E%3C%2FPlacemark%3E%3CPlacemark%3E%3CStyle%3E%3CIconStyle%3E%3Cscale%3E0.25%3C%2Fscale%3E%3CIcon%3E%3Chref%3Ehttps%3A%2F%2Fmf-geoadmin3.dev.bgdi.ch%2Fltjeg%2F1432804593%2Fimg%2Fmaki%2Fcircle-24%402x.png%3C%2Fhref%3E%3Cgx%3Aw+xmlns%3Agx%3D%22http%3A%2F%2Fwww.google.com%2Fkml%2Fext%2F2.2%22%3E48%3C%2Fgx%3Aw%3E%3Cgx%3Ah+xmlns%3Agx%3D%22http%3A%2F%2Fwww.google.com%2Fkml%2Fext%2F2.2%22%3E48%3C%2Fgx%3Ah%3E%3C%2FIcon%3E%3ChotSpot+x%3D%2224%22+y%3D%2224%22+xunits%3D%22pixels%22+yunits%3D%22pixels%22+%2F%3E%3C%2FIconStyle%3E%3C%2FStyle%3E%3CPoint%3E%3Ccoordinates%3E6.728334379750007%2C46.52607115587267%3C%2Fcoordinates%3E%3C%2FPoint%3E%3C%2FPlacemark%3E%3C%2FDocument%3E%3C%2Fkml%3E'
+
+NOT_WELL_FORMED_KML = '''<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<name>Simple placemark</name>
+<description>Attached to the ground. Intelligently places itself
+at the height of the underlying terrain.</description>
+<coordinates>-122.0822035425683,37.42228990140251,0</coordinates>
+</Point>
+<Placemark>
+</kml>'''
+
+INVALID_KML1_once = '''<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Placemark>
+    <name>Simple placemark</name>
+    <description>Attached to the ground. 
+       Intelligently places itself
+       at the height of the underlying terrain. onpointerdown="alert(document.cookie);"
+    </description>
+    <Point>
+      <coordinates>7.0,46.0,0</coordinates>
+    </Point>
+  </Placemark>
+</kml>''' # noqa
+
+INVALID_KML2_once = '''<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Placemark>
+    <name>Simple placemark</name>
+    <description>Attached to the ground. 
+       Intelligently places itself
+       at the height of the underlying terrain.&lt;scriptsrc="https://www.htbridge.com/1.js"&gt;&lt;/script&gt;
+    </description>
+    <Point>
+      <coordinates>7.0,46.0,0</coordinates>
+    </Point>
+  </Placemark>
+</kml>''' # noqa
+
+INVALID_KML1 = '''<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Placemark>
+    <name>Simple placemark</name>
+    <description>Attached to the ground.  onpointerdown="alert(document.cookie);"
+       Intelligently places itself
+       at the height of the underlying terrain.  onpointerdown="alert(document.cookie);"
+    </description>
     <Point>
       <coordinates>7.0,46.0,0</coordinates>
     </Point>
   </Placemark>
 </kml>'''
 
-URLENCODED_KML = '%3Ckml+xmlns=%22http%3A%2F%2Fwww.opengis.net%2Fkml%2F2.2%22+xmlns%3Axsi%3D%22http%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema-instance%22+xsi%3AschemaLocation%3D%22http%3A%2F%2Fwww.opengis.net%2Fkml%2F2.2+https%3A%2F%2Fdevelopers.google.com%2Fkml%2Fschema%2Fkml22gx.xsd%22%3E%3CDocument%3E%3Cname%3EDrawing%3C%2Fname%3E%3CPlacemark%3E%3CStyle%3E%3CIconStyle%3E%3Cscale%3E0.25%3C%2Fscale%3E%3CIcon%3E%3Chref%3Ehttps%3A%2F%2Fmf-geoadmin3.dev.bgdi.ch%2Fltjeg%2F1432804593%2Fimg%2Fmaki%2Fcircle-24%402x.png%3C%2Fhref%3E%3Cgx%3Aw+xmlns%3Agx%3D%22http%3A%2F%2Fwww.google.com%2Fkml%2Fext%2F2.2%22%3E48%3C%2Fgx%3Aw%3E%3Cgx%3Ah+xmlns%3Agx%3D%22http%3A%2F%2Fwww.google.com%2Fkml%2Fext%2F2.2%22%3E48%3C%2Fgx%3Ah%3E%3C%2FIcon%3E%3ChotSpot+x%3D%2224%22+y%3D%2224%22+xunits%3D%22pixels%22+yunits%3D%22pixels%22+%2F%3E%3C%2FIconStyle%3E%3C%2FStyle%3E%3CPoint%3E%3Ccoordinates%3E6.724650291365927%2C46.804920188214076%3C%2Fcoordinates%3E%3C%2FPoint%3E%3C%2FPlacemark%3E%3CPlacemark%3E%3CStyle%3E%3CIconStyle%3E%3Cscale%3E0.25%3C%2Fscale%3E%3CIcon%3E%3Chref%3Ehttps%3A%2F%2Fmf-geoadmin3.dev.bgdi.ch%2Fltjeg%2F1432804593%2Fimg%2Fmaki%2Fcircle-24%402x.png%3C%2Fhref%3E%3Cgx%3Aw+xmlns%3Agx%3D%22http%3A%2F%2Fwww.google.com%2Fkml%2Fext%2F2.2%22%3E48%3C%2Fgx%3Aw%3E%3Cgx%3Ah+xmlns%3Agx%3D%22http%3A%2F%2Fwww.google.com%2Fkml%2Fext%2F2.2%22%3E48%3C%2Fgx%3Ah%3E%3C%2FIcon%3E%3ChotSpot+x%3D%2224%22+y%3D%2224%22+xunits%3D%22pixels%22+yunits%3D%22pixels%22+%2F%3E%3C%2FIconStyle%3E%3C%2FStyle%3E%3CPoint%3E%3Ccoordinates%3E6.728334379750007%2C46.52607115587267%3C%2Fcoordinates%3E%3C%2FPoint%3E%3C%2FPlacemark%3E%3C%2FDocument%3E%3C%2Fkml%3E'
-
-NOT_WELL_FORMED_KML = '''<?xml version="1.0" encoding="UTF-8"?>
+INVALID_KML2 = '''<?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
-    <name>Simple placemark</name
-    <description>Attached to the ground. Intelligently places itself
-       at the height of the underlying terrain.</description>
-      <coordinates>-122.0822035425683,37.42228990140251,0</coordinates>
-    </Point>
   <Placemark>
-</kml>'''
+    <name>Simple placemark</name>
+    <description>Attached to the ground. 
+       Intelligently places itself
+       at the height of the underlying terrain.&lt;scriptsrc="https://www.htbridge.com/1.js"&gt;&lt;/script&gt;
+blabla random text blabla
+&lt;scriptsrc="https://www.htbridge.com/1.js"&gt;&lt;/script&gt;
+    </description>
+    <Point>
+      <coordinates>7.0,46.0,0</coordinates>
+    </Point>
+  </Placemark>
+</kml>''' # noqa
 
 
 class TestFileView(TestsBase):
@@ -92,6 +151,52 @@ class TestFileView(TestsBase):
             data = f.read()
         resp = self.testapp.post('/files', data, headers=self.headers, status=413)
         self.assertIn('File size exceed', resp.body)
+
+    # Test if there are matches in KML with Regex:
+    # (\s+on\w*=(\"[^\"]+\"|\'[^\']+\'))
+    def test_kml_check_regex1(self):
+        # TEST: REGEX OCCURS ONCE
+        # First request, to get ids
+        resp = self.testapp.post('/files', INVALID_KML1_once, headers=self.headers, status=200)
+        file_id = resp.json['fileId']
+
+        # check kml based on invalid regex 1
+        resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
+        orig_data = resp.body
+        self.assertEqual(orig_data, VALID_KML)
+
+        # TEST: REGEX OCCURS SEVERAL TIMES
+        # First request, to get ids
+        resp = self.testapp.post('/files', INVALID_KML1, headers=self.headers, status=200)
+        file_id = resp.json['fileId']
+
+        # check kml based on invalid regex 1
+        resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
+        orig_data = resp.body
+        self.assertEqual(orig_data, VALID_KML)
+
+    # Test if matches in KML with Regex
+    # (<|&lt;)script\s*\S*[^(>|&gt;)]*?(>|&gt;)(.|\s)*?(<|&lt;)\/script(>|&gt;)
+    def test_kml_check_regex2(self):
+        # TEST: REGEX OCCURS ONCE
+        # First request, to get ids
+        resp = self.testapp.post('/files', INVALID_KML2_once, headers=self.headers, status=200)
+        file_id = resp.json['fileId']
+
+        # check kml based on invalid regex 1
+        resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
+        orig_data = resp.body
+        self.assertEqual(orig_data, VALID_KML)
+
+        # TEST: REGEX OCCURS SEVERAL TIMES
+        # First request, to get ids
+        resp = self.testapp.post('/files', INVALID_KML2, headers=self.headers, status=200)
+        file_id = resp.json['fileId']
+
+        # check kml based on invalid regex 1
+        resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
+        orig_data = resp.body
+        self.assertEqual(orig_data, VALID_KML)
 
     def test_update_copy_kml(self):
         # First request, to get ids

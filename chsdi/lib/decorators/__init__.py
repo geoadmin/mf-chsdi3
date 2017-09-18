@@ -6,6 +6,7 @@ import xml.parsers.expat
 import pyramid.httpexceptions as exc
 
 import urllib
+import re
 
 
 EXPECTED_CONTENT_TYPE = 'application/vnd.google-earth.kml+xml'
@@ -49,6 +50,10 @@ def validate_kml_input():
             data = urllib.unquote_plus(request.body)
             if len(data) > MAX_FILE_SIZE:
                 raise exc.HTTPRequestEntityTooLarge('File size exceed %s bytes' % MAX_FILE_SIZE)
+
+            # Prevent erroneous kml
+            data = re.sub('(\s+on\w*=(\"[^\"]+\"|\'[^\']+\'))', ' ', data, flags = re.I | re.M)
+            data = re.sub('(<|&lt;)script\s*\S*[^(>|&gt;)]*?(>|&gt;)(.|\s)*?(<|&lt;)\/script(>|&gt;)', ' ', data, flags = re.I | re.M)
             try:
                 p = xml.parsers.expat.ParserCreate()
                 p.Parse(data)
