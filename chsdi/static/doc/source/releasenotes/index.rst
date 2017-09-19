@@ -14,6 +14,37 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20170920:
+   *******
+
+Release 20170920 - Wednesday, September 20th 2017
+-------------------------------------------------
+
+API & applications
+******************
+
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+-  Removed layer 2015 railway noise emissions plan, night (ch.bav.laerm-emissionsplan_eisenbahn_nacht)
+-  Removed layer 2015 railway noise emissions plan, day (ch.bav.laerm-emissionsplan_eisenbahn_tag)
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170830...r_170920>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170830...r_170920>`__
+
+
+Geodata
+*******
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division GeoCover <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 .. _releasenotes_20170830:
    *******
