@@ -2122,6 +2122,12 @@ class Ga25Atlas:
     the_geom = Column(Geometry2D)
 
 
+class Ga25AtlasGrid(Base, Ga25Atlas, ShopProductGroupClass, Vector):
+    __tablename__ = 'view_ga25_grid'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    __minscale__ = 70000
+
+
 class Ga25Features(Ga25Atlas):
     __label__ = 'description'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -2203,12 +2209,6 @@ class Ga25PolygonMain(Base, Ga25Features, Vector):
     tecto = Column('tecto', Unicode)
     url_legend = Column('url_legende', Unicode)
 
-
-class Ga25GridShop(Base, Ga25Atlas, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_ga25_grid_shop'
-    __minscale__ = 70000
-
-
 register('ch.swisstopo.geologie-geologischer_atlas', Ga25LineAux)
 register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointHydro)
 register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointGeol)
@@ -2218,7 +2218,7 @@ register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointStruct)
 register('ch.swisstopo.geologie-geologischer_atlas', Ga25PolygonAux1)
 register('ch.swisstopo.geologie-geologischer_atlas', Ga25PolygonAux2)
 register('ch.swisstopo.geologie-geologischer_atlas', Ga25PolygonMain)
-register_perimeter('ch.swisstopo.geologie-geologischer_atlas', Ga25GridShop)
+register('ch.swisstopo.geologie-geologischer_atlas', Ga25AtlasGrid)
 
 
 class Swissnames3d:
