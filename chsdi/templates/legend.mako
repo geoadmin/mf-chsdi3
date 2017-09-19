@@ -31,6 +31,10 @@
                  'ch.vbs.grunddispositiv-zeus',
                  'ch.swisstopo-karto.skitouren',
                  'ch.swisstopo-karto.schneeschuhrouten',
+                 'ch.swisstopo.swisstlm3d-strassen',
+                 'ch.swisstopo.swisstlm3d-uebrigerverkehr',
+                 'ch.swisstopo.swisstlm3d-gewaessernetz',
+                 'ch.swisstopo.swisstlm3d-eisenbahnnetz',
                  'ch.vbs.milairspacechart')
   if c['layerBodId'] in pdf_legends:
       legend_url_pdf = host + '/static/images/legends/' + c['layerBodId'] + '_' + lang + '_big.pdf'

@@ -1562,12 +1562,12 @@ register('ch.swisstopo.swisstlm3d-uebrigerverkehr', Swisstlm3dUebrigerverkehr)
 
 
 class Swisstlm3dGewaessernetz(Base, Vector):
-    __tablename__ = 'fliessgewaesser'
+    __tablename__ = 'gewaessernetz_tooltip'
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __template__ = 'templates/htmlpopup/swisstlm3d-fliessgewaesser.mako'
     __bodId__ = 'ch.swisstopo.swisstlm3d-gewaessernetz'
     __label__ = 'objektart'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('id', Integer, primary_key=True)
     objektart = Column('objektart', Integer)
     name = Column('name', Unicode)
     gwl_nr = Column('gwl_nr', Unicode)
