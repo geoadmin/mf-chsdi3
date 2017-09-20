@@ -4130,12 +4130,6 @@ msgstr "Anz. Güterzüge Tag"
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Emissions Plan 2015"
 
-msgid "ch.bav.laerm-emissionsplan_eisenbahn_nacht"
-msgstr "2015 rail noise emiss. plan, night"
-
-msgid "ch.bav.laerm-emissionsplan_eisenbahn_tag"
-msgstr "2015 rail noise emissions plan, day"
-
 msgid "ch.bav.projektierungszonen-eisenbahnanlagen.oereb"
 msgstr "Reserved zones railways PLR"
 
@@ -4302,7 +4296,7 @@ msgid "ch.bav.schienennetz"
 msgstr "Railway network"
 
 msgid "ch.bav.schienennetz.abreviation"
-msgstr "BP-Abk."
+msgstr "OP abbrev."
 
 msgid "ch.bav.schienennetz.abreviationet"
 msgstr "IM abbrev."
@@ -8002,9 +7996,6 @@ msgstr "Journey through time - Maps"
 
 msgid "ch.tamedia"
 msgstr "tamedia"
-
-msgid "ch.tamedia.schweizerfamilie-feuerstellen"
-msgstr "Schweizer Familie Feuerstellen"
 
 msgid "ch.vbs"
 msgstr "DDPS"

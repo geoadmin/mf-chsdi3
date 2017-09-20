@@ -4130,12 +4130,6 @@ msgstr "No. treni di merce giorno"
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Piano delle emissioni 2015"
 
-msgid "ch.bav.laerm-emissionsplan_eisenbahn_nacht"
-msgstr "Piano emissioni foniche ferr 2015 N"
-
-msgid "ch.bav.laerm-emissionsplan_eisenbahn_tag"
-msgstr "Piano emissioni foniche ferr 2015 G"
-
 msgid "ch.bav.projektierungszonen-eisenbahnanlagen.oereb"
 msgstr "Zone di progettazione ferrovie RDPP"
 
@@ -4302,7 +4296,7 @@ msgid "ch.bav.schienennetz"
 msgstr "Rete ferroviaria"
 
 msgid "ch.bav.schienennetz.abreviation"
-msgstr "Abr. PE"
+msgstr "Abbrev. di PE"
 
 msgid "ch.bav.schienennetz.abreviationet"
 msgstr "Abbr. Di GI"
@@ -8002,9 +7996,6 @@ msgstr "Viaggio nel tempo - Carte"
 
 msgid "ch.tamedia"
 msgstr "tamedia"
-
-msgid "ch.tamedia.schweizerfamilie-feuerstellen"
-msgstr "ch.tamedia.schweizerfamilie-feuerstellen"
 
 msgid "ch.vbs"
 msgstr "DDPS"
