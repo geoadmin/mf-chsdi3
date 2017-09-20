@@ -4130,12 +4130,6 @@ msgstr "Anz. Güterzüge Tag"
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Plan d'emissiuns viafiers 2015"
 
-msgid "ch.bav.laerm-emissionsplan_eisenbahn_nacht"
-msgstr "Emissiuns canera da viafiers 2015 N"
-
-msgid "ch.bav.laerm-emissionsplan_eisenbahn_tag"
-msgstr "Emissiuns canera da viafiers 2015 D"
-
 msgid "ch.bav.projektierungszonen-eisenbahnanlagen.oereb"
 msgstr "Zonas projectaziun viafiers RPDP"
 
@@ -8002,9 +7996,6 @@ msgstr "Viadi en il temp – chartas"
 
 msgid "ch.tamedia"
 msgstr "tamedia"
-
-msgid "ch.tamedia.schweizerfamilie-feuerstellen"
-msgstr "Schweizer Familie Feuerstellen"
 
 msgid "ch.vbs"
 msgstr "VBS"

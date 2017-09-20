@@ -4130,12 +4130,6 @@ msgstr "No. de trains march. jour"
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Plan des émissions en 2015"
 
-msgid "ch.bav.laerm-emissionsplan_eisenbahn_nacht"
-msgstr "Rép. émissions sonores ferr. 2015 N"
-
-msgid "ch.bav.laerm-emissionsplan_eisenbahn_tag"
-msgstr "Rép. émissions sonores ferr. 2015 J"
-
 msgid "ch.bav.projektierungszonen-eisenbahnanlagen.oereb"
 msgstr "Zones réservées chemins de fer RDPPF"
 
@@ -8002,9 +7996,6 @@ msgstr "Voyage dans le temps - Cartes"
 
 msgid "ch.tamedia"
 msgstr "tamedia"
-
-msgid "ch.tamedia.schweizerfamilie-feuerstellen"
-msgstr "ch.tamedia.schweizerfamilie-feuerstellen"
 
 msgid "ch.vbs"
 msgstr "DDPS"
