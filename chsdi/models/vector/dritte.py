@@ -22,24 +22,6 @@ class MaechtigkeitLockergesteine(Base, Vector):
 register('ch.sgpk.maechtigkeit-lockergesteine', MaechtigkeitLockergesteine)
 
 
-class Feuerstellen(Base, Vector):
-    __tablename__ = 'feuerstellen'
-    __table_args__ = ({'schema': 'tamedia', 'autoload': False})
-    __template__ = 'templates/htmlpopup/swissmap_online_feuerstellen.mako'
-    __bodId__ = 'ch.tamedia.schweizerfamilie-feuerstellen'
-    __label__ = 'gemeinde'
-    id = Column('nr', Integer, primary_key=True)
-    gemeinde = Column('gemeinde', Unicode)
-    ort = Column('ort', Unicode)
-    kanton = Column('kanton', Unicode)
-    karte = Column('karte', Unicode)
-    url = Column('url', Unicode)
-    koordinate_lv03 = Column('koordinate_lv03', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.tamedia.schweizerfamilie-feuerstellen', Feuerstellen)
-
-
 class MobilityStandorte:
     __tablename__ = 'standorte_tooltip'
     __table_args__ = ({'schema': 'mobility', 'autoload': False, 'extend_existing': True})
