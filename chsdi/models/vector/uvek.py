@@ -1774,64 +1774,6 @@ class KbsZivilflugpl(Base, Vector):
 register('ch.bazl.kataster-belasteter-standorte-zivilflugplaetze', KbsZivilflugpl)
 
 
-class LaermEmissionsplanEisenbahnTag(Base, Vector):
-    __tablename__ = 'laerm_emissionsplan_eisenbahn_tag'
-    __table_args__ = ({'schema': 'bav', 'autoload': False})
-    __template__ = 'templates/htmlpopup/laerm_emissionsplan_eisenbahn_tag.mako'
-    __bodId__ = 'ch.bav.laerm-emissionsplan_eisenbahn_tag'
-    # Composite labels (bgdi_id::text ||' '||linienbez)
-    __label__ = 'linienbeze'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    lin_nr_dfa = Column('lin_nr_dfa', Numeric)
-    linienbeze = Column('linienbeze', Unicode)
-    von_abkz = Column('von_abkz', Unicode)
-    von_bpk_bp = Column('von_bpk_bp', Unicode)
-    bis_abkz = Column('bis_abkz', Unicode)
-    bis_bpk_bp = Column('bis_bpk_bp', Unicode)
-    von_m = Column('von_m', Numeric)
-    bis_m = Column('bis_m', Numeric)
-    lre_t = Column('lre_t', Numeric)
-    k1_t = Column('k1_t', Numeric)
-    fb1 = Column('fb1', Numeric)
-    grund1 = Column('grund1', Unicode)
-    fb2 = Column('fb2', Numeric)
-    grund2 = Column('grund2', Unicode)
-    typ_aender = Column('typ_aender', Unicode)
-    datum = Column('datum', Numeric)
-    the_geom = Column(Geometry2D)
-
-register('ch.bav.laerm-emissionsplan_eisenbahn_tag', LaermEmissionsplanEisenbahnTag)
-
-
-class LaermEmissionsplanEisenbahnNacht(Base, Vector):
-    __tablename__ = 'laerm_emissionsplan_eisenbahn_nacht'
-    __table_args__ = ({'schema': 'bav', 'autoload': False})
-    __template__ = 'templates/htmlpopup/laerm_emissionsplan_eisenbahn_nacht.mako'
-    __bodId__ = 'ch.bav.laerm-emissionsplan_eisenbahn_nacht'
-    # Composite labels (bgdi_id::text ||' '||linienbez)
-    __label__ = 'linienbeze'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    lin_nr_dfa = Column('lin_nr_dfa', Numeric)
-    linienbeze = Column('linienbeze', Unicode)
-    von_abkz = Column('von_abkz', Unicode)
-    von_bpk_bp = Column('von_bpk_bp', Unicode)
-    bis_abkz = Column('bis_abkz', Unicode)
-    bis_bpk_bp = Column('bis_bpk_bp', Unicode)
-    von_m = Column('von_m', Numeric)
-    bis_m = Column('bis_m', Numeric)
-    lre_n = Column('lre_n', Numeric)
-    k1_n = Column('k1_n', Numeric)
-    fb1 = Column('fb1', Numeric)
-    grund1 = Column('grund1', Unicode)
-    fb2 = Column('fb2', Numeric)
-    grund2 = Column('grund2', Unicode)
-    typ_aender = Column('typ_aender', Unicode)
-    datum = Column('datum', Numeric)
-    the_geom = Column(Geometry2D)
-
-register('ch.bav.laerm-emissionsplan_eisenbahn_nacht', LaermEmissionsplanEisenbahnNacht)
-
-
 class LaermBelastungEinsenbahnTatsaechlicheEmissionTag(Base, Vector):
     __tablename__ = 'laerm_eisenbahn_tatsaechliche_emissionen_tag'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
