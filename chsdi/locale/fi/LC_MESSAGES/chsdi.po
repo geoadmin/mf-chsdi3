@@ -7292,9 +7292,6 @@ msgstr "Cunfins naziunals"
 msgid "ch.swisstopo.swissboundaries3d-land-grenze"
 msgstr "Confins naziunals"
 
-msgid "ch.swisstopo.swissbuildings3d"
-msgstr "Edifizis simplifitgads en 3D"
-
 msgid "ch.swisstopo.swissbuildings3d_1.metadata"
 msgstr "Divisiun swissBUILDINGS3D 1.0 Vector"
 

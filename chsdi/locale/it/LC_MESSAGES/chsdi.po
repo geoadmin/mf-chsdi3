@@ -7292,9 +7292,6 @@ msgstr "Frontiere nazionali"
 msgid "ch.swisstopo.swissboundaries3d-land-grenze"
 msgstr "Frontiere nazionali"
 
-msgid "ch.swisstopo.swissbuildings3d"
-msgstr "Gli edifici semplificati in 3D"
-
 msgid "ch.swisstopo.swissbuildings3d_1.metadata"
 msgstr "Divisione swissBUILDINGS3D 1.0 Vector"
 
