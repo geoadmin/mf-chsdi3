@@ -886,8 +886,6 @@ These projections are:
 
 * Plate-Carrée WGS1984 (EPSG:4326)
     `http://wmts20.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml <https://wmts20.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml>`_
-* Plate-Carrée ETRS89 (EPSG:4258)
-    `http://wmts20.geo.admin.ch/EPSG/4258/1.0.0/WMTSCapabilities.xml <https://wmts20.geo.admin.ch/EPSG/4258/1.0.0/WMTSCapabilities.xml>`_
 * LV95/CH1903+ (EPSG:2056)
     `http://wmts20.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml <https://wmts20.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml>`_
 * WGS84/Pseudo-Mercator (EPSG:3857, as used in OSM, Bing, Google Map)
@@ -901,8 +899,6 @@ Note:
   using native tiles and which are using reporjected tiles.
 * The same access restrictions apply as above.
 * The same `timestamps` are available in all projection. New `timestamp` are added to the former ones.
-* Some older WMTS client do not support `EPSG:4258 <http://www.epsg-registry.org/export.htm?wkt=urn:ogc:def:crs:EPSG::4258>`_
-  and use mistakenly *EPSG:4852*.
 * Reprojected tiles are generated *on-the-fly* with `MapProxy <http://mapproxy.org>`_. If you plan to heavily use this service, please
   inform us in advance.
 * *MapProxy* uses the `Proj.4 <http://trac.osgeo.org/proj/>`_ library internaly to transform between datum, except for the reframe from

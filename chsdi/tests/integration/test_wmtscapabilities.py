@@ -2,7 +2,7 @@
 
 from chsdi.tests.integration import TestsBase
 
-EPSGS = [21781, 4326, 4258, 2056, 3857]
+EPSGS = [21781, 4326, 2056, 3857]
 
 
 class TestWmtsCapabilitiesView(TestsBase):
@@ -18,7 +18,7 @@ class TestWmtsCapabilitiesView(TestsBase):
 
     def test_wrong_epsg_wmtscapabilities(self):
         resp = self.testapp.get('/rest/services/bafu/1.0.0/WMTSCapabilities.xml?epsg=9999', status=400)
-        resp.mustcontain("EPSG:9999 not found. Must be one of 21781, 4326, 2056, 4258, 3857")
+        resp.mustcontain("EPSG:9999 not found. Must be one of 21781, 4326, 2056, 3857")
 
     def test_contains_correct_tilelink(self):
         resp = self.testapp.get('/rest/services/api/1.0.0/WMTSCapabilities.xml', status=200)
@@ -45,7 +45,7 @@ class TestWmtsCapabilitiesView(TestsBase):
             xml_schema_doc = etree.parse(StringIO(file_xml_schema.read()))
             xml_schema = etree.XMLSchema(xml_schema_doc)
             for lang in ['de', 'fr', 'it', 'en']:
-                for epsg in [4326, 4258, 2056, 3857, 21781]:
+                for epsg in [4326, 2056, 3857, 21781]:
                     resp = self.testapp.get(
                         '/rest/services/api/1.0.0/WMTSCapabilities.xml',
                         params={'lang': lang, 'epsg': epsg},
