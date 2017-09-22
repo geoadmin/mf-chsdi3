@@ -2450,16 +2450,6 @@ class SwissBuildings3d2Meta(Base, ShopStandardClass, Vector):
 register('ch.swisstopo.swissbuildings3d_2.metadata', SwissBuildings3d2Meta)
 
 
-class SwissBuildings3dPerimeter(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_perimeter_swissbuildings3d'
-    __table_args__ = ({'autoload': False})
-    __bodId__ = 'ch.swisstopo.swissbuildings3d'
-    __totalArea__ = 41455.0
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.swissbuildings3d', SwissBuildings3dPerimeter)
-
-
 class Lotabweichungen(Base, Vector):
     __tablename__ = 'lotabweichungen_nur_punkte'
     __table_args__ = ({'schema': 'geodaesie', 'autoload': False})

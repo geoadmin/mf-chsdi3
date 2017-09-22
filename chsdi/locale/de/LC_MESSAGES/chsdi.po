@@ -7292,9 +7292,6 @@ msgstr "Landesgrenzen"
 msgid "ch.swisstopo.swissboundaries3d-land-grenze"
 msgstr "Landesgrenze"
 
-msgid "ch.swisstopo.swissbuildings3d"
-msgstr "Vereinfachte 3D-Gebäude"
-
 msgid "ch.swisstopo.swissbuildings3d_1.metadata"
 msgstr "Einteilung swissBUILDINGS3D 1.0 Vector"
 
