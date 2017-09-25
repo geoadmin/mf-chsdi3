@@ -1584,11 +1584,11 @@ class Swisstlm3dStrassen(Base, Vector):
     __label__ = 'objektart'
     id = Column('bgdi_id', Integer, primary_key=True)
     objektart = Column('objektart', Integer)
-    belagsart_resolved = Column('belagsart_resolved', Unicode)
-    eigentuemer_resolved = Column('eigentuemer_resolved', Unicode)
-    verkehrsbedeutung_resolved = Column('verkehrsbedeutung_resolved', Unicode)
-    eigentuemer_resolved = Column('eigentuemer_resolved', Unicode)
-    verkehrsbeschraenkung_resolved = Column('verkehrsbeschraenkung_resolved', Unicode)
+    belagsart = Column('belagsart', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    verkehrsbedeutung = Column('verkehrsbedeutung', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    verkehrsbeschraenkung = Column('verkehrsbeschraenkung', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen)
