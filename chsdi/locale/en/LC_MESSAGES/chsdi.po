@@ -7356,22 +7356,22 @@ msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_999998"
 msgstr "k_W"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_-"
-msgstr "-"
+msgstr "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_-"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz.objektart"
 msgstr "Type"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_0"
-msgstr "Normalspur"
+msgstr "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_0"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_2"
-msgstr "Schmalspur"
+msgstr "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_2"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_4"
-msgstr "Schmalspur mit Normalspur"
+msgstr "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_4"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_5"
-msgstr "Kleinbahn"
+msgstr "ch.swisstopo.swisstlm3d-eisenbahnnetz_objektart_5"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_standseilbahn_"
 msgstr "-"
