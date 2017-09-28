@@ -1,77 +1,87 @@
 SHELL = /bin/bash
 # Variables
 APACHE_BASE_PATH ?=
-LAST_APACHE_BASE_PATH := $(shell if [ -f .venv/last-apache-base-path ]; then cat .venv/last-apache-base-path 2> /dev/null; else echo '-none-'; fi)
+LAST_APACHE_BASE_PATH := $(call lastvalue, apache-base-path)
 APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''; else echo /$(APACHE_BASE_PATH); fi)
-LAST_APACHE_ENTRY_PATH := $(shell if [ -f .venv/last-apache-entry-path ]; then cat .venv/last-apache-entry-path 2> /dev/null; else echo '-none-'; fi)
+LAST_APACHE_ENTRY_PATH := $(call lastvalue, apache-entry-path)
 DBHOST ?=
-LAST_DBHOST := $(shell if [ -f .venv/last-dbhost ]; then cat .venv/last-dbhost 2> /dev/null; else echo '-none-'; fi)
+LAST_DBHOST := $(call lastvalue, dbhost)
 DBPORT ?=
-LAST_DBPORT := $(shell if [ -f .venv/last-dbport ]; then cat .venv/last-dbport 2> /dev/null; else echo '-none-'; fi)
+LAST_DBPORT := $(call lastvalue, dbport)
 DBSTAGING ?=
-LAST_DBSTAGING := $(shell if [ -f .venv/last-dbstaging ]; then cat .venv/last-dbstaging 2> /dev/null; else echo '-none-'; fi)
+LAST_DBSTAGING := $(call lastvalue, dbstaging)
 GEODATA_STAGING ?=
-LAST_GEODATA_STAGING := $(shell if [ -f .venv/last-geodata-staging ]; then cat .venv/last-geodata-staging 2> /dev/null; else echo '-none-'; fi)
+LAST_GEODATA_STAGING := $(call lastvalue, geodata-staging)
 SPHINXHOST ?=
-LAST_SPHINXHOST := $(shell if [ -f .venv/last-sphinxhost ]; then cat .venv/last-sphinxhost 2> /dev/null; else echo '-none-'; fi)
+LAST_SPHINXHOST := $(call lastvalue, sphinxhost)
 WMSHOST ?=
-LAST_WMSHOST := $(shell if [ -f .venv/last-wmshost ]; then cat .venv/last-wmshost 2> /dev/null; else echo '-none-'; fi)
+LAST_WMSHOST := $(call lastvalue, wmshost)
 MAPPROXYHOST ?=
-LAST_MAPPROXYHOST := $(shell if [ -f .venv/last-mapproxyhost ]; then cat .venv/last-mapproxyhost 2> /dev/null; else echo '-none-'; fi)
+LAST_MAPPROXYHOST := $(call lastvalue, mapproxyhost)
 GEOADMINHOST ?=
-LAST_GEOADMINHOST := $(shell if [ -f .venv/last-geoadminhost ]; then cat .venv/last-geoadminhost 2> /dev/null; else echo '-none-'; fi)
+LAST_GEOADMINHOST := $(call lastvalue, geoadminhost)
 CMSGEOADMINHOST ?=
-LAST_CMSGEOADMINHOST := $(shell if [ -f .venv/last-cmsgeoadminhost ]; then cat .venv/last-cmsgeoadminhost 2> /dev/null; else echo '-none-'; fi)
+LAST_CMSGEOADMINHOST := $(call lastvalue, cmsgeoadminhost)
 ALTI_URL ?=
-LAST_ALTI_URL := $(shell if [ -f .venv/last-alti-url ]; then cat .venv/last-alti-url 2> /dev/null; else echo '-none-'; fi)
+LAST_ALTI_URL := $(call lastvalue, alti-url)
 API_URL ?=
-LAST_API_URL := $(shell if [ -f .venv/last-api-url ]; then cat .venv/last-api-url 2> /dev/null; else echo '-none-'; fi)
+LAST_API_URL := $(call lastvalue, api-url)
 SHOP_URL ?=
-LAST_SHOP_URL := $(shell if [ -f .venv/last-shop-url ]; then cat .venv/last-shop-url 2> /dev/null; else echo '-none-'; fi)
-CURRENT_DIRECTORY ?=
-LAST_CURRENT_DIRECTORY := $(shell if [ -f .venv/last-current-directory ]; then cat .venv/last-current-directory 2> /dev/null; else echo '-none-'; fi)
+LAST_SHOP_URL := $(call lastvalue, shop-url)
 HOST ?=
-LAST_HOST := $(shell if [ -f .venv/last-host ]; then cat .venv/last-host 2> /dev/null; else echo '-none-'; fi)
+LAST_HOST := $(call lastvalue, host)
 GEOADMIN_FILE_STORAGE_BUCKET ?=
-LAST_GEOADMIN_FILE_STORAGE_BUCKET := $(shell if [ -f .venv/last-geoadmin-file-storage-bucket ]; then cat .venv/last-geoadmin-file-storage-bucket 2> /dev/null; else echo '-none-'; fi)
+LAST_GEOADMIN_FILE_STORAGE_BUCKET := $(call lastvalue, geoadmin-file-storage-bucket)
 VECTOR_BUCKET ?=
-LAST_VECTOR_BUCKET := $(shell if [ -f .venv/last-vector-bucket ]; then cat .venv/last-vector-bucket 2> /dev/null; else echo '-none-'; fi)
+LAST_VECTOR_BUCKET := $(call lastvalue, vector-bucket)
 VECTOR_PROFILNAME ?=
-LAST_VECTOR_PROFILNAME := $(shell if [ -f .venv/last-vector-profilname ]; then cat .venv/last-vector-profilname 2> /dev/null; else echo '-none-'; fi)
+LAST_VECTOR_PROFILNAME := $(call lastvalue, vector-profilname)
 ROBOTS_FILE ?=
-LAST_ROBOTS_FILE := $(shell if [ -f .venv/last-robots-file ]; then cat .venv/last-robots-file 2> /dev/null; else echo '-none-'; fi)
+LAST_ROBOTS_FILE := $(call lastvalue, robots-file)
 WSGI_THREADS ?=
-LAST_WSGI_THREADS := $(shell if [ -f .venv/last-wsgi-threads ]; then cat .venv/last-wsgi-threads 2> /dev/null; else echo '-none-'; fi)
+LAST_WSGI_THREADS := $(call lastvalue, wsgi-threads)
 KEEP_VERSION ?= 'false'
-LAST_VERSION := $(shell if [ -f '.venv/last-version' ]; then cat .venv/last-version 2> /dev/null; else echo '-none-'; fi)
 VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '-none-' ]; then echo $(LAST_VERSION); else python -c "print __import__('time').strftime('%s')"; fi)
+LAST_VERSION := $(call lastvalue, version)
 BRANCH_STAGING := $(shell if [ '$(DEPLOY_TARGET)' = 'dev' ]; then echo 'test'; else echo 'integration'; fi)
+LAST_BRANCH_STAGING := $(call lastvalue, branch-staging)
 BRANCH_TO_DELETE :=
 CURRENT_DIRECTORY := $(shell pwd)
+LAST_CURRENT_DIRECTORY := $(call lastvalue, current-directory)
 DEPLOY_TARGET ?=
+LAST_DEPLOY_TARGET := $(call lastvalue, deploy-target)
 BODID ?=
 WMSSCALELEGEND ?=
 GIT_BRANCH := $(shell if [ -f '.venv/deployed-git-branch' ]; then cat .venv/deployed-git-branch 2> /dev/null; else git rev-parse --symbolic-full-name --abbrev-ref HEAD; fi)
+LAST_GIT_BRANCH := $(call lastvalue, git-branch)
 HTTP_PROXY := http://ec2-52-28-118-239.eu-central-1.compute.amazonaws.com:80
-LAST_HTTP_PPROXY := $(shell if [ -f .venv/last-kml-http-proxy ]; then cat .venv/last-http-proxy 2> /dev/null; else echo '-none-'; fi)
+LAST_HTTP_PROXY := $(call lastvalue, http-proxy)
 INSTALL_DIRECTORY := .venv
 KML_TEMP_DIR := /var/local/print/kml
-LAST_KML_TEMP_DIR := $(shell if [ -f .venv/last-kml-temp-dir ]; then cat .venv/last-kml-temp-dir 2> /dev/null; else echo '-none-'; fi)
+LAST_KML_TEMP_DIR := $(call lastvalue, kml-temp-dir)
 MODWSGI_USER := www-data
-LAST_MODWSGI_USER := $(shell if [ -f .venv/last-modwsgi-user ]; then cat .venv/last-modwsgi-user 2> /dev/null; else echo '-none-'; fi)
+LAST_MODWSGI_USER := $(call lastvalue, modwsgi-user)
+MODWSGI_CONFIG ?=
+LAST_MODWSGI_CONFIG := $(call lastvalue, modwsgi-config)
 NO_TESTS ?= withtests
 NODE_DIRECTORY := node_modules
 PYTHON_FILES := $(shell find chsdi/* -path chsdi/static -prune -o -type f -name "*.py" -print)
 SHORTENER_ALLOWED_DOMAINS := admin.ch, swisstopo.ch, bgdi.ch
-LAST__SHORTENER_ALLOWED_DOMAINS := $(shell if [ -f .venv/last-shortener-allowed-domains ]; then cat .venv/last-shortener-allowed-domains 2> /dev/null; else echo '-none-'; fi)
+LAST_SHORTENER_ALLOWED_DOMAINS := $(call lastvalue, shortener-allowed-domains)
 SHORTENER_ALLOWED_HOSTS :=
-LAST_SHORTENER_ALLOWED_HOSTS := $(shell if [ -f .venv/last-shortener-allowed-hosts ]; then cat .venv/last-shortener-allowed-hosts 2> /dev/null; else echo '-none-'; fi)
+LAST_SHORTENER_ALLOWED_HOSTS := $(call lastvalue, shortener-allowed-hosts)
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
 USER_SOURCE ?= rc_user
 WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
-LAST_WSGI_APP := $(shell if [ -f .venv/last-wsgi-app ]; then cat .venv/last-wsgi-app 2> /dev/null; else echo '-none-'; fi)
+LAST_WSGI_APP := $(call lastvalue, wsgi-app)
 DATAGEOADMINHOST ?= data.geo.admin.ch
-LAST_DATAGEOADMINHOST := $(shell if [ -f .venv/last-datageoadminhost ]; then cat .venv/last-datageoadminhost 2> /dev/null; else echo '-none-'; fi)
+LAST_DATAGEOADMINHOST := $(call lastvalue, datageoadminhost)
+LINKEDDATAHOST ?=
+LAST_LINKEDDATAHOST := $(call lastvalue, linkeddatahost)
+SERVER_PORT ?=
+LAST_SERVER_PORT := $(call lastvalue, server-port)
+VECTOR_PROFILENAME ?=
+LAST_VECTOR_PROFILENAME := $(call lastvalue, vector-profilename)
 
 # Commands
 AUTOPEP8_CMD := $(INSTALL_DIRECTORY)/bin/autopep8
@@ -107,6 +117,17 @@ GREEN := $(shell tput setaf 2)
 GDAL_VERSION ?= 1.10.0
 PYTHON_VERSION := $(shell python --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
 PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
+
+# Functions
+define lastevalue
+	$(shell if [ -f .venv/last-$1 ]; then cat .venv/last-$1 2> /dev/null; else echo '-none-'; fi)
+endef
+
+define cachelastvariable
+	mkdir -p $(dir $1)
+	test "$2" != "$3" && \
+		echo "$2" > .venv/last-$4 || :
+endef
 
 .PHONY: help
 help:
@@ -148,7 +169,6 @@ help:
 	@echo "SERVER_PORT:         ${SERVER_PORT}"
 	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
 	@echo
-
 
 .PHONY: user
 user:
@@ -311,20 +331,11 @@ apache/application.wsgi: apache/application.wsgi.mako
 
 apache/wsgi.conf.in:
 	@echo "${GREEN}Template file apache/wsgi.conf.in has changed${RESET}";
-apache/wsgi.conf: apache/wsgi.conf.in \
-                  apache/application.wsgi \
-                  .venv/last-apache-base-path \
-                  .venv/last-apache-entry-path \
-                  .venv/last-robots-file \
-                  .venv/last-current-directory \
-                  .venv/last-modwsgi-user \
-                  .venv/last-wsgi-threads \
-                  .venv/last-wsgi-app \
-                  .venv/last-kml_temp_dir
-	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
+apache/wsgi.conf: apache/wsgi.conf.in apache/application.wsgi
+	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";		
 	${MAKO_CMD} \
-		--var "apache_base_path=$(APACHE_BASE_PATH)" \
 		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
+		--var "apache_base_path=$(APACHE_BASE_PATH)" \
 		--var "robots_file=$(ROBOTS_FILE)" \
 		--var "branch_staging=$(BRANCH_STAGING)" \
 		--var "git_branch=$(GIT_BRANCH)" \
@@ -336,6 +347,7 @@ apache/wsgi.conf: apache/wsgi.conf.in \
 		--var "wsgi_threads=$(WSGI_THREADS)" \
 		--var "wsgi_app=$(WSGI_APP)" \
 		--var "kml_temp_dir=$(KML_TEMP_DIR)" $< > $@
+
 
 development.ini.in:
 	@echo "${GREEN}Template file development.ini.in has changed${RESET}";
@@ -450,14 +462,114 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 	node_modules/.bin/lessc -ru --clean-css $< $@
 
 .venv/last-apache-base-path::
-	mkdir -p $(dir $@)
-	test "$(APACHE_BASE_PATH)" != "$(LAST_APACHE_BASE_PATH)" && \
-	    echo $(APACHE_BASE_PATH) > .venv/last-apache-base-path || :
+	$(call cachelastvariable,$@,$(APACHE_BASE_PATH),$(LAST_APACHE_BASE_PATH),apache-base-path)
 
 .venv/last-apache-entry-path::
-	mkdir -p $(dir $@)
-	test "$(APACHE_ENTRY_PATH)" != "$(LAST_APACHE_ENTRY_PATH)" && \
-	    echo $(APACHE_ENTRY_PATH) > .venv/last-apache-entry-path || :
+	$(call cachelastvariable,$@,$(APACHE_ENTRY_PATH),$(LAST_APACHE_ENTRY_PATH),apache-entry-path)
+
+.venv/last-dbhost::
+	$(call cachelastvariable,$@,$(DBHOST),$(LAST_DBHOST),dbhost)
+
+.venv/last-dbport::
+	$(call cachelastvariable,$@,$(DBPORT),$(LAST_DBPORT),dbport)
+
+.venv/last-dbstaging::
+	$(call cachelastvariable,$@,$(DBSTAGING),$(LAST_DBSTAGING),dbstaging)
+
+.venv/last-geodata-staging::
+	$(call cachelastvariable,$@,$(GEODATA_STAGING),$(LAST_GEODATA_STAGING),geodata-staging)
+
+.venv/last-sphinxhost::
+	$(call cachelastvariable,$@,$(SPHINXHOST),$(LAST_SPHINXHOST),sphinxhost)
+
+.venv/last-wmshost::
+	$(call cachelastvariable,$@,$(WMSHOST),$(LAST_WMSHOST),wmshost)
+
+.venv/last-mapproxyhost::
+	$(call cachelastvariable,$@,$(MAPPROXYHOST),$(LAST_MAPPROXYHOST),mapproxyhost)
+
+.venv/last-geoadminhost::
+	$(call cachelastvariable,$@,$(GEOADMINHOST),$(LAST_GEOADMINHOST),geoadminhost)
+
+.venv/last-cmsgeoadminhost:
+	$(call cachelastvariable,$@,$(CMSGEOADMINHOST),$(LAST_CMSGEOADMINHOST),cmsgeoadminhost)
+
+.venv/last-alti-url::
+	$(call cachelastvariable,$@,$(ALTI_URL),$(LAST_ALTI_URL),alti-url)
+
+.venv/last-api-url::
+	$(call cachelastvariable,$@,$(API_URL),$(LAST_API_URL),api-url)
+
+.venv/last-shop-url::
+	$(call cachelastvariable,$@,$(SHOP_URL),$(LAST_SHOP_URL),shop-url)
+
+.venv/last-current-directory::
+	$(call cachelastvariable,$@,$(CURRENT_DIRECTORY),$(LAST_CURRENT_DIRECTORY),current-directory)
+
+.venv/last-host::
+	$(call cachelastvariable,$@,$(HOST),$(LAST_HOST),host)
+
+.venv/last-geoadmin-file-storage-bucket::
+	$(call cachelastvariable,$@,$(GEOADMIN_FILE_STORAGE_BUCKET),$(LAST_GEOADMIN_FILE_STORAGE_BUCKET),geoadmin-file-storage-bucket)
+
+.venv/last-vector-bucket::
+	$(call cachelastvariable,$@,$(VECTOR_BUCKET),$(LAST_VECTOR_BUCKET),vector-bucket)
+
+.venv/last-vector-profilname::
+	$(call cachelastvariable,$@,$(VECTOR_PROFILNAME),$(LAST_VECTOR_PROFILNAME),vector-profilname)
+
+.venv/last-robots-file::
+	$(call cachelastvariable,$@,$(ROBOTS_FILE),$(LAST_ROBOTS_FILE),robots-file)
+
+.venv/last-wsgi-threads::
+	$(call cachelastvariable,$@,$(WSGI_THREADS),$(LAST_WSGI_THREADS),wsgi-threads)
+
+.venv/last-version::
+	$(call cachelastvariable,$@,$(VERSION),$(LAST_VERSION),version)
+
+.venv/last-deploy-target::
+	$(call cachelastvariable,$@,$(DEPLOY_TARGET),$(LAST_DEPLOY_TARGET),deploy-target)
+
+.venv/last-git-branch::
+	$(call cachelastvariable,$@,$(GIT_BRANCH),$(LAST_GIT_BRANCH),git-branch)
+
+.venv/last-http-proxy::
+	$(call cachelastvariable,$@,$(HTTP_PROXY),$(LAST_HTTP_PROXY),http-proxy)
+
+.venv/last-kml-temp-dir::
+	$(call cachelastvariable,$@,$(KML_TEMP_DIR),$(LAST_KML_TEMP_DIR),kml-temp-dir)
+
+.venv/last-modwsgi-user::
+	$(call cachelastvariable,$@,$(MODWSGI_USER),$(LAST_MODWSGI_USER),modwsgi-user)
+
+.venv/last-modwsgi-config::
+	$(call cachelastvariable,$@,$(MODWSGI_CONFIG),$(LAST_MODWSGI_CONFIG),modwsgi-config)
+
+.venv/last-shortener-allowed-domains::
+	$(call cachelastvariable,$@,$(SHORTENER_ALLOWED_DOMAINS),$(LAST_SHORTENER_ALLOWED_DOMAINS),shortener-allowed-domains)
+
+.venv/last-shortener-allowed-hosts::
+	$(call cachelastvariable,$@,$(SHORTENER_ALLOWED_HOSTS),$(LAST_SHORTENER_ALLOWED_HOSTS),shortener-allowed-hosts)
+
+.venv/last-wsgi-app::
+	$(call cachelastvariable,$@,$(WSGI_APP),$(LAST_WSGI_APP),wsgi-app)
+
+.venv/last-datageoadminhost::
+	$(call cachelastvariable,$@,$(DATAGEOADMINHOST),$(LAST_DATAGEOADMINHOST),datageoadminhost)
+
+.venv/last-server-port::
+	$(call cachelastvariable,$@,$(SERVER_PORT),$(LAST_SERVER_PORT),server-port)
+
+.venv/last-vector-profilename::
+	$(call cachelastvariable,$@,$(VECTOR_PROFILENAME),$(LAST_VECTOR_PROFILENAME),vector-profilename)
+
+.venv/last-linkeddatahost::
+	$(call cachelastvariable,$@,$(LINKEDDATAHOST),$(LAST_LINKEDDATAHOST),linkeddatahost)
+
+.venv/last-branch-staging::
+	$(call cachelastvariable,$@,$(BRANCH_STAGING),$(LAST_BRANCH_STAGING),branch-staging)
+
+
 
 fixrights:
 	@echo "${GREEN}Fixing rights...${RESET}";
