@@ -742,32 +742,6 @@ class Vec200Namedlocation(Base, Vector):
 register('ch.swisstopo.vec200-names-namedlocation', Vec200Namedlocation)
 
 
-class Vec25Strassennetz(Base, Vector):
-    __tablename__ = 'v25_str_25_l_tooltip'
-    __table_args__ = ({'autoload': False})
-    __template__ = 'templates/htmlpopup/vec25_strassennetz.mako'
-    __bodId__ = 'ch.swisstopo.vec25-strassennetz'
-    __label__ = 'id'
-    id = Column('objectid', Integer, primary_key=True)
-    length = Column('length', Numeric)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.vec25-strassennetz', Vec25Strassennetz)
-
-
-class Vec25Uebrige(Base, Vector):
-    __tablename__ = 'v25_uvk_25_l'
-    __table_args__ = ({'autoload': False})
-    __template__ = 'templates/htmlpopup/vec25_uebrigeverk.mako'
-    __bodId__ = 'ch.swisstopo.vec25-uebrigerverkehr'
-    __label__ = 'length'
-    id = Column('objectid', Integer, primary_key=True)
-    length = Column('length', Numeric)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.vec25-uebrigerverkehr', Vec25Uebrige)
-
-
 class Vec25Anlagen(Base, Vector):
     __tablename__ = 'v25_anl_25_a'
     __table_args__ = ({'autoload': False})
@@ -782,19 +756,6 @@ class Vec25Anlagen(Base, Vector):
 register('ch.swisstopo.vec25-anlagen', Vec25Anlagen)
 
 
-class Vec25Eisenbahnnetz(Base, Vector):
-    __tablename__ = 'v25_eis_25_l'
-    __table_args__ = ({'autoload': False})
-    __template__ = 'templates/htmlpopup/vec25_eisenbahnnetz.mako'
-    __bodId__ = 'ch.swisstopo.vec25-eisenbahnnetz'
-    __label__ = 'length'
-    id = Column('objectid', Integer, primary_key=True)
-    length = Column('length', Numeric)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.vec25-eisenbahnnetz', Vec25Eisenbahnnetz)
-
-
 class Vec25Gebaeude(Base, Vector):
     __tablename__ = 'v25_geb_25_a'
     __table_args__ = ({'autoload': False})
@@ -807,22 +768,6 @@ class Vec25Gebaeude(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.vec25-gebaeude', Vec25Gebaeude)
-
-
-class Vec25Gewaessernetz(Base, Vector):
-    __tablename__ = 'v25_gwn_25_l'
-    __table_args__ = ({'autoload': False})
-    __template__ = 'templates/htmlpopup/vec25_gewaessernetz.mako'
-    __bodId__ = 'ch.swisstopo.vec25-gewaessernetz'
-    __label__ = 'name'
-    id = Column('objectid', Integer, primary_key=True)
-    objectval = Column('objectval', Unicode)
-    gewissnr = Column('gewissnr', Numeric)
-    name = Column('name', Unicode)
-    length = Column('length', Numeric)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.vec25-gewaessernetz', Vec25Gewaessernetz)
 
 
 class Vec25Primaerflaechen(Base, Vector):
