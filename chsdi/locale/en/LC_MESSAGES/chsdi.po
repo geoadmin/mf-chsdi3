@@ -3956,6 +3956,9 @@ msgstr "http://www.bak.admin.ch/index.html?lang=en"
 msgid "ch.bav"
 msgstr "FOT"
 
+msgid "ch.bav.anlagen-schienengueterverkehr"
+msgstr "Anlagen Schienengüterverkehr"
+
 msgid "ch.bav.baulinien-eisenbahnanlagen.oereb"
 msgstr "Building lines railways PLR"
 

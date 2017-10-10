@@ -3956,6 +3956,9 @@ msgstr "http://www.bak.admin.ch/index.html?lang=fr"
 msgid "ch.bav"
 msgstr "OFT"
 
+msgid "ch.bav.anlagen-schienengueterverkehr"
+msgstr "ch.bav.anlagen-schienengueterverkehr"
+
 msgid "ch.bav.baulinien-eisenbahnanlagen.oereb"
 msgstr "Alignements chemins de fer RDPPF"
 

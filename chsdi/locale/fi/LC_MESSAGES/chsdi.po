@@ -3956,6 +3956,9 @@ msgstr "http://www.bak.admin.ch/index.html?lang=rm"
 msgid "ch.bav"
 msgstr "BAV"
 
+msgid "ch.bav.anlagen-schienengueterverkehr"
+msgstr "Anlagen Schienengüterverkehr"
+
 msgid "ch.bav.baulinien-eisenbahnanlagen.oereb"
 msgstr "Lingias construcziun viafiers RPDP"
 

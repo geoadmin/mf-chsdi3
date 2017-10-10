@@ -3956,6 +3956,9 @@ msgstr "http://www.bak.admin.ch/index.html?lang=it"
 msgid "ch.bav"
 msgstr "UFT"
 
+msgid "ch.bav.anlagen-schienengueterverkehr"
+msgstr "ch.bav.anlagen-schienengueterverkehr"
+
 msgid "ch.bav.baulinien-eisenbahnanlagen.oereb"
 msgstr "Linee di costruzione ferrovie RDPP"
 
