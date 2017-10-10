@@ -14,6 +14,65 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20171011:
+   *******
+
+Release 20171011 - Wednesday, September 11th 2017
+-------------------------------------------------
+
+API & applications
+******************
+
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Removed layer Hydrological network (ch.swisstopo.vec25-gewaessernetz)
+-  Removed layer Road network (ch.swisstopo.vec25-strassennetz)
+-  Removed layer Railway network (ch.swisstopo.vec25-eisenbahnnetz)
+-  Removed layer Other traffic (ch.swisstopo.vec25-uebrigerverkehr)
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170920...r_171010>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  We can now import GPX files in geoadmin
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170830...r_170920>`__
+
+
+Geodata
+*******
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Ludwigia peploides <//map.geo.admin.ch/?layers=ch.bafu.neophyten-portulak_heusenkraut>`__ (ch.bafu.neophyten-portulak_heusenkraut)                                                                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Elodea nuttallii <//map.geo.admin.ch/?layers=ch.bafu.neophyten-nuttalls_wasserpest>`__ (ch.bafu.neophyten-nuttalls_wasserpest)                                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Robinia pseudoacacia  <//map.geo.admin.ch/?layers=ch.bafu.neophyten-robinie>`__ (ch.bafu.neophyten-robinie)                                                                                       |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Viburnum rhytidophyllum <//map.geo.admin.ch/?layers=ch.bafu.neophyten-runzelblaettriger_schneeball>`__ (ch.bafu.neophyten-runzelblaettriger_schneeball)                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Sedum stoloniferum <//map.geo.admin.ch/?layers=ch.bafu.neophyten-auslaeuferbildendes_fettkraut>`__ (ch.bafu.neophyten-auslaeuferbildendes_fettkraut)                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Prunus laurocerasus <//map.geo.admin.ch/?layers=ch.bafu.neophyten-kirschlorbeer>`__ (ch.bafu.neophyten-kirschlorbeer)                                                                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Toxicodendron radicans <//map.geo.admin.ch/?layers=ch.bafu.neophyten-kletternder_giftsumach>`__ (ch.bafu.neophyten-kletternder_giftsumach)                                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Pueraria lobata <//map.geo.admin.ch/?layers=ch.bafu.neophyten-kopoubohne>`__ (ch.bafu.neophyten-kopoubohne)                                                                                       |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Mahonie <//map.geo.admin.ch/?layers=ch.bafu.neophyten-mahonie>`__ (ch.bafu.neophyten-mahonie)                                                                                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Crassule de Helms <//map.geo.admin.ch/?layers=ch.bafu.neophyten-nadelkraut>`__ (ch.bafu.neophyten-nadelkraut)                                                                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Cableways swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-uebrigerverkehr>`__ (ch.swisstopo.swisstlm3d-uebrigerverkehr)                                                            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Railway swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-eisenbahnnetz>`__ (ch.swisstopo.swisstlm3d-eisenbahnnetz)                                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hydography swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-gewaessernetz>`__ (ch.swisstopo.swisstlm3d-gewaessernetz)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Roads and Tracks swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-strassen>`__ (ch.swisstopo.swisstlm3d-strassen)                                                                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20170920:
    *******
 
