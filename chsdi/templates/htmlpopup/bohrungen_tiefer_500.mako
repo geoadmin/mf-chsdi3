@@ -38,6 +38,7 @@
     inhalt = 'inhalt_%s' % lang
     land = 'land_%s' % lang
     kanton = 'kanton_%s' % lang
+    startdate = 'startdate_%s' % lang
 %>
 
 <table class="table-with-border bohrungen_tiefer_500-extended">
@@ -54,7 +55,7 @@
      <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.tiefe_md')}</th><td>${c['attributes']['tiefe_md'] or '-'}</td></tr>
      <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.bohrzweck')}</th><td>${c['attributes'][bohrzweck] or '-'}</td></tr>
      <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.status')}</th><td>${c['attributes'][status] or '-'}</td></tr>
-     <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.startdate')}</th><td>${c['attributes']['startdate'] or '-'}</td></tr>
+     <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.startdate')}</th><td>${c['attributes'][startdate] or '-'}</td></tr>
      <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.enddate')}</th><td>${c['attributes']['enddate'] or '-'}</td></tr>
      <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.koord_e')}</th><td>${int(c['geometry']['coordinates'][0])}</td></tr>
      <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.koord_n')}</th><td>${int(c['geometry']['coordinates'][1])}</td></tr>
