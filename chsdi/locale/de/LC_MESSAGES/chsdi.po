@@ -1706,6 +1706,9 @@ msgstr "Amphibien Wanderobjekte 2015"
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Auengebiete"
 
+msgid "ch.bafu.bundesinventare-auen_anhang2"
+msgstr "Auengebiete Anhang 2"
+
 msgid "ch.bafu.bundesinventare-auen_anhoerung"
 msgstr "Auen - Anhörung 2015"
 

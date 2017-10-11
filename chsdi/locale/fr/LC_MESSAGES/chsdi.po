@@ -1706,6 +1706,9 @@ msgstr "Batraciens objets itinérants 2015"
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Zones alluviales"
 
+msgid "ch.bafu.bundesinventare-auen_anhang2"
+msgstr "Zones alluviales"
+
 msgid "ch.bafu.bundesinventare-auen_anhoerung"
 msgstr "Zones alluviales consultation 2015"
 

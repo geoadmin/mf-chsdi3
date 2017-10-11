@@ -1706,6 +1706,9 @@ msgstr "Amfibis – objects movibels 2015"
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Zonas umidas"
 
+msgid "ch.bafu.bundesinventare-auen_anhang2"
+msgstr "Zonas umidas"
+
 msgid "ch.bafu.bundesinventare-auen_anhoerung"
 msgstr "Zonas umidas – audiziun 2015"
 

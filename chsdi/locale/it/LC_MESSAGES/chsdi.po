@@ -1706,6 +1706,9 @@ msgstr "Anfibi oggetti mobili 2015"
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Zone golenali"
 
+msgid "ch.bafu.bundesinventare-auen_anhang2"
+msgstr "Zone golenali"
+
 msgid "ch.bafu.bundesinventare-auen_anhoerung"
 msgstr "Zone golenali - Consultazione 2015"
 

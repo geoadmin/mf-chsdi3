@@ -1706,6 +1706,9 @@ msgstr "Amphibians shifting sites 2015"
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Floodplains"
 
+msgid "ch.bafu.bundesinventare-auen_anhang2"
+msgstr "Floodplains"
+
 msgid "ch.bafu.bundesinventare-auen_anhoerung"
 msgstr "Floodplains - consultation 2015"
 
