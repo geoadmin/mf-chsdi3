@@ -17,7 +17,7 @@ Release Notes
 .. _releasenotes_20171011:
    *******
 
-Release 20171011 - Wednesday, September 11th 2017
+Release 20171011 - Wednesday, October 11th 2017
 -------------------------------------------------
 
 API & applications
@@ -31,13 +31,13 @@ API & applications
 -  Removed layer Railway network (ch.swisstopo.vec25-eisenbahnnetz)
 -  Removed layer Other traffic (ch.swisstopo.vec25-uebrigerverkehr)
 -  Bug fixes
-- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170920...r_171010>`__
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_170920...r_171011>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  We can now import GPX files in geoadmin
 -  Bug fixes
-- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170830...r_170920>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_170920...r_171011>`__
 
 
 Geodata
