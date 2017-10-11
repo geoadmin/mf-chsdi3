@@ -901,7 +901,7 @@ These projections are:
 Note:
 
 * Partly due to a limitation of the WTMS 1.0.0 recommendations, each *projection* has its own *GetCapabilities* document.
-* You have to use the hosts `wmts{10-14}.geo.admin.ch`. This is done to avoid parsing every requests to determine which are
+* You have to use the hosts `wmts{20-24}.geo.admin.ch`. This is done to avoid parsing every requests to determine which are
   using native tiles and which are using reporjected tiles.
 * The same access restrictions apply as above.
 * The same `timestamps` are available in all projection. New `timestamp` are added to the former ones.
