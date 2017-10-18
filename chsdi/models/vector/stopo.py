@@ -1528,12 +1528,13 @@ class GeologieEiszeitLgm(Base, Vector):
 register('ch.swisstopo.geologie-eiszeit-lgm', GeologieEiszeitLgm)
 
 
-class Swisstlm3dEisenbahn(Base, Vector):
-    __tablename__ = 'eisenbahn'
+class Swisstlm3dEisenbahn50000(Base, Vector):
+    __tablename__ = 'eisenbahn_50000_tooltip'
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __template__ = 'templates/htmlpopup/swisstlm3d-eisenbahn.mako'
     __bodId__ = 'ch.swisstopo.swisstlm3d-eisenbahnnetz'
     __label__ = 'objektart'
+    __minscale__ = 50000
     id = Column('bgdi_id', Integer, primary_key=True)
     objectid = Column('objectid', Integer)
     objektart = Column('objektart', Integer)
@@ -1543,7 +1544,39 @@ class Swisstlm3dEisenbahn(Base, Vector):
     ausser_betrieb = Column('ausser_betrieb', Integer)
     the_geom = Column(Geometry2D)
 
+
+class Swisstlm3dEisenbahn(Base, Vector):
+    __tablename__ = 'eisenbahn'
+    __table_args__ = ({'schema': 'tlm', 'autoload': False})
+    __template__ = 'templates/htmlpopup/swisstlm3d-eisenbahn.mako'
+    __bodId__ = 'ch.swisstopo.swisstlm3d-eisenbahnnetz'
+    __label__ = 'objektart'
+    __maxscale__ = 50000
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objectid = Column('objectid', Integer)
+    objektart = Column('objektart', Integer)
+    verkehrsmittel = Column('verkehrsmittel', Integer)
+    standseilbahn = Column('standseilbahn', Integer)
+    zahnradbahn = Column('zahnradbahn', Integer)
+    ausser_betrieb = Column('ausser_betrieb', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swisstlm3d-eisenbahnnetz', Swisstlm3dEisenbahn50000)
 register('ch.swisstopo.swisstlm3d-eisenbahnnetz', Swisstlm3dEisenbahn)
+
+
+class Swisstlm3dUebrigerverkehr25000(Base, Vector):
+    __tablename__ = 'uebrige_bahn_25000_tooltip'
+    __table_args__ = ({'schema': 'tlm', 'autoload': False})
+    __template__ = 'templates/htmlpopup/swisstlm3d-uebrige_bahn.mako'
+    __bodId__ = 'ch.swisstopo.swisstlm3d-uebrigerverkehr'
+    __label__ = 'objektart'
+    __minscale__ = 25000
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objektart = Column('objektart', Integer)
+    name = Column('name', Unicode)
+    ausser_betrieb = Column('ausser_betrieb', Integer)
+    the_geom = Column(Geometry2D)
 
 
 class Swisstlm3dUebrigerverkehr(Base, Vector):
@@ -1552,12 +1585,14 @@ class Swisstlm3dUebrigerverkehr(Base, Vector):
     __template__ = 'templates/htmlpopup/swisstlm3d-uebrige_bahn.mako'
     __bodId__ = 'ch.swisstopo.swisstlm3d-uebrigerverkehr'
     __label__ = 'objektart'
+    __maxscale__ = 25000
     id = Column('bgdi_id', Integer, primary_key=True)
     objektart = Column('objektart', Integer)
     name = Column('name', Unicode)
     ausser_betrieb = Column('ausser_betrieb', Integer)
     the_geom = Column(Geometry2D)
 
+register('ch.swisstopo.swisstlm3d-uebrigerverkehr', Swisstlm3dUebrigerverkehr25000)
 register('ch.swisstopo.swisstlm3d-uebrigerverkehr', Swisstlm3dUebrigerverkehr)
 
 
@@ -1576,12 +1611,13 @@ class Swisstlm3dGewaessernetz(Base, Vector):
 register('ch.swisstopo.swisstlm3d-gewaessernetz', Swisstlm3dGewaessernetz)
 
 
-class Swisstlm3dStrassen(Base, Vector):
-    __tablename__ = 'strasse'
+class Swisstlm3dStrassen500(Base, Vector):
+    __tablename__ = 'strasse_500000_tooltip'
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __template__ = 'templates/htmlpopup/swisstlm3d-strassen.mako'
     __bodId__ = 'ch.swisstopo.swisstlm3d-strassen'
     __label__ = 'objektart'
+    __minscale__ = 500000
     id = Column('bgdi_id', Integer, primary_key=True)
     objektart = Column('objektart', Integer)
     belagsart = Column('belagsart', Unicode)
@@ -1591,6 +1627,62 @@ class Swisstlm3dStrassen(Base, Vector):
     verkehrsbeschraenkung = Column('verkehrsbeschraenkung', Unicode)
     the_geom = Column(Geometry2D)
 
+
+class Swisstlm3dStrassen100(Base, Vector):
+    __tablename__ = 'strasse_100000_tooltip'
+    __table_args__ = ({'schema': 'tlm', 'autoload': False})
+    __template__ = 'templates/htmlpopup/swisstlm3d-strassen.mako'
+    __bodId__ = 'ch.swisstopo.swisstlm3d-strassen'
+    __label__ = 'objektart'
+    __maxscale__ = 500000
+    __minscale__ = 100000
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objektart = Column('objektart', Integer)
+    belagsart = Column('belagsart', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    verkehrsbedeutung = Column('verkehrsbedeutung', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    verkehrsbeschraenkung = Column('verkehrsbeschraenkung', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class Swisstlm3dStrassen10(Base, Vector):
+    __tablename__ = 'strasse_10000_tooltip'
+    __table_args__ = ({'schema': 'tlm', 'autoload': False})
+    __template__ = 'templates/htmlpopup/swisstlm3d-strassen.mako'
+    __bodId__ = 'ch.swisstopo.swisstlm3d-strassen'
+    __label__ = 'objektart'
+    __maxscale__ = 100000
+    __minscale__ = 10000
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objektart = Column('objektart', Integer)
+    belagsart = Column('belagsart', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    verkehrsbedeutung = Column('verkehrsbedeutung', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    verkehrsbeschraenkung = Column('verkehrsbeschraenkung', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class Swisstlm3dStrassen(Base, Vector):
+    __tablename__ = 'strasse'
+    __table_args__ = ({'schema': 'tlm', 'autoload': False})
+    __template__ = 'templates/htmlpopup/swisstlm3d-strassen.mako'
+    __bodId__ = 'ch.swisstopo.swisstlm3d-strassen'
+    __label__ = 'objektart'
+    __maxscale__ = 10000
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objektart = Column('objektart', Integer)
+    belagsart = Column('belagsart', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    verkehrsbedeutung = Column('verkehrsbedeutung', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    verkehrsbeschraenkung = Column('verkehrsbeschraenkung', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen500)
+register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen100)
+register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen10)
 register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen)
 
 
