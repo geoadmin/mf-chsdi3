@@ -1232,7 +1232,7 @@ register('ch.bafu.bundesinventare-bln', BLN)
 
 
 class HM(Base, Vector):
-    __tablename__ = 'hm'
+    __tablename__ = 'hm_update'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-hochmoore'
     __template__ = 'templates/htmlpopup/hochmoore.mako'
