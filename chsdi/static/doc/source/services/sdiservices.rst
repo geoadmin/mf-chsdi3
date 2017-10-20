@@ -674,30 +674,33 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/height
+  https://alti.geo.admin.ch/rest/services/height
 
 Input Parameters
 ****************
 
 RESTFul interface is available.
 
-+-----------------------------------+-------------------------------------------------------------------------------------------+
-| Parameters                        | Description                                                                               |
-+===================================+===========================================================================================+
-| **easting (required)**            | The Y position in CH1903 coordinate system (SRID: 21781).                                 |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
-| **northing (required)**           | The X position in CH1903 coordinate system (SRID: 21781).                                 |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
-| **elevation_model (optional)**    | The elevation model. Three elevation models are available DTM25, DTM2 (swissALTI3D)       |
-|                                   | and COMB (a combination of DTM25 and DTM2). Default to "DTM25".                           |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
-| **callback (optional)**           | The name of the callback function.                                                        |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
++--------------------------------+-----------------------------------------------------------------------------------------+
+| Parameters                     | Description                                                                             |
++================================+=========================================================================================+
+| **easting (required)**         | The easting coordinate in LV03 (EPSG:21781) or LV95 (EPSG:2056)                         |
++--------------------------------+-----------------------------------------------------------------------------------------+
+| **northing (required)**        | The northing coordinate in LV03 (EPSG:21781) or LV95 (EPSG:2056)                        |
++--------------------------------+-----------------------------------------------------------------------------------------+
+| **elevation_model (optional)** | The elevation model. Three elevation models are available DTM25, DTM2 (swissALTI3D)     |
+|                                | and COMB (a combination of DTM25 and DTM2). Default to "DTM25".                         |
++--------------------------------+-----------------------------------------------------------------------------------------+
+| **sr(optional)**               | The reference system to use (EPSG code). Valid value are 2056 (for LV95) and 21781 (for |
+|                                | LV03). If not given, trying to guess which one to use.                                  |
++--------------------------------+-----------------------------------------------------------------------------------------+
+| **callback (optional)**        | The name of the callback function.                                                      |
++--------------------------------+-----------------------------------------------------------------------------------------+
 
 Examples
 ********
 
-- `https://api3.geo.admin.ch/rest/services/height?easting=600000&northing=200000 <../../../rest/services/height?easting=600000&northing=200000>`_
+- `https://alti.geo.admin.ch/rest/services/height?easting=2600000&northing=1200000 <../../../rest/services/height?easting=2600000&northing=1200000>`_
 
 .. _profile_description:
 
@@ -714,8 +717,8 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/profile.json (for json format)
-  https://api3.geo.admin.ch/rest/services/profile.csv  (for a csv)
+  https://alti.geo.admin.ch/rest/services/profile.json (for json format)
+  https://alti.geo.admin.ch/rest/services/profile.csv  (for a csv)
 
 Input Parameters
 ****************
@@ -726,6 +729,9 @@ RESTFul interface is available.
 | Parameters                        | Description                                                                               |
 +===================================+===========================================================================================+
 | **geom (required)**               | A GeoJSON representation of a polyline (type = LineString).                               |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **sr (optional)**                 | The reference system to use (EPSG code). Valid value are 2056 (for LV95) and 21781 (for   |
+|                                   | LV03). Strongly advised to set one, but if not given, trying to guess which one to use.   |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **elevation_models (optional)**   | A comma separated list of elevation models. Three elevation models are available DTM25,   |
 |                                   | DTM2 (swissALTI3D) and COMB (a combination of DTM25 and DTM2).  Default to "DTM25".       |
@@ -743,8 +749,8 @@ RESTFul interface is available.
 Example
 *******
 
-- A profile in JSON: `https://api3.geo.admin.ch/rest/services/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <../../../rest/services/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
-- A profile in CSV: `https://api3.geo.admin.ch/rest/services/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]} <../../../rest/services/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[550050%2C206550]%2C[556950%2C204150]%2C[561050%2C207950]]}>`_
+- A profile in JSON: `https://atli.geo.admin.ch/rest/services/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[2550050%2C1206550]%2C[2556950%2C1204150]%2C[2561050%2C1207950]]}&sr=2056 <../../../rest/services/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[2550050%2C1206550]%2C[2556950%2C1204150]%2C[2561050%2C1207950]]}>`_
+- A profile in CSV: `https://alti.geo.admin.ch/rest/services/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[2550050%2C1206550]%2C[2556950%2C1204150]%2C[2561050%2C1207950]]}&sr=2056 <../../../rest/services/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[2550050%2C1206550]%2C[2556950%2C1204150]%2C[2561050%2C1207950]]}>`_
 
 ----------
 
