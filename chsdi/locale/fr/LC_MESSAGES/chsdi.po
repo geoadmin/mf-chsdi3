@@ -1694,23 +1694,29 @@ msgstr "Batraciens objets fixes"
 msgid "ch.bafu.bundesinventare-amphibien_anhang4"
 msgstr "Batraciens sites de l’annexe 4"
 
-msgid "ch.bafu.bundesinventare-amphibien_anhoerung"
-msgstr "Batraciens consultation 2015"
-
 msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte"
 msgstr "Batraciens objets itinérants"
-
-msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung"
-msgstr "Batraciens objets itinérants 2015"
 
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Zones alluviales"
 
 msgid "ch.bafu.bundesinventare-auen_anhang2"
-msgstr "Zones alluviales"
+msgstr "Zones alluviales - Annexe 2"
 
-msgid "ch.bafu.bundesinventare-auen_anhoerung"
-msgstr "Zones alluviales consultation 2015"
+msgid "ch.bafu.bundesinventare-auen_anhang2.area"
+msgstr "Surface [ha]"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.name"
+msgstr "Nom"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.objnummer"
+msgstr "No."
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.refobjblatt"
+msgstr "Description d’objet"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.type"
+msgstr "Type"
 
 msgid "ch.bafu.bundesinventare-auen.au_name"
 msgstr "Nom"
@@ -1742,17 +1748,11 @@ msgstr "Partie-No."
 msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Bas-marais"
 
-msgid "ch.bafu.bundesinventare-flachmoore_anhoerung"
-msgstr "Bas-marais consultation 2015"
-
 msgid "ch.bafu.bundesinventare-flachmoore_regional"
 msgstr "Bas-marais régionaux"
 
 msgid "ch.bafu.bundesinventare-hochmoore"
 msgstr "Hauts-marais"
-
-msgid "ch.bafu.bundesinventare-hochmoore_anhoerung"
-msgstr "Hauts-marais consultation 2015"
 
 msgid "ch.bafu.bundesinventare-jagdbanngebiete"
 msgstr "Districts francs"
@@ -1763,17 +1763,11 @@ msgstr "Numéro de l´objet"
 msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Sites marécageux"
 
-msgid "ch.bafu.bundesinventare-moorlandschaften_anhoerung"
-msgstr "Sites marécageux consultation 2015"
-
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr "Prairies et pâturages secs (PPS)"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "PPS annexe 2"
-
-msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung"
-msgstr "PPS consultation 2015"
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Réserves d'oiseaux d'eau"
@@ -3960,7 +3954,7 @@ msgid "ch.bav"
 msgstr "OFT"
 
 msgid "ch.bav.anlagen-schienengueterverkehr"
-msgstr "ch.bav.anlagen-schienengueterverkehr"
+msgstr "Anlagen Schienengüterverkehr"
 
 msgid "ch.bav.baulinien-eisenbahnanlagen.oereb"
 msgstr "Alignements chemins de fer RDPPF"
@@ -4678,6 +4672,9 @@ msgstr "PSIA consultation"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"
 msgstr "PS Infrastructure aéronautique"
+
+msgid "ch.bazl.schutzgebiete-aulav_liechtenstein"
+msgstr "Zones protégées Liechtenstein OSAC"
 
 msgid "ch.bazl.segelflugkarte"
 msgstr "Carte vol à voile"
@@ -5964,7 +5961,7 @@ msgid "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"
 msgstr "Classification des roches 500"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
-msgstr "Lithologie (Groupes) 500"
+msgstr "Mat. premières min. (simplifié) 500"
 
 msgid "ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200"
 msgstr "Mat. premières minérales 200"
@@ -5982,7 +5979,7 @@ msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
 msgstr "Carrières 1995"
 
 msgid "ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke"
-msgstr "Pierres des monuments hist."
+msgstr "Pierre naturelle en construction"
 
 msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1965"
 msgstr "Industrie des ciments 1965"
@@ -6288,7 +6285,7 @@ msgid "ch.swisstopo.geologie-rohstoffe"
 msgstr "Matières premières minérales"
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
-msgstr "Minéraux industriels"
+msgstr "Minéraux industriels: gisements"
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.name_ads"
 msgstr "Localité"
@@ -6300,7 +6297,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.name_ads"
 msgstr "Localité"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
-msgstr "Minéralisations"
+msgstr "Matières premières métalliques"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.name_ads"
 msgstr "Localité"
@@ -7994,14 +7991,8 @@ msgstr "Objets isolés lignes VECTOR25"
 msgid "ch.swisstopo.vec25-einzelobjekte-punkte"
 msgstr "Objets isolés points VECTOR25"
 
-msgid "ch.swisstopo.vec25-eisenbahnnetz"
-msgstr "Réseau ferroviaire VECTOR25"
-
 msgid "ch.swisstopo.vec25-gebaeude"
 msgstr "Bâtiments VECTOR25"
-
-msgid "ch.swisstopo.vec25-gewaessernetz"
-msgstr "Réseau hydrographique VECTOR25"
 
 msgid "ch.swisstopo.vec25-heckenbaeume"
 msgstr "Haies, arbres isolés VECTOR25"
@@ -8014,12 +8005,6 @@ msgstr "Haies et arbres isolés lignes VECTOR25"
 
 msgid "ch.swisstopo.vec25-primaerflaechen"
 msgstr "Surfaces primaires VECTOR25"
-
-msgid "ch.swisstopo.vec25-strassennetz"
-msgstr "Réseau routier VECTOR25"
-
-msgid "ch.swisstopo.vec25-uebrigerverkehr"
-msgstr "Autres transports VECTOR25"
 
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Chemins de randonnée VECTOR25"
@@ -8241,7 +8226,7 @@ msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
 msgstr "PSM consultation"
 
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
-msgstr "Plan sectoriel militaire"
+msgstr "PS militaire"
 
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_points"
 msgstr "Plan sectoriel militaire"

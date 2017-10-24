@@ -1694,23 +1694,29 @@ msgstr "Amphibien Ortsfeste Objekte"
 msgid "ch.bafu.bundesinventare-amphibien_anhang4"
 msgstr "Amphibien Anhang 4"
 
-msgid "ch.bafu.bundesinventare-amphibien_anhoerung"
-msgstr "Amphibien - Anhörung 2015"
-
 msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte"
 msgstr "Amphibien Wanderobjekte"
-
-msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung"
-msgstr "Amphibien Wanderobjekte 2015"
 
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Auengebiete"
 
 msgid "ch.bafu.bundesinventare-auen_anhang2"
-msgstr "Auengebiete Anhang 2"
+msgstr "Auengebiete - Anhang 2"
 
-msgid "ch.bafu.bundesinventare-auen_anhoerung"
-msgstr "Auen - Anhörung 2015"
+msgid "ch.bafu.bundesinventare-auen_anhang2.area"
+msgstr "Fläche [ha]"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.refobjblatt"
+msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.type"
+msgstr "Typ"
 
 msgid "ch.bafu.bundesinventare-auen.au_name"
 msgstr "Name"
@@ -1742,17 +1748,11 @@ msgstr "Teilobjekt-Nr."
 msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Flachmoore"
 
-msgid "ch.bafu.bundesinventare-flachmoore_anhoerung"
-msgstr "Flachmoore Anhörung 2015"
-
 msgid "ch.bafu.bundesinventare-flachmoore_regional"
 msgstr "Flachmoore regional"
 
 msgid "ch.bafu.bundesinventare-hochmoore"
 msgstr "Hochmoore"
-
-msgid "ch.bafu.bundesinventare-hochmoore_anhoerung"
-msgstr "Hochmoore - Anhörung 2015"
 
 msgid "ch.bafu.bundesinventare-jagdbanngebiete"
 msgstr "Jagdbanngebiete"
@@ -1763,17 +1763,11 @@ msgstr "Objektnummer"
 msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Moorlandschaften"
 
-msgid "ch.bafu.bundesinventare-moorlandschaften_anhoerung"
-msgstr "Moorlandschaften - Anhörung 2015"
-
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr "Trockenwiesen und -weiden (TWW)"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "TWW Anhang 2"
-
-msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung"
-msgstr "TWW - Anhörung 2015"
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Wasser- und Zugvogelreservate"
@@ -4679,6 +4673,9 @@ msgstr "SIL Anhörung"
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"
 msgstr "SP Infrastruktur Luftfahrt"
 
+msgid "ch.bazl.schutzgebiete-aulav_liechtenstein"
+msgstr "Schutzgebiete Liechtenstein AuLaV"
+
 msgid "ch.bazl.segelflugkarte"
 msgstr "Segelflugkarte"
 
@@ -5964,7 +5961,7 @@ msgid "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"
 msgstr "Gesteinsklassen 500"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
-msgstr "Lithologie (Hauptgruppen) 500"
+msgstr "Min. Rohstoffe (vereinfacht) 500"
 
 msgid "ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200"
 msgstr "Mineralische Rohstoffe 200"
@@ -5982,7 +5979,7 @@ msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
 msgstr "Steinbrüche 1995"
 
 msgid "ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke"
-msgstr "Steine an hist. Bauwerken"
+msgstr "Naturwerksteine an Bauwerken"
 
 msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1965"
 msgstr "Zementindustrie 1965"
@@ -6288,19 +6285,19 @@ msgid "ch.swisstopo.geologie-rohstoffe"
 msgstr "Mineralische Rohstoffe"
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
-msgstr "Industrieminerale"
+msgstr "Industrieminerale: Vorkommen"
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.name_ads"
 msgstr "Lokalität"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"
-msgstr "Mineralische Energierohstoffe"
+msgstr "Energierohstoffe: Vorkommen"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.name_ads"
 msgstr "Lokalität"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
-msgstr "Vererzungen"
+msgstr "Metallrohstoffe: Vorkommen"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.name_ads"
 msgstr "Lokalität"
@@ -7994,14 +7991,8 @@ msgstr "Einzelobjekte Linien VECTOR25"
 msgid "ch.swisstopo.vec25-einzelobjekte-punkte"
 msgstr "Einzelobjekte Punkte VECTOR25"
 
-msgid "ch.swisstopo.vec25-eisenbahnnetz"
-msgstr "Eisenbahnnetz VECTOR25"
-
 msgid "ch.swisstopo.vec25-gebaeude"
 msgstr "Gebäude VECTOR25"
-
-msgid "ch.swisstopo.vec25-gewaessernetz"
-msgstr "Gewässernetz VECTOR25"
 
 msgid "ch.swisstopo.vec25-heckenbaeume"
 msgstr "Hecken und Bäume VECTOR25"
@@ -8014,12 +8005,6 @@ msgstr "Hecken und Bäume Linien VECTOR25"
 
 msgid "ch.swisstopo.vec25-primaerflaechen"
 msgstr "Primärflächen VECTOR25"
-
-msgid "ch.swisstopo.vec25-strassennetz"
-msgstr "Strassennetz VECTOR25"
-
-msgid "ch.swisstopo.vec25-uebrigerverkehr"
-msgstr "Übriger Verkehr VECTOR25"
 
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Wanderwege VECTOR25"
@@ -8241,7 +8226,7 @@ msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
 msgstr "SPM Anhörung"
 
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
-msgstr "Sachplan Militär"
+msgstr "SP Militär"
 
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_points"
 msgstr "Sachplan Militär"
