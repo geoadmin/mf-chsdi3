@@ -1055,9 +1055,10 @@ Metadata Service
 
 The `tileset.json` file describes the available set of tiles. In order to use this service, you must currently use a fork of CesiumJS, `the 3d-tiles branch <https://github.com/AnalyticalGraphicsInc/cesium/tree/3d-tiles>`_. Stay informed and have a look at the current `RoadMap for 3D Tiles <https://github.com/AnalyticalGraphicsInc/cesium/issues/3241>`_.
 
-Currently, a single technical layer (ch.swisstopo.swisstlm3d.3d) is available and contains all available 3D objects. Subset of this layer / additional layers will be available in the future. Partial 3D buildings model coverage can be vizsualised `here <https://s.geo.admin.ch/70fb32e692>`_.
+Currently, 2 technical layers (ch.swisstopo.swisstlm3d.3d, ch.swisstopo.swissnames3d.3d) are available and they contains all available 3D objects. Additional layers will be available in the future. Partial 3D buildings model coverage can be vizsualised `here <https://s.geo.admin.ch/70fb32e692>`_.
 
 - https://vectortiles.geo.admin.ch/ch.swisstopo.swisstlm3d.3d/20170425/tileset.json
+- https://vectortiles.geo.admin.ch/ch.swisstopo.swissnames3d.3d/20170814/tileset.json
 
 Example
 *******
