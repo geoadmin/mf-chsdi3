@@ -86,8 +86,7 @@ class TileChecker(MapProxyTestsBase):
         tiles = {3857: [(7, 67, 45)],
                  21781: [(17, 5, 6)],
                  2056: [(17, 5, 6)],
-                 4326: [(15, 2, 2)],
-                 4258: [(15, 2, 2)]
+                 4326: [(15, 2, 2)]
                  }
 
         if epsg in tiles.keys():
@@ -141,10 +140,4 @@ def test_epsg2056():
 def test_epsg4326():
     with TileChecker() as tc:
         for tile in tc.itiles(epsg=4326):
-            yield tc.check_status_code, tile
-
-
-def test_epsg4258():
-    with TileChecker() as tc:
-        for tile in tc.itiles(epsg=4258):
             yield tc.check_status_code, tile

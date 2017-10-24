@@ -19,7 +19,7 @@ class MapProxyTestsBase(object):
             raise e
         self.BAD_REFERER = 'http://foo.ch'
         self.GOOD_REFERER = 'http://unittest.geo.admin.ch'
-        self.EPSGS = [21781, 4326, 4258, 2056, 3857]
+        self.EPSGS = [21781, 4326, 2056, 3857]
 
     def tearDown(self):
         if "http_proxy" in os.environ:

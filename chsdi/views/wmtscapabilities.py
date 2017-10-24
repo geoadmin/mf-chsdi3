@@ -36,7 +36,7 @@ class WMTSCapabilites(MapNameValidation):
         self.models = get_wmts_models(self.lang)
         self.request = request
         epsg = request.params.get('epsg', u'21781')
-        available_epsg_codes = [u'21781', u'4326', u'2056', u'4258', u'3857']
+        available_epsg_codes = [u'21781', u'4326', u'2056', u'3857']
         if epsg not in available_epsg_codes:
             raise HTTPBadRequest('EPSG:%s not found. Must be one of %s' % (epsg, ", ".join(available_epsg_codes)))
         self.tileMatrixSet = epsg

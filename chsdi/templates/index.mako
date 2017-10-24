@@ -99,13 +99,11 @@
           <h3>Raw GetCapabilities (Pyramid pur)</h3>
           <a href="rest/services/api/1.0.0/WMTSCapabilities.xml">GetCapabilities for EPSG:21781</a><br />
           <a href="rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=4326">GetCapabilities for EPSG:4326</a><br />
-          <a href="rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=4258">GetCapabilities for EPSG:4258</a><br />
           <a href="rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=2056">GetCapabilities for EPSG:2056</a><br />
           <a href="rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=3857">GetCapabilities for EPSG:3857</a><br />
           <h3>GetCapabilities via apache (don't test with 'localhost')</h3>
           <a href="1.0.0/WMTSCapabilities.xml">GetCapabilities for EPSG:21781</a><br />
           <a href="1.0.0/WMTSCapabilities.EPSG.4326.xml">GetCapabilities for EPSG:4326</a><br />
-          <a href="1.0.0/WMTSCapabilities.EPSG.4258.xml">GetCapabilities for EPSG:4258</a><br />
           <a href="1.0.0/WMTSCapabilities.EPSG.2056.xml">GetCapabilities for EPSG:2056</a><br />
           <a href="1.0.0/WMTSCapabilities.EPSG.3857.xml">GetCapabilities for EPSG:3857</a><br />
 
