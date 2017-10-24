@@ -1611,7 +1611,7 @@ class Swisstlm3dGewaessernetz(Base, Vector):
 register('ch.swisstopo.swisstlm3d-gewaessernetz', Swisstlm3dGewaessernetz)
 
 
-class Swisstlm3dStrassen500(Base, Vector):
+class Swisstlm3dStrassen500000(Base, Vector):
     __tablename__ = 'strasse_500000_tooltip'
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __template__ = 'templates/htmlpopup/swisstlm3d-strassen.mako'
@@ -1628,7 +1628,7 @@ class Swisstlm3dStrassen500(Base, Vector):
     the_geom = Column(Geometry2D)
 
 
-class Swisstlm3dStrassen100(Base, Vector):
+class Swisstlm3dStrassen100000(Base, Vector):
     __tablename__ = 'strasse_100000_tooltip'
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __template__ = 'templates/htmlpopup/swisstlm3d-strassen.mako'
@@ -1646,7 +1646,7 @@ class Swisstlm3dStrassen100(Base, Vector):
     the_geom = Column(Geometry2D)
 
 
-class Swisstlm3dStrassen10(Base, Vector):
+class Swisstlm3dStrassen10000(Base, Vector):
     __tablename__ = 'strasse_10000_tooltip'
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __template__ = 'templates/htmlpopup/swisstlm3d-strassen.mako'
@@ -1680,9 +1680,9 @@ class Swisstlm3dStrassen(Base, Vector):
     verkehrsbeschraenkung = Column('verkehrsbeschraenkung', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen500)
-register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen100)
-register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen10)
+register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen500000)
+register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen100000)
+register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen10000)
 register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen)
 
 
