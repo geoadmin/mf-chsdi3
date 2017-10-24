@@ -1694,23 +1694,29 @@ msgstr "Amfibis, objects fixs"
 msgid "ch.bafu.bundesinventare-amphibien_anhang4"
 msgstr "Amfibis – agiunta 4"
 
-msgid "ch.bafu.bundesinventare-amphibien_anhoerung"
-msgstr "Amfibis – audiziun 2015"
-
 msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte"
 msgstr "Amfibis, objects movibels"
-
-msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung"
-msgstr "Amfibis – objects movibels 2015"
 
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Zonas umidas"
 
 msgid "ch.bafu.bundesinventare-auen_anhang2"
-msgstr "Zonas umidas"
+msgstr "Zonas umidas - Allegato 2"
 
-msgid "ch.bafu.bundesinventare-auen_anhoerung"
-msgstr "Zonas umidas – audiziun 2015"
+msgid "ch.bafu.bundesinventare-auen_anhang2.area"
+msgstr "Fläche [ha]"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.refobjblatt"
+msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.type"
+msgstr "Typ"
 
 msgid "ch.bafu.bundesinventare-auen.au_name"
 msgstr "Num"
@@ -1742,17 +1748,11 @@ msgstr "Teilobjekt-Nr."
 msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Palids planivas"
 
-msgid "ch.bafu.bundesinventare-flachmoore_anhoerung"
-msgstr "Palids planivas – audiziun 2015"
-
 msgid "ch.bafu.bundesinventare-flachmoore_regional"
 msgstr "Palids planivas regiunal"
 
 msgid "ch.bafu.bundesinventare-hochmoore"
 msgstr "Palids autas"
-
-msgid "ch.bafu.bundesinventare-hochmoore_anhoerung"
-msgstr "Palids autas – audiziun 2015"
 
 msgid "ch.bafu.bundesinventare-jagdbanngebiete"
 msgstr "Asils da selvaschina"
@@ -1763,17 +1763,11 @@ msgstr "Objektnummer"
 msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Cuntradas da palì"
 
-msgid "ch.bafu.bundesinventare-moorlandschaften_anhoerung"
-msgstr "Cuntradas da palì – audiziun 2015"
-
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr "Pastgiras e prads sitgs (PPS)"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "PPS – agiunta 2"
-
-msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung"
-msgstr "PPS – audiziun 2015"
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Reservats d'utschels: aua, migrants"
@@ -4678,6 +4672,9 @@ msgstr "PSIA audiziun"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"
 msgstr "PS Infrastructura aviatica"
+
+msgid "ch.bazl.schutzgebiete-aulav_liechtenstein"
+msgstr "Schutzgebiete Liechtenstein AuLaV"
 
 msgid "ch.bazl.segelflugkarte"
 msgstr "Charta da sgol senza motor"
@@ -7994,14 +7991,8 @@ msgstr "Einzelobjekte Linien VECTOR25"
 msgid "ch.swisstopo.vec25-einzelobjekte-punkte"
 msgstr "Einzelobjekte Punkte VECTOR25"
 
-msgid "ch.swisstopo.vec25-eisenbahnnetz"
-msgstr "Rait da viafiers VECTOR25"
-
 msgid "ch.swisstopo.vec25-gebaeude"
 msgstr "Edifizis VECTOR25"
-
-msgid "ch.swisstopo.vec25-gewaessernetz"
-msgstr "Rait idrografica VECTOR25"
 
 msgid "ch.swisstopo.vec25-heckenbaeume"
 msgstr "Saivs vivas e bostgs VECTOR25"
@@ -8014,12 +8005,6 @@ msgstr "Hecken und Bäume Linien VECTOR25"
 
 msgid "ch.swisstopo.vec25-primaerflaechen"
 msgstr "Surfatschas primaras VECTOR25"
-
-msgid "ch.swisstopo.vec25-strassennetz"
-msgstr "Rait da vias VECTOR25"
-
-msgid "ch.swisstopo.vec25-uebrigerverkehr"
-msgstr "Ulteriur traffic VECTOR25"
 
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Sendas da viandar VECTOR25"
@@ -8241,7 +8226,7 @@ msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
 msgstr "PSM Audiziun"
 
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
-msgstr "Plan secturial Militar"
+msgstr "PS Militar"
 
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_points"
 msgstr "Sachplan Militär"

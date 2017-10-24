@@ -1694,23 +1694,29 @@ msgstr "Amphibians stationary objects"
 msgid "ch.bafu.bundesinventare-amphibien_anhang4"
 msgstr "Amphibians appendix 4"
 
-msgid "ch.bafu.bundesinventare-amphibien_anhoerung"
-msgstr "Amphibians - consultation 2015"
-
 msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte"
 msgstr "Amphibians shifting sites"
-
-msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung"
-msgstr "Amphibians shifting sites 2015"
 
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Floodplains"
 
 msgid "ch.bafu.bundesinventare-auen_anhang2"
-msgstr "Floodplains"
+msgstr "Floodplains - Appendix 2"
 
-msgid "ch.bafu.bundesinventare-auen_anhoerung"
-msgstr "Floodplains - consultation 2015"
+msgid "ch.bafu.bundesinventare-auen_anhang2.area"
+msgstr "Area [ha]"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.name"
+msgstr "Name"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.objnummer"
+msgstr "No."
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.refobjblatt"
+msgstr "Objectsheet"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.type"
+msgstr "Type"
 
 msgid "ch.bafu.bundesinventare-auen.au_name"
 msgstr "Name"
@@ -1742,17 +1748,11 @@ msgstr "Subarea-No."
 msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Fens"
 
-msgid "ch.bafu.bundesinventare-flachmoore_anhoerung"
-msgstr "Fens - consultation 2015"
-
 msgid "ch.bafu.bundesinventare-flachmoore_regional"
 msgstr "Regional fens"
 
 msgid "ch.bafu.bundesinventare-hochmoore"
 msgstr "Raised bogs"
-
-msgid "ch.bafu.bundesinventare-hochmoore_anhoerung"
-msgstr "Raised bogs - consultation 2015"
 
 msgid "ch.bafu.bundesinventare-jagdbanngebiete"
 msgstr "Swiss game reserves"
@@ -1763,17 +1763,11 @@ msgstr "Objektnummer"
 msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Mire landscapes"
 
-msgid "ch.bafu.bundesinventare-moorlandschaften_anhoerung"
-msgstr "Mire landscapes - consultation 2015"
-
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr "Dry grasslands (DGS)"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "Dry grasslands appendix 2"
-
-msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung"
-msgstr "Dry grasslands - consultation 2015"
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Water & migrant bird reserves"
@@ -4678,6 +4672,9 @@ msgstr "SAIP consultation"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"
 msgstr "SP Aviation infrastructure"
+
+msgid "ch.bazl.schutzgebiete-aulav_liechtenstein"
+msgstr "Protected areas Liechtenstein AuLaV"
 
 msgid "ch.bazl.segelflugkarte"
 msgstr "Glider Chart"
@@ -7881,7 +7878,7 @@ msgid "ch.swisstopo-vd.spannungsarme-gebiete"
 msgstr "Low distortion area"
 
 msgid "ch.swisstopo-vd.stand-oerebkataster"
-msgstr "Availability of the PLR cadastre"
+msgstr "Availability of the PLR Cadastre"
 
 msgid "ch.swisstopo-vd.url"
 msgstr "http://www.cadastre.ch"
@@ -7994,14 +7991,8 @@ msgstr "Einzelobjekte Linien VECTOR25"
 msgid "ch.swisstopo.vec25-einzelobjekte-punkte"
 msgstr "Einzelobjekte Punkte VECTOR25"
 
-msgid "ch.swisstopo.vec25-eisenbahnnetz"
-msgstr "Railway network VECTOR25"
-
 msgid "ch.swisstopo.vec25-gebaeude"
 msgstr "Buildings VECTOR25"
-
-msgid "ch.swisstopo.vec25-gewaessernetz"
-msgstr "Hydrological network VECTOR25"
 
 msgid "ch.swisstopo.vec25-heckenbaeume"
 msgstr "Hedges and trees  VECTOR25"
@@ -8014,12 +8005,6 @@ msgstr "Hecken und Bäume Linien VECTOR25"
 
 msgid "ch.swisstopo.vec25-primaerflaechen"
 msgstr "Primary surfaces VECTOR25"
-
-msgid "ch.swisstopo.vec25-strassennetz"
-msgstr "Road network  VECTOR25"
-
-msgid "ch.swisstopo.vec25-uebrigerverkehr"
-msgstr "Other traffic  VECTOR25"
 
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Hiking trails  VECTOR25"
@@ -8241,7 +8226,7 @@ msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
 msgstr "SPM consultation"
 
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
-msgstr "Sectoral Plan Military"
+msgstr "SP Military"
 
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_points"
 msgstr "Sachplan Militär"

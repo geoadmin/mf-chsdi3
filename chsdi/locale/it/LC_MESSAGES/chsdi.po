@@ -1694,23 +1694,29 @@ msgstr "Anfibi oggetti fissi"
 msgid "ch.bafu.bundesinventare-amphibien_anhang4"
 msgstr "Anfibi allegato 4"
 
-msgid "ch.bafu.bundesinventare-amphibien_anhoerung"
-msgstr "Anfibi - Consultazione 2015"
-
 msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte"
 msgstr "Anfibi oggetti mobili"
-
-msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte_anhoerung"
-msgstr "Anfibi oggetti mobili 2015"
 
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Zone golenali"
 
 msgid "ch.bafu.bundesinventare-auen_anhang2"
-msgstr "Zone golenali"
+msgstr "Zone golenali - Allegato 2"
 
-msgid "ch.bafu.bundesinventare-auen_anhoerung"
-msgstr "Zone golenali - Consultazione 2015"
+msgid "ch.bafu.bundesinventare-auen_anhang2.area"
+msgstr "Superficie [ha]"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.name"
+msgstr "Nome"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.objnummer"
+msgstr "No."
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.refobjblatt"
+msgstr "Descrizione dell'oggetto"
+
+msgid "ch.bafu.bundesinventare-auen_anhang2.type"
+msgstr "Tipo"
 
 msgid "ch.bafu.bundesinventare-auen.au_name"
 msgstr "Nome"
@@ -1742,17 +1748,11 @@ msgstr "Sottozona-No."
 msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Paludi"
 
-msgid "ch.bafu.bundesinventare-flachmoore_anhoerung"
-msgstr "Paludi - Consultazione 2015"
-
 msgid "ch.bafu.bundesinventare-flachmoore_regional"
 msgstr "Paludi regionali"
 
 msgid "ch.bafu.bundesinventare-hochmoore"
 msgstr "Torbiere alte"
-
-msgid "ch.bafu.bundesinventare-hochmoore_anhoerung"
-msgstr "Torbiere alte - Consultazione 2015"
 
 msgid "ch.bafu.bundesinventare-jagdbanngebiete"
 msgstr "Bandite federali di caccia"
@@ -1763,17 +1763,11 @@ msgstr "Numero dell'oggetto"
 msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Zone palustri"
 
-msgid "ch.bafu.bundesinventare-moorlandschaften_anhoerung"
-msgstr "Zone palustri - Consultazione 2015"
-
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr "Prati e pascoli secchi (PPS)"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "PPS allegato 2"
-
-msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhoerung"
-msgstr "PPS - Consultazione 2015"
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Riserve di uccelli acquatici"
@@ -3960,7 +3954,7 @@ msgid "ch.bav"
 msgstr "UFT"
 
 msgid "ch.bav.anlagen-schienengueterverkehr"
-msgstr "ch.bav.anlagen-schienengueterverkehr"
+msgstr "Anlagen Schienengüterverkehr"
 
 msgid "ch.bav.baulinien-eisenbahnanlagen.oereb"
 msgstr "Linee di costruzione ferrovie RDPP"
@@ -4678,6 +4672,9 @@ msgstr "PSIA consultazione"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"
 msgstr "PS Infrastruttura aeronautica"
+
+msgid "ch.bazl.schutzgebiete-aulav_liechtenstein"
+msgstr "Zone protette Liechtenstein OAEs"
 
 msgid "ch.bazl.segelflugkarte"
 msgstr "Carta volo a vela"
@@ -7994,14 +7991,8 @@ msgstr "Objets isolés lignes VECTOR25"
 msgid "ch.swisstopo.vec25-einzelobjekte-punkte"
 msgstr "Objets isolés points VECTOR25"
 
-msgid "ch.swisstopo.vec25-eisenbahnnetz"
-msgstr "Rete ferroviaria  VECTOR25"
-
 msgid "ch.swisstopo.vec25-gebaeude"
 msgstr "Edifici  VECTOR25"
-
-msgid "ch.swisstopo.vec25-gewaessernetz"
-msgstr "Rete idrica  VECTOR25"
 
 msgid "ch.swisstopo.vec25-heckenbaeume"
 msgstr "Siepi e alberi isolati  VECTOR25"
@@ -8014,12 +8005,6 @@ msgstr "Haies et arbres isolés lignes VECTOR25"
 
 msgid "ch.swisstopo.vec25-primaerflaechen"
 msgstr "Superfici primarie VECTOR25"
-
-msgid "ch.swisstopo.vec25-strassennetz"
-msgstr "Rete stradale  VECTOR25"
-
-msgid "ch.swisstopo.vec25-uebrigerverkehr"
-msgstr "Altri mezzi di trasporto  VECTOR25"
 
 msgid "ch.swisstopo.vec25-wander"
 msgstr "Sentieri VECTROR25"
@@ -8241,7 +8226,7 @@ msgid "ch.vbs.sachplan-infrastruktur-militaer_anhoerung"
 msgstr "PSM consultazione"
 
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft"
-msgstr "Piano settoriale militare"
+msgstr "PS militare"
 
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_points"
 msgstr "Piano settoriale militare"
