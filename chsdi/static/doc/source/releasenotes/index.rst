@@ -5,6 +5,7 @@
    <link rel="alternate" type="application/rss+xml" title="GeoAdmin RSS Feed" href="rss2.xml"/>
   </head>
 
+
 .. _releasenotes:
 
 Release Notes
@@ -13,6 +14,55 @@ Release Notes
 .. raw:: html
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
+
+
+
+
+.. _releasenotes_20171025:
+   *******
+
+Release 20171025 - Wednesday, October 25th 2017
+-------------------------------------------------
+
+API & applications
+******************
+
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_171011...r_171025>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_171011...r_171025>`__
+
+Geodata
+*******
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wells > 500 m <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-bohrungen_tiefer_500>`__ (ch.swisstopo.geologie-bohrungen_tiefer_500)                                                           |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Traffic counting locations local <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal>`__ (ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal)    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Traffic counting locations principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet)  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Seismic subsoil classes <//map.geo.admin.ch/?layers=ch.bafu.gefahren-baugrundklassen>`__ (ch.bafu.gefahren-baugrundklassen)                                                                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydrological gauging stations <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-hydromessstationen>`__ (ch.bafu.hydrologie-hydromessstationen)                                                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Temperature monitoring stations <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-wassertemperaturmessstationen>`__ (ch.bafu.hydrologie-wassertemperaturmessstationen)                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Solar energy: suitability of roofs <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-daecher>`__ (ch.bfe.solarenergie-eignung-daecher)                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                      |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
+
 
 .. _releasenotes_20171011:
    *******
