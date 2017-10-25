@@ -78,7 +78,10 @@ help:
 	@echo "- doc                Generate the doc for api3.geo.admin.ch"
 	@echo "- deploybranch       Deploy current branch to dev (must be pushed before hand)"
 	@echo "- deploybranchint    Deploy current branch to dev and int (must be pushed before hand)"
-	@echo "- deletebranch       List deployed branches or delete a deployed branch (BRANCH_TO_DELETE=...)"
+	@echo "- deletebranch       List deployed branches or delete a deployed branch on dev and int (BRANCH_TO_DELETE=...)"
+	@echo "- deletebranchdev    List deployed branches or delete a deployed branch on dev (BRANCH_TO_DELETE=...)"
+	@echo "- deletebranchint    List deployed branches or delete a deployed branch on int (BRANCH_TO_DELETE=...)"
+	@echo "- updateapi          Updates geoadmin api source code (ol3 fork)"
 	@echo "- deploydev          Deploys master to dev (SNAPSHOT=true to also create a snapshot)"
 	@echo "- deployint          Deploys a snapshot to integration (SNAPSHOT=201512021146)"
 	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"
@@ -190,7 +193,16 @@ deploybranch:
 
 .PHONY: deletebranch
 deletebranch:
-	./scripts/delete_branch.sh $(BRANCH_TO_DELETE)
+	make deletebranchdev BRANCH_TO_DELETE=$(BRANCH_TO_DELETE)
+	make deletebranchint BRANCH_TO_DELETE=$(BRANCH_TO_DELETE)
+
+.PHONY: deletebranchdev
+deletebranchdev:
+	./scripts/delete_branch.sh dev $(BRANCH_TO_DELETE)
+
+.PHONY: deletebranchint
+deletebranchint:
+	./scripts/delete_branch.sh int $(BRANCH_TO_DELETE)
 
 .PHONY: deploybranchint
 deploybranchint:
