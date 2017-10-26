@@ -7,7 +7,7 @@ from pyramid.renderers import render_to_response
 from pyramid.request import Request
 
 
-available_versions = ['3.6.0', '3.18.2']
+available_versions = ['3.6.0', '3.18.2', '4.3.2', '4.4.2']
 
 
 @view_config(route_name='ga_api', renderer='json')
