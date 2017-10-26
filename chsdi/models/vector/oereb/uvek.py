@@ -28,7 +28,7 @@ register_oereb(ProjektierungszonenNationalstrassenOereb.__bodId__, Projektierung
 
 # BAV
 class KatasterBelastetenStandorteOevOereb(Base, OerebBase, Vector):
-    __tablename__ = 'kataster_belasteter_standorte_oev_oereb'
+    __tablename__ = 'kataster_belasteter_standorte_oev_oereb_test'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __bodId__ = 'ch.bav.kataster-belasteter-standorte-oev.oereb'
 
@@ -69,7 +69,7 @@ register_oereb(SichereitszonenOereb.__bodId__, SichereitszonenOereb)
 
 
 class KatasterBelastetenStandorteZivflplOereb(Base, OerebBase, Vector):
-    __tablename__ = 'kataster_belasteter_standorte_zivflpl_oereb'
+    __tablename__ = 'kataster_belasteter_standorte_zivflpl_oereb_test'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __bodId__ = 'ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb'
 
