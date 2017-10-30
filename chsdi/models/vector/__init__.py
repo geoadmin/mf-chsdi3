@@ -16,8 +16,8 @@ from geoalchemy2.elements import WKBElement
 from geoalchemy2.shape import to_shape
 
 
-Geometry2D = GeometryChsdi(geometry_type='GEOMETRY', dimension=2, srid=21781)
-Geometry3D = GeometryChsdi(geometry_type='GEOMETRY', dimension=3, srid=21781)
+Geometry2D = GeometryChsdi(geometry_type='GEOMETRY', dimension=2, srid=2056)
+Geometry3D = GeometryChsdi(geometry_type='GEOMETRY', dimension=3, srid=2056)
 
 
 def get_resolution(imageDisplay, mapExtent):
