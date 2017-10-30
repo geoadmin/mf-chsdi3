@@ -77,14 +77,14 @@ Default version is based on ol version 3.6.0.
 
 Available versions are (which are all based on ol3 releases):
 
--- 3.6.0  (LV03)
--- 3.18.2 (LV03)
--- 4.3.2  (LV03)
--- 4.4.2  (LV95)
+- 3.6.0  (LV03)
+- 3.18.2 (LV03)
+- 4.3.2  (LV03)
+- 4.4.2  (LV95)
 
 .. warning::
-   Only the current version is supported. Previous version are give as courtesy,and may be linked to layers and resources which may not be supported anymore or even no longer exist. We strongly encourage you to migrate
-   to the latest version, currently **4.4.2**. The good practice is to not specify a **version** parameter.
+   Only the current version is supported. Previous versions are given as courtesy, and may be linked to layers and resources which may not be supported anymore or even no longer exist. We strongly encourage you to migrate
+   to the latest version, currently **4.4.2**. The good practice is to **not** using the **version** parameter.
    
    The version **4.4.2** is only one supporting the new **LV95** (EPSG:2056) reference frame.
 
