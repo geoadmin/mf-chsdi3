@@ -674,7 +674,7 @@ URL
 
 ::
 
-  https://alti.geo.admin.ch/rest/services/height
+  https://api3.geo.admin.ch/rest/services/height
 
 Input Parameters
 ****************
@@ -691,8 +691,8 @@ RESTFul interface is available.
 | **elevation_model (optional)** | The elevation model. Three elevation models are available DTM25, DTM2 (swissALTI3D)     |
 |                                | and COMB (a combination of DTM25 and DTM2). Default to "DTM25".                         |
 +--------------------------------+-----------------------------------------------------------------------------------------+
-| **sr(optional)**               | The reference system to use (EPSG code). Valid value are 2056 (for LV95) and 21781 (for |
-|                                | LV03). If not given, trying to guess which one to use.                                  |
+| **sr(optional)**               | The reference system to use (EPSG code). Valid values are 2056 (for LV95) and 21781     |
+|                                | (for )LV03). If not given, trying to guess which one to use.                            |
 +--------------------------------+-----------------------------------------------------------------------------------------+
 | **callback (optional)**        | The name of the callback function.                                                      |
 +--------------------------------+-----------------------------------------------------------------------------------------+
@@ -700,7 +700,7 @@ RESTFul interface is available.
 Examples
 ********
 
-- `https://alti.geo.admin.ch/rest/services/height?easting=2600000&northing=1200000 <../../../rest/services/height?easting=2600000&northing=1200000>`_
+- `https://api3.geo.admin.ch/rest/services/height?easting=2600000&northing=1200000 <../../../rest/services/height?easting=2600000&northing=1200000>`_
 
 .. _profile_description:
 
@@ -717,8 +717,8 @@ URL
 
 ::
 
-  https://alti.geo.admin.ch/rest/services/profile.json (for json format)
-  https://alti.geo.admin.ch/rest/services/profile.csv  (for a csv)
+  https://api3.geo.admin.ch/rest/services/profile.json (for json format)
+  https://api3.geo.admin.ch/rest/services/profile.csv  (for a csv)
 
 Input Parameters
 ****************
@@ -749,8 +749,8 @@ RESTFul interface is available.
 Example
 *******
 
-- A profile in JSON: `https://atli.geo.admin.ch/rest/services/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[2550050%2C1206550]%2C[2556950%2C1204150]%2C[2561050%2C1207950]]}&sr=2056 <../../../rest/services/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[2550050%2C1206550]%2C[2556950%2C1204150]%2C[2561050%2C1207950]]}>`_
-- A profile in CSV: `https://alti.geo.admin.ch/rest/services/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[2550050%2C1206550]%2C[2556950%2C1204150]%2C[2561050%2C1207950]]}&sr=2056 <../../../rest/services/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[2550050%2C1206550]%2C[2556950%2C1204150]%2C[2561050%2C1207950]]}>`_
+- A profile in JSON: `https://api3.geo.admin.ch/rest/services/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[2550050%2C1206550]%2C[2556950%2C1204150]%2C[2561050%2C1207950]]}&sr=2056 <../../../rest/services/profile.json?geom={"type"%3A"LineString"%2C"coordinates"%3A[[2550050%2C1206550]%2C[2556950%2C1204150]%2C[2561050%2C1207950]]}>`_
+- A profile in CSV: `https://api3.geo.admin.ch/rest/services/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[2550050%2C1206550]%2C[2556950%2C1204150]%2C[2561050%2C1207950]]}&sr=2056 <../../../rest/services/profile.csv?geom={"type"%3A"LineString"%2C"coordinates"%3A[[2550050%2C1206550]%2C[2556950%2C1204150]%2C[2561050%2C1207950]]}>`_
 
 ----------
 
