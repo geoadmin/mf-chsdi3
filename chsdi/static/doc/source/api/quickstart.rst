@@ -35,7 +35,7 @@ Below you'll find a complete working example. Create a new file, copy/paste the 
     </head>
     <body>
       <h2>My first GeoAdmin map</h2>
-      <script src="http://api3.geo.admin.ch/loader.js?lang=en" type="text/javascript"></script>
+      <script src="http://api3.geo.admin.ch/loader.js?lang=en&version=4.4.2" type="text/javascript"></script>
       <div id="map" class="map"></div>
       <script type="text/javascript">
         var layer = ga.layer.create('ch.swisstopo.pixelkarte-farbe');
@@ -44,7 +44,7 @@ Below you'll find a complete working example. Create a new file, copy/paste the 
           layers: [layer],
           view: new ol.View({
             resolution: 500,
-            center: [670000, 160000]
+            center: [2670000, 1160000]
           })
         });
       </script>
@@ -77,8 +77,16 @@ Default version is based on ol version 3.6.0.
 
 Available versions are (which are all based on ol3 releases):
 
-- 3.6.0
-- 3.18.2
+-- 3.6.0  (LV03)
+-- 3.18.2 (LV03)
+-- 4.3.2  (LV03)
+-- 4.4.2  (LV95)
+
+.. warning::
+   Only the current version is supported. Previous version are give as courtesy,and may be linked to layers and resources which may not be supported anymore or even no longer exist. We strongly encourage you to migrate
+   to the latest version, currently **4.4.2**. The good practice is to not specify a **version** parameter.
+   
+   The version **4.4.2** is only one supporting the new **LV95** (EPSG:2056) reference frame.
 
 The loader is including a polyfill that might conflict with other JavaScript libraries and frameworks you are using in your application. For such cases, you can specify the ignore_polyfill parameter to not include the polyfill.
 
