@@ -26,7 +26,7 @@ class TestWmtsCapabilitiesView(TestsBase):
         resp.mustcontain('<ResourceURL format="image/jpeg" resourceType="tile" '
                          'template="http://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/{Time}/21781/{TileMatrix}/{TileRow}/{TileCol}.jpeg"/>')
         # mapproxy, host dependant, col/row order
-        resp.mustcontain('/1.0.0/ch.kantone.cadastralwebmap-farbe/default/{Time}/21781/{TileMatrix}/{TileCol}/{TileRow}.png"/>')
+        resp.mustcontain('/1.0.0/ch.kantone.cadastralwebmap-farbe/default/{Time}/21781/{TileMatrix}/{TileRow}/{TileCol}.png"/>')
 
     def test_validate_wmtscapabilities(self):
         import os
@@ -94,7 +94,6 @@ class TestWmtsCapabilitiesView(TestsBase):
             root = etree.fromstring(resp.body)
             layers = root.findall('.//{http://www.opengis.net/wmts/1.0}Layer')
             for layer in layers:
-                bodid = layer.find('./{http://www.opengis.net/ows/1.1}Identifier').text
                 resourceurls = layer.findall('.//{http://www.opengis.net/wmts/1.0}ResourceURL')
                 for resourceurl in resourceurls:
                     tpl = resourceurl.attrib['template']
@@ -103,7 +102,7 @@ class TestWmtsCapabilitiesView(TestsBase):
                     col_idx = pth.find('{TileCol}')
                     row_idx = pth.find('{TileRow}')
                     is_normal_order = col_idx < row_idx if col_idx > 0 else None
-                    if epsg == 21781 and bodid != 'ch.kantone.cadastralwebmap-farbe':
+                    if epsg == 21781:
                         self.assertFalse(is_normal_order)
                     else:
                         self.assertTrue(is_normal_order)
