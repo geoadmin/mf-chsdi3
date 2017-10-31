@@ -83,10 +83,11 @@ Available versions are (which are all based on ol3 releases):
 - 4.4.2  (LV95)
 
 .. warning::
-   Only the current version is supported. Previous versions are given as courtesy, and may be linked to layers and resources which may not be supported anymore or even no longer exist. We strongly encourage you to migrate
-   to the latest version, currently **4.4.2**. The good practice is to **not** using the **version** parameter.
+   Only the latest version is supported. Previous versions are given as courtesy and may be using layers and
+   resources which may not be supported anymore or even no longer exist *e.g* layers which have been deleted or renamed.
+   Hence, we strongly encourage you to migrate to the latest version, currently **4.4.2**. 
    
-   The version **4.4.2** is only one supporting the new **LV95** (EPSG:2056) reference frame.
+   The version **4.4.2** is only one supporting the new local swiss `LV95 <https://www.swisstopo.admin.ch/en/knowledge-facts/surveying-geodesy/reference-frames/local/lv95.html>`_ (EPSG:2056) reference frame.
 
 The loader is including a polyfill that might conflict with other JavaScript libraries and frameworks you are using in your application. For such cases, you can specify the ignore_polyfill parameter to not include the polyfill.
 
