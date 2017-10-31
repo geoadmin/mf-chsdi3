@@ -104,7 +104,7 @@ if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
                 <ResourceURL format="image/png" resourceType="tile" template="${onlineressource}1.0.0/${layer.id|n,x,trim}/default/{Time}/${epsg}/{TileMatrix}/{TileRow}/{TileCol}.png"/>
             % endif
             ## ACHTUNG: s3 tiles have a row/col order, mapproxy ones the standard col/row
-            % if epsg in ['21781'] and layer.id != 'ch.kantone.cadastralwebmap-farbe':
+            % if epsg in ['21781']:
                 <ResourceURL format="image/${str(layer.arr_all_formats).split(',')[0]}" resourceType="tile" template="${onlineressource}1.0.0/${layer.id|n,x,trim}/default/{Time}/${epsg}/{TileMatrix}/{TileRow}/{TileCol}.${str(layer.arr_all_formats).split(',')[0]}"/>
             % else:
             ## Maproxy order
