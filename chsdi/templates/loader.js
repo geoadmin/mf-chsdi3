@@ -13,7 +13,6 @@ window.GeoAdmin.lang = "${lang}";
 window.GeoAdmin.serviceUrl = "${api_url}";
 ${layersconfig|n}
 
-document.write('<link rel="stylesheet" type="text/css" href="${ol_css}" />');
 document.write('<link rel="stylesheet" type="text/css" href="${ga_css}" />');
 if ('${ignore_polyfill}' != 'true') {
   document.write('<scr' + 'ipt type="text/javascript" src="//cdn.polyfill.io/v2/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,URL"></scr' + 'ipt>');

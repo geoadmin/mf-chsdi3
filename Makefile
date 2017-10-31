@@ -79,7 +79,6 @@ help:
 	@echo "- deploybranch       Deploy current branch to dev (must be pushed before hand)"
 	@echo "- deploybranchint    Deploy current branch to dev and int (must be pushed before hand)"
 	@echo "- deletebranch       List deployed branches or delete a deployed branch (BRANCH_TO_DELETE=...)"
-	@echo "- updateapi          Updates geoadmin api source code (ol3 fork)"
 	@echo "- deploydev          Deploys master to dev (SNAPSHOT=true to also create a snapshot)"
 	@echo "- deployint          Deploys a snapshot to integration (SNAPSHOT=201512021146)"
 	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"
@@ -183,21 +182,6 @@ chsdi/locale/it/LC_MESSAGES/chsdi.mo: chsdi/locale/it/LC_MESSAGES/chsdi.po
 potomo: chsdi/locale/en/LC_MESSAGES/chsdi.mo chsdi/locale/fr/LC_MESSAGES/chsdi.mo \
         chsdi/locale/de/LC_MESSAGES/chsdi.mo chsdi/locale/fi/LC_MESSAGES/chsdi.mo \
         chsdi/locale/it/LC_MESSAGES/chsdi.mo
-
-.PHONY: updateapi
-updateapi:
-	@echo "${GREEN}Updating geoadmin API...${RESET}";
-	rm -rf chsdi/static/js/ol3 && \
-	cd chsdi/static/js/ && \
-	git clone https://github.com/geoadmin/ol3.git && \
-	cd ol3 && \
-	git remote add upstream https://github.com/openlayers/ol3 && \
-	git fetch upstream && \
-	npm install && \
-	API_URL=$(API_URL) make -f Makefile-ga build-ga && \
-	cp build/ga.css ../../css/ && \
-	cp build/ga*.js ../../js/ && \
-	cp resources/EPSG* ../../js/;
 
 .PHONY: deploybranch
 deploybranch:

@@ -7,7 +7,7 @@ from pyramid.renderers import render_to_response
 from pyramid.request import Request
 
 
-available_versions = ['3.6.0', '3.18.2']
+available_versions = ['3.6.0', '3.18.2', '4.3.2', '4.4.2']
 
 
 @view_config(route_name='ga_api', renderer='json')
@@ -37,7 +37,6 @@ def loadjs(request):
         return 'https://%s/%s/%s%s.%s' % (
             geoadmin_file_storage_bucket, s3_resources_path, filename, mode_str, extension)
 
-    ol_css = get_resource_url('ol', 'css')
     ga_css = get_resource_url('ga', 'css')
     ga_js = get_resource_url('ga', 'js', mode_str)
     epsg_21781_js = get_resource_url('EPSG21781', 'js')
@@ -47,7 +46,6 @@ def loadjs(request):
         'chsdi:templates/loader.js',
         {
             'lang': lang,
-            'ol_css': ol_css,
             'ga_css': ga_css,
             'ga_js': ga_js,
             'epsg_21781_js': epsg_21781_js,
