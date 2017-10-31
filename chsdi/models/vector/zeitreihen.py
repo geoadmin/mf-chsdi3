@@ -5,7 +5,7 @@ from sqlalchemy.types import Numeric, Unicode
 from sqlalchemy.dialects import postgresql
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector, Geometry2D
+from chsdi.models.vector import Vector, Geometry2DLV03
 
 
 Base = bases['zeitreihen']
@@ -31,7 +31,7 @@ class Zeitreihen15(Base, Vector):
     bgdi_order = Column('bgdi_order', Integer)
     array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
     box2d = Column('box2d', Unicode)
-    the_geom = Column(Geometry2D)
+    the_geom = Column(Geometry2DLV03)
 
 
 class Zeitreihen20(Base, Vector):
@@ -55,7 +55,7 @@ class Zeitreihen20(Base, Vector):
     bgdi_order = Column('bgdi_order', Integer)
     array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
     box2d = Column('box2d', Unicode)
-    the_geom = Column(Geometry2D)
+    the_geom = Column(Geometry2DLV03)
 
 
 class Zeitreihen21(Base, Vector):
@@ -79,7 +79,7 @@ class Zeitreihen21(Base, Vector):
     bgdi_order = Column('bgdi_order', Integer)
     array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
     box2d = Column('box2d', Unicode)
-    the_geom = Column(Geometry2D)
+    the_geom = Column(Geometry2DLV03)
 
 
 class Zeitreihen22(Base, Vector):
@@ -103,7 +103,7 @@ class Zeitreihen22(Base, Vector):
     bgdi_order = Column('bgdi_order', Integer)
     array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
     box2d = Column('box2d', Unicode)
-    the_geom = Column(Geometry2D)
+    the_geom = Column(Geometry2DLV03)
 
 
 class DufourErst(Base, Vector):
@@ -116,7 +116,7 @@ class DufourErst(Base, Vector):
     kbbez = Column('kbbez', Unicode)
     datenstand = Column('datenstand', Integer)
     bv_nummer = Column('bv_nummer', Unicode)
-    the_geom = Column(Geometry2D)
+    the_geom = Column(Geometry2DLV03)
 
 
 class SiegfriedErst(Base, Vector):
@@ -129,7 +129,7 @@ class SiegfriedErst(Base, Vector):
     kbbez = Column('kbbez', Unicode)
     datenstand = Column('datenstand', Numeric)
     bv_nummer = Column('bv_nummer', Unicode)
-    the_geom = Column(Geometry2D)
+    the_geom = Column(Geometry2DLV03)
 
 
 register('ch.swisstopo.hiks-siegfried', SiegfriedErst)
