@@ -23,8 +23,9 @@ class TestWmtsCapabilitiesView(TestsBase):
     def test_contains_correct_tilelink(self):
         resp = self.testapp.get('/rest/services/api/1.0.0/WMTSCapabilities.xml', status=200)
         # native s3 tiles (always on wmts), row/col order
+        wmts_public_host = self.testapp.app.registry.settings['wmts_public_host']
         resp.mustcontain('<ResourceURL format="image/jpeg" resourceType="tile" '
-                         'template="http://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/{Time}/21781/{TileMatrix}/{TileRow}/{TileCol}.jpeg"/>')
+                         'template="http://%s/1.0.0/ch.swisstopo.swissimage/default/{Time}/21781/{TileMatrix}/{TileRow}/{TileCol}.jpeg"/>' % wmts_public_host)
         # mapproxy, host dependant, col/row order
         resp.mustcontain('/1.0.0/ch.kantone.cadastralwebmap-farbe/default/{Time}/21781/{TileMatrix}/{TileRow}/{TileCol}.png"/>')
 

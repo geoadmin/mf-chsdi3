@@ -6,4 +6,4 @@ export GEODATA_STAGING=prod
 export GEOADMINHOST=mf-geoadmin3.ci.bgdi.ch
 export HOST=mf-chsdi3.ci.bgdi.ch
 export KEEP_VERSION=false
-export MAPPROXYHOST=wmts20.dev.bgdi.ch
+export WMTS_PUBLIC_HOST=tod.dev.bgdi.ch

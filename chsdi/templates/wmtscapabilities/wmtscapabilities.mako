@@ -4,7 +4,7 @@
   metadata = pageargs['metadata']
   themes = pageargs['themes']
   scheme = pageargs['scheme']
-  onlineressources = pageargs['onlineressources']
+  onlineressource = pageargs['onlineressource']
   tilematrixset = pageargs['tilematrixset']
   tmsDefs = pageargs['tilematrixsetDefs']
   epsg = tilematrixset
@@ -18,7 +18,7 @@
         <ows:Operation name="GetCapabilities">
             <ows:DCP>
                 <ows:HTTP>
-                    <ows:Get xlink:href="${onlineressources['s3']}1.0.0/WMTSCapabilities.xml">
+                    <ows:Get xlink:href="${onlineressource}1.0.0/WMTSCapabilities.xml">
                         <ows:Constraint name="GetEncoding">
                             <ows:AllowedValues>
                                 <ows:Value>REST</ows:Value>
@@ -31,7 +31,7 @@
         <ows:Operation name="GetTile">
             <ows:DCP>
                 <ows:HTTP>
-                    <ows:Get xlink:href="${onlineressources['s3']}">
+                    <ows:Get xlink:href="${onlineressource}">
                         <ows:Constraint name="GetEncoding">
                             <ows:AllowedValues>
                                 <ows:Value>REST</ows:Value>
@@ -48,11 +48,6 @@
 <%
 if layer.id == 'ch.kantone.cadastralwebmap-farbe':
      layer.timestamp='current'
-     onlineressource = onlineressources['mapproxy']
-elif epsg != '21781':
-     onlineressource = onlineressources['mapproxy']
-else:
-     onlineressource = onlineressources['s3']
 ## FIXME: Do we really have to use 3 different formats for 'zeitreihen' ?
 if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
     layer.arr_all_formats = 'jpeg'

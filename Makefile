@@ -304,7 +304,7 @@ production.ini: production.ini.in
 		--var "geodata_staging=$(GEODATA_STAGING)" \
 		--var "sphinxhost=$(SPHINXHOST)" \
 		--var "wmshost=$(WMSHOST)" \
-		--var "mapproxyhost=$(MAPPROXYHOST)" \
+		--var "wmts_public_host=$(WMTS_PUBLIC_HOST)" \
 		--var "geoadminhost=$(GEOADMINHOST)" \
 		--var "host=$(HOST)" \
 		--var "kml_temp_dir=$(KML_TEMP_DIR)" \

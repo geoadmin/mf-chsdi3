@@ -3,11 +3,15 @@
 import requests
 import random
 
-from chsdi.tests.e2e import MapProxyTestsBase
+from chsdi.tests.e2e import TodProxyTestsBase
 
 # Official URLS we support
 WMTS_URLS = [
     'wmts.geo.admin.ch',
+    'wmts1.geo.admin.ch',
+    'wmts2.geo.admin.ch',
+    'wmts3.geo.admin.ch',
+    'wmts4.geo.admin.ch',
     'wmts5.geo.admin.ch',
     'wmts6.geo.admin.ch',
     'wmts7.geo.admin.ch',
@@ -15,26 +19,12 @@ WMTS_URLS = [
     'wmts9.geo.admin.ch'
 ]
 
-MAPPROXY_URLS = [
-    'wmts10.geo.admin.ch',
-    'wmts11.geo.admin.ch',
-    'wmts12.geo.admin.ch',
-    'wmts13.geo.admin.ch',
-    'wmts14.geo.admin.ch',
-    'wmts20.geo.admin.ch',
-    'wmts21.geo.admin.ch',
-    'wmts22.geo.admin.ch',
-    'wmts23.geo.admin.ch',
-    'wmts24.geo.admin.ch',
-]
-
 
 def rotateUrl(url):
-    return url.replace(WMTS_URLS[0], WMTS_URLS[random.randint(0, len(WMTS_URLS) - 1)]).replace(MAPPROXY_URLS[0], MAPPROXY_URLS[random.randint(0, len(MAPPROXY_URLS) - 1)])
+    return url.replace(WMTS_URLS[0], WMTS_URLS[random.randint(0, len(WMTS_URLS) - 1)]).replace(WMTS_URLS[0], WMTS_URLS[random.randint(0, len(WMTS_URLS) - 1)])
 
 HEADER_RESULTS = [{
-    # NOTE Varnish transforms all non 200 status code into 204 (even 404)!
-    'Results': [200, 204, 304],
+    'Results': [200, 304],
     'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
 }, {
     'Results': [403],
@@ -50,7 +40,7 @@ def get_header():
     return HEADER_RESULTS[random.randint(0, len(HEADER_RESULTS) - 1)]
 
 
-class TileChecker(MapProxyTestsBase):
+class TileChecker(TodProxyTestsBase):
 
     def __init__(self):
         super(TileChecker, self).setUp()
@@ -65,11 +55,7 @@ class TileChecker(MapProxyTestsBase):
         return False
 
     def check_status_code(self, path):
-        if not path.startswith('http'):
-            url = self.mapproxy_url + path
-        else:
-            url = path.replace('http://wmts10.geo.admin.ch', self.mapproxy_url)
-        url = rotateUrl(url)
+        url = rotateUrl(path)
         h = get_header()
         self.session.headers.update(h['Header'])
         resp = self.session.get(url, timeout=(5, 30))

@@ -29,7 +29,7 @@ class TestVarnish(TestsBase):
             os.environ["http_proxy"] = self.registry.settings['http_proxy']
             self.api_url = 'http:%s' % self.registry.settings['api_url']
             self.alti_url = 'http:%s' % self.registry.settings['alti_url']
-            self.mapproxy_url = 'http://' + self.registry.settings['mapproxyhost'] + '/'
+            self.wmts_public_host = 'http://' + self.registry.settings['wmts_public_host'] + '/'
         except KeyError as e:
             raise e
 
@@ -103,7 +103,7 @@ class TestMapproxyGetTile(TestVarnish):
 
         payload = {'_id': self.hash()}
 
-        resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
+        resp = requests.get(self.wmts_public_host + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
 
         self.assertEqual(resp.status_code, 403)
 
@@ -112,7 +112,7 @@ class TestMapproxyGetTile(TestVarnish):
         payload = {'_id': self.hash()}
         headers = {'referer': 'http://gooffy-referer.ch', 'User-Agent': 'mf-geoadmin/python'}
 
-        resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload, headers=headers)
+        resp = requests.get(self.wmts_public_host + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload, headers=headers)
 
         self.assertEqual(resp.status_code, 403)
 
@@ -121,7 +121,7 @@ class TestMapproxyGetTile(TestVarnish):
         payload = {'_id': self.hash()}
         headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
 
-        resp = requests.get(self.mapproxy_url + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload, headers=headers)
+        resp = requests.get(self.wmts_public_host + '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/13/4265/2883.jpeg', params=payload, headers=headers)
 
         self.assertEqual(resp.status_code, 200)
 
