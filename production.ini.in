@@ -18,21 +18,21 @@ pyramid.default_locale_name = de
 pyramid.includes = pyramid_tm
 
 # SQLAlchemy database URL
-sqlalchemy.are.url = postgresql://${dbhost}:${dbport}/are_lv95_${dbstaging}
-sqlalchemy.bafu.url = postgresql://${dbhost}:${dbport}/bafu_lv95_${dbstaging}
-sqlalchemy.bak.url = postgresql://${dbhost}:${dbport}/bak_lv95_${dbstaging}
-sqlalchemy.bod.url = postgresql://${dbhost}:${dbport}/bod_lv95_${dbstaging}
-sqlalchemy.dritte.url = postgresql://${dbhost}:${dbport}/dritte_lv95_${dbstaging}
-sqlalchemy.edi.url = postgresql://${dbhost}:${dbport}/edi_lv95_${dbstaging}
-sqlalchemy.evd.url = postgresql://${dbhost}:${dbport}/evd_lv95_${dbstaging}
-sqlalchemy.kogis.url = postgresql://${dbhost}:${dbport}/kogis_lv95_${dbstaging}
-sqlalchemy.stopo.url = postgresql://${dbhost}:${dbport}/stopo_lv95_${dbstaging}
-sqlalchemy.uvek.url = postgresql://${dbhost}:${dbport}/uvek_lv95_${dbstaging}
-sqlalchemy.uvek_solarkataster.url = postgresql://${dbhost}:${dbport}/uvek_solarkataster_lv95_${dbstaging}
-sqlalchemy.mogis.url = postgresql://${dbhost}:${dbport}/mogis_lv95_${dbstaging}
-sqlalchemy.vbs.url = postgresql://${dbhost}:${dbport}/vbs_lv95_${dbstaging}
-sqlalchemy.zeitreihen.url = postgresql://${dbhost}:${dbport}/zeitreihen_${dbstaging}
-sqlalchemy.lubis.url = postgresql://${dbhost}:${dbport}/lubis_lv95_${dbstaging}
+sqlalchemy.are.url = postgresql://${dbhost}:${dbport}/are_lv95_dev
+sqlalchemy.bafu.url = postgresql://${dbhost}:${dbport}/bafu_lv95_dev
+sqlalchemy.bak.url = postgresql://${dbhost}:${dbport}/bak_lv95_dev
+sqlalchemy.bod.url = postgresql://${dbhost}:${dbport}/bod_${dbstaging}
+sqlalchemy.dritte.url = postgresql://${dbhost}:${dbport}/dritte_lv95_dev
+sqlalchemy.edi.url = postgresql://${dbhost}:${dbport}/edi_lv95_dev
+sqlalchemy.evd.url = postgresql://${dbhost}:${dbport}/evd_lv95_dev
+sqlalchemy.kogis.url = postgresql://${dbhost}:${dbport}/kogis_lv95_dev
+sqlalchemy.stopo.url = postgresql://${dbhost}:${dbport}/stopo_lv95_dev
+sqlalchemy.uvek.url = postgresql://${dbhost}:${dbport}/uvek_lv95_dev
+sqlalchemy.uvek_solarkataster.url = postgresql://${dbhost}:${dbport}/uvek_solarkataster_lv95_dev
+sqlalchemy.mogis.url = postgresql://${dbhost}:${dbport}/mogis_lv95_dev
+sqlalchemy.vbs.url = postgresql://${dbhost}:${dbport}/vbs_lv95_dev
+sqlalchemy.zeitreihen.url = postgresql://${dbhost}:${dbport}/zeitreihen_dev
+sqlalchemy.lubis.url = postgresql://${dbhost}:${dbport}/lubis_lv95_dev
 
 # Mako specific
 mako.directories = chsdi:templates
