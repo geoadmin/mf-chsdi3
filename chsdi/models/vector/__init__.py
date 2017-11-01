@@ -229,16 +229,14 @@ class Vector(object):
                 col.type.srid_out = srid_out
 
     def get_orm_columns_names(self, exclude_pkey=True):
-        geom_column_key = self.__mapper__.get_property_by_column(self.geometry_column()).key
-        geom_column_to_return_key = self.__mapper__.get_property_by_column(self.geometry_column_to_return()).key
-        keys_to_exclude = [geom_column_key, geom_column_to_return_key]
+        keys_to_exclude = []
         if exclude_pkey:
             primary_key_column = self.__mapper__.get_property_by_column(self.primary_key_column()).key
             keys_to_exclude.append(primary_key_column)
 
         for column in self.__mapper__.columns:
             mapped_column_name = self.__mapper__.get_property_by_column(column).key
-            if mapped_column_name not in keys_to_exclude:
+            if mapped_column_name not in keys_to_exclude and not isinstance(column.type, GeometryChsdi):
                 yield mapped_column_name
 
     def get_attributes_keys(self):
