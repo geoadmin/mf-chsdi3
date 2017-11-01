@@ -31,7 +31,7 @@ sqlalchemy.uvek.url = postgresql://${dbhost}:${dbport}/uvek_${dbstaging}
 sqlalchemy.uvek_solarkataster.url = postgresql://${dbhost}:${dbport}/uvek_solarkataster_${dbstaging}
 sqlalchemy.mogis.url = postgresql://${dbhost}:${dbport}/mogis_${dbstaging}
 sqlalchemy.vbs.url = postgresql://${dbhost}:${dbport}/vbs_${dbstaging}
-sqlalchemy.zeitreihen.url = postgresql://${dbhost}:${dbport}/zeitreihen_dev
+sqlalchemy.zeitreihen.url = postgresql://${dbhost}:${dbport}/zeitreihen_${dbstaging}
 sqlalchemy.lubis.url = postgresql://${dbhost}:${dbport}/lubis_${dbstaging}
 
 # Mako specific
