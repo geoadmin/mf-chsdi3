@@ -132,16 +132,10 @@ class TestMapServiceView(TestsBase):
 
     def test_layersconfig_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/layersConfig', status=200)
-        result = resp.json
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertLayersConfigGroup(result, 'ch.swisstopo.pixelkarte-farbe')
-        self.assertLayersConfigGroup(result, 'ch.swisstopo.pixelkarte-grau')
 
         resp = self.testapp.get('/rest/services/ech/MapServer/layersConfig', params={'sr': '2056'}, status=200)
-        result = resp.json
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertLayersConfigGroup(result, 'ch.swisstopo.pixelkarte-farbe')
-        self.assertLayersConfigGroup(result, 'ch.swisstopo.pixelkarte-grau')
 
     def test_layersconfig_valid_topic_all(self):
         resp = self.testapp.get('/rest/services/all/MapServer/layersConfig', status=200)
