@@ -1,18 +1,16 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Unicode
-from geoalchemy2.types import Geometry
 
 from chsdi.models import register_oereb, bases
-from chsdi.models.vector import Vector
+from chsdi.models.vector import Vector, Geometry2D
 
 Base = bases['uvek']
 
 
 class OerebBase:
     id = Column('stabil_id', Unicode, primary_key=True)
-    the_geom = Column(Geometry(geometry_type='GEOMETRY',
-                               dimension=2, srid=21781))
+    the_geom = Column(Geometry2D)
     geomType = Column('geom_type', Unicode)
     xmlData = Column('xml_data', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
