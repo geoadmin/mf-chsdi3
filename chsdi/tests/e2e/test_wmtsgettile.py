@@ -82,8 +82,7 @@ class TileChecker(MapProxyTestsBase):
         from urlparse import urlparse, urlunparse
         import xml.etree.ElementTree as etree
 
-        # TODO: ideally we should only check tiles which have content for sure.
-        tiles = {3857: [(7, 67, 45)],
+        tiles = {3857: [(16, 34243, 23004)],
                  21781: [(17, 5, 6)],
                  2056: [(17, 5, 6)],
                  4326: [(15, 2, 2)]
