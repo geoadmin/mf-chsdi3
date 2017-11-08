@@ -40,6 +40,38 @@ class Gebaeuderegister(Base, Vector):
 register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)
 
 
+class GebaeuderegisterPreview(Base, Vector):
+    __tablename__ = 'view_adr_preview'
+    __table_args__ = ({'schema': 'bfs', 'autoload': False})
+    __template__ = 'templates/htmlpopup/gebaeuderegister.mako'
+    __bodId__ = 'ch.bfs.gebaeude_wohnungs_register_preview'
+    __label__ = 'strname_de'
+    id = Column('egid_edid', Unicode, primary_key=True)
+    egid = Column('egid', Integer)
+    strname1 = Column('strname1', Unicode, nullable=False)
+    strname_de = Column('strname_de', Unicode, nullable=True)
+    strname_fr = Column('strname_fr', Unicode, nullable=True)
+    strname_it = Column('strname_it', Unicode, nullable=True)
+    strname_rm = Column('strname_rm', Unicode, nullable=True)
+    deinr = Column('deinr', Unicode)
+    plz4 = Column('plz4', Integer, nullable=False)
+    plz6 = Column('plz6', Integer, nullable=False)
+    plzname = Column('plzname', Unicode)
+    gdename = Column('gdename', Unicode, nullable=False)
+    gdekt = Column('gdekt', Unicode)
+    gdename_de = Column('gdename_de', Unicode, nullable=True)
+    gdename_fr = Column('gdename_fr', Unicode, nullable=True)
+    gdename_it = Column('gdename_it', Unicode, nullable=True)
+    gdename_rm = Column('gdename_rm', Unicode, nullable=True)
+    dstrid = Column('dstrid', Integer)
+    gstat = Column('gstat', Integer)
+    gdenr = Column('gdenr', Integer)
+    bgdi_created = Column('bgdi_created', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(GebaeuderegisterPreview.__bodId__, GebaeuderegisterPreview)
+
+
 class Agnes(Base, Vector):
     __tablename__ = 'agnes'
     __table_args__ = ({'schema': 'fpds', 'autoload': False})

@@ -10,7 +10,15 @@ class TestSearchServiceView(TestsBase):
         self.assertIn('detail', attrs)
         self.assertIn('origin', attrs)
         self.assertIn('label', attrs)
-        if type_ == 'locations':
+        self.assertNotIn('detail_de', attrs)
+        self.assertNotIn('detail_fr', attrs)
+        self.assertNotIn('detail_it', attrs)
+        self.assertNotIn('detail_rm', attrs)
+        self.assertNotIn('label_de', attrs)
+        self.assertNotIn('label_fr', attrs)
+        self.assertNotIn('label_it', attrs)
+        self.assertNotIn('label_rm', attrs)
+        if type_ in ('locations',  'locations_preview'):
             self.assertIn('geom_quadindex', attrs)
             if returnGeometry:
                 self.assertIn('lon', attrs)
@@ -284,12 +292,12 @@ class TestSearchServiceView(TestsBase):
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin de fontenay  1007 lausanne 5586 lausanne ch vd')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin de fontenay  1007 lausanne 5586 lausanne vd')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
         params['sr'] = '2056'
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin de fontenay  1007 lausanne 5586 lausanne ch vd')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin de fontenay  1007 lausanne 5586 lausanne vd')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056)
 
     def test_search_locations_wilenstrasse_wil(self):
@@ -338,13 +346,13 @@ class TestSearchServiceView(TestsBase):
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'avenue du mont-d\'or 1 1003 lausanne 5586 lausanne ch vd')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'avenue du mont-d\'or 1 1003 lausanne 5586 lausanne vd')
         self.assertEqual(resp.json['results'][0]['attrs']['num'], 1)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
         params['sr'] = '2056'
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'avenue du mont-d\'or 1 1003 lausanne 5586 lausanne ch vd')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'avenue du mont-d\'or 1 1003 lausanne 5586 lausanne vd')
         self.assertEqual(resp.json['results'][0]['attrs']['num'], 1)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056)
 
@@ -355,7 +363,7 @@ class TestSearchServiceView(TestsBase):
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin isabelle-de-montolieu 2 1010 lausanne 5586 lausanne ch vd')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin isabelle-de-montolieu 2 1010 lausanne 5586 lausanne vd')
         self.assertEqual(resp.json['results'][0]['attrs']['num'], 2)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
 
@@ -366,7 +374,7 @@ class TestSearchServiceView(TestsBase):
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['results'][1]['attrs']['detail'], 'rhonesandstrasse 16a 3900 brig 6002 brig-glis ch vs')
+        self.assertEqual(resp.json['results'][1]['attrs']['detail'], 'rhonesandstrasse 16a 3900 brig 6002 brig-glis vs')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
 
     def test_search_ranking(self):
@@ -382,7 +390,7 @@ class TestSearchServiceView(TestsBase):
             'searchText': 'gstaad 10'
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'gstaadstrasse 10 3792 saanen 843 saanen ch be')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'gstaadstrasse 10 3792 saanen 843 saanen be')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
 
     def test_search_features_identify(self):
@@ -515,13 +523,13 @@ class TestSearchServiceView(TestsBase):
             'bbox': '664100,268443,664150,268643'
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli  5306 tegerfelden 4320 tegerfelden ch ag')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli  5306 tegerfelden 4320 tegerfelden ag')
         self.assertEqual(len(resp.json['results']), 1)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781, spatialOrder=True)
         params['sr'] = '2056'
         params['bbox'] = shift_to_lv95(params['bbox'])
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli  5306 tegerfelden 4320 tegerfelden ch ag')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli  5306 tegerfelden 4320 tegerfelden ag')
         self.assertEqual(len(resp.json['results']), 1)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056, spatialOrder=True)
 
@@ -532,12 +540,12 @@ class TestSearchServiceView(TestsBase):
             'bbox': '564100,168443,664150,268643'
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1 5306 tegerfelden 4320 tegerfelden ch ag')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1 5306 tegerfelden 4320 tegerfelden ag')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781, spatialOrder=True)
         params['sr'] = '2056'
         params['bbox'] = shift_to_lv95(params['bbox'])
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1 5306 tegerfelden 4320 tegerfelden ch ag')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1 5306 tegerfelden 4320 tegerfelden ag')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056, spatialOrder=True)
         params = {
             'type': 'locations',
@@ -546,7 +554,7 @@ class TestSearchServiceView(TestsBase):
             'sortbbox': 'true'
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1 5306 tegerfelden 4320 tegerfelden ch ag')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1 5306 tegerfelden 4320 tegerfelden ag')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781, spatialOrder=True)
         params = {
             'type': 'locations',
@@ -555,7 +563,7 @@ class TestSearchServiceView(TestsBase):
             'sortbbox': 'false'
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli  5306 tegerfelden 4320 tegerfelden ch ag')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli  5306 tegerfelden 4320 tegerfelden ag')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
 
     def test_search_locations_bbox_only(self):
@@ -855,3 +863,43 @@ class TestSearchServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertGreater(len(resp.json['results']), 0)
         self.assertEqual(resp.json['fuzzy'], 'true')
+
+    def test_search_lang_param_same_entry(self):
+        params = {
+            'type': 'locations_preview',
+            'searchLang': 'fr',
+            'searchText': 'boujean',
+            'origins': 'address',
+            'sr': '2056'
+        }
+        resp_fr = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        self.assertAttrs('locations_preview', resp_fr.json['results'][0]['attrs'], 2056)
+        params = {
+            'type': 'locations_preview',
+            'searchLang': 'de',
+            'searchText': 'bözingenstrasse',
+            'origins': 'address',
+            'sr': '2056'
+        }
+        resp_de = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        self.assertAttrs('locations_preview', resp_de.json['results'][0]['attrs'], 2056)
+        self.assertEqual(resp_fr.json['results'][0]['attrs']['featureId'], resp_de.json['results'][0]['attrs']['featureId'])
+
+    def test_search_lang_param_no_preview(self):
+        params = {
+            'type': 'locations',
+            'searchLang': 'fr',
+            'searchText': 'boujean'
+        }
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
+
+    def test_search_lang_with_lang(self):
+        params = {
+            'type': 'locations_preview',
+            'searchLang': 'fr',
+            'lang': 'de',
+            'searchText': 'boujean'
+        }
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        self.assertAttrs('locations_preview', resp.json['results'][0]['attrs'], 21781)
