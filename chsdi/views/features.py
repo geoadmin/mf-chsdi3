@@ -79,11 +79,12 @@ def view_attribute_values_geojson(request):
 def _get_feature_info_for_popup(request, params, isExtended=False, isIframe=False):
     feature, vector_model = next(_get_features(params))
     layerModel = get_bod_model(params.lang)
+    # TODO Remove this ugly hack
     layer = next(get_layers_metadata_for_params(
         params,
         request.db.query(layerModel),
         layerModel,
-        layerIds=[params.layerId]
+        layerIds=[params.layerId if params.layerId != 'ch.bfs.gebaeude_wohnungs_register_preview' else 'ch.bfs.gebaeude_wohnungs_register']
     ))
     options = {}
     if 'feature' in feature:

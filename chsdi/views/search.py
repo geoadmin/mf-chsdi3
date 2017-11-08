@@ -7,8 +7,8 @@ from pyramid.view import view_config
 from shapely.geometry import box, Point
 
 from chsdi.lib.validation.search import SearchValidation
-from chsdi.lib.helpers import format_search_text, transform_coordinate, parse_box2d
-from chsdi.lib.helpers import shift_to, center_from_box2d
+from chsdi.lib.helpers import format_search_text, transform_coordinate, parse_box2d, shift_to
+from chsdi.lib.helpers import center_from_box2d
 from chsdi.lib.sphinxapi import sphinxapi
 from chsdi.lib import mortonspacekey as msk
 
@@ -20,15 +20,17 @@ class Search(SearchValidation):
     FEATURE_LIMIT = 20
 
     def __init__(self, request):
-        super(Search, self).__init__()
+        super(Search, self).__init__(request)
 
         self.mapName = request.matchdict.get('map')
         self.hasMap(request.db, self.mapName)
         self.lang = request.lang
+        self.searchLang = request.params.get('searchLang')
         self.cbName = request.params.get('callback')
+        # Order matters define srid first
+        self.srid = request.params.get('sr', '21781')
         self.bbox = request.params.get('bbox')
         self.sortbbox = request.params.get('sortbbox', 'true').lower() == 'true'
-        self.srid = request.params.get('sr', '21781')
         self.returnGeometry = request.params.get('returnGeometry', 'true').lower() == 'true'
         self.quadindex = None
         self.origins = request.params.get('origins')
@@ -44,8 +46,6 @@ class Search(SearchValidation):
         self.request = request
 
         morton_box = [420000, 30000, 900000, 510000]
-        if self.srid == 2056:
-            morton_box = shift_to(morton_box, 2056)
         self.quadtree = msk.QuadTree(
             msk.BBox(*morton_box), 20)
         self.sphinx = sphinxapi.SphinxClient()
@@ -87,7 +87,7 @@ class Search(SearchValidation):
         self.sphinx.SetFilterRange('@weight', 5000, 2 ** 32 - 1)
         try:
             if self.typeInfo == 'locations_preview':
-                temp = self.sphinx.Query(searchTextFinal, index='swisssearch_preview_fuzzy')
+                temp = self.sphinx.Query(searchTextFinal, index='swisssearch_fuzzy_preview')
             else:
                 temp = self.sphinx.Query(searchTextFinal, index='swisssearch_fuzzy')
         except IOError:  # pragma: no cover
@@ -116,8 +116,12 @@ class Search(SearchValidation):
             self._filter_locations_by_origins()
 
         searchList = []
+        if self.typeInfo == 'locations_preview' and self.searchLang is not None:
+            searchField = 'detail_%s' % self.searchLang
+        else:
+            searchField = 'detail'
         if len(self.searchText) >= 1:
-            searchText = self._query_fields('@detail')
+            searchText = self._query_fields('@%s' % searchField)
             searchList.append(searchText)
 
         if self.bbox is not None:
@@ -146,6 +150,7 @@ class Search(SearchValidation):
                 temp = self._fuzzy_search(searchTextFinal)
         else:
             temp = []
+
         if temp is not None and len(temp) != 0:
             self._parse_location_results(temp)
 
@@ -268,7 +273,7 @@ class Search(SearchValidation):
 
     def _get_geoanchor_from_bbox(self):
         center = center_from_box2d(self.bbox)
-        return transform_coordinate(center, self.srid, 4326)
+        return transform_coordinate(center, 21781, 4326)
 
     def _query_fields(self, fields):
         # 10a, 10b needs to be interpreted as digit
@@ -382,7 +387,13 @@ class Search(SearchValidation):
             attrs2Del = ['x', 'y', 'lon', 'lat', 'geom_st_box2d']
             popAtrrs = lambda x: res.pop(x) if x in res else x
             map(popAtrrs, attrs2Del)
-            return res
+        if 'detail_%s' % self.lang in res:
+            for lang in self.availableLangs:
+                if lang != 'en':
+                    res.pop('label_%s' % lang)
+                    detail = res.pop('detail_%s' % lang)
+                    if self.searchLang == lang:
+                        res['detail'] = detail
         return res
 
     def _parse_location_results(self, results):
@@ -390,13 +401,14 @@ class Search(SearchValidation):
         for result in self._yield_matches(results):
             origin = result['attrs']['origin']
             layer_bod_id = self._origin_to_layerbodid(origin)
+            label_key = 'label_%s' % self.searchLang if 'label_%s' % self.searchLang in result['attrs'] else 'label'
             if layer_bod_id is not None:
                 result['attrs']['layerBodId'] = layer_bod_id
                 # Backward compatible
                 result['attrs']['featureId'] = result['attrs']['feature_id']
                 result['attrs'].pop('layerBodId', None)
             result['attrs'].pop('feature_id', None)
-            result['attrs']['label'] = self._translate_label(result['attrs']['label'])
+            result['attrs']['label'] = self._translate_label(result['attrs'][label_key])
             if (origin == 'address' and
                 nb_address < self.LOCATION_LIMIT and
                (not self.bbox or self._bbox_intersection(self.bbox,
@@ -408,6 +420,7 @@ class Search(SearchValidation):
                 if not self.bbox or self._bbox_intersection(self.bbox,
                                                             result['attrs']['geom_st_box2d']):
                     self.results['results'].append(result)
+                    self._parse_address(result['attrs'])
 
     def _parse_feature_results(self, results):
         for idx, result in self._yield_results(results):
@@ -472,6 +485,9 @@ class Search(SearchValidation):
     def _bbox_intersection(self, ref, result):
         def _is_point(bbox):
             return bbox[0] == bbox[2] and bbox[1] == bbox[3]
+        # We always keep the bbox in 21781
+        if self.srid == 2056:
+            ref = shift_to(ref, 2056)
         try:
             refbox = box(ref[0], ref[1], ref[2], ref[3]) if not _is_point(ref) else Point(ref[0], ref[1])
             arr = parse_box2d(result)

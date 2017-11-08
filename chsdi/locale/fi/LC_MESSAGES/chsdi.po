@@ -1694,8 +1694,41 @@ msgstr "Amfibis, objects fixs"
 msgid "ch.bafu.bundesinventare-amphibien_anhang4"
 msgstr "Amfibis – agiunta 4"
 
+msgid "ch.bafu.bundesinventare-amphibien_anhang4.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-amphibien_anhang4.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-amphibien_anhang4.refobjblat"
+msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-amphibien.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-amphibien.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-amphibien.refobjblat"
+msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-amphibien.shape_area"
+msgstr "Fläche [ha]"
+
+msgid "ch.bafu.bundesinventare-amphibien.site"
+msgstr "Bereich"
+
 msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte"
 msgstr "Amfibis, objects movibels"
+
+msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-amphibien_wanderobjekte.refobjblat"
+msgstr "Objektblatt"
 
 msgid "ch.bafu.bundesinventare-auen"
 msgstr "Zonas umidas"
@@ -1718,11 +1751,26 @@ msgstr "Objektblatt"
 msgid "ch.bafu.bundesinventare-auen_anhang2.type"
 msgstr "Typ"
 
+msgid "ch.bafu.bundesinventare-auen.auen_type"
+msgstr "Typ"
+
 msgid "ch.bafu.bundesinventare-auen.au_name"
 msgstr "Num"
 
 msgid "ch.bafu.bundesinventare-auen.au_obj"
 msgstr "Objektnummer"
+
+msgid "ch.bafu.bundesinventare-auen.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-auen.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-auen.refobjblat"
+msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-auen.shape_area"
+msgstr "Fläche [ha]"
 
 msgid "ch.bafu.bundesinventare-bln"
 msgstr "IFC"
@@ -1748,11 +1796,41 @@ msgstr "Teilobjekt-Nr."
 msgid "ch.bafu.bundesinventare-flachmoore"
 msgstr "Palids planivas"
 
+msgid "ch.bafu.bundesinventare-flachmoore.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-flachmoore.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-flachmoore.refobjblat"
+msgstr "Objektblatt"
+
 msgid "ch.bafu.bundesinventare-flachmoore_regional"
 msgstr "Palids planivas regiunal"
 
+msgid "ch.bafu.bundesinventare-flachmoore.shape_area"
+msgstr "Fläche [ha]"
+
 msgid "ch.bafu.bundesinventare-hochmoore"
 msgstr "Palids autas"
+
+msgid "ch.bafu.bundesinventare-hochmoore.hochmoore_type"
+msgstr "Typ"
+
+msgid "ch.bafu.bundesinventare-hochmoore.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-hochmoore.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-hochmoore.refobjblat"
+msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-hochmoore.shape_area"
+msgstr "Fläche [ha]"
+
+msgid "ch.bafu.bundesinventare-hochmoore.unit"
+msgstr "Kartiereinheit"
 
 msgid "ch.bafu.bundesinventare-jagdbanngebiete"
 msgstr "Asils da selvaschina"
@@ -1763,11 +1841,53 @@ msgstr "Objektnummer"
 msgid "ch.bafu.bundesinventare-moorlandschaften"
 msgstr "Cuntradas da palì"
 
+msgid "ch.bafu.bundesinventare-moorlandschaften.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-moorlandschaften.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-moorlandschaften.refobjblat"
+msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-moorlandschaften.shape_area"
+msgstr "Fläche [ha]"
+
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden"
 msgstr "Pastgiras e prads sitgs (PPS)"
 
 msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2"
 msgstr "PPS – agiunta 2"
+
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2.refobjblat"
+msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2.shape_area"
+msgstr "Fläche [ha]"
+
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2.teilobjnummer"
+msgstr "Teilobjekt-Nr."
+
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden.refobjblat"
+msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden.shape_area"
+msgstr "Fläche [ha]"
+
+msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden.teilobjnummer"
+msgstr "Teilobjekt-Nr."
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
 msgstr "Reservats d'utschels: aua, migrants"
@@ -3956,6 +4076,21 @@ msgstr "BAV"
 msgid "ch.bav.anlagen-schienengueterverkehr"
 msgstr "Anlagen Schienengüterverkehr"
 
+msgid "ch.bav.anlagen-schienengueterverkehr.dst_abk"
+msgstr "Abkürzung"
+
+msgid "ch.bav.anlagen-schienengueterverkehr.dst_nr"
+msgstr "Nummer"
+
+msgid "ch.bav.anlagen-schienengueterverkehr.isb"
+msgstr "ISB"
+
+msgid "ch.bav.anlagen-schienengueterverkehr.name"
+msgstr "Name"
+
+msgid "ch.bav.anlagen-schienengueterverkehr.typ"
+msgstr "Anlagenkategorie"
+
 msgid "ch.bav.baulinien-eisenbahnanlagen.oereb"
 msgstr "Lingias construcziun viafiers RPDP"
 
@@ -5567,8 +5702,80 @@ msgstr "MCPFE1.3 Biodiversitätsförderung durch gezielte Eingriffe"
 msgid "ch.sem.sachplan-asyl_anhoerung"
 msgstr "SPA Anhörung"
 
+msgid "ch.sem.sachplan-asyl_anhoerung.coordlevel_text_lang"
+msgstr "Stand der Koordination"
+
+msgid "ch.sem.sachplan-asyl_anhoerung.description_text_lang"
+msgstr "Beschreibung"
+
+msgid "ch.sem.sachplan-asyl_anhoerung.document_web"
+msgstr "Weitere Informationen"
+
+msgid "ch.sem.sachplan-asyl_anhoerung.fackind_text_lang"
+msgstr "Anlageart"
+
+msgid "ch.sem.sachplan-asyl_anhoerung.facname_lang"
+msgstr "Anlage"
+
+msgid "ch.sem.sachplan-asyl_anhoerung.facstatus_text_lang"
+msgstr "Anlagestatus"
+
+msgid "ch.sem.sachplan-asyl_anhoerung.meastype_text_lang"
+msgstr "Massnahmetyp"
+
+msgid "ch.sem.sachplan-asyl_anhoerung.objectname_lang"
+msgstr "Übergeordnetes Objekt"
+
+msgid "ch.sem.sachplan-asyl_anhoerung.plname_lang"
+msgstr "Planerische Massnahme"
+
+msgid "ch.sem.sachplan-asyl_anhoerung.plstatus_text_lang"
+msgstr "Planungsstand"
+
+msgid "ch.sem.sachplan-asyl_anhoerung.validfrom"
+msgstr "Beschlussdatum"
+
+msgid "ch.sem.sachplan-asyl_anhoerung.validuntil"
+msgstr "bis"
+
 msgid "ch.sem.sachplan-asyl_kraft"
 msgstr "SPA Asyl"
+
+msgid "ch.sem.sachplan-asyl_kraft.coordlevel_text_lang"
+msgstr "Stand der Koordination"
+
+msgid "ch.sem.sachplan-asyl_kraft.description_text_lang"
+msgstr "Beschreibung"
+
+msgid "ch.sem.sachplan-asyl_kraft.document_web"
+msgstr "Weitere Informationen"
+
+msgid "ch.sem.sachplan-asyl_kraft.fackind_text_lang"
+msgstr "Anlageart"
+
+msgid "ch.sem.sachplan-asyl_kraft.facname_lang"
+msgstr "Anlage"
+
+msgid "ch.sem.sachplan-asyl_kraft.facstatus_text_lang"
+msgstr "Anlagestatus"
+
+msgid "ch.sem.sachplan-asyl_kraft.meastype_text_lang"
+msgstr "Massnahmetyp"
+
+msgid "ch.sem.sachplan-asyl_kraft.objectname_lang"
+msgstr "Übergeordnetes Objekt"
+
+msgid "ch.sem.sachplan-asyl_kraft.plname_lang"
+msgstr "Planerische Massnahme"
+
+msgid "ch.sem.sachplan-asyl_kraft.plstatus_text_lang"
+msgstr "Planungsstand"
+
+msgid "ch.sem.sachplan-asyl_kraft.validfrom"
+msgstr "Beschlussdatum"
+
+msgid "ch.sem.sachplan-asyl_kraft.validuntil"
+msgstr "bis"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Autezza da la crappa lucca"
@@ -5828,6 +6035,21 @@ msgstr "Ausgabejahr"
 msgid "ch.swisstopo.geologie-geocover"
 msgstr "GeoCover – datas vectorialas"
 
+msgid "ch.swisstopo.geologie-geocover.chrono"
+msgstr "Chrono (B-T)"
+
+msgid "ch.swisstopo.geologie-geocover.description"
+msgstr "Formation"
+
+msgid "ch.swisstopo.geologie-geocover.harmos_rev"
+msgstr "Revision"
+
+msgid "ch.swisstopo.geologie-geocover.litho"
+msgstr "Lithologie(n)"
+
+msgid "ch.swisstopo.geologie-geocover.litstrat_link"
+msgstr "Link Strati.ch"
+
 msgid "ch.swisstopo.geologie-geocover.metadata"
 msgstr "Divisiun GeoCover"
 
@@ -5926,6 +6148,33 @@ msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas.release"
 msgstr "Ausgabejahr"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata"
+msgstr "Divisiun atlas geologic 25 Vector"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.author"
+msgstr "Autor(en)"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.data"
+msgstr "Nachführungsstand"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.isbn"
+msgstr "ISBN-Nummer"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.price"
+msgstr "Stückpreis"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.release"
+msgstr "Ausgabejahr"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.scale"
+msgstr "Massstab"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.s_map_number"
+msgstr "Nummer"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.s_title_de"
+msgstr "Name"
 
 msgid "ch.swisstopo.geologie-geomorphologie"
 msgstr "Survista da la geomorfologia"
@@ -6557,8 +6806,14 @@ msgstr "ch.swisstopo.images-spotimage"
 msgid "ch.swisstopo.images-swissimage"
 msgstr "Fotografia or da l'aria"
 
+msgid "ch.swisstopo.images-swissimage-dop10.metadata"
+msgstr "Divisiun SWISSIMAGE 10 cm Raster"
+
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Divisiun SWISSIMAGE Raster"
+
+msgid "ch.swisstopo.images-swissimage.metadata.base"
+msgstr "Basis"
 
 msgid "ch.swisstopo.images-swissimage.metadata-kartenblatt"
 msgstr "Flugjahr SWISSIMAGE"
@@ -6580,6 +6835,9 @@ msgstr "Blattbezeichnung"
 
 msgid "ch.swisstopo.images-swissimage.metadata.name_it"
 msgstr "Blattbezeichnung"
+
+msgid "ch.swisstopo.images-swissimage.metadata.version"
+msgstr "Version"
 
 msgid "ch.swisstopo-karto.hangneigung"
 msgstr "Pendenza dapli che 30°"
@@ -6803,6 +7061,9 @@ msgstr "Divisiun charta naziunala 25 Stampa"
 msgid "ch.swisstopo.lk25-papierkarte.metadata.author"
 msgstr "Autori"
 
+msgid "ch.swisstopo.lk25-papierkarte.metadata.base"
+msgstr "Basis"
+
 msgid "ch.swisstopo.lk25-papierkarte.metadata.data"
 msgstr "Nachführungsstand"
 
@@ -6841,6 +7102,9 @@ msgstr "Massstab"
 
 msgid "ch.swisstopo.lk25-papierkarte.metadata.tileid"
 msgstr "Blattnummer"
+
+msgid "ch.swisstopo.lk25-papierkarte.metadata.version"
+msgstr "Version"
 
 msgid "ch.swisstopo.lk25-papierkarte-zusammensetzung.metadata"
 msgstr "Charta naziunala 1:25'000 cump."

@@ -2,7 +2,7 @@
 
 from pyramid.httpexceptions import HTTPBadRequest
 
-from chsdi.lib.helpers import float_raise_nan
+from chsdi.lib.helpers import float_raise_nan, shift_to
 from chsdi.lib.validation import MapNameValidation
 
 MAX_SPHINX_INDEX_LENGTH = 63
@@ -11,8 +11,9 @@ MAX_SEARCH_TERMS = 10
 
 class SearchValidation(MapNameValidation):
 
-    def __init__(self):
+    def __init__(self, request):
         super(SearchValidation, self).__init__()
+        self.availableLangs = request.registry.settings['available_languages'].split(' ')
         self.locationTypes = [u'locations', u'locations_preview']
         self.layerTypes = [u'layers']
         self.featureTypes = [u'featuresearch']
@@ -29,6 +30,7 @@ class SearchValidation(MapNameValidation):
         self._origins = None
         self._typeInfo = None
         self._limit = None
+        self._searchLang = None
 
     @property
     def searchText(self):
@@ -74,6 +76,10 @@ class SearchValidation(MapNameValidation):
     def limit(self):
         return self._limit
 
+    @property
+    def searchLang(self):
+        return self._searchLang
+
     @featureIndexes.setter
     def featureIndexes(self, value):
         if value is not None and value != '':
@@ -112,6 +118,8 @@ class SearchValidation(MapNameValidation):
                 values = map(float_raise_nan, values)
             except ValueError:
                 raise HTTPBadRequest("Please provide numerical values for the parameter bbox")
+            if self._srid == 2056:
+                values = shift_to(values, 21781)
             # Swiss extent
             if values[0] >= 420000 and values[1] >= 30000:
                 if values[0] < values[1]:
@@ -186,3 +194,11 @@ class SearchValidation(MapNameValidation):
                 self._limit = int(value)
             else:
                 raise HTTPBadRequest('The limit parameter should be an integer')
+
+    @searchLang.setter
+    def searchLang(self, value):
+        if value == 'en':
+            value = 'de'
+        if value is not None and value not in self.availableLangs:
+            raise HTTPBadRequest('Usupported lang filter %s' % value)
+        self._searchLang = value
