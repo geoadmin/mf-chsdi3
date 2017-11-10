@@ -317,14 +317,15 @@ def shift_to(coords, srid):
     cds = []
     x_offset = 2e6
     y_offset = 1e6
-    while len(coords) > 0:
-        c = coords.pop(0)
+    coords_copy = coords[:]
+    while len(coords_copy) > 0:
+        c = coords_copy.pop(0)
         if not isinstance(c, (int, float)):
             raise TypeError('Coordinates should be of type int or float')
         if srid == 2056:
-            cds.append(c + x_offset if len(coords) % 2 else c + y_offset)
+            cds.append(c + x_offset if len(coords_copy) % 2 else c + y_offset)
         elif srid == 21781:
-            cds.append(c - x_offset if len(coords) % 2 else c - y_offset)
+            cds.append(c - x_offset if len(coords_copy) % 2 else c - y_offset)
     return cds
 
 
