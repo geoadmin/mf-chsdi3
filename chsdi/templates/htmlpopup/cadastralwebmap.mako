@@ -9,27 +9,30 @@
   from gatilegrid import getTileGrid
   from chsdi.models.vector import get_scale
   from chsdi.lib.validation.identify import IdentifyServiceValidation
+  from chsdi.lib.helpers import shift_to
   request = context.get('request')
-  grid = getTileGrid(2056)()
-  defaultExtent = ','.join(map(str, grid.extent))
-  defaultImageDisplay = '400,600,96'
   fallbackLang = 'fr' if request.lang in ('fr', 'it') else 'de'
 
   class CadastralWebMapParams(IdentifyServiceValidation):
       def __init__(self, request):
+          self.srid = request.params.get('sr', '21781')
+          grid = getTileGrid(self.srid)()
+          defaultImageDisplay = '400,600,96'
+          defaultExtent = ','.join(map(str, grid.extent))
+
           self.mapExtent = request.params.get('mapExtent', defaultExtent)
           self.imageDisplay = request.params.get('imageDisplay', defaultImageDisplay)
-  params = CadastralWebMapParams(request)
+          self.coord = request.params.get('coord')
 
-  c['bbox'] = params.mapExtent.bounds
-  c['bboxlv03'] = [c['bbox'][0] - 2000000, c['bbox'][1] - 1000000,
-                   c['bbox'][2] - 2000000, c['bbox'][3] - 1000000]
+  params = CadastralWebMapParams(request)
+  c['bboxlv95'] =  list(params.mapExtent.bounds)
+  c['bboxlv03'] =  shift_to(c['bboxlv95'], 21781)
   c['scale']  = get_scale(params.imageDisplay, params.mapExtent)
-  defaultCoord = [(c['bbox'][0] + c['bbox'][2]) / 2,
-                  (c['bbox'][1] + c['bbox'][3]) / 2]
-  clickCoord = request.params.get('coord').split(',') if request.params.get('coord') else defaultCoord
-  c['clickCoordLv03'] = [clickCoord[0][1:],
-                         clickCoord[1][1:]]
+
+  defaultCoordLv95 = [(c['bboxlv95'][0] + c['bboxlv95'][2]) / 2,
+                      (c['bboxlv95'][1] + c['bboxlv95'][3]) / 2]
+  c['clickCoordLv95'] = [float(a) for a in params.coord.split(',')] if params.coord else defaultCoordLv95
+  c['clickCoordLv03'] = shift_to(c['clickCoordLv95'], 21781)
 %>
-${partials.table_body_cadastral(c, lang, fallbackLang, clickCoord)}
+${partials.table_body_cadastral(c, lang, fallbackLang)}
 </%def>

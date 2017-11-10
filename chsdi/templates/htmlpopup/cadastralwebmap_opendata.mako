@@ -12,35 +12,49 @@
 
 <%
   import requests
+  from gatilegrid import getTileGrid
   from chsdi.models.vector import get_scale
   from chsdi.lib.validation.identify import IdentifyServiceValidation
+  from chsdi.lib.helpers import shift_to
   request = context.get('request')
   protocol = request.scheme
-  defaultExtent = '42000,30000,350000,900000'
-  defaultImageDisplay = '400,600,96'
-  defaultCoord = ['600000', '200000']
   fallbackLang = 'fr' if request.lang in ('fr', 'it') else 'de'
+  
   class CadastralWebMapParams(IdentifyServiceValidation):
       def __init__(self, request):
+          self.srid = request.params.get('sr', '21781')
+          grid = getTileGrid(self.srid)()
+          defaultExtent = ','.join(map(str, grid.extent))
+          defaultImageDisplay = '400,600,96'
           self.mapExtent = request.params.get('mapExtent', defaultExtent)
           self.imageDisplay = request.params.get('imageDisplay', defaultImageDisplay)
+          self.coord = request.params.get('coord')
+  toto
   params = CadastralWebMapParams(request)
-  c['bbox'] = params.mapExtent.bounds
-  c['bboxlv95'] = [2000000 + c['bbox'][0], 1000000 + c['bbox'][1], 2000000 + c['bbox'][2], 1000000 + c['bbox'][3]]
+  c['bboxlv95'] = list(params.mapExtent.bounds)
+  c['bboxlv03'] = shift_to(c['bboxlv95'], 21781)
   c['scale']  = get_scale(params.imageDisplay, params.mapExtent)
   topic = request.matchdict.get('map')
   baseUrl = request.registry.settings['api_url']
-  coord = request.params.get('coord').split(',') if request.params.get('coord') else defaultCoord
-  lat = coord[0]
-  lon = coord[1]
+
+  defaultCoord = [(c['bboxlv95'][0]+c['bboxlv95'][2])/2,
+                  (c['bboxlv95'][1]+c['bboxlv95'][3])/2]
+  c['clickCoordLv95'] = [float(a) for a in params.coord.split(',')] if params.coord else defaultCoord
+  c['clickCoordLv03'] = shift_to(c['clickCoordLv95'], 21781)
+
+  if params.srid == '2056':
+    lat = c['clickCoordLv95'][0]
+    lon = c['clickCoordLv95'][1]
+  else:
+    lat = c['clickCoordLv03'][0]
+    lon = c['clickCoordLv03'][1]
+
   pdf_url = "%s://geodata01.admin.ch/order/jPqrueQazrt/av_pdf.igs?pos=%s/%s" % (protocol, lat, lon)
   shp_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/SHP/%s/%s.zip" % (protocol, request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['attributes']['bfsnr'])
   itf_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/ITF/%s/%s.zip" % (protocol, request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['attributes']['bfsnr'])
-  defaultCoord = [(c['bbox'][0]+c['bbox'][2])/2, (c['bbox'][1]+c['bbox'][3])/2]
-  clickCoord = request.params.get('coord').split(',') if request.params.get('coord') else defaultCoord
 %>
 
-${partials.table_body_cadastral(c, lang, fallbackLang, clickCoord)}
+${partials.table_body_cadastral(c, lang, fallbackLang)}
 
 <tr>
     <td class="cell-left">${_('ch.swisstopo-vd.amtliche-vermessung.pdf')}</td><td>
