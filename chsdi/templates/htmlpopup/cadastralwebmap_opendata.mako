@@ -29,27 +29,31 @@
           self.mapExtent = request.params.get('mapExtent', defaultExtent)
           self.imageDisplay = request.params.get('imageDisplay', defaultImageDisplay)
           self.coord = request.params.get('coord')
-  toto
+  
   params = CadastralWebMapParams(request)
-  c['bboxlv95'] = list(params.mapExtent.bounds)
-  c['bboxlv03'] = shift_to(c['bboxlv95'], 21781)
   c['scale']  = get_scale(params.imageDisplay, params.mapExtent)
   topic = request.matchdict.get('map')
   baseUrl = request.registry.settings['api_url']
+  
 
-  defaultCoord = [(c['bboxlv95'][0]+c['bboxlv95'][2])/2,
-                  (c['bboxlv95'][1]+c['bboxlv95'][3])/2]
-  c['clickCoordLv95'] = [float(a) for a in params.coord.split(',')] if params.coord else defaultCoord
-  c['clickCoordLv03'] = shift_to(c['clickCoordLv95'], 21781)
+  if params.srid == 2056:
+      c['bboxlv95'] =  list(params.mapExtent.bounds)
+      c['bboxlv03'] =  shift_to(c['bboxlv95'], 21781)
+      defaultCoordLv95 = [(c['bboxlv95'][0] + c['bboxlv95'][2]) / 2,
+                          (c['bboxlv95'][1] + c['bboxlv95'][3]) / 2]
 
-  if params.srid == '2056':
-    lat = c['clickCoordLv95'][0]
-    lon = c['clickCoordLv95'][1]
+      c['clickCoordLv95'] = [float(a) for a in params.coord.split(',')] if params.coord else defaultCoordLv95
+      c['clickCoordLv03'] = shift_to(c['clickCoordLv95'], 21781)
   else:
-    lat = c['clickCoordLv03'][0]
-    lon = c['clickCoordLv03'][1]
+      c['bboxlv03'] =  list(params.mapExtent.bounds)
+      c['bboxlv95'] =  shift_to(c['bboxlv03'], 2056)
 
-  pdf_url = "%s://geodata01.admin.ch/order/jPqrueQazrt/av_pdf.igs?pos=%s/%s" % (protocol, lat, lon)
+      defaultCoordLv03 = [(c['bboxlv03'][0] + c['bboxlv03'][2]) / 2,
+                          (c['bboxlv03'][1] + c['bboxlv03'][3]) / 2]
+      c['clickCoordLv03'] = [float(a) for a in params.coord.split(',')] if params.coord else defaultCoordLv03
+      c['clickCoordLv95'] = shift_to(c['clickCoordLv03'], 2056)
+
+  pdf_url = "%s://geodata01.admin.ch/order/jPqrueQazrt/av_pdf.igs?pos=%s/%s" % (protocol, c['clickCoordLv03'][0] , c['clickCoordLv03'][1])
   shp_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/SHP/%s/%s.zip" % (protocol, request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['attributes']['bfsnr'])
   itf_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/ITF/%s/%s.zip" % (protocol, request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['attributes']['bfsnr'])
 %>
