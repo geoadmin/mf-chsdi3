@@ -10,18 +10,18 @@ from chsdi.lib.validation import MapNameValidation
 from chsdi.lib.filters import filter_by_geodata_staging, filter_by_map_name
 
 
-def getDefaultTileMatrixSet():
+def getDefaultTileMatrixSet(tileMatrixSet):
     tilematrixSet = {}
 
+    gagrid = getTileGrid(int(tileMatrixSet))()
     minZoom = 0
-    maxZoom = 28
-    gagrid = getTileGrid(21781)()
-    for zoom in range(minZoom, maxZoom + 1):
+    maxZoom = len(gagrid.RESOLUTIONS)
+    for zoom in range(minZoom, maxZoom):
         tilematrixSet[zoom] = [
             gagrid.getResolution(zoom),
             gagrid.numberOfXTilesAtZoom(zoom),
             gagrid.numberOfYTilesAtZoom(zoom),
-            gagrid.getScale(zoom, dpi=90.71469755842011)
+            gagrid.getScale(zoom)
         ]
     return tilematrixSet
 
@@ -80,7 +80,7 @@ class WMTSCapabilites(MapNameValidation):
             'scheme': scheme,
             'onlineressources': onlineressources,
             'tilematrixset': self.tileMatrixSet,
-            'tilematrixsetDefs': getDefaultTileMatrixSet()
+            'tilematrixsetDefs': getDefaultTileMatrixSet(self.tileMatrixSet)
         }
         response = render_to_response(
             'chsdi:templates/wmtscapabilities/wmtscapabilities.mako',

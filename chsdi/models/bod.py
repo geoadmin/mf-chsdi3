@@ -324,7 +324,7 @@ def computeHeader(mapName, srid):
         lods.append(
             {'level': zoom,
              'resolution': gagrid.getResolution(zoom),
-             'scale': gagrid.getScale(zoom, dpi=dpi),
+             'scale': gagrid.getScale(zoom),
              'width': gagrid.numberOfXTilesAtZoom(zoom),
              'height': gagrid.numberOfYTilesAtZoom(zoom)}
         )
