@@ -30,7 +30,7 @@
     % elif c['attributes']['ak'] == 'NE':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://sitn.ne.ch/theme/cadastre?map_x=2${c['clickCoordLv03'][0]}&map_y=1${c['clickCoordLv03'][1]}&map_zoom=10" target="_blank">NE</a></td></tr>
     % elif c['attributes']['ak'] == 'LU':
-        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://www.geo.lu.ch/map/grundbuchplan/?FOCUS=${c['clickCoordLv03'][0]}:${c['clickCoordLv03'][1]}:${c['scale']}" target="_blank">LU</a></td></tr>
+        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://www.geo.lu.ch/map/grundbuchplan/?FOCUS=${c['clickCoordLv95'][0]}:${c['clickCoordLv95'][1]}:${c['scale']}" target="_blank">LU</a></td></tr>
     % elif c['attributes']['ak'] == 'OW':
         <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://map.gis-daten.ch/ow_oereb?xmin=${c['bboxlv03'][0]}&ymin=${c['bboxlv03'][1]}&xmax=${c['bboxlv03'][2]}&ymax=${c['bboxlv03'][3]}" target="_blank">OW</a></td></tr>
     % elif c['attributes']['ak'] == 'NW':
