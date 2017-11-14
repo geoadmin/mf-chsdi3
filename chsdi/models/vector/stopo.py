@@ -976,6 +976,19 @@ class GridstandSwissimage(Base, ShopStandardClass, Vector):
 register('ch.swisstopo.images-swissimage.metadata', GridstandSwissimage)
 
 
+class GridstandSwissimageDop10(Base, Vector):
+    __tablename__ = 'view_gridstand_datenhaltung_swissimage_dop10_tilecache'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.images-swissimage-dop10.metadata'
+    __template__ = 'templates/htmlpopup/swissimage_dop10.mako'
+    __label__ = 'id'
+    id = Column('tile_id', Unicode, primary_key=True)
+    datenstand = Column('flightyear', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.images-swissimage-dop10.metadata', GridstandSwissimageDop10)
+
+
 class SwissimageProduct(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_swissimage'
     __table_args__ = ({'schema': 'public', 'autoload': False})
