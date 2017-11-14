@@ -1900,6 +1900,41 @@ class KbsZivilflugpl(Base, Vector):
 register('ch.bazl.kataster-belasteter-standorte-zivilflugplaetze', KbsZivilflugpl)
 
 
+class AnlageSchienengueterverkehr:
+    __tablename__ = 'anlagen_schienengueterverkehr_tooltip'
+    __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/anlagen_schienengueterverkehr.mako'
+    __bodId__ = 'ch.bav.anlagen-schienengueterverkehr'
+    __queryable_attributes__ = ['dst_nr', 'name', 'dst_abk']
+    __label__ = 'name'
+    __returnedGeometry__ = 'the_geom_point'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    dst_nr = Column('dst_nr', Integer)
+    name = Column('name', Unicode)
+    dst_abk = Column('dst_abk', Unicode)
+    isb = Column('isb', Unicode)
+    typ = Column('typ', Integer)
+    typ_de = Column('typ_de', Unicode)
+    typ_fr = Column('typ_fr', Unicode)
+    typ_it = Column('typ_it', Unicode)
+    the_geom_point = Column('the_geom', Geometry2D)
+
+
+class AnlageSchienengueterverkehrZoom1(Base, AnlageSchienengueterverkehr, Vector):
+    __minscale__ = 1
+    __maxscale__ = 4000
+    the_geom = Column('the_geom_click', Geometry2D)
+
+register(AnlageSchienengueterverkehr.__bodId__, AnlageSchienengueterverkehrZoom1)
+
+
+class AnlageSchienengueterverkehrZoom2(Base, AnlageSchienengueterverkehr, Vector):
+    __minscale__ = 4000
+    the_geom = Column('the_geom_click_overview', Geometry2D)
+
+register(AnlageSchienengueterverkehr.__bodId__, AnlageSchienengueterverkehrZoom2)
+
+
 class LaermBelastungEinsenbahnTatsaechlicheEmissionTag(Base, Vector):
     __tablename__ = 'laerm_eisenbahn_tatsaechliche_emissionen_tag'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
