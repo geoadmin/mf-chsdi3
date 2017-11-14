@@ -3470,8 +3470,50 @@ msgstr "Protected areas MIL"
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Swiss Parks (Zones)"
 
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.kategorie"
+msgstr "Category"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.name"
+msgstr "Name"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.objnummer"
+msgstr "ObjectNr."
+
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter"
 msgstr "Swiss Parks (Perimeter)"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.kategorie"
+msgstr "Category"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.name"
+msgstr "Name"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.objnummer"
+msgstr "ObjectNr."
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.rechtsgrundlage"
+msgstr "Legal Basis"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.shape_area"
+msgstr "Area [ha]"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.status"
+msgstr "State"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.rechtsgrundlage"
+msgstr "Legal Basis"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.shape_area"
+msgstr "Area [ha]"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.status"
+msgstr "State"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.teilobjnummer"
+msgstr "SubobjectNo."
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.zone"
+msgstr "Zone"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr "Ramsar"
@@ -4125,10 +4167,10 @@ msgid "ch.bav.haltestellen-oev.next_departures"
 msgstr "next departures to"
 
 msgid "ch.bav.haltestellen-oev.nodata"
-msgstr "No data"
+msgstr "No data available"
 
 msgid "ch.bav.haltestellen-oev.nodata2"
-msgstr "No data for this stop"
+msgstr "No data for this stop available"
 
 msgid "ch.bav.haltestellen-oev.reiner_betriebspunkt"
 msgstr "Simple operating point"
@@ -4811,6 +4853,9 @@ msgstr "SP Aviation infrastructure"
 msgid "ch.bazl.schutzgebiete-aulav_liechtenstein"
 msgstr "Protected areas Liechtenstein AuLaV"
 
+msgid "ch.bazl.schutzgebiete-aulav_liechtenstein.default"
+msgstr "In accordance with Art. 4 of the Liechtenstein Off-Airport Landing Ordinance, off-airport landing is prohibited in the following protected areas as defined in the Nature Conservation Act (Naturschutzgesetz; NSchG)."
+
 msgid "ch.bazl.segelflugkarte"
 msgstr "Glider Chart"
 
@@ -5264,6 +5309,12 @@ msgstr "ASTAT 09 - 04 Grundkategorien"
 msgid "ch.bfs.arealstatistik-waldmischungsgrad"
 msgstr "Mixture of forests 1990/1992"
 
+msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten"
+msgstr "Enterprises"
+
+msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente"
+msgstr "Employment (FTE)"
+
 msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Register of Buildings and Dwellings"
 
@@ -5285,6 +5336,9 @@ msgstr "City"
 msgid "ch.bfs.gebaeude_wohnungs_register.municipality_label"
 msgstr "Municipality"
 
+msgid "ch.bfs.gebaeude_wohnungs_register.pdf"
+msgstr "Details about the building"
+
 msgid "ch.bfs.gebaeude_wohnungs_register.plz4"
 msgstr "Zip"
 
@@ -5303,8 +5357,29 @@ msgstr "Download canton"
 msgid "ch.bfs.gebaeude_wohnungs_register.zip_municipality"
 msgstr "Data download municipality"
 
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1"
+msgstr "Administrative borders G1, agglomerations"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2"
+msgstr "Administrative borders G2, agglomerations"
+
 msgid "ch.bfs.url"
 msgstr "http://www.bfs.admin.ch/bfs/portal/en/index.html"
+
+msgid "ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner"
+msgstr "Population (residents)"
+
+msgid "ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner.amount"
+msgstr "Population count"
+
+msgid "ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner.year"
+msgstr "Year"
+
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude"
+msgstr "Buildings"
+
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen"
+msgstr "Dwellings"
 
 msgid "ch.blw"
 msgstr "FOAG"
