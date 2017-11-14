@@ -5663,7 +5663,7 @@ msgstr "AF"
 msgid "ch.meteoschweiz.globalstrahlung-monatlich"
 msgstr "Globalstrahlung test"
 
-msgid "ch.meteoschweiz.messdaten-temperatur"
+msgid "ch.meteoschweiz.messdaten-lufttemperatur"
 msgstr "Air temperature data"
 
 msgid "ch.mobility.standorte"
