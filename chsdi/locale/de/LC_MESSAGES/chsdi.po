@@ -3470,8 +3470,50 @@ msgstr "Schutzgebiete MIL"
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Schweizer Pärke (Zonierung)"
 
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.kategorie"
+msgstr "Kategorie"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.name"
+msgstr "Name"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.objnummer"
+msgstr "ObjektNr."
+
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter"
 msgstr "Schweizer Pärke (Perimeter)"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.kategorie"
+msgstr "Kategorie"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.name"
+msgstr "Name"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.objnummer"
+msgstr "ObjektNr."
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.rechtsgrundlage"
+msgstr "Rechtsgrundlage"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.shape_area"
+msgstr "Fläche [ha]"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.status"
+msgstr "Status"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.rechtsgrundlage"
+msgstr "Rechtsgrundlage"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.shape_area"
+msgstr "Fläche [ha]"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.status"
+msgstr "Status"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.teilobjnummer"
+msgstr "TeilobjektNr."
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.zone"
+msgstr "Zone"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr "Ramsar"
@@ -4125,10 +4167,10 @@ msgid "ch.bav.haltestellen-oev.next_departures"
 msgstr "nächste Abfahrt"
 
 msgid "ch.bav.haltestellen-oev.nodata"
-msgstr "Keine Daten"
+msgstr "Keine Daten verfügbar"
 
 msgid "ch.bav.haltestellen-oev.nodata2"
-msgstr "Keine Daten für diese Haltestelle"
+msgstr "Keine Daten für diese Haltestelle verfügbar"
 
 msgid "ch.bav.haltestellen-oev.reiner_betriebspunkt"
 msgstr "Reiner Betriebspunkt"
@@ -4811,6 +4853,9 @@ msgstr "SP Infrastruktur Luftfahrt"
 msgid "ch.bazl.schutzgebiete-aulav_liechtenstein"
 msgstr "Schutzgebiete Liechtenstein AuLaV"
 
+msgid "ch.bazl.schutzgebiete-aulav_liechtenstein.default"
+msgstr "Aussenlandungen sind gemäss Art. 4 der Liechtensteinischen Aussenlandeverordnung in den folgenden besonders schützenswerten Gebieten im Sinne des Naturschutzgesetzes (NSchG) nicht zulässig."
+
 msgid "ch.bazl.segelflugkarte"
 msgstr "Segelflugkarte"
 
@@ -5264,6 +5309,12 @@ msgstr "ASTAT 09 - 04 Grundkategorien"
 msgid "ch.bfs.arealstatistik-waldmischungsgrad"
 msgstr "Waldmischungsgrad 1990/1992"
 
+msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten"
+msgstr "Arbeitsstätten"
+
+msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente"
+msgstr "Beschäftigte (VZÄ)"
+
 msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Gebäude- und Wohnungsregister"
 
@@ -5285,6 +5336,9 @@ msgstr "Gemeinde"
 msgid "ch.bfs.gebaeude_wohnungs_register.municipality_label"
 msgstr "Gemeinde"
 
+msgid "ch.bfs.gebaeude_wohnungs_register.pdf"
+msgstr "Details zum Gebäude"
+
 msgid "ch.bfs.gebaeude_wohnungs_register.plz4"
 msgstr "PLZ"
 
@@ -5303,8 +5357,29 @@ msgstr "Datendownload Kanton"
 msgid "ch.bfs.gebaeude_wohnungs_register.zip_municipality"
 msgstr "Datendownload Gemeinde"
 
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1"
+msgstr "Administrative Grenzen G1, Agglomerationen"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2"
+msgstr "Administrative Grenzen G2, Agglomerationen"
+
 msgid "ch.bfs.url"
 msgstr "http://www.bfs.admin.ch/bfs/portal/de/index.html"
+
+msgid "ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner"
+msgstr "Bevölkerung (Einwohner)"
+
+msgid "ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner.amount"
+msgstr "Anzahl Einwohner"
+
+msgid "ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner.year"
+msgstr "Jahr"
+
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude"
+msgstr "Gebäude"
+
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen"
+msgstr "Wohnungen"
 
 msgid "ch.blw"
 msgstr "BLW"

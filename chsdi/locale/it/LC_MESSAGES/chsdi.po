@@ -3470,8 +3470,50 @@ msgstr "Zone protette MIL"
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung"
 msgstr "Parchi svizzeri (Zone)"
 
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.kategorie"
+msgstr "Categoria"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.name"
+msgstr "Nome"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.objnummer"
+msgstr "OgettoNo."
+
 msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter"
 msgstr "Parchi svizzeri (Perimetro)"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.kategorie"
+msgstr "Categoria"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.name"
+msgstr "Nome"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.objnummer"
+msgstr "OgettoNo."
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.rechtsgrundlage"
+msgstr "Base Guiridica"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.shape_area"
+msgstr "Superficie [ha]"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter.status"
+msgstr "Stato"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.rechtsgrundlage"
+msgstr "Base Guiridica"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.shape_area"
+msgstr "Superficie [ha]"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.status"
+msgstr "Stato"
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.teilobjnummer"
+msgstr "SubogettoNo."
+
+msgid "ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.zone"
+msgstr "Zona"
 
 msgid "ch.bafu.schutzgebiete-ramsar"
 msgstr "Ramsar"
@@ -4125,10 +4167,10 @@ msgid "ch.bav.haltestellen-oev.next_departures"
 msgstr "prossime partenze"
 
 msgid "ch.bav.haltestellen-oev.nodata"
-msgstr "Nessun dato"
+msgstr "Nessun dato disponibile"
 
 msgid "ch.bav.haltestellen-oev.nodata2"
-msgstr "Nessun dato per questa stazione"
+msgstr "Nessun dato disponibile per questa stazione"
 
 msgid "ch.bav.haltestellen-oev.reiner_betriebspunkt"
 msgstr "Punto operativo semplice"
@@ -4811,6 +4853,9 @@ msgstr "PS Infrastruttura aeronautica"
 msgid "ch.bazl.schutzgebiete-aulav_liechtenstein"
 msgstr "Zone protette Liechtenstein OAEs"
 
+msgid "ch.bazl.schutzgebiete-aulav_liechtenstein.default"
+msgstr "Secondo l’articolo 4 dell'ordinanza sui decolli e gli atterraggi di aeromobili fuori degli aerodromi del Principato del Liechtenstein, gli atterraggi esterni non sono consentiti nelle seguenti zone particolarmente degne di protezione ai sensi della legge sulla protezione della natura (Naturschutzgesetz; NSchG)."
+
 msgid "ch.bazl.segelflugkarte"
 msgstr "Carta volo a vela"
 
@@ -5264,6 +5309,12 @@ msgstr "ASTAT 09 - 04 Grundkategorien"
 msgid "ch.bfs.arealstatistik-waldmischungsgrad"
 msgstr "Miscela della foresta 1990/1992"
 
+msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten"
+msgstr "Stabilimenti"
+
+msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente"
+msgstr "Addetti (EPT)"
+
 msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Registro degli edifici e delle abitazioni"
 
@@ -5285,6 +5336,9 @@ msgstr "Commune"
 msgid "ch.bfs.gebaeude_wohnungs_register.municipality_label"
 msgstr "Comune"
 
+msgid "ch.bfs.gebaeude_wohnungs_register.pdf"
+msgstr "Dettagli sull’edificio"
+
 msgid "ch.bfs.gebaeude_wohnungs_register.plz4"
 msgstr "NPA"
 
@@ -5303,8 +5357,29 @@ msgstr "Download cantone"
 msgid "ch.bfs.gebaeude_wohnungs_register.zip_municipality"
 msgstr "Download comune"
 
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1"
+msgstr "Confini amministrativi G1, agglomerati"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2"
+msgstr "Confini amministrativi G2, agglomerati"
+
 msgid "ch.bfs.url"
 msgstr "http://www.bfs.admin.ch/bfs/portal/it/index.html"
+
+msgid "ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner"
+msgstr "Popolazione (abitanti)"
+
+msgid "ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner.amount"
+msgstr "Nombre des habitants"
+
+msgid "ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner.year"
+msgstr "Année"
+
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude"
+msgstr "Edifici"
+
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen"
+msgstr "Abitazioni"
 
 msgid "ch.blw"
 msgstr "UFAG"
