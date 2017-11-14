@@ -3986,6 +3986,9 @@ msgstr "Zone de tranquillité"
 msgid "ch.bag"
 msgstr "OFSP"
 
+msgid "ch.bag.radonkarte"
+msgstr "(Kurzitel map.geo.admin)"
+
 msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=fr"
 
@@ -4589,6 +4592,9 @@ msgstr "Désignation"
 msgid "ch.bazl.einschraenkungen-drohnen.restr"
 msgstr "Restriction"
 
+msgid "ch.bazl.fl"
+msgstr "FL [OFAC]"
+
 msgid "ch.bazl.flugplaetze-heliports"
 msgstr "Aérodromes + Héliports"
 
@@ -4612,6 +4618,9 @@ msgstr "Commune"
 
 msgid "ch.bazl.flugplaetze-heliports.name"
 msgstr "Nom"
+
+msgid "ch.bazl.fl.url"
+msgstr "https://www.bazl.admin.ch/bazl/fr/home.html"
 
 msgid "ch.bazl.gebirgslandeplaetze"
 msgstr "Places d'atterrissage en montagne"
