@@ -5702,6 +5702,9 @@ msgstr "MCPFE1.2 Interventions minimales"
 msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
 msgstr "MCPFE1.3 Promotion de la biodiversité par des interventions ciblées"
 
+msgid "ch.sem"
+msgstr "SEM"
+
 msgid "ch.sem.sachplan-asyl_anhoerung"
 msgstr "PSA consultation"
 
@@ -5779,6 +5782,9 @@ msgstr "Date de l’arrêt"
 
 msgid "ch.sem.sachplan-asyl_kraft.validuntil"
 msgstr "au"
+
+msgid "ch.sem.url"
+msgstr "https://www.sem.admin.ch/sem/fr/home.html"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Epaisseur des roches meubles"

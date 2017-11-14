@@ -5702,6 +5702,9 @@ msgstr "MCPFE1.2 Minimum Intervention"
 msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
 msgstr "MCPFE1.3 Conservation through active management"
 
+msgid "ch.sem"
+msgstr "SEM"
+
 msgid "ch.sem.sachplan-asyl_anhoerung"
 msgstr "SPA consultation"
 
@@ -5779,6 +5782,9 @@ msgstr "Valid from"
 
 msgid "ch.sem.sachplan-asyl_kraft.validuntil"
 msgstr "until"
+
+msgid "ch.sem.url"
+msgstr "https://www.sem.admin.ch/sem/en/home.html"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Sediment thickness"
