@@ -3986,6 +3986,9 @@ msgstr "Nome della zona"
 msgid "ch.bag"
 msgstr "UFSP"
 
+msgid "ch.bag.radonkarte"
+msgstr "(Kurzitel map.geo.admin)"
+
 msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=it"
 
@@ -4589,6 +4592,9 @@ msgstr "Designazione"
 msgid "ch.bazl.einschraenkungen-drohnen.restr"
 msgstr "Restrizione"
 
+msgid "ch.bazl.fl"
+msgstr "FL [UFAC]"
+
 msgid "ch.bazl.flugplaetze-heliports"
 msgstr "Aerodromi + Eliporti"
 
@@ -4612,6 +4618,9 @@ msgstr "Comune"
 
 msgid "ch.bazl.flugplaetze-heliports.name"
 msgstr "Nome"
+
+msgid "ch.bazl.fl.url"
+msgstr "https://www.bazl.admin.ch/bazl/it/home.html"
 
 msgid "ch.bazl.gebirgslandeplaetze"
 msgstr "Aree d'atterraggio in montagna"

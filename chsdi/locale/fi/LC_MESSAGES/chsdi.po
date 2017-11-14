@@ -3986,6 +3986,9 @@ msgstr "Wildruhezone"
 msgid "ch.bag"
 msgstr "BAG"
 
+msgid "ch.bag.radonkarte"
+msgstr "(Kurzitel map.geo.admin)"
+
 msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=de"
 
@@ -4589,6 +4592,9 @@ msgstr "Bezeichnung"
 msgid "ch.bazl.einschraenkungen-drohnen.restr"
 msgstr "Einschränkung"
 
+msgid "ch.bazl.fl"
+msgstr "FL [UFAC]"
+
 msgid "ch.bazl.flugplaetze-heliports"
 msgstr "Plazzas aviaticas + heliports"
 
@@ -4612,6 +4618,9 @@ msgstr "Gemeinde"
 
 msgid "ch.bazl.flugplaetze-heliports.name"
 msgstr "Name"
+
+msgid "ch.bazl.fl.url"
+msgstr "https://www.bazl.admin.ch/bazl/de/home.html"
 
 msgid "ch.bazl.gebirgslandeplaetze"
 msgstr "Plazzas d'atterrament da muntogna"

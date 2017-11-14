@@ -3986,6 +3986,9 @@ msgstr "Zone name"
 msgid "ch.bag"
 msgstr "FOPH"
 
+msgid "ch.bag.radonkarte"
+msgstr "(Kurzitel map.geo.admin)"
+
 msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=en"
 
@@ -4589,6 +4592,9 @@ msgstr "Designation"
 msgid "ch.bazl.einschraenkungen-drohnen.restr"
 msgstr "Restriction"
 
+msgid "ch.bazl.fl"
+msgstr "FL [FOCA]"
+
 msgid "ch.bazl.flugplaetze-heliports"
 msgstr "Aerodromes + Heliports"
 
@@ -4612,6 +4618,9 @@ msgstr "Municipality"
 
 msgid "ch.bazl.flugplaetze-heliports.name"
 msgstr "Name"
+
+msgid "ch.bazl.fl.url"
+msgstr "https://www.bazl.admin.ch/bazl/en/home.html"
 
 msgid "ch.bazl.gebirgslandeplaetze"
 msgstr "Mountain landing sites"
