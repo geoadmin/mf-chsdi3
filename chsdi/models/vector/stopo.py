@@ -411,6 +411,14 @@ class GeolAtlasMetadata(Base, ShopProductGroupClass, Vector):
 register('ch.swisstopo.geologie-geologischer_atlas_papier.metadata', GeolAtlasMetadata)
 
 
+class GeolAtlasVectorMetadata(Base, ShopProductGroupClass, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'view_gridstand_gav25'
+    __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas_vector.metadata'
+
+register('ch.swisstopo.geologie-geologischer_atlas_vector.metadata', GeolAtlasVectorMetadata)
+
+
 class GeolSpezialKarteMetadata(Base, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __tablename__ = 'view_gridstand_gsk'
