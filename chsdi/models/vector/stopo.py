@@ -2284,7 +2284,8 @@ class GeolGeocoverMetadata(Base, Geocover, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.swisstopo.geologie-geocover.metadata'
     __label__ = 'name_de'
-
+    version = Column('version', Unicode)
+    base = Column('base', Unicode)
 
 register('ch.swisstopo.geologie-geocover.metadata', GeolGeocoverMetadata)
 
