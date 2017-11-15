@@ -2255,18 +2255,39 @@ class GeocoverPolygonAux1(Base, GeocoverFeatures, Vector):
     __tablename__ = 'view_geocover_polygon_aux_1'
     __template__ = 'templates/htmlpopup/geocover_polygon.mako'
     tecto = Column('tecto', Unicode)
+    litstrat_link = Column('litstrat_link', Unicode)
+    litho_fr = Column('litho_fr', Unicode)
+    litho_de = Column('litho_de', Unicode)
+    chrono_fr = Column('chrono_fr', Unicode)
+    chrono_de = Column('chrono_de', Unicode)
+    harmos_rev_fr = Column('harmos_rev_fr', Unicode)
+    harmos_rev_de = Column('harmos_rev_de', Unicode)
 
 
 class GeocoverPolygonAux2(Base, GeocoverFeatures, Vector):
     __tablename__ = 'view_geocover_polygon_aux_2'
     __template__ = 'templates/htmlpopup/geocover_polygon.mako'
     tecto = Column('tecto', Unicode)
+    litstrat_link = Column('litstrat_link', Unicode)
+    litho_fr = Column('litho_fr', Unicode)
+    litho_de = Column('litho_de', Unicode)
+    chrono_fr = Column('chrono_fr', Unicode)
+    chrono_de = Column('chrono_de', Unicode)
+    harmos_rev_fr = Column('harmos_rev_fr', Unicode)
+    harmos_rev_de = Column('harmos_rev_de', Unicode)
 
 
 class GeocoverPolygonMain(Base, GeocoverFeatures, Vector):
     __tablename__ = 'view_geocover_polygon_main'
     __template__ = 'templates/htmlpopup/geocover_polygon.mako'
     tecto = Column('tecto', Unicode)
+    litstrat_link = Column('litstrat_link', Unicode)
+    litho_fr = Column('litho_fr', Unicode)
+    litho_de = Column('litho_de', Unicode)
+    chrono_fr = Column('chrono_fr', Unicode)
+    chrono_de = Column('chrono_de', Unicode)
+    harmos_rev_fr = Column('harmos_rev_fr', Unicode)
+    harmos_rev_de = Column('harmos_rev_de', Unicode)
 
 
 class GeocoverGridShop (Base, Geocover, ShopProductGroupClass, Vector):
