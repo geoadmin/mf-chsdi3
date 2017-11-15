@@ -962,6 +962,14 @@ class SwissimageProductPerimeter(Base, Vector):
     the_geom = Column(Geometry2D)
 
 
+class SwissimageDop10ProductPerimeter(Base, Vector):
+    __tablename__ = 'shop_perimeter_swissimage_dop10'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.images-swissimage-dop10.metadata'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+
 class GridstandSwissimage(Base, ShopStandardClass, Vector):
     __tablename__ = 'view_gridstand_datenhaltung_swissimage_tilecache'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
@@ -987,6 +995,7 @@ class GridstandSwissimageDop10(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.images-swissimage-dop10.metadata', GridstandSwissimageDop10)
+register_perimeter('ch.swisstopo.images-swissimage-dop10.metadata', SwissimageDop10ProductPerimeter)
 
 
 class SwissimageProduct(Base, ShopStandardClass, Vector):
