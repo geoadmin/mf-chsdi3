@@ -36,7 +36,7 @@ layerTile = ['ch.swisstopo.images-swissimage.metadata',
              'ch.swisstopo.pixelkarte-pk200.metadata']
 
 attr = []
-attr_poss = ['number', name, 'mapsheetid', 'tileid', 'datenstand', 'scale', 'release', 'data', 'isbn', 'author', 'url_legend']
+attr_poss = ['number', name, 'mapsheetid', 'tileid', 'datenstand', 'scale', 'release', 'data', 'isbn', 'author', 'url_legend', 'version', 'base']
 for ap in attr_poss:
     if ap in c['attributes']:
         if c['attributes'][ap]:
