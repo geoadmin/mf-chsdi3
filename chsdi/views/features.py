@@ -764,7 +764,9 @@ def _process_feature(feature, params):
 
 def _get_features_releases(model, params):
     maxFeatures = 1000
-    query = params.request.db.query(model).distinct(model.bgdi_order)
+    query = params.request.db.query(model)
+    if hasattr(model, 'bgdi_order'):
+        query = query.distinct(model.bgdi_order)
     if params.geometry is not None:
         geomFilter = model.geom_filter(
             params.geometry,
@@ -777,7 +779,8 @@ def _get_features_releases(model, params):
     if params.timeInstant is not None and hasattr(model, '__timeInstant__'):
         timeInstantColumn = model.time_instant_column()
         query = query.filter(timeInstantColumn == params.timeInstant)
-    query = query.order_by(model.bgdi_order)
+    if hasattr(model, 'bgdi_order'):
+        query = query.order_by(model.bgdi_order)
     query = query.limit(maxFeatures)
     for feature in query:
         yield feature
