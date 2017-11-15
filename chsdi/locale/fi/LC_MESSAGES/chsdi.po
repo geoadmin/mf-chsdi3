@@ -5702,6 +5702,9 @@ msgstr "MCPFE1.2 Minimale Eingriffe"
 msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
 msgstr "MCPFE1.3 Biodiversitätsförderung durch gezielte Eingriffe"
 
+msgid "ch.sem"
+msgstr "SEM"
+
 msgid "ch.sem.sachplan-asyl_anhoerung"
 msgstr "SPA Anhörung"
 
@@ -5779,6 +5782,9 @@ msgstr "Beschlussdatum"
 
 msgid "ch.sem.sachplan-asyl_kraft.validuntil"
 msgstr "bis"
+
+msgid "ch.sem.url"
+msgstr "https://www.sem.admin.ch/sem/de/home.html"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Autezza da la crappa lucca"

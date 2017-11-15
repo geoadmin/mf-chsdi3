@@ -5702,6 +5702,9 @@ msgstr "MCPFE1.2 Interventi minimi"
 msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
 msgstr "MCPFE1.3 Promozione delle biodiversità per mezzo di interventi specifici"
 
+msgid "ch.sem"
+msgstr "SEM"
+
 msgid "ch.sem.sachplan-asyl_anhoerung"
 msgstr "PSA consultazione"
 
@@ -5779,6 +5782,9 @@ msgstr "Data della delibera"
 
 msgid "ch.sem.sachplan-asyl_kraft.validuntil"
 msgstr "al"
+
+msgid "ch.sem.url"
+msgstr "https://www.sem.admin.ch/sem/it/home.html"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Spessore dei sedimenti"
