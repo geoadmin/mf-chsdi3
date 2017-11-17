@@ -103,29 +103,13 @@ register('ch.are.beschaeftigtendichte', Beschaeftigtendichte)
 
 
 class Bauzonen(Base, Vector):
-    __tablename__ = 'bauzonen_2007'
+    __tablename__ = 'bauzonen'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
     __template__ = 'templates/htmlpopup/bauzonen.mako'
-    __bodId__ = 'ch.are.bauzonen-2007'
-    id = Column('row_id', Integer, primary_key=True)
-    name = Column('name', Unicode)
-    nutz_de = Column('nutz_de', Unicode)
-    nutz_fr = Column('nutz_fr', Unicode)
-    kt_kz = Column('kt_kz', Unicode)
-    flaeche_qm = Column('flaeche_qm', Float)
-    the_geom = Column(Geometry2D)
-
-register('ch.are.bauzonen-2007', Bauzonen)
-
-
-class Bauzonen_2012(Base, Vector):
-    __tablename__ = 'bauzonen_2012'
-    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
-    __template__ = 'templates/htmlpopup/bauzonen_2012.mako'
     __bodId__ = 'ch.are.bauzonen'
-    __label__ = 'name_'
+    __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    name_ = Column('name_', Unicode)
+    name = Column('name', Unicode)
     ch_code_hn = Column('ch_code_hn', Unicode)
     kt_kz = Column('kt_kz', Unicode)
     bfs_no = Column('bfs_no', Unicode)
@@ -135,7 +119,7 @@ class Bauzonen_2012(Base, Vector):
     ch_bez_d = Column('ch_bez_d', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.are.bauzonen', Bauzonen_2012)
+register('ch.are.bauzonen', Bauzonen)
 
 
 class Gemeindetyp(Base, Vector):
