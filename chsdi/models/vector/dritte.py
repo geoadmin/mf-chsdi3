@@ -308,8 +308,8 @@ class AsylPlanningK(Base, Vector):
     objectname_fr = Column('objectname_fr', Unicode)
     objectname_it = Column('objectname_it', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
-    #  __minscale__ = 20005
-    #  __maxscale__ = 500005
+    __minscale__ = 20005
+    __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
 
@@ -346,8 +346,8 @@ class AsylPlanningRasterK(Base, Vector):
     objectname_fr = Column('objectname_fr', Unicode)
     objectname_it = Column('objectname_it', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
-    #  __maxscale__ = 20005
-    #  __minscale__ = 1
+    __maxscale__ = 20005
+    __minscale__ = 1
     the_geom = Column(Geometry2D)
 
 register('ch.sem.sachplan-asyl_kraft', AsylFacilitiesK)
