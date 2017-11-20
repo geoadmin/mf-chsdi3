@@ -821,30 +821,34 @@ register('ch.bafu.gewaesserschutz-badewasserqualitaet', GewaesserschutzBadewasse
 
 
 class AmG(Base, Vector):
-    __tablename__ = 'am_g'
+    __tablename__ = 'amphibien_wanderobjekte'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-amphibien_wanderobjekte'
     __template__ = 'templates/htmlpopup/bundinv_amphibien_w.mako'
-    __label__ = 'am_g_name'
-    id = Column('am_g_obj', Unicode, primary_key=True)
-    am_g_name = Column('am_g_name', Unicode)
+    __label__ = 'name'
+    id = Column('objnummer', Unicode, primary_key=True)
+    name = Column('name', Unicode)
+    refobjblat = Column('refobjblat', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-amphibien_wanderobjekte', AmG)
 
 
 class AmL(Base, Vector):
-    __tablename__ = 'am_l'
+    __tablename__ = 'amphibien'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-amphibien'
     __template__ = 'templates/htmlpopup/bundinv_amphibien.mako'
-    __label__ = 'am_l_name'
+    __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    am_l_obj = Column('am_l_obj', Unicode)
-    am_l_name = Column('am_l_name', Unicode)
-    am_l_fl = Column('am_l_fl', Unicode)
-    am_l_berei = Column('am_l_berei', Unicode)
-    am_l_gf = Column('am_l_gf', Unicode)
+    objnummer = Column('objnummer', Unicode)
+    name = Column('name', Unicode)
+    refobjblat = Column('refobjblat', Unicode)
+    shape_area = Column('shape_area', Numeric)
+    site = Column('site', Unicode)
+    site_de = Column('site_de', Unicode)
+    site_fr = Column('site_fr', Unicode)
+    site_it = Column('site_it', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-amphibien', AmL)
@@ -1210,20 +1214,45 @@ register('ch.bafu.wasser-gebietsauslaesse', Gebietsauslaesse)
 
 
 class AU(Base, Vector):
-    __tablename__ = 'au'
+    __tablename__ = 'auen'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-auen'
-    __queryable_attributes__ = ['au_obj', 'au_name']
+    __queryable_attributes__ = ['objnummer', 'name']
     __template__ = 'templates/htmlpopup/auen.mako'
-    __label__ = 'au_name'
-    id = Column('gid', Integer, primary_key=True)
-    au_name = Column('au_name', Unicode)
-    au_obj = Column('au_obj', Integer)
-    au_objtyp = Column('au_objtyp', Unicode)
-    au_fl = Column('au_fl', Numeric)
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    objnummer = Column('objnummer', Integer)
+    refobjblat = Column('refobjblat', Unicode)
+    auen_type = Column('auen_type', Integer)
+    auen_type_de = Column('auen_type_de', Unicode)
+    auen_type_fr = Column('auen_type_fr', Unicode)
+    auen_type_it = Column('auen_type_it', Unicode)
+    shape_area = Column('shape_area', Numeric)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-auen', AU)
+
+
+class AU_A2(Base, Vector):
+    __tablename__ = 'auen_anhang2'
+    __table_args__ = ({'schema': 'bundinv', 'autoload': False})
+    __bodId__ = 'ch.bafu.bundesinventare-auen_anhang2'
+    __queryable_attributes__ = ['objnummer', 'name']
+    __template__ = 'templates/htmlpopup/auen_anhang2.mako'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    objnummer = Column('objnummer', Integer)
+    refobjblat = Column('refobjblat', Unicode)
+    auen_type = Column('typ', Integer)
+    auen_type_de = Column('typ_de', Unicode)
+    auen_type_fr = Column('typ_fr', Unicode)
+    auen_type_it = Column('typ_it', Unicode)
+    shape_area = Column('area', Numeric)
+    the_geom = Column(Geometry2D)
+
+register('ch.bafu.bundesinventare-auen_anhang2', AU_A2)
 
 
 class AuenVegetationsKarten(Base, Vector):
@@ -1263,17 +1292,23 @@ register('ch.bafu.bundesinventare-bln', BLN)
 
 
 class HM(Base, Vector):
-    __tablename__ = 'hm'
+    __tablename__ = 'hochmoore'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-hochmoore'
     __template__ = 'templates/htmlpopup/hochmoore.mako'
-    __label__ = 'hm_name'
-    id = Column('gid', Integer, primary_key=True)
-    hm_name = Column('hm_name', Unicode)
-    hm_obj = Column('hm_obj', Integer)
-    hm_typ = Column('hm_typ', Integer)
-    hm_fl = Column('hm_fl', Numeric)
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    objnummer = Column('objnummer', Integer)
+    shape_area = Column('shape_area', Numeric)
     hm_ke = Column('hm_ke', Integer)
+    unit_de = Column('unit_de', Unicode)
+    unit_fr = Column('unit_fr', Unicode)
+    unit_it = Column('unit_it', Unicode)
+    hochmoore_type_de = Column('hochmoore_type_de', Unicode)
+    hochmoore_type_fr = Column('hochmoore_type_fr', Unicode)
+    hochmoore_type_it = Column('hochmoore_type_it', Unicode)
+    refobjblat = Column('refobjblat', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-hochmoore', HM)
@@ -1298,15 +1333,16 @@ register('ch.bafu.bundesinventare-jagdbanngebiete', JB)
 
 
 class ML(Base, Vector):
-    __tablename__ = 'ml'
+    __tablename__ = 'moorlandschaften'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-moorlandschaften'
     __template__ = 'templates/htmlpopup/moorlandschaften.mako'
-    __label__ = 'ml_name'
-    id = Column('gid', Integer, primary_key=True)
-    ml_name = Column('ml_name', Unicode)
-    ml_obj = Column('ml_obj', Integer)
-    ml_fl = Column('ml_fl', Numeric)
+    __label__ = 'name'
+    id = Column('bgdi_id', Unicode, primary_key=True)
+    name = Column('name', Unicode)
+    objnummer = Column('objnummer', Unicode)
+    shape_area = Column('shape_area', Unicode)
+    refobjblat = Column('refobjblat', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-moorlandschaften', ML)
@@ -1381,15 +1417,16 @@ register('ch.bafu.wasser-rueckgabe', Wasserrueckgabe)
 
 
 class Flachmoore(Base, Vector):
-    __tablename__ = 'fm'
+    __tablename__ = 'flachmoore'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-flachmoore'
     __template__ = 'templates/htmlpopup/flachmoore.mako'
-    __label__ = 'fm_name'
-    id = Column('gid', Integer, primary_key=True)
-    fm_name = Column('fm_name', Unicode)
-    fm_obj = Column('fm_obj', Unicode)
-    fm_gf = Column('fm_gf', Unicode)
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    objnummer = Column('objnummer', Unicode)
+    refobjblat = Column('refobjblat', Unicode)
+    shape_area = Column('shape_area', Numeric)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-flachmoore', Flachmoore)
@@ -1953,32 +1990,36 @@ register('ch.bafu.gefahren-spektral', Spektral)
 
 
 class Trockenwiesenundweiden(Base, Vector):
-    __tablename__ = 'tww'
+    __tablename__ = 'trockenwiesen'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-trockenwiesen_trockenweiden'
     __template__ = 'templates/htmlpopup/trockenwiesenundweiden.mako'
-    __label__ = 'tww_name'
+    __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    tww_name = Column('tww_name', Unicode)
-    tww_fl = Column('tww_fl', Numeric)
-    tww_gf = Column('tww_gf', Numeric)
-    tww_obj = Column('tww_obj', Numeric)
-    tww_tobj = Column('tww_tobj', Numeric)
+    name = Column('name', Unicode)
+    refobjblat = Column('refobjblat', Unicode)
+    shape_area = Column('shape_area', Numeric)
+    objnummer = Column('objnummer', Integer)
+    teilobjnummer = Column('teilobjnummer', Unicode)
+    bewertung = Column('bewertungs', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden', Trockenwiesenundweiden)
 
 
 class TrockenwiesenundweidenAnhang2(Base, Vector):
-    __tablename__ = 'trockenwiesen_weiden_anhang2'
+    __tablename__ = 'trockenwiesen_anhang2'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2'
     __template__ = 'templates/htmlpopup/tww_anhang2.mako'
-    __label__ = 'tww_name'
+    __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    tww_name = Column('tww_name', Unicode)
-    tww_obj = Column('tww_obj', Numeric)
-    tww_tobj = Column('tww_tobj', Numeric)
+    name = Column('name', Unicode)
+    objnummer = Column('objnummer', Integer)
+    refobjblat = Column('refobjblat', Unicode)
+    shape_area = Column('shape_area', Numeric)
+    teilobjnummer = Column('teilobjnummer', Unicode)
+    bewertung = Column('bewertungs', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2', TrockenwiesenundweidenAnhang2)
@@ -1992,7 +2033,8 @@ class AmphibienAnhang4(Base, Vector):
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
-    obnr = Column('obnr', Unicode)
+    obnr = Column('objnummer', Unicode)
+    refobjblat = Column('refobjblat', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-amphibien_anhang4', AmphibienAnhang4)
