@@ -885,3 +885,34 @@ class TestSearchServiceView(TestsBase):
             'features': 'ch.bfs.gebaeude_wohnungs_register_preview,ch.swisstopo.lubis-luftbilder_farbe'
         }
         self.testapp.get('/rest/services/ech/SearchServer', params=params, status=400)
+
+    def test_search_lang_integrity(self):
+        params = {
+            'type': 'featuresearch',
+            'searchLang': 'fr',
+            'searchText': 'aegerten 40',
+            'features': 'ch.bfs.gebaeude_wohnungs_register_preview'
+        }
+        resp_fr = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        params = {
+            'type': 'featuresearch',
+            'searchLang': 'de',
+            'searchText': 'aegerten 40',
+            'features': 'ch.bfs.gebaeude_wohnungs_register_preview'
+        }
+        resp_de = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        params = {
+            'type': 'featuresearch',
+            'searchText': 'aegerten 40',
+            'features': 'ch.bfs.gebaeude_wohnungs_register_preview'
+        }
+        resp_agnostic = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+
+        ids_fr = [f['attrs']['featureId'] for f in resp_fr.json['results']]
+        ids_de = [f['attrs']['featureId'] for f in resp_de.json['results']]
+        ids = [f['attrs']['featureId'] for f in resp_agnostic.json['results']]
+        self.assertEqual(len(set(ids_fr + ids_de)), len(ids))
+        for i in ids_fr:
+            self.assertIn(i, ids)
+        for i in ids_de:
+            self.assertIn(i, ids)
