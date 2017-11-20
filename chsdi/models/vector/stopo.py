@@ -2296,7 +2296,6 @@ class GeocoverGridShop (Base, Geocover, ShopProductGroupClass, Vector):
     base = Column('base', Unicode)
     version = Column('version', Unicode)
 
-
 register('ch.swisstopo.geologie-geocover', GeocoverLineAux)
 register('ch.swisstopo.geologie-geocover', GeocoverPointHydro)
 register('ch.swisstopo.geologie-geocover', GeocoverPointGeol)
