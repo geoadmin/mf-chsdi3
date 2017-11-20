@@ -70,7 +70,7 @@ class Search(SearchValidation):
                 self.request.params.get('searchText')
             )
             self._feature_search()
-        elif self.typeInfo == 'locations' or self.typeInfo == 'locations_preview':
+        elif self.typeInfo in ('locations', 'locations_preview'):
             self.searchText = format_search_text(
                 self.request.params.get('searchText', '')
             )
@@ -86,9 +86,7 @@ class Search(SearchValidation):
         # Only include results with a certain weight. This might need tweaking
         self.sphinx.SetFilterRange('@weight', 5000, 2 ** 32 - 1)
         try:
-            if self.typeInfo == 'locations_preview':
-                temp = self.sphinx.Query(searchTextFinal, index='swisssearch_fuzzy_preview')
-            else:
+            if self.typeInfo in ('locations', 'locations_preview'):
                 temp = self.sphinx.Query(searchTextFinal, index='swisssearch_fuzzy')
         except IOError:  # pragma: no cover
             raise exc.HTTPGatewayTimeout()
@@ -116,12 +114,8 @@ class Search(SearchValidation):
             self._filter_locations_by_origins()
 
         searchList = []
-        if self.typeInfo == 'locations_preview' and self.searchLang is not None:
-            searchField = 'detail_%s' % self.searchLang
-        else:
-            searchField = 'detail'
         if len(self.searchText) >= 1:
-            searchText = self._query_fields('@%s' % searchField)
+            searchText = self._query_fields('@detail')
             searchList.append(searchText)
 
         if self.bbox is not None:
@@ -213,6 +207,7 @@ class Search(SearchValidation):
         return ''
 
     def _feature_search(self):
+
         # all features in given bounding box
         if self.featureIndexes is None:
             # we need bounding box and layernames. FIXME: this should be error
@@ -329,8 +324,7 @@ class Search(SearchValidation):
         }
         if origin in origins2LayerBodId:
             return origins2LayerBodId[origin]
-        else:
-            return None
+        return None
 
     def _origins_to_ranks(self, origins):
         origin2Rank = {
@@ -351,6 +345,14 @@ class Search(SearchValidation):
             raise exc.HTTPBadRequest('Bad value(s) in parameter origins')
         return ranks
 
+    def _search_lang_to_filter(self):
+        return {
+            'de': [1],
+            'fr': [2],
+            'it': [3],
+            'rm': [4]
+        }[self.searchLang]
+
     def _detect_keywords(self):
         if len(self.searchText) > 0:
             PARCEL_KEYWORDS = ('parzelle', 'parcelle', 'parcella', 'parcel')
@@ -370,6 +372,7 @@ class Search(SearchValidation):
 
     def _add_feature_queries(self, queryText, timeFilter):
         i = 0
+        translated_layer = 'ch_bfs_gebaeude_wohnungs_register_preview'
         for index in self.featureIndexes:
             self.sphinx.ResetFiltersOnly()
             if timeFilter and self.timeEnabled is not None and self.timeEnabled[i]:
@@ -379,21 +382,23 @@ class Search(SearchValidation):
                     self.sphinx.SetFilter('year', [timeFilter['years'][i]])
                 elif timeFilter['type'] == 'range':
                     self.sphinx.SetFilterRange('year', int(min(timeFilter['years'])), int(max(timeFilter['years'])))
+            # TODO Find a better way to support such an exception
+            if self.searchLang and index == translated_layer:
+                self.sphinx.SetFilter('lang', self._search_lang_to_filter())
+                # Results should not be agnostic
+                self.sphinx.SetFilter('agnostic', [0])
+            elif index == translated_layer:
+                self.sphinx.SetFilter('agnostic', [1])
+            elif self.searchLang:
+                raise exc.HTTPBadRequest('Parameter seachLang is not supported for %s' % index)
             i += 1
             self.sphinx.AddQuery(queryText, index=str(index))
 
-    def _parse_address(self, res):
+    def _parse_locations(self, res):
         if not self.returnGeometry:
             attrs2Del = ['x', 'y', 'lon', 'lat', 'geom_st_box2d']
             popAtrrs = lambda x: res.pop(x) if x in res else x
             map(popAtrrs, attrs2Del)
-        if 'detail_%s' % self.lang in res:
-            for lang in self.availableLangs:
-                if lang != 'en':
-                    res.pop('label_%s' % lang)
-                    detail = res.pop('detail_%s' % lang)
-                    if self.searchLang == lang:
-                        res['detail'] = detail
         return res
 
     def _parse_location_results(self, results):
@@ -401,26 +406,25 @@ class Search(SearchValidation):
         for result in self._yield_matches(results):
             origin = result['attrs']['origin']
             layer_bod_id = self._origin_to_layerbodid(origin)
-            label_key = 'label_%s' % self.searchLang if 'label_%s' % self.searchLang in result['attrs'] else 'label'
             if layer_bod_id is not None:
                 result['attrs']['layerBodId'] = layer_bod_id
                 # Backward compatible
                 result['attrs']['featureId'] = result['attrs']['feature_id']
                 result['attrs'].pop('layerBodId', None)
             result['attrs'].pop('feature_id', None)
-            result['attrs']['label'] = self._translate_label(result['attrs'][label_key])
+            result['attrs']['label'] = self._translate_label(result['attrs']['label'])
             if (origin == 'address' and
                 nb_address < self.LOCATION_LIMIT and
                (not self.bbox or self._bbox_intersection(self.bbox,
                                                          result['attrs']['geom_st_box2d']))):
-                result['attrs'] = self._parse_address(result['attrs'])
+                result['attrs'] = self._parse_locations(result['attrs'])
                 self.results['results'].append(result)
                 nb_address += 1
             else:
                 if not self.bbox or self._bbox_intersection(self.bbox,
                                                             result['attrs']['geom_st_box2d']):
+                    self._parse_locations(result['attrs'])
                     self.results['results'].append(result)
-                    self._parse_address(result['attrs'])
 
     def _parse_feature_results(self, results):
         for idx, result in self._yield_results(results):
@@ -432,8 +436,12 @@ class Search(SearchValidation):
                     # Backward compatible
                     if 'feature_id' in match['attrs']:
                         match['attrs']['featureId'] = match['attrs']['feature_id']
-                    if self.typeInfo == 'featuresearch' or not self.bbox or \
-                            self._bbox_intersection(self.bbox, match['attrs']['geom_st_box2d']):
+                    # lang and agnostic in combination with searchLang
+                    if 'lang' in match['attrs']:
+                        del match['attrs']['lang']
+                    if 'agnostic' in match['attrs']:
+                        del match['attrs']['agnostic']
+                    if not self.bbox or self._bbox_intersection(self.bbox, match['attrs']['geom_st_box2d']):
                         self.results['results'].append(match)
 
     def _yield_results(self, results):
