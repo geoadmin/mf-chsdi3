@@ -10,14 +10,6 @@ class TestSearchServiceView(TestsBase):
         self.assertIn('detail', attrs)
         self.assertIn('origin', attrs)
         self.assertIn('label', attrs)
-        self.assertNotIn('detail_de', attrs)
-        self.assertNotIn('detail_fr', attrs)
-        self.assertNotIn('detail_it', attrs)
-        self.assertNotIn('detail_rm', attrs)
-        self.assertNotIn('label_de', attrs)
-        self.assertNotIn('label_fr', attrs)
-        self.assertNotIn('label_it', attrs)
-        self.assertNotIn('label_rm', attrs)
         if type_ in ('locations',  'locations_preview'):
             self.assertIn('geom_quadindex', attrs)
             if returnGeometry:
@@ -866,40 +858,30 @@ class TestSearchServiceView(TestsBase):
 
     def test_search_lang_param_same_entry(self):
         params = {
-            'type': 'locations_preview',
+            'type': 'featuresearch',
             'searchLang': 'fr',
             'searchText': 'boujean',
-            'origins': 'address',
+            'features': 'ch.bfs.gebaeude_wohnungs_register_preview',
             'sr': '2056'
         }
         resp_fr = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
-        self.assertAttrs('locations_preview', resp_fr.json['results'][0]['attrs'], 2056)
+        self.assertAttrs('featuresearch', resp_fr.json['results'][0]['attrs'], 2056)
         params = {
-            'type': 'locations_preview',
+            'type': 'featuresearch',
             'searchLang': 'de',
             'searchText': 'bözingenstrasse',
-            'origins': 'address',
+            'features': 'ch.bfs.gebaeude_wohnungs_register_preview',
             'sr': '2056'
         }
         resp_de = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
-        self.assertAttrs('locations_preview', resp_de.json['results'][0]['attrs'], 2056)
+        self.assertAttrs('featuresearch', resp_de.json['results'][0]['attrs'], 2056)
         self.assertEqual(resp_fr.json['results'][0]['attrs']['featureId'], resp_de.json['results'][0]['attrs']['featureId'])
 
-    def test_search_lang_param_no_preview(self):
+    def test_search_lang_no_support(self):
         params = {
-            'type': 'locations',
+            'type': 'featuresearch',
             'searchLang': 'fr',
-            'searchText': 'boujean'
+            'searchText': 'boujean',
+            'features': 'ch.bfs.gebaeude_wohnungs_register_preview,ch.swisstopo.lubis-luftbilder_farbe'
         }
-        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
-        self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
-
-    def test_search_lang_with_lang(self):
-        params = {
-            'type': 'locations_preview',
-            'searchLang': 'fr',
-            'lang': 'de',
-            'searchText': 'boujean'
-        }
-        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
-        self.assertAttrs('locations_preview', resp.json['results'][0]['attrs'], 21781)
+        self.testapp.get('/rest/services/ech/SearchServer', params=params, status=400)
