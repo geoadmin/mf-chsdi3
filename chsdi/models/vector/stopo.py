@@ -2274,7 +2274,7 @@ class GeocoverGridShop (Base, Geocover, ShopProductGroupClass, Vector):
     __minscale__ = 70000
     base = Column('base', Unicode)
     version = Column('version', Unicode)
-
+# merge tout dans la meme branche
 
 register('ch.swisstopo.geologie-geocover', GeocoverLineAux)
 register('ch.swisstopo.geologie-geocover', GeocoverPointHydro)
