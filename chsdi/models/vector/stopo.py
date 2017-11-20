@@ -2272,6 +2272,8 @@ class GeocoverPolygonMain(Base, GeocoverFeatures, Vector):
 class GeocoverGridShop (Base, Geocover, ShopProductGroupClass, Vector):
     __tablename__ = 'view_geocover_grid_shop'
     __minscale__ = 70000
+    base = Column('base', Unicode)
+    version = Column('version', Unicode)
 
 
 register('ch.swisstopo.geologie-geocover', GeocoverLineAux)
