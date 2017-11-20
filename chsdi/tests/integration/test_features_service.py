@@ -319,7 +319,9 @@ class TestFeaturesView(TestsBase):
         resp.mustcontain('cb_({')
 
     def test_feature_big_but_good(self):
-        resp = self.testapp.get('/rest/services/all/MapServer/ch.swisstopo.geologie-geocover/1080284', params={'geometryFormat': 'geojson'}, status=200)
+        bodId = 'ch.swisstopo.geologie-geocover'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/all/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn('geometry', resp.json['feature'])
 
