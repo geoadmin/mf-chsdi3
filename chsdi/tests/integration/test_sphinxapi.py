@@ -72,7 +72,7 @@ class Test_SphinxApi(TestsBase):
         mode = sphinxapi.SPH_MATCH_EXTENDED
         host = self.testapp.app.registry.settings['sphinxhost']
         port = 9312
-        index = 'swisssearch_preview'
+        index = 'swisssearch'
         filtercol = 'rank'
         filtervals = [1, 2]
         sortby = ''
