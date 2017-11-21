@@ -1692,7 +1692,7 @@ msgid "ch.bafu.bundesinventare-amphibien"
 msgstr "Anfibi oggetti fissi"
 
 msgid "ch.bafu.bundesinventare-amphibien_anhang4"
-msgstr "Anfibi allegato 4"
+msgstr "Anfibi allegato 3"
 
 msgid "ch.bafu.bundesinventare-amphibien_anhang4.name"
 msgstr "Nome"
@@ -4994,6 +4994,36 @@ msgstr "PS depositi strati geol.prof.: p.t."
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung"
 msgstr "PS DSGP consultazione tappa 2"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.coordlevel"
+msgstr "Stato di coordinamento"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.description"
+msgstr "Descrizione"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.fackind"
+msgstr "Tipo d'installazione"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname"
+msgstr "Nome dell'installazione"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.planningstatus"
+msgstr "Stato della pianificazione"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmkind"
+msgstr "Tipo di misura"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname"
+msgstr "Nome della misura"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validfrom"
+msgstr "dal"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validuntil"
+msgstr "al"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.web"
+msgstr "Informazioni supplementari"
+
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung"
 msgstr "PSE consultazione"
 
@@ -6819,7 +6849,7 @@ msgid "ch.swisstopo.images-swissimage-dop10.metadata"
 msgstr "Divisione SWISSIMAGE 10 cm Raster"
 
 msgid "ch.swisstopo.images-swissimage.metadata"
-msgstr "Divisione SWISSIMAGE Raster"
+msgstr "Divisione SWISSIMAGE 25 cm Raster"
 
 msgid "ch.swisstopo.images-swissimage.metadata.base"
 msgstr "Base"
