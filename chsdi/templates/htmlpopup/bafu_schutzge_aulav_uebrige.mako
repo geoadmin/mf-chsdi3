@@ -18,7 +18,7 @@
         <tr><td class="cell-left">${_('tt_wrz_select_obj')}</td>    <td>${c['attributes']['wv_obj'] or '-'}</td></tr>
         <tr><td class="cell-left">${_('typ')}</td>                  <td>${_('tt_bafu_aulav_wv_typ')}</td></tr>
     % endif
-        
+
     % if c['attributes']['nat_park'] and (str(c['attributes']['nat_park']) != '0'):
         <tr><td class="cell-left">${_('name')}</td>                 <td>${c['attributes']['nat_park'] or '-'}</td></tr>
         <tr><td class="cell-left">${_('tt_wrz_select_obj')}</td>    <td>${c['attributes']['np_name'] or '-'}</td></tr>

@@ -5,10 +5,14 @@
 <%def name="table_body(c, lang)">
 <%
 c['stable_id'] = True
+street_key = 'strname1'
+if 'strname_de' in c['attributes']:
+  lang = lang if lang not in ['fr', 'it', 'rm'] else 'de'
+  street_key = 'strname_%s' %s
 %>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.egid')}</td>       <td>${c['attributes']['egid'] or '-'}</td></tr>
     % if c['attributes']['strname1'] <> '':
-    <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.strname1')}</td>    <td>${c['attributes']['strname1']}</td></tr>
+    <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.strname1')}</td>    <td>${c['attributes'][street_key]}</td></tr>
     % else:
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.strname1')}</td>    <td>${c['attributes']['deinr'] or '-'}</td></tr>
     % endif
