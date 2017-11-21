@@ -45,8 +45,6 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                                                            |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `SP Deep Geol. Repositories <//map.geo.admin.ch/?layers=ch.bfe.sachplan-geologie-tiefenlager>`__ (ch.bfe.sachplan-geologie-tiefenlager)                                                   |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                                              |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                                   |
