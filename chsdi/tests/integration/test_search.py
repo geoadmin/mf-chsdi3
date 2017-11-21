@@ -585,7 +585,7 @@ class TestSearchServiceView(TestsBase):
             'type': 'featuresearch',
             'searchText': '19810590048970',
             'features': 'ch.swisstopo.lubis-luftbilder_farbe',
-            'bbox': '542199,206799,542201,206801',
+            'bbox': '542199,206799,642201,226801',
             'timeInstant': '1981'
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
@@ -651,7 +651,7 @@ class TestSearchServiceView(TestsBase):
             'type': 'featuresearch',
             'searchText': '198',
             'features': 'ch.swisstopo.lubis-luftbilder_farbe,ch.swisstopo.lubis-luftbilder_schwarzweiss',
-            'bbox': '542199,206799,542201,206801',
+            'bbox': '542199,146799,692201,246801',
             'timeStamps': '1986,1989',
             'timeEnabled': 'true,true'
         }

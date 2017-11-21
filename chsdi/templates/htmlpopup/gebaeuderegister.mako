@@ -8,7 +8,8 @@ c['stable_id'] = True
 street_key = 'strname1'
 if 'strname_de' in c['attributes']:
   lang = lang if lang not in ['fr', 'it', 'rm'] else 'de'
-  street_key = 'strname_%s' %s
+  if c['attributes']['strname_%s' % lang]:
+    street_key = 'strname_%s' % lang
 %>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.egid')}</td>       <td>${c['attributes']['egid'] or '-'}</td></tr>
     % if c['attributes']['strname1'] <> '':

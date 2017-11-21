@@ -385,8 +385,6 @@ class Search(SearchValidation):
             # TODO Find a better way to support such an exception
             if self.searchLang and index == translated_layer:
                 self.sphinx.SetFilter('lang', self._search_lang_to_filter())
-                # Results should not be agnostic
-                self.sphinx.SetFilter('agnostic', [0])
             elif index == translated_layer:
                 self.sphinx.SetFilter('agnostic', [1])
             elif self.searchLang:
