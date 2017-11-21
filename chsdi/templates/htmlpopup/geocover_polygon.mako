@@ -13,7 +13,7 @@
     <tr><td class="cell-left">${_('ch.swisstopo.geologie-geocover.description')}</td><td>${c['attributes']['description'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.geologie-geocover.litstrat_link')}</td><td>
     % if c['attributes']['litstrat_link']:
-          <a href="${url}" target="_blank">${c['attributes']['litstrat_link'] or '-'}</a>
+          <a href="${url}" target="_blank">Link</a>
     % else:
           -
     % endif
