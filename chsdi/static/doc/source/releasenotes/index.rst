@@ -16,6 +16,58 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20171122:
+   *******
+
+Release 20171122 - Wednesday, November 22th 2017
+-------------------------------------------------
+
+API & applications
+******************
+
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Groundwater bodies <//map.geo.admin.ch/?layers=ch.bafu.grundwasserkoerper>`__ (ch.bafu.grundwasserkoerper)                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `SP DGR consultation stage 2 <//map.geo.admin.ch/?layers=ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung>`__ (ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung)                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division geological atlas 25 Vector <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas_vector.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas_vector.metadata)  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Deep Geol. Repositories <//map.geo.admin.ch/?layers=ch.bfe.sachplan-geologie-tiefenlager>`__ (ch.bfe.sachplan-geologie-tiefenlager)                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Low distortion area <//map.geo.admin.ch/?layers=ch.swisstopo-vd.spannungsarme-gebiete>`__ (ch.swisstopo-vd.spannungsarme-gebiete)                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division GeoCover <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover.metadata>`__ (ch.swisstopo.geologie-geocover.metadata)                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division geological atlas 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas.metadata)                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division geological atlas 25 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas_papier.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas_papier.metadata)   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division snowshoe/ski tour maps 50 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.skitourenkarte-50.metadata>`__ (ch.swisstopo.skitourenkarte-50.metadata)                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 
 
 .. _releasenotes_20171025:
