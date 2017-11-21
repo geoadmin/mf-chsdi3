@@ -1692,7 +1692,7 @@ msgid "ch.bafu.bundesinventare-amphibien"
 msgstr "Amphibians stationary objects"
 
 msgid "ch.bafu.bundesinventare-amphibien_anhang4"
-msgstr "Amphibians appendix 4"
+msgstr "Amphibians appendix 3"
 
 msgid "ch.bafu.bundesinventare-amphibien_anhang4.name"
 msgstr "Name"
@@ -4994,6 +4994,36 @@ msgstr "SP Deep Geol.Repositories: T.p."
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung"
 msgstr "SP DGR consultation stage 2"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.coordlevel"
+msgstr "Coordination level"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.description"
+msgstr "Description"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.fackind"
+msgstr "Facility type"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname"
+msgstr "Facility name"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.planningstatus"
+msgstr "Planning status"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmkind"
+msgstr "Measure type"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname"
+msgstr "Measure name"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validfrom"
+msgstr "from"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validuntil"
+msgstr "until"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.web"
+msgstr "More information"
+
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung"
 msgstr "Consultation"
 
@@ -5643,7 +5673,7 @@ msgid "chmobil_url_route"
 msgstr "SwitzerlandMobility route information"
 
 msgid "ch.nagra.aeromagnetische-karte_1100"
-msgstr "Aeromagnetic Aargau 1100 m 100 | Eromagnetica Argovia 1100 m 100"
+msgstr "Aeromagnetic Aargau 1100 m 100"
 
 msgid "ch.nagra.aeromagnetische-karte_1100.aeromagnetisme"
 msgstr "Aeromagnetic anomalies Aargau, 1100 m [nT]"
@@ -5701,6 +5731,9 @@ msgstr "MCPFE1.2 Minimum Intervention"
 
 msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
 msgstr "MCPFE1.3 Conservation through active management"
+
+msgid "ch.sem"
+msgstr "SEM"
 
 msgid "ch.sem.sachplan-asyl_anhoerung"
 msgstr "SPA consultation"
@@ -5779,6 +5812,9 @@ msgstr "Valid from"
 
 msgid "ch.sem.sachplan-asyl_kraft.validuntil"
 msgstr "until"
+
+msgid "ch.sem.url"
+msgstr "https://www.sem.admin.ch/sem/en/home.html"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Sediment thickness"
@@ -6813,7 +6849,7 @@ msgid "ch.swisstopo.images-swissimage-dop10.metadata"
 msgstr "Division SWISSIMAGE 10 cm Raster"
 
 msgid "ch.swisstopo.images-swissimage.metadata"
-msgstr "Division SWISSIMAGE Raster"
+msgstr "Division SWISSIMAGE 25 cm Raster"
 
 msgid "ch.swisstopo.images-swissimage.metadata.base"
 msgstr "Base"

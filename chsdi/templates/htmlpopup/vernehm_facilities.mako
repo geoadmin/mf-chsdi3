@@ -9,14 +9,14 @@
     planningstatus = 'planningstatus_%s' % lang
     web = 'web_%s' % lang
 %>
-    <tr><td class="cell-left">${_('tt_sachplan_facility_name')}</td>              <td>${c['attributes'][facptname] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('tt_sachplan_facility_anlageart')}</td>         <td>${c['attributes'][fackind] or '-'}</td></tr>
-	<tr><td class="cell-left">${_('tt_sachplan_facility_anlagestatus')}</td>      <td>${c['attributes'][planningstatus] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('tt_sachplan_facility_beschlussdatum')}</td>    <td>${c['attributes']['validfrom'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('tt_sachplan_beschreibung')}</td>               <td>${c['attributes']['description'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname')}</td>              <td>${c['attributes'][facptname] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.fackind')}</td>         <td>${c['attributes'][fackind] or '-'}</td></tr>
+	<tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.planningstatus')}</td>      <td>${c['attributes'][planningstatus] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validfrom')}</td>    <td>${c['attributes']['validfrom'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.description')}</td>               <td>${c['attributes']['description'] or '-'}</td></tr>
 % if c['attributes'][web]:
-    <tr><td class="cell-left">${_('tt_sachplan_weitereinfo')}</td>                <td><a href="${c['attributes'][web]}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td></tr>
+    <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.web')}</td>                <td><a href="${c['attributes'][web]}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td></tr>
 % else:
-    <tr><td class="cell-left">${_('tt_sachplan_weitereinfo')}</td>                <td> - </td></tr>
+    <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.web')}</td>                <td> - </td></tr>
 %endif
 </%def>

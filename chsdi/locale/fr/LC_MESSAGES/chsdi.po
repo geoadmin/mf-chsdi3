@@ -1692,7 +1692,7 @@ msgid "ch.bafu.bundesinventare-amphibien"
 msgstr "Batraciens objets fixes"
 
 msgid "ch.bafu.bundesinventare-amphibien_anhang4"
-msgstr "Batraciens sites de l’annexe 4"
+msgstr "Batraciens sites de l'annexe 3"
 
 msgid "ch.bafu.bundesinventare-amphibien_anhang4.name"
 msgstr "Nom"
@@ -4994,6 +4994,36 @@ msgstr "PS dépôts couches géol.prof.: p.t."
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung"
 msgstr "PS DCGP consultation étape 2"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.coordlevel"
+msgstr "Etat de coordination"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.description"
+msgstr "Description"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.fackind"
+msgstr "Type d'installation"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname"
+msgstr "Nom de l'installation"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.planningstatus"
+msgstr "Etat de la planification"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmkind"
+msgstr "Type de mesure"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname"
+msgstr "Nom de la mesure"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validfrom"
+msgstr "du"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validuntil"
+msgstr "au"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.web"
+msgstr "Autres informations"
+
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung"
 msgstr "PSE consultation"
 
@@ -5702,6 +5732,9 @@ msgstr "MCPFE1.2 Interventions minimales"
 msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
 msgstr "MCPFE1.3 Promotion de la biodiversité par des interventions ciblées"
 
+msgid "ch.sem"
+msgstr "SEM"
+
 msgid "ch.sem.sachplan-asyl_anhoerung"
 msgstr "PSA consultation"
 
@@ -5779,6 +5812,9 @@ msgstr "Date de l’arrêt"
 
 msgid "ch.sem.sachplan-asyl_kraft.validuntil"
 msgstr "au"
+
+msgid "ch.sem.url"
+msgstr "https://www.sem.admin.ch/sem/fr/home.html"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Epaisseur des roches meubles"
@@ -6813,7 +6849,7 @@ msgid "ch.swisstopo.images-swissimage-dop10.metadata"
 msgstr "Découpage SWISSIMAGE 10 cm Raster"
 
 msgid "ch.swisstopo.images-swissimage.metadata"
-msgstr "Découpage SWISSIMAGE Raster"
+msgstr "Découpage SWISSIMAGE 25 cm Raster"
 
 msgid "ch.swisstopo.images-swissimage.metadata.base"
 msgstr "Base"

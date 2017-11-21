@@ -1692,7 +1692,7 @@ msgid "ch.bafu.bundesinventare-amphibien"
 msgstr "Amphibien Ortsfeste Objekte"
 
 msgid "ch.bafu.bundesinventare-amphibien_anhang4"
-msgstr "Amphibien Anhang 4"
+msgstr "Amphibien Anhang 3"
 
 msgid "ch.bafu.bundesinventare-amphibien_anhang4.name"
 msgstr "Objektname"
@@ -4994,6 +4994,36 @@ msgstr "SP Geologische Tiefenlager: t.D."
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung"
 msgstr "SGT Vernehmlassung Etappe 2"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.coordlevel"
+msgstr "Koordinationsstand"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.description"
+msgstr "Beschreibung"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.fackind"
+msgstr "Anlageart"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname"
+msgstr "Name Anlage"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.planningstatus"
+msgstr "Planungsstand"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmkind"
+msgstr "Massnahmetyp"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname"
+msgstr "Name planerische Massnahme"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validfrom"
+msgstr "von"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validuntil"
+msgstr "bis"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.web"
+msgstr "Weitere Informationen"
+
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung"
 msgstr "SÜL Anhörung"
 
@@ -5702,6 +5732,9 @@ msgstr "MCPFE1.2 Minimale Eingriffe"
 msgid "ch.pronatura.waldreservate.tt_pronatura_e3"
 msgstr "MCPFE1.3 Biodiversitätsförderung durch gezielte Eingriffe"
 
+msgid "ch.sem"
+msgstr "SEM"
+
 msgid "ch.sem.sachplan-asyl_anhoerung"
 msgstr "SPA Anhörung"
 
@@ -5779,6 +5812,9 @@ msgstr "Beschlussdatum"
 
 msgid "ch.sem.sachplan-asyl_kraft.validuntil"
 msgstr "bis"
+
+msgid "ch.sem.url"
+msgstr "https://www.sem.admin.ch/sem/de/home.html"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
 msgstr "Mächtigkeit der Lockergesteine"
@@ -6813,7 +6849,7 @@ msgid "ch.swisstopo.images-swissimage-dop10.metadata"
 msgstr "Einteilung SWISSIMAGE 10 cm Raster"
 
 msgid "ch.swisstopo.images-swissimage.metadata"
-msgstr "Einteilung SWISSIMAGE Raster"
+msgstr "Einteilung SWISSIMAGE 25 cm Raster"
 
 msgid "ch.swisstopo.images-swissimage.metadata.base"
 msgstr "Basis"
