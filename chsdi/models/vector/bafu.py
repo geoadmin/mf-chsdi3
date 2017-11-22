@@ -1251,7 +1251,7 @@ register('ch.bafu.bundesinventare-bln', BLN)
 
 
 class HM(Base, Vector):
-    __tablename__ = 'hm'
+    __tablename__ = 'hm_update'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-hochmoore'
     __template__ = 'templates/htmlpopup/hochmoore.mako'
@@ -1262,6 +1262,12 @@ class HM(Base, Vector):
     hm_typ = Column('hm_typ', Integer)
     hm_fl = Column('hm_fl', Numeric)
     hm_ke = Column('hm_ke', Integer)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    type_de = Column('type_de', Unicode)
+    type_fr = Column('type_fr', Unicode)
+    type_it = Column('type_it', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-hochmoore', HM)
