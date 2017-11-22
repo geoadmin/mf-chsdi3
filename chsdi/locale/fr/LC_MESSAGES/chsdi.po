@@ -5006,6 +5006,12 @@ msgstr "Type d'installation"
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname"
 msgstr "Nom de l'installation"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname_de"
+msgstr "Nom de l'installation"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname_fr"
+msgstr "Nom de l'installation"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.planningstatus"
 msgstr "Etat de la planification"
 
@@ -5014,6 +5020,12 @@ msgstr "Type de mesure"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname"
 msgstr "Nom de la mesure"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname_de"
+msgstr "Type de mesure"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname_fr"
+msgstr "Type de mesure"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validfrom"
 msgstr "du"
