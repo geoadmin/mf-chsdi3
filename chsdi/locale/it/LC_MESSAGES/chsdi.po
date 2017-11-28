@@ -4074,7 +4074,7 @@ msgid "ch.bav"
 msgstr "UFT"
 
 msgid "ch.bav.anlagen-schienengueterverkehr"
-msgstr "Anlagen Schienengüterverkehr"
+msgstr "Impianti traffico merci ferroviario"
 
 msgid "ch.bav.anlagen-schienengueterverkehr.dst_abk"
 msgstr "Abbreviazione"
@@ -6211,6 +6211,24 @@ msgstr "Stato di aggiornamento"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.isbn"
 msgstr "Codice ISBN"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name_de"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name_en"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name_fr"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name_it"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.number"
+msgstr "Numero"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.price"
 msgstr "Prezzo al pezzo"
