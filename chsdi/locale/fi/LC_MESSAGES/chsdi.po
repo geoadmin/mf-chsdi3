@@ -4074,7 +4074,7 @@ msgid "ch.bav"
 msgstr "BAV"
 
 msgid "ch.bav.anlagen-schienengueterverkehr"
-msgstr "Anlagen Schienengüterverkehr"
+msgstr "Anlagen Gütertransport Schiene"
 
 msgid "ch.bav.anlagen-schienengueterverkehr.dst_abk"
 msgstr "Abkürzung"
@@ -6211,6 +6211,24 @@ msgstr "Nachführungsstand"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.isbn"
 msgstr "ISBN-Nummer"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name_de"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name_en"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name_fr"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name_it"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.number"
+msgstr "Nummer"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.price"
 msgstr "Stückpreis"
@@ -8799,7 +8817,7 @@ msgid "disclaimer title"
 msgstr "Copyright & decleraziun da protecziun da datas"
 
 msgid "disclaimer url"
-msgstr "http://www.geo.admin.ch/internet/geoportal/rm/home/geoadmin/contact.html#copyright"
+msgstr "http://www.geo.admin.ch/indicaziuns#copyright"
 
 msgid "disclaimer_url"
 msgstr "index.html"
