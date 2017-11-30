@@ -1802,23 +1802,6 @@ class PLZOrtschaften(Base, Vector):
 register('ch.swisstopo-vd.ortschaftenverzeichnis_plz', PLZOrtschaften)
 
 
-class GeometaStandAV(Base, Vector):
-    __tablename__ = 'amogr_standav'
-    __table_args__ = ({'schema': 'vd', 'autoload': False})
-    __template__ = 'templates/htmlpopup/standav.mako'
-    __bodId__ = 'ch.swisstopo-vd.geometa-standav'
-    __label__ = 'frame'
-    __returnedGeometry__ = 'the_geom_gen50'
-    id = Column('gid', Integer, primary_key=True)
-    fid = Column('id', Integer)
-    quality = Column('quality', Unicode)
-    frame = Column('frame', Unicode)
-    the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
-    the_geom = Column('the_geom', Geometry2D)
-
-register('ch.swisstopo-vd.geometa-standav', GeometaStandAV)
-
-
 class GeometaPNF(Base, Vector):
     __tablename__ = 'amopnf_pnf'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
