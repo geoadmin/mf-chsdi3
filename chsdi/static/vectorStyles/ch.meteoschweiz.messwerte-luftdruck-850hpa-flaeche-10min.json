@@ -1,0 +1,986 @@
+{
+  "type": "range",
+  "property": "value",
+  "ranges": [
+    {
+      "geomType": "point",
+      "range": [
+        -100000,
+        1000
+      ],
+      "minResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata14.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        -100000,
+        1000
+      ],
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata16.png",
+        "label": {
+          "template": "${station_name}\n - gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1000,
+        1300
+      ],
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(59,100,94,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1000,
+        1300
+      ],
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(59,100,94,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -20,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1000,
+        1300
+      ],
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(59,100,94,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${station_name}\n ${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1300,
+        1350
+      ],
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(97,147,142,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1300,
+        1350
+      ],
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(97,147,142,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -20,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1300,
+        1350
+      ],
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(97,147,142,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${station_name}\n ${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1350,
+        1400
+      ],
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(155,201,192,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1350,
+        1400
+      ],
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(155,201,192,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -20,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1350,
+        1400
+      ],
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(155,201,192,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${station_name}\n ${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1400,
+        1450
+      ],
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(210,232,228,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1400,
+        1450
+      ],
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(210,232,228,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -20,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1400,
+        1450
+      ],
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(210,232,228,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${station_name}\n ${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1450,
+        1500
+      ],
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(241,229,199,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1450,
+        1500
+      ],
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(241,229,199,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -20,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1450,
+        1500
+      ],
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(241,229,199,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${station_name}\n ${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1500,
+        1550
+      ],
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(213,190,134,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1500,
+        1550
+      ],
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(213,190,134,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -20,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1500,
+        1550
+      ],
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(213,190,134,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${station_name}\n ${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1550,
+        1600
+      ],
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(173,127,67,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1550,
+        1600
+      ],
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(173,127,67,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -20,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1550,
+        1600
+      ],
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(173,127,67,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${station_name}\n ${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1600,
+        2000
+      ],
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(124,83,38,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1600,
+        2000
+      ],
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(124,83,38,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -20,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        1600,
+        2000
+      ],
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(124,83,38,0.9)"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        },
+        "label": {
+          "template": "${station_name}\n ${value} gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        2000,
+        100000
+      ],
+      "minResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata14.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "range": [
+        2000,
+        100000
+      ],
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata16.png",
+        "label": {
+          "template": "${station_name}\n - gpm",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
