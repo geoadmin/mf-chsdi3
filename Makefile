@@ -457,7 +457,7 @@ package.json:
 	@echo "${GREEN}File package.json has changed${RESET}";
 node_modules: package.json
 	@echo "${GREEN}Installing node packages...${RESET}";
-	npm install
+	npm install --production
 	cp -f node_modules/jquery/dist/jquery.min.js chsdi/static/js/jquery.min.js
 	cp -f node_modules/blueimp-gallery/js/blueimp-gallery.min.js chsdi/static/js/blueimp-gallery.min.js
 	cp -f node_modules/d3/d3.min.js chsdi/static/js/d3.min.js

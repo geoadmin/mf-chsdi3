@@ -924,7 +924,7 @@ msgid "ch.are"
 msgstr "ARE"
 
 msgid "ch.are.agglomerationen_isolierte_staedte"
-msgstr "Agglomerationen und isolierte Städte"
+msgstr "Agglomerationen - Definition 2000"
 
 msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Agglomerationen und isolierte Städte"
@@ -2164,6 +2164,18 @@ msgstr "Reinigungstyp (VSA-Kategorie)"
 
 msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss"
 msgstr "Gefährdungskarte Oberflächenabfluss"
+
+msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.jaehrlichkeit"
+msgstr "Jährlichkeit"
+
+msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.spezialprozess"
+msgstr "Spezialprozess"
+
+msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.ue_tiefe_og"
+msgstr "Überschwemmungstiefe: Obergrenze (in m)"
+
+msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.ue_tiefe_ug"
+msgstr "Überschwemmungstiefe: Untergrenze (in m)"
 
 msgid "ch.bafu.gefahren-aktuelle_erdbeben"
 msgstr "Aktuelle Erdbeben"
@@ -5153,6 +5165,54 @@ msgstr "Bikesharing- und Veloverleihsysteme"
 msgid "ch.bfe.energieberatungsstellen"
 msgstr "Energieberatungsstellen"
 
+msgid "ch.bfe.energieberatungsstellen.address"
+msgstr "Adresse"
+
+msgid "ch.bfe.energieberatungsstellen.category"
+msgstr "Kategorie"
+
+msgid "ch.bfe.energieberatungsstellen.client"
+msgstr "Kunden"
+
+msgid "ch.bfe.energieberatungsstellen.clientcompanies"
+msgstr "Unternehmen"
+
+msgid "ch.bfe.energieberatungsstellen.clientmunicipalities"
+msgstr "Gemeinden"
+
+msgid "ch.bfe.energieberatungsstellen.clientprivatepersons"
+msgstr "Privatpersonen"
+
+msgid "ch.bfe.energieberatungsstellen.mail"
+msgstr "Email"
+
+msgid "ch.bfe.energieberatungsstellen.management"
+msgstr "Leitung Energieberatungsstelle"
+
+msgid "ch.bfe.energieberatungsstellen.name"
+msgstr "Name Energieberatungsstelle"
+
+msgid "ch.bfe.energieberatungsstellen.pc_place"
+msgstr "PLZ & Ort"
+
+msgid "ch.bfe.energieberatungsstellen.telephonenumber"
+msgstr "Telefonnummer"
+
+msgid "ch.bfe.energieberatungsstellen.themen"
+msgstr "Themen"
+
+msgid "ch.bfe.energieberatungsstellen.topicbuildings"
+msgstr "Gebäude & Gebäudetechnik"
+
+msgid "ch.bfe.energieberatungsstellen.topicelectricdeviceslighting"
+msgstr "Elektrogeräte & Beleuchtung"
+
+msgid "ch.bfe.energieberatungsstellen.topicmobility"
+msgstr "Mobilität"
+
+msgid "ch.bfe.energieberatungsstellen.webaddress"
+msgstr "Webseite"
+
 msgid "ch.bfe.energieforschung"
 msgstr "Cleantech-Projekte"
 
@@ -5242,6 +5302,30 @@ msgstr "Gemeinde / Stadt"
 
 msgid "ch.bfe.geak-experten"
 msgstr "GEAK-Experten"
+
+msgid "ch.bfe.geak-experten.address"
+msgstr "Adresse"
+
+msgid "ch.bfe.geak-experten.company"
+msgstr "Firmenname"
+
+msgid "ch.bfe.geak-experten.experience"
+msgstr "Anzahl veröffentlichter GEAK"
+
+msgid "ch.bfe.geak-experten.mail"
+msgstr "Email"
+
+msgid "ch.bfe.geak-experten.name_expert"
+msgstr "Name GEAK-Experte"
+
+msgid "ch.bfe.geak-experten.pc_place"
+msgstr "PLZ & Ort"
+
+msgid "ch.bfe.geak-experten.telephonenumber"
+msgstr "Telefonnummer"
+
+msgid "ch.bfe.geak-experten.webaddress"
+msgstr "Webseite"
 
 msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "Sachplan geol. Tiefenlager"
@@ -5438,6 +5522,48 @@ msgstr "Eignung"
 msgid "ch.bfe.solarprofis"
 msgstr "Solarprofis"
 
+msgid "ch.bfe.solarprofis.address"
+msgstr "Adresse"
+
+msgid "ch.bfe.solarprofis.company"
+msgstr "Firmenname"
+
+msgid "ch.bfe.solarprofis.mail"
+msgstr "Email"
+
+msgid "ch.bfe.solarprofis.pc_place"
+msgstr "PLZ & Ort"
+
+msgid "ch.bfe.solarprofis.service"
+msgstr "Dienstleistungen"
+
+msgid "ch.bfe.solarprofis.serviceconsultingplanning"
+msgstr "Beratung & Planung"
+
+msgid "ch.bfe.solarprofis.serviceimplementation"
+msgstr "Ausführung"
+
+msgid "ch.bfe.solarprofis.serviceproductiondistribution"
+msgstr "Herstellung & Vertrieb"
+
+msgid "ch.bfe.solarprofis.technologie"
+msgstr "Technologie"
+
+msgid "ch.bfe.solarprofis.technologyconstruction"
+msgstr "Solares Bauen"
+
+msgid "ch.bfe.solarprofis.technologyelectricity"
+msgstr "Solarstrom"
+
+msgid "ch.bfe.solarprofis.technologyheat"
+msgstr "Solarwärme"
+
+msgid "ch.bfe.solarprofis.telephonenumber"
+msgstr "Telefonnummer"
+
+msgid "ch.bfe.solarprofis.webaddress"
+msgstr "Webseite"
+
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistik Wasserkraft"
 
@@ -5500,6 +5626,27 @@ msgstr "Windpotenzialgebiete"
 
 msgid "ch.bfe.wpsm-qualifizierte_firmen"
 msgstr "WPSM-qualifizierte Firmen"
+
+msgid "ch.bfe.wpsm-qualifizierte_firmen.address"
+msgstr "Adresse"
+
+msgid "ch.bfe.wpsm-qualifizierte_firmen.company"
+msgstr "Firmenname"
+
+msgid "ch.bfe.wpsm-qualifizierte_firmen.contactperson"
+msgstr "Ansprechperson"
+
+msgid "ch.bfe.wpsm-qualifizierte_firmen.mail"
+msgstr "Email"
+
+msgid "ch.bfe.wpsm-qualifizierte_firmen.pc_place"
+msgstr "PLZ & Ort"
+
+msgid "ch.bfe.wpsm-qualifizierte_firmen.telephonenumber"
+msgstr "Telefonnummer"
+
+msgid "ch.bfe.wpsm-qualifizierte_firmen.webaddress"
+msgstr "Webseite"
 
 msgid "ch.bfs"
 msgstr "BFS"
@@ -6090,7 +6237,7 @@ msgid "ch.meteoschweiz.messnetz-manuell"
 msgstr "Manuelle Niederschlagsmessstationen"
 
 msgid "ch.meteoschweiz.messnetz-partner"
-msgstr "Partnerstationen"
+msgstr "MeteoSchweiz-Partnerstationen"
 
 msgid "ch.meteoschweiz.messnetz-phaenologie"
 msgstr "Phänologische Beobachtungen"
@@ -6108,7 +6255,7 @@ msgid "ch.meteoschweiz.messwerte-gesamtschnee-1d"
 msgstr "Messwerte Schneehöhe"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-10min"
-msgstr "Messwerte Globalstrahlung, 10min"
+msgstr "Messwerte Globalstrahlung, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-1d"
 msgstr "Messwerte Globalstrahlung, 1 Tag"
@@ -6132,28 +6279,28 @@ msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
 msgstr "Messwerte Luftfeuchtigkeit"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-10min"
-msgstr "Messwerte Temperatur 2m"
+msgstr "Messwerte Temperatur 2 m"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-max-1h"
-msgstr "Messwerte Max. Temperatur 2m, 24h"
+msgstr "Messwerte Temperatur 2 m, Max. 24 h"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-min-1h"
-msgstr "Messwerte Min. Temperatur 2m, 24h"
+msgstr "Messwerte Temperatur 2 m, Min. 24 h"
 
 msgid "ch.meteoschweiz.messwerte-neuschnee-1d"
 msgstr "Messwerte Neuschnee"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-10min"
-msgstr "Messwerte Niederschlag, 10min"
+msgstr "Messwerte Niederschlag, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1d"
 msgstr "Messwerte Niederschlag, 1 Tag"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1h"
-msgstr "Messwerte Niederschlag, 1h"
+msgstr "Messwerte Niederschlag, 1 h"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
-msgstr "Messwerte Sonnenscheindauer, 10min"
+msgstr "Messwerte Sonnenscheindauer, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
 msgstr "Messwerte Sonnenschein rel., 1 Tag"
@@ -6162,7 +6309,7 @@ msgid "ch.meteoschweiz.messwerte-taupunkt-10min"
 msgstr "Messwerte Taupunkt"
 
 msgid "ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-10min"
-msgstr "Messdaten Böenspitze"
+msgstr "Messwerte Windböen"
 
 msgid "ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min"
 msgstr "Messwerte Windgeschwindigkeit"
@@ -7368,7 +7515,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.purl"
 msgstr "Detailinformation"
 
 msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.stkind"
-msgstr "Abbaustatus"
+msgstr "Status"
 
 msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.tckinds"
 msgstr "Gesteinsgruppen"
@@ -8096,6 +8243,9 @@ msgstr "Bildnummer"
 msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen.medium_format"
 msgstr "Original Bildgrösse"
 
+msgid "ch.swisstopo.lubis-luftbilder_schraegaufnahmen.tt_lubis_schraegaufnahmen_medium_format"
+msgstr "Original Bildgrösse [cm]"
+
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss"
 msgstr "Luftbilder swisstopo s/w"
 
@@ -8113,6 +8263,24 @@ msgstr "Ort"
 
 msgid "ch.swisstopo.lubis-terrestrische_aufnahmen"
 msgstr "Terrestrische Aufnahmen swisstopo"
+
+msgid "ch.swisstopo.lubis-terrestrische_aufnahmen.expertenlink"
+msgstr "Expertendatenblatt"
+
+msgid "ch.swisstopo.lubis-terrestrische_aufnahmen.id"
+msgstr "Bildnummer"
+
+msgid "ch.swisstopo.lubis-terrestrische_aufnahmen.operate_name"
+msgstr "Aufnahmegebiet / Operat"
+
+msgid "ch.swisstopo.lubis-terrestrische_aufnahmen.station"
+msgstr "Aufnahmestation"
+
+msgid "ch.swisstopo.lubis-terrestrische_aufnahmen.tt_filesize"
+msgstr "Dateigrösse [MB]"
+
+msgid "ch.swisstopo.lubis-terrestrische_aufnahmen.tt_lubis_aufnahmedatum"
+msgstr "Aufnahmedatum"
 
 msgid "ch.swisstopo.luftfahrtkarten-icao.metadata"
 msgstr "Einteilung Luftfahrtkarte ICAO Raster"
@@ -10661,8 +10829,11 @@ msgstr "Lokalname swisstopo"
 msgid "<i>Luftseilbahn</i>"
 msgstr "Luftseilbahn"
 
-msgid "image_contrast"
-msgstr "Kontrast"
+msgid "image_contrast_activate"
+msgstr "Kontrast aktivieren"
+
+msgid "image_contrast_deactivate"
+msgstr "Kontrast deaktivieren"
 
 msgid "<i>Massiv</i>"
 msgstr "Massiv"
@@ -11966,6 +12137,15 @@ msgstr "Keine Metainformationen für diesen Datensatz verfügbar"
 msgid "Meteorologie"
 msgstr "Meteorologisch-geografische Kennwerte"
 
+msgid "meteoschweiz"
+msgstr "MeteoSchweiz"
+
+msgid "meteoschweiz_service_link_href"
+msgstr "http://www.meteoschweiz.admin.ch"
+
+msgid "meteoschweiz_service_link_label"
+msgstr "MeteoSchweiz"
+
 msgid "methodDeprecated"
 msgstr "Die Methode ist veraltet und wird in 3.0 entfernt. Bitte verwende stattdessen ${newMethod}."
 
@@ -13165,6 +13345,9 @@ msgstr "Tooltip"
 
 msgid "topelevationamsll"
 msgstr "Maximale Höhe AMSL [m]"
+
+msgid "topic_meteoschweiz_tooltip"
+msgstr "Bundesamt für Meteorologie und Klimatologie"
 
 msgid "totallength"
 msgstr "Gesamtlänge [m]"

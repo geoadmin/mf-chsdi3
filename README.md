@@ -157,7 +157,7 @@ To run against dev/test environment:
 To run against your private environment:
 `make test`
 
-To execute all tests, including _mapproxy_ and _varnish_ ones, which are deactivated by default:
+To execute all tests, including _wmts_ and _varnish_ ones, which are deactivated by default:
 `scripts/nose_run.sh -a`
 
 ## Download WMS image legends
@@ -190,15 +190,36 @@ You can find additional information about autopep8 here:
 
 To check the code styling:
 
-  ```bash
+```bash
 make lint
-  ```
+```
 
 To autocorrect most linting mistakes
 
-  ```bash
+```bash
 make autolint
-  ```
+```
+
+## Lint a JSON file
+
+```bash
+export PATH=$(npm bin):$PATH
+jsonlint-cli --pretty temp.json > chsdi/static/vectorStyles/ch.meteoschweiz.messwerte-foehn-10min.json
+```
+
+### Create legends
+
+Install dependencies:
+
+```bash
+sudo apt-get install libcairo2-dev libjpeg-dev libpango1.0-dev libgif-dev build-essential g++
+```
+
+Run the script
+
+```
+node scripts/createlegends.js ch.meteoschweiz.messwerte-niederschlagn
+```
 
 ## Git hooks
 
