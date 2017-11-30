@@ -4074,7 +4074,7 @@ msgid "ch.bav"
 msgstr "UFT"
 
 msgid "ch.bav.anlagen-schienengueterverkehr"
-msgstr "Anlagen Schienengüterverkehr"
+msgstr "Impianti traffico merci ferroviario"
 
 msgid "ch.bav.anlagen-schienengueterverkehr.dst_abk"
 msgstr "Abbreviazione"
@@ -5264,14 +5264,23 @@ msgstr "Miscela della foresta 1990/1992"
 msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Registro degli edifici e delle abitazioni"
 
+msgid "ch.bfs.gebaeude_wohnungs_register.canton_label"
+msgstr "Cantone"
+
 msgid "ch.bfs.gebaeude_wohnungs_register.deinr"
 msgstr "N°"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.download"
+msgstr "Download"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.egid"
 msgstr "EGID"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.gdename"
 msgstr "Commune"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.municipality_label"
+msgstr "Comune"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.plz4"
 msgstr "NPA"
@@ -5284,6 +5293,12 @@ msgstr "Registro degli edifici e delle abitazioni"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.strname1"
 msgstr "Rue"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.zip_canton"
+msgstr "Download cantone"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.zip_municipality"
+msgstr "Download comune"
 
 msgid "ch.bfs.url"
 msgstr "http://www.bfs.admin.ch/bfs/portal/it/index.html"
@@ -5647,6 +5662,9 @@ msgstr "FA"
 
 msgid "ch.meteoschweiz.globalstrahlung-monatlich"
 msgstr "Globalstrahlung test"
+
+msgid "ch.meteoschweiz.messdaten-temperatur"
+msgstr "Dati temperatura aria"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
@@ -6211,6 +6229,24 @@ msgstr "Stato di aggiornamento"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.isbn"
 msgstr "Codice ISBN"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name_de"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name_en"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name_fr"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.name_it"
+msgstr "Nome"
+
+msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.number"
+msgstr "Numero"
 
 msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.price"
 msgstr "Prezzo al pezzo"
@@ -8799,7 +8835,7 @@ msgid "disclaimer title"
 msgstr "Copyright e dichiarazione della protezione dei diritti d'autore"
 
 msgid "disclaimer url"
-msgstr "http://www.geo.admin.ch/internet/geoportal/it/home/geoadmin/contact.html#copyright"
+msgstr "http://www.geo.admin.ch/colophon#copyright"
 
 msgid "disclaimer_url"
 msgstr "basi_legali.html"

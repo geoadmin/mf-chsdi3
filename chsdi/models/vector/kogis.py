@@ -20,7 +20,6 @@ class Gebaeuderegister(Base, Vector):
     # due to https://redmine.bgdi.admin.ch/issues/3146 ltmoc  __maxscale__ = 25000
     # Composite labels
     __label__ = 'strname1'
-    __extended_info__ = True
     id = Column('egid_edid', Unicode, primary_key=True)
     egid = Column('egid', Integer)
     strname1 = Column('strname1', Unicode)
