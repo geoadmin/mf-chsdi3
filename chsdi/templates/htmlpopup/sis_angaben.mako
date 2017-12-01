@@ -9,7 +9,10 @@
     description = 'description_%s' % lang
     facility_kind = 'fackind_text_%s' % lang
     facility_status = 'facstatus_text_%s' % lang
-    datefrom = datetime.datetime.strptime(c['attributes']['valid_from'].strip(), "%Y%m%d").strftime("%d.%m.%Y")
+    try:
+        datefrom = datetime.datetime.strptime(c['attributes']['valid_from'].strip(), "%Y%m%d").strftime("%d.%m.%Y")
+    except:
+        datefrom = '-'
 
 %>
     <tr><td class="cell-left">${_(name)}</td>         <td>${c['attributes']['name']}</td></tr>
