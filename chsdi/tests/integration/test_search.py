@@ -348,6 +348,29 @@ class TestSearchServiceView(TestsBase):
         self.assertEqual(resp.json['results'][0]['attrs']['num'], 1)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056)
 
+    def test_locations_searchtext_abbreviations(self):
+        params = {
+            'type': 'locations',
+            'searchText': 'Seftigenstr.',
+            'sr': '2056'
+        }
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056)
+        params = {
+            'type': 'locations',
+            'searchText': 'Bundespl.',
+            'sr': '2056'
+        }
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056)
+        params = {
+            'type': 'locations',
+            'searchText': 'pl. du March',
+            'sr': '2056'
+        }
+        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056)
+
     def test_address_order(self):
         params = {
             'type': 'locations',
