@@ -371,9 +371,8 @@ class Search(SearchValidation):
         self.sphinx.SetFilter('rank', ranks)
 
     def _add_feature_queries(self, queryText, timeFilter):
-        i = 0
-        translated_layer = 'ch_bfs_gebaeude_wohnungs_register_preview'
-        for index in self.featureIndexes:
+        translated_layer = 'ch_bfs_gebaeude_wohnungs_register'
+        for i, index in enumerate(self.featureIndexes):
             self.sphinx.ResetFiltersOnly()
             if timeFilter and self.timeEnabled is not None and self.timeEnabled[i]:
                 if timeFilter['type'] == 'instant':
@@ -382,15 +381,16 @@ class Search(SearchValidation):
                     self.sphinx.SetFilter('year', [timeFilter['years'][i]])
                 elif timeFilter['type'] == 'range':
                     self.sphinx.SetFilterRange('year', int(min(timeFilter['years'])), int(max(timeFilter['years'])))
-            # TODO Find a better way to support such an exception
-            if self.searchLang and index == translated_layer:
-                self.sphinx.SetFilter('lang', self._search_lang_to_filter())
-            elif index == translated_layer:
-                self.sphinx.SetFilter('agnostic', [1])
-            elif self.searchLang:
-                raise exc.HTTPBadRequest('Parameter seachLang is not supported for %s' % index)
-            i += 1
-            self.sphinx.AddQuery(queryText, index=str(index))
+            if index.startswith(translated_layer):
+                if self.searchLang:
+                    self.sphinx.SetFilter('lang', self._search_lang_to_filter())
+                else:
+                    self.sphinx.SetFilter('agnostic', [1])
+                self.sphinx.AddQuery(queryText, index=translated_layer)
+            else:
+                if self.searchLang:
+                    raise exc.HTTPBadRequest('Parameter seachLang is not supported for %s' % index)
+                self.sphinx.AddQuery(queryText, index=str(index))
 
     def _parse_locations(self, res):
         if not self.returnGeometry:
