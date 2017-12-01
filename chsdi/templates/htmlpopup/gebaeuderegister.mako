@@ -8,10 +8,11 @@
   street_key = 'strname1'
   lang = lang if lang in ('fr', 'it', 'rm') else 'de'
   topic = request.matchdict.get('map')
+  datageoadminhost = request.registry.settings['datageoadminhost']
   canton = c['attributes']['gdekt']
   bfs_nr = c['attributes']['gdenr']
-  url_canton = 'https://data.geo.admin.ch/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (str(canton), str(canton))
-  url_municipality = 'https://data.geo.admin.ch/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (str(canton), str(bfs_nr))
+  url_canton = 'https://%s/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (datageoadminhost, canton, canton)
+  url_municipality = 'https://%s/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (datageoadminhost, canton, bfs_nr)
   if 'strname_de' in c['attributes']:
     if c['attributes']['strname_%s' % lang]:
       street_key = 'strname_%s' % lang
