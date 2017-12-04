@@ -10,6 +10,14 @@ LEGENDS_FOLDER=chsdi/static/images/legends/
 echo "WMSHOST: $WMSHOST"
 echo "BODID: $BODID"
 echo "WMSSCALELEGEND: $WMSCALELEGEND"
+WMS_URL_GETCAP="https://$WMSHOST?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities"
+COUNT_OCCURENCE=$(curl -s $WMS_URL_GETCAP | grep -c $BODID)
+
+if [ "$COUNT_OCCURENCE" -eq "0" ]; then
+  echo "$BODID does not exist."
+  exit 1
+fi
+
 WMS_URL="https://$WMSHOST?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&FORMAT=image/png&TRANSPARENT=true&LAYER=$BODID&SLD_VERSION=1.1.0"
 if [ -n "$WMSCALELEGEND" ]; then
   WMS_URL="${WMS_URL}&SCALE=$WMSCALELEGEND"
