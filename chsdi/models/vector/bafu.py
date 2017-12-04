@@ -1338,7 +1338,7 @@ class ML(Base, Vector):
     __bodId__ = 'ch.bafu.bundesinventare-moorlandschaften'
     __template__ = 'templates/htmlpopup/moorlandschaften.mako'
     __label__ = 'name'
-    id = Column('bgdi_id', Unicode, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     objnummer = Column('objnummer', Unicode)
     shape_area = Column('shape_area', Unicode)
