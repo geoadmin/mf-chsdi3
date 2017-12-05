@@ -7,7 +7,8 @@ from pyramid.view import view_config
 from shapely.geometry import box, Point
 
 from chsdi.lib.validation.search import SearchValidation
-from chsdi.lib.helpers import format_search_text, transform_coordinate, parse_box2d, shift_to
+from chsdi.lib.helpers import format_search_text, format_locations_search_text
+from chsdi.lib.helpers import transform_coordinate, parse_box2d, shift_to
 from chsdi.lib.helpers import center_from_box2d
 from chsdi.lib.sphinxapi import sphinxapi
 from chsdi.lib import mortonspacekey as msk
@@ -71,7 +72,7 @@ class Search(SearchValidation):
             )
             self._feature_search()
         elif self.typeInfo in ('locations', 'locations_preview'):
-            self.searchText = format_search_text(
+            self.searchText = format_locations_search_text(
                 self.request.params.get('searchText', '')
             )
             # swiss search
