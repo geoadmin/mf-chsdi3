@@ -5264,13 +5264,22 @@ msgstr "Mixité des forêts 1990/1992"
 msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Registre des bâtiments et des logements"
 
+msgid "ch.bfs.gebaeude_wohnungs_register.canton_label"
+msgstr "Canton"
+
 msgid "ch.bfs.gebaeude_wohnungs_register.deinr"
 msgstr "N°"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.download"
+msgstr "Téléchargement données"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.egid"
 msgstr "EGID"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.gdename"
+msgstr "Commune"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.municipality_label"
 msgstr "Commune"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.plz4"
@@ -5284,6 +5293,12 @@ msgstr "Registre des bâtiments et des logements"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.strname1"
 msgstr "Rue"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.zip_canton"
+msgstr "Téléchargement données canton"
+
+msgid "ch.bfs.gebaeude_wohnungs_register.zip_municipality"
+msgstr "Téléchargement données commune"
 
 msgid "ch.bfs.url"
 msgstr "http://www.bfs.admin.ch/bfs/portal/fr/index.html"
@@ -5647,6 +5662,9 @@ msgstr "FA"
 
 msgid "ch.meteoschweiz.globalstrahlung-monatlich"
 msgstr "Globalstrahlung test"
+
+msgid "ch.meteoschweiz.messdaten-temperatur"
+msgstr "Données température de l'air"
 
 msgid "ch.mobility.standorte"
 msgstr "Autopartage (carsharing)"
