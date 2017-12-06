@@ -11,40 +11,10 @@ Base = bases['kogis']
 
 
 class Gebaeuderegister(Base, Vector):
-    __tablename__ = 'view_adr'
-    __table_args__ = ({'schema': 'bfs', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gebaeuderegister.mako'
-    __bodId__ = 'ch.bfs.gebaeude_wohnungs_register'
-    __queryable_attributes__ = ['strname1', 'deinr', 'plz4', 'plzname', 'gdename', 'egid', 'gdenr']
-    # __minscale__ = 5001
-    # due to https://redmine.bgdi.admin.ch/issues/3146 ltmoc  __maxscale__ = 25000
-    # Composite labels
-    __label__ = 'strname1'
-    id = Column('egid_edid', Unicode, primary_key=True)
-    egid = Column('egid', Integer)
-    strname1 = Column('strname1', Unicode)
-    deinr = Column('deinr', Unicode)
-    plz4 = Column('plz4', Integer, nullable=False)
-    plz6 = Column('plz6', Integer, nullable=False)
-    plzname = Column('plzname', Unicode)
-    gdename = Column('gdename', Unicode)
-    gdekt = Column('gdekt', Unicode)
-    dstrid = Column('dstrid', Integer)
-    gkplaus = Column('gkplaus', Integer)
-    gstat = Column('gstat', Integer)
-    gdenr = Column('gdenr', Integer)
-    ggbkr = Column('ggbkr', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)
-
-
-class GebaeuderegisterPreview(Base, Vector):
     __tablename__ = 'view_adr_preview'
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
     __template__ = 'templates/htmlpopup/gebaeuderegister.mako'
-    __bodId__ = 'ch.bfs.gebaeude_wohnungs_register_preview'
+    __bodId__ = 'ch.bfs.gebaeude_wohnungs_register'
     __label__ = 'strname_de'
     id = Column('egid_edid', Unicode, primary_key=True)
     egid = Column('egid', Integer)
@@ -65,7 +35,9 @@ class GebaeuderegisterPreview(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register(GebaeuderegisterPreview.__bodId__, GebaeuderegisterPreview)
+
+register('ch.bfs.gebaeude_wohnungs_register_preview', Gebaeuderegister)
+register(Gebaeuderegister.__bodId__, Gebaeuderegister)
 
 
 class Agnes(Base, Vector):
