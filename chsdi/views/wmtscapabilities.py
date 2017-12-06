@@ -48,12 +48,10 @@ class WMTSCapabilites(MapNameValidation):
             'X-Forwarded-Proto',
             self.request.scheme)
         staging = self.request.registry.settings['geodata_staging']
-        mapproxyHost = self.request.registry.settings['mapproxyhost']
+        wmts_public_host = self.request.registry.settings['wmts_public_host']
 
         # Default ressource
-        s3_url = sanitize_url("%s://wmts.geo.admin.ch/" % scheme)
-        mapproxy_url = sanitize_url("%s://%s/" % (scheme, mapproxyHost))
-        onlineressources = {'mapproxy': mapproxy_url, 's3': s3_url}
+        onlineressource = sanitize_url("%s://%s/" % (scheme, wmts_public_host))
 
         layers_query = self.request.db.query(self.models['GetCap'])
         layers_query = filter_by_geodata_staging(
@@ -78,7 +76,7 @@ class WMTSCapabilites(MapNameValidation):
             'themes': themes,
             'metadata': metadata,
             'scheme': scheme,
-            'onlineressources': onlineressources,
+            'onlineressource': onlineressource,
             'tilematrixset': self.tileMatrixSet,
             'tilematrixsetDefs': getDefaultTileMatrixSet(self.tileMatrixSet)
         }

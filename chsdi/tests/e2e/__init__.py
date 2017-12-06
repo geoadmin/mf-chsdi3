@@ -5,7 +5,7 @@ import os
 from pyramid.paster import get_app
 
 
-class MapProxyTestsBase(object):
+class TodProxyTestsBase(object):
 
     def setUp(self):
         app = get_app('development.ini')
@@ -13,7 +13,7 @@ class MapProxyTestsBase(object):
         try:
             os.environ["http_proxy"] = registry.settings['http_proxy']
             apache_entry_path = registry.settings['apache_entry_path']
-            self.mapproxy_url = "http://" + registry.settings['mapproxyhost'] + '/'
+            self.wmts_public_host = "http://" + registry.settings['wmts_public_host'] + '/'
             self.host_url = "http://" + registry.settings['host'] + apache_entry_path
         except KeyError as e:
             raise e

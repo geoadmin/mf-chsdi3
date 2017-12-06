@@ -2,14 +2,14 @@
 
 import requests
 from chsdi.tests.integration import TestsBase
-from chsdi.tests.e2e import MapProxyTestsBase
+from chsdi.tests.e2e import TodProxyTestsBase
 
 
 class TestWmtsGetTileAuth(TestsBase):
 
     def setUp(self):
         super(TestWmtsGetTileAuth, self).setUp()
-        self.mp = MapProxyTestsBase()
+        self.mp = TodProxyTestsBase()
         self.mp.setUp()
         self.paths = ['/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/7/67/45.jpeg',
                       '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/2056/17/5/6.jpeg',
@@ -35,7 +35,7 @@ class TestWmtsGetTileAuth(TestsBase):
 
     def test_bad_referer_get_tile(self):
         for path in self.paths:
-            self.check_status_code(self.mp.mapproxy_url + path, self.mp.BAD_REFERER, 403)
+            self.check_status_code(self.mp.wmts_public_host + path, self.mp.BAD_REFERER, 403)
 
     def test_no_referer_get_capabilties(self):
         # Get Cap is open for all
@@ -43,11 +43,11 @@ class TestWmtsGetTileAuth(TestsBase):
 
     def test_no_referer_get_tile(self):
         for path in self.paths:
-            self.check_status_code(self.mp.mapproxy_url + path, None, 403)
+            self.check_status_code(self.mp.wmts_public_host + path, None, 403)
 
     def test_good_referer_get_capabilties(self):
         self.check_status_code(self.mp.host_url + '/1.0.0/WMTSCapabilities.xml', self.mp.GOOD_REFERER, 200)
 
     def test_good_referer_get_tile(self):
         for path in self.paths:
-            self.check_status_code(self.mp.mapproxy_url + path, self.mp.GOOD_REFERER, 200)
+            self.check_status_code(self.mp.wmts_public_host + path, self.mp.GOOD_REFERER, 200)

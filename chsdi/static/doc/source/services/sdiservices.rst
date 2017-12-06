@@ -768,21 +768,26 @@ despite the fact that most layers are free to use. See :ref:`available_layers` f
 URL
 ***
 
-- http://wmts.geo.admin.ch or  https://wmts.geo.admin.ch
+- http://wmts.geo.admin.ch or https://wmts.geo.admin.ch
+- http://wmts1.geo.admin.ch or https://wmts1.geo.admin.ch
+- http://wmts2.geo.admin.ch or https://wmts2.geo.admin.ch
+- http://wmts3.geo.admin.ch or https://wmts3.geo.admin.ch
+- http://wmts4.geo.admin.ch or https://wmts4.geo.admin.ch
 - http://wmts5.geo.admin.ch or https://wmts5.geo.admin.ch
 - http://wmts6.geo.admin.ch or https://wmts6.geo.admin.ch
 - http://wmts7.geo.admin.ch or https://wmts7.geo.admin.ch
 - http://wmts8.geo.admin.ch or https://wmts8.geo.admin.ch
 - http://wmts9.geo.admin.ch or https://wmts9.geo.admin.ch
 
+
 GetCapabilities
 ***************
 
 The GetCapabilites document provides informations about the service, along with layer description, both in german and french.
 
-`http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_
+`https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_
 
-`http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr <https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr>`_
+`https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr <https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr>`_
 
 Parameters
 **********
@@ -878,9 +883,9 @@ Result
 
 A tile.
 
-http://wmts6.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/20/58/70.jpeg
+http://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/20/58/70.jpeg
 
-or https://wmts6.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/20/58/70.jpeg
+or https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/20110401/21781/20/58/70.jpeg
 
 
 
@@ -891,11 +896,11 @@ Beside, the **LV03** projection, the same tiles are offered in four other *tilem
 These projections are:
 
 * Plate-Carrée WGS1984 (EPSG:4326)
-    `http://wmts20.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml <https://wmts20.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml>`_
+    `https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml>`_
 * LV95/CH1903+ (EPSG:2056)
-    `http://wmts20.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml <https://wmts20.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml>`_
+    `https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml>`_
 * WGS84/Pseudo-Mercator (EPSG:3857, as used in OSM, Bing, Google Map)
-    `http://wmts20.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml <https://wmts20.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml>`_
+    `https://wmts.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml>`_
 
 
 Note:
@@ -915,11 +920,11 @@ Note:
 
 Example
 *******
-* At tile: `http://wmts20.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg <https://wmts20.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg>`_
+* At tile: `https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg <https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg>`_
 
 .. raw:: html
 
-       <img src="https://wmts20.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg" />
+       <img src="https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/9/266/180.jpeg" />
 
 * An OpenLayers3 application using the `pseudo-Mercator projection <http://codepen.io/geoadmin/pen/pyzwwL?editors=0010>`_
 * An OpenLayers3 example showing the `Cadastralwebmap as WMTS <http://codepen.io/geoadmin/pen/xVKLdV?editors=0010>`_
@@ -1156,8 +1161,8 @@ Response syntax
         var l = document.links;
         for(var i=0; i<l.length; i++) {
             var href = l[i].href;
-            if (href.indexOf('wmts20') > -1) {
-                 l[i].href = href.replace(/^https:\/\/wmts20\.geo\.admin\.ch/, hostname);
+            if (href.indexOf('wmts') > -1) {
+                 l[i].href = href.replace(/^https:\/\/wmts\.geo\.admin\.ch/, hostname);
             }
         }
    </script>
