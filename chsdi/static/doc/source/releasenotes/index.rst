@@ -16,6 +16,55 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+
+.. _releasenotes_20171206:
+   *******
+
+Release 20171206 - Wednesday, December 6th 2017
+------------------------------------------------
+
+API & applications
+******************
+
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+-  Bug fixes
+
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Floodplains appendix 2 <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-auen_anhang2>`__ (ch.bafu.bundesinventare-auen_anhang2)                                                   |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Amphibians stationary objects <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-amphibien>`__ (ch.bafu.bundesinventare-amphibien)                                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Amphibians appendix 4 <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-amphibien_anhang4>`__ (ch.bafu.bundesinventare-amphibien_anhang4)                                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Amphibians shifting sites <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-amphibien_wanderobjekte>`__ (ch.bafu.bundesinventare-amphibien_wanderobjekte)                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Floodplains <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-auen>`__ (ch.bafu.bundesinventare-auen)                                                                              |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Fens <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-flachmoore>`__ (ch.bafu.bundesinventare-flachmoore)                                                                         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Raised bogs <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-hochmoore>`__ (ch.bafu.bundesinventare-hochmoore)                                                                    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mire landscapes <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-moorlandschaften>`__ (ch.bafu.bundesinventare-moorlandschaften)                                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Dry grasslands (DGS) <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-trockenwiesen_trockenweiden>`__ (ch.bafu.bundesinventare-trockenwiesen_trockenweiden)                       |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Dry grasslands appendix 2 <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2>`__ (ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2)  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport stops <//map.geo.admin.ch/?layers=ch.bav.haltestellen-oev>`__ (ch.bav.haltestellen-oev)                                                                             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Solarenergie: Eignung Fassaden <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-fassaden>`__ (ch.bfe.solarenergie-eignung-fassaden)                                           |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20171122:
    *******
 
