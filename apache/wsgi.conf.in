@@ -76,7 +76,7 @@ RewriteRule ^${apache_entry_path}/(.*)$ ${apache_entry_path}/shorten/$1 [PT]
 
 # define a process group
 # WSGIDaemonProcess, default are 1 process and 15 threads
-WSGIDaemonProcess mf-chsdi3:${apache_base_path} display-name=%{GROUP} user=${modwsgi_user} threads=${wsgi_threads}
+WSGIDaemonProcess mf-chsdi3:${apache_base_path} display-name=%{GROUP} user=${modwsgi_user} processes=${wsgi_processes} threads=${wsgi_threads}
 
 # define the path to the WSGI app
 WSGIScriptAliasMatch ^${apache_entry_path}/ ${wsgi_app}/
