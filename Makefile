@@ -273,6 +273,7 @@ apache/wsgi.conf: apache/wsgi.conf.in apache/application.wsgi
 		--var "git_branch=$(GIT_BRANCH)" \
 		--var "current_directory=$(CURRENT_DIRECTORY)" \
 		--var "modwsgi_user=$(MODWSGI_USER)" \
+		--var "wsgi_processes=$(WSGI_PROCESSES)" \
 		--var "wsgi_threads=$(WSGI_THREADS)" \
 		--var "wsgi_app=$(WSGI_APP)" \
 		--var "kml_temp_dir=$(KML_TEMP_DIR)" $< > $@

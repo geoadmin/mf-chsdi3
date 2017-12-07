@@ -19,6 +19,7 @@ export SPHINXHOST=service-sphinxsearch.dev.bgdi.ch
 export VECTOR_BUCKET=mwks6dv2y5dsbbgg-vectortiles
 export VECTOR_PROFILENAME=chsdi_aws_admin_ro
 export WMSHOST=wms-bgdi.dev.bgdi.ch
+export WSGI_PROCESSES=1
 export WSGI_THREADS=15
 export CMSGEOADMINHOST=https://cms.geo.admin.ch
 export LINKEDDATAHOST=https://ld.geo.admin.ch
