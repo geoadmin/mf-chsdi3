@@ -5,58 +5,141 @@
     {
       "geomType": "point",
       "value": "11",
+      "minResolution": 0,
+      "maxResolution": 50,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/11.png",
-        "anchor": [0.5, 1]
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/11_bike.png"
       }
     }, {
       "geomType": "point",
       "value": "12",
+      "minResolution": 0,
+      "maxResolution": 50,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/12.png",
-        "anchor": [0.5, 1]
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/12_bike.png"
       }
     }, {
       "geomType": "point",
       "value": "13",
+      "minResolution": 0,
+      "maxResolution": 50,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/13.png",
-        "anchor": [0.5, 1]
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/13_bike.png"
       }
     }, {
       "geomType": "point",
       "value": "14",
+      "minResolution": 0,
+      "maxResolution": 50,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/14.png",
-        "anchor": [0.5, 1]
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/14_bike.png"
       }
     }, {
       "geomType": "point",
       "value": "15",
+      "minResolution": 0,
+      "maxResolution": 50,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/15.png",
-        "anchor": [0.5, 1]
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/15_bike.png"
       }
     }, {
       "geomType": "point",
       "value": "16",
+      "minResolution": 0,
+      "maxResolution": 50,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/16.png",
-        "anchor": [0.5, 1]
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/16_bike.png"
       }
     }, {
       "geomType": "point",
       "value": "17",
+      "minResolution": 0,
+      "maxResolution": 50,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/17.png",
-        "anchor": [0.5, 1]
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/17_bike.png"
+      }
+    }, {
+      "geomType": "point",
+      "value": "11",
+      "minResolution": 50,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/11_point.png"
+      }
+    }, {
+      "geomType": "point",
+      "value": "11",
+      "minResolution": 50,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/11_point.png"
+      }
+    }, {
+      "geomType": "point",
+      "value": "12",
+      "minResolution": 50,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/12_point.png"
+      }
+    }, {
+      "geomType": "point",
+      "value": "13",
+      "minResolution": 50,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/13_point.png"
+      }
+    }, {
+      "geomType": "point",
+      "value": "14",
+      "minResolution": 50,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/14_point.png"
+      }
+    }, {
+      "geomType": "point",
+      "value": "15",
+      "minResolution": 50,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/15_point.png"
+      }
+    }, {
+      "geomType": "point",
+      "value": "16",
+      "minResolution": 50,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/16_point.png"
+      }
+    }, {
+      "geomType": "point",
+      "value": "17",
+      "minResolution": 50,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.bikesharing/images/test/17_point.png"
+      }
+    },{
+      "geomType": "polygon",
+      "value": "18",
+      "vectorOptions": {
+        "fill": {
+          "color": "#C04D48"
+        },
+        "stroke": {
+          "color": "#FFFFFF",
+          "width": 1
+        }
       }
     }
   ]
