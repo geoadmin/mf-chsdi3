@@ -53,6 +53,10 @@ Add the port number in the newly created user rc file. You should at least edit 
 
     export SERVER_PORT=9000
 
+Add the API key to retrieve departure information from https://opentransportdata.swiss into the users rc file or directly in the .bashrc (keepass). For instance:
+
+    export OPENTRANS_API_KEY=dasffdjfjfjfjf566776jfjfjfj22243eac841ce7c9426355b
+
 Every variables you export in rc_user_<username> will override the default ones in rc_dev and rc_user.
 
 Where "username" is your specific rc configuration. To create the specific build:

@@ -17,6 +17,7 @@ KML_TEMP_DIR := /var/local/print/kml
 MODWSGI_USER := www-data
 NO_TESTS ?= withtests
 NODE_DIRECTORY := node_modules
+OPENTRANS_API_KEY ?=
 PYTHON_FILES := $(shell find chsdi/* -path chsdi/static -prune -o -type f -name "*.py" -print)
 SHORTENER_ALLOWED_DOMAINS := admin.ch, swisstopo.ch, bgdi.ch
 SHORTENER_ALLOWED_HOSTS :=
@@ -98,6 +99,7 @@ help:
 	@echo "GEOADMINHOST:        ${GEOADMINHOST}"
 	@echo "GIT_BRANCH:          ${GIT_BRANCH}"
 	@echo "SERVER_PORT:         ${SERVER_PORT}"
+	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
 	@echo
 
 
@@ -187,7 +189,7 @@ potomo: chsdi/locale/en/LC_MESSAGES/chsdi.mo chsdi/locale/fr/LC_MESSAGES/chsdi.m
         chsdi/locale/it/LC_MESSAGES/chsdi.mo
 
 .PHONY: deploybranch
-deploybranch:
+deploybranch: guard-OPENTRANS_API_KEY
 	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev...${RESET}";
 	./scripts/deploybranch.sh
 
@@ -205,7 +207,7 @@ deletebranchint:
 	./scripts/delete_branch.sh int $(BRANCH_TO_DELETE)
 
 .PHONY: deploybranchint
-deploybranchint:
+deploybranchint: guard-OPENTRANS_API_KEY
 	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev and int...${RESET}";
 	./scripts/deploybranch.sh int
 
@@ -220,11 +222,11 @@ deploydev:
 	fi
 
 .PHONY: deployint
-deployint: guard-SNAPSHOT
+deployint: guard-SNAPSHOT guard-OPENTRANS_API_KEY
 	scripts/deploysnapshot.sh $(SNAPSHOT) int $(NO_TESTS)
 
 .PHONY: deployprod
-deployprod: guard-SNAPSHOT
+deployprod: guard-SNAPSHOT guard-OPENTRANS_API_KEY
 	scripts/deploysnapshot.sh $(SNAPSHOT) prod $(NO_TESTS)
 
 .PHONY: legends
@@ -317,6 +319,7 @@ production.ini: production.ini.in
 		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
 		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
 		--var "linkeddatahost=$(LINKEDDATAHOST)" \
+		--var "opentrans_api_key=$(OPENTRANS_API_KEY)" \
 		--var "shortener_allowed_domains=$(SHORTENER_ALLOWED_DOMAINS)" $< > $@
 
 .venv/hooks: .venv/bin/git-secrets ./scripts/install-git-hooks.sh

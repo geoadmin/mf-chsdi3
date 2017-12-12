@@ -4,7 +4,7 @@
 <%
 baseUrl = request.registry.settings['api_url']
 %>
-  <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/iframeHtmlPopup?lang=${lang}" width="100%" height="235" frameborder="0" style="border: 0;" scrolling="no"></iframe>
+  <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/iframeHtmlPopup?lang=${lang}" width="100%" height="165" frameborder="0" style="border: 0;" scrolling="no"></iframe>
 </%def>
 
 
@@ -28,11 +28,14 @@ baseUrl = request.registry.settings['api_url']
     height:24px;
     margin:0px;
   }
+  .${c['htmlpopup_class']} .oev-delay {
+    color:red;
+  }
   .${c['htmlpopup_class']} .col-label {
     text-align: center;
     width: 35px !important;
   }
-  .${c['htmlpopup_class']} .col-destination, .${c['htmlpopup_class']} .col-departures, .${c['htmlpopup_class']} .col-time-diff {
+  .${c['htmlpopup_class']} .col-destination, .${c['htmlpopup_class']} .col-departures, .${c['htmlpopup_class']} .col-time-diff, .${c['htmlpopup_class']} .col-delay {
      vertical-align: middle !important;
   }
   .${c['htmlpopup_class']} .col-label p {
@@ -40,12 +43,9 @@ baseUrl = request.registry.settings['api_url']
     border-radius: 4px;
     width: 30px;
   }
-  .${c['htmlpopup_class']} .col-label p, .${c['htmlpopup_class']} .col-destination p, .${c['htmlpopup_class']} .col-departures p, .${c['htmlpopup_class']} .col-time-diff p {
+  .${c['htmlpopup_class']} .col-label p, .${c['htmlpopup_class']} .col-destination p, .${c['htmlpopup_class']} .col-departures p, .${c['htmlpopup_class']} .col-time-diff p, .${c['htmlpopup_class']} .col-delay p {
      padding-top: 5px;
      margin-bottom: 2px;
-  }
-  .${c['htmlpopup_class']} select.form-control {
-    font-size: 12px;
   }
 </style>
 
@@ -71,96 +71,96 @@ baseUrl = request.registry.settings['api_url']
 $(document).ready(function() {
   var refresh;
   var id = '${id}';
-  var select = $('#selectDestination' + id);
   var numeroCol = $('#numero' + id);
   var destinationCol = $('#destination' + id);
   var departuresCol = $('#departures' + id);
   var timeDiffCol = $('#timeDiff' + id);
+  var predictableDelayCol = $('#predictableDelay' + id);
 
-  select.change(function() {
-    onSelect(this.value);
-  });
-
-  // Get infos for a specific destination
   var timesRun = 0;
-  var dest;
   var getInfos = function(val){
     timesRun += 1;
-    if (val) {
-      dest = val;
-    }
     if(timesRun === 20){
       clearInterval(refresh);
     }
-    $.getJSON( "${host}/stationboard/stops/${id}?destination=" + encodeURIComponent(dest), function(result2){
+    $.getJSON( '${host}/stationboard/stops/${id}', function(result){
       var numero = '';
       var destination = '';
       var departures = '';
       var timeDiff = '';
-      for (var i = 0; i < result2.length; i++) {
-        if (dest == 'nodata' || result2[i].destination == 'nodata'){
+      var delay = '';
+      var late = '';
+      var classLate = '';
+      for (var i = 0; i < result.length; i++) {
+        if (result[i].destination == 'nodata'){
           destination += '<p style="height:24px; margin:0px;">${_("ch.bav.haltestellen-oev.nodata2")}</p>';
         } else {
-          var now = result2[i].currentDate;
-          var then = result2[i].departureDate;
-          var diff = moment(then,"DD/MM/YYYY HH:mm").diff(moment(now,"DD/MM/YYYY HH:mm"));
+          var now = result[i].currentDate;
+          var then = result[i].departureDate;
+          var estimated_then = result[i].estimatedDate;
+          if (estimated_then != 'nodata'){
+            classLate = 'oev-delay';
+            var late_diff = moment(estimated_then,'DD/MM/YYYY HH:mm').diff(moment(then,'DD/MM/YYYY HH:mm'));
+            late_d = moment.duration(late_diff);
+            late = '(+' + Math.floor(late_d.asMinutes()) + moment.utc(late_d).format('[\']', -1) + ')';
+            if (late == '(+0\')'){ // do not show anything when the delay is 0
+              late = '';
+              classLate = '';
+            }
+            then = estimated_then; // when there is a delay we take the estimated date
+          }
+          var label = result[i].label;
+          if (label == null){ // some labels are null
+            label = '-';
+          }
+          if (label.length > 2){ // some labels are too long
+            label = label.substr(0, 3);
+          }
+          var time = moment(then, 'DD/MM/YYY HH:mm').format('HH:mm');
+          var diff = moment(then,'DD/MM/YYYY HH:mm').diff(moment(now,'DD/MM/YYYY HH:mm'));
           var d = moment.duration(diff);
-          var s = Math.floor(d.asMinutes()) + moment.utc(diff).format("[']", -1);
-          numero += '<p class="oev-info">' + result2[i].label + '</p>';
-          destination += '<p class="oev-info">' + result2[i].destinationName + '</p>';
-          departures += '<p class="oev-info">' + result2[i].time + '</p>';
-          timeDiff += '<p class="oev-info"><b>' + s +'</b></p>';
+          var s = Math.floor(d.asMinutes()) + moment.utc(diff).format('[\']', -1);
+          numero += '<p class="oev-info">' + label + '</p>';
+          destination += '<p class="oev-info">' + result[i].destinationName + '</p>';
+          departures += '<p class="oev-info ' + classLate + '">' + time + '</p>';
+          timeDiff += '<p class="oev-info ' + classLate + '"><b>' + s +'</b></p>';
+          delay += '<p class="oev-info oev-delay">' + late +'&nbsp;</p>';
         }
       };
       numeroCol.html(numero);
       destinationCol.html(destination);
       departuresCol.html(departures);
       timeDiffCol.html(timeDiff);
+      predictableDelayCol.html(delay);
     });
   };
 
-  var onSelect = function(val) {
+  var Refresh = function(val) {
     if (refresh) {
       clearInterval(refresh);
     }
     getInfos(val);
     refresh = setInterval(getInfos, 60000);
   };
+  Refresh();
 
-  $.getJSON( "${host}/stationboard/stops/${id}/destinations", function(result){
-    var selectDestination = '';
-    for (var i = 0; i < result.length; i++) {
-      if (result[i].destination == 'nodata') {
-        selectDestination += '<option value="' + result[i].destination + '">${_("ch.bav.haltestellen-oev.nodata")}</option>';
-      } else {
-        selectDestination += '<option value="' + result[i].name + '">' + result[i].name + '</option>';
-      }
-    };
-    select.append(selectDestination);
-    onSelect('all');
-  });
 });
 
 </script>
-    <br />
     <p><b>${c['attributes']['name'] or '-'}</b>, ${_('ch.bav.haltestellen-oev.next_departures')}:</p>
-    <select id="selectDestination${id}" class="form-control">
-      <option value="all">${_('ch.bav.haltestellen-oev.all_departures')}</option>
-    </select>
-    <br />
   <table>
     <tr>
         <td id="numero${id}" class="col-label"></td>
         <td id="destination${id}" class="col-destination"></td>
         <td id="departures${id}" class="col-departures"></td>
         <td id="timeDiff${id}" class="col-time-diff"></td>
+        <td id="predictableDelay${id}" class="col-delay"></td>
     </tr>
-% endif
     <tr>
-      <td></td>
-      <td></td>
+      <td colspan="5">&nbsp;</td>
     </tr>
   </table>
+% endif
 </%def>
 
 <%def name="extended_info(c, lang)">
