@@ -1,0 +1,72 @@
+{
+  "type": "unique",
+  "values": [
+    {
+      "geomType": "point",
+      "minResolution": 0,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 0,
+        "label": {
+          "property": "description",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 10px Helvetica",
+            "scale": 1.5,
+            "offsetX": 0,
+            "offsetY": 0,
+            "stroke": {
+              "color": "rgba(255, 255, 255, 0.7)",
+              "width": 4
+            },
+            "fill": {
+              "color": "rgba(52, 52, 52, 0.95)"
+            }
+          }
+        }
+      }
+    }, {
+      "geomType": "point",
+      "minResolution": 250,
+      "maxResolution": 500,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 0,
+        "label": {
+          "property": "description",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "normal 8px Helvetica",
+            "scale": 1.5,
+            "offsetX": 0,
+            "offsetY": 0,
+            "stroke": {
+              "color": "rgba(255, 255, 255, 0.7)",
+              "width": 4
+            },
+            "fill": {
+              "color": "rgba(52, 52, 52, 0.95)"
+            }
+          }
+        }
+      }
+    }, {
+      "geomType": "point",
+      "minResolution": 500,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 5,
+        "stroke": {
+          "color": "rgba(255, 255, 255, 0.7)",
+          "width": 4
+        },
+        "fill": {
+          "color": "rgba(52, 52, 52, 0.95)"
+        }
+      }
+    }
+  ]
+}

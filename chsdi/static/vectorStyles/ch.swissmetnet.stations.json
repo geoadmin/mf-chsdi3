@@ -1,0 +1,68 @@
+{
+  "type": "unique",
+  "values": [
+    {
+      "geomType": "point",
+      "minResolution": 0,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 9,
+        "stroke": {
+          "color": "rgb(14, 80, 114)",
+          "width": 4
+        },
+        "fill": {
+          "color": "rgb(255, 255, 255)"
+        },
+        "label": {
+          "property": "name",
+          "text": {
+            "textAlign": "middle",
+            "textBaseline": "middle",
+            "font": "bold 1.1em FrutigerNeueW02-Regular, Times, sans-serif",
+            "scale": 1,
+            "offsetX": 12,
+            "offsetY": -12,
+            "stroke": {
+              "color": "rgb(14, 80, 114)",
+              "width": 4
+            },
+            "fill": {
+              "color": "rgb(255, 255, 255)"
+            }
+          }
+        }
+      }
+    }, {
+      "geomType": "point",
+      "minResolution": 100,
+      "maxResolution": 500,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 6,
+        "stroke": {
+          "color": "rgb(14, 80, 114)",
+          "width": 3
+        },
+        "fill": {
+          "color": "rgb(255, 255, 255)"
+        }
+      }
+    }, {
+      "geomType": "point",
+      "minResolution": 500,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 4,
+        "stroke": {
+          "color": "rgb(14, 80, 114)",
+          "width": 2
+        },
+        "fill": {
+          "color": "rgb(255, 255, 255)"
+        }
+      }
+    }
+  ]
+}
