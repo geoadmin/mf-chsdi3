@@ -57,6 +57,7 @@ geoadmin_file_storage_bucket = ${geoadmin_file_storage_bucket}
 vector_bucket = ${vector_bucket}
 vector_profilename = ${vector_profilename}
 datageoadminhost = ${datageoadminhost}
+opentrans_api_key = ${opentrans_api_key}
 empty_geotables = ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung,ch.bfe.sachplan-uebertragungsleitungen_anhoerung,ch.blw.emapis-bewaesserung,ch.blw.emapis-elektrizitaetsversorgung,ch.blw.emapis-milchleitung,ch.blw.emapis-seilbahnen,ch.vbs.sachplan-infrastruktur-militaer_anhoerung,ch.sem.sachplan-asyl_kraft,ch.sem.sachplan-asyl_anhoerung
 
 shortener.allowed_hosts = ${shortener_allowed_hosts}

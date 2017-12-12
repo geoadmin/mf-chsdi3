@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Unicode, Integer, Date, DateTime, ForeignKey
-from sqlalchemy.orm import relationship, remote
+from sqlalchemy import Column, Unicode, Integer, Date
 from sqlalchemy.types import Numeric, Float
 
 from chsdi.models import register, bases
@@ -114,24 +113,6 @@ class OevHaltestellenZoom2(Base, OevHaltestellen, Vector):
     the_geom = Column('bgdi_geom_poly_overview', Geometry2D)
 
 register(OevHaltestellen.__bodId__, OevHaltestellenZoom2)
-
-
-class OevDepartures(Base):
-    __tablename__ = 'oev_departures'
-    __table_args__ = ({'schema': 'bav', 'autoload': False})
-    __bodId__ = 'ch.bav.departures-oev'
-    __label__ = 'id'
-    id = Column('oid', Unicode, primary_key=True)
-    stop = Column('stop', Integer)
-    time = Column('time', DateTime)
-    label = Column('label', Unicode)
-    type = Column('type', Integer)
-    via = Column('via', Unicode)
-    destination = Column('destination', Unicode,
-                         ForeignKey(OevHaltestellenZoom1.name))
-    haltestelle = relationship(OevHaltestellenZoom1,
-                               primaryjoin=destination == remote(OevHaltestellenZoom1.name),
-                               viewonly=True)
 
 
 # IVS NAT and REG use the same template

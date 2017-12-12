@@ -81,7 +81,6 @@ def main(global_config, **settings):
     config.add_route('files', '/files/{id}')
     config.add_route('adminkml', '/admin/kml')
     config.add_route('stationboard', '/stationboard/stops/{id}')
-    config.add_route('stationboard_destination', '/stationboard/stops/{id}/destinations')
     config.add_route('faqlist', '/rest/services/{map}/faqlist')
     config.add_route('cut', '/rest/services/{map}/GeometryServer/cut')
     config.add_route('color', '/color/{r},{g},{b}/{image}')
