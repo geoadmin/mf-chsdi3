@@ -2,7 +2,6 @@
 
 <%def name="table_body(c, lang)">
 <%
-    c['stable_id'] = True
     lang = lang if lang in ('fr','it') else 'de'
     typ = 'typ_%s' % lang
 %>
