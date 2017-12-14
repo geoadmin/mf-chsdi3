@@ -60,7 +60,7 @@ if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
                 <ows:UpperCorner>11.47757 48.230651</ows:UpperCorner>
             </ows:WGS84BoundingBox>
             <ows:Identifier>${layer.id|n,x,trim}</ows:Identifier>
-            <ows:Metadata xlink:href="http://www.geocat.ch/geonetwork/srv/deu/metadata.show?uuid=${layer.idGeoCat}"/>
+            <ows:Metadata xlink:href="https://www.geocat.ch/geonetwork/srv/ger/md.viewer#/full_view/${layer.idGeoCat}"/>
             <Style>
                 <ows:Title>${layer.kurzbezeichnung or '-'|n,x,trim}</ows:Title>
                 <ows:Identifier>${layer.id or '-'|n,x,trim}</ows:Identifier>
