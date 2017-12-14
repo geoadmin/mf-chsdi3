@@ -79,13 +79,13 @@
     <tr><td>${_('Metadaten')}</td>
 % if 'idGeoCat' in c:
   % if lang in ('de', 'rm'):
-      <td><a target="_blank" href="http://www.geocat.ch/geonetwork/srv/deu/metadata.show?uuid=${c['idGeoCat']}&currTab=simple">
+      <td><a target="_blank" href="https://www.geocat.ch/geonetwork/srv/ger/catalog.search#/metadata/${c['idGeoCat']}">
   % elif lang == 'fr':
-      <td><a target="_blank" href="http://www.geocat.ch/geonetwork/srv/fra/metadata.show?uuid=${c['idGeoCat']}&currTab=simple">
+      <td><a target="_blank" href="https://www.geocat.ch/geonetwork/srv/fre/catalog.search#/metadata/${c['idGeoCat']}">
   % elif lang == 'it':
-      <td><a target="_blank" href="http://www.geocat.ch/geonetwork/srv/ita/metadata.show?uuid=${c['idGeoCat']}&currTab=simple">
+    <td><a target="_blank" href="https://www.geocat.ch/geonetwork/srv/ita/catalog.search#/metadata/${c['idGeoCat']}">
   % else:
-      <td><a target="_blank" href="http://www.geocat.ch/geonetwork/srv/eng/metadata.show?uuid=${c['idGeoCat']}&currTab=simple">
+      <td><a target="_blank" href="https://www.geocat.ch/geonetwork/srv/eng/catalog.search#/metadata/${c['idGeoCat']}">
   % endif
       ${_('layer_geocat_text')}</a></td>
 % else:
