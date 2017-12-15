@@ -13,7 +13,7 @@ class TestWmtsGetTileAuth(TestsBase):
         self.mp.setUp()
         self.paths = ['/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/7/67/45.jpeg',
                       '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/2056/17/5/6.jpeg',
-                      '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/4326/12/132/180.jpeg']
+                      '/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/4326/12/4267/993.jpeg']
 
     def tearDown(self):
         self.mp.tearDown()
