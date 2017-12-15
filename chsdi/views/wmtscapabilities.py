@@ -25,6 +25,7 @@ def getDefaultTileMatrixSet(tileMatrixSet):
         ]
     return tilematrixSet
 
+
 def getLayersZoomLevelSet(tileMatrixSet, layers):
     zoomLevelSet = set()
     gagrid = getTileGrid(int(tileMatrixSet))()
@@ -33,6 +34,7 @@ def getLayersZoomLevelSet(tileMatrixSet, layers):
         zoom = gagrid.getClosestZoom(float(resolution))
         zoomLevelSet.add(zoom)
     return zoomLevelSet
+
 
 class WMTSCapabilites(MapNameValidation):
 
@@ -82,7 +84,7 @@ class WMTSCapabilites(MapNameValidation):
 
         wmts = {
             'layers': layers,
-            'zoomlevels' : zoom_levels,
+            'zoomlevels': zoom_levels,
             'themes': themes,
             'metadata': metadata,
             'scheme': scheme,
