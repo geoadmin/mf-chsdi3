@@ -28,10 +28,9 @@ def getDefaultTileMatrixSet(tileMatrixSet):
 
 def getLayersZoomLevelSet(tileMatrixSet, layers):
     zoomLevelSet = set()
-    gagrid = getTileGrid(int(tileMatrixSet))()
     for layer in layers:
         resolution = layer.resolution_max
-        zoom = gagrid.getClosestZoom(float(resolution))
+        zoom = layer.getClosestZoom(tileMatrixSet, resolution)
         zoomLevelSet.add(zoom)
     return zoomLevelSet
 
