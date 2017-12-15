@@ -13,7 +13,10 @@
     facstatus_text = 'facstatus_text_%s' % lang
     description_text = 'description_%s' % lang
     objectname = 'objname_%s' % lang
-    datefrom = datetime.datetime.strptime(c['attributes']['validfrom'].strip(), "%Y-%m-%d").strftime("%d.%m.%Y")
+    try:
+        datefrom = datetime.datetime.strptime(c['attributes']['validfrom'].strip(), "%Y-%m-%d").strftime("%d.%m.%Y")
+    except:
+        datefrom = '-'
 %>
     <tr><td class="cell-left">${_(name)}</td>                  <td>${c['attributes'][facname]}</td></tr>
     <tr><td class="cell-left">${_('tt_sachplan_facility_anlageart')}</td>             <td>${c['attributes'][fackind_text] or '-'}</td></tr>
