@@ -7,8 +7,10 @@
   onlineressource = pageargs['onlineressource']
   tilematrixset = pageargs['tilematrixset']
   tmsDefs = pageargs['tilematrixsetDefs']
+  zoomLevels = pageargs['zoomlevels']
   epsg = tilematrixset
   TileMatrixSet_epsg = "TileMatrixSet_%s.mako" % epsg
+  topLeftCorners = {'2056':[2420000.0, 1350000.0], '21781':[420000.0, 350000.0], '3857':[-20037508.3428, 20037508.3428], '4326':[90, -180]}
   def pad(num):
       return str(num).zfill(2)
 %>
@@ -88,11 +90,7 @@ if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
                 % endfor
             </Dimension>
             <TileMatrixSetLink>
-              % if str(epsg) in ('21781', '2056'):
                 <TileMatrixSet>${epsg}_${str(layer.getClosestZoom(epsg, layer.resolution_max))}</TileMatrixSet>
-              % else:
-                 <TileMatrixSet>${epsg}</TileMatrixSet>
-              % endif
             </TileMatrixSetLink>
             ## Zeitreihen has two formats available 'png' (desktop GIS) and (pngjpeg) web gis
             % if layer.id == 'ch.swisstopo.zeitreihen' and epsg == '21781':
@@ -108,7 +106,7 @@ if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
         </Layer>
   % endfor
   ## End main loop
-        <%include file="${TileMatrixSet_epsg}" args="tmsDefs=tmsDefs"/>
+        <%include file="TileMatrixSet.mako" args="tmsDefs=tmsDefs, zoomLevels=zoomLevels, epsg=epsg, topLeftCorner=topLeftCorners"/>
     </Contents>
     <Themes>
     ## Main loop for the themes
