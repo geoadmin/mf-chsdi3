@@ -25,6 +25,14 @@ def getDefaultTileMatrixSet(tileMatrixSet):
         ]
     return tilematrixSet
 
+def getLayersZoomLevelSet(tileMatrixSet, layers):
+    zoomLevelSet = set()
+    gagrid = getTileGrid(int(tileMatrixSet))()
+    for layer in layers:
+        resolution = layer.resolution_max
+        zoom = gagrid.getClosestZoom(float(resolution))
+        zoomLevelSet.add(zoom)
+    return zoomLevelSet
 
 class WMTSCapabilites(MapNameValidation):
 
@@ -62,6 +70,7 @@ class WMTSCapabilites(MapNameValidation):
         if self.mapName != 'all':
             layers_query = filter_by_map_name(layers_query, self.models['GetCap'], self.mapName)
         layers = layers_query.all()
+        zoom_levels = getLayersZoomLevelSet(self.tileMatrixSet, layers)
         if hasattr(self.models['GetCapThemes'], 'oberthema_id'):
             themes = self.request.db.query(self.models['GetCapThemes']).order_by(self.models['GetCapThemes'].oberthema_id).all()
         else:
@@ -73,6 +82,7 @@ class WMTSCapabilites(MapNameValidation):
 
         wmts = {
             'layers': layers,
+            'zoomlevels' : zoom_levels,
             'themes': themes,
             'metadata': metadata,
             'scheme': scheme,
