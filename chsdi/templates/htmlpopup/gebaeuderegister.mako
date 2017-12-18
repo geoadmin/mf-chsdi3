@@ -16,6 +16,7 @@
   if 'strname_de' in c['attributes']:
     if c['attributes']['strname_%s' % lang]:
       street_key = 'strname_%s' % lang
+  pdf_url = ' https://wwwt.housing-stat.ch/regbl/resources/public/geb_public/%s?lang=de' % c['attributes']['egid']
 %>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.egid')}</td>       <td>${c['attributes']['egid'] or '-'}</td></tr>
     % if c['attributes']['strname1'] <> '':
@@ -27,6 +28,7 @@
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.plzname')}</td>        <td>${c['attributes']['plzname'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.gdename')}</td>   <td>${c['attributes']['gdename'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('bfsnr')}</td>      <td>${bfs_nr or '-'}</td></tr>
+    <tr><td>PDF</td>     <td><a href="${pdf_url}">Download</a></td></tr>
     <tr><td>${_('ch.bfs.gebaeude_wohnungs_register.download')}</td>     <td><a href="${url_canton}"> ${_('ch.bfs.gebaeude_wohnungs_register.canton_label')}</a></td></tr>
     <tr><td></td>      <td><a href="${url_municipality}">${_('ch.bfs.gebaeude_wohnungs_register.municipality_label')}</a></td></tr>
 </%def>
