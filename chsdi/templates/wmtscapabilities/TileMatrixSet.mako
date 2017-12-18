@@ -1,4 +1,4 @@
-<%page args="tmsDefs, zoomLevels, epsg, topLeftCorner"/>
+<%page args="tmsDefs, zoomLevels, epsg"/>
 
 % for zoom in zoomLevels:
 <TileMatrixSet>
@@ -9,7 +9,7 @@
       <ows:Identifier>${z}</ows:Identifier>
       <% scale = tmsDefs[z][3] %>
       <ScaleDenominator>${scale}</ScaleDenominator>
-      <TopLeftCorner>${topLeftCorner[str(epsg)][0]} ${topLeftCorner[str(epsg)][1]}</TopLeftCorner>
+      <TopLeftCorner>${tmsDefs['MAXY']} ${tmsDefs['MINX']}</TopLeftCorner>
       <TileWidth>256</TileWidth>
       <TileHeight>256</TileHeight>
       <% matrix_width = tmsDefs[z][1] %>
