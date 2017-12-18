@@ -23,6 +23,8 @@ def getDefaultTileMatrixSet(tileMatrixSet):
             gagrid.numberOfYTilesAtZoom(zoom),
             gagrid.getScale(zoom)
         ]
+    tilematrixSet['MAXY'] = gagrid.MAXY
+    tilematrixSet['MINX'] = gagrid.MINX
     return tilematrixSet
 
 
