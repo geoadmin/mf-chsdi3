@@ -16,9 +16,9 @@ coordinationlevel_text = 'coordlevel_text_%s' % lang
 planningstatus_text = 'plstatus_text_%s' % lang
 description_text = 'description_%s' % lang
 dateto = '-'
-datefrom = datetime.datetime.strptime(c['attributes']['validfrom'].strip(), "%Y-%m-%d").strftime("%d.%m.%Y")
+datefrom = datetime.datetime.strptime(c['attributes']['validfrom'].strip(), "%Y-%m-%dT%H:%M:%S").strftime("%d.%m.%Y")
 if c['attributes']['validuntil']:
-    dateto = datetime.datetime.strptime(c['attributes']['validuntil'].strip(), "%Y-%m-%d").strftime("%d.%m.%Y")
+    dateto = datetime.datetime.strptime(c['attributes']['validuntil'].strip(), "%Y-%m-%dT%H:%M:%S").strftime("%d.%m.%Y")
 endif
 %>
     <tr>
