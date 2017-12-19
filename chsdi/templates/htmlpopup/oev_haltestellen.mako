@@ -97,17 +97,17 @@ $(document).ready(function() {
         } else {
           var now = result[i].currentDate;
           var then = result[i].departureDate;
-          var estimated_then = result[i].estimatedDate;
-          if (estimated_then != 'nodata'){
+          var estimatedThen = result[i].estimatedDate;
+          if (estimatedThen != 'nodata'){
             classLate = 'oev-delay';
-            var late_diff = moment(estimated_then,'DD/MM/YYYY HH:mm').diff(moment(then,'DD/MM/YYYY HH:mm'));
-            late_d = moment.duration(late_diff);
-            late = '(+' + Math.floor(late_d.asMinutes()) + moment.utc(late_d).format('[\']', -1) + ')';
+            var lateDiff = moment(estimatedThen,'DD/MM/YYYY HH:mm').diff(moment(then,'DD/MM/YYYY HH:mm'));
+            lateD = moment.duration(lateDiff);
+            late = '(+' + Math.floor(lateD.asMinutes()) + moment.utc(lateD).format('[\']', -1) + ')';
             if (late == '(+0\')'){ // do not show anything when the delay is 0
               late = '';
               classLate = '';
             }
-            then = estimated_then; // when there is a delay we take the estimated date
+            then = estimatedThen; // when there is a delay we take the estimated date
           }
           var label = result[i].label;
           if (label == null){ // some labels are null
