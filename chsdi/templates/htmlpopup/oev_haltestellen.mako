@@ -101,7 +101,7 @@ $(document).ready(function() {
           if (estimatedThen != 'nodata'){
             classLate = 'oev-delay';
             var lateDiff = moment(estimatedThen,'DD/MM/YYYY HH:mm').diff(moment(then,'DD/MM/YYYY HH:mm'));
-            lateD = moment.duration(lateDiff);
+            var lateD = moment.duration(lateDiff);
             late = '(+' + Math.floor(lateD.asMinutes()) + moment.utc(lateD).format('[\']', -1) + ')';
             if (late == '(+0\')'){ // do not show anything when the delay is 0
               late = '';
