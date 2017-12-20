@@ -4940,6 +4940,9 @@ msgstr "Centrales nucléaires"
 msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Potentiel petite hydraulique"
 
+msgid "ch.bfe.ladestellen-elektromobilitaet"
+msgstr "Ladeinfrastruktur Elektromobilität"
+
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Fréquence de givrage"
 
@@ -5665,6 +5668,12 @@ msgstr "Globalstrahlung test"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
 msgstr "Données température de l'air"
+
+msgid "ch.meteoschweiz.messdaten-niederschlag"
+msgstr "Données de précipitations"
+
+msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
+msgstr "Données de précipitations journalière"
 
 msgid "ch.mobility.standorte"
 msgstr "Autopartage (carsharing)"
