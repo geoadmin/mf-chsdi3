@@ -41,7 +41,7 @@ class OpenTrans:
         root = et.fromstring(xml_data)
         el_stop_events = root.findall('.//trias:StopEvent', ns)
         if not el_stop_events:
-            raise OpenTransNoStationException("The response of the OpenTransportAPI did not deliver any result for the station %s." % str(self.station_id))
+            raise OpenTransNoStationException("No data available for the station %s." % str(self.station_id))
 
         results = []
         for el in el_stop_events:
