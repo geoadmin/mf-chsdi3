@@ -71,7 +71,7 @@ class TileChecker(TodProxyTestsBase):
         tiles = {3857: [(16, 34243, 23004)],
                  21781: [(17, 5, 6)],
                  2056: [(17, 5, 6)],
-                 4326: [(15, 2, 2)]
+                 4326: [(15, 34136, 7882)]
                  }
 
         if epsg in tiles.keys():
