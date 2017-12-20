@@ -1,0 +1,66 @@
+{
+  "type": "unique",
+  "property": "Available",
+  "values": [
+   {
+    "geomType": "point",
+    "value": "Available",
+    "vectorOptions": {
+       "type": "circle",
+       "radius": 8,
+       "fill": {
+        "color": "#00CC66"
+       },
+       "stroke": {
+        "color": "#00994C",
+        "width": 1
+       }
+      }
+    },
+   {
+    "geomType": "point",
+    "value": "available",
+    "vectorOptions": {
+       "type": "circle",
+       "radius": 8,
+       "fill": {
+        "color": "#00CC66"
+       },
+       "stroke": {
+        "color": "#00994C",
+        "width": 1
+       }
+      }
+    },
+   {
+    "geomType": "point",
+    "value": "occupied",
+    "vectorOptions": {
+       "type": "circle",
+       "radius": 8,
+       "fill": {
+        "color": "#ff3232"
+       },
+       "stroke": {
+        "color": "#B22222",
+        "width": 1
+       }
+      }
+    },
+   {
+    "geomType": "point",
+    "value": "Not available",
+    "vectorOptions": {
+       "type": "circle",
+       "radius": 8,
+       "fill": {
+        "color": "#ff3232"
+       },
+       "stroke": {
+        "color": "#B22222",
+        "width": 1
+       }
+      }
+    }
+  ]
+}
