@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from pyramid.httpexceptions import HTTPInternalServerError, HTTPBadRequest, HTTPServiceUnavailable, HTTPTooManyRequests
+from pyramid.httpexceptions import HTTPInternalServerError, HTTPBadRequest, HTTPServiceUnavailable, HTTPTooManyRequests, HTTPNotFound
 from requests.exceptions import RequestException
 from pyramid.view import view_config, view_defaults
 from chsdi.lib.opentransapi import opentransapi
@@ -46,7 +46,7 @@ class TransportView(object):
         except opentransapi.OpenTransRateLimitException as e:
             raise HTTPTooManyRequests(str(e))  # limit API exceeded
         except opentransapi.OpenTransNoStationException as e:
-            raise HTTPBadRequest(str(e))  # no station for this request
+            raise HTTPNotFound(str(e))  # no station for this request
         except (RequestException, opentransapi.OpenTransException) as e:
             raise HTTPServiceUnavailable(str(e))
         return results

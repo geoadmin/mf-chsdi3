@@ -92,9 +92,6 @@ $(document).ready(function() {
       var late = '';
       var classLate = '';
       for (var i = 0; i < result.length; i++) {
-        if (result[i].destination == 'nodata'){
-          destination += '<p style="height:24px; margin:0px;">${_("ch.bav.haltestellen-oev.nodata2")}</p>';
-        } else {
           var now = result[i].currentDate;
           var then = result[i].departureDate;
           var estimatedThen = result[i].estimatedDate;
@@ -125,13 +122,14 @@ $(document).ready(function() {
           departures += '<p class="oev-info ' + classLate + '">' + time + '</p>';
           timeDiff += '<p class="oev-info ' + classLate + '"><b>' + s +'</b></p>';
           delay += '<p class="oev-info oev-delay">' + late +'&nbsp;</p>';
-        }
       };
       numeroCol.html(numero);
       destinationCol.html(destination);
       departuresCol.html(departures);
       timeDiffCol.html(timeDiff);
       predictableDelayCol.html(delay);
+    }).fail(function() {
+      destinationCol.html('<p style="height:24px; margin:0px;">${_("ch.bav.haltestellen-oev.nodata2")}</p>');
     });
   };
 
