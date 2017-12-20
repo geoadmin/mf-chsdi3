@@ -4940,6 +4940,9 @@ msgstr "Ovras nuclearas"
 msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Potenzials d'ovras pitschnas"
 
+msgid "ch.bfe.ladestellen-elektromobilitaet"
+msgstr "Ladeinfrastruktur Elektromobilität"
+
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Frequenza d'englatschament"
 
@@ -5666,6 +5669,12 @@ msgstr "Globalstrahlung test"
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
 msgstr "Messdaten Lufttemperatur"
 
+msgid "ch.meteoschweiz.messdaten-niederschlag"
+msgstr "Messdaten Niederschlag"
+
+msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
+msgstr "Messdaten Niederschlag Tagessumme"
+
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
 
@@ -5805,7 +5814,7 @@ msgid "ch.sem.sachplan-asyl_anhoerung.validuntil"
 msgstr "bis"
 
 msgid "ch.sem.sachplan-asyl_kraft"
-msgstr "SPA Asyl"
+msgstr "SP Asyl"
 
 msgid "ch.sem.sachplan-asyl_kraft.coordlevel_text_lang"
 msgstr "Stand der Koordination"
