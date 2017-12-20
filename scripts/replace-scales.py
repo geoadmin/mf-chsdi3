@@ -27,15 +27,15 @@ import time
 utc=pytz.UTC
 
 begin_naive = datetime.datetime(2016,10,25)
-begin = utc.localize(begin_naive) 
+begin = utc.localize(begin_naive)
 end_naive = datetime.datetime(2017,01,27)
-end = utc.localize(end_naive) 
+end = utc.localize(end_naive)
 
 
 
 import boto3.session
 dev = boto3.session.Session(profile_name='geoadmin_filestorage')
-  
+
 s3 = dev.resource('s3')
 
 bucket = s3.Bucket('public.geo.admin.ch')
@@ -46,22 +46,22 @@ bucketInt = s3.Bucket('public.int.bgdi.ch')
 start_time = time.time()
 
 for objSummary in bucket.objects.all():
-    
+
     # if objSummary.last_modified > begin and objSummary.key == 'H-3eRDgiSN2pZTTYxU7DOQ' and objSummary.last_modified < end:
     if objSummary.last_modified > begin:
         obj = objSummary.Object();
-        try : 
+        try :
             # Get file content
             with open('tmp/kml_tested/' + obj.key, 'wb') as data:
                 obj.download_fileobj(data)
             gzf = gzip.GzipFile(fileobj=open('tmp/kml_tested/' + obj.key, 'rb'))
             file_content = gzf.read()
             gzf.close()
-            
+
             # Search scales to replace
             m = re.search('(<scale>0\.25</scale>|<scale>0\.5625</scale>|<scale>2\.25</scale>|<scale>4</scale>)', file_content)
             if m is not None:
-              
+
                 # Replace scales
                 #print file_content
                 file_content = re.sub('<scale>0\.25</scale>', '<scale>0.5</scale>', file_content);
@@ -71,7 +71,7 @@ for objSummary in bucket.objects.all():
                 #print file_content
                 #print m.group(0)
                 #print obj.key, obj.last_modified
-              
+
                 # Zip content
                 f = gzip.open('tmp/kml_replaced/' + obj.key, 'wb')
                 f.write(file_content)
@@ -79,7 +79,7 @@ for objSummary in bucket.objects.all():
 
 
                 md5 = hashlib.md5()
-                md5.update(file_content) 
+                md5.update(file_content)
                 # Send to int bucket
                 f = open('tmp/kml_replaced/' + obj.key, 'rb')
                 f.seek(0)
@@ -90,15 +90,15 @@ for objSummary in bucket.objects.all():
                     ContentType='application/vnd.google-earth.kml+xml'
                 )
                 f.close();
-                print "Before http://map.geo.admin.ch/?layers=KML||http://public.geo.admin.ch/" + obj.key 
+                print "Before http://map.geo.admin.ch/?layers=KML||http://public.geo.admin.ch/" + obj.key
                 print "After  http://mf-geoadmin3.int.bgdi.ch/?layers=KML||http://public.int.bgdi.ch/" + obj.key
                 print "\n"
         except:
             print objSummary.key
-            print objSummary.last_modified 
-            print "Error: ", sys.exc_info()[0] 
+            print objSummary.last_modified
+            print "Error: ", sys.exc_info()[0]
 
 sec = round(time.time() - start_time)
 (min, sec) = divmod(sec,60)
-(hour, min) = divmod(min,60) 
+(hour, min) = divmod(min,60)
 print('Time passed: {} hour: {} min: {} sec'.format(hour,min,sec))

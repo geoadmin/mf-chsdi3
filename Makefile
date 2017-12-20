@@ -188,7 +188,7 @@ potomo: chsdi/locale/en/LC_MESSAGES/chsdi.mo chsdi/locale/fr/LC_MESSAGES/chsdi.m
         chsdi/locale/it/LC_MESSAGES/chsdi.mo
 
 .PHONY: deploybranch
-deploybranch: guard-OPENTRANS_API_KEY
+deploybranch:
 	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev...${RESET}";
 	./scripts/deploybranch.sh
 
@@ -206,7 +206,7 @@ deletebranchint:
 	./scripts/delete_branch.sh int $(BRANCH_TO_DELETE)
 
 .PHONY: deploybranchint
-deploybranchint: guard-OPENTRANS_API_KEY
+deploybranchint:
 	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev and int...${RESET}";
 	./scripts/deploybranch.sh int
 
@@ -221,11 +221,11 @@ deploydev:
 	fi
 
 .PHONY: deployint
-deployint: guard-SNAPSHOT guard-OPENTRANS_API_KEY
+deployint: guard-SNAPSHOT
 	scripts/deploysnapshot.sh $(SNAPSHOT) int $(NO_TESTS)
 
 .PHONY: deployprod
-deployprod: guard-SNAPSHOT guard-OPENTRANS_API_KEY
+deployprod: guard-SNAPSHOT
 	scripts/deploysnapshot.sh $(SNAPSHOT) prod $(NO_TESTS)
 
 .PHONY: legends
@@ -291,7 +291,7 @@ development.ini: development.ini.in
 
 production.ini.in:
 	@echo "${GREEN}Template file production.ini.in has changed${RESET}";
-production.ini: production.ini.in
+production.ini: production.ini.in guard-OPENTRANS_API_KEY
 	@echo "${GREEN}Creating production.ini...${RESET}";
 	${MAKO_CMD} \
 		--var "app_version=$(VERSION)" \
@@ -316,7 +316,6 @@ production.ini: production.ini.in
 		--var "geoadmin_file_storage_bucket=$(GEOADMIN_FILE_STORAGE_BUCKET)" \
 		--var "shortener_allowed_hosts=$(SHORTENER_ALLOWED_HOSTS)" \
 		--var "vector_bucket=$(VECTOR_BUCKET)" \
-		--var "vector_profilename=$(VECTOR_PROFILENAME)" \
 		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
 		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
 		--var "linkeddatahost=$(LINKEDDATAHOST)" \

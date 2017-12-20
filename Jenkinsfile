@@ -1,30 +1,34 @@
 #!/usr/bin/env groovy
 
 node(label: "jenkins-slave") {
+
   try {
     stage("Checkout") {
-      sh 'echo Checking out code from github'
       checkout scm
     }
     stage("Build") {
       sh '''
-        echo Starting the build...
+        eval $(cat rc_dev) && make cleanall all
       '''
     }
-    stage("Run") {
+    stage("Lint") {
       sh '''
-        echo Starting the containers...
+        make lint
       '''
     }
     stage("Test") {
       sh '''
-        echo Starting the tests...
+        make test
       '''
     }
   } catch (e) {
     throw e
   }
   finally {
-    sh 'echo All dockers have been purged'
+    stage("Clean") {
+      sh '''
+        make cleanall
+      '''
+    }
   }
 }
