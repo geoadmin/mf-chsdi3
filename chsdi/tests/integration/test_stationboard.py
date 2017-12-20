@@ -10,8 +10,8 @@ class TestStationboard(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_stationboard_wrong_station(self):
-        resp = self.testapp.get('/stationboard/stops/153153', status=400)
-        resp.mustcontain('did not deliver any result for the station 153153')
+        resp = self.testapp.get('/stationboard/stops/153153', status=404)
+        resp.mustcontain('No data available for the station 153153')
 
     def test_stationboardi_limit(self):
         params = {'destination': 'Luzern', 'limit': '1'}
