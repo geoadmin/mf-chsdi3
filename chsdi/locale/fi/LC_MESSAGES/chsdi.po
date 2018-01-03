@@ -5852,8 +5852,29 @@ msgstr "Emissionsplan Eisenbahnlärm 2015 T"
 msgid "ch.lw"
 msgstr "LW"
 
+msgid "ch.meteoschweiz"
+msgstr "MeteoSchweiz"
+
 msgid "ch.meteoschweiz.globalstrahlung-monatlich"
 msgstr "Globalstrahlung test"
+
+msgid "ch.meteoschweiz.messdaten-foehn"
+msgstr "Messdaten Föhn"
+
+msgid "ch.meteoschweiz.messdaten-globalstrahlung"
+msgstr "Messdaten Globalstrahlung"
+
+msgid "ch.meteoschweiz.messdaten-luftdruck-qfe"
+msgstr "Messdaten Luftdruck Stationshöhe QFE"
+
+msgid "ch.meteoschweiz.messdaten-luftdruck-qff"
+msgstr "Messdaten Luftdruck Meereshöhe QFF"
+
+msgid "ch.meteoschweiz.messdaten-luftdruck-qnh"
+msgstr "Messdaten Luftdruck Meereshöhe QFF"
+
+msgid "ch.meteoschweiz.messdaten-luftfeuchtigkeit"
+msgstr "Messdaten Luftfeuchtigkeit"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
 msgstr "Messdaten Lufttemperatur"
@@ -5863,6 +5884,18 @@ msgstr "Messdaten Niederschlag"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
 msgstr "Messdaten Niederschlag Tagessumme"
+
+msgid "ch.meteoschweiz.messdaten-sonnenscheindauer"
+msgstr "Messdaten Sonnenscheindauer"
+
+msgid "ch.meteoschweiz.messdaten-taupunkt"
+msgstr "Messdaten Taupunkt"
+
+msgid "ch.meteoschweiz.messdaten-wind-boenspitze"
+msgstr "Messdaten Böenspitze"
+
+msgid "ch.meteoschweiz.messdaten-windgeschwindigkeit"
+msgstr "Messdaten Windgeschwindigkeit"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
