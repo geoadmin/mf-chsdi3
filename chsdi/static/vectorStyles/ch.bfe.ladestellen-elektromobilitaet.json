@@ -6,60 +6,80 @@
     "geomType": "point",
     "value": "Available",
     "vectorOptions": {
-       "type": "circle",
-       "radius": 8,
-       "fill": {
-        "color": "#00CC66"
-       },
-       "stroke": {
-        "color": "#00994C",
-        "width": 1
-       }
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/available.png"
       }
     },
    {
     "geomType": "point",
-    "value": "available",
+    "value": "Reserved",
     "vectorOptions": {
-       "type": "circle",
-       "radius": 8,
-       "fill": {
-        "color": "#00CC66"
-       },
-       "stroke": {
-        "color": "#00994C",
-        "width": 1
-       }
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/reserved.png"
       }
     },
    {
     "geomType": "point",
     "value": "occupied",
     "vectorOptions": {
-       "type": "circle",
-       "radius": 8,
-       "fill": {
-        "color": "#ff3232"
-       },
-       "stroke": {
-        "color": "#B22222",
-        "width": 1
-       }
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/occupied.png"
       }
+    },
+    {
+    "geomType": "point",
+    "value": "Occupied",
+    "vectorOptions": {
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/occupied.png"
+       }
     },
    {
     "geomType": "point",
     "value": "Not available",
     "vectorOptions": {
-       "type": "circle",
-       "radius": 8,
-       "fill": {
-        "color": "#ff3232"
-       },
-       "stroke": {
-        "color": "#B22222",
-        "width": 1
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/occupied.png"
        }
+    },
+   {
+    "geomType": "point",
+    "value": "OutOfService",
+    "vectorOptions": {
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/outOfService.png"
+      }
+    },
+   {
+    "geomType": "point",
+    "value": "EVSENotFound",
+    "vectorOptions": {
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/notFound.png"
+      }
+    },
+    {
+    "geomType": "point",
+    "value": "Unknown",
+    "vectorOptions": {
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/unkown.png"
       }
     }
   ]
