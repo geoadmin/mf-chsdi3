@@ -1572,6 +1572,7 @@ class PaerkeNationalerBedeutung (Base, Paerke, Vector):
     teil_nummer = Column('teil_nummer', Integer)
     objektnummer = Column('objektnummer', Integer)
     zone = Column('zone', Unicode)
+    shape_area = Column('shape_area', Numeric)
 
 register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung', PaerkeNationalerBedeutung)
 
@@ -1581,6 +1582,7 @@ class PaerkeNationalerBedeutungPerimeter(Base, Paerke, Vector):
     __bodId__ = 'ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter'
     __template__ = 'templates/htmlpopup/paerke_nationaler_bedeutung_perimeter.mako'
     id = Column('objektnummer', Integer, primary_key=True)
+    shape_area = Column('shape_area', Numeric)
 
 register('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter', PaerkeNationalerBedeutungPerimeter)
 
