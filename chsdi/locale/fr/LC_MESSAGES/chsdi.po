@@ -5852,8 +5852,29 @@ msgstr "Rép. émissions sonores ferr. 2015 J"
 msgid "ch.lw"
 msgstr "FA"
 
+msgid "ch.meteoschweiz"
+msgstr "MétéoSuisse"
+
 msgid "ch.meteoschweiz.globalstrahlung-monatlich"
 msgstr "Globalstrahlung test"
+
+msgid "ch.meteoschweiz.messdaten-foehn"
+msgstr "Données foehn"
+
+msgid "ch.meteoschweiz.messdaten-globalstrahlung"
+msgstr "Données rayonnement global"
+
+msgid "ch.meteoschweiz.messdaten-luftdruck-qfe"
+msgstr "Pression atmosphérique altitude station QFE"
+
+msgid "ch.meteoschweiz.messdaten-luftdruck-qff"
+msgstr "Pression atmosphérique réduite niveau mer QFF"
+
+msgid "ch.meteoschweiz.messdaten-luftdruck-qnh"
+msgstr "Pression atmosphérique réduite niveau mer QFF"
+
+msgid "ch.meteoschweiz.messdaten-luftfeuchtigkeit"
+msgstr "Données humidité"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
 msgstr "Données température de l'air"
@@ -5863,6 +5884,18 @@ msgstr "Données de précipitations"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
 msgstr "Données de précipitations journalière"
+
+msgid "ch.meteoschweiz.messdaten-sonnenscheindauer"
+msgstr "Données durée d'ensoleillement"
+
+msgid "ch.meteoschweiz.messdaten-taupunkt"
+msgstr "Données point de rosée"
+
+msgid "ch.meteoschweiz.messdaten-wind-boenspitze"
+msgstr "Données rafales"
+
+msgid "ch.meteoschweiz.messdaten-windgeschwindigkeit"
+msgstr "Données vitesse du vent"
 
 msgid "ch.mobility.standorte"
 msgstr "Autopartage (carsharing)"

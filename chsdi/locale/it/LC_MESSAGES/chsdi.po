@@ -5852,8 +5852,29 @@ msgstr "Piano emissioni foniche ferr 2015 G"
 msgid "ch.lw"
 msgstr "FA"
 
+msgid "ch.meteoschweiz"
+msgstr "MeteoSvizzera"
+
 msgid "ch.meteoschweiz.globalstrahlung-monatlich"
 msgstr "Globalstrahlung test"
+
+msgid "ch.meteoschweiz.messdaten-foehn"
+msgstr "Dati favonio"
+
+msgid "ch.meteoschweiz.messdaten-globalstrahlung"
+msgstr "Dati radiazione globale"
+
+msgid "ch.meteoschweiz.messdaten-luftdruck-qfe"
+msgstr "Pressione alla stazione QFE"
+
+msgid "ch.meteoschweiz.messdaten-luftdruck-qff"
+msgstr "Pressione ridotta livello mare QFF"
+
+msgid "ch.meteoschweiz.messdaten-luftdruck-qnh"
+msgstr "Pressione ridotta livello mare QFF"
+
+msgid "ch.meteoschweiz.messdaten-luftfeuchtigkeit"
+msgstr "Dati umidità"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
 msgstr "Dati temperatura aria"
@@ -5863,6 +5884,18 @@ msgstr "Dati precipitazioni"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
 msgstr "Dati precipitazioni giornaliere"
+
+msgid "ch.meteoschweiz.messdaten-sonnenscheindauer"
+msgstr "Dati soleggiamento"
+
+msgid "ch.meteoschweiz.messdaten-taupunkt"
+msgstr "Dati punto di rugiada"
+
+msgid "ch.meteoschweiz.messdaten-wind-boenspitze"
+msgstr "Dati raffica"
+
+msgid "ch.meteoschweiz.messdaten-windgeschwindigkeit"
+msgstr "Dati velocità del vento"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
