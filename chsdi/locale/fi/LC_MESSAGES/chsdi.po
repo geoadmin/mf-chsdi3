@@ -3987,7 +3987,13 @@ msgid "ch.bag"
 msgstr "BAG"
 
 msgid "ch.bag.radonkarte"
-msgstr "(Kurzitel map.geo.admin)"
+msgstr "Radonkarte"
+
+msgid "ch.bag.radonkarte.confidence"
+msgstr "Vertrauensindex"
+
+msgid "ch.bag.radonkarte.probability_prozent"
+msgstr "Radonkarte"
 
 msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=de"
@@ -5321,8 +5327,20 @@ msgstr "Maschaida dal guaud 1990/1992"
 msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten"
 msgstr "Arbeitsstätten"
 
+msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten.amount"
+msgstr "Anzahl Arbeitsstätten"
+
+msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten.year"
+msgstr "Jahr"
+
 msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente"
 msgstr "Beschäftigte (VZÄ)"
+
+msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente.amount"
+msgstr "Beschäftigte in Vollzeitäquivalenten"
+
+msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente.year"
+msgstr "Jahr"
 
 msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Register edifizis & abitaziuns"
@@ -5395,6 +5413,12 @@ msgstr "Jahr"
 
 msgid "ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen"
 msgstr "Abitaziuns"
+
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen.amount"
+msgstr "Anzahl Wohnungen"
+
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen.year"
+msgstr "Jahr"
 
 msgid "ch.blw"
 msgstr "BLW"
@@ -5557,6 +5581,9 @@ msgstr "https://www.blw.admin.ch/blw/de/home.html"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "Products da charn IGP"
+
+msgid "ch.blw.ursprungsbezeichnungen-fleisch-ap_wurst"
+msgstr "ch.blw.ursprungsbezeichnungen-fleisch-ap_wurst"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch-buendnerfleisch"
 msgstr "Bündnerfleisch (GGA)"
@@ -5953,6 +5980,9 @@ msgstr "Mächtigkeit der Lockergesteine [m]"
 
 msgid "ch.swisstopo"
 msgstr "swisstopo"
+
+msgid "ch.swisstopo.amtliches-strassenverzeichnis"
+msgstr "Amtliches Strassenverzeichnis"
 
 msgid "ch.swisstopo.area-papierkarte.metadata"
 msgstr "Area Chart ICAO"
@@ -7718,11 +7748,23 @@ msgstr "Cunfins communals"
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill"
 msgstr "Cunfins communals"
 
+msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gemeindegebiet"
+msgstr "Gemeindegebiet"
+
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gemname"
 msgstr "Num"
 
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.id"
 msgstr "BFS-Nummer"
+
+msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.kantonsgebiet"
+msgstr "Kantonsgebiet"
+
+msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.kommunanz"
+msgstr "Kommunanz"
+
+msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.typ"
+msgstr "Typ"
 
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-grenze"
 msgstr "Cunfins communals"
@@ -13927,6 +13969,18 @@ msgstr "Vergnügungspark"
 
 msgid "Verkehrsnetze"
 msgstr "Raits da traffic"
+
+msgid "vertrauensindex_gering"
+msgstr "Gering"
+
+msgid "vertrauensindex_hoch"
+msgstr "Hoch"
+
+msgid "vertrauensindex_mittel"
+msgstr "Mittel"
+
+msgid "vertrauensindex_sehr_gering"
+msgstr "Sehr gering"
 
 msgid "viel_sub"
 msgstr "Historischer Verlauf mit viel Substanz"

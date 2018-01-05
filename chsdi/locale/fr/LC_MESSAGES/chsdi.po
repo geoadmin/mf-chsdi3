@@ -3987,7 +3987,13 @@ msgid "ch.bag"
 msgstr "OFSP"
 
 msgid "ch.bag.radonkarte"
-msgstr "(Kurzitel map.geo.admin)"
+msgstr "Carte du radon"
+
+msgid "ch.bag.radonkarte.confidence"
+msgstr "Index de confiance"
+
+msgid "ch.bag.radonkarte.probability_prozent"
+msgstr "Carte du radon"
 
 msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=fr"
@@ -5321,8 +5327,20 @@ msgstr "Mixité des forêts 1990/1992"
 msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten"
 msgstr "Etablissements"
 
+msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten.amount"
+msgstr "Nombre des établissements"
+
+msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten.year"
+msgstr "Année"
+
 msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente"
 msgstr "Occupation (EPT)"
+
+msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente.amount"
+msgstr "Occupation en équivalents plein temps"
+
+msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente.year"
+msgstr "Année"
 
 msgid "ch.bfs.gebaeude_wohnungs_register"
 msgstr "Registre des bâtiments et des logements"
@@ -5395,6 +5413,12 @@ msgstr "Année"
 
 msgid "ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen"
 msgstr "Logements"
+
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen.amount"
+msgstr "Nombre des logements"
+
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen.year"
+msgstr "Année"
 
 msgid "ch.blw"
 msgstr "OFAG"
@@ -5557,6 +5581,9 @@ msgstr "https://www.blw.admin.ch/blw/fr/home.html"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch"
 msgstr "IGP produits à base de viande"
+
+msgid "ch.blw.ursprungsbezeichnungen-fleisch-ap_wurst"
+msgstr "ch.blw.ursprungsbezeichnungen-fleisch-ap_wurst"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch-buendnerfleisch"
 msgstr "Viande des Grisons (IGP)"
@@ -5953,6 +5980,9 @@ msgstr "Epaisseur des roches meubles [m]"
 
 msgid "ch.swisstopo"
 msgstr "swisstopo"
+
+msgid "ch.swisstopo.amtliches-strassenverzeichnis"
+msgstr "Répertoire officiel des rues"
 
 msgid "ch.swisstopo.area-papierkarte.metadata"
 msgstr "Area Chart ICAO"
@@ -7718,11 +7748,23 @@ msgstr "Surface de commune"
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill"
 msgstr "Limites de commune"
 
+msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gemeindegebiet"
+msgstr "Territoire communal"
+
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gemname"
 msgstr "Nom"
 
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.id"
 msgstr "Numéro OFS"
+
+msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.kantonsgebiet"
+msgstr "Territoire cantonal"
+
+msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.kommunanz"
+msgstr "Superficie communautaire"
+
+msgid "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.typ"
+msgstr "Type"
 
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-grenze"
 msgstr "Limite de commune"
@@ -13927,6 +13969,18 @@ msgstr "Parc d’attraction"
 
 msgid "Verkehrsnetze"
 msgstr "Réseaux de transport"
+
+msgid "vertrauensindex_gering"
+msgstr "Faible"
+
+msgid "vertrauensindex_hoch"
+msgstr "Elevé"
+
+msgid "vertrauensindex_mittel"
+msgstr "Moyen"
+
+msgid "vertrauensindex_sehr_gering"
+msgstr "Très faible"
 
 msgid "viel_sub"
 msgstr "Beaucoup de substance"
