@@ -1881,6 +1881,17 @@ class KbsZivilflugpl(Base, Vector):
 register('ch.bazl.kataster-belasteter-standorte-zivilflugplaetze', KbsZivilflugpl)
 
 
+class SchutzgebieteAulavLiechtenstein(Base, Vector):
+    __tablename__ = 'schutzgebiete_aulav_liechtenstein'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __template__ = 'templates/htmlpopup/schutzgebiete_aulav_liechtenstein.mako'
+    __bodId__ = 'ch.bazl.schutzgebiete-aulav_liechtenstein'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+register('ch.bazl.schutzgebiete-aulav_liechtenstein', SchutzgebieteAulavLiechtenstein)
+
+
 class AnlageSchienengueterverkehr:
     __tablename__ = 'anlagen_schienengueterverkehr_tooltip'
     __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
