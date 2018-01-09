@@ -5387,6 +5387,12 @@ msgstr "Jahr"
 msgid "ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude"
 msgstr "Edifizis"
 
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude.amount"
+msgstr "Anzahl Gebäude"
+
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude.year"
+msgstr "Jahr"
+
 msgid "ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen"
 msgstr "Abitaziuns"
 
@@ -6988,6 +6994,12 @@ msgstr "Fotografia or da l'aria"
 
 msgid "ch.swisstopo.images-swissimage-dop10.metadata"
 msgstr "Divisiun SWISSIMAGE 10 cm Raster"
+
+msgid "ch.swisstopo.images-swissimage-dop10.metadata-kartenblatt"
+msgstr "Flugjahr"
+
+msgid "ch.swisstopo.images-swissimage-dop10.metadata-kartenblatt_nummer"
+msgstr "Kachelnummer"
 
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Divisiun SWISSIMAGE 25 cm Raster"

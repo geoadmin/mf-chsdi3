@@ -5387,6 +5387,12 @@ msgstr "Année"
 msgid "ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude"
 msgstr "Bâtiments"
 
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude.amount"
+msgstr "Nombre des bâtiments"
+
+msgid "ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude.year"
+msgstr "Année"
+
 msgid "ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen"
 msgstr "Logements"
 
@@ -6988,6 +6994,12 @@ msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.images-swissimage-dop10.metadata"
 msgstr "Découpage SWISSIMAGE 10 cm Raster"
+
+msgid "ch.swisstopo.images-swissimage-dop10.metadata-kartenblatt"
+msgstr "Année de vol"
+
+msgid "ch.swisstopo.images-swissimage-dop10.metadata-kartenblatt_nummer"
+msgstr "Numéro de tuile"
 
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Découpage SWISSIMAGE 25 cm Raster"
