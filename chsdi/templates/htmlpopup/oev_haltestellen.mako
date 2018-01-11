@@ -69,6 +69,7 @@ baseUrl = request.registry.settings['api_url']
 <script>
 
 $(document).ready(function() {
+  $.ajaxSetup({ cache: false });
   var refresh;
   var id = '${id}';
   var numeroCol = $('#numero' + id);
