@@ -491,9 +491,10 @@ class SwissboundariesGemeinde(Base, Vector):
     __label__ = 'gemname'
     id = Column('id', Integer, primary_key=True)
     gemname = Column('gemname', Unicode)
-    gemflaeche = Column('gemflaeche', Numeric)
-    perimeter = Column('perimeter', Numeric)
+    gemflaeche = Column('gemflaeche', Float)
+    perimeter = Column('perimeter', Float)
     kanton = Column('kanton', Unicode)
+    objektart = Column('objektart', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', SwissboundariesGemeinde)
