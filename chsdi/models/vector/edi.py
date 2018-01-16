@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Integer, Float, Unicode
+from sqlalchemy import Column, Integer
+from sqlalchemy.types import Float
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -195,6 +196,20 @@ class ArealstatistikBodennutzung1985(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik-bodennutzung-1985', ArealstatistikBodennutzung1985)
+
+
+class RadonKarte(Base, Vector):
+    __tablename__ = 'radonkarte'
+    __table_args__ = ({'schema': 'bag', 'autoload': False})
+    __template__ = 'templates/htmlpopup/radonkarte.mako'
+    __bodId__ = 'ch.bag.radonkarte'
+    __label__ = 'probability_prozent'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+    probability_prozent = Column('probability_prozent', Integer)
+    confidence = Column('confidence', Float)
+
+register('ch.bag.radonkarte', RadonKarte)
 
 
 class FsmeFaelle(Base, Vector):
