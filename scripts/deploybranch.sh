@@ -31,6 +31,9 @@ make deploy/conf/00-branch.conf
 # Copy the apache configuration for the branch
 cp deploy/conf/00-branch.conf $BASE_DIR/conf/00-$GIT_BRANCH.conf
 
+# Restart apache on dev
+sudo apache2ctl graceful
+
 # Deploy to int if 'int' is specified
 if [ $1 -a $1 == 'int' ];
 then
