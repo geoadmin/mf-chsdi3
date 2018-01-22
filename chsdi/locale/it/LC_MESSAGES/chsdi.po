@@ -3320,8 +3320,80 @@ msgstr "Acque sotterranee : Pesticidi"
 msgid "ch.bafu.naqua-grundwasser_voc"
 msgstr "Acque sotterranee : COV"
 
+msgid "ch.bafu.neophyten-amerikanische_kermesbeere"
+msgstr "Cremesina uva turca"
+
+msgid "ch.bafu.neophyten-amerikanischer_stinktierkohl"
+msgstr "Lysichiton americano"
+
+msgid "ch.bafu.neophyten-armenische_brombeere"
+msgstr "Rovo d'Armenia"
+
+msgid "ch.bafu.neophyten-aufrechtes_traubenkraut"
+msgstr "Ambrosia con foglie di artemisia"
+
 msgid "ch.bafu.neophyten-auslaeuferbildendes_fettkraut"
 msgstr "Borracina stoloniferus"
+
+msgid "ch.bafu.neophyten-balfours_springkraut"
+msgstr "Balsamina di Balfour"
+
+msgid "ch.bafu.neophyten-bastardindigo"
+msgstr "Indaco bastardo"
+
+msgid "ch.bafu.neophyten-bastard_staudenknoeterich"
+msgstr "Poligono di Boemia"
+
+msgid "ch.bafu.neophyten-besen_radmelde"
+msgstr "Granata comune"
+
+msgid "ch.bafu.neophyten-blauglockenbaum"
+msgstr "Paulownia"
+
+msgid "ch.bafu.neophyten-brasilianisches_tausendblatt"
+msgstr "Millefoglio d'acqua"
+
+msgid "ch.bafu.neophyten-carolina_nachtschatten"
+msgstr "Morella della Carolina"
+
+msgid "ch.bafu.neophyten-chinesische_samtpappel"
+msgstr "Cencio molle"
+
+msgid "ch.bafu.neophyten-druesiges_springkraut"
+msgstr "Balsamina ghiandolosa"
+
+msgid "ch.bafu.neophyten-einjaehriges_berufkraut"
+msgstr "Cespica annua"
+
+msgid "ch.bafu.neophyten-essbare_kermesbeere"
+msgstr "Cremesina uva turca esculenta"
+
+msgid "ch.bafu.neophyten-essbares_zypergras"
+msgstr "Zigolo dolce"
+
+msgid "ch.bafu.neophyten-essigbaum"
+msgstr "Sommacco maggiore"
+
+msgid "ch.bafu.neophyten-felsen_greiskraut"
+msgstr "Senecione montanino"
+
+msgid "ch.bafu.neophyten-fortunes_hanfpalme"
+msgstr "Palma di Fortune"
+
+msgid "ch.bafu.neophyten-gestreiftes_suessgras"
+msgstr "Gramignone striato"
+
+msgid "ch.bafu.neophyten-gewoehnliche_jungfernrebe"
+msgstr "Vite del Canadà domestica"
+
+msgid "ch.bafu.neophyten-glattes_zackenschoetchen"
+msgstr "Cascellore orientale"
+
+msgid "ch.bafu.neophyten-goetterbaum"
+msgstr "Ailanto"
+
+msgid "ch.bafu.neophyten-grossbluetiges_heusenkraut"
+msgstr "Porracchia a fiori grandi"
 
 msgid "ch.bafu.neophyten-grosser_wassernabel"
 msgstr "Soldinella reniforme"
@@ -3990,10 +4062,10 @@ msgid "ch.bag.radonkarte"
 msgstr "Mappa del radon"
 
 msgid "ch.bag.radonkarte.confidence"
-msgstr "Indice di fiducia"
+msgstr "Indice di confidenza"
 
 msgid "ch.bag.radonkarte.probability_prozent"
-msgstr "Mappa del radon"
+msgstr "Probabilità"
 
 msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=it"
@@ -5850,13 +5922,13 @@ msgid "choose_wms_url"
 msgstr "URL"
 
 msgid "ch.pronatura"
-msgstr "Pronatura"
+msgstr "Pro Natura"
 
 msgid "ch.pronatura.naturschutzgebiete"
 msgstr "Pro Natura: Riserve naturali"
 
 msgid "ch.pronatura.url"
-msgstr "http://www.pronatura.ch/attualita"
+msgstr "http://www.pronatura.ch/it"
 
 msgid "ch.pronatura.waldreservate"
 msgstr "Pro Natura: Riserve forestali"
