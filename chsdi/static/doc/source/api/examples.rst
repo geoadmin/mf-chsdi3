@@ -43,14 +43,14 @@ Other JS web mapping APIs integration
 .. raw:: html
 
   <ul id="cat5"></ul>
- 
+
 .. raw:: html
 
   <script type="text/javascript">
     var conf = [{
       label: 'Map with overlay layer',
       codepen: 'qbeqPQ',
-      cat: 1 
+      cat: 1
     }, {
       label: 'Map with KML file overlay',
       codepen: 'eJqBVV',
@@ -80,25 +80,25 @@ Other JS web mapping APIs integration
       codepen: 'ZWzXgv',
       cat: 1
     }, {
-      label: 'WMTS reprojected on-the-fly from a WMS in swiss projection (EPSG:21781)',
+      label: 'WMTS and WMS in swiss projection (EPSG:21781)',
       codepen: 'xVKLdV',
       cat: 2
     }, {
-      label: 'WMTS reprojected on-the-fly in Pseudo-Mercator projection (EPSG:3857)',
+      label: 'WMTS in Pseudo-Mercator projection (EPSG:3857)',
       codepen: 'pyzwwL',
       cat: 2
     }, {
-      label: 'WMTS reprojected on-the-fly in LV95 (EPSG:2056)',
+      label: 'WMTS in LV95 (EPSG:2056)',
       codepen: 'GZKEam',
       cat: 2
     }, {
       label: 'All available layers as WMTS',
       codepen: 'MyYYXR',
-      cat: 2 
+      cat: 2
     }, {
-      label: 'More OpenLayers 3 Examples on the official website.', 
+      label: 'More OpenLayers 3 Examples on the official website.',
       link: 'http://openlayers.org/en/v3.6.0/examples/',
-      cat: 2 
+      cat: 2
     }, {
       label: 'Feature selection of KML and GeoJSON layers',
       codepen: 'yOBzqM',
