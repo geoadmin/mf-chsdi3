@@ -3320,8 +3320,80 @@ msgstr "Meds per proteger las plantas"
 msgid "ch.bafu.naqua-grundwasser_voc"
 msgstr "Cumposiziuns organicas svapurantas"
 
+msgid "ch.bafu.neophyten-amerikanische_kermesbeere"
+msgstr "Amerikanische Kermesbeere"
+
+msgid "ch.bafu.neophyten-amerikanischer_stinktierkohl"
+msgstr "Amerikanischer Stinktierkohl"
+
+msgid "ch.bafu.neophyten-armenische_brombeere"
+msgstr "Armenische Brombeere"
+
+msgid "ch.bafu.neophyten-aufrechtes_traubenkraut"
+msgstr "Aufrechtes Traubenkraut"
+
 msgid "ch.bafu.neophyten-auslaeuferbildendes_fettkraut"
 msgstr "Ausläuferbildendes Fettkraut"
+
+msgid "ch.bafu.neophyten-balfours_springkraut"
+msgstr "Balfours Springkraut"
+
+msgid "ch.bafu.neophyten-bastardindigo"
+msgstr "Bastardindigo"
+
+msgid "ch.bafu.neophyten-bastard_staudenknoeterich"
+msgstr "Bastard-Staudenknöterich"
+
+msgid "ch.bafu.neophyten-besen_radmelde"
+msgstr "Besen-Radmelde"
+
+msgid "ch.bafu.neophyten-blauglockenbaum"
+msgstr "Blauglockenbaum"
+
+msgid "ch.bafu.neophyten-brasilianisches_tausendblatt"
+msgstr "Brasilianisches Tausendblatt"
+
+msgid "ch.bafu.neophyten-carolina_nachtschatten"
+msgstr "Carolina-Nachtschatten"
+
+msgid "ch.bafu.neophyten-chinesische_samtpappel"
+msgstr "Chinesische Samtpappel"
+
+msgid "ch.bafu.neophyten-druesiges_springkraut"
+msgstr "Drüsiges Springkraut"
+
+msgid "ch.bafu.neophyten-einjaehriges_berufkraut"
+msgstr "Einjähriges Berufkraut"
+
+msgid "ch.bafu.neophyten-essbare_kermesbeere"
+msgstr "Essbare Kermesbeere"
+
+msgid "ch.bafu.neophyten-essbares_zypergras"
+msgstr "Essbares Zypergras"
+
+msgid "ch.bafu.neophyten-essigbaum"
+msgstr "Essigbaum"
+
+msgid "ch.bafu.neophyten-felsen_greiskraut"
+msgstr "Felsen-Greiskraut"
+
+msgid "ch.bafu.neophyten-fortunes_hanfpalme"
+msgstr "Fortunes Hanfpalme"
+
+msgid "ch.bafu.neophyten-gestreiftes_suessgras"
+msgstr "Gestreiftes Süssgras"
+
+msgid "ch.bafu.neophyten-gewoehnliche_jungfernrebe"
+msgstr "Gewöhnliche Jungfernrebe"
+
+msgid "ch.bafu.neophyten-glattes_zackenschoetchen"
+msgstr "Glattes Zackenschötchen"
+
+msgid "ch.bafu.neophyten-goetterbaum"
+msgstr "Götterbaum"
+
+msgid "ch.bafu.neophyten-grossbluetiges_heusenkraut"
+msgstr "Grossblütiges Heusenkraut"
 
 msgid "ch.bafu.neophyten-grosser_wassernabel"
 msgstr "Grosser Wassernabel"
@@ -3993,7 +4065,7 @@ msgid "ch.bag.radonkarte.confidence"
 msgstr "Vertrauensindex"
 
 msgid "ch.bag.radonkarte.probability_prozent"
-msgstr "Radonkarte"
+msgstr "Wahrscheinlichkeit"
 
 msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=de"
@@ -5850,13 +5922,13 @@ msgid "choose_wms_url"
 msgstr "URL"
 
 msgid "ch.pronatura"
-msgstr "Pronatura"
+msgstr "Pro Natura"
 
 msgid "ch.pronatura.naturschutzgebiete"
 msgstr "Protecziun da la natira Pro natura"
 
 msgid "ch.pronatura.url"
-msgstr "http://www.pronatura.ch/schutzgebiete"
+msgstr "http://www.pronatura.ch/de"
 
 msgid "ch.pronatura.waldreservate"
 msgstr "Reservats da guaud Pro natura"
