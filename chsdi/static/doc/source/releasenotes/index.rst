@@ -37,23 +37,35 @@ API & applications
 
 Geodata
 *******
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `National boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-land-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-land-flaeche.fill)          |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Cantonal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)      |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `District boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)      |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill) |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                           |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                      |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                                    |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                        |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Restrictions for drones <//map.geo.admin.ch/?layers=ch.bazl.einschraenkungen-drohnen>`__ (ch.bazl.einschraenkungen-drohnen)                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hillside and steep slopes situation <//map.geo.admin.ch/?layers=ch.blw.hang_steillagen>`__ (ch.blw.hang_steillagen)                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Viticulture in steep areas <//map.geo.admin.ch/?layers=ch.blw.steil_terrassenlagen_rebbau>`__ (ch.blw.steil_terrassenlagen_rebbau)                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `PGI meat products <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-fleisch>`__ (ch.blw.ursprungsbezeichnungen-fleisch)                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Pro Natura: Nature Preserves <//map.geo.admin.ch/?layers=ch.pronatura.naturschutzgebiete>`__ (ch.pronatura.naturschutzgebiete)                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division SWISSIMAGE 10 cm Raster <//map.geo.admin.ch/?layers=ch.swisstopo.images-swissimage-dop10.metadata>`__ (ch.swisstopo.images-swissimage-dop10.metadata)    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `District boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill)  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cantonal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-land-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-land-flaeche.fill)           |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20171220:
