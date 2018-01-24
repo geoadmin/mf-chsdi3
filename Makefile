@@ -274,6 +274,8 @@ apache/wsgi.conf: apache/wsgi.conf.in apache/application.wsgi
 		--var "branch_staging=$(BRANCH_STAGING)" \
 		--var "git_branch=$(GIT_BRANCH)" \
 		--var "current_directory=$(CURRENT_DIRECTORY)" \
+		--var "deploy_target=$(DEPLOY_TARGET)" \
+		--var "cache_control=$(CACHE_CONTROL)" \
 		--var "modwsgi_user=$(MODWSGI_USER)" \
 		--var "wsgi_processes=$(WSGI_PROCESSES)" \
 		--var "wsgi_threads=$(WSGI_THREADS)" \

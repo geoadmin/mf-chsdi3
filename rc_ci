@@ -7,3 +7,4 @@ export GEOADMINHOST=mf-geoadmin3.ci.bgdi.ch
 export HOST=mf-chsdi3.ci.bgdi.ch
 export KEEP_VERSION=false
 export WMTS_PUBLIC_HOST=tod.dev.bgdi.ch
+export CACHE_CONTROL=no-cache
