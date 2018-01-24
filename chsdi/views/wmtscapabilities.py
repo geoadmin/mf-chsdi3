@@ -23,8 +23,8 @@ def getDefaultTileMatrixSet(tileMatrixSet):
             gagrid.numberOfYTilesAtZoom(zoom),
             gagrid.getScale(zoom)
         ]
-    tilematrixSet['MAXY'] = gagrid.MINX if tileMatrixSet in ('2056', '3857') else gagrid.MAXY
-    tilematrixSet['MINX'] = gagrid.MAXY if tileMatrixSet in ('2056', '3857') else gagrid.MINX
+    tilematrixSet['MAXY'] = gagrid.MAXY if tileMatrixSet == '4326' else gagrid.MINX
+    tilematrixSet['MINX'] = gagrid.MINX if tileMatrixSet == '4326' else gagrid.MAXY
     return tilematrixSet
 
 
