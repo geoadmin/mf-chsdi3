@@ -770,6 +770,7 @@ URL
 ***
 
 - http://wmts.geo.admin.ch or https://wmts.geo.admin.ch
+- http://wmts0.geo.admin.ch or https://wmts0.geo.admin.ch
 - http://wmts1.geo.admin.ch or https://wmts1.geo.admin.ch
 - http://wmts2.geo.admin.ch or https://wmts2.geo.admin.ch
 - http://wmts3.geo.admin.ch or https://wmts3.geo.admin.ch
@@ -805,7 +806,7 @@ with the following parameters:
 Parameter              Example                         Explanation
 ===================    =============================   ==========================================================================
 Scheme                 http or https                   The scheme type
-ServerName             wmts[5-9].geo.admin.ch
+ServerName             wmts[0-9].geo.admin.ch
 Version                1.0.0                           WMTS protocol version
 Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document.
 StyleName              default                         Only **default** is supported.
@@ -907,15 +908,9 @@ These projections are:
 Note:
 
 * Partly due to a limitation of the WTMS 1.0.0 recommendations, each *projection* has its own *GetCapabilities* document.
-* You have to use the hosts `wmts{20-24}.geo.admin.ch`. This is done to avoid parsing every requests to determine which are
-  using native tiles and which are using reporjected tiles.
 * The same access restrictions apply as above.
 * The same `timestamps` are available in all projection. New `timestamp` are added to the former ones.
-* Reprojected tiles are generated *on-the-fly* with `MapProxy <http://mapproxy.org>`_. If you plan to heavily use this service, please
-  inform us in advance.
-* *MapProxy* uses the `Proj.4 <http://trac.osgeo.org/proj/>`_ library internaly to transform between datum, except for the reframe from
-  **LV03/MN03** tiles which is *NTv2* grid based (`CHENyx06 <https://www.swisstopo.admin.ch/en/knowledge-facts/surveying-geodesy/reference-frames/local.html>`_)
-* Source for these reprojected tiles are the *native* **LV03/MN03** ones. The only exception is *ch.kantone.cadastralwebmap-farbe* that uses a WMS service as its source.
+* The layer *ch.kantone.cadastralwebmap-farbe* uses a WMS service as its source.
 * Note that all layers are available at all scales. You have to check for which **tileMatrixSets** a particuliar layer is defined. Your WMTS client may either stretch the
   tiles from the last available level or display nothing.
 
