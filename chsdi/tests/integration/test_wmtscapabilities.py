@@ -76,14 +76,32 @@ class TestWmtsCapabilitiesView(TestsBase):
                     if s not in used_matrices:
                         used_matrices.append(s)
             # Get all TileMatrixSets which are defined
-            tilematrixsets = root.findall('.//{http://www.opengis.net/wmts/1.0}TileMatrixSet/{http://www.opengis.net/ows/1.1}Identifier')
+            tile_matrixs = root.findall('.//{http://www.opengis.net/wmts/1.0}TileMatrixSet/{http://www.opengis.net/wmts/1.0}TileMatrix')
+            for tile_matrix in tile_matrixs:
+                top_left_corner = tile_matrix.find('.//{http://www.opengis.net/wmts/1.0}TopLeftCorner')
+                left, right = top_left_corner.text.split(' ')
+                if epsg == 4326:
+                    self.assertEqual(float(left), 90)
+                    self.assertEqual(float(right), -180)
+                elif epsg == 21781:
+                    self.assertEqual(float(left), 420000)
+                    self.assertEqual(float(right), 350000)
+                elif epsg == 2056:
+                    self.assertEqual(float(left), 2420000)
+                    self.assertEqual(float(right), 1350000)
+                else:
+                    self.assertEqual(float(left), -20037508.3428)
+                    self.assertEqual(float(right), 20037508.3428)
 
-        for tilematrixset in tilematrixsets:
-            t = tilematrixset.text
-            if t not in defined_matrices:
-                defined_matrices.append(t)
+            tilematrixsets_ids = root.findall(
+                './/{http://www.opengis.net/wmts/1.0}TileMatrixSet/{http://www.opengis.net/ows/1.1}Identifier')
 
-        self.assertTrue(set(used_matrices).issubset(defined_matrices))
+            for tilematrixset_id in tilematrixsets_ids:
+                t = tilematrixset_id.text
+                if t not in defined_matrices:
+                    defined_matrices.append(t)
+
+            self.assertTrue(set(used_matrices).issubset(defined_matrices))
 
     def test_axis_order(self):
         from urlparse import urlparse
