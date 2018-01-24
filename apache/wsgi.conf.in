@@ -35,11 +35,16 @@ RedirectMatch permanent ^${apache_entry_path}/iipimage/(.*)$ ${apache_entry_path
 # Redirect no-slash target to slashed version
 RedirectMatch ^${apache_entry_path}$ ${apache_entry_path}/
 
+
+
 # If URI has numbers at the start, we cache a year
 # This allows a client to create their own cache and
 # update at his discretion
 RewriteRule ^${apache_entry_path}/[0-9]+/(.*)$ ${apache_entry_path}/$1 [E=${apache_base_path}setyearcache:true,PT]
 Header merge Cache-Control "max-age=31536013, public" env=${apache_base_path}setyearcache
+
+# Default cache#
+Header setifempty  Cache-Control "${cache_control}"
 
 # Static for cross domain flash/arcgis
 RewriteRule ^${apache_entry_path}/(crossdomain.xml|clientaccesspolicy.xml) ${apache_entry_path}/static/$1 [PT]
