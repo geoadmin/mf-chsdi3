@@ -32,7 +32,7 @@ def add_cors_route(config, pattern, service, headers=None):
         return response
 
     name = service + '_options'
-    config.add_route(name, pattern, request_method='OPTIONS')
+    config.add_route(name, pattern, request_method=('OPTIONS', 'HEAD'))
     config.add_view(view, route_name=name)
 
 
