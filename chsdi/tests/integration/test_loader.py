@@ -44,3 +44,9 @@ class TestLoaderJs(TestsBase):
 
     def test_loaderjs_bad_version(self):
         self.testapp.get('/loader.js', params={'version': '3.666'}, status=404)
+
+    def test_loaderjs_options(self):
+        resp = self.testapp.options('/loader.js', status=200)
+        self.assertEqual(resp.headers.get('Cache-Control'), 'max-age=0, no-cache')
+        self.assertEqual(resp.headers.get('Access-Control-Allow-Origin'), '*')
+        self.assertEqual(resp.headers.get('Access-Control-Allow-Methods'), 'OPTIONS,HEAD,GET')

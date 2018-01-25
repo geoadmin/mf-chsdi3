@@ -23,6 +23,7 @@ def db(request):
 
 
 def add_cors_route(config, pattern, service, headers=None, methods=[]):
+    # The use of "GET" also implies that the view will respond to "HEAD".
     allowed_methods = ['OPTIONS', 'HEAD']
 
     def view(request):  # pragma: no cover
@@ -38,7 +39,7 @@ def add_cors_route(config, pattern, service, headers=None, methods=[]):
         return response
 
     name = service + '_options'
-    config.add_route(name, pattern, request_method=tuple(allowed_methods))
+    config.add_route(name, pattern, request_method='OPTIONS')
     config.add_view(view, route_name=name)
 
 
