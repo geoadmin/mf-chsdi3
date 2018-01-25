@@ -123,14 +123,6 @@ class FileView(object):
     def _get_uuid(self):
         return base64.urlsafe_b64encode(uuid.uuid4().bytes).replace('=', '')
 
-    @view_config(route_name='files_collection', request_method='OPTIONS', renderer='string')
-    def options_files_collection(self):
-        # TODO: doesn't seem to be applied
-        self.request.response.headers.update({
-            'Access-Control-Allow-Methods': 'POST,GET,DELETE,OPTIONS',
-            'Access-Control-Allow-Credentials': 'true'})
-        return ''
-
     def _gzip_data(self, data):
 
         out = None
@@ -251,12 +243,3 @@ class FileView(object):
                 raise exc.HTTPInternalServerError('Error while deleting file %s. %e' % (self.file_id, e))
         else:
             raise exc.HTTPUnauthorized('You are not authorized to delete file %s' % self.file_id)
-
-    @view_config(request_method='OPTIONS', renderer='string')
-    def options_file(self):
-        # TODO: doesn't seem to be applied
-        self.request.response.headers.update({
-            'Access-Control-Allow-Methods': 'POST,GET,DELETE,OPTIONS',
-            'Access-Control-Allow-Credentials': 'true'
-        })
-        return ''

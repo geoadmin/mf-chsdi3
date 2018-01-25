@@ -12,7 +12,3 @@ class Checker(object):
     @view_config(route_name='checker')
     def home(self):
         return Response(body='OK', status_int=200)
-
-    @view_config(route_name='checker_dev')
-    def dev(self):
-        return Response(body='OK', status_int=200)
