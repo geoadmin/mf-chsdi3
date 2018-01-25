@@ -17,7 +17,6 @@ KML_TEMP_DIR := /var/local/print/kml
 MODWSGI_USER := www-data
 NO_TESTS ?= withtests
 NODE_DIRECTORY := node_modules
-OPENTRANS_API_KEY ?= 57c5dbbbf1fe4d0001000018f6770d0d3c214eb4914b06ca4cfe1b0c
 PYTHON_FILES := $(shell find chsdi/* -path chsdi/static -prune -o -type f -name "*.py" -print)
 SHORTENER_ALLOWED_DOMAINS := admin.ch, swisstopo.ch, bgdi.ch
 SHORTENER_ALLOWED_HOSTS :=
