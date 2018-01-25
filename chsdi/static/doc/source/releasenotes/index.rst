@@ -29,10 +29,12 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_171220...r_180124>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_171220...r_180124>`__
 
 
 Geodata
@@ -85,10 +87,12 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_171206...r_171220>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_171206...r_171220>`__
 
 
 Geodata
@@ -153,10 +157,12 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_171122...r_171206>`__
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 -  Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_171122...r_171206>`__
 
 
 Geodata
