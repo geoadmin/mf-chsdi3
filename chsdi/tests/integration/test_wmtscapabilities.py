@@ -76,8 +76,8 @@ class TestWmtsCapabilitiesView(TestsBase):
                     if s not in used_matrices:
                         used_matrices.append(s)
             # Get all TileMatrixSets which are defined
-            tile_matrixs = root.findall('.//{http://www.opengis.net/wmts/1.0}TileMatrixSet/{http://www.opengis.net/wmts/1.0}TileMatrix')
-            for tile_matrix in tile_matrixs:
+            tile_matrixes = root.findall('.//{http://www.opengis.net/wmts/1.0}TileMatrixSet/{http://www.opengis.net/wmts/1.0}TileMatrix')
+            for tile_matrix in tile_matrixes:
                 top_left_corner = tile_matrix.find('.//{http://www.opengis.net/wmts/1.0}TopLeftCorner')
                 left, right = top_left_corner.text.split(' ')
                 if epsg == 4326:
