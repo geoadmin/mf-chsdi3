@@ -883,7 +883,7 @@ class TestSearchServiceView(TestsBase):
         params = {
             'type': 'featuresearch',
             'searchLang': 'fr',
-            'searchText': 'boujean',
+            'searchText': 'rue de boujean',
             'features': 'ch.bfs.gebaeude_wohnungs_register_preview',
             'sr': '2056'
         }
