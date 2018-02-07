@@ -16,6 +16,23 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20180207:
+   *******
+
+Release 20180124 - Wednesday, February 7th 2018
+------------------------------------------------
+
+API & applications
+******************
+
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------+
+| Update | `PCP Inventory <//map.geo.admin.ch/?layers=ch.babs.kulturgueter>`__ (ch.babs.kulturgueter)  |
++--------+---------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20180124:
    *******
 
