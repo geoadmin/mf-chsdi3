@@ -1656,7 +1656,7 @@ msgid "ch.bafu_and_canton"
 msgstr "UFAM, cantone"
 
 msgid "ch.bafu_and_canton.url"
-msgstr "http://www.bafu.admin.ch/index.html?lang=it"
+msgstr "https://www.bafu.admin.ch/bafu/it/home.html"
 
 msgid "ch.bafu.aquaprotect_050"
 msgstr "Aree inondabili Aquaprotect 50"
@@ -3819,7 +3819,7 @@ msgid "ch.bafu.unesco-weltnaturerbe"
 msgstr "UNESCO siti naturali"
 
 msgid "ch.bafu.url"
-msgstr "http://www.bafu.admin.ch/index.html?lang=it"
+msgstr "https://www.bafu.admin.ch/bafu/it/home.html"
 
 msgid "ch.bafu.vec25-gewaessernetz_2000"
 msgstr "Rete idrografica 1:2 mio."
@@ -4192,6 +4192,9 @@ msgstr "Tipo"
 
 msgid "ch.bak.url"
 msgstr "http://www.bak.admin.ch/index.html?lang=it"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept"
+msgstr "Impianti sportivi CISIN"
 
 msgid "ch.bav"
 msgstr "UFT"
@@ -5459,8 +5462,38 @@ msgstr "Download comune"
 msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1"
 msgstr "Confini amministrativi G1, agglomerati"
 
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1.acode"
+msgstr "Code dell'agglomerazione"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1.aname"
+msgstr "Nome dell'agglomerazione"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1.area_ha"
+msgstr "Superficie in ha"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1.gmdname"
+msgstr "Nome della commune"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1.gmdnr"
+msgstr "Numero della commune"
+
 msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2"
 msgstr "Confini amministrativi G2, agglomerati"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2.acode"
+msgstr "Code dell'agglomerazione"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2.aname"
+msgstr "Nome dell'agglomerazione"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2.area_ha"
+msgstr "Superficie in ha"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2.gmdname"
+msgstr "Nome della commune"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2.gmdnr"
+msgstr "Numero della commune"
 
 msgid "ch.bfs.url"
 msgstr "http://www.bfs.admin.ch/bfs/portal/it/index.html"
@@ -5855,11 +5888,11 @@ msgstr "FA"
 msgid "ch.meteoschweiz"
 msgstr "MeteoSvizzera"
 
-msgid "ch.meteoschweiz.globalstrahlung-monatlich"
-msgstr "Globalstrahlung test"
-
 msgid "ch.meteoschweiz.messdaten-foehn"
 msgstr "Dati favonio"
+
+msgid "ch.meteoschweiz.messdaten-gesamtschnee"
+msgstr "Neve totale sul terreno"
 
 msgid "ch.meteoschweiz.messdaten-globalstrahlung"
 msgstr "Dati radiazione globale"
@@ -5879,8 +5912,20 @@ msgstr "Dati umidità"
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
 msgstr "Dati temperatura aria"
 
+msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymax"
+msgstr "Dati temperatura aria massima 24 ore"
+
+msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymin"
+msgstr "Dati temperatura aria minima 24 ore"
+
+msgid "ch.meteoschweiz.messdaten-neuschnee"
+msgstr "Neve nuova"
+
 msgid "ch.meteoschweiz.messdaten-niederschlag"
-msgstr "Dati precipitazioni"
+msgstr "Dati precipitazioni somma 10'"
+
+msgid "ch.meteoschweiz.messdaten-niederschlag-stundensummen"
+msgstr "Dati precipitazioni somma oraria"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
 msgstr "Dati precipitazioni giornaliere"
@@ -5896,6 +5941,33 @@ msgstr "Dati raffica"
 
 msgid "ch.meteoschweiz.messdaten-windgeschwindigkeit"
 msgstr "Dati velocità del vento"
+
+msgid "ch.meteoschweiz.messnetz-atmosphaere"
+msgstr "Stazioni atmosfera"
+
+msgid "ch.meteoschweiz.messnetz-automatisch"
+msgstr "Stazioni di misura automatica"
+
+msgid "ch.meteoschweiz.messnetz-beobachtungen"
+msgstr "Osservazione visuale"
+
+msgid "ch.meteoschweiz.messnetz-flugwetter"
+msgstr "Osservazione per l'aviazione"
+
+msgid "ch.meteoschweiz.messnetz-klima"
+msgstr "Stazioni climatologiche"
+
+msgid "ch.meteoschweiz.messnetz-manuell"
+msgstr "Stazioni precipitazioni manuale"
+
+msgid "ch.meteoschweiz.messnetz-phaenologie"
+msgstr "Osservazione fenologica"
+
+msgid "ch.meteoschweiz.messnetz-pollen"
+msgstr "Stazioni pollini"
+
+msgid "ch.meteoschweiz.messnetz-webcams"
+msgstr "Telecamere meteorologiche"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
@@ -6854,6 +6926,9 @@ msgstr "Spessore quaternario"
 msgid "ch.swisstopo.geologie-rohstoffe"
 msgstr "Materie prime minerali"
 
+msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau"
+msgstr "Pierres concassées: extraction"
+
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
 msgstr "Minerali industriali"
 
@@ -6865,6 +6940,9 @@ msgstr "Materie prime energetiche"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.name_ads"
 msgstr "Località"
+
+msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau"
+msgstr "Pierre naturelle: extraction"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
 msgstr "Mineralizzazioni"

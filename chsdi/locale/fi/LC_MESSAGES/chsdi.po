@@ -1656,7 +1656,7 @@ msgid "ch.bafu_and_canton"
 msgstr "BAFU, chantun"
 
 msgid "ch.bafu_and_canton.url"
-msgstr "http://www.bafu.admin.ch/index.html?lang=en"
+msgstr "https://www.bafu.admin.ch/bafu/de/home.html"
 
 msgid "ch.bafu.aquaprotect_050"
 msgstr "Inundaziun Aquaprotect 50"
@@ -3819,7 +3819,7 @@ msgid "ch.bafu.unesco-weltnaturerbe"
 msgstr "UNESCO Patrimoni natiral"
 
 msgid "ch.bafu.url"
-msgstr "http://www.bafu.admin.ch/index.html?lang=de"
+msgstr "https://www.bafu.admin.ch/bafu/de/home.html"
 
 msgid "ch.bafu.vec25-gewaessernetz_2000"
 msgstr "Rait d'auas 1:2 miu."
@@ -4192,6 +4192,9 @@ msgstr "Tip"
 
 msgid "ch.bak.url"
 msgstr "http://www.bak.admin.ch/index.html?lang=rm"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept"
+msgstr "Sportanlagen NASAK"
 
 msgid "ch.bav"
 msgstr "BAV"
@@ -5459,8 +5462,38 @@ msgstr "Datendownload Gemeinde"
 msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1"
 msgstr "Cunfins administrativs G1, aglomeraziuns"
 
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1.acode"
+msgstr "Agglomerationscode"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1.aname"
+msgstr "Agglomerationsnamen"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1.area_ha"
+msgstr "Fläche in ha"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1.gmdname"
+msgstr "Gemeindename"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1.gmdnr"
+msgstr "Gemeindenummer"
+
 msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2"
 msgstr "Cunfins administrativs G2, aglomeraziuns"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2.acode"
+msgstr "Agglomerationscode"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2.aname"
+msgstr "Agglomerationsnamen"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2.area_ha"
+msgstr "Fläche in ha"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2.gmdname"
+msgstr "Gemeindename"
+
+msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2.gmdnr"
+msgstr "Gemeindenummer"
 
 msgid "ch.bfs.url"
 msgstr "http://www.bfs.admin.ch/bfs/portal/de/index.html"
@@ -5855,11 +5888,11 @@ msgstr "LW"
 msgid "ch.meteoschweiz"
 msgstr "MeteoSchweiz"
 
-msgid "ch.meteoschweiz.globalstrahlung-monatlich"
-msgstr "Globalstrahlung test"
-
 msgid "ch.meteoschweiz.messdaten-foehn"
 msgstr "Messdaten Föhn"
+
+msgid "ch.meteoschweiz.messdaten-gesamtschnee"
+msgstr "Messdaten Gesamtschneehöhe"
 
 msgid "ch.meteoschweiz.messdaten-globalstrahlung"
 msgstr "Messdaten Globalstrahlung"
@@ -5879,8 +5912,20 @@ msgstr "Messdaten Luftfeuchtigkeit"
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
 msgstr "Messdaten Lufttemperatur"
 
+msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymax"
+msgstr "Messdaten Lufttemperatur Tagesmaximum 24h"
+
+msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymin"
+msgstr "Messdaten Lufttemperatur Tagesminimum 24h"
+
+msgid "ch.meteoschweiz.messdaten-neuschnee"
+msgstr "Messdaten Neuschneehöhe"
+
 msgid "ch.meteoschweiz.messdaten-niederschlag"
-msgstr "Messdaten Niederschlag"
+msgstr "Messdaten Niederschlag 10' Summe"
+
+msgid "ch.meteoschweiz.messdaten-niederschlag-stundensummen"
+msgstr "Messdaten Niederschlag Stundensumme"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
 msgstr "Messdaten Niederschlag Tagessumme"
@@ -5896,6 +5941,33 @@ msgstr "Messdaten Böenspitze"
 
 msgid "ch.meteoschweiz.messdaten-windgeschwindigkeit"
 msgstr "Messdaten Windgeschwindigkeit"
+
+msgid "ch.meteoschweiz.messnetz-atmosphaere"
+msgstr "Atmosphärenstationen Profilmessungen"
+
+msgid "ch.meteoschweiz.messnetz-automatisch"
+msgstr "Automatische Wetterstationen"
+
+msgid "ch.meteoschweiz.messnetz-beobachtungen"
+msgstr "Meteorologische Beobachtungen"
+
+msgid "ch.meteoschweiz.messnetz-flugwetter"
+msgstr "Flugplatzstationen"
+
+msgid "ch.meteoschweiz.messnetz-klima"
+msgstr "Klimastationen"
+
+msgid "ch.meteoschweiz.messnetz-manuell"
+msgstr "Manuelle Niederschlagsmessstationen"
+
+msgid "ch.meteoschweiz.messnetz-phaenologie"
+msgstr "Phänologische Beobachtungen"
+
+msgid "ch.meteoschweiz.messnetz-pollen"
+msgstr "Pollenstationen"
+
+msgid "ch.meteoschweiz.messnetz-webcams"
+msgstr "Wetterkameras"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
@@ -6854,6 +6926,9 @@ msgstr "Quartärmächtigkeit"
 msgid "ch.swisstopo.geologie-rohstoffe"
 msgstr "ch.swisstopo.geologie-rohstoffe"
 
+msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau"
+msgstr "Gebrochene Gesteine: Abbau"
+
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
 msgstr "Minerals industrials"
 
@@ -6865,6 +6940,9 @@ msgstr "Materias primas d'energia"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.name_ads"
 msgstr "Localitad"
+
+msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau"
+msgstr "Naturwerksteine: Abbau"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
 msgstr "Metallisaziuns"
