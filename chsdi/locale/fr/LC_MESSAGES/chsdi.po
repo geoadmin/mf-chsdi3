@@ -4193,8 +4193,32 @@ msgstr "Type"
 msgid "ch.bak.url"
 msgstr "http://www.bak.admin.ch/index.html?lang=fr"
 
+msgid "ch.baspo"
+msgstr "OFSPO"
+
 msgid "ch.baspo.nationales-sportanlagenkonzept"
 msgstr "Installations sportives CISIN"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.art_der_anlage"
+msgstr "Type d‘installation"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.kategorie_de"
+msgstr "Catégorie"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.name_der_anlage"
+msgstr "Nom de l‘installation"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.nasak_nr"
+msgstr "Num. CISIN"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.ort"
+msgstr "Lieu"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.website"
+msgstr "Site web"
+
+msgid "ch.baspo.url"
+msgstr "https://www.baspo.admin.ch/fr/home.html"
 
 msgid "ch.bav"
 msgstr "OFT"
@@ -8008,6 +8032,9 @@ msgstr "Découpage carte nationale 1000 Vecteur"
 
 msgid "ch.swisstopo.swiss-map-vector10.metadata"
 msgstr "Découpage carte nationale 10 Vecteur"
+
+msgid "ch.swisstopo.swiss-map-vector25.metadata"
+msgstr "Découpage carte nationale 25 Vecteur"
 
 msgid "ch.swisstopo.swiss-map-vector500.metadata"
 msgstr "Découpage carte nationale 500 Vecteur"
