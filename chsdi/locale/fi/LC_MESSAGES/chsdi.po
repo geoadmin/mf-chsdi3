@@ -4193,8 +4193,32 @@ msgstr "Tip"
 msgid "ch.bak.url"
 msgstr "http://www.bak.admin.ch/index.html?lang=rm"
 
+msgid "ch.baspo"
+msgstr "BASPO"
+
 msgid "ch.baspo.nationales-sportanlagenkonzept"
 msgstr "Sportanlagen NASAK"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.art_der_anlage"
+msgstr "Anlagentyp"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.kategorie_de"
+msgstr "Kategorie"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.name_der_anlage"
+msgstr "Name der Anlage"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.nasak_nr"
+msgstr "NASAK Nr."
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.ort"
+msgstr "Ort"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.website"
+msgstr "Website"
+
+msgid "ch.baspo.url"
+msgstr "https://www.baspo.admin.ch/de/home.html"
 
 msgid "ch.bav"
 msgstr "BAV"
@@ -8008,6 +8032,9 @@ msgstr "Divisiun charta naziunala 1000 Vectur"
 
 msgid "ch.swisstopo.swiss-map-vector10.metadata"
 msgstr "Divisiun charta naziunala 10 Vectur"
+
+msgid "ch.swisstopo.swiss-map-vector25.metadata"
+msgstr "Divisiun charta naziunala 25 Vectur"
 
 msgid "ch.swisstopo.swiss-map-vector500.metadata"
 msgstr "Divisiun charta naziunala 500 Vectur"

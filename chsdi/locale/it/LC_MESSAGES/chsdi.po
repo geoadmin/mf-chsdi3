@@ -4193,8 +4193,32 @@ msgstr "Tipo"
 msgid "ch.bak.url"
 msgstr "http://www.bak.admin.ch/index.html?lang=it"
 
+msgid "ch.baspo"
+msgstr "UFSPO"
+
 msgid "ch.baspo.nationales-sportanlagenkonzept"
 msgstr "Impianti sportivi CISIN"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.art_der_anlage"
+msgstr "Tipo di impiato"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.kategorie_de"
+msgstr "Categoria"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.name_der_anlage"
+msgstr "Nome di impiato"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.nasak_nr"
+msgstr "CISIN n"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.ort"
+msgstr "Posto"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.website"
+msgstr "Sito web"
+
+msgid "ch.baspo.url"
+msgstr "https://www.baspo.admin.ch/it/home.html"
 
 msgid "ch.bav"
 msgstr "UFT"
@@ -8008,6 +8032,9 @@ msgstr "Divisione carta nazionale 1000 Vettore"
 
 msgid "ch.swisstopo.swiss-map-vector10.metadata"
 msgstr "Divisione carta nazionale 10 Vettore"
+
+msgid "ch.swisstopo.swiss-map-vector25.metadata"
+msgstr "Divisione carta nazionale 25 Vettore"
 
 msgid "ch.swisstopo.swiss-map-vector500.metadata"
 msgstr "Divisione carta nazionale 500 Vettore"

@@ -4193,8 +4193,32 @@ msgstr "Type"
 msgid "ch.bak.url"
 msgstr "http://www.bak.admin.ch/index.html?lang=en"
 
+msgid "ch.baspo"
+msgstr "BASPO"
+
 msgid "ch.baspo.nationales-sportanlagenkonzept"
 msgstr "Sports facilities CSFNI"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.art_der_anlage"
+msgstr "Type of the installation"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.kategorie_de"
+msgstr "Category"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.name_der_anlage"
+msgstr "Name of the installation"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.nasak_nr"
+msgstr "NASAK no."
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.ort"
+msgstr "Village"
+
+msgid "ch.baspo.nationales-sportanlagenkonzept.website"
+msgstr "Website"
+
+msgid "ch.baspo.url"
+msgstr "https://www.baspo.admin.ch/de/home.html"
 
 msgid "ch.bav"
 msgstr "FOT"
@@ -8008,6 +8032,9 @@ msgstr "Division National Map 1000 Vector"
 
 msgid "ch.swisstopo.swiss-map-vector10.metadata"
 msgstr "Division National Map 10 Vector"
+
+msgid "ch.swisstopo.swiss-map-vector25.metadata"
+msgstr "Division National Map 25 Vector"
 
 msgid "ch.swisstopo.swiss-map-vector500.metadata"
 msgstr "Division National Map 500 Vector"
