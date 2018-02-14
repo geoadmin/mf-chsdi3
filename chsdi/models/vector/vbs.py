@@ -40,6 +40,24 @@ class Kulturgueter(Base, Vector):
 register('ch.babs.kulturgueter', Kulturgueter)
 
 
+class NationalesSportanlagenkonzept(Base, Vector):
+    __tablename__ = 'nationales_sportanlagenkonzept'
+    __table_args__ = ({'schema': 'baspo', 'autoload': False})
+    __template__ = 'templates/htmlpopup/nationales_sportanlagenkonzept.mako'
+    __bodId__ = 'ch.baspo.nationales-sportanlagenkonzept'
+    __label__ = 'name_der_anlage'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    nasak_nr = Column('nasak_nr', Unicode)
+    kategorie_de = Column('kategorie_de', Unicode)
+    art_der_anlage = Column('art_der_anlage', Unicode)
+    name_der_anlage = Column('name_der_anlage', Unicode)
+    ort = Column('ort', Unicode)
+    website = Column('website', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.baspo.nationales-sportanlagenkonzept', NationalesSportanlagenkonzept)
+
+
 class Territorialregionen(Base, Vector):
     __tablename__ = 'territorialregionen'
     __table_args__ = ({'autoload': False})
