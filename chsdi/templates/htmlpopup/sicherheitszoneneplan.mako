@@ -54,14 +54,13 @@
           doctitle_new.append(doctitle[i])
         endif
         i = i+1
-
       arr_len = len(weblink_new)
 
      else:
       weblink_nb = 0
 %>
 % for i in range(arr_len):
-<tr><td class="cell-meta-small">${_('tt_document')}</td> <td class="cell-meta-big"><a href=${weblink_new[i]}  target="_blank">${doctitle_new[1]}<a/></td></tr>
+<tr><td class="cell-meta-small">${_('tt_document')}</td> <td class="cell-meta-big"><a href=${weblink_new[i]}  target="_blank">${doctitle_new[i]}<a/></td></tr>
 % endfor
 </table>
 </%def>
