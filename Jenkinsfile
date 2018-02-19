@@ -21,7 +21,7 @@ node(label: "jenkins-slave") {
         echo Starting the tests...
       '''
     }
-  catch (e) {
+  } catch (e) {
     throw e
   }
   finally {
