@@ -1,7 +1,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-<% 
+<%
     c['stable_id'] = True
     lang = lang if lang in ('fr','it','en') else 'de'
     lang = lang if lang != 'it' else 'fr'
@@ -24,7 +24,7 @@
 
         from urllib2 import urlopen
         img_url = "http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.stauanlagen-bundesaufsicht/"+str(c['attributes']['facility_stabil_id'])+".jpg"
-        image_exists = h.resource_exists(img_url)
+        image_exist = h.resource_exists(img_url)
     %>
     <h1>${_('tt_ch.bfe.stauanlagen-bundesaufsicht_stauanlage')} ${c['attributes']['facilityname']}</h1>
     <table class="table-with-border kernkraftwerke-extended">
@@ -94,7 +94,7 @@
     % if image_exist:
     <div class="thumbnail-container">
         <div class="thumbnail">
-            <a href="${img_url}" target="_blank"><img class="image" src="${img_url}" /></a>
+             <a href="${img_url}" target="_blank"><img class="image" src="${img_url}" alt=""/></a>
         </div>
     </div>
     % endif
