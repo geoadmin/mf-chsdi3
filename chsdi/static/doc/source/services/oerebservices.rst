@@ -41,9 +41,11 @@ No more than 50 features can be retrieved per request.
 | Parameters                        | Description                                                                               |
 +===================================+===========================================================================================+
 | **geometry (required)**           | The geometry to identify on. The geometry is specified by the geometry type.              |
-|                                   | One can use both, the simple syntax (comma separated list) and the complex one            |
+|                                   | This parameter is specified as a separated list of coordinates.                           |
+|                                   | The simple syntax (comma separated list of coordinates)                                   |
+|                                   | and the complex one can be used.                                                          |
 |                                   | (`ESRI syntax for geometries                                                              |
-|                                   | <http://help.arcgis.com/en/arcgisserver/10.0/apis/rest/geometry.html>`_).                 |
+|                                   | <http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r3000000n1000000>`_). |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryType (required)**       | The type of geometry to identify on. Possible values are:                                 |
 |                                   | esriGeometryPoint or esriGeometryPolyline or esriGeometryPolygon or esriGeometryEnvelope. |
@@ -65,7 +67,7 @@ No more than 50 features can be retrieved per request.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryFormat (optional)**     | Values: **interlis only for now!!**                                                       |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **lang (optional)**               | The language (when available). Possible values: de (default), fr, it, rm, en.             |
+| **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to “de”.                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
