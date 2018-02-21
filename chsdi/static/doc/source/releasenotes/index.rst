@@ -16,6 +16,34 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20180228:
+   *******
+
+Release 20180207 - Wednesday, February 28th 2018
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- New symbology for layers ch.bafu.naqua-grundwasser_nitrat and ch.bafu.naqua-grundwasser_voc
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_180207...r_180228>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Coordinates with the same number of decimal places in footer and pop-up
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_180207...r_180228>`__
+
+Geodata
+*******
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Bathing water quality <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-badewasserqualitaet>`__ (ch.bafu.gewaesserschutz-badewasserqualitaet)  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20180207:
    *******
 
