@@ -28,7 +28,7 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- New symbology for layers ch.bafu.naqua-grundwasser_nitrat and ch.bafu.naqua-grundwasser_voc
+- New symbology for the layers ch.bafu.naqua-grundwasser_nitrat and ch.bafu.naqua-grundwasser_voc
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_180207...r_180228>`__
 
 `MAP <//map.geo.admin.ch>`__
