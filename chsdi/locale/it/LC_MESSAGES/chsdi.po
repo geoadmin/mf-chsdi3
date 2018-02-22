@@ -4152,7 +4152,7 @@ msgid "ch.bakom.uplink10"
 msgstr "Upload ≥10 Mbit/s"
 
 msgid "ch.bakom.uplink100"
-msgstr "Upload ≥100 Mbit/s"
+msgstr "Upload ≥1000 Mbit/s"
 
 msgid "ch.bakom.uplink2"
 msgstr "Upload ≥ 2 Mbit/s"
@@ -5925,7 +5925,7 @@ msgid "ch.meteoschweiz.messdaten-luftdruck-qfe"
 msgstr "Pressione alla stazione QFE"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qff"
-msgstr "Pressione ridotta livello mare QFF"
+msgstr "Pressione ridotta QFF"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qnh"
 msgstr "Pressione ridotta livello mare QFF"
@@ -5934,25 +5934,25 @@ msgid "ch.meteoschweiz.messdaten-luftfeuchtigkeit"
 msgstr "Dati umidità"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
-msgstr "Dati temperatura aria"
+msgstr "Temperatura aria valore momentaneo"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymax"
-msgstr "Dati temperatura aria massima 24 ore"
+msgstr "Temperatura aria massima 24 ore"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymin"
-msgstr "Dati temperatura aria minima 24 ore"
+msgstr "Temperatura aria minima 24 ore"
 
 msgid "ch.meteoschweiz.messdaten-neuschnee"
 msgstr "Neve nuova"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag"
-msgstr "Dati precipitazioni somma 10'"
+msgstr "Precipitazioni somma 10'"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-stundensummen"
-msgstr "Dati precipitazioni somma oraria"
+msgstr "Precipitazioni somma oraria"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
-msgstr "Dati precipitazioni giornaliere"
+msgstr "Precipitazioni somma giornaliere"
 
 msgid "ch.meteoschweiz.messdaten-sonnenscheindauer"
 msgstr "Dati soleggiamento"
@@ -8023,6 +8023,9 @@ msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE"
+
+msgid "ch.swisstopo.swissimage-product.metadata"
+msgstr "Divisione SWISSIMAGE Viaggio tempo"
 
 msgid "ch.swisstopo.swiss-map-raster10.metadata"
 msgstr "Divisione carta nazionale 1:10'000 Raster"

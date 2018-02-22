@@ -4152,7 +4152,7 @@ msgid "ch.bakom.uplink10"
 msgstr "Upload ≥ 10 Mbit/s"
 
 msgid "ch.bakom.uplink100"
-msgstr "Upload ≥ 100 Mbit/s"
+msgstr "Upload ≥ 1000 Mbit/s"
 
 msgid "ch.bakom.uplink2"
 msgstr "Upload ≥ 2 Mbit/s"
@@ -5922,10 +5922,10 @@ msgid "ch.meteoschweiz.messdaten-globalstrahlung"
 msgstr "Global radiation data"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qfe"
-msgstr "Air pressure at station altitude QFE"
+msgstr "Air pressure at station QFE"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qff"
-msgstr "Air pressure reduced at sea level QFF"
+msgstr "Air pressure reduced QFF"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qnh"
 msgstr "Air pressure reduced at sea level QFF"
@@ -5934,25 +5934,25 @@ msgid "ch.meteoschweiz.messdaten-luftfeuchtigkeit"
 msgstr "Humidity data"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
-msgstr "Air temperature data"
+msgstr "Air temperature current value"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymax"
-msgstr "Air temperature data 24h maximum"
+msgstr "Air temperature 24h maximum"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymin"
-msgstr "Air temperature data 24h minimum"
+msgstr "Air temperature 24h minimum"
 
 msgid "ch.meteoschweiz.messdaten-neuschnee"
 msgstr "Fresh snow depth"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag"
-msgstr "Precipitation data 10' sum"
+msgstr "Precipitation 10' sum"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-stundensummen"
-msgstr "Precipitation data hourly total"
+msgstr "Precipitation hourly total"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
-msgstr "Precipitation data daily values"
+msgstr "Precipitation daily total"
 
 msgid "ch.meteoschweiz.messdaten-sonnenscheindauer"
 msgstr "Sunshine duration data"
@@ -8023,6 +8023,9 @@ msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE"
+
+msgid "ch.swisstopo.swissimage-product.metadata"
+msgstr "Tiling SWISSIMAGE Journey thru time"
 
 msgid "ch.swisstopo.swiss-map-raster10.metadata"
 msgstr "Division national Map 1:10'000 Raster"

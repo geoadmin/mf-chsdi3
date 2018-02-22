@@ -4152,7 +4152,7 @@ msgid "ch.bakom.uplink10"
 msgstr "Upload ≥ 10 Mbit/s"
 
 msgid "ch.bakom.uplink100"
-msgstr "Upload ≥ 100 Mbit/s"
+msgstr "Upload ≥ 1000 Mbit/s"
 
 msgid "ch.bakom.uplink2"
 msgstr "Upload ≥ 2 Mbit/s"
@@ -5922,10 +5922,10 @@ msgid "ch.meteoschweiz.messdaten-globalstrahlung"
 msgstr "Messdaten Globalstrahlung"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qfe"
-msgstr "Messdaten Luftdruck Stationshöhe QFE"
+msgstr "Luftdruck Stationshöhe QFE"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qff"
-msgstr "Messdaten Luftdruck Meereshöhe QFF"
+msgstr "Luftdruck reduziert QFF"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qnh"
 msgstr "Messdaten Luftdruck Meereshöhe QFF"
@@ -5934,25 +5934,25 @@ msgid "ch.meteoschweiz.messdaten-luftfeuchtigkeit"
 msgstr "Messdaten Luftfeuchtigkeit"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
-msgstr "Messdaten Lufttemperatur"
+msgstr "Lufttemperatur Momentanwert"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymax"
-msgstr "Messdaten Lufttemperatur Tagesmaximum 24h"
+msgstr "Lufttemperatur Tagesmaximum 24h"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymin"
-msgstr "Messdaten Lufttemperatur Tagesminimum 24h"
+msgstr "Lufttemperatur Tagesminimum 24h"
 
 msgid "ch.meteoschweiz.messdaten-neuschnee"
 msgstr "Messdaten Neuschneehöhe"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag"
-msgstr "Messdaten Niederschlag 10' Summe"
+msgstr "Niederschlag 10' Summe"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-stundensummen"
-msgstr "Messdaten Niederschlag Stundensumme"
+msgstr "Niederschlag Stundensumme"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
-msgstr "Messdaten Niederschlag Tagessumme"
+msgstr "Niederschlag Tagessumme"
 
 msgid "ch.meteoschweiz.messdaten-sonnenscheindauer"
 msgstr "Messdaten Sonnenscheindauer"
@@ -5967,7 +5967,7 @@ msgid "ch.meteoschweiz.messdaten-windgeschwindigkeit"
 msgstr "Messdaten Windgeschwindigkeit"
 
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
-msgstr "Atmosphärenstationen Profilmessungen"
+msgstr "Atmosphärenstationen"
 
 msgid "ch.meteoschweiz.messnetz-automatisch"
 msgstr "Automatische Wetterstationen"
@@ -8023,6 +8023,9 @@ msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE"
+
+msgid "ch.swisstopo.swissimage-product.metadata"
+msgstr "Einteilung SWISSIMAGE Zeitreise"
 
 msgid "ch.swisstopo.swiss-map-raster10.metadata"
 msgstr "Divisiun charta naziunala 1:10'000 Raster"

@@ -372,7 +372,9 @@ class TestFeaturesView(TestsBase):
     def test_htmlpopup_cadastralwebmap(self):
         params = {'mapExtent': '485412.34375,109644.67,512974.44,135580.01999999999',
                   'imageDisplay': '600,400,96'}
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/21648723/htmlPopup', params=params, status=200)
+        bodId = 'ch.kantone.cadastralwebmap-farbe'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s/htmlPopup' % (bodId, featureId), params=params, status=200)
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<table')
 

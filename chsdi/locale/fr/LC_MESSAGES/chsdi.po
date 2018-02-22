@@ -4152,7 +4152,7 @@ msgid "ch.bakom.uplink10"
 msgstr "Liaison ≥ 10 Mbit/s ascendante"
 
 msgid "ch.bakom.uplink100"
-msgstr "Liaison ≥100 Mbit/s ascendante"
+msgstr "Liaison ≥ 1000 Mbit/s ascendante"
 
 msgid "ch.bakom.uplink2"
 msgstr "Liaison ≥ 2 Mbit/s ascendante"
@@ -5433,7 +5433,7 @@ msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten.year"
 msgstr "Année"
 
 msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente"
-msgstr "Occupation (EPT)"
+msgstr "Emploi (EPT)"
 
 msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente.amount"
 msgstr "Occupation en équivalents plein temps"
@@ -5922,10 +5922,10 @@ msgid "ch.meteoschweiz.messdaten-globalstrahlung"
 msgstr "Données rayonnement global"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qfe"
-msgstr "Pression atmosphérique altitude station QFE"
+msgstr "Pression altitude station QFE"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qff"
-msgstr "Pression atmosphérique réduite niveau mer QFF"
+msgstr "Pression réduite QFF"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qnh"
 msgstr "Pression atmosphérique réduite niveau mer QFF"
@@ -5934,25 +5934,25 @@ msgid "ch.meteoschweiz.messdaten-luftfeuchtigkeit"
 msgstr "Données humidité"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
-msgstr "Données température de l'air"
+msgstr "Température air valeur instantanée"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymax"
-msgstr "Données température de l'air maximum 24 heurs"
+msgstr "Température air maximum 24 heures"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymin"
-msgstr "Données température de l'air minimum 24 heurs"
+msgstr "Température air minimum 24 heures"
 
 msgid "ch.meteoschweiz.messdaten-neuschnee"
 msgstr "Épaisseur neige fraîche"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag"
-msgstr "Données de précipitations somme 10'"
+msgstr "Précipitations somme 10'"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-stundensummen"
-msgstr "Données de précipitations somme horaire"
+msgstr "Précipitations somme horaire"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
-msgstr "Données de précipitations journalière"
+msgstr "Précipitations somme journalière"
 
 msgid "ch.meteoschweiz.messdaten-sonnenscheindauer"
 msgstr "Données durée d'ensoleillement"
@@ -8023,6 +8023,9 @@ msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE"
+
+msgid "ch.swisstopo.swissimage-product.metadata"
+msgstr "Découpage SWISSIMAGE Voyage temp."
 
 msgid "ch.swisstopo.swiss-map-raster10.metadata"
 msgstr "Découpage carte nationale 1:10'000 Raster"
