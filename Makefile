@@ -393,6 +393,7 @@ clean:
 cleanall: clean
 	rm -rf .venv
 	rm -rf node_modules
+	rm -rf .git/hooks/*
 	rm -rf chsdi/static/css/extended.min.css
 	rm -rf chsdi/locale/en/LC_MESSAGES/chsdi.mo
 	rm -rf chsdi/locale/fr/LC_MESSAGES/chsdi.mo

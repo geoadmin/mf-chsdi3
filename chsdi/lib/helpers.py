@@ -62,9 +62,9 @@ def make_geoadmin_url(request, agnostic=False):
     return base_url
 
 
-def resource_exists(path, headers={'User-Agent': 'mf-geoadmin/python'}):
+def resource_exists(path, headers={'User-Agent': 'mf-geoadmin/python'}, verify=False):
     try:
-        r = requests.head(path, headers=headers)
+        r = requests.head(path, headers=headers, verify=verify)
     except ConnectionError:
         return False
     return r.status_code == requests.codes.ok
