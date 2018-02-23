@@ -22,7 +22,7 @@
         lang = lang if lang != 'it' else 'fr'
         damtype = 'damtype_%s' % lang
         img_url = "//www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.stauanlagen-bundesaufsicht/"+str(c['attributes']['facility_stabil_id'])+".jpg"
-        image_exist = h.resource_exists(img_url)
+        image_exist = h.resource_exists('http:' + img_url)
     %>
     <h1>${_('tt_ch.bfe.stauanlagen-bundesaufsicht_stauanlage')} ${c['attributes']['facilityname']}</h1>
     <table class="table-with-border kernkraftwerke-extended">
