@@ -1,0 +1,15 @@
+{
+  "type": "single",
+  "geomType": "point",
+  "vectorOptions": {
+    "type": "circle",
+    "radius": 8,
+    "fill": {
+      "color": "#BEBEBE"
+    },
+    "stroke": {
+    "color": "#FFFFFF",
+    "width": 1
+    }
+  }
+}
