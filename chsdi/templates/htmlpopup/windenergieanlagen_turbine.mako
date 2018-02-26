@@ -150,7 +150,7 @@ src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.windenergieanlagen/chart_${c
 % endif
 </table>
 <br>
-<table  class="table-with-border kernkraftwerke-extended">
+<table  class="table-with-border kernkraftwerke-extended" style="height:400px">
 <tr><td id="image" align="center"><img width=100% height= auto class="image"
 src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.windenergieanlagen/img_${c['attributes']['fac_initial']}.jpg"
 alt=""/></td>
