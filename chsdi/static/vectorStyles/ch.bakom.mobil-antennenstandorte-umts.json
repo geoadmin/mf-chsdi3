@@ -3,9 +3,9 @@
   "geomType": "point",
   "vectorOptions": {
     "type": "circle",
-    "radius": 8,
+    "radius": 7,
     "fill": {
-      "color": "#00FFFF"
+      "color": "#FF00FF"
     },
     "stroke": {
     "color": "#000000",
