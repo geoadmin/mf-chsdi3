@@ -19,7 +19,7 @@ Release Notes
 .. _releasenotes_20180228:
    *******
 
-Release 20180207 - Wednesday, February 28th 2018
+Release 20180228 - Wednesday, February 28th 2018
 ------------------------------------------------
 
 API & applications
@@ -39,11 +39,21 @@ API & applications
 
 Geodata
 *******
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Bathing water quality <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-badewasserqualitaet>`__ (ch.bafu.gewaesserschutz-badewasserqualitaet)  |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Minergie <//map.geo.admin.ch/?layers=ch.bfe.minergiegebaeude>`__ (ch.bfe.minergiegebaeude)                                                       |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Bathing water quality <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-badewasserqualitaet>`__ (ch.bafu.gewaesserschutz-badewasserqualitaet)   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Floodplains AuLaV <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-aulav_auen>`__ (ch.bafu.schutzgebiete-aulav_auen)                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Game reserves AuLaV <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-aulav_jagdbanngebiete>`__ (ch.bafu.schutzgebiete-aulav_jagdbanngebiete)     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mirelandscapes AuLaV <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-aulav_moorlandschaften>`__ (ch.bafu.schutzgebiete-aulav_moorlandschaften)  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Other protected areas AuLaV <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-aulav_uebrige>`__ (ch.bafu.schutzgebiete-aulav_uebrige)             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Minergie <//map.geo.admin.ch/?layers=ch.bfe.minergiegebaeude>`__ (ch.bfe.minergiegebaeude)                                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Dam <//map.geo.admin.ch/?layers=ch.bfe.stauanlagen-bundesaufsicht>`__ (ch.bfe.stauanlagen-bundesaufsicht)                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20180207:
