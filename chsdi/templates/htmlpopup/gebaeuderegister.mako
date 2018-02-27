@@ -16,7 +16,7 @@
   if 'strname_de' in c['attributes']:
     if c['attributes']['strname_%s' % lang]:
       street_key = 'strname_%s' % lang
-  pdf_url = ' https://wwwt.housing-stat.ch/regbl/resources/public/geb_public/%s?lang=%s' % (c['attributes']['egid'], lang)
+  pdf_url = ' https://www.housing-stat.ch/regbl/resources/public/geb_public/%s?lang=%s' % (c['attributes']['egid'], lang)
 %>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.egid')}</td>       <td>${c['attributes']['egid'] or '-'}</td></tr>
     % if c['attributes']['strname1'] <> '':
