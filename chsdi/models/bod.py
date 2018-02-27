@@ -187,7 +187,6 @@ class GetCap(object):
     id = Column('fk_dataset_id', Unicode, primary_key=True)
     arr_all_formats = Column('format', Unicode)
     timestamp = Column('timestamp', Unicode)
-    sswmts = Column('sswmts', Integer)
     bod_layer_id = Column('bod_layer_id', Unicode)
     staging = Column('staging', Unicode)
     bezeichnung = Column('bezeichnung', Unicode)
@@ -246,7 +245,6 @@ class GetCapThemes(object):
     oberthema_id = Column('oberthema_id', Unicode)
     inspire_oberthema_abstract = Column('inspire_oberthema_abstract', Unicode)
     fk_dataset_id = Column('fk_dataset_id', Unicode)
-    sswmts = Column('sswmts', Unicode)
 
 
 class GetCapThemesFr(Base, GetCapThemes):
