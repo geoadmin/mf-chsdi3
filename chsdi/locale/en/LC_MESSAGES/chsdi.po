@@ -14049,7 +14049,7 @@ msgid "tt_wrz_portal_grundlage"
 msgstr "Decision basis"
 
 msgid "tt_wrz_portal_schutz"
-msgstr "Schutzstatus"
+msgstr "Protection status"
 
 msgid "tt_wrz_portal_schutzstatus"
 msgstr "Protection status"
