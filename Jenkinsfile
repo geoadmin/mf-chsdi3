@@ -1,9 +1,9 @@
 #!/usr/bin/env groovy
 
 node(label: "jenkins-slave") {
-
   try {
     stage("Checkout") {
+      sh 'echo Checking out code from github'
       checkout scm
     }
     stage("Build") {

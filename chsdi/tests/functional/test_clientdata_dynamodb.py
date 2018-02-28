@@ -20,8 +20,13 @@ class Test_DynamodbConnection(unittest.TestCase):
 
 class Test_S3Connect(unittest.TestCase):
 
+    def test_s3connection_badrequest(self):
+        s = S3Connect('tutu')
+        with self.assertRaises(exc.HTTPInternalServerError):
+            s.get()
+
     def test_s3connection(self):
-        s = S3Connect()
+        s = S3Connect('geoadmin_filestorage')
         result = s.get()
         self.assertNotEqual(result, None)
         self.assertEqual(str(result), 'S3Connection:s3-eu-west-1.amazonaws.com')
@@ -32,4 +37,4 @@ class Test_S3Connect(unittest.TestCase):
 
     def test_get_bucket_badrequest(self):
         with self.assertRaises(exc.HTTPInternalServerError):
-            get_bucket('wrongbucket')
+            get_bucket('geoadmin_filestorage')
