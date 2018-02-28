@@ -5913,58 +5913,58 @@ msgid "ch.meteoschweiz"
 msgstr "MeteoSwiss"
 
 msgid "ch.meteoschweiz.messdaten-foehn"
-msgstr "Foehn data"
+msgstr "Measurements foehn index"
 
 msgid "ch.meteoschweiz.messdaten-gesamtschnee"
-msgstr "Total snow depth"
+msgstr "Measurements snow depth"
 
 msgid "ch.meteoschweiz.messdaten-globalstrahlung"
-msgstr "Global radiation data"
+msgstr "Measurements global radiation"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qfe"
-msgstr "Air pressure at station QFE"
+msgstr "Measurements pressure station QFE"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qff"
-msgstr "Air pressure reduced QFF"
+msgstr "Measurements pressure reduced QFF"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qnh"
 msgstr "Air pressure reduced at sea level QFF"
 
 msgid "ch.meteoschweiz.messdaten-luftfeuchtigkeit"
-msgstr "Humidity data"
+msgstr "Measurements humidity"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
-msgstr "Air temperature current value"
+msgstr "Measurements temperature 2m"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymax"
-msgstr "Air temperature 24h maximum"
+msgstr "Measurements max. temperature, 24h"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymin"
-msgstr "Air temperature 24h minimum"
+msgstr "Measurements min. temperature, 24h"
 
 msgid "ch.meteoschweiz.messdaten-neuschnee"
-msgstr "Fresh snow depth"
+msgstr "Measurements fresh snow"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag"
-msgstr "Precipitation 10' sum"
+msgstr "Measurements precipitation, 10min"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-stundensummen"
-msgstr "Precipitation hourly total"
+msgstr "Measurements precipitation, 1h"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
-msgstr "Precipitation daily total"
+msgstr "Measurements precipitation, 1 d"
 
 msgid "ch.meteoschweiz.messdaten-sonnenscheindauer"
-msgstr "Sunshine duration data"
+msgstr "Measurements sunshine duration"
 
 msgid "ch.meteoschweiz.messdaten-taupunkt"
-msgstr "Dew point data"
+msgstr "Measurements dew point"
 
 msgid "ch.meteoschweiz.messdaten-wind-boenspitze"
 msgstr "Wind gust data"
 
 msgid "ch.meteoschweiz.messdaten-windgeschwindigkeit"
-msgstr "Wind speed data"
+msgstr "Measurements wind speed"
 
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
 msgstr "Atmosphere stations"

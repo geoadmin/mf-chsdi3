@@ -5913,58 +5913,58 @@ msgid "ch.meteoschweiz"
 msgstr "MeteoSchweiz"
 
 msgid "ch.meteoschweiz.messdaten-foehn"
-msgstr "Messdaten Föhn"
+msgstr "Messwerte Föhnindex"
 
 msgid "ch.meteoschweiz.messdaten-gesamtschnee"
-msgstr "Messdaten Gesamtschneehöhe"
+msgstr "Messwerte Schneehöhe"
 
 msgid "ch.meteoschweiz.messdaten-globalstrahlung"
-msgstr "Messdaten Globalstrahlung"
+msgstr "Messwerte Globalstrahlung"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qfe"
-msgstr "Luftdruck Stationshöhe QFE"
+msgstr "Messwerte Luftdruck Station QFE"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qff"
-msgstr "Luftdruck reduziert QFF"
+msgstr "Messwerte Luftdruck reduziert QFF"
 
 msgid "ch.meteoschweiz.messdaten-luftdruck-qnh"
 msgstr "Messdaten Luftdruck Meereshöhe QFF"
 
 msgid "ch.meteoschweiz.messdaten-luftfeuchtigkeit"
-msgstr "Messdaten Luftfeuchtigkeit"
+msgstr "Messwerte Luftfeuchtigkeit"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur"
-msgstr "Lufttemperatur Momentanwert"
+msgstr "Messwerte Temperatur 2m"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymax"
-msgstr "Lufttemperatur Tagesmaximum 24h"
+msgstr "Messwerte Max. Temperatur 2m, 24h"
 
 msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymin"
-msgstr "Lufttemperatur Tagesminimum 24h"
+msgstr "Messwerte Min. Temperatur 2m, 24h"
 
 msgid "ch.meteoschweiz.messdaten-neuschnee"
-msgstr "Messdaten Neuschneehöhe"
+msgstr "Messwerte Neuschnee"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag"
-msgstr "Niederschlag 10' Summe"
+msgstr "Messwerte Niederschlag, 10min"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-stundensummen"
-msgstr "Niederschlag Stundensumme"
+msgstr "Messwerte Niederschlag, 1h"
 
 msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
-msgstr "Niederschlag Tagessumme"
+msgstr "Messwerte Niederschlag, 1 Tag"
 
 msgid "ch.meteoschweiz.messdaten-sonnenscheindauer"
-msgstr "Messdaten Sonnenscheindauer"
+msgstr "Messwerte Sonnenscheindauer"
 
 msgid "ch.meteoschweiz.messdaten-taupunkt"
-msgstr "Messdaten Taupunkt"
+msgstr "Messwerte Taupunkt"
 
 msgid "ch.meteoschweiz.messdaten-wind-boenspitze"
 msgstr "Messdaten Böenspitze"
 
 msgid "ch.meteoschweiz.messdaten-windgeschwindigkeit"
-msgstr "Messdaten Windgeschwindigkeit"
+msgstr "Messwerte Windgeschwindigkeit"
 
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
 msgstr "Atmosphärenstationen"
