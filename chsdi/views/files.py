@@ -166,7 +166,6 @@ class FileView(object):
                 k.content_encoding = content_encoding
                 k.set_metadata('Content-Encoding', content_encoding)
                 k.set_contents_from_string(data, headers=headers, replace=False)
-                k.add_user_grant('FULL_CONTROL')
                 key = self.bucket.get_key(k.key)
                 last_updated = parse_ts(key.last_modified)
             except Exception as e:

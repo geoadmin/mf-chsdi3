@@ -17,6 +17,7 @@ export ROBOTS_FILE=robots_prod.txt
 export SERVER_PORT=6543
 export SPHINXHOST=service-sphinxsearch.prod.bgdi.ch
 export VECTOR_BUCKET=mwks6dv2y5dsbbgg-vectortiles
+export VECTOR_PROFILENAME=chsdi_aws_admin_ro
 export WMSHOST=wms.geo.admin.ch
 export WSGI_PROCESSES=4
 export WSGI_THREADS=30
