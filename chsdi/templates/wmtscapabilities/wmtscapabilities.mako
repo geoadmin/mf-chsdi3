@@ -47,8 +47,6 @@
   ## Main loop
    % for layer in layers:
 <%
-if layer.id == 'ch.kantone.cadastralwebmap-farbe':
-     layer.timestamp='current'
 ## FIXME: Do we really have to use 3 different formats for 'zeitreihen' ?
 if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
     layer.arr_all_formats = 'jpeg'
