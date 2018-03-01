@@ -46,13 +46,6 @@
     <Contents>
   ## Main loop
    % for layer in layers:
-<%
-if layer.id == 'ch.kantone.cadastralwebmap-farbe':
-     layer.timestamp='current'
-## FIXME: Do we really have to use 3 different formats for 'zeitreihen' ?
-if layer.id == 'ch.swisstopo.zeitreihen' and epsg != '21781':
-    layer.arr_all_formats = 'jpeg'
-%>
         <Layer>
             <ows:Title>${layer.kurzbezeichnung or '-'|n,x,trim}</ows:Title>
             <ows:Abstract>${layer.abstract or '-'|n,x,trim}</ows:Abstract>
