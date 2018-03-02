@@ -16,6 +16,8 @@ from urlparse import urlparse, urlunparse, urljoin
 import xml.etree.ElementTree as etree
 from pyproj import Proj, transform
 from requests.exceptions import ConnectionError
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 
 def versioned(path):
