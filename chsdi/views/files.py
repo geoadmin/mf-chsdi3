@@ -148,6 +148,7 @@ class FileView(object):
         return out
 
     def _save_to_s3(self, data, mime, update=False, compress=True):
+        owner = '5afa63002b482bd6208bac6a5f30c55a7bfd0ecdd862a0335f4c803e8a30dd9e'
         ziped_data = None
         content_encoding = None
         headers = {'Cache-Control': 'no-cache, must-revalidate'}
@@ -166,7 +167,7 @@ class FileView(object):
                 k.content_encoding = content_encoding
                 k.set_metadata('Content-Encoding', content_encoding)
                 k.set_contents_from_string(data, headers=headers, replace=False)
-                k.add_user_grant('FULL_CONTROL')
+                k.add_user_grant('FULL_CONTROL', owner)
                 key = self.bucket.get_key(k.key)
                 last_updated = parse_ts(key.last_modified)
             except Exception as e:
@@ -184,6 +185,7 @@ class FileView(object):
                 self.key.content_encoding = content_encoding
                 self.key.set_metadata('Content-Encoding', content_encoding)
                 self.key.set_contents_from_string(data, headers=headers, replace=True)
+                self.key.add_user_grant('FULL_CONTROL', owner)
                 key = self.bucket.get_key(self.key.key)
                 last_updated = parse_ts(key.last_modified)
             except Exception as e:
