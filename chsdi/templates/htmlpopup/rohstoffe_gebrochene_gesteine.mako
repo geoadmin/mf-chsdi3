@@ -7,5 +7,5 @@
        <tr><td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.emkinds')}</td><td>${c['attributes']['emkinds'] or '-'}</td></tr>
        <tr><td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.stkind')}</td><td>${c['attributes']['stkind'] or '-'}</td></tr>
        <tr><td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.clkind')}</td><td>${c['attributes']['clkind'] or '-'}</td></tr>
-       <tr><td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.purl')}</td><td><a href=${c['attributes']['purl'] or '-'}>Link</a></td></tr>
+       <tr><td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.purl')}</td><td><a target="_blank" href=${c['attributes']['purl'] or '-'}>Link</a></td></tr>
 </%def>
