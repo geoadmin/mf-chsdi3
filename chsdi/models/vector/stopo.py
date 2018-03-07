@@ -1517,15 +1517,20 @@ register('ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas', GeologieRohsto
 
 
 class GeologieRohstoffeVererzungen(Base, Vector):
-    __tablename__ = 'rohstoffe_vererzungen'
+    __tablename__ = 'rohstoffe_vererz'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/rohstoffe_vererzungen.mako'
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-vererzungen'
-    __queryable_attributes__ = ['name_ads']
-    __label__ = 'name_ads'
-    id = Column('id', Integer, primary_key=True)
-    rohstoff = Column('rohstoff', Unicode)
-    name_ads = Column('name_ads', Unicode)
+    __queryable_attributes__ = ['obname']
+    __label__ = 'obname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    obname = Column('obname', Unicode)
+    obnamealt = Column('obnamealt', Unicode)
+    grkinds = Column('grkinds', Unicode)
+    edmikinds = Column('edmikinds', Unicode)
+    emkinds = Column('emkinds', Unicode)
+    stkind = Column('stkind', Unicode)
+    purl = Column('purl', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-rohstoffe-vererzungen', GeologieRohstoffeVererzungen)
