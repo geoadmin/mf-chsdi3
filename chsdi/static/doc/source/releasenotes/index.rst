@@ -19,6 +19,42 @@ Release Notes
 .. _releasenotes_20180228:
    *******
 
+Release 20180312 - Monday, March 12th 2018
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_180228...r_180312>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- More accurate geometries for the tooltip of the layer Geocover - Vector datasets
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_180228...r_180312>`__
+
+Geodata
+*******
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissALTI3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d-reliefschattierung>`__ (ch.swisstopo.swissalti3d-reliefschattierung)   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-eisenbahnnetz>`__ (ch.swisstopo.swisstlm3d-eisenbahnnetz)                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Roads and Tracks swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-strassen>`__ (ch.swisstopo.swisstlm3d-strassen)                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydrography swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-gewaessernetz>`__ (ch.swisstopo.swisstlm3d-gewaessernetz)              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking trails <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-wanderwege>`__ (ch.swisstopo.swisstlm3d-wanderwege)                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cableways swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-uebrigerverkehr>`__ (ch.swisstopo.swisstlm3d-uebrigerverkehr)            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. _releasenotes_20180228:
+   *******
+
 Release 20180228 - Wednesday, February 28th 2018
 ------------------------------------------------
 
