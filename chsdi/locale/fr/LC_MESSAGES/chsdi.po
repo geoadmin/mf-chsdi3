@@ -5912,60 +5912,6 @@ msgstr "FA"
 msgid "ch.meteoschweiz"
 msgstr "MétéoSuisse"
 
-msgid "ch.meteoschweiz.messdaten-foehn"
-msgstr "Mesures index de foehn"
-
-msgid "ch.meteoschweiz.messdaten-gesamtschnee"
-msgstr "Mesures neige gisante"
-
-msgid "ch.meteoschweiz.messdaten-globalstrahlung"
-msgstr "Mesures rayonnement global"
-
-msgid "ch.meteoschweiz.messdaten-luftdruck-qfe"
-msgstr "Mesures pression station QFE"
-
-msgid "ch.meteoschweiz.messdaten-luftdruck-qff"
-msgstr "Mesures pression réduite QFF"
-
-msgid "ch.meteoschweiz.messdaten-luftdruck-qnh"
-msgstr "Pression atmosphérique réduite niveau mer QFF"
-
-msgid "ch.meteoschweiz.messdaten-luftfeuchtigkeit"
-msgstr "Mesures humidité"
-
-msgid "ch.meteoschweiz.messdaten-lufttemperatur"
-msgstr "Mesures température 2m"
-
-msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymax"
-msgstr "Mesures max. température 2m, 24h"
-
-msgid "ch.meteoschweiz.messdaten-lufttemperatur-dailymin"
-msgstr "Mesures min. température 2m, 24h"
-
-msgid "ch.meteoschweiz.messdaten-neuschnee"
-msgstr "Mesures neige fraîche"
-
-msgid "ch.meteoschweiz.messdaten-niederschlag"
-msgstr "Mesures précipitations, 10min"
-
-msgid "ch.meteoschweiz.messdaten-niederschlag-stundensummen"
-msgstr "Mesures précipitations, 1h"
-
-msgid "ch.meteoschweiz.messdaten-niederschlag-tagessummen"
-msgstr "Mesures précipitations, 1 jour"
-
-msgid "ch.meteoschweiz.messdaten-sonnenscheindauer"
-msgstr "Mesures durée d'ensoleillement"
-
-msgid "ch.meteoschweiz.messdaten-taupunkt"
-msgstr "Mesures point de rosée"
-
-msgid "ch.meteoschweiz.messdaten-wind-boenspitze"
-msgstr "Données rafales"
-
-msgid "ch.meteoschweiz.messdaten-windgeschwindigkeit"
-msgstr "Mesures vitesse du vent"
-
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
 msgstr "Stations atmosphère"
 
@@ -5992,6 +5938,60 @@ msgstr "Stations pollen"
 
 msgid "ch.meteoschweiz.messnetz-webcams"
 msgstr "Caméras météorologiques"
+
+msgid "ch.meteoschweiz.messwerte-foehn-10min"
+msgstr "Mesures index de foehn"
+
+msgid "ch.meteoschweiz.messwerte-gesamtschnee-1d"
+msgstr "Mesures neige gisante"
+
+msgid "ch.meteoschweiz.messwerte-globalstrahlung-10min"
+msgstr "Mesures rayonnement global"
+
+msgid "ch.meteoschweiz.messwerte-luftdruck-qfe-10min"
+msgstr "Mesures pression station QFE"
+
+msgid "ch.meteoschweiz.messwerte-luftdruck-qff-10min"
+msgstr "Mesures pression réduite QFF"
+
+msgid "ch.meteoschweiz.messwerte-luftdruck-qnh-10min"
+msgstr "Pression atmosphérique réduite niveau mer QFF"
+
+msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
+msgstr "Mesures humidité"
+
+msgid "ch.meteoschweiz.messwerte-lufttemperatur-10min"
+msgstr "Mesures température 2m"
+
+msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-max-1h"
+msgstr "Mesures max. température 2m, 24h"
+
+msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-min-1h"
+msgstr "Mesures min. température 2m, 24h"
+
+msgid "ch.meteoschweiz.messwerte-neuschnee-1d"
+msgstr "Mesures neige fraîche"
+
+msgid "ch.meteoschweiz.messwerte-niederschlag-10min"
+msgstr "Mesures précipitations, 10min"
+
+msgid "ch.meteoschweiz.messwerte-niederschlag-1d"
+msgstr "Mesures précipitations, 1 jour"
+
+msgid "ch.meteoschweiz.messwerte-niederschlag-1h"
+msgstr "Mesures précipitations, 1h"
+
+msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
+msgstr "Mesures durée d'ensoleillement"
+
+msgid "ch.meteoschweiz.messwerte-taupunkt-10min"
+msgstr "Mesures point de rosée"
+
+msgid "ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-10min"
+msgstr "Données rafales"
+
+msgid "ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min"
+msgstr "Mesures vitesse du vent"
 
 msgid "ch.mobility.standorte"
 msgstr "Autopartage (carsharing)"
@@ -6953,26 +6953,131 @@ msgstr "Matières premières minérales"
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau"
 msgstr "Pierres concassées: extraction"
 
+msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.clkind"
+msgstr "Importance"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.emkinds"
+msgstr "Méthodes d’exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.ltkinds"
+msgstr "Roches exploitées"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.obname"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.purl"
+msgstr "Informations detaillées sur le portail specialisé"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.stkind"
+msgstr "Statut d’exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.tckind"
+msgstr "Groupe de roches"
+
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
 msgstr "Minéraux industriels: gisements"
+
+msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.edrskinds"
+msgstr "Matières premières exploitées"
+
+msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.emkinds"
+msgstr "Méthodes d`exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.imkinds"
+msgstr "Minéraux industriels"
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.name_ads"
 msgstr "Localité"
 
+msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.obname"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.obnamealt"
+msgstr "Nom alternatif"
+
+msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.purl"
+msgstr "Informations detaillées sur le portail specialisé"
+
+msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.stkind"
+msgstr "Status d’exploitation"
+
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"
+msgstr "Matières premières énergétiques"
+
+msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.ederkinds"
+msgstr "Matières premières exploitées"
+
+msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.emkinds"
+msgstr "Méthodes d`exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.erkinds"
 msgstr "Matières premières énergétiques"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.name_ads"
 msgstr "Localité"
 
+msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.obname"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.obnamealt"
+msgstr "Nom alternatif"
+
+msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.purl"
+msgstr "Informations detaillées sur le portail specialisé"
+
+msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.stkind"
+msgstr "Status d’exploitation"
+
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau"
 msgstr "Pierre naturelle: extraction"
+
+msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.clkind"
+msgstr "Importance"
+
+msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.emkinds"
+msgstr "Méthodes d’exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.ltkinds"
+msgstr "Roches exploitées"
+
+msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.obname"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.purl"
+msgstr "Informations detaillées sur le portail specialisé"
+
+msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.stkind"
+msgstr "Statut d’exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.tckind"
+msgstr "Groupe de roches"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
 msgstr "Matières premières métalliques"
 
+msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.edmikinds"
+msgstr "Minerais exploités"
+
+msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.emkinds"
+msgstr "Méthodes d`exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.grkinds"
+msgstr "Associations d’éléments metalliques"
+
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.name_ads"
 msgstr "Localité"
+
+msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.obname"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.obnamealt"
+msgstr "Nom alternatif"
+
+msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.purl"
+msgstr "Informations detaillées sur le portail specialisé"
+
+msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.stkind"
+msgstr "Status d’exploitation"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Découpage cartes géologiques spéciales Raster"
@@ -8947,6 +9052,9 @@ msgstr "Plan sectoriel militaire"
 
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Plan sectoriel militaire"
+
+msgid "ch.vbs.sperr-gefahrenzonenkarte"
+msgstr "Carte des zones interdites"
 
 msgid "ch.vbs.territorialregionen"
 msgstr "Régions territoriales"
