@@ -878,6 +878,9 @@ msgstr "Votre navigateur ne supporte pas le rendu vectoriel. Les renderers actue
 msgid "Buildings"
 msgstr "Bâtiments"
 
+msgid "BW"
+msgstr "noir et blanc"
+
 msgid "Campingplatz"
 msgstr "Camping"
 
@@ -8132,6 +8135,18 @@ msgstr "SWISSIMAGE"
 msgid "ch.swisstopo.swissimage-product.metadata"
 msgstr "Découpage SWISSIMAGE Voyage temp."
 
+msgid "ch.swisstopo.swissimage-product.metadata.colormode"
+msgstr "Mode couleur"
+
+msgid "ch.swisstopo.swissimage-product.metadata.flightyear"
+msgstr "État d'actualité de la feuille"
+
+msgid "ch.swisstopo.swissimage-product.metadata.gsd"
+msgstr "Résolution au sol"
+
+msgid "ch.swisstopo.swissimage-product.metadata.kbnum"
+msgstr "Numéro de la feuille"
+
 msgid "ch.swisstopo.swiss-map-raster10.metadata"
 msgstr "Découpage carte nationale 1:10'000 Raster"
 
@@ -12361,6 +12376,9 @@ msgstr "service de révision de swisstopo"
 
 msgid "revision service of swisstopo"
 msgstr "service de révision de swisstopo"
+
+msgid "RGB"
+msgstr "coleur"
 
 msgid "richtungsgetrennt"
 msgstr "Directions séparées"
