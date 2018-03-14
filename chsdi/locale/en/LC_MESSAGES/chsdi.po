@@ -13818,10 +13818,10 @@ msgid "tt_lubis_schraegaufnahmen_stereo_couple"
 msgstr "Correspondent image"
 
 msgid "tt_lubis_schraegaufnahmen_x"
-msgstr "Coordinata X"
+msgstr "Centre coordinate X"
 
 msgid "tt_lubis_schraegaufnahmen_y"
-msgstr "Coordinata Y"
+msgstr "Centre coordinate Y"
 
 msgid "tt_lubis_source_georef"
 msgstr "Accuracy AT"
