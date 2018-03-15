@@ -25,7 +25,7 @@ def admin_kml(context, request):
     return response
 
 
-def kml_load(api_url='//api3.geo.admin.ch', bucket_name='public.geo.admin.ch'):
+def kml_load(api_url='//api3.geo.admin.ch', bucket_name=None):
     now = datetime.datetime.now()
     date = now.strftime('%Y-%m-%d')
     table = get_dynamodb_table(table_name='geoadmin-file-storage')

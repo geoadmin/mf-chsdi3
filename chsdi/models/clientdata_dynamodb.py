@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import boto.s3
-from boto.s3.connection import OrdinaryCallingFormat
-from boto.s3.connection import S3Connection
 import boto.dynamodb2
+from boto.s3.connection import OrdinaryCallingFormat
 from boto.dynamodb2.table import Table
 import pyramid.httpexceptions as exc
 
@@ -66,21 +65,14 @@ class S3Connect:
         self.conn = None
         self.region = region
 
-    def get(self, profile_name=None):
+    def get(self):
         if self.conn is None:
             try:
-                if profile_name:
-                    S3Connection.DefaultHost = 's3-eu-west-1.amazonaws.com'
-                    self.profile_name = profile_name
-                    self.conn = S3Connection(
-                        profile_name=self.profile_name,
-                        calling_format=OrdinaryCallingFormat())
-                else:
-                    # Cannot use bucket names with dots
-                    # see: https://github.com/boto/boto/issues/2836
-                    self.conn = boto.s3.connect_to_region(
-                        self.region,
-                        calling_format=OrdinaryCallingFormat())
+                # Cannot use bucket names with dots
+                # see: https://github.com/boto/boto/issues/2836
+                self.conn = boto.s3.connect_to_region(
+                    self.region,
+                    calling_format=OrdinaryCallingFormat())
             except Exception as e:  # pragma: no cover
                 raise exc.HTTPInternalServerError(
                     'S3: Error during connection init %s' % e)
@@ -101,9 +93,9 @@ def get_dynamodb_table(table_name='shorturl'):
     return table
 
 
-def get_bucket(profile_name=None, bucket_name=None):
+def get_bucket(bucket_name):
     s3_connection = S3Connect()
-    conn = s3_connection.get(profile_name=profile_name)
+    conn = s3_connection.get()
     try:
         bucket = conn.get_bucket(bucket_name)
     except Exception as e:  # pragma: no cover

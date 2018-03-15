@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # This script replace scales in all KML files in the production bucket
-# public.geo.admin.ch from a begin date to now.
+# public-prod-admin-ch from a begin date to now.
 # It saves the KML tested in tmp/kml_tested folder and save the KML modified in
 # tmp/kml_replaced.
 # Files are stored in gzip format with the same name as in the bucket
@@ -38,10 +38,10 @@ dev = boto3.session.Session(profile_name='geoadmin_filestorage')
 
 s3 = dev.resource('s3')
 
-bucket = s3.Bucket('public.geo.admin.ch')
+bucket = s3.Bucket('public-prod-admin-ch')
 
 # To test the replace
-bucketInt = s3.Bucket('public.int.bgdi.ch')
+bucketInt = s3.Bucket('public-int-bgdi-ch')
 
 start_time = time.time()
 
@@ -90,8 +90,8 @@ for objSummary in bucket.objects.all():
                     ContentType='application/vnd.google-earth.kml+xml'
                 )
                 f.close();
-                print "Before http://map.geo.admin.ch/?layers=KML||http://public.geo.admin.ch/" + obj.key
-                print "After  http://mf-geoadmin3.int.bgdi.ch/?layers=KML||http://public.int.bgdi.ch/" + obj.key
+                print "Before http://map.geo.admin.ch/?layers=KML||http://public-prod-admin-ch/" + obj.key
+                print "After  http://mf-geoadmin3.int.bgdi.ch/?layers=KML||http://public-int-bgdi-ch/" + obj.key
                 print "\n"
         except:
             print objSummary.key
