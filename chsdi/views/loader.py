@@ -16,7 +16,7 @@ def loadjs(request):
     ignore_polyfill = request.params.get('ignore_polyfill')
     # Determined automatically in subscriber
     lang = request.lang
-    geoadmin_file_storage_bucket = 'public.geo.admin.ch'
+    public_bucket_host = request.registry.settings['public_bucket_host']
 
     # If version not provided fallback to the first entry
     version_str = request.params.get('version', available_versions[0])
@@ -35,7 +35,7 @@ def loadjs(request):
 
     def get_resource_url(filename, extension, mode_str=''):
         return 'https://%s/%s/%s%s.%s' % (
-            geoadmin_file_storage_bucket, s3_resources_path, filename, mode_str, extension)
+            public_bucket_host, s3_resources_path, filename, mode_str, extension)
 
     ga_css = get_resource_url('ga', 'css')
     ga_js = get_resource_url('ga', 'js', mode_str)
