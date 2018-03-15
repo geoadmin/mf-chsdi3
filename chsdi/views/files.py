@@ -121,13 +121,17 @@ class FileView(object):
                 self.file_id = id
             try:
                 key1 = self.bucket1.get_key(self.file_id)
-                key2 = self.bucket2.get_key(self.file_id)
             except S3ResponseError as e:
                 raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (self.file_id, e))
             except Exception as e:
                 raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (self.file_id, e))
 
-            if key1 is not None and key2 is not None:
+            try:
+                key2 = self.bucket2.get_key(self.file_id)
+            except Exception:
+                key2 = None
+
+            if key1 is not None or key2 is not None:
                 self.key1 = key1
                 self.key2 = key2
             else:
@@ -164,6 +168,7 @@ class FileView(object):
                 # Push object to old bucket
                 k1 = Key(bucket=self.bucket1)
                 _push_object_to_s3(k1, self.file_id, mime, content_encoding, headers, data_payload)
+                key = self.bucket1.get_key(k1.key)
                 # Push object to new bucket
                 k2 = Key(bucket=self.bucket2)
                 _push_object_to_s3(k2, self.file_id, mime, content_encoding, headers, data_payload)
@@ -181,13 +186,16 @@ class FileView(object):
             try:
                 # Inconsistant behaviour with metadata, see https://github.com/boto/boto/issues/2798
                 # Push object to old bucket
-                _push_object_to_s3(self.key1, self.file_id, mime, content_encoding, headers, data_payload)
-                # Push object to old bucket
-                _push_object_to_s3(self.key2, self.file_id, mime, content_encoding, headers, data_payload)
-                key = self.bucket2.get_key(self.key2.key)
+                if self.key1:
+                    _push_object_to_s3(self.key1, self.file_id, mime, content_encoding, headers, data_payload)
+                    key = self.bucket1.get_key(self.key1.key)
+                if self.key2:
+                    # Push object to old bucket
+                    _push_object_to_s3(self.key2, self.file_id, mime, content_encoding, headers, data_payload)
+                    key = self.bucket2.get_key(self.key2.key)
                 last_updated = parse_ts(key.last_modified)
             except Exception as e:
-                raise exc.HTTPInternalServerError('Error while updating S3 key (%s) %s' % (self.key2.key, e))
+                raise exc.HTTPInternalServerError('Error while updating S3 key (%s) %s' % (self.file_id, e))
             try:
                 _save_item(self.admin_id, last_updated=last_updated, bucketname=self.bucket2.name)
             except Exception as e:
