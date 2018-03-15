@@ -878,6 +878,9 @@ msgstr "Il tuo browser non supporta il rendering vettoriale. I renderizzatori at
 msgid "Buildings"
 msgstr "Edifici"
 
+msgid "BW"
+msgstr "bianco e nero"
+
 msgid "Campingplatz"
 msgstr "Camping"
 
@@ -5955,7 +5958,7 @@ msgid "ch.meteoschweiz.messwerte-luftdruck-qff-10min"
 msgstr "Misurazioni pressione ridotta QFF"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qnh-10min"
-msgstr "Pressione ridotta livello mare QFF"
+msgstr "Misurazioni pressione ridotta QNH"
 
 msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
 msgstr "Misurazioni umidità"
@@ -8131,6 +8134,18 @@ msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.swissimage-product.metadata"
 msgstr "Divisione SWISSIMAGE Viaggio tempo"
+
+msgid "ch.swisstopo.swissimage-product.metadata.colormode"
+msgstr "Modalità colore"
+
+msgid "ch.swisstopo.swissimage-product.metadata.flightyear"
+msgstr "Stato d'attualità del foglio"
+
+msgid "ch.swisstopo.swissimage-product.metadata.gsd"
+msgstr "Risoluzione al suolo"
+
+msgid "ch.swisstopo.swissimage-product.metadata.kbnum"
+msgstr "Numero di foglio"
 
 msgid "ch.swisstopo.swiss-map-raster10.metadata"
 msgstr "Divisione carta nazionale 1:10'000 Raster"
@@ -12361,6 +12376,9 @@ msgstr "Servizio di revisione di swisstopo"
 
 msgid "revision service of swisstopo"
 msgstr "servizio di revisione di swisstopo"
+
+msgid "RGB"
+msgstr "colore"
 
 msgid "richtungsgetrennt"
 msgstr "A carregiate separate"

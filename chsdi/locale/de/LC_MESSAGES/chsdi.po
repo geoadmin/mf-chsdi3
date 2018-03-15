@@ -878,6 +878,9 @@ msgstr "Ihr Browser unterstützt keine Vektordarstellung. Aktuell unterstützte 
 msgid "Buildings"
 msgstr "Gebäude"
 
+msgid "BW"
+msgstr "Schwarzweiss"
+
 msgid "Campingplatz"
 msgstr "Campingplatz"
 
@@ -5955,7 +5958,7 @@ msgid "ch.meteoschweiz.messwerte-luftdruck-qff-10min"
 msgstr "Messwerte Luftdruck reduziert QFF"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qnh-10min"
-msgstr "Messdaten Luftdruck Meereshöhe QFF"
+msgstr "Messwerte Luftdruck reduziert QNH"
 
 msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
 msgstr "Messwerte Luftfeuchtigkeit"
@@ -8131,6 +8134,18 @@ msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.swissimage-product.metadata"
 msgstr "Einteilung SWISSIMAGE Zeitreise"
+
+msgid "ch.swisstopo.swissimage-product.metadata.colormode"
+msgstr "Farbmodus"
+
+msgid "ch.swisstopo.swissimage-product.metadata.flightyear"
+msgstr "Datenstand des Blattes"
+
+msgid "ch.swisstopo.swissimage-product.metadata.gsd"
+msgstr "Bodenauflösung"
+
+msgid "ch.swisstopo.swissimage-product.metadata.kbnum"
+msgstr "Blattnummer"
 
 msgid "ch.swisstopo.swiss-map-raster10.metadata"
 msgstr "Einteilung Landeskarte 10 Raster"
@@ -12361,6 +12376,9 @@ msgstr "Revisionsdienst swisstopo"
 
 msgid "revision service of swisstopo"
 msgstr "Revisionsdienst swisstopo"
+
+msgid "RGB"
+msgstr "farbig"
 
 msgid "richtungsgetrennt"
 msgstr "Richtungsgetrennt"

@@ -878,6 +878,9 @@ msgstr "Voss browser na sustegna betg la represchentaziun vectoriala. Ils render
 msgid "Buildings"
 msgstr "Edifizis"
 
+msgid "BW"
+msgstr "Schwarzweiss"
+
 msgid "Campingplatz"
 msgstr "Campingplatz"
 
@@ -5955,7 +5958,7 @@ msgid "ch.meteoschweiz.messwerte-luftdruck-qff-10min"
 msgstr "Messwerte Luftdruck reduziert QFF"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qnh-10min"
-msgstr "Messdaten Luftdruck Meereshöhe QFF"
+msgstr "Messwerte Luftdruck reduziert QNH"
 
 msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
 msgstr "Messwerte Luftfeuchtigkeit"
@@ -8131,6 +8134,18 @@ msgstr "SWISSIMAGE"
 
 msgid "ch.swisstopo.swissimage-product.metadata"
 msgstr "Einteilung SWISSIMAGE Zeitreise"
+
+msgid "ch.swisstopo.swissimage-product.metadata.colormode"
+msgstr "Farbmodus"
+
+msgid "ch.swisstopo.swissimage-product.metadata.flightyear"
+msgstr "Datenstand des Blattes"
+
+msgid "ch.swisstopo.swissimage-product.metadata.gsd"
+msgstr "Bodenauflösung"
+
+msgid "ch.swisstopo.swissimage-product.metadata.kbnum"
+msgstr "Blattnummer"
 
 msgid "ch.swisstopo.swiss-map-raster10.metadata"
 msgstr "Divisiun charta naziunala 1:10'000 Raster"
@@ -12362,6 +12377,9 @@ msgstr "servetsch da revisiun da swisstopo"
 msgid "revision service of swisstopo"
 msgstr "revisiun da swisstopo"
 
+msgid "RGB"
+msgstr "farbig"
+
 msgid "richtungsgetrennt"
 msgstr "Richtungsgetrennt"
 
@@ -13821,7 +13839,7 @@ msgid "tt_lubis_schraegaufnahmen_x"
 msgstr "Coordinata X"
 
 msgid "tt_lubis_schraegaufnahmen_y"
-msgstr "Coordinata Y"
+msgstr "Coordinate Y"
 
 msgid "tt_lubis_source_georef"
 msgstr "Genauigkeit AT"
