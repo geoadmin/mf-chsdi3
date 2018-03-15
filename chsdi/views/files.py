@@ -93,13 +93,13 @@ def _get_file_id_from_admin_id(admin_id):
     return fileId
 
 
-def _push_object_to_s3(k, file_id, mime, content_encoding, headers, data):
+def _push_object_to_s3(k, file_id, mime, content_encoding, headers, data, replace):
     k.key = file_id
     k.set_metadata('Content-Type', mime)
     k.content_type = mime
     k.content_encoding = content_encoding
     k.set_metadata('Content-Encoding', content_encoding)
-    k.set_contents_from_string(data, headers=headers, replace=False)
+    k.set_contents_from_string(data, headers=headers, replace=replace)
 
 
 @view_defaults(renderer='jsonp', route_name='files')
@@ -165,13 +165,14 @@ class FileView(object):
             content_encoding = 'gzip'
         if not update:
             try:
+                replace = False
                 # Push object to old bucket
                 k1 = Key(bucket=self.bucket1)
-                _push_object_to_s3(k1, self.file_id, mime, content_encoding, headers, data_payload)
+                _push_object_to_s3(k1, self.file_id, mime, content_encoding, headers, data_payload, replace)
                 key = self.bucket1.get_key(k1.key)
                 # Push object to new bucket
                 k2 = Key(bucket=self.bucket2)
-                _push_object_to_s3(k2, self.file_id, mime, content_encoding, headers, data_payload)
+                _push_object_to_s3(k2, self.file_id, mime, content_encoding, headers, data_payload, replace)
                 key = self.bucket2.get_key(k2.key)
                 last_updated = parse_ts(key.last_modified)
             except Exception as e:
@@ -186,12 +187,13 @@ class FileView(object):
             try:
                 # Inconsistant behaviour with metadata, see https://github.com/boto/boto/issues/2798
                 # Push object to old bucket
+                replace = True
                 if self.key1:
-                    _push_object_to_s3(self.key1, self.file_id, mime, content_encoding, headers, data_payload)
+                    _push_object_to_s3(self.key1, self.file_id, mime, content_encoding, headers, data_payload, replace)
                     key = self.bucket1.get_key(self.key1.key)
                 if self.key2:
                     # Push object to old bucket
-                    _push_object_to_s3(self.key2, self.file_id, mime, content_encoding, headers, data_payload)
+                    _push_object_to_s3(self.key2, self.file_id, mime, content_encoding, headers, data_payload, replace)
                     key = self.bucket2.get_key(self.key2.key)
                 last_updated = parse_ts(key.last_modified)
             except Exception as e:
