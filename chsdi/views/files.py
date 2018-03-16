@@ -107,12 +107,10 @@ class FileView(object):
 
     def __init__(self, request):
         self.request = request
-        self.bucket1 = get_bucket(profile_name='geoadmin_filestorage', bucket_name=request.registry.settings['geoadmin_file_storage_bucket'])
-        self.bucket2 = get_bucket(bucket_name=request.registry.settings['geoadmin_file_storage_bucket_new'])
+        self.bucket = get_bucket(request.registry.settings['geoadmin_file_storage_bucket'])
         if request.matched_route.name == 'files':
             self.admin_id = None
-            self.key1 = None
-            self.key2 = None
+            self.key = None
             id = request.matchdict['id']
             if _is_admin_id(id):
                 self.admin_id = id
@@ -120,20 +118,14 @@ class FileView(object):
             else:
                 self.file_id = id
             try:
-                key1 = self.bucket1.get_key(self.file_id)
+                key = self.bucket.get_key(self.file_id)
             except S3ResponseError as e:
                 raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (self.file_id, e))
             except Exception as e:
                 raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (self.file_id, e))
 
-            try:
-                key2 = self.bucket2.get_key(self.file_id)
-            except Exception:
-                key2 = None
-
-            if key1 is not None or key2 is not None:
-                self.key1 = key1
-                self.key2 = key2
+            if key is not None:
+                self.key = key
             else:
                 raise exc.HTTPNotFound('File %s not found' % self.file_id)
 
@@ -165,41 +157,32 @@ class FileView(object):
             content_encoding = 'gzip'
         if not update:
             try:
+                # Push object to bucket
                 replace = False
-                # Push object to old bucket
-                k1 = Key(bucket=self.bucket1)
-                _push_object_to_s3(k1, self.file_id, mime, content_encoding, headers, data_payload, replace)
-                key = self.bucket1.get_key(k1.key)
-                # Push object to new bucket
-                k2 = Key(bucket=self.bucket2)
-                _push_object_to_s3(k2, self.file_id, mime, content_encoding, headers, data_payload, replace)
-                key = self.bucket2.get_key(k2.key)
+                k = Key(bucket=self.bucket)
+                _push_object_to_s3(k, self.file_id, mime, content_encoding, headers, data_payload, replace)
+                key = self.bucket.get_key(k.key)
                 last_updated = parse_ts(key.last_modified)
             except Exception as e:
                 raise exc.HTTPInternalServerError('Error while configuring S3 key (%s) %s' % (self.file_id, e))
             try:
                 # Push to dynamoDB, only one entry per object
-                _save_item(self.admin_id, file_id=self.file_id, last_updated=last_updated, bucketname=self.bucket2.name)
+                _save_item(self.admin_id, file_id=self.file_id, last_updated=last_updated, bucketname=self.bucket.name)
             except Exception as e:
                 raise exc.HTTPInternalServerError('Cannot create file on Dynamodb (%s)' % e)
 
         else:
             try:
                 # Inconsistant behaviour with metadata, see https://github.com/boto/boto/issues/2798
-                # Push object to old bucket
+                # Push object to bucket
                 replace = True
-                if self.key1:
-                    _push_object_to_s3(self.key1, self.file_id, mime, content_encoding, headers, data_payload, replace)
-                    key = self.bucket1.get_key(self.key1.key)
-                if self.key2:
-                    # Push object to old bucket
-                    _push_object_to_s3(self.key2, self.file_id, mime, content_encoding, headers, data_payload, replace)
-                    key = self.bucket2.get_key(self.key2.key)
+                _push_object_to_s3(self.key, self.file_id, mime, content_encoding, headers, data_payload, replace)
+                key = self.bucket.get_key(self.key.key)
                 last_updated = parse_ts(key.last_modified)
             except Exception as e:
                 raise exc.HTTPInternalServerError('Error while updating S3 key (%s) %s' % (self.file_id, e))
             try:
-                _save_item(self.admin_id, last_updated=last_updated, bucketname=self.bucket2.name)
+                _save_item(self.admin_id, last_updated=last_updated, bucketname=self.bucket.name)
             except Exception as e:
                 raise exc.HTTPInternalServerError('Cannot update file on Dynamodb (%s) %s' % (self.file_id, e))
 
@@ -221,8 +204,8 @@ class FileView(object):
             if self.admin_id is not None:
                 return {'fileId': self.file_id}
             else:
-                data = self.key2.get_contents_as_string()
-                return Response(data, content_type=self.key2.content_type, content_encoding=self.key2.content_encoding)
+                data = self.key.get_contents_as_string()
+                return Response(data, content_type=self.key.content_type, content_encoding=self.key.content_encoding)
         except Exception as e:
             raise exc.HTTPNotFound('File %s not found %s' % (self.file_id, e))
 
@@ -245,8 +228,7 @@ class FileView(object):
             self.file_id = self._get_uuid()
             self.admin_id = self._get_uuid()
 
-            del self.key1
-            del self.key2
+            del self.key
 
             self._save_to_s3(data, mime)
 
@@ -257,8 +239,7 @@ class FileView(object):
     def delete_file(self):
         if self.admin_id is not None:
             try:
-                self.bucket1.delete_key(self.key1)
-                self.bucket2.delete_key(self.key2)
+                self.bucket.delete_key(self.key)
                 return {'success': True}
             except Exception as e:
                 raise exc.HTTPInternalServerError('Error while deleting file %s. %e' % (self.file_id, e))

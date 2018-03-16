@@ -56,7 +56,6 @@ LAST_API_URL := $(call lastvalue,api-url)
 LAST_SHOP_URL := $(call lastvalue,shop-url)
 LAST_HOST := $(call lastvalue,host)
 LAST_GEOADMIN_FILE_STORAGE_BUCKET := $(call lastvalue,geoadmin-file-storage-bucket)
-LAST_GEOADMIN_FILE_STORAGE_BUCKET_NEW := $(call lastvalue,geoadmin-file-storage-bucket-new)
 LAST_PUBLIC_BUCKET_HOST  := $(call lastvalue,public-bucket-host)
 LAST_SHORTENER_ALLOWED_HOSTS := $(call lastvalue,allowed-hosts)
 LAST_VECTOR_BUCKET := $(call lastvalue,vector-bucket)
@@ -388,7 +387,6 @@ production.ini: production.ini.in \
                 .venv/last-kml-temp-dir \
                 .venv/last-http-proxy \
                 .venv/last-geoadmin-file-storage-bucket \
-                .venv/last-geoadmin-file-storage-bucket-new \
                 .venv/last-public-bucket-host \
                 .venv/last-shortener-allowed-hosts \
                 .venv/last-vector-bucket \
@@ -420,7 +418,6 @@ production.ini: production.ini.in \
 		--var "kml_temp_dir=$(KML_TEMP_DIR)" \
 		--var "http_proxy=$(HTTP_PROXY)" \
 		--var "geoadmin_file_storage_bucket=$(GEOADMIN_FILE_STORAGE_BUCKET)" \
-		--var "geoadmin_file_storage_bucket_new=$(GEOADMIN_FILE_STORAGE_BUCKET_NEW)" \
 		--var "public_bucket_host=$(PUBLIC_BUCKET_HOST)" \
 		--var "shortener_allowed_hosts=$(SHORTENER_ALLOWED_HOSTS)" \
 		--var "vector_bucket=$(VECTOR_BUCKET)" \
@@ -538,9 +535,6 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-geoadmin-file-storage-bucket::
 	$(call cachelastvariable,$@,$(GEOADMIN_FILE_STORAGE_BUCKET),$(LAST_GEOADMIN_FILE_STORAGE_BUCKET),geoadmin-file-storage-bucket)
-
-.venv/last-geoadmin-file-storage-bucket-new::
-	$(call cachelastvariable,$@,$(GEOADMIN_FILE_STORAGE_BUCKET_NEW),$(LAST_GEOADMIN_FILE_STORAGE_BUCKET_NEW),geoadmin-file-storage-bucket-new)
 
 .venv/last-public-bucket-host::
 	$(call cachelastvariable,$@,$(PUBLIC_BUCKET_HOST),$(LAST_PUBLIC_BUCKET_HOST),public-bucket-host)
