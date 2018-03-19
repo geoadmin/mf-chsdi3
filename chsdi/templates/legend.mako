@@ -35,7 +35,8 @@
                  'ch.swisstopo.swisstlm3d-uebrigerverkehr',
                  'ch.swisstopo.swisstlm3d-gewaessernetz',
                  'ch.swisstopo.swisstlm3d-eisenbahnnetz',
-                 'ch.vbs.milairspacechart')
+                 'ch.vbs.milairspacechart',
+                 'ch.vbs.sperr-gefahrenzonenkarte')
   if c['layerBodId'] in pdf_legends:
       legend_url_pdf = host + '/static/images/legends/' + c['layerBodId'] + '_' + lang + '_big.pdf'
   else:
