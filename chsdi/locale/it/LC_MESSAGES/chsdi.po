@@ -5958,7 +5958,7 @@ msgid "ch.meteoschweiz.messwerte-luftdruck-qff-10min"
 msgstr "Misurazioni pressione ridotta QFF"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qnh-10min"
-msgstr "Pressione ridotta livello mare QFF"
+msgstr "Misurazioni pressione ridotta QNH"
 
 msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
 msgstr "Misurazioni umidità"

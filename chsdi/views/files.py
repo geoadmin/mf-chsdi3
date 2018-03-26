@@ -21,7 +21,7 @@ from chsdi.models.clientdata_dynamodb import get_dynamodb_table, get_bucket
 from chsdi.lib.decorators import requires_authorization, validate_kml_input
 
 
-def _add_item(id, file_id=False, bucketname='public.geo.admin.ch'):
+def _add_item(id, file_id=False, bucketname=None):
     table = get_dynamodb_table(table_name='geoadmin-file-storage')
     try:
         table.put_item(
@@ -37,7 +37,7 @@ def _add_item(id, file_id=False, bucketname='public.geo.admin.ch'):
     return True
 
 
-def _save_item(admin_id, file_id=None, last_updated=None, bucketname='public.geo.admin.ch'):
+def _save_item(admin_id, file_id=None, last_updated=None, bucketname=None):
     table = get_dynamodb_table(table_name='geoadmin-file-storage')
     item = None
     if last_updated is not None:
@@ -93,12 +93,21 @@ def _get_file_id_from_admin_id(admin_id):
     return fileId
 
 
+def _push_object_to_s3(k, file_id, mime, content_encoding, headers, data, replace):
+    k.key = file_id
+    k.set_metadata('Content-Type', mime)
+    k.content_type = mime
+    k.content_encoding = content_encoding
+    k.set_metadata('Content-Encoding', content_encoding)
+    k.set_contents_from_string(data, headers=headers, replace=replace)
+
+
 @view_defaults(renderer='jsonp', route_name='files')
 class FileView(object):
 
     def __init__(self, request):
         self.request = request
-        self.bucket = get_bucket(bucket_name=request.registry.settings['geoadmin_file_storage_bucket'])
+        self.bucket = get_bucket(request.registry.settings['geoadmin_file_storage_bucket'])
         if request.matched_route.name == 'files':
             self.admin_id = None
             self.key = None
@@ -123,14 +132,6 @@ class FileView(object):
     def _get_uuid(self):
         return base64.urlsafe_b64encode(uuid.uuid4().bytes).replace('=', '')
 
-    @view_config(route_name='files_collection', request_method='OPTIONS', renderer='string')
-    def options_files_collection(self):
-        # TODO: doesn't seem to be applied
-        self.request.response.headers.update({
-            'Access-Control-Allow-Methods': 'POST,GET,DELETE,OPTIONS',
-            'Access-Control-Allow-Credentials': 'true'})
-        return ''
-
     def _gzip_data(self, data):
 
         out = None
@@ -148,45 +149,38 @@ class FileView(object):
         return out
 
     def _save_to_s3(self, data, mime, update=False, compress=True):
-        ziped_data = None
+        data_payload = data
         content_encoding = None
         headers = {'Cache-Control': 'no-cache, must-revalidate'}
         if compress and mime == 'application/vnd.google-earth.kml+xml':
-            ziped_data = self._gzip_data(data)
+            data_payload = self._gzip_data(data)
             content_encoding = 'gzip'
-
         if not update:
-            if content_encoding == 'gzip' and ziped_data is not None:
-                data = ziped_data
             try:
+                # Push object to bucket
+                replace = False
                 k = Key(bucket=self.bucket)
-                k.key = self.file_id
-                k.set_metadata('Content-Type', mime)
-                k.content_type = mime
-                k.content_encoding = content_encoding
-                k.set_metadata('Content-Encoding', content_encoding)
-                k.set_contents_from_string(data, headers=headers, replace=False)
+                _push_object_to_s3(k, self.file_id, mime, content_encoding, headers, data_payload, replace)
                 key = self.bucket.get_key(k.key)
                 last_updated = parse_ts(key.last_modified)
             except Exception as e:
                 raise exc.HTTPInternalServerError('Error while configuring S3 key (%s) %s' % (self.file_id, e))
             try:
+                # Push to dynamoDB, only one entry per object
                 _save_item(self.admin_id, file_id=self.file_id, last_updated=last_updated, bucketname=self.bucket.name)
             except Exception as e:
                 raise exc.HTTPInternalServerError('Cannot create file on Dynamodb (%s)' % e)
 
         else:
             try:
-                if content_encoding == 'gzip' and ziped_data is not None:
-                    data = ziped_data
                 # Inconsistant behaviour with metadata, see https://github.com/boto/boto/issues/2798
-                self.key.content_encoding = content_encoding
-                self.key.set_metadata('Content-Encoding', content_encoding)
-                self.key.set_contents_from_string(data, headers=headers, replace=True)
+                # Push object to bucket
+                replace = True
+                _push_object_to_s3(self.key, self.file_id, mime, content_encoding, headers, data_payload, replace)
                 key = self.bucket.get_key(self.key.key)
                 last_updated = parse_ts(key.last_modified)
             except Exception as e:
-                raise exc.HTTPInternalServerError('Error while updating S3 key (%s) %s' % (self.key.key, e))
+                raise exc.HTTPInternalServerError('Error while updating S3 key (%s) %s' % (self.file_id, e))
             try:
                 _save_item(self.admin_id, last_updated=last_updated, bucketname=self.bucket.name)
             except Exception as e:
@@ -251,12 +245,3 @@ class FileView(object):
                 raise exc.HTTPInternalServerError('Error while deleting file %s. %e' % (self.file_id, e))
         else:
             raise exc.HTTPUnauthorized('You are not authorized to delete file %s' % self.file_id)
-
-    @view_config(request_method='OPTIONS', renderer='string')
-    def options_file(self):
-        # TODO: doesn't seem to be applied
-        self.request.response.headers.update({
-            'Access-Control-Allow-Methods': 'POST,GET,DELETE,OPTIONS',
-            'Access-Control-Allow-Credentials': 'true'
-        })
-        return ''

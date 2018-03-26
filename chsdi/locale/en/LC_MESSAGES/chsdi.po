@@ -5958,7 +5958,7 @@ msgid "ch.meteoschweiz.messwerte-luftdruck-qff-10min"
 msgstr "Measurements pressure reduced QFF"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qnh-10min"
-msgstr "Air pressure reduced at sea level QFF"
+msgstr "Measurements pressure reduced QNH"
 
 msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
 msgstr "Measurements humidity"
@@ -13836,10 +13836,10 @@ msgid "tt_lubis_schraegaufnahmen_stereo_couple"
 msgstr "Correspondent image"
 
 msgid "tt_lubis_schraegaufnahmen_x"
-msgstr "Coordinata X"
+msgstr "Centre coordinate X"
 
 msgid "tt_lubis_schraegaufnahmen_y"
-msgstr "Coordinata Y"
+msgstr "Centre coordinate Y"
 
 msgid "tt_lubis_source_georef"
 msgstr "Accuracy AT"

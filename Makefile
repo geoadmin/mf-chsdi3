@@ -56,6 +56,7 @@ LAST_API_URL := $(call lastvalue,api-url)
 LAST_SHOP_URL := $(call lastvalue,shop-url)
 LAST_HOST := $(call lastvalue,host)
 LAST_GEOADMIN_FILE_STORAGE_BUCKET := $(call lastvalue,geoadmin-file-storage-bucket)
+LAST_PUBLIC_BUCKET_HOST  := $(call lastvalue,public-bucket-host)
 LAST_SHORTENER_ALLOWED_HOSTS := $(call lastvalue,allowed-hosts)
 LAST_VECTOR_BUCKET := $(call lastvalue,vector-bucket)
 LAST_DATAGEOADMINHOST := $(call lastvalue,datageoadminhost)
@@ -241,7 +242,7 @@ potomo: chsdi/locale/en/LC_MESSAGES/chsdi.mo chsdi/locale/fr/LC_MESSAGES/chsdi.m
         chsdi/locale/it/LC_MESSAGES/chsdi.mo
 
 .PHONY: deploybranch
-deploybranch: guard-OPENTRANS_API_KEY
+deploybranch:
 	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev...${RESET}";
 	./scripts/deploybranch.sh
 
@@ -259,7 +260,7 @@ deletebranchint:
 	./scripts/delete_branch.sh int $(BRANCH_TO_DELETE)
 
 .PHONY: deploybranchint
-deploybranchint: guard-OPENTRANS_API_KEY
+deploybranchint:
 	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev and int...${RESET}";
 	./scripts/deploybranch.sh int
 
@@ -274,11 +275,11 @@ deploydev:
 	fi
 
 .PHONY: deployint
-deployint: guard-SNAPSHOT guard-OPENTRANS_API_KEY
+deployint: guard-SNAPSHOT
 	scripts/deploysnapshot.sh $(SNAPSHOT) int $(NO_TESTS)
 
 .PHONY: deployprod
-deployprod: guard-SNAPSHOT guard-OPENTRANS_API_KEY
+deployprod: guard-SNAPSHOT
 	scripts/deploysnapshot.sh $(SNAPSHOT) prod $(NO_TESTS)
 
 .PHONY: legends
@@ -386,6 +387,7 @@ production.ini: production.ini.in \
                 .venv/last-kml-temp-dir \
                 .venv/last-http-proxy \
                 .venv/last-geoadmin-file-storage-bucket \
+                .venv/last-public-bucket-host \
                 .venv/last-shortener-allowed-hosts \
                 .venv/last-vector-bucket \
                 .venv/last-datageoadminhost \
@@ -394,7 +396,6 @@ production.ini: production.ini.in \
                 .venv/last-opentrans-api-key \
                 .venv/last-shortener-allowed-domains \
                 guard-OPENTRANS_API_KEY
-production.ini: production.ini.in
 	@echo "${GREEN}Creating production.ini...${RESET}";
 	${MAKO_CMD} \
 		--var "app_version=$(VERSION)" \
@@ -417,9 +418,9 @@ production.ini: production.ini.in
 		--var "kml_temp_dir=$(KML_TEMP_DIR)" \
 		--var "http_proxy=$(HTTP_PROXY)" \
 		--var "geoadmin_file_storage_bucket=$(GEOADMIN_FILE_STORAGE_BUCKET)" \
+		--var "public_bucket_host=$(PUBLIC_BUCKET_HOST)" \
 		--var "shortener_allowed_hosts=$(SHORTENER_ALLOWED_HOSTS)" \
 		--var "vector_bucket=$(VECTOR_BUCKET)" \
-		--var "vector_profilename=$(VECTOR_PROFILENAME)" \
 		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
 		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
 		--var "linkeddatahost=$(LINKEDDATAHOST)" \
@@ -534,6 +535,9 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-geoadmin-file-storage-bucket::
 	$(call cachelastvariable,$@,$(GEOADMIN_FILE_STORAGE_BUCKET),$(LAST_GEOADMIN_FILE_STORAGE_BUCKET),geoadmin-file-storage-bucket)
+
+.venv/last-public-bucket-host::
+	$(call cachelastvariable,$@,$(PUBLIC_BUCKET_HOST),$(LAST_PUBLIC_BUCKET_HOST),public-bucket-host)
 
 .venv/last-shortener-allowed-hosts::
 	$(call cachelastvariable,$@,$(SHORTENER_ALLOWED_HOSTS),$(LAST_SHORTENER_ALLOWED_HOSTS),shortener-allowed-hosts)

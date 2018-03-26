@@ -260,8 +260,7 @@ def _identify_grid(params, layerBodIds):
     if params.srid == 2056:
         pointCoordinates = shift_to(pointCoordinates, 21781)
     bucketName = params.request.registry.settings['vector_bucket']
-    profileName = params.request.registry.settings['vector_profilename']
-    bucket = get_bucket(profile_name=profileName, bucket_name=bucketName)
+    bucket = get_bucket(bucketName)
     for layer in layerBodIds:
         [layerBodId, gridSpec] = next(layer.iteritems())
         params.layerId = layerBodId
@@ -338,8 +337,7 @@ def _get_features(params, extended=False, process=True):
     for featureId in featureIds:
         if gridSpec:
             bucketName = params.request.registry.settings['vector_bucket']
-            profileName = params.request.registry.settings['vector_profilename']
-            bucket = get_bucket(profile_name=profileName, bucket_name=bucketName)
+            bucket = get_bucket(bucketName)
             # By convention
             if featureId.find('_') == -1:
                 raise exc.HTTPBadRequest('Unexpected id formatting')

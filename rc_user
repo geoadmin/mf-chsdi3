@@ -11,5 +11,3 @@ if [ -f rc_user_$USERNAME ]; then
 else
   echo 'Please provide a custom config file using the pattern rc_user_$USERNAME'
 fi
-# Uncomment to access vector bucket behind pserve
-# export VECTOR_PROFILENAME=ltgal_aws_admin
