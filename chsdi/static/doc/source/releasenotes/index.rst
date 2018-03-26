@@ -37,19 +37,29 @@ API & applications
 
 Geodata
 *******
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata>`__ (ch.swisstopo.swissimage-product.metadata)   |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Sperr- und Gefahrenzonenkarte <//map.geo.admin.ch/?layers=ch.vbs.sperr-gefahrenzonenkarte>`__ (ch.vbs.sperr-gefahrenzonenkarte)                           |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `swissALTI3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product&layers_timestamp=1999&time=1999>`__ (ch.swisstopo.swissimage-product)   |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Airspaces - TMA <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-nahkontrollbezirke>`__ (ch.bazl.luftraeume-nahkontrollbezirke)                             |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Airspaces - FIZ <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-fluginformationszonen>`__ (ch.bazl.luftraeume-fluginformationszonen)                       |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                 |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata>`__ (ch.swisstopo.swissimage-product.metadata)                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Sperr- und Gefahrenzonenkarte <//map.geo.admin.ch/?layers=ch.vbs.sperr-gefahrenzonenkarte>`__ (ch.vbs.sperr-gefahrenzonenkarte)                                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Gebrochene Gesteine: Abbau <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau>`__ (ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau)  |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Naturwerksteine: Abbau <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau>`__ (ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau)              |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissALTI3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product&layers_timestamp=1999&time=1999>`__ (ch.swisstopo.swissimage-product)                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces - TMA <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-nahkontrollbezirke>`__ (ch.bazl.luftraeume-nahkontrollbezirke)                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces - FIZ <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-fluginformationszonen>`__ (ch.bazl.luftraeume-fluginformationszonen)                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Industrial minerals <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-industrieminerale>`__ (ch.swisstopo.geologie-rohstoffe-industrieminerale)                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Fossil fuels <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas>`__ (ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas)                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mineralizations <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-vererzungen>`__ (ch.swisstopo.geologie-rohstoffe-vererzungen)                                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20180312:
    *******
