@@ -1477,48 +1477,103 @@ register('ch.swisstopo.geologie-geophysik-totalintensitaet', GeologieGeophysikTo
 
 
 class GeologieRohstoffeIndustrieminerale(Base, Vector):
-    __tablename__ = 'rohstoffe_industrieminerale'
+    __tablename__ = 'rohstoffe_industriemin'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/rohstoffe_industrieminerale.mako'
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-industrieminerale'
-    __queryable_attributes__ = ['name_ads']
-    __label__ = 'name_ads'
-    id = Column('id', Integer, primary_key=True)
-    rohstoff = Column('rohstoff', Unicode)
-    name_ads = Column('name_ads', Unicode)
+    __queryable_attributes__ = ['obname', 'obnamealt', 'imkinds', 'edrskinds']
+    __label__ = 'obname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    obname = Column('obname', Unicode)
+    obnamealt = Column('obnamealt', Unicode)
+    imkinds = Column('imkinds', Unicode)
+    edrskinds = Column('edrskinds', Unicode)
+    emkinds = Column('emkinds', Unicode)
+    stkind = Column('stkind', Unicode)
+    purl = Column('purl', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-rohstoffe-industrieminerale', GeologieRohstoffeIndustrieminerale)
 
 
 class GeologieRohstoffeKohlenBitumenErdgas(Base, Vector):
-    __tablename__ = 'rohstoffe_kohlen_bitumen_erdgas'
+    __tablename__ = 'rohstoffe_kohlenbitumenerdgas'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/rohstoffe_kohlen_bitumen_erdgas.mako'
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas'
-    __queryable_attributes__ = ['name_ads']
-    __label__ = 'name_ads'
-    id = Column('id', Integer, primary_key=True)
-    rohstoff = Column('rohstoff', Unicode)
-    name_ads = Column('name_ads', Unicode)
+    __queryable_attributes__ = ['obname', 'obnamealt', 'erkinds', 'ederkinds']
+    __label__ = 'obname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    obname = Column('obname', Unicode)
+    obnamealt = Column('obnamealt', Unicode)
+    erkinds = Column('erkinds', Unicode)
+    ederkinds = Column('ederkinds', Unicode)
+    emkinds = Column('emkinds', Unicode)
+    stkind = Column('stkind', Unicode)
+    purl = Column('purl', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas', GeologieRohstoffeKohlenBitumenErdgas)
 
 
 class GeologieRohstoffeVererzungen(Base, Vector):
-    __tablename__ = 'rohstoffe_vererzungen'
+    __tablename__ = 'rohstoffe_vererz'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/rohstoffe_vererzungen.mako'
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-vererzungen'
-    __queryable_attributes__ = ['name_ads']
-    __label__ = 'name_ads'
-    id = Column('id', Integer, primary_key=True)
-    rohstoff = Column('rohstoff', Unicode)
-    name_ads = Column('name_ads', Unicode)
+    __queryable_attributes__ = ['obname']
+    __label__ = 'obname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    obname = Column('obname', Unicode)
+    obnamealt = Column('obnamealt', Unicode)
+    grkinds = Column('grkinds', Unicode)
+    edmikinds = Column('edmikinds', Unicode)
+    emkinds = Column('emkinds', Unicode)
+    stkind = Column('stkind', Unicode)
+    purl = Column('purl', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-rohstoffe-vererzungen', GeologieRohstoffeVererzungen)
+
+
+class GeologieRohstoffeNaturwerksteineAbbau(Base, Vector):
+    __tablename__ = 'rohstoffe_naturwerksteineabbau'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/rohstoffe_naturwerksteine_abbau.mako'
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau'
+    __queryable_attributes__ = ['obname', 'tckind', 'ltkinds', 'emkinds', 'stkind']
+    __label__ = 'obname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    obname = Column('obname', Unicode)
+    tckind = Column('tckind', Unicode)
+    ltkinds = Column('ltkinds', Unicode)
+    emkinds = Column('emkinds', Unicode)
+    stkind = Column('stkind', Unicode)
+    clkind = Column('clkind', Unicode)
+    purl = Column('purl', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau', GeologieRohstoffeNaturwerksteineAbbau)
+
+
+class GeologieRohstoffeGebrocheneGesteine(Base, Vector):
+    __tablename__ = 'rohstoffe_gebrochenegesteineabbau'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/rohstoffe_gebrochene_gesteine.mako'
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau'
+    __queryable_attributes__ = ['obname', 'tckind', 'ltkinds', 'emkinds']
+    __label__ = 'obname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    obname = Column('obname', Unicode)
+    tckind = Column('tckind', Unicode)
+    ltkinds = Column('ltkinds', Unicode)
+    emkinds = Column('emkinds', Unicode)
+    stkind = Column('stkind', Unicode)
+    clkind = Column('clkind', Unicode)
+    purl = Column('purl', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau', GeologieRohstoffeGebrocheneGesteine)
 
 
 class GeologieTektonischeKarteLine(Base, Vector):
