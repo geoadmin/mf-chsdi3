@@ -2780,3 +2780,20 @@ class Treasurehunt(Base, Vector):
     __maxscale__ = 1500
 
 register('ch.swisstopo.treasurehunt', Treasurehunt)
+
+
+class SwissimageHistMetadata(Base, Vector):
+    __tablename__ = 'swissimage_hist_chsdi'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __template__ = 'templates/htmlpopup/swissimagehist.mako'
+    __bodId__ = 'ch.swisstopo.swissimage-product.metadata'
+    __timeInstant__ = 'bgdi_flugjahr'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    kbnum = Column('tilenumber', Unicode)
+    flightyear = Column('gdwh_flightyear', Integer)
+    gsd = Column('gsd', Unicode)
+    colormode = Column('colormode', Unicode)
+    bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swissimage-product.metadata', SwissimageHistMetadata)
