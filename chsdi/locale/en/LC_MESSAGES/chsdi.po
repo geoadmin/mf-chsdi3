@@ -3788,6 +3788,21 @@ msgstr "Biogeographische Region"
 msgid "ch.bafu.typisierung-fliessgewaesser.code"
 msgstr "Merkmalskombination"
 
+msgid "ch.bafu.typisierung-fliessgewaesser.discharge_quality_1"
+msgstr "Qualität gemäss Produktdokumentation"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.discharge_quality_2"
+msgstr "Qualität ungeprüft. Prüfung erforderlich"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.discharge_quality_3"
+msgstr "Von nächsthöherem Einzugsgebiet übernommen. Prüfung erforderlich"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source.gab_ezgg_ch"
+msgstr "Gewässerabschnittbasierte Einzugsgebietsgliede-rung GAB_EZGG_CH, unveröffentlicht"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source.mq_gwn_ch"
+msgstr "Mittlere Abflüsse für das Gewässernetz der Schweiz"
+
 msgid "ch.bafu.typisierung-fliessgewaesser.gefaelle"
 msgstr "Gefälle"
 
@@ -3811,6 +3826,12 @@ msgstr "Gewässernetz-ID"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.shape_length"
 msgstr "Länge des Abschnittes"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.slope_quality_1"
+msgstr "Berechnetes Gefälle"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.slope_quality_2"
+msgstr "Berechnetes Gefälle <0.1% ;  auf 0.1% korrigiert"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.url_portraits"
 msgstr "URL zu Typenporträt"
@@ -5933,6 +5954,9 @@ msgstr "Climate monitoring stations"
 msgid "ch.meteoschweiz.messnetz-manuell"
 msgstr "Manual precipitation stations"
 
+msgid "ch.meteoschweiz.messnetz-partner"
+msgstr "Partner stations"
+
 msgid "ch.meteoschweiz.messnetz-phaenologie"
 msgstr "Phenological observations"
 
@@ -5949,7 +5973,16 @@ msgid "ch.meteoschweiz.messwerte-gesamtschnee-1d"
 msgstr "Measurements snow depth"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-10min"
-msgstr "Measurements global radiation"
+msgstr "Measurements global radiation, 10min"
+
+msgid "ch.meteoschweiz.messwerte-globalstrahlung-1d"
+msgstr "Measurements global radiation, 1 d"
+
+msgid "ch.meteoschweiz.messwerte-luftdruck-700hpa-flaeche-10min"
+msgstr "Geopotential height 700 hPa-surface"
+
+msgid "ch.meteoschweiz.messwerte-luftdruck-850hpa-flaeche-10min"
+msgstr "Geopotential height 850 hPa-surface"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qfe-10min"
 msgstr "Measurements pressure station QFE"
@@ -5985,7 +6018,10 @@ msgid "ch.meteoschweiz.messwerte-niederschlag-1h"
 msgstr "Measurements precipitation, 1h"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
-msgstr "Measurements sunshine duration"
+msgstr "Measurements sunshine duration, 10min"
+
+msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
+msgstr "Measurements relative sunshine, 1 d"
 
 msgid "ch.meteoschweiz.messwerte-taupunkt-10min"
 msgstr "Measurements dew point"
@@ -6969,7 +7005,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.obname"
 msgstr "Name"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.purl"
-msgstr "Detailinformation im Fachportal"
+msgstr "Detailinformation"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.stkind"
 msgstr "Abbaustatus"
@@ -6999,7 +7035,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.obnamealt"
 msgstr "Zweitname"
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.purl"
-msgstr "Detailinformation im Fachportal"
+msgstr "Detailinformation"
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.stkind"
 msgstr "Abbaustatus"
@@ -7026,7 +7062,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.obnamealt"
 msgstr "Zweitname"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.purl"
-msgstr "Detailinformation im Fachportal"
+msgstr "Detailinformation"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.stkind"
 msgstr "Abbaustatus"
@@ -7047,7 +7083,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.obname"
 msgstr "Name"
 
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.purl"
-msgstr "Detailinformation im Fachportal"
+msgstr "Detailinformation"
 
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.stkind"
 msgstr "Abbaustatus"
@@ -7077,7 +7113,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.obnamealt"
 msgstr "Zweitname"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.purl"
-msgstr "Detailinformation im Fachportal"
+msgstr "Detailinformation"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.stkind"
 msgstr "Abbaustatus"
