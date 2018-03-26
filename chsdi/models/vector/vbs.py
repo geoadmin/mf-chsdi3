@@ -47,11 +47,11 @@ class NationalesSportanlagenkonzept(Base, Vector):
     __bodId__ = 'ch.baspo.nationales-sportanlagenkonzept'
     __label__ = 'name_der_anlage'
     id = Column('bgdi_id', Integer, primary_key=True)
-    nasak_nr = Column('nasak_nr', Unicode)
-    kategorie_de = Column('kategorie_de', Unicode)
-    art_der_anlage = Column('art_der_anlage', Unicode)
-    name_der_anlage = Column('name_der_anlage', Unicode)
-    ort = Column('ort', Unicode)
+    nasak_nr = Column('nasak_nr', Unicode, nullable=False)
+    kategorie_de = Column('kategorie_de', Unicode, nullable=False)
+    art_der_anlage = Column('art_der_anlage', Unicode, nullable=False)
+    name_der_anlage = Column('name_der_anlage', Unicode, nullable=False)
+    ort = Column('ort', Unicode, nullable=False)
     website = Column('website', Unicode, nullable=False, default='')
     the_geom = Column(Geometry2D)
 
