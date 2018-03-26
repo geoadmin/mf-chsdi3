@@ -16,7 +16,34 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
-.. _releasenotes_20180228:
+.. _releasenotes_20180328:
+   *******
+
+Release 20180328 - Wednesday, March 28th 2018
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_180312...r_180328>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_180312...r_180328>`__
+
+Geodata
+*******
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata>`__ (ch.swisstopo.swissimage-product.metadata)   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissALTI3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product&layers_timestamp=1999&time=1999>`__ (ch.swisstopo.swissimage-product)   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. _releasenotes_20180312:
    *******
 
 Release 20180312 - Monday, March 12th 2018
