@@ -1483,7 +1483,7 @@ class GeologieRohstoffeIndustrieminerale(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-industrieminerale'
     __queryable_attributes__ = ['obname', 'obnamealt', 'imkinds', 'edrskinds']
     __label__ = 'obname'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('obid', Integer, primary_key=True)
     obname = Column('obname', Unicode)
     obnamealt = Column('obnamealt', Unicode)
     imkinds = Column('imkinds', Unicode)
@@ -1503,7 +1503,7 @@ class GeologieRohstoffeKohlenBitumenErdgas(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas'
     __queryable_attributes__ = ['obname', 'obnamealt', 'erkinds', 'ederkinds']
     __label__ = 'obname'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('obid', Integer, primary_key=True)
     obname = Column('obname', Unicode)
     obnamealt = Column('obnamealt', Unicode)
     erkinds = Column('erkinds', Unicode)
@@ -1523,7 +1523,7 @@ class GeologieRohstoffeVererzungen(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-vererzungen'
     __queryable_attributes__ = ['obname']
     __label__ = 'obname'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('obid', Integer, primary_key=True)
     obname = Column('obname', Unicode)
     obnamealt = Column('obnamealt', Unicode)
     grkinds = Column('grkinds', Unicode)
@@ -1543,7 +1543,7 @@ class GeologieRohstoffeNaturwerksteineAbbau(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau'
     __queryable_attributes__ = ['obname', 'tckind', 'ltkinds', 'emkinds', 'stkind']
     __label__ = 'obname'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('obid', Integer, primary_key=True)
     obname = Column('obname', Unicode)
     tckind = Column('tckind', Unicode)
     ltkinds = Column('ltkinds', Unicode)
@@ -1563,7 +1563,7 @@ class GeologieRohstoffeGebrocheneGesteine(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau'
     __queryable_attributes__ = ['obname', 'tckind', 'ltkinds', 'emkinds']
     __label__ = 'obname'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('obid', Integer, primary_key=True)
     obname = Column('obname', Unicode)
     tckind = Column('tckind', Unicode)
     ltkinds = Column('ltkinds', Unicode)
