@@ -38,6 +38,8 @@ API & applications
 Geodata
 *******
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Sports facilities CSFNI <//map.geo.admin.ch/?layers=ch.baspo.nationales-sportanlagenkonzept>`__ (ch.baspo.nationales-sportanlagenkonzept)                                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata>`__ (ch.swisstopo.swissimage-product.metadata)                           |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Sperr- und Gefahrenzonenkarte <//map.geo.admin.ch/?layers=ch.vbs.sperr-gefahrenzonenkarte>`__ (ch.vbs.sperr-gefahrenzonenkarte)                                                   |
@@ -59,6 +61,16 @@ Geodata
 | Update | `Fossil fuels <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas>`__ (ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas)                        |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Mineralizations <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-vererzungen>`__ (ch.swisstopo.geologie-rohstoffe-vererzungen)                                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Restrictions for drones <//map.geo.admin.ch/?layers=ch.bazl.einschraenkungen-drohnen>`__ (ch.bazl.einschraenkungen-drohnen)                                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerodromes + Heliports <//map.geo.admin.ch/?layers=ch.bazl.flugplaetze-heliports>`__ (ch.bazl.flugplaetze-heliports)                                                              |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aeronautical Chart ICAO <//map.geo.admin.ch/?layers=ch.bazl.luftfahrtkarten-icao>`__ (ch.bazl.luftfahrtkarten-icao)                                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Glider Chart <//map.geo.admin.ch/?layers=ch.bazl.segelflugkarte>`__ (ch.bazl.segelflugkarte)                                                                                      |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mil Airspace Chart <//map.geo.admin.ch/?layers=ch.vbs.milairspacechart>`__ (ch.vbs.milairspacechart)                                                                              |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20180312:
