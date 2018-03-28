@@ -42,13 +42,13 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata>`__ (ch.swisstopo.swissimage-product.metadata)                           |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product&layers_timestamp=1999&time=1999>`__ (ch.swisstopo.swissimage-product)                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Sperr- und Gefahrenzonenkarte <//map.geo.admin.ch/?layers=ch.vbs.sperr-gefahrenzonenkarte>`__ (ch.vbs.sperr-gefahrenzonenkarte)                                                   |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Gebrochene Gesteine: Abbau <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau>`__ (ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau)  |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Naturwerksteine: Abbau <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau>`__ (ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau)              |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `swissALTI3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product&layers_timestamp=1999&time=1999>`__ (ch.swisstopo.swissimage-product)                           |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Airspaces - TMA <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-nahkontrollbezirke>`__ (ch.bazl.luftraeume-nahkontrollbezirke)                                                     |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
