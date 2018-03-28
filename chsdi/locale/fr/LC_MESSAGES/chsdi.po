@@ -3788,8 +3788,14 @@ msgstr "Région biogéographique"
 msgid "ch.bafu.typisierung-fliessgewaesser.code"
 msgstr "Combinaison de caractéristiques"
 
+msgid "ch.bafu.typisierung-fliessgewaesser.discharge"
+msgstr "Débit (m3/s)"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.discharge_quality"
+msgstr "Qualité des données sur le débit"
+
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_quality_1"
-msgstr "Qualité conformément au jeu de données"
+msgstr "Qualité conformément au jeu de données <a href=\"http://www.bafu.admin.ch/mq-gwn-ch-f\" target='_blank'>MQ-GWN-CH</a>"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_quality_2"
 msgstr "Qualité non vérifiée. Vérification nécessaire"
@@ -3797,11 +3803,14 @@ msgstr "Qualité non vérifiée. Vérification nécessaire"
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_quality_3"
 msgstr "Données reprises du bassin versant en amont. Vérification nécessaire"
 
+msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source"
+msgstr "Provenance des données sur le débit"
+
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source.gab_ezgg_ch"
 msgstr "Subdivision de la Suisse en bassins versants (GAB-EZGG CH), non publiée"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source.mq_gwn_ch"
-msgstr "Débits moyens du réseau hydrographique de la Suisse"
+msgstr "Débits moyens du réseau hydrographique de la Suisse (<a href=\"http://www.bafu.admin.ch/mq-gwn-ch-f\" target='_blank'>MQ-GWN-CH</a>)"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.gefaelle"
 msgstr "Pente"
@@ -3826,6 +3835,12 @@ msgstr "ID du réseau hydrographique"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.shape_length"
 msgstr "Longueur du tronçon"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.slope"
+msgstr "Pente (%)"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.slope_quality"
+msgstr "Qualité des données sur la pente"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.slope_quality_1"
 msgstr "Pente calculée"
@@ -4119,7 +4134,7 @@ msgid "ch.bakom.anbieter-eigenes_festnetz"
 msgstr "Nombre d'opérateurs de raccord"
 
 msgid "ch.bakom.anschlussart-glasfaser"
-msgstr "Fibre optique"
+msgstr "Fibre optique FTTB/FTTH"
 
 msgid "ch.bakom.anschlussart-koaxialkabel"
 msgstr "Câble coaxial"
@@ -4176,7 +4191,7 @@ msgid "ch.bakom.uplink10"
 msgstr "Liaison ≥ 10 Mbit/s ascendante"
 
 msgid "ch.bakom.uplink100"
-msgstr "Liaison ≥ 1000 Mbit/s ascendante"
+msgstr "Liaison ≥ 100 Mbit/s ascendante"
 
 msgid "ch.bakom.uplink2"
 msgstr "Liaison ≥ 2 Mbit/s ascendante"
@@ -9108,7 +9123,7 @@ msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Carte des zones interdites"
 
 msgid "ch.vbs.territorialregionen"
-msgstr "Régions territoriales"
+msgstr "Divisions territoriales"
 
 msgid "ch.vbs.url"
 msgstr "http://www.vbs.admin.ch/fr/home.html"
