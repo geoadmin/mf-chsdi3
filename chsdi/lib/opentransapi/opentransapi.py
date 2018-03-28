@@ -22,7 +22,7 @@ class OpenTrans:
 
     def _format_time(self, str_date_time):
         formated_date_time = datetime.strptime(str_date_time, '%Y-%m-%dT%H:%M:%SZ')
-        formated_date_time += timedelta(hours=1)  # time offset UTC +1
+        formated_date_time += timedelta(hours=2)  # TODO: dynamic switch sommer- wintertime
         return formated_date_time.strftime('%d/%m/%Y %H:%M')
 
     def _convert_estimated_date(self, el_estimated):
