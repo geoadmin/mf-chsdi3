@@ -12429,7 +12429,7 @@ msgid "revision service of swisstopo"
 msgstr "service de révision de swisstopo"
 
 msgid "RGB"
-msgstr "coleur"
+msgstr "couleur"
 
 msgid "richtungsgetrennt"
 msgstr "Directions séparées"
