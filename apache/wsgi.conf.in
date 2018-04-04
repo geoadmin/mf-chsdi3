@@ -66,10 +66,6 @@ RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities.xml ${apache_entry_path
 RewriteRule ^${apache_entry_path}/EPSG/(\d+)/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
 RewriteRule ^${apache_entry_path}/EPSG/(\d+)/(de|fr|it|rm|en)/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1&lang=$2 [L,PT]
 
-# Frozen Capabilities, for swissmaponline
-RewriteCond %{QUERY_STRING} lang=(de|fr|it|en) [NC]
-RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities_v([0-9]{8})\.xml$ ${current_directory}/chsdi/static/capabilities/$1/WMTSCapabilities.%1.xml [NC,QSA,L]
-
 # Shorten service
 RewriteCond %{HTTP_HOST} ^s.geo.admin.ch$
 RewriteRule ^${apache_entry_path}/(.*)$ ${apache_entry_path}/shorten/$1 [PT]
