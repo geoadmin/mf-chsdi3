@@ -2,6 +2,8 @@
 
 from chsdi.tests.integration import TestsBase
 from chsdi.lib.opentransapi import opentransapi
+from datetime import datetime, timedelta
+from pytz import timezone
 
 
 class Test_OpenTransApi(TestsBase):
@@ -25,3 +27,12 @@ class Test_OpenTransApi(TestsBase):
         api = self._callOpenTrans()
         with self.assertRaises(opentransapi.OpenTransNoStationException):
             api.get_departures(153)
+
+    def test_time_utc_zurich(self):
+        api = self._callOpenTrans()
+        time_zurich_tomorrow = datetime.now(timezone('Europe/Zurich')) + timedelta(days=1)
+        time_zurich_tomorrow_12 = datetime.strptime('%s 12:00:00' % str(time_zurich_tomorrow.strftime('%d/%m/%Y')), '%d/%m/%Y %H:%M:%S')
+        results = api.get_departures(8503000, 1, time_zurich_tomorrow_12.strftime('%Y-%m-%dT%H:%M:%S'))  # API call Zurich HB next day 12:00
+        time_next_dep_zurich = datetime.strptime(results[0]['departureDate'], '%d/%m/%Y %H:%M')
+        time_diff = abs(time_zurich_tomorrow_12 - time_next_dep_zurich).seconds
+        self.assertLess(time_diff, 900)  # assuming, that the next train in Zurich at 12am will depart within 15 min

@@ -3,7 +3,8 @@
 import requests
 import xml.etree.ElementTree as et
 from pytz import timezone
-from datetime import datetime, timedelta
+from datetime import datetime
+from dateutil import tz
 
 
 class OpenTrans:
@@ -21,9 +22,12 @@ class OpenTrans:
         return results
 
     def _format_time(self, str_date_time):
-        formated_date_time = datetime.strptime(str_date_time, '%Y-%m-%dT%H:%M:%SZ')
-        formated_date_time += timedelta(hours=2)  # TODO: dynamic switch sommer- wintertime
-        return formated_date_time.strftime('%d/%m/%Y %H:%M')
+        from_zone = tz.tzutc()
+        to_zone = tz.gettz('Europe/Zurich')
+        date_time = datetime.strptime(str_date_time, '%Y-%m-%dT%H:%M:%SZ')
+        date_time_utc = date_time.replace(tzinfo=from_zone)
+        date_time_zurich = date_time_utc.astimezone(to_zone)
+        return date_time_zurich.strftime('%d/%m/%Y %H:%M')
 
     def _convert_estimated_date(self, el_estimated):
         # the field estimatedDate is not mandatory
