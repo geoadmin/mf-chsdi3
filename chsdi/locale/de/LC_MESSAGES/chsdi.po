@@ -1907,6 +1907,9 @@ msgstr "Nr."
 msgid "ch.bafu.bundesinventare-vogelreservate.refobjblatt"
 msgstr "Objektblatt"
 
+msgid "ch.bafu.bundesinventare-vogelreservate.schutzebene"
+msgstr "Schutzebene"
+
 msgid "ch.bafu.bundesinventare-vogelreservate.schutzkategorie"
 msgstr "Schutzkategorie"
 
@@ -3807,7 +3810,7 @@ msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source"
 msgstr "Herkunft der Abflussdaten"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source.gab_ezgg_ch"
-msgstr "Gewässerabschnittbasierte Einzugsgebietsgliede-rung GAB_EZGG_CH, unveröffentlicht"
+msgstr "Gewässerabschnittbasierte Einzugsgebietsgliederung GAB_EZGG_CH, unveröffentlicht"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source.mq_gwn_ch"
 msgstr "Mittlere Abflüsse für das Gewässernetz der Schweiz (<a href=\"http://www.bafu.admin.ch/mq-gwn-ch-d\" target='_blank'>MQ-GWN-CH</a>)"
@@ -7867,6 +7870,9 @@ msgstr "Bildnummer"
 
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Ort"
+
+msgid "ch.swisstopo.lubis-terrestrische_aufnahmen"
+msgstr "Terrestrische Aufnahmen swisstopo"
 
 msgid "ch.swisstopo.luftfahrtkarten-icao.metadata"
 msgstr "Einteilung Luftfahrtkarte ICAO Raster"

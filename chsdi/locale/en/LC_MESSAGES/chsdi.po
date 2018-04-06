@@ -1068,7 +1068,7 @@ msgid "ch.astra_and_canton.url"
 msgstr "http://www.astra.admin.ch/index.html?lang=de"
 
 msgid "ch.astra.ausnahmetransportrouten"
-msgstr "Cant. routes for exceptional loads"
+msgstr "Routes for exceptional loads"
 
 msgid "ch.astra.historischer-verkehrswege"
 msgstr "ch.astra.historischer-verkehrswege"
@@ -1906,6 +1906,9 @@ msgstr "No."
 
 msgid "ch.bafu.bundesinventare-vogelreservate.refobjblatt"
 msgstr "Objectsheet"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.schutzebene"
+msgstr "Level of protection"
 
 msgid "ch.bafu.bundesinventare-vogelreservate.schutzkategorie"
 msgstr "Protection category"
@@ -3807,7 +3810,7 @@ msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source"
 msgstr "Herkunft der Abflussdaten"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source.gab_ezgg_ch"
-msgstr "Gewässerabschnittbasierte Einzugsgebietsgliede-rung GAB_EZGG_CH, unveröffentlicht"
+msgstr "Gewässerabschnittbasierte Einzugsgebietsgliederung GAB_EZGG_CH, unveröffentlicht"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source.mq_gwn_ch"
 msgstr "Mittlere Abflüsse für das Gewässernetz der Schweiz (<a href=\"http://www.bafu.admin.ch/mq-gwn-ch-d\" target='_blank'>MQ-GWN-CH</a>)"
@@ -7867,6 +7870,9 @@ msgstr "Picture number"
 
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Town"
+
+msgid "ch.swisstopo.lubis-terrestrische_aufnahmen"
+msgstr "Terrestrial images swisstopo"
 
 msgid "ch.swisstopo.luftfahrtkarten-icao.metadata"
 msgstr "Division Aeronautical Chart ICAO Raster"
