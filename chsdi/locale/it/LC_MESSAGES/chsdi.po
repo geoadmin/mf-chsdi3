@@ -1068,7 +1068,7 @@ msgid "ch.astra_and_canton.url"
 msgstr "http://www.astra.admin.ch/index.html?lang=it"
 
 msgid "ch.astra.ausnahmetransportrouten"
-msgstr "Percorsi trasporti eccezionali"
+msgstr "Itinerari per trasporti eccezionali"
 
 msgid "ch.astra.historischer-verkehrswege"
 msgstr "IVS Nazionale"
@@ -1906,6 +1906,9 @@ msgstr "No."
 
 msgid "ch.bafu.bundesinventare-vogelreservate.refobjblatt"
 msgstr "Descrizione dell'oggetto"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.schutzebene"
+msgstr "Livello di protezione"
 
 msgid "ch.bafu.bundesinventare-vogelreservate.schutzkategorie"
 msgstr "Categoria di Protezione"
@@ -7867,6 +7870,9 @@ msgstr "Numero immagine"
 
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Luogo"
+
+msgid "ch.swisstopo.lubis-terrestrische_aufnahmen"
+msgstr "Riprese terrestri swisstopo"
 
 msgid "ch.swisstopo.luftfahrtkarten-icao.metadata"
 msgstr "Divisione carta aeronautica OACI Raster"
