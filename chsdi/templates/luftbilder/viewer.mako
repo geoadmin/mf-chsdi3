@@ -127,8 +127,27 @@
   <body onload="init()">
     <div class="header">${title}</div>
     <div class="wrapper">
-      <div id="lubismap"></div>
+    <table class="controls">
+       <tr>
+         <td>Contrast</td>
+         <td><span id="contrastOut"></span>%</td>
+         <td><input id="contrast" type="range" min="0" max="200" value="100"/></td>
+       </tr>
+       <tr>
+         <td>Saturation</td>
+         <td><span id="saturationOut"></span> %</td>
+         <td><input id="saturation" type="range" min="0" max="200" value="100"/></td>
+       </tr>
+       <tr>
+         <td>Brightness</td>
+         <td><span id="brightnessOut"></span> %</td>
+         <td><input id="brightness" type="range" min="0" max="200" value="100"/></td>
+       </tr>
+    </table>
+    <button id="reset" onclick="reset()">Reset</button>
+    <div id="lubismap"></div>
     </div>
+
     <div class="footer">
       <a class="pull-left" href="${_('disclaimer url')}" target="_blank">Copyright</a>
       <div id="messagectrl"></div>
@@ -260,7 +279,58 @@
         view.on('propertychange', debounce(updateUrl));
         updateUrl();
 
+        tile.on('postcompose', function(event) {
+          filter(event.context, lubisMap);
+        });
+
+        function filter(context, lubisMap) {
+          var canvas = context.canvas;
+          var brightnessSlider = document.getElementById("brightness");
+          var contrastSlider = document.getElementById("contrast");
+          var saturationSlider = document.getElementById("saturation");
+          brightnessSlider.addEventListener("change", brightnessFunction(canvas, brightnessSlider.value, lubisMap));
+          contrastSlider.addEventListener("change", contrastFunction(canvas, contrastSlider.value, lubisMap));
+          saturationSlider.addEventListener("change", saturationFunction(canvas, saturationSlider.value, lubisMap));
+        }
       }
+
+      var brightnessFunction = function(canvas, brightnessVal, map) {
+        if (map){
+          var context = canvas.getContext('2d');
+          context.filter = "brightness(" + brightnessVal + "%)";
+          context.drawImage(canvas, 0, 0);
+          map.render();
+        }
+      };
+
+      var contrastFunction = function(canvas, contrastVal, map) {
+        if (map){
+          var context = canvas.getContext('2d');
+          context.filter = "contrast(" + contrastVal + "%)";
+          context.drawImage(canvas, 0, 0);
+          map.render();
+        }
+      };
+
+      var saturationFunction = function(canvas, saturationVal, map) {
+        if (map){
+          var context = canvas.getContext('2d');
+          context.filter = "saturate(" + saturationVal + "%)";
+          context.drawImage(canvas, 0, 0);
+          map.render();
+        }
+      };
+
+      var reset = function(){
+        var brightnessSlider = document.getElementById("brightness");
+        var contrastSlider = document.getElementById("contrast");
+        var saturationSlider = document.getElementById("saturation");
+        brightnessSlider.value = 100;
+        contrastSlider.value = 100;
+        saturationSlider.value = 100;
+      }
+
+
     </script>
   </body>
 </html>
