@@ -16,11 +16,7 @@
           resolutions.unshift(curResolution);
         }
 
-        var lubisMap = new ol.Map({
-          layers: [
-            new ol.layer.Tile({
-              preload: 0,
-              source: new ol.source.TileImage({
+        var tileimage = new ol.source.TileImage({
                 crossOrigin: null,
                 tileGrid: new ol.tilegrid.TileGrid({
                   origin: [0, 0],
@@ -35,13 +31,18 @@
                   if (coords[1] * factor > width || coords[2] * factor > height) {
                     return undefined;
                   }
-
                   curInstance = (++curInstance > MAX_INSTANCES) ? 0 : curInstance;
                   return url.replace('{curInstance}', curInstance) + tileCoord.join('/') + ".jpg";
                 }
-              })
-            })
-          ],
+              });
+
+        var tile = new ol.layer.Tile({
+              preload: 0,
+              source: tileimage
+            });
+
+        var lubisMap = new ol.Map({
+          layers: [ tile ],
           controls: ol.control.defaults().extend([new ol.control.FullScreen()]),
           renderer: 'canvas',
           target: ${target},
