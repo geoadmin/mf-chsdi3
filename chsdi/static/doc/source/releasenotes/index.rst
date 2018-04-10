@@ -16,6 +16,33 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20180418:
+   *******
+
+Release 20180418 - Wednesday, April 18th 2018
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_180328...r_180418>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_180328...r_180418>`__
+
+Geodata
+*******
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | Map swissTLM (color) `<//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-farbe`__ (ch.swisstopo.swisstlm3d-karte-farbe)                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | Map swissTLM (grey) `<//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-grau`__ (ch.swisstopo.swisstlm3d-karte-grau)                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20180328:
    *******
 
