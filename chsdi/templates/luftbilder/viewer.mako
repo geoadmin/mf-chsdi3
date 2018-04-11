@@ -92,6 +92,12 @@
         margin: 10px 0px;
         text-align:center;
       }
+      .controls{
+       margin-left: 10px;
+      }
+      .percent{
+        margin-left: 10px;
+      }
       .footer a {
         padding: 0px 10px;
       }
@@ -103,8 +109,14 @@
       }
       #lubismap {
         width: 100%;
-        height: 100%;
+        height: 95%;
         font-size: 16px;
+      }
+      .slider {
+        margin: 20px 20px 20px 20px;
+      }
+      #reset {
+        margin-left: 10px;
       }
       @media print { /* Used by Chrome */
         #lubismap, .wrapper {
@@ -123,30 +135,21 @@
 
     </style>
     <link rel="shortcut icon" type="image/x-icon" href="${h.versioned(request.static_url('chsdi:static/images/favicon.ico'))}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body onload="init()">
     <div class="header">${title}</div>
     <div class="wrapper">
+    <div id="lubismap"></div>
     <table class="controls">
        <tr>
-         <td>Contrast</td>
-         <td><span id="contrastOut"></span>%</td>
-         <td><input id="contrast" type="range" min="0" max="200" value="100"/></td>
-       </tr>
-       <tr>
-         <td>Saturation</td>
-         <td><span id="saturationOut"></span> %</td>
-         <td><input id="saturation" type="range" min="0" max="200" value="100"/></td>
-       </tr>
-       <tr>
-         <td>Brightness</td>
-         <td><span id="brightnessOut"></span> %</td>
-         <td><input id="brightness" type="range" min="0" max="200" value="100"/></td>
+         <td>${_('image_contrast')}</td>
+         <td><input id="contrast" class="slider" type="range" min="0" max="200" value="100"/></td>
+         <td id="contrastOut" class="percent">100%</td>
+         <td><button id="reset" class="btn btn-secondary btn-sm" onclick="reset()">Reset</button></td>
        </tr>
     </table>
-    <button id="reset" onclick="reset()">Reset</button>
-    <div id="lubismap"></div>
-    </div>
+   </div>
 
     <div class="footer">
       <a class="pull-left" href="${_('disclaimer url')}" target="_blank">Copyright</a>
@@ -280,54 +283,37 @@
         updateUrl();
 
         tile.on('postcompose', function(event) {
-          filter(event.context, lubisMap);
+          setSliderListeners(event.context, lubisMap);
+          //don't listen to event once slider listeners are set
+          tile.un('postcompose');
         });
 
-        function filter(context, lubisMap) {
+        function setSliderListeners(context, lubisMap) {
           var canvas = context.canvas;
-          var brightnessSlider = document.getElementById("brightness");
           var contrastSlider = document.getElementById("contrast");
-          var saturationSlider = document.getElementById("saturation");
-          brightnessSlider.addEventListener("change", brightnessFunction(canvas, brightnessSlider.value, lubisMap));
-          contrastSlider.addEventListener("change", contrastFunction(canvas, contrastSlider.value, lubisMap));
-          saturationSlider.addEventListener("change", saturationFunction(canvas, saturationSlider.value, lubisMap));
+          if (window.attachEvent) {
+            contrastSlider.attachEvent("onchange", updateFilter(canvas, "contrast", contrastSlider, lubisMap));
+          } else if (window.addEventListener) {
+            contrastSlider.addEventListener("change", updateFilter(canvas, "contrast", contrastSlider, lubisMap));
+            }
         }
       }
 
-      var brightnessFunction = function(canvas, brightnessVal, map) {
-        if (map){
-          var context = canvas.getContext('2d');
-          context.filter = "brightness(" + brightnessVal + "%)";
-          context.drawImage(canvas, 0, 0);
-          map.render();
-        }
-      };
-
-      var contrastFunction = function(canvas, contrastVal, map) {
-        if (map){
-          var context = canvas.getContext('2d');
-          context.filter = "contrast(" + contrastVal + "%)";
-          context.drawImage(canvas, 0, 0);
-          map.render();
-        }
-      };
-
-      var saturationFunction = function(canvas, saturationVal, map) {
-        if (map){
-          var context = canvas.getContext('2d');
-          context.filter = "saturate(" + saturationVal + "%)";
-          context.drawImage(canvas, 0, 0);
-          map.render();
-        }
-      };
+      var updateFilter = function(canvas, filter,  slider, map){
+        var context = canvas.getContext('2d');
+        var value = slider.value;
+        var percent = document.getElementById(filter + "Out");
+        percent.innerHTML = value + "%";
+        context.filter = filter + "(" + value + "%)";
+        context.drawImage(canvas, 0, 0);
+        map.render();
+      }
 
       var reset = function(){
-        var brightnessSlider = document.getElementById("brightness");
         var contrastSlider = document.getElementById("contrast");
-        var saturationSlider = document.getElementById("saturation");
-        brightnessSlider.value = 100;
         contrastSlider.value = 100;
-        saturationSlider.value = 100;
+        var percent = document.getElementById("contrastOut");
+        percent.innerHTML = "100%"
       }
 
 
