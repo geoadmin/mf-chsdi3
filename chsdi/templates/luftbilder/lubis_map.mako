@@ -17,32 +17,47 @@
         }
 
         var tileimage = new ol.source.TileImage({
-                crossOrigin: null,
-                tileGrid: new ol.tilegrid.TileGrid({
-                  origin: [0, 0],
-                  resolutions: resolutions
-                }),
-                tileUrlFunction: function(tileCoord, pixelRatio, projection) {
-                  var coords = tileCoord;
-                  if (coords[0] < 0 || coords[1] < 0 || coords[2] < 0) {
-                    return undefined;
-                  }
-                  var factor = this.getTileGrid().getTileSize() * this.getTileGrid().getResolutions()[coords[0]];
-                  if (coords[1] * factor > width || coords[2] * factor > height) {
-                    return undefined;
-                  }
-                  curInstance = (++curInstance > MAX_INSTANCES) ? 0 : curInstance;
-                  return url.replace('{curInstance}', curInstance) + tileCoord.join('/') + ".jpg";
-                }
-              });
+          crossOrigin: 'anonymous',
+          tileGrid: new ol.tilegrid.TileGrid({
+            origin: [0, 0],
+            resolutions: resolutions
+          }),
+          tileUrlFunction: function(tileCoord, pixelRatio, projection) {
+            var coords = tileCoord;
+            if (coords[0] < 0 || coords[1] < 0 || coords[2] < 0) {
+              return undefined;
+            }
+            var factor = this.getTileGrid().getTileSize() * this.getTileGrid().getResolutions()[coords[0]];
+            if (coords[1] * factor > width || coords[2] * factor > height) {
+              return undefined;
+            }
+            curInstance = (++curInstance > MAX_INSTANCES) ? 0 : curInstance;
+            return url.replace('{curInstance}', curInstance) + tileCoord.join('/') + ".jpg";
+          }
+        });
 
         var tile = new ol.layer.Tile({
-              preload: 0,
-              source: tileimage
-            });
+          preload: 0,
+          source: tileimage
+        });
+
+        var raster = new ol.source.Raster({
+          sources: [tileimage],
+          operation: function(pixels, data) {
+            var pixel = pixels[0];
+            pixel[0] = (data.contrast / 100) * pixel[0];
+            pixel[1] = (data.contrast / 100) * pixel[1];
+            pixel[2] = (data.contrast / 100) * pixel[2];
+            return pixel;
+          }
+        });
 
         var lubisMap = new ol.Map({
-          layers: [ tile ],
+          layers: [
+            new ol.layer.Image({
+              source: raster
+            })
+          ],
           controls: ol.control.defaults().extend([new ol.control.FullScreen()]),
           renderer: 'canvas',
           target: ${target},

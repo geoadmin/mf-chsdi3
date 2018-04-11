@@ -93,7 +93,7 @@
         text-align:center;
       }
       .controls{
-       margin-left: 10px;
+        margin-left: 10px;
       }
       .percent{
         margin-left: 10px;
@@ -146,7 +146,7 @@
          <td>${_('image_contrast')}</td>
          <td><input id="contrast" class="slider" type="range" min="0" max="200" value="100"/></td>
          <td id="contrastOut" class="percent">100%</td>
-         <td><button id="reset" class="btn btn-secondary btn-sm" onclick="reset()">Reset</button></td>
+         <td><button id="reset" class="btn btn-secondary btn-sm">Reset</button></td>
        </tr>
     </table>
    </div>
@@ -282,41 +282,33 @@
         view.on('propertychange', debounce(updateUrl));
         updateUrl();
 
-        tile.on('postcompose', function(event) {
-          setSliderListeners(event.context, lubisMap);
-          //don't listen to event once slider listeners are set
-          tile.un('postcompose');
+        var contrastSlider = document.getElementById("contrast");
+        var contrastOut = document.getElementById("contrastOut");
+        var resetbutton = document.getElementById("reset");
+
+        setSliderListeners();
+
+        raster.on('beforeoperations', function(event) {
+          var data = event.data;
+          data["contrast"] = Number(contrastSlider.value);
         });
 
-        function setSliderListeners(context, lubisMap) {
-          var canvas = context.canvas;
-          var contrastSlider = document.getElementById("contrast");
-          if (window.attachEvent) {
-            contrastSlider.attachEvent("onchange", updateFilter(canvas, "contrast", contrastSlider, lubisMap));
-          } else if (window.addEventListener) {
-            contrastSlider.addEventListener("change", updateFilter(canvas, "contrast", contrastSlider, lubisMap));
-            }
+        function onSliderChange() {
+          contrastOut.innerHTML = contrastSlider.value + "%";
+          raster.changed();
+        }
+
+        function onReset(){
+          contrastSlider.value = 100;
+          contrastOut.innerHTML = "100%";
+          raster.changed();
+        }
+
+        function setSliderListeners() {
+          contrastSlider.addEventListener("change", onSliderChange);
+          resetbutton.addEventListener("click", onReset);
         }
       }
-
-      var updateFilter = function(canvas, filter,  slider, map){
-        var context = canvas.getContext('2d');
-        var value = slider.value;
-        var percent = document.getElementById(filter + "Out");
-        percent.innerHTML = value + "%";
-        context.filter = filter + "(" + value + "%)";
-        context.drawImage(canvas, 0, 0);
-        map.render();
-      }
-
-      var reset = function(){
-        var contrastSlider = document.getElementById("contrast");
-        contrastSlider.value = 100;
-        var percent = document.getElementById("contrastOut");
-        percent.innerHTML = "100%"
-      }
-
-
-    </script>
+   </script>
   </body>
 </html>
