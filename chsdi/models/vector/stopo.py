@@ -2679,6 +2679,15 @@ class SwissMapVector10MetadataPerimeter(Base, ShopStandardClass, Vector):
 register(SwissMapVector10MetadataPerimeter.__bodId__, SwissMapVector10MetadataPerimeter)
 
 
+class SwissMapVector25MetadataPerimeter(Base, ShopStandardClass, Vector):
+    __tablename__ = 'shop_perimeter_vector25'
+    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
+    __bodId__ = 'ch.swisstopo.swiss-map-vector25.metadata'
+    the_geom = Column(Geometry2D)
+
+register(SwissMapVector25MetadataPerimeter.__bodId__, SwissMapVector25MetadataPerimeter)
+
+
 class SwissMapRaster10MetadataPerimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_raster10'
     __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
