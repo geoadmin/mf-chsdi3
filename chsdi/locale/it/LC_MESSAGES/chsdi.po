@@ -1068,7 +1068,7 @@ msgid "ch.astra_and_canton.url"
 msgstr "http://www.astra.admin.ch/index.html?lang=it"
 
 msgid "ch.astra.ausnahmetransportrouten"
-msgstr "Percorsi trasporti eccezionali"
+msgstr "Itinerari per trasporti eccezionali"
 
 msgid "ch.astra.historischer-verkehrswege"
 msgstr "IVS Nazionale"
@@ -1811,6 +1811,15 @@ msgstr "Descrizione dell'oggetto"
 msgid "ch.bafu.bundesinventare-flachmoore_regional"
 msgstr "Paludi regionali"
 
+msgid "ch.bafu.bundesinventare-flachmoore_regional.name"
+msgstr "Nome"
+
+msgid "ch.bafu.bundesinventare-flachmoore_regional.objnummer"
+msgstr "No."
+
+msgid "ch.bafu.bundesinventare-flachmoore_regional.shape_area"
+msgstr "Superficie [ha]"
+
 msgid "ch.bafu.bundesinventare-flachmoore.shape_area"
 msgstr "Superficie [ha]"
 
@@ -1906,6 +1915,9 @@ msgstr "No."
 
 msgid "ch.bafu.bundesinventare-vogelreservate.refobjblatt"
 msgstr "Descrizione dell'oggetto"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.schutzebene"
+msgstr "Livello di protezione"
 
 msgid "ch.bafu.bundesinventare-vogelreservate.schutzkategorie"
 msgstr "Categoria di Protezione"
@@ -3245,8 +3257,17 @@ msgstr "Specie arboree (IFN)"
 msgid "ch.bafu.landesforstinventar-totholz"
 msgstr "Legno morto (IFN)"
 
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
+msgstr "Altezza della Vegetazione IFN"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief"
+msgstr "Modello della superficie terrestre IFN"
+
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Percentuale di bosco (IFN)"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
+msgstr "Mescolanza della foresta IFN"
 
 msgid "ch.bafu.luftreinhaltung-ammoniakkonzentration"
 msgstr "Concentrazione di ammoniaca"
@@ -5129,6 +5150,9 @@ msgstr "Regioni-Energia"
 msgid "ch.bfe.energiestaedte.name"
 msgstr "Comune / città"
 
+msgid "ch.bfe.geak-experten"
+msgstr "Esperti CECE"
+
 msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
 
@@ -5320,6 +5344,9 @@ msgstr "Surface [m2]"
 
 msgid "ch.bfe.solarenergie-eignung-fassaden.klasse"
 msgstr "Aptitude"
+
+msgid "ch.bfe.solarprofis"
+msgstr "Professionisti del solare"
 
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistica idroelettricitá"
@@ -7028,6 +7055,9 @@ msgstr "Stato dello sfruttamento"
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.tckind"
 msgstr "Gruppo di rocce"
 
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung"
+msgstr "Gypse: extraction et transformation"
+
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
 msgstr "Minerali industriali"
 
@@ -7106,6 +7136,9 @@ msgstr "Stato dello sfruttamento"
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.tckind"
 msgstr "Gruppo di rocce"
 
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung"
+msgstr "Sel: extraction et transformation"
+
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
 msgstr "Mineralizzazioni"
 
@@ -7132,6 +7165,9 @@ msgstr "Informazioni dettagliate"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.stkind"
 msgstr "Stato dello sfruttamento"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung"
+msgstr "Matières premières de ciment"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Divisione carte geologiche speciali Raster"
@@ -7867,6 +7903,9 @@ msgstr "Numero immagine"
 
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Luogo"
+
+msgid "ch.swisstopo.lubis-terrestrische_aufnahmen"
+msgstr "Riprese terrestri swisstopo"
 
 msgid "ch.swisstopo.luftfahrtkarten-icao.metadata"
 msgstr "Divisione carta aeronautica OACI Raster"
@@ -9121,6 +9160,9 @@ msgstr "Piano settoriale militare"
 
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Carte des zones interdites"
+
+msgid "ch.vbs.swissmilpilotschart"
+msgstr "SWISS MIL PILOTS CHART 1:500'000"
 
 msgid "ch.vbs.territorialregionen"
 msgstr "Divisione territoriali"
@@ -10402,6 +10444,9 @@ msgstr "Nome locale swisstopo"
 
 msgid "<i>Luftseilbahn</i>"
 msgstr "Teleferica"
+
+msgid "image_contrast"
+msgstr "Contraste"
 
 msgid "<i>Massiv</i>"
 msgstr "Massiccio"

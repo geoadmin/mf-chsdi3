@@ -1068,7 +1068,7 @@ msgid "ch.astra_and_canton.url"
 msgstr "http://www.astra.admin.ch/index.html?lang=de"
 
 msgid "ch.astra.ausnahmetransportrouten"
-msgstr "Cant. routes for exceptional loads"
+msgstr "Routes for exceptional loads"
 
 msgid "ch.astra.historischer-verkehrswege"
 msgstr "ch.astra.historischer-verkehrswege"
@@ -1811,6 +1811,15 @@ msgstr "Objectsheet"
 msgid "ch.bafu.bundesinventare-flachmoore_regional"
 msgstr "Regional fens"
 
+msgid "ch.bafu.bundesinventare-flachmoore_regional.name"
+msgstr "Name"
+
+msgid "ch.bafu.bundesinventare-flachmoore_regional.objnummer"
+msgstr "No."
+
+msgid "ch.bafu.bundesinventare-flachmoore_regional.shape_area"
+msgstr "Area [ha]"
+
 msgid "ch.bafu.bundesinventare-flachmoore.shape_area"
 msgstr "Area [ha]"
 
@@ -1906,6 +1915,9 @@ msgstr "No."
 
 msgid "ch.bafu.bundesinventare-vogelreservate.refobjblatt"
 msgstr "Objectsheet"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.schutzebene"
+msgstr "Level of protection"
 
 msgid "ch.bafu.bundesinventare-vogelreservate.schutzkategorie"
 msgstr "Protection category"
@@ -3245,8 +3257,17 @@ msgstr "Tree species (NFI)"
 msgid "ch.bafu.landesforstinventar-totholz"
 msgstr "Dead wood (NFI)"
 
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
+msgstr "Vegetation height model NFI"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief"
+msgstr "Surface model NFI"
+
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Percentage of forest area (NFI)"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
+msgstr "Forest mix rate NFI"
 
 msgid "ch.bafu.luftreinhaltung-ammoniakkonzentration"
 msgstr "Ammonia Concentration"
@@ -3807,7 +3828,7 @@ msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source"
 msgstr "Herkunft der Abflussdaten"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source.gab_ezgg_ch"
-msgstr "Gewässerabschnittbasierte Einzugsgebietsgliede-rung GAB_EZGG_CH, unveröffentlicht"
+msgstr "Gewässerabschnittbasierte Einzugsgebietsgliederung GAB_EZGG_CH, unveröffentlicht"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source.mq_gwn_ch"
 msgstr "Mittlere Abflüsse für das Gewässernetz der Schweiz (<a href=\"http://www.bafu.admin.ch/mq-gwn-ch-d\" target='_blank'>MQ-GWN-CH</a>)"
@@ -5129,6 +5150,9 @@ msgstr "Energy-Regions"
 msgid "ch.bfe.energiestaedte.name"
 msgstr "Municipality / city"
 
+msgid "ch.bfe.geak-experten"
+msgstr "GEAK experts"
+
 msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
 
@@ -5320,6 +5344,9 @@ msgstr "Area [m2]"
 
 msgid "ch.bfe.solarenergie-eignung-fassaden.klasse"
 msgstr "Suitability"
+
+msgid "ch.bfe.solarprofis"
+msgstr "Solarprofis"
 
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Hydropower statistics"
@@ -7028,6 +7055,9 @@ msgstr "Abbaustatus"
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.tckind"
 msgstr "Gesteinsgruppe"
 
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung"
+msgstr "Gips: Abbau und Verarbeitung"
+
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
 msgstr "Industrial minerals"
 
@@ -7106,6 +7136,9 @@ msgstr "Abbaustatus"
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.tckind"
 msgstr "Gesteinsgruppe"
 
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung"
+msgstr "Salz: Abbau und Verarbeitung"
+
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
 msgstr "Mineralizations"
 
@@ -7132,6 +7165,9 @@ msgstr "Detailinformation"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.stkind"
 msgstr "Abbaustatus"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung"
+msgstr "Zementrohstoffe: Abbau und Verarb."
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Division special geological maps Raster"
@@ -7867,6 +7903,9 @@ msgstr "Picture number"
 
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Town"
+
+msgid "ch.swisstopo.lubis-terrestrische_aufnahmen"
+msgstr "Terrestrial images swisstopo"
 
 msgid "ch.swisstopo.luftfahrtkarten-icao.metadata"
 msgstr "Division Aeronautical Chart ICAO Raster"
@@ -9121,6 +9160,9 @@ msgstr "Sachplan Militär"
 
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Sperr- und Gefahrenzonenkarte"
+
+msgid "ch.vbs.swissmilpilotschart"
+msgstr "SWISS MIL PILOTS CHART 1:500'000"
 
 msgid "ch.vbs.territorialregionen"
 msgstr "Territorial divisions"
@@ -10402,6 +10444,9 @@ msgstr "Local name"
 
 msgid "<i>Luftseilbahn</i>"
 msgstr "Cable car"
+
+msgid "image_contrast"
+msgstr "Contrast"
 
 msgid "<i>Massiv</i>"
 msgstr "Massif"

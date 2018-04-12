@@ -1811,6 +1811,15 @@ msgstr "Objektblatt"
 msgid "ch.bafu.bundesinventare-flachmoore_regional"
 msgstr "Flachmoore regional"
 
+msgid "ch.bafu.bundesinventare-flachmoore_regional.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-flachmoore_regional.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-flachmoore_regional.shape_area"
+msgstr "Fläche [ha]"
+
 msgid "ch.bafu.bundesinventare-flachmoore.shape_area"
 msgstr "Fläche [ha]"
 
@@ -1906,6 +1915,9 @@ msgstr "Nr."
 
 msgid "ch.bafu.bundesinventare-vogelreservate.refobjblatt"
 msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-vogelreservate.schutzebene"
+msgstr "Schutzebene"
 
 msgid "ch.bafu.bundesinventare-vogelreservate.schutzkategorie"
 msgstr "Schutzkategorie"
@@ -3245,8 +3257,17 @@ msgstr "Baumarten (LFI)"
 msgid "ch.bafu.landesforstinventar-totholz"
 msgstr "Totholz (LFI)"
 
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
+msgstr "Vegetationshöhe LFI"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief"
+msgstr "Oberflächenmodell LFI"
+
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Waldanteil (LFI)"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
+msgstr "Waldmischungsgrad LFI"
 
 msgid "ch.bafu.luftreinhaltung-ammoniakkonzentration"
 msgstr "Ammoniakkonzentration"
@@ -3807,7 +3828,7 @@ msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source"
 msgstr "Herkunft der Abflussdaten"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source.gab_ezgg_ch"
-msgstr "Gewässerabschnittbasierte Einzugsgebietsgliede-rung GAB_EZGG_CH, unveröffentlicht"
+msgstr "Gewässerabschnittbasierte Einzugsgebietsgliederung GAB_EZGG_CH, unveröffentlicht"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.discharge_source.mq_gwn_ch"
 msgstr "Mittlere Abflüsse für das Gewässernetz der Schweiz (<a href=\"http://www.bafu.admin.ch/mq-gwn-ch-d\" target='_blank'>MQ-GWN-CH</a>)"
@@ -5129,6 +5150,9 @@ msgstr "Energie-Regionen"
 msgid "ch.bfe.energiestaedte.name"
 msgstr "Gemeinde / Stadt"
 
+msgid "ch.bfe.geak-experten"
+msgstr "GEAK-Experten"
+
 msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "Sachplan geol. Tiefenlager"
 
@@ -5320,6 +5344,9 @@ msgstr "Fläche [m2]"
 
 msgid "ch.bfe.solarenergie-eignung-fassaden.klasse"
 msgstr "Eignung"
+
+msgid "ch.bfe.solarprofis"
+msgstr "Solarprofis"
 
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistik Wasserkraft"
@@ -7028,6 +7055,9 @@ msgstr "Abbaustatus"
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.tckind"
 msgstr "Gesteinsgruppe"
 
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung"
+msgstr "Gips: Abbau und Verarbeitung"
+
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
 msgstr "Industrieminerale: Vorkommen"
 
@@ -7106,6 +7136,9 @@ msgstr "Abbaustatus"
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.tckind"
 msgstr "Gesteinsgruppe"
 
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung"
+msgstr "Salz: Abbau und Verarbeitung"
+
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
 msgstr "Metallrohstoffe: Vorkommen"
 
@@ -7132,6 +7165,9 @@ msgstr "Detailinformation"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.stkind"
 msgstr "Abbaustatus"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung"
+msgstr "Zementrohstoffe: Abbau und Verarb."
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Einteilung Geologische Spezialkarten Raster"
@@ -7867,6 +7903,9 @@ msgstr "Bildnummer"
 
 msgid "ch.swisstopo.lubis-luftbilder_schwarzweiss.ort"
 msgstr "Ort"
+
+msgid "ch.swisstopo.lubis-terrestrische_aufnahmen"
+msgstr "Terrestrische Aufnahmen swisstopo"
 
 msgid "ch.swisstopo.luftfahrtkarten-icao.metadata"
 msgstr "Einteilung Luftfahrtkarte ICAO Raster"
@@ -9121,6 +9160,9 @@ msgstr "Sachplan Militär"
 
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Sperr- und Gefahrenzonenkarte"
+
+msgid "ch.vbs.swissmilpilotschart"
+msgstr "SWISS MIL PILOTS CHART 1:500'000"
 
 msgid "ch.vbs.territorialregionen"
 msgstr "Territorialdivisionen"
@@ -10402,6 +10444,9 @@ msgstr "Lokalname swisstopo"
 
 msgid "<i>Luftseilbahn</i>"
 msgstr "Luftseilbahn"
+
+msgid "image_contrast"
+msgstr "Kontrast"
 
 msgid "<i>Massiv</i>"
 msgstr "Massiv"
