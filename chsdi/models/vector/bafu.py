@@ -1424,6 +1424,7 @@ class Flachmoore(Base, Vector):
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-flachmoore'
     __template__ = 'templates/htmlpopup/flachmoore.mako'
+    __queryable_attributes__ = ['objnummer']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
@@ -1436,15 +1437,15 @@ register('ch.bafu.bundesinventare-flachmoore', Flachmoore)
 
 
 class FlachmooreReg(Base, Vector):
-    __tablename__ = 'flachmoore_regional'
+    __tablename__ = 'fm_regional'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-flachmoore_regional'
     __template__ = 'templates/htmlpopup/flachmoore_reg.mako'
-    __label__ = 'fmreg_name'
+    __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    fmreg_name = Column('fmreg_name', Unicode)
-    fmreg_obj = Column('fmreg_obj', Unicode)
-    fmreg_gf = Column('fmreg_gf', Unicode)
+    name = Column('name', Unicode)
+    objnummer = Column('objnummer', Unicode)
+    shape_area = Column('shape_area', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-flachmoore_regional', FlachmooreReg)

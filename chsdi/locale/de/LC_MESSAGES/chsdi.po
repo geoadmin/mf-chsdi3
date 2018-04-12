@@ -1811,6 +1811,15 @@ msgstr "Objektblatt"
 msgid "ch.bafu.bundesinventare-flachmoore_regional"
 msgstr "Flachmoore regional"
 
+msgid "ch.bafu.bundesinventare-flachmoore_regional.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-flachmoore_regional.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-flachmoore_regional.shape_area"
+msgstr "Fläche [ha]"
+
 msgid "ch.bafu.bundesinventare-flachmoore.shape_area"
 msgstr "Fläche [ha]"
 
@@ -3248,8 +3257,17 @@ msgstr "Baumarten (LFI)"
 msgid "ch.bafu.landesforstinventar-totholz"
 msgstr "Totholz (LFI)"
 
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
+msgstr "Vegetationshöhe LFI"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief"
+msgstr "Oberflächenmodell LFI"
+
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Waldanteil (LFI)"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
+msgstr "Waldmischungsgrad LFI"
 
 msgid "ch.bafu.luftreinhaltung-ammoniakkonzentration"
 msgstr "Ammoniakkonzentration"
@@ -5132,6 +5150,9 @@ msgstr "Energie-Regionen"
 msgid "ch.bfe.energiestaedte.name"
 msgstr "Gemeinde / Stadt"
 
+msgid "ch.bfe.geak-experten"
+msgstr "GEAK-Experten"
+
 msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "Sachplan geol. Tiefenlager"
 
@@ -5323,6 +5344,9 @@ msgstr "Fläche [m2]"
 
 msgid "ch.bfe.solarenergie-eignung-fassaden.klasse"
 msgstr "Eignung"
+
+msgid "ch.bfe.solarprofis"
+msgstr "Solarprofis"
 
 msgid "ch.bfe.statistik-wasserkraftanlagen"
 msgstr "Statistik Wasserkraft"
@@ -7031,6 +7055,9 @@ msgstr "Abbaustatus"
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.tckind"
 msgstr "Gesteinsgruppe"
 
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung"
+msgstr "Gips: Abbau und Verarbeitung"
+
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
 msgstr "Industrieminerale: Vorkommen"
 
@@ -7109,6 +7136,9 @@ msgstr "Abbaustatus"
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.tckind"
 msgstr "Gesteinsgruppe"
 
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung"
+msgstr "Salz: Abbau und Verarbeitung"
+
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
 msgstr "Metallrohstoffe: Vorkommen"
 
@@ -7135,6 +7165,9 @@ msgstr "Detailinformation"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.stkind"
 msgstr "Abbaustatus"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung"
+msgstr "Zementrohstoffe: Abbau und Verarb."
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Einteilung Geologische Spezialkarten Raster"
@@ -9128,6 +9161,9 @@ msgstr "Sachplan Militär"
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Sperr- und Gefahrenzonenkarte"
 
+msgid "ch.vbs.swissmilpilotschart"
+msgstr "SWISS MIL PILOTS CHART 1:500'000"
+
 msgid "ch.vbs.territorialregionen"
 msgstr "Territorialdivisionen"
 
@@ -10408,6 +10444,9 @@ msgstr "Lokalname swisstopo"
 
 msgid "<i>Luftseilbahn</i>"
 msgstr "Luftseilbahn"
+
+msgid "image_contrast"
+msgstr "Kontrast"
 
 msgid "<i>Massiv</i>"
 msgstr "Massiv"
