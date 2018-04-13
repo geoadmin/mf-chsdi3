@@ -2684,6 +2684,7 @@ class SwissMapVector25MetadataPerimeter(Base, Vector):
     __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/smv25.mako'
     __bodId__ = 'ch.swisstopo.swiss-map-vector25.metadata'
+    __label__ = 'name_de'
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
     name_de = Column('s_title_de', Unicode)
