@@ -112,9 +112,6 @@
         height: 95%;
         font-size: 16px;
       }
-      .slider {
-        margin: 20px 20px 20px 20px;
-      }
       #reset {
         margin-left: 10px;
       }
@@ -136,15 +133,24 @@
     </style>
     <link rel="shortcut icon" type="image/x-icon" href="${h.versioned(request.static_url('chsdi:static/images/favicon.ico'))}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body onload="init()">
     <div class="header">${title}</div>
     <div class="wrapper">
     <div id="lubismap"></div>
-    <table class="controls">
+    <table class="controls" style="border-collapse: separate; border-spacing: 20px;" >
        <tr>
          <td>${_('image_contrast')}</td>
-         <td><input id="contrast" class="slider" type="range" min="0" max="200" value="100"/></td>
+         <td>
+          <button id="minus-button" class="btn btn-secondary btn-sm" style="border-radius: 50%"><i class="fa fa-minus"></i></button>
+         </td>
+         <td><input id="contrast" type="range" min="0" max="200" value="100"/></td>
+         <td>
+          <button id="plus-button"class="btn btn-secondary btn-sm" style="border-radius: 50%"><i class="fa fa-plus"></i></button>
+         </td>
          <td id="contrastOut" class="percent">100%</td>
          <td><button id="reset" class="btn btn-secondary btn-sm">Reset</button></td>
        </tr>
@@ -285,12 +291,96 @@
         var contrastSlider = document.getElementById("contrast");
         var contrastOut = document.getElementById("contrastOut");
         var resetbutton = document.getElementById("reset");
+        var minusbutton = document.getElementById("minus-button");
+        var plusbutton = document.getElementById("plus-button");
 
         setSliderListeners();
+
+        var equalizedValues = undefined;
+        var mean = undefined;
+
+        function getPixelList(data){
+          var pixel_list = [];
+          for (var i=0; i<(data.length);i+=4){
+            if (data[i+3]!=0){
+              var pixel = [data[i], data[i+1], data[i+2], data[i+3]];
+              pixel_list.push(pixel);
+            }
+          }
+          return pixel_list;
+        }
+
+        function allZero(data){
+          for (var key in data){
+            if (data[key] != 0) return false
+          }
+          return true
+        }
+
+        // computes normalized histogram
+        function getHistogram(pixels){
+          histogram = {};
+          var number_pixels = pixels.length;
+
+          //initialize histogram 
+          for (var i = 0; i < 101; i++){
+            histogram[i] = 0;
+          }
+
+          for (var p in pixels){
+            // convert to hcl
+            var pix = pixels[p];
+            var hcl = rgb2hcl(pix);
+            // get luminance values
+            var l = parseInt(hcl[2]);
+            // augment count
+            histogram[l] = histogram[l] + 1;
+          }
+
+          //normalization of histogram
+          for (var i = 0; i < 101; i++){
+            histogram[i] = histogram[i] / number_pixels;
+          }
+          return histogram;
+        }
+
+        //computes mean of RGB in image
+        function getMeanLuminance(histogram){
+          var mean_luminance = 0;
+          for (var i = 0; i < 101; i++){
+            mean_luminance += histogram[i]*i;
+          }
+          return mean_luminance;
+        }
+
+        function getEqualizedValues(histogram){
+          var equalizedValues = {};
+          var sum = 0;
+          for ( var i in histogram){
+            sum += histogram[i];
+            equalizedValues[i] = sum;
+          }
+          return equalizedValues;
+        }
+
+        lubisMap.on('postrender', function(event){
+          var canvas = document.getElementsByTagName('canvas')[0];
+          var context = canvas.getContext('2d');
+          var imageData = context.getImageData(0,0, canvas.width, canvas.height).data;
+          // to prevent that recomputed every time map rendered
+          if (!allZero(imageData) && !mean) {
+            var pixel_list = getPixelList(imageData);
+            var histogram = getHistogram(pixel_list);
+            mean = getMeanLuminance(histogram);
+            equalizedValues = getEqualizedValues(histogram);
+          }
+        });
 
         raster.on('beforeoperations', function(event) {
           var data = event.data;
           data["contrast"] = Number(contrastSlider.value);
+          data["equalizedValues"] = equalizedValues;
+          data["mean"] = mean;
         });
 
         function onSliderChange() {
@@ -304,9 +394,23 @@
           raster.changed();
         }
 
-        function setSliderListeners() {
+        function moreContrast(){
+          contrastSlider.value = parseInt(contrastSlider.value) + 5;
+          contrastOut.innerHTML = contrastSlider.value + "%";
+          raster.changed();
+        }
+
+        function lessContrast(){
+          contrastSlider.value = parseInt(contrastSlider.value) - 5;
+          contrastOut.innerHTML = contrastSlider.value + "%";
+          raster.changed();
+        }
+
+       function setSliderListeners() {
           contrastSlider.addEventListener("change", onSliderChange);
           resetbutton.addEventListener("click", onReset);
+          plusbutton.addEventListener("click", moreContrast);
+          minusbutton.addEventListener("click", lessContrast);
         }
       }
    </script>
