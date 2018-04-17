@@ -38,9 +38,31 @@ API & applications
 Geodata
 *******
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | Map swissTLM (color) `<//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-farbe`__ (ch.swisstopo.swisstlm3d-karte-farbe)                                                     |
+| Update | `Water & migrant bird reserves <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-vogelreservate>`__ (ch.bafu.bundesinventare-vogelreservate)                                     |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | Map swissTLM (grey) `<//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-grau`__ (ch.swisstopo.swisstlm3d-karte-grau)                                                        |
+| Update | `Regional fens <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-flachmoore_regional>`__ (ch.bafu.bundesinventare-flachmoore_regional)                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: landslides <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_rutschungen>`__ (ch.bafu.showme-kantone_rutschungen)                                                |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: floods <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_hochwasser>`__ (ch.bafu.showme-kantone_hochwasser)                                                      |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons : avalanches <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_lawinen>`__ (ch.bafu.showme-kantone_lawinen)                                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: fall processes <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_sturzprozesse>`__ (ch.bafu.showme-gemeinden_sturzprozesse)                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: floods <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_hochwasser>`__ (ch.bafu.showme-gemeinden_hochwasser)                                                 |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: fall processes <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_sturzprozesse>`__ (ch.bafu.showme-kantone_sturzprozesse)                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: landslides <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_rutschungen>`__ (ch.bafu.showme-gemeinden_rutschungen)                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: avalanches <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_lawinen>`__ (ch.bafu.showme-gemeinden_lawinen)                                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cleantech projects <//map.geo.admin.ch/?layers=ch.bfe.energieforschung>`__ (ch.bfe.energieforschung)                                                                              |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map swissTLM (color) <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-farbe>`__ (ch.swisstopo.swisstlm3d-karte-farbe)                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map swissTLM (grey) <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-grau>`__ (ch.swisstopo.swisstlm3d-karte-grau)                                                       |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `National Map 1:25'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk25.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk25.noscale)                                     |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
