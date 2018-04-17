@@ -401,7 +401,7 @@ register('ch.bafu.hydrologie-niedrigwasserstatistik', Niedrigwasserstatistik)
 
 
 class TypFliessgewaesser(Base, Vector):
-    __tablename__ = 'typ_fliessgewaesser'
+    __tablename__ = 'typisierung_fliessgewaesser'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.typisierung-fliessgewaesser'
     __queryable_attributes__ = ['objectid_gwn25', 'grosserfluss', 'biogeo', 'hoehe', 'abfluss', 'gefaelle', 'geo', 'code', 'gewaessertyp', 'aehnlichkeit']
@@ -425,6 +425,11 @@ class TypFliessgewaesser(Base, Vector):
     url_uebersicht_de = Column('url_uebersicht_de', Unicode)
     url_uebersicht_fr = Column('url_uebersicht_fr', Unicode)
     name = Column('name', Unicode)
+    discharge = Column('discharge', Numeric)
+    discharge_source = Column('discharge_source', Unicode)
+    discharge_quality = Column('discharge_quality', Integer)
+    slope = Column('slope', Numeric)
+    slope_quality = Column('slope_quality', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.typisierung-fliessgewaesser', TypFliessgewaesser)

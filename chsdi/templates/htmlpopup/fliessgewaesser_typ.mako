@@ -50,12 +50,12 @@
 %>
 
 <table class="table-with-border kernkraftwerke-extended">
-<tr>
-<td width="20%">&nbsp;</td>
-<td width="30%">&nbsp;</td>
-<td width="20%">&nbsp;</td>
-<td width="30%" >&nbsp;</td>
-</tr>
+<colgroup>
+   <col width=20%>
+   <col width=30%>
+   <col width=20%>
+   <col width=30%>
+</colgroup>
 <tr>
 <th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.gewaessertyp')}</th>
 <td>${c['attributes']['gewaessertyp'] or '-'}</td>
@@ -102,13 +102,51 @@
 </tr>
 <tr>
 <th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.url_uebersicht')}</th>
-% if legend_pdf:
-<td><a href="${url_pdf_legend}" target="_blank">${c['attributes'][url_uebersicht] or '-'}</a></td>
+% if pdf_legend:
+<td><a href="${url_legend_pdf}" target="_blank">${c['attributes'][url_uebersicht] or '-'}</a></td>
 % else:
 <td>-</td>
 % endif
 <th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.name')}</th>
 <td>${c['attributes']['name'] or '-'}</td>
+</tr>
+<tr>
+<th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.discharge')}</th>
+<td>${c['attributes']['discharge'] or '-'}</td>
+<th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.discharge_source')}</th>
+% if c['attributes']['discharge_source']=='GAB_EZGG_CH':
+<td>${_('ch.bafu.typisierung-fliessgewaesser.discharge_source.gab_ezgg_ch')}</td>
+% elif  c['attributes']['discharge_source']=='MQ_GWN_CH':
+<td>${_('ch.bafu.typisierung-fliessgewaesser.discharge_source.mq_gwn_ch')|n}</td>
+% else: 
+<td>-</td>
+% endif
+</tr>
+<tr>
+<th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.discharge_quality')}</th>
+% if c['attributes']['discharge_quality']==1:
+<td>${_('ch.bafu.typisierung-fliessgewaesser.discharge_quality_1')|n}</td>
+% elif  c['attributes']['discharge_quality']==2:
+<td>${_('ch.bafu.typisierung-fliessgewaesser.discharge_quality_2')}</td>
+% elif  c['attributes']['discharge_quality']==3:
+<td>${_('ch.bafu.typisierung-fliessgewaesser.discharge_quality_3')}</td>
+% else:
+<td>-</td>
+% endif
+<th></th>
+<td></td>
+</tr>
+<tr>
+<th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.slope')}</th>
+<td>${c['attributes']['slope'] or '-'}</td>
+<th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.slope_quality')}</th>
+% if c['attributes']['slope_quality']==1:
+<td>${_('ch.bafu.typisierung-fliessgewaesser.slope_quality_1')}</td>
+% elif  c['attributes']['slope_quality']==2:
+<td>${_('ch.bafu.typisierung-fliessgewaesser.slope_quality_2')}</td>
+% else:
+<td>-</td>
+% endif
 </tr>
 </table>
 </%def>
