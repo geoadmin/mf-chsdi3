@@ -2812,3 +2812,22 @@ class SwissimageHistMetadata(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissimage-product.metadata', SwissimageHistMetadata)
+
+
+class AmtlichesStrassenverzeichnis(Base, Vector):
+    __tablename__ = 'streetnames'
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __template__ = 'templates/htmlpopup/strassenverzeichnis.mako'
+    __bodId__ = 'ch.swisstopo.amtliches-strassenverzeichnis'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    esid = Column('esid', Integer)
+    label = Column('label', Unicode)
+    plzo = Column('plzo', Unicode)
+    gdename = Column('gdename', Unicode)
+    gdenr = Column('gdenr', Integer)
+    validated = Column('validated', Integer)
+    type = Column('type', Unicode)
+    status = Column('status', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.amtliches-strassenverzeichnis', AmtlichesStrassenverzeichnis)
