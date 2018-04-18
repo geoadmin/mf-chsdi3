@@ -1775,6 +1775,9 @@ msgstr "Objektblatt"
 msgid "ch.bafu.bundesinventare-auen.shape_area"
 msgstr "Fläche [ha]"
 
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin"
+msgstr "Vegetation alpine Auen"
+
 msgid "ch.bafu.bundesinventare-bln"
 msgstr "IFC"
 
@@ -6266,6 +6269,30 @@ msgstr "swisstopo"
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
 msgstr "Amtliches Strassenverzeichnis"
 
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.esid"
+msgstr "Eidgenössischer Strassenidentifikator"
+
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.gdename"
+msgstr "Gemeindename"
+
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.gdenr"
+msgstr "BFS-Nr."
+
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.label"
+msgstr "Strassenname"
+
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.plzo"
+msgstr "PLZ / Ortschaft"
+
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.status"
+msgstr "Status"
+
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.type"
+msgstr "Objekttyp"
+
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.validated"
+msgstr "Offiziell / Validiert"
+
 msgid "ch.swisstopo.area-papierkarte.metadata"
 msgstr "Area Chart ICAO"
 
@@ -8249,6 +8276,15 @@ msgstr "Divisiun charta naziunala 10 Vectur"
 msgid "ch.swisstopo.swiss-map-vector25.metadata"
 msgstr "Divisiun charta naziunala 25 Vectur"
 
+msgid "ch.swisstopo.swiss-map-vector25.metadata.flightyear"
+msgstr "Datenstand des Blattes"
+
+msgid "ch.swisstopo.swiss-map-vector25.metadata.kbbez"
+msgstr "Blattbezeichnung"
+
+msgid "ch.swisstopo.swiss-map-vector25.metadata.kbnum"
+msgstr "Blattnummer"
+
 msgid "ch.swisstopo.swiss-map-vector500.metadata"
 msgstr "Divisiun charta naziunala 500 Vectur"
 
@@ -9162,7 +9198,7 @@ msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Sperr- und Gefahrenzonenkarte"
 
 msgid "ch.vbs.swissmilpilotschart"
-msgstr "SWISS MIL PILOTS CHART 1:500'000"
+msgstr "SWISS MIL PILOTS CHART"
 
 msgid "ch.vbs.territorialregionen"
 msgstr "Divisiuns territorialas"
