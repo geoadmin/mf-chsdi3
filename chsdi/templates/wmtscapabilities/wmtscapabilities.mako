@@ -141,5 +141,5 @@
     </Theme>
     % endif
   </Themes>
-    <ServiceMetadataURL xlink:href="http://www.opengis.uab.es/SITiled/world/1.0.0/WMTSCapabilities.xml"/>
+    <ServiceMetadataURL xlink:href="${onlineressource}1.0.0/WMTSCapabilities.xml"/>
 </Capabilities>
