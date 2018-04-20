@@ -439,9 +439,9 @@ requirements.txt:
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install -U pip setuptools; \
+		${PIP_CMD} install --upgrade pip==9.0.1 setuptools --index-url https://pypi.fcio.net/simple/; \
 	fi
-	${PIP_CMD} install --find-links local_eggs/ -e .
+	${PIP_CMD} install --index-url https://pypi.fcio.net/simple/ --find-links local_eggs/ -e .
 
 .venv/bin/git-secrets: .venv
 	@echo "${GREEN}Installing git secrets${RESET}";
