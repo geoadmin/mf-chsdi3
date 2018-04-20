@@ -52,7 +52,7 @@ class NationalesSportanlagenkonzept(Base, Vector):
     art_der_anlage = Column('art_der_anlage', Unicode, nullable=False)
     name_der_anlage = Column('name_der_anlage', Unicode, nullable=False)
     ort = Column('ort', Unicode, nullable=False)
-    website = Column('website', Unicode, nullable=False, default='')
+    website = Column('website', Unicode, nullable=False, default=u'')
     the_geom = Column(Geometry2D)
 
 register('ch.baspo.nationales-sportanlagenkonzept', NationalesSportanlagenkonzept)

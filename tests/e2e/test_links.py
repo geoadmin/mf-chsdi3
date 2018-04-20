@@ -4,7 +4,7 @@ import requests
 from urlparse import urlparse
 
 
-from chsdi.tests.integration import TestsBase
+from tests.integration import TestsBase
 
 MAX_RETRIES = 3
 TIMEOUT = 10

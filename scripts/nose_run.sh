@@ -25,7 +25,7 @@ done
 shift $((OPTIND-1))
 [ "$1" = "--" ] && shift
 
-.venv/bin/nosetests $nosetests_options chsdi/tests
+.venv/bin/nosetests $nosetests_options tests
 
 rc=$?
 

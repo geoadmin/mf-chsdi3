@@ -3,9 +3,9 @@
 import os
 import requests
 import time
-from chsdi.tests.integration import TestsBase
+from tests.integration import TestsBase
 
-from chsdi.tests.integration.test_file_storage import VALID_KML, NOT_WELL_FORMED_KML
+from tests.integration.test_file_storage import VALID_KML, NOT_WELL_FORMED_KML
 
 
 class TestVarnish(TestsBase):

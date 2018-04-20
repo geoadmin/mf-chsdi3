@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import requests
-from chsdi.tests.integration import TestsBase
-from chsdi.tests.e2e import TodProxyTestsBase
+from tests.integration import TestsBase
+from tests.e2e import TodProxyTestsBase
 
 
 class TestWmtsGetTileAuth(TestsBase):

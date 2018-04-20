@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from chsdi.tests.integration import TestsBase, shift_to_lv95
+from tests.integration import TestsBase, shift_to_lv95
 
 
 accept_headers = {'Accept': 'application/json, text/plain, */*'}
