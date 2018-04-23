@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from chsdi.tests.integration import TestsBase
+from tests.integration import TestsBase
 
 EPSGS = [21781, 4326, 2056, 3857]
 

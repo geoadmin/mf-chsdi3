@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from chsdi.tests.integration import TestsBase
+from tests.integration import TestsBase
 
 
 WRONG_CONTENT_TYPE = 'nasty type'

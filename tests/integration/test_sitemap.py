@@ -5,7 +5,7 @@ import subprocess
 import tempfile
 import os
 import time
-from chsdi.tests.integration import TestsBase
+from tests.integration import TestsBase
 
 
 def _validate_scheme(scheme, body):

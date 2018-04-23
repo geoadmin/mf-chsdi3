@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from chsdi.tests.integration import TestsBase, shift_to_lv95
+from tests.integration import TestsBase, shift_to_lv95
 from chsdi.lib.helpers import parse_box2d
 
 

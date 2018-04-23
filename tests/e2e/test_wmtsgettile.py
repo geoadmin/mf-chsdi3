@@ -3,7 +3,7 @@
 import requests
 import random
 
-from chsdi.tests.e2e import TodProxyTestsBase
+from tests.e2e import TodProxyTestsBase
 
 # Official URLS we support
 WMTS_URLS = [

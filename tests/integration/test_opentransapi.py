@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from chsdi.tests.integration import TestsBase
+from tests.integration import TestsBase
 from chsdi.lib.opentransapi import opentransapi
 from datetime import datetime, timedelta
 from pytz import timezone

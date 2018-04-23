@@ -2,7 +2,7 @@
 
 import time
 from random import randint
-from chsdi.tests.integration import TestsBase
+from tests.integration import TestsBase
 
 
 class TestShortenerView(TestsBase):

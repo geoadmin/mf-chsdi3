@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from chsdi.tests.integration import TestsBase
+from tests.integration import TestsBase
 from chsdi.models.bod import Catalog
 from sqlalchemy.orm import scoped_session, sessionmaker
 from chsdi.views.catalog import create_digraph

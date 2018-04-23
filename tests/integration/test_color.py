@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from chsdi.tests.integration import TestsBase
+from tests.integration import TestsBase
 
 
 class TestColorView(TestsBase):
