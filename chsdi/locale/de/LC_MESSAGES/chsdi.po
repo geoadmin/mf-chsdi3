@@ -326,8 +326,8 @@ msgstr "Belastung [Pers./Jahr]"
 msgid "belastung_tonnen"
 msgstr "Belastung [t/Jahr]"
 
-msgid "Benanntest Gebiet"
-msgstr "Benanntest Gebiet"
+msgid "Benanntes Gebiet"
+msgstr "Benanntes Gebiet"
 
 msgid "berater"
 msgstr "Beraterin oder Berater"
