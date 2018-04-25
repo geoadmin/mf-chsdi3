@@ -11,7 +11,7 @@
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.gdename')}</td>                 <td>${c['attributes']['gdename'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.gdenr')}</td>                 <td>${c['attributes']['gdenr'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.validated')}</td>                 <td>${_(validated)}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.type')}</td>                 <td>${c['attributes']['type'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.type')}</td>                 <td>${_(c['attributes']['type']) or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.status')}</td>                 <td>${c['attributes']['status'] or '-'}</td></tr>
 </%def>
 
