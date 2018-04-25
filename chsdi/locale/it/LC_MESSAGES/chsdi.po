@@ -326,6 +326,9 @@ msgstr "Charge [Pers./an]"
 msgid "belastung_tonnen"
 msgstr "Charge [t/an]"
 
+msgid "Benanntest Gebiet"
+msgstr "Zona provvista di denominazione"
+
 msgid "berater"
 msgstr "Consulente"
 
@@ -5066,6 +5069,9 @@ msgstr "Nom"
 msgid "ch.bfe.bikesharing"
 msgstr "Bikesharing e ciclonoleggio"
 
+msgid "ch.bfe.energieberatungsstellen"
+msgstr "Servizi di consulenza energetica"
+
 msgid "ch.bfe.energieforschung"
 msgstr "Progetti Cleantech"
 
@@ -5410,6 +5416,9 @@ msgstr "Velocità vento a 75 m dal suolo"
 
 msgid "ch.bfe.windenergie-potenzialgebiete"
 msgstr "Zone a potenziale eolico"
+
+msgid "ch.bfe.wpsm-qualifizierte_firmen"
+msgstr "Imprese qualificate PdC-MS"
 
 msgid "ch.bfs"
 msgstr "UST"
@@ -12230,6 +12239,9 @@ msgstr "Rosa"
 msgid "pixelAddError"
 msgstr "Devi specificare i valori di x e y alla funzione add."
 
+msgid "Platz"
+msgstr "Piazza"
+
 msgid "pleaseCheckALayerInTreeText"
 msgstr "Prego selezionare prima uno o più livelli dalla lista"
 
@@ -12844,6 +12856,9 @@ msgstr "Stop confronto"
 
 msgid "strasse"
 msgstr "Rue"
+
+msgid "Strasse"
+msgstr "Via"
 
 msgid "strasse_fr_de"
 msgstr "Rue"
