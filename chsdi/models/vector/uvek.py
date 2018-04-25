@@ -770,7 +770,7 @@ register('ch.bfe.meteorologische-vereisung', MeteoVereisung)
 
 
 class Bakomfernsehsender(Base, Vector):
-    __tablename__ = 'nisdb_bro_tooltip'
+    __tablename__ = 'nisdb_bro'
     __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/bakomfernsehsender.mako'
     __bodId__ = 'ch.bakom.radio-fernsehsender'
@@ -788,48 +788,6 @@ class Bakomfernsehsender(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.radio-fernsehsender', Bakomfernsehsender)
-
-
-class Bakomgsm(Base, Vector):
-    __tablename__ = 'nisdb_gsm'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
-    __template__ = 'templates/htmlpopup/bakomgsm.mako'
-    __bodId__ = 'ch.bakom.mobil-antennenstandorte-gsm'
-    __label__ = 'powercode'
-    id = Column('id', Integer, primary_key=True)
-    powercode = Column('powercode', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bakom.mobil-antennenstandorte-gsm', Bakomgsm)
-
-
-class Bakomumts(Base, Vector):
-    __tablename__ = 'nisdb_umts'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
-    __template__ = 'templates/htmlpopup/bakomumts.mako'
-    __bodId__ = 'ch.bakom.mobil-antennenstandorte-umts'
-    __label__ = 'powercode'
-    id = Column('id', Integer, primary_key=True)
-    powercode = Column('powercode', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bakom.mobil-antennenstandorte-umts', Bakomumts)
-
-
-class Bakomlte(Base, Vector):
-    __tablename__ = 'nisdb_lte'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
-    __template__ = 'templates/htmlpopup/bakomlte.mako'
-    __bodId__ = 'ch.bakom.mobil-antennenstandorte-lte'
-    __label__ = 'powercode'
-    id = Column('id', Integer, primary_key=True)
-    powercode = Column('powercode', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bakom.mobil-antennenstandorte-lte', Bakomlte)
 
 
 class RichtfunkVerbindungen(Base, Vector):
