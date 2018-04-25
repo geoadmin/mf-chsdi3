@@ -326,7 +326,7 @@ msgstr "Charge [Pers./an]"
 msgid "belastung_tonnen"
 msgstr "Charge [t/an]"
 
-msgid "Benanntest Gebiet"
+msgid "Benanntes Gebiet"
 msgstr "Lieu dénommé"
 
 msgid "berater"
