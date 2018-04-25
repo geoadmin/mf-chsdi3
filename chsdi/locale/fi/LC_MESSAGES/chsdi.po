@@ -326,6 +326,9 @@ msgstr "Belastung [Pers./Jahr]"
 msgid "belastung_tonnen"
 msgstr "Belastung [t/Jahr]"
 
+msgid "Benanntest Gebiet"
+msgstr "Benanntest Gebiet"
+
 msgid "berater"
 msgstr "Beraterin oder Berater"
 
@@ -5066,6 +5069,9 @@ msgstr "Name"
 msgid "ch.bfe.bikesharing"
 msgstr "Bikesharing ed emprest da velos"
 
+msgid "ch.bfe.energieberatungsstellen"
+msgstr "Energieberatungsstellen"
+
 msgid "ch.bfe.energieforschung"
 msgstr "Projects cleantech"
 
@@ -5410,6 +5416,9 @@ msgstr "Sveltezza dal vent autezza 75 m"
 
 msgid "ch.bfe.windenergie-potenzialgebiete"
 msgstr "Windpotenzialgebiete"
+
+msgid "ch.bfe.wpsm-qualifizierte_firmen"
+msgstr "WPSM-qualifizierte Firmen"
 
 msgid "ch.bfs"
 msgstr "BFS"
@@ -12230,6 +12239,9 @@ msgstr "rosa"
 msgid "pixelAddError"
 msgstr "Tuttas duas valurs (x ed y) ston vegnir surdadas a la funcziun add."
 
+msgid "Platz"
+msgstr "Platz"
+
 msgid "pleaseCheckALayerInTreeText"
 msgstr "Tscherni l'emprim in u plirs nivels da la glista"
 
@@ -12843,6 +12855,9 @@ msgid "Stop compare"
 msgstr "Stop confruntar"
 
 msgid "strasse"
+msgstr "Strasse"
+
+msgid "Strasse"
 msgstr "Strasse"
 
 msgid "strasse_fr_de"
