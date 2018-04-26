@@ -230,6 +230,9 @@ msgstr "Attributes"
 msgid "auf_dem_weg_gemeinde"
 msgstr "Energy City on the Path towards a 2000-Watt Society"
 
+msgid "Aufgehoben"
+msgstr "Aufgehoben"
+
 msgid "ausgabejahr"
 msgstr "Ausgabejahr"
 
@@ -346,6 +349,9 @@ msgstr "Beschlussjahr"
 
 msgid "beschreibung"
 msgstr "Description"
+
+msgid "Bestehend"
+msgstr "Bestehend"
 
 msgid "bestimmung"
 msgstr "Bestimmungen"
@@ -12376,6 +12382,9 @@ msgstr "Channel"
 
 msgid "projekte"
 msgstr "Projekte"
+
+msgid "Projektiert"
+msgstr "Projektiert"
 
 msgid "protokoll"
 msgstr "Protocol"
