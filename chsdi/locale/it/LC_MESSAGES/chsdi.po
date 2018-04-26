@@ -230,6 +230,9 @@ msgstr "Attributi"
 msgid "auf_dem_weg_gemeinde"
 msgstr "Città dell’energia in cammino verso la società a 2000 Watt"
 
+msgid "Aufgehoben"
+msgstr "Eliminata"
+
 msgid "ausgabejahr"
 msgstr "Anno di pubblicazione"
 
@@ -346,6 +349,9 @@ msgstr "Année de la décision"
 
 msgid "beschreibung"
 msgstr "Description"
+
+msgid "Bestehend"
+msgstr "Esistente"
 
 msgid "bestimmung"
 msgstr "Dispositions"
@@ -12376,6 +12382,9 @@ msgstr "Programma"
 
 msgid "projekte"
 msgstr "Projects"
+
+msgid "Projektiert"
+msgstr "In progetto"
 
 msgid "protokoll"
 msgstr "Protocollo"

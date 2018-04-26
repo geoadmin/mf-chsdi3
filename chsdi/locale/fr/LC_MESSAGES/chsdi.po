@@ -230,6 +230,9 @@ msgstr "Attributs"
 msgid "auf_dem_weg_gemeinde"
 msgstr "Cité de l’énergie ouvrant la voie vers la société à 2000 watts"
 
+msgid "Aufgehoben"
+msgstr "Supprimée"
+
 msgid "ausgabejahr"
 msgstr "Année de publication"
 
@@ -346,6 +349,9 @@ msgstr "Année de la décision"
 
 msgid "beschreibung"
 msgstr "Description"
+
+msgid "Bestehend"
+msgstr "Existante"
 
 msgid "bestimmung"
 msgstr "Dispositions"
@@ -12376,6 +12382,9 @@ msgstr "Programme"
 
 msgid "projekte"
 msgstr "Projects"
+
+msgid "Projektiert"
+msgstr "En projet"
 
 msgid "protokoll"
 msgstr "Protocole"
