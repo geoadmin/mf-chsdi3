@@ -32,6 +32,7 @@ APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''
 DATAGEOADMINHOST ?= data.geo.admin.ch
 SHORTENER_ALLOWED_DOMAINS := admin.ch, swisstopo.ch, bgdi.ch
 SHORTENER_ALLOWED_HOSTS ?=
+PYPI_URL ?= https://pypi.org/simple/
 
 # Last values
 KEEP_VERSION ?= 'false'
@@ -439,9 +440,9 @@ requirements.txt:
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install --upgrade pip==9.0.1 setuptools --index-url https://pypi.fcio.net/simple/; \
+		${PIP_CMD} install --upgrade pip==9.0.1 setuptools --index-url ${PYPI_URL} ; \
 	fi
-	${PIP_CMD} install --index-url https://pypi.fcio.net/simple/ --find-links local_eggs/ -e .
+	${PIP_CMD} install --index-url ${PYPI_URL} --find-links local_eggs/ -e .
 
 .venv/bin/git-secrets: .venv
 	@echo "${GREEN}Installing git secrets${RESET}";
