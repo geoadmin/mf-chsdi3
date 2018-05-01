@@ -7100,6 +7100,36 @@ msgstr "Gesteinsgruppe"
 msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung"
 msgstr "Gips: Abbau und Verarbeitung"
 
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.clkind"
+msgstr "Bedeutung"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.cpkind"
+msgstr "Firma"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.edltkinds"
+msgstr "Rohstoffe abgebaut"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.emkinds"
+msgstr "Abbbaumethoden"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.ltkinds"
+msgstr "Rohstoffe vorkommend"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.obname"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.ockind"
+msgstr "Objektkategorie"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.pckind"
+msgstr "Betriebskategorie"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.purl"
+msgstr "Detailinformation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.stkind"
+msgstr "Status"
+
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
 msgstr "Industrieminerale: Vorkommen"
 
@@ -7181,6 +7211,36 @@ msgstr "Gesteinsgruppe"
 msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung"
 msgstr "Salz: Abbau und Verarbeitung"
 
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.clkind"
+msgstr "Bedeutung"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.cpkind"
+msgstr "Firma"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.emkinds"
+msgstr "Abbaumethoden"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.ltkind"
+msgstr "Rohstoffe abgebaut"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.obname"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.obnamealt"
+msgstr "Zweitname"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.ockind"
+msgstr "Objektkategorie"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.pckind"
+msgstr "Betriebskategorie"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.purl"
+msgstr "Detailinformation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.stkind"
+msgstr "Status"
+
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
 msgstr "Metallrohstoffe: Vorkommen"
 
@@ -7210,6 +7270,36 @@ msgstr "Abbaustatus"
 
 msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung"
 msgstr "Zementrohstoffe: Abbau und Verarb."
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.clkind"
+msgstr "Bedeutung"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.cpkind"
+msgstr "Firma"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.emkinds"
+msgstr "Abbaumethoden"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.ltkinds"
+msgstr "Gesteine abgebaut"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.obname"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.pckind"
+msgstr "Betriebskategorie"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.purl"
+msgstr "Detailinformation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.stkind"
+msgstr "Abbaustatus"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.tckinds"
+msgstr "Gesteinsgruppen"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.tlyearsformatted"
+msgstr "Betriebsjahre"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Einteilung Geologische Spezialkarten Raster"
@@ -8259,7 +8349,7 @@ msgid "ch.swisstopo.swissbuildings3d-2.metadata"
 msgstr "Einteilung swissBUILDINGS3D 2.0 Vector"
 
 msgid "ch.swisstopo.swissimage"
-msgstr "SWISSIMAGE"
+msgstr "SWISSIMAGE Zeitreise"
 
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE"

@@ -7100,6 +7100,36 @@ msgstr "Gruppo di rocce"
 msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung"
 msgstr "Gypse: extraction et transformation"
 
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.clkind"
+msgstr "Importance"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.cpkind"
+msgstr "Entreprise"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.edltkinds"
+msgstr "Matières premières exploitées"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.emkinds"
+msgstr "Méthodes d`exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.ltkinds"
+msgstr "Matières premières"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.obname"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.ockind"
+msgstr "Catégorie de l`objet"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.pckind"
+msgstr "Catégorie de l`entreprise"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.purl"
+msgstr "Informations detaillées"
+
+msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.stkind"
+msgstr "Status"
+
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
 msgstr "Minerali industriali"
 
@@ -7181,6 +7211,36 @@ msgstr "Gruppo di rocce"
 msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung"
 msgstr "Sel: extraction et transformation"
 
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.clkind"
+msgstr "Importance"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.cpkind"
+msgstr "Entreprise"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.emkinds"
+msgstr "Méthodes d`exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.ltkind"
+msgstr "Matières premières exploitées"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.obname"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.obnamealt"
+msgstr "Nom alternatif"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.ockind"
+msgstr "Catégorie de l'objet"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.pckind"
+msgstr "Catégorie de l`entreprise"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.purl"
+msgstr "Informations detaillées"
+
+msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.stkind"
+msgstr "Status"
+
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
 msgstr "Mineralizzazioni"
 
@@ -7210,6 +7270,36 @@ msgstr "Stato dello sfruttamento"
 
 msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung"
 msgstr "Matières premières de ciment"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.clkind"
+msgstr "Importance"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.cpkind"
+msgstr "Entreprise"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.emkinds"
+msgstr "Méthodes d`exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.ltkinds"
+msgstr "Roches exploitées"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.obname"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.pckind"
+msgstr "Catégorie de l`entreprise"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.purl"
+msgstr "Informations detaillées"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.stkind"
+msgstr "Statut d`exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.tckinds"
+msgstr "Groupes de roches"
+
+msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.tlyearsformatted"
+msgstr "Années d`exploitation"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Divisione carte geologiche speciali Raster"
@@ -8259,7 +8349,7 @@ msgid "ch.swisstopo.swissbuildings3d-2.metadata"
 msgstr "Divisione swissBUILDINGS3D 2.0 Vector"
 
 msgid "ch.swisstopo.swissimage"
-msgstr "SWISSIMAGE"
+msgstr "SWISSIMAGE Viaggio nel tempo"
 
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE"
