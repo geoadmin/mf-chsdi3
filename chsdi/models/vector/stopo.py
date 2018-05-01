@@ -1576,6 +1576,75 @@ class GeologieRohstoffeGebrocheneGesteine(Base, Vector):
 register('ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau', GeologieRohstoffeGebrocheneGesteine)
 
 
+class GeologieRohstoffeSalzAbbauVerarbeitung(Base, Vector):
+    __tablename__ = 'rohstoffe_salzabbauverarbeitung'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/rohstoffe_salz_abbau_verarbeitung.mako'
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung'
+    __queryable_attributes__ = ['obname', 'obnamealt', 'ockind', 'emkinds', 'ltkind', 'pckind']
+    __label__ = 'obname'
+    id = Column('obid', Integer, primary_key=True)
+    obname = Column('obname', Unicode)
+    obnamealt = Column('obnamealt', Unicode)
+    ockind = Column('ockind', Unicode)
+    ltkind = Column('ltkind', Unicode)
+    emkinds = Column('emkinds', Unicode)
+    pckind = Column('pckind', Unicode)
+    cpkind = Column('cpkind', Unicode)
+    stkind = Column('stkind', Unicode)
+    clkind = Column('clkind', Unicode)
+    purl = Column('purl', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung', GeologieRohstoffeSalzAbbauVerarbeitung)
+
+
+class GeologieRohstoffeGipsAbbauVerarbeitung(Base, Vector):
+    __tablename__ = 'rohstoffe_gipsabbauverarbeitung'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/rohstoffe_gips_abbau_verarbeitung.mako'
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung'
+    __queryable_attributes__ = ['obname', 'ockind', 'emkinds', 'ltkinds', 'edltkinds', 'pckind']
+    __label__ = 'obname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    obname = Column('obname', Unicode)
+    ockind = Column('ockind', Unicode)
+    ltkinds = Column('ltkinds', Unicode)
+    edltkinds = Column('edltkinds', Unicode)
+    emkinds = Column('emkinds', Unicode)
+    pckind = Column('pckind', Unicode)
+    cpkind = Column('cpkind', Unicode)
+    stkind = Column('stkind', Unicode)
+    clkind = Column('clkind', Unicode)
+    purl = Column('purl', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung', GeologieRohstoffeGipsAbbauVerarbeitung)
+
+
+class GeologieRohstoffeZementAbbauVerarbeitung(Base, Vector):
+    __tablename__ = 'rohstoffe_zementabbauverarbeitung'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/rohstoffe_zement_abbau_verarbeitung.mako'
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung'
+    __queryable_attributes__ = ['obname', 'ockind', 'emkinds', 'ltkinds', 'edltkinds', 'pckind']
+    __label__ = 'obname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    obname = Column('obname', Unicode)
+    tckinds = Column('tckinds', Unicode)
+    ltkinds = Column('ltkinds', Unicode)
+    emkinds = Column('emkinds', Unicode)
+    pckind = Column('pckind', Unicode)
+    cpkind = Column('cpkind', Unicode)
+    stkind = Column('stkind', Unicode)
+    tlyearsformatted = Column('tlyearsformatted', Unicode)
+    clkind = Column('clkind', Unicode)
+    purl = Column('purl', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung', GeologieRohstoffeZementAbbauVerarbeitung)
+
+
 class GeologieTektonischeKarteLine(Base, Vector):
     __tablename__ = 'tektonische_karte_line'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
