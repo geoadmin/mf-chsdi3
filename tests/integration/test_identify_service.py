@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from tests.integration import TestsBase, shift_to_lv95
-
+import math
 
 accept_headers = {'Accept': 'application/json, text/plain, */*'}
 
@@ -708,26 +708,31 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
 
     def test_identify_order_by_distance(self):
+        x_a = 643952.5
+        y_a = 164121.24999999997
+
         params = {'layers': 'all:ch.bfs.gebaeude_wohnungs_register',
-                  'geometry': '643952.5,164121.24999999997',
+                  'geometry': str(x_a) + ',' + str(y_a),
                   'geometryFormat': 'geojson',
                   'geometryType': 'esriGeometryPoint',
                   'imageDisplay': '1920,765,96',
                   'mapExtent': '641960.1008933608,163518.83578498938,646760.1008933608,165431.33578498938',
                   'tolerance': '50'
                   }
-        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
-        self.assertLess(1, len(resp.json['results']))
-        firstBefore = resp.json['results'][0]['properties']['deinr']
-
         params.update({'order': 'distance'})
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertLess(1, len(resp.json['results']))
-        firstAfter = resp.json['results'][0]['properties']['deinr']
+        res = resp.json['results']
 
-        self.assertNotEqual(firstBefore, firstAfter)
+        # Test ordering
+        d = 0
+        for r in res:
+            x_b = r['geometry']['coordinates'][0]
+            y_b = r['geometry']['coordinates'][1]
+            dist = math.sqrt(math.pow(x_b - x_a, 2) + math.pow(y_b - y_a, 2))
+            self.assertLess(d, dist)
+            d = dist
 
         # Wrong order parameter should not have impact
         params.update({'order': 'x'})
