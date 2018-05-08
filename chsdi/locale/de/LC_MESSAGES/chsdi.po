@@ -9551,6 +9551,12 @@ msgstr "SWISS MIL PILOTS CHART"
 msgid "ch.vbs.territorialregionen"
 msgstr "Territorialdivisionen"
 
+msgid "ch.vbs.territorialregionen.name"
+msgstr "Name der Territorialdivision"
+
+msgid "ch.vbs.territorialregionen.terreg_nr"
+msgstr "Nummer der Territorialdivision"
+
 msgid "ch.vbs.url"
 msgstr "http://www.vbs.admin.ch/de/home.html"
 
