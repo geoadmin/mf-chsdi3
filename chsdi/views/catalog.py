@@ -77,6 +77,8 @@ def initialize_graph(G, rows, lang):
             meta[node_id] = r.to_dict(lang)
         G.add_edge(node_parent_id, node_id)
         if getattr(r, 'category') == 'root':
+            if (root_id is not None):
+                raise HTTPInternalServerError('%s has more than 1 root_id, there can be only one!' % r.topic)
             root_id = node_id
     if root_id is None:
         raise HTTPInternalServerError('%s is missing root_id!' % r.topic)
