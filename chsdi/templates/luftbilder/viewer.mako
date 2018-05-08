@@ -318,9 +318,12 @@
         }
 
         // computes normalized histogram
-        function getHistogram(pixels){
-          histogram = {};
+        function getHistogramProperties(pixels){
+          var histogram = {};
+          var equalizedHistogram = {};
           var number_pixels = pixels.length;
+          var sum = 0;
+          var mean_luminance = 0;
 
           //initialize histogram 
           for (var i = 0; i < 101; i++){
@@ -337,30 +340,14 @@
             histogram[l] = histogram[l] + 1;
           }
 
-          //normalization of histogram
-          for (var i = 0; i < 101; i++){
+          //normalization of histogram + compute equalized Values and Mean
+          for (var i in histogram){
             histogram[i] = histogram[i] / number_pixels;
-          }
-          return histogram;
-        }
-
-        //computes mean of RGB in image
-        function getMeanLuminance(histogram){
-          var mean_luminance = 0;
-          for (var i = 0; i < 101; i++){
+            sum += histogram[i];
+            equalizedHistogram[i] = sum;
             mean_luminance += histogram[i]*i;
           }
-          return mean_luminance;
-        }
-
-        function getEqualizedValues(histogram){
-          var equalizedValues = {};
-          var sum = 0;
-          for ( var i in histogram){
-            sum += histogram[i];
-            equalizedValues[i] = sum;
-          }
-          return equalizedValues;
+          return [equalizedHistogram, mean_luminance];
         }
 
         lubisMap.on('postrender', function(event){
@@ -370,9 +357,9 @@
           // to prevent that recomputed every time map rendered
           if (!allZero(imageData) && !mean) {
             var pixel_list = getPixelList(imageData);
-            var histogram = getHistogram(pixel_list);
-            mean = getMeanLuminance(histogram);
-            equalizedValues = getEqualizedValues(histogram);
+            var histogramProperties = getHistogramProperties(pixel_list);
+            equalizedValues = histogramProperties[0];
+            mean = histogramProperties[1];
           }
         });
 
