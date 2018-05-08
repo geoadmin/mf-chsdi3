@@ -2162,6 +2162,9 @@ msgstr "Vorflutertyp"
 msgid "ch_bafu_gee-kla.vsa_kategorie"
 msgstr "Reinigungstyp (VSA-Kategorie)"
 
+msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss"
+msgstr "Overland flow map"
+
 msgid "ch.bafu.gefahren-aktuelle_erdbeben"
 msgstr "Recent earthquakes"
 
@@ -4136,6 +4139,9 @@ msgstr "Radon map"
 msgid "ch.bag.radonkarte.confidence"
 msgstr "Confidence index"
 
+msgid "ch.bag.radonkarte.info"
+msgstr "For each selected area the probability of exceeding the reference value of the radon concentration of 300 Bq/m3 in a building is given as well as a confidence index :"
+
 msgid "ch.bag.radonkarte.probability_prozent"
 msgstr "Probability"
 
@@ -4184,14 +4190,29 @@ msgstr "Download ≥ 10 Mbit/s"
 msgid "ch.bakom.downlink100"
 msgstr "Download ≥ 100 Mbit/s"
 
+msgid "ch.bakom.downlink1000"
+msgstr "Download ≥ 1000 Mbit/s"
+
 msgid "ch.bakom.downlink2"
 msgstr "Download ≥ 2 Mbit/s"
 
 msgid "ch.bakom.downlink20"
 msgstr "Download ≥ 20 Mbit/s"
 
+msgid "ch.bakom.downlink3"
+msgstr "Download ≥ 3 Mbit/s"
+
+msgid "ch.bakom.downlink30"
+msgstr "Download ≥ 30 Mbit/s"
+
+msgid "ch.bakom.downlink300"
+msgstr "Download ≥ 300 Mbit/s"
+
 msgid "ch.bakom.downlink50"
 msgstr "Download ≥ 50 Mbit/s"
+
+msgid "ch.bakom.downlink500"
+msgstr "Download ≥ 500 Mbit/s"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "GSM antenna locations"
@@ -4201,6 +4222,57 @@ msgstr "4G antenna locations (LTE)"
 
 msgid "ch.bakom.mobil-antennenstandorte-umts"
 msgstr "3G antenna locations (UMTS)"
+
+msgid "ch.bakom.mobilnetz-2g"
+msgstr "2G - GSM / EDGE"
+
+msgid "ch.bakom.mobilnetz-3g"
+msgstr "3G - UMTS / HSPA"
+
+msgid "ch.bakom.mobilnetz-4g"
+msgstr "4G - LTE / LTE-A"
+
+msgid "ch.bakom.notruf"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-112_festnetz"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-112_mobilnetz"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-112_satellit"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-117_festnetz"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-117_mobilnetz"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-118_festnetz"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-118_mobilnetz"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-143_festnetz"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-143_mobilnetz"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-144_festnetz"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-144_mobilnetz"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-147_festnetz"
+msgstr "Emergency call"
+
+msgid "ch.bakom.notruf-147_mobilnetz"
+msgstr "Emergency call"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Radio and TV broadcasters"
@@ -4225,6 +4297,9 @@ msgstr "Upload ≥ 10 Mbit/s"
 
 msgid "ch.bakom.uplink100"
 msgstr "Upload ≥ 100 Mbit/s"
+
+msgid "ch.bakom.uplink1000"
+msgstr "Upload ≥ 1000 Mbit/s"
 
 msgid "ch.bakom.uplink2"
 msgstr "Upload ≥ 2 Mbit/s"
@@ -8352,7 +8427,7 @@ msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE Journey through time"
 
 msgid "ch.swisstopo.swissimage-product"
-msgstr "SWISSIMAGE"
+msgstr "SWISSIMAGE Journey through time"
 
 msgid "ch.swisstopo.swissimage-product.metadata"
 msgstr "Tiling SWISSIMAGE Journey thru time"

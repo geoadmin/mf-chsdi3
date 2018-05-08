@@ -2162,6 +2162,9 @@ msgstr "Type milieu récepteur"
 msgid "ch_bafu_gee-kla.vsa_kategorie"
 msgstr "Type de traitement (catégorie VSA)"
 
+msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss"
+msgstr "Carte de l'aléa ruissellement"
+
 msgid "ch.bafu.gefahren-aktuelle_erdbeben"
 msgstr "Tremblements de terre récents"
 
@@ -4136,6 +4139,9 @@ msgstr "Carte du radon"
 msgid "ch.bag.radonkarte.confidence"
 msgstr "Index de confiance"
 
+msgid "ch.bag.radonkarte.info"
+msgstr "La probabilité de dépassement de la valeur de référence de 300 Bq/m3 dans les bâtiments ainsi que l’indice de confiance pour la zone sélectionnée sont les suivants :"
+
 msgid "ch.bag.radonkarte.probability_prozent"
 msgstr "Probabilité"
 
@@ -4184,14 +4190,29 @@ msgstr "Liaison ≥10 Mbit/s descend."
 msgid "ch.bakom.downlink100"
 msgstr "Liaison ≥ 100 Mbit/s descend."
 
+msgid "ch.bakom.downlink1000"
+msgstr "Liaison ≥ 1000 Mbit/s descend."
+
 msgid "ch.bakom.downlink2"
 msgstr "Liaison ≥ 2 Mbit/s descendante"
 
 msgid "ch.bakom.downlink20"
 msgstr "Liaison ≥ 20 Mbit/s descend."
 
+msgid "ch.bakom.downlink3"
+msgstr "Liaison ≥ 3 Mbit/s descend."
+
+msgid "ch.bakom.downlink30"
+msgstr "Liaison ≥ 30 Mbit/s descend."
+
+msgid "ch.bakom.downlink300"
+msgstr "Liaison ≥ 300 Mbit/s descend."
+
 msgid "ch.bakom.downlink50"
 msgstr "Liaison ≥ 50 Mbit/s descend."
+
+msgid "ch.bakom.downlink500"
+msgstr "Liaison ≥ 500 Mbit/s descend."
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Emplacement des antennes GSM"
@@ -4201,6 +4222,57 @@ msgstr "Emplacement des antennes 4G (LTE)"
 
 msgid "ch.bakom.mobil-antennenstandorte-umts"
 msgstr "Emplacement des antennes 3G (UMTS)"
+
+msgid "ch.bakom.mobilnetz-2g"
+msgstr "2G - GSM / EDGE"
+
+msgid "ch.bakom.mobilnetz-3g"
+msgstr "3G - UMTS / HSPA"
+
+msgid "ch.bakom.mobilnetz-4g"
+msgstr "4G - LTE / LTE-A"
+
+msgid "ch.bakom.notruf"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-112_festnetz"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-112_mobilnetz"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-112_satellit"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-117_festnetz"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-117_mobilnetz"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-118_festnetz"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-118_mobilnetz"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-143_festnetz"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-143_mobilnetz"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-144_festnetz"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-144_mobilnetz"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-147_festnetz"
+msgstr "Appel d'urgence"
+
+msgid "ch.bakom.notruf-147_mobilnetz"
+msgstr "Appel d'urgence"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emetteurs radio et télévision"
@@ -4225,6 +4297,9 @@ msgstr "Liaison ≥ 10 Mbit/s ascendante"
 
 msgid "ch.bakom.uplink100"
 msgstr "Liaison ≥ 100 Mbit/s ascendante"
+
+msgid "ch.bakom.uplink1000"
+msgstr "Liaison ≥ 1000 Mbit/s ascendante"
 
 msgid "ch.bakom.uplink2"
 msgstr "Liaison ≥ 2 Mbit/s ascendante"
@@ -8352,7 +8427,7 @@ msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE Voyage dans le temps"
 
 msgid "ch.swisstopo.swissimage-product"
-msgstr "SWISSIMAGE"
+msgstr "SWISSIMAGE Voyage dans le temps"
 
 msgid "ch.swisstopo.swissimage-product.metadata"
 msgstr "Découpage SWISSIMAGE Voyage temp."
