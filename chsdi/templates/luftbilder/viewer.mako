@@ -93,7 +93,8 @@
         text-align:center;
       }
       .controls{
-        margin-left: 10px;
+        margin-left:auto; 
+        margin-right:auto;
       }
       .percent{
         margin-left: 10px;
@@ -290,9 +291,9 @@
 
         var contrastSlider = document.getElementById("contrast");
         var contrastOut = document.getElementById("contrastOut");
-        var resetbutton = document.getElementById("reset");
-        var minusbutton = document.getElementById("minus-button");
-        var plusbutton = document.getElementById("plus-button");
+        var resetButton = document.getElementById("reset");
+        var minusButton = document.getElementById("minus-button");
+        var plusButton = document.getElementById("plus-button");
 
         setSliderListeners();
 
@@ -300,19 +301,19 @@
         var mean = undefined;
 
         function getPixelList(data){
-          var pixel_list = [];
+          var pixelList = [];
           for (var i=0; i<(data.length);i+=4){
             if (data[i+3]!=0){
               var pixel = [data[i], data[i+1], data[i+2], data[i+3]];
-              pixel_list.push(pixel);
+              pixelList.push(pixel);
             }
           }
-          return pixel_list;
+          return pixelList;
         }
 
         function allZero(data){
-          for (var key in data){
-            if (data[key] != 0) return false
+          for (var i = 0; i < data.length; i += 4){
+            if (data[i] != 0) return false
           }
           return true
         }
@@ -321,7 +322,7 @@
         function getHistogramProperties(pixels){
           var histogram = {};
           var equalizedHistogram = {};
-          var number_pixels = pixels.length;
+          var numberPixels = pixels.length;
           var sum = 0;
           var mean_luminance = 0;
 
@@ -342,7 +343,7 @@
 
           //normalization of histogram + compute equalized Values and Mean
           for (var i in histogram){
-            histogram[i] = histogram[i] / number_pixels;
+            histogram[i] = histogram[i] / numberPixels;
             sum += histogram[i];
             equalizedHistogram[i] = sum;
             mean_luminance += histogram[i]*i;
@@ -356,8 +357,8 @@
           var imageData = context.getImageData(0,0, canvas.width, canvas.height).data;
           // to prevent that recomputed every time map rendered
           if (!allZero(imageData) && !mean) {
-            var pixel_list = getPixelList(imageData);
-            var histogramProperties = getHistogramProperties(pixel_list);
+            var pixelList = getPixelList(imageData);
+            var histogramProperties = getHistogramProperties(pixelList);
             equalizedValues = histogramProperties[0];
             mean = histogramProperties[1];
           }
@@ -365,7 +366,7 @@
 
         raster.on('beforeoperations', function(event) {
           var data = event.data;
-          data["contrast"] = Number(contrastSlider.value);
+          data["contrast"] = parseInt(contrastSlider.value);
           data["equalizedValues"] = equalizedValues;
           data["mean"] = mean;
         });
@@ -393,11 +394,11 @@
           raster.changed();
         }
 
-       function setSliderListeners() {
+        function setSliderListeners() {
           contrastSlider.addEventListener("change", onSliderChange);
-          resetbutton.addEventListener("click", onReset);
-          plusbutton.addEventListener("click", moreContrast);
-          minusbutton.addEventListener("click", lessContrast);
+          resetButton.addEventListener("click", onReset);
+          plusButton.addEventListener("click", moreContrast);
+          minusButton.addEventListener("click", lessContrast);
         }
       }
    </script>
