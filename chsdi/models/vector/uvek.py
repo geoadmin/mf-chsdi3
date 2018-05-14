@@ -724,6 +724,29 @@ class Kleinwasserkraftpotentiale(Base, Vector):
 register('ch.bfe.kleinwasserkraftpotentiale', Kleinwasserkraftpotentiale)
 
 
+class GeakExperten (Base, Vector):
+    __tablename__ = 'geak_experten'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geak_experten.mako'
+    __bodId__ = 'ch.bfe.geak-experten'
+    __queryable_attributes__ = ['company', 'name_expert']
+    __label__ = 'company'
+    id = Column('xtf_id', Integer, primary_key=True)
+    name_expert = Column('name_expert', Unicode)
+    company = Column('company', Unicode)
+    experience = Column('experience', Unicode)
+    address1 = Column('address1', Unicode)
+    address2 = Column('address2', Unicode)
+    postofficebox = Column('postofficebox', Unicode)
+    pc_place = Column('pc_place', Unicode)
+    telephonenumber = Column('telephonenumber', Unicode)
+    mail = Column('mail', Unicode)
+    webaddress = Column('webaddress', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.geak-experten', GeakExperten)
+
+
 class WindenergieanlagenFacility(Base, Vector):
     __tablename__ = 'view_windenergieanlagen_facility'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
