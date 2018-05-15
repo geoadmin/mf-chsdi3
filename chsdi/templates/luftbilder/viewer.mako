@@ -79,7 +79,7 @@
         position: absolute;
         top: 60px;
         right: 10px;
-        bottom: 50px;
+        bottom: 65px;
         left: 10px;
         border: 1px solid #EFEFEF;
       }
@@ -93,8 +93,8 @@
         text-align:center;
       }
       .controls{
-        margin-left:auto; 
-        margin-right:auto;
+        margin-left: auto;
+        margin-right: auto;
       }
       .percent{
         margin-left: 10px;
@@ -115,6 +115,7 @@
       }
       #reset {
         margin-left: 10px;
+        display: none;
       }
       @media print { /* Used by Chrome */
         #lubismap, .wrapper {
@@ -373,24 +374,28 @@
 
         function onSliderChange() {
           contrastOut.innerHTML = contrastSlider.value + "%";
+          displayButton();
           raster.changed();
         }
 
         function onReset(){
           contrastSlider.value = 100;
           contrastOut.innerHTML = "100%";
+          displayButton();
           raster.changed();
         }
 
         function moreContrast(){
           contrastSlider.value = parseInt(contrastSlider.value) + 5;
           contrastOut.innerHTML = contrastSlider.value + "%";
+          displayButton();
           raster.changed();
         }
 
         function lessContrast(){
           contrastSlider.value = parseInt(contrastSlider.value) - 5;
           contrastOut.innerHTML = contrastSlider.value + "%";
+          displayButton();
           raster.changed();
         }
 
@@ -399,6 +404,14 @@
           resetButton.addEventListener("click", onReset);
           plusButton.addEventListener("click", moreContrast);
           minusButton.addEventListener("click", lessContrast);
+        }
+
+        function displayButton() {
+          if (contrastSlider.value != 100) {
+            resetButton.style.display = "block";
+          } else {
+            resetButton.style.display = "none";
+          }
         }
       }
    </script>
