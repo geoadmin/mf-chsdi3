@@ -12,32 +12,32 @@
     serviceproductiondistribution = None
 
     if c['attributes']['technologyheat'] == True:
-        technologyheat = ('ch.bfe.solarprofis.technologyheat')
+        technologyheat = _('ch.bfe.solarprofis.technologyheat')
     else :
         technologyheat = '-'
 
     if c['attributes']['technologyelectricity'] == True:
-        technologyelectricity = ('ch.bfe.solarprofis.technologyelectricity')
+        technologyelectricity = _('ch.bfe.solarprofis.technologyelectricity')
     else :
         technologyelectricity = '-'
 
     if c['attributes']['technologyconstruction'] == True:
-        technologyconstruction = ('ch.bfe.solarprofis.technologyconstruction')
+        technologyconstruction = _('ch.bfe.solarprofis.technologyconstruction')
     else :
         technologyconstruction = '-'
 
     if c['attributes']['serviceconsultingplanning'] == True:
-        serviceconsultingplanning = ('ch.bfe.solarprofis.serviceconsultingplanning')
+        serviceconsultingplanning = _('ch.bfe.solarprofis.serviceconsultingplanning')
     else :
         serviceconsultingplanning = '-'
 
     if c['attributes']['serviceimplementation'] == True:
-        serviceimplementation = ('ch.bfe.solarprofis.serviceimplementation')
+        serviceimplementation = _('ch.bfe.solarprofis.serviceimplementation')
     else :
         serviceimplementation = '-'
 
     if c['attributes']['serviceproductiondistribution'] == True:
-        serviceproductiondistribution = ('ch.bfe.solarprofis.serviceproductiondistribution')
+        serviceproductiondistribution = _('ch.bfe.solarprofis.serviceproductiondistribution')
     else :
         serviceproductiondistribution = '-'
 
