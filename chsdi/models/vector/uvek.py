@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Unicode, Integer, Date
-from sqlalchemy.types import Numeric, Float
+from sqlalchemy.types import Numeric, Float, Boolean
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -642,6 +642,32 @@ class MinergieGebaeude(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(MinergieGebaeude.__bodId__, MinergieGebaeude)
+
+
+class Solarprofis (Base, Vector):
+    __tablename__ = 'solarprofis'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/solarprofis.mako'
+    __bodId__ = 'ch.bfe.solarprofis'
+    __queryable_attributes__ = ['company']
+    __label__ = 'company'
+    id = Column('xtf_id', Integer, primary_key=True)
+    company = Column('company', Unicode)
+    address1 = Column('address1', Unicode)
+    address2 = Column('address2', Unicode)
+    pc_place = Column('pc_place', Unicode)
+    telephonenumber = Column('telephonenumber', Unicode)
+    mail = Column('mail', Unicode)
+    webaddress = Column('webaddress', Unicode)
+    technologyheat = Column('technologyheat', Boolean)
+    technologyelectricity = Column('technologyelectricity', Boolean)
+    technologyconstruction = Column('technologyconstruction', Boolean)
+    serviceconsultingplanning = Column('serviceconsultingplanning', Boolean)
+    serviceimplementation = Column('serviceimplementation', Boolean)
+    serviceproductiondistribution = Column('serviceproductiondistribution', Boolean)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.solarprofis', Solarprofis)
 
 
 class StatistikwasserkraftanlagenNew(Base, Vector):
