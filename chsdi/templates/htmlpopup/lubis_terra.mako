@@ -64,23 +64,22 @@ preview_url = determinePreviewUrl(c['featureId'])
 
 image_width = c['attributes']['image_width'] if 'image_width' in  c['attributes'] else None
 image_height = c['attributes']['image_height'] if 'image_height' in c['attributes'] else None
-image_rotation = c['attributes']['rotation'] if 'rotation' in c['attributes'] else None
+image_rotation = 0
+firma = '-'
 
 if image_width is None or image_height is None:
   wh = h.imagesize_from_metafile(tileUrlBasePath, c['featureId'])
-  image_width = wh[0]
-  image_height = wh[1]
+  image_width = wh[1]
+  image_height = wh[0]
 
-if image_rotation is None:
-  image_rotation = 0
 
 datum = date_to_str(c['attributes']['flugdatum'])
 params = (
     image_width,
     image_height,
-    _('ch.swisstopo.lubis-luftbilder-dritte-kantone.ebkey'),
+    _('tt_lubis_ebkey'),
     c['featureId'],
-    c['attributes']['firma'],
+    firma,
     c['layerBodId'],
     lang,
     image_rotation)
@@ -88,10 +87,11 @@ viewer_url = get_viewer_url(request, params)
 %>
 <tr>
   <td class="cell-left">${_(tt_lubis_ebkey)}</td>
-  <td>${c['featureId'] or '-'}</td>
+  <td>${c['attributes']['image_number'] or '-'}</td>
 </tr>
+<tr><td class="cell-left">${_('tt_lubis_inventarnummer')}</td>          <td>${c['attributes']['inventarnummer'] or '-'}</td></tr>
 <tr>
-  <td class="cell-left">${_('tt_lubis_Flugdatum')}</td>
+  <td class="cell-left">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.tt_lubis_aufnahmedatum')}</td>
   <td>${datum or '-'}</td>
 </tr>
 <tr>
@@ -147,7 +147,16 @@ viewer_url = get_viewer_url(request, params)
 
 <%def name="extended_info(c, lang)">
 <%
+from chsdi.lib.helpers import resource_exists
+
 c['stable_id'] = True
+if c['layerBodId'] == 'ch.swisstopo.lubis-luftbilder_farbe':
+    imgtype = 1
+elif c['layerBodId'] == 'ch.swisstopo.lubis-luftbilder_infrarot':
+    imgtype = 2
+else:
+    imgtype = 0
+endif
 protocol = request.scheme
 c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
 topic = request.matchdict.get('map')
@@ -162,75 +171,67 @@ if filename:
     filesize_mb = c['attributes']['filesize_mb']
     toposhopscan = 'ja'
 endif
-orientierung = '-'
-if c['attributes']['orientierung']:
-    orientierung = 'True'
-endif
 
 datum = date_to_str(c['attributes']['flugdatum'])
 image_width =  c['attributes']['image_width'] if 'image_width' in  c['attributes'] else None
 image_height = c['attributes']['image_height'] if 'image_height' in c['attributes'] else None
-image_rotation = c['attributes']['rotation'] if 'rotation' in c['attributes'] else None
+image_rotation = 0
+firma = '-'
 
 if image_width is None or image_height is None:
   wh = h.imagesize_from_metafile(tileUrlBasePath, c['featureId'])
-  image_width = wh[0]
-  image_height = wh[1]
-
-if image_rotation is None:
-  image_rotation = 0
+  image_width = wh[1]
+  image_height = wh[0]
 
 params = (
     image_width,
     image_height,
     _('tt_lubis_ebkey'),
     c['featureId'],
-    c['attributes']['firma'],
+    firma,
     c['layerBodId'],
     lang,
     image_rotation)
 viewer_url = get_viewer_url(request, params)
 shop_url = request.registry.settings['shop_url']
+
+dataPath = 'ch.swisstopo.lubis-terrestrische_aufnahmen/'
+dataGeoAdminHost = request.registry.settings['datageoadminhost']
+pdf = None
+
+url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "pdf/" + c['attributes']['base_uuid'] + '.pdf'
+pdf = resource_exists(url_pdf)
+
 %>
 <title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
 
 <body onload="init()">
   <table class="table-with-border kernkraftwerke-extended">
-    <tr><th class="cell-left">${_('tt_lubis_ebkey')}</th>            <td>${c['featureId'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_inventarnummer')}</th>   <td>${c['attributes']['inventarnummer'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_Flugdatum')}</th>        <td>${datum or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_flughoehe')}</th>        <td>${c['attributes']['flughoehe'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_massstab')}</th>         <td>1:${c['attributes']['massstab'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_y')}</th>                <td>${c['attributes']['x'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_x')}</th>                <td>${c['attributes']['y'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_Filmart')}</th>          <td>${c['attributes']['filmart'] or '-'}</td></tr>
-
-% if 'contact_image_url' in c['attributes'] and c['attributes']['contact_image_url']:
-<tr>
-  <th class="cell-left">${_('tt_lubis_url_canton')}</th>
-  <td><a href="${c['attributes']['contact_image_url']}" target="_blank">${c['attributes']['contact_image_url']}</a></td>
-</tr>
-% endif
-
-    <tr><th class="cell-left">${_('tt_lubis_originalsize')}</th>     <td>${c['attributes']['originalsize'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_filesize_mb')}</th>      <td>${filesize_mb or '-'}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_ebkey')}</th>                   <td>${c['attributes']['image_number'] or '-'}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_inventarnummer')}</th>          <td>${c['attributes']['inventarnummer'] or '-'}</td></tr>
+    <tr><th class="cell-left">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.tt_lubis_aufnahmedatum')}</th>           <td>${datum or '-'}</td></tr>
+    <tr><th class="cell-left">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.operate_name')}</th>      <td>${c['attributes']['ort'] or '-'}</td></tr>
+    <tr><th class="cell-left">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.station')}</th>      <td>${c['attributes']['station'] or '-'}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_schraegaufnahmen_x')}</th>      <td>${c['attributes']['x'] or '-'}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_schraegaufnahmen_y')}</th>      <td>${c['attributes']['y'] or '-'}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_Filmart')}</th>                 <td>${c['attributes']['filmart'] or '-'}</td></tr>
+    <tr><th class="cell-left">${_('ch.swisstopo.lubis-luftbilder_schraegaufnahmen.tt_lubis_schraegaufnahmen_medium_format')}</th>                 <td>${c['attributes']['medium_format'] or '-'}</td></tr>
+    <tr><th class="cell-left">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.tt_filesize')}</th>                 <td>${c['attributes']['filesize_mb'] or '-'}</td></tr>
     <tr><th class="cell-left">${_('tt_lubis_bildpfad')}</th>         <td>${filename or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_orthophoto')}</th>       <td>${c['attributes']['orthophoto'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_orientierung')}</th>     <td>${orientierung or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_rotation')}</th>         <td>${c['attributes']['rotation'] or '-'}</td></tr>
-% if 'contact_web' not in c['attributes']:
+    <tr><th class="cell-left">${_('link')}</th>         
+        <td>
+% if pdf:
+    <a href="${url_pdf}" target="_blank">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.expertenlink')} - pdf</a>
+% else:
+    -
+% endif
+        </td>
+    </tr>
   <tr class="chsdi-no-print">
     <th class="cell-left">${_('link')} Toposhop</th>
     <td><a href="https:${shop_url}/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
     target="toposhop">Toposhop</a></td>
   </tr>
-% endif
-% if 'contact_web' in c['attributes']:
-  <tr class="chsdi-no-print">
-    <th class="cell-left">${_('tt_lubis_bildorder')}</th>
-    <td>${c['attributes']['contact'] | br } <br /> ${c['attributes']['contact_email']} <br /><a href="${c['attributes']['contact_web']}" target="_blank">${c['attributes']['contact_web']}</a></td>
-  </tr>
-% endif
   </table>
   <br>
 <div class="chsdi-map-container table-with-border">

@@ -150,3 +150,36 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.lubis-luftbilder_schraegaufnahmen', LuftbilderSchraegaufnahmen)
+
+
+class LuftbilderTerrA(Base, Vector):
+    __tablename__ = 'view_bilder'
+    __table_args__ = ({'schema': 'swisstopo_terrestrial', 'autoload': False})
+    __template__ = 'templates/htmlpopup/lubis_terra.mako'
+    __bodId__ = 'ch.swisstopo.lubis-terrestrische_aufnahmen'
+    __timeInstant__ = 'bgdi_flugjahr'
+    __returnedGeometry__ = 'the_geom_footprint'
+    __timeInstant__ = 'bgdi_flugjahr'
+    __extended_info__ = True
+    __label__ = 'flugdatum'
+    id = Column('inventory_number', Unicode, primary_key=True)
+    inventarnummer = Column('objectid', Integer)
+    image_number = Column('image_number', Integer)
+    flugdatum = Column('bgdi_flugdatum', Unicode)
+    bgdi_flugjahr = Column('year', Integer)
+    filmart = Column('filmart', Unicode)
+    ort = Column('operate_name', Unicode)
+    station = Column('station', Unicode)
+    base_uuid = Column('base_uuid', Unicode)
+    x = Column('easting', Numeric)
+    y = Column('northing', Numeric)
+    medium_format = Column('format', Unicode)
+    filesize_mb = Column('filesize_mb', Unicode)
+    filename = Column('filename', Unicode)
+    bgdi_imagemode = Column('bgdi_imagemode', Unicode)
+    image_height = Column('image_height', Integer)
+    image_width = Column('image_width', Integer)
+    the_geom_footprint = Column('the_geom_footprint', Geometry2D)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.lubis-terrestrische_aufnahmen', LuftbilderTerrA)
