@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Integer
-from sqlalchemy.types import Float
+from sqlalchemy import Column, Integer, Float, Unicode
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
