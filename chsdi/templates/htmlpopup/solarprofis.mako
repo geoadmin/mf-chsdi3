@@ -42,7 +42,7 @@
         serviceproductiondistribution = '-'
 
     technology = technologyheat + ' / ' + technologyelectricity + ' / ' + technologyconstruction
-    service = serviceconsultingplanning +  ' / ' + serviceconsultingplanning + ' / ' + serviceimplementation
+    service = serviceconsultingplanning +  ' / ' + serviceimplementation + ' / ' + serviceproductiondistribution
 
 
 
