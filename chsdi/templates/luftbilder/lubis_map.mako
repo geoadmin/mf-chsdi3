@@ -155,10 +155,7 @@
             var pixel = pixels[0];
             var degree_contrast = data.contrast;
             if (data.equalizedValues && pixel[3]!=0){
-              var new_pixel = getPixelValue(degree_contrast, pixel, data.mean, data.equalizedValues);
-              pixel[0] = new_pixel[0];
-              pixel[1] = new_pixel[1];
-              pixel[2] = new_pixel[2];
+              pixel = getPixelValue(degree_contrast, pixel, data.mean, data.equalizedValues);
             }
             return pixel;
           },
