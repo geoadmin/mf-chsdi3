@@ -14,7 +14,7 @@
     % elif c['attributes']['ak'] == 'GL':
         <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="https://map.geo.gl.ch/Public?visibleLayers=CH-Rahmen,BBFlaechen_farbig,projektierte%20BBFlaechen,Flaechenelemente_farbig,Linienelemente,Punktelemente,Grundstuecke%20(Parzellen),Liegenschaftsnummern,Grenzpunkte,BB%20Namen,EO%20Namen,Grundbuecher,Hoheitsgrenzpunkte,Fixpunkte%20Kat%201%202%203,Flur-%20und%20Ortsnamen,Lokalisationen,Gebaeudeadressen&startExtent=${c['bboxlv03'][0]},${c['bboxlv03'][1]},${c['bboxlv03'][2]},${c['bboxlv03'][3]}" target="_blank">GL</a></td></tr>
     % elif c['attributes']['ak'] == 'JU':
-        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="https://geo.jura.ch/theme/Cadastre?&map_x=${(c['bboxlv03'][0] + c['bboxlv03'][2])/2}&map_y=${(c['bboxlv03'][1] + c['bboxlv03'][3])/2}&map_zoom=8" target="_blank">JU</a></td></tr>
+        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="https://geo.jura.ch/theme/Cadastre?&map_x=${(c['bboxlv95'][0] + c['bboxlv95'][2])/2}&map_y=${(c['bboxlv95'][1] + c['bboxlv95'][3])/2}&map_zoom=8" target="_blank">JU</a></td></tr>
     % elif c['attributes']['ak'] == 'SH':
        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://www.gis.sh.ch/GIS_SH/?idp=1&uid=1&pwd=&map=10&lan=de&typ=3&bmurl=Nav@g@98@u@West@g@2${c['clickCoordLv03'][0]}@u@Nord@g@1${c['clickCoordLv03'][1]}@u@B@g@600" target="_blank">SH</a></td></tr>
     % elif c['attributes']['ak'] == 'SZ':
