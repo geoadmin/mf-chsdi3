@@ -16,6 +16,123 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20180530:
+   *******
+
+Release 20180530 - Wednesday, Mai 30th 2018
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_180508...r_180530>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_180508...r_180530>`__
+
+Geodata
+*******
+
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements pressure station QFE <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-luftdruck-qfe-10min>`__ (ch.meteoschweiz.messwerte-luftdruck-qfe-10min)                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements fresh snow <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-neuschnee-1d>`__ (ch.meteoschweiz.messwerte-neuschnee-1d)                                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Aviation stations <//map.geo.admin.ch/?layers=ch.meteoschweiz.messnetz-flugwetter>`__ (ch.meteoschweiz.messnetz-flugwetter)                                                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements pressure reduced QFF <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-luftdruck-qff-10min>`__ (ch.meteoschweiz.messwerte-luftdruck-qff-10min)                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Aerological stations <//map.geo.admin.ch/?layers=ch.meteoschweiz.messnetz-atmosphaere>`__ (ch.meteoschweiz.messnetz-atmosphaere)                                                              |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements humidity <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min>`__ (ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min)                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements pressure reduced QNH <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-luftdruck-qnh-10min>`__ (ch.meteoschweiz.messwerte-luftdruck-qnh-10min)                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements temperature 2 m, max. 24 h <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-lufttemperatur-24h-max-1h>`__ (ch.meteoschweiz.messwerte-lufttemperatur-24h-max-1h)             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements global radiation, 1 d <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-globalstrahlung-1d>`__ (ch.meteoschweiz.messwerte-globalstrahlung-1d)                                |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements precipitation, 10 min <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-niederschlag-10min>`__ (ch.meteoschweiz.messwerte-niederschlag-10min)                                |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements temperature 2 m, min. 24 h <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-lufttemperatur-24h-min-1h>`__ (ch.meteoschweiz.messwerte-lufttemperatur-24h-min-1h)             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements dew point <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-taupunkt-10min>`__ (ch.meteoschweiz.messwerte-taupunkt-10min)                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements precipitation, 1 day <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-niederschlag-1d>`__ (ch.meteoschweiz.messwerte-niederschlag-1d)                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements precipitation, 1 h <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-niederschlag-1h>`__ (ch.meteoschweiz.messwerte-niederschlag-1h)                                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements temperature 2 m <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-lufttemperatur-10min>`__ (ch.meteoschweiz.messwerte-lufttemperatur-10min)                                  |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements wind gusts <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-10min>`__ (ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-10min)                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Manual precipitation stations <//map.geo.admin.ch/?layers=ch.meteoschweiz.messnetz-manuell>`__ (ch.meteoschweiz.messnetz-manuell)                                                             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Pollen stations <//map.geo.admin.ch/?layers=ch.meteoschweiz.messnetz-pollen>`__ (ch.meteoschweiz.messnetz-pollen)                                                                             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Climate monitoring stations <//map.geo.admin.ch/?layers=ch.meteoschweiz.messnetz-klima>`__ (ch.meteoschweiz.messnetz-klima)                                                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements wind speed <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min>`__ (ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min)                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Automatic weather stations <//map.geo.admin.ch/?layers=ch.meteoschweiz.messnetz-automatisch>`__ (ch.meteoschweiz.messnetz-automatisch)                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geopotential height 850 hPa-surface <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-luftdruck-850hpa-flaeche-10min>`__ (ch.meteoschweiz.messwerte-luftdruck-850hpa-flaeche-10min)       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements sunshine duration, 10 min <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-sonnenscheindauer-10min>`__ (ch.meteoschweiz.messwerte-sonnenscheindauer-10min)                  |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements relative sunshine, 1 d <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d>`__ (ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d)           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements global radiation, 10 min <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-globalstrahlung-10min>`__ (ch.meteoschweiz.messwerte-globalstrahlung-10min)                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Visual observations <//map.geo.admin.ch/?layers=ch.meteoschweiz.messnetz-beobachtungen>`__ (ch.meteoschweiz.messnetz-beobachtungen)                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Weather cams <//map.geo.admin.ch/?layers=ch.meteoschweiz.messnetz-webcams>`__ (ch.meteoschweiz.messnetz-webcams)                                                                              |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements snow depth <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-gesamtschnee-1d>`__ (ch.meteoschweiz.messwerte-gesamtschnee-1d)                                                 |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Phenological observations <//map.geo.admin.ch/?layers=ch.meteoschweiz.messnetz-phaenologie>`__ (ch.meteoschweiz.messnetz-phaenologie)                                                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `MeteoSwiss partner stations <//map.geo.admin.ch/?layers=ch.meteoschweiz.messnetz-partner>`__ (ch.meteoschweiz.messnetz-partner)                                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geopotential height 700 hPa-surface <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-luftdruck-700hpa-flaeche-10min>`__ (ch.meteoschweiz.messwerte-luftdruck-700hpa-flaeche-10min)       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Measurements foehn index <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-foehn-10min>`__ (ch.meteoschweiz.messwerte-foehn-10min)                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Zementrohstoffe: Abbau und Verarbeitung <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung) |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Gips: Abbau und Verarbeitung <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung)                |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Salz: Abbau und Verarbeitung <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung)                |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `SWISS MIL PILOTS CHART <//map.geo.admin.ch/?layers=ch.vbs.swissmilpilotschart>`__ (ch.vbs.swissmilpilotschart)                                                                                |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Radon map <//map.geo.admin.ch/?layers=ch.bag.radonkarte>`__ (ch.bag.radonkarte)                                                                                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Territorial divisions <//map.geo.admin.ch/?layers=ch.vbs.territorialregionen>`__ (ch.vbs.territorialregionen)                                                                                 |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mountainbiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.mountainbikeland>`__ (ch.astra.mountainbikeland)                                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Skating in Switzerland <//map.geo.admin.ch/?layers=ch.astra.skatingland>`__ (ch.astra.skatingland)                                                                                            |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cycling in Switzerland <//map.geo.admin.ch/?layers=ch.astra.veloland>`__ (ch.astra.veloland)                                                                                                  |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.wanderland>`__ (ch.astra.wanderland)                                                                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:10'000 (color) <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte-farbe-10>`__ (ch.swisstopo.landeskarte-farbe-10)                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National Map 1:10'000 (grey) <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte-grau-10>`__ (ch.swisstopo.landeskarte-grau-10)                                                              |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `PDO plant products <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-pflanzen>`__ (ch.blw.ursprungsbezeichnungen-pflanzen)                                                            |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Pollutant releases (SwissPRTR) <//map.geo.admin.ch/?layers=ch.bafu.swissprtr>`__ (ch.bafu.swissprtr)                                                                                          |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20180502:
    *******
 
