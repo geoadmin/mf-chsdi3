@@ -1606,7 +1606,7 @@ class GeologieRohstoffeGipsAbbauVerarbeitung(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung'
     __queryable_attributes__ = ['obname', 'ockind', 'emkinds', 'ltkinds', 'edltkinds', 'pckind']
     __label__ = 'obname'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('obid', Integer, primary_key=True)
     obname = Column('obname', Unicode)
     ockind = Column('ockind', Unicode)
     ltkinds = Column('ltkinds', Unicode)
@@ -1629,7 +1629,7 @@ class GeologieRohstoffeZementAbbauVerarbeitung(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung'
     __queryable_attributes__ = ['obname', 'ockind', 'emkinds', 'ltkinds', 'edltkinds', 'pckind']
     __label__ = 'obname'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('obid', Integer, primary_key=True)
     obname = Column('obname', Unicode)
     tckinds = Column('tckinds', Unicode)
     ltkinds = Column('ltkinds', Unicode)
