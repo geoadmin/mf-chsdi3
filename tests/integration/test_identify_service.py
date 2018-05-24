@@ -762,7 +762,7 @@ class TestIdentifyService(TestsBase):
 
     def test_identify_treasurehunt_good_scale(self):
         params = dict(geometryType='esriGeometryPoint',
-                      geometry='611334,271015',
+                      geometry='2546959,1149075',
                       geometryFormat='geojson',
                       imageDisplay='1920,730,96',
                       layers='all:ch.swisstopo.treasurehunt',
