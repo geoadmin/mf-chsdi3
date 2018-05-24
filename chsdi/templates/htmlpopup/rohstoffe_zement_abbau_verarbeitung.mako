@@ -4,6 +4,7 @@
        <% c['stable_id'] = True %>
        <tr><td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.obname')}</td><td>${c['attributes']['obname'] or '-'}</td></tr>
 %if c['attributes']['ltkinds']:
+       <tr><td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.tckinds')}</td><td>${c['attributes']['tckinds'] or '-'}</td></tr>
        <tr><td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.ltkinds')}</td><td>${c['attributes']['ltkinds'] or '-'}</td></tr>
 %endif
 %if c['attributes']['emkinds']:

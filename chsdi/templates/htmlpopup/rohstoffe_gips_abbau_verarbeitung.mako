@@ -4,6 +4,9 @@
        <% c['stable_id'] = True %>
        <tr><td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.obname')}</td><td>${c['attributes']['obname'] or '-'}</td></tr>
        <tr><td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.ockind')}</td><td>${c['attributes']['ockind'] or '-'}</td></tr>
+%if c['attributes']['ltkinds']:
+       <tr><td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.ltkinds')}</td><td>${c['attributes']['ltkinds'] or '-'}</td></tr>
+%endif
 %if c['attributes']['edltkinds']:
        <tr><td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.edltkinds')}</td><td>${c['attributes']['edltkinds'] or '-'}</td></tr>
 %endif
