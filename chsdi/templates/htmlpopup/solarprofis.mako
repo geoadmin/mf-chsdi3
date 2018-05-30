@@ -4,15 +4,9 @@
 <%c['stable_id'] = True %>
 
 <%
-    technologyheat = None
-    technologyelectricity = None
-    technologyconstruction = None
-    serviceconsultingplanning = None
-    serviceimplementation = None
-    serviceproductiondistribution = None
-
     arr_technology = []
     arr_service = []
+    arr_address = []
 
     def text_creator(arr_titles):
         i = 0
@@ -21,7 +15,7 @@
             if i == 0:
               display_text = el
             else:
-              display_text += ' ,%s' % el
+              display_text += ', %s' % el
             i += 1
         if display_text == '': display_text = '-'
         return display_text
@@ -32,11 +26,12 @@
     if c['attributes']['serviceimplementation']: arr_service.append(_('ch.bfe.solarprofis.serviceimplementation'))
     if c['attributes']['serviceproductiondistribution']: arr_service.append(_('ch.bfe.solarprofis.serviceproductiondistribution'))
     if c['attributes']['serviceconsultingplanning']: arr_service.append(_('ch.bfe.solarprofis.serviceconsultingplanning'))
-
+    if c['attributes']['address1']: arr_address.append(c['attributes']['address1'])
+    if c['attributes']['address2']: arr_address.append(c['attributes']['address2'])
 
     service = text_creator(arr_service)
     technology = text_creator(arr_technology)
-
+    address = text_creator(arr_address)
 %>
     <tr>
         <td class="cell-left">${_('ch.bfe.solarprofis.company')}</td>
@@ -44,13 +39,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bfe.solarprofis.address')}</td>
-          % if c['attributes']['address1'] == None:
-            <td>${c['attributes']['address2'] or '-'}</td>
-          % elif c['attributes']['address2'] == None:
-            <td>${c['attributes']['address1']}</td>
-          % else:
-            <td>${c['attributes']['address1']}, ${c['attributes']['address2']}</td>
-          % endif
+        <td>${address}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bfe.solarprofis.pc_place')}</td>
