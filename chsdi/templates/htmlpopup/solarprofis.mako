@@ -11,56 +11,31 @@
     serviceimplementation = None
     serviceproductiondistribution = None
 
-    if c['attributes']['technologyheat'] == True:
-        if c['attributes']['technologyelectricity'] == False and c['attributes']['technologyconstruction'] == False:
-            technologyheat = _('ch.bfe.solarprofis.technologyheat')
-        elif c['attributes']['technologyelectricity'] == True or c['attributes']['technologyconstruction'] == True:
-            technologyheat = _('ch.bfe.solarprofis.technologyheat') + ', '
-    else :
-        technologyheat = ''
+    arr_technology = []
+    arr_service = []
 
-    if c['attributes']['technologyelectricity'] == True:
-        if c['attributes']['technologyconstruction'] == True:
-            technologyelectricity = _('ch.bfe.solarprofis.technologyelectricity') + ', '
-        else :
-            technologyelectricity = _('ch.bfe.solarprofis.technologyelectricity')
-    else :
-        technologyelectricity = ''
+    def text_creator(arr_titles):
+        i = 0
+        display_text = ''
+        for el in arr_titles:
+            if i == 0:
+              display_text = el
+            else:
+              display_text += ' ,%s' % el
+            i += 1
+        if display_text == '': display_text = '-'
+        return display_text
 
-    if c['attributes']['technologyconstruction'] == True:
-        technologyconstruction = _('ch.bfe.solarprofis.technologyconstruction')
-    else :
-        technologyconstruction = ''
+    if c['attributes']['technologyheat']: arr_technology.append(_('ch.bfe.solarprofis.technologyheat'))
+    if c['attributes']['technologyelectricity']: arr_technology.append(_('ch.bfe.solarprofis.technologyelectricity'))
+    if c['attributes']['technologyconstruction']: arr_technology.append(_('ch.bfe.solarprofis.technologyconstruction'))
+    if c['attributes']['serviceimplementation']: arr_service.append(_('ch.bfe.solarprofis.serviceimplementation'))
+    if c['attributes']['serviceproductiondistribution']: arr_service.append(_('ch.bfe.solarprofis.serviceproductiondistribution'))
+    if c['attributes']['serviceconsultingplanning']: arr_service.append(_('ch.bfe.solarprofis.serviceconsultingplanning'))
 
-    if c['attributes']['serviceconsultingplanning'] == True:
-        if c['attributes']['serviceimplementation'] == True and c['attributes']['serviceproductiondistribution'] == True:
-            serviceconsultingplanning = _('ch.bfe.solarprofis.serviceconsultingplanning')
-        elif  c['attributes']['serviceimplementation'] == True or c['attributes']['serviceproductiondistribution'] == True:
-            serviceconsultingplanning = _('ch.bfe.solarprofis.serviceconsultingplanning') + ', '
-    else :
-        serviceconsultingplanning = ''
 
-    if c['attributes']['serviceimplementation'] == True:
-        if c['attributes']['serviceproductiondistribution'] == True:
-            serviceimplementation = _('ch.bfe.solarprofis.serviceimplementation') + ', '
-        else:
-            serviceimplementation = _('ch.bfe.solarprofis.serviceimplementation')
-    else :
-        serviceimplementation = ''
-
-    if c['attributes']['serviceproductiondistribution'] == True:
-        serviceproductiondistribution = _('ch.bfe.solarprofis.serviceproductiondistribution')
-    else :
-        serviceproductiondistribution = ''
-
-    technology = technologyheat + technologyelectricity + technologyconstruction
-    service = serviceconsultingplanning + serviceimplementation + serviceproductiondistribution
-
-    if c['attributes']['technologyheat'] == False and c['attributes']['technologyelectricity'] == False and c['attributes']['serviceconsultingplanning'] == False:
-        technology = '-'
-    if c['attributes']['serviceconsultingplanning'] == False and c['attributes']['serviceimplementation'] == False and c['attributes']['serviceproductiondistribution'] == False:
-        service = '-'
-
+    service = text_creator(arr_service)
+    technology = text_creator(arr_technology)
 
 %>
     <tr>
