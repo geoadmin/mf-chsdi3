@@ -6,6 +6,27 @@
 <%
   lang = lang if lang in ('fr', 'it') else 'de'
   experience = 'experience_text_%s' % lang
+
+  arr_address = []
+
+  def text_creator(arr_titles):
+      i = 0
+      display_text = ''
+      for el in arr_titles:
+          if i == 0:
+            display_text = el
+          else:
+            display_text += ', %s' % el
+          i += 1
+      if display_text == '': display_text = '-'
+      return display_text
+
+  if c['attributes']['address1']: arr_address.append(c['attributes']['address1'])
+  if c['attributes']['address2']: arr_address.append(c['attributes']['address2'])
+  if c['attributes']['postofficebox']: arr_address.append(c['attributes']['postofficebox'])
+
+  address = text_creator(arr_address)
+
 %>
     <tr>
         <td class="cell-left">${_('ch.bfe.geak-experten.name_expert')}</td>
@@ -21,7 +42,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bfe.geak-experten.address')}</td>
-        <td>${c['attributes']['address1'] or '-'}, ${c['attributes']['address2'] or '-'}, ${c['attributes']['postofficebox'] or '-'}</td>
+        <td>${address}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bfe.geak-experten.pc_place')}</td>
