@@ -4245,46 +4245,46 @@ msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
 
 msgid "ch.bakom.notruf"
-msgstr "Chiamata d'emergenza"
+msgstr "per Comune"
 
 msgid "ch.bakom.notruf-112_festnetz"
-msgstr "Chiamata d'emergenza"
+msgstr "112 Rete fissa"
 
 msgid "ch.bakom.notruf-112_mobilnetz"
-msgstr "Chiamata d'emergenza"
+msgstr "112 Rete mobile"
 
 msgid "ch.bakom.notruf-112_satellit"
-msgstr "Chiamata d'emergenza"
+msgstr "112 Rete via satellite"
 
 msgid "ch.bakom.notruf-117_festnetz"
-msgstr "Chiamata d'emergenza"
+msgstr "117 Rete fissa"
 
 msgid "ch.bakom.notruf-117_mobilnetz"
-msgstr "Chiamata d'emergenza"
+msgstr "117 Rete mobile"
 
 msgid "ch.bakom.notruf-118_festnetz"
-msgstr "Chiamata d'emergenza"
+msgstr "118 Rete fissa"
 
 msgid "ch.bakom.notruf-118_mobilnetz"
-msgstr "Chiamata d'emergenza"
+msgstr "118 Rete mobile"
 
 msgid "ch.bakom.notruf-143_festnetz"
-msgstr "Chiamata d'emergenza"
+msgstr "143 Rete fissa"
 
 msgid "ch.bakom.notruf-143_mobilnetz"
-msgstr "Chiamata d'emergenza"
+msgstr "143 Rete mobile"
 
 msgid "ch.bakom.notruf-144_festnetz"
-msgstr "Chiamata d'emergenza"
+msgstr "144 Rete fissa"
 
 msgid "ch.bakom.notruf-144_mobilnetz"
-msgstr "Chiamata d'emergenza"
+msgstr "144 Rete mobile"
 
 msgid "ch.bakom.notruf-147_festnetz"
-msgstr "Chiamata d'emergenza"
+msgstr "147 Rete fissa"
 
 msgid "ch.bakom.notruf-147_mobilnetz"
-msgstr "Chiamata d'emergenza"
+msgstr "147 Rete mobile"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emittenti radiotelevisive"
@@ -6103,6 +6103,9 @@ msgstr "DOP Prodotti vegetali"
 
 msgid "ch.blw.ursprungsbezeichnungen-pflanzen-cardon_epineux_ge"
 msgstr "Cardon épineux genevois (DOP)"
+
+msgid "ch.blw.ursprungsbezeichnungen-pflanzen-cuchaule"
+msgstr "Cuchaule (DOP) - Produzione, trasformazione"
 
 msgid "ch.blw.ursprungsbezeichnungen-pflanzen-munder_safran"
 msgstr "Munder Safran (DOP)"
@@ -8345,6 +8348,9 @@ msgstr "Edizione"
 msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "Carta nazionale 1:50'000 | CN50"
 
+msgid "ch.swisstopo.pixelkarte-farbe-winter"
+msgstr "Carte nationale hiver | CN25, CN50"
+
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Carte nazionali (grigio)"
 
@@ -9216,7 +9222,7 @@ msgid "ch.swisstopo.vec200-landcover"
 msgstr "Copertura prim. suolo VECTOR200"
 
 msgid "ch.swisstopo.vec200-landcover-wald"
-msgstr "Superficie forestali"
+msgstr "Superfici forestali"
 
 msgid "ch.swisstopo.vec200-miscellaneous"
 msgstr "Oggetti singoli VECTOR200"
@@ -9550,12 +9556,6 @@ msgstr "SWISS MIL PILOTS CHART"
 
 msgid "ch.vbs.territorialregionen"
 msgstr "Divisione territoriali"
-
-msgid "ch.vbs.territorialregionen.name"
-msgstr "Nom de la division territoriale"
-
-msgid "ch.vbs.territorialregionen.terreg_nr"
-msgstr "Numéro de la division territoriale"
 
 msgid "ch.vbs.url"
 msgstr "http://www.vbs.admin.ch/it/home.html"

@@ -4245,46 +4245,46 @@ msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
 
 msgid "ch.bakom.notruf"
-msgstr "Emergency call"
+msgstr "by comune"
 
 msgid "ch.bakom.notruf-112_festnetz"
-msgstr "Emergency call"
+msgstr "112 Fixed network"
 
 msgid "ch.bakom.notruf-112_mobilnetz"
-msgstr "Emergency call"
+msgstr "112 Mobile network"
 
 msgid "ch.bakom.notruf-112_satellit"
-msgstr "Emergency call"
+msgstr "112 Satellite network"
 
 msgid "ch.bakom.notruf-117_festnetz"
-msgstr "Emergency call"
+msgstr "117 Fixed network"
 
 msgid "ch.bakom.notruf-117_mobilnetz"
-msgstr "Emergency call"
+msgstr "117 Mobile network"
 
 msgid "ch.bakom.notruf-118_festnetz"
-msgstr "Emergency call"
+msgstr "118 Fixed network"
 
 msgid "ch.bakom.notruf-118_mobilnetz"
-msgstr "Emergency call"
+msgstr "118 Mobile network"
 
 msgid "ch.bakom.notruf-143_festnetz"
-msgstr "Emergency call"
+msgstr "143 Fixed network"
 
 msgid "ch.bakom.notruf-143_mobilnetz"
-msgstr "Emergency call"
+msgstr "143 Mobile network"
 
 msgid "ch.bakom.notruf-144_festnetz"
-msgstr "Emergency call"
+msgstr "144 Fixed network"
 
 msgid "ch.bakom.notruf-144_mobilnetz"
-msgstr "Emergency call"
+msgstr "144 Mobile network"
 
 msgid "ch.bakom.notruf-147_festnetz"
-msgstr "Emergency call"
+msgstr "147 Fixed network"
 
 msgid "ch.bakom.notruf-147_mobilnetz"
-msgstr "Emergency call"
+msgstr "147 Mobile network"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Radio and TV broadcasters"
@@ -6104,6 +6104,9 @@ msgstr "PDO plant products"
 msgid "ch.blw.ursprungsbezeichnungen-pflanzen-cardon_epineux_ge"
 msgstr "PDO plant products"
 
+msgid "ch.blw.ursprungsbezeichnungen-pflanzen-cuchaule"
+msgstr "PDO plant products"
+
 msgid "ch.blw.ursprungsbezeichnungen-pflanzen-munder_safran"
 msgstr "PDO plant products"
 
@@ -6249,16 +6252,16 @@ msgid "ch.meteoschweiz.messnetz-webcams"
 msgstr "Weather cams"
 
 msgid "ch.meteoschweiz.messwerte-foehn-10min"
-msgstr "Measurements foehn index"
+msgstr "Foehn index measurements"
 
 msgid "ch.meteoschweiz.messwerte-gesamtschnee-1d"
-msgstr "Measurements snow depth"
+msgstr "Snow depth measurements"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-10min"
-msgstr "Measurements global radiation, 10 min"
+msgstr "Global radiation measurements, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-1d"
-msgstr "Measurements global radiation, 1 d"
+msgstr "Global radiation measurements, 1 d"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-700hpa-flaeche-10min"
 msgstr "Geopotential height 700 hPa-surface"
@@ -6267,52 +6270,52 @@ msgid "ch.meteoschweiz.messwerte-luftdruck-850hpa-flaeche-10min"
 msgstr "Geopotential height 850 hPa-surface"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qfe-10min"
-msgstr "Measurements pressure station QFE"
+msgstr "Pressure station QFE measurements"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qff-10min"
-msgstr "Measurements pressure reduced QFF"
+msgstr "Pressure reduced QFF measurements"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qnh-10min"
-msgstr "Measurements pressure reduced QNH"
+msgstr "Pressure reduced QNH measurements"
 
 msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
-msgstr "Measurements humidity"
+msgstr "Humidity measurements"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-10min"
-msgstr "Measurements temperature 2 m"
+msgstr "Temperature measurements 2 m"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-max-1h"
-msgstr "Measurements temperature 2 m, max. 24 h"
+msgstr "Temperature measurements 2 m, max. 24 h"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-min-1h"
-msgstr "Measurements temperature 2 m, min. 24 h"
+msgstr "Temperature measurements 2 m, min. 24 h"
 
 msgid "ch.meteoschweiz.messwerte-neuschnee-1d"
-msgstr "Measurements fresh snow"
+msgstr "Fresh snow measurements"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-10min"
-msgstr "Measurements precipitation, 10 min"
+msgstr "Precipitation measurements, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1d"
-msgstr "Measurements precipitation, 1 day"
+msgstr "Precipitation measurements, 1 day"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1h"
-msgstr "Measurements precipitation, 1 h"
+msgstr "Precipitation measurements, 1 h"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
-msgstr "Measurements sunshine duration, 10 min"
+msgstr "Sunshine duration measurements, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
-msgstr "Measurements relative sunshine, 1 d"
+msgstr "Relative sunshine duration measurements, 1 d"
 
 msgid "ch.meteoschweiz.messwerte-taupunkt-10min"
-msgstr "Measurements dew point"
+msgstr "Dew point measurements"
 
 msgid "ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-10min"
-msgstr "Measurements wind gusts"
+msgstr "Wind gusts measurements"
 
 msgid "ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min"
-msgstr "Measurements wind speed"
+msgstr "Wind speed measurements"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
@@ -8345,6 +8348,9 @@ msgstr "Edition"
 msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "National Map 1:50'000"
 
+msgid "ch.swisstopo.pixelkarte-farbe-winter"
+msgstr "Landeskarte Winter | LK25, LK50"
+
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "National Maps (grey)"
 
@@ -9550,12 +9556,6 @@ msgstr "SWISS MIL PILOTS CHART"
 
 msgid "ch.vbs.territorialregionen"
 msgstr "Territorial divisions"
-
-msgid "ch.vbs.territorialregionen.name"
-msgstr "Name der Territorialdivision"
-
-msgid "ch.vbs.territorialregionen.terreg_nr"
-msgstr "Nummer der Territorialdivision"
 
 msgid "ch.vbs.url"
 msgstr "http://www.vbs.admin.ch/en/home.html"

@@ -4245,46 +4245,46 @@ msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
 
 msgid "ch.bakom.notruf"
-msgstr "Appel d'urgence"
+msgstr "par commune"
 
 msgid "ch.bakom.notruf-112_festnetz"
-msgstr "Appel d'urgence"
+msgstr "112 Réseau fixe"
 
 msgid "ch.bakom.notruf-112_mobilnetz"
-msgstr "Appel d'urgence"
+msgstr "112 Réseau mobile"
 
 msgid "ch.bakom.notruf-112_satellit"
-msgstr "Appel d'urgence"
+msgstr "112 par satellite"
 
 msgid "ch.bakom.notruf-117_festnetz"
-msgstr "Appel d'urgence"
+msgstr "117 réseau fixe"
 
 msgid "ch.bakom.notruf-117_mobilnetz"
-msgstr "Appel d'urgence"
+msgstr "117 réseau mobile"
 
 msgid "ch.bakom.notruf-118_festnetz"
-msgstr "Appel d'urgence"
+msgstr "118 réseau fixe"
 
 msgid "ch.bakom.notruf-118_mobilnetz"
-msgstr "Appel d'urgence"
+msgstr "118 réseau mobile"
 
 msgid "ch.bakom.notruf-143_festnetz"
-msgstr "Appel d'urgence"
+msgstr "143 réseau fixe"
 
 msgid "ch.bakom.notruf-143_mobilnetz"
-msgstr "Appel d'urgence"
+msgstr "143 réseau mobile"
 
 msgid "ch.bakom.notruf-144_festnetz"
-msgstr "Appel d'urgence"
+msgstr "144 réseau fixe"
 
 msgid "ch.bakom.notruf-144_mobilnetz"
-msgstr "Appel d'urgence"
+msgstr "144 réseau mobile"
 
 msgid "ch.bakom.notruf-147_festnetz"
-msgstr "Appel d'urgence"
+msgstr "147 réseau fixe"
 
 msgid "ch.bakom.notruf-147_mobilnetz"
-msgstr "Appel d'urgence"
+msgstr "147 réseau mobile"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emetteurs radio et télévision"
@@ -6103,6 +6103,9 @@ msgstr "AOP Produits végétaux"
 
 msgid "ch.blw.ursprungsbezeichnungen-pflanzen-cardon_epineux_ge"
 msgstr "Cardon épineux genevois (AOP)"
+
+msgid "ch.blw.ursprungsbezeichnungen-pflanzen-cuchaule"
+msgstr "Cuchaule (AOP) – Production, transformation"
 
 msgid "ch.blw.ursprungsbezeichnungen-pflanzen-munder_safran"
 msgstr "Munder Safran (AOP)"
@@ -8345,6 +8348,9 @@ msgstr "Édition"
 msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "Carte nationale 1:50'000 | CN50"
 
+msgid "ch.swisstopo.pixelkarte-farbe-winter"
+msgstr "Carte nationale hiver | CN25, CN50"
+
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Cartes nationales (grise)"
 
@@ -9550,12 +9556,6 @@ msgstr "SWISS MIL PILOTS CHART"
 
 msgid "ch.vbs.territorialregionen"
 msgstr "Divisions territoriales"
-
-msgid "ch.vbs.territorialregionen.name"
-msgstr "Nom de la division territoriale"
-
-msgid "ch.vbs.territorialregionen.terreg_nr"
-msgstr "Numéro de la division territoriale"
 
 msgid "ch.vbs.url"
 msgstr "http://www.vbs.admin.ch/fr/home.html"

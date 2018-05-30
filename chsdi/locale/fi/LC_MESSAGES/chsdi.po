@@ -4245,46 +4245,46 @@ msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
 
 msgid "ch.bakom.notruf"
-msgstr "Notrufnummer"
+msgstr "per vischnanca"
 
 msgid "ch.bakom.notruf-112_festnetz"
-msgstr "Clom d'urgenza"
+msgstr "112 Rait fixa"
 
 msgid "ch.bakom.notruf-112_mobilnetz"
-msgstr "clom d'urgenza"
+msgstr "112 rait per telefonia mobila"
 
 msgid "ch.bakom.notruf-112_satellit"
-msgstr "clom d'urgenza"
+msgstr "112 rait da satellit"
 
 msgid "ch.bakom.notruf-117_festnetz"
-msgstr "clom d'urgenza"
+msgstr "117 rait fixa"
 
 msgid "ch.bakom.notruf-117_mobilnetz"
-msgstr "Notrufnummer"
+msgstr "117 Rait per telefonia mobila"
 
 msgid "ch.bakom.notruf-118_festnetz"
-msgstr "Notrufnummer"
+msgstr "118 Rait fixa"
 
 msgid "ch.bakom.notruf-118_mobilnetz"
-msgstr "Notrufnummer"
+msgstr "118 Rait per telefonia mobila"
 
 msgid "ch.bakom.notruf-143_festnetz"
-msgstr "Notrufnummer"
+msgstr "143 Rait fixa"
 
 msgid "ch.bakom.notruf-143_mobilnetz"
-msgstr "Notrufnummer"
+msgstr "143 Rait per telefonia mobila"
 
 msgid "ch.bakom.notruf-144_festnetz"
-msgstr "Notrufnummer"
+msgstr "144 Rait fixa"
 
 msgid "ch.bakom.notruf-144_mobilnetz"
-msgstr "Notrufnummer"
+msgstr "144 Rait per telefonia mobila"
 
 msgid "ch.bakom.notruf-147_festnetz"
-msgstr "Notrufnummer"
+msgstr "147 Rait fixa"
 
 msgid "ch.bakom.notruf-147_mobilnetz"
-msgstr "Notrufnummer"
+msgstr "147 Rait per telefonia mobila"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emetturs radio e televisiun"
@@ -6103,6 +6103,9 @@ msgstr "Products da plantas DOP"
 
 msgid "ch.blw.ursprungsbezeichnungen-pflanzen-cardon_epineux_ge"
 msgstr "Cardon épineux genevois (GUB)"
+
+msgid "ch.blw.ursprungsbezeichnungen-pflanzen-cuchaule"
+msgstr "Freiburger Safranbrot (GUB) – Produktion, Verarbeitung"
 
 msgid "ch.blw.ursprungsbezeichnungen-pflanzen-munder_safran"
 msgstr "Munder Safran (GUB)"
@@ -8345,6 +8348,9 @@ msgstr "Ausgabejahr"
 msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "Charta naziunala 1:50'000 | CN50"
 
+msgid "ch.swisstopo.pixelkarte-farbe-winter"
+msgstr "Landeskarte Winter | LK25, LK50"
+
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Charta naziunala (grisch)"
 
@@ -9550,12 +9556,6 @@ msgstr "SWISS MIL PILOTS CHART"
 
 msgid "ch.vbs.territorialregionen"
 msgstr "Divisiuns territorialas"
-
-msgid "ch.vbs.territorialregionen.name"
-msgstr "Name der Territorialdivision"
-
-msgid "ch.vbs.territorialregionen.terreg_nr"
-msgstr "Nummer der Territorialdivision"
 
 msgid "ch.vbs.url"
 msgstr "http://www.vbs.admin.ch/rm/home.html"
