@@ -101,11 +101,13 @@
             12.92 * x : 1.055 * Math.pow(x, 1 / 2.4) - 0.055);
         }
 
-        function getPixelValue(degree, pixel, mean, equalizedValues){
+        // in case you want to add a slider, add a degree parameter (value range:0-200)
+        function getPixelValue(pixel, mean, equalizedValues){
           var hcl = rgb2hcl(pixel);
           var l = parseInt(hcl[2]);
           var equalizedValue = equalizedValues[l];
           var new_l;
+          var degree = 150;
 
           if (degree<100){
             new_l = mean * (1 - (degree / 100)) + l * (degree / 100);
@@ -145,7 +147,8 @@
 
         var tile = new ol.layer.Tile({
           preload: 0,
-          source: tileimage
+          source: tileimage,
+          visible: true
         });
 
         var raster = new ol.source.Raster({
@@ -153,9 +156,8 @@
           crossOrigin: 'anonymous',
           operation: function(pixels, data) {
             var pixel = pixels[0];
-            var degree_contrast = data.contrast;
             if (data.equalizedValues && pixel[3]!=0){
-              pixel = getPixelValue(degree_contrast, pixel, data.mean, data.equalizedValues);
+              pixel = getPixelValue(pixel, data.mean, data.equalizedValues);
             }
             return pixel;
           },
@@ -178,11 +180,14 @@
           }
         });
 
+        var contrastLayer = new ol.layer.Image({
+          source: raster,
+          visible: false
+        });
+
         var lubisMap = new ol.Map({
           layers: [
-            new ol.layer.Image({
-              source: raster
-            })
+            tile, contrastLayer
           ],
           controls: ol.control.defaults().extend([new ol.control.FullScreen()]),
           renderer: 'canvas',
