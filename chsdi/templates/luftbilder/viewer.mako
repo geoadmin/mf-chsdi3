@@ -92,12 +92,11 @@
         margin: 10px 0px;
         text-align:center;
       }
-      .controls{
+      .button{
+        margin-top: 0.5%;
         margin-left: auto;
         margin-right: auto;
-      }
-      .percent{
-        margin-left: 10px;
+        width: 150px;
       }
       .footer a {
         padding: 0px 10px;
@@ -112,10 +111,6 @@
         width: 100%;
         height: 95%;
         font-size: 16px;
-      }
-      #reset {
-        margin-left: 10px;
-        display: none;
       }
       @media print { /* Used by Chrome */
         #lubismap, .wrapper {
@@ -142,22 +137,9 @@
   <body onload="init()">
     <div class="header">${title}</div>
     <div class="wrapper">
-    <div id="lubismap"></div>
-    <table class="controls" style="border-collapse: separate; border-spacing: 20px;" >
-       <tr>
-         <td>${_('image_contrast')}</td>
-         <td>
-          <button id="minus-button" class="btn btn-secondary btn-sm" style="border-radius: 50%"><i class="fa fa-minus"></i></button>
-         </td>
-         <td><input id="contrast" type="range" min="0" max="200" value="100"/></td>
-         <td>
-          <button id="plus-button"class="btn btn-secondary btn-sm" style="border-radius: 50%"><i class="fa fa-plus"></i></button>
-         </td>
-         <td id="contrastOut" class="percent">100%</td>
-         <td><button id="reset" class="btn btn-secondary btn-sm">Reset</button></td>
-       </tr>
-    </table>
-   </div>
+      <div id="lubismap"></div>
+      <button id="contrast_activate" class="button btn btn-secondary btn-sm d-block">${_('image_contrast_activate')}</button>
+    </div>
 
     <div class="footer">
       <a class="pull-left" href="${_('disclaimer url')}" target="_blank">Copyright</a>
@@ -290,22 +272,27 @@
         view.on('propertychange', debounce(updateUrl));
         updateUrl();
 
-        var contrastSlider = document.getElementById("contrast");
-        var contrastOut = document.getElementById("contrastOut");
-        var resetButton = document.getElementById("reset");
-        var minusButton = document.getElementById("minus-button");
-        var plusButton = document.getElementById("plus-button");
+        var contrastButtonActivate = document.getElementById("contrast_activate");
 
-        setSliderListeners();
+        setButtonListener();
 
         var equalizedValues = undefined;
         var mean = undefined;
 
-        function getPixelList(data){
+        function isBlack(pixel){
+          return pixel[0]==255 && pixel[1]==255 && pixel[2]==255
+        }
+
+        function isWhite(pixel){
+          return pixel[0]==0 && pixel[1]==0 && pixel[2]==0
+        }
+
+       function getPixelList(data){
           var pixelList = [];
           for (var i=0; i<(data.length);i+=4){
-            if (data[i+3]!=0){
-              var pixel = [data[i], data[i+1], data[i+2], data[i+3]];
+            pixel_values = data.slice(i, i+4);
+            if (pixel_values[3]!=0 && !(isBlack(pixel_values) || isWhite(pixel_values))){
+              var pixel = [pixel_values[0], pixel_values[1], pixel_values[2], pixel_values[3]];
               pixelList.push(pixel);
             }
           }
@@ -327,7 +314,7 @@
           var sum = 0;
           var mean_luminance = 0;
 
-          //initialize histogram 
+          //initialize histogram
           for (var i = 0; i < 101; i++){
             histogram[i] = 0;
           }
@@ -367,51 +354,22 @@
 
         raster.on('beforeoperations', function(event) {
           var data = event.data;
-          data["contrast"] = parseInt(contrastSlider.value);
           data["equalizedValues"] = equalizedValues;
           data["mean"] = mean;
         });
 
-        function onSliderChange() {
-          contrastOut.innerHTML = contrastSlider.value + "%";
-          displayButton();
-          raster.changed();
-        }
-
-        function onReset(){
-          contrastSlider.value = 100;
-          contrastOut.innerHTML = "100%";
-          displayButton();
-          raster.changed();
-        }
-
-        function moreContrast(){
-          contrastSlider.value = parseInt(contrastSlider.value) + 5;
-          contrastOut.innerHTML = contrastSlider.value + "%";
-          displayButton();
-          raster.changed();
-        }
-
-        function lessContrast(){
-          contrastSlider.value = parseInt(contrastSlider.value) - 5;
-          contrastOut.innerHTML = contrastSlider.value + "%";
-          displayButton();
-          raster.changed();
-        }
-
-        function setSliderListeners() {
-          contrastSlider.addEventListener("change", onSliderChange);
-          resetButton.addEventListener("click", onReset);
-          plusButton.addEventListener("click", moreContrast);
-          minusButton.addEventListener("click", lessContrast);
-        }
-
-        function displayButton() {
-          if (contrastSlider.value != 100) {
-            resetButton.style.display = "block";
-          } else {
-            resetButton.style.display = "none";
+        function onButtonChange() {
+          if (contrastLayer.getVisible() == true){
+            contrastLayer.setVisible(false);
+            contrastButtonActivate.innerHTML = "${_('image_contrast_activate')}";
+          } else{
+            contrastLayer.setVisible(true);
+            contrastButtonActivate.innerHTML = "${_('image_contrast_deactivate')}";
           }
+        }
+
+        function setButtonListener() {
+          contrastButtonActivate.addEventListener("click", onButtonChange);
         }
       }
    </script>
