@@ -11,6 +11,7 @@
   baseUrl = '//' + c.get('baseUrl')
   layerBodId = c.get('layer')
   featureId = c.get('bildnummer')
+  contrast = 'true' if c.get('contrast')=='true' else 'false'
   displayLink = True
   ## This is a HACK to ensure backward compatibility
   if not layerBodId.startswith('ch.'):
@@ -140,7 +141,6 @@
       <div id="lubismap"></div>
       <button id="contrast_activate" class="button btn btn-secondary btn-sm d-block">${_('image_contrast_activate')}</button>
     </div>
-
     <div class="footer">
       <a class="pull-left" href="${_('disclaimer url')}" target="_blank">Copyright</a>
       <div id="messagectrl"></div>
@@ -290,7 +290,8 @@
        function getPixelList(data){
           var pixelList = [];
           for (var i=0; i<(data.length);i+=4){
-            pixel_values = data.slice(i, i+4);
+            //data-.slice() doesnt work for E11
+            pixel_values = [data[i], data[i+1], data[i+2], data[i+3]];
             if (pixel_values[3]!=0 && !(isBlack(pixel_values) || isWhite(pixel_values))){
               var pixel = [pixel_values[0], pixel_values[1], pixel_values[2], pixel_values[3]];
               pixelList.push(pixel);
@@ -340,6 +341,9 @@
         }
 
         lubisMap.on('postrender', function(event){
+          if (mean) {
+            return;
+          }
           var canvas = document.getElementsByTagName('canvas')[0];
           var context = canvas.getContext('2d');
           var imageData = context.getImageData(0,0, canvas.width, canvas.height).data;
@@ -362,14 +366,24 @@
           if (contrastLayer.getVisible() == true){
             contrastLayer.setVisible(false);
             contrastButtonActivate.innerHTML = "${_('image_contrast_activate')}";
+            setContrastPermalink('false')
           } else{
             contrastLayer.setVisible(true);
             contrastButtonActivate.innerHTML = "${_('image_contrast_deactivate')}";
+            setContrastPermalink('true')
           }
         }
-
+        var contrast = ${contrast};
+        if (contrast) {
+          onButtonChange();
+        }
         function setButtonListener() {
           contrastButtonActivate.addEventListener("click", onButtonChange);
+        }
+
+        function setContrastPermalink(state){
+          var newHref = updateQueryStringParameter(window.location.href, 'contrast', state);
+          window.history.replaceState(null, '', newHref);
         }
       }
    </script>

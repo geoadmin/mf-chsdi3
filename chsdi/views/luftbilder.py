@@ -15,6 +15,7 @@ def luftbilder(request):
     bildnummer = request.params.get('bildnummer')
     datenherr = request.params.get('datenherr')
     layer = request.params.get('layer')
+    contrast = request.params.get('contrast')
     lang = request.params.get('lang')
     baseUrl = request.registry.settings.get('geoadminhost')
 
@@ -32,6 +33,7 @@ def luftbilder(request):
             'datenherr': datenherr,
             'layer': layer,
             'baseUrl': baseUrl,
+            'contrast': contrast,
             'lang': lang
         },
         request=request
