@@ -762,24 +762,18 @@ WMTS
 
 A RESTFul implementation of the `WMTS <http://www.opengeospatial.org/standards/wmts>`_ `OGC <http://www.opengeospatial.org/>`_ standard.
 For detailed information, see `WMTS OGC standard <http://www.opengeospatial.org/standards/wmts>`_
-In order to have access to the WMTS, you require a `swisstopo web access - WMTS documentation <https://www.swisstopo.ch/webaccess>`_,
-despite the fact that most layers are free to use. See :ref:`available_layers` for a list of all available layers.
+
+.. note::
+
+    In order to have access to the WMTS, you require to register to `swisstopo web access - WMTS documentation <https://www.geo.admin.ch/fr/geo-services/geo-services/portrayal-services-web-mapping/programming-interface-api/order_form.html>`_,
+    despite the fact that most layers are free to use. See :ref:`available_layers` for a list of all available layers.
 
 
-URL
-***
 
-- http://wmts.geo.admin.ch or https://wmts.geo.admin.ch
-- http://wmts0.geo.admin.ch or https://wmts0.geo.admin.ch
-- http://wmts1.geo.admin.ch or https://wmts1.geo.admin.ch
-- http://wmts2.geo.admin.ch or https://wmts2.geo.admin.ch
-- http://wmts3.geo.admin.ch or https://wmts3.geo.admin.ch
-- http://wmts4.geo.admin.ch or https://wmts4.geo.admin.ch
-- http://wmts5.geo.admin.ch or https://wmts5.geo.admin.ch
-- http://wmts6.geo.admin.ch or https://wmts6.geo.admin.ch
-- http://wmts7.geo.admin.ch or https://wmts7.geo.admin.ch
-- http://wmts8.geo.admin.ch or https://wmts8.geo.admin.ch
-- http://wmts9.geo.admin.ch or https://wmts9.geo.admin.ch
+.. warning::
+
+    Only the RESTFul request encoding to `GetTile` is implemented, not the `GetLegend` and `GetFeatureInfo`. No KVP and SOAP request encoding is supported.
+
 
 
 GetCapabilities
@@ -791,10 +785,8 @@ The GetCapabilites document provides informations about the service, along with 
 
 `https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr <https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml?lang=fr>`_
 
-Parameters
-**********
-
-Only the RESTFul interface is implemented. No KVP and SOAP.
+GetTile
+*******
 
 ::
 
@@ -811,7 +803,7 @@ Version                1.0.0                           WMTS protocol version
 Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document.
 StyleName              default                         Only **default** is supported.
 Time                   2010, 2010-01                   Date of tile generation in (ISO-8601) or logical value like **current**. A list of available values is provided in the `GetCapabilities <//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document under the <Dimension> tag. We recommend to use the value under the <Default> tag. Note that these values might change frequently - **check for updates regularly**.
-TileMatrixSet          21781 (constant)                EPSG code for LV03/CH1903
+TileMatrixSet          2056  (constant)                EPSG code for LV03/CH1903
 TileSetId              22                              Zoom level (see below)
 TileRow                236
 TileCol                284
@@ -867,16 +859,14 @@ Resolution [m]   Zoomlevel Map zoom  Tile width m Tiles X  Tiles Y    Tiles     
 
 **Notes**
 
-#. The projection for the tiles is **LV03** (EPSG:21781). Other projection are supported, see further down.
-#. The tiles are pregenerated and stored in a way it supports a heavy load (many hundreds requests per second)
+#. The projection for the tiles is **LV95** (EPSG:2056). Other projection are supported, see further down.
+#. The tiles are generated on-the-fly and stored in a cache (many hundreds requests per second)
 #. The zoom level 24 (resolution 1.5m) has been generated, but is not currently used in the API.
 #. The zoom levels 27 and 28 (resolution 0.25m and 0.1m) are only available for a few layers,
    e.g. swissimage or cadastral web map. For the others layers it is only a client zoom (tiles are stretched).
 #. You **have** to use the `<ResourceURL>` to construct the `GetTile` request.
-#. **Axis order**: EPSG:21781 native WMTS tiles (*pregenerated* and stored in S3) use the
-   non-standard **row/col** order, while the Mapproxy reprojected ones (all other projections)
-   use the usual **col/row** order. The exception being *ch.kantone.cadastralwebmap-farbe* which always use
-   the **col/row** order.
+#. **Axis order**: for historical reasons, EPSG:21781 WMTS tiles use the
+   non-standard **row/col** order, while all other projections use the usual **col/row** order.
    However, most desktop GIS allow you to either use the advertized order or to override it.
 #. The tiles of a given layer might be updated **withtout** resulting in a new <Time> dimension in the GetCapabilities dimension. In case your application is caching tiles locally, you need to invalidate your local cache for this layer. To check the latest change of any layer, use the `Cache Update`_ service.
 
@@ -891,16 +881,17 @@ or https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/2011040
 
 
 
-Other projections
------------------
+Supported projections
+---------------------
 
-Beside, the **LV03** projection, the same tiles are offered in four other *tilematrixsets/projection*.
-These projections are:
+Four projections are supported. The same tiles are offered in four other *tilematrixsets/projection*.
 
-* Plate-Carrée WGS1984 (EPSG:4326)
-    `https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml>`_
 * LV95/CH1903+ (EPSG:2056)
     `https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml>`_
+* LV03/CH1903 (EPSG:21781)
+    `https://wmts.geo.admin.ch/EPSG/21781/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/EPSG/21781/1.0.0/WMTSCapabilities.xml>`_
+* Plate-Carrée WGS1984 (EPSG:4326)
+    `https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml>`_
 * WGS84/Pseudo-Mercator (EPSG:3857, as used in OSM, Bing, Google Map)
     `https://wmts.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml <https://wmts.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml>`_
 
@@ -959,7 +950,7 @@ Terrain Service
 
 A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `Quantized Mesh <https://github.com/AnalyticalGraphicsInc/quantized-mesh>`_ terrain service.
 Terrain tiles are served according to the `Tile Map Service (TMS) <http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification>`_ layout and global-geodetic profile.
-In order to access the terrain tiles, you require a `swisstopo web access - WMTS documentation <https://www.swisstopo.ch/webaccess>`_.
+In order to access the terrain tiles, you require a `swisstopo web access - Inscription formular <https://www.swisstopo.ch/webaccess>`__.
 
 URL
 ***
@@ -1050,7 +1041,7 @@ Example
 3D Tiles
 ----------
 A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `3D Tiles specification <https://github.com/AnalyticalGraphicsInc/3d-tiles>`_.
-In order to access the 3D tiles, you require a `swisstopo web access - WMTS documentation <https://www.swisstopo.ch/webaccess>`_.
+In order to access the 3D tiles, you require a `swisstopo web access - WMTS documentation <https://www.swisstopo.ch/webaccess>`__.
 
 URL
 ***
