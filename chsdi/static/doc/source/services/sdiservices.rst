@@ -666,8 +666,12 @@ Example of feature search usage with other services
 Height
 ------
 
-This service allows to obtain elevation information for a point. **Note: this service is not freely accessible (fee required).** `Please Contact us <mailto:geodata@swisstopo.ch>`_
+This service allows to obtain elevation information for a point.
 See `Height models <https://shop.swisstopo.admin.ch/de/products/height_models/alti3D>`_ for more details about data used by this service.
+
+.. warning::
+    This service is not freely accessible (fee required). `Please Contact us <mailto:geodata@swisstopo.ch>`_
+
 
 URL
 ***
@@ -709,8 +713,11 @@ Examples
 Profile
 -------
 
-This service allows to obtain elevation information for a polyline in CSV format. **Note: this service is not freely accessible (fee required).** `Please Contact us <mailto:geodata@swisstopo.ch>`_
+This service allows to obtain elevation information for a polyline in CSV format.
 See `Height models <https://shop.swisstopo.admin.ch/de/products/height_models/alti3D>`_ for more details about data used by this service.
+
+.. warning::
+    This service is not freely accessible (fee required).** `Please Contact us <mailto:geodata@swisstopo.ch>`_
 
 URL
 ***
@@ -763,15 +770,11 @@ WMTS
 A RESTFul implementation of the `WMTS <http://www.opengeospatial.org/standards/wmts>`_ `OGC <http://www.opengeospatial.org/>`_ standard.
 For detailed information, see `WMTS OGC standard <http://www.opengeospatial.org/standards/wmts>`_
 
-.. note::
-
-    In order to have access to the WMTS, you require to register to `swisstopo web access - WMTS documentation <https://www.geo.admin.ch/fr/geo-services/geo-services/portrayal-services-web-mapping/programming-interface-api/order_form.html>`_,
+.. warning::
+    In order to have access to the WMTS, you require to register to `swisstopo web access - Inscription form`_ (in German),
     even if most layers are free to use. See :ref:`available_layers` for a list of all available layers.
 
-
-
-.. warning::
-
+.. note::
     Only the RESTFul request encoding to `GetTile` is implemented, not the `GetLegend` and `GetFeatureInfo`. No KVP and SOAP request encoding is supported.
 
 
@@ -950,7 +953,7 @@ Terrain Service
 
 A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `Quantized Mesh <https://github.com/AnalyticalGraphicsInc/quantized-mesh>`_ terrain service.
 Terrain tiles are served according to the `Tile Map Service (TMS) <http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification>`_ layout and global-geodetic profile.
-In order to access the terrain tiles, you require a `swisstopo web access - Inscription form <https://www.swisstopo.ch/webaccess>`__.
+In order to access the terrain tiles, you require to fill a `swisstopo web access - Inscription form`_ (in German).
 
 URL
 ***
@@ -1041,7 +1044,7 @@ Example
 3D Tiles
 ----------
 A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `3D Tiles specification <https://github.com/AnalyticalGraphicsInc/3d-tiles>`_.
-In order to access the 3D tiles, you require a `swisstopo web access - WMTS documentation <https://www.swisstopo.ch/webaccess>`__.
+In order to access the 3D tiles, you require a `swisstopo web access - Inscription form`_ .
 
 URL
 ***
@@ -1094,3 +1097,6 @@ Examples
 - `Get all the versions of a resource by URI <https://tinyurl.com/hvw2zhq>`_
 - `Get the corresponding resource in Wikidata and GeoNames (Municipality) <https://tinyurl.com/jqkkwrv>`_
 - `Get the Wikipedia abstract (Municipality) <https://tinyurl.com/z42lts9>`_
+
+
+.. _`swisstopo web access - Inscription form`: https://www.geo.admin.ch/de/geo-dienstleistungen/geodienste/darstellungsdienste-webmapping-webgis-anwendungen/programmierschnittstelle-api/anmeldung.html
