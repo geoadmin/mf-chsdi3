@@ -94,10 +94,13 @@
         text-align:center;
       }
       .button{
-        margin-top: 0.5%;
-        margin-left: auto;
-        margin-right: auto;
-        width: 150px;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        left: 50%;
+        height: 30px;
+        margin: 10px 0px;
+        text-align:center;
       }
       .footer a {
         padding: 0px 10px;
@@ -138,8 +141,9 @@
   <body onload="init()">
     <div class="header">${title}</div>
     <div class="wrapper">
-      <div id="lubismap"></div>
-      <button id="contrast_activate" class="button btn btn-secondary btn-sm d-block">${_('image_contrast_activate')}</button>
+      <div id="lubismap">
+        <button id="contrast_activate" class="button btn btn-secondary btn-sm d-block">${_('image_contrast_activate')}</button>
+      </div>
     </div>
     <div class="footer">
       <a class="pull-left" href="${_('disclaimer url')}" target="_blank">Copyright</a>
