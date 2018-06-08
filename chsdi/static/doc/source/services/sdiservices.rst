@@ -766,7 +766,7 @@ For detailed information, see `WMTS OGC standard <http://www.opengeospatial.org/
 .. note::
 
     In order to have access to the WMTS, you require to register to `swisstopo web access - WMTS documentation <https://www.geo.admin.ch/fr/geo-services/geo-services/portrayal-services-web-mapping/programming-interface-api/order_form.html>`_,
-    despite the fact that most layers are free to use. See :ref:`available_layers` for a list of all available layers.
+    even if most layers are free to use. See :ref:`available_layers` for a list of all available layers.
 
 
 
@@ -860,7 +860,7 @@ Resolution [m]   Zoomlevel Map zoom  Tile width m Tiles X  Tiles Y    Tiles     
 **Notes**
 
 #. The projection for the tiles is **LV95** (EPSG:2056). Other projection are supported, see further down.
-#. The tiles are generated on-the-fly and stored in a cache (many hundreds requests per second)
+#. The tiles are generated on-the-fly and stored in a cache (hundreds of requests per second)
 #. The zoom level 24 (resolution 1.5m) has been generated, but is not currently used in the API.
 #. The zoom levels 27 and 28 (resolution 0.25m and 0.1m) are only available for a few layers,
    e.g. swissimage or cadastral web map. For the others layers it is only a client zoom (tiles are stretched).
@@ -950,7 +950,7 @@ Terrain Service
 
 A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `Quantized Mesh <https://github.com/AnalyticalGraphicsInc/quantized-mesh>`_ terrain service.
 Terrain tiles are served according to the `Tile Map Service (TMS) <http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification>`_ layout and global-geodetic profile.
-In order to access the terrain tiles, you require a `swisstopo web access - Inscription formular <https://www.swisstopo.ch/webaccess>`__.
+In order to access the terrain tiles, you require a `swisstopo web access - Inscription form <https://www.swisstopo.ch/webaccess>`__.
 
 URL
 ***
