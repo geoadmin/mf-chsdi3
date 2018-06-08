@@ -207,6 +207,7 @@ pdf = None
 url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "pdf/" + c['attributes']['base_uuid'] + '.pdf'
 pdf = resource_exists(url_pdf)
 
+url_smapshot= "https://smapshot.heig-vd.ch/map/?imageId={}".format(c['attributes']['smapshot_id'])
 %>
 <title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
 
@@ -232,6 +233,7 @@ pdf = resource_exists(url_pdf)
 % endif
         </td>
     </tr>
+    <tr><th class="cell-left">${_('link')} smapshot</th>         <td><a href="${url_smapshot}" target="_blank">${_('link')} smapshot</a></td></tr>
   <tr class="chsdi-no-print">
     <th class="cell-left">${_('link')} Toposhop</th>
     <td><a href="https:${shop_url}/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
