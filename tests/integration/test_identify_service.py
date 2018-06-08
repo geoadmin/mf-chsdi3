@@ -762,12 +762,13 @@ class TestIdentifyService(TestsBase):
 
     def test_identify_treasurehunt_good_scale(self):
         params = dict(geometryType='esriGeometryPoint',
-                      geometry='546959,149075',
+                      geometry='2791830,1142580',
                       geometryFormat='geojson',
                       imageDisplay='1920,730,96',
                       layers='all:ch.swisstopo.treasurehunt',
-                      mapExtent='611163,270868,611504,271135',
+                      mapExtent='2791830,1142580,2791830,1142580',
                       returnGeometry='true',
+                      sr='2056',
                       tolerance='10',
                       lang='fr')
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
