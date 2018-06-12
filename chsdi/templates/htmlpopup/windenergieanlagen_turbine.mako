@@ -13,7 +13,15 @@
  </tr>
  <tr>
   <td class="cell-left">${_('leistung')}</td>
-  <td>${c['attributes']['tur_power'] or '-'} kW</td>
+      % if c['attributes']['tur_power'] == None:
+         <td>-</td>
+      % else:
+         % if str(c['attributes']['tur_power'])[-1:] == "0":
+            <td>${str(c['attributes']['tur_power'])[:len(str(c['attributes']['tur_power']))-2] or '-'} kW</td>
+         % else:   
+            <td>${c['attributes']['tur_power'] or '-'} kW</td>
+         % endif
+      % endif
  </tr>
  <tr>
   <td class="cell-left">${_('baujahr')}</td>
