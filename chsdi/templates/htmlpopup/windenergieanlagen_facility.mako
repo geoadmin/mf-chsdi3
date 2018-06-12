@@ -84,11 +84,7 @@
       % if c['attributes']['fac_power'] == None:
          <td>-</td>
       % else:
-         % if str(c['attributes']['fac_power'])[-1:] == "0":
-            <td>${str(c['attributes']['fac_power'])[:len(str(c['attributes']['fac_power']))-2] or '-'} kW</td>
-         % else:   
             <td>${c['attributes']['fac_power'] or '-'} kW</td>
-         % endif
       % endif
   </tr>
 </table>
