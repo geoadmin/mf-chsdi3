@@ -1079,6 +1079,12 @@ msgstr "http://www.astra.admin.ch/index.html?lang=fr"
 msgid "ch.astra.ausnahmetransportrouten"
 msgstr "Itinéraires pour convois exceptionnels"
 
+msgid "ch.astra.baulinien-nationalstrassen"
+msgstr "Alignements des routes nationales"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb"
+msgstr "Alignements des routes nationales RDPPF"
+
 msgid "ch.astra.historischer-verkehrswege"
 msgstr "IVS National"
 
@@ -1174,6 +1180,12 @@ msgstr "No de route"
 
 msgid "ch.astra.projektierungszonen-nationalstrassen.oereb"
 msgstr "Zones réservées autoroutes RDPPF"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
+msgstr "SIN - consultations"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
+msgstr "SIN"
 
 msgid "ch.astra.schwerverunfallte-kanton_alkohol"
 msgstr "Accidents par habitant - Alcool"
@@ -1628,23 +1640,140 @@ msgstr "Notes"
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_0"
 msgstr "n.n."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_116"
+msgstr "Les chemins de randonnée officiels sont clôturés. Ainsi vous ne traverserez en principe pas le troupeau protégé par des chiens."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_125"
+msgstr "Les recommandations sur le comportement correct à adopter en présence de vaches mère est disponible sur le site de Vache mère Suisse"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_135"
+msgstr "Si les chiens de protection sont sur l'alpage de Bremingard, il est possible d'aller sur le col du Chamois en passant par les Cerniets sans rencontrer les chiens (le tronçon entre les Cerniets et le Col du Chamois est balisé dans le terrain)"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_138"
+msgstr "Deux chemins de randonnée relient l'alpage de Niwen à Stafel. Celui situé en aval est clôturé, celui situé en amont, passant par Nibubedu, ne l'est pas. Sur ce chemin il est possible de rencontrer des chiens de protection en juin et en septembre."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_14"
+msgstr "Au moment de l'actualisation des alpages protégés par des chiens, il n'était pas encore défini si des chiens de protection des troupeaux seraient en activité sur l'alpage de Balachaux pour la saison 2018."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_145"
 msgstr "Le troupeau et les chiens ne sont présent que quelques jours durant l'été sur le col du Kaiseregg mais jamais durant le week-end."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_150"
+msgstr "Le chemin allant de Vorder Sänntum au Turtmannsee en longeant la rivière Turtmänna et le celui reliant Biele à la cabane CAS de Turtmann sont clôturés. Celui passant par la chapelle Holustei ne l'est pas et les chiens peuvent s'y trouver en juillet"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_154"
+msgstr "Le troupeau protégé par des chiens se trouvent au sud-ouest de Z'Mübach (point 1997) de mi-juin à mi-juillet puis de mi-septembre à fin septembre et au nord-est de Z'Mübach de début juillet à mi-septembre."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_16"
+msgstr "Il est possible de rencontrer des chiens de protection des troupeaux sur le chemin reliant \"Baumgarte\" au col (point 1829) seulement durant le mois de septembre. Durant le reste de la saison le chemin est clôturé."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_163"
+msgstr "Si le troupeau protégé par des chiens se trouve proche d'un chemin de randonnée officiel, celui-ci est clôturé. Ainsi vous ne traverserez en principe pas le troupeau protégé par des chiens."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_36"
+msgstr "Les chemins de randonnée officiels sont clôturés. Ainsi vous ne traverserez en principe pas le troupeau protégé par des chiens. Si vous êtes avec votre chien de compagnie, il impératif de quand même le garder en laisse et de passer son chemin."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_4"
+msgstr "Les chemins de randonnée faisant le tour du \"Lag da Pigniu\" sont clôturés. Ainsi vous ne traverserez en principe pas le troupeau protégé par des chiens. Si vous êtes avec votre chien de compagnie, il impératif de quand même le garder en laisse."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_45"
+msgstr "Le troupeau protégé par des chiens qui pâture sur le Guferli est clôturé et peut être contourné sans problème."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_46"
+msgstr "Des chiens de protection des troupeaux peuvent être en activité toute l'année sur le pâturage de Ruchschwand."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_60"
+msgstr "Le chemin de randonnée situé au sud de Bärried est clôturé. Si vous êtes avec votre chien de compagnie, il impératif de quand même le garder en laisse et de passer son chemin."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_73"
+msgstr "La Dent de Valerette peut être atteinte sans traverser le troupeau protégé par des chiens en passant par Chindonne."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_87"
+msgstr "Le sommet du Ochsen peut être atteint sans traverser le troupeau protégé par des chiens en passant par Ritz et Oberalpigle."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_92"
+msgstr "Les recommandations sur le comportement correct à adopter en présence de vaches mère est disponible sur le site de Suisse Rando"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz"
 msgstr "Présence de chiens de protection"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1000"
-msgstr "Durant toute l'année"
+msgstr "Les chiens de protection des troupeaux sont présents toute l'année sur l'exploitation."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1001"
-msgstr "En règle générale de début juin à mi-octobre"
+msgstr "En règle général de début juin à fin septembre"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1002"
-msgstr "En règle générale de début juin à mi-octobre. Sur place un panneau d’information renseigne sur la position actuelle des chiens de protection des troupeaux ou il est aussi possible de se renseigner auprès de la personne de contact."
+msgstr "En règle général de début juin à mi-octobre. Prêtez attention aux indications sur la présence actuelle des chiens inscrits sur les panneaux d'information présent sur place ou renseignez-vous auprès de l'office du tourisme du Lac Noir."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_145"
-msgstr "En règle générale de début juin à mi-octobre. Sur place un panneau d’information renseigne sur la position actuelle des chiens de protection des troupeaux ou il est aussi possible de se renseigner auprès de la personne de contact."
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1003"
+msgstr "Prêtez attention aux indications sur la présence actuelle des chiens inscrits sur les panneaux d'information présent sur place."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1004"
+msgstr "Prêtez attention aux indications sur la présence actuelle des chiens inscrits sur les panneaux d'information présent sur place ou renseignez-vous auprès de l'office du tourisme du Lac Noir."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1005"
+msgstr "Les chemins de randonnée officiels ne traversent aucun pâturages sur lesquels travaillent des chiens de protection des troupeaux"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1006"
+msgstr "Les chemins de randonnée officiels sont clôturés. Ainsi vous ne traverserez en principe pas le troupeau protégé par des chiens. Si vous êtes avec votre chien de compagnie, il impératif de quand même le garder en laisse et de passer son chemin."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1007"
+msgstr "En règle générale du 20.6 au 20.9"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1008"
+msgstr "En règle générale entre début juin et fin septembre. Prêtez attention aux indications sur la présence actuelle des chiens inscrits sur les panneaux d'information présent sur place."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1009"
+msgstr "En règle générale entre début juin et début octobre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1010"
+msgstr "En règle générale entre début juin et fin septembre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1011"
+msgstr "En règle générale entre début juin et mi-septembre. Prêtez attention aux indications sur la présence actuelle des chiens inscrits sur les panneaux d'information présent sur place."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1012"
+msgstr "En règle générale de début mai à fin septembre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1013"
+msgstr "En règle générale entre début mai et fin septembre. Des informations plus précises peuvent être obtenues auprès de l'Office du tourisme de Sörenberg Flühli."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1014"
+msgstr "En règle générale de fin mai à mi-septembre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1015"
+msgstr "En règle générale entre fin mai et fin septembre. Des informations plus précises peuvent être obtenues auprès de l'Office du tourisme de Sörenberg Flühli."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1016"
+msgstr "En règle générale entre fin mai et fin septembre. Sur le chemin de randonnée alpine \" Vorderjoch - Gandispitz - Zingel\" il ne faut pas s'attendre à rencontrer des chiens de protection des troupeaux"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1017"
+msgstr "En règle générale de fin mai à mi-octobre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1018"
+msgstr "En règle générale de mi-avril à début octobre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1019"
+msgstr "En règle générale entre mi-juin et début octobre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1020"
+msgstr "En règle général de mi-juin à fin septembre. Prêtez attention aux indications sur la présence actuelle des chiens inscrits sur les panneaux d'information présent sur place."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1021"
+msgstr "En règle générale de mi-juin à mi-septembre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1022"
+msgstr "En règle générale entre mi-mai et fin septembre. Des informations plus précises peuvent être obtenues auprès de l'Office du tourisme de Sörenberg Flühli."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1023"
+msgstr "En règle générale de mi-mai à mi-septembre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
+msgstr "Il est possible de rencontrer des chiens de protection des troupeaux de début août à mi-septembre, sur le chemin reliant le \"Canalbrücke\" à la cabane du CAS de Zapport."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1025"
+msgstr "Durant le mois de juin, il est possible de rencontrer des chiens de protection sur le chemin reliant le Lago di Luzzone à la cabane du CAS de Motterascio et de mi-juillet à fin juillet entre le Lago di Luzzone et le col de Soreda."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Contact E-mail"
@@ -2164,18 +2293,6 @@ msgstr "Type de traitement (catégorie VSA)"
 
 msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss"
 msgstr "Carte de l'aléa ruissellement"
-
-msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.jaehrlichkeit"
-msgstr "Récurrence"
-
-msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.spezialprozess"
-msgstr "Processus spécial"
-
-msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.ue_tiefe_og"
-msgstr "Profondeur d'inondation : limite supérieure (en m)"
-
-msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.ue_tiefe_ug"
-msgstr "Profondeur d'inondation : limite inférieure (en m)"
 
 msgid "ch.bafu.gefahren-aktuelle_erdbeben"
 msgstr "Tremblements de terre récents"
@@ -3290,11 +3407,17 @@ msgstr "Hauteur de la végétation IFN"
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief"
 msgstr "Modèle de surface IFN"
 
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.year"
+msgstr "État d'actualité"
+
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Taux de boisement (IFN)"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
 msgstr "Mixité des forêts IFN"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad.year"
+msgstr "État d'actualité"
 
 msgid "ch.bafu.luftreinhaltung-ammoniakkonzentration"
 msgstr "Concentration d'ammoniac"
@@ -4182,7 +4305,7 @@ msgid "ch.bakom"
 msgstr "OFCOM"
 
 msgid "ch.bakom.anbieter-eigenes_festnetz"
-msgstr "Nombre d'opérateurs de raccord"
+msgstr "Nombre de fournisseurs d'accès"
 
 msgid "ch.bakom.anschlussart-glasfaser"
 msgstr "Fibre optique FTTB/FTTH"
@@ -4245,46 +4368,244 @@ msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
 
 msgid "ch.bakom.notruf"
-msgstr "par commune"
+msgstr "Appels d'urgence par commune"
 
 msgid "ch.bakom.notruf-112_festnetz"
 msgstr "112 Réseau fixe"
 
+msgid "ch.bakom.notruf.112_festnetz"
+msgstr "112 Numéro réseau fixe"
+
+msgid "ch.bakom.notruf-112_festnetz.112_festnetz"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-112_festnetz.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-112_festnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.112_mobil"
+msgstr "112 Numéro réseau mobile"
+
 msgid "ch.bakom.notruf-112_mobilnetz"
 msgstr "112 Réseau mobile"
+
+msgid "ch.bakom.notruf-112_mobilnetz.112_mobil"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-112_mobilnetz.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-112_mobilnetz.gemeinde"
+msgstr "Commune"
 
 msgid "ch.bakom.notruf-112_satellit"
 msgstr "112 par satellite"
 
+msgid "ch.bakom.notruf.112_satellit"
+msgstr "112 Numéro réseau satellite"
+
+msgid "ch.bakom.notruf-112_satellit.112_satellit"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-112_satellit.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-112_satellit.gemeinde"
+msgstr "Commune"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 réseau fixe"
+
+msgid "ch.bakom.notruf.117_festnetz"
+msgstr "117 Numéro réseau fixe"
+
+msgid "ch.bakom.notruf-117_festnetz.117_festnetz"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-117_festnetz.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-117_festnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.117_mobil"
+msgstr "117 Numéro réseau mobile"
 
 msgid "ch.bakom.notruf-117_mobilnetz"
 msgstr "117 réseau mobile"
 
+msgid "ch.bakom.notruf-117_mobilnetz.117_mobil"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-117_mobilnetz.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-117_mobilnetz.gemeinde"
+msgstr "Commune"
+
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 réseau fixe"
+
+msgid "ch.bakom.notruf.118_festnetz"
+msgstr "118 Numéro réseau fixe"
+
+msgid "ch.bakom.notruf-118_festnetz.118_festnetz"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-118_festnetz.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-118_festnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.118_mobil"
+msgstr "118 Numéro réseau mobile"
 
 msgid "ch.bakom.notruf-118_mobilnetz"
 msgstr "118 réseau mobile"
 
+msgid "ch.bakom.notruf-118_mobilnetz.118_mobil"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-118_mobilnetz.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-118_mobilnetz.gemeinde"
+msgstr "Commune"
+
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 réseau fixe"
+
+msgid "ch.bakom.notruf.143_festnetz"
+msgstr "143 Numéro réseau fixe"
+
+msgid "ch.bakom.notruf-143_festnetz.143_festnetz"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-143_festnetz.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-143_festnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.143_mobil"
+msgstr "143 Numéro réseau mobile"
 
 msgid "ch.bakom.notruf-143_mobilnetz"
 msgstr "143 réseau mobile"
 
+msgid "ch.bakom.notruf-143_mobilnetz.143_mobil"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-143_mobilnetz.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-143_mobilnetz.gemeinde"
+msgstr "Commune"
+
 msgid "ch.bakom.notruf-144_festnetz"
 msgstr "144 réseau fixe"
+
+msgid "ch.bakom.notruf.144_festnetz"
+msgstr "144 Numéro réseau fixe"
+
+msgid "ch.bakom.notruf-144_festnetz.144_festnetz"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-144_festnetz.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-144_festnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.144_mobil"
+msgstr "144 Numéro réseau mobile"
 
 msgid "ch.bakom.notruf-144_mobilnetz"
 msgstr "144 réseau mobile"
 
+msgid "ch.bakom.notruf-144_mobilnetz.144_mobil"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-144_mobilnetz.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-144_mobilnetz.gemeinde"
+msgstr "Commune"
+
 msgid "ch.bakom.notruf-147_festnetz"
 msgstr "147 réseau fixe"
 
+msgid "ch.bakom.notruf.147_festnetz"
+msgstr "147 Numéro réseau fixe"
+
+msgid "ch.bakom.notruf-147_festnetz.147_festnetz"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-147_festnetz.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-147_festnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.147_mobil"
+msgstr "147 Numéro réseau mobile"
+
 msgid "ch.bakom.notruf-147_mobilnetz"
 msgstr "147 réseau mobile"
+
+msgid "ch.bakom.notruf-147_mobilnetz.147_mobil"
+msgstr "Numéro d’appel d’urgence"
+
+msgid "ch.bakom.notruf-147_mobilnetz.adresse"
+msgstr "Centrale d‘alarme"
+
+msgid "ch.bakom.notruf-147_mobilnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.adresse_112_festnetz"
+msgstr "112 Centrale d‘alarme réseau fixe"
+
+msgid "ch.bakom.notruf.adresse_112_mobil"
+msgstr "112 Centrale d‘alarme réseau mobile"
+
+msgid "ch.bakom.notruf.adresse_112_satellit"
+msgstr "112 Centrale d‘alarme réseau satellite"
+
+msgid "ch.bakom.notruf.adresse_117_festnetz"
+msgstr "117 Centrale d‘alarme réseau fixe"
+
+msgid "ch.bakom.notruf.adresse_117_mobil"
+msgstr "117 Centrale d‘alarme réseau mobile"
+
+msgid "ch.bakom.notruf.adresse_118_festnetz"
+msgstr "118 Centrale d‘alarme réseau fixe"
+
+msgid "ch.bakom.notruf.adresse_118_mobil"
+msgstr "118 Centrale d‘alarme réseau mobile"
+
+msgid "ch.bakom.notruf.adresse_143_festnetz"
+msgstr "143 Centrale d‘alarme réseau fixe"
+
+msgid "ch.bakom.notruf.adresse_143_mobil"
+msgstr "143 Centrale d‘alarme réseau mobile"
+
+msgid "ch.bakom.notruf.adresse_144_festnetz"
+msgstr "144 Centrale d‘alarme réseau fixe"
+
+msgid "ch.bakom.notruf.adresse_144_mobil"
+msgstr "144 Centrale d‘alarme réseau mobile"
+
+msgid "ch.bakom.notruf.adresse_147_festnetz"
+msgstr "147 Centrale d‘alarme réseau fixe"
+
+msgid "ch.bakom.notruf.adresse_147_mobil"
+msgstr "147 Centrale d‘alarme réseau mobile"
+
+msgid "ch.bakom.notruf.name"
+msgstr "Nom"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emetteurs radio et télévision"

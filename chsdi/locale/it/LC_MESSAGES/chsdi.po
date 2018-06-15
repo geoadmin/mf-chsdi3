@@ -1079,6 +1079,12 @@ msgstr "http://www.astra.admin.ch/index.html?lang=it"
 msgid "ch.astra.ausnahmetransportrouten"
 msgstr "Itinerari per trasporti eccezionali"
 
+msgid "ch.astra.baulinien-nationalstrassen"
+msgstr "Allineamenti per le strade nazionali"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb"
+msgstr "Allineamenti per le strade nazionali RDPP"
+
 msgid "ch.astra.historischer-verkehrswege"
 msgstr "IVS Nazionale"
 
@@ -1174,6 +1180,12 @@ msgstr "No della strada"
 
 msgid "ch.astra.projektierungszonen-nationalstrassen.oereb"
 msgstr "Zone progettazione autostrada RDPP"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
+msgstr "SIN - consultazioni"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
+msgstr "SIN"
 
 msgid "ch.astra.schwerverunfallte-kanton_alkohol"
 msgstr "Incidenti per abitante - Alcol"
@@ -1628,23 +1640,140 @@ msgstr "Note"
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_0"
 msgstr "n.n."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_116"
+msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_125"
+msgstr "Ulteriori raccomandazioni sul comportamento da adottare in presenza di vacche nutrici sono disponibili su www.sentierisvizzeri.ch"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_135"
+msgstr "Se i cani da protezione delle greggi si trovano all'alpe di Bremingard, è possibile andare al Col du Chamois passando da Cerniets senza incontrarli (questa nuova via alternativa tra Cerniets e il Col du Chamois è segnalata)"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_138"
+msgstr "Due sentieri escursionistici collegano l'alpe di Niwen a Stafel. Quello a valle è delimitato da recinzioni. Quello che si trova a monte, passando da Nibubedu non lo è ed è pertanto possibile incontrarvi cani da protezione in giugno e in settembre."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_14"
+msgstr "Al momento dell'aggiornamento degli alpeggi protetti dai cani, non era ancora stato deciso se i cani da protezione delle greggi saranno impiegati all'alpe di Balachaux nel 2018. Potete verificare su http//www.protectiondestroupeaux.ch/map/."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_145"
-msgstr "Il gregge e i cani sono presenti solo per pochi giorni sul colle di Kaiseregg, ma mai durante i fine settimana."
+msgstr "Il gregge e i cani da protezione sostano qualche giorno in estate sul passo di Kaiseregg, ma unicamente in settimana."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_150"
+msgstr "Il sentiero che conduce da Vorder Sanntum al Turtmannsee costeggiando il torrente Turtmänna e quello che collega Biele alla Capanna CAS di Turtmann sono delimitati da recinzioni. Quello che passa dalla cappella di Holustei non lo."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_154"
+msgstr "Il gregge protetto dai cani si trova a sud-ovest di Z'Mübach (punto 1997) da metà giugno a metà luglio e in seguito da metà settembre a fine settembre. Dall'inizio di luglio a metà settembre esso si trova a nord-est di Z'Mübach."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_16"
+msgstr "Unicamente durante il mese di settembre è possibile incontrare cani da protezione delle greggi sul sentiero che collega \"Baumgarte\" al passo (punto 1829). Il resto della stagione il sentiero è delimitato da una recinzione."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_163"
+msgstr "Se il gregge protetto dai cani si trova in prossimità di un sentiero ufficiale, esso viene recintato, affinché non dobbiate attraversarlo."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_36"
+msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_4"
+msgstr "I sentieri escursionistici presso il Lag da Pigniu sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_45"
+msgstr "Il gregge protetto da cani che pascola sul Guferli è recintato e può essere aggirato con facilità."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_46"
+msgstr "I cani da protezione delle greggi possono essere presenti tutto l'anno sul pascolo presso Ruschwand."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_60"
+msgstr "Il sentiero escursionistico a sud di Bärried è delimitato da recinzioni. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_73"
+msgstr "Il Dent de la Valerette può essere raggiunto senza incontrare cani da protezione delle greggi passando da Chindonne."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_87"
+msgstr "La cima dell'Ochsen può essere raggiunta senza attraversare il gregge protetto passando da Ritz e Oberalpigle."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_92"
+msgstr "Ulteriori raccomandazioni sul comportamento da adottare in presenza di vacche nutrici sono disponibili su www.sentierisvizzeri.ch"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz"
 msgstr "Presenza di cani da protezione"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1000"
-msgstr "Durante tutto l’anno"
+msgstr "I cani da protezione delle greggi sono presenti tutto l'anno."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1001"
-msgstr "Generalmente da giugno a metà ottobre"
+msgstr "Di regola dall'inizio di giugno a fine settembre"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1002"
-msgstr "Generalmente da giugno a metà ottobre. Sul posto un cartello informa sulla posizione attuale dei cani da protezione delle greggi oppure è possibile contattare le persone nominate."
+msgstr "Di regola da inizio giugno a metà ottobre. Prestate attenzione alle indicazioni riguardanti la presenza attuale dei cani riportata sui pannelli informativi in loco oppure chiedete informazioni all'Ufficio del turismo del Lago Nero."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_145"
-msgstr "Generalmente da giugno a metà ottobre. Sul posto un cartello informa sulla posizione attuale dei cani da protezione delle greggi oppure è possibile contattare l’ufficio del turismo del Lago Nero."
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1003"
+msgstr "Prestate attenzione alle indicazioni riguardanti la presenza attuale dei cani riportata sui pannelli informativi in loco."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1004"
+msgstr "Prestate attenzione alle indicazioni riguardanti la presenza attuale dei cani riportata sui pannelli informativi in loco oppure chiedete informazioni all'Ufficio del turismo del Lago Nero."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1005"
+msgstr "I sentieri escursionistici ufficiali non attraversano alcun pascolo in cui vengono impiegati cani da protezione delle greggi."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1006"
+msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1007"
+msgstr "Di regola dal 20 giugno al 20 settembre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1008"
+msgstr "Di regola dall'inizio di giugno a fine settembre. Prestate attenzione  alle indicazioni riguardanti la presenza attuale dei cani riportata sui pannelli informativi in loco."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1009"
+msgstr "Di regola dall'inizio di giugno all'inizio di ottobre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1010"
+msgstr "Di regola dall'inizio di giugno a fine settembre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1011"
+msgstr "Di regola dall'inizio di giugno a fine settembre. Prestate attenzione  alle indicazioni riguardanti la presenza attuale dei cani riportata sui pannelli informativi in loco."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1012"
+msgstr "Di regola dall'inizio di giugno a fine settembre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1013"
+msgstr "Di regola dall'inizio di maggio a fine settembre. Informazioni più precise sono ottenibili presso l'Ufficio del Turismo di Sörenberg Flühli."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1014"
+msgstr "Di regola da fine maggio a metà settembre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1015"
+msgstr "Di regola dalla fine di maggio a fine settembre. Informazioni più precise sono ottenibili presso l'Ufficio del Turismo di Sörenberg Flühli."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1016"
+msgstr "Di regola dalla fine di maggio a fine settembre. Sul sentiero escursionistico alpino \"Vorderjoch-Gandispitz-Zingel\" non si incontrano cani da protezione."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1017"
+msgstr "Di regola da fine maggio a metà ottobre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1018"
+msgstr "Di regola da metà aprile all'inizio di ottobre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1019"
+msgstr "Di regola tra metà giugno e l'inizio di ottobre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1020"
+msgstr "Di regola da metà giugno a fine settembre. Prestate attenzione  alle indicazioni riguardanti la presenza attuale dei cani riportata sui pannelli informativi in loco."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1021"
+msgstr "Di regola da metà giugno a metà settembre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1022"
+msgstr "Di regola tra metà maggio e fine settembre. Informazioni più precise sono ottenibili presso l'Ufficio del Turismo di Sörenberg Flühli."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1023"
+msgstr "Di regola da metà maggio a metà settembre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
+msgstr "Dall'inizio di agosto a metà settembre è possibile incontrare i cani da protezione delle greggi sul sentiero che collega il \"Canalbrücke\" alla Capanna Zapport."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1025"
+msgstr "In giugno è possibile incontrare i cani da protezione delle greggi sul sentiero che collega il Lago di Luzzone alla Capanna Motterascio, mentre da metà luglio a fine luglio è possibile incontrarli tra il lago di Luzzone e il Passo Soreda."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Contatto E-mail"
@@ -2164,18 +2293,6 @@ msgstr "Type de traitement (catégorie VSA)"
 
 msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss"
 msgstr "Carta del ruscellamento superficiale"
-
-msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.jaehrlichkeit"
-msgstr "Periodo di ritorno"
-
-msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.spezialprozess"
-msgstr "Processo speciale"
-
-msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.ue_tiefe_og"
-msgstr "Profondità dell’inondazione: limite superiore (in m)"
-
-msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.ue_tiefe_ug"
-msgstr "Profondità dell’inondazione: limite inferiore (in m)"
 
 msgid "ch.bafu.gefahren-aktuelle_erdbeben"
 msgstr "Terremoti recenti"
@@ -3290,11 +3407,17 @@ msgstr "Altezza della Vegetazione IFN"
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief"
 msgstr "Modello della superficie terrestre IFN"
 
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.year"
+msgstr "Stato d'attualità"
+
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Percentuale di bosco (IFN)"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
 msgstr "Mescolanza della foresta IFN"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad.year"
+msgstr "Stato d'attualità"
 
 msgid "ch.bafu.luftreinhaltung-ammoniakkonzentration"
 msgstr "Concentrazione di ammoniaca"
@@ -4245,46 +4368,244 @@ msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
 
 msgid "ch.bakom.notruf"
-msgstr "per Comune"
+msgstr "Chiamate d'emergenza per Comune"
 
 msgid "ch.bakom.notruf-112_festnetz"
 msgstr "112 Rete fissa"
 
+msgid "ch.bakom.notruf.112_festnetz"
+msgstr "112 Numero rete fissa"
+
+msgid "ch.bakom.notruf-112_festnetz.112_festnetz"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-112_festnetz.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-112_festnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.112_mobil"
+msgstr "112 Numero rete mobile"
+
 msgid "ch.bakom.notruf-112_mobilnetz"
 msgstr "112 Rete mobile"
+
+msgid "ch.bakom.notruf-112_mobilnetz.112_mobil"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-112_mobilnetz.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-112_mobilnetz.gemeinde"
+msgstr "Commune"
 
 msgid "ch.bakom.notruf-112_satellit"
 msgstr "112 Rete via satellite"
 
+msgid "ch.bakom.notruf.112_satellit"
+msgstr "112 Numero rete via satellite"
+
+msgid "ch.bakom.notruf-112_satellit.112_satellit"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-112_satellit.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-112_satellit.gemeinde"
+msgstr "Commune"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Rete fissa"
+
+msgid "ch.bakom.notruf.117_festnetz"
+msgstr "117 Numero rete mobile"
+
+msgid "ch.bakom.notruf-117_festnetz.117_festnetz"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-117_festnetz.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-117_festnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.117_mobil"
+msgstr "117 Numero rete mobile"
 
 msgid "ch.bakom.notruf-117_mobilnetz"
 msgstr "117 Rete mobile"
 
+msgid "ch.bakom.notruf-117_mobilnetz.117_mobil"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-117_mobilnetz.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-117_mobilnetz.gemeinde"
+msgstr "Commune"
+
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Rete fissa"
+
+msgid "ch.bakom.notruf.118_festnetz"
+msgstr "118 Numero rete fissa"
+
+msgid "ch.bakom.notruf-118_festnetz.118_festnetz"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-118_festnetz.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-118_festnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.118_mobil"
+msgstr "118 Numero rete mobile"
 
 msgid "ch.bakom.notruf-118_mobilnetz"
 msgstr "118 Rete mobile"
 
+msgid "ch.bakom.notruf-118_mobilnetz.118_mobil"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-118_mobilnetz.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-118_mobilnetz.gemeinde"
+msgstr "Commune"
+
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Rete fissa"
+
+msgid "ch.bakom.notruf.143_festnetz"
+msgstr "143 Numero rete fissa"
+
+msgid "ch.bakom.notruf-143_festnetz.143_festnetz"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-143_festnetz.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-143_festnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.143_mobil"
+msgstr "143 Numero rete mobile"
 
 msgid "ch.bakom.notruf-143_mobilnetz"
 msgstr "143 Rete mobile"
 
+msgid "ch.bakom.notruf-143_mobilnetz.143_mobil"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-143_mobilnetz.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-143_mobilnetz.gemeinde"
+msgstr "Commune"
+
 msgid "ch.bakom.notruf-144_festnetz"
 msgstr "144 Rete fissa"
+
+msgid "ch.bakom.notruf.144_festnetz"
+msgstr "144 Numero rete fissa"
+
+msgid "ch.bakom.notruf-144_festnetz.144_festnetz"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-144_festnetz.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-144_festnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.144_mobil"
+msgstr "144 Numero rete mobile"
 
 msgid "ch.bakom.notruf-144_mobilnetz"
 msgstr "144 Rete mobile"
 
+msgid "ch.bakom.notruf-144_mobilnetz.144_mobil"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-144_mobilnetz.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-144_mobilnetz.gemeinde"
+msgstr "Commune"
+
 msgid "ch.bakom.notruf-147_festnetz"
 msgstr "147 Rete fissa"
 
+msgid "ch.bakom.notruf.147_festnetz"
+msgstr "147 Numero rete fissa"
+
+msgid "ch.bakom.notruf-147_festnetz.147_festnetz"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-147_festnetz.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-147_festnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.147_mobil"
+msgstr "147 Numero rete mobile"
+
 msgid "ch.bakom.notruf-147_mobilnetz"
 msgstr "147 Rete mobile"
+
+msgid "ch.bakom.notruf-147_mobilnetz.147_mobil"
+msgstr "Numero Chiamata d'emergenza"
+
+msgid "ch.bakom.notruf-147_mobilnetz.adresse"
+msgstr "Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-147_mobilnetz.gemeinde"
+msgstr "Commune"
+
+msgid "ch.bakom.notruf.adresse_112_festnetz"
+msgstr "112 Centrale d‘allarme rete fissa"
+
+msgid "ch.bakom.notruf.adresse_112_mobil"
+msgstr "112 Centrale d‘allarme rete mobile"
+
+msgid "ch.bakom.notruf.adresse_112_satellit"
+msgstr "112 Centrale d‘allarme rete via satellite"
+
+msgid "ch.bakom.notruf.adresse_117_festnetz"
+msgstr "117 Centrale d‘allarme rete fissa"
+
+msgid "ch.bakom.notruf.adresse_117_mobil"
+msgstr "117 Centrale d‘allarme rete mobile"
+
+msgid "ch.bakom.notruf.adresse_118_festnetz"
+msgstr "118 Centrale d‘allarme rete fissa"
+
+msgid "ch.bakom.notruf.adresse_118_mobil"
+msgstr "118 Centrale d‘allarme rete mobile"
+
+msgid "ch.bakom.notruf.adresse_143_festnetz"
+msgstr "143 Centrale d‘allarme rete fissa"
+
+msgid "ch.bakom.notruf.adresse_143_mobil"
+msgstr "143 Centrale d‘allarme rete mobile"
+
+msgid "ch.bakom.notruf.adresse_144_festnetz"
+msgstr "144 Centrale d‘allarme rete fissa"
+
+msgid "ch.bakom.notruf.adresse_144_mobil"
+msgstr "144 Centrale d‘allarme rete mobile"
+
+msgid "ch.bakom.notruf.adresse_147_festnetz"
+msgstr "147 Centrale d‘allarme rete fissa"
+
+msgid "ch.bakom.notruf.adresse_147_mobil"
+msgstr "147 Emergency Center mobile network"
+
+msgid "ch.bakom.notruf.name"
+msgstr "Nome"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emittenti radiotelevisive"
@@ -9069,7 +9390,7 @@ msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_4"
 msgstr "Nastro trasportatore"
 
 msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_5"
-msgstr "Scovia"
+msgstr "Sciovia"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Percorsi escursionistici"

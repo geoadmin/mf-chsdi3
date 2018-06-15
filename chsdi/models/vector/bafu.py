@@ -2292,3 +2292,42 @@ class HydrogeologieMarkierversuche(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.hydrogeologie-markierversuche', HydrogeologieMarkierversuche)
+
+
+class LandesForstInventarWaldMischGrad(Base, Vector):
+    __tablename__ = 'waldmischgrad'
+    __table_args__ = ({'schema': 'wald', 'autoload': False})
+    __bodId__ = 'ch.bafu.landesforstinventar-waldmischungsgrad'
+    __template__ = 'templates/htmlpopup/landesforstinventar-waldmischgrad.mako'
+    __queryable_attributes__ = ['year']
+    __label__ = 'year'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    year = Column('year', Integer)
+    the_geom = Column(Geometry2D)
+
+register(LandesForstInventarWaldMischGrad.__bodId__, LandesForstInventarWaldMischGrad)
+
+
+class LandesForstInventarVegetation:
+    __tablename__ = 'vegetationshoehenmodell'
+    __table_args__ = ({'schema': 'wald', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/landesforstinventar-vegetationshoehenmodell.mako'
+    __queryable_attributes__ = ['year']
+    __label__ = 'year'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    year = Column('year', Integer)
+    month = Column('month', Integer)
+    day = Column('day', Integer)
+    the_geom = Column(Geometry2D)
+
+
+class LandesForstInventarVegetationsHoehenModell(Base, LandesForstInventarVegetation, Vector):
+    __bodId__ = 'ch.bafu.landesforstinventar-vegetationshoehenmodell'
+
+register(LandesForstInventarVegetationsHoehenModell.__bodId__, LandesForstInventarVegetationsHoehenModell)
+
+
+class LandesForstInventarVegetationsHoehenModellRelief(Base, LandesForstInventarVegetation, Vector):
+    __bodId__ = 'ch.bafu.landesforstinventar-vegetationshoehenmodell_relief'
+
+register(LandesForstInventarVegetationsHoehenModellRelief.__bodId__, LandesForstInventarVegetationsHoehenModellRelief)
