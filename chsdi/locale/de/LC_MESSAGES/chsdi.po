@@ -1079,6 +1079,12 @@ msgstr "http://www.astra.admin.ch/index.html?lang=de"
 msgid "ch.astra.ausnahmetransportrouten"
 msgstr "Ausnahmetransportrouten"
 
+msgid "ch.astra.baulinien-nationalstrassen"
+msgstr "Baulinien Nationalstrassen"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb"
+msgstr "Baulinien Nationalstrassen OeREB"
+
 msgid "ch.astra.historischer-verkehrswege"
 msgstr "IVS National"
 
@@ -1174,6 +1180,12 @@ msgstr "Strassennummer"
 
 msgid "ch.astra.projektierungszonen-nationalstrassen.oereb"
 msgstr "Projektierungszonen Autobahnen ÖREB"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
+msgstr "SIN - Anhörung"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
+msgstr "SIN"
 
 msgid "ch.astra.schwerverunfallte-kanton_alkohol"
 msgstr "Unfälle pro Einwohner - Alkohol"
@@ -1628,23 +1640,140 @@ msgstr "Hinweis"
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_0"
 msgstr "n.n."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_116"
+msgstr "Die offiziellen Wanderwege sind ausgezäunt - es ist nicht damit zu rechnen, direkt auf die geschützte Herde zu treffen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_125"
+msgstr "Empfehlungen zum korrekten Verhalten bei Begegnungen mit Mutterkuhherden finden Sie auf der Website der Schweizer Wanderwege."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_135"
+msgstr "Als Alternative  zum Weg Unteri Rippa - Bremingard - Col du Chamois wird bei Präsenz Hunde die Route Unteri Rippa - Cerniets - Col du Chamois empfohlen. Zwischen dem Col du Chamois und Cerniets wurde diese Alternativroute im Feld neu gekennzeichnet."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_138"
+msgstr "Der tiefer verlaufende Weg von der Niwenalp zum Stafel ist ausgezäunt; der höher parallel verlaufende Weg über Nibubedu hingegen quert in den Mt. Juni u. Sept. die geschützte Herde (Juli/Aug. befindet sich die Herde in höher gelegenen Weidesektoren)."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_14"
+msgstr "Zum Zeitpunkt der Aktualisierung der Einsatzgebiete der Herdenschutzhunde war noch nicht definitiv klar, ob 2018 wirklich Hunde auf Balachaux die Schafherde beschützen werden."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_145"
-msgstr "Die Herde und die Herdenschutzhunde sind zwar während dem Sommer einige Tage auf dem Kaiseregg-Pass, jedoch ausschliesslich unter der Woche."
+msgstr "Die Herde und die Herdenschutzhunde sind zwar während dem Sommer einige Tage auf dem Kaiseregg-Pass, jedoch ausschliesslich unter der Woche"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_150"
+msgstr "Der Weg vom Vord. Sänntum zum Turtmannsee (westl. der Turtmänna) sowie der Höhenweg über Biele zur Turtmannhütte (östl. der Turtmänna) sind ausgezäunt. Für Juli wird empfohlen, den Weg vom Vord. Sänntum über Holustei nach Biele nicht zu nutzen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_154"
+msgstr "Der Weideteil südwestl. von Z'Mübach (Pkt. 1997) wird von der geschützten Herde ca. zwischen Mitte Juni und Mitte Juli sowie zwischen Mitte und Ende Sept. genutzt, nordöstl. von Z'Mübach findet sich die Herde ca. von Anfang Juli bis Mitte September."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_16"
+msgstr "Von Baumgarte zum Pass (Pkt. 1829) ist nur im September damit zu rechnen, auf Herdenschutzhunde zu stossen (davor ist der Wanderweg abgezäunt)."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_163"
+msgstr "Befindet sich die geschützte Herde in der Nähe des Wanderweges, so ist dieser ausgezäunt, so dass Sie in der Regel nicht auf die geschützte Herde treffen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_36"
+msgstr "Die Wanderwege sind ausgezäunt, so dass Sie in der Regel nicht direkt auf die geschützte Herde treffen. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_4"
+msgstr "Der Wanderweg am Lag da Pigniu ist bei Anwesenheit der Herdenschutzhunde ausgezäunt, so dass Sie in der Regel nicht direkt auf die geschützte Herde treffen. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_45"
+msgstr "Der eingezäunten, geschützten Herde auf dem Guferli kann problemlos ausgewichen werden."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_46"
+msgstr "Auf der Weide um Ruchschwand können ganzjährig Herdenschutzhunde im Einsatz sein."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_60"
+msgstr "Der Wanderweg südlich des Bärried ist abgezäunt. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_73"
+msgstr "Der Dent de Valerette kann ohne Begegnung mit der geschützten Herde aus bestiegen werden. Wählen Sie dazu den Weg via Chîndonne."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_87"
+msgstr "Der Ochsen kann auch ohne Begegnung mit der geschützten Herde bestiegen werden. Wählen Sie dazu den Wanderweg über Ritz und Oberalpigle."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_92"
+msgstr "Empfehlungen zum korrekten Verhalten bei Begegnungen mit Mutterkuhherden finden Sie auf der Website der Schweizer Wanderwege."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz"
 msgstr "Anwesenheit Schutzhunde"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1000"
-msgstr "Während dem ganzen Jahr"
+msgstr "Es ist ganzjährig mit der Anwesenheit von Herdenschutzhunden zu rechnen."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1001"
-msgstr "In der Regel zwischen Anfang Juni und Mitte Oktober"
+msgstr "In der Regel von Anfang Juni bis Ende September"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1002"
-msgstr "In der Regel zwischen Anfang Juni und Mitte Oktober. Beachten Sie die aktuellen Präsenzangaben auf den Infotafeln vor Ort oder informieren Sie sich bei der genannten Kontaktstelle."
+msgstr "In der Regel zwischen Anfang Juni und Mitte Oktober. Beachten Sie nach Möglichkeit die aktuellen Präsenzangaben auf den Infotafeln vor Ort oder kontaktieren Sie Schwarzsee Tourismus."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_145"
-msgstr "In der Regel zwischen Anfang Juni und Mitte Oktober. Beachten Sie die aktuellen Präsenzangaben auf den Infotafeln vor Ort oder kontaktieren Sie Schwarzsee Tourismus."
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1003"
+msgstr "Beachten Sie nach Möglichkeit die aktuellen Präsenzangaben auf den Infotafeln vor Ort."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1004"
+msgstr "Beachten Sie nach Möglichkeit die aktuellen Präsenzangaben auf den Infotafeln vor Ort oder kontaktieren Sie Schwarzsee Tourismus."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1005"
+msgstr "Die offiziellen Wanderwege queren keine Weideflächen mit Herdenschutzhunden."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1006"
+msgstr "Die offiziellen Wanderwege sind ausgezäunt, so dass Sie in der Regel nicht direkt auf die geschützte Herde treffen. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1007"
+msgstr "In der Regel vom 20.6.-20.9."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1008"
+msgstr "In der Regel von Anfang Juni bis Ende September. Beachten Sie nach Möglichkeit die aktuellen Präsenzangaben auf den Infotafeln vor Ort."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1009"
+msgstr "In der Regel zwischen Anfang Juni und Anfang Oktober."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1010"
+msgstr "In der Regel zwischen Anfang Juni und Ende September."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1011"
+msgstr "In der Regel zwischen Anfang Juni und Mitte September. Beachten Sie nach Möglichkeit die aktuellen Präsenzangaben auf den Infotafeln vor Ort."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1012"
+msgstr "In der Regel zwischen Anfang Mai und Ende September."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1013"
+msgstr "In der Regel zwischen Anfang Mai und Ende September. Genauere Auskünfte können Sie bei Sörenberg Flühli Tourismus erhalten."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1014"
+msgstr "In der Regel zwischen Ende Mai bis Bettag (ca. Mitte September)."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1015"
+msgstr "In der Regel zwischen Ende Mai bis Ende September. Genauere Auskünfte können Sie bei Sörenberg Flühli Tourismus erhalten."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1016"
+msgstr "In der Regel zwischen Ende Mai und Ende September. Auf dem Alpinwanderweg Vorderjoch - Gandispitz - Zingel ist nicht mit Begegnungen mit Herdenschutzhunden zu rechnen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1017"
+msgstr "In der Regel zwischen Ende Mai und Mitte Oktober."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1018"
+msgstr "In der Regel zwischen Mitte April und Anfang Oktober."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1019"
+msgstr "In der Regel zwischen Mitte Juni und Ende September."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1020"
+msgstr "In der Regel zwischen Mitte Juni und Ende September. Beachten Sie nach Möglichkeit die aktuellen Präsenzangaben auf den Infotafeln vor Ort."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1021"
+msgstr "In der Regel zwischen Mitte Juni und Mitte September."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1022"
+msgstr "In der Regel zwischen Mitte Mai und Ende September. Genauere Auskünfte können Sie bei Sörenberg Flühli Tourismus erhalten."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1023"
+msgstr "In der Regel zwischen Mitte Mai und Mitte September."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
+msgstr "Von Anfang August bis Mitte September ist auf dem Wanderweg von der Canalbrücke aus Richtung Zapporthütte damit zu rechnen, auf Herdenschutzhunde zu treffen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1025"
+msgstr "Auf dem WW zwischen dem Lago di Luzzone und der Capanna Motterascio ist in der Regel im Juni damit zu rechnen, auf die geschützte Herde zu treffen und auf dem Wanderweg zwischen dem Lago di Luzzone und dem Passo Soreda zwischen Mitte und Ende Juli"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Kontakt E-Mail"
@@ -2164,18 +2293,6 @@ msgstr "Reinigungstyp (VSA-Kategorie)"
 
 msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss"
 msgstr "Gefährdungskarte Oberflächenabfluss"
-
-msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.jaehrlichkeit"
-msgstr "Jährlichkeit"
-
-msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.spezialprozess"
-msgstr "Spezialprozess"
-
-msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.ue_tiefe_og"
-msgstr "Überschwemmungstiefe: Obergrenze (in m)"
-
-msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss.ue_tiefe_ug"
-msgstr "Überschwemmungstiefe: Untergrenze (in m)"
 
 msgid "ch.bafu.gefahren-aktuelle_erdbeben"
 msgstr "Aktuelle Erdbeben"
@@ -3290,11 +3407,17 @@ msgstr "Vegetationshöhe LFI"
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief"
 msgstr "Oberflächenmodell LFI"
 
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.year"
+msgstr "Datenstand"
+
 msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Waldanteil (LFI)"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
 msgstr "Waldmischungsgrad LFI"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad.year"
+msgstr "Datenstand"
 
 msgid "ch.bafu.luftreinhaltung-ammoniakkonzentration"
 msgstr "Ammoniakkonzentration"
@@ -4245,46 +4368,244 @@ msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
 
 msgid "ch.bakom.notruf"
-msgstr "per Gemeinde"
+msgstr "Notrufe per Gemeinde"
 
 msgid "ch.bakom.notruf-112_festnetz"
 msgstr "112 Festnetz"
 
+msgid "ch.bakom.notruf.112_festnetz"
+msgstr "112 Nummer Festnetz"
+
+msgid "ch.bakom.notruf-112_festnetz.112_festnetz"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-112_festnetz.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-112_festnetz.gemeinde"
+msgstr "Gemeinde"
+
+msgid "ch.bakom.notruf.112_mobil"
+msgstr "112 Nummer Mobilnetz"
+
 msgid "ch.bakom.notruf-112_mobilnetz"
 msgstr "112 Mobilnetz"
+
+msgid "ch.bakom.notruf-112_mobilnetz.112_mobil"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-112_mobilnetz.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-112_mobilnetz.gemeinde"
+msgstr "Gemeinde"
 
 msgid "ch.bakom.notruf-112_satellit"
 msgstr "112 Satellitennetz"
 
+msgid "ch.bakom.notruf.112_satellit"
+msgstr "112 Nummer Satellitennetz"
+
+msgid "ch.bakom.notruf-112_satellit.112_satellit"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-112_satellit.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-112_satellit.gemeinde"
+msgstr "Gemeinde"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Festnetz"
+
+msgid "ch.bakom.notruf.117_festnetz"
+msgstr "117 Nummer Festnetz"
+
+msgid "ch.bakom.notruf-117_festnetz.117_festnetz"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-117_festnetz.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-117_festnetz.gemeinde"
+msgstr "Gemeinde"
+
+msgid "ch.bakom.notruf.117_mobil"
+msgstr "117 Nummer Mobilnetz"
 
 msgid "ch.bakom.notruf-117_mobilnetz"
 msgstr "117 Mobilnetz"
 
+msgid "ch.bakom.notruf-117_mobilnetz.117_mobil"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-117_mobilnetz.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-117_mobilnetz.gemeinde"
+msgstr "Gemeinde"
+
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Festnetz"
+
+msgid "ch.bakom.notruf.118_festnetz"
+msgstr "118 Nummer Festnetz"
+
+msgid "ch.bakom.notruf-118_festnetz.118_festnetz"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-118_festnetz.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-118_festnetz.gemeinde"
+msgstr "Gemeinde"
+
+msgid "ch.bakom.notruf.118_mobil"
+msgstr "118 Nummer Mobilnetz"
 
 msgid "ch.bakom.notruf-118_mobilnetz"
 msgstr "118 Mobilnetz"
 
+msgid "ch.bakom.notruf-118_mobilnetz.118_mobil"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-118_mobilnetz.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-118_mobilnetz.gemeinde"
+msgstr "Gemeinde"
+
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Festnetz"
+
+msgid "ch.bakom.notruf.143_festnetz"
+msgstr "143 Nummer Festnetz"
+
+msgid "ch.bakom.notruf-143_festnetz.143_festnetz"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-143_festnetz.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-143_festnetz.gemeinde"
+msgstr "Gemeinde"
+
+msgid "ch.bakom.notruf.143_mobil"
+msgstr "143 Nummer Mobilnetz"
 
 msgid "ch.bakom.notruf-143_mobilnetz"
 msgstr "143 Mobilnetz"
 
+msgid "ch.bakom.notruf-143_mobilnetz.143_mobil"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-143_mobilnetz.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-143_mobilnetz.gemeinde"
+msgstr "Gemeinde"
+
 msgid "ch.bakom.notruf-144_festnetz"
 msgstr "144 Festnetz"
+
+msgid "ch.bakom.notruf.144_festnetz"
+msgstr "144 Nummer Festnetz"
+
+msgid "ch.bakom.notruf-144_festnetz.144_festnetz"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-144_festnetz.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-144_festnetz.gemeinde"
+msgstr "Gemeinde"
+
+msgid "ch.bakom.notruf.144_mobil"
+msgstr "144 Nummer Mobilnetz"
 
 msgid "ch.bakom.notruf-144_mobilnetz"
 msgstr "144 Mobilnetz"
 
+msgid "ch.bakom.notruf-144_mobilnetz.144_mobil"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-144_mobilnetz.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-144_mobilnetz.gemeinde"
+msgstr "Gemeinde"
+
 msgid "ch.bakom.notruf-147_festnetz"
 msgstr "147 Festnetz"
 
+msgid "ch.bakom.notruf.147_festnetz"
+msgstr "147 Nummer Festnetz"
+
+msgid "ch.bakom.notruf-147_festnetz.147_festnetz"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-147_festnetz.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-147_festnetz.gemeinde"
+msgstr "Gemeinde"
+
+msgid "ch.bakom.notruf.147_mobil"
+msgstr "147 Nummer Mobilnetz"
+
 msgid "ch.bakom.notruf-147_mobilnetz"
 msgstr "147 Mobilnetz"
+
+msgid "ch.bakom.notruf-147_mobilnetz.147_mobil"
+msgstr "Notrufnummer"
+
+msgid "ch.bakom.notruf-147_mobilnetz.adresse"
+msgstr "Alarmzentral"
+
+msgid "ch.bakom.notruf-147_mobilnetz.gemeinde"
+msgstr "Gemeinde"
+
+msgid "ch.bakom.notruf.adresse_112_festnetz"
+msgstr "112 Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf.adresse_112_mobil"
+msgstr "112 Alarmzentrale Mobilnetz"
+
+msgid "ch.bakom.notruf.adresse_112_satellit"
+msgstr "112 Alarmzentrale Satellitennetz"
+
+msgid "ch.bakom.notruf.adresse_117_festnetz"
+msgstr "117 Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf.adresse_117_mobil"
+msgstr "117 Alarmzentrale Mobilnetz"
+
+msgid "ch.bakom.notruf.adresse_118_festnetz"
+msgstr "118 Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf.adresse_118_mobil"
+msgstr "118 Alarmzentrale Mobilnetz"
+
+msgid "ch.bakom.notruf.adresse_143_festnetz"
+msgstr "143 Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf.adresse_143_mobil"
+msgstr "143 Alarmzentrale Mobilnetz"
+
+msgid "ch.bakom.notruf.adresse_144_festnetz"
+msgstr "144 Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf.adresse_144_mobil"
+msgstr "144 Alarmzentrale Mobilnetz"
+
+msgid "ch.bakom.notruf.adresse_147_festnetz"
+msgstr "147 Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf.adresse_147_mobil"
+msgstr "147 Alarmzentrale Mobilnetz"
+
+msgid "ch.bakom.notruf.name"
+msgstr "Name"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Radio- und Fernsehsender"
