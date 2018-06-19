@@ -4739,8 +4739,17 @@ msgstr "147 Centrale d‘alarme réseau fixe"
 msgid "ch.bakom.notruf.adresse_147_mobil"
 msgstr "147 Centrale d‘alarme réseau mobile"
 
+msgid "ch.bakom.notruf.festnetz"
+msgstr "Numéro d’acheminement fixe"
+
+msgid "ch.bakom.notruf.mobilnetz"
+msgstr "Numéro d’acheminement mobile"
+
 msgid "ch.bakom.notruf.name"
 msgstr "Nom"
+
+msgid "ch.bakom.notruf.satellit"
+msgstr "Numéro d’acheminement satellite"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emetteurs radio et télévision"
@@ -6420,10 +6429,10 @@ msgid "ch.blw.feldblockkarte"
 msgstr "Carte de blocs de parcelles"
 
 msgid "ch.blw.gewaesseranschlusskarte"
-msgstr "Surface en connection des eaux"
+msgstr "Surface en connexion des eaux"
 
 msgid "ch.blw.gewaesseranschlusskarte-direkt"
-msgstr "Surface en connection élargie"
+msgstr "Surface en connexion élargie"
 
 msgid "ch.blw.hang_steillagen"
 msgstr "Terrains en pente"

@@ -1260,6 +1260,30 @@ class AU_A2(Base, Vector):
 register('ch.bafu.bundesinventare-auen_anhang2', AU_A2)
 
 
+class AuenVegetationAlpin(Base, Vector):
+    __tablename__ = 'auen_vegetation_alpin'
+    __table_args__ = ({'schema': 'bundinv', 'autoload': False})
+    __bodId__ = 'ch.bafu.bundesinventare-auen_vegetation_alpin'
+    __queryable_attributes__ = ['objnummer', 'objname', 'vegetation']
+    __template__ = 'templates/htmlpopup/auen_vegetation_alpin.mako'
+    __label__ = 'objname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objname = Column('objname', Unicode)
+    objnummer = Column('objnummer', Integer)
+    refobjblat = Column('refobjblat', Unicode)
+    vegetation = Column('vegetation', Integer)
+    vegetation_de = Column('devegetati', Unicode)
+    vegetation_fr = Column('frvegetati', Unicode)
+    vegetation_it = Column('itvegetati', Unicode)
+    conflict = Column('konfliktpo', Integer)
+    conflict_de = Column('dekonflikt', Unicode)
+    conflict_fr = Column('frkonflikt', Unicode)
+    conflict_it = Column('itkonflikt', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bafu.bundesinventare-auen_vegetation_alpin', AuenVegetationAlpin)
+
+
 class AuenVegetationsKarten(Base, Vector):
     __tablename__ = 'auen_vegetation'
     __table_args__ = ({'schema': 'flora', 'autoload': False})
