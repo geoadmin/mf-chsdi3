@@ -16,6 +16,104 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20180627:
+   *******
+
+Release 20180627 - Wednesday, June 27th 2018
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_180530...r_180627>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_180530...r_180627>`__
+
+
+Geodata
+*******
+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Overland flow map <//map.geo.admin.ch/?layers=ch.bafu.gefaehrdungskarte-oberflaechenabfluss>`__ (ch.bafu.gefaehrdungskarte-oberflaechenabfluss)                                           |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hydrocotyle ranunculoides <//map.geo.admin.ch/?layers=ch.bafu.neophyten-grosser_wassernabel>`__ (ch.bafu.neophyten-grosser_wassernabel)                                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Prunus serotina <//map.geo.admin.ch/?layers=ch.bafu.neophyten-herbst_traubenkirsche>`__ (ch.bafu.neophyten-herbst_traubenkirsche)                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Sicyos angulatus <//map.geo.admin.ch/?layers=ch.bafu.neophyten-haargurke>`__ (ch.bafu.neophyten-haargurke)                                                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Reynoutria japonica <//map.geo.admin.ch/?layers=ch.bafu.neophyten-japanischer_staudenknoeterich>`__ (ch.bafu.neophyten-japanischer_staudenknoeterich)                                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Lonicera henryi <//map.geo.admin.ch/?layers=ch.bafu.neophyten-henrys_geissblatt>`__ (ch.bafu.neophyten-henrys_geissblatt)                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Echinocystis lobata <//map.geo.admin.ch/?layers=ch.bafu.neophyten-igelgurke>`__ (ch.bafu.neophyten-igelgurke)                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Cabomba caroliniana <//map.geo.admin.ch/?layers=ch.bafu.neophyten-karolina_haarnixe>`__ (ch.bafu.neophyten-karolina_haarnixe)                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Sedum spurium <//map.geo.admin.ch/?layers=ch.bafu.neophyten-kaukasus_fettkraut>`__ (ch.bafu.neophyten-kaukasus_fettkraut)                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Elodea canadensis <//map.geo.admin.ch/?layers=ch.bafu.neophyten-kanadische_wasserpest>`__ (ch.bafu.neophyten-kanadische_wasserpest)                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Phytolacca americana <//map.geo.admin.ch/?layers=ch.bafu.neophyten-amerikanische_kermesbeere>`__ (ch.bafu.neophyten-amerikanische_kermesbeere)                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Solidago canadensis <//map.geo.admin.ch/?layers=ch.bafu.neophyten-kanadische_goldrute>`__ (ch.bafu.neophyten-kanadische_goldrute)                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Ambrosia artemisiifolia <//map.geo.admin.ch/?layers=ch.bafu.neophyten-aufrechtes_traubenkraut>`__ (ch.bafu.neophyten-aufrechtes_traubenkraut)                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Impatiens balfourii <//map.geo.admin.ch/?layers=ch.bafu.neophyten-balfours_springkraut>`__ (ch.bafu.neophyten-balfours_springkraut)                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rubus armeniacus <//map.geo.admin.ch/?layers=ch.bafu.neophyten-armenische_brombeere>`__ (ch.bafu.neophyten-armenische_brombeere)                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Amorpha fruticosa <//map.geo.admin.ch/?layers=ch.bafu.neophyten-bastardindigo>`__ (ch.bafu.neophyten-bastardindigo)                                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `N.N. <//map.geo.admin.ch/?layers=ch.bafu.neophyten-amerikanischer_stinktierkohl>`__ (ch.bafu.neophyten-amerikanischer_stinktierkohl)                                                      |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Reynoutria bohemica <//map.geo.admin.ch/?layers=ch.bafu.neophyten-bastard_staudenknoeterich>`__ (ch.bafu.neophyten-bastard_staudenknoeterich)                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bassia scoparia <//map.geo.admin.ch/?layers=ch.bafu.neophyten-besen_radmelde>`__ (ch.bafu.neophyten-besen_radmelde)                                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Paulownia tomentosa <//map.geo.admin.ch/?layers=ch.bafu.neophyten-blauglockenbaum>`__ (ch.bafu.neophyten-blauglockenbaum)                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Myriophyllum aquaticum <//map.geo.admin.ch/?layers=ch.bafu.neophyten-brasilianisches_tausendblatt>`__ (ch.bafu.neophyten-brasilianisches_tausendblatt)                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Abutilon theophrasti <//map.geo.admin.ch/?layers=ch.bafu.neophyten-chinesische_samtpappel>`__ (ch.bafu.neophyten-chinesische_samtpappel)                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Impatiens glandulifera <//map.geo.admin.ch/?layers=ch.bafu.neophyten-druesiges_springkraut>`__ (ch.bafu.neophyten-druesiges_springkraut)                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Solanum carolinense <//map.geo.admin.ch/?layers=ch.bafu.neophyten-carolina_nachtschatten>`__ (ch.bafu.neophyten-carolina_nachtschatten)                                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Phytolacca esculenta <//map.geo.admin.ch/?layers=ch.bafu.neophyten-essbare_kermesbeere>`__ (ch.bafu.neophyten-essbare_kermesbeere)                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erigeron annuus <//map.geo.admin.ch/?layers=ch.bafu.neophyten-einjaehriges_berufkraut>`__ (ch.bafu.neophyten-einjaehriges_berufkraut)                                                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rhus typhina <//map.geo.admin.ch/?layers=ch.bafu.neophyten-essigbaum>`__ (ch.bafu.neophyten-essigbaum)                                                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Senecio rupestris <//map.geo.admin.ch/?layers=ch.bafu.neophyten-felsen_greiskraut>`__ (ch.bafu.neophyten-felsen_greiskraut)                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Cyperus esculentus <//map.geo.admin.ch/?layers=ch.bafu.neophyten-essbares_zypergras>`__ (ch.bafu.neophyten-essbares_zypergras)                                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Trachycarpus fortunei <//map.geo.admin.ch/?layers=ch.bafu.neophyten-fortunes_hanfpalme>`__ (ch.bafu.neophyten-fortunes_hanfpalme)                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Glyceria striata <//map.geo.admin.ch/?layers=ch.bafu.neophyten-gestreiftes_suessgras>`__ (ch.bafu.neophyten-gestreiftes_suessgras)                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `N.N. <//map.geo.admin.ch/?layers=ch.bafu.neophyten-grossbluetiges_heusenkraut>`__ (ch.bafu.neophyten-grossbluetiges_heusenkraut)                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Parthenocissus inserta <//map.geo.admin.ch/?layers=ch.bafu.neophyten-gewoehnliche_jungfernrebe>`__ (ch.bafu.neophyten-gewoehnliche_jungfernrebe)                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bunias orientalis <//map.geo.admin.ch/?layers=ch.bafu.neophyten-glattes_zackenschoetchen>`__ (ch.bafu.neophyten-glattes_zackenschoetchen)                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Ailanthus altissima <//map.geo.admin.ch/?layers=ch.bafu.neophyten-goetterbaum>`__ (ch.bafu.neophyten-goetterbaum)                                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Solarenergie: Eignung Fassaden <//map3.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-fassaden>`__  (ch.bfe.solarenergie-eignung-fassaden)                                              |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20180530:
    *******
 
