@@ -2299,10 +2299,10 @@ class LandesForstInventarWaldMischGrad(Base, Vector):
     __table_args__ = ({'schema': 'wald', 'autoload': False})
     __bodId__ = 'ch.bafu.landesforstinventar-waldmischungsgrad'
     __template__ = 'templates/htmlpopup/landesforstinventar-waldmischgrad.mako'
-    __queryable_attributes__ = ['year']
-    __label__ = 'year'
+    __queryable_attributes__ = ['datenstand']
+    __label__ = 'datenstand'
     id = Column('bgdi_id', Integer, primary_key=True)
-    year = Column('year', Integer)
+    datenstand = Column('datenstand', Integer)
     the_geom = Column(Geometry2D)
 
 register(LandesForstInventarWaldMischGrad.__bodId__, LandesForstInventarWaldMischGrad)
@@ -2312,12 +2312,10 @@ class LandesForstInventarVegetation:
     __tablename__ = 'vegetationshoehenmodell'
     __table_args__ = ({'schema': 'wald', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/landesforstinventar-vegetationshoehenmodell.mako'
-    __queryable_attributes__ = ['year']
-    __label__ = 'year'
+    __queryable_attributes__ = ['datenstand']
+    __label__ = 'datenstand'
     id = Column('bgdi_id', Integer, primary_key=True)
-    year = Column('year', Integer)
-    month = Column('month', Integer)
-    day = Column('day', Integer)
+    datenstand = Column('datenstand', Integer)
     the_geom = Column(Geometry2D)
 
 
