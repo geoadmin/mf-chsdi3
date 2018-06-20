@@ -74,34 +74,6 @@ class GueteklasseOev(Base, Vector):
 register('ch.are.gueteklassen_oev', GueteklasseOev)
 
 
-class Bevoelkerungsdichte(Base, Vector):
-    __tablename__ = 'bevoelkerungsdichte'
-    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
-    __template__ = 'templates/htmlpopup/bevoelkerungsdichte.mako'
-    __bodId__ = 'ch.are.bevoelkerungsdichte'
-    __label__ = 'popt_ha'  # Composite labels
-    id = Column('row_id', Integer, primary_key=True)
-    popt_ha = Column('popt_ha', Float)
-    stand = Column('stand', Float)
-    the_geom = Column(Geometry2D)
-
-register('ch.are.bevoelkerungsdichte', Bevoelkerungsdichte)
-
-
-class Beschaeftigtendichte(Base, Vector):
-    __tablename__ = 'beschaeftigtendichte'
-    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
-    __template__ = 'templates/htmlpopup/beschaeftigtendichte.mako'
-    __bodId__ = 'ch.are.beschaeftigtendichte'
-    __label__ = 'empt_ha'
-    id = Column('row_id', Integer, primary_key=True)
-    empt_ha = Column('empt_ha', Float)
-    stand = Column('stand', Float)
-    the_geom = Column(Geometry2D)
-
-register('ch.are.beschaeftigtendichte', Beschaeftigtendichte)
-
-
 class Bauzonen(Base, Vector):
     __tablename__ = 'bauzonen'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
