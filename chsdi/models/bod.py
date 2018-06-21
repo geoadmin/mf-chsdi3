@@ -128,9 +128,13 @@ class LayersConfig(Base):
         if config['type'] == 'wms':
             config['wmsUrl'] = 'https://%s' % wmsHost
         elif config['type'] == 'geojson':
-            api_url = params.request.registry.settings['api_url']
-            config['styleUrl'] = make_agnostic(
-                api_url + '/static/vectorStyles/' + self.layerBodId + '.json')
+            # TODO Remove me
+            if self.layerBodId.startswith('ch.meteo'):
+                config['styleUrl'] = '//data.geo.admin.ch/%s/%s.json' % (self.layerBodId, self.layerBodId)
+            else:
+                api_url = params.request.registry.settings['api_url']
+                config['styleUrl'] = make_agnostic(
+                    api_url + '/static/vectorStyles/' + self.layerBodId + '.json')
             config['geojsonUrl'] = self._getGeoJsonUrl(params.lang)
             if 'format' in config:
                 del config['format']
