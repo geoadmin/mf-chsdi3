@@ -8,7 +8,7 @@
         0,
         1
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -27,8 +27,8 @@
         0,
         1
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -73,7 +73,7 @@
         0,
         1
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -118,7 +118,7 @@
         1,
         20
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -137,8 +137,8 @@
         1,
         20
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -183,7 +183,7 @@
         1,
         20
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -228,7 +228,7 @@
         20,
         50
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -247,8 +247,8 @@
         20,
         50
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -293,7 +293,7 @@
         20,
         50
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -338,7 +338,7 @@
         50,
         80
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -357,8 +357,8 @@
         50,
         80
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -403,7 +403,7 @@
         50,
         80
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -448,7 +448,7 @@
         80,
         120
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -467,8 +467,8 @@
         80,
         120
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -513,7 +513,7 @@
         80,
         120
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -558,7 +558,7 @@
         120,
         200
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -577,8 +577,8 @@
         120,
         200
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -623,7 +623,7 @@
         120,
         200
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -668,7 +668,7 @@
         200,
         300
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -687,8 +687,8 @@
         200,
         300
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -733,7 +733,7 @@
         200,
         300
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -778,7 +778,7 @@
         300,
         400
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -797,8 +797,8 @@
         300,
         400
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -843,7 +843,7 @@
         300,
         400
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -888,7 +888,7 @@
         400,
         1200
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -907,8 +907,8 @@
         400,
         1200
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -953,7 +953,7 @@
         400,
         1200
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
