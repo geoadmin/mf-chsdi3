@@ -8,7 +8,7 @@
         -100000,
         1000
       ],
-      "minResolution": 100,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata14.png"
@@ -20,7 +20,7 @@
         -100000,
         1000
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata16.png",
@@ -58,7 +58,7 @@
         1000,
         1300
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -77,8 +77,8 @@
         1000,
         1300
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -123,7 +123,7 @@
         1000,
         1300
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -168,7 +168,7 @@
         1300,
         1350
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -187,8 +187,8 @@
         1300,
         1350
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -233,7 +233,7 @@
         1300,
         1350
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -278,7 +278,7 @@
         1350,
         1400
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -297,8 +297,8 @@
         1350,
         1400
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -343,7 +343,7 @@
         1350,
         1400
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -388,7 +388,7 @@
         1400,
         1450
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -407,8 +407,8 @@
         1400,
         1450
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -453,7 +453,7 @@
         1400,
         1450
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -498,7 +498,7 @@
         1450,
         1500
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -517,8 +517,8 @@
         1450,
         1500
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -563,7 +563,7 @@
         1450,
         1500
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -608,7 +608,7 @@
         1500,
         1550
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -627,8 +627,8 @@
         1500,
         1550
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -673,7 +673,7 @@
         1500,
         1550
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -718,7 +718,7 @@
         1550,
         1600
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -737,8 +737,8 @@
         1550,
         1600
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -783,7 +783,7 @@
         1550,
         1600
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -828,7 +828,7 @@
         1600,
         2000
       ],
-      "minResolution": 250,
+      "minResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -847,8 +847,8 @@
         1600,
         2000
       ],
-      "minResolution": 100,
-      "maxResolution": 250,
+      "minResolution": 250,
+      "maxResolution": 500,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
@@ -893,7 +893,7 @@
         1600,
         2000
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -938,7 +938,7 @@
         2000,
         100000
       ],
-      "minResolution": 100,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata14.png"
@@ -950,7 +950,7 @@
         2000,
         100000
       ],
-      "maxResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata16.png",
