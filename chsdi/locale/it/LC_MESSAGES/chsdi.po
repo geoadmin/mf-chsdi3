@@ -4436,6 +4436,9 @@ msgstr "FSME - vaccinazione raccomandata"
 msgid "ch.bag.zecken-lyme"
 msgstr "Zone a rischio di Borreliosi"
 
+msgid "ch.bag.zeckenstichmodell"
+msgstr "Zecken-Gefahrenpotenzialkarte"
+
 msgid "ch.bak"
 msgstr "UFC"
 
@@ -4518,7 +4521,7 @@ msgid "ch.bakom.notruf-112_festnetz"
 msgstr "112 Rete fissa"
 
 msgid "ch.bakom.notruf.112_festnetz"
-msgstr "112 Numero rete fissa"
+msgstr "Numero rete fissa"
 
 msgid "ch.bakom.notruf-112_festnetz.112_festnetz"
 msgstr "Numero di routing"
@@ -4526,11 +4529,17 @@ msgstr "Numero di routing"
 msgid "ch.bakom.notruf-112_festnetz.adresse"
 msgstr "Centrale d‘allarme"
 
+msgid "ch.bakom.notruf-112_festnetz.festnetz_112"
+msgstr "112 Numero di routing fissa"
+
+msgid "ch.bakom.notruf-112_festnetz.fn_addresse_112"
+msgstr "112 Centrale d‘allarme"
+
 msgid "ch.bakom.notruf-112_festnetz.gemeinde"
 msgstr "Commune"
 
 msgid "ch.bakom.notruf.112_mobil"
-msgstr "112 Numero rete mobile"
+msgstr "Numero rete mobile"
 
 msgid "ch.bakom.notruf-112_mobilnetz"
 msgstr "112 Rete mobile"
@@ -4544,11 +4553,17 @@ msgstr "Centrale d‘allarme"
 msgid "ch.bakom.notruf-112_mobilnetz.gemeinde"
 msgstr "Commune"
 
+msgid "ch.bakom.notruf-112_mobilnetz.mo_addresse_112"
+msgstr "112 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-112_mobilnetz.mobile_112"
+msgstr "112 Numero di routing mobile"
+
 msgid "ch.bakom.notruf-112_satellit"
 msgstr "112 Rete via satellite"
 
 msgid "ch.bakom.notruf.112_satellit"
-msgstr "112 Numero rete via satellite"
+msgstr "Numero rete via satellite"
 
 msgid "ch.bakom.notruf-112_satellit.112_satellit"
 msgstr "Numero di routing"
@@ -4559,11 +4574,17 @@ msgstr "Centrale d‘allarme"
 msgid "ch.bakom.notruf-112_satellit.gemeinde"
 msgstr "Commune"
 
+msgid "ch.bakom.notruf-112_satellit.sa_addresse_112"
+msgstr "112 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-112_satellit.satellit_112"
+msgstr "112 Numero rete via satellite"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Rete fissa"
 
 msgid "ch.bakom.notruf.117_festnetz"
-msgstr "117 Numero rete mobile"
+msgstr "Numero rete mobile"
 
 msgid "ch.bakom.notruf-117_festnetz.117_festnetz"
 msgstr "Numero di routing"
@@ -4571,11 +4592,17 @@ msgstr "Numero di routing"
 msgid "ch.bakom.notruf-117_festnetz.adresse"
 msgstr "Centrale d‘allarme"
 
+msgid "ch.bakom.notruf-117_festnetz.festnetz_117"
+msgstr "117 Numero di routing fissa"
+
+msgid "ch.bakom.notruf-117_festnetz.fn_addresse_117"
+msgstr "117 Centrale d‘allarme"
+
 msgid "ch.bakom.notruf-117_festnetz.gemeinde"
 msgstr "Commune"
 
 msgid "ch.bakom.notruf.117_mobil"
-msgstr "117 Numero rete mobile"
+msgstr "Numero rete mobile"
 
 msgid "ch.bakom.notruf-117_mobilnetz"
 msgstr "117 Rete mobile"
@@ -4589,11 +4616,17 @@ msgstr "Centrale d‘allarme"
 msgid "ch.bakom.notruf-117_mobilnetz.gemeinde"
 msgstr "Commune"
 
+msgid "ch.bakom.notruf-117_mobilnetz.mo_addresse_117"
+msgstr "117 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-117_mobilnetz.mobile_117"
+msgstr "117 Numero di routing mobile"
+
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Rete fissa"
 
 msgid "ch.bakom.notruf.118_festnetz"
-msgstr "118 Numero rete fissa"
+msgstr "Numero rete fissa"
 
 msgid "ch.bakom.notruf-118_festnetz.118_festnetz"
 msgstr "Numero di routing"
@@ -4601,11 +4634,17 @@ msgstr "Numero di routing"
 msgid "ch.bakom.notruf-118_festnetz.adresse"
 msgstr "Centrale d‘allarme"
 
+msgid "ch.bakom.notruf-118_festnetz.festnetz_118"
+msgstr "118 Numero di routing fissa"
+
+msgid "ch.bakom.notruf-118_festnetz.fn_addresse_118"
+msgstr "118 Centrale d‘allarme"
+
 msgid "ch.bakom.notruf-118_festnetz.gemeinde"
 msgstr "Commune"
 
 msgid "ch.bakom.notruf.118_mobil"
-msgstr "118 Numero rete mobile"
+msgstr "Numero rete mobile"
 
 msgid "ch.bakom.notruf-118_mobilnetz"
 msgstr "118 Rete mobile"
@@ -4619,11 +4658,17 @@ msgstr "Centrale d‘allarme"
 msgid "ch.bakom.notruf-118_mobilnetz.gemeinde"
 msgstr "Commune"
 
+msgid "ch.bakom.notruf-118_mobilnetz.mo_addresse_118"
+msgstr "118 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-118_mobilnetz.mobile_118"
+msgstr "118 Numero di routing mobile"
+
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Rete fissa"
 
 msgid "ch.bakom.notruf.143_festnetz"
-msgstr "143 Numero rete fissa"
+msgstr "Numero rete fissa"
 
 msgid "ch.bakom.notruf-143_festnetz.143_festnetz"
 msgstr "Numero di routing"
@@ -4631,11 +4676,17 @@ msgstr "Numero di routing"
 msgid "ch.bakom.notruf-143_festnetz.adresse"
 msgstr "Centrale d‘allarme"
 
+msgid "ch.bakom.notruf-143_festnetz.festnetz_143"
+msgstr "143 Numero di routing fissa"
+
+msgid "ch.bakom.notruf-143_festnetz.fn_addresse_143"
+msgstr "143 Centrale d‘allarme"
+
 msgid "ch.bakom.notruf-143_festnetz.gemeinde"
 msgstr "Commune"
 
 msgid "ch.bakom.notruf.143_mobil"
-msgstr "143 Numero rete mobile"
+msgstr "Numero rete mobile"
 
 msgid "ch.bakom.notruf-143_mobilnetz"
 msgstr "143 Rete mobile"
@@ -4649,11 +4700,17 @@ msgstr "Centrale d‘allarme"
 msgid "ch.bakom.notruf-143_mobilnetz.gemeinde"
 msgstr "Commune"
 
+msgid "ch.bakom.notruf-143_mobilnetz.mo_addresse_143"
+msgstr "143 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-143_mobilnetz.mobile_143"
+msgstr "143 Numero di routing mobile"
+
 msgid "ch.bakom.notruf-144_festnetz"
 msgstr "144 Rete fissa"
 
 msgid "ch.bakom.notruf.144_festnetz"
-msgstr "144 Numero rete fissa"
+msgstr "Numero rete fissa"
 
 msgid "ch.bakom.notruf-144_festnetz.144_festnetz"
 msgstr "Numero di routing"
@@ -4661,11 +4718,17 @@ msgstr "Numero di routing"
 msgid "ch.bakom.notruf-144_festnetz.adresse"
 msgstr "Centrale d‘allarme"
 
+msgid "ch.bakom.notruf-144_festnetz.festnetz_144"
+msgstr "144 Numero di routing fissa"
+
+msgid "ch.bakom.notruf-144_festnetz.fn_addresse_144"
+msgstr "144 Centrale d‘allarme"
+
 msgid "ch.bakom.notruf-144_festnetz.gemeinde"
 msgstr "Commune"
 
 msgid "ch.bakom.notruf.144_mobil"
-msgstr "144 Numero rete mobile"
+msgstr "Numero rete mobile"
 
 msgid "ch.bakom.notruf-144_mobilnetz"
 msgstr "144 Rete mobile"
@@ -4679,11 +4742,17 @@ msgstr "Centrale d‘allarme"
 msgid "ch.bakom.notruf-144_mobilnetz.gemeinde"
 msgstr "Commune"
 
+msgid "ch.bakom.notruf-144_mobilnetz.mo_addresse_144"
+msgstr "144 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-144_mobilnetz.mobile_144"
+msgstr "144 Numero di routing mobile"
+
 msgid "ch.bakom.notruf-147_festnetz"
 msgstr "147 Rete fissa"
 
 msgid "ch.bakom.notruf.147_festnetz"
-msgstr "147 Numero rete fissa"
+msgstr "Numero rete fissa"
 
 msgid "ch.bakom.notruf-147_festnetz.147_festnetz"
 msgstr "Numero di routing"
@@ -4691,11 +4760,17 @@ msgstr "Numero di routing"
 msgid "ch.bakom.notruf-147_festnetz.adresse"
 msgstr "Centrale d‘allarme"
 
+msgid "ch.bakom.notruf-147_festnetz.festnetz_147"
+msgstr "147 Numero di routing fissa"
+
+msgid "ch.bakom.notruf-147_festnetz.fn_addresse_147"
+msgstr "147 Centrale d‘allarme"
+
 msgid "ch.bakom.notruf-147_festnetz.gemeinde"
 msgstr "Commune"
 
 msgid "ch.bakom.notruf.147_mobil"
-msgstr "147 Numero rete mobile"
+msgstr "Numero rete mobile"
 
 msgid "ch.bakom.notruf-147_mobilnetz"
 msgstr "147 Rete mobile"
@@ -4709,47 +4784,125 @@ msgstr "Centrale d‘allarme"
 msgid "ch.bakom.notruf-147_mobilnetz.gemeinde"
 msgstr "Commune"
 
+msgid "ch.bakom.notruf-147_mobilnetz.mo_addresse_147"
+msgstr "147 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-147_mobilnetz.mobile_147"
+msgstr "147 Numero di routing mobile"
+
 msgid "ch.bakom.notruf.adresse_112_festnetz"
-msgstr "112 Centrale d‘allarme rete fissa"
+msgstr "Centrale d‘allarme rete fissa"
 
 msgid "ch.bakom.notruf.adresse_112_mobil"
-msgstr "112 Centrale d‘allarme rete mobile"
+msgstr "Centrale d‘allarme rete mobile"
 
 msgid "ch.bakom.notruf.adresse_112_satellit"
-msgstr "112 Centrale d‘allarme rete via satellite"
+msgstr "Centrale d‘allarme rete via satellite"
 
 msgid "ch.bakom.notruf.adresse_117_festnetz"
-msgstr "117 Centrale d‘allarme rete fissa"
+msgstr "Centrale d‘allarme rete fissa"
 
 msgid "ch.bakom.notruf.adresse_117_mobil"
-msgstr "117 Centrale d‘allarme rete mobile"
+msgstr "Centrale d‘allarme rete mobile"
 
 msgid "ch.bakom.notruf.adresse_118_festnetz"
-msgstr "118 Centrale d‘allarme rete fissa"
+msgstr "Centrale d‘allarme rete fissa"
 
 msgid "ch.bakom.notruf.adresse_118_mobil"
-msgstr "118 Centrale d‘allarme rete mobile"
+msgstr "Centrale d‘allarme rete mobile"
 
 msgid "ch.bakom.notruf.adresse_143_festnetz"
-msgstr "143 Centrale d‘allarme rete fissa"
+msgstr "Centrale d‘allarme rete fissa"
 
 msgid "ch.bakom.notruf.adresse_143_mobil"
-msgstr "143 Centrale d‘allarme rete mobile"
+msgstr "Centrale d‘allarme rete mobile"
 
 msgid "ch.bakom.notruf.adresse_144_festnetz"
-msgstr "144 Centrale d‘allarme rete fissa"
+msgstr "Centrale d‘allarme rete fissa"
 
 msgid "ch.bakom.notruf.adresse_144_mobil"
-msgstr "144 Centrale d‘allarme rete mobile"
+msgstr "Centrale d‘allarme rete mobile"
 
 msgid "ch.bakom.notruf.adresse_147_festnetz"
-msgstr "147 Centrale d‘allarme rete fissa"
+msgstr "Centrale d‘allarme rete fissa"
 
 msgid "ch.bakom.notruf.adresse_147_mobil"
-msgstr "147 Emergency Center mobile network"
+msgstr "Emergency Center mobile network"
 
 msgid "ch.bakom.notruf.festnetz"
 msgstr "Numero di routing fissa"
+
+msgid "ch.bakom.notruf.festnetz_112"
+msgstr "112 Numero di routing fissa"
+
+msgid "ch.bakom.notruf.festnetz_117"
+msgstr "117 Numero di routing fissa"
+
+msgid "ch.bakom.notruf.festnetz_118"
+msgstr "118 Numero di routing fissa"
+
+msgid "ch.bakom.notruf.festnetz_143"
+msgstr "143 Numero di routing fissa"
+
+msgid "ch.bakom.notruf.festnetz_144"
+msgstr "144 Numero di routing fissa"
+
+msgid "ch.bakom.notruf.festnetz_147"
+msgstr "147 Numero di routing fissa"
+
+msgid "ch.bakom.notruf.fn_addresse_112"
+msgstr "112 Centrale d‘allarme fissa"
+
+msgid "ch.bakom.notruf.fn_addresse_117"
+msgstr "117 Centrale d‘allarme fissa"
+
+msgid "ch.bakom.notruf.fn_addresse_118"
+msgstr "118 Centrale d‘allarme fissa"
+
+msgid "ch.bakom.notruf.fn_addresse_143"
+msgstr "143 Centrale d‘allarme fissa"
+
+msgid "ch.bakom.notruf.fn_addresse_144"
+msgstr "144 Centrale d‘allarme fissa"
+
+msgid "ch.bakom.notruf.fn_addresse_147"
+msgstr "147 Centrale d‘allarme fissa"
+
+msgid "ch.bakom.notruf.mo_addresse_112"
+msgstr "112 Centrale d‘allarme mobile"
+
+msgid "ch.bakom.notruf.mo_addresse_117"
+msgstr "117 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf.mo_addresse_118"
+msgstr "118 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf.mo_addresse_143"
+msgstr "143 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf.mo_addresse_144"
+msgstr "144 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf.mo_addresse_147"
+msgstr "147 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf.mobile_112"
+msgstr "112 Numero di routing mobile"
+
+msgid "ch.bakom.notruf.mobile_117"
+msgstr "117 Numero di routing mobile"
+
+msgid "ch.bakom.notruf.mobile_118"
+msgstr "118 Numero di routing mobile"
+
+msgid "ch.bakom.notruf.mobile_143"
+msgstr "143 Numero di routing mobile"
+
+msgid "ch.bakom.notruf.mobile_144"
+msgstr "144 Numero di routing mobile"
+
+msgid "ch.bakom.notruf.mobile_147"
+msgstr "147 Numero di routing mobile"
 
 msgid "ch.bakom.notruf.mobilnetz"
 msgstr "Numero di routing mobile"
@@ -4757,8 +4910,14 @@ msgstr "Numero di routing mobile"
 msgid "ch.bakom.notruf.name"
 msgstr "Nome"
 
+msgid "ch.bakom.notruf.sa_addresse_112"
+msgstr "112 Centrale d‘allarme satellite"
+
 msgid "ch.bakom.notruf.satellit"
 msgstr "Numero di routing via satellite"
+
+msgid "ch.bakom.notruf.satellit_112"
+msgstr "112 Numero rete via satellite"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emittenti radiotelevisive"
@@ -7496,6 +7655,9 @@ msgstr "Mattonifici 1995"
 msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1995.ziegeleien"
 msgstr "Nome della fabbrica da quadrels"
 
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional"
+msgstr "Etudes de potentiel géothermique"
+
 msgid "ch.swisstopo.geologie-geotope"
 msgstr "Geotopi svizzeri"
 
@@ -8989,6 +9151,9 @@ msgstr "Divisione swissALTI3D Raster"
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"
+
+msgid "ch.swisstopo.swissbathy3d-reliefschattierung"
+msgstr "swissBATHY3D Ombreggiature del rilievo"
 
 msgid "ch.swisstopo.swissboundaries3d-bezirk-flaeche"
 msgstr "Frontiere comunali"
