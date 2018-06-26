@@ -368,6 +368,21 @@ class UnfPersVelo(Base, Unf, Vector):
 register('ch.astra.unfaelle-personenschaeden_fahrraeder', UnfPersVelo)
 
 
+class Hauptstrassennetz(Base, Vector):
+    __tablename__ = 'hauptstrassennetz'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __bodId__ = 'ch.astra.hauptstrassennetz'
+    __template__ = 'templates/htmlpopup/astra_hauptstrassennetz.mako'
+    __label__ = 'roadnumber'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    roadnumber = Column('roadnumber', Integer)
+    segmentid = Column('segmentid', Unicode)
+    canton = Column('canton', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.astra.hauptstrassennetz', Hauptstrassennetz)
+
+
 class Schwerverunf:
     __tablename__ = 'unf_schwer'
     __table_args__ = ({'schema': 'astra', 'autoload': False, 'extend_existing': True})
