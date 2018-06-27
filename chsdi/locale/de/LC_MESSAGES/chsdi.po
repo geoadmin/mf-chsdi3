@@ -1085,6 +1085,18 @@ msgstr "Baulinien Nationalstrassen"
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Baulinien Nationalstrassen OeREB"
 
+msgid "ch.astra.hauptstrassennetz"
+msgstr "Hauptstrassennetz"
+
+msgid "ch.astra.hauptstrassennetz.canton"
+msgstr "Kanton"
+
+msgid "ch.astra.hauptstrassennetz.roadnumber"
+msgstr "Strassennummer"
+
+msgid "ch.astra.hauptstrassennetz.segmentid"
+msgstr "Bezeichnung"
+
 msgid "ch.astra.historischer-verkehrswege"
 msgstr "IVS National"
 
@@ -1915,6 +1927,21 @@ msgstr "Fläche [ha]"
 
 msgid "ch.bafu.bundesinventare-auen_vegetation_alpin"
 msgstr "Vegetation alpine Auen"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.conflict"
+msgstr "Konfliktpotential"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.objname"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.refobjblatt"
+msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.vegetation"
+msgstr "Vegetationshaupttyp"
 
 msgid "ch.bafu.bundesinventare-bln"
 msgstr "BLN"
@@ -3404,8 +3431,20 @@ msgstr "Totholz (LFI)"
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
 msgstr "Vegetationshöhe LFI"
 
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.datenstand"
+msgstr "Datenstand"
+
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief"
 msgstr "Oberflächenmodell LFI"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief.datenstand"
+msgstr "Datenstand"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief.value_0"
+msgstr "Vegetationshöhe [m]"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.value_0"
+msgstr "Vegetationshöhe [m]"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.year"
 msgstr "Datenstand"
@@ -3415,6 +3454,12 @@ msgstr "Waldanteil (LFI)"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
 msgstr "Waldmischungsgrad LFI"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad.datenstand"
+msgstr "Datenstand"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad.value_0"
+msgstr "Laubanteil [%]"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad.year"
 msgstr "Datenstand"
@@ -6579,7 +6624,7 @@ msgid "ch.meteoschweiz.messwerte-gesamtschnee-1d"
 msgstr "Messwerte Schneehöhe"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-10min"
-msgstr "Messwerte Globalstrahlung, 10 min"
+msgstr "Messwerte Globalstrahlung"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-1d"
 msgstr "Messwerte Globalstrahlung, 1 Tag"
@@ -6603,28 +6648,28 @@ msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
 msgstr "Messwerte Luftfeuchtigkeit"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-10min"
-msgstr "Messwerte Temperatur 2 m"
+msgstr "Messwerte Temperatur 2m"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-max-1h"
-msgstr "Messwerte Temperatur 2 m, Max. 24 h"
+msgstr "Messwerte Max. Temperatur 2m, 24h"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-min-1h"
-msgstr "Messwerte Temperatur 2 m, Min. 24 h"
+msgstr "Messwerte Min. Temperatur 2m, 24h"
 
 msgid "ch.meteoschweiz.messwerte-neuschnee-1d"
 msgstr "Messwerte Neuschnee"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-10min"
-msgstr "Messwerte Niederschlag, 10 min"
+msgstr "Messwerte Niederschlag, 10min"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1d"
 msgstr "Messwerte Niederschlag, 1 Tag"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1h"
-msgstr "Messwerte Niederschlag, 1 h"
+msgstr "Messwerte Niederschlag, 1h"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
-msgstr "Messwerte Sonnenscheindauer, 10 min"
+msgstr "Messwerte Sonnenscheindauer"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
 msgstr "Messwerte Sonnenschein rel., 1 Tag"

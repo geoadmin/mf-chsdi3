@@ -1085,6 +1085,18 @@ msgstr "Allineamenti per le strade nazionali"
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Allineamenti per le strade nazionali RDPP"
 
+msgid "ch.astra.hauptstrassennetz"
+msgstr "Rete delle strade principali"
+
+msgid "ch.astra.hauptstrassennetz.canton"
+msgstr "Cantone"
+
+msgid "ch.astra.hauptstrassennetz.roadnumber"
+msgstr "Numero della via"
+
+msgid "ch.astra.hauptstrassennetz.segmentid"
+msgstr "Designazione"
+
 msgid "ch.astra.historischer-verkehrswege"
 msgstr "IVS Nazionale"
 
@@ -1915,6 +1927,21 @@ msgstr "Superficie [ha]"
 
 msgid "ch.bafu.bundesinventare-auen_vegetation_alpin"
 msgstr "Vegetazione golenali alpine"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.conflict"
+msgstr "Potenziale di conflitto"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.objname"
+msgstr "Nome"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.objnummer"
+msgstr "No."
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.refobjblatt"
+msgstr "Descrizione dell`oggetto"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.vegetation"
+msgstr "Vegetazione principale"
 
 msgid "ch.bafu.bundesinventare-bln"
 msgstr "IFP"
@@ -2874,7 +2901,7 @@ msgid "ch.bafu.hydrogeologische-karte_100"
 msgstr "Carta idrogeologica 100"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
-msgstr "Monitoraggio corsi d'acqua svizzeri"
+msgstr "Monitoraggio corsi d'acqua Conf."
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.betriebsbeginn"
 msgstr "Début des mesures"
@@ -3404,8 +3431,20 @@ msgstr "Legno morto (IFN)"
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
 msgstr "Altezza della Vegetazione IFN"
 
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.datenstand"
+msgstr "Stato d'attualità"
+
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief"
 msgstr "Modello della superficie terrestre IFN"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief.datenstand"
+msgstr "Stato d'attualità"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief.value_0"
+msgstr "Altezza della vegetazione [m]"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.value_0"
+msgstr "Altezza della vegetazione [m]"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.year"
 msgstr "Stato d'attualità"
@@ -3415,6 +3454,12 @@ msgstr "Percentuale di bosco (IFN)"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
 msgstr "Mescolanza della foresta IFN"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad.datenstand"
+msgstr "Stato d'attualità"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad.value_0"
+msgstr "Proporzione di latifoglie [%]"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad.year"
 msgstr "Stato d'attualità"
@@ -5658,7 +5703,7 @@ msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Potenz. piccole centr. idraul."
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
-msgstr "Ladeinfrastruktur Elektromobilität"
+msgstr "Infrastruttura mobilità elettrica"
 
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Frequenza formazione ghiaccio"
@@ -6543,34 +6588,34 @@ msgid "ch.meteoschweiz"
 msgstr "MeteoSvizzera"
 
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
-msgstr "Stazioni aerologiche"
+msgstr "Stazioni atmosfera"
 
 msgid "ch.meteoschweiz.messnetz-automatisch"
-msgstr "Stazioni meteorologiche automatiche"
+msgstr "Stazioni di misura automatica"
 
 msgid "ch.meteoschweiz.messnetz-beobachtungen"
-msgstr "Osservazioni visuali"
+msgstr "Osservazione visuale"
 
 msgid "ch.meteoschweiz.messnetz-flugwetter"
-msgstr "Stazioni per l'aviazione"
+msgstr "Osservazione per l'aviazione"
 
 msgid "ch.meteoschweiz.messnetz-klima"
 msgstr "Stazioni climatologiche"
 
 msgid "ch.meteoschweiz.messnetz-manuell"
-msgstr "Stazioni pluviometriche manuale"
+msgstr "Stazioni precipitazioni manuale"
 
 msgid "ch.meteoschweiz.messnetz-partner"
 msgstr "Stazioni partner MeteoSvizzera"
 
 msgid "ch.meteoschweiz.messnetz-phaenologie"
-msgstr "Osservazioni fenologiche"
+msgstr "Osservazione fenologica"
 
 msgid "ch.meteoschweiz.messnetz-pollen"
 msgstr "Stazioni pollini"
 
 msgid "ch.meteoschweiz.messnetz-webcams"
-msgstr "Telecamere meteo"
+msgstr "Telecamere meteorologiche"
 
 msgid "ch.meteoschweiz.messwerte-foehn-10min"
 msgstr "Misurazioni indice del favonio"
@@ -6579,7 +6624,7 @@ msgid "ch.meteoschweiz.messwerte-gesamtschnee-1d"
 msgstr "Misurazioni neve totale"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-10min"
-msgstr "Misurazioni radiazione globale, 10 min"
+msgstr "Misurazioni radiazione globale"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-1d"
 msgstr "Mis. radiazione globale, 1 giorno"
@@ -6603,28 +6648,28 @@ msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
 msgstr "Misurazioni umidità"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-10min"
-msgstr "Misurazioni temperatura 2 m"
+msgstr "Misurazioni temperatura 2m"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-max-1h"
-msgstr "Misurazioni temperatura 2 m, max. 24 h"
+msgstr "Misurazioni mas. temperatura, 24h"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-min-1h"
-msgstr "Misurazioni temperatura 2 m, min. 24 h"
+msgstr "Misurazioni min. temperatura, 24h"
 
 msgid "ch.meteoschweiz.messwerte-neuschnee-1d"
 msgstr "Misurazioni neve nuova"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-10min"
-msgstr "Misurazioni precipitazioni, 10 min"
+msgstr "Misurazioni precipitazioni, 10min"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1d"
-msgstr "Misurazioni precipitazioni, 1 giorno"
+msgstr "Misurazioni precipitazioni, 1 gior."
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1h"
-msgstr "Misurazioni precipitazioni, 1 h"
+msgstr "Misurazioni precipitazioni, 1h"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
-msgstr "Misurazioni soleggiamento, 10 min"
+msgstr "Misurazioni soleggiamento"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
 msgstr "Mis. soleggiamento relativo, 1 giorno"
@@ -6633,10 +6678,10 @@ msgid "ch.meteoschweiz.messwerte-taupunkt-10min"
 msgstr "Misurazioni punto di rugiada"
 
 msgid "ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-10min"
-msgstr "Misurazioni raffiche vento"
+msgstr "Misurazioni raffica"
 
 msgid "ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min"
-msgstr "Misurazioni velocità vento"
+msgstr "Misurazioni velocità del vento"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
@@ -6954,10 +6999,10 @@ msgid "ch.swisstopo.geoidmodell-etrs89"
 msgstr "Geoide in ETRS89"
 
 msgid "ch.swisstopo.geologie-bodenunruhe"
-msgstr "Bruit sismique CH"
+msgstr "Rumore sismico CH"
 
 msgid "ch.swisstopo.geologie-bohrungen_tiefer_500"
-msgstr "Forages > 500 m"
+msgstr "Perforazioni > 500 m"
 
 msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.auftraggeb_de"
 msgstr "Mandant"
@@ -7620,7 +7665,7 @@ msgid "ch.swisstopo.geologie-rohstoffe"
 msgstr "Materie prime minerali"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau"
-msgstr "Pierres concassées: extraction"
+msgstr "Rocce spezzate: estrazione"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.clkind"
 msgstr "Importanza"
@@ -7731,7 +7776,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.stkind"
 msgstr "Stato dello sfruttamento"
 
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau"
-msgstr "Pierre naturelle: extraction"
+msgstr "Pietre naturali: estrazione"
 
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.clkind"
 msgstr "Importanza"
@@ -9870,7 +9915,7 @@ msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Piano settoriale militare"
 
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
-msgstr "Carte des zones interdites"
+msgstr "Carta delle zone soggette a divieti"
 
 msgid "ch.vbs.swissmilpilotschart"
 msgstr "SWISS MIL PILOTS CHART"

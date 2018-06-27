@@ -1085,6 +1085,18 @@ msgstr "Building lines for motorways"
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Building lines for motorways PLR"
 
+msgid "ch.astra.hauptstrassennetz"
+msgstr "Main roads network"
+
+msgid "ch.astra.hauptstrassennetz.canton"
+msgstr "Canton"
+
+msgid "ch.astra.hauptstrassennetz.roadnumber"
+msgstr "Road number"
+
+msgid "ch.astra.hauptstrassennetz.segmentid"
+msgstr "Description"
+
 msgid "ch.astra.historischer-verkehrswege"
 msgstr "ch.astra.historischer-verkehrswege"
 
@@ -1915,6 +1927,21 @@ msgstr "Area [ha]"
 
 msgid "ch.bafu.bundesinventare-auen_vegetation_alpin"
 msgstr "Vegetation alpine floodplains"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.conflict"
+msgstr "Potential conflicts"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.objname"
+msgstr "Name"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.objnummer"
+msgstr "No."
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.refobjblatt"
+msgstr "Objectsheet"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.vegetation"
+msgstr "Main vegetation"
 
 msgid "ch.bafu.bundesinventare-bln"
 msgstr "ILNM"
@@ -2874,7 +2901,7 @@ msgid "ch.bafu.hydrogeologische-karte_100"
 msgstr "Hydrogeological map 100"
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser"
-msgstr "Water status monitoring stations CH"
+msgstr "Water monitoring stations Conf."
 
 msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.betriebsbeginn"
 msgstr "Messbeginn"
@@ -2919,7 +2946,7 @@ msgid "ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser.xls"
 msgstr "Exceldatei"
 
 msgid "ch.bafu.hydrologie-gewaesserzustandsmessstationen"
-msgstr "Water status monitoring stations CH"
+msgstr "Water monitoring stations CH"
 
 msgid "ch.bafu.hydrologie-gewaesserzustandsmessstationen.gewaesser"
 msgstr "Waterbody name"
@@ -3404,8 +3431,20 @@ msgstr "Dead wood (NFI)"
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
 msgstr "Vegetation height model NFI"
 
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.datenstand"
+msgstr "Data status"
+
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief"
 msgstr "Surface model NFI"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief.datenstand"
+msgstr "Data status"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief.value_0"
+msgstr "Vegetation height [m]"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.value_0"
+msgstr "Vegetation height [m]"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.year"
 msgstr "Data status"
@@ -3415,6 +3454,12 @@ msgstr "Percentage of forest area (NFI)"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
 msgstr "Forest mix rate NFI"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad.datenstand"
+msgstr "Data status"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad.value_0"
+msgstr "Percentage of deciduous [%]"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad.year"
 msgstr "Data status"
@@ -4290,7 +4335,7 @@ msgid "ch.bag.zecken-fsme-impfung"
 msgstr "TBE: recommendation of vaccination"
 
 msgid "ch.bag.zecken-lyme"
-msgstr "Borreliosis regions at risk"
+msgstr "Borreliosis risk regions"
 
 msgid "ch.bak"
 msgstr "BAK"
@@ -4704,7 +4749,7 @@ msgid "ch.bav"
 msgstr "FOT"
 
 msgid "ch.bav.anlagen-schienengueterverkehr"
-msgstr "Anlagen Gütertransport Schiene"
+msgstr "Rail freight transport systems"
 
 msgid "ch.bav.anlagen-schienengueterverkehr.dst_abk"
 msgstr "Abkürzung"
@@ -4779,7 +4824,7 @@ msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
 msgstr "Polluted sites - pub. transp. OeREB"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
-msgstr "Eisenbahnlärm, festgel. Emission N"
+msgstr "Railway noise (fixed) N emissions"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_from"
 msgstr "Km von"
@@ -4806,7 +4851,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_remark"
 msgstr "Bemerkungen"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag"
-msgstr "Eisenbahnlärm, festgel. Emission T"
+msgstr "Railway noise (fixed) D emissions"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.km_from"
 msgstr "Km von"
@@ -4833,7 +4878,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_remark"
 msgstr "Bemerkungen"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht"
-msgstr "Eisenbahnlärm, tats. Emission N"
+msgstr "Railway noise (act.) N emissions"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.enmodel_railway"
 msgstr "Emissionsmodell"
@@ -4863,7 +4908,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_numb
 msgstr "Anz. Züge Nacht"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag"
-msgstr "Eisenbahnlärm, tats. Emission T"
+msgstr "Railway noise (act.) D emissions"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.enmodel_railway"
 msgstr "Emissionsmodell"
@@ -5658,7 +5703,7 @@ msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Water power potential"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
-msgstr "Ladeinfrastruktur Elektromobilität"
+msgstr "E-mobility charging infrastructure"
 
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Icing Frequency"
@@ -5943,7 +5988,7 @@ msgid "ch.bfe.windenergie-geschwindigkeit_h75"
 msgstr "Wind speed 75 metres above ground"
 
 msgid "ch.bfe.windenergie-potenzialgebiete"
-msgstr "Windpotenzialgebiete"
+msgstr "Areas with wind-power potential"
 
 msgid "ch.bfe.wpsm-qualifizierte_firmen"
 msgstr "Qualified HPSM companies"
@@ -6477,7 +6522,7 @@ msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Plans for Emergency protection"
 
 msgid "ch.ezv.lohnbrennereien"
-msgstr "Lohnbrennereien"
+msgstr "Commercial distilleries"
 
 msgid "ch.ezv.lohnbrennereien.adresse"
 msgstr "Address"
@@ -6543,16 +6588,16 @@ msgid "ch.meteoschweiz"
 msgstr "MeteoSwiss"
 
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
-msgstr "Aerological stations"
+msgstr "Atmosphere stations"
 
 msgid "ch.meteoschweiz.messnetz-automatisch"
-msgstr "Automatic weather stations"
+msgstr "Automatic Weather Stations"
 
 msgid "ch.meteoschweiz.messnetz-beobachtungen"
 msgstr "Visual observations"
 
 msgid "ch.meteoschweiz.messnetz-flugwetter"
-msgstr "Aviation stations"
+msgstr "Observations for aviation"
 
 msgid "ch.meteoschweiz.messnetz-klima"
 msgstr "Climate monitoring stations"
@@ -6570,16 +6615,16 @@ msgid "ch.meteoschweiz.messnetz-pollen"
 msgstr "Pollen stations"
 
 msgid "ch.meteoschweiz.messnetz-webcams"
-msgstr "Weather cams"
+msgstr "Weather cameras"
 
 msgid "ch.meteoschweiz.messwerte-foehn-10min"
-msgstr "Foehn index measurements"
+msgstr "Measurements foehn index"
 
 msgid "ch.meteoschweiz.messwerte-gesamtschnee-1d"
-msgstr "Snow depth measurements"
+msgstr "Measurements snow depth"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-10min"
-msgstr "Global radiation measurements, 10 min"
+msgstr "Measurements global radiation"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-1d"
 msgstr "Global radiation measurements, 1 d"
@@ -6591,52 +6636,52 @@ msgid "ch.meteoschweiz.messwerte-luftdruck-850hpa-flaeche-10min"
 msgstr "Geopotential height 850 hPa-surface"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qfe-10min"
-msgstr "Pressure station QFE measurements"
+msgstr "Measurements pressure station QFE"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qff-10min"
-msgstr "Pressure reduced QFF measurements"
+msgstr "Measurements pressure reduced QFF"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qnh-10min"
-msgstr "Pressure reduced QNH measurements"
+msgstr "Measurements pressure reduced QNH"
 
 msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
-msgstr "Humidity measurements"
+msgstr "Measurements humidity"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-10min"
-msgstr "Temperature measurements 2 m"
+msgstr "Measurements temperature 2m"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-max-1h"
-msgstr "Temperature measurements 2 m, max. 24 h"
+msgstr "Measurements max. temperature, 24h"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-min-1h"
-msgstr "Temperature measurements 2 m, min. 24 h"
+msgstr "Measurements min. temperature, 24h"
 
 msgid "ch.meteoschweiz.messwerte-neuschnee-1d"
-msgstr "Fresh snow measurements"
+msgstr "Measurements fresh snow"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-10min"
-msgstr "Precipitation measurements, 10 min"
+msgstr "Measurements precipitation, 10min"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1d"
-msgstr "Precipitation measurements, 1 day"
+msgstr "Measurements precipitation, 1 d"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1h"
-msgstr "Precipitation measurements, 1 h"
+msgstr "Measurements precipitation, 1h"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
-msgstr "Sunshine duration measurements, 10 min"
+msgstr "Measurements sunshine duration"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
 msgstr "Relative sunshine duration measurements, 1 d"
 
 msgid "ch.meteoschweiz.messwerte-taupunkt-10min"
-msgstr "Dew point measurements"
+msgstr "Measurements dew point"
 
 msgid "ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-10min"
-msgstr "Wind gusts measurements"
+msgstr "Measurements wind gusts"
 
 msgid "ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min"
-msgstr "Wind speed measurements"
+msgstr "Measurements wind speed"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
@@ -6828,7 +6873,7 @@ msgid "ch.swisstopo"
 msgstr "swisstopo"
 
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
-msgstr "Amtliches Strassenverzeichnis"
+msgstr "Official road index"
 
 msgid "ch.swisstopo.amtliches-strassenverzeichnis.esid"
 msgstr "Federal street identifier"
@@ -7620,7 +7665,7 @@ msgid "ch.swisstopo.geologie-rohstoffe"
 msgstr "Mineral resources"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau"
-msgstr "Gebrochene Gesteine: Abbau"
+msgstr "Broken rock: mining"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.clkind"
 msgstr "Bedeutung"
@@ -7731,7 +7776,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.stkind"
 msgstr "Abbaustatus"
 
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau"
-msgstr "Naturwerksteine: Abbau"
+msgstr "Natural stone: mining"
 
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.clkind"
 msgstr "Bedeutung"
@@ -9870,7 +9915,7 @@ msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Sachplan Militär"
 
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
-msgstr "Sperr- und Gefahrenzonenkarte"
+msgstr "Map of restricted and danger areas"
 
 msgid "ch.vbs.swissmilpilotschart"
 msgstr "SWISS MIL PILOTS CHART"
