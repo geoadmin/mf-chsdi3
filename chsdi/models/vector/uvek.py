@@ -376,7 +376,7 @@ class Hauptstrassennetz(Base, Vector):
     __label__ = 'roadnumber'
     id = Column('bgdi_id', Integer, primary_key=True)
     roadnumber = Column('roadnumber', Integer)
-    segmentid = Column('segmentid', Unicode)
+    segmentdescription = Column('segmentdescription', Unicode)
     canton = Column('canton', Unicode)
     the_geom = Column(Geometry2D)
 

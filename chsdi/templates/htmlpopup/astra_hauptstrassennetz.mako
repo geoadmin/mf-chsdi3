@@ -7,7 +7,7 @@
        </tr>
        <tr>
          <td class="cell-left">${_('ch.astra.hauptstrassennetz.segmentid')}</td>
-         <td>${c['attributes']['segmentid'] or '-'}</td>
+         <td>${c['attributes']['segmentdescription'] or '-'}</td>
        </tr>
        <tr>
          <td class="cell-left">${_('ch.astra.hauptstrassennetz.canton')}</td>
