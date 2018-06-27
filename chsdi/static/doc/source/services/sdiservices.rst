@@ -1049,22 +1049,27 @@ In order to access the 3D tiles, you require a `swisstopo web access - Inscripti
 URL
 ***
 
-- https://vectortiles.geo.admin.ch
+- https://vectortiles0.geo.admin.ch/3d-tiles/
+- https://vectortiles1.geo.admin.ch/3d-tiles/
+- https://vectortiles2.geo.admin.ch/3d-tiles/
+- https://vectortiles3.geo.admin.ch/3d-tiles/
+- https://vectortiles4.geo.admin.ch/3d-tiles/
 
 Metadata Service
 ****************
 
 The `tileset.json` file describes the available set of tiles. In order to use this service, you must currently use a fork of CesiumJS, `the 3d-tiles branch <https://github.com/AnalyticalGraphicsInc/cesium/tree/3d-tiles>`_. Stay informed and have a look at the current `RoadMap for 3D Tiles <https://github.com/AnalyticalGraphicsInc/cesium/issues/3241>`_.
 
-Currently, 2 technical layers (ch.swisstopo.swisstlm3d.3d, ch.swisstopo.swissnames3d.3d) are available and they contains all available 3D objects. Additional layers will be available in the future. Partial 3D buildings model coverage can be vizsualised `here <https://s.geo.admin.ch/70fb32e692>`_.
+Currently, 3 technical layers (ch.swisstopo.swisstlm3d.3d, ch.swisstopo.swissnames3d.3d, ch.swisstopo.vegetation.3d) are available and they contains all available 3D objects. Additional layers will be available in the future. Partial 3D buildings model coverage can be vizsualised `here <https://s.geo.admin.ch/70fb32e692>`_.
 
-- https://vectortiles.geo.admin.ch/ch.swisstopo.swisstlm3d.3d/20170425/tileset.json
-- https://vectortiles.geo.admin.ch/ch.swisstopo.swissnames3d.3d/20170814/tileset.json
+- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20170425/tileset.json
+- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swissnames3d.3d/20170814/tileset.json
+- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.vegetation.3d/20170630/tileset.json
 
 Example
 *******
 
-* A `3D tile <https://vectortiles.geo.admin.ch/ch.swisstopo.swisstlm3d.3d/20170425/8/41/41.b3dm?v=1.0>`_
+* A `3D tile <https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20170425/8/41/41.b3dm?v=1.0>`_
 
 .. _sparql_description:
 
