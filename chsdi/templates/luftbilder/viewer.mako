@@ -134,6 +134,7 @@
         height: 30px;
         margin: 10px 0px;
         text-align:center;
+        z-index:10;
       }
       .footer a {
         padding: 0px 10px;
@@ -146,7 +147,7 @@
       }
       #lubismap {
         width: 100%;
-        height: 95%;
+        height: 100%;
         font-size: 16px;
       }
       @media print { /* Used by Chrome */
