@@ -1085,6 +1085,18 @@ msgstr "Lingias da construcziun da las vias naziunalas"
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Lingias da construcziun da las vias naziunalas RDPP"
 
+msgid "ch.astra.hauptstrassennetz"
+msgstr "Rait da vias principalas"
+
+msgid "ch.astra.hauptstrassennetz.canton"
+msgstr "Chantun"
+
+msgid "ch.astra.hauptstrassennetz.roadnumber"
+msgstr "Numer da la via"
+
+msgid "ch.astra.hauptstrassennetz.segmentid"
+msgstr "Designaziun"
+
 msgid "ch.astra.historischer-verkehrswege"
 msgstr "ch.astra.historischer-verkehrswege"
 
@@ -1632,7 +1644,7 @@ msgid "ch.bafu"
 msgstr "BAFU"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde"
-msgstr "Alpweiden mit Herdenschutzhunden"
+msgstr "Pastgiras d'alp cun chauns prot."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis"
 msgstr "Hinweis"
@@ -1875,7 +1887,7 @@ msgid "ch.bafu.bundesinventare-auen"
 msgstr "Zonas umidas"
 
 msgid "ch.bafu.bundesinventare-auen_anhang2"
-msgstr "Zonas umidas - Allegato 2"
+msgstr "Zonas umidas - agiunta 2"
 
 msgid "ch.bafu.bundesinventare-auen_anhang2.area"
 msgstr "Fläche [ha]"
@@ -1915,6 +1927,21 @@ msgstr "Fläche [ha]"
 
 msgid "ch.bafu.bundesinventare-auen_vegetation_alpin"
 msgstr "Vegetation alpine Auen"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.conflict"
+msgstr "Konfliktpotential"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.objname"
+msgstr "Objektname"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.objnummer"
+msgstr "Nr."
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.refobjblatt"
+msgstr "Objektblatt"
+
+msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.vegetation"
+msgstr "Vegetationshaupttyp"
 
 msgid "ch.bafu.bundesinventare-bln"
 msgstr "IFC"
@@ -3228,7 +3255,7 @@ msgid "ch.bafu.hydroweb-messstationen_grundwasser.description"
 msgstr "Bezeichnung"
 
 msgid "ch.bafu.hydroweb-messstationen_grundwasserzustand"
-msgstr "Rait da mesiraziun NAQUA"
+msgstr "Aua sutterrana: nivels/ deflussiun"
 
 msgid "ch.bafu.hydroweb-messstationen_grundwasserzustand.description"
 msgstr "Bezeichnung"
@@ -3404,8 +3431,20 @@ msgstr "Laina morta (IFN)"
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
 msgstr "Vegetationshöhe LFI"
 
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.datenstand"
+msgstr "Stadi da las datas"
+
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief"
 msgstr "Oberflächenmodell LFI"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief.datenstand"
+msgstr "Stadi da las datas"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief.value_0"
+msgstr "Vegetationshöhe [m]"
+
+msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.value_0"
+msgstr "Vegetationshöhe [m]"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.year"
 msgstr "Stadi da las datas"
@@ -3416,17 +3455,23 @@ msgstr "Quota da guaud (IFN)"
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
 msgstr "Waldmischungsgrad LFI"
 
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad.datenstand"
+msgstr "Stadi da las datas"
+
+msgid "ch.bafu.landesforstinventar-waldmischungsgrad.value_0"
+msgstr "Laubanteil [%]"
+
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad.year"
 msgstr "Stadi da las datas"
 
 msgid "ch.bafu.luftreinhaltung-ammoniakkonzentration"
-msgstr "Ammoniakkonzentration"
+msgstr "Concentraziun d'amoniac"
 
 msgid "ch.bafu.luftreinhaltung-stickstoffdeposition"
-msgstr "Stickstoffdeposition"
+msgstr "Deposiziun da nitrogen"
 
 msgid "ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag"
-msgstr "CLN Überschreitung"
+msgstr "Surpassament CLN"
 
 msgid "ch.bafu.mittlere-abfluesse"
 msgstr "Deflussiuns mesaunas (m³/s)"
@@ -3495,142 +3540,142 @@ msgid "ch.bafu.naqua-grundwasser_voc"
 msgstr "Cumposiziuns organicas svapurantas"
 
 msgid "ch.bafu.neophyten-amerikanische_kermesbeere"
-msgstr "Amerikanische Kermesbeere"
+msgstr "Iva americana"
 
 msgid "ch.bafu.neophyten-amerikanischer_stinktierkohl"
-msgstr "Amerikanischer Stinktierkohl"
+msgstr "Giabus american spizzalent"
 
 msgid "ch.bafu.neophyten-armenische_brombeere"
-msgstr "Armenische Brombeere"
+msgstr "Mura d'Armenia"
 
 msgid "ch.bafu.neophyten-aufrechtes_traubenkraut"
-msgstr "Aufrechtes Traubenkraut"
+msgstr "Ambrosia cun feglia d'artemisia"
 
 msgid "ch.bafu.neophyten-auslaeuferbildendes_fettkraut"
-msgstr "Ausläuferbildendes Fettkraut"
+msgstr "Erva grassa cun stolons"
 
 msgid "ch.bafu.neophyten-balfours_springkraut"
-msgstr "Balfours Springkraut"
+msgstr "Balsamina da Balfour"
 
 msgid "ch.bafu.neophyten-bastardindigo"
-msgstr "Bastardindigo"
+msgstr "Indigo bastard"
 
 msgid "ch.bafu.neophyten-bastard_staudenknoeterich"
-msgstr "Bastard-Staudenknöterich"
+msgstr "Badalestg boemic"
 
 msgid "ch.bafu.neophyten-besen_radmelde"
-msgstr "Besen-Radmelde"
+msgstr "Cipressa da stad"
 
 msgid "ch.bafu.neophyten-blauglockenbaum"
-msgstr "Blauglockenbaum"
+msgstr "Paulownia"
 
 msgid "ch.bafu.neophyten-brasilianisches_tausendblatt"
-msgstr "Brasilianisches Tausendblatt"
+msgstr "Millifeglia d'aua"
 
 msgid "ch.bafu.neophyten-carolina_nachtschatten"
-msgstr "Carolina-Nachtschatten"
+msgstr "Solana carolinaisa"
 
 msgid "ch.bafu.neophyten-chinesische_samtpappel"
-msgstr "Chinesische Samtpappel"
+msgstr "Papla pailusa"
 
 msgid "ch.bafu.neophyten-druesiges_springkraut"
-msgstr "Drüsiges Springkraut"
+msgstr "Balsamina cotschna"
 
 msgid "ch.bafu.neophyten-einjaehriges_berufkraut"
-msgstr "Einjähriges Berufkraut"
+msgstr "Rigera alva"
 
 msgid "ch.bafu.neophyten-essbare_kermesbeere"
-msgstr "Essbare Kermesbeere"
+msgstr "Iva americana mangiabla"
 
 msgid "ch.bafu.neophyten-essbares_zypergras"
-msgstr "Essbares Zypergras"
+msgstr "Schervetta dultscha"
 
 msgid "ch.bafu.neophyten-essigbaum"
-msgstr "Essigbaum"
+msgstr "Sumac"
 
 msgid "ch.bafu.neophyten-felsen_greiskraut"
-msgstr "Felsen-Greiskraut"
+msgstr "Sanetsch da crap"
 
 msgid "ch.bafu.neophyten-fortunes_hanfpalme"
-msgstr "Fortunes Hanfpalme"
+msgstr "Palma da Fortune"
 
 msgid "ch.bafu.neophyten-gestreiftes_suessgras"
-msgstr "Gestreiftes Süssgras"
+msgstr "Glicera strivlada"
 
 msgid "ch.bafu.neophyten-gewoehnliche_jungfernrebe"
-msgstr "Gewöhnliche Jungfernrebe"
+msgstr "Vit virginala cumina"
 
 msgid "ch.bafu.neophyten-glattes_zackenschoetchen"
-msgstr "Glattes Zackenschötchen"
+msgstr "Bunias d'Orient"
 
 msgid "ch.bafu.neophyten-goetterbaum"
-msgstr "Götterbaum"
+msgstr "Bostg dal parvis"
 
 msgid "ch.bafu.neophyten-grossbluetiges_heusenkraut"
-msgstr "Grossblütiges Heusenkraut"
+msgstr "Ludwigia a flurs grondas"
 
 msgid "ch.bafu.neophyten-grosser_wassernabel"
-msgstr "Grosser Wassernabel"
+msgstr "Idrocotila en furma da gnirunchel"
 
 msgid "ch.bafu.neophyten-haargurke"
-msgstr "Haargurke"
+msgstr "Sichius angulus"
 
 msgid "ch.bafu.neophyten-henrys_geissblatt"
-msgstr "Henrys Geissblatt"
+msgstr "Chagliamorta da Henry"
 
 msgid "ch.bafu.neophyten-herbst_traubenkirsche"
-msgstr "Herbst-Traubenkirsche"
+msgstr "Alaussa d'atun"
 
 msgid "ch.bafu.neophyten-igelgurke"
-msgstr "Igelgurke"
+msgstr "Cucumera spinusa"
 
 msgid "ch.bafu.neophyten-japanischer_staudenknoeterich"
-msgstr "Japanischer Staudenknöterich"
+msgstr "Badalestg giapunais"
 
 msgid "ch.bafu.neophyten-japanisches_geissblatt"
 msgstr "Chagliamorta giapunaisa"
 
 msgid "ch.bafu.neophyten-kanadische_goldrute"
-msgstr "Kanadische Goldrute"
+msgstr "Saldagen canadais"
 
 msgid "ch.bafu.neophyten-kanadische_wasserpest"
-msgstr "Kanadische Wasserpest"
+msgstr "Elodea canadaisa"
 
 msgid "ch.bafu.neophyten-karolina_haarnixe"
-msgstr "Karolina-Haarnixe"
+msgstr "Cabomba verda"
 
 msgid "ch.bafu.neophyten-kaukasus_fettkraut"
-msgstr "Kaukasus-Fettkraut"
+msgstr "Erva grassa dal Caucasus"
 
 msgid "ch.bafu.neophyten-kirschlorbeer"
-msgstr "Kirschlorbeer"
+msgstr "Arbaja-tscharescha"
 
 msgid "ch.bafu.neophyten-kletternder_giftsumach"
-msgstr "Kletternder Giftsumach"
+msgstr "Sumac rampignant"
 
 msgid "ch.bafu.neophyten-kopoubohne"
-msgstr "Kopoubohne"
+msgstr "Cudzu"
 
 msgid "ch.bafu.neophyten-mahonie"
-msgstr "Mahonie"
+msgstr "Mahonia"
 
 msgid "ch.bafu.neophyten-nadelkraut"
-msgstr "Nadelkraut"
+msgstr "Grassella da l'Australia"
 
 msgid "ch.bafu.neophyten-nuttalls_wasserpest"
-msgstr "Nuttalls Wasserpest"
+msgstr "Elodea da Nuttall"
 
 msgid "ch.bafu.neophyten-portulak_heusenkraut"
-msgstr "Portulak-Heusenkraut"
+msgstr "Ludwigia da portulac"
 
 msgid "ch.bafu.neophyten-riesenbaerenklau"
 msgstr "Darsvenna giganta"
 
 msgid "ch.bafu.neophyten-robinie"
-msgstr "Robinie"
+msgstr "Robinia"
 
 msgid "ch.bafu.neophyten-runzelblaettriger_schneeball"
-msgstr "Runzelblättriger Schneeball"
+msgstr "Lantern rubaglià"
 
 msgid "ch.bafu.neophyten-sachalin_staudenknoeterich"
 msgstr "Badalestg da Sachalin"
@@ -3810,7 +3855,7 @@ msgid "ch.bafu.silvaprotect-sturz"
 msgstr "Crudadas (SilvaProtect-CH)"
 
 msgid "ch.bafu.silvaprotect-uebersarung"
-msgstr "Sedimentaziuns alluvialas (SilvaProtect-CH)"
+msgstr "Sed. alluvialas (SilvaProtect-CH)"
 
 msgid "ch.bafu.strukturguete-hochrhein_linkesufer"
 msgstr "Qualitad structurala riva sanestra"
@@ -4269,7 +4314,7 @@ msgid "ch.bag"
 msgstr "BAG"
 
 msgid "ch.bag.radonkarte"
-msgstr "Radonkarte"
+msgstr "Charta da radon"
 
 msgid "ch.bag.radonkarte.confidence"
 msgstr "Vertrauensindex"
@@ -4677,7 +4722,7 @@ msgid "ch.baspo"
 msgstr "BASPO"
 
 msgid "ch.baspo.nationales-sportanlagenkonzept"
-msgstr "Sportanlagen NASAK"
+msgstr "Implants da sport CISIN"
 
 msgid "ch.baspo.nationales-sportanlagenkonzept.art_der_anlage"
 msgstr "Anlagentyp"
@@ -4704,7 +4749,7 @@ msgid "ch.bav"
 msgstr "BAV"
 
 msgid "ch.bav.anlagen-schienengueterverkehr"
-msgstr "Anlagen Gütertransport Schiene"
+msgstr "Stabil. transport da rauba viafier"
 
 msgid "ch.bav.anlagen-schienengueterverkehr.dst_abk"
 msgstr "Abkürzung"
@@ -4779,7 +4824,7 @@ msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
 msgstr "Contaminaziun traffic public RPDP"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
-msgstr "Eisenbahnlärm, festgel. Emission N"
+msgstr "Canera da viafier, fix. Emissiun N"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_from"
 msgstr "Km von"
@@ -4806,7 +4851,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_remark"
 msgstr "Bemerkungen"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag"
-msgstr "Eisenbahnlärm, festgel. Emission T"
+msgstr "Canera da viafier, fix. Emissiun D"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.km_from"
 msgstr "Km von"
@@ -4833,7 +4878,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_remark"
 msgstr "Bemerkungen"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht"
-msgstr "Eisenbahnlärm, tats. Emission N"
+msgstr "Canera da viafier, eff. Emissiun N"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.enmodel_railway"
 msgstr "Emissionsmodell"
@@ -4863,7 +4908,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_numb
 msgstr "Anz. Züge Nacht"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag"
-msgstr "Eisenbahnlärm, tats. Emission T"
+msgstr "Canera da viafier, eff. Emissiun D"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.enmodel_railway"
 msgstr "Emissionsmodell"
@@ -5658,7 +5703,7 @@ msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Potenzials d'ovras pitschnas"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
-msgstr "Ladeinfrastruktur Elektromobilität"
+msgstr "Infrastruc. chargiar electromobil."
 
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Frequenza d'englatschament"
@@ -5712,7 +5757,7 @@ msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"
 msgstr "PS Deposits geol. profunds: p.tecn."
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung"
-msgstr "SGT Vernehmlassung Etappe 2"
+msgstr "PS DRGP consultaziun etappa 2"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.coordlevel"
 msgstr "Koordinationsstand"
@@ -5826,7 +5871,7 @@ msgid "ch.bfe.solarenergie-eignung-daecher.neigung"
 msgstr "Neigung [°]"
 
 msgid "ch.bfe.solarenergie-eignung-fassaden"
-msgstr "Energia solara: qualificaziun fatschadas"
+msgstr "Energia solara: qualif. fatschadas"
 
 msgid "ch.bfe.solarenergie-eignung-fassaden.ausrichtung"
 msgstr "Ausrichtung [°]"
@@ -5943,7 +5988,7 @@ msgid "ch.bfe.windenergie-geschwindigkeit_h75"
 msgstr "Sveltezza dal vent autezza 75 m"
 
 msgid "ch.bfe.windenergie-potenzialgebiete"
-msgstr "Windpotenzialgebiete"
+msgstr "Zonas da potenzial da vent"
 
 msgid "ch.bfe.wpsm-qualifizierte_firmen"
 msgstr "WPSM-qualifizierte Firmen"
@@ -6051,7 +6096,7 @@ msgid "ch.bfs.arealstatistik-waldmischungsgrad"
 msgstr "Maschaida dal guaud 1990/1992"
 
 msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten"
-msgstr "Arbeitsstätten"
+msgstr "Lieus da lavur"
 
 msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten.amount"
 msgstr "Anzahl Arbeitsstätten"
@@ -6060,7 +6105,7 @@ msgid "ch.bfs.betriebszaehlungen-arbeitsstaetten.year"
 msgstr "Jahr"
 
 msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente"
-msgstr "Beschäftigte (VZÄ)"
+msgstr "Persunas occupadas"
 
 msgid "ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente.amount"
 msgstr "Beschäftigte in Vollzeitäquivalenten"
@@ -6111,7 +6156,7 @@ msgid "ch.bfs.gebaeude_wohnungs_register.zip_municipality"
 msgstr "Datendownload Gemeinde"
 
 msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1"
-msgstr "Cunfins administrativs G1, aglomeraziuns"
+msgstr "Cunfins admin. G1, aglomeraziuns"
 
 msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1.acode"
 msgstr "Agglomerationscode"
@@ -6129,7 +6174,7 @@ msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g1.gmdnr"
 msgstr "Gemeindenummer"
 
 msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2"
-msgstr "Cunfins administrativs G2, aglomeraziuns"
+msgstr "Cunfins admin. G2, aglomeraziuns"
 
 msgid "ch.bfs.generalisierte-grenzen_agglomerationen_g2.acode"
 msgstr "Agglomerationscode"
@@ -6150,7 +6195,7 @@ msgid "ch.bfs.url"
 msgstr "http://www.bfs.admin.ch/bfs/portal/de/index.html"
 
 msgid "ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner"
-msgstr "Pievel (abitants)"
+msgstr "Populaziun (abitants)"
 
 msgid "ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner.amount"
 msgstr "Anzahl Einwohner"
@@ -6477,7 +6522,7 @@ msgid "ch.ensi.zonenplan-notfallschutz-kernanlagen"
 msgstr "Plans da las zonas d'urgenza"
 
 msgid "ch.ezv.lohnbrennereien"
-msgstr "Lohnbrennereien"
+msgstr "Destillarias incaricadas"
 
 msgid "ch.ezv.lohnbrennereien.adresse"
 msgstr "Adresse"
@@ -6543,43 +6588,43 @@ msgid "ch.meteoschweiz"
 msgstr "MeteoSchweiz"
 
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
-msgstr "Atmosphärenstationen"
+msgstr "Staziuns d'atmosfera"
 
 msgid "ch.meteoschweiz.messnetz-automatisch"
-msgstr "Automatische Wetterstationen"
+msgstr "Staziuns meteorolog. automaticas"
 
 msgid "ch.meteoschweiz.messnetz-beobachtungen"
-msgstr "Meteorologische Beobachtungen"
+msgstr "Observaziuns meteorologicas"
 
 msgid "ch.meteoschweiz.messnetz-flugwetter"
-msgstr "Flugplatzstationen"
+msgstr "Observaziuns per l'aviaziun"
 
 msgid "ch.meteoschweiz.messnetz-klima"
-msgstr "Klimastationen"
+msgstr "Staziuns climaticas"
 
 msgid "ch.meteoschweiz.messnetz-manuell"
-msgstr "Manuelle Niederschlagsmessstationen"
+msgstr "Staziuns man. precipitaziuns"
 
 msgid "ch.meteoschweiz.messnetz-partner"
 msgstr "MeteoSchweiz-Partnerstationen"
 
 msgid "ch.meteoschweiz.messnetz-phaenologie"
-msgstr "Phänologische Beobachtungen"
+msgstr "Observaziuns fenologicas"
 
 msgid "ch.meteoschweiz.messnetz-pollen"
-msgstr "Pollenstationen"
+msgstr "Staziuns da pollens"
 
 msgid "ch.meteoschweiz.messnetz-webcams"
-msgstr "Wetterkameras"
+msgstr "Cameras meteorologicas"
 
 msgid "ch.meteoschweiz.messwerte-foehn-10min"
-msgstr "Messwerte Föhnindex"
+msgstr "Mesiraziuns index dal favugn"
 
 msgid "ch.meteoschweiz.messwerte-gesamtschnee-1d"
-msgstr "Messwerte Schneehöhe"
+msgstr "Mesiraziuns autezza da la naiv"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-10min"
-msgstr "Messwerte Globalstrahlung, 10 min"
+msgstr "Mesiraziuns radiaziun globala"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-1d"
 msgstr "Messwerte Globalstrahlung, 1 Tag"
@@ -6591,52 +6636,52 @@ msgid "ch.meteoschweiz.messwerte-luftdruck-850hpa-flaeche-10min"
 msgstr "Geopotentielle Höhe 850 hPa-Fläche"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qfe-10min"
-msgstr "Messwerte Luftdruck Station QFE"
+msgstr "Mesiraziuns pressiun staziun QFE"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qff-10min"
-msgstr "Messwerte Luftdruck reduziert QFF"
+msgstr "Mesiraziuns pressiun red. QFF"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qnh-10min"
-msgstr "Messwerte Luftdruck reduziert QNH"
+msgstr "Mesiraziuns pressiun red. QNH"
 
 msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
-msgstr "Messwerte Luftfeuchtigkeit"
+msgstr "Mesiraziuns umiditad da l'aria"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-10min"
-msgstr "Messwerte Temperatur 2 m"
+msgstr "Mesiraziuns temperatura 2m"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-max-1h"
-msgstr "Messwerte Temperatur 2 m, Max. 24 h"
+msgstr "Mesiraziuns temp. max. 2m, 24h"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-min-1h"
-msgstr "Messwerte Temperatur 2 m, Min. 24 h"
+msgstr "Mesiraziuns temp. min. 2m, 24h"
 
 msgid "ch.meteoschweiz.messwerte-neuschnee-1d"
-msgstr "Messwerte Neuschnee"
+msgstr "Mesiraziuns naiv frestga"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-10min"
-msgstr "Messwerte Niederschlag, 10 min"
+msgstr "Mesiraziuns precipitaziuns, 10min"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1d"
-msgstr "Messwerte Niederschlag, 1 Tag"
+msgstr "Mesiraziuns precipitaziuns, 1 di"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1h"
-msgstr "Messwerte Niederschlag, 1 h"
+msgstr "Mesiraziuns precipitaziuns, 1h"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
-msgstr "Messwerte Sonnenscheindauer, 10 min"
+msgstr "Mesiraziuns uras suleglivas"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
 msgstr "Messwerte Sonnenschein rel., 1 Tag"
 
 msgid "ch.meteoschweiz.messwerte-taupunkt-10min"
-msgstr "Messwerte Taupunkt"
+msgstr "Mesiraziuns punct da sdregliar"
 
 msgid "ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-10min"
-msgstr "Messwerte Windböen"
+msgstr "Mesiraziuns bufs"
 
 msgid "ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min"
-msgstr "Messwerte Windgeschwindigkeit"
+msgstr "Mesiraziuns sveltezza dal vent"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
@@ -6738,7 +6783,7 @@ msgid "ch.sem"
 msgstr "SEM"
 
 msgid "ch.sem.sachplan-asyl_anhoerung"
-msgstr "SPA Anhörung"
+msgstr "PSA consultaziun"
 
 msgid "ch.sem.sachplan-asyl_anhoerung.coordlevel_text_lang"
 msgstr "Stand der Koordination"
@@ -6777,7 +6822,7 @@ msgid "ch.sem.sachplan-asyl_anhoerung.validuntil"
 msgstr "bis"
 
 msgid "ch.sem.sachplan-asyl_kraft"
-msgstr "SP Asyl"
+msgstr "PS Asil"
 
 msgid "ch.sem.sachplan-asyl_kraft.coordlevel_text_lang"
 msgstr "Stand der Koordination"
@@ -6828,7 +6873,7 @@ msgid "ch.swisstopo"
 msgstr "swisstopo"
 
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
-msgstr "Amtliches Strassenverzeichnis"
+msgstr "Register uffizial da las vias"
 
 msgid "ch.swisstopo.amtliches-strassenverzeichnis.esid"
 msgstr "Eidgenössischer Strassenidentifikator"
@@ -6864,7 +6909,7 @@ msgid "ch.swisstopo.bk200-papierkarte.metadata"
 msgstr "Divisiun charta dals chastels Stampa"
 
 msgid "ch.swisstopo.burgenkarte200_papier.metadata"
-msgstr "Divisiun charta dals chastels Stampa"
+msgstr "Divisiun charta chastels Stampa"
 
 msgid "ch.swisstopo.burgenkarte200_papier.metadata.name"
 msgstr "Name"
@@ -6954,10 +6999,10 @@ msgid "ch.swisstopo.geoidmodell-etrs89"
 msgstr "Geoid en ETRS89"
 
 msgid "ch.swisstopo.geologie-bodenunruhe"
-msgstr "Anthrop. Bodenunruhe CH"
+msgstr "Ramurs seismicas antropogena CH"
 
 msgid "ch.swisstopo.geologie-bohrungen_tiefer_500"
-msgstr "Bohrungen > 500 m"
+msgstr "Perfuradas > 500 m"
 
 msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.auftraggeb_de"
 msgstr "Auftraggeber"
@@ -7014,16 +7059,16 @@ msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch.contour"
 msgstr "Terrestrische Dosisleistung [nSv/h]"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm"
-msgstr "Ultim temp da glatsch max. (vectur) 500"
+msgstr "Ultim glatsch max. (vectur) 500"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm.ads_name"
 msgstr "Eisoberfläche während des letzteiszeitlichen Maximums LGM [m ü.M.]"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster"
-msgstr "Ultim temp da glatsch max. (charta) 500"
+msgstr "Ultim glatsch max. (charta) 500"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata"
-msgstr "Divisiun Ultim temp da glatsch max. 500 Stampa"
+msgstr "Div. Ultim glatsch max. 500 Stampa"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata.release"
 msgstr "Ausgabejahr"
@@ -7035,7 +7080,7 @@ msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Charta geol. generala 200"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata"
-msgstr "Divisiun charta geologica generala 200 Raster"
+msgstr "Div. charta geol. gen. 200 Raster"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.metadata.autor"
 msgstr "Autor(en)"
@@ -7074,7 +7119,7 @@ msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
 msgstr "Nummer"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata"
-msgstr "Divisiun charta geologica generala 200 Stampa"
+msgstr "Div. charta geol. gen. 200 Stampa"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name"
 msgstr "Name"
@@ -7134,7 +7179,7 @@ msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien"
 msgstr "Anomalias da Bouguer 500"
 
 msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata"
-msgstr "Divisiun anomalias da Bouguer 500 Stampa"
+msgstr "Div. anomalias Bouguer 500 Stampa"
 
 msgid "ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata.release"
 msgstr "Ausgabejahr"
@@ -7569,7 +7614,7 @@ msgid "ch.swisstopo.geologie-gravimetrischer_atlas"
 msgstr "Atlas gravimetric 100"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte"
-msgstr "Gravimetrische Messpunkte 100"
+msgstr "Puncts mesiraziun gravimetrics 100"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte.altitude"
 msgstr "Höhe [m]"
@@ -7590,16 +7635,16 @@ msgid "ch.swisstopo.geologie-gravimetrischer_atlas.metadata.titel"
 msgstr "Title"
 
 msgid "ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata"
-msgstr "Divisiun atlas gravimetric 100 Stampa"
+msgstr "Div. atlas gravimetric 100 Stampa"
 
 msgid "ch.swisstopo.geologie-grundwasservorkommen_papier.metadata"
-msgstr "Divisiun resursas d'aua sutterrana 500 Stampa"
+msgstr "Div. resursas aua sutt. 500 Stampa"
 
 msgid "ch.swisstopo.geologie-grundwasservorkommen_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata"
-msgstr "Divisiun Vulnerabilità acquiferi 500 Stampa"
+msgstr "Div. vulnerab. aua sutt. 500 Stampa"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Resursas d'aua sutterrana 500"
@@ -7620,7 +7665,7 @@ msgid "ch.swisstopo.geologie-rohstoffe"
 msgstr "ch.swisstopo.geologie-rohstoffe"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau"
-msgstr "Gebrochene Gesteine: Abbau"
+msgstr "Crappa rutta: explotaziun"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.clkind"
 msgstr "Bedeutung"
@@ -7731,7 +7776,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.stkind"
 msgstr "Abbaustatus"
 
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau"
-msgstr "Naturwerksteine: Abbau"
+msgstr "Crappa natirala: explotaziun"
 
 msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.clkind"
 msgstr "Bedeutung"
@@ -7848,7 +7893,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.tlyearsformatte
 msgstr "Betriebsjahre"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
-msgstr "Divisiun da chartas geologicas spezialas Retagl"
+msgstr "Div. chartas geol. spezialas Retagl"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.name_de"
 msgstr "Name"
@@ -7869,7 +7914,7 @@ msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata"
-msgstr "Divisiun da chartas geologicas spezialas Palpiri"
+msgstr "Div. chartas geol. spezialas Stampa"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.name"
 msgstr "Name"
@@ -7893,7 +7938,7 @@ msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata"
-msgstr "Divisiun da chartas geologicas spezialas Vectur"
+msgstr "Div. chartas geol. spezialas Vectur"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.name_de"
 msgstr "Name"
@@ -7920,7 +7965,7 @@ msgid "ch.swisstopo.geologie-tektonische_karte"
 msgstr "Tectonica 500"
 
 msgid "ch.swisstopo.geologie-tektonische_karte_papier.metadata"
-msgstr "Divisiun charta tectonica 500 Stampa"
+msgstr "Div. charta tectonica 500 Stampa"
 
 msgid "ch.swisstopo.geologie-tektonische_karte_papier.metadata.release"
 msgstr "Ausgabejahr"
@@ -8166,10 +8211,10 @@ msgid "ch.swisstopo.kt.url"
 msgstr "http://www.swisstopo.admin.ch/internet/swisstopo/de/home/swisstopo/org/cartography.html"
 
 msgid "ch.swisstopo.landeskarte1000_papier.metadata"
-msgstr "Divisiun charta naziunala 1000 Stampa"
+msgstr "Div. charta naziunala 1000 Stampa"
 
 msgid "ch.swisstopo.landeskarte100_papier.metadata"
-msgstr "Divisiun charta naziunala 100 Stampa"
+msgstr "Div. charta naziunala 100 Stampa"
 
 msgid "ch.swisstopo.landeskarte100_papier.metadata.name_de"
 msgstr "Name"
@@ -8190,7 +8235,7 @@ msgid "ch.swisstopo.landeskarte100_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.landeskarte200_papier.metadata"
-msgstr "Divisiun charta naziunala 200 Stampa"
+msgstr "Div. charta naziunala 200 Stampa"
 
 msgid "ch.swisstopo.landeskarte200_papier.metadata.name"
 msgstr "Name"
@@ -8214,7 +8259,7 @@ msgid "ch.swisstopo.landeskarte200_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.landeskarte25_papier.metadata"
-msgstr "Divisiun charta naziunala 25 Stampa"
+msgstr "Div. charta naziunala 25 Stampa"
 
 msgid "ch.swisstopo.landeskarte25_papier.metadata.name_de"
 msgstr "Name"
@@ -8235,13 +8280,13 @@ msgid "ch.swisstopo.landeskarte25_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.landeskarte500_papier.metadata"
-msgstr "Divisiun charta naziunala 500 Stampa"
+msgstr "Div. charta naziunala 500 Stampa"
 
 msgid "ch.swisstopo.landeskarte500_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.landeskarte50_papier.metadata"
-msgstr "Divisiun charta naziunala 50 Stampa"
+msgstr "Div. charta naziunala 50 Stampa"
 
 msgid "ch.swisstopo.landeskarte50_papier.metadata.name_de"
 msgstr "Name"
@@ -8607,10 +8652,10 @@ msgid "ch.swisstopo.lubis-terrestrische_aufnahmen.tt_lubis_aufnahmedatum"
 msgstr "Aufnahmedatum"
 
 msgid "ch.swisstopo.luftfahrtkarten-icao.metadata"
-msgstr "Divisiun charta d'aviatica OACI Raster"
+msgstr "Div. charta aviatica OACI Raster"
 
 msgid "ch.swisstopo.luftfahrtkarten-icao_papier.metadata"
-msgstr "Divisiun charta aviatica Stampa"
+msgstr "Div. charta aviatica Stampa"
 
 msgid "ch.swisstopo.luftfahrtkarten-icao_papier.metadata.isbn"
 msgstr "ISBN-Nummer"
@@ -8622,7 +8667,7 @@ msgid "ch.swisstopo.luftfahrtkarten-icao_papier.metadata.scale"
 msgstr "ch.swisstopo.luftfahrtkarten-icao_papier.metadata.scale"
 
 msgid "ch.swisstopo.meldungen-karten_geodaten"
-msgstr "Meldungen zu Karten und Geodaten"
+msgstr "Annunzias tar chartas e geodatas"
 
 msgid "ch.swisstopo.pixelkarte-farbe"
 msgstr "Charta naziunala (colur)"
@@ -8700,7 +8745,7 @@ msgid "ch.swisstopo.pixelkarte-grau-pk500"
 msgstr "Charta naziunala 1:500'000 (grisch)"
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata"
-msgstr "Divisiun charta naziunala 1:1 miu."
+msgstr "Div. charta naziunala 1:1 miu."
 
 msgid "ch.swisstopo.pixelkarte-pk1000.metadata-kartenblatt"
 msgstr "Nachführungsstand 1:1 Mio."
@@ -8712,7 +8757,7 @@ msgid "ch.swisstopo.pixelkarte-pk1000.metadata-kartenblatt_nummer"
 msgstr "Kartenblattnummer 1:1 Mio."
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata"
-msgstr "Divisiun charta naziunala 100 Raster"
+msgstr "Div. charta naziunala 100 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk100.metadata-kartenblatt"
 msgstr "Nachführungsstand 1:100000"
@@ -8724,7 +8769,7 @@ msgid "ch.swisstopo.pixelkarte-pk100.metadata-kartenblatt_nummer"
 msgstr "Kartenblattnummer 1:100000"
 
 msgid "ch.swisstopo.pixelkarte-pk200.metadata"
-msgstr "Divisiun charta naziunala 200 Raster"
+msgstr "Div. charta naziunala 200 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk200.metadata-kartenblatt"
 msgstr "Nachführungsstand 1:200000"
@@ -8736,7 +8781,7 @@ msgid "ch.swisstopo.pixelkarte-pk200.metadata-kartenblatt_nummer"
 msgstr "Kartenblattnummer 1:200000"
 
 msgid "ch.swisstopo.pixelkarte-pk25.metadata"
-msgstr "Divisiun charta naziunala 25 Raster"
+msgstr "Div. charta naziunala 25 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk25.metadata-kartenblatt"
 msgstr "Nachführungsstand 1:25000"
@@ -8748,7 +8793,7 @@ msgid "ch.swisstopo.pixelkarte-pk25.metadata-kartenblatt_nummer"
 msgstr "Kartenblattnummer 1:25000"
 
 msgid "ch.swisstopo.pixelkarte-pk500.metadata"
-msgstr "Divisiun charta naziunala 500 Raster"
+msgstr "Div. charta naziunala 500 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk500.metadata-kartenblatt"
 msgstr "Nachführungsstand 1:500000"
@@ -8760,7 +8805,7 @@ msgid "ch.swisstopo.pixelkarte-pk500.metadata-kartenblatt_nummer"
 msgstr "Kartenblattnummer 1:500000"
 
 msgid "ch.swisstopo.pixelkarte-pk50.metadata"
-msgstr "Divisiun charta naziunala 50 Raster"
+msgstr "Div. charta naziunala 50 Raster"
 
 msgid "ch.swisstopo.pixelkarte-pk50.metadata-kartenblatt"
 msgstr "Nachführungsstand 1:50000"
@@ -8778,10 +8823,10 @@ msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
 msgid "ch.swisstopo.segelflugkarte.metadata"
-msgstr "Divisiun charta da sgol senza motor Raster"
+msgstr "Div. charta sgol senza motor Raster"
 
 msgid "ch.swisstopo.segelflugkarte_papier.metadata"
-msgstr "Divisiun charta da sgol senza motor Stampa"
+msgstr "Div. charta sgol senza motor Stampa"
 
 msgid "ch.swisstopo.segelflugkarte_papier.metadata.release"
 msgstr "Ausgabejahr"
@@ -8796,7 +8841,7 @@ msgid "ch.swisstopo.sgtk"
 msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
-msgstr "Divisiun charta turas da skis 50 Stampa"
+msgstr "Div. charta turas da skis 50 Stampa"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
 msgstr "Name"
@@ -8823,7 +8868,7 @@ msgid "ch.swisstopo.stk200-papierkarte.metadata"
 msgstr "Divisiun charta da las vias Stampa"
 
 msgid "ch.swisstopo.strassenkarte200_papier.metadata"
-msgstr "Divisiun charta da las vias Stampa"
+msgstr "Div. charta da las vias Stampa"
 
 msgid "ch.swisstopo.strassenkarte200_papier.metadata.release"
 msgstr "Ausgabejahr"
@@ -8910,10 +8955,10 @@ msgid "ch.swisstopo.swissboundaries3d-land-grenze"
 msgstr "Confins naziunals"
 
 msgid "ch.swisstopo.swissbuildings3d_1.metadata"
-msgstr "Divisiun swissBUILDINGS3D 1.0 Vector"
+msgstr "Div. swissBUILDINGS3D 1.0 Vector"
 
 msgid "ch.swisstopo.swissbuildings3d_2.metadata"
-msgstr "Divisiun swissBUILDINGS3D 2.0 Vector"
+msgstr "Div. swissBUILDINGS3D 2.0 Vector"
 
 msgid "ch.swisstopo.swissbuildings3d-2.metadata"
 msgstr "Divisiun swissBUILDINGS3D 2.0 Vector"
@@ -8940,16 +8985,16 @@ msgid "ch.swisstopo.swissimage-product.metadata.kbnum"
 msgstr "Blattnummer"
 
 msgid "ch.swisstopo.swiss-map-raster10.metadata"
-msgstr "Divisiun charta naziunala 1:10'000 Raster"
+msgstr "Div. charta naz. 1:10'000 Raster"
 
 msgid "ch.swisstopo.swiss-map-vector1000.metadata"
-msgstr "Divisiun charta naziunala 1000 Vectur"
+msgstr "Div. charta naziunala 1000 Vectur"
 
 msgid "ch.swisstopo.swiss-map-vector10.metadata"
-msgstr "Divisiun charta naziunala 10 Vectur"
+msgstr "Div. charta naziunala 10 Vectur"
 
 msgid "ch.swisstopo.swiss-map-vector25.metadata"
-msgstr "Divisiun charta naziunala 25 Vectur"
+msgstr "Div. charta naziunala 25 Vectur"
 
 msgid "ch.swisstopo.swiss-map-vector25.metadata.flightyear"
 msgstr "Datenstand des Blattes"
@@ -8961,7 +9006,7 @@ msgid "ch.swisstopo.swiss-map-vector25.metadata.kbnum"
 msgstr "Blattnummer"
 
 msgid "ch.swisstopo.swiss-map-vector500.metadata"
-msgstr "Divisiun charta naziunala 500 Vectur"
+msgstr "Div. charta naziunala 500 Vectur"
 
 msgid "ch.swisstopo.swissnames3d"
 msgstr "Nums geografics swissNAMES3D"
@@ -8970,7 +9015,7 @@ msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Geografische Namen swissNAMES3D"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz"
-msgstr "Eisenbahn swissTLM3D"
+msgstr "Viafier swissTLM3D"
 
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_"
 msgstr "-"
@@ -9066,7 +9111,7 @@ msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz_zahnradbahn_999998"
 msgstr "k_W"
 
 msgid "ch.swisstopo.swisstlm3d-gewaessernetz"
-msgstr "Gewässer swissTLM3D"
+msgstr "Auas swissTLM3D"
 
 msgid "ch.swisstopo.swisstlm3d-gewaessernetz.gwl_nr"
 msgstr "Gewässerlaufnummer"
@@ -9126,7 +9171,7 @@ msgid "ch.swisstopo.swisstlm3d.metadata"
 msgstr "Divisiun swissTLM3D Vector"
 
 msgid "ch.swisstopo.swisstlm3d-strassen"
-msgstr "Strassen und Wege swissTLM3D"
+msgstr "Vias e sendas swissTLM3D"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_belagsart_"
 msgstr "-"
@@ -9345,7 +9390,7 @@ msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_None"
 msgstr "-"
 
 msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr"
-msgstr "Seilbahnen swissTLM3D"
+msgstr "Auters transports swissTLM3D"
 
 msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_ausser_betrieb_"
 msgstr "-"
@@ -9657,7 +9702,7 @@ msgid "ch.swisstopo.verschiebungsvektoren-tsp2.name"
 msgstr "Offizielle Punktnummer"
 
 msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata"
-msgstr "Divisiun charta da viandar 25 Stampa"
+msgstr "Div. charta da viandar 25 Stampa"
 
 msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.name"
 msgstr "Name"
@@ -9681,7 +9726,7 @@ msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.wanderkarte33_papier.metadata"
-msgstr "Divisiun charta da viandar 1:33'333 Stampa"
+msgstr "Div. charta viandar 1:33'333 Stampa"
 
 msgid "ch.swisstopo.wanderkarte33_papier.metadata.name"
 msgstr "Name"
@@ -9705,7 +9750,7 @@ msgid "ch.swisstopo.wanderkarte33_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.wanderkarte50_papier.metadata"
-msgstr "Divisiun charta da viandar 50 Stampa"
+msgstr "Div. charta da viandar 50 Stampa"
 
 msgid "ch.swisstopo.wanderkarte50_papier.metadata.name_de"
 msgstr "Name"
@@ -9870,7 +9915,7 @@ msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Sachplan Militär"
 
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
-msgstr "Sperr- und Gefahrenzonenkarte"
+msgstr "Charta da zonas scumandadas"
 
 msgid "ch.vbs.swissmilpilotschart"
 msgstr "SWISS MIL PILOTS CHART"
