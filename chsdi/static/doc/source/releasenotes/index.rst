@@ -40,8 +40,6 @@ Geodata
 *******
 
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Overland flow map <//map.geo.admin.ch/?layers=ch.bafu.gefaehrdungskarte-oberflaechenabfluss>`__ (ch.bafu.gefaehrdungskarte-oberflaechenabfluss)                                           |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Hydrocotyle ranunculoides <//map.geo.admin.ch/?layers=ch.bafu.neophyten-grosser_wassernabel>`__ (ch.bafu.neophyten-grosser_wassernabel)                                                   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Prunus serotina <//map.geo.admin.ch/?layers=ch.bafu.neophyten-herbst_traubenkirsche>`__ (ch.bafu.neophyten-herbst_traubenkirsche)                                                         |
