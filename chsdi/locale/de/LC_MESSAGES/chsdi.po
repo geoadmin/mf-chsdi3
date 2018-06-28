@@ -8924,6 +8924,9 @@ msgstr "Gemeindegrenze"
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-name"
 msgstr "Gemeindename"
 
+msgid "ch.swisstopo.swissboundaries3d.inspire"
+msgstr "ch.swisstopo.swissboundaries3d.inspire"
+
 msgid "ch.swisstopo.swissboundaries3d-kanton-flaeche"
 msgstr "Kantonsfläche"
 
@@ -9010,6 +9013,9 @@ msgstr "Einteilung Landeskarte 500 Vector"
 
 msgid "ch.swisstopo.swissnames3d"
 msgstr "Geografische Namen swissNAMES3D"
+
+msgid "ch.swisstopo.swissnames3d.inspire"
+msgstr "ch.swisstopo.swissnames3d.inspire"
 
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Geografische Namen swissNAMES3D"

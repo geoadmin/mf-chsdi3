@@ -8924,6 +8924,9 @@ msgstr "Limite de commune"
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-name"
 msgstr "Nom de commune"
 
+msgid "ch.swisstopo.swissboundaries3d.inspire"
+msgstr "ch.swisstopo.swissboundaries3d.inspire"
+
 msgid "ch.swisstopo.swissboundaries3d-kanton-flaeche"
 msgstr "Surface de canton"
 
@@ -9010,6 +9013,9 @@ msgstr "Découpage carte nationale 500 Vecteur"
 
 msgid "ch.swisstopo.swissnames3d"
 msgstr "Noms géographiques swissNAMES3D"
+
+msgid "ch.swisstopo.swissnames3d.inspire"
+msgstr "ch.swisstopo.swissnames3d.inspire"
 
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Noms géographiques swissNAMES3D"
