@@ -8924,6 +8924,9 @@ msgstr "Limiti di distretto"
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-name"
 msgstr "Limiti di distretto"
 
+msgid "ch.swisstopo.swissboundaries3d.inspire"
+msgstr "ch.swisstopo.swissboundaries3d.inspire"
+
 msgid "ch.swisstopo.swissboundaries3d-kanton-flaeche"
 msgstr "Frontiere cantonali"
 
@@ -9010,6 +9013,9 @@ msgstr "Divisione carta nazionale 500 Vettore"
 
 msgid "ch.swisstopo.swissnames3d"
 msgstr "Nomi geografici swissNAMES3D"
+
+msgid "ch.swisstopo.swissnames3d.inspire"
+msgstr "ch.swisstopo.swissnames3d.inspire"
 
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Nomi geografici swissNAMES3D"

@@ -8924,6 +8924,9 @@ msgstr "Municipal boundaries"
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-name"
 msgstr "Municipal boundaries"
 
+msgid "ch.swisstopo.swissboundaries3d.inspire"
+msgstr "Administrative units"
+
 msgid "ch.swisstopo.swissboundaries3d-kanton-flaeche"
 msgstr "Cantonal boundaries"
 
@@ -9010,6 +9013,9 @@ msgstr "Division National Map 500 Vector"
 
 msgid "ch.swisstopo.swissnames3d"
 msgstr "Geographical Names swissNAMES3D"
+
+msgid "ch.swisstopo.swissnames3d.inspire"
+msgstr "Geographical names"
 
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Geografische Namen swissNAMES3D"

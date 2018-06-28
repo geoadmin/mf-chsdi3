@@ -8924,6 +8924,9 @@ msgstr "Cunfins communals"
 msgid "ch.swisstopo.swissboundaries3d-gemeinde-name"
 msgstr "Cunfins communals"
 
+msgid "ch.swisstopo.swissboundaries3d.inspire"
+msgstr "ch.swisstopo.swissboundaries3d.inspire"
+
 msgid "ch.swisstopo.swissboundaries3d-kanton-flaeche"
 msgstr "Cunfins chantunals"
 
@@ -9010,6 +9013,9 @@ msgstr "Div. charta naziunala 500 Vectur"
 
 msgid "ch.swisstopo.swissnames3d"
 msgstr "Nums geografics swissNAMES3D"
+
+msgid "ch.swisstopo.swissnames3d.inspire"
+msgstr "ch.swisstopo.swissnames3d.inspire"
 
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Geografische Namen swissNAMES3D"
