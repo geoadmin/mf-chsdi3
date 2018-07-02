@@ -4739,8 +4739,17 @@ msgstr "147 Alarmzentrale Festnetz"
 msgid "ch.bakom.notruf.adresse_147_mobil"
 msgstr "147 Alarmzentrale Mobilnetz"
 
+msgid "ch.bakom.notruf.festnetz"
+msgstr "Numer da routing Festnetz"
+
+msgid "ch.bakom.notruf.mobilnetz"
+msgstr "Numer da routing mobila"
+
 msgid "ch.bakom.notruf.name"
 msgstr "Name"
+
+msgid "ch.bakom.notruf.satellit"
+msgstr "Numer da routing Satellitennetz"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emetturs radio e televisiun"
@@ -7434,7 +7443,7 @@ msgid "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"
 msgstr "Classificaziun da la crappa 500"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
-msgstr "Gruppas litologicas principalas 500"
+msgstr "Mat. primas mineralas (simpl.) 500"
 
 msgid "ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200"
 msgstr "Materias primas mineralas 200"
@@ -7452,7 +7461,7 @@ msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
 msgstr "Crapperas 1995"
 
 msgid "ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke"
-msgstr "Crappa da monuments istorics"
+msgstr "Crappa natirala da monuments"
 
 msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1965"
 msgstr "Industria da cement 1965"
@@ -7815,7 +7824,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.stkind"
 msgstr "Status"
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
-msgstr "Minerals industrials"
+msgstr "Minerals d'industria: giaschament"
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.edrskinds"
 msgstr "Rohstoffe abgebaut"
@@ -7926,7 +7935,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.stkind"
 msgstr "Status"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
-msgstr "Metallisaziuns"
+msgstr "Materias primas da metal"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.edmikinds"
 msgstr "Erze abgebaut"

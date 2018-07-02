@@ -4739,8 +4739,17 @@ msgstr "147 Alarmzentrale Festnetz"
 msgid "ch.bakom.notruf.adresse_147_mobil"
 msgstr "147 Alarmzentrale Mobilnetz"
 
+msgid "ch.bakom.notruf.festnetz"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf.mobilnetz"
+msgstr "Routing-Nummer Mobilnetz"
+
 msgid "ch.bakom.notruf.name"
 msgstr "Name"
+
+msgid "ch.bakom.notruf.satellit"
+msgstr "Routing-Nummer Satellitennetz"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Radio- und Fernsehsender"

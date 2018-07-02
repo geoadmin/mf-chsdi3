@@ -4739,8 +4739,17 @@ msgstr "147 Centrale d‘allarme rete fissa"
 msgid "ch.bakom.notruf.adresse_147_mobil"
 msgstr "147 Emergency Center mobile network"
 
+msgid "ch.bakom.notruf.festnetz"
+msgstr "Numero di routing fissa"
+
+msgid "ch.bakom.notruf.mobilnetz"
+msgstr "Numero di routing mobile"
+
 msgid "ch.bakom.notruf.name"
 msgstr "Nome"
+
+msgid "ch.bakom.notruf.satellit"
+msgstr "Numero di routing via satellite"
 
 msgid "ch.bakom.radio-fernsehsender"
 msgstr "Emittenti radiotelevisive"
@@ -7434,7 +7443,7 @@ msgid "ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung"
 msgstr "Classificazione delle rocce 500"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen"
-msgstr "Litologia (gruppi principali) 500"
+msgstr "Mat. prime min. (semplificata) 500"
 
 msgid "ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200"
 msgstr "Materie prime minerali 200"
@@ -7758,7 +7767,7 @@ msgid "ch.swisstopo.geologie-rohstoffe"
 msgstr "Materie prime minerali"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau"
-msgstr "Rocce spezzate: estrazione"
+msgstr "Rocce frantumate: estrazione"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.clkind"
 msgstr "Importanza"
@@ -7815,7 +7824,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.stkind"
 msgstr "Status"
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale"
-msgstr "Minerali industriali"
+msgstr "Minerali industriali: giacimenti"
 
 msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.edrskinds"
 msgstr "Materie prime sfruttate"
@@ -7926,7 +7935,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.stkind"
 msgstr "Status"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen"
-msgstr "Mineralizzazioni"
+msgstr "Materie prime metalliche"
 
 msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.edmikinds"
 msgstr "Minerali estratti"

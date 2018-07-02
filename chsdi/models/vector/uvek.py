@@ -984,6 +984,224 @@ class LuftraeumeNahKontrollBezirke(Base, LuftraeumeBase, Vector):
 register('ch.bazl.luftraeume-nahkontrollbezirke', LuftraeumeNahKontrollBezirke)
 
 
+class AstraStrasseFacilitiesA(Base, Vector):
+    __tablename__ = 'sachplan_strasse_fac_anhorung'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/astra_strasse_facilities.mako'
+    __bodId__ = 'ch.astra.sachplan-infrastruktur-strasse_anhoerung'
+    __label__ = 'facname_de'
+    id = Column('stabil_id', Unicode, primary_key=True)
+    facname_de = Column('facname_de', Unicode)
+    facname_fr = Column('facname_fr', Unicode)
+    facname_it = Column('facname_it', Unicode)
+    fackind_tid = Column('fackind_tid', Unicode)
+    fackind_text_de = Column('fackind_text_de', Unicode)
+    fackind_text_fr = Column('fackind_text_fr', Unicode)
+    fackind_text_it = Column('fackind_text_it', Unicode)
+    facstatus_tid = Column('facstatus_tid', Unicode)
+    facstatus_text_de = Column('facstatus_text_de', Unicode)
+    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
+    facstatus_text_it = Column('facstatus_text_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    doc_web = Column('doc_web', Unicode)
+    doc_title = Column('doc_title', Unicode)
+    objname_de = Column('objname_de', Unicode)
+    objname_fr = Column('objname_fr', Unicode)
+    objname_it = Column('objname_it', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class AstraStrassePlanningA(Base, Vector):
+    __tablename__ = 'sachplan_strasse_pl_anhorung'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/astra_strasse_planning.mako'
+    __bodId__ = 'ch.astra.sachplan-infrastruktur-strasse_anhoerung'
+    __label__ = 'plname_de'
+    id = Column('stabil_id', Unicode, primary_key=True)
+    plname_de = Column('plname_de', Unicode)
+    plname_fr = Column('plname_fr', Unicode)
+    plname_it = Column('plname_it', Unicode)
+    meastype_tid = Column('meastype_tid', Unicode)
+    meastype_text_de = Column('meastype_text_de', Unicode)
+    meastype_text_fr = Column('meastype_text_fr', Unicode)
+    meastype_text_it = Column('meastype_text_it', Unicode)
+    coordlevel_tid = Column('coordlevel_tid', Unicode)
+    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
+    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
+    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
+    plstatus_text_de = Column('plstatus_text_de', Unicode)
+    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
+    plstatus_text_it = Column('plstatus_text_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    validuntil = Column('validuntil', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    doc_web = Column('doc_web', Unicode)
+    doc_title = Column('doc_title', Unicode)
+    objname_de = Column('objname_de', Unicode)
+    objname_fr = Column('objname_fr', Unicode)
+    objname_it = Column('objname_it', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    __minscale__ = 20005
+    __maxscale__ = 500005
+    the_geom = Column(Geometry2D)
+
+
+class AstraStrassePlanningRasterA(Base, Vector):
+    __tablename__ = 'sachplan_strasse_pl_r_anhorung'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/astra_strasse_planning.mako'
+    __bodId__ = 'ch.astra.sachplan-infrastruktur-strasse_anhoerung'
+    __label__ = 'plname_de'
+    id = Column('stabil_id', Unicode, primary_key=True)
+    plname_de = Column('plname_de', Unicode)
+    plname_fr = Column('plname_fr', Unicode)
+    plname_it = Column('plname_it', Unicode)
+    meastype_tid = Column('meastype_tid', Unicode)
+    meastype_text_de = Column('meastype_text_de', Unicode)
+    meastype_text_fr = Column('meastype_text_fr', Unicode)
+    meastype_text_it = Column('meastype_text_it', Unicode)
+    coordlevel_tid = Column('coordlevel_tid', Unicode)
+    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
+    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
+    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
+    plstatus_text_de = Column('plstatus_text_de', Unicode)
+    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
+    plstatus_text_it = Column('plstatus_text_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    validuntil = Column('validuntil', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    doc_web = Column('doc_web', Unicode)
+    doc_title = Column('doc_title', Unicode)
+    objname_de = Column('objname_de', Unicode)
+    objname_fr = Column('objname_fr', Unicode)
+    objname_it = Column('objname_it', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    __minscale__ = 1
+    __maxscale__ = 20005
+    the_geom = Column(Geometry2D)
+
+register('ch.astra.sachplan-infrastruktur-strasse_anhoerung', AstraStrasseFacilitiesA)
+register('ch.astra.sachplan-infrastruktur-strasse_anhoerung', AstraStrassePlanningA)
+register('ch.astra.sachplan-infrastruktur-strasse_anhoerung', AstraStrassePlanningRasterA)
+
+
+class AstraStrasseFacilitiesK(Base, Vector):
+    __tablename__ = 'sachplan_strasse_fac_kraft'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/astra_strasse_facilities.mako'
+    __bodId__ = 'ch.astra.sachplan-infrastruktur-strasse_kraft'
+    __label__ = 'facname_de'
+    id = Column('stabil_id', Unicode, primary_key=True)
+    facname_de = Column('facname_de', Unicode)
+    facname_fr = Column('facname_fr', Unicode)
+    facname_it = Column('facname_it', Unicode)
+    fackind_tid = Column('fackind_tid', Unicode)
+    fackind_text_de = Column('fackind_text_de', Unicode)
+    fackind_text_fr = Column('fackind_text_fr', Unicode)
+    fackind_text_it = Column('fackind_text_it', Unicode)
+    facstatus_tid = Column('facstatus_tid', Unicode)
+    facstatus_text_de = Column('facstatus_text_de', Unicode)
+    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
+    facstatus_text_it = Column('facstatus_text_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    doc_web = Column('doc_web', Unicode)
+    doc_title = Column('doc_title', Unicode)
+    objname_de = Column('objname_de', Unicode)
+    objname_fr = Column('objname_fr', Unicode)
+    objname_it = Column('objname_it', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class AstraStrassePlanningK(Base, Vector):
+    __tablename__ = 'sachplan_strasse_pl_kraft'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/astra_strasse_planning.mako'
+    __bodId__ = 'ch.astra.sachplan-infrastruktur-strasse_kraft'
+    __label__ = 'plname_de'
+    id = Column('stabil_id', Unicode, primary_key=True)
+    plname_de = Column('plname_de', Unicode)
+    plname_fr = Column('plname_fr', Unicode)
+    plname_it = Column('plname_it', Unicode)
+    meastype_tid = Column('meastype_tid', Unicode)
+    meastype_text_de = Column('meastype_text_de', Unicode)
+    meastype_text_fr = Column('meastype_text_fr', Unicode)
+    meastype_text_it = Column('meastype_text_it', Unicode)
+    coordlevel_tid = Column('coordlevel_tid', Unicode)
+    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
+    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
+    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
+    plstatus_text_de = Column('plstatus_text_de', Unicode)
+    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
+    plstatus_text_it = Column('plstatus_text_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    validuntil = Column('validuntil', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    doc_web = Column('doc_web', Unicode)
+    doc_title = Column('doc_title', Unicode)
+    objname_de = Column('objname_de', Unicode)
+    objname_fr = Column('objname_fr', Unicode)
+    objname_it = Column('objname_it', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    __minscale__ = 20005
+    __maxscale__ = 500005
+    the_geom = Column(Geometry2D)
+
+
+class AstraStrassePlanningRasterK(Base, Vector):
+    __tablename__ = 'sachplan_strasse_pl_r_kraft'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/astra_strasse_planning.mako'
+    __bodId__ = 'ch.astra.sachplan-infrastruktur-strasse_kraft'
+    __label__ = 'plname_de'
+    id = Column('stabil_id', Unicode, primary_key=True)
+    plname_de = Column('plname_de', Unicode)
+    plname_fr = Column('plname_fr', Unicode)
+    plname_it = Column('plname_it', Unicode)
+    meastype_tid = Column('meastype_tid', Unicode)
+    meastype_text_de = Column('meastype_text_de', Unicode)
+    meastype_text_fr = Column('meastype_text_fr', Unicode)
+    meastype_text_it = Column('meastype_text_it', Unicode)
+    coordlevel_tid = Column('coordlevel_tid', Unicode)
+    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
+    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
+    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
+    plstatus_text_de = Column('plstatus_text_de', Unicode)
+    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
+    plstatus_text_it = Column('plstatus_text_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    validuntil = Column('validuntil', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    doc_web = Column('doc_web', Unicode)
+    doc_title = Column('doc_title', Unicode)
+    objname_de = Column('objname_de', Unicode)
+    objname_fr = Column('objname_fr', Unicode)
+    objname_it = Column('objname_it', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    __minscale__ = 1
+    __maxscale__ = 20005
+    the_geom = Column(Geometry2D)
+
+register('ch.astra.sachplan-infrastruktur-strasse_kraft', AstraStrasseFacilitiesK)
+register('ch.astra.sachplan-infrastruktur-strasse_kraft', AstraStrassePlanningK)
+register('ch.astra.sachplan-infrastruktur-strasse_kraft', AstraStrassePlanningRasterK)
+
+
 class SgtFacilities(Base, Vector):
     __tablename__ = 'geologische_tiefenlager_fac'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
