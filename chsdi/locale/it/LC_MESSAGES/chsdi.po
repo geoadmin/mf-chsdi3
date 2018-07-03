@@ -1196,8 +1196,74 @@ msgstr "Zone progettazione autostrada RDPP"
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
 msgstr "SIN - consultazioni"
 
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.coordlevel"
+msgstr "Stato di coordinamento"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.description"
+msgstr "Descrizione"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.document_web"
+msgstr "Informazioni supplementari"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.fackind"
+msgstr "Tipo d‘installazione"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.facname"
+msgstr "Installazione"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.facstatus"
+msgstr "Stato dell‘installazione"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.meastype"
+msgstr "Tipo di misura"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.plname"
+msgstr "Misura"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.plstatus"
+msgstr "Stato della pianificazione"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validfrom"
+msgstr "Data della delibera"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validuntil"
+msgstr "al"
+
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
 msgstr "SIN"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.coordlevel"
+msgstr "Stato di coordinamento"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.description"
+msgstr "Descrizione"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.document_web"
+msgstr "Informazioni supplementari"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.fackind"
+msgstr "Tipo d‘installazione"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.facname"
+msgstr "Installazione"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.facstatus"
+msgstr "Stato dell‘installazione"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.meastype"
+msgstr "Tipo di misura"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.plname"
+msgstr "Misura"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.plstatus"
+msgstr "Stato della pianificazione"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.validfrom"
+msgstr "Data della delibera"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.validuntil"
+msgstr "al"
 
 msgid "ch.astra.schwerverunfallte-kanton_alkohol"
 msgstr "Incidenti per abitante - Alcol"
@@ -5285,6 +5351,9 @@ msgstr "Numero UFAC del sito"
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb"
 msgstr "Siti inquinati aeroporti civ. RDPP"
 
+msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze"
+msgstr "Catasto dei rumori – aerodromi civili"
+
 msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde"
 msgstr "Inquinam. fonico 1a ora notte"
 
@@ -8967,7 +9036,7 @@ msgid "ch.swisstopo.swissbuildings3d-2.metadata"
 msgstr "Divisione swissBUILDINGS3D 2.0 Vector"
 
 msgid "ch.swisstopo.swissimage"
-msgstr "SWISSIMAGE Viaggio nel tempo"
+msgstr "SWISSIMAGE Sfondo"
 
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE Viaggio nel tempo"

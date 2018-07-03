@@ -1196,8 +1196,74 @@ msgstr "Zonas projectaziun autostradas RPDP"
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
 msgstr "SIN - Anhörung"
 
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.coordlevel"
+msgstr "Stand der Koordination"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.description"
+msgstr "Beschreibung"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.document_web"
+msgstr "Weitere Informationen"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.fackind"
+msgstr "Anlageart"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.facname"
+msgstr "Anlage"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.facstatus"
+msgstr "Anlagestatus"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.meastype"
+msgstr "Massnahmetyp"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.plname"
+msgstr "Planerische Massnahme"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.plstatus"
+msgstr "Planungsstand"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validfrom"
+msgstr "Beschlussdatum"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validuntil"
+msgstr "bis"
+
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
 msgstr "SIN"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.coordlevel"
+msgstr "Stand der Koordination"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.description"
+msgstr "Beschreibung"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.document_web"
+msgstr "Weitere Informationen"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.fackind"
+msgstr "Anlageart"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.facname"
+msgstr "Anlage"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.facstatus"
+msgstr "Anlagestatus"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.meastype"
+msgstr "Massnahmetyp"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.plname"
+msgstr "Planerische Massnahme"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.plstatus"
+msgstr "Planungsstand"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.validfrom"
+msgstr "Beschlussdatum"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.validuntil"
+msgstr "bis"
 
 msgid "ch.astra.schwerverunfallte-kanton_alkohol"
 msgstr "Accidents per abitants – alcohol"
@@ -5285,6 +5351,9 @@ msgstr "BAZL Standortnummer"
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb"
 msgstr "Lieus contamin. aviatica civ. RPDP"
 
+msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze"
+msgstr "Cataster da canera - plazz. aviaticas civilas"
+
 msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde"
 msgstr "Grevezza da canera 1. ura da notg"
 
@@ -8967,7 +9036,7 @@ msgid "ch.swisstopo.swissbuildings3d-2.metadata"
 msgstr "Divisiun swissBUILDINGS3D 2.0 Vector"
 
 msgid "ch.swisstopo.swissimage"
-msgstr "SWISSIMAGE Viadis en il temp"
+msgstr "SWISSIMAGE Fund da la carta"
 
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE Viadis en il temp"

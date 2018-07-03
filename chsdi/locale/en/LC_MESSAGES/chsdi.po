@@ -1196,8 +1196,74 @@ msgstr "Reserved zones motorways PLR"
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
 msgstr "SIN - consultations"
 
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.coordlevel"
+msgstr "Coordination level"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.description"
+msgstr "Description"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.document_web"
+msgstr "More information"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.fackind"
+msgstr "Facility type"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.facname"
+msgstr "Facility"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.facstatus"
+msgstr "Facility status"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.meastype"
+msgstr "Measure type"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.plname"
+msgstr "Measure"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.plstatus"
+msgstr "Planning status"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validfrom"
+msgstr "Valid from"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validuntil"
+msgstr "until"
+
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
 msgstr "SIN"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.coordlevel"
+msgstr "Coordination level"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.description"
+msgstr "Description"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.document_web"
+msgstr "More information"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.fackind"
+msgstr "Facility type"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.facname"
+msgstr "Facility"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.facstatus"
+msgstr "Facility status"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.meastype"
+msgstr "Measure type"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.plname"
+msgstr "Measure"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.plstatus"
+msgstr "Planning status"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.validfrom"
+msgstr "Valid from"
+
+msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.validuntil"
+msgstr "until"
 
 msgid "ch.astra.schwerverunfallte-kanton_alkohol"
 msgstr "Accidents per inhabitant - Alcohol"
@@ -5285,6 +5351,9 @@ msgstr "BAZL Standortnummer"
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb"
 msgstr "Polluted sites civ. aerodromes PLR"
 
+msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze"
+msgstr "Noise pollution register - civil aerodromes"
+
 msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde"
 msgstr "Noise exp. 1st night hour"
 
@@ -8967,7 +9036,7 @@ msgid "ch.swisstopo.swissbuildings3d-2.metadata"
 msgstr "Division swissBUILDINGS3D 2.0 Vector"
 
 msgid "ch.swisstopo.swissimage"
-msgstr "SWISSIMAGE Journey through time"
+msgstr "SWISSIMAGE Background"
 
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE Journey through time"
@@ -9015,7 +9084,7 @@ msgid "ch.swisstopo.swissnames3d"
 msgstr "Geographical Names swissNAMES3D"
 
 msgid "ch.swisstopo.swissnames3d.inspire"
-msgstr "Geographical names"
+msgstr "Geographical Names"
 
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Geografische Namen swissNAMES3D"
