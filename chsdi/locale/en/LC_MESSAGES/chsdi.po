@@ -968,14 +968,8 @@ msgstr "Passenger traffic (road)"
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
 msgstr "Passenger traffic 2008"
 
-msgid "ch.are.beschaeftigtendichte"
-msgstr "Density of employment 2008"
-
 msgid "ch.are.beschaeftigtendichte-bz08"
 msgstr "Density of employment 2008"
-
-msgid "ch.are.bevoelkerungsdichte"
-msgstr "Population density 2000"
 
 msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Population density 2000"
@@ -1082,8 +1076,20 @@ msgstr "Routes for exceptional loads"
 msgid "ch.astra.baulinien-nationalstrassen"
 msgstr "Building lines for motorways"
 
+msgid "ch.astra.baulinien-nationalstrassen.approval_date"
+msgstr "Approval date"
+
+msgid "ch.astra.baulinien-nationalstrassen.authority"
+msgstr "Approving authority"
+
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Building lines for motorways PLR"
+
+msgid "ch.astra.baulinien-nationalstrassen.publication_date"
+msgstr "Publication date"
+
+msgid "ch.astra.baulinien-nationalstrassen.state"
+msgstr "Status"
 
 msgid "ch.astra.hauptstrassennetz"
 msgstr "Main roads network"
@@ -1194,7 +1200,7 @@ msgid "ch.astra.projektierungszonen-nationalstrassen.oereb"
 msgstr "Reserved zones motorways PLR"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
-msgstr "SIN - consultations"
+msgstr "SIN - consultation"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.coordlevel"
 msgstr "Coordination level"
@@ -1230,7 +1236,7 @@ msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validuntil"
 msgstr "until"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
-msgstr "SIN"
+msgstr "SP Road infrastructure (SIN)"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.coordlevel"
 msgstr "Coordination level"
