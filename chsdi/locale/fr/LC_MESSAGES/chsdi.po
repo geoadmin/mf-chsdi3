@@ -968,14 +968,8 @@ msgstr "Trafic voyageurs (routier)"
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
 msgstr "Trafic voyageurs (routier)"
 
-msgid "ch.are.beschaeftigtendichte"
-msgstr "Densité de l'emploi"
-
 msgid "ch.are.beschaeftigtendichte-bz08"
 msgstr "Densité de l`emploi 2008"
-
-msgid "ch.are.bevoelkerungsdichte"
-msgstr "Densité de population"
 
 msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Densité de population 2000"
@@ -1082,8 +1076,20 @@ msgstr "Itinéraires pour convois exceptionnels"
 msgid "ch.astra.baulinien-nationalstrassen"
 msgstr "Alignements des routes nationales"
 
+msgid "ch.astra.baulinien-nationalstrassen.approval_date"
+msgstr "Date d'approbation"
+
+msgid "ch.astra.baulinien-nationalstrassen.authority"
+msgstr "Organe d'approbation"
+
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Alignements des routes nationales RDPPF"
+
+msgid "ch.astra.baulinien-nationalstrassen.publication_date"
+msgstr "Date de publication"
+
+msgid "ch.astra.baulinien-nationalstrassen.state"
+msgstr "Statut"
 
 msgid "ch.astra.hauptstrassennetz"
 msgstr "Réseau routes principales"
@@ -1194,7 +1200,7 @@ msgid "ch.astra.projektierungszonen-nationalstrassen.oereb"
 msgstr "Zones réservées autoroutes RDPPF"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
-msgstr "SIN - consultations"
+msgstr "SIN - consultation"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.coordlevel"
 msgstr "Etat de coordination"
@@ -1230,7 +1236,7 @@ msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validuntil"
 msgstr "au"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
-msgstr "SIN"
+msgstr "PS Infrastructure routière (SIN)"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.coordlevel"
 msgstr "Etat de coordination"

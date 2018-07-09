@@ -219,6 +219,22 @@ class Ausnahmetransportrouten(Base, Vector):
 register('ch.astra.ausnahmetransportrouten', Ausnahmetransportrouten)
 
 
+class BaulinienNationalstrassen(Base, Vector):
+    __tablename__ = 'projektierungszonen_nationalstrassen_line'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/projektierungszonen_nationalstrassen.mako'
+    __bodId__ = 'ch.astra.baulinien-nationalstrassen'
+    __label__ = 'status'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    status = Column('status', Unicode)
+    approval_date = Column('approval_date', Date)
+    publication_date = Column('publication_date', Date)
+    approving_authority = Column('approving_authority', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(BaulinienNationalstrassen.__bodId__, BaulinienNationalstrassen)
+
+
 class Zaehlstellenregloc(Base, Vector):
     __tablename__ = 'verkehr_reg_loc'
     __table_args__ = ({'schema': 'astra', 'autoload': False})

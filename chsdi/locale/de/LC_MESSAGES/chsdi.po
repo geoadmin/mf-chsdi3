@@ -968,14 +968,8 @@ msgstr "Personenverkehr Strasse"
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
 msgstr "Personenverkehr Strasse"
 
-msgid "ch.are.beschaeftigtendichte"
-msgstr "Beschäftigtendichte"
-
 msgid "ch.are.beschaeftigtendichte-bz08"
 msgstr "Beschäftigtendichte 2008"
-
-msgid "ch.are.bevoelkerungsdichte"
-msgstr "Bevölkerungsdichte"
 
 msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Bevölkerungsdichte 2000"
@@ -1082,8 +1076,20 @@ msgstr "Ausnahmetransportrouten"
 msgid "ch.astra.baulinien-nationalstrassen"
 msgstr "Baulinien Nationalstrassen"
 
+msgid "ch.astra.baulinien-nationalstrassen.approval_date"
+msgstr "Genehmigungsdatum"
+
+msgid "ch.astra.baulinien-nationalstrassen.authority"
+msgstr "Genehmigungsorgan"
+
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Baulinien Nationalstrassen OeREB"
+
+msgid "ch.astra.baulinien-nationalstrassen.publication_date"
+msgstr "Publikationsdatum"
+
+msgid "ch.astra.baulinien-nationalstrassen.state"
+msgstr "Status"
 
 msgid "ch.astra.hauptstrassennetz"
 msgstr "Hauptstrassennetz"
@@ -1230,7 +1236,7 @@ msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validuntil"
 msgstr "bis"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
-msgstr "SIN"
+msgstr "SP Infrastruktur Strasse (SIN)"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.coordlevel"
 msgstr "Stand der Koordination"

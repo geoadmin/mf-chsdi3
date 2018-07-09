@@ -968,14 +968,8 @@ msgstr "Traffico viaggiatori (strada)"
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
 msgstr "Traffico viaggiatori 2008"
 
-msgid "ch.are.beschaeftigtendichte"
-msgstr "Densità di impieghi 2008"
-
 msgid "ch.are.beschaeftigtendichte-bz08"
 msgstr "Densità di impieghi 2008"
-
-msgid "ch.are.bevoelkerungsdichte"
-msgstr "Densità di popolazione 2000"
 
 msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Densità di popolazione 2000"
@@ -1082,8 +1076,20 @@ msgstr "Itinerari per trasporti eccezionali"
 msgid "ch.astra.baulinien-nationalstrassen"
 msgstr "Allineamenti per le strade nazionali"
 
+msgid "ch.astra.baulinien-nationalstrassen.approval_date"
+msgstr "Data di approvazione"
+
+msgid "ch.astra.baulinien-nationalstrassen.authority"
+msgstr "Organo di approvazione"
+
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Allineamenti per le strade nazionali RDPP"
+
+msgid "ch.astra.baulinien-nationalstrassen.publication_date"
+msgstr "Data di pubblicazione"
+
+msgid "ch.astra.baulinien-nationalstrassen.state"
+msgstr "Stato"
 
 msgid "ch.astra.hauptstrassennetz"
 msgstr "Rete delle strade principali"
@@ -1194,7 +1200,7 @@ msgid "ch.astra.projektierungszonen-nationalstrassen.oereb"
 msgstr "Zone progettazione autostrada RDPP"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
-msgstr "SIN - consultazioni"
+msgstr "SIN - consultazione"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.coordlevel"
 msgstr "Stato di coordinamento"
@@ -1230,7 +1236,7 @@ msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validuntil"
 msgstr "al"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
-msgstr "SIN"
+msgstr "PS Infrastruttura stradale (SIN)"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.coordlevel"
 msgstr "Stato di coordinamento"
