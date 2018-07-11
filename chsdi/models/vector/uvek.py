@@ -220,9 +220,9 @@ register('ch.astra.ausnahmetransportrouten', Ausnahmetransportrouten)
 
 
 class BaulinienNationalstrassen(Base, Vector):
-    __tablename__ = 'projektierungszonen_nationalstrassen_line'
+    __tablename__ = 'baulinien_nationalstrassen_line'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
-    __template__ = 'templates/htmlpopup/projektierungszonen_nationalstrassen.mako'
+    __template__ = 'templates/htmlpopup/baulinien_nationalstrassen.mako'
     __bodId__ = 'ch.astra.baulinien-nationalstrassen'
     __label__ = 'status'
     id = Column('bgdi_id', Integer, primary_key=True)
