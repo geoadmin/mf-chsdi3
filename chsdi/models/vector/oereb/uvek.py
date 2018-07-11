@@ -26,6 +26,14 @@ class ProjektierungszonenNationalstrassenOereb(Base, OerebBase, Vector):
 register_oereb(ProjektierungszonenNationalstrassenOereb.__bodId__, ProjektierungszonenNationalstrassenOereb)
 
 
+class BaulinienNationalstrassenOereb(Base, OerebBase, Vector):
+    __tablename__ = 'baulinien_nationalstrassen_oereb'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __bodId__ = 'ch.astra.baulinien-nationalstrassen.oereb'
+
+register_oereb(BaulinienNationalstrassenOereb.__bodId__, BaulinienNationalstrassenOereb)
+
+
 # BAV
 class KatasterBelastetenStandorteOevOereb(Base, OerebBase, Vector):
     __tablename__ = 'kataster_belasteter_standorte_oev_oereb'
