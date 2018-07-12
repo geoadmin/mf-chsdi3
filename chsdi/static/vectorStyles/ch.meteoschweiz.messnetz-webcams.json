@@ -5,7 +5,7 @@
     {
       "geomType": "point",
       "value": 1,
-      "minResolution": 250,
+      "minResolution": 50,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -21,7 +21,7 @@
     {
       "geomType": "point",
       "value": 1,
-      "maxResolution": 250,
+      "maxResolution": 50,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -35,7 +35,7 @@
             "textBaseline": "middle",
             "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
             "scale": 1,
-            "offsetY": -20,
+            "offsetY": -24,
             "padding": [
               2,
               2,

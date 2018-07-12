@@ -8,7 +8,7 @@
         -100000,
         0
       ],
-      "minResolution": 250,
+      "minResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata14.png"
@@ -20,7 +20,7 @@
         -100000,
         0
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata16.png",
@@ -59,7 +59,7 @@
         0,
         5
       ],
-      "minResolution": 500,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow16_255_255_255.png"
@@ -72,13 +72,13 @@
         0,
         5
       ],
-      "minResolution": 250,
-      "maxResolution": 500,
+      "minResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_255_255_255.png",
         "label": {
-          "template": "${value} km/h",
+          "template": "${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -112,12 +112,12 @@
         0,
         5
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_255_255_255.png",
         "label": {
-          "template": "${station_name}\n ${value} km/h",
+          "template": "${station_name}\n ${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -151,7 +151,7 @@
         5,
         11
       ],
-      "minResolution": 500,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow16_255_247_243.png"
@@ -164,13 +164,13 @@
         5,
         11
       ],
-      "minResolution": 250,
-      "maxResolution": 500,
+      "minResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_255_247_243.png",
         "label": {
-          "template": "${value} km/h",
+          "template": "${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -204,12 +204,12 @@
         5,
         11
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_255_247_243.png",
         "label": {
-          "template": "${station_name}\n ${value} km/h",
+          "template": "${station_name}\n ${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -243,7 +243,7 @@
         11,
         19
       ],
-      "minResolution": 500,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow16_253_224_221.png"
@@ -256,13 +256,13 @@
         11,
         19
       ],
-      "minResolution": 250,
-      "maxResolution": 500,
+      "minResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_253_224_221.png",
         "label": {
-          "template": "${value} km/h",
+          "template": "${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -296,12 +296,12 @@
         11,
         19
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_253_224_221.png",
         "label": {
-          "template": "${station_name}\n ${value} km/h",
+          "template": "${station_name}\n ${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -335,7 +335,7 @@
         19,
         28
       ],
-      "minResolution": 500,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow16_252_197_192.png"
@@ -348,13 +348,13 @@
         19,
         28
       ],
-      "minResolution": 250,
-      "maxResolution": 500,
+      "minResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_252_197_192.png",
         "label": {
-          "template": "${value} km/h",
+          "template": "${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -388,12 +388,12 @@
         19,
         28
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_252_197_192.png",
         "label": {
-          "template": "${station_name}\n ${value} km/h",
+          "template": "${station_name}\n ${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -427,7 +427,7 @@
         28,
         38
       ],
-      "minResolution": 500,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow16_250_159_181.png"
@@ -440,13 +440,13 @@
         28,
         38
       ],
-      "minResolution": 250,
-      "maxResolution": 500,
+      "minResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_250_159_181.png",
         "label": {
-          "template": "${value} km/h",
+          "template": "${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -480,12 +480,12 @@
         28,
         38
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_250_159_181.png",
         "label": {
-          "template": "${station_name}\n ${value} km/h",
+          "template": "${station_name}\n ${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -519,7 +519,7 @@
         38,
         49
       ],
-      "minResolution": 500,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow16_247_104_161.png"
@@ -532,13 +532,13 @@
         38,
         49
       ],
-      "minResolution": 250,
-      "maxResolution": 500,
+      "minResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_247_104_161.png",
         "label": {
-          "template": "${value} km/h",
+          "template": "${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -572,12 +572,12 @@
         38,
         49
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_247_104_161.png",
         "label": {
-          "template": "${station_name}\n ${value} km/h",
+          "template": "${station_name}\n ${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -611,7 +611,7 @@
         49,
         61
       ],
-      "minResolution": 500,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow16_221_52_151.png"
@@ -624,13 +624,13 @@
         49,
         61
       ],
-      "minResolution": 250,
-      "maxResolution": 500,
+      "minResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_221_52_151.png",
         "label": {
-          "template": "${value} km/h",
+          "template": "${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -664,12 +664,12 @@
         49,
         61
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_221_52_151.png",
         "label": {
-          "template": "${station_name}\n ${value} km/h",
+          "template": "${station_name}\n ${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -703,7 +703,7 @@
         61,
         74
       ],
-      "minResolution": 500,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow16_174_1_126.png"
@@ -716,13 +716,13 @@
         61,
         74
       ],
-      "minResolution": 250,
-      "maxResolution": 500,
+      "minResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_174_1_126.png",
         "label": {
-          "template": "${value} km/h",
+          "template": "${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -756,12 +756,12 @@
         61,
         74
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_174_1_126.png",
         "label": {
-          "template": "${station_name}\n ${value} km/h",
+          "template": "${station_name}\n ${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -795,7 +795,7 @@
         74,
         88
       ],
-      "minResolution": 500,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow16_122_1_119.png"
@@ -808,13 +808,13 @@
         74,
         88
       ],
-      "minResolution": 250,
-      "maxResolution": 500,
+      "minResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_122_1_119.png",
         "label": {
-          "template": "${value} km/h",
+          "template": "${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -848,12 +848,12 @@
         74,
         88
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_122_1_119.png",
         "label": {
-          "template": "${station_name}\n ${value} km/h",
+          "template": "${station_name}\n ${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -887,7 +887,7 @@
         88,
         102
       ],
-      "minResolution": 500,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow16_73_0_106.png"
@@ -900,13 +900,13 @@
         88,
         102
       ],
-      "minResolution": 250,
-      "maxResolution": 500,
+      "minResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_73_0_106.png",
         "label": {
-          "template": "${value} km/h",
+          "template": "${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -940,12 +940,12 @@
         88,
         102
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_73_0_106.png",
         "label": {
-          "template": "${station_name}\n ${value} km/h",
+          "template": "${station_name}\n ${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -979,7 +979,7 @@
         102,
         117
       ],
-      "minResolution": 500,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow16_64_0_75.png"
@@ -992,13 +992,13 @@
         102,
         117
       ],
-      "minResolution": 250,
-      "maxResolution": 500,
+      "minResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_64_0_75.png",
         "label": {
-          "template": "${value} km/h",
+          "template": "${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -1032,12 +1032,12 @@
         102,
         117
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_64_0_75.png",
         "label": {
-          "template": "${station_name}\n ${value} km/h",
+          "template": "${station_name}\n ${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -1071,7 +1071,7 @@
         117,
         300
       ],
-      "minResolution": 500,
+      "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow16_0_0_0.png"
@@ -1084,13 +1084,13 @@
         117,
         300
       ],
-      "minResolution": 250,
-      "maxResolution": 500,
+      "minResolution": 100,
+      "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_0_0_0.png",
         "label": {
-          "template": "${value} km/h",
+          "template": "${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -1124,12 +1124,12 @@
         117,
         300
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/arrow20_0_0_0.png",
         "label": {
-          "template": "${station_name}\n ${value} km/h",
+          "template": "${station_name}\n ${value} km/h | ${wind_direction}°",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -1162,7 +1162,7 @@
         300,
         100000
       ],
-      "minResolution": 250,
+      "minResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata14.png"
@@ -1174,7 +1174,7 @@
         300,
         100000
       ],
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata16.png",
