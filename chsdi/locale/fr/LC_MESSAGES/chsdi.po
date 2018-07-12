@@ -1082,8 +1082,26 @@ msgstr "Date d'approbation"
 msgid "ch.astra.baulinien-nationalstrassen.authority"
 msgstr "Organe d'approbation"
 
+msgid "ch.astra.baulinien-nationalstrassen.existing"
+msgstr "existant"
+
+msgid "ch.astra.baulinien-nationalstrassen.inapproval"
+msgstr "en approbation"
+
+msgid "ch.astra.baulinien-nationalstrassen.inforce"
+msgstr "en vigueur"
+
+msgid "ch.astra.baulinien-nationalstrassen.inrepeal"
+msgstr "à annuler"
+
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Alignements des routes nationales RDPPF"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.inkraft"
+msgstr "Alignement en vigueur"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.laufendeaenderung"
+msgstr "Modification en cours"
 
 msgid "ch.astra.baulinien-nationalstrassen.publication_date"
 msgstr "Date de publication"
@@ -1200,7 +1218,7 @@ msgid "ch.astra.projektierungszonen-nationalstrassen.oereb"
 msgstr "Zones réservées autoroutes RDPPF"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
-msgstr "SIN - consultation"
+msgstr "SIN consultation"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.coordlevel"
 msgstr "Etat de coordination"
@@ -1236,7 +1254,7 @@ msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validuntil"
 msgstr "au"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
-msgstr "PS Infrastructure routière (SIN)"
+msgstr "PS Infrastructure routière"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.coordlevel"
 msgstr "Etat de coordination"
@@ -4494,7 +4512,7 @@ msgid "ch.bakom.notruf.112_festnetz"
 msgstr "112 Numéro réseau fixe"
 
 msgid "ch.bakom.notruf-112_festnetz.112_festnetz"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-112_festnetz.adresse"
 msgstr "Centrale d‘alarme"
@@ -4509,7 +4527,7 @@ msgid "ch.bakom.notruf-112_mobilnetz"
 msgstr "112 Réseau mobile"
 
 msgid "ch.bakom.notruf-112_mobilnetz.112_mobil"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-112_mobilnetz.adresse"
 msgstr "Centrale d‘alarme"
@@ -4524,7 +4542,7 @@ msgid "ch.bakom.notruf.112_satellit"
 msgstr "112 Numéro réseau satellite"
 
 msgid "ch.bakom.notruf-112_satellit.112_satellit"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-112_satellit.adresse"
 msgstr "Centrale d‘alarme"
@@ -4539,7 +4557,7 @@ msgid "ch.bakom.notruf.117_festnetz"
 msgstr "117 Numéro réseau fixe"
 
 msgid "ch.bakom.notruf-117_festnetz.117_festnetz"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-117_festnetz.adresse"
 msgstr "Centrale d‘alarme"
@@ -4554,7 +4572,7 @@ msgid "ch.bakom.notruf-117_mobilnetz"
 msgstr "117 réseau mobile"
 
 msgid "ch.bakom.notruf-117_mobilnetz.117_mobil"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-117_mobilnetz.adresse"
 msgstr "Centrale d‘alarme"
@@ -4569,7 +4587,7 @@ msgid "ch.bakom.notruf.118_festnetz"
 msgstr "118 Numéro réseau fixe"
 
 msgid "ch.bakom.notruf-118_festnetz.118_festnetz"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-118_festnetz.adresse"
 msgstr "Centrale d‘alarme"
@@ -4584,7 +4602,7 @@ msgid "ch.bakom.notruf-118_mobilnetz"
 msgstr "118 réseau mobile"
 
 msgid "ch.bakom.notruf-118_mobilnetz.118_mobil"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-118_mobilnetz.adresse"
 msgstr "Centrale d‘alarme"
@@ -4599,7 +4617,7 @@ msgid "ch.bakom.notruf.143_festnetz"
 msgstr "143 Numéro réseau fixe"
 
 msgid "ch.bakom.notruf-143_festnetz.143_festnetz"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-143_festnetz.adresse"
 msgstr "Centrale d‘alarme"
@@ -4614,7 +4632,7 @@ msgid "ch.bakom.notruf-143_mobilnetz"
 msgstr "143 réseau mobile"
 
 msgid "ch.bakom.notruf-143_mobilnetz.143_mobil"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-143_mobilnetz.adresse"
 msgstr "Centrale d‘alarme"
@@ -4629,7 +4647,7 @@ msgid "ch.bakom.notruf.144_festnetz"
 msgstr "144 Numéro réseau fixe"
 
 msgid "ch.bakom.notruf-144_festnetz.144_festnetz"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-144_festnetz.adresse"
 msgstr "Centrale d‘alarme"
@@ -4644,7 +4662,7 @@ msgid "ch.bakom.notruf-144_mobilnetz"
 msgstr "144 réseau mobile"
 
 msgid "ch.bakom.notruf-144_mobilnetz.144_mobil"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-144_mobilnetz.adresse"
 msgstr "Centrale d‘alarme"
@@ -4659,7 +4677,7 @@ msgid "ch.bakom.notruf.147_festnetz"
 msgstr "147 Numéro réseau fixe"
 
 msgid "ch.bakom.notruf-147_festnetz.147_festnetz"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-147_festnetz.adresse"
 msgstr "Centrale d‘alarme"
@@ -4674,7 +4692,7 @@ msgid "ch.bakom.notruf-147_mobilnetz"
 msgstr "147 réseau mobile"
 
 msgid "ch.bakom.notruf-147_mobilnetz.147_mobil"
-msgstr "Numéro d’appel d’urgence"
+msgstr "Numéro d’acheminement"
 
 msgid "ch.bakom.notruf-147_mobilnetz.adresse"
 msgstr "Centrale d‘alarme"

@@ -1082,8 +1082,26 @@ msgstr "Approval date"
 msgid "ch.astra.baulinien-nationalstrassen.authority"
 msgstr "Approving authority"
 
+msgid "ch.astra.baulinien-nationalstrassen.existing"
+msgstr "existing"
+
+msgid "ch.astra.baulinien-nationalstrassen.inapproval"
+msgstr "in approval"
+
+msgid "ch.astra.baulinien-nationalstrassen.inforce"
+msgstr "in force"
+
+msgid "ch.astra.baulinien-nationalstrassen.inrepeal"
+msgstr "in repeal"
+
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Building lines for motorways PLR"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.inkraft"
+msgstr "Baulinie in Kraft"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.laufendeaenderung"
+msgstr "Ongoing modification"
 
 msgid "ch.astra.baulinien-nationalstrassen.publication_date"
 msgstr "Publication date"
@@ -1200,7 +1218,7 @@ msgid "ch.astra.projektierungszonen-nationalstrassen.oereb"
 msgstr "Reserved zones motorways PLR"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
-msgstr "SIN - consultation"
+msgstr "SIN consultation"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.coordlevel"
 msgstr "Coordination level"
@@ -1236,7 +1254,7 @@ msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validuntil"
 msgstr "until"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
-msgstr "SP Road infrastructure (SIN)"
+msgstr "SP Road infrastructure"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.coordlevel"
 msgstr "Coordination level"
@@ -4494,7 +4512,7 @@ msgid "ch.bakom.notruf.112_festnetz"
 msgstr "112 Number fixed network"
 
 msgid "ch.bakom.notruf-112_festnetz.112_festnetz"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-112_festnetz.adresse"
 msgstr "Emergency Center"
@@ -4509,7 +4527,7 @@ msgid "ch.bakom.notruf-112_mobilnetz"
 msgstr "112 Mobile network"
 
 msgid "ch.bakom.notruf-112_mobilnetz.112_mobil"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-112_mobilnetz.adresse"
 msgstr "Emergency Center"
@@ -4524,7 +4542,7 @@ msgid "ch.bakom.notruf.112_satellit"
 msgstr "112 Number satellite network"
 
 msgid "ch.bakom.notruf-112_satellit.112_satellit"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-112_satellit.adresse"
 msgstr "Emergency Center"
@@ -4539,7 +4557,7 @@ msgid "ch.bakom.notruf.117_festnetz"
 msgstr "117 Number fixed network"
 
 msgid "ch.bakom.notruf-117_festnetz.117_festnetz"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-117_festnetz.adresse"
 msgstr "Emergency Center"
@@ -4554,7 +4572,7 @@ msgid "ch.bakom.notruf-117_mobilnetz"
 msgstr "117 Mobile network"
 
 msgid "ch.bakom.notruf-117_mobilnetz.117_mobil"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-117_mobilnetz.adresse"
 msgstr "Emergency Center"
@@ -4569,7 +4587,7 @@ msgid "ch.bakom.notruf.118_festnetz"
 msgstr "118 Number fixed network"
 
 msgid "ch.bakom.notruf-118_festnetz.118_festnetz"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-118_festnetz.adresse"
 msgstr "Emergency Center"
@@ -4584,7 +4602,7 @@ msgid "ch.bakom.notruf-118_mobilnetz"
 msgstr "118 Mobile network"
 
 msgid "ch.bakom.notruf-118_mobilnetz.118_mobil"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-118_mobilnetz.adresse"
 msgstr "Emergency Center"
@@ -4599,7 +4617,7 @@ msgid "ch.bakom.notruf.143_festnetz"
 msgstr "143 Number fixed network"
 
 msgid "ch.bakom.notruf-143_festnetz.143_festnetz"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-143_festnetz.adresse"
 msgstr "Emergency Center"
@@ -4614,7 +4632,7 @@ msgid "ch.bakom.notruf-143_mobilnetz"
 msgstr "143 Mobile network"
 
 msgid "ch.bakom.notruf-143_mobilnetz.143_mobil"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-143_mobilnetz.adresse"
 msgstr "Emergency Center"
@@ -4629,7 +4647,7 @@ msgid "ch.bakom.notruf.144_festnetz"
 msgstr "144 Number fixed network"
 
 msgid "ch.bakom.notruf-144_festnetz.144_festnetz"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-144_festnetz.adresse"
 msgstr "Emergency Center"
@@ -4644,7 +4662,7 @@ msgid "ch.bakom.notruf-144_mobilnetz"
 msgstr "144 Mobile network"
 
 msgid "ch.bakom.notruf-144_mobilnetz.144_mobil"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-144_mobilnetz.adresse"
 msgstr "Emergency Center"
@@ -4659,7 +4677,7 @@ msgid "ch.bakom.notruf.147_festnetz"
 msgstr "147 Number fixed network"
 
 msgid "ch.bakom.notruf-147_festnetz.147_festnetz"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-147_festnetz.adresse"
 msgstr "Emergency Center"
@@ -4674,7 +4692,7 @@ msgid "ch.bakom.notruf-147_mobilnetz"
 msgstr "147 Mobile network"
 
 msgid "ch.bakom.notruf-147_mobilnetz.147_mobil"
-msgstr "Emergency call number"
+msgstr "Routing number"
 
 msgid "ch.bakom.notruf-147_mobilnetz.adresse"
 msgstr "Emergency Center"
