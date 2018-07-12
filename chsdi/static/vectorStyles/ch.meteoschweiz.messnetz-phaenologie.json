@@ -5,7 +5,7 @@
     {
       "geomType": "point",
       "value": 1,
-      "minResolution": 250,
+      "minResolution": 100,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -21,7 +21,7 @@
     {
       "geomType": "point",
       "value": 1,
-      "maxResolution": 250,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -35,65 +35,7 @@
             "textBaseline": "middle",
             "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
             "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
-        },
-        "stroke": {
-          "color": "rgba(14,80,114,0.9)",
-          "width": 2
-        }
-      }
-    },
-    {
-      "geomType": "point",
-      "value": 2,
-      "minResolution": 250,
-      "vectorOptions": {
-        "type": "triangle",
-        "radius": 7,
-        "fill": {
-          "color": "white"
-        },
-        "stroke": {
-          "color": "rgba(14,80,114,0.9)",
-          "width": 2
-        }
-      }
-    },
-    {
-      "geomType": "point",
-      "value": 2,
-      "maxResolution": 250,
-      "vectorOptions": {
-        "type": "triangle",
-        "radius": 9,
-        "fill": {
-          "color": "white"
-        },
-        "label": {
-          "template": "${station_name}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
+            "offsetY": -24,
             "padding": [
               2,
               2,
