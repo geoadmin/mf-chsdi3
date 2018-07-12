@@ -1082,8 +1082,26 @@ msgstr "Data approvaziun"
 msgid "ch.astra.baulinien-nationalstrassen.authority"
 msgstr "Organ da approvaziun"
 
+msgid "ch.astra.baulinien-nationalstrassen.existing"
+msgstr "bestehend"
+
+msgid "ch.astra.baulinien-nationalstrassen.inapproval"
+msgstr "in Genehmigung"
+
+msgid "ch.astra.baulinien-nationalstrassen.inforce"
+msgstr "en vigur"
+
+msgid "ch.astra.baulinien-nationalstrassen.inrepeal"
+msgstr "aufzuhebend"
+
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Lingias da construcziun da las vias naziunalas RDPP"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.inkraft"
+msgstr "Baulinie in Kraft"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.laufendeaenderung"
+msgstr "Midada current"
 
 msgid "ch.astra.baulinien-nationalstrassen.publication_date"
 msgstr "Data da publicaziun"
@@ -1200,7 +1218,7 @@ msgid "ch.astra.projektierungszonen-nationalstrassen.oereb"
 msgstr "Zonas projectaziun autostradas RPDP"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
-msgstr "SIN - Anhörung"
+msgstr "SIN Anhörung"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.coordlevel"
 msgstr "Stand der Koordination"
@@ -1236,7 +1254,7 @@ msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validuntil"
 msgstr "bis"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
-msgstr "SP Infrastruktur Strasse (SIN)"
+msgstr "SP Infrastruktur Strasse"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.coordlevel"
 msgstr "Stand der Koordination"
@@ -4494,7 +4512,7 @@ msgid "ch.bakom.notruf.112_festnetz"
 msgstr "112 Nummer Festnetz"
 
 msgid "ch.bakom.notruf-112_festnetz.112_festnetz"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-112_festnetz.adresse"
 msgstr "Alarmzentral"
@@ -4509,7 +4527,7 @@ msgid "ch.bakom.notruf-112_mobilnetz"
 msgstr "112 rait per telefonia mobila"
 
 msgid "ch.bakom.notruf-112_mobilnetz.112_mobil"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-112_mobilnetz.adresse"
 msgstr "Alarmzentral"
@@ -4524,7 +4542,7 @@ msgid "ch.bakom.notruf.112_satellit"
 msgstr "112 Nummer Satellitennetz"
 
 msgid "ch.bakom.notruf-112_satellit.112_satellit"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-112_satellit.adresse"
 msgstr "Alarmzentral"
@@ -4539,7 +4557,7 @@ msgid "ch.bakom.notruf.117_festnetz"
 msgstr "117 Nummer Festnetz"
 
 msgid "ch.bakom.notruf-117_festnetz.117_festnetz"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-117_festnetz.adresse"
 msgstr "Alarmzentral"
@@ -4554,7 +4572,7 @@ msgid "ch.bakom.notruf-117_mobilnetz"
 msgstr "117 Rait per telefonia mobila"
 
 msgid "ch.bakom.notruf-117_mobilnetz.117_mobil"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-117_mobilnetz.adresse"
 msgstr "Alarmzentral"
@@ -4569,7 +4587,7 @@ msgid "ch.bakom.notruf.118_festnetz"
 msgstr "118 Nummer Festnetz"
 
 msgid "ch.bakom.notruf-118_festnetz.118_festnetz"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-118_festnetz.adresse"
 msgstr "Alarmzentral"
@@ -4584,7 +4602,7 @@ msgid "ch.bakom.notruf-118_mobilnetz"
 msgstr "118 Rait per telefonia mobila"
 
 msgid "ch.bakom.notruf-118_mobilnetz.118_mobil"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-118_mobilnetz.adresse"
 msgstr "Alarmzentral"
@@ -4599,7 +4617,7 @@ msgid "ch.bakom.notruf.143_festnetz"
 msgstr "143 Nummer Festnetz"
 
 msgid "ch.bakom.notruf-143_festnetz.143_festnetz"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-143_festnetz.adresse"
 msgstr "Alarmzentral"
@@ -4614,7 +4632,7 @@ msgid "ch.bakom.notruf-143_mobilnetz"
 msgstr "143 Rait per telefonia mobila"
 
 msgid "ch.bakom.notruf-143_mobilnetz.143_mobil"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-143_mobilnetz.adresse"
 msgstr "Alarmzentral"
@@ -4629,7 +4647,7 @@ msgid "ch.bakom.notruf.144_festnetz"
 msgstr "144 Nummer Festnetz"
 
 msgid "ch.bakom.notruf-144_festnetz.144_festnetz"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-144_festnetz.adresse"
 msgstr "Alarmzentral"
@@ -4644,7 +4662,7 @@ msgid "ch.bakom.notruf-144_mobilnetz"
 msgstr "144 Rait per telefonia mobila"
 
 msgid "ch.bakom.notruf-144_mobilnetz.144_mobil"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-144_mobilnetz.adresse"
 msgstr "Alarmzentral"
@@ -4659,7 +4677,7 @@ msgid "ch.bakom.notruf.147_festnetz"
 msgstr "147 Nummer Festnetz"
 
 msgid "ch.bakom.notruf-147_festnetz.147_festnetz"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-147_festnetz.adresse"
 msgstr "Alarmzentral"
@@ -4674,7 +4692,7 @@ msgid "ch.bakom.notruf-147_mobilnetz"
 msgstr "147 Rait per telefonia mobila"
 
 msgid "ch.bakom.notruf-147_mobilnetz.147_mobil"
-msgstr "Notrufnummer"
+msgstr "Numer da routing"
 
 msgid "ch.bakom.notruf-147_mobilnetz.adresse"
 msgstr "Alarmzentral"
