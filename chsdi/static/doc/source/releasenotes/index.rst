@@ -19,7 +19,7 @@ Release Notes
 .. _releasenotes_20180718:
    *******
 
-Release 20180704 - Wednesday, July 18th 2018
+Release 20180718 - Wednesday, July 18th 2018
 ---------------------------------------------
 
 API & applications
@@ -28,6 +28,7 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
+- Added oereb layer ch.astra.baulinien-nationalstrassen.oereb
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_180704...r_180718>`__
 
 `MAP <//map.geo.admin.ch>`__
@@ -43,6 +44,10 @@ Geodata
 | New    | `SIN consultation <//map.geo.admin.ch/?layers=ch.astra.sachplan-infrastruktur-strasse_anhoerung>`__ (ch.astra.sachplan-infrastruktur-strasse_anhoerung)                                    |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `SP Road infrastructure <//map.geo.admin.ch/?layers=ch.astra.sachplan-infrastruktur-strasse_kraft>`__ (ch.astra.sachplan-infrastruktur-strasse_kraft)                                      |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Building lines for motorways <//map.geo.admin.ch/?layers=ch.astra.baulinien-nationalstrassen>`__ (ch.astra.baulinien-nationalstrassen)                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Vegetation alpine floodplains <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-auen_vegetation_alpin>`__ (ch.bafu.bundesinventare-auen_vegetation_alpin)                               |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
