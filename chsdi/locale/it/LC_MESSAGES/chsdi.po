@@ -1098,10 +1098,10 @@ msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Allineamenti per le strade nazionali RDPP"
 
 msgid "ch.astra.baulinien-nationalstrassen.oereb.inkraft"
-msgstr "Alignement en vigueur"
+msgstr "en vigore"
 
 msgid "ch.astra.baulinien-nationalstrassen.oereb.laufendeaenderung"
-msgstr "Modificazione en corso"
+msgstr "Modification en cours"
 
 msgid "ch.astra.baulinien-nationalstrassen.publication_date"
 msgstr "Data di pubblicazione"
@@ -7461,7 +7461,7 @@ msgid "ch.swisstopo.geologie-geotechnik-steinbrueche_1995"
 msgstr "Cave 1995"
 
 msgid "ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke"
-msgstr "Pietre dei monumenti storici"
+msgstr "Pietra naturale in costruzione"
 
 msgid "ch.swisstopo.geologie-geotechnik-zementindustrie_1965"
 msgstr "Industria dei cementi 1965"

@@ -1098,7 +1098,7 @@ msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Alignements des routes nationales RDPPF"
 
 msgid "ch.astra.baulinien-nationalstrassen.oereb.inkraft"
-msgstr "Alignement en vigueur"
+msgstr "en vigueur"
 
 msgid "ch.astra.baulinien-nationalstrassen.oereb.laufendeaenderung"
 msgstr "Modification en cours"

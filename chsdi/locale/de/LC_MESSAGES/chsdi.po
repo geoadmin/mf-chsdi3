@@ -1098,7 +1098,7 @@ msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Baulinien Nationalstrassen OeREB"
 
 msgid "ch.astra.baulinien-nationalstrassen.oereb.inkraft"
-msgstr "Baulinie in Kraft"
+msgstr "in Kraft"
 
 msgid "ch.astra.baulinien-nationalstrassen.oereb.laufendeaenderung"
 msgstr "Laufende Änderung"

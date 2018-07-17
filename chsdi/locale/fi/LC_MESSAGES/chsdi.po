@@ -1098,10 +1098,10 @@ msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Lingias da construcziun da las vias naziunalas RDPP"
 
 msgid "ch.astra.baulinien-nationalstrassen.oereb.inkraft"
-msgstr "Baulinie in Kraft"
+msgstr "in Kraft"
 
 msgid "ch.astra.baulinien-nationalstrassen.oereb.laufendeaenderung"
-msgstr "Midada current"
+msgstr "Laufende Änderung"
 
 msgid "ch.astra.baulinien-nationalstrassen.publication_date"
 msgstr "Data da publicaziun"
