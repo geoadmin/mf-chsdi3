@@ -424,8 +424,7 @@ class Catalog(Base):
 
 
 class OerebMetadata(Base):
-    # TODO - REMOOOOOVE _test again
-    __tablename__ = 'oereb_interlis_metadata_test'
+    __tablename__ = 'oereb_interlis_metadata'
     __table_args__ = ({'schema': 're3', 'autoload': False})
     layerBodId = Column('layer_id', Unicode, primary_key=True)
     header = Column('header', Unicode)
