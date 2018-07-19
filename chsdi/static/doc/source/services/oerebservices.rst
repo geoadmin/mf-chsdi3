@@ -18,7 +18,7 @@ The returned format is Interlis (XML).
 .. warning::
   This service is only available for the following layers:
 
-  - ch.astra.baulinien-nationalstrassen.oereb *(this layer has no data)*
+  - ch.astra.baulinien-nationalstrassen.oereb
   - ch.astra.projektierungszonen-nationalstrassen.oereb *(this layer has no data)*
   - ch.bav.baulinien-eisenbahnanlagen.oereb *(this layer has no data)*
   - ch.bav.kataster-belasteter-standorte-oev.oereb
