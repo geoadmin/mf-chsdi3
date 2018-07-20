@@ -16,7 +16,7 @@ def loadjs(request):
     ignore_polyfill = request.params.get('ignore_polyfill')
     # Determined automatically in subscriber
     lang = request.lang
-    public_bucket_host = request.registry.settings['public_bucket_host']
+    public_bucket_host = request.registry.settings['cmsgeoadminhost']
 
     # If version not provided fallback to the first entry
     version_str = request.params.get('version', available_versions[0])
@@ -34,7 +34,7 @@ def loadjs(request):
     mode_str = '-debug' if mode is not None else ''
 
     def get_resource_url(filename, extension, mode_str=''):
-        return 'https://%s/%s/%s%s.%s' % (
+        return '%s/%s/%s%s.%s' % (
             public_bucket_host, s3_resources_path, filename, mode_str, extension)
 
     ga_css = get_resource_url('ga', 'css')
