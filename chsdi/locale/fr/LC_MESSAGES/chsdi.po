@@ -380,6 +380,9 @@ msgstr "Désignation OGéo"
 msgid "Bezirk"
 msgstr "District"
 
+msgid "bfs"
+msgstr "OFS"
+
 msgid "bfs_noas04_1"
 msgstr "Bâtiments industriels et artisanaux"
 
@@ -727,6 +730,12 @@ msgstr "Terres improductives"
 
 msgid "bfsnr"
 msgstr "Numéro OFS"
+
+msgid "bfs_service_link_href"
+msgstr "https://www.bfs.admin.ch"
+
+msgid "bfs_service_link_label"
+msgstr "OFS"
 
 msgid "bg_chooser_label"
 msgstr "Fond de plan"
@@ -13831,6 +13840,9 @@ msgstr "Tooltip"
 
 msgid "topelevationamsll"
 msgstr "Hauteur maximum AMSL [m]"
+
+msgid "topic_bfs_tooltip"
+msgstr "Office fédéral de la statistique"
 
 msgid "topic_meteoschweiz_tooltip"
 msgstr "Office fédéral de météorologie et de climatologie"

@@ -380,6 +380,9 @@ msgstr "Bezeichnung GeoIV"
 msgid "Bezirk"
 msgstr "District"
 
+msgid "bfs"
+msgstr "FSO"
+
 msgid "bfs_noas04_1"
 msgstr "Industrial and commercial buildings"
 
@@ -727,6 +730,12 @@ msgstr "Unproductive land"
 
 msgid "bfsnr"
 msgstr "BFS-Nummer"
+
+msgid "bfs_service_link_href"
+msgstr "https://www.bfs.admin.ch"
+
+msgid "bfs_service_link_label"
+msgstr "FSO"
 
 msgid "bg_chooser_label"
 msgstr "Background"
@@ -13831,6 +13840,9 @@ msgstr "Tooltip"
 
 msgid "topelevationamsll"
 msgstr "Maximum top elevation AMSL [m]"
+
+msgid "topic_bfs_tooltip"
+msgstr "Federal Statistical Office"
 
 msgid "topic_meteoschweiz_tooltip"
 msgstr "Federal Office of Meteorology and Climatology"
