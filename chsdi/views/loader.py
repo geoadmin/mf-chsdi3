@@ -13,10 +13,13 @@ available_versions = ['3.6.0', '3.18.2', '4.3.2', '4.4.2']
 @view_config(route_name='ga_api', renderer='json')
 def loadjs(request):
     mode = request.params.get('mode')
+    vip = request.params.get('vip') == 'true'
     ignore_polyfill = request.params.get('ignore_polyfill')
     # Determined automatically in subscriber
     lang = request.lang
     public_bucket_host = request.registry.settings['public_bucket_host']
+    if vip is True:
+        public_bucket_host = public_bucket_host.replace('public', 'public-cdn')
 
     # If version not provided fallback to the first entry
     version_str = request.params.get('version', available_versions[0])
@@ -38,7 +41,10 @@ def loadjs(request):
             public_bucket_host, s3_resources_path, filename, mode_str, extension)
 
     ga_css = get_resource_url('ga', 'css')
-    ga_js = get_resource_url('ga', 'js', mode_str)
+    if vip:
+        ga_js = get_resource_url('ga-vip', 'js', mode_str)
+    else:
+        ga_js = get_resource_url('ga', 'js', mode_str)
     epsg_21781_js = get_resource_url('EPSG21781', 'js')
     epsg_2056_js = get_resource_url('EPSG2056', 'js')
 
