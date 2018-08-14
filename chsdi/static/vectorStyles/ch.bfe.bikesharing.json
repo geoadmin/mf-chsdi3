@@ -141,6 +141,18 @@
           "width": 1
         }
       }
+    },{
+      "geomType": "polygon",
+      "value": "19",
+      "vectorOptions": {
+        "fill": {
+          "color": "#2E75B6"
+        },
+        "stroke": {
+          "color": "#FFFFFF",
+          "width": 1
+        }
+      }
     }
   ]
 }
