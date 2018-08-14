@@ -16,6 +16,36 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20180829:
+   *******
+
+Release 20180829 - Wednesday, Augutst 29th 2018
+-----------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_180718...r_180829>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_180718...r_180829>`__
+
+
+Geodata
+*******
+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Landeskarte Winter LK25, LK50 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-winter>`__ (ch.swisstopo.pixelkarte-farbe-winter)                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport stops <//map.geo.admin.ch/?layers=ch.bav.haltestellen-oev>`__ (ch.bav.haltestellen-oev)                                                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20180718:
    *******
 
