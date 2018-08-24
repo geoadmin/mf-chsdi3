@@ -11,7 +11,7 @@
     <tr><td class="cell-left">${_('ent_gew')}</td>      <td>${c['attributes']['ent_gew'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('pdf')}</td>          <td>
     % if c['attributes']['link']:
-      <a href="http://www.ubst.bafu.admin.ch/restwasser/data/data/er/${lang}/${c['attributes']['link']}" target="_blank">${_('link')}</a>
+      <a href="https://www.ubst.bafu.admin.ch/wasser/restwasser/data/data/er/${lang}/${c['attributes']['link']}" target="_blank">${_('link')}</a>
     % else:
         -
     % endif
