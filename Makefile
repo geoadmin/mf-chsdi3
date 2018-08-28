@@ -449,7 +449,7 @@ requirements.txt:
 	if [ ! -d ".git" ]; then git init; fi
 	rm -rf .venv/git-secrets
 	git clone https://github.com/awslabs/git-secrets .venv/git-secrets
-	cd .venv/git-secrets && make install PREFIX=..
+	cd .venv/git-secrets  && git reset --hard 635895a8d1b7c976ac9794cef420f8dc111a24d4 && make install PREFIX=..
 	(git config --local --get-regexp secret && git config --remove-section secrets) || cd
 	.venv/bin/git-secrets --register-aws
 
