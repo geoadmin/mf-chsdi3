@@ -16,6 +16,46 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20180829:
+   *******
+
+Release 20180829 - Wednesday, Augutst 29th 2018
+-----------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_180718...r_180829>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_180718...r_180829>`__
+
+
+Geodata
+*******
+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Landeskarte Winter LK25, LK50 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-winter>`__ (ch.swisstopo.pixelkarte-farbe-winter)                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport stops <//map.geo.admin.ch/?layers=ch.bav.haltestellen-oev>`__ (ch.bav.haltestellen-oev)                                                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division geological atlas 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas.metadata)                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division geological atlas 25 Vector <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas_vector.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas_vector.metadata)   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division National Map 25 Vector <//map.geo.admin.ch/?layers=ch.swisstopo.swiss-map-vector25.metadata>`__ (ch.swisstopo.swiss-map-vector25.metadata)                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20180718:
    *******
 
