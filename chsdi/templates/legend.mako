@@ -19,6 +19,7 @@
                  'ch.kantone.cadastralwebmap-farbe',
                  'ch.swisstopo.swisstlm3d-karte-farbe',
                  'ch.swisstopo.swisstlm3d-karte-grau',
+                 'ch.swisstopo.pixelkarte-farbe-winter',
                  'ch.swisstopo.pixelkarte-farbe-pk1000.noscale',
                  'ch.swisstopo.pixelkarte-farbe-pk500.noscale',
                  'ch.swisstopo.pixelkarte-farbe-pk200.noscale',
