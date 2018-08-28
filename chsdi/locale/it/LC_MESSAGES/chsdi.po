@@ -6873,7 +6873,7 @@ msgid "ch.meteoschweiz.messnetz-klima"
 msgstr "Stazioni climatologiche"
 
 msgid "ch.meteoschweiz.messnetz-manuell"
-msgstr "Stazioni precipitazioni manuale"
+msgstr "Stazioni precipitazioni manuali"
 
 msgid "ch.meteoschweiz.messnetz-partner"
 msgstr "Stazioni partner MeteoSvizzera"
