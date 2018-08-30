@@ -11,7 +11,7 @@ CODE_DIR=$BASE_DIR/private/branch/$GIT_BRANCH
 
 if ! [ -f $CODE_DIR/.git/config ];
 then
-    git clone https://github.com/geoadmin/mf-chsdi3 $CODE_DIR
+    git clone -b $GIT_BRANCH --single-branch --depth 5 https://github.com/geoadmin/mf-chsdi3 $CODE_DIR
 fi
 
 cd $CODE_DIR
