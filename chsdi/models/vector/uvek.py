@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Unicode, Integer, Date
-from sqlalchemy.types import Numeric, Float
+from sqlalchemy.types import Numeric, Float, Boolean
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -484,6 +484,38 @@ class AbgeltungWasserkraftnutzung(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.abgeltung-wasserkraftnutzung', AbgeltungWasserkraftnutzung)
+
+
+class Energieberatungsstellen (Base, Vector):
+    __tablename__ = 'energieberatungsstellen'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/energieberatungsstellen.mako'
+    __bodId__ = 'ch.bfe.energieberatungsstellen'
+    __queryable_attributes__ = ['name', 'management']
+    __label__ = 'name'
+    id = Column('xtf_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    management = Column('management', Unicode)
+    category = Column('category', Unicode)
+    category_text_it = Column('category_text_it', Unicode)
+    category_text_de = Column('category_text_de', Unicode)
+    category_text_fr = Column('category_text_fr', Unicode)
+    address1 = Column('address1', Unicode)
+    address2 = Column('address2', Unicode)
+    postofficebox = Column('postofficebox', Unicode)
+    pc_place = Column('pc_place', Unicode)
+    telephonenumber = Column('telephonenumber', Unicode)
+    mail = Column('mail', Unicode)
+    webaddress = Column('webaddress', Unicode)
+    clientprivatepersons = Column('clientprivatepersons', Boolean)
+    clientcompanies = Column('clientcompanies', Boolean)
+    clientmunicipalities = Column('clientmunicipalities', Boolean)
+    topicbuildings = Column('topicbuildings', Boolean)
+    topicelectricdeviceslighting = Column('topicelectricdeviceslighting', Boolean)
+    topicmobility = Column('topicmobility', Boolean)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.energieberatungsstellen', Energieberatungsstellen)
 
 
 class Energiestaedte(Base, Vector):
