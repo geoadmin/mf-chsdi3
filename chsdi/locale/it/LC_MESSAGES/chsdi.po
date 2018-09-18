@@ -7143,7 +7143,7 @@ msgid "ch.swisstopo"
 msgstr "swisstopo"
 
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
-msgstr "Elenco ufficiale delle strade"
+msgstr "Elenco ufficiale delle vie"
 
 msgid "ch.swisstopo.amtliches-strassenverzeichnis.esid"
 msgstr "Identificatore federale delle vie"
@@ -7321,6 +7321,9 @@ msgstr "Statut du forage"
 
 msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.tiefe_md"
 msgstr "Profondeur mesurée (MD) maxi-male depuis le niveau du terrain [m]"
+
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.web_link"
+msgstr "Accès à la documentation (lien externe)"
 
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
 msgstr "Radiazione terrestre"
@@ -8264,6 +8267,9 @@ msgstr "Communes concernées"
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.depth"
 msgstr "Measured depth (MD) max. des forages [m]"
 
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.download"
+msgstr "Téléchargement"
+
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.id_project"
 msgstr "ID_Project"
 
@@ -8278,6 +8284,9 @@ msgstr "Puissance [MW]"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.produc"
 msgstr "Chaleur produite [MWh/a]"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.reservoir"
+msgstr "Informations géologiques sur le réservoir"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.status"
 msgstr "Statut"
@@ -14160,7 +14169,7 @@ msgid "tt_bfe_windstaerke_info"
 msgstr "La velocità del vento è soggetta a continue oscillazioni. Per la pianificazione di impianti eolici serve pertanto conoscere una distribuzione statistica delle velocità del vento, una cosiddetta distribuzione di Weibull."
 
 msgid "tt_bildstreifen_Aufloesung"
-msgstr "Risoluzione"
+msgstr "Risoluzione [m]"
 
 msgid "tt_bildstreifen_line_id"
 msgstr "Linea di volo"
@@ -14760,7 +14769,7 @@ msgid "tt_firmen_line_id"
 msgstr "Linea di volo"
 
 msgid "tt_firmen_Link"
-msgstr "Ordinare"
+msgstr "Per questa ordinazione contattare direttamente:"
 
 msgid "tt_firmen_Quickview"
 msgstr "Quickview"
@@ -14940,7 +14949,7 @@ msgid "tt_link"
 msgstr "Sito web"
 
 msgid "tt_lubis_auflosung"
-msgstr "Risoluzione"
+msgstr "Risoluzione [m]"
 
 msgid "tt_lubis_bildorder"
 msgstr "Per questa ordinazione contattare direttamente:"
@@ -14952,7 +14961,7 @@ msgid "tt_lubis_ebkey"
 msgstr "Numero immagine"
 
 msgid "tt_lubis_filesize_mb"
-msgstr "Dimensione del file"
+msgstr "Dimensione del file [MB]"
 
 msgid "tt_lubis_Filmart"
 msgstr "Emulsione"
@@ -14961,7 +14970,7 @@ msgid "tt_lubis_Flugdatum"
 msgstr "Data del volo"
 
 msgid "tt_lubis_flughoehe"
-msgstr "Altitudine di volo"
+msgstr "Altitudine di volo [m]"
 
 msgid "tt_lubis_inventarnummer"
 msgstr "Numero dell'inventario"
@@ -14970,7 +14979,7 @@ msgid "tt_lubis_lineId"
 msgstr "Linea di volo"
 
 msgid "tt_lubis_linielaenge"
-msgstr "Lunghezza"
+msgstr "Lunghezza [km]"
 
 msgid "tt_lubis_massstab"
 msgstr "Scala"
@@ -14982,7 +14991,7 @@ msgid "tt_lubis_orientierung"
 msgstr "Elementi d'orientamento"
 
 msgid "tt_lubis_originalsize"
-msgstr "Dimensione originale dell'immagine"
+msgstr "Dimensione originale dell'immagine [cm]"
 
 msgid "tt_lubis_ort"
 msgstr "Località"
@@ -14997,7 +15006,7 @@ msgid "tt_lubis_Quickview"
 msgstr "Quickview"
 
 msgid "tt_lubis_rotation"
-msgstr "Rotazione"
+msgstr "Rotazione [°]"
 
 msgid "tt_lubis_schraegaufnahmen_stereo_couple"
 msgstr "Immagine corrispondete"

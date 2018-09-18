@@ -7322,6 +7322,9 @@ msgstr "Well status"
 msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.tiefe_md"
 msgstr "Maximum measured depth (MD) from ground level [m]"
 
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.web_link"
+msgstr "Access to documentation (external link)"
+
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
 msgstr "Terrestrial Radiation"
 
@@ -8264,6 +8267,9 @@ msgstr "Involved communities"
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.depth"
 msgstr "Maximum measured depth (MD) of the wells [m]"
 
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.download"
+msgstr "Download"
+
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.id_project"
 msgstr "ID_Project"
 
@@ -8278,6 +8284,9 @@ msgstr "Power [MW]"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.produc"
 msgstr "Heat production [MWh/y]"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.reservoir"
+msgstr "Geologische Informationen zum Reservoir"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.status"
 msgstr "Status"
@@ -14160,7 +14169,7 @@ msgid "tt_bfe_windstaerke_info"
 msgstr "Wind is constantly subject to speed fluctuations. For this reason, a static distribution of wind speeds (Weibull distribution) is required for the planning of wind energy plants."
 
 msgid "tt_bildstreifen_Aufloesung"
-msgstr "Resolution"
+msgstr "Resolution [m]"
 
 msgid "tt_bildstreifen_line_id"
 msgstr "Flying line"
@@ -14760,7 +14769,7 @@ msgid "tt_firmen_line_id"
 msgstr "Flying line"
 
 msgid "tt_firmen_Link"
-msgstr "Order"
+msgstr "To order please contact directly:"
 
 msgid "tt_firmen_Quickview"
 msgstr "Quickview"
@@ -14940,7 +14949,7 @@ msgid "tt_link"
 msgstr "Website"
 
 msgid "tt_lubis_auflosung"
-msgstr "Resolution"
+msgstr "Resolution [m]"
 
 msgid "tt_lubis_bildorder"
 msgstr "To order please contact directly:"
@@ -14952,7 +14961,7 @@ msgid "tt_lubis_ebkey"
 msgstr "Picture number"
 
 msgid "tt_lubis_filesize_mb"
-msgstr "File size"
+msgstr "File size [MB]"
 
 msgid "tt_lubis_Filmart"
 msgstr "Film type"
@@ -14961,7 +14970,7 @@ msgid "tt_lubis_Flugdatum"
 msgstr "Flight date"
 
 msgid "tt_lubis_flughoehe"
-msgstr "Flying height"
+msgstr "Flying height [m]"
 
 msgid "tt_lubis_inventarnummer"
 msgstr "Inventory number"
@@ -14970,7 +14979,7 @@ msgid "tt_lubis_lineId"
 msgstr "Flying line"
 
 msgid "tt_lubis_linielaenge"
-msgstr "Length"
+msgstr "Length [km]"
 
 msgid "tt_lubis_massstab"
 msgstr "Scale"
@@ -14982,7 +14991,7 @@ msgid "tt_lubis_orientierung"
 msgstr "Orientation elements"
 
 msgid "tt_lubis_originalsize"
-msgstr "Dimensions of original image"
+msgstr "Dimensions of original image [cm]"
 
 msgid "tt_lubis_ort"
 msgstr "Place"
@@ -14997,7 +15006,7 @@ msgid "tt_lubis_Quickview"
 msgstr "Quickview"
 
 msgid "tt_lubis_rotation"
-msgstr "Rotation"
+msgstr "Rotation [°]"
 
 msgid "tt_lubis_schraegaufnahmen_stereo_couple"
 msgstr "Correspondent image"
