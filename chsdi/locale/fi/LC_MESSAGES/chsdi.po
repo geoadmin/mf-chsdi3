@@ -7322,6 +7322,9 @@ msgstr "Status Bohrloch"
 msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.tiefe_md"
 msgstr "Maximal gemessene Tiefe (MD) ab Oberkante Terrain [m]"
 
+msgid "ch.swisstopo.geologie-bohrungen_tiefer_500.web_link"
+msgstr "Zugang Dokumentation (externer Link)"
+
 msgid "ch.swisstopo.geologie-dosisleistung-terrestrisch"
 msgstr "Radiaziun terrestra"
 
@@ -8264,6 +8267,9 @@ msgstr "Betroffene Gemeinden"
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.depth"
 msgstr "Maximal measured depth (MD) der Bohrungen [m]"
 
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.download"
+msgstr "Download"
+
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.id_project"
 msgstr "ID_Projekt"
 
@@ -8278,6 +8284,9 @@ msgstr "Leistung [MW]"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.produc"
 msgstr "Wärmeproduktion [MWh/j]"
+
+msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.reservoir"
+msgstr "Geological information on the reservoir"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.status"
 msgstr "Status"
@@ -14160,7 +14169,7 @@ msgid "tt_bfe_windstaerke_info"
 msgstr "Der Wind unterliegt ständiger Geschwindigkeitsschwankungen. Aus diesem Grund wird für die Planung von Windenergieanlagen eine statistische Verteilung der Windgeschwindigkeiten eine sog. Weibull-Verteilung benötigt."
 
 msgid "tt_bildstreifen_Aufloesung"
-msgstr "Auflösung"
+msgstr "Auflösung [m]"
 
 msgid "tt_bildstreifen_line_id"
 msgstr "Fluglinie"
@@ -14760,7 +14769,7 @@ msgid "tt_firmen_line_id"
 msgstr "Fluglinie"
 
 msgid "tt_firmen_Link"
-msgstr "Bestellen"
+msgstr "Für diese Bestellung wenden Sie sich bitte direkt an:"
 
 msgid "tt_firmen_Quickview"
 msgstr "Quickview"
@@ -14940,7 +14949,7 @@ msgid "tt_link"
 msgstr "Webseite"
 
 msgid "tt_lubis_auflosung"
-msgstr "Resoluzion"
+msgstr "Resoluziun [m]"
 
 msgid "tt_lubis_bildorder"
 msgstr "Für diese Bestellung wenden Sie sich bitte direkt an:"
@@ -14952,7 +14961,7 @@ msgid "tt_lubis_ebkey"
 msgstr "Numer da maletg"
 
 msgid "tt_lubis_filesize_mb"
-msgstr "Grondezza da la datoteca"
+msgstr "Grondezza da la datoteca [MB]"
 
 msgid "tt_lubis_Filmart"
 msgstr "Emulsiun"
@@ -14961,7 +14970,7 @@ msgid "tt_lubis_Flugdatum"
 msgstr "Data da sgol"
 
 msgid "tt_lubis_flughoehe"
-msgstr "Autezza da sgol"
+msgstr "Autezza da sgol [m]"
 
 msgid "tt_lubis_inventarnummer"
 msgstr "Numer d'inventari"
@@ -14970,7 +14979,7 @@ msgid "tt_lubis_lineId"
 msgstr "Traject da sgol"
 
 msgid "tt_lubis_linielaenge"
-msgstr "Lunghezza"
+msgstr "Lunghezza [km]"
 
 msgid "tt_lubis_massstab"
 msgstr "Scala"
@@ -14982,7 +14991,7 @@ msgid "tt_lubis_orientierung"
 msgstr "Element d'orientaziun"
 
 msgid "tt_lubis_originalsize"
-msgstr "Resoluziun dal maletg original"
+msgstr "Resoluziun dal maletg original [cm]"
 
 msgid "tt_lubis_ort"
 msgstr "Lieu"
@@ -14997,7 +15006,7 @@ msgid "tt_lubis_Quickview"
 msgstr "Quickview"
 
 msgid "tt_lubis_rotation"
-msgstr "Rotaziun"
+msgstr "Rotaziun [°]"
 
 msgid "tt_lubis_schraegaufnahmen_stereo_couple"
 msgstr "Maletg segund"
