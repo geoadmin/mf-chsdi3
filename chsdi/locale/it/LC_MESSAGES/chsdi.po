@@ -15033,7 +15033,11 @@ msgid "tt_lubis_lineId"
 msgstr "Linea di volo"
 
 msgid "tt_lubis_linielaenge"
+<<<<<<< HEAD
 msgstr "Lunghezza [km]"
+=======
+msgstr "Lunghezza [m]"
+>>>>>>> Update model for new attribute, mako adaptation and update translations
 
 msgid "tt_lubis_massstab"
 msgstr "Scala"

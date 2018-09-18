@@ -7,6 +7,14 @@
    <tr><td class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.status')}</td><td>${c['attributes']['status'] or '-'}</td></tr>
    <tr><td class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.system')}</td><td>${c['attributes']['system'] or '-'}</td></tr>
    <tr><td class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.use')}</td><td>${c['attributes']['use'] or '-'}</td></tr>
+   <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.reservoir')}</th><td>${c['attributes']['reservoir'] or '-'}</td></tr>
+   <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.download')}</th>
+   % if c['attributes']['download'] == None or c['attributes']['download'] == "-":
+       <td>-</td>
+   % else:
+       <td><a href="${c['attributes']['download']}" target="_blank">Zip</a></td>
+   % endif
+   </tr>
 </%def>
 
 <%def name="extended_info(c,lang)">
@@ -24,6 +32,13 @@
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.power')}</th><td>${c['attributes']['power'] or '-'}</td></tr>
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.produc')}</th><td>${c['attributes']['produc'] or '-'}</td></tr>
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.weblink')}</th><td><a href="${c['attributes']['weblink']}" target="_blank">Link</a></td></tr>
-   <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.id_project')}</th><td>${c['attributes']['id_project'] or '-'}</td></tr>
+   <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.reservoir')}</th><td>${c['attributes']['reservoir'] or '-'}</td></tr>
+   <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.download')}</th>
+   % if c['attributes']['download'] == None or c['attributes']['download'] == "-":
+       <td>-</td>
+   % else:
+       <td><a href="${c['attributes']['download']}" target="_blank">Zip</a></td>
+   % endif
+   </tr>
 </table>
 </%def>
