@@ -7,8 +7,8 @@
    <tr><td class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.status')}</td><td>${c['attributes']['status'] or '-'}</td></tr>
    <tr><td class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.system')}</td><td>${c['attributes']['system'] or '-'}</td></tr>
    <tr><td class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.use')}</td><td>${c['attributes']['use'] or '-'}</td></tr>
-   <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.reservoir')}</th><td>${c['attributes']['reservoir'] or '-'}</td></tr>
-   <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.download')}</th>
+   <tr><td class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.reservoir')}</td><td>${c['attributes']['reservoir'] or '-'}</td></tr>
+   <tr><td class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.download')}</td>
    % if c['attributes']['download'] == None or c['attributes']['download'] == "-":
        <td>-</td>
    % else:
