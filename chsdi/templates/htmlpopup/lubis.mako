@@ -220,9 +220,9 @@ shop_url = request.registry.settings['shop_url']
     <tr><th class="cell-left">${_('tt_lubis_rotation')}</th>         <td>${c['attributes']['rotation'] or '-'}</td></tr>
 % if 'contact_web' not in c['attributes']:
   <tr class="chsdi-no-print">
-    <th class="cell-left">${_('link')} Toposhop</th>
+    <th class="cell-left">${_('link')} Online Shop</th>
     <td><a href="https:${shop_url}/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
-    target="toposhop">Toposhop</a></td>
+    target="toposhop">Online Shop</a></td>
   </tr>
 % endif
 % if 'contact_web' in c['attributes']:
