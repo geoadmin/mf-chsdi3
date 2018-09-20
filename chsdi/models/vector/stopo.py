@@ -1127,7 +1127,7 @@ register('ch.swisstopo.geologie-geotechnik-gk200', GeologieGeotechnikGk200)
 
 
 class TiefenGeothermieProjekte(Base, Vector):
-    __tablename__ = 'tiefengeothermie_projekte_update'
+    __tablename__ = 'tiefengeothermie_projekte_pkt'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/tiefengeothermie_projekte.mako'
     __bodId__ = 'ch.swisstopo.geologie-tiefengeothermie_projekte'
