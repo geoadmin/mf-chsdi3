@@ -1,7 +1,7 @@
 autopep8==1.2.4
 Babel==0.9.6
 beautifulsoup4==4.5.1
-boto==2.48.0
+boto==2.49.0
 configparser==3.5.0
 coverage==4.1
 decorator==3.4.0
