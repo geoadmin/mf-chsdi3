@@ -393,6 +393,21 @@ def get_loaderjs_url(request, version='3.6.0'):
     return make_agnostic(route_url('ga_api', request)) + '?version=' + version
 
 
+def gzip_string(string):
+    infile = StringIO.StringIO()
+    try:
+        gzip_file = gzip.GzipFile(fileobj=infile, mode='w', compresslevel=5)
+        gzip_file.write(string)
+        gzip_file.close()
+        infile.seek(0)
+        out = infile.getvalue()
+    except:
+        out = None
+    finally:
+        infile.close()
+    return out
+
+
 def decompress_gzipped_string(string):
     content = gzip.GzipFile(fileobj=StringIO.StringIO(string))
     return content.read()

@@ -3,9 +3,6 @@
 import uuid
 import base64
 import time
-import gzip
-import StringIO
-
 
 from boto.dynamodb2.exceptions import ItemNotFound
 
@@ -13,178 +10,127 @@ from boto.exception import S3ResponseError
 from boto.s3.key import Key
 from boto.utils import parse_ts
 
-from pyramid.view import view_config, view_defaults
 import pyramid.httpexceptions as exc
+from pyramid.view import view_config, view_defaults
 from pyramid.response import Response
 
 from chsdi.models.clientdata_dynamodb import get_dynamodb_table, get_bucket
 from chsdi.lib.decorators import requires_authorization, validate_kml_input
+from chsdi.lib.helpers import gzip_string
 
 
-def _add_item(id, file_id=False, bucketname=None):
-    table = get_dynamodb_table(table_name='geoadmin-file-storage')
-    try:
-        table.put_item(
-            data={
-                'adminId': id,
-                'fileId': file_id,
-                'timestamp': time.strftime('%Y-%m-%d %X', time.localtime()),
-                'bucket': bucketname
-            }
-        )
-    except Exception as e:
-        raise exc.HTTPBadRequest('Error during put item %s' % e)
-    return True
+class DynamoDBFilesHandler:
 
+    def __init__(self, table_name, bucket_name):
+        # We use instance roles
+        self.table = get_dynamodb_table(table_name=table_name)
+        self.bucket_name = bucket_name
 
-def _save_item(admin_id, file_id=None, last_updated=None, bucketname=None):
-    table = get_dynamodb_table(table_name='geoadmin-file-storage')
-    item = None
-    if last_updated is not None:
-        timestamp = last_updated.strftime('%Y-%m-%d %X')
-    else:
-        timestamp = time.strftime('%Y-%m-%d %X', time.localtime())
-    if file_id is not None:
+    def save_item(self, admin_id, file_id, timestamp):
         try:
-            table.put_item(
+            self.table.put_item(
                 data={
                     'adminId': admin_id,
                     'fileId': file_id,
                     'timestamp': timestamp,
-                    'bucket': bucketname
+                    'bucket': self.bucket_name
                 }
             )
         except Exception as e:
             raise exc.HTTPBadRequest('Error during put item %s' % e)
-        return True
 
-    else:
+    def get_item(self, admin_id):
+        item = None
         try:
-            item = table.get_item(adminId=str(admin_id))
+            item = self.table.get_item(adminId=str(admin_id))
         except ItemNotFound:
-            return False
+            pass
+        return item
+
+    def update_item_timestamp(self, item, timestamp):
         try:
             item['timestamp'] = timestamp
             item.save()
         except Exception as e:
-            raise exc.HTTPBadRequest('Timestamp of %s not updated:  %s' % (admin_id, e))
+            raise exc.HTTPBadRequest('Error while updating the timestamp' % e)
 
 
-def _is_admin_id(admin_id):
-    table = get_dynamodb_table(table_name='geoadmin-file-storage')
-    try:
-        table.get_item(adminId=str(admin_id))
-    except ItemNotFound:
-        return False
+class S3FilesHandler:
 
-    return True
+    def __init__(self, bucket_name):
+        # We use instance roles
+        self.bucket = get_bucket(bucket_name)
+        self.bucket_name = bucket_name
+        self.default_headers = {
+            'Cache-Control': 'no-cache, must-revalidate'
+        }
 
+    def get_key(self, file_id):
+        key = None
+        try:
+            key = self.bucket.get_key(file_id)
+        except S3ResponseError as e:
+            raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
+        except Exception as e:
+            raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
+        return key
 
-def _get_file_id_from_admin_id(admin_id):
-    fileId = None
-    table = get_dynamodb_table(table_name='geoadmin-file-storage')
-    try:
-        item = table.get_item(adminId=str(admin_id))
-        fileId = item.get('fileId')
-    except Exception as e:
-        raise exc.HTTPBadRequest('The id %s doesn\'t exist. Error is: %s' % (admin_id, e))
-    if fileId is None:
-        return False
-    return fileId
+    def get_key_timestamp(self, file_id):
+        key = self.get_key(file_id)
+        if key:
+            last_updated = parse_ts(key.last_modified)
+            return last_updated.strftime('%Y-%m-%d %X')
+        return time.strftime('%Y-%m-%d %X', time.localtime())
 
+    def save_object(self, file_id, mime, content_encoding, data, replace=False):
+        msg = 'configuring' if replace else 'updating'
+        try:
+            k = Key(bucket=self.bucket)
+            k.key = file_id
+            k.set_metadata('Content-Type', mime)
+            k.content_type = mime
+            k.content_encoding = content_encoding
+            k.set_metadata('Content-Encoding', content_encoding)
+            k.set_contents_from_string(data, headers=self.default_headers, replace=replace)
+        except Exception as e:
+            raise exc.HTTPInternalServerError('Error while %s S3 key (%s) %s' % (msg, file_id, e))
 
-def _push_object_to_s3(k, file_id, mime, content_encoding, headers, data, replace):
-    k.key = file_id
-    k.set_metadata('Content-Type', mime)
-    k.content_type = mime
-    k.content_encoding = content_encoding
-    k.set_metadata('Content-Encoding', content_encoding)
-    k.set_contents_from_string(data, headers=headers, replace=replace)
+    def delete_key(self, key):
+        try:
+            self.bucket.delete_key(key)
+        except Exception as e:
+            raise exc.HTTPInternalServerError('Error while deleting file %s. %e' % (key.key, e))
 
 
 @view_defaults(renderer='jsonp', route_name='files')
 class FileView(object):
 
     def __init__(self, request):
+        self.bucket_key_name = 'geoadmin_file_storage_bucket'
+        self.bucket_name = request.registry.settings['geoadmin_file_storage_bucket']
         self.request = request
-        self.bucket = get_bucket(request.registry.settings['geoadmin_file_storage_bucket'])
+
+        # Set up AWS DynamoDB and S3 handlers
+        self.dynamodb_fileshandler = DynamoDBFilesHandler(
+            'geoadmin-file-storage', self.bucket_key_name)
+        self.s3_fileshanlder = S3FilesHandler(self.bucket_name)
+
+        # This mean that we suppose a file has already been created
         if request.matched_route.name == 'files':
-            self.admin_id = None
-            self.key = None
-            id = request.matchdict['id']
-            if _is_admin_id(id):
-                self.admin_id = id
-                self.file_id = _get_file_id_from_admin_id(self.admin_id)
+            req_id = request.matchdict['id']
+            db_item = self.dynamodb_fileshandler.get_item(req_id)
+            # Item is None if not found
+            if db_item is None:
+                self.admin_id = None
+                self.file_id = req_id
             else:
-                self.file_id = id
-            try:
-                key = self.bucket.get_key(self.file_id)
-            except S3ResponseError as e:
-                raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (self.file_id, e))
-            except Exception as e:
-                raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (self.file_id, e))
+                self.admin_id = req_id
+                self.file_id = db_item.get('fileId')
 
-            if key is not None:
-                self.key = key
-            else:
+            key = self.s3_fileshanlder.get_key(self.file_id)
+            if key is None:
                 raise exc.HTTPNotFound('File %s not found' % self.file_id)
-
-    def _get_uuid(self):
-        return base64.urlsafe_b64encode(uuid.uuid4().bytes).replace('=', '')
-
-    def _gzip_data(self, data):
-
-        out = None
-        infile = StringIO.StringIO()
-        try:
-            gzip_file = gzip.GzipFile(fileobj=infile, mode='w', compresslevel=5)
-            gzip_file.write(data)
-            gzip_file.close()
-            infile.seek(0)
-            out = infile.getvalue()
-        except:
-            out = None
-        finally:
-            infile.close()
-        return out
-
-    def _save_to_s3(self, data, mime, update=False, compress=True):
-        data_payload = data
-        content_encoding = None
-        headers = {'Cache-Control': 'no-cache, must-revalidate'}
-        if compress and mime == 'application/vnd.google-earth.kml+xml':
-            data_payload = self._gzip_data(data)
-            content_encoding = 'gzip'
-        if not update:
-            try:
-                # Push object to bucket
-                replace = False
-                k = Key(bucket=self.bucket)
-                _push_object_to_s3(k, self.file_id, mime, content_encoding, headers, data_payload, replace)
-                key = self.bucket.get_key(k.key)
-                last_updated = parse_ts(key.last_modified)
-            except Exception as e:
-                raise exc.HTTPInternalServerError('Error while configuring S3 key (%s) %s' % (self.file_id, e))
-            try:
-                # Push to dynamoDB, only one entry per object
-                _save_item(self.admin_id, file_id=self.file_id, last_updated=last_updated, bucketname=self.bucket.name)
-            except Exception as e:
-                raise exc.HTTPInternalServerError('Cannot create file on Dynamodb (%s)' % e)
-
-        else:
-            try:
-                # Inconsistant behaviour with metadata, see https://github.com/boto/boto/issues/2798
-                # Push object to bucket
-                replace = True
-                _push_object_to_s3(self.key, self.file_id, mime, content_encoding, headers, data_payload, replace)
-                key = self.bucket.get_key(self.key.key)
-                last_updated = parse_ts(key.last_modified)
-            except Exception as e:
-                raise exc.HTTPInternalServerError('Error while updating S3 key (%s) %s' % (self.file_id, e))
-            try:
-                _save_item(self.admin_id, last_updated=last_updated, bucketname=self.bucket.name)
-            except Exception as e:
-                raise exc.HTTPInternalServerError('Cannot update file on Dynamodb (%s) %s' % (self.file_id, e))
+            self.key = key
 
     @view_config(route_name='files_collection', request_method='POST')
     @requires_authorization()
@@ -194,18 +140,35 @@ class FileView(object):
         self.admin_id = self._get_uuid()
         mime = self.request.content_type
         data = self.request.body
-        self._save_to_s3(data, mime)
-
-        return {'adminId': self.admin_id, 'fileId': self.file_id}
+        content_encoding = None
+        if mime == 'application/vnd.google-earth.kml+xml':
+            content_encoding = 'gzip'
+            data = gzip_string(data)
+        # Save to S3
+        self.s3_fileshanlder.save_object(self.file_id, mime, content_encoding, data)
+        # Fetch last modified from S3 to add it to DynamoBD
+        timestamp = self.s3_fileshanlder.get_key_timestamp(self.file_id)
+        # Save to DynamoDB
+        self.dynamodb_fileshandler.save_item(self.admin_id, self.file_id, timestamp)
+        return {
+            'adminId': self.admin_id,
+            'fileId': self.file_id
+        }
 
     @view_config(request_method='GET')
     def read_file(self):
         try:
-            if self.admin_id is not None:
-                return {'fileId': self.file_id}
+            if self.admin_id:
+                return {
+                    'fileId': self.file_id
+                }
             else:
                 data = self.key.get_contents_as_string()
-                return Response(data, content_type=self.key.content_type, content_encoding=self.key.content_encoding)
+                return Response(
+                    data,
+                    content_type=self.key.content_type,
+                    content_encoding=self.key.content_encoding
+                )
         except Exception as e:
             raise exc.HTTPNotFound('File %s not found %s' % (self.file_id, e))
 
@@ -215,33 +178,49 @@ class FileView(object):
     def update_file(self):
         data = self.request.body
         mime = self.request.content_type
-
+        content_encoding = None
+        if mime == 'application/vnd.google-earth.kml+xml':
+            content_encoding = 'gzip'
+            data = gzip_string(data)
         if self.admin_id is not None:
-            try:
-                self._save_to_s3(data, mime, update=True)
-
-                return {'adminId': self.admin_id, 'fileId': self.file_id, 'status': 'updated'}
-            except Exception as e:
-                raise exc.HTTPInternalServerError('Cannot update file with id=%s %s' % (self.admin_id, e))
+            status = 'updated'
         else:
-            # Fork file, get new file ids
-            self.file_id = self._get_uuid()
-            self.admin_id = self._get_uuid()
+            # In case the file already exist, we create a fork
+            status = 'copied'
+            self._fork()
+        forked = status == 'copied'
+        self.s3_fileshanlder.save_object(self.file_id, mime, content_encoding, data, not forked)
+        # Fetch last modified from S3 to add it to DynamoBD
+        timestamp = self.s3_fileshanlder.get_key_timestamp(self.file_id)
 
-            del self.key
+        if forked:
+            # Save new entry to DynamoDB
+            self.dynamodb_fileshandler.save_item(self.admin_id, self.file_id, timestamp)
+        else:
+            # Simply update the timestamp
+            item = self.dynamodb_fileshandler.get_item(self.admin_id)
+            self.dynamodb_fileshandler.update_item_timestamp(item, timestamp)
 
-            self._save_to_s3(data, mime)
-
-            return {'adminId': self.admin_id, 'fileId': self.file_id, 'status': 'copied'}
+        return {
+            'adminId': self.admin_id,
+            'fileId': self.file_id,
+            'status': status
+        }
 
     @view_config(request_method='DELETE')
     @requires_authorization()
     def delete_file(self):
-        if self.admin_id is not None:
-            try:
-                self.bucket.delete_key(self.key)
-                return {'success': True}
-            except Exception as e:
-                raise exc.HTTPInternalServerError('Error while deleting file %s. %e' % (self.file_id, e))
-        else:
+        if self.admin_id is None:
             raise exc.HTTPUnauthorized('You are not authorized to delete file %s' % self.file_id)
+        self.s3_fileshanlder.delete_key(self.key)
+        return {
+            'success': True
+        }
+
+    def _get_uuid(self):
+        return base64.urlsafe_b64encode(uuid.uuid4().bytes).replace('=', '')
+
+    def _fork(self):
+        self.file_id = self._get_uuid()
+        self.admin_id = self._get_uuid()
+        del self.key
