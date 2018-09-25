@@ -61,11 +61,11 @@
     weblink = c['attributes']['web_link'].split('##')
 %>
 %  for i in range(len(weblink)):
-     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.web_link')}</td><td>   <a href="${weblink[i]}" target="_blank">Link</a></td></tr>
+     <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.web_link')}</th><td>   <a href="${weblink[i]}" target="_blank">Link</a></td></tr>
 %endfor
 % else:
     <tr>
-      <td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.web_link')}</td>
+      <th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.web_link')}</th>
       <td> - </td>
     </tr>
 %endif
