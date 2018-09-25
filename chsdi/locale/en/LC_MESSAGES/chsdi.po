@@ -6611,26 +6611,74 @@ msgstr "Hillside and steep slopes situation"
 msgid "ch.blw.klimaeignung-futterbau"
 msgstr "Climate - forage crop"
 
+msgid "ch.blw.klimaeignung-futterbau.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-futterbau.zone"
+msgstr "Zona"
+
 msgid "ch.blw.klimaeignung-getreidebau"
 msgstr "Climate - cereal crop"
+
+msgid "ch.blw.klimaeignung-getreidebau.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-getreidebau.zone"
+msgstr "Zona"
 
 msgid "ch.blw.klimaeignung-kartoffeln"
 msgstr "Climate - potatoes"
 
+msgid "ch.blw.klimaeignung-kartoffeln.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-kartoffeln.zone"
+msgstr "Zona"
+
 msgid "ch.blw.klimaeignung-koernermais"
 msgstr "Climate - corn grain"
+
+msgid "ch.blw.klimaeignung-koernermais.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-koernermais.zone"
+msgstr "Zona"
 
 msgid "ch.blw.klimaeignung-kulturland"
 msgstr "Climate - cultivated land"
 
+msgid "ch.blw.klimaeignung-kulturland.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-kulturland.zone"
+msgstr "Zona"
+
 msgid "ch.blw.klimaeignung-spezialkulturen"
 msgstr "Climate - special crops"
+
+msgid "ch.blw.klimaeignung-spezialkulturen.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-spezialkulturen.zone"
+msgstr "Zona"
 
 msgid "ch.blw.klimaeignung-typ"
 msgstr "Climate - overview"
 
+msgid "ch.blw.klimaeignung-typ.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-typ.zone"
+msgstr "Zona"
+
 msgid "ch.blw.klimaeignung-zwischenfruchtbau"
 msgstr "Climate - catch crop"
+
+msgid "ch.blw.klimaeignung-zwischenfruchtbau.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-zwischenfruchtbau.zone"
+msgstr "Zona"
 
 msgid "ch.blw.kt"
 msgstr "FOAG + canton"
@@ -6640,6 +6688,12 @@ msgstr "Agricultural zones boundaries"
 
 msgid "ch.blw.niederschlagshaushalt"
 msgstr "Rainfall"
+
+msgid "ch.blw.niederschlagshaushalt.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.niederschlagshaushalt.zone"
+msgstr "Zona"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
 msgstr "Viticulture in steep areas"

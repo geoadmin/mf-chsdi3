@@ -6611,26 +6611,74 @@ msgstr "Hang- und Steillagen"
 msgid "ch.blw.klimaeignung-futterbau"
 msgstr "Klimaeignung Futterbau"
 
+msgid "ch.blw.klimaeignung-futterbau.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-futterbau.zone"
+msgstr "Zone"
+
 msgid "ch.blw.klimaeignung-getreidebau"
 msgstr "Klimaeignung Getreidebau"
+
+msgid "ch.blw.klimaeignung-getreidebau.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-getreidebau.zone"
+msgstr "Zone"
 
 msgid "ch.blw.klimaeignung-kartoffeln"
 msgstr "Klimaeignung Kartoffeln"
 
+msgid "ch.blw.klimaeignung-kartoffeln.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-kartoffeln.zone"
+msgstr "Zone"
+
 msgid "ch.blw.klimaeignung-koernermais"
 msgstr "Klimaeignung Körnermais"
+
+msgid "ch.blw.klimaeignung-koernermais.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-koernermais.zone"
+msgstr "Zone"
 
 msgid "ch.blw.klimaeignung-kulturland"
 msgstr "Klimaeignung Kulturland"
 
+msgid "ch.blw.klimaeignung-kulturland.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-kulturland.zone"
+msgstr "Zone"
+
 msgid "ch.blw.klimaeignung-spezialkulturen"
 msgstr "Klimaeignung Spezialkulturen"
+
+msgid "ch.blw.klimaeignung-spezialkulturen.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-spezialkulturen.zone"
+msgstr "Zone"
 
 msgid "ch.blw.klimaeignung-typ"
 msgstr "Klimaeignung Übersicht"
 
+msgid "ch.blw.klimaeignung-typ.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-typ.zone"
+msgstr "Zone"
+
 msgid "ch.blw.klimaeignung-zwischenfruchtbau"
 msgstr "Klimaeignung Zwischenfruchtbau"
+
+msgid "ch.blw.klimaeignung-zwischenfruchtbau.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-zwischenfruchtbau.zone"
+msgstr "Zone"
 
 msgid "ch.blw.kt"
 msgstr "BLW + Kanton"
@@ -6640,6 +6688,12 @@ msgstr "Landwirtschaftliche Zonengrenzen"
 
 msgid "ch.blw.niederschlagshaushalt"
 msgstr "Niederschlagshaushalt"
+
+msgid "ch.blw.niederschlagshaushalt.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.niederschlagshaushalt.zone"
+msgstr "Zone"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
 msgstr "Rebflächen in Hanglagen"

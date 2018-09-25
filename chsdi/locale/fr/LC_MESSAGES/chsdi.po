@@ -6611,26 +6611,74 @@ msgstr "Terrains en pente et en forte pente"
 msgid "ch.blw.klimaeignung-futterbau"
 msgstr "Climat - culture fourragère"
 
+msgid "ch.blw.klimaeignung-futterbau.klimeig_be"
+msgstr "Classes d’aptitude"
+
+msgid "ch.blw.klimaeignung-futterbau.zone"
+msgstr "Zone"
+
 msgid "ch.blw.klimaeignung-getreidebau"
 msgstr "Climat - cultures céréalières"
+
+msgid "ch.blw.klimaeignung-getreidebau.klimeig_be"
+msgstr "Classes d’aptitude"
+
+msgid "ch.blw.klimaeignung-getreidebau.zone"
+msgstr "Zone"
 
 msgid "ch.blw.klimaeignung-kartoffeln"
 msgstr "Climat - pommes de terre"
 
+msgid "ch.blw.klimaeignung-kartoffeln.klimeig_be"
+msgstr "Classes d’aptitude"
+
+msgid "ch.blw.klimaeignung-kartoffeln.zone"
+msgstr "Zone"
+
 msgid "ch.blw.klimaeignung-koernermais"
 msgstr "Climat - maïs grain"
+
+msgid "ch.blw.klimaeignung-koernermais.klimeig_be"
+msgstr "Classes d’aptitude"
+
+msgid "ch.blw.klimaeignung-koernermais.zone"
+msgstr "Zone"
 
 msgid "ch.blw.klimaeignung-kulturland"
 msgstr "Climat - terres cultivées"
 
+msgid "ch.blw.klimaeignung-kulturland.klimeig_be"
+msgstr "Classes d’aptitude"
+
+msgid "ch.blw.klimaeignung-kulturland.zone"
+msgstr "Zone"
+
 msgid "ch.blw.klimaeignung-spezialkulturen"
 msgstr "Climat - cultures spéciales"
+
+msgid "ch.blw.klimaeignung-spezialkulturen.klimeig_be"
+msgstr "Classes d’aptitude"
+
+msgid "ch.blw.klimaeignung-spezialkulturen.zone"
+msgstr "Zone"
 
 msgid "ch.blw.klimaeignung-typ"
 msgstr "Climat - vue d'ensemble"
 
+msgid "ch.blw.klimaeignung-typ.klimeig_be"
+msgstr "Classes d’aptitude"
+
+msgid "ch.blw.klimaeignung-typ.zone"
+msgstr "Zone"
+
 msgid "ch.blw.klimaeignung-zwischenfruchtbau"
 msgstr "Climat - cultures dérobées"
+
+msgid "ch.blw.klimaeignung-zwischenfruchtbau.klimeig_be"
+msgstr "Classes d’aptitude"
+
+msgid "ch.blw.klimaeignung-zwischenfruchtbau.zone"
+msgstr "Zone"
 
 msgid "ch.blw.kt"
 msgstr "OFAG + canton"
@@ -6640,6 +6688,12 @@ msgstr "Limites des zones agricoles"
 
 msgid "ch.blw.niederschlagshaushalt"
 msgstr "Régime pluviométrique"
+
+msgid "ch.blw.niederschlagshaushalt.klimeig_be"
+msgstr "Classes d’aptitude"
+
+msgid "ch.blw.niederschlagshaushalt.zone"
+msgstr "Zone"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
 msgstr "Vignobles en pente"

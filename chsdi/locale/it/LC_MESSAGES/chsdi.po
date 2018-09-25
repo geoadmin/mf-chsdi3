@@ -6611,26 +6611,74 @@ msgstr "Terreni in pendio e in forte pendenza"
 msgid "ch.blw.klimaeignung-futterbau"
 msgstr "Clima - Foraggicoltura"
 
+msgid "ch.blw.klimaeignung-futterbau.klimeig_be"
+msgstr "Classi attitudinali"
+
+msgid "ch.blw.klimaeignung-futterbau.zone"
+msgstr "Classi attitudinali"
+
 msgid "ch.blw.klimaeignung-getreidebau"
 msgstr "Clima - Cerealicoltura"
+
+msgid "ch.blw.klimaeignung-getreidebau.klimeig_be"
+msgstr "Classi attitudinali"
+
+msgid "ch.blw.klimaeignung-getreidebau.zone"
+msgstr "Classi attitudinali"
 
 msgid "ch.blw.klimaeignung-kartoffeln"
 msgstr "Clima - Patate"
 
+msgid "ch.blw.klimaeignung-kartoffeln.klimeig_be"
+msgstr "Classi attitudinali"
+
+msgid "ch.blw.klimaeignung-kartoffeln.zone"
+msgstr "Classi attitudinali"
+
 msgid "ch.blw.klimaeignung-koernermais"
 msgstr "Clima - Mais da granella"
+
+msgid "ch.blw.klimaeignung-koernermais.klimeig_be"
+msgstr "Classi attitudinali"
+
+msgid "ch.blw.klimaeignung-koernermais.zone"
+msgstr "Classi attitudinali"
 
 msgid "ch.blw.klimaeignung-kulturland"
 msgstr "Clima - Terreni coltivi"
 
+msgid "ch.blw.klimaeignung-kulturland.klimeig_be"
+msgstr "Classi attitudinali"
+
+msgid "ch.blw.klimaeignung-kulturland.zone"
+msgstr "Classi attitudinali"
+
 msgid "ch.blw.klimaeignung-spezialkulturen"
 msgstr "Clima - Colture speciali"
+
+msgid "ch.blw.klimaeignung-spezialkulturen.klimeig_be"
+msgstr "Classi attitudinali"
+
+msgid "ch.blw.klimaeignung-spezialkulturen.zone"
+msgstr "Classi attitudinali"
 
 msgid "ch.blw.klimaeignung-typ"
 msgstr "Clima - Visione d'insieme"
 
+msgid "ch.blw.klimaeignung-typ.klimeig_be"
+msgstr "Classi attitudinali"
+
+msgid "ch.blw.klimaeignung-typ.zone"
+msgstr "Classi attitudinali"
+
 msgid "ch.blw.klimaeignung-zwischenfruchtbau"
 msgstr "Clima - Colture intercalari"
+
+msgid "ch.blw.klimaeignung-zwischenfruchtbau.klimeig_be"
+msgstr "Classi attitudinali"
+
+msgid "ch.blw.klimaeignung-zwischenfruchtbau.zone"
+msgstr "Classi attitudinali"
 
 msgid "ch.blw.kt"
 msgstr "UFAG + cantone"
@@ -6640,6 +6688,12 @@ msgstr "Limiti delle zone agricole"
 
 msgid "ch.blw.niederschlagshaushalt"
 msgstr "Andamento delle precipitazioni"
+
+msgid "ch.blw.niederschlagshaushalt.klimeig_be"
+msgstr "Classi attitudinali"
+
+msgid "ch.blw.niederschlagshaushalt.zone"
+msgstr "Classi attitudinali"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
 msgstr "Vigneti in zone declive"

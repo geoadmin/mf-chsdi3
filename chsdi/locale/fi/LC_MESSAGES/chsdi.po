@@ -6611,26 +6611,74 @@ msgstr "Costas e spundas"
 msgid "ch.blw.klimaeignung-futterbau"
 msgstr "Clima – cultivaziun da pavel"
 
+msgid "ch.blw.klimaeignung-futterbau.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-futterbau.zone"
+msgstr "Zone"
+
 msgid "ch.blw.klimaeignung-getreidebau"
 msgstr "Clima – cultivaziun da graun"
+
+msgid "ch.blw.klimaeignung-getreidebau.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-getreidebau.zone"
+msgstr "Zone"
 
 msgid "ch.blw.klimaeignung-kartoffeln"
 msgstr "Clima – tartuffels"
 
+msgid "ch.blw.klimaeignung-kartoffeln.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-kartoffeln.zone"
+msgstr "Zone"
+
 msgid "ch.blw.klimaeignung-koernermais"
 msgstr "Clima – tirc da moler"
+
+msgid "ch.blw.klimaeignung-koernermais.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-koernermais.zone"
+msgstr "Zone"
 
 msgid "ch.blw.klimaeignung-kulturland"
 msgstr "Clima – terren cultivà"
 
+msgid "ch.blw.klimaeignung-kulturland.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-kulturland.zone"
+msgstr "Zone"
+
 msgid "ch.blw.klimaeignung-spezialkulturen"
 msgstr "Clima – culturas spezialas"
+
+msgid "ch.blw.klimaeignung-spezialkulturen.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-spezialkulturen.zone"
+msgstr "Zone"
 
 msgid "ch.blw.klimaeignung-typ"
 msgstr "Clima – survista"
 
+msgid "ch.blw.klimaeignung-typ.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-typ.zone"
+msgstr "Zone"
+
 msgid "ch.blw.klimaeignung-zwischenfruchtbau"
 msgstr "Clima – culturas intermediaras"
+
+msgid "ch.blw.klimaeignung-zwischenfruchtbau.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.klimaeignung-zwischenfruchtbau.zone"
+msgstr "Zone"
 
 msgid "ch.blw.kt"
 msgstr "BLW + chantun"
@@ -6640,6 +6688,12 @@ msgstr "Cunfins da las zonas agriculas"
 
 msgid "ch.blw.niederschlagshaushalt"
 msgstr "Precipitaziuns"
+
+msgid "ch.blw.niederschlagshaushalt.klimeig_be"
+msgstr "Eignungsklasse"
+
+msgid "ch.blw.niederschlagshaushalt.zone"
+msgstr "Zone"
 
 msgid "ch.blw.steil_terrassenlagen_rebbau"
 msgstr "Vignas sin terren spundiv"
