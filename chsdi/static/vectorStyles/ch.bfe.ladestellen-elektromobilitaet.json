@@ -1,0 +1,86 @@
+{
+  "type": "unique",
+  "property": "Available",
+  "values": [
+   {
+    "geomType": "point",
+    "value": "Available",
+    "vectorOptions": {
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/available.png"
+      }
+    },
+   {
+    "geomType": "point",
+    "value": "Reserved",
+    "vectorOptions": {
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/reserved.png"
+      }
+    },
+   {
+    "geomType": "point",
+    "value": "occupied",
+    "vectorOptions": {
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/occupied.png"
+      }
+    },
+    {
+    "geomType": "point",
+    "value": "Occupied",
+    "vectorOptions": {
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/occupied.png"
+       }
+    },
+   {
+    "geomType": "point",
+    "value": "Not available",
+    "vectorOptions": {
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/occupied.png"
+       }
+    },
+   {
+    "geomType": "point",
+    "value": "OutOfService",
+    "vectorOptions": {
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/outOfService.png"
+      }
+    },
+   {
+    "geomType": "point",
+    "value": "EVSENotFound",
+    "vectorOptions": {
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/notFound.png"
+      }
+    },
+    {
+    "geomType": "point",
+    "value": "Unknown",
+    "vectorOptions": {
+      "type": "icon",
+      "scale": 0.1,
+      "anchor": [0.5, 1],
+      "src": "https://s3-eu-west-1.amazonaws.com/ltteo-diemo/symbols/unkown.png"
+      }
+    }
+  ]
+}
