@@ -17,9 +17,11 @@
 <%
     weblink = c['attributes']['web_link'].split('##')
 %>
+<tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.web_link')}</td><td> 
 %  for i in range(len(weblink)):
-     <tr><td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.web_link')}</td><td>   <a href="${weblink[i]}" target="_blank">Link</a></td></tr>
+      <a href="${weblink[i]}" target="_blank">Link_${i+1}</a>&nbsp;
 %endfor
+</td></tr>
 % else:
     <tr>
       <td class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.web_link')}</td>
@@ -60,9 +62,11 @@
 <%
     weblink = c['attributes']['web_link'].split('##')
 %>
+<tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.web_link')}</th><td>
 %  for i in range(len(weblink)):
-     <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.web_link')}</th><td>   <a href="${weblink[i]}" target="_blank">Link</a></td></tr>
+      <a href="${weblink[i]}" target="_blank">Link_${i+1}</a>&nbsp;
 %endfor
+</td></tr>
 % else:
     <tr>
       <th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.web_link')}</th>
