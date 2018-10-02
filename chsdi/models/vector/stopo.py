@@ -1114,6 +1114,37 @@ class GeologieBohrungenTiefer500(Base, Vector):
 register('ch.swisstopo.geologie-bohrungen_tiefer_500', GeologieBohrungenTiefer500)
 
 
+class GeologieGeothermischePotenzialstudien(Base, Vector):
+    __tablename__ = 'geothermische_potenzialstudien'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geothermische_potenzialstudien.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geothermische_potenzialstudien_regional'
+    __queryable_attributes__ = ['autor', 'titel_de', 'titel_fr', 'titel_en', 'titel_it', 'titel_rm']
+    __label__ = 'kanton'
+    __extended_info__ = True
+    id = Column('bgdi_id', Integer, primary_key=True)
+    land = Column('land', Unicode)
+    kanton = Column('kanton', Unicode)
+    nb_studien = Column('nb_studien', Integer)
+    titel_de = Column('titel_de', Unicode)
+    titel_fr = Column('titel_fr', Unicode)
+    titel_en = Column('titel_en', Unicode)
+    titel_it = Column('titel_it', Unicode)
+    titel_rm = Column('titel_rm', Unicode)
+    autor = Column('autor', Unicode)
+    jahr = Column('jahr', Unicode)
+    auftraggeber = Column('auftraggeber', Unicode)
+    weblink_de = Column('weblink_de', Unicode)
+    weblink_fr = Column('weblink_fr', Unicode)
+    weblink_en = Column('weblink_en', Unicode)
+    weblink_it = Column('weblink_it', Unicode)
+    download = Column('download', Unicode)
+    legend = Column('legend', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-geothermische_potenzialstudien_regional', GeologieGeothermischePotenzialstudien)
+
+
 class GeologieGeotechnikGk200(Base, Vector):
     __tablename__ = 'geotechnik_gk200_lgd'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
