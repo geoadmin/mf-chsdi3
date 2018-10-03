@@ -7715,6 +7715,36 @@ msgstr "Nome della fabbrica da quadrels"
 msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional"
 msgstr "Etudes de potentiel géothermique"
 
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.auftraggeber"
+msgstr "Mandant"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.autor"
+msgstr "Auteurs / Contributeurs"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.download"
+msgstr "Téléchargement"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.jahr"
+msgstr "Année de publication"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.kanton"
+msgstr "Canton"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.land"
+msgstr "Pays"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.nb_studien"
+msgstr "Nombre d’études"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.studie"
+msgstr "Etude"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel"
+msgstr "Titre"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.weblink"
+msgstr "Accès à l’étude (lien externe)"
+
 msgid "ch.swisstopo.geologie-geotope"
 msgstr "Geotopi svizzeri"
 
@@ -8355,7 +8385,7 @@ msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.use"
 msgstr "Utilisation"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.weblink"
-msgstr "Lien Web"
+msgstr "Accès au projet (lien externe)"
 
 msgid "ch.swisstopo.geologie-tiefenlager"
 msgstr "ch.swisstopo.geologie-tiefenlager"
@@ -15033,11 +15063,7 @@ msgid "tt_lubis_lineId"
 msgstr "Linea di volo"
 
 msgid "tt_lubis_linielaenge"
-<<<<<<< HEAD
 msgstr "Lunghezza [km]"
-=======
-msgstr "Lunghezza [m]"
->>>>>>> Update model for new attribute, mako adaptation and update translations
 
 msgid "tt_lubis_massstab"
 msgstr "Scala"
