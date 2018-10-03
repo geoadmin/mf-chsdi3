@@ -31,6 +31,16 @@
        <td><a href="${c['attributes']['download']}" target="_blank">Zip</a></td>
    % endif
    </tr>
-   <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.weblink')}</th><td><a href="${c['attributes']['weblink']}" target="_blank">Link</a></td></tr>
+   <%
+   weblink = c['attributes']['weblink'].split('; ')
+   %>
+   <tr>
+     <th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.weblink')}</th>
+     <td>
+     %  for i in range(len(weblink)):
+        <a href="${weblink[i]}" target="_blank">Link_${i+1}</a>&nbsp;
+     %endfor
+     </td>
+   </tr>
 </table>
 </%def>
