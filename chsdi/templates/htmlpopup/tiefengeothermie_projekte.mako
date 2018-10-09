@@ -36,11 +36,15 @@
    %>
    <tr>
      <th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.weblink')}</th>
-     <td>
-     %  for i in range(len(weblink)):
-        <a href="${weblink[i]}" target="_blank">Link_${i+1}</a>&nbsp;
-     %endfor
-     </td>
+     % if c['attributes']['weblink'] == None or c['attributes']['weblink'] == "-":
+            <td>-</td>
+     % else:
+        <td>
+         %  for i in range(len(weblink)):
+            <a href="${weblink[i]}" target="_blank">Link_${i+1}</a>&nbsp;
+         %endfor
+        </td>
+     % endif
    </tr>
 </table>
 </%def>
