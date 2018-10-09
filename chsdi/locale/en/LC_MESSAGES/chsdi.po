@@ -7715,6 +7715,36 @@ msgstr "Name of brick manufacture"
 msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional"
 msgstr "Geothermal potential studies"
 
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.auftraggeber"
+msgstr "Contracting entity"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.autor"
+msgstr "Authors / Contributors"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.download"
+msgstr "Download"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.jahr"
+msgstr "Year of publication"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.kanton"
+msgstr "Canton"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.land"
+msgstr "Land"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.nb_studien"
+msgstr "Number of studies"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.studie"
+msgstr "Study"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel"
+msgstr "Title"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.weblink"
+msgstr "Access to study (external link)"
+
 msgid "ch.swisstopo.geologie-geotope"
 msgstr "Geotopes in Switzerland"
 
@@ -8340,7 +8370,7 @@ msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.produc"
 msgstr "Heat production [MWh/y]"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.reservoir"
-msgstr "Geologische Informationen zum Reservoir"
+msgstr "Geological information on the reservoir"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.status"
 msgstr "Status"
@@ -8355,7 +8385,7 @@ msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.use"
 msgstr "Use"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.weblink"
-msgstr "Web Link"
+msgstr "Access to the project (external link)"
 
 msgid "ch.swisstopo.geologie-tiefenlager"
 msgstr "ch.swisstopo.geologie-tiefenlager"

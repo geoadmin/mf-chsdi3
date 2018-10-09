@@ -7715,6 +7715,36 @@ msgstr "Name der Ziegelei"
 msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional"
 msgstr "Geothermische Potenzialstudien"
 
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.auftraggeber"
+msgstr "Auftraggeber"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.autor"
+msgstr "Verfasser / Beitragende"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.download"
+msgstr "Download"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.jahr"
+msgstr "Jahr der Publikation"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.kanton"
+msgstr "Kanton"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.land"
+msgstr "Land"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.nb_studien"
+msgstr "Anzahl Studien"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.studie"
+msgstr "Studie"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel"
+msgstr "Titel"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.weblink"
+msgstr "Zugang zur Studie (externer Link)"
+
 msgid "ch.swisstopo.geologie-geotope"
 msgstr "Geotops svizzers"
 
@@ -8340,7 +8370,7 @@ msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.produc"
 msgstr "Wärmeproduktion [MWh/j]"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.reservoir"
-msgstr "Geological information on the reservoir"
+msgstr "Geologische Informationen zum Reservoir"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.status"
 msgstr "Status"
@@ -8355,7 +8385,7 @@ msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.use"
 msgstr "Nutzung"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.weblink"
-msgstr "Weblink"
+msgstr "Zugang zum Projekt (externer Link)"
 
 msgid "ch.swisstopo.geologie-tiefenlager"
 msgstr "ch.swisstopo.geologie-tiefenlager"

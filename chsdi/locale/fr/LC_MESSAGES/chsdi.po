@@ -7715,6 +7715,36 @@ msgstr "Nom de la Briqueterie"
 msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional"
 msgstr "Etudes de potentiel géothermique"
 
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.auftraggeber"
+msgstr "Mandant"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.autor"
+msgstr "Auteurs / Contributeurs"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.download"
+msgstr "Téléchargement"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.jahr"
+msgstr "Année de publication"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.kanton"
+msgstr "Canton"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.land"
+msgstr "Pays"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.nb_studien"
+msgstr "Nombre d’études"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.studie"
+msgstr "Etude"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel"
+msgstr "Titre"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.weblink"
+msgstr "Accès à l’étude (lien externe)"
+
 msgid "ch.swisstopo.geologie-geotope"
 msgstr "Géotopes suisses"
 
@@ -8355,7 +8385,7 @@ msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.use"
 msgstr "Utilisation"
 
 msgid "ch.swisstopo.geologie-tiefengeothermie_projekte.weblink"
-msgstr "Lien Web"
+msgstr "Accès au projet (lien externe)"
 
 msgid "ch.swisstopo.geologie-tiefenlager"
 msgstr "ch.swisstopo.geologie-tiefenlager"

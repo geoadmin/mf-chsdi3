@@ -1128,7 +1128,7 @@ register('ch.swisstopo.geologie-geotechnik-gk200', GeologieGeotechnikGk200)
 
 
 class TiefenGeothermieProjekte(Base, Vector):
-    __tablename__ = 'tiefengeothermie_projekte'
+    __tablename__ = 'tiefengeothermie_projekte_pkt'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/tiefengeothermie_projekte.mako'
     __bodId__ = 'ch.swisstopo.geologie-tiefengeothermie_projekte'
@@ -1148,8 +1148,8 @@ class TiefenGeothermieProjekte(Base, Vector):
     power = Column('power', Unicode)
     produc = Column('produc', Unicode)
     weblink = Column('weblink', Unicode)
-    id_project = Column('id_project', Unicode)
-
+    reservoir = Column('reservoir', Unicode)
+    download = Column('download', Unicode)
     the_geom = Column(Geometry2D)
 
 register(TiefenGeothermieProjekte.__bodId__, TiefenGeothermieProjekte)
