@@ -1,0 +1,68 @@
+{
+	"type": "unique",
+	"property": "Available",
+	"values": [{
+		"geomType": "point",
+		"value": "Available",
+		"vectorOptions": {
+			"type": "icon",
+        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/available.png",
+        	"scale": 0.1,
+        	"anchor": [0.5, 1]
+		}
+	}, {
+		"geomType": "point",
+		"value": "Reserved",
+		"vectorOptions": {
+			"type": "icon",
+        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/reserved.png",
+        	"scale": 0.1,
+        	"anchor": [0.5, 1]
+		}
+	}, {
+		"geomType": "point",
+		"value": "Occupied",
+		"vectorOptions": {
+			"type": "icon",
+        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/occupied.png",
+        	"scale": 0.1,
+        	"anchor": [0.5, 1]
+		}
+	}, {
+		"geomType": "point",
+		"value": "OutOfService",
+		"vectorOptions": {
+			"type": "icon",
+        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/outOfService.png",
+        	"scale": 0.1,
+        	"anchor": [0.5, 1]
+		}
+	}, {
+		"geomType": "point",
+		"value": "Offline",
+		"vectorOptions": {
+			"type": "icon",
+        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/outOfService.png",
+        	"scale": 0.1,
+        	"anchor": [0.5, 1]
+		}
+	}, {
+		"geomType": "point",
+		"value": "EVSENotFound",
+		"vectorOptions": {
+			"type": "icon",
+        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/notFound.png",
+        	"scale": 0.1,
+        	"anchor": [0.5, 1]
+		}
+	}, {
+		"geomType": "point",
+		"value": "Unknown",
+		"vectorOptions": {
+			"type": "icon",
+        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/unknown.png",
+        	"scale": 0.1,
+        	"anchor": [0.5, 1]
+		}
+	}]
+}
