@@ -5,7 +5,7 @@
     {
       "geomType": "point",
       "value": 1,
-      "minResolution": 20,
+      "minResolution": 100,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
@@ -21,7 +21,7 @@
     {
       "geomType": "point",
       "value": 1,
-      "maxResolution": 20,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
@@ -35,7 +35,7 @@
             "textBaseline": "middle",
             "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
             "scale": 1,
-            "offsetY": -24,
+            "offsetY": -20,
             "padding": [
               2,
               2,
@@ -63,10 +63,10 @@
     {
       "geomType": "point",
       "value": 2,
-      "minResolution": 20,
+      "minResolution": 100,
       "vectorOptions": {
         "type": "triangle",
-        "radius": 6,
+        "radius": 7,
         "fill": {
           "color": "white"
         },
@@ -79,10 +79,10 @@
     {
       "geomType": "point",
       "value": 2,
-      "maxResolution": 20,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "triangle",
-        "radius": 8,
+        "radius": 9,
         "fill": {
           "color": "white"
         },
@@ -93,7 +93,7 @@
             "textBaseline": "middle",
             "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
             "scale": 1,
-            "offsetY": -24,
+            "offsetY": -20,
             "padding": [
               2,
               2,
@@ -121,7 +121,7 @@
     {
       "geomType": "point",
       "value": 3,
-      "minResolution": 20,
+      "minResolution": 100,
       "vectorOptions": {
         "type": "square",
         "radius": 6,
@@ -137,7 +137,7 @@
     {
       "geomType": "point",
       "value": 3,
-      "maxResolution": 20,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "square",
         "radius": 8,
@@ -151,7 +151,7 @@
             "textBaseline": "middle",
             "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
             "scale": 1,
-            "offsetY": -24,
+            "offsetY": -20,
             "padding": [
               2,
               2,
@@ -179,7 +179,7 @@
     {
       "geomType": "point",
       "value": 4,
-      "minResolution": 20,
+      "minResolution": 100,
       "vectorOptions": {
         "type": "star",
         "radius": 6,
@@ -195,7 +195,7 @@
     {
       "geomType": "point",
       "value": 4,
-      "maxResolution": 20,
+      "maxResolution": 100,
       "vectorOptions": {
         "type": "star",
         "radius": 8,
@@ -209,7 +209,65 @@
             "textBaseline": "middle",
             "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
             "scale": 1,
-            "offsetY": -24,
+            "offsetY": -20,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 5,
+      "minResolution": 100,
+      "vectorOptions": {
+        "type": "pentagon",
+        "radius": 7,
+        "fill": {
+          "color": "white"
+        },
+        "stroke": {
+          "color": "rgba(14,80,114,0.9)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 5,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "pentagon",
+        "radius": 9,
+        "fill": {
+          "color": "white"
+        },
+        "label": {
+          "template": "${station_name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -20,
             "padding": [
               2,
               2,
