@@ -5973,7 +5973,7 @@ msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Water power potential"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
-msgstr "E-mobility charging infrastructure"
+msgstr "E-mobility charger (in progress)"
 
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Icing Frequency"
@@ -7188,7 +7188,7 @@ msgid "ch.sem.url"
 msgstr "https://www.sem.admin.ch/sem/en/home.html"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine"
-msgstr "Sediment thickness"
+msgstr "Thickness of unconsolidated deposits"
 
 msgid "ch.sgpk.maechtigkeit-lockergesteine.epaisseur"
 msgstr "Sediment thickness [m]"
@@ -7740,6 +7740,21 @@ msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.studie"
 msgstr "Study"
 
 msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel"
+msgstr "Title"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel_de"
+msgstr "Title"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel_en"
+msgstr "Title"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel_fr"
+msgstr "Title"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel_it"
+msgstr "Title"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel_rm"
 msgstr "Title"
 
 msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.weblink"
@@ -9936,13 +9951,13 @@ msgid "ch.swisstopo-vd.url"
 msgstr "http://www.cadastre.ch"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
-msgstr "Protected Areas VECTOR200"
+msgstr "Protected Areas swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-building"
-msgstr "Building generalized VECTOR200"
+msgstr "Building generalized swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-hydrography"
-msgstr "Hydrology VECTOR200"
+msgstr "Hydrology swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-hydrography-dam"
 msgstr "Staudämme"
@@ -9960,19 +9975,19 @@ msgid "ch.swisstopo.vec200-hydrography-stagnantwater"
 msgstr "Stehende Gewässer"
 
 msgid "ch.swisstopo.vec200-landcover"
-msgstr "Land cover VECTOR200"
+msgstr "Land cover swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-landcover-wald"
 msgstr "Forested areas"
 
 msgid "ch.swisstopo.vec200-miscellaneous"
-msgstr "Single objects  VECTOR200"
+msgstr "Single objects swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-miscellaneous-builtupp"
 msgstr "Ortschaften in Punktform mit dazugehöriger Einwohnerzahl"
 
 msgid "ch.swisstopo.vec200-miscellaneous-geodpoint"
-msgstr "Elevations VECTOR200"
+msgstr "Elevations swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-miscellaneous-physl"
 msgstr "Abrupte Geländeübergänge VECTOR200"
@@ -9984,7 +9999,7 @@ msgid "ch.swisstopo.vec200-miscellaneous-supply"
 msgstr "Enthält Hochspannungsleitungen und Pipelines"
 
 msgid "ch.swisstopo.vec200-names-namedlocation"
-msgstr "Names VECTOR200"
+msgstr "Names swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-names-namedlocation.id"
 msgstr "Object number"
@@ -10002,7 +10017,7 @@ msgid "ch.swisstopo.vec200-transportation-interchange"
 msgstr "Wichtige Strassenknoten"
 
 msgid "ch.swisstopo.vec200-transportation-oeffentliche-verkehr"
-msgstr "Public transportation VECTOR200"
+msgstr "Public transportation swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-transportation-railway"
 msgstr "Bahnen"
@@ -10023,7 +10038,7 @@ msgid "ch.swisstopo.vec200-transportation-ship-kursschiff_linie"
 msgstr "Passagierschiff"
 
 msgid "ch.swisstopo.vec200-transportation-strassennetz"
-msgstr "Road system VECTOR200"
+msgstr "Road system swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-transportation-terminal"
 msgstr "Anbindungen an Verkehrsträger"
