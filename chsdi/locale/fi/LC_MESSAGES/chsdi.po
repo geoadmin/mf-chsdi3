@@ -7742,6 +7742,21 @@ msgstr "Studie"
 msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel"
 msgstr "Titel"
 
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel_de"
+msgstr "Titel"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel_en"
+msgstr "Titel"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel_fr"
+msgstr "Titel"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel_it"
+msgstr "Titel"
+
+msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.titel_rm"
+msgstr "Titel"
+
 msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.weblink"
 msgstr "Zugang zur Studie (externer Link)"
 
@@ -9936,13 +9951,13 @@ msgid "ch.swisstopo-vd.url"
 msgstr "http://www.cadastre.ch"
 
 msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
-msgstr "Territoris protegids VECTOR200"
+msgstr "Territoris protegids swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-building"
-msgstr "Edifizis generalisads VECTOR200"
+msgstr "Edifizis generalisads swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-hydrography"
-msgstr "Idrologia VECTOR200"
+msgstr "Idrologia swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-hydrography-dam"
 msgstr "Staudämme"
@@ -9960,19 +9975,19 @@ msgid "ch.swisstopo.vec200-hydrography-stagnantwater"
 msgstr "Stehende Gewässer"
 
 msgid "ch.swisstopo.vec200-landcover"
-msgstr "Cuvrida dal terren VECTOR200"
+msgstr "Cuvrida dal terren swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-landcover-wald"
 msgstr "Surfatschas da guaud"
 
 msgid "ch.swisstopo.vec200-miscellaneous"
-msgstr "Objects singuls VECTOR200"
+msgstr "Objects singuls swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-miscellaneous-builtupp"
 msgstr "Ortschaften in Punktform mit dazugehöriger Einwohnerzahl"
 
 msgid "ch.swisstopo.vec200-miscellaneous-geodpoint"
-msgstr "Cotas d'autezza VECTOR200"
+msgstr "Cotas d'autezza swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-miscellaneous-physl"
 msgstr "Abrupte Geländeübergänge VECTOR200"
@@ -9984,7 +9999,7 @@ msgid "ch.swisstopo.vec200-miscellaneous-supply"
 msgstr "Enthält Hochspannungsleitungen und Pipelines"
 
 msgid "ch.swisstopo.vec200-names-namedlocation"
-msgstr "Nums VECTOR200"
+msgstr "Nums swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-names-namedlocation.id"
 msgstr "objectnumber"
@@ -10002,7 +10017,7 @@ msgid "ch.swisstopo.vec200-transportation-interchange"
 msgstr "Wichtige Strassenknoten"
 
 msgid "ch.swisstopo.vec200-transportation-oeffentliche-verkehr"
-msgstr "Traffic public VECTOR200"
+msgstr "Traffic public swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-transportation-railway"
 msgstr "Bahnen"
@@ -10023,7 +10038,7 @@ msgid "ch.swisstopo.vec200-transportation-ship-kursschiff_linie"
 msgstr "Passagierschiff"
 
 msgid "ch.swisstopo.vec200-transportation-strassennetz"
-msgstr "Rait da vias VECTOR200"
+msgstr "Rait da vias swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-transportation-terminal"
 msgstr "Anbindungen an Verkehrsträger"
