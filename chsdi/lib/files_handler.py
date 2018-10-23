@@ -115,7 +115,7 @@ class FilesHandler(object):
         # Set up AWS DynamoDB and S3 handlers
         self.dynamodb_fileshandler = DynamoDBFilesHandler(
             'geoadmin-file-storage', self.bucket_key_name)
-        self.s3_fileshanlder = S3FilesHandler(self.bucket_name)
+        self.s3_fileshandler = S3FilesHandler(self.bucket_name)
 
         # This mean that we suppose a file has already been created
         if request.matched_route.name == 'files':
@@ -129,7 +129,7 @@ class FilesHandler(object):
                 self.admin_id = req_id
                 self.file_id = db_item.get('fileId')
 
-            key = self.s3_fileshanlder.get_key(self.file_path)
+            key = self.s3_fileshandler.get_key(self.file_path)
             if key is None:
                 raise exc.HTTPNotFound('File %s not found' % self.file_path)
             self.key = key
@@ -150,9 +150,9 @@ class FilesHandler(object):
             content_encoding = 'gzip'
             data = gzip_string(data)
         # Save to S3
-        self.s3_fileshanlder.save_object(self.file_path, mime, content_encoding, data)
+        self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data)
         # Fetch last modified from S3 to add it to DynamoBD
-        timestamp = self.s3_fileshanlder.get_key_timestamp(self.file_path)
+        timestamp = self.s3_fileshandler.get_key_timestamp(self.file_path)
         # Save to DynamoDB
         self.dynamodb_fileshandler.save_item(self.admin_id, self.file_id, timestamp)
         return {
@@ -190,9 +190,9 @@ class FilesHandler(object):
             status = 'copied'
             self._fork()
         forked = status == 'copied'
-        self.s3_fileshanlder.save_object(self.file_path, mime, content_encoding, data, not forked)
+        self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data, not forked)
         # Fetch last modified from S3 to add it to DynamoBD
-        timestamp = self.s3_fileshanlder.get_key_timestamp(self.file_path)
+        timestamp = self.s3_fileshandler.get_key_timestamp(self.file_path)
 
         if forked:
             # Save new entry to DynamoDB
@@ -211,7 +211,7 @@ class FilesHandler(object):
     def delete_file(self):
         if self.admin_id is None:
             raise exc.HTTPUnauthorized('You are not authorized to delete file %s' % self.file_id)
-        self.s3_fileshanlder.delete_key(self.key)
+        self.s3_fileshandler.delete_key(self.key)
         return {
             'success': True
         }
