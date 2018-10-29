@@ -99,6 +99,7 @@ def main(global_config, **settings):
     config.add_route('checker_dev', '/checker_dev')
     config.add_route('downloadkml', '/downloadkml')
 
+    # kml files
     config.add_route('files_collection', '/files', request_method=('GET', 'POST', 'DELETE'))
     add_cors_route(config,
                    '/files',
@@ -109,6 +110,20 @@ def main(global_config, **settings):
     add_cors_route(config,
                    '/files/{id}',
                    'files',
+                   headers={'Access-Control-Allow-Credentials': 'true'},
+                   methods=['GET', 'POST', 'DELETE'])
+
+    # glstyles json files
+    config.add_route('glstyles_collection', '/glstyles', request_method=('GET', 'POST', 'DELETE'))
+    add_cors_route(config,
+                   '/glstyles',
+                   'glstyles_collection',
+                   headers={'Access-Control-Allow-Credentials': 'true'},
+                   methods=['GET', 'POST', 'DELETE'])
+    config.add_route('glstyles', '/glstyles/{id}', request_method=('GET', 'POST', 'DELETE'))
+    add_cors_route(config,
+                   '/glstyles/{id}',
+                   'glstyles',
                    headers={'Access-Control-Allow-Credentials': 'true'},
                    methods=['GET', 'POST', 'DELETE'])
 

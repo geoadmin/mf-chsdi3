@@ -2,6 +2,7 @@
 
 from functools import wraps
 import xml.parsers.expat
+import json
 
 import pyramid.httpexceptions as exc
 
@@ -9,7 +10,8 @@ import urllib
 import re
 
 
-EXPECTED_CONTENT_TYPE = 'application/vnd.google-earth.kml+xml'
+EXPECTED_KML_CONTENT_TYPE = 'application/vnd.google-earth.kml+xml'
+EXPECTED_GLSTYLE_CONTENT_TYPE = 'application/json'
 
 
 def requires_authorization():
@@ -42,9 +44,9 @@ def validate_kml_input():
             # IE 9/10 doesn't send custom headers
             # webO default Content-Type to 'application/x-www-form-urlencoded' when not explictly set
             if request.content_type in (None, '', 'application/x-www-form-urlencoded'):
-                request.content_type = EXPECTED_CONTENT_TYPE
+                request.content_type = EXPECTED_KML_CONTENT_TYPE
 
-            if request.content_type != EXPECTED_CONTENT_TYPE:
+            if request.content_type != EXPECTED_KML_CONTENT_TYPE:
                 raise exc.HTTPUnsupportedMediaType('Only KML file are accepted')
             # IE9 sends data urlencoded
             data = urllib.unquote_plus(request.body)
@@ -61,6 +63,27 @@ def validate_kml_input():
                 raise exc.HTTPUnsupportedMediaType('Only valid KML file are accepted')
 
             request.body = data
+
+            return func(self, *args, **kwargs)
+        return wrapper
+    return decorator
+
+
+def validate_glstyle_input():
+    def decorator(func):
+        @wraps(func)
+        def wrapper(self, *args, **kwargs):
+            request = self.request if hasattr(self, 'request') else self
+            if request.content_type in (None, '', 'application/x-www-form-urlencoded'):
+                request.content_type = EXPECTED_GLSTYLE_CONTENT_TYPE
+
+            if request.content_type != EXPECTED_GLSTYLE_CONTENT_TYPE:
+                raise exc.HTTPUnsupportedMediaType('Only JSON files are accepted')
+
+            try:
+                json.loads(request.body)
+            except ValueError:
+                raise exc.HTTPUnsupportedMediaType('Only JSON files are accepted, file could not be serialized')
 
             return func(self, *args, **kwargs)
         return wrapper
