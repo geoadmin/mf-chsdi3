@@ -5471,6 +5471,12 @@ msgstr "UFAC"
 msgid "ch.bazl.baulinien-flughafenanlagen.oereb"
 msgstr "Allineamenti aeroporti RDPP"
 
+msgid "ch.bazl.bebaute-gebiete_luftfahrtrecht"
+msgstr "Zone edificate OSIA"
+
+msgid "ch.bazl.bebaute-gebiete_luftfahrtrecht.bebaut_unbebaut"
+msgstr "Zone edificate ai sensi dell'articolo 63 e dell'articolo 65a OSIA (RS 748.131.1). All'interno di queste zone sottostanno all'obbligo di registrazione gli oggetti con un'altezza pari o superiore a 60 m, al di fuori di esse gli oggetti con un'altezza pari o"
+
 msgid "ch.bazl.einschraenkungen-drohnen"
 msgstr "Restrizioni per droni"
 
@@ -8124,7 +8130,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.stkind"
 msgstr "Stato dello sfruttamento"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"
-msgstr "Materie prime energetiche"
+msgstr "Idrocarburi fossili: giacimenti"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.ederkinds"
 msgstr "Materie prime sfruttate"

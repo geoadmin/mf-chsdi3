@@ -5471,6 +5471,12 @@ msgstr "OFAC"
 msgid "ch.bazl.baulinien-flughafenanlagen.oereb"
 msgstr "Alignements aéroports RDPPF"
 
+msgid "ch.bazl.bebaute-gebiete_luftfahrtrecht"
+msgstr "Zones construites OSIA"
+
+msgid "ch.bazl.bebaute-gebiete_luftfahrtrecht.bebaut_unbebaut"
+msgstr "Zones construites aux termes des art. 63 et 65a, OSIA (RS 748.131.1). L'enregistrement est obligatoire pour les objets d'une hauteur de 60 m ou plus présents dans ces zones. Hors de ces zones, l'enregistrement est obligatoire pour les objets d’une hauteur"
+
 msgid "ch.bazl.einschraenkungen-drohnen"
 msgstr "Restrictions pour drones"
 
@@ -8124,7 +8130,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.stkind"
 msgstr "Status d’exploitation"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"
-msgstr "Matières premières énergétiques"
+msgstr "Hydrocarbures fossiles: gisements"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.ederkinds"
 msgstr "Matières premières exploitées"
