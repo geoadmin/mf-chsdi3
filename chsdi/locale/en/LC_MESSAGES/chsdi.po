@@ -5471,6 +5471,12 @@ msgstr "FOCA"
 msgid "ch.bazl.baulinien-flughafenanlagen.oereb"
 msgstr "Building lines airports PLR"
 
+msgid "ch.bazl.bebaute-gebiete_luftfahrtrecht"
+msgstr "Built-up areas VIL"
+
+msgid "ch.bazl.bebaute-gebiete_luftfahrtrecht.bebaut_unbebaut"
+msgstr "Built-up areas in accordance with Articles 63 and 65a of the Federal Ordinance of 23 November 1994 on Civil Aviation Infrastructure (SR 748.131.1): objects with a height of 60 metres or more within built-up areas are subject to a registration requirement,"
+
 msgid "ch.bazl.einschraenkungen-drohnen"
 msgstr "Restrictions for drones"
 
@@ -8124,7 +8130,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.stkind"
 msgstr "Abbaustatus"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"
-msgstr "Fossil fuels: deposits"
+msgstr "Fossil hydrocarbons: deposits"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.ederkinds"
 msgstr "Rohstoffe abgebaut"

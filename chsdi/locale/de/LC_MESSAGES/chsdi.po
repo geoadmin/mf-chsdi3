@@ -5471,6 +5471,12 @@ msgstr "BAZL"
 msgid "ch.bazl.baulinien-flughafenanlagen.oereb"
 msgstr "Baulinien Flughäfen ÖREB"
 
+msgid "ch.bazl.bebaute-gebiete_luftfahrtrecht"
+msgstr "Bebaute Gebiete VIL"
+
+msgid "ch.bazl.bebaute-gebiete_luftfahrtrecht.bebaut_unbebaut"
+msgstr "Bebaute Gebiete im Sinne von Art. 63 und Art. 65a VIL (SR 748.131.1). Innerhalb dieser Gebiete sind Objekte mit einer Höhe von 60 m oder mehr registrierungspflichtig, ausserhalb ab 25 m oder mehr (Mobilkrane ab einer Höhe von 40m und mehr). Für Objekte mi"
+
 msgid "ch.bazl.einschraenkungen-drohnen"
 msgstr "Einschränkungen für Drohnen"
 
@@ -8124,7 +8130,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-industrieminerale.stkind"
 msgstr "Abbaustatus"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas"
-msgstr "Energierohstoffe: Vorkommen"
+msgstr "Fossile Kohlenwasserstoffe: Vorkommen"
 
 msgid "ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas.ederkinds"
 msgstr "Rohstoffe abgebaut"
