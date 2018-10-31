@@ -161,7 +161,7 @@ register('ch.vbs.logistikraeume-armeelogistikcenter', LogistikraeumeArmeelogisti
 
 
 class Waldschaden(Base, Vector):
-    __tablename__ = 'projektil'
+    __tablename__ = 'projektil_update'
     __table_args__ = ({'schema': 'wascha', 'autoload': False})
     __template__ = 'templates/htmlpopup/waldschadenkarte.mako'
     __bodId__ = 'ch.vbs.waldschadenkarte'
