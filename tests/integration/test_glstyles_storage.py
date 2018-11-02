@@ -124,7 +124,7 @@ class TestGLStylesView(TestsBase):
         self.assertNotEqual(file_id, new_file_id)
 
         # re-get first file
-        resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
+        resp = self.testapp.get('/glstyles/%s' % file_id, headers=self.headers, status=200)
         new_content = resp.body
 
         self.assertEqual(new_content, GL_STYLE_JSON)
