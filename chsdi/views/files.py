@@ -14,6 +14,7 @@ class FileView(FilesHandler):
         self.bucket_key_name = 'geoadmin_file_storage_bucket'
         self.bucket_name = request.registry.settings['geoadmin_file_storage_bucket']
         self.default_mime_type = 'application/vnd.google-earth.kml+xml'
+        self.default_route_name = 'files'
         FilesHandler.__init__(self, request)
 
     @view_config(route_name='files_collection', request_method='POST')
