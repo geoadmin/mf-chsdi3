@@ -108,17 +108,18 @@ class FilesHandler(object):
     # Define with the dot
     bucket_file_extension = ''
     default_mime_type = ''
+    default_route_name = ''
 
     def __init__(self, request):
         self.request = request
 
         # Set up AWS DynamoDB and S3 handlers
         self.dynamodb_fileshandler = DynamoDBFilesHandler(
-            'geoadmin-file-storage', self.bucket_key_name)
+            self.dynamodb_table_name, self.bucket_key_name)
         self.s3_fileshandler = S3FilesHandler(self.bucket_name)
 
         # This mean that we suppose a file has already been created
-        if request.matched_route.name == 'files':
+        if request.matched_route.name == self.default_route_name:
             req_id = request.matchdict['id']
             db_item = self.dynamodb_fileshandler.get_item(req_id)
             # Item is None if not found
