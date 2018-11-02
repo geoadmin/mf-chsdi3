@@ -55,58 +55,58 @@ class TestGLStylesView(TestsBase):
                         'X-SearchServer-Authorized': 'true'}
 
     def test_create_glstyle(self):
-        resp = self.testapp.post('/glstyles', GL_STYLE_JSON, headers=self.headers, status=200)
+        resp = self.testapp.post('/gl-styles', GL_STYLE_JSON, headers=self.headers, status=200)
         self.assertIn('adminId', resp.json)
 
     def test_glstyle_not_auth(self):
-        self.testapp.post('/glstyles', GL_STYLE_JSON, headers=self.headers_not_auth, status=403)
+        self.testapp.post('/gl-styles', GL_STYLE_JSON, headers=self.headers_not_auth, status=403)
 
     def test_glstyle_invalid_content_type(self):
-        self.testapp.post('/glstyles', GL_STYLE_JSON, headers=self.headers_wrong_ctype, status=415)
+        self.testapp.post('/gl-styles', GL_STYLE_JSON, headers=self.headers_wrong_ctype, status=415)
 
     def test_invalid_json(self):
-        self.testapp.post('/glstyles', INVALID_JSON, headers=self.headers, status=415)
+        self.testapp.post('/gl-styles', INVALID_JSON, headers=self.headers, status=415)
 
     def test_update_glstyle(self):
-        resp = self.testapp.post('/glstyles', GL_STYLE_JSON, headers=self.headers, status=200)
+        resp = self.testapp.post('/gl-styles', GL_STYLE_JSON, headers=self.headers, status=200)
         admin_id = resp.json['adminId']
 
-        resp = self.testapp.post('/glstyles/%s' % admin_id, GL_STYLE_JSON, headers=self.headers, status=200)
+        resp = self.testapp.post('/gl-styles/%s' % admin_id, GL_STYLE_JSON, headers=self.headers, status=200)
         self.assertTrue(resp.json['status'], 'updated')
         self.assertEqual(admin_id, resp.json['adminId'])
 
     def test_forked_glstyle(self):
-        resp = self.testapp.post('/glstyles', GL_STYLE_JSON, headers=self.headers, status=200)
+        resp = self.testapp.post('/gl-styles', GL_STYLE_JSON, headers=self.headers, status=200)
         admin_id = resp.json['adminId']
         file_id = resp.json['fileId']
 
-        resp = self.testapp.post('/glstyles/%s' % file_id, GL_STYLE_JSON, headers=self.headers, status=200)
+        resp = self.testapp.post('/gl-styles/%s' % file_id, GL_STYLE_JSON, headers=self.headers, status=200)
         self.assertEqual(resp.json['status'], 'copied')
         self.assertNotEqual(admin_id, resp.json['adminId'])
         self.assertNotEqual(file_id, resp.json['fileId'])
 
     def test_delete_glstyle(self):
-        resp = self.testapp.post('/glstyles', GL_STYLE_JSON, headers=self.headers, status=200)
+        resp = self.testapp.post('/gl-styles', GL_STYLE_JSON, headers=self.headers, status=200)
         admin_id = resp.json['adminId']
         file_id = resp.json['fileId']
 
         # delete with file_id
-        resp = self.testapp.delete('/glstyles/%s' % file_id, headers=self.headers, status=401)
+        resp = self.testapp.delete('/gl-styles/%s' % file_id, headers=self.headers, status=401)
 
         # Delete with admin_id
-        resp = self.testapp.delete('/glstyles/%s' % admin_id, headers=self.headers, status=200)
+        resp = self.testapp.delete('/gl-styles/%s' % admin_id, headers=self.headers, status=200)
         self.assertTrue(resp.json['success'])
 
         resp = self.testapp.delete('/files/%s' % 'this-file-is-nothing', headers=self.headers, status=404)
 
     def test_update_copy_glstyle(self):
         # First request, to get ids
-        resp = self.testapp.post('/glstyles', GL_STYLE_JSON, headers=self.headers, status=200)
+        resp = self.testapp.post('/gl-styles', GL_STYLE_JSON, headers=self.headers, status=200)
         admin_id = resp.json['adminId']
         file_id = resp.json['fileId']
 
         # get file
-        resp = self.testapp.get('/glstyles/%s' % file_id, headers=self.headers, status=200)
+        resp = self.testapp.get('/gl-styles/%s' % file_id, headers=self.headers, status=200)
         orig_data = resp.body
         self.assertEqual(orig_data, GL_STYLE_JSON)
 
@@ -115,7 +115,7 @@ class TestGLStylesView(TestsBase):
         new_content['zoom'] = 8
         new_content = json.dumps(new_content)
 
-        resp = self.testapp.post('/glstyles/%s' % file_id, new_content, headers=self.headers, status=200)
+        resp = self.testapp.post('/gl-styles/%s' % file_id, new_content, headers=self.headers, status=200)
         new_admin_id = resp.json['adminId']
         new_file_id = resp.json['fileId']
         modified_content = resp.body
@@ -124,7 +124,7 @@ class TestGLStylesView(TestsBase):
         self.assertNotEqual(file_id, new_file_id)
 
         # re-get first file
-        resp = self.testapp.get('/glstyles/%s' % file_id, headers=self.headers, status=200)
+        resp = self.testapp.get('/gl-styles/%s' % file_id, headers=self.headers, status=200)
         new_content = resp.body
 
         self.assertEqual(new_content, GL_STYLE_JSON)
