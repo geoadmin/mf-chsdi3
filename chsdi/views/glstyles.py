@@ -14,8 +14,7 @@ class GLStylesView(FilesHandler):
         self.bucket_key_name = 'geoadmin_file_storage_bucket'
         self.bucket_name = request.registry.settings['geoadmin_file_storage_bucket']
         self.default_mime_type = 'application/json'
-        self.bucket_folder = 'glstyles'
-        self.bucket_file_extension = '.json'
+        self.bucket_folder = 'gl-styles'
         self.default_route_name = 'glstyles'
         FilesHandler.__init__(self, request)
 
