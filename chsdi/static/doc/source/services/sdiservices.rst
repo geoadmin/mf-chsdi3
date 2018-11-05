@@ -1105,7 +1105,7 @@ Examples
 - `Get the Wikipedia abstract (Municipality) <https://tinyurl.com/z42lts9>`_
 - `Get the five highest stops <https://tinyurl.com/yah7tbwd>`_
 - `Get stops above 3000 meters <https://tinyurl.com/yauhxk6x>`_
-- `Get stops with means of transportation = Rack railway, boat <https://tinyurl.com/y9fqst39>`_
+- `Get stops with means of transportation = Rack railway, boat <http://yasgui.org/short/KDFqRql5l>`_
 
 
 .. _inspireAtomFeed:
