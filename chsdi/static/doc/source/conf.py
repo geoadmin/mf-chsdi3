@@ -97,7 +97,7 @@ pygments_style = 'sphinx'
 
 # The path to the JavaScript file to include in the HTML files in order to 
 # load MathJax. By default insecure http protocol is used. 
-mathjax_path = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+mathjax_path = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 # -- Options for HTML output ---------------------------------------------------
 
