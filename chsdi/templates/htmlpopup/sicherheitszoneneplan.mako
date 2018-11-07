@@ -19,7 +19,10 @@
     import datetime
     lang = lang if lang in ('fr','it') else 'de'
     format = 'formate_%s' % lang
-    date = datetime.datetime.strptime(c['attributes']['approval_date'].strip(), "%d-%m-%Y").strftime("%d.%m.%Y")
+    try:
+        date = datetime.datetime.strptime(c['attributes']['approval_date'].strip(), "%d-%m-%Y").strftime("%d.%m.%Y")
+    except ValueError:
+        date = 'format error'
 %>
   <table>
     <tr><td class="cell-meta-small">${_('safety_zone')}</td><td class="cell-meta-big">${c['attributes']['zone_name']}</td></tr>
