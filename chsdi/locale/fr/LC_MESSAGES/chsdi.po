@@ -2210,6 +2210,18 @@ msgstr "Système de mise en réseau faune"
 msgid "ch.bafu.fauna-wildtierkorridor_national"
 msgstr "Corridors faunistiques suprarégional"
 
+msgid "ch.bafu.fauna-wildtierkorridor_national.name"
+msgstr "Nom"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.objnummer"
+msgstr "ObjetNr."
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.ref_obj_blat"
+msgstr "Lien"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand"
+msgstr "État"
+
 msgid "ch.bafu.feststoffe-geschiebemessnetz"
 msgstr "SOLID fédéral, alluvions fluv."
 

@@ -2210,6 +2210,18 @@ msgstr "Sistem colliaziun animals selvadis"
 msgid "ch.bafu.fauna-wildtierkorridor_national"
 msgstr "Corridors selvaschina surregiunal"
 
+msgid "ch.bafu.fauna-wildtierkorridor_national.name"
+msgstr "Name"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.objnummer"
+msgstr "ObjektNr."
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.ref_obj_blat"
+msgstr "Link"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand"
+msgstr "Zustand"
+
 msgid "ch.bafu.feststoffe-geschiebemessnetz"
 msgstr "SOLID Confederaziun, gera"
 
