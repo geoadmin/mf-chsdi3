@@ -181,7 +181,7 @@ from pyramid.url import route_url
     // TO FIX: Sometimes the parsing fails
     // ex: http://mf-chsdi3.dev.bgdi.ch/ltteo/rest/services/all/MapServer/ch.bazl.luftfahrthindernis/7316/extendedHtmlPopup 
     try {
-      geomJson = JSON.parse("${geometry['coordinates']}".replace(/\(/g,'[').replace(/\)/g,']'));
+      geomJson = JSON.parse("${geometry['coordinates']}".replace(/\(/g,'[').replace(/\)/g,']').replace(/\]\],\]$/,']]]'));
     } catch(e) {
     }
     if (geomJson) {
