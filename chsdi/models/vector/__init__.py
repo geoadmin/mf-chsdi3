@@ -6,7 +6,6 @@ import esrijson
 import datetime
 import decimal
 from pyramid.threadlocal import get_current_registry
-from chsdi.lib.exceptions import HTTPBandwidthLimited
 from chsdi.models.types import GeometryChsdi
 from shapely.geometry import box
 from sqlalchemy.sql import func
@@ -18,6 +17,9 @@ from geoalchemy2.shape import to_shape
 
 Geometry2D = GeometryChsdi(geometry_type='GEOMETRY', dimension=2, srid=2056)
 Geometry3D = GeometryChsdi(geometry_type='GEOMETRY', dimension=3, srid=2056)
+
+
+MAX_FEATURE_GEOMETRY_SIZE = 1e6
 
 
 def get_resolution(imageDisplay, mapExtent):
@@ -65,6 +67,7 @@ class Vector(object):
     def __read__(self):
         id = None
         geom = None
+        bbox = None
         properties = {}
         for p in class_mapper(self.__class__).iterate_properties:
             if isinstance(p, ColumnProperty):
@@ -79,19 +82,17 @@ class Vector(object):
                     if hasattr(self, '_shape'):
                         geom = self._shape
                     elif val is not None:
-                        if len(val.data) > 1000000:
-                            raise HTTPBandwidthLimited(
-                                'Feature ID %s: is too large' % self.id)
                         geom = to_shape(val)
+                    try:
+                        bbox = geom.bounds
+                    except:
+                        pass
+                    if len(val.data) > MAX_FEATURE_GEOMETRY_SIZE:
+                        geom = None
                 elif (not col.foreign_keys and
                       not isinstance(col.type, GeometryChsdi)):
                     properties[p.key] = val
         properties = self.insert_label(properties)
-        bbox = None
-        try:
-            bbox = geom.bounds
-        except:
-            pass
 
         return id, geom, properties, bbox
 
