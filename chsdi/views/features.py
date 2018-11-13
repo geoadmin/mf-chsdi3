@@ -267,7 +267,7 @@ def _identify_grid(params, layerBodIds):
         grid = Grid(gridSpec.get('extent'),
                     gridSpec.get('resolutionX'),
                     gridSpec.get('resolutionY'))
-        if params.srid == 2056 and gridSpec['srid'] == '21781':
+        if params.srid == 2056 and gridSpec.get('srid') == '21781':
             pointCoordinates = shift_to(pointCoordinates, 21781)
         [col, row] = grid.cellAddressFromPointCoordinate(pointCoordinates)
         if col is not None and row is not None:
@@ -277,7 +277,7 @@ def _identify_grid(params, layerBodIds):
                 # For some reason we define the id twice..
                 feature['featureId'] = feature['id']
                 feature['properties']['label'] = feature['id']
-                if params.srid == 2056 and gridSpec['srid'] == '21781':
+                if params.srid == 2056 and gridSpec.get('srid') == '21781':
                     feature['bbox'] = shift_to(feature['bbox'], 2056)
                     # Coords are always simple polygons
                     coords = feature['geometry']['coordinates']
