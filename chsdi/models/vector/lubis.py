@@ -141,6 +141,7 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     medium_format = Column('medium_format', Unicode)
     filesize_mb = Column('filesize_mb', Unicode)
     filename = Column('filename', Unicode)
+    filmart = Column('filmart', Unicode)
     stereo_couple = Column('stereo_couple', Unicode)
     bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
     x = Column('x', Integer)
