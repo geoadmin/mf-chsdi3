@@ -2222,6 +2222,15 @@ msgstr "Link"
 msgid "ch.bafu.fauna-wildtierkorridor_national.zustand"
 msgstr "State"
 
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_de"
+msgstr "State"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_fr"
+msgstr "State"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_it"
+msgstr "State"
+
 msgid "ch.bafu.feststoffe-geschiebemessnetz"
 msgstr "Total bedload database (CH)"
 

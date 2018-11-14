@@ -2222,6 +2222,15 @@ msgstr "Lien"
 msgid "ch.bafu.fauna-wildtierkorridor_national.zustand"
 msgstr "État"
 
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_de"
+msgstr "État"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_fr"
+msgstr "État"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_it"
+msgstr "État"
+
 msgid "ch.bafu.feststoffe-geschiebemessnetz"
 msgstr "SOLID fédéral, alluvions fluv."
 

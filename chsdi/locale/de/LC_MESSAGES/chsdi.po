@@ -2222,6 +2222,15 @@ msgstr "Link"
 msgid "ch.bafu.fauna-wildtierkorridor_national.zustand"
 msgstr "Zustand"
 
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_de"
+msgstr "Zustand"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_fr"
+msgstr "Zustand"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_it"
+msgstr "Zustand"
+
 msgid "ch.bafu.feststoffe-geschiebemessnetz"
 msgstr "SOLID Bund, Geschiebe"
 
