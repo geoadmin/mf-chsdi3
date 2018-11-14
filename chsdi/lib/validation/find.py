@@ -2,7 +2,7 @@
 
 from pyramid.httpexceptions import HTTPBadRequest
 
-from chsdi.lib.validation import MapNameValidation
+from chsdi.lib.validation import MapNameValidation, SUPPORTED_OUTPUT_SRS
 
 
 class FindServiceValidation(MapNameValidation):
@@ -98,7 +98,7 @@ class FindServiceValidation(MapNameValidation):
 
     @srid.setter
     def srid(self, value):
-        if value in ('2056', '21781'):
+        if value in map(str, SUPPORTED_OUTPUT_SRS):
             self._srid = int(value)
         elif value is not None:
             raise HTTPBadRequest('Unsupported spatial reference %s' % value)

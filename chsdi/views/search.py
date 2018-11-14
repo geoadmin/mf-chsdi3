@@ -495,6 +495,11 @@ class Search(SearchValidation):
         # We always keep the bbox in 21781
         if self.srid == 2056:
             ref = shift_to(ref, 2056)
+        # TODO why?
+        elif self.srid in (3857, 4326):
+            bottom_left = ((ref[0], ref[2]), self.srid, '21781')
+            top_right = ((ref[1], ref[3]), self.srid, '21781')
+            ref = (bottom_left[0], bottom_left[1], top_right[0], top_right[1])
         try:
             refbox = box(ref[0], ref[1], ref[2], ref[3]) if not _is_point(ref) else Point(ref[0], ref[1])
             arr = parse_box2d(result)
