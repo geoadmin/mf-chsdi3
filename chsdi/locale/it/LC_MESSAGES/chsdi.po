@@ -2210,6 +2210,27 @@ msgstr "Sistema di collegamento fauna"
 msgid "ch.bafu.fauna-wildtierkorridor_national"
 msgstr "Corridoi faunistici sovraregionale"
 
+msgid "ch.bafu.fauna-wildtierkorridor_national.name"
+msgstr "Nome"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.objnummer"
+msgstr "OgettoNo."
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.ref_obj_blat"
+msgstr "Link"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand"
+msgstr "Stato"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_de"
+msgstr "Stato"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_fr"
+msgstr "Stato"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_it"
+msgstr "Stato"
+
 msgid "ch.bafu.feststoffe-geschiebemessnetz"
 msgstr "SOLID federale, solido di fondo"
 

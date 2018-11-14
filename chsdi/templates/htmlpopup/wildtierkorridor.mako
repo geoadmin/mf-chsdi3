@@ -3,24 +3,20 @@
 <%def name="table_body(c, lang)">
 
 <%
-    lang = 'fr' if lang in ('fr', 'it') else 'dt'
-    zusta = 'zusta_%s' % lang
+    lang = lang if lang in ('fr', 'it') else 'de'
+    zustand = 'zustand_%s' % lang
 
-    if c['attributes']['nr'] is not None:
-        dataGeoAdminHost = request.registry.settings['datageoadminhost']
-        dataPath = 'ch.bafu.fauna-wildtierkorridor_national/PDF'
-        url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/"  + c['attributes']['nr'] + '.pdf'
 %>
 
-    <tr><td class="cell-left">${_('tt_ch.bafu.fauna-wildtierkorridor_national_nr')}</td>       <td>${c['attributes']['nr'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('tt_ch.bafu.fauna-wildtierkorridor_national_zustand')}</td>  <td>${c['attributes'][zusta] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('pdf')}</td>                                         <td>
-    % if c['attributes']['nr']:
-      <a href="${url_pdf}" target="_blank">${_('link')}</a>
+    <tr><td class="cell-left">${_('ch.bafu.fauna-wildtierkorridor_national.objnummer')}</td>       <td>${c['attributes']['objnummer'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.fauna-wildtierkorridor_national.name')}</td>            <td>${c['attributes']['name'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.fauna-wildtierkorridor_national.zustand')}</td>         <td>${c['attributes'][zustand] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('pdf')}</td>          <td>
+    % if c['attributes']['ref_obj_blat']:
+      <a href="${c['attributes']['ref_obj_blat']}" target="_blank">${_('link')}</a>
     % else:
-      -
+        -
     % endif
-     </td></tr>
-
+    </td></tr>
 </%def>
 

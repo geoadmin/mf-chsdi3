@@ -2210,6 +2210,27 @@ msgstr "Wildlife network system"
 msgid "ch.bafu.fauna-wildtierkorridor_national"
 msgstr "Interregional wildlife corridor"
 
+msgid "ch.bafu.fauna-wildtierkorridor_national.name"
+msgstr "Name"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.objnummer"
+msgstr "ObjectNo."
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.ref_obj_blat"
+msgstr "Link"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand"
+msgstr "State"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_de"
+msgstr "State"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_fr"
+msgstr "State"
+
+msgid "ch.bafu.fauna-wildtierkorridor_national.zustand_it"
+msgstr "State"
+
 msgid "ch.bafu.feststoffe-geschiebemessnetz"
 msgstr "Total bedload database (CH)"
 

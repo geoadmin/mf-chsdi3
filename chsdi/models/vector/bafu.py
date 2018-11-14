@@ -2127,15 +2127,19 @@ register('ch.bafu.wrz-wildruhezonen_portal', Wrzportal)
 
 
 class Wildtier(Base, Vector):
-    __tablename__ = 'wildtierkorridore'
+    __tablename__ = 'wildtierkorridore_national'
     __table_args__ = ({'schema': 'fauna', 'autoload': False})
     __bodId__ = 'ch.bafu.fauna-wildtierkorridor_national'
     __template__ = 'templates/htmlpopup/wildtierkorridor.mako'
-    __label__ = 'nr'
+    __label__ = 'objnummer'
+    __queryable_attributes__ = ['name', 'objnummer', 'zustand_de', 'zustand_fr', 'zustand_it']
     id = Column('bgdi_id', Integer, primary_key=True)
-    nr = Column('nr', Unicode)
-    zusta_dt = Column('zusta_dt', Unicode)
-    zusta_fr = Column('zusta_fr', Unicode)
+    objnummer = Column('objnummer', Unicode)
+    name = Column('name', Unicode)
+    zustand_de = Column('zustand_de', Unicode)
+    zustand_fr = Column('zustand_fr', Unicode)
+    zustand_it = Column('zustand_it', Unicode)
+    ref_obj_blat = Column('ref_obj_blat', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.fauna-wildtierkorridor_national', Wildtier)
