@@ -10,7 +10,6 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.sql.expression import func
 
 from chsdi.lib.helpers import transform_shape
-from chsdi.lib.validation import SUPPORTED_OUTPUT_SRS
 from shapely.geometry import box, Point
 
 
@@ -100,11 +99,12 @@ class TestsBase(TestCase):
             self.assertBBoxValidity(feature['bbox'], srid)
 
     def assertBBoxValidity(self, bbox, srid):
-        self.assertIn(srid, SUPPORTED_OUTPUT_SRS)
-        grid = self.grids[str(srid)]
-        minx, miny, maxx, maxy = bbox
-
-        self.assertLessEqual(maxx, grid.MAXX)
-        self.assertLessEqual(maxy, grid.MAXY)
-        self.assertGreaterEqual(minx, grid.MINX)
-        self.assertGreaterEqual(miny, grid.MINY)
+        if srid == 21781:
+            self.assertLess(bbox[0], self.grids['2056'].MINX)
+            self.assertLess(bbox[1], self.grids['2056'].MINY)
+        if srid == 2056:
+            self.assertGreater(bbox[0], self.grids['2056'].MINX)
+            self.assertGreater(bbox[1], self.grids['2056'].MINY)
+        if srid in (3857, 4326):
+            self.assertGreater(bbox[0], self.grids[str(srid)].MINX)
+            self.assertGreater(bbox[1], self.grids[str(srid)].MINY)
