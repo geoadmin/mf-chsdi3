@@ -18,9 +18,9 @@ class TestSearchServiceView(TestsBase):
                 if srid == 21781:
                     self.assertLess(attrs['y'], self.grids['2056'].MINX)
                     self.assertLess(attrs['x'], self.grids['2056'].MINY)
-                if srid == 2056:
-                    self.assertGreater(attrs['y'], self.grids['2056'].MINX)
-                    self.assertGreater(attrs['x'], self.grids['2056'].MINY)
+                if srid in (2056, 4326, 3857):
+                    self.assertGreater(attrs['y'], self.grids[str(srid)].MINX)
+                    self.assertGreater(attrs['x'], self.grids[str(srid)].MINY)
             else:
                 self.assertNotIn('lon', attrs)
                 self.assertNotIn('lat', attrs)
@@ -171,6 +171,14 @@ class TestSearchServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056)
+        params['sr'] = '3857'
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertAttrs('locations', resp.json['results'][0]['attrs'], 3857)
+        params['sr'] = '4326'
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertAttrs('locations', resp.json['results'][0]['attrs'], 4326)
 
     def test_bbox_wrong_number_coordinates(self):
         params = {

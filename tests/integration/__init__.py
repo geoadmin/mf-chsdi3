@@ -28,7 +28,9 @@ class TestsBase(TestCase):
         self.testapp = TestApp(app)
         self.grids = {
             '21781': getTileGrid(21781),
-            '2056': getTileGrid(2056)
+            '2056': getTileGrid(2056),
+            '3857': getTileGrid(3857),
+            '4326': getTileGrid(4326)
         }
 
     def tearDown(self):
@@ -82,3 +84,6 @@ class TestsBase(TestCase):
         if srid == 2056:
             self.assertGreater(bbox[0], self.grids['2056'].MINX)
             self.assertGreater(bbox[1], self.grids['2056'].MINY)
+        if srid in (3857, 4326):
+            self.assertGreater(bbox[0], self.grids[str(srid)].MINX)
+            self.assertGreater(bbox[1], self.grids[str(srid)].MINY)
