@@ -6,6 +6,7 @@ import requests
 import datetime
 import gzip
 import StringIO
+from functools import partial
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
 from pyramid.url import route_url
@@ -14,9 +15,11 @@ import unicodedata
 from urllib import quote
 from urlparse import urlparse, urlunparse, urljoin
 import xml.etree.ElementTree as etree
-from pyproj import Proj, transform
+from pyproj import Proj, transform as proj_transform
 from requests.exceptions import ConnectionError
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from shapely.ops import transform as shape_transform
+
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 
@@ -288,13 +291,30 @@ def imagesize_from_metafile(tileUrlBasePath, bvnummer):
     return (width, height)
 
 
-def transform_coordinate(coords, srid_from, srid_to):
-    srid_in = Proj(init='epsg:%s' % srid_from)
-    srid_out = Proj(init='epsg:%s' % srid_to)
-    return transform(srid_in, srid_out, coords[0], coords[1])
+def get_proj_from_srid(srid):
+    return Proj(init='EPSG:{}'.format(srid))
 
+
+def transform_coordinate(coords, srid_from, srid_to):
+    proj_in = get_proj_from_srid(srid_from)
+    proj_out = get_proj_from_srid(srid_to)
+    return proj_transform(proj_in, proj_out, coords[0], coords[1])
+
+
+def transform_shape(geom, srid_from, srid_to):
+    if (srid_from == srid_to):
+        return geom
+
+    proj_in = get_proj_from_srid(srid_from)
+    proj_out = get_proj_from_srid(srid_to)
+
+    projection_func = partial(proj_transform, proj_in, proj_out)
+
+    return shape_transform(projection_func, geom)
 
 # float('NaN') does not raise an Exception. This function does.
+
+
 def float_raise_nan(val):
     ret = float(val)
     if math.isnan(ret):
