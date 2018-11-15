@@ -402,7 +402,7 @@ class Search(SearchValidation):
             b = map(float, re.split(' |,', box_str))
             shape = box(*b)
             bbox = transform_shape(shape, self.DEFAULT_SRID, self.srid).bounds
-            res['geom_st_box2d'] = "BOX({} {},{} {})".format(*bbox)
+            res['geom_st_box2d'] = "BOX({} {}, {} {})".format(*bbox)
         except Exception:
             raise exc.HTTPInternalServerError('Error while converting BOX2D to EPSG:{}'.format(self.srid))
         return res
@@ -413,22 +413,15 @@ class Search(SearchValidation):
             attrs2Del = ['x', 'y', 'lon', 'lat', 'geom_st_box2d']
             popAtrrs = lambda x: res.pop(x) if x in res else x
             map(popAtrrs, attrs2Del)
-        elif int(self.srid) not in (21781, 2056):
+        elif self.srid not in ('21781', '2056'):
             self._box2d_transform(res)
-            if int(self.srid) == 4326:
-                try:
-                    res['x'] = res['lon']
-                    res['y'] = res['lat']
-                except KeyError:
-                    raise exc.HTTPInternalServerError('Sphinx location has no lat/long defined')
-            else:
-                try:
-                    pnt = (res['y'], res['x'])
-                    x, y = transform_coordinate(pnt, self.DEFAULT_SRID, self.srid)
-                    res['x'] = x
-                    res['y'] = y
-                except Exception:
-                    raise exc.HTTPInternalServerError('Error while converting point(x, y) to EPSG:{}'.format(self.srid))
+            try:
+                pnt = (res['y'], res['x'])
+                x, y = transform_coordinate(pnt, self.DEFAULT_SRID, self.srid)
+                res['x'] = x
+                res['y'] = y
+            except Exception:
+                raise exc.HTTPInternalServerError('Error while converting point(x, y) to EPSG:{}'.format(self.srid))
         return res
 
     def _parse_location_results(self, results):
@@ -526,11 +519,6 @@ class Search(SearchValidation):
         # We always keep the bbox in 21781
         if self.srid == 2056:
             ref = shift_to(ref, 2056)
-        # TODO why?
-        elif self.srid in (3857, 4326):
-            bottom_left = ((ref[0], ref[2]), self.srid, '21781')
-            top_right = ((ref[1], ref[3]), self.srid, '21781')
-            ref = (bottom_left[0], bottom_left[1], top_right[0], top_right[1])
         try:
             refbox = box(ref[0], ref[1], ref[2], ref[3]) if not _is_point(ref) else Point(ref[0], ref[1])
             arr = parse_box2d(result)
