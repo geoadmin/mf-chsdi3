@@ -402,7 +402,7 @@ class Search(SearchValidation):
             b = map(float, re.split(' |,', box_str))
             shape = box(*b)
             bbox = transform_shape(shape, self.DEFAULT_SRID, self.srid).bounds
-            res['geom_st_box2d'] = "BOX({} {}, {} {})".format(*bbox)
+            res['geom_st_box2d'] = "BOX({} {},{} {})".format(*bbox)
         except Exception:
             raise exc.HTTPInternalServerError('Error while converting BOX2D to EPSG:{}'.format(self.srid))
         return res
@@ -413,7 +413,7 @@ class Search(SearchValidation):
             attrs2Del = ['x', 'y', 'lon', 'lat', 'geom_st_box2d']
             popAtrrs = lambda x: res.pop(x) if x in res else x
             map(popAtrrs, attrs2Del)
-        elif self.srid not in ('21781', '2056'):
+        elif int(self.srid) not in (21781, 2056):
             self._box2d_transform(res)
             try:
                 pnt = (res['y'], res['x'])

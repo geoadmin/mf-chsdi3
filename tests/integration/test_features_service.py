@@ -9,7 +9,7 @@ class TestFeaturesView(TestsBase):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register',
                   'searchField': 'egid',
                   'searchText': '1231641',
-                  'sr': '4326'}
+                  'sr': '9999'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
         resp.mustcontain('Unsupported spatial reference')
 
