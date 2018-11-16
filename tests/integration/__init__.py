@@ -9,6 +9,27 @@ from chsdi.models import models_from_bodid
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.sql.expression import func
 
+from chsdi.lib.helpers import transform_shape
+from shapely.geometry import box, Point
+
+
+def reproject_to_srid(string_coords, srid_from, srid_to, round_to=2):
+    if (srid_from == srid_to):
+        return string_coords
+    reproj_coords = []
+    fmt = '.{}f'.format(round_to)
+    coords = [float(c) for c in string_coords.split(',')]
+
+    if len(coords) > 2:
+        geom = box(*coords)
+    elif len(coords) == 2:
+        geom = Point(*coords)
+    else:
+        raise NotImplemented("Cannot transform {} to shape".format(string_coords))
+    reproj_coords += transform_shape(geom, srid_from, srid_to).bounds
+
+    return ','.join([format(c, fmt) for c in reproj_coords])
+
 
 def shift_to_lv95(string_coords):
     coords = string_coords.split(',')
