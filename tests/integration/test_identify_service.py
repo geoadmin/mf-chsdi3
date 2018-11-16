@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from tests.integration import TestsBase, shift_to_lv95
+from tests.integration import TestsBase, shift_to_lv95, reproject_to_srid
 import math
 
 accept_headers = {'Accept': 'application/json, text/plain, */*'}
@@ -270,7 +270,7 @@ class TestIdentifyService(TestsBase):
         self.assertEqual(resp_1.json['results'][0]['id'], resp_2.json['results'][0]['id'])
 
     def test_identify_with_geojson_returned_geometry(self):
-        params = {'geometry': '600000,200000,631000,210000',
+        params = {'geometry': '600000,200000,6020000,2020000',  # 600000,200000,631000,210000',
                   'geometryType': 'esriGeometryEnvelope',
                   'imageDisplay': '500,600,96',
                   'mapExtent': '548945.5,147956,549402,148103.5',
@@ -288,8 +288,50 @@ class TestIdentifyService(TestsBase):
         resp_2 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp_2.content_type, 'application/json')
         self.assertGeojsonFeature(resp_2.json['results'][0], 2056)
-
+        self.assertEqual(len(resp_2.json['results']), len(resp_1.json['results']))
         self.assertEqual(resp_1.json['results'][0]['id'], resp_2.json['results'][0]['id'])
+
+    def test_identify_with_geojson_returned_geometry_various_sr(self):
+        params = {'geometry': '600000,200000,601000,201000',
+                  'geometryType': 'esriGeometryEnvelope',
+                  'imageDisplay': '500,600,96',
+                  'mapExtent': '548945.5,147956,549402,148103.5',
+                  'tolerance': '1',
+                  'layers': 'all:ch.bav.haltestellen-oev',
+                  'geometryFormat': 'geojson',
+                  'sr': '21781'}
+
+        # LV03
+        resp_1 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp_1.content_type, 'application/json')
+        self.assertGeojsonFeature(resp_1.json['results'][0], 21781)
+        self.assertIn(resp_1.json['results'][0]['geometry']['type'], ['MultiPoint', 'GeometryCollection'])
+        resp1_ids = [d['id'] for d in resp_1.json['results']]
+
+        # LV95
+        params['sr'] = '2056'
+        params['geometry'] = shift_to_lv95(params['geometry'])
+        params['mapExtent'] = shift_to_lv95(params['mapExtent'])
+        resp_2 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp_2.content_type, 'application/json')
+        self.assertGeojsonFeature(resp_2.json['results'][0], 2056)
+        self.assertEqual(len(resp_2.json['results']), len(resp_1.json['results']))
+        self.assertEqual(resp_1.json['results'][0]['id'], resp_2.json['results'][0]['id'])
+        resp2_ids = [d['id'] for d in resp_2.json['results']]
+        self.assertEqual(resp1_ids, resp2_ids)
+
+        # Web Mercator
+        # TODO requess is OK, geometries are not reprojected
+        params['sr'] = '3857'
+        params['geometry'] = reproject_to_srid(params['geometry'], 2056, 3857)
+        params['mapExtent'] = reproject_to_srid(params['mapExtent'], 2056, 3857)
+        resp_3 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp_3.content_type, 'application/json')
+        self.assertGeojsonFeature(resp_3.json['results'][0], 3857)
+        self.assertEqual(len(resp_3.json['results']), len(resp_2.json['results']))
+        self.assertEqual(resp_3.json['results'][0]['id'], resp_2.json['results'][0]['id'])
+        resp3_ids = [d['id'] for d in resp_3.json['results']]
+        self.assertEqual(resp1_ids, resp3_ids)
 
     def test_identify_gen50_geom(self):
         params = {'geometryType': 'esriGeometryPoint',
