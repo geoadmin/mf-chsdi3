@@ -298,6 +298,9 @@ No more than 50 features can be retrieved per request.
 | **geometryFormat (optional)**     | Returned geometry format.                                                                 |
 |                                   | Default to ESRI geometry format. Supported values are: "esrijson" or "geojson".           |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
+| **offset (optional)**             | Offset for the first record (if more than 50 records)                                     |
+|                                   |                                                                                           |
++-----------------------------------+-------------------------------------------------------------------------------------------+
 | **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
