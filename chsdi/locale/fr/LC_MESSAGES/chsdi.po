@@ -5825,6 +5825,30 @@ msgstr "Nom"
 msgid "ch.bfe.bikesharing"
 msgstr "Bikesharing et prêt de velo"
 
+msgid "ch.bfe.biomasse-nicht-verholzt"
+msgstr "Biomasse non ligneuse"
+
+msgid "ch.bfe.biomasse-nicht-verholzt.bfs_nummer"
+msgstr "Numéro de commune"
+
+msgid "ch.bfe.biomasse-nicht-verholzt.name"
+msgstr "Nom de commune"
+
+msgid "ch.bfe.biomasse-nicht-verholzt.non_woody"
+msgstr "Potentiel durable total de la biomasse non-ligneuse en TJ d’énergie primaire"
+
+msgid "ch.bfe.biomasse-verholzt"
+msgstr "Biomasse ligneuse"
+
+msgid "ch.bfe.biomasse-verholzt.bfs_nummer"
+msgstr "Numéro de commune"
+
+msgid "ch.bfe.biomasse-verholzt.name"
+msgstr "Nom de commune"
+
+msgid "ch.bfe.biomasse-verholzt.woody"
+msgstr "Potentiel durable total de la biomasse ligneuse en TJ d’énergie primaire"
+
 msgid "ch.bfe.energieberatungsstellen"
 msgstr "Services de conseil en énergie"
 
@@ -6034,6 +6058,9 @@ msgstr "Informations supplémentaires"
 
 msgid "ch.bfe.minergiegebaeude.zertifikat"
 msgstr "Certificate"
+
+msgid "ch.bfe.rohrleitungen-konsultationsbereiche"
+msgstr "Conduites et domaines attenants"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "PS Dépôts couches géol. profondes"
