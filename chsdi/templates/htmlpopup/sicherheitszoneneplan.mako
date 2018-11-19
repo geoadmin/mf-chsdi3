@@ -16,11 +16,11 @@
 <%def name="extended_info(c, lang)"> 
 
 <%
-    import datetime
+    import dateutil.parser as date_parser
     lang = lang if lang in ('fr','it') else 'de'
     format = 'formate_%s' % lang
     try:
-        date = datetime.datetime.strptime(c['attributes']['approval_date'].strip(), "%d-%m-%Y").strftime("%d.%m.%Y")
+        date = date_parser.parse(c['attributes']['approval_date']).strftime('%d.%m.%Y')
     except ValueError:
         date = 'format error'
 %>
@@ -40,7 +40,6 @@
     <tr><td class="cell-meta-small">${_('municipality')}</td><td class="cell-meta-big">${nb_municipality}</td></tr>
     <tr><td class="cell-meta-small">${_('bazlrechtstatus')}</td><td class="cell-meta-big">${c['attributes']['legalstatus_%s' % lang]}</td></tr>
     <tr><td class="cell-meta-small">${_('approval_date')}</td><td class="cell-meta-big">${date or '-'}</td></tr>  
-   
 <%
      weblink = c['attributes']['weblink']
      if weblink:
