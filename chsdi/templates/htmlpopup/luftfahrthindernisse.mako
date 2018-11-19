@@ -26,7 +26,7 @@ from pyramid.url import route_url
 <%def name="extended_info(c, lang)">
 <%
   c['last'] = False
-  wms_url = 'http://' + request.registry.settings['wmshost']
+  wms_url = 'https://' + request.registry.settings['wmshost']
   attr = c['attributes']
   startofconstruction = str(attr['startofconstruction'].day) + '.' + str(attr['startofconstruction'].month) + '.' + str(attr['startofconstruction'].year)
   datenstand = str(attr['bgdi_created'].day) + '.' + str(attr['bgdi_created'].month) + '.' + str(attr['bgdi_created'].year)
@@ -181,7 +181,7 @@ from pyramid.url import route_url
     // TO FIX: Sometimes the parsing fails
     // ex: http://mf-chsdi3.dev.bgdi.ch/ltteo/rest/services/all/MapServer/ch.bazl.luftfahrthindernis/7316/extendedHtmlPopup 
     try {
-      geomJson = JSON.parse("${geometry['coordinates']}".replace(/\(/g,'[').replace(/\)/g,']'));
+      geomJson = JSON.parse("${geometry['coordinates']}".replace(/\(/g,'[').replace(/\)/g,']').replace(/\]\],\]$/,']]]'));
     } catch(e) {
     }
     if (geomJson) {
