@@ -49,10 +49,14 @@ endif
       <td class="cell-left">${_('tt_sachplan_beschreibung')}</td>
       <td>${c['attributes'][description_text] or '-'}</td>
     </tr>
-% if c['attributes']['doc_web']:
-    <tr>
-      <td class="cell-left">${_(doc_title)}</td>
-      <td><a href="${c['attributes']['doc_web']}" target="_blank">${c['attributes']['doc_title'] or '-'}</a></td></tr>
+%  if c['attributes']['doc_web'] and c['attributes']['doc_title']:
+<%
+    document_web_part = c['attributes']['doc_web'].split('###')
+    document_title_part = c['attributes']['doc_title'].split('###')
+%>
+%  for i in range(len(document_web_part)):
+     <tr><td class="cell-left">${_(doc_title)}</td> <td><a href="${document_web_part[i] or '-'}" target="_blank">${document_title_part[i] or '-'}</a></td></tr>
+%endfor
 % else:
     <tr>
       <td class="cell-left">${_('tt_sachplan_weitereinfo')}</td>
