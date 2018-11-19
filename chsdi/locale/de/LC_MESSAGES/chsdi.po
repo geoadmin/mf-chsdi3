@@ -5825,6 +5825,30 @@ msgstr "Name"
 msgid "ch.bfe.bikesharing"
 msgstr "Bikesharing- und Veloverleihsysteme"
 
+msgid "ch.bfe.biomasse-nicht-verholzt"
+msgstr "Nicht-verholzte Biomassen"
+
+msgid "ch.bfe.biomasse-nicht-verholzt.bfs_nummer"
+msgstr "Gemeindenummer"
+
+msgid "ch.bfe.biomasse-nicht-verholzt.name"
+msgstr "Gemeindename"
+
+msgid "ch.bfe.biomasse-nicht-verholzt.non_woody"
+msgstr "Total nachhaltige nicht verholzte Biomassenpotenziale in TJ Primärenergie"
+
+msgid "ch.bfe.biomasse-verholzt"
+msgstr "Verholzte Biomassen"
+
+msgid "ch.bfe.biomasse-verholzt.bfs_nummer"
+msgstr "Gemeindenummer"
+
+msgid "ch.bfe.biomasse-verholzt.name"
+msgstr "Gemeindename"
+
+msgid "ch.bfe.biomasse-verholzt.woody"
+msgstr "Total nachhaltige verholzte Biomassenpotenziale in TJ Primärenergie"
+
 msgid "ch.bfe.energieberatungsstellen"
 msgstr "Energieberatungsstellen"
 
@@ -6034,6 +6058,9 @@ msgstr "Weitere Informationen"
 
 msgid "ch.bfe.minergiegebaeude.zertifikat"
 msgstr "Zertifikat"
+
+msgid "ch.bfe.rohrleitungen-konsultationsbereiche"
+msgstr "Konsultationsbereiche Rohrleitungen"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "SP Geologische Tiefenlager"
