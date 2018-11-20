@@ -529,6 +529,19 @@ class TestFeaturesView(TestsBase):
         self.assertIn('groupby', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
         self.assertIn('groupbyvalue', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
 
+    def test_cut_swissimage_product_whole_dataset(self):
+        params = {'layers': 'all:ch.swisstopo.swissimage-product',
+                  'groupby': 'resolution'}
+        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
+        self.assertIn('ch.swisstopo.swissimage-product', resp.json)
+        self.assertEqual(len(resp.json['ch.swisstopo.swissimage-product']), 2)
+        self.assertGreater(len(resp.json['ch.swisstopo.swissimage-product']), 1)
+        # A bit more than Switzerland should be covered by either resolution: 0.25 or 0.50m
+        totalArea = 0
+        for group in resp.json['ch.swisstopo.swissimage-product']:
+            totalArea += group['area']
+        self.assertGreater(totalArea, 45045)
+
     def test_cut_with_feature_clipper(self):
         params = {'clipper': 'ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill:2222',
                   'layers': 'all:ch.swisstopo.swisstlm3d-karte-farbe'}

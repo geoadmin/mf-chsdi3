@@ -26,6 +26,7 @@ class GeometryServiceValidation(BaseFeaturesValidation):
         clipper = request.params.get('clipper')
         geometryType = request.params.get('geometryType')
         geometry = request.params.get('geometry')
+        groupby = request.params.get('groupby')
 
         self.esriGeometryTypes = (
             u'esriGeometryPolygon',
@@ -38,7 +39,12 @@ class GeometryServiceValidation(BaseFeaturesValidation):
 
         # No parameter -> we want the totalPerimeter
         if clipper is None and geometry is None and geometryType is None:
-            self.totalArea = True
+            if groupby is None:
+                self.totalArea = True
+            else:
+                # TODO hack for swissimage mixed: 25cm and 50cm
+                geometryType = 'esriGeometryEnvelope'
+                geometry = '0,0,9999999,9999999'
 
         if not self.totalArea:
             if not clipper:
