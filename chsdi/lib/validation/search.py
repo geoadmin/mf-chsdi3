@@ -83,7 +83,7 @@ class SearchValidation(MapNameValidation):
     @featureIndexes.setter
     def featureIndexes(self, value):
         if value is not None and value != '':
-            value = value.replace('.', '_').replace('-', '_')
+            value = value.replace('.', '_')
             self._featureIndexes = [idx[:MAX_SPHINX_INDEX_LENGTH] for idx in value.split(',')]
 
     @timeEnabled.setter
