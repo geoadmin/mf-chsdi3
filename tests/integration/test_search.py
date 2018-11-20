@@ -284,12 +284,12 @@ class TestSearchServiceView(TestsBase):
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin de fontenay 10 1007 lausanne 5586 lausanne ch vd')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin de fontenay  1007 lausanne 5586 lausanne ch vd')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
         params['sr'] = '2056'
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin de fontenay 10 1007 lausanne 5586 lausanne ch vd')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin de fontenay  1007 lausanne 5586 lausanne ch vd')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056)
 
     def test_search_locations_wilenstrasse_wil(self):
