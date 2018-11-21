@@ -27,6 +27,7 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
+- migrate sphinx search from version 2.1.6 to version 2.2.11, due to this migration the order of the results within the same rank can slightly change
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_181031...r_181120>`__
 
 `MAP <//map.geo.admin.ch>`__
