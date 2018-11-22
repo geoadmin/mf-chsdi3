@@ -1,12 +1,24 @@
 # -*- coding: utf-8 -*-
 
 from tests.integration import TestsBase
+from webtest.app import AppError
 
 
 class TestStationboard(TestsBase):
 
+    def setUp(self):
+        super(TestStationboard, self).setUp()
+        self.opentransapi_is_up()
+
+    def opentransapi_is_up(self):
+        try:
+            self.testapp.get('/stationboard/stops/8501120', status=200)
+        except (AppError, AssertionError):
+            self.skipTest("OpenTrans API is down. Skipping iall  tests")
+
     def test_stationboard(self):
         resp = self.testapp.get('/stationboard/stops/8501120', status=200)
+        self.assertEqual(resp, 200)
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_stationboard_wrong_station(self):
