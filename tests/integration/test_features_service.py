@@ -282,6 +282,15 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(resp.json['feature']['id'], featureId)
         self.assertGeojsonFeature(resp.json['feature'], 21781)
 
+    def test_too_large_feature_only_attributes(self):
+        bodId = 'ch.swisstopo.geologie-geologischer_atlas'
+        featureId = 680287
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.json['feature']['id'], featureId)
+        self.assertGeojsonFeature(resp.json['feature'], 21781, hasGeometry=False)
+        self.assertIsNone(resp.json['feature']['geometry'])
+
     def test_several_features(self):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureId1 = self.getRandomFeatureId(bodId)

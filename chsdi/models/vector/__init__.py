@@ -79,16 +79,16 @@ class Vector(object):
                     id = val
                 elif (isinstance(col.type, GeometryChsdi) and
                       col.name == self.geometry_column_to_return().name):
-                    if hasattr(self, '_shape'):
+                    if hasattr(self, '_shape') and \
+                            len(self._shape) < MAX_FEATURE_GEOMETRY_SIZE:
                         geom = self._shape
-                    elif val is not None:
+                    elif val is not None and \
+                            len(val.data) < MAX_FEATURE_GEOMETRY_SIZE:
                         geom = to_shape(val)
                     try:
                         bbox = geom.bounds
                     except:
                         pass
-                    if len(val.data) > MAX_FEATURE_GEOMETRY_SIZE:
-                        geom = None
                 elif (not col.foreign_keys and
                       not isinstance(col.type, GeometryChsdi)):
                     properties[p.key] = val
