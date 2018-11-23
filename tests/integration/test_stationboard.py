@@ -18,7 +18,7 @@ class TestStationboard(TestsBase):
             self.skipTest("OpenTrans API is down. Skipping iall  tests")
 
     def test_stationboard(self):
-        resp = self.testapp.get('/stationboard/stops/8501120', status=200) 
+        resp = self.testapp.get('/stationboard/stops/8501120', status=200)
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_stationboard_wrong_station(self):
