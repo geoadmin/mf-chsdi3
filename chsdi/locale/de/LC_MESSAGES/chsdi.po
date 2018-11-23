@@ -6065,6 +6065,15 @@ msgstr "Konsultationsbereiche Rohrleitungen"
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "SP Geologische Tiefenlager"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager.coordlevel"
+msgstr "Koordinationsstand"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.description"
+msgstr "Beschreibung"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.fackind"
+msgstr "Anlageart"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager.facname_de"
 msgstr "Anlage"
 
@@ -6074,11 +6083,41 @@ msgstr "Anlage"
 msgid "ch.bfe.sachplan-geologie-tiefenlager.facname_it"
 msgstr "Anlage"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager.facptname"
+msgstr "Name Anlage"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.facptname_de"
+msgstr "Name Anlage"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.facptname_fr"
+msgstr "Name Anlage"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager.name"
 msgstr "Anlage"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager.planningstatus"
+msgstr "Planungsstand"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.pmkind"
+msgstr "Massnahmetyp"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname"
+msgstr "Name planerische Massnahme"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname_de"
+msgstr "Massnahmetyp"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname_fr"
+msgstr "Massnahmetyp"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"
 msgstr "SP Geologische Tiefenlager: t.D."
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.validfrom"
+msgstr "von"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.validuntil"
+msgstr "bis"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung"
 msgstr "SGT Vernehmlassung Etappe 2"
@@ -6123,6 +6162,9 @@ msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validuntil"
 msgstr "bis"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.web"
+msgstr "Weitere Informationen"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.web"
 msgstr "Weitere Informationen"
 
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung"
