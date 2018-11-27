@@ -6065,6 +6065,15 @@ msgstr "Konsultationsbereiche Rohrleitungen"
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "SP Deep Geol. Repositories"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager.coordlevel"
+msgstr "Coordination level"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.description"
+msgstr "Description"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.fackind"
+msgstr "Facility type"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager.facname_de"
 msgstr "Facility"
 
@@ -6074,11 +6083,41 @@ msgstr "Facility"
 msgid "ch.bfe.sachplan-geologie-tiefenlager.facname_it"
 msgstr "Facility"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager.facptname"
+msgstr "Facility name"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.facptname_de"
+msgstr "Facility name"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.facptname_fr"
+msgstr "Facility name"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager.name"
 msgstr "Facility"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager.planningstatus"
+msgstr "Planning status"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.pmkind"
+msgstr "Measure type"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname"
+msgstr "Measure name"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname_de"
+msgstr "Measure type"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname_fr"
+msgstr "Measure type"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"
 msgstr "SP Deep Geol.Repositories: T.p."
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.validfrom"
+msgstr "from"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.validuntil"
+msgstr "until"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung"
 msgstr "SP DGR consultation stage 2"
@@ -6123,6 +6162,9 @@ msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validuntil"
 msgstr "until"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.web"
+msgstr "More information"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.web"
 msgstr "More information"
 
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung"
@@ -7457,6 +7499,9 @@ msgstr "Edition"
 msgid "ch.swisstopo.geologie-erlebnis_geologie"
 msgstr "Experience Geology"
 
+msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
+msgstr "Bedrock elevation model"
+
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "General Geol. Map 200"
 
@@ -8083,6 +8128,9 @@ msgstr "Groundwater Vulnerability 500"
 
 msgid "ch.swisstopo.geologie-kartenskizzen-perimeter"
 msgstr "Publizierte Skizzen"
+
+msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell"
+msgstr "Thickness of unconsolidated deposits"
 
 msgid "ch.swisstopo.geologie-originalkarten-perimeter"
 msgstr "Originalkarten"
@@ -11475,121 +11523,154 @@ msgid "<i>Haltestelle Bus</i>"
 msgstr "Bus stop"
 
 msgid "<i>haltestellen_aufzug</i>"
-msgstr "Lift"
+msgstr "lift"
 
 msgid "<i>haltestellen_bus</i>"
-msgstr "Bus"
+msgstr "bus"
 
 msgid "<i>Haltestellen Bus</i>"
 msgstr "Bus"
 
+msgid "<i>haltestellen_bus_kabinenbahn</i>"
+msgstr "bus / gondola"
+
 msgid "<i>haltestellen_bus_luftseilbahn</i>"
-msgstr "Bus, cablecar"
+msgstr "bus, cablecar"
+
+msgid "<i>haltestellen_bus_metro</i>"
+msgstr "bus / metro"
 
 msgid "<i>haltestellen_bus_schiff</i>"
-msgstr "Bus, boat"
+msgstr "bus / boat"
 
-msgid "<i>haltestellen_bus_standseilbahn_tram</i>"
-msgstr "Bus, funicular, tram"
+msgid "<i>haltestellen_bus_standseilbahn</i>"
+msgstr "bus / funicular"
 
 msgid "<i>haltestellen_bus_tram</i>"
-msgstr "Bus, tram"
+msgstr "bus / tram"
 
 msgid "<i>Haltestellen Bus_Tram</i>"
 msgstr "Bus, Tram"
 
-msgid "<i>haltestellen_bus_tram_zug</i>"
-msgstr "Bus, tram, train"
+msgid "<i>haltestellen_bus_tram_standseilbahn</i>"
+msgstr "bus / tram / funicular"
+
+msgid "<i>haltestellen_bus_tram_ zahnradbahn</i>"
+msgstr "bus / tram / rack railway"
 
 msgid "<i>haltestellen_bus_zug</i>"
-msgstr "Bus, train"
+msgstr "bus / train"
+
+msgid "<i>haltestellen_bus_zug_tram</i>"
+msgstr "bus / train / tram"
+
+msgid "<i>haltestellen_kabinenbahn</i>"
+msgstr "gondola"
 
 msgid "<i>Haltestellen Lift</i>"
 msgstr "Lift"
 
 msgid "<i>haltestellen_luftseilbahn</i>"
-msgstr "Cablecar"
+msgstr "cablecar"
 
 msgid "<i>Haltestellen Luftseilbahn</i>"
 msgstr "Cablecar"
 
 msgid "<i>haltestellen_luftseilbahn_zug</i>"
-msgstr "Cablecar, train"
+msgstr "cablecar, train"
 
 msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
 msgstr "Cablecar, train"
 
 msgid "<i>haltestellen_metro</i>"
-msgstr "Metro"
+msgstr "metro"
 
 msgid "<i>Haltestellen Metro</i>"
 msgstr "Metro"
-
-msgid "<i>haltestellen_metro_zug</i>"
-msgstr "Metro, train"
 
 msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
 msgstr "Simple operating point"
 
 msgid "<i>haltestellen_schiff</i>"
-msgstr "Boat"
+msgstr "boat"
 
 msgid "<i>Haltestellen Schiff</i>"
 msgstr "Boat"
 
-msgid "<i>haltestellen_schiff_zahnradbahn</i>"
-msgstr "Boat, rack railway"
-
 msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
 msgstr "Boat, rack railway"
 
+msgid "<i>haltestellen_sesselbahn</i>"
+msgstr "chairlift"
+
 msgid "<i>haltestellen_standseilbahn_bus</i>"
-msgstr "Funicular, bus"
+msgstr "funicular, bus"
 
 msgid "<i>Haltestellen Standseilbahn_Bus</i>"
 msgstr "Funicular, bus"
 
 msgid "<i>haltestellen_standseilbahn</i>"
-msgstr "Funicular"
+msgstr "funicular"
 
 msgid "<i>Haltestellen Standseilbahn</i>"
 msgstr "Funicular"
 
+msgid "<i>haltestellen_standseilbahn_kabinenbahn</i>"
+msgstr "funicular / gondola"
+
 msgid "<i>haltestellen_standseilbahn_luftseilbahn</i>"
-msgstr "Funicular, cableway"
+msgstr "funicular, cableway"
 
 msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
 msgstr "Funicular, cableway"
 
-msgid "<i>haltestellen_standseilbahn_zug</i>"
-msgstr "Funicular, train"
+msgid "<i>haltestellen_standseilbahn_schiff</i>"
+msgstr "funicular / boat"
 
 msgid "<i>Haltestellen Standseilbahn_Zug</i>"
 msgstr "Funicular, train"
 
-msgid "<i>haltestellen_tram_bus_zahnradbahn</i>"
-msgstr "Tram, bus"
-
 msgid "<i>haltestellen_tram</i>"
-msgstr "Tram"
+msgstr "tram"
 
 msgid "<i>Haltestellen Tram</i>"
 msgstr "Tram"
 
+msgid "<i>haltestellen_tram_schiff</i>"
+msgstr "tram / boat"
+
 msgid "<i>haltestellen_zahnradbahn</i>"
-msgstr "Rack railway"
+msgstr "rack railway"
 
 msgid "<i>Haltestellen Zahnradbahn</i>"
 msgstr "Rack railway"
 
+msgid "<i>haltestellen_zahnradbahn_kabinenbahn</i>"
+msgstr "rack railway / gondola"
+
+msgid "<i>haltestellen_zahnradbahn_schiff</i>"
+msgstr "rack railway / boat"
+
 msgid "<i>haltestellen_zug</i>"
-msgstr "Train"
+msgstr "train"
 
 msgid "<i>Haltestellen Zug</i>"
 msgstr "Train"
 
+msgid "<i>haltestellen_zug_kabinenbahn</i>"
+msgstr "train / gondola"
+
+msgid "<i>haltestellen_zug_metro</i>"
+msgstr "train / metro"
+
+msgid "<i>haltestellen_zug_schiff</i>"
+msgstr "train / boat"
+
+msgid "<i>haltestellen_zug_standseilbahn</i>"
+msgstr "train / funicular"
+
 msgid "<i>haltestellen_zug_tram</i>"
-msgstr "Train, tram"
+msgstr "train / tram"
 
 msgid "<i>Haltestellen Zug_Tram</i>"
 msgstr "Train, tram"
