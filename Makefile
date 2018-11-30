@@ -76,6 +76,7 @@ LAST_WSGI_PROCESSES := $(call lastvalue,wsgi-processes)
 LAST_WSGI_THREADS := $(call lastvalue,wsgi-threads)
 LAST_WSGI_APP := $(call lastvalue,wsgi-app)
 LAST_KML_TEMP_DIR := $(call lastvalue,kml-temp-dir)
+LAST_SEARCHSERVER_MAX_AREA_KM2 := $(call lastvalue,searchserver_max_area_km2)
 
 PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -type f -name "*.py" -print)
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
@@ -426,6 +427,7 @@ production.ini: production.ini.in \
 		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
 		--var "linkeddatahost=$(LINKEDDATAHOST)" \
 		--var "opentrans_api_key=$(OPENTRANS_API_KEY)" \
+		--var "searchserver_max_area_km2=$(SEARCHSERVER_MAX_AREA_KM2)" \
 		--var "shortener_allowed_domains=$(SHORTENER_ALLOWED_DOMAINS)" $< > $@
 
 .venv/hooks: .venv/bin/git-secrets ./scripts/install-git-hooks.sh

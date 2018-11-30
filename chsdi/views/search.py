@@ -30,6 +30,7 @@ class Search(SearchValidation):
         self.cbName = request.params.get('callback')
         # Order matters define srid first
         self.srid = request.params.get('sr', '21781')
+        self._BBOX_MAX_AREA_KM2 = int(request.registry.settings['searchserver_max_area_km2'])
         self.bbox = request.params.get('bbox')
         self.sortbbox = request.params.get('sortbbox', 'true').lower() == 'true'
         self.returnGeometry = request.params.get('returnGeometry', 'true').lower() == 'true'

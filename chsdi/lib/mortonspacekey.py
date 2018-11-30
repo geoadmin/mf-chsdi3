@@ -36,6 +36,9 @@ class BBox:
     def height(self):
         return self.maxy - self.miny
 
+    def area(self):
+        return self.width() * self.height()
+
     def pointAt(self, i):
         if i == 0:
             return Point(self.maxx, self.maxy)

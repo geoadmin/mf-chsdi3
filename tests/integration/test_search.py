@@ -199,6 +199,15 @@ class TestSearchServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=400)
         resp.mustcontain('The third coordinate must be higher than the fourth')
 
+    def test_bbox_is_too_large(self):
+        params = {
+            'type': 'locations',
+            'searchText': 'rue des berges',
+            'bbox': '450000,50000,900000,350000'
+        }
+        resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=400)
+        resp.mustcontain('BBOX is too big')
+
     def test_search_loactions_with_cb(self):
         params = {
             'type': 'locations',
@@ -552,7 +561,8 @@ class TestSearchServiceView(TestsBase):
         params = {
             'type': 'locations',
             'searchText': 'buechli tegerfelden',
-            'bbox': '564100,168443,664150,268643'
+            'bbox': '663000,267000,664150,268643',
+            'sr': '21781'
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
         self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1 5306 tegerfelden 4320 tegerfelden ch ag')
@@ -565,7 +575,8 @@ class TestSearchServiceView(TestsBase):
         params = {
             'type': 'locations',
             'searchText': 'buechli tegerfelden',
-            'bbox': '564100,168443,664150,268643',
+            'bbox': '663000,267000,664150,268643',
+            'sr': '21781',
             'sortbbox': 'true'
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
@@ -574,7 +585,7 @@ class TestSearchServiceView(TestsBase):
         params = {
             'type': 'locations',
             'searchText': 'buechli tegerfelden',
-            'bbox': '564100,168443,664150,268643',
+            'bbox': '663000,267000,664150,268643',
             'sortbbox': 'false'
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
@@ -608,7 +619,7 @@ class TestSearchServiceView(TestsBase):
             'type': 'featuresearch',
             'searchText': '19810590048970',
             'features': 'ch.swisstopo.lubis-luftbilder_farbe',
-            'bbox': '542199,206799,642201,226801',
+            'bbox': '540000,206000,543000,207000',
             'timeInstant': '1981'
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
@@ -674,7 +685,7 @@ class TestSearchServiceView(TestsBase):
             'type': 'featuresearch',
             'searchText': '198',
             'features': 'ch.swisstopo.lubis-luftbilder_farbe,ch.swisstopo.lubis-luftbilder_schwarzweiss',
-            'bbox': '542199,146799,692201,246801',
+            'bbox': '695000,220000,698000,223000',
             'timeStamps': '1986,1989',
             'timeEnabled': 'true,true'
         }

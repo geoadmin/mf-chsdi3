@@ -62,6 +62,7 @@ empty_geotables = ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung,ch.bfe.sac
 
 shortener.allowed_hosts = ${shortener_allowed_hosts}
 shortener.allowed_domains = ${shortener_allowed_domains}
+searchserver_max_area_km2 = ${searchserver_max_area_km2}
 
 ###
 # wsgi server configuration

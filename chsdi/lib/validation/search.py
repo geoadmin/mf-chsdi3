@@ -31,6 +31,7 @@ class SearchValidation(MapNameValidation):
         self._typeInfo = None
         self._limit = None
         self._searchLang = None
+        self._BBOX_MAX_AREA_KM2 = None
 
     @property
     def searchText(self):
@@ -127,6 +128,10 @@ class SearchValidation(MapNameValidation):
             if values[2] >= 420000 and values[3] >= 30000:
                 if values[2] < values[3]:
                     raise HTTPBadRequest("The third coordinate must be higher than the fourth")
+            area = (values[2] - values[0]) * (values[3] - values[1])
+            if self._BBOX_MAX_AREA_KM2 and \
+                    (area / 1000000.0) > self._BBOX_MAX_AREA_KM2:
+                raise HTTPBadRequest("BBOX is too big. Max area is {} km2".format(self._BBOX_MAX_AREA_KM2))
             self._bbox = values
 
     @timeInstant.setter
