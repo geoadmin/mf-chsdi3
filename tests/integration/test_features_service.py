@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from tests.integration import TestsBase, shift_to_lv95
+from tests.integration import TestsBase, shift_to_lv95, reproject_to_srid
 
 
 class TestFeaturesView(TestsBase):
@@ -48,7 +48,7 @@ class TestFeaturesView(TestsBase):
         results = resp.json['results']
         self.assertEqual(len(results), 1)
 
-    def test_find_scan_lv95_lv03(self):
+    def test_find_scan_supported_srs(self):
         params = {'layer': 'ch.are.bauzonen',
                   'searchField': 'bfs_no',
                   'searchText': '4262'}
@@ -70,6 +70,16 @@ class TestFeaturesView(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
         results = resp.json['results']
         self.assertGeojsonFeature(results[0], 2056)
+
+        params['sr'] = '3857'
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
+        results = resp.json['results']
+        self.assertGeojsonFeature(results[0], 3857)
+
+        params['sr'] = '4326'
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
+        results = resp.json['results']
+        self.assertGeojsonFeature(results[0], 4326)
 
     def test_find_exact_int(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register',
@@ -612,6 +622,7 @@ class TestReleasesService(TestsBase):
                   'geometryType': 'esriGeometryPoint'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
+        results_lv03 = resp.json['results']
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 22, len(resp.json['results']))
 
@@ -624,6 +635,27 @@ class TestReleasesService(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(len(resp.json['results']) >= 22, len(resp.json['results']))
+
+        params = {'imageDisplay': '500,600,96',
+                  'mapExtent': reproject_to_srid(mapExtent, 21781, 3857),
+                  'geometry': reproject_to_srid(geometry, 21781, 3857),
+                  'geometryType': 'esriGeometryPoint',
+                  'sr': '3857'
+                  }
+        resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertTrue(len(resp.json['results']) >= 22, len(resp.json['results']))
+
+        mapExtent = '611398,158649,6903005,198152'
+        params = {'imageDisplay': '500,600,50',
+                  'mapExtent': reproject_to_srid(mapExtent, 21781, 4326),
+                  'geometry': reproject_to_srid(geometry, 21781, 4326),
+                  'geometryType': 'esriGeometryPoint',
+                  'sr': '4326'
+                  }
+        resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.json['results'], results_lv03)
 
     def test_service_dummyLayer(self):
         params = {'imageDisplay': '500,600,96',
