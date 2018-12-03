@@ -5829,10 +5829,10 @@ msgid "ch.bfe.biomasse-nicht-verholzt"
 msgstr "Energia da biomassa non legnosa"
 
 msgid "ch.bfe.biomasse-nicht-verholzt.bfs_nummer"
-msgstr "Numero di comune"
+msgstr "Numero del comune"
 
 msgid "ch.bfe.biomasse-nicht-verholzt.name"
-msgstr "Nome di comunità"
+msgstr "Nome del comune"
 
 msgid "ch.bfe.biomasse-nicht-verholzt.non_woody"
 msgstr "Potenziale totale sostenibile di biomassa non legnosa in TJ di energia pri-maria"
@@ -5841,10 +5841,10 @@ msgid "ch.bfe.biomasse-verholzt"
 msgstr "Energia da biomassa legnosa"
 
 msgid "ch.bfe.biomasse-verholzt.bfs_nummer"
-msgstr "Numero di comune"
+msgstr "Numero del comune"
 
 msgid "ch.bfe.biomasse-verholzt.name"
-msgstr "Nome di comunità"
+msgstr "Nome del comune"
 
 msgid "ch.bfe.biomasse-verholzt.woody"
 msgstr "Potenziale totale sostenibile di biomassa legnosa in TJ di energia primaria"
@@ -6065,6 +6065,15 @@ msgstr "Condotte e settori contigui"
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "PS Depositi strati geol. profondi"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager.coordlevel"
+msgstr "Stato di coordinamento"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.description"
+msgstr "Descrizione"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.fackind"
+msgstr "Tipo d'installazione"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager.facname_de"
 msgstr "Installazione"
 
@@ -6074,11 +6083,41 @@ msgstr "Installazione"
 msgid "ch.bfe.sachplan-geologie-tiefenlager.facname_it"
 msgstr "Installazione"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager.facptname"
+msgstr "Nome dell'installazione"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.facptname_de"
+msgstr "Nome dell'installazione"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.facptname_fr"
+msgstr "Nome dell'installazione"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager.name"
 msgstr "Installazione"
 
+msgid "ch.bfe.sachplan-geologie-tiefenlager.planningstatus"
+msgstr "Stato della pianificazione"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.pmkind"
+msgstr "Tipo di misura"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname"
+msgstr "Nome della misura"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname_de"
+msgstr "Tipo di misura"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname_fr"
+msgstr "Tipo di misura"
+
 msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"
 msgstr "PS depositi strati geol.prof.: p.t."
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.validfrom"
+msgstr "dal"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.validuntil"
+msgstr "al"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung"
 msgstr "PS DSGP consultazione tappa 2"
@@ -6123,6 +6162,9 @@ msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validuntil"
 msgstr "al"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.web"
+msgstr "Informazioni supplementari"
+
+msgid "ch.bfe.sachplan-geologie-tiefenlager.web"
 msgstr "Informazioni supplementari"
 
 msgid "ch.bfe.sachplan-uebertragungsleitungen_anhoerung"

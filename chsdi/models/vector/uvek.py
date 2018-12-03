@@ -1559,106 +1559,130 @@ register('ch.astra.sachplan-infrastruktur-strasse_kraft', AstraStrassePlanningK)
 register('ch.astra.sachplan-infrastruktur-strasse_kraft', AstraStrassePlanningRasterK)
 
 
-class SgtFacilities(Base, Vector):
-    __tablename__ = 'geologische_tiefenlager_fac'
+class SachPGFacilities(Base, Vector):
+    __tablename__ = 'sachplan_geologie_tiefenlager_fac_pt'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/sgt_facilities.mako'
     __bodId__ = 'ch.bfe.sachplan-geologie-tiefenlager'
-    __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it']
+    __queryable_attributes__ = ['facptname_de', 'facptname_fr', 'facptname_it']
     # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Integer, primary_key=True)
-    facname_de = Column('facname_de', Unicode)
-    facname_fr = Column('facname_fr', Unicode)
-    facname_it = Column('facname_it', Unicode)
-    fackind_text_de = Column('fackind_text_de', Unicode)
-    fackind_text_fr = Column('fackind_text_fr', Unicode)
-    fackind_text_it = Column('fackind_text_it', Unicode)
-    facstatus_text_de = Column('facstatus_text_de', Unicode)
-    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
-    facstatus_text_it = Column('facstatus_text_it', Unicode)
+    __label__ = 'facptname_de'
+    id = Column('facpt_id', Integer, primary_key=True)
+    facptname_de = Column('facptname_de', Unicode)
+    facptname_fr = Column('facptname_fr', Unicode)
+    facptname_it = Column('facptname_it', Unicode)
+    fackind_de = Column('fackind_de', Unicode)
+    fackind_fr = Column('fackind_fr', Unicode)
+    fackind_it = Column('fackind_it', Unicode)
+    planningstatus_de = Column('planningstatus_de', Unicode)
+    planningstatus_fr = Column('planningstatus_fr', Unicode)
+    planningstatus_it = Column('planningstatus_it', Unicode)
     validfrom = Column('validfrom', Unicode)
     description = Column('description', Unicode)
-    web = Column('web', Unicode)
-    objname_text_de = Column('objname_text_de', Unicode)
-    objname_text_fr = Column('objname_text_fr', Unicode)
-    objname_text_it = Column('objname_text_it', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    __minscale__ = 80005
-    __maxscale__ = 100000005
+    web_de = Column('web_de', Unicode)
+    web_fr = Column('web_fr', Unicode)
+    web_it = Column('web_it', Unicode)
+    __minscale__ = 99999
     the_geom = Column(Geometry2D)
 
 
-class SgtPlanning(Base, Vector):
-    __tablename__ = 'geologische_tiefenlager'
+class SachPGPlanning(Base, Vector):
+    __tablename__ = 'sachplan_geologie_tiefenlager_pm_pt'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/sgt_planning.mako'
+    __template__ = 'templates/htmlpopup/sgt_planning_pt.mako'
     __bodId__ = 'ch.bfe.sachplan-geologie-tiefenlager'
-    __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it']
+    __queryable_attributes__ = ['pmname_de', 'pmname_fr', 'pmname_it']
     # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Integer, primary_key=True)
+    __label__ = 'pmname_de'
+    id = Column('pmpt_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
-    facname_fr = Column('facname_fr', Unicode)
-    facname_it = Column('facname_it', Unicode)
-    facname_de = Column('facname_de', Unicode)
-    measurename_de = Column('measurename_de', Unicode)
-    measurename_fr = Column('measurename_fr', Unicode)
-    measurename_it = Column('measurename_it', Unicode)
-    measuretype_text_de = Column('measuretype_text_de', Unicode)
-    measuretype_text_fr = Column('measuretype_text_fr', Unicode)
-    measuretype_text_it = Column('measuretype_text_it', Unicode)
-    coordinationlevel_text_de = Column('coordinationlevel_text_de', Unicode)
-    coordinationlevel_text_fr = Column('coordinationlevel_text_fr', Unicode)
-    coordinationlevel_text_it = Column('coordinationlevel_text_it', Unicode)
-    planningstatus_text_de = Column('planningstatus_text_de', Unicode)
-    planningstatus_text_fr = Column('planningstatus_text_fr', Unicode)
-    planningstatus_text_it = Column('planningstatus_text_it', Unicode)
+    pmname_fr = Column('pmname_fr', Unicode)
+    pmname_it = Column('pmname_it', Unicode)
+    pmname_de = Column('pmname_de', Unicode)
+    pmkind_de = Column('pmkind_de', Unicode)
+    pmkind_fr = Column('pmkind_fr', Unicode)
+    pmkind_it = Column('pmkind_it', Unicode)
+    coordlevel_de = Column('coordlevel_de', Unicode)
+    coordlevel_fr = Column('coordlevel_fr', Unicode)
+    coordlevel_it = Column('coordlevel_it', Unicode)
+    planningstatus_de = Column('planningstatus_de', Unicode)
+    planningstatus_fr = Column('planningstatus_fr', Unicode)
+    planningstatus_it = Column('planningstatus_it', Unicode)
     validfrom = Column('validfrom', Unicode)
     validuntil = Column('validuntil', Unicode)
     description = Column('description', Unicode)
-    web = Column('web', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    __minscale__ = 20005
-    __maxscale__ = 500005
+    web_de = Column('web_de', Unicode)
+    web_fr = Column('web_fr', Unicode)
+    web_it = Column('web_it', Unicode)
+    __minscale__ = 24999
+    __maxscale__ = 499999
 
 
-class SgtPlanningRaster(Base, Vector):
-    __tablename__ = 'geologische_tiefenlager_raster'
+class SachPGAreaPlanningNotMT6(Base, Vector):
+    __tablename__ = 'sachplan_geologie_tiefenlager_pm_area_not_mt6'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/sgt_planning.mako'
     __bodId__ = 'ch.bfe.sachplan-geologie-tiefenlager'
-    __queryable_attributes__ = ['facname_de', 'facname_fr', 'facname_it']
+    __queryable_attributes__ = ['pmname_de', 'pmname_fr', 'pmname_it']
     # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Integer, primary_key=True)
-    facname_de = Column('facname_de', Unicode)
-    facname_fr = Column('facname_fr', Unicode)
-    facname_it = Column('facname_it', Unicode)
-    measurename_de = Column('measurename_de', Unicode)
-    measurename_fr = Column('measurename_fr', Unicode)
-    measurename_it = Column('measurename_it', Unicode)
-    measuretype_text_de = Column('measuretype_text_de', Unicode)
-    measuretype_text_fr = Column('measuretype_text_fr', Unicode)
-    measuretype_text_it = Column('measuretype_text_it', Unicode)
-    coordinationlevel_text_de = Column('coordinationlevel_text_de', Unicode)
-    coordinationlevel_text_fr = Column('coordinationlevel_text_fr', Unicode)
-    coordinationlevel_text_it = Column('coordinationlevel_text_it', Unicode)
-    planningstatus_text_de = Column('planningstatus_text_de', Unicode)
-    planningstatus_text_fr = Column('planningstatus_text_fr', Unicode)
-    planningstatus_text_it = Column('planningstatus_text_it', Unicode)
+    __label__ = 'pmname_de'
+    id = Column('pmarea_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+    pmname_fr = Column('pmname_fr', Unicode)
+    pmname_it = Column('pmname_it', Unicode)
+    pmname_de = Column('pmname_de', Unicode)
+    pmkind_de = Column('pmkind_de', Unicode)
+    pmkind_fr = Column('pmkind_fr', Unicode)
+    pmkind_it = Column('pmkind_it', Unicode)
+    coordlevel_de = Column('coordlevel_de', Unicode)
+    coordlevel_fr = Column('coordlevel_fr', Unicode)
+    coordlevel_it = Column('coordlevel_it', Unicode)
+    planningstatus_de = Column('planningstatus_de', Unicode)
+    planningstatus_fr = Column('planningstatus_fr', Unicode)
+    planningstatus_it = Column('planningstatus_it', Unicode)
     validfrom = Column('validfrom', Unicode)
     validuntil = Column('validuntil', Unicode)
     description = Column('description', Unicode)
-    web = Column('web', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    __maxscale__ = 20005
-    __minscale__ = 1
-    the_geom = Column(Geometry2D)
+    web_de = Column('web_de', Unicode)
+    web_fr = Column('web_fr', Unicode)
+    web_it = Column('web_it', Unicode)
+    __maxscale__ = 499999
 
-register('ch.bfe.sachplan-geologie-tiefenlager', SgtFacilities)
-register('ch.bfe.sachplan-geologie-tiefenlager', SgtPlanning)
-register('ch.bfe.sachplan-geologie-tiefenlager', SgtPlanningRaster)
+
+class SachPGAreaPlanningMT6(Base, Vector):
+    __tablename__ = 'sachplan_geologie_tiefenlager_pm_area_mt6'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/sgt_planning.mako'
+    __bodId__ = 'ch.bfe.sachplan-geologie-tiefenlager'
+    __queryable_attributes__ = ['pmname_de', 'pmname_fr', 'pmname_it']
+    # Translatable labels in fr, it
+    __label__ = 'pmname_de'
+    id = Column('pmarea_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+    pmname_fr = Column('pmname_fr', Unicode)
+    pmname_it = Column('pmname_it', Unicode)
+    pmname_de = Column('pmname_de', Unicode)
+    pmkind_de = Column('pmkind_de', Unicode)
+    pmkind_fr = Column('pmkind_fr', Unicode)
+    pmkind_it = Column('pmkind_it', Unicode)
+    coordlevel_de = Column('coordlevel_de', Unicode)
+    coordlevel_fr = Column('coordlevel_fr', Unicode)
+    coordlevel_it = Column('coordlevel_it', Unicode)
+    planningstatus_de = Column('planningstatus_de', Unicode)
+    planningstatus_fr = Column('planningstatus_fr', Unicode)
+    planningstatus_it = Column('planningstatus_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    validuntil = Column('validuntil', Unicode)
+    description = Column('description', Unicode)
+    web_de = Column('web_de', Unicode)
+    web_fr = Column('web_fr', Unicode)
+    web_it = Column('web_it', Unicode)
+    __maxscale__ = 24999
+
+register('ch.bfe.sachplan-geologie-tiefenlager', SachPGFacilities)
+register('ch.bfe.sachplan-geologie-tiefenlager', SachPGPlanning)
+register('ch.bfe.sachplan-geologie-tiefenlager', SachPGAreaPlanningNotMT6)
+register('ch.bfe.sachplan-geologie-tiefenlager', SachPGAreaPlanningMT6)
 
 
 class PtFacilities(Base, Vector):
@@ -1785,105 +1809,6 @@ register('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung', PtFacilities)
 register('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung', PtPlanning)
 register('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung', AreaPlanningNotMT6)
 register('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung', AreaPlanningMT6)
-
-
-class SgtFacilitiesTd(Base, Vector):
-    __tablename__ = 'geologische_tiefenlager_fac'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/sgt_facilities.mako'
-    __bodId__ = 'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung'
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Integer, primary_key=True)
-    facname_de = Column('facname_de', Unicode)
-    facname_fr = Column('facname_fr', Unicode)
-    facname_it = Column('facname_it', Unicode)
-    fackind_text_de = Column('fackind_text_de', Unicode)
-    fackind_text_fr = Column('fackind_text_fr', Unicode)
-    fackind_text_it = Column('fackind_text_it', Unicode)
-    facstatus_text_de = Column('facstatus_text_de', Unicode)
-    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
-    facstatus_text_it = Column('facstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    description = Column('description', Unicode)
-    web = Column('web', Unicode)
-    objname_text_de = Column('objname_text_de', Unicode)
-    objname_text_fr = Column('objname_text_fr', Unicode)
-    objname_text_it = Column('objname_text_it', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    __minscale__ = 80005
-    __maxscale__ = 100000005
-    the_geom = Column(Geometry2D)
-
-
-class SgtPlanningTd(Base, Vector):
-    __tablename__ = 'geologische_tiefenlager'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/sgt_planning.mako'
-    __bodId__ = 'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung'
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Integer, primary_key=True)
-    facname_de = Column('facname_de', Unicode)
-    facname_fr = Column('facname_fr', Unicode)
-    facname_it = Column('facname_it', Unicode)
-    measurename_de = Column('measurename_de', Unicode)
-    measurename_fr = Column('measurename_fr', Unicode)
-    measurename_it = Column('measurename_it', Unicode)
-    measuretype_text_de = Column('measuretype_text_de', Unicode)
-    measuretype_text_fr = Column('measuretype_text_fr', Unicode)
-    measuretype_text_it = Column('measuretype_text_it', Unicode)
-    coordinationlevel_text_de = Column('coordinationlevel_text_de', Unicode)
-    coordinationlevel_text_fr = Column('coordinationlevel_text_fr', Unicode)
-    coordinationlevel_text_it = Column('coordinationlevel_text_it', Unicode)
-    planningstatus_text_de = Column('planningstatus_text_de', Unicode)
-    planningstatus_text_fr = Column('planningstatus_text_fr', Unicode)
-    planningstatus_text_it = Column('planningstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
-    description = Column('description', Unicode)
-    web = Column('web', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    __minscale__ = 20005
-    __maxscale__ = 500005
-    the_geom = Column(Geometry2D)
-
-
-class SgtPlanningRasterTd(Base, Vector):
-    __tablename__ = 'geologische_tiefenlager_raster'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/sgt_planning.mako'
-    __bodId__ = 'ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung'
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Integer, primary_key=True)
-    facname_de = Column('facname_de', Unicode)
-    facname_fr = Column('facname_fr', Unicode)
-    facname_it = Column('facname_it', Unicode)
-    measurename_de = Column('measurename_de', Unicode)
-    measurename_fr = Column('measurename_fr', Unicode)
-    measurename_it = Column('measurename_it', Unicode)
-    measuretype_text_de = Column('measuretype_text_de', Unicode)
-    measuretype_text_fr = Column('measuretype_text_fr', Unicode)
-    measuretype_text_it = Column('measuretype_text_it', Unicode)
-    coordinationlevel_text_de = Column('coordinationlevel_text_de', Unicode)
-    coordinationlevel_text_fr = Column('coordinationlevel_text_fr', Unicode)
-    coordinationlevel_text_it = Column('coordinationlevel_text_it', Unicode)
-    planningstatus_text_de = Column('planningstatus_text_de', Unicode)
-    planningstatus_text_fr = Column('planningstatus_text_fr', Unicode)
-    planningstatus_text_it = Column('planningstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
-    description = Column('description', Unicode)
-    web = Column('web', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    __maxscale__ = 20005
-    __minscale__ = 1
-    the_geom = Column(Geometry2D)
-
-register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', SgtFacilitiesTd)
-register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', SgtPlanningTd)
-register('ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung', SgtPlanningRasterTd)
 
 
 class SilFacilitiesA(Base, Vector):
