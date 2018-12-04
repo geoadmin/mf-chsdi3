@@ -16,6 +16,89 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20181205:
+
+Release 20181205 - Wednesday, December 5th 2018
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_181120...r_181205>`__
+- Announcement:
+   - 9 NGA layers will be removed completely from the API by January 23rd 2019 without substitution:
+      - ch.bakom.verfuegbarkeit-tv
+      - ch.bakom.verfuegbarkeit-hdtv
+      - ch.bakom.uplink2
+      - ch.bakom.uplink50
+      - ch.bakom.uplink20
+      - ch.bakom.downlink1
+      - ch.bakom.downlink2
+      - ch.bakom.downlink20
+      - ch.bakom.downlink50
+   - Complete removal of ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung from the FSDI (including WMS and API). If possible, use `ch.bfe.sachplan-geologie-tiefenlager` instead.
+   - Removal of ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung from the catalogs. If possible, use `ch.bfe.sachplan-geologie-tiefenlager` instead. From March 2019 on the layer will be removed completely.
+   - Removal of a geology layer. From February 6th 2019 on the layer listed below will be replaced with `ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell`. The layer `ch.sgpk.maechtigkeit-lockergesteine` will disappear completely by Q2 2019 (middle 2019).
+      - ch.sgpk.maechtigkeit-lockergesteine
+
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_181120...r_181205>`__
+
+
+Geodata
+*******
+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Emergency calls by comune <//map.geo.admin.ch/?layers=ch.bakom.notruf>`__ (ch.bakom.notruf)                                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `112 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_festnetz>`__ (ch.bakom.notruf-112_festnetz)                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `118 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_mobilnetz>`__ (ch.bakom.notruf-118_mobilnetz)                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `117 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_mobilnetz>`__ (ch.bakom.notruf-117_mobilnetz)                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `117 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_festnetz>`__ (ch.bakom.notruf-117_festnetz)                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `118 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_festnetz>`__ (ch.bakom.notruf-118_festnetz)                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `143 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-143_mobilnetz>`__ (ch.bakom.notruf-143_mobilnetz)                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `112 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_mobilnetz>`__ (ch.bakom.notruf-112_mobilnetz)                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `144 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-144_festnetz>`__ (ch.bakom.notruf-144_festnetz)                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `112 Satellite network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_satellit>`__ (ch.bakom.notruf-112_satellit)                                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `147 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-147_festnetz>`__ (ch.bakom.notruf-147_festnetz)                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `143 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-143_festnetz>`__ (ch.bakom.notruf-143_festnetz)                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `147 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-147_mobilnetz>`__ (ch.bakom.notruf-147_mobilnetz)                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `144 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-144_mobilnetz>`__ (ch.bakom.notruf-144_mobilnetz)                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Built-up areas VIL <//map.geo.admin.ch/?layers=ch.bazl.bebaute-gebiete_luftfahrtrecht>`__ (ch.bazl.bebaute-gebiete_luftfahrtrecht)                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Water & migrant bird reserves <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-vogelreservate>`__ (ch.bafu.bundesinventare-vogelreservate)                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Deep Geol. Repositories <//map.geo.admin.ch/?layers=ch.bfe.sachplan-geologie-tiefenlager>`__ (ch.bfe.sachplan-geologie-tiefenlager)                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Image strips swisstopo <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-bildstreifen>`__ (ch.swisstopo.lubis-bildstreifen)                                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Amtliches Strassenverzeichnis <//map.geo.admin.ch/?layers=ch.swisstopo.amtliches-strassenverzeichnis>`__ (ch.swisstopo.amtliches-strassenverzeichnis)                                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport stops <//map.geo.admin.ch/?layers=ch.bav.haltestellen-oev>`__ (ch.bav.haltestellen-oev)                                                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 .. _releasenotes_20181120:
 
 Release 20181120 - Tuesday, November 20th 2018
