@@ -6110,9 +6110,6 @@ msgstr "Tipo di misura"
 msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname_fr"
 msgstr "Tipo di misura"
 
-msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"
-msgstr "PS depositi strati geol.prof.: p.t."
-
 msgid "ch.bfe.sachplan-geologie-tiefenlager.validfrom"
 msgstr "dal"
 

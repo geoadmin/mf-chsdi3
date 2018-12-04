@@ -6110,9 +6110,6 @@ msgstr "Measure type"
 msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname_fr"
 msgstr "Measure type"
 
-msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"
-msgstr "SP Deep Geol.Repositories: T.p."
-
 msgid "ch.bfe.sachplan-geologie-tiefenlager.validfrom"
 msgstr "from"
 

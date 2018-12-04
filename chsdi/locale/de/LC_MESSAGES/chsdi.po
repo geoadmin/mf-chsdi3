@@ -6110,9 +6110,6 @@ msgstr "Massnahmetyp"
 msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname_fr"
 msgstr "Massnahmetyp"
 
-msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"
-msgstr "SP Geologische Tiefenlager: t.D."
-
 msgid "ch.bfe.sachplan-geologie-tiefenlager.validfrom"
 msgstr "von"
 

@@ -6110,9 +6110,6 @@ msgstr "Type de mesure"
 msgid "ch.bfe.sachplan-geologie-tiefenlager.pmname_fr"
 msgstr "Type de mesure"
 
-msgid "ch.bfe.sachplan-geologie-tiefenlager-thematische-darstellung"
-msgstr "PS dépôts couches géol.prof.: p.t."
-
 msgid "ch.bfe.sachplan-geologie-tiefenlager.validfrom"
 msgstr "du"
 
