@@ -167,7 +167,10 @@ $(document).ready(function() {
     protocol = request.scheme
     lang = request.lang
     topic = request.matchdict.get('map')
-    var_verkehrsmittel = '<i>haltestellen_' + c['attributes']['verkehrsmittel'] + '</i>'
+    if c['attributes']['verkehrsmittel']:
+      var_verkehrsmittel = '<i>haltestellen_' + c['attributes']['verkehrsmittel'] + '</i>'
+    else:
+      var_verkehrsmittel = '-'
     verkehr = var_verkehrsmittel.lower()
     type_station = c['attributes']['betriebspunkttyp']
     c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))

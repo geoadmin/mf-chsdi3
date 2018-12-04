@@ -7499,6 +7499,9 @@ msgstr "Édition"
 msgid "ch.swisstopo.geologie-erlebnis_geologie"
 msgstr "Géologie Vivante"
 
+msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
+msgstr "Modèle d'altitude du toit du rocher"
+
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Carte géol. générale 200"
 
@@ -8125,6 +8128,9 @@ msgstr "Vulnérabilité des aquifères 500"
 
 msgid "ch.swisstopo.geologie-kartenskizzen-perimeter"
 msgstr "Croquis publiés"
+
+msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell"
+msgstr "Épaisseur des terrains meubles"
 
 msgid "ch.swisstopo.geologie-originalkarten-perimeter"
 msgstr "Cartes originales"
@@ -11525,26 +11531,41 @@ msgstr "Bus"
 msgid "<i>Haltestellen Bus</i>"
 msgstr "Bus"
 
+msgid "<i>haltestellen_bus_kabinenbahn</i>"
+msgstr "Bus / télécabine"
+
 msgid "<i>haltestellen_bus_luftseilbahn</i>"
 msgstr "Bus, téléphérique"
 
-msgid "<i>haltestellen_bus_schiff</i>"
-msgstr "Bus, bateau"
+msgid "<i>haltestellen_bus_metro</i>"
+msgstr "Bus / métro"
 
-msgid "<i>haltestellen_bus_standseilbahn_tram</i>"
-msgstr "Bus, funiculaire, tram"
+msgid "<i>haltestellen_bus_schiff</i>"
+msgstr "Bus / bateau"
+
+msgid "<i>haltestellen_bus_standseilbahn</i>"
+msgstr "Bus / funiculaire"
 
 msgid "<i>haltestellen_bus_tram</i>"
-msgstr "Bus, tram"
+msgstr "Bus / tram"
 
 msgid "<i>Haltestellen Bus_Tram</i>"
 msgstr "Bus, Tram"
 
-msgid "<i>haltestellen_bus_tram_zug</i>"
-msgstr "Bus, tram, chemin de fer"
+msgid "<i>haltestellen_bus_tram_standseilbahn</i>"
+msgstr "Bus / tram / funiculaire"
+
+msgid "<i>haltestellen_bus_tram_ zahnradbahn</i>"
+msgstr "Bus / tram / chemin de fer à crémaillère"
 
 msgid "<i>haltestellen_bus_zug</i>"
-msgstr "Bus, chemin de fer"
+msgstr "Bus / train"
+
+msgid "<i>haltestellen_bus_zug_tram</i>"
+msgstr "Bus / train /tram"
+
+msgid "<i>haltestellen_kabinenbahn</i>"
+msgstr "Télécabine"
 
 msgid "<i>Haltestellen Lift</i>"
 msgstr "Ascenseur"
@@ -11556,7 +11577,7 @@ msgid "<i>Haltestellen Luftseilbahn</i>"
 msgstr "Téléphérique"
 
 msgid "<i>haltestellen_luftseilbahn_zug</i>"
-msgstr "Téléphérique, chemin de fer"
+msgstr "Téléphérique / train"
 
 msgid "<i>Haltestellen Luftseilbahn_Zug</i>"
 msgstr "Téléphérique, chemin de fer"
@@ -11567,9 +11588,6 @@ msgstr "Métro"
 msgid "<i>Haltestellen Metro</i>"
 msgstr "Métro"
 
-msgid "<i>haltestellen_metro_zug</i>"
-msgstr "Métro, chemin de fer"
-
 msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
 msgstr "Point d’exploitation simple"
 
@@ -11579,11 +11597,11 @@ msgstr "Bateau"
 msgid "<i>Haltestellen Schiff</i>"
 msgstr "Bateau"
 
-msgid "<i>haltestellen_schiff_zahnradbahn</i>"
-msgstr "Bateau, chemin de fer à crémaillère"
-
 msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
 msgstr "Bateau, chemin de fer à crémaillère"
+
+msgid "<i>haltestellen_sesselbahn</i>"
+msgstr "Télésiège"
 
 msgid "<i>haltestellen_standseilbahn_bus</i>"
 msgstr "Funiculaire, bus"
@@ -11597,20 +11615,20 @@ msgstr "Funiculaire"
 msgid "<i>Haltestellen Standseilbahn</i>"
 msgstr "Funiculaire"
 
+msgid "<i>haltestellen_standseilbahn_kabinenbahn</i>"
+msgstr "Funiculaire / télécabine"
+
 msgid "<i>haltestellen_standseilbahn_luftseilbahn</i>"
-msgstr "Funiculaire, téléphérique"
+msgstr "Funiculaire / téléphérique"
 
 msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
 msgstr "Funiculaire, téléphérique"
 
-msgid "<i>haltestellen_standseilbahn_zug</i>"
-msgstr "Funiculaire, chemin de fer"
+msgid "<i>haltestellen_standseilbahn_schiff</i>"
+msgstr "Funiculaire /bateau"
 
 msgid "<i>Haltestellen Standseilbahn_Zug</i>"
 msgstr "Funiculaire, chemin de fer"
-
-msgid "<i>haltestellen_tram_bus_zahnradbahn</i>"
-msgstr "Tram, bus"
 
 msgid "<i>haltestellen_tram</i>"
 msgstr "Tram"
@@ -11618,20 +11636,41 @@ msgstr "Tram"
 msgid "<i>Haltestellen Tram</i>"
 msgstr "Tram"
 
+msgid "<i>haltestellen_tram_schiff</i>"
+msgstr "Tram / bateau"
+
 msgid "<i>haltestellen_zahnradbahn</i>"
 msgstr "Chemin de fer à crémaillère"
 
 msgid "<i>Haltestellen Zahnradbahn</i>"
 msgstr "Chemin de fer à crémaillère"
 
+msgid "<i>haltestellen_zahnradbahn_kabinenbahn</i>"
+msgstr "Chemin de fer à crémaillère / télécabine"
+
+msgid "<i>haltestellen_zahnradbahn_schiff</i>"
+msgstr "Chemin de fer à crémaillère / Bateau"
+
 msgid "<i>haltestellen_zug</i>"
-msgstr "Chemin de fer"
+msgstr "Train"
 
 msgid "<i>Haltestellen Zug</i>"
 msgstr "Chemin de fer"
 
+msgid "<i>haltestellen_zug_kabinenbahn</i>"
+msgstr "Train / télécabine"
+
+msgid "<i>haltestellen_zug_metro</i>"
+msgstr "Train / métro"
+
+msgid "<i>haltestellen_zug_schiff</i>"
+msgstr "Train / bateau"
+
+msgid "<i>haltestellen_zug_standseilbahn</i>"
+msgstr "Train / Funiculaire"
+
 msgid "<i>haltestellen_zug_tram</i>"
-msgstr "Chemin de fer, tram"
+msgstr "Train / tram"
 
 msgid "<i>Haltestellen Zug_Tram</i>"
 msgstr "Chemin de ter, tram"

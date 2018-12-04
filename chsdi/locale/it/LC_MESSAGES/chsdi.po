@@ -7499,6 +7499,9 @@ msgstr "Edizione"
 msgid "ch.swisstopo.geologie-erlebnis_geologie"
 msgstr "Avventura geologia"
 
+msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
+msgstr "Altitudine del substrato roccioso"
+
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Carta geol. generale 200"
 
@@ -8125,6 +8128,9 @@ msgstr "Vulnerab. delle falde acquifere 500"
 
 msgid "ch.swisstopo.geologie-kartenskizzen-perimeter"
 msgstr "Croquis publiés"
+
+msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell"
+msgstr "Spessore dei depositi sciolti"
 
 msgid "ch.swisstopo.geologie-originalkarten-perimeter"
 msgstr "Cartes originales"
@@ -11525,26 +11531,41 @@ msgstr "Autobus"
 msgid "<i>Haltestellen Bus</i>"
 msgstr "Autobus"
 
+msgid "<i>haltestellen_bus_kabinenbahn</i>"
+msgstr "Autobus / cabinovia"
+
 msgid "<i>haltestellen_bus_luftseilbahn</i>"
 msgstr "Autobus, funivia"
 
-msgid "<i>haltestellen_bus_schiff</i>"
-msgstr "Autobus, fattello"
+msgid "<i>haltestellen_bus_metro</i>"
+msgstr "Autobus / metropolitana"
 
-msgid "<i>haltestellen_bus_standseilbahn_tram</i>"
-msgstr "Autobus, funicolare, tram"
+msgid "<i>haltestellen_bus_schiff</i>"
+msgstr "Autobus / battello"
+
+msgid "<i>haltestellen_bus_standseilbahn</i>"
+msgstr "Autobus / funicolare"
 
 msgid "<i>haltestellen_bus_tram</i>"
-msgstr "Autobus, tram"
+msgstr "Autobus / tram"
 
 msgid "<i>Haltestellen Bus_Tram</i>"
 msgstr "Autobus, tram"
 
-msgid "<i>haltestellen_bus_tram_zug</i>"
-msgstr "Autobus, tram, ferrovia"
+msgid "<i>haltestellen_bus_tram_standseilbahn</i>"
+msgstr "Autobus / tram / funicolare"
+
+msgid "<i>haltestellen_bus_tram_ zahnradbahn</i>"
+msgstr "Autobus / tram / ferrovia a cremagliera"
 
 msgid "<i>haltestellen_bus_zug</i>"
-msgstr "Autobus, ferrovia"
+msgstr "Autobus / ferrovia"
+
+msgid "<i>haltestellen_bus_zug_tram</i>"
+msgstr "Autobus / ferrovia / tram"
+
+msgid "<i>haltestellen_kabinenbahn</i>"
+msgstr "Cabinovia"
 
 msgid "<i>Haltestellen Lift</i>"
 msgstr "Ascensore"
@@ -11567,9 +11588,6 @@ msgstr "Metropolitana"
 msgid "<i>Haltestellen Metro</i>"
 msgstr "Metropolitana"
 
-msgid "<i>haltestellen_metro_zug</i>"
-msgstr "Metropolitana, ferrovia"
-
 msgid "<i>Haltestellen Reiner Betriebspunkt</i>"
 msgstr "Punto operativo semplice"
 
@@ -11579,11 +11597,11 @@ msgstr "Battello"
 msgid "<i>Haltestellen Schiff</i>"
 msgstr "Battello"
 
-msgid "<i>haltestellen_schiff_zahnradbahn</i>"
-msgstr "Battello e ferrovia a cremagliera"
-
 msgid "<i>Haltestellen Schiff_Zahnradbahn</i>"
 msgstr "Battello e ferrovia a cremagliera"
+
+msgid "<i>haltestellen_sesselbahn</i>"
+msgstr "Seggiovia"
 
 msgid "<i>haltestellen_standseilbahn_bus</i>"
 msgstr "Funicolare, autobus"
@@ -11597,20 +11615,20 @@ msgstr "Funicolare"
 msgid "<i>Haltestellen Standseilbahn</i>"
 msgstr "Funicolare"
 
+msgid "<i>haltestellen_standseilbahn_kabinenbahn</i>"
+msgstr "Funiculare / cabinovia"
+
 msgid "<i>haltestellen_standseilbahn_luftseilbahn</i>"
 msgstr "Funicolare, funivia"
 
 msgid "<i>Haltestellen Standseilbahn_Luftseilbahn</i>"
 msgstr "Funicolare, funivia"
 
-msgid "<i>haltestellen_standseilbahn_zug</i>"
-msgstr "Funicolare, ferrovia"
+msgid "<i>haltestellen_standseilbahn_schiff</i>"
+msgstr "Funiculare /  battello"
 
 msgid "<i>Haltestellen Standseilbahn_Zug</i>"
 msgstr "Funicolare, ferrovia"
-
-msgid "<i>haltestellen_tram_bus_zahnradbahn</i>"
-msgstr "Tram, autobus"
 
 msgid "<i>haltestellen_tram</i>"
 msgstr "Tram"
@@ -11618,11 +11636,20 @@ msgstr "Tram"
 msgid "<i>Haltestellen Tram</i>"
 msgstr "Tram"
 
+msgid "<i>haltestellen_tram_schiff</i>"
+msgstr "Tram / battello"
+
 msgid "<i>haltestellen_zahnradbahn</i>"
 msgstr "Ferrovia a cremagliera"
 
 msgid "<i>Haltestellen Zahnradbahn</i>"
 msgstr "Ferrovia a cremagliera"
+
+msgid "<i>haltestellen_zahnradbahn_kabinenbahn</i>"
+msgstr "Ferrovia a cremagliera / cabinovia"
+
+msgid "<i>haltestellen_zahnradbahn_schiff</i>"
+msgstr "Ferrovia a cremagliera / battello"
 
 msgid "<i>haltestellen_zug</i>"
 msgstr "Ferrovia"
@@ -11630,8 +11657,20 @@ msgstr "Ferrovia"
 msgid "<i>Haltestellen Zug</i>"
 msgstr "Ferrovia"
 
+msgid "<i>haltestellen_zug_kabinenbahn</i>"
+msgstr "Ferrovia / cabinovia"
+
+msgid "<i>haltestellen_zug_metro</i>"
+msgstr "Ferrovia / metropolitana"
+
+msgid "<i>haltestellen_zug_schiff</i>"
+msgstr "Ferrovia / battello"
+
+msgid "<i>haltestellen_zug_standseilbahn</i>"
+msgstr "Ferrovia / funicolare"
+
 msgid "<i>haltestellen_zug_tram</i>"
-msgstr "Ferrovia, tram"
+msgstr "Ferrovia / tram"
 
 msgid "<i>Haltestellen Zug_Tram</i>"
 msgstr "Ferrovia, tram"
