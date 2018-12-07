@@ -157,11 +157,12 @@ class LayersChecker(object):
 
     def checkPrimaryKeyColumnTypeMapping(self, layerId, featureId, model, primaryKeyColumn):
         schema = 'public' if 'schema' not in model.__table_args__ else model.__table_args__['schema']
-        assert featureId is not None, 'No feature was found in table %s for layer %s' % (
-            schema + '.' + model.__tablename__, layerId)
-        pythonType = primaryKeyColumn.type.python_type if not isinstance(primaryKeyColumn.type, BigInteger) else (int, long)
-        assert isinstance(featureId, pythonType), 'Expected %s; Got: %s; For layer %s and GeoTable %s' % (
-            pythonType, type(featureId), layerId, schema + '.' + model.__tablename__)
+        if featureId is None:
+            print "No feature was found in table %s for layer {}".format(schema + '.' + model.__tablename__, layerId)
+        else:
+            pythonType = primaryKeyColumn.type.python_type if not isinstance(primaryKeyColumn.type, BigInteger) else (int, long)
+            assert isinstance(featureId, pythonType), 'Expected %s; Got: %s; For layer %s and GeoTable %s' % (
+                pythonType, type(featureId), layerId, schema + '.' + model.__tablename__)
 
 
 def test_all_htmlpopups():
