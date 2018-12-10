@@ -764,6 +764,28 @@ class StauanlagenBundesaufsicht(Base, Vector):
 register('ch.bfe.stauanlagen-bundesaufsicht', StauanlagenBundesaufsicht)
 
 
+class Wpsm (Base, Vector):
+    __tablename__ = 'wpsm_qualifizierte_firmen'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/wpsm.mako'
+    __bodId__ = 'ch.bfe.wpsm-qualifizierte_firmen'
+    __queryable_attributes__ = ['company', 'contactperson']
+    __label__ = 'company'
+    id = Column('xtf_id', Integer, primary_key=True)
+    company = Column('company', Unicode)
+    contactperson = Column('contactperson', Unicode)
+    address1 = Column('address1', Unicode)
+    address2 = Column('address2', Unicode)
+    postofficebox = Column('postofficebox', Unicode)
+    pc_place = Column('pc_place', Unicode)
+    telephonenumber = Column('telephonenumber', Unicode)
+    mail = Column('mail', Unicode)
+    webaddress = Column('webaddress', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.wpsm-qualifizierte_firmen', Wpsm)
+
+
 class Kleinwasserkraftpotentiale(Base, Vector):
     __tablename__ = 'kleinwasserkraftpotentiale'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
