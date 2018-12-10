@@ -3875,6 +3875,18 @@ msgstr "Other protected areas AuLaV"
 msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
 msgstr "Biosphere reserves"
 
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate.name"
+msgstr "Name"
+
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate.objnummer"
+msgstr "ObjectNo."
+
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate.shape_area_ha"
+msgstr "Area [ha]"
+
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate.version"
+msgstr "Date of last update"
+
 msgid "ch.bafu.schutzgebiete-luftfahrt"
 msgstr "Protected areas MIL"
 

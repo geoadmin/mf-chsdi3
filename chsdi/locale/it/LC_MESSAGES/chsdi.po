@@ -3875,6 +3875,18 @@ msgstr "Altre zone protette OAEs"
 msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
 msgstr "Riserve di biosfera"
 
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate.name"
+msgstr "Nome"
+
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate.objnummer"
+msgstr "OggettoNo."
+
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate.shape_area_ha"
+msgstr "Superficie [ha]"
+
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate.version"
+msgstr "Data dell'ultimo aggiornamento"
+
 msgid "ch.bafu.schutzgebiete-luftfahrt"
 msgstr "Zone protette MIL"
 

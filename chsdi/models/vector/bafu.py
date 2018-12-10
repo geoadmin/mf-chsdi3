@@ -11,6 +11,23 @@ from chsdi.models.vector import Vector, Geometry2D
 Base = bases['bafu']
 
 
+class SchutzgebieteBiosphaerenreservate(Base, Vector):
+    __tablename__ = 'biosphaeren'
+    __table_args__ = ({'schema': 'schutzge', 'autoload': False})
+    __bodId__ = 'ch.bafu.schutzgebiete-biosphaerenreservate'
+    __template__ = 'templates/htmlpopup/biosphaerenreservate.mako'
+    __returnedGeometry__ = 'the_geom_highlight'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    objnummer = Column('objnummer', Integer)
+    version = Column('version', Unicode)
+    shape_area_ha = Column('shape_area_ha', Float)
+    the_geom = Column(Geometry2D)
+    the_geom_highlight = Column('the_geom_gen50', Geometry2D)
+
+register('ch.bafu.schutzgebiete-biosphaerenreservate', SchutzgebieteBiosphaerenreservate)
+
+
 class AlpweidenHerdenschutzhunde(Base, Vector):
     __tablename__ = 'alpenweiden_herdenschutzhunde'
     __table_args__ = ({'schema': 'fauna', 'autoload': False})
@@ -1880,23 +1897,6 @@ class Smaragd(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.schutzgebiete-smaragd', Smaragd)
-
-
-class Biosphaerenreservate(Base, Vector):
-    __tablename__ = 'biores'
-    __table_args__ = ({'schema': 'schutzge', 'autoload': False})
-    __bodId__ = 'ch.bafu.schutzgebiete-biosphaerenreservate'
-    __template__ = 'templates/htmlpopup/biosphaerenreservate.mako'
-    __label__ = 'biores_nam'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    biores_ver = Column('biores_ver', Unicode)
-    biores_fl = Column('biores_fl', Unicode)
-    biores_gf = Column('biores_gf', Unicode)
-    biores_nam = Column('biores_nam', Unicode)
-    biores_obj = Column('biores_obj', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bafu.schutzgebiete-biosphaerenreservate', Biosphaerenreservate)
 
 
 class Moose(Base, Vector):

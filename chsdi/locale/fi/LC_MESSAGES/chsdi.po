@@ -3875,6 +3875,18 @@ msgstr "Auters territoris protegids OAEx"
 msgid "ch.bafu.schutzgebiete-biosphaerenreservate"
 msgstr "Reservats da biosfera"
 
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate.name"
+msgstr "Name"
+
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate.objnummer"
+msgstr "ObjektNr."
+
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate.shape_area_ha"
+msgstr "Fläche [ha]"
+
+msgid "ch.bafu.schutzgebiete-biosphaerenreservate.version"
+msgstr "Datum der letzten Aktualisierung"
+
 msgid "ch.bafu.schutzgebiete-luftfahrt"
 msgstr "Territoris protegids MIL"
 
