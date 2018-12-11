@@ -129,20 +129,34 @@ class Armeelogistikcenter(Base, Vector):
 register('ch.vbs.armeelogistikcenter', Armeelogistikcenter)
 
 
-class BundestankstellenBebeco(Base, Vector):
-    __tablename__ = 'bundestankstellen_bebeco'
-    __table_args__ = ({'schema': 'militaer', 'autoload': False})
+class BundestankstellenBebeco:
+    __tablename__ = 'v_bundestankstellen_bebeco'
+    __table_args__ = ({'schema': 'militaer', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/bundestankstellen.mako'
     __bodId__ = 'ch.vbs.bundestankstellen-bebeco'
     __queryable_attributes__ = ['ort', 'plz', 'strasse']
     __label__ = 'ort'
+    __returnedGeometry__ = 'the_geom_point'
     id = Column('bgdi_id', Integer, primary_key=True)
     strasse = Column('strasse', Unicode)
     plz = Column('plz', Integer)
     ort = Column('ort', Unicode)
-    the_geom = Column(Geometry2D)
+    the_geom_point = Column('the_geom', Geometry2D)
 
-register('ch.vbs.bundestankstellen-bebeco', BundestankstellenBebeco)
+
+class BundestankstellenBebecoZoom1(Base, BundestankstellenBebeco, Vector):
+    __minscale__ = 1
+    __maxscale__ = 10000
+    the_geom = Column('the_geom_tooltip_2', Geometry2D)
+
+register(BundestankstellenBebeco.__bodId__, BundestankstellenBebecoZoom1)
+
+
+class BundestankstellenBebecoZoom2(Base, BundestankstellenBebeco, Vector):
+    __minscale__ = 10000
+    the_geom = Column('the_geom_tooltip', Geometry2D)
+
+register(BundestankstellenBebeco.__bodId__, BundestankstellenBebecoZoom2)
 
 
 class LogistikraeumeArmeelogistikcenter(Base, Vector):
