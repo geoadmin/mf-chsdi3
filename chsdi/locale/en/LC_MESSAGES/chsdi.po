@@ -5570,6 +5570,9 @@ msgstr "ICAO"
 msgid "ch.bazl.gebirgslandeplaetze.name"
 msgstr "Name"
 
+msgid "ch.bazl.hindernisbegrenzungsflaechen-perimeter"
+msgstr "Begrenzungsflächen-Perimeter"
+
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze"
 msgstr "Polluted sites civil aerodromes"
 
@@ -5803,6 +5806,15 @@ msgstr "Safety zone plan"
 
 msgid "ch.bazl.sicherheitszonenplan.oereb"
 msgstr "Safety zone plan PLR"
+
+msgid "ch.bazl.sicherheitszonenplan.SafetyZone.Description"
+msgstr "Beschreibung"
+
+msgid "ch.bazl.sicherheitszonenplan.SafetyZone.Status"
+msgstr "Rechtsstatus"
+
+msgid "ch.bazl.sicherheitszonenplan.SafetyZone.Valdity.ValidFrom"
+msgstr "Gültigkeitsdatum"
 
 msgid "ch.bazl.sperrzonen-modellluftfahrzeuge"
 msgstr "Restrictions for drones"

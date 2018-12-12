@@ -5570,6 +5570,9 @@ msgstr "OACI"
 msgid "ch.bazl.gebirgslandeplaetze.name"
 msgstr "Nom"
 
+msgid "ch.bazl.hindernisbegrenzungsflaechen-perimeter"
+msgstr "Begrenzungsflächen-Perimeter"
+
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze"
 msgstr "Sites pollués aérodromes civils"
 
@@ -5803,6 +5806,15 @@ msgstr "Plan de la zone de sécurité"
 
 msgid "ch.bazl.sicherheitszonenplan.oereb"
 msgstr "Plan de la zone de sécurité RDPPF"
+
+msgid "ch.bazl.sicherheitszonenplan.SafetyZone.Description"
+msgstr "Description"
+
+msgid "ch.bazl.sicherheitszonenplan.SafetyZone.Status"
+msgstr "Statut juridique"
+
+msgid "ch.bazl.sicherheitszonenplan.SafetyZone.Valdity.ValidFrom"
+msgstr "Date de validité"
 
 msgid "ch.bazl.sperrzonen-modellluftfahrzeuge"
 msgstr "Restrictions pour drones"

@@ -131,6 +131,8 @@ class SicherheitsZonenPlan (Base, Vector):
     zonetype_fr = Column('zonetype_fr', Unicode)
     zonetype_it = Column('zonetype_it', Unicode)
     zone_name = Column('zone_name', Unicode)
+    zone_valid_from = Column('zone_valid_from', Date)
+    zone_description = Column('zone_description', Unicode)
     originator = Column('originator', Unicode)
     canton = Column('canton', Unicode)
     municipality = Column('municipality', Unicode)
