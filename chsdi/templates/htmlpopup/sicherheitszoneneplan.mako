@@ -19,10 +19,16 @@
     import dateutil.parser as date_parser
     lang = lang if lang in ('fr','it') else 'de'
     format = 'formate_%s' % lang
+    zone_description = c['attributes']['zone_description']
     try:
-        date = date_parser.parse(c['attributes']['approval_date']).strftime('%d.%m.%Y')
+        aproval_date = date_parser.parse(c['attributes']['approval_date']).strftime('%d.%m.%Y')
     except ValueError:
-        date = 'format error'
+        aproval_date = 'format error'
+    try:
+        zone_valid_from = date_parser.parse(c['attributes']['zone_valid_from']).strftime('%d.%m.%Y')
+    except ValueError:
+        zone_valid_from = 'format error'
+
 %>
   <table>
     <tr><td class="cell-meta-small">${_('safety_zone')}</td><td class="cell-meta-big">${c['attributes']['zone_name']}</td></tr>
@@ -39,7 +45,12 @@
 %>
     <tr><td class="cell-meta-small">${_('municipality')}</td><td class="cell-meta-big">${nb_municipality}</td></tr>
     <tr><td class="cell-meta-small">${_('bazlrechtstatus')}</td><td class="cell-meta-big">${c['attributes']['legalstatus_%s' % lang]}</td></tr>
-    <tr><td class="cell-meta-small">${_('approval_date')}</td><td class="cell-meta-big">${date or '-'}</td></tr>  
+    <tr><td class="cell-meta-small">${_('approval_date')}</td><td class="cell-meta-big">${aproval_date}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bazl.sicherheitszonenplan.SafetyZone.Valdity.ValidFrom')}</td><td class="cell-meta-big">${zone_valid_from}</td></tr>
+%   if zone_description:
+        <tr><td class="cell-meta-small">${_('ch.bazl.sicherheitszonenplan.SafetyZone.Valdity.Description')}</td><td class="cell-meta-big">${zone_description}</td></tr>
+%   endif
+
 <%
      weblink = c['attributes']['weblink']
      if weblink:
