@@ -100,7 +100,7 @@ class Vector(object):
     def srid(self):
         return self.geometry_column().type.srid
 
-    def to_esrijson(self, trans, returnGeometry, out_srid):
+    def to_esrijson(self, trans, returnGeometry):
         if returnGeometry:
             id, geom, properties, bbox = self.__read__()
             return esrijson.Feature(id=id,
@@ -113,7 +113,7 @@ class Vector(object):
                                    layerName=trans(self.__bodId__))
         return self._no_geom_template(trans)
 
-    def to_geojson(self, trans, returnGeometry, out_srid):
+    def to_geojson(self, trans, returnGeometry):
         if returnGeometry:
             id, geom, properties, bbox = self.__read__()
             # TODO: no need to reproject geometry?
