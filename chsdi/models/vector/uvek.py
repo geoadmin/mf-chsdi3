@@ -3311,3 +3311,28 @@ class Spitallandeplaetze(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bazl.spitallandeplaetze', Spitallandeplaetze)
+
+
+class Biomasse:
+    __tablename__ = 'biomasse'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': True})
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    bfs_nummer = Column('bfs_nummer', Integer)
+    the_geom = Column(Geometry2D)
+
+
+class BiomasseVerholzt (Base, Biomasse, Vector):
+    __template__ = 'templates/htmlpopup/biomasseverholzt.mako'
+    __bodId__ = 'ch.bfe.biomasse-verholzt'
+    woody = Column('woody', Float)
+
+register(BiomasseVerholzt.__bodId__, BiomasseVerholzt)
+
+
+class BiomasseNichtVerholzt (Base, Biomasse, Vector):
+    __template__ = 'templates/htmlpopup/biomassenichtverholzt.mako'
+    __bodId__ = 'ch.bfe.biomasse-nicht-verholzt'
+    non_woody = Column('non_woody', Float)
+
+register(BiomasseNichtVerholzt.__bodId__, BiomasseNichtVerholzt)
