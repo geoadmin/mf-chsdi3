@@ -13,7 +13,7 @@ shop_url = request.registry.settings['shop_url']
     <tr><td class="cell-left">${_('ch.swisstopo.lubis-bildstreifen.id')}</td>          <td>${c['featureId']}</td></tr>
     <tr><td class="cell-left">${_('tt_lubis_Flugdatum')}</td>       <td>${c['attributes']['flugdatum']}</td></tr>
     <tr><td class="cell-left">${_('tt_lubis_auflosung')}</td>       <td>${c['attributes']['resolution']}</td></tr>
-% if   c['attributes']['gsd'] != 0.25 and c['attributes']['gsd'] != 0.5:
+% if   c['attributes']['gsd'] != 0.25 and c['attributes']['gsd'] != 0.5 and round(c['attributes']['gsd'],1) != 0.1:
     <tr><td class="cell-left">${_('tt_firmen_Link')}</td>          <td><a href="mailto:geodata@swisstopo.ch?subject=${_('tt_firmen_Link ')} ebkey:${c['featureId']}">geodata@swisstopo.ch</a></td></tr>
 % endif
 </%def>
@@ -41,7 +41,7 @@ lang = request.lang
         <tr><th class="cell-left">${_('tt_lubis_linielaenge')}</th>         <td>${c['attributes']['toposhop_length'] or '-'}</td></tr>
         <tr><th class="cell-left">${_('tt_lubis_project')}</th>             <td>${c['attributes']['goal'] or '-'}</td></tr>
         <tr><th class="cell-left">${_('tt_lubis_source_georef')}</th>       <td>${c['attributes']['source_georef'] or '-'}</td></tr>
-% if   c['attributes']['gsd'] == 0.25 or c['attributes']['gsd'] == 0.5:
+% if   c['attributes']['gsd'] == 0.25 or c['attributes']['gsd'] == 0.5 or round(c['attributes']['gsd'],1) == 0.1:
         <tr><th class="cell-left">${_('link')} Online Shop</th>
         <td><a href="https:${shop_url}/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
 target="toposhop">Online Shop</a></td></tr>
