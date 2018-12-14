@@ -1051,26 +1051,44 @@ For the testing phase, the service is free for use.
 
 The service provides both *tiles* and *styles* that the customer can use. 
 
+GetTile
+*******
+
+::
+
+    <Scheme>://<ServerName>/mbtiles/<LayerName>/<version>/<zoomlevel>/<x>/<y>.pbf
+
+GetStyle
+********
+
+::
+
+    <Scheme>://<ServerName>/gl-styles/<layername>/<version>/style.json
+
 URL
 ***
 
-- vector tiles: `https://vectortiles.geo.admin.ch/mbtiles/<layername>/<version>/<zoomlevel>/<x>/<y>.pbf`
-- gl-styles: `https://vectortiles.geo.admin.ch/gl-styles/<layername>/<version>/style.json`
-
+- vector tiles: https://vectortiles.geo.admin.ch/mbtiles/
+- gl-styles: https://vectortiles.geo.admin.ch/gl-styles/
 
 Metadata Service
 ****************
 
 Each tileset has a corresponding metatda `json` file that describes the available set of tiles.
-The URL of the metadata `json` file is :  `https://vectortiles.geo.admin.ch/mbtiles/<layername>/<version>.json`
+The URL of the metadata `json` file is : 
+
+::
+
+   <Scheme>://<ServerName>/mbtiles/<LayerName>/<version>.json
 
 
 Example
 *******
 
 * A `Vector tile <https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.swissnames3d/v004/7/67/44.pbf>`_
+* A `Style <https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v004/style.json>`_
 * A `Tileset <https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.swissnames3d/v004.json>`_
-* A `Mapbox-gl appication using our light base map <https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v004/?vector#7/47/8/0/6>`_
+* A `Mapbox-gl application using our light base map <https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v004/?vector#7/47/8/0/6>`_
 
 .. _tiles3d_description:
 
