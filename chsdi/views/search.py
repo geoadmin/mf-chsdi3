@@ -415,13 +415,21 @@ class Search(SearchValidation):
             map(popAtrrs, attrs2Del)
         elif int(self.srid) not in (21781, 2056):
             self._box2d_transform(res)
-            try:
-                pnt = (res['y'], res['x'])
-                x, y = transform_coordinate(pnt, self.DEFAULT_SRID, self.srid)
-                res['x'] = x
-                res['y'] = y
-            except Exception:
-                raise exc.HTTPInternalServerError('Error while converting point(x, y) to EPSG:{}'.format(self.srid))
+
+            if int(self.srid) == 4326:
+                try:
+                    res['x'] = res['lon']
+                    res['y'] = res['lat']
+                except KeyError:
+                    raise exc.HTTPInternalServerError('Sphinx location has no lat/long defined')
+            else:
+                try:
+                    pnt = (res['y'], res['x'])
+                    x, y = transform_coordinate(pnt, self.DEFAULT_SRID, self.srid)
+                    res['x'] = x
+                    res['y'] = y
+                except Exception:
+                    raise exc.HTTPInternalServerError('Error while converting point(x, y) to EPSG:{}'.format(self.srid))
         return res
 
     def _parse_location_results(self, results):

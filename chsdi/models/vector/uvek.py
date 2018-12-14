@@ -764,6 +764,28 @@ class StauanlagenBundesaufsicht(Base, Vector):
 register('ch.bfe.stauanlagen-bundesaufsicht', StauanlagenBundesaufsicht)
 
 
+class Wpsm (Base, Vector):
+    __tablename__ = 'wpsm_qualifizierte_firmen'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/wpsm.mako'
+    __bodId__ = 'ch.bfe.wpsm-qualifizierte_firmen'
+    __queryable_attributes__ = ['company', 'contactperson']
+    __label__ = 'company'
+    id = Column('xtf_id', Integer, primary_key=True)
+    company = Column('company', Unicode)
+    contactperson = Column('contactperson', Unicode)
+    address1 = Column('address1', Unicode)
+    address2 = Column('address2', Unicode)
+    postofficebox = Column('postofficebox', Unicode)
+    pc_place = Column('pc_place', Unicode)
+    telephonenumber = Column('telephonenumber', Unicode)
+    mail = Column('mail', Unicode)
+    webaddress = Column('webaddress', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.wpsm-qualifizierte_firmen', Wpsm)
+
+
 class Kleinwasserkraftpotentiale(Base, Vector):
     __tablename__ = 'kleinwasserkraftpotentiale'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
@@ -3289,3 +3311,28 @@ class Spitallandeplaetze(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bazl.spitallandeplaetze', Spitallandeplaetze)
+
+
+class Biomasse:
+    __tablename__ = 'biomasse'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': True})
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    bfs_nummer = Column('bfs_nummer', Integer)
+    the_geom = Column(Geometry2D)
+
+
+class BiomasseVerholzt (Base, Biomasse, Vector):
+    __template__ = 'templates/htmlpopup/biomasseverholzt.mako'
+    __bodId__ = 'ch.bfe.biomasse-verholzt'
+    woody = Column('woody', Float)
+
+register(BiomasseVerholzt.__bodId__, BiomasseVerholzt)
+
+
+class BiomasseNichtVerholzt (Base, Biomasse, Vector):
+    __template__ = 'templates/htmlpopup/biomassenichtverholzt.mako'
+    __bodId__ = 'ch.bfe.biomasse-nicht-verholzt'
+    non_woody = Column('non_woody', Float)
+
+register(BiomasseNichtVerholzt.__bodId__, BiomasseNichtVerholzt)
