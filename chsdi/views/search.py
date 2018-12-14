@@ -9,7 +9,7 @@ from shapely.geometry import box, Point
 from chsdi.lib.validation.search import SearchValidation
 from chsdi.lib.helpers import format_search_text, format_locations_search_text
 from chsdi.lib.helpers import transform_coordinate, parse_box2d, shift_to
-from chsdi.lib.helpers import center_from_box2d
+from chsdi.lib.helpers import center_from_box2d, transform_shape
 from chsdi.lib.sphinxapi import sphinxapi
 from chsdi.lib import mortonspacekey as msk
 
@@ -19,6 +19,7 @@ class Search(SearchValidation):
     LOCATION_LIMIT = 50
     LAYER_LIMIT = 30
     FEATURE_LIMIT = 20
+    DEFAULT_SRID = 21781
 
     def __init__(self, request):
         super(Search, self).__init__(request)
@@ -29,7 +30,7 @@ class Search(SearchValidation):
         self.searchLang = request.params.get('searchLang')
         self.cbName = request.params.get('callback')
         # Order matters define srid first
-        self.srid = request.params.get('sr', '21781')
+        self.srid = request.params.get('sr', str(self.DEFAULT_SRID))
         self.bbox = request.params.get('bbox')
         self.sortbbox = request.params.get('sortbbox', 'true').lower() == 'true'
         self.returnGeometry = request.params.get('returnGeometry', 'true').lower() == 'true'
@@ -269,7 +270,7 @@ class Search(SearchValidation):
 
     def _get_geoanchor_from_bbox(self):
         center = center_from_box2d(self.bbox)
-        return transform_coordinate(center, 21781, 4326)
+        return transform_coordinate(center, self.DEFAULT_SRID, 4326)
 
     def _query_fields(self, fields):
         # 10a, 10b needs to be interpreted as digit
@@ -393,11 +394,41 @@ class Search(SearchValidation):
                     raise exc.HTTPBadRequest('Parameter seachLang is not supported for %s' % index)
                 self.sphinx.AddQuery(queryText, index=str(index))
 
+    def _box2d_transform(self, res):
+        """Reproject a ST_BOX2 from EPSG:21781 to SRID"""
+        try:
+            box2d = res['geom_st_box2d']
+            box_str = box2d[4:-1]
+            b = map(float, re.split(' |,', box_str))
+            shape = box(*b)
+            bbox = transform_shape(shape, self.DEFAULT_SRID, self.srid).bounds
+            res['geom_st_box2d'] = "BOX({} {},{} {})".format(*bbox)
+        except Exception:
+            raise exc.HTTPInternalServerError('Error while converting BOX2D to EPSG:{}'.format(self.srid))
+        return res
+
     def _parse_locations(self, res):
+
         if not self.returnGeometry:
             attrs2Del = ['x', 'y', 'lon', 'lat', 'geom_st_box2d']
             popAtrrs = lambda x: res.pop(x) if x in res else x
             map(popAtrrs, attrs2Del)
+        elif int(self.srid) not in (21781, 2056):
+            self._box2d_transform(res)
+            if int(self.srid) == 4326:
+                try:
+                    res['x'] = res['lon']
+                    res['y'] = res['lat']
+                except KeyError:
+                    raise exc.HTTPInternalServerError('Sphinx location has no lat/long defined')
+            else:
+                try:
+                    pnt = (res['y'], res['x'])
+                    x, y = transform_coordinate(pnt, self.DEFAULT_SRID, self.srid)
+                    res['x'] = x
+                    res['y'] = y
+                except Exception:
+                    raise exc.HTTPInternalServerError('Error while converting point(x, y) to EPSG:{}'.format(self.srid))
         return res
 
     def _parse_location_results(self, results):

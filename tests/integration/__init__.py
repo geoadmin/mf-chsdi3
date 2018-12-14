@@ -9,6 +9,28 @@ from chsdi.models import models_from_bodid
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.sql.expression import func
 
+from chsdi.lib.helpers import transform_shape
+from chsdi.lib.validation import SUPPORTED_OUTPUT_SRS
+from shapely.geometry import box, Point
+
+
+def reproject_to_srid(string_coords, srid_from, srid_to, round_to=2):
+    if (srid_from == srid_to):
+        return string_coords
+    reproj_coords = []
+    fmt = '.{}f'.format(round_to)
+    coords = [float(c) for c in string_coords.split(',')]
+
+    if len(coords) > 2:
+        geom = box(*coords)
+    elif len(coords) == 2:
+        geom = Point(*coords)
+    else:
+        raise NotImplemented("Cannot transform {} to shape".format(string_coords))
+    reproj_coords += transform_shape(geom, srid_from, srid_to).bounds
+
+    return ','.join([format(c, fmt) for c in reproj_coords])
+
 
 def shift_to_lv95(string_coords):
     coords = string_coords.split(',')
@@ -28,7 +50,9 @@ class TestsBase(TestCase):
         self.testapp = TestApp(app)
         self.grids = {
             '21781': getTileGrid(21781),
-            '2056': getTileGrid(2056)
+            '2056': getTileGrid(2056),
+            '3857': getTileGrid(3857),
+            '4326': getTileGrid(4326)
         }
 
     def tearDown(self):
@@ -76,9 +100,11 @@ class TestsBase(TestCase):
             self.assertBBoxValidity(feature['bbox'], srid)
 
     def assertBBoxValidity(self, bbox, srid):
-        if srid == 21781:
-            self.assertLess(bbox[0], self.grids['2056'].MINX)
-            self.assertLess(bbox[1], self.grids['2056'].MINY)
-        if srid == 2056:
-            self.assertGreater(bbox[0], self.grids['2056'].MINX)
-            self.assertGreater(bbox[1], self.grids['2056'].MINY)
+        self.assertIn(srid, SUPPORTED_OUTPUT_SRS)
+        grid = self.grids[str(srid)]
+        minx, miny, maxx, maxy = bbox
+
+        self.assertLessEqual(maxx, grid.MAXX)
+        self.assertLessEqual(maxy, grid.MAXY)
+        self.assertGreaterEqual(minx, grid.MINX)
+        self.assertGreaterEqual(miny, grid.MINY)

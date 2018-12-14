@@ -116,6 +116,7 @@ class Vector(object):
     def to_geojson(self, trans, returnGeometry):
         if returnGeometry:
             id, geom, properties, bbox = self.__read__()
+            # TODO: no need to reproject geometry?
             return geojson.Feature(id=id,
                                    featureId=id,  # Duplicate id for backward compat...
                                    geometry=geom,
