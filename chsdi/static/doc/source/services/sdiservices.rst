@@ -1087,7 +1087,7 @@ Example
 * A `Vector tile <https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.swissnames3d/v004/7/67/44.pbf>`_
 * A `Style <https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v004/style.json>`_
 * A `Tileset <https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.swissnames3d/v004.json>`_
-* A `Mapbox-gl application using our light base map <https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v004/?vector#7/47/8/0/6>`_
+
 
 .. _tiles3d_description:
 
