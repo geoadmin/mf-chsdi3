@@ -1922,6 +1922,9 @@ msgstr "Inondation Aquaprotect 250"
 msgid "ch.bafu.aquaprotect_500"
 msgstr "Inondation Aquaprotect 500"
 
+msgid "ch.bafu.auen-ausserhalb_bundesinventar"
+msgstr "Zones alluviales en dehors de l' inventaire"
+
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Végétation dans zones alluviales"
 
@@ -5571,7 +5574,7 @@ msgid "ch.bazl.gebirgslandeplaetze.name"
 msgstr "Nom"
 
 msgid "ch.bazl.hindernisbegrenzungsflaechen-perimeter"
-msgstr "Begrenzungsflächen-Perimeter"
+msgstr "Périmètre des surfaces de limitation"
 
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze"
 msgstr "Sites pollués aérodromes civils"

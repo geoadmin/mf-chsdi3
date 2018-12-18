@@ -1922,6 +1922,9 @@ msgstr "Inundaziun Aquaprotect 250"
 msgid "ch.bafu.aquaprotect_500"
 msgstr "Inundaziun Aquaprotect 500"
 
+msgid "ch.bafu.auen-ausserhalb_bundesinventar"
+msgstr "Auen ausserhalb Bundesinventar"
+
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Zonas umidas"
 

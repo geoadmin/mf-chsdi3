@@ -1922,6 +1922,9 @@ msgstr "Aree inondabili Aquaprotect 250"
 msgid "ch.bafu.aquaprotect_500"
 msgstr "Aree inondabili Aquaprotect 500"
 
+msgid "ch.bafu.auen-ausserhalb_bundesinventar"
+msgstr "Zone golenali fuori dall'inventario federale"
+
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Zone golenali carte di vegetazione"
 
@@ -5571,7 +5574,7 @@ msgid "ch.bazl.gebirgslandeplaetze.name"
 msgstr "Nome"
 
 msgid "ch.bazl.hindernisbegrenzungsflaechen-perimeter"
-msgstr "Begrenzungsflächen-Perimeter"
+msgstr "Perimetro delle superfici di limitazione"
 
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze"
 msgstr "Siti inquinati aeroporti civili"

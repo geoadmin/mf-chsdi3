@@ -1922,6 +1922,9 @@ msgstr "Areas of flooding Aquaprotect 250"
 msgid "ch.bafu.aquaprotect_500"
 msgstr "Areas of flooding Aquaprotect 500"
 
+msgid "ch.bafu.auen-ausserhalb_bundesinventar"
+msgstr "Floodplains outside the federal inventary"
+
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Floodplains vegetation maps"
 
