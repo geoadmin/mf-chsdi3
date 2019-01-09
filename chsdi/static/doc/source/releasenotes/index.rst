@@ -15,6 +15,68 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20190123:
+
+Release 20181219 - Wednesday, January 23th 2019
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_181205...r_190123>`__
+- Announcement:
+   - 9 NGA layers are today completely removed from the API without substitution:
+      - ch.bakom.verfuegbarkeit-tv
+      - ch.bakom.verfuegbarkeit-hdtv
+      - ch.bakom.uplink2
+      - ch.bakom.uplink50
+      - ch.bakom.uplink20
+      - ch.bakom.downlink1
+      - ch.bakom.downlink2
+      - ch.bakom.downlink20
+      - ch.bakom.downlink50
+   - From February 6th 2019 on the layer `ch.sgpk.maechtigkeit-lockergesteine` will be replaced with `ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell` in the catalogs. The layer `ch.sgpk.maechtigkeit-lockergesteine` will be completely removed from the BGDI in Q2 2019 (middle 2019).
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_181205...r_190123>`__
+
+
+Geodata
+*******
+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Konsultationsbereiche Rohrleitungen <//map.geo.admin.ch/?layers=ch.bfe.rohrleitungen-konsultationsbereiche>`__ (ch.bfe.rohrleitungen-konsultationsbereiche)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update |  `Pro Natura: Nature Preserves <//map.geo.admin.ch/?layers=ch.pronatura.naturschutzgebiete>`__ (ch.pronatura.naturschutzgebiete)                                                           |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Journey through time <//map.geo.admin.ch/?layers=ch.swisstopo.zeitreihen>`__ (ch.swisstopo.zeitreihen)                                                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata&layers_timestamp=2017&time=2017>`__ (ch.swisstopo.swissimage-product.metadata)   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product&layers_timestamp=2017&time=2017>`__ (ch.swisstopo.swissimage-product)                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division GeoCover <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover.metadata>`__ (ch.swisstopo.geologie-geocover.metadata)                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-land-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-land-flaeche.fill)                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cantonal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `District boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill)                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Historical monuments' rocks <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke>`__ (ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke)   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 .. _releasenotes_20181219:
 
 Release 20181219 - Wednesday, December 19th 2018
