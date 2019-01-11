@@ -13,9 +13,10 @@ class Checker(FileView):
         self.request = request
         self.dynamodb_table_name = 'geoadmin-file-'
         self.bucket_name = request.registry.settings['geoadmin_file_storage_bucket']
+        self.key_name = '7iu88SxtTBGWlmSV540Iag'
         FileView.__init__(self, request)
 
-    @view_config(route_name='backend_checker')
+    @view_config(route_name='checker')
     def home(self):
         return Response(body='OK', status_int=200)
 
@@ -25,6 +26,14 @@ class Checker(FileView):
             self.dynamodb_fileshandler.table.count()
         except (KeyError, JSONResponseError):
             raise HTTPInternalServerError('Cannot access to DynamoDB backend {}'.format(self.dynamodb_fileshandler.table.table_name))
+
+        try:
+            resp = self.s3_fileshandler.bucket.get_key(self.key_name)
+        except (KeyError, JSONResponseError):
+            raise HTTPInternalServerError('Cannot access bucket {}'.format(self.bucket_name))
+
+        if resp is None or resp.key != self.key_name:
+            raise HTTPInternalServerError('Unable to find key {} in bucket {}'.format(self.key_name, self.bucket_name))
 
         return Response(body='OK', status_int=200)
 
