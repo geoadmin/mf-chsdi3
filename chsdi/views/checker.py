@@ -13,7 +13,7 @@ class Checker(FileView):
         self.request = request
         self.dynamodb_table_name = 'geoadmin-file-'
         self.bucket_name = request.registry.settings['geoadmin_file_storage_bucket']
-        self.key_name = '7iu88SxtTBGWlmSV540Iag'
+        self.key_name = 'checker'
         FileView.__init__(self, request)
 
     @view_config(route_name='checker')
