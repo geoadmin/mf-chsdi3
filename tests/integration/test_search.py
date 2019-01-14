@@ -56,6 +56,9 @@ class TestSearchServiceView(TestsBase):
         }
         self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=400)
 
+    def test_options_request(self):
+        self.testapp.options('/rest/services/inspire/SearchServer', status=200)
+
     def test_unaccepted_type(self):
         params = {
             'searchText': 'ga',

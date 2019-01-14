@@ -149,3 +149,9 @@ class TestCatalogService(TestsBase):
             # reset staging to previous setting
             self.testapp.app.registry.settings['geodata_staging'] = old_staging
             DBSession.close()
+
+    def test_catalog_options(self):
+        resp = self.testapp.options('/rest/services/ech/CatalogServer', status=200)
+        self.assertEqual(resp.headers.get('Cache-Control'), 'max-age=0, no-cache')
+        self.assertEqual(resp.headers.get('Access-Control-Allow-Origin'), '*')
+        self.assertEqual(resp.headers.get('Access-Control-Allow-Methods'), 'OPTIONS,HEAD,GET')

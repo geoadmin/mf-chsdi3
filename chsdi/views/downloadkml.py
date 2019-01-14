@@ -9,7 +9,6 @@ import errno
 import time
 import urllib
 from pyramid.view import view_config
-from pyramid.response import Response
 from pyramid.httpexceptions import (HTTPBadRequest, HTTPInternalServerError)
 
 
@@ -46,9 +45,6 @@ class DownloadKML:
     @requires_authorization()
     @view_config(route_name='downloadkml', renderer='jsonp')
     def downloadkml(self):
-
-        if self.request.method == 'OPTIONS':
-            return Response(status=200)
 
         # IE is always URLEncoding the body
         jsonstring = urllib.unquote_plus(self.request.body)

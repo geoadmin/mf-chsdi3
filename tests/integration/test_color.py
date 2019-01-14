@@ -27,3 +27,9 @@ class TestColorView(TestsBase):
     def test_color_bad_image_name(self):
         resp = self.testapp.get('/color/25,24,25/dfgdfg', None, status=400)
         resp.mustcontain('The image to color doesn\'t exist')
+
+    def test_color_options(self):
+        resp = self.testapp.options('/color/25,24,25/dfgdfg', status=200)
+        self.assertEqual(resp.headers.get('Cache-Control'), 'max-age=0, no-cache')
+        self.assertEqual(resp.headers.get('Access-Control-Allow-Origin'), '*')
+        self.assertEqual(resp.headers.get('Access-Control-Allow-Methods'), 'OPTIONS,HEAD,GET')

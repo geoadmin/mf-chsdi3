@@ -35,7 +35,3 @@ class Checker(FileView):
             raise HTTPInternalServerError('Unable to find key {} in bucket {}'.format(self.key_name, self.bucket_name))
 
         return Response(body='OK', status_int=200)
-
-    @view_config(route_name='checker_dev')
-    def dev(self):
-        return Response(body='OK', status_int=200)

@@ -10,9 +10,9 @@ VALID_KML = '''<?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Placemark>
     <name>Simple placemark</name>
-    <description>Attached to the ground. 
+    <description>Attached to the ground.
        Intelligently places itself
-       at the height of the underlying terrain. 
+       at the height of the underlying terrain.
     </description>
     <Point>
       <coordinates>7.0,46.0,0</coordinates>
@@ -36,7 +36,7 @@ INVALID_KML1_once = '''<?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Placemark>
     <name>Simple placemark</name>
-    <description>Attached to the ground. 
+    <description>Attached to the ground.
        Intelligently places itself
        at the height of the underlying terrain. onpointerdown="alert(document.cookie);"
     </description>
@@ -50,7 +50,7 @@ INVALID_KML2_once = '''<?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Placemark>
     <name>Simple placemark</name>
-    <description>Attached to the ground. 
+    <description>Attached to the ground.
        Intelligently places itself
        at the height of the underlying terrain.&lt;scriptsrc="https://www.htbridge.com/1.js"&gt;&lt;/script&gt;
     </description>
@@ -78,7 +78,7 @@ INVALID_KML2 = '''<?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Placemark>
     <name>Simple placemark</name>
-    <description>Attached to the ground. 
+    <description>Attached to the ground.
        Intelligently places itself
        at the height of the underlying terrain.&lt;scriptsrc="https://www.htbridge.com/1.js"&gt;&lt;/script&gt;
 blabla random text blabla
@@ -225,6 +225,12 @@ class TestFileView(TestsBase):
 
         self.assertEqual(new_content, VALID_KML)
         self.assertNotEqual(new_content, modified_content)
+
+    def test_files_options(self):
+        self.testapp.options('/files', status=200)
+
+    def test_files_id_options(self):
+        self.testapp.options('/files/myid', status=200)
 
     def test_file_ie9_fix(self):
         # No content-type default to 'application/vnd.google-earth.kml+xml'

@@ -3,5 +3,4 @@ Disallow: /loader.js
 Disallow: /dev
 Disallow: /testi18n
 Disallow: /checker
-Disallow: /checker_dev
 Disallow: /mapproxy

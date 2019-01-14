@@ -18,3 +18,9 @@ class TestCacheUpdateView(TestsBase):
 
     def test_invalid_layer(self):
         self.testapp.get('/rest/services/ech/MapServer/does_not_exists/cacheUpdate', status=404)
+
+    def test_cacheupdate_options(self):
+        resp = self.testapp.options('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/cacheUpdate', status=200)
+        self.assertEqual(resp.headers.get('Cache-Control'), 'max-age=0, no-cache')
+        self.assertEqual(resp.headers.get('Access-Control-Allow-Origin'), '*')
+        self.assertEqual(resp.headers.get('Access-Control-Allow-Methods'), 'OPTIONS,HEAD,GET')
