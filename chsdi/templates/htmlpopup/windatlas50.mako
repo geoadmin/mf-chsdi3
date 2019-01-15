@@ -519,7 +519,7 @@ var arc = d3.svg.arc()
 //svg definieren
 var svg = d3.select("#rose").append("svg")
 % if iframe:
-    .attr("width", width + 58)
+    .attr("width", width + 150)
 % else:
     .attr("width", width + 48 + 140) //+140 damit rechts noch Legende Platz hat
 % endif
@@ -683,8 +683,12 @@ var path = svg.selectAll(".solidArc")
 
 //Legende rechts
     svg.append("rect")
+% if iframe:
+    .attr("x", "120")
+% else:
     .attr("x", "190")
-    .attr("y", "121") //-15
+% endif
+    .attr("y", "61")
     .attr("width", 20)
     .attr("height", 10)
     .style("fill", "rgb(187,8,5)")
@@ -694,10 +698,19 @@ var path = svg.selectAll(".solidArc")
     .text("≥ 8.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(215,130)"); //0,-15
+% if iframe:
+    .attr("transform", "translate(145,70)");
+% else:
+    .attr("transform", "translate(215,70)");
+% endif
+
     svg.append("rect")
+% if iframe:
+    .attr("x", "120")
+% else:
     .attr("x", "190")
-    .attr("y", "106") //-15
+% endif
+    .attr("y", "46")
     .attr("width", 20)
     .attr("height", 10)
     .style("fill", "rgb(204,30,24)")
@@ -707,11 +720,19 @@ var path = svg.selectAll(".solidArc")
     .text("≥ 7.5 – < 8.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(215,115)"); //0,-15
+% if iframe:
+    .attr("transform", "translate(145,55)");
+% else:
+    .attr("transform", "translate(215,55)");
+% endif
 
     svg.append("rect")
+% if iframe:
+    .attr("x", "120")
+% else:
     .attr("x", "190")
-    .attr("y", "91") //-15
+% endif
+    .attr("y", "31")
     .attr("width", 20)
     .attr("height", 10)
     .style("fill", "rgb(181,56,75)")
@@ -721,11 +742,19 @@ var path = svg.selectAll(".solidArc")
     .text("≥ 7.0 – < 7.5 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(215,100)"); //0,-15
+% if iframe:
+    .attr("transform", "translate(145,40)");
+% else:
+    .attr("transform", "translate(215,40)"); //0,-15
+% endif
 
     svg.append("rect")
+% if iframe:
+    .attr("x", "120")
+% else:
     .attr("x", "190")
-    .attr("y", "76") //-15
+% endif
+    .attr("y", "16")
     .attr("width", 20)
     .attr("height", 10)
     .style("fill", "rgb(155,77,101)")
@@ -735,11 +764,19 @@ var path = svg.selectAll(".solidArc")
     .text("≥ 6.5 – < 7.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(215,85)"); //0,-15
+% if iframe:
+    .attr("transform", "translate(145,25)");
+% else:
+    .attr("transform", "translate(215,25)"); //0,-15
+% endif
 
     svg.append("rect")
+% if iframe:
+    .attr("x", "120")
+% else:
     .attr("x", "190")
-    .attr("y", "61") //-15
+% endif
+    .attr("y", "1")
     .attr("width", 20)
     .attr("height", 10)
     .style("fill", "rgb(133,86,148)")
@@ -749,11 +786,19 @@ var path = svg.selectAll(".solidArc")
     .text("≥ 6.0 – < 6.5 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(215,70)"); //0,-15
+% if iframe:
+    .attr("transform", "translate(145,10)");
+% else:
+    .attr("transform", "translate(215,10)"); //0,-15
+% endif
 
     svg.append("rect")
+% if iframe:
+    .attr("x", "120")
+% else:
     .attr("x", "190")
-    .attr("y", "46") //-15
+% endif
+    .attr("y", "-14")
     .attr("width", 20)
     .attr("height", 10)
     .style("fill", "rgb(54,105,188)")
@@ -763,11 +808,19 @@ var path = svg.selectAll(".solidArc")
     .text("≥ 5.5 – < 6.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(215,55)"); //0,-15
+% if iframe:
+    .attr("transform", "translate(145,-5)");
+% else:
+    .attr("transform", "translate(215,-5)"); //0,-15
+% endif
 
     svg.append("rect")
+% if iframe:
+    .attr("x", "120")
+% else:
     .attr("x", "190")
-    .attr("y", "31") //-15
+% endif
+    .attr("y", "-29")
     .attr("width", 20)
     .attr("height", 10)
     .style("fill", "rgb(47,144,225)")
@@ -777,11 +830,19 @@ var path = svg.selectAll(".solidArc")
     .text("≥ 5.0 – < 5.5 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-     .attr("transform", "translate(215,40)"); //0,-15
+% if iframe:
+    .attr("transform", "translate(145,-20)");
+% else:
+    .attr("transform", "translate(215,-20)"); //0,-15
+% endif
 
     svg.append("rect")
+% if iframe:
+    .attr("x", "120")
+% else:
     .attr("x", "190")
-    .attr("y", "16") //-15
+% endif
+    .attr("y", "-44")
     .attr("width", 20)
     .attr("height", 10)
     .style("fill", "rgb(78,200,244)")
@@ -791,11 +852,19 @@ var path = svg.selectAll(".solidArc")
     .text("≥ 4.5 – < 5.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(215,25)"); //0,-15
+% if iframe:
+    .attr("transform", "translate(145,-35)");
+% else:
+    .attr("transform", "translate(215,-35)"); //0,-15
+% endif
 
     svg.append("rect")
+% if iframe:
+    .attr("x", "120")
+% else:
     .attr("x", "190")
-    .attr("y", "1") //-15
+% endif
+    .attr("y", "-59")
     .attr("width", 20)
     .attr("height", 10)
     .style("fill", "rgb(122,212,241)")
@@ -805,11 +874,19 @@ var path = svg.selectAll(".solidArc")
     .text("≥ 4.0 – < 4.5 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(215,10)"); //0,-15
+% if iframe:
+    .attr("transform", "translate(145,-50)");
+% else:
+    .attr("transform", "translate(215,-50)"); //0,-15
+% endif
 
     svg.append("rect")
+% if iframe:
+    .attr("x", "120")
+% else:
     .attr("x", "190")
-    .attr("y", "-14") //-15
+% endif
+    .attr("y", "-74")
     .attr("width", 20)
     .attr("height", 10)
     .style("fill", "rgb(201,233,246)")
@@ -819,13 +896,21 @@ var path = svg.selectAll(".solidArc")
     .text("< 4.0 m/s")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(215,-5)"); //0,-15
+% if iframe:
+    .attr("transform", "translate(145,-65)");
+% else:
+    .attr("transform", "translate(215,-65)"); //0,-15
+% endif
 
     svg.append("text")
     .text("${_('tt_bfe_windgeschwindigkeit')}")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(190,-20)");
+% if iframe:
+    .attr("transform", "translate(140,-80)");
+% else:
+    .attr("transform", "translate(190,-80)");
+% endif
 
 //WEIBULL
 // Daten fuer Darstellung der Weibull-Funktion generieren
