@@ -5744,6 +5744,9 @@ msgstr "Obstachels da l'aviatica"
 msgid "ch.bazl.luftfahrthindernis.abortionaccomplished"
 msgstr "Abbruch ausgeführt"
 
+msgid "ch.bazl.luftfahrthindernis.bgdi_activesince"
+msgstr "dal"
+
 msgid "ch.bazl.luftfahrthindernis.duration"
 msgstr "Anlagedauer"
 
@@ -5962,6 +5965,36 @@ msgstr "Name"
 
 msgid "ch.bfe.bikesharing"
 msgstr "Bikesharing ed emprest da velos"
+
+msgid "ch.bfe.bikesharing.address"
+msgstr "Adresse"
+
+msgid "ch.bfe.bikesharing.description"
+msgstr "Informationen"
+
+msgid "ch.bfe.bikesharing.feedback"
+msgstr "Feedback"
+
+msgid "ch.bfe.bikesharing.feedbacklink"
+msgstr "Rückmeldung senden"
+
+msgid "ch.bfe.bikesharing.incorrectinfo"
+msgstr "Bei fehlerhaften Angaben:"
+
+msgid "ch.bfe.bikesharing.link"
+msgstr "Webseite"
+
+msgid "ch.bfe.bikesharing.provider"
+msgstr "Anbieter"
+
+msgid "ch.bfe.bikesharing.rent"
+msgstr "Kosten"
+
+msgid "ch.bfe.bikesharing.return"
+msgstr "Rückgabe"
+
+msgid "ch.bfe.bikesharing.time"
+msgstr "Öffnungszeiten"
 
 msgid "ch.bfe.biogasanlagen"
 msgstr "Biogasanlagen"
