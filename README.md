@@ -160,6 +160,16 @@ To run against your private environment:
 To execute all tests, including _wmts_ and _varnish_ ones, which are deactivated by default:
 `scripts/nose_run.sh -a`
 
+## Checker
+
+Apache/WSGI checker
+
+    curl -I http://api3.geo.admin.ch/checker
+
+Idem, with DynamoDB and S3 bucket access
+
+    curl -I http://api3.geo.admin.ch/backend_checker
+
 ## Download WMS image legends
 
 In order to download all images of a layer in the correct format and with the correct dimensions, simply use:
