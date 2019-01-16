@@ -1365,6 +1365,20 @@ class LuftraeumeNahKontrollBezirke(Base, LuftraeumeBase, Vector):
 register('ch.bazl.luftraeume-nahkontrollbezirke', LuftraeumeNahKontrollBezirke)
 
 
+class HindernisbegrenzungsflaechenPerimeter(Base, Vector):
+    __tablename__ = 'hindernisbegrenzungsflaechen_perimeter'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __bodId__ = 'ch.bazl.hindernisbegrenzungsflaechen-perimeter'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    feature_id = Column('id', Integer)
+    icao = Column('icao', Unicode)
+    name = Column('name', Unicode)
+    status = Column('status', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.bazl.hindernisbegrenzungsflaechen-perimeter', HindernisbegrenzungsflaechenPerimeter)
+
+
 class AstraStrasseFacilitiesA(Base, Vector):
     __tablename__ = 'sachplan_strasse_fac_anhorung'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
