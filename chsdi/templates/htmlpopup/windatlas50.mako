@@ -24,7 +24,7 @@ extent = grid.cellExtent(col,row)
 center = [(extent[0] + extent[2])/2,(extent[1] + extent[3])/2]
 baseUrl = request.registry.settings['api_url']
 dhm_altitude = int(round(float(getAltitude(request.registry.settings['host'], center)),0))
-center = '2%s, 1%s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
+center = '%s, %s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
 
 props = c['attributes']
 %>
@@ -76,7 +76,7 @@ topRight = coordinates[2]
 center = [(bottomLeft[0] + topRight[0]) / 2, (bottomLeft[1] + topRight[1]) / 2]
 baseUrl = request.registry.settings['api_url']
 dhm_altitude = int(round(float(getAltitude(request.registry.settings['host'], center)),0))
-center = '2%s, 1%s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
+center = '%s, %s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
 altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
 
 props = c['attributes']
