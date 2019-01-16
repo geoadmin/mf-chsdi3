@@ -1145,17 +1145,65 @@ msgstr "IVS Nazionale"
 msgid "ch.astra.ivs-nat_abgrenzungen"
 msgstr "IVS Delimitazioni"
 
+msgid "ch.astra.ivs-nat.doc1"
+msgstr "Documentazione"
+
+msgid "ch.astra.ivs-nat.doc2"
+msgstr "Documentazione"
+
+msgid "ch.astra.ivs-nat.doc3"
+msgstr "Documentazione"
+
+msgid "ch.astra.ivs-nat.ivs_kanton"
+msgstr "Cantone"
+
 msgid "ch.astra.ivs-nat.ivs_nummer"
 msgstr "Oggetto IVS"
 
 msgid "ch.astra.ivs-nat.ivs_signatur"
 msgstr "Sostanza"
 
+msgid "ch.astra.ivs-nat.ivs_signatur_de"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-nat.ivs_signatur_fr"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-nat.ivs_signatur_it"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-nat.ivs_signatur_label"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-nat.ivs_slabedeutung"
+msgstr "Classificazione LPN"
+
+msgid "ch.astra.ivs-nat.ivs_sladatehist"
+msgstr "Storia"
+
+msgid "ch.astra.ivs-nat.ivs_sladatemorph"
+msgstr "Terreno"
+
 msgid "ch.astra.ivs-nat.ivs_slaname"
 msgstr "Tracciato"
 
+msgid "ch.astra.ivs-nat.ivs_sortsla"
+msgstr "Documentazione"
+
 msgid "ch.astra.ivs-nat-verlaeufe"
 msgstr "IVS import.naz. tracciato s. sost."
+
+msgid "ch.astra.ivs-nat-verlaeufe.doc1"
+msgstr "Documentazione"
+
+msgid "ch.astra.ivs-nat-verlaeufe.doc2"
+msgstr "Documentazione"
+
+msgid "ch.astra.ivs-nat-verlaeufe.doc3"
+msgstr "Documentazione"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_kanton"
+msgstr "Cantone"
 
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_nummer"
 msgstr "Oggetto IVS"
@@ -1163,8 +1211,32 @@ msgstr "Oggetto IVS"
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur"
 msgstr "Sostanza"
 
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_de"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_fr"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_it"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_label"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_slabedeutung"
+msgstr "Classificazione LPN"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_sladatehist"
+msgstr "Storia"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_sladatemorph"
+msgstr "Terreno"
+
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_slaname"
 msgstr "Tracciato"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_sortsla"
+msgstr "Documentazione"
 
 msgid "ch.astra.ivs-nat_wegbegleiter"
 msgstr "IVS Supporti del traffico"
@@ -1175,14 +1247,50 @@ msgstr "ch.astra.ivs-punktobjekt"
 msgid "ch.astra.ivs-reg_loc"
 msgstr "IVS Regionali e locali"
 
+msgid "ch.astra.ivs-reg_loc.doc1"
+msgstr "Documentazione"
+
+msgid "ch.astra.ivs-reg_loc.doc2"
+msgstr "Documentazione"
+
+msgid "ch.astra.ivs-reg_loc.doc3"
+msgstr "Documentazione"
+
+msgid "ch.astra.ivs-reg_loc.ivs_kanton"
+msgstr "Cantone"
+
 msgid "ch.astra.ivs-reg_loc.ivs_nummer"
 msgstr "Oggetto IVS"
 
 msgid "ch.astra.ivs-reg_loc.ivs_signatur"
 msgstr "Sostanza"
 
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_de"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_fr"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_it"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_label"
+msgstr "Sostanza"
+
+msgid "ch.astra.ivs-reg_loc.ivs_slabedeutung"
+msgstr "Classificazione LPN"
+
+msgid "ch.astra.ivs-reg_loc.ivs_sladatehist"
+msgstr "Storia"
+
+msgid "ch.astra.ivs-reg_loc.ivs_sladatemorph"
+msgstr "Terreno"
+
 msgid "ch.astra.ivs-reg_loc.ivs_slaname"
 msgstr "Tracciato"
+
+msgid "ch.astra.ivs-reg_loc.ivs_sortsla"
+msgstr "Documentazione"
 
 msgid "ch.astra.kanuland"
 msgstr "La Svizzera in canoa"
@@ -5840,6 +5948,9 @@ msgstr "Nom"
 msgid "ch.bfe.bikesharing"
 msgstr "Bikesharing e ciclonoleggio"
 
+msgid "ch.bfe.biogasanlagen"
+msgstr "Impianti di produzione di biogas"
+
 msgid "ch.bfe.biomasse-nicht-verholzt"
 msgstr "Energia da biomassa non legnosa"
 
@@ -7514,6 +7625,9 @@ msgstr "Avventura geologia"
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Altitudine del substrato roccioso"
 
+msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell.height"
+msgstr "Altitudine del substrato roccioso [m s.l.m.]"
+
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Carta geol. generale 200"
 
@@ -8143,6 +8257,9 @@ msgstr "Croquis publiés"
 
 msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell"
 msgstr "Spessore dei depositi sciolti"
+
+msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell.height"
+msgstr "Spessore dei depositi sciolti [m]"
 
 msgid "ch.swisstopo.geologie-originalkarten-perimeter"
 msgstr "Cartes originales"

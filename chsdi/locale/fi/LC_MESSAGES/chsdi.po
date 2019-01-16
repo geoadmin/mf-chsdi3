@@ -1145,17 +1145,65 @@ msgstr "IVS Naziunal"
 msgid "ch.astra.ivs-nat_abgrenzungen"
 msgstr "IVS Cunfinaziuns"
 
+msgid "ch.astra.ivs-nat.doc1"
+msgstr "Streckenbeschrieb"
+
+msgid "ch.astra.ivs-nat.doc2"
+msgstr "Streckenbeschrieb"
+
+msgid "ch.astra.ivs-nat.doc3"
+msgstr "Streckenbeschrieb"
+
+msgid "ch.astra.ivs-nat.ivs_kanton"
+msgstr "Chantun"
+
 msgid "ch.astra.ivs-nat.ivs_nummer"
 msgstr "IVS-Objekt"
 
 msgid "ch.astra.ivs-nat.ivs_signatur"
 msgstr "Substanzgrad"
 
+msgid "ch.astra.ivs-nat.ivs_signatur_de"
+msgstr "Substanzgrad"
+
+msgid "ch.astra.ivs-nat.ivs_signatur_fr"
+msgstr "Substanzgrad"
+
+msgid "ch.astra.ivs-nat.ivs_signatur_it"
+msgstr "Substanzgrad"
+
+msgid "ch.astra.ivs-nat.ivs_signatur_label"
+msgstr "Substanzgrad"
+
+msgid "ch.astra.ivs-nat.ivs_slabedeutung"
+msgstr "Bedeutung nach NHG"
+
+msgid "ch.astra.ivs-nat.ivs_sladatehist"
+msgstr "Geschichte"
+
+msgid "ch.astra.ivs-nat.ivs_sladatemorph"
+msgstr "Gelände"
+
 msgid "ch.astra.ivs-nat.ivs_slaname"
 msgstr "Strecke"
 
+msgid "ch.astra.ivs-nat.ivs_sortsla"
+msgstr "Streckenbeschrieb"
+
 msgid "ch.astra.ivs-nat-verlaeufe"
 msgstr "IVS Trassés istorics"
+
+msgid "ch.astra.ivs-nat-verlaeufe.doc1"
+msgstr "Streckenbeschrieb"
+
+msgid "ch.astra.ivs-nat-verlaeufe.doc2"
+msgstr "Streckenbeschrieb"
+
+msgid "ch.astra.ivs-nat-verlaeufe.doc3"
+msgstr "Streckenbeschrieb"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_kanton"
+msgstr "Chantun"
 
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_nummer"
 msgstr "IVS-Objekt"
@@ -1163,8 +1211,32 @@ msgstr "IVS-Objekt"
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur"
 msgstr "Substanzgrad"
 
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_de"
+msgstr "Substanzgrad"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_fr"
+msgstr "Substanzgrad"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_it"
+msgstr "Substanzgrad"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_label"
+msgstr "Substanzgrad"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_slabedeutung"
+msgstr "Bedeutung nach NHG"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_sladatehist"
+msgstr "Geschichte"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_sladatemorph"
+msgstr "Gelände"
+
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_slaname"
 msgstr "Strecke"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_sortsla"
+msgstr "Streckenbeschrieb"
 
 msgid "ch.astra.ivs-nat_wegbegleiter"
 msgstr "IVS Elements cuntrada stradala"
@@ -1175,14 +1247,50 @@ msgstr "ch.astra.ivs-punktobjekt"
 msgid "ch.astra.ivs-reg_loc"
 msgstr "IVS Regiunal e local"
 
+msgid "ch.astra.ivs-reg_loc.doc1"
+msgstr "Streckenbeschrieb"
+
+msgid "ch.astra.ivs-reg_loc.doc2"
+msgstr "Streckenbeschrieb"
+
+msgid "ch.astra.ivs-reg_loc.doc3"
+msgstr "Streckenbeschrieb"
+
+msgid "ch.astra.ivs-reg_loc.ivs_kanton"
+msgstr "Chantun"
+
 msgid "ch.astra.ivs-reg_loc.ivs_nummer"
 msgstr "IVS-Objekt"
 
 msgid "ch.astra.ivs-reg_loc.ivs_signatur"
 msgstr "Substanzgrad"
 
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_de"
+msgstr "Substanzgrad"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_fr"
+msgstr "Substanzgrad"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_it"
+msgstr "Substanzgrad"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_label"
+msgstr "Substanzgrad"
+
+msgid "ch.astra.ivs-reg_loc.ivs_slabedeutung"
+msgstr "Bedeutung nach NHG"
+
+msgid "ch.astra.ivs-reg_loc.ivs_sladatehist"
+msgstr "Geschichte"
+
+msgid "ch.astra.ivs-reg_loc.ivs_sladatemorph"
+msgstr "Gelände"
+
 msgid "ch.astra.ivs-reg_loc.ivs_slaname"
 msgstr "Strecke"
+
+msgid "ch.astra.ivs-reg_loc.ivs_sortsla"
+msgstr "Streckenbeschrieb"
 
 msgid "ch.astra.kanuland"
 msgstr "Kanuland"
@@ -4461,7 +4569,7 @@ msgid "ch.bag.zecken-lyme"
 msgstr "Zonas da borreliosa"
 
 msgid "ch.bag.zeckenstichmodell"
-msgstr "Zecken-Gefahrenpotenzialkarte"
+msgstr "Zeckenstichmodell"
 
 msgid "ch.bak"
 msgstr "BAK"
@@ -4476,7 +4584,7 @@ msgid "ch.bakom"
 msgstr "BAKOM"
 
 msgid "ch.bakom.anbieter-eigenes_festnetz"
-msgstr "Societads cun atgna rait"
+msgstr "Societads cun rait"
 
 msgid "ch.bakom.anschlussart-glasfaser"
 msgstr "Fibras da vaider FTTB/FTTH"
@@ -5839,6 +5947,9 @@ msgstr "Name"
 
 msgid "ch.bfe.bikesharing"
 msgstr "Bikesharing ed emprest da velos"
+
+msgid "ch.bfe.biogasanlagen"
+msgstr "Biogasanlagen"
 
 msgid "ch.bfe.biomasse-nicht-verholzt"
 msgstr "Nicht-verholzte Biomassen"
@@ -7514,6 +7625,9 @@ msgstr "Aventura geologia"
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Höhenmodell der Felsoberfläche"
 
+msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell.height"
+msgstr "Höhe der Felsoberfläche [m ü. M.]"
+
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Charta geol. generala 200"
 
@@ -8143,6 +8257,9 @@ msgstr "Publizierte Skizzen"
 
 msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell"
 msgstr "Autezza da la crappa lucca"
+
+msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell.height"
+msgstr "Mächtigkeit des Lockergesteins [m]"
 
 msgid "ch.swisstopo.geologie-originalkarten-perimeter"
 msgstr "Originalkarten"

@@ -1145,17 +1145,65 @@ msgstr "IHR national"
 msgid "ch.astra.ivs-nat_abgrenzungen"
 msgstr "IHR Boundaries"
 
+msgid "ch.astra.ivs-nat.doc1"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-nat.doc2"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-nat.doc3"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-nat.ivs_kanton"
+msgstr "Canton"
+
 msgid "ch.astra.ivs-nat.ivs_nummer"
 msgstr "IVS-Objekt"
 
 msgid "ch.astra.ivs-nat.ivs_signatur"
 msgstr "Substance"
 
+msgid "ch.astra.ivs-nat.ivs_signatur_de"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat.ivs_signatur_fr"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat.ivs_signatur_it"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat.ivs_signatur_label"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat.ivs_slabedeutung"
+msgstr "Importance LPN"
+
+msgid "ch.astra.ivs-nat.ivs_sladatehist"
+msgstr "History"
+
+msgid "ch.astra.ivs-nat.ivs_sladatemorph"
+msgstr "Terrain"
+
 msgid "ch.astra.ivs-nat.ivs_slaname"
 msgstr "Route"
 
+msgid "ch.astra.ivs-nat.ivs_sortsla"
+msgstr "Documentation"
+
 msgid "ch.astra.ivs-nat-verlaeufe"
 msgstr "IHR nat.importance, no subst."
+
+msgid "ch.astra.ivs-nat-verlaeufe.doc1"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-nat-verlaeufe.doc2"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-nat-verlaeufe.doc3"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_kanton"
+msgstr "Canton"
 
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_nummer"
 msgstr "IVS-Objekt"
@@ -1163,8 +1211,32 @@ msgstr "IVS-Objekt"
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur"
 msgstr "Substance"
 
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_de"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_fr"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_it"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_label"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_slabedeutung"
+msgstr "Importance LPN"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_sladatehist"
+msgstr "History"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_sladatemorph"
+msgstr "Terrain"
+
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_slaname"
 msgstr "Route"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_sortsla"
+msgstr "Documentation"
 
 msgid "ch.astra.ivs-nat_wegbegleiter"
 msgstr "IHR Elements of landscape"
@@ -1175,14 +1247,50 @@ msgstr "ch.astra.ivs-punktobjekt"
 msgid "ch.astra.ivs-reg_loc"
 msgstr "IHR regional & local"
 
+msgid "ch.astra.ivs-reg_loc.doc1"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-reg_loc.doc2"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-reg_loc.doc3"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-reg_loc.ivs_kanton"
+msgstr "Canton"
+
 msgid "ch.astra.ivs-reg_loc.ivs_nummer"
 msgstr "IVS-Objekt"
 
 msgid "ch.astra.ivs-reg_loc.ivs_signatur"
 msgstr "Substance"
 
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_de"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_fr"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_it"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_label"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-reg_loc.ivs_slabedeutung"
+msgstr "Importance LPN"
+
+msgid "ch.astra.ivs-reg_loc.ivs_sladatehist"
+msgstr "History"
+
+msgid "ch.astra.ivs-reg_loc.ivs_sladatemorph"
+msgstr "Terrain"
+
 msgid "ch.astra.ivs-reg_loc.ivs_slaname"
 msgstr "Route"
+
+msgid "ch.astra.ivs-reg_loc.ivs_sortsla"
+msgstr "Documentation"
 
 msgid "ch.astra.kanuland"
 msgstr "Canoeing in Switzerland"
@@ -4461,7 +4569,7 @@ msgid "ch.bag.zecken-lyme"
 msgstr "Borreliosis risk regions"
 
 msgid "ch.bag.zeckenstichmodell"
-msgstr "Zecken-Gefahrenpotenzialkarte"
+msgstr "Zeckenstichmodell"
 
 msgid "ch.bak"
 msgstr "BAK"
@@ -5574,7 +5682,7 @@ msgid "ch.bazl.gebirgslandeplaetze.name"
 msgstr "Name"
 
 msgid "ch.bazl.hindernisbegrenzungsflaechen-perimeter"
-msgstr "Begrenzungsflächen-Perimeter"
+msgstr "Perimeter of limitation surfaces"
 
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze"
 msgstr "Polluted sites civil aerodromes"
@@ -5839,6 +5947,9 @@ msgstr "Name"
 
 msgid "ch.bfe.bikesharing"
 msgstr "Bike sharing and bicycle hire"
+
+msgid "ch.bfe.biogasanlagen"
+msgstr "Biogas plants"
 
 msgid "ch.bfe.biomasse-nicht-verholzt"
 msgstr "Non-woody biomass for energy"
@@ -7514,6 +7625,9 @@ msgstr "Experience Geology"
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Bedrock elevation model"
 
+msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell.height"
+msgstr "Bedrock elevation [m a.s.l.]"
+
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "General Geol. Map 200"
 
@@ -8143,6 +8257,9 @@ msgstr "Publizierte Skizzen"
 
 msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell"
 msgstr "Thickness of unconsolidated deposits"
+
+msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell.height"
+msgstr "Thickness of unconsolidated deposits [m]"
 
 msgid "ch.swisstopo.geologie-originalkarten-perimeter"
 msgstr "Originalkarten"

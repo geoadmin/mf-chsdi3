@@ -1145,17 +1145,65 @@ msgstr "IVS National"
 msgid "ch.astra.ivs-nat_abgrenzungen"
 msgstr "IVS Délimitations"
 
+msgid "ch.astra.ivs-nat.doc1"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-nat.doc2"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-nat.doc3"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-nat.ivs_kanton"
+msgstr "Canton"
+
 msgid "ch.astra.ivs-nat.ivs_nummer"
 msgstr "Objet IVS"
 
 msgid "ch.astra.ivs-nat.ivs_signatur"
 msgstr "Substance"
 
+msgid "ch.astra.ivs-nat.ivs_signatur_de"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat.ivs_signatur_fr"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat.ivs_signatur_it"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat.ivs_signatur_label"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat.ivs_slabedeutung"
+msgstr "Importance (LPN)"
+
+msgid "ch.astra.ivs-nat.ivs_sladatehist"
+msgstr "Histoire"
+
+msgid "ch.astra.ivs-nat.ivs_sladatemorph"
+msgstr "Terrain"
+
 msgid "ch.astra.ivs-nat.ivs_slaname"
 msgstr "Tracé"
 
+msgid "ch.astra.ivs-nat.ivs_sortsla"
+msgstr "Documentation"
+
 msgid "ch.astra.ivs-nat-verlaeufe"
 msgstr "IVS import. nat. tracé s. subst."
+
+msgid "ch.astra.ivs-nat-verlaeufe.doc1"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-nat-verlaeufe.doc2"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-nat-verlaeufe.doc3"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_kanton"
+msgstr "Canton"
 
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_nummer"
 msgstr "Objet IVS"
@@ -1163,8 +1211,32 @@ msgstr "Objet IVS"
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur"
 msgstr "Substance"
 
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_de"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_fr"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_it"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_signatur_label"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_slabedeutung"
+msgstr "Importance (LPN)"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_sladatehist"
+msgstr "Histoire"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_sladatemorph"
+msgstr "Terrain"
+
 msgid "ch.astra.ivs-nat-verlaeufe.ivs_slaname"
 msgstr "Tracé"
+
+msgid "ch.astra.ivs-nat-verlaeufe.ivs_sortsla"
+msgstr "Documentation"
 
 msgid "ch.astra.ivs-nat_wegbegleiter"
 msgstr "IVS Eléments du paysage routier"
@@ -1175,14 +1247,50 @@ msgstr "IVS Eléments du paysage"
 msgid "ch.astra.ivs-reg_loc"
 msgstr "IVS Régional et local"
 
+msgid "ch.astra.ivs-reg_loc.doc1"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-reg_loc.doc2"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-reg_loc.doc3"
+msgstr "Documentation"
+
+msgid "ch.astra.ivs-reg_loc.ivs_kanton"
+msgstr "Canton"
+
 msgid "ch.astra.ivs-reg_loc.ivs_nummer"
 msgstr "Objet IVS"
 
 msgid "ch.astra.ivs-reg_loc.ivs_signatur"
 msgstr "Substance"
 
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_de"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_fr"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_it"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-reg_loc.ivs_signatur_label"
+msgstr "Substance"
+
+msgid "ch.astra.ivs-reg_loc.ivs_slabedeutung"
+msgstr "Importance (LPN)"
+
+msgid "ch.astra.ivs-reg_loc.ivs_sladatehist"
+msgstr "Histoire"
+
+msgid "ch.astra.ivs-reg_loc.ivs_sladatemorph"
+msgstr "Terrain"
+
 msgid "ch.astra.ivs-reg_loc.ivs_slaname"
 msgstr "Tracé"
+
+msgid "ch.astra.ivs-reg_loc.ivs_sortsla"
+msgstr "Documentation"
 
 msgid "ch.astra.kanuland"
 msgstr "la Suisse en canoë"
@@ -4476,7 +4584,7 @@ msgid "ch.bakom"
 msgstr "OFCOM"
 
 msgid "ch.bakom.anbieter-eigenes_festnetz"
-msgstr "Nombre d'opérateurs de raccord"
+msgstr "Nombre de fournisseurs d'accès"
 
 msgid "ch.bakom.anschlussart-glasfaser"
 msgstr "Fibre optique FTTB/FTTH"
@@ -5839,6 +5947,9 @@ msgstr "Nom"
 
 msgid "ch.bfe.bikesharing"
 msgstr "Bikesharing et prêt de velo"
+
+msgid "ch.bfe.biogasanlagen"
+msgstr "Installations de biogaz"
 
 msgid "ch.bfe.biomasse-nicht-verholzt"
 msgstr "Biomasse non ligneuse"
@@ -7514,6 +7625,9 @@ msgstr "Géologie Vivante"
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Modèle d'altitude du toit du rocher"
 
+msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell.height"
+msgstr "Altitude du toit du rocher [m]"
+
 msgid "ch.swisstopo.geologie-generalkarte-ggk200"
 msgstr "Carte géol. générale 200"
 
@@ -8143,6 +8257,9 @@ msgstr "Croquis publiés"
 
 msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell"
 msgstr "Épaisseur des terrains meubles"
+
+msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell.height"
+msgstr "Épaisseur des terrains meubles [m]"
 
 msgid "ch.swisstopo.geologie-originalkarten-perimeter"
 msgstr "Cartes originales"
