@@ -519,7 +519,7 @@ var arc = d3.svg.arc()
 //svg definieren
 var svg = d3.select("#rose").append("svg")
 % if iframe:
-    .attr("width", width + 58)
+    .attr("width", width + 48 + 110) // +110 is some room for legends
 % else:
     .attr("width", width + 48 + 140) //+140 damit rechts noch Legende Platz hat
 % endif
@@ -561,32 +561,80 @@ svg.append("circle")
 .attr("stroke-width", "1")
 .attr("fill", "none");
 
+const legends = [
+    {
+        color: "#bf0a00",
+        min: 8.0,
+        max: Number.MAX_VALUE
+    }, {
+        color: "#d01e05",
+        min: 7.5,
+        max: 8.0
+    }, {
+        color: "#b83848",
+        min: 7.0,
+        max: 7.5
+    }, {
+        color: "#9d4e64",
+        min: 6.5,
+        max: 7.0
+    }, {
+        color: "#855994",
+        min: 6.0,
+        max: 6.5
+    }, {
+        color: "#286dbd",
+        min: 5.5,
+        max: 6.0
+    }, {
+        color: "#0194e2",
+        min: 5.0,
+        max: 5.5
+    }, {
+        color: "#39caf5",
+        min: 4.5,
+        max: 5.0
+    }, {
+        color: "#7ad4f1",
+        min: 4.0,
+        max: 4.5
+    }, {
+        color: "#c9e9f6",
+        min: Number.MIN_VALUE,
+        max: 4.0
+    }
+];
+legends.forEach(function (legend) {
+    legend.text = function () {
+        let text = "";
+        if (this.min !== Number.MIN_VALUE) {
+            text += "≥ " + this.min
+        }
+        if (this.max !== Number.MAX_VALUE) {
+            if (text.length > 0) {
+                text += " – ";
+            }
+            text += "< " + this.max;
+        }
+        if (text.length) {
+            text += " m/s";
+        }
+        return text;
+    }
+});
+
 //Kuchenstuecke hinzufuegen
 var path = svg.selectAll(".solidArc")
     .data(pie(data))
   .enter().append("path")
     .attr("fill", function(d) {
-      if (d.data.speed < 4.0) {
-          return "rgb(201,233,246)";
-      } else if (d.data.speed < 4.5 & d.data.speed >= 4.0) {
-          return "rgb(122,212,241)";
-      } else if (d.data.speed < 5.0 & d.data.speed >= 4.5) {
-          return "rgb(78,200,244)";
-      } else if (d.data.speed < 5.5 & d.data.speed >= 5.0) {
-          return "rgb(47,144,225)";
-      } else if (d.data.speed < 6.0 & d.data.speed >= 5.5) {
-          return "rgb(54,105,188)";
-      } else if (d.data.speed < 6.5 & d.data.speed >= 6.0) {
-          return "rgb(133,86,148)";
-      } else if (d.data.speed < 7.0 & d.data.speed >= 6.5) {
-          return "rgb(155,77,101)";
-      } else if (d.data.speed < 7.5 & d.data.speed >= 7.0) {
-          return "rgb(181,56,75)";
-      } else if (d.data.speed < 8.0 & d.data.speed >= 7.5) {
-          return "rgb(204,30,24)";
-      } else if (d.data.speed >= 8.0) {
-          return "rgb(187,8,5)";
-      }
+        var color = null;
+        legends.forEach(function (legend) {
+            if (d.data.speed >= legend.min && d.data.speed < legend.max) {
+                color = legend.color;
+            }
+        });
+        return color;
     })
     .attr("class", "solidArc")
     .attr("stroke", "gray")
@@ -682,150 +730,41 @@ var path = svg.selectAll(".solidArc")
 % endif
 
 //Legende rechts
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "121") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(187,8,5)")
-    .style("stroke-width", "0");
-
+% if iframe:
+    const rectX = 120;
+    const legendX = 145;
+% else:
+    const rectX = 190;
+    const legendX = 215;
+% endif
+let rectY = 61;
+let legendY = 70;
+legends.forEach(function (legend) {
+     svg.append("rect")
+        .attr("x", rectX)
+        .attr("y", rectY)
+        .attr("width", 20)
+        .attr("height", 10)
+        .style("fill", legend.color)
+        .style("stroke-width", "0");
     svg.append("text")
-    .text("≥ 8.0 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,130)"); //0,-15
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "106") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(204,30,24)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 7.5 – < 8.0 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,115)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "91") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(181,56,75)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 7.0 – < 7.5 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,100)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "76") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(155,77,101)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 6.5 – < 7.0 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,85)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "61") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(133,86,148)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 6.0 – < 6.5 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,70)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "46") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(54,105,188)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 5.5 – < 6.0 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,55)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "31") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(47,144,225)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 5.0 – < 5.5 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-     .attr("transform", "translate(215,40)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "16") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(78,200,244)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 4.5 – < 5.0 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,25)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "1") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(122,212,241)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 4.0 – < 4.5 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,10)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "-14") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(201,233,246)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("< 4.0 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,-5)"); //0,-15
-
-    svg.append("text")
+        .text(legend.text())
+        .style("font-size", "10px")
+        .attr("fill", "grey")
+        .attr("transform", "translate(" + legendX + "," + legendY + ")");
+     // shift next legend 15px down
+     rectY -= 15;
+     legendY -= 15;
+});
+svg.append("text")
     .text("${_('tt_bfe_windgeschwindigkeit')}")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(190,-20)");
+% if iframe:
+    .attr("transform", "translate(120," + legendY + ")");
+% else:
+    .attr("transform", "translate(190," + legendY + ")");
+% endif
 
 //WEIBULL
 // Daten fuer Darstellung der Weibull-Funktion generieren
