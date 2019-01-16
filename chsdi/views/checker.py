@@ -11,7 +11,6 @@ class Checker(FileView):
 
     def __init__(self, request):
         self.request = request
-        self.dynamodb_table_name = 'geoadmin-file-'
         self.bucket_name = request.registry.settings['geoadmin_file_storage_bucket']
         self.key_name = 'checker'
         FileView.__init__(self, request)
