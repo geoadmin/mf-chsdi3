@@ -21,8 +21,8 @@ def loadjs(request):
     if vip is True:
         public_bucket_host = public_bucket_host.replace('public', 'public-cdn')
 
-    # If version not provided fallback to the first entry
-    version_str = request.params.get('version', available_versions[0])
+    # If version not provided fallback to the latest entry
+    version_str = request.params.get('version', available_versions[-1])
     # If provided make sure the version exists
     if version_str not in available_versions:
         raise HTTPNotFound(

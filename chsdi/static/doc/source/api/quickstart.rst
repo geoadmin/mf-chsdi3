@@ -73,14 +73,14 @@ One can use different versions of GeoAdmin Api using the version parameter.
 
   <script src="http://api3.geo.admin.ch/loader.js?lang=en&version=3.18.2" type="text/javascript"></script>
 
-Default version is based on ol version 3.6.0.
+Default version is based on ol version 4.4.2.
 
 Available versions are (which are all based on ol3 releases):
 
 - 3.6.0  (LV03)
 - 3.18.2 (LV03)
 - 4.3.2  (LV03)
-- 4.4.2  (LV95)
+- 4.4.2  (LV95) **default**
 
 .. warning::
    Only the latest version is supported. Previous versions are given as courtesy and may be using layers and
