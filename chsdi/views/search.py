@@ -131,14 +131,14 @@ class Search(SearchValidation):
 
         if len(searchList) != 0:
             try:
-                # wildcard search
+                # standard wildcard search
                 self.sphinx.AddQuery(searchTextFinal, index='swisssearch')
-                # exact search
-                self.sphinx.SetRankingMode(sphinxapi.SPH_RANK_PROXIMITY_BM25)
-                self.sphinx.SetGroupBy('origin', sphinxapi.SPH_GROUPBY_ATTR, 'rank ASC, @weight DESC, num ASC')
+                # exact search, first 10 results
+                self.sphinx.SetLimits(0, 10)
                 searchText = '@detail ^%s' % ' '.join(self.searchText)
                 self.sphinx.AddQuery(searchText, index='swisssearch')
-                self.sphinx.ResetGroupBy()
+                # reset settings
+                self.sphinx.SetLimits(0, limit)
 
                 temp = self.sphinx.RunQueries()
 
