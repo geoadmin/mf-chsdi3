@@ -103,6 +103,19 @@ class TestWmtsCapabilitiesView(TestsBase):
 
             self.assertTrue(set(used_matrices).issubset(defined_matrices))
 
+    def test_maximum_extent_for_non_swiss(self):
+        import xml.etree.ElementTree as etree
+
+        resp = self.testapp.get('/rest/services/api/1.0.0/WMTSCapabilities.xml', params={'epsg': 3857}, status=200)
+
+        root = etree.fromstring(resp.body)
+        tilematrices = root.findall('.//{http://www.opengis.net/wmts/1.0}TileMatrix')
+        for tilematrix in tilematrices:
+            id = tilematrix.find('./{http://www.opengis.net/ows/1.1}Identifier')
+            if id.text == '0':
+                topleft = tilematrix.find('./{http://www.opengis.net/wmts/1.0}TopLeftCorner')
+                assert topleft.text == '-20037508.3428 20037508.3428'
+
     def test_axis_order(self):
         from urlparse import urlparse
         import xml.etree.ElementTree as etree
