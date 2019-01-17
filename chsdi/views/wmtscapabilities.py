@@ -13,7 +13,12 @@ from chsdi.lib.filters import filter_by_geodata_staging, filter_by_map_name
 def getDefaultTileMatrixSet(tileMatrixSet):
     tilematrixSet = {}
 
-    gagrid = getTileGrid(int(tileMatrixSet))()
+    tilegridClass = getTileGrid(int(tileMatrixSet))
+    if tileMatrixSet not in ['2056', '21781']:
+        useSwissExtent = False
+    else:
+        useSwissExtent = True
+    gagrid = tilegridClass(useSwissExtent=useSwissExtent)
     minZoom = 0
     maxZoom = len(gagrid.RESOLUTIONS)
     for zoom in range(minZoom, maxZoom):
