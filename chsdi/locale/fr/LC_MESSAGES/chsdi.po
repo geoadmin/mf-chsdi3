@@ -4569,7 +4569,7 @@ msgid "ch.bag.zecken-lyme"
 msgstr "Zones à risque de Borréliose"
 
 msgid "ch.bag.zeckenstichmodell"
-msgstr "Zecken-Gefahrenpotenzialkarte"
+msgstr "Modèle des piqûres"
 
 msgid "ch.bak"
 msgstr "OFC"
