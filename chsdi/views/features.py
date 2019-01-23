@@ -269,6 +269,8 @@ def _identify_grid(params, layerBodIds):
                     gridSpec.get('resolutionY'))
         if params.srid == 2056 and gridSpec.get('srid') == '21781':
             pointCoordinates = shift_to(pointCoordinates, 21781)
+        elif params.srid == 21781 and gridSpec.get('srid') == '2056':
+            pointCoordinates = shift_to(pointCoordinates, 2056)
         [col, row] = grid.cellAddressFromPointCoordinate(pointCoordinates)
         if col is not None and row is not None:
             feature, none = _get_feature_grid(col, row, timestamp, grid, bucket, params)
@@ -279,10 +281,15 @@ def _identify_grid(params, layerBodIds):
                 feature['properties']['label'] = feature['id']
                 if params.srid == 2056 and gridSpec.get('srid') == '21781':
                     feature['bbox'] = shift_to(feature['bbox'], 2056)
-                    # Coords are always simple polygons
                     coords = feature['geometry']['coordinates']
                     coords = [[shift_to(c, 2056) for c in coords[0]]]
                     feature['geometry']['coordinates'] = coords
+                if params.srid == 21781 and gridSpec.get('srid') == '2056':
+                    feature['bbox'] = shift_to(feature['bbox'], 21781)
+                    coords = feature['geometry']['coordinates']
+                    coords = [[shift_to(c, 21781) for c in coords[0]]]
+                    feature['geometry']['coordinates'] = coords
+
                 features.append(feature)
 
     return features
