@@ -1047,7 +1047,7 @@ Mapbox Vector Tiles
 -------------------
 A RESTFul implementation of `Mapbox Vector Tiles <https://www.mapbox.com/vector-tiles>`_.
 The service has be developed for testing purposes. The service is free for use during the test phase (until June 30th 2019). swisstopo reserves the right to change or suspend the service at any time without prior notice.
-Feel free to test the service and give us feedback to help use optimize our product via our `survey <https://findmind.ch/c/vectortilesEN>`_  
+Feel free to test the service and give us feedback to help us optimize our product via our `survey <https://findmind.ch/c/vectortilesEN>`_  
 
 The service provides both *tiles* and *styles* that the customer can use. 
 
