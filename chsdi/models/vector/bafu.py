@@ -688,7 +688,7 @@ register('ch.bafu.hydrologie-untersuchungsgebiete_stationen', HugStationen)
 
 
 class Hintergrundkarte(Base, Vector):
-    __tablename__ = 'hydrologie_hintergrundkarte'
+    __tablename__ = 'hydrologie_hintergrundkarte_update'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-hintergrundkarte'
     __label__ = 'name'
