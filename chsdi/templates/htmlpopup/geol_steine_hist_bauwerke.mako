@@ -33,7 +33,11 @@
     <tr><td width="150">${_('tt_shb_ref')}</td>       <td>${referenz[i] or '-'}</td></tr>
     <tr><td width="150">${_('tt_shb_abbauort')}</td>  <td>${abbauort[i] or '-'}</td></tr>
     <tr><td width="150">${_('tt_shb_bemerkung')}</td> <td>${bemerkung[i] or '-'}</td></tr>
-    <tr><td width="150">${_('tt_shb_link')}</td>      <td><a href=${link[i]} target="_blank">PDF</a></td></tr>
+    % if link[i] == '-':
+        <tr><td width="150">${_('tt_shb_link')}</td>      <td>-</td></tr>
+    % else:
+        <tr><td width="150">${_('tt_shb_link')}</td>      <td><a href=${link[i]} target="_blank">PDF</a></td></tr>
+    % endif:
     <tr><td width="100%" valign="top" colspan="2">&nbsp;</td></tr>
 % endfor
   </table>
