@@ -2033,6 +2033,21 @@ msgstr "Überschwemmung Aquaprotect 500"
 msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Auen ausserhalb Bundesinventar"
 
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
+msgstr "Bedeutung"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_qualitaet"
+msgstr "Qualität"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.name"
+msgstr "Name"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.objnummer"
+msgstr "ObjektNr."
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.shape_area"
+msgstr "Fläche [ha]"
+
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Auen Vegetationskarten"
 

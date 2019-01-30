@@ -1043,6 +1043,32 @@ class GeologieMineralischeRohstoffe200(Base, Vector):
 register('ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200', GeologieMineralischeRohstoffe200)
 
 
+class GeologieFelsoberflaecheHoehenModell(Base, Vector):
+    __tablename__ = 'felsoberflaeche_hoehenmodell'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geologie_felsoberflaeche_hoehenmodell.mako'
+    __bodId__ = 'ch.swisstopo.geologie-felsoberflaeche_hoehenmodell'
+    __label__ = 'height'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    height = Column('height', Numeric)
+    the_geom = Column(Geometry2D)
+
+register(GeologieFelsoberflaecheHoehenModell.__bodId__, GeologieFelsoberflaecheHoehenModell)
+
+
+class GeologieLockergesteinMaechtigkeitsModell(Base, Vector):
+    __tablename__ = 'lockergestein_maechtigkeitsmodell'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geologie_lockergestein_maechtigkeitsmodell.mako'
+    __bodId__ = 'ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell'
+    __label__ = 'height'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    height = Column('height', Numeric)
+    the_geom = Column(Geometry2D)
+
+register(GeologieLockergesteinMaechtigkeitsModell.__bodId__, GeologieLockergesteinMaechtigkeitsModell)
+
+
 class GeologieBohrungenTiefer500(Base, Vector):
     __tablename__ = 'bohrungen_tiefer_500'
     __table_args__ = ({'schema': 'geol', 'autoload': False})

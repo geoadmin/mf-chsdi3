@@ -2033,6 +2033,21 @@ msgstr "Areas of flooding Aquaprotect 500"
 msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Floodplains outside the federal inventary"
 
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
+msgstr "Significance"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_qualitaet"
+msgstr "Quality"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.name"
+msgstr "Name"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.objnummer"
+msgstr "ObjectNo."
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.shape_area"
+msgstr "Area [ha]"
+
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Floodplains vegetation maps"
 
@@ -6186,7 +6201,7 @@ msgid "ch.bfe.minergiegebaeude.zertifikat"
 msgstr "Certificate"
 
 msgid "ch.bfe.rohrleitungen-konsultationsbereiche"
-msgstr "Konsultationsbereiche Rohrleitungen"
+msgstr "Pipeline consultation areas"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "SP Deep Geol. Repositories"

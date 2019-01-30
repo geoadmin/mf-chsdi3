@@ -2033,6 +2033,21 @@ msgstr "Aree inondabili Aquaprotect 500"
 msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Zone golenali fuori dall'inventario federale"
 
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
+msgstr "Senso"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_qualitaet"
+msgstr "Qualità"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.name"
+msgstr "Nome"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.objnummer"
+msgstr "OggettoNo."
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.shape_area"
+msgstr "Superficie [ha]"
+
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Zone golenali carte di vegetazione"
 

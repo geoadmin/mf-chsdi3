@@ -2033,6 +2033,21 @@ msgstr "Inondation Aquaprotect 500"
 msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Zones alluviales en dehors de l' inventaire"
 
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
+msgstr "Sens"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_qualitaet"
+msgstr "Qualité"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.name"
+msgstr "Nom"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.objnummer"
+msgstr "ObjetNr."
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar.shape_area"
+msgstr "Surface [ha]"
+
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Végétation dans zones alluviales"
 
