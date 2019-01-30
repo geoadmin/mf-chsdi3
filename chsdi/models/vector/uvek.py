@@ -1270,13 +1270,13 @@ register('ch.bazl.projektierungszonen-flughafenanlagen', ProjFlughafenanlagen)
 
 
 class Luftfahrthindernis(Base, Vector):
-    __tablename__ = 'luftfahrthindernis'
+    __tablename__ = 'view_luftfahrthindernis'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/luftfahrthindernisse.mako'
     __bodId__ = 'ch.bazl.luftfahrthindernis'
     __extended_info__ = True
     __queryable_attributes__ = ['registrationnumber', 'state', 'maxheightagl',
-                                'topelevationamsl', 'totallength', 'startofconstruction', 'abortionaccomplished']
+                                'topelevationamsl', 'totallength', 'bgdi_activesince', 'abortionaccomplished']
     # Must be equal to the mapped value of the column
     __label__ = 'registrationnumber'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -1289,6 +1289,7 @@ class Luftfahrthindernis(Base, Vector):
     topelevationamsl = Column('topelevationamsl', Integer)
     totallength = Column('totallength', Integer)
     startofconstruction = Column('startofconstruction', Date)
+    bgdi_activesince = Column('bgdi_activesince', Date)
     duration = Column('duration', Unicode)
     geomtype = Column('geomtype', Unicode)
     abortionaccomplished = Column('abortionaccomplished', Date)
