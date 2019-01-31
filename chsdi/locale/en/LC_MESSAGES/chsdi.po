@@ -5744,6 +5744,9 @@ msgstr "Air navigation obstacles"
 msgid "ch.bazl.luftfahrthindernis.abortionaccomplished"
 msgstr "Duration of installation"
 
+msgid "ch.bazl.luftfahrthindernis.bgdi_activesince"
+msgstr "since"
+
 msgid "ch.bazl.luftfahrthindernis.duration"
 msgstr "Duration of installation"
 
@@ -5962,6 +5965,36 @@ msgstr "Name"
 
 msgid "ch.bfe.bikesharing"
 msgstr "Bike sharing and bicycle hire"
+
+msgid "ch.bfe.bikesharing.address"
+msgstr "Address"
+
+msgid "ch.bfe.bikesharing.description"
+msgstr "Information"
+
+msgid "ch.bfe.bikesharing.feedback"
+msgstr "Feedback"
+
+msgid "ch.bfe.bikesharing.feedbacklink"
+msgstr "send a feedback"
+
+msgid "ch.bfe.bikesharing.incorrectinfo"
+msgstr "Incorrect information:"
+
+msgid "ch.bfe.bikesharing.link"
+msgstr "Website"
+
+msgid "ch.bfe.bikesharing.provider"
+msgstr "Provider"
+
+msgid "ch.bfe.bikesharing.rent"
+msgstr "Costs"
+
+msgid "ch.bfe.bikesharing.return"
+msgstr "Return"
+
+msgid "ch.bfe.bikesharing.time"
+msgstr "Hours of business"
 
 msgid "ch.bfe.biogasanlagen"
 msgstr "Biogas plants"
