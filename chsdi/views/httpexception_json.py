@@ -12,10 +12,13 @@ def format_exception_context(context):
     }
 
 
-@exception_view_config(context=HTTPException, renderer='json')
+@exception_view_config(context=HTTPException)
 def exception_view_json(context, request):
-    if '*/*' in request.accept or 'application/json' in request.accept:
+    accepted_mime = list(request.accept)
+    if '*/*' in accepted_mime or 'application/json' in accepted_mime:
         context.json_body = format_exception_context(context)
         context.content_type = 'application/json'
+    else:
+        context.content_typ = 'text/html'
 
     return context
