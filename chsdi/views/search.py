@@ -72,7 +72,7 @@ class Search(SearchValidation):
                 self.request.params.get('searchText')
             )
             self._feature_search()
-        elif self.typeInfo in ('locations', 'locations_preview'):
+        elif self.typeInfo in ('locations'):
             self.searchText = format_locations_search_text(
                 self.request.params.get('searchText', '')
             )
@@ -88,7 +88,7 @@ class Search(SearchValidation):
         # Only include results with a certain weight. This might need tweaking
         self.sphinx.SetFilterRange('@weight', 5000, 2 ** 32 - 1)
         try:
-            if self.typeInfo in ('locations', 'locations_preview'):
+            if self.typeInfo in ('locations'):
                 temp = self.sphinx.Query(searchTextFinal, index='swisssearch_fuzzy')
         except IOError:  # pragma: no cover
             raise exc.HTTPGatewayTimeout()
@@ -131,11 +131,7 @@ class Search(SearchValidation):
 
         if len(searchList) != 0:
             try:
-                if self.typeInfo == 'locations_preview':
-                    temp = self.sphinx.Query(searchTextFinal, index='swisssearch_preview')
-                else:
-                    temp = self.sphinx.Query(searchTextFinal, index='swisssearch')
-
+                temp = self.sphinx.Query(searchTextFinal, index='swisssearch')
             except IOError:  # pragma: no cover
                 raise exc.HTTPGatewayTimeout()
             temp = temp['matches'] if temp is not None else temp

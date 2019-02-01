@@ -10,7 +10,7 @@ class TestSearchServiceView(TestsBase):
         self.assertIn('detail', attrs)
         self.assertIn('origin', attrs)
         self.assertIn('label', attrs)
-        if type_ in ('locations',  'locations_preview'):
+        if type_ in ('locations'):
             self.assertIn('geom_quadindex', attrs)
             if returnGeometry:
                 self.assertIn('lon', attrs)
@@ -62,7 +62,7 @@ class TestSearchServiceView(TestsBase):
             'type': 'unaccepted'
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=400)
-        acceptedTypes = ['locations', 'locations_preview', 'layers', 'featuresearch']
+        acceptedTypes = ['locations', 'layers', 'featuresearch']
         resp.mustcontain("The type parameter you provided is not valid. Possible values are %s" % (', '.join(acceptedTypes)))
 
     def test_searchtext_none_value_layers(self):
@@ -869,22 +869,6 @@ class TestSearchServiceView(TestsBase):
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(len(resp.json['results']), 0)
-        self.assertEqual(resp.json['fuzzy'], 'true')
-        # type : 'locations_preview'
-        params = {
-            'type': 'locations_preview',
-            'searchText': 'Bettingen'
-        }
-        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
-        self.assertGreater(len(resp.json['results']), 0)
-        # Fuzzy results for locations_preview
-        params = {
-            'type': 'locations_preview',
-            'searchText': 'birgma',
-            'lang': 'de'
-        }
-        resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
-        self.assertGreater(len(resp.json['results']), 0)
         self.assertEqual(resp.json['fuzzy'], 'true')
 
     def test_search_lang_param_same_entry(self):

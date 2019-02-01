@@ -14,7 +14,7 @@ class SearchValidation(MapNameValidation):
     def __init__(self, request):
         super(SearchValidation, self).__init__()
         self.availableLangs = request.registry.settings['available_languages'].split(' ')
-        self.locationTypes = [u'locations', u'locations_preview']
+        self.locationTypes = [u'locations']
         self.layerTypes = [u'layers']
         self.featureTypes = [u'featuresearch']
         self.supportedTypes = self.locationTypes + self.layerTypes + self.featureTypes
