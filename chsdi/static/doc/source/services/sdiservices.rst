@@ -972,7 +972,7 @@ Metadata Service
 
 The `layer.json` file determines which terrain tiles are available.
 
-- https://3d.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20160115/4326/layer.json
+- https://3d.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20180601/4326/layer.json
 
 Parameters
 **********
@@ -1037,7 +1037,7 @@ Resoultion [m/pixel at equator] Zoomlevel Availability
 Example
 *******
 
-* A `Terrain tile <https://terrain2.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20160115/4326/12/4309/3111.terrain>`_
+* A `Terrain tile <https://terrain2.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20180601/4326/12/4309/970.terrain>`_
 
 
 .. _tiles3d_description:
@@ -1065,14 +1065,14 @@ The `tileset.json` file describes the available set of tiles. In order to use th
 
 Currently, 3 technical layers (ch.swisstopo.swisstlm3d.3d, ch.swisstopo.swissnames3d.3d, ch.swisstopo.vegetation.3d) are available and they contains all available 3D objects. Additional layers will be available in the future. Partial 3D buildings model coverage can be vizsualised `here <https://s.geo.admin.ch/70fb32e692>`_.
 
-- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20170425/tileset.json
-- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swissnames3d.3d/20170814/tileset.json
-- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.vegetation.3d/20170630/tileset.json
+- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20180716/tileset.json
+- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swissnames3d.3d/20180716/tileset.json
+- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.vegetation.3d/20180716/tileset.json
 
 Example
 *******
 
-* A `3D tile <https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20170425/8/41/41.b3dm?v=1.0>`_
+* A `3D tile <https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20180716/8/41/50.b3dm?v=1.0>`_
 
 .. _sparql_description:
 
