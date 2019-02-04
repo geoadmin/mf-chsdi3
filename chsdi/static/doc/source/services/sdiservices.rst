@@ -1101,12 +1101,12 @@ Available datasets
 Examples
 ********
 
-- `Get the top five most populated municipalities in 2016 <https://tinyurl.com/hxzfqel>`_
-- `Get the 2016 version of the administrative units at coordinate (lon,lat) 7.43, 46.95 <https://tinyurl.com/jjtk9a5>`_
-- `Get all the districts by canton number and year <https://tinyurl.com/jghhphw>`_
+- `Get the top five most populated municipalities in 2016 <https://tinyurl.com/ybfn8mlt>`_
+- `Get the 2016 version of the administrative units at coordinate (lon,lat) 7.43, 46.95 <https://tinyurl.com/yb985olj>`_
+- `Get all the districts by canton number and year <https://tinyurl.com/y8fovmtw>`_
 - `Get all the versions of a resource by URI <https://tinyurl.com/hvw2zhq>`_
-- `Get the corresponding resource in Wikidata and GeoNames (Municipality) <https://tinyurl.com/jqkkwrv>`_
-- `Get the Wikipedia abstract (Municipality) <https://tinyurl.com/z42lts9>`_
+- `Get the corresponding resource in Wikidata and GeoNames (Municipality) <https://tinyurl.com/y8ln886n>`_
+- `Get the Wikipedia abstract (Municipality) <https://tinyurl.com/y89hcpce>`_
 - `Get the five highest stops <https://tinyurl.com/yah7tbwd>`_
 - `Get stops above 3000 meters <https://tinyurl.com/yauhxk6x>`_
 - `Get stops with means of transportation = Rack railway, boat <https://tinyurl.com/ycu5gly6>`_
