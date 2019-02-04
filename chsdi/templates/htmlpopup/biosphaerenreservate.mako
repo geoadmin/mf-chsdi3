@@ -1,9 +1,8 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-    <tr><td class="cell-left">${_('datumactu')}</td>    <td>${c['attributes']['biores_ver'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('biorresflaeche')}</td>    <td>${c['attributes']['biores_fl'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('biorestotflaeche')}</td>    <td>${c['attributes']['biores_gf'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('bioresname')}</td>    <td>${c['attributes']['biores_nam'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('bioresnummer')}</td>    <td>${c['attributes']['biores_obj'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.schutzgebiete-biosphaerenreservate.name')}</td>             <td>${c['attributes']['name'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.schutzgebiete-biosphaerenreservate.objnummer')}</td>        <td>${c['attributes']['objnummer'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.schutzgebiete-biosphaerenreservate.version')}</td>          <td>${c['attributes']['version'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.schutzgebiete-biosphaerenreservate.shape_area_ha')}</td>    <td>${c['attributes']['shape_area_ha'] or '-'}</td></tr>
 </%def>
