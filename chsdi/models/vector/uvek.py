@@ -1299,12 +1299,11 @@ register('ch.bazl.luftfahrthindernis', Luftfahrthindernis)
 
 
 class LuftfahrtRecht(Base, Vector):
-    __tablename__ = 'bebaute_gebiete_luftfahrtrecht'
+    __tablename__ = 'bebaute_gebiete'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __bodId__ = 'ch.bazl.bebaute-gebiete_luftfahrtrecht'
-    __label__ = 'orig_fid'
     id = Column('bgdi_id', Integer, primary_key=True)
-    orig_fid = Column('orig_fid', Integer)
+    bebaut = Column('bebaut', Boolean)
     the_geom = Column(Geometry2D)
 
 register(LuftfahrtRecht.__bodId__, LuftfahrtRecht)
