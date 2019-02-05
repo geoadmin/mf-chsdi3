@@ -6033,7 +6033,7 @@ msgid "ch.bfe.biogasanlagen.place"
 msgstr "Ort"
 
 msgid "ch.bfe.biogasanlagen.powergeneration"
-msgstr "Stromproduktion [kWh]"
+msgstr "Stromproduktion [MWh]"
 
 msgid "ch.bfe.biogasanlagen.sendfeedback"
 msgstr "Rückmeldung senden"

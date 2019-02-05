@@ -4,6 +4,7 @@ from sqlalchemy import Column, Unicode, Integer, Date
 from sqlalchemy.types import Numeric, Float, Boolean
 
 from chsdi.models import register, bases
+from chsdi.models.types import JsonChsdi
 from chsdi.models.vector import Vector, Geometry2D
 
 
@@ -1595,6 +1596,42 @@ class AstraStrassePlanningRasterK(Base, Vector):
 register('ch.astra.sachplan-infrastruktur-strasse_kraft', AstraStrasseFacilitiesK)
 register('ch.astra.sachplan-infrastruktur-strasse_kraft', AstraStrassePlanningK)
 register('ch.astra.sachplan-infrastruktur-strasse_kraft', AstraStrassePlanningRasterK)
+
+
+class BiogasFacilities(Base, Vector):
+    __tablename__ = 'biogasanlagen'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/bfe_biogasanlagen.mako'
+    __bodId__ = 'ch.bfe.biogasanlagen'
+    __extended_info__ = True
+    id = Column('bgdi_id', Integer, primary_key=True)
+    plant_id = Column('plant_id', Integer)
+    name = Column('name', Unicode)
+    place = Column('place', Unicode)
+    operator = Column('operator', Unicode)
+    beginingofoperation = Column('beginingofoperation', Integer)
+    web = Column('web', Unicode)
+    combinedheatandpower = Column('combinedheatandpower', Integer)
+    upgradingcapacity = Column('upgradingcapacity', Integer)
+    facilitykind = Column('facilitykind', Integer)
+    facilitykind_en = Column('facilitykind_en', Unicode)
+    facilitykind_de = Column('facilitykind_de', Unicode)
+    facilitykind_fr = Column('facilitykind_fr', Unicode)
+    facilitykind_it = Column('facilitykind_it', Unicode)
+    upgradingtechnology = Column('upgradingtechnology', Integer)
+    upgradingtechnology_en = Column('upgradingtechnology_en', Unicode)
+    upgradingtechnology_de = Column('upgradingtechnology_de', Unicode)
+    upgradingtechnology_fr = Column('upgradingtechnology_fr', Unicode)
+    upgradingtechnology_it = Column('upgradingtechnology_it', Unicode)
+    valorizationtype = Column('valorizationtype', Integer)
+    valorizationtype_en = Column('valorizationtype_en', Unicode)
+    valorizationtype_de = Column('valorizationtype_de', Unicode)
+    valorizationtype_fr = Column('valorizationtype_fr', Unicode)
+    valorizationtype_it = Column('valorizationtype_it', Unicode)
+    yearly_production = Column('yearly_production', JsonChsdi)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.biogasanlagen', BiogasFacilities)
 
 
 class SachPGFacilities(Base, Vector):
