@@ -24,7 +24,7 @@ extent = grid.cellExtent(col,row)
 center = [(extent[0] + extent[2])/2,(extent[1] + extent[3])/2]
 baseUrl = request.registry.settings['api_url']
 dhm_altitude = int(round(float(getAltitude(request.registry.settings['host'], center)),0))
-center = '2%s, 1%s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
+center = '%s, %s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
 
 props = c['attributes']
 %>
@@ -76,7 +76,7 @@ topRight = coordinates[2]
 center = [(bottomLeft[0] + topRight[0]) / 2, (bottomLeft[1] + topRight[1]) / 2]
 baseUrl = request.registry.settings['api_url']
 dhm_altitude = int(round(float(getAltitude(request.registry.settings['host'], center)),0))
-center = '2%s, 1%s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
+center = '%s, %s' % (str(int(round(center[0], 0))), str(int(round(center[1], 0))))
 altitude = int(c['layerBodId'].split('ch.bfe.windenergie-geschwindigkeit_h')[1])
 
 props = c['attributes']
@@ -239,82 +239,82 @@ table#windrichtung  td.align-right {
         </tr>
         <tr>
           <td>345° - 15°</td>
-          <td class="align-right">${int(props['freq_0'])} %</td>
+          <td class="align-right">${int(round(props['freq_0']))} %</td>
           <td class="align-right">${round(props['v_mean_0'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_0'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_0'], 1)}</td>
         </tr>
         <tr>
           <td>15° - 45°</td>
-          <td class="align-right">${int(props['freq_30'])} %</td>
+          <td class="align-right">${int(round(props['freq_30']))} %</td>
           <td class="align-right">${round(props['v_mean_30'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_30'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_30'], 1)}</td>
         </tr>
         <tr><td>45° - 75°</td>
-          <td class="align-right">${int(props['freq_60'])} %</td>
+          <td class="align-right">${int(round(props['freq_60']))} %</td>
           <td class="align-right">${round(props['v_mean_60'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_60'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_60'], 1)}</td>
         </tr>
         <tr>
           <td>75° - 105°</td>
-          <td class="align-right">${int(props['freq_90'])} %</td>
+          <td class="align-right">${int(round(props['freq_90']))} %</td>
           <td class="align-right">${round(props['v_mean_90'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_90'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_90'], 1)}</td>
         </tr>
         <tr>
           <td>105° - 135°</td>
-          <td class="align-right">${int(props['freq_120'])} %</td>
+          <td class="align-right">${int(round(props['freq_120']))} %</td>
           <td class="align-right">${round(props['v_mean_120'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_120'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_120'], 1)}</td>
         </tr>
         <tr>
           <td>135° - 165°</td>
-          <td class="align-right">${int(props['freq_150'])} %</td>
+          <td class="align-right">${int(round(props['freq_150']))} %</td>
           <td class="align-right">${round(props['v_mean_150'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_150'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_150'], 1)}</td>
         </tr>
         <tr>
           <td>165° - 195°</td>
-          <td class="align-right">${int(props['freq_180'])} %</td>
+          <td class="align-right">${int(round(props['freq_180']))} %</td>
           <td class="align-right">${round(props['v_mean_180'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_180'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_180'], 1)}</td>
         </tr>
         <tr>
           <td>195° - 225°</td>
-          <td class="align-right">${int(props['freq_210'])} %</td>
+          <td class="align-right">${int(round(props['freq_210']))} %</td>
           <td class="align-right">${round(props['v_mean_210'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_210'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_210'], 1)}</td>
         </tr>
         <tr>
           <td>225° - 255°</td>
-          <td class="align-right">${int(props['freq_240'])} %</td>
+          <td class="align-right">${int(round(props['freq_240']))} %</td>
           <td class="align-right">${round(props['v_mean_240'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_240'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_240'], 1)}</td>
         </tr>
         <tr>
           <td>255° - 285°</td>
-          <td class="align-right">${int(props['freq_270'])} %</td>
+          <td class="align-right">${int(round(props['freq_270']))} %</td>
           <td class="align-right">${round(props['v_mean_270'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_270'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_270'], 1)}</td>
         </tr>
         <tr>
           <td>285° - 315°</td>
-          <td class="align-right">${int(props['freq_300'])} %</td>
+          <td class="align-right">${int(round(props['freq_300']))} %</td>
           <td class="align-right">${round(props['v_mean_300'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_300'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_300'], 1)}</td></tr>
         <tr>
           <td>315° - 345°</td>
-          <td class="align-right">${int(props['freq_330'])} %</td>
+          <td class="align-right">${int(round(props['freq_330']))} %</td>
           <td class="align-right">${round(props['v_mean_330'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_a_330'], 1)} m/s</td>
           <td class="align-right">${round(props['wei_k_330'], 1)}</td>
@@ -519,7 +519,7 @@ var arc = d3.svg.arc()
 //svg definieren
 var svg = d3.select("#rose").append("svg")
 % if iframe:
-    .attr("width", width + 58)
+    .attr("width", width + 48 + 110) // +110 is some room for legends
 % else:
     .attr("width", width + 48 + 140) //+140 damit rechts noch Legende Platz hat
 % endif
@@ -561,32 +561,80 @@ svg.append("circle")
 .attr("stroke-width", "1")
 .attr("fill", "none");
 
+const legends = [
+    {
+        color: "#bf0a00",
+        min: 8.0,
+        max: Number.MAX_VALUE
+    }, {
+        color: "#d01e05",
+        min: 7.5,
+        max: 8.0
+    }, {
+        color: "#b83848",
+        min: 7.0,
+        max: 7.5
+    }, {
+        color: "#9d4e64",
+        min: 6.5,
+        max: 7.0
+    }, {
+        color: "#855994",
+        min: 6.0,
+        max: 6.5
+    }, {
+        color: "#286dbd",
+        min: 5.5,
+        max: 6.0
+    }, {
+        color: "#0194e2",
+        min: 5.0,
+        max: 5.5
+    }, {
+        color: "#39caf5",
+        min: 4.5,
+        max: 5.0
+    }, {
+        color: "#7ad4f1",
+        min: 4.0,
+        max: 4.5
+    }, {
+        color: "#c9e9f6",
+        min: Number.MIN_VALUE,
+        max: 4.0
+    }
+];
+legends.forEach(function (legend) {
+    legend.text = function () {
+        let text = "";
+        if (this.min !== Number.MIN_VALUE) {
+            text += "≥ " + this.min
+        }
+        if (this.max !== Number.MAX_VALUE) {
+            if (text.length > 0) {
+                text += " – ";
+            }
+            text += "< " + this.max;
+        }
+        if (text.length) {
+            text += " m/s";
+        }
+        return text;
+    }
+});
+
 //Kuchenstuecke hinzufuegen
 var path = svg.selectAll(".solidArc")
     .data(pie(data))
   .enter().append("path")
     .attr("fill", function(d) {
-      if (d.data.speed < 4.0) {
-          return "rgb(201,233,246)";
-      } else if (d.data.speed < 4.5 & d.data.speed >= 4.0) {
-          return "rgb(122,212,241)";
-      } else if (d.data.speed < 5.0 & d.data.speed >= 4.5) {
-          return "rgb(78,200,244)";
-      } else if (d.data.speed < 5.5 & d.data.speed >= 5.0) {
-          return "rgb(47,144,225)";
-      } else if (d.data.speed < 6.0 & d.data.speed >= 5.5) {
-          return "rgb(54,105,188)";
-      } else if (d.data.speed < 6.5 & d.data.speed >= 6.0) {
-          return "rgb(133,86,148)";
-      } else if (d.data.speed < 7.0 & d.data.speed >= 6.5) {
-          return "rgb(155,77,101)";
-      } else if (d.data.speed < 7.5 & d.data.speed >= 7.0) {
-          return "rgb(181,56,75)";
-      } else if (d.data.speed < 8.0 & d.data.speed >= 7.5) {
-          return "rgb(204,30,24)";
-      } else if (d.data.speed >= 8.0) {
-          return "rgb(187,8,5)";
-      }
+        var color = null;
+        legends.forEach(function (legend) {
+            if (d.data.speed >= legend.min && d.data.speed < legend.max) {
+                color = legend.color;
+            }
+        });
+        return color;
     })
     .attr("class", "solidArc")
     .attr("stroke", "gray")
@@ -682,150 +730,41 @@ var path = svg.selectAll(".solidArc")
 % endif
 
 //Legende rechts
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "121") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(187,8,5)")
-    .style("stroke-width", "0");
-
+% if iframe:
+    const rectX = 120;
+    const legendX = 145;
+% else:
+    const rectX = 190;
+    const legendX = 215;
+% endif
+let rectY = 61;
+let legendY = 70;
+legends.forEach(function (legend) {
+     svg.append("rect")
+        .attr("x", rectX)
+        .attr("y", rectY)
+        .attr("width", 20)
+        .attr("height", 10)
+        .style("fill", legend.color)
+        .style("stroke-width", "0");
     svg.append("text")
-    .text("≥ 8.0 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,130)"); //0,-15
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "106") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(204,30,24)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 7.5 – < 8.0 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,115)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "91") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(181,56,75)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 7.0 – < 7.5 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,100)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "76") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(155,77,101)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 6.5 – < 7.0 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,85)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "61") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(133,86,148)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 6.0 – < 6.5 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,70)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "46") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(54,105,188)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 5.5 – < 6.0 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,55)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "31") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(47,144,225)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 5.0 – < 5.5 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-     .attr("transform", "translate(215,40)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "16") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(78,200,244)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 4.5 – < 5.0 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,25)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "1") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(122,212,241)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("≥ 4.0 – < 4.5 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,10)"); //0,-15
-
-    svg.append("rect")
-    .attr("x", "190")
-    .attr("y", "-14") //-15
-    .attr("width", 20)
-    .attr("height", 10)
-    .style("fill", "rgb(201,233,246)")
-    .style("stroke-width", "0");
-
-    svg.append("text")
-    .text("< 4.0 m/s")
-    .style("font-size", "10px")
-    .attr("fill", "grey")
-    .attr("transform", "translate(215,-5)"); //0,-15
-
-    svg.append("text")
+        .text(legend.text())
+        .style("font-size", "10px")
+        .attr("fill", "grey")
+        .attr("transform", "translate(" + legendX + "," + legendY + ")");
+     // shift next legend 15px down
+     rectY -= 15;
+     legendY -= 15;
+});
+svg.append("text")
     .text("${_('tt_bfe_windgeschwindigkeit')}")
     .style("font-size", "10px")
     .attr("fill", "grey")
-    .attr("transform", "translate(190,-20)");
+% if iframe:
+    .attr("transform", "translate(120," + legendY + ")");
+% else:
+    .attr("transform", "translate(190," + legendY + ")");
+% endif
 
 //WEIBULL
 // Daten fuer Darstellung der Weibull-Funktion generieren

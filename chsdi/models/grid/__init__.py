@@ -6,10 +6,10 @@ gridLayers = {}
 
 grids = {
     '1': {
-        'extent': [485349.96, 75250.055, 833849.959, 295950.054],
+        'extent': [2485350.00, 1075250.00, 2833950.00, 1296050.00],
         'resolutionX': 100.0,
         'resolutionY': -100.0,
-        'srid': '21781'
+        'srid': '2056'
     },
     '2': {
         'extent': [485450.00, 75350.00, 833850.00, 295950.00],
@@ -49,15 +49,15 @@ def get_grid_layer_properties(layerBodId):
 
 # Windatlas layers
 register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h50', gridId='1', extended=True,
-                      timestamp='20160223', template='templates/htmlpopup/windatlas50.mako')
+                      timestamp='20181001', template='templates/htmlpopup/windatlas50.mako')
 register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h75', gridId='1', extended=True,
-                      timestamp='20160223', template='templates/htmlpopup/windatlas50.mako')
+                      timestamp='20181001', template='templates/htmlpopup/windatlas50.mako')
 register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h100', gridId='1', extended=True,
-                      timestamp='20160223', template='templates/htmlpopup/windatlas50.mako')
+                      timestamp='20181001', template='templates/htmlpopup/windatlas50.mako')
 register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h125', gridId='1', extended=True,
-                      timestamp='20160223', template='templates/htmlpopup/windatlas50.mako')
+                      timestamp='20181001', template='templates/htmlpopup/windatlas50.mako')
 register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h150', gridId='1', extended=True,
-                      timestamp='20160223', template='templates/htmlpopup/windatlas50.mako')
+                      timestamp='20181001', template='templates/htmlpopup/windatlas50.mako')
 register_bodid_gridid('ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor', gridId='2', extended=False,
                       timestamp='20150701', template='templates/htmlpopup/phosphor.mako')
 register_bodid_gridid('ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff', gridId='3', extended=False,
