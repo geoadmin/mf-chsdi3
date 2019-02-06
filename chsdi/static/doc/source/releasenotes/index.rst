@@ -30,7 +30,7 @@ API & applications
     - The layer `ch.sgpk.maechtigkeit-lockergesteine` is from today on replaced with `ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell` in the catalogs. The layer `ch.sgpk.maechtigkeit-lockergesteine` will be completely removed from the BGDI in Q2 2019 (middle 2019).
     - The layer `ch.bfe.energiestaedte-2000watt-aufdemweg` will be removed from the map.geo.admin.ch catalogs on 27.02. The layer will be completely removed from the BGDI on 13.03.2019.
     - The 3 BAG layers `ch.bag.zecken-fsme-faelle`, `ch.bag.zecken-fsme-impfung` and `ch.bag.zecken-lyme` will be removed from the map.geo.admin.ch catalogs on 27.02 and completely removed from all the BGDI services on 27.03. Those layers will be collectively replaced on 27.02 by the new layer `ch.bag.zeckenstichmodell` and by the layer `ch.bag.borelliose-verbreitung` on 10.04
-
+- New layer (API only) : ch.bazl.hindernisbegrenzungsflaechen-perimeter
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
@@ -41,45 +41,43 @@ API & applications
 Geodata
 *******
 
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Thickness of unconsolidated deposits <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell>`__ (ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell)    |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Bedrock elevation model <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-felsoberflaeche_hoehenmodell>`__ (ch.swisstopo.geologie-felsoberflaeche_hoehenmodell)                           |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Perimeter of limitation surfaces (API Only)`__ (ch.bazl.hindernisbegrenzungsflaechen-perimeter)                                                                                           |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Wind speed 50 meters above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h50>`__ (ch.bfe.windenergie-geschwindigkeit_h50)                                         |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Wind speed 75 meters above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h75>`__ (ch.bfe.windenergie-geschwindigkeit_h75)                                         |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Wind speed 100 meters above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h100>`__ (ch.bfe.windenergie-geschwindigkeit_h100)                                      |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Wind speed 125 meters above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h1250>`__ (ch.bfe.windenergie-geschwindigkeit_h125)                                     |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Wind speed 150 meters above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h150>`__ (ch.bfe.windenergie-geschwindigkeit_h150)                                      |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Traffic counting locations local <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal>`__ (ch.astra.strassenverkehrszaehlung_messstellen-regional_loka|
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Traffic counting locations principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung_messstellen-uebergeord|
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                                               |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                                                 |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                                    |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                                                             |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Air navigation obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis>`__ (ch.bazl.luftfahrthindernis)                                                                          |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                                 |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Background map hydrol. data <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-hintergrundkarte>`__ (ch.bafu.hydrologie-hintergrundkarte)                                                     |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Biosphere reserves <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-biosphaerenreservate>`__ (ch.bafu.schutzgebiete-biosphaerenreservate)                                                |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Built-up areas VIL <//map.geo.admin.ch/?layers=ch.bazl.bebaute-gebiete_luftfahrtrecht>`__ (ch.bazl.bebaute-gebiete_luftfahrtrecht)                                                        |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Thickness of unconsolidated deposits <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell>`__ (ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell)        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Bedrock elevation model <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-felsoberflaeche_hoehenmodell>`__ (ch.swisstopo.geologie-felsoberflaeche_hoehenmodell)                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wind speed 50 meters above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h50>`__ (ch.bfe.windenergie-geschwindigkeit_h50)                                             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wind speed 75 meters above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h75>`__ (ch.bfe.windenergie-geschwindigkeit_h75)                                             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wind speed 100 meters above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h100>`__ (ch.bfe.windenergie-geschwindigkeit_h100)                                          |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wind speed 125 meters above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h1250>`__ (ch.bfe.windenergie-geschwindigkeit_h125)                                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wind speed 150 meters above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h150>`__ (ch.bfe.windenergie-geschwindigkeit_h150)                                          |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Traffic counting locations local <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal>`__ (ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Traffic counting locations principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                                                                 |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Air navigation obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis>`__ (ch.bazl.luftfahrthindernis)                                                                              |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Background map hydrol. data <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-hintergrundkarte>`__ (ch.bafu.hydrologie-hintergrundkarte)                                                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Biosphere reserves <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-biosphaerenreservate>`__ (ch.bafu.schutzgebiete-biosphaerenreservate)                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Built-up areas VIL <//map.geo.admin.ch/?layers=ch.bazl.bebaute-gebiete_luftfahrtrecht>`__ (ch.bazl.bebaute-gebiete_luftfahrtrecht)                                                            |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20190123:
 
