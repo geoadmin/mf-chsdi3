@@ -2043,7 +2043,7 @@ msgid "ch.bafu.auen-ausserhalb_bundesinventar.name"
 msgstr "Nome"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.objnummer"
-msgstr "OggettoNo."
+msgstr "No. Oggetto"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.shape_area"
 msgstr "Superficie [ha]"
