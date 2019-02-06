@@ -2139,7 +2139,11 @@ msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Zone golenali fuori dall'inventario federale"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
+<<<<<<< HEAD
 msgstr "Importanza"
+=======
+msgstr "Senso"
+>>>>>>> Adapted gisgeol layers
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_qualitaet"
 msgstr "Qualità"

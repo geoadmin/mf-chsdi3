@@ -2139,7 +2139,11 @@ msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Floodplains outside the federal inventary"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
+<<<<<<< HEAD
 msgstr "Importance"
+=======
+msgstr "Significance"
+>>>>>>> Adapted gisgeol layers
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_qualitaet"
 msgstr "Quality"
