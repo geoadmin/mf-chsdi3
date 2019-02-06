@@ -68,8 +68,6 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                                                                 |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Air navigation obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis>`__ (ch.bazl.luftfahrthindernis)                                                                              |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                                     |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Background map hydrol. data <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-hintergrundkarte>`__ (ch.bafu.hydrologie-hintergrundkarte)                                                         |
