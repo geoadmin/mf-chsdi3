@@ -46,6 +46,8 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Bedrock elevation model <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-felsoberflaeche_hoehenmodell>`__ (ch.swisstopo.geologie-felsoberflaeche_hoehenmodell)                           |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Perimeter of limitation surfaces (API Only)`__ (ch.bazl.hindernisbegrenzungsflaechen-perimeter)                                                                                           |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Wind speed 50 meters above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h50>`__ (ch.bfe.windenergie-geschwindigkeit_h50)                                         |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Wind speed 75 meters above ground <//map.geo.admin.ch/?layers=ch.bfe.windenergie-geschwindigkeit_h75>`__ (ch.bfe.windenergie-geschwindigkeit_h75)                                         |
