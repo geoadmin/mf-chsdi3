@@ -8222,6 +8222,12 @@ msgstr "InfoGeol-Nr."
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.title"
 msgstr "Titel"
 
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.without_pdf"
+msgstr "Anzahl der Dokumente ohne PDF"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.with_pdf"
+msgstr "Anzahl der Dokumente mit PDF"
+
 msgid "ch.swisstopo.geologie-gisgeol-linien"
 msgstr "Documents geol. (lingias)"
 

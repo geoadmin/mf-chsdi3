@@ -5757,7 +5757,7 @@ msgid "ch.bazl.luftfahrthindernis.abortionaccomplished"
 msgstr "Durata dell'installazione"
 
 msgid "ch.bazl.luftfahrthindernis.bgdi_activesince"
-msgstr "dal"
+msgstr "depuis"
 
 msgid "ch.bazl.luftfahrthindernis.duration"
 msgstr "Durata dell'installazione"
@@ -8221,6 +8221,12 @@ msgstr "N° InfoGeol"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.title"
 msgstr "Titolo"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.without_pdf"
+msgstr "Numero di documenti senza PDF"
+
+msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.with_pdf"
+msgstr "Numero di documenti con PDF"
 
 msgid "ch.swisstopo.geologie-gisgeol-linien"
 msgstr "Documenti geologici (linee)"
