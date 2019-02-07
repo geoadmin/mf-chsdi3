@@ -2034,7 +2034,7 @@ msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Floodplains outside the federal inventary"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
-msgstr "Significance"
+msgstr "Importance"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_qualitaet"
 msgstr "Quality"
@@ -6010,6 +6010,45 @@ msgstr "Hours of business"
 
 msgid "ch.bfe.biogasanlagen"
 msgstr "Biogas plants"
+
+msgid "ch.bfe.biogasanlagen.beginingofoperation"
+msgstr "Year of commissioning of the plant"
+
+msgid "ch.bfe.biogasanlagen.combinedheatandpower"
+msgstr "RTC power [kW]"
+
+msgid "ch.bfe.biogasanlagen.facilitykind"
+msgstr "Type of plant"
+
+msgid "ch.bfe.biogasanlagen.feedback"
+msgstr "Feedback"
+
+msgid "ch.bfe.biogasanlagen.name"
+msgstr "Plant name"
+
+msgid "ch.bfe.biogasanlagen.operator"
+msgstr "Name of operator"
+
+msgid "ch.bfe.biogasanlagen.place"
+msgstr "Location"
+
+msgid "ch.bfe.biogasanlagen.powergeneration"
+msgstr "Power generation [kWh]"
+
+msgid "ch.bfe.biogasanlagen.sendfeedback"
+msgstr "Send a feedback"
+
+msgid "ch.bfe.biogasanlagen.upgradingcapacity"
+msgstr "Purification capacity [m3/h]"
+
+msgid "ch.bfe.biogasanlagen.upgradingtechnology"
+msgstr "Purification technology"
+
+msgid "ch.bfe.biogasanlagen.valorizationtype"
+msgstr "Utilisation of biogas"
+
+msgid "ch.bfe.biogasanlagen.web"
+msgstr "Website"
 
 msgid "ch.bfe.biomasse-nicht-verholzt"
 msgstr "Non-woody biomass for energy"
@@ -10882,6 +10921,9 @@ msgstr "Displacement northing [m]"
 
 msgid "doccreation_date"
 msgstr "Document creation date"
+
+msgid "dokument"
+msgstr "Document"
 
 msgid "Double"
 msgstr "Double"

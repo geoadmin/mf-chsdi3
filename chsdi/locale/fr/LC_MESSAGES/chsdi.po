@@ -2034,7 +2034,7 @@ msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Zones alluviales en dehors de l' inventaire"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
-msgstr "Sens"
+msgstr "Importance"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_qualitaet"
 msgstr "Qualité"
@@ -6010,6 +6010,45 @@ msgstr "Horaires d'ouverture"
 
 msgid "ch.bfe.biogasanlagen"
 msgstr "Installations de biogaz"
+
+msgid "ch.bfe.biogasanlagen.beginingofoperation"
+msgstr "Année de mise en service de l'installation"
+
+msgid "ch.bfe.biogasanlagen.combinedheatandpower"
+msgstr "Puissance du CCF [kW]"
+
+msgid "ch.bfe.biogasanlagen.facilitykind"
+msgstr "Type d'installation"
+
+msgid "ch.bfe.biogasanlagen.feedback"
+msgstr "Feedback"
+
+msgid "ch.bfe.biogasanlagen.name"
+msgstr "Nom de l'installation"
+
+msgid "ch.bfe.biogasanlagen.operator"
+msgstr "Nom de l'exploitant"
+
+msgid "ch.bfe.biogasanlagen.place"
+msgstr "Lieu"
+
+msgid "ch.bfe.biogasanlagen.powergeneration"
+msgstr "Production d'électricité [kWh]"
+
+msgid "ch.bfe.biogasanlagen.sendfeedback"
+msgstr "Envoyer un commentaire"
+
+msgid "ch.bfe.biogasanlagen.upgradingcapacity"
+msgstr "Capacité de purification  [m3/h]"
+
+msgid "ch.bfe.biogasanlagen.upgradingtechnology"
+msgstr "Technologie de purification"
+
+msgid "ch.bfe.biogasanlagen.valorizationtype"
+msgstr "Valorisation du biogaz"
+
+msgid "ch.bfe.biogasanlagen.web"
+msgstr "Site Web"
 
 msgid "ch.bfe.biomasse-nicht-verholzt"
 msgstr "Biomasse non ligneuse"
@@ -10882,6 +10921,9 @@ msgstr "Déplacement sud-nord [m]"
 
 msgid "doccreation_date"
 msgstr "Date de création du document"
+
+msgid "dokument"
+msgstr "Document"
 
 msgid "Double"
 msgstr "Double"
