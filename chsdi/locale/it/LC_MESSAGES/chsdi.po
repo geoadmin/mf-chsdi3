@@ -2034,7 +2034,7 @@ msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Zone golenali fuori dall'inventario federale"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
-msgstr "Senso"
+msgstr "Importanza"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_qualitaet"
 msgstr "Qualità"
@@ -6010,6 +6010,45 @@ msgstr "Orario di apertura"
 
 msgid "ch.bfe.biogasanlagen"
 msgstr "Impianti di produzione di biogas"
+
+msgid "ch.bfe.biogasanlagen.beginingofoperation"
+msgstr "Anno di messa in servizio dell'impianto"
+
+msgid "ch.bfe.biogasanlagen.combinedheatandpower"
+msgstr "Potenza dell'impianto di cogenerazione [kW]"
+
+msgid "ch.bfe.biogasanlagen.facilitykind"
+msgstr "Tipo d'impianto"
+
+msgid "ch.bfe.biogasanlagen.feedback"
+msgstr "Feedback"
+
+msgid "ch.bfe.biogasanlagen.name"
+msgstr "Nome dell'impianto"
+
+msgid "ch.bfe.biogasanlagen.operator"
+msgstr "Nome del gestore"
+
+msgid "ch.bfe.biogasanlagen.place"
+msgstr "Luogo"
+
+msgid "ch.bfe.biogasanlagen.powergeneration"
+msgstr "Produzione di elettricità [kWh]"
+
+msgid "ch.bfe.biogasanlagen.sendfeedback"
+msgstr "Inviare un feedback"
+
+msgid "ch.bfe.biogasanlagen.upgradingcapacity"
+msgstr "Capacità di purificazione [m3/h]"
+
+msgid "ch.bfe.biogasanlagen.upgradingtechnology"
+msgstr "Tecnologia di purificazione"
+
+msgid "ch.bfe.biogasanlagen.valorizationtype"
+msgstr "Valorizzazione del biogas"
+
+msgid "ch.bfe.biogasanlagen.web"
+msgstr "Sito web"
 
 msgid "ch.bfe.biomasse-nicht-verholzt"
 msgstr "Energia da biomassa non legnosa"
@@ -10882,6 +10921,9 @@ msgstr "Spostamento sud-nord [m]"
 
 msgid "doccreation_date"
 msgstr "Data di creazione del documento"
+
+msgid "dokument"
+msgstr "Documento"
 
 msgid "Double"
 msgstr "Double"

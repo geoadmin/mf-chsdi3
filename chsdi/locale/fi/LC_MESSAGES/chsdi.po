@@ -6011,6 +6011,45 @@ msgstr "Öffnungszeiten"
 msgid "ch.bfe.biogasanlagen"
 msgstr "Biogasanlagen"
 
+msgid "ch.bfe.biogasanlagen.beginingofoperation"
+msgstr "Inbetriebnahme"
+
+msgid "ch.bfe.biogasanlagen.combinedheatandpower"
+msgstr "Leistung BHKW [kW]"
+
+msgid "ch.bfe.biogasanlagen.facilitykind"
+msgstr "Anlagentyp"
+
+msgid "ch.bfe.biogasanlagen.feedback"
+msgstr "Feedback"
+
+msgid "ch.bfe.biogasanlagen.name"
+msgstr "Bezeichnung der Anlage"
+
+msgid "ch.bfe.biogasanlagen.operator"
+msgstr "Betreiber"
+
+msgid "ch.bfe.biogasanlagen.place"
+msgstr "Ort"
+
+msgid "ch.bfe.biogasanlagen.powergeneration"
+msgstr "Stromproduktion [kWh]"
+
+msgid "ch.bfe.biogasanlagen.sendfeedback"
+msgstr "Rückmeldung senden"
+
+msgid "ch.bfe.biogasanlagen.upgradingcapacity"
+msgstr "Aufbereitungskapazität [m3/h]"
+
+msgid "ch.bfe.biogasanlagen.upgradingtechnology"
+msgstr "Aufbereitungstechnologie"
+
+msgid "ch.bfe.biogasanlagen.valorizationtype"
+msgstr "Verwertung des Biogases"
+
+msgid "ch.bfe.biogasanlagen.web"
+msgstr "Webseite"
+
 msgid "ch.bfe.biomasse-nicht-verholzt"
 msgstr "Nicht-verholzte Biomassen"
 
@@ -10882,6 +10921,9 @@ msgstr "Verschiebung Süd-Nord [m]"
 
 msgid "doccreation_date"
 msgstr "Dokumentdatum"
+
+msgid "dokument"
+msgstr "Dokument"
 
 msgid "Double"
 msgstr "Doppelt"
