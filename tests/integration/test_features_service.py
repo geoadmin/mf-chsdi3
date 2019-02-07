@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from unittest import skip
 from tests.integration import TestsBase, shift_to_lv95, reproject_to_srid
 
 
@@ -292,6 +293,7 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(resp.json['feature']['id'], featureId)
         self.assertGeojsonFeature(resp.json['feature'], 21781)
 
+    @skip("Apparently, there is no too big data anymore")
     def test_too_large_feature_only_attributes(self):
         bodId = 'ch.swisstopo.geologie-geologischer_atlas'
         featureId = 680287
