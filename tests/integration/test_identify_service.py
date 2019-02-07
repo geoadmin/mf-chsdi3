@@ -227,6 +227,9 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers={'Accept': 'text/html'}, status=400)
         self.assertEqual(resp.content_type, 'text/html')
 
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers={'Accept': '*/*'}, status=400)
+        self.assertEqual(resp.content_type, 'application/json')
+
     def test_identify_valid_topic(self):
         params = {'geometry': '548945.5,147956,549402,148103.5',
                   'geometryType': 'esriGeometryEnvelope',
