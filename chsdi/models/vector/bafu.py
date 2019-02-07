@@ -848,7 +848,8 @@ class AmG(Base, Vector):
     __bodId__ = 'ch.bafu.bundesinventare-amphibien_wanderobjekte'
     __template__ = 'templates/htmlpopup/bundinv_amphibien_w.mako'
     __label__ = 'name'
-    id = Column('objnummer', Unicode, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objnummer = Column('objnummer', Unicode)
     name = Column('name', Unicode)
     refobjblat = Column('refobjblat', Unicode)
     the_geom = Column(Geometry2D)
