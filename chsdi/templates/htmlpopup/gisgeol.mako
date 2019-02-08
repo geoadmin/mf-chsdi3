@@ -5,8 +5,8 @@
     lang = lang if lang in ('fr','it','en') else 'de'
     c['stable_id'] = False
 %>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.with_pdf')}</td><td>${c['attributes']['count_pdf']}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.without_pdf')}</td><td>${c['attributes']['count_without_pdf']}</td></tr>
+    <tr><td class="cell-left" width="60%">${_('ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.with_pdf')}</td><td width="40%">${c['attributes']['count_pdf']}</td></tr>
+    <tr><td class="cell-left" width="60%">${_('ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.without_pdf')}</td><td width="40%">${c['attributes']['count_without_pdf']}</td></tr>
 </%def>
 <%def name="extended_info(c,lang)">
 <%
