@@ -2306,7 +2306,7 @@ class GisGeolBase:
     __extended_info__ = True
     __timeInstant__ = 'year'
     id = Column('gid', Integer, primary_key=True)
-    sgd_nr = Column('sgd_nr', Integer)
+    sgd_nr = Column('sgd_nr', Unicode)
     title = Column('title', Unicode)
     orig_id = Column('original_document_id', Unicode)
     author = Column('author', Unicode)
@@ -2318,7 +2318,7 @@ class GisGeolBase:
     pdf_url = Column('pdf_url', Unicode)
     pdf_size = Column('pdf_size', Unicode)
     bgdi_data_status = Column('bgdi_data_status', Unicode)
-    year = Column('year', Integer)
+    year = Column('year', Unicode)
     count_pdf = Column('count_pdf', Integer)
     count_without_pdf = Column('count_without_pdf', Integer)
     count_total = Column('count_total', Integer)
