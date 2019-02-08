@@ -11,17 +11,17 @@
 <%def name="extended_info(c,lang)">
 <%
     nodocuments = c['attributes']['count_total']
-    sgd_nr = c['attributes']['sgd_nr']
-    orig_id = c['attributes']['orig_id']
-    title = c['attributes']['title']
-    author = c['attributes']['author']
-    report_structure = c['attributes']['report_structure']
-    aux_info = c['attributes']['aux_info']
-    doccreation = c['attributes']['doccreation']
-    pdf_url = c['attributes']['pdf_url']
-    pdf_size = c['attributes']['pdf_size']
-    copy_avail = c['attributes']['copy_avail']
-    view_avail = c['attributes']['view_avail']
+    sgd_nr = c['attributes']['sgd_nr'].split('##')
+    orig_id = c['attributes']['orig_id'].split('##')
+    title = c['attributes']['title'].split('##')
+    author = c['attributes']['author'].split('##')
+    report_structure = c['attributes']['report_structure'].split('##')
+    aux_info = c['attributes']['aux_info'].split('##')
+    doccreation = c['attributes']['doccreation'].split('##')
+    pdf_url = c['attributes']['pdf_url'].split('##')
+    pdf_size = c['attributes']['pdf_size'].split('##')
+    copy_avail = c['attributes']['copy_avail'].split('##')
+    view_avail = c['attributes']['view_avail'].split('##')
 
 %>
 <table class="table-with-border gisgeol-extended">
@@ -37,7 +37,7 @@
     <tr><th class="cell-left">${_('ch.swisstopo.geologie-gisgeol-punkte.aux_info')}</th><td>${aux_info[i] or '-'}</td></tr>
     <tr><th class="cell-left">${_('doccreation_date')}</th><td>${doccreation[i] or '-'}</td></tr>
     <tr>
-    % if pdf_url[i]:
+    % if pdf_url[i]!= '-':
     <tr>
           <th class="cell-left">${_('pdf_url')}</th>
           <td>
