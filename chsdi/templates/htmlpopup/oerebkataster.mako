@@ -1,6 +1,13 @@
 <%inherit file="base.mako"/>
-
 <%def name="table_body(c,lang)">
+<%
+path = "/extract/reduced/pdf/"
+if not 'oereb_webservice' in c['attributes'].keys():
+  c['attributes']['oereb_webservice'] = None
+  c['attributes']['bgdi_status'] = None
+
+
+%>
     <tr><td class="cell-left">${_('kanton')}</td>    <td>${c['attributes']['kanton'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('gemgemeinde')}</td>    <td>${c['attributes']['gemeindename'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('oereb_status')}</td> 
@@ -32,14 +39,20 @@
       % elif "@" in c['attributes']['email']:
            <td><a href="mailto:${c['attributes']['email']}">${_(c['attributes']['email']) or '-'}</a></td>
       % else:
-       <td>-</td>     
+       <td>-</td>
       % endif
     </tr>
     <tr><td class="cell-left">${_('gemdarstellung')}</td>
       % if c['attributes']['url_oereb'] == None:
        <td>-</td>
       % else:
-         <td><a target="_blank" href="${c['attributes']['url_oereb']}">${_('link')}</a></td>    
+         <td><a target="_blank" href="${c['attributes']['url_oereb']}">${_('link')}</a></td>
       % endif
     </tr>
+    % if c['attributes']['oereb_webservice'] != None and c['attributes']['bgdi_status'] == 0:
+        <tr>
+            <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
+            <td><a target="_blank" href="${c['attributes']['oereb_webservice']}${path}${c['attributes']['egris_egrid']}">PDF</a></td>
+        </tr>
+    % endif
 </%def>

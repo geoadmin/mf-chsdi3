@@ -2107,8 +2107,7 @@ class GeometaNfGeom(Base, Vector):
 register('ch.swisstopo-vd.geometa-nfgeom', GeometaNfGeom)
 
 
-class Oerebkataster(Base, Vector):
-    __tablename__ = 'view_oereb_nfgeom'
+class Oerebkataster:
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/oerebkataster.mako'
     __bodId__ = 'ch.swisstopo-vd.stand-oerebkataster'
@@ -2132,7 +2131,23 @@ class Oerebkataster(Base, Vector):
     url_oereb = Column('url_oereb', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo-vd.stand-oerebkataster', Oerebkataster)
+
+class OerebkatasterZoom1(Base, Oerebkataster, Vector):
+    __tablename__ = 'view_oereb_parcel'
+    oereb_webservice = Column('oereb_webservice', Unicode)
+    bgdi_status = Column('bgdi_status', Integer)
+    egris_egrid = Column('egris_egrid', Integer)
+    __minscale__ = 1
+    __maxscale__ = 50000
+
+register('ch.swisstopo-vd.stand-oerebkataster', OerebkatasterZoom1)
+
+
+class OerebkatasterZoom2(Base, Oerebkataster, Vector):
+    __tablename__ = 'view_oereb_nfgeom'
+    __minscale__ = 50000
+
+register('ch.swisstopo-vd.stand-oerebkataster', OerebkatasterZoom2)
 
 
 class TransformationBezugsrahmenHoehePunkte(Base, Vector):
