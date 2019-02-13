@@ -4170,7 +4170,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.rechtskraftda
 msgstr "Date de l'entrée en vigueur"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.rechtstatus"
-msgstr "Zone de protection relevant de l'ancien droit"
+msgstr "Statut juridique"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.typ"
 msgstr "Type"
