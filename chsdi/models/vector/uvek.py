@@ -332,27 +332,42 @@ class Unf:
     __template__ = 'templates/htmlpopup/astra_unfaelle.mako'
     __label__ = 'accidenttype_de'
     __timeInstant__ = 'accidentyear'
-    __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it',
-                                'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it',
-                                'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it',
-                                'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it',
+    __queryable_attributes__ = ['accidenttype_de', 'accidenttype_fr', 'accidenttype_it', 'accidenttype_en',
+                                'accidenttypecode', 'accidentday_de', 'accidentday_fr', 'accidentday_it', 'accidentday_en',
+                                'accidentmonth_de', 'accidentmonth_fr', 'accidentmonth_it', 'accidentmonth_en',
+                                'accidenthour', 'accidenthour_text',
+                                'accidentyear', 'severitycategory_de', 'severitycategory_fr', 'severitycategory_it', 'severitycategory_en',
+                                'severitycategorycode', 'roadtype_de', 'roadtype_fr', 'roadtype_it', 'roadtype_en',
                                 'roadtypecode', 'canton', 'fsocommunecode']
     id = Column('uuid', Unicode, primary_key=True)
     accidenttype_de = Column('accidenttype_de', Unicode)
     accidenttype_fr = Column('accidenttype_fr', Unicode)
     accidenttype_it = Column('accidenttype_it', Unicode)
+    accidenttype_en = Column('accidenttype_en', Unicode)
     accidenttypecode = Column('accidenttypecode', Integer)
+    involving_pedestrian = Column('involving_pedestrian', Boolean)
+    involving_bicycle = Column('involving_bicycle', Boolean)
+    involving_motorcycle = Column('involving_motorcycle', Boolean)
+    accidentyear = Column('accidentyear', Integer)
+    accidentmonth_de = Column('accidentmonth_de', Unicode)
+    accidentmonth_fr = Column('accidentmonth_fr', Unicode)
+    accidentmonth_it = Column('accidentmonth_it', Unicode)
+    accidentmonth_en = Column('accidentmonth_en', Unicode)
     accidentday_de = Column('accidentday_de', Unicode)
     accidentday_fr = Column('accidentday_fr', Unicode)
     accidentday_it = Column('accidentday_it', Unicode)
-    accidentyear = Column('accidentyear', Integer)
+    accidentday_en = Column('accidentday_en', Unicode)
+    accidenthour = Column('accidenthour', Unicode)
+    accidenthour_text = Column('accidenthour_text', Unicode)
     severitycategory_de = Column('severitycategory_de', Unicode)
     severitycategory_fr = Column('severitycategory_fr', Unicode)
     severitycategory_it = Column('severitycategory_it', Unicode)
+    severitycategory_en = Column('severitycategory_en', Unicode)
     severitycategorycode = Column('severitycategorycode', Unicode)
     roadtype_de = Column('roadtype_de', Unicode)
     roadtype_fr = Column('roadtype_fr', Unicode)
     roadtype_it = Column('roadtype_it', Unicode)
+    roadtype_en = Column('roadtype_en', Unicode)
     roadtypecode = Column('roadtypecode', Integer)
     canton = Column('canton', Unicode)
     fsocommunecode = Column('fsocommunecode', Unicode)
@@ -360,38 +375,38 @@ class Unf:
 
 
 class UnfPersAlle(Base, Unf, Vector):
-    __tablename__ = 'unf_pers_alle'
+    __tablename__ = 'v_unf_pers_alle'
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_alle'
 
-register('ch.astra.unfaelle-personenschaeden_alle', UnfPersAlle)
+register(UnfPersAlle.__bodId__, UnfPersAlle)
 
 
 class UnfPersCasualties(Base, Unf, Vector):
-    __tablename__ = 'unf_pers_getoetete'
+    __tablename__ = 'v_unf_pers_getoetete'
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_getoetete'
 
-register('ch.astra.unfaelle-personenschaeden_getoetete', UnfPersCasualties)
+register(UnfPersCasualties.__bodId__, UnfPersCasualties)
 
 
 class UnfPersFuss(Base, Unf, Vector):
-    __tablename__ = 'unf_pers_fussgaenger'
+    __tablename__ = 'v_unf_pers_fussgaenger'
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_fussgaenger'
 
-register('ch.astra.unfaelle-personenschaeden_fussgaenger', UnfPersFuss)
+register(UnfPersFuss.__bodId__, UnfPersFuss)
 
 
 class UnfPersMoto(Base, Unf, Vector):
-    __tablename__ = 'unf_pers_motorraeder'
+    __tablename__ = 'v_unf_pers_motorraeder'
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_motorraeder'
 
-register('ch.astra.unfaelle-personenschaeden_motorraeder', UnfPersMoto)
+register(UnfPersMoto.__bodId__, UnfPersMoto)
 
 
 class UnfPersVelo(Base, Unf, Vector):
-    __tablename__ = 'unf_pers_fahrraeder'
+    __tablename__ = 'v_unf_pers_fahrraeder'
     __bodId__ = 'ch.astra.unfaelle-personenschaeden_fahrraeder'
 
-register('ch.astra.unfaelle-personenschaeden_fahrraeder', UnfPersVelo)
+register(UnfPersVelo.__bodId__, UnfPersVelo)
 
 
 class Hauptstrassennetz(Base, Vector):
