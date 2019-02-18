@@ -31,6 +31,10 @@
       <td>${c['attributes'][accidentday] or '-'}</td>
     </tr>
     <tr>
+      <td class="cell-left">${_(layerBodId + '.accidenthour_text')}</td>
+      <td>${c['attributes']['accidenthour_text'] or '-'}</td>
+    </tr>
+    <tr>
       <td class="cell-left">${_(layerBodId + '.roadtype_de')}</td>
       <td>${c['attributes'][roadtype] or '-'}</td>
     </tr>
