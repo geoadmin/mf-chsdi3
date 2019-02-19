@@ -14,6 +14,26 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20190220:
+
+Release 20190206 - Wednesday, February 20th 2019
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_190206...r_190220>`__
+- Announcement:
+    - Swisssearch the order of the search results has been changed. The resultset can contain now up to 10 exact search results on top, followed by the other results. `Additional Information <https://github.com/geoadmin/mf-chsdi3/pull/3073>`__.
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_190206...r_190220>`__
+
 .. _releasenotes_20190206:
 
 Release 20190206 - Wednesday, February 6th 2019
