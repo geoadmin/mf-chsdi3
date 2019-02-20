@@ -9,6 +9,9 @@
     accidentmonth = 'accidentmonth_%s' % lang
     severitycategory = 'severitycategory_%s' % lang
     roadtype = 'roadtype_%s' % lang
+    pedestrian_yes_no = (layerBodId + '.yes') if c['attributes']['involving_pedestrian'] else (layerBodId + '.no')
+    bicycle_yes_no = (layerBodId + '.yes') if c['attributes']['involving_bicycle'] else (layerBodId + '.no')
+    motorcycle_yes_no = (layerBodId + '.yes') if c['attributes']['involving_motorcycle'] else (layerBodId + '.no')
 %>
 <% c['stable_id'] = True %>
       <td class="cell-left">${_(layerBodId + '.accidenttype_de')}</td>
@@ -46,21 +49,18 @@
       <td class="cell-left">${_(layerBodId + '.fsocommunecode')}</td>
       <td>${c['attributes']['fsocommunecode'] or '-'}</td>
     </tr>
-% if c['attributes']['involving_pedestrian']:
     <tr>
-      <td class="cell-left" colspan="2">${_(layerBodId + '.involving_pedestrian')}</td>
+      <td class="cell-left">${_(layerBodId + '.involving_pedestrian')}</td>
+      <td>${_(pedestrian_yes_no)}</td>
     </tr>
-% endif
-% if c['attributes']['involving_bicycle']:
     <tr>
-      <td class="cell-left" colspan="2">${_(layerBodId + '.involving_bicycle')}</td>
+      <td class="cell-left">${_(layerBodId + '.involving_bicycle')}</td>
+      <td>${_(bicycle_yes_no)}</td>
     </tr>
-% endif
-% if c['attributes']['involving_motorcycle']:
     <tr>
-      <td class="cell-left" colspan="2">${_(layerBodId + '.involving_motorcycle')}</td>
+      <td class="cell-left">${_(layerBodId + '.involving_motorcycle')}</td>
+      <td>${_(motorcycle_yes_no)}</td>
     </tr>
-% endif
 
 </%def>
 
