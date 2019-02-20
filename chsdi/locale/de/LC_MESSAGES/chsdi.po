@@ -1553,6 +1553,12 @@ msgstr "Unfalltag"
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_it"
 msgstr "Unfalltag"
 
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour_text"
+msgstr "Unfallstunde"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidentmonth_de"
+msgstr "Unfallmonat"
+
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidenttypecode"
 msgstr "Code - Unfalltyp"
 
@@ -1566,13 +1572,25 @@ msgid "ch.astra.unfaelle-personenschaeden_alle.accidenttype_it"
 msgstr "Unfalltyp"
 
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidentyear"
-msgstr "Jahr"
+msgstr "Unfalljahr"
 
 msgid "ch.astra.unfaelle-personenschaeden_alle.canton"
 msgstr "Kanton"
 
 msgid "ch.astra.unfaelle-personenschaeden_alle.fsocommunecode"
 msgstr "BFS-Gemeinde-Nr."
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.involving_bicycle"
+msgstr "Unfall mit Fahrradbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.involving_motorcycle"
+msgstr "Unfall mit Motorradbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.involving_pedestrian"
+msgstr "Unfall mit Fussgängerbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_alle.no"
+msgstr "Nein"
 
 msgid "ch.astra.unfaelle-personenschaeden_alle.roadtypecode"
 msgstr "Code - Strassenart"
@@ -1598,6 +1616,9 @@ msgstr "Unfallschwerekategorie"
 msgid "ch.astra.unfaelle-personenschaeden_alle.severitycategory_it"
 msgstr "Unfallschwerekategorie"
 
+msgid "ch.astra.unfaelle-personenschaeden_alle.yes"
+msgstr "Ja"
+
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder"
 msgstr "Unfälle mit Fahrradbeteiligung"
 
@@ -1609,6 +1630,12 @@ msgstr "Unfalltag"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_it"
 msgstr "Unfalltag"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour_text"
+msgstr "Unfallstunde"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentmonth_de"
+msgstr "Unfallmonat"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenttypecode"
 msgstr "Code - Unfalltyp"
@@ -1623,13 +1650,25 @@ msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenttype_it"
 msgstr "Unfalltyp"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentyear"
-msgstr "Jahr"
+msgstr "Unfalljahr"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.canton"
 msgstr "Kanton"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.fsocommunecode"
 msgstr "BFS-Gemeinde-Nr."
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.involving_bicycle"
+msgstr "Unfall mit Fahrradbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.involving_motorcycle"
+msgstr "Unfall mit Motorradbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.involving_pedestrian"
+msgstr "Unfall mit Fussgängerbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.no"
+msgstr "Nein"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.roadtypecode"
 msgstr "Code - Strassenart"
@@ -1655,6 +1694,9 @@ msgstr "Unfallschwerekategorie"
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.severitycategory_it"
 msgstr "Unfallschwerekategorie"
 
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.yes"
+msgstr "Ja"
+
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger"
 msgstr "Unfälle mit Fussgängerbeteiligung"
 
@@ -1666,6 +1708,12 @@ msgstr "Unfalltag"
 
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_it"
 msgstr "Unfalltag"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour_text"
+msgstr "Unfallstunde"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentmonth_de"
+msgstr "Unfallmonat"
 
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenttypecode"
 msgstr "Code - Unfalltyp"
@@ -1680,13 +1728,25 @@ msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenttype_it"
 msgstr "Unfalltyp"
 
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentyear"
-msgstr "Jahr"
+msgstr "Unfalljahr"
 
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.canton"
 msgstr "Kanton"
 
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.fsocommunecode"
 msgstr "BFS-Gemeinde-Nr."
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.involving_bicycle"
+msgstr "Unfall mit Fahrradbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.involving_motorcycle"
+msgstr "Unfall mit Motorradbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.involving_pedestrian"
+msgstr "Unfall mit Fussgängerbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.no"
+msgstr "Nein"
 
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.roadtypecode"
 msgstr "Code - Strassenart"
@@ -1712,6 +1772,9 @@ msgstr "Unfallschwerekategorie"
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.severitycategory_it"
 msgstr "Unfallschwerekategorie"
 
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.yes"
+msgstr "Ja"
+
 msgid "ch.astra.unfaelle-personenschaeden_getoetete"
 msgstr "Unfälle mit Getöteten"
 
@@ -1723,6 +1786,12 @@ msgstr "Unfalltag"
 
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_it"
 msgstr "Unfalltag"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour_text"
+msgstr "Unfallstunde"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentmonth_de"
+msgstr "Unfallmonat"
 
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenttypecode"
 msgstr "Code - Unfalltyp"
@@ -1737,13 +1806,25 @@ msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenttype_it"
 msgstr "Unfalltyp"
 
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentyear"
-msgstr "Jahr"
+msgstr "Unfalljahr"
 
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.canton"
 msgstr "Kanton"
 
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.fsocommunecode"
 msgstr "BFS-Gemeinde-Nr."
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.involving_bicycle"
+msgstr "Unfall mit Fahrradbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.involving_motorcycle"
+msgstr "Unfall mit Motorradbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.involving_pedestrian"
+msgstr "Unfall mit Fussgängerbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.no"
+msgstr "Nein"
 
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.roadtypecode"
 msgstr "Code - Strassenart"
@@ -1769,6 +1850,9 @@ msgstr "Unfallschwerekategorie"
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.severitycategory_it"
 msgstr "Unfallschwerekategorie"
 
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.yes"
+msgstr "Ja"
+
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder"
 msgstr "Unfälle mit Motorradbeteiligung"
 
@@ -1780,6 +1864,12 @@ msgstr "Unfalltag"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_it"
 msgstr "Unfalltag"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour_text"
+msgstr "Unfallstunde"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentmonth_de"
+msgstr "Unfallmonat"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenttypecode"
 msgstr "Code - Unfalltyp"
@@ -1794,13 +1884,25 @@ msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenttype_it"
 msgstr "Unfalltyp"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentyear"
-msgstr "Jahr"
+msgstr "Unfalljahr"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.canton"
 msgstr "Kanton"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.fsocommunecode"
 msgstr "BFS-Gemeinde-Nr."
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.involving_bicycle"
+msgstr "Unfall mit Fahrradbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.involving_motorcycle"
+msgstr "Unfall mit Motorradbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.involving_pedestrian"
+msgstr "Unfall mit Fussgängerbeteiligung"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.no"
+msgstr "Nein"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.roadtypecode"
 msgstr "Code - Strassenart"
@@ -1825,6 +1927,9 @@ msgstr "Unfallschwerekategorie"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.severitycategory_it"
 msgstr "Unfallschwerekategorie"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.yes"
+msgstr "Ja"
 
 msgid "ch.astra.url"
 msgstr "http://www.astra.admin.ch/index.html?lang=de"
@@ -3965,6 +4070,21 @@ msgstr "Ökomorphologie F - Bauwerke"
 msgid "ch.bafu.permafrost"
 msgstr "Permafrosthinweiskarte"
 
+msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche"
+msgstr "Gewässerschutzbereiche"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale"
+msgstr "Grundwasserschutzareale"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen"
+msgstr "Grundwasserschutzzonen"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zo"
+msgstr "Zuströmbereiche Zo"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zu"
+msgstr "Zuströmbereiche Zu"
+
 msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
 msgstr "REN  Extensives Landwirtschaftsgebiet"
 
@@ -5366,6 +5486,9 @@ msgstr "Anz. Güterzüge Tag"
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Emissionsplan Eisenbahn 2015"
 
+msgid "ch.bav.lage-stoerfallverordnung_eisenbahnanlagen"
+msgstr "Lage und Bereich Eisenb. StFV"
+
 msgid "ch.bav.projektierungszonen-eisenbahnanlagen.oereb"
 msgstr "Projektierungszonen Eisenbahnen ÖREB"
 
@@ -6033,7 +6156,7 @@ msgid "ch.bfe.biogasanlagen.place"
 msgstr "Ort"
 
 msgid "ch.bfe.biogasanlagen.powergeneration"
-msgstr "Stromproduktion [kWh]"
+msgstr "Stromproduktion [MWh]"
 
 msgid "ch.bfe.biogasanlagen.sendfeedback"
 msgstr "Rückmeldung senden"
@@ -7958,6 +8081,84 @@ msgstr "Nummer"
 msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.s_title_de"
 msgstr "Name"
 
+msgid "ch.swisstopo.geologie-geomol-isotherme_100"
+msgstr "Höhe 100 °C-Isotherme"
+
+msgid "ch.swisstopo.geologie-geomol-isotherme_150"
+msgstr "Höhe 150 °C-Isotherme"
+
+msgid "ch.swisstopo.geologie-geomol-isotherme_60"
+msgstr "Höhe 60 °C-Isotherme"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten"
+msgstr "Temperaturmodell - Daten"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk"
+msgstr "Temperaturen Top Muschelkalk"
+
+msgid "ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk.elev"
+msgstr "Höhe Top Muschelkalk [m ü.M.]"
+
+msgid "ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk.pixel_value"
+msgstr "Temperatur [°C]"
+
+msgid "ch.swisstopo.geologie-geomol-temperatur_top_omalm"
+msgstr "Temperaturen Top Oberer Malm"
+
+msgid "ch.swisstopo.geologie-geomol-temperatur_top_omalm.elev"
+msgstr "Höhe Top Oberer Malm [m ü.M.]"
+
+msgid "ch.swisstopo.geologie-geomol-temperatur_top_omalm.pixel_value"
+msgstr "Temperatur [°C]"
+
+msgid "ch.swisstopo.geologie-geomol-temperatur_top_omm"
+msgstr "Temperaturen Top OMM"
+
+msgid "ch.swisstopo.geologie-geomol-temperatur_top_omm.elev"
+msgstr "Höhe Top OMM [m ü.M.]"
+
+msgid "ch.swisstopo.geologie-geomol-temperatur_top_omm.pixel_value"
+msgstr "Temperatur [°C]"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_1000"
+msgstr "Temperaturen 1000 m Tiefe"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_1000.pixel_value"
+msgstr "Temperatur [°C]"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_1500"
+msgstr "Temperaturen 1500 m Tiefe"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_1500.pixel_value"
+msgstr "Temperatur [°C]"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_2000"
+msgstr "Temperaturen 2000 m Tiefe"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_2000.pixel_value"
+msgstr "Temperatur [°C]"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_3000"
+msgstr "Temperaturen 3000 m Tiefe"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_3000.pixel_value"
+msgstr "Temperatur [°C]"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_4000"
+msgstr "Temperaturen 4000 m Tiefe"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_4000.pixel_value"
+msgstr "Temperatur [°C]"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_500"
+msgstr "Temperaturen 500 m Tiefe"
+
+msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_500.pixel_value"
+msgstr "Temperatur [°C]"
+
 msgid "ch.swisstopo.geologie-geomorphologie"
 msgstr "Übersicht Geomorphologie"
 
@@ -8262,10 +8463,10 @@ msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.title"
 msgstr "Titel"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.without_pdf"
-msgstr "Anzahl der Dokumente ohne PDF"
+msgstr "Anzahl Dokumente ohne PDF"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-lt10km2.with_pdf"
-msgstr "Anzahl der Dokumente mit PDF"
+msgstr "Anzahl Dokumente mit PDF"
 
 msgid "ch.swisstopo.geologie-gisgeol-linien"
 msgstr "Geol. Dokumente (Linien)"
@@ -9740,6 +9941,9 @@ msgstr "ch.swisstopo.swissnames3d.inspire"
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Geografische Namen swissNAMES3D"
 
+msgid "ch.swisstopo.swisssurface3d.metadata"
+msgstr "Einteilung swissSURFACE3D"
+
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz"
 msgstr "Eisenbahn swissTLM3D"
 
@@ -10282,6 +10486,9 @@ msgstr "Spannungsarme Gebiete"
 
 msgid "ch.swisstopo-vd.stand-oerebkataster"
 msgstr "Verfügbarkeit des ÖREB-Katasters"
+
+msgid "ch.swisstopo-vd.stand-oerebkataster.oereb_webservice"
+msgstr "ÖREB Auszug"
 
 msgid "ch.swisstopo-vd.url"
 msgstr "http://www.cadastre.ch"
