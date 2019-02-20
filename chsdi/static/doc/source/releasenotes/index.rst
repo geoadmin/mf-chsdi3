@@ -16,7 +16,7 @@ Release Notes
 
 .. _releasenotes_20190220:
 
-Release 20190206 - Wednesday, February 20th 2019
+Release 20190220 - Wednesday, February 20th 2019
 -------------------------------------------------
 
 API & applications
