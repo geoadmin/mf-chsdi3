@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from sqlalchemy import Column, Integer
-from sqlalchemy.types import Numeric, Unicode, Float, SmallInteger
+from sqlalchemy.types import Numeric, Unicode, Float, SmallInteger, Boolean
 
 from chsdi.models import register, bases
 from chsdi.models.types import DateTimeChsdi
@@ -1073,6 +1073,50 @@ class Grundwasserschutzzonen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.grundwasserschutzzonen', Grundwasserschutzzonen)
+
+
+class PlanierischerGWSGrundwasserschutzzonen(Base, Vector):
+    __tablename__ = 'ngdi_gwszone'
+    __table_args__ = ({'schema': 'wasser', 'autoload': False})
+    __bodId__ = 'ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen'
+    __template__ = 'templates/htmlpopup/plan_gws_grundwasserschutzzonen.mako'
+    __label__ = 'identifikator'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    t_id = Column('t_id', Integer)
+    identifikator = Column('identifikator', Unicode)
+    typ = Column('typ', Unicode)
+    istaltrechtlich = Column('istaltrechtlich', Boolean)
+    istaltrechtlich_de = Column('istaltrechtlich_de', Unicode)
+    rechtsstatus = Column('rechtsstatus', Unicode)
+    rechtskraftdatum = Column('rechtskraftdatum', Unicode)
+    kt_status = Column('kt_status', Unicode)
+    kt_typbez = Column('kt_typbez', Unicode)
+    kanton = Column('kanton', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(PlanierischerGWSGrundwasserschutzzonen.__bodId__, PlanierischerGWSGrundwasserschutzzonen)
+
+
+class PlanierischerGWSGrundwasserschutzareale(Base, Vector):
+    __tablename__ = 'ngdi_gwszone'
+    __table_args__ = ({'schema': 'wasser', 'autoload': False})
+    __bodId__ = 'ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale'
+    __template__ = 'templates/htmlpopup/plan_gws_grundwasserschutzareale.mako'
+    __label__ = 'identifikator'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    t_id = Column('t_id', Integer)
+    identifikator = Column('identifikator', Unicode)
+    typ = Column('typ', Unicode)
+    istaltrechtlich = Column('istaltrechtlich', Boolean)
+    istaltrechtlich_de = Column('istaltrechtlich_de', Unicode)
+    rechtsstatus = Column('rechtsstatus', Unicode)
+    rechtskraftdatum = Column('rechtskraftdatum', Unicode)
+    kt_status = Column('kt_status', Unicode)
+    kt_typbez = Column('kt_typbez', Unicode)
+    kanton = Column('kanton', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(PlanierischerGWSGrundwasserschutzzonen.__bodId__, PlanierischerGWSGrundwasserschutzzonen)
 
 
 class Gewaesserschutzbereiche (Base, Vector):
