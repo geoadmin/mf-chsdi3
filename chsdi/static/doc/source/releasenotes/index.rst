@@ -26,6 +26,12 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_190220...r_190227>`__
+- Announcement:
+    - The layer `ch.sgpk.maechtigkeit-lockergesteine` is now fully decommissioned. Please use `ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell` instead.
+    - The layer `ch.bfe.energiestaedte-2000watt-aufdemweg` is now removed from the map.geo.admin.ch catalogs. The layer will be completely removed from the BGDI on 13.03.2019.
+    - The BAG decided to update the layers `ch.bag.zecken-fsme-faelle`, `ch.bag.zecken-fsme-impfung` instead of decommissioning them as previously announced. Those two layers are updated today and will continue to work as before in teh BGDI.
+    - The BAG layer `ch.bag.zecken-lyme` is still tagged for decommission. It is today removed from the map.geo.admin.ch catalogs and will be completely removed from the BGDI services during Q2 2019.
+
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
