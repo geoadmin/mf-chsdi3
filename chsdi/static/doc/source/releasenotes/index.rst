@@ -41,14 +41,20 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Zeckenstichmodell <//map.geo.admin.ch/?layers=ch.bag.zeckenstichmodell>`__ (ch.bag.zeckenstichmodell)                                                                                         |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Floodplains outside the federal inventary <//map.geo.admin.ch/?layers=ch.bafu.auen-ausserhalb_bundesinventar>`__ (ch.bafu.auen-ausserhalb_bundesinventar)                                                                                         |
+| New    | `Floodplains outside the federal inventary <//map.geo.admin.ch/?layers=ch.bafu.auen-ausserhalb_bundesinventar>`__ (ch.bafu.auen-ausserhalb_bundesinventar)                                     |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                     |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Availability of the PLR Cadastre <//map.geo.admin.ch/?layers=ch.swisstopo-vd.stand-oerebkataster>`__ (ch.swisstopo-vd.stand-oerebkataster)                                                    |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Low distortion area <//map.geo.admin.ch/?layers=ch.swisstopo-vd.spannungsarme-gebiete>`__ (ch.swisstopo-vd.spannungsarme-gebiete)                                                    |
+| Update | `Low distortion area <//map.geo.admin.ch/?layers=ch.swisstopo-vd.spannungsarme-gebiete>`__ (ch.swisstopo-vd.spannungsarme-gebiete)                                                             |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `TBE: cluster <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                                            |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `TBE: recommendation of vaccination <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-impfung>`__ (ch.bag.zecken-fsme-impfung)                                                                    | 
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 
 .. _releasenotes_20190220:
 
