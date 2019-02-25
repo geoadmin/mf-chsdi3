@@ -8084,11 +8084,20 @@ msgstr "Nom"
 msgid "ch.swisstopo.geologie-geomol-isotherme_100"
 msgstr "Altitude isotherme 100 °C"
 
+msgid "ch.swisstopo.geologie-geomol-isotherme_100.elev"
+msgstr "Altitude isotherme 100 °C [m s.m.]"
+
 msgid "ch.swisstopo.geologie-geomol-isotherme_150"
 msgstr "Altitude isotherme 150 °C"
 
+msgid "ch.swisstopo.geologie-geomol-isotherme_150.elev"
+msgstr "Altitude isotherme 150 °C [m s.m.]"
+
 msgid "ch.swisstopo.geologie-geomol-isotherme_60"
 msgstr "Altitude isotherme 60 °C"
+
+msgid "ch.swisstopo.geologie-geomol-isotherme_60.elev"
+msgstr "Altitude isotherme 60 °C [m s.m.]"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten"
 msgstr "Modèle de température - données"

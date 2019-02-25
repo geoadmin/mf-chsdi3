@@ -1302,6 +1302,25 @@ class AuenVegetationAlpin(Base, Vector):
 register('ch.bafu.bundesinventare-auen_vegetation_alpin', AuenVegetationAlpin)
 
 
+class AuenAusserhalbBundesinventar(Base, Vector):
+    __tablename__ = 'auen_ausserhalb_bundinv'
+    __table_args__ = ({'schema': 'schutzge', 'autoload': False})
+    __bodId__ = 'ch.bafu.auen-ausserhalb_bundesinventar'
+    __template__ = 'templates/htmlpopup/auen_ausserhalb_bundinv.mako'
+    __label__ = 'name'
+    id = Column('objnummer', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    de_bedeutung = Column('de_bedeutung', Unicode)
+    fr_bedeutung = Column('fr_bedeutung', Unicode)
+    it_bedeutung = Column('it_bedeutung', Unicode)
+    de_qualitaet = Column('de_qualitaet', Unicode)
+    fr_qualitaet = Column('fr_qualitaet', Unicode)
+    shape_area = Column('shape_area', Integer)
+    the_geom = Column(Geometry2D)
+
+register(AuenAusserhalbBundesinventar.__bodId__, AuenAusserhalbBundesinventar)
+
+
 class AuenVegetationsKarten(Base, Vector):
     __tablename__ = 'auen_vegetation'
     __table_args__ = ({'schema': 'flora', 'autoload': False})
