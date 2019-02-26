@@ -57,7 +57,9 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `TBE: cluster <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                                            |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `TBE: recommendation of vaccination <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-impfung>`__ (ch.bag.zecken-fsme-impfung)                                                                    | 
+| Update | `TBE: recommendation of vaccination <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-impfung>`__ (ch.bag.zecken-fsme-impfung)                                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Official street index <//map.geo.admin.ch/?layers=ch.swisstopo.amtliches-strassenverzeichnis>`__ (ch.swisstopo.amtliches-strassenverzeichnis)                                                 |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
