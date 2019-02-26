@@ -1052,6 +1052,36 @@ msgstr "Inventar d'abitaziuns"
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.gemeinde"
 msgstr "Vischnanca"
 
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
+msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
+msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
+msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_2"
+msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_2"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_3"
+msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_3"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_4"
+msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_4"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_5"
+msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_5"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_6"
+msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_6"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_7"
+msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_7"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_8"
+msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_8"
+
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.zwg_3010"
 msgstr "Dumber d’emprimas abitaziuns"
 
@@ -14866,6 +14896,12 @@ msgstr "Bestellen"
 
 msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_gemeinde"
 msgstr "Vischnanca"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_gem_no"
+msgstr "Numer UST"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_status"
+msgstr "Status"
 
 msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
 msgstr "Dumber d’emprimas abitaziuns"

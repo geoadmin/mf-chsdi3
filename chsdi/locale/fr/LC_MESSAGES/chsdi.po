@@ -1052,6 +1052,36 @@ msgstr "inventaire des logements"
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.gemeinde"
 msgstr "Commune"
 
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
+msgstr "N’est pas soumise aux dispositions du droit des constructions de la LRS"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
+msgstr "Est soumise aux dispositions du droit des constructions de la LRS"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
+msgstr "Sans procédure. La proportion de résidences secondaires est toujours à moins de 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_2"
+msgstr "Sans procédure. La proportion de résidences secondaires est toujours supérieure à 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_3"
+msgstr "Procédure pendante. Comme la proportion de résidences secondaires est à moins de 20 % selon l’inventaire, elle fait l’objet d’un examen"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_4"
+msgstr "Procédure pendante. Comme la proportion de résidences secondaires est supérieure à 20 % selon l’inventaire, elle fait l’objet d’un examen"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_5"
+msgstr "Procédure terminée. La proportion de résidences secondaires a été examiné. Elle est à moins de 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_6"
+msgstr "Procédure terminée. La proportion de résidences secondaires a été examiné. Elle est supérieure à 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_7"
+msgstr "Procédure terminée. La proportion de résidences secondaires examinée ne correspond pas avec l’inventaire. Elle est à moins de 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_8"
+msgstr "Procédure terminée. La proportion de résidences secondaires examinée ne correspond pas avec l’inventaire. Elle est supérieure à 20 %"
+
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.zwg_3010"
 msgstr "Nombre de résidences prin-cipales"
 
@@ -14866,6 +14896,12 @@ msgstr "Bestellen"
 
 msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_gemeinde"
 msgstr "Commune"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_gem_no"
+msgstr "Numéro OFS"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_status"
+msgstr "Status"
 
 msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
 msgstr "Nombre de résidences prin-cipales"

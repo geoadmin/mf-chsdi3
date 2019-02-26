@@ -1052,6 +1052,36 @@ msgstr "Wohnungsinventar"
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.gemeinde"
 msgstr "Gemeinde"
 
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
+msgstr "untersteht nicht den baurechtlichen Bestimmungen des ZWG"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
+msgstr "untersteht den baurechtlichen Bestimmungen des ZWG"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
+msgstr "Ohne Verfahren. Der Zweitwohnungsanteil liegt weiterhin unter 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_2"
+msgstr "Ohne Verfahren. Der Zweitwohnungsanteil liegt weiterhin über 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_3"
+msgstr "In einem Verfahren. Da der Zweitwohnungsanteil gemäss Inventar neu unter 20 % liegt, wird er überprüft"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_4"
+msgstr "In einem Verfahren. Da der Zweitwohnungsanteil gemäss Inventar neu über 20 % liegt, wird er überprüft"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_5"
+msgstr "Verfahren abgeschlossen. Der Zweitwohnungsanteil wurde überprüft, er liegt unter 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_6"
+msgstr "Verfahren abgeschlossen. Der Zweitwohnungsanteil wurde überprüft, er liegt über 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_7"
+msgstr "Verfahren abgeschlossen. Überprüfter Zweitwohnungsanteil entspricht nicht dem Inventar, er liegt unter 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_8"
+msgstr "Verfahren abgeschlossen. Überprüfter Zweitwohnungsanteil entspricht nicht dem Inventar, er liegt über 20 %"
+
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.zwg_3010"
 msgstr "Anzahl Erstwohnungen"
 
@@ -14866,6 +14896,12 @@ msgstr "Commander"
 
 msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_gemeinde"
 msgstr "Gemeinde"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_gem_no"
+msgstr "BFS-Nummer"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_status"
+msgstr "Status"
 
 msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
 msgstr "Anzahl Erstwohnungen"
