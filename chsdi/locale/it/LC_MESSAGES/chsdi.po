@@ -1052,6 +1052,36 @@ msgstr "Inventario delle abitazioni"
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.gemeinde"
 msgstr "Comune"
 
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
+msgstr "non soggetto alle disposizioni di diritto edilizio della LASec"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
+msgstr "soggetto alle disposizioni di diritto edilizio della LASec"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
+msgstr "Senza procedura. La quota di abitazioni secondarie rimane inferiore al 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_2"
+msgstr "Senza procedura. La quota di abitazioni secondarie rimane superiore al 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_3"
+msgstr "In una procedura. La quota di abitazioni secondarie viene riesaminata poiché secondo l’inventario è ora inferiore al 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_4"
+msgstr "In una procedura. La quota di abitazioni secondarie viene riesaminata poiché secondo l’inventario è ora superiore al 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_5"
+msgstr "Procedura conclusa. La quota di abitazioni secondarie è stata riesaminata ed è inferiore al 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_6"
+msgstr "Procedura conclusa. La quota di abitazioni secondarie è stata riesaminata ed è superiore al 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_7"
+msgstr "Procedura conclusa. La quota di abitazioni secondarie riesaminata non corrisponde all’inventario ed è inferiore al 20 %"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_8"
+msgstr "Procedura conclusa. La quota di abitazioni secondarie riesaminata non corrisponde all’inventario ed è superiore al 20 %"
+
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.zwg_3010"
 msgstr "numero delle abitazioni primarie"
 
@@ -14866,6 +14896,12 @@ msgstr "Ordinare"
 
 msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_gemeinde"
 msgstr "Comune"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_gem_no"
+msgstr "Numero UFS"
+
+msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_status"
+msgstr "Status"
 
 msgid "tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3010"
 msgstr "numero delle abitazioni primarie"
