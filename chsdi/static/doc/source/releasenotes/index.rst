@@ -14,6 +14,56 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20190227:
+
+Release 20190227 - Wednesday, February 27th 2019
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_190220...r_190227>`__
+- Announcement:
+    - The layer `ch.sgpk.maechtigkeit-lockergesteine` is now fully decommissioned. Please use `ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell` instead.
+    - The layer `ch.bfe.energiestaedte-2000watt-aufdemweg` is now removed from the map.geo.admin.ch catalogs. The layer will be completely removed from the BGDI on 13.03.2019.
+    - The BAG decided to update the layers `ch.bag.zecken-fsme-faelle`, `ch.bag.zecken-fsme-impfung` instead of decommissioning them as previously announced. Those two layers are updated today and will continue to work as before in teh BGDI.
+    - The BAG layer `ch.bag.zecken-lyme` is still tagged for decommission. It is today removed from the map.geo.admin.ch catalogs and will be completely removed from the BGDI services during Q2 2019.
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_190220...r_190227>`__
+
+
+Geodata
+*******
+
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Biogas plants <//map.geo.admin.ch/?layers=ch.bfe.biogasanlagen>`__ (ch.bfe.biogasanlagen)                                                                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Zeckenstichmodell <//map.geo.admin.ch/?layers=ch.bag.zeckenstichmodell>`__ (ch.bag.zeckenstichmodell)                                                                                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Floodplains outside the federal inventary <//map.geo.admin.ch/?layers=ch.bafu.auen-ausserhalb_bundesinventar>`__ (ch.bafu.auen-ausserhalb_bundesinventar)                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Availability of the PLR Cadastre <//map.geo.admin.ch/?layers=ch.swisstopo-vd.stand-oerebkataster>`__ (ch.swisstopo-vd.stand-oerebkataster)                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Low distortion area <//map.geo.admin.ch/?layers=ch.swisstopo-vd.spannungsarme-gebiete>`__ (ch.swisstopo-vd.spannungsarme-gebiete)                                                             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `TBE: cluster <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                                            |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `TBE: recommendation of vaccination <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-impfung>`__ (ch.bag.zecken-fsme-impfung)                                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Official street index <//map.geo.admin.ch/?layers=ch.swisstopo.amtliches-strassenverzeichnis>`__ (ch.swisstopo.amtliches-strassenverzeichnis)                                                 |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 .. _releasenotes_20190220:
 
 Release 20190220 - Wednesday, February 20th 2019
