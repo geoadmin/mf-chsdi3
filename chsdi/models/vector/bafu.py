@@ -1075,7 +1075,7 @@ class Grundwasserschutzzonen(Base, Vector):
 register('ch.bafu.grundwasserschutzzonen', Grundwasserschutzzonen)
 
 
-class PlanierischerGWSGrundwasserschutzzonen(Base, Vector):
+class PlanerischerGWSGrundwasserschutzzonen(Base, Vector):
     __tablename__ = 'ngdi_gwszone'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen'
@@ -1084,21 +1084,26 @@ class PlanierischerGWSGrundwasserschutzzonen(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     t_id = Column('t_id', Integer)
     identifikator = Column('identifikator', Unicode)
+    bemerkungen_de = Column('bemerkungen_de', Unicode)
+    bemerkungen_fr = Column('bemerkungen_fr', Unicode)
     typ = Column('typ', Unicode)
     istaltrechtlich = Column('istaltrechtlich', Boolean)
     istaltrechtlich_de = Column('istaltrechtlich_de', Unicode)
+    istaltrechtlich_fr = Column('istaltrechtlich_fr', Unicode)
     rechtsstatus = Column('rechtsstatus', Unicode)
     rechtskraftdatum = Column('rechtskraftdatum', Unicode)
+    bemerkungen_status_de = Column('bemerkungen_status_de')
+    bemerkungen_status_fr = Column('bemerkungen_status_fr')
     kt_status = Column('kt_status', Unicode)
     kt_typbez = Column('kt_typbez', Unicode)
     kanton = Column('kanton', Unicode)
     the_geom = Column(Geometry2D)
 
-register(PlanierischerGWSGrundwasserschutzzonen.__bodId__, PlanierischerGWSGrundwasserschutzzonen)
+register(PlanerischerGWSGrundwasserschutzzonen.__bodId__, PlanerischerGWSGrundwasserschutzzonen)
 
 
-class PlanierischerGWSGrundwasserschutzareale(Base, Vector):
-    __tablename__ = 'ngdi_gwszone'
+class PlanerischerGWSGrundwasserschutzareale(Base, Vector):
+    __tablename__ = 'ngdi_gwsareal'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale'
     __template__ = 'templates/htmlpopup/plan_gws_grundwasserschutzareale.mako'
@@ -1106,17 +1111,40 @@ class PlanierischerGWSGrundwasserschutzareale(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     t_id = Column('t_id', Integer)
     identifikator = Column('identifikator', Unicode)
+    bemerkungen_de = Column('bemerkungen_de', Unicode)
+    bemerkungen_fr = Column('bemerkungen_fr', Unicode)
     typ = Column('typ', Unicode)
+    typ_txt = Column('typ_txt', Unicode)
     istaltrechtlich = Column('istaltrechtlich', Boolean)
     istaltrechtlich_de = Column('istaltrechtlich_de', Unicode)
+    istaltrechtlich_fr = Column('istaltrechtlich_fr', Unicode)
     rechtsstatus = Column('rechtsstatus', Unicode)
     rechtskraftdatum = Column('rechtskraftdatum', Unicode)
     kt_status = Column('kt_status', Unicode)
+    kanton = Column('kanton', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(PlanerischerGWSGrundwasserschutzareale.__bodId__, PlanerischerGWSGrundwasserschutzareale)
+
+
+class PlanerischerGWSGewaesserschutzbereiche(Base, Vector):
+    __tablename__ = 'ngdi_gsbereich'
+    __table_args__ = ({'schema': 'wasser', 'autoload': False})
+    __bodId__ = 'ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche'
+    __template__ = 'templates/htmlpopup/plan_gws_gewaesserschutzbereiche.mako'
+    __label__ = 'identifikator'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    t_id = Column('t_id', Integer)
+    identifikator = Column('identifikator', Unicode)
+    bemerkungen_de = Column('bemerkungen_de', Unicode)
+    bemerkungen_fr = Column('bemerkungen_fr', Unicode)
+    typ = Column('typ', Unicode)
+    typ_txt = Column('typ_txt', Unicode)
     kt_typbez = Column('kt_typbez', Unicode)
     kanton = Column('kanton', Unicode)
     the_geom = Column(Geometry2D)
 
-register(PlanierischerGWSGrundwasserschutzzonen.__bodId__, PlanierischerGWSGrundwasserschutzzonen)
+register(PlanerischerGWSGewaesserschutzbereiche.__bodId__, PlanerischerGWSGewaesserschutzbereiche)
 
 
 class Gewaesserschutzbereiche (Base, Vector):
