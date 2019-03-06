@@ -319,10 +319,7 @@ def _get_feature_service(request):
     features = []
     for feature, vector_model in _get_features(params):
         if hasattr(params, 'featureIds') and len(params.featureIds) > 1:
-            if hasattr(feature, 'feature'):
-                features.append(feature['feature'])
-            else:
-                features.append(feature)
+            features.append(feature['feature'])
         else:
             features.append(feature)
     if len(features) == 1:
