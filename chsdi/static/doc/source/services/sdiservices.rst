@@ -1054,21 +1054,33 @@ The service provides both *tiles* and *styles* that the customer can use.
 GetTile
 *******
 
+A tile request is in the following form:
+
 ::
 
     <Scheme>://<ServerName>/mbtiles/<LayerName>/<version>/<zoomlevel>/<x>/<y>.pbf
 
+example of one pbf tile:
+
+- https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.leichte-basiskarte.vt/v006/7/67/44.pbf
+
 GetStyle
 ********
+
+A style request is in the following form:
 
 ::
 
     <Scheme>://<ServerName>/gl-styles/<layername>/<version>/style.json
 
-Available datasets and styles
-*****************************
+example of a mapbox style:
 
-The list of current datasets and styles is available visiting the `official service description <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html#available>`_
+- https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v006/style.json
+
+Available datasets and styles as mapbox vector tiles
+****************************************************
+
+The list of current datasets and styles is available visiting the `official service description <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html#available-geodata>`_
 
 
 Metadata Service
@@ -1081,13 +1093,10 @@ The URL of the metadata `json` file is :
 
    <Scheme>://<ServerName>/mbtiles/<LayerName>/<version>.json
 
+example of tileset: 
 
-Example
-*******
+- https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.leichte-basiskarte.vt/v006.json
 
-* A `Vector tile <https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.swissnames3d/v004/7/67/44.pbf>`_
-* A `Style <https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v006/style.json>`_
-* A `Tileset <https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.leichte-basiskarte.vt/v006.json>`_
 
 
 .. _tiles3d_description:
