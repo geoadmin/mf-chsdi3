@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-
 import esrijson
 from pyramid.httpexceptions import HTTPBadRequest
 
@@ -121,7 +120,9 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
             try:
                 if self._geometryType == 'esriGeometryEnvelope':
                     self._geometry = esrijson.to_shape([float_raise_nan(c) for c in value.split(',')])
-                elif self._geometryType == 'esriGeometryPoint':
+                elif self._geometryType == 'esriGeometryPoint' \
+                        and 'x' not in value and 'y' not in value:
+                    # Simple simplified point geometry
                     value = [float_raise_nan(c) for c in value.split(',')]
                     self._geometry = esrijson.to_shape({'x': value[0], 'y': value[1]})
                 else:

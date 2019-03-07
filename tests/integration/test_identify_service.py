@@ -163,6 +163,17 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/json')
 
+    def test_identify_valid_esri_point(self):
+        params = {'geometry': '{"x":717725.72800819238,"y":96257.179952642487,"spatialReference":{"wkid":21781}}',
+                  'geometryType': 'esriGeometryPoint',
+                  'returnGeometry': True,
+                  'imageDisplay': '100,100,100',
+                  'mapExtent': '0,0,100,100',
+                  'tolerance': '100',
+                  'layers': 'all:ch.bfs.gebaeude_wohnungs_register'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+
     def test_identify_valid_on_grid(self):
         params = {'geometry': '555000,171125',
                   'geometryFormat': 'geojson',
