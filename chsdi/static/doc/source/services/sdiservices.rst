@@ -1065,11 +1065,11 @@ GetStyle
 
     <Scheme>://<ServerName>/gl-styles/<layername>/<version>/style.json
 
-URL
-***
+Available datasets and styles
+*****************************
 
-- vector tiles: https://vectortiles.geo.admin.ch/mbtiles/
-- gl-styles: https://vectortiles.geo.admin.ch/gl-styles/
+The list of current datasets and styles is available visiting the `official service description <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html#available>`_
+
 
 Metadata Service
 ****************
@@ -1086,8 +1086,8 @@ Example
 *******
 
 * A `Vector tile <https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.swissnames3d/v004/7/67/44.pbf>`_
-* A `Style <https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v004/style.json>`_
-* A `Tileset <https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.swissnames3d/v004.json>`_
+* A `Style <https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v006/style.json>`_
+* A `Tileset <https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.leichte-basiskarte.vt/v006.json>`_
 
 
 .. _tiles3d_description:
