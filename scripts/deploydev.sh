@@ -6,12 +6,23 @@ T="$(date +%s)"
 umask 0002
 
 # set some variables
-UUID=$(uuidgen)
-ROOTDIR=${ROOTDIR:/var/www/vhosts/mf-chsdi3/private} 
+if hash uuidgen 2>/dev/null; then
+    UUID=$(uuidgen)
+else
+    UUID=${RANDOM}
+fi
+
+DEFAULT_ROOTDIR=/var/www/vhosts/mf-chsdi3/private
+ROOTDIR=${ROOTDIR:-${DEFAULT_ROOTDIR}} 
 DEPLOYDIR=$ROOTDIR/chsdi
 TEMPDIR=$ROOTDIR/chsdi_temp_$UUID
 SNAPSHOT=`date '+%Y%m%d%H%M'`
 SNAPSHOTDIR=$ROOTDIR/snapshots/$SNAPSHOT
+
+
+echo ${TEMPDIR}
+
+exit
 
 # parse parameter (if -n is specified, no snapshot will be created)
 GITBRANCH=master

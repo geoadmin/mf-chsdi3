@@ -22,7 +22,7 @@ node(label: "jenkins-slave") {
         }
       )
     }
-    stage("Build") {
+    stage("Deploy") {
       sh 'eval $(cat rc_ci) && make deploydev cleanall'
     }
   } catch (e) {
