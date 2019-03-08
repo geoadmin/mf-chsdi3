@@ -7,7 +7,7 @@ umask 0002
 
 # set some variables
 UUID=$(uuidgen)
-ROOTDIR=/var/www/vhosts/mf-chsdi3/private
+ROOTDIR=${ROOTDIR:/var/www/vhosts/mf-chsdi3/private} 
 DEPLOYDIR=$ROOTDIR/chsdi
 TEMPDIR=$ROOTDIR/chsdi_temp_$UUID
 SNAPSHOT=`date '+%Y%m%d%H%M'`
