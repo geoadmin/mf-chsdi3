@@ -1040,6 +1040,64 @@ Example
 
 * A `Terrain tile <https://terrain2.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20180601/4326/12/4309/970.terrain>`_
 
+.. _vectortiles_description:
+
+-------------------
+
+Mapbox Vector Tiles
+-------------------
+A RESTFul implementation of `Mapbox Vector Tiles <https://www.mapbox.com/vector-tiles>`_.
+For the testing phase, the service is free for use. See conditions `conditions <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html>`_ give us feedback via our `survey <https://findmind.ch/c/vectortilesEN>`_  
+
+The service provides both *tiles* and *styles* that the customer can use. 
+
+GetTile
+*******
+
+A tile request is in the following form:
+
+::
+
+    <Scheme>://<ServerName>/mbtiles/<LayerName>/<version>/<zoomlevel>/<x>/<y>.pbf
+
+example of one pbf tile:
+
+- https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.leichte-basiskarte.vt/v006/7/67/44.pbf
+
+GetStyle
+********
+
+A style request is in the following form:
+
+::
+
+    <Scheme>://<ServerName>/gl-styles/<layername>/<version>/style.json
+
+example of a mapbox style:
+
+- https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v006/style.json
+
+Available datasets and styles as mapbox vector tiles
+****************************************************
+
+The list of current datasets and styles is available visiting the `official service description <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html#available-geodata>`_
+
+
+Metadata Service
+****************
+
+Each tileset has a corresponding metatda `json` file that describes the available set of tiles.
+The URL of the metadata `json` file is : 
+
+::
+
+   <Scheme>://<ServerName>/mbtiles/<LayerName>/<version>.json
+
+example of tileset: 
+
+- https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.leichte-basiskarte.vt/v006.json
+
+
 
 .. _tiles3d_description:
 

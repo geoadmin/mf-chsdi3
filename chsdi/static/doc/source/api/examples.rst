@@ -115,6 +115,10 @@ Other JS web mapping APIs integration
       label: 'WMS in EPSG:3857 using Leaflet',
       codepen: 'JKAjWk',
       cat: 5
+    }, {
+      label: 'Mapbox vectortiles example',
+      codepen: 'GvgLvj',
+      cat: 5
     }];
     var tpl = '<li><a href="{link}" target="_blank">{label}</a></li>';
     var cat1 = '', cat2 = '', cat3 = '', cat4 = '', cat5 = '';
