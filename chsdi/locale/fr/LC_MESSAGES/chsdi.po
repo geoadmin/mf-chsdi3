@@ -1052,11 +1052,20 @@ msgstr "inventaire des logements"
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.gemeinde"
 msgstr "Commune"
 
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.gemeinde_nummer"
+msgstr "Numéro OFS"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.Status"
+msgstr "Statut"
+
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
 msgstr "N’est pas soumise aux dispositions du droit des constructions de la LRS"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
 msgstr "Est soumise aux dispositions du droit des constructions de la LRS"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren"
+msgstr "Procédure"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
 msgstr "Sans procédure. La proportion de résidences secondaires est toujours à moins de 20 %"
@@ -1096,9 +1105,6 @@ msgstr "Proportion de résidences secondaires"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.zwg_3150"
 msgstr "Nombre total de logements"
-
-msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.zwg_3200"
-msgstr "Procédure"
 
 msgid "ch.astra"
 msgstr "OFROU"
@@ -4577,6 +4583,21 @@ msgstr "Dégâts de tempête Lothar"
 msgid "ch.bafu.waldschadenflaechen-vivian"
 msgstr "Dégâts de tempête Vivian"
 
+msgid "ch.bafu.wald-standortsregionen"
+msgstr "Ecorégions forestières"
+
+msgid "ch.bafu.wald-tannenareale"
+msgstr "Aires du sapin blanc"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995"
+msgstr "Etages de végétation 1995"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken"
+msgstr "Etages de végétation 2085 sec"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken"
+msgstr "Etages de végétation 2085 moins sec"
+
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Point fixe du profil en travers"
 
@@ -4737,7 +4758,7 @@ msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=fr"
 
 msgid "ch.bag.zecken-fsme-faelle"
-msgstr "FSME - zones à fréquence accrue"
+msgstr "FSME - Lieux déclarés de piqûre"
 
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "FSME - vaccination recommandée"
@@ -9983,6 +10004,12 @@ msgstr "Noms géographiques swissNAMES3D"
 msgid "ch.swisstopo.swisssurface3d.metadata"
 msgstr "Découpage swissSURFACE3D"
 
+msgid "ch.swisstopo.swisssurface3d.metadata.temporalkey"
+msgstr "Année de vol"
+
+msgid "ch.swisstopo.swisssurface3d.metadata.tilekey"
+msgstr "Numéro de tuile"
+
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz"
 msgstr "Chemin de fer swissTLM3D"
 
@@ -10642,6 +10669,9 @@ msgstr "Objets isolés points VECTOR25"
 
 msgid "ch.swisstopo.vec25-gebaeude"
 msgstr "Bâtiments VECTOR25"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz"
+msgstr "Réseau hydrographique VECTOR25"
 
 msgid "ch.swisstopo.vec25-heckenbaeume"
 msgstr "Haies, arbres isolés VECTOR25"

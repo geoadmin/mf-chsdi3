@@ -1052,11 +1052,20 @@ msgstr "Inventario delle abitazioni"
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.gemeinde"
 msgstr "Comune"
 
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.gemeinde_nummer"
+msgstr "Numero UFS"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.Status"
+msgstr "Stato"
+
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
 msgstr "non soggetto alle disposizioni di diritto edilizio della LASec"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
 msgstr "soggetto alle disposizioni di diritto edilizio della LASec"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren"
+msgstr "Procedimento"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
 msgstr "Senza procedura. La quota di abitazioni secondarie rimane inferiore al 20 %"
@@ -1096,9 +1105,6 @@ msgstr "quota di abitazioni secondarie"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.zwg_3150"
 msgstr "tutte le abitazioni"
-
-msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.zwg_3200"
-msgstr "procedimento"
 
 msgid "ch.astra"
 msgstr "USTRA"
@@ -4577,6 +4583,21 @@ msgstr "Aree boschive danneggiate Lothar"
 msgid "ch.bafu.waldschadenflaechen-vivian"
 msgstr "Aree boschive danneggiate Vivian"
 
+msgid "ch.bafu.wald-standortsregionen"
+msgstr "Regioni stazionali forestali"
+
+msgid "ch.bafu.wald-tannenareale"
+msgstr "Areale dell'abete bianco"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995"
+msgstr "Fasce altitudinali 1995"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken"
+msgstr "Fasce altitudinali 2085 secco"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken"
+msgstr "Fasce altitudinali 2085 meno secco"
+
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Punto fisso del profilo trasversale"
 
@@ -4737,7 +4758,7 @@ msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=it"
 
 msgid "ch.bag.zecken-fsme-faelle"
-msgstr "FSME - zone a frequenza aumentata"
+msgstr "FSME - Lieux déclarés de piqûre"
 
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "FSME - vaccinazione raccomandata"
@@ -8154,7 +8175,7 @@ msgid "ch.swisstopo.geologie-geomol-temperatur_top_omalm.pixel_value"
 msgstr "Temperatura [°C]"
 
 msgid "ch.swisstopo.geologie-geomol-temperatur_top_omm"
-msgstr "Temperatures Top OMM"
+msgstr "Temperature Top OMM"
 
 msgid "ch.swisstopo.geologie-geomol-temperatur_top_omm.elev"
 msgstr "Elevazione Top OMM [m s.l.m.]"
@@ -9983,6 +10004,12 @@ msgstr "Nomi geografici swissNAMES3D"
 msgid "ch.swisstopo.swisssurface3d.metadata"
 msgstr "Divisione swissSURFACE3D"
 
+msgid "ch.swisstopo.swisssurface3d.metadata.temporalkey"
+msgstr "Année de vol"
+
+msgid "ch.swisstopo.swisssurface3d.metadata.tilekey"
+msgstr "Numéro de tuile"
+
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz"
 msgstr "Linee ferroviarie swissTLM3D"
 
@@ -10642,6 +10669,9 @@ msgstr "Objets isolés points VECTOR25"
 
 msgid "ch.swisstopo.vec25-gebaeude"
 msgstr "Edifici  VECTOR25"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz"
+msgstr "Rete idrica VECTOR25"
 
 msgid "ch.swisstopo.vec25-heckenbaeume"
 msgstr "Siepi e alberi isolati  VECTOR25"

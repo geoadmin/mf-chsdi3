@@ -1052,11 +1052,20 @@ msgstr "Housing inventory"
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.gemeinde"
 msgstr "Commune"
 
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.gemeinde_nummer"
+msgstr "FSO nummer"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.Status"
+msgstr "Status"
+
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
 msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
 msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
+
+msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren"
+msgstr "Case"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
 msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
@@ -1096,9 +1105,6 @@ msgstr "Secondary home ratio"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.zwg_3150"
 msgstr "Total number of homes"
-
-msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.zwg_3200"
-msgstr "Case"
 
 msgid "ch.astra"
 msgstr "FEDRO"
@@ -4577,6 +4583,21 @@ msgstr "Lothar storm damage"
 msgid "ch.bafu.waldschadenflaechen-vivian"
 msgstr "Vivian storm damage"
 
+msgid "ch.bafu.wald-standortsregionen"
+msgstr "Forest ecoregions"
+
+msgid "ch.bafu.wald-tannenareale"
+msgstr "Areas of silver fir"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995"
+msgstr "Altitudinal zones 1995"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken"
+msgstr "Altitudinal zones 2085 dry"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken"
+msgstr "Altitudinal zones 2085 less dry"
+
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Cross section securing point"
 
@@ -4737,7 +4758,7 @@ msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=en"
 
 msgid "ch.bag.zecken-fsme-faelle"
-msgstr "TBE: cluster"
+msgstr "TBE: Side of tick bite reported"
 
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "TBE: recommendation of vaccination"
@@ -9983,6 +10004,12 @@ msgstr "Geografische Namen swissNAMES3D"
 msgid "ch.swisstopo.swisssurface3d.metadata"
 msgstr "Division swissSURFACE3D"
 
+msgid "ch.swisstopo.swisssurface3d.metadata.temporalkey"
+msgstr "Flugjahr"
+
+msgid "ch.swisstopo.swisssurface3d.metadata.tilekey"
+msgstr "Kachelnummer"
+
 msgid "ch.swisstopo.swisstlm3d-eisenbahnnetz"
 msgstr "Railway swissTLM3D"
 
@@ -10642,6 +10669,9 @@ msgstr "Einzelobjekte Punkte VECTOR25"
 
 msgid "ch.swisstopo.vec25-gebaeude"
 msgstr "Buildings VECTOR25"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz"
+msgstr "Hydrological network VECTOR25"
 
 msgid "ch.swisstopo.vec25-heckenbaeume"
 msgstr "Hedges and trees  VECTOR25"
