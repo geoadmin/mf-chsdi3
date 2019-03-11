@@ -1127,10 +1127,8 @@ class PlanerischerGWSGrundwasserschutzareale(Base, Vector):
 register(PlanerischerGWSGrundwasserschutzareale.__bodId__, PlanerischerGWSGrundwasserschutzareale)
 
 
-class PlanerischerGWSGewaesserschutzbereiche(Base, Vector):
-    __tablename__ = 'ngdi_gsbereich'
-    __table_args__ = ({'schema': 'wasser', 'autoload': False})
-    __bodId__ = 'ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche'
+class PlanerischerGWSGewaesserschutz:
+    __table_args__ = ({'schema': 'wasser', 'extend_existing': True, 'autoload': False})
     __template__ = 'templates/htmlpopup/plan_gws_gewaesserschutzbereiche.mako'
     __label__ = 'identifikator'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -1144,7 +1142,26 @@ class PlanerischerGWSGewaesserschutzbereiche(Base, Vector):
     kanton = Column('kanton', Unicode)
     the_geom = Column(Geometry2D)
 
+
+class PlanerischerGWSGewaesserschutzbereiche(Base, PlanerischerGWSGewaesserschutz, Vector):
+    __bodId__ = 'ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche'
+    __tablename__ = 'ngdi_gsbereich'
+
 register(PlanerischerGWSGewaesserschutzbereiche.__bodId__, PlanerischerGWSGewaesserschutzbereiche)
+
+
+class PlanerischerGWSZustroembereicheZu(Base, PlanerischerGWSGewaesserschutz, Vector):
+    __bodId__ = 'ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zu'
+    __tablename__ = 'ngdi_zu_gsbereich'
+
+register(PlanerischerGWSZustroembereicheZu.__bodId__, PlanerischerGWSZustroembereicheZu)
+
+
+class PlanerischerGWSZustroembereicheZo(Base, PlanerischerGWSGewaesserschutz, Vector):
+    __bodId__ = 'ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zo'
+    __tablename__ = 'ngdi_zo_gsbereich'
+
+register(PlanerischerGWSZustroembereicheZo.__bodId__, PlanerischerGWSZustroembereicheZo)
 
 
 class Gewaesserschutzbereiche (Base, Vector):
