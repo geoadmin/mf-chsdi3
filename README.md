@@ -253,3 +253,4 @@ Called before comitting changes locally and checks the commit message. The comma
 
 Called before comitting changes locally and checks pre-commit messages (usually from --fast-forward merges. The commands in the `scripts/prepare-commit-msg.sh` are executed.
 
+
