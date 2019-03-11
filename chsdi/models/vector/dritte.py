@@ -9,19 +9,6 @@ from chsdi.models.vector import Vector, Geometry2D
 Base = bases['dritte']
 
 
-class MaechtigkeitLockergesteine(Base, Vector):
-    __tablename__ = 'maechtigkeit_lockergesteine'
-    __table_args__ = ({'schema': 'sgpk', 'autoload': False})
-    __template__ = 'templates/htmlpopup/maechtigkeit_lockergesteine.mako'
-    __bodId__ = 'ch.sgpk.maechtigkeit-lockergesteine'
-    __label__ = 'id'
-    id = Column('id', Integer, primary_key=True)
-    maechtigkeit = Column('maechtigkeit', Numeric)
-    the_geom = Column(Geometry2D)
-
-register('ch.sgpk.maechtigkeit-lockergesteine', MaechtigkeitLockergesteine)
-
-
 class MobilityStandorte:
     __tablename__ = 'standorte_tooltip'
     __table_args__ = ({'schema': 'mobility', 'autoload': False, 'extend_existing': True})

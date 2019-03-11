@@ -7658,12 +7658,6 @@ msgstr "until"
 msgid "ch.sem.url"
 msgstr "https://www.sem.admin.ch/sem/en/home.html"
 
-msgid "ch.sgpk.maechtigkeit-lockergesteine"
-msgstr "Thickness of unconsolidated deposits"
-
-msgid "ch.sgpk.maechtigkeit-lockergesteine.epaisseur"
-msgstr "Sediment thickness [m]"
-
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 

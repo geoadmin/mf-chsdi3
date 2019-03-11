@@ -7658,12 +7658,6 @@ msgstr "au"
 msgid "ch.sem.url"
 msgstr "https://www.sem.admin.ch/sem/fr/home.html"
 
-msgid "ch.sgpk.maechtigkeit-lockergesteine"
-msgstr "Épaisseur des terrains meubles"
-
-msgid "ch.sgpk.maechtigkeit-lockergesteine.epaisseur"
-msgstr "Epaisseur des roches meubles [m]"
-
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 
