@@ -119,6 +119,7 @@ class Vector(object):
             # TODO: no need to reproject geometry?
             return geojson.Feature(id=id,
                                    featureId=id,  # Duplicate id for backward compat...
+                                   type="Feature",
                                    geometry=geom,
                                    properties=properties,
                                    bbox=bbox,
