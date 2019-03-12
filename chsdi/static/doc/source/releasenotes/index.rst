@@ -26,6 +26,9 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_190227...r_190313>`__
+- Announcement:
+    - The layer `ch.bfe.energiestaedte-2000watt-aufdemweg` is now completely removed from the BGDI.
+    - The BAG layer `ch.bag.zecken-lyme` will be completely removed from the BGDI services during Q2 2019.
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
