@@ -7658,12 +7658,6 @@ msgstr "bis"
 msgid "ch.sem.url"
 msgstr "https://www.sem.admin.ch/sem/de/home.html"
 
-msgid "ch.sgpk.maechtigkeit-lockergesteine"
-msgstr "Mächtigkeit des Lockergesteins"
-
-msgid "ch.sgpk.maechtigkeit-lockergesteine.epaisseur"
-msgstr "Mächtigkeit der Lockergesteine [m]"
-
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 

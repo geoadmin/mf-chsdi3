@@ -7658,12 +7658,6 @@ msgstr "al"
 msgid "ch.sem.url"
 msgstr "https://www.sem.admin.ch/sem/it/home.html"
 
-msgid "ch.sgpk.maechtigkeit-lockergesteine"
-msgstr "Spessore dei depositi sciolti"
-
-msgid "ch.sgpk.maechtigkeit-lockergesteine.epaisseur"
-msgstr "Spessore dei sedimenti [m]"
-
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 
