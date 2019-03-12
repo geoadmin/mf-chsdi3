@@ -53,6 +53,8 @@ Geodata
 | Update | `Hiking trails <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-wanderwege>`__ (ch.swisstopo.swisstlm3d-wanderwege)                                                                         |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Cableways swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-uebrigerverkehr>`__ (ch.swisstopo.swisstlm3d-uebrigerverkehr)                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wind energy plants <//map.geo.admin.ch/?layers=ch.bfe.windenergieanlagen>`__ (ch.bfe.windenergieanlagen)                                                                                  |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20190227:
