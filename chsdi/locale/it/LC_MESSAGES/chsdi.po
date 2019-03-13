@@ -4109,11 +4109,71 @@ msgstr "Cartina indicativa del permafrost"
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche"
 msgstr "Secteurs de protection des eaux"
 
+msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.bemerkungen_de"
+msgstr "Remarques"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.kanton"
+msgstr "Canton"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.kt_typbez"
+msgstr "Désignation cantonale du type"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.typ"
+msgstr "Type"
+
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale"
 msgstr "Périmètres de protection"
 
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.bemerkungen_de"
+msgstr "Remarques"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.istaltrechtlich"
+msgstr "Périmètre de protection relevant de l'ancien droit"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.kanton"
+msgstr "Canton"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.kt_status"
+msgstr "Désignation du statut cantonale"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.rechtskraftdatum"
+msgstr "Date de l'entrée en vigueur"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.rechtstatus"
+msgstr "Statut juridique"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.typ"
+msgstr "Type"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.typ_txt"
+msgstr "Désignation cantonale du type"
+
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen"
 msgstr "Zones de protection des eaux souterraines"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.bemerkungen_de"
+msgstr "Remarques"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.istaltrechtlich"
+msgstr "Zone de protection relevant de l'ancien droit"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.kanton"
+msgstr "Canton"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.kt_status"
+msgstr "Désignation du statut cantonale"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.kt_typbez"
+msgstr "Désignation cantonale du type"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.rechtskraftdatum"
+msgstr "Date de l'entrée en vigueur"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.rechtstatus"
+msgstr "Zone de protection relevant de l'ancien droit"
+
+msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.typ"
+msgstr "Type"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zo"
 msgstr "Aires d'alimentation Zo"
@@ -6415,6 +6475,9 @@ msgstr "Sito web"
 
 msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen"
+msgstr "Kehrichtverbrennungsanlagen (KVA)"
 
 msgid "ch.bfe.kernkraftwerke"
 msgstr "Centrali nucleari"
