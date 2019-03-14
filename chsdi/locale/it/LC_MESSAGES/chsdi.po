@@ -4170,7 +4170,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.rechtskraftda
 msgstr "Date de l'entrée en vigueur"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.rechtstatus"
-msgstr "Zone de protection relevant de l'ancien droit"
+msgstr "Statut juridique"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.typ"
 msgstr "Type"
@@ -6475,6 +6475,9 @@ msgstr "Sito web"
 
 msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen"
+msgstr "Kehrichtverbrennungsanlagen (KVA)"
 
 msgid "ch.bfe.kernkraftwerke"
 msgstr "Centrali nucleari"

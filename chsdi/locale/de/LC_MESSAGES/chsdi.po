@@ -4128,7 +4128,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.bemerkungen_
 msgstr "Bemerkungen"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.istaltrechtlich"
-msgstr "Altrechtliche Schutzareale"
+msgstr "Altrechtliches Schutzareal"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.kanton"
 msgstr "Kanton"
@@ -6475,6 +6475,9 @@ msgstr "Webseite"
 
 msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "Sachplan geol. Tiefenlager"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen"
+msgstr "Kehrichtverbrennungsanlagen (KVA)"
 
 msgid "ch.bfe.kernkraftwerke"
 msgstr "Kernkraftwerke"
