@@ -51,7 +51,13 @@ def identify_esrijson(request):
 @view_config(route_name='feature', renderer='geojson',
              request_param='geometryFormat=geojson')
 def view_get_feature_geojson(request):
-    return _get_feature_service(request)
+
+    feats = _get_feature_service(request)
+    features = [dict(f, **{'type': 'Feature'}) for f in feats]
+    if (len(features)) == 1:
+        feature = features[0]['feature']
+        return feature
+    return features
 
 
 @view_config(route_name='feature', renderer='esrijson')
@@ -323,7 +329,8 @@ def _get_feature_service(request):
         else:
             features.append(feature)
     if len(features) == 1:
-        return features[0]
+        feature = features[0]
+        feature['type'] = 'Feature'
     return features
 
 
