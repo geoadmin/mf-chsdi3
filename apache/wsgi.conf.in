@@ -53,10 +53,10 @@ RewriteRule ^${apache_entry_path}/(crossdomain.xml|clientaccesspolicy.xml) ${apa
 </LocationMatch>
 
 # New style config url (see mf-geoadmin3 #4687)
-RewriteRule ^${apache_entry_path}/configs/(de|fr|it|rm|en)/layersConfig\.json ${apache_entry_path}/rest/services/all/MapServer/layersConfig?lang=$2 [PT] 
-RewriteRule ^${apache_entry_path}/configs/(de|fr|it|rm|en)/catalog\.(\w+)\.json ${apache_entry_path}/rest/services/$2/CatalogServer?lang=$1 [PT] 
-RewriteRule ^${apache_entry_path}/configs/(de|fr|it|rm|en)/services\.json ${apache_entry_path}/rest/services [PT] 
-RewriteRule ^${apache_entry_path}/configs/services\.json ${apache_entry_path}/rest/services [PT] 
+RewriteRule ^${apache_entry_path}/configs/(de|fr|it|rm|en)/layersConfig\.json ${apache_entry_path}/rest/services/all/MapServer/layersConfig?lang=$1 [PT]
+RewriteRule ^${apache_entry_path}/configs/(de|fr|it|rm|en)/catalog\.(\w+)\.json ${apache_entry_path}/rest/services/$2/CatalogServer?lang=$1 [PT]
+RewriteRule ^${apache_entry_path}/configs/(de|fr|it|rm|en)/services\.json ${apache_entry_path}/rest/services [PT]
+RewriteRule ^${apache_entry_path}/configs/services\.json ${apache_entry_path}/rest/services [PT]
 
 # Robots static files
 RewriteRule ^${apache_entry_path}/robots.txt ${apache_entry_path}/static/${robots_file} [PT]
