@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
+import re
 import esrijson
 from pyramid.httpexceptions import HTTPBadRequest
 
@@ -16,11 +17,13 @@ class HtmlPopupServiceValidation(BaseFeaturesValidation):
         self._featureIds = None
         self._imageDisplay = None
         self._mapExtent = None
+        self._time = None
 
         self.layerId = request.matchdict.get('layerId')
         self.featureIds = request.matchdict.get('featureId')
         self.imageDisplay = request.params.get('imageDisplay')
         self.mapExtent = request.params.get('mapExtent')
+        self.time = request.params.get('time')
 
         self.returnGeometry = False
         self.geometryFormat = u'geojson'
@@ -40,6 +43,10 @@ class HtmlPopupServiceValidation(BaseFeaturesValidation):
     @property
     def mapExtent(self):
         return self._mapExtent
+
+    @property
+    def time(self):
+        return self._time
 
     @layerId.setter
     def layerId(self, value):
@@ -77,6 +84,15 @@ class HtmlPopupServiceValidation(BaseFeaturesValidation):
                 self._mapExtent = esrijson.to_shape([float_raise_nan(c) for c in value.split(',')])
             except ValueError:
                 raise HTTPBadRequest('Please provide numerical values for the parameter mapExtent')
+
+    # Optional
+    @time.setter
+    def time(self, value):
+        if value is not None:
+            try:
+                self._time = int(value) if re.search(r'[12]{1}[0-9]{3}', value) else None
+            except ValueError:
+                raise HTTPBadRequest('Please provide a valid year for the parameter <time>')
 
 
 class ExtendedHtmlPopupServiceValidation(HtmlPopupServiceValidation):
