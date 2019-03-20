@@ -25,7 +25,7 @@
     else :
         query_layer = 'eq_ch_90d'
 
-    url = "http://map.seismo.ethz.ch/cgi-bin/mapserv?map=/var/www/mapfile/sed/earthquakes_ch.map&LAYERS=eq_ch_90d_de&TRANSPARENT=TRUE&FORMAT=aggpng24&ID=eq_ch_90d_de&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&STYLES=&SRS=EPSG:21781&EXCEPTIONS=application/vnd.ogc.se_xml&BBOX=%s,%s,%s,%s&X=%s&Y=%s&INFO_FORMAT=text/html&QUERY_LAYERS=%s&FEATURE_COUNT=10&WIDTH=%s&HEIGHT=%s" % (bbox_xmin, bbox_ymin, bbox_xmax, bbox_ymax, getfeatureinfo_x, getfeatureinfo_y, query_layer, imageDisplay[0], imageDisplay[1])
+    url = "http://map.seismo.ethz.ch/cgi-bin/mapserv?MAP=/var/www/mapfile/swisstopo/eventpage_ch.map&LAYERS=eq_ch_90d_de&TRANSPARENT=TRUE&FORMAT=aggpng24&ID=eq_ch_90d_de&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&STYLES=&SRS=EPSG:21781&EXCEPTIONS=application/vnd.ogc.se_xml&BBOX=%s,%s,%s,%s&X=%s&Y=%s&INFO_FORMAT=text/html&QUERY_LAYERS=%s&FEATURE_COUNT=10&WIDTH=%s&HEIGHT=%s" % (bbox_xmin, bbox_ymin, bbox_xmax, bbox_ymax, getfeatureinfo_x, getfeatureinfo_y, query_layer, imageDisplay[0], imageDisplay[1])
 
     # execute getfeatureinfo
     r = requests.get(url)
