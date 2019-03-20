@@ -1,7 +1,10 @@
 .. raw:: html
 
+  <head>  
+  <link href="../_static/custom.css" rel="stylesheet" type="text/css" /> 
+  <link rel="alternate" type="application/rss+xml" title="GeoAdmin RSS Feed" href="rss2.xml"/>  
+  </head>
 
-.nergie <//map.geo.admin.ch/?layers=ch.bfe.minergiegebaeude>`__ (ch.bfe.minergiegebaeude)                                                                                                |
 . _releasenotes:
 
 Release Notes
@@ -45,8 +48,8 @@ Geodata
 | Update | `Railway noise (act.) N emissions <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht)  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Railway noise (act.) D emissions <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag)      |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Minergie <//map.geo.admin.ch/?layers=ch.bfe.minergiegebaeude>`__ (ch.bfe.minergiegebaeude)                                                                                                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Minergie <//map.geo.admin.ch/?layers=ch.bfe.minergiegebaeude>`__ (ch.bfe.minergiegebaeude)                                                                                                        |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
