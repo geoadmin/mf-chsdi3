@@ -1,11 +1,13 @@
 <%inherit file="base.mako"/>
 <%def name="table_body(c,lang)">
 <%
-path = "/extract/reduced/pdf/"
+path_pdf = "/extract/reduced/pdf/"
+path_xml = "/getegrid/xml/?XY="
 if not 'oereb_webservice' in c['attributes'].keys():
   c['attributes']['oereb_webservice'] = None
   c['attributes']['bgdi_status'] = None
-
+request = context.get('request')
+coord = request.params.get('coord')
 
 %>
     <tr><td class="cell-left">${_('kanton')}</td>    <td>${c['attributes']['kanton'] or '-'}</td></tr>
@@ -52,7 +54,28 @@ if not 'oereb_webservice' in c['attributes'].keys():
     % if c['attributes']['oereb_webservice'] != None and c['attributes']['bgdi_status'] == 0:
         <tr>
             <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
-            <td><a target="_blank" href="${c['attributes']['oereb_webservice']}${path}${c['attributes']['egris_egrid']}">PDF</a></td>
+            <td id="${c['featureId']}">Loading link to PDF ...</td>
         </tr>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+       <script>
+       $(document).ready(function(){
+          var featureId = "${c['featureId']}";
+          var url_get_egrid = "${c['attributes']['oereb_webservice']}${path_xml}${coord}";
+          var pdf_link = "${c['attributes']['oereb_webservice']}${path_pdf}";
+          $.ajax({
+           type: "GET",
+           url: url_get_egrid,
+           dataType: "xml",
+           success: function(xml){
+             var egrid = $(xml).find('egrid').text();
+             $('#' + featureId).text('').append('<a target="_blank" href="' + pdf_link + egrid + '">PDF</a>');
+           },
+           error: function() {
+             $('#' + featureId).text('-');
+           }
+         });
+         });
+       </script>
     % endif
 </%def>
