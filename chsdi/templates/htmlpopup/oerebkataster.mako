@@ -1,4 +1,25 @@
 <%inherit file="base.mako"/>
+
+<%!
+import requests
+import xml.etree.ElementTree as et
+import re
+
+def get_xml(path):
+    egrid = "-"
+    try:
+      response = requests.get(path)
+      if response.status_code == 200:
+       # there are different namespaces from canton to canton -> remove namespace
+       xmlstring = re.sub(r'\sxmlns[^"]+"[^"]+"', '', response.text)
+       root = et.fromstring(xmlstring)
+       #egrid = root.find('{http://schemas.geo.admin.ch/V_D/OeREB/1.0/Extract}egrid').text
+       egrid = root.findall('.//egrid')[0].text # findall, as the cantons have different structures
+    except:
+      pass
+    return egrid
+
+%>
 <%def name="table_body(c,lang)">
 <%
 path_pdf = "/extract/reduced/pdf/"
@@ -9,12 +30,17 @@ if not 'oereb_webservice' in c['attributes'].keys():
 request = context.get('request')
 coord = request.params.get('coord')
 
+is_oereb_service = c['attributes']['oereb_webservice'] != None and c['attributes']['bgdi_status'] == 0 # is there a service available
+
+if is_oereb_service:
+  url_get_egrid = "{}{}{}".format(c['attributes']['oereb_webservice'], path_xml, coord)
+  egrid = get_xml(url_get_egrid)
 %>
     <tr><td class="cell-left">${_('kanton')}</td>    <td>${c['attributes']['kanton'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('gemgemeinde')}</td>    <td>${c['attributes']['gemeindename'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('oereb_status')}</td> 
+    <tr><td class="cell-left">${_('oereb_status')}</td>
 % if lang == 'de':
-     <td>${c['attributes']['oereb_status_de'] or '-'}</td></tr> 
+     <td>${c['attributes']['oereb_status_de'] or '-'}</td></tr>
 % elif lang == 'fr':
      <td>${c['attributes']['oereb_status_fr'] or '-'}</td></tr>
 % elif lang == 'it':
@@ -51,31 +77,10 @@ coord = request.params.get('coord')
          <td><a target="_blank" href="${c['attributes']['url_oereb']}">${_('link')}</a></td>
       % endif
     </tr>
-    % if c['attributes']['oereb_webservice'] != None and c['attributes']['bgdi_status'] == 0:
+    % if is_oereb_service:
         <tr>
-            <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
-            <td id="${c['featureId']}">Loading link to PDF ...</td>
+            <td class="cell-left">{_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
+            <td><a target="_blank" href="${c['attributes']['oereb_webservice']}${path_pdf}${egrid}">PDF</a></td>
         </tr>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
-       <script>
-       $(document).ready(function(){
-          var featureId = "${c['featureId']}";
-          var url_get_egrid = "${c['attributes']['oereb_webservice']}${path_xml}${coord}";
-          var pdf_link = "${c['attributes']['oereb_webservice']}${path_pdf}";
-          $.ajax({
-           type: "GET",
-           url: url_get_egrid,
-           dataType: "xml",
-           success: function(xml){
-             var egrid = $(xml).find('egrid').text();
-             $('#' + featureId).text('').append('<a target="_blank" href="' + pdf_link + egrid + '">PDF</a>');
-           },
-           error: function() {
-             $('#' + featureId).text('-');
-           }
-         });
-         });
-       </script>
     % endif
 </%def>
