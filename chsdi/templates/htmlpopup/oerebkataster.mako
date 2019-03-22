@@ -79,7 +79,7 @@ if is_oereb_service:
     </tr>
     % if is_oereb_service:
         <tr>
-            <td class="cell-left">{_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
+            <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
             <td><a target="_blank" href="${c['attributes']['oereb_webservice']}${path_pdf}${egrid}">PDF</a></td>
         </tr>
     % endif
