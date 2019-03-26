@@ -4170,7 +4170,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.rechtskraftda
 msgstr "Date de l'entrée en vigueur"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.rechtstatus"
-msgstr "Zone de protection relevant de l'ancien droit"
+msgstr "Statut juridique"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.typ"
 msgstr "Type"
@@ -4885,6 +4885,9 @@ msgstr "Liaison ≥ 50 Mbit/s descend."
 
 msgid "ch.bakom.downlink500"
 msgstr "Liaison ≥ 500 Mbit/s descend."
+
+msgid "ch.bakom.mobil-antennenstandorte-5g"
+msgstr "Emplacement des antennes 5G (5G)"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Emplacement des antennes GSM"
@@ -6477,7 +6480,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Kehrichtverbrennungsanlagen (KVA)"
+msgstr "Usines d'incinération"
 
 msgid "ch.bfe.kernkraftwerke"
 msgstr "Centrales nucléaires"
@@ -10729,6 +10732,21 @@ msgstr "Bâtiments VECTOR25"
 
 msgid "ch.swisstopo.vec25-gewaessernetz_referenz"
 msgstr "Réseau hydrographique VECTOR25"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.gewissnr"
+msgstr "Numéro GEWISS"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.gwlnr"
+msgstr "Numéro du cours d’eau"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.name"
+msgstr "Nom"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.objectid"
+msgstr "Identificateur (OBJECTID)"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.objectval"
+msgstr "Description"
 
 msgid "ch.swisstopo.vec25-heckenbaeume"
 msgstr "Haies, arbres isolés VECTOR25"

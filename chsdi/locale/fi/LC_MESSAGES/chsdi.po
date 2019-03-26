@@ -4128,7 +4128,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.bemerkungen_
 msgstr "Bemerkungen"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.istaltrechtlich"
-msgstr "Altrechtliche Schutzareale"
+msgstr "Altrechtliches Schutzareal"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.kanton"
 msgstr "Kanton"
@@ -4885,6 +4885,9 @@ msgstr "Download ≥ 50 Mbit/s"
 
 msgid "ch.bakom.downlink500"
 msgstr "Download ≥ 500 Mbit/s"
+
+msgid "ch.bakom.mobil-antennenstandorte-5g"
+msgstr "Lieus d'antennas 5G (5G)"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "Lieus d'antennas GSM"
@@ -6477,7 +6480,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Kehrichtverbrennungsanlagen (KVA)"
+msgstr "Kehrichtverbrennungsanlagen"
 
 msgid "ch.bfe.kernkraftwerke"
 msgstr "Ovras nuclearas"
@@ -10729,6 +10732,21 @@ msgstr "Edifizis VECTOR25"
 
 msgid "ch.swisstopo.vec25-gewaessernetz_referenz"
 msgstr "Rait idrografica VECTOR25"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.gewissnr"
+msgstr "GEWISS Nummer"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.gwlnr"
+msgstr "Gewässerlaufnummer"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.objectid"
+msgstr "Identifikator (OBJECTID)"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.objectval"
+msgstr "Beschreibung"
 
 msgid "ch.swisstopo.vec25-heckenbaeume"
 msgstr "Saivs vivas e bostgs VECTOR25"
