@@ -4128,7 +4128,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.bemerkungen_
 msgstr "Bemerkungen"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.istaltrechtlich"
-msgstr "Altrechtliche Schutzareale"
+msgstr "Altrechtliches Schutzareal"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.kanton"
 msgstr "Kanton"
