@@ -2162,6 +2162,29 @@ class Kernkraftwerke(Base, Vector):
 register('ch.bfe.kernkraftwerke', Kernkraftwerke)
 
 
+class Kehrichtverbrennungsanlagen(Base, Vector):
+    __tablename__ = 'kehrichtverbrennungsanlagen'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/kehrichtverbrennungsanlagen.mako'
+    __bodId__ = 'ch.bfe.kehrichtverbrennungsanlagen'
+    __extended_info__ = True
+    id = Column('bgdi_id', Integer, primary_key=True)
+    wasteincinerationplantr = Column('wasteincinerationplantr', Unicode)
+    xtf_id = Column('xtf_id', Unicode)
+    number_id = Column('number_id', Integer)
+    name = Column('name', Unicode)
+    place = Column('place', Unicode)
+    beginningofoperation = Column('beginningofoperation', Integer)
+    web = Column('web', Unicode)
+    year = Column('year', Integer)
+    recycledwaste = Column('recycledwaste', Float)
+    electricity = Column('electricity', Float)
+    heat = Column('heat', Float)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.kehrichtverbrennungsanlagen', Kehrichtverbrennungsanlagen)
+
+
 class SisFacilitiesA(Base, Vector):
     __tablename__ = 'sis_fac_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
