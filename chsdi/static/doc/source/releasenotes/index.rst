@@ -1,8 +1,8 @@
 .. raw:: html
 
-  <head>  
-  <link href="../_static/custom.css" rel="stylesheet" type="text/css" /> 
-  <link rel="alternate" type="application/rss+xml" title="GeoAdmin RSS Feed" href="rss2.xml"/>  
+  <head>
+  <link href="../_static/custom.css" rel="stylesheet" type="text/css" />
+  <link rel="alternate" type="application/rss+xml" title="GeoAdmin RSS Feed" href="rss2.xml"/>
   </head>
 
 .. _releasenotes:
@@ -95,7 +95,7 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Mil Airspace Chart <//map.geo.admin.ch/?layers=ch.vbs.milairspacechart>`__ (ch.vbs.milairspacechart)                                                                                              |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Glider Chart<//map.geo.admin.ch/?layers=ch.bazl.segelflugkarte>`__ (ch.bazl.segelflugkarte)                                                                                                       |
+| Update | `Glider Chart <//map.geo.admin.ch/?layers=ch.bazl.segelflugkarte>`__ (ch.bazl.segelflugkarte)                                                                                                      |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Airspaces - CTR <//map.geo.admin.ch/?layers=ch.vbs.sperr-gefahrenzonenkarte>`__ (ch.vbs.sperr-gefahrenzonenkarte)                                                                                 |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
