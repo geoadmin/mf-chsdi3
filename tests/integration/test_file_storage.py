@@ -163,7 +163,8 @@ class TestFileView(TestsBase):
         # check kml based on invalid regex 1
         resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
         orig_data = resp.body
-        self.assertEqual(orig_data, VALID_KML)
+        # KML validator is replacing forbidden content through a space. We cannot assume equality
+        self.assertLessEqual(abs(len(orig_data) - len(VALID_KML)), 1)
 
         # TEST: REGEX OCCURS SEVERAL TIMES
         # First request, to get ids
@@ -173,7 +174,8 @@ class TestFileView(TestsBase):
         # check kml based on invalid regex 1
         resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
         orig_data = resp.body
-        self.assertEqual(orig_data, VALID_KML)
+        # KML validator is replacing forbidden content through a space. We cannot assume equality
+        self.assertLessEqual(abs(len(orig_data) - len(VALID_KML)), 2)
 
     # Test if matches in KML with Regex
     # (<|&lt;)script\s*\S*[^(>|&gt;)]*?(>|&gt;)(.|\s)*?(<|&lt;)\/script(>|&gt;)
@@ -186,7 +188,8 @@ class TestFileView(TestsBase):
         # check kml based on invalid regex 1
         resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
         orig_data = resp.body
-        self.assertEqual(orig_data, VALID_KML)
+        # KML validator is replacing forbidden content through a space. We cannot assume equality
+        self.assertLessEqual(abs(len(orig_data) - len(VALID_KML)), 1)
 
         # TEST: REGEX OCCURS SEVERAL TIMES
         # First request, to get ids
@@ -196,7 +199,8 @@ class TestFileView(TestsBase):
         # check kml based on invalid regex 1
         resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
         orig_data = resp.body
-        self.assertEqual(orig_data, VALID_KML)
+        # KML validator is replacing forbidden content through a space. We cannot assume equality
+        self.assertLessEqual(abs(len(orig_data) - len(VALID_KML)), 2)
 
     def test_update_copy_kml(self):
         # First request, to get ids
