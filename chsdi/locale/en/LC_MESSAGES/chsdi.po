@@ -4886,6 +4886,9 @@ msgstr "Download ≥ 50 Mbit/s"
 msgid "ch.bakom.downlink500"
 msgstr "Download ≥ 500 Mbit/s"
 
+msgid "ch.bakom.mobil-antennenstandorte-5g"
+msgstr "5G antenna locations (5G)"
+
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "GSM antenna locations"
 
@@ -6477,7 +6480,25 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Kehrichtverbrennungsanlagen (KVA)"
+msgstr "Waste incineration plants"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
+msgstr "Year of commissioning of the plant"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.diagramm_strom"
+msgstr "Power generation [GWh]"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.diagramm_waerme"
+msgstr "Heat generation [GWh]"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.name"
+msgstr "Plant name"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.place"
+msgstr "Location"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.web"
+msgstr "Website"
 
 msgid "ch.bfe.kernkraftwerke"
 msgstr "Nuclear Power Plants"
@@ -10729,6 +10750,21 @@ msgstr "Buildings VECTOR25"
 
 msgid "ch.swisstopo.vec25-gewaessernetz_referenz"
 msgstr "Hydrological network VECTOR25"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.gewissnr"
+msgstr "GEWISS Nummer"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.gwlnr"
+msgstr "Gewässerlaufnummer"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.objectid"
+msgstr "Identifikator (OBJECTID)"
+
+msgid "ch.swisstopo.vec25-gewaessernetz_referenz.objectval"
+msgstr "Beschreibung"
 
 msgid "ch.swisstopo.vec25-heckenbaeume"
 msgstr "Hedges and trees  VECTOR25"
