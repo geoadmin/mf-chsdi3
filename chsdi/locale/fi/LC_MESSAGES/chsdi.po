@@ -1059,37 +1059,37 @@ msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.Status"
 msgstr "Status"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
+msgstr "untersteht nicht den baurechtlichen Bestimmungen des ZWG"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
+msgstr "untersteht den baurechtlichen Bestimmungen des ZWG"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren"
 msgstr "Procedura en elavuraziun"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
+msgstr "Ohne Verfahren. Der Zweitwohnungsanteil liegt weiterhin unter 20 %"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_2"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_2"
+msgstr "Ohne Verfahren. Der Zweitwohnungsanteil liegt weiterhin über 20 %"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_3"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_3"
+msgstr "In einem Verfahren. Da der Zweitwohnungsanteil gemäss Inventar neu unter 20 % liegt, wird er überprüft"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_4"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_4"
+msgstr "In einem Verfahren. Da der Zweitwohnungsanteil gemäss Inventar neu über 20 % liegt, wird er überprüft"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_5"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_5"
+msgstr "Verfahren abgeschlossen. Der Zweitwohnungsanteil wurde überprüft, er liegt unter 20 %"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_6"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_6"
+msgstr "Verfahren abgeschlossen. Der Zweitwohnungsanteil wurde überprüft, er liegt über 20 %"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_7"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_7"
+msgstr "Verfahren abgeschlossen. Überprüfter Zweitwohnungsanteil entspricht nicht dem Inventar, er liegt unter 20 %"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_8"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_8"
+msgstr "Verfahren abgeschlossen. Überprüfter Zweitwohnungsanteil entspricht nicht dem Inventar, er liegt über 20 %"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.zwg_3010"
 msgstr "Dumber d’emprimas abitaziuns"
