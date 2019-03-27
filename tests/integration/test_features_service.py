@@ -775,7 +775,7 @@ class TestReleasesService(TestsBase):
         self.testapp.get('/rest/services/all/MapServer/dummylayer/releases', params=params, status=400)
 
     def test_getfeature_options(self):
-        resp = self.testapp.options('/rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/11', status=200)
-        self.assertEqual(resp.headers.get('Cache-Control'), 'max-age=0, no-cache')
+        resp = self.testapp.options('/rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/11',
+                headers={'Origin': 'https://dummy', 'Access-Control-Request-Headers': 'dummy'}, status=200)
         self.assertEqual(resp.headers.get('Access-Control-Allow-Origin'), '*')
-        self.assertEqual(resp.headers.get('Access-Control-Allow-Methods'), 'OPTIONS,HEAD,GET')
+        self.assertEqual(resp.headers.get('Access-Control-Allow-Methods'), 'OPTIONS,HEAD,GET,POST,PUT,DELETE')

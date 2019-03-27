@@ -63,4 +63,5 @@ def loadjs(request):
         request=request
     )
     response.content_type = 'application/javascript'
+    response.cache_control = 'max-age=0, no-cache'
     return response

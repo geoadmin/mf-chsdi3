@@ -227,10 +227,12 @@ class TestFileView(TestsBase):
         self.assertNotEqual(new_content, modified_content)
 
     def test_files_options(self):
-        self.testapp.options('/files', status=200)
+        self.testapp.options('/files',
+                headers={'Origin': 'https://dummy', 'Access-Control-Request-Headers': 'dummy'}, status=200)
 
     def test_files_id_options(self):
-        self.testapp.options('/files/myid', status=200)
+        self.testapp.options('/files/myid',
+                headers={'Origin': 'https://dummy', 'Access-Control-Request-Headers': 'dummy'}, status=200)
 
     def test_file_ie9_fix(self):
         # No content-type default to 'application/vnd.google-earth.kml+xml'
