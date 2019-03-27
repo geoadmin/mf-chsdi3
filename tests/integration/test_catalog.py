@@ -151,7 +151,7 @@ class TestCatalogService(TestsBase):
             DBSession.close()
 
     def test_catalog_options(self):
-        resp = self.testapp.options('/rest/services/ech/CatalogServer', status=200)
-        self.assertEqual(resp.headers.get('Cache-Control'), 'max-age=0, no-cache')
+        resp = self.testapp.options('/rest/services/ech/CatalogServer', status=200,
+                headers={'Origin': 'https://dummy', 'Access-Control-Request-Headers': 'dummy'})
         self.assertEqual(resp.headers.get('Access-Control-Allow-Origin'), '*')
-        self.assertEqual(resp.headers.get('Access-Control-Allow-Methods'), 'OPTIONS,HEAD,GET')
+        self.assertEqual(resp.headers.get('Access-Control-Allow-Methods'), 'OPTIONS,HEAD,GET,POST,PUT,DELETE')

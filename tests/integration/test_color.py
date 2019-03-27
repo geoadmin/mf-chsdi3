@@ -29,7 +29,7 @@ class TestColorView(TestsBase):
         resp.mustcontain('The image to color doesn\'t exist')
 
     def test_color_options(self):
-        resp = self.testapp.options('/color/25,24,25/dfgdfg', status=200)
-        self.assertEqual(resp.headers.get('Cache-Control'), 'max-age=0, no-cache')
+        resp = self.testapp.options('/color/25,24,25/dfgdfg',
+                headers={'Origin': 'https://dummy', 'Access-Control-Request-Headers': 'dummy'}, status=200)
         self.assertEqual(resp.headers.get('Access-Control-Allow-Origin'), '*')
-        self.assertEqual(resp.headers.get('Access-Control-Allow-Methods'), 'OPTIONS,HEAD,GET')
+        self.assertEqual(resp.headers.get('Access-Control-Allow-Methods'), 'OPTIONS,HEAD,GET,POST,PUT,DELETE')

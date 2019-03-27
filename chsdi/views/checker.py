@@ -17,7 +17,7 @@ class Checker(FileView):
 
     @view_config(route_name='checker')
     def home(self):
-        return Response(body='OK', status_int=200)
+        return Response(body='OK', status_int=200, cache_control='max-age=0, no-cache')
 
     @view_config(route_name='backend_checker')
     def backend(self):
@@ -34,4 +34,4 @@ class Checker(FileView):
         if resp is None or resp.key != self.key_name:
             raise HTTPInternalServerError('Unable to find key {} in bucket {}'.format(self.key_name, self.bucket_name))
 
-        return Response(body='OK', status_int=200)
+        return Response(body='OK', status_int=200, cache_control='max-age=0, no-cache')
