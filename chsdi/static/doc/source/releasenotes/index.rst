@@ -47,25 +47,25 @@ Geodata
 *******
 
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Elevation 100 °C isotherm <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten>`__ (ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten)               |
+| New    | `Temperature model - data <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten>`__ (ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten)                |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Temperature model - data <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperatur_top_omalm>`__ (ch.swisstopo.geologie-geomol-temperatur_top_omalm)                                    |
+| New    | `Temperatures Top Upper Malm <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperatur_top_omalm>`__ (ch.swisstopo.geologie-geomol-temperatur_top_omalm)                                 |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Temperature model - data <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperatur_top_omm>`__ (ch.swisstopo.geologie-geomol-temperatur_top_omm)                                        |
+| New    | `Temperatures Top OMM <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperatur_top_omm>`__ (ch.swisstopo.geologie-geomol-temperatur_top_omm)                                            |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Temperature model - data <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk>`__ (ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk)                        |
+| New    | `Temperatures Top Muschelkalk <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk>`__ (ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk)                    |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Temperature model - data <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturverteilung_1000>`__ (ch.swisstopo.geologie-geomol-temperaturverteilung_1000)                          |
+| New    | `Temperatures 1000 m depth <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturverteilung_1000>`__ (ch.swisstopo.geologie-geomol-temperaturverteilung_1000)                         |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Temperature model - data <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturverteilung_500>`__ (ch.swisstopo.geologie-geomol-temperaturverteilung_500)                            |
+| New    | `Temperatures 500 m depth <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturverteilung_500>`__ (ch.swisstopo.geologie-geomol-temperaturverteilung_500)                            |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Temperature model - data <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturverteilung_1500>`__ (ch.swisstopo.geologie-geomol-temperaturverteilung_1500)                          |
+| New    | `Temperatures 1500 m depth <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturverteilung_1500>`__ (ch.swisstopo.geologie-geomol-temperaturverteilung_1500)                         |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Temperature model - data <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturverteilung_2000>`__ (ch.swisstopo.geologie-geomol-temperaturverteilung_2000)                          |
+| New    | `Temperatures 2000 m depth <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturverteilung_2000>`__ (ch.swisstopo.geologie-geomol-temperaturverteilung_2000)                         |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Temperature model - data <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturverteilung_3000>`__ (ch.swisstopo.geologie-geomol-temperaturverteilung_3000)                          |
+| New    | `Temperatures 3000 m depth <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturverteilung_3000>`__ (ch.swisstopo.geologie-geomol-temperaturverteilung_3000)                         |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Temperature model - data <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturverteilung_4000>`__ (ch.swisstopo.geologie-geomol-temperaturverteilung_4000)                          |
+| New    | `Temperatures 4000 m depth - data <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-temperaturverteilung_4000>`__ (ch.swisstopo.geologie-geomol-temperaturverteilung_4000)                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Elevation 100 °C isotherm <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-isotherme_100>`__ (ch.swisstopo.geologie-geomol-isotherme_100)                                                 |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
