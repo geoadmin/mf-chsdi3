@@ -1,4 +1,4 @@
-# fr translations for chsdi.
+
 # Copyright (C) 2010 ORGANIZATION
 # This file is distributed under the same license as the chsdi project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
@@ -4887,10 +4887,10 @@ msgid "ch.bakom.downlink500"
 msgstr "Liaison ≥ 500 Mbit/s descend."
 
 msgid "ch.bakom.mobil-antennenstandorte-5g"
-msgstr "Emplacement des antennes 5G (5G)"
+msgstr "Emplacement des antennes 5G (LTE NR)"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
-msgstr "Emplacement des antennes GSM"
+msgstr "Emplacement des antennes 2G (GSM)"
 
 msgid "ch.bakom.mobil-antennenstandorte-lte"
 msgstr "Emplacement des antennes 4G (LTE)"

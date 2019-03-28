@@ -4887,10 +4887,10 @@ msgid "ch.bakom.downlink500"
 msgstr "Download ≥ 500 Mbit/s"
 
 msgid "ch.bakom.mobil-antennenstandorte-5g"
-msgstr "5G antenna locations (5G)"
+msgstr "5G antenna locations (LTE NR)"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
-msgstr "GSM antenna locations"
+msgstr "2G (GSM) antenna locations"
 
 msgid "ch.bakom.mobil-antennenstandorte-lte"
 msgstr "4G antenna locations (LTE)"
