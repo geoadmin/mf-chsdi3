@@ -38,7 +38,7 @@
                  'ch.vbs.milairspacechart',
                  'ch.vbs.sperr-gefahrenzonenkarte')
   if c['layerBodId'] in pdf_legends:
-      lgend_url_pdf = h.make_agnostic(request.static_url('chsdi:static/images/legends/' +  c['layerBodId'] + '_' + lang + '_big.pdf'))
+      legend_url_pdf = h.make_agnostic(request.static_url('chsdi:static/images/legends/' +  c['layerBodId'] + '_' + lang + '_big.pdf'))
   else:
       legend_url_pdf = False
   legend_url = h.make_agnostic(request.static_url('chsdi:static/images/legends/' + c['layerBodId'] + '_' + lang + '.png'))
