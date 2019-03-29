@@ -51,6 +51,8 @@ def main(global_config, **settings):
     config = Configurator(settings=settings)
     config.include('pyramid_mako')
 
+    public_bucket_host = settings.get('public_bucket_host')
+
     # configure 'locale' dir as the translation dir for chsdi app
     config.add_translation_dirs('chsdi:locale/')
     config.add_subscriber(add_localizer, NewRequest)
@@ -143,12 +145,12 @@ def main(global_config, **settings):
     config.add_route('shorten_redirect', '/shorten/{id}')
 
     # static view definitions
-    config.add_static_view('static', 'chsdi:static')
-    config.add_static_view('images', 'chsdi:static/images')
-    config.add_static_view('examples', 'chsdi:static/doc/examples')
-    config.add_static_view('vectorStyles', 'chsdi:static/vectorStyles')
+    config.add_static_view(name='https://' + public_bucket_host + '/static', path='chsdi:static')
+    config.add_static_view(name='https://' + public_bucket_host + '/static/images', path='chsdi:static/images')
+    config.add_static_view(name='https://' + public_bucket_host + '/static/doc/examples', path='chsdi:static/doc/examples')
+    config.add_static_view(name='https://' + public_bucket_host + '/static/vectorStyles', path='chsdi:static/vectorStyles')
     # keep this the last one
-    config.add_static_view('/', 'chsdi:static/doc/build')
+    config.add_static_view(name='https://' + public_bucket_host + '/', path='chsdi:static/doc/build')
 
     # required to find code decorated by view_config
     config.scan(ignore=['chsdi.tests', 'chsdi.models.bod'])

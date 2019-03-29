@@ -116,6 +116,7 @@ def _get_feature_info_for_popup(request, params, isExtended=False, isIframe=Fals
 def _prepare_popup_response(params, request, isExtended=False, isIframe=False):
     options = _get_feature_info_for_popup(
         request, params, isExtended=isExtended, isIframe=isIframe)
+
     response = _render_feature_template(options, request)
 
     if params.cbName is None:

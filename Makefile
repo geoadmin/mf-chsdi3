@@ -90,6 +90,7 @@ PSERVE_CMD := $(INSTALL_DIRECTORY)/bin/pserve
 PSHELL_CMD := $(INSTALL_DIRECTORY)/bin/pshell
 PYTHON_CMD := $(INSTALL_DIRECTORY)/bin/python
 SPHINX_CMD := $(INSTALL_DIRECTORY)/bin/sphinx-build
+AWS_CMD    := ${INSTALL_DIRECTORY}/bin/aws
 
 # Linting rules
 PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731"
@@ -283,6 +284,12 @@ deployint: guard-SNAPSHOT
 deployprod: guard-SNAPSHOT
 	scripts/deploysnapshot.sh $(SNAPSHOT) prod $(NO_TESTS)
 
+#s3deploystatic := $(patsubst %,s3deploystatic%,dev,int,prod)
+PHONY: s3deployassetsdev 
+s3deployassetsdev:  .venv/requirements.timestamp  guard-GEOADMIN_FILE_STORAGE_BUCKET
+	${AWS_CMD} s3 cp --recursive  --acl public-read --cache-control max-age=60   ./chsdi/static   s3://$(GEOADMIN_FILE_STORAGE_BUCKET)/static 
+
+
 .PHONY: legends
 legends: guard-BODID guard-WMSHOST
 	source rc_user && scripts/downloadlegends.sh $(WMSHOST) $(BODID) $(WMSSCALELEGEND)
@@ -338,6 +345,7 @@ apache/wsgi.conf: apache/wsgi.conf.in \
                   .venv/last-wsgi-processes \
                   .venv/last-wsgi-threads \
                   .venv/last-wsgi-app \
+									.venv/last-public_bucket_host \
                   .venv/last-kml-temp-dir
 	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
 	${MAKO_CMD} \
@@ -353,6 +361,7 @@ apache/wsgi.conf: apache/wsgi.conf.in \
 		--var "wsgi_processes=$(WSGI_PROCESSES)" \
 		--var "wsgi_threads=$(WSGI_THREADS)" \
 		--var "wsgi_app=$(WSGI_APP)" \
+    --var "public_bucket_host=$(PUBLIC_BUCKET_HOST)" \
 		--var "kml_temp_dir=$(KML_TEMP_DIR)" $< > $@
 
 development.ini.in:
@@ -435,6 +444,11 @@ production.ini: production.ini.in \
 
 requirements.txt:
 	@echo "${GREEN}File requirements.txt has changed${RESET}";
+
+.venv/requirements.timestamp: .venv
+	@echo "${GREEN}Python virtualenv already installed${RESET}";
+	touch $@
+
 .venv: requirements.txt
 	@echo "${GREEN}Setting up virtual environement...${RESET}";
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
@@ -530,6 +544,9 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-kml-temp-dir::
 	$(call cachelastvariable,$@,$(KML_TEMP_DIR),$(LAST_KML_TEMP_DIR),kml_temp_dir)
+
+.venv/last-public_bucket_host::
+	$(call cachelastvariable,$@,$(PUBLIC_BUCKET_HOST),$(LAST_PUBLIC_BUCKET_HOST),public_bucket_host)
 
 .venv/last-http-proxy::
 	$(call cachelastvariable,$@,$(HTTP_PROXY),$(LAST_HTTP_PROXY),http-proxy)

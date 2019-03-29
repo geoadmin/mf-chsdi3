@@ -3,7 +3,6 @@
 <%
   c = legend['layer']
   hasLegend = legend['hasLegend']
-  host = h.make_agnostic(request.host_url + request.uscript_name)
   lang = request.lang
   pdf_legends = ('ch.bafu.typisierung-fliessgewaesser',
                  'ch.swisstopo.geologie-eiszeit-lgm-raster',
@@ -39,10 +38,10 @@
                  'ch.vbs.milairspacechart',
                  'ch.vbs.sperr-gefahrenzonenkarte')
   if c['layerBodId'] in pdf_legends:
-      legend_url_pdf = host + '/static/images/legends/' + c['layerBodId'] + '_' + lang + '_big.pdf'
+      lgend_url_pdf = h.make_agnostic(request.static_url('chsdi:static/images/legends/' +  c['layerBodId'] + '_' + lang + '_big.pdf'))
   else:
       legend_url_pdf = False
-  legend_url = host + '/static/images/legends/' + c['layerBodId'] + '_' + lang + '.png'
+  legend_url = h.make_agnostic(request.static_url('chsdi:static/images/legends/' + c['layerBodId'] + '_' + lang + '.png'))
   times = c['attributes']['dataStatus'] if 'dataStatus' in c['attributes'] else '-'
 
   if 'wmsUrlResource' in c['attributes']:
