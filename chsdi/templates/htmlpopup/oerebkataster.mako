@@ -81,7 +81,7 @@ if is_oereb_service:
       % for egrid in list_egrid:
         <tr>
             <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
-            <td><a target="_blank" href="${c['attributes']['oereb_webservice']}${path_pdf}${egrid.text}">PDF</a></td>
+            <td><a target="_blank" href="${c['attributes']['oereb_webservice']}${path_pdf}${egrid.text}">PDF (${egrid.text})</a></td>
         </tr>
       % endfor
     % endif
