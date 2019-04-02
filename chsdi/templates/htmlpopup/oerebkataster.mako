@@ -14,10 +14,10 @@ def get_xml(path):
        xmlstring = re.sub(r'\sxmlns[^"]+"[^"]+"', '', response.text)
        root = et.fromstring(xmlstring)
        #egrid = root.find('{http://schemas.geo.admin.ch/V_D/OeREB/1.0/Extract}egrid').text
-       egrid = root.findall('.//egrid')[0].text # findall, as the cantons have different structures
+       list_egrid = root.findall('.//egrid') # findall, as the cantons have different structures
     except:
       pass
-    return egrid
+    return list_egrid
 
 %>
 <%def name="table_body(c,lang)">
@@ -34,7 +34,7 @@ is_oereb_service = c['attributes']['oereb_webservice'] != None and c['attributes
 
 if is_oereb_service:
   url_get_egrid = "{}{}{}".format(c['attributes']['oereb_webservice'], path_xml, coord)
-  egrid = get_xml(url_get_egrid)
+  list_egrid = get_xml(url_get_egrid)
 %>
     <tr><td class="cell-left">${_('kanton')}</td>    <td>${c['attributes']['kanton'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('gemgemeinde')}</td>    <td>${c['attributes']['gemeindename'] or '-'}</td></tr>
@@ -78,9 +78,11 @@ if is_oereb_service:
       % endif
     </tr>
     % if is_oereb_service:
+      % for egrid in list_egrid:
         <tr>
             <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
-            <td><a target="_blank" href="${c['attributes']['oereb_webservice']}${path_pdf}${egrid}">PDF</a></td>
+            <td><a target="_blank" href="${c['attributes']['oereb_webservice']}${path_pdf}${egrid.text}">PDF</a></td>
         </tr>
+      % endfor
     % endif
 </%def>
