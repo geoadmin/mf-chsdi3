@@ -6,7 +6,7 @@ import xml.etree.ElementTree as et
 import re
 
 def get_xml(path):
-    egrid = "-"
+    list_egrid = []
     try:
       response = requests.get(path)
       if response.status_code == 200:
