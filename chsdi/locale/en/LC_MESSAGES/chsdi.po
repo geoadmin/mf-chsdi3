@@ -4887,7 +4887,10 @@ msgid "ch.bakom.downlink500"
 msgstr "Download ≥ 500 Mbit/s"
 
 msgid "ch.bakom.mobil-antennenstandorte-5g"
-msgstr "5G antenna locations (LTE NR)"
+msgstr "5G antenna locations (NR)"
+
+msgid "ch.bakom.mobil-antennenstandorte-5g.powercode"
+msgstr "Radiated power (ERP)"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "2G (GSM) antenna locations"
@@ -10075,6 +10078,21 @@ msgstr "Geographical Names swissNAMES3D"
 
 msgid "ch.swisstopo.swissnames3d.inspire"
 msgstr "Geographical Names"
+
+msgid "ch.swisstopo.swissnames3d.status"
+msgstr "Status"
+
+msgid "ch.swisstopo.swissnames3d.status.fremd"
+msgstr "foreign"
+
+msgid "ch.swisstopo.swissnames3d.status.k_W"
+msgstr "no value"
+
+msgid "ch.swisstopo.swissnames3d.status.offiziell"
+msgstr "official"
+
+msgid "ch.swisstopo.swissnames3d.status.ueblich"
+msgstr "common"
 
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Geografische Namen swissNAMES3D"
