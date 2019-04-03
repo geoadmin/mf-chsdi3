@@ -26,8 +26,17 @@
         query_layer = 'eq_ch_90d_de.s10000'
 
     url = "http://map.seismo.ethz.ch/cgi-bin/mapserv?MAP=/var/www/mapfile/swisstopo/eventpage_ch.map&LAYERS=eq_ch_90d_de&TRANSPARENT=TRUE&FORMAT=aggpng24&ID=eq_ch_90d_de&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&STYLES=&SRS=EPSG:2056&EXCEPTIONS=application/vnd.ogc.se_xml&BBOX=%s,%s,%s,%s&X=%s&Y=%s&INFO_FORMAT=text/html&QUERY_LAYERS=%s&FEATURE_COUNT=10&WIDTH=%s&HEIGHT=%s" % (bbox_xmin, bbox_ymin, bbox_xmax, bbox_ymax, getfeatureinfo_x, getfeatureinfo_y, query_layer, imageDisplay[0], imageDisplay[1])
+
     # execute getfeatureinfo
-    r = requests.get(url)
+    try:
+        r = requests.get(url)
+        response = r.content.decode('utf-8')
+        # Consider any status other than 2xx as error or mapserver 200 responses with MapServer Message in body
+        if not r.status_code // 100 == 2 or "MapServer Message" in r.content:
+            response = "invalid service repsonse:<br/>response: {}<br/>http status: {}<br/>Url: {}".format(response, r.status_code, url)
+    except requests.exceptions.RequestException as e:
+        # A serious problem happened, like an SSLError or InvalidURL
+        response = "service is unavailable<br/>Error: {}<br/>Url: {}".format(e.__doc__, url)
 %>
 <style>
     .chsdi-no-print, .htmlpopup-footer, #pDebug {
@@ -36,7 +45,7 @@
 </style>
 
 <div>
-${r.content.decode('utf-8') or '-' | n}
+${response or '-' | n}
 </div>
 
 </%def>
