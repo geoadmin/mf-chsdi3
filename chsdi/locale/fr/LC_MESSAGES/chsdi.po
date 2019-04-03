@@ -4887,10 +4887,13 @@ msgid "ch.bakom.downlink500"
 msgstr "Liaison ≥ 500 Mbit/s descend."
 
 msgid "ch.bakom.mobil-antennenstandorte-5g"
-msgstr "Emplacement des antennes 5G (5G)"
+msgstr "Emplacement des antennes 5G (NR)"
+
+msgid "ch.bakom.mobil-antennenstandorte-5g.powercode"
+msgstr "Puissance rayonnée (ERP)"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
-msgstr "Emplacement des antennes GSM"
+msgstr "Emplacement des antennes 2G (GSM)"
 
 msgid "ch.bakom.mobil-antennenstandorte-lte"
 msgstr "Emplacement des antennes 4G (LTE)"
@@ -10031,6 +10034,9 @@ msgstr "SWISSIMAGE Fond de plan"
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE Voyage dans le temps"
 
+msgid "ch.swisstopo.swissimage-product_1946"
+msgstr "SWISSIMAGE HIST 1946"
+
 msgid "ch.swisstopo.swissimage-product.metadata"
 msgstr "Découpage SWISSIMAGE Voyage temp."
 
@@ -10075,6 +10081,21 @@ msgstr "Noms géographiques swissNAMES3D"
 
 msgid "ch.swisstopo.swissnames3d.inspire"
 msgstr "ch.swisstopo.swissnames3d.inspire"
+
+msgid "ch.swisstopo.swissnames3d.status"
+msgstr "Status"
+
+msgid "ch.swisstopo.swissnames3d.status.fremd"
+msgstr "étranger"
+
+msgid "ch.swisstopo.swissnames3d.status.k_W"
+msgstr "Pas de valeur"
+
+msgid "ch.swisstopo.swissnames3d.status.offiziell"
+msgstr "officiel"
+
+msgid "ch.swisstopo.swissnames3d.status.ueblich"
+msgstr "courant"
 
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Noms géographiques swissNAMES3D"

@@ -2812,6 +2812,7 @@ class Swissnames3d:
     name = Column('name', Unicode)
     sprachcode = Column('sprachcode', Unicode)
     namen_typ = Column('namen_typ', Unicode)
+    status = Column('status', Unicode)
     the_geom = Column(Geometry2D)
 
 
