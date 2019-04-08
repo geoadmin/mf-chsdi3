@@ -10086,16 +10086,16 @@ msgid "ch.swisstopo.swissnames3d.status"
 msgstr "Status"
 
 msgid "ch.swisstopo.swissnames3d.status.fremd"
-msgstr "ch.swisstopo.swissnames3d.status.fremd"
+msgstr "fremd"
 
 msgid "ch.swisstopo.swissnames3d.status.k_W"
-msgstr "ch.swisstopo.swissnames3d.status.k_W"
+msgstr "kein Wert"
 
 msgid "ch.swisstopo.swissnames3d.status.offiziell"
-msgstr "ch.swisstopo.swissnames3d.status.offiziell"
+msgstr "offiziell"
 
 msgid "ch.swisstopo.swissnames3d.status.ueblich"
-msgstr "ch.swisstopo.swissnames3d.status.ueblich"
+msgstr "üblich"
 
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Geografische Namen swissNAMES3D"
