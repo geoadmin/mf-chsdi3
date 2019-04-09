@@ -1152,6 +1152,19 @@ class GridstandSwissimageDop10(Base, Vector):
 register('ch.swisstopo.images-swissimage-dop10.metadata', GridstandSwissimageDop10)
 
 
+class GridstandSwisssurface3d(Base, Vector):
+    __tablename__ = 'shop_perimeter_swisssurface3d'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.swisssurface3d.metadata'
+    __template__ = 'templates/htmlpopup/swisssurface3d.mako'
+    __label__ = 'id'
+    id = Column('tilekey', Unicode, primary_key=True)
+    temporalkey = Column('temporalkey', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.swisssurface3d.metadata', GridstandSwisssurface3d)
+
+
 class SwissimageProduct(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_swissimage'
     __table_args__ = ({'schema': 'public', 'autoload': False})
