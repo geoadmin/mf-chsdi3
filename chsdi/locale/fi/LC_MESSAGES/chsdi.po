@@ -1059,37 +1059,37 @@ msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.Status"
 msgstr "Status"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.status_0"
+msgstr "untersteht nicht den baurechtlichen Bestimmungen des ZWG"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.status_1"
+msgstr "untersteht den baurechtlichen Bestimmungen des ZWG"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren"
 msgstr "Procedura en elavuraziun"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_1"
+msgstr "Ohne Verfahren. Der Zweitwohnungsanteil liegt weiterhin unter 20 %"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_2"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_2"
+msgstr "Ohne Verfahren. Der Zweitwohnungsanteil liegt weiterhin über 20 %"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_3"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_3"
+msgstr "In einem Verfahren. Da der Zweitwohnungsanteil gemäss Inventar neu unter 20 % liegt, wird er überprüft"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_4"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_4"
+msgstr "In einem Verfahren. Da der Zweitwohnungsanteil gemäss Inventar neu über 20 % liegt, wird er überprüft"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_5"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_5"
+msgstr "Verfahren abgeschlossen. Der Zweitwohnungsanteil wurde überprüft, er liegt unter 20 %"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_6"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_6"
+msgstr "Verfahren abgeschlossen. Der Zweitwohnungsanteil wurde überprüft, er liegt über 20 %"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_7"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_7"
+msgstr "Verfahren abgeschlossen. Überprüfter Zweitwohnungsanteil entspricht nicht dem Inventar, er liegt unter 20 %"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_8"
-msgstr "ch.are.wohnungsinventar-zweitwohnungsanteil.verfahren_8"
+msgstr "Verfahren abgeschlossen. Überprüfter Zweitwohnungsanteil entspricht nicht dem Inventar, er liegt über 20 %"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.zwg_3010"
 msgstr "Dumber d’emprimas abitaziuns"
@@ -4887,10 +4887,13 @@ msgid "ch.bakom.downlink500"
 msgstr "Download ≥ 500 Mbit/s"
 
 msgid "ch.bakom.mobil-antennenstandorte-5g"
-msgstr "Lieus d'antennas 5G (5G)"
+msgstr "Lieus d'antennas 5G (NR)"
+
+msgid "ch.bakom.mobil-antennenstandorte-5g.powercode"
+msgstr "Sendeleistung (ERP)"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
-msgstr "Lieus d'antennas GSM"
+msgstr "Lieus d'antennas 2G (GSM)"
 
 msgid "ch.bakom.mobil-antennenstandorte-lte"
 msgstr "Lieus d'antennas 4G (LTE)"
@@ -6481,6 +6484,24 @@ msgstr "ch.bfe.geologische_tiefenlager_fac"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
 msgstr "Kehrichtverbrennungsanlagen"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
+msgstr "Inbetriebnahme"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.diagramm_strom"
+msgstr "Stromproduktion [GWh]"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.diagramm_waerme"
+msgstr "Wärmeproduktion [GWh]"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.name"
+msgstr "Bezeichnung der Anlage"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.place"
+msgstr "Ort"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.web"
+msgstr "Webseite"
 
 msgid "ch.bfe.kernkraftwerke"
 msgstr "Ovras nuclearas"
@@ -10013,6 +10034,9 @@ msgstr "SWISSIMAGE Fund da la carta"
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE Viadis en il temp"
 
+msgid "ch.swisstopo.swissimage-product_1946"
+msgstr "SWISSIMAGE HIST 1946"
+
 msgid "ch.swisstopo.swissimage-product.metadata"
 msgstr "Einteilung SWISSIMAGE Zeitreise"
 
@@ -10057,6 +10081,21 @@ msgstr "Nums geografics swissNAMES3D"
 
 msgid "ch.swisstopo.swissnames3d.inspire"
 msgstr "ch.swisstopo.swissnames3d.inspire"
+
+msgid "ch.swisstopo.swissnames3d.status"
+msgstr "Status"
+
+msgid "ch.swisstopo.swissnames3d.status.fremd"
+msgstr "fremd"
+
+msgid "ch.swisstopo.swissnames3d.status.k_W"
+msgstr "kein Wert"
+
+msgid "ch.swisstopo.swissnames3d.status.offiziell"
+msgstr "offiziell"
+
+msgid "ch.swisstopo.swissnames3d.status.ueblich"
+msgstr "üblich"
 
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Geografische Namen swissNAMES3D"

@@ -25,6 +25,168 @@ class GeologieGeomorphologie(Base, Vector):
 register('ch.swisstopo.geologie-geomorphologie', GeologieGeomorphologie)
 
 
+class GeomolIsotherme:
+    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objectid = Column('objectid', Integer)
+    name = Column('name', Unicode)
+    elev = Column('elev', Integer)
+    the_geom = Column(Geometry2D)
+
+
+class GeomolIsotherme60(Base, GeomolIsotherme, Vector):
+    __tablename__ = 'geomol_isotherme_60_elev'
+    __template__ = 'templates/htmlpopup/geomol_isotherme60.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-isotherme_60'
+
+register('ch.swisstopo.geologie-geomol-isotherme_60', GeomolIsotherme60)
+
+
+class GeomolIsotherme100(Base, GeomolIsotherme, Vector):
+    __tablename__ = 'geomol_isotherme_100_elev'
+    __template__ = 'templates/htmlpopup/geomol_isotherme100.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-isotherme_100'
+
+register('ch.swisstopo.geologie-geomol-isotherme_100', GeomolIsotherme100)
+
+
+class GeomolIsotherme150(Base, GeomolIsotherme, Vector):
+    __tablename__ = 'geomol_isotherme_150_elev'
+    __template__ = 'templates/htmlpopup/geomol_isotherme150.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-isotherme_150'
+
+register('ch.swisstopo.geologie-geomol-isotherme_150', GeomolIsotherme150)
+
+
+class GeomolTempEingangdaten(Base, Vector):
+    __tablename__ = 'geomol_temperaturmodell_eingangsdaten_pt'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geomol_temperaturmodell.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten'
+    __label__ = 'label'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    label = Column('label', Unicode)
+    typ = Column('type', Unicode)
+    country = Column('country', Unicode)
+    canton = Column('canton', Unicode)
+    x = Column('x', Integer)
+    y = Column('y', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten', GeomolTempEingangdaten)
+
+
+class GeomolTempTopRaster:
+    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/geomol_temperatur_top.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    pixel_value = Column('pixel_value', Float)
+    the_geom = Column(Geometry2D)
+
+
+class GeomolTempTopElev:
+    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
+    id = Column('bgdi_id', Integer, primary_key=True)
+    elev = Column('elev', Integer)
+    the_geom = Column(Geometry2D)
+
+
+class GeomolTempTopOmmRaster(Base, GeomolTempTopRaster, Vector):
+    __tablename__ = 'geomol_temperatur_omm_raster'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperatur_top_omm'
+
+register('ch.swisstopo.geologie-geomol-temperatur_top_omm', GeomolTempTopOmmRaster)
+
+
+class GeomolTempTopOmmElev(Base, GeomolTempTopElev, Vector):
+    __tablename__ = 'geomol_temperatur_omm_elev'
+    __template__ = 'templates/htmlpopup/geomol_temperatur_omm_elev.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperatur_top_omm'
+
+register('ch.swisstopo.geologie-geomol-temperatur_top_omm', GeomolTempTopOmmElev)
+
+
+class GeomolTempTopOmalmRaster(Base, GeomolTempTopRaster, Vector):
+    __tablename__ = 'geomol_temperatur_omalm_raster'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperatur_top_omalm'
+
+register('ch.swisstopo.geologie-geomol-temperatur_top_omalm', GeomolTempTopOmalmRaster)
+
+
+class GeomolTempTopOmalmElev(Base, GeomolTempTopElev, Vector):
+    __tablename__ = 'geomol_temperatur_omalm_elev'
+    __template__ = 'templates/htmlpopup/geomol_temperatur_omalm_elev.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperatur_top_omalm'
+
+register('ch.swisstopo.geologie-geomol-temperatur_top_omalm', GeomolTempTopOmalmElev)
+
+
+class GeomolTempTopMuschelkalkRaster(Base, GeomolTempTopRaster, Vector):
+    __tablename__ = 'geomol_temperatur_muschelkalk_raster'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk'
+
+register('ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk', GeomolTempTopMuschelkalkRaster)
+
+
+class GeomolTempTopMuschelkalkElev(Base, GeomolTempTopElev, Vector):
+    __tablename__ = 'geomol_temperatur_muschelkalk_elev'
+    __template__ = 'templates/htmlpopup/geomol_temperatur_muschelkalk_elev.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk'
+
+register('ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk', GeomolTempTopMuschelkalkElev)
+
+
+class GeomolTempverteilung:
+    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/geomol_temperaturverteilung.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    pixel_value = Column('pixel_value', Float)
+    the_geom = Column(Geometry2D)
+
+
+class GeomolTempverteilung500(Base, GeomolTempverteilung, Vector):
+    __tablename__ = 'geomol_temperaturverteilung_500_raster'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturverteilung_500'
+
+register('ch.swisstopo.geologie-geomol-temperaturverteilung_500', GeomolTempverteilung500)
+
+
+class GeomolTempverteilung1000(Base, GeomolTempverteilung, Vector):
+    __tablename__ = 'geomol_temperaturverteilung_1000_raster'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturverteilung_1000'
+
+register('ch.swisstopo.geologie-geomol-temperaturverteilung_1000', GeomolTempverteilung1000)
+
+
+class GeomolTempverteilung1500(Base, GeomolTempverteilung, Vector):
+    __tablename__ = 'geomol_temperaturverteilung_1500_raster'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturverteilung_1500'
+
+register('ch.swisstopo.geologie-geomol-temperaturverteilung_1500', GeomolTempverteilung1500)
+
+
+class GeomolTempverteilung2000(Base, GeomolTempverteilung, Vector):
+    __tablename__ = 'geomol_temperaturverteilung_2000_raster'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturverteilung_2000'
+
+register('ch.swisstopo.geologie-geomol-temperaturverteilung_2000', GeomolTempverteilung2000)
+
+
+class GeomolTempverteilung3000(Base, GeomolTempverteilung, Vector):
+    __tablename__ = 'geomol_temperaturverteilung_3000_raster'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturverteilung_3000'
+
+register('ch.swisstopo.geologie-geomol-temperaturverteilung_3000', GeomolTempverteilung3000)
+
+
+class GeomolTempverteilung4000(Base, GeomolTempverteilung, Vector):
+    __tablename__ = 'geomol_temperaturverteilung_4000_raster'
+    __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturverteilung_4000'
+
+register('ch.swisstopo.geologie-geomol-temperaturverteilung_4000', GeomolTempverteilung4000)
+
+
 class DosisleistungTerrestrisch(Base, Vector):
     __tablename__ = 'dosisleistung_terrestrisch'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
@@ -2650,6 +2812,7 @@ class Swissnames3d:
     name = Column('name', Unicode)
     sprachcode = Column('sprachcode', Unicode)
     namen_typ = Column('namen_typ', Unicode)
+    status = Column('status', Unicode)
     the_geom = Column(Geometry2D)
 
 

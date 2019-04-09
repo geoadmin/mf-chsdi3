@@ -107,7 +107,8 @@ def _get_feature_info_for_popup(request, params, isExtended=False, isIframe=Fals
         'fullName': layer.get('fullName'),
         'vector_model': vector_model,
         'isExtended': isExtended,
-        'isIframe': isIframe
+        'isIframe': isIframe,
+        'time': params.time
     })
     return options
 

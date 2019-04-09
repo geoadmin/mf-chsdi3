@@ -13,6 +13,7 @@
   isIframe = c.get('isIframe')
   isGridLayer = c.get('isGridLayer')
   c['htmlpopup_class'] = c['layerBodId'].replace('.', '')
+  timestamp = c.get('time')
  %>
 
 % if isExtended or isIframe:
@@ -78,7 +79,7 @@
             <td class="cell-left"></td>
             <td>
           % endif
-              <a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic))}" target="new">
+              <a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&time={}'.format(timestamp), '&lang=', lang, '&topic=', topic))}" target="new">
                 ${_('Link to object')}
               </a>
             </td>

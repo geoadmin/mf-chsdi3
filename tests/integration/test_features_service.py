@@ -378,6 +378,13 @@ class TestFeaturesView(TestsBase):
         for msgid in msgids:
             self.assertIn(msgid, resp.text)
 
+    def test_htmlpopup_time(self):
+        bodId = 'ch.swisstopo.lubis-luftbilder_farbe'
+        featureId = self.getRandomFeatureId(bodId)
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s/htmlPopup' % (bodId, featureId), params={'time': 1999}, status=200)
+        self.assertEqual(resp.content_type, 'text/html')
+        self.assertIn(bodId + '=' + featureId + '&amp;time=1999', resp.text)
+
     def test_htmlpopup_scale_dependent(self):
         params = {'mapExtent': '625622.5,210705,629147.5,212922.5',
                   'imageDisplay': '1410,887,96',

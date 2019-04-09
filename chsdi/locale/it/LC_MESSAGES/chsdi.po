@@ -4887,10 +4887,13 @@ msgid "ch.bakom.downlink500"
 msgstr "Download ≥ 500 Mbit/s"
 
 msgid "ch.bakom.mobil-antennenstandorte-5g"
-msgstr "Ubicazione antenne 5G (5G)"
+msgstr "Ubicazione antenne 5G (NR)"
+
+msgid "ch.bakom.mobil-antennenstandorte-5g.powercode"
+msgstr "Potenza irradiata (ERP)"
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
-msgstr "Ubicazione antenne GSM"
+msgstr "Ubicazione antenne 2G (GSM)"
 
 msgid "ch.bakom.mobil-antennenstandorte-lte"
 msgstr "Ubicazione antenne 4G (LTE)"
@@ -6481,6 +6484,24 @@ msgstr "ch.bfe.geologische_tiefenlager_fac"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
 msgstr "Inceneritori"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
+msgstr "Anno di messa in servizio dell’impianto"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.diagramm_strom"
+msgstr "Produzione di elettricità [GkWh]"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.diagramm_waerme"
+msgstr "Produzione di calore [GWh]"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.name"
+msgstr "Nome dell'impianto"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.place"
+msgstr "Luogo"
+
+msgid "ch.bfe.kehrichtverbrennungsanlagen.web"
+msgstr "Sito web"
 
 msgid "ch.bfe.kernkraftwerke"
 msgstr "Centrali nucleari"
@@ -10013,6 +10034,9 @@ msgstr "SWISSIMAGE Sfondo"
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE Viaggio nel tempo"
 
+msgid "ch.swisstopo.swissimage-product_1946"
+msgstr "SWISSIMAGE HIST 1946"
+
 msgid "ch.swisstopo.swissimage-product.metadata"
 msgstr "Divisione SWISSIMAGE Viaggio tempo"
 
@@ -10057,6 +10081,21 @@ msgstr "Nomi geografici swissNAMES3D"
 
 msgid "ch.swisstopo.swissnames3d.inspire"
 msgstr "ch.swisstopo.swissnames3d.inspire"
+
+msgid "ch.swisstopo.swissnames3d.status"
+msgstr "Status"
+
+msgid "ch.swisstopo.swissnames3d.status.fremd"
+msgstr "inabituale"
+
+msgid "ch.swisstopo.swissnames3d.status.k_W"
+msgstr "Nessun valore"
+
+msgid "ch.swisstopo.swissnames3d.status.offiziell"
+msgstr "ufficiale"
+
+msgid "ch.swisstopo.swissnames3d.status.ueblich"
+msgstr "abituale"
 
 msgid "ch.swisstopo.swissnames3d_v02"
 msgstr "Nomi geografici swissNAMES3D"
