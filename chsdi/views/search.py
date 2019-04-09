@@ -133,12 +133,10 @@ class Search(SearchValidation):
             try:
                 # standard wildcard search
                 self.sphinx.AddQuery(searchTextFinal, index='swisssearch')
-                # exact search, first 10 results
-                self.sphinx.SetLimits(0, 10)
+                # exact search with priority
                 searchText = '@detail ^%s' % ' '.join(self.searchText)
                 self.sphinx.AddQuery(searchText, index='swisssearch')
                 # reset settings
-                self.sphinx.SetLimits(0, limit)
 
                 temp = self.sphinx.RunQueries()
 
