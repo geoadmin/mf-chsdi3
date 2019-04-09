@@ -10034,6 +10034,9 @@ msgstr "SWISSIMAGE Background"
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE Journey through time"
 
+msgid "ch.swisstopo.swissimage-product_1946"
+msgstr "SWISSIMAGE HIST 1946"
+
 msgid "ch.swisstopo.swissimage-product.metadata"
 msgstr "Tiling SWISSIMAGE Journey thru time"
 

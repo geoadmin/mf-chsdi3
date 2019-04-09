@@ -10034,6 +10034,9 @@ msgstr "SWISSIMAGE Sfondo"
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE Viaggio nel tempo"
 
+msgid "ch.swisstopo.swissimage-product_1946"
+msgstr "SWISSIMAGE HIST 1946"
+
 msgid "ch.swisstopo.swissimage-product.metadata"
 msgstr "Divisione SWISSIMAGE Viaggio tempo"
 
@@ -10083,7 +10086,7 @@ msgid "ch.swisstopo.swissnames3d.status"
 msgstr "Status"
 
 msgid "ch.swisstopo.swissnames3d.status.fremd"
-msgstr "inhabituale"
+msgstr "inabituale"
 
 msgid "ch.swisstopo.swissnames3d.status.k_W"
 msgstr "Nessun valore"

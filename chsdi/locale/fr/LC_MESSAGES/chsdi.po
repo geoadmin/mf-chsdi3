@@ -10034,6 +10034,9 @@ msgstr "SWISSIMAGE Fond de plan"
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE Voyage dans le temps"
 
+msgid "ch.swisstopo.swissimage-product_1946"
+msgstr "SWISSIMAGE HIST 1946"
+
 msgid "ch.swisstopo.swissimage-product.metadata"
 msgstr "Découpage SWISSIMAGE Voyage temp."
 
