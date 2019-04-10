@@ -1626,7 +1626,7 @@ msgid "ch.astra.unfaelle-personenschaeden_alle.involving_pedestrian"
 msgstr "Accident avec la participation de piétons"
 
 msgid "ch.astra.unfaelle-personenschaeden_alle.no"
-msgstr "No"
+msgstr "Non"
 
 msgid "ch.astra.unfaelle-personenschaeden_alle.roadtypecode"
 msgstr "Code - Genre de route"
@@ -1704,7 +1704,7 @@ msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.involving_pedestrian"
 msgstr "Accident avec la participation de piétons"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.no"
-msgstr "No"
+msgstr "Non"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.roadtypecode"
 msgstr "Code - Genre de route"
@@ -1782,7 +1782,7 @@ msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.involving_pedestrian"
 msgstr "Accident avec la participation de piétons"
 
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.no"
-msgstr "No"
+msgstr "Non"
 
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.roadtypecode"
 msgstr "Code - Genre de route"
@@ -1860,7 +1860,7 @@ msgid "ch.astra.unfaelle-personenschaeden_getoetete.involving_pedestrian"
 msgstr "Accident avec la participation de piétons"
 
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.no"
-msgstr "No"
+msgstr "Non"
 
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.roadtypecode"
 msgstr "Code - Genre de route"
@@ -1938,7 +1938,7 @@ msgid "ch.astra.unfaelle-personenschaeden_motorraeder.involving_pedestrian"
 msgstr "Accident avec la participation de piétons"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.no"
-msgstr "No"
+msgstr "Non"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.roadtypecode"
 msgstr "Code - Genre de route"
