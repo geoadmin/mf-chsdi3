@@ -15,3 +15,7 @@
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.status')}</td>                 <td>${_(c['attributes']['status'] or '-')}</td></tr>
 </%def>
 
+<%def name="extended_info(c, lang)">
+
+  <h1>TODO</h1>
+</%def>
