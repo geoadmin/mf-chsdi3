@@ -14,7 +14,7 @@ gatilegrid==0.1.10
 GeoAlchemy2==0.3.0
 geojson==1.1.0
 hupper==1.0
-Jinja2==2.8
+Jinja2==2.10.1
 lxml==4.2.5
 Mako==1.0.0
 MarkupSafe==0.23
