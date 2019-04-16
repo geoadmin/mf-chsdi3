@@ -1,6 +1,6 @@
 {
 	"type": "unique",
-	"property": "Available",
+	"property": "Availability",
 	"values": [{
 		"geomType": "point",
 		"value": "Available",
