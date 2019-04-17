@@ -3158,7 +3158,6 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
     __template__ = 'templates/htmlpopup/strassenverzeichnis.mako'
     __bodId__ = 'ch.swisstopo.amtliches-strassenverzeichnis'
     __label__ = 'label'
-    __extended_info__ = True
     __queryable_attributes__ = ['label', 'plzo', 'gdename', 'gdenr', 'type']
     id = Column('bgdi_id', Integer, primary_key=True)
     esid = Column('esid', Integer)
