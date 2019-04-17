@@ -1,32 +1,42 @@
-<%inherit file="base.mako"/> 
+<%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
+
+ <%
+    lang = lang if lang in ('fr','it','en') else 'de'
+    bezeichnung_kat = 'bezeichnung_kat_%s' % lang
+
+ %>
+
 <tr>
   <td class="cell-left">${_('ch.bfe.energiestaedte-energieregionen.name')}</td>
   <td>${c['attributes']['name'] or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${_('status')}</td>
- % if c['attributes']['kategorie'] == 'ker1':
-  <td>
-    ${_('energiestadt_region_ker1')}
-  </td>
- % elif c['attributes']['kategorie'] == 'ker2':
-  <td>
-    ${_('energiestadt_region_ker2')}
-  </td>
- % elif c['attributes']['kategorie'] == 'ker3':
-  <td>
-    ${_('energiestadt_region_ker3')}
-  </td>
- % endif
-  </tr>
+  <td class="cell-left">${_('ch.bfe.energiestaedte-energieregionen.kategorie')}</td>
+  <td>${c['attributes'][bezeichnung_kat] or '-'}</td>
+</tr>
+<tr>
 </%def>
 <%def name="extended_info(c, lang)">
+
+  <%
+     lang = lang if lang in ('fr','it','en') else 'de'
+     bezeichnung_kat = 'bezeichnung_kat_%s' % lang
+     projektportraittext = c['attributes']['projektportraittext_%s' % lang]
+     projektportraitlink = c['attributes']['projektportraitlink_%s' % lang]
+     projektportraittext_split = []
+     projektportraitlink_split = []
+     if projektportraittext is not None:
+        projektportraittext_split = projektportraittext.split('###')
+        projektportraitlink_split = projektportraitlink.split('###')
+
+  %>
+
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
   <tr>
     <th class="cell-meta">
-      ${_('ch.bfe.energiestaedte-energieregionen')}
+      ${_('ch.bfe.energiestaedte-energieregionen.name')}
     </th>
     <td>
       ${c['attributes']['name']}
@@ -34,139 +44,140 @@
   </tr>
   <tr>
     <th class="cell-meta">
-      ${_('status')}
-    </th>
-  % if c['attributes']['kategorie'] == 'ker1':
-    <td>
-      ${_('energiestadt_region_ker1')}
-    </td>
-  % elif c['attributes']['kategorie'] == 'ker2':
-    <td>
-      ${_('energiestadt_region_ker2')}
-    </td>
-  % elif c['attributes']['kategorie'] == 'ker3':
-    <td>
-      ${_('energiestadt_region_ker3')}
-    </td>
-  % endif
-  </tr>
-  <tr>
-    <th class="cell-meta">
-      ${_('bet_energiestaedte')}
+      ${_('ch.bfe.energiestaedte-energieregionen.kategorie')}
     </th>
     <td>
-      ${c['attributes']['bet_energiestaedte'] or '-'}
-    </td>
-  </tr>
-  <tr>
-    <th class="cell-meta" >
-      ${_('bet_traegerverein')}
-    </th>
-    <td class="cell-meta">
-      ${c['attributes']['bet_traegerverein'] or '-'}
+      ${c['attributes'][bezeichnung_kat] or '-'}
     </td>
   </tr>
   <tr>
     <th class="cell-meta">
-      ${_('berater')}
+      ${_('ch.bfe.energiestaedte-energieregionen.beteiligtegemeinden')}
     </th>
-  % if c['attributes']['linkberater'] is None:
-    <td class="cell-meta"> - </td>
-  % else:
-    <td class="cell-meta">
-      <a target="_blank" href="${c['attributes']['linkberater']}">${c['attributes']['berater']}</a>
+    <td>
+      ${c['attributes']['beteiligtegemeinden'] or '-'}
     </td>
-  % endif
   </tr>
   <tr>
     <th class="cell-meta" colspan="2">
-      ${_('kurzerklaerung')}
+      ${_('ch.bfe.energiestaedte-energieregionen.erklaerung')}
     </th>
   </tr>
   <tr>
   % if lang=='fr' :
     <td class="cell-meta" colspan="2"><p align="justify">
-Le projet des Régions-Energie permet à des communes de mener une politique énergétique exemplaire au sens de la Stratégie énergétique 2050. Il encourage une planification et une promotion ciblées des énergies renouvelables et des mesures d’efficacité à l’échelle régionale. Les Régions-Energie peuvent poursuivre divers objectifs et stratégies à long terme allant de l’augmentation du degré d’auto-approvisionnement (remplacement des agents énergétiques fossiles importés) à l’exportation d’énergie ou de technologies par des entreprises locales. Les activités des Régions-Energie favorisent le développement économique régional et peuvent par exemple engendrer une plus-value régionale et la création d’emplois.<br />
+Le projet des Régions-Energie permet à des communes de mener une politique énergétique exemplaire au sens de la Stratégie énergétique 2050. Il encourage une planification et une promotion ciblées des énergies renouvelables et des mesures d’efficacité à l’échelle régionale. Les Régions-Energie peuvent poursuivre divers objectifs et stratégies à long terme allant de l’augmentation du degré d’auto-approvisionnement (remplacement des agents énergétiques fossiles importés) à l’exportation d’énergie ou de technologies par des entreprises locales. Les activités des Régions-Energie favorisent le développement économique régional et peuvent par exemple augmenter la plus-value régionale et préserver des emploi.<br />
 <br />
-Les Régions-énergie qui participent au programme d’encouragement «Région-énergie 2016-2019» opèrent via un organisme intercommunal, investissent dans des projets innovants et intègrent l’économie locale et la population à leurs activités.<br />
+Les Régions-Energie qui participent au programme d’encouragement «Région-Energie 2016-2019» opèrent via un organisme intercommunal, investissent dans des projets innovants et intègrent l’économie locale et la population à leurs activités.<br />
 <br />
-L’OFEN encourage des projets concrets et finance le suivi et le coaching par des conseillers spécialisés Région-énergie ainsi que le soutien accordé par l’antenne Région-énergie.<br />
-<br />
-Afin d’introduire le programme Région-énergie, l’OFEN a élaboré de 2012 à 2015 un programme de soutien limité dans le temps pour les régions intéressées.<br />
-<br />
-Pendant la réalisation du projet, les conseillers ont analysé l’économie énergétique du moment et les potentiels, en collaboration avec les communes concernées. A cet égard, <a href="http://www.energie-region.ch/fr/outil-de-bilan/" target="_blank">l’outil de bilan pour communes et régions</a> remanié permet, une fois toutes les données pertinentes saisies, d’établir un bilan spécifique à la région.<br />
-    </p>
-    </td>
-  </tr>
-    <th class="cell-meta">
-      ${_('link')}
-    </th>
+L’OFEN encourage des projets concrets et finance le suivi et le coaching par des conseillers spécialisés Région-Energie ainsi que le soutien accordé par l’antenne Région-Energie. Le calculateur  <a href="https://www.local-energy.swiss/fr/profibereich/profi-instrumente/2000-watt-gesellschaft/gemeinden-und-staedte.html#/" target="_blank"> énergie et climats</a> mis à disposition permet en outre de calculer la consommation d’énergie et d’évaluer le potentiel des projets.<br />
+     </p>
+     </td>
+   </tr>
+   <th class="cell-meta">
+    ${_('ch.bfe.energiestaedte-energieregionen.erklaerungslink')}
+   </th>
     <td class="cell-meta">
-      <a target="_blank" href="http://www.energie-region.ch/fr/le-concept/">Région-Energie</a>
-    </td>
+    <a target="_blank" href="http://www.region-energie.ch">${_('link')}</a>
+   </td>
   % elif lang=='it' :
     <td class="cell-meta" colspan="2"><p align="justify">
-Il progetto «Regione-Energia» consente ai Comuni che vi partecipano di diventare regioni all'avanguardia nel settore energetico ai sensi della Strategia energetica 2050. In questo ambito vengono pianificate e promosse in modo mirato le energie rinnovabili e le misure di efficienza energetica a livello regionale. Le Regioni-Energia possono perseguire nel lungo periodo diversi obiettivi e strategie: dall’aumento del proprio grado di autoapprovvigionamento (mediante la sostituzione dei vettori energetici di origine fossile importati) all’esportazione di energia o tecnologia da parte delle aziende locali. Le attività delle Regioni-Energia rappresentano delle opportunità di sviluppo dell’economia regionale che a sua volta può creare valore aggiunto e nuovi posti di lavoro nella Regione.<br />
+Il progetto «Regione-Energia» consente ai Comuni che vi partecipano di diventare regioni all'avanguardia nel settore energetico ai sensi della Strategia energetica 2050. In questo ambito vengono pianificate e promosse in modo mirato le energie rinnovabili e le misure di efficienza energetica a livello regionale. Le Regioni-Energia possono perseguire nel lungo periodo diversi obiettivi e strategie: dall’aumento del proprio grado di autoapprovvigionamento (mediante la sostituzione dei vettori energetici di origine fossile importati) all’esportazione di energia o tecnologia da parte delle aziende locali. Le attività delle Regioni-Energia rappresentano delle opportunità di sviluppo dell’economia regionale, cosa che può condurre a un incremento del valore aggiunto e a mantenere posti di lavoro nella regione.<br />
 <br />
-Le Regioni-Energia che partecipano al programma di sostegno «Regione-Energia 2016-2019» operano mediante un ente intercomunale, investono in progetti innovativi e coinvolgono nelle loro attività le imprese d’artigianato e commerciali locali e la popolazione.<br />
+Le Regioni-Energia che partecipano al programma di sostegno «Regione-Energia 2016-2019» operano mediante un ente intercomunale, investono in progetti inno-vativi e coinvolgono nelle loro attività le imprese d’artigianato e commerciali locali e la popolazione.<br />
 <br />
-L'UFE promuove progetti concreti, finanzia l'accompagnamento e il coaching da parte di consulenti specializzati nell'ambito delle Regioni-Energia, nonché il sostegno ad opera del centro di competenza «Regione-Energia».<br />
-<br />
-Per lanciare il nuovo programma «Regione-Energia» nel 2012-2015, l’UFE ha elaborato misure di sostegno di durata limitata per le regioni interessate.<br />
-<br />
-Nel corso dello svolgimento del programma i consulenti, in collaborazione con i rispettivi Comuni, hanno effettuato un’analisi dell’economia energetica e dei potenziali. A tal fine si utilizza lo <a href="http://www.region-energie.ch/it/strumento-di-bilancio/" target="_blank">strumento rielaborato di bilancio per Comuni e regioni</a> con cui, dopo aver inserito tutti i dati rilevanti, può essere redatto il bilancio della regione.<br />
+L'UFE promuove progetti concreti, finanzia l'accompagnamento e il coaching da parte di consulenti specializzati nell'ambito delle Regioni-Energia, nonché il sostegno da parte del centro di competenza «Regione-Energia». Inoltre, per fare un bilancio del consumo di energia e stimare il potenziale, è a disposizione  <a href="https://www.local-energy.swiss/it/profibereich/profi-instrumente/2000-watt-gesellschaft/gemeinden-und-staedte.html#/" target="_blank">il calcolatore dell’energia e del clima.</a><br />
     </p>
     </td>
   </tr>
-    <th class="cell-meta">
-      ${_('link')}
-    </th>
+   <th class="cell-meta">
+    ${_('ch.bfe.energiestaedte-energieregionen.erklaerungslink')}
+   </th>
     <td class="cell-meta">
-      <a target="_blank" href="http://www.region-energie.ch/it/lidea/">Regione-Energia</a>
-    </td>
+    <a target="_blank" href="http://www.regione-energia.ch">${_('link')}</a>
+   </td>
   % elif lang=='en' :
     <td class="cell-meta" colspan="2"><p align="justify">
-The Energy-Region concept is intended to enable the involved municipalities to evolve into progressive regions in accordance with Energy Strategy 2050. Here, renewable energy use and energy efficiency measures are planned and promoted in a targeted manner at the regional level. An Energy-Region can pursue different strategies and objectives over the long term. These may range from increasing the degree of autonomous supply (through the use of imported fossil-based fuels) through to energy and technology export by companies domiciled in the region. The activities of an Energy-Region represent opportunities for regional economic development which can give rise to local value-added and the creation of jobs.<br />
+Under the Energy Regions concept, the local councils in the programme can evolve into progressive regions in accordance with the 2050 Energy Strategy.Renewable energy use and energy efficiency measures are planned at regional level to best suit local needs. An Energy Region can pursue different strategies and objectives over the long term which may range from increasing the degree of autonomous supply (by replacing imported fossil-based fuels) through to energy and technology exports by local companies. An Energy Region’s activities open up opportunities for regional economic development, giving rise to greater regional added value and preserving jobs in the region.<br />
 <br />
-The energy regions participating in the SFOE’s “Energy Region 2016-2019” support programme operate on the basis of an inter-municipal patronage, invest in innovative projects and integrate local businesses and residents into their activities. The SFOE promotes specific projects and finances support and coaching provided by specialised Energy Region consultants, as well as support from the Energy Region coordination centre.<br />
+The Energy Regions participating in the SFOE’s Energy Region 2016–2019 support programme operate under the auspices of an intercommunal umbrella body. They invest in innovative projects and encourage local businesses and residents to take part in their activities.<br />
 <br />
-In order to efficiently introduce its Energy Region programme, in the period from 2012 to 2015 the SFOE drew up a limited duration support programme for the involved regions.<br />
-<br />
-During the project implementation stage, together with the respective municipalities the consultants analysed the current situation and potentials of the energy industry. For this purpose a revised <a href="http://www.energie-region.ch/de/bilanzierungs-tool/" target="_blank">calculation tool for municipalities and regions</a> is now available that can be used for compiling a customised balance for a given region, based on all entered relevant data.<br />
+The SFOE promotes specific projects and finances support and coaching provided by specialised Energy Region consultants. It alsofunds activities by the Energy Region Coordination Centre.  <a href="https://www.local-energy.swiss/profibereich/profi-instrumente/2000-watt-gesellschaft/gemeinden-und-staedte.html#/" target="_blank"> The Energy and Climate calculator</a> enables authorities to assess their energy use and potentials for efficiency and renewable energy use.<br />
     </p>
     </td>
   </tr>
-    <th class="cell-meta">
-      ${_('link')}
-    </th>
+   <th class="cell-meta">
+    ${_('ch.bfe.energiestaedte-energieregionen.erklaerungslink')}
+   </th>
     <td class="cell-meta">
-      <a target="_blank" href="http://www.energie-region.ch/de/die-idee/">Energy-Region</a>
-    </td>
+    <a target="_blank" href="http://www.energie-region.ch">${_('link')}</a>
+   </td>
   % else :
     <td class="cell-meta" colspan="2"><p align="justify">
-Das Konzept der Energie-Region ermöglicht es den beteiligten Gemeinden, sich im Energiebereich zu fortschrittlichen Regionen im Sinne der Energiestrategie 2050 zu entwickeln. Dabei werden erneuerbare Energien und Effizienzmassnahmen gezielt auf der Stufe der Region geplant und gefördert. Energie-Regionen können langfristig unterschiedliche Strategien und Ziele verfolgen. Diese reichen von der Erhöhung des eigenen Selbstversorgungsgrads (durch Ersatz von importierten fossilen Energieträgern) bis hin zum Energie- oder Technologie-Export durch ansässige Unternehmen. Die Aktivitäten von Energie-Regionen sind Chancen für eine regionalökonomische Entwicklung, welche zu regionaler Wertschöpfung und neuen Arbeitsplätzen führen können.<br />
+Das Konzept der Energie-Region ermöglicht es den beteiligten Gemeinden, sich im Energiebereich zu fortschrittlichen Regionen im Sinne der Energiestrategie 2050 zu entwickeln. Dabei werden erneuerbare Energien und Effizienzmassnahmen gezielt auf der Stufe der Region geplant und gefördert. Energie-Regionen können langfristig unterschiedliche Strategien und Ziele verfolgen. Diese reichen von der Erhöhung des eigenen Selbstversorgungsgrads (durch Ersatz von importierten fossilen Energieträgern) bis hin zum Energie- oder Technologie-Export durch ansässige Unternehmen. Die Aktivitäten von Energie-Regionen sind Chancen für eine regionalökonomische Entwicklung, welche zu höherer regionaler Wertschöpfung und dem Erhalt von Arbeitsplätzen führen kann.<br />
 <br />
 Die beim BFE-Unterstützungsprogramm „Energie-Region 2016-2019“ teilnehmenden Energie-Regionen operieren über eine interkommunale Trägerschaft, investieren in innovative Projekte und binden das ansässige Gewerbe sowie Bevölkerung in ihre Aktivitäten ein.<br />
 <br />
-Das BFE fördert konkrete Projekten, finanziert Begleitung und Coaching durch spezialisierte Energie-Regionen-BeraterInnen sowie Unterstützung durch die Fachstelle Energie-Region.<br /><br />
-Um das Programm „Energie-Region" einzuführen, erarbeitete das BFE 2012-2015 ein zeitlich limitiertes Unterstützungsprogramm für interessierte Regionen. Während der Projektdurchführung analysierten die Beraterinnen und Berater in Zusammenarbeit mit den jeweiligen Gemeinden die gegenwärtige Energiewirtschaft und die Potenziale. Dafür steht das <a href="http://www.energie-region.ch/de/bilanzierungs-tool/" target="_blank" überarbeitete Bilanzierungs-Tool für Gemeinden und Regionen</a>, mit welchem sich nach der Erfassung aller relevanten Daten eine auf die Region zugeschnittene Bilanz erstellen lässt, zur Verfügung.<br />
-    </p>
-    </td>
+Das BFE fördert konkrete Projekte, finanziert Begleitung und Coaching durch spezialisierte Energie-Regionen-Beratende sowie Unterstützung durch die Fachstelle Energie-Region. Zudem steht <a href="https://www.local-energy.swiss/profibereich/profi-instrumente/2000-watt-gesellschaft/gemeinden-und-staedte.html#/" target="_blank">der Energie- und Klimakalkulator</a> für die Bilanzierung des Energieverbrauchs sowie für die Potenzialabschätzung zur Verfügung.<br />
+<br />
+   </p>
+   </td>
+   </tr>
+   <th class="cell-meta">
+    ${_('ch.bfe.energiestaedte-energieregionen.erklaerungslink')}
+   </th>
+    <td class="cell-meta">
+    <a target="_blank" href="http://www.energie-region.ch">${_('link')}</a>
+   </td>
+ % endif
   </tr>
     <th class="cell-meta">
-      ${_('link')}
-    </th>
-    <td class="cell-meta">
-      <a target="_blank" href="http://www.energie-region.ch/de/die-idee/">Energie-Region</a>
-    </td>
-%endif
+     ${_('ch.bfe.energiestaedte-energieregionen.linkenergieregion')}
+  </th>
+ % if c['attributes']['linkenergieregion'] is None:
+   <td class="cell-meta"> - </td>
+ % else:
+   <td class="cell-meta">
+     <a target="_blank" href="${c['attributes']['linkenergieregion']}">${_('link')}</a>
+  </td>
+ % endif
+   </tr>
+   <tr>
+    <th class="cell-meta">
+     ${_('ch.bfe.energiestaedte-energieregionen.berater')}
+  </th>
+ % if c['attributes']['mailberater'] is None:
+   <td class="cell-meta"> - </td>
+ % else:
+   <td class="cell-meta">
+     <a target="_blank" href="${c['attributes']['mailberater']}">${c['attributes']['berater']}</a>
+   </td>
+ % endif
   </tr>
-  % if lang=='fr' :
+  <tr>
+   <th class="cell-meta">
+      ${_('ch.bfe.energiestaedte-energieregionen.projektportrait')}
+  </th>
+ % if len(projektportraitlink_split) > 0:
+   <td class="cell-meta">
+  % for i in range(len(projektportraitlink_split)):
+    % if i > 0:
+      <br/>
+    % endif
+      <a target="_blank" href="${projektportraitlink_split[i]}">${projektportraittext_split[i]}</a>
+   % endfor
+   </td>
+ </tr>
+ % else:
+   <td class="cell-meta"> - </td>
+ % endif
+   <tr>
+ % if lang=='fr' :
 <tr><img class="image" src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.energiestaedte-energieregionen/Sub-Logo_Energieregion_f.png" alt=""/></tr>
-  % elif lang=='it' :
+ % elif lang=='it' :
 <tr><img class="image" src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.energiestaedte-energieregionen/Sub-Logo_Energieregion_i.png" alt=""/></tr>
-  % else :
+ % else :
 <tr><img class="image" src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.energiestaedte-energieregionen/Sub-Logo_Energieregion_d.png" alt=""/></tr>
-  % endif
+ % endif
 </table>
 </%def>

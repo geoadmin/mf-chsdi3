@@ -1142,26 +1142,20 @@ msgstr "aufzuhebend"
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Lingias da construcziun da las vias naziunalas RDPP"
 
-msgid "ch.astra.baulinien-nationalstrassen.oereb.inkraft"
-msgstr "in Kraft"
-
-msgid "ch.astra.baulinien-nationalstrassen.oereb.laufendeaenderung"
-msgstr "Laufende Änderung"
-
 msgid "ch.astra.baulinien-nationalstrassen.oereb.publiziertab"
-msgstr "Publiziert ab_RM"
+msgstr "Publitga da"
 
-msgid "ch.astra.baulinien-nationalstrassen.oereb.text_amt_%lang%"
-msgstr "Amt_RM"
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_amt"
+msgstr "Post cumpetent"
 
-msgid "ch.astra.baulinien-nationalstrassen.oereb.text_aussage_%lang%"
-msgstr "Aussage_RM"
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_aussage"
+msgstr "Cuntegn"
 
-msgid "ch.astra.baulinien-nationalstrassen.oereb.text_rechtsstatus_%lang%"
-msgstr "Rechtsstatus_RM"
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_rechtsstatus"
+msgstr "Status giuridic"
 
-msgid "ch.astra.baulinien-nationalstrassen.oereb.text_thema_%lang%"
-msgstr "Thema_RM"
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_thema"
+msgstr "Tema"
 
 msgid "ch.astra.baulinien-nationalstrassen.publication_date"
 msgstr "Data da publicaziun"
@@ -5595,19 +5589,19 @@ msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
 msgstr "Contaminaziun traffic public RPDP"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.publiziertab"
-msgstr "Publiziert ab_RM"
+msgstr "Publitga da"
 
-msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_amt_%lang%"
-msgstr "Amt_RM"
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_amt"
+msgstr "Post cumpetent"
 
-msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_aussage_%lang%"
-msgstr "Aussage_RM"
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_aussage"
+msgstr "Cuntegn"
 
-msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_rechtsstatus_%lang%"
-msgstr "Rechtsstatus_RM"
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_rechtsstatus"
+msgstr "Status giuridic"
 
-msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_thema_%lang%"
-msgstr "Thema_RM"
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_thema"
+msgstr "Tema"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Canera da viafier, fix. Emissiun N"
@@ -6090,67 +6084,19 @@ msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb"
 msgstr "Lieus contamin. aviatica civ. RPDP"
 
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.publiziertab"
-msgstr "Publiziert ab_RM"
+msgstr "Publitga da"
 
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_de"
-msgstr "Amt_RM"
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt"
+msgstr "Post cumpetent"
 
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_en"
-msgstr "Amt_RM"
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage"
+msgstr "Cuntegn"
 
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_fr"
-msgstr "Amt_RM"
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus"
+msgstr "Status giuridic"
 
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_it"
-msgstr "Amt_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_rm"
-msgstr "Amt_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_de"
-msgstr "Aussage_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_en"
-msgstr "Aussage_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_fr"
-msgstr "Aussage_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_it"
-msgstr "Aussage_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_rm"
-msgstr "Aussage_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_de"
-msgstr "Rechtsstatus_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_en"
-msgstr "Rechtsstatus_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_fr"
-msgstr "Rechtsstatus_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_it"
-msgstr "Rechtsstatus_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_rm"
-msgstr "Rechtsstatus_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_de"
-msgstr "Thema_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_en"
-msgstr "Thema_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_fr"
-msgstr "Thema_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_it"
-msgstr "Thema_RM"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_rm"
-msgstr "Thema_RM"
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema"
+msgstr "Tema"
 
 msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze"
 msgstr "Cataster da canera - plazz. aviaticas civilas"
@@ -6357,19 +6303,19 @@ msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb"
 msgstr "Zonas projectaziun eroports RPDP"
 
 msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.publiziertab"
-msgstr "Publiziert ab_RM"
+msgstr "Publitga da"
 
-msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_amt_%lang%"
-msgstr "Amt_RM"
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_amt"
+msgstr "Post cumpetent"
 
-msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_aussage_%lang%"
-msgstr "Aussage_RM"
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_aussage"
+msgstr "Cuntegn"
 
-msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_rechtsstatus_%lang%"
-msgstr "Rechtsstatus_RM"
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_rechtsstatus"
+msgstr "Status giuridic"
 
-msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_thema_%lang%"
-msgstr "Thema_RM"
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_thema"
+msgstr "Tema"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
 msgstr "PSIA audiziun"
@@ -6396,19 +6342,19 @@ msgid "ch.bazl.sicherheitszonenplan.oereb"
 msgstr "Plan da zonas da segirezza RPDP"
 
 msgid "ch.bazl.sicherheitszonenplan.oereb.publiziertab"
-msgstr "Publiziert ab_RM"
+msgstr "Publitga da"
 
-msgid "ch.bazl.sicherheitszonenplan.oereb.text_amt_%lang%"
-msgstr "Amt_RM"
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_amt"
+msgstr "Post cumpetent"
 
-msgid "ch.bazl.sicherheitszonenplan.oereb.text_aussage_%lang%"
-msgstr "Aussage_RM"
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_aussage"
+msgstr "Cuntegn"
 
-msgid "ch.bazl.sicherheitszonenplan.oereb.text_rechtsstatus_%lang%"
-msgstr "Rechtsstatus_RM"
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_rechtsstatus"
+msgstr "Status giuridic"
 
-msgid "ch.bazl.sicherheitszonenplan.oereb.text_thema_%lang%"
-msgstr "Thema_RM"
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_thema"
+msgstr "Tema"
 
 msgid "ch.bazl.sicherheitszonenplan.SafetyZone.Description"
 msgstr "Beschreibung"
@@ -6659,16 +6605,19 @@ msgstr "Gemeinde / Stadt"
 msgid "ch.bfe.energiestaedte-2000watt-energiestaedteaufdemweg"
 msgstr "Energiestädte auf dem Weg 2000-Watt"
 
-msgid "ch.bfe.energiestaedte. 2000watt-energiestaedteaufdemweg"
-msgstr "Energiestädte auf dem Weg 2000-Watt"
-
 msgid "ch.bfe.energiestaedte.2000watt-energiestaedteaufdemweg"
 msgstr "Energiestädte auf dem Weg 2000-Watt"
+
+msgid "ch.bfe.energiestaedte.anzahlaudits"
+msgstr "Anzahl erfolgreicher Audits"
+
+msgid "ch.bfe.energiestaedte.berater"
+msgstr "Beraterin oder Berater"
 
 msgid "ch.bfe.energiestaedte.beteiligtegemeinde"
 msgstr "Beteiligte Gemeinden"
 
-msgid "ch.bfe.energiestaedte.einwohner"
+msgid "ch.bfe.energiestaedte.einwohnerzahl"
 msgstr "Einwohner"
 
 msgid "ch.bfe.energiestaedte-energieregionen"
@@ -6693,7 +6642,7 @@ msgid "ch.bfe.energiestaedte-energieregionen.linkenergieregion"
 msgstr "Link zur Energie-Region"
 
 msgid "ch.bfe.energiestaedte-energieregionen.name"
-msgstr "Energie-Regionen"
+msgstr "Energie-Region"
 
 msgid "ch.bfe.energiestaedte-energieregionen.projektportrait"
 msgstr "Projektporträt"
@@ -6712,6 +6661,18 @@ msgstr "Details auf der Energiestadt-Website"
 
 msgid "ch.bfe.energiestaedte.name"
 msgstr "Gemeinde/Stadt"
+
+msgid "ch.bfe.energiestaedte.punktezahl"
+msgstr "Punktezahl"
+
+msgid "ch.bfe.fernwaerme-angebot"
+msgstr "Wärme- und Kälteangebot"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie"
+msgstr "Wärme-/Kältenachfrage Industrie"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
+msgstr "Wärme-/Kältenachfrage Wohnen und DL"
 
 msgid "ch.bfe.geak-experten"
 msgstr "GEAK-Experten"
@@ -7422,7 +7383,7 @@ msgid "ch.blw.emapis-zusammenfassung"
 msgstr "Svilup rural"
 
 msgid "ch.blw.erosion"
-msgstr "Ristga d'erosiun qualitativa 1"
+msgstr "Ristga d'erosiun qualitativa"
 
 msgid "ch.blw.erosion2"
 msgstr "Erosionsrisiko"
