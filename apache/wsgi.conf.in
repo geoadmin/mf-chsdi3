@@ -72,6 +72,11 @@ RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities.xml ${apache_entry_path
 RewriteRule ^${apache_entry_path}/EPSG/(\d+)/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
 RewriteRule ^${apache_entry_path}/EPSG/(\d+)/(de|fr|it|rm|en)/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1&lang=$2 [L,PT]
 
+# Doc in S3
+RewriteCond %{REQUEST_URI} ^${apache_entry_path}/$
+RewriteRule ^(.*)$ ${doc_website_url}/index.html [L]
+RewriteRule ^${apache_entry_path}/(api|releasenotes|services)/(.*)  ${doc_website_url}/$1/$2 [R=302,L]
+
 # Shorten service
 RewriteCond %{HTTP_HOST} ^s.geo.admin.ch$
 RewriteRule ^${apache_entry_path}/(.*)$ ${apache_entry_path}/shorten/$1 [PT]

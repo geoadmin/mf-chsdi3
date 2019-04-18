@@ -75,6 +75,7 @@ LAST_WSGI_USER := $(call lastvalue,wsgi-user)
 LAST_WSGI_PROCESSES := $(call lastvalue,wsgi-processes)
 LAST_WSGI_THREADS := $(call lastvalue,wsgi-threads)
 LAST_WSGI_APP := $(call lastvalue,wsgi-app)
+LAST_WEBSITE_URL := $(call lastvalue,doc-website-url)
 LAST_KML_TEMP_DIR := $(call lastvalue,kml-temp-dir)
 
 PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -type f -name "*.py" -print)
@@ -130,7 +131,6 @@ help:
 	@echo "- autolint           Run the autolinter"
 	@echo "- translate          Generate the translation files"
 	@echo "- legends            Downloads and optimizes all WMS legend images (make legends BODID=ch.foo WMSSCALELEGEND=)"
-	@echo "- doc                Generate the doc for api3.geo.admin.ch"
 	@echo "- deploybranch       Deploy current branch to dev (must be pushed before hand)"
 	@echo "- deploybranchint    Deploy current branch to dev and int (must be pushed before hand)"
 	@echo "- deletebranch       List deployed branches or delete a deployed branch on dev and int (BRANCH_TO_DELETE=...)"
@@ -154,6 +154,7 @@ help:
 	@echo "GIT_BRANCH:          ${GIT_BRANCH}"
 	@echo "SERVER_PORT:         ${SERVER_PORT}"
 	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
+	@echo "DOC_WEBSITE_URL:     ${DOC_WEBSITE_URL}"
 	@echo
 
 
@@ -205,16 +206,6 @@ lint:
 autolint:
 	@echo "${GREEN}Auto correction of python files...${RESET}";
 	${AUTOPEP8_CMD} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
-
-.PHONY: doc
-doc: chsdi/static/css/extended.min.css
-	@echo "${GREEN}Building the documentation...${RESET}";
-	cd chsdi/static/doc && ../../../${SPHINX_CMD} -W -b html source build || exit 1 ;
-
-.PHONY:
-rss: doc chsdi/static/doc/build/releasenotes/index.html
-	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
-	${PYTHON_CMD} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
 
 .PHONY: translate
 translate:
@@ -337,6 +328,7 @@ apache/wsgi.conf: apache/wsgi.conf.in \
                   .venv/last-modwsgi-user \
                   .venv/last-wsgi-processes \
                   .venv/last-wsgi-threads \
+									.venv/last-doc-website-url \
                   .venv/last-wsgi-app \
                   .venv/last-kml-temp-dir
 	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
@@ -353,6 +345,7 @@ apache/wsgi.conf: apache/wsgi.conf.in \
 		--var "wsgi_processes=$(WSGI_PROCESSES)" \
 		--var "wsgi_threads=$(WSGI_THREADS)" \
 		--var "wsgi_app=$(WSGI_APP)" \
+		--var "doc_website_url=$(DOC_WEBSITE_URL)" \
 		--var "kml_temp_dir=$(KML_TEMP_DIR)" $< > $@
 
 development.ini.in:
@@ -442,7 +435,7 @@ requirements.txt:
 		virtualenv $(INSTALL_DIRECTORY); \
 		${PIP_CMD} install --upgrade pip==9.0.1 setuptools --index-url ${PYPI_URL} ; \
 	fi
-	${PIP_CMD} install --index-url ${PYPI_URL} --find-links local_eggs/ -e .
+	${PIP_CMD} install --index-url ${PYPI_URL}  -e .
 
 .venv/bin/git-secrets: .venv
 	@echo "${GREEN}Installing git secrets${RESET}";
@@ -594,6 +587,9 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-wsgi-app::
 	$(call cachelastvariable,$@,$(WSGI_APP),$(LAST_WSGI_APP),wsgi-app)
+
+.venv/last-doc-website-url::
+	$(call cachelastvariable,$@,$(SITE_URL),$(DOC_WEBSITE_URL),doc-website-url)
 
 fixrights:
 	@echo "${GREEN}Fixing rights...${RESET}";

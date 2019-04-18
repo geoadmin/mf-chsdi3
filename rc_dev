@@ -24,3 +24,4 @@ export WSGI_THREADS=15
 export CMSGEOADMINHOST=https://cms.geo.admin.ch
 export LINKEDDATAHOST=https://ld.geo.admin.ch
 export CACHE_CONTROL=no-cache
+export DOC_WEBSITE_URL=https://terraform-doc-chsdi3-website.s3-eu-west-1.amazonaws.com
