@@ -74,7 +74,7 @@ RewriteRule ^${apache_entry_path}/EPSG/(\d+)/(de|fr|it|rm|en)/1.0.0/WMTSCapabili
 
 # Doc in S3
 RewriteCond %{REQUEST_URI} ^${apache_entry_path}/$
-RewriteRule ^(.*)$ ${doc_website_url}/index.html [L]
+RewriteRule ^${apache_entry_path}/$ ${doc_website_url}/index.html [R=302,L]
 RewriteRule ^${apache_entry_path}/(api|releasenotes|services)/(.*)  ${doc_website_url}/$1/$2 [R=302,L]
 
 # Shorten service
