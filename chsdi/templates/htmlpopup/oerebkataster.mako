@@ -11,8 +11,7 @@ def get_xml(path):
       response = requests.get(path)
       if response.status_code == 200:
        # there are different namespaces from canton to canton -> remove namespace
-       xmlstring = re.sub(r'\sxmlns[^"]+"[^"]+"', '', response.text)
-       xmlstring = re.sub(r'\sxsi[^"]+"[^"]+"', '', xmlstring)
+       xmlstring = re.sub(r'(\sxmlns|\sxsi)[^"]+"[^"]+"', '', response.text)
        root = et.fromstring(xmlstring)
        #egrid = root.find('{http://schemas.geo.admin.ch/V_D/OeREB/1.0/Extract}egrid').text
        list_egrid = root.findall('.//egrid') # findall, as the cantons have different structures
