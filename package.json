@@ -21,7 +21,7 @@
     "d3-tip": "~0.6.3",
     "fast-csv": "^2.4.1",
     "google-spreadsheet": "2.0.4",
-    "jquery": "~3.2.1",
+    "jquery": ">=3.4.0",
     "less": "~2.7.0",
     "less-plugin-clean-css": "~1.5.1"
   }
