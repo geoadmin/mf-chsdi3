@@ -4892,6 +4892,7 @@ msgstr "5G antenna locations (NR)"
 msgid "ch.bakom.mobil-antennenstandorte-5g.powercode"
 msgstr "Radiated power (ERP)"
 
+
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "2G (GSM) antenna locations"
 

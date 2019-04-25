@@ -3199,3 +3199,21 @@ class CadastralWebMapOpenData(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo-vd.amtliche-vermessung', CadastralWebMapOpenData)
+
+
+class Vec25GewaessernetzReferenz(Base, Vector):
+    __tablename__ = 'v25_gewaessernetz_ref'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __template__ = 'templates/htmlpopup/gewaessernetzref.mako'
+    __bodId__ = 'ch.swisstopo.vec25-gewaessernetz_referenz'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    gewissnr = Column('gewissnr', Integer)
+    gwlnr = Column('gwlnr', Unicode)
+    objectval = Column('objectval', Unicode)
+    objectval_de = Column('objectval_de', Unicode)
+    objectval_fr = Column('objectval_fr', Unicode)
+    objectid = Column('objectid', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.vec25-gewaessernetz_referenz', Vec25GewaessernetzReferenz)
