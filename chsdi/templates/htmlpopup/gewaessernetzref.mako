@@ -3,8 +3,8 @@
 <%def name="table_body(c, lang)">
 
 <%
-    lang = lang if lang in ('fr', 'it', 'en') else 'de'
-    lang = lang if lang != 'it' else 'fr'
+    lang = 'fr' if lang == 'it' else lang
+    lang = 'de' if lang != 'fr' else lang
     objectval = 'objectval_%s' % lang
 
 %>
