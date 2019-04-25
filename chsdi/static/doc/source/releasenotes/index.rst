@@ -14,6 +14,42 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20190429:
+
+Release 20190429 - Monday, April 29th 2019
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_190410...r_190429>`__
+- Announcement:
+    - The BAG layer `ch.bag.zecken-lyme` will be completely removed from the BGDI services during Q2 2019.
+    - The following BAFU layers are today removed from the BGDI services
+        - ch.bafu.holzvorrat
+        - ch.bafu.holznutzung
+        - ch.bafu.holzzuwachs
+        - ch.bafu.landesforstinventar-baumarten
+        - ch.bafu.landesforstinventar-totholz
+        - ch.bafu.landesforstinventar-waldanteil
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_190410...r_190429>`__
+
+
+Geodata
+*******
+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Statistics on hydropower plants (WASTA) <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20190410:
 
 Release 20190410 - Wednesday, April 10th 2019
