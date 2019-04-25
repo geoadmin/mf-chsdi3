@@ -52,9 +52,11 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Altitudinal zones 2085 less dry <//map.geo.admin.ch/?layers=ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken>`__ (ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken)     |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `<Altitudinal zones 2085 dry //map.geo.admin.ch/?layers=ch.bafu.wald-vegetationshoehenstufen_2085_trocken>`__ (ch.bafu.wald-vegetationshoehenstufen_2085_trocken)                          |
+| New    | `<Altitudinal zones 2085 dry <//map.geo.admin.ch/?layers=ch.bafu.wald-vegetationshoehenstufen_2085_trocken>`__ (ch.bafu.wald-vegetationshoehenstufen_2085_trocken)                         |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Altitudinal zones 1995 <//map.geo.admin.ch/?layers=ch.bafu.wald-vegetationshoehenstufen_1995>`__ (ch.bafu.wald-vegetationshoehenstufen_1995)                                              |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hydrological network VECTOR25 <//map.geo.admin.ch/?layers=ch.swisstopo.vec25-gewaessernetz_referenz>`__ (ch.swisstopo.vec25-gewaessernetz_referenz)                                       |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `ShowMe communes: floods <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_hochwasser>`__ (ch.bafu.showme-gemeinden_hochwasser)                                                         |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -68,7 +70,7 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `ShowMe cantons: avalanches <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_lawinen>`__ (ch.bafu.showme-kantone_lawinen)                                                                |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `ShowMe cantons: landslides <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_rutschungen>`__ ch.bafu.showme-kantone_rutschungen()                                                        |
+| Update | `ShowMe cantons: landslides <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_rutschungen>`__ (ch.bafu.showme-kantone_rutschungen)                                                        |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `ShowMe cantons: fall processes <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_sturzprozesse>`__ (ch.bafu.showme-kantone_sturzprozesse)                                                |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
