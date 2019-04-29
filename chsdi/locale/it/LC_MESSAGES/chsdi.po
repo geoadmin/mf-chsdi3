@@ -4646,17 +4646,110 @@ msgstr "Aree boschive danneggiate Vivian"
 msgid "ch.bafu.wald-standortsregionen"
 msgstr "Regioni stazionali forestali"
 
+msgid "ch.bafu.wald-standortsregionen.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-standortsregionen.code_bu"
+msgstr "code_bu"
+
+msgid "ch.bafu.wald-standortsregionen.code_fi"
+msgstr "code_fi"
+
+msgid "ch.bafu.wald-standortsregionen.region_de"
+msgstr "Regione stazionale forestale"
+
+msgid "ch.bafu.wald-standortsregionen.region_en"
+msgstr "Regione stazionale fo-restale"
+
+msgid "ch.bafu.wald-standortsregionen.region_fr"
+msgstr "Regione stazionale forestale"
+
+msgid "ch.bafu.wald-standortsregionen.region_it"
+msgstr "Regione stazionale forestale"
+
+msgid "ch.bafu.wald-standortsregionen.subcode"
+msgstr "subcode"
+
 msgid "ch.bafu.wald-tannenareale"
 msgstr "Areale dell'abete bianco"
+
+msgid "ch.bafu.wald-tannenareale.areal_de"
+msgstr "Areale dell’abete bianco"
+
+msgid "ch.bafu.wald-tannenareale.areal_en"
+msgstr "Areale dell’abete bianco"
+
+msgid "ch.bafu.wald-tannenareale.areal_fr"
+msgstr "Areale dell’abete bianco"
+
+msgid "ch.bafu.wald-tannenareale.areal_it"
+msgstr "Areale dell’abete bianco"
+
+msgid "ch.bafu.wald-tannenareale.code_ta"
+msgstr "code_ta"
 
 msgid "ch.bafu.wald-vegetationshoehenstufen_1995"
 msgstr "Fasce altitudinali 1995"
 
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_de"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_en"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_fr"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_it"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.subcode"
+msgstr "subcode"
+
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken"
 msgstr "Fasce altitudinali 2085 secco"
 
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_de"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_en"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_fr"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_it"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.subcode"
+msgstr "subcode"
+
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken"
 msgstr "Fasce altitudinali 2085 meno secco"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_de"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_en"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_fr"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_it"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
+msgstr "subcode"
 
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Punto fisso del profilo trasversale"
@@ -6443,11 +6536,50 @@ msgstr "Città dell’energia verso 2000 Watt"
 msgid "ch.bfe.energiestaedte.2000watt-energiestaedteaufdemweg"
 msgstr "Città dell’energia verso 2000 Watt"
 
+msgid "ch.bfe.energiestaedte.beteiligtegemeinde"
+msgstr "Comuni partecipanti"
+
+msgid "ch.bfe.energiestaedte.einwohner"
+msgstr "Numero di abitanti"
+
 msgid "ch.bfe.energiestaedte-energieregionen"
 msgstr "Regioni-Energia"
 
+msgid "ch.bfe.energiestaedte-energieregionen.berater"
+msgstr "Responsabile di progetto o contatto generale"
+
+msgid "ch.bfe.energiestaedte-energieregionen.beteiligtegemeinden"
+msgstr "Comuni partecipanti"
+
+msgid "ch.bfe.energiestaedte-energieregionen.erklaerung"
+msgstr "Breve spiegazione"
+
+msgid "ch.bfe.energiestaedte-energieregionen.erklaerungslink"
+msgstr "Link al programma"
+
+msgid "ch.bfe.energiestaedte-energieregionen.kategorie"
+msgstr "Stato"
+
+msgid "ch.bfe.energiestaedte-energieregionen.linkenergieregion"
+msgstr "Link a Regione-Energia"
+
 msgid "ch.bfe.energiestaedte-energieregionen.name"
-msgstr "Regioni-Energia"
+msgstr "Regione-Energia"
+
+msgid "ch.bfe.energiestaedte-energieregionen.projektportrait"
+msgstr "Descrizione del progetto"
+
+msgid "ch.bfe.energiestaedte-energieregionen.status"
+msgstr "Stato"
+
+msgid "ch.bfe.energiestaedte.energiestadtseit"
+msgstr "Città dell’energia dal/dall‘"
+
+msgid "ch.bfe.energiestaedte.erklaerung"
+msgstr "Breve spiegazione"
+
+msgid "ch.bfe.energiestaedte.linkenergiestadtweb"
+msgstr "Dettagli sul sito Internet della Città dell’energia"
 
 msgid "ch.bfe.energiestaedte.name"
 msgstr "Comune / città"

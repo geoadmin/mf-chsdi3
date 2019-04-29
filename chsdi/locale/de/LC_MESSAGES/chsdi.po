@@ -4646,17 +4646,110 @@ msgstr "Sturmschaden Vivian"
 msgid "ch.bafu.wald-standortsregionen"
 msgstr "Waldstandortsregionen"
 
+msgid "ch.bafu.wald-standortsregionen.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-standortsregionen.code_bu"
+msgstr "code_bu"
+
+msgid "ch.bafu.wald-standortsregionen.code_fi"
+msgstr "code_fi"
+
+msgid "ch.bafu.wald-standortsregionen.region_de"
+msgstr "Waldstandortsregion"
+
+msgid "ch.bafu.wald-standortsregionen.region_en"
+msgstr "Waldstandortsregion"
+
+msgid "ch.bafu.wald-standortsregionen.region_fr"
+msgstr "Waldstandortsregion"
+
+msgid "ch.bafu.wald-standortsregionen.region_it"
+msgstr "Waldstandortsregion"
+
+msgid "ch.bafu.wald-standortsregionen.subcode"
+msgstr "subcode"
+
 msgid "ch.bafu.wald-tannenareale"
 msgstr "Tannenareale"
+
+msgid "ch.bafu.wald-tannenareale.areal_de"
+msgstr "Tannenareal"
+
+msgid "ch.bafu.wald-tannenareale.areal_en"
+msgstr "Tannenareal"
+
+msgid "ch.bafu.wald-tannenareale.areal_fr"
+msgstr "Tannenareal"
+
+msgid "ch.bafu.wald-tannenareale.areal_it"
+msgstr "Tannenareal"
+
+msgid "ch.bafu.wald-tannenareale.code_ta"
+msgstr "code_ta"
 
 msgid "ch.bafu.wald-vegetationshoehenstufen_1995"
 msgstr "Höhenstufen 1995"
 
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_de"
+msgstr "Vegetationshöhenstufe"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_en"
+msgstr "Vegetationshöhenstufe"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_fr"
+msgstr "Vegetationshöhenstufe"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_it"
+msgstr "Vegetationshöhenstufe"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.subcode"
+msgstr "subcode"
+
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken"
 msgstr "Höhenstufen 2085 trocken"
 
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_de"
+msgstr "Vegetationshöhenstufe"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_en"
+msgstr "Vegetationshöhenstufe"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_fr"
+msgstr "Vegetationshöhenstufe"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_it"
+msgstr "Vegetationshöhenstufe"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.subcode"
+msgstr "subcode"
+
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken"
 msgstr "Höhenstufen 2085 mässig trocken"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_de"
+msgstr "Vegetationshöhenstufe"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_en"
+msgstr "Vegetationshöhenstufe"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_fr"
+msgstr "Vegetationshöhenstufe"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_it"
+msgstr "Vegetationshöhenstufe"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
+msgstr "subcode"
 
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Querprofilmarke"
@@ -6443,14 +6536,53 @@ msgstr "Energiestädte auf dem Weg 2000-Watt"
 msgid "ch.bfe.energiestaedte.2000watt-energiestaedteaufdemweg"
 msgstr "Energiestädte auf dem Weg 2000-Watt"
 
+msgid "ch.bfe.energiestaedte.beteiligtegemeinde"
+msgstr "Beteiligte Gemeinden"
+
+msgid "ch.bfe.energiestaedte.einwohner"
+msgstr "Einwohner"
+
 msgid "ch.bfe.energiestaedte-energieregionen"
 msgstr "Energie-Regionen"
+
+msgid "ch.bfe.energiestaedte-energieregionen.berater"
+msgstr "Projektleiter oder allgemeiner Kontakt"
+
+msgid "ch.bfe.energiestaedte-energieregionen.beteiligtegemeinden"
+msgstr "Beteiligte Gemeinden"
+
+msgid "ch.bfe.energiestaedte-energieregionen.erklaerung"
+msgstr "Kurzerklärung"
+
+msgid "ch.bfe.energiestaedte-energieregionen.erklaerungslink"
+msgstr "Link zum Programm"
+
+msgid "ch.bfe.energiestaedte-energieregionen.kategorie"
+msgstr "Status"
+
+msgid "ch.bfe.energiestaedte-energieregionen.linkenergieregion"
+msgstr "Link zur Energie-Region"
 
 msgid "ch.bfe.energiestaedte-energieregionen.name"
 msgstr "Energie-Regionen"
 
+msgid "ch.bfe.energiestaedte-energieregionen.projektportrait"
+msgstr "Projektporträt"
+
+msgid "ch.bfe.energiestaedte-energieregionen.status"
+msgstr "Status"
+
+msgid "ch.bfe.energiestaedte.energiestadtseit"
+msgstr "Energiestadt seit"
+
+msgid "ch.bfe.energiestaedte.erklaerung"
+msgstr "Kurzerklärung"
+
+msgid "ch.bfe.energiestaedte.linkenergiestadtweb"
+msgstr "Details auf der Energiestadt-Website"
+
 msgid "ch.bfe.energiestaedte.name"
-msgstr "Gemeinde / Stadt"
+msgstr "Gemeinde/Stadt"
 
 msgid "ch.bfe.geak-experten"
 msgstr "GEAK-Experten"

@@ -4646,17 +4646,110 @@ msgstr "Vivian storm damage"
 msgid "ch.bafu.wald-standortsregionen"
 msgstr "Forest ecoregions"
 
+msgid "ch.bafu.wald-standortsregionen.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-standortsregionen.code_bu"
+msgstr "code_bu"
+
+msgid "ch.bafu.wald-standortsregionen.code_fi"
+msgstr "code_fi"
+
+msgid "ch.bafu.wald-standortsregionen.region_de"
+msgstr "Forest ecoregion"
+
+msgid "ch.bafu.wald-standortsregionen.region_en"
+msgstr "Forest ecoregion"
+
+msgid "ch.bafu.wald-standortsregionen.region_fr"
+msgstr "Forest ecoregion"
+
+msgid "ch.bafu.wald-standortsregionen.region_it"
+msgstr "Forest ecoregion"
+
+msgid "ch.bafu.wald-standortsregionen.subcode"
+msgstr "subcode"
+
 msgid "ch.bafu.wald-tannenareale"
 msgstr "Areas of silver fir"
+
+msgid "ch.bafu.wald-tannenareale.areal_de"
+msgstr "Area of silver fir"
+
+msgid "ch.bafu.wald-tannenareale.areal_en"
+msgstr "Area of silver fir"
+
+msgid "ch.bafu.wald-tannenareale.areal_fr"
+msgstr "Area of silver fir"
+
+msgid "ch.bafu.wald-tannenareale.areal_it"
+msgstr "Area of silver fir"
+
+msgid "ch.bafu.wald-tannenareale.code_ta"
+msgstr "code_ta"
 
 msgid "ch.bafu.wald-vegetationshoehenstufen_1995"
 msgstr "Altitudinal zones 1995"
 
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_de"
+msgstr "Altitudinal vegetation belts"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_en"
+msgstr "Altitudinal vegetation belts"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_fr"
+msgstr "Altitudinal vegetation belts"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_it"
+msgstr "Altitudinal vegetation belts"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.subcode"
+msgstr "subcode"
+
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken"
 msgstr "Altitudinal zones 2085 dry"
 
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_de"
+msgstr "Altitudinal vegetation belts"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_en"
+msgstr "Altitudinal vegetation belts"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_fr"
+msgstr "Altitudinal vegetation belts"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_it"
+msgstr "Altitudinal vegetation belts"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.subcode"
+msgstr "subcode"
+
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken"
 msgstr "Altitudinal zones 2085 less dry"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_de"
+msgstr "Altitudinal vegetation belts"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_en"
+msgstr "Altitudinal vegetation belts"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_fr"
+msgstr "Altitudinal vegetation belts"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_it"
+msgstr "Altitudinal vegetation belts"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
+msgstr "subcode"
 
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Cross section securing point"
@@ -4891,7 +4984,6 @@ msgstr "5G antenna locations (NR)"
 
 msgid "ch.bakom.mobil-antennenstandorte-5g.powercode"
 msgstr "Radiated power (ERP)"
-
 
 msgid "ch.bakom.mobil-antennenstandorte-gsm"
 msgstr "2G (GSM) antenna locations"
@@ -6444,11 +6536,50 @@ msgstr "Energy Cities on the Path 2000-Watt"
 msgid "ch.bfe.energiestaedte.2000watt-energiestaedteaufdemweg"
 msgstr "Energy Cities on the Path 2000-Watt"
 
+msgid "ch.bfe.energiestaedte.beteiligtegemeinde"
+msgstr "Participating municipalities"
+
+msgid "ch.bfe.energiestaedte.einwohner"
+msgstr "Number of inhabitants"
+
 msgid "ch.bfe.energiestaedte-energieregionen"
 msgstr "Energy-Regions"
 
+msgid "ch.bfe.energiestaedte-energieregionen.berater"
+msgstr "Project leader or general contact"
+
+msgid "ch.bfe.energiestaedte-energieregionen.beteiligtegemeinden"
+msgstr "Participating municipali-ties"
+
+msgid "ch.bfe.energiestaedte-energieregionen.erklaerung"
+msgstr "Brief introduction"
+
+msgid "ch.bfe.energiestaedte-energieregionen.erklaerungslink"
+msgstr "Link to programme"
+
+msgid "ch.bfe.energiestaedte-energieregionen.kategorie"
+msgstr "State"
+
+msgid "ch.bfe.energiestaedte-energieregionen.linkenergieregion"
+msgstr "Link to Energy Region"
+
 msgid "ch.bfe.energiestaedte-energieregionen.name"
 msgstr "Energy-Regions"
+
+msgid "ch.bfe.energiestaedte-energieregionen.projektportrait"
+msgstr "Project portrait"
+
+msgid "ch.bfe.energiestaedte-energieregionen.status"
+msgstr "State"
+
+msgid "ch.bfe.energiestaedte.energiestadtseit"
+msgstr "Energy City since"
+
+msgid "ch.bfe.energiestaedte.erklaerung"
+msgstr "Brief introduction"
+
+msgid "ch.bfe.energiestaedte.linkenergiestadtweb"
+msgstr "Details on Energy City website"
 
 msgid "ch.bfe.energiestaedte.name"
 msgstr "Municipality / city"
