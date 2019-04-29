@@ -14,6 +14,69 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20190429:
+
+Release 20190429 - Monday, April 29th 2019
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_190410...r_190429>`__
+- Announcement:
+    - The BAG layer `ch.bag.zecken-lyme` will be completely removed from the BGDI services during Q2 2019.
+    - The following BAFU layers are today removed from the BGDI services
+        - ch.bafu.holzvorrat
+        - ch.bafu.holznutzung
+        - ch.bafu.holzzuwachs
+        - ch.bafu.landesforstinventar-baumarten
+        - ch.bafu.landesforstinventar-totholz
+        - ch.bafu.landesforstinventar-waldanteil
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_190410...r_190429>`__
+
+
+Geodata
+*******
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Areas of silver fir <//map.geo.admin.ch/?layers=ch.bafu.wald-tannenareale>`__ (ch.bafu.wald-tannenareale)                                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Forest ecoregions <//map.geo.admin.ch/?layers=ch.bafu.wald-standortsregionen>`__ (ch.bafu.wald-standortsregionen)                                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Altitudinal zones 2085 less dry <//map.geo.admin.ch/?layers=ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken>`__ (ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken)     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `<Altitudinal zones 2085 dry <//map.geo.admin.ch/?layers=ch.bafu.wald-vegetationshoehenstufen_2085_trocken>`__ (ch.bafu.wald-vegetationshoehenstufen_2085_trocken)                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Altitudinal zones 1995 <//map.geo.admin.ch/?layers=ch.bafu.wald-vegetationshoehenstufen_1995>`__ (ch.bafu.wald-vegetationshoehenstufen_1995)                                              |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hydrological network VECTOR25 <//map.geo.admin.ch/?layers=ch.swisstopo.vec25-gewaessernetz_referenz>`__ (ch.swisstopo.vec25-gewaessernetz_referenz)                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: floods <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_hochwasser>`__ (ch.bafu.showme-gemeinden_hochwasser)                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: avalanches <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_lawinen>`__ (ch.bafu.showme-gemeinden_lawinen)                                                           |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: landslides <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_rutschungen>`__ (ch.bafu.showme-gemeinden_rutschungen)                                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe communes: fall processes <//map.geo.admin.ch/?layers=ch.bafu.showme-gemeinden_sturzprozesse>`__ (ch.bafu.showme-gemeinden_sturzprozesse)                                           |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: floods <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_hochwasser>`__ (ch.bafu.showme-kantone_hochwasser)                                                              |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: avalanches <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_lawinen>`__ (ch.bafu.showme-kantone_lawinen)                                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: landslides <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_rutschungen>`__ (ch.bafu.showme-kantone_rutschungen)                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ShowMe cantons: fall processes <//map.geo.admin.ch/?layers=ch.bafu.showme-kantone_sturzprozesse>`__ (ch.bafu.showme-kantone_sturzprozesse)                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Statistics on hydropower plants (WASTA) <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20190410:
 
 Release 20190410 - Wednesday, April 10th 2019
