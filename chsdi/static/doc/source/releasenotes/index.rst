@@ -48,7 +48,7 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Areas of silver fir <//map.geo.admin.ch/?layers=ch.bafu.wald-tannenareale>`__ (ch.bafu.wald-tannenareale)                                                                                 |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `ShowMe cantons: fall processes <//map.geo.admin.ch/?layers=ch.bafu.wald-standortsregionen>`__ (ch.bafu.wald-standortsregionen)                                                            |
+| New    | `Forest ecoregions <//map.geo.admin.ch/?layers=ch.bafu.wald-standortsregionen>`__ (ch.bafu.wald-standortsregionen)                                                                         |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Altitudinal zones 2085 less dry <//map.geo.admin.ch/?layers=ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken>`__ (ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken)     |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
