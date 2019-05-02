@@ -14,4 +14,5 @@
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.train_number_day')}</td>             <td>${c['attributes']['train_number_day'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.train_number_freight_d')}</td>       <td>${c['attributes']['train_number_freight_d'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.lre_remark')}</td>                   <td>${c['attributes']['lre_remark'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.year_evaluation')}</td>              <td>${c['attributes']['year_evaluation'] or '-'}</td></tr>
 </%def>
