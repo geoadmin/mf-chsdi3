@@ -16,6 +16,48 @@ Release Notes
 
 .. _releasenotes_20190429:
 
+Release 20190513 - Monday, May 13th 2019
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_190429...r_190513>`__
+- Announcement:
+    - The BAG layer `ch.bag.zecken-lyme` will be completely removed from the BGDI services during Q2 2019.
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_190429...r_190513>`__
+
+
+Geodata
+*******
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `SWISSIMAGE HIST 1946 <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product_1946>`__ (ch.swisstopo.swissimage-product_1946)                                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissBATHY3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissbathy3d-reliefschattierung>`__ (ch.swisstopo.swissbathy3d-reliefschattierung)                                                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mountainbiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.mountainbikeland>`__ (ch.astra.mountainbikeland)                                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images cantons <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-kantone>`__ (ch.swisstopo.lubis-luftbilder-dritte-kantone)                                                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.wanderland>`__ (ch.astra.wanderland)                                                                                                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Skating in Switzerland <//map.geo.admin.ch/?layers=ch.astra.skatingland>`__ (ch.astra.skatingland)                                                                                                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cycling in Switzerland <//map.geo.admin.ch/?layers=ch.astra.veloland>`__ (ch.astra.veloland)                                                                                                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway noise (act.) N emissions <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht)  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway noise (act.) D emissions <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag)      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Release 20190429 - Monday, April 29th 2019
 -------------------------------------------------
 
