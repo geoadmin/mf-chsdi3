@@ -1142,25 +1142,19 @@ msgstr "aufzuhebend"
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Baulinien Nationalstrassen OeREB"
 
-msgid "ch.astra.baulinien-nationalstrassen.oereb.inkraft"
-msgstr "in Kraft"
-
-msgid "ch.astra.baulinien-nationalstrassen.oereb.laufendeaenderung"
-msgstr "Laufende Änderung"
-
 msgid "ch.astra.baulinien-nationalstrassen.oereb.publiziertab"
 msgstr "Publiziert ab"
 
-msgid "ch.astra.baulinien-nationalstrassen.oereb.text_amt_%lang%"
-msgstr "Amt"
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_amt"
+msgstr "Zuständige Stelle"
 
-msgid "ch.astra.baulinien-nationalstrassen.oereb.text_aussage_%lang%"
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_aussage"
 msgstr "Aussage"
 
-msgid "ch.astra.baulinien-nationalstrassen.oereb.text_rechtsstatus_%lang%"
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_rechtsstatus"
 msgstr "Rechtsstatus"
 
-msgid "ch.astra.baulinien-nationalstrassen.oereb.text_thema_%lang%"
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_thema"
 msgstr "Thema"
 
 msgid "ch.astra.baulinien-nationalstrassen.publication_date"
@@ -5597,16 +5591,16 @@ msgstr "Altlasten/belastete Standorte öV ÖREB"
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.publiziertab"
 msgstr "Publiziert ab"
 
-msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_amt_%lang%"
-msgstr "Amt"
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_amt"
+msgstr "Zuständige Stelle"
 
-msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_aussage_%lang%"
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_aussage"
 msgstr "Aussage"
 
-msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_rechtsstatus_%lang%"
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_rechtsstatus"
 msgstr "Rechtsstatus"
 
-msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_thema_%lang%"
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_thema"
 msgstr "Thema"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
@@ -6092,64 +6086,16 @@ msgstr "Belastete Standorte ziv. Flp. ÖREB"
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.publiziertab"
 msgstr "Publiziert ab"
 
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_de"
-msgstr "Amt"
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt"
+msgstr "Zuständige Stelle"
 
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_en"
-msgstr "Amt"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_fr"
-msgstr "Amt"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_it"
-msgstr "Amt"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_rm"
-msgstr "Amt"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_de"
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage"
 msgstr "Aussage"
 
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_en"
-msgstr "Aussage"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_fr"
-msgstr "Aussage"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_it"
-msgstr "Aussage"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_rm"
-msgstr "Aussage"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_de"
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus"
 msgstr "Rechtsstatus"
 
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_en"
-msgstr "Rechtsstatus"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_fr"
-msgstr "Rechtsstatus"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_it"
-msgstr "Rechtsstatus"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_rm"
-msgstr "Rechtsstatus"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_de"
-msgstr "Thema"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_en"
-msgstr "Thema"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_fr"
-msgstr "Thema"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_it"
-msgstr "Thema"
-
-msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_rm"
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema"
 msgstr "Thema"
 
 msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze"
@@ -6359,16 +6305,16 @@ msgstr "Projektierungszonen Flughäfen ÖREB"
 msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.publiziertab"
 msgstr "Publiziert ab"
 
-msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_amt_%lang%"
-msgstr "Amt"
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_amt"
+msgstr "Zuständige Stelle"
 
-msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_aussage_%lang%"
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_aussage"
 msgstr "Aussage"
 
-msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_rechtsstatus_%lang%"
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_rechtsstatus"
 msgstr "Rechtsstatus"
 
-msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_thema_%lang%"
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_thema"
 msgstr "Thema"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
@@ -6398,16 +6344,16 @@ msgstr "Sicherheitszonenplan ÖREB"
 msgid "ch.bazl.sicherheitszonenplan.oereb.publiziertab"
 msgstr "Publiziert ab"
 
-msgid "ch.bazl.sicherheitszonenplan.oereb.text_amt_%lang%"
-msgstr "Amt"
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_amt"
+msgstr "Zuständige Stelle"
 
-msgid "ch.bazl.sicherheitszonenplan.oereb.text_aussage_%lang%"
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_aussage"
 msgstr "Aussage"
 
-msgid "ch.bazl.sicherheitszonenplan.oereb.text_rechtsstatus_%lang%"
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_rechtsstatus"
 msgstr "Rechtsstatus"
 
-msgid "ch.bazl.sicherheitszonenplan.oereb.text_thema_%lang%"
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_thema"
 msgstr "Thema"
 
 msgid "ch.bazl.sicherheitszonenplan.SafetyZone.Description"
@@ -6659,16 +6605,19 @@ msgstr "Gemeinde / Stadt"
 msgid "ch.bfe.energiestaedte-2000watt-energiestaedteaufdemweg"
 msgstr "Energiestädte auf dem Weg 2000-Watt"
 
-msgid "ch.bfe.energiestaedte. 2000watt-energiestaedteaufdemweg"
-msgstr "Energiestädte auf dem Weg 2000-Watt"
-
 msgid "ch.bfe.energiestaedte.2000watt-energiestaedteaufdemweg"
 msgstr "Energiestädte auf dem Weg 2000-Watt"
+
+msgid "ch.bfe.energiestaedte.anzahlaudits"
+msgstr "Anzahl erfolgreicher Audits"
+
+msgid "ch.bfe.energiestaedte.berater"
+msgstr "Beraterin oder Berater"
 
 msgid "ch.bfe.energiestaedte.beteiligtegemeinde"
 msgstr "Beteiligte Gemeinden"
 
-msgid "ch.bfe.energiestaedte.einwohner"
+msgid "ch.bfe.energiestaedte.einwohnerzahl"
 msgstr "Einwohner"
 
 msgid "ch.bfe.energiestaedte-energieregionen"
@@ -6693,7 +6642,7 @@ msgid "ch.bfe.energiestaedte-energieregionen.linkenergieregion"
 msgstr "Link zur Energie-Region"
 
 msgid "ch.bfe.energiestaedte-energieregionen.name"
-msgstr "Energie-Regionen"
+msgstr "Energie-Region"
 
 msgid "ch.bfe.energiestaedte-energieregionen.projektportrait"
 msgstr "Projektporträt"
@@ -6712,6 +6661,18 @@ msgstr "Details auf der Energiestadt-Website"
 
 msgid "ch.bfe.energiestaedte.name"
 msgstr "Gemeinde/Stadt"
+
+msgid "ch.bfe.energiestaedte.punktezahl"
+msgstr "Punktezahl"
+
+msgid "ch.bfe.fernwaerme-angebot"
+msgstr "Wärme- und Kälteangebot"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie"
+msgstr "Wärme-/Kältenachfrage Industrie"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
+msgstr "Wärme-/Kältenachfrage Wohnen und DL"
 
 msgid "ch.bfe.geak-experten"
 msgstr "GEAK-Experten"
@@ -7422,7 +7383,7 @@ msgid "ch.blw.emapis-zusammenfassung"
 msgstr "Ländliche Entwicklung"
 
 msgid "ch.blw.erosion"
-msgstr "Erosionsrisiko qualitativ 1"
+msgstr "Erosionsrisiko qualitativ"
 
 msgid "ch.blw.erosion2"
 msgstr "Erosionsrisiko"
