@@ -131,19 +131,22 @@ class Search(SearchValidation):
 
         if len(searchList) != 0:
             try:
-                # standard wildcard search
-                self.sphinx.AddQuery(searchTextFinal, index='swisssearch')
-                # exact search with priority
+                # wildcard search only if more than one character in searchtext
+                if len(' '.join(self.searchText)) > 1 or self.bbox:
+                    # standard wildcard search
+                    self.sphinx.AddQuery(searchTextFinal, index='swisssearch')
+
+                # exact search, first 10 results
                 searchText = '@detail ^%s' % ' '.join(self.searchText)
                 self.sphinx.AddQuery(searchText, index='swisssearch')
-                # reset settings
 
+                # reset settings
                 temp = self.sphinx.RunQueries()
 
             except IOError:  # pragma: no cover
                 raise exc.HTTPGatewayTimeout()
 
-            temp_merged = temp[1]['matches'] + temp[0]['matches'] if len(temp) == 2 else temp['matches']
+            temp_merged = temp[1]['matches'] + temp[0]['matches'] if len(temp) == 2 else temp[0]['matches']
 
             # remove duplicate results, exact search results have priority over wildcard search results
             temp = []
