@@ -2537,6 +2537,7 @@ class LaermBelastungEinsenbahnTatsaechlicheEmissionTag(Base, Vector):
     train_number_day = Column('train_number_day', Float)
     train_number_freight_d = Column('train_number_freight_d', Float)
     lre_remark = Column('lre_remark', Unicode)
+    year_evaluation = Column('year_evaluation', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag', LaermBelastungEinsenbahnTatsaechlicheEmissionTag)
@@ -2562,6 +2563,7 @@ class LaermBelastungEinsenbahnTatsaechlicheEmissionNacht(Base, Vector):
     train_number_night = Column('train_number_night', Float)
     train_number_freight_n = Column('train_number_freight_n', Float)
     lre_remark = Column('lre_remark', Unicode)
+    year_evaluation = Column('year_evaluation', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht', LaermBelastungEinsenbahnTatsaechlicheEmissionNacht)

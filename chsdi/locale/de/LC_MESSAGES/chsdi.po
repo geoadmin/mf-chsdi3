@@ -1148,6 +1148,21 @@ msgstr "in Kraft"
 msgid "ch.astra.baulinien-nationalstrassen.oereb.laufendeaenderung"
 msgstr "Laufende Änderung"
 
+msgid "ch.astra.baulinien-nationalstrassen.oereb.publiziertab"
+msgstr "Publiziert ab"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_amt_%lang%"
+msgstr "Amt"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_aussage_%lang%"
+msgstr "Aussage"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_rechtsstatus_%lang%"
+msgstr "Rechtsstatus"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_thema_%lang%"
+msgstr "Thema"
+
 msgid "ch.astra.baulinien-nationalstrassen.publication_date"
 msgstr "Publikationsdatum"
 
@@ -5579,6 +5594,21 @@ msgstr "BAV Standortnummer"
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
 msgstr "Altlasten/belastete Standorte öV ÖREB"
 
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.publiziertab"
+msgstr "Publiziert ab"
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_amt_%lang%"
+msgstr "Amt"
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_aussage_%lang%"
+msgstr "Aussage"
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_rechtsstatus_%lang%"
+msgstr "Rechtsstatus"
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_thema_%lang%"
+msgstr "Thema"
+
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Eisenbahnlärm, festgel. Emission N"
 
@@ -5663,6 +5693,9 @@ msgstr "Anz. Güterzüge Nacht"
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_number_night"
 msgstr "Anz. Züge Nacht"
 
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.year_evaluation"
+msgstr "Jahr"
+
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag"
 msgstr "Eisenbahnlärm, tats. Emission T"
 
@@ -5692,6 +5725,9 @@ msgstr "Anz. Züge Tag"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.train_number_freight_d"
 msgstr "Anz. Güterzüge Tag"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.year_evaluation"
+msgstr "Jahr"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Emissionsplan Eisenbahn 2015"
@@ -6053,6 +6089,69 @@ msgstr "BAZL Standortnummer"
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb"
 msgstr "Belastete Standorte ziv. Flp. ÖREB"
 
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.publiziertab"
+msgstr "Publiziert ab"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_de"
+msgstr "Amt"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_en"
+msgstr "Amt"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_fr"
+msgstr "Amt"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_it"
+msgstr "Amt"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_rm"
+msgstr "Amt"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_de"
+msgstr "Aussage"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_en"
+msgstr "Aussage"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_fr"
+msgstr "Aussage"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_it"
+msgstr "Aussage"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_rm"
+msgstr "Aussage"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_de"
+msgstr "Rechtsstatus"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_en"
+msgstr "Rechtsstatus"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_fr"
+msgstr "Rechtsstatus"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_it"
+msgstr "Rechtsstatus"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_rm"
+msgstr "Rechtsstatus"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_de"
+msgstr "Thema"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_en"
+msgstr "Thema"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_fr"
+msgstr "Thema"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_it"
+msgstr "Thema"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_rm"
+msgstr "Thema"
+
 msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze"
 msgstr "Lärmbelastungskataster - Zivilflugplätze"
 
@@ -6257,6 +6356,21 @@ msgstr "Projektierungszonen Flughäfen"
 msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb"
 msgstr "Projektierungszonen Flughäfen ÖREB"
 
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.publiziertab"
+msgstr "Publiziert ab"
+
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_amt_%lang%"
+msgstr "Amt"
+
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_aussage_%lang%"
+msgstr "Aussage"
+
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_rechtsstatus_%lang%"
+msgstr "Rechtsstatus"
+
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_thema_%lang%"
+msgstr "Thema"
+
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
 msgstr "SIL Anhörung"
 
@@ -6280,6 +6394,21 @@ msgstr "Sicherheitszonenplan"
 
 msgid "ch.bazl.sicherheitszonenplan.oereb"
 msgstr "Sicherheitszonenplan ÖREB"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.publiziertab"
+msgstr "Publiziert ab"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_amt_%lang%"
+msgstr "Amt"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_aussage_%lang%"
+msgstr "Aussage"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_rechtsstatus_%lang%"
+msgstr "Rechtsstatus"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_thema_%lang%"
+msgstr "Thema"
 
 msgid "ch.bazl.sicherheitszonenplan.SafetyZone.Description"
 msgstr "Beschreibung"

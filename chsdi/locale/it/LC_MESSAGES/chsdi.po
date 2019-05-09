@@ -1148,6 +1148,21 @@ msgstr "en vigore"
 msgid "ch.astra.baulinien-nationalstrassen.oereb.laufendeaenderung"
 msgstr "Modification en cours"
 
+msgid "ch.astra.baulinien-nationalstrassen.oereb.publiziertab"
+msgstr "Publiziert ab_IT"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_amt_%lang%"
+msgstr "Amt_IT"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_aussage_%lang%"
+msgstr "Aussage_IT"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_rechtsstatus_%lang%"
+msgstr "Rechtsstatus_IT"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_thema_%lang%"
+msgstr "Thema_IT"
+
 msgid "ch.astra.baulinien-nationalstrassen.publication_date"
 msgstr "Data di pubblicazione"
 
@@ -5579,6 +5594,21 @@ msgstr "Numero UFT del sito"
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
 msgstr "Siti inquinati trasporti pubbl. RDPP"
 
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.publiziertab"
+msgstr "Publiziert ab_IT"
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_amt_%lang%"
+msgstr "Amt_IT"
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_aussage_%lang%"
+msgstr "Aussage_IT"
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_rechtsstatus_%lang%"
+msgstr "Rechtsstatus_IT"
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_thema_%lang%"
+msgstr "Thema_IT"
+
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Rumore dei treni, emissioni N stab."
 
@@ -5663,6 +5693,9 @@ msgstr "No. treni di merce notte"
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_number_night"
 msgstr "No. di treni notte"
 
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.year_evaluation"
+msgstr "Anno"
+
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag"
 msgstr "Rumore dei treni, emissioni D eff."
 
@@ -5692,6 +5725,9 @@ msgstr "No. di treni giorno"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.train_number_freight_d"
 msgstr "No. treni di merce giorno"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.year_evaluation"
+msgstr "Anno"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Piano delle emissioni 2015"
@@ -6053,6 +6089,69 @@ msgstr "Numero UFAC del sito"
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb"
 msgstr "Siti inquinati aeroporti civ. RDPP"
 
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.publiziertab"
+msgstr "Publiziert ab_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_de"
+msgstr "Amt_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_en"
+msgstr "Amt_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_fr"
+msgstr "Amt_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_it"
+msgstr "Amt_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt_rm"
+msgstr "Amt_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_de"
+msgstr "Aussage_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_en"
+msgstr "Aussage_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_fr"
+msgstr "Aussage_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_it"
+msgstr "Aussage_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage_rm"
+msgstr "Aussage_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_de"
+msgstr "Rechtsstatus_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_en"
+msgstr "Rechtsstatus_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_fr"
+msgstr "Rechtsstatus_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_it"
+msgstr "Rechtsstatus_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus_rm"
+msgstr "Rechtsstatus_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_de"
+msgstr "Thema_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_en"
+msgstr "Thema_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_fr"
+msgstr "Thema_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_it"
+msgstr "Thema_IT"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema_rm"
+msgstr "Thema_IT"
+
 msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze"
 msgstr "Catasto dei rumori – aerodromi civili"
 
@@ -6257,6 +6356,21 @@ msgstr "Zone riservate aeroporti"
 msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb"
 msgstr "Zone riservate aeroporti RDPP"
 
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.publiziertab"
+msgstr "Publiziert ab_IT"
+
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_amt_%lang%"
+msgstr "Amt_IT"
+
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_aussage_%lang%"
+msgstr "Aussage_IT"
+
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_rechtsstatus_%lang%"
+msgstr "Rechtsstatus_IT"
+
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_thema_%lang%"
+msgstr "Thema_IT"
+
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
 msgstr "PSIA consultazione"
 
@@ -6280,6 +6394,21 @@ msgstr "Piano delle zone di sicurezza"
 
 msgid "ch.bazl.sicherheitszonenplan.oereb"
 msgstr "Piano delle zone di sicurezza RDPP"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.publiziertab"
+msgstr "Publiziert ab_IT"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_amt_%lang%"
+msgstr "Amt_IT"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_aussage_%lang%"
+msgstr "Aussage_IT"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_rechtsstatus_%lang%"
+msgstr "Rechtsstatus_IT"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_thema_%lang%"
+msgstr "Thema_IT"
 
 msgid "ch.bazl.sicherheitszonenplan.SafetyZone.Description"
 msgstr "Denominazione"
