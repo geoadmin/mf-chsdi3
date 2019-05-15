@@ -859,3 +859,43 @@ class TestIdentifyService(TestsBase):
                       tolerance='10',
                       lang='fr')
         self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
+
+    def test_identify_layerDefs_and_where(self):
+        params = {'geometryFormat': 'geojson',
+                  'layers': 'all:ch.bazl.luftfahrthindernis',
+                  'layerDefs': '{"ch.bazl.luftfahrthindernis": "startofconstruction > \'2014-12-01\'"}',
+                  'where': "startofconstruction > \'2014-12-01\'"}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn("Parameters 'layerDefs' and 'where' are mutually exclusive", resp.json['detail'])
+
+    def test_identify_layerDefs_non_existing_layer(self):
+        params = {'geometryFormat': 'geojson',
+                  'geometryType': 'esriGeometryEnvelope',
+                  'geometry': '2548945.5,1147956,2549402,1148103.5',
+                  'imageDisplay': '1367,949,96',
+                  'mapExtent': '2318250,952750,3001750,1427250',
+                  'sr': '2056',
+                  'tolerance': '5',
+                  'layers': 'all:ch.bazl.luftfahrthindernis',
+                  'layerDefs': '{"ch.another.layer": "startofconstruction > \'2014-12-01\'"}'
+                  }
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn("You can only filter on layer", resp.json['detail'])
+
+    def test_identify_layerDefs(self):
+
+        params = {'geometryFormat': 'geojson',
+                  'geometryType': 'esriGeometryEnvelope',
+                  'geometry': '2548945.5,1147956,2549402,1148103.5',
+                  'imageDisplay': '1367,949,96',
+                  'mapExtent': '2318250,952750,3001750,1427250',
+                  'sr': '2056',
+                  'tolerance': '5',
+                  'layers': 'all:ch.bazl.luftfahrthindernis',
+                  'layerDefs': '{"ch.bazl.luftfahrthindernis": "startofconstruction > \'2014-12-01\'"}'
+                  }
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertGeojsonFeature(resp.json['results'][0], 2056)
