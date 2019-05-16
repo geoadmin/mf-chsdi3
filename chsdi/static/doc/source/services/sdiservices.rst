@@ -319,9 +319,11 @@ No more than 50 features can be retrieved per request.
 Filters
 *******
 
-You may filter by attributes on the `searchable layers <../../../api/faq/index.html#which-layers-are-searchable>`_
-To check whick attributes are availables for a searchable layer, you may use the `attributes services <../../../services/sdiservices.html#layer-attributes>`_
-For instance, the layer **ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill** has the following attributes:
+You may filter by attributes with **where** or **layerDefs** only on `searchable layers <../../../api/faq/index.html#which-layers-are-searchable>`_ .
+
+To check which attributes are availables, their types and examples values for a given searchable layer, you may use the `attributes services <../../../services/sdiservices.html#layer-attributes>`_.
+
+For instance, the layer **ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill** has the following two attributes:
 
     http://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill
 
