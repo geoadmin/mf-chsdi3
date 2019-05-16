@@ -8,6 +8,8 @@ use = egg:chsdi
 app_version = ${app_version}
 entry_path = ${apache_entry_path}
 available_languages = de fr it en rm
+# Using a unique worker (issues with models shared between workers #3172)
+workers = 1
 
 pyramid.reload_templates = false
 pyramid.debug_authorization = false
