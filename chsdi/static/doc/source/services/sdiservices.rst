@@ -316,6 +316,49 @@ No more than 50 features can be retrieved per request.
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 
+Filters
+*******
+
+You may filter by attributes on the `searchable layers <../../../api/faq/index.html#which-layers-are-searchable>`_
+To check whick attributes are availables for a searchable layer, you may use the `attributes services <../../../services/sdiservices.html#layer-attributes>`_
+For instance, the layer **ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill** has the following attributes:
+
+    http://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill
+
+.. code-block:: javascript
+
+    {
+       "fields":[
+          {
+             "values":[
+                "Epalinges",
+                "Ependes (VD)",
+                "Grub (AR)",
+                "Leuk",
+                "Uesslingen-Buch"
+             ],
+             "alias":"Name",
+             "type":"VARCHAR",
+             "name":"gemname"
+          },
+          {
+             "values":[
+                3031,
+                4616,
+                5584,
+                5914,
+                6110
+             ],
+             "alias":"BFS-Nummer",
+             "type":"INTEGER",
+             "name":"id"
+          }
+       ],
+       "id":"ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill",
+       "name":"Municipal boundaries"
+    }
+
+
 Examples
 ********
 
