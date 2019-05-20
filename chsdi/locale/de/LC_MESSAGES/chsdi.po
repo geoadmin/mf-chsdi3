@@ -2021,9 +2021,6 @@ msgstr "Als Alternative  zum Weg Unteri Rippa - Bremingard - Col du Chamois wird
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_138"
 msgstr "Der tiefer verlaufende Weg von der Niwenalp zum Stafel ist ausgezäunt; der höher parallel verlaufende Weg über Nibubedu hingegen quert in den Mt. Juni u. Sept. die geschützte Herde (Juli/Aug. befindet sich die Herde in höher gelegenen Weidesektoren)."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_14"
-msgstr "Zum Zeitpunkt der Aktualisierung der Einsatzgebiete der Herdenschutzhunde war noch nicht definitiv klar, ob 2018 wirklich Hunde auf Balachaux die Schafherde beschützen werden."
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_145"
 msgstr "Die Herde und die Herdenschutzhunde sind zwar während dem Sommer einige Tage auf dem Kaiseregg-Pass, jedoch ausschliesslich unter der Woche"
 
@@ -2031,16 +2028,13 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_150"
 msgstr "Der Weg vom Vord. Sänntum zum Turtmannsee (westl. der Turtmänna) sowie der Höhenweg über Biele zur Turtmannhütte (östl. der Turtmänna) sind ausgezäunt. Für Juli wird empfohlen, den Weg vom Vord. Sänntum über Holustei nach Biele nicht zu nutzen."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_154"
-msgstr "Der Weideteil südwestl. von Z'Mübach (Pkt. 1997) wird von der geschützten Herde ca. zwischen Mitte Juni und Mitte Juli sowie zwischen Mitte und Ende Sept. genutzt, nordöstl. von Z'Mübach findet sich die Herde ca. von Anfang Juli bis Mitte September."
+msgstr "Um die Schafalpung im Rappental zu sichern, läuft ein Pilotprojekt zur Intensivierung des Herdenschutzes. Zur Entlastung des Hirten werden Schafalpung mit Schutzhunden und Tourismus 2019 entflochten und Wanderwege temporär gesperrt oder umgeleitet."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_16"
 msgstr "Von Baumgarte zum Pass (Pkt. 1829) ist nur im September damit zu rechnen, auf Herdenschutzhunde zu stossen (davor ist der Wanderweg abgezäunt)."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_163"
-msgstr "Befindet sich die geschützte Herde in der Nähe des Wanderweges, so ist dieser ausgezäunt, so dass Sie in der Regel nicht auf die geschützte Herde treffen."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_36"
-msgstr "Die Wanderwege sind ausgezäunt, so dass Sie in der Regel nicht direkt auf die geschützte Herde treffen. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
+msgstr "Befindet sich die geschützte Herde in der Nähe des Wanderweges, so ist dieser ausgezäunt, so dass Sie in der Regel nicht auf die geschützte Herde treffen. Vom Mitführen von Hunden wird abgeraten."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_4"
 msgstr "Der Wanderweg am Lag da Pigniu ist bei Anwesenheit der Herdenschutzhunde ausgezäunt, so dass Sie in der Regel nicht direkt auf die geschützte Herde treffen. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
@@ -2051,14 +2045,23 @@ msgstr "Der eingezäunten, geschützten Herde auf dem Guferli kann problemlos au
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_46"
 msgstr "Auf der Weide um Ruchschwand können ganzjährig Herdenschutzhunde im Einsatz sein."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_51"
+msgstr "Die Wanderwege sind ausgezäunt, so dass Sie in der Regel nicht direkt auf die geschützte Herde treffen. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_60"
 msgstr "Der Wanderweg südlich des Bärried ist abgezäunt. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_73"
 msgstr "Der Dent de Valerette kann ohne Begegnung mit der geschützten Herde aus bestiegen werden. Wählen Sie dazu den Weg via Chîndonne."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_77"
+msgstr "Der Wanderweg vom Bruchgeereberg über Pkt. 1652 und weiter Richtung Chummli ist ausgezäunt. Einzig während rund 2 Wochen ist auf dem Wegabschnitt Pkt. 1652-Chummli damit zu rechnen, direkt auf die geschützte Herde zu treffen (Auskünfte: NP Diemtigtal)"
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_87"
 msgstr "Der Ochsen kann auch ohne Begegnung mit der geschützten Herde bestiegen werden. Wählen Sie dazu den Wanderweg über Ritz und Oberalpigle."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_91"
+msgstr "Die Wanderwege sind ausgezäunt, so dass Sie in der Regel nicht direkt auf die geschützte Herde treffen. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_92"
 msgstr "Empfehlungen zum korrekten Verhalten bei Begegnungen mit Mutterkuhherden finden Sie auf der Website der Schweizer Wanderwege."
@@ -2088,7 +2091,7 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1006"
 msgstr "Die offiziellen Wanderwege sind ausgezäunt, so dass Sie in der Regel nicht direkt auf die geschützte Herde treffen. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1007"
-msgstr "In der Regel vom 20.6.-20.9."
+msgstr "In der Regel vom 20.6.-30.9."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1008"
 msgstr "In der Regel von Anfang Juni bis Ende September. Beachten Sie nach Möglichkeit die aktuellen Präsenzangaben auf den Infotafeln vor Ort."
@@ -2132,17 +2135,8 @@ msgstr "In der Regel zwischen Mitte Juni und Ende September. Beachten Sie nach M
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1021"
 msgstr "In der Regel zwischen Mitte Juni und Mitte September."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1022"
-msgstr "In der Regel zwischen Mitte Mai und Ende September. Genauere Auskünfte können Sie bei Sörenberg Flühli Tourismus erhalten."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1023"
-msgstr "In der Regel zwischen Mitte Mai und Mitte September."
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
 msgstr "Von Anfang August bis Mitte September ist auf dem Wanderweg von der Canalbrücke aus Richtung Zapporthütte damit zu rechnen, auf Herdenschutzhunde zu treffen."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1025"
-msgstr "Auf dem WW zwischen dem Lago di Luzzone und der Capanna Motterascio ist in der Regel im Juni damit zu rechnen, auf die geschützte Herde zu treffen und auf dem Wanderweg zwischen dem Lago di Luzzone und dem Passo Soreda zwischen Mitte und Ende Juli"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Kontakt E-Mail"
@@ -2740,6 +2734,21 @@ msgstr "Spektrale Mikrozonierung"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet"
 msgstr "Badegewässerqualität"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.0"
+msgstr "Klassifizierung der Qualität nicht möglich"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.1"
+msgstr "Ausgezeichnete Qualität"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.2"
+msgstr "Gute Qualität"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.3"
+msgstr "Ausreichende Qualität"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.4"
+msgstr "Mangelhafte Qualität"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.aeussereraspekt"
 msgstr "Äusserer Aspekt"
@@ -4769,6 +4778,12 @@ msgstr "Vegetationshöhenstufe"
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
 msgstr "subcode"
 
+msgid "ch.bafu.wald-wasserverfuegbarkeit_boden"
+msgstr "Wasserverfügbarkeit im Boden"
+
+msgid "ch.bafu.wald-wasserverfuegbarkeit_pflanzen"
+msgstr "Wasserverfügbarkeit für Pflanzen"
+
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Querprofilmarke"
 
@@ -6663,7 +6678,7 @@ msgid "ch.bfe.fernwaerme-nachfrage_industrie.industry"
 msgstr "Meistverbrauchende Branche"
 
 msgid "ch.bfe.fernwaerme-nachfrage_industrie.needindustry"
-msgstr "Wärmenachfrage Industrie"
+msgstr "Wärmenachfrage Industrie [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_industrie.noga"
 msgstr "Meistvertretene Branche"
@@ -6672,28 +6687,28 @@ msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
 msgstr "Wärme-/Kältenachfrage Wohnen und DL"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needhome"
-msgstr "Wärmenachfrage Wohnen"
+msgstr "Wärmenachfrage Wohnen [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needservice"
-msgstr "Wärmenachfrage Dienstleistungen"
+msgstr "Wärmenachfrage Dienstleistungen [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needtotal"
-msgstr "Wärmenachfrage Total"
+msgstr "Wärmenachfrage Total [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.noga"
 msgstr "Dienstleistung: Meistvertretene Branche"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas"
-msgstr "Wohnen: Anteil Gas"
+msgstr "Wohnen: Anteil Gas [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentoil"
-msgstr "Wohnen: Anteil Öl"
+msgstr "Wohnen: Anteil Öl [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentpump"
-msgstr "Wohnen: Anteil Wärmepumpe"
+msgstr "Wohnen: Anteil Wärmepumpe [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentremoteheat"
-msgstr "Wohnen: Anteil Fernwärme"
+msgstr "Wohnen: Anteil Fernwärme [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.service"
 msgstr "Dienstleistung: Meistverbrauchende Branche"
@@ -6729,7 +6744,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "Sachplan geol. Tiefenlager"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Kehrichtverbrennungsanlagen"
+msgstr "Kehrichtverbrennungsanlagen (KVA)"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
 msgstr "Inbetriebnahme"
