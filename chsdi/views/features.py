@@ -378,6 +378,7 @@ def _get_feature_db(featureId, params, models, process=True):
     feature = None
     # One layer can have several models
     for model in models:
+        # return a sqlalchemy.util._collections.result
         feature = _get_feature_by_id(featureId, params, model)
         if feature is not None:
             vector_model = model
@@ -763,9 +764,11 @@ def _cut(request):
 def _process_feature(feature, params):
     if params.geometryFormat == 'geojson':
         return feature.to_geojson(params.translate,
-                           params.returnGeometry)
+                           params.returnGeometry,
+                           srid=params.srid)
     return feature.to_esrijson(params.translate,
-                               params.returnGeometry)
+                               params.returnGeometry,
+                               srid=params.srid)
 
 
 def _get_features_releases(model, params):
