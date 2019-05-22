@@ -10,6 +10,6 @@
 
     <tr><td class="cell-left">${_('ch.bfe.fernwaerme-angebot.name')}</td>              <td>${c['attributes']['name'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfe.fernwaerme-angebot.heatpotential')}</td>     <td>${c['attributes']['heatpotential'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bfe.fernwaerme-angebot.bezeichnung')}</td>       <td>${c['attributes'][bezeichnung] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bfe.fernwaerme-angebot.heat_supplier_category')}</td>       <td>${c['attributes'][bezeichnung] or '-'}</td></tr>
 </%def>
 
