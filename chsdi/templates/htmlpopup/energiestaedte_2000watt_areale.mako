@@ -1,48 +1,50 @@
-<%inherit file="base.mako"/> 
+<%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
+
+  <%
+     lang = lang if lang in ('fr','it','en') else 'de'
+     bezeichnung_kat = 'bezeichnung_kat_%s' % lang
+
+  %>
+
 <tr>
   <td class="cell-left">${_('ch.bfe.energiestaedte-2000watt-areale.name')}</td>
   <td>${c['attributes']['name'] or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${_('status')}</td>
- % if c['attributes']['kategorie'] == 'kwa1':
-  <td>
-    ${_('energiestadt_areal_kwa1')}
-  </td>
- % elif c['attributes']['kategorie'] == 'kwa2':
-  <td>
-    ${_('energiestadt_areal_kwa2')}
-  </td>
- % endif
-  </tr>
+  <td class="cell-left">${_('ch.bfe.energiestaedte-2000watt-areale.state')}</td>
+  <td>${c['attributes'][bezeichnung_kat] or '-'}</td>
+</tr>
 <tr>
   <td class="cell-left">${_('areal_gemeinde')}</td>
   <td>${c['attributes']['gemeinde'] or '-'}</td>
 </tr>
 </%def>
 <%def name="extended_info(c, lang)">
+
+  <%
+     lang = lang if lang in ('fr','it','en') else 'de'
+     bezeichnung_kat = 'bezeichnung_kat_%s' % lang
+
+  %>
+
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
   <tr>
     <th class="cell-meta">
-      ${_('ch.bfe.energiestaedte-2000watt-areale.name_watt')}
+     ${_('ch.bfe.energiestaedte-2000watt-areale.name_watt')}
     </th>
     <td>
       ${c['attributes']['name']}
     </td>
   </tr>
-<tr>
-  <th class="cell-meta">${_('status')}</th>
- % if c['attributes']['kategorie'] == 'kwa1':
-  <td>
-    ${_('energiestadt_areal_kwa1')}
-  </td>
- % elif c['attributes']['kategorie'] == 'kwa2':
-  <td>
-    ${_('energiestadt_areal_kwa2')}
-  </td>
- % endif
+  <tr>
+    <th class="cell-meta">
+     ${_('ch.bfe.energiestaedte-2000watt-areale.state')}
+    </th>
+    <td>
+      ${c['attributes'][bezeichnung_kat] or '-'}
+    </td>
   </tr>
   <tr>
     <th class="cell-meta">
@@ -58,7 +60,7 @@
     </th>
   % if c['attributes']['linkberater'] is None:
     <td class="cell-meta"> - </td>
-  % else: 
+  % else:
    <td class="cell-meta">
       <a target="_blank" href="${c['attributes']['linkberater'] or '-'}">${c['attributes']['berater']}</a>
     </td>
@@ -75,7 +77,7 @@
     <td class="cell-meta">
       <a target="_blank" href="${c['attributes']['linkfaktenblatt_fr']}">${_('link')}</a>
     </td>
-  % endif 
+  % endif
   </tr>
   <tr>
     <th class="cell-meta" colspan="2">

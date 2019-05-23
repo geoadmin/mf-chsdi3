@@ -6596,6 +6596,9 @@ msgstr "Areal"
 msgid "ch.bfe.energiestaedte-2000watt-areale.name_watt"
 msgstr "2000-Watt-Areal"
 
+msgid "ch.bfe.energiestaedte-2000watt-areale.state"
+msgstr "Status"
+
 msgid "ch.bfe.energiestaedte-2000watt-aufdemweg"
 msgstr "Citads d'energia vers 2000 watts"
 
@@ -6668,11 +6671,56 @@ msgstr "Punktezahl"
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Wärme- und Kälteangebot"
 
+msgid "ch.bfe.fernwaerme-angebot.heatpotential"
+msgstr "Wärmepotenzial [MWh/a]"
+
+msgid "ch.bfe.fernwaerme-angebot.heat_supplier_category"
+msgstr "Wärmequelle"
+
+msgid "ch.bfe.fernwaerme-angebot.name"
+msgstr "Name"
+
 msgid "ch.bfe.fernwaerme-nachfrage_industrie"
 msgstr "Wärme-/Kältenachfrage Industrie"
 
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.industry"
+msgstr "Meistverbrauchende Branche"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.needindustry"
+msgstr "Wärmenachfrage Industrie"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.noga"
+msgstr "Meistvertretene Branche"
+
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
 msgstr "Wärme-/Kältenachfrage Wohnen und DL"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needhome"
+msgstr "Wärmenachfrage Wohnen"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needservice"
+msgstr "Wärmenachfrage Dienstleistungen"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needtotal"
+msgstr "Wärmenachfrage Total"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.noga"
+msgstr "Dienstleistung: Meistvertretene Branche"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas"
+msgstr "Wohnen: Anteil Gas"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentoil"
+msgstr "Wohnen: Anteil Öl"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentpump"
+msgstr "Wohnen: Anteil Wärmepumpe"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentremoteheat"
+msgstr "Wohnen: Anteil Fernwärme"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.service"
+msgstr "Dienstleistung: Meistverbrauchende Branche"
 
 msgid "ch.bfe.geak-experten"
 msgstr "GEAK-Experten"
@@ -9830,6 +9878,9 @@ msgstr "Strivlas ord l'aria swisstopo"
 msgid "ch.swisstopo.lubis-bildstreifen.id"
 msgstr "Traject da sgol"
 
+msgid "ch.swisstopo.lubis-bildstreifen.tt_bildstreifen_Link"
+msgstr "Bestellen"
+
 msgid "ch.swisstopo.lubis-luftbilder"
 msgstr "TODO"
 
@@ -9848,6 +9899,12 @@ msgstr "Numer da maletg"
 msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.ort"
 msgstr "Ort"
 
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Link"
+msgstr "Bestellen"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Quickview"
+msgstr "Quickview"
+
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone"
 msgstr "Fotografias ord l'aria chantuns"
 
@@ -9862,6 +9919,12 @@ msgstr "Numer da maletg"
 
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.ort"
 msgstr "Ort"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Link"
+msgstr "Bestellen"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Quickview"
+msgstr "Quickview"
 
 msgid "ch.swisstopo.lubis-luftbilder_farbe"
 msgstr "Fotografias ord l'aria colur"

@@ -6596,6 +6596,9 @@ msgstr "Site"
 msgid "ch.bfe.energiestaedte-2000watt-areale.name_watt"
 msgstr "Site 2000 watts"
 
+msgid "ch.bfe.energiestaedte-2000watt-areale.state"
+msgstr "Statut"
+
 msgid "ch.bfe.energiestaedte-2000watt-aufdemweg"
 msgstr "Cités de l’énergie vers 2000 watts"
 
@@ -6668,11 +6671,56 @@ msgstr "Nombre de points"
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Offre de chaleur ou de froid"
 
+msgid "ch.bfe.fernwaerme-angebot.heatpotential"
+msgstr "Potentiel de chaleur [MWh/a]"
+
+msgid "ch.bfe.fernwaerme-angebot.heat_supplier_category"
+msgstr "Source de chaleur"
+
+msgid "ch.bfe.fernwaerme-angebot.name"
+msgstr "Nom"
+
 msgid "ch.bfe.fernwaerme-nachfrage_industrie"
 msgstr "Demande de chaleur/froid: industrie"
 
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.industry"
+msgstr "Branche consommant le plus"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.needindustry"
+msgstr "Demande de chaleur pour l’industrie"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.noga"
+msgstr "Branche la plus représentée"
+
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
 msgstr "Demande de chaleur/froid: bâtiments"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needhome"
+msgstr "Demande de chaleur pour les bâtiments d’habitation"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needservice"
+msgstr "Demande de chaleur pour les bâtiments administratifs"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needtotal"
+msgstr "Demande de chaleur, total"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.noga"
+msgstr "Bâtiments administratifs: branche la plus représentée"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas"
+msgstr "Bâtiments d’habitation: part de gaz"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentoil"
+msgstr "Bâtiments d’habitation: part de mazout"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentpump"
+msgstr "Bâtiments d’habitation: part des pompes à chaleur"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentremoteheat"
+msgstr "Bâtiments d’habitation: part du chauffage à distance"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.service"
+msgstr "Bâtiments administratifs: branche consommant le plus"
 
 msgid "ch.bfe.geak-experten"
 msgstr "Experts CECB"
@@ -9830,6 +9878,9 @@ msgstr "Bandes d'images aériennes swisstopo"
 msgid "ch.swisstopo.lubis-bildstreifen.id"
 msgstr "Ligne aérienne"
 
+msgid "ch.swisstopo.lubis-bildstreifen.tt_bildstreifen_Link"
+msgstr "Commander"
+
 msgid "ch.swisstopo.lubis-luftbilder"
 msgstr "Images aér. swisstopo"
 
@@ -9848,6 +9899,12 @@ msgstr "No de l'image"
 msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.ort"
 msgstr "Lieu"
 
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Link"
+msgstr "Commander"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Quickview"
+msgstr "Quickview"
+
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone"
 msgstr "Images aériennes de cantons"
 
@@ -9862,6 +9919,12 @@ msgstr "No de l'image"
 
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.ort"
 msgstr "Lieu"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Link"
+msgstr "Commander"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Quickview"
+msgstr "Quickview"
 
 msgid "ch.swisstopo.lubis-luftbilder_farbe"
 msgstr "Images aér. swisstopo couleur"
