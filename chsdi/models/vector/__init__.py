@@ -7,7 +7,7 @@ import datetime
 import decimal
 from pyramid.threadlocal import get_current_registry
 from chsdi.models.types import GeometryChsdi
-from chsdi.lib.helpers import transform_shape
+from chsdi.lib.helpers import transform_round_geometry
 from shapely.geometry import box
 from sqlalchemy.sql import func
 from sqlalchemy.orm.util import class_mapper
@@ -21,6 +21,8 @@ Geometry3D = GeometryChsdi(geometry_type='GEOMETRYZ', dimension=3, srid=2056)
 
 
 MAX_FEATURE_GEOMETRY_SIZE = 1e6
+
+DEFAULT_OUPUT_SRID = 21781
 
 
 def get_resolution(imageDisplay, mapExtent):
@@ -97,22 +99,19 @@ class Vector(object):
 
         return id, geom, properties, bbox
 
-    def reproject_geom(self, geom, bbox, srid):
-        if self.srid == srid:
-            return (geom, bbox)
-        new_geom = transform_shape(geom, self.srid, srid)
-
-        return new_geom, new_geom.bounds
+    def transform_shape(self, geom, srid_to, rounding=True):
+        return transform_round_geometry(geom, self.srid, srid_to, rounding=rounding)
 
     @property
     def srid(self):
         return self.geometry_column().type.srid
 
-    def to_esrijson(self, trans, returnGeometry, srid=None):
+    def to_esrijson(self, trans, returnGeometry, srid=DEFAULT_OUPUT_SRID):
         if returnGeometry:
             id, geom, properties, bbox = self.__read__()
-            if self.srid != srid:
-                geom, bbox = self.reproject_geom(geom, bbox, srid)
+            geom = self.transform_shape(geom, srid, rounding=True)
+            bbox = self.transform_shape(bbox, srid, rounding=True)
+
             return esrijson.Feature(id=id,
                                    featureId=id,  # Duplicate id for backward compat...
                                    geometry=geom,
@@ -123,11 +122,11 @@ class Vector(object):
                                    layerName=trans(self.__bodId__))
         return self._no_geom_template(trans)
 
-    def to_geojson(self, trans, returnGeometry, srid=None):
+    def to_geojson(self, trans, returnGeometry, srid=DEFAULT_OUPUT_SRID):
         if returnGeometry:
             id, geom, properties, bbox = self.__read__()
-            if self.srid != srid:
-                geom, bbox = self.reproject_geom(geom, bbox, srid)
+            geom = self.transform_shape(geom, srid, rounding=True)
+            bbox = self.transform_shape(bbox, srid, rounding=True)
 
             # TODO: no need to reproject geometry?
             return geojson.Feature(id=id,

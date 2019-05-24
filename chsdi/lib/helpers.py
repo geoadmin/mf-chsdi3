@@ -6,6 +6,8 @@ import requests
 import datetime
 import gzip
 import StringIO
+from decimal import Decimal
+from itertools import izip
 from functools import partial
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
@@ -19,8 +21,17 @@ from pyproj import Proj, transform as proj_transform
 from requests.exceptions import ConnectionError
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from shapely.ops import transform as shape_transform
+from shapely.wkt import dumps as shape_dumps, loads as shape_loads
+from shapely.geometry.base import BaseGeometry
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+
+PROJECTIONS = {}
+
+# Rounding to abount 0.1 meters
+COORDINATES_DECIMALS_FOR_METRIC_PROJ = 1
+COORDINATES_DECIMALS_FOR_DEGREE_PROJ = 6
 
 
 def versioned(path):
@@ -292,25 +303,91 @@ def imagesize_from_metafile(tileUrlBasePath, bvnummer):
 
 
 def get_proj_from_srid(srid):
-    return Proj(init='EPSG:{}'.format(srid))
+    if srid in PROJECTIONS:
+        return PROJECTIONS[srid]
+    else:
+        proj = Proj(init='EPSG:{}'.format(srid))
+        PROJECTIONS[srid] = proj
+        return proj
 
 
-def transform_coordinate(coords, srid_from, srid_to):
+def get_precision_for_proj(srid):
+    precision = COORDINATES_DECIMALS_FOR_METRIC_PROJ
+    proj = get_proj_from_srid(srid)
+    if proj.is_latlong():
+        precision = COORDINATES_DECIMALS_FOR_DEGREE_PROJ
+    return precision
+
+
+def _round_bbox_coordinates(bbox, precision=None):
+    tpl = '%.{}f'.format(precision)
+    if precision is not None:
+        return [float(Decimal(tpl % c)) for c in bbox]
+    else:
+        return bbox
+
+
+def _round_shape_coordinates(shape, precision=None):
+    if precision is None:
+        return shape
+    else:
+        return shape_loads(
+            shape_dumps(shape, rounding_precision=precision)
+        )
+
+
+def round_geometry_coordinates(geom, precision=None):
+    if isinstance(geom, (list, tuple, )):
+        return _round_bbox_coordinates(geom, precision=precision)
+    elif isinstance(geom, BaseGeometry):
+        return _round_shape_coordinates(geom, precision=precision)
+    else:
+        return geom
+
+
+def _transform_point(coords, srid_from, srid_to):
     proj_in = get_proj_from_srid(srid_from)
     proj_out = get_proj_from_srid(srid_to)
     return proj_transform(proj_in, proj_out, coords[0], coords[1])
 
 
-def transform_shape(geom, srid_from, srid_to):
+def transform_round_geometry(geom, srid_from, srid_to, rounding=True):
     if (srid_from == srid_to):
+        if rounding:
+            precision = get_precision_for_proj(srid_to)
+            return round_geometry_coordinates(geom, precision=precision)
         return geom
+    if isinstance(geom, (list, tuple, )):
+        return _transform_coordinates(geom, srid_from, srid_to, rounding=rounding)
+    else:
+        return _transform_shape(geom, srid_from, srid_to, rounding=rounding)
 
+
+def _transform_coordinates(coordinates, srid_from, srid_to, rounding=True):
+    if len(coordinates) % 2 != 0:
+        raise ValueError
+    new_coords = []
+    coords_iter = iter(coordinates)
+    for pnt in izip(coords_iter, coords_iter):
+        new_pnt = _transform_point(pnt, srid_from, srid_to)
+        new_coords += new_pnt
+    if rounding:
+        precision = get_precision_for_proj(srid_to)
+        new_coords = _round_bbox_coordinates(new_coords, precision=precision)
+    return new_coords
+
+
+def _transform_shape(geom, srid_from, srid_to, rounding=True):
     proj_in = get_proj_from_srid(srid_from)
     proj_out = get_proj_from_srid(srid_to)
 
     projection_func = partial(proj_transform, proj_in, proj_out)
 
-    return shape_transform(projection_func, geom)
+    new_geom = shape_transform(projection_func, geom)
+    if rounding:
+        precision = get_precision_for_proj(srid_to)
+        return _round_shape_coordinates(new_geom, precision=precision)
+    return new_geom
 
 # float('NaN') does not raise an Exception. This function does.
 
