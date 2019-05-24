@@ -65,7 +65,8 @@ def set_models_srid(models, srid):
         return models
     ms = []
     for m in models:
-        m.set_geometry_srid_out(srid)
+        # TODO remove completely
+        # m.set_geometry_srid_out(srid)
         ms.append(m)
     return ms
 
