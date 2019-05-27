@@ -7,6 +7,7 @@ from pyramid import testing
 
 
 class Test_EsriGeoJSON(unittest.TestCase):
+    _multiprocess_can_split_ = True
 
     def _callFUT(self, **kwargs):
         from chsdi.renderers import EsriJSON

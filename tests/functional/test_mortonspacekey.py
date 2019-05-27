@@ -7,6 +7,7 @@ from chsdi.lib import mortonspacekey as msk
 
 
 class Test_Box(unittest.TestCase):
+    _multiprocess_can_split_ = True
 
     def _callFUT(self):
         box = msk.BBox(420000, 30000, 900000, 510000)

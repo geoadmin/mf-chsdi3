@@ -5,6 +5,7 @@ from chsdi.models.vector import get_fallback_lang_match
 
 
 class TestAttributesTranslations(unittest.TestCase):
+    _multiprocess_can_split_ = True
 
     def test_no_lang_specific_attribute(self):
         # No match, so no based on lang - return attr

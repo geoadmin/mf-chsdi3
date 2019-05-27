@@ -6,6 +6,7 @@ from chsdi.models.types import DateTimeChsdi
 
 
 class Test_DateTimeChsdi(unittest.TestCase):
+    _multiprocess_can_split_ = True
 
     def test_datetimechsdi(self):
         dt = DateTimeChsdi()

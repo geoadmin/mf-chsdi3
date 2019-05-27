@@ -6,6 +6,7 @@ from chsdi.models.clientdata_dynamodb import DynamodbConnection, S3Connect, get_
 
 
 class Test_DynamodbConnection(unittest.TestCase):
+    _multiprocess_can_split_ = True
 
     def test_dynamodbConnection_toto(self):
         d = DynamodbConnection(region='toto')
@@ -19,6 +20,7 @@ class Test_DynamodbConnection(unittest.TestCase):
 
 
 class Test_S3Connect(unittest.TestCase):
+    _multiprocess_can_split_ = True
 
     def test_s3connection(self):
         s = S3Connect()

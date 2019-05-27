@@ -43,8 +43,10 @@ def shift_to_lv95(string_coords):
 
 
 class TestsBase(TestCase):
+    _multiprocess_can_split_ = True
 
     def setUp(self):
+
         from pyramid.paster import get_app
         app = get_app('development.ini')
         self.testapp = TestApp(app)

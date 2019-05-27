@@ -6,6 +6,7 @@ import networkx as nx
 
 
 class Test_CatalogTree(unittest.TestCase):
+    _multiprocess_can_split_ = True
 
     def test_not_tree(self):
         G = nx.DiGraph()

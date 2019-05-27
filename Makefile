@@ -192,6 +192,10 @@ shell:
 test:
 	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} tests/ -e .*e2e.*
 
+.PHONY: fasttest
+fasttest:
+	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} --processes=4 --process-timeout=300 tests/ -e .*e2e.*
+
 .PHONY: teste2e
 teste2e:
 	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} tests/e2e/

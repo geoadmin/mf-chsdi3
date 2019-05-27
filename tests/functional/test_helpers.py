@@ -14,6 +14,7 @@ from urlparse import urljoin
 
 
 class Test_Helpers(unittest.TestCase):
+    _multiprocess_can_split_ = True
 
     def test_versioned(self):
         registry = get_current_registry()
