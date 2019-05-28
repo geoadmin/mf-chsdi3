@@ -637,25 +637,6 @@ class Energiestaedte2000wattAreale(Base, Vector):
 register('ch.bfe.energiestaedte-2000watt-areale', Energiestaedte2000wattAreale)
 
 
-class EnergiestaedteAufdemweg2000watt(Base, Vector):
-    __tablename__ = 'energiestaedte_aufdemweg_2000watt'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/energiestaedte_2000watt_auf_dem_weg.mako'
-    __bodId__ = 'ch.bfe.energiestaedte-2000watt-aufdemweg'
-    __extended_info__ = True
-    __queryable_attributes__ = ['name']
-    __label__ = 'name'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Unicode)
-    kategorie = Column('kategorie', Unicode)
-    berater = Column('berater', Unicode)
-    linkberater = Column('linkberater', Unicode)
-    linkfaktenblatt = Column('linkfaktenblatt', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfe.energiestaedte-2000watt-aufdemweg', EnergiestaedteAufdemweg2000watt)
-
-
 class Energieforschung(Base, Vector):
     __tablename__ = 'energieforschung'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
