@@ -650,7 +650,7 @@ def _attributes(request):
 
 
 def _find(request):
-    MaxFeatures = 50
+    MaxFeatures = MAX_FEATURES
     params = FindServiceValidation(request)
     if params.searchText is None:
         raise exc.HTTPBadRequest('Please provide a searchText')
@@ -680,6 +680,12 @@ def _find(request):
                 query = query.filter(
                     searchColumn == searchText
                 )
+        if params.where is not None:
+            where_txt = format_query(model, params.where)
+            if where_txt is not None:
+                query = query.filter(text(
+                    where_txt
+                ))
         query = query.limit(MaxFeatures)
         for feature in query:
             f = _process_feature(feature, params)

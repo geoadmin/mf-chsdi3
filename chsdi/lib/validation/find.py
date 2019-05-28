@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import json
 from pyramid.httpexceptions import HTTPBadRequest
 
 from chsdi.lib.validation import MapNameValidation, SUPPORTED_OUTPUT_SRS
@@ -15,6 +16,8 @@ class FindServiceValidation(MapNameValidation):
         self._contains = None
         self._returnGeometry = None
         self._srid = 21781
+        self._layerDefs = None
+        self._where = None
 
         self.layer = request.params.get('layer')
         self.searchText = request.params.get('searchText')
@@ -30,6 +33,7 @@ class FindServiceValidation(MapNameValidation):
         self.translate = request.translate
         self.cbName = request.params.get('callback')
         self.geodataStaging = request.registry.settings['geodata_staging']
+        self.layerDefs = request.params.get('layerDefs')
 
     @property
     def layer(self):
@@ -102,3 +106,24 @@ class FindServiceValidation(MapNameValidation):
             self._srid = int(value)
         elif value is not None:
             raise HTTPBadRequest('Unsupported spatial reference %s' % value)
+
+    @property
+    def where(self):
+        return self._where
+
+    @property
+    def layerDefs(self):
+        return self._layerDefs
+
+    @layerDefs.setter
+    def layerDefs(self, value):
+        if value is not None:
+            try:
+                defs = json.loads(value)
+                if not (set(defs.keys()).issubset(set([self.layer]))):
+                    raise HTTPBadRequest("You can only filter on layer '%s' in 'layerDefs'" % self.layer)
+                where = "+and+".join(defs.values())
+                self._layerDefs = defs
+                self._where = where
+            except ValueError:
+                raise HTTPBadRequest("Cannot parse 'layerDefs' %s" % value)
