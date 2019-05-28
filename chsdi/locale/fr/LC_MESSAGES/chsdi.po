@@ -4526,11 +4526,20 @@ msgstr "grand cours d´eau"
 msgid "ch.bafu.typisierung-fliessgewaesser.hoehe"
 msgstr "Altitude"
 
+msgid "ch.bafu.typisierung-fliessgewaesser.ibch_corr"
+msgstr "Valeur de correction"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.ibchqregim"
+msgstr "Régime IBCH-Q"
+
 msgid "ch.bafu.typisierung-fliessgewaesser.name"
 msgstr "Nom du type de cours d´eau"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.objectid_gwn25"
 msgstr "ID du réseau hydrographique"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.quali_d"
+msgstr "Qualité des données sur le régime IBCH-Q"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.shape_length"
 msgstr "Longueur du tronçon"
@@ -4955,9 +4964,6 @@ msgstr "Câble coaxial"
 msgid "ch.bakom.anschlussart-kupferdraht"
 msgstr "Fil de cuivre"
 
-msgid "ch.bakom.downlink1"
-msgstr "Liaison ≥ 1 Mbit/s descendante"
-
 msgid "ch.bakom.downlink10"
 msgstr "Liaison ≥10 Mbit/s descend."
 
@@ -4967,12 +4973,6 @@ msgstr "Liaison ≥ 100 Mbit/s descend."
 msgid "ch.bakom.downlink1000"
 msgstr "Liaison ≥ 1000 Mbit/s descend."
 
-msgid "ch.bakom.downlink2"
-msgstr "Liaison ≥ 2 Mbit/s descendante"
-
-msgid "ch.bakom.downlink20"
-msgstr "Liaison ≥ 20 Mbit/s descend."
-
 msgid "ch.bakom.downlink3"
 msgstr "Liaison ≥ 3 Mbit/s descend."
 
@@ -4981,9 +4981,6 @@ msgstr "Liaison ≥ 30 Mbit/s descend."
 
 msgid "ch.bakom.downlink300"
 msgstr "Liaison ≥ 300 Mbit/s descend."
-
-msgid "ch.bakom.downlink50"
-msgstr "Liaison ≥ 50 Mbit/s descend."
 
 msgid "ch.bakom.downlink500"
 msgstr "Liaison ≥ 500 Mbit/s descend."
@@ -5444,23 +5441,8 @@ msgstr "Liaison ≥ 100 Mbit/s ascendante"
 msgid "ch.bakom.uplink1000"
 msgstr "Liaison ≥ 1000 Mbit/s ascendante"
 
-msgid "ch.bakom.uplink2"
-msgstr "Liaison ≥ 2 Mbit/s ascendante"
-
-msgid "ch.bakom.uplink20"
-msgstr "Liaison ≥ 20 Mbit/s ascendante"
-
-msgid "ch.bakom.uplink50"
-msgstr "Liaison ≥ 50 Mbit/s ascendante"
-
 msgid "ch.bakom.url"
 msgstr "https://www.bakom.admin.ch/bakom/fr/page-daccueil.html"
-
-msgid "ch.bakom.verfuegbarkeit-hdtv"
-msgstr "Disponibilité HDTV réseau fixe"
-
-msgid "ch.bakom.verfuegbarkeit-tv"
-msgstr "Disponibilité TV réseau fixe"
 
 msgid "ch.bakom.versorgungsgebiet-tv"
 msgstr "Zones de diffusion TV"
@@ -6596,6 +6578,9 @@ msgstr "Site"
 msgid "ch.bfe.energiestaedte-2000watt-areale.name_watt"
 msgstr "Site 2000 watts"
 
+msgid "ch.bfe.energiestaedte-2000watt-areale.state"
+msgstr "Statut"
+
 msgid "ch.bfe.energiestaedte-2000watt-aufdemweg"
 msgstr "Cités de l’énergie vers 2000 watts"
 
@@ -6668,11 +6653,56 @@ msgstr "Nombre de points"
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Offre de chaleur ou de froid"
 
+msgid "ch.bfe.fernwaerme-angebot.heatpotential"
+msgstr "Potentiel de chaleur [MWh/a]"
+
+msgid "ch.bfe.fernwaerme-angebot.heat_supplier_category"
+msgstr "Source de chaleur"
+
+msgid "ch.bfe.fernwaerme-angebot.name"
+msgstr "Nom"
+
 msgid "ch.bfe.fernwaerme-nachfrage_industrie"
 msgstr "Demande de chaleur/froid: industrie"
 
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.industry"
+msgstr "Branche consommant le plus"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.needindustry"
+msgstr "Demande de chaleur pour l’industrie"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.noga"
+msgstr "Branche la plus représentée"
+
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
 msgstr "Demande de chaleur/froid: bâtiments"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needhome"
+msgstr "Demande de chaleur pour les bâtiments d’habitation"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needservice"
+msgstr "Demande de chaleur pour les bâtiments administratifs"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needtotal"
+msgstr "Demande de chaleur, total"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.noga"
+msgstr "Bâtiments administratifs: branche la plus représentée"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas"
+msgstr "Bâtiments d’habitation: part de gaz"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentoil"
+msgstr "Bâtiments d’habitation: part de mazout"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentpump"
+msgstr "Bâtiments d’habitation: part des pompes à chaleur"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentremoteheat"
+msgstr "Bâtiments d’habitation: part du chauffage à distance"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.service"
+msgstr "Bâtiments administratifs: branche consommant le plus"
 
 msgid "ch.bfe.geak-experten"
 msgstr "Experts CECB"
@@ -9830,6 +9860,9 @@ msgstr "Bandes d'images aériennes swisstopo"
 msgid "ch.swisstopo.lubis-bildstreifen.id"
 msgstr "Ligne aérienne"
 
+msgid "ch.swisstopo.lubis-bildstreifen.tt_bildstreifen_Link"
+msgstr "Commander"
+
 msgid "ch.swisstopo.lubis-luftbilder"
 msgstr "Images aér. swisstopo"
 
@@ -9848,6 +9881,12 @@ msgstr "No de l'image"
 msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.ort"
 msgstr "Lieu"
 
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Link"
+msgstr "Commander"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Quickview"
+msgstr "Quickview"
+
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone"
 msgstr "Images aériennes de cantons"
 
@@ -9862,6 +9901,12 @@ msgstr "No de l'image"
 
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.ort"
 msgstr "Lieu"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Link"
+msgstr "Commander"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Quickview"
+msgstr "Quickview"
 
 msgid "ch.swisstopo.lubis-luftbilder_farbe"
 msgstr "Images aér. swisstopo couleur"

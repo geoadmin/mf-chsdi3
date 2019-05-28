@@ -447,6 +447,10 @@ class TypFliessgewaesser(Base, Vector):
     discharge_quality = Column('discharge_quality', Integer)
     slope = Column('slope', Numeric)
     slope_quality = Column('slope_quality', Integer)
+    ibchqregim = Column('ibchqregim', Integer)
+    ibch_corr = Column('ibch_corr', Integer)
+    quali_d = Column('quali_d', Integer)
+    quali_f = Column('quali_f', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.typisierung-fliessgewaesser', TypFliessgewaesser)

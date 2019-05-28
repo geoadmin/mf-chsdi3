@@ -4526,11 +4526,20 @@ msgstr "Grosser Fluss"
 msgid "ch.bafu.typisierung-fliessgewaesser.hoehe"
 msgstr "Höhe"
 
+msgid "ch.bafu.typisierung-fliessgewaesser.ibch_corr"
+msgstr "Korrekturwert"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.ibchqregim"
+msgstr "IBCH-Q-Regime"
+
 msgid "ch.bafu.typisierung-fliessgewaesser.name"
 msgstr "Name des Fliessgewässertyps"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.objectid_gwn25"
 msgstr "Gewässernetz-ID"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.quali_d"
+msgstr "Qualität der Daten zum IBCH-Q-Regime"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.shape_length"
 msgstr "Länge des Abschnittes"
@@ -4955,9 +4964,6 @@ msgstr "Koaxial-Kabel"
 msgid "ch.bakom.anschlussart-kupferdraht"
 msgstr "Kupfer-Draht"
 
-msgid "ch.bakom.downlink1"
-msgstr "Download ≥ 1 Mbit/s"
-
 msgid "ch.bakom.downlink10"
 msgstr "Download ≥ 10 Mbit/s"
 
@@ -4967,12 +4973,6 @@ msgstr "Download ≥ 100 Mbit/s"
 msgid "ch.bakom.downlink1000"
 msgstr "Download ≥ 1000 Mbit/s"
 
-msgid "ch.bakom.downlink2"
-msgstr "Download ≥ 2 Mbit/s"
-
-msgid "ch.bakom.downlink20"
-msgstr "Download ≥ 20 Mbit/s"
-
 msgid "ch.bakom.downlink3"
 msgstr "Download ≥ 3 Mbit/s"
 
@@ -4981,9 +4981,6 @@ msgstr "Download ≥ 30 Mbit/s"
 
 msgid "ch.bakom.downlink300"
 msgstr "Download ≥ 300 Mbit/s"
-
-msgid "ch.bakom.downlink50"
-msgstr "Download ≥ 50 Mbit/s"
 
 msgid "ch.bakom.downlink500"
 msgstr "Download ≥ 500 Mbit/s"
@@ -5444,23 +5441,8 @@ msgstr "Upload ≥ 100 Mbit/s"
 msgid "ch.bakom.uplink1000"
 msgstr "Upload ≥ 1000 Mbit/s"
 
-msgid "ch.bakom.uplink2"
-msgstr "Upload ≥ 2 Mbit/s"
-
-msgid "ch.bakom.uplink20"
-msgstr "Upload ≥ 20 Mbit/s"
-
-msgid "ch.bakom.uplink50"
-msgstr "Upload ≥ 50 Mbit/s"
-
 msgid "ch.bakom.url"
 msgstr "https://www.bakom.admin.ch/bakom/de/home.html"
-
-msgid "ch.bakom.verfuegbarkeit-hdtv"
-msgstr "HDTV-Verfügbarkeit Festnetz"
-
-msgid "ch.bakom.verfuegbarkeit-tv"
-msgstr "TV-Verfügbarkeit via Festnetz"
 
 msgid "ch.bakom.versorgungsgebiet-tv"
 msgstr "Versorgungsgebiete TV"
@@ -6596,6 +6578,9 @@ msgstr "Areal"
 msgid "ch.bfe.energiestaedte-2000watt-areale.name_watt"
 msgstr "2000-Watt-Areal"
 
+msgid "ch.bfe.energiestaedte-2000watt-areale.state"
+msgstr "Status"
+
 msgid "ch.bfe.energiestaedte-2000watt-aufdemweg"
 msgstr "Energiestädte auf dem Weg 2000-Watt"
 
@@ -6668,11 +6653,56 @@ msgstr "Punktezahl"
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Wärme- und Kälteangebot"
 
+msgid "ch.bfe.fernwaerme-angebot.heatpotential"
+msgstr "Wärmepotenzial [MWh/a]"
+
+msgid "ch.bfe.fernwaerme-angebot.heat_supplier_category"
+msgstr "Wärmequelle"
+
+msgid "ch.bfe.fernwaerme-angebot.name"
+msgstr "Name"
+
 msgid "ch.bfe.fernwaerme-nachfrage_industrie"
 msgstr "Wärme-/Kältenachfrage Industrie"
 
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.industry"
+msgstr "Meistverbrauchende Branche"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.needindustry"
+msgstr "Wärmenachfrage Industrie"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.noga"
+msgstr "Meistvertretene Branche"
+
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
 msgstr "Wärme-/Kältenachfrage Wohnen und DL"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needhome"
+msgstr "Wärmenachfrage Wohnen"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needservice"
+msgstr "Wärmenachfrage Dienstleistungen"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needtotal"
+msgstr "Wärmenachfrage Total"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.noga"
+msgstr "Dienstleistung: Meistvertretene Branche"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas"
+msgstr "Wohnen: Anteil Gas"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentoil"
+msgstr "Wohnen: Anteil Öl"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentpump"
+msgstr "Wohnen: Anteil Wärmepumpe"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentremoteheat"
+msgstr "Wohnen: Anteil Fernwärme"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.service"
+msgstr "Dienstleistung: Meistverbrauchende Branche"
 
 msgid "ch.bfe.geak-experten"
 msgstr "GEAK-Experten"
@@ -9830,6 +9860,9 @@ msgstr "Luftbildstreifen swisstopo"
 msgid "ch.swisstopo.lubis-bildstreifen.id"
 msgstr "Fluglinie"
 
+msgid "ch.swisstopo.lubis-bildstreifen.tt_bildstreifen_Link"
+msgstr "Bestellen"
+
 msgid "ch.swisstopo.lubis-luftbilder"
 msgstr "Luftbilder swisstopo"
 
@@ -9848,6 +9881,12 @@ msgstr "Bildnummer"
 msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.ort"
 msgstr "Ort"
 
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Link"
+msgstr "Bestellen"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Quickview"
+msgstr "Quickview"
+
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone"
 msgstr "Luftbilder Kantone"
 
@@ -9862,6 +9901,12 @@ msgstr "Bildnummer"
 
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.ort"
 msgstr "Ort"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Link"
+msgstr "Bestellen"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Quickview"
+msgstr "Quickview"
 
 msgid "ch.swisstopo.lubis-luftbilder_farbe"
 msgstr "Luftbilder swisstopo farbig"
