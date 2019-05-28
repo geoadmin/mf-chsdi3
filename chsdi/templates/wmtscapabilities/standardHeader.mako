@@ -1,7 +1,7 @@
 <!-- Revision: $Rev$ -->
 <ows:ServiceIdentification>
         <ows:Title>${metadata.title|x}</ows:Title>
-        <ows:Abstract>${metadata.abstract|x}</ows:Abstract>
+        <ows:Abstract>${metadata.abstract or '-' |x,n}</ows:Abstract>
         % if metadata.keywords:
         <ows:Keywords>
         %   for keyword in metadata.keywords.split(','):
@@ -12,7 +12,7 @@
         <ows:ServiceType>OGC WMTS</ows:ServiceType>
         <ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
         <ows:Fees>${metadata.fee|x}</ows:Fees>
-        <ows:AccessConstraints>${metadata.accessconstraint|x}</ows:AccessConstraints>
+        <ows:AccessConstraints>${metadata.accessconstraint or '-' |x,n}</ows:AccessConstraints>
 </ows:ServiceIdentification>
 <ows:ServiceProvider>
         <ows:ProviderName>${metadata.name|x}</ows:ProviderName>
