@@ -154,7 +154,7 @@
 <th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.ibchqregim')}</th>
 <td>${c['attributes']['ibchqregim'] or '-'}</td>
 <th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.ibch_corr')}</th>
-<td>${c['attributes']['ibch_corr'] or '-'}</td>
+<td>${c['attributes']['ibch_corr'] or '0'}</td>
 </tr>
 <th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.quali_d')}</th>
 <td>${c['attributes'][quali] or '-'}</td>
