@@ -243,6 +243,16 @@ class TestFeaturesView(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
         resp.mustcontain("You can only filter on layer 'ch.swisstopo.amtliches-strassenverzeichnis' in 'layerDefs'")
 
+    def test_find_wrong_attribute(self):
+        params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
+                  'searchField': 'label',
+                  'searchText': 'Talstrasse',
+                  'returnGeometry': 'false',
+                  'contains': 'false',
+                  'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "toto = 4307"}'}
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
+        resp.mustcontain("Attribute 'toto' doesn't exist in model")
+
     def test_find_all_talstrasse(self):
         params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
                   'searchField': 'label',
