@@ -884,6 +884,21 @@ class TestIdentifyService(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn("You can only filter on layer", resp.json['detail'])
 
+    def test_identify_layerDefs_non_existing_attribute(self):
+        params = {'geometryFormat': 'geojson',
+                  'geometryType': 'esriGeometryEnvelope',
+                  'geometry': '2548945.5,1147956,2549402,1148103.5',
+                  'imageDisplay': '1367,949,96',
+                  'mapExtent': '2318250,952750,3001750,1427250',
+                  'sr': '2056',
+                  'tolerance': '5',
+                  'layers': 'all:ch.bazl.luftfahrthindernis',
+                  'layerDefs': '{"ch.bazl.luftfahrthindernis": "dummy_attribute > \'2014-12-01\'"}'
+                  }
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual("Attribute 'dummy_attribute' doesn't exist in model", resp.json['detail'])
+
     def test_identify_layerDefs(self):
 
         params = {'geometryFormat': 'geojson',
