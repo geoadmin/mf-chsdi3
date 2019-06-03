@@ -6596,6 +6596,9 @@ msgstr "Area"
 msgid "ch.bfe.energiestaedte-2000watt-areale.name_watt"
 msgstr "Area 2000 Watt"
 
+msgid "ch.bfe.energiestaedte-2000watt-areale.state"
+msgstr "Stato"
+
 msgid "ch.bfe.energiestaedte-2000watt-aufdemweg"
 msgstr "Città dell’energia verso 2000 Watt"
 
@@ -6668,11 +6671,56 @@ msgstr "Punteggio realizzato"
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Offerta di calore e di freddo"
 
+msgid "ch.bfe.fernwaerme-angebot.heatpotential"
+msgstr "Potenziale termico [MWh/a]"
+
+msgid "ch.bfe.fernwaerme-angebot.heat_supplier_category"
+msgstr "Fonte di calore"
+
+msgid "ch.bfe.fernwaerme-angebot.name"
+msgstr "Nome"
+
 msgid "ch.bfe.fernwaerme-nachfrage_industrie"
 msgstr "Domanda calore/freddo industria"
 
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.industry"
+msgstr "Ramo che consuma di più"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.needindustry"
+msgstr "Domanda di calore industria"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.noga"
+msgstr "Ramo più rappresentato"
+
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
 msgstr "Domanda calore/freddo abit./servizi"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needhome"
+msgstr "Domanda di calore abitazioni"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needservice"
+msgstr "Domanda di calore terziario"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needtotal"
+msgstr "Domanda di calore totale"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.noga"
+msgstr "Terziario: ramo più rappresentativo"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas"
+msgstr "Abitazioni: quota gas"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentoil"
+msgstr "Abitazioni: quota olio"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentpump"
+msgstr "Abitazioni: quota pompa di calore"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentremoteheat"
+msgstr "Abitazioni: quota teleriscaldamento"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.service"
+msgstr "Terziario: ramo che consuma di più"
 
 msgid "ch.bfe.geak-experten"
 msgstr "Esperti CECE"
@@ -9830,6 +9878,9 @@ msgstr "Striscie aeree swisstopo"
 msgid "ch.swisstopo.lubis-bildstreifen.id"
 msgstr "Linea di volo"
 
+msgid "ch.swisstopo.lubis-bildstreifen.tt_bildstreifen_Link"
+msgstr "Ordinare"
+
 msgid "ch.swisstopo.lubis-luftbilder"
 msgstr "Immagini aeree swisstopo"
 
@@ -9848,6 +9899,12 @@ msgstr "Numero immagine"
 msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.ort"
 msgstr "Luogo"
 
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Link"
+msgstr "Ordinare"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Quickview"
+msgstr "Quickview"
+
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone"
 msgstr "Immagini aeree dei cantoni"
 
@@ -9862,6 +9919,12 @@ msgstr "Numero immagine"
 
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.ort"
 msgstr "Luogo"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Link"
+msgstr "Ordinare"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Quickview"
+msgstr "Quickview"
 
 msgid "ch.swisstopo.lubis-luftbilder_farbe"
 msgstr "Immagini aer. swisstopo colori"

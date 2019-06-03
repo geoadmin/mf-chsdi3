@@ -6596,6 +6596,9 @@ msgstr "Area"
 msgid "ch.bfe.energiestaedte-2000watt-areale.name_watt"
 msgstr "2000-Watt area"
 
+msgid "ch.bfe.energiestaedte-2000watt-areale.state"
+msgstr "State"
+
 msgid "ch.bfe.energiestaedte-2000watt-aufdemweg"
 msgstr "Energy Cities on the Path 2000-Watt"
 
@@ -6668,11 +6671,56 @@ msgstr "Number of points"
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Heat and cooling sources"
 
+msgid "ch.bfe.fernwaerme-angebot.heatpotential"
+msgstr "Heat potential [MWh/a]"
+
+msgid "ch.bfe.fernwaerme-angebot.heat_supplier_category"
+msgstr "Type of heat source"
+
+msgid "ch.bfe.fernwaerme-angebot.name"
+msgstr "Name"
+
 msgid "ch.bfe.fernwaerme-nachfrage_industrie"
 msgstr "Heat/cooling demand: industry"
 
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.industry"
+msgstr "Sector with greatest demand"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.needindustry"
+msgstr "Heat demand from industry"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.noga"
+msgstr "Largest sector"
+
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
 msgstr "Heat/cooling demand: resid./comm."
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needhome"
+msgstr "Heat demand – residential"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needservice"
+msgstr "Heat demand – commercial"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needtotal"
+msgstr "Heat demand – total"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.noga"
+msgstr "Commercial: largest sector"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas"
+msgstr "Residential: gas proportion"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentoil"
+msgstr "Residential: oil proportion"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentpump"
+msgstr "Residential: heat pump proportion"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentremoteheat"
+msgstr "Residential: district heating proportion"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.service"
+msgstr "Commercial: sector with greatest demand"
 
 msgid "ch.bfe.geak-experten"
 msgstr "GEAK experts"
@@ -9830,6 +9878,9 @@ msgstr "Image strips swisstopo"
 msgid "ch.swisstopo.lubis-bildstreifen.id"
 msgstr "Flying line"
 
+msgid "ch.swisstopo.lubis-bildstreifen.tt_bildstreifen_Link"
+msgstr "Order"
+
 msgid "ch.swisstopo.lubis-luftbilder"
 msgstr "Aerial Images swisstopo"
 
@@ -9848,6 +9899,12 @@ msgstr "Picture number"
 msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.ort"
 msgstr "Town"
 
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Link"
+msgstr "Order"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Quickview"
+msgstr "Quickview"
+
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone"
 msgstr "Aerial images cantons"
 
@@ -9862,6 +9919,12 @@ msgstr "Picture number"
 
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.ort"
 msgstr "Town"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Link"
+msgstr "Order"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Quickview"
+msgstr "Quickview"
 
 msgid "ch.swisstopo.lubis-luftbilder_farbe"
 msgstr "Aerial Images swisstopo color"
