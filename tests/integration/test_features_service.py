@@ -261,6 +261,12 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(resp.json['feature']['id'], featureId)
         self.assertEsrijsonFeature(resp.json['feature'], 21781)
 
+    def test_feature_too_many_featuresids(self):
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureIds = ','.join(map(str, range(50)))
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureIds), status=400)
+        resp.mustcontain('Too many featureIds')
+
     def test_feature_valid_topic_all(self):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureId = self.getRandomFeatureId(bodId)
