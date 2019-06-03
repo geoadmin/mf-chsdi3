@@ -150,7 +150,7 @@ Das BFE fördert konkrete Projekte, finanziert Begleitung und Coaching durch spe
    <td class="cell-meta"> - </td>
  % else:
    <td class="cell-meta">
-     <a target="_blank" href="${c['attributes']['mailberater']}">${c['attributes']['berater']}</a>
+     <a href="mailto:${c['attributes']['mailberater']}">${_(c['attributes']['berater']) or '-'}</a>
    </td>
  % endif
   </tr>
