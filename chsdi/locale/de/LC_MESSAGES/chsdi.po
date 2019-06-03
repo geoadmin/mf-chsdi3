@@ -4526,11 +4526,20 @@ msgstr "Grosser Fluss"
 msgid "ch.bafu.typisierung-fliessgewaesser.hoehe"
 msgstr "Höhe"
 
+msgid "ch.bafu.typisierung-fliessgewaesser.ibch_corr"
+msgstr "Korrekturwert"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.ibchqregim"
+msgstr "IBCH-Q-Regime"
+
 msgid "ch.bafu.typisierung-fliessgewaesser.name"
 msgstr "Name des Fliessgewässertyps"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.objectid_gwn25"
 msgstr "Gewässernetz-ID"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.quali_d"
+msgstr "Qualität der Daten zum IBCH-Q-Regime"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.shape_length"
 msgstr "Länge des Abschnittes"
@@ -4955,9 +4964,6 @@ msgstr "Koaxial-Kabel"
 msgid "ch.bakom.anschlussart-kupferdraht"
 msgstr "Kupfer-Draht"
 
-msgid "ch.bakom.downlink1"
-msgstr "Download ≥ 1 Mbit/s"
-
 msgid "ch.bakom.downlink10"
 msgstr "Download ≥ 10 Mbit/s"
 
@@ -4967,12 +4973,6 @@ msgstr "Download ≥ 100 Mbit/s"
 msgid "ch.bakom.downlink1000"
 msgstr "Download ≥ 1000 Mbit/s"
 
-msgid "ch.bakom.downlink2"
-msgstr "Download ≥ 2 Mbit/s"
-
-msgid "ch.bakom.downlink20"
-msgstr "Download ≥ 20 Mbit/s"
-
 msgid "ch.bakom.downlink3"
 msgstr "Download ≥ 3 Mbit/s"
 
@@ -4981,9 +4981,6 @@ msgstr "Download ≥ 30 Mbit/s"
 
 msgid "ch.bakom.downlink300"
 msgstr "Download ≥ 300 Mbit/s"
-
-msgid "ch.bakom.downlink50"
-msgstr "Download ≥ 50 Mbit/s"
 
 msgid "ch.bakom.downlink500"
 msgstr "Download ≥ 500 Mbit/s"
@@ -5444,23 +5441,8 @@ msgstr "Upload ≥ 100 Mbit/s"
 msgid "ch.bakom.uplink1000"
 msgstr "Upload ≥ 1000 Mbit/s"
 
-msgid "ch.bakom.uplink2"
-msgstr "Upload ≥ 2 Mbit/s"
-
-msgid "ch.bakom.uplink20"
-msgstr "Upload ≥ 20 Mbit/s"
-
-msgid "ch.bakom.uplink50"
-msgstr "Upload ≥ 50 Mbit/s"
-
 msgid "ch.bakom.url"
 msgstr "https://www.bakom.admin.ch/bakom/de/home.html"
-
-msgid "ch.bakom.verfuegbarkeit-hdtv"
-msgstr "HDTV-Verfügbarkeit Festnetz"
-
-msgid "ch.bakom.verfuegbarkeit-tv"
-msgstr "TV-Verfügbarkeit via Festnetz"
 
 msgid "ch.bakom.versorgungsgebiet-tv"
 msgstr "Versorgungsgebiete TV"
