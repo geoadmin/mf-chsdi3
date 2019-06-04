@@ -237,12 +237,6 @@ class Vector(object):
 
         return queryable_attributes
 
-    @classmethod
-    def set_geometry_srid_out(cls, srid_out):
-        for col in cls.__mapper__.columns:
-            if isinstance(col.type, GeometryChsdi):
-                col.type.srid_out = srid_out
-
     def get_orm_columns_names(self, exclude_pkey=True):
         keys_to_exclude = []
         if exclude_pkey:
