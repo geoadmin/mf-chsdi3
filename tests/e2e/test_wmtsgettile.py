@@ -90,18 +90,20 @@ class TileChecker(TodProxyTestsBase):
 
                     dim = layer.find('.//{http://www.opengis.net/wmts/1.0}Dimension')
                     times = dim.findall('./{http://www.opengis.net/wmts/1.0}Value')
+                    tilematrixset = layer.find('.//{http://www.opengis.net/wmts/1.0}TileMatrixSet')
+                    maxzoom = [int(s) for s in tilematrixset.text.split('_')][1]
 
                     tiles_proj = tiles[epsg]
-
-                    for tile in tiles_proj:
-                        zoom, col, row = tile
-                        for time in times:
-                            t = time.text
-                            try:
-                                pth2 = pth.replace('{TileCol}', str(col)).replace('{TileRow}', str(row)).replace('{TileMatrix}', str(zoom)).replace('{Time}', str(t))
-                            except:
-                                print 'Cannot replace in template %s' % pth
-                            yield urlunparse((tpl_parsed.scheme, tpl_parsed.netloc, pth2, '', '', ''))
+                    if maxzoom > tiles_proj[0][0]:
+                        for tile in tiles_proj:
+                            zoom, col, row = tile
+                            for time in times:
+                                t = time.text
+                                try:
+                                    pth2 = pth.replace('{TileCol}', str(col)).replace('{TileRow}', str(row)).replace('{TileMatrix}', str(zoom)).replace('{Time}', str(t))
+                                except:
+                                    print 'Cannot replace in template %s' % pth
+                                yield urlunparse((tpl_parsed.scheme, tpl_parsed.netloc, pth2, '', '', ''))
 
 
 def test_epsg21781():
