@@ -24,6 +24,7 @@ API & applications
 
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
+- Features geometries reprojection to `LV03` (EPSG:21781), `WGS1984` (EPSG:4326) and `Spherical mercator` (EPSG:3857)
 - Bug fixes
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_190513...r_190605>`__
 - Announcement:
