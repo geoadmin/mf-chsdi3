@@ -6581,12 +6581,6 @@ msgstr "2000-Watt-Areal"
 msgid "ch.bfe.energiestaedte-2000watt-areale.state"
 msgstr "Status"
 
-msgid "ch.bfe.energiestaedte-2000watt-aufdemweg"
-msgstr "Citads d'energia vers 2000 watts"
-
-msgid "ch.bfe.energiestaedte-2000watt-aufdemweg.name"
-msgstr "Gemeinde / Stadt"
-
 msgid "ch.bfe.energiestaedte-2000watt-energiestaedteaufdemweg"
 msgstr "Energiestädte auf dem Weg 2000-Watt"
 
@@ -6853,51 +6847,6 @@ msgstr "von"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager.validuntil"
 msgstr "bis"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung"
-msgstr "PS DRGP consultaziun etappa 2"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.coordlevel"
-msgstr "Koordinationsstand"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.description"
-msgstr "Beschreibung"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.fackind"
-msgstr "Anlageart"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname"
-msgstr "Name Anlage"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname_de"
-msgstr "Name Anlage"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname_fr"
-msgstr "Name Anlage"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.planningstatus"
-msgstr "Planungsstand"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmkind"
-msgstr "Massnahmetyp"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname"
-msgstr "Name planerische Massnahme"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname_de"
-msgstr "Massnahmetyp"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname_fr"
-msgstr "Massnahmetyp"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validfrom"
-msgstr "von"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validuntil"
-msgstr "bis"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.web"
-msgstr "Weitere Informationen"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager.web"
 msgstr "Weitere Informationen"
@@ -7417,6 +7366,9 @@ msgstr "Ristga d'erosiun qualitativa"
 
 msgid "ch.blw.erosion2"
 msgstr "Erosionsrisiko"
+
+msgid "ch.blw.erosion-fliesswegkarte"
+msgstr "Charta da deflussiun"
 
 msgid "ch.blw.erosion-mit_bergzonen"
 msgstr "Ristga d'erosiun qualitativa 2"
