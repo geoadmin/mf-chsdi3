@@ -4526,11 +4526,20 @@ msgstr "grand cours d´eau"
 msgid "ch.bafu.typisierung-fliessgewaesser.hoehe"
 msgstr "Altitude"
 
+msgid "ch.bafu.typisierung-fliessgewaesser.ibch_corr"
+msgstr "Valeur de correction"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.ibchqregim"
+msgstr "Régime IBCH-Q"
+
 msgid "ch.bafu.typisierung-fliessgewaesser.name"
 msgstr "Nom du type de cours d´eau"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.objectid_gwn25"
 msgstr "ID du réseau hydrographique"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.quali_d"
+msgstr "Qualité des données sur le régime IBCH-Q"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.shape_length"
 msgstr "Longueur du tronçon"
@@ -4955,9 +4964,6 @@ msgstr "Câble coaxial"
 msgid "ch.bakom.anschlussart-kupferdraht"
 msgstr "Fil de cuivre"
 
-msgid "ch.bakom.downlink1"
-msgstr "Liaison ≥ 1 Mbit/s descendante"
-
 msgid "ch.bakom.downlink10"
 msgstr "Liaison ≥10 Mbit/s descend."
 
@@ -4967,12 +4973,6 @@ msgstr "Liaison ≥ 100 Mbit/s descend."
 msgid "ch.bakom.downlink1000"
 msgstr "Liaison ≥ 1000 Mbit/s descend."
 
-msgid "ch.bakom.downlink2"
-msgstr "Liaison ≥ 2 Mbit/s descendante"
-
-msgid "ch.bakom.downlink20"
-msgstr "Liaison ≥ 20 Mbit/s descend."
-
 msgid "ch.bakom.downlink3"
 msgstr "Liaison ≥ 3 Mbit/s descend."
 
@@ -4981,9 +4981,6 @@ msgstr "Liaison ≥ 30 Mbit/s descend."
 
 msgid "ch.bakom.downlink300"
 msgstr "Liaison ≥ 300 Mbit/s descend."
-
-msgid "ch.bakom.downlink50"
-msgstr "Liaison ≥ 50 Mbit/s descend."
 
 msgid "ch.bakom.downlink500"
 msgstr "Liaison ≥ 500 Mbit/s descend."
@@ -5444,23 +5441,8 @@ msgstr "Liaison ≥ 100 Mbit/s ascendante"
 msgid "ch.bakom.uplink1000"
 msgstr "Liaison ≥ 1000 Mbit/s ascendante"
 
-msgid "ch.bakom.uplink2"
-msgstr "Liaison ≥ 2 Mbit/s ascendante"
-
-msgid "ch.bakom.uplink20"
-msgstr "Liaison ≥ 20 Mbit/s ascendante"
-
-msgid "ch.bakom.uplink50"
-msgstr "Liaison ≥ 50 Mbit/s ascendante"
-
 msgid "ch.bakom.url"
 msgstr "https://www.bakom.admin.ch/bakom/fr/page-daccueil.html"
-
-msgid "ch.bakom.verfuegbarkeit-hdtv"
-msgstr "Disponibilité HDTV réseau fixe"
-
-msgid "ch.bakom.verfuegbarkeit-tv"
-msgstr "Disponibilité TV réseau fixe"
 
 msgid "ch.bakom.versorgungsgebiet-tv"
 msgstr "Zones de diffusion TV"
@@ -6599,12 +6581,6 @@ msgstr "Site 2000 watts"
 msgid "ch.bfe.energiestaedte-2000watt-areale.state"
 msgstr "Statut"
 
-msgid "ch.bfe.energiestaedte-2000watt-aufdemweg"
-msgstr "Cités de l’énergie vers 2000 watts"
-
-msgid "ch.bfe.energiestaedte-2000watt-aufdemweg.name"
-msgstr "Commune / ville"
-
 msgid "ch.bfe.energiestaedte-2000watt-energiestaedteaufdemweg"
 msgstr "Cité de l’énergie vers 2000 watts"
 
@@ -6871,51 +6847,6 @@ msgstr "du"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager.validuntil"
 msgstr "au"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung"
-msgstr "PS DCGP consultation étape 2"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.coordlevel"
-msgstr "Etat de coordination"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.description"
-msgstr "Description"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.fackind"
-msgstr "Type d'installation"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname"
-msgstr "Nom de l'installation"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname_de"
-msgstr "Nom de l'installation"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname_fr"
-msgstr "Nom de l'installation"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.planningstatus"
-msgstr "Etat de la planification"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmkind"
-msgstr "Type de mesure"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname"
-msgstr "Nom de la mesure"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname_de"
-msgstr "Type de mesure"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname_fr"
-msgstr "Type de mesure"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validfrom"
-msgstr "du"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validuntil"
-msgstr "au"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.web"
-msgstr "Autres informations"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager.web"
 msgstr "Autres informations"
@@ -7435,6 +7366,9 @@ msgstr "Risque d'érosion qualitative"
 
 msgid "ch.blw.erosion2"
 msgstr "Risque d`érosion"
+
+msgid "ch.blw.erosion-fliesswegkarte"
+msgstr "Carte des écoulements"
 
 msgid "ch.blw.erosion-mit_bergzonen"
 msgstr "Risque d’érosion qualitatif 2"
