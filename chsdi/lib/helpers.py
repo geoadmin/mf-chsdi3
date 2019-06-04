@@ -363,6 +363,8 @@ def transform_round_geometry(geom, srid_from, srid_to, rounding=True):
         return _transform_shape(geom, srid_from, srid_to, rounding=rounding)
 
 
+# Reprojecting pairs of coordinates and rounding them if necessary
+# Only a point or a line are considered
 def _transform_coordinates(coordinates, srid_from, srid_to, rounding=True):
     if len(coordinates) % 2 != 0:
         raise ValueError
