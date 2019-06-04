@@ -9,7 +9,7 @@ from chsdi.models import models_from_bodid
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.sql.expression import func
 
-from chsdi.lib.helpers import transform_shape
+from chsdi.lib.helpers import transform_round_geometry as transform_shape
 from chsdi.lib.validation import SUPPORTED_OUTPUT_SRS
 from shapely.geometry import box, Point
 

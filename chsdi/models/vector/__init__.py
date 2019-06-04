@@ -7,6 +7,7 @@ import datetime
 import decimal
 from pyramid.threadlocal import get_current_registry
 from chsdi.models.types import GeometryChsdi
+from chsdi.lib.helpers import transform_round_geometry
 from shapely.geometry import box
 from sqlalchemy.sql import func
 from sqlalchemy.orm.util import class_mapper
@@ -16,10 +17,12 @@ from geoalchemy2.shape import to_shape
 
 
 Geometry2D = GeometryChsdi(geometry_type='GEOMETRY', dimension=2, srid=2056)
-Geometry3D = GeometryChsdi(geometry_type='GEOMETRY', dimension=3, srid=2056)
+Geometry3D = GeometryChsdi(geometry_type='GEOMETRYZ', dimension=3, srid=2056)
 
 
 MAX_FEATURE_GEOMETRY_SIZE = 1e6
+
+DEFAULT_OUPUT_SRID = 21781
 
 
 def get_resolution(imageDisplay, mapExtent):
@@ -96,26 +99,35 @@ class Vector(object):
 
         return id, geom, properties, bbox
 
+    def transform_shape(self, geom, srid_to, rounding=True):
+        return transform_round_geometry(geom, self.srid, srid_to, rounding=rounding)
+
     @property
     def srid(self):
         return self.geometry_column().type.srid
 
-    def to_esrijson(self, trans, returnGeometry):
+    def to_esrijson(self, trans, returnGeometry, srid=DEFAULT_OUPUT_SRID):
         if returnGeometry:
             id, geom, properties, bbox = self.__read__()
+            geom = self.transform_shape(geom, srid, rounding=True)
+            bbox = self.transform_shape(bbox, srid, rounding=True)
+
             return esrijson.Feature(id=id,
                                    featureId=id,  # Duplicate id for backward compat...
                                    geometry=geom,
-                                   wkid=self.geometry_column().type.srid_out,
+                                   wkid=srid,  # self.geometry_column().type.srid_out,
                                    attributes=properties,
                                    bbox=bbox,
                                    layerBodId=self.__bodId__,
                                    layerName=trans(self.__bodId__))
         return self._no_geom_template(trans)
 
-    def to_geojson(self, trans, returnGeometry):
+    def to_geojson(self, trans, returnGeometry, srid=DEFAULT_OUPUT_SRID):
         if returnGeometry:
             id, geom, properties, bbox = self.__read__()
+            geom = self.transform_shape(geom, srid, rounding=True)
+            bbox = self.transform_shape(bbox, srid, rounding=True)
+
             # TODO: no need to reproject geometry?
             return geojson.Feature(id=id,
                                    featureId=id,  # Duplicate id for backward compat...
@@ -224,12 +236,6 @@ class Vector(object):
                     queryable_attributes.append(fallback_match)
 
         return queryable_attributes
-
-    @classmethod
-    def set_geometry_srid_out(cls, srid_out):
-        for col in cls.__mapper__.columns:
-            if isinstance(col.type, GeometryChsdi):
-                col.type.srid_out = srid_out
 
     def get_orm_columns_names(self, exclude_pkey=True):
         keys_to_exclude = []

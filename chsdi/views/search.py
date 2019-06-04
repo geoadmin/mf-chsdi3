@@ -8,8 +8,8 @@ from shapely.geometry import box, Point
 
 from chsdi.lib.validation.search import SearchValidation
 from chsdi.lib.helpers import format_search_text, format_locations_search_text
-from chsdi.lib.helpers import transform_coordinate, parse_box2d, shift_to
-from chsdi.lib.helpers import center_from_box2d, transform_shape
+from chsdi.lib.helpers import _transform_point as transform_coordinate, parse_box2d, shift_to
+from chsdi.lib.helpers import center_from_box2d, transform_round_geometry as transform_shape
 from chsdi.lib.sphinxapi import sphinxapi
 from chsdi.lib import mortonspacekey as msk
 
