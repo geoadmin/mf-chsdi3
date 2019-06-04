@@ -535,7 +535,9 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
 
         if where is not None:
             vectorLayer = []
+            filter_attributes = []
             for model in models:
+                filter_attributes += list(model().get_orm_columns_names())
                 txt = format_query(model, where)
                 if txt is not None:
                     vectorLayer.append((model, txt))
