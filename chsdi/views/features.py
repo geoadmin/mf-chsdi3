@@ -662,8 +662,21 @@ def _find(request):
     if models is None:
         raise exc.HTTPBadRequest(
             'No Vector Table was found for %s for searchField %s' % (params.layer, params.searchField))
-
+    vectorLayers = []
     for model in models:
+        where_txt = None
+        if params.where is not None:
+            where_txt = format_query(model, params.where)
+        vectorLayers.append((model, where_txt))
+
+    # Attributes in the 'where' or 'layerDefs' should match attributes in
+    # at least one model related to a layer bodId
+    if params.where is not None and not any(list(zip(*vectorLayers)[1])):
+        raise exc.HTTPBadRequest(
+            'Filtering on a not existing field on layer {}'.format(params.layer)
+        )
+
+    for model, where_text in vectorLayers:
         searchColumn = model.get_column_by_property_name(params.searchField)
         query = request.db.query(model)
         if params.contains:
@@ -682,12 +695,10 @@ def _find(request):
                 query = query.filter(
                     searchColumn == searchText
                 )
-        if params.where is not None:
-            where_txt = format_query(model, params.where)
-            if where_txt is not None:
-                query = query.filter(text(
-                    where_txt
-                ))
+        if where_txt is not None:
+            query = query.filter(text(
+                where_txt
+            ))
         query = query.limit(MaxFeatures)
         for feature in query:
             f = _process_feature(feature, params)
