@@ -206,11 +206,8 @@ def format_query(model, value):
 
     def replacePropByColumnName(model, values):
         res = []
-        attributes = list(model().get_orm_columns_names())
         for val in values:
             prop = val.split(' ')[0].strip()
-            if prop not in attributes:
-                raise HTTPBadRequest("Attribute '%s' doesn't exist in model" % prop)
             columnName = model.get_column_by_property_name(prop).name.__str__()
             val = val.replace(prop, columnName)
             res.append(val)

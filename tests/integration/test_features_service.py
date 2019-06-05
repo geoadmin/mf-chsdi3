@@ -251,7 +251,7 @@ class TestFeaturesView(TestsBase):
                   'contains': 'false',
                   'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "toto = 4307"}'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
-        resp.mustcontain("Attribute 'toto' doesn't exist in model")
+        resp.mustcontain("Filtering on a not existing field on layer ch.swisstopo.amtliches-strassenverzeichnis")
 
     def test_find_all_talstrasse(self):
         params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
