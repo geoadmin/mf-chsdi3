@@ -319,7 +319,7 @@ No more than 50 features can be retrieved per request.
 Filters
 *******
 
-You may filter by attributes with **where** or **layerDefs** only on `searchable layers <../../../api/faq/index.html#which-layers-are-searchable>`_ .
+You may filter by attributes with **where** or **layerDefs** the :ref:`queryable layers<queryable_layers>`.
 
 To check which attributes are availables, their types and examples values for a given searchable layer, you may use the `attributes services <../../../services/sdiservices.html#layer-attributes>`_.
 
