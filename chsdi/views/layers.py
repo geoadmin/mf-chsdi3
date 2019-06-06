@@ -155,6 +155,8 @@ def faqlist(request):
     chargeableLayers = []
     # Free layers
     notChargeableLayers = []
+    # queryable layer (filtering with where and layerDefs)
+    queryableLayers = []
 
     query = params.request.db.query(LayersConfig)
     for layer in get_layers_config_for_params(params, query, LayersConfig):
@@ -165,6 +167,8 @@ def faqlist(request):
                 translations[k] = request.translate(k)
             if 'tooltip' in l and l['tooltip']:
                 tooltipLayers.append(k)
+            if 'queryableAttributes' in l and l['queryableAttributes']:
+                queryableLayers.append(k)
             if 'searchable' in l and l['searchable']:
                 searchableLayers.append(k)
             if 'chargeable' in l and l['chargeable']:
@@ -177,7 +181,8 @@ def faqlist(request):
         'tooltipLayers': sorted(tooltipLayers),
         'searchableLayers': sorted(searchableLayers),
         'chargeableLayers': sorted(chargeableLayers),
-        'notChargeableLayers': sorted(notChargeableLayers)
+        'notChargeableLayers': sorted(notChargeableLayers),
+        'queryableLayers': sorted(queryableLayers)
     }
 
 
