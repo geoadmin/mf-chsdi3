@@ -260,8 +260,8 @@ class TestFeaturesView(TestsBase):
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['feature']['id'], featureId)
-        self.assertEsrijsonFeature(resp.json['feature'], 21781)
+        self.assertEqual(resp.json['features'][0]['feature']['id'], featureId)
+        self.assertEsrijsonFeature(resp.json['features'][0]['feature'], 21781)
 
     def test_feature_too_many_featuresids(self):
         bodId = 'ch.bafu.bundesinventare-bln'
@@ -274,32 +274,32 @@ class TestFeaturesView(TestsBase):
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/all/MapServer/%s/%s' % (bodId, featureId), status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['feature']['id'], featureId)
-        self.assertEsrijsonFeature(resp.json['feature'], 21781)
+        self.assertEqual(resp.json['features'][0]['feature']['id'], featureId)
+        self.assertEsrijsonFeature(resp.json['features'][0]['feature'], 21781)
 
     def test_feature_geojson(self):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['feature']['id'], featureId)
-        self.assertGeojsonFeature(resp.json['feature'], 21781)
+        self.assertEqual(resp.json['id'], featureId)
+        self.assertGeojsonFeature(resp.json, 21781)
 
     def test_feature_geojson_nogeom(self):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson', 'returnGeometry': 'false'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['feature']['id'], featureId)
-        self.assertGeojsonFeature(resp.json['feature'], 21781, hasGeometry=False)
+        self.assertEqual(resp.json['id'], featureId)
+        self.assertGeojsonFeature(resp.json, 21781, hasGeometry=False)
 
     def test_feature_geojson_geom(self):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['feature']['id'], featureId)
-        self.assertGeojsonFeature(resp.json['feature'], 21781)
+        self.assertEqual(resp.json['id'], featureId)
+        self.assertGeojsonFeature(resp.json, 21781)
 
     @skip("Apparently, there is no too big data anymore")
     def test_too_large_feature_only_attributes(self):
@@ -392,7 +392,8 @@ class TestFeaturesView(TestsBase):
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/all/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertIn('geometry', resp.json['feature'])
+        self.assertIn('geometry', resp.json)
+        self.assertIn('properties', resp.json)
 
     def test_htmlpopup_invalid_srid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', params={'sr': '111'}, status=400)
