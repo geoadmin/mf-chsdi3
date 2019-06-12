@@ -2741,6 +2741,21 @@ msgstr "Microzonaziun spectrala"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet"
 msgstr "Qualitad da l'aua dals bogns"
 
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.0"
+msgstr "ch.bafu.gewaesserschutz-badewasserqualitaet.0"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.1"
+msgstr "ch.bafu.gewaesserschutz-badewasserqualitaet.1"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.2"
+msgstr "ch.bafu.gewaesserschutz-badewasserqualitaet.2"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.3"
+msgstr "ch.bafu.gewaesserschutz-badewasserqualitaet.3"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.4"
+msgstr "ch.bafu.gewaesserschutz-badewasserqualitaet.4"
+
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.aeussereraspekt"
 msgstr "Äusserer Aspekt"
 

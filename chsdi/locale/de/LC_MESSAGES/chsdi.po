@@ -2741,6 +2741,21 @@ msgstr "Spektrale Mikrozonierung"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet"
 msgstr "Badegewässerqualität"
 
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.0"
+msgstr "Klassifizierung der Qualität nicht möglich"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.1"
+msgstr "Ausgezeichnete Qualität"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.2"
+msgstr "Gute Qualität"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.3"
+msgstr "Ausreichende Qualität"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.4"
+msgstr "Mangelhafte Qualität"
+
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.aeussereraspekt"
 msgstr "Äusserer Aspekt"
 

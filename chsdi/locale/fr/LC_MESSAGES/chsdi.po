@@ -2741,6 +2741,21 @@ msgstr "Microzonage spectral"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet"
 msgstr "Eaux de baignade (qualité)"
 
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.0"
+msgstr "Classification de la qualité impossible"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.1"
+msgstr "Qualité excellente"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.2"
+msgstr "Qualité bonne"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.3"
+msgstr "Qualité suffisante"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.4"
+msgstr "Qualité insuffisante"
+
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.aeussereraspekt"
 msgstr "Aspect général"
 
