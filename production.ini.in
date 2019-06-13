@@ -33,7 +33,7 @@ sqlalchemy.vbs.url = postgresql://${dbhost}:${dbport}/vbs_${dbstaging}
 sqlalchemy.zeitreihen.url = postgresql://${dbhost}:${dbport}/zeitreihen_${dbstaging}
 sqlalchemy.lubis.url = postgresql://${dbhost}:${dbport}/lubis_${dbstaging}
 # As diemo is a RW-db stagging is always master
-sqlalchemy.diemo.url = postgresql://${dbhost}:${dbport}/diemo_master
+sqlalchemy.diemo.url = postgresql://${dbhost}:${dbport}/diemo_${dbstaging}
 
 # Mako specific
 mako.directories = chsdi:templates
