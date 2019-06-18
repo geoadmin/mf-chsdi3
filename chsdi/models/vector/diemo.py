@@ -37,7 +37,7 @@ class DiemoLocations(Base, Vector):
     queriable_authentication_mode = Column('queriable_authentication_mode', Unicode)
     queriable_plug_type = Column('queriable_plug_type', Unicode)
     queriable_charging_facilities = Column('queriable_charging_facilities', Unicode)
-    is_open_24_hours = Column('is_open_24_hours', Boolean)
+    IsOpen24Hours = Column('is_open_24_hours', Boolean)
     is_hubject_compatible = Column('is_hubject_compatible', Boolean)
     the_geom = Column(Geometry2D)
 
