@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Unicode, Boolean
+from sqlalchemy import Column, Unicode, Boolean, Date
 from sqlalchemy.types import Numeric
 from sqlalchemy.dialects import postgresql
 
@@ -11,34 +11,48 @@ Base = bases['diemo']
 
 
 class DiemoLocations(Base, Vector):
-    __tablename__ = 'v_evse'
+    __tablename__ = 'v_evse_aggregated'
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __bodId__ = 'ch.bfe.ladestellen-elektromobilitaet'
-    __queryable_attributes__ = ['aviailability', 'accessibility', 'queriable_plug_type', 'queriable_charging_facilities',
-                                'queriable_authentication_mode', 'fk_operator_id', 'is_hubjet_compatible',
-                                'location_id', 'name', 'address_street', 'address_house_num',
-                                'address_postal_code', 'address_city', 'is_open_24_hours']
-    __label__ = 'name'
+    __queryable_attributes__ = ['EvseID', 'Availability', 'QueryPlugs', 'Accessiblity', 'IsHubjectCompatible', 'QueryChargingFacilities', 'DynamicInfoAvailable',
+                                'QueryChargingModes', 'MaxCapacity', 'QueryPaymentOptions', 'AdditionalInfo', 'ChargingStationID', 'ChargingStationName',
+                                'Address', 'Street', 'HouseNum', 'PostalCode', 'City', 'QueryAutheticationModes', 'Latitude',
+                                'Longitude', 'GeoCoordinates', 'LastUdate', 'IsOpen24Hours', 'OpeningTimes', 'OperatorID', 'OperatorName']
+    __label__ = 'EvseID'
     id = Column('bgdi_id', Numeric, primary_key=True)
-    fk_operator_id = Column('fk_operator_id', Unicode)
-    location_id = Column('location_id', Unicode)
-    name = Column('name', Unicode)
-    accessibility = Column('accessibility', Unicode)
-    aviailability = Column('availability', Unicode)
-    address_street = Column('address_street', Unicode)
-    address_house_num = Column('address_house_num', Unicode)
-    address_postal_code = Column('address_postal_code', Unicode)
-    address_city = Column('address_city', Unicode)
-    latitude = Column('latitude', Numeric)
-    longitude = Column('longitude', Numeric)
-    authentication_mode = Column('authentication_mode', postgresql.ARRAY(Unicode))
-    plug_type = Column('plug_type', postgresql.ARRAY(Unicode))
-    charging_facilities = Column('charging_facilities', postgresql.ARRAY(Unicode))
-    queriable_authentication_mode = Column('queriable_authentication_mode', Unicode)
-    queriable_plug_type = Column('queriable_plug_type', Unicode)
-    queriable_charging_facilities = Column('queriable_charging_facilities', Unicode)
+    EvseID = Column('loading_unit_id', Unicode)
+    Availability = Column('availability', Unicode)
+    Plugs = Column('plug_type', postgresql.ARRAY(Unicode))
+    QueryPlugs = Column('queriable_plug_type', Unicode)
+    Accessibility = Column('accessibility', Unicode)
+    IsHubjectCompatible = Column('is_hubject_compatible', Boolean)
+    ChargingFacilities = Column('charging_facilities', postgresql.ARRAY(Unicode))
+    QueryChargingFacilities = Column('queriable_charging_facilities', Unicode)
+    DynamicInfoAvailable = Column('dynamic_info_available', Unicode)
+    ChargingModes = Column('charging_modes', postgresql.ARRAY(Unicode))
+    QueryChargingModes = Column('queriable_charging_modes', Unicode)
+    MaxCapacity = Column('max_capacity', Numeric)
+    PaymentOptions = Column('payment_options', postgresql.ARRAY(Unicode))
+    QueryPaymentOptions = Column('queriable_payment_options', Unicode)
+    AdditionalInfo = Column('additional_info', Unicode)
+    ChargingStationID = Column('location_id', Unicode)
+    CharingStationName = Column('name', Unicode)
+    Address = Column('queriable_address', Unicode)
+    Street = Column('address_street', Unicode)
+    HouseNum = Column('address_house_num', Unicode)
+    PostalCode = Column('address_postal_code', Unicode)
+    City = Column('address_city', Unicode)
+    AuthenticationModes = Column('authentication_mode', postgresql.ARRAY(Unicode))
+    QueryAuthenticationModes = Column('queriable_authentication_mode', Unicode)
+    Latitude = Column('latitude', Numeric)
+    Longitude = Column('longitude', Numeric)
+    GeoCoordinates = Column('queriable_geocoordinates', Unicode)
+    LastUpdate = Column('last_modified', Date)
     IsOpen24Hours = Column('is_open_24_hours', Boolean)
-    is_hubject_compatible = Column('is_hubject_compatible', Boolean)
+    OpeningTimes = Column('opening_times', Boolean)
+    OperatorID = Column('operator_id', Unicode)
+    OperatorName = Column('operator_name', Unicode)
+    ProviderURL = Column('provider_url', Unicode)
     the_geom = Column(Geometry2D)
 
 register(DiemoLocations.__bodId__, DiemoLocations)
