@@ -190,11 +190,11 @@ shell:
 
 .PHONY: test
 test:
-	PYTHONPATH=${PYTHONPATH} NODE_TOTAL=4 NODE_INDEX=1 ${NOSE_CMD} --with-parallel tests/ -e .*e2e.*
+	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} tests/ -e .*e2e.*
 
 .PHONY: teste2e
 teste2e:
-	PYTHONPATH=${PYTHONPATH}  NODE_TOTAL=4 NODE_INDEX=1 ${NOSE_CMD} --with-parallel tests/e2e/
+	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} tests/e2e/
 
 .PHONY: lint
 lint:
