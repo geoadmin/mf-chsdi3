@@ -121,6 +121,15 @@ class TestFileView(TestsBase):
         self.assertTrue(resp.json['status'], 'updated')
         self.assertEqual(admin_id, resp.json['adminId'])
 
+    # KML in S3 are served directly by varnish
+    def test_get_kml(self):
+        resp = self.testapp.post('/files', VALID_KML, headers=self.headers, status=200)
+        file_id = resp.json['fileId']
+
+        resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
+        self.assertTrue(resp.headers['Content-Type'], 'application/vnd.google-earth.kml+xml; charset=UTF-8')
+        self.assertEqual(resp.text, VALID_KML)
+
     def test_forked_kml(self):
         resp = self.testapp.post('/files', VALID_KML, headers=self.headers, status=200)
         admin_id = resp.json['adminId']
