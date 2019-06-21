@@ -1,6 +1,6 @@
 .. raw:: html
 
-  "{:,.2f}".format(c['attributes']['heatpotential']).replace(',','\'')  or '-'<head>
+  <head>
   <link href="../_static/custom.css" rel="stylesheet" type="text/css" />
   <link rel="alternate" type="application/rss+xml" title="GeoAdmin RSS Feed" href="rss2.xml"/>
   </head>
