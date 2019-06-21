@@ -26,7 +26,7 @@
     % elif c['attributes']['ak'] == 'VD':
         <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://www.geo.vd.ch/theme/cadastre_thm?map_x=${c['clickCoordLv03'][0]}&map_y=${c['clickCoordLv03'][1]}&map_zoom=10" target="_blank">VD</a></td></tr>
     % elif c['attributes']['ak'] == 'TG':
-        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://geo.tg.ch/mapbender/frames/login.php?gui_id=Amtliche%20Vermessung&mb_myBBOX=${','.join(map(str,c['bboxlv95']))}" target="_blank">TG</a></td></tr>
+        <tr><td class="cell-left">${_('link to canton geoportal')}</td><td><a href="http://map.geo.tg.ch/mapbender/frames/login.php?gui_id=Amtliche%20Vermessung&mb_myBBOX=${','.join(map(str,c['bboxlv95']))}" target="_blank">TG</a></td></tr>
     % elif c['attributes']['ak'] == 'NE':
         <tr><td width="150">${_('link to canton geoportal')}</td><td><a href="http://sitn.ne.ch/theme/cadastre?map_x=2${c['clickCoordLv03'][0]}&map_y=1${c['clickCoordLv03'][1]}&map_zoom=10" target="_blank">NE</a></td></tr>
     % elif c['attributes']['ak'] == 'LU':
