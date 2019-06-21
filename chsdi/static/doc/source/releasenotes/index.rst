@@ -1,6 +1,6 @@
 .. raw:: html
 
-  <head>
+  "{:,.2f}".format(c['attributes']['heatpotential']).replace(',','\'')  or '-'<head>
   <link href="../_static/custom.css" rel="stylesheet" type="text/css" />
   <link rel="alternate" type="application/rss+xml" title="GeoAdmin RSS Feed" href="rss2.xml"/>
   </head>
@@ -38,6 +38,8 @@ API & applications
 
 Geodata
 *******
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Heat and cooling sources <//map.geo.admin.ch/?layers=ch.bfe.fernwaerme-angebot>`__ (ch.bfe.fernwaerme-angebot)                                                                            |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Heat/cooling demand: industry <//map.geo.admin.ch/?layers=ch.bfe.fernwaerme-nachfrage_industrie>`__ (ch.bfe.fernwaerme-nachfrage_industrie)                                               |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -112,6 +114,14 @@ Geodata
 | Update | `Waste incineration plants <//map.geo.admin.ch/?layers=ch.bfe.kehrichtverbrennungsanlagen>`__ (ch.bfe.kehrichtverbrennungsanlagen)                                                         |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Emergency calls by comune <//map.geo.admin.ch/?layers=ch.bakom.notruf>`__ (ch.bakom.notruf)                                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Field block map <//map.geo.admin.ch/?layers=ch.blw.feldblockkarte>`__ (ch.blw.feldblockkarte)                                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Patrouille des Glaciers (A race) <//map.geo.admin.ch/?layers=ch.vbs.patrouilledesglaciers-a_rennen>`__ (ch.vbs.patrouilledesglaciers-a_rennen)                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Patrouille des Glaciers (Z race) <//map.geo.admin.ch/?layers=ch.vbs.patrouilledesglaciers-z_rennen>`__ (ch.vbs.patrouilledesglaciers-z_rennen)                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `2000-Watt Sites <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-2000watt-areale>`__ (ch.bfe.energiestaedte-2000watt-areale)                                                             |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20190605:
