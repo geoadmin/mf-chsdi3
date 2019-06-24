@@ -3260,15 +3260,6 @@ msgstr "Protection areas"
 msgid "ch.bafu.grundwasserschutzzonen"
 msgstr "Protection zones"
 
-msgid "ch.bafu.holznutzung"
-msgstr "Wood harvesting and mortality (NFI)"
-
-msgid "ch.bafu.holzvorrat"
-msgstr "Standing volume (NFI)"
-
-msgid "ch.bafu.holzzuwachs"
-msgstr "Wood increment (NFI)"
-
 msgid "ch.bafu.hydrogeologie-markierversuche"
 msgstr "Tracer tests"
 
@@ -3827,12 +3818,6 @@ msgstr "Nighttime road traffic noise"
 msgid "ch.bafu.laerm-strassenlaerm_tag"
 msgstr "Daytime road traffic noise"
 
-msgid "ch.bafu.landesforstinventar-baumarten"
-msgstr "Tree species (NFI)"
-
-msgid "ch.bafu.landesforstinventar-totholz"
-msgstr "Dead wood (NFI)"
-
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
 msgstr "Vegetation height model NFI"
 
@@ -3853,9 +3838,6 @@ msgstr "Vegetation height [m]"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.year"
 msgstr "Data status"
-
-msgid "ch.bafu.landesforstinventar-waldanteil"
-msgstr "Percentage of forest area (NFI)"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
 msgstr "Forest mix rate NFI"
