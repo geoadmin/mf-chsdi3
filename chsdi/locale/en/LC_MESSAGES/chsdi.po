@@ -2741,6 +2741,21 @@ msgstr "Spectral micro-zoning"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet"
 msgstr "Bathing water quality"
 
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.0"
+msgstr "Quality classification not possible"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.1"
+msgstr "Excellent quality"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.2"
+msgstr "Good quality"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.3"
+msgstr "Sufficient quality"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.4"
+msgstr "Poor quality"
+
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.aeussereraspekt"
 msgstr "Äusserer Aspekt"
 

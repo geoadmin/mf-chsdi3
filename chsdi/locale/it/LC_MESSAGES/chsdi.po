@@ -2741,6 +2741,21 @@ msgstr "Microzonazione spettrale"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet"
 msgstr "Acque balneabili (qualità)"
 
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.0"
+msgstr "Classificazione della qualità impossibile"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.1"
+msgstr "Qualità eccellente"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.2"
+msgstr "Qualità buona"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.3"
+msgstr "Qualità sufficiente"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.4"
+msgstr "Qualità scarsa"
+
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.aeussereraspekt"
 msgstr "Aspect général"
 

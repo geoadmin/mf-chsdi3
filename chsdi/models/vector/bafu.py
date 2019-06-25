@@ -820,7 +820,7 @@ class GewaesserschutzBadewasserqualitaet(Base, Vector):
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.gewaesserschutz-badewasserqualitaet'
     __queryable_attributes__ = ['id', 'bwname', 'groupid', 'nwunitname', 'rbdsuname',
-                                'gemeinde', 'canton', 'bwatercat', 'qualitaet_ch']
+                                'gemeinde', 'canton', 'bwatercat', 'qualitaet_eua']
     __template__ = 'templates/htmlpopup/gewaesserschutz_badewasserqualitaet.mako'
     __extended_info__ = True
     __label__ = 'bwname'
@@ -835,8 +835,8 @@ class GewaesserschutzBadewasserqualitaet(Base, Vector):
     canton = Column('canton', Unicode, nullable=False)
     eua_badeplatz = Column('eua_badeplatz', Integer, nullable=False)
     gemeinde = Column('gemeinde', Unicode, nullable=False)
-    qualitaet_ch = Column('qualitaet_ch', Unicode, nullable=False)
-    qualitaet_eua = Column('qualitaet_eua', Unicode, nullable=True)
+    qualitaet_ch = Column('qualitaet_ch', Unicode, nullable=True)
+    qualitaet_eua = Column('qualitaet_eua', Unicode, nullable=False)
     anzahlmessungen = Column('anzahlmessungen', Integer, nullable=False)
     verunreinigung_tage = Column('verunreinigung_tage', Integer, nullable=False)
     coord_ch = Column('coord_ch', Unicode, nullable=False)
