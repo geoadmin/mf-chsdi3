@@ -684,6 +684,26 @@ class Energieforschung(Base, Vector):
 register('ch.bfe.energieforschung', Energieforschung)
 
 
+class FernWaermeAngebot(Base, Vector):
+    __tablename__ = 'fernwaerme_angebot'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fernwaerme_angebot.mako'
+    __bodId__ = 'ch.bfe.fernwaerme-angebot'
+    __queryable_attributes__ = ['name']
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    heatpotential = Column('heatpotential', Float)
+    heat_supplier_category = Column('heat_supplier_category', Integer)
+    bezeichnung_de = Column('bezeichnung_de', Unicode)
+    bezeichnung_fr = Column('bezeichnung_fr', Unicode)
+    bezeichnung_it = Column('bezeichnung_it', Unicode)
+    bezeichnung_en = Column('bezeichnung_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.fernwaerme-angebot', FernWaermeAngebot)
+
+
 class MinergieGebaeude(Base, Vector):
     __tablename__ = 'minergiegebaeude'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
