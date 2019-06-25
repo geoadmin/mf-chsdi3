@@ -2021,9 +2021,6 @@ msgstr "Si les chiens de protection sont sur l'alpage de Bremingard, il est poss
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_138"
 msgstr "Deux chemins de randonnée relient l'alpage de Niwen à Stafel. Celui situé en aval est clôturé, celui situé en amont, passant par Nibubedu, ne l'est pas. Sur ce chemin il est possible de rencontrer des chiens de protection en juin et en septembre."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_14"
-msgstr "Au moment de l'actualisation des alpages protégés par des chiens, il n'était pas encore défini si des chiens de protection des troupeaux seraient en activité sur l'alpage de Balachaux pour la saison 2018."
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_145"
 msgstr "Le troupeau et les chiens ne sont présent que quelques jours durant l'été sur le col du Kaiseregg mais jamais durant le week-end."
 
@@ -2031,16 +2028,13 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_150"
 msgstr "Le chemin allant de Vorder Sänntum au Turtmannsee en longeant la rivière Turtmänna et le celui reliant Biele à la cabane CAS de Turtmann sont clôturés. Celui passant par la chapelle Holustei ne l'est pas et les chiens peuvent s'y trouver en juillet"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_154"
-msgstr "Le troupeau protégé par des chiens se trouvent au sud-ouest de Z'Mübach (point 1997) de mi-juin à mi-juillet puis de mi-septembre à fin septembre et au nord-est de Z'Mübach de début juillet à mi-septembre."
+msgstr "Pour permettre l'estivage de moutons sur le Rappental, la protection des troupeaux a été intensifiée. Pour limiter les interactions entre les chiens de protection des troupeaux et les touristes certains sentiers seront temporairement déviés ou fermés."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_16"
 msgstr "Il est possible de rencontrer des chiens de protection des troupeaux sur le chemin reliant \"Baumgarte\" au col (point 1829) seulement durant le mois de septembre. Durant le reste de la saison le chemin est clôturé."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_163"
-msgstr "Si le troupeau protégé par des chiens se trouve proche d'un chemin de randonnée officiel, celui-ci est clôturé. Ainsi vous ne traverserez en principe pas le troupeau protégé par des chiens."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_36"
-msgstr "Les chemins de randonnée officiels sont clôturés. Ainsi vous ne traverserez en principe pas le troupeau protégé par des chiens. Si vous êtes avec votre chien de compagnie, il impératif de quand même le garder en laisse et de passer son chemin."
+msgstr "Si le troupeau protégé par des chiens se trouve proche d'un chemin de randonnée officiel, celui-ci est clôturé. Ainsi vous ne traverserez en principe pas le troupeau protégé par des CPT. Il est déconseillé d’être accompagné par un chien de compagnie."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_4"
 msgstr "Les chemins de randonnée faisant le tour du \"Lag da Pigniu\" sont clôturés. Ainsi vous ne traverserez en principe pas le troupeau protégé par des chiens. Si vous êtes avec votre chien de compagnie, il impératif de quand même le garder en laisse."
@@ -2051,14 +2045,23 @@ msgstr "Le troupeau protégé par des chiens qui pâture sur le Guferli est clô
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_46"
 msgstr "Des chiens de protection des troupeaux peuvent être en activité toute l'année sur le pâturage de Ruchschwand."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_51"
+msgstr "Les chemins de randonnée officiels sont clôturés. Ainsi vous ne traverserez en principe pas le troupeau protégé par des chiens. Si vous êtes avec votre chien de compagnie, il impératif de quand même le garder en laisse et de passer son chemin."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_60"
 msgstr "Le chemin de randonnée situé au sud de Bärried est clôturé. Si vous êtes avec votre chien de compagnie, il impératif de quand même le garder en laisse et de passer son chemin."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_73"
 msgstr "La Dent de Valerette peut être atteinte sans traverser le troupeau protégé par des chiens en passant par Chindonne."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_77"
+msgstr "Sur le chemin allant du Chummli vers le point 1652, des interactions directes avec les chiens de protection des troupeaux sont possibles seulement durant environs deux semaines (Plus d'info auprès du PN Diemtigtal)."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_87"
 msgstr "Le sommet du Ochsen peut être atteint sans traverser le troupeau protégé par des chiens en passant par Ritz et Oberalpigle."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_91"
+msgstr "Les chemins de randonnée officiels sont clôturés. Ainsi vous ne traverserez en principe pas le troupeau protégé par des chiens. Si vous êtes avec votre chien de compagnie, il impératif de quand même le garder en laisse et de passer son chemin."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_92"
 msgstr "Les recommandations sur le comportement correct à adopter en présence de vaches mère est disponible sur le site de Suisse Rando"
@@ -2088,7 +2091,7 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1006"
 msgstr "Les chemins de randonnée officiels sont clôturés. Ainsi vous ne traverserez en principe pas le troupeau protégé par des chiens. Si vous êtes avec votre chien de compagnie, il impératif de quand même le garder en laisse et de passer son chemin."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1007"
-msgstr "En règle générale du 20.6 au 20.9"
+msgstr "En règle générale du 20.6 au 30.9"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1008"
 msgstr "En règle générale entre début juin et fin septembre. Prêtez attention aux indications sur la présence actuelle des chiens inscrits sur les panneaux d'information présent sur place."
@@ -2132,17 +2135,8 @@ msgstr "En règle général de mi-juin à fin septembre. Prêtez attention aux i
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1021"
 msgstr "En règle générale de mi-juin à mi-septembre"
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1022"
-msgstr "En règle générale entre mi-mai et fin septembre. Des informations plus précises peuvent être obtenues auprès de l'Office du tourisme de Sörenberg Flühli."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1023"
-msgstr "En règle générale de mi-mai à mi-septembre"
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
 msgstr "Il est possible de rencontrer des chiens de protection des troupeaux de début août à mi-septembre, sur le chemin reliant le \"Canalbrücke\" à la cabane du CAS de Zapport."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1025"
-msgstr "Durant le mois de juin, il est possible de rencontrer des chiens de protection sur le chemin reliant le Lago di Luzzone à la cabane du CAS de Motterascio et de mi-juillet à fin juillet entre le Lago di Luzzone et le col de Soreda."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Contact E-mail"
@@ -4784,6 +4778,12 @@ msgstr "Etages de végétation"
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
 msgstr "subcode"
 
+msgid "ch.bafu.wald-wasserverfuegbarkeit_boden"
+msgstr "Wasserverfügbarkeit im Boden"
+
+msgid "ch.bafu.wald-wasserverfuegbarkeit_pflanzen"
+msgstr "Wasserverfügbarkeit für Pflanzen"
+
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Point fixe du profil en travers"
 
@@ -6678,7 +6678,7 @@ msgid "ch.bfe.fernwaerme-nachfrage_industrie.industry"
 msgstr "Branche consommant le plus"
 
 msgid "ch.bfe.fernwaerme-nachfrage_industrie.needindustry"
-msgstr "Demande de chaleur pour l’industrie"
+msgstr "Demande de chaleur pour l’industrie [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_industrie.noga"
 msgstr "Branche la plus représentée"
@@ -6687,28 +6687,28 @@ msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
 msgstr "Demande de chaleur/froid: bâtiments"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needhome"
-msgstr "Demande de chaleur pour les bâtiments d’habitation"
+msgstr "Demande de chaleur pour les bâtiments d’habitation [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needservice"
-msgstr "Demande de chaleur pour les bâtiments administratifs"
+msgstr "Demande de chaleur pour les bâtiments administratifs [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needtotal"
-msgstr "Demande de chaleur, total"
+msgstr "Demande de chaleur, total [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.noga"
 msgstr "Bâtiments administratifs: branche la plus représentée"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas"
-msgstr "Bâtiments d’habitation: part de gaz"
+msgstr "Bâtiments d’habitation: part de gaz [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentoil"
-msgstr "Bâtiments d’habitation: part de mazout"
+msgstr "Bâtiments d’habitation: part de mazout [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentpump"
-msgstr "Bâtiments d’habitation: part des pompes à chaleur"
+msgstr "Bâtiments d’habitation: part des pompes à chaleur [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentremoteheat"
-msgstr "Bâtiments d’habitation: part du chauffage à distance"
+msgstr "Bâtiments d’habitation: part du chauffage à distance [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.service"
 msgstr "Bâtiments administratifs: branche consommant le plus"

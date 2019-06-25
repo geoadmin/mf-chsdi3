@@ -527,6 +527,44 @@ class AbgeltungWasserkraftnutzung(Base, Vector):
 register('ch.bfe.abgeltung-wasserkraftnutzung', AbgeltungWasserkraftnutzung)
 
 
+class FernwaermeWohn (Base, Vector):
+    __tablename__ = 'fernwaerme_wohn'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fernwaerme_wohn.mako'
+    __bodId__ = 'ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude'
+    __extended_info__ = True
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    needhome = Column('needhome', Float)
+    needservice = Column('needservice', Float)
+    needtotal = Column('needtotal', Float)
+    service = Column('service', Unicode)
+    noga = Column('noga', Unicode)
+    percentgas = Column('percentgas', Float)
+    percentoil = Column('percentoil', Float)
+    percentpump = Column('percentpump', Float)
+    percentremoteheat = Column('percentremoteheat', Float)
+    objectid = Column('objectid', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude', FernwaermeWohn)
+
+
+class FernwaermeIndustrie (Base, Vector):
+    __tablename__ = 'fernwaerme_industrie'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fernwaerme_industrie.mako'
+    __bodId__ = 'ch.bfe.fernwaerme-nachfrage_industrie'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    needindustry = Column('needindustry', Integer)
+    industry = Column('industry', Unicode)
+    noga = Column('noga', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.fernwaerme-nachfrage_industrie', FernwaermeIndustrie)
+
+
 class Energieberatungsstellen (Base, Vector):
     __tablename__ = 'energieberatungsstellen'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})

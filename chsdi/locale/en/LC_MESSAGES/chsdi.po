@@ -2021,9 +2021,6 @@ msgstr "If guardian dogs are present, we recommend the route \"Unteri Rippa-Cern
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_138"
 msgstr "The lower trail from the Niwenalp to Stafel is fenced off, so you don`t have direct contact to guardian dogs. The upper, parallel running trail via Nibubedu crosses the protected sheep during June and September."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_14"
-msgstr "It wasn`t decided yet, if there will be guardian dogs with the sheep at Balachaux, when the protection areas were updated."
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_145"
 msgstr "On the Kaiseregg-Pass, sheep and guardian dogs might be present throughout the whole summer season, but not on weekends."
 
@@ -2031,16 +2028,13 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_150"
 msgstr "On the trails \"Vorderer Sänntum\" to \"Turtmannsee\" (west of \"Turtmänna\") and \"Biele\" to the \"Turtmannhütte\" (east of \"Turtmänna\") the dogs are fenced off. We recommend not to hike from \"Vorderer Sänntum\" via \"Holstulei\" to \"Biele\" in July."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_154"
-msgstr "On the pasture south-west of \"Z`Mübach\" (point 1997), guardian dogs are present from mid June until mid July and the second half of September. The rest of the summer, guardian dogs are north-east of \"Z`Mübach\"."
+msgstr "To ensure Alpine pasturing with sheep in Rappental, livestock protection has been intensified. To relieve the shepherd, livestock guardian dogs and tourism will be separated in 2019 - hiking trails will be temporarily closed or diverted."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_16"
 msgstr "A fence will prevent direct contact with the guardian dogs. Only between Baumgarte to the pass (1829) the trail is not fenced off. There, guardian dogs are only present in September."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_163"
-msgstr "If sheep and guardian dogs are close to the hiking trail, a fence will protect you from direct contact."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_36"
-msgstr "A fence will protect you from direct contact with the guardian dogs. If you have a companion dog with you, please put it on the leash and pass the pasture briskly."
+msgstr "If sheep and guardian dogs are close to the hiking trail, a fence will protect you from direct contact. If you have a companion dog with you, please put it on the leash and pass the pasture briskly."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_4"
 msgstr "When guardian dogs are present around Lag da Pigniu, a fence will protect you from direct contact. If you have a companion dog with you, please put it on the leash and pass the pasture briskly."
@@ -2051,14 +2045,23 @@ msgstr "You can easily walk around the fenced herd at the Guferli."
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_46"
 msgstr "Guardian dogs can be present year-round on the pasture around Ruchschwand."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_51"
+msgstr "A fence will protect you from direct contact with the guardian dogs. If you have a companion dog with you, please put it on the leash and pass the pasture briskly. Not to hike with companion dogs."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_60"
 msgstr "South of Bärried, a fence will protect you from direct contact with the guardian dogs. If you have a companion dog with you, please put it on the leash and pass the pasture briskly."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_73"
 msgstr "If you want to climb Dent de Valerette without direct contact with the guardian dogs, use the trail via Chîndonne."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_77"
+msgstr "The hiking trail from Bruchgeereberg via Pkt. 1652 and further on towards Chummli is fenced off. Only during about 2 weeks it is possible to meet the protected herd on the trail section Chummli Pkt. 1652 directly (More information: NP Diemtigtal)."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_87"
 msgstr "If you want to climb Ochsen without direct contact with the guardian dogs, use the trail via Ritz and Oberalpiege."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_91"
+msgstr "A fence will protect you from direct contact with the guardian dogs. If you have a companion dog with you, please put it on the leash and pass the pasture briskly."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_92"
 msgstr "You can find recommendations for correct behavior around suckler cows on the Swiss hiking trails  website (only in de/fr/it)."
@@ -2088,7 +2091,7 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1006"
 msgstr "On the official trails, a fence will protect you from direct contact with the guardian dogs. If you have a companion dog with you, please put it on the leash and pass the pasture briskly."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1007"
-msgstr "Usually from the 20th of June until the 20th of September."
+msgstr "Usually from the 20th of June until the 30th of September."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1008"
 msgstr "Usually from the beginning of June until the end of September. Please consider the information boards on site for the current location of the dogs."
@@ -2132,17 +2135,8 @@ msgstr "Usually from mid June until the end of September. Please consider the in
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1021"
 msgstr "Usually from mid June until mid September."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1022"
-msgstr "Usually from mid May until the end of September. For more information contact the Sörenberg Flühli Toursim Center."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1023"
-msgstr "Usually from mid May until mid September."
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
 msgstr "From the beginning of August until mid September you might have direct contact with the guardian dogs on the trail between \"Canalbrücke\" and \"Zapporthütte\"."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1025"
-msgstr "In June, guardian dogs are usually present around the trail between Lago di Luzzone and Capanna Motterascio. During the second half of July, they are around the trail between  Lago di Luzzone  and  Passo Soreda."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Contact E-mail"
@@ -4131,7 +4125,7 @@ msgid "ch.bafu.permafrost"
 msgstr "Potential permafrost distribution"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche"
-msgstr "Gewässerschutzbereiche"
+msgstr "Water protection areas"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.bemerkungen_de"
 msgstr "Bemerkungen"
@@ -4146,7 +4140,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.typ"
 msgstr "Typ"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale"
-msgstr "Grundwasserschutzareale"
+msgstr "Groundwater protection areas"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.bemerkungen_de"
 msgstr "Bemerkungen"
@@ -4173,7 +4167,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.typ_txt"
 msgstr "Kantonale Typbezeichnung"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen"
-msgstr "Grundwasserschutzzonen"
+msgstr "Groundwater protection zones"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.bemerkungen_de"
 msgstr "Bemerkungen"
@@ -4200,10 +4194,10 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.typ"
 msgstr "Typ"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zo"
-msgstr "Zuströmbereiche Zo"
+msgstr "Areas of contribution Zo"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zu"
-msgstr "Zuströmbereiche Zu"
+msgstr "Area of contribution Zu"
 
 msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
 msgstr "REN extensive agricultural area"
@@ -4784,6 +4778,12 @@ msgstr "Altitudinal vegetation belts"
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
 msgstr "subcode"
 
+msgid "ch.bafu.wald-wasserverfuegbarkeit_boden"
+msgstr "Wasserverfügbarkeit im Boden"
+
+msgid "ch.bafu.wald-wasserverfuegbarkeit_pflanzen"
+msgstr "Wasserverfügbarkeit für Pflanzen"
+
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Cross section securing point"
 
@@ -4953,7 +4953,7 @@ msgid "ch.bag.zecken-lyme"
 msgstr "Borreliosis risk regions"
 
 msgid "ch.bag.zeckenstichmodell"
-msgstr "Zeckenstichmodell"
+msgstr "Tick bite model"
 
 msgid "ch.bak"
 msgstr "BAK"
@@ -6678,7 +6678,7 @@ msgid "ch.bfe.fernwaerme-nachfrage_industrie.industry"
 msgstr "Sector with greatest demand"
 
 msgid "ch.bfe.fernwaerme-nachfrage_industrie.needindustry"
-msgstr "Heat demand from industry"
+msgstr "Heat demand from industry [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_industrie.noga"
 msgstr "Largest sector"
@@ -6687,28 +6687,28 @@ msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
 msgstr "Heat/cooling demand: resid./comm."
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needhome"
-msgstr "Heat demand – residential"
+msgstr "Heat demand – residential [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needservice"
-msgstr "Heat demand – commercial"
+msgstr "Heat demand – commercial [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needtotal"
-msgstr "Heat demand – total"
+msgstr "Heat demand – total [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.noga"
 msgstr "Commercial: largest sector"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas"
-msgstr "Residential: gas proportion"
+msgstr "Residential: gas proportion [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentoil"
-msgstr "Residential: oil proportion"
+msgstr "Residential: oil proportion [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentpump"
-msgstr "Residential: heat pump proportion"
+msgstr "Residential: heat pump proportion [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentremoteheat"
-msgstr "Residential: district heating proportion"
+msgstr "Residential: district heating proportion [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.service"
 msgstr "Commercial: sector with greatest demand"
@@ -6744,7 +6744,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Waste incineration plants"
+msgstr "Waste incineration plants (MWI)"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
 msgstr "Year of commissioning of the plant"
@@ -10008,7 +10008,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "National Map 1:50'000"
 
 msgid "ch.swisstopo.pixelkarte-farbe-winter"
-msgstr "Landeskarte Winter | LK25, LK50"
+msgstr "Winter national map | LK25, LK50"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "National Maps (grey)"

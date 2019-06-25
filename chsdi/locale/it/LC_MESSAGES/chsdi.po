@@ -2021,9 +2021,6 @@ msgstr "Se i cani da protezione delle greggi si trovano all'alpe di Bremingard, 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_138"
 msgstr "Due sentieri escursionistici collegano l'alpe di Niwen a Stafel. Quello a valle è delimitato da recinzioni. Quello che si trova a monte, passando da Nibubedu non lo è ed è pertanto possibile incontrarvi cani da protezione in giugno e in settembre."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_14"
-msgstr "Al momento dell'aggiornamento degli alpeggi protetti dai cani, non era ancora stato deciso se i cani da protezione delle greggi saranno impiegati all'alpe di Balachaux nel 2018. Potete verificare su http//www.protectiondestroupeaux.ch/map/."
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_145"
 msgstr "Il gregge e i cani da protezione sostano qualche giorno in estate sul passo di Kaiseregg, ma unicamente in settimana."
 
@@ -2031,16 +2028,13 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_150"
 msgstr "Il sentiero che conduce da Vorder Sanntum al Turtmannsee costeggiando il torrente Turtmänna e quello che collega Biele alla Capanna CAS di Turtmann sono delimitati da recinzioni. Quello che passa dalla cappella di Holustei non lo."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_154"
-msgstr "Il gregge protetto dai cani si trova a sud-ovest di Z'Mübach (punto 1997) da metà giugno a metà luglio e in seguito da metà settembre a fine settembre. Dall'inizio di luglio a metà settembre esso si trova a nord-est di Z'Mübach."
+msgstr "Per permettere il pascolo delle pecore sul Rappental, la protezione dei greggi è stata intensificata. Per evitare le interazioni tra i cani della protezione dei greggi ed i turisti, alcuni sentieri saranno temporaneamente modificati o chiusi."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_16"
 msgstr "Unicamente durante il mese di settembre è possibile incontrare cani da protezione delle greggi sul sentiero che collega \"Baumgarte\" al passo (punto 1829). Il resto della stagione il sentiero è delimitato da una recinzione."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_163"
-msgstr "Se il gregge protetto dai cani si trova in prossimità di un sentiero ufficiale, esso viene recintato, affinché non dobbiate attraversarlo."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_36"
-msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
+msgstr "Se il gregge protetto dai cani si trova in prossimità di un sentiero ufficiale, esso viene recintato, affinché non dobbiate attraversarlo. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_4"
 msgstr "I sentieri escursionistici presso il Lag da Pigniu sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
@@ -2051,14 +2045,23 @@ msgstr "Il gregge protetto da cani che pascola sul Guferli è recintato e può e
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_46"
 msgstr "I cani da protezione delle greggi possono essere presenti tutto l'anno sul pascolo presso Ruschwand."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_51"
+msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_60"
 msgstr "Il sentiero escursionistico a sud di Bärried è delimitato da recinzioni. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_73"
 msgstr "Il Dent de la Valerette può essere raggiunto senza incontrare cani da protezione delle greggi passando da Chindonne."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_77"
+msgstr "Sul sentiero andando da Chummli al punto 1652, delle interazioni con i cani della protezione dei greggi sono possibili per una durata di circa due settimane. (Ulterioni info presso PN Diemtigtal)"
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_87"
 msgstr "La cima dell'Ochsen può essere raggiunta senza attraversare il gregge protetto passando da Ritz e Oberalpigle."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_91"
+msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_92"
 msgstr "Ulteriori raccomandazioni sul comportamento da adottare in presenza di vacche nutrici sono disponibili su www.sentierisvizzeri.ch"
@@ -2088,7 +2091,7 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1006"
 msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1007"
-msgstr "Di regola dal 20 giugno al 20 settembre"
+msgstr "Di regola dal 20 giugno al 30 settembre"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1008"
 msgstr "Di regola dall'inizio di giugno a fine settembre. Prestate attenzione  alle indicazioni riguardanti la presenza attuale dei cani riportata sui pannelli informativi in loco."
@@ -2132,17 +2135,8 @@ msgstr "Di regola da metà giugno a fine settembre. Prestate attenzione  alle in
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1021"
 msgstr "Di regola da metà giugno a metà settembre"
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1022"
-msgstr "Di regola tra metà maggio e fine settembre. Informazioni più precise sono ottenibili presso l'Ufficio del Turismo di Sörenberg Flühli."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1023"
-msgstr "Di regola da metà maggio a metà settembre"
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
 msgstr "Dall'inizio di agosto a metà settembre è possibile incontrare i cani da protezione delle greggi sul sentiero che collega il \"Canalbrücke\" alla Capanna Zapport."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1025"
-msgstr "In giugno è possibile incontrare i cani da protezione delle greggi sul sentiero che collega il Lago di Luzzone alla Capanna Motterascio, mentre da metà luglio a fine luglio è possibile incontrarli tra il lago di Luzzone e il Passo Soreda."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Contatto E-mail"
@@ -4131,7 +4125,7 @@ msgid "ch.bafu.permafrost"
 msgstr "Cartina indicativa del permafrost"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche"
-msgstr "Secteurs de protection des eaux"
+msgstr "Settori di protezione delle acque"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.bemerkungen_de"
 msgstr "Remarques"
@@ -4146,7 +4140,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.typ"
 msgstr "Type"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale"
-msgstr "Périmètres de protection"
+msgstr "Perimetri di protezione"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.bemerkungen_de"
 msgstr "Remarques"
@@ -4173,7 +4167,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.typ_txt"
 msgstr "Désignation cantonale du type"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen"
-msgstr "Zones de protection des eaux souterraines"
+msgstr "Zone protezione acque sotterranee"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.bemerkungen_de"
 msgstr "Remarques"
@@ -4200,10 +4194,10 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.typ"
 msgstr "Type"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zo"
-msgstr "Aires d'alimentation Zo"
+msgstr "Settori d'alimentazione Zo"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zu"
-msgstr "Aires d'alimentation Zu"
+msgstr "Settori d'alimentazione Zu"
 
 msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
 msgstr "REN zona di agricoltura estensiva"
@@ -4784,6 +4778,12 @@ msgstr "Fasce altitudinali"
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
 msgstr "subcode"
 
+msgid "ch.bafu.wald-wasserverfuegbarkeit_boden"
+msgstr "Wasserverfügbarkeit im Boden"
+
+msgid "ch.bafu.wald-wasserverfuegbarkeit_pflanzen"
+msgstr "Wasserverfügbarkeit für Pflanzen"
+
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Punto fisso del profilo trasversale"
 
@@ -4944,7 +4944,7 @@ msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=it"
 
 msgid "ch.bag.zecken-fsme-faelle"
-msgstr "FSME - Lieux déclarés de piqûre"
+msgstr "FSME – Luoghi con casi dichiarati"
 
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "FSME - vaccinazione raccomandata"
@@ -4953,7 +4953,7 @@ msgid "ch.bag.zecken-lyme"
 msgstr "Zone a rischio di Borreliosi"
 
 msgid "ch.bag.zeckenstichmodell"
-msgstr "Modèle des piqûres"
+msgstr "Modello delle punture di zecche"
 
 msgid "ch.bak"
 msgstr "UFC"
@@ -6678,7 +6678,7 @@ msgid "ch.bfe.fernwaerme-nachfrage_industrie.industry"
 msgstr "Ramo che consuma di più"
 
 msgid "ch.bfe.fernwaerme-nachfrage_industrie.needindustry"
-msgstr "Domanda di calore industria"
+msgstr "Domanda di calore industria [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_industrie.noga"
 msgstr "Ramo più rappresentato"
@@ -6687,28 +6687,28 @@ msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
 msgstr "Domanda calore/freddo abit./servizi"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needhome"
-msgstr "Domanda di calore abitazioni"
+msgstr "Domanda di calore abitazioni [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needservice"
-msgstr "Domanda di calore terziario"
+msgstr "Domanda di calore terziario [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needtotal"
-msgstr "Domanda di calore totale"
+msgstr "Domanda di calore totale [MWh/a]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.noga"
 msgstr "Terziario: ramo più rappresentativo"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas"
-msgstr "Abitazioni: quota gas"
+msgstr "Abitazioni: quota gas [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentoil"
-msgstr "Abitazioni: quota olio"
+msgstr "Abitazioni: quota olio [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentpump"
-msgstr "Abitazioni: quota pompa di calore"
+msgstr "Abitazioni: quota pompa di calore [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentremoteheat"
-msgstr "Abitazioni: quota teleriscaldamento"
+msgstr "Abitazioni: quota teleriscaldamento [%]"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.service"
 msgstr "Terziario: ramo che consuma di più"
@@ -6744,7 +6744,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Inceneritori"
+msgstr "Impianti di incenerimento IIRU"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
 msgstr "Anno di messa in servizio dell’impianto"
@@ -10008,7 +10008,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "Carta nazionale 1:50'000 | CN50"
 
 msgid "ch.swisstopo.pixelkarte-farbe-winter"
-msgstr "Carte nationale hiver | CN25, CN50"
+msgstr "Carta nazionale inverno CN25/CN50"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Carte nazionali (grigio)"
