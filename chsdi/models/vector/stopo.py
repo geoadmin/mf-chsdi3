@@ -3221,6 +3221,7 @@ class Vec25GewaessernetzReferenz(Base, Vector):
 
 register('ch.swisstopo.vec25-gewaessernetz_referenz', Vec25GewaessernetzReferenz)
 
+
 class AktuelleErdbeben(Base, Vector):
     __tablename__ = 'grid_pk1000'
     __table_args__ = ({'schema': 'public', 'autoload': False})
