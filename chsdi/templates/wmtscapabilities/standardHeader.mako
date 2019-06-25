@@ -11,7 +11,7 @@
         % endif
         <ows:ServiceType>OGC WMTS</ows:ServiceType>
         <ows:ServiceTypeVersion>1.0.0</ows:ServiceTypeVersion>
-        <ows:Fees>${metadata.fee|x}</ows:Fees>
+        <ows:Fees>${metadata.fee or '-' |x,n}</ows:Fees>
         <ows:AccessConstraints>${metadata.accessconstraint or '-' |x,n}</ows:AccessConstraints>
 </ows:ServiceIdentification>
 <ows:ServiceProvider>
