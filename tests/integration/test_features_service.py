@@ -6,7 +6,6 @@ from tests.integration import TestsBase, shift_to_lv95, reproject_to_srid
 from chsdi.lib.validation import SUPPORTED_OUTPUT_SRS
 
 
-
 class TestFeaturesView(TestsBase):
 
     def test_unsupported_srid(self):
