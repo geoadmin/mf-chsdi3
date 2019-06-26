@@ -3260,15 +3260,6 @@ msgstr "Areals da protecziun"
 msgid "ch.bafu.grundwasserschutzzonen"
 msgstr "Zonas da protecziun"
 
-msgid "ch.bafu.holznutzung"
-msgstr "Explotaziun dal guaud e mortalitad"
-
-msgid "ch.bafu.holzvorrat"
-msgstr "Reserva da laina (IFN)"
-
-msgid "ch.bafu.holzzuwachs"
-msgstr "Creschientscha annuala da laina"
-
 msgid "ch.bafu.hydrogeologie-markierversuche"
 msgstr "Provas da marcaziun"
 
@@ -3827,12 +3818,6 @@ msgstr "Canera da via, notg"
 msgid "ch.bafu.laerm-strassenlaerm_tag"
 msgstr "Canera da via, di"
 
-msgid "ch.bafu.landesforstinventar-baumarten"
-msgstr "Spezias da bostgs (IFN)"
-
-msgid "ch.bafu.landesforstinventar-totholz"
-msgstr "Laina morta (IFN)"
-
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
 msgstr "Autezza vegetaziun IFN"
 
@@ -3853,9 +3838,6 @@ msgstr "Vegetationshöhe [m]"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.year"
 msgstr "Stadi da las datas"
-
-msgid "ch.bafu.landesforstinventar-waldanteil"
-msgstr "Quota da guaud (IFN)"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
 msgstr "Maschaida dal guaud IFN"
@@ -6744,7 +6726,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Stabiliments per arder rument (SAR)"
+msgstr "Stabiliments per arder rument"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
 msgstr "Inbetriebnahme"

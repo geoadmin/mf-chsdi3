@@ -3260,15 +3260,6 @@ msgstr "Périmètres de protection"
 msgid "ch.bafu.grundwasserschutzzonen"
 msgstr "Zones de protection"
 
-msgid "ch.bafu.holznutzung"
-msgstr "Exploitations de bois (IFN)"
-
-msgid "ch.bafu.holzvorrat"
-msgstr "Volume de bois (IFN)"
-
-msgid "ch.bafu.holzzuwachs"
-msgstr "Accroissement annuel de bois (IFN)"
-
 msgid "ch.bafu.hydrogeologie-markierversuche"
 msgstr "Essais de traçage"
 
@@ -3827,12 +3818,6 @@ msgstr "Bruit du trafic routier nuit"
 msgid "ch.bafu.laerm-strassenlaerm_tag"
 msgstr "Bruit du trafic routier jour"
 
-msgid "ch.bafu.landesforstinventar-baumarten"
-msgstr "Essences (IFN)"
-
-msgid "ch.bafu.landesforstinventar-totholz"
-msgstr "Bois mort (IFN)"
-
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
 msgstr "Hauteur de la végétation IFN"
 
@@ -3853,9 +3838,6 @@ msgstr "Hauteur de la végétation [m]"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.year"
 msgstr "État d'actualité"
-
-msgid "ch.bafu.landesforstinventar-waldanteil"
-msgstr "Taux de boisement (IFN)"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
 msgstr "Mixité des forêts IFN"

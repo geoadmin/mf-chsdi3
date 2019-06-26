@@ -3260,15 +3260,6 @@ msgstr "Schutzareale"
 msgid "ch.bafu.grundwasserschutzzonen"
 msgstr "Schutzzonen"
 
-msgid "ch.bafu.holznutzung"
-msgstr "Holznutzung und Mortalität (LFI)"
-
-msgid "ch.bafu.holzvorrat"
-msgstr "Holzvorrat (LFI)"
-
-msgid "ch.bafu.holzzuwachs"
-msgstr "Holzzuwachs (LFI)"
-
 msgid "ch.bafu.hydrogeologie-markierversuche"
 msgstr "Markierversuche"
 
@@ -3827,12 +3818,6 @@ msgstr "Strassenverkehrslärm Nacht"
 msgid "ch.bafu.laerm-strassenlaerm_tag"
 msgstr "Strassenverkehrslärm Tag"
 
-msgid "ch.bafu.landesforstinventar-baumarten"
-msgstr "Baumarten (LFI)"
-
-msgid "ch.bafu.landesforstinventar-totholz"
-msgstr "Totholz (LFI)"
-
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
 msgstr "Vegetationshöhe LFI"
 
@@ -3853,9 +3838,6 @@ msgstr "Vegetationshöhe [m]"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.year"
 msgstr "Datenstand"
-
-msgid "ch.bafu.landesforstinventar-waldanteil"
-msgstr "Waldanteil (LFI)"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
 msgstr "Waldmischungsgrad LFI"
@@ -6744,7 +6726,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "Sachplan geol. Tiefenlager"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Kehrichtverbrennungsanlagen (KVA)"
+msgstr "Kehrichtverbrennungsanlagen"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
 msgstr "Inbetriebnahme"
