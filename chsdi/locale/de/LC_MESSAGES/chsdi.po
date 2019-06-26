@@ -6726,7 +6726,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "Sachplan geol. Tiefenlager"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Kehrichtverbrennungsanlagen (KVA)"
+msgstr "Kehrichtverbrennungsanlagen"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
 msgstr "Inbetriebnahme"
