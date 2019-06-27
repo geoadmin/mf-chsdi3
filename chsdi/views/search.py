@@ -98,16 +98,18 @@ class Search(SearchValidation):
 
     def _swiss_search(self):
         limit = self.limit if self.limit and self.limit <= self.LOCATION_LIMIT else self.LOCATION_LIMIT
-        self.sphinx.SetLimits(0, limit)
 
         # Define ranking mode
         if self.bbox is not None and self.sortbbox:
             coords = self._get_geoanchor_from_bbox()
             self.sphinx.SetGeoAnchor('lat', 'lon', coords[1], coords[0])
             self.sphinx.SetSortMode(sphinxapi.SPH_SORT_EXTENDED, '@geodist ASC')
+            limit = 150
         else:
             self.sphinx.SetRankingMode(sphinxapi.SPH_RANK_WORDCOUNT)
             self.sphinx.SetSortMode(sphinxapi.SPH_SORT_EXTENDED, 'rank ASC, @weight DESC, num ASC')
+
+        self.sphinx.SetLimits(0, limit)
 
         # Filter by origins if needed
         if self.origins is None:
