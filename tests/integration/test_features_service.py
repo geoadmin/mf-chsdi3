@@ -354,8 +354,8 @@ class TestFeaturesView(TestsBase):
         for srs in SUPPORTED_OUTPUT_SRS:
             resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'sr': srs, 'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
             self.assertEqual(resp.content_type, 'application/json')
-            self.assertEqual(resp.json['id'], featureId)
-            self.assertGeojsonFeature(resp.json, srs)
+            self.assertEqual(resp.json['feature']['id'], featureId)
+            self.assertGeojsonFeature(resp.json['feature'], srs)
 
     def test_feature_geojson_geom_default_srs(self):
         bodId = 'ch.bafu.bundesinventare-bln'
@@ -363,9 +363,9 @@ class TestFeaturesView(TestsBase):
 
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['id'], featureId)
+        self.assertEqual(resp.json['feature']['id'], featureId)
         # 21781 is the default srs at the time
-        self.assertGeojsonFeature(resp.json, 21781)
+        self.assertGeojsonFeature(resp.json['feature'], 21781)
 
     def test_feature_esrijson_geom_supported_srs(self):
         bodId = 'ch.bafu.bundesinventare-bln'
@@ -374,8 +374,8 @@ class TestFeaturesView(TestsBase):
         for srs in SUPPORTED_OUTPUT_SRS:
             resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'sr': srs, 'geometryFormat': 'esrijson', 'returnGeometry': 'true'}, status=200)
             self.assertEqual(resp.content_type, 'application/json')
-            self.assertEqual(resp.json['features'][0]['feature']['id'], featureId)
-            self.assertEsrijsonFeature(resp.json['features'][0]['feature'], srs)
+            self.assertEqual(resp.json['feature']['id'], featureId)
+            self.assertEsrijsonFeature(resp.json['feature'], srs)
 
     def test_feature_esrijson_geom_default_srs(self):
         bodId = 'ch.bafu.bundesinventare-bln'
@@ -383,9 +383,9 @@ class TestFeaturesView(TestsBase):
 
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'esrijson', 'returnGeometry': 'true'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(resp.json['features'][0]['feature']['id'], featureId)
+        self.assertEqual(resp.json['feature']['id'], featureId)
         # 21781 is the default srs at the time
-        self.assertEsrijsonFeature(resp.json['features'][0]['feature'], 21781)
+        self.assertEsrijsonFeature(resp.json['feature'], 21781)
 
     def test_feature_big_but_good(self):
         bodId = 'ch.swisstopo.geologie-geocover'
