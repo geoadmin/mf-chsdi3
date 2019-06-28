@@ -98,7 +98,6 @@ class Search(SearchValidation):
 
     def _swiss_search(self):
         limit = self.limit if self.limit and self.limit <= self.LOCATION_LIMIT else self.LOCATION_LIMIT
-
         # Define ranking mode
         if self.bbox is not None and self.sortbbox:
             coords = self._get_geoanchor_from_bbox()
@@ -168,7 +167,7 @@ class Search(SearchValidation):
         else:
             temp = []
         if temp is not None and len(temp) != 0:
-            self._parse_location_results(temp)
+            self._parse_location_results(temp, limit)
 
     def _layer_search(self):
 
@@ -451,7 +450,7 @@ class Search(SearchValidation):
                     raise exc.HTTPInternalServerError('Error while converting point(x, y) to EPSG:{}'.format(self.srid))
         return res
 
-    def _parse_location_results(self, results):
+    def _parse_location_results(self, results, limit):
         nb_address = 0
         for result in self._yield_matches(results):
             origin = result['attrs']['origin']
@@ -475,6 +474,8 @@ class Search(SearchValidation):
                                                             result['attrs']['geom_st_box2d']):
                     self._parse_locations(result['attrs'])
                     self.results['results'].append(result)
+        if len(self.results['results']) > 0:
+            self.results['results'] = self.results['results'][:limit]
 
     def _parse_feature_results(self, results):
         for idx, result in self._yield_results(results):
