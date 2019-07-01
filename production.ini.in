@@ -32,6 +32,8 @@ sqlalchemy.uvek_solarkataster.url = postgresql://${dbhost}:${dbport}/uvek_solark
 sqlalchemy.vbs.url = postgresql://${dbhost}:${dbport}/vbs_${dbstaging}
 sqlalchemy.zeitreihen.url = postgresql://${dbhost}:${dbport}/zeitreihen_${dbstaging}
 sqlalchemy.lubis.url = postgresql://${dbhost}:${dbport}/lubis_${dbstaging}
+# As diemo is a RW-db stagging is always master
+sqlalchemy.diemo.url = postgresql://${dbhost}:${dbport}/diemo_${dbstaging}
 
 # Mako specific
 mako.directories = chsdi:templates
@@ -58,6 +60,7 @@ vector_bucket = ${vector_bucket}
 datageoadminhost = ${datageoadminhost}
 opentrans_api_key = ${opentrans_api_key}
 empty_geotables = ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung,ch.bfe.sachplan-uebertragungsleitungen_anhoerung,ch.blw.emapis-bewaesserung,ch.blw.emapis-elektrizitaetsversorgung,ch.blw.emapis-milchleitung,ch.blw.emapis-seilbahnen,ch.vbs.sachplan-infrastruktur-militaer_anhoerung,ch.sem.sachplan-asyl_anhoerung,ch.astra.sachplan-infrastruktur-strasse_anhoerung,ch.bav.sachplan-infrastruktur-schiene_anhorung
+max_featureids_request = 20
 
 shortener.allowed_hosts = ${shortener_allowed_hosts}
 shortener.allowed_domains = ${shortener_allowed_domains}

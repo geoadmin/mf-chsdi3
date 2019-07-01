@@ -1,48 +1,50 @@
-<%inherit file="base.mako"/> 
+<%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
+
+  <%
+     lang = lang if lang in ('fr','it','en') else 'de'
+     bezeichnung_kat = 'bezeichnung_kat_%s' % lang
+
+  %>
+
 <tr>
   <td class="cell-left">${_('ch.bfe.energiestaedte-2000watt-areale.name')}</td>
   <td>${c['attributes']['name'] or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${_('status')}</td>
- % if c['attributes']['kategorie'] == 'kwa1':
-  <td>
-    ${_('energiestadt_areal_kwa1')}
-  </td>
- % elif c['attributes']['kategorie'] == 'kwa2':
-  <td>
-    ${_('energiestadt_areal_kwa2')}
-  </td>
- % endif
-  </tr>
+  <td class="cell-left">${_('ch.bfe.energiestaedte-2000watt-areale.state')}</td>
+  <td>${c['attributes'][bezeichnung_kat] or '-'}</td>
+</tr>
 <tr>
   <td class="cell-left">${_('areal_gemeinde')}</td>
   <td>${c['attributes']['gemeinde'] or '-'}</td>
 </tr>
 </%def>
 <%def name="extended_info(c, lang)">
+
+  <%
+     lang = lang if lang in ('fr','it','en') else 'de'
+     bezeichnung_kat = 'bezeichnung_kat_%s' % lang
+
+  %>
+
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
   <tr>
     <th class="cell-meta">
-      ${_('ch.bfe.energiestaedte-2000watt-areale.name_watt')}
+     ${_('ch.bfe.energiestaedte-2000watt-areale.name_watt')}
     </th>
     <td>
       ${c['attributes']['name']}
     </td>
   </tr>
-<tr>
-  <th class="cell-meta">${_('status')}</th>
- % if c['attributes']['kategorie'] == 'kwa1':
-  <td>
-    ${_('energiestadt_areal_kwa1')}
-  </td>
- % elif c['attributes']['kategorie'] == 'kwa2':
-  <td>
-    ${_('energiestadt_areal_kwa2')}
-  </td>
- % endif
+  <tr>
+    <th class="cell-meta">
+     ${_('ch.bfe.energiestaedte-2000watt-areale.state')}
+    </th>
+    <td>
+      ${c['attributes'][bezeichnung_kat] or '-'}
+    </td>
   </tr>
   <tr>
     <th class="cell-meta">
@@ -58,7 +60,7 @@
     </th>
   % if c['attributes']['linkberater'] is None:
     <td class="cell-meta"> - </td>
-  % else: 
+  % else:
    <td class="cell-meta">
       <a target="_blank" href="${c['attributes']['linkberater'] or '-'}">${c['attributes']['berater']}</a>
     </td>
@@ -75,7 +77,7 @@
     <td class="cell-meta">
       <a target="_blank" href="${c['attributes']['linkfaktenblatt_fr']}">${_('link')}</a>
     </td>
-  % endif 
+  % endif
   </tr>
   <tr>
     <th class="cell-meta" colspan="2">
@@ -88,7 +90,7 @@ Le label «Sites 2000 watts» récompense des agglomérations qui adoptent un co
 <br /><br />
 <u>InfoFlyer</u>:
 <br />
-<a target="_blank" href="http://www.2000watt.ch/fileadmin/user_upload/2000Watt-Gesellschaft/alle_sprachen/flyer_areale/Fyler_2000wAreal_f_150807.pdf">http://www.2000watt.ch/fileadmin/user_upload/2000Watt-Gesellschaft/alle_sprachen/flyer_areale/Fyler_2000wAreal_f_150807.pdf</a><br />
+<a target="_blank" href="https://www.2000watt.swiss/dam/jcr:d615de40-8c4e-4867-9c67-4bf9e9ea2794/2000_Watt_Flyer_fr.pdf">.pdf</a><br />
 <br />
     </p></td>
     </tr>
@@ -96,7 +98,7 @@ Le label «Sites 2000 watts» récompense des agglomérations qui adoptent un co
       ${_('link')}
     </th>
     <td class="cell-meta">
-      <a target="_blank" href="http://www.2000watt.ch/fr/fuer-areale/2000-watt-areale/">Sites à 2000 watts</a>
+      <a target="_blank" href="https://www.2000watt.swiss/fr/">Sites à 2000 watts</a>
     </td>
   % elif lang=='it' :
     <th class="cell-meta">
@@ -121,7 +123,7 @@ Il label per aree 2000 Watt è conferito ad aree di insediamento che possono dim
 <br /><br />
 <u>InfoFlyer</u>:
 <br />
-<a target="_blank" href="http://www.2000watt.ch/fileadmin/user_upload/2000Watt-Gesellschaft/alle_sprachen/flyer_areale/Fyler_2000wAreal_i_150807.pdf">http://www.2000watt.ch/fileadmin/user_upload/2000Watt-Gesellschaft/alle_sprachen/flyer_areale/Fyler_2000wAreal_i_150807.pdf</a><br />
+<a target="_blank" href="https://www.2000watt.swiss/dam/jcr:93d54753-0ab5-4013-8f3a-861a4b29ea3f/2000_Watt_Flyer_it.pdf">.pdf</a><br />
 <br />
     </p></td>
     </tr>
@@ -129,7 +131,7 @@ Il label per aree 2000 Watt è conferito ad aree di insediamento che possono dim
       ${_('link')}
     </th>
     <td class="cell-meta">
-      <a target="_blank" href="http://www.2000watt.ch/it/fuer-areale/2000-watt-areale/">Aree a 2000 Watt</a>
+      <a target="_blank" href="https://www.2000watt.swiss/it/">Aree a 2000 Watt</a>
     </td>
   % elif lang=='en':
     <th class="cell-meta">
@@ -154,7 +156,7 @@ This label is an instrument that is applied to residential areas that are able t
 <br /><br />
 <u>InfoFlyer</u>:
 <br />
-<a target="_blank" href="http://www.2000watt.ch/fileadmin/user_upload/2000Watt-Gesellschaft/alle_sprachen/flyer_areale/Fyler_2000wAreal_d_150807.pdf">http://www.2000watt.ch/fileadmin/user_upload/2000Watt-Gesellschaft/alle_sprachen/flyer_areale/Fyler_2000wAreal_d_150807.pdf</a><br />
+<a target="_blank" href="https://www.2000watt.swiss/dam/jcr:f859c9e9-6b96-466f-8288-7a625a41654c/2000_Watt_Flyer_de.pdf">.pdf</a><br />
 <br />
      </p></td>
     </tr>
@@ -162,7 +164,7 @@ This label is an instrument that is applied to residential areas that are able t
       ${_('link')}
     </th>
     <td class="cell-meta">
-      <a target="_blank" href="http://www.2000watt.ch/fuer-areale/2000-watt-areale/">2000-Watt Sites</a>
+      <a target="_blank" href="https://www.2000watt.swiss/english.html">2000-Watt Sites</a>
     </td>
   % else :
     <th class="cell-meta">
@@ -187,7 +189,7 @@ Das Label für 2000-Watt-Areale zeichnet Siedlungsgebiete aus, die einen nachhal
 <br /><br />
 <u>InfoFlyer</u>:
 <br />
-<a target="_blank" href="http://www.2000watt.ch/fileadmin/user_upload/2000Watt-Gesellschaft/alle_sprachen/flyer_areale/Fyler_2000wAreal_d_150807.pdf">http://www.2000watt.ch/fileadmin/user_upload/2000Watt-Gesellschaft/alle_sprachen/flyer_areale/Fyler_2000wAreal_d_150807.pdf</a><br />
+<a target="_blank" href="https://www.2000watt.swiss/dam/jcr:f859c9e9-6b96-466f-8288-7a625a41654c/2000_Watt_Flyer_de.pdf">.pdf</a><br />
 <br />
 
     </p></td>
@@ -196,7 +198,7 @@ Das Label für 2000-Watt-Areale zeichnet Siedlungsgebiete aus, die einen nachhal
       ${_('link')}
     </th>
     <td class="cell-meta">
-      <a target="_blank" href="http://www.2000watt.ch/fuer-areale/2000-watt-areale/">2000-Watt Areale</a>
+      <a target="_blank" href="https://www.2000watt.swiss/de/">2000-Watt Areale</a>
     </td>
 %endif
   </tr>

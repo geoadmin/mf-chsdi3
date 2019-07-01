@@ -59,6 +59,8 @@ class HtmlPopupServiceValidation(BaseFeaturesValidation):
     def featureIds(self, value):
         if value is not None:
             self._featureIds = value.split(',')
+            if len(self._featureIds) > int(self.request.registry.settings['max_featureids_request']):
+                raise HTTPBadRequest('Too many featureIds')
         else:
             raise HTTPBadRequest('Please provide featureIds')  # pragma: no cover
 

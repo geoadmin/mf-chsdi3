@@ -3,6 +3,8 @@
 from unittest import skip
 from tests.integration import TestsBase, shift_to_lv95, reproject_to_srid
 
+from chsdi.lib.validation import SUPPORTED_OUTPUT_SRS
+
 
 class TestFeaturesView(TestsBase):
 
@@ -261,6 +263,12 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(resp.json['feature']['id'], featureId)
         self.assertEsrijsonFeature(resp.json['feature'], 21781)
 
+    def test_feature_too_many_featuresids(self):
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureIds = ','.join(map(str, range(50)))
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureIds), status=400)
+        resp.mustcontain('Too many featureIds')
+
     def test_feature_valid_topic_all(self):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureId = self.getRandomFeatureId(bodId)
@@ -338,6 +346,46 @@ class TestFeaturesView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'text/javascript')
         resp.mustcontain('cb_({')
+
+    def test_feature_geojson_geom_supported_srs(self):
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+
+        for srs in SUPPORTED_OUTPUT_SRS:
+            resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'sr': srs, 'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
+            self.assertEqual(resp.content_type, 'application/json')
+            self.assertEqual(resp.json['feature']['id'], featureId)
+            self.assertGeojsonFeature(resp.json['feature'], srs)
+
+    def test_feature_geojson_geom_default_srs(self):
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.json['feature']['id'], featureId)
+        # 21781 is the default srs at the time
+        self.assertGeojsonFeature(resp.json['feature'], 21781)
+
+    def test_feature_esrijson_geom_supported_srs(self):
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+
+        for srs in SUPPORTED_OUTPUT_SRS:
+            resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'sr': srs, 'geometryFormat': 'esrijson', 'returnGeometry': 'true'}, status=200)
+            self.assertEqual(resp.content_type, 'application/json')
+            self.assertEqual(resp.json['feature']['id'], featureId)
+            self.assertEsrijsonFeature(resp.json['feature'], srs)
+
+    def test_feature_esrijson_geom_default_srs(self):
+        bodId = 'ch.bafu.bundesinventare-bln'
+        featureId = self.getRandomFeatureId(bodId)
+
+        resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'esrijson', 'returnGeometry': 'true'}, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.json['feature']['id'], featureId)
+        # 21781 is the default srs at the time
+        self.assertEsrijsonFeature(resp.json['feature'], 21781)
 
     def test_feature_big_but_good(self):
         bodId = 'ch.swisstopo.geologie-geocover'

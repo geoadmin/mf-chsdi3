@@ -14,4 +14,5 @@
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_number_night')}</td>             <td>${c['attributes']['train_number_night'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_number_freight_n')}</td>         <td>${c['attributes']['train_number_freight_n'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.lre_remark')}</td>                     <td>${c['attributes']['lre_remark'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.year_evaluation')}</td>                <td>${c['attributes']['year_evaluation'] or '-'}</td></tr>
 </%def>

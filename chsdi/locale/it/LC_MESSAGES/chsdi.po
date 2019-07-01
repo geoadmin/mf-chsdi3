@@ -1142,11 +1142,20 @@ msgstr "da abrogare"
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
 msgstr "Allineamenti per le strade nazionali RDPP"
 
-msgid "ch.astra.baulinien-nationalstrassen.oereb.inkraft"
-msgstr "en vigore"
+msgid "ch.astra.baulinien-nationalstrassen.oereb.publiziertab"
+msgstr "Pubblicato dal"
 
-msgid "ch.astra.baulinien-nationalstrassen.oereb.laufendeaenderung"
-msgstr "Modification en cours"
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_amt"
+msgstr "Servizio competente"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_aussage"
+msgstr "Contenuto"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_rechtsstatus"
+msgstr "Stato giuridico"
+
+msgid "ch.astra.baulinien-nationalstrassen.oereb.text_thema"
+msgstr "Tema"
 
 msgid "ch.astra.baulinien-nationalstrassen.publication_date"
 msgstr "Data di pubblicazione"
@@ -2012,9 +2021,6 @@ msgstr "Se i cani da protezione delle greggi si trovano all'alpe di Bremingard, 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_138"
 msgstr "Due sentieri escursionistici collegano l'alpe di Niwen a Stafel. Quello a valle è delimitato da recinzioni. Quello che si trova a monte, passando da Nibubedu non lo è ed è pertanto possibile incontrarvi cani da protezione in giugno e in settembre."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_14"
-msgstr "Al momento dell'aggiornamento degli alpeggi protetti dai cani, non era ancora stato deciso se i cani da protezione delle greggi saranno impiegati all'alpe di Balachaux nel 2018. Potete verificare su http//www.protectiondestroupeaux.ch/map/."
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_145"
 msgstr "Il gregge e i cani da protezione sostano qualche giorno in estate sul passo di Kaiseregg, ma unicamente in settimana."
 
@@ -2022,16 +2028,13 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_150"
 msgstr "Il sentiero che conduce da Vorder Sanntum al Turtmannsee costeggiando il torrente Turtmänna e quello che collega Biele alla Capanna CAS di Turtmann sono delimitati da recinzioni. Quello che passa dalla cappella di Holustei non lo."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_154"
-msgstr "Il gregge protetto dai cani si trova a sud-ovest di Z'Mübach (punto 1997) da metà giugno a metà luglio e in seguito da metà settembre a fine settembre. Dall'inizio di luglio a metà settembre esso si trova a nord-est di Z'Mübach."
+msgstr "Per permettere il pascolo delle pecore sul Rappental, la protezione dei greggi è stata intensificata. Per evitare le interazioni tra i cani della protezione dei greggi ed i turisti, alcuni sentieri saranno temporaneamente modificati o chiusi."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_16"
 msgstr "Unicamente durante il mese di settembre è possibile incontrare cani da protezione delle greggi sul sentiero che collega \"Baumgarte\" al passo (punto 1829). Il resto della stagione il sentiero è delimitato da una recinzione."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_163"
-msgstr "Se il gregge protetto dai cani si trova in prossimità di un sentiero ufficiale, esso viene recintato, affinché non dobbiate attraversarlo."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_36"
-msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
+msgstr "Se il gregge protetto dai cani si trova in prossimità di un sentiero ufficiale, esso viene recintato, affinché non dobbiate attraversarlo. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_4"
 msgstr "I sentieri escursionistici presso il Lag da Pigniu sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
@@ -2042,14 +2045,23 @@ msgstr "Il gregge protetto da cani che pascola sul Guferli è recintato e può e
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_46"
 msgstr "I cani da protezione delle greggi possono essere presenti tutto l'anno sul pascolo presso Ruschwand."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_51"
+msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_60"
 msgstr "Il sentiero escursionistico a sud di Bärried è delimitato da recinzioni. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_73"
 msgstr "Il Dent de la Valerette può essere raggiunto senza incontrare cani da protezione delle greggi passando da Chindonne."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_77"
+msgstr "Sul sentiero andando da Chummli al punto 1652, delle interazioni con i cani della protezione dei greggi sono possibili per una durata di circa due settimane. (Ulterioni info presso PN Diemtigtal)"
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_87"
 msgstr "La cima dell'Ochsen può essere raggiunta senza attraversare il gregge protetto passando da Ritz e Oberalpigle."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_91"
+msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_92"
 msgstr "Ulteriori raccomandazioni sul comportamento da adottare in presenza di vacche nutrici sono disponibili su www.sentierisvizzeri.ch"
@@ -2079,7 +2091,7 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1006"
 msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1007"
-msgstr "Di regola dal 20 giugno al 20 settembre"
+msgstr "Di regola dal 20 giugno al 30 settembre"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1008"
 msgstr "Di regola dall'inizio di giugno a fine settembre. Prestate attenzione  alle indicazioni riguardanti la presenza attuale dei cani riportata sui pannelli informativi in loco."
@@ -2123,17 +2135,8 @@ msgstr "Di regola da metà giugno a fine settembre. Prestate attenzione  alle in
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1021"
 msgstr "Di regola da metà giugno a metà settembre"
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1022"
-msgstr "Di regola tra metà maggio e fine settembre. Informazioni più precise sono ottenibili presso l'Ufficio del Turismo di Sörenberg Flühli."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1023"
-msgstr "Di regola da metà maggio a metà settembre"
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
 msgstr "Dall'inizio di agosto a metà settembre è possibile incontrare i cani da protezione delle greggi sul sentiero che collega il \"Canalbrücke\" alla Capanna Zapport."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1025"
-msgstr "In giugno è possibile incontrare i cani da protezione delle greggi sul sentiero che collega il Lago di Luzzone alla Capanna Motterascio, mentre da metà luglio a fine luglio è possibile incontrarli tra il lago di Luzzone e il Passo Soreda."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Contatto E-mail"
@@ -2732,6 +2735,21 @@ msgstr "Microzonazione spettrale"
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet"
 msgstr "Acque balneabili (qualità)"
 
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.0"
+msgstr "Classificazione della qualità impossibile"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.1"
+msgstr "Qualità eccellente"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.2"
+msgstr "Qualità buona"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.3"
+msgstr "Qualità sufficiente"
+
+msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.4"
+msgstr "Qualità scarsa"
+
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.aeussereraspekt"
 msgstr "Aspect général"
 
@@ -3241,15 +3259,6 @@ msgstr "Aree di protezione"
 
 msgid "ch.bafu.grundwasserschutzzonen"
 msgstr "Zone di protezione"
-
-msgid "ch.bafu.holznutzung"
-msgstr "Utilizzo e mortalità di legno (IFN)"
-
-msgid "ch.bafu.holzvorrat"
-msgstr "Provvigione di legname (IFN)"
-
-msgid "ch.bafu.holzzuwachs"
-msgstr "Incremento del legno (IFN)"
 
 msgid "ch.bafu.hydrogeologie-markierversuche"
 msgstr "Prove con traccianti"
@@ -3809,12 +3818,6 @@ msgstr "Rumore stradale di notte"
 msgid "ch.bafu.laerm-strassenlaerm_tag"
 msgstr "Rumore stradale di giorno"
 
-msgid "ch.bafu.landesforstinventar-baumarten"
-msgstr "Specie arboree (IFN)"
-
-msgid "ch.bafu.landesforstinventar-totholz"
-msgstr "Legno morto (IFN)"
-
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
 msgstr "Altezza della Vegetazione IFN"
 
@@ -3835,9 +3838,6 @@ msgstr "Altezza della vegetazione [m]"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.year"
 msgstr "Stato d'attualità"
-
-msgid "ch.bafu.landesforstinventar-waldanteil"
-msgstr "Percentuale di bosco (IFN)"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
 msgstr "Mescolanza della foresta IFN"
@@ -4107,7 +4107,7 @@ msgid "ch.bafu.permafrost"
 msgstr "Cartina indicativa del permafrost"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche"
-msgstr "Secteurs de protection des eaux"
+msgstr "Settori di protezione delle acque"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.bemerkungen_de"
 msgstr "Remarques"
@@ -4122,7 +4122,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.typ"
 msgstr "Type"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale"
-msgstr "Périmètres de protection"
+msgstr "Perimetri di protezione"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.bemerkungen_de"
 msgstr "Remarques"
@@ -4149,7 +4149,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.typ_txt"
 msgstr "Désignation cantonale du type"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen"
-msgstr "Zones de protection des eaux souterraines"
+msgstr "Zone protezione acque sotterranee"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.bemerkungen_de"
 msgstr "Remarques"
@@ -4176,10 +4176,10 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.typ"
 msgstr "Type"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zo"
-msgstr "Aires d'alimentation Zo"
+msgstr "Settori d'alimentazione Zo"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zu"
-msgstr "Aires d'alimentation Zu"
+msgstr "Settori d'alimentazione Zu"
 
 msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
 msgstr "REN zona di agricoltura estensiva"
@@ -4517,11 +4517,20 @@ msgstr "grand cours d´eau"
 msgid "ch.bafu.typisierung-fliessgewaesser.hoehe"
 msgstr "Altitude"
 
+msgid "ch.bafu.typisierung-fliessgewaesser.ibch_corr"
+msgstr "Valeur de correction"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.ibchqregim"
+msgstr "Régime IBCH-Q"
+
 msgid "ch.bafu.typisierung-fliessgewaesser.name"
 msgstr "Nom du type de cours d´eau"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.objectid_gwn25"
 msgstr "ID du réseau hydrographique"
+
+msgid "ch.bafu.typisierung-fliessgewaesser.quali_d"
+msgstr "Qualité des données sur le régime IBCH-Q"
 
 msgid "ch.bafu.typisierung-fliessgewaesser.shape_length"
 msgstr "Longueur du tronçon"
@@ -4646,17 +4655,116 @@ msgstr "Aree boschive danneggiate Vivian"
 msgid "ch.bafu.wald-standortsregionen"
 msgstr "Regioni stazionali forestali"
 
+msgid "ch.bafu.wald-standortsregionen.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-standortsregionen.code_bu"
+msgstr "code_bu"
+
+msgid "ch.bafu.wald-standortsregionen.code_fi"
+msgstr "code_fi"
+
+msgid "ch.bafu.wald-standortsregionen.region_de"
+msgstr "Regione stazionale forestale"
+
+msgid "ch.bafu.wald-standortsregionen.region_en"
+msgstr "Regione stazionale fo-restale"
+
+msgid "ch.bafu.wald-standortsregionen.region_fr"
+msgstr "Regione stazionale forestale"
+
+msgid "ch.bafu.wald-standortsregionen.region_it"
+msgstr "Regione stazionale forestale"
+
+msgid "ch.bafu.wald-standortsregionen.subcode"
+msgstr "subcode"
+
 msgid "ch.bafu.wald-tannenareale"
 msgstr "Areale dell'abete bianco"
+
+msgid "ch.bafu.wald-tannenareale.areal_de"
+msgstr "Areale dell’abete bianco"
+
+msgid "ch.bafu.wald-tannenareale.areal_en"
+msgstr "Areale dell’abete bianco"
+
+msgid "ch.bafu.wald-tannenareale.areal_fr"
+msgstr "Areale dell’abete bianco"
+
+msgid "ch.bafu.wald-tannenareale.areal_it"
+msgstr "Areale dell’abete bianco"
+
+msgid "ch.bafu.wald-tannenareale.code_ta"
+msgstr "code_ta"
 
 msgid "ch.bafu.wald-vegetationshoehenstufen_1995"
 msgstr "Fasce altitudinali 1995"
 
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_de"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_en"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_fr"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.hoehenstufen_it"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_1995.subcode"
+msgstr "subcode"
+
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken"
 msgstr "Fasce altitudinali 2085 secco"
 
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_de"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_en"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_fr"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.hoehenstufen_it"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.subcode"
+msgstr "subcode"
+
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken"
 msgstr "Fasce altitudinali 2085 meno secco"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.code"
+msgstr "code"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_de"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_en"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_fr"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.hoehenstufen_it"
+msgstr "Fasce altitudinali"
+
+msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
+msgstr "subcode"
+
+msgid "ch.bafu.wald-wasserverfuegbarkeit_boden"
+msgstr "Wasserverfügbarkeit im Boden"
+
+msgid "ch.bafu.wald-wasserverfuegbarkeit_pflanzen"
+msgstr "Wasserverfügbarkeit für Pflanzen"
 
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Punto fisso del profilo trasversale"
@@ -4818,7 +4926,7 @@ msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=it"
 
 msgid "ch.bag.zecken-fsme-faelle"
-msgstr "FSME - Lieux déclarés de piqûre"
+msgstr "FSME – Luoghi con casi dichiarati"
 
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "FSME - vaccinazione raccomandata"
@@ -4827,7 +4935,7 @@ msgid "ch.bag.zecken-lyme"
 msgstr "Zone a rischio di Borreliosi"
 
 msgid "ch.bag.zeckenstichmodell"
-msgstr "Modèle des piqûres"
+msgstr "Modello delle punture di zecche"
 
 msgid "ch.bak"
 msgstr "UFC"
@@ -4853,9 +4961,6 @@ msgstr "Cavo coassiale"
 msgid "ch.bakom.anschlussart-kupferdraht"
 msgstr "Cavo in rame"
 
-msgid "ch.bakom.downlink1"
-msgstr "Download ≥ 1 Mbit/s"
-
 msgid "ch.bakom.downlink10"
 msgstr "Download ≥ 10 Mbit/s"
 
@@ -4865,12 +4970,6 @@ msgstr "Download ≥100 Mbit/s"
 msgid "ch.bakom.downlink1000"
 msgstr "Download ≥1000 Mbit/s"
 
-msgid "ch.bakom.downlink2"
-msgstr "Download ≥ 2 Mbit/s"
-
-msgid "ch.bakom.downlink20"
-msgstr "Download ≥20 Mbit/s"
-
 msgid "ch.bakom.downlink3"
 msgstr "Download ≥ 3 Mbit/s"
 
@@ -4879,9 +4978,6 @@ msgstr "Download ≥ 30 Mbit/s"
 
 msgid "ch.bakom.downlink300"
 msgstr "Download ≥ 300 Mbit/s"
-
-msgid "ch.bakom.downlink50"
-msgstr "Download ≥50 Mbit/s"
 
 msgid "ch.bakom.downlink500"
 msgstr "Download ≥ 500 Mbit/s"
@@ -5342,23 +5438,8 @@ msgstr "Upload ≥100 Mbit/s"
 msgid "ch.bakom.uplink1000"
 msgstr "Upload ≥1000 Mbit/s"
 
-msgid "ch.bakom.uplink2"
-msgstr "Upload ≥ 2 Mbit/s"
-
-msgid "ch.bakom.uplink20"
-msgstr "Upload ≥20 Mbit/s"
-
-msgid "ch.bakom.uplink50"
-msgstr "Upload ≥50 Mbit/s"
-
 msgid "ch.bakom.url"
 msgstr "https://www.bakom.admin.ch/bakom/it/pagina-iniziale.html"
-
-msgid "ch.bakom.verfuegbarkeit-hdtv"
-msgstr "Disponibilità TV HD rete fissa"
-
-msgid "ch.bakom.verfuegbarkeit-tv"
-msgstr "TV su rete fissa"
 
 msgid "ch.bakom.versorgungsgebiet-tv"
 msgstr "Zone di copertura TV"
@@ -5486,6 +5567,21 @@ msgstr "Numero UFT del sito"
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
 msgstr "Siti inquinati trasporti pubbl. RDPP"
 
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.publiziertab"
+msgstr "Pubblicato dal"
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_amt"
+msgstr "Servizio competente"
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_aussage"
+msgstr "Contenuto"
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_rechtsstatus"
+msgstr "Stato giuridico"
+
+msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_thema"
+msgstr "Tema"
+
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Rumore dei treni, emissioni N stab."
 
@@ -5570,6 +5666,9 @@ msgstr "No. treni di merce notte"
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.train_number_night"
 msgstr "No. di treni notte"
 
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.year_evaluation"
+msgstr "Anno"
+
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag"
 msgstr "Rumore dei treni, emissioni D eff."
 
@@ -5599,6 +5698,9 @@ msgstr "No. di treni giorno"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.train_number_freight_d"
 msgstr "No. treni di merce giorno"
+
+msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.year_evaluation"
+msgstr "Anno"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Piano delle emissioni 2015"
@@ -5960,6 +6062,21 @@ msgstr "Numero UFAC del sito"
 msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb"
 msgstr "Siti inquinati aeroporti civ. RDPP"
 
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.publiziertab"
+msgstr "Pubblicato dal"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_amt"
+msgstr "Servizio competente"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_aussage"
+msgstr "Contenuto"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_rechtsstatus"
+msgstr "Stato giuridico"
+
+msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema"
+msgstr "Tema"
+
 msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze"
 msgstr "Catasto dei rumori – aerodromi civili"
 
@@ -6164,6 +6281,21 @@ msgstr "Zone riservate aeroporti"
 msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb"
 msgstr "Zone riservate aeroporti RDPP"
 
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.publiziertab"
+msgstr "Pubblicato dal"
+
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_amt"
+msgstr "Servizio competente"
+
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_aussage"
+msgstr "Contenuto"
+
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_rechtsstatus"
+msgstr "Stato giuridico"
+
+msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_thema"
+msgstr "Tema"
+
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
 msgstr "PSIA consultazione"
 
@@ -6187,6 +6319,21 @@ msgstr "Piano delle zone di sicurezza"
 
 msgid "ch.bazl.sicherheitszonenplan.oereb"
 msgstr "Piano delle zone di sicurezza RDPP"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.publiziertab"
+msgstr "Pubblicato dal"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_amt"
+msgstr "Servizio competente"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_aussage"
+msgstr "Contenuto"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_rechtsstatus"
+msgstr "Stato giuridico"
+
+msgid "ch.bazl.sicherheitszonenplan.oereb.text_thema"
+msgstr "Tema"
 
 msgid "ch.bazl.sicherheitszonenplan.SafetyZone.Description"
 msgstr "Denominazione"
@@ -6428,29 +6575,125 @@ msgstr "Area"
 msgid "ch.bfe.energiestaedte-2000watt-areale.name_watt"
 msgstr "Area 2000 Watt"
 
-msgid "ch.bfe.energiestaedte-2000watt-aufdemweg"
-msgstr "Città dell’energia verso 2000 Watt"
-
-msgid "ch.bfe.energiestaedte-2000watt-aufdemweg.name"
-msgstr "Comune / città"
+msgid "ch.bfe.energiestaedte-2000watt-areale.state"
+msgstr "Stato"
 
 msgid "ch.bfe.energiestaedte-2000watt-energiestaedteaufdemweg"
-msgstr "Città dell’energia verso 2000 Watt"
-
-msgid "ch.bfe.energiestaedte. 2000watt-energiestaedteaufdemweg"
 msgstr "Città dell’energia verso 2000 Watt"
 
 msgid "ch.bfe.energiestaedte.2000watt-energiestaedteaufdemweg"
 msgstr "Città dell’energia verso 2000 Watt"
 
+msgid "ch.bfe.energiestaedte.anzahlaudits"
+msgstr "Numero di audit superati"
+
+msgid "ch.bfe.energiestaedte.berater"
+msgstr "Consulente"
+
+msgid "ch.bfe.energiestaedte.beteiligtegemeinde"
+msgstr "Comuni partecipanti"
+
+msgid "ch.bfe.energiestaedte.einwohnerzahl"
+msgstr "Numero di abitanti"
+
 msgid "ch.bfe.energiestaedte-energieregionen"
 msgstr "Regioni-Energia"
 
+msgid "ch.bfe.energiestaedte-energieregionen.berater"
+msgstr "Responsabile di progetto o contatto generale"
+
+msgid "ch.bfe.energiestaedte-energieregionen.beteiligtegemeinden"
+msgstr "Comuni partecipanti"
+
+msgid "ch.bfe.energiestaedte-energieregionen.erklaerung"
+msgstr "Breve spiegazione"
+
+msgid "ch.bfe.energiestaedte-energieregionen.erklaerungslink"
+msgstr "Link al programma"
+
+msgid "ch.bfe.energiestaedte-energieregionen.kategorie"
+msgstr "Stato"
+
+msgid "ch.bfe.energiestaedte-energieregionen.linkenergieregion"
+msgstr "Link a Regione-Energia"
+
 msgid "ch.bfe.energiestaedte-energieregionen.name"
-msgstr "Regioni-Energia"
+msgstr "Regione-Energia"
+
+msgid "ch.bfe.energiestaedte-energieregionen.projektportrait"
+msgstr "Descrizione del progetto"
+
+msgid "ch.bfe.energiestaedte-energieregionen.status"
+msgstr "Stato"
+
+msgid "ch.bfe.energiestaedte.energiestadtseit"
+msgstr "Città dell’energia dal/dall‘"
+
+msgid "ch.bfe.energiestaedte.erklaerung"
+msgstr "Breve spiegazione"
+
+msgid "ch.bfe.energiestaedte.linkenergiestadtweb"
+msgstr "Dettagli sul sito Internet della Città dell’energia"
 
 msgid "ch.bfe.energiestaedte.name"
 msgstr "Comune / città"
+
+msgid "ch.bfe.energiestaedte.punktezahl"
+msgstr "Punteggio realizzato"
+
+msgid "ch.bfe.fernwaerme-angebot"
+msgstr "Offerta di calore e di freddo"
+
+msgid "ch.bfe.fernwaerme-angebot.heatpotential"
+msgstr "Potenziale termico [MWh/a]"
+
+msgid "ch.bfe.fernwaerme-angebot.heat_supplier_category"
+msgstr "Fonte di calore"
+
+msgid "ch.bfe.fernwaerme-angebot.name"
+msgstr "Nome"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie"
+msgstr "Domanda calore/freddo industria"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.industry"
+msgstr "Ramo che consuma di più"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.needindustry"
+msgstr "Domanda di calore industria [MWh/a]"
+
+msgid "ch.bfe.fernwaerme-nachfrage_industrie.noga"
+msgstr "Ramo più rappresentato"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
+msgstr "Domanda calore/freddo abit./servizi"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needhome"
+msgstr "Domanda di calore abitazioni [MWh/a]"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needservice"
+msgstr "Domanda di calore terziario [MWh/a]"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needtotal"
+msgstr "Domanda di calore totale [MWh/a]"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.noga"
+msgstr "Terziario: ramo più rappresentativo"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas"
+msgstr "Abitazioni: quota gas [%]"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentoil"
+msgstr "Abitazioni: quota olio [%]"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentpump"
+msgstr "Abitazioni: quota pompa di calore [%]"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentremoteheat"
+msgstr "Abitazioni: quota teleriscaldamento [%]"
+
+msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.service"
+msgstr "Terziario: ramo che consuma di più"
 
 msgid "ch.bfe.geak-experten"
 msgstr "Esperti CECE"
@@ -6483,7 +6726,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Inceneritori"
+msgstr "Impianti di incenerimento"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
 msgstr "Anno di messa in servizio dell’impianto"
@@ -6601,51 +6844,6 @@ msgstr "dal"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager.validuntil"
 msgstr "al"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung"
-msgstr "PS DSGP consultazione tappa 2"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.coordlevel"
-msgstr "Stato di coordinamento"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.description"
-msgstr "Descrizione"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.fackind"
-msgstr "Tipo d'installazione"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname"
-msgstr "Nome dell'installazione"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname_de"
-msgstr "Nome dell'installazione"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.facptname_fr"
-msgstr "Nome dell'installazione"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.planningstatus"
-msgstr "Stato della pianificazione"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmkind"
-msgstr "Tipo di misura"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname"
-msgstr "Nome della misura"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname_de"
-msgstr "Tipo di misura"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.pmname_fr"
-msgstr "Tipo di misura"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validfrom"
-msgstr "dal"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.validuntil"
-msgstr "al"
-
-msgid "ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung.web"
-msgstr "Informazioni supplementari"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager.web"
 msgstr "Informazioni supplementari"
@@ -7161,10 +7359,13 @@ msgid "ch.blw.emapis-zusammenfassung"
 msgstr "Sviluppo rurale"
 
 msgid "ch.blw.erosion"
-msgstr "Rischio erosione qualitativo 1"
+msgstr "Rischio erosione qualitativa"
 
 msgid "ch.blw.erosion2"
 msgstr "Rischio d'erosione"
+
+msgid "ch.blw.erosion-fliesswegkarte"
+msgstr "Carta delle vie di deflusso"
 
 msgid "ch.blw.erosion-mit_bergzonen"
 msgstr "Rischio erosione qualitativo 2"
@@ -8379,7 +8580,7 @@ msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1995.ziegeleien"
 msgstr "Nome della fabbrica da quadrels"
 
 msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional"
-msgstr "Etudes de potentiel géothermique"
+msgstr "Studi del potenziale geotermico"
 
 msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.auftraggeber"
 msgstr "Mandant"
@@ -9608,6 +9809,9 @@ msgstr "Striscie aeree swisstopo"
 msgid "ch.swisstopo.lubis-bildstreifen.id"
 msgstr "Linea di volo"
 
+msgid "ch.swisstopo.lubis-bildstreifen.tt_bildstreifen_Link"
+msgstr "Ordinare"
+
 msgid "ch.swisstopo.lubis-luftbilder"
 msgstr "Immagini aeree swisstopo"
 
@@ -9626,6 +9830,12 @@ msgstr "Numero immagine"
 msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.ort"
 msgstr "Luogo"
 
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Link"
+msgstr "Ordinare"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-firmen.tt_firmen_Quickview"
+msgstr "Quickview"
+
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone"
 msgstr "Immagini aeree dei cantoni"
 
@@ -9640,6 +9850,12 @@ msgstr "Numero immagine"
 
 msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.ort"
 msgstr "Luogo"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Link"
+msgstr "Ordinare"
+
+msgid "ch.swisstopo.lubis-luftbilder-dritte-kantone.tt_kantone_Quickview"
+msgstr "Quickview"
 
 msgid "ch.swisstopo.lubis-luftbilder_farbe"
 msgstr "Immagini aer. swisstopo colori"
@@ -9774,7 +9990,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "Carta nazionale 1:50'000 | CN50"
 
 msgid "ch.swisstopo.pixelkarte-farbe-winter"
-msgstr "Carte nationale hiver | CN25, CN50"
+msgstr "Carta nazionale inverno CN25/CN50"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Carte nazionali (grigio)"

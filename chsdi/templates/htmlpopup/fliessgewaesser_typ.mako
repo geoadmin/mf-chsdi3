@@ -37,7 +37,9 @@
     dataPath = 'ch.bafu.typisierung-fliessgewaesser/PDF'
     lang = 'fr' if lang in ('fr', 'it') else 'de'
     url_uebersicht = 'url_uebersicht_%s' % lang
+    quali = 'quali_%s' % lang[0]
     dataGeoAdminHost = request.registry.settings['datageoadminhost']
+
     pdf = None
     pdf_legend = None
 
@@ -118,7 +120,7 @@
 <td>${_('ch.bafu.typisierung-fliessgewaesser.discharge_source.gab_ezgg_ch')}</td>
 % elif  c['attributes']['discharge_source']=='MQ_GWN_CH':
 <td>${_('ch.bafu.typisierung-fliessgewaesser.discharge_source.mq_gwn_ch')|n}</td>
-% else: 
+% else:
 <td>-</td>
 % endif
 </tr>
@@ -148,5 +150,17 @@
 <td>-</td>
 % endif
 </tr>
+<tr>
+<th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.ibchqregim')}</th>
+<td>${c['attributes']['ibchqregim'] or '-'}</td>
+<th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.ibch_corr')}</th>
+<td>${c['attributes']['ibch_corr'] or '0'}</td>
+</tr>
+<th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.quali_d')}</th>
+<td>${c['attributes'][quali] or '-'}</td>
+<th class="cell-left">&nbsp;</th>
+<td>&nbsp;</td>
+</tr>
+
 </table>
 </%def>

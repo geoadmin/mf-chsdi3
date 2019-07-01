@@ -764,16 +764,17 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
 
     def test_identify_order_by_distance(self):
-        x_a = 643952.5
-        y_a = 164121.24999999997
+        x_a = 2643952.5
+        y_a = 1164121.24999999997
 
         params = {'layers': 'all:ch.bfs.gebaeude_wohnungs_register',
                   'geometry': str(x_a) + ',' + str(y_a),
                   'geometryFormat': 'geojson',
                   'geometryType': 'esriGeometryPoint',
                   'imageDisplay': '1920,765,96',
-                  'mapExtent': '641960.1008933608,163518.83578498938,646760.1008933608,165431.33578498938',
-                  'tolerance': '50'
+                  'mapExtent': '2641960.1008933608,1163518.83578498938,2646760.1008933608,1165431.33578498938',
+                  'tolerance': '50',
+                  'sr': 2056
                   }
         params.update({'order': 'distance'})
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)

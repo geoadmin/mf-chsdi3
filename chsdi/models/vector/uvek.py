@@ -527,6 +527,44 @@ class AbgeltungWasserkraftnutzung(Base, Vector):
 register('ch.bfe.abgeltung-wasserkraftnutzung', AbgeltungWasserkraftnutzung)
 
 
+class FernwaermeWohn (Base, Vector):
+    __tablename__ = 'fernwaerme_wohn'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fernwaerme_wohn.mako'
+    __bodId__ = 'ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude'
+    __extended_info__ = True
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    needhome = Column('needhome', Float)
+    needservice = Column('needservice', Float)
+    needtotal = Column('needtotal', Float)
+    service = Column('service', Unicode)
+    noga = Column('noga', Unicode)
+    percentgas = Column('percentgas', Float)
+    percentoil = Column('percentoil', Float)
+    percentpump = Column('percentpump', Float)
+    percentremoteheat = Column('percentremoteheat', Float)
+    objectid = Column('objectid', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude', FernwaermeWohn)
+
+
+class FernwaermeIndustrie (Base, Vector):
+    __tablename__ = 'fernwaerme_industrie'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fernwaerme_industrie.mako'
+    __bodId__ = 'ch.bfe.fernwaerme-nachfrage_industrie'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    needindustry = Column('needindustry', Integer)
+    industry = Column('industry', Unicode)
+    noga = Column('noga', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.fernwaerme-nachfrage_industrie', FernwaermeIndustrie)
+
+
 class Energieberatungsstellen (Base, Vector):
     __tablename__ = 'energieberatungsstellen'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
@@ -569,16 +607,14 @@ class Energiestaedte(Base, Vector):
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
-    bfsnr = Column('bfsnr', Integer)
     punktezahl = Column('punktezahl', Numeric)
     einwohner = Column('einwohner', Numeric)
     energiestadtseit = Column('energiestadtseit', Unicode)
     beteiligtegemeinde = Column('beteiligtegemeinde', Unicode)
     anzahlaudits = Column('anzahlaudits', Numeric)
     berater = Column('berater', Unicode)
-    linkberater = Column('linkberater', Unicode)
-    linkfaktenblatt = Column('linkfaktenblatt', Unicode)
     linkenergiestadtweb = Column('linkenergiestadtweb', Unicode)
+    bfsnr = Column('bfsnr', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.energiestaedte', Energiestaedte)
@@ -595,10 +631,22 @@ class EnergiestaedteRegionen(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     kategorie = Column('kategorie', Unicode)
-    bet_energiestaedte = Column('bet_energiestaedte', Unicode)
-    bet_traegerverein = Column('bet_traegerverein', Unicode)
+    beteiligtegemeinden = Column('beteiligtegemeinden', Unicode)
+    linkenergieregion = Column('linkenergieregion', Unicode)
     berater = Column('berater', Unicode)
-    linkberater = Column('linkberater', Unicode)
+    mailberater  = Column('mailberater', Unicode)
+    bezeichnung_kat_de = Column('bezeichnung_kat_de', Unicode)
+    bezeichnung_kat_fr = Column('bezeichnung_kat_fr', Unicode)
+    bezeichnung_kat_it = Column('bezeichnung_kat_it', Unicode)
+    bezeichnung_kat_en = Column('bezeichnung_kat_en', Unicode)
+    projektportraittext_de = Column('projektportraittext_de', Unicode)
+    projektportraittext_fr = Column('projektportraittext_fr', Unicode)
+    projektportraittext_it = Column('projektportraittext_it', Unicode)
+    projektportraittext_en = Column('projektportraittext_en', Unicode)
+    projektportraitlink_de = Column('projektportraitlink_de', Unicode)
+    projektportraitlink_fr = Column('projektportraitlink_fr', Unicode)
+    projektportraitlink_it = Column('projektportraitlink_it', Unicode)
+    projektportraitlink_en = Column('projektportraitlink_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.energiestaedte-energieregionen', EnergiestaedteRegionen)
@@ -615,6 +663,10 @@ class Energiestaedte2000wattAreale(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     kategorie = Column('kategorie', Unicode)
+    bezeichnung_kat_de = Column('bezeichnung_kat_de', Unicode)
+    bezeichnung_kat_fr = Column('bezeichnung_kat_fr', Unicode)
+    bezeichnung_kat_it = Column('bezeichnung_kat_it', Unicode)
+    bezeichnung_kat_en = Column('bezeichnung_kat_en', Unicode)
     gemeinde = Column('gemeinde', Unicode)
     berater = Column('berater', Unicode)
     linkberater = Column('linkberater', Unicode)
@@ -625,25 +677,6 @@ class Energiestaedte2000wattAreale(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.energiestaedte-2000watt-areale', Energiestaedte2000wattAreale)
-
-
-class EnergiestaedteAufdemweg2000watt(Base, Vector):
-    __tablename__ = 'energiestaedte_aufdemweg_2000watt'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/energiestaedte_2000watt_auf_dem_weg.mako'
-    __bodId__ = 'ch.bfe.energiestaedte-2000watt-aufdemweg'
-    __extended_info__ = True
-    __queryable_attributes__ = ['name']
-    __label__ = 'name'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Unicode)
-    kategorie = Column('kategorie', Unicode)
-    berater = Column('berater', Unicode)
-    linkberater = Column('linkberater', Unicode)
-    linkfaktenblatt = Column('linkfaktenblatt', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfe.energiestaedte-2000watt-aufdemweg', EnergiestaedteAufdemweg2000watt)
 
 
 class Energieforschung(Base, Vector):
@@ -687,6 +720,26 @@ class Energieforschung(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.energieforschung', Energieforschung)
+
+
+class FernWaermeAngebot(Base, Vector):
+    __tablename__ = 'fernwaerme_angebot'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fernwaerme_angebot.mako'
+    __bodId__ = 'ch.bfe.fernwaerme-angebot'
+    __queryable_attributes__ = ['name']
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    heatpotential = Column('heatpotential', Float)
+    heat_supplier_category = Column('heat_supplier_category', Integer)
+    bezeichnung_de = Column('bezeichnung_de', Unicode)
+    bezeichnung_fr = Column('bezeichnung_fr', Unicode)
+    bezeichnung_it = Column('bezeichnung_it', Unicode)
+    bezeichnung_en = Column('bezeichnung_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.fernwaerme-angebot', FernWaermeAngebot)
 
 
 class MinergieGebaeude(Base, Vector):
@@ -1775,132 +1828,6 @@ register('ch.bfe.sachplan-geologie-tiefenlager', SachPGAreaPlanningNotMT6)
 register('ch.bfe.sachplan-geologie-tiefenlager', SachPGAreaPlanningMT6)
 
 
-class PtFacilities(Base, Vector):
-    __tablename__ = 'geologische_tief_vernehm_fac_pt'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/vernehm_facilities.mako'
-    __bodId__ = 'ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung'
-    __queryable_attributes__ = ['facptname_de', 'facptname_fr', 'facptname_it']
-    # Translatable labels in fr, it
-    __label__ = 'facptname_de'
-    id = Column('facpt_id', Integer, primary_key=True)
-    facptname_de = Column('facptname_de', Unicode)
-    facptname_fr = Column('facptname_fr', Unicode)
-    facptname_it = Column('facptname_it', Unicode)
-    fackind_de = Column('fackind_de', Unicode)
-    fackind_fr = Column('fackind_fr', Unicode)
-    fackind_it = Column('fackind_it', Unicode)
-    planningstatus_de = Column('planningstatus_de', Unicode)
-    planningstatus_fr = Column('planningstatus_fr', Unicode)
-    planningstatus_it = Column('planningstatus_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    description = Column('description', Unicode)
-    web_de = Column('web_de', Unicode)
-    web_fr = Column('web_fr', Unicode)
-    web_it = Column('web_it', Unicode)
-    __minscale__ = 99999
-    the_geom = Column(Geometry2D)
-
-
-class PtPlanning(Base, Vector):
-    __tablename__ = 'geologische_tief_vernehm_pm_pt'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/vernehm_planning_pt.mako'
-    __bodId__ = 'ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung'
-    __queryable_attributes__ = ['pmname_de', 'pmname_fr', 'pmname_it']
-    # Translatable labels in fr, it
-    __label__ = 'pmname_de'
-    id = Column('pmpt_id', Integer, primary_key=True)
-    the_geom = Column(Geometry2D)
-    pmname_fr = Column('pmname_fr', Unicode)
-    pmname_it = Column('pmname_it', Unicode)
-    pmname_de = Column('pmname_de', Unicode)
-    pmkind_de = Column('pmkind_de', Unicode)
-    pmkind_fr = Column('pmkind_fr', Unicode)
-    pmkind_it = Column('pmkind_it', Unicode)
-    coordlevel_de = Column('coordlevel_de', Unicode)
-    coordlevel_fr = Column('coordlevel_fr', Unicode)
-    coordlevel_it = Column('coordlevel_it', Unicode)
-    planningstatus_de = Column('planningstatus_de', Unicode)
-    planningstatus_fr = Column('planningstatus_fr', Unicode)
-    planningstatus_it = Column('planningstatus_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
-    description = Column('description', Unicode)
-    web_de = Column('web_de', Unicode)
-    web_fr = Column('web_fr', Unicode)
-    web_it = Column('web_it', Unicode)
-    __minscale__ = 24999
-    __maxscale__ = 499999
-
-
-class AreaPlanningNotMT6(Base, Vector):
-    __tablename__ = 'geologische_tief_vernehm_pm_area_not_mt6'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/vernehm_planning.mako'
-    __bodId__ = 'ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung'
-    __queryable_attributes__ = ['pmname_de', 'pmname_fr', 'pmname_it']
-    # Translatable labels in fr, it
-    __label__ = 'pmname_de'
-    id = Column('pmarea_id', Integer, primary_key=True)
-    the_geom = Column(Geometry2D)
-    pmname_fr = Column('pmname_fr', Unicode)
-    pmname_it = Column('pmname_it', Unicode)
-    pmname_de = Column('pmname_de', Unicode)
-    pmkind_de = Column('pmkind_de', Unicode)
-    pmkind_fr = Column('pmkind_fr', Unicode)
-    pmkind_it = Column('pmkind_it', Unicode)
-    coordlevel_de = Column('coordlevel_de', Unicode)
-    coordlevel_fr = Column('coordlevel_fr', Unicode)
-    coordlevel_it = Column('coordlevel_it', Unicode)
-    planningstatus_de = Column('planningstatus_de', Unicode)
-    planningstatus_fr = Column('planningstatus_fr', Unicode)
-    planningstatus_it = Column('planningstatus_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
-    description = Column('description', Unicode)
-    web_de = Column('web_de', Unicode)
-    web_fr = Column('web_fr', Unicode)
-    web_it = Column('web_it', Unicode)
-    __maxscale__ = 499999
-
-
-class AreaPlanningMT6(Base, Vector):
-    __tablename__ = 'geologische_tief_vernehm_pm_area_mt6'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/vernehm_planning.mako'
-    __bodId__ = 'ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung'
-    __queryable_attributes__ = ['pmname_de', 'pmname_fr', 'pmname_it']
-    # Translatable labels in fr, it
-    __label__ = 'pmname_de'
-    id = Column('pmarea_id', Integer, primary_key=True)
-    the_geom = Column(Geometry2D)
-    pmname_fr = Column('pmname_fr', Unicode)
-    pmname_it = Column('pmname_it', Unicode)
-    pmname_de = Column('pmname_de', Unicode)
-    pmkind_de = Column('pmkind_de', Unicode)
-    pmkind_fr = Column('pmkind_fr', Unicode)
-    pmkind_it = Column('pmkind_it', Unicode)
-    coordlevel_de = Column('coordlevel_de', Unicode)
-    coordlevel_fr = Column('coordlevel_fr', Unicode)
-    coordlevel_it = Column('coordlevel_it', Unicode)
-    planningstatus_de = Column('planningstatus_de', Unicode)
-    planningstatus_fr = Column('planningstatus_fr', Unicode)
-    planningstatus_it = Column('planningstatus_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
-    description = Column('description', Unicode)
-    web_de = Column('web_de', Unicode)
-    web_fr = Column('web_fr', Unicode)
-    web_it = Column('web_it', Unicode)
-    __maxscale__ = 24999
-
-register('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung', PtFacilities)
-register('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung', PtPlanning)
-register('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung', AreaPlanningNotMT6)
-register('ch.bfe.sachplan-geologie-tiefenlager_vernehmlassung', AreaPlanningMT6)
-
-
 class SilFacilitiesA(Base, Vector):
     __tablename__ = 'sachplan_inf_luft_facilities_anhorung'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
@@ -2537,6 +2464,7 @@ class LaermBelastungEinsenbahnTatsaechlicheEmissionTag(Base, Vector):
     train_number_day = Column('train_number_day', Float)
     train_number_freight_d = Column('train_number_freight_d', Float)
     lre_remark = Column('lre_remark', Unicode)
+    year_evaluation = Column('year_evaluation', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag', LaermBelastungEinsenbahnTatsaechlicheEmissionTag)
@@ -2562,6 +2490,7 @@ class LaermBelastungEinsenbahnTatsaechlicheEmissionNacht(Base, Vector):
     train_number_night = Column('train_number_night', Float)
     train_number_freight_n = Column('train_number_freight_n', Float)
     lre_remark = Column('lre_remark', Unicode)
+    year_evaluation = Column('year_evaluation', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht', LaermBelastungEinsenbahnTatsaechlicheEmissionNacht)
