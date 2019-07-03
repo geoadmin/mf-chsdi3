@@ -8307,7 +8307,7 @@ msgid "ch.swisstopo.geologie-geologische_karte"
 msgstr "Geologie 500"
 
 msgid "ch.swisstopo.geologie-geologische_karte_papier.metadata"
-msgstr "Geologie 500 - Papier"
+msgstr "Einteilung Geologische Karte 500 Papier"
 
 msgid "ch.swisstopo.geologie-geologische_karte_papier.metadata.release"
 msgstr "Ausgabejahr"
