@@ -5,9 +5,12 @@ import requests
 import xml.etree.ElementTree as et
 import re
 
-def sanitise_url(url_get_egrid):
+def sanitise_url(url):
   """du to canton TI"""
-  return url_get_egrid.replace('//getegrid', '/getegrid')
+  list_to_check=['getegrid','extract']
+  for to_check in list_to_check:
+    url = url.replace('//{}'.format(to_check), '/{}'.format(to_check))
+  return url
 
 def get_xml(path):
     list_egrid = []
@@ -26,7 +29,7 @@ def get_xml(path):
 %>
 <%def name="table_body(c,lang)">
 <%
-path_pdf = "/extract/reduced/pdf/"
+path_pdf = sanitise_url("{}/extract/reduced/pdf/".format(c['attributes']['oereb_webservice']))
 path_xml = "/getegrid/xml/?XY="
 if not 'oereb_webservice' in c['attributes'].keys():
   c['attributes']['oereb_webservice'] = None
@@ -86,7 +89,7 @@ if is_oereb_service:
       % for egrid in list_egrid:
         <tr>
             <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
-            <td><a target="_blank" href="${c['attributes']['oereb_webservice']}${path_pdf}${egrid.text}">PDF (${egrid.text})</a></td>
+            <td><a target="_blank" href="${path_pdf}${egrid.text}">PDF (${egrid.text})</a></td>
         </tr>
       % endfor
     % endif
