@@ -5,6 +5,10 @@ import requests
 import xml.etree.ElementTree as et
 import re
 
+def sanitise_url(url_get_egrid):
+  """du to canton TI"""
+  return url_get_egrid.replace('//getegrid', '/getegrid')
+
 def get_xml(path):
     list_egrid = []
     try:
@@ -33,7 +37,8 @@ coord = request.params.get('coord')
 is_oereb_service = c['attributes']['oereb_webservice'] != None and c['attributes']['bgdi_status'] == 0 # is there a service available
 
 if is_oereb_service:
-  url_get_egrid = "{}{}{}".format(c['attributes']['oereb_webservice'], path_xml, coord)
+  url_get_egrid = sanitise_url("{}{}{}".format(c['attributes']['oereb_webservice'], path_xml, coord))
+
   list_egrid = get_xml(url_get_egrid)
 %>
     <tr><td class="cell-left">${_('kanton')}</td>    <td>${c['attributes']['kanton'] or '-'}</td></tr>
