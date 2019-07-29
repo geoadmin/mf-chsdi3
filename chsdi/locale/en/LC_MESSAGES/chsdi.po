@@ -2177,6 +2177,9 @@ msgstr "Areas of flooding Aquaprotect 500"
 msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Floodplains outside the federal inventary"
 
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin"
+msgstr "Alp. Floodplains outside Fed. Inv."
+
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
 msgstr "Importance"
 
@@ -7359,7 +7362,7 @@ msgid "ch.blw.emapis-zusammenfassung"
 msgstr "Ländliche Entwicklung"
 
 msgid "ch.blw.erosion"
-msgstr "Erosion risk qualitative"
+msgstr "Erosion risk crop qualitative"
 
 msgid "ch.blw.erosion2"
 msgstr "Erosion risk"
@@ -7371,7 +7374,7 @@ msgid "ch.blw.erosion-mit_bergzonen"
 msgstr "Erosion risk 2"
 
 msgid "ch.blw.erosion-quantitativ"
-msgstr "Erosion risk quantitative"
+msgstr "Erosion risk crop quantitative"
 
 msgid "ch.blw.feldblockkarte"
 msgstr "Field block map"
@@ -7489,6 +7492,9 @@ msgstr "PGI meat products"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch-ap_wurst"
 msgstr "ch.blw.ursprungsbezeichnungen-fleisch-ap_wurst"
+
+msgid "ch.blw.ursprungsbezeichnungen-fleisch-be_zungenwurst"
+msgstr "ch.blw.ursprungsbezeichnungen-fleisch-be_zungenwurst"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch-buendnerfleisch"
 msgstr "Bündnerfleisch (GGA)"
@@ -7691,6 +7697,9 @@ msgstr "AF"
 msgid "ch.meteoschweiz"
 msgstr "MeteoSwiss"
 
+msgid "ch.meteoschweiz.homogenereihen"
+msgstr "Homogeneous monthly data"
+
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
 msgstr "Atmosphere stations"
 
@@ -7720,6 +7729,9 @@ msgstr "Pollen stations"
 
 msgid "ch.meteoschweiz.messnetz-webcams"
 msgstr "Weather cameras"
+
+msgid "ch.meteoschweiz.messwerte-aktuell"
+msgstr "Weather stations of the automatic monitoring network – Current measurement values"
 
 msgid "ch.meteoschweiz.messwerte-foehn-10min"
 msgstr "Measurements foehn index"
@@ -7761,7 +7773,7 @@ msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-min-1h"
 msgstr "Measurements min. temperature, 24h"
 
 msgid "ch.meteoschweiz.messwerte-neuschnee-1d"
-msgstr "Measurements fresh snow"
+msgstr "Measurements fresh snow, 1 day"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-10min"
 msgstr "Measurements precipitation, 10min"
@@ -7786,6 +7798,12 @@ msgstr "Measurements wind gusts"
 
 msgid "ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min"
 msgstr "Measurements wind speed"
+
+msgid "ch.meteoschweiz.normwerttabellen"
+msgstr "Norm values tables"
+
+msgid "ch.meteoschweiz.temperaturmittel-1864"
+msgstr "Swiss temperature mean since 1864"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
@@ -8943,7 +8961,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.tckind"
 msgstr "Gesteinsgruppe"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung"
-msgstr "Gips: Abbau und Verarbeitung"
+msgstr "Gypsum: mining and processing"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.clkind"
 msgstr "Bedeutung"
@@ -9054,7 +9072,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.tckind"
 msgstr "Gesteinsgruppe"
 
 msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung"
-msgstr "Salz: Abbau und Verarbeitung"
+msgstr "Salt: mining and processing"
 
 msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.clkind"
 msgstr "Bedeutung"
@@ -9114,7 +9132,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.stkind"
 msgstr "Abbaustatus"
 
 msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung"
-msgstr "Zementrohstoffe: Abbau und Verarb."
+msgstr "Cement raw materials"
 
 msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.clkind"
 msgstr "Bedeutung"
@@ -10094,6 +10112,9 @@ msgstr "Kartenblattnummer 1:50000"
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv."
 
+msgid "ch.swisstopo.schneeschuhwanderland"
+msgstr "Schneeschuhwandern"
+
 msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
@@ -10246,6 +10267,9 @@ msgstr "Division swissBUILDINGS3D 2.0 Vector"
 
 msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE Background"
+
+msgid "ch.swisstopo.swissimage-25"
+msgstr "SWISSIMAGE 25"
 
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE Journey through time"
