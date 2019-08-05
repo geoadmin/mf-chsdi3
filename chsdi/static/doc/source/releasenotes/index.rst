@@ -45,9 +45,9 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Flow-path map <//map.geo.admin.ch/?layers=ch.blw.erosion-fliesswegkarte>`__ (ch.blw.erosion-fliesswegkarte)                                                                               |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Erosion risk quantitative <//map.geo.admin.ch/?layers=ch.blw.erosion-quantitativ>`__ (ch.blw.erosion-quantitativ)                                                                         |
+| Update | `Erosion risk crop quantitative <//map.geo.admin.ch/?layers=ch.blw.erosion-quantitativ>`__ (ch.blw.erosion-quantitativ)                                                                    |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Erosion risk qualitative <//map.geo.admin.ch/?layers=ch.blw.erosion>`__ (ch.blw.erosion)                                                                                                  |
+| Update | `Erosion risk crop qualitative <//map.geo.admin.ch/?layers=ch.blw.erosion>`__ (ch.blw.erosion)                                                                                             |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `PGI meat products <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-fleisch>`__ (ch.blw.ursprungsbezeichnungen-fleisch)                                                           |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
