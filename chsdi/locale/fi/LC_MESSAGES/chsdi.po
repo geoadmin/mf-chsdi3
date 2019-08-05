@@ -2177,6 +2177,9 @@ msgstr "Inundaziun Aquaprotect 500"
 msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Zonas umidas ordaifer invent. fed."
 
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin"
+msgstr "Zonas umidas alp. ordaifer inv. fed."
+
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
 msgstr "Bedeutung"
 
@@ -7359,7 +7362,7 @@ msgid "ch.blw.emapis-zusammenfassung"
 msgstr "Svilup rural"
 
 msgid "ch.blw.erosion"
-msgstr "Ristga d'erosiun qualitativa"
+msgstr "Ristga erosiun terren cultivà quali"
 
 msgid "ch.blw.erosion2"
 msgstr "Erosionsrisiko"
@@ -7371,7 +7374,7 @@ msgid "ch.blw.erosion-mit_bergzonen"
 msgstr "Ristga d'erosiun qualitativa 2"
 
 msgid "ch.blw.erosion-quantitativ"
-msgstr "Ristga d'erosiun quantitativa"
+msgstr "Ristga erosiun terren cultivà quant"
 
 msgid "ch.blw.feldblockkarte"
 msgstr "Charta da blocs da parcellas"
@@ -7489,6 +7492,9 @@ msgstr "Products da charn IGP"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch-ap_wurst"
 msgstr "ch.blw.ursprungsbezeichnungen-fleisch-ap_wurst"
+
+msgid "ch.blw.ursprungsbezeichnungen-fleisch-be_zungenwurst"
+msgstr "ch.blw.ursprungsbezeichnungen-fleisch-be_zungenwurst"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch-buendnerfleisch"
 msgstr "Bündnerfleisch (GGA)"
@@ -7691,6 +7697,9 @@ msgstr "LW"
 msgid "ch.meteoschweiz"
 msgstr "MeteoSchweiz"
 
+msgid "ch.meteoschweiz.homogenereihen"
+msgstr "Homogene Monatsdaten"
+
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
 msgstr "Staziuns d'atmosfera"
 
@@ -7707,7 +7716,7 @@ msgid "ch.meteoschweiz.messnetz-klima"
 msgstr "Staziuns climaticas"
 
 msgid "ch.meteoschweiz.messnetz-manuell"
-msgstr "Staziuns man. precipitaziuns"
+msgstr "Staziuns manualas precipitaziuns"
 
 msgid "ch.meteoschweiz.messnetz-partner"
 msgstr "Staziuns partenarias MeteoSvizra"
@@ -7721,71 +7730,101 @@ msgstr "Staziuns da pollens"
 msgid "ch.meteoschweiz.messnetz-webcams"
 msgstr "Cameras meteorologicas"
 
+msgid "ch.meteoschweiz.messwerte-aktuell"
+msgstr "Automatische meteorologische Bodenmessstationen - aktuelle Messwerte"
+
 msgid "ch.meteoschweiz.messwerte-foehn-10min"
-msgstr "Mesiraziuns index dal favugn"
+msgstr "Index dal favugn, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-gesamtschnee-1d"
-msgstr "Mesiraziuns autezza da la naiv"
+msgstr "Autezza da la naiv"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-10min"
-msgstr "Mesiraziuns radiaziun globala"
+msgstr "Radiaziun globala, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-1d"
-msgstr "Valurs da mes. rad. globala, 1 di"
+msgstr "Radiaziun globala, 1 di"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-700hpa-flaeche-10min"
-msgstr "Autezza geopotenziala surf. 700 hPa"
+msgstr "Autezza geopot. 700 hPa, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-850hpa-flaeche-10min"
-msgstr "Autezza geopotenziala surf. 850 hPa"
+msgstr "Autezza geopot. 850 hPa, 10 min"
+
+msgid "ch.meteoschweiz.messwerte-luftdruck-differenz-3h"
+msgstr "Pressiun midada, 3 h"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qfe-10min"
-msgstr "Mesiraziuns pressiun staziun QFE"
+msgstr "Pressiun staziun QFE, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qff-10min"
-msgstr "Mesiraziuns pressiun red. QFF"
+msgstr "Pressiun reducida QFF, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qnh-10min"
-msgstr "Mesiraziuns pressiun red. QNH"
+msgstr "Pressiun reducida QNH, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
-msgstr "Mesiraziuns umiditad da l'aria"
+msgstr "Umiditad da l'aria, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-10min"
-msgstr "Mesiraziuns temperatura 2m"
+msgstr "Temperatura 2 m, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-max-1h"
-msgstr "Mesiraziuns temp. max. 2m, 24h"
+msgstr "Temperatura 2 m, max 24 h"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-min-1h"
-msgstr "Mesiraziuns temp. min. 2m, 24h"
+msgstr "Temperatura 2 m, min 24 h"
 
 msgid "ch.meteoschweiz.messwerte-neuschnee-1d"
-msgstr "Mesiraziuns naiv frestga"
+msgstr "Naiv frestga, 1 di"
+
+msgid "ch.meteoschweiz.messwerte-neuschnee-2d"
+msgstr "Naiv frestga, 2 di"
+
+msgid "ch.meteoschweiz.messwerte-neuschnee-3d"
+msgstr "Naiv frestga, 3 di"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-10min"
-msgstr "Mesiraziuns precipitaziuns, 10min"
+msgstr "Precipitaziuns, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1d"
-msgstr "Mesiraziuns precipitaziuns, 1 di"
+msgstr "Precipitaziuns, 1 di"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1h"
-msgstr "Mesiraziuns precipitaziuns, 1h"
+msgstr "Precipitaziuns, 1 h"
+
+msgid "ch.meteoschweiz.messwerte-niederschlag-24h"
+msgstr "Precipitaziuns, 24 h"
+
+msgid "ch.meteoschweiz.messwerte-niederschlag-48h"
+msgstr "Precipitaziuns, 48 h"
+
+msgid "ch.meteoschweiz.messwerte-niederschlag-72h"
+msgstr "Precipitaziuns, 72 h"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
-msgstr "Mesiraziuns uras suleglivas"
+msgstr "Durada radiaziun sulegl, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
-msgstr "Valurs da mes. sulegl rel., 1 di"
+msgstr "Sulegl relativa, 1 di"
 
 msgid "ch.meteoschweiz.messwerte-taupunkt-10min"
-msgstr "Mesiraziuns punct da sdregliar"
+msgstr "Punct da sdregliar, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-10min"
-msgstr "Mesiraziuns bufs"
+msgstr "Bufs 1 s, max 10 min"
+
+msgid "ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-6h"
+msgstr "Bufs 1 s, max 6 h"
 
 msgid "ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min"
-msgstr "Mesiraziuns sveltezza dal vent"
+msgstr "Sveltezza dal vent, 10 min"
+
+msgid "ch.meteoschweiz.normwerttabellen"
+msgstr "Klimanormwerte"
+
+msgid "ch.meteoschweiz.temperaturmittel-1864"
+msgstr "Schweizer Temperaturmittel ab 1864"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
@@ -8178,7 +8217,7 @@ msgid "ch.swisstopo.geologie-erlebnis_geologie"
 msgstr "Aventura geologia"
 
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
-msgstr "Höhenmodell der Felsoberfläche"
+msgstr "Autezza da la surfatscha da grip"
 
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell.height"
 msgstr "Höhe der Felsoberfläche [m ü. M.]"
@@ -8904,7 +8943,7 @@ msgid "ch.swisstopo.geologie-kartenskizzen-perimeter"
 msgstr "Publizierte Skizzen"
 
 msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell"
-msgstr "Autezza da la crappa lucca"
+msgstr "Grossezza da la crappa lucca"
 
 msgid "ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell.height"
 msgstr "Mächtigkeit des Lockergesteins [m]"
@@ -8943,7 +8982,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau.tckind"
 msgstr "Gesteinsgruppe"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung"
-msgstr "Gips: Abbau und Verarbeitung"
+msgstr "Gip: explotaziun ed elavuraziun"
 
 msgid "ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung.clkind"
 msgstr "Bedeutung"
@@ -9054,7 +9093,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau.tckind"
 msgstr "Gesteinsgruppe"
 
 msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung"
-msgstr "Salz: Abbau und Verarbeitung"
+msgstr "Sal: explotaziun ed elavuraziun"
 
 msgid "ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung.clkind"
 msgstr "Bedeutung"
@@ -9114,7 +9153,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-vererzungen.stkind"
 msgstr "Abbaustatus"
 
 msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung"
-msgstr "Zementrohstoffe: Abbau und Verarb."
+msgstr "Materias primas da cement"
 
 msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.clkind"
 msgstr "Bedeutung"
@@ -10094,6 +10133,9 @@ msgstr "Kartenblattnummer 1:50000"
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv."
 
+msgid "ch.swisstopo.schneeschuhwanderland"
+msgstr "Schneeschuhwandern"
+
 msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
@@ -10246,6 +10288,9 @@ msgstr "Divisiun swissBUILDINGS3D 2.0 Vector"
 
 msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE Fund da la carta"
+
+msgid "ch.swisstopo.swissimage-25"
+msgstr "SWISSIMAGE 25"
 
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE Viadis en il temp"

@@ -39,6 +39,16 @@ API & applications
 Geodata
 *******
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wasserverfügbarkeit im Boden <//map.geo.admin.ch/?layers=ch.bafu.wald-wasserverfuegbarkeit_boden>`__ (ch.bafu.wald-wasserverfuegbarkeit_boden)                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wasserverfügbarkeit für Pflanzen <//map.geo.admin.ch/?layers=ch.bafu.wald-wasserverfuegbarkeit_pflanzen>`__ (ch.bafu.wald-wasserverfuegbarkeit_pflanzen)                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Flow-path map <//map.geo.admin.ch/?layers=ch.blw.erosion-fliesswegkarte>`__ (ch.blw.erosion-fliesswegkarte)                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Erosion risk quantitative <//map.geo.admin.ch/?layers=ch.blw.erosion-quantitativ>`__ (ch.blw.erosion-quantitativ)                                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Erosion risk qualitative <//map.geo.admin.ch/?layers=ch.blw.erosion>`__ (ch.blw.erosion)                                                                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `PGI meat products <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-fleisch>`__ (ch.blw.ursprungsbezeichnungen-fleisch)                                                           |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Biogas plants <//map.geo.admin.ch/?layers=ch.bfe.biogasanlagen>`__ (ch.bfe.biogasanlagen)                                                                                                 |
