@@ -4125,7 +4125,7 @@ msgid "ch.bafu.permafrost"
 msgstr "Cartina indicativa del permafrost"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche"
-msgstr "Secteurs de protection des eaux"
+msgstr "Settori di protezione delle acque"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.bemerkungen_de"
 msgstr "Remarques"
@@ -4140,7 +4140,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.typ"
 msgstr "Type"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale"
-msgstr "Périmètres de protection"
+msgstr "Perimetri di protezione"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.bemerkungen_de"
 msgstr "Remarques"
@@ -4167,7 +4167,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.typ_txt"
 msgstr "Désignation cantonale du type"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen"
-msgstr "Zones de protection des eaux souterraines"
+msgstr "Zone protezione acque sotterranee"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.bemerkungen_de"
 msgstr "Remarques"
@@ -4194,10 +4194,10 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.typ"
 msgstr "Type"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zo"
-msgstr "Aires d'alimentation Zo"
+msgstr "Settori d'alimentazione Zo"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zu"
-msgstr "Aires d'alimentation Zu"
+msgstr "Settori d'alimentazione Zu"
 
 msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
 msgstr "REN zona di agricoltura estensiva"
@@ -4778,6 +4778,12 @@ msgstr "Fasce altitudinali"
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
 msgstr "subcode"
 
+msgid "ch.bafu.wald-wasserverfuegbarkeit_boden"
+msgstr "Wasserverfügbarkeit im Boden"
+
+msgid "ch.bafu.wald-wasserverfuegbarkeit_pflanzen"
+msgstr "Wasserverfügbarkeit für Pflanzen"
+
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Punto fisso del profilo trasversale"
 
@@ -4938,7 +4944,7 @@ msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=it"
 
 msgid "ch.bag.zecken-fsme-faelle"
-msgstr "FSME - Lieux déclarés de piqûre"
+msgstr "FSME – Luoghi con casi dichiarati"
 
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "FSME - vaccinazione raccomandata"
@@ -4947,7 +4953,7 @@ msgid "ch.bag.zecken-lyme"
 msgstr "Zone a rischio di Borreliosi"
 
 msgid "ch.bag.zeckenstichmodell"
-msgstr "Modèle des piqûres"
+msgstr "Modello delle punture di zecche"
 
 msgid "ch.bak"
 msgstr "UFC"
@@ -6738,7 +6744,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Inceneritori"
+msgstr "Impianti di incenerimento IIRU"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
 msgstr "Anno di messa in servizio dell’impianto"
@@ -10002,7 +10008,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "Carta nazionale 1:50'000 | CN50"
 
 msgid "ch.swisstopo.pixelkarte-farbe-winter"
-msgstr "Carte nationale hiver | CN25, CN50"
+msgstr "Carta nazionale inverno CN25/CN50"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Carte nazionali (grigio)"

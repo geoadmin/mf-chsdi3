@@ -4778,6 +4778,12 @@ msgstr "Vegetationshöhenstufe"
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
 msgstr "subcode"
 
+msgid "ch.bafu.wald-wasserverfuegbarkeit_boden"
+msgstr "Wasserverfügbarkeit im Boden"
+
+msgid "ch.bafu.wald-wasserverfuegbarkeit_pflanzen"
+msgstr "Wasserverfügbarkeit für Pflanzen"
+
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Querprofilmarke"
 
@@ -6738,7 +6744,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "Sachplan geol. Tiefenlager"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Kehrichtverbrennungsanlagen"
+msgstr "Kehrichtverbrennungsanlagen (KVA)"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
 msgstr "Inbetriebnahme"

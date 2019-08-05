@@ -4778,6 +4778,12 @@ msgstr "Etages de végétation"
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
 msgstr "subcode"
 
+msgid "ch.bafu.wald-wasserverfuegbarkeit_boden"
+msgstr "Wasserverfügbarkeit im Boden"
+
+msgid "ch.bafu.wald-wasserverfuegbarkeit_pflanzen"
+msgstr "Wasserverfügbarkeit für Pflanzen"
+
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Point fixe du profil en travers"
 

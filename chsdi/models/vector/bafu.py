@@ -820,7 +820,7 @@ class GewaesserschutzBadewasserqualitaet(Base, Vector):
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.gewaesserschutz-badewasserqualitaet'
     __queryable_attributes__ = ['id', 'bwname', 'groupid', 'nwunitname', 'rbdsuname',
-                                'gemeinde', 'canton', 'bwatercat', 'qualitaet_ch']
+                                'gemeinde', 'canton', 'bwatercat', 'qualitaet_eua']
     __template__ = 'templates/htmlpopup/gewaesserschutz_badewasserqualitaet.mako'
     __extended_info__ = True
     __label__ = 'bwname'
@@ -835,8 +835,8 @@ class GewaesserschutzBadewasserqualitaet(Base, Vector):
     canton = Column('canton', Unicode, nullable=False)
     eua_badeplatz = Column('eua_badeplatz', Integer, nullable=False)
     gemeinde = Column('gemeinde', Unicode, nullable=False)
-    qualitaet_ch = Column('qualitaet_ch', Unicode, nullable=False)
-    qualitaet_eua = Column('qualitaet_eua', Unicode, nullable=True)
+    qualitaet_ch = Column('qualitaet_ch', Unicode, nullable=True)
+    qualitaet_eua = Column('qualitaet_eua', Unicode, nullable=False)
     anzahlmessungen = Column('anzahlmessungen', Integer, nullable=False)
     verunreinigung_tage = Column('verunreinigung_tage', Integer, nullable=False)
     coord_ch = Column('coord_ch', Unicode, nullable=False)
@@ -1814,49 +1814,6 @@ class Swissprtr(Base, Vector):
 register('ch.bafu.swissprtr', Swissprtr)
 
 
-class Holzvorrat(Base, Vector):
-    __tablename__ = 'holzvorrat'
-    __table_args__ = ({'schema': 'wald', 'autoload': False})
-    __bodId__ = 'ch.bafu.holzvorrat'
-    __template__ = 'templates/htmlpopup/holzvorrat.mako'
-    __label__ = 'wireg_'
-    id = Column('gid', Integer, primary_key=True)
-    fid = Column('id', Integer)
-    vorrat = Column('vorrat', Numeric)
-    wireg_ = Column('wireg_', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bafu.holzvorrat', Holzvorrat)
-
-
-class Holzzuwachs(Base, Vector):
-    __tablename__ = 'holzzuwachs'
-    __table_args__ = ({'schema': 'wald', 'autoload': False})
-    __bodId__ = 'ch.bafu.holzzuwachs'
-    __template__ = 'templates/htmlpopup/holzzuwachs.mako'
-    __label__ = 'wirtschaftsregion'
-    id = Column('gid', Integer, primary_key=True)
-    wirtschaftsregion = Column('wirtschaftsregion', Unicode)
-    holzzuwachs = Column('holzzuwachs', Numeric)
-    the_geom = Column(Geometry2D)
-
-register('ch.bafu.holzzuwachs', Holzzuwachs)
-
-
-class Holnutzung(Base, Vector):
-    __tablename__ = 'holznutzung'
-    __table_args__ = ({'schema': 'wald', 'autoload': False})
-    __bodId__ = 'ch.bafu.holznutzung'
-    __template__ = 'templates/htmlpopup/holznutzung.mako'
-    __label__ = 'wireg_'
-    id = Column('gid', Integer, primary_key=True)
-    wireg_ = Column('wireg_', Unicode)
-    nutzung = Column('nutzung', Numeric)
-    the_geom = Column(Geometry2D)
-
-register('ch.bafu.holznutzung', Holnutzung)
-
-
 class Nabel(Base, Vector):
     __tablename__ = 'nabel'
     __table_args__ = ({'schema': 'luft', 'autoload': False})
@@ -1954,50 +1911,6 @@ class Weltensutter(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.flora-weltensutter_atlas', Weltensutter)
-
-
-class Baumarten(Base, Vector):
-    __tablename__ = 'baumartenmischung'
-    __table_args__ = ({'schema': 'wald', 'autoload': False})
-    __bodId__ = 'ch.bafu.landesforstinventar-baumarten'
-    __template__ = 'templates/htmlpopup/baumarten.mako'
-    __label__ = 'wirtschaft'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    wirtschaft = Column('wirtschaft', Unicode)
-    anteil_lau = Column('anteil_lau', Numeric)
-    anteil_nad = Column('anteil_nad', Numeric)
-    vorrat = Column('vorrat', Numeric)
-    the_geom = Column(Geometry2D)
-
-register('ch.bafu.landesforstinventar-baumarten', Baumarten)
-
-
-class Waldanteil(Base, Vector):
-    __tablename__ = 'waldanteil'
-    __table_args__ = ({'schema': 'wald', 'autoload': False})
-    __bodId__ = 'ch.bafu.landesforstinventar-waldanteil'
-    __template__ = 'templates/htmlpopup/waldanteil.mako'
-    __label__ = 'wirtschaft'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    wirtschaft = Column('wirtschaft', Unicode)
-    waldflaech = Column('waldflaech', Numeric)
-    the_geom = Column(Geometry2D)
-
-register('ch.bafu.landesforstinventar-waldanteil', Waldanteil)
-
-
-class Totholz(Base, Vector):
-    __tablename__ = 'totholzvolumen'
-    __table_args__ = ({'schema': 'wald', 'autoload': False})
-    __bodId__ = 'ch.bafu.landesforstinventar-totholz'
-    __template__ = 'templates/htmlpopup/totholz.mako'
-    __label__ = 'wirtschaft'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    wirtschaft = Column('wirtschaft', Unicode)
-    totholzvol = Column('totholzvol', Numeric)
-    the_geom = Column(Geometry2D)
-
-register('ch.bafu.landesforstinventar-totholz', Totholz)
 
 
 class Histerdbeben(Base, Vector):

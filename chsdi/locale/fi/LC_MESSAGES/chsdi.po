@@ -1380,7 +1380,7 @@ msgid "ch.astra.projektierungszonen-nationalstrassen.oereb"
 msgstr "Zonas projectaziun autostradas RPDP"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
-msgstr "SIN Anhörung"
+msgstr "Audiziun SIN"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.coordlevel"
 msgstr "Stand der Koordination"
@@ -1416,7 +1416,7 @@ msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung.validuntil"
 msgstr "bis"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft"
-msgstr "SP Infrastruktur Strasse"
+msgstr "PS Infrastructura da las vias"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_kraft.coordlevel"
 msgstr "Stand der Koordination"
@@ -2175,7 +2175,7 @@ msgid "ch.bafu.aquaprotect_500"
 msgstr "Inundaziun Aquaprotect 500"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar"
-msgstr "Auen ausserhalb Bundesinventar"
+msgstr "Zonas umidas ordaifer invent. fed."
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
 msgstr "Bedeutung"
@@ -2295,7 +2295,7 @@ msgid "ch.bafu.bundesinventare-auen.shape_area"
 msgstr "Fläche [ha]"
 
 msgid "ch.bafu.bundesinventare-auen_vegetation_alpin"
-msgstr "Vegetation alpine Auen"
+msgstr "Vegetaziun zonas umidas alpinas"
 
 msgid "ch.bafu.bundesinventare-auen_vegetation_alpin.conflict"
 msgstr "Konfliktpotential"
@@ -2709,7 +2709,7 @@ msgid "ch_bafu_gee-kla.vsa_kategorie"
 msgstr "Reinigungstyp (VSA-Kategorie)"
 
 msgid "ch.bafu.gefaehrdungskarte-oberflaechenabfluss"
-msgstr "Gefährdungskarte Oberflächenabfluss"
+msgstr "Charta periclit. defl. auas surf."
 
 msgid "ch.bafu.gefahren-aktuelle_erdbeben"
 msgstr "Terratrembels istorics"
@@ -3834,13 +3834,13 @@ msgid "ch.bafu.landesforstinventar-totholz"
 msgstr "Laina morta (IFN)"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell"
-msgstr "Vegetationshöhe LFI"
+msgstr "Autezza vegetaziun IFN"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell.datenstand"
 msgstr "Stadi da las datas"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief"
-msgstr "Oberflächenmodell LFI"
+msgstr "Model da surfatscha IFN"
 
 msgid "ch.bafu.landesforstinventar-vegetationshoehenmodell_relief.datenstand"
 msgstr "Stadi da las datas"
@@ -3858,7 +3858,7 @@ msgid "ch.bafu.landesforstinventar-waldanteil"
 msgstr "Quota da guaud (IFN)"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad"
-msgstr "Waldmischungsgrad LFI"
+msgstr "Maschaida dal guaud IFN"
 
 msgid "ch.bafu.landesforstinventar-waldmischungsgrad.datenstand"
 msgstr "Stadi da las datas"
@@ -4125,7 +4125,7 @@ msgid "ch.bafu.permafrost"
 msgstr "Charta schelira permanenta"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche"
-msgstr "Gewässerschutzbereiche"
+msgstr "Secturs da protecziun da las auas"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.bemerkungen_de"
 msgstr "Bemerkungen"
@@ -4140,7 +4140,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.typ"
 msgstr "Typ"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale"
-msgstr "Grundwasserschutzareale"
+msgstr "Areals da protecziun aua sutterrana"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.bemerkungen_de"
 msgstr "Bemerkungen"
@@ -4167,7 +4167,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.typ_txt"
 msgstr "Kantonale Typbezeichnung"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen"
-msgstr "Grundwasserschutzzonen"
+msgstr "Zonas da protecziun aua sutterrana"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.bemerkungen_de"
 msgstr "Bemerkungen"
@@ -4194,10 +4194,10 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.typ"
 msgstr "Typ"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zo"
-msgstr "Zuströmbereiche Zo"
+msgstr "Secturs d'affluenza Zo"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zu"
-msgstr "Zuströmbereiche Zu"
+msgstr "Secturs d'affluenza Zu"
 
 msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
 msgstr "REN  Territori agricul extensiv"
@@ -4671,7 +4671,7 @@ msgid "ch.bafu.waldschadenflaechen-vivian"
 msgstr "Donns da stemprà Vivian"
 
 msgid "ch.bafu.wald-standortsregionen"
-msgstr "Waldstandortsregionen"
+msgstr "Regiuns d'ambients da guaud"
 
 msgid "ch.bafu.wald-standortsregionen.code"
 msgstr "code"
@@ -4698,7 +4698,7 @@ msgid "ch.bafu.wald-standortsregionen.subcode"
 msgstr "subcode"
 
 msgid "ch.bafu.wald-tannenareale"
-msgstr "Tannenareale"
+msgstr "Areals d'aviez"
 
 msgid "ch.bafu.wald-tannenareale.areal_de"
 msgstr "Tannenareal"
@@ -4716,7 +4716,7 @@ msgid "ch.bafu.wald-tannenareale.code_ta"
 msgstr "code_ta"
 
 msgid "ch.bafu.wald-vegetationshoehenstufen_1995"
-msgstr "Höhenstufen 1995"
+msgstr "Stgalims d'autezza 1995"
 
 msgid "ch.bafu.wald-vegetationshoehenstufen_1995.code"
 msgstr "code"
@@ -4737,7 +4737,7 @@ msgid "ch.bafu.wald-vegetationshoehenstufen_1995.subcode"
 msgstr "subcode"
 
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken"
-msgstr "Höhenstufen 2085 trocken"
+msgstr "Stgalims d'autezza 2085, sitg"
 
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.code"
 msgstr "code"
@@ -4758,7 +4758,7 @@ msgid "ch.bafu.wald-vegetationshoehenstufen_2085_trocken.subcode"
 msgstr "subcode"
 
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken"
-msgstr "Höhenstufen 2085 mässig trocken"
+msgstr "Stgalims d'aut. 2085, main sitg"
 
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.code"
 msgstr "code"
@@ -4777,6 +4777,12 @@ msgstr "Vegetationshöhenstufe"
 
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
 msgstr "subcode"
+
+msgid "ch.bafu.wald-wasserverfuegbarkeit_boden"
+msgstr "Wasserverfügbarkeit im Boden"
+
+msgid "ch.bafu.wald-wasserverfuegbarkeit_pflanzen"
+msgstr "Wasserverfügbarkeit für Pflanzen"
 
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Marca dals profils traversals"
@@ -4938,7 +4944,7 @@ msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=de"
 
 msgid "ch.bag.zecken-fsme-faelle"
-msgstr "FSME - Gemeldete Stichorte"
+msgstr "FSME - Lieus da piztgada annunziads"
 
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "FSME – vaccinaziun recumandada"
@@ -4947,7 +4953,7 @@ msgid "ch.bag.zecken-lyme"
 msgstr "Zonas da borreliosa"
 
 msgid "ch.bag.zeckenstichmodell"
-msgstr "Zeckenstichmodell"
+msgstr "Model da las piztgadas da zeccas"
 
 msgid "ch.bak"
 msgstr "BAK"
@@ -5718,7 +5724,7 @@ msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Plan d'emissiuns viafiers 2015"
 
 msgid "ch.bav.lage-stoerfallverordnung_eisenbahnanlagen"
-msgstr "Lage und Bereich Eisenb. StFV"
+msgstr "Pos. e reg. implants viafier OPIR"
 
 msgid "ch.bav.projektierungszonen-eisenbahnanlagen.oereb"
 msgstr "Zonas projectaziun viafiers RPDP"
@@ -6408,7 +6414,7 @@ msgid "ch.bfe.bikesharing.time"
 msgstr "Öffnungszeiten"
 
 msgid "ch.bfe.biogasanlagen"
-msgstr "Biogasanlagen"
+msgstr "Implants da biogas"
 
 msgid "ch.bfe.biogasanlagen.beginingofoperation"
 msgstr "Inbetriebnahme"
@@ -6450,7 +6456,7 @@ msgid "ch.bfe.biogasanlagen.web"
 msgstr "Webseite"
 
 msgid "ch.bfe.biomasse-nicht-verholzt"
-msgstr "Nicht-verholzte Biomassen"
+msgstr "Biomassas betg lainusas"
 
 msgid "ch.bfe.biomasse-nicht-verholzt.bfs_nummer"
 msgstr "Gemeindenummer"
@@ -6462,7 +6468,7 @@ msgid "ch.bfe.biomasse-nicht-verholzt.non_woody"
 msgstr "Total nachhaltige nicht verholzte Biomassenpotenziale in TJ Primärenergie"
 
 msgid "ch.bfe.biomasse-verholzt"
-msgstr "Verholzte Biomassen"
+msgstr "Biomassas lainusas"
 
 msgid "ch.bfe.biomasse-verholzt.bfs_nummer"
 msgstr "Gemeindenummer"
@@ -6474,7 +6480,7 @@ msgid "ch.bfe.biomasse-verholzt.woody"
 msgstr "Total nachhaltige verholzte Biomassenpotenziale in TJ Primärenergie"
 
 msgid "ch.bfe.energieberatungsstellen"
-msgstr "Energieberatungsstellen"
+msgstr "Posts da cussegliaziun d'energia"
 
 msgid "ch.bfe.energieberatungsstellen.address"
 msgstr "Adresse"
@@ -6708,7 +6714,7 @@ msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.service"
 msgstr "Dienstleistung: Meistverbrauchende Branche"
 
 msgid "ch.bfe.geak-experten"
-msgstr "GEAK-Experten"
+msgstr "Experts CECE"
 
 msgid "ch.bfe.geak-experten.address"
 msgstr "Adresse"
@@ -6738,7 +6744,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Kehrichtverbrennungsanlagen"
+msgstr "Stabiliments per arder rument (SAR)"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
 msgstr "Inbetriebnahme"
@@ -6801,7 +6807,7 @@ msgid "ch.bfe.minergiegebaeude.zertifikat"
 msgstr "Zertifikat"
 
 msgid "ch.bfe.rohrleitungen-konsultationsbereiche"
-msgstr "Konsultationsbereiche Rohrleitungen"
+msgstr "Secturs da consultaziun conducts"
 
 msgid "ch.bfe.sachplan-geologie-tiefenlager"
 msgstr "PS Deposits geologics profunds"
@@ -6945,7 +6951,7 @@ msgid "ch.bfe.solarenergie-eignung-fassaden.klasse"
 msgstr "Eignung"
 
 msgid "ch.bfe.solarprofis"
-msgstr "Solarprofis"
+msgstr "Profis solars"
 
 msgid "ch.bfe.solarprofis.address"
 msgstr "Adresse"
@@ -7050,7 +7056,7 @@ msgid "ch.bfe.windenergie-potenzialgebiete"
 msgstr "Zonas da potenzial da vent"
 
 msgid "ch.bfe.wpsm-qualifizierte_firmen"
-msgstr "WPSM-qualifizierte Firmen"
+msgstr "Firmas qualifitgadas per PCMS"
 
 msgid "ch.bfe.wpsm-qualifizierte_firmen.address"
 msgstr "Adresse"
@@ -7722,7 +7728,7 @@ msgid "ch.meteoschweiz.messnetz-manuell"
 msgstr "Staziuns man. precipitaziuns"
 
 msgid "ch.meteoschweiz.messnetz-partner"
-msgstr "MeteoSchweiz-Partnerstationen"
+msgstr "Staziuns partenarias MeteoSvizra"
 
 msgid "ch.meteoschweiz.messnetz-phaenologie"
 msgstr "Observaziuns fenologicas"
@@ -7743,13 +7749,13 @@ msgid "ch.meteoschweiz.messwerte-globalstrahlung-10min"
 msgstr "Mesiraziuns radiaziun globala"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-1d"
-msgstr "Messwerte Globalstrahlung, 1 Tag"
+msgstr "Valurs da mes. rad. globala, 1 di"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-700hpa-flaeche-10min"
-msgstr "Geopotentielle Höhe 700 hPa-Fläche"
+msgstr "Autezza geopotenziala surf. 700 hPa"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-850hpa-flaeche-10min"
-msgstr "Geopotentielle Höhe 850 hPa-Fläche"
+msgstr "Autezza geopotenziala surf. 850 hPa"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qfe-10min"
 msgstr "Mesiraziuns pressiun staziun QFE"
@@ -7788,7 +7794,7 @@ msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
 msgstr "Mesiraziuns uras suleglivas"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
-msgstr "Messwerte Sonnenschein rel., 1 Tag"
+msgstr "Valurs da mes. sulegl rel., 1 di"
 
 msgid "ch.meteoschweiz.messwerte-taupunkt-10min"
 msgstr "Mesiraziuns punct da sdregliar"
@@ -10002,7 +10008,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "Charta naziunala 1:50'000 | CN50"
 
 msgid "ch.swisstopo.pixelkarte-farbe-winter"
-msgstr "Landeskarte Winter | LK25, LK50"
+msgstr "Charta naz. enviern | CN25, CN50"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Charta naziunala (grisch)"

@@ -4125,7 +4125,7 @@ msgid "ch.bafu.permafrost"
 msgstr "Potential permafrost distribution"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche"
-msgstr "Gewässerschutzbereiche"
+msgstr "Water protection areas"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.bemerkungen_de"
 msgstr "Bemerkungen"
@@ -4140,7 +4140,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.typ"
 msgstr "Typ"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale"
-msgstr "Grundwasserschutzareale"
+msgstr "Groundwater protection areas"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.bemerkungen_de"
 msgstr "Bemerkungen"
@@ -4167,7 +4167,7 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.typ_txt"
 msgstr "Kantonale Typbezeichnung"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen"
-msgstr "Grundwasserschutzzonen"
+msgstr "Groundwater protection zones"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.bemerkungen_de"
 msgstr "Bemerkungen"
@@ -4194,10 +4194,10 @@ msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.typ"
 msgstr "Typ"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zo"
-msgstr "Zuströmbereiche Zo"
+msgstr "Areas of contribution Zo"
 
 msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zu"
-msgstr "Zuströmbereiche Zu"
+msgstr "Area of contribution Zu"
 
 msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
 msgstr "REN extensive agricultural area"
@@ -4778,6 +4778,12 @@ msgstr "Altitudinal vegetation belts"
 msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
 msgstr "subcode"
 
+msgid "ch.bafu.wald-wasserverfuegbarkeit_boden"
+msgstr "Wasserverfügbarkeit im Boden"
+
+msgid "ch.bafu.wald-wasserverfuegbarkeit_pflanzen"
+msgstr "Wasserverfügbarkeit für Pflanzen"
+
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Cross section securing point"
 
@@ -4947,7 +4953,7 @@ msgid "ch.bag.zecken-lyme"
 msgstr "Borreliosis risk regions"
 
 msgid "ch.bag.zeckenstichmodell"
-msgstr "Zeckenstichmodell"
+msgstr "Tick bite model"
 
 msgid "ch.bak"
 msgstr "BAK"
@@ -6738,7 +6744,7 @@ msgid "ch.bfe.geologische_tiefenlager_fac"
 msgstr "ch.bfe.geologische_tiefenlager_fac"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen"
-msgstr "Waste incineration plants"
+msgstr "Waste incineration plants (MWI)"
 
 msgid "ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation"
 msgstr "Year of commissioning of the plant"
@@ -10002,7 +10008,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "National Map 1:50'000"
 
 msgid "ch.swisstopo.pixelkarte-farbe-winter"
-msgstr "Landeskarte Winter | LK25, LK50"
+msgstr "Winter national map | LK25, LK50"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "National Maps (grey)"

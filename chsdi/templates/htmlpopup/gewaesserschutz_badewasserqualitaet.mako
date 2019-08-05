@@ -2,6 +2,9 @@
 
 <%def name="table_body(c, lang)">
 <% c['stable_id'] = True %>
+<%
+badewasserqualitaet_eua = 'ch.bafu.gewaesserschutz-badewasserqualitaet.%s' % c['attributes']['qualitaet_eua']
+%>
     <tr>
       <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwid')}</td>
       <td>${c['featureId']}</td>
@@ -23,8 +26,8 @@
       <td>${c['attributes']['gemeinde'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_ch')}</td>
-      <td>${c['attributes']['qualitaet_ch'] or '-'}</td>
+      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_eua')}</td>
+      <td>${_(badewasserqualitaet_eua)}</td>
     </tr>
     <tr>
       <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.anzahlmessungen')}</td>
@@ -34,6 +37,7 @@
 
 <%def name="extended_info(c, lang)">
 <%
+badewasserqualitaet_eua = 'ch.bafu.gewaesserschutz-badewasserqualitaet.%s' % c['attributes']['qualitaet_eua']
 protocol = request.scheme
 c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
 datageoadminUrl = 'https://' + request.registry.settings['datageoadminhost'] + '/ch.bafu.gewaesserschutz-badewasserqualitaet/image/'
@@ -85,10 +89,6 @@ lang = request.lang
 % endif
   </tr>
   <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_ch')}</td>
-    <td class="cell-meta">${c['attributes']['qualitaet_ch'] or '-'}</td>
-  </tr>
-  <tr>
     <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw')}</td>
     <td class="cell-meta">${c['attributes']['yearbw'] or '-'}</td>
   </tr>
@@ -122,7 +122,7 @@ lang = request.lang
   </tr>
   <tr>
     <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_eua')}</td>
-    <td class="cell-meta">${c['attributes']['qualitaet_eua'] or '-'}</td>
+    <td class="cell-meta">${_(badewasserqualitaet_eua)}</td>
   </tr>
 </table>
 <br />
