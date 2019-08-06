@@ -19,7 +19,9 @@ class Test_OpenTransApi(TestsBase):
 
     def test_station_wabern(self):
         api = self._callOpenTrans()
-        results = api.get_departures(8507078)
+        # valid station id should be requested from opentransport api p.e.
+        # https://api.opentransportdata.swiss/ckan-api/datastore_search?resource_id=b1a45b18-2a36-4582-a94d-71f2825e95e8&q=wabern
+        results = api.get_departures(8588562)
         len_results = len(results)
         self.assertEqual(len_results, 5)
 
