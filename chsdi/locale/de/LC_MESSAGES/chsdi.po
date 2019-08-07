@@ -2177,6 +2177,9 @@ msgstr "Überschwemmung Aquaprotect 500"
 msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Auen ausserhalb Bundesinventar"
 
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin"
+msgstr "Alpine Auen ausserhalb Bundesinv."
+
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
 msgstr "Bedeutung"
 
@@ -7359,7 +7362,7 @@ msgid "ch.blw.emapis-zusammenfassung"
 msgstr "Ländliche Entwicklung"
 
 msgid "ch.blw.erosion"
-msgstr "Erosionsrisiko qualitativ"
+msgstr "Erosionsrisiko Acker qualitativ"
 
 msgid "ch.blw.erosion2"
 msgstr "Erosionsrisiko"
@@ -7371,7 +7374,7 @@ msgid "ch.blw.erosion-mit_bergzonen"
 msgstr "Erosionsrisiko qualitativ 2"
 
 msgid "ch.blw.erosion-quantitativ"
-msgstr "Erosionsrisiko quantitativ"
+msgstr "Erosionsrisiko Acker quantitativ"
 
 msgid "ch.blw.feldblockkarte"
 msgstr "Feldblockkarte"
@@ -7489,6 +7492,9 @@ msgstr "GGA Fleischware"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch-ap_wurst"
 msgstr "ch.blw.ursprungsbezeichnungen-fleisch-ap_wurst"
+
+msgid "ch.blw.ursprungsbezeichnungen-fleisch-be_zungenwurst"
+msgstr "ch.blw.ursprungsbezeichnungen-fleisch-be_zungenwurst"
 
 msgid "ch.blw.ursprungsbezeichnungen-fleisch-buendnerfleisch"
 msgstr "Bündnerfleisch (GGA)"
@@ -7691,6 +7697,9 @@ msgstr "LW"
 msgid "ch.meteoschweiz"
 msgstr "MeteoSchweiz"
 
+msgid "ch.meteoschweiz.homogenereihen"
+msgstr "Homogene Monatsdaten"
+
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
 msgstr "Atmosphärenstationen"
 
@@ -7721,71 +7730,101 @@ msgstr "Pollenstationen"
 msgid "ch.meteoschweiz.messnetz-webcams"
 msgstr "Wetterkameras"
 
+msgid "ch.meteoschweiz.messwerte-aktuell"
+msgstr "Automatische meteorologische Bodenmessstationen - aktuelle Messwerte"
+
 msgid "ch.meteoschweiz.messwerte-foehn-10min"
-msgstr "Messwerte Föhnindex"
+msgstr "Föhnindex, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-gesamtschnee-1d"
-msgstr "Messwerte Schneehöhe"
+msgstr "Schneehöhe"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-10min"
-msgstr "Messwerte Globalstrahlung"
+msgstr "Globalstrahlung, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-globalstrahlung-1d"
-msgstr "Messwerte Globalstrahlung, 1 Tag"
+msgstr "Globalstrahlung, 1 Tag"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-700hpa-flaeche-10min"
-msgstr "Geopotentielle Höhe 700 hPa-Fläche"
+msgstr "Geopotentielle Höhe 700 hPa, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-850hpa-flaeche-10min"
-msgstr "Geopotentielle Höhe 850 hPa-Fläche"
+msgstr "Geopotentielle Höhe 850 hPa, 10 min"
+
+msgid "ch.meteoschweiz.messwerte-luftdruck-differenz-3h"
+msgstr "Luftdruckänderung, 3 h"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qfe-10min"
-msgstr "Messwerte Luftdruck Station QFE"
+msgstr "Luftdruck Station QFE, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qff-10min"
-msgstr "Messwerte Luftdruck reduziert QFF"
+msgstr "Luftdruck reduziert QFF, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-luftdruck-qnh-10min"
-msgstr "Messwerte Luftdruck reduziert QNH"
+msgstr "Luftdruck reduziert QNH, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-luftfeuchtigkeit-10min"
-msgstr "Messwerte Luftfeuchtigkeit"
+msgstr "Luftfeuchtigkeit, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-10min"
-msgstr "Messwerte Temperatur 2m"
+msgstr "Temperatur 2 m, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-max-1h"
-msgstr "Messwerte Max. Temperatur 2m, 24h"
+msgstr "Temperatur 2 m, Max. 24 h"
 
 msgid "ch.meteoschweiz.messwerte-lufttemperatur-24h-min-1h"
-msgstr "Messwerte Min. Temperatur 2m, 24h"
+msgstr "Temperatur 2 m, Min. 24 h"
 
 msgid "ch.meteoschweiz.messwerte-neuschnee-1d"
-msgstr "Messwerte Neuschnee"
+msgstr "Neuschnee, 1 Tag"
+
+msgid "ch.meteoschweiz.messwerte-neuschnee-2d"
+msgstr "Neuschnee, 2 Tage"
+
+msgid "ch.meteoschweiz.messwerte-neuschnee-3d"
+msgstr "Neuschnee, 3 Tage"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-10min"
-msgstr "Messwerte Niederschlag, 10min"
+msgstr "Niederschlagsumme, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1d"
-msgstr "Messwerte Niederschlag, 1 Tag"
+msgstr "Niederschlagsumme, 1 Tag"
 
 msgid "ch.meteoschweiz.messwerte-niederschlag-1h"
-msgstr "Messwerte Niederschlag, 1h"
+msgstr "Niederschlagsumme, 1 h"
+
+msgid "ch.meteoschweiz.messwerte-niederschlag-24h"
+msgstr "Niederschlagsumme, 24 h"
+
+msgid "ch.meteoschweiz.messwerte-niederschlag-48h"
+msgstr "Niederschlagsumme, 48 h"
+
+msgid "ch.meteoschweiz.messwerte-niederschlag-72h"
+msgstr "Niederschlagsumme, 72 h"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
-msgstr "Messwerte Sonnenscheindauer"
+msgstr "Sonnenscheindauer, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
-msgstr "Messwerte Sonnenschein rel., 1 Tag"
+msgstr "Sonnenscheindauer relativ, 1 Tag"
 
 msgid "ch.meteoschweiz.messwerte-taupunkt-10min"
-msgstr "Messwerte Taupunkt"
+msgstr "Taupunkt, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-10min"
-msgstr "Messwerte Windböen"
+msgstr "Windböe 1 s, Max. 10 min"
+
+msgid "ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-6h"
+msgstr "Windböe 1 s, Max. 6 h"
 
 msgid "ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min"
-msgstr "Messwerte Windgeschwindigkeit"
+msgstr "Windgeschwindigkeit, 10 min"
+
+msgid "ch.meteoschweiz.normwerttabellen"
+msgstr "Klimanormwerte"
+
+msgid "ch.meteoschweiz.temperaturmittel-1864"
+msgstr "Schweizer Temperaturmittel ab 1864"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
@@ -10094,6 +10133,9 @@ msgstr "Kartenblattnummer 1:50000"
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, Prv."
 
+msgid "ch.swisstopo.schneeschuhwanderland"
+msgstr "Schneeschuhwandern"
+
 msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
@@ -10246,6 +10288,9 @@ msgstr "Einteilung swissBUILDINGS3D 2.0 Vector"
 
 msgid "ch.swisstopo.swissimage"
 msgstr "SWISSIMAGE Hintergrund"
+
+msgid "ch.swisstopo.swissimage-25"
+msgstr "SWISSIMAGE 25"
 
 msgid "ch.swisstopo.swissimage-product"
 msgstr "SWISSIMAGE Zeitreise"
@@ -13620,7 +13665,7 @@ msgid "layer_url_portal_text"
 msgstr "Link zum Fachportal"
 
 msgid "layer_url_text"
-msgstr "Link zu Detailbeschreibung"
+msgstr "Link zur Detailbeschreibung"
 
 msgid "Layer visibility"
 msgstr "Datensatz Sichtbarkeit"
