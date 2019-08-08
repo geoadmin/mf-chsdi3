@@ -542,7 +542,7 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                 if txt is not None:
                     vectorLayer.append((model, txt))
             if len(vectorLayer) == 0:
-                raise exc.HTTPBadRequest('The where clause is not valid for %s.' % layerBodId)
+                raise exc.HTTPBadRequest('The where/layerDefs clause is not valid for %s.' % layerBodId)
         else:
             vectorLayer = [(model, None) for model in models]
 
