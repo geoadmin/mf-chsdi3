@@ -7,7 +7,7 @@ import datetime
 import gzip
 import StringIO
 from decimal import Decimal
-from itertools import izip
+from itertools import izip, cycle
 from functools import partial
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
@@ -23,6 +23,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from shapely.ops import transform as shape_transform
 from shapely.wkt import dumps as shape_dumps, loads as shape_loads
 from shapely.geometry.base import BaseGeometry
+from chsdi.lib.parser import WhereParser
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
@@ -213,32 +214,23 @@ def format_query(model, value):
             res.append(val)
         return res
 
-    def extractMatches(x):
-        for v in x:
-            if v != '':
-                return v
-        return v
+    def merge_statements(values, operators):
+        if len(values) - 1 != len(operators):
+            raise
+        iters = [iter(values), iter(operators)]
+        full = list(it.next() for it in cycle(iters))
 
-    def getOperator(values):
-        supportedOperators = [' and ', ' or ']
-        if len(values) > 1:
-            t = value.split(values[0])
-            operator = extractMatches(t[1].split(values[1]))
-            if operator not in supportedOperators:
-                raise HTTPBadRequest()
-            return operator
-        return ''
-
-    regEx = r'(\w+\s(?:ilike|not ilike)\s(?:\'%)[^\%]+(?:%\'))|(\w+\s(?:=|\!=|>=|<=|>|<)\s[^\s]+)|(\w+\s(?:is null|is not null))'
+        return u" ".join(full)
 
     try:
-        values = map(extractMatches, re.findall(regEx, value))
+        w = WhereParser(value)
+        values = w.tokens
         if len(values) == 0:
             return None
-        operator = getOperator(values)
         values = map(escapeSQL, values)
         values = replacePropByColumnName(model, values)
-        where = operator.join(values)
+        operators = w.operators
+        where = merge_statements(values, operators)
     except HTTPBadRequest:
         raise
     except:

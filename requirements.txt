@@ -15,6 +15,7 @@ GeoAlchemy2==0.6.2
 geojson==1.1.0
 hupper==1.0
 Jinja2==2.10.1
+lark_parser==0.7.2
 lxml==4.2.5
 Mako==1.0.0
 MarkupSafe==0.23
