@@ -221,13 +221,13 @@ def format_query(model, value):
         full = list(it.next() for it in cycle(iters))
 
         return u" ".join(full)
-
     try:
         w = WhereParser(value)
         values = w.tokens
         if len(values) == 0:
             return None
-        values = map(escapeSQL, values)
+        # TODO: what does really do?
+        # values = map(escapeSQL, values)
         values = replacePropByColumnName(model, values)
         operators = w.operators
         where = merge_statements(values, operators)
