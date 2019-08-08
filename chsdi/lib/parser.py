@@ -1,4 +1,5 @@
 from lark import Lark, Transformer
+from lark.exception import LarkError
 import lark
 
 where_gram = """
@@ -37,6 +38,10 @@ is_not_null: /is( not)? null/i
 """
 
 
+class ParseError(Exception):
+    pass
+
+
 class WhereParser(object):
 
     def __init__(self, text):
@@ -46,7 +51,10 @@ class WhereParser(object):
 
     @property
     def sql(self):
-        return u" ".join(self._tokens())
+        tokens = self._tokens()
+        if len(tokens) < 1:
+            return None
+        return u" ".join(tokens)
 
     @property
     def tokens(self):
@@ -73,8 +81,8 @@ class WhereParser(object):
         tree = []
         try:
             tree = self.parser.parse(self.text)
-        except Exception as e:
-            print("Cannot parse '{}'".format(e))
+        except LarkError:
+            raise ParseError("Cannot parse '{}'".format(self.text))
         return tree
 
 
