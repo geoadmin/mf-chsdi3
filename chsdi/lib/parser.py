@@ -13,7 +13,8 @@ where_gram = """
 expressions: expression (and_or expression)* [and_or]
 
 expression: WORD is_not_null
-          | WORD operators NUMBERS
+          | WORD IS_NOT BOOLEAN
+          | WORD operators SIGNED_NUMBER
           | WORD operators_likes  ESCAPED_QUOTED_STRING
 
 operators: OPERATORS   -> ops
@@ -27,10 +28,13 @@ ESCAPED_QUOTED_STRING: /'(?:[^'\\\\]|\\\\.)*'/
 OPERATORS: "<="|">="|"<"|">"|"=="|">="|"<="|"<>"|"!="|"="
 LIKES: "ilike"|"not ilike"|"not like"|"like"
 OPERATORS_LIKES: OPERATORS | LIKES
+BOOLEAN: "true" | "false"
 and_or: /and|or/i
 is_not_null: /is( not)? null/i
+IS_NOT: "is not"|"<>"|"!="|"="|"is"
 
 %import common.NUMBER
+%import common.SIGNED_NUMBER
 %import common.LETTER
 %import common.FLOAT
 %import common.INT
@@ -101,4 +105,10 @@ class WhereTransformer(Transformer):
         return str(s[0])
 
     def operators_likes(self, s):
+        return unicode(s[0])
+
+    def BOOLEAN(self, s):
+        return "true" == str(s[0])
+
+    def IS_NOT(self, s):
         return unicode(s[0])
