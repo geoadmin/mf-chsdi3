@@ -1,5 +1,5 @@
 from lark import Lark, Transformer
-from lark.exception import LarkError
+from lark.exceptions import LarkError
 import lark
 
 where_gram = """
