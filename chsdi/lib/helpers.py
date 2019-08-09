@@ -24,6 +24,10 @@ from shapely.ops import transform as shape_transform
 from shapely.wkt import dumps as shape_dumps, loads as shape_loads
 from shapely.geometry.base import BaseGeometry
 from chsdi.lib.parser import WhereParser
+from chsdi.lib.exceptions import QueryParseException
+
+import logging
+log = logging.getLogger(__name__)
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
@@ -185,7 +189,7 @@ def escape_sphinx_syntax(input_str):
     return input_str
 
 
-def format_query(model, value):
+def format_query(model, value, lang):
     '''
         Supported operators on numerical or date values are "=, !=, >=, <=, > and <"
         Supported operators for text are "ilike and not ilike"
@@ -205,12 +209,24 @@ def format_query(model, value):
             return where
         return value
 
-    def replacePropByColumnName(model, values):
+    def get_queryable_attributes(model, lang):
+        attributes = []
+        if hasattr(model, '__queryable_attributes__'):
+            attributes = model.get_queryable_attributes_keys(lang)
+        return attributes
+
+    def replacePropByColumnName(model, values, lang):
         res = []
+        queryable_attributes = get_queryable_attributes(model, lang)
         for val in values:
             prop = val.split(' ')[0].strip()
-            columnName = model.get_column_by_property_name(prop).name.__str__()
-            val = val.replace(prop, columnName)
+            column = model.get_column_by_property_name(prop)
+            if prop not in queryable_attributes:
+                raise QueryParseException("One or more query attributes is not queryable in the model")
+            if column is None:
+                raise QueryParseException("One or more query attribute(s) doesn't exist or is not queryable in the model")
+
+            val = val.replace(prop, unicode(column.name))
             res.append(val)
         return res
 
@@ -221,6 +237,8 @@ def format_query(model, value):
         full = list(it.next() for it in cycle(iters))
 
         return u" ".join(full)
+    log.info("===TOTO===")
+
     try:
         w = WhereParser(value)
         values = w.tokens
@@ -228,9 +246,11 @@ def format_query(model, value):
             return None
         # TODO: what does really do?
         # values = map(escapeSQL, values)
-        values = replacePropByColumnName(model, values)
+        values = replacePropByColumnName(model, values, lang)
         operators = w.operators
         where = merge_statements(values, operators)
+    except QueryParseException as qpe:
+        raise HTTPBadRequest(qpe.message)
     except HTTPBadRequest:
         raise
     except:
