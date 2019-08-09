@@ -3,6 +3,7 @@
 from unittest import skip
 from tests.integration import TestsBase, shift_to_lv95, reproject_to_srid
 import math
+from shapely.geometry import shape, Point, box
 
 accept_headers = {'Accept': 'application/json, text/plain, */*'}
 
@@ -163,6 +164,54 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.swisstopo.fixpunkte-agnes'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+
+    def test_identify_geom_within_bbox(self):
+        # All stations west of Bern
+        envelop = [450000, 50000, 600000, 450000]
+        params = {'geometry': ','.join(map(str, envelop)),
+                  'sr': 21781,
+                  'geometryType': 'esriGeometryEnvelope',
+                  'imageDisplay': '500,600,96',
+                  'mapExtent': '548945.5,147956,549402,148103.5',
+                  'tolerance': '0',
+                  'geometryFormat': 'geojson',
+                  'returnGeometry': True,
+                  'layers': 'all:ch.swisstopo.fixpunkte-agnes'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        features = resp.json['results']
+        self.assertEqual(len(features), 11)
+        bbox = box(*envelop)
+        for f in features:
+            pnt = shape(f['geometry'])
+            self.assertTrue(bbox.contains(pnt))
+
+    @skip("How is this working? Really")
+    def test_identify_geom_within_point(self):
+        # Distance from the old observatory in Bern
+        # tolerance=9  --> [(u'HUTT', 36780.71389369724), (u'NEUC', 38203.81803602861), (u'ZIM2', 8467.901107122028), (u'ZIMM', 8471.975418401587)]
+        center = [2600000, 1200000]
+        params = {'geometry': ','.join(map(str, center)),
+                  'sr': 2056,
+                  'geometryType': 'esriGeometryPoint',
+                  'imageDisplay': '400,300,100',                   # In theory, 1 pixel = 1'000 meters
+                  'mapExtent': '2450000,1050000,2850000,2350000',  # 400'000 x 300'000 meters
+                  'tolerance': '9',           # Zimmerwald is about 8.57 km from the old observatory in Bern
+                  'geometryFormat': 'geojson',
+                  'returnGeometry': True,
+                  'layers': 'all:ch.swisstopo.fixpunkte-agnes'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        features = resp.json['results']
+        self.assertEqual(len(features), 4)
+        origin = Point(*center)
+        s = []
+        for f in features:
+            pnt = shape(f['geometry'])
+            distance = origin.distance(pnt)
+            s.append((f['featureId'],  distance))
+            # self.assertTrue(distance < 9000)
+        self.assertEqual('', s)
 
     def test_identify_valid_esri_point(self):
         params = {'geometry': '{"x":717725.72800819238,"y":96257.179952642487,"spatialReference":{"wkid":21781}}',
