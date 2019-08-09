@@ -213,6 +213,28 @@ class TestIdentifyService(TestsBase):
             # self.assertTrue(distance < 9000)
         self.assertEqual('', s)
 
+    def test_identify_geom_within_pointi_dummy_params(self):
+        # Distance from the old observatory in Bern
+        # tolerance=9'000 px  --> (u'ZIM2', 8467.901107122028), (u'ZIMM', 8471.975418401587)
+        center = [2600000, 1200000]
+        params = {'geometry': ','.join(map(str, center)),
+                  'sr': 2056,
+                  'geometryType': 'esriGeometryPoint',
+                  'imageDisplay': '100,100,100',         # In theory, 1 pixel = 1 meters
+                  'mapExtent': '0,0,100,100',            # 100 x 100 meters
+                  'tolerance': 9000,                     # Zimmerwald is about 8.57 km from the old observatory in Bern
+                  'geometryFormat': 'geojson',
+                  'returnGeometry': True,
+                  'layers': 'all:ch.swisstopo.fixpunkte-agnes'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        features = resp.json['results']
+        origin = Point(*center)
+        for f in features:
+            pnt = shape(f['geometry'])
+            distance = origin.distance(pnt)
+            self.assertTrue(distance < params['tolerance'])
+
     def test_identify_valid_esri_point(self):
         params = {'geometry': '{"x":717725.72800819238,"y":96257.179952642487,"spatialReference":{"wkid":21781}}',
                   'geometryType': 'esriGeometryPoint',
