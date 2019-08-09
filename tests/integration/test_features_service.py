@@ -239,7 +239,7 @@ class TestFeaturesView(TestsBase):
                   'searchText': 'Talstrasse',
                   'returnGeometry': 'false',
                   'contains': 'false',
-                  'layerDefs': '{"tutu": "toto > 1"}'}
+                  'layerDefs': '{"tutu": "gdenr > 2000"}'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
         resp.mustcontain("You can only filter on layer 'ch.swisstopo.amtliches-strassenverzeichnis' in 'layerDefs'")
 
@@ -251,7 +251,7 @@ class TestFeaturesView(TestsBase):
                   'contains': 'false',
                   'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "toto = 4307"}'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
-        resp.mustcontain("Filtering on a not existing field on layer ch.swisstopo.amtliches-strassenverzeichnis")
+        resp.mustcontain("Query attribute 'toto' is not queryable")
 
     def test_find_all_talstrasse(self):
         params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
