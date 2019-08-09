@@ -1344,7 +1344,7 @@ class Luftfahrthindernis(Base, Vector):
     __template__ = 'templates/htmlpopup/luftfahrthindernisse.mako'
     __bodId__ = 'ch.bazl.luftfahrthindernis'
     __extended_info__ = True
-    __queryable_attributes__ = ['registrationnumber', 'state', 'maxheightagl',
+    __queryable_attributes__ = ['registrationnumber', 'state', 'maxheightagl', 'startofconstruction',
                                 'topelevationamsl', 'totallength', 'bgdi_activesince', 'abortionaccomplished']
     # Must be equal to the mapped value of the column
     __label__ = 'registrationnumber'
