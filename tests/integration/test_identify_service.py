@@ -213,9 +213,9 @@ class TestIdentifyService(TestsBase):
             # self.assertTrue(distance < 9000)
         self.assertEqual('', s)
 
-    def test_identify_geom_within_pointi_dummy_params(self):
+    def test_identify_geom_within_point_dummy_params(self):
         # Distance from the old observatory in Bern
-        # tolerance=9'000 px  --> (u'ZIM2', 8467.901107122028), (u'ZIMM', 8471.975418401587)
+        # tolerance=9'000 px  --> 9'000 meeters  (u'ZIM2', 8467.901107122028), (u'ZIMM', 8471.975418401587)
         center = [2600000, 1200000]
         params = {'geometry': ','.join(map(str, center)),
                   'sr': 2056,
@@ -233,7 +233,29 @@ class TestIdentifyService(TestsBase):
         for f in features:
             pnt = shape(f['geometry'])
             distance = origin.distance(pnt)
-            self.assertTrue(distance < params['tolerance'])
+            self.assertLessEqual(distance, params['tolerance'])
+
+    def test_identify_geom_addresses_within_circle(self):
+        # Distance from the old observatory in Bern
+        # tolerance=200px --> 200 meters
+        center = [2600000, 1200000]
+        params = {'geometry': ','.join(map(str, center)),
+                  'sr': 2056,
+                  'geometryType': 'esriGeometryPoint',
+                  'imageDisplay': '100,100,100',         # In theory, 1 pixel = 1 meters
+                  'mapExtent': '0,0,100,100',            # 100 x 100 meters
+                  'tolerance': 200,                      # Should be a center with radius 200 meters
+                  'geometryFormat': 'geojson',
+                  'returnGeometry': True,
+                  'layers': 'all:ch.bfs.gebaeude_wohnungs_register'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        features = resp.json['results']
+        origin = Point(*center)
+        for f in features:
+            pnt = shape(f['geometry'])
+            distance = origin.distance(pnt)
+            self.assertLessEqual(distance, params['tolerance'])
 
     def test_identify_valid_esri_point(self):
         params = {'geometry': '{"x":717725.72800819238,"y":96257.179952642487,"spatialReference":{"wkid":21781}}',
