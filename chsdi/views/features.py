@@ -538,7 +538,7 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
             filter_attributes = []
             for model in models:
                 filter_attributes += list(model().get_orm_columns_names())
-                txt = format_query(model, where)
+                txt = format_query(model, where, params.lang)
                 if txt is not None:
                     vectorLayer.append((model, txt))
             if len(vectorLayer) == 0:
@@ -666,7 +666,7 @@ def _find(request):
     for model in models:
         where_txt = None
         if params.where is not None:
-            where_txt = format_query(model, params.where)
+            where_txt = format_query(model, params.where, params.lang)
         vectorLayers.append((model, where_txt))
 
     # Attributes in the 'where' or 'layerDefs' should match attributes in
