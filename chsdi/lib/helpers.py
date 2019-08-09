@@ -26,9 +26,6 @@ from shapely.geometry.base import BaseGeometry
 from chsdi.lib.parser import WhereParser
 from chsdi.lib.exceptions import QueryParseException
 
-import logging
-log = logging.getLogger(__name__)
-
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 
@@ -237,7 +234,6 @@ def format_query(model, value, lang):
         full = list(it.next() for it in cycle(iters))
 
         return u" ".join(full)
-    log.info("===TOTO===")
 
     try:
         w = WhereParser(value)
