@@ -25,8 +25,11 @@ from shapely.wkt import dumps as shape_dumps, loads as shape_loads
 from shapely.geometry.base import BaseGeometry
 from chsdi.lib.parser import WhereParser
 from chsdi.lib.exceptions import QueryParseException
+import logging
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+log = logging.getLogger(__name__)
 
 
 PROJECTIONS = {}
@@ -212,6 +215,7 @@ def format_query(model, value, lang):
             attributes = model.get_queryable_attributes_keys(lang)
         return attributes
 
+    # Check if attributes are queryable and replace by the DB column name
     def replacePropByColumnName(model, values, lang):
         res = []
         queryable_attributes = get_queryable_attributes(model, lang)
@@ -219,9 +223,14 @@ def format_query(model, value, lang):
             prop = val.split(' ')[0].strip()
             column = model.get_column_by_property_name(prop)
             if prop not in queryable_attributes:
-                raise QueryParseException("One or more query attributes is not queryable in the model")
+                error_msg = "Query attribute '{}' is not queryable. Queryable attributes are '{}'" \
+                    .format(prop, ",".join(queryable_attributes))
+                log.error(error_msg)
+                raise QueryParseException(error_msg)
             if column is None:
-                raise QueryParseException("One or more query attribute(s) doesn't exist or is not queryable in the model")
+                error_msg = "Query attribute '{} doesn't exist in the model".format(prop)
+                log.error(error_msg)
+                raise QueryParseException(error_msg)
 
             val = val.replace(prop, unicode(column.name))
             res.append(val)
@@ -236,6 +245,7 @@ def format_query(model, value, lang):
         return u" ".join(full)
 
     try:
+
         w = WhereParser(value)
         values = w.tokens
         if len(values) == 0:
