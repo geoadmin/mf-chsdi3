@@ -26,6 +26,13 @@ class TestWhereParser(unittest.TestCase):
             w = WhereParser(sql)
             self.assertEqual(sqls[i],  w.sql)
 
+    def test_with_many_spaces(self):
+        sqls = ["toto  =    2.3", "toto=1", "  toto  >=1.0"]
+        expected = ["toto = 2.3", "toto = 1", "toto >= 1.0"]
+        for i, sql in enumerate(sqls):
+            w = WhereParser(sql)
+            self.assertEqual(expected[i],  w.sql)
+
     def test_with_is_boolean(self):
         sqls = ["toto is true", "toto is not true", "toto is false", "toto is not false",
                 "toto != false", "toto <> false", "toto = false", "toto = true", "toto=true", "toto=false"]
@@ -56,8 +63,12 @@ class TestWhereParser(unittest.TestCase):
         self.assertEqual(2,  len(w.operators))
 
     def test_failings(self):
-        # 1/ ilike and number are forbidden, 2/ maybe is not a keyword
-        sqls = ["toto ilike 2", "state ilike '%a%' maybe abortionaccomplished > '2014-12-01'"]
+        # 1/ ilike and number are forbidden
+        # 2/ 'maybe' is not a keyword
+        # 3/ no attribute
+        # 4/ sql-injection
+        sqls = ["toto ilike 2", "state ilike '%a%' maybe abortionaccomplished > '2014-12-01'",
+                "1 = 1", "username='username' AND password='password' OR 1=1"]
         for i, sql in enumerate(sqls):
             w = WhereParser(sql)
             self.assertEqual(None,  w.sql)
