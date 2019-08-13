@@ -16,7 +16,7 @@ class DiemoLocations(Base, Vector):
     __bodId__ = 'ch.bfe.ladestellen-elektromobilitaet'
     __queryable_attributes__ = ['EvseID', 'Availability', 'QueryPlugs', 'Accessiblity', 'IsHubjectCompatible', 'QueryChargingFacilities', 'DynamicInfoAvailable',
                                 'QueryChargingModes', 'MaxCapacity', 'QueryPaymentOptions', 'AdditionalInfo', 'ChargingStationID', 'ChargingStationName',
-                                'Address', 'Street', 'HouseNum', 'PostalCode', 'City', 'QueryAutheticationModes', 'Latitude',
+                                'Address', 'Street', 'HouseNum', 'PostalCode', 'City', 'QueryAuthenticationModes', 'Latitude',
                                 'Longitude', 'GeoCoordinates', 'LastUdate', 'IsOpen24Hours', 'OpeningTimes', 'OperatorID', 'OperatorName']
     __label__ = 'EvseID'
     id = Column('bgdi_id', Numeric, primary_key=True)
