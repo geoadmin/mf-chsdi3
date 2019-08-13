@@ -21,7 +21,8 @@ pyramid.includes = pyramid_tm
 sqlalchemy.are.url = postgresql://${dbhost}:${dbport}/are_${dbstaging}
 sqlalchemy.bafu.url = postgresql://${dbhost}:${dbport}/bafu_${dbstaging}
 sqlalchemy.bak.url = postgresql://${dbhost}:${dbport}/bak_${dbstaging}
-sqlalchemy.bod.url = postgresql://${dbhost}:${dbport}/bod_${dbstaging}
+# TODO fix
+sqlalchemy.bod.url = postgresql://${dbhost}:${dbport}/bod_ltrea_master
 sqlalchemy.dritte.url = postgresql://${dbhost}:${dbport}/dritte_${dbstaging}
 sqlalchemy.edi.url = postgresql://${dbhost}:${dbport}/edi_${dbstaging}
 sqlalchemy.evd.url = postgresql://${dbhost}:${dbport}/evd_${dbstaging}
@@ -32,6 +33,8 @@ sqlalchemy.uvek_solarkataster.url = postgresql://${dbhost}:${dbport}/uvek_solark
 sqlalchemy.vbs.url = postgresql://${dbhost}:${dbport}/vbs_${dbstaging}
 sqlalchemy.zeitreihen.url = postgresql://${dbhost}:${dbport}/zeitreihen_${dbstaging}
 sqlalchemy.lubis.url = postgresql://${dbhost}:${dbport}/lubis_${dbstaging}
+# TODO fix
+sqlalchemy.diemo.url = postgresql://pg-sandbox.bgdi.ch:5432/diemo_int
 
 # Mako specific
 mako.directories = chsdi:templates
