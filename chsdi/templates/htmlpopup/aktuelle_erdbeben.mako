@@ -16,14 +16,10 @@
     getfeatureinfo_x = int(((coord_x - bbox_xmin)/(bbox_xmax-bbox_xmin))*imageDisplay[0])
     getfeatureinfo_y = int(((bbox_ymax - coord_y)/(bbox_ymax-bbox_ymin))*imageDisplay[1])
 
-    if request.lang == ('de') :
-        query_layer = 'eq_ch_90d_de.s10000'
-    elif request.lang == ('fr') :
-        query_layer = 'eq_ch_90d_fr.s10000'
-    elif request.lang == ('it') :
-        query_layer = 'eq_ch_90d_it.s10000'
+    if request.lang in ['de', 'fr', 'it'] :
+        query_layer = 'eq_ch_90d_%s.s10000' % request.lang
     else :
-        query_layer = 'eq_ch_90d_de.s10000'
+        query_layer = 'eq_ch_90d.s10000'
 
     url = "http://map.seismo.ethz.ch/cgi-bin/mapserv?MAP=/var/www/mapfile/swisstopo/eventpage_ch.map&LAYERS=eq_ch_90d_de&TRANSPARENT=TRUE&FORMAT=aggpng24&ID=eq_ch_90d_de&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&STYLES=&SRS=EPSG:2056&EXCEPTIONS=application/vnd.ogc.se_xml&BBOX=%s,%s,%s,%s&X=%s&Y=%s&INFO_FORMAT=text/html&QUERY_LAYERS=%s&FEATURE_COUNT=10&WIDTH=%s&HEIGHT=%s" % (bbox_xmin, bbox_ymin, bbox_xmax, bbox_ymax, getfeatureinfo_x, getfeatureinfo_y, query_layer, imageDisplay[0], imageDisplay[1])
 
