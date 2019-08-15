@@ -25,3 +25,4 @@ deploy/deploy-branch.cfg
 deploy/conf/00-branch.conf
 print/WEB-INF/web.xml
 tests/varnish*
+app*.log
