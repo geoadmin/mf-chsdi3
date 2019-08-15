@@ -24,7 +24,10 @@ operators: OPERATORS   -> ops
 operators_likes: OPERATORS | LIKES
 
 NUMBERS: /(\d+(\.\d+)?)/
-WORD: ("_"|LETTER|NUMBER)+
+// WORD must and may only be a valid python variable name:
+// - first character must be one of [_,a-z,A-Z]
+// - other character may be one of [_,a-z,A-Z,0-9]
+WORD: ("_"|LETTER)("_"|LETTER|NUMBER)+
 
 SINGLE_QUOTED_STRING: /'[^']*'/
 ESCAPED_QUOTED_STRING: /'(?:[^'\\\\]|\\\\.)*'/
@@ -52,7 +55,7 @@ class ParseError(Exception):
 class WhereParser(object):
 
     def __init__(self, text):
-        log.debug('WhereParser string: {}'.format(unicode(text)))
+        log.debug(u'WhereParser string: {}'.format(unicode(text)))
         self.text = text
         self.parser = Lark(where_gram, debug=True)
         self.transformer = WhereTransformer()
@@ -82,7 +85,7 @@ class WhereParser(object):
             r = tr.children
         else:
             r.append(tr)
-        # log.debug('tokens: {}'.format(unicode(r)))
+        # log.debug(u'tokens: {}'.format(unicode(r)))
         return r
 
     def _tree(self):
@@ -91,7 +94,7 @@ class WhereParser(object):
             tree = self.parser.parse(self.text)
         except LarkError:
             raise ParseError("Cannot parse '{}'".format(self.text))
-        # log.debug('tree: {}'.format(unicode(tree)))
+        # log.debug(u'tree: {}'.format(unicode(tree)))
         return tree
 
 
@@ -101,7 +104,7 @@ class WhereTransformer(Transformer):
         return u" ".join(map(unicode, args))
 
     def and_or(self, s):
-        # log.debug('and_or: {}'.format(unicode(s[0]).lower()))
+        # log.debug(u'and_or: {}'.format(unicode(s[0]).lower()))
         return unicode(s[0]).lower()
 
     def is_not_null(self, s):
@@ -114,7 +117,7 @@ class WhereTransformer(Transformer):
         return unicode(s[0]).lower()
 
     def BOOLEAN(self, s):
-        # log.debug('boolean: {}'.format(unicode(s)))
+        # log.debug(u'boolean: {}'.format(unicode(s)))
         return "true" == str(s[0]).lower()
 
     def IS_NOT(self, s):

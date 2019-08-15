@@ -68,13 +68,13 @@ formatter = generic
 
 [handler_file]
 class = FileHandler
-level = DEBUG
+level = INFO
 formatter = generic
 args = ('${current_directory}/app.log', 'w')
 
 [handler_sqlfile]
 class = FileHandler
-level = DEBUG
+level = INFO
 formater = generic
 args = ('${current_directory}/appsql.log', 'w')
 
