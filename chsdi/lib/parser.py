@@ -27,7 +27,7 @@ NUMBERS: /(\d+(\.\d+)?)/
 // WORD must and may only be a valid python variable name:
 // - first character must be one of [_,a-z,A-Z]
 // - other character may be one of [_,a-z,A-Z,0-9]
-WORD: ("_"|LETTER)("_"|LETTER|NUMBER)+
+WORD: ("_"|LETTER)("_"|LETTER|NUMBER)*
 
 SINGLE_QUOTED_STRING: /'[^']*'/
 ESCAPED_QUOTED_STRING: /'(?:[^'\\\\]|\\\\.)*'/
