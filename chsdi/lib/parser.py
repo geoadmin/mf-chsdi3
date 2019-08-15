@@ -52,7 +52,7 @@ class ParseError(Exception):
 class WhereParser(object):
 
     def __init__(self, text):
-        log.debug('WhereParser string: {}'.format(text))
+        log.debug('WhereParser string: {}'.format(unicode(text)))
         self.text = text
         self.parser = Lark(where_gram, debug=True)
         self.transformer = WhereTransformer()
