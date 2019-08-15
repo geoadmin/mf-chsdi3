@@ -22,6 +22,7 @@ class TestWhereParser(unittest.TestCase):
 
     def test_with_is(self):
         sqls = [u"toto is null", u"toto is not null"]
+        
         for i, sql in enumerate(sqls):
             w = WhereParser(sql)
             self.assertEqual(sqls[i],  w.sql)
@@ -29,6 +30,7 @@ class TestWhereParser(unittest.TestCase):
     def test_with_many_spaces(self):
         sqls = [u"toto  =    2.3", u"toto=1", u"  toto  >=1.0"]
         expected = [u"toto = 2.3", u"toto = 1", u"toto >= 1.0"]
+
         for i, sql in enumerate(sqls):
             w = WhereParser(sql)
             self.assertEqual(expected[i],  w.sql)
@@ -38,12 +40,15 @@ class TestWhereParser(unittest.TestCase):
                 u"toto != false", u"toto <> false", u"toto = false", u"toto = true", u"toto=true", u"toto=false"]
         expected = [u"toto is true", u"toto is not true", u"toto is false", u"toto is not false",
                 u"toto != false", u"toto <> false", u"toto = false", u"toto = true", u"toto = true", u"toto = false"]
+
         for i, sql in enumerate(sqls):
             w = WhereParser(sql)
             self.assertEqual(expected[i],  w.sql)
 
     def test_with_and(self):
+
         sql = u"toto is null and toto is not null"
+
         w = WhereParser(sql)
         self.assertEqual("and",  w.operators[0])
 
@@ -53,12 +58,16 @@ class TestWhereParser(unittest.TestCase):
         self.assertEqual(sql,  w.sql)
 
     def test_with_or(self):
+
         sql = u"toto like 'tutu%' or toto is not null"
+
         w = WhereParser(sql)
         self.assertEqual("or",  w.operators[0])
 
     def test_with_many_operators(self):
+
         sql = u"toto like 'tutu%' or toto is not null and tata > 0.2"
+        
         w = WhereParser(sql)
         self.assertEqual(2,  len(w.operators))
 
@@ -69,6 +78,7 @@ class TestWhereParser(unittest.TestCase):
         # 4/ sql-injection
         sqls = [u"toto ilike 2", u"state ilike '%a%' maybe abortionaccomplished > '2014-12-01'",
                 u"1 = 1", u"username='username' AND password='password' OR 1=1"]
+
         for i, sql in enumerate(sqls):
             w = WhereParser(sql)
             self.assertEqual(None,  w.sql)
