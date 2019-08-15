@@ -355,7 +355,13 @@ apache/wsgi.conf: apache/wsgi.conf.in \
 		--var "wsgi_app=$(WSGI_APP)" \
 		--var "kml_temp_dir=$(KML_TEMP_DIR)" $< > $@
 
-development.ini.in:
+
+app.log:
+	touch $@
+	chmod a+rw $@
+
+
+development.ini.in: app.log
 	@echo "${GREEN}Template file development.ini.in has changed${RESET}";
 development.ini: development.ini.in \
 	               .venv/last-version \
@@ -363,6 +369,7 @@ development.ini: development.ini.in \
 	@echo "${GREEN}Creating development.ini....${RESET}";
 	${MAKO_CMD} \
 		--var "app_version=$(VERSION)" \
+		--var "current_directory=$(CURRENT_DIRECTORY)" \
 		--var "server_port=$(SERVER_PORT)" $< > $@
 
 production.ini.in:
@@ -612,6 +619,7 @@ clean:
 	rm -rf development.ini
 	rm -rf apache/wsgi.conf
 	rm -rf rc_branch
+	rm -rf app.log
 	rm -rf apache/application.wsgi
 	rm -rf deploy/deploy-branch.cfg
 	rm -rf deploy/conf/00-branch.conf
