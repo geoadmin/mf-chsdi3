@@ -22,7 +22,7 @@ class TestWhereParser(unittest.TestCase):
 
     def test_with_is(self):
         sqls = [u"toto is null", u"toto is not null"]
-        
+
         for i, sql in enumerate(sqls):
             w = WhereParser(sql)
             self.assertEqual(sqls[i],  w.sql)
@@ -67,7 +67,7 @@ class TestWhereParser(unittest.TestCase):
     def test_with_many_operators(self):
 
         sql = u"toto like 'tutu%' or toto is not null and tata > 0.2"
-        
+
         w = WhereParser(sql)
         self.assertEqual(2,  len(w.operators))
 
