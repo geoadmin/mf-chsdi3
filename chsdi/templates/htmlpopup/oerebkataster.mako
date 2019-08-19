@@ -29,11 +29,12 @@ def get_xml(path):
 %>
 <%def name="table_body(c,lang)">
 <%
-path_pdf = sanitise_url("{}/extract/reduced/pdf/".format(c['attributes']['oereb_webservice']))
 path_xml = "/getegrid/xml/?XY="
 if not 'oereb_webservice' in c['attributes'].keys():
   c['attributes']['oereb_webservice'] = None
   c['attributes']['bgdi_status'] = None
+else:
+  path_pdf = sanitise_url("{}/extract/reduced/pdf/".format(c['attributes']['oereb_webservice']))
 request = context.get('request')
 coord = request.params.get('coord')
 
