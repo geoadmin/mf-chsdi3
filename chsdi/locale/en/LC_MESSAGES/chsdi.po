@@ -2492,6 +2492,9 @@ msgstr "Area [m2]"
 msgid "ch.bafu.bundesinventare-vogelreservate.teilgebiet"
 msgstr "Subarea"
 
+msgid "ch.bafu.erosion-gruenland_bodenabtrag"
+msgstr "Erosion risk permanent grassland"
+
 msgid "ch.bafu.eua"
 msgstr "FOEN / EEA"
 
@@ -6599,6 +6602,9 @@ msgstr "Municipality / city"
 msgid "ch.bfe.energiestaedte.punktezahl"
 msgstr "Number of points"
 
+msgid "ch.bfe.erneuerbarheizen"
+msgstr "Impulsberatung erneuerbar heizen"
+
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Heat and cooling sources"
 
@@ -6709,6 +6715,9 @@ msgstr "Nuclear Power Plants"
 
 msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Water power potential"
+
+msgid "ch.bfe.komo-projekte"
+msgstr "COMO projects"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "E-mobility charger (in progress)"
@@ -7654,6 +7663,24 @@ msgstr "MeteoSwiss"
 
 msgid "ch.meteoschweiz.homogenereihen"
 msgstr "Homogeneous monthly data"
+
+msgid "ch.meteoschweiz.klimanormwerte-niederschlag_1961_1990"
+msgstr "Climate normals precipitation 1961-1990"
+
+msgid "ch.meteoschweiz.klimanormwerte-niederschlag_aktuelle_periode"
+msgstr "Climate normals precipitation 1981-2010"
+
+msgid "ch.meteoschweiz.klimanormwerte-sonnenscheindauer_1961_1990"
+msgstr "Climate normals sunshine duration 1961-1990"
+
+msgid "ch.meteoschweiz.klimanormwerte-sonnenscheindauer_aktuelle_periode"
+msgstr "Climate normals sunshine duration 1981-2010"
+
+msgid "ch.meteoschweiz.klimanormwerte-temperatur_1961_1990"
+msgstr "Climate normals temperature 1961-1990"
+
+msgid "ch.meteoschweiz.klimanormwerte-temperatur_aktuelle_periode"
+msgstr "Climate normals temperature 1981-2010"
 
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
 msgstr "Atmosphere stations"

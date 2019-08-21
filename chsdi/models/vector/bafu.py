@@ -1325,6 +1325,30 @@ class AuenAusserhalbBundesinventar(Base, Vector):
 register(AuenAusserhalbBundesinventar.__bodId__, AuenAusserhalbBundesinventar)
 
 
+class AlpinAuenAusserhalbBundesinventar(Base, Vector):
+    __tablename__ = 'alpinauen'
+    __table_args__ = ({'schema': 'schutzge', 'autoload': False})
+    __bodId__ = 'ch.bafu.auen-ausserhalb_bundesinventar_alpin'
+    __template__ = 'templates/htmlpopup/auen_ausserhalb_bundinv_alpin.mako'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    de_biobedeutung = Column('de_biobedeutung', Unicode)
+    fr_biobedeutung = Column('fr_biobedeutung', Unicode)
+    it_biobedeutung = Column('it_biobedeutung', Unicode)
+    de_geobedeutung = Column('de_geobedeutung', Unicode)
+    fr_geobedeutung = Column('fr_geobedeutung', Unicode)
+    it_geobedeutung = Column('it_geobedeutung', Unicode)
+    de_qualitaet = Column('de_qualitaet', Unicode)
+    fr_qualitaet = Column('fr_qualitaet', Unicode)
+    it_qualitaet = Column('it_qualitaet', Unicode)
+    auentyp = Column('auentyp', Unicode)
+    shape_area = Column('shape_area', Integer)
+    the_geom = Column(Geometry2D)
+
+register(AlpinAuenAusserhalbBundesinventar.__bodId__, AlpinAuenAusserhalbBundesinventar)
+
+
 class AuenVegetationsKarten(Base, Vector):
     __tablename__ = 'auen_vegetation'
     __table_args__ = ({'schema': 'flora', 'autoload': False})
