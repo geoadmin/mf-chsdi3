@@ -3166,6 +3166,8 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
     gdename = Column('gdename', Unicode)
     gdenr = Column('gdenr', Integer)
     validated = Column('validated', Integer)
+    official = Column('official', Integer)
+    modified = Column('modified', Unicode)
     type = Column('type', Unicode)
     status = Column('status', Unicode)
     the_geom = Column(Geometry2D)

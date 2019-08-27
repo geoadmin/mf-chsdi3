@@ -1343,6 +1343,9 @@ msgstr "Canoeing in Switzerland"
 msgid "ch.astra.kt"
 msgstr "FEDRO + canton"
 
+msgid "ch.astra.langsamverkehr-wandern_sperrungen_umleitungen"
+msgstr "Wanderwegsperrungen"
+
 msgid "ch.astra.mountainbikeland"
 msgstr "Mountainbiking in Switzerland"
 
@@ -2179,6 +2182,27 @@ msgstr "Floodplains outside the federal inventary"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin"
 msgstr "Alp. Floodplains outside Fed. Inv."
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.auentyp"
+msgstr "Type"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.biobedeutung"
+msgstr "Importance (Biology)"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.geobedeutung"
+msgstr "Importance (Geomorphology)"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.name"
+msgstr "Name"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.objnummer"
+msgstr "ObjectNo."
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.qualitaet"
+msgstr "Quality"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.shape_area"
+msgstr "Area [ha]"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
 msgstr "Importance"
@@ -4294,6 +4318,12 @@ msgstr "Emerald sites"
 
 msgid "ch.bafu.schutzgebiete-wildruhezonen"
 msgstr "Wildlife reserves"
+
+msgid "ch.bafu.sed"
+msgstr "SED/ETH Zürich"
+
+msgid "ch.bafu.sed.url"
+msgstr "http://www.seismo.ethz.ch/de/service/Disclaimer/"
 
 msgid "ch.bafu.showme-gemeinden_hochwasser"
 msgstr "ShowMe communes: floods"
@@ -8024,6 +8054,12 @@ msgstr "FSO-No."
 msgid "ch.swisstopo.amtliches-strassenverzeichnis.label"
 msgstr "Street name"
 
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.modified"
+msgstr "Last modification"
+
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.official"
+msgstr "Official"
+
 msgid "ch.swisstopo.amtliches-strassenverzeichnis.plzo"
 msgstr "postcode / place name"
 
@@ -8034,7 +8070,7 @@ msgid "ch.swisstopo.amtliches-strassenverzeichnis.type"
 msgstr "Object type"
 
 msgid "ch.swisstopo.amtliches-strassenverzeichnis.validated"
-msgstr "Official / validated"
+msgstr "validated"
 
 msgid "ch.swisstopo.area-papierkarte.metadata"
 msgstr "Area Chart ICAO"

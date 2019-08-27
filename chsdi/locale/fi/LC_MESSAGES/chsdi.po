@@ -1343,6 +1343,9 @@ msgstr "Kanuland"
 msgid "ch.astra.kt"
 msgstr "ASTRA + chantun"
 
+msgid "ch.astra.langsamverkehr-wandern_sperrungen_umleitungen"
+msgstr "Wanderwegsperrungen"
+
 msgid "ch.astra.mountainbikeland"
 msgstr "La Svizra cun velo da muntogna"
 
@@ -2179,6 +2182,27 @@ msgstr "Zonas umidas ordaifer invent. fed."
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin"
 msgstr "Zonas umidas alp. ordaifer inv. fed."
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.auentyp"
+msgstr "Typ"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.biobedeutung"
+msgstr "Bedeutung (Biologie)"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.geobedeutung"
+msgstr "Bedeutung (Geomorphologie)"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.name"
+msgstr "Name"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.objnummer"
+msgstr "ObjekNr."
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.qualitaet"
+msgstr "Qualität"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.shape_area"
+msgstr "Fläche [ha]"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
 msgstr "Bedeutung"
@@ -4294,6 +4318,12 @@ msgstr "Smaragd"
 
 msgid "ch.bafu.schutzgebiete-wildruhezonen"
 msgstr "Asils da selvaschina"
+
+msgid "ch.bafu.sed"
+msgstr "SED/ETH Zürich"
+
+msgid "ch.bafu.sed.url"
+msgstr "http://www.seismo.ethz.ch/de/service/Disclaimer/"
 
 msgid "ch.bafu.showme-gemeinden_hochwasser"
 msgstr "ShowMe vischnancas: aua gronda"
@@ -8024,6 +8054,12 @@ msgstr "BFS-Nr."
 msgid "ch.swisstopo.amtliches-strassenverzeichnis.label"
 msgstr "Strassenname"
 
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.modified"
+msgstr "Letzte Änderung"
+
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.official"
+msgstr "Offiziell"
+
 msgid "ch.swisstopo.amtliches-strassenverzeichnis.plzo"
 msgstr "PLZ / Ortschaft"
 
@@ -8034,7 +8070,7 @@ msgid "ch.swisstopo.amtliches-strassenverzeichnis.type"
 msgstr "Objekttyp"
 
 msgid "ch.swisstopo.amtliches-strassenverzeichnis.validated"
-msgstr "Offiziell / Validiert"
+msgstr "validiert"
 
 msgid "ch.swisstopo.area-papierkarte.metadata"
 msgstr "Area Chart ICAO"
