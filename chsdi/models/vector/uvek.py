@@ -586,6 +586,8 @@ class Energieberatungsstellen (Base, Vector):
     telephonenumber = Column('telephonenumber', Unicode)
     mail = Column('mail', Unicode)
     webaddress = Column('webaddress', Unicode)
+    paidconsultation = Column('paidconsultation', Unicode)
+    freeconsultation = Column('freeconsultation', Unicode)
     clientprivatepersons = Column('clientprivatepersons', Boolean)
     clientcompanies = Column('clientcompanies', Boolean)
     clientmunicipalities = Column('clientmunicipalities', Boolean)
