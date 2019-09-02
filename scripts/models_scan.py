@@ -23,7 +23,7 @@ def getPGTables(layerId, engine, dbname, schema, tablename):
     sqlTemplate = 'EXPLAIN VERBOSE SELECT * FROM %s.%s'
     try:
         t = []
-        sqlQuery = sqlTemplate %(schema, tablename)
+        sqlQuery = sqlTemplate % (schema, tablename)
         records = engine.execute(sqlQuery)
         for i in records:
             table = re.search('[Bitmap Heap|Index|Seq] Scan.* on ([^ ]+)', i[0])
@@ -40,7 +40,12 @@ def getTableReferences(dbmap, engines):
     for layerId, models in dbmap.iteritems():
         tmp = []
         tmpColumns = []
+        tmpQueryableAttributes = []
         for model in models:
+            try:
+                queryable_attributes = model.__queryable_attributes__
+            except AttributeError:
+                queryable_attributes = []
             matches = re.match(
                 '^.*\/{1}([a-z]*_solarkataster)|^.*\/{1}([a-z]*)',
                 model.metadata.__str__())
@@ -49,14 +54,17 @@ def getTableReferences(dbmap, engines):
             schema = model.__table_args__['schema'] if 'schema' in model.__table_args__ else 'public'
             tablename = model.__tablename__
             columnNames = [k.name for k in model.__table__.columns]
+            queryableAttributes = [k for k in queryable_attributes]
             tmp.append(getPGTables(layerId, engine, dbname, schema, tablename))
             tmpColumns += columnNames
+            tmpQueryableAttributes += queryableAttributes
         if len(models) > 1:
             print layerId
         result = [item for sublist in tmp for item in sublist]
         result = sorted(list(set(result)))
         resultColumns = sorted(list(set(tmpColumns)))
-        yield layerId, result, resultColumns, len(models), dbname
+        resultQueryableAttributes = sorted(list(set(tmpQueryableAttributes)))
+        yield layerId, result, resultColumns, resultQueryableAttributes, len(models), dbname
 
 
 def main():
@@ -66,11 +74,11 @@ def main():
     app = get_app('production.ini')
     from sqlalchemy.orm import scoped_session, sessionmaker
     from chsdi.models import bodmap, oerebmap, perimetermap, engines
-    print 'layerId|data|columns'
+    print 'layerId|data|columns|queryableAttributes'
     dbsmap = [bodmap, oerebmap, perimetermap]
     for dbmap in dbsmap:
-        for layerId, ref, refColumns, nbTables, dbname in getTableReferences(dbmap, engines):
-            print '%s|%s|%s' %(layerId, ','.join(ref), ','.join(refColumns))
+        for layerId, ref, refColumns, refQueryableAttributes, nbTables, dbname in getTableReferences(dbmap, engines):
+            print '%s|%s|%s|%s' % (layerId, ','.join(ref), ','.join(refColumns), ','.join(refQueryableAttributes))
             if nbTables > 1:
                 bodIdsWithMultipleModels.append(layerId)
                 dbsWithMultipleModels.append(dbname)
@@ -97,7 +105,7 @@ def main():
                     if type(iColType) == type(jColType):
                         subQuery = session.query(models[i].primary_key_column())
                         subQuery = subQuery.filter(
-                                models[i].primary_key_column() == models[j].primary_key_column())
+                            models[i].primary_key_column() == models[j].primary_key_column())
                         exists = session.query(subQuery.exists()).scalar()
                         if exists:
                             fixme.append(
