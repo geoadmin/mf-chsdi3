@@ -5,7 +5,9 @@ This script can be used to scan the models in chsdi and return a list of depende
 
 The output format is a csv with | delimiter and it contains the following attributes:
 * layer name
-* data source
+* data source (db.schema.table)
+* list of attributes referenced in the model
+* list of queryable attributes
 
 Usage:
 
