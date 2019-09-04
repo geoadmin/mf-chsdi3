@@ -2,6 +2,8 @@
 
 import json
 import esrijson
+from shapely.geometry.linestring import LineString
+from shapely.geometry.polygon import Polygon
 from pyramid.httpexceptions import HTTPBadRequest
 
 from chsdi.lib.helpers import float_raise_nan
@@ -150,8 +152,12 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
                     self._geometry = esrijson.to_shape({'x': value[0], 'y': value[1]})
                 else:
                     self._geometry = esrijson.to_shape(esrijson.loads(value))
+
             except:
                 raise HTTPBadRequest('Please provide a valid geometry')
+        if (self._geometryType == u'esriGeometryPolyline' and not isinstance(self._geometry, LineString)) \
+                or (self._geometryType == u'esriGeometryPolygon' and not isinstance(self._geometry, Polygon)):
+            raise HTTPBadRequest(u"Missmatch between 'geometryType': {} and provided 'geometry' parsed as '{}'".format(self._geometryType, self._geometry.__class__.__name__))
 
     @imageDisplay.setter
     def imageDisplay(self, value):
