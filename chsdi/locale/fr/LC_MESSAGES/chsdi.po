@@ -1343,6 +1343,9 @@ msgstr "la Suisse en canoë"
 msgid "ch.astra.kt"
 msgstr "OFROU + canton"
 
+msgid "ch.astra.langsamverkehr-wandern_sperrungen_umleitungen"
+msgstr "Fermeture des sentiers de randonnée"
+
 msgid "ch.astra.mountainbikeland"
 msgstr "la Suisse à VTT"
 
@@ -2179,6 +2182,27 @@ msgstr "Zones alluviales en dehors de l' inventaire"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin"
 msgstr "Zones alluv. alp. hors invent. fed."
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.auentyp"
+msgstr "Type"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.biobedeutung"
+msgstr "Importance (Biologique)"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.geobedeutung"
+msgstr "Importance (Géomorphologique)"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.name"
+msgstr "Nom"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.objnummer"
+msgstr "ObjetNr."
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.qualitaet"
+msgstr "Qualité"
+
+msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.shape_area"
+msgstr "Surface [ha]"
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung"
 msgstr "Importance"
@@ -4109,81 +4133,6 @@ msgstr "Ecomorphologie R – Ouvrages"
 msgid "ch.bafu.permafrost"
 msgstr "Carte indicative du Pergélisol"
 
-msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche"
-msgstr "Secteurs de protection des eaux"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.bemerkungen_de"
-msgstr "Remarques"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.kanton"
-msgstr "Canton"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.kt_typbez"
-msgstr "Désignation cantonale du type"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_gewaesserschutzbereiche.typ"
-msgstr "Type"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale"
-msgstr "Périmètres de protection"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.bemerkungen_de"
-msgstr "Remarques"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.istaltrechtlich"
-msgstr "Périmètre de protection relevant de l'ancien droit"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.kanton"
-msgstr "Canton"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.kt_status"
-msgstr "Désignation du statut cantonale"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.rechtskraftdatum"
-msgstr "Date de l'entrée en vigueur"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.rechtstatus"
-msgstr "Statut juridique"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.typ"
-msgstr "Type"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzareale.typ_txt"
-msgstr "Désignation cantonale du type"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen"
-msgstr "Zones de protection des eaux souterraines"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.bemerkungen_de"
-msgstr "Remarques"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.istaltrechtlich"
-msgstr "Zone de protection relevant de l'ancien droit"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.kanton"
-msgstr "Canton"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.kt_status"
-msgstr "Désignation du statut cantonale"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.kt_typbez"
-msgstr "Désignation cantonale du type"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.rechtskraftdatum"
-msgstr "Date de l'entrée en vigueur"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.rechtstatus"
-msgstr "Statut juridique"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_grundwasserschutzzonen.typ"
-msgstr "Type"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zo"
-msgstr "Aires d'alimentation Zo"
-
-msgid "ch.bafu.planerischer-gewaesserschutz_zustroembereiche_zu"
-msgstr "Aires d'alimentation Zu"
-
 msgid "ch.bafu.ren-extensive_landwirtschaftsgebiete"
 msgstr "REN  Zones agricoles extensives"
 
@@ -4294,6 +4243,12 @@ msgstr "Emeraude"
 
 msgid "ch.bafu.schutzgebiete-wildruhezonen"
 msgstr "Sites de protection de la faune"
+
+msgid "ch.bafu.sed"
+msgstr "SED/ETH Zürich"
+
+msgid "ch.bafu.sed.url"
+msgstr "http://www.seismo.ethz.ch/fr/service/Disclaimer/"
 
 msgid "ch.bafu.showme-gemeinden_hochwasser"
 msgstr "ShowMe communes: crues"
@@ -8024,6 +7979,12 @@ msgstr "Numéro d'OFS"
 msgid "ch.swisstopo.amtliches-strassenverzeichnis.label"
 msgstr "Nom de rue"
 
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.modified"
+msgstr "Dernière modificiation"
+
+msgid "ch.swisstopo.amtliches-strassenverzeichnis.official"
+msgstr "Officiel"
+
 msgid "ch.swisstopo.amtliches-strassenverzeichnis.plzo"
 msgstr "NPA / localité"
 
@@ -8034,7 +7995,7 @@ msgid "ch.swisstopo.amtliches-strassenverzeichnis.type"
 msgstr "Type d'objet"
 
 msgid "ch.swisstopo.amtliches-strassenverzeichnis.validated"
-msgstr "Officiel / validé"
+msgstr "validé"
 
 msgid "ch.swisstopo.area-papierkarte.metadata"
 msgstr "Area Chart ICAO"
