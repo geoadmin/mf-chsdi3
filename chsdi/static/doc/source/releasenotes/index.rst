@@ -14,6 +14,43 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20190910:
+
+Release 20190910 - Tuesday, September 10th 2019
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_190807...r_190910>`__
+- Announcement:
+    - The BAG layer `ch.bag.zecken-lyme` will be completely removed from the BGDI services during Q2 2019.
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_190807...r190910>`__
+
+
+Geodata
+*******
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `2000-Watt Sites <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-2000watt-areale>`__ (ch.bfe.energiestaedte-2000watt-areale)                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Energy cities <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte>`__ (ch.bfe.energiestaedte)                                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Energy advice services <//map.geo.admin.ch/?layers=ch.bfe.energieberatungsstellen>`__ (ch.bfe.energieberatungsstellen)                                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20190807:
 
 Release 20190807 - Wednesday, August 7th 2019
