@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import json
 import esrijson
 from pyramid.httpexceptions import HTTPBadRequest
 
@@ -23,6 +24,7 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         self._offset = None
         self._limit = None
         self._order = None
+        self._layerDefs = None
 
         self.esriGeometryTypes = (
             u'esriGeometryPoint',
@@ -30,6 +32,8 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
             u'esriGeometryPolygon',
             u'esriGeometryEnvelope'
         )
+        if request.params.get('where') is not None and request.params.get('layerDefs'):
+            raise HTTPBadRequest("Parameters 'layerDefs' and 'where' are mutually exclusive")
         self.where = request.params.get('where')
         self.geometryType = request.params.get('geometryType')
         self.geometry = request.params.get('geometry')
@@ -45,6 +49,7 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         self.offset = request.params.get('offset')
         self.limit = request.params.get('limit')
         self.order = request.params.get('order')
+        self.layerDefs = request.params.get('layerDefs')
 
     @property
     def where(self):
@@ -94,6 +99,24 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
     def order(self):
         return self._order
 
+    @property
+    def layerDefs(self):
+        return self._layerDefs
+
+    @layerDefs.setter
+    def layerDefs(self, value):
+        if value is not None:
+            try:
+                defs = json.loads(value)
+                if self.layers != 'all':
+                    if not (set(defs.keys()).issubset(set(self.layers))):
+                        raise HTTPBadRequest("You can only filter on layer '%s' in 'layerDefs'" % self.layers)
+                where = "+and+".join(defs.values())
+                self._layerDefs = defs
+                self.where = where
+            except ValueError:
+                raise HTTPBadRequest("Cannot parse 'layerDefs' %s" % value)
+
     @where.setter
     def where(self, value):
         # TODO regexp to test validity of sql clause
@@ -102,9 +125,9 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
 
     @geometryType.setter
     def geometryType(self, value):
-        if value is None and self._where is not None:
+        if value is None and (self._where is not None or self._layerDefs is not None):
             return
-        elif value is None and self._where is None:
+        elif value is None and self._where is None and self._layerDefs is None:
             raise HTTPBadRequest('Please provide the parameter geometryType  (Required)')
         if value not in self.esriGeometryTypes:
             raise HTTPBadRequest('Please provide a valid geometry type')
@@ -112,9 +135,9 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
 
     @geometry.setter
     def geometry(self, value):
-        if value is None and self._where is not None:
+        if value is None and (self._where is not None or self._layerDefs is not None):
             return
-        elif value is None and self._where is None:
+        elif value is None and self._where is None and self._layerDefs is None:
             raise HTTPBadRequest('Please provide the parameter geometry  (Required)')
         else:
             try:

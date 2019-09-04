@@ -15,19 +15,8 @@ td {
   padding-bottom: 8px;
 }
 
-#notChargeableLayers {
-  font-size: smaller;
-}
-
-#chargeableLayers {
-  font-size: smaller;
-}
-
-#tooltipLayers {
-  font-size: smaller;
-}
-
-#searchableLayers {
+#notChargeableLayers, #chargeableLayers,  #tooltipLayers,
+#searchableLayers , #queryableLayers {
   font-size: smaller;
 }
 

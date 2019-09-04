@@ -7,7 +7,7 @@ import datetime
 import gzip
 import StringIO
 from decimal import Decimal
-from itertools import izip
+from itertools import izip, cycle
 from functools import partial
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
@@ -23,8 +23,13 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from shapely.ops import transform as shape_transform
 from shapely.wkt import dumps as shape_dumps, loads as shape_loads
 from shapely.geometry.base import BaseGeometry
+from chsdi.lib.parser import WhereParser
+from chsdi.lib.exceptions import QueryParseException
+import logging
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+log = logging.getLogger(__name__)
 
 
 PROJECTIONS = {}
@@ -184,7 +189,7 @@ def escape_sphinx_syntax(input_str):
     return input_str
 
 
-def format_query(model, value):
+def format_query(model, value, lang):
     '''
         Supported operators on numerical or date values are "=, !=, >=, <=, > and <"
         Supported operators for text are "ilike and not ilike"
@@ -204,41 +209,56 @@ def format_query(model, value):
             return where
         return value
 
-    def replacePropByColumnName(model, values):
+    def get_queryable_attributes(model, lang):
+        attributes = []
+        if hasattr(model, '__queryable_attributes__'):
+            attributes = model.get_queryable_attributes_keys(lang)
+        return attributes
+
+    # Check if attributes are queryable and replace by the DB column name
+    def replacePropByColumnName(model, values, lang):
         res = []
+        queryable_attributes = get_queryable_attributes(model, lang)
         for val in values:
-            prop = val.split(' ')[0]
-            columnName = model.get_column_by_property_name(prop).name.__str__()
-            val = val.replace(prop, columnName)
+            prop = val.split(' ')[0].strip()
+            column = model.get_column_by_property_name(prop)
+            if prop not in queryable_attributes:
+                error_msg = "Query attribute '{}' is not queryable. Queryable attributes are '{}'" \
+                    .format(prop, ",".join(queryable_attributes))
+                log.error(error_msg)
+                raise QueryParseException(error_msg)
+            if column is None:
+                error_msg = "Query attribute '{} doesn't exist in the model".format(prop)
+                log.error(error_msg)
+                raise QueryParseException(error_msg)
+
+            val = val.replace(prop, unicode(column.name))
             res.append(val)
         return res
 
-    def extractMatches(x):
-        for v in x:
-            if v != '':
-                return v
-        return v
+    def merge_statements(values, operators):
+        if len(values) - 1 != len(operators):
+            raise
+        iters = [iter(values), iter(operators)]
+        full = list(it.next() for it in cycle(iters))
 
-    def getOperator(values):
-        supportedOperators = [' and ', ' or ']
-        if len(values) > 1:
-            t = value.split(values[0])
-            operator = extractMatches(t[1].split(values[1]))
-            if operator not in supportedOperators:
-                raise HTTPBadRequest()
-            return operator
-        return ''
-
-    regEx = r'(\w+\s(?:ilike|not ilike)\s(?:\'%)[^\%]+(?:%\'))|(\w+\s(?:=|\!=|>=|<=|>|<)\s[^\s]+)|(\w+\s(?:is null|is not null))'
+        return u" ".join(full)
 
     try:
-        values = map(extractMatches, re.findall(regEx, value))
+
+        w = WhereParser(value)
+        values = w.tokens
         if len(values) == 0:
             return None
-        operator = getOperator(values)
-        values = map(escapeSQL, values)
-        values = replacePropByColumnName(model, values)
-        where = operator.join(values)
+        # TODO: what does really do?
+        # values = map(escapeSQL, values)
+        values = replacePropByColumnName(model, values, lang)
+        operators = w.operators
+        where = merge_statements(values, operators)
+    except QueryParseException as qpe:
+        raise HTTPBadRequest(qpe.message)
+    except HTTPBadRequest:
+        raise
     except:
         return None
     return where
