@@ -27,7 +27,8 @@ API & applications
 - Bug fixes
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_190807...r_190910>`__
 - Announcement:
-    - The BAG layer `ch.bag.zecken-lyme` will be completely removed from the BGDI services during Q2 2019.
+    - The BAG layer `ch.bag.zecken-lyme` will be completely removed from the BGDI services during Q4 2019.
+    - The BLW layer `ch.blw.erosion-mit_bergzonen` will be completely removed from the FSDI services during Q4 2019.
 
 
 `MAP <//map.geo.admin.ch>`__
