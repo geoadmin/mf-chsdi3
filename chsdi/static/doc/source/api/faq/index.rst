@@ -84,7 +84,7 @@ The following list contains all the free accessible layers:
     $.getJSON( "../../rest/services/api/faqlist", function( data ) {
       var layersApi = data;
       var translationsApi = data.translations;
-      var names = ["chargeableLayers", "notChargeableLayers", "tooltipLayers", "searchableLayers", "queryableLayers"];
+      var names = ["chargeableLayers", "notChargeableLayers", "tooltipLayers", "searchableLayers"];
       for (var index=0; index < names.length; index++) {
         var name = names[index];
         var newInner = "<br><table border=\"0\">";
@@ -130,21 +130,6 @@ A layer is searchable when its features can be searched. Below, you can find the
   <body>
     <div id="searchableLayers" style="margin-left:10px;margin-bottom:24px;"></div>
   </body>
-
-
-.. _queryable_layers:
-
-Which layers are queryable?
-***************************
-
-A queryable layer is a layer you may filter out features on some attributes:
-
-.. raw:: html
-
-  <body>
-    <div id="queryableLayers" style="margin-left:10px;margin-bottom:24px;"></div>
-  </body>
-
 
 How can I have access to the tiles ?
 ************************************

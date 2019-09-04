@@ -305,106 +305,8 @@ No more than 50 features can be retrieved per request.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **layerDefs (optional)**          | Filter features with an expression.                                                       |
-|                                   | Syntax: `{ "<layerId>" : "<layerDef1>" }` where `<layerId>` must correspond to the layer  |
-|                                   | specified in `layers`.                                                                    |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-
-Filters
-*******
-
-You may filter by attributes with **layerDefs** on `queryable layers <../api/faq/index.html#which-layers-are-queryable>`_.
-
-To check which attributes are availables, their types and examples values for a given searchable layer, you may use the `attributes services <../../../services/sdiservices.html#layer-attributes>`_.
-
-For instance, the layer **ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill** has the following two attributes:
-
-    http://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill
-
-.. code-block:: javascript
-
-    {
-       "fields":[
-          {
-             "values":[
-                "Epalinges",
-                "Ependes (VD)",
-                "Grub (AR)",
-                "Leuk",
-                "Uesslingen-Buch"
-             ],
-             "alias":"Name",
-             "type":"VARCHAR",
-             "name":"gemname"
-          },
-          {
-             "values":[
-                3031,
-                4616,
-                5584,
-                5914,
-                6110
-             ],
-             "alias":"BFS-Nummer",
-             "type":"INTEGER",
-             "name":"id"
-          }
-       ],
-       "id":"ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill",
-       "name":"Municipal boundaries"
-    }
-
-
-layerDefs syntax
-****************
-
-The syntax of the `layerDefs` parameter is a json with the layername as key and the filter expression as value:
-
-::
-
-  {"<layername>":"<filter_expression>"}
-
-The filter expression can consist of a single expression of the form `<attribute> <operator> <value>` or several of these expressions combined with boolean operators `and` and `or`, e.g.
-
-::
-
-  state='open' and startofconstruction>='2018-10'
- 
-`<attribute>` must be one of the queryable attributes, the type of `<value>` must correspond the the type of the queryable attribute (see above) and `<operator>` can be one of 
-
-+-----------------+--------------------------------------+----------------------------------------------------------------+
-|  Data type      |                Operators             |     Examples                                                   |
-+=================+======================================+================================================================+
-|  varchar        |  =, +=, like, ilike, not like        |  toto ='3455 Kloten', toto ilike '%SH%', toto is null          |
-|                 |  not ilike, is null, is not null     |  toto ilike 'SH%'                                              |
-+-----------------+--------------------------------------+----------------------------------------------------------------+
-|  number         |  =, <, >, >=, <=, !=                 |  tutu >= 2.4 tutu<5                                            |
-+-----------------+--------------------------------------+----------------------------------------------------------------+
-|  boolean        |  is (true|false), is not (true|false)|  tata is not false                                             |
-+-----------------+--------------------------------------+----------------------------------------------------------------+
-
-
-Correct encoding
-****************
-
-It's important, that the parameters are correctly serialized and url-encoded, e.g.
-
-.. code-block:: python
-
-    >>> import json
-    >>> import urllib.parse
-    >>> params = {
-            "ch.swisstopo.amtliches-strassenverzeichnis": "plzo = '8302 Kloten'"
-        }
-    >>> print(json.dumps(params))
-    {"ch.swisstopo.amtliches-strassenverzeichnis": "plzo = '8302 Kloten'"}
-    >>> print(urllib.parse.quote(json.dumps(params)))
-    %7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%20%22plzo%20%3D%20%278302%20Kloten%27%22%7D
-    >>> print('&layerDefs={}'.format(urllib.parse.quote(json.dumps(params))))
-    &layerDefs=%7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%20%22plzo%20%3D%20%278302%20Kloten%27%22%7D
-
 
 Examples
 ********
@@ -415,8 +317,6 @@ Examples
 - Identify all the features belonging to ch.bafu.bundesinventare-bln intersecting a polygon: `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}&geometryType=esriGeometryPolygon&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln <../../../rest/services/api/MapServer/identify?geometry={"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}&geometryType=esriGeometryPolygon&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln>`_
 - Same request than above but returned geometry format is GeoJSON: `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik-1985&geometryFormat=geojson <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik-1985&geometryFormat=geojson>`_
 - Same request than above but geometry is not returned: `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik-1985&returnGeometry=false <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik-1985&returnGeometry=false>`_
-- Filter features with **layerDefs**: `https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=2548945.5,1147956,2549402,1148103.5&geometryFormat=geojson&imageDisplay=1367,949,96&lang=en&layers=all:ch.bazl.luftfahrthindernis&mapExtent=2318250,952750,3001750,1427250&returnGeometry=false&sr=2056&tolerance=5&layerDefs={"ch.bazl.luftfahrthindernis": "bgdi_activesince >= '2019-04-30'", "ch.bazl.luftfahrthindernis":"state ilike '%A%'"} <../../../rest/services/all/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=2548945.5,1147956,2549402,1148103.5&geometryFormat=geojson&imageDisplay=1367,949,96&lang=en&layers=all:ch.bazl.luftfahrthindernis&mapExtent=2318250,952750,3001750,1427250&returnGeometry=false&sr=2056&tolerance=5&layerDefs=%7B%22ch.bazl.luftfahrthindernis%22%3A%20%22bgdi_activesince%20%3E%3D%20%272019-04-30%27%22%2C%20%22ch.bazl.luftfahrthindernis%22%3A%22state%20ilike%20%27%25A%25%27%22%7D>`_
-
 
 Examples of Reverse Geocoding
 *****************************
@@ -494,10 +394,6 @@ One layer, one search text and one attribute.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **layerDefs (optional)**          | Filter features with an expression (see                                                   |
-|                                   | `identify <../../../services/sdiservices.html#identify-features>`_)                       |
-|                                   | Syntax: `{ "<layerId>" : "<layerDef1>"}`                                                  |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 
@@ -507,7 +403,6 @@ Examples
 - Search for “Lavaux” in the field “bln_name” of the layer “ch.bafu.bundesinventare-bln” (infix match): `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bafu.bundesinventare-bln&searchText=Lavaux&searchField=bln_name&returnGeometry=false  <../../../rest/services/api/MapServer/find?layer=ch.bafu.bundesinventare-bln&searchText=Lavaux&searchField=bln_name&returnGeometry=false>`_
 - Search for “12316” in the field “egid” of the layer “ch.bfs.gebaeude_wohnungs_register” (infix match): `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=123164&searchField=egid&returnGeometry=false  <../../../rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=123164&searchField=egid&returnGeometry=false>`_
 - Search for “123164” in the field “egid” of the layer “ch.bfs.gebaeude_wohnungs_register” (exact match): `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=1231641&searchField=egid&returnGeometry=false&contains=false <../../../rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=1231641&searchField=egid&returnGeometry=false&contains=false>`_
-- Search for the Talstrasse in Commune 'Full-Reuenthal': `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.swisstopo.amtliches-strassenverzeichnis&searchText=Talstrasse&searchField=label&returnGeometry=false&contains=false&layerDefs={"ch.swisstopo.amtliches-strassenverzeichnis": "gdenr = 4307"} <../../../rest/services/api/MapServer/find?layer=ch.swisstopo.amtliches-strassenverzeichnis&searchText=Talstrasse&searchField=label&returnGeometry=false&contains=false&layerDefs=%7B"ch.swisstopo.amtliches-strassenverzeichnis"%3A%20"gdenr%20%3D%204307"%7D>`_
 
 .. _featureresource_description:
 
