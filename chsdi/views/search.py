@@ -20,6 +20,7 @@ class Search(SearchValidation):
     LAYER_LIMIT = 30
     FEATURE_LIMIT = 20
     DEFAULT_SRID = 21781
+    BBOX_SEARCH_LIMIT = 150
 
     def __init__(self, request):
         super(Search, self).__init__(request)
@@ -103,7 +104,7 @@ class Search(SearchValidation):
             coords = self._get_geoanchor_from_bbox()
             self.sphinx.SetGeoAnchor('lat', 'lon', coords[1], coords[0])
             self.sphinx.SetSortMode(sphinxapi.SPH_SORT_EXTENDED, '@geodist ASC')
-            limit = 150
+            limit = self.BBOX_SEARCH_LIMIT
         else:
             self.sphinx.SetRankingMode(sphinxapi.SPH_RANK_WORDCOUNT)
             self.sphinx.SetSortMode(sphinxapi.SPH_SORT_EXTENDED, 'rank ASC, @weight DESC, num ASC')
