@@ -15,10 +15,10 @@ class DiemoLocations(Base, Vector):
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __bodId__ = 'ch.bfe.ladestellen-elektromobilitaet'
     __queryable_attributes__ = ['EvseID', 'Availability', 'QueryPlugs', 'Accessibility', 'IsHubjectCompatible', 'QueryChargingFacilities', 'DynamicInfoAvailable',
-                                'QueryChargingModes', 'ChargingPoolID', 'MaxCapacity', 'QueryPaymentOptions', 'AdditionalInfo', 'ChargingStationID', 'ChargingStationName',
+                                'QueryChargingModes', 'ChargingPoolID', 'MaxCapacity', 'QueryPaymentOptions', 'AdditionalInfo', 'ChargingStationId', 'ChargingStationName',
                                 'EnChargingStationName', 'Address', 'Street', 'HouseNum', 'Floor', 'Region', 'PostalCode', 'City', 'Timezone', 'Country', 'QueryAuthenticationModes',
                                 'Latitude', 'Longitude', 'GeoCoordinates', 'EntranceLatitude', 'EntranceLongitude', 'EntranceLatitude', 'GeoChargingPointEntrance', 'lastUpdate', 'ClearinghouseID',
-                                'IsOpen24Hours', 'OpeningTimes', 'HubOperatorId', 'OperatorID', 'OperatorName', 'HotlinePhoneNumber', 'deltaType', 'QueryValueAddedServices']
+                                'IsOpen24Hours', 'OpeningTimes', 'HubOperatorID', 'OperatorID', 'OperatorName', 'HotlinePhoneNumber', 'deltaType', 'QueryValueAddedServices']
     __label__ = 'EvseID'
     id = Column('bgdi_id', Numeric, primary_key=True)
     EvseID = Column('loading_unit_id', Unicode)
@@ -40,7 +40,7 @@ class DiemoLocations(Base, Vector):
     AdditionalInfo = Column('additional_info', Unicode)
     ValueAddedServices = Column('value_added_service', postgresql.ARRAY(Unicode))
     QueryValueAddedServices = Column('queriable_value_added_service', Unicode)
-    ChargingStationID = Column('location_id', Unicode)
+    ChargingStationId = Column('location_id', Unicode)
     ChargingStationName = Column('name', Unicode)
     EnChargingStationName = Column('name_en', Unicode)
     Address = Column('queriable_address', Unicode)
@@ -64,7 +64,7 @@ class DiemoLocations(Base, Vector):
     IsOpen24Hours = Column('is_open_24_hours', Boolean)
     OpeningTimes = Column('opening_times', Boolean)
     OperatorID = Column('operator_id', Unicode)
-    HubOperatorId = Column('hub_operator_id', Unicode)
+    HubOperatorID = Column('hub_operator_id', Unicode)
     ClearinghouseID = Column('clearing_house_id', Unicode)
     OperatorName = Column('operator_name', Unicode)
     HotlinePhoneNumber = Column('hotline_phone_num', Unicode)
