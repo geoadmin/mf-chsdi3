@@ -51,7 +51,7 @@ colspan = 3 if image_exists else 2
     .htmlpopup-content .image_mako {
       vertical-align: middle;
     }
-    .toposhop-image {
+    .htmlpopup-content .image_mako img {
         max-width: 102px;
         max-height: 150px;
     }
@@ -73,7 +73,7 @@ colspan = 3 if image_exists else 2
       % endif
           <td>${c['attributes'][a]}</td>
     % if image_exists == True:
-        <td class="image_mako toposhop-image" rowspan=${rowspan}><img src="${image}" align="right"></td>
+        <td class="image_mako" rowspan=${rowspan}><img src="${image}" align="right"></td>
     % endif
   % else:
       % if a == 'url_legend':
