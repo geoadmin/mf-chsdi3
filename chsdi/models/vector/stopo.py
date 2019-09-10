@@ -3220,3 +3220,14 @@ class Vec25GewaessernetzReferenz(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.vec25-gewaessernetz_referenz', Vec25GewaessernetzReferenz)
+
+
+class AktuelleErdbeben(Base, Vector):
+    __tablename__ = 'grid_pk1000'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __template__ = 'templates/htmlpopup/aktuelle_erdbeben.mako'
+    __bodId__ = 'ch.bafu.gefahren-aktuelle_erdbeben'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+register('ch.bafu.gefahren-aktuelle_erdbeben', AktuelleErdbeben)

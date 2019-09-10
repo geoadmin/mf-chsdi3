@@ -40,6 +40,8 @@ API & applications
 Geodata
 *******
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Recent earthquakes <//map.geo.admin.ch/?layers=ch.bafu.gefahren-aktuelle_erdbeben>`__ (ch.bafu.gefahren-aktuelle_erdbeben)                                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `2000-Watt Sites <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-2000watt-areale>`__ (ch.bfe.energiestaedte-2000watt-areale)                                                             |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                |
