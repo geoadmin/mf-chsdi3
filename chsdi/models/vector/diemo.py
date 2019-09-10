@@ -16,7 +16,7 @@ class DiemoLocations(Base, Vector):
     __bodId__ = 'ch.bfe.ladestellen-elektromobilitaet'
     __queryable_attributes__ = ['EvseID', 'Availability', 'QueryPlugs', 'Accessibility', 'IsHubjectCompatible', 'QueryChargingFacilities', 'DynamicInfoAvailable',
                                 'QueryChargingModes', 'ChargingPoolID', 'MaxCapacity', 'QueryPaymentOptions', 'AdditionalInfo', 'ChargingStationId', 'ChargingStationName',
-                                'EnChargingStationName', 'Address', 'Street', 'HouseNum', 'Floor', 'Region', 'PostalCode', 'City', 'Timezone', 'Country', 'QueryAuthenticationModes',
+                                'EnChargingStationName', 'QueryAddress', 'Street', 'HouseNum', 'Floor', 'Region', 'PostalCode', 'City', 'Timezone', 'Country', 'QueryAuthenticationModes',
                                 'Latitude', 'Longitude', 'GeoCoordinates', 'EntranceLatitude', 'EntranceLongitude', 'EntranceLatitude', 'GeoChargingPointEntrance', 'lastUpdate', 'ClearinghouseID',
                                 'IsOpen24Hours', 'OpeningTimes', 'HubOperatorID', 'OperatorID', 'OperatorName', 'HotlinePhoneNumber', 'deltaType', 'QueryValueAddedServices']
     __label__ = 'EvseID'
@@ -43,7 +43,7 @@ class DiemoLocations(Base, Vector):
     ChargingStationId = Column('location_id', Unicode)
     ChargingStationName = Column('name', Unicode)
     EnChargingStationName = Column('name_en', Unicode)
-    Address = Column('queriable_address', Unicode)
+    QueryAddress = Column('queriable_address', Unicode)
     Street = Column('address_street', Unicode)
     HouseNum = Column('address_house_num', Unicode)
     Floor = Column('address_floor', Unicode)
