@@ -55,6 +55,16 @@ class Search(SearchValidation):
         self.sphinx.SetServer(request.registry.settings['sphinxhost'], 9312)
         self.sphinx.SetMatchMode(sphinxapi.SPH_MATCH_EXTENDED)
 
+    @view_config(route_name='search', renderer='geojson',
+                 request_param='geometryFormat=geojson')
+    def view_find_geojson(self):
+        features = []
+        for item in self.search()['results']:
+            attributes = item['attrs']
+            feature = {'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [attributes['lon'], attributes['lat']]}, 'properties': attributes}
+            features.append(feature)
+        return {"type": "FeatureCollection", 'features': features}
+
     @view_config(route_name='search', renderer='jsonp')
     def search(self):
         self.sphinx.SetConnectTimeout(10.0)
