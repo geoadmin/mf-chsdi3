@@ -99,6 +99,7 @@ def main(global_config, **settings):
     config.add_route('checker_dev', '/checker_dev')
     config.add_route('backend_checker', '/backend_checker')
     config.add_route('downloadkml', '/downloadkml')
+    config.add_route('translations', '/rest/services/translations')
 
     # kml files
     config.add_route('files_collection', '/files', request_method=('GET', 'POST', 'DELETE'))
