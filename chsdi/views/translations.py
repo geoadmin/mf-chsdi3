@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+
+from collections import OrderedDict
 from pyramid.view import view_config
 
 from chsdi.models.bod import Translations
@@ -18,6 +20,6 @@ class TranslationService(object):
         model = Translations
         lang = self.lang
         query = self.request.db.query(model).order_by(model.msgId)
-        results = {q.msgId: getattr(q, lang) for q in query}
+        msgIds = OrderedDict([(q.msgId, getattr(q, lang)) for q in query])
 
-        return {'msgids': results}
+        return msgIds
