@@ -9,7 +9,7 @@ class TestTraductionServiceView(TestsBase):
         params = {'lang': 'en'}
         resp = self.testapp.get('/rest/services/translations', params=params, status=200)
         self.assertTrue(resp.content_type == 'application/json')
-        msgids = resp.json['msgids']
+        msgids = resp.json
         self.assertEqual(msgids['ch.swisstopo.pixelkarte-farbe'], 'National Maps (color)')
 
     def test_translations_with_cb(self):
