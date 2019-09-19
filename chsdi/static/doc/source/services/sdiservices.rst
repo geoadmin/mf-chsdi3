@@ -635,6 +635,53 @@ The results are presented as a list of object literals. Here is an example of re
     }
   ]
 
+or a valid `GeoJSON` `FeatureCollection` if parameter `geometryFormat=geojson` is present
+
+.. code-block:: javascript
+
+    {
+     "type": "FeatureCollection",
+     "bbox": [
+      601612,
+      197186.8,
+      601612,
+      197186.8
+     ],
+     "features": [{
+      "geometry": {
+       "type": "Point",
+       "coordinates": [
+        197186.8125,
+        601612.0625
+       ]
+      },
+      "properties": {
+       "origin": "gazetteer",
+       "geom_quadindex": "021300220330313020221",
+       "weight": 1,
+       "zoomlevel": 10,
+       "lon": 7.459799289703369,
+       "detail": "wabern koeniz",
+       "rank": 5,
+       "lat": 46.925777435302734,
+       "num": 1,
+       "y": 601612.0625,
+       "x": 197186.8125,
+       "label": "<i>Populated Place</i> <b>Wabern</b> (BE) - Köniz",
+       "id": 215754
+      },
+      "type": "Feature",
+      "id": 215754,
+      "bbox": [
+       601612,
+       197186.8,
+       601612,
+       197186.8
+      ]
+     }]
+    }
+
+
 Here is a description of the data one can find in the above response.
 
 - **id**: This is an internal value and therefore shouldn't be used.
@@ -671,6 +718,7 @@ Examples
 - Search for locations within a given map extent (the `bbox`): `https://api3.geo.admin.ch/rest/services/api/SearchServer?bbox=551306.5625,167918.328125,551754.125,168514.625&type=locations  <../../../rest/services/api/SearchServer?bbox=551306.5625,167918.328125,551754.125,168514.625&type=locations>`_
 - Search for layers in French matching the word “géoïde” in their description: `https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr <../../../rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr>`_
 - Search for features matching word "433" in their description: `https://api3.geo.admin.ch/rest/services/api/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433 <../../../rest/services/api/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433>`_
+- Get a GeoJSON for locations matching the word “wabern”: `https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson <../../../rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson>`_
 
 Example of feature search usage with other services
 ***************************************************
