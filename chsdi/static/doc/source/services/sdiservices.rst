@@ -547,7 +547,8 @@ Only RESTFul interface is available.
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **limit (optional)**                | The maximum number of results to retrive per request (Max and default limit=50)           |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
-| **sr (optional)**                   | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
+| **sr (optional)**                   | The spatial reference for input and output geometries. Supported values: 21781 (LV03),    |
+|                                     | 2056 (LV95). Defaults to "21781".                                                         |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryFormat (optional)**       | Set to *geojson* if you want the service to return a GeoJSON `FeatureCollection`.         |
 |                                     | Geometries will be returned in the *sr* projection.                                       |
@@ -569,6 +570,12 @@ Only RESTFul interface is available.
 | **limit (optional)**              | The maximum number of results to retrive per request (Max and default limit=30)           |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **sr (optional)**                 | The spatial reference for input and output geometries. Supported values: 21781 (LV03),    |
+|                                   | 2056 (LV95). Defaults to "21781".                                                         |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **geometryFormat (optional)**     | Set to *geojson* if you want the service to return a GeoJSON `FeatureCollection`.         |
+|                                   | Geometries will be returned in the *sr* projection.                                       |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -593,7 +600,11 @@ Only RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **limit (optional)**              | The maximum number of results to retrive per request (Max and default limit=20)           |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
+| **sr (optional)**                 | The spatial reference for input and output geometries. Supported values: 21781 (LV03),    |
+|                                   | 2056 (LV95). Defaults to "21781".                                                         |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **geometryFormat (optional)**     | Set to *geojson* if you want the service to return a GeoJSON `FeatureCollection`.         |
+|                                   | Geometries will be returned in the *sr* projection.                                       |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
