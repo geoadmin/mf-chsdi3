@@ -80,14 +80,15 @@ class Search(SearchValidation):
                     features_bbox = bbox
                 else:
                     features_bbox.union(bbox)
+                del attributes['geom_st_box2d']
                 if 'x' in attributes.keys() and 'y' in attributes.keys():
                     feature = {'type': 'Feature',
                                'id': item['id'],
-                               'bbox': bbox.bounds,
+                               'bbox': transform_shape(bbox, self.DEFAULT_SRID, self.srid).bounds,
                                'geometry': {'type': 'Point', 'coordinates': [attributes['x'], attributes['y']]},
                                'properties': attributes}
                     features.append(feature)
-        return (features, features_bbox)
+        return (features, transform_shape(features_bbox, self.DEFAULT_SRID, self.srid))
 
     @view_config(route_name='search', renderer='jsonp')
     def search(self):
