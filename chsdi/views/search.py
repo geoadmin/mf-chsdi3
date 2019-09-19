@@ -58,23 +58,36 @@ class Search(SearchValidation):
     @view_config(route_name='search', renderer='geojson',
                  request_param='geometryFormat=geojson')
     def view_find_geojson(self):
-        features = self._find_geojson()
-        return {"type": "FeatureCollection", 'features': features}
+        (features, bbox) = self._find_geojson()
+        return {"type": "FeatureCollection", "bbox": bbox.bounds, "features": features}
 
     @view_config(route_name='search', renderer='esrijson',
                  request_param='geometryFormat=esrijson')
     def view_find_esrijson(self):
-        return exc.HTTPBadRequest("Return 'geometryFormat=esrijson' is not supported")
+        raise exc.HTTPBadRequest("Param 'geometryFormat=esrijson' is not supported")
 
     def _find_geojson(self):
         features = []
+        features_bbox = None
         for item in self.search()['results']:
-            if 'attrs' in item:
+            if 'attrs' in item and 'id' in item and 'weight' in item:
                 attributes = item['attrs']
+                attributes['id'] = item['id']
+                attributes['weight'] = item['weight']
+                bounds = parse_box2d(attributes['geom_st_box2d'])
+                bbox = box(*bounds)
+                if features_bbox is None:
+                    features_bbox = bbox
+                else:
+                    features_bbox.union(bbox)
                 if 'x' in attributes.keys() and 'y' in attributes.keys():
-                    feature = {'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [attributes['x'], attributes['y']]}, 'properties': attributes}
+                    feature = {'type': 'Feature',
+                               'id': item['id'],
+                               'bbox': bbox.bounds,
+                               'geometry': {'type': 'Point', 'coordinates': [attributes['x'], attributes['y']]},
+                               'properties': attributes}
                     features.append(feature)
-        return features
+        return (features, features_bbox)
 
     @view_config(route_name='search', renderer='jsonp')
     def search(self):

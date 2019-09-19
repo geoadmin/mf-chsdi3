@@ -74,12 +74,13 @@ class TestsBase(TestCase):
             reslt = query.one()
         return reslt[0]
 
-    def assertGeojsonFeature(self, feature, srid, hasGeometry=True):
+    def assertGeojsonFeature(self, feature, srid, hasGeometry=True, hasLayer=True):
         self.assertIn('id', feature)
         self.assertIn('properties', feature)
         self.assertNotIn('attributes', feature)
-        self.assertIn('layerBodId', feature)
-        self.assertIn('layerName', feature)
+        if hasLayer:
+            self.assertIn('layerBodId', feature)
+            self.assertIn('layerName', feature)
         if hasGeometry:
             self.assertIn('geometry', feature)
             self.assertIn('type', feature)
@@ -87,12 +88,13 @@ class TestsBase(TestCase):
             self.assertIn('bbox', feature)
             self.assertBBoxValidity(feature['bbox'], srid)
 
-    def assertEsrijsonFeature(self, feature, srid, hasGeometry=True):
+    def assertEsrijsonFeature(self, feature, srid, hasGeometry=True, hasLayer=True):
         self.assertIn('id', feature)
         self.assertNotIn('properties', feature)
         self.assertIn('attributes', feature)
-        self.assertIn('layerBodId', feature)
-        self.assertIn('layerName', feature)
+        if hasLayer:
+            self.assertIn('layerBodId', feature)
+            self.assertIn('layerName', feature)
         if hasGeometry:
             self.assertIn('geometry', feature)
             self.assertIn('bbox', feature)

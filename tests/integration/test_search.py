@@ -339,6 +339,43 @@ class TestSearchServiceView(TestsBase):
         self.assertTrue('geom_st_box2d' not in resp.json['results'][0]['attrs'].keys())
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781, returnGeometry=False)
 
+    def test_search_locations_geojson(self):
+        params = {
+            'type': 'locations',
+            'searchText': 'Wabern',
+            'geometryFormat': 'geojson'
+        }
+        resp = self.testapp.get('/rest/services/api/SearchServer', params=params, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual('FeatureCollection', resp.json['type'])
+        self.assertGeojsonFeature(resp.json['features'][0], 21781, hasGeometry=True, hasLayer=False)
+        self.assertAttrs('locations', resp.json['features'][0]['properties'], 21781)
+        self.assertIn('wabern', str(resp.json['features']).lower())
+        params['sr'] = '2056'
+        resp = self.testapp.get('/rest/services/api/SearchServer', params=params, status=200)
+        self.assertEqual('FeatureCollection', resp.json['type'])
+        self.assertGeojsonFeature(resp.json['features'][0], 2056, hasGeometry=True, hasLayer=False)
+        self.assertIn('wabern', str(resp.json['features']).lower())
+        params['sr'] = '3857'
+        resp = self.testapp.get('/rest/services/api/SearchServer', params=params, status=200)
+        self.assertEqual('FeatureCollection', resp.json['type'])
+        self.assertGeojsonFeature(resp.json['features'][0], 3857, hasGeometry=True, hasLayer=False)
+        self.assertIn('wabern', str(resp.json['features']).lower())
+        params['sr'] = '4326'
+        resp = self.testapp.get('/rest/services/api/SearchServer', params=params, status=200)
+        self.assertEqual('FeatureCollection', resp.json['type'])
+        self.assertGeojsonFeature(resp.json['features'][0], 4326, hasGeometry=True, hasLayer=False)
+        self.assertIn('wabern', str(resp.json['features']).lower())
+
+    def test_search_locations_esrijson(self):
+        params = {
+            'type': 'locations',
+            'searchText': 'Wabern',
+            'geometryFormat': 'esrijson'
+        }
+        resp = self.testapp.get('/rest/services/api/SearchServer', params=params, status=400)
+        self.assertIn("Param 'geometryFormat=esrijson' is not supported", resp)
+
     def test_locations_searchtext_apostrophe(self):
         params = {
             'type': 'locations',
