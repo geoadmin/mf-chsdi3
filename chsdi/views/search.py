@@ -58,12 +58,23 @@ class Search(SearchValidation):
     @view_config(route_name='search', renderer='geojson',
                  request_param='geometryFormat=geojson')
     def view_find_geojson(self):
+        features = self._find_geojson()
+        return {"type": "FeatureCollection", 'features': features}
+
+    @view_config(route_name='search', renderer='esrijson',
+                 request_param='geometryFormat=esrijson')
+    def view_find_esrijson(self):
+        return exc.HTTPBadRequest("Return 'geometryFormat=esrijson' is not supported")
+
+    def _find_geojson(self):
         features = []
         for item in self.search()['results']:
-            attributes = item['attrs']
-            feature = {'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [attributes['lon'], attributes['lat']]}, 'properties': attributes}
-            features.append(feature)
-        return {"type": "FeatureCollection", 'features': features}
+            if 'attrs' in item:
+                attributes = item['attrs']
+                if 'x' in attributes.keys() and 'y' in attributes.keys():
+                    feature = {'type': 'Feature', 'geometry': {'type': 'Point', 'coordinates': [attributes['x'], attributes['y']]}, 'properties': attributes}
+                    features.append(feature)
+        return features
 
     @view_config(route_name='search', renderer='jsonp')
     def search(self):
