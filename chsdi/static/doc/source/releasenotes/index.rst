@@ -40,6 +40,8 @@ API & applications
 Geodata
 *******
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Alp. Floodplains outside Fed. Inv. <//map.geo.admin.ch/?layers=ch.bafu.auen-ausserhalb_bundesinventar_alpin>`__ (ch.bafu.auen-ausserhalb_bundesinventar_alpin)                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Hospital landing sites <//map.geo.admin.ch/?layers=ch.bazl.spitallandeplaetze>`__ (ch.bazl.spitallandeplaetze)                                                                            |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Groundwater level/spring discharge <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_grundwasserzustand>`__ (ch.bafu.hydroweb-messstationen_grundwasserzustand)                  |
