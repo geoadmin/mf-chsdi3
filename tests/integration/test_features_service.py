@@ -266,6 +266,31 @@ class TestFeaturesView(TestsBase):
         # Should be many Talstrasse in Switzerland
         self.assertGreater(len(resp.json['results']), 1)
 
+    # Should return two features (see https://github.com/geoadmin/mf-chsdi3/issues/3267)
+    def test_find_layerdefs_two_or_statements(self):
+        params1 = {
+            "layer": "ch.swisstopo.amtliches-strassenverzeichnis",
+            "searchText": "Studerweg",
+            "searchField": "label",
+            "returnGeometry": "false",
+            "layerDefs": '''{"ch.swisstopo.amtliches-strassenverzeichnis": "gdename = 'Olten' or gdename = 'Sattel'"}'''
+        }
+        params2 = {
+            "layer": "ch.swisstopo.amtliches-strassenverzeichnis",
+            "searchText": "Studerweg",
+            "searchField": "label",
+            "returnGeometry": "false",
+            "layerDefs": '''{"ch.swisstopo.amtliches-strassenverzeichnis": "gdename = 'Sattel' or gdename = 'Olten'"}'''
+        }
+
+        resp1 = self.testapp.get('/rest/services/all/MapServer/find', params=params1, status=200)
+        resp2 = self.testapp.get('/rest/services/all/MapServer/find', params=params2, status=200)
+        self.assertEqual(resp1.content_type, 'application/json')
+        # self.assertEqual(resp1.json['results'], resp2.json['results'])
+        for feat in resp2.json['results']:
+            self.assertIn(feat['attributes']['gdename'], ['Olten', 'Sattel'])
+            self.assertIn('Studer', feat['attributes'])
+
     def test_find_filter_with_layerdefs(self):
         params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
                   'searchField': 'label',
