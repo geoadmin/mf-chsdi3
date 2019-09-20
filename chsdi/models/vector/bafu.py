@@ -1329,6 +1329,7 @@ class AlpinAuenAusserhalbBundesinventar(Base, Vector):
     __tablename__ = 'alpinauen'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.auen-ausserhalb_bundesinventar_alpin'
+    __queryable_attributes__ = ['name']
     __template__ = 'templates/htmlpopup/auen_ausserhalb_bundinv_alpin.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
