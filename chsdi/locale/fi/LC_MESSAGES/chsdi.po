@@ -2492,6 +2492,9 @@ msgstr "Fläche [qm]"
 msgid "ch.bafu.bundesinventare-vogelreservate.teilgebiet"
 msgstr "Teilgebiet"
 
+msgid "ch.bafu.erosion-gruenland_bodenabtrag"
+msgstr "Erosionsrisiko Dauergrünland"
+
 msgid "ch.bafu.eua"
 msgstr "BAFU / EUA"
 
@@ -4869,7 +4872,7 @@ msgid "ch.bag"
 msgstr "BAG"
 
 msgid "ch.bag.radonkarte"
-msgstr "Charta da radon"
+msgstr "Radonkarte"
 
 msgid "ch.bag.radonkarte.confidence"
 msgstr "Vertrauensindex"
@@ -6599,6 +6602,9 @@ msgstr "Gemeinde/Stadt"
 msgid "ch.bfe.energiestaedte.punktezahl"
 msgstr "Punktezahl"
 
+msgid "ch.bfe.erneuerbarheizen"
+msgstr "Impulsberatung erneuerbar heizen"
+
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Wärme- und Kälteangebot"
 
@@ -6709,6 +6715,9 @@ msgstr "Ovras nuclearas"
 
 msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Potenzials d'ovras pitschnas"
+
+msgid "ch.bfe.komo-projekte"
+msgstr "KOMO-Projekte"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Infrastruc. chargiar electromobil."
@@ -7654,6 +7663,24 @@ msgstr "MeteoSchweiz"
 
 msgid "ch.meteoschweiz.homogenereihen"
 msgstr "Homogene Monatsdaten"
+
+msgid "ch.meteoschweiz.klimanormwerte-niederschlag_1961_1990"
+msgstr "Klimanormwerte Niederschlag 1961-1990"
+
+msgid "ch.meteoschweiz.klimanormwerte-niederschlag_aktuelle_periode"
+msgstr "Klimanormwerte Niederschlag 1981-2010"
+
+msgid "ch.meteoschweiz.klimanormwerte-sonnenscheindauer_1961_1990"
+msgstr "Klimanormwerte Sonnenscheindauer 1961-1990"
+
+msgid "ch.meteoschweiz.klimanormwerte-sonnenscheindauer_aktuelle_periode"
+msgstr "Klimanormwerte Sonnenscheindauer 1981-2010"
+
+msgid "ch.meteoschweiz.klimanormwerte-temperatur_1961_1990"
+msgstr "Klimanormwerte Temperatur 1961-1990"
+
+msgid "ch.meteoschweiz.klimanormwerte-temperatur_aktuelle_periode"
+msgstr "Klimanormwerte Temperatur 1981-2010"
 
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
 msgstr "Staziuns d'atmosfera"

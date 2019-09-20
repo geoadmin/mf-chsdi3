@@ -1557,7 +1557,7 @@ msgid "ch.astra.schwerverunfallte-kanton_pro_einwohner.year"
 msgstr "Année"
 
 msgid "ch.astra.skatingland"
-msgstr "la Suisse en rollers"
+msgstr "La Suisse en rollers"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Circulation routière (régional)"
@@ -1983,10 +1983,10 @@ msgid "ch.astra.url"
 msgstr "http://www.astra.admin.ch/index.html?lang=fr"
 
 msgid "ch.astra.veloland"
-msgstr "la Suisse à vélo"
+msgstr "La Suisse à vélo"
 
 msgid "ch.astra.wanderland"
-msgstr "la Suisse à pied"
+msgstr "La Suisse à pied"
 
 msgid "ch.babs"
 msgstr "OFPP"
@@ -2491,6 +2491,9 @@ msgstr "Surface [m2]"
 
 msgid "ch.bafu.bundesinventare-vogelreservate.teilgebiet"
 msgstr "Partie"
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag"
+msgstr "Risque d'érosion prairies perm."
 
 msgid "ch.bafu.eua"
 msgstr "OFEV / AEE"
@@ -6599,6 +6602,9 @@ msgstr "Commune / ville"
 msgid "ch.bfe.energiestaedte.punktezahl"
 msgstr "Nombre de points"
 
+msgid "ch.bfe.erneuerbarheizen"
+msgstr "Conseil incitatif chauffez vert"
+
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Offre de chaleur ou de froid"
 
@@ -6709,6 +6715,9 @@ msgstr "Centrales nucléaires"
 
 msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Potentiel petite hydraulique"
+
+msgid "ch.bfe.komo-projekte"
+msgstr "Projets COMO"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Recharge pour l'e-mobilité (en dév)"
@@ -7654,6 +7663,24 @@ msgstr "MétéoSuisse"
 
 msgid "ch.meteoschweiz.homogenereihen"
 msgstr "Données mensuelles homogénéisées"
+
+msgid "ch.meteoschweiz.klimanormwerte-niederschlag_1961_1990"
+msgstr "Normes climatologiques précipitation 1961-1990"
+
+msgid "ch.meteoschweiz.klimanormwerte-niederschlag_aktuelle_periode"
+msgstr "Normes climatologiques précipitation 1981-2010"
+
+msgid "ch.meteoschweiz.klimanormwerte-sonnenscheindauer_1961_1990"
+msgstr "Normes climatologiques ensoleillement 1961-1990"
+
+msgid "ch.meteoschweiz.klimanormwerte-sonnenscheindauer_aktuelle_periode"
+msgstr "Normes climatologiques ensoleillement 1981-2010"
+
+msgid "ch.meteoschweiz.klimanormwerte-temperatur_1961_1990"
+msgstr "Normes climatologiques température 1961-1990"
+
+msgid "ch.meteoschweiz.klimanormwerte-temperatur_aktuelle_periode"
+msgstr "Normes climatologiques température 1981-2010"
 
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
 msgstr "Stations atmosphère"

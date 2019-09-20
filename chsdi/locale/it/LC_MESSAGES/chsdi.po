@@ -2492,6 +2492,9 @@ msgstr "Superficie [m2]"
 msgid "ch.bafu.bundesinventare-vogelreservate.teilgebiet"
 msgstr "Sottozona"
 
+msgid "ch.bafu.erosion-gruenland_bodenabtrag"
+msgstr "Rischio erosione praterie perm."
+
 msgid "ch.bafu.eua"
 msgstr "UFAM / AEA"
 
@@ -6599,6 +6602,9 @@ msgstr "Comune / città"
 msgid "ch.bfe.energiestaedte.punktezahl"
 msgstr "Punteggio realizzato"
 
+msgid "ch.bfe.erneuerbarheizen"
+msgstr "Prima consulenza calore rinnovabile"
+
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Offerta di calore e di freddo"
 
@@ -6709,6 +6715,9 @@ msgstr "Centrali nucleari"
 
 msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Potenz. piccole centr. idraul."
+
+msgid "ch.bfe.komo-projekte"
+msgstr "Progetti sostenuti dal COMO"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Infr. e-mobilità (in costruzione)"
@@ -7654,6 +7663,24 @@ msgstr "MeteoSvizzera"
 
 msgid "ch.meteoschweiz.homogenereihen"
 msgstr "Dati omogeneizzati"
+
+msgid "ch.meteoschweiz.klimanormwerte-niederschlag_1961_1990"
+msgstr "Valori climatici normali precipitazione 1961-1990"
+
+msgid "ch.meteoschweiz.klimanormwerte-niederschlag_aktuelle_periode"
+msgstr "Valori climatici normali precipitazione 1981-2010"
+
+msgid "ch.meteoschweiz.klimanormwerte-sonnenscheindauer_1961_1990"
+msgstr "Valori climatici normali soleggiamento 1961-1990"
+
+msgid "ch.meteoschweiz.klimanormwerte-sonnenscheindauer_aktuelle_periode"
+msgstr "Valori climatici normali soleggiamento 1981-2010"
+
+msgid "ch.meteoschweiz.klimanormwerte-temperatur_1961_1990"
+msgstr "Valori climatici normali temperatura 1961-1990"
+
+msgid "ch.meteoschweiz.klimanormwerte-temperatur_aktuelle_periode"
+msgstr "Valori climatici normali temperatura 1981-2010"
 
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
 msgstr "Stazioni atmosfera"
