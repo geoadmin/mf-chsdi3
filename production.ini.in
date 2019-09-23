@@ -32,6 +32,7 @@ sqlalchemy.uvek_solarkataster.url = postgresql://${dbhost}:${dbport}/uvek_solark
 sqlalchemy.vbs.url = postgresql://${dbhost}:${dbport}/vbs_${dbstaging}
 sqlalchemy.zeitreihen.url = postgresql://${dbhost}:${dbport}/zeitreihen_${dbstaging}
 sqlalchemy.lubis.url = postgresql://${dbhost}:${dbport}/lubis_${dbstaging}
+sqlalchemy.diemo.url = postgresql://${dbhost}:${dbport}/diemo_${dbstaging}
 
 # Mako specific
 mako.directories = chsdi:templates
