@@ -29,6 +29,7 @@ API & applications
 - Announcement:
     - The BAG layer `ch.bag.zecken-lyme` will be completely removed from the BGDI services during Q4 2019.
     - The BLW layer `ch.blw.erosion-mit_bergzonen` will be completely removed from the FSDI services during Q4 2019.
+    - The `Charging points for electric cars` layer with live data about more than 2500 chargins points is now queryable via our api.
 
 
 `MAP <//map.geo.admin.ch>`__
@@ -41,6 +42,8 @@ Geodata
 *******
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Alp. Floodplains outside Fed. Inv. <//map.geo.admin.ch/?layers=ch.bafu.auen-ausserhalb_bundesinventar_alpin>`__ (ch.bafu.auen-ausserhalb_bundesinventar_alpin)                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Charging points for electric cars <//map.geo.admin.ch/?layers=ch.bfe.ladestellen-elektromobilitaet>`__ (ch.bfe.ladestellen-elektromobilitaet)                                             |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Hospital landing sites <//map.geo.admin.ch/?layers=ch.bazl.spitallandeplaetze>`__ (ch.bazl.spitallandeplaetze)                                                                            |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
