@@ -6720,7 +6720,7 @@ msgid "ch.bfe.komo-projekte"
 msgstr "Progetti sostenuti dal COMO"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
-msgstr "Infr. e-mobilità (in costruzione)"
+msgstr "Stazioni di ricarica auto elettriche"
 
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Frequenza formazione ghiaccio"
@@ -9172,6 +9172,12 @@ msgstr "Groupes de roches"
 
 msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.tlyearsformatted"
 msgstr "Années d`exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau"
+msgstr "Roches argileuses: extraction"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung"
+msgstr "Roches argileuses: traitement"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Divisione carte geologiche speciali Raster"
