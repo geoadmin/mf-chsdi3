@@ -6720,7 +6720,7 @@ msgid "ch.bfe.komo-projekte"
 msgstr "KOMO-Projekte"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
-msgstr "Infrastruc. chargiar electromobil."
+msgstr "Ladestationen für Elektroautos"
 
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Frequenza d'englatschament"
@@ -9172,6 +9172,12 @@ msgstr "Gesteinsgruppen"
 
 msgid "ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.tlyearsformatted"
 msgstr "Betriebsjahre"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau"
+msgstr "Ziegeleirohstoffe: Abbau"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung"
+msgstr "Ziegeleirohstoffe: Verarbeitung"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Div. chartas geol. spezialas Retagl"
