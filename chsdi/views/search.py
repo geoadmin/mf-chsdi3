@@ -83,11 +83,11 @@ class Search(SearchValidation):
                 if 'x' in attributes.keys() and 'y' in attributes.keys():
                     feature = {'type': 'Feature',
                                'id': item['id'],
-                               'bbox': transform_shape(bbox, self.DEFAULT_SRID, self.srid).bounds,
+                               'bbox': bbox.bounds,
                                'geometry': {'type': 'Point', 'coordinates': [attributes['x'], attributes['y']]},
                                'properties': attributes}
                     features.append(feature)
-        return (features, transform_shape(features_bbox, self.DEFAULT_SRID, self.srid))
+        return (features, features_bbox)
 
     @view_config(route_name='search', renderer='jsonp')
     def search(self):
