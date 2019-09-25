@@ -80,7 +80,6 @@ class Search(SearchValidation):
                     features_bbox = bbox
                 else:
                     features_bbox.union(bbox)
-                del attributes['geom_st_box2d']
                 if 'x' in attributes.keys() and 'y' in attributes.keys():
                     feature = {'type': 'Feature',
                                'id': item['id'],

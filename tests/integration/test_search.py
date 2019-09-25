@@ -40,8 +40,9 @@ class TestSearchServiceView(TestsBase):
             self.assertIn('layer', attrs)
 
         if type_ in ('locations', 'featuresearch') and returnGeometry:
-            bbox = parse_box2d(attrs['geom_st_box2d'])
-            self.assertBBoxValidity(bbox, srid)
+            if hasattr(attrs, 'geom_st_box2d'):
+                bbox = parse_box2d(attrs['geom_st_box2d'])
+                self.assertBBoxValidity(bbox, srid)
             if spatialOrder:
                 self.assertIn('@geodist', attrs)
             else:
