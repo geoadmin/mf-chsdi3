@@ -700,7 +700,7 @@ def _find(request):
                 )
         if where_txt is not None:
             query = query.filter(text(
-                where_txt
+                "({})".format(where_txt)  # operator precedance
             ))
         query = query.limit(MaxFeatures)
         for feature in query:

@@ -289,7 +289,7 @@ class TestFeaturesView(TestsBase):
         # self.assertEqual(resp1.json['results'], resp2.json['results'])
         for feat in resp2.json['results']:
             self.assertIn(feat['attributes']['gdename'], ['Olten', 'Sattel'])
-            self.assertIn('Studer', feat['attributes'])
+            self.assertIn('Studer', feat['attributes']['label'])
 
     def test_find_filter_with_layerdefs(self):
         params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
