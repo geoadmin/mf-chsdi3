@@ -458,6 +458,22 @@ class TestSearchServiceView(TestsBase):
         self.assertEqual(len(resp.json['results']), 1)
         self.assertAttrs('featuresearch', resp.json['results'][0]['attrs'], 2056)
 
+    def test_search_features_non_existing_layer(self):
+        params = {
+            'type': 'featuresearch',
+            'searchText': 'toto',
+            'features': 'this_layer_is_not_existing'
+        }
+        self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=404)
+
+    def test_search_features_non_searchable_layer(self):
+        params = {
+            'type': 'featuresearch',
+            'searchText': 'toto',
+            'features': 'ch.swisstopo.geologie-geotope'
+        }
+        self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=404)
+
     def test_search_locations_bbox(self):
         params = {
             'type': 'locations',
@@ -811,6 +827,7 @@ class TestSearchServiceView(TestsBase):
         params = {
             'type': 'featuresearch',
             'searchText': 'this is a text with exactly 10 words, should work',
+            'features': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
             'bbox': '551306.5625,167918.328125,551754.125,168514.625'
         }
         self.testapp.get('/rest/services/all/SearchServer', params=params, status=200)
