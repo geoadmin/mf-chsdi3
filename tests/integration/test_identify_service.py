@@ -101,6 +101,28 @@ class TestIdentifyService(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         self.assertEsrijsonFeature(resp.json['results'][0], 21781)
 
+    def test_identify_geometry_polyline_missmatch(self):
+        # Geometry is a PolyLine ("paths") and not a Polygon ("rings")!
+        params = {'geometry': '{"paths": [[[2554060, 1198340],[2554060, 1198530],[2554240, 1198530],[2554240, 1198340],[2554060, 1198340]]]}',
+                  'geometryType': 'esriGeometryPolygon',
+                  'imageDisplay': '1920,852,96',
+                  'mapExtent': '420000,350000,900000,30000',
+                  'tolerance': '0',
+                  'layers': 'all:ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
+        resp.mustcontain("Missmatch between 'geometryType': esriGeometryPolygon and provided 'geometry' parsed as 'LineString'")
+
+    def test_identify_geometry_polygon_missmatch(self):
+        # Geometry is a Polygon ("rings") and not a Polyline ("paths")!
+        params = {'geometry': '{"rings": [[[2554060, 1198340],[2554060, 1198530],[2554240, 1198530],[2554240, 1198340],[2554060, 1198340]]]}',
+                  'geometryType': 'esriGeometryPolyline',
+                  'imageDisplay': '1920,852,96',
+                  'mapExtent': '420000,350000,900000,30000',
+                  'tolerance': '0',
+                  'layers': 'all:ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
+        resp.mustcontain("Missmatch between 'geometryType': esriGeometryPolyline and provided 'geometry' parsed as 'Polygon'")
+
     def test_identify_nan_error(self):
         params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
                   'geometryType': 'esriGeometryPolygon',
