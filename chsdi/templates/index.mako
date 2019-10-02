@@ -88,6 +88,13 @@
           <a href="rest/services/ech/MapServer/ch.bafu.bundesinventare-jagdbanngebiete/legend?lang=fr&callback=cb">Get Legend Ex 2 with callback</a> <br>
           <a href='rest/services/inspire/1.0.0/WMTSCapabilities.xml'>WMTS capabilities inspire</a> <br>
 
+      <h2>New style config (in directory "configs")</h2>
+      <em>Only behind Apache!</em>
+      layersConfig<a href='configs/fr/layersConfig.json'>configs/fr/layersConfig.json</a><br />
+      Server-side translation (gettext)<a href='configs/fr/translations.json'>configs/fr/translations.json</a><br />
+      Topics catalog <a href='configs/fr/catalog.bafu.json'>configs/fr/catalog.bafu.json</a><br />
+      Services (topic list)<a href='configs/services.json'>configs/services.json</a><br />
+
       <h2>Topic Listing</h2>
           <a href='rest/services'>List all the available topics</a> <br>
 
