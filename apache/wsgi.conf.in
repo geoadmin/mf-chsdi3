@@ -124,7 +124,7 @@ AliasMatch ^${apache_entry_path}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${kml_t
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^${apache_entry_path}/admin         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
-<LocationMatch ^${apache_entry_path}/admin/kml>
+<LocationMatch ^${apache_entry_path}/admin/>
     AuthType Basic
     AuthName "Your IWI credential"
     # Optional line:
