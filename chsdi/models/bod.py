@@ -486,3 +486,16 @@ class CacheUpdate(Base):
     id = Column('layer_id', Unicode, primary_key=True)
     cache_type = Column('cache_type', Unicode)
     cache_modified = Column('cache_modified', DateTime)
+
+
+class Translations(Base):
+    __dbname__ = 'bod'
+    __tablename__ = 'translations'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    msgId = Column('msg_id', Unicode, primary_key=True)
+    id = Column('bgdi_id', Integer)
+    de = Column('de', Unicode)
+    fr = Column('fr', Unicode)
+    it = Column('it', Unicode)
+    rm = Column('rm', Unicode)
+    en = Column('en', Unicode)
