@@ -1560,7 +1560,7 @@ msgid "ch.astra.skatingland"
 msgstr "Skatingland Schweiz"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
-msgstr "Verkehrszählung (Regional)"
+msgstr "Zählstellen (regional)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.id"
 msgstr "Nummer"
@@ -1575,7 +1575,7 @@ msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.zaehlstellen
 msgstr "Zählstelle"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"
-msgstr "Verkehrszählung (Übergeordnet)"
+msgstr "Zählstellen (übergeordnet)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet.id"
 msgstr "Nummer"
@@ -1588,6 +1588,9 @@ msgstr "Strassenverkehrszählung (Übergeordnet: Typ)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet.zaehlstellen_bezeichnung"
 msgstr "Zählstelle"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet"
+msgstr "Verkehrszählung - übergeordnet"
 
 msgid "ch.astra.unfaelle-personenschaeden_alle"
 msgstr "Unfälle mit Personenschaden"
@@ -9176,8 +9179,50 @@ msgstr "Betriebsjahre"
 msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau"
 msgstr "Ziegeleirohstoffe: Abbau"
 
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.clkind"
+msgstr "Bedeutung"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.ltkinds"
+msgstr "Gesteine abgebaut"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.obname"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.purl"
+msgstr "Detailinformation im Fachportal"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.stkind"
+msgstr "Abbaustatus"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.tckinds"
+msgstr "Gesteinsgruppen"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.tlyearsformatted"
+msgstr "Betriebsjahre"
+
 msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung"
 msgstr "Ziegeleirohstoffe: Verarbeitung"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.clkind"
+msgstr "Bedeutung"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.cpkind"
+msgstr "Firma"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.obname"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.pckind"
+msgstr "Betriebskategorie"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.purl"
+msgstr "Detailinformation im Fachportal"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.stkind"
+msgstr "Abbaustatus"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.tlyearsformatted"
+msgstr "Betriebsjahre"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Einteilung Geologische Spezialkarten Raster"
