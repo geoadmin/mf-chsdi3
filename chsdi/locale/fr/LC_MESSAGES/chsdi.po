@@ -1560,7 +1560,7 @@ msgid "ch.astra.skatingland"
 msgstr "La Suisse en rollers"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
-msgstr "Circulation routière (régional)"
+msgstr "Postes de comptage (régional)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.id"
 msgstr "Numéro"
@@ -1575,7 +1575,7 @@ msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.zaehlstellen
 msgstr "Poste de comptage"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"
-msgstr "Circulation routière (principal)"
+msgstr "Postes de comptage (principal)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet.id"
 msgstr "Numéro"
@@ -1588,6 +1588,9 @@ msgstr "Circulation routière (principal: type)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet.zaehlstellen_bezeichnung"
 msgstr "Poste de comptage"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet"
+msgstr "Circulation routière - principal"
 
 msgid "ch.astra.unfaelle-personenschaeden_alle"
 msgstr "Accidents avec dommages corporels"
@@ -9176,8 +9179,50 @@ msgstr "Années d`exploitation"
 msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau"
 msgstr "Roches argileuses: extraction"
 
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.clkind"
+msgstr "Importance"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.ltkinds"
+msgstr "Roches exploitées"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.obname"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.purl"
+msgstr "Informations détaillées sur le portail spécialisé"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.stkind"
+msgstr "Statut d'exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.tckinds"
+msgstr "Groupes de roches"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_abbau.tlyearsformatted"
+msgstr "Années d'exploitation"
+
 msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung"
 msgstr "Roches argileuses: traitement"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.clkind"
+msgstr "Importance"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.cpkind"
+msgstr "Entreprise"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.obname"
+msgstr "Nom"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.pckind"
+msgstr "Catégorie de l'entreprise"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.purl"
+msgstr "Informations détaillées sur le portail spécialisé"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.stkind"
+msgstr "Statut d'exploitation"
+
+msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.tlyearsformatted"
+msgstr "Années d'exploitation"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
 msgstr "Découpage cartes géologiques spéciales Raster"
@@ -10128,7 +10173,7 @@ msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv"
 
 msgid "ch.swisstopo.schneeschuhwanderland"
-msgstr "Schneeschuhwandern"
+msgstr "Randonnées en raquettes"
 
 msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
