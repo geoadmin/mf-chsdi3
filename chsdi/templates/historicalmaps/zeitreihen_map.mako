@@ -2,9 +2,9 @@
         var TILE_SIZE = 256;
         var MAX_INSTANCES = 4;
         var curInstance = MAX_INSTANCES;
-        var width = parseInt(${width});
-        var height = parseInt(${height});
-        var rotation= parseInt(${rotation if rotation != 'None' and rotation is not None else 0}) * Math.PI / 180;
+        var width = parseInt(${width | u});
+        var height = parseInt(${height | u});
+        var rotation= parseInt(${rotation if rotation != 'None' and rotation is not None else 0 | u}) * Math.PI / 180;
 
         var url = '//historicalmaps{curInstance}.geo.admin.ch/tiles/${ebkey}/';
         var resolutions = [1]; // 1 is the min resolution of the pyramid (for all images)
