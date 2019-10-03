@@ -39,7 +39,7 @@ def _get_url_short(table, url):
     try:
         item = next(row)
         return item['url_short']
-    except:
+    except Exception:
         return None
 
 

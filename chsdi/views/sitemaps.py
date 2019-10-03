@@ -125,10 +125,10 @@ def address_part(params):
              .limit(__MAX_NUM_URLS__))
     paths = []
     for res in query.all():
-        paths.append('?' + res.__bodId__ + '=' + res.id +
-                     '&X=' + str(int(res.X)) +
-                     '&Y=' + str(int(res.Y)) +
-                     '&zoom=9')
+        paths.append('?' + res.__bodId__ + '=' + res.id
+                + '&X=' + str(int(res.X))
+                + '&Y=' + str(int(res.Y))
+                + '&zoom=9')
     return asXml(params, paths, params.geoadminhost)
 
 

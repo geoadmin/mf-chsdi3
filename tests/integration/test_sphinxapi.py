@@ -140,5 +140,5 @@ class Test_SphinxApi(TestsBase):
 
         escStr = 'hi$toto'
         res3 = api.EscapeString(escStr)
-        self.assertEqual(res3, 'hi\$toto')
+        self.assertEqual(res3, r'hi\$toto')
         api.Close()

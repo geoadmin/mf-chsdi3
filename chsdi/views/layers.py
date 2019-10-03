@@ -161,19 +161,19 @@ def faqlist(request):
     query = params.request.db.query(LayersConfig)
     for layer in get_layers_config_for_params(params, query, LayersConfig):
         k = layer.keys().pop()
-        l = layer.values().pop()
-        if 'parentLayerId' not in l and not k.endswith('_3d'):
+        lyr = layer.values().pop()
+        if 'parentLayerId' not in lyr and not k.endswith('_3d'):
             if k not in translations:
                 translations[k] = request.translate(k)
-            if 'tooltip' in l and l['tooltip']:
+            if 'tooltip' in lyr and lyr['tooltip']:
                 tooltipLayers.append(k)
-            if 'queryableAttributes' in l and l['queryableAttributes']:
+            if 'queryableAttributes' in lyr and lyr['queryableAttributes']:
                 queryableLayers.append(k)
-            if 'searchable' in l and l['searchable']:
+            if 'searchable' in lyr and lyr['searchable']:
                 searchableLayers.append(k)
-            if 'chargeable' in l and l['chargeable']:
+            if 'chargeable' in lyr and lyr['chargeable']:
                 chargeableLayers.append(k)
-            if 'chargeable' in l and not l['chargeable']:
+            if 'chargeable' in lyr and not lyr['chargeable']:
                 notChargeableLayers.append(k)
 
     return {

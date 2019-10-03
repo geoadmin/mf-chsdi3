@@ -40,8 +40,8 @@ def get_scale(imageDisplay, mapExtent):
 
 
 def has_buffer(imageDisplay, mapExtent, tolerance):
-    return bool(imageDisplay and mapExtent and tolerance is not None and
-        all(val != 0 for val in imageDisplay) and mapExtent.area != 0)
+    return bool(imageDisplay and mapExtent and tolerance is not None
+        and all(val != 0 for val in imageDisplay) and mapExtent.area != 0)
 
 
 def get_tolerance_meters(imageDisplay, mapExtent, tolerance):
@@ -80,8 +80,8 @@ class Vector(object):
                 val = getattr(self, p.key)
                 if col.primary_key:
                     id = val
-                elif (isinstance(col.type, GeometryChsdi) and
-                      col.name == self.geometry_column_to_return().name):
+                elif (isinstance(col.type, GeometryChsdi)
+                      and col.name == self.geometry_column_to_return().name):
                     if hasattr(self, '_shape') and \
                             len(self._shape) < MAX_FEATURE_GEOMETRY_SIZE:
                         geom = self._shape
@@ -90,10 +90,10 @@ class Vector(object):
                         geom = to_shape(val)
                     try:
                         bbox = geom.bounds
-                    except:
+                    except Exception:
                         pass
-                elif (not col.foreign_keys and
-                      not isinstance(col.type, GeometryChsdi)):
+                elif (not col.foreign_keys
+                      and not isinstance(col.type, GeometryChsdi)):
                     properties[p.key] = val
         properties = self.insert_label(properties)
 

@@ -114,7 +114,7 @@ class GeometryServiceValidation(BaseFeaturesValidation):
                 self._geometry = esrijson.to_shape([float_raise_nan(c) for c in value.split(',')])
             else:
                 self._geometry = esrijson.to_shape(esrijson.loads(value))
-        except:
+        except Exception:
             raise HTTPBadRequest('Please provide a valid geometry')
 
     @layers.setter
@@ -127,7 +127,7 @@ class GeometryServiceValidation(BaseFeaturesValidation):
             try:
                 layers = value.split(':')[1]
                 self._layers = layers.split(',')
-            except:
+            except Exception:
                 HTTPBadRequest('There is an error in the parameter layers')
 
     @groupby.setter
