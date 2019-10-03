@@ -13,7 +13,7 @@ docutils==0.15.2
 enum34==1.1.6
 esrijson==0.4.2
 future==0.17.1
-gatilegrid==0.1.10
+gatilegrid==0.1.12
 GeoAlchemy2==0.6.3
 geojson==2.5.0
 hupper==1.8.1
