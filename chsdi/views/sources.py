@@ -21,10 +21,17 @@ class SourceService(object):
         for bodId in bodmap.keys():
             models = []
             for model in bodmap[bodId]:
+                g = model.geometry_column().type
                 models.append({
                     'database': model.metadata.bind.engine.url.database,
                     'schema': model.__table_args__['schema'] if 'schema' in model.__table_args__ else 'public',
-                    'table': model.__tablename__
+                    'table': model.__tablename__,
+                    'geometry': {
+                        'geometry_column': g.name,
+                        'geometry_type': g.geometry_type,
+                        'dimension': g.dimension,
+                        'srid': g.srid
+                    }
                 })
             layers[bodId] = models
         return layers
