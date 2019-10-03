@@ -8,7 +8,7 @@ class TestCacheUpdateView(TestsBase):
 
     def test_cachupdate_good(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/cacheUpdate', status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertIn('cache_update', resp.json)
         self.assertIn('cache_type', resp.json)
         date = resp.json['cache_update']
