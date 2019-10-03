@@ -9,7 +9,7 @@ CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 requires = open(os.path.join(here, 'requirements.txt')).read().split('\n')
 
 setup(name='chsdi',
-      version='3.0.1',
+      version='3.1.0',
       description='chsdi',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
