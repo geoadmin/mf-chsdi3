@@ -6983,6 +6983,9 @@ msgstr "Name"
 msgid "ch.bfe.stauanlagen-bundesaufsicht.damtype_de"
 msgstr "Sperrentyp"
 
+msgid "ch.bfe.thermische-netze"
+msgstr "Thermische Netze"
+
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=de"
 

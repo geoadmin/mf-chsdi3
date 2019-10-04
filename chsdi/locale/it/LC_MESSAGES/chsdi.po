@@ -6983,6 +6983,9 @@ msgstr "Nome"
 msgid "ch.bfe.stauanlagen-bundesaufsicht.damtype_de"
 msgstr "Tipo dell'opera di sbarramento"
 
+msgid "ch.bfe.thermische-netze"
+msgstr "Reti termiche"
+
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=it"
 
