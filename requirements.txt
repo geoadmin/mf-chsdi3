@@ -32,7 +32,7 @@ Pillow==6.2.0
 polib==1.1.0
 psycopg2-binary==2.8.3
 Pygments==2.4.2
-pyproj==1.9.5.1
+pyproj==2.2.2
 pyramid==1.10.4
 pyramid-debugtoolbar==3.0.2
 pyramid-mako==1.1.0
