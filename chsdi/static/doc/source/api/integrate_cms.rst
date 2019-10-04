@@ -27,7 +27,7 @@ Modify the map
 
 - About this example (Standortmarkierung mit Info-Box) we fill in the „Header Code“ the Code as follows:
 
-.. code-block:: html
+.. code-block:: guess
 
  <meta charset="utf-8">
  <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -64,7 +64,7 @@ Modify the map
 
 5.1 The Code in our example (Waffenplatz Frauenfeld) is:
 
-.. code-block:: html
+.. code-block:: guess
 
  <div id="map"></div>
  <style type="text/css">
