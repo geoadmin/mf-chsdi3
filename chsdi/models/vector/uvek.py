@@ -807,6 +807,45 @@ class StatistikwasserkraftanlagenNew(Base, Vector):
 register('ch.bfe.statistik-wasserkraftanlagen', StatistikwasserkraftanlagenNew)
 
 
+class Erneuerbarheizen(Base, Vector):
+    __tablename__ = 'erneuerbarheizen'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/erneuerbarheizen.mako'
+    __bodId__ = 'ch.bfe.erneuerbarheizen'
+    __label__ = 'company'
+    id = Column('xtf_id', Integer, primary_key=True)
+    firstname = Column('firstname', Unicode)
+    name = Column('name', Unicode)
+    company = Column('company', Unicode)
+    firstname_name = Column('firstname_name', Unicode)
+    email = Column('email', Unicode)
+    phonenumber = Column('phonenumber', Unicode)
+    street = Column('street', Unicode)
+    streetnumber = Column('streetnumber', Unicode)
+    street_streetnumber = Column('street_streetnumber', Unicode)
+    postalcode = Column('postalcode', Integer)
+    place = Column('place', Unicode)
+    pc_place = Column('pc_place', Unicode)
+    website = Column('website', Unicode)
+    privatecontrol = Column('privatecontrol', Unicode)
+    additionalinformation = Column('additionalinformation', Unicode)
+    consulting_type_de = Column('consulting_type_de', Unicode)
+    consulting_type_fr = Column('consulting_type_fr', Unicode)
+    consulting_type_it = Column('consulting_type_it', Unicode)
+    consulting_type_en = Column('consulting_type_en', Unicode)
+    language_fr = Column('language_fr', Unicode)
+    language_it = Column('language_it', Unicode)
+    language_de = Column('language_de', Unicode)
+    language_en = Column('language_en', Unicode)
+    consultant_cat_fr = Column('consultant_cat_fr', Unicode)
+    consultant_cat_it = Column('consultant_cat_it', Unicode)
+    consultant_cat_de = Column('consultant_cat_de', Unicode)
+    consultant_cat_en = Column('consultant_cat_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.erneuerbarheizen', Erneuerbarheizen)
+
+
 class StauanlagenBundesaufsicht(Base, Vector):
     __tablename__ = 'stauanlagen_bundesaufsicht'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
