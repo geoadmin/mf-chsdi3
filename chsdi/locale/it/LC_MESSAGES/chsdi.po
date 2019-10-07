@@ -1560,7 +1560,7 @@ msgid "ch.astra.skatingland"
 msgstr "La Svizzera in skating"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
-msgstr "Stazioni di conteggio (principale)"
+msgstr "Stazioni di conteggio (regionale)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.id"
 msgstr "Numero"
@@ -1610,11 +1610,17 @@ msgstr "Traffico giornaliero medio (TGM)"
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dwv"
 msgstr "Traffico giornaliero medio dei giorni lavorativi (TGML)"
 
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.indicator"
+msgstr "Indicatori"
+
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.locationlv95"
 msgstr "Coordinate MN95"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname"
 msgstr "Stazione di conteggio"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname_2"
+msgstr "Designazione"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr"
 msgstr "Numero"
@@ -1624,6 +1630,9 @@ msgstr "Traffico orario medio delle ore di punta della mattina per tutti i giorn
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mspw"
 msgstr "Traffico orario medio delle ore di punta della mattina per i giorni lavorativi"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nn"
+msgstr "Media annuale del traffico motorizzato orario di notte"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nt"
 msgstr "Media annuale del traffico motorizzato orario di giorno"
@@ -5080,6 +5089,9 @@ msgstr "3G - UMTS / HSPA"
 
 msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
+
+msgid "ch.bakom.mobilnetz-5g"
+msgstr "5G - NR"
 
 msgid "ch.bakom.notruf"
 msgstr "Chiamate d'emergenza per Comune"
@@ -10330,6 +10342,33 @@ msgstr "Numéro de la feuille 1:50000"
 
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv."
+
+msgid "ch.swisstopo.rapidmapping"
+msgstr "Rapidmapping"
+
+msgid "ch.swisstopo.rapidmapping.abstract"
+msgstr "Info"
+
+msgid "ch.swisstopo.rapidmapping.acquisition_date"
+msgstr "Data della registrazione"
+
+msgid "ch.swisstopo.rapidmapping.downloads"
+msgstr "downloads_it"
+
+msgid "ch.swisstopo.rapidmapping.filename"
+msgstr "Nome del file"
+
+msgid "ch.swisstopo.rapidmapping.first_publication"
+msgstr "Prima pubblicazione"
+
+msgid "ch.swisstopo.rapidmapping.link_to_data"
+msgstr "Indice del contenuto dell'evento"
+
+msgid "ch.swisstopo.rapidmapping.link_to_event"
+msgstr "link_to_event_it"
+
+msgid "ch.swisstopo.rapidmapping.title"
+msgstr "Titolo"
 
 msgid "ch.swisstopo.schneeschuhwandern"
 msgstr "Ciaspolate"
