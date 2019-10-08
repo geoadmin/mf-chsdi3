@@ -12,6 +12,7 @@
 # serve to show the default.
 
 import sys, os
+import datetime
 import sphinx_rtd_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -50,14 +51,14 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'GeoAdmin API'
-copyright = u'2013-2019, COGIS'
+copyright = u'2013-{}, COGIS'.format(datetime.datetime.now().year)
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = '3.0'
+version = '3.1.0'
 # The full version, including alpha/beta/rc tags.
 release = '3.0'
 
@@ -170,7 +171,7 @@ html_static_path = ['_static']
 #html_show_sphinx = True
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
-html_show_copyright = False
+html_show_copyright = True
 
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the
