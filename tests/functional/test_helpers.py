@@ -335,7 +335,7 @@ class Test_Helpers(unittest.TestCase):
         bbox_wgs84_rounded = _transform_coordinates(bbox, 2056, 4326, rounding=True)
 
         self.assertEqual(bbox_wgs84_rounded, [7.438632, 46.951083, 8.100963, 47.398925])
-        self.assertEqual(bbox_wgs84, [7.438632420871813, 46.951082771871064, 8.1009634749613, 47.39892497922299])
+        self.assertEqual(bbox_wgs84, [7.438632420871815, 46.95108277187108, 8.100963474961302, 47.39892497922299])
 
     def test_transform_shape(self):
         point = Point(2600000, 120000)
@@ -343,7 +343,7 @@ class Test_Helpers(unittest.TestCase):
         point_wgs84_rounded = _transform_shape(point, 2056, 4326)
 
         self.assertEqual(mapping(point_wgs84_rounded), {'type': 'Point', 'coordinates': (7.438767, 37.274227)})
-        self.assertEqual(mapping(point_wgs84), {'type': 'Point', 'coordinates': (7.438767146513138, 37.27422679580364)})
+        self.assertEqual(mapping(point_wgs84), {'type': 'Point', 'coordinates': (7.438767146513139, 37.27422679580366)})
 
     def test_transform_round_geometry(self):
 
@@ -352,11 +352,11 @@ class Test_Helpers(unittest.TestCase):
         bbox_wgs84_rounded = transform_round_geometry(bbox, 2056, 4326, rounding=True)
 
         self.assertEqual(bbox_wgs84_rounded, [7.438632, 46.951083, 8.100963, 47.398925])
-        self.assertEqual(bbox_wgs84, [7.438632420871813, 46.951082771871064, 8.1009634749613, 47.39892497922299])
+        self.assertEqual(bbox_wgs84, [7.438632420871815, 46.95108277187108, 8.100963474961302, 47.39892497922299])
 
         point = Point(2600000, 120000)
         point_wgs84 = transform_round_geometry(point, 2056, 4326, rounding=False)
         point_wgs84_rounded = transform_round_geometry(point, 2056, 4326)
 
         self.assertEqual(mapping(point_wgs84_rounded), {'type': 'Point', 'coordinates': (7.438767, 37.274227)})
-        self.assertEqual(mapping(point_wgs84), {'type': 'Point', 'coordinates': (7.438767146513138, 37.27422679580364)})
+        self.assertEqual(mapping(point_wgs84), {'type': 'Point', 'coordinates': (7.438767146513139, 37.27422679580366)})
