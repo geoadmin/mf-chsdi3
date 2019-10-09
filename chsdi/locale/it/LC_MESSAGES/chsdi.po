@@ -6608,6 +6608,30 @@ msgstr "Punteggio realizzato"
 msgid "ch.bfe.erneuerbarheizen"
 msgstr "Prima consulenza calore rinnovabile"
 
+msgid "ch.bfe.erneuerbarheizen.company"
+msgstr "Ditta"
+
+msgid "ch.bfe.erneuerbarheizen.consultant_cat"
+msgstr "Categoria(e)"
+
+msgid "ch.bfe.erneuerbarheizen.email"
+msgstr "Indirizzo e-mail"
+
+msgid "ch.bfe.erneuerbarheizen.firstname_name"
+msgstr "Consulente"
+
+msgid "ch.bfe.erneuerbarheizen.language"
+msgstr "Lingua(e) di consulenza"
+
+msgid "ch.bfe.erneuerbarheizen.pc_place"
+msgstr "Via"
+
+msgid "ch.bfe.erneuerbarheizen.phonenumber"
+msgstr "Numero di telefono"
+
+msgid "ch.bfe.erneuerbarheizen.street_streetnumber"
+msgstr "Via"
+
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Offerta di calore e di freddo"
 
@@ -6982,6 +7006,9 @@ msgstr "Nome"
 
 msgid "ch.bfe.stauanlagen-bundesaufsicht.damtype_de"
 msgstr "Tipo dell'opera di sbarramento"
+
+msgid "ch.bfe.thermische-netze"
+msgstr "Reti termiche"
 
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=it"
