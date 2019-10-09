@@ -15,6 +15,7 @@ from chsdi.lib.helpers import (
 from urlparse import urljoin
 from shapely.geometry import Point, Polygon
 from shapely.geometry import mapping
+from numpy.testing import assert_almost_equal
 
 
 class Test_Helpers(unittest.TestCase):
@@ -335,7 +336,7 @@ class Test_Helpers(unittest.TestCase):
         bbox_wgs84_rounded = _transform_coordinates(bbox, 2056, 4326, rounding=True)
 
         self.assertEqual(bbox_wgs84_rounded, [7.438632, 46.951083, 8.100963, 47.398925])
-        self.assertEqual(bbox_wgs84, [7.438632420871815, 46.95108277187108, 8.100963474961302, 47.39892497922299])
+        assert_almost_equal(bbox_wgs84, [7.438632420871815, 46.95108277187108, 8.100963474961302, 47.39892497922299], decimal=10)
 
     def test_transform_shape(self):
         point = Point(2600000, 120000)
@@ -343,7 +344,7 @@ class Test_Helpers(unittest.TestCase):
         point_wgs84_rounded = _transform_shape(point, 2056, 4326)
 
         self.assertEqual(mapping(point_wgs84_rounded), {'type': 'Point', 'coordinates': (7.438767, 37.274227)})
-        self.assertEqual(mapping(point_wgs84), {'type': 'Point', 'coordinates': (7.438767146513139, 37.27422679580366)})
+        assert_almost_equal(point_wgs84.coords[0],  (7.438767146513139, 37.27422679580366))
 
     def test_transform_round_geometry(self):
 
@@ -352,11 +353,11 @@ class Test_Helpers(unittest.TestCase):
         bbox_wgs84_rounded = transform_round_geometry(bbox, 2056, 4326, rounding=True)
 
         self.assertEqual(bbox_wgs84_rounded, [7.438632, 46.951083, 8.100963, 47.398925])
-        self.assertEqual(bbox_wgs84, [7.438632420871815, 46.95108277187108, 8.100963474961302, 47.39892497922299])
+        assert_almost_equal(bbox_wgs84, [7.438632420871815, 46.95108277187108, 8.100963474961302, 47.39892497922299], decimal=10)
 
         point = Point(2600000, 120000)
         point_wgs84 = transform_round_geometry(point, 2056, 4326, rounding=False)
         point_wgs84_rounded = transform_round_geometry(point, 2056, 4326)
 
         self.assertEqual(mapping(point_wgs84_rounded), {'type': 'Point', 'coordinates': (7.438767, 37.274227)})
-        self.assertEqual(mapping(point_wgs84), {'type': 'Point', 'coordinates': (7.438767146513139, 37.27422679580366)})
+        assert_almost_equal(point_wgs84.coords[0], (7.438767146513139, 37.27422679580366), decimal=10)
