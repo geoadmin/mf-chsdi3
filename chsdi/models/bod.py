@@ -398,9 +398,9 @@ class Catalog(Base):
         return dict([
             (k, getattr(self, k)) for
             k in self.__dict__.keys()
-            if not k.startswith("_") and
-            self.__dict__[k] is not None and
-            k not in ('nameDe', 'nameFr', 'nameIt', 'nameRm', 'nameEn')
+            if not k.startswith("_")
+            and self.__dict__[k] is not None
+            and k not in ('nameDe', 'nameFr', 'nameIt', 'nameRm', 'nameEn')
         ])
 
     def _get_label_from_lang(self, lang):

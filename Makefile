@@ -92,7 +92,7 @@ PYTHON_CMD := $(INSTALL_DIRECTORY)/bin/python
 SPHINX_CMD := $(INSTALL_DIRECTORY)/bin/sphinx-build
 
 # Linting rules
-PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731"
+PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731,W503,W504,W605"
 
 # E128: continuation line under-indented for visual indent
 # E221: multiple spaces before operator
@@ -102,6 +102,10 @@ PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731"
 # E501: line length 79 per default
 # E711: comparison to None should be 'if cond is None:' (SQLAlchemy's filter syntax requires this ignore!)
 # E731: do not assign a lambda expression, use a def
+# TODO: break before or after, but decide
+# W503: line break before binary operator
+# W504: line break afterbinary operator
+# W605 invalid escape sequence
 
 # Colors
 RESET := $(shell tput sgr0)
@@ -447,7 +451,7 @@ requirements.txt:
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install --upgrade pip==9.0.1 setuptools --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; \
 	fi
 	${PIP_CMD} install --index-url ${PYPI_URL} --find-links local_eggs/ -e .
 

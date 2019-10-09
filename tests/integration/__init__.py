@@ -26,7 +26,7 @@ def reproject_to_srid(string_coords, srid_from, srid_to, round_to=2):
     elif len(coords) == 2:
         geom = Point(*coords)
     else:
-        raise NotImplemented("Cannot transform {} to shape".format(string_coords))
+        raise NotImplementedError("Cannot transform {} to shape".format(string_coords))
     reproj_coords += transform_shape(geom, srid_from, srid_to).bounds
 
     return ','.join([format(c, fmt) for c in reproj_coords])

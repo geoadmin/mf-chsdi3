@@ -25,13 +25,13 @@ def rotateUrl(url):
 
 HEADER_RESULTS = [{
     'Results': [200, 304],
-    'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
+    'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': 'http://unittest.geo.admin.ch'}
 }, {
     'Results': [403],
-    'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': None, 'User-Agent': 'mf-geaodmin/python'}
+    'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': None}
 }, {
     'Results': [403],
-    'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': 'http://foonogood.ch', 'User-Agent': 'mf-geoadmin/python'}
+    'Header': {'User-Agent': 'WMTS Unit Tester v0.0.1', 'Referer': 'http://foonogood.ch'}
 }
 ]
 
@@ -101,7 +101,7 @@ class TileChecker(TodProxyTestsBase):
                                 t = time.text
                                 try:
                                     pth2 = pth.replace('{TileCol}', str(col)).replace('{TileRow}', str(row)).replace('{TileMatrix}', str(zoom)).replace('{Time}', str(t))
-                                except:
+                                except Exception:
                                     print 'Cannot replace in template %s' % pth
                                 yield urlunparse((tpl_parsed.scheme, tpl_parsed.netloc, pth2, '', '', ''))
 

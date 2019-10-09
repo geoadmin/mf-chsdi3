@@ -497,9 +497,9 @@ class Search(SearchValidation):
                 result['attrs'].pop('layerBodId', None)
             result['attrs'].pop('feature_id', None)
             result['attrs']['label'] = self._translate_label(result['attrs']['label'])
-            if (origin == 'address' and
-                nb_address < self.LOCATION_LIMIT and
-               (not self.bbox or self._bbox_intersection(self.bbox,
+            if (origin == 'address'
+                and nb_address < self.LOCATION_LIMIT
+                and (not self.bbox or self._bbox_intersection(self.bbox,
                                                          result['attrs']['geom_st_box2d']))):
                 result['attrs'] = self._parse_locations(result['attrs'])
                 self.results['results'].append(result)
@@ -586,7 +586,7 @@ class Search(SearchValidation):
             refbox = box(ref[0], ref[1], ref[2], ref[3]) if not _is_point(ref) else Point(ref[0], ref[1])
             arr = parse_box2d(result)
             resbox = box(arr[0], arr[1], arr[2], arr[3]) if not _is_point(arr) else Point(arr[0], arr[1])
-        except:  # pragma: no cover
+        except Exception:  # pragma: no cover
             # We bail with True to be conservative and
             # not exclude this geometry from the result
             # set. Only happens if result does not

@@ -23,10 +23,10 @@ class BBox:
         return 'BBox(%s,%s,%s,%s)' % (self.minx, self.miny, self.maxx, self.maxy)
 
     def __eq__(self, other):
-        if (self.minx == other.minx and
-                self.miny == other.miny and
-                self.maxx == other.maxx and
-                self.maxy == other.maxy):
+        if (self.minx == other.minx
+                and self.miny == other.miny
+                and self.maxx == other.maxx
+                and self.maxy == other.maxy):
             return True
         return False
 

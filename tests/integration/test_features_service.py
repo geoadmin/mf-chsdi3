@@ -138,7 +138,7 @@ class TestFeaturesView(TestsBase):
                   'searchText': '1231641',
                   'geometryFormat': 'geojson'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
 
     def test_find_withcb(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register',
@@ -353,7 +353,7 @@ class TestFeaturesView(TestsBase):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson'}, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertEqual(resp.json['feature']['id'], featureId)
         self.assertGeojsonFeature(resp.json['feature'], 21781)
 
@@ -361,7 +361,7 @@ class TestFeaturesView(TestsBase):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson', 'returnGeometry': 'false'}, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertEqual(resp.json['feature']['id'], featureId)
         self.assertGeojsonFeature(resp.json['feature'], 21781, hasGeometry=False)
 
@@ -369,7 +369,7 @@ class TestFeaturesView(TestsBase):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertEqual(resp.json['feature']['id'], featureId)
         self.assertGeojsonFeature(resp.json['feature'], 21781)
 
@@ -425,7 +425,7 @@ class TestFeaturesView(TestsBase):
 
         for srs in SUPPORTED_OUTPUT_SRS:
             resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'sr': srs, 'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
-            self.assertEqual(resp.content_type, 'application/json')
+            self.assertEqual(resp.content_type, 'application/geo+json')
             self.assertEqual(resp.json['feature']['id'], featureId)
             self.assertGeojsonFeature(resp.json['feature'], srs)
 
@@ -434,7 +434,7 @@ class TestFeaturesView(TestsBase):
         featureId = self.getRandomFeatureId(bodId)
 
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson', 'returnGeometry': 'true'}, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertEqual(resp.json['feature']['id'], featureId)
         # 21781 is the default srs at the time
         self.assertGeojsonFeature(resp.json['feature'], 21781)
@@ -463,7 +463,7 @@ class TestFeaturesView(TestsBase):
         bodId = 'ch.swisstopo.geologie-geocover'
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/all/MapServer/%s/%s' % (bodId, featureId), params={'geometryFormat': 'geojson'}, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertIn('geometry', resp.json['feature'])
 
     def test_htmlpopup_invalid_srid(self):
@@ -755,7 +755,7 @@ class TestReleasesService(TestsBase):
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
         results_lv03 = resp.json['results']
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertTrue(len(results_lv03) >= 22, len(results_lv03))
 
         params = {'imageDisplay': '500,600,96',
@@ -765,7 +765,7 @@ class TestReleasesService(TestsBase):
                   'sr': '2056'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertTrue(len(resp.json['results']) >= 22, len(resp.json['results']))
 
         params = {'imageDisplay': '500,600,96',
@@ -775,7 +775,7 @@ class TestReleasesService(TestsBase):
                   'sr': '3857'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertTrue(len(resp.json['results']) >= 22, len(resp.json['results']))
 
         mapExtent = '611398,158649,6903005,198152'
@@ -786,7 +786,7 @@ class TestReleasesService(TestsBase):
                   'sr': '4326'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         # FIXME Deactivatingi failing test, as it is not related to WebMercator
         # diff_wgs84_lv03 = list(set(resp.json['results']) - set(results_lv03))
         # self.assertEqual(diff_wgs84_lv03, [])
@@ -809,7 +809,7 @@ class TestReleasesService(TestsBase):
                   'geometryType': 'esriGeometryPoint'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGreaterEqual(len(resp.json['results']), 25)
         ist = resp.json['results']
         soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231",
@@ -828,7 +828,7 @@ class TestReleasesService(TestsBase):
                   'sr': '2056'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGreaterEqual(len(resp.json['results']), 25)
         ist = resp.json['results']
         for idx, i in enumerate(ist):
@@ -843,7 +843,7 @@ class TestReleasesService(TestsBase):
                   'geometryType': 'esriGeometryPoint'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGreaterEqual(len(resp.json['results']), 25)
         ist = resp.json['results']
         soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231",
@@ -860,7 +860,7 @@ class TestReleasesService(TestsBase):
                   'sr': '2056'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGreaterEqual(len(resp.json['results']), 25)
         ist = resp.json['results']
         for idx, i in enumerate(ist):
@@ -873,7 +873,7 @@ class TestReleasesService(TestsBase):
                   'geometryType': 'esriGeometryPoint'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/' + zlayer + '/releases', params=params, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGreaterEqual(len(resp.json['results']), 25)
         ist = resp.json['results']
         soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231",
