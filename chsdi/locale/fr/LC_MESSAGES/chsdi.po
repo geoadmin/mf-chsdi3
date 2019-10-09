@@ -6608,6 +6608,30 @@ msgstr "Nombre de points"
 msgid "ch.bfe.erneuerbarheizen"
 msgstr "Conseil incitatif chauffez vert"
 
+msgid "ch.bfe.erneuerbarheizen.company"
+msgstr "Société"
+
+msgid "ch.bfe.erneuerbarheizen.consultant_cat"
+msgstr "Catégorie(s)"
+
+msgid "ch.bfe.erneuerbarheizen.email"
+msgstr "Adresse e-mail"
+
+msgid "ch.bfe.erneuerbarheizen.firstname_name"
+msgstr "Conseiller / Conseillère"
+
+msgid "ch.bfe.erneuerbarheizen.language"
+msgstr "Langue(s) du conseil"
+
+msgid "ch.bfe.erneuerbarheizen.pc_place"
+msgstr "Adresse"
+
+msgid "ch.bfe.erneuerbarheizen.phonenumber"
+msgstr "Numéro de téléphone"
+
+msgid "ch.bfe.erneuerbarheizen.street_streetnumber"
+msgstr "Adresse"
+
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Offre de chaleur ou de froid"
 
@@ -6982,6 +7006,9 @@ msgstr "Nom"
 
 msgid "ch.bfe.stauanlagen-bundesaufsicht.damtype_de"
 msgstr "Type de barrage"
+
+msgid "ch.bfe.thermische-netze"
+msgstr "Réseaux thermiques"
 
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=fr"

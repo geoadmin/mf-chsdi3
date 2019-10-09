@@ -6608,6 +6608,30 @@ msgstr "Punktezahl"
 msgid "ch.bfe.erneuerbarheizen"
 msgstr "Impulsberatung erneuerbar heizen"
 
+msgid "ch.bfe.erneuerbarheizen.company"
+msgstr "Firma"
+
+msgid "ch.bfe.erneuerbarheizen.consultant_cat"
+msgstr "Kategorie/-n"
+
+msgid "ch.bfe.erneuerbarheizen.email"
+msgstr "Mailadresse"
+
+msgid "ch.bfe.erneuerbarheizen.firstname_name"
+msgstr "Berater/Beraterin"
+
+msgid "ch.bfe.erneuerbarheizen.language"
+msgstr "Sprache/-n der Beratung"
+
+msgid "ch.bfe.erneuerbarheizen.pc_place"
+msgstr "Adresse"
+
+msgid "ch.bfe.erneuerbarheizen.phonenumber"
+msgstr "Telefon"
+
+msgid "ch.bfe.erneuerbarheizen.street_streetnumber"
+msgstr "Adresse"
+
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Wärme- und Kälteangebot"
 
@@ -6982,6 +7006,9 @@ msgstr "Name"
 
 msgid "ch.bfe.stauanlagen-bundesaufsicht.damtype_de"
 msgstr "Sperrentyp"
+
+msgid "ch.bfe.thermische-netze"
+msgstr "Thermische Netze"
 
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=de"
