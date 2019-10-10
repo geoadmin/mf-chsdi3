@@ -1216,7 +1216,7 @@ Example
 Mapbox Vector Tiles
 -------------------
 A RESTFul implementation of `Mapbox Vector Tiles <https://www.mapbox.com/vector-tiles>`_.
-For the testing phase, the service is free for use. See conditions `conditions <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html>`_ give us feedback via our `survey <https://findmind.ch/c/vectortilesEN>`_  
+For the testing phase, the service is free for use. See conditions `conditions <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html>`_
 
 The service provides both *tiles* and *styles* that the customer can use. 
 
