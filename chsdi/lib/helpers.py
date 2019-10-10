@@ -6,8 +6,12 @@ import requests
 import datetime
 import gzip
 import six
-from io import StringIO
 from decimal import Decimal
+
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 
 try:
     from itertools import izip, cycle
@@ -533,7 +537,7 @@ def get_loaderjs_url(request, version='3.6.0'):
 
 
 def gzip_string(string):
-    infile = StringIO.StringIO()
+    infile = StringIO()
     try:
         gzip_file = gzip.GzipFile(fileobj=infile, mode='w', compresslevel=5)
         gzip_file.write(string)
@@ -548,5 +552,5 @@ def gzip_string(string):
 
 
 def decompress_gzipped_string(string):
-    content = gzip.GzipFile(fileobj=StringIO.StringIO(string))
+    content = gzip.GzipFile(fileobj=StringIO(string))
     return content.read()
