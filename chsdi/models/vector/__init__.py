@@ -4,6 +4,7 @@ import geojson
 import esrijson
 import datetime
 import decimal
+import six
 from pyramid.threadlocal import get_current_registry
 from chsdi.models.types import GeometryChsdi
 from chsdi.lib.helpers import transform_round_geometry
@@ -14,6 +15,8 @@ from sqlalchemy.orm.properties import ColumnProperty
 from geoalchemy2.elements import WKBElement
 from geoalchemy2.shape import to_shape
 
+if six.PY3:
+    buffer = memoryview
 
 Geometry2D = GeometryChsdi(geometry_type='GEOMETRY', dimension=2, srid=2056)
 Geometry3D = GeometryChsdi(geometry_type='GEOMETRYZ', dimension=3, srid=2056)

@@ -17,7 +17,7 @@ try:
     max_retry = 1
     if geodata_staging == u'dev':
         max_retry = 3
-except KeyError as e:
+except KeyError:
     geodata_staging = u'prod'
     base_url = 'http://wms.geo.admin.ch'
 

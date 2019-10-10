@@ -102,7 +102,7 @@ class TileChecker(TodProxyTestsBase):
                                 try:
                                     pth2 = pth.replace('{TileCol}', str(col)).replace('{TileRow}', str(row)).replace('{TileMatrix}', str(zoom)).replace('{Time}', str(t))
                                 except Exception:
-                                    print 'Cannot replace in template %s' % pth
+                                    print('Cannot replace in template {}'.format(pth))
                                 yield urlunparse((tpl_parsed.scheme, tpl_parsed.netloc, pth2, '', '', ''))
 
 

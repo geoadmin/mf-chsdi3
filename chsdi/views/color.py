@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import os.path
-import StringIO
+from io import StringIO
+
 
 from PIL import Image
 from pyramid.httpexceptions import HTTPBadRequest

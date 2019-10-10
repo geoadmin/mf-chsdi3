@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import StringIO
+from io import StringIO
+
 import requests
 
 from pyramid.view import view_config

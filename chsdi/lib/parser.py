@@ -1,7 +1,11 @@
+import six
 from lark import Lark, Transformer
 from lark.exceptions import LarkError
 import lark
 import logging
+
+if six.PY3:
+    unicode = str
 
 log = logging.getLogger(__name__)
 

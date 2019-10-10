@@ -77,7 +77,7 @@ LAST_WSGI_THREADS := $(call lastvalue,wsgi-threads)
 LAST_WSGI_APP := $(call lastvalue,wsgi-app)
 LAST_KML_TEMP_DIR := $(call lastvalue,kml-temp-dir)
 
-PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -type f -name "*.py" -print)
+PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -type f -name "*.py" -print)
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
 
 # Commands
@@ -148,6 +148,7 @@ help:
 	@echo "- cleanall           Remove all the build artefacts"
 	@echo
 	@echo "Variables:"
+	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
 	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
 	@echo "API_URL:             ${API_URL}"
 	@echo "WMSHOST:             ${WMSHOST}"

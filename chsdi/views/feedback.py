@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import six
 import cgi
 import json
 import datetime
@@ -7,6 +8,9 @@ from pyramid.view import view_config
 
 from pyramid.httpexceptions import HTTPInternalServerError
 from smtplib import SMTPException
+
+if six.PY3:
+    unicode = str
 
 
 # http://kutuma.blogspot.com/2007/08/sending-emails-via-gmail-with-python.html

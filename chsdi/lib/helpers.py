@@ -5,17 +5,30 @@ import math
 import requests
 import datetime
 import gzip
-import StringIO
+import six
+from io import StringIO
 from decimal import Decimal
-from itertools import izip, cycle
+
+try:
+    from itertools import izip, cycle
+except ImportError:
+    pass
 from functools import partial
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
 from pyramid.url import route_url
 from pyramid.httpexceptions import HTTPBadRequest, HTTPRequestTimeout
 import unicodedata
-from urllib import quote
-from urlparse import urlparse, urlunparse, urljoin
+try:
+    from urlparse import urlparse, urlunparse, urljoin
+except ImportError:
+    from urllib.parse import urlparse, urlunparse, urljoin
+
+try:
+    from urllib import quote
+except ImportError:
+    from urllib.parse import quote
+
 import xml.etree.ElementTree as etree
 from pyproj import Proj, transform as proj_transform
 from requests.exceptions import ConnectionError
@@ -26,6 +39,10 @@ from shapely.geometry.base import BaseGeometry
 from chsdi.lib.parser import WhereParser
 from chsdi.lib.exceptions import QueryParseException
 import logging
+
+if six.PY3:
+    unicode = str
+    long = int
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
