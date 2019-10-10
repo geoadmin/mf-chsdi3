@@ -15314,6 +15314,12 @@ msgstr "Häufigkeit (%)"
 msgid "tt_bfe_hinweis"
 msgstr "Hinweis zur Unsicherheit der Modellierung"
 
+msgid "tt_bfe_hinweis_text"
+msgstr "Diese Daten sind nicht für die Beurteilung eines Standorts geeignet. Dafür sind Windmessungen notwendig."
+
+msgid "tt_bfe_hinweis_wa"
+msgstr "Hinweis"
+
 msgid "tt_bfe_hoehe_gelaende"
 msgstr "Höhe Gelände"
 

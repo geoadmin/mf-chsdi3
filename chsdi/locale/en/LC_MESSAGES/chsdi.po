@@ -15314,6 +15314,12 @@ msgstr "Frequency (%)"
 msgid "tt_bfe_hinweis"
 msgstr "Note concerning the uncertainty of modelling"
 
+msgid "tt_bfe_hinweis_text"
+msgstr "These data do not qualify for the assessment of a wind energy site. For this purpose a wind measurement is required."
+
+msgid "tt_bfe_hinweis_wa"
+msgstr "Please Note"
+
 msgid "tt_bfe_hoehe_gelaende"
 msgstr "Altitude"
 

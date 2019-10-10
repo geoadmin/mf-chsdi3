@@ -15314,6 +15314,12 @@ msgstr "Frequenza (%)"
 msgid "tt_bfe_hinweis"
 msgstr "Nota sull’incertezza della modellazione"
 
+msgid "tt_bfe_hinweis_text"
+msgstr "Questi dati non sono appropriati per la valutazione di un’ubicazione. Per una valutazione sono necessarie delle misurazioni del vento."
+
+msgid "tt_bfe_hinweis_wa"
+msgstr "Avvertimento"
+
 msgid "tt_bfe_hoehe_gelaende"
 msgstr "Altitudine"
 

@@ -35,12 +35,8 @@ props = c['attributes']
 </style>
 <!-- html output -->
     <tr>
-      <th class="cell-left">${_('tt_bfe_hoehe_ueber_grund')}</th>
-      <td>${altitude or '-'} m</td>
-    </tr>
-    <tr>
-      <th class="cell-left">${_('tt_bfe_koordinaten')}</th>
-      <td>${center}</td>
+      <th class="cell-left">${_('tt_bfe_hinweis_wa')}</th>
+      <td>${_('tt_bfe_hinweis_text')}</td>
     </tr>
     <tr>
       <th class="cell-left">${_('tt_bfe_hoehe_gelaende')}</th>
@@ -204,6 +200,10 @@ table#windrichtung  td.align-right {
 
 <body>
 <table class="table-with-border kernkraftwerke-extended">
+  <tr>
+    <th class="cell-left">${_('tt_bfe_hinweis_wa')}</th>
+    <td>${_('tt_bfe_hinweis_text')}</td>
+  </tr>
   <tr>
     <th class="cell-left">${_('tt_bfe_hoehe_ueber_grund')}</th>
     <td>${altitude or '-'} m</td>
