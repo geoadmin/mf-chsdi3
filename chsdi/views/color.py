@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 
 import os.path
-from io import StringIO
-
 
 from PIL import Image
 from pyramid.httpexceptions import HTTPBadRequest
 from pyramid.view import view_config
 from pyramid.response import Response
+
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 
 
 class ColorService:
@@ -39,7 +42,7 @@ class ColorService:
         if mask.mode == 'P':
             mask = mask.convert('RGBA')
         img = Image.composite(Image.new("RGB", mask.size, (r, g, b)), mask, mask)
-        output = StringIO.StringIO()
+        output = StringIO()
         img.save(output, format='PNG')
         response = Response(output.getvalue(), content_type='image/png')
         return response
