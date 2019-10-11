@@ -6,8 +6,9 @@ import json
 
 import pyramid.httpexceptions as exc
 
-import urllib
 import re
+
+from six.moves.urllib.parse import unquote_plus
 
 
 EXPECTED_KML_CONTENT_TYPE = 'application/vnd.google-earth.kml+xml'
@@ -49,7 +50,7 @@ def validate_kml_input():
             if request.content_type != EXPECTED_KML_CONTENT_TYPE:
                 raise exc.HTTPUnsupportedMediaType('Only KML file are accepted')
             # IE9 sends data urlencoded
-            data = urllib.unquote_plus(request.body)
+            data = unquote_plus(request.body)
             if len(data) > MAX_FILE_SIZE:
                 raise exc.HTTPRequestEntityTooLarge('File size exceed %s bytes' % MAX_FILE_SIZE)
 
