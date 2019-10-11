@@ -457,7 +457,8 @@ def _get_areas_for_params(params, models):
     a cut areas, layerIds and group attribute. '''
     groupbyIdx = 0
     for vectorLayer in models:
-        bodId = vectorLayer.keys()[0]
+        # Python2/3
+        bodId = next(iter(vectorLayer))
         if params.groupby is not None:
             models = [
                 m for m in vectorLayer[bodId]['models']
@@ -674,7 +675,9 @@ def _find(request):
 
     # Attributes in the 'where' or 'layerDefs' should match attributes in
     # at least one model related to a layer bodId
-    if params.where is not None and not any(list(zip(*vectorLayers)[1])):
+    # TODO: python3
+    layers = list(zip(*vectorLayers)[1])
+    if params.where is not None and not any(layers):
         raise exc.HTTPBadRequest(
             'Filtering on a not existing field on layer {}'.format(params.layer)
         )
