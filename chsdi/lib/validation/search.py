@@ -115,7 +115,8 @@ class SearchValidation(MapNameValidation):
             if len(values) != 4:
                 raise HTTPBadRequest("Please provide 4 coordinates in a comma separated list")
             try:
-                values = map(float_raise_nan, values)
+                # Python 2/3
+                values = list(map(float_raise_nan, values))
             except ValueError:
                 raise HTTPBadRequest("Please provide numerical values for the parameter bbox")
             if self._srid == 2056:

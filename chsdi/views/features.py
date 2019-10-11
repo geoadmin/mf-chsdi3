@@ -2,6 +2,7 @@
 
 import re
 import geojson
+import six
 from gatilegrid.grid import Grid
 
 from pyramid.view import view_config
@@ -532,7 +533,8 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
     ''' Returns a generator function that yields
     a feature. '''
     for layer in layerBodIds:
-        layerBodId, models = next(layer.iteritems())
+        # Python2/3
+        layerBodId, models = next(six.iteritems(layer))
         # Determine the limit
         limits = [x for x in [maxFeatures, params.limit] if x is not None]
         flimit = min(limits) if len(limits) > 0 else None
@@ -777,7 +779,8 @@ def _cut(request):
                 'Your request generated the following database error: %s' % e.message.replace('\n', ''))
         except StopIteration:
             break
-        bodId = feature.keys()[0]
+        # Python2/3
+        bodId = next(iter(feature))
         if bodId not in results:
             results[bodId] = [feature[bodId]]
         else:

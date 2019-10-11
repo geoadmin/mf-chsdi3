@@ -450,6 +450,9 @@ def parse_box2d(stringBox2D):
 
 
 def is_box2d(box2D):
+    # Python2/3
+    if not isinstance(box2D, list):
+        box2D = list(box2D)
     # Bottom left to top right only
     if len(box2D) != 4 or box2D[0] > box2D[2] or box2D[1] > box2D[3]:
         raise ValueError('Invalid box2D.')
