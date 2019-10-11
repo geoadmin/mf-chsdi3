@@ -13,10 +13,9 @@ try:
 except ImportError:
     from io import StringIO
 
-try:
-    from itertools import izip, cycle
-except ImportError:
-    pass
+from six.moves import zip
+from itertools import cycle
+
 from functools import partial
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
@@ -414,7 +413,7 @@ def _transform_coordinates(coordinates, srid_from, srid_to, rounding=True):
         raise ValueError
     new_coords = []
     coords_iter = iter(coordinates)
-    for pnt in izip(coords_iter, coords_iter):
+    for pnt in zip(coords_iter, coords_iter):
         new_pnt = _transform_point(pnt, srid_from, srid_to)
         new_coords += new_pnt
     if rounding:
