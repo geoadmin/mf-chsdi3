@@ -19,6 +19,10 @@ import select
 import socket
 import re
 from struct import pack, unpack
+import six
+
+if six.PY3:
+    long = int
 
 
 # known searchd commands
