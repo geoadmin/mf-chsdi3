@@ -116,8 +116,34 @@ GREEN := $(shell tput setaf 2)
 # We need GDAL which is hard to install in a venv, modify PYTHONPATH to use the
 # system wide version.
 GDAL_VERSION ?= 1.10.0
-PYTHON_VERSION := $(shell python --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+
+ifndef USE_PYTHON3
+		override USE_PYTHON3 = 0
+endif
+
+ifeq ($(USE_PYTHON3), 1)
+		PYTHON_VERSION := 3.6.8
+build/python: local/bin/python3.6
+		touch build/python;
+else
+		PYTHON_VERSION := $(shell python2 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+build/python:
+		touch build/python;
+endif
 PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
+
+PYTHON_BINDIR := $(shell dirname $(PYTHON_CMD))
+PYTHONHOME :=$(shell eval "cd $(PYTHON_BINDIR); pwd; cd > /dev/null")
+SYSTEM_PYTHON_CMD := $(CURRENT_DIR)/local/bin/python3
+
+.PHONY: python
+python: build/python
+		@echo "Python installed"
+
+local/bin/python3.6:
+		mkdir -p $(CURRENT_DIRECTORY)/local;
+		curl -z $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_VERSION).tar.xz https://www.python.org/ftp/python/$(PYTHON_VERSION)/Python-$(PYTHON_VERSION).tar.xz -o $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_VERSION).tar.xz;
+		cd $(CURRENT_DIRECTORY)/local && tar -xf Python-$(PYTHON_VERSION).tar.xz && Python-$(PYTHON_VERSION)/configure --prefix=$(CURRENT_DIRECTORY)/local/  --enable-optimizations && make altinstall
 
 .PHONY: help
 help:
@@ -149,6 +175,7 @@ help:
 	@echo
 	@echo "Variables:"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
+	@echo "PYTHON_CMD: i        ${PYTHON_CMD}"
 	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
 	@echo "API_URL:             ${API_URL}"
 	@echo "WMSHOST:             ${WMSHOST}"
@@ -172,6 +199,9 @@ all: setup chsdi/static/css/extended.min.css templates potomo rss lint fixrights
 setup: .venv node_modules .venv/hooks
 
 templates: apache/wsgi.conf development.ini production.ini
+
+
+
 
 .PHONY: dev
 dev:
@@ -447,14 +477,23 @@ production.ini: production.ini.in \
 
 requirements.txt:
 	@echo "${GREEN}File requirements.txt has changed${RESET}";
+
+ifeq ($(USE_PYTHON3), 1)
+.venv: requirements.txt
+		test -d "$(INSTALL_DIRECTORY)" || local/bin/python3.6 -m venv $(INSTALL_DIRECTORY); \
+		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; 
+		${PIP_CMD} install --index-url ${PYPI_URL} --find-links local_eggs/ -e .
+else
 .venv: requirements.txt
 	@echo "${GREEN}Setting up virtual environement...${RESET}";
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv -p /usr/bin/python2  $(INSTALL_DIRECTORY); \
 		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install --upgrade pip==19.2.3 enum34==1.1.6 setuptools --index-url ${PYPI_URL} ; \
 	fi
 	${PIP_CMD} install --index-url ${PYPI_URL} --find-links local_eggs/ -e .
+endif
 
 .venv/bin/git-secrets: .venv
 	@echo "${GREEN}Installing git secrets${RESET}";

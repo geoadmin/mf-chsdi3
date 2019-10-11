@@ -10,7 +10,6 @@ configparser==4.0.2
 coverage==4.5.4
 decorator==4.4.0
 docutils==0.15.2
-enum34==1.1.6
 esrijson==0.4.3
 future==0.17.1
 gatilegrid==0.1.19
