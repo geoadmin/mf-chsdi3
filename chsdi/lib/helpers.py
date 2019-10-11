@@ -456,15 +456,15 @@ def is_box2d(box2D):
     # Bottom left to top right only
     if len(box2D) != 4 or box2D[0] > box2D[2] or box2D[1] > box2D[3]:
         raise ValueError('Invalid box2D.')
-    return True
+    return box2D
 
 
 def center_from_box2d(box2D):
-    if is_box2d(box2D):
-        return [
-            box2D[0] + ((box2D[2] - box2D[0]) / 2),
-            box2D[1] + ((box2D[3] - box2D[1]) / 2)
-        ]
+    box2D = is_box2d(box2D)
+    return [
+        box2D[0] + ((box2D[2] - box2D[0]) / 2),
+        box2D[1] + ((box2D[3] - box2D[1]) / 2)
+    ]
 
 
 def shift_to(coords, srid):

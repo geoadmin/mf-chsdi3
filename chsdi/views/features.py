@@ -678,7 +678,7 @@ def _find(request):
     # Attributes in the 'where' or 'layerDefs' should match attributes in
     # at least one model related to a layer bodId
     # TODO: python3
-    layers = list(zip(*vectorLayers)[1])
+    layers = list(list(six.moves.zip(*vectorLayers))[1])
     if params.where is not None and not any(layers):
         raise exc.HTTPBadRequest(
             'Filtering on a not existing field on layer {}'.format(params.layer)
