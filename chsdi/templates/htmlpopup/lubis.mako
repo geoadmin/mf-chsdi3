@@ -3,10 +3,13 @@
 
 <%!
 import datetime
-import urllib
 from pyramid.url import route_url
 import chsdi.lib.helpers as h
 import markupsafe
+try:
+    from urllib import urlencode
+except ImportError:
+    from urllib.parse import urlencode
 
 def br(text):
     return text.replace('\n', markupsafe.Markup('<br />'))
@@ -46,7 +49,7 @@ def get_viewer_url(request, params):
         'lang': params[6],
         'rotation': params[7]
     }
-    return h.make_agnostic(route_url('luftbilder', request)) + '?' + urllib.urlencode(f)
+    return h.make_agnostic(route_url('luftbilder', request)) + '?' + urlencode(f)
 
 %>
 
