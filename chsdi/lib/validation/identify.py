@@ -175,7 +175,7 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
                 'Please provide the parameter imageDisplay in a comma separated list of 3 arguments '
                 '(width,height,dpi)')
         try:
-            self._imageDisplay = map(float_raise_nan, value)
+            self._imageDisplay = list(map(float_raise_nan, value))
         except ValueError:
             raise HTTPBadRequest('Please provide numerical values for the parameter imageDisplay')
 

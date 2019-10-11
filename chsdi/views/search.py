@@ -8,7 +8,7 @@ from shapely.geometry import box, Point
 
 from chsdi.lib.validation.search import SearchValidation
 from chsdi.lib.helpers import format_search_text, format_locations_search_text
-from chsdi.lib.helpers import _transform_point as transform_coordinate, parse_box2d, shift_to
+from chsdi.lib.helpers import _transform_point as transform_coordinate, parse_box2d, shift_to, ilen
 from chsdi.lib.helpers import center_from_box2d, transform_round_geometry as transform_shape
 from chsdi.lib.sphinxapi import sphinxapi
 from chsdi.lib import mortonspacekey as msk
@@ -152,7 +152,7 @@ class Search(SearchValidation):
             self._filter_locations_by_origins()
 
         searchList = []
-        if len(self.searchText) >= 1:
+        if ilen(self.searchText) >= 1:
             searchText = self._query_fields('@detail')
             searchList.append(searchText)
 
@@ -415,7 +415,7 @@ class Search(SearchValidation):
         }[self.searchLang]
 
     def _detect_keywords(self):
-        if len(self.searchText) > 0:
+        if ilen(self.searchText) > 0:
             PARCEL_KEYWORDS = ('parzelle', 'parcelle', 'parcella', 'parcel')
             ADDRESS_KEYWORDS = ('addresse', 'adresse', 'indirizzo', 'address')
             firstWord = self.searchText[0].lower()

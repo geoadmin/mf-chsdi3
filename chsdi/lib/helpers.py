@@ -13,7 +13,7 @@ try:
 except ImportError:
     from io import StringIO
 
-from six.moves import zip
+from six.moves import zip, reduce
 from itertools import cycle
 
 from functools import partial
@@ -57,6 +57,20 @@ PROJECTIONS = {}
 # Rounding to abount 0.1 meters
 COORDINATES_DECIMALS_FOR_METRIC_PROJ = 1
 COORDINATES_DECIMALS_FOR_DEGREE_PROJ = 6
+
+
+def to_utf8(data):
+    try:
+        data = data.decode('utf8')
+    except (UnicodeDecodeError, AttributeError):
+        pass
+    return data
+
+# Number of element in an iterator
+
+
+def ilen(iterable):
+    return reduce(lambda sum, element: sum + 1, iterable, 0)
 
 
 def versioned(path):
