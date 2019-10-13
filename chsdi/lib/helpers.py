@@ -11,7 +11,7 @@ from decimal import Decimal
 try:
     from StringIO import StringIO
 except ImportError:
-    from io import StringIO
+    from io import StringIO, BytesIO
 
 from six.moves import zip, reduce
 from itertools import cycle
@@ -568,5 +568,12 @@ def gzip_string(string):
 
 
 def decompress_gzipped_string(string):
-    content = gzip.GzipFile(fileobj=StringIO(string))
+    # Python2/3
+    if not isinstance(string, six.string_types):
+        in_ = BytesIO()
+        in_.write(string)
+        in_.seek(0)
+    else:
+        in_ = StringIO(string)
+    content = gzip.GzipFile(fileobj=in_, mode='rb')
     return content.read()
