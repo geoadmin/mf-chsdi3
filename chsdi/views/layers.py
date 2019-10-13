@@ -3,6 +3,7 @@
 import os
 import decimal
 import datetime
+from itertools import chain
 
 
 from pyramid.view import view_config
@@ -47,8 +48,11 @@ def layers_config(request):
     params = BaseLayersValidation(request)
     query = params.request.db.query(LayersConfig)
     layers = {}
+    # Python 2/3
     for layer in get_layers_config_for_params(params, query, LayersConfig):
-        layers = dict(layers.items() + layer.items())
+        # layers = dict(list(layers.items()) + list(layer.items()))
+        layers = dict(chain(layers.items(), layer.items()))
+
     return layers
 
 
