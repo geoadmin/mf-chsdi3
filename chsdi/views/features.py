@@ -121,6 +121,9 @@ def _prepare_popup_response(params, request, isExtended=False, isIframe=False):
 
     if params.cbName is None:
         return response
+    # Python2/3
+    if six.PY3:
+        return response.body.decode('utf8')
     return response.body
 
 
@@ -262,7 +265,7 @@ def _identify_grid(params, layerBodIds):
     bucketName = params.request.registry.settings['vector_bucket']
     bucket = get_bucket(bucketName)
     for layer in layerBodIds:
-        [layerBodId, gridSpec] = next(layer.iteritems())
+        [layerBodId, gridSpec] = next(six.iteritems(layer))
         params.layerId = layerBodId
         layerProperties = get_grid_layer_properties(layerBodId)
         timestamp = layerProperties.get('timestamp')
