@@ -26,3 +26,4 @@ deploy/conf/00-branch.conf
 print/WEB-INF/web.xml
 tests/varnish*
 app*.log
+local

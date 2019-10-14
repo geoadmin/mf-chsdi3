@@ -1,4 +1,5 @@
 SHELL = /bin/bash
+.DEFAULT_GOAL := help
 
 # Macro functions
 lastvalue = $(shell if [ -f .venv/last-$1 ]; then cat .venv/last-$1 2> /dev/null; else echo '-none-'; fi;)
@@ -172,8 +173,10 @@ help:
 	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"
 	@echo "- clean              Remove generated files"
 	@echo "- cleanall           Remove all the build artefacts"
+	@echo "- pythonclean        Remove all the build artefacts and the downloaded python version"
 	@echo
 	@echo "Variables:"
+	@echo "USE_PYTHON3          ${USE_PYTHON3}"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
 	@echo "PYTHON_CMD:          ${PYTHON_CMD}"
 	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
@@ -683,3 +686,7 @@ cleanall: clean
 	rm -rf chsdi/static/js/blueimp-gallery.min.js
 	rm -rf chsdi/static/js/d3.min.js
 	rm -rf chsdi/static/js/d3-tip.js
+
+.PHONY: pythonclean
+pythonclean: cleanall
+	rm -rf local
