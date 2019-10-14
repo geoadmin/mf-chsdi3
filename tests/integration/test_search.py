@@ -607,7 +607,6 @@ class TestSearchServiceView(TestsBase):
             'searchText': 'parzelle'
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
-        self.assertGreater(len(resp.json['results']), 0)
         self.assertEqual(len(resp.json['results']), 0)
 
     def test_search_locations_with_bbox(self):
