@@ -175,7 +175,7 @@ help:
 	@echo
 	@echo "Variables:"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
-	@echo "PYTHON_CMD: i        ${PYTHON_CMD}"
+	@echo "PYTHON_CMD:          ${PYTHON_CMD}"
 	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
 	@echo "API_URL:             ${API_URL}"
 	@echo "WMSHOST:             ${WMSHOST}"
