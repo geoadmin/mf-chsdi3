@@ -1610,11 +1610,17 @@ msgstr "Trafic journalier moyen (TJM)"
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dwv"
 msgstr "Trafic journalier moyen des jours ouvrables (TJMO)"
 
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.indicator"
+msgstr "Indicateurs"
+
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.locationlv95"
 msgstr "Coordonnées MN95"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname"
 msgstr "Poste de comptage"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname_2"
+msgstr "Désignation"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr"
 msgstr "Numéro"
@@ -1624,6 +1630,9 @@ msgstr "Trafic horaire moyen des heures de pointe du matin de tous les jours"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mspw"
 msgstr "Trafic horaire moyen des heures de pointe du matin des jours ouvrables"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nn"
+msgstr "Moyenne annuelle du trafic motorisé horaire de nuit"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nt"
 msgstr "Moyenne annuelle du trafic motorisé horaire de jour"
@@ -5080,6 +5089,9 @@ msgstr "3G - UMTS / HSPA"
 
 msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
+
+msgid "ch.bakom.mobilnetz-5g"
+msgstr "5G - NR"
 
 msgid "ch.bakom.notruf"
 msgstr "Appels d'urgence par commune"
@@ -10330,6 +10342,33 @@ msgstr "Numéro de la feuille 1:50000"
 
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv"
+
+msgid "ch.swisstopo.rapidmapping"
+msgstr "Rapidmapping"
+
+msgid "ch.swisstopo.rapidmapping.abstract"
+msgstr "Info"
+
+msgid "ch.swisstopo.rapidmapping.acquisition_date"
+msgstr "Date de l’enregistrement"
+
+msgid "ch.swisstopo.rapidmapping.downloads"
+msgstr "downloads_fr"
+
+msgid "ch.swisstopo.rapidmapping.filename"
+msgstr "Nom du fichier"
+
+msgid "ch.swisstopo.rapidmapping.first_publication"
+msgstr "Première publication"
+
+msgid "ch.swisstopo.rapidmapping.link_to_data"
+msgstr "Index du contenu de l'événement"
+
+msgid "ch.swisstopo.rapidmapping.link_to_event"
+msgstr "link_to_event_fr"
+
+msgid "ch.swisstopo.rapidmapping.title"
+msgstr "Titre"
 
 msgid "ch.swisstopo.schneeschuhwandern"
 msgstr "Randonnées en raquettes"
