@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import six
 from functools import wraps
 import xml.parsers.expat
 import json
@@ -9,6 +10,10 @@ import pyramid.httpexceptions as exc
 import re
 
 from six.moves.urllib.parse import unquote_plus
+
+import logging
+
+log = logging.getLogger(__name__)
 
 
 EXPECTED_KML_CONTENT_TYPE = 'application/vnd.google-earth.kml+xml'
@@ -50,9 +55,18 @@ def validate_kml_input():
             if request.content_type != EXPECTED_KML_CONTENT_TYPE:
                 raise exc.HTTPUnsupportedMediaType('Only KML file are accepted')
             # IE9 sends data urlencoded
-            data = unquote_plus(request.body)
+
+            # Python2/3
+            if six.PY3:
+                quoted_str = request.body.decode('utf-8')
+            else:
+                quoted_str = request.body
+            data = unquote_plus(quoted_str)
+
             if len(data) > MAX_FILE_SIZE:
-                raise exc.HTTPRequestEntityTooLarge('File size exceed %s bytes' % MAX_FILE_SIZE)
+                error_msg = 'File size exceed %s bytes' % MAX_FILE_SIZE
+                log.error(error_msg)
+                raise exc.HTTPRequestEntityTooLarge(error_msg)
 
             # Prevent erroneous kml
             data = re.sub('(\s+on\w*=(\"[^\"]+\"|\'[^\']+\'))', ' ', data, flags = re.I | re.M)
@@ -62,8 +76,11 @@ def validate_kml_input():
                 p.Parse(data)
             except Exception:
                 raise exc.HTTPUnsupportedMediaType('Only valid KML file are accepted')
-
-            request.body = data
+            # Python2/3
+            if six.PY3:
+                request.body = data.encode('utf8')
+            else:
+                request.body = data
 
             return func(self, *args, **kwargs)
         return wrapper

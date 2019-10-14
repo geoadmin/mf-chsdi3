@@ -553,14 +553,21 @@ def get_loaderjs_url(request, version='3.6.0'):
 
 
 def gzip_string(string):
-    infile = StringIO()
+    # Python2/3
+    if six.PY2:
+        infile = StringIO()
+        data = string
+    else:
+        infile = BytesIO()
+        data = string.encode('utf8')
     try:
         gzip_file = gzip.GzipFile(fileobj=infile, mode='w', compresslevel=5)
-        gzip_file.write(string)
+        gzip_file.write(data)
         gzip_file.close()
         infile.seek(0)
         out = infile.getvalue()
-    except Exception:
+    except Exception as e:
+        log.error("Cannot gzip string: {}".format(e))
         out = None
     finally:
         infile.close()
