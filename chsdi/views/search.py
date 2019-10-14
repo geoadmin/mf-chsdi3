@@ -59,7 +59,8 @@ class Search(SearchValidation):
                  request_param='geometryFormat=geojson')
     def view_find_geojson(self):
         (features, bbox) = self._find_geojson()
-        return {"type": "FeatureCollection", "bbox": bbox.bounds, "features": features}
+        bounds = bbox.bounds if bbox is not None else None
+        return {"type": "FeatureCollection", "bbox": bounds, "features": features}
 
     @view_config(route_name='search', renderer='esrijson',
                  request_param='geometryFormat=esrijson')
