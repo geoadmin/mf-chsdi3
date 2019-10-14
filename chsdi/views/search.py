@@ -565,8 +565,10 @@ class Search(SearchValidation):
     def _translate_label(self, label):
         translation = re.search(r'.*(<i>[\s\S]*?<\/i>).*', label) or False
         if translation:
+            translated = self.request.translate(translation.group(1))
             label = label.replace(translation.group(1),
-                                  '<i>%s</i>' % str(self.request.translate(translation.group(1)).encode('utf-8')))
+                                  u'<i>{}</i>'.format(translated))
+
         return label
 
     def _get_quad_index(self):
