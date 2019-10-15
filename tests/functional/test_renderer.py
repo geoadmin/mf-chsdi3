@@ -28,7 +28,8 @@ class Test_EsriGeoJSON(unittest.TestCase):
         feature = json.loads(result)
         self.assertEqual(request.response.content_type, 'application/json')
         self.assertEqual(feature['attributes'], {"name": "toto"})
-        assert_almost_equal(feature['geometry'].values(), [200000.0, 600000.0], decimal=1)
+        # TODO
+        assert_almost_equal(list(feature['geometry'].values()), [600000.0, 200000.0], decimal=1)
 
     def test_jsonp(self):
         renderer = self._callFUT(jsonp_param_name="callback")
