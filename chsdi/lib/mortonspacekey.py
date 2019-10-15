@@ -175,6 +175,9 @@ class QuadTree:
 
     def _getCommonKey(self, keys):
         res = ''
+        # Python2/3
+        if not isinstance(keys, list):
+            keys = list(keys)
         for i in range(self.levels + 1):
             before = len(res)
             if not reduce(lambda has, k: (has and len(k) > i), keys, True):
