@@ -6746,6 +6746,27 @@ msgstr "Kleinwasserkraftpotentiale"
 msgid "ch.bfe.komo-projekte"
 msgstr "KOMO-Projekte"
 
+msgid "ch.bfe.komo-projekte.amount_sponsored"
+msgstr "KOMO Beitrag"
+
+msgid "ch.bfe.komo-projekte.description"
+msgstr "Projektbeschreibung"
+
+msgid "ch.bfe.komo-projekte.project_sponsor"
+msgstr "Projektträger"
+
+msgid "ch.bfe.komo-projekte.project_title"
+msgstr "Projektname"
+
+msgid "ch.bfe.komo-projekte.sponsor_type"
+msgstr "Trägertyp"
+
+msgid "ch.bfe.komo-projekte.status"
+msgstr "Projektstatus"
+
+msgid "ch.bfe.komo-projekte.topic"
+msgstr "Thema"
+
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Ladestationen für Elektroautos"
 
@@ -10201,6 +10222,15 @@ msgstr "swisstopo, Prv."
 
 msgid "ch.swisstopo.schneeschuhwanderland"
 msgstr "Schneeschuhwandern"
+
+msgid "ch.swisstopo.schneeschuhwanderland.attribut_c"
+msgstr "Route"
+
+msgid "ch.swisstopo.schneeschuhwanderland.attribut_d"
+msgstr "Nr."
+
+msgid "ch.swisstopo.schneeschuhwanderland.link"
+msgstr "Link"
 
 msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
@@ -15313,6 +15343,12 @@ msgstr "Häufigkeit (%)"
 
 msgid "tt_bfe_hinweis"
 msgstr "Hinweis zur Unsicherheit der Modellierung"
+
+msgid "tt_bfe_hinweis_text"
+msgstr "Die Angaben sind als grobe Einschätzung der Windverhältnisse zu verstehen. Bei Interesse an einer Standortentwicklung ist eine Messung vor Ort unumgänglich."
+
+msgid "tt_bfe_hinweis_wa"
+msgstr "Hinweis"
 
 msgid "tt_bfe_hoehe_gelaende"
 msgstr "Höhe Gelände"
