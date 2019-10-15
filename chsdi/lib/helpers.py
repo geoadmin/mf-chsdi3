@@ -7,6 +7,7 @@ import datetime
 import gzip
 import six
 from decimal import Decimal
+from past.utils import old_div
 
 try:
     from StringIO import StringIO
@@ -274,7 +275,7 @@ def format_query(model, value, lang):
         return res
 
     def merge_statements(values, operators):
-        if len(values) - 1 != len(operators):
+        if len(values) - 1 != ilen(operators):
             raise Exception
         iters = [iter(values), iter(operators)]
         full = list(it.next() for it in cycle(iters))
@@ -282,10 +283,9 @@ def format_query(model, value, lang):
         return u" ".join(full)
 
     try:
-
         w = WhereParser(value)
         values = w.tokens
-        if len(values) == 0:
+        if ilen(values) == 0:
             return None
         # TODO: what does really do?
         # values = map(escapeSQL, values)
@@ -296,7 +296,8 @@ def format_query(model, value, lang):
         raise HTTPBadRequest(qpe.message)
     except HTTPBadRequest:
         raise Exception
-    except Exception:
+    except Exception as e:
+        log.error("Unkown error while parsing where/layerDefs: {}".format(e))
         return None
     return where
 
@@ -460,7 +461,11 @@ def float_raise_nan(val):
 
 def parse_box2d(stringBox2D):
     extent = stringBox2D.replace('BOX(', '').replace(')', '').replace(',', ' ')
-    return map(float, extent.split(' '))
+    # Python2/3
+    box = map(float, extent.split(' '))
+    if not isinstance(box, list):
+        box = list(box)
+    return box
 
 
 def is_box2d(box2D):
@@ -526,10 +531,15 @@ def parse_date_datenstand(dateDatenstand):
 
 
 def format_scale(scale):
+    """Format the scale denominator inserting the thousand separator (')
+
+       Example:  50000  gives 1:50'000
+    """
     scale_str = str(scale)
     n = ''
     while len(scale_str) > 3:
-        scale_prov = int(scale_str) / 1000
+        # Python2/3
+        scale_prov = old_div(int(float(scale_str)), 1000)
         n = n + "'000"
         scale_str = str(scale_prov)
     scale = "1:" + scale_str + n
