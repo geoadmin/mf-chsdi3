@@ -189,8 +189,7 @@ class QuadTree:
         return res
 
     def _single_points_all(self, bbox):
-        return self._getCommonKey(map(lambda i: self.xy_to_morton(bbox.pointAt(i).x, bbox.pointAt(i).y),
-                                      range(4)))
+        return self._getCommonKey([self.xy_to_morton(bbox.pointAt(i).x, bbox.pointAt(i).y) for i in range(4)])
 
     def _single_points_dia1(self, bbox):
         return self._getCommonKey([self.xy_to_morton(bbox.pointAt(0).x,
@@ -205,7 +204,7 @@ class QuadTree:
                                                      bbox.pointAt(3).y)])
 
     def _multi_points_all(self, bbox):
-        return self.points_to_morton(map(lambda i: bbox.pointAt(i), range(4)))
+        return self.points_to_morton([bbox.pointAt(i) for i in range(4)])
 
     def _multi_points_dia1(self, bbox):
         return self.points_to_morton([bbox.pointAt(0), bbox.pointAt(2)])
