@@ -196,8 +196,9 @@ help:
 user:
 	source $(USER_SOURCE) && make all
 
+# TODO: deactivated rss
 .PHONY: all
-all: setup chsdi/static/css/extended.min.css templates potomo rss lint fixrights
+all: setup chsdi/static/css/extended.min.css templates potomo lint fixrights
 
 setup: .venv node_modules .venv/hooks
 
