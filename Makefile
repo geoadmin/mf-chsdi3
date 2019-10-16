@@ -78,7 +78,7 @@ LAST_WSGI_THREADS := $(call lastvalue,wsgi-threads)
 LAST_WSGI_APP := $(call lastvalue,wsgi-app)
 LAST_KML_TEMP_DIR := $(call lastvalue,kml-temp-dir)
 
-PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -type f -name "*.py" -print)
+PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
 
 # Commands
