@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
+from past.utils import old_div
 import os
+
+
 
 from pyramid.paster import get_app
 
@@ -27,4 +30,8 @@ class TodProxyTestsBase(object):
 
     def hash(self, bits=96):
         assert bits % 8 == 0
-        return os.urandom(bits / 8).encode('hex')
+        try:
+            hexstr = os.urandom(old_div(bits ,8)).hex()
+        except AttributeError:
+            hexstr = os.urandom(old_div(bits ,8)).encode('hex')
+        return hexstr

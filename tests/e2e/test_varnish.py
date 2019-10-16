@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from past.utils import old_div
+
 import os
 import requests
 import time
@@ -16,7 +18,11 @@ class TestVarnish(TestsBase):
 
     def hash(self, bits=96):
         assert bits % 8 == 0
-        return os.urandom(bits / 8).encode('hex')
+        try:
+            hexstr = os.urandom(old_div(bits ,8)).hex()
+        except AttributeError:
+            hexstr = os.urandom(old_div(bits ,8)).encode('hex')
+        return hexstr
 
     def timestamp(self):
         return int(round(time.time() * 1000.0))

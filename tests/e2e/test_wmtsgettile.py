@@ -65,7 +65,10 @@ class TileChecker(TodProxyTestsBase):
         assert checkcode, url
 
     def itiles(self, epsg=21781):
-        from urlparse import urlparse, urlunparse
+        try:
+            from urllib.parse import urlparse, urlunparse
+        except ImportError:
+            from urlparse import urlparse, urlunparse
         import xml.etree.ElementTree as etree
 
         tiles = {3857: [(16, 34243, 23004)],

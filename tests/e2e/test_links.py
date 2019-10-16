@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import requests
-from urlparse import urlparse
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
 
 
 from tests.integration import TestsBase

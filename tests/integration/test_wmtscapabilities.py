@@ -31,7 +31,7 @@ class TestWmtsCapabilitiesView(TestsBase):
 
     def test_validate_wmtscapabilities(self):
         import os
-        from StringIO import StringIO
+        from six import StringIO
         from lxml import etree
         file_name = 'wmts.xsd'
         current_dir = os.getcwd()
@@ -117,7 +117,10 @@ class TestWmtsCapabilitiesView(TestsBase):
                 assert topleft.text == '-20037508.3428 20037508.3428'
 
     def test_axis_order(self):
-        from urlparse import urlparse
+        try:
+            from urllib.parse import urlparse
+        except ImportError:
+            from urlparse import urlparse
         import xml.etree.ElementTree as etree
 
         for epsg in EPSGS:

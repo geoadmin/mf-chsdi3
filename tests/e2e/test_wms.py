@@ -2,7 +2,10 @@
 
 import urllib
 import requests
-from urlparse import urlparse, urlunsplit
+try:
+    from urllib.parse import urlparse,urlunsplit
+except ImportError:
+    from urlparse import urlparse, urlunsplit
 
 from pyramid.paster import get_app
 
