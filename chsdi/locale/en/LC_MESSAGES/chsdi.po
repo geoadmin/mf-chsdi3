@@ -10223,13 +10223,13 @@ msgstr "swisstopo, prv."
 msgid "ch.swisstopo.schneeschuhwandern"
 msgstr "Schneeschuhwandern"
 
-msgid "ch.swisstopo.schneeschuhwanderland.attribut_c"
+msgid "ch.swisstopo.schneeschuhwandern.attribut_c"
 msgstr "Route"
 
-msgid "ch.swisstopo.schneeschuhwanderland.attribut_d"
+msgid "ch.swisstopo.schneeschuhwandern.attribut_d"
 msgstr "Nr."
 
-msgid "ch.swisstopo.schneeschuhwanderland.link"
+msgid "ch.swisstopo.schneeschuhwandern.link"
 msgstr "Link"
 
 msgid "ch.swisstopo.scnat"
