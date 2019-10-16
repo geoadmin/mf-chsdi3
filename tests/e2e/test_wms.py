@@ -3,7 +3,7 @@
 import urllib
 import requests
 try:
-    from urllib.parse import urlparse,urlunsplit
+    from urllib.parse import urlparse, urlunsplit
 except ImportError:
     from urlparse import urlparse, urlunsplit
 

@@ -19,9 +19,9 @@ class TestVarnish(TestsBase):
     def hash(self, bits=96):
         assert bits % 8 == 0
         try:
-            hexstr = os.urandom(old_div(bits ,8)).hex()
+            hexstr = os.urandom(old_div(bits, 8)).hex()
         except AttributeError:
-            hexstr = os.urandom(old_div(bits ,8)).encode('hex')
+            hexstr = os.urandom(old_div(bits, 8)).encode('hex')
         return hexstr
 
     def timestamp(self):
