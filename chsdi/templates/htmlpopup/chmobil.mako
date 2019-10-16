@@ -5,7 +5,7 @@
 <%
     lang = lang if lang in ('de','fr','it','en') else 'de'
     url = None
-    if c['layerBodId'] == 'ch.swisstopo.schneeschuhwanderland':
+    if c['layerBodId'] == 'ch.swisstopo.schneeschuhwandern':
         url = 'http://www.schweizmobil.ch/%s/schneeschuhwandern' % (lang)
     if c['layerBodId'] == 'ch.swisstopo.mountainbikeland':
         url = 'http://www.mountainbikeland.ch/%s' % (lang)

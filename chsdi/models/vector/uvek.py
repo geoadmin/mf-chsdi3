@@ -3284,7 +3284,7 @@ class ChmobilSchneeschuhWanderland (Base, Vector):
     __tablename__ = 'chmobil_schneeschuhwanderland'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/chmobil.mako'
-    __bodId__ = 'ch.swisstopo.schneeschuhwanderland'
+    __bodId__ = 'ch.swisstopo.schneeschuhwandern'
     __label__ = 'chmobil_title'
     id = Column('full_number', Unicode, primary_key=True)
     chmobil_title = Column('title', Unicode)
@@ -3292,7 +3292,7 @@ class ChmobilSchneeschuhWanderland (Base, Vector):
     chmobil_has_segment = Column('has_segment', Boolean)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.schneeschuhwanderland', ChmobilSchneeschuhWanderland)
+register('ch.swisstopo.schneeschuhwandern', ChmobilSchneeschuhWanderland)
 
 
 class FlugplaetzeHeliports(Base, Vector):

@@ -10220,7 +10220,7 @@ msgstr "Numéro de la feuille 1:50000"
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv"
 
-msgid "ch.swisstopo.schneeschuhwanderland"
+msgid "ch.swisstopo.schneeschuhwandern"
 msgstr "Randonnées en raquettes"
 
 msgid "ch.swisstopo.schneeschuhwanderland.attribut_c"
