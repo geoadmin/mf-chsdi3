@@ -2,15 +2,17 @@
 
 import os.path
 
+import six
 from PIL import Image
 from pyramid.httpexceptions import HTTPBadRequest
 from pyramid.view import view_config
 from pyramid.response import Response
 
+# Python2/3
 try:
-    from StringIO import StringIO
+    from io import BytesIO
 except ImportError:
-    from io import StringIO
+    from StringIO import StringIO
 
 
 class ColorService:
@@ -42,7 +44,10 @@ class ColorService:
         if mask.mode == 'P':
             mask = mask.convert('RGBA')
         img = Image.composite(Image.new("RGB", mask.size, (r, g, b)), mask, mask)
-        output = StringIO()
+        if six.PY3:
+            output = BytesIO()
+        else:
+            output = StringIO()
         img.save(output, format='PNG')
         response = Response(output.getvalue(), content_type='image/png')
         return response
