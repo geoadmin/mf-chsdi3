@@ -9,9 +9,9 @@ from pyramid.view import view_config
 from pyramid.response import Response
 
 # Python2/3
-try:
+if six.PY3:
     from io import BytesIO
-except ImportError:
+else:
     from StringIO import StringIO
 
 
