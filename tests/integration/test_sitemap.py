@@ -6,6 +6,7 @@ import tempfile
 import os
 import time
 from tests.integration import TestsBase
+from chsdi.lib.helpers import to_utf8
 
 
 def _validate_scheme(scheme, body):
@@ -57,32 +58,35 @@ class TestSitemapView(TestsBase):
     def test_index_file(self):
         resp = self.testapp.get('/sitemap?content=index', status=200)
         resp.content_type == 'application/xml'
+        body = to_utf8(resp.body)
         # contains all links
         for urlbase in self.sitemaps_with_urls:
             resp.mustcontain('/sitemap?content=base')
         # does not contain
         for urlbase in self.sitemaps_notin_index:
-            self.assertNotIn('/sitemap?content=' + urlbase, resp.body)
+            self.assertNotIn('/sitemap?content=' + urlbase, body)
 
         # contains correct domain
-        self.assertIn(self.testapp.app.registry.settings.get('host'), resp.body)
+        self.assertIn(self.testapp.app.registry.settings.get('host'), body)
         # validate scheme
-        self.assertEqual(0, _validate_scheme('siteindex.xsd', resp.body))
+        self.assertEqual(0, _validate_scheme('siteindex.xsd', body))
 
     def test_base_file(self):
         resp = self.testapp.get('/sitemap?content=base', status=200)
         resp.content_type == 'application/xml'
+        body = to_utf8(resp.body)
         # contains all languages
         for lang in ['de', 'fr', 'it', 'rm', 'en']:
             resp.mustcontain('lang=' + lang)
         # contains correct domain
-        self.assertTrue(self.testapp.app.registry.settings.get('geoadminhost') in resp.body)
+        self.assertTrue(self.testapp.app.registry.settings.get('geoadminhost') in body)
         # validate scheme
-        self.assertEqual(0, _validate_scheme('sitemap.xsd', resp.body))
+        self.assertEqual(0, _validate_scheme('sitemap.xsd', body))
 
     def test_topics_file(self):
         resp = self.testapp.get('/sitemap?content=topics', status=200)
         resp.content_type == 'application/xml'
+        body = to_utf8(resp.body)
         # contains all languages
         for lang in ['de', 'fr', 'it', 'rm', 'en']:
             resp.mustcontain('lang=' + lang)
@@ -90,26 +94,27 @@ class TestSitemapView(TestsBase):
         for topic in ['blw', 'ech', 'swisstopo', 'luftbilder', 'inspire']:
             resp.mustcontain('topic=' + topic)
         # contains correct domain
-        self.assertTrue(self.testapp.app.registry.settings.get('geoadminhost') in resp.body)
+        self.assertTrue(self.testapp.app.registry.settings.get('geoadminhost') in body)
         # validate scheme
-        self.assertEqual(0, _validate_scheme('sitemap.xsd', resp.body))
+        self.assertEqual(0, _validate_scheme('sitemap.xsd', body))
 
     def test_layers_file(self):
         resp = self.testapp.get('/sitemap?content=layers', status=200)
         resp.content_type == 'application/xml'
+        body = to_utf8(resp.body)
         # contains all languages
         for lang in ['de', 'fr', 'it', 'rm', 'en']:
-            resp.mustcontain('lang=' + lang)
+            self.assertTrue('lang=' + lang in body)
         # test for some topics
         for topic in ['blw', 'ech', 'swisstopo', 'luftbilder', 'inspire']:
-            resp.mustcontain('topic=' + topic)
+            self.assertTrue('topic=' + topic in body)
         # test for some layers
         for layer in ['ch.blw.bodeneignung-kulturtyp', 'ch.bafu.laerm-strassenlaerm_tag', 'ch.swisstopo-vd.spannungsarme-gebiete']:
-            resp.mustcontain('layers=' + layer)
+            self.assertTrue('layers=' + layer in body)
         # contains correct domain
-        self.assertTrue(self.testapp.app.registry.settings.get('geoadminhost') in resp.body)
+        self.assertTrue(self.testapp.app.registry.settings.get('geoadminhost') in body)
         # validate scheme
-        self.assertEqual(0, _validate_scheme('sitemap.xsd', resp.body))
+        self.assertEqual(0, _validate_scheme('sitemap.xsd', body))
 
     def test_bad_multi_files(self):
         # multipart (after _) must be integer
@@ -122,27 +127,29 @@ class TestSitemapView(TestsBase):
     def test_addresses_index_file(self):
         resp = self.testapp.get('/sitemap?content=addresses', status=200)
         resp.content_type == 'application/xml'
+        body = to_utf8(resp.body)
         # shouldn't contain too big (this might theoretically fail if address db grew)
-        self.assertNotIn('/sitemap?content=addresses_500', resp.body)
+        self.assertNotIn('/sitemap?content=addresses_500', body)
         # check for first link
         resp.mustcontain('/sitemap?content=addresses_0')
         # check for last link (this might change depending on size of db
         resp.mustcontain('/sitemap?content=addresses_387')
         # contains correct domain
-        self.assertIn(self.testapp.app.registry.settings.get('host'), resp.body)
+        self.assertIn(self.testapp.app.registry.settings.get('host'), body)
         # validate scheme
-        self.assertEqual(0, _validate_scheme('siteindex.xsd', resp.body))
+        self.assertEqual(0, _validate_scheme('siteindex.xsd', body))
 
     def test_addresses_file(self):
         resp = self.testapp.get('/sitemap?content=addresses_387', status=200)
         resp = self.testapp.get('/sitemap?content=addresses_0', status=200)
         resp.content_type == 'application/xml'
+        body = to_utf8(resp.body)
         # some checks on content
         resp.mustcontain('ch.bfs.gebaeude_wohnungs_register=')
         resp.mustcontain('X=')
         resp.mustcontain('Y=')
         resp.mustcontain('zoom=')
         # contains correct domain
-        self.assertTrue(self.testapp.app.registry.settings.get('geoadminhost') in resp.body)
+        self.assertTrue(self.testapp.app.registry.settings.get('geoadminhost') in body)
         # validate scheme
-        self.assertEqual(0, _validate_scheme('sitemap.xsd', resp.body))
+        self.assertEqual(0, _validate_scheme('sitemap.xsd', body))
