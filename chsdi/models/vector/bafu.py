@@ -2060,14 +2060,12 @@ class Wrzselect(Base, Vector):
     url_kanton = Column('url_kanton', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.wrz-jagdbanngebiete_select', Wrzselect)
-
 
 class WrzselectWege(Base, Vector):
     __tablename__ = 'jgd_select_wege'
     __table_args__ = ({'schema': 'wrzportal', 'autoload': True})
     __bodId__ = 'ch.bafu.wrz-jagdbanngebiete_select'
-    __template__ = 'templates/htmlpopup/wrz_select_wege.mako'
+    __template__ = 'templates/htmlpopup/wrz_wege.mako'
     __label__ = 'weg_id'
     id = Column('bgdi_id', Integer, primary_key=True)
     weg_id = Column('weg_id', Integer)
@@ -2078,6 +2076,7 @@ class WrzselectWege(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.wrz-jagdbanngebiete_select', WrzselectWege)
+register('ch.bafu.wrz-jagdbanngebiete_select', Wrzselect)
 
 
 class Wrzportal(Base, Vector):
@@ -2104,14 +2103,12 @@ class Wrzportal(Base, Vector):
     url_kanton = Column('url_kanton', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.wrz-wildruhezonen_portal', Wrzportal)
-
 
 class WrzportalWege(Base, Vector):
     __tablename__ = 'wrz_portal_wege'
     __table_args__ = ({'schema': 'wrzportal', 'autoload': False})
     __bodId__ = 'ch.bafu.wrz-wildruhezonen_portal'
-    __template__ = 'templates/htmlpopup/wrz_portal_wege.mako'
+    __template__ = 'templates/htmlpopup/wrz_wege.mako'
     __label__ = 'weg_id'
     id = Column('bgdi_id', Integer, primary_key=True)
     weg_id = Column('weg_id', Integer)
@@ -2121,7 +2118,9 @@ class WrzportalWege(Base, Vector):
     einschraenkungen = Column('einschraenkungen', Unicode)
     the_geom = Column(Geometry2D)
 
+
 register('ch.bafu.wrz-wildruhezonen_portal', WrzportalWege)
+register('ch.bafu.wrz-wildruhezonen_portal', Wrzportal)
 
 
 class Wildtier(Base, Vector):

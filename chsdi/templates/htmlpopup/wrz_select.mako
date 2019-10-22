@@ -16,6 +16,8 @@
     <tr><td class="cell-left">${_('ch.bafu.wrz-jagdbanngebiete_select.kanton')}</td>             <td>${c['attributes']['kanton'] or '-'}</td></tr>
     % if c['attributes']['url_kanton'] and c['attributes'] :
     <tr><td class="cell-left">${_('ch.bafu.wrz-jagdbanngebiete_select.ref_kanton')}</td><td><a href="${c['attributes']['url_kanton']}" target="_blank">Link</a></td></tr>
+    % else:
+    <tr><td class="cell-left">${_('ch.bafu.wrz-jagdbanngebiete_select.ref_kanton')}</td><td>-</td></tr>
     % endif
 </%def>
 
