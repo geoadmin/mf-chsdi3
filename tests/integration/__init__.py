@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 from unittest import TestCase
 from pyramid import testing
 from webtest import TestApp
@@ -46,7 +47,9 @@ class TestsBase(TestCase):
 
     def setUp(self):
         from pyramid.paster import get_app
-        app = get_app('development.ini')
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        inifile = os.path.realpath(os.path.join(dir_path, '../..', 'development.ini'))
+        app = get_app(inifile)
         self.testapp = TestApp(app)
         self.grids = {
             '21781': getTileGrid(21781),
