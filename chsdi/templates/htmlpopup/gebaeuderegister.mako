@@ -19,7 +19,7 @@
   pdf_url = ' https://www.housing-stat.ch/regbl/resources/public/geb_public/%s?lang=%s' % (c['attributes']['egid'], lang)
 %>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.egid')}</td>       <td>${c['attributes']['egid'] or '-'}</td></tr>
-    % if c['attributes']['strname1'] <> '':
+    % if c['attributes']['strname1'] != '':
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.strname1')} ${_('ch.bfs.gebaeude_wohnungs_register.deinr')}</td>    <td>${c['attributes'][street_key] or '-'} ${c['attributes']['deinr'] or ''}</td></tr>
     % else:
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.strname1')} ${_('ch.bfs.gebaeude_wohnungs_register.deinr')}</td>    <td>${c['attributes']['deinr'] or '-'}</td></tr>

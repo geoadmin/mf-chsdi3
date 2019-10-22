@@ -52,10 +52,10 @@
 % if pdf:
     <td>
       ${_('ivs_nat_strecke')}: <a href="https://${dataGeoAdminHost}/${dataPath}/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
-      % if PDF_Level_2_exist <> '00':
+      % if PDF_Level_2_exist != '00':
         ${_('ivs_nat_linienfuehrung')}: <a href="//${dataGeoAdminHost}/${dataPath}/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2_Name}</a><br />
       % endif
-      % if PDF_Level_3_exist <> '00':
+      % if PDF_Level_3_exist != '00':
         ${_('ivs_nat_abschnitt')}: <a href="//${dataGeoAdminHost}/${dataPath}/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3_Name}</a><br />
       % endif
     </td></tr>

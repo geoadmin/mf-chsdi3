@@ -102,7 +102,7 @@ class TestSitemapView(TestsBase):
         resp = self.testapp.get('/sitemap?content=layers', status=200)
         resp.content_type == 'application/xml'
         body = to_utf8(resp.body)
-        # contains all languages
+        # contains all languages TODO: python3 only 'de'
         for lang in ['de', 'fr', 'it', 'rm', 'en']:
             self.assertTrue('lang=' + lang in body)
         # test for some topics
