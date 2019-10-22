@@ -15345,7 +15345,7 @@ msgid "tt_bfe_hinweis"
 msgstr "Hinweis zur Unsicherheit der Modellierung"
 
 msgid "tt_bfe_hinweis_text"
-msgstr "Die Angaben sind als grobe Einschätzung der Windverhältnisse zu verstehen. Bei Interesse an einer Standortentwicklung ist eine Messung vor Ort unumgänglich."
+msgstr "Diese Daten sind nicht für die Beurteilung eines Standorts geeignet. Dafür sind Windmessungen notwendig."
 
 msgid "tt_bfe_hinweis_wa"
 msgstr "Hinweis"

@@ -15345,7 +15345,7 @@ msgid "tt_bfe_hinweis"
 msgstr "Note concerning the uncertainty of modelling"
 
 msgid "tt_bfe_hinweis_text"
-msgstr "The data have to be regarded as rough estimates of the wind conditions. To assess the wind conditions at a specific location, measurement on site is therefore essential."
+msgstr "These data do not qualify for the assessment of a wind energy site. For this purpose a wind measurement is required."
 
 msgid "tt_bfe_hinweis_wa"
 msgstr "Please Note"

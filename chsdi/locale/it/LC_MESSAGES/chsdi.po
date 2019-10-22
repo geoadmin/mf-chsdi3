@@ -15345,7 +15345,7 @@ msgid "tt_bfe_hinweis"
 msgstr "Nota sull’incertezza della modellazione"
 
 msgid "tt_bfe_hinweis_text"
-msgstr "I valori forniti sono da ritenersi una stima approssimativa delle condizioni di vento, pertanto qualora vi sia l'interesse a sviluppare un progetto in una determinata ubicazione non si può prescindere da misurazioni in loco."
+msgstr "Questi dati non sono appropriati per la valutazione di un’ubicazione. Per una valutazione sono necessarie delle misurazioni del vento."
 
 msgid "tt_bfe_hinweis_wa"
 msgstr "Avvertimento"
