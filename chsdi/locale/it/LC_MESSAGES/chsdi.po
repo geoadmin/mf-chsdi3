@@ -6746,6 +6746,27 @@ msgstr "Potenz. piccole centr. idraul."
 msgid "ch.bfe.komo-projekte"
 msgstr "Progetti sostenuti dal COMO"
 
+msgid "ch.bfe.komo-projekte.amount_sponsored"
+msgstr "Contributo dal COMO"
+
+msgid "ch.bfe.komo-projekte.description"
+msgstr "Descrizione del progetto"
+
+msgid "ch.bfe.komo-projekte.project_sponsor"
+msgstr "Responsabile di progetto"
+
+msgid "ch.bfe.komo-projekte.project_title"
+msgstr "Nome del progetto"
+
+msgid "ch.bfe.komo-projekte.sponsor_type"
+msgstr "Tipo di ente responsabile"
+
+msgid "ch.bfe.komo-projekte.status"
+msgstr "Stato del progetto"
+
+msgid "ch.bfe.komo-projekte.topic"
+msgstr "Tema"
+
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Stazioni di ricarica auto elettriche"
 
@@ -10201,6 +10222,15 @@ msgstr "swisstopo, prv."
 
 msgid "ch.swisstopo.schneeschuhwanderland"
 msgstr "Randonnées en raquettes"
+
+msgid "ch.swisstopo.schneeschuhwanderland.attribut_c"
+msgstr "Percorsi"
+
+msgid "ch.swisstopo.schneeschuhwanderland.attribut_d"
+msgstr "No."
+
+msgid "ch.swisstopo.schneeschuhwanderland.link"
+msgstr "Link"
 
 msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"

@@ -6746,6 +6746,27 @@ msgstr "Potentiel petite hydraulique"
 msgid "ch.bfe.komo-projekte"
 msgstr "Projets COMO"
 
+msgid "ch.bfe.komo-projekte.amount_sponsored"
+msgstr "Contribution COMO"
+
+msgid "ch.bfe.komo-projekte.description"
+msgstr "Description du projet"
+
+msgid "ch.bfe.komo-projekte.project_sponsor"
+msgstr "Porteur du projet"
+
+msgid "ch.bfe.komo-projekte.project_title"
+msgstr "Nom du projet"
+
+msgid "ch.bfe.komo-projekte.sponsor_type"
+msgstr "Type de porteur"
+
+msgid "ch.bfe.komo-projekte.status"
+msgstr "Statut du projet"
+
+msgid "ch.bfe.komo-projekte.topic"
+msgstr "Thème du projet"
+
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Stations pour voitures électriques"
 
@@ -10201,6 +10222,15 @@ msgstr "swisstopo, prv"
 
 msgid "ch.swisstopo.schneeschuhwanderland"
 msgstr "Randonnées en raquettes"
+
+msgid "ch.swisstopo.schneeschuhwanderland.attribut_c"
+msgstr "Itinéraires"
+
+msgid "ch.swisstopo.schneeschuhwanderland.attribut_d"
+msgstr "N°"
+
+msgid "ch.swisstopo.schneeschuhwanderland.link"
+msgstr "Lien"
 
 msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
