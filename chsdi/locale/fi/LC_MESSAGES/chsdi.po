@@ -1592,6 +1592,69 @@ msgstr "Zählstelle"
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet"
 msgstr "Dumbraziun traffic - surordinà"
 
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.asp"
+msgstr "Durchschnittlicher Abendspitzenstundenverkehr aller Tage"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.aspw"
+msgstr "Durchschnittlicher Abendspitzenstundenverkehr an Werktagen"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.canton"
+msgstr "Kanton"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.de_networktype"
+msgstr "Netztyp im Sachplan"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dtv"
+msgstr "Durchschnittlicher täglicher Verkehr (DTV)"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dwv"
+msgstr "Durchschnittlicher Werktags-Verkehr (DWV)"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.locationlv95"
+msgstr "Landeskoordinaten lV95"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname"
+msgstr "Messstelle"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr"
+msgstr "Nummer"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.msp"
+msgstr "Durchschnittlicher Morgenspitzenstundenverkehr aller Tage"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mspw"
+msgstr "Durchschnittlicher Morgenspitzenstundenverkehr an Werktagen"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nt"
+msgstr "Durchschnittlicher stündlicher Motorfahrzeugverkehr in der Nacht"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.numberoflanes1"
+msgstr "Anzahl Streifen in Fahrtrichtung 1"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.numberoflanes2"
+msgstr "Anzahl Streifen in Fahrtrichtung 2"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytraffic"
+msgstr "Anteil Schwerverkehr [%]"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytrafficday"
+msgstr "Anteil Schwerverkehr am Tag [%]"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytrafficnight"
+msgstr "Anteil des Schwerverkehrs in der Nach [%]"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.streetdesignation"
+msgstr "Strassenname"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.targetlocation1"
+msgstr "Zielort in Fahrtrichtung 1"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.targetlocation2"
+msgstr "Zielort in Fahrtrichtung 2"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.year"
+msgstr "Jahr"
+
 msgid "ch.astra.unfaelle-personenschaeden_alle"
 msgstr "Accidents cun donns da persunas"
 
@@ -2497,6 +2560,42 @@ msgstr "Teilgebiet"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag"
 msgstr "Erosionsrisiko Dauergrünland"
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_apr"
+msgstr "Erosionsrisiko Dauergrünland Apr."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_aug"
+msgstr "Erosionsrisiko Dauergrünland Aug."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_dez"
+msgstr "Erosionsrisiko Dauergrünland Dez."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_feb"
+msgstr "Erosionsrisiko Dauergrünland Feb."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_jan"
+msgstr "Erosionsrisiko Dauergrünland Jan."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_jul"
+msgstr "Erosionsrisiko Dauergrünland Juli"
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_jun"
+msgstr "Erosionsrisiko Dauergrünland Juni"
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_mai"
+msgstr "Erosionsrisiko Dauergrünland Mai"
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_mrz"
+msgstr "Erosionsrisiko Dauergrünland Mär."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_nov"
+msgstr "Erosionsrisiko Dauergrünland Nov."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_okt"
+msgstr "Erosionsrisiko Dauergrünland Okt."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_sep"
+msgstr "Erosionsrisiko Dauergrünland Sep."
 
 msgid "ch.bafu.eua"
 msgstr "BAFU / EUA"
@@ -4838,6 +4937,9 @@ msgstr "Jagdbanngebiet"
 msgid "ch.bafu.wrz-jagdbanngebiete_select.kanton"
 msgstr "Kanton"
 
+msgid "ch.bafu.wrz-jagdbanngebiete_select.ref_kanton"
+msgstr "Online-Informationen"
+
 msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_de"
 msgstr "Objektnummer"
 
@@ -4856,8 +4958,14 @@ msgstr "Zonas da paus per la selvaschina"
 msgid "ch.bafu.wrz-wildruhezonen_portal.beschlussjahr"
 msgstr "Beschlussjahr"
 
+msgid "ch.bafu.wrz-wildruhezonen_portal.einschraenkung"
+msgstr "Einschränkung"
+
 msgid "ch.bafu.wrz-wildruhezonen_portal.kanton"
 msgstr "Kanton"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.ref_kanton"
+msgstr "Online-Informationen"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_de"
 msgstr "Objektnummer"
@@ -4867,6 +4975,9 @@ msgstr "Objektnummer"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_it"
 msgstr "Objektnummer"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.typ"
+msgstr "Routentyp"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal.wrz_name"
 msgstr "Wildruhezone"
@@ -10116,7 +10227,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "Charta naziunala 1:50'000 | CN50"
 
 msgid "ch.swisstopo.pixelkarte-farbe-winter"
-msgstr "Charta naz. enviern | CN25, CN50"
+msgstr "Charta naz. enviern | LK10, LK25, LK50, LK100"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Charta naziunala (grisch)"
@@ -10220,16 +10331,16 @@ msgstr "Kartenblattnummer 1:50000"
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv."
 
-msgid "ch.swisstopo.schneeschuhwanderland"
+msgid "ch.swisstopo.schneeschuhwandern"
 msgstr "Schneeschuhwandern"
 
-msgid "ch.swisstopo.schneeschuhwanderland.attribut_c"
+msgid "ch.swisstopo.schneeschuhwandern.attribut_c"
 msgstr "Route"
 
-msgid "ch.swisstopo.schneeschuhwanderland.attribut_d"
+msgid "ch.swisstopo.schneeschuhwandern.attribut_d"
 msgstr "Nr."
 
-msgid "ch.swisstopo.schneeschuhwanderland.link"
+msgid "ch.swisstopo.schneeschuhwandern.link"
 msgstr "Link"
 
 msgid "ch.swisstopo.scnat"
@@ -15345,7 +15456,7 @@ msgid "tt_bfe_hinweis"
 msgstr "Hinweis zur Unsicherheit der Modellierung"
 
 msgid "tt_bfe_hinweis_text"
-msgstr "Diese Daten sind nicht für die Beurteilung eines Standorts geeignet. Dafür sind Windmessungen notwendig."
+msgstr "Die Angaben sind als grobe Einschätzung der Windverhältnisse zu verstehen. Bei Interesse an einer Standortentwicklung ist eine Messung vor Ort unumgänglich."
 
 msgid "tt_bfe_hinweis_wa"
 msgstr "Hinweis"
