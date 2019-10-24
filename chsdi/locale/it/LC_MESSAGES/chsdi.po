@@ -1610,11 +1610,17 @@ msgstr "Traffico giornaliero medio (TGM)"
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dwv"
 msgstr "Traffico giornaliero medio dei giorni lavorativi (TGML)"
 
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.indicator"
+msgstr "Indicatori"
+
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.locationlv95"
 msgstr "Coordinate MN95"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname"
 msgstr "Stazione di conteggio"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname_2"
+msgstr "Designazione"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr"
 msgstr "Numero"
@@ -1624,6 +1630,9 @@ msgstr "Traffico orario medio delle ore di punta della mattina per tutti i giorn
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mspw"
 msgstr "Traffico orario medio delle ore di punta della mattina per i giorni lavorativi"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nn"
+msgstr "Media annuale del traffico motorizzato orario di notte"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nt"
 msgstr "Media annuale del traffico motorizzato orario di giorno"

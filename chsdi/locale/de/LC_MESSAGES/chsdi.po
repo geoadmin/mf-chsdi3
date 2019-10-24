@@ -1610,11 +1610,17 @@ msgstr "Durchschnittlicher täglicher Verkehr (DTV)"
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dwv"
 msgstr "Durchschnittlicher Werktags-Verkehr (DWV)"
 
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.indicator"
+msgstr "Kennzahlen"
+
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.locationlv95"
 msgstr "Landeskoordinaten LV95"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname"
 msgstr "Messstelle"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname_2"
+msgstr "Bezeichnung"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr"
 msgstr "Nummer"
@@ -1624,6 +1630,9 @@ msgstr "Durchschnittlicher Morgenspitzenstundenverkehr aller Tage"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mspw"
 msgstr "Durchschnittlicher Morgenspitzenstundenverkehr an Werktagen"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nn"
+msgstr "Durchschnittlicher stündlicher Motorfahrzeugverkehr in der Nacht"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nt"
 msgstr "Durchschnittlicher stündlicher Motorfahrzeugverkehr am Tag"
@@ -1641,7 +1650,7 @@ msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytrafficday"
 msgstr "Anteil Schwerverkehr am Tag [%]"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytrafficnight"
-msgstr "Anteil des Schwerverkehrs in der Nach [%]"
+msgstr "Anteil des Schwerverkehrs in der Nacht [%]"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.streetdesignation"
 msgstr "Strassenname"

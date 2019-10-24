@@ -327,6 +327,46 @@ class Zaehstellenueber(Base, Vector):
 register('ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet', Zaehstellenueber)
 
 
+class Zaehlstellenuebergeordnet(Base, Vector):
+    __tablename__ = 'strassenverkehrszaehlung_uebergeordnet'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/verkehrszaehlung_uebergeordnet.mako'
+    __bodId__ = 'ch.astra.strassenverkehrszaehlung-uebergeordnet'
+    __queryable_attributes__ = ['mlocname']
+    __extended_info__ = True
+    __label__ = 'mlocname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    mlocname = Column('mlocname', Unicode)
+    mlocnr = Column('mlocnr', Unicode)
+    canton = Column('canton', Unicode)
+    streetdesignation = Column('streetdesignation', Unicode)
+    targetlocation1 = Column('targetlocation1', Unicode)
+    targetlocation2 = Column('targetlocation2', Unicode)
+    numberoflanes1 = Column('numberoflanes1', Integer)
+    numberoflanes2 = Column('numberoflanes2', Integer)
+    locationlv95 = Column('locationlv95', Unicode)
+    de_networktype = Column('de_networktype', Unicode)
+    fr_networktype = Column('fr_networktype', Unicode)
+    it_networktype = Column('it_networktype', Unicode)
+    en_networktype = Column('en_networktype', Unicode)
+    rm_networktype = Column('rm_networktype', Unicode)
+    year = Column('year', Integer)
+    dtv = Column('dtv', Integer)
+    dwv = Column('dwv', Integer)
+    msp = Column('msp', Integer)
+    asp = Column('asp', Integer)
+    mspw = Column('mspw', Integer)
+    aspw = Column('aspw', Integer)
+    nt = Column('nt', Integer)
+    nn = Column('nn', Integer)
+    prctheavytraffic = Column('prctheavytraffic', Float)
+    prctheavytrafficday = Column('prctheavytrafficday', Float)
+    prctheavytrafficnight = Column('prctheavytrafficnight', Float)
+    the_geom = Column(Geometry2D)
+
+register('ch.astra.strassenverkehrszaehlung-uebergeordnet', Zaehlstellenuebergeordnet)
+
+
 class Unf:
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/astra_unfaelle.mako'

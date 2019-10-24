@@ -1610,11 +1610,17 @@ msgstr "Trafic journalier moyen (TJM)"
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dwv"
 msgstr "Trafic journalier moyen des jours ouvrables (TJMO)"
 
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.indicator"
+msgstr "Indicateurs"
+
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.locationlv95"
 msgstr "Coordonnées MN95"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname"
 msgstr "Poste de comptage"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname_2"
+msgstr "Désignation"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr"
 msgstr "Numéro"
@@ -1624,6 +1630,9 @@ msgstr "Trafic horaire moyen des heures de pointe du matin de tous les jours"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mspw"
 msgstr "Trafic horaire moyen des heures de pointe du matin des jours ouvrables"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nn"
+msgstr "Moyenne annuelle du trafic motorisé horaire de nuit"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nt"
 msgstr "Moyenne annuelle du trafic motorisé horaire de jour"

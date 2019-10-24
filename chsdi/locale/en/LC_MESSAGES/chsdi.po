@@ -1610,11 +1610,17 @@ msgstr "Annual average daily traffic (ADT)"
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dwv"
 msgstr "Annual average weekday traffic (AAWT)"
 
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.indicator"
+msgstr "Indicators"
+
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.locationlv95"
 msgstr "Coordinates LV95"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname"
 msgstr "Measurement location"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname_2"
+msgstr "Bezeichnung"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr"
 msgstr "Number"
@@ -1624,6 +1630,9 @@ msgstr "Average morning peak hour traffic all days"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mspw"
 msgstr "Average morning peak hour traffic on weekdays"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nn"
+msgstr "Average hourly motorized traffic during the night"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nt"
 msgstr "Average hourly motorized traffic during the day"
