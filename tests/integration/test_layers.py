@@ -5,6 +5,7 @@ import six
 from webtest import TestApp
 from webtest.app import AppError
 from unittest import skip
+from tests.integration import TestsBase
 from pyramid_mako import MakoRenderingException
 from PIL import Image
 from contextlib import contextmanager
@@ -21,6 +22,14 @@ from chsdi.models.grid import get_grid_spec
 
 if six.PY3:
     long = int
+
+
+class TestLayerService(TestsBase):
+    def test_one(self):
+        layer = 'ch.bafu.ren-wald'
+        for lang in ('de', 'fr', 'it', 'rm', 'en'):
+            link = '/rest/services/all/MapServer/' + layer + '/legend?callback=cb_&lang=' + lang
+            self.testapp.get(link, status=200)
 
 
 class LayersChecker(object):
@@ -181,18 +190,6 @@ class LayersChecker(object):
                 pythonType, type(featureId), layerId, schema + '.' + model.__tablename__)
 
 
-def test_all_htmlpopups():
-    with LayersChecker() as lc:
-        for layer, feature, extended in lc.ilayersWithFeatures():
-            yield lc.checkHtmlPopup, layer, feature, extended
-
-
-def test_all_legends():
-    with LayersChecker() as lc:
-        for layer in lc.ilayers(hasLegend=True):
-            yield lc.checkLegend, layer
-
-
 def test_all_identify():
     with LayersChecker() as lc:
         for layer in lc.ilayers(tooltip=True, geojson=False):
@@ -222,3 +219,15 @@ def test_all_searchable_layers():
     with LayersChecker() as lc:
         for layer in lc.ilayers(searchable=True):
             yield lc.checkSearch, layer
+
+
+def test_all_htmlpopups():
+    with LayersChecker() as lc:
+        for layer, feature, extended in lc.ilayersWithFeatures():
+            yield lc.checkHtmlPopup, layer, feature, extended
+
+
+def test_all_legends():
+    with LayersChecker() as lc:
+        for layer in lc.ilayers(hasLegend=True):
+            yield lc.checkLegend, layer

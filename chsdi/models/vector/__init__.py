@@ -105,6 +105,8 @@ class Vector(object):
         return id, geom, properties, bbox
 
     def transform_shape(self, geom, srid_to, rounding=True):
+        if geom is None:
+            return geom
         return transform_round_geometry(geom, self.srid, srid_to, rounding=rounding)
 
     @property
