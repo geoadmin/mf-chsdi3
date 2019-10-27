@@ -14,8 +14,8 @@ try:
 except ImportError:
     from io import StringIO, BytesIO
 
-from six.moves import zip, reduce
-from itertools import cycle
+from six.moves import zip, reduce, zip_longest
+from itertools import chain
 
 from functools import partial
 from pyramid.threadlocal import get_current_registry
@@ -232,6 +232,8 @@ def format_query(model, value, lang):
         Supported operators on numerical or date values are "=, !=, >=, <=, > and <"
         Supported operators for text are "ilike and not ilike"
     '''
+    where = None
+
     def escapeSQL(value):
         if u'ilike' in value:
             match = re.search(r'([\w]+\s)(ilike|not ilike)(\s\'%)([\s\S]*)(%\')', value)
@@ -274,26 +276,36 @@ def format_query(model, value, lang):
             res.append(val)
         return res
 
-    def merge_statements(values, operators):
-        if len(values) - 1 != ilen(operators):
+    def merge_statements(statements, operators):
+        ''' Given values=["toto >1', "'tutu' like 'tata%'"] and operators=["AND" ]
+            return "toto >1' AND 'tutu' like 'tata%'"
+        '''
+        if len(statements) - 1 != ilen(operators):
             raise Exception
-        iters = [iter(values), iter(operators)]
-        full = list(it.next() for it in cycle(iters))
 
-        return u" ".join(full)
+        # iters = [iter(statements), iter(operators)]
+        # full = list(it.next() for it in cycle(iters))
+
+        full = [x for x in chain.from_iterable(zip_longest(statements, operators))
+            if x is not None]
+
+        return unicode(" ".join(full))
 
     try:
         w = WhereParser(value)
-        values = w.tokens
-        if ilen(values) == 0:
+        tokens = list(w.tokens)
+        if ilen(tokens) == 0:
             return None
         # TODO: what does really do?
         # values = map(escapeSQL, values)
-        values = replacePropByColumnName(model, values, lang)
-        operators = w.operators
+        values = replacePropByColumnName(model, tokens, lang)
+
+        operators = list(w.operators)
+
         where = merge_statements(values, operators)
+
     except QueryParseException as qpe:
-        raise HTTPBadRequest(qpe.message)
+        raise HTTPBadRequest("Failed to parse where/layersDef: {}".format(qpe))
     except HTTPBadRequest:
         raise Exception
     except Exception as e:
