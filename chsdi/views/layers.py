@@ -167,8 +167,9 @@ def faqlist(request):
 
     query = params.request.db.query(LayersConfig)
     for layer in get_layers_config_for_params(params, query, LayersConfig):
-        k = layer.keys().pop()
-        lyr = layer.values().pop()
+        # Python2/3
+        k = list(layer.keys()).pop()
+        lyr = list(layer.values()).pop()
         if 'parentLayerId' not in lyr and not k.endswith('_3d'):
             if k not in translations:
                 translations[k] = request.translate(k)
