@@ -43,6 +43,13 @@ GL_STYLE_JSON = json.dumps(GL_STYLE)
 INVALID_JSON = 'toto_est_pas_beau'
 
 
+# Python2/3
+def to_utf8(data):
+    if isinstance(data, bytes):
+        return data.decode('utf-8')
+    return data
+
+
 class TestGLStylesView(TestsBase):
 
     def setUp(self):
@@ -107,7 +114,7 @@ class TestGLStylesView(TestsBase):
 
         # get file
         resp = self.testapp.get('/gl-styles/%s' % file_id, headers=self.headers, status=200)
-        orig_data = resp.body
+        orig_data = to_utf8(resp.body)
         self.assertEqual(orig_data, GL_STYLE_JSON)
 
         # update with file_id, should copy
@@ -118,14 +125,14 @@ class TestGLStylesView(TestsBase):
         resp = self.testapp.post('/gl-styles/%s' % file_id, new_content, headers=self.headers, status=200)
         new_admin_id = resp.json['adminId']
         new_file_id = resp.json['fileId']
-        modified_content = resp.body
+        modified_content = to_utf8(resp.body)
 
         self.assertNotEqual(admin_id, new_admin_id)
         self.assertNotEqual(file_id, new_file_id)
 
         # re-get first file
         resp = self.testapp.get('/gl-styles/%s' % file_id, headers=self.headers, status=200)
-        new_content = resp.body
+        new_content = to_utf8(resp.body)
 
         self.assertEqual(new_content, GL_STYLE_JSON)
         self.assertNotEqual(new_content, modified_content)
