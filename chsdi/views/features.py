@@ -30,6 +30,9 @@ from chsdi.models.vector import get_scale, get_resolution, has_buffer
 from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
 
+import logging
+log = logging.getLogger(__name__)
+
 
 MAX_FEATURES = 201
 
@@ -314,7 +317,9 @@ def _identify_db(params, layerBodIds):
             # Note: in order not to expose too much details about internal
             # db structure, we only return the title of the error and not details
             # about table names and the like
-            raise exc.HTTPBadRequest('Your request generated the following database error: %s' % e.message.replace('\n', ''))
+            # Python2/3
+            log.error(f"Database error while reading features: {e}")
+            raise exc.HTTPBadRequest('Your request generated a database errori while reading features')
         except StopIteration:
             break
         else:
