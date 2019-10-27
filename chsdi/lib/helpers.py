@@ -569,7 +569,10 @@ def gzip_string(string):
         data = string
     else:
         infile = BytesIO()
-        data = string.encode('utf8')
+        try:
+            data = string.encode('utf8')
+        except (UnicodeDecodeError, AttributeError):
+            data = string
     try:
         gzip_file = gzip.GzipFile(fileobj=infile, mode='w', compresslevel=5)
         gzip_file.write(data)
