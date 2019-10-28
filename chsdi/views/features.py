@@ -318,8 +318,8 @@ def _identify_db(params, layerBodIds):
             # db structure, we only return the title of the error and not details
             # about table names and the like
             # Python2/3
-            log.error(f"Database error while reading features: {e}")
-            raise exc.HTTPBadRequest('Your request generated a database errori while reading features')
+            log.error("Database error while reading features: {}".format(e))
+            raise exc.HTTPBadRequest('Your request generated a database errorwhile reading features')
         except StopIteration:
             break
         else:
