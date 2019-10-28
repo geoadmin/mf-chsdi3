@@ -40,6 +40,9 @@ def get_resolution(imageDisplay, mapExtent):
 
 
 def get_scale(imageDisplay, mapExtent):
+    # TODO: Python2/3
+    if not isinstance(imageDisplay, list):
+        imageDisplay = list(imageDisplay)
     resolution = get_resolution(imageDisplay, mapExtent)
     return resolution * 39.37 * imageDisplay[2]
 
