@@ -233,6 +233,7 @@ class TestSearchServiceView(TestsBase):
             }
             resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
             self.assertEqual(resp.content_type, 'application/json')
+            self.assertGreater(len(list(resp.json['results'])), 0)
             self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
 
     def test_search_locations_prefix_sentence_match(self):
@@ -269,11 +270,13 @@ class TestSearchServiceView(TestsBase):
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertGreater(len(list(resp.json['results'])), 0)
         self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'lausanne vd')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
         params['sr'] = '2056'
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertGreater(len(list(resp.json['results'])), 0)
         self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'lausanne vd')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056)
 
@@ -284,6 +287,7 @@ class TestSearchServiceView(TestsBase):
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertGreater(len(list(resp.json['results'])), 0)
         self.assertEqual(resp.json['results'][0]['attrs']['detail'][:3], 'wil')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
         params['sr'] = '2056'
@@ -336,6 +340,7 @@ class TestSearchServiceView(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         results_addresses = filter(lambda x: x if x['attrs']['origin'] == 'address' else False, resp.json['results'])
         self.assertLessEqual(ilen(results_addresses), 50)
+        self.assertGreater(len(list(resp.json['results'])), 0)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
 
     def test_search_locations_no_geometry(self):
@@ -346,6 +351,7 @@ class TestSearchServiceView(TestsBase):
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertGreater(len(list(resp.json['results'])), 0)
         self.assertTrue('geom_st_box2d' not in resp.json['results'][0]['attrs'].keys())
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781, returnGeometry=False)
 
@@ -358,6 +364,7 @@ class TestSearchServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/api/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertEqual('FeatureCollection', resp.json['type'])
+        self.assertGreater(len(list(resp.json['features'])), 0)
         self.assertGeojsonFeature(resp.json['features'][0], 21781, hasGeometry=True, hasLayer=False)
         self.assertAttrs('locations', resp.json['features'][0]['properties'], 21781)
         self.assertIn('wabern', str(resp.json['features']).lower())
@@ -412,6 +419,7 @@ class TestSearchServiceView(TestsBase):
             'sr': '2056'
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
+        self.assertGreater(len(list(resp.json['results'])), 0)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056)
         params = {
             'type': 'locations',
@@ -533,6 +541,7 @@ class TestSearchServiceView(TestsBase):
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertGreater(len(list(resp.json['results'])), 0)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
 
     def test_search_locations_escape_charachters(self):
@@ -551,6 +560,7 @@ class TestSearchServiceView(TestsBase):
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
+        self.assertGreater(len(list(resp.json['results'])), 0)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
 
     def test_search_locations_one_origin(self):
