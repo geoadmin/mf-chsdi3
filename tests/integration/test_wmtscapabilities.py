@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from numpy.testing import assert_almost_equal
 from tests.integration import TestsBase
 
 EPSGS = [21781, 4326, 2056, 3857]
@@ -31,19 +32,31 @@ class TestWmtsCapabilitiesView(TestsBase):
 
     def test_validate_wmtscapabilities(self):
         import os
-        from six import StringIO
+        import six
+        from six import StringIO, BytesIO
         from lxml import etree
         file_name = 'wmts.xsd'
         current_dir = os.getcwd()
         schema_dir = os.path.join(os.path.dirname(__file__), 'wmts/1.0.1/')
 
+        if six.PY3:
+            InputIO = BytesIO
+        else:
+            InputIO = StringIO
+
         def isValidSchema(resp, f_wmts):
-            f_wmts = etree.parse(StringIO(resp.body))
+            f_wmts = etree.parse(InputIO(resp.body))
             self.assertTrue(xml_schema.validate(f_wmts) is True)
 
         with open(schema_dir + file_name) as file_xml_schema:
             os.chdir(schema_dir)
-            xml_schema_doc = etree.parse(StringIO(file_xml_schema.read()))
+            if six.PY3:
+                data = file_xml_schema.read().encode('utf8')
+            else:
+                data = file_xml_schema.read()
+            raw_schema = InputIO(data)
+
+            xml_schema_doc = etree.parse(raw_schema)
             xml_schema = etree.XMLSchema(xml_schema_doc)
             for lang in ['de', 'fr', 'it', 'en']:
                 for epsg in [4326, 2056, 3857, 21781]:
@@ -51,7 +64,7 @@ class TestWmtsCapabilitiesView(TestsBase):
                         '/rest/services/api/1.0.0/WMTSCapabilities.xml',
                         params={'lang': lang, 'epsg': epsg},
                         status=200)
-                    isValidSchema(resp, etree.parse(StringIO(resp.body)))
+                    isValidSchema(resp, etree.parse(InputIO(resp.body)))
         os.chdir(current_dir)
 
     def test_gettile_wmtscapabilities(self):
@@ -90,8 +103,8 @@ class TestWmtsCapabilitiesView(TestsBase):
                     self.assertEqual(float(left), 2420000)
                     self.assertEqual(float(right), 1350000)
                 else:
-                    self.assertEqual(float(left), -20037508.3428)
-                    self.assertEqual(float(right), 20037508.3428)
+                    assert_almost_equal(float(left), -20037508.3428, decimal=2)
+                    assert_almost_equal(float(right), 20037508.3428, decimal=2)
 
             tilematrixsets_ids = root.findall(
                 './/{http://www.opengis.net/wmts/1.0}TileMatrixSet/{http://www.opengis.net/ows/1.1}Identifier')
@@ -114,7 +127,9 @@ class TestWmtsCapabilitiesView(TestsBase):
             id = tilematrix.find('./{http://www.opengis.net/ows/1.1}Identifier')
             if id.text == '0':
                 topleft = tilematrix.find('./{http://www.opengis.net/wmts/1.0}TopLeftCorner')
-                assert topleft.text == '-20037508.3428 20037508.3428'
+                coords = topleft.text.split(' ')
+                assert_almost_equal(float(coords[0]), -20037508.3428, decimal=4)
+                assert_almost_equal(float(coords[1]), 20037508.3428, decimal=4)
 
     def test_axis_order(self):
         try:
