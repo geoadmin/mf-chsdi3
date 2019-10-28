@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import urllib
+
 import requests
 try:
-    from urllib.parse import urlparse, urlunsplit
+    from urllib.parse import urlparse, urlunsplit, urlencode
 except ImportError:
     from urlparse import urlparse, urlunsplit
+    from urllib import urlencode
 
 from pyramid.paster import get_app
 
@@ -54,7 +55,7 @@ def build_wms_request(cfg):
                'SERVICE': 'WMS'
                }
 
-    return base_url + '?' + urllib.urlencode(payload), scheme
+    return base_url + '?' + urlencode(payload), scheme
 
 
 def check_status_code(url, scheme):
