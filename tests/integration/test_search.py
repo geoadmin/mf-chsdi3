@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from tests.integration import TestsBase, shift_to_lv95
-from chsdi.lib.helpers import parse_box2d
+from chsdi.lib.helpers import parse_box2d, ilen
 
 
 class TestSearchServiceView(TestsBase):
@@ -335,7 +335,7 @@ class TestSearchServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         results_addresses = filter(lambda x: x if x['attrs']['origin'] == 'address' else False, resp.json['results'])
-        self.assertLessEqual(len(results_addresses), 50)
+        self.assertLessEqual(ilen(results_addresses), 50)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
 
     def test_search_locations_no_geometry(self):

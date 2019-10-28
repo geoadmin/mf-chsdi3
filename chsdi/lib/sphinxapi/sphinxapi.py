@@ -463,7 +463,8 @@ class SphinxClient:
 
         self._groupby = attribute
         self._groupfunc = func
-        self._groupsort = groupsort
+        # Python2/3
+        self._groupsort = str_bytes(groupsort)
 
     def SetGroupDistinct(self, attribute):
         assert(isinstance(attribute,(str,text_type)))
@@ -509,7 +510,8 @@ class SphinxClient:
         """
         self._groupby = ''
         self._groupfunc = SPH_GROUPBY_DAY
-        self._groupsort = '@group desc'
+        # Python2/3
+        self._groupsort = str_bytes('@group desc')
         self._groupdistinct = ''
 
     def Query(self, query, index='*', comment=''):
@@ -592,6 +594,8 @@ class SphinxClient:
         req.extend ( pack ( '>2L', self._groupfunc, len(self._groupby) ) )
         req.extend ( self._groupby )
         req.extend ( pack ( '>2L', self._maxmatches, len(self._groupsort) ) )
+        # TODO Python2/3
+        # _groupsort is a str
         req.extend ( self._groupsort )
         req.extend ( pack ( '>LLL', self._cutoff, self._retrycount, self._retrydelay))
         req.extend ( pack ( '>L', len(self._groupdistinct)))
@@ -985,6 +989,9 @@ class SphinxClient:
         if mva:
             mva_attr = 1
         for attr in attrs:
+            # TODO Python2/3
+            if six.PY3:
+                attr = attr.encode('utf8')
             req.append(pack('>L', len(attr)) + attr)
             req.append(pack('>L', mva_attr))
 
