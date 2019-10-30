@@ -130,7 +130,10 @@ class LayersConfig(Base):
         elif config['type'] == 'geojson':
             # TODO Remove me
             if self.layerBodId.startswith('ch.meteo'):
-                config['styleUrl'] = '//data.geo.admin.ch/%s/testing/%s.json' % (self.layerBodId, self.layerBodId)
+                # config['styleUrl'] = '//data.geo.admin.ch/%s/testing/%s.json' % (self.layerBodId, self.layerBodId)
+                api_url = params.request.registry.settings['api_url']
+                config['styleUrl'] = make_agnostic(
+                    api_url + '/static/vectorStyles/' + self.layerBodId + '.json')
                 config['geojsonUrl'] = self._getTestingGeoJsonUrl(params.lang)
             else:
                 api_url = params.request.registry.settings['api_url']
@@ -506,3 +509,16 @@ class CacheUpdate(Base):
     id = Column('layer_id', Unicode, primary_key=True)
     cache_type = Column('cache_type', Unicode)
     cache_modified = Column('cache_modified', DateTime)
+
+
+class Translations(Base):
+    __dbname__ = 'bod'
+    __tablename__ = 'translations'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    msgId = Column('msg_id', Unicode, primary_key=True)
+    id = Column('bgdi_id', Integer)
+    de = Column('de', Unicode)
+    fr = Column('fr', Unicode)
+    it = Column('it', Unicode)
+    rm = Column('rm', Unicode)
+    en = Column('en', Unicode)
