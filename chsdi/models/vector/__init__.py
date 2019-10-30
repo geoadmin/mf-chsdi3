@@ -20,7 +20,7 @@ Geometry2D = GeometryChsdi(geometry_type='GEOMETRY', dimension=2, srid=2056)
 Geometry3D = GeometryChsdi(geometry_type='GEOMETRYZ', dimension=3, srid=2056)
 
 
-MAX_FEATURE_GEOMETRY_SIZE = 1e6
+MAX_FEATURE_GEOMETRY_SIZE = 3e6
 
 DEFAULT_OUPUT_SRID = 21781
 
