@@ -1575,7 +1575,7 @@ msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.zaehlstellen
 msgstr "Zählstelle"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"
-msgstr "Zählstellen (übergeordnet)"
+msgstr "Dumbraziun traffic (surordinà)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet.id"
 msgstr "Nummer"

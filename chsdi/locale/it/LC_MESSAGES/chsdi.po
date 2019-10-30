@@ -1560,7 +1560,7 @@ msgid "ch.astra.skatingland"
 msgstr "La Svizzera in skating"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
-msgstr "Stazioni di conteggio (principale)"
+msgstr "Stazioni di conteggio (regionale)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.id"
 msgstr "Numero"

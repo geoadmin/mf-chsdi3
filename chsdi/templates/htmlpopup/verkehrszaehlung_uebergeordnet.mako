@@ -32,6 +32,10 @@
       <td>${c['attributes']['mlocnr'] or '-'}</td>     
     </tr>
     <tr>
+      <td class="cell-meta">${_('ch.astra.strassenverkehrszaehlung-uebergeordnet.canton')}</td>
+      <td>${c['attributes']['canton'] or '-'}</td>     
+    </tr>
+    <tr>
       <td class="cell-meta">${_('ch.astra.strassenverkehrszaehlung-uebergeordnet.streetdesignation')}</td>
       <td>${c['attributes']['streetdesignation'] or '-'}</td>     
     </tr>
@@ -74,7 +78,11 @@
     <tr>
       <td class="cell-meta">${_('ch.astra.strassenverkehrszaehlung-uebergeordnet.dtv')}</td>
       <td>${c['attributes']['dtv'] or '-'}</td>  
-    </tr>       
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.astra.strassenverkehrszaehlung-uebergeordnet.dwv')}</td>
+      <td>${c['attributes']['dwv'] or '-'}</td>     
+    </tr>
     <tr>
       <td class="cell-meta">${_('ch.astra.strassenverkehrszaehlung-uebergeordnet.msp')}</td>
       <td>${c['attributes']['msp'] or '-'}</td>  

@@ -1560,7 +1560,7 @@ msgid "ch.astra.skatingland"
 msgstr "Skating in Switzerland"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
-msgstr "Traffic census (general)"
+msgstr "Traffic census (regional)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.id"
 msgstr "Number"
@@ -1620,7 +1620,7 @@ msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname"
 msgstr "Measurement location"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname_2"
-msgstr "Bezeichnung"
+msgstr "Designation"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr"
 msgstr "Number"
