@@ -87,7 +87,7 @@ class Vector(object):
                         geom = self._shape
                     elif val is not None and \
                             (len(val.data) < MAX_FEATURE_GEOMETRY_SIZE or
-                            'shop_product.mako' in self.__template__):
+                            self.__ignore_max_feature_geometry_size__):
                         geom = to_shape(val)
                     try:
                         bbox = geom.bounds
