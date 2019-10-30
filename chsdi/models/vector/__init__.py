@@ -86,7 +86,8 @@ class Vector(object):
                             len(self._shape) < MAX_FEATURE_GEOMETRY_SIZE:
                         geom = self._shape
                     elif val is not None and \
-                            len(val.data) < MAX_FEATURE_GEOMETRY_SIZE:
+                            (len(val.data) < MAX_FEATURE_GEOMETRY_SIZE or
+                            'shop_product.mako' in self.__template__):
                         geom = to_shape(val)
                     try:
                         bbox = geom.bounds
@@ -96,7 +97,6 @@ class Vector(object):
                       and not isinstance(col.type, GeometryChsdi)):
                     properties[p.key] = val
         properties = self.insert_label(properties)
-
         return id, geom, properties, bbox
 
     def transform_shape(self, geom, srid_to, rounding=True):
