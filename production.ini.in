@@ -58,7 +58,7 @@ public_bucket_host = ${public_bucket_host}
 vector_bucket = ${vector_bucket}
 datageoadminhost = ${datageoadminhost}
 opentrans_api_key = ${opentrans_api_key}
-empty_geotables = ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung,ch.bfe.sachplan-uebertragungsleitungen_anhoerung,ch.blw.emapis-bewaesserung,ch.blw.emapis-elektrizitaetsversorgung,ch.blw.emapis-milchleitung,ch.blw.emapis-seilbahnen,ch.vbs.sachplan-infrastruktur-militaer_anhoerung,ch.sem.sachplan-asyl_anhoerung,ch.astra.sachplan-infrastruktur-strasse_anhoerung,ch.bav.sachplan-infrastruktur-schiene_anhorung
+empty_geotables = ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung,ch.bfe.sachplan-uebertragungsleitungen_anhoerung,ch.blw.emapis-bewaesserung,ch.blw.emapis-elektrizitaetsversorgung,ch.blw.emapis-milchleitung,ch.blw.emapis-seilbahnen,ch.vbs.sachplan-infrastruktur-militaer_anhoerung,ch.sem.sachplan-asyl_anhoerung,ch.astra.sachplan-infrastruktur-strasse_anhoerung,ch.bav.sachplan-infrastruktur-schiene_anhorung,ch.swisstopo.rapidmapping
 max_featureids_request = 20
 
 shortener.allowed_hosts = ${shortener_allowed_hosts}
