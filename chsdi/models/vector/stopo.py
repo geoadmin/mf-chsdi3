@@ -3278,3 +3278,26 @@ class AktuelleErdbeben(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.gefahren-aktuelle_erdbeben', AktuelleErdbeben)
+
+
+class RapidMappingVector(Base, Vector):
+    __tablename__ = 'view_rapidmapping'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __template__ = 'templates/htmlpopup/rapidmapping.mako'
+    __bodId__ = 'ch.swisstopo.rapidmapping'
+    __returnedGeometry__ = 'the_geom_highlight'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    title = Column('title', Unicode)
+    abstract = Column('abstract', Unicode)
+    first_publication = Column('first_publication', DateTimeChsdi)
+    acquisition_date = Column('acquisition_date', DateTimeChsdi)
+    link_to_data = Column('link_to_data', Unicode)
+    link_to_event = Column('link_to_event', Unicode)
+    filename = Column('filename', Unicode)
+    download_img = Column('download_img', Unicode)
+    download_tfw = Column('download_tfw', Unicode)
+    download_ovr = Column('download_ovr', Unicode)
+    the_geom = Column(Geometry2D)
+    the_geom_highlight = Column('the_geom_highlight', Geometry2D)
+
+register('ch.swisstopo.rapidmapping', RapidMappingVector)
