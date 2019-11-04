@@ -3,6 +3,7 @@
 from sqlalchemy import Column
 
 from sqlalchemy.types import Numeric, Boolean, Integer, Float, Unicode
+from sqlalchemy.dialects import postgresql
 
 from chsdi.models import register, register_perimeter, bases
 from chsdi.models.types import DateTimeChsdi
@@ -3297,6 +3298,7 @@ class RapidMappingVector(Base, Vector):
     download_img = Column('download_img', Unicode)
     download_tfw = Column('download_tfw', Unicode)
     download_ovr = Column('download_ovr', Unicode)
+    link_to_viewer = Column('link_to_viewer', postgresql.ARRAY(Unicode))
     the_geom = Column(Geometry2D)
     the_geom_highlight = Column('the_geom_highlight', Geometry2D)
 

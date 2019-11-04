@@ -15,6 +15,13 @@
             <a href="${c['attributes']['link_to_event']}" target="_blank">Link</a>
         </td>
     </tr>
+    <tr><td class="cell-left">${_('ch.swisstopo.rapidmapping.link_to_viewer')}</td>
+        <td>
+% for link in c['attributes']['link_to_viewer']:
+            <a href="${link}" target="_blank">Link</a>
+% endfor
+        </td>
+    </tr>
     <tr>
         <td class="cell-left">${_('ch.swisstopo.rapidmapping.downloads')}</td>
         <td>
