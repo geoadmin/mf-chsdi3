@@ -17,9 +17,7 @@
     </tr>
     <tr><td class="cell-left">${_('ch.swisstopo.rapidmapping.link_to_viewer')}</td>
         <td>
-% for link in c['attributes']['link_to_viewer']:
-            <a href="${link}" target="_blank">Link</a>
-% endfor
+            ${' | '.join('<a href="%s" target="_blank">Link</a>' % link for link in c['attributes']['link_to_viewer']) | n}
         </td>
     </tr>
     <tr>
