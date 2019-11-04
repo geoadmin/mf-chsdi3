@@ -10655,17 +10655,8 @@ msgstr "Info"
 msgid "ch.swisstopo.rapidmapping.acquisition_date"
 msgstr "Aufnahmedatum"
 
-msgid "ch.swisstopo.rapidmapping.download"
-msgstr "Direkter Download"
-
-msgid "ch.swisstopo.rapidmapping.download_img"
-msgstr "Direkter Download .tif"
-
-msgid "ch.swisstopo.rapidmapping.download_ovr"
-msgstr "Direkter Download .ovr"
-
-msgid "ch.swisstopo.rapidmapping.download_tfw"
-msgstr "Direkter Download .tfw"
+msgid "ch.swisstopo.rapidmapping.downloads"
+msgstr "downloads_de"
 
 msgid "ch.swisstopo.rapidmapping.filename"
 msgstr "Dateiname"
@@ -10677,11 +10668,7 @@ msgid "ch.swisstopo.rapidmapping.link_to_data"
 msgstr "Index des Events Inhalte"
 
 msgid "ch.swisstopo.rapidmapping.link_to_event"
-<<<<<<< HEAD
 msgstr "Link zur Eventbeschreibung"
-=======
-msgstr "Link zum Event"
->>>>>>> update translation
 
 msgid "ch.swisstopo.rapidmapping.title"
 msgstr "Titel"

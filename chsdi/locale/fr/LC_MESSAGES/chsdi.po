@@ -10655,17 +10655,8 @@ msgstr "Info"
 msgid "ch.swisstopo.rapidmapping.acquisition_date"
 msgstr "Date de l’enregistrement"
 
-msgid "ch.swisstopo.rapidmapping.download"
-msgstr "Download direct"
-
-msgid "ch.swisstopo.rapidmapping.download_img"
-msgstr "Download direct .tif"
-
-msgid "ch.swisstopo.rapidmapping.download_ovr"
-msgstr "Download direct .ovr"
-
-msgid "ch.swisstopo.rapidmapping.download_tfw"
-msgstr "Download direct .tfw"
+msgid "ch.swisstopo.rapidmapping.downloads"
+msgstr "downloads_fr"
 
 msgid "ch.swisstopo.rapidmapping.filename"
 msgstr "Nom du fichier"
