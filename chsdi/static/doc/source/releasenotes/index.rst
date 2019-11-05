@@ -14,7 +14,56 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
-.. _releasenotes_20190924:
+.. _releasenotes_20191113:
+
+Release 20191113 - Wednesday, November 13th 2019
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_191023...r_191113>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_191023...r191113>`__
+
+
+Geodata
+*******
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Jan. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_jan>`__ (ch.bafu.erosion-gruenland_bodenabtrag_jan)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Feb. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_feb>`__ (ch.bafu.erosion-gruenland_bodenabtrag_feb)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Mrz. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_mrz>`__ (ch.bafu.erosion-gruenland_bodenabtrag_mrz)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Apr. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_apr>`__ (ch.bafu.erosion-gruenland_bodenabtrag_apr)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Mai <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_mai>`__ (ch.bafu.erosion-gruenland_bodenabtrag_mai)                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Jun. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_jun>`__ (ch.bafu.erosion-gruenland_bodenabtrag_jun)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Jul. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_jul>`__ (ch.bafu.erosion-gruenland_bodenabtrag_jul)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Aug. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_aug>`__ (ch.bafu.erosion-gruenland_bodenabtrag_aug)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Sep. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_sep>`__ (ch.bafu.erosion-gruenland_bodenabtrag_sep)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Okt. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_okt>`__ (ch.bafu.erosion-gruenland_bodenabtrag_okt)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Nov. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_nov>`__ (ch.bafu.erosion-gruenland_bodenabtrag_nov)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Dez. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_dez>`__ (ch.bafu.erosion-gruenland_bodenabtrag_dez)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+.. _releasenotes_20191023:
 
 Release 20191023 - Wednesday, October 23th 2019
 -------------------------------------------------
