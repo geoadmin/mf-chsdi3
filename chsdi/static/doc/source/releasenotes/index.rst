@@ -61,6 +61,20 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Erosion risk permanent grassland Dez. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_dez>`__ (ch.bafu.erosion-gruenland_bodenabtrag_dez)                               |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Fresh snow, 2 days <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-neuschnee-2d>`__ (ch.meteoschweiz.messwerte-neuschnee-2d)                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Fresh snow, 3 days <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-neuschnee-3d >`__ (ch.meteoschweiz.messwerte-neuschnee-3d)                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Precipitation, 24h total <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-niederschlag-24h>`__ (ch.meteoschweiz.messwerte-niederschlag-24h)                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Precipitation, 48h total <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-niederschlag-48h>`__ (ch.meteoschweiz.messwerte-niederschlag-48h)                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Precipitation, 72h total <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-niederschlag-72h>`__ (ch.meteoschweiz.messwerte-niederschlag-72h)                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind gust 1 s, max. 6 h <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-6h>`__ (ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-6h)                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Pressure change, 3 h <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-luftdruck-differenz-3h>`__ (ch.meteoschweiz.messwerte-luftdruck-differenz-3h)                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                 |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
