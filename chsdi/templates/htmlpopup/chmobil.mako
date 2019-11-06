@@ -7,13 +7,13 @@
     url = None
     if c['layerBodId'] == 'ch.swisstopo.schneeschuhwandern':
         url = 'http://www.schweizmobil.ch/%s/schneeschuhwandern' % (lang)
-    if c['layerBodId'] == 'ch.swisstopo.mountainbikeland':
+    if c['layerBodId'] == 'ch.astra.mountainbikeland':
         url = 'http://www.mountainbikeland.ch/%s' % (lang)
-    if c['layerBodId'] == 'ch.swisstopo.wanderland':
+    if c['layerBodId'] == 'ch.astra.wanderland':
         url = 'http://www.wanderland.ch/%s' % (lang)
-    if c['layerBodId'] == 'ch.swisstopo.veloland':
+    if c['layerBodId'] == 'ch.astra.veloland':
         url = 'http://www.veloland.ch/%s' % (lang)
-    if c['layerBodId'] == 'ch.swisstopo.skatingland':
+    if c['layerBodId'] == 'ch.astra.skatingland':
         url = 'http://www.skatingland.ch/%s' % (lang)
 %>
     <tr><td class="cell-left">${_('chmobil_number')}</td>   <td>${c['featureId'] or '-'}</td></tr>
