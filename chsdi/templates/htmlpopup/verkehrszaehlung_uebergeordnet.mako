@@ -2,7 +2,7 @@
 
 <%def name="table_body(c, lang)">
 
-<% c['stable_id'] = True %>
+<% c['stable_id'] = False %>
     <tr><td class="cell-left">${_('ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname')}</td> <td>${c['attributes']['mlocname']}</td></tr>
     <tr><td class="cell-left">${_('ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr')}</td><td>${c['attributes']['mlocnr'] or '-'}</td></tr>
 </%def>
