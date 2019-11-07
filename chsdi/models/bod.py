@@ -128,18 +128,10 @@ class LayersConfig(Base):
         if config['type'] == 'wms':
             config['wmsUrl'] = 'https://%s' % wmsHost
         elif config['type'] == 'geojson':
-            # TODO Remove me
-            if self.layerBodId.startswith('ch.meteo'):
-                # config['styleUrl'] = '//data.geo.admin.ch/%s/testing/%s.json' % (self.layerBodId, self.layerBodId)
-                api_url = params.request.registry.settings['api_url']
-                config['styleUrl'] = make_agnostic(
-                    api_url + '/static/vectorStyles/' + self.layerBodId + '.json')
-                config['geojsonUrl'] = self._getTestingGeoJsonUrl(params.lang)
-            else:
-                api_url = params.request.registry.settings['api_url']
-                config['styleUrl'] = make_agnostic(
-                    api_url + '/static/vectorStyles/' + self.layerBodId + '.json')
-                config['geojsonUrl'] = self._getGeoJsonUrl(params.lang)
+            api_url = params.request.registry.settings['api_url']
+            config['styleUrl'] = make_agnostic(
+                api_url + '/static/vectorStyles/' + self.layerBodId + '.json')
+            config['geojsonUrl'] = self._getGeoJsonUrl(params.lang)
             if 'format' in config:
                 del config['format']
         # sublayers don't have attributions
@@ -154,21 +146,6 @@ class LayersConfig(Base):
                 config['queryableAttributes'] = queryable_attributes
 
         return {self.layerBodId: config}
-
-    # TODO Remove me
-    def _getTestingGeoJsonUrl(self, lang):
-        json_url = self.__dict__['geojsonUrl%s' % lang]
-        json_arr = json_url.split('/')
-        json_arr.insert(-1, "testing")
-        testing_json_url = ''
-        i = 1
-        for el in json_arr:
-            if i < len(json_arr):
-                testing_json_url += '%s/' % el
-            else:
-                testing_json_url += el
-            i += 1
-        return testing_json_url
 
     # All fields point to en for now
     def _getGeoJsonUrl(self, lang):
@@ -421,9 +398,9 @@ class Catalog(Base):
         return dict([
             (k, getattr(self, k)) for
             k in self.__dict__.keys()
-            if not k.startswith("_") and
-            self.__dict__[k] is not None and
-            k not in ('nameDe', 'nameFr', 'nameIt', 'nameRm', 'nameEn')
+            if not k.startswith("_")
+            and self.__dict__[k] is not None
+            and k not in ('nameDe', 'nameFr', 'nameIt', 'nameRm', 'nameEn')
         ])
 
     def _get_label_from_lang(self, lang):

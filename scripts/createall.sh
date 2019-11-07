@@ -9,8 +9,8 @@ METEO_LAYERS=(ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min ch.meteosc
 #METEO_LAYERS=(ch.meteoschweiz.messwerte-niederschlag-72h)
 
 function download_and_lint_and_legend {
-  wget https://data.geo.admin.ch/$1/testing/$1.json -O chsdi/static/vectorStyles/${1}_temp.json
-  #wget https://data.geo.admin.ch/$1/$1.json -O chsdi/static/vectorStyles/${1}_temp.json
+  #wget https://data.geo.admin.ch/$1/testing/$1.json -O chsdi/static/vectorStyles/${1}_temp.json
+  wget https://data.geo.admin.ch/$1/$1.json -O chsdi/static/vectorStyles/${1}_temp.json
   node_modules/.bin/jsonlint chsdi/static/vectorStyles/${1}_temp.json > chsdi/static/vectorStyles/$1.json
   rm -f chsdi/static/vectorStyles/${1}_temp.json
   node scripts/createlegends.js ${1}
