@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import re
 import geojson
 import esrijson
@@ -87,7 +86,7 @@ class Vector(object):
                         geom = self._shape
                     elif val is not None and \
                             (len(val.data) < MAX_FEATURE_GEOMETRY_SIZE or
-                            self.ignore_max_feature_geometry_size_column()):
+                            self.ignore_max_feature_geometry_size_column):
                         geom = to_shape(val)
                     try:
                         bbox = geom.bounds
@@ -156,6 +155,7 @@ class Vector(object):
         geom_column_name = cls.__returnedGeometry__ if hasattr(cls, '__returnedGeometry__') else 'the_geom'
         return cls.__mapper__.columns[geom_column_name]
 
+    @property
     def ignore_max_feature_geometry_size_column(cls):
         return cls.__mapper__.columns[cls.__ignore_max_feature_geometry_size__] if hasattr(cls, '__ignore_max_feature_geometry_size__') else False
 
