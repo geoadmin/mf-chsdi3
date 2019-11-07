@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import re
+import six
 import pyramid.httpexceptions as exc
 from pyramid.view import view_config
 
@@ -472,7 +473,11 @@ class Search(SearchValidation):
         if not self.returnGeometry:
             attrs2Del = ['x', 'y', 'lon', 'lat', 'geom_st_box2d']
             popAtrrs = lambda x: res.pop(x) if x in res else x
-            map(popAtrrs, attrs2Del)
+            # Python2/3
+            if six.PY2:
+                map(popAtrrs, attrs2Del)
+            else:
+                list(map(popAtrrs, attrs2Del))
         elif int(self.srid) not in (21781, 2056):
             self._box2d_transform(res)
             if int(self.srid) == 4326:
