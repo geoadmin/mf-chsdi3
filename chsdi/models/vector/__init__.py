@@ -87,7 +87,7 @@ class Vector(object):
                         geom = self._shape
                     elif val is not None and \
                             (len(val.data) < MAX_FEATURE_GEOMETRY_SIZE or
-                            self.__ignore_max_feature_geometry_size__):
+                            self.ignore_max_feature_geometry_size_column()):
                         geom = to_shape(val)
                     try:
                         bbox = geom.bounds
@@ -155,6 +155,9 @@ class Vector(object):
     def geometry_column_to_return(cls):
         geom_column_name = cls.__returnedGeometry__ if hasattr(cls, '__returnedGeometry__') else 'the_geom'
         return cls.__mapper__.columns[geom_column_name]
+
+    def ignore_max_feature_geometry_size_column(cls):
+        return cls.__mapper__columns[cls.__ignore_max_feature_geometry_size__] if hasattr(cls, '__ignore_max_feature_geometry_size__') else False
 
     @classmethod
     def primary_key_column(cls):
