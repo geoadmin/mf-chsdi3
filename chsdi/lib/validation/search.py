@@ -103,7 +103,8 @@ class SearchValidation(MapNameValidation):
             raise HTTPBadRequest("Please provide a search text")
         searchTextList = value.split(' ')
         # Remove empty strings
-        searchTextList = filter(None, searchTextList)
+        # Python2/3
+        searchTextList = list(filter(None, searchTextList))
         if ilen(searchTextList) > MAX_SEARCH_TERMS:
             raise HTTPBadRequest("The searchText parameter can not contain more than 10 words")
         self._searchText = searchTextList
