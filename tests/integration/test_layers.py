@@ -147,6 +147,9 @@ class LayersChecker(object):
         assert resp.content_type == 'application/json', link
 
     def checkLegendImage(self, layer, legendsPath, legendImages):
+        if legendImages is None:
+            skip("Skip checkLegendImage for layer <{}>".format(layer))
+            return False
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
             key = layer + '_' + lang
             images = [l for l in legendImages if l.startswith(key)]
@@ -212,7 +215,11 @@ def test_all_legends_images():
         legendImages.setdefault(parseLegendNames(l), []).append(l)
     with LayersChecker() as lc:
         for layer in lc.ilayers(hasLegend=True):
-            yield lc.checkLegendImage, layer, legendsPath, legendImages.pop(layer)
+            try:
+                legendImage = legendImages.pop(layer)
+            except KeyError:
+                legendImage = None
+            yield lc.checkLegendImage, layer, legendsPath, legendImage
 
 
 def test_all_searchable_layers():
