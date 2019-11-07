@@ -179,6 +179,7 @@ help:
 	@echo "USE_PYTHON3          ${USE_PYTHON3}"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
 	@echo "PYTHON_CMD:          ${PYTHON_CMD}"
+	@echo "PYTHONPATH:          ${PYTHONPATH}"
 	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
 	@echo "API_URL:             ${API_URL}"
 	@echo "WMSHOST:             ${WMSHOST}"
