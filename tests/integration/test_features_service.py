@@ -691,7 +691,7 @@ class TestFeaturesView(TestsBase):
         totalArea = 0
         for group in resp.json['ch.swisstopo.swissimage-product']:
             totalArea += group['area']
-        self.assertGreater(totalArea, 45045)
+        self.assertGreaterEqual(totalArea, 45045)
 
     def test_cut_with_feature_clipper(self):
         params = {'clipper': 'ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill:2222',
