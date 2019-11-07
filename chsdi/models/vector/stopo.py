@@ -1883,7 +1883,6 @@ class GeologieRohstoffeZiegelVerarbeitung(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung'
     __template__ = 'templates/htmlpopup/rohstoffe_ziegel_verarbeitung.mako'
-    __queryable_attributes__ = ['obname', 'pckind']
     __label__ = 'obname'
     id = Column('bgdi_id', Integer, primary_key=True)
     obname = Column('obname', Unicode)
