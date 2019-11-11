@@ -2994,7 +2994,6 @@ class SwissTlm3dMetadataPerimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_swisstlm3d'
     __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.swisstopo.swisstlm3d.metadata'
-    __ignore_max_feature_geometry_size__ = True  # ignore MAX_FEATURE_GEOMETRY_SIZE
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swisstlm3d.metadata', SwissTlm3dMetadataPerimeter)
