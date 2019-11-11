@@ -38,6 +38,14 @@ API & applications
 Geodata
 *******
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Impulsberatung erneuerbar heizen <//map.geo.admin.ch/?layers=ch.bfe.erneuerbarheizen>`__ (ch.bfe.erneuerbarheizen)                                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Ziegeleirohstoffe: Abbau <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-ziegel_abbau>`__ (ch.swisstopo.geologie-rohstoffe-ziegel_abbau)                                      |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `COMO projects <//map.geo.admin.ch/?layers=ch.bfe.komo-projekte>`__ (ch.bfe.komo-projekte)                                                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Ziegeleirohstoffe: Verarbeitung <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung)                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Snowshoe trekking <//map.geo.admin.ch/?layers=ch.swisstopo.schneeschuhwandern>`__ (ch.swisstopo.schneeschuhwandern)                                                                       |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Erosion risk permanent grassland Jan. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_jan>`__ (ch.bafu.erosion-gruenland_bodenabtrag_jan)                               |
@@ -77,6 +85,8 @@ Geodata
 | New    | `Wind gust 1 s, max. 6 h <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-6h>`__ (ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-6h)                             |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Pressure change, 3 h <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-luftdruck-differenz-3h>`__ (ch.meteoschweiz.messwerte-luftdruck-differenz-3h)                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Low distortion area <//map.geo.admin.ch/?layers=ch.swisstopo-vd.spannungsarme-gebiete>`__ (ch.swisstopo-vd.spannungsarme-gebiete)                                                         |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                 |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
