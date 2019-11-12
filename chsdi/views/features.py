@@ -726,7 +726,7 @@ def _format_search_text(columnType, searchText):
         else:
             raise exc.HTTPBadRequest('Please provide an integer')
     elif isinstance(columnType, Numeric):
-        if re.match('^\d+?\.\d+?$', searchText) is not None:
+        if re.match(r'^\d+?\.\d+?$', searchText) is not None:
             return float(searchText)
         else:
             raise exc.HTTPBadRequest('Please provide a float')

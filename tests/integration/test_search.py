@@ -347,7 +347,7 @@ class TestSearchServiceView(TestsBase):
             'geometryFormat': 'geojson'
         }
         resp = self.testapp.get('/rest/services/api/SearchServer', params=params, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertEqual('FeatureCollection', resp.json['type'])
         self.assertGeojsonFeature(resp.json['features'][0], 21781, hasGeometry=True, hasLayer=False)
         self.assertAttrs('locations', resp.json['features'][0]['properties'], 21781)

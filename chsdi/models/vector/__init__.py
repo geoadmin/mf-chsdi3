@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import re
 import geojson
 import esrijson
@@ -40,8 +39,8 @@ def get_scale(imageDisplay, mapExtent):
 
 
 def has_buffer(imageDisplay, mapExtent, tolerance):
-    return bool(imageDisplay and mapExtent and tolerance is not None and
-        all(val != 0 for val in imageDisplay) and mapExtent.area != 0)
+    return bool(imageDisplay and mapExtent and tolerance is not None
+        and all(val != 0 for val in imageDisplay) and mapExtent.area != 0)
 
 
 def get_tolerance_meters(imageDisplay, mapExtent, tolerance):
@@ -80,23 +79,23 @@ class Vector(object):
                 val = getattr(self, p.key)
                 if col.primary_key:
                     id = val
-                elif (isinstance(col.type, GeometryChsdi) and
-                      col.name == self.geometry_column_to_return().name):
+                elif (isinstance(col.type, GeometryChsdi)
+                      and col.name == self.geometry_column_to_return().name):
                     if hasattr(self, '_shape') and \
                             len(self._shape) < MAX_FEATURE_GEOMETRY_SIZE:
                         geom = self._shape
                     elif val is not None and \
-                            len(val.data) < MAX_FEATURE_GEOMETRY_SIZE:
+                            (len(val.data) < MAX_FEATURE_GEOMETRY_SIZE or
+                            self.ignore_max_feature_geometry_size_column):
                         geom = to_shape(val)
                     try:
                         bbox = geom.bounds
-                    except:
+                    except Exception:
                         pass
-                elif (not col.foreign_keys and
-                      not isinstance(col.type, GeometryChsdi)):
+                elif (not col.foreign_keys
+                      and not isinstance(col.type, GeometryChsdi)):
                     properties[p.key] = val
         properties = self.insert_label(properties)
-
         return id, geom, properties, bbox
 
     def transform_shape(self, geom, srid_to, rounding=True):
@@ -155,6 +154,10 @@ class Vector(object):
     def geometry_column_to_return(cls):
         geom_column_name = cls.__returnedGeometry__ if hasattr(cls, '__returnedGeometry__') else 'the_geom'
         return cls.__mapper__.columns[geom_column_name]
+
+    @property
+    def ignore_max_feature_geometry_size_column(cls):
+        return cls.__mapper__.columns[cls.__ignore_max_feature_geometry_size__] if hasattr(cls, '__ignore_max_feature_geometry_size__') else False
 
     @classmethod
     def primary_key_column(cls):

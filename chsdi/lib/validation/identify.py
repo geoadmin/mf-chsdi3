@@ -153,7 +153,7 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
                 else:
                     self._geometry = esrijson.to_shape(esrijson.loads(value))
 
-            except:
+            except Exception:
                 raise HTTPBadRequest('Please provide a valid geometry')
         if (self._geometryType == u'esriGeometryPolyline' and not isinstance(self._geometry, LineString)) \
                 or (self._geometryType == u'esriGeometryPolygon' and not isinstance(self._geometry, Polygon)):
@@ -184,7 +184,7 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         else:
             try:
                 self._mapExtent = esrijson.to_shape([float_raise_nan(c) for c in value.split(',')])
-            except:
+            except Exception:
                 raise HTTPBadRequest('Please provide numerical values for the parameter mapExtent')
 
     @returnGeometry.setter
@@ -253,7 +253,7 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
             try:
                 layers = value.split(':')[1]
                 self._layers = layers.split(',')
-            except:
+            except Exception:
                 HTTPBadRequest('There is an error in the parameter layers')
 
     @offset.setter

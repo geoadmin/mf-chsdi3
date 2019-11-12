@@ -1560,7 +1560,7 @@ msgid "ch.astra.skatingland"
 msgstr "La Svizzera in skating"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
-msgstr "Stazioni di conteggio (principale)"
+msgstr "Stazioni di conteggio (regionale)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.id"
 msgstr "Numero"
@@ -1591,6 +1591,78 @@ msgstr "Posti di contaggio"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet"
 msgstr "Circolazione stradale - principale"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.asp"
+msgstr "Traffico orario medio delle ore di punta della sera per tutti i giorni"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.aspw"
+msgstr "Traffico orario medio delle ore di punta della sera per i giorni lavorativi"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.canton"
+msgstr "Cantone"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.de_networktype"
+msgstr "Tipo di rete del piano settoriale dei trasporti"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dtv"
+msgstr "Traffico giornaliero medio (TGM)"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dwv"
+msgstr "Traffico giornaliero medio dei giorni lavorativi (TGML)"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.indicator"
+msgstr "Indicatori"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.locationlv95"
+msgstr "Coordinate MN95"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname"
+msgstr "Stazione di conteggio"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname_2"
+msgstr "Designazione"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr"
+msgstr "Numero"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.msp"
+msgstr "Traffico orario medio delle ore di punta della mattina per tutti i giorni"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mspw"
+msgstr "Traffico orario medio delle ore di punta della mattina per i giorni lavorativi"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nn"
+msgstr "Media annuale del traffico motorizzato orario di notte"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nt"
+msgstr "Media annuale del traffico motorizzato orario di giorno"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.numberoflanes1"
+msgstr "Numero di corsie in direzione 1"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.numberoflanes2"
+msgstr "Numero di corsie in direzione 2"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytraffic"
+msgstr "Percentuale di veicoli pesanti"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytrafficday"
+msgstr "Percentuale di veicoli pesanti durante il giorno"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytrafficnight"
+msgstr "Percentuale di veicoli pesanti durante la notte"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.streetdesignation"
+msgstr "Nome della strada"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.targetlocation1"
+msgstr "Destinazione in direzione 1"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.targetlocation2"
+msgstr "Destinazione in direzione 2"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.year"
+msgstr "Anno"
 
 msgid "ch.astra.unfaelle-personenschaeden_alle"
 msgstr "Incidenti con danni personali"
@@ -2497,6 +2569,42 @@ msgstr "Sottozona"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag"
 msgstr "Rischio erosione praterie perm."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_apr"
+msgstr "Rischio erosione praterie perm. apr."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_aug"
+msgstr "Rischio erosione praterie perm. ago."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_dez"
+msgstr "Rischio erosione praterie perm. dic."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_feb"
+msgstr "Rischio erosione praterie perm. feb."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_jan"
+msgstr "Rischio erosione praterie perm. gen."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_jul"
+msgstr "Rischio erosione praterie perm. lug."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_jun"
+msgstr "Rischio erosione praterie perm. giu."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_mai"
+msgstr "Rischio erosione praterie perm. mag."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_mrz"
+msgstr "Rischio erosione praterie perm. mar."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_nov"
+msgstr "Rischio erosione praterie perm. nov."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_okt"
+msgstr "Rischio erosione praterie perm. ott."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_sep"
+msgstr "Rischio erosione praterie perm. set."
 
 msgid "ch.bafu.eua"
 msgstr "UFAM / AEA"
@@ -4838,6 +4946,9 @@ msgstr "Nome della bandita"
 msgid "ch.bafu.wrz-jagdbanngebiete_select.kanton"
 msgstr "Cantone"
 
+msgid "ch.bafu.wrz-jagdbanngebiete_select.ref_kanton"
+msgstr "Informazioni online"
+
 msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_de"
 msgstr "Numero dell'oggetto"
 
@@ -4856,8 +4967,14 @@ msgstr "Zone di tranquillità"
 msgid "ch.bafu.wrz-wildruhezonen_portal.beschlussjahr"
 msgstr "Anno della decisione"
 
+msgid "ch.bafu.wrz-wildruhezonen_portal.einschraenkung"
+msgstr "Limitazione"
+
 msgid "ch.bafu.wrz-wildruhezonen_portal.kanton"
 msgstr "Cantone"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.ref_kanton"
+msgstr "Informazioni online"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_de"
 msgstr "Numero dell'oggetto"
@@ -4867,6 +4984,9 @@ msgstr "Numero dell'oggetto"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_it"
 msgstr "Numero dell'oggetto"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.typ"
+msgstr "Tipo di itinerario"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal.wrz_name"
 msgstr "Nome della zona"
@@ -4969,6 +5089,9 @@ msgstr "3G - UMTS / HSPA"
 
 msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
+
+msgid "ch.bakom.mobilnetz-5g"
+msgstr "5G - NR"
 
 msgid "ch.bakom.notruf"
 msgstr "Chiamate d'emergenza per Comune"
@@ -6608,6 +6731,30 @@ msgstr "Punteggio realizzato"
 msgid "ch.bfe.erneuerbarheizen"
 msgstr "Prima consulenza calore rinnovabile"
 
+msgid "ch.bfe.erneuerbarheizen.company"
+msgstr "Ditta"
+
+msgid "ch.bfe.erneuerbarheizen.consultant_cat"
+msgstr "Categoria(e)"
+
+msgid "ch.bfe.erneuerbarheizen.email"
+msgstr "Indirizzo e-mail"
+
+msgid "ch.bfe.erneuerbarheizen.firstname_name"
+msgstr "Consulente"
+
+msgid "ch.bfe.erneuerbarheizen.language"
+msgstr "Lingua(e) di consulenza"
+
+msgid "ch.bfe.erneuerbarheizen.pc_place"
+msgstr "Via"
+
+msgid "ch.bfe.erneuerbarheizen.phonenumber"
+msgstr "Numero di telefono"
+
+msgid "ch.bfe.erneuerbarheizen.street_streetnumber"
+msgstr "Via"
+
 msgid "ch.bfe.fernwaerme-angebot"
 msgstr "Offerta di calore e di freddo"
 
@@ -6721,6 +6868,27 @@ msgstr "Potenz. piccole centr. idraul."
 
 msgid "ch.bfe.komo-projekte"
 msgstr "Progetti sostenuti dal COMO"
+
+msgid "ch.bfe.komo-projekte.amount_sponsored"
+msgstr "Contributo dal COMO"
+
+msgid "ch.bfe.komo-projekte.description"
+msgstr "Descrizione del progetto"
+
+msgid "ch.bfe.komo-projekte.project_sponsor"
+msgstr "Responsabile di progetto"
+
+msgid "ch.bfe.komo-projekte.project_title"
+msgstr "Nome del progetto"
+
+msgid "ch.bfe.komo-projekte.sponsor_type"
+msgstr "Tipo di ente responsabile"
+
+msgid "ch.bfe.komo-projekte.status"
+msgstr "Stato del progetto"
+
+msgid "ch.bfe.komo-projekte.topic"
+msgstr "Tema"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Stazioni di ricarica auto elettriche"
@@ -10071,7 +10239,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "Carta nazionale 1:50'000 | CN50"
 
 msgid "ch.swisstopo.pixelkarte-farbe-winter"
-msgstr "Carta nazionale inverno CN25/CN50"
+msgstr "Carta nazionale inverno | LK10, LK25, LK50, LK100"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Carte nazionali (grigio)"
@@ -10175,8 +10343,44 @@ msgstr "Numéro de la feuille 1:50000"
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv."
 
-msgid "ch.swisstopo.schneeschuhwanderland"
-msgstr "Randonnées en raquettes"
+msgid "ch.swisstopo.rapidmapping"
+msgstr "Rapidmapping"
+
+msgid "ch.swisstopo.rapidmapping.abstract"
+msgstr "Info"
+
+msgid "ch.swisstopo.rapidmapping.acquisition_date"
+msgstr "Data della registrazione"
+
+msgid "ch.swisstopo.rapidmapping.downloads"
+msgstr "downloads_it"
+
+msgid "ch.swisstopo.rapidmapping.filename"
+msgstr "Nome del file"
+
+msgid "ch.swisstopo.rapidmapping.first_publication"
+msgstr "Prima pubblicazione"
+
+msgid "ch.swisstopo.rapidmapping.link_to_data"
+msgstr "Indice del contenuto dell'evento"
+
+msgid "ch.swisstopo.rapidmapping.link_to_event"
+msgstr "link_to_event_it"
+
+msgid "ch.swisstopo.rapidmapping.title"
+msgstr "Titolo"
+
+msgid "ch.swisstopo.schneeschuhwandern"
+msgstr "Ciaspolate"
+
+msgid "ch.swisstopo.schneeschuhwandern.attribut_c"
+msgstr "Percorsi"
+
+msgid "ch.swisstopo.schneeschuhwandern.attribut_d"
+msgstr "No."
+
+msgid "ch.swisstopo.schneeschuhwandern.link"
+msgstr "Link"
 
 msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
@@ -15289,6 +15493,12 @@ msgstr "Frequenza (%)"
 
 msgid "tt_bfe_hinweis"
 msgstr "Nota sull’incertezza della modellazione"
+
+msgid "tt_bfe_hinweis_text"
+msgstr "I valori forniti sono da ritenersi una stima approssimativa delle condizioni di vento, pertanto qualora vi sia l'interesse a sviluppare un progetto in una determinata ubicazione non si può prescindere da misurazioni in loco."
+
+msgid "tt_bfe_hinweis_wa"
+msgstr "Avvertimento"
 
 msgid "tt_bfe_hoehe_gelaende"
 msgstr "Altitudine"

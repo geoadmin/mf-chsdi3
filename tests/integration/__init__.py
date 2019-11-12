@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 from unittest import TestCase
 from pyramid import testing
 from webtest import TestApp
@@ -26,7 +27,7 @@ def reproject_to_srid(string_coords, srid_from, srid_to, round_to=2):
     elif len(coords) == 2:
         geom = Point(*coords)
     else:
-        raise NotImplemented("Cannot transform {} to shape".format(string_coords))
+        raise NotImplementedError("Cannot transform {} to shape".format(string_coords))
     reproj_coords += transform_shape(geom, srid_from, srid_to).bounds
 
     return ','.join([format(c, fmt) for c in reproj_coords])
@@ -46,7 +47,9 @@ class TestsBase(TestCase):
 
     def setUp(self):
         from pyramid.paster import get_app
-        app = get_app('development.ini')
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        inifile = os.path.realpath(os.path.join(dir_path, '../..', 'development.ini'))
+        app = get_app(inifile)
         self.testapp = TestApp(app)
         self.grids = {
             '21781': getTileGrid(21781),

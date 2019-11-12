@@ -200,7 +200,7 @@ class TestIdentifyService(TestsBase):
                   'returnGeometry': True,
                   'layers': 'all:ch.swisstopo.fixpunkte-agnes'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         features = resp.json['results']
         self.assertEqual(len(features), 11)
         bbox = box(*envelop)
@@ -249,7 +249,7 @@ class TestIdentifyService(TestsBase):
                   'returnGeometry': True,
                   'layers': 'all:ch.swisstopo.fixpunkte-agnes'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         features = resp.json['results']
         origin = Point(*center)
         for f in features:
@@ -271,7 +271,7 @@ class TestIdentifyService(TestsBase):
                   'returnGeometry': True,
                   'layers': 'all:ch.bfs.gebaeude_wohnungs_register'}
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         features = resp.json['results']
         origin = Point(*center)
         for f in features:
@@ -300,14 +300,14 @@ class TestIdentifyService(TestsBase):
                   'returnGeometry': 'true',
                   'tolerance': '10'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertIn('results', resp.json)
         self.assertEqual(len(resp.json['results']), 1)
         params['sr'] = '2056'
         params['geometry'] = shift_to_lv95(params['geometry'])
         params['mapExtent'] = shift_to_lv95(params['mapExtent'])
         resp_2 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_2.content_type, 'application/json')
+        self.assertEqual(resp_2.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp_2.json['results'][0], 2056)
         self.assertEqual(resp.json['results'][0]['id'], resp_2.json['results'][0]['id'])
 
@@ -321,7 +321,7 @@ class TestIdentifyService(TestsBase):
                   'returnGeometry': 'true',
                   'tolerance': '10'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertIn('results', resp.json)
         self.assertEqual(len(resp.json['results']), 1)
 
@@ -387,14 +387,14 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.bafu.bundesinventare-bln',
                   'geometryFormat': 'geojson'}
         resp_1 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_1.content_type, 'application/json')
+        self.assertEqual(resp_1.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp_1.json['results'][0], 21781)
 
         params['sr'] = '2056'
         params['geometry'] = shift_to_lv95(params['geometry'])
         params['mapExtent'] = shift_to_lv95(params['mapExtent'])
         resp_2 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_2.content_type, 'application/json')
+        self.assertEqual(resp_2.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp_2.json['results'][0], 2056)
 
         self.assertEqual(resp_1.json['results'][0]['id'], resp_2.json['results'][0]['id'])
@@ -408,7 +408,7 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.swisstopo.lubis-luftbilder_farbe',
                   'geometryFormat': 'geojson'}
         resp_1 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_1.content_type, 'application/json')
+        self.assertEqual(resp_1.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp_1.json['results'][0], 21781)
         self.assertIn(resp_1.json['results'][0]['geometry']['type'], ['Polygon', 'GeometryCollection'])
 
@@ -416,7 +416,7 @@ class TestIdentifyService(TestsBase):
         params['geometry'] = shift_to_lv95(params['geometry'])
         params['mapExtent'] = shift_to_lv95(params['mapExtent'])
         resp_2 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_2.content_type, 'application/json')
+        self.assertEqual(resp_2.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp_2.json['results'][0], 2056)
         self.assertEqual(len(resp_2.json['results']), len(resp_1.json['results']))
         self.assertEqual(resp_1.json['results'][0]['id'], resp_2.json['results'][0]['id'])
@@ -433,7 +433,7 @@ class TestIdentifyService(TestsBase):
 
         # LV03
         resp_1 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_1.content_type, 'application/json')
+        self.assertEqual(resp_1.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp_1.json['results'][0], 21781)
         self.assertIn(resp_1.json['results'][0]['geometry']['type'], ['MultiPoint', 'GeometryCollection'])
         resp1_ids = [d['id'] for d in resp_1.json['results']]
@@ -443,7 +443,7 @@ class TestIdentifyService(TestsBase):
         params['geometry'] = shift_to_lv95(params['geometry'])
         params['mapExtent'] = shift_to_lv95(params['mapExtent'])
         resp_2 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_2.content_type, 'application/json')
+        self.assertEqual(resp_2.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp_2.json['results'][0], 2056)
         self.assertEqual(len(resp_2.json['results']), len(resp_1.json['results']))
         self.assertEqual(resp_1.json['results'][0]['id'], resp_2.json['results'][0]['id'])
@@ -456,7 +456,7 @@ class TestIdentifyService(TestsBase):
         params['geometry'] = reproject_to_srid(params['geometry'], 2056, 3857)
         params['mapExtent'] = reproject_to_srid(params['mapExtent'], 2056, 3857)
         resp_3 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_3.content_type, 'application/json')
+        self.assertEqual(resp_3.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp_3.json['results'][0], 3857)
         self.assertEqual(len(resp_3.json['results']), len(resp_2.json['results']))
         self.assertEqual(resp_3.json['results'][0]['id'], resp_2.json['results'][0]['id'])
@@ -518,7 +518,7 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.swisstopo.zeitreihen',
                   'timeInstant': '1936'}
         resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_1.content_type, 'application/json')
+        self.assertEqual(resp_1.content_type, 'application/geo+json')
         self.assertEqual(len(resp_1.json['results']), 2)
         self.assertGeojsonFeature(resp_1.json['results'][0], 21781)
 
@@ -542,7 +542,7 @@ class TestIdentifyService(TestsBase):
                   'returnGeometry': 'true',
                   'layers': 'all:ch.swisstopo.zeitreihen'}
         resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_1.content_type, 'application/json')
+        self.assertEqual(resp_1.content_type, 'application/geo+json')
         self.assertEqual(resp_1.json['results'][0]['properties']['produkt'], 'lk25')
         self.assertEqual(len(resp_1.json['results']), 1)
         self.assertGeojsonFeature(resp_1.json['results'][0], 21781)
@@ -566,7 +566,7 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.swisstopo.zeitreihen,ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.bazl.luftfahrthindernis',
                   'timeInstant': '2000'}
         resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_1.content_type, 'application/json')
+        self.assertEqual(resp_1.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp_1.json['results'][0], 21781)
 
         params['sr'] = '2056'
@@ -603,7 +603,7 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.swisstopo.zeitreihen,ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.bazl.luftfahrthindernis',
                   'timeInstant': '1936,,2014'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertIn('properties', resp.json['results'][0])
         self.assertIn('geometry', resp.json['results'][0])
 
@@ -678,7 +678,7 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.bazl.luftfahrthindernis',
                   'where': 'startofconstruction > \'2014-12-01\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_null(self):
@@ -686,7 +686,7 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp',
                   'where': 'andere_stoffe is null'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_not_null(self):
@@ -694,7 +694,7 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp',
                   'where': 'andere_stoffe is not null'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_number(self):
@@ -702,7 +702,7 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.bazl.luftfahrthindernis',
                   'where': 'maxheightagl > 210'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_text(self):
@@ -710,7 +710,7 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.bazl.luftfahrthindernis',
                   'where': 'state ilike \'%a%\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_or(self):
@@ -718,7 +718,7 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.bazl.luftfahrthindernis',
                   'where': 'state ilike \'%a%\' and startofconstruction > \'2014-12-01\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_and(self):
@@ -726,7 +726,7 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.bazl.luftfahrthindernis',
                   'where': 'state ilike \'%a%\' or startofconstruction > \'2014-12-01\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     @skip("Attribute 'contour' is not queryable. So make it queryable or remove test")
@@ -772,7 +772,7 @@ class TestIdentifyService(TestsBase):
                   'time': '2013',
                   'where': "name ilike \'%Broye-Payerne, Caserne d'aviation%\' or name ilike \'%Aare-Bern, Schönau%\'"}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGreater(len(resp.json['results']), 0)
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
@@ -877,7 +877,7 @@ class TestIdentifyService(TestsBase):
                   'where': 'name ilike \'%dietikon%\''
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertEqual(len(resp.json['results']), 0)
         params['geometryType'] = 'esriGeometryEnvelope'
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
@@ -897,7 +897,7 @@ class TestIdentifyService(TestsBase):
                   }
         params.update({'order': 'distance'})
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertLess(1, len(resp.json['results']))
         res = resp.json['results']
 
@@ -933,7 +933,7 @@ class TestIdentifyService(TestsBase):
                       lang='de'
                       )
         resp = self.testapp.get('/rest/services/api/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertEqual(len(resp.json['results']), 0)
 #
 #    TODO: activate after update of data (ltpal)
@@ -964,7 +964,7 @@ class TestIdentifyService(TestsBase):
                       tolerance='10',
                       lang='fr')
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertEqual(len(resp.json['results']), 0)
 
     def test_identify_no_geotable(self):
@@ -1031,5 +1031,5 @@ class TestIdentifyService(TestsBase):
                   'layerDefs': '{"ch.bazl.luftfahrthindernis": "startofconstruction > \'2014-12-01\'"}'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 2056)

@@ -58,7 +58,7 @@ def feedback(context, request):
             msg.attach(part)
 
         # Attach kml if there
-        if kml is not None and kml is not '':
+        if kml is not None and kml != '':
             part = MIMEBase('application', 'vnd.google-earth.kml+xml')
             kml = kml.encode('UTF-8')
             part.set_payload(kml)
@@ -95,7 +95,7 @@ def feedback(context, request):
         'emailAddress': email,
         'body': feedback,
         'permalink': permalink,
-        'kml': kmlfilename if (kml is not None and kml is not '') else '',
+        'kml': kmlfilename if (kml is not None and kml != '') else '',
         'attachement': attachfilename,
         'userAgent': ua,
         'ID': timeID

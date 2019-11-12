@@ -23,7 +23,7 @@ class Test_EsriGeoJSON(unittest.TestCase):
         renderer = self._callFUT()
         request = testing.DummyRequest()
         result = renderer(f, {'request': request})
-        self.assertEqual(result, '{"geometry": {"y": 200000, "x": 600000}, "attributes": {"name": "toto"}}')
+        self.assertEqual(result, '{"geometry": {"y": 200000.0, "x": 600000.0}, "attributes": {"name": "toto"}}')
 
         self.assertEqual(request.response.content_type, 'application/json')
 
@@ -33,5 +33,5 @@ class Test_EsriGeoJSON(unittest.TestCase):
         request = testing.DummyRequest()
         request.params['callback'] = 'jsonp_cb'
         result = renderer(f, {'request': request})
-        self.assertEqual(result, 'jsonp_cb({"geometry": {"y": 200000, "x": 600000}, "attributes": {"name": "toto"}});')
+        self.assertEqual(result, 'jsonp_cb({"geometry": {"y": 200000.0, "x": 600000.0}, "attributes": {"name": "toto"}});')
         self.assertEqual(request.response.content_type, 'text/javascript')

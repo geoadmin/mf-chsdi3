@@ -110,7 +110,7 @@ def sanitize_url(url):
     sanitized = url
     try:
         sanitized = urljoin(url, urlparse(url).path.replace('//', '/'))
-    except:
+    except Exception:
         pass
     return sanitized
 
@@ -239,7 +239,7 @@ def format_query(model, value, lang):
 
     def merge_statements(values, operators):
         if len(values) - 1 != len(operators):
-            raise
+            raise Exception
         iters = [iter(values), iter(operators)]
         full = list(it.next() for it in cycle(iters))
 
@@ -259,8 +259,8 @@ def format_query(model, value, lang):
     except QueryParseException as qpe:
         raise HTTPBadRequest(qpe.message)
     except HTTPBadRequest:
-        raise
-    except:
+        raise Exception
+    except Exception:
         return None
     return where
 
@@ -463,7 +463,7 @@ def parse_date_string(dateStr, format_input='%Y-%m-%d', format_output='%d.%m.%Y'
         return datetime.datetime.strptime(
             dateStr.strip(), format_input
         ).strftime(format_output)
-    except:
+    except Exception:
         return '-'
 
 
@@ -521,7 +521,7 @@ def gzip_string(string):
         gzip_file.close()
         infile.seek(0)
         out = infile.getvalue()
-    except:
+    except Exception:
         out = None
     finally:
         infile.close()
