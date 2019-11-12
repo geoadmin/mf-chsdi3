@@ -1592,6 +1592,78 @@ msgstr "Poste de comptage"
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet"
 msgstr "Circulation routière - principal"
 
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.asp"
+msgstr "Trafic horaire moyen des heures de pointe du soir de tous les jours"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.aspw"
+msgstr "Trafic horaire moyen des heures de pointe du soir des jours ouvrables"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.canton"
+msgstr "Canton"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.de_networktype"
+msgstr "Type de réseau du plan sectoriel des transports"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dtv"
+msgstr "Trafic journalier moyen (TJM)"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dwv"
+msgstr "Trafic journalier moyen des jours ouvrables (TJMO)"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.indicator"
+msgstr "Indicateurs"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.locationlv95"
+msgstr "Coordonnées MN95"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname"
+msgstr "Poste de comptage"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname_2"
+msgstr "Désignation"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr"
+msgstr "Numéro"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.msp"
+msgstr "Trafic horaire moyen des heures de pointe du matin de tous les jours"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mspw"
+msgstr "Trafic horaire moyen des heures de pointe du matin des jours ouvrables"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nn"
+msgstr "Moyenne annuelle du trafic motorisé horaire de nuit"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nt"
+msgstr "Moyenne annuelle du trafic motorisé horaire de jour"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.numberoflanes1"
+msgstr "Nombre de voies de roulement de la direction 1"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.numberoflanes2"
+msgstr "Nombre de voies de roulement de la direction 2"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytraffic"
+msgstr "Pourcentage de véhicules lourds"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytrafficday"
+msgstr "Pourcentage de véhicules lourds durant le jour"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytrafficnight"
+msgstr "Pourcentage de véhicules lourds durant la nuit"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.streetdesignation"
+msgstr "Nom de la route"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.targetlocation1"
+msgstr "Destination en direction 1"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.targetlocation2"
+msgstr "Destination en direction 2"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.year"
+msgstr "Année"
+
 msgid "ch.astra.unfaelle-personenschaeden_alle"
 msgstr "Accidents avec dommages corporels"
 
@@ -2497,6 +2569,42 @@ msgstr "Partie"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag"
 msgstr "Risque d'érosion prairies perm."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_apr"
+msgstr "Risque d'érosion prairies perm. avr."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_aug"
+msgstr "Risque d'érosion prairies perm. août"
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_dez"
+msgstr "Risque d'érosion prairies perm. déc."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_feb"
+msgstr "Risque d'érosion prairies perm. fév."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_jan"
+msgstr "Risque d'érosion prairies perm. jan."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_jul"
+msgstr "Risque d'érosion prairies perm. juil."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_jun"
+msgstr "Risque d'érosion prairies perm. juin"
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_mai"
+msgstr "Risque d'érosion prairies perm. mai"
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_mrz"
+msgstr "Risque d'érosion prairies perm. mar."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_nov"
+msgstr "Risque d'érosion prairies perm. nov."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_okt"
+msgstr "Risque d'érosion prairies perm. oct."
+
+msgid "ch.bafu.erosion-gruenland_bodenabtrag_sep"
+msgstr "Risque d'érosion prairies perm. sep."
 
 msgid "ch.bafu.eua"
 msgstr "OFEV / AEE"
@@ -4838,6 +4946,9 @@ msgstr "District franc"
 msgid "ch.bafu.wrz-jagdbanngebiete_select.kanton"
 msgstr "Canton"
 
+msgid "ch.bafu.wrz-jagdbanngebiete_select.ref_kanton"
+msgstr "Information online"
+
 msgid "ch.bafu.wrz-jagdbanngebiete_select.schutzs_de"
 msgstr "Numéro de l’objet"
 
@@ -4856,8 +4967,14 @@ msgstr "Zones de tranquillité"
 msgid "ch.bafu.wrz-wildruhezonen_portal.beschlussjahr"
 msgstr "Année de décision"
 
+msgid "ch.bafu.wrz-wildruhezonen_portal.einschraenkung"
+msgstr "Limitation"
+
 msgid "ch.bafu.wrz-wildruhezonen_portal.kanton"
 msgstr "Canton"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.ref_kanton"
+msgstr "Information online"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_de"
 msgstr "Numéro de l’objet"
@@ -4867,6 +4984,9 @@ msgstr "Numéro de l’objet"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal.schutzs_it"
 msgstr "Numéro de l’objet"
+
+msgid "ch.bafu.wrz-wildruhezonen_portal.typ"
+msgstr "Type de itinéraire"
 
 msgid "ch.bafu.wrz-wildruhezonen_portal.wrz_name"
 msgstr "Zone de tranquillité"
@@ -4969,6 +5089,9 @@ msgstr "3G - UMTS / HSPA"
 
 msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
+
+msgid "ch.bakom.mobilnetz-5g"
+msgstr "5G - NR"
 
 msgid "ch.bakom.notruf"
 msgstr "Appels d'urgence par commune"
@@ -10116,7 +10239,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "Carte nationale 1:50'000 | CN50"
 
 msgid "ch.swisstopo.pixelkarte-farbe-winter"
-msgstr "Carte nationale hiver | CN25, CN50"
+msgstr "Carte nationale hiver | LK10, LK25, LK50, LK100"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Cartes nationales (grise)"
@@ -10219,6 +10342,33 @@ msgstr "Numéro de la feuille 1:50000"
 
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv"
+
+msgid "ch.swisstopo.rapidmapping"
+msgstr "Rapidmapping"
+
+msgid "ch.swisstopo.rapidmapping.abstract"
+msgstr "Info"
+
+msgid "ch.swisstopo.rapidmapping.acquisition_date"
+msgstr "Date de l’enregistrement"
+
+msgid "ch.swisstopo.rapidmapping.downloads"
+msgstr "downloads_fr"
+
+msgid "ch.swisstopo.rapidmapping.filename"
+msgstr "Nom du fichier"
+
+msgid "ch.swisstopo.rapidmapping.first_publication"
+msgstr "Première publication"
+
+msgid "ch.swisstopo.rapidmapping.link_to_data"
+msgstr "Index du contenu de l'événement"
+
+msgid "ch.swisstopo.rapidmapping.link_to_event"
+msgstr "link_to_event_fr"
+
+msgid "ch.swisstopo.rapidmapping.title"
+msgstr "Titre"
 
 msgid "ch.swisstopo.schneeschuhwandern"
 msgstr "Randonnées en raquettes"

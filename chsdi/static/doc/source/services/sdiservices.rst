@@ -1216,7 +1216,7 @@ Example
 Mapbox Vector Tiles
 -------------------
 A RESTFul implementation of `Mapbox Vector Tiles <https://www.mapbox.com/vector-tiles>`_.
-For the testing phase, the service is free for use. See conditions `conditions <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html>`_ give us feedback via our `survey <https://findmind.ch/c/vectortilesEN>`_  
+For the testing phase, the service is free for use. See conditions `conditions <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html>`_
 
 The service provides both *tiles* and *styles* that the customer can use. 
 
@@ -1293,14 +1293,14 @@ The `tileset.json` file describes the available set of tiles. In order to use th
 
 Currently, 3 technical layers (ch.swisstopo.swisstlm3d.3d, ch.swisstopo.swissnames3d.3d, ch.swisstopo.vegetation.3d) are available and they contains all available 3D objects. Additional layers will be available in the future. Partial 3D buildings model coverage can be vizsualised `here <https://s.geo.admin.ch/70fb32e692>`_.
 
-- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20190313/tileset.json
+- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20190924/tileset.json
 - https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swissnames3d.3d/20180716/tileset.json
 - https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.vegetation.3d/20190313/tileset.json
 
 Example
 *******
 
-* A `3D tile <https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20190313/8/41/50.b3dm?v=1.0>`_
+* A `3D tile <https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20190924/8/41/50.b3dm?v=1.0>`_
 
 .. _sparql_description:
 
