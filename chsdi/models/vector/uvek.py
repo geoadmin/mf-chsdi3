@@ -748,6 +748,61 @@ class FernWaermeAngebot(Base, Vector):
 register('ch.bfe.fernwaerme-angebot', FernWaermeAngebot)
 
 
+class KomoProjekte(Base, Vector):
+    __tablename__ = 'komo_projekte'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/komo.mako'
+    __bodId__ = 'ch.bfe.komo-projekte'
+    __label__ = 'id'
+    id = Column('xtf_id', Integer, primary_key=True)
+    project_title_de = Column('project_title_de', Unicode)
+    project_title_fr = Column('project_title_fr', Unicode)
+    project_title_it = Column('project_title_it', Unicode)
+    project_title_en = Column('project_title_en', Unicode)
+    projectstart = Column('projectstart', Integer)
+    projectend = Column('projectend', Integer)
+    amount_sponsored = Column('amount_sponsored', Float)
+    total_cost = Column('total_cost', Float)
+    tid_topic = Column('tid_topic', Integer)
+    web_de = Column('web_de', Unicode)
+    web_fr = Column('web_fr', Unicode)
+    web_it = Column('web_it', Unicode)
+    web_en = Column('web_en', Unicode)
+    mail = Column('mail', Unicode)
+    aim_de = Column('aim_de', Unicode)
+    aim_fr = Column('aim_fr', Unicode)
+    aim_it = Column('aim_it', Unicode)
+    aim_en = Column('aim_en', Unicode)
+    measure_de = Column('measure_de', Unicode)
+    measure_fr = Column('measure_fr', Unicode)
+    measure_it = Column('measure_it', Unicode)
+    measure_en = Column('measure_en', Unicode)
+    subtitle_de = Column('subtitle_de', Unicode)
+    subtitle_fr = Column('subtitle_fr', Unicode)
+    subtitle_it = Column('subtitle_it', Unicode)
+    subtitle_en = Column('subtitle_en', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    description_en = Column('description_en', Unicode)
+    topic_de = Column('topic_de', Unicode)
+    topic_fr = Column('topic_fr', Unicode)
+    topic_it = Column('topic_it', Unicode)
+    topic_en = Column('topic_en', Unicode)
+    project_sponsor = Column('project_sponsor', Unicode)
+    sponsor_type_de = Column('sponsor_type_de', Unicode)
+    sponsor_type_fr = Column('sponsor_type_fr', Unicode)
+    sponsor_type_it = Column('sponsor_type_it', Unicode)
+    sponsor_type_en = Column('sponsor_type_en', Unicode)
+    status_de = Column('status_de', Unicode)
+    status_fr = Column('status_fr', Unicode)
+    status_it = Column('status_it', Unicode)
+    status_en = Column('status_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.komo-projekte', KomoProjekte)
+
+
 class MinergieGebaeude(Base, Vector):
     __tablename__ = 'minergiegebaeude'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
