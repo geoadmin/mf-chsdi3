@@ -29,7 +29,7 @@ API & applications
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_191023...r_191113>`__
 - Announcement:
     - The ASTRA layer `ch.astra.ausnahmetransportrouten` (Routes for exceptional loads) will be removed from the BGDI services in December 2019.
-
+    - The two geology layers `ch.swisstopo.geologie-geotechnik-ziegeleien_1965` and `ch.swisstopo.geologie-geotechnik-ziegeleien_1995` are as per now removed from the BGDI services.
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
