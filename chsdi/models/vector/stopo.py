@@ -1878,6 +1878,25 @@ class GeologieRohstoffeZementAbbauVerarbeitung(Base, Vector):
 register('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung', GeologieRohstoffeZementAbbauVerarbeitung)
 
 
+class GeologieRohstoffeZiegelAbbau(Base, Vector):
+    __tablename__ = 'rohstoffe_ziegel_abbau'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-ziegel_abbau'
+    __template__ = 'templates/htmlpopup/rohstoffe_ziegel_abbau.mako'
+    __label__ = 'obname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    obname = Column('obname', Unicode)
+    tckinds = Column('tckinds', Unicode)
+    ltkinds = Column('ltkinds', Unicode)
+    stkind = Column('stkind', Unicode)
+    tlyearsformatted = Column('tlyearsformatted', Unicode)
+    purl = Column('purl', Unicode)
+    clkind = Column('clkind', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(GeologieRohstoffeZiegelAbbau.__bodId__, GeologieRohstoffeZiegelAbbau)
+
+
 class GeologieRohstoffeZiegelVerarbeitung(Base, Vector):
     __tablename__ = 'rohstoffe_ziegel_verarbeitung'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
