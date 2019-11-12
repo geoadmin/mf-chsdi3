@@ -3321,10 +3321,9 @@ class ChmobilVeloland (Base, Vector):
     __bodId__ = 'ch.astra.veloland'
     __label__ = 'chmobil_title'
     id = Column('full_number', Unicode, primary_key=True)
-    chmobil_url_etappe = Column('bgdi_url_etappe', Unicode)
-    chmobil_url_route = Column('bgdi_url_route', Unicode)
     chmobil_title = Column('title', Unicode)
     chmobil_route_number = Column('route_number', Unicode)
+    chmobil_has_segment = Column('has_segment', Boolean)
     the_geom = Column(Geometry2D)
 
 register('ch.astra.veloland', ChmobilVeloland)
@@ -3337,10 +3336,9 @@ class ChmobilWanderland (Base, Vector):
     __bodId__ = 'ch.astra.wanderland'
     __label__ = 'chmobil_title'
     id = Column('full_number', Unicode, primary_key=True)
-    chmobil_url_etappe = Column('bgdi_url_etappe', Unicode)
-    chmobil_url_route = Column('bgdi_url_route', Unicode)
     chmobil_title = Column('title', Unicode)
     chmobil_route_number = Column('route_number', Unicode)
+    chmobil_has_segment = Column('has_segment', Boolean)
     the_geom = Column(Geometry2D)
 
 register('ch.astra.wanderland', ChmobilWanderland)
@@ -3353,10 +3351,9 @@ class ChmobilSkatingland (Base, Vector):
     __bodId__ = 'ch.astra.skatingland'
     __label__ = 'chmobil_title'
     id = Column('full_number', Unicode, primary_key=True)
-    chmobil_url_etappe = Column('bgdi_url_etappe', Unicode)
-    chmobil_url_route = Column('bgdi_url_route', Unicode)
     chmobil_title = Column('title', Unicode)
     chmobil_route_number = Column('route_number', Unicode)
+    chmobil_has_segment = Column('has_segment', Boolean)
     the_geom = Column(Geometry2D)
 
 register('ch.astra.skatingland', ChmobilSkatingland)
@@ -3369,13 +3366,27 @@ class ChmobilMountainbikeland (Base, Vector):
     __bodId__ = 'ch.astra.mountainbikeland'
     __label__ = 'chmobil_title'
     id = Column('full_number', Unicode, primary_key=True)
-    chmobil_url_etappe = Column('bgdi_url_etappe', Unicode)
-    chmobil_url_route = Column('bgdi_url_route', Unicode)
     chmobil_title = Column('title', Unicode)
     chmobil_route_number = Column('route_number', Unicode)
+    chmobil_has_segment = Column('has_segment', Boolean)
     the_geom = Column(Geometry2D)
 
 register('ch.astra.mountainbikeland', ChmobilMountainbikeland)
+
+
+class ChmobilSchneeschuhWanderland (Base, Vector):
+    __tablename__ = 'chmobil_schneeschuhwanderland'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __template__ = 'templates/htmlpopup/chmobil.mako'
+    __bodId__ = 'ch.swisstopo.schneeschuhwandern'
+    __label__ = 'chmobil_title'
+    id = Column('full_number', Unicode, primary_key=True)
+    chmobil_title = Column('title', Unicode)
+    chmobil_route_number = Column('route_number', Unicode)
+    chmobil_has_segment = Column('has_segment', Boolean)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.schneeschuhwandern', ChmobilSchneeschuhWanderland)
 
 
 class FlugplaetzeHeliports(Base, Vector):
