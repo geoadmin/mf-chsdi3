@@ -76,12 +76,19 @@ let createImage = function(symbol, i) {
       method: 'GET',
       encoding: null
     };
+    // BIT in the middle: ignore fake CERTS
+    // https://stackoverflow.com/questions/10888610/ignore-invalid-self-signed-ssl-certificate-in-node-js-with-https-request
+    process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
     request(requestSettings, function(err, res, body) {
-      let c = getXY(i);
-      let imageBase = new Image();
-      imageBase.src = body;
-      context.drawImage(imageBase, c.x, c.y, imageBase.width, imageBase.height);
-      cb(null, context);
+      if (err) {
+        console.error("Error while loading image", symbol.src, err);
+      } else {
+        let c = getXY(i);
+        let imageBase = new Image();
+        imageBase.src = body;
+        context.drawImage(imageBase, c.x, c.y, imageBase.width, imageBase.height);
+        cb(null, context);
+      }
     });
   };
   return createImageCallback;
