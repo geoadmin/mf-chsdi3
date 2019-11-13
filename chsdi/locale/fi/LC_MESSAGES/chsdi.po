@@ -1575,7 +1575,7 @@ msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.zaehlstellen
 msgstr "Zählstelle"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet"
-msgstr "Zählstellen (übergeordnet)"
+msgstr "Dumbraziun traffic (surordinà)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet.id"
 msgstr "Nummer"
@@ -1610,11 +1610,17 @@ msgstr "Durchschnittlicher täglicher Verkehr (DTV)"
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dwv"
 msgstr "Durchschnittlicher Werktags-Verkehr (DWV)"
 
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.indicator"
+msgstr "Kennzahlen"
+
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.locationlv95"
-msgstr "Landeskoordinaten lV95"
+msgstr "Landeskoordinaten LV95"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname"
 msgstr "Messstelle"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname_2"
+msgstr "Bezeichnung"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr"
 msgstr "Nummer"
@@ -1625,8 +1631,11 @@ msgstr "Durchschnittlicher Morgenspitzenstundenverkehr aller Tage"
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mspw"
 msgstr "Durchschnittlicher Morgenspitzenstundenverkehr an Werktagen"
 
-msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nt"
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nn"
 msgstr "Durchschnittlicher stündlicher Motorfahrzeugverkehr in der Nacht"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nt"
+msgstr "Durchschnittlicher stündlicher Motorfahrzeugverkehr am Tag"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.numberoflanes1"
 msgstr "Anzahl Streifen in Fahrtrichtung 1"
@@ -1641,7 +1650,7 @@ msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytrafficday"
 msgstr "Anteil Schwerverkehr am Tag [%]"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.prctheavytrafficnight"
-msgstr "Anteil des Schwerverkehrs in der Nach [%]"
+msgstr "Anteil des Schwerverkehrs in der Nacht [%]"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.streetdesignation"
 msgstr "Strassenname"
@@ -5081,6 +5090,9 @@ msgstr "3G - UMTS / HSPA"
 msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
 
+msgid "ch.bakom.mobilnetz-5g"
+msgstr "5G - NR"
+
 msgid "ch.bakom.notruf"
 msgstr "Cloms d'urgenza per vischnanca"
 
@@ -6880,6 +6892,27 @@ msgstr "Thema"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Ladestationen für Elektroautos"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.accessibility"
+msgstr "Zugang"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.availability"
+msgstr "Verfügbarkeit"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.list_availabilities"
+msgstr "Verfügbarkeitsliste"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.operator_name"
+msgstr "Anbieter"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.provider_url"
+msgstr "Anbieter Url"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.situation"
+msgstr "Standort"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.tot_authentication_mode"
+msgstr "Authentifizierung"
 
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Frequenza d'englatschament"
@@ -10330,6 +10363,33 @@ msgstr "Kartenblattnummer 1:50000"
 
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv."
+
+msgid "ch.swisstopo.rapidmapping"
+msgstr "Rapidmapping"
+
+msgid "ch.swisstopo.rapidmapping.abstract"
+msgstr "Info"
+
+msgid "ch.swisstopo.rapidmapping.acquisition_date"
+msgstr "Aufnahmedatum"
+
+msgid "ch.swisstopo.rapidmapping.downloads"
+msgstr "downloads_rm"
+
+msgid "ch.swisstopo.rapidmapping.filename"
+msgstr "Dateiname"
+
+msgid "ch.swisstopo.rapidmapping.first_publication"
+msgstr "Erste Publikation"
+
+msgid "ch.swisstopo.rapidmapping.link_to_data"
+msgstr "Index des Events Inhalte"
+
+msgid "ch.swisstopo.rapidmapping.link_to_event"
+msgstr "Link zur Eventbeschreibung"
+
+msgid "ch.swisstopo.rapidmapping.title"
+msgstr "Titel"
 
 msgid "ch.swisstopo.schneeschuhwandern"
 msgstr "Schneeschuhwandern"

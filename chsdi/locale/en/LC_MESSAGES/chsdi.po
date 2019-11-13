@@ -1560,7 +1560,7 @@ msgid "ch.astra.skatingland"
 msgstr "Skating in Switzerland"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
-msgstr "Traffic census (general)"
+msgstr "Traffic census (regional)"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal.id"
 msgstr "Number"
@@ -1610,11 +1610,17 @@ msgstr "Annual average daily traffic (ADT)"
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.dwv"
 msgstr "Annual average weekday traffic (AAWT)"
 
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.indicator"
+msgstr "Indicators"
+
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.locationlv95"
 msgstr "Coordinates LV95"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname"
 msgstr "Measurement location"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocname_2"
+msgstr "Designation"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mlocnr"
 msgstr "Number"
@@ -1624,6 +1630,9 @@ msgstr "Average morning peak hour traffic all days"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.mspw"
 msgstr "Average morning peak hour traffic on weekdays"
+
+msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nn"
+msgstr "Average hourly motorized traffic during the night"
 
 msgid "ch.astra.strassenverkehrszaehlung-uebergeordnet.nt"
 msgstr "Average hourly motorized traffic during the day"
@@ -5081,6 +5090,9 @@ msgstr "3G - UMTS / HSPA"
 msgid "ch.bakom.mobilnetz-4g"
 msgstr "4G - LTE / LTE-A"
 
+msgid "ch.bakom.mobilnetz-5g"
+msgstr "5G - NR"
+
 msgid "ch.bakom.notruf"
 msgstr "Emergency calls by comune"
 
@@ -6880,6 +6892,27 @@ msgstr "Topic"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Charging points for electric cars"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.accessibility"
+msgstr "Access"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.availability"
+msgstr "Availability"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.list_availabilities"
+msgstr "Availability list"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.operator_name"
+msgstr "Operator"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.provider_url"
+msgstr "Operator Url"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.situation"
+msgstr "Location"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.tot_authentication_mode"
+msgstr "Authentication"
 
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Icing Frequency"
@@ -10330,6 +10363,33 @@ msgstr "Kartenblattnummer 1:50000"
 
 msgid "ch.swisstopo.private"
 msgstr "swisstopo, prv."
+
+msgid "ch.swisstopo.rapidmapping"
+msgstr "Rapidmapping"
+
+msgid "ch.swisstopo.rapidmapping.abstract"
+msgstr "Info"
+
+msgid "ch.swisstopo.rapidmapping.acquisition_date"
+msgstr "Recording date"
+
+msgid "ch.swisstopo.rapidmapping.downloads"
+msgstr "downloads_en"
+
+msgid "ch.swisstopo.rapidmapping.filename"
+msgstr "Filename"
+
+msgid "ch.swisstopo.rapidmapping.first_publication"
+msgstr "First publication"
+
+msgid "ch.swisstopo.rapidmapping.link_to_data"
+msgstr "Event content index"
+
+msgid "ch.swisstopo.rapidmapping.link_to_event"
+msgstr "link_to_event_en"
+
+msgid "ch.swisstopo.rapidmapping.title"
+msgstr "Title"
 
 msgid "ch.swisstopo.schneeschuhwandern"
 msgstr "Snowshoe trekking"
