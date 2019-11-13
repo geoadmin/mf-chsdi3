@@ -6893,6 +6893,27 @@ msgstr "Thème du projet"
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Stations pour voitures électriques"
 
+msgid "ch.bfe.ladestellen-elektromobilitaet.accessibility"
+msgstr "Accès"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.availability"
+msgstr "Disponibilité"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.list_availabilities"
+msgstr "Liste de disponibilité"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.operator_name"
+msgstr "Opérateur"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.provider_url"
+msgstr "Opérateur Url"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.situation"
+msgstr "Situation"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.tot_authentication_mode"
+msgstr "Authentification"
+
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Fréquence de givrage"
 

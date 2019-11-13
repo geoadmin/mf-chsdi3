@@ -14,7 +14,86 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
-.. _releasenotes_20190924:
+
+.. _releasenotes_20191113:
+
+Release 20191113 - Wednesday, November 13th 2019
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_191023...r_191113>`__
+- Announcement:
+    - The ASTRA layer `ch.astra.ausnahmetransportrouten` (Routes for exceptional loads) will be removed from the BGDI services in December 2019.
+    - The two geology layers `ch.swisstopo.geologie-geotechnik-ziegeleien_1965` and `ch.swisstopo.geologie-geotechnik-ziegeleien_1995` are as per now removed from the BGDI services.
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_191023...r191113>`__
+
+
+Geodata
+*******
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Impulsberatung erneuerbar heizen <//map.geo.admin.ch/?layers=ch.bfe.erneuerbarheizen>`__ (ch.bfe.erneuerbarheizen)                                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Ziegeleirohstoffe: Abbau <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-ziegel_abbau>`__ (ch.swisstopo.geologie-rohstoffe-ziegel_abbau)                                      |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `COMO projects <//map.geo.admin.ch/?layers=ch.bfe.komo-projekte>`__ (ch.bfe.komo-projekte)                                                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Ziegeleirohstoffe: Verarbeitung <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung)                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Snowshoe trekking <//map.geo.admin.ch/?layers=ch.swisstopo.schneeschuhwandern>`__ (ch.swisstopo.schneeschuhwandern)                                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Jan. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_jan>`__ (ch.bafu.erosion-gruenland_bodenabtrag_jan)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Feb. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_feb>`__ (ch.bafu.erosion-gruenland_bodenabtrag_feb)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Mrz. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_mrz>`__ (ch.bafu.erosion-gruenland_bodenabtrag_mrz)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Apr. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_apr>`__ (ch.bafu.erosion-gruenland_bodenabtrag_apr)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Mai <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_mai>`__ (ch.bafu.erosion-gruenland_bodenabtrag_mai)                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Jun. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_jun>`__ (ch.bafu.erosion-gruenland_bodenabtrag_jun)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Jul. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_jul>`__ (ch.bafu.erosion-gruenland_bodenabtrag_jul)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Aug. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_aug>`__ (ch.bafu.erosion-gruenland_bodenabtrag_aug)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Sep. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_sep>`__ (ch.bafu.erosion-gruenland_bodenabtrag_sep)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Okt. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_okt>`__ (ch.bafu.erosion-gruenland_bodenabtrag_okt)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Nov. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_nov>`__ (ch.bafu.erosion-gruenland_bodenabtrag_nov)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Erosion risk permanent grassland Dez. <//map.geo.admin.ch/?layers=ch.bafu.erosion-gruenland_bodenabtrag_dez>`__ (ch.bafu.erosion-gruenland_bodenabtrag_dez)                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Fresh snow, 2 days <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-neuschnee-2d>`__ (ch.meteoschweiz.messwerte-neuschnee-2d)                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Fresh snow, 3 days <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-neuschnee-3d>`__ (ch.meteoschweiz.messwerte-neuschnee-3d)                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Precipitation, 24h total <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-niederschlag-24h>`__ (ch.meteoschweiz.messwerte-niederschlag-24h)                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Precipitation, 48h total <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-niederschlag-48h>`__ (ch.meteoschweiz.messwerte-niederschlag-48h)                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Precipitation, 72h total <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-niederschlag-72h>`__ (ch.meteoschweiz.messwerte-niederschlag-72h)                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wind gust 1 s, max. 6 h <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-6h>`__ (ch.meteoschweiz.messwerte-wind-boeenspitze-kmh-6h)                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Pressure change, 3 h <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-luftdruck-differenz-3h>`__ (ch.meteoschweiz.messwerte-luftdruck-differenz-3h)                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Low distortion area <//map.geo.admin.ch/?layers=ch.swisstopo-vd.spannungsarme-gebiete>`__ (ch.swisstopo-vd.spannungsarme-gebiete)                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. _releasenotes_20191023:
 
 Release 20191023 - Wednesday, October 23th 2019
 -------------------------------------------------
@@ -65,6 +144,9 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Winter national map LK10, LK25, LK50, LK100 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-winter>`__ (ch.swisstopo.pixelkarte-farbe-winter)                                   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+.. _releasenotes_20190924:
 
 Release 20190924 - Tuesday, September 24th 2019
 -------------------------------------------------

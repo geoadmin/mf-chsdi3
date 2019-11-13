@@ -6893,6 +6893,27 @@ msgstr "Thema"
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Ladestationen für Elektroautos"
 
+msgid "ch.bfe.ladestellen-elektromobilitaet.accessibility"
+msgstr "Zugang"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.availability"
+msgstr "Verfügbarkeit"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.list_availabilities"
+msgstr "Verfügbarkeitsliste"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.operator_name"
+msgstr "Anbieter"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.provider_url"
+msgstr "Anbieter Url"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.situation"
+msgstr "Standort"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.tot_authentication_mode"
+msgstr "Authentifizierung"
+
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Vereisungshäufigkeit"
 

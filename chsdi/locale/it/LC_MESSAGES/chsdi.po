@@ -6893,6 +6893,27 @@ msgstr "Tema"
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Stazioni di ricarica auto elettriche"
 
+msgid "ch.bfe.ladestellen-elektromobilitaet.accessibility"
+msgstr "Accesso"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.availability"
+msgstr "Disponibilità"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.list_availabilities"
+msgstr "Lista di disponibilità"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.operator_name"
+msgstr "Operatore"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.provider_url"
+msgstr "Operatore Url"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.situation"
+msgstr "Situazione"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.tot_authentication_mode"
+msgstr "Autentificazione"
+
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Frequenza formazione ghiaccio"
 

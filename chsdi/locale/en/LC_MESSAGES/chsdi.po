@@ -6893,6 +6893,27 @@ msgstr "Topic"
 msgid "ch.bfe.ladestellen-elektromobilitaet"
 msgstr "Charging points for electric cars"
 
+msgid "ch.bfe.ladestellen-elektromobilitaet.accessibility"
+msgstr "Access"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.availability"
+msgstr "Availability"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.list_availabilities"
+msgstr "Availability list"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.operator_name"
+msgstr "Operator"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.provider_url"
+msgstr "Operator Url"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.situation"
+msgstr "Location"
+
+msgid "ch.bfe.ladestellen-elektromobilitaet.tot_authentication_mode"
+msgstr "Authentication"
+
 msgid "ch.bfe.meteorologische-vereisung"
 msgstr "Icing Frequency"
 
