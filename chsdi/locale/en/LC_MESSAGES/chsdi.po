@@ -1349,6 +1349,9 @@ msgstr "Wanderwegsperrungen"
 msgid "ch.astra.mountainbikeland"
 msgstr "Mountainbiking in Switzerland"
 
+msgid "ch.astra.mountainbikeland.attribut_c"
+msgstr "Route"
+
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Axis of national routes"
 
@@ -1558,6 +1561,9 @@ msgstr "Jahr"
 
 msgid "ch.astra.skatingland"
 msgstr "Skating in Switzerland"
+
+msgid "ch.astra.skatingland.attribut_c"
+msgstr "Route"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Traffic census (regional)"
@@ -2060,8 +2066,14 @@ msgstr "http://www.astra.admin.ch/index.html?lang=en"
 msgid "ch.astra.veloland"
 msgstr "Cycling in Switzerland"
 
+msgid "ch.astra.veloland.attribut_c"
+msgstr "Route"
+
 msgid "ch.astra.wanderland"
 msgstr "Hiking in Switzerland"
+
+msgid "ch.astra.wanderland.attribut_c"
+msgstr "Route"
 
 msgid "ch.babs"
 msgstr "UFPP"
@@ -8031,7 +8043,7 @@ msgid "chmobil_number"
 msgstr "Nr."
 
 msgid "chmobil_title"
-msgstr "Percorsi"
+msgstr "Route"
 
 msgid "chmobil_url_etappe"
 msgstr "SwitzerlandMobility stage information"
@@ -10395,7 +10407,7 @@ msgid "ch.swisstopo.schneeschuhwandern"
 msgstr "Snowshoe trekking"
 
 msgid "ch.swisstopo.schneeschuhwandern.attribut_c"
-msgstr "Route"
+msgstr "Trail"
 
 msgid "ch.swisstopo.schneeschuhwandern.attribut_d"
 msgstr "Nr."

@@ -1349,6 +1349,9 @@ msgstr "Wanderwegsperrungen"
 msgid "ch.astra.mountainbikeland"
 msgstr "Mountainbikeland Schweiz"
 
+msgid "ch.astra.mountainbikeland.attribut_c"
+msgstr "Route"
+
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Nationalstrassenachsen"
 
@@ -1558,6 +1561,9 @@ msgstr "Jahr"
 
 msgid "ch.astra.skatingland"
 msgstr "Skatingland Schweiz"
+
+msgid "ch.astra.skatingland.attribut_c"
+msgstr "Route"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Zählstellen (regional)"
@@ -2060,8 +2066,14 @@ msgstr "http://www.astra.admin.ch/index.html?lang=de"
 msgid "ch.astra.veloland"
 msgstr "Veloland Schweiz"
 
+msgid "ch.astra.veloland.attribut_c"
+msgstr "Route"
+
 msgid "ch.astra.wanderland"
 msgstr "Wanderland"
+
+msgid "ch.astra.wanderland.attribut_c"
+msgstr "Route"
 
 msgid "ch.babs"
 msgstr "BABS"

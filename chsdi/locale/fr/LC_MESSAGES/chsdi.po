@@ -1349,6 +1349,9 @@ msgstr "Fermeture des sentiers de randonnée"
 msgid "ch.astra.mountainbikeland"
 msgstr "la Suisse à VTT"
 
+msgid "ch.astra.mountainbikeland.attribut_c"
+msgstr "Itinéraires"
+
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Axes des routes nationales"
 
@@ -1558,6 +1561,9 @@ msgstr "Année"
 
 msgid "ch.astra.skatingland"
 msgstr "La Suisse en rollers"
+
+msgid "ch.astra.skatingland.attribut_c"
+msgstr "Itinéraires"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Postes de comptage (régional)"
@@ -2060,8 +2066,14 @@ msgstr "http://www.astra.admin.ch/index.html?lang=fr"
 msgid "ch.astra.veloland"
 msgstr "La Suisse à vélo"
 
+msgid "ch.astra.veloland.attribut_c"
+msgstr "Itinéraires"
+
 msgid "ch.astra.wanderland"
 msgstr "La Suisse à pied"
+
+msgid "ch.astra.wanderland.attribut_c"
+msgstr "Itinéraires"
 
 msgid "ch.babs"
 msgstr "OFPP"

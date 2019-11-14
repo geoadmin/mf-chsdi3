@@ -1349,6 +1349,9 @@ msgstr "Fermeture des sentiers de randonnée"
 msgid "ch.astra.mountainbikeland"
 msgstr "La Svizzera in mountain bike"
 
+msgid "ch.astra.mountainbikeland.attribut_c"
+msgstr "Percorsi"
+
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Asse delle strade nazionali"
 
@@ -1558,6 +1561,9 @@ msgstr "Anno"
 
 msgid "ch.astra.skatingland"
 msgstr "La Svizzera in skating"
+
+msgid "ch.astra.skatingland.attribut_c"
+msgstr "Percorsi"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Stazioni di conteggio (regionale)"
@@ -2060,8 +2066,14 @@ msgstr "http://www.astra.admin.ch/index.html?lang=it"
 msgid "ch.astra.veloland"
 msgstr "La Svizzera in bici"
 
+msgid "ch.astra.veloland.attribut_c"
+msgstr "Percorsi"
+
 msgid "ch.astra.wanderland"
 msgstr "La Svizzera a piedi"
+
+msgid "ch.astra.wanderland.attribut_c"
+msgstr "Percorsi"
 
 msgid "ch.babs"
 msgstr "FOCP"
@@ -8031,7 +8043,7 @@ msgid "chmobil_number"
 msgstr "No."
 
 msgid "chmobil_title"
-msgstr "Route"
+msgstr "Percorsi"
 
 msgid "chmobil_url_etappe"
 msgstr "Informazioni sulla tappa SvizzeraMobile"
@@ -10395,7 +10407,7 @@ msgid "ch.swisstopo.schneeschuhwandern"
 msgstr "Ciaspolate"
 
 msgid "ch.swisstopo.schneeschuhwandern.attribut_c"
-msgstr "Percorsi"
+msgstr "Percorso"
 
 msgid "ch.swisstopo.schneeschuhwandern.attribut_d"
 msgstr "No."
