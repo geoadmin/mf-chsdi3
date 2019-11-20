@@ -182,7 +182,7 @@ class Search(SearchValidation):
             except IOError:  # pragma: no cover
                 raise exc.HTTPGatewayTimeout()
 
-            temp_merged = temp[1]['matches'] + temp[0]['matches'] if len(temp) == 2 else temp[0]['matches']
+            temp_merged = temp[1].get('matches', []) + temp[0].get('matches', []) if len(temp) == 2 else temp[0].get('matches', [])
 
             # remove duplicate results, exact search results have priority over wildcard search results
             temp = []
