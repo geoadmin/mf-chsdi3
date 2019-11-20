@@ -153,6 +153,8 @@ def format_locations_search_text(input_str):
         return input_str
     # only remove trailing and leading dots
     input_str = ' '.join([w.strip('.') for w in input_str.split()])
+    # remove double quotation marks
+    input_str = input_str.replace('"', '')
     return format_search_text(input_str)
 
 
