@@ -179,10 +179,15 @@ class Search(SearchValidation):
                 # reset settings
                 temp = self.sphinx.RunQueries()
 
+                # In case RunQueries doesn't return results (reason unknown)
+                # related to issue
+                if temp is None:
+                    raise exc.HTTPServiceUnavailable('no results from sphinx service (%s)' % self.sphinx._error)
+
             except IOError:  # pragma: no cover
                 raise exc.HTTPGatewayTimeout()
 
-            temp_merged = temp[1]['matches'] + temp[0]['matches'] if len(temp) == 2 else temp[0]['matches']
+            temp_merged = temp[1].get('matches', []) + temp[0].get('matches', []) if len(temp) == 2 else temp[0].get('matches', [])
 
             # remove duplicate results, exact search results have priority over wildcard search results
             temp = []
