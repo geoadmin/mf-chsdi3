@@ -1349,6 +1349,9 @@ msgstr "Fermeture des sentiers de randonnée"
 msgid "ch.astra.mountainbikeland"
 msgstr "la Suisse à VTT"
 
+msgid "ch.astra.mountainbikeland.attribut_c"
+msgstr "Itinéraires"
+
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Axes des routes nationales"
 
@@ -1558,6 +1561,9 @@ msgstr "Année"
 
 msgid "ch.astra.skatingland"
 msgstr "La Suisse en rollers"
+
+msgid "ch.astra.skatingland.attribut_c"
+msgstr "Itinéraires"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Postes de comptage (régional)"
@@ -2060,8 +2066,14 @@ msgstr "http://www.astra.admin.ch/index.html?lang=fr"
 msgid "ch.astra.veloland"
 msgstr "La Suisse à vélo"
 
+msgid "ch.astra.veloland.attribut_c"
+msgstr "Itinéraires"
+
 msgid "ch.astra.wanderland"
 msgstr "La Suisse à pied"
+
+msgid "ch.astra.wanderland.attribut_c"
+msgstr "Itinéraires"
 
 msgid "ch.babs"
 msgstr "OFPP"
@@ -7174,6 +7186,63 @@ msgstr "Type de barrage"
 
 msgid "ch.bfe.thermische-netze"
 msgstr "Réseaux thermiques"
+
+msgid "ch.bfe.thermische-netze.beginningofoperation"
+msgstr "Mise en service"
+
+msgid "ch.bfe.thermische-netze.contact"
+msgstr "Contact"
+
+msgid "ch.bfe.thermische-netze.de_energysource"
+msgstr "Agents énergétiques"
+
+msgid "ch.bfe.thermische-netze.de_enersource_main"
+msgstr "Agent énergétique principal"
+
+msgid "ch.bfe.thermische-netze.de_positionaccuracy"
+msgstr "Degré de précision"
+
+msgid "ch.bfe.thermische-netze.energy"
+msgstr "Energie (MWh/an)"
+
+msgid "ch.bfe.thermische-netze.feedback"
+msgstr "En cas de données erronées"
+
+msgid "ch.bfe.thermische-netze.houseconnections"
+msgstr "Raccordements de bâtiments"
+
+msgid "ch.bfe.thermische-netze.mail"
+msgstr "Courriel"
+
+msgid "ch.bfe.thermische-netze.name"
+msgstr "Désignation"
+
+msgid "ch.bfe.thermische-netze.netlength"
+msgstr "Longueur du réseau (km)"
+
+msgid "ch.bfe.thermische-netze.operator"
+msgstr "Gestionnaire"
+
+msgid "ch.bfe.thermische-netze.operatoraddress"
+msgstr "Adresse"
+
+msgid "ch.bfe.thermische-netze.phone"
+msgstr "Téléphone"
+
+msgid "ch.bfe.thermische-netze.place"
+msgstr "Localité"
+
+msgid "ch.bfe.thermische-netze.power"
+msgstr "Puissance (MW)"
+
+msgid "ch.bfe.thermische-netze.sendfeedback"
+msgstr "envoyer un commentaire"
+
+msgid "ch.bfe.thermische-netze.web"
+msgstr "Site Web"
+
+msgid "ch.bfe.thermische-netze.zip"
+msgstr "NPA"
 
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=fr"

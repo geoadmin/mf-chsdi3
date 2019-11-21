@@ -1349,6 +1349,9 @@ msgstr "Wanderwegsperrungen"
 msgid "ch.astra.mountainbikeland"
 msgstr "La Svizra cun velo da muntogna"
 
+msgid "ch.astra.mountainbikeland.attribut_c"
+msgstr "Route"
+
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Axas da las vias naziunalas"
 
@@ -1558,6 +1561,9 @@ msgstr "Jahr"
 
 msgid "ch.astra.skatingland"
 msgstr "La Svizra cun skates"
+
+msgid "ch.astra.skatingland.attribut_c"
+msgstr "Route"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Dumbraziun traffic (regiunal)"
@@ -2060,8 +2066,14 @@ msgstr "http://www.astra.admin.ch/index.html?lang=de"
 msgid "ch.astra.veloland"
 msgstr "La Svizra cun velo"
 
+msgid "ch.astra.veloland.attribut_c"
+msgstr "Route"
+
 msgid "ch.astra.wanderland"
 msgstr "La Svizra a pe"
+
+msgid "ch.astra.wanderland.attribut_c"
+msgstr "Route"
 
 msgid "ch.babs"
 msgstr "BABS"
@@ -7174,6 +7186,63 @@ msgstr "Sperrentyp"
 
 msgid "ch.bfe.thermische-netze"
 msgstr "Thermische Netze"
+
+msgid "ch.bfe.thermische-netze.beginningofoperation"
+msgstr "Inbetriebnahme"
+
+msgid "ch.bfe.thermische-netze.contact"
+msgstr "Kontakt"
+
+msgid "ch.bfe.thermische-netze.de_energysource"
+msgstr "Energieträger"
+
+msgid "ch.bfe.thermische-netze.de_enersource_main"
+msgstr "Hauptenergieträger"
+
+msgid "ch.bfe.thermische-netze.de_positionaccuracy"
+msgstr "Genauigkeit"
+
+msgid "ch.bfe.thermische-netze.energy"
+msgstr "Energie (MWh/a)"
+
+msgid "ch.bfe.thermische-netze.feedback"
+msgstr "Bei fehlerhaften Angaben"
+
+msgid "ch.bfe.thermische-netze.houseconnections"
+msgstr "Hausanschlüsse"
+
+msgid "ch.bfe.thermische-netze.mail"
+msgstr "E-Mail"
+
+msgid "ch.bfe.thermische-netze.name"
+msgstr "Name"
+
+msgid "ch.bfe.thermische-netze.netlength"
+msgstr "Netzlänge (km)"
+
+msgid "ch.bfe.thermische-netze.operator"
+msgstr "Betreiber"
+
+msgid "ch.bfe.thermische-netze.operatoraddress"
+msgstr "Adresse"
+
+msgid "ch.bfe.thermische-netze.phone"
+msgstr "Telefon"
+
+msgid "ch.bfe.thermische-netze.place"
+msgstr "Ort"
+
+msgid "ch.bfe.thermische-netze.power"
+msgstr "Leistung (MW)"
+
+msgid "ch.bfe.thermische-netze.sendfeedback"
+msgstr "Rückmeldung senden"
+
+msgid "ch.bfe.thermische-netze.web"
+msgstr "Webseite"
+
+msgid "ch.bfe.thermische-netze.zip"
+msgstr "PLZ"
 
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=de"

@@ -1349,6 +1349,9 @@ msgstr "Wanderwegsperrungen"
 msgid "ch.astra.mountainbikeland"
 msgstr "Mountainbiking in Switzerland"
 
+msgid "ch.astra.mountainbikeland.attribut_c"
+msgstr "Route"
+
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Axis of national routes"
 
@@ -1558,6 +1561,9 @@ msgstr "Jahr"
 
 msgid "ch.astra.skatingland"
 msgstr "Skating in Switzerland"
+
+msgid "ch.astra.skatingland.attribut_c"
+msgstr "Route"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Traffic census (regional)"
@@ -2060,8 +2066,14 @@ msgstr "http://www.astra.admin.ch/index.html?lang=en"
 msgid "ch.astra.veloland"
 msgstr "Cycling in Switzerland"
 
+msgid "ch.astra.veloland.attribut_c"
+msgstr "Route"
+
 msgid "ch.astra.wanderland"
 msgstr "Hiking in Switzerland"
+
+msgid "ch.astra.wanderland.attribut_c"
+msgstr "Route"
 
 msgid "ch.babs"
 msgstr "UFPP"
@@ -7175,6 +7187,63 @@ msgstr "Dam Type"
 msgid "ch.bfe.thermische-netze"
 msgstr "Thermal networks"
 
+msgid "ch.bfe.thermische-netze.beginningofoperation"
+msgstr "In operation since"
+
+msgid "ch.bfe.thermische-netze.contact"
+msgstr "Contact"
+
+msgid "ch.bfe.thermische-netze.de_energysource"
+msgstr "Fuel"
+
+msgid "ch.bfe.thermische-netze.de_enersource_main"
+msgstr "Main fuel"
+
+msgid "ch.bfe.thermische-netze.de_positionaccuracy"
+msgstr "Accuracy"
+
+msgid "ch.bfe.thermische-netze.energy"
+msgstr "Energy (MWh/y)"
+
+msgid "ch.bfe.thermische-netze.feedback"
+msgstr "Incorrect information"
+
+msgid "ch.bfe.thermische-netze.houseconnections"
+msgstr "Buildings connected"
+
+msgid "ch.bfe.thermische-netze.mail"
+msgstr "Email"
+
+msgid "ch.bfe.thermische-netze.name"
+msgstr "Name"
+
+msgid "ch.bfe.thermische-netze.netlength"
+msgstr "Network length (km)"
+
+msgid "ch.bfe.thermische-netze.operator"
+msgstr "Operator"
+
+msgid "ch.bfe.thermische-netze.operatoraddress"
+msgstr "Address"
+
+msgid "ch.bfe.thermische-netze.phone"
+msgstr "Telephone"
+
+msgid "ch.bfe.thermische-netze.place"
+msgstr "Town"
+
+msgid "ch.bfe.thermische-netze.power"
+msgstr "Performance (MW)"
+
+msgid "ch.bfe.thermische-netze.sendfeedback"
+msgstr "send a feedback"
+
+msgid "ch.bfe.thermische-netze.web"
+msgstr "Website"
+
+msgid "ch.bfe.thermische-netze.zip"
+msgstr "Postcode"
+
 msgid "ch.bfe.url"
 msgstr "http://www.bfe.admin.ch/index.html?lang=en"
 
@@ -8031,7 +8100,7 @@ msgid "chmobil_number"
 msgstr "Nr."
 
 msgid "chmobil_title"
-msgstr "Percorsi"
+msgstr "Route"
 
 msgid "chmobil_url_etappe"
 msgstr "SwitzerlandMobility stage information"
@@ -10395,7 +10464,7 @@ msgid "ch.swisstopo.schneeschuhwandern"
 msgstr "Snowshoe trekking"
 
 msgid "ch.swisstopo.schneeschuhwandern.attribut_c"
-msgstr "Route"
+msgstr "Trail"
 
 msgid "ch.swisstopo.schneeschuhwandern.attribut_d"
 msgstr "Nr."
