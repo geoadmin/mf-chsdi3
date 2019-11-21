@@ -182,7 +182,7 @@ class Search(SearchValidation):
                 # In case RunQueries doesn't return results (reason unknown)
                 # related to issue
                 if temp is None:
-                    raise ValueError("no results from sphinx service (%s)" % self.sphinx._error)
+                    raise exc.HTTPServiceUnavailable('no results from sphinx service (%s)' % self.sphinx._error)
 
             except IOError:  # pragma: no cover
                 raise exc.HTTPGatewayTimeout()
