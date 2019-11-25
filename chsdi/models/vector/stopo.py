@@ -2984,7 +2984,8 @@ class SwissAlti3dPerimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_swissalti3d'
     __table_args__ = ({'autoload': False})
     __bodId__ = 'ch.swisstopo.swissalti3d-reliefschattierung'
-    __totalArea__ = 41455.0
+    __ignore_max_feature_geometry_size__ = True  # ignore MAX_FEATURE_GEOMETRY_SIZE
+    __totalArea__ = 42465.0
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissalti3d-reliefschattierung', SwissAlti3dPerimeter)
@@ -3022,7 +3023,8 @@ class SwissAlti3dMetadataPerimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_swissalti3d'
     __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.swisstopo.swissalti3d.metadata'
-    __totalArea__ = 41455.0
+    __ignore_max_feature_geometry_size__ = True  # ignore MAX_FEATURE_GEOMETRY_SIZE
+    __totalArea__ = 42465.0
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissalti3d.metadata', SwissAlti3dMetadataPerimeter)
