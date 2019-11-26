@@ -2974,6 +2974,7 @@ class SwissTLM3dPerimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_swisstlm3d'
     __table_args__ = ({'autoload': False})
     __bodId__ = 'ch.swisstopo.swisstlm3d-karte-farbe'
+    __ignore_max_feature_geometry_size__ = True  # ignore MAX_FEATURE_GEOMETRY_SIZE
     __totalArea__ = 41455.0
     the_geom = Column(Geometry2D)
 
