@@ -67,7 +67,7 @@ def data_to_description(data):
 
 if __name__ == '__main__':
     if len(sys.argv) <2:
-        print "Error. You must set API_URL"
+        print("Error. You must set API_URL")
         sys.exit(2)
 
     api_url = sys.argv[1] + '/'
