@@ -450,7 +450,7 @@ requirements.txt:
 	@echo "${GREEN}Setting up virtual environement...${RESET}";
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
-		virtualenv -p $(which python2) $(INSTALL_DIRECTORY); \
+		virtualenv -p /usr/bin/python2  $(INSTALL_DIRECTORY); \
 		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; \
 	fi
 	${PIP_CMD} install --index-url ${PYPI_URL} --find-links local_eggs/ -e .
