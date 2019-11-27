@@ -157,7 +157,7 @@ class Vector(object):
 
     @property
     def ignore_max_feature_geometry_size_column(cls):
-        return cls.__mapper__.columns[cls.__ignore_max_feature_geometry_size__] if hasattr(cls, '__ignore_max_feature_geometry_size__') else False
+        return cls.__ignore_max_feature_geometry_size__ if hasattr(cls, '__ignore_max_feature_geometry_size__') else False
 
     @classmethod
     def primary_key_column(cls):
