@@ -57,11 +57,19 @@
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.web')}</td>
-      <td><a target="_blank" href=${c['attributes']['web']}>${c['attributes']['web'] or ''}</a></td>
+          % if c['attributes']['web'] == None:
+            <td>-</td>
+          % else:
+            <td><a target="_blank" href=${c['attributes']['web']}>${c['attributes']['web']}</a></td>
+          % endif
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.mail')}</td>
-      <td><a target="_blank" href=mailto:${c['attributes']['mail']}>${c['attributes']['mail'] or ''}</a></td>
+          % if c['attributes']['mail'] == None:
+            <td>-</td>
+          % else:
+            <td><a target="_blank" href=mailto:${c['attributes']['mail']}>${c['attributes']['mail']}</a></td>
+          % endif
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.beginningofoperation')}</td>
