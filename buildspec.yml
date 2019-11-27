@@ -4,6 +4,32 @@ env:
   variables:
     SHELL: /bin/bash
     AWS_DEFAULT_REGION: eu-west-1
+    APACHE_BASE_PATH: main
+    ALTI_URL: //service-alti.dev.bgdi.ch
+    API_URL: //mf-chsdi3.dev.bgdi.ch
+    SHOP_URL: //shop-bgdi.dev.bgdi.ch
+    DBHOST: pg-sandbox.bgdi.ch
+    DBPORT: 5432
+    DBSTAGING: dev
+    DEPLOY_TARGET: dev
+    GEODATA_STAGING: test
+    GEOADMIN_FILE_STORAGE_BUCKET: public-dev-bgdi-ch
+    GEOADMINHOST: mf-geoadmin3.dev.bgdi.ch
+    HOST: mf-chsdi3.dev.bgdi.ch
+    KEEP_VERSION: false
+    WMTS_PUBLIC_HOST: tod.dev.bgdi.ch
+    MODWSGI_CONFIG: production.ini
+    PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
+    ROBOTS_FILE: robots.txt
+    SERVER_PORT: 6543
+    SPHINXHOST: service-sphinxsearch.dev.bgdi.ch
+    VECTOR_BUCKET: bgdi-grid-based-data
+    WMSHOST: wms-bgdi.dev.bgdi.ch
+    WSGI_PROCESSES: 1
+    WSGI_THREADS: 15
+    CMSGEOADMINHOST: https://cms.geo.admin.ch
+    LINKEDDATAHOST: https://ld.geo.admin.ch
+    CACHE_CONTROL: no-cache
   parameter-store:
     OPENTRANS_API_KEY: "/terraform-codepipeline-example/opentrans_api_key"
 
