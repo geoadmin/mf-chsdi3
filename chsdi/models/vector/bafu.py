@@ -2038,7 +2038,7 @@ register('ch.bafu.gefahren-baugrundklassen', Baugrundklassen)
 
 class Wrzselect(Base, Vector):
     __tablename__ = 'jgd_select_flaechen'
-    __table_args__ = ({'schema': 'wrzportal', 'autoload': True})
+    __table_args__ = ({'schema': 'wrzportal', 'autoload': False})
     __bodId__ = 'ch.bafu.wrz-jagdbanngebiete_select'
     __template__ = 'templates/htmlpopup/wrz_select.mako'
     __queryable_attributes__ = ['kanton', 'jb_name', 'beschlussjahr', 'schutzs_de', 'schutzs_fr', 'schutzs_it']
@@ -2063,7 +2063,7 @@ class Wrzselect(Base, Vector):
 
 class WrzselectWege(Base, Vector):
     __tablename__ = 'jgd_select_wege'
-    __table_args__ = ({'schema': 'wrzportal', 'autoload': True})
+    __table_args__ = ({'schema': 'wrzportal', 'autoload': False})
     __bodId__ = 'ch.bafu.wrz-jagdbanngebiete_select'
     __template__ = 'templates/htmlpopup/wrz_wege.mako'
     __label__ = 'weg_id'
