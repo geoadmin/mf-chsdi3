@@ -332,7 +332,6 @@ class Zaehlstellenuebergeordnet(Base, Vector):
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/verkehrszaehlung_uebergeordnet.mako'
     __bodId__ = 'ch.astra.strassenverkehrszaehlung-uebergeordnet'
-    __queryable_attributes__ = ['mlocname']
     __extended_info__ = True
     __label__ = 'mlocname'
     id = Column('bgdi_id', Integer, primary_key=True)
