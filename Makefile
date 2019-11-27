@@ -143,7 +143,9 @@ python: build/python
 
 local/bin/python3.6:
 		mkdir -p $(CURRENT_DIRECTORY)/local;
-		curl -z $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_VERSION).tar.xz https://www.python.org/ftp/python/$(PYTHON_VERSION)/Python-$(PYTHON_VERSION).tar.xz -o $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_VERSION).tar.xz;
+		curl -z $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_VERSION).tar.xz \
+				https://www.python.org/ftp/python/$(PYTHON_VERSION)/Python-$(PYTHON_VERSION).tar.xz \
+				-o $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_VERSION).tar.xz;
 		cd $(CURRENT_DIRECTORY)/local && tar -xf Python-$(PYTHON_VERSION).tar.xz && Python-$(PYTHON_VERSION)/configure --prefix=$(CURRENT_DIRECTORY)/local/  --enable-optimizations && make altinstall
 
 .PHONY: help
