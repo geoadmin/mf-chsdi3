@@ -59,7 +59,7 @@ phases:
   build:
     commands:
       - echo Build started on $(date)
-      - eval $(cat rc_dev) && make cleanall all
+      -  make cleanall user
       - .venv/bin/nosetests tests/integration/
       - .venv/bin/nosetests tests/e2e
 
