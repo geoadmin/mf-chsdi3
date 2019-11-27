@@ -19,7 +19,7 @@ phases:
     commands:
       - echo Configuring stuff...
       - aws --version
-      - export $SHELL && exec /bin/bash
+      - exec /bin/bash
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - GITHUB_BRANCH=${CODEBUILD_WEBHOOK_HEAD_REF#refs/heads/*}
       - TODAY=$(date '+%Y%m%d')
