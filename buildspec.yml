@@ -3,6 +3,8 @@ version: 0.2
 env:
   variables:
     AWS_DEFAULT_REGION: eu-west-1
+  parameter-store:
+    OPENTRANS_API_KEY: "/terraform-codepipeline-example/opentrans_api_key"
 
 phases:
   install:
