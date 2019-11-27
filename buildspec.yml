@@ -2,6 +2,7 @@ version: 0.2
 
 env:
   variables:
+    SHELL: /bin/bash
     AWS_DEFAULT_REGION: eu-west-1
   parameter-store:
     OPENTRANS_API_KEY: "/terraform-codepipeline-example/opentrans_api_key"
@@ -50,6 +51,8 @@ phases:
       - echo PULL_REQUEST=${PULL_REQUEST}
       - echo GITHUB_BRANCH=${GITHUB_BRANCH}
       - echo IMAGE_TAG=${IMAGE_TAG}
+      - echo BASH=${BASH}
+      - echo SHELL=${SHELL}
       - echo "==================================="
   build:
     commands:
