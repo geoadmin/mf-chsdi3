@@ -37,6 +37,10 @@ API & applications
 Geodata
 *******
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Thermal networks <//map.geo.admin.ch/?layers=ch.bfe.thermische-netze>`__ (ch.bfe.thermische-netze)                                                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Traffic counting locations - principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung-uebergeordnet)                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                                    |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                                               |
