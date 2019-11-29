@@ -86,8 +86,7 @@ phases:
     commands:
       - echo Build started on $(date)
       -  make cleanall user
-      - .venv/bin/nosetests tests/integration/
-      - .venv/bin/nosetests tests/e2e
+      - .venv/bin/nosetests tests/functional
       
   post_build:
     commands:
