@@ -768,6 +768,7 @@ class KomoProjekte(Base, Vector):
     web_fr = Column('web_fr', Unicode)
     web_it = Column('web_it', Unicode)
     web_en = Column('web_en', Unicode)
+    report = Column('report', Unicode)
     mail = Column('mail', Unicode)
     aim_de = Column('aim_de', Unicode)
     aim_fr = Column('aim_fr', Unicode)
