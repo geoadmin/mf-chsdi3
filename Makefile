@@ -38,7 +38,7 @@ PYPI_URL ?= https://pypi.org/simple/
 KEEP_VERSION ?= 'false'
 LAST_VERSION := $(call lastvalue,version)
 VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '-none-' ]; \
-						 then echo $(LAST_VERSION); else python -c "print(__import__('time').strftime('%s'))"; fi)
+						 then echo $(LAST_VERSION); else date +'%s'; fi)
 LAST_MODWSGI_CONFIG := $(call lastvalue,modwsgi-config)
 LAST_SERVER_PORT := $(call lastvalue,server-port)
 LAST_CURRENT_DIRECTORY := $(call lastvalue,current-directory)
