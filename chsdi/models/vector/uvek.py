@@ -2228,6 +2228,47 @@ class Kehrichtverbrennungsanlagen(Base, Vector):
 register('ch.bfe.kehrichtverbrennungsanlagen', Kehrichtverbrennungsanlagen)
 
 
+class ThermischeNetzeGeometry(Base, Vector):
+    __tablename__ = 'thermische_netze_geometry'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/thermischenetze.mako'
+    __bodId__ = 'ch.bfe.thermische-netze'
+    __extended_info__ = True
+    __label__ = 'name'
+    id = Column('xtf_id', Unicode, primary_key=True)
+    name = Column('name', Unicode)
+    operator = Column('operator', Unicode)
+    contact = Column('contact', Unicode)
+    de_enersource_main = Column('de_enersource_main', Unicode)
+    fr_enersource_main = Column('fr_enersource_main', Unicode)
+    it_enersource_main = Column('it_enersource_main', Unicode)
+    en_enersource_main = Column('en_enersource_main', Unicode)
+    zip = Column('zip', Integer)
+    place = Column('place', Unicode)
+    operatoraddress = Column('operatoraddress', Unicode)
+    phone = Column('phone', Unicode)
+    web = Column('web', Unicode)
+    mail = Column('mail', Unicode)
+    beginningofoperation = Column('beginningofoperation', Integer)
+    power = Column('power', Float)
+    energy = Column('energy', Integer)
+    houseconnections = Column('houseconnections', Integer)
+    netlength = Column('netlength', Float)
+    de_energysource = Column('de_energysource', Unicode)
+    fr_energysource = Column('fr_energysource', Unicode)
+    it_energysource = Column('it_energysource', Unicode)
+    en_energysource = Column('en_energysource', Unicode)
+    de_positionaccuracy = Column('de_positionaccuracy', Unicode)
+    fr_positionaccuracy = Column('fr_positionaccuracy', Unicode)
+    it_positionaccuracy = Column('it_positionaccuracy', Unicode)
+    en_positionaccuracy = Column('en_positionaccuracy', Unicode)
+    x = Column('x', Float)
+    y = Column('y', Float)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.thermische-netze', ThermischeNetzeGeometry)
+
+
 class SisFacilitiesA(Base, Vector):
     __tablename__ = 'sis_fac_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
