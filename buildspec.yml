@@ -85,10 +85,11 @@ phases:
   build:
     commands:
       - echo Build started on $(date)
-      -  make cleanall user
-      - .venv/bin/nosetests tests/functional
+      - make cleanall user
+      - echo Build completed on $(date)
       
   post_build:
     commands:
-      - echo Build completed on `date`
+      - echo Testing...
+      - make lint
       - echo "Doing nothing, but great success"
