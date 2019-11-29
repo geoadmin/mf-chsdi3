@@ -32,6 +32,7 @@
                  'ch.vbs.grunddispositiv-zeus',
                  'ch.swisstopo-karto.skitouren',
                  'ch.swisstopo-karto.schneeschuhrouten',
+                 'ch.swisstopo.schneeschuhwandern',
                  'ch.swisstopo.swisstlm3d-strassen',
                  'ch.swisstopo.swisstlm3d-uebrigerverkehr',
                  'ch.swisstopo.swisstlm3d-gewaessernetz',
