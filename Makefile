@@ -38,7 +38,7 @@ PYPI_URL ?= https://pypi.org/simple/
 KEEP_VERSION ?= 'false'
 LAST_VERSION := $(call lastvalue,version)
 VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '-none-' ]; \
-						 then echo $(LAST_VERSION); else python -c "print __import__('time').strftime('%s')"; fi)
+						 then echo $(LAST_VERSION); else date +'%s'; fi)
 LAST_MODWSGI_CONFIG := $(call lastvalue,modwsgi-config)
 LAST_SERVER_PORT := $(call lastvalue,server-port)
 LAST_CURRENT_DIRECTORY := $(call lastvalue,current-directory)
@@ -450,7 +450,7 @@ requirements.txt:
 	@echo "${GREEN}Setting up virtual environement...${RESET}";
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
-		virtualenv $(INSTALL_DIRECTORY); \
+		virtualenv -p /usr/bin/python2  $(INSTALL_DIRECTORY); \
 		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; \
 	fi
 	${PIP_CMD} install --index-url ${PYPI_URL} --find-links local_eggs/ -e .
