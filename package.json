@@ -9,7 +9,7 @@
   "author": "Swisstopo",
   "readmeFileName": "README.md",
   "devDependencies": {
-    "canvas": "^1.6.9",
+    "canvas": "^2.6.1",
     "jsdom": "^11.6.2",
     "jsonlint-cli": "~1.0.1",
     "JSONStream": "~1.3.2",

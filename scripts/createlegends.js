@@ -7,8 +7,7 @@
 const fs = require('fs');
 const request = require('request');
 const JSONStream = require('JSONStream');
-const Canvas = require('canvas');
-const Image = Canvas.Image;
+const { createCanvas, loadImage } = require('canvas');
 const csv = require('fast-csv');
 const async = require('async');
 const scaleFactor = 1.5;
@@ -55,10 +54,6 @@ let getStylesByResolution = function(data, styleType) {
   return styles;
 };
 
-let createCanvas = function(width, height) {
-  return new Canvas(width, height)
-};
-
 let getXY = function(i) {
   // margin left
   let x = 30;
@@ -79,14 +74,12 @@ let createImage = function(symbol, i) {
     // BIT in the middle: ignore fake CERTS
     // https://stackoverflow.com/questions/10888610/ignore-invalid-self-signed-ssl-certificate-in-node-js-with-https-request
     process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
-    request(requestSettings, function(err, res, body) {
-      if (err) {
-        console.error("Error while loading image", symbol.src, err);
+    loadImage(symbol.src).then((image) => {
+      if (!image) {
+        console.error("Error while loading image", symbol.src);
       } else {
         let c = getXY(i);
-        let imageBase = new Image();
-        imageBase.src = body;
-        context.drawImage(imageBase, c.x, c.y, imageBase.width, imageBase.height);
+        context.drawImage(image, c.x, c.y, image.width, image.height);
         cb(null, context);
       }
     });
@@ -317,20 +310,20 @@ let createLegendRamp = function(data, labels, lang, cb) {
     }
   }
   if (iconsReqParams.length) {
-    var img = new Image()
-    img.src = canvas.toBuffer()
-    let composer = async.compose.apply(null, iconsReqParams);
-    composer(context, function(err, result) {
-      if (err) {
-        console.log('Error in compose');
-      } else {
-        cb(canvas);
-      }
+    loadImage(canvas.toBuffer()).then(img => {
+      let composer = async.compose.apply(null, iconsReqParams);
+      composer(context, function (err, result) {
+        if (err) {
+          console.log('Error in compose');
+        } else {
+          cb(canvas);
+        }
+      });
     });
   } else {
     cb(canvas);
   }
-}
+};
 
 let labels = [];
 
