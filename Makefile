@@ -125,11 +125,11 @@ endif
 ifeq ($(USE_PYTHON3), 1)
 		PYTHON_VERSION := 3.6.8
 build/python: local/bin/python3.6
-		touch build/python;
+		mkdir -p build && touch build/python;
 else
 		PYTHON_VERSION := $(shell python2 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
 build/python:
-		touch build/python;
+		mkdir -p build && touch build/python;
 endif
 PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
 
