@@ -1,4 +1,3 @@
-import ConfigParser
 import sys
 
 activate_this = "${current_directory}/.venv/bin/activate_this.py"
