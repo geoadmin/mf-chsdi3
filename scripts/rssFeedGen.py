@@ -63,7 +63,8 @@ def extract_data(r):
 
 
 def data_to_description(data):
-    data = data.decode('utf-8', 'ignore')
+    if six.PY2:
+        data = data.decode('utf-8', 'ignore')
     description = data.encode('ascii', 'ignore')
     return description
 
