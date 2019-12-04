@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
+import six
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import engine_from_config, Column
+
+if six.PY3:
+    unicode = str
 
 
 dbs = ['are', 'bafu', 'bak', 'bod', 'dritte', 'edi', 'evd', 'kogis', 'stopo', 'uvek', 'uvek_solarkataster', 'vbs', 'zeitreihen', 'lubis', 'diemo']

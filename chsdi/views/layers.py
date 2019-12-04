@@ -2,7 +2,9 @@
 
 import os
 import decimal
+import six
 import datetime
+from itertools import chain
 
 
 from pyramid.view import view_config
@@ -47,8 +49,11 @@ def layers_config(request):
     params = BaseLayersValidation(request)
     query = params.request.db.query(LayersConfig)
     layers = {}
+    # Python 2/3
     for layer in get_layers_config_for_params(params, query, LayersConfig):
-        layers = dict(layers.items() + layer.items())
+        # layers = dict(list(layers.items()) + list(layer.items()))
+        layers = dict(chain(layers.items(), layer.items()))
+
     return layers
 
 
@@ -82,6 +87,8 @@ def legend(request):
     )
     if params.cbName is None:
         return response
+    if six.PY3:
+        return response.body.decode('utf8')
     return response.body
 
 
@@ -160,8 +167,9 @@ def faqlist(request):
 
     query = params.request.db.query(LayersConfig)
     for layer in get_layers_config_for_params(params, query, LayersConfig):
-        k = layer.keys().pop()
-        lyr = layer.values().pop()
+        # Python2/3
+        k = list(layer.keys()).pop()
+        lyr = list(layer.values()).pop()
         if 'parentLayerId' not in lyr and not k.endswith('_3d'):
             if k not in translations:
                 translations[k] = request.translate(k)

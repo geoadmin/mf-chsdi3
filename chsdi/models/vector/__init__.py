@@ -4,6 +4,7 @@ import geojson
 import esrijson
 import datetime
 import decimal
+import six
 from pyramid.threadlocal import get_current_registry
 from chsdi.models.types import GeometryChsdi
 from chsdi.lib.helpers import transform_round_geometry
@@ -14,6 +15,8 @@ from sqlalchemy.orm.properties import ColumnProperty
 from geoalchemy2.elements import WKBElement
 from geoalchemy2.shape import to_shape
 
+if six.PY3:
+    buffer = memoryview
 
 Geometry2D = GeometryChsdi(geometry_type='GEOMETRY', dimension=2, srid=2056)
 Geometry3D = GeometryChsdi(geometry_type='GEOMETRYZ', dimension=3, srid=2056)
@@ -25,6 +28,9 @@ DEFAULT_OUPUT_SRID = 21781
 
 
 def get_resolution(imageDisplay, mapExtent):
+    # TODO: Python2/3
+    if not isinstance(imageDisplay, list):
+        imageDisplay = list(imageDisplay)
     bounds = mapExtent.bounds
     map_meter_width = abs(bounds[0] - bounds[2])
     map_meter_height = abs(bounds[1] - bounds[3])
@@ -34,6 +40,9 @@ def get_resolution(imageDisplay, mapExtent):
 
 
 def get_scale(imageDisplay, mapExtent):
+    # TODO: Python2/3
+    if not isinstance(imageDisplay, list):
+        imageDisplay = list(imageDisplay)
     resolution = get_resolution(imageDisplay, mapExtent)
     return resolution * 39.37 * imageDisplay[2]
 
@@ -99,6 +108,8 @@ class Vector(object):
         return id, geom, properties, bbox
 
     def transform_shape(self, geom, srid_to, rounding=True):
+        if geom is None:
+            return geom
         return transform_round_geometry(geom, self.srid, srid_to, rounding=rounding)
 
     @property

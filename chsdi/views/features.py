@@ -2,6 +2,7 @@
 
 import re
 import geojson
+import six
 from gatilegrid.grid import Grid
 
 from pyramid.view import view_config
@@ -28,6 +29,9 @@ from chsdi.models.bod import OerebMetadata, get_bod_model
 from chsdi.models.vector import get_scale, get_resolution, has_buffer
 from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
+
+import logging
+log = logging.getLogger(__name__)
 
 
 MAX_FEATURES = 201
@@ -120,6 +124,9 @@ def _prepare_popup_response(params, request, isExtended=False, isIframe=False):
 
     if params.cbName is None:
         return response
+    # Python2/3
+    if six.PY3:
+        return response.body.decode('utf8')
     return response.body
 
 
@@ -261,7 +268,7 @@ def _identify_grid(params, layerBodIds):
     bucketName = params.request.registry.settings['vector_bucket']
     bucket = get_bucket(bucketName)
     for layer in layerBodIds:
-        [layerBodId, gridSpec] = next(layer.iteritems())
+        [layerBodId, gridSpec] = next(six.iteritems(layer))
         params.layerId = layerBodId
         layerProperties = get_grid_layer_properties(layerBodId)
         timestamp = layerProperties.get('timestamp')
@@ -310,7 +317,9 @@ def _identify_db(params, layerBodIds):
             # Note: in order not to expose too much details about internal
             # db structure, we only return the title of the error and not details
             # about table names and the like
-            raise exc.HTTPBadRequest('Your request generated the following database error: %s' % e.message.replace('\n', ''))
+            # Python2/3
+            log.error("Database error while reading features: {}".format(e))
+            raise exc.HTTPBadRequest('Your request generated a database errorwhile reading features')
         except StopIteration:
             break
         else:
@@ -457,7 +466,8 @@ def _get_areas_for_params(params, models):
     a cut areas, layerIds and group attribute. '''
     groupbyIdx = 0
     for vectorLayer in models:
-        bodId = vectorLayer.keys()[0]
+        # Python2/3
+        bodId = next(iter(vectorLayer))
         if params.groupby is not None:
             models = [
                 m for m in vectorLayer[bodId]['models']
@@ -531,7 +541,8 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
     ''' Returns a generator function that yields
     a feature. '''
     for layer in layerBodIds:
-        layerBodId, models = next(layer.iteritems())
+        # Python2/3
+        layerBodId, models = next(six.iteritems(layer))
         # Determine the limit
         limits = [x for x in [maxFeatures, params.limit] if x is not None]
         flimit = min(limits) if len(limits) > 0 else None
@@ -674,7 +685,9 @@ def _find(request):
 
     # Attributes in the 'where' or 'layerDefs' should match attributes in
     # at least one model related to a layer bodId
-    if params.where is not None and not any(list(zip(*vectorLayers)[1])):
+    # TODO: python3
+    layers = list(list(six.moves.zip(*vectorLayers))[1])
+    if params.where is not None and not any(layers):
         raise exc.HTTPBadRequest(
             'Filtering on a not existing field on layer {}'.format(params.layer)
         )
@@ -774,7 +787,8 @@ def _cut(request):
                 'Your request generated the following database error: %s' % e.message.replace('\n', ''))
         except StopIteration:
             break
-        bodId = feature.keys()[0]
+        # Python2/3
+        bodId = next(iter(feature))
         if bodId not in results:
             results[bodId] = [feature[bodId]]
         else:

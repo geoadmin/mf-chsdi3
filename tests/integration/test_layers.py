@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import os
+import six
 from webtest import TestApp
 from webtest.app import AppError
 from unittest import skip
+from tests.integration import TestsBase
 from pyramid_mako import MakoRenderingException
 from PIL import Image
 from contextlib import contextmanager
@@ -17,6 +19,17 @@ from sqlalchemy.types import BigInteger
 from chsdi.models.bod import LayersConfig
 from chsdi.models import models_from_bodid
 from chsdi.models.grid import get_grid_spec
+
+if six.PY3:
+    long = int
+
+
+class TestLayerService(TestsBase):
+    def test_one(self):
+        layer = 'ch.bafu.ren-wald'
+        for lang in ('de', 'fr', 'it', 'rm', 'en'):
+            link = '/rest/services/all/MapServer/' + layer + '/legend?callback=cb_&lang=' + lang
+            self.testapp.get(link, status=200)
 
 
 class LayersChecker(object):
@@ -134,6 +147,9 @@ class LayersChecker(object):
         assert resp.content_type == 'application/json', link
 
     def checkLegendImage(self, layer, legendsPath, legendImages):
+        if legendImages is None:
+            skip("Skip checkLegendImage for layer <{}>".format(layer))
+            return False
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
             key = layer + '_' + lang
             images = [l for l in legendImages if l.startswith(key)]
@@ -170,23 +186,11 @@ class LayersChecker(object):
     def checkPrimaryKeyColumnTypeMapping(self, layerId, featureId, model, primaryKeyColumn):
         schema = 'public' if 'schema' not in model.__table_args__ else model.__table_args__['schema']
         if featureId is None:
-            print "No feature was found in table %s for layer {}".format(schema + '.' + model.__tablename__, layerId)
+            print("No feature was found in table %s for layer {}".format(schema + '.' + model.__tablename__, layerId))
         else:
             pythonType = primaryKeyColumn.type.python_type if not isinstance(primaryKeyColumn.type, BigInteger) else (int, long)
             assert isinstance(featureId, pythonType), 'Expected %s; Got: %s; For layer %s and GeoTable %s' % (
                 pythonType, type(featureId), layerId, schema + '.' + model.__tablename__)
-
-
-def test_all_htmlpopups():
-    with LayersChecker() as lc:
-        for layer, feature, extended in lc.ilayersWithFeatures():
-            yield lc.checkHtmlPopup, layer, feature, extended
-
-
-def test_all_legends():
-    with LayersChecker() as lc:
-        for layer in lc.ilayers(hasLegend=True):
-            yield lc.checkLegend, layer
 
 
 def test_all_identify():
@@ -211,10 +215,26 @@ def test_all_legends_images():
         legendImages.setdefault(parseLegendNames(l), []).append(l)
     with LayersChecker() as lc:
         for layer in lc.ilayers(hasLegend=True):
-            yield lc.checkLegendImage, layer, legendsPath, legendImages.pop(layer)
+            try:
+                legendImage = legendImages.pop(layer)
+            except KeyError:
+                legendImage = None
+            yield lc.checkLegendImage, layer, legendsPath, legendImage
 
 
 def test_all_searchable_layers():
     with LayersChecker() as lc:
         for layer in lc.ilayers(searchable=True):
             yield lc.checkSearch, layer
+
+
+def test_all_htmlpopups():
+    with LayersChecker() as lc:
+        for layer, feature, extended in lc.ilayersWithFeatures():
+            yield lc.checkHtmlPopup, layer, feature, extended
+
+
+def test_all_legends():
+    with LayersChecker() as lc:
+        for layer in lc.ilayers(hasLegend=True):
+            yield lc.checkLegend, layer

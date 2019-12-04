@@ -5,17 +5,34 @@ import math
 import requests
 import datetime
 import gzip
-import StringIO
+import six
 from decimal import Decimal
-from itertools import izip, cycle
+from past.utils import old_div
+
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO, BytesIO
+
+from six.moves import zip, reduce, zip_longest
+from itertools import chain
+
 from functools import partial
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
 from pyramid.url import route_url
 from pyramid.httpexceptions import HTTPBadRequest, HTTPRequestTimeout
 import unicodedata
-from urllib import quote
-from urlparse import urlparse, urlunparse, urljoin
+try:
+    from urlparse import urlparse, urlunparse, urljoin
+except ImportError:
+    from urllib.parse import urlparse, urlunparse, urljoin
+
+try:
+    from urllib import quote
+except ImportError:
+    from urllib.parse import quote
+
 import xml.etree.ElementTree as etree
 from pyproj import Proj, transform as proj_transform
 from requests.exceptions import ConnectionError
@@ -27,6 +44,10 @@ from chsdi.lib.parser import WhereParser
 from chsdi.lib.exceptions import QueryParseException
 import logging
 
+if six.PY3:
+    unicode = str
+    long = int
+
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 log = logging.getLogger(__name__)
@@ -37,6 +58,20 @@ PROJECTIONS = {}
 # Rounding to abount 0.1 meters
 COORDINATES_DECIMALS_FOR_METRIC_PROJ = 1
 COORDINATES_DECIMALS_FOR_DEGREE_PROJ = 6
+
+
+def to_utf8(data):
+    try:
+        data = data.decode('utf8')
+    except (UnicodeDecodeError, AttributeError):
+        pass
+    return data
+
+# Number of element in an iterator
+
+
+def ilen(iterable):
+    return reduce(lambda sum, element: sum + 1, iterable, 0)
 
 
 def versioned(path):
@@ -197,6 +232,8 @@ def format_query(model, value, lang):
         Supported operators on numerical or date values are "=, !=, >=, <=, > and <"
         Supported operators for text are "ilike and not ilike"
     '''
+    where = None
+
     def escapeSQL(value):
         if u'ilike' in value:
             match = re.search(r'([\w]+\s)(ilike|not ilike)(\s\'%)([\s\S]*)(%\')', value)
@@ -239,30 +276,40 @@ def format_query(model, value, lang):
             res.append(val)
         return res
 
-    def merge_statements(values, operators):
-        if len(values) - 1 != len(operators):
+    def merge_statements(statements, operators):
+        ''' Given values=["toto >1', "'tutu' like 'tata%'"] and operators=["AND" ]
+            return "toto >1' AND 'tutu' like 'tata%'"
+        '''
+        if len(statements) - 1 != ilen(operators):
             raise Exception
-        iters = [iter(values), iter(operators)]
-        full = list(it.next() for it in cycle(iters))
 
-        return u" ".join(full)
+        # iters = [iter(statements), iter(operators)]
+        # full = list(it.next() for it in cycle(iters))
+
+        full = [x for x in chain.from_iterable(zip_longest(statements, operators))
+            if x is not None]
+
+        return unicode(" ".join(full))
 
     try:
-
         w = WhereParser(value)
-        values = w.tokens
-        if len(values) == 0:
+        tokens = list(w.tokens)
+        if ilen(tokens) == 0:
             return None
         # TODO: what does really do?
         # values = map(escapeSQL, values)
-        values = replacePropByColumnName(model, values, lang)
-        operators = w.operators
+        values = replacePropByColumnName(model, tokens, lang)
+
+        operators = list(w.operators)
+
         where = merge_statements(values, operators)
+
     except QueryParseException as qpe:
-        raise HTTPBadRequest(qpe.message)
+        raise HTTPBadRequest("Failed to parse where/layersDef: {}".format(qpe))
     except HTTPBadRequest:
         raise Exception
-    except Exception:
+    except Exception as e:
+        log.error("Unkown error while parsing where/layerDefs: {}".format(e))
         return None
     return where
 
@@ -393,7 +440,7 @@ def _transform_coordinates(coordinates, srid_from, srid_to, rounding=True):
         raise ValueError
     new_coords = []
     coords_iter = iter(coordinates)
-    for pnt in izip(coords_iter, coords_iter):
+    for pnt in zip(coords_iter, coords_iter):
         new_pnt = _transform_point(pnt, srid_from, srid_to)
         new_coords += new_pnt
     if rounding:
@@ -426,22 +473,29 @@ def float_raise_nan(val):
 
 def parse_box2d(stringBox2D):
     extent = stringBox2D.replace('BOX(', '').replace(')', '').replace(',', ' ')
-    return map(float, extent.split(' '))
+    # Python2/3
+    box = map(float, extent.split(' '))
+    if not isinstance(box, list):
+        box = list(box)
+    return box
 
 
 def is_box2d(box2D):
+    # Python2/3
+    if not isinstance(box2D, list):
+        box2D = list(box2D)
     # Bottom left to top right only
     if len(box2D) != 4 or box2D[0] > box2D[2] or box2D[1] > box2D[3]:
         raise ValueError('Invalid box2D.')
-    return True
+    return box2D
 
 
 def center_from_box2d(box2D):
-    if is_box2d(box2D):
-        return [
-            box2D[0] + ((box2D[2] - box2D[0]) / 2),
-            box2D[1] + ((box2D[3] - box2D[1]) / 2)
-        ]
+    box2D = is_box2d(box2D)
+    return [
+        box2D[0] + ((box2D[2] - box2D[0]) / 2),
+        box2D[1] + ((box2D[3] - box2D[1]) / 2)
+    ]
 
 
 def shift_to(coords, srid):
@@ -489,10 +543,15 @@ def parse_date_datenstand(dateDatenstand):
 
 
 def format_scale(scale):
+    """Format the scale denominator inserting the thousand separator (')
+
+       Example:  50000  gives 1:50'000
+    """
     scale_str = str(scale)
     n = ''
     while len(scale_str) > 3:
-        scale_prov = int(scale_str) / 1000
+        # Python2/3
+        scale_prov = old_div(int(float(scale_str)), 1000)
         n = n + "'000"
         scale_str = str(scale_prov)
     scale = "1:" + scale_str + n
@@ -516,14 +575,24 @@ def get_loaderjs_url(request, version='3.6.0'):
 
 
 def gzip_string(string):
-    infile = StringIO.StringIO()
+    # Python2/3
+    if six.PY2:
+        infile = StringIO()
+        data = string
+    else:
+        infile = BytesIO()
+        try:
+            data = string.encode('utf8')
+        except (UnicodeDecodeError, AttributeError):
+            data = string
     try:
         gzip_file = gzip.GzipFile(fileobj=infile, mode='w', compresslevel=5)
-        gzip_file.write(string)
+        gzip_file.write(data)
         gzip_file.close()
         infile.seek(0)
         out = infile.getvalue()
-    except Exception:
+    except Exception as e:
+        log.error("Cannot gzip string: {}".format(e))
         out = None
     finally:
         infile.close()
@@ -531,5 +600,12 @@ def gzip_string(string):
 
 
 def decompress_gzipped_string(string):
-    content = gzip.GzipFile(fileobj=StringIO.StringIO(string))
+    # Python2/3
+    if not isinstance(string, six.string_types):
+        in_ = BytesIO()
+        in_.write(string)
+        in_.seek(0)
+    else:
+        in_ = StringIO(string)
+    content = gzip.GzipFile(fileobj=in_, mode='rb')
     return content.read()

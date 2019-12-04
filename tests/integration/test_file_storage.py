@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import six
 from tests.integration import TestsBase
 
 
@@ -150,7 +151,11 @@ class TestFileView(TestsBase):
         with open(os.path.join(current_dir, 'big.kml')) as f:
             data = f.read()
         resp = self.testapp.post('/files', data, headers=self.headers, status=413)
-        self.assertIn('File size exceed', resp.body)
+        if six.PY2:
+            body = resp.body
+        else:
+            body = resp.body.decode('utf8')
+        self.assertIn('File size exceed', body)
 
     # Test if there are matches in KML with Regex:
     # (\s+on\w*=(\"[^\"]+\"|\'[^\']+\'))
@@ -162,7 +167,11 @@ class TestFileView(TestsBase):
 
         # check kml based on invalid regex 1
         resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
-        orig_data = resp.body
+        # Python2/3
+        if six.PY2:
+            orig_data = resp.body
+        else:
+            orig_data = resp.body.decode('utf8')
         self.assertEqual(orig_data, VALID_KML)
 
         # TEST: REGEX OCCURS SEVERAL TIMES
@@ -172,7 +181,11 @@ class TestFileView(TestsBase):
 
         # check kml based on invalid regex 1
         resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
-        orig_data = resp.body
+        # Python2/3
+        if six.PY2:
+            orig_data = resp.body
+        else:
+            orig_data = resp.body.decode('utf8')
         self.assertEqual(orig_data, VALID_KML)
 
     # Test if matches in KML with Regex
@@ -185,7 +198,10 @@ class TestFileView(TestsBase):
 
         # check kml based on invalid regex 1
         resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
-        orig_data = resp.body
+        if six.PY3:
+            orig_data = resp.body.decode('utf8')
+        else:
+            orig_data = resp.body
         self.assertEqual(orig_data, VALID_KML)
 
         # TEST: REGEX OCCURS SEVERAL TIMES
@@ -196,6 +212,11 @@ class TestFileView(TestsBase):
         # check kml based on invalid regex 1
         resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
         orig_data = resp.body
+        # Python2/3
+        if six.PY2:
+            orig_data = resp.body
+        else:
+            orig_data = resp.body.decode('utf8')
         self.assertEqual(orig_data, VALID_KML)
 
     def test_update_copy_kml(self):
@@ -206,7 +227,10 @@ class TestFileView(TestsBase):
 
         # get file
         resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
-        orig_data = resp.body
+        if six.PY3:
+            orig_data = resp.body.decode('utf8')
+        else:
+            orig_data = resp.body
         self.assertEqual(orig_data, VALID_KML)
 
         # update with file_id, should copy
@@ -214,14 +238,22 @@ class TestFileView(TestsBase):
         resp = self.testapp.post('/files/%s' % file_id, new_content, headers=self.headers, status=200)
         new_admin_id = resp.json['adminId']
         new_file_id = resp.json['fileId']
-        modified_content = resp.body
+        # Python2/3
+        if six.PY2:
+            modified_content = resp.body
+        else:
+            modified_content = resp.body.decode('utf8')
 
         self.assertNotEqual(admin_id, new_admin_id)
         self.assertNotEqual(file_id, new_file_id)
 
         # re-get first file
         resp = self.testapp.get('/files/%s' % file_id, headers=self.headers, status=200)
-        new_content = resp.body
+        # Python2/3
+        if six.PY2:
+            new_content = resp.body
+        else:
+            new_content = resp.body.decode('utf8')
 
         self.assertEqual(new_content, VALID_KML)
         self.assertNotEqual(new_content, modified_content)

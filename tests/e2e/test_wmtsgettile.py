@@ -65,7 +65,10 @@ class TileChecker(TodProxyTestsBase):
         assert checkcode, url
 
     def itiles(self, epsg=21781):
-        from urlparse import urlparse, urlunparse
+        try:
+            from urllib.parse import urlparse, urlunparse
+        except ImportError:
+            from urlparse import urlparse, urlunparse
         import xml.etree.ElementTree as etree
 
         tiles = {3857: [(16, 34243, 23004)],
@@ -102,7 +105,7 @@ class TileChecker(TodProxyTestsBase):
                                 try:
                                     pth2 = pth.replace('{TileCol}', str(col)).replace('{TileRow}', str(row)).replace('{TileMatrix}', str(zoom)).replace('{Time}', str(t))
                                 except Exception:
-                                    print 'Cannot replace in template %s' % pth
+                                    print('Cannot replace in template {}'.format(pth))
                                 yield urlunparse((tpl_parsed.scheme, tpl_parsed.netloc, pth2, '', '', ''))
 
 

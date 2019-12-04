@@ -2,6 +2,7 @@
 
 import unittest
 from chsdi.lib.parser import WhereParser
+from chsdi.lib.helpers import ilen
 
 
 class TestWhereParser(unittest.TestCase):
@@ -45,7 +46,7 @@ class TestWhereParser(unittest.TestCase):
     def test_with_and(self):
         sql = u"toto is null and toto is not null"
         w = WhereParser(sql)
-        self.assertEqual("and",  w.operators[0])
+        self.assertEqual("and",  list(w.operators)[0])
 
     def test_with_date(self):
         sql = u"startofconstruction > '2014-12-01'"
@@ -55,12 +56,12 @@ class TestWhereParser(unittest.TestCase):
     def test_with_or(self):
         sql = u"toto like 'tutu%' or toto is not null"
         w = WhereParser(sql)
-        self.assertEqual("or",  w.operators[0])
+        self.assertEqual("or",  list(w.operators)[0])
 
     def test_with_many_operators(self):
         sql = u"toto like 'tutu%' or toto is not null and tata > 0.2"
         w = WhereParser(sql)
-        self.assertEqual(2,  len(w.operators))
+        self.assertEqual(2,  ilen(w.operators))
 
     def test_failings(self):
         # 1/ ilike and number are forbidden

@@ -75,7 +75,7 @@ class TestCatalogService(TestsBase):
                     break
 
             if not found:
-                print node.get('id')
+                print(node.get('id'))
                 return False
 
             if 'children' in node:
@@ -120,7 +120,7 @@ class TestCatalogService(TestsBase):
                     break
 
             if not found:
-                print node.get('layerBodId')
+                print(node.get('layerBodId'))
                 return False
 
             if 'children' in node:

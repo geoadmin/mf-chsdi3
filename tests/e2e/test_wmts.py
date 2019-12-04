@@ -9,7 +9,7 @@ app = get_app('development.ini')
 
 try:
     api_url = "http:" + app.registry.settings['api_url']
-except KeyError as e:
+except KeyError:
     api_url = 'http://api3.geo.admin.ch'
 
 

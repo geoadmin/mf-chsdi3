@@ -1,26 +1,38 @@
 # -*- coding: utf-8 -*-
 
-import urllib
+import sys
 import requests
-from urlparse import urlparse, urlunsplit
+try:
+    from urllib.parse import urlparse, urlunsplit, urlencode
+except ImportError:
+    from urlparse import urlparse, urlunsplit
+    from urllib import urlencode
 
 from pyramid.paster import get_app
 
 app = get_app('development.ini')
 
-geodata_staging = u'prod'
+
+api_url = None
+base_url = None
+geodata_staging = None
+max_retry = 1
 
 try:
-    api_url = "http:" + app.registry.settings['api_url']
-    base_url = "http://" + app.registry.settings['wmshost'] + '/'
-    geodata_staging = app.registry.settings['geodata_staging']
-    max_retry = 1
-    if geodata_staging == u'dev':
-        max_retry = 3
-except KeyError as e:
+    api_url = "http:" + app.registry.settings.get('api_url', 'api3.geo.admin.ch')
+    base_url = "http://" + app.registry.settings.get('wmshost', 'wms.geo.admin.ch') + '/'
+    geodata_staging = app.registry.settings.get('geodata_staging', 'prod')
+except KeyError:
+    pass
+    
+if any(item is None for item in [api_url, base_url, geodata_staging]):
     geodata_staging = u'prod'
-    base_url = 'http://wms.geo.admin.ch'
+    base_url= 'http://wms.geo.admin.ch/'
+    api_url = 'http://api3.geo.admin.ch'
 
+if geodata_staging == u'dev':
+        max_retry = 3
+    
 
 def get_wms_layers():
     resp = requests.get(api_url + '/rest/services/all/MapServer/layersConfig', headers={'User-Agent': 'mf-geoadmin/python'})
@@ -51,7 +63,7 @@ def build_wms_request(cfg):
                'SERVICE': 'WMS'
                }
 
-    return base_url + '?' + urllib.urlencode(payload), scheme
+    return base_url + '?' + urlencode(payload), scheme
 
 
 def check_status_code(url, scheme):

@@ -12,10 +12,14 @@ from chsdi.lib.helpers import (
     get_proj_from_srid, get_precision_for_proj, _round_bbox_coordinates, _round_shape_coordinates,
     round_geometry_coordinates, _transform_coordinates, _transform_shape, transform_round_geometry
 )
-from urlparse import urljoin
 from shapely.geometry import Point, Polygon
 from shapely.geometry import mapping
 from numpy.testing import assert_almost_equal
+
+try:
+    from urlparse import urljoin
+except ImportError:
+    from urllib.parse import urljoin
 
 
 class Test_Helpers(unittest.TestCase):

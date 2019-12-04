@@ -691,7 +691,7 @@ class TestFeaturesView(TestsBase):
         totalArea = 0
         for group in resp.json['ch.swisstopo.swissimage-product']:
             totalArea += group['area']
-        self.assertGreater(totalArea, 45045)
+        self.assertGreaterEqual(totalArea, 45045)
 
     def test_cut_with_feature_clipper(self):
         params = {'clipper': 'ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill:2222',
@@ -736,8 +736,8 @@ class TestFeaturesView(TestsBase):
                   'geometryType': 'esriGeometryEnvelope',
                   'geometry': '478968,280720,486572,292875'}
         resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertEqual(resp.json.keys()[0], 'ch.swisstopo.swissimage-product')
-        self.assertEqual(resp.json['ch.swisstopo.swissimage-product'][0]['area'], 0.0)
+        self.assertEqual(list(resp.json.keys())[0], 'ch.swisstopo.swissimage-product')
+        self.assertEqual(list(resp.json['ch.swisstopo.swissimage-product'])[0]['area'], 0.0)
 
 
 zlayer = 'ch.swisstopo.zeitreihen'

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import re
+import six
 import pyramid.httpexceptions as exc
 from pyramid.view import view_config
 
@@ -8,7 +9,7 @@ from shapely.geometry import box, Point
 
 from chsdi.lib.validation.search import SearchValidation
 from chsdi.lib.helpers import format_search_text, format_locations_search_text
-from chsdi.lib.helpers import _transform_point as transform_coordinate, parse_box2d, shift_to
+from chsdi.lib.helpers import _transform_point as transform_coordinate, parse_box2d, shift_to, ilen
 from chsdi.lib.helpers import center_from_box2d, transform_round_geometry as transform_shape
 from chsdi.lib.sphinxapi import sphinxapi
 from chsdi.lib import mortonspacekey as msk
@@ -59,7 +60,8 @@ class Search(SearchValidation):
                  request_param='geometryFormat=geojson')
     def view_find_geojson(self):
         (features, bbox) = self._find_geojson()
-        return {"type": "FeatureCollection", "bbox": bbox.bounds, "features": features}
+        bounds = bbox.bounds if bbox is not None else None
+        return {"type": "FeatureCollection", "bbox": bounds, "features": features}
 
     @view_config(route_name='search', renderer='esrijson',
                  request_param='geometryFormat=esrijson')
@@ -152,7 +154,7 @@ class Search(SearchValidation):
             self._filter_locations_by_origins()
 
         searchList = []
-        if len(self.searchText) >= 1:
+        if ilen(self.searchText) >= 1:
             searchText = self._query_fields('@detail')
             searchList.append(searchText)
 
@@ -415,7 +417,7 @@ class Search(SearchValidation):
         }[self.searchLang]
 
     def _detect_keywords(self):
-        if len(self.searchText) > 0:
+        if ilen(self.searchText) > 0:
             PARCEL_KEYWORDS = ('parzelle', 'parcelle', 'parcella', 'parcel')
             ADDRESS_KEYWORDS = ('addresse', 'adresse', 'indirizzo', 'address')
             firstWord = self.searchText[0].lower()
@@ -471,7 +473,11 @@ class Search(SearchValidation):
         if not self.returnGeometry:
             attrs2Del = ['x', 'y', 'lon', 'lat', 'geom_st_box2d']
             popAtrrs = lambda x: res.pop(x) if x in res else x
-            map(popAtrrs, attrs2Del)
+            # Python2/3
+            if six.PY2:
+                map(popAtrrs, attrs2Del)
+            else:
+                list(map(popAtrrs, attrs2Del))
         elif int(self.srid) not in (21781, 2056):
             self._box2d_transform(res)
             if int(self.srid) == 4326:
@@ -565,8 +571,10 @@ class Search(SearchValidation):
     def _translate_label(self, label):
         translation = re.search(r'.*(<i>[\s\S]*?<\/i>).*', label) or False
         if translation:
+            translated = self.request.translate(translation.group(1))
             label = label.replace(translation.group(1),
-                                  '<i>%s</i>' % str(self.request.translate(translation.group(1)).encode('utf-8')))
+                                  u'<i>{}</i>'.format(translated))
+
         return label
 
     def _get_quad_index(self):

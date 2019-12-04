@@ -2,7 +2,7 @@
 
 from pyramid.httpexceptions import HTTPBadRequest
 
-from chsdi.lib.helpers import float_raise_nan, shift_to
+from chsdi.lib.helpers import float_raise_nan, shift_to, ilen
 from chsdi.lib.validation import MapNameValidation, SUPPORTED_OUTPUT_SRS
 
 MAX_SPHINX_INDEX_LENGTH = 63
@@ -103,8 +103,9 @@ class SearchValidation(MapNameValidation):
             raise HTTPBadRequest("Please provide a search text")
         searchTextList = value.split(' ')
         # Remove empty strings
-        searchTextList = filter(None, searchTextList)
-        if len(searchTextList) > MAX_SEARCH_TERMS:
+        # Python2/3
+        searchTextList = list(filter(None, searchTextList))
+        if ilen(searchTextList) > MAX_SEARCH_TERMS:
             raise HTTPBadRequest("The searchText parameter can not contain more than 10 words")
         self._searchText = searchTextList
 
@@ -115,7 +116,8 @@ class SearchValidation(MapNameValidation):
             if len(values) != 4:
                 raise HTTPBadRequest("Please provide 4 coordinates in a comma separated list")
             try:
-                values = map(float_raise_nan, values)
+                # Python 2/3
+                values = list(map(float_raise_nan, values))
             except ValueError:
                 raise HTTPBadRequest("Please provide numerical values for the parameter bbox")
             if self._srid == 2056:

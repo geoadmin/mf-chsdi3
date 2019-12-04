@@ -3,10 +3,15 @@
 
 import re
 import esrijson
+import six
 from pyramid.httpexceptions import HTTPBadRequest
 
 from chsdi.lib.helpers import float_raise_nan
 from chsdi.lib.validation import BaseFeaturesValidation
+
+
+if six.PY3:
+    unicode = str
 
 
 class HtmlPopupServiceValidation(BaseFeaturesValidation):
@@ -74,7 +79,7 @@ class HtmlPopupServiceValidation(BaseFeaturesValidation):
                     'Please provide the parameter imageDisplay in a comma separated list of 3 arguments '
                     '(width,height,dpi)')
             try:
-                self._imageDisplay = map(float_raise_nan, value)
+                self._imageDisplay = list(map(float_raise_nan, value))
             except ValueError:
                 raise HTTPBadRequest('Please provide numerical values for the parameter imageDisplay')
 

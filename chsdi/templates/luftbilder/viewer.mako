@@ -2,7 +2,10 @@
 
 <%
   from pyramid.url import route_url
-  from urllib2 import urlopen
+  try:
+      from urllib2 import urlopen
+  except ImportError:
+      from urllib.request import urlopen
   from json import loads
 
   c = context

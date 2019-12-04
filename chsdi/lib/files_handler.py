@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import six
 import uuid
 import base64
 import time
@@ -13,6 +14,10 @@ from pyramid.response import Response
 
 from chsdi.lib.helpers import gzip_string
 from chsdi.models.clientdata_dynamodb import get_dynamodb_table, get_bucket
+
+import logging
+
+log = logging.getLogger(__name__)
 
 
 class DynamoDBFilesHandler:
@@ -80,6 +85,12 @@ class S3FilesHandler:
 
     def save_object(self, file_id, mime, content_encoding, data, replace=False):
         msg = 'configuring' if replace else 'updating'
+        # Python2/3
+        if data is None:
+            error_msg = 'Error while saving %s S3 key (%s): file is empty' % (msg, file_id)
+            log.error(error_msg)
+            raise exc.HTTPInternalServerError(error_msg)
+
         try:
             k = Key(bucket=self.bucket)
             k.key = file_id
@@ -87,9 +98,12 @@ class S3FilesHandler:
             k.content_type = mime
             k.content_encoding = content_encoding
             k.set_metadata('Content-Encoding', content_encoding)
+            logging.info(data)
             k.set_contents_from_string(data, headers=self.default_headers, replace=replace)
         except Exception as e:
-            raise exc.HTTPInternalServerError('Error while %s S3 key (%s) %s' % (msg, file_id, e))
+            error_msg = 'Error while %s S3 key (%s) %s' % (msg, file_id, e)
+            log.error(error_msg)
+            raise exc.HTTPInternalServerError(error_msg)
 
     def delete_key(self, key):
         try:
@@ -146,10 +160,15 @@ class FilesHandler(object):
         self.admin_id = self._get_uuid()
         mime = self.request.content_type
         data = self.request.body
+        # Python2/3
+        if six.PY3:
+            data = data.decode('utf8')
+
         content_encoding = None
         if mime == self.default_mime_type:
             content_encoding = 'gzip'
             data = gzip_string(data)
+
         # Save to S3
         self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data)
         # Fetch last modified from S3 to add it to DynamoBD
@@ -218,7 +237,14 @@ class FilesHandler(object):
         }
 
     def _get_uuid(self):
-        return base64.urlsafe_b64encode(uuid.uuid4().bytes).replace('=', '')
+        # Python2/3
+        # TODO
+        uuid_ = base64.urlsafe_b64encode(uuid.uuid4().bytes)
+        if six.PY2:
+            return uuid_.replace('=', '')
+
+        logging.info(uuid_.decode('utf8').replace('=', ''))
+        return uuid_.decode('utf8').replace('=', '')
 
     def _fork(self):
         self.file_id = self._get_uuid()

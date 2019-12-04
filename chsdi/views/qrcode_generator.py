@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import StringIO
 import requests
 
 from pyramid.view import view_config
@@ -8,6 +7,9 @@ from pyramid.httpexceptions import HTTPBadRequest
 from pyramid.response import Response
 
 from chsdi.lib.helpers import check_url, make_api_url, quoting
+
+
+from six import BytesIO
 
 
 @view_config(route_name='qrcodegenerator')
@@ -33,7 +35,7 @@ def _make_qrcode_img(url):
     try:
         qr.add_data(url)
         qr.make()
-        output = StringIO.StringIO()
+        output = BytesIO()
         img = qr.make_image()
         img.save(output)
     except Exception:  # pragma: no cover

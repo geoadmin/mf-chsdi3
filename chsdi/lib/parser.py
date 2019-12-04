@@ -1,7 +1,11 @@
+import six
 from lark import Lark, Transformer
 from lark.exceptions import LarkError
 import lark
 import logging
+
+if six.PY3:
+    unicode = str
 
 log = logging.getLogger(__name__)
 
@@ -55,7 +59,7 @@ class ParseError(Exception):
 class WhereParser(object):
 
     def __init__(self, text):
-        log.debug(u'WhereParser string: {}'.format(unicode(text)))
+        log.debug(u'WhereParser string to parse: {}'.format(unicode(text)))
 
         self.text = text
         self.parser = Lark(where_gram, debug=True)

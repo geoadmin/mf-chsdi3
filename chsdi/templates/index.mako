@@ -1,3 +1,7 @@
+<%
+from platform import python_version
+version = python_version()
+%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,6 +20,7 @@
     <title>CHSDI 3</title>
   </head>
   <body>
+      <h1>Python version: ${version}</h1>
       <h1 id="title">Python translations</h1>
           <a href="testi18n?lang=de">Default to de</a> <br>
           <a href="testi18n?lang=en">En to en</a> <br>

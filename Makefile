@@ -1,4 +1,5 @@
 SHELL = /bin/bash
+.DEFAULT_GOAL := help
 
 # Macro functions
 lastvalue = $(shell if [ -f .venv/last-$1 ]; then cat .venv/last-$1 2> /dev/null; else echo '-none-'; fi;)
@@ -77,7 +78,7 @@ LAST_WSGI_THREADS := $(call lastvalue,wsgi-threads)
 LAST_WSGI_APP := $(call lastvalue,wsgi-app)
 LAST_KML_TEMP_DIR := $(call lastvalue,kml-temp-dir)
 
-PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -type f -name "*.py" -print)
+PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
 
 # Commands
@@ -116,8 +117,36 @@ GREEN := $(shell tput setaf 2)
 # We need GDAL which is hard to install in a venv, modify PYTHONPATH to use the
 # system wide version.
 GDAL_VERSION ?= 1.10.0
-PYTHON_VERSION := $(shell python --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+
+ifndef USE_PYTHON3
+		override USE_PYTHON3 = 0
+endif
+
+ifeq ($(USE_PYTHON3), 1)
+		PYTHON_VERSION := 3.6.8
+build/python: local/bin/python3.6
+		touch build/python;
+else
+		PYTHON_VERSION := $(shell python2 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+build/python:
+		touch build/python;
+endif
 PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
+
+PYTHON_BINDIR := $(shell dirname $(PYTHON_CMD))
+PYTHONHOME :=$(shell eval "cd $(PYTHON_BINDIR); pwd; cd > /dev/null")
+SYSTEM_PYTHON_CMD := $(CURRENT_DIR)/local/bin/python3
+
+.PHONY: python
+python: build/python
+		@echo "Python installed"
+
+local/bin/python3.6:
+		mkdir -p $(CURRENT_DIRECTORY)/local;
+		curl -z $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_VERSION).tar.xz \
+				https://www.python.org/ftp/python/$(PYTHON_VERSION)/Python-$(PYTHON_VERSION).tar.xz \
+				-o $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_VERSION).tar.xz;
+		cd $(CURRENT_DIRECTORY)/local && tar -xf Python-$(PYTHON_VERSION).tar.xz && Python-$(PYTHON_VERSION)/configure --prefix=$(CURRENT_DIRECTORY)/local/  --enable-optimizations && make altinstall
 
 .PHONY: help
 help:
@@ -146,8 +175,13 @@ help:
 	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"
 	@echo "- clean              Remove generated files"
 	@echo "- cleanall           Remove all the build artefacts"
+	@echo "- pythonclean        Remove all the build artefacts and the downloaded python version"
 	@echo
 	@echo "Variables:"
+	@echo "USE_PYTHON3          ${USE_PYTHON3}"
+	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
+	@echo "PYTHON_CMD:          ${PYTHON_CMD}"
+	@echo "PYTHONPATH:          ${PYTHONPATH}"
 	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
 	@echo "API_URL:             ${API_URL}"
 	@echo "WMSHOST:             ${WMSHOST}"
@@ -165,12 +199,16 @@ help:
 user:
 	source $(USER_SOURCE) && make all
 
+# TODO: deactivated rss
 .PHONY: all
-all: setup chsdi/static/css/extended.min.css templates potomo rss lint fixrights
+all: setup chsdi/static/css/extended.min.css templates potomo lint fixrights
 
 setup: .venv node_modules .venv/hooks
 
 templates: apache/wsgi.conf development.ini production.ini
+
+
+
 
 .PHONY: dev
 dev:
@@ -194,7 +232,7 @@ shell:
 
 .PHONY: test
 test:
-	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} tests/ -e .*e2e.*
+	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD}  tests/ -e .*e2e.*
 
 .PHONY: teste2e
 teste2e:
@@ -446,14 +484,23 @@ production.ini: production.ini.in \
 
 requirements.txt:
 	@echo "${GREEN}File requirements.txt has changed${RESET}";
+
+ifeq ($(USE_PYTHON3), 1)
+.venv: requirements.txt
+		test -d "$(INSTALL_DIRECTORY)" || local/bin/python3.6 -m venv $(INSTALL_DIRECTORY); \
+		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; 
+		${PIP_CMD} install --index-url ${PYPI_URL}  -e .
+else
 .venv: requirements.txt
 	@echo "${GREEN}Setting up virtual environement...${RESET}";
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv -p /usr/bin/python2  $(INSTALL_DIRECTORY); \
 		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install --upgrade pip==19.2.3 enum34==1.1.6 setuptools --index-url ${PYPI_URL} ; \
 	fi
 	${PIP_CMD} install --index-url ${PYPI_URL} --find-links local_eggs/ -e .
+endif
 
 .venv/bin/git-secrets: .venv
 	@echo "${GREEN}Installing git secrets${RESET}";
@@ -643,3 +690,7 @@ cleanall: clean
 	rm -rf chsdi/static/js/blueimp-gallery.min.js
 	rm -rf chsdi/static/js/d3.min.js
 	rm -rf chsdi/static/js/d3-tip.js
+
+.PHONY: pythonclean
+pythonclean: cleanall
+	rm -rf local
