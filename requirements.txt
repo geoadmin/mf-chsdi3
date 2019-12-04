@@ -6,7 +6,6 @@ autopep8==1.4.4
 Babel==2.7.0
 beautifulsoup4==4.8.0
 boto==2.49.0
-configparser==4.0.2
 coverage==4.5.4
 decorator==4.4.0
 docutils==0.15.2
