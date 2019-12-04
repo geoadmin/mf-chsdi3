@@ -1,3 +1,4 @@
+import six
 from bs4 import BeautifulSoup
 from datetime import datetime
 import time
@@ -32,7 +33,8 @@ class MyRSS2(PyRSS2Gen.RSSItem):
         PyRSS2Gen.RSSItem.publish(self, handler)
 
     def publish_extensions(self, handler):
-        handler._write('<%s><![CDATA[%s]]></%s>' % ('description', self.do_not_autooutput_description, 'description'))
+        tmpl = six.text_type('<%s><![CDATA[%s]]></%s>')
+        handler._write(tmpl % ('description', self.do_not_autooutput_description, 'description'))
 
 
 def extract_releases(html):
