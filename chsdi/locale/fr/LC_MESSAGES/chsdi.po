@@ -5681,6 +5681,12 @@ msgstr "Statut juridique"
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_thema"
 msgstr "Thème"
 
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht"
+msgstr "Bruit ferrov., immissions eff. N"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
+msgstr "Bruit ferrov., immissions eff. J"
+
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Bruit ferrov., émissions fixées N"
 
@@ -5800,6 +5806,12 @@ msgstr "No. de trains march. jour"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.year_evaluation"
 msgstr "Année"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht"
+msgstr "Bruit ferrov., immissions admiss. N"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag"
+msgstr "Bruit ferrov., immissions admiss. J"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Plan des émissions en 2015"
@@ -8050,6 +8062,9 @@ msgstr "Précipitations, somme 72 h"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
 msgstr "Durée d'ensoleillement, 10 min"
+
+msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-kumuliert-10min"
+msgstr "Ensoleillement somme cumulative"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
 msgstr "Durée d'ensoleillement rel., 1 jour"
@@ -10494,7 +10509,7 @@ msgid "ch.swisstopo.sgtk"
 msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
-msgstr "Découpage carte raquettes/ski 50 Papier"
+msgstr "Découpage carte sports de neige 50 Papier"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
 msgstr "Nom"

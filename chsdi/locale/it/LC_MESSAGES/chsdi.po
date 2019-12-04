@@ -5681,6 +5681,12 @@ msgstr "Stato giuridico"
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_thema"
 msgstr "Tema"
 
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht"
+msgstr "Rumore dei treni, immissioni eff. N"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
+msgstr "Rumore dei treni, Immissioni eff. G"
+
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Rumore dei treni, emissioni N stab."
 
@@ -5800,6 +5806,12 @@ msgstr "No. treni di merce giorno"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.year_evaluation"
 msgstr "Anno"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht"
+msgstr "Rumore dei treni, immissioni cons. N"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag"
+msgstr "Rumore dei treni, immissioni cons. G"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Piano delle emissioni 2015"
@@ -8050,6 +8062,9 @@ msgstr "Precipitazione, somma 72 h"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
 msgstr "Soleggiamento, 10 min"
+
+msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-kumuliert-10min"
+msgstr "Soleggiamento somma cumulativa"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
 msgstr "Soleggiamento relativo, 1 giorno"
