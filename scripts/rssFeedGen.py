@@ -10,6 +10,8 @@ from lxml import etree
 from lxml.etree import Element, SubElement, QName, tostring
 
 
+RSS_FILE = 'chsdi/static/doc/build/releasenotes/rss2.xml'
+
 class NoOutput:
 
     def __init__(self):
@@ -63,13 +65,14 @@ def extract_data(r):
 
 
 def data_to_description(data):
-    data = data.decode('utf-8', 'ignore')
+    if six.PY2:
+        data = data.decode('utf-8', 'ignore')
     description = data.encode('ascii', 'ignore')
     return description
 
 if __name__ == '__main__':
     if len(sys.argv) <2:
-        print("Error. You must set API_URL")
+        print("Usage:\n./rssFeedGen.py API_URL")
         sys.exit(2)
 
     api_url = sys.argv[1] + '/'
@@ -112,6 +115,8 @@ if __name__ == '__main__':
 
     # Make the feed validate (https://validator.w3.org/feed/check.cgi?)
     rss = rss.to_xml('utf-8')
+    if six.PY3:
+        rss = bytes(rss, 'utf-8')
     root = etree.fromstring(rss)
     new_root = Element('rss', nsmap={'atom':XMLNamespaces.atom})
     new_root.attrib['version'] = '2.0'
@@ -125,6 +130,13 @@ if __name__ == '__main__':
     link = channel.find("link")
     link.addnext(atom_link)
     new_root.append(channel)
-
-    with open('chsdi/static/doc/build/releasenotes/rss2.xml', 'w') as xml:
-        xml.write(etree.tostring(new_root, pretty_print=True))
+    
+    try:
+        with open(RSS_FILE, 'w') as xml:
+            content = etree.tostring(new_root, pretty_print=True)
+            if six.PY3:
+                content = content.decode('utf-8')
+            xml.write(content)
+        print("RSS file written to {}".format(RSS_FILE))
+    except IOError as e:
+        print("Error while writting RSS file")
