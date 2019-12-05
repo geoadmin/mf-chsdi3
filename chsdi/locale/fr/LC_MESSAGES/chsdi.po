@@ -11561,6 +11561,9 @@ msgstr "Secteurs logistiques des CLA"
 msgid "ch.vbs.bundestankstellen-bebeco"
 msgstr "Stations-service BEBECO"
 
+msgid "ch.vbs.bundestankstellen-bebeco.bezugszeit"
+msgstr "Temps de réception Lu - Ve"
+
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Lieu"
 

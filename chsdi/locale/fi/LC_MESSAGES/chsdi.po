@@ -11561,6 +11561,9 @@ msgstr "Secturs logistics CLA"
 msgid "ch.vbs.bundestankstellen-bebeco"
 msgstr "Tancadis BEBECO"
 
+msgid "ch.vbs.bundestankstellen-bebeco.bezugszeit"
+msgstr "Bezugszeiten Mo – Fr"
+
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Ort"
 
