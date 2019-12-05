@@ -555,6 +555,7 @@ Example
 
 - Get the feature with the ID RIG belonging to ch.bafu.nabelstationen: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG <../../../rest/services/api/MapServer/ch.bafu.nabelstationen/RIG>`_
 - Get several features with IDs RIG and LAU belonging to ch.bafu.bundesinventar-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU <../../../rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU>`_
+- A `GeoJSON` in `EPSG:4326`: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU?sr=4326&geometryFormat=geojson <../../../rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU?sr=4326&geometryFormat=geojson>`_
 
 .. _htmlpopup_description:
 
@@ -643,7 +644,7 @@ Only RESTFul interface is available.
 | **type (required)**                 | The type of performed search. Specify `locations` to perform a location search.           |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **bbox (required/optional)**        | Must be provided if the `searchText` is not. A comma separated list of 4 coordinates      |
-|                                     | representing the bounding box on which features should be filtered (SRID: 21781).         |
+|                                     | representing the bounding box on which features should be filtered (SRID: 21781 or 2056). |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **sortbbox (optional)**             | When `bbox` is specified and this parameter is "true", then the ranking of the results is |
 |                                     | performed according to the distance between the locations and the center of the bounding  |
@@ -827,6 +828,8 @@ Examples
 - Search for layers in French matching the word “géoïde” in their description: `https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr <../../../rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr>`_
 - Search for features matching word "433" in their description: `https://api3.geo.admin.ch/rest/services/api/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433 <../../../rest/services/api/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433>`_
 - Get a GeoJSON for locations matching the word “wabern”: `https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson <../../../rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson>`_
+- Get a Webmercator GeoJSON: `https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson&sr=3857 <../../../rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson&sr=3857>`_
+- Input `bbox` may also be in `LV95`: `https://api3.geo.admin.ch/rest/services/api/SearchServer?bbox=2551306.5625,1167918.328125,2551754.125,1168514.625&type=locations&sr=2056 <../../../rest/services/api/SearchServer?bbox=2551306.5625,1167918.328125,2551754.125,1168514.625&type=locations&sr=2056>`_
 
 Example of feature search usage with other services
 ***************************************************
