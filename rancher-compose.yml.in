@@ -1,0 +1,10 @@
+version: '2'
+services:
+  nginx:
+    start_on_create: true
+    health_check:
+      port: ${NGINX_PORT}
+      interval: 15000
+      request_line: GET /ok HTTP/1.0
+      unhealthy_threshold: 3
+      strategy: recreate

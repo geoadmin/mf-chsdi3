@@ -132,7 +132,7 @@ endif
 
 ifeq ($(USE_PYTHON3), 1)
 		PYTHON_VERSION := 3.6.8
-build/python: local/bin/python3.6
+build/python: 
 		mkdir -p build && touch build/python;
 else
 		PYTHON_VERSION := $(shell python2 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
@@ -143,7 +143,7 @@ PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python$
 
 PYTHON_BINDIR := $(shell dirname $(PYTHON_CMD))
 PYTHONHOME :=$(shell eval "cd $(PYTHON_BINDIR); pwd; cd > /dev/null")
-SYSTEM_PYTHON_CMD := $(CURRENT_DIR)/local/bin/python3
+SYSTEM_PYTHON_CMD ?= $(CURRENT_DIR)/local/bin/python3
 
 .PHONY: python
 python: build/python
@@ -208,15 +208,22 @@ help:
 user:
 	source $(USER_SOURCE) && make all
 
+# TODO removed rss
 .PHONY: all
-all: setup chsdi/static/css/extended.min.css templates potomo lint fixrights doc rss
+all: setup chsdi/static/css/extended.min.css templates potomo lint fixrights doc
 
 setup: .venv node_modules .venv/hooks
 
 templates: apache/wsgi.conf development.ini production.ini chsdi/static/info.json
 
 
+.PHONY: dockerbase
+dockerbase:
+	docker build -t swisstopo/mf-chsdi3:base  -f Dockerfile.base .
 
+.PHONY: docker
+docker:
+	docker build -t swisstopo/mf-chsdi3:python3.7  -f Dockerfile  .
 
 .PHONY: dev
 dev:
@@ -516,7 +523,7 @@ requirements.txt:
 
 ifeq ($(USE_PYTHON3), 1)
 .venv: requirements.txt
-		test -d "$(INSTALL_DIRECTORY)" || local/bin/python3.6 -m venv $(INSTALL_DIRECTORY); \
+		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
 		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; 
 		${PIP_CMD} install --index-url ${PYPI_URL}  -e .
 else

@@ -27,3 +27,6 @@ print/WEB-INF/web.xml
 tests/varnish*
 app*.log
 local
+build
+rancher-*.yml
+docker*.yml
