@@ -5,7 +5,7 @@
 
 [app:main]
 use = config:production.ini
-app_version = ${app_version}
+app_version = ${APP_VERSION}
 
 pyramid.reload_templates = true
 pyramid.debug_authorization = true
@@ -27,7 +27,7 @@ debugtoolbar.hosts = 0.0.0.0/0
 [server:main]
 use = egg:waitress#main
 host = 0.0.0.0
-port = ${server_port}
+port = ${SERVER_PORT}
 
 ###
 # logging configuration
@@ -70,13 +70,13 @@ formatter = generic
 class = FileHandler
 level = INFO
 formatter = generic
-args = ('${current_directory}/app.log', 'w')
+args = ('${CURRENT_DIRECTORY}/app.log', 'w')
 
 [handler_sqlfile]
 class = FileHandler
 level = INFO
 formater = generic
-args = ('${current_directory}/appsql.log', 'w')
+args = ('${CURRENT_DIRECTORY}/appsql.log', 'w')
 
 [formatter_generic]
 format = %(asctime)s %(levelname)-5.5s [%(name)s][%(threadName)s] %(message)s
