@@ -30,3 +30,7 @@ tests/varnish*
 app*.log
 local
 junit-results
+build
+rancher-*.yml
+docker*.yml
+_pg_pass

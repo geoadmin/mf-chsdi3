@@ -18,7 +18,7 @@ WMSSCALELEGEND ?=
 
 # Variables
 USER_SOURCE ?= rc_user
-CURRENT_DIRECTORY := $(shell pwd)
+CURRENT_DIRECTORY := ${PWD}
 WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
 INSTALL_DIRECTORY := .venv
 KML_TEMP_DIR := /var/local/print/kml
@@ -117,6 +117,7 @@ PSERVE_CMD := $(INSTALL_DIRECTORY)/bin/pserve
 PSHELL_CMD := $(INSTALL_DIRECTORY)/bin/pshell
 PYTHON_CMD := $(INSTALL_DIRECTORY)/bin/python
 SPHINX_CMD := $(INSTALL_DIRECTORY)/bin/sphinx-build
+ENVSUBST_CMD := /usr/bin/envsubst
 
 # Linting rules
 PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731,W503,W504,W605"
@@ -143,14 +144,20 @@ GREEN := $(shell tput setaf 2)
 # We need GDAL which is hard to install in a venv, modify PYTHONPATH to use the
 # system wide version.
 GDAL_VERSION ?= 1.10.0
+PYTHON_INSTALL_VERSION ?= 3.6.4
 
 ifndef USE_PYTHON3
 		override USE_PYTHON3 = 0
 endif
 
 ifeq ($(USE_PYTHON3), 1)
-		PYTHON_VERSION := 3.6.8
-build/python: local/bin/python3.6
+ifeq (, $(shell which $(SYSTEM_PYTHON_CMD)))
+		PYTHON_VERSION := $(shell $(PYTHON_INSTALL_VERSION)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+else
+    PYTHON_VERSION := $(shell $(SYSTEM_PYTHON_CMD)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+endif
+PIP_CMD := $(INSTALL_DIRECTORY)/bin/pip${PYTHON_VERSION}
+build/python: 
 		mkdir -p build && touch build/python;
 else
 		PYTHON_VERSION := $(shell python2 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
@@ -161,7 +168,7 @@ PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python$
 
 PYTHON_BINDIR := $(shell dirname $(PYTHON_CMD))
 PYTHONHOME :=$(shell eval "cd $(PYTHON_BINDIR); pwd; cd > /dev/null")
-SYSTEM_PYTHON_CMD := $(CURRENT_DIR)/local/bin/python3
+SYSTEM_PYTHON_CMD ?= $(CURRENT_DIR)/local/bin/python3
 
 .PHONY: python
 python: build/python
@@ -209,6 +216,8 @@ help:
 	@echo "USE_PYTHON3          ${USE_PYTHON3}"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
 	@echo "PYTHON_CMD:          ${PYTHON_CMD}"
+	@echo "SYSTEM_PYTHON_CMD:   ${SYSTEM_PYTHON_CMD}"
+	@echo "PIP_CMD:             ${PIP_CMD}"
 	@echo "PYTHONPATH:          ${PYTHONPATH}"
 	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
 	@echo "API_URL:             ${API_URL}"
@@ -227,27 +236,37 @@ help:
 user:
 	source $(USER_SOURCE) && make all
 
+# TODO removed rss
 .PHONY: all
 all: setup chsdi/static/css/extended.min.css templates translate lint fixrights doc rss
 
 setup: .venv node_modules .venv/hooks
 
-templates: apache/wsgi.conf development.ini production.ini chsdi/static/info.json
+templates: apache/wsgi.conf apache/application.wsgi development.ini production.ini chsdi/static/info.json
+	$(call build_templates,$(DEPLOY_TARGET)) 
+
+.PHONY: baseimage
+baseimage:
+	docker build -t swisstopo/mf-chsdi3:base  -f Dockerfile.base .
+
+.PHONY: image
+image:
+	docker build -t swisstopo/mf-chsdi3:python3.7  -f Dockerfile  .
+	
+.PHONY: environ
+environ:
+	$(call build_templates,$(DEPLOY_TARGET)) 
+
+define build_templates
+	export $(shell cat $1.env) && source rc_$1 \                                                                                                 
+	envsubst < apache/wsgi.conf.in > apache/wsgi.conf && envsubst < rancher-compose.yml.in > rancher-compose.yml && \
+		envsubst <  apache/application.wsgi.in > apache/application.wsgi && \
+		envsubst < docker-compose.yml.in > docker-compose.yml && \
+		envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
+endef
 
 
 
-
-.PHONY: dev
-dev:
-	source rc_dev && make all
-
-.PHONY: int
-int:
-	source rc_int && make all
-
-.PHONY: prod
-prod:
-	source rc_prod && make all
 
 .PHONY: serve
 serve:
@@ -356,7 +375,7 @@ deploydev:
 	fi
 
 .PHONY: updatedev
-updatedev: .venv/last-github-last-commit
+updatedev: .venv/last-GITHUB-LAST-COMMIT
 		@if [ "${GITHUB_LAST_COMMIT}" == "${LAST_GITHUB_LAST_COMMIT}"   ]; then \
 				echo "No updating dev"; \
 		else \
@@ -391,9 +410,9 @@ chsdi/static/info.json:  chsdi/templates/info.json.mako
 rc_branch.mako:
 	@echo "${GREEN}Branch has changed${RESET}";
 rc_branch: rc_branch.mako \
-           .venv/last-git-branch \
-           .venv/last-deploy-target \
-           .venv/last-branch-staging
+           .venv/last-GIT-BRANCH \
+           .venv/last-DEPLOY-TARGET \
+           .venv/last-BRANCH-STAGING
 	@echo "${GREEN}Creating branch template...${RESET}"
 	${MAKO_CMD} \
 		--var "git_branch=$(GIT_BRANCH)" \
@@ -417,44 +436,35 @@ deploy/conf/00-branch.conf: deploy/conf/00-branch.conf.in \
 apache/application.wsgi.mako:
 	@echo "${GREEN}Template file apache/application.wsgi.mako has changed${RESET}";
 apache/application.wsgi: apache/application.wsgi.mako \
-                         .venv/last-current-directory \
-                         .venv/last-modwsgi-config
+                         .venv/last-CURRENT-DIRECTORY \
+                         .venv/last-MODWSGI-CONFIG
+apache/application.wsgi.in:
+	@echo "${GREEN}Template file apache/application.wsgi.in has changed${RESET}";
+
+apache/application.wsgi: apache/application.wsgi.in\
+                         .venv/last-CURRENT-DIRECTORY \
+                         .venv/last-MODWSGI-CONFIG
 	@echo "${GREEN}Creating apache/application.wsgi...${RESET}";
-	${MAKO_CMD} \
-		--var "current_directory=$(CURRENT_DIRECTORY)" \
-		--var "modwsgi_config=$(MODWSGI_CONFIG)" $< > $@
+	${ENVSUBST_CMD} < $< > $@
 
 apache/wsgi.conf.in:
 	@echo "${GREEN}Template file apache/wsgi.conf.in has changed${RESET}";
 apache/wsgi.conf: apache/wsgi.conf.in \
                   apache/application.wsgi \
-                  .venv/last-apache-base-path \
-                  .venv/last-apache-entry-path \
-                  .venv/last-robots-file \
-                  .venv/last-branch-staging \
-                  .venv/last-git-branch \
-                  .venv/last-current-directory \
-                  .venv/last-deploy-target \
-                  .venv/last-modwsgi-user \
-                  .venv/last-wsgi-processes \
-                  .venv/last-wsgi-threads \
-                  .venv/last-wsgi-app \
-                  .venv/last-kml-temp-dir
+                  .venv/last-APACHE-BASE-PATH \
+                  .venv/last-APACHE-ENTRY-PATH \
+                  .venv/last-ROBOTS-FILE \
+                  .venv/last-BRANCH-STAGING \
+                  .venv/last-GIT-BRANCH \
+                  .venv/last-CURRENT-DIRECTORY \
+                  .venv/last-DEPLOY-TARGET \
+                  .venv/last-MODWSGI-USER \
+                  .venv/last-WSGI-PROCESSES \
+                  .venv/last-WSGI-THREADS \
+                  .venv/last-WSGI-APP \
+                  .venv/last-KML-TEMP-DIR
 	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
-	${MAKO_CMD} \
-		--var "apache_base_path=$(APACHE_BASE_PATH)" \
-		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
-		--var "robots_file=$(ROBOTS_FILE)" \
-		--var "branch_staging=$(BRANCH_STAGING)" \
-		--var "git_branch=$(GIT_BRANCH)" \
-		--var "current_directory=$(CURRENT_DIRECTORY)" \
-		--var "deploy_target=$(DEPLOY_TARGET)" \
-		--var "cache_control=$(CACHE_CONTROL)" \
-		--var "modwsgi_user=$(MODWSGI_USER)" \
-		--var "wsgi_processes=$(WSGI_PROCESSES)" \
-		--var "wsgi_threads=$(WSGI_THREADS)" \
-		--var "wsgi_app=$(WSGI_APP)" \
-		--var "kml_temp_dir=$(KML_TEMP_DIR)" $< > $@
+	${ENVSUBST_CMD} < $< > $@
 
 
 app.log:
@@ -465,13 +475,10 @@ app.log:
 development.ini.in: app.log
 	@echo "${GREEN}Template file development.ini.in has changed${RESET}";
 development.ini: development.ini.in \
-	               .venv/last-version \
-	               .venv/last-server-port
+	               .venv/last-VERSION \
+	               .venv/last-SERVER-PORT
 	@echo "${GREEN}Creating development.ini....${RESET}";
-	${MAKO_CMD} \
-		--var "app_version=$(VERSION)" \
-		--var "current_directory=$(CURRENT_DIRECTORY)" \
-		--var "server_port=$(SERVER_PORT)" $< > $@
+	${ENVSUBST_CMD} <  $< > $@
 
 production.ini.in:
 	@echo "${GREEN}Template file production.ini.in has changed${RESET}";
@@ -560,7 +567,7 @@ requirements.txt:
 
 ifeq ($(USE_PYTHON3), 1)
 .venv: requirements.txt
-		test -d "$(INSTALL_DIRECTORY)" || local/bin/python3.6 -m venv $(INSTALL_DIRECTORY); \
+		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
 		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; 
 		${PIP_CMD} install --index-url ${PYPI_URL}  -e .
 else
@@ -604,71 +611,72 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 	$(call cachelastvariable,$@,$(GITHUB_LAST_COMMIT),$(LAST_GITHUB_LAST_COMMIT),github-last-commit)
 
 # application.wsg
-.venv/last-modwsgi-config::
-	$(call cachelastvariable,$@,$(MODWSGI_CONFIG),$(LAST_MODWSGI_CONFIG),modwsgi-config)
+.venv/last-MODWSGI-CONFIG::
+	$(call cachelastvariable,$@,$(MODWSGI_CONFIG),$(LAST_MODWSGI_CONFIG),MODWSGI-CONFIG)
 
 # development.ini.in
-.venv/last-version::
+.venv/last-VERSION::
 	$(call cachelastvariable,$@,$(VERSION),$(LAST_VERSION),version)
 
-.venv/last-server-port::
+.venv/last-SERVER-PORT::
 	$(call cachelastvariable,$@,$(SERVER_PORT),$(LAST_SERVER_PORT),server-port)
 
 # production.ini.in
-.venv/last-current-directory::
+.venv/last-CURRENT-DIRECTORY::
 	$(call cachelastvariable,$@,$(CURRENT_DIRECTORY),$(LAST_CURRENT_DIRECTORY),current-directory)
 
-.venv/last-apache-base-path::
+.venv/last-APACHE-BASE-PATH::
 	$(call cachelastvariable,$@,$(APACHE_BASE_PATH),$(LAST_APACHE_BASE_PATH),apache-base-path)
 
-.venv/last-apache-entry-path::
+.venv/last-APACHE-ENTRY-PATH::
 	$(call cachelastvariable,$@,$(APACHE_ENTRY_PATH),$(LAST_APACHE_ENTRY_PATH),apache-entry-path)
 
-.venv/last-dbhost::
+.venv/last-DBHOST::
 	$(call cachelastvariable,$@,$(DBHOST),$(LAST_DBHOST),dbhost)
 
-.venv/last-dbport::
+.venv/last-DBPORT::
 	$(call cachelastvariable,$@,$(DBPORT),$(LAST_DBPORT),dbport)
 
-.venv/last-dbstaging::
+.venv/last-DBSTAGING::
 	$(call cachelastvariable,$@,$(DBSTAGING),$(LAST_DBSTAGING),dbstaging)
 
-.venv/last-geodata-staging::
+.venv/last-GEODATA-STAGING::
 	$(call cachelastvariable,$@,$(GEODATA_STAGING),$(LAST_GEODATA_STAGING),geodata-staging)
 
-.venv/last-sphinxhost::
+.venv/last-SPHINXHOST::
 	$(call cachelastvariable,$@,$(SPHINXHOST),$(LAST_SPHINXHOST),sphinxhost)
 
-.venv/last-wmshost::
+.venv/last-WMSHOST::
 	$(call cachelastvariable,$@,$(WMSHOST),$(LAST_WMSHOST),wmshost)
 
-.venv/last-wmts-public-host::
+.venv/last-WMTS-PUBLIC-HOST::
 	$(call cachelastvariable,$@,$(WMTS_PUBLIC_HOST),$(LAST_WMTS_PUBLIC_HOST),wmts-public-host)
 
-.venv/last-geoadminhost::
+.venv/last-GEOADMINHOST::
 	$(call cachelastvariable,$@,$(GEOADMINHOST),$(LAST_GEOADMINHOST),geoadminhost)
 
-.venv/last-alti-url::
+.venv/last-ALTI-URL::
 	$(call cachelastvariable,$@,$(ALTI_URL),$(LAST_ALTI_URL),alti-url)
 
-.venv/last-api-url::
+.venv/last-API-URL::
 	$(call cachelastvariable,$@,$(API_URL),$(LAST_API_URL),api-url)
 
-.venv/last-shop-url::
+.venv/last-SHOP-URL::
 	$(call cachelastvariable,$@,$(SHOP_URL),$(LAST_SHOP_URL),shop-url)
 
-.venv/last-host::
+.venv/last-HOST::
 	$(call cachelastvariable,$@,$(HOST),$(LAST_HOST),host)
 
-.venv/last-kml-temp-dir::
+.venv/last-KML-TEMP-DIR::
 	$(call cachelastvariable,$@,$(KML_TEMP_DIR),$(LAST_KML_TEMP_DIR),kml_temp_dir)
 
-.venv/last-http-proxy::
+.venv/last-HTTP-PROXY::
 	$(call cachelastvariable,$@,$(HTTP_PROXY),$(LAST_HTTP_PROXY),http-proxy)
 
-.venv/last-geoadmin-file-storage-bucket::
+.venv/last-GEOADMIN-FILE-STORAGE-BUCKET::
 	$(call cachelastvariable,$@,$(GEOADMIN_FILE_STORAGE_BUCKET),$(LAST_GEOADMIN_FILE_STORAGE_BUCKET),geoadmin-file-storage-bucket)
 
+<<<<<<< HEAD
 .venv/last-geoadmin-file-storage-table-name::
 	$(call cachelastvariable,$@,$(GEOADMIN_FILE_STORAGE_TABLE_NAME),$(LAST_GEOADMIN_FILE_STORAGE_TABLE_NAME),geoadmin-file-storage-table-name)
 
@@ -684,9 +692,6 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 .venv/last-public-bucket-host::
 	$(call cachelastvariable,$@,$(PUBLIC_BUCKET_HOST),$(LAST_PUBLIC_BUCKET_HOST),public-bucket-host)
 
-.venv/last-shortener-allowed-hosts::
-	$(call cachelastvariable,$@,$(SHORTENER_ALLOWED_HOSTS),$(LAST_SHORTENER_ALLOWED_HOSTS),shortener-allowed-hosts)
-
 .venv/last-shortener-table-name::
 	$(call cachelastvariable,$@,$(SHORTENER_TABLE_NAME),$(LAST_SHORTENER_TABLE_NAME),shortener-table-name)
 
@@ -696,56 +701,56 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 .venv/last-vector-bucket::
 	$(call cachelastvariable,$@,$(VECTOR_BUCKET),$(LAST_VECTOR_BUCKET),vector-bucket)
 
-.venv/last-datageoadminhost::
+.venv/last-DATAGEOADMINHOST::
 	$(call cachelastvariable,$@,$(DATAGEOADMINHOST),$(LAST_DATAGEOADMINHOST),datageoadminhost)
 
-.venv/last-cmsgeoadminhost::
+.venv/last-CMSGEOADMINHOST::
 	$(call cachelastvariable,$@,$(CMSGEOADMINHOST),$(LAST_CMSGEOADMINHOST),cmsgeoadminhost)
 
-.venv/last-linkeddatahost::
+.venv/last-LINKEDDATAHOST::
 	$(call cachelastvariable,$@,$(LINKEDDATAHOST),$(LAST_LINKEDDATAHOST),linkeddatahost)
 
-.venv/last-opentrans-api-key::
+.venv/last-OPENTRANS-API-KEY::
 	$(call cachelastvariable,$@,$(OPENTRANS_API_KEY),$(LAST_OPENTRANS_API_KEY),opentrans-api-key)
 
-.venv/last-shortener-allowed-domains::
+.venv/last-SHORTENER-ALLOWED-DOMAINS::
 	$(call cachelastvariable,$@,$(SHORTENER_ALLOWED_DOMAINS),$(LAST_SHORTENER_ALLOWED_DOMAINS),shortener-allowed-domains)
 
 .venv/last-dynamic-translation::
 	$(call cachelastvariable,$@,$(DYNAMIC_TRANSLATION),$(LAST_DYNAMIC_TRANSLATION),dynamic-translation)
 
 # wsgi.conf.in
-.venv/last-robots-file::
+.venv/last-ROBOTS-FILE::
 	$(call cachelastvariable,$@,$(ROBOTS_FILE),$(LAST_ROBOTS_FILE),robots-file)
 
-.venv/last-wsgi-threads::
+.venv/last-WSGI-THREADS::
 	$(call cachelastvariable,$@,$(WSGI_THREADS),$(LAST_WSGI_THREADS),wsgi-threads)
 
-.venv/last-branch-staging::
+.venv/last-BRANCH-STAGING::
 	$(call cachelastvariable,$@,$(BRANCH_STAGING),$(LAST_BRANCH_STAGING),branch-staging)
 
-.venv/last-git-branch::
+.venv/last-GIT-BRANCH::
 	$(call cachelastvariable,$@,$(GIT_BRANCH),$(LAST_GIT_BRANCH),git-branch)
 
-.venv/last-deploy-target::
+.venv/last-DEPLOY-TARGET::
 	$(call cachelastvariable,$@,$(DEPLOY_TARGET),$(LAST_DEPLOY_TARGET),deploy-target)
 
-.venv/last-modwsgi-user::
+.venv/last-MODWSGI-USER::
 	$(call cachelastvariable,$@,$(MODWSGI_USER),$(LAST_MODWSGI_USER),modewsgi-user)
 
-.venv/last-cache-control::
+.venv/last-CACHE-CONTROL::
 	$(call cachelastvariable,$@,$(CACHE_CONTROL),$(LAST_CACHE_CONTROL),cache-control)
 
-.venv/last-wsgi-user::
+.venv/last-WSGI-USER::
 	$(call cachelastvariable,$@,$(WSGI_USER),$(LAST_WSGI_USER),wsgi-user)
 
-.venv/last-wsgi-processes::
+.venv/last-WSGI-PROCESSES::
 	$(call cachelastvariable,$@,$(WSGI_PROCESSES),$(LAST_WSGI_PROCESSES),wsgi-processes)
 
-.venv/last-wsgi-threads::
+.venv/last-WSGI-THREADS::
 	$(call cachelastvariable,$@,$(WSGI_THREADS),$(LAST_WSGI_THREADS),wsgi-threads)
 
-.venv/last-wsgi-app::
+.venv/last-WSGI-APP::
 	$(call cachelastvariable,$@,$(WSGI_APP),$(LAST_WSGI_APP),wsgi-app)
 
 fixrights:
@@ -764,13 +769,14 @@ clean:
 	rm -rf production.ini
 	rm -rf development.ini
 	rm -rf apache/wsgi.conf
-	rm -rf rc_branch
 	rm -rf app.log
 	rm -rf apache/application.wsgi
 	rm -rf deploy/deploy-branch.cfg
 	rm -rf deploy/conf/00-branch.conf
 	rm -f  chsdi/static/info.json
 	rm -rf junit_report
+	rm -f docker-compose.yml
+	rm -f rancher-compose.yml
 
 .PHONY: cleanall
 cleanall: clean

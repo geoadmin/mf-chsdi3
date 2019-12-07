@@ -12,7 +12,6 @@
 RewriteEngine on
 ExpiresActive on
 
-
 AddOutputFilterByType DEFLATE text/css
 AddOutputFilterByType DEFLATE application/x-javascript application/javascript application/json application/xml
 AddOutputFilterByType DEFLATE text/html text/plain text/xml
@@ -24,16 +23,26 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml
 # http://code.google.com/p/modwsgi/wiki/FrequentlyAskedQuestions#Access_Control_Mechanisms
 WSGIPassAuthorization On
 
+# Checker
+ErrorDocument 200 "OK"
+RewriteEngine On
+RewriteRule "/ok" - [R=200]
+
+
+# PostgreSQL credential
+SetEnv PGUSER ${PGUSER}
+SetEnv PGPASSWORD ${PGPASSWORD}
+
 <IfModule mod_headers.c>
   Header set X-UA-Compatible "IE=Edge"
 </IfModule>
 
 # Redirect old main/wsgi stuff
 RedirectMatch permanent ^/main/wsgi/(.*)$ /$1
-RedirectMatch permanent ^${apache_entry_path}/iipimage/(.*)$ ${apache_entry_path}/luftbilder/$1
+RedirectMatch permanent ^${APACHE_ENTRY_PATH}/IIPIMAGE/(.*)$ ${APACHE_ENTRY_PATH}/luftbilder/$1
 
 # Redirect no-slash target to slashed version
-RedirectMatch ^${apache_entry_path}$ ${apache_entry_path}/
+RedirectMatch ^${APACHE_ENTRY_PATH}$ ${APACHE_ENTRY_PATH}/
 
 
 # KML admin
@@ -43,8 +52,8 @@ RewriteRule ^${apache_entry_path}/(static/)?(info\.json|admin)         https://%
 # If URI has numbers at the start, we cache a year
 # This allows a client to create their own cache and
 # update at his discretion
-RewriteRule ^${apache_entry_path}/[0-9]+/(.*)$ ${apache_entry_path}/$1 [E=${apache_base_path}setyearcache:true,PT]
-Header merge Cache-Control "max-age=31536013, public" env=${apache_base_path}setyearcache
+RewriteRule ^${APACHE_ENTRY_PATH}/[0-9]+/(.*)$ ${APACHE_ENTRY_PATH}/$1 [E=${APACHE_BASE_PATH}setyearcache:true,PT]
+Header merge Cache-Control "max-age=31536013, public" env=${APACHE_BASE_PATH}setyearcache
 
 # Default cache#
 Header setifempty  Cache-Control "${cache_control}"
@@ -53,47 +62,70 @@ Header setifempty  Cache-Control "${cache_control}"
 RewriteRule ^${apache_entry_path}/info.json ${apache_entry_path}/static/info.json [PT]
 
 # Static for cross domain flash/arcgis
-RewriteRule ^${apache_entry_path}/(crossdomain.xml|clientaccesspolicy.xml) ${apache_entry_path}/static/$1 [PT]
-<LocationMatch ^${apache_entry_path}/static/(crossdomain.xml|clientaccesspolicy.xml)>
+RewriteRule ^${APACHE_ENTRY_PATH}/(crossdomain.xml|clientaccesspolicy.xml) ${APACHE_ENTRY_PATH}/static/$1 [PT]
+<LocationMatch ^${APACHE_ENTRY_PATH}/static/(crossdomain.xml|clientaccesspolicy.xml)>
     Header set Content-type "text/x-cross-domain-policy"
 </LocationMatch>
 
 # New style config url (see mf-geoadmin3 #4687)
-RewriteRule ^${apache_entry_path}/configs/(de|fr|it|rm|en)/layersConfig\.json ${apache_entry_path}/rest/services/all/MapServer/layersConfig?lang=$1 [PT]
-RewriteRule ^${apache_entry_path}/configs/(de|fr|it|rm|en)/translations\.json ${apache_entry_path}/rest/services/translations?lang=$1 [PT]
-RewriteRule ^${apache_entry_path}/configs/(de|fr|it|rm|en)/catalog\.(\w+)\.json ${apache_entry_path}/rest/services/$2/CatalogServer?lang=$1 [PT]
-RewriteRule ^${apache_entry_path}/configs/(de|fr|it|rm|en)/services\.json ${apache_entry_path}/rest/services [PT]
-RewriteRule ^${apache_entry_path}/configs/services\.json ${apache_entry_path}/rest/services [PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/layersConfig\.json ${APACHE_ENTRY_PATH}/rest/services/all/MapServer/layersConfig?lang=$1 [PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/translations\.json ${APACHE_ENTRY_PATH}/rest/services/translations?lang=$1 [PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/catalog\.(\w+)\.json ${APACHE_ENTRY_PATH}/rest/services/$2/CatalogServer?lang=$1 [PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/services\.json ${APACHE_ENTRY_PATH}/rest/services [PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/configs/services\.json ${APACHE_ENTRY_PATH}/rest/services [PT]
 
 # Robots static files
-RewriteRule ^${apache_entry_path}/robots.txt ${apache_entry_path}/static/${robots_file} [PT]
-<LocationMatch ^${apache_entry_path}/static/(robots.txt|robots_prod.txt)>
+RewriteRule ^${APACHE_ENTRY_PATH}/robots.txt ${APACHE_ENTRY_PATH}/static/${robots_file} [PT]
+<LocationMatch ^${APACHE_ENTRY_PATH}/static/(robots.txt|robots_prod.txt)>
     Header set Content-type "text/plain"
 </LocationMatch>
 
 # WMTS Capabilities
-RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities\.xml$ ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml [PT,NC,QSA,L]
-RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities.EPSG.(\d+).xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
-RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml [L,QSA,PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/1.0.0/WMTSCapabilities\.xml$ ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml [PT,NC,QSA,L]
+RewriteRule ^${APACHE_ENTRY_PATH}/1.0.0/WMTSCapabilities.EPSG.(\d+).xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml [L,QSA,PT]
 # # Better ArcGis support
-RewriteRule ^${apache_entry_path}/EPSG/(\d+)/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
-RewriteRule ^${apache_entry_path}/EPSG/(\d+)/(de|fr|it|rm|en)/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1&lang=$2 [L,PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/EPSG/(\d+)/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/EPSG/(\d+)/(de|fr|it|rm|en)/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1&lang=$2 [L,PT]
 
 # Shorten service
 RewriteCond %{HTTP_HOST} ^s.geo.admin.ch$
-RewriteRule ^${apache_entry_path}/(.*)$ ${apache_entry_path}/shorten/$1 [PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/(.*)$ ${APACHE_ENTRY_PATH}/shorten/$1 [PT]
 
-<LocationMatch ^${apache_entry_path}/(loader\.js|shorten|shorten.json)>
+<LocationMatch ^${APACHE_ENTRY_PATH}/(loader\.js|shorten|shorten.json)>
     Order allow,deny
     Allow from all
 </LocationMatch>
 
-# define a process group
-# WSGIDaemonProcess, default are 1 process and 15 threads
-WSGIDaemonProcess mf-chsdi3:${apache_base_path} display-name=%{GROUP} user=${modwsgi_user} processes=${wsgi_processes} threads=${wsgi_threads}
+
+############  WSGI #################################3
+
+# LoadModule wsgi_module modules/mod_wsgi.so
+
+#don't forget this line
+# WSGISocketPrefix /var/run/wsgi 
+
+WSGIApplicationGroup %{GLOBAL}
+WSGIPassAuthorization On
+
+WSGIDaemonProcess mf-chsdi3:${APACHE_BASE_PATH} display-name=%{GROUP} user=${MODWSGI_USER} processes=${WSGI_PROCESSES} threads=${WSGI_THREADS} \
+   python-path=${INSTALLDIR}/.venv/lib/python3.7/site-packages \
+   python-home=${INSTALLDIR}/.venv  
+ 
 
 # define the path to the WSGI app
-WSGIScriptAliasMatch ^${apache_entry_path}/ ${wsgi_app}/
+WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${WSGI_APP}
+
+<Directory ${INSTALLDIR}/.venv>
+      WSGIProcessGroup mf-chsdi3:${APACHE_BASE_PATH}
+    WSGIApplicationGroup %{GLOBAL}
+  Order allow,deny
+  Allow from all
+</Directory>
+
+
+
+
 
 # Enabling CORS, has to be set after WSGI application
 Header unset Access-control-allow-origin
@@ -104,30 +136,33 @@ Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, 
 # assign the WSGI app instance the process group defined aboven, we put the WSGI
 # app instance in the global application group so it is always executed within
 # the main interpreter
-<Directory ${current_directory}/apache>
+<Directory ${INSTALLDIR}/apache>
     Order allow,deny
     Allow from all
-    WSGIProcessGroup mf-chsdi3:${apache_base_path}
+    WSGIProcessGroup mf-chsdi3:${APACHE_BASE_PATH}
     WSGIApplicationGroup %{GLOBAL}
 </Directory>
 
 # Some services are not "free": control is done at varnish level
-<LocationMatch ^${apache_entry_path}/rest/(height|profile)>
+<LocationMatch ^${APACHE_ENTRY_PATH}/rest/(height|profile)>
    Order Deny,Allow
    Allow from all
 </LocationMatch>
 
 # Static for cross domain flash/arcgis
-<LocationMatch ^${apache_entry_path}/files>
+<LocationMatch ^${APACHE_ENTRY_PATH}/files>
    Header unset Access-Control-Allow-Methods
    Header always set Access-Control-Allow-Methods "POST, GET, DELETE, OPTIONS"
 </LocationMatch>
 
 # kml file downloads
-AliasMatch ^${apache_entry_path}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${kml_temp_dir}/$1
+AliasMatch ^${APACHE_ENTRY_PATH}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${KML_TEMP_DIR}/$1
 
+# KML admin
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^${APACHE_ENTRY_PATH}/admin         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
-<LocationMatch ^${apache_entry_path}/(admin/kml|static/info.json)>
+<LocationMatch ^${APACHE_ENTRY_PATH}/(admin/kml|static/info.json)>
     AuthType Basic
     AuthName "Your IWI credential"
     # Optional line:
@@ -138,8 +173,8 @@ AliasMatch ^${apache_entry_path}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${kml_t
 </LocationMatch>
 
 # WMTS GetCapabilities access control
-RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities.EPSG.(\d+).xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
-RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml [L,QSA,PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/1.0.0/WMTSCapabilities.EPSG.(\d+).xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml [L,QSA,PT]
 # Better ArcGis support
-RewriteRule ^${apache_entry_path}/EPSG/(\d+)/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
-RewriteRule ^${apache_entry_path}/EPSG/(\d+)/(de|fr|it|rm|en)/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1&lang=$2 [L,PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/EPSG/(\d+)/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/EPSG/(\d+)/(de|fr|it|rm|en)/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1&lang=$2 [L,PT]

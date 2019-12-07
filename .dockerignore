@@ -1,0 +1,12 @@
+.venv
+.git
+.gitignore
+.gitmodules
+*.swp
+*.yml
+*.yml.in
+apache2.sh
+PYTHON3.md
+deploy
+local
+__pycache__
