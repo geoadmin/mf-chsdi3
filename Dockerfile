@@ -22,7 +22,7 @@ RUN mkdir -p /var/www/vhosts/${VHOST}/conf && \
     mkdir -p /var/www/vhosts/${VHOST}/logs
 
 
-COPY 25-mf-chsdi3.conf /etc/apache2/sites-available/000-default.conf
+RUN envsusbt < 25-mf-chsdi3.conf.in > /etc/apache2/sites-available/000-default.conf
 COPY 90-chsdi3.conf    /var/www/vhosts/mf-chsdi3/conf/
 RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf && a2enconf fqdn 
 
