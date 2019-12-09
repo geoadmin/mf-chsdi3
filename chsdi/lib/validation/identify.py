@@ -178,6 +178,8 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
             self._imageDisplay = list(map(float_raise_nan, value))
         except ValueError:
             raise HTTPBadRequest('Please provide numerical values for the parameter imageDisplay')
+        if not all(i > 0 for i in self._imageDisplay):
+            raise HTTPBadRequest('All values for parameter "imageDisplay" must be strictly positive')
 
     @mapExtent.setter
     def mapExtent(self, value):

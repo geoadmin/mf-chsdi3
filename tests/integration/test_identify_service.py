@@ -10,6 +10,19 @@ accept_headers = {'Accept': 'application/json, text/plain, */*'}
 
 class TestIdentifyService(TestsBase):
 
+    def test_identify_trivial(self):
+        params = {'lang': 'fr',
+                  'layers': 'all:ch.bafu.nabelstationen',
+                  'imageDisplay': '1391,1070,96',
+                  'mapExtent': '312250,-77500,1007750,457500',
+                  'geometry': '678250,213000',
+                  'geometryFormat': 'geojson',
+                  'returnGeometry': 'true',
+                  'geometryType': 'esriGeometryPoint',
+                  'tolerance': '5'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp.content_type, 'application/geo+json')
+
     def test_identify_no_parameters(self):
         self.testapp.get('/rest/services/ech/MapServer/identify', headers=accept_headers, status=400)
 
@@ -78,6 +91,21 @@ class TestIdentifyService(TestsBase):
         self.assertEqual(resp.json['code'], 400)
         self.assertEqual(resp.json['status'], 'error')
         self.assertTrue(resp.json['detail'].startswith('Please provide the parameter tolerance'))
+
+    def test_identify_null_imageDisplay(self):
+        params = {'lang': 'fr',
+                  'layers': 'all:ch.bafu.nabelstationen',
+                  'imageDisplay': '0,100,100',
+                  'mapExtent': '312250,-77500,1007750,457500',
+                  'geometry': '678250,213000',
+                  'geometryFormat': 'geojson',
+                  'returnGeometry': 'true',
+                  'geometryType': 'esriGeometryPoint',
+                  'tolerance': '5'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=400)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertEqual(resp.json['code'], 400)
+        self.assertTrue(resp.json['detail'].startswith('All values for parameter "imageDisplay" must be strictly positive'))
 
     def test_identify_polyline(self):
         params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
