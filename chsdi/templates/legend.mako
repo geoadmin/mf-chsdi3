@@ -13,7 +13,6 @@
                  'ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet',
                  'ch.swisstopo.geologie-tektonische_karte',
                  'ch.astra.ivs-gelaendekarte',
-                 'ch.astra.ausnahmetransportrouten',
                  'ch.bazl.luftfahrtkarten-icao',
                  'ch.bazl.segelflugkarte',
                  'ch.kantone.cadastralwebmap-farbe',

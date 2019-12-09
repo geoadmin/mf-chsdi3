@@ -228,23 +228,6 @@ class IVSRegLoc(Base, Vector):
 register('ch.astra.ivs-reg_loc', IVSRegLoc)
 
 
-class Ausnahmetransportrouten(Base, Vector):
-    __tablename__ = 'ausnahmetransportrouten'
-    __table_args__ = ({'schema': 'astra', 'autoload': False})
-    __template__ = 'templates/htmlpopup/ausnahmetransportrouten.mako'
-    __bodId__ = 'ch.astra.ausnahmetransportrouten'
-    __label__ = 'id'
-    id = Column('id', Integer, primary_key=True)
-    bgdi_id = Column('bgdi_id', Integer)
-    ri_getrenn = Column('ri_getrenn', Unicode)
-    anz_spuren = Column('anz_spuren', Integer)
-    strassen_typ = Column('strassen_typ', Unicode)
-    routentyp_id = Column('routentyp_id', Integer)
-    the_geom = Column(Geometry2D)
-
-register('ch.astra.ausnahmetransportrouten', Ausnahmetransportrouten)
-
-
 class BaulinienNationalstrassen(Base, Vector):
     __tablename__ = 'baulinien_nationalstrassen_line'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
