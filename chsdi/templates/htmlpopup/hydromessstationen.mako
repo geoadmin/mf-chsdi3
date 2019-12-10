@@ -2,7 +2,7 @@
 <%def name="table_body(c, lang)">
 
 <% c['stable_id'] = True %>
-    <tr><td class="cell-left">${_('stationsname')}</td>   <td>${c['lhg_name']}</td></tr>
+    <tr><td class="cell-left">${_('stationsname')}</td>   <td>${c['attributes']['lhg_name']}</td></tr>
     <tr><td class="cell-left">${_('stationsnr')}</td>     <td>${c['featureId']}</td></tr>
     <tr><td class="cell-left">${_('aktuelle_daten')}</td>
       % if lang in ('de', 'en', 'rm'):
