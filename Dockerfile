@@ -22,14 +22,12 @@ RUN mkdir -p /var/www/vhosts/${VHOST}/conf && \
     mkdir -p /var/www/vhosts/${VHOST}/logs
 
 
-RUN envsusbt < 25-mf-chsdi3.conf.in > /etc/apache2/sites-available/000-default.conf
 COPY 90-chsdi3.conf    /var/www/vhosts/mf-chsdi3/conf/
+COPY 25-mf-chsdi3.conf /etc/apache2/sites-available/000-default.conf
 RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf && a2enconf fqdn 
 
 #RUN /usr/sbin/a2ensite 25-${VHOST}
 RUN /usr/sbin/a2enmod auth_basic authz_groupfile autoindex dir env expires filter headers http2 include mpm_event negotiation proxy proxy_http proxy_http2 rewrite setenvif ssl status wsgi alias
-
-
 
 COPY . /var/www/vhosts/${VHOST}/private/chsdi
 # COPY _pgpass /var/www/.pgpass

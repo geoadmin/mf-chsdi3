@@ -215,7 +215,7 @@ all: setup chsdi/static/css/extended.min.css templates potomo lint fixrights doc
 
 setup: .venv node_modules .venv/hooks
 
-templates: apache/wsgi.conf apache/application.wsgi development.ini production.ini chsdi/static/info.json
+templates: apache/wsgi.conf apache/application.wsgi development.ini production.ini chsdi/static/info.json docker-compose.yml rancher-compose.yml
 
 .PHONY: baseimage
 baseimage:
@@ -232,7 +232,10 @@ environ:
 
 define build_templates
 	export $(shell cat $1.env) && source rc_$1 \                                                                                                 
-	envsubst < apache/wsgi.conf.in > apache/wsgi.conf && envsubst < rancher-compose.yml.in > rancher-compose.yml && envsubst apache/application.wsgi.in > aapache/application.wsgi && 
+	envsubst < apache/wsgi.conf.in > apache/wsgi.conf && envsubst < rancher-compose.yml.in > rancher-compose.yml && \
+		envsubst <  apache/application.wsgi.in > apache/application.wsgi && \
+		envsubst < docker-compose.yml.in > docker-compose.yml && \
+		envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
 endef
 
 
@@ -673,6 +676,8 @@ clean:
 	rm -rf deploy/deploy-branch.cfg
 	rm -rf deploy/conf/00-branch.conf
 	rm -f  chsdi/static/info.json
+	rm -f docker-compose.yml
+	rm -f rancher-compose.yml
 
 .PHONY: cleanall
 cleanall: clean

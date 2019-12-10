@@ -1,9 +1,9 @@
 version: '2'
 services:
-  nginx:
+  chsdi3:
     start_on_create: true
     health_check:
-      port: ${NGINX_PORT}
+      port: ${apache_port}
       interval: 15000
       request_line: GET /ok HTTP/1.0
       unhealthy_threshold: 3

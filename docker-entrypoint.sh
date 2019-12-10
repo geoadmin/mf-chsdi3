@@ -8,6 +8,8 @@ export INSTALLDIR
 
 echo "INSTALLDIR=${INSTALLDIR}"
 
+envsubst < 25-mf-chsdi3.conf.in > /etc/apache2/sites-available/000-default.conf 
+
 envsubst < apache/application.wsgi.in > apache/application.wsgi
 
 envsubst < apache/ports.conf.in > /etc/apache2/ports.conf

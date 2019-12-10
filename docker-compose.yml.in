@@ -1,6 +1,6 @@
 version: '2'
 services:
-  wsgi:
+  chsdi3:
     build: .
     image: swisstopo/mf-chsdi3:python3.7
     env_file:
@@ -8,13 +8,13 @@ services:
     environment:
       PGUSER: ${PGUSER}
       PGPASSWORD: ${PGPASSWD}
-    # network_mode: "host"
+    network_mode: "host"
     command:
       - /usr/sbin/apache2ctl
       - "-D"
       - "FOREGROUND"
     ports:
-      - "${WSGI_PORT}:80"
+      - "${APACHE_PORT}:${APACHE_PORT}"
     labels:
       io.rancher.scheduler.affinity:host_label: application=print,staging=${RANCHER_LABEL}
       io.rancher.container.pull_image: always
