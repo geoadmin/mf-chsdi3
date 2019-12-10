@@ -30,10 +30,10 @@
   Include "/var/www/vhosts/mf-chsdi3/conf/*.conf"
 
   ## Logging
-  ErrorLog "/var/www/vhosts/mf-chsdi3/logs/error.log"
-  LogLevel warn
   ServerSignature Off
-  CustomLog "/var/www/vhosts/mf-chsdi3/logs/access.log" combined env=!forwarded
+  LogLevel ${APACHE_LOG_LEVEL}
+  ErrorLog /proc/self/fd/2
+  CustomLog /dev/stdout  combined
   ## Script alias directives
   ScriptAlias /cgi-bin "/var/www/vhosts/mf-chsdi3/cgi-bin/"
 
