@@ -10625,6 +10625,12 @@ msgstr "Confins naziunals"
 msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill"
 msgstr "Cunfins naziunals"
 
+msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill.id"
+msgstr "Abkürzung"
+
+msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill.name"
+msgstr "Num"
+
 msgid "ch.swisstopo.swissboundaries3d-land-grenze"
 msgstr "Confins naziunals"
 
@@ -11560,6 +11566,9 @@ msgstr "Secturs logistics CLA"
 
 msgid "ch.vbs.bundestankstellen-bebeco"
 msgstr "Tancadis BEBECO"
+
+msgid "ch.vbs.bundestankstellen-bebeco.bezugszeit"
+msgstr "Bezugszeiten Mo – Fr"
 
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Ort"

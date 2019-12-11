@@ -682,8 +682,12 @@ class SwissBoundariesLand(Base, Vector):
     __tablename__ = 'swissboundaries_land'
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __bodId__ = 'ch.swisstopo.swissboundaries3d-land-flaeche.fill'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    __template__ = 'templates/htmlpopup/swissboundaries_country.mako'
+    __label__ = 'displayname'
+    id = Column('icc', Unicode, primary_key=True)
+    flaeche = Column('flaeche', Numeric)
     displayname = Column('displayname', Unicode)
+    bez = Column('bez', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissboundaries3d-land-flaeche.fill', SwissBoundariesLand)

@@ -10625,6 +10625,12 @@ msgstr "Surface du pays"
 msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill"
 msgstr "Frontières nationales"
 
+msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill.id"
+msgstr "Abréviation"
+
+msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill.name"
+msgstr "Nom"
+
 msgid "ch.swisstopo.swissboundaries3d-land-grenze"
 msgstr "Frontière nationale"
 
@@ -11560,6 +11566,9 @@ msgstr "Secteurs logistiques des CLA"
 
 msgid "ch.vbs.bundestankstellen-bebeco"
 msgstr "Stations-service BEBECO"
+
+msgid "ch.vbs.bundestankstellen-bebeco.bezugszeit"
+msgstr "Temps de réception Lu - Ve"
 
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Lieu"
