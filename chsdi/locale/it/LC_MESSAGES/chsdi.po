@@ -126,7 +126,7 @@ msgid "Aerial"
 msgstr "Veduta aerea"
 
 msgid "aktuelle_daten"
-msgstr "Données actuelles et historiques"
+msgstr "Dati attuali et storici"
 
 msgid "Alert.print.profile"
 msgstr "La funzione di stampa non è supportata da IE8 e precedenti. Usare un altro browser o una versione più recente di IE."
@@ -10625,6 +10625,12 @@ msgstr "Frontiere nazionali"
 msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill"
 msgstr "Frontiere nazionali"
 
+msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill.id"
+msgstr "Abréviation"
+
+msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill.name"
+msgstr "Nome"
+
 msgid "ch.swisstopo.swissboundaries3d-land-grenze"
 msgstr "Frontiere nazionali"
 
@@ -11560,6 +11566,9 @@ msgstr "Settori logistici dei CLEs"
 
 msgid "ch.vbs.bundestankstellen-bebeco"
 msgstr "Stazioni di servizio BEBECO"
+
+msgid "ch.vbs.bundestankstellen-bebeco.bezugszeit"
+msgstr "Tempi di relazione Lu - Ve"
 
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Luogo"
@@ -15315,10 +15324,10 @@ msgid "state"
 msgstr "Stato"
 
 msgid "stationsname"
-msgstr "Nom de la station"
+msgstr "Nome della stazione"
 
 msgid "stationsnr"
-msgstr "Numéro de la station"
+msgstr "Numero della stazione"
 
 msgid "Statistische Einheiten"
 msgstr "Unità statistiche"

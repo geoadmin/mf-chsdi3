@@ -10625,6 +10625,12 @@ msgstr "Landesfläche"
 msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill"
 msgstr "Landesgrenzen"
 
+msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill.id"
+msgstr "Abkürzung"
+
+msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill.name"
+msgstr "Name"
+
 msgid "ch.swisstopo.swissboundaries3d-land-grenze"
 msgstr "Landesgrenze"
 
@@ -11560,6 +11566,9 @@ msgstr "Logistikräume ALC"
 
 msgid "ch.vbs.bundestankstellen-bebeco"
 msgstr "Tankstellen BEBECO"
+
+msgid "ch.vbs.bundestankstellen-bebeco.bezugszeit"
+msgstr "Bezugszeiten Mo - Fr"
 
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Ort"
