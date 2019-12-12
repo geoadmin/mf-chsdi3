@@ -126,7 +126,7 @@ msgid "Aerial"
 msgstr "Veduta aerea"
 
 msgid "aktuelle_daten"
-msgstr "Données actuelles et historiques"
+msgstr "Dati attuali et storici"
 
 msgid "Alert.print.profile"
 msgstr "La funzione di stampa non è supportata da IE8 e precedenti. Usare un altro browser o una versione più recente di IE."
@@ -9797,6 +9797,9 @@ msgstr "Denominazione di foglio"
 msgid "ch.swisstopo.images-swissimage.metadata.name_it"
 msgstr "Denominazione di foglio"
 
+msgid "ch.swisstopo.images-swissimage.metadata.tileid"
+msgstr "Numero di foglio"
+
 msgid "ch.swisstopo.images-swissimage.metadata.version"
 msgstr "Versione"
 
@@ -15324,10 +15327,10 @@ msgid "state"
 msgstr "Stato"
 
 msgid "stationsname"
-msgstr "Nom de la station"
+msgstr "Nome della stazione"
 
 msgid "stationsnr"
-msgstr "Numéro de la station"
+msgstr "Numero della stazione"
 
 msgid "Statistische Einheiten"
 msgstr "Unità statistiche"

@@ -9797,6 +9797,9 @@ msgstr "Nom de la feuille"
 msgid "ch.swisstopo.images-swissimage.metadata.name_it"
 msgstr "Nom de la feuille"
 
+msgid "ch.swisstopo.images-swissimage.metadata.tileid"
+msgstr "Numéro de la feuille"
+
 msgid "ch.swisstopo.images-swissimage.metadata.version"
 msgstr "Version"
 

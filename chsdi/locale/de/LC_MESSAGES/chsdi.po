@@ -9797,6 +9797,9 @@ msgstr "Blattbezeichnung"
 msgid "ch.swisstopo.images-swissimage.metadata.name_it"
 msgstr "Blattbezeichnung"
 
+msgid "ch.swisstopo.images-swissimage.metadata.tileid"
+msgstr "Blattnummer"
+
 msgid "ch.swisstopo.images-swissimage.metadata.version"
 msgstr "Version"
 
