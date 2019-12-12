@@ -11561,6 +11561,9 @@ msgstr "Settori logistici dei CLEs"
 msgid "ch.vbs.bundestankstellen-bebeco"
 msgstr "Stazioni di servizio BEBECO"
 
+msgid "ch.vbs.bundestankstellen-bebeco.bezugszeit"
+msgstr "Tempi di relazione Lu - Ve"
+
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Luogo"
 

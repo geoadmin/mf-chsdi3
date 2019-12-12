@@ -11561,6 +11561,9 @@ msgstr "Logistikräume ALC"
 msgid "ch.vbs.bundestankstellen-bebeco"
 msgstr "Tankstellen BEBECO"
 
+msgid "ch.vbs.bundestankstellen-bebeco.bezugszeit"
+msgstr "Bezugszeiten Mo - Fr"
+
 msgid "ch.vbs.bundestankstellen-bebeco.ort"
 msgstr "Ort"
 

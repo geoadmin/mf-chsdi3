@@ -141,6 +141,7 @@ class BundestankstellenBebeco:
     strasse = Column('strasse', Unicode)
     plz = Column('plz', Integer)
     ort = Column('ort', Unicode)
+    bezugszeit = Column('bezugszeit', Unicode)
     the_geom_point = Column('the_geom', Geometry2D)
 
 

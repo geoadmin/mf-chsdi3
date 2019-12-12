@@ -8,5 +8,8 @@
     <td>${c['attributes']['plz'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.vbs.bundestankstellen-bebeco.strasse')}</td>
     <td>${c['attributes']['strasse'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.vbs.bundestankstellen-bebeco.bezugszeit')}</td>
+    <td>${c['attributes']['bezugszeit'] or '-'}</td></tr>
+
 </%def>
 
