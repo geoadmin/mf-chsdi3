@@ -9770,6 +9770,9 @@ msgstr "Annéee de vol"
 msgid "ch.swisstopo.images-swissimage-dop10.metadata-kartenblatt_nummer"
 msgstr "Numéro de tuile"
 
+msgid "ch.swisstopo.images-swissimage-dop10.metadata-resolution"
+msgstr "Risoluzione originale"
+
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Divisione SWISSIMAGE 25 cm Raster"
 

@@ -9770,6 +9770,9 @@ msgstr "Flugjahr"
 msgid "ch.swisstopo.images-swissimage-dop10.metadata-kartenblatt_nummer"
 msgstr "Kachelnummer"
 
+msgid "ch.swisstopo.images-swissimage-dop10.metadata-resolution"
+msgstr "Original resolution"
+
 msgid "ch.swisstopo.images-swissimage.metadata"
 msgstr "Division SWISSIMAGE 25 cm Raster"
 
