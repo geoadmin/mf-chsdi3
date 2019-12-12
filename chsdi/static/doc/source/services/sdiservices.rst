@@ -41,7 +41,8 @@ RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84)          |
+|                                   | and 3857 (Web Pseudo-Mercator). Defaults to "21781".                                      |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -301,7 +302,8 @@ No more than 50 features can be retrieved per request.
 | **offset (optional)**             | Offset for the first record (if more than 50 records)                                     |
 |                                   |                                                                                           |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84)          |
+|                                   | and 3857 (Web Pseudo-Mercator). Defaults to "21781".                                      |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -490,7 +492,8 @@ One layer, one search text and one attribute.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **returnGeometry (optional)**     | This parameter defines whether the geometry is returned or not. Default to "true".        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84)          |
+|                                   | and 3857 (Web Pseudo-Mercator). Defaults to "21781".                                      |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -539,7 +542,8 @@ RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **returnGeometry (optional)**     | This parameter defines whether the geometry is returned or not. Default to "true".        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84)          |
+|                                   | and 3857 (Web Pseudo-Mercator). Defaults to "21781".                                      |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -551,6 +555,7 @@ Example
 
 - Get the feature with the ID RIG belonging to ch.bafu.nabelstationen: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG <../../../rest/services/api/MapServer/ch.bafu.nabelstationen/RIG>`_
 - Get several features with IDs RIG and LAU belonging to ch.bafu.bundesinventar-bln: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU <../../../rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU>`_
+- A `GeoJSON` in `EPSG:4326`: `https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU?sr=4326&geometryFormat=geojson <../../../rest/services/api/MapServer/ch.bafu.nabelstationen/RIG,LAU?sr=4326&geometryFormat=geojson>`_
 
 .. _htmlpopup_description:
 
@@ -579,7 +584,8 @@ No css styling is provided per default so that you can use your own.
 +===================================+===========================================================================================+
 | **lang (optional)**               | The language. Supported values: de, fr, it , rm, en. Defaults to "de".                    |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95). Defaults to "21781".  |
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84)          |
+|                                   | and 3857 (Web Pseudo-Mercator). Defaults to "21781".                                      |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **time (optional)**               | Time (YYYY) to filter out time enabled layers, e.g. LUBIS. Defaults to "none".            |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -638,7 +644,7 @@ Only RESTFul interface is available.
 | **type (required)**                 | The type of performed search. Specify `locations` to perform a location search.           |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **bbox (required/optional)**        | Must be provided if the `searchText` is not. A comma separated list of 4 coordinates      |
-|                                     | representing the bounding box on which features should be filtered (SRID: 21781).         |
+|                                     | representing the bounding box on which features should be filtered (SRID: 21781 or 2056). |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **sortbbox (optional)**             | When `bbox` is specified and this parameter is "true", then the ranking of the results is |
 |                                     | performed according to the distance between the locations and the center of the bounding  |
@@ -652,8 +658,8 @@ Only RESTFul interface is available.
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **limit (optional)**                | The maximum number of results to retrive per request (Max and default limit=50)           |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
-| **sr (optional)**                   | The spatial reference for input and output geometries. Supported values: 21781 (LV03),    |
-|                                     | 2056 (LV95). Defaults to "21781".                                                         |
+| **sr (optional)**                   | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84)          |
+|                                     | and 3857 (Web Pseudo-Mercator). Defaults to "21781".                                      |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryFormat (optional)**       | Set to *geojson* if you want the service to return a GeoJSON `FeatureCollection`.         |
 |                                     | Geometries will be returned in the *sr* projection.                                       |
@@ -674,8 +680,8 @@ Only RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **limit (optional)**              | The maximum number of results to retrive per request (Max and default limit=30)           |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **sr (optional)**                 | The spatial reference for input and output geometries. Supported values: 21781 (LV03),    |
-|                                   | 2056 (LV95). Defaults to "21781".                                                         |
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84)          |
+|                                   | and 3857 (Web Pseudo-Mercator). Defaults to "21781".                                      |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryFormat (optional)**     | Set to *geojson* if you want the service to return a GeoJSON `FeatureCollection`.         |
 |                                   | Geometries will be returned in the *sr* projection.                                       |
@@ -703,8 +709,8 @@ Only RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **limit (optional)**              | The maximum number of results to retrive per request (Max and default limit=20)           |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **sr (optional)**                 | The spatial reference for input and output geometries. Supported values: 21781 (LV03),    |
-|                                   | 2056 (LV95). Defaults to "21781".                                                         |
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84)          |
+|                                   | and 3857 (Web Pseudo-Mercator). Defaults to "21781".                                      |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryFormat (optional)**     | Set to *geojson* if you want the service to return a GeoJSON `FeatureCollection`.         |
 |                                   | Geometries will be returned in the *sr* projection.                                       |
@@ -822,6 +828,8 @@ Examples
 - Search for layers in French matching the word “géoïde” in their description: `https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr <../../../rest/services/api/SearchServer?searchText=géoïde&type=layers&lang=fr>`_
 - Search for features matching word "433" in their description: `https://api3.geo.admin.ch/rest/services/api/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433 <../../../rest/services/api/SearchServer?features=ch.bafu.hydrologie-gewaesserzustandsmessstationen&type=featuresearch&searchText=433>`_
 - Get a GeoJSON for locations matching the word “wabern”: `https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson <../../../rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson>`_
+- Get a Webmercator GeoJSON: `https://api3.geo.admin.ch/rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson&sr=3857 <../../../rest/services/api/SearchServer?searchText=wabern&type=locations&geometryFormat=geojson&sr=3857>`_
+- Input `bbox` may also be in `LV95`: `https://api3.geo.admin.ch/rest/services/api/SearchServer?bbox=2551306.5625,1167918.328125,2551754.125,1168514.625&type=locations&sr=2056 <../../../rest/services/api/SearchServer?bbox=2551306.5625,1167918.328125,2551754.125,1168514.625&type=locations&sr=2056>`_
 
 Example of feature search usage with other services
 ***************************************************
