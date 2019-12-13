@@ -10625,6 +10625,12 @@ msgstr "Landesfläche"
 msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill"
 msgstr "Landesgrenzen"
 
+msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill.id"
+msgstr "Abkürzung"
+
+msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill.name"
+msgstr "Name"
+
 msgid "ch.swisstopo.swissboundaries3d-land-grenze"
 msgstr "Landesgrenze"
 

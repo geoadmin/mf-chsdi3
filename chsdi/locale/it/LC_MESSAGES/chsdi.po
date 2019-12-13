@@ -10625,6 +10625,12 @@ msgstr "Frontiere nazionali"
 msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill"
 msgstr "Frontiere nazionali"
 
+msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill.id"
+msgstr "Abréviation"
+
+msgid "ch.swisstopo.swissboundaries3d-land-flaeche.fill.name"
+msgstr "Nome"
+
 msgid "ch.swisstopo.swissboundaries3d-land-grenze"
 msgstr "Frontiere nazionali"
 
