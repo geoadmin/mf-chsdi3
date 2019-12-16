@@ -5684,8 +5684,38 @@ msgstr "Tema"
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht"
 msgstr "Canera da viafier, eff. Immissiun N"
 
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_es"
+msgstr "Empfindlichkeitsstufe"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_operation_status"
+msgstr "Beurteilung Betriebsraum"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_pointofdetermination"
+msgstr "Typ des Ermittlungspunktes"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.floor"
+msgstr "Stockwerk des Ermittlungspunkts"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.lr_night"
+msgstr "Eff. Immissionspegel Nacht [dB(A)]"
+
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
 msgstr "Canera da viafier, eff. emissiun D"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_es"
+msgstr "Empfindlichkeitsstufe"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_operation_status"
+msgstr "Beurteilung Betriebsraum"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_pointofdetermination"
+msgstr "Typ des Ermittlungspunktes"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.floor"
+msgstr "Stockwerk des Ermittlungspunkts"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.lr_day"
+msgstr "Eff. Immissionspegel Tag [dB(A)]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Canera da viafier, fix. Emissiun N"
@@ -10671,7 +10701,7 @@ msgid "ch.swisstopo.swissimage-product.metadata.flightyear"
 msgstr "Datenstand des Blattes"
 
 msgid "ch.swisstopo.swissimage-product.metadata.gsd"
-msgstr "Bodenauflösung"
+msgstr "Originalauflösung"
 
 msgid "ch.swisstopo.swissimage-product.metadata.kbnum"
 msgstr "Blattnummer"

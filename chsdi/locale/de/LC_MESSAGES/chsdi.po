@@ -4851,7 +4851,7 @@ msgid "ch.bafu.wald-wasserverfuegbarkeit_pflanzen"
 msgstr "Wasserverfügbarkeit für Pflanzen"
 
 msgid "ch.bafu.wasserbau-querprofilmarken"
-msgstr "Querprofilmarke"
+msgstr "Querprofilachse"
 
 msgid "ch.bafu.wasserbau-querprofilmarken.herkunft"
 msgstr "Herkunft"
@@ -4860,7 +4860,7 @@ msgid "ch.bafu.wasserbau-querprofilmarken.typ"
 msgstr "Typ"
 
 msgid "ch.bafu.wasserbau-vermessungsstrecken"
-msgstr "Vermessungsstrecken"
+msgstr "Vermessungsabschnitt"
 
 msgid "ch.bafu.wasserbau-vermessungsstrecken.anfangsmass"
 msgstr "Anfangsmass"
@@ -5684,8 +5684,38 @@ msgstr "Thema"
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht"
 msgstr "Eisenbahnlärm, tats. Immission N"
 
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_es"
+msgstr "Empfindlichkeitsstufe"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_operation_status"
+msgstr "Beurteilung Betriebsraum"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_pointofdetermination"
+msgstr "Typ des Ermittlungspunktes"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.floor"
+msgstr "Stockwerk des Ermittlungspunkts"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.lr_night"
+msgstr "Eff. Immissionspegel Nacht [dB(A)]"
+
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
 msgstr "Eisenbahnlärm, tats. Immission T"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_es"
+msgstr "Empfindlichkeitsstufe"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_operation_status"
+msgstr "Beurteilung Betriebsraum"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_pointofdetermination"
+msgstr "Typ des Ermittlungspunktes"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.floor"
+msgstr "Stockwerk des Ermittlungspunkts"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.lr_day"
+msgstr "Eff. Immissionspegel Tag [dB(A)]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Eisenbahnlärm, festgel. Emission N"
@@ -10671,7 +10701,7 @@ msgid "ch.swisstopo.swissimage-product.metadata.flightyear"
 msgstr "Datenstand des Blattes"
 
 msgid "ch.swisstopo.swissimage-product.metadata.gsd"
-msgstr "Bodenauflösung"
+msgstr "Originalauflösung"
 
 msgid "ch.swisstopo.swissimage-product.metadata.kbnum"
 msgstr "Blattnummer"

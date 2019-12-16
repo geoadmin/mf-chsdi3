@@ -5684,8 +5684,38 @@ msgstr "Tema"
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht"
 msgstr "Rumore dei treni, immissioni eff. N"
 
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_es"
+msgstr "Degré de sensibilité"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_operation_status"
+msgstr "Evaluation du local d'exploitation"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_pointofdetermination"
+msgstr "Type de point de détermination"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.floor"
+msgstr "Etage du point de détermination"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.lr_night"
+msgstr "Immission eff. nuit [dB(A)]"
+
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
 msgstr "Rumore dei treni, Immissioni eff. G"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_es"
+msgstr "Degré de sensibilité"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_operation_status"
+msgstr "Evaluation du local d'exploitation"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_pointofdetermination"
+msgstr "Type de point de détermination"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.floor"
+msgstr "Etage du point de détermination"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.lr_day"
+msgstr "Immission eff. jour [dB(A)]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Rumore dei treni, emissioni N stab."
@@ -10671,7 +10701,7 @@ msgid "ch.swisstopo.swissimage-product.metadata.flightyear"
 msgstr "Stato d'attualità del foglio"
 
 msgid "ch.swisstopo.swissimage-product.metadata.gsd"
-msgstr "Risoluzione al suolo"
+msgstr "Risoluzione originale"
 
 msgid "ch.swisstopo.swissimage-product.metadata.kbnum"
 msgstr "Numero di foglio"
