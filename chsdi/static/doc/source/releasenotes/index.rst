@@ -88,9 +88,9 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Cantonal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)                               |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `District boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill>`__ (,ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)                              |
+| Update | `District boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)                               |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (,ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill)                         |
+| Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill)                          |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata&layers_timestamp=2017&time=2017>`__ (ch.swisstopo.swissimage-product.metadata)   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
