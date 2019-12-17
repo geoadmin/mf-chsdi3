@@ -1151,6 +1151,7 @@ class GridstandSwissimageDop10(Base, Vector):
     __label__ = 'id'
     id = Column('tile_id', Unicode, primary_key=True)
     datenstand = Column('flightyear', Unicode)
+    resolution = Column('resolution', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.images-swissimage-dop10.metadata', GridstandSwissimageDop10)
