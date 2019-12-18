@@ -77,13 +77,15 @@ class Search(SearchValidation):
                 attributes['id'] = item['id']
                 attributes['weight'] = item['weight']
                 if attributes['origin'] != 'layer':
+                    # Already reprojected
                     bounds = parse_box2d(attributes['geom_st_box2d'])
                 else:
-                    bounds = self.quadtree.bbox.bounds
-                try:
-                    bounds = transform_shape(bounds, self.DEFAULT_SRID, self.srid)
-                except ValueError:
-                    pass
+                    try:
+                        # TODO: This is the requested QuadTree, because sphinx layer indices do not have extent
+                        bounds = self.quadtree.bbox.bounds
+                        bounds = transform_shape(bounds, self.DEFAULT_SRID, self.srid)
+                    except ValueError:
+                        raise exc.HTTPInternalServerError("Search error: cannot reproject result to SRID: {}".format(self.srid))
                 bbox = box(*bounds)
                 if features_bbox is None:
                     features_bbox = bbox
