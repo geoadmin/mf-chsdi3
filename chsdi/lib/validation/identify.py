@@ -43,11 +43,15 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         self.where = request.params.get('where')
         self.geometryType = request.params.get('geometryType')
         self.geometry = request.params.get('geometry')
-        self.imageDisplay = request.params.get('imageDisplay')
-        self.mapExtent = request.params.get('mapExtent')
-        self.returnGeometry = request.params.get('returnGeometry')
         if service != 'releases':
             self.tolerance = request.params.get('tolerance')
+        # tolerance is mandatory
+        # if tolerance=0, buffer is deactivate, hence both imageDisplay and mapExtent
+        # are not required
+        if self.tolerance > 0:
+            self.imageDisplay = request.params.get('imageDisplay')
+            self.mapExtent = request.params.get('mapExtent')
+        self.returnGeometry = request.params.get('returnGeometry')
         if service == 'releases':
             self.layerId = request.matchdict.get('layerId')
         self.layers = request.params.get('layers', 'all')

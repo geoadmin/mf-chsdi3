@@ -151,6 +151,7 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         resp.mustcontain("Missmatch between 'geometryType': esriGeometryPolyline and provided 'geometry' parsed as 'Polygon'")
 
+    # TODO
     def test_identify_nan_error(self):
         params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
                   'geometryType': 'esriGeometryPolygon',
@@ -193,6 +194,7 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         resp.mustcontain('Please provide an integer value for the pixel tolerance')
 
+    # TODO
     def test_identify_zero_tolerance_and_scale(self):
         params = {'geometry': '681999,251083,682146,251190',
                   'geometryFormat': 'geojson',
