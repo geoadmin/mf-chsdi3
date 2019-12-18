@@ -20,7 +20,7 @@ class BBox:
         self.maxy = float(maxy)
 
     def __repr__(self):
-        return 'BBox({}, {}, {}, {})'.format(*self.bounds)
+        return 'BBox({},{},{},{})'.format(*self.bounds)
 
     def __eq__(self, other):
         if (self.minx == other.minx
