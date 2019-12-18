@@ -284,11 +284,16 @@ No more than 50 features can be retrieved per request.
 | **layers (optional)**             | The layers to perform the identify operation on. Per default query all the layers in the  |
 |                                   | GeoAdmin API. Notation: all:"comma separated list of technical layer names".              |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **mapExtent (required)**          | The extent of the map. (minx, miny, maxx, maxy).                                          |
+| **mapExtent (required/optional)** | The extent of the map. (minx, miny, maxx, maxy). Optional if *tolereance=0*. Default to   |
+|                                   | 0,0,0,0                                                                                   |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **imageDisplay (required)**       | The screen image display parameters (width, height, and dpi) of the map.                  |
-|                                   | The mapExtent and the imageDisplay parameters are used by the server to calculate the     |
+| **imageDisplay**                  | The screen image display parameters (width, height, and dpi) of the map.                  |
+|    **(required/optional)**        | The mapExtent and the imageDisplay parameters are used by the server to calculate the     |
 |                                   | the distance on the map to search based on the tolerance in screen pixels.                |
+|                                   | Optional if *tolerance=0*. Default to 0,0,0                                               |
+|                                   |                                                                                           |
+|                                   | The combination of *mapExtent* and *imageDisplay* is used to compute a *resultion* or     |
+|                                   | *scale*. Some layer have *scale* dependant geometries                                     |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **tolerance (required)**          | The tolerance in pixels around the specified geometry. This parameter is used to create   |
 |                                   | a buffer around the geometry. Therefore, a tolerance of 0 deactivates the buffer          |
