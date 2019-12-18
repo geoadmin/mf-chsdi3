@@ -19,7 +19,9 @@
           grid = getTileGrid(self.srid)()
           defaultImageDisplay = '400,600,96'
           defaultExtent = ','.join(map(str, grid.extent))
+          defaultTolerance = 0
 
+          self.tolerance = request.params.get('tolerance', defaultTolerance)
           self.mapExtent = request.params.get('mapExtent', defaultExtent)
           self.imageDisplay = request.params.get('imageDisplay', defaultImageDisplay)
           self.coord = request.params.get('coord')
