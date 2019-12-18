@@ -23,6 +23,21 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
 
+    def test_trivial_from_doc(self):
+        params = {'lang': 'fr',
+                  'sr': '2056',
+                  'layers': 'all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz',
+                  'imageDisplay': '0,0,0',
+                  'mapExtent': '0,0,0,0',
+                  'geometry': '2585438.308,1220677.966',
+                  'geometryFormat': 'geojson',
+                  'returnGeometry': 'false',
+                  'geometryType': 'esriGeometryPoint',
+                  'tolerance': '0'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp.content_type, 'application/geo+json')
+        self.assertEqual(len(resp.json['results'], 2))
+
     def test_identify_no_parameters(self):
         self.testapp.get('/rest/services/ech/MapServer/identify', headers=accept_headers, status=400)
 
@@ -106,6 +121,17 @@ class TestIdentifyService(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         self.assertEqual(resp.json['code'], 400)
         self.assertTrue(resp.json['detail'].startswith('All values for parameter "imageDisplay" must be strictly positive'))
+
+    def test_identify_optional_imageDisplay_when_tolerance_is_zero(self):
+        params = {'lang': 'fr',
+                  'layers': 'all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill',
+                  'geometry': '548945.5,147956,549402,148103.5',
+                  'returnGeometry': 'false',
+                  'geometryType': 'esriGeometryEnvelope',
+                  'tolerance': '0'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('Lavaux', resp)
 
     def test_identify_polyline(self):
         params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
