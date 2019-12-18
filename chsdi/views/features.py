@@ -179,6 +179,7 @@ def _identify_oereb(request):
     })
     header = insertTimestamps(header, comments)
 
+    # TODO
     isScaleDependent = has_buffer(params.imageDisplay, params.mapExtent, params.tolerance)
     scale = get_scale(params.imageDisplay, params.mapExtent) if isScaleDependent else None
     # Only relation 1 to 1 is needed at the moment

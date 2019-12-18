@@ -151,13 +151,41 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         resp.mustcontain("Missmatch between 'geometryType': esriGeometryPolyline and provided 'geometry' parsed as 'Polygon'")
 
-    # TODO
-    def test_identify_nan_error(self):
+    # If tolerance is 0, imageMap and mapxExtent have no signifaction
+    def test_tolerance_zero_optional_params(self):
         params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
                   'geometryType': 'esriGeometryPolygon',
                   'imageDisplay': '500,600,96',
                   'mapExtent': 'NaN,147956,549402,148103.5',
                   'tolerance': '0',
+                  'layers': 'all:ch.bafu.bundesinventare-bln'}
+        resp1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+
+        params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
+                  'geometryType': 'esriGeometryPolygon',
+                  'imageDisplay': '500,NaN,96',
+                  'mapExtent': '548945.5,147956,549402,148103.5',
+                  'tolerance': '0',
+                  'layers': 'all:ch.bafu.bundesinventare-bln'}
+        resp2 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+
+        params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
+                  'geometryType': 'esriGeometryPolygon',
+                  'tolerance': '0',
+                  'layers': 'all:ch.bafu.bundesinventare-bln'}
+        resp3 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(len(resp1.json['results']), 3)
+        self.assertEqual(len(resp2.json['results']), 3)
+        self.assertEqual(len(resp3.json['results']), 3)
+        self.assertEqual(resp1.json, resp2.json)
+        self.assertEqual(resp1.json, resp3.json)
+
+    def test_identify_nan_error(self):
+        params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
+                  'geometryType': 'esriGeometryPolygon',
+                  'imageDisplay': '500,600,96',
+                  'mapExtent': 'NaN,147956,549402,148103.5',
+                  'tolerance': '5',
                   'layers': 'all:ch.bafu.bundesinventare-bln'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         resp.mustcontain('Please provide numerical values for the parameter mapExtent')
@@ -177,14 +205,6 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.bafu.bundesinventare-bln'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         resp.mustcontain('Please provide a valid geometry')
-        params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
-                  'geometryType': 'esriGeometryPolygon',
-                  'imageDisplay': '500,NaN,96',
-                  'mapExtent': '548945.5,147956,549402,148103.5',
-                  'tolerance': '0',
-                  'layers': 'all:ch.bafu.bundesinventare-bln'}
-        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
-        resp.mustcontain('Please provide numerical values for the parameter imageDisplay')
         params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
                   'geometryType': 'esriGeometryPolyline',
                   'imageDisplay': '500,600,96',
