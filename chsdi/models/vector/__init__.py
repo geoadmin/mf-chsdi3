@@ -48,7 +48,8 @@ def get_scale(imageDisplay, mapExtent):
 
 
 def has_buffer(imageDisplay, mapExtent, tolerance):
-    return bool(imageDisplay and mapExtent and tolerance is not None
+    return bool(imageDisplay is not None and mapExtent is not None
+            and tolerance is not None
         and all(val != 0 for val in imageDisplay) and mapExtent.area != 0)
 
 
