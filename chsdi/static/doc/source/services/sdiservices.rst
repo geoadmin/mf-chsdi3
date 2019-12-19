@@ -288,7 +288,7 @@ No more than 50 features can be retrieved per request.
 |                                   | 0,0,0,0                                                                                   |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **imageDisplay**                  | The screen image display parameters (width, height, and dpi) of the map.                  |
-|    **(required/optional)**        | The mapExtent and the imageDisplay parameters are used by the server to calculate the     |
+| **(required/optional)**           | The mapExtent and the imageDisplay parameters are used by the server to calculate the     |
 |                                   | the distance on the map to search based on the tolerance in screen pixels.                |
 |                                   | Optional if *tolerance=0*. Default to 0,0,0                                               |
 |                                   |                                                                                           |
