@@ -487,7 +487,7 @@ requirements.txt:
 ifeq ($(USE_PYTHON3), 1)
 .venv: requirements.txt
 		test -d "$(INSTALL_DIRECTORY)" || local/bin/python3.6 -m venv $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; 
+		${PIP_CMD} install --upgrade pip==19.2.3 setuptools==44.0.0 --index-url ${PYPI_URL} ; 
 		${PIP_CMD} install --index-url ${PYPI_URL}  -e .
 else
 .venv: requirements.txt
