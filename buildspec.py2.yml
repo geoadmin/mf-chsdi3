@@ -92,5 +92,6 @@ phases:
   post_build:
     commands:
       - echo Testing...
-      - make lint
+      - make lint prod
+      - .venv/bin/nosetests   tests/functional/
       - echo "Doing nothing, but great success"
