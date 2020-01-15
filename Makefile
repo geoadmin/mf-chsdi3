@@ -495,8 +495,8 @@ else
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv -p /usr/bin/python2  $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; \
-		${PIP_CMD} install --upgrade pip==19.2.3 enum34==1.1.6 setuptools --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install --upgrade pip==19.2.3 setuptools==44.0.0 --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install --upgrade pip==19.2.3 enum34==1.1.6 setuptools==44.0.0 --index-url ${PYPI_URL} ; \
 	fi
 	${PIP_CMD} install --index-url ${PYPI_URL} --find-links local_eggs/ -e .
 endif
