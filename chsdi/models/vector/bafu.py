@@ -1190,7 +1190,6 @@ class Gebietsauslaesse (Base, Vector):
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasser-gebietsauslaesse'
     __template__ = 'templates/htmlpopup/gebietsauslaesse.mako'
-    __extended_info__ = False
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
     id_2 = Column('id', Integer)
