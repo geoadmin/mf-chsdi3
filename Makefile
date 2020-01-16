@@ -497,7 +497,7 @@ else
 		virtualenv -p /usr/bin/python2  $(INSTALL_DIRECTORY); \
 		${PIP_CMD} install --upgrade pip==19.2.3 setuptools==44.0.0 enum34==1.1.6 --index-url ${PYPI_URL} ; \
 	fi
-	${PIP_CMD} install --index-url ${PYPI_URL} --find-links local_eggs/ -e .
+	${PIP_CMD} install --index-url ${PYPI_URL} -e .
 endif
 
 .venv/bin/git-secrets: .venv
