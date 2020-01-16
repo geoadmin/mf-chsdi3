@@ -1186,32 +1186,23 @@ register('ch.bafu.wasser-teileinzugsgebiete_40', Teileinzugsgebiete40)
 
 
 class Gebietsauslaesse (Base, Vector):
-    __tablename__ = 'outlets'
+    __tablename__ = 'gebietsauslaesse'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasser-gebietsauslaesse'
     __template__ = 'templates/htmlpopup/gebietsauslaesse.mako'
-    __extended_info__ = True
-    __label__ = 'ezgnr'
+    __extended_info__ = False
+    __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
+    id_2 = Column('id', Integer)
     ezgnr = Column('ezgnr', Integer)
     gwlnr = Column('gwlnr', Unicode)
-    measure = Column('measure', Integer)
-    gesamtflae = Column('gesamtflae', Unicode)
-    gewaessern = Column('gewaessern', Unicode)
-    anteil_ch = Column('anteil_ch', Unicode)
-    kanal_de = Column('kanal_de', Unicode)
-    kanal_fr = Column('kanal_fr', Unicode)
-    kanal_it = Column('kanal_it', Unicode)
-    kanal_rm = Column('kanal_rm', Unicode)
-    kanal_en = Column('kanal_en', Unicode)
-    meanalt = Column('meanalt', Unicode)
-    maxalt = Column('maxalt', Unicode)
-    mq_jahr = Column('mq_jahr', Unicode)
-    feuchtflae = Column('feuchtflae', Unicode)
-    wasserflae = Column('wasserflae', Unicode)
-    bebautefl = Column('bebautefl', Unicode)
-    landwirtsc = Column('landwirtsc', Unicode)
-    wald_natur = Column('wald_natur', Unicode)
+    gewaessername = Column('gewaessername', Unicode)
+    adresse = Column('adresse', Integer)
+    de_nebenarm = Column('de_nebenarm', Unicode)
+    fr_nebenarm = Column('fr_nebenarm', Unicode)
+    it_nebenarm = Column('it_nebenarm', Unicode)
+    rm_nebenarm = Column('rm_nebenarm', Unicode)
+    en_nebenarm = Column('en_nebenarm', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasser-gebietsauslaesse', Gebietsauslaesse)
