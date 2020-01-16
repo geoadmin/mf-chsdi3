@@ -27,6 +27,10 @@ HTTP_PROXY := http://ec2-52-28-118-239.eu-central-1.compute.amazonaws.com:80
 BRANCH_STAGING := $(shell if [ '$(DEPLOY_TARGET)' = 'dev' ]; then echo 'test'; else echo 'integration'; fi)
 GIT_BRANCH := $(shell if [ -f '.venv/deployed-git-branch' ]; \
 							  then cat .venv/deployed-git-branch 2> /dev/null; else git rev-parse --symbolic-full-name --abbrev-ref HEAD; fi)
+GIT_COMMIT_HASH ?= $(shell git rev-parse --verify HEAD)
+GIT_COMMIT_SHORT ?= $(shell git rev-parse --short $(GIT_COMMIT_HASH))
+GIT_COMMIT_DATE ?= $(shell git log -1  --date=iso --pretty=format:%cd)
+CURRENT_DATE ?= $(shell date -u +"%Y-%m-%d %H:%M:%S %z")
 NO_TESTS ?= withtests
 NODE_DIRECTORY := node_modules
 APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''; else echo /$(APACHE_BASE_PATH); fi)
@@ -77,6 +81,8 @@ LAST_WSGI_PROCESSES := $(call lastvalue,wsgi-processes)
 LAST_WSGI_THREADS := $(call lastvalue,wsgi-threads)
 LAST_WSGI_APP := $(call lastvalue,wsgi-app)
 LAST_KML_TEMP_DIR := $(call lastvalue,kml-temp-dir)
+LAST_GIT_COMMIT_HASH ?= $(call lastvalue,git-commit-hash)
+LAST_GIT_COMMIT_SHORT ?= $(call lastvalue,git-commit-short)
 
 PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
@@ -204,7 +210,7 @@ all: setup chsdi/static/css/extended.min.css templates potomo lint fixrights doc
 
 setup: .venv node_modules .venv/hooks
 
-templates: apache/wsgi.conf development.ini production.ini
+templates: apache/wsgi.conf development.ini production.ini chsdi/static/info.json
 
 
 
@@ -327,6 +333,18 @@ deployprod: guard-SNAPSHOT
 .PHONY: legends
 legends: guard-BODID guard-WMSHOST
 	source rc_user && scripts/downloadlegends.sh $(WMSHOST) $(BODID) $(WMSSCALELEGEND)
+
+chsdi/templates/info.json.mako:
+	@echo "${GREEN}info.json has changed${RESET}";
+chsdi/static/info.json:  chsdi/templates/info.json.mako
+		${PYTHON_CMD} ${MAKO_CMD} \
+		--var "version=$(VERSION)" \
+		--var "git_branch=$(GIT_BRANCH)" \
+		--var "git_commit_short=$(GIT_COMMIT_SHORT)" \
+		--var "git_commit_date=$(GIT_COMMIT_DATE)" \
+		--var "git_commit_hash=$(GIT_COMMIT_HASH)" \
+		--var "python_version=$(PYTHON_VERSION)" \
+		--var "build_date=$(CURRENT_DATE)"  $< > $@
 
 rc_branch.mako:
 	@echo "${GREEN}Branch has changed${RESET}";
@@ -672,6 +690,7 @@ clean:
 	rm -rf apache/application.wsgi
 	rm -rf deploy/deploy-branch.cfg
 	rm -rf deploy/conf/00-branch.conf
+	rm -f  chsdi/static/info.json
 
 .PHONY: cleanall
 cleanall: clean

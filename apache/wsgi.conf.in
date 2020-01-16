@@ -46,6 +46,9 @@ Header merge Cache-Control "max-age=31536013, public" env=${apache_base_path}set
 # Default cache#
 Header setifempty  Cache-Control "${cache_control}"
 
+# Info
+RewriteRule ^${apache_entry_path}/info.json ${apache_entry_path}/static/info.json [PT]
+
 # Static for cross domain flash/arcgis
 RewriteRule ^${apache_entry_path}/(crossdomain.xml|clientaccesspolicy.xml) ${apache_entry_path}/static/$1 [PT]
 <LocationMatch ^${apache_entry_path}/static/(crossdomain.xml|clientaccesspolicy.xml)>
@@ -124,7 +127,7 @@ AliasMatch ^${apache_entry_path}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${kml_t
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^${apache_entry_path}/admin         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
-<LocationMatch ^${apache_entry_path}/admin/kml>
+<LocationMatch ^${apache_entry_path}/(admin/kml|static/info.json)>
     AuthType Basic
     AuthName "Your IWI credential"
     # Optional line:
