@@ -1,4 +1,5 @@
 {
+  "python":"${python_version}",
   "branch":"${git_branch}",
   "version": "${version}",
   "last_commit_short": "${git_commit_short}",
