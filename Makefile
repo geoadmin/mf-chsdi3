@@ -179,6 +179,7 @@ help:
 	@echo "- deletebranchint    List deployed branches or delete a deployed branch on int (BRANCH_TO_DELETE=...)"
 	@echo "- updateapi          Updates geoadmin api source code (ol3 fork)"
 	@echo "- deploydev          Deploys master to dev (SNAPSHOT=true to also create a snapshot)"
+	@echo "- updatedev          Updates master to dev, if version has changed (with snapshot)"
 	@echo "- deployint          Deploys a snapshot to integration (SNAPSHOT=201512021146)"
 	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"
 	@echo "- clean              Remove generated files"
@@ -329,7 +330,7 @@ updatedev: .venv/last-github-last-commit
 		@if [ "${GITHUB_LAST_COMMIT}" == "${LAST_GITHUB_LAST_COMMIT}"   ]; then \
 				echo "No updating dev"; \
 		else \
-		    scripts/deploydev.sh; \
+		    scripts/deploydev.sh -s; \
 		fi
 
 
