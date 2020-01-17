@@ -4916,6 +4916,24 @@ msgstr "Wasserkraftnutzung - Weitere Entnahme"
 msgid "ch.bafu.wasser-gebietsauslaesse"
 msgstr "Area outlets"
 
+msgid "ch.bafu.wasser-gebietsauslaesse.adresse"
+msgstr "Address ('waterbody kilo-metre')"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.de_nebenarm"
+msgstr "Waterbody type"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.ezgnr"
+msgstr "Catchment area number"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.gewaessername"
+msgstr "Waterbody name"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.gwlnr"
+msgstr "Number of the river"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.id"
+msgstr "Identifier of the area outlet"
+
 msgid "ch.bafu.wasser-leitungen"
 msgstr "Supply"
 
@@ -4939,6 +4957,27 @@ msgstr "40km2 sub catchment areas"
 
 msgid "ch.bafu.wasser-vorfluter"
 msgstr "Type of flow regime"
+
+msgid "ch.bafu.wasser-vorfluter.ezgnr"
+msgstr "Catchment area number"
+
+msgid "ch.bafu.wasser-vorfluter.Gewaessername"
+msgstr "Waterbody name"
+
+msgid "ch.bafu.wasser-vorfluter.gwlnr"
+msgstr "Number of the river"
+
+msgid "ch.bafu.wasser-vorfluter.id"
+msgstr "Identifier of the section of the effluent"
+
+msgid "ch.bafu.wasser-vorfluter.nebenarm"
+msgstr "Waterbody type"
+
+msgid "ch.bafu.wasser-vorfluter.oberesende"
+msgstr "Finish address (’waterbody kilometre’)"
+
+msgid "ch.bafu.wasser-vorfluter.unteresende"
+msgstr "Start address (’waterbody kilometre’)"
 
 msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
 msgstr "Permitted paths and trails"
@@ -5840,8 +5879,38 @@ msgstr "Year"
 msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht"
 msgstr "Railway noise, perm. immissions N"
 
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.de_es"
+msgstr "Empfindlichkeitsstufe"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.de_pointofdetermination_t"
+msgstr "Typ des Ermittlungspunktes"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.floor"
+msgstr "Stockwerk des Ermittlungspunkts"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.lr_max_night"
+msgstr "Max. zul. Pegel (Nacht)"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.lr_max_year"
+msgstr "Verfügungsjahr"
+
 msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag"
 msgstr "Railway noise, perm. immissions D"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.de_es"
+msgstr "Empfindlichkeitsstufe"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.de_pointofdetermination_t"
+msgstr "Typ des Ermittlungspunktes"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.floor"
+msgstr "Stockwerk des Ermittlungspunkts"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.lr_max_day"
+msgstr "Max. zul. Pegel (Tag)"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.lr_max_year"
+msgstr "Verfügungsjahr"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Emissions Plan 2015"
@@ -7639,9 +7708,6 @@ msgstr "Erosion risk"
 
 msgid "ch.blw.erosion-fliesswegkarte"
 msgstr "Flow-path map"
-
-msgid "ch.blw.erosion-mit_bergzonen"
-msgstr "Erosion risk 2"
 
 msgid "ch.blw.erosion-quantitativ"
 msgstr "Erosion risk crop quantitative"
