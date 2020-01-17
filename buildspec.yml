@@ -30,7 +30,7 @@ env:
     CMSGEOADMINHOST: https://cms.geo.admin.ch
     LINKEDDATAHOST: https://ld.geo.admin.ch
     CACHE_CONTROL: no-cache
-    USE_PYTHON3: 1
+    # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
   parameter-store:
     OPENTRANS_API_KEY: "/terraform-codepipeline-example/opentrans_api_key"
 
@@ -39,7 +39,11 @@ phases:
     runtime-versions:
       docker: 18
     commands:
-      - echo "Installing softwares"
+      - |-
+           if [ "${USE_PYTHON3}" = 0 ]; then
+             echo "Installing python 2.7"
+             apt-get update && apt-get install -y python2.7 python2.7-dev virtualenv build-essential
+           fi
 
   pre_build:
     commands:
@@ -81,15 +85,22 @@ phases:
       - echo IMAGE_TAG=${IMAGE_TAG}
       - echo BASH=${BASH}
       - echo SHELL=${SHELL}
+      - echo USE_PYTHON3=${USE_PYTHON3}
       - echo "==================================="
   build:
     commands:
       - echo Build started on $(date)
-      - make cleanall build/python user
+      - |-
+           if [ "${USE_PYTHON3}" = 0 ]; then
+             make cleanall dev
+           else
+              make cleanall build/python dev
+           fi
       - echo Build completed on $(date)
       
   post_build:
     commands:
       - echo Testing...
       - make lint
+      - .venv/bin/nosetests   tests/functional/
       - echo "Doing nothing, but great success"
