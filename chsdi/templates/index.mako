@@ -21,6 +21,8 @@ version = python_version()
   </head>
   <body>
       <h1>Python version: ${version}</h1>
+      <h1>Build info</h1>
+          <a href="info.json">info.json</a> <br>
       <h1 id="title">Python translations</h1>
           <a href="testi18n?lang=de">Default to de</a> <br>
           <a href="testi18n?lang=en">En to en</a> <br>
