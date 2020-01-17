@@ -1104,7 +1104,7 @@ class Vorfluter (Base, Vector):
     __template__ = 'templates/htmlpopup/vorfluter.mako'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    id_2 = Column('id_2', Integer)
+    id_2 = Column('id', Integer)
     ezgnr = Column('ezgnr', Integer)
     gwlnr = Column('gwlnr', Unicode)
     unteresende = Column('unteresende', Integer)
