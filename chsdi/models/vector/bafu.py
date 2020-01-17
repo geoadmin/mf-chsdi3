@@ -1111,6 +1111,10 @@ class Vorfluter (Base, Vector):
     oberesende = Column('oberesende', Integer)
     gewaessername = Column('gewaessername', Unicode)
     de_nebenarm = Column('de_nebenarm', Unicode)
+    fr_nebenarm = Column('fr_nebenarm', Unicode)
+    it_nebenarm = Column('it_nebenarm', Unicode)
+    en_nebenarm = Column('en_nebenarm', Unicode)
+    rm_nebenarm = Column('rm_nebenarm', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasser-vorfluter', Vorfluter)
