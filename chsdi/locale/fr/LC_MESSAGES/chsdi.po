@@ -4961,7 +4961,7 @@ msgstr "Type de régime d'écoulement"
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "N° du bassin versant complet"
 
-msgid "ch.bafu.wasser-vorfluter.Gewaessername"
+msgid "ch.bafu.wasser-vorfluter.gewaessername"
 msgstr "Nom du cours d’eau"
 
 msgid "ch.bafu.wasser-vorfluter.gwlnr"

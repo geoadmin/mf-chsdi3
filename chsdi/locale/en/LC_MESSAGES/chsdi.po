@@ -4961,7 +4961,7 @@ msgstr "Type of flow regime"
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "Catchment area number"
 
-msgid "ch.bafu.wasser-vorfluter.Gewaessername"
+msgid "ch.bafu.wasser-vorfluter.gewaessername"
 msgstr "Waterbody name"
 
 msgid "ch.bafu.wasser-vorfluter.gwlnr"

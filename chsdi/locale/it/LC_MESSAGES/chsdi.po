@@ -4961,7 +4961,7 @@ msgstr "Tipo di regime di deflusso"
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "N° del bacino idrografico completo"
 
-msgid "ch.bafu.wasser-vorfluter.Gewaessername"
+msgid "ch.bafu.wasser-vorfluter.gewaessername"
 msgstr "Nome del corso d’acqua"
 
 msgid "ch.bafu.wasser-vorfluter.gwlnr"

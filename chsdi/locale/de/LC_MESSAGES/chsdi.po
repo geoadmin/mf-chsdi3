@@ -4961,7 +4961,7 @@ msgstr "Abflussregimetyp"
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "Gesamteinzugsgebiets-Nummer"
 
-msgid "ch.bafu.wasser-vorfluter.Gewaessername"
+msgid "ch.bafu.wasser-vorfluter.gewaessername"
 msgstr "Gewässername"
 
 msgid "ch.bafu.wasser-vorfluter.gwlnr"
