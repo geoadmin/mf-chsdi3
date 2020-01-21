@@ -25,6 +25,11 @@ then
   fi
 fi
 
+# Be a bit more verbose (for cronjobs)
+echo "Starting 'mf-chsdi3' deploy on $(hostname) for branch <${GITBRANCH}>"
+echo "on $(date +'%Y-%m-%d %T')"
+
+
 # Backup current project
 if mv -f $DEPLOYDIR $TEMPDIR; then
   echo "Project backup in $TEMPDIR."

@@ -38,6 +38,7 @@ DATAGEOADMINHOST ?= data.geo.admin.ch
 SHORTENER_ALLOWED_DOMAINS := admin.ch, swisstopo.ch, bgdi.ch
 SHORTENER_ALLOWED_HOSTS ?=
 PYPI_URL ?= https://pypi.org/simple/
+GITHUB_LAST_COMMIT=$(shell curl -s  https://api.github.com/repos/geoadmin/mf-chsdi3/commits | jq -r '.[0].sha')
 
 # Last values
 KEEP_VERSION ?= 'false'
@@ -83,6 +84,7 @@ LAST_WSGI_APP := $(call lastvalue,wsgi-app)
 LAST_KML_TEMP_DIR := $(call lastvalue,kml-temp-dir)
 LAST_GIT_COMMIT_HASH ?= $(call lastvalue,git-commit-hash)
 LAST_GIT_COMMIT_SHORT ?= $(call lastvalue,git-commit-short)
+LAST_GITHUB_LAST_COMMIT := $(call lastvalue,github-last-commit)
 
 PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
@@ -177,6 +179,7 @@ help:
 	@echo "- deletebranchint    List deployed branches or delete a deployed branch on int (BRANCH_TO_DELETE=...)"
 	@echo "- updateapi          Updates geoadmin api source code (ol3 fork)"
 	@echo "- deploydev          Deploys master to dev (SNAPSHOT=true to also create a snapshot)"
+	@echo "- updatedev          Updates master to dev, if version has changed (with snapshot)"
 	@echo "- deployint          Deploys a snapshot to integration (SNAPSHOT=201512021146)"
 	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"
 	@echo "- clean              Remove generated files"
@@ -321,6 +324,15 @@ deploydev:
 	else \
 		scripts/deploydev.sh; \
 	fi
+
+.PHONY: updatedev
+updatedev: .venv/last-github-last-commit
+		@if [ "${GITHUB_LAST_COMMIT}" == "${LAST_GITHUB_LAST_COMMIT}"   ]; then \
+				echo "No updating dev"; \
+		else \
+		    scripts/deploydev.sh -s; \
+		fi
+
 
 .PHONY: deployint
 deployint: guard-SNAPSHOT
@@ -544,6 +556,8 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 	@echo "${GREEN}Generating new css file...${RESET}";
 	node_modules/.bin/lessc -ru --clean-css $< $@
 
+.venv/last-github-last-commit::
+	$(call cachelastvariable,$@,$(GITHUB_LAST_COMMIT),$(LAST_GITHUB_LAST_COMMIT),github-last-commit)
 
 # application.wsg
 .venv/last-modwsgi-config::
