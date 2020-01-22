@@ -146,6 +146,24 @@ class TestSearchServiceView(TestsBase):
             self.assertEqual(resp.json['type'], 'FeatureCollection')
             self.assertEqual(resp.json['bbox'], projections[sr])
 
+    def test_search_locations_geojson_with_projection(self):
+        projections = {'2056': [2534437.97, 1150655.173, 2544978.008, 1161554.51],
+                       '4326': [6.58296, 46.503981, 6.721816, 46.602973],
+                       '3857': [732811.8, 5861483.7, 748269.1, 5877508.3],
+                       '21781': [534438.40469522, 150654.771724574, 544978.33190583, 161554.027818952]}
+        params = {
+            'type': 'locations',
+            'searchText': 'lausanne',
+            'geometryFormat': 'geojson',
+            'limit': 1
+        }
+        for sr in list(projections.keys()):
+            params['sr'] = sr
+            resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
+            self.assertEqual(resp.content_type, 'application/geo+json')
+            self.assertEqual(resp.json['type'], 'FeatureCollection')
+            self.assertEqual(resp.json['bbox'], projections[sr])
+
     def test_search_layers_with_cb(self):
         params = {
             'type': 'layers',
