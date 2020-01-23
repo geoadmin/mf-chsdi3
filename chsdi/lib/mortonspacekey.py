@@ -20,7 +20,7 @@ class BBox:
         self.maxy = float(maxy)
 
     def __repr__(self):
-        return 'BBox(%s,%s,%s,%s)' % (self.minx, self.miny, self.maxx, self.maxy)
+        return 'BBox({},{},{},{})'.format(*self.bounds)
 
     def __eq__(self, other):
         if (self.minx == other.minx
@@ -35,6 +35,10 @@ class BBox:
 
     def height(self):
         return self.maxy - self.miny
+
+    @property
+    def bounds(self):
+        return [self.minx, self.miny, self.maxx, self.maxy]
 
     def pointAt(self, i):
         if i == 0:

@@ -41,7 +41,7 @@ from shapely.ops import transform as shape_transform
 from shapely.wkt import dumps as shape_dumps, loads as shape_loads
 from shapely.geometry.base import BaseGeometry
 from chsdi.lib.parser import WhereParser
-from chsdi.lib.exceptions import QueryParseException
+from chsdi.lib.exceptions import QueryParseException, CoordinatesTransformationException
 import logging
 
 if six.PY3:
@@ -440,12 +440,15 @@ def _transform_coordinates(coordinates, srid_from, srid_to, rounding=True):
         raise ValueError
     new_coords = []
     coords_iter = iter(coordinates)
-    for pnt in zip(coords_iter, coords_iter):
-        new_pnt = _transform_point(pnt, srid_from, srid_to)
-        new_coords += new_pnt
-    if rounding:
-        precision = get_precision_for_proj(srid_to)
-        new_coords = _round_bbox_coordinates(new_coords, precision=precision)
+    try:
+        for pnt in zip(coords_iter, coords_iter):
+            new_pnt = _transform_point(pnt, srid_from, srid_to)
+            new_coords += new_pnt
+        if rounding:
+            precision = get_precision_for_proj(srid_to)
+            new_coords = _round_bbox_coordinates(new_coords, precision=precision)
+    except Exception:
+        raise CoordinatesTransformationException("Cannot transform coordinates {} from {} to {}".format(coordinates, srid_from, srid_to))
     return new_coords
 
 

@@ -5,7 +5,7 @@ import six
 import pyramid.httpexceptions as exc
 from pyramid.view import view_config
 
-from shapely.geometry import box, Point
+from shapely.geometry import box, Point, mapping
 
 from chsdi.lib.validation.search import SearchValidation
 from chsdi.lib.helpers import format_search_text, format_locations_search_text
@@ -76,7 +76,16 @@ class Search(SearchValidation):
                 attributes = item['attrs']
                 attributes['id'] = item['id']
                 attributes['weight'] = item['weight']
-                bounds = parse_box2d(attributes['geom_st_box2d'])
+                if attributes['origin'] != 'layer':
+                    # Already reprojected
+                    bounds = parse_box2d(attributes['geom_st_box2d'])
+                else:
+                    try:
+                        # TODO: This is the requested QuadTree, because sphinx layer indices do not have extent
+                        bounds = self.quadtree.bbox.bounds
+                        bounds = transform_shape(bounds, self.DEFAULT_SRID, self.srid)
+                    except ValueError:
+                        raise exc.HTTPInternalServerError("Search error: cannot reproject result to SRID: {}".format(self.srid))
                 bbox = box(*bounds)
                 if features_bbox is None:
                     features_bbox = bbox
@@ -88,7 +97,14 @@ class Search(SearchValidation):
                                'bbox': bbox.bounds,
                                'geometry': {'type': 'Point', 'coordinates': [attributes['x'], attributes['y']]},
                                'properties': attributes}
-                    features.append(feature)
+                else:
+                    feature = {'type': 'Feature',
+                               'id': item['id'],
+                               'bbox': bbox.bounds,
+                               'geometry': mapping(bbox),
+                               'properties': attributes}
+
+                features.append(feature)
         return (features, features_bbox)
 
     @view_config(route_name='search', renderer='jsonp')

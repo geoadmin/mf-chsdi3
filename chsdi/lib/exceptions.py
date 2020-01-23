@@ -10,3 +10,11 @@ class HTTPBandwidthLimited(exc.HTTPServerError):
 
 class QueryParseException(Exception):
     pass
+
+
+class CoordinatesTransformationException(Exception):
+    pass
+
+
+class CoordinatesRoundingException(Exception):
+    pass
