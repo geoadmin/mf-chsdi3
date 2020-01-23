@@ -284,11 +284,17 @@ No more than 50 features can be retrieved per request.
 | **layers (optional)**             | The layers to perform the identify operation on. Per default query all the layers in the  |
 |                                   | GeoAdmin API. Notation: all:"comma separated list of technical layer names".              |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **mapExtent (required)**          | The extent of the map. (minx, miny, maxx, maxy).                                          |
+| **mapExtent**                     | The extent of the map. (minx, miny, maxx, maxy). Optional if *tolereance=0*. Default to   |
+|    **(required/optional)**        | The mapExtent and the imageDisplay parameters are used by the server to calculate the     |
+|                                   | 0,0,0,0                                                                                   |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **imageDisplay (required)**       | The screen image display parameters (width, height, and dpi) of the map.                  |
-|                                   | The mapExtent and the imageDisplay parameters are used by the server to calculate the     |
+| **imageDisplay**                  | The screen image display parameters (width, height, and dpi) of the map.                  |
+|    **(required/optional)**        | The mapExtent and the imageDisplay parameters are used by the server to calculate the     |
 |                                   | the distance on the map to search based on the tolerance in screen pixels.                |
+|                                   | Optional if *tolerance=0*. Default to 0,0,0                                               |
+|                                   |                                                                                           |
+|                                   | The combination of *mapExtent* and *imageDisplay* is used to compute a *resultion* or     |
+|                                   | *scale*. Some layer have *scale* dependant geometries                                     |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **tolerance (required)**          | The tolerance in pixels around the specified geometry. This parameter is used to create   |
 |                                   | a buffer around the geometry. Therefore, a tolerance of 0 deactivates the buffer          |
@@ -313,6 +319,25 @@ No more than 50 features can be retrieved per request.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
+
+Tolerance, mapExtent and imageDisplay
+*************************************
+
+If *tolerance=0*, *imageDisplay* and *mapExtent* are generaly not needed, except to get models which are scale dependant, e.g.
+displaying points at smaller scales and polygons ar larger one.
+If using *tolerance>0*, bot *imageDisplay* and *mapExtent* must be set to meaningfull values. As the *teloerance* is in pixels, 
+these value are used to convert it to map units, _i.e._ meters.
+
+The following table summarize the various combinations:
+
++--------------------+------------------------------------------+-----------------------------------------+
+|                    | imageDisplay=0,0,0  mapExtent=0,0,0,0    |  imageDisplay=1,1,1  mapExtent=1,1,1,1  |     
++====================+==========================================+=========================================+
+| **tolerance=0**    | No buffer & No scale                     |  No buffer & but scale                  |
++--------------------+------------------------------------------+-----------------------------------------+
+| **tolerance>0**    | Forbidden                                |  Buffer & Scale                         |
++--------------------+------------------------------------------+-----------------------------------------+
+
 
 Filters
 *******

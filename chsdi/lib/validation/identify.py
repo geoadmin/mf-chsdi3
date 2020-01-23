@@ -43,11 +43,17 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         self.where = request.params.get('where')
         self.geometryType = request.params.get('geometryType')
         self.geometry = request.params.get('geometry')
-        self.imageDisplay = request.params.get('imageDisplay')
-        self.mapExtent = request.params.get('mapExtent')
-        self.returnGeometry = request.params.get('returnGeometry')
         if service != 'releases':
             self.tolerance = request.params.get('tolerance')
+        if self.tolerance == 0:
+            DEFAULT_MAPEXTENT = '0,0,0,0'
+            DEFAULT_IMAGEDISPLAY = '0,0,0'
+        else:
+            DEFAULT_MAPEXTENT = None
+            DEFAULT_IMAGEDISPLAY = None
+        self.imageDisplay = request.params.get('imageDisplay', DEFAULT_IMAGEDISPLAY)
+        self.mapExtent = request.params.get('mapExtent', DEFAULT_MAPEXTENT)
+        self.returnGeometry = request.params.get('returnGeometry')
         if service == 'releases':
             self.layerId = request.matchdict.get('layerId')
         self.layers = request.params.get('layers', 'all')
@@ -178,8 +184,8 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
             self._imageDisplay = list(map(float_raise_nan, value))
         except ValueError:
             raise HTTPBadRequest('Please provide numerical values for the parameter imageDisplay')
-        if not all(i > 0 for i in self._imageDisplay):
-            raise HTTPBadRequest('All values for parameter "imageDisplay" must be strictly positive')
+        if self.tolerance > 0 and not all(i > 0 for i in self._imageDisplay):
+            raise HTTPBadRequest('All values for parameter "imageDisplay" must be strictly positive if tolerance>0')
 
     @mapExtent.setter
     def mapExtent(self, value):

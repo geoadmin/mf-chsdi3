@@ -202,12 +202,16 @@ def _identify_oereb(request):
 def _identify(request):
     params = IdentifyServiceValidation(request)
     response = {'results': []}
+    scale = None
     # Determine layer types
     # Grid layers are serverless
     layersDB = []
     layersGrid = []
-    isScaleDependent = has_buffer(params.imageDisplay, params.mapExtent, params.tolerance)
-    scale = get_scale(params.imageDisplay, params.mapExtent) if isScaleDependent else None
+    # By definition, if both mapExtent and imageDisplay are null, scale is not relevant
+    if params.imageDisplay is not None and all(i > 0 for i in params.imageDisplay) \
+            and params.mapExtent is not None and all(j > 0 for j in params.mapExtent.bounds):
+        isScaleDependent = has_buffer(params.imageDisplay, params.mapExtent, params.tolerance)
+        scale = get_scale(params.imageDisplay, params.mapExtent) if isScaleDependent else None
     if params.layers == 'all':
         model = get_bod_model(params.lang)
         query = params.request.db.query(model)

@@ -23,6 +23,21 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
 
+    def test_trivial_from_doc(self):
+        params = {'lang': 'fr',
+                  'sr': '2056',
+                  'layers': 'all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz',
+                  'imageDisplay': '0,0,0',
+                  'mapExtent': '0,0,0,0',
+                  'geometry': '2585438.308,1220677.966',
+                  'geometryFormat': 'geojson',
+                  'returnGeometry': 'false',
+                  'geometryType': 'esriGeometryPoint',
+                  'tolerance': '0'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp.content_type, 'application/geo+json')
+        self.assertEqual(len(resp.json['results']), 2)
+
     def test_identify_no_parameters(self):
         self.testapp.get('/rest/services/ech/MapServer/identify', headers=accept_headers, status=400)
 
@@ -92,6 +107,8 @@ class TestIdentifyService(TestsBase):
         self.assertEqual(resp.json['status'], 'error')
         self.assertTrue(resp.json['detail'].startswith('Please provide the parameter tolerance'))
 
+    # TODO This example is valid, but makes no sens at all.
+    # You cannot get a resolution or a scale from such imageDisplay
     def test_identify_null_imageDisplay(self):
         params = {'lang': 'fr',
                   'layers': 'all:ch.bafu.nabelstationen',
@@ -106,6 +123,17 @@ class TestIdentifyService(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         self.assertEqual(resp.json['code'], 400)
         self.assertTrue(resp.json['detail'].startswith('All values for parameter "imageDisplay" must be strictly positive'))
+
+    def test_identify_optional_imageDisplay_when_tolerance_is_zero(self):
+        params = {'lang': 'fr',
+                  'layers': 'all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill',
+                  'geometry': '548945.5,147956,549402,148103.5',
+                  'returnGeometry': 'false',
+                  'geometryType': 'esriGeometryEnvelope',
+                  'tolerance': '0'}
+        resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        self.assertIn('Lavaux', resp)
 
     def test_identify_polyline(self):
         params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
@@ -151,12 +179,21 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         resp.mustcontain("Missmatch between 'geometryType': esriGeometryPolyline and provided 'geometry' parsed as 'Polygon'")
 
+    # If tolerance is 0, imageMap and mapxExtent may be optinal
+    def test_tolerance_zero_optional_params(self):
+        params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
+                  'geometryType': 'esriGeometryPolygon',
+                  'tolerance': '0',
+                  'layers': 'all:ch.bafu.bundesinventare-bln'}
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(len(resp.json['results']), 3)
+
     def test_identify_nan_error(self):
         params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
                   'geometryType': 'esriGeometryPolygon',
                   'imageDisplay': '500,600,96',
                   'mapExtent': 'NaN,147956,549402,148103.5',
-                  'tolerance': '0',
+                  'tolerance': '5',
                   'layers': 'all:ch.bafu.bundesinventare-bln'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         resp.mustcontain('Please provide numerical values for the parameter mapExtent')
@@ -176,14 +213,6 @@ class TestIdentifyService(TestsBase):
                   'layers': 'all:ch.bafu.bundesinventare-bln'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         resp.mustcontain('Please provide a valid geometry')
-        params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
-                  'geometryType': 'esriGeometryPolygon',
-                  'imageDisplay': '500,NaN,96',
-                  'mapExtent': '548945.5,147956,549402,148103.5',
-                  'tolerance': '0',
-                  'layers': 'all:ch.bafu.bundesinventare-bln'}
-        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
-        resp.mustcontain('Please provide numerical values for the parameter imageDisplay')
         params = {'geometry': '{"paths":[[[595000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
                   'geometryType': 'esriGeometryPolyline',
                   'imageDisplay': '500,600,96',
@@ -193,6 +222,7 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         resp.mustcontain('Please provide an integer value for the pixel tolerance')
 
+    # TODO
     def test_identify_zero_tolerance_and_scale(self):
         params = {'geometry': '681999,251083,682146,251190',
                   'geometryFormat': 'geojson',
@@ -547,7 +577,8 @@ class TestIdentifyService(TestsBase):
                   'timeInstant': '1936'}
         resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp_1.content_type, 'application/geo+json')
-        self.assertEqual(len(resp_1.json['results']), 2)
+        # TODO: Results looks OK, 'years'=1936 is present
+        self.assertEqual(len(resp_1.json['results']), 7)
         self.assertGeojsonFeature(resp_1.json['results'][0], 21781)
 
         params['sr'] = '2056'
