@@ -3,7 +3,12 @@ mf-chsdi3
 
 Next generation of [http://api3.geo.admin.ch](http://api3.geo.admin.ch)
 
-Jenkins Build Status: [![Jenkins Build Status](https://jenkins.ci.bgdi.ch/buildStatus/icon?job=MAIN_chsdi3)](https://jenkins.ci.bgdi.ch/job/MAIN_chsdi3/)
+**AWS CodeBuild Status**
+
+Python3 ![Build Status](https://codebuild.eu-west-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiUlhtNW03YmI4c0llOTdsV0tYdTdnYTEvRm9Rc3pXd0FsSVhHYlJRWnhNbGdhOWtNTnFpeHh3UGNNdzBPS0cwR2NYWkNiRUp5MzRnSFRpS3lCdnpxc0owPSIsIml2UGFyYW1ldGVyU3BlYyI6ImZjTjZaWXB3dHE2V21uUFoiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+
+Python2 ![Build Status](https://codebuild.eu-west-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZ2RQVVdOakhmOU4zTjZzN0ozSVUveS9HWE43SU8wdmFMYmM4SWIxUU1ibDVWcS95cU5VbW4zUFhNMTc5RktNQlhGbE5kdDQ4VmQzaUcyWUhnK2kxSGNBPSIsIml2UGFyYW1ldGVyU3BlYyI6InkxWnU3cTZuTENHYWVtVTUiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+
 
 # Getting started
 
