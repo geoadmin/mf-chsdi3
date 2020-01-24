@@ -167,21 +167,21 @@ class LayersChecker(object):
         except AssertionError:
             self.skipTest("Cannot find model for layer {}".format(layer))
         model = models[0]
-        expectedStatus = 200
+        hasFeatures = True
         # Special treatment for non-distributed sphinx indices (single model)
         if len(models) == 1:
             with self.getSession() as session:
                 query = session.query(model.primary_key_column())
                 # we expect 404 errors for searchable layers without any data (no sphinx index)
                 if query.first() is None:
-                    expectedStatus = 404
+                    hasFeatures = False
 
         # If it fails here, it most probably means given layer does not have sphinx index available
         link = '/rest/services/all/SearchServer?features=' + layer + '&bbox=600818.7808825106,197290.49919797093,601161.2808825106,197587.99919797093&type=featuresearch&searchText=dummy'
-        resp = self.testapp.get(link, status=expectedStatus)
+        resp = self.testapp.get(link, status=200)
         # If there are no features, we don't expect a sphinx index present
-        if expectedStatus == 404:
-            assert 'unknown local index' in resp.body
+        if not hasFeatures:
+            assert resp.json['results'] == []
 
     def checkPrimaryKeyColumnTypeMapping(self, layerId, featureId, model, primaryKeyColumn):
         schema = 'public' if 'schema' not in model.__table_args__ else model.__table_args__['schema']
