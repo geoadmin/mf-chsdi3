@@ -4014,7 +4014,7 @@ msgid "ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag"
 msgstr "CLN Exceedance"
 
 msgid "ch.bafu.mittlere-abfluesse"
-msgstr "Mean runoff (m³/s)"
+msgstr "Mean runoff (m³/s) and regime"
 
 msgid "ch.bafu.mittlere-abfluesse.abflussvar"
 msgstr "Abflussvariabilität (%)"
@@ -4916,6 +4916,24 @@ msgstr "Wasserkraftnutzung - Weitere Entnahme"
 msgid "ch.bafu.wasser-gebietsauslaesse"
 msgstr "Area outlets"
 
+msgid "ch.bafu.wasser-gebietsauslaesse.adresse"
+msgstr "Address ('waterbody kilo-metre')"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.de_nebenarm"
+msgstr "Waterbody type"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.ezgnr"
+msgstr "Catchment area number"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.gewaessername"
+msgstr "Waterbody name"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.gwlnr"
+msgstr "Number of the river"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.id"
+msgstr "Identifier of the area outlet"
+
 msgid "ch.bafu.wasser-leitungen"
 msgstr "Supply"
 
@@ -4925,8 +4943,56 @@ msgstr "Return flows"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
 msgstr "2km2 sub catchment areas"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
+msgstr "Percentage CH of the total watershed area"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_bestockteflaechen"
+msgstr "Forests and shrubs"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_landwirtschaftsflaechen"
+msgstr "Agricultural areas"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_siedlungsflaechen"
+msgstr "Artificial surfaces"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_unproduktiveflaechen"
+msgstr "Open spaces with little or no vegetation"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_feuchtflaechen"
+msgstr "Wetlands"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_waelder"
+msgstr "Forest and semi natural areas"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_wasserflaechen"
+msgstr "Water bodies"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.de_nebenarm"
+msgstr "Indication"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
 msgstr "Name of river basin"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_1"
+msgstr "Altitude catchment area [m]"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_2"
+msgstr "Land cover CH of the total watershed area statistics [%]"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_3"
+msgstr "Land cover based on CORINE Land Cover [%]"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_4"
+msgstr "Due to certain limitations of the source data, the calcuated indicators cannot claim absolute accuracy."
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ezgnr"
+msgstr "Catchment area number"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.gesamtflaeche"
+msgstr "Catchment area size [km2]"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.gewaessername"
+msgstr "Waterbody name"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.gwlnr"
 msgstr "Number of the river"
@@ -4934,11 +5000,41 @@ msgstr "Number of the river"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.id"
 msgstr "Sub-catchment area number"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.max_z"
+msgstr "Maximum altitude"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.mean_z"
+msgstr "Mean altitude"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.min_z"
+msgstr "Minimum altitude"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "40km2 sub catchment areas"
 
 msgid "ch.bafu.wasser-vorfluter"
 msgstr "Type of flow regime"
+
+msgid "ch.bafu.wasser-vorfluter.ezgnr"
+msgstr "Catchment area number"
+
+msgid "ch.bafu.wasser-vorfluter.gewaessername"
+msgstr "Waterbody name"
+
+msgid "ch.bafu.wasser-vorfluter.gwlnr"
+msgstr "Number of the river"
+
+msgid "ch.bafu.wasser-vorfluter.id"
+msgstr "Identifier of the section of the effluent"
+
+msgid "ch.bafu.wasser-vorfluter.nebenarm"
+msgstr "Waterbody type"
+
+msgid "ch.bafu.wasser-vorfluter.oberesende"
+msgstr "Finish address (’waterbody kilometre’)"
+
+msgid "ch.bafu.wasser-vorfluter.unteresende"
+msgstr "Start address (’waterbody kilometre’)"
 
 msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
 msgstr "Permitted paths and trails"
@@ -5840,8 +5936,38 @@ msgstr "Year"
 msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht"
 msgstr "Railway noise, perm. immissions N"
 
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.de_es"
+msgstr "Empfindlichkeitsstufe"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.de_pointofdetermination_t"
+msgstr "Typ des Ermittlungspunktes"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.floor"
+msgstr "Stockwerk des Ermittlungspunkts"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.lr_max_night"
+msgstr "Max. zul. Pegel (Nacht)"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.lr_max_year"
+msgstr "Verfügungsjahr"
+
 msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag"
 msgstr "Railway noise, perm. immissions D"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.de_es"
+msgstr "Empfindlichkeitsstufe"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.de_pointofdetermination_t"
+msgstr "Typ des Ermittlungspunktes"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.floor"
+msgstr "Stockwerk des Ermittlungspunkts"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.lr_max_day"
+msgstr "Max. zul. Pegel (Tag)"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.lr_max_year"
+msgstr "Verfügungsjahr"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Emissions Plan 2015"
@@ -7640,9 +7766,6 @@ msgstr "Erosion risk"
 msgid "ch.blw.erosion-fliesswegkarte"
 msgstr "Flow-path map"
 
-msgid "ch.blw.erosion-mit_bergzonen"
-msgstr "Erosion risk 2"
-
 msgid "ch.blw.erosion-quantitativ"
 msgstr "Erosion risk crop quantitative"
 
@@ -8632,6 +8755,9 @@ msgstr "The geoid"
 
 msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Isostatic anomalies 500"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle"
+msgstr "3D geological models"
 
 msgid "ch.swisstopo.geologie-geologische_einheiten-onegeology"
 msgstr "Geology 1:500 000"
