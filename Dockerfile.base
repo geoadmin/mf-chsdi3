@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install apt-utils \
         nodejs npm  build-essential git  gettext-base libpq-dev libgeos-dev \
         apache2 libapache2-mod-wsgi-py3 \
         gettext gettext-base  \
-        curl build-essential \
+        curl \
         bash \
         vim \
   && apt-get clean \
