@@ -33,6 +33,8 @@ env:
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
   parameter-store:
     OPENTRANS_API_KEY: "/terraform-codepipeline-example/opentrans_api_key"
+    PG_USER: "/terraform-codepipeline-example/pg_user"
+    PG_PASSWORD: "/terraform-codepipeline-example/pg_password"
 
 phases:
   install:
@@ -90,17 +92,18 @@ phases:
   build:
     commands:
       - echo Build started on $(date)
-      - |-
-           if [ "${USE_PYTHON3}" = 0 ]; then
-             make cleanall dev
-           else
-              make cleanall build/python dev
-           fi
+      - make cleanall
+      - make lint
+      - docker build -t swisstopo/mf-chsdi3:base  -f Dockerfile.base .
+      - docker build -t swisstopo/mf-chsdi3:py3  .
       - echo Build completed on $(date)
       
   post_build:
     commands:
       - echo Testing...
-      - make lint
-      - .venv/bin/nosetests   tests/functional/
+      - docker run --detach  swisstopo/mf-chsdi3:py3
+      - docker ps -a
+      - sleep 5
+      - echo Testing
+      - APACHE_OK=$(docker ps -aq --filter status="running" --filter ancestor="swisstopo/mf-chsdi3:py3") && if [ -z "$APACHE_OK"  ]; then exit 1; fi
       - echo "Doing nothing, but great success"

@@ -7,7 +7,7 @@ services:
     - ${RANCHER_LABEL}.env
     environment:
       PGUSER: ${PGUSER}
-      PGPASSWORD: ${PGPASSWD}
+      PGPASSWORD: ${PGPASSWORD}
     network_mode: "host"
     command:
       - /usr/sbin/apache2ctl
