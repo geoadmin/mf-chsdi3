@@ -132,7 +132,7 @@ ifndef USE_PYTHON3
 endif
 
 ifeq ($(USE_PYTHON3), 1)
-		PYTHON_VERSION := 3.6.8
+		PYTHON_VERSION := $(shell python3 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
 build/python: 
 		mkdir -p build && touch build/python;
 else
