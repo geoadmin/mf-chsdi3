@@ -87,6 +87,7 @@ phases:
       - echo IMAGE_TAG=${IMAGE_TAG}
       - echo BASH=${BASH}
       - echo SHELL=${SHELL}
+      - echo CURRENT_DIRECTORY=$(pwd)
       - echo USE_PYTHON3=${USE_PYTHON3}
       - echo "==================================="
   build:
