@@ -5,6 +5,7 @@ env:
     SHELL: /bin/bash
     AWS_DEFAULT_REGION: eu-west-1
     APACHE_BASE_PATH: main
+    APACHE_PORT: 8009
     ALTI_URL: //service-alti.dev.bgdi.ch
     API_URL: //mf-chsdi3.dev.bgdi.ch
     SHOP_URL: //shop-bgdi.dev.bgdi.ch
