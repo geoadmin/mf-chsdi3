@@ -99,15 +99,14 @@ phases:
       - make cleanall
       - make setup lint environ
       - docker build -t swisstopo/mf-chsdi3:base  -f Dockerfile.base .
-      - docker build -t swisstopo/mf-chsdi3:py3  .
+      - export $(cat dev.env) && docker build -t swisstopo/mf-chsdi3:py3  .
       - echo Build completed on $(date)
       
   post_build:
     commands:
       - echo Testing...
-      - docker run --detach  swisstopo/mf-chsdi3:py3
-      - docker ps -a
-      - sleep 5
+      - docker-compose up -d
       - echo Testing
-      - APACHE_OK=$(docker ps -aq --filter status="running" --filter ancestor="swisstopo/mf-chsdi3:py3") && if [ -z "$APACHE_OK"  ]; then exit 1; fi
+      - DOCKER_CONTAINER_ID=$(docker ps -aq --filter status="running" --filter ancestor="swisstopo/mf-chsdi3:python3.7") && if [ -z "$APACHE_OK"  ]; then exit 1; fi
+      - docker exec -i "$DOCKER_CONTAINER_ID"   .venv/bin/nosetests  tests/functional
       - echo "Doing nothing, but great success"
