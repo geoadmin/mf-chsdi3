@@ -3,7 +3,7 @@ FROM swisstopo/mf-chsdi3:base
 
 
 ENV USE_PYTHON3=1
-ENV SYSTEM_PYTHON_CMD=/usr/local/bin/python3.7
+ENV SYSTEM_PYTHON_CMD=/usr/local/bin/python3.6
 ENV OPENTRANS_API_KEY=dummy-key
 
 ENV PROJ=chsdi

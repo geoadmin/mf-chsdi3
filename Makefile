@@ -132,7 +132,12 @@ ifndef USE_PYTHON3
 endif
 
 ifeq ($(USE_PYTHON3), 1)
-		PYTHON_VERSION := $(shell python3 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+
+ifeq (, $(shell which $(SYSTEM_PYTHON_CMD)))
+		PYTHON_VERSION := 3.6.4
+else
+    PYTHON_VERSION :=$(shell $(SYSTEM_PYTHON_CMD)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+endif
 build/python: 
 		mkdir -p build && touch build/python;
 else
@@ -191,6 +196,7 @@ help:
 	@echo "USE_PYTHON3          ${USE_PYTHON3}"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
 	@echo "PYTHON_CMD:          ${PYTHON_CMD}"
+	@echo "SYSTEM_PYTHON_CMD:   ${SYSTEM_PYTHON_CMD}"
 	@echo "PYTHONPATH:          ${PYTHONPATH}"
 	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
 	@echo "API_URL:             ${API_URL}"
