@@ -22,6 +22,7 @@ env:
     MODWSGI_CONFIG: production.ini
     PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
     ROBOTS_FILE: robots.txt
+    RANCHER_LABEL: dev
     SERVER_PORT: 6543
     SPHINXHOST: service-sphinxsearch.dev.bgdi.ch
     VECTOR_BUCKET: bgdi-grid-based-data
