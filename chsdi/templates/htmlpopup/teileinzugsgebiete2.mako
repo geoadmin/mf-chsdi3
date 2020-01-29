@@ -8,7 +8,7 @@
  <% c['stable_id'] = False %>
     <tr>
       <td class="cell-left">${_('ch.bafu.wasser-teileinzugsgebiete_2.ezgnr')}</td>
-      <td>${c['ezgnr'] or '-'}</td>
+      <td>${c['attributes']['ezgnr'] or '-'}</td>
     </tr>
     <tr>
       <td class="cell-left">${_('ch.bafu.wasser-teileinzugsgebiete_2.gewaessername')}</td>
