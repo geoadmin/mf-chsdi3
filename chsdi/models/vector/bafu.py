@@ -1140,7 +1140,7 @@ class Teileinzugsgebiete2 (Base, Vector):
     __returnedGeometry__ = 'the_geom_ext'
     __label__ = 'objectid'
     __extended_info__ = True
-    id = Column('objectid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     ezgnr = Column('ezgnr', Integer)
     gewaessername = Column('gewaessername', Unicode)
     gesamtflaeche = Column('gesamtflaeche', Float)
