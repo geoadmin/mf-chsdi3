@@ -5,7 +5,7 @@
    lang = lang if lang in ('fr','it','en') else 'de'
    nebenarm = '%s_nebenarm' % lang
  >%
- <% c['stable_id'] = True %>
+ <% c['stable_id'] = False %>
     <tr>
       <td class="cell-left">${_('ch.bafu.wasser-teileinzugsgebiete_2.ezgnr')}</td>
       <td>${c['ezgnr'] or '-'}</td>
@@ -25,7 +25,6 @@
 </%def>
 
 <%def name="extended_info(c, lang)">
-<%
 
 <body onload="init()">
   <table class="table-with-border kernkraftwerke-extended">
