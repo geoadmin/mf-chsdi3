@@ -18,7 +18,7 @@ WMSSCALELEGEND ?=
 
 # Variables
 USER_SOURCE ?= rc_user
-CURRENT_DIRECTORY := $(shell pwd)
+CURRENT_DIRECTORY := ${PWD}
 WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
 INSTALL_DIRECTORY := .venv
 KML_TEMP_DIR := /var/local/print/kml

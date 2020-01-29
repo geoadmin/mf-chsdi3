@@ -30,6 +30,7 @@ env:
     CMSGEOADMINHOST: https://cms.geo.admin.ch
     LINKEDDATAHOST: https://ld.geo.admin.ch
     CACHE_CONTROL: no-cache
+    SYSTEM_PYTHON_CMD: /usr/local/bin/python3.6
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
   parameter-store:
     OPENTRANS_API_KEY: "/terraform-codepipeline-example/opentrans_api_key"
