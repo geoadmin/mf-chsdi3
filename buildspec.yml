@@ -90,6 +90,7 @@ phases:
       - echo SHELL=${SHELL}
       - echo CURRENT_DIRECTORY=$(pwd)
       - echo USE_PYTHON3=${USE_PYTHON3}
+      - make help
       - echo "==================================="
   build:
     commands:
