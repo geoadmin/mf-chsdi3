@@ -4,7 +4,7 @@
  <%
    lang = lang if lang in ('fr','it','en') else 'de'
    nebenarm = '%s_nebenarm' % lang
- >%
+ %>
  <% c['stable_id'] = False %>
     <tr>
       <td class="cell-left">${_('ch.bafu.wasser-teileinzugsgebiete_2.ezgnr')}</td>
