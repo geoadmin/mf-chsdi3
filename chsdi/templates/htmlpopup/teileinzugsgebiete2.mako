@@ -35,15 +35,15 @@
 
   <table class="table-with-border kernkraftwerke-extended">
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.min_z')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.min_z')}</tr>
       <td>${c['attributes']['min_z'] or '-'}</td>     
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.max_z')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.max_z')}</tr>
       <td>${c['attributes']['max_z'] or '-'}</td>     
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.mean_z')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.mean_z')}</tr>
       <td>${c['attributes']['mean_z'] or '-'}</td>     
     </tr>
   </table>
@@ -56,23 +56,23 @@
 
   <table class="table-with-border kernkraftwerke-extended">
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch')}</tr>
       <td>${c['attributes']['anteil_ch'] or '-'}</td>     
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.as_siedlungsflaechen')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.as_siedlungsflaechen')}</tr>
       <td>${c['attributes']['as_siedlungsflaechen'] or '-'}</td>     
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.as_landwirtschaftsflaechen')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.as_landwirtschaftsflaechen')}</tr>
       <td>${c['attributes']['as_landwirtschaftsflaechen'] or '-'}</td>     
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.as_bestockteflaechen')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.as_bestockteflaechen')}</tr>
       <td>${c['attributes']['as_bestockteflaechen'] or '-'}</td>     
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.as_unproduktiveflaechen')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.as_unproduktiveflaechen')}</tr>
       <td>${c['attributes']['as_unproduktiveflaechen'] or '-'}</td>     
     </tr>
   </table>
@@ -85,23 +85,23 @@
 
   <table class="table-with-border kernkraftwerke-extended">
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.clc_bebauteflaechen')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.clc_bebauteflaechen')}</tr>
       <td>${c['attributes']['clc_bebauteflaechen'] or '-'}</td>     
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.clc_landwirtschaft')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.clc_landwirtschaft')}</tr>
       <td>${c['attributes']['clc_landwirtschaft'] or '-'}</td>     
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.clc_waelder')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.clc_waelder')}</tr>
       <td>${c['attributes']['clc_waelder'] or '-'}</td>     
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.clc_feuchtflaechen')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.clc_feuchtflaechen')}</tr>
       <td>${c['attributes']['clc_feuchtflaechen'] or '-'}</td>     
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.clc_wasserflaechen')}</td>
+      <tr class="cell-meta">${_('ch.bafu.wasser-teileinzugsgebiete_2.clc_wasserflaechen')}</tr>
       <td>${c['attributes']['clc_wasserflaechen'] or '-'}</td>     
     </tr>
   </table>
