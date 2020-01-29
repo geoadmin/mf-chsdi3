@@ -126,18 +126,19 @@ GREEN := $(shell tput setaf 2)
 # We need GDAL which is hard to install in a venv, modify PYTHONPATH to use the
 # system wide version.
 GDAL_VERSION ?= 1.10.0
+PYTHON_INSTALL_VERSION ?= 3.6.4
 
 ifndef USE_PYTHON3
 		override USE_PYTHON3 = 0
 endif
 
 ifeq ($(USE_PYTHON3), 1)
-
 ifeq (, $(shell which $(SYSTEM_PYTHON_CMD)))
-		PYTHON_VERSION := 3.6.4
+		PYTHON_VERSION := $(shell $(PYTHON_INSTALL_VERSION)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
 else
-    PYTHON_VERSION :=$(shell $(SYSTEM_PYTHON_CMD)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+    PYTHON_VERSION := $(shell $(SYSTEM_PYTHON_CMD)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
 endif
+PIP_CMD := $(INSTALL_DIRECTORY)/bin/pip${PYTHON_VERSION}
 build/python: 
 		mkdir -p build && touch build/python;
 else
@@ -197,6 +198,7 @@ help:
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
 	@echo "PYTHON_CMD:          ${PYTHON_CMD}"
 	@echo "SYSTEM_PYTHON_CMD:   ${SYSTEM_PYTHON_CMD}"
+	@echo "PIP_CMD:             ${PIP_CMD}"
 	@echo "PYTHONPATH:          ${PYTHONPATH}"
 	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
 	@echo "API_URL:             ${API_URL}"
