@@ -96,7 +96,7 @@ phases:
     commands:
       - echo Build started on $(date)
       - make cleanall
-      - make setup lint
+      - make setup lint environ
       - docker build -t swisstopo/mf-chsdi3:base  -f Dockerfile.base .
       - docker build -t swisstopo/mf-chsdi3:py3  .
       - echo Build completed on $(date)
