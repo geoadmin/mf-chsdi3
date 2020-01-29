@@ -4958,8 +4958,14 @@ msgstr "Artificial surfaces"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_unproduktiveflaechen"
 msgstr "Open spaces with little or no vegetation"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_bebauteflaechen"
+msgstr "Artificial surfaces"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_feuchtflaechen"
 msgstr "Wetlands"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_landwirtschaft"
+msgstr "Agricultural areas"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_waelder"
 msgstr "Forest and semi natural areas"
@@ -6564,7 +6570,7 @@ msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_thema"
 msgstr "Theme"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
-msgstr "SAIP consultation"
+msgstr "SIL consultation"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"
 msgstr "SP Aviation infrastructure"

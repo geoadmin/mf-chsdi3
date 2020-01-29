@@ -4958,8 +4958,14 @@ msgstr "Surfaces d'habitat"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_unproduktiveflaechen"
 msgstr "Surfaces improductives"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_bebauteflaechen"
+msgstr "Territoires artificialisés"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_feuchtflaechen"
 msgstr "Zones humides"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_landwirtschaft"
+msgstr "Territoires agricoles"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_waelder"
 msgstr "Forêts et milieux semi-naturels"

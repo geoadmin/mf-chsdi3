@@ -4958,8 +4958,14 @@ msgstr "Superfici d'insediamento"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_unproduktiveflaechen"
 msgstr "Superfici improduttive"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_bebauteflaechen"
+msgstr "Superfici artificiali"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_feuchtflaechen"
 msgstr "Zone umide"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_landwirtschaft"
+msgstr "Superfici agricole"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_waelder"
 msgstr "Foresta e aree seminaturali"

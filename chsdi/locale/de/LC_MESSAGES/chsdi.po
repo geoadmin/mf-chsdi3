@@ -4958,8 +4958,14 @@ msgstr "Siedlungsflächen"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_unproduktiveflaechen"
 msgstr "Unproduktive Flächen"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_bebauteflaechen"
+msgstr "Bebaute Flächen"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_feuchtflaechen"
 msgstr "Feuchtflächen"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_landwirtschaft"
+msgstr "Landwirtschaft"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_waelder"
 msgstr "Wälder und naturnahe Flächen"
