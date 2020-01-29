@@ -29,7 +29,6 @@ RUN /usr/sbin/a2enmod auth_basic authz_groupfile autoindex dir env expires filte
 
 COPY . /var/www/vhosts/${VHOST}/private/chsdi
 WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
-RUN rm _pgpass
 RUN . ./rc_dev && make cleanall build/python setup chsdi/static/css/extended.min.css production.ini development.ini  potomo lint fixrights doc
 
 ENTRYPOINT ["/var/www/vhosts/mf-chsdi3/private/chsdi/docker-entrypoint.sh"]

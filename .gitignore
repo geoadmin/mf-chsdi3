@@ -30,3 +30,4 @@ local
 build
 rancher-*.yml
 docker*.yml
+_pg_pass
