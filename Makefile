@@ -223,7 +223,8 @@ all: setup chsdi/static/css/extended.min.css templates potomo lint fixrights doc
 
 setup: .venv node_modules .venv/hooks
 
-templates: apache/wsgi.conf apache/application.wsgi development.ini production.ini chsdi/static/info.json build_templates
+templates: apache/wsgi.conf apache/application.wsgi development.ini production.ini chsdi/static/info.json
+	$(call build_templates,tmp) 
 
 .PHONY: baseimage
 baseimage:
