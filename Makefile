@@ -407,7 +407,7 @@ apache/application.wsgi.mako:
 	@echo "${GREEN}Template file apache/application.wsgi.mako has changed${RESET}";
 apache/application.wsgi: apache/application.wsgi.mako \
                          .venv/last-current-directory \
-                         .venv/last-modwsgi-config
+                         .venv/last-MODWSGI-CONFIG
 apache/application.wsgi.in:
 	@echo "${GREEN}Template file apache/application.wsgi.in has changed${RESET}";
 

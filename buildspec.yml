@@ -96,6 +96,8 @@ phases:
       - echo "==================================="
   build:
     commands:
+      - echo Linting
+      - make lint
       - echo Build started on $(date)
       - make cleanall
       - make setup lint environ
