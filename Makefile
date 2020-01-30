@@ -224,7 +224,7 @@ all: setup chsdi/static/css/extended.min.css templates potomo lint fixrights doc
 setup: .venv node_modules .venv/hooks
 
 templates: apache/wsgi.conf apache/application.wsgi development.ini production.ini chsdi/static/info.json
-	$(call build_templates,tmp) 
+	$(call build_templates,$(DEPLOY_TARGET)) 
 
 .PHONY: baseimage
 baseimage:
@@ -236,8 +236,7 @@ image:
 	
 .PHONY: environ
 environ:
-	@while read line; do key=$${line%=*} && val=$${line##*=} && echo "export $${key,,}=$${val} " &&  echo "export $${key^^}=$${val} "; done < dev.env > rc_tmp
-	$(call build_templates,tmp) 
+	$(call build_templates,$(DEPLOY_TARGET)) 
 
 define build_templates
 	export $(shell cat $1.env) && source rc_$1 \                                                                                                 
@@ -346,7 +345,7 @@ deploydev:
 	fi
 
 .PHONY: updatedev
-updatedev: .venv/last-github-last-commit
+updatedev: .venv/last-GITHUB-LAST-COMMIT
 		@if [ "${GITHUB_LAST_COMMIT}" == "${LAST_GITHUB_LAST_COMMIT}"   ]; then \
 				echo "No updating dev"; \
 		else \
@@ -381,9 +380,9 @@ chsdi/static/info.json:  chsdi/templates/info.json.mako
 rc_branch.mako:
 	@echo "${GREEN}Branch has changed${RESET}";
 rc_branch: rc_branch.mako \
-           .venv/last-git-branch \
-           .venv/last-deploy-target \
-           .venv/last-branch-staging
+           .venv/last-GIT-BRANCH \
+           .venv/last-DEPLOY-TARGET \
+           .venv/last-BRANCH-STAGING
 	@echo "${GREEN}Creating branch template...${RESET}"
 	${MAKO_CMD} \
 		--var "git_branch=$(GIT_BRANCH)" \
@@ -407,7 +406,7 @@ deploy/conf/00-branch.conf: deploy/conf/00-branch.conf.in \
 apache/application.wsgi.mako:
 	@echo "${GREEN}Template file apache/application.wsgi.mako has changed${RESET}";
 apache/application.wsgi: apache/application.wsgi.mako \
-                         .venv/last-current-directory \
+                         .venv/last-CURRENT-DIRECTORY \
                          .venv/last-MODWSGI-CONFIG
 apache/application.wsgi.in:
 	@echo "${GREEN}Template file apache/application.wsgi.in has changed${RESET}";
