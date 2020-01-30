@@ -2,6 +2,10 @@
 
 node(label: "jenkins-slave") {
 
+  environment {
+    USE_PYTHON3 = '0'
+  }
+
   try {
     stage("Checkout") {
       checkout scm
