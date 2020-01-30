@@ -38,6 +38,8 @@ env:
     OPENTRANS_API_KEY: "/terraform-codepipeline-example/opentrans_api_key"
     PG_USER: "/terraform-codepipeline-example/pg_user"
     PG_PASSWORD: "/terraform-codepipeline-example/pg_password"
+    CI_DOCKERHUB_USER: "/terraform-codepipeline-example/ci_dockerhub_user"
+    CI_DOCKERHUB_PASSWORD: "/terraform-codepipeline-example/ci_dockerhub_password"
 
 phases:
   install:
@@ -100,7 +102,7 @@ phases:
       - make cleanall
       - make setup lint environ
       - docker build -t swisstopo/mf-chsdi3:base  -f Dockerfile.base .
-      - export $(cat dev.env) && docker build -t swisstopo/mf-chsdi3:py3  .
+      - export $(cat dev.env) && docker build -t swisstopo/mf-chsdi3:python3.7  .
       - echo Build completed on $(date)
       
   post_build:
@@ -109,5 +111,9 @@ phases:
       - docker-compose up -d
       - echo Testing
       - DOCKER_CONTAINER_ID=$(docker ps -aq --filter status="running" --filter ancestor="swisstopo/mf-chsdi3:python3.7") && if [ -z "$DOCKER_CONTAINER_ID"  ]; then exit 1; fi
+      - echo "Pusing to dockerhub"
       - docker exec -i "$DOCKER_CONTAINER_ID"   .venv/bin/nosetests  tests/functional
-      - echo "Doing nothing, but great success"
+      - docker login -u "$CI_DOCKERHUB_USER" -p "$CI_DOCKERHUB_PASSWORD"
+      - docker push "swisstopo/mf-chsdi3:base"
+      - docker push "swisstopo/mf-chsdi3:python3.7"
+      - echo "Great success"
