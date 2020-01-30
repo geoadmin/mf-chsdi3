@@ -24,4 +24,5 @@ export WSGI_THREADS=15
 export CMSGEOADMINHOST=https://cms.geo.admin.ch
 export LINKEDDATAHOST=https://ld.geo.admin.ch
 export APACHE_LOG_LEVEL=warn
+export SHORTENER_ALLOWED_DOMAINS="admin.ch, swisstopo.ch, bgdi.ch"
 export CACHE_CONTROL="max-age=1800, public"
