@@ -11,14 +11,6 @@
     # CustomLog /dev/null combined
     CustomLog /dev/stdout  combined
 
-    # mod_dbd configuration
-    DBDriver pgsql
-    DBDParams "host=${DBHOST} dbname=toposhop${DBSUFFIX} user=${DBUSER} password=${DBPASSWORD}"
-    
-    DBDMin 1
-    DBDKeep 1
-    DBDMax 2
-    DBDExptime 300
 
     RewriteRule ^/$ /static/index.html [R=301]
 
@@ -27,28 +19,6 @@
     RewriteRule ^/(.*)  http://127.0.0.1:${WSGI_PORT}/$1  [P]
     ProxyPassReverse / http://127.0.0.1:${WSGI_PORT}/
         
-    <LocationMatch ^/(?!checker).*>
-     # mod_authn_core and mod_auth_basic configuration
-     # for mod_authn_dbd
-     AuthType Basic
-     AuthName "WMTS Referer"
-    
-     # Required for caching dbd lookups
-     AuthBasicProvider socache dbd
-     AuthnCacheProvideFor dbd
-     AuthnCacheContext my-server
-    
-     # mod_authz_core configuration
-     Require valid-user
-    
-     # mod_authn_dbd SQL query to authenticate a user
-     AuthDBDUserPWQuery "SELECT passwd FROM tbl_geoservice_auth WHERE username = %s AND 'wmts' = ANY (string_to_array(groups, ',')::text[])"
-    </LocationMatch>
-
-    <Location "/server-status">
-        Require all granted
-        SetHandler server-status
-    </Location>
 
 </VirtualHost>
 
