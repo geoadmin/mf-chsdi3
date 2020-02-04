@@ -12,6 +12,48 @@ from chsdi.models.vector import Vector, Geometry2D
 Base = bases['stopo']
 
 
+class GeologieGeologische3dmodelle(Base, Vector):
+    __tablename__ = 'geologische_3dmodelle'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geologische3dmodelle.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geologische_3dmodelle'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    purpose = Column('purpose', Unicode)
+    content = Column('content', Unicode)
+    remarks = Column('remarks', Unicode)
+    year_publication = Column('year_publication', Unicode)
+    de_contracting_entity = Column('de_contracting_entity', Unicode)
+    fr_contracting_entity = Column('fr_contracting_entity', Unicode)
+    it_contracting_entity = Column('it_contracting_entity', Unicode)
+    en_contracting_entity = Column('en_contracting_entity', Unicode)
+    rm_contracting_entity = Column('rm_contracting_entity', Unicode)
+    de_author = Column('de_author', Unicode)
+    fr_author = Column('fr_author', Unicode)
+    it_author = Column('it_author', Unicode)
+    en_author = Column('it_author', Unicode)
+    rm_author = Column('it_author', Unicode)
+    de_link_portal = Column('de_link_portal')
+    fr_link_portal = Column('fr_link_portal')
+    it_link_portal = Column('it_link_portal')
+    en_link_portal = Column('en_link_portal')
+    rm_link_portal = Column('rm_link_portal')
+    de_link_description = Column('de_link_description')
+    fr_link_description = Column('fr_link_description')
+    it_link_description = Column('it_link_description')
+    en_link_description = Column('en_link_description')
+    rm_link_description = Column('rm_link_description')
+    de_link_documentation = Column('de_link_documentation')
+    fr_link_documentation = Column('fr_link_documentation')
+    it_link_documentation = Column('it_link_documentation')
+    en_link_documentation = Column('en_link_documentation')
+    rm_link_documentation = Column('rm_link_documentation')
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-geologische_3dmodelle', GeologieGeologische3dmodelle)
+
+
 class GeologieGeomorphologie(Base, Vector):
     __tablename__ = 'geomorphologie'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
