@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import boto.s3
-import boto.dynamodb2
-from boto.s3.connection import OrdinaryCallingFormat
-from boto.dynamodb2.table import Table
+import boto3
+
 import pyramid.httpexceptions as exc
 
 
@@ -44,7 +42,7 @@ table.delete()
 
 
 class DynamodbConnection:
-
+    # This is a singleton. This is nice.
     def __init__(self, region='eu-west-1'):
         self.conn = None
         self.region = region
@@ -52,7 +50,7 @@ class DynamodbConnection:
     def get(self):
         if self.conn is None:
             try:
-                self.conn = boto.dynamodb2.connect_to_region(self.region)
+                self.conn = boto3.resource('dynamodb', region_name=self.region)
             except Exception as e:  # pragma: no cover
                 raise exc.HTTPBadRequest(
                     'DynamoDB: Error during connection init %s' % e)
@@ -60,7 +58,6 @@ class DynamodbConnection:
 
 
 class S3Connect:
-
     def __init__(self, region='eu-west-1'):
         self.conn = None
         self.region = region
@@ -70,9 +67,7 @@ class S3Connect:
             try:
                 # Cannot use bucket names with dots
                 # see: https://github.com/boto/boto/issues/2836
-                self.conn = boto.s3.connect_to_region(
-                    self.region,
-                    calling_format=OrdinaryCallingFormat())
+                self.conn = boto3.client('s3', region_name=self.region)
             except Exception as e:  # pragma: no cover
                 raise exc.HTTPInternalServerError(
                     'S3: Error during connection init %s' % e)
@@ -80,12 +75,12 @@ class S3Connect:
 
 
 dynamodb_connection = DynamodbConnection()
-
+s3_connection = S3Connect()
 
 def get_dynamodb_table(table_name='shorturl'):
     conn = dynamodb_connection.get()
     try:
-        table = Table(table_name, connection=conn)
+        table = conn.Table(table_name)
     except Exception as e:  # pragma: no cover
         raise exc.HTTPInternalServerError(
             'DynamoDB: Error during connection to the table %s\n%s' % (
@@ -94,12 +89,19 @@ def get_dynamodb_table(table_name='shorturl'):
 
 
 def get_bucket(bucket_name):
-    s3_connection = S3Connect()
     conn = s3_connection.get()
     try:
-        bucket = conn.get_bucket(bucket_name)
+        bucket = conn.Bucket(bucket_name)
+
     except Exception as e:  # pragma: no cover
         raise exc.HTTPInternalServerError(
             'S3 Error during connection to the bucket %s\n%s' % (
                 bucket_name, e))
     return bucket
+
+
+def get_file_from_bucket(bucket_name, file_name):
+    conn = s3_connection.get()
+    response = conn.get_object(Bucket=bucket_name,
+                               Key=file_name)
+    return response['Body']

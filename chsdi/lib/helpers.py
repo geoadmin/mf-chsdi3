@@ -603,12 +603,5 @@ def gzip_string(string):
 
 
 def decompress_gzipped_string(string):
-    # Python2/3
-    if not isinstance(string, six.string_types):
-        in_ = BytesIO()
-        in_.write(string)
-        in_.seek(0)
-    else:
-        in_ = StringIO(string)
-    content = gzip.GzipFile(fileobj=in_, mode='rb')
-    return content.read()
+    return gzip.decompress(string).decode()
+

@@ -23,12 +23,13 @@ from chsdi.lib.validation.identify import IdentifyServiceValidation
 from chsdi.lib.validation.geometryservice import GeometryServiceValidation
 from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d, make_geoadmin_url, shift_to
 from chsdi.lib.filters import full_text_search
-from chsdi.models.clientdata_dynamodb import get_bucket
+from chsdi.models.clientdata_dynamodb import get_file_from_bucket
 from chsdi.models import models_from_bodid, perimeter_models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.bod import OerebMetadata, get_bod_model
 from chsdi.models.vector import get_scale, get_resolution, has_buffer
 from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
+
 
 import logging
 log = logging.getLogger(__name__)
@@ -270,7 +271,6 @@ def _identify_grid(params, layerBodIds):
     else:
         pointCoordinates = list(list(geometry.coords)[0])
     bucketName = params.request.registry.settings['vector_bucket']
-    bucket = get_bucket(bucketName)
     for layer in layerBodIds:
         [layerBodId, gridSpec] = next(six.iteritems(layer))
         params.layerId = layerBodId
@@ -285,8 +285,8 @@ def _identify_grid(params, layerBodIds):
             pointCoordinates = shift_to(pointCoordinates, 2056)
         [col, row] = grid.cellAddressFromPointCoordinate(pointCoordinates)
         if col is not None and row is not None:
-            feature, none = _get_feature_grid(col, row, timestamp, grid, bucket, params)
-            if feature and not none:
+            feature, none = _get_feature_grid(col, row, timestamp, grid, bucketName, params)
+            if feature is not None:
                 feature['bbox'] = grid.cellExtent(col, row)
                 # For some reason we define the id twice..
                 feature['featureId'] = feature['id']
@@ -361,7 +361,6 @@ def _get_features(params, extended=False, process=True):
     for featureId in featureIds:
         if gridSpec:
             bucketName = params.request.registry.settings['vector_bucket']
-            bucket = get_bucket(bucketName)
             # By convention
             if featureId.find('_') == -1:
                 raise exc.HTTPBadRequest('Unexpected id formatting')
@@ -371,7 +370,7 @@ def _get_features(params, extended=False, process=True):
                         gridSpec.get('resolutionY'))
             layerProperties = get_grid_layer_properties(params.layerId)
             timestamp = layerProperties.get('timestamp')
-            yield _get_feature_grid(col, row, timestamp, grid, bucket, params)
+            yield _get_feature_grid(col, row, timestamp, grid, bucketName, params)
         else:
             yield _get_feature_db(featureId, params, models, process=process)
 
@@ -407,23 +406,23 @@ def _get_feature_db(featureId, params, models, process=True):
     return feature, vector_model
 
 
-def _get_feature_grid(col, row, timestamp, grid, bucket, params):
+def _get_feature_grid(col, row, timestamp, grid, bucket_name, params):
     feature = None
     col = str(col)
     row = str(row)
     timestamp = str(timestamp)
     layerBodId = params.layerId
     featureS3KeyName = 'tooltip/%s/default/%s/%s/%s/data.json' % (layerBodId, timestamp, col, row)
-    featureS3Key = bucket.get_key(featureS3KeyName)
-    # Fail gracefully if the key doesn't exist
-    if featureS3Key:
-        featureJson = decompress_gzipped_string(featureS3Key.get_contents_as_string())
+    try:
+        featureJson = decompress_gzipped_string(get_file_from_bucket(bucket_name, featureS3KeyName))
         # Beacause of esriJSON design and papyrus no esrijson support for now
         feature = geojson.loads(featureJson)
         if not params.returnGeometry:
             del feature['geometry']
         feature['layerBodId'] = layerBodId
         feature['layerName'] = params.translate(layerBodId)
+    except:
+        pass
     return feature, None
 
 

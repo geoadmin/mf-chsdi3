@@ -2,7 +2,8 @@
 
 from pyramid.view import view_config
 import pyramid.httpexceptions as exc
-import boto.dynamodb2.exceptions as boto_exc
+
+import boto3.exceptions as boto_exc
 
 import time
 
@@ -19,13 +20,14 @@ def _add_item(table, url):
         url_short = '%x' % t
         try:
             table.put_item(
-                data={
+                Item={
                     'url_short': url_short,
                     'url': url,
                     'timestamp': time.strftime('%Y-%m-%d %X', time.localtime())
                 }
             )
-        except boto_exc.ProvisionedThroughputExceededException as e:
+        except boto_exc.Boto3Error as e:
+            # TODO : find boto3 equivalent for ProvisionedThroughputExceededException
             raise exc.HTTPInternalServerError('Write units exceeded: %s' % e)
         except Exception as e:
             raise exc.HTTPInternalServerError('Error during put item %s' % e)
@@ -35,10 +37,11 @@ def _add_item(table, url):
 
 
 def _get_url_short(table, url):
-    row = table.query_2(index='UrlIndex', url__eq=url)
+    response = table.get_item(Key={
+        'url': url
+    })
     try:
-        item = next(row)
-        return item['url_short']
+        return response['Item']['url_short']
     except Exception:
         return None
 
@@ -80,11 +83,14 @@ def shorten_redirect(request):
     table = get_dynamodb_table(table_name='shorturl')
 
     try:
-        url_short = table.get_item(url_short=url_short)
-        url = url_short.get('url')
-    except boto_exc.ItemNotFound as e:
+        url_match = table.get_item(Key={
+            'url_short': url_short
+        })
+        url = url_match['Item']['url']
+    except boto_exc.ResourceNotExistsError as e:
         raise exc.HTTPNotFound('This short url doesn\'t exist: s.geo.admin.ch/%s Error is: %s' % (url_short, e))
-    except boto_exc.ProvisionedThroughputExceededException as e:  # pragma: no cover
+    except boto_exc.Boto3Error as e:  # pragma: no cover
+        # TODO: same as above
         raise exc.HTTPInternalServerError('Read units exceeded: %s' % e)
     except Exception as e:  # pragma: no cover
         raise exc.HTTPInternalServerError('Unexpected internal server error: %s' % e)

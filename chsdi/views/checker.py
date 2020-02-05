@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from boto.exception import JSONResponseError
+# TODO : find boto3 equivalent --> from boto.exception import JSONResponseError
 from pyramid.view import view_config
 from pyramid.response import Response
 from pyramid.httpexceptions import HTTPInternalServerError
