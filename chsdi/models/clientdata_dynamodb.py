@@ -77,6 +77,7 @@ class S3Connect:
 dynamodb_connection = DynamodbConnection()
 s3_connection = S3Connect()
 
+
 def get_dynamodb_table(table_name='shorturl'):
     conn = dynamodb_connection.get()
     try:

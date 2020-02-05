@@ -23,12 +23,14 @@ class Checker(FileView):
     def backend(self):
         try:
             self.dynamodb_fileshandler.table.count()
-        except (KeyError, JSONResponseError):
+            # TODO , JSONResponseError equivalent too
+        except KeyError:
             raise HTTPInternalServerError('Cannot access to DynamoDB backend {}'.format(self.dynamodb_fileshandler.table.table_name))
 
         try:
             resp = self.s3_fileshandler.bucket.get_key(self.key_name)
-        except (KeyError, JSONResponseError):
+        # TODO , JSONResponseError equivalent too
+        except KeyError:
             raise HTTPInternalServerError('Cannot access bucket {}'.format(self.bucket_name))
 
         if resp is None or resp.key != self.key_name:

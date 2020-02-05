@@ -421,7 +421,7 @@ def _get_feature_grid(col, row, timestamp, grid, bucket_name, params):
             del feature['geometry']
         feature['layerBodId'] = layerBodId
         feature['layerName'] = params.translate(layerBodId)
-    except:
+    except Exception as e:
         pass
     return feature, None
 

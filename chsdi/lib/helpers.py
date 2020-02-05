@@ -604,4 +604,3 @@ def gzip_string(string):
 
 def decompress_gzipped_string(string):
     return gzip.decompress(string).decode()
-
