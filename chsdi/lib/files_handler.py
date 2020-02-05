@@ -30,7 +30,7 @@ class DynamoDBFilesHandler:
     def save_item(self, admin_id, file_id, timestamp):
         try:
             self.table.put_item(
-                data={
+                Item={
                     'adminId': admin_id,
                     'fileId': file_id,
                     'timestamp': timestamp,
@@ -43,15 +43,21 @@ class DynamoDBFilesHandler:
     def get_item(self, admin_id):
         item = None
         try:
-            item = self.table.get_item(adminId=str(admin_id))
-        except ItemNotFound:
+            item = self.table.get_item(Key={'adminId': str(admin_id)})
+        except Exception:  # TODO: what is itemNotFound in botocore errors ?
             pass
         return item
 
-    def update_item_timestamp(self, item, timestamp):
+    def update_item_timestamp(self, admin_id, timestamp):
         try:
-            item['timestamp'] = timestamp
-            item.save()
+            self.table.update_item(Key={
+                'adminId': admin_id
+            }, AttributeUpdates={
+                'timestamp': {
+                    'Value': timestamp,
+                    'Action': 'PUT'
+                }
+            })
         except Exception as e:
             raise exc.HTTPBadRequest('Error while updating the timestamp' % e)
 
@@ -83,7 +89,7 @@ class S3FilesHandler:
             return last_updated.strftime('%Y-%m-%d %X')
         return time.strftime('%Y-%m-%d %X', time.localtime())
 
-    def save_object(self, file_id, mime, content_encoding, data, replace=False):
+    def save_object(self, file_id, mime, content_encoding, data, replace=False): # TODO : put
         msg = 'configuring' if replace else 'updating'
         # Python2/3
         if data is None:
@@ -220,7 +226,7 @@ class FilesHandler(object):
         else:
             # Simply update the timestamp
             item = self.dynamodb_fileshandler.get_item(self.admin_id)
-            self.dynamodb_fileshandler.update_item_timestamp(item, timestamp)
+            self.dynamodb_fileshandler.update_item_timestamp(self.admin_id, timestamp)
 
         return {
             'adminId': self.admin_id,
