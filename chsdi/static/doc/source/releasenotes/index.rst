@@ -40,8 +40,6 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `National Map 1:1 million (colour) <//map3.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk1000.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk1000.noscale)                                                      |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `National Map 1:1 million (colour) <//map3.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk1000.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk1000.noscale)                                                      |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Noise exp. 1st night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde)                   |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Noise exp. 2nd night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde)                 |
@@ -58,11 +56,11 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Noise exp. milit. aerodr. (tot.) <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt)                |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `SPM consultation <//map.geo.admin.ch?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung&topic=sachplan>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                                  |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Sectoral Plan Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft&topic=sachplan>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                   |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `swissBATHY3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissbathy3d-reliefschattierung>`__ (ch.swisstopo.swissbathy3d-reliefschattierung)                                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product&layers_timestamp=1986&time=1986>`__ (ch.swisstopo.swissimage-product)                                                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata&layers_timestamp=1986&time=1986>`__ (ch.swisstopo.swissimage-product.metadata)                             |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
