@@ -42,9 +42,16 @@ def identify_oereb(request):
     return _identify_oereb(request)
 
 
+@view_config(route_name='identify', renderer='geojson', request_param='geometryFormat=GeoJSON')
+def identify_real_geojson(request):
+    features = _identify(request)['results']
+
+    return {"type": "FeatureCollection", "features": features}
+
+
 @view_config(route_name='identify', renderer='geojson', request_param='geometryFormat=geojson')
 def identify_geojson(request):
-    return _identify(request)
+    return _identify(request)['results']
 
 
 @view_config(route_name='identify', renderer='esrijson')
