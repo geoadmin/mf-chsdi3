@@ -62,6 +62,7 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         self.limit = request.params.get('limit')
         self.order = request.params.get('order')
         self.layerDefs = request.params.get('layerDefs')
+        self.geometryFormat = request.params.get('geometryFormat', 'geojson')
 
     @property
     def where(self):

@@ -42,22 +42,20 @@ def identify_oereb(request):
     return _identify_oereb(request)
 
 
-@view_config(route_name='identify', renderer='geojson', request_param='geometryFormat=GeoJSON')
-def identify_real_geojson(request):
-    features = _identify(request)['results']
-
-    return {"type": "FeatureCollection", "features": features}
-
-
 @view_config(route_name='identify', renderer='geojson', request_param='geometryFormat=geojson')
 def identify_geojson(request):
-    return _identify(request)['results']
+    return {'results': _identify(request)}
 
 
-@view_config(route_name='identify', renderer='esrijson')
+@view_config(route_name='identify', renderer='esrijson', request_param='geometryFormat=esrijson')
 def identify_esrijson(request):
-    return _identify(request)
+    return {'results': _identify(request)}
 
+
+@view_config(route_name='identify', renderer='geojson')
+def identify_real_geojson(request):
+    features = _identify(request)
+    return {"type": "FeatureCollection", "features": features}
 
 @view_config(route_name='feature', renderer='geojson',
              request_param='geometryFormat=geojson')
@@ -208,7 +206,7 @@ def _identify_oereb(request):
 
 def _identify(request):
     params = IdentifyServiceValidation(request)
-    response = {'results': []}
+    response = None
     scale = None
     # Determine layer types
     # Grid layers are serverless
@@ -251,7 +249,7 @@ def _identify(request):
                 layersDB.append({layerBodId: models})
     featuresGrid = _identify_grid(params, layersGrid)
     featuresDB = _identify_db(params, layersDB)
-    response['results'] = featuresGrid + featuresDB
+    response = featuresGrid + featuresDB
     return response
 
 
