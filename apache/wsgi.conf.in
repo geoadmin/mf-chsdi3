@@ -28,6 +28,14 @@ WSGIPassAuthorization On
   Header set X-UA-Compatible "IE=Edge"
 </IfModule>
 
+# Compress also geojson
+<IfModule mod_deflate.c>
+   <IfModule mod_filter.c>
+       AddOutputFilterByType DEFLATE application/geo+json
+   </IfModule>
+</IfModule>
+
+
 # Redirect old main/wsgi stuff
 RedirectMatch permanent ^/main/wsgi/(.*)$ /$1
 RedirectMatch permanent ^${apache_entry_path}/iipimage/(.*)$ ${apache_entry_path}/luftbilder/$1
