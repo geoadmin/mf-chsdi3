@@ -6,8 +6,19 @@ T="$(date +%s)"
 set -o errexit
 
 BASE_DIR=/var/www/vhosts/mf-chsdi3
-GIT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 CODE_DIR=$BASE_DIR/private/branch/$GIT_BRANCH
+
+
+[ -z "${GIT_BRANCH}"  ] && GIT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD) 
+
+while true; do
+    read -p "Continue deploying chsdi3 branch <${GIT_BRANCH}> to <dev>? If not, set GIT_BRANCH to your branch [y/n]" yn
+    case $yn in
+      [Yy]* ) echo "Deploying chsdi3 branch <${GIT_BRANCH}> to dev"; break;;
+      [Nn]* ) exit 1;;
+      * ) echo "Please answer by y(es) or n(o).";;
+    esac
+done
 
 if ! [ -f $CODE_DIR/.git/config ];
 then
