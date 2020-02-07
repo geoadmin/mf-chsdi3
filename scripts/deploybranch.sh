@@ -1,13 +1,24 @@
 #!/bin/bash
 
+# Script to deploy the mf-chsdi3 project in a separate directory on vpc-mf1-dev1
+# https://mf-chsdi3.dev.bgdi.ch/<branch name>
+#
+# By default, the current branch is deployed, but it may be changed by setting
+# the variable GIT_BRANCH. The project is in all case downloaded from GitHub.
+
+
 T="$(date +%s)"
 
 # Bail out on any error
 set -o errexit
 
+[ -z "${GIT_BRANCH}"  ] && GIT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD) 
+
 BASE_DIR=/var/www/vhosts/mf-chsdi3
-GIT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 CODE_DIR=$BASE_DIR/private/branch/$GIT_BRANCH
+
+echo "==================================================================="
+echo "Continue deploying chsdi3 branch <${GIT_BRANCH}> to <dev> "
 
 if ! [ -f $CODE_DIR/.git/config ];
 then
