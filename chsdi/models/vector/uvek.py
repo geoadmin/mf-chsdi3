@@ -2700,6 +2700,46 @@ class LaermBelastungEinsenbahnFestgelegteEmissionNacht(Base, Vector):
 register('ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht', LaermBelastungEinsenbahnFestgelegteEmissionNacht)
 
 
+class LaermBelastungEisenbahnEffektiveImmissionen:
+    __tablename__ = 'laerm_eisenbahn_effektive_immissionen'
+    __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    de_es = Column('de_es', Unicode)
+    fr_es = Column('fr_es', Unicode)
+    it_es = Column('it_es', Unicode)
+    en_es = Column('en_es', Unicode)
+    rm_es = Column('rm_es', Unicode)
+    de_pointofdetermination = Column('de_pointofdetermination', Unicode)
+    fr_pointofdetermination = Column('fr_pointofdetermination', Unicode)
+    it_pointofdetermination = Column('it_pointofdetermination', Unicode)
+    en_pointofdetermination = Column('en_pointofdetermination', Unicode)
+    rm_pointofdetermination = Column('rm_pointofdetermination', Unicode)
+    de_operation_status = Column('de_operation_status', Unicode)
+    fr_operation_status = Column('fr_operation_status', Unicode)
+    it_operation_status = Column('it_operation_status', Unicode)
+    en_operation_status = Column('en_operation_status', Unicode)
+    rm_operation_status = Column('rm_operation_status', Unicode)
+    floor = Column('floor', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class LaermBelastungEisenbahnEffektiveImmissionenNacht(Base, LaermBelastungEisenbahnEffektiveImmissionen, Vector):
+    __bodId__ = 'ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht'
+    __template__ = 'templates/htmlpopup/laerm_eisenbahn_effektive_immissionen_nacht.mako'
+    lr_night = Column('lr_night', Float)
+
+register('ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht', LaermBelastungEisenbahnEffektiveImmissionenNacht)
+
+
+class LaermBelastungEisenbahnEffektiveImmissionenTag(Base, LaermBelastungEisenbahnEffektiveImmissionen, Vector):
+    __bodId__ = 'ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag'
+    __template__ = 'templates/htmlpopup/laerm_eisenbahn_effektive_immissionen_tag.mako'
+    lr_day = Column('lr_day', Float)
+
+register('ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag', LaermBelastungEisenbahnEffektiveImmissionenTag)
+
+
 class SifFacilitiesA(Base, Vector):
     __tablename__ = 'sif_fac_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
