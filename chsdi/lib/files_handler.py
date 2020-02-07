@@ -13,7 +13,7 @@ import pyramid.httpexceptions as exc
 from pyramid.response import Response
 
 from chsdi.lib.helpers import gzip_string
-from chsdi.models.clientdata_dynamodb import get_dynamodb_table, get_bucket
+from chsdi.models.clientdata_dynamodb import get_dynamodb_table, get_file_from_bucket
 
 import logging
 
@@ -66,24 +66,23 @@ class S3FilesHandler:
 
     def __init__(self, bucket_name):
         # We use instance roles
-        self.bucket = get_bucket(bucket_name)
         self.bucket_name = bucket_name
         self.default_headers = {
             'Cache-Control': 'no-cache, must-revalidate'
         }
 
-    def get_key(self, file_id):
-        key = None
+    def get_item(self, file_id):  # TODO: errors
         try:
-            key = self.bucket.get_key(file_id)
+            item = get_file_from_bucket(self.bucket_name, file_id)
         except S3ResponseError as e:
             raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
         except Exception as e:
             raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
-        return key
+        return item
 
     def get_key_timestamp(self, file_id):
-        key = self.get_key(file_id)
+        key = self.get_item(file_id)
+        # TODO : try <--> except approach with trying to take last_modified element from item
         if key:
             last_updated = parse_ts(key.last_modified)
             return last_updated.strftime('%Y-%m-%d %X')

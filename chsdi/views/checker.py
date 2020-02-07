@@ -28,7 +28,7 @@ class Checker(FileView):
             raise HTTPInternalServerError('Cannot access to DynamoDB backend {}'.format(self.dynamodb_fileshandler.table.table_name))
 
         try:
-            resp = self.s3_fileshandler.bucket.get_key(self.key_name)
+            resp = self.s3_fileshandler.bucket.get_item(self.key_name)
         # TODO , JSONResponseError equivalent too
         except KeyError:
             raise HTTPInternalServerError('Cannot access bucket {}'.format(self.bucket_name))
