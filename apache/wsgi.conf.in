@@ -31,7 +31,9 @@ WSGIPassAuthorization On
 # Compress also geojson
 <IfModule mod_deflate.c>
    <IfModule mod_filter.c>
+       <Location ${apache_entry_path}>
        AddOutputFilterByType DEFLATE application/geo+json
+       </Location>
    </IfModule>
 </IfModule>
 
