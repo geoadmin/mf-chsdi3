@@ -12,11 +12,10 @@ T="$(date +%s)"
 # Bail out on any error
 set -o errexit
 
+[ -z "${GIT_BRANCH}"  ] && GIT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD) 
+
 BASE_DIR=/var/www/vhosts/mf-chsdi3
 CODE_DIR=$BASE_DIR/private/branch/$GIT_BRANCH
-
-
-[ -z "${GIT_BRANCH}"  ] && GIT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD) 
 
 echo "==================================================================="
 echo "Continue deploying chsdi3 branch <${GIT_BRANCH}> to <dev> "
