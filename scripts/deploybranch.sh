@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Script to deploy the mf-chsdi3 project in a separate directory on vpc-mf1-dev1
+# https://mf-chsdi3.dev.bgdi.ch/<branch name>
+#
+# By default, the current branch is deployed, but it may be changed by setting
+# the variable GIT_BRANCH. The project is in all case downloaded from GitHub.
+
+
 T="$(date +%s)"
 
 # Bail out on any error
