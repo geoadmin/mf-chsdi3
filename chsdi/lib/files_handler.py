@@ -122,13 +122,16 @@ class FilesHandler(object):
     default_route_name = ''
 
     def __init__(self, request):
+        logging.debug("entry in FILESHANDLER init")
+        logging.debug('QUERY')
+        logging.debug(request)
         self.request = request
-
+        logging.debug('dynamodb and s3 file handlers init')
         # Set up AWS DynamoDB and S3 handlers
         self.dynamodb_fileshandler = DynamoDBFilesHandler(
             self.dynamodb_table_name, self.bucket_key_name)
         self.s3_fileshandler = S3FilesHandler(self.bucket_name)
-
+        logging.debug("done")
         # This mean that we suppose a file has already been created
         if request.matched_route.name == self.default_route_name:
             req_id = request.matchdict['id']
