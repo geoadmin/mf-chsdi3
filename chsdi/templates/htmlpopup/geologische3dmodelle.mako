@@ -19,24 +19,24 @@
     <tr><td class="cell-left">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_contracting_entity')}</td><td>${c['attributes'][contracting_entity] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_author')}</td><td>${c['attributes'][author] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_link_portal')}</td>
-           % if 'http' not in c['attributes'][link_portal]:
-              <td>${c['attributes'][link_portal] or '-'}</td>
-           % else:
-              <td><a  target="_blank" href=${c['attributes'][link_portal] or '-'}>link to portal</a></td>
-           % endif
-              </tr> 
+          % if 'http' not in c['attributes'][link_portal]:
+             <td>${c['attributes'][link_portal] or '-'}</td>
+          % else:
+             <td><a  target="_blank" href=${c['attributes'][link_portal] or '-'}>link to portal</a></td>
+          % endif
+             </tr> 
     <tr><td class="cell-left">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_link_description')}</td>
-           % if 'http' not in c['attributes'][link_description]:
-              <td>${c['attributes'][link_description] or '-'}</td>
-           % else:
-              <td><a  target="_blank" href=${c['attributes'][link_description] or '-'}>link to description</a></td>
-           % endif
-             </tr>
+          % if 'http' not in c['attributes'][link_description]:
+             <td>${c['attributes'][link_description] or '-'}</td>
+          % else:
+             <td><a  target="_blank" href=${c['attributes'][link_description] or '-'}>link to description</a></td>
+          % endif
+            </tr>
     <tr><td class="cell-left">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_link_documentation')}</td>
-           % if 'http' not in c['attributes'][link_documentation]:
-              <td>${c['attributes'][link_documentation] or '-'}</td>
-            % else:
-              <td><a  target="_blank" href=${c['attributes'][link_documentation] or '-'}>link to documentation</a></td>
-           % endif
+          % if 'http' not in c['attributes'][link_documentation]:
+             <td>${c['attributes'][link_documentation] or '-'}</td>
+          % else:
+             <td><a  target="_blank" href=${c['attributes'][link_documentation] or '-'}>link to documentation</a></td>
+          % endif
              </tr>
 </%def>
