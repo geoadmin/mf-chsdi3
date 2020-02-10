@@ -13,7 +13,7 @@ import pyramid.httpexceptions as exc
 from pyramid.response import Response
 
 from chsdi.lib.helpers import gzip_string
-from chsdi.models.clientdata_dynamodb import get_dynamodb_table, get_file_from_bucket
+from chsdi.models.clientdata_dynamodb import get_dynamodb_table, get_file_from_bucket, delete_file_in_bucket, upload_object_to_bucket
 
 import logging
 
@@ -73,7 +73,7 @@ class S3FilesHandler:
 
     def get_item(self, file_id):  # TODO: errors
         try:
-            item = get_file_from_bucket(self.bucket_name, file_id)
+            item = get_file_from_bucket(self.bucket_name, file_id)['Body']
         except S3ResponseError as e:
             raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
         except Exception as e:
@@ -81,12 +81,11 @@ class S3FilesHandler:
         return item
 
     def get_key_timestamp(self, file_id):
-        key = self.get_item(file_id)
-        # TODO : try <--> except approach with trying to take last_modified element from item
-        if key:
-            last_updated = parse_ts(key.last_modified)
+        try:
+            last_updated = parse_ts(get_file_from_bucket(self.bucket_name, file_id)['LastModified'])
             return last_updated.strftime('%Y-%m-%d %X')
-        return time.strftime('%Y-%m-%d %X', time.localtime())
+        except Exception:
+            return time.strftime('%Y-%m-%d %X', time.localtime())
 
     def save_object(self, file_id, mime, content_encoding, data, replace=False): # TODO : put
         msg = 'configuring' if replace else 'updating'
@@ -97,24 +96,19 @@ class S3FilesHandler:
             raise exc.HTTPInternalServerError(error_msg)
 
         try:
-            k = Key(bucket=self.bucket)
-            k.key = file_id
-            k.set_metadata('Content-Type', mime)
-            k.content_type = mime
-            k.content_encoding = content_encoding
-            k.set_metadata('Content-Encoding', content_encoding)
-            logging.info(data)
-            k.set_contents_from_string(data, headers=self.default_headers, replace=replace)
+            upload_object_to_bucket(
+                self.bucket_name, file_id, mime, content_encoding,
+                data, self.default_headers['Cache-Control'], replace=False)
         except Exception as e:
             error_msg = 'Error while %s S3 key (%s) %s' % (msg, file_id, e)
             log.error(error_msg)
             raise exc.HTTPInternalServerError(error_msg)
 
-    def delete_key(self, key):
+    def delete_key(self, file_id):
         try:
-            self.bucket.delete_key(key)
+            delete_file_in_bucket(self.bucket_name, file_id)
         except Exception as e:
-            raise exc.HTTPInternalServerError('Error while deleting file %s. %e' % (key.key, e))
+            raise exc.HTTPInternalServerError('Error while deleting file %s. %e' % (file_id, e))
 
 
 class FilesHandler(object):

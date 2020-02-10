@@ -105,4 +105,25 @@ def get_file_from_bucket(bucket_name, file_name):
     conn = s3_connection.get()
     response = conn.get_object(Bucket=bucket_name,
                                Key=file_name)
-    return response['Body']
+    return response
+
+
+def delete_file_in_bucket(bucket_name, file_name):
+    return s3_connection.get().delete_object(Bucket=bucket_name,
+                                  Key=file_name)
+
+
+def upload_object_to_bucket(bucket_name, file_id, mime, content_encoding, data, cache_control, replace=False):
+    if not replace:
+        try:
+            get_file_from_bucket(bucket_name, file_id)
+            return None
+        except Exception:
+            pass
+    return s3_connection.get().put_object(
+        Body=data,
+        Key=file_id,
+        ContentType=mime,
+        ContentEncoding=content_encoding,
+        CacheControl=cache_control
+    )
