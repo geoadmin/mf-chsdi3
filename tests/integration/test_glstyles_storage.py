@@ -76,9 +76,11 @@ class TestGLStylesView(TestsBase):
 
     def test_update_glstyle(self):
         resp = self.testapp.post('/gl-styles', GL_STYLE_JSON, headers=self.headers, status=200)
+        print(resp)
         admin_id = resp.json['adminId']
 
         resp = self.testapp.post('/gl-styles/%s' % admin_id, GL_STYLE_JSON, headers=self.headers, status=200)
+        print(resp)
         self.assertTrue(resp.json['status'], 'updated')
         self.assertEqual(admin_id, resp.json['adminId'])
 
