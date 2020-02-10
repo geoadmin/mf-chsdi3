@@ -125,5 +125,6 @@ def upload_object_to_bucket(bucket_name, file_id, mime, content_encoding, data, 
         Key=file_id,
         ContentType=mime,
         ContentEncoding=content_encoding,
-        CacheControl=cache_control
+        CacheControl=cache_control,
+        Bucket=bucket_name
     )
