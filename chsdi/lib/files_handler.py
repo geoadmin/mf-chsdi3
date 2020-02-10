@@ -141,10 +141,10 @@ class FilesHandler(object):
                 self.admin_id = req_id
                 self.file_id = db_item.get('fileId')
 
-            key = self.s3_fileshandler.get_key(self.file_path)
-            if key is None:
+            try:
+                self.item = self.s3_fileshandler.get_item(self.file_path)
+            except Exception:
                 raise exc.HTTPNotFound('File %s not found' % self.file_path)
-            self.key = key
 
     @property
     def file_path(self):
@@ -184,11 +184,13 @@ class FilesHandler(object):
                     'fileId': self.file_id
                 }
             else:
-                data = self.key.get_contents_as_string()
+                logging.debug('READ FILE : ' + self.bucket_name + '  ' + self.file_id)
+                data = get_file_from_bucket(self.bucket_name, self.file_id)['Body'].read()
+                data.decode()
                 return Response(
                     data,
-                    content_type=self.key.content_type,
-                    content_encoding=self.key.content_encoding
+                    content_type=self.item['ContentType'],
+                    content_encoding=self.item['ContentEncoding']
                 )
         except Exception as e:
             raise exc.HTTPNotFound('File %s not found %s' % (self.file_id, e))
@@ -228,7 +230,7 @@ class FilesHandler(object):
     def delete_file(self):
         if self.admin_id is None:
             raise exc.HTTPUnauthorized('You are not authorized to delete file %s' % self.file_id)
-        self.s3_fileshandler.delete_key(self.key)
+        self.s3_fileshandler.delete_key(self.file_id)
         return {
             'success': True
         }
@@ -246,4 +248,4 @@ class FilesHandler(object):
     def _fork(self):
         self.file_id = self._get_uuid()
         self.admin_id = self._get_uuid()
-        del self.key
+        del self.item
