@@ -4,10 +4,8 @@ import six
 import uuid
 import base64
 import time
-from boto.dynamodb2.exceptions import ItemNotFound
 
 from boto.exception import S3ResponseError
-from boto.s3.key import Key
 from boto.utils import parse_ts
 import pyramid.httpexceptions as exc
 from pyramid.response import Response
@@ -87,7 +85,7 @@ class S3FilesHandler:
         except Exception:
             return time.strftime('%Y-%m-%d %X', time.localtime())
 
-    def save_object(self, file_id, mime, content_encoding, data, replace=False): # TODO : put
+    def save_object(self, file_id, mime, content_encoding, data, replace=False):
         msg = 'configuring' if replace else 'updating'
         # Python2/3
         if data is None:
@@ -218,7 +216,7 @@ class FilesHandler(object):
             self.dynamodb_fileshandler.save_item(self.admin_id, self.file_id, timestamp)
         else:
             # Simply update the timestamp
-            item = self.dynamodb_fileshandler.get_item(self.admin_id)
+            # item = self.dynamodb_fileshandler.get_item(self.admin_id)
             self.dynamodb_fileshandler.update_item_timestamp(self.admin_id, timestamp)
 
         return {
