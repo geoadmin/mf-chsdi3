@@ -73,6 +73,10 @@ class S3FilesHandler:
 
     def get_item(self, file_id):  # TODO: errors
         try:
+            logging.debug("ENTRY IN FILES HANDLER GET ITEM")
+            logging.debug(file_id)
+            item_0 = get_file_from_bucket(self.bucket_name, file_id)
+            logging.debug(item_0)
             item = get_file_from_bucket(self.bucket_name, file_id)['Body']
         except S3ResponseError as e:
             raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
@@ -128,7 +132,6 @@ class FilesHandler(object):
         logging.debug('QUERY')
         logging.debug(request)
         self.request = request
-        logging.debug('dynamodb and s3 file handlers init')
         # Set up AWS DynamoDB and S3 handlers
         self.dynamodb_fileshandler = DynamoDBFilesHandler(
             self.dynamodb_table_name, self.bucket_key_name)
