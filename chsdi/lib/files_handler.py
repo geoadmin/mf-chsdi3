@@ -215,7 +215,7 @@ class FilesHandler(object):
                 logging.debug("!!!-->after reading data")
                 logging.debug(data)
                 logging.debug("!!!-->before decoding")
-                data = data.decode()
+                data = data.decode('utf-8')
                 logging.debug(data)
                 logging.debug("!!!-->after decoding")
                 logging.debug("!!!--> before return not admin")
