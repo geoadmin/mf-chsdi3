@@ -145,12 +145,18 @@ class FilesHandler(object):
                 self.file_id = db_item.get('fileId')
 
             try:
+                logging.debug("This is where it fails")
+                logging.debug(self.file_path)
+                logging.debug(self.file_id)
+                logging.debug("------------------------------------------------------------------")
                 self.item = self.s3_fileshandler.get_item(self.file_path)
             except Exception:
+                logging.debug("------------------ FAIL --------------------------------")
                 raise exc.HTTPNotFound('File %s not found' % self.file_path)
 
     @property
     def file_path(self):
+        logging.debug("ENTRY IN FILE_PATH")
         if self.bucket_folder:
             return '%s/%s%s' % (self.bucket_folder, self.file_id, self.bucket_file_extension)
         return self.file_id
