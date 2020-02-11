@@ -41,13 +41,8 @@ class DynamoDBFilesHandler:
     def get_item(self, admin_id):
         item = None
         try:
-            logging.debug(admin_id)
-            logging.debug("fetching item")
-            logging.debug(self.table)
-            item = self.table.get_item(Key={'adminId': str(admin_id)})
-            logging.debug("after fetch")
-            logging.debug(item.get('Item', None))
-        except Exception:  # TODO: what is itemNotFound in botocore errors ?
+            item = self.table.get_item(Key={'adminId': str(admin_id)}).get('Item', None)
+        except Exception:
             pass
         logging.debug("--!-!--")
         logging.debug(item)
@@ -138,14 +133,8 @@ class FilesHandler(object):
         self.dynamodb_fileshandler = DynamoDBFilesHandler(
             self.dynamodb_table_name, self.bucket_key_name)
         self.s3_fileshandler = S3FilesHandler(self.bucket_name)
-        logging.debug("----------------------------!--------------------------------------")
         # This mean that we suppose a file has already been created
-        logging.debug(request.matched_route)
-        logging.debug(request.matched_route.name)
-        logging.debug(self.default_route_name)
         if request.matched_route.name == self.default_route_name:
-            logging.debug("----------------------------!!--------------------------------------")
-            logging.debug(request.matchdict)
             req_id = request.matchdict['id']
             db_item = self.dynamodb_fileshandler.get_item(req_id)
             # Item is None if not found
@@ -157,13 +146,8 @@ class FilesHandler(object):
                 self.file_id = db_item.get('fileId')
 
             try:
-                logging.debug("This is where it fails")
-                logging.debug(self.file_path)
-                logging.debug(self.file_id)
-                logging.debug("----------------------------!!!--------------------------------------")
                 self.item = self.s3_fileshandler.get_item(self.file_path)
             except Exception:
-                logging.debug("------------------ FAIL --------------------------------")
                 raise exc.HTTPNotFound('File %s not found' % self.file_path)
 
     @property
