@@ -45,6 +45,7 @@ class DynamoDBFilesHandler:
             logging.debug("fetching item")
             item = self.table.get_item(Key={'adminId': str(admin_id)})
             logging.debug("after fetch")
+            logging.debug(item['Item'])
         except Exception:  # TODO: what is itemNotFound in botocore errors ?
             pass
         logging.debug("--!-!--")
