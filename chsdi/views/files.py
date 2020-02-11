@@ -38,6 +38,7 @@ class FileView(FilesHandler):
     @requires_authorization()
     @validate_kml_input()
     def update_file_view(self):
+        logging.debug("BEFORE GOING INTO UPDATE_FILE")
         return self.update_file()
 
     @view_config(request_method='DELETE')
