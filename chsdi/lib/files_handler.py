@@ -171,6 +171,8 @@ class FilesHandler(object):
         self.admin_id = self._get_uuid()
         mime = self.request.content_type
         data = self.request.body
+        logging.debug(data)
+        logging.debug(mime)
         # Python2/3
         if six.PY3:
             data = data.decode('utf8')
@@ -181,11 +183,17 @@ class FilesHandler(object):
             data = gzip_string(data)
 
         # Save to S3
+        logging.debug("!--> saving to s3")
         self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data)
         # Fetch last modified from S3 to add it to DynamoBD
+        logging.debug("!--> getting timestamp")
         timestamp = self.s3_fileshandler.get_key_timestamp(self.file_path)
+        logging.debug("!--!")
+        logging.debug(timestamp)
         # Save to DynamoDB
+        logging.debug("!-->saving to dynamodb")
         self.dynamodb_fileshandler.save_item(self.admin_id, self.file_id, timestamp)
+        logging.debug("!--> end of file creation")
         return {
             'adminId': self.admin_id,
             'fileId': self.file_id
