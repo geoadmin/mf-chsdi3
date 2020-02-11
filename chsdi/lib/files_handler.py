@@ -201,6 +201,7 @@ class FilesHandler(object):
             raise exc.HTTPNotFound('File %s not found %s' % (self.file_id, e))
 
     def update_file(self):
+        logging.debug("---!---!---")
         data = self.request.body
         mime = self.request.content_type
         content_encoding = None
