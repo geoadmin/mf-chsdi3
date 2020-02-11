@@ -131,9 +131,14 @@ class FilesHandler(object):
         self.dynamodb_fileshandler = DynamoDBFilesHandler(
             self.dynamodb_table_name, self.bucket_key_name)
         self.s3_fileshandler = S3FilesHandler(self.bucket_name)
-        logging.debug("done")
+        logging.debug("----------------------------!--------------------------------------")
         # This mean that we suppose a file has already been created
+        logging.debug(request.matched_route)
+        logging.debug(request.matched_route.name)
+        logging.debug(self.default_route_name)
         if request.matched_route.name == self.default_route_name:
+            logging.debug("----------------------------!!--------------------------------------")
+            logging.debug(request.matchdict)
             req_id = request.matchdict['id']
             db_item = self.dynamodb_fileshandler.get_item(req_id)
             # Item is None if not found
@@ -148,7 +153,7 @@ class FilesHandler(object):
                 logging.debug("This is where it fails")
                 logging.debug(self.file_path)
                 logging.debug(self.file_id)
-                logging.debug("------------------------------------------------------------------")
+                logging.debug("----------------------------!!!--------------------------------------")
                 self.item = self.s3_fileshandler.get_item(self.file_path)
             except Exception:
                 logging.debug("------------------ FAIL --------------------------------")
