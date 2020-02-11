@@ -33,6 +33,7 @@ class FileView(FilesHandler):
 
     @view_config(request_method='GET')
     def read_file_view(self):
+        logging.debug("ENTERING A GET")
         return self.read_file()
 
     @view_config(request_method='POST')
