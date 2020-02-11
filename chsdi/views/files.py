@@ -28,6 +28,7 @@ class FileView(FilesHandler):
     @requires_authorization()
     @validate_kml_input()
     def create_file_view(self):
+        logging.debug("AM I CREATING SOMETHING HERE?")
         return self.create_file()
 
     @view_config(request_method='GET')
