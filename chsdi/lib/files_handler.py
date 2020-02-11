@@ -43,9 +43,10 @@ class DynamoDBFilesHandler:
         try:
             logging.debug(admin_id)
             logging.debug("fetching item")
+            logging.debug(self.table)
             item = self.table.get_item(Key={'adminId': str(admin_id)})
             logging.debug("after fetch")
-            logging.debug(item['Item'])
+            logging.debug(item.get('Item', None))
         except Exception:  # TODO: what is itemNotFound in botocore errors ?
             pass
         logging.debug("--!-!--")
