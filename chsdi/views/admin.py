@@ -2,7 +2,6 @@
 
 import datetime
 import requests
-import logging
 from requests.exceptions import RequestException
 from pyramid.view import view_config
 from pyramid.renderers import render_to_response
@@ -18,19 +17,12 @@ def admin_kml(context, request):
     bucket_name = settings.get('geoadmin_file_storage_bucket')
     api_url = settings.get('api_url')
     files = kml_load(api_url=api_url, bucket_name=bucket_name)
-    logging.debug("AFTER KML_LOAD")
-    logging.debug(files)
     kmls = {'files': files, 'count': len(files), 'bucket': api_url, 'host': settings.get('geoadminhost')}
-    logging.debug("KMLS : ")
-    logging.debug(kmls)
 
     response = render_to_response(
         'chsdi:templates/adminkml.mako',
         kmls)
-    logging.debug("AFTER RENDER TO RESPONSE")
-    logging.debug(response)
     response.content_type = 'text/html'
-    logging.debug("END")
     return response
 
 

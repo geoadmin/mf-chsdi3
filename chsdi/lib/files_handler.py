@@ -231,6 +231,9 @@ class FilesHandler(object):
         }
 
     def delete_file(self):
+        logging.debug("welcome in DELETE FILE")
+        logging.debug(self.file_id)
+        logging.debug(self.admin_id)
         if self.admin_id is None:
             raise exc.HTTPUnauthorized('You are not authorized to delete file %s' % self.file_id)
         self.s3_fileshandler.delete_key(self.file_id)
