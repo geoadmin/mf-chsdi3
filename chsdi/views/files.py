@@ -43,4 +43,5 @@ class FileView(FilesHandler):
     @view_config(request_method='DELETE')
     @requires_authorization()
     def delete_file_view(self):
+        logging.debug("ENTRY IN DELETE ROUTE")
         return self.delete_file()
