@@ -31,7 +31,7 @@ def kml_load(api_url='//api3.geo.admin.ch', bucket_name=None):
     date = now.strftime('%Y-%m-%d')
     table = get_dynamodb_table(table_name='geoadmin-file-storage')
     fileids = []
-    results = table.query(Limit=LIMIT*4,
+    results = table.query(Limit=LIMIT * 4,
                           IndexName='bucketTimestampIndex',
                           KeyConditionExpression=Key('bucket').eq(bucket_name) & Key('timestamp').begins_with(date),
                           ScanIndexForward=False)
