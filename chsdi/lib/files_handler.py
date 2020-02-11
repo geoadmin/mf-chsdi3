@@ -204,6 +204,8 @@ class FilesHandler(object):
         data = self.request.body
         mime = self.request.content_type
         content_encoding = None
+        logging.debug(data)
+        logging.debug(mime)
         if mime == self.default_mime_type:
             content_encoding = 'gzip'
             data = gzip_string(data)
@@ -214,6 +216,7 @@ class FilesHandler(object):
             status = 'copied'
             self._fork()
         forked = status == 'copied'
+        logging.debug(forked)
         self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data, not forked)
         # Fetch last modified from S3 to add it to DynamoBD
         timestamp = self.s3_fileshandler.get_key_timestamp(self.file_path)
@@ -233,9 +236,6 @@ class FilesHandler(object):
         }
 
     def delete_file(self):
-        logging.debug("welcome in DELETE FILE")
-        logging.debug(self.file_id)
-        logging.debug(self.admin_id)
         if self.admin_id is None:
             raise exc.HTTPUnauthorized('You are not authorized to delete file %s' % self.file_id)
         self.s3_fileshandler.delete_key(self.file_id)
