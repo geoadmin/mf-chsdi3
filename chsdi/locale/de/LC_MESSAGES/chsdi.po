@@ -8765,6 +8765,36 @@ msgstr "Isostatische Anomalien 500"
 msgid "ch.swisstopo.geologie-geologische_3dmodelle"
 msgstr "Geologische 3D-Modelle"
 
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.content"
+msgstr "Modellierte Horizonte / Einheiten"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_author"
+msgstr "Autor(en)"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_contracting_entity"
+msgstr "Auftraggeber"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_link_description"
+msgstr "Externer Link zur Detailbeschreibung"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_link_documentation"
+msgstr "Externer Link zur Dokumentation"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_link_portal"
+msgstr "Externer Link zum Fachportal"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.purpose"
+msgstr "Zweck"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.remarks"
+msgstr "Bemerkungen"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.year_publication"
+msgstr "Erstellungsjahr"
+
 msgid "ch.swisstopo.geologie-geologische_einheiten-onegeology"
 msgstr "CHE LG DE 1:500k Geologische Einheiten"
 

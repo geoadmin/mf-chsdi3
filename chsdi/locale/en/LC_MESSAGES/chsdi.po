@@ -4983,7 +4983,7 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_1"
 msgstr "Altitude catchment area [m]"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_2"
-msgstr "Land cover CH of the total watershed area statistics [%]"
+msgstr "Land cover CH based on area statistics [%]"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_3"
 msgstr "Land cover based on CORINE Land Cover [%]"
@@ -8764,6 +8764,36 @@ msgstr "Isostatic anomalies 500"
 
 msgid "ch.swisstopo.geologie-geologische_3dmodelle"
 msgstr "3D geological models"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.content"
+msgstr "Modelled horizons / units"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_author"
+msgstr "Author(s)"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_contracting_entity"
+msgstr "Contracting entity"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_link_description"
+msgstr "External link to detailed description"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_link_documentation"
+msgstr "External link to documentation"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_link_portal"
+msgstr "External link to portal"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.purpose"
+msgstr "Purpose"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.remarks"
+msgstr "Remarks"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.year_publication"
+msgstr "Year of publication"
 
 msgid "ch.swisstopo.geologie-geologische_einheiten-onegeology"
 msgstr "Geology 1:500 000"
