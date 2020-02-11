@@ -6,6 +6,7 @@ from requests.exceptions import RequestException
 from pyramid.view import view_config
 from pyramid.renderers import render_to_response
 from chsdi.models.clientdata_dynamodb import get_dynamodb_table
+from boto3.dynamodb.conditions import Key
 
 LIMIT = 50
 
@@ -30,7 +31,10 @@ def kml_load(api_url='//api3.geo.admin.ch', bucket_name=None):
     date = now.strftime('%Y-%m-%d')
     table = get_dynamodb_table(table_name='geoadmin-file-storage')
     fileids = []
-    results = table.query_2(bucket__eq=bucket_name, timestamp__beginswith=date, index='bucketTimestampIndex', limit=LIMIT * 4, reverse=True)
+    results = table.query(Limit=LIMIT*4,
+                          IndexName='bucketTimestampIndex',
+                          KeyConditionExpression=Key('bucket').eq(bucket_name) & Key('timestamp').begins_with(date),
+                          ScanIndexForward=False)
     for f in results:
         try:
             resp = requests.head("http:" + api_url + "/files/" + f['fileId'], headers={'User-Agent': 'mf-geoadmin/python'})
