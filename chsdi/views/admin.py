@@ -17,7 +17,6 @@ def admin_kml(context, request):
     settings = request.registry.settings
     bucket_name = settings.get('geoadmin_file_storage_bucket')
     api_url = settings.get('api_url')
-    logging.debug("TEMPORARY : BEFORE kml_load")
     files = kml_load(api_url=api_url, bucket_name=bucket_name)
     logging.debug("AFTER KML_LOAD")
     logging.debug(files)
@@ -46,6 +45,8 @@ def kml_load(api_url='//api3.geo.admin.ch', bucket_name=None):
                           ScanIndexForward=False)
     for f in results:
         try:
+            logging.debug("HELLO")
+            logging.debug(f)
             resp = requests.head("http:" + api_url + "/files/" + f['fileId'], headers={'User-Agent': 'mf-geoadmin/python'})
             if int(resp.status_code) == 200:
                 fileids.append((f['fileId'], f['adminId'], f['timestamp']))
