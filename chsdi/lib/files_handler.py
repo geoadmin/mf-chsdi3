@@ -75,13 +75,19 @@ class S3FilesHandler:
         try:
             logging.debug("ENTRY IN FILES HANDLER GET ITEM")
             logging.debug(file_id)
+            logging.debug("-- -- --")
             item_0 = get_file_from_bucket(self.bucket_name, file_id)
+            logging.debug("-- -- --")
             logging.debug(item_0)
+            logging.debug("-- -- --")
             item = get_file_from_bucket(self.bucket_name, file_id)['Body']
+            logging.debug("-- -- --")
+            logging.debug(item)
         except S3ResponseError as e:
             raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
         except Exception as e:
             raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
+        logging.debug('returning item')
         return item
 
     def get_key_timestamp(self, file_id):
