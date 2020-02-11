@@ -41,9 +41,13 @@ class DynamoDBFilesHandler:
     def get_item(self, admin_id):
         item = None
         try:
+            logging.debug(admin_id)
+            logging.debug("fetching item")
             item = self.table.get_item(Key={'adminId': str(admin_id)})
+
         except Exception:  # TODO: what is itemNotFound in botocore errors ?
             pass
+        logging.debug(item)
         return item
 
     def update_item_timestamp(self, admin_id, timestamp):
