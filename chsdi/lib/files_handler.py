@@ -205,13 +205,17 @@ class FilesHandler(object):
                     'fileId': self.file_id
                 }
             else:
+                logging.debug("-- -- -- -- Before data get")
                 data = get_file_from_bucket(self.bucket_name, self.file_id)['Body'].read()
+                logging.debug("-- -- -- -- After data get")
                 return Response(
                     data,
                     content_type=self.item['ContentType'],
                     content_encoding=self.item['ContentEncoding']
                 )
         except Exception as e:
+            logging.debug("in error -- - - -  ---")
+            logging.debug(e)
             raise exc.HTTPNotFound('File %s not found %s' % (self.file_id, e))
 
     def update_file(self):
