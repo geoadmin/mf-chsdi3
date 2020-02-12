@@ -201,34 +201,18 @@ class FilesHandler(object):
 
     def read_file(self):
         try:
-            logging.debug("!!!--> ENTRY IN READ FILE")
-
             if self.admin_id:
-                logging.debug("!!!--> before return admin")
                 return {
                     'fileId': self.file_id
                 }
             else:
-                logging.debug('READ FILE : ' + self.bucket_name + '  ' + self.file_id)
-                logging.debug("!!!--> before reading data")
                 data = get_file_from_bucket(self.bucket_name, self.file_id)['Body'].read()
-                logging.debug("!!!-->after reading data")
-                logging.debug(data)
-                logging.debug("!!!-->before decoding")
-                logging.debug(decompress_gzipped_string(data))
-                data = data.decode('utf-8')
-                logging.debug(data)
-                logging.debug("!!!-->after decoding")
-                logging.debug("!!!--> before return not admin")
                 return Response(
                     data,
                     content_type=self.item['ContentType'],
                     content_encoding=self.item['ContentEncoding']
                 )
         except Exception as e:
-            logging.debug("! ! ! ERROR HERE ! ! !")
-            logging.debug(e)
-            logging.debug("! ! ! TWAS AN ERROR HERE ! ! !")
             raise exc.HTTPNotFound('File %s not found %s' % (self.file_id, e))
 
     def update_file(self):
