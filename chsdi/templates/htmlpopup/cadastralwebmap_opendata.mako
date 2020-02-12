@@ -22,6 +22,7 @@
   
   class CadastralWebMapParams(IdentifyServiceValidation):
       def __init__(self, request):
+          IdentifyServiceValidation.__init__(self, request)
           self.srid = request.params.get('sr', '21781')
           grid = getTileGrid(self.srid)()
           defaultExtent = ','.join(map(str, grid.extent))
