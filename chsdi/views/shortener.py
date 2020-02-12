@@ -48,6 +48,8 @@ def _get_url_short(table, url):
         'url': url
     })
     try:
+        logging.debug("INSIDE TRY")
+        logging.debug(response)
         return response['Item']['url_short']
     except Exception:
         return None
