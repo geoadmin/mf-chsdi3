@@ -76,6 +76,7 @@ class S3FilesHandler:
             logging.debug("ENTRY IN FILES HANDLER GET ITEM")
             logging.debug(file_id)
             logging.debug("-- -- --")
+            logging.debug(self.bucket_name)
             item = get_file_from_bucket(self.bucket_name, file_id)
             logging.debug("-- -- --")
             logging.debug(item)
@@ -206,7 +207,8 @@ class FilesHandler(object):
                 }
             else:
                 logging.debug("-- -- -- -- Before data get")
-                data = get_file_from_bucket(self.bucket_name, self.file_id)['Body'].read()
+                logging.debug(self.bucket_name)
+                data = self.s3_fileshandler.get_item(self.file_id)['Body'].read()
                 logging.debug("-- -- -- -- After data get")
                 return Response(
                     data,
