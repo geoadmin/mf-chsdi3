@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import logging
-
 from pyramid.view import view_config, view_defaults
 
 from chsdi.lib.files_handler import FilesHandler
