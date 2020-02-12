@@ -80,7 +80,7 @@ class S3FilesHandler:
             logging.debug("-- -- --")
             logging.debug(item_0)
             logging.debug("-- -- --")
-            item = get_file_from_bucket(self.bucket_name, file_id)['Body'].read()
+            item = get_file_from_bucket(self.bucket_name, file_id)['Body']
             logging.debug("-- -- --")
             logging.debug(item)
         except S3ResponseError as e:
