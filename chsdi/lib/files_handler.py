@@ -83,6 +83,7 @@ class S3FilesHandler:
         except S3ResponseError as e:
             raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
         except Exception as e:
+            logging.debug("in s3_fileshandler error")
             raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
         logging.debug('returning item')
         return item
@@ -208,7 +209,7 @@ class FilesHandler(object):
             else:
                 logging.debug("-- -- -- -- Before data get")
                 logging.debug(self.bucket_name)
-                data = self.s3_fileshandler.get_item(self.file_id)['Body'].read()
+                data = self.s3_fileshandler.get_item(self.file_path)['Body'].read()
                 logging.debug("-- -- -- -- After data get")
                 return Response(
                     data,
@@ -218,7 +219,7 @@ class FilesHandler(object):
         except Exception as e:
             logging.debug("in error -- - - -  ---")
             logging.debug(e)
-            raise exc.HTTPNotFound('File %s not found %s' % (self.file_id, e))
+            raise exc.HTTPNotFound('File %s not found %s' % (self.file_path, e))
 
     def update_file(self):
         logging.debug("---!---!---")
