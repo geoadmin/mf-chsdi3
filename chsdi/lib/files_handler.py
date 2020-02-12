@@ -201,6 +201,9 @@ class FilesHandler(object):
 
     def read_file(self):
         try:
+            logging.debug(self.admin_id)
+            logging.debug(self.file_id)
+            logging.debug(self.item)
             if self.admin_id:
                 return {
                     'fileId': self.file_id
