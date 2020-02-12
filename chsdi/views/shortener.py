@@ -57,15 +57,23 @@ def _get_url_short(table, url):
 
 @view_config(route_name='shorten', renderer='jsonp')
 def shortener(request):
+    logging.debug("ENTRY IN SHORTENER -- -- --")
+    logging.debug(request)
+    logging.debug(request.params)
     url = request.params.get('url')
+    logging.debug(url)
+    logging.debug(request.host)
     if len(url) >= 2046:
         # we only accept URL shorter or equal to 2046 characters
         # Index restriction in DynamoDB
         url_short = 'toolong'
     else:  # pragma: no cover
+        logging.debug("CHECK URL")
         url_short = check_url(url, request.registry.settings)
+        logging.debug("URL CHECKED")
         # DynamoDB v2 high-level abstraction
         try:
+            logging.debug("GETTING A TABLE NAME SHORTURL")
             table = get_dynamodb_table(table_name='shorturl')
         except Exception as e:
             raise exc.HTTPInternalServerError('Error during connection %s' % e)
