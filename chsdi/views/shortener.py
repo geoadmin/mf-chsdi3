@@ -71,6 +71,9 @@ def shortener(request):
         logging.debug(request)
         logging.debug(url)
         url_short = _add_item(table, url)
+        logging.debug(" AFTER URL_SHORT -------------")
+        logging.debug(url_short)
+        logging.debug(" IS THERE A PROBLEM HERE ?")
 
     # Use env specific URLs
     if request.host not in ('api.geo.admin.ch', 'api3.geo.admin.ch'):
