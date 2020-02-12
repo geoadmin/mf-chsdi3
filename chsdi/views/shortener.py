@@ -13,6 +13,9 @@ from chsdi.lib.helpers import check_url, make_api_url
 
 
 def _add_item(table, url):
+    logging.debug("ENTRY IN ADD ITEM")
+    logging.debug(table)
+    logging.debug(url)
     url_short = _get_url_short(table, url)
     if url_short is None:  # pragma: no cover
         # Create a new short url if url not in DB
@@ -42,7 +45,7 @@ def _get_url_short(table, url):
     logging.debug(table)
     logging.debug(url)
     response = table.get_item(Key={
-        'UrlIndex': url
+        'url': url
     })
     try:
         return response['Item']['url_short']
@@ -64,7 +67,9 @@ def shortener(request):
             table = get_dynamodb_table(table_name='shorturl')
         except Exception as e:
             raise exc.HTTPInternalServerError('Error during connection %s' % e)
-
+        logging.debug("IN SHORTENER")
+        logging.debug(request)
+        logging.debug(url)
         url_short = _add_item(table, url)
 
     # Use env specific URLs
