@@ -1,7 +1,5 @@
 #!/bin/bash
 
-T="$(date +%s)"
-
 #bail out on any error
 set -o errexit
 
@@ -12,12 +10,13 @@ then
   exit 1
 fi
 
+T="$(date +%s)"
 SNAPSHOTDIR=/var/www/vhosts/mf-chsdi3/private/snapshots/$1
-
-cwd=$(pwd)
+DEPLOYCONFIG=deploy/deploy.cfg
+PROJECT_ROOT=$(pwd)
+SNAPSHOTDIR_CODE=$SNAPSHOTDIR/chsdi3/code/chsdi3
 
 # Go into snapshot directory to run nose-tests
-SNAPSHOTDIR_CODE=$SNAPSHOTDIR/chsdi3/code/chsdi3
 cd $SNAPSHOTDIR_CODE
 
 # Run nose tests with target cluster db
@@ -38,12 +37,13 @@ else
     echo "You have disabled nosetests!"
 fi
 
-echo "Using local deploy configuration"
-DEPLOYCONFIG=deploy/deploy.cfg
+# cleanup pyc files (orphaned .pyc issues)
+find * -name '*.pyc' | xargs rm -f
 
 # Back to working directory for the deploy command
-cd $cwd
+cd ${PROJECT_ROOT}
 
+echo "Using local deploy configuration"
 sudo -u deploy deploy -r $DEPLOYCONFIG $2 $SNAPSHOTDIR
 
 T="$(($(date +%s)-T))"
