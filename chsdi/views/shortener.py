@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import logging
 
 from pyramid.view import view_config
 import pyramid.httpexceptions as exc
@@ -37,8 +38,11 @@ def _add_item(table, url):
 
 
 def _get_url_short(table, url):
+    logging.debug("in to get url short ------")
+    logging.debug(table)
+    logging.debug(url)
     response = table.get_item(Key={
-        'url': url
+        'UrlIndex': url
     })
     try:
         return response['Item']['url_short']
