@@ -21,10 +21,10 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         self._where = None
         self._geometry = None
         self._geometryType = None
+        self._tolerance = None
         self._imageDisplay = None
         self._mapExtent = None
         self._returnGeometry = None
-        self._tolerance = None
         self._timeInstant = None
         self._layers = None
         self._offset = None
@@ -89,6 +89,9 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
 
     @property
     def tolerance(self):
+        if not hasattr(self, '_tolerance'):
+            self._tolerance = None
+
         return self._tolerance
 
     @property
