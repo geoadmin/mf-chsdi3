@@ -10,7 +10,7 @@ from boto.utils import parse_ts
 import pyramid.httpexceptions as exc
 from pyramid.response import Response
 
-from chsdi.lib.helpers import gzip_string, decompress_gzipped_string
+from chsdi.lib.helpers import gzip_string
 from chsdi.models.clientdata_dynamodb import get_dynamodb_table, get_file_from_bucket, delete_file_in_bucket, upload_object_to_bucket
 
 import logging
