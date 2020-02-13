@@ -35,6 +35,28 @@ API & applications
 
 Geodata
 *******
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Railway noise, perm. immissions N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht)|
++--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Railway noise, perm. immissions D <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag) |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `3D geological models <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologische_3dmodelle>`__ (ch.swisstopo.geologie-geologische_3dmodelle)                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Railway noise, act. immissions N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht)|
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Railway noise, act. immissions D <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag)    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `2km2 sub catchment areas <//map.geo.admin.ch/?layers=ch.bafu.wasser-teileinzugsgebiete_2>`__ (ch.bafu.wasser-teileinzugsgebiete_2)                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `40km2 sub catchment areas <//map.geo.admin.ch/?layers=ch.bafu.wasser-teileinzugsgebiete_40>`__ (ch.bafu.wasser-teileinzugsgebiete_40)                                                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mean runoff (m³/s) and regime <//map.geo.admin.ch/?layers=ch.bafu.mittlere-abfluesse>`__ (ch.bafu.mittlere-abfluesse)                                                                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydrological gauging stations <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-hydromessstationen>`__ (ch.bafu.hydrologie-hydromessstationen)                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Area outlets <//map.geo.admin.ch/?layers=ch.bafu.wasser-gebietsauslaesse>`__ (ch.bafu.wasser-gebietsauslaesse)                                                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Type of flow regime <//map.geo.admin.ch/?layers=ch.bafu.wasser-vorfluter>`__ (ch.bafu.wasser-vorfluter)                                                                                   |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `National Map 1:500'000 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-pk500.noscale>`__ (ch.swisstopo.pixelkarte-farbe-pk500.noscale)                                                                    |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
