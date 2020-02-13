@@ -4,6 +4,7 @@ import re
 import geojson
 import six
 from gatilegrid.grid import Grid
+from cachetools import TTLCache
 
 from pyramid.view import view_config
 from pyramid.renderers import render, render_to_response
@@ -35,6 +36,10 @@ log = logging.getLogger(__name__)
 
 
 MAX_FEATURES = 201
+CACHE_TTL = 60 * 30  # 30 minutes
+CACHE_SIZE = 100  # Number of layers metadata (to multiplied by lang)
+
+cache = {}
 
 
 @view_config(route_name='identify', request_param='geometryFormat=interlis')
@@ -80,16 +85,28 @@ def view_attribute_values_geojson(request):
     return _attributes(request)
 
 
+# TODO
 def _get_feature_info_for_popup(request, params, isExtended=False, isIframe=False):
     feature, vector_model = next(_get_features(params))
     layerModel = get_bod_model(params.lang)
     # TODO Remove this ugly hack
-    layer = next(get_layers_metadata_for_params(
-        params,
-        request.db.query(layerModel),
-        layerModel,
-        layerIds=[params.layerId if params.layerId != 'ch.bfs.gebaeude_wohnungs_register_preview' else 'ch.bfs.gebaeude_wohnungs_register']
-    ))
+    # This is generating many bod query
+    try:
+        layer = cache[params.lang][params.layerId]
+        if layer:
+            log.info("======== Got from cache ========")
+    except KeyError:
+        layer = next(get_layers_metadata_for_params(
+            params,
+            request.db.query(layerModel),
+            layerModel,
+            layerIds=[params.layerId if params.layerId != 'ch.bfs.gebaeude_wohnungs_register_preview' else 'ch.bfs.gebaeude_wohnungs_register']
+        ))
+        if not hasattr(cache, params.lang):
+            cache[params.lang] = TTLCache(maxsize=CACHE_SIZE, ttl=CACHE_TTL)
+        log.info("=========== caching ============")
+        cache[params.lang][params.layerId] = layer
+
     options = {}
     if 'feature' in feature:
         options.update(feature.pop('feature'))
