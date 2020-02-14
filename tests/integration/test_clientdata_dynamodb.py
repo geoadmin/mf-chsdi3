@@ -2,7 +2,7 @@
 
 import unittest
 import pyramid.httpexceptions as exc
-from chsdi.models.clientdata_dynamodb import DynamodbConnection, S3Connect, get_dynamodb_table, get_bucket
+from chsdi.models.clientdata_dynamodb import DynamodbConnection, S3Connect, get_dynamodb_table, get_file_from_bucket
 
 
 class Test_DynamodbConnection(unittest.TestCase):
@@ -32,4 +32,4 @@ class Test_S3Connect(unittest.TestCase):
 
     def test_get_bucket_badrequest(self):
         with self.assertRaises(exc.HTTPInternalServerError):
-            get_bucket('wrongbucket')
+            get_file_from_bucket('wrongbucket', "nonexistent_file.jpg")

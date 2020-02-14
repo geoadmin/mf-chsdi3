@@ -89,18 +89,6 @@ def get_dynamodb_table(table_name='shorturl'):
     return table
 
 
-def get_bucket(bucket_name):
-    conn = s3_connection.get()
-    try:
-        bucket = conn.Bucket(bucket_name)
-
-    except Exception as e:  # pragma: no cover
-        raise exc.HTTPInternalServerError(
-            'S3 Error during connection to the bucket %s\n%s' % (
-                bucket_name, e))
-    return bucket
-
-
 def get_file_from_bucket(bucket_name, file_name):
     conn = s3_connection.get()
     response = conn.get_object(Bucket=bucket_name,
