@@ -113,14 +113,9 @@ def shorten_redirect(request):
         )
         logging.debug(response)
         url = response['Items'][0]['url'] if len(response['Items']) > 0 else None
-        if url is None:
-            raise Exception('This short url doesn\'t exist: s.geo.admin.ch/%s' % url_short)
-    except boto_exc.ResourceNotExistsError as e:
-        raise exc.HTTPNotFound('This short url doesn\'t exist: s.geo.admin.ch/%s Error is: %s' % (url_short, e))
-    except boto_exc.Boto3Error as e:  # pragma: no cover
-        # TODO: same as above
-        raise exc.HTTPInternalServerError('Read units exceeded: %s' % e)
+
     except Exception as e:  # pragma: no cover
         raise exc.HTTPInternalServerError('Unexpected internal server error: %s' % e)
-
+    if url is None:
+        raise exc.HTTPNotFound('This short url doesn\'t exist: s.geo.admin.ch/%s' % url_short)
     raise exc.HTTPMovedPermanently(location=url)
