@@ -108,10 +108,13 @@ def shorten_redirect(request):
     table = get_dynamodb_table(table_name='shorturl')
 
     try:
-        url_match = table.get_item(Key={
-            'url_short': url_short
-        })
-        url = url_match['Item']['url']
+        response = table.query(
+            KeyConditionExpression=Key('url_short').eq(url_short)
+        )
+        logging.debug(response)
+        url = response['Items'][0]['url'] if len(response['Items']) > 0 else None
+        if url is None:
+            raise Exception('This short url doesn\'t exist: s.geo.admin.ch/%s' % url_short)
     except boto_exc.ResourceNotExistsError as e:
         raise exc.HTTPNotFound('This short url doesn\'t exist: s.geo.admin.ch/%s Error is: %s' % (url_short, e))
     except boto_exc.Boto3Error as e:  # pragma: no cover
