@@ -5,6 +5,7 @@ from pyramid.view import view_config
 import pyramid.httpexceptions as exc
 
 import boto3.exceptions as boto_exc
+from boto3.dynamodb.conditions import Key
 
 import time
 
@@ -44,13 +45,15 @@ def _get_url_short(table, url):
     logging.debug("in to get url short ------")
     logging.debug(table)
     logging.debug(url)
-    response = table.get_item(Key={
-        'url': url
-    })
+
+    response  = table.query(
+        IndexName="UrlIndex",
+        KeyConditionExpression=Key('url').eq(url),
+    )
     try:
         logging.debug("INSIDE TRY")
         logging.debug(response)
-        return response['Item']['url_short']
+        return response['Items'][0]['url_short']
     except Exception:
         return None
 
