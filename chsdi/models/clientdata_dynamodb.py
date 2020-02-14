@@ -91,8 +91,11 @@ def get_dynamodb_table(table_name='shorturl'):
 
 def get_file_from_bucket(bucket_name, file_name):
     conn = s3_connection.get()
-    response = conn.get_object(Bucket=bucket_name,
-                               Key=file_name)
+    try:
+        response = conn.get_object(Bucket=bucket_name,
+                                   Key=file_name)
+    except Exception as e:
+        raise exc.HTTPInternalServerError("bucket (%s) or file (%s) not valids. \n%s" % (bucket_name, file_name, e))
     return response
 
 
