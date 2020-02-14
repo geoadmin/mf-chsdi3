@@ -12,13 +12,16 @@ class Test_DynamodbConnection(unittest.TestCase):
         d = DynamodbConnection(region='toto')
         result = d.get()
         logging.debug(result.get_available_subresources())
+        logging.debug(result.tables)
+        logging.debug(result.Table())
         self.assertEqual(result, None)
 
     def test_dynamodbConnection(self):
         d = DynamodbConnection(region='eu-west-1')
         result = d.get()
         logging.debug(result.get_available_subresources())
-
+        logging.debug(result.tables)
+        logging.debug(result.Table())
         self.assertEqual(str(result), 'DynamoDBConnection:dynamodb.eu-west-1.amazonaws.com')
 
 
