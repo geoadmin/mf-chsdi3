@@ -609,7 +609,9 @@ def decompress_gzipped_string(streaming_body):
         vul = StringIO(streaming_body.read())
         logging.debug("trying to open the string")
         logging.debug(vul)
-        gzip.open(vul)
+        gzip_file = gzip.GzipFile(fileobj=vul, mode='r', compresslevel=5)
+        hoi = gzip_file.read()
+        logging.debug(hoi)
         logging.debug("-------------------------------------------")
         raise Exception("we in python 2")
     else:
