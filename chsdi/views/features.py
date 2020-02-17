@@ -415,6 +415,8 @@ def _get_feature_grid(col, row, timestamp, grid, bucket_name, params):
     featureS3KeyName = 'tooltip/%s/default/%s/%s/%s/data.json' % (layerBodId, timestamp, col, row)
     try:
         featureJson = decompress_gzipped_string(get_file_from_bucket(bucket_name, featureS3KeyName)['Body'])
+        logging.debug("---------------------------------------------------------")
+        logging.debug(featureJson)
         # Beacause of esriJSON design and papyrus no esrijson support for now
         feature = geojson.loads(featureJson)
         if not params.returnGeometry:
@@ -423,6 +425,7 @@ def _get_feature_grid(col, row, timestamp, grid, bucket_name, params):
         feature['layerName'] = params.translate(layerBodId)
     except Exception:
         pass
+    logging.debug(feature)
     return feature, None
 
 
