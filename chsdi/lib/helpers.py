@@ -603,16 +603,10 @@ def gzip_string(string):
 
 
 def decompress_gzipped_string(streaming_body):
-    logging.debug("--------gzip in python 2 is not nice --------------")
     if six.PY2:
         logging.debug(streaming_body)
-        vul = StringIO(streaming_body.read())
-        logging.debug("trying to open the string")
-        logging.debug(vul)
-        gzip_file = gzip.GzipFile(fileobj=vul, mode='r', compresslevel=5)
-        hoi = gzip_file.read()
-        logging.debug(hoi)
-        logging.debug("-------------------------------------------")
-        raise Exception("we in python 2")
+        string_file = StringIO(streaming_body.read())
+        gzip_file = gzip.GzipFile(fileobj=string_file, mode='r', compresslevel=5)
+        return gzip_file.read().decode('utf-8')
     else:
         return gzip.decompress(streaming_body.read()).decode()
