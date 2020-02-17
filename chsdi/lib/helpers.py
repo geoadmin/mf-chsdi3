@@ -602,13 +602,15 @@ def gzip_string(string):
     return out
 
 
-def decompress_gzipped_string(string):
+def decompress_gzipped_string(streaming_body):
     logging.debug("--------gzip in python 2 is not nice --------------")
     if six.PY2:
+        logging.debug(streaming_body)
+        vul = streaming_body.read()
         logging.debug("trying to open the string")
-        logging.debug(string)
-        gzip.open(string)
+        logging.debug(vul)
+        gzip.open(vul)
         logging.debug("-------------------------------------------")
         raise Exception("we in python 2")
     else:
-        return gzip.decompress(string).decode()
+        return gzip.decompress(streaming_body.read()).decode()
