@@ -606,7 +606,7 @@ def decompress_gzipped_string(streaming_body):
     logging.debug("--------gzip in python 2 is not nice --------------")
     if six.PY2:
         logging.debug(streaming_body)
-        vul = streaming_body.read()
+        vul = StringIO(streaming_body.read())
         logging.debug("trying to open the string")
         logging.debug(vul)
         gzip.open(vul)
