@@ -896,9 +896,6 @@ RESTFul interface is available.
 +--------------------------------+-----------------------------------------------------------------------------------------+
 | **northing (required)**        | The northing coordinate in LV03 (EPSG:21781) or LV95 (EPSG:2056)                        |
 +--------------------------------+-----------------------------------------------------------------------------------------+
-| **elevation_model (optional)** | The elevation model. Three elevation models are available DTM25, DTM2 (swissALTI3D)     |
-|                                | and COMB (a combination of DTM25 and DTM2). Default to "DTM25".                         |
-+--------------------------------+-----------------------------------------------------------------------------------------+
 | **sr(optional)**               | The reference system to use (EPSG code). Valid values are 2056 (for LV95) and 21781     |
 |                                | (for )LV03). If not given, trying to guess which one to use.                            |
 +--------------------------------+-----------------------------------------------------------------------------------------+
