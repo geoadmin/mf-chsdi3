@@ -612,4 +612,3 @@ def decompress_gzipped_string(string):
         raise Exception("we in python 2")
     else:
         return gzip.decompress(string).decode()
-
