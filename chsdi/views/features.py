@@ -414,6 +414,7 @@ def _get_feature_grid(col, row, timestamp, grid, bucket_name, params):
     layerBodId = params.layerId
     featureS3KeyName = 'tooltip/%s/default/%s/%s/%s/data.json' % (layerBodId, timestamp, col, row)
     try:
+
         featureJson = decompress_gzipped_string(get_file_from_bucket(bucket_name, featureS3KeyName)['Body'])
         logging.debug("---------------------------------------------------------")
         logging.debug(featureJson)
@@ -423,7 +424,9 @@ def _get_feature_grid(col, row, timestamp, grid, bucket_name, params):
             del feature['geometry']
         feature['layerBodId'] = layerBodId
         feature['layerName'] = params.translate(layerBodId)
-    except Exception:
+    except Exception as e:
+        logging.debug("--------------------------")
+        logging.error(e)
         pass
     logging.debug(feature)
     return feature, None
