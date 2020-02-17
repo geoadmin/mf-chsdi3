@@ -44,8 +44,6 @@ class DynamoDBFilesHandler:
             item = self.table.get_item(Key={'adminId': str(admin_id)}).get('Item', None)
         except Exception:
             pass
-        logging.debug("--!-!--")
-        logging.debug(item)
         return item
 
     def update_item_timestamp(self, admin_id, timestamp):
@@ -73,19 +71,11 @@ class S3FilesHandler:
 
     def get_item(self, file_id):  # TODO: errors
         try:
-            logging.debug("ENTRY IN FILES HANDLER GET ITEM")
-            logging.debug(file_id)
-            logging.debug("-- -- --")
-            logging.debug(self.bucket_name)
             item = get_file_from_bucket(self.bucket_name, file_id)
-            logging.debug("-- -- --")
-            logging.debug(item)
         except S3ResponseError as e:
             raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
         except Exception as e:
-            logging.debug("in s3_fileshandler error")
             raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
-        logging.debug('returning item')
         return item
 
     def get_key_timestamp(self, file_id):
@@ -132,9 +122,6 @@ class FilesHandler(object):
     default_route_name = ''
 
     def __init__(self, request):
-        logging.debug("entry in FILESHANDLER init")
-        logging.debug('QUERY')
-        logging.debug(request)
         self.request = request
         # Set up AWS DynamoDB and S3 handlers
         self.dynamodb_fileshandler = DynamoDBFilesHandler(
@@ -159,7 +146,6 @@ class FilesHandler(object):
 
     @property
     def file_path(self):
-        logging.debug("ENTRY IN FILE_PATH")
         if self.bucket_folder:
             return '%s/%s%s' % (self.bucket_folder, self.file_id, self.bucket_file_extension)
         return self.file_id
@@ -169,8 +155,6 @@ class FilesHandler(object):
         self.admin_id = self._get_uuid()
         mime = self.request.content_type
         data = self.request.body
-        logging.debug(data)
-        logging.debug(mime)
         # Python2/3
         if six.PY3:
             data = data.decode('utf8')
@@ -181,17 +165,11 @@ class FilesHandler(object):
             data = gzip_string(data)
 
         # Save to S3
-        logging.debug("!--> saving to s3")
         self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data)
         # Fetch last modified from S3 to add it to DynamoBD
-        logging.debug("!--> getting timestamp")
         timestamp = self.s3_fileshandler.get_key_timestamp(self.file_path)
-        logging.debug("!--!")
-        logging.debug(timestamp)
         # Save to DynamoDB
-        logging.debug("!-->saving to dynamodb")
         self.dynamodb_fileshandler.save_item(self.admin_id, self.file_id, timestamp)
-        logging.debug("!--> end of file creation")
         return {
             'adminId': self.admin_id,
             'fileId': self.file_id
@@ -199,35 +177,24 @@ class FilesHandler(object):
 
     def read_file(self):
         try:
-            logging.debug(self.admin_id)
-            logging.debug(self.file_id)
-            logging.debug(self.item)
             if self.admin_id:
                 return {
                     'fileId': self.file_id
                 }
             else:
-                logging.debug("-- -- -- -- Before data get")
-                logging.debug(self.bucket_name)
                 data = self.s3_fileshandler.get_item(self.file_path)['Body'].read()
-                logging.debug("-- -- -- -- After data get")
                 return Response(
                     data,
                     content_type=self.item['ContentType'],
                     content_encoding=self.item['ContentEncoding']
                 )
         except Exception as e:
-            logging.debug("in error -- - - -  ---")
-            logging.debug(e)
             raise exc.HTTPNotFound('File %s not found %s' % (self.file_path, e))
 
     def update_file(self):
-        logging.debug("---!---!---")
         data = self.request.body
         mime = self.request.content_type
         content_encoding = None
-        logging.debug(data)
-        logging.debug(mime)
         if mime == self.default_mime_type:
             content_encoding = 'gzip'
             data = gzip_string(data)
@@ -238,7 +205,6 @@ class FilesHandler(object):
             status = 'copied'
             self._fork()
         forked = status == 'copied'
-        logging.debug(forked)
         self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data, not forked)
         # Fetch last modified from S3 to add it to DynamoBD
         timestamp = self.s3_fileshandler.get_key_timestamp(self.file_path)

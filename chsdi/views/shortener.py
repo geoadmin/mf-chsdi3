@@ -14,9 +14,6 @@ from chsdi.lib.helpers import check_url, make_api_url
 
 
 def _add_item(table, url):
-    logging.debug("ENTRY IN ADD ITEM")
-    logging.debug(table)
-    logging.debug(url)
     url_short = _get_url_short(table, url)
     if url_short is None:  # pragma: no cover
         # Create a new short url if url not in DB
@@ -42,17 +39,12 @@ def _add_item(table, url):
 
 
 def _get_url_short(table, url):
-    logging.debug("in to get url short ------")
-    logging.debug(table)
-    logging.debug(url)
 
     response  = table.query(
         IndexName="UrlIndex",
         KeyConditionExpression=Key('url').eq(url),
     )
     try:
-        logging.debug("INSIDE TRY")
-        logging.debug(response)
         return response['Items'][0]['url_short']
     except Exception:
         return None
@@ -60,33 +52,19 @@ def _get_url_short(table, url):
 
 @view_config(route_name='shorten', renderer='jsonp')
 def shortener(request):
-    logging.debug("ENTRY IN SHORTENER -- -- --")
-    logging.debug(request)
-    logging.debug(request.params)
     url = request.params.get('url')
-    logging.debug(url)
-    logging.debug(request.host)
     if len(url) >= 2046:
         # we only accept URL shorter or equal to 2046 characters
         # Index restriction in DynamoDB
         url_short = 'toolong'
     else:  # pragma: no cover
-        logging.debug("CHECK URL")
         url_short = check_url(url, request.registry.settings)
-        logging.debug("URL CHECKED")
         # DynamoDB v2 high-level abstraction
         try:
-            logging.debug("GETTING A TABLE NAME SHORTURL")
             table = get_dynamodb_table(table_name='shorturl')
         except Exception as e:
             raise exc.HTTPInternalServerError('Error during connection %s' % e)
-        logging.debug("IN SHORTENER")
-        logging.debug(request)
-        logging.debug(url)
         url_short = _add_item(table, url)
-        logging.debug(" AFTER URL_SHORT -------------")
-        logging.debug(url_short)
-        logging.debug(" IS THERE A PROBLEM HERE ?")
 
     # Use env specific URLs
     if request.host not in ('api.geo.admin.ch', 'api3.geo.admin.ch'):
@@ -111,7 +89,6 @@ def shorten_redirect(request):
         response = table.query(
             KeyConditionExpression=Key('url_short').eq(url_short)
         )
-        logging.debug(response)
         url = response['Items'][0]['url'] if len(response['Items']) > 0 else None
 
     except Exception as e:  # pragma: no cover

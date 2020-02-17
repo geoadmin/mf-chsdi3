@@ -604,7 +604,6 @@ def gzip_string(string):
 
 def decompress_gzipped_string(streaming_body):
     if six.PY2:
-        logging.debug(streaming_body)
         string_file = StringIO(streaming_body.read())
         gzip_file = gzip.GzipFile(fileobj=string_file, mode='r', compresslevel=5)
         return gzip_file.read().decode('utf-8')
