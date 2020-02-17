@@ -5,8 +5,6 @@ import uuid
 import base64
 import time
 
-from boto.exception import S3ResponseError
-from boto.utils import parse_ts
 import pyramid.httpexceptions as exc
 from pyramid.response import Response
 
@@ -72,17 +70,19 @@ class S3FilesHandler:
     def get_item(self, file_id):  # TODO: errors
         try:
             item = get_file_from_bucket(self.bucket_name, file_id)
-        except S3ResponseError as e:
-            raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
         except Exception as e:
             raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
         return item
 
     def get_key_timestamp(self, file_id):
         try:
-            last_updated = parse_ts(get_file_from_bucket(self.bucket_name, file_id)['LastModified'])
+            last_updated = get_file_from_bucket(self.bucket_name, file_id)['LastModified']
+            logging.debug("making sure we have something valid")
+            logging.debug(type(last_updated))
+            logging.debug(last_updated)
             return last_updated.strftime('%Y-%m-%d %X')
         except Exception:
+            raise Exception("LOOK AT THIS")
             return time.strftime('%Y-%m-%d %X', time.localtime())
 
     def save_object(self, file_id, mime, content_encoding, data, replace=False):
