@@ -945,9 +945,6 @@ RESTFul interface is available.
 | **sr (optional)**                 | The reference system to use (EPSG code). Valid value are 2056 (for LV95) and 21781 (for   |
 |                                   | LV03). Strongly advised to set one, but if not given, trying to guess which one to use.   |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **elevation_models (optional)**   | A comma separated list of elevation models. Three elevation models are available DTM25,   |
-|                                   | DTM2 (swissALTI3D) and COMB (a combination of DTM25 and DTM2).  Default to "DTM25".       |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
 | **nb_points (optional)**          | The number of points used for the polyline segmentation. Default "200".                   |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **offset (optional)**             | The offset value (INTEGER) in order to use the `exponential moving algorithm              |
