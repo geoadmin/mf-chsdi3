@@ -896,9 +896,6 @@ RESTFul interface is available.
 +--------------------------------+-----------------------------------------------------------------------------------------+
 | **northing (required)**        | The northing coordinate in LV03 (EPSG:21781) or LV95 (EPSG:2056)                        |
 +--------------------------------+-----------------------------------------------------------------------------------------+
-| **elevation_model (optional)** | The elevation model. Three elevation models are available DTM25, DTM2 (swissALTI3D)     |
-|                                | and COMB (a combination of DTM25 and DTM2). Default to "DTM25".                         |
-+--------------------------------+-----------------------------------------------------------------------------------------+
 | **sr(optional)**               | The reference system to use (EPSG code). Valid values are 2056 (for LV95) and 21781     |
 |                                | (for )LV03). If not given, trying to guess which one to use.                            |
 +--------------------------------+-----------------------------------------------------------------------------------------+
@@ -944,9 +941,6 @@ RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **sr (optional)**                 | The reference system to use (EPSG code). Valid value are 2056 (for LV95) and 21781 (for   |
 |                                   | LV03). Strongly advised to set one, but if not given, trying to guess which one to use.   |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
-| **elevation_models (optional)**   | A comma separated list of elevation models. Three elevation models are available DTM25,   |
-|                                   | DTM2 (swissALTI3D) and COMB (a combination of DTM25 and DTM2).  Default to "DTM25".       |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **nb_points (optional)**          | The number of points used for the polyline segmentation. Default "200".                   |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
