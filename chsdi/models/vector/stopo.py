@@ -3273,6 +3273,10 @@ class CadastralWebMap(Base, Vector):
     __label__ = 'ak'
     id = Column('id', Integer, primary_key=True)
     ak = Column('ak', Unicode)
+    number = Column('number', Unicode)
+    identnd = Column('identnd', Unicode)
+    egris_egrid = Column('egris_egrid', Unicode)
+    realestate_type = Column('realestate_type', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.kantone.cadastralwebmap-farbe', CadastralWebMap)
@@ -3289,6 +3293,10 @@ class CadastralWebMapOpenData(Base, Vector):
     bfsnr = Column('bfsnr', Integer)
     ak = Column('ak', Unicode)
     name = Column('name', Unicode)
+    number = Column('number', Unicode)
+    identnd = Column('identnd', Unicode)
+    egris_egrid = Column('egris_egrid', Unicode)
+    realestate_type = Column('realestate_type', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo-vd.amtliche-vermessung', CadastralWebMapOpenData)
