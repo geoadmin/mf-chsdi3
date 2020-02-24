@@ -12098,6 +12098,9 @@ msgstr "Mineral rights"
 msgid "cwm_realestate_type_default"
 msgstr "Land and buildings"
 
+msgid "cwm_realestate_type_default"
+msgstr "Land and buildings"
+
 msgid "cyan"
 msgstr "cyan"
 
