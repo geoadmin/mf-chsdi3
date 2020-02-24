@@ -210,7 +210,6 @@ class FilesHandler(object):
             self.dynamodb_fileshandler.save_item(self.admin_id, self.file_id, timestamp)
         else:
             # Simply update the timestamp
-            # item = self.dynamodb_fileshandler.get_item(self.admin_id)
             self.dynamodb_fileshandler.update_item_timestamp(self.admin_id, timestamp)
 
         return {
