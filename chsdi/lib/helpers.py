@@ -6,6 +6,7 @@ import requests
 import datetime
 import gzip
 import six
+import unidecode
 from decimal import Decimal
 from past.utils import old_div
 
@@ -299,7 +300,6 @@ def format_query(model, value, lang):
         # TODO: what does really do?
         # values = map(escapeSQL, values)
         values = replacePropByColumnName(model, tokens, lang)
-
         operators = list(w.operators)
 
         where = merge_statements(values, operators)
@@ -612,3 +612,37 @@ def decompress_gzipped_string(string):
         in_ = StringIO(string)
     content = gzip.GzipFile(fileobj=in_, mode='rb')
     return content.read()
+
+
+def unnacent_where_text(where_string, model):
+
+    # where_string is the arbitrary where text given by the query
+    # model is the model corresponding to the layer for the query
+    separator = None
+    for possible_separator in ('+=', '=', 'ilike', 'like'):
+        # Those are the only string separators that ask for custom inputs from the customer.
+        if separator is None:
+            # We are not looking for a valid separator if we already found one
+            separator = possible_separator if where_string.find(possible_separator) > -1 else None
+            if separator is not None:
+                # splitting the string and trimming the substrings
+                where_text_split = where_string.split(separator)
+                where_text_split[0] = where_text_split[0].strip()
+                where_text_split[1] = where_text_split[1].strip()
+                if str(getattr(model, where_text_split[0]).type) == 'VARCHAR':
+                    # if we get to this place, it means we have a string type of data with a custom input from the
+                    # customer and we will need to unaccent them to make the search.
+                    return "unaccent({}) {} unaccent({})".format(where_text_split[0],
+                                                                 separator,
+                                                                 sanitize_user_input_accents(where_text_split[1]))
+                else:
+                    # if we get here, it means we had a separator, but it's not a string (only possibility should be '='
+                    # and a number. So we break out of the for loop for performances purpose
+                    break
+
+    return where_string
+
+
+def sanitize_user_input_accents(string):
+    # this transforms the umlauts in latin compliant version, then remove the accents entirely
+    return unidecode.unidecode(remove_accents(string))
