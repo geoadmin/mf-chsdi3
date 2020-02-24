@@ -626,19 +626,31 @@ def unnacent_where_text(where_string, model):
             separator = possible_separator if where_string.find(possible_separator) > -1 else None
             if separator is not None:
                 # splitting the string and trimming the substrings
-                where_text_split = where_string.split(separator)
+                where_text_split = where_string.split(separator, 1)
                 where_text_split[0] = where_text_split[0].strip()
+                # TODO: we might have multiple statements here, with 'or' or 'and'
                 where_text_split[1] = where_text_split[1].strip()
                 if str(getattr(model, where_text_split[0]).type) == 'VARCHAR':
                     # if we get to this place, it means we have a string type of data with a custom input from the
                     # customer and we will need to unaccent them to make the search.
-                    return "unaccent({}) {} {}".format(where_text_split[0], separator, sanitize_user_input_accents(where_text_split[1]))
+                    return "unaccent({}) {} {}".format(where_text_split[0], separator, sanitize_user_input_accents(separate_statements(where_text_split[1], model)))
                 else:
                     # if we get here, it means we had a separator, but it's not a string (only possibility should be '='
                     # and a number. So we break out of the for loop for performances purpose
                     break
 
     return where_string
+
+
+def separate_statements(substring, model):
+    # in layerdefs, sometimes statements are separated by 'or' or 'and' clauses. this separates them. Only downside is that I'm calling sanitize input accents multiple times.
+    splitted_substring = substring.split(" ", 2)
+    if len(splitted_substring) == 3:
+        separator = splitted_substring[1]
+        if separator == 'or' or separator == 'and':
+            splitted_substring[2] = unnacent_where_text(splitted_substring[2], model)
+            return "{} {} {}".format(splitted_substring[0], separator, separate_statements(splitted_substring[2], model))
+    return substring
 
 
 def sanitize_user_input_accents(string):
