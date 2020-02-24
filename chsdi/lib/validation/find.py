@@ -2,8 +2,8 @@
 
 import json
 from pyramid.httpexceptions import HTTPBadRequest
-
 from chsdi.lib.validation import MapNameValidation, SUPPORTED_OUTPUT_SRS
+import six.moves.urllib as urllib
 
 
 class FindServiceValidation(MapNameValidation):
@@ -119,7 +119,7 @@ class FindServiceValidation(MapNameValidation):
     def layerDefs(self, value):
         if value is not None:
             try:
-                defs = json.loads(value)
+                defs = json.loads(urllib.parse.unquote(value))
                 if not (set(defs.keys()).issubset(set([self.layer]))):
                     raise HTTPBadRequest("You can only filter on layer '%s' in 'layerDefs'" % self.layer)
                 where = "+and+".join(defs.values())
