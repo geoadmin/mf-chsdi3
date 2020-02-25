@@ -2,7 +2,7 @@
 
 import os
 import psycopg2
-from cachetools import TTLCache
+from cachetools import TTLCache, cached
 from psycopg2.extras import RealDictCursor
 from psycopg2.extensions import register_type, UNICODE
 
@@ -21,7 +21,9 @@ class Translator:
     """
     @staticmethod
     def get_db_connection():
-        return psycopg2.connect(host=os.environ.get('DBHOST'), dbname=os.environ.get('DBSTAGING'), user='www-data')
+        return psycopg2.connect(host=os.environ.get('DBHOST'),
+                                dbname="bod_{}".format(os.environ.get('DBSTAGING')),
+                                user='www-data')
 
     @staticmethod
     def select_all(cur):
