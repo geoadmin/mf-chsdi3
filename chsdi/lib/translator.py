@@ -27,11 +27,10 @@ class Translator:
     @classmethod
     def get_translations(cls):
         if cls._translations is None:
-            cls._translations = {}
+            cls._translations = dict()
             for lang in cls._supported_languages:
                 cls._translations.setdefault(lang, TTLCache(maxsize=CACHE_SIZE, ttl=CACHE_TTL))
         return cls._translations
-
 
     @classmethod
     def translate(cls, msg_id, lang):
