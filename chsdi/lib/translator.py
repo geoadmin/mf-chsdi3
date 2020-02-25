@@ -32,15 +32,15 @@ class Translator:
                 cls._translations.setdefault(lang, TTLCache(maxsize=CACHE_SIZE, ttl=CACHE_TTL))
         return cls._translations
 
+
     @classmethod
     def translate(cls, msg_id, lang):
         translations = cls.get_translations()
         if lang not in cls._supported_languages:
-            return msg_id
-        translated_value = translations[lang].get(msg_id, None)
-        if translated_value is None:
+            lang = 'de'
+        if translations[lang].currsize == 0:
             cls.fill_translations()
-            translated_value = translations[lang].get(msg_id, msg_id)
+        translated_value = translations[lang].get(msg_id, msg_id)
         return translated_value
 
     @classmethod
