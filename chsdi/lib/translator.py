@@ -17,10 +17,7 @@ class Translator:
     _supported_languages = ['en', 'fr', 'de', 'rm', 'it']
 
     """
-    
-    Database transation methods 
-    
-    
+    Database transation methods
     """
     @staticmethod
     def get_db_connection():
