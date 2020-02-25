@@ -2,7 +2,7 @@
 
 import os
 import psycopg2
-from cachetools import TTLCache, cached
+from cachetools import TTLCache
 from psycopg2.extras import RealDictCursor
 from psycopg2.extensions import register_type, UNICODE
 
