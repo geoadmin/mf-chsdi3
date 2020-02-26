@@ -3,6 +3,7 @@
 import os
 from threading import Lock
 import psycopg2
+import logging
 from cachetools import TTLCache
 from psycopg2.extras import RealDictCursor
 from psycopg2.extensions import register_type, UNICODE
@@ -23,6 +24,8 @@ class Translator:
     """
     @staticmethod
     def get_db_connection():
+        logging.debug(os.environ.get('DBHOST'))
+        logging.debug(os.environ.get('DBSTAGING'))
         return psycopg2.connect(host=os.environ.get('DBHOST'),
                                 dbname="bod_{}".format(os.environ.get('DBSTAGING')),
                                 user='www-data')
