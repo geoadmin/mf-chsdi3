@@ -3,6 +3,7 @@
 <%!
   from pyramid.url import route_url
   import chsdi.lib.helpers as h
+  import chsdi.lib.translator as t
 %>
 <%
   lang = request.lang
@@ -66,7 +67,7 @@
             <td>
           % endif
               <a href="${h.make_agnostic(request.route_url('extendedHtmlPopup', map=topic, layerId=c['layerBodId'], featureId=str(c['featureId'])))}?lang=${lang}" target="_blank">
-                ${_('zusatzinfo')}&nbsp;<img src="${h.versioned(request.static_url('chsdi:static/images/ico_extern.gif'))}" />
+                ${t.Translator.translate('zusatzinfo', lang)}&nbsp;<img src="${h.versioned(request.static_url('chsdi:static/images/ico_extern.gif'))}" />
               </a>
             </td>
         </tr>
@@ -80,7 +81,7 @@
             <td>
           % endif
               <a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&time={}'.format(timestamp), '&lang=', lang, '&topic=', topic))}" target="new">
-                ${_('Link to object')}
+                ${t.Translator.translate('Link to object', lang)}
               </a>
             </td>
           </tr>
@@ -90,18 +91,18 @@
   </div>
   % if isExtended:
   <div class="htmlpopup-footer">
-    <a href="${_('disclaimer url')}" target="_blank">
-      ${_('disclaimer title')}
+    <a href="${t.Translator.translate('disclaimer url', lang)}" target="_blank">
+      ${t.Translator.translate('disclaimer title', lang)}
     </a>
     <div class="float-right">
       % if c['stable_id'] is True:
       <a class="link" href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic))}" target="new">
-        ${_('Link to object')}
+        ${t.Translator.translate('Link to object', lang)}
       </a>
       &nbsp;|&nbsp;
       % endif
       <a href="javascript:window.print();">
-        ${_('print')}
+        ${t.Translator.translate('print', lang)}
       </a>
     </div>
     </div>
