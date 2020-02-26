@@ -18,7 +18,7 @@ node(label: "jenkins-slave") {
           sh '.venv/bin/nosetests tests/integration/'
         },
         'functional': {
-          sh '.venv/bin/nosetests tests/functional/'
+          sh 'eval $(cat rc_dev) && .venv/bin/nosetests tests/functional/'
         }
       )
     }
