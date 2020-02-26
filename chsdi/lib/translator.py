@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+from threading import Lock
 import psycopg2
 from cachetools import TTLCache
 from psycopg2.extras import RealDictCursor
@@ -14,7 +15,8 @@ CACHE_SIZE = 10000
 class Translator:
 
     _translations = None
-    _supported_languages = ['en', 'fr', 'de', 'rm', 'it']
+    _supported_languages = ['de', 'fr', 'en', 'rm', 'it']
+    _lock = Lock()
 
     """
     Database transation methods
@@ -32,15 +34,19 @@ class Translator:
 
     @classmethod
     def fill_translations(cls):
-        conn = cls.get_db_connection()
-        register_type(UNICODE)
-        conn.set_client_encoding('UTF8')
-        cur = conn.cursor(cursor_factory=RealDictCursor)
-        cur = cls.select_all(cur)
-        for row in cur:
-            for lang in cls._supported_languages:
-                cls._translations[lang][row['msg_id']] = row[lang]
-        conn.close()
+        # using the Lock from threadings to ensure non concurrent writings
+        with cls._lock:
+            # This little condition avoid multiple threads all trying to access the database.
+            if cls._translations[cls._supported_languages[0]].currsize == 0:
+                conn = cls.get_db_connection()
+                register_type(UNICODE)
+                conn.set_client_encoding('UTF8')
+                cur = conn.cursor(cursor_factory=RealDictCursor)
+                cur = cls.select_all(cur)
+                for row in cur:
+                    for lang in cls._supported_languages:
+                        cls._translations[lang][row['msg_id']] = row[lang]
+                conn.close()
 
     # this is a simili singleton approach.
     @classmethod
@@ -59,11 +65,12 @@ class Translator:
             lang = 'de'
         if translations[lang].currsize == 0:
             # we do not fill the cache unless it is empty
-            # todo : thread safe this
             cls.fill_translations()
+
         translated_value = translations[lang].get(msg_id, msg_id)
         return translated_value
 
     @classmethod
     def empty_cache(cls):
-        cls._translations = None
+        with cls._lock:
+            cls._translations = None
