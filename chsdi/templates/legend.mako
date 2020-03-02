@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 <%
+  import chsdi.lib.translator as t
   c = legend['layer']
   hasLegend = legend['hasLegend']
   host = h.make_agnostic(request.host_url + request.uscript_name)
