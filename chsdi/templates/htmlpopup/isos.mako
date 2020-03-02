@@ -7,15 +7,15 @@
 %>
 
 <%def name="table_body(c, lang)">
-    <tr><td class="cell-left">${t.translate('kanton', lang)}</td>                     <td>${c['attributes']['kanton'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('ortsbildname', lang)}</td>               <td>${c['attributes']['ortsbildname']}</td></tr>
-    <tr><td class="cell-left">${t.translate('kategorie', lang)}</td>                  <td>${c['attributes']['vergleichsrastereinheit'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('lagequalitaeten', lang)}</td>            <td>${c['attributes']['lagequalitaeten'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('raeumliche_qualitaeten', lang)}</td>     <td>${c['attributes']['raeumliche_qualitaeten'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('arch__hist__qualitaeten', lang)}</td>    <td>${c['attributes']['arch__hist__qualitaeten'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('fassung', lang)}</td>                    <td>${c['attributes']['fassungsjahr'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('band_1_2', lang)}</td>                   <td>${c['attributes']['band_1'] or '-'} | ${c['attributes']['band_2'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('publikationsjahr_1_2', lang)}</td>       <td>${c['attributes']['publikationsjahr_1'] or '-'} | ${c['attributes']['publikationsjahr_2'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('kanton', lang)}</td>                     <td>${c['attributes']['kanton'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ortsbildname', lang)}</td>               <td>${c['attributes']['ortsbildname']}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('kategorie', lang)}</td>                  <td>${c['attributes']['vergleichsrastereinheit'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('lagequalitaeten', lang)}</td>            <td>${c['attributes']['lagequalitaeten'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('raeumliche_qualitaeten', lang)}</td>     <td>${c['attributes']['raeumliche_qualitaeten'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('arch__hist__qualitaeten', lang)}</td>    <td>${c['attributes']['arch__hist__qualitaeten'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('fassung', lang)}</td>                    <td>${c['attributes']['fassungsjahr'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('band_1_2', lang)}</td>                   <td>${c['attributes']['band_1'] or '-'} | ${c['attributes']['band_2'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('publikationsjahr_1_2', lang)}</td>       <td>${c['attributes']['publikationsjahr_1'] or '-'} | ${c['attributes']['publikationsjahr_2'] or '-'}</td></tr>
 <%
 dataHost = request.registry.settings['datageoadminhost']
 dataPath = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder/PDF'
@@ -32,7 +32,7 @@ if c['attributes']['pdfspecial'] is not None:
 %>
     <tr>
       % if  c['attributes']['pdf_dokument_1'] != 'ISOS_5800':
-      <td class="cell-left">${t.translate('pdf_dokument_1_2', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('pdf_dokument_1_2', lang)}</td>
       <td>
         % if c['attributes']['pdf_dokument_1']:
             <a href="${url_pdf}" target="_blank">${c['attributes']['pdf_dokument_1']}.pdf</a> |
@@ -54,5 +54,5 @@ if c['attributes']['pdfspecial'] is not None:
       </td>
       % endif
     </tr>
-    <tr><td colspan=2>${t.translate('ch.bak.isos.warning', lang)}</td></td></tr>
+    <tr><td colspan=2>${t.Translator.translate('ch.bak.isos.warning', lang)}</td></td></tr>
 </%def>

@@ -75,21 +75,21 @@ params = (
     image_rotation)
 viewer_url = get_viewer_url(request, params)
 %>
-    <tr><td class="cell-left">${t.translate('tt_lubis_ebkey', lang)}</td>                               <td>${c['featureId']}</td></tr>
-    <tr><td class="cell-left">${t.translate('tt_lubis_inventarnummer', lang)}</td>                      <td>${c['attributes']['inventory_number']}</td></tr>
-    <tr><td class="cell-left">${t.translate('tt_lubis_Flugdatum', lang)}</td>                           <td>${datum}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('tt_lubis_ebkey', lang)}</td>                               <td>${c['featureId']}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('tt_lubis_inventarnummer', lang)}</td>                      <td>${c['attributes']['inventory_number']}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('tt_lubis_Flugdatum', lang)}</td>                           <td>${datum}</td></tr>
 
 % if preview_url != "" and image_width != None:
 <tr>
-  <td class="cell-left">${t.translate('tt_lubis_Quickview', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('tt_lubis_Quickview', lang)}</td>
   <td>
     <a href="${viewer_url}" target="_blank"><img src="${preview_url}" alt="quickview"></a>
   </td>
 </tr>
 % else:
 <tr>
-  <td class="cell-left">${t.translate('tt_lubis_Quickview', lang)}</td>
-  <td>${t.translate('tt_lubis_noQuickview', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('tt_lubis_Quickview', lang)}</td>
+  <td>${t.Translator.translate('tt_lubis_noQuickview', lang)}</td>
 </tr>
 % endif
 
@@ -122,20 +122,20 @@ params = (
 viewer_url = get_viewer_url(request, params)
 %>
 
-<title>${t.translate('tt_lubis_ebkey', lang)}: ${c['featureId']}</title>
+<title>${t.Translator.translate('tt_lubis_ebkey', lang)}: ${c['featureId']}</title>
 
 <body onload="init()">
   <table class="table-with-border kernkraftwerke-extended">
-    <tr><th class="cell-left">${t.translate('tt_lubis_ebkey', lang)}</th>                               <td>${c['featureId']}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_inventarnummer', lang)}</th>                      <td>${c['attributes']['inventory_number']}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_Flugdatum', lang)}</th>                           <td>${datum}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_originalsize', lang)}</th>                        <td>${c['attributes']['medium_format']}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_filesize_mb', lang)}</th>                         <td>${c['attributes']['filesize_mb']}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_bildpfad', lang)}</th>                            <td>${c['attributes']['filename']}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_schraegaufnahmen_stereo_couple', lang)}</th>      <td>${c['attributes']['stereo_couple']}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_schraegaufnahmen_x', lang)}</th>                  <td>${c['attributes']['x']}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_schraegaufnahmen_y', lang)}</th>                  <td>${c['attributes']['y']}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_bildorder', lang)}</th>                           <td>${c['attributes']['contact'] | br } <br/>${c['attributes']['contact_email']}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_ebkey', lang)}</th>                               <td>${c['featureId']}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_inventarnummer', lang)}</th>                      <td>${c['attributes']['inventory_number']}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_Flugdatum', lang)}</th>                           <td>${datum}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_originalsize', lang)}</th>                        <td>${c['attributes']['medium_format']}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_filesize_mb', lang)}</th>                         <td>${c['attributes']['filesize_mb']}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_bildpfad', lang)}</th>                            <td>${c['attributes']['filename']}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_schraegaufnahmen_stereo_couple', lang)}</th>      <td>${c['attributes']['stereo_couple']}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_schraegaufnahmen_x', lang)}</th>                  <td>${c['attributes']['x']}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_schraegaufnahmen_y', lang)}</th>                  <td>${c['attributes']['y']}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_bildorder', lang)}</th>                           <td>${c['attributes']['contact'] | br } <br/>${c['attributes']['contact_email']}</td></tr>
   </table>
   <br>
 <div class="chsdi-map-container table-with-border">

@@ -9,23 +9,23 @@
     ausser_betrieb_label = 'ch.swisstopo.swisstlm3d-eisenbahnnetz_ausser_betrieb_%s' % c['attributes']['ausser_betrieb']
 %>
     <tr>
-      <td class="cell-left">${t.translate('ch.swisstopo.swisstlm3d-eisenbahnnetz.objektart', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('ch.swisstopo.swisstlm3d-eisenbahnnetz.objektart', lang)}</td>
       <td>${_(objektart_label) or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('ch.swisstopo.swisstlm3d-eisenbahnnetz.verkehrsmittel', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('ch.swisstopo.swisstlm3d-eisenbahnnetz.verkehrsmittel', lang)}</td>
       <td>${_(verkehrsmittel_label) or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('ch.swisstopo.swisstlm3d-eisenbahnnetz.standseilbahn', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('ch.swisstopo.swisstlm3d-eisenbahnnetz.standseilbahn', lang)}</td>
       <td>${_(standseilbahn_label) or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('ch.swisstopo.swisstlm3d-eisenbahnnetz.zahnradbahn', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('ch.swisstopo.swisstlm3d-eisenbahnnetz.zahnradbahn', lang)}</td>
       <td>${_(zahnradbahn_label) or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('ch.swisstopo.swisstlm3d-eisenbahnnetz.ausser_betrieb', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('ch.swisstopo.swisstlm3d-eisenbahnnetz.ausser_betrieb', lang)}</td>
       <td>${_(ausser_betrieb_label) or '-'}</td>
     </tr>
 </%def>

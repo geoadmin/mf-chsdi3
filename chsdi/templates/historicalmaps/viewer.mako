@@ -132,20 +132,20 @@
   <body onload="init()">
     <div class="header">
       <div class="pull-left">${title}</div>
-      <a class="pull-right" href="${geoadminUrl}" target="_blank">${t.translate('link to geoportal', lang)}</a>
+      <a class="pull-right" href="${geoadminUrl}" target="_blank">${t.Translator.translate('link to geoportal', lang)}</a>
     </div>
     <div class="wrapper">
       <div id="zeitreihenmap"></div>
     </div>
     <div class="footer">
-      <a class="pull-left" href="${t.translate('disclaimer url', lang)}" target="_blank">Copyright</a>
+      <a class="pull-left" href="${t.Translator.translate('disclaimer url', lang)}" target="_blank">Copyright</a>
       <div id="messagectrl"></div>
       <script>
         if ( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
           if (navigator.platform.substr(0,3) == 'Mac') {
-            document.getElementById("messagectrl").innerHTML = "${t.translate('rotation key apple', lang)}";
+            document.getElementById("messagectrl").innerHTML = "${t.Translator.translate('rotation key apple', lang)}";
           } else {
-            document.getElementById("messagectrl").innerHTML = "${t.translate('rotation key', lang)}";
+            document.getElementById("messagectrl").innerHTML = "${t.Translator.translate('rotation key', lang)}";
           }
         }
       </script>

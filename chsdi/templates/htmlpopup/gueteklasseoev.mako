@@ -2,7 +2,7 @@
 
 <%def name="table_body(c, lang)">
   <tr>
-    <td class="cell-left">${t.translate('klasse', lang)}</td>
+    <td class="cell-left">${t.Translator.translate('klasse', lang)}</td>
     <td>
       % if lang in ('de', 'rm', 'en'):
         ${c['attributes']['klasse_de']}

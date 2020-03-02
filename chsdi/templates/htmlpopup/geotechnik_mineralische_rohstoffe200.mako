@@ -8,9 +8,9 @@
 %>
     <tr><td colspan="3">&nbsp;</tr>
     <tr>
-      <td>${t.translate('Legend', lang)}</td>
+      <td>${t.Translator.translate('Legend', lang)}</td>
       <td width="20">&nbsp;</td>
-      <td><a href="${url_pdf}" target="_blank">${t.translate('tt_geotechnik_gk200', lang)}</a> - ${c['attributes']['area_name'] or '-'}</td>
+      <td><a href="${url_pdf}" target="_blank">${t.Translator.translate('tt_geotechnik_gk200', lang)}</a> - ${c['attributes']['area_name'] or '-'}</td>
     </tr>
     <tr><td colspan="3">&nbsp;</tr>
 </%def>

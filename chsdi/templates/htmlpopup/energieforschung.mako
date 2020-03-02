@@ -11,23 +11,23 @@
   <col width=70%>
  </colgroup>
 <tr>
-  <td class="cell-left">${t.translate('ch.bfe.energieforschung.titel', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('ch.bfe.energieforschung.titel', lang)}</td>
   <td>${c['attributes']['titel'] or '-'|n}</td>
 </tr>
 <tr>
-  <td class="cell-left">${t.translate('ch.bfe.energieforschung.beschreibung', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('ch.bfe.energieforschung.beschreibung', lang)}</td>
   <td>${c['attributes']['beschreibung'] or '-'|n}</td>
 </tr>
 <tr>
-  <td class="cell-left">${t.translate('ch.bfe.energieforschung.leuchtturm', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('ch.bfe.energieforschung.leuchtturm', lang)}</td>
 % if c['attributes']['leuchtturm']==0:
-      <td class="cell-left">${t.translate('leuchtturm_0', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('leuchtturm_0', lang)}</td>
 % else:
-      <td class="cell-left">${t.translate('leuchtturm_1', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('leuchtturm_1', lang)}</td>
 %endif
 </tr>
 <tr>
-  <td class="cell-left">${t.translate('ch.bfe.energieforschung.projektstatus', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('ch.bfe.energieforschung.projektstatus', lang)}</td>
   <td>${c['attributes'][projektstatus] or '-'}</td>
 </tr>
 </%def>
@@ -63,18 +63,18 @@ date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "
   </tr>
   <tr>
     <td class="cell-meta">
-      ${t.translate('ch.bfe.energieforschung.projektnummer', lang)}
+      ${t.Translator.translate('ch.bfe.energieforschung.projektnummer', lang)}
     </td>
     <td class="cell-meta">
       ${c['attributes']['projektnummer'] or '-'}
     </td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bfe.energieforschung.leuchtturm', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bfe.energieforschung.leuchtturm', lang)}</td>
     % if c['attributes']['leuchtturm']==0:
-    <td class="cell-meta">${t.translate('leuchtturm_0', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('leuchtturm_0', lang)}</td>
     % else:
-    <td class="cell-meta">${t.translate('leuchtturm_1', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('leuchtturm_1', lang)}</td>
     %endif
   </tr>
   <tr>
@@ -82,7 +82,7 @@ date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "
   </tr>
   <tr>
     <td class="cell-meta">
-      ${t.translate('ch.bfe.energieforschung.projektstatus', lang)}
+      ${t.Translator.translate('ch.bfe.energieforschung.projektstatus', lang)}
     </td>
     <td class="cell-meta">
       ${c['attributes'][projektstatus] or '-'}
@@ -90,7 +90,7 @@ date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "
   </tr>
   <tr>
     <td class="cell-meta">
-      ${t.translate('ch.bfe.energieforschung.projektdauer', lang)}
+      ${t.Translator.translate('ch.bfe.energieforschung.projektdauer', lang)}
     </td>
     <td class="cell-meta">
       ${date_beginn or '-'}  -  ${date_ende or '-'}
@@ -98,7 +98,7 @@ date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "
   </tr>
   <tr>
     <td class="cell-meta">
-      ${t.translate('ch.bfe.energieforschung.thema', lang)}
+      ${t.Translator.translate('ch.bfe.energieforschung.thema', lang)}
     </td>
     <td class="cell-meta">
       ${c['attributes'][oberthema] or '-'}:<br/>
@@ -107,7 +107,7 @@ date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "
   </tr>
   <tr>
     <td class="cell-meta">
-      ${t.translate('ch.bfe.energieforschung.bericht', lang)}
+      ${t.Translator.translate('ch.bfe.energieforschung.bericht', lang)}
     </td>
     % if c['attributes']['bericht'] == "":
        <td class="cell-meta">-</td>
@@ -117,7 +117,7 @@ date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "
   </tr>
   <tr>
     <td class="cell-meta">
-      ${t.translate('ch.bfe.energieforschung.fachartikel', lang)}
+      ${t.Translator.translate('ch.bfe.energieforschung.fachartikel', lang)}
     </td>
     % if c['attributes']['fachartikel'] == "":
        <td class="cell-meta">-</td>
@@ -127,7 +127,7 @@ date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "
   </tr>
   <tr>
     <td class="cell-meta">
-      ${t.translate('ch.bfe.energieforschung.infoclip', lang)}
+      ${t.Translator.translate('ch.bfe.energieforschung.infoclip', lang)}
     </td>
     % if c['attributes']['infoclip'] == "":
        <td class="cell-meta">-</td>
@@ -137,7 +137,7 @@ date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "
   </tr>
   <tr>
     <td class="cell-meta">
-      ${t.translate('ch.bfe.energieforschung.projektpartner', lang)}
+      ${t.Translator.translate('ch.bfe.energieforschung.projektpartner', lang)}
     </td>
     <td class="cell-meta">
       ${c['attributes']['projektpartner'] or '-'}
@@ -145,7 +145,7 @@ date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "
   </tr> 
   <tr>
     <td class="cell-meta">
-      ${t.translate('ch.bfe.energieforschung.kontakt', lang)}
+      ${t.Translator.translate('ch.bfe.energieforschung.kontakt', lang)}
     </td>
     <td class="cell-meta">
       ${c['attributes']['kontakt'] or '-'}
@@ -153,7 +153,7 @@ date_ende = datetime.datetime.strptime(c['attributes']['projektende'].strip(), "
   </tr>
   <tr>
     <td class="cell-meta">
-      ${t.translate('ch.bfe.energieforschung.projektstandort', lang)}
+      ${t.Translator.translate('ch.bfe.energieforschung.projektstandort', lang)}
     </td>
     <td class="cell-meta">
       ${c['attributes']['plz'] or '-'} ${c['attributes']['ort'] or '-'} (${c['attributes']['kanton'] or '-'})
