@@ -17,15 +17,15 @@
 % endif
 % if 'klasse' in c['attributes']:
    % if c['attributes']['klasse']== 'TYP1':
-    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.hebungsraten.klasse')}</td><td>${_('ch.swisstopo.hebungsraten.typ1', lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.hebungsraten.klasse', lang)}</td><td>${t.Translator.translate('ch.swisstopo.hebungsraten.typ1', lang)}</td></tr>
    % elif c['attributes']['klasse']== 'TYP2':
-    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.hebungsraten.klasse')}</td><td>${_('ch.swisstopo.hebungsraten.typ2', lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.hebungsraten.klasse', lang)}</td><td>${t.Translator.translate('ch.swisstopo.hebungsraten.typ2', lang)}</td></tr>
    % elif c['attributes']['klasse']== 'TYP3':
-    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.hebungsraten.klasse')}</td><td>${_('ch.swisstopo.hebungsraten.typ3', lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.hebungsraten.klasse', lang)}</td><td>${t.Translator.translate('ch.swisstopo.hebungsraten.typ3', lang)}</td></tr>
    % elif c['attributes']['klasse']== 'TYP4':
-    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.hebungsraten.klasse')}</td><td>${_('ch.swisstopo.hebungsraten.typ4', lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.hebungsraten.klasse', lang)}</td><td>${t.Translator.translate('ch.swisstopo.hebungsraten.typ4', lang)}</td></tr>
    % else :
-    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.hebungsraten.klasse')}</td><td>${_('ch.swisstopo.hebungsraten.typ99', lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.hebungsraten.klasse', lang)}</td><td>${t.Translator.translate('ch.swisstopo.hebungsraten.typ99', lang)}</td></tr>
    %endif
 % endif
 % if 'contour' in c['attributes']:

@@ -8,8 +8,8 @@
     ivs_signatur = c['layerBodId'] + '.' + 'ivs_signatur'
     ivs_slaname = c['layerBodId'] + '.' + 'ivs_slaname'
 %>
-    <tr><td class="cell-left">${_(ivs_objekt)}</td><td>${c['attributes']['ivs_nummer']}</td></tr>
-    <tr><td class="cell-left">${_(ivs_signatur)}</td>
+    <tr><td class="cell-left">${t.Translator.translate(ivs_objekt, lang)}</td><td>${c['attributes']['ivs_nummer']}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate(ivs_signatur, lang)}</td>
 % if lang =='fr':
     <td>${c['attributes']['ivs_signatur_fr']}</td></tr>
 % elif lang == 'it':
@@ -21,13 +21,13 @@
     <tr><td class="cell-left">${t.Translator.translate('ivs_nat_historischen', lang)}</td><td>${c['attributes']['ivs_sladatehist'] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('ivs_nat_morphologischen', lang)}</td><td>${c['attributes']['ivs_sladatemorph']}</td></tr>
 % if c['attributes']['ivs_slabedeutung'] =='3':
-    <tr><td class="cell-left">${t.Translator.translate('ivs_slabedeutung')}</td><td>${_('national', lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ivs_slabedeutung', lang)}</td><td>${t.Translator.translate('national', lang)}</td></tr>
 % elif c['attributes']['ivs_slabedeutung'] =='2':
-    <tr><td class="cell-left">${t.Translator.translate('ivs_slabedeutung')}</td><td>${_('regional', lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ivs_slabedeutung', lang)}</td><td>${t.Translator.translate('regional', lang)}</td></tr>
 % elif c['attributes']['ivs_slabedeutung'] =='1':
-    <tr><td class="cell-left">${t.Translator.translate('ivs_slabedeutung')}</td><td>${_('lokal', lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ivs_slabedeutung', lang)}</td><td>${t.Translator.translate('lokal', lang)}</td></tr>
 % endif
-    <tr><td class="cell-left">${_(ivs_slaname)}</td><td>${c['attributes']['ivs_slaname']}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate(ivs_slaname, lang)}</td><td>${c['attributes']['ivs_slaname']}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('ivs_documentation', lang)}</td>
 <%
     from urllib2 import urlopen

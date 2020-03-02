@@ -15,8 +15,8 @@
         datefrom = '-'
 
 %>
-    <tr><td class="cell-left">${_(name)}</td>         <td>${c['attributes']['name']}</td></tr>
-    <tr><td class="cell-left">${_(beschreibung)}</td>              <td>${c['attributes'][description] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate(name, lang)}</td>         <td>${c['attributes']['name']}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate(beschreibung, lang)}</td>              <td>${c['attributes'][description] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('tt_sachplan-infrastruktur-schiene_aus_anlageart', lang)}</td>      <td>${c['attributes'][facility_kind] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('tt_ch.bfe.energieforschung_projektstatus', lang)}</td>             <td>${c['attributes'][facility_status] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('tt_sachplan-infrastruktur-schiene_aus_validform', lang)}</td>      <td>${datefrom or '-'}</td></tr>

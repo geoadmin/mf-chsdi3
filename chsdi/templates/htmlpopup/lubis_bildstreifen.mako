@@ -14,7 +14,7 @@ shop_url = request.registry.settings['shop_url']
     <tr><td class="cell-left">${t.Translator.translate('tt_lubis_Flugdatum', lang)}</td>       <td>${c['attributes']['flugdatum']}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('tt_lubis_auflosung', lang)}</td>       <td>${c['attributes']['resolution']}</td></tr>
 % if   c['attributes']['gsd'] != 0.25 and c['attributes']['gsd'] != 0.5 and round(c['attributes']['gsd'],1) != 0.1:
-    <tr><td class="cell-left">${t.Translator.translate('tt_firmen_Link')}</td>          <td><a href="mailto:geodata@swisstopo.ch?subject=${_('tt_firmen_Link ', lang)} ebkey:${c['featureId']}">geodata@swisstopo.ch</a></td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('tt_firmen_Link', lang)}</td>          <td><a href="mailto:geodata@swisstopo.ch?subject=${t.Translator.translate('tt_firmen_Link ', lang)} ebkey:${c['featureId']}">geodata@swisstopo.ch</a></td></tr>
 % endif
 </%def>
 
@@ -46,7 +46,7 @@ lang = request.lang
         <td><a href="https:${shop_url}/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
 target="toposhop">Online Shop</a></td></tr>
 % else:
-        <tr><th class="cell-left">${t.Translator.translate('tt_firmen_Link')}</th>              <td><a href="mailto:geodata@swisstopo.ch?subject=${_('tt_firmen_Link ', lang)} ebkey:${c['featureId']}">geodata@swisstopo.ch</a></td></tr>
+        <tr><th class="cell-left">${t.Translator.translate('tt_firmen_Link', lang)}</th>              <td><a href="mailto:geodata@swisstopo.ch?subject=${t.Translator.translate('tt_firmen_Link ', lang)} ebkey:${c['featureId']}">geodata@swisstopo.ch</a></td></tr>
 % endif
 </table>
   <br>

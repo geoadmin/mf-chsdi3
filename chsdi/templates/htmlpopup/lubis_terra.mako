@@ -91,7 +91,7 @@ params = (
 viewer_url = get_viewer_url(request, params)
 %>
 <tr>
-  <td class="cell-left">${_(tt_lubis_ebkey)}</td>
+  <td class="cell-left">${t.Translator.translate(tt_lubis_ebkey, lang)}</td>
   <td>${c['attributes']['image_number'] or '-'}</td>
 </tr>
 <tr><td class="cell-left">${t.Translator.translate('tt_lubis_inventarnummer', lang)}</td>          <td>${c['attributes']['inventarnummer'] or '-'}</td></tr>
@@ -233,7 +233,7 @@ url_smapshot= "https://smapshot.heig-vd.ch/map/?imageId={}".format(c['attributes
 % endif
         </td>
     </tr>
-    <tr><th class="cell-left">${t.Translator.translate('link')} smapshot</th>         <td><a href="${url_smapshot}" target="_blank">${_('link', lang)} smapshot</a></td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('link', lang)} smapshot</th>         <td><a href="${url_smapshot}" target="_blank">${t.Translator.translate('link', lang)} smapshot</a></td></tr>
   <tr class="chsdi-no-print">
     <th class="cell-left">${t.Translator.translate('link', lang)} Online Shop</th>
     <td><a href="https:${shop_url}/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"

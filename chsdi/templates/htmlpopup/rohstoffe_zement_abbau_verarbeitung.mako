@@ -19,5 +19,5 @@
        <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.stkind', lang)}</td><td>${c['attributes']['stkind'] or '-'}</td></tr>
        <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.tlyearsformatted', lang)}</td><td>${c['attributes']['tlyearsformatted'] or '-'}</td></tr>
        <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.clkind', lang)}</td><td>${c['attributes']['clkind'] or '-'}</td></tr>
-       <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.purl')}</td><td><a target="_blank" href=${c['attributes']['purl'] or '-'}>${_('layer_url_portal_text', lang)}</a></td></tr>
+       <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.purl', lang)}</td><td><a target="_blank" href=${c['attributes']['purl'] or '-'}>${t.Translator.translate('layer_url_portal_text', lang)}</a></td></tr>
 </%def>

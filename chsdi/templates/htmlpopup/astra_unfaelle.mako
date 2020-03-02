@@ -14,52 +14,52 @@
     motorcycle_yes_no = (layerBodId + '.yes') if c['attributes']['involving_motorcycle'] else (layerBodId + '.no')
 %>
 <% c['stable_id'] = True %>
-      <td class="cell-left">${_(layerBodId + '.accidenttype_de')}</td>
+      <td class="cell-left">${t.Translator.translate(layerBodId + '.accidenttype_de', lang)}</td>
       <td>${c['attributes'][accidenttype] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(layerBodId + '.severitycategory_de')}</td>
+      <td class="cell-left">${t.Translator.translate(layerBodId + '.severitycategory_de', lang)}</td>
       <td>${c['attributes'][severitycategory] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(layerBodId + '.accidentyear')}</td>
+      <td class="cell-left">${t.Translator.translate(layerBodId + '.accidentyear', lang)}</td>
       <td>${c['attributes']['accidentyear'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(layerBodId + '.accidentmonth_de')}</td>
+      <td class="cell-left">${t.Translator.translate(layerBodId + '.accidentmonth_de', lang)}</td>
       <td>${c['attributes'][accidentmonth] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(layerBodId + '.accidentday_de')}</td>
+      <td class="cell-left">${t.Translator.translate(layerBodId + '.accidentday_de', lang)}</td>
       <td>${c['attributes'][accidentday] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(layerBodId + '.accidenthour_text')}</td>
+      <td class="cell-left">${t.Translator.translate(layerBodId + '.accidenthour_text', lang)}</td>
       <td>${c['attributes']['accidenthour_text'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(layerBodId + '.roadtype_de')}</td>
+      <td class="cell-left">${t.Translator.translate(layerBodId + '.roadtype_de', lang)}</td>
       <td>${c['attributes'][roadtype] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(layerBodId + '.canton')}</td>
+      <td class="cell-left">${t.Translator.translate(layerBodId + '.canton', lang)}</td>
       <td>${c['attributes']['canton'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(layerBodId + '.fsocommunecode')}</td>
+      <td class="cell-left">${t.Translator.translate(layerBodId + '.fsocommunecode', lang)}</td>
       <td>${c['attributes']['fsocommunecode'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(layerBodId + '.involving_pedestrian')}</td>
-      <td>${_(pedestrian_yes_no)}</td>
+      <td class="cell-left">${t.Translator.translate(layerBodId + '.involving_pedestrian', lang)}</td>
+      <td>${t.Translator.translate(pedestrian_yes_no, lang)}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(layerBodId + '.involving_bicycle')}</td>
-      <td>${_(bicycle_yes_no)}</td>
+      <td class="cell-left">${t.Translator.translate(layerBodId + '.involving_bicycle', lang)}</td>
+      <td>${t.Translator.translate(bicycle_yes_no, lang)}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(layerBodId + '.involving_motorcycle')}</td>
-      <td>${_(motorcycle_yes_no)}</td>
+      <td class="cell-left">${t.Translator.translate(layerBodId + '.involving_motorcycle', lang)}</td>
+      <td>${t.Translator.translate(motorcycle_yes_no, lang)}</td>
     </tr>
 
 </%def>

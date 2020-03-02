@@ -8,7 +8,7 @@
       <td class="cell-left">${t.Translator.translate('kkw', lang)}</td>
       <td>${c['attributes']['name']}</td></tr>
     <tr>
-      <td class="cell-left">${t.Translator.translate('kkw')}>${_('zone', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('kkw', lang)}>${t.Translator.translate('zone', lang)}</td>
       <td>${c['attributes']['zone'] or '-'}</td></tr>
     <tr>
       <td class="cell-left">${t.Translator.translate('sektor', lang)}</td>

@@ -5,7 +5,7 @@
     <tr><td class="cell-left">${t.Translator.translate('city_name', lang)}</td><td>${c['attributes']['objname']}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('einwohnerzahl', lang)}</td><td>
     % if c['attributes']['ppi']:
-    ${_(c['attributes']['ppi'])}
+    ${t.Translator.translate(c['attributes']['ppi'], lang)}
     % else:
     -
     % endif

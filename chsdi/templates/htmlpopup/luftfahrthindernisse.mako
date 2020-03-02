@@ -107,16 +107,16 @@ from pyramid.url import route_url
       <th style="text-align:left" colspan="2">${t.Translator.translate('Bounding Box - Coordinates', lang)} [CH1903]:</th>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est')}=${c['bbox'][0]}    ${_('nord', lang)}=${c['bbox'][1]}</td>
+      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est', lang)}=${c['bbox'][0]}    ${t.Translator.translate('nord', lang)}=${c['bbox'][1]}</td>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est')}=${c['bbox'][0]}    ${_('nord', lang)}=${c['bbox'][3]}</td>
+      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est', lang)}=${c['bbox'][0]}    ${t.Translator.translate('nord', lang)}=${c['bbox'][3]}</td>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est')}=${c['bbox'][2]}    ${_('nord', lang)}=${c['bbox'][1]}</td>
+      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est', lang)}=${c['bbox'][2]}    ${t.Translator.translate('nord', lang)}=${c['bbox'][1]}</td>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est')}=${c['bbox'][2]}    ${_('nord', lang)}=${c['bbox'][3]}</td>
+      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est', lang)}=${c['bbox'][2]}    ${t.Translator.translate('nord', lang)}=${c['bbox'][3]}</td>
     </tr>
 
 % else:
@@ -124,11 +124,11 @@ from pyramid.url import route_url
       <th style="text-align:left" colspan="2">${t.Translator.translate('Coordinates', lang)} [CH1903]:</th>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est')}=${c['bbox'][0]}    ${_('nord', lang)}=${c['bbox'][1]}</td>
+      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est', lang)}=${c['bbox'][0]}    ${t.Translator.translate('nord', lang)}=${c['bbox'][1]}</td>
     </tr>
   % if attr['geomtype'] == 'line':
       <tr>
-        <td class="cell-meta-one" colspan="2">${t.Translator.translate('est')}=${c['bbox'][2]}    ${_('nord', lang)}=${c['bbox'][3]}</td>
+        <td class="cell-meta-one" colspan="2">${t.Translator.translate('est', lang)}=${c['bbox'][2]}    ${t.Translator.translate('nord', lang)}=${c['bbox'][3]}</td>
       </tr>
   % endif
 % endif
@@ -146,7 +146,7 @@ from pyramid.url import route_url
 <div class="chsdi-map-container table-with-border" style="width: 100%; height: 400px;">
   <div id="map${id}"></div>
 </div>
-<div style="font-size:12px; text-align:justify;">${t.Translator.translate('tt_ch.bazl_longtext')} <br>${_('date', lang)}: ${datenstand}</div>
+<div style="font-size:12px; text-align:justify;">${t.Translator.translate('tt_ch.bazl_longtext', lang)} <br>${t.Translator.translate('date', lang)}: ${datenstand}</div>
 <script type="text/javascript">
   function init${id}() {
     var map = new ga.Map({

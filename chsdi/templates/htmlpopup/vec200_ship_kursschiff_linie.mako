@@ -9,6 +9,6 @@
         ${c['attributes']['detn'] or '-'}
         % endif
     </td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('jahrezeitenrythmus', lang)}</td><td>${_(c['attributes']['rsu'])}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('nutzungsart_verbindung', lang)}</td><td>${_(c['attributes']['use'])}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('jahrezeitenrythmus', lang)}</td><td>${t.Translator.translate(c['attributes']['rsu'], lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('nutzungsart_verbindung', lang)}</td><td>${t.Translator.translate(c['attributes']['use'], lang)}</td></tr>
 </%def>

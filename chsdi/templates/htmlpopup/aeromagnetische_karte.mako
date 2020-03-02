@@ -13,7 +13,7 @@
 
 %>
 
-    <tr><td class="cell-left">${_(aeromagnetische_label)}</td>
+    <tr><td class="cell-left">${t.Translator.translate(aeromagnetische_label, lang)}</td>
     <td>${c['attributes'][aeromagnetische_values]}</td></tr>
 
 </%def>

@@ -11,5 +11,5 @@
     <tr><td class="cell-left">${t.Translator.translate('ch.bfe.solarenergie-eignung-daecher.ausrichtung', lang)}</td>                     <td>${(c['attributes']['ausrichtung'] + 180)}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('ch.bfe.solarenergie-eignung-daecher.neigung', lang)}</td>                     <td>${c['attributes']['neigung'] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('ch.bfe.solarenergie-eignung-daecher.finanzertrag', lang)}</td>                     <td>${round(c['attributes']['finanzertrag'], -1)}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('link_to_sonnendach')}</td>                                               <td><a href="https://www.uvek-gis.admin.ch/BFE/sonnendach/?featureId=${c['featureId']}&lang=${lang}" target="_blank">${_('sonnendach_link', lang)}</a></td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('link_to_sonnendach', lang)}</td>                                               <td><a href="https://www.uvek-gis.admin.ch/BFE/sonnendach/?featureId=${c['featureId']}&lang=${lang}" target="_blank">${t.Translator.translate('sonnendach_link', lang)}</a></td></tr>
 </%def>

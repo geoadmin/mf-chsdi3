@@ -27,7 +27,7 @@ badewasserqualitaet_eua = 'ch.bafu.gewaesserschutz-badewasserqualitaet.%s' % c['
     </tr>
     <tr>
       <td class="cell-left">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_eua', lang)}</td>
-      <td>${_(badewasserqualitaet_eua)}</td>
+      <td>${t.Translator.translate(badewasserqualitaet_eua, lang)}</td>
     </tr>
     <tr>
       <td class="cell-left">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.anzahlmessungen', lang)}</td>
@@ -122,7 +122,7 @@ lang = request.lang
   </tr>
   <tr>
     <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_eua', lang)}</td>
-    <td class="cell-meta">${_(badewasserqualitaet_eua)}</td>
+    <td class="cell-meta">${t.Translator.translate(badewasserqualitaet_eua, lang)}</td>
   </tr>
 </table>
 <br />

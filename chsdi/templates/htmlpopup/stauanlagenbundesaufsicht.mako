@@ -11,7 +11,7 @@
     <tr><td class="cell-left">${t.Translator.translate('baujahr', lang)}</td>                                                <td>${c['attributes']['baujahr'] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('tt_ch.bfe.stauanlagen-bundesaufsicht_damtype', lang)}</td>           <td>${c['attributes'][damtype] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('tt_ch.bfe.stauanlagen-bundesaufsicht_damheight', lang)}</td>         <td>${int(c['attributes']['damheight']) or '-'}&nbsp;m</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel')}</td>        <td>${int(c['attributes']['crestlevel']) or '-'}&nbsp;${_('abk_meter_ueber_meer', lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel', lang)}</td>        <td>${int(c['attributes']['crestlevel']) or '-'}&nbsp;${t.Translator.translate('abk_meter_ueber_meer', lang)}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('tt_ch.bfe.stauanlagen-bundesaufsicht_crestlength', lang)}</td>       <td>${int(c['attributes']['crestlength']) or '-'}&nbsp;m</td></tr>
 </%def>
 
@@ -58,7 +58,7 @@
             <td>${c['attributes']['impoundmentvolume']}</td>
         </tr>
         <tr>
-            <th class="cell-left">${t.Translator.translate('tt_ch.bfe.stauanlagen-bundesaufsicht_stauzielskote')} [${_('abk_meter_ueber_meer', lang)}]</th>
+            <th class="cell-left">${t.Translator.translate('tt_ch.bfe.stauanlagen-bundesaufsicht_stauzielskote', lang)} [${t.Translator.translate('abk_meter_ueber_meer', lang)}]</th>
             <td>${c['attributes']['impoundmentlevel']}</td>
         </tr>
         <tr>
@@ -77,7 +77,7 @@
             <td>${c['attributes']['damheight']}</td>
         </tr>
         <tr>
-            <th class="cell-left">${t.Translator.translate('tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel')} [${_('abk_meter_ueber_meer', lang)}]</th>
+            <th class="cell-left">${t.Translator.translate('tt_ch.bfe.stauanlagen-bundesaufsicht_crestlevel', lang)} [${t.Translator.translate('abk_meter_ueber_meer', lang)}]</th>
             <td>${c['attributes']['crestlevel']}</td>
         </tr>
         <tr>

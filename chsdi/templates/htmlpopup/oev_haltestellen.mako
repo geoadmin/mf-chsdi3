@@ -130,7 +130,7 @@ $(document).ready(function() {
       timeDiffCol.html(timeDiff);
       predictableDelayCol.html(delay);
     }).fail(function() {
-      destinationCol.html('<p style="height:24px; margin:0px;">${t.Translator.translate('ch.bav.haltestellen-oev.nodata2')}</p>');
+      destinationCol.html('<p style="height:24px; margin:0px;">${t.Translator.translate('ch.bav.haltestellen-oev.nodata2', lang)}</p>');
     });
   };
 
@@ -215,7 +215,7 @@ $(document).ready(function() {
   </tr>
   <tr>
     <td class="cell-meta">${t.Translator.translate('ch.bav.haltestellen-oev.verkehrsmittel', lang)}</td>
-    <td class="cell-meta">${_(verkehr)}</td>
+    <td class="cell-meta">${t.Translator.translate(verkehr, lang)}</td>
   </tr>
   <tr>
       <td class="cell-meta"></td>

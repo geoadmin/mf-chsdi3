@@ -21,6 +21,6 @@
     <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.clkind', lang)}</td><td>${c['attributes']['clkind'] or '-'}</td></tr>
 %endif
 %if c['attributes']['purl']:
-    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.purl')}</td><td><a  target="_blank" href=${c['attributes']['purl'] or '-'}>${_('layer_url_portal_text', lang)}</a></td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.purl', lang)}</td><td><a  target="_blank" href=${c['attributes']['purl'] or '-'}>${t.Translator.translate('layer_url_portal_text', lang)}</a></td></tr>
 %endif
 </%def>

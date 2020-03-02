@@ -64,7 +64,7 @@
             <th class="cell-left">${t.Translator.translate('tt_kbs_objektart', lang)}</th>
             <td>
                 % for i, objart in enumerate(objarts):
-                    ${_('kultur' + objart) + ' / ' if (i+1<len(objarts)) else _('kultur' + objart)}
+                    ${t.Translator.translate('kultur' + objart) + ' / ' if (i+1<len(objarts)) else _('kultur' + objart, lang)}
                 % endfor
             </td>
         </tr>
@@ -77,7 +77,7 @@
             <td>${c['attributes']['adresse'] or ''} ${c['attributes']['hausnr'] or ''}</td>
         </tr>
         <tr>
-            <th class="cell-left">${t.Translator.translate('tt_kbs_gemeinde')} (${_('tt_kbs_gemeinde_ehemalige', lang)})</th>
+            <th class="cell-left">${t.Translator.translate('tt_kbs_gemeinde', lang)} (${t.Translator.translate('tt_kbs_gemeinde_ehemalige', lang)})</th>
             <td>${c['attributes']['gemeinde'] or ''} ${'('+c['attributes']['gemeinde_ehemalig']+')' if c['attributes']['gemeinde_ehemalig'] else ''}</td>
         </tr>
         <tr>

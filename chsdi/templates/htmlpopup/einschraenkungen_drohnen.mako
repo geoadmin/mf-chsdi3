@@ -11,6 +11,6 @@
     <tr><td class="cell-left">${t.Translator.translate('ch.bazl.einschraenkungen-drohnen.name', lang)}</td>    	<td>${c['attributes'][name] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('ch.bazl.einschraenkungen-drohnen.restr', lang)}</td>     <td>${c['attributes'][restr] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('ch.bazl.einschraenkungen-drohnen.bew_st', lang)}</td>    <td>${c['attributes'][bew_st] or '-'}</td></tr>
-    <td>${t.Translator.translate('ch.bazl.einschraenkungen-drohnen.bew_li')}</td>                          <td><a href="${c['attributes'][bew_li]}" target="_blank">${_('ch.bazl.einschraenkungen-drohnen.bew_li_url', lang)}</a>
+    <td>${t.Translator.translate('ch.bazl.einschraenkungen-drohnen.bew_li', lang)}</td>                          <td><a href="${c['attributes'][bew_li]}" target="_blank">${t.Translator.translate('ch.bazl.einschraenkungen-drohnen.bew_li_url', lang)}</a>
 </%def>
 
