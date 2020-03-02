@@ -1,11 +1,11 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c,lang)">
-       <tr><td class="cell-left">${_('ch.swisstopo.verschiebungsvektoren-tsp2.name')}</td><td>${c['attributes']['name'] or '-'}</td></tr>
-       <tr><td class="cell-left">${_('typ')}</td><td>${c['attributes']['type'] or '-'}</td></tr>
-       <tr><td class="cell-left">${_('fp_Y03_X03')}</td><td>${c['attributes']['e_lv03'] or '-'} / ${c['attributes']['n_lv03'] or '-'}</td></tr>
-       <tr><td class="cell-left">${_('fp_E95_N95')}</td><td>${c['attributes']['e_lv95'] or '-'} / ${c['attributes']['n_lv95'] or '-'}</td></tr>
-       <tr><td class="cell-left">${_('DE')}</td><td>${c['attributes']['de'] or '-'}</td></tr>
-       <tr><td class="cell-left">${_('DN')}</td><td>${c['attributes']['dn'] or '-'}</td></tr>
-       <tr><td class="cell-left">${_('FS')}</td><td>${c['attributes']['fs'] or '-'}</td></tr>
+       <tr><td class="cell-left">${Translator.translate('ch.swisstopo.verschiebungsvektoren-tsp2.name', lang)}</td><td>${c['attributes']['name'] or '-'}</td></tr>
+       <tr><td class="cell-left">${Translator.translate('typ', lang)}</td><td>${c['attributes']['type'] or '-'}</td></tr>
+       <tr><td class="cell-left">${Translator.translate('fp_Y03_X03', lang)}</td><td>${c['attributes']['e_lv03'] or '-'} / ${c['attributes']['n_lv03'] or '-'}</td></tr>
+       <tr><td class="cell-left">${Translator.translate('fp_E95_N95', lang)}</td><td>${c['attributes']['e_lv95'] or '-'} / ${c['attributes']['n_lv95'] or '-'}</td></tr>
+       <tr><td class="cell-left">${Translator.translate('DE', lang)}</td><td>${c['attributes']['de'] or '-'}</td></tr>
+       <tr><td class="cell-left">${Translator.translate('DN', lang)}</td><td>${c['attributes']['dn'] or '-'}</td></tr>
+       <tr><td class="cell-left">${Translator.translate('FS', lang)}</td><td>${c['attributes']['fs'] or '-'}</td></tr>
 </%def>

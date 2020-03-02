@@ -175,24 +175,24 @@
     <div class="header">${title}</div>
     <div class="wrapper">
       <div id="lubismap">
-        <button id="contrast_activate" class="button btn btn-secondary btn-sm d-block">${_('image_contrast_activate')}</button>
+        <button id="contrast_activate" class="button btn btn-secondary btn-sm d-block">${Translator.translate('image_contrast_activate', lang)}</button>
       </div>
     </div>
     <div class="footer">
-      <a class="pull-left" href="${_('disclaimer url')}" target="_blank">Copyright</a>
+      <a class="pull-left" href="${Translator.translate('disclaimer url', lang)}" target="_blank">Copyright</a>
       <div id="messagectrl"></div>
       <script>
         if ( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
           if (navigator.platform.substr(0,3) == 'Mac') {
-            document.getElementById("messagectrl").innerHTML = "${_('rotation key apple')}";
+            document.getElementById("messagectrl").innerHTML = "${Translator.translate('rotation key apple', lang)}";
           } else {
-            document.getElementById("messagectrl").innerHTML = "${_('rotation key')}";
+            document.getElementById("messagectrl").innerHTML = "${Translator.translate('rotation key', lang)}";
           }
         }
       </script>
   % if displayLink:
       <div class="pull-right">
-        <a class="link-red" href="${''.join((baseUrl, '?', layerBodId, '=', str(featureId), '&lang=', lang, '&topic=', topic))}" target="new">${_('Link to object')}</a>
+        <a class="link-red" href="${''.join((baseUrl, '?', layerBodId, '=', str(featureId), '&lang=', lang, '&topic=', topic))}" target="new">${Translator.translate('Link to object', lang)}</a>
       </div>
   % endif
     </div>
@@ -402,11 +402,11 @@
         function onButtonChange() {
           if (contrastLayer.getVisible() == true){
             contrastLayer.setVisible(false);
-            contrastButtonActivate.innerHTML = "${_('image_contrast_activate')}";
+            contrastButtonActivate.innerHTML = "${Translator.translate('image_contrast_activate', lang)}";
             setContrastPermalink('false')
           } else{
             contrastLayer.setVisible(true);
-            contrastButtonActivate.innerHTML = "${_('image_contrast_deactivate')}";
+            contrastButtonActivate.innerHTML = "${Translator.translate('image_contrast_deactivate', lang)}";
             setContrastPermalink('true')
           }
         }

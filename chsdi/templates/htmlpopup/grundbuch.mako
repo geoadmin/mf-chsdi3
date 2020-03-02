@@ -1,7 +1,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c,lang)">
-     <tr><td class="cell-left">${_('grundfuehrung')}</td>
+     <tr><td class="cell-left">${Translator.translate('grundfuehrung', lang)}</td>
      % if lang == 'de' or lang == 'rm' or lang == 'en':
           <td>${c['attributes']['grundbuchfuehrung_d'] or '-'}</td>
      % elif lang == 'fr':
@@ -10,9 +10,9 @@
           <td>${c['attributes']['grundbuchfuehrung_i'] or '-'}</td>
      % endif
     </tr>
-    <tr><td class="cell-left">${_('grundgemeinde')}</td>    <td>${c['attributes']['ortsteil_grundbuch'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('grundkreis')}</td>    <td>${c['attributes']['grundbuchkreis'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('grundadresse')}</td>
+    <tr><td class="cell-left">${Translator.translate('grundgemeinde', lang)}</td>    <td>${c['attributes']['ortsteil_grundbuch'] or '-'}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('grundkreis', lang)}</td>    <td>${c['attributes']['grundbuchkreis'] or '-'}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('grundadresse', lang)}</td>
     % if c['attributes']['adresse'].strip() == "#":
        <td>-</td>
     % else:
@@ -23,8 +23,8 @@
       </td>
     % endif
     </tr>
-    <tr><td class="cell-left">${_('grundtel')}</td>    <td>${c['attributes']['telefon'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('grundurl')}</td>
+    <tr><td class="cell-left">${Translator.translate('grundtel', lang)}</td>    <td>${c['attributes']['telefon'] or '-'}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('grundurl', lang)}</td>
       % if c['attributes']['email'] == None:
         <td>-</td>
       % else:

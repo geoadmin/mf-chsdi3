@@ -4,31 +4,31 @@
 
 <%def name="table_body(c, lang)">
     <tr>
-      <td class="cell-left-large">${_('tezgnr40')}</td>
+      <td class="cell-left-large">${Translator.translate('tezgnr40', lang)}</td>
       <td>${c['attributes']['teilezgnr'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left-large">${_('klwkp_gwlnr')}</td>
+      <td class="cell-left-large">${Translator.translate('klwkp_gwlnr', lang)}</td>
       <td>${c['attributes']['gwlnr'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left-large">${_('tt_measure')}</td>
+      <td class="cell-left-large">${Translator.translate('tt_measure', lang)}</td>
       <td>${c['attributes']['measure'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left-large">${_('tt_endmeasure')}</td>
+      <td class="cell-left-large">${Translator.translate('tt_endmeasure', lang)}</td>
       <td>${c['attributes']['endmeasure'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left-large">${_('gewaesser')}</td>
+      <td class="cell-left-large">${Translator.translate('gewaesser', lang)}</td>
       <td>${c['attributes']['name'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left-large">${_('tt_regimenr')}</td>
+      <td class="cell-left-large">${Translator.translate('tt_regimenr', lang)}</td>
       <td>${c['attributes']['regimenr'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left-large">${_('tt_regimetyp')}</td>
+      <td class="cell-left-large">${Translator.translate('tt_regimetyp', lang)}</td>
       <td>${c['attributes']['regimetyp'] or '-'}</td>
     </tr>
 </%def>

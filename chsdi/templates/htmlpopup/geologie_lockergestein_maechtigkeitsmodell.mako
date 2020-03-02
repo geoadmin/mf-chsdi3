@@ -7,6 +7,6 @@ if height < 0.0:
   height = '-'
 %>
     <% c['stable_id'] = False %>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell.height')}</td>           <td>${height}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell.height', lang)}</td>           <td>${height}</td></tr>
 </%def>
 

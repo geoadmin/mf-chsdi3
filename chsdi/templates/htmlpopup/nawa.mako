@@ -6,10 +6,10 @@
   klasse = 'klasse_%s' % lang
 %>
 
-<tr><td class="cell-left">${_('gewaesserschutz_klasse')}</td> <td>${c['attributes'][klasse]}</td></tr>
-<tr><td class="cell-left">${_('gewaesserschutz_gewaesser')}</td> <td>${c['attributes']['gewaesser']}</td></tr>
-<tr><td class="cell-left">${_('tt_ch_bav_kataster_belasteter_standorte_oev_standortname')}</td> <td>${c['attributes']['stelle_neu']}</td></tr>
-<tr><td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw')}</td> <td>${c['attributes']['jahr']}</td></tr>
-<tr><td class="cell-left">${_('kanton')}</td> <td>${c['attributes']['kanton']}</td></tr>
+<tr><td class="cell-left">${Translator.translate('gewaesserschutz_klasse', lang)}</td> <td>${c['attributes'][klasse]}</td></tr>
+<tr><td class="cell-left">${Translator.translate('gewaesserschutz_gewaesser', lang)}</td> <td>${c['attributes']['gewaesser']}</td></tr>
+<tr><td class="cell-left">${Translator.translate('tt_ch_bav_kataster_belasteter_standorte_oev_standortname', lang)}</td> <td>${c['attributes']['stelle_neu']}</td></tr>
+<tr><td class="cell-left">${Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw', lang)}</td> <td>${c['attributes']['jahr']}</td></tr>
+<tr><td class="cell-left">${Translator.translate('kanton', lang)}</td> <td>${c['attributes']['kanton']}</td></tr>
 
 </%def>

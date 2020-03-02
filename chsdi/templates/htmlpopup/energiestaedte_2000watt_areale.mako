@@ -9,15 +9,15 @@
   %>
 
 <tr>
-  <td class="cell-left">${_('ch.bfe.energiestaedte-2000watt-areale.name')}</td>
+  <td class="cell-left">${Translator.translate('ch.bfe.energiestaedte-2000watt-areale.name', lang)}</td>
   <td>${c['attributes']['name'] or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${_('ch.bfe.energiestaedte-2000watt-areale.state')}</td>
+  <td class="cell-left">${Translator.translate('ch.bfe.energiestaedte-2000watt-areale.state', lang)}</td>
   <td>${c['attributes'][bezeichnung_kat] or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${_('areal_gemeinde')}</td>
+  <td class="cell-left">${Translator.translate('areal_gemeinde', lang)}</td>
   <td>${c['attributes']['gemeinde'] or '-'}</td>
 </tr>
 </%def>
@@ -32,7 +32,7 @@
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
   <tr>
     <th class="cell-meta">
-     ${_('ch.bfe.energiestaedte-2000watt-areale.name_watt')}
+     ${Translator.translate('ch.bfe.energiestaedte-2000watt-areale.name_watt', lang)}
     </th>
     <td>
       ${c['attributes']['name']}
@@ -40,7 +40,7 @@
   </tr>
   <tr>
     <th class="cell-meta">
-     ${_('ch.bfe.energiestaedte-2000watt-areale.state')}
+     ${Translator.translate('ch.bfe.energiestaedte-2000watt-areale.state', lang)}
     </th>
     <td>
       ${c['attributes'][bezeichnung_kat] or '-'}
@@ -48,7 +48,7 @@
   </tr>
   <tr>
     <th class="cell-meta">
-      ${_('areal_gemeinde')}
+      ${Translator.translate('areal_gemeinde', lang)}
     </th>
     <td>
       ${c['attributes']['gemeinde'] or '-'}
@@ -56,7 +56,7 @@
   </tr>
   <tr>
     <th class="cell-meta">
-      ${_('berater')}
+      ${Translator.translate('berater', lang)}
     </th>
   % if c['attributes']['linkberater'] is None:
     <td class="cell-meta"> - </td>
@@ -69,19 +69,19 @@
   <tr>
   % if lang=='fr':
     <th class="cell-meta">
-      ${_('faktenblatt')}
+      ${Translator.translate('faktenblatt', lang)}
     </th>
   % if c['attributes']['linkfaktenblatt_fr'] is None:
     <td class="cell-meta"> - </td>
   % else:
     <td class="cell-meta">
-      <a target="_blank" href="${c['attributes']['linkfaktenblatt_fr']}">${_('link')}</a>
+      <a target="_blank" href="${c['attributes']['linkfaktenblatt_fr']}">${Translator.translate('link', lang)}</a>
     </td>
   % endif
   </tr>
   <tr>
     <th class="cell-meta" colspan="2">
-      ${_('kurzerklaerung')}
+      ${Translator.translate('kurzerklaerung', lang)}
     </th>
   </tr>
   <tr>
@@ -93,26 +93,26 @@ Le label «Sites 2000 watts» récompense des agglomérations qui adoptent un co
     </p></td>
     </tr>
     <th class="cell-meta">
-      ${_('link')}
+      ${Translator.translate('link', lang)}
     </th>
     <td class="cell-meta">
       <a target="_blank" href="https://www.2000watt.swiss/fr/">Sites à 2000 watts</a>
     </td>
   % elif lang=='it' :
     <th class="cell-meta">
-      ${_('faktenblatt')}
+      ${Translator.translate('faktenblatt', lang)}
     </th>
   % if c['attributes']['linkfaktenblatt_it'] is None:
     <td class="cell-meta"> - </td>
   % else:
     <td class="cell-meta">
-      <a target="_blank" href="${c['attributes']['linkfaktenblatt_it'] or '-'}">${_('link')}</a>
+      <a target="_blank" href="${c['attributes']['linkfaktenblatt_it'] or '-'}">${Translator.translate('link', lang)}</a>
     </td>
   % endif
   </tr>
   <tr>
     <th class="cell-meta" colspan="2">
-      ${_('kurzerklaerung')}
+      ${Translator.translate('kurzerklaerung', lang)}
     </th>
   </tr>
   <tr>
@@ -124,26 +124,26 @@ Il label per aree 2000 Watt è conferito ad aree di insediamento che possono dim
     </p></td>
     </tr>
     <th class="cell-meta">
-      ${_('link')}
+      ${Translator.translate('link', lang)}
     </th>
     <td class="cell-meta">
       <a target="_blank" href="https://www.2000watt.swiss/it/">Aree a 2000 Watt</a>
     </td>
   % elif lang=='en':
     <th class="cell-meta">
-      ${_('faktenblatt')}
+      ${Translator.translate('faktenblatt', lang)}
     </th>
   % if c['attributes']['linkfaktenblatt_en'] is None:
     <td class="cell-meta"> - </td>
   % else:
     <td class="cell-meta">
-      <a target="_blank" href="${c['attributes']['linkfaktenblatt_en'] or '-'}">${_('link')}</a>
+      <a target="_blank" href="${c['attributes']['linkfaktenblatt_en'] or '-'}">${Translator.translate('link', lang)}</a>
     </td>
   % endif
   </tr>
   <tr>
     <th class="cell-meta" colspan="2">
-      ${_('kurzerklaerung')}
+      ${Translator.translate('kurzerklaerung', lang)}
     </th>
   </tr>
   <tr>
@@ -155,26 +155,26 @@ This label is an instrument that is applied to residential areas that are able t
      </p></td>
     </tr>
     <th class="cell-meta">
-      ${_('link')}
+      ${Translator.translate('link', lang)}
     </th>
     <td class="cell-meta">
       <a target="_blank" href="https://www.2000watt.swiss/english.html">2000-Watt Sites</a>
     </td>
   % else :
     <th class="cell-meta">
-      ${_('faktenblatt')}
+      ${Translator.translate('faktenblatt', lang)}
     </th>
   % if c['attributes']['linkfaktenblatt_de'] is None:
     <td class="cell-meta"> - </td>
   % else:
     <td class="cell-meta">
-      <a target="_blank" href="${c['attributes']['linkfaktenblatt_de'] or '-'}">${_('link')}</a>
+      <a target="_blank" href="${c['attributes']['linkfaktenblatt_de'] or '-'}">${Translator.translate('link', lang)}</a>
     </td>
   % endif
   </tr>
   <tr>
     <th class="cell-meta" colspan="2">
-      ${_('kurzerklaerung')}
+      ${Translator.translate('kurzerklaerung', lang)}
     </th>
   </tr>
   <tr>
@@ -187,7 +187,7 @@ Das Label für 2000-Watt-Areale zeichnet Siedlungsgebiete aus, die einen nachhal
     </p></td>
     </tr>
     <th class="cell-meta">
-      ${_('link')}
+      ${Translator.translate('link', lang)}
     </th>
     <td class="cell-meta">
       <a target="_blank" href="https://www.2000watt.swiss/de/">2000-Watt Areale</a>

@@ -27,15 +27,15 @@
     address = text_creator(arr_address)
 %>
     <tr>
-        <td class="cell-left">${_('ch.bfe.erneuerbarheizen.company')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.erneuerbarheizen.company', lang)}</td>
         <td>${c['attributes']['company'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfe.erneuerbarheizen.firstname_name')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.erneuerbarheizen.firstname_name', lang)}</td>
         <td>${c['attributes']['firstname_name'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfe.erneuerbarheizen.email')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.erneuerbarheizen.email', lang)}</td>
           % if c['attributes']['email'] == None:
             <td>-</td>
           % else:
@@ -43,19 +43,19 @@
           % endif
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfe.erneuerbarheizen.phonenumber')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.erneuerbarheizen.phonenumber', lang)}</td>
         <td>${c['attributes']['phonenumber'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfe.erneuerbarheizen.pc_place')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.erneuerbarheizen.pc_place', lang)}</td>
         <td>${address}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfe.erneuerbarheizen.language')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.erneuerbarheizen.language', lang)}</td>
         <td>${c['attributes'][language] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfe.erneuerbarheizen.consultant_cat')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.erneuerbarheizen.consultant_cat', lang)}</td>
         <td>${c['attributes'][consultant_cat] or '-'}</td>
     </tr>
 </%def>

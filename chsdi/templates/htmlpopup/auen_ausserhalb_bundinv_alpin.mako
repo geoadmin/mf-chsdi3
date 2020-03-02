@@ -9,31 +9,31 @@
   qualitaet = '%s_qualitaet' % lang
 %>
     <tr>
-        <td class="cell-left">${_('ch.bafu.auen-ausserhalb_bundesinventar_alpin.name')}</td> 
+        <td class="cell-left">${Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar_alpin.name', lang)}</td>
         <td>${c['attributes']['name'] or '-'}<td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bafu.auen-ausserhalb_bundesinventar_alpin.objnummer')}</td>
+        <td class="cell-left">${Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar_alpin.objnummer', lang)}</td>
         <td>${c['id']}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bafu.auen-ausserhalb_bundesinventar_alpin.auentyp')}</td>
+        <td class="cell-left">${Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar_alpin.auentyp', lang)}</td>
         <td>${c['attributes']['auentyp'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bafu.auen-ausserhalb_bundesinventar_alpin.biobedeutung')}</td>
+        <td class="cell-left">${Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar_alpin.biobedeutung', lang)}</td>
         <td>${c['attributes'][biobedeutung] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bafu.auen-ausserhalb_bundesinventar_alpin.geobedeutung')}</td>
+        <td class="cell-left">${Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar_alpin.geobedeutung', lang)}</td>
         <td>${c['attributes'][geobedeutung] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bafu.auen-ausserhalb_bundesinventar_alpin.qualitaet')}</td>
+        <td class="cell-left">${Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar_alpin.qualitaet', lang)}</td>
         <td>${c['attributes'][qualitaet] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bafu.auen-ausserhalb_bundesinventar_alpin.shape_area')}</td>
+        <td class="cell-left">${Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar_alpin.shape_area', lang)}</td>
         <td>${round(c['attributes']['shape_area'], 1) or '-'}</td>
     </tr>
 

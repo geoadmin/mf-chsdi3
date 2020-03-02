@@ -2,17 +2,17 @@
 
 <%def name="table_body(c, lang)">
 
-    <tr><td class="cell-left">${_('ch.bafu.strukturguete-hochrhein_linkesufer.datenherkunft')}</td>
+    <tr><td class="cell-left">${Translator.translate('ch.bafu.strukturguete-hochrhein_linkesufer.datenherkunft', lang)}</td>
     <td>${c['attributes']['datenherkunft'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.strukturguete-hochrhein_linkesufer.lumfeld')}</td>
+    <tr><td class="cell-left">${Translator.translate('ch.bafu.strukturguete-hochrhein_linkesufer.lumfeld', lang)}</td>
     <td>${c['attributes']['lumfeld'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.strukturguete-hochrhein_linkesufer.lufer')}</td>
+    <tr><td class="cell-left">${Translator.translate('ch.bafu.strukturguete-hochrhein_linkesufer.lufer', lang)}</td>
     <td>${c['attributes']['lufer'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.strukturguete-hochrhein_linkesufer.sohle')}</td>
+    <tr><td class="cell-left">${Translator.translate('ch.bafu.strukturguete-hochrhein_linkesufer.sohle', lang)}</td>
     <td>${c['attributes']['sohle'] or '-'}</td></tr> 
-    <tr><td class="cell-left">${_('ch.bafu.strukturguete-hochrhein_linkesufer.rufer')}</td>
+    <tr><td class="cell-left">${Translator.translate('ch.bafu.strukturguete-hochrhein_linkesufer.rufer', lang)}</td>
     <td>${c['attributes']['rufer'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.strukturguete-hochrhein_linkesufer.rumfeld')}</td>
+    <tr><td class="cell-left">${Translator.translate('ch.bafu.strukturguete-hochrhein_linkesufer.rumfeld', lang)}</td>
     <td>${c['attributes']['rumfeld'] or '-'}</td></tr>
 </%def>
 

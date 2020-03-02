@@ -29,9 +29,9 @@
 </style>
 
 <% c['stable_id'] = False %>
-    <tr><td colspan="2">${_('ch.are.windenergie-bundesinteressen.tt_short_info')}</td></tr>
+    <tr><td colspan="2">${Translator.translate('ch.are.windenergie-bundesinteressen.tt_short_info', lang)}</td></tr>
     <tr class="wind_space"><td colspan="2"></td></tr>
-    <tr><td class="wind_legend_title" colspan="2">${_('ch.are.windenergie-bundesinteressen.kbik')}:</td></tr>
+    <tr><td class="wind_legend_title" colspan="2">${Translator.translate('ch.are.windenergie-bundesinteressen.kbik', lang)}:</td></tr>
     <tr><td colspan="2"><div class="wind_bund_extendet.wind_kbik_main wind_kbik_dyn" style="background-color:${color};"></div>${_(legend_text)}</td></tr>
 </%def>
 
@@ -49,26 +49,26 @@
     <body>
     <table class="wind-bund-extended">
        <tr class="wind_info">
-            <td colspan="2"><p>${_('ch.are.windenergie-bundesinteressen.tt_info')}</p></td>
+            <td colspan="2"><p>${Translator.translate('ch.are.windenergie-bundesinteressen.tt_info', lang)}</p></td>
        </tr>
        <tr class="wind_legend">
-           <td><div class="wind_kbik_main wind_kbik_2"></div><p>${_('ch.are.windenergie-bundesinteressen.bik2')}</p></td>
+           <td><div class="wind_kbik_main wind_kbik_2"></div><p>${Translator.translate('ch.are.windenergie-bundesinteressen.bik2', lang)}</p></td>
            <td class="wind_legend"><p>${desc_bik2}</p></td>
        </tr>
        <tr class="wind_legend">
-           <td><div class="wind_kbik_main wind_kbik_3"></div><p>${_('ch.are.windenergie-bundesinteressen.bik3')}</p></td>
+           <td><div class="wind_kbik_main wind_kbik_3"></div><p>${Translator.translate('ch.are.windenergie-bundesinteressen.bik3', lang)}</p></td>
            <td><p>${desc_bik3}</p></td>
        </tr>
        <tr class="wind_legend">
-           <td><div class="wind_kbik_main wind_kbik_4"></div><p>${_('ch.are.windenergie-bundesinteressen.bik4')}</p></td>
+           <td><div class="wind_kbik_main wind_kbik_4"></div><p>${Translator.translate('ch.are.windenergie-bundesinteressen.bik4', lang)}</p></td>
            <td><p>${desc_bik4}</p></td>
        </tr>
        <tr class="wind_legend">
-           <td><div class="wind_kbik_main wind_kbik_1"></div><div class="wind_kbik_main wind_kbik_5"></div><p>${_('ch.are.windenergie-bundesinteressen.bik1')}, ${_('ch.are.windenergie-bundesinteressen.bik5')}</p></td>
+           <td><div class="wind_kbik_main wind_kbik_1"></div><div class="wind_kbik_main wind_kbik_5"></div><p>${Translator.translate('ch.are.windenergie-bundesinteressen.bik1')}, ${_('ch.are.windenergie-bundesinteressen.bik5', lang)}</p></td>
            <td><p>${desc_bik1}</p></td>
        </tr>
        <tr class="wind_info">
-           <td colspan="2"><p>${_('ch.are.windenergie-bundesinteressen.tt_info_footer')} <a href="https://${_('ch.are.windenergie-bundesinteressen.tt_link')}" target="_blank">${_('ch.are.windenergie-bundesinteressen.tt_link')}</a></p></td>
+           <td colspan="2"><p>${Translator.translate('ch.are.windenergie-bundesinteressen.tt_info_footer')} <a href="https://${_('ch.are.windenergie-bundesinteressen.tt_link')}" target="_blank">${_('ch.are.windenergie-bundesinteressen.tt_link', lang)}</a></p></td>
        </tr>
     </table>
     </body>

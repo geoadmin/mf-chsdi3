@@ -22,20 +22,20 @@ if c['attributes']['validuntil']:
 endif
 %>
     <tr>
-      <td class="cell-left">${_('ch.bav.sachplan-infrastruktur-schiene_anhorung.plname_de')}</td>
+      <td class="cell-left">${Translator.translate('ch.bav.sachplan-infrastruktur-schiene_anhorung.plname_de', lang)}</td>
       <td>${c['attributes'][plname]}</td>
     </tr>
 	  <tr>
-      <td class="cell-left">${_('tt_sachplan_facility_beschlussdatum')}</td>
+      <td class="cell-left">${Translator.translate('tt_sachplan_facility_beschlussdatum', lang)}</td>
       <td>${datefrom or '-'}</td>
     </tr>
 % if c['attributes']['doc_web']:
     <tr>
-      <td class="cell-left">${_('ch.bav.sachplan-infrastruktur-schiene_anhorung.doc_title')}</td>
+      <td class="cell-left">${Translator.translate('ch.bav.sachplan-infrastruktur-schiene_anhorung.doc_title', lang)}</td>
       <td><a href="${c['attributes']['doc_web']}" target="_blank">${c['attributes']['doc_title'] or '-'}</a></td></tr>
 % else:
     <tr>
-      <td class="cell-left">${_('tt_sachplan_weitereinfo')}</td>
+      <td class="cell-left">${Translator.translate('tt_sachplan_weitereinfo', lang)}</td>
       <td> - </td>
     </tr>
 %endif

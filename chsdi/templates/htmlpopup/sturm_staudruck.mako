@@ -15,7 +15,7 @@
 
 %>
 
-    <tr><td class="cell-left">${_('Staudruck')}</td>                                            
+    <tr><td class="cell-left">${Translator.translate('Staudruck', lang)}</td>
 	<td>${c['attributes'][staudruck_values] or '-'}</td></tr>
 
 </%def>

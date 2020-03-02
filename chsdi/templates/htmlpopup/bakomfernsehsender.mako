@@ -1,9 +1,9 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-  <tr><td class="cell-left">${_('ch.bakom.radio-fernsehsender.name')}</td>      <td>${c['attributes']['name']}</td></tr>
-  <tr><td class="cell-left">${_('ch.bakom.radio-fernsehsender.code')}</td>      <td>${c['attributes']['code'] or '-'}</td></tr>
-  <tr><td class="cell-left">${_('tt_ch.bakom.leistung')}</td>                      <td>${c['attributes']['power'] or '-'}</td></tr>
+  <tr><td class="cell-left">${Translator.translate('ch.bakom.radio-fernsehsender.name', lang)}</td>      <td>${c['attributes']['name']}</td></tr>
+  <tr><td class="cell-left">${Translator.translate('ch.bakom.radio-fernsehsender.code', lang)}</td>      <td>${c['attributes']['code'] or '-'}</td></tr>
+  <tr><td class="cell-left">${Translator.translate('tt_ch.bakom.leistung', lang)}</td>                      <td>${c['attributes']['power'] or '-'}</td></tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
@@ -23,7 +23,7 @@ i = 0
   </tr>
   <tr>
     <td class="cell-meta">
-      ${_('tt_ch.bakom.radio-fernsehsender_code')}
+      ${Translator.translate('tt_ch.bakom.radio-fernsehsender_code', lang)}
     </td>
     <td class="cell-meta">
       ${c['attributes']['code'] or '-'}
@@ -31,7 +31,7 @@ i = 0
   </tr>
   <tr>
     <td class="cell-meta">
-      ${_('tt_ch.bakom.leistung')}
+      ${Translator.translate('tt_ch.bakom.leistung', lang)}
     </td>
     <td class="cell-meta">
       ${c['attributes']['power'] or '-'}
@@ -41,9 +41,9 @@ i = 0
 </br>
 <table class="table-with-border">
   <tr>
-    <th>${_('tt_service')}</th>
-    <th>${_('tt_program')}</th>
-    <th>${_('tt_freqchan')}</th>
+    <th>${Translator.translate('tt_service', lang)}</th>
+    <th>${Translator.translate('tt_program', lang)}</th>
+    <th>${Translator.translate('tt_freqchan', lang)}</th>
   </tr>
 % while i < len(service):
   <tr>

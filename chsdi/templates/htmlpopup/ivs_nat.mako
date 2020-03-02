@@ -17,18 +17,18 @@
 % else:
      <td>${c['attributes']['ivs_signatur_de']}</td></tr>
 % endif
-    <tr><td class="cell-left">${_('gemkanton')}</td><td>${c['attributes']['ivs_kanton']}</td></tr>
-    <tr><td class="cell-left">${_('ivs_nat_historischen')}</td><td>${c['attributes']['ivs_sladatehist'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ivs_nat_morphologischen')}</td><td>${c['attributes']['ivs_sladatemorph']}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('gemkanton', lang)}</td><td>${c['attributes']['ivs_kanton']}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('ivs_nat_historischen', lang)}</td><td>${c['attributes']['ivs_sladatehist'] or '-'}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('ivs_nat_morphologischen', lang)}</td><td>${c['attributes']['ivs_sladatemorph']}</td></tr>
 % if c['attributes']['ivs_slabedeutung'] =='3':
-    <tr><td class="cell-left">${_('ivs_slabedeutung')}</td><td>${_('national')}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('ivs_slabedeutung')}</td><td>${_('national', lang)}</td></tr>
 % elif c['attributes']['ivs_slabedeutung'] =='2':
-    <tr><td class="cell-left">${_('ivs_slabedeutung')}</td><td>${_('regional')}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('ivs_slabedeutung')}</td><td>${_('regional', lang)}</td></tr>
 % elif c['attributes']['ivs_slabedeutung'] =='1':
-    <tr><td class="cell-left">${_('ivs_slabedeutung')}</td><td>${_('lokal')}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('ivs_slabedeutung')}</td><td>${_('lokal', lang)}</td></tr>
 % endif
     <tr><td class="cell-left">${_(ivs_slaname)}</td><td>${c['attributes']['ivs_slaname']}</td></tr>
-    <tr><td class="cell-left">${_('ivs_documentation')}</td>
+    <tr><td class="cell-left">${Translator.translate('ivs_documentation', lang)}</td>
 <%
     from urllib2 import urlopen
     from chsdi.lib.helpers import resource_exists
@@ -51,12 +51,12 @@
 
 % if pdf:
     <td>
-      ${_('ivs_nat_strecke')}: <a href="https://${dataGeoAdminHost}/${dataPath}/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
+      ${Translator.translate('ivs_nat_strecke', lang)}: <a href="https://${dataGeoAdminHost}/${dataPath}/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
       % if PDF_Level_2_exist != '00':
-        ${_('ivs_nat_linienfuehrung')}: <a href="//${dataGeoAdminHost}/${dataPath}/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2_Name}</a><br />
+        ${Translator.translate('ivs_nat_linienfuehrung', lang)}: <a href="//${dataGeoAdminHost}/${dataPath}/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2_Name}</a><br />
       % endif
       % if PDF_Level_3_exist != '00':
-        ${_('ivs_nat_abschnitt')}: <a href="//${dataGeoAdminHost}/${dataPath}/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3_Name}</a><br />
+        ${Translator.translate('ivs_nat_abschnitt', lang)}: <a href="//${dataGeoAdminHost}/${dataPath}/${PDF_Level_3}.pdf" target="_blank">${PDF_Level_3_Name}</a><br />
       % endif
     </td></tr>
 % else:
