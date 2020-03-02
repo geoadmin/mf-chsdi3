@@ -12,8 +12,8 @@
 
 %>
 
-    <tr><td class="cell-left">${Translator.translate('ch.bfe.fernwaerme-angebot.name', lang)}</td>                         <td>${c['attributes']['name'] or '-'}</td></tr>
-    <tr><td class="cell-left">${Translator.translate('ch.bfe.fernwaerme-angebot.heatpotential', lang)}</td>                <td>${heatpotential}</td></tr>
-    <tr><td class="cell-left">${Translator.translate('ch.bfe.fernwaerme-angebot.heat_supplier_category', lang)}</td>       <td>${c['attributes'][bezeichnung] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.translate('ch.bfe.fernwaerme-angebot.name', lang)}</td>                         <td>${c['attributes']['name'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.translate('ch.bfe.fernwaerme-angebot.heatpotential', lang)}</td>                <td>${heatpotential}</td></tr>
+    <tr><td class="cell-left">${t.translate('ch.bfe.fernwaerme-angebot.heat_supplier_category', lang)}</td>       <td>${c['attributes'][bezeichnung] or '-'}</td></tr>
 </%def>
 

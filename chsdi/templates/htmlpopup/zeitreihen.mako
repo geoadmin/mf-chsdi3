@@ -69,35 +69,35 @@ def get_viewer_url(request, params):
     c['bbox'] = request.params.get('mapExtent')
   %>
   <tr>
-    <td class="cell-left">${Translator.translate('kartenwerk', lang)}</td>
+    <td class="cell-left">${t.translate('kartenwerk', lang)}</td>
     <td>${_(productName)}</td>
   </tr>
   <tr>
-    <td class="cell-left">${Translator.translate('kbnum', lang)}</td>
+    <td class="cell-left">${t.translate('kbnum', lang)}</td>
     <td>${c['attributes']['kbnum'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left">${Translator.translate('kbbez', lang)}</td>
+    <td class="cell-left">${t.translate('kbbez', lang)}</td>
     <td>${c['attributes']['kbbez'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left">${Translator.translate('release_year', lang)}</td>
+    <td class="cell-left">${t.translate('release_year', lang)}</td>
     <td>${c['attributes']['release_year'] or '-'}</td></tr>
   <tr>
-    <td class="cell-left">${Translator.translate('blattbezeichnung', lang)}</td>
+    <td class="cell-left">${t.translate('blattbezeichnung', lang)}</td>
     <td><a target="_blank" href="http://www.alexandria.ch/primo_library/libweb/action/dlSearch.do?institution=BIG&vid=ALEX&scope=default_scope&query=lsr07,contains,${c['attributes']['bv_nummer']}">${c['attributes']['kbbez'] or '-'}</a></td>
   </tr>
 
 % if viewer_url != "" and preview_url != "" and image_width != None:
 <tr>
-  <td class="cell-left">${Translator.translate('tt_zeitreihen_FullResView', lang)}</td>
+  <td class="cell-left">${t.translate('tt_zeitreihen_FullResView', lang)}</td>
   <td>
-    <a href="${viewer_url}" target="_blank" title="${Translator.translate('tt_zeitreihen_FullResView')} - ${c['attributes']['kbbez']} - ${c['attributes']['kbnum']} - ${c['attributes']['release_year']} - ${c['attributes']['bv_nummer']}"><img src="${preview_url}" alt="${_('tt_zeitreihen_FullResView', lang)} - ${c['attributes']['kbbez']} - ${c['attributes']['release_year']} - ${c['attributes']['bv_nummer']}"></a>
+    <a href="${viewer_url}" target="_blank" title="${t.translate('tt_zeitreihen_FullResView')} - ${c['attributes']['kbbez']} - ${c['attributes']['kbnum']} - ${c['attributes']['release_year']} - ${c['attributes']['bv_nummer']}"><img src="${preview_url}" alt="${_('tt_zeitreihen_FullResView', lang)} - ${c['attributes']['kbbez']} - ${c['attributes']['release_year']} - ${c['attributes']['bv_nummer']}"></a>
   </td>
 </tr>
 % else:
 <tr>
-  <td class="cell-left">${Translator.translate('tt_zeitreihen_FullResView', lang)}</td>
+  <td class="cell-left">${t.translate('tt_zeitreihen_FullResView', lang)}</td>
   <td>-</td>
 </tr>
 % endif

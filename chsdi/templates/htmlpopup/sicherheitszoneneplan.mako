@@ -7,10 +7,10 @@
     lang = lang if lang in ('fr','it') else 'de'
     format = 'formate_%s' % lang
 %>
-    <tr><td class="cell-left">${Translator.translate('safety_zone', lang)}</td><td>${c['attributes']['zone_name']}</td></tr>
-    <tr><td class="cell-left">${Translator.translate('geometry_type', lang)}</td><td>${c['attributes']['zonetype_%s' % lang]}</td></tr>
-    <tr><td class="cell-left">${Translator.translate('originator', lang)}</td><td>${c['attributes']['originator']}</td></tr>
-    <tr><td class="cell-left">${Translator.translate('kanton', lang)}</td><td>${c['attributes']['canton']}</td></tr>
+    <tr><td class="cell-left">${t.translate('safety_zone', lang)}</td><td>${c['attributes']['zone_name']}</td></tr>
+    <tr><td class="cell-left">${t.translate('geometry_type', lang)}</td><td>${c['attributes']['zonetype_%s' % lang]}</td></tr>
+    <tr><td class="cell-left">${t.translate('originator', lang)}</td><td>${c['attributes']['originator']}</td></tr>
+    <tr><td class="cell-left">${t.translate('kanton', lang)}</td><td>${c['attributes']['canton']}</td></tr>
 </%def>
 
 <%def name="extended_info(c, lang)"> 
@@ -31,10 +31,10 @@
 
 %>
   <table>
-    <tr><td class="cell-meta-small">${Translator.translate('safety_zone', lang)}</td><td class="cell-meta-big">${c['attributes']['zone_name']}</td></tr>
-    <tr><td class="cell-meta-small">${Translator.translate('geometry_type', lang)}</td><td class="cell-meta-big">${c['attributes']['zonetype_%s' % lang]}</td></tr>
-    <tr><td class="cell-meta-small">${Translator.translate('originator', lang)}</td><td class="cell-meta-big">${c['attributes']['originator']}</td></tr>
-    <tr><td class="cell-meta-small">${Translator.translate('kanton', lang)}</td><td class="cell-meta-big">${c['attributes']['canton']}</td></tr>
+    <tr><td class="cell-meta-small">${t.translate('safety_zone', lang)}</td><td class="cell-meta-big">${c['attributes']['zone_name']}</td></tr>
+    <tr><td class="cell-meta-small">${t.translate('geometry_type', lang)}</td><td class="cell-meta-big">${c['attributes']['zonetype_%s' % lang]}</td></tr>
+    <tr><td class="cell-meta-small">${t.translate('originator', lang)}</td><td class="cell-meta-big">${c['attributes']['originator']}</td></tr>
+    <tr><td class="cell-meta-small">${t.translate('kanton', lang)}</td><td class="cell-meta-big">${c['attributes']['canton']}</td></tr>
 <%
     municipality = c['attributes']['municipality']
     if municipality is not None:
@@ -43,12 +43,12 @@
     else:
         municipality = 0
 %>
-    <tr><td class="cell-meta-small">${Translator.translate('municipality', lang)}</td><td class="cell-meta-big">${nb_municipality}</td></tr>
-    <tr><td class="cell-meta-small">${Translator.translate('bazlrechtstatus', lang)}</td><td class="cell-meta-big">${c['attributes']['legalstatus_%s' % lang]}</td></tr>
-    <tr><td class="cell-meta-small">${Translator.translate('approval_date', lang)}</td><td class="cell-meta-big">${aproval_date}</td></tr>
-    <tr><td class="cell-meta-small">${Translator.translate('ch.bazl.sicherheitszonenplan.SafetyZone.Valdity.ValidFrom', lang)}</td><td class="cell-meta-big">${zone_valid_from}</td></tr>
+    <tr><td class="cell-meta-small">${t.translate('municipality', lang)}</td><td class="cell-meta-big">${nb_municipality}</td></tr>
+    <tr><td class="cell-meta-small">${t.translate('bazlrechtstatus', lang)}</td><td class="cell-meta-big">${c['attributes']['legalstatus_%s' % lang]}</td></tr>
+    <tr><td class="cell-meta-small">${t.translate('approval_date', lang)}</td><td class="cell-meta-big">${aproval_date}</td></tr>
+    <tr><td class="cell-meta-small">${t.translate('ch.bazl.sicherheitszonenplan.SafetyZone.Valdity.ValidFrom', lang)}</td><td class="cell-meta-big">${zone_valid_from}</td></tr>
 %   if zone_description:
-        <tr><td class="cell-meta-small">${Translator.translate('ch.bazl.sicherheitszonenplan.SafetyZone.Valdity.Description', lang)}</td><td class="cell-meta-big">${zone_description}</td></tr>
+        <tr><td class="cell-meta-small">${t.translate('ch.bazl.sicherheitszonenplan.SafetyZone.Valdity.Description', lang)}</td><td class="cell-meta-big">${zone_description}</td></tr>
 %   endif
 
 <%
@@ -73,7 +73,7 @@
       weblink_nb = 0
 %>
 % for i in range(arr_len):
-<tr><td class="cell-meta-small">${Translator.translate('tt_document', lang)}</td> <td class="cell-meta-big"><a href=${weblink_new[i]}  target="_blank">${doctitle_new[i]}<a/></td></tr>
+<tr><td class="cell-meta-small">${t.translate('tt_document', lang)}</td> <td class="cell-meta-big"><a href=${weblink_new[i]}  target="_blank">${doctitle_new[i]}<a/></td></tr>
 % endfor
 </table>
 </%def>

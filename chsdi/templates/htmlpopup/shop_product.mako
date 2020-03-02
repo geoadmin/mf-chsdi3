@@ -77,7 +77,7 @@ colspan = 3 if image_exists else 2
     % endif
   % else:
       % if a == 'url_legend':
-          <td>${Translator.translate('linkzurlegende', lang)}</td>
+          <td>${t.translate('linkzurlegende', lang)}</td>
           <td><a href="${c['attributes']['url_legend']}" target="_blank">${c['attributes'][name]}</a></td>
       % else:
           <td valign="top" class="cell-left">${_('ch.swisstopo.lk25-papierkarte.metadata.%s' % a)}</td>
@@ -89,7 +89,7 @@ colspan = 3 if image_exists else 2
   <tr style="height: 100%;">
     <td></td>
 % if c['attributes']['available'] == False:
-    <td valign="top">${Translator.translate('shop_availability', lang)}
+    <td valign="top">${t.translate('shop_availability', lang)}
 % else:
     <td valign="top">
 % endif

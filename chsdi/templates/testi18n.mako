@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <p>${Translator.translate('ch.bafu.bundesinventare-bln', lang)}</p>
-    <p>${Translator.translate('ch.bafu.bundesinventare-jagdbanngebiete', lang)}</p>
+    <p>${t.translate('ch.bafu.bundesinventare-bln', lang)}</p>
+    <p>${t.translate('ch.bafu.bundesinventare-jagdbanngebiete', lang)}</p>
 </body>
 </html>

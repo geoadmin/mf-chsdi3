@@ -14,39 +14,39 @@
         url = 'stationsseite_de'
 %>
     <tr>
-      <td class="cell-left">${Translator.translate('ch.bafu.hydrologie-untersuchungsgebiete.name', lang)}</td>
+      <td class="cell-left">${t.translate('ch.bafu.hydrologie-untersuchungsgebiete.name', lang)}</td>
       <td>${c['attributes']['name'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${Translator.translate('ch.bafu.hydrologie-untersuchungsgebiete.einzugsgebietsflaeche', lang)}</td>
+      <td class="cell-left">${t.translate('ch.bafu.hydrologie-untersuchungsgebiete.einzugsgebietsflaeche', lang)}</td>
       <td>${c['attributes']['einzugsgebietsflaeche'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${Translator.translate('ch.bafu.hydrologie-untersuchungsgebiete.mit_hoe', lang)}</td>
+      <td class="cell-left">${t.translate('ch.bafu.hydrologie-untersuchungsgebiete.mit_hoe', lang)}</td>
       <td>${c['attributes']['mit_hoe'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${Translator.translate('ch.bafu.hydrologie-untersuchungsgebiete.min_hoe', lang)}</td>
+      <td class="cell-left">${t.translate('ch.bafu.hydrologie-untersuchungsgebiete.min_hoe', lang)}</td>
       <td>${c['attributes']['min_hoe'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${Translator.translate('ch.bafu.hydrologie-untersuchungsgebiete.max_hoe', lang)}</td>
+      <td class="cell-left">${t.translate('ch.bafu.hydrologie-untersuchungsgebiete.max_hoe', lang)}</td>
       <td>${c['attributes']['max_hoe'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${Translator.translate('ch.bafu.hydrologie-untersuchungsgebiete.antv_ab86', lang)}</td>
+      <td class="cell-left">${t.translate('ch.bafu.hydrologie-untersuchungsgebiete.antv_ab86', lang)}</td>
       <td>${c['attributes']['antv_ab86'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${Translator.translate('ch.bafu.hydrologie-untersuchungsgebiete.regimetyp', lang)}</td>
+      <td class="cell-left">${t.translate('ch.bafu.hydrologie-untersuchungsgebiete.regimetyp', lang)}</td>
       <td>${c['attributes']['regimtyp'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${Translator.translate('ch.bafu.hydrologie-untersuchungsgebiete.hyperlink', lang)}</td>
+      <td class="cell-left">${t.translate('ch.bafu.hydrologie-untersuchungsgebiete.hyperlink', lang)}</td>
       <td><a href="${c['attributes']['hyperlink'] or '-'}" target="_blank">${c['attributes']['hyperlink'] or '-'}</a></td>
     </tr>
     <tr>
-      <td class="cell-left">${Translator.translate('ch.bafu.hydrologie-untersuchungsgebiete.stationseite', lang)}</td>
-      <td><a href="${c['attributes'][url] or '-'}" target="_blank">${Translator.translate('ch.bafu.hydrologie-untersuchungsgebiete.stationseite', lang)}</a></td>
+      <td class="cell-left">${t.translate('ch.bafu.hydrologie-untersuchungsgebiete.stationseite', lang)}</td>
+      <td><a href="${c['attributes'][url] or '-'}" target="_blank">${t.translate('ch.bafu.hydrologie-untersuchungsgebiete.stationseite', lang)}</a></td>
     </tr>
 </%def>
