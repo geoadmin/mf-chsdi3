@@ -334,7 +334,7 @@ class TestFeaturesView(TestsBase):
                   'mapExtent': '2598014.39,1210612.06,2599872.39,1212510.06',
                   'sr': 2056}
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.swisstopo-vd.amtliche-vermessung/149780376/htmlPopup', params=params, status=404)
-        self.assertEqual(resp.content_type, 'text/html')
+        self.assertEqual(resp.content_type, 'text/plain')
 
     def test_feature_valid(self):
         bodId = 'ch.bafu.bundesinventare-bln'
