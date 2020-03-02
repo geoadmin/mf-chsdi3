@@ -2,9 +2,9 @@
 
 <%def name="table_body(c, lang)">
 
-    <tr><td class="cell-left">${t.translate('ch.bafu.hydrologie-gewaesserzustandsmessstationen.name', lang)}</td>    <td>${c['attributes']['name'] or '-'}</td></tr>
-    <tr><td>${t.translate('ch.bafu.hydrologie-gewaesserzustandsmessstationen.gewaesser', lang)}</td>   <td>${c['attributes']['gewaesser'] or '-'}</td></tr>
-    <tr><td>${t.translate('ch.bafu.hydrologie-gewaesserzustandsmessstationen.nr', lang)}</td>   <td>${c['attributes']['nr'] or '-'()}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.bafu.hydrologie-gewaesserzustandsmessstationen.name', lang)}</td>    <td>${c['attributes']['name'] or '-'}</td></tr>
+    <tr><td>${t.Translator.translate('ch.bafu.hydrologie-gewaesserzustandsmessstationen.gewaesser', lang)}</td>   <td>${c['attributes']['gewaesser'] or '-'}</td></tr>
+    <tr><td>${t.Translator.translate('ch.bafu.hydrologie-gewaesserzustandsmessstationen.nr', lang)}</td>   <td>${c['attributes']['nr'] or '-'()}</td></tr>
 
 </%def>
 

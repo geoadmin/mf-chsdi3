@@ -18,18 +18,18 @@
     if c['layerBodId'] == 'ch.astra.skatingland':
         url = 'http://www.skatingland.ch/%s' % (lang)
 %>
-    <tr><td class="cell-left">${t.translate('chmobil_number', lang)}</td>   <td>${c['featureId'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('chmobil_number', lang)}</td>   <td>${c['featureId'] or '-'}</td></tr>
     <tr><td class="cell-left">${_(msgid_route)}</td>    <td>${c['attributes']['chmobil_title'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('link', lang)}</td>          <td>
+    <tr><td class="cell-left">${t.Translator.translate('link', lang)}</td>          <td>
     % if url and c['attributes']['chmobil_route_number']:
-      <a href="${url}/route${c['attributes']['chmobil_route_number']}" target="_blank" title="${t.translate('chmobil_url_route')}">${_('chmobil_url_route', lang)}</a>
+      <a href="${url}/route${c['attributes']['chmobil_route_number']}" target="_blank" title="${t.Translator.translate('chmobil_url_route')}">${_('chmobil_url_route', lang)}</a>
     % else:
         -
     % endif
     </td></tr>
-    <tr><td class="cell-left">${t.translate('link', lang)}</td>          <td>
+    <tr><td class="cell-left">${t.Translator.translate('link', lang)}</td>          <td>
     % if url and c['attributes']['chmobil_has_segment']:
-      <a href="${url}/etappe${c['featureId']}" target="_blank" title="${t.translate('chmobil_url_route')}">${_('chmobil_url_etappe', lang)}</a>
+      <a href="${url}/etappe${c['featureId']}" target="_blank" title="${t.Translator.translate('chmobil_url_route')}">${_('chmobil_url_etappe', lang)}</a>
     % else:
         -
     % endif

@@ -94,40 +94,40 @@ viewer_url = get_viewer_url(request, params)
   <td class="cell-left">${_(tt_lubis_ebkey)}</td>
   <td>${c['attributes']['image_number'] or '-'}</td>
 </tr>
-<tr><td class="cell-left">${t.translate('tt_lubis_inventarnummer', lang)}</td>          <td>${c['attributes']['inventarnummer'] or '-'}</td></tr>
+<tr><td class="cell-left">${t.Translator.translate('tt_lubis_inventarnummer', lang)}</td>          <td>${c['attributes']['inventarnummer'] or '-'}</td></tr>
 <tr>
-  <td class="cell-left">${t.translate('ch.swisstopo.lubis-terrestrische_aufnahmen.tt_lubis_aufnahmedatum', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('ch.swisstopo.lubis-terrestrische_aufnahmen.tt_lubis_aufnahmedatum', lang)}</td>
   <td>${datum or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${t.translate('tt_lubis_Filmart', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('tt_lubis_Filmart', lang)}</td>
   <td>${c['attributes']['filmart'] or '-'}</td>
 </tr>
 
 % if 'contact_image_url' in c['attributes'] and c['attributes']['contact_image_url']:
 <tr>
-  <td class="cell-left">${t.translate('tt_lubis_url_canton', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('tt_lubis_url_canton', lang)}</td>
   <td><a href="${c['attributes']['contact_image_url']}" target="_blank">${c['attributes']['contact_image_url']}</a></td>
 </tr>
 % endif
 
 % if preview_url != "" and image_width != None:
 <tr>
-  <td class="cell-left">${t.translate('tt_lubis_Quickview', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('tt_lubis_Quickview', lang)}</td>
   <td>
     <a href="${viewer_url}" target="_blank"><img src="${preview_url}" alt="quickview"></a>
   </td>
 </tr>
 % else:
 <tr>
-  <td class="cell-left">${t.translate('tt_lubis_Quickview', lang)}</td>
-  <td>${t.translate('tt_lubis_noQuickview', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('tt_lubis_Quickview', lang)}</td>
+  <td>${t.Translator.translate('tt_lubis_noQuickview', lang)}</td>
 </tr>
 % endif
 
 % if 'contact_web' in c['attributes']:
 <tr>
-  <th class="cell-left">${t.translate('tt_lubis_bildorder', lang)}</th>
+  <th class="cell-left">${t.Translator.translate('tt_lubis_bildorder', lang)}</th>
   <td>
     ${c['attributes']['contact'] | br }
     <br/>
@@ -209,33 +209,33 @@ pdf = resource_exists(url_pdf)
 
 url_smapshot= "https://smapshot.heig-vd.ch/map/?imageId={}".format(c['attributes']['smapshot_id'])
 %>
-<title>${t.translate('tt_lubis_ebkey', lang)}: ${c['featureId']}</title>
+<title>${t.Translator.translate('tt_lubis_ebkey', lang)}: ${c['featureId']}</title>
 
 <body onload="init()">
   <table class="table-with-border kernkraftwerke-extended">
-    <tr><th class="cell-left">${t.translate('tt_lubis_ebkey', lang)}</th>                   <td>${c['attributes']['image_number'] or '-'}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_inventarnummer', lang)}</th>          <td>${c['attributes']['inventarnummer'] or '-'}</td></tr>
-    <tr><th class="cell-left">${t.translate('ch.swisstopo.lubis-terrestrische_aufnahmen.tt_lubis_aufnahmedatum', lang)}</th>           <td>${datum or '-'}</td></tr>
-    <tr><th class="cell-left">${t.translate('ch.swisstopo.lubis-terrestrische_aufnahmen.operate_name', lang)}</th>      <td>${c['attributes']['ort'] or '-'}</td></tr>
-    <tr><th class="cell-left">${t.translate('ch.swisstopo.lubis-terrestrische_aufnahmen.station', lang)}</th>      <td>${c['attributes']['station'] or '-'}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_schraegaufnahmen_x', lang)}</th>      <td>${c['attributes']['x'] or '-'}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_schraegaufnahmen_y', lang)}</th>      <td>${c['attributes']['y'] or '-'}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_Filmart', lang)}</th>                 <td>${c['attributes']['filmart'] or '-'}</td></tr>
-    <tr><th class="cell-left">${t.translate('ch.swisstopo.lubis-luftbilder_schraegaufnahmen.tt_lubis_schraegaufnahmen_medium_format', lang)}</th>                 <td>${c['attributes']['medium_format'] or '-'}</td></tr>
-    <tr><th class="cell-left">${t.translate('ch.swisstopo.lubis-terrestrische_aufnahmen.tt_filesize', lang)}</th>                 <td>${c['attributes']['filesize_mb'] or '-'}</td></tr>
-    <tr><th class="cell-left">${t.translate('tt_lubis_bildpfad', lang)}</th>         <td>${filename or '-'}</td></tr>
-    <tr><th class="cell-left">${t.translate('link', lang)}</th>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_ebkey', lang)}</th>                   <td>${c['attributes']['image_number'] or '-'}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_inventarnummer', lang)}</th>          <td>${c['attributes']['inventarnummer'] or '-'}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('ch.swisstopo.lubis-terrestrische_aufnahmen.tt_lubis_aufnahmedatum', lang)}</th>           <td>${datum or '-'}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('ch.swisstopo.lubis-terrestrische_aufnahmen.operate_name', lang)}</th>      <td>${c['attributes']['ort'] or '-'}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('ch.swisstopo.lubis-terrestrische_aufnahmen.station', lang)}</th>      <td>${c['attributes']['station'] or '-'}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_schraegaufnahmen_x', lang)}</th>      <td>${c['attributes']['x'] or '-'}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_schraegaufnahmen_y', lang)}</th>      <td>${c['attributes']['y'] or '-'}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_Filmart', lang)}</th>                 <td>${c['attributes']['filmart'] or '-'}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('ch.swisstopo.lubis-luftbilder_schraegaufnahmen.tt_lubis_schraegaufnahmen_medium_format', lang)}</th>                 <td>${c['attributes']['medium_format'] or '-'}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('ch.swisstopo.lubis-terrestrische_aufnahmen.tt_filesize', lang)}</th>                 <td>${c['attributes']['filesize_mb'] or '-'}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('tt_lubis_bildpfad', lang)}</th>         <td>${filename or '-'}</td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('link', lang)}</th>
         <td>
 % if pdf:
-    <a href="${url_pdf}" target="_blank">${t.translate('ch.swisstopo.lubis-terrestrische_aufnahmen.expertenlink', lang)} - pdf</a>
+    <a href="${url_pdf}" target="_blank">${t.Translator.translate('ch.swisstopo.lubis-terrestrische_aufnahmen.expertenlink', lang)} - pdf</a>
 % else:
     -
 % endif
         </td>
     </tr>
-    <tr><th class="cell-left">${t.translate('link')} smapshot</th>         <td><a href="${url_smapshot}" target="_blank">${_('link', lang)} smapshot</a></td></tr>
+    <tr><th class="cell-left">${t.Translator.translate('link')} smapshot</th>         <td><a href="${url_smapshot}" target="_blank">${_('link', lang)} smapshot</a></td></tr>
   <tr class="chsdi-no-print">
-    <th class="cell-left">${t.translate('link', lang)} Online Shop</th>
+    <th class="cell-left">${t.Translator.translate('link', lang)} Online Shop</th>
     <td><a href="https:${shop_url}/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
     target="toposhop">Online Shop</a></td>
   </tr>

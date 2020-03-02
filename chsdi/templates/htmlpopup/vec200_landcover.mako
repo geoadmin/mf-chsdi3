@@ -4,7 +4,7 @@
     <% c['stable_id'] = True %>
     % if c['attributes']['objval'].strip() in ['Gletscher', 'Stadtzentr', 'Sumpf', 'See', 'Siedl', 'Stausee']:
         <tr><th colspan=2>${_(c['attributes']['objval'])}:</th></tr>
-        <tr><td class="cell-left">${t.translate('name_lang1', lang)}</td><td>
+        <tr><td class="cell-left">${t.Translator.translate('name_lang1', lang)}</td><td>
          % if c['attributes']['objname1'].strip() in ['N_P','N_A']:
              - 
          % else:   
@@ -12,7 +12,7 @@
          % endif     
          </td></tr>
     % else:
-    ${t.translate('No additional information for this object type', lang)}: ${_(c['attributes']['objval'])}
+    ${t.Translator.translate('No additional information for this object type', lang)}: ${_(c['attributes']['objval'])}
     % endif
 </%def>
 

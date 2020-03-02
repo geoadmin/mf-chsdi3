@@ -2,13 +2,13 @@
 
 <%def name="table_body(c, lang)">
 
-    <tr><td class="cell-left">${t.translate('ch.vbs.bundestankstellen-bebeco.ort', lang)}</td>
+    <tr><td class="cell-left">${t.Translator.translate('ch.vbs.bundestankstellen-bebeco.ort', lang)}</td>
 	<td>${c['attributes']['ort'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('ch.vbs.bundestankstellen-bebeco.plz', lang)}</td>
+    <tr><td class="cell-left">${t.Translator.translate('ch.vbs.bundestankstellen-bebeco.plz', lang)}</td>
     <td>${c['attributes']['plz'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('ch.vbs.bundestankstellen-bebeco.strasse', lang)}</td>
+    <tr><td class="cell-left">${t.Translator.translate('ch.vbs.bundestankstellen-bebeco.strasse', lang)}</td>
     <td>${c['attributes']['strasse'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('ch.vbs.bundestankstellen-bebeco.bezugszeit', lang)}</td>
+    <tr><td class="cell-left">${t.Translator.translate('ch.vbs.bundestankstellen-bebeco.bezugszeit', lang)}</td>
     <td>${c['attributes']['bezugszeit'] or '-'}</td></tr>
 
 </%def>

@@ -26,27 +26,27 @@
 %>
 
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.wpsm-qualifizierte_firmen.company', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.wpsm-qualifizierte_firmen.company', lang)}</td>
         <td>${c['attributes']['company'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.wpsm-qualifizierte_firmen.contactperson', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.wpsm-qualifizierte_firmen.contactperson', lang)}</td>
         <td>${c['attributes']['contactperson'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.wpsm-qualifizierte_firmen.address', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.wpsm-qualifizierte_firmen.address', lang)}</td>
         <td>${address}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.wpsm-qualifizierte_firmen.pc_place', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.wpsm-qualifizierte_firmen.pc_place', lang)}</td>
         <td>${c['attributes']['pc_place'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.wpsm-qualifizierte_firmen.telephonenumber', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.wpsm-qualifizierte_firmen.telephonenumber', lang)}</td>
         <td>${c['attributes']['telephonenumber'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.wpsm-qualifizierte_firmen.mail', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.wpsm-qualifizierte_firmen.mail', lang)}</td>
           % if c['attributes']['mail'] == None:
             <td>-</td>
           % else:
@@ -54,7 +54,7 @@
           % endif
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.wpsm-qualifizierte_firmen.webaddress', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.wpsm-qualifizierte_firmen.webaddress', lang)}</td>
           % if c['attributes']['webaddress'] == None:
             <td>-</td>
           % else:

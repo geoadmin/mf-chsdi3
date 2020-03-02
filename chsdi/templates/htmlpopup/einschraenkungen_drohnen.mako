@@ -8,9 +8,9 @@
   bew_li = 'bew_li_%s' % lang
   name = 'name_%s' % lang
 %>
-    <tr><td class="cell-left">${t.translate('ch.bazl.einschraenkungen-drohnen.name', lang)}</td>    	<td>${c['attributes'][name] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('ch.bazl.einschraenkungen-drohnen.restr', lang)}</td>     <td>${c['attributes'][restr] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('ch.bazl.einschraenkungen-drohnen.bew_st', lang)}</td>    <td>${c['attributes'][bew_st] or '-'}</td></tr>
-    <td>${t.translate('ch.bazl.einschraenkungen-drohnen.bew_li')}</td>                          <td><a href="${c['attributes'][bew_li]}" target="_blank">${_('ch.bazl.einschraenkungen-drohnen.bew_li_url', lang)}</a>
+    <tr><td class="cell-left">${t.Translator.translate('ch.bazl.einschraenkungen-drohnen.name', lang)}</td>    	<td>${c['attributes'][name] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.bazl.einschraenkungen-drohnen.restr', lang)}</td>     <td>${c['attributes'][restr] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.bazl.einschraenkungen-drohnen.bew_st', lang)}</td>    <td>${c['attributes'][bew_st] or '-'}</td></tr>
+    <td>${t.Translator.translate('ch.bazl.einschraenkungen-drohnen.bew_li')}</td>                          <td><a href="${c['attributes'][bew_li]}" target="_blank">${_('ch.bazl.einschraenkungen-drohnen.bew_li_url', lang)}</a>
 </%def>
 

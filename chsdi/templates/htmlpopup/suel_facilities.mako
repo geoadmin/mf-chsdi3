@@ -14,13 +14,13 @@
     datefrom = c['attributes']['validfrom']
 %>
     <tr><td class="cell-left">${_(name)}</td>                                   <td>${c['attributes'][facname]}</td></tr>
-    <tr><td class="cell-left">${t.translate('tt_sachplan_facility_anlageart', lang)}</td>       <td>${c['attributes'][fackind_text] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('tt_sachplan_facility_anlagestatus', lang)}</td>    <td>${c['attributes'][facstatus_text] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('tt_sachplan_facility_beschlussdatum', lang)}</td>  <td>${datefrom or '-'}</td></tr>
-    <tr><td class="cell-left">${t.translate('tt_sachplan_beschreibung', lang)}</td>             <td>${c['attributes'][description_text] or '-' | n}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('tt_sachplan_facility_anlageart', lang)}</td>       <td>${c['attributes'][fackind_text] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('tt_sachplan_facility_anlagestatus', lang)}</td>    <td>${c['attributes'][facstatus_text] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('tt_sachplan_facility_beschlussdatum', lang)}</td>  <td>${datefrom or '-'}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('tt_sachplan_beschreibung', lang)}</td>             <td>${c['attributes'][description_text] or '-' | n}</td></tr>
 % if c['attributes']['doc_web']:
     <tr><td class="cell-left">${_(doc_title)}</td>                              <td><a href="${c['attributes']['doc_web']}" target="_blank">${c['attributes']['doc_title'] or '-'}</a></td></tr>
 % else:
-    <tr><td class="cell-left">${t.translate('tt_sachplan_weitereinfo', lang)}</td>              <td> - </td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('tt_sachplan_weitereinfo', lang)}</td>              <td> - </td></tr>
 %endif
 </%def>

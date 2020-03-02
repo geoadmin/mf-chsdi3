@@ -9,31 +9,31 @@
     hydropowerplanttype = 'hydropowerplanttype_%s' % lang
 %>
     <tr>
-      <td class="cell-left">${t.translate('tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber', lang)}</td>
       <td>${c['featureId']}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('tt_ch.bfe.statistik-wasserkraftanlagen_name', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('tt_ch.bfe.statistik-wasserkraftanlagen_name', lang)}</td>
       <td>${c['attributes']['name']}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('tt_ch.bfe.statistik-wasserkraftanlagen_location', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('tt_ch.bfe.statistik-wasserkraftanlagen_location', lang)}</td>
       <td>${c['attributes']['location'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('tt_ch.bfe.statistik-wasserkraftanlagen_canton', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('tt_ch.bfe.statistik-wasserkraftanlagen_canton', lang)}</td>
       <td>${c['attributes']['canton'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype', lang)}</td>
       <td>${c['attributes'][hydropowerplanttype] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation', lang)}</td>
       <td>${c['attributes']['beginningofoperation'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation', lang)}</td>
       <td>${c['attributes']['endofoperation'] or '-'}</td>
     </tr>
 </%def>
@@ -52,51 +52,51 @@
 %>
 <table>
   <tr>
-    <td class="cell-meta-one" colspan="2"><strong>${t.translate('zentrale', lang)}</strong></td>
+    <td class="cell-meta-one" colspan="2"><strong>${t.Translator.translate('zentrale', lang)}</strong></td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('name', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('name', lang)}</td>
     <td class="cell-meta">${c['attributes']['name']}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber', lang)}</td>
     <td class="cell-meta">${c['featureId']}</td>
   </tr>    
   <tr>
-    <td class="cell-meta">${t.translate('tt_ch.bfe.statistik-wasserkraftanlagen_location', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('tt_ch.bfe.statistik-wasserkraftanlagen_location', lang)}</td>
     <td class="cell-meta">${c['attributes']['location'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('kanton', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('kanton', lang)}</td>
     <td class="cell-meta">${c['attributes']['canton'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('tt_ch.bfe.statistik-wasserkraftanlagen_hydropowerplanttype', lang)}</td>
     <td class="cell-meta">${c['attributes']['hydropowerplanttype_%s' %lang] or '-'}</td>
   <tr>
-    <td class="cell-meta">${t.translate('tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('tt_ch.bfe.statistik-wasserkraftanlagen_beginningofoperation', lang)}</td>
     <td class="cell-meta">${c['attributes']['beginningofoperation'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('tt_ch.bfe.statistik-wasserkraftanlagen_endofoperation', lang)}</td>
     <td class="cell-meta">${c['attributes']['endofoperation'] or '-'}</td>
   </tr>
   <tr>
     <td class="cell-meta-one" colspan="2">&nbsp;</td>
   </tr>
   <tr>
-    <td class="cell-meta-one" colspan="2"><strong>${t.translate('technische_angaben', lang)}</strong></td>
+    <td class="cell-meta-one" colspan="2"><strong>${t.Translator.translate('technische_angaben', lang)}</strong></td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bfe.statistik-wasserkraftanlagen.dateofstatistic', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bfe.statistik-wasserkraftanlagen.dateofstatistic', lang)}</td>
     <td class="cell-meta">${c['attributes']['dateofstatistic'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bfe.statistik-wasserkraftanlagen.hydropowerplantoperationalstatus', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bfe.statistik-wasserkraftanlagen.hydropowerplantoperationalstatus', lang)}</td>
     <td class="cell-meta">${c['attributes']['hydropowerplantoperationalstatus_%s' %lang] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bfe.statistik-wasserkraftanlagen.performancegeneratormaximum', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bfe.statistik-wasserkraftanlagen.performancegeneratormaximum', lang)}</td>
     % if c['attributes']['performancegeneratormaximum'] != None:
         <td class="cell-meta">${round(c['attributes']['performancegeneratormaximum'],2) or '-'}&nbsp;MW</td>
     % else:
@@ -104,7 +104,7 @@
     % endif
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bfe.statistik-wasserkraftanlagen.performanceturbinemaximum', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bfe.statistik-wasserkraftanlagen.performanceturbinemaximum', lang)}</td>
     % if c['attributes']['performanceturbinemaximum'] != None:
         <td class="cell-meta">${round(c['attributes']['performanceturbinemaximum'],2) or '-'}&nbsp;MW</td>
     % else:
@@ -112,7 +112,7 @@
     % endif
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bfe.statistik-wasserkraftanlagen.productionexpected', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bfe.statistik-wasserkraftanlagen.productionexpected', lang)}</td>
     % if c['attributes']['productionexpected'] != None:
         <td class="cell-meta">${round(c['attributes']['productionexpected'],2) or '-'}&nbsp;GWh</td>
     % else:
@@ -120,7 +120,7 @@
     % endif
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bfe.statistik-wasserkraftanlagen.pumpspowerinputmaximum', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bfe.statistik-wasserkraftanlagen.pumpspowerinputmaximum', lang)}</td>
     % if c['attributes']['pumpspowerinputmaximum'] != None:
         <td class="cell-meta">${round(c['attributes']['pumpspowerinputmaximum'],2) or '-'}&nbsp;MW</td>
     % else:
@@ -128,7 +128,7 @@
     % endif
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bfe.statistik-wasserkraftanlagen.enginepowerdemand', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bfe.statistik-wasserkraftanlagen.enginepowerdemand', lang)}</td>
     % if c['attributes']['enginepowerdemand'] != None:
         <td class="cell-meta">${round(c['attributes']['enginepowerdemand'],2) or '-'}&nbsp;MW</td>
     % else:
@@ -136,7 +136,7 @@
     % endif
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bfe.statistik-wasserkraftanlagen.fallheight', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bfe.statistik-wasserkraftanlagen.fallheight', lang)}</td>
     <td class="cell-meta">${c['attributes']['fallheight'] or '-'}</td>
   </tr>
   <tr>

@@ -38,31 +38,31 @@
     address = text_creator(arr_address)
 %>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.energieberatungsstellen.name', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.energieberatungsstellen.name', lang)}</td>
         <td>${c['attributes']['name'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.energieberatungsstellen.management', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.energieberatungsstellen.management', lang)}</td>
         <td>${c['attributes']['management'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.energieberatungsstellen.category', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.energieberatungsstellen.category', lang)}</td>
         <td>${c['attributes'][category] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.energieberatungsstellen.address', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.energieberatungsstellen.address', lang)}</td>
         <td>${address}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.energieberatungsstellen.pc_place', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.energieberatungsstellen.pc_place', lang)}</td>
         <td>${c['attributes']['pc_place'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.energieberatungsstellen.telephonenumber', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.energieberatungsstellen.telephonenumber', lang)}</td>
         <td>${c['attributes']['telephonenumber'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.energieberatungsstellen.mail', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.energieberatungsstellen.mail', lang)}</td>
           % if c['attributes']['mail'] == None:
             <td>-</td>
           % else:
@@ -70,7 +70,7 @@
           % endif
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.energieberatungsstellen.webaddress', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.energieberatungsstellen.webaddress', lang)}</td>
           % if c['attributes']['webaddress'] == None:
             <td>-</td>
           % else:
@@ -78,11 +78,11 @@
           % endif
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.energieberatungsstellen.client', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.energieberatungsstellen.client', lang)}</td>
         <td>${client}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.translate('ch.bfe.energieberatungsstellen.themen', lang)}</td>
+        <td class="cell-left">${t.Translator.translate('ch.bfe.energieberatungsstellen.themen', lang)}</td>
         <td>${topic}</td>
     </tr>
 </%def>

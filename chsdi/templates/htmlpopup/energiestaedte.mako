@@ -5,19 +5,19 @@
 <%def name="table_body(c, lang)">
 
 <tr>
-  <td class="cell-left">${t.translate('ch.bfe.energiestaedte.name', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('ch.bfe.energiestaedte.name', lang)}</td>
   <td>${c['attributes']['name'] or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${t.translate('ch.bfe.energiestaedte.punktezahl', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('ch.bfe.energiestaedte.punktezahl', lang)}</td>
   <td>${c['attributes']['punktezahl'] or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${t.translate('ch.bfe.energiestaedte.einwohnerzahl', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('ch.bfe.energiestaedte.einwohnerzahl', lang)}</td>
   <td>${int(c['attributes']['einwohner']) or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${t.translate('ch.bfe.energiestaedte.energiestadtseit', lang)}</td>
+  <td class="cell-left">${t.Translator.translate('ch.bfe.energiestaedte.energiestadtseit', lang)}</td>
   <td>${h.parse_date_string(c['attributes']['energiestadtseit'])}</td>
 </tr>
 </%def>
@@ -25,7 +25,7 @@
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
   <tr>
     <th class="cell-meta">
-      ${t.translate('ch.bfe.energiestaedte.name', lang)}
+      ${t.Translator.translate('ch.bfe.energiestaedte.name', lang)}
     </th>
     <td>
       ${c['attributes']['name'] or '-'}
@@ -33,7 +33,7 @@
   </tr>
   <tr>
     <th class="cell-meta">
-      ${t.translate('ch.bfe.energiestaedte.punktezahl', lang)}
+      ${t.Translator.translate('ch.bfe.energiestaedte.punktezahl', lang)}
     </th>
     <td>
       ${round(c['attributes']['punktezahl'],2) or '-'}
@@ -41,7 +41,7 @@
   </tr>
   <tr>
     <th class="cell-meta">
-      ${t.translate('ch.bfe.energiestaedte.einwohnerzahl', lang)}
+      ${t.Translator.translate('ch.bfe.energiestaedte.einwohnerzahl', lang)}
     </th>
     <td>
       ${int(c['attributes']['einwohner']) or '-'}
@@ -49,7 +49,7 @@
   </tr>
   <tr>
     <th class="cell-meta">
-      ${t.translate('ch.bfe.energiestaedte.energiestadtseit', lang)}
+      ${t.Translator.translate('ch.bfe.energiestaedte.energiestadtseit', lang)}
     </th>
     <td>
       ${h.parse_date_string(c['attributes']['energiestadtseit'])}
@@ -57,7 +57,7 @@
   </tr>
   <tr>
     <th class="cell-meta">
-      ${t.translate('ch.bfe.energiestaedte.beteiligtegemeinde', lang)}
+      ${t.Translator.translate('ch.bfe.energiestaedte.beteiligtegemeinde', lang)}
     </th>
     <td>
       ${c['attributes']['beteiligtegemeinde'] or '-'}
@@ -65,7 +65,7 @@
   </tr>
   <tr>
     <th class="cell-meta" >
-      ${t.translate('ch.bfe.energiestaedte.anzahlaudits', lang)}
+      ${t.Translator.translate('ch.bfe.energiestaedte.anzahlaudits', lang)}
     </th>
     <td class="cell-meta">
       ${c['attributes']['anzahlaudits'] or '-'}
@@ -73,7 +73,7 @@
   </tr>
   <tr>
     <th class="cell-meta" >
-      ${t.translate('ch.bfe.energiestaedte.berater', lang)}
+      ${t.Translator.translate('ch.bfe.energiestaedte.berater', lang)}
     </th>
     <td class="cell-meta">
       ${c['attributes']['berater'] or '-'}
@@ -81,19 +81,19 @@
   </tr>
   <tr>
     <th class="cell-meta">
-     ${t.translate('ch.bfe.energiestaedte.linkenergiestadtweb', lang)}
+     ${t.Translator.translate('ch.bfe.energiestaedte.linkenergiestadtweb', lang)}
     </th>
   % if c['attributes']['linkenergiestadtweb'] is None:
     <td class="cell-meta"> - </td>
   % else:
     <td class="cell-meta">
-       <a target="_blank" href="${c['attributes']['linkenergiestadtweb']}">${t.translate('link', lang)}</a>
+       <a target="_blank" href="${c['attributes']['linkenergiestadtweb']}">${t.Translator.translate('link', lang)}</a>
     </td>
   % endif
   </tr>
   <tr>
    <th class="cell-meta" colspan="2">
-    ${t.translate('ch.bfe.energiestaedte.erklaerung', lang)}
+    ${t.Translator.translate('ch.bfe.energiestaedte.erklaerung', lang)}
     </th>
   </tr>
   <tr>

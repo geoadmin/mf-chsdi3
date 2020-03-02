@@ -6,31 +6,31 @@
 badewasserqualitaet_eua = 'ch.bafu.gewaesserschutz-badewasserqualitaet.%s' % c['attributes']['qualitaet_eua']
 %>
     <tr>
-      <td class="cell-left">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwid', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwid', lang)}</td>
       <td>${c['featureId']}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwname', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwname', lang)}</td>
       <td>${c['attributes']['bwname']}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.groupid', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.groupid', lang)}</td>
       <td>${c['attributes']['groupid'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.nwunitname', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.nwunitname', lang)}</td>
       <td>${c['attributes']['nwunitname'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.gemeinde', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.gemeinde', lang)}</td>
       <td>${c['attributes']['gemeinde'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_eua', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_eua', lang)}</td>
       <td>${_(badewasserqualitaet_eua)}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.anzahlmessungen', lang)}</td>
+      <td class="cell-left">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.anzahlmessungen', lang)}</td>
       <td>${c['attributes']['anzahlmessungen'] or '-'}</td>
     </tr>
 </%def>
@@ -53,75 +53,75 @@ lang = request.lang
 % endif
   </tr>
   <tr>
-      <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwid', lang)}</td>
+      <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwid', lang)}</td>
       <td class="cell-meta">${c['featureId']}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwname', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwname', lang)}</td>
     <td class="cell-meta">${c['attributes']['bwname'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.groupid', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.groupid', lang)}</td>
     <td class="cell-meta">${c['attributes']['groupid'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.nwunitname', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.nwunitname', lang)}</td>
     <td class="cell-meta">${c['attributes']['nwunitname']}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.rbdsuname', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.rbdsuname', lang)}</td>
     <td class="cell-meta">${c['attributes']['rbdsuname'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.gemeinde', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.gemeinde', lang)}</td>
     <td class="cell-meta">${c['attributes']['gemeinde'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.kanton', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.kanton', lang)}</td>
     <td class="cell-meta">${c['attributes']['canton'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat', lang)}</td>
 % if c['attributes']['bwatercat'] == 'L':
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat_l', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat_l', lang)}</td>
 % elif c['attributes']['bwatercat'] == 'R':
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat_r', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat_r', lang)}</td>
 % endif
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw', lang)}</td>
     <td class="cell-meta">${c['attributes']['yearbw'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.coord_ch', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.coord_ch', lang)}</td>
     <td class="cell-meta">${c['attributes']['coord_ch'] or '-'}</td>
   </tr>
     <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.url', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.url', lang)}</td>
 % if c['attributes']['url']:
-    <td class="cell-meta"><a href="${c['attributes']['url'] or '-'}" target="_blank">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.urllien', lang)}</a></td>
+    <td class="cell-meta"><a href="${c['attributes']['url'] or '-'}" target="_blank">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.urllien', lang)}</a></td>
 % else:
     <td class="cell-meta">-</td>
 % endif
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz', lang)}</td>
 % if c['attributes']['eua_badeplatz'] == 1:
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz_ja', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz_ja', lang)}</td>
 % elif c['attributes']['eua_badeplatz'] == 0:
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz_nein', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz_nein', lang)}</td>
 % endif
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.anzahlmessungen', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.anzahlmessungen', lang)}</td>
     <td class="cell-meta">${c['attributes']['anzahlmessungen'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.verunreinigung_tage', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.verunreinigung_tage', lang)}</td>
     <td class="cell-meta">${c['attributes']['verunreinigung_tage'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_eua', lang)}</td>
+    <td class="cell-meta">${t.Translator.translate('ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_eua', lang)}</td>
     <td class="cell-meta">${_(badewasserqualitaet_eua)}</td>
   </tr>
 </table>
