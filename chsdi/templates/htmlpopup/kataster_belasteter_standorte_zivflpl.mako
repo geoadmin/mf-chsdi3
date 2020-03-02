@@ -15,10 +15,10 @@
 
 %>
 
-    <tr><td class="cell-left">${Translator.translate('ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.katasternummer', lang)}</td>                        <td>${c['attributes']['katasternummer'] or '-'}</td></tr>
-    <tr><td class="cell-left">${Translator.translate('tt_ch_bav_kataster_belasteter_standorte_oev_standorttyp', lang)}</td>                           <td>${c['attributes'][standorttyp] or '-'}</td></tr>
-    <tr><td class="cell-left">${Translator.translate('tt_ch_bazl_kataster_belasteter_standorte_zivflpl_beurteilung', lang)}</td>                           <td>${c['attributes'][statusaltlv] or '-'}</td></tr>
-    <tr><td class="cell-left" valign="top">${Translator.translate('tt_ch_bav_kataster_belasteter_standorte_oev_untersuchungsstand_2', lang)}</td>     <td>${_(str_output)|n}</td></tr>
-    <tr><td class="cell-left">${Translator.translate('tt_ch_bav_kataster_belasteter_standorte_oev_beschreibung')}</td>                          <td><a href="${c['attributes']['url'] or '-'}" target="_blank">${_('tt_ch_bav_kataster_belasteter_standorte_oev_katasterauszug', lang)}</a></td></tr>
+    <tr><td class="cell-left">${t.translate('ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.katasternummer', lang)}</td>                        <td>${c['attributes']['katasternummer'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.translate('tt_ch_bav_kataster_belasteter_standorte_oev_standorttyp', lang)}</td>                           <td>${c['attributes'][standorttyp] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.translate('tt_ch_bazl_kataster_belasteter_standorte_zivflpl_beurteilung', lang)}</td>                           <td>${c['attributes'][statusaltlv] or '-'}</td></tr>
+    <tr><td class="cell-left" valign="top">${t.translate('tt_ch_bav_kataster_belasteter_standorte_oev_untersuchungsstand_2', lang)}</td>     <td>${_(str_output)|n}</td></tr>
+    <tr><td class="cell-left">${t.translate('tt_ch_bav_kataster_belasteter_standorte_oev_beschreibung')}</td>                          <td><a href="${c['attributes']['url'] or '-'}" target="_blank">${_('tt_ch_bav_kataster_belasteter_standorte_oev_katasterauszug', lang)}</a></td></tr>
     <tr><td>&nbsp;</td>                                                                                                      <td>&nbsp;</td></tr>
 </%def>

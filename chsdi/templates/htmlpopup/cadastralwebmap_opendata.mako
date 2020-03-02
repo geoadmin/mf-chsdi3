@@ -61,28 +61,28 @@
 ${partials.table_body_cadastral(c, lang, fallbackLang)}
 
 <tr>
-    <td class="cell-left">${Translator.translate('ch.swisstopo-vd.amtliche-vermessung.pdf', lang)}</td><td>
+    <td class="cell-left">${t.translate('ch.swisstopo-vd.amtliche-vermessung.pdf', lang)}</td><td>
         <a href="${h.make_agnostic(request.route_url('extendedHtmlPopup', map=topic, layerId=c['layerBodId'], featureId=str(c['featureId'])))}?lang=${lang}&download_url=${pdf_url}" target="_blank">
             PDF</a>
     </td>
 </tr>
 <tr>
-    <td class="cell-left">${Translator.translate('ch.swisstopo-vd.amtliche-vermessung.shape', lang)}</td><td>
+    <td class="cell-left">${t.translate('ch.swisstopo-vd.amtliche-vermessung.shape', lang)}</td><td>
 % if requests.head(shp_url, headers={'User-Agent': 'mf-geoadmin/python'}).status_code == 200:
         <a href="${shp_url}" target="_blank">
             SHP</a>
 % else:
-        ${Translator.translate('ch.swisstopo-vd.amtliche-vermessung.noshape', lang)}
+        ${t.translate('ch.swisstopo-vd.amtliche-vermessung.noshape', lang)}
 % endif
     </td>
 </tr>
 <tr>
-    <td class="cell-left">${Translator.translate('ch.swisstopo-vd.amtliche-vermessung.itf', lang)}</td><td>
+    <td class="cell-left">${t.translate('ch.swisstopo-vd.amtliche-vermessung.itf', lang)}</td><td>
 % if requests.head(itf_url, headers={'User-Agent': 'mf-geoadmin/python'}).status_code == 200:
         <a href="${itf_url}" target="_blank">
             ITF</a>
 % else:
-        ${Translator.translate('ch.swisstopo-vd.amtliche-vermessung.noitf', lang)}
+        ${t.translate('ch.swisstopo-vd.amtliche-vermessung.noitf', lang)}
 % endif
     </td>
 </tr>
@@ -138,7 +138,7 @@ ${partials.table_body_cadastral(c, lang, fallbackLang)}
         (function next() {
             t = setTimeout(function() {
                 if (counter++ > maxLoops) {
-                    $('#pdf_download').html("<p>${Translator.translate('ch.swisstopo-vd.amtliche-vermessung.nopdf', lang)}");
+                    $('#pdf_download').html("<p>${t.translate('ch.swisstopo-vd.amtliche-vermessung.nopdf', lang)}");
                     return;
                 }
                 jQuery.ajax("${download_url}", { type: "HEAD"}).done(
@@ -161,7 +161,7 @@ ${partials.table_body_cadastral(c, lang, fallbackLang)}
 % endif
 
 <div id="pdf_download">
-    <p>${Translator.translate('ch.swisstopo-vd.amtliche-vermessung.nopdf', lang)}
+    <p>${t.translate('ch.swisstopo-vd.amtliche-vermessung.nopdf', lang)}
 </div>
 </body>
 

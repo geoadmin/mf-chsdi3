@@ -1,6 +1,7 @@
 <%namespace name="lubis_map" file="lubis_map.mako"/>
 
 <%
+  import chsdi.lib.translator as t
   from pyramid.url import route_url
   try:
       from urllib2 import urlopen
@@ -175,24 +176,24 @@
     <div class="header">${title}</div>
     <div class="wrapper">
       <div id="lubismap">
-        <button id="contrast_activate" class="button btn btn-secondary btn-sm d-block">${Translator.translate('image_contrast_activate', lang)}</button>
+        <button id="contrast_activate" class="button btn btn-secondary btn-sm d-block">${t.translate('image_contrast_activate', lang)}</button>
       </div>
     </div>
     <div class="footer">
-      <a class="pull-left" href="${Translator.translate('disclaimer url', lang)}" target="_blank">Copyright</a>
+      <a class="pull-left" href="${t.translate('disclaimer url', lang)}" target="_blank">Copyright</a>
       <div id="messagectrl"></div>
       <script>
         if ( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
           if (navigator.platform.substr(0,3) == 'Mac') {
-            document.getElementById("messagectrl").innerHTML = "${Translator.translate('rotation key apple', lang)}";
+            document.getElementById("messagectrl").innerHTML = "${t.translate('rotation key apple', lang)}";
           } else {
-            document.getElementById("messagectrl").innerHTML = "${Translator.translate('rotation key', lang)}";
+            document.getElementById("messagectrl").innerHTML = "${t.translate('rotation key', lang)}";
           }
         }
       </script>
   % if displayLink:
       <div class="pull-right">
-        <a class="link-red" href="${''.join((baseUrl, '?', layerBodId, '=', str(featureId), '&lang=', lang, '&topic=', topic))}" target="new">${Translator.translate('Link to object', lang)}</a>
+        <a class="link-red" href="${''.join((baseUrl, '?', layerBodId, '=', str(featureId), '&lang=', lang, '&topic=', topic))}" target="new">${t.translate('Link to object', lang)}</a>
       </div>
   % endif
     </div>
@@ -402,11 +403,11 @@
         function onButtonChange() {
           if (contrastLayer.getVisible() == true){
             contrastLayer.setVisible(false);
-            contrastButtonActivate.innerHTML = "${Translator.translate('image_contrast_activate', lang)}";
+            contrastButtonActivate.innerHTML = "${t.translate('image_contrast_activate', lang)}";
             setContrastPermalink('false')
           } else{
             contrastLayer.setVisible(true);
-            contrastButtonActivate.innerHTML = "${Translator.translate('image_contrast_deactivate', lang)}";
+            contrastButtonActivate.innerHTML = "${t.translate('image_contrast_deactivate', lang)}";
             setContrastPermalink('true')
           }
         }

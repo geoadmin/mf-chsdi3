@@ -2,6 +2,6 @@
 
 <%def name="table_body(c, lang)">
     <% c['stable_id'] = False %>
-    <tr><td class="cell-left">${Translator.translate('ch.bafu.landesforstinventar-waldmischungsgrad.year', lang)}</td>           <td>${c['attributes']['datenstand'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.translate('ch.bafu.landesforstinventar-waldmischungsgrad.year', lang)}</td>           <td>${c['attributes']['datenstand'] or '-'}</td></tr>
 </%def>
 

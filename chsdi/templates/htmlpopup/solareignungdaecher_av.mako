@@ -5,7 +5,7 @@
     lang = lang if lang != 'rm' else 'de'
 %>
 
-    <tr><td class="cell-left">${Translator.translate('tt_ch.bfe.solarenergie-eignung-daecher_overview', lang)}</td>                     <td>${c['attributes'][lang] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.translate('tt_ch.bfe.solarenergie-eignung-daecher_overview', lang)}</td>                     <td>${c['attributes'][lang] or '-'}</td></tr>
 </%def>
 
 

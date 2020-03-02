@@ -9,8 +9,8 @@
 <% c['stable_id'] = True %>
     <tr><td class="cell-left">${_(nummer)}</td>                 <td>${c['featureId']}</td></tr>
     <tr><td class="cell-left">${_(zaehlstelle)}</td>            <td>${c['attributes']['zaehlstellen_bezeichnung']}</td></tr>
-    <tr><td class="cell-left">${Translator.translate('physischvirtuell', lang)}</td>     <td>${c['attributes']['zst_physisch_virtuell'] or '-'}</td></tr>
-    <tr><td class="cell-left">${Translator.translate('messstellentyp', lang)}</td>       <td>${c['attributes']['messstellentyp'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.translate('physischvirtuell', lang)}</td>     <td>${c['attributes']['zst_physisch_virtuell'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.translate('messstellentyp', lang)}</td>       <td>${c['attributes']['messstellentyp'] or '-'}</td></tr>
 </%def>
 
 <%def name="extended_info(c, lang)">

@@ -6,7 +6,7 @@
     status = 'status_%s' % lang
     typ = 'typ_%s' % lang
 %>
-    <tr><td class="cell-left">${Translator.translate('ch.blw.emapis.typ', lang)}</td>               <td>${c['attributes'][typ]}</td></tr>
-    <tr><td class="cell-left">${Translator.translate('ch.blw.emapis.status', lang)}</td>            <td>${c['attributes'][status] or '-'}</td></tr>
-    <tr><td class="cell-left">${Translator.translate('ch.blw.emapis.geschaeftsnummer', lang)}</td>  <td>${c['attributes']['geschaeftsnummer'] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.translate('ch.blw.emapis.typ', lang)}</td>               <td>${c['attributes'][typ]}</td></tr>
+    <tr><td class="cell-left">${t.translate('ch.blw.emapis.status', lang)}</td>            <td>${c['attributes'][status] or '-'}</td></tr>
+    <tr><td class="cell-left">${t.translate('ch.blw.emapis.geschaeftsnummer', lang)}</td>  <td>${c['attributes']['geschaeftsnummer'] or '-'}</td></tr>
 </%def>

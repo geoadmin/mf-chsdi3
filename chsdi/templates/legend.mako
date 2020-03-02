@@ -62,7 +62,7 @@
 <div class="legend-footer">
 % if hasLegend:
   <br>
-  <span>${Translator.translate('Legend', lang)}</span><br>
+  <span>${t.translate('Legend', lang)}</span><br>
 % if legend_url_pdf:
   <a href="${legend_url_pdf}" target="_blank"><img src="${legend_url}"></img></a><br>
 % else:
@@ -72,13 +72,13 @@
   <br><br>
 % endif
 % endif
-  <span>${Translator.translate('Information', lang)}</span><br>
+  <span>${t.translate('Information', lang)}</span><br>
   <table>
-    <tr><td>${Translator.translate('geobasisdatensatz', lang)}</td> <td>${c['attributes']['bundCollectionNumber'] if 'bundCollectionNumber' in c['attributes'] else '-'}</td></tr>
+    <tr><td>${t.translate('geobasisdatensatz', lang)}</td> <td>${c['attributes']['bundCollectionNumber'] if 'bundCollectionNumber' in c['attributes'] else '-'}</td></tr>
 % if 'scaleLimit' in c['attributes']:
-    <tr><td>${Translator.translate('Gueltiger Massstabsbereich', lang)}</td> <td>${c['attributes']['scaleLimit']}</td></tr>
+    <tr><td>${t.translate('Gueltiger Massstabsbereich', lang)}</td> <td>${c['attributes']['scaleLimit']}</td></tr>
 % endif
-    <tr><td>${Translator.translate('Metadaten', lang)}</td>
+    <tr><td>${t.translate('Metadaten', lang)}</td>
 % if 'idGeoCat' in c:
   % if lang in ('de', 'rm'):
       <td><a target="_blank" href="https://www.geocat.ch/geonetwork/srv/ger/md.viewer#/full_view/${c['idGeoCat']}/tab/complete">
@@ -89,45 +89,45 @@
   % else:
       <td><a target="_blank" href="https://www.geocat.ch/geonetwork/srv/eng/md.viewer#/full_view/${c['idGeoCat']}/tab/complete">
   % endif
-      ${Translator.translate('layer_geocat_text', lang)}</a></td>
+      ${t.translate('layer_geocat_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${Translator.translate('Detailbeschreibung', lang)}</td>
+      <td>${t.translate('Detailbeschreibung', lang)}</td>
 % if 'urlDetails' in c['attributes']:
-      <td><a href="${c['attributes']['urlDetails']}" target="new">${Translator.translate('layer_url_text', lang)}</a></td>
+      <td><a href="${c['attributes']['urlDetails']}" target="new">${t.translate('layer_url_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${Translator.translate('Datenbezug', lang)}</td>
+      <td>${t.translate('Datenbezug', lang)}</td>
 % if 'downloadUrl' in c['attributes']:
-      <td><a href="${c['attributes']['downloadUrl']}" target="new">${Translator.translate('layer_url_download_text', lang)}</a></td>
+      <td><a href="${c['attributes']['downloadUrl']}" target="new">${t.translate('layer_url_download_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${Translator.translate('Thematisches Geoportal', lang)}</td>
+      <td>${t.translate('Thematisches Geoportal', lang)}</td>
 % if 'urlApplication' in c['attributes']:
-      <td><a href="${c['attributes']['urlApplication']}" target="new">${Translator.translate('layer_url_portal_text', lang)}</a></td>
+      <td><a href="${c['attributes']['urlApplication']}" target="new">${t.translate('layer_url_portal_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${Translator.translate('WMS Dienst', lang)}</td>
+      <td>${t.translate('WMS Dienst', lang)}</td>
 % if 'wmsUrlResource' in c['attributes']:
-      <td><a href="${wms_url}" target="new">${Translator.translate('wms_resource_text', lang)}</a></td>
+      <td><a href="${wms_url}" target="new">${t.translate('wms_resource_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${Translator.translate('Datenstand', lang)}</td>
+      <td>${t.translate('Datenstand', lang)}</td>
       <td>${h.parse_date_datenstand(times)}</td>
     </tr>
   </table>
