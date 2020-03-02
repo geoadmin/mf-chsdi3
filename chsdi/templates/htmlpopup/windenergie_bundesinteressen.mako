@@ -68,7 +68,7 @@
            <td><p>${desc_bik1}</p></td>
        </tr>
        <tr class="wind_info">
-           <td colspan="2"><p>${t.Translator.translate('ch.are.windenergie-bundesinteressen.tt_info_footer')} <a href="https://${_('ch.are.windenergie-bundesinteressen.tt_link')}" target="_blank">${_('ch.are.windenergie-bundesinteressen.tt_link', lang)}</a></p></td>
+           <td colspan="2"><p>${t.Translator.translate('ch.are.windenergie-bundesinteressen.tt_info_footer')} <a href="https://${t.Translator.translate('ch.are.windenergie-bundesinteressen.tt_link')}" target="_blank">${_('ch.are.windenergie-bundesinteressen.tt_link', lang)}</a></p></td>
        </tr>
     </table>
     </body>
