@@ -134,7 +134,7 @@ ${partials.table_body_cadastral(c, lang, fallbackLang)}
             clearTimeout(t);
         }
 
-        $('#pdf_download').html('<p>${_("ch.swisstopo-vd.amtliche-vermessung.waitpdf")}<br/><br/><img src="${h.versioned(request.static_url("chsdi:static/images/loading.gif"))}" width="40px" />');
+        $('#pdf_download').html('<p>${t.Translator.translate('ch.swisstopo-vd.amtliche-vermessung.waitpdf')}<br/><br/><img src="${h.versioned(request.static_url("chsdi:static/images/loading.gif"))}" width="40px" />');
         (function next() {
             t = setTimeout(function() {
                 if (counter++ > maxLoops) {
