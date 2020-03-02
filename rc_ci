@@ -8,3 +8,6 @@ export HOST=mf-chsdi3.ci.bgdi.ch
 export KEEP_VERSION=false
 export WMTS_PUBLIC_HOST=tod.dev.bgdi.ch
 export CACHE_CONTROL=no-cache
+export DBHOST=pg-sandbox.bgdi.ch
+export DBPORT=5432
+export DBSTAGING=dev
