@@ -16,7 +16,7 @@
     <td>${_(Key_To_Translate)}</td>
   </tr>
   <tr>
-    <td>${_('bodeneignung_id')}</td>
+    <td>${Translator.translate('bodeneignung_id', lang)}</td>
     <td>&nbsp;</td>
     <td>${c['attributes']['farbe'] or '-'}</td>
   </tr>

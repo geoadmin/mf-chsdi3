@@ -3,7 +3,7 @@
 <%def name="table_body(c, lang)">
 
     <tr>
-      <td class="cell-left">${_('typ')}</td>
+      <td class="cell-left">${Translator.translate('typ', lang)}</td>
       <td>
         % if lang in ('de', 'rm', 'en'):
           ${c['attributes']['name'] or '-'}
@@ -13,7 +13,7 @@
       </td>
     </tr>
     <tr>
-      <td class="cell-left">${_('flaeche_ha')}</td>
+      <td class="cell-left">${Translator.translate('flaeche_ha', lang)}</td>
       <td>${int(round(c['attributes']['flaeche_ha'])) or '-'}</td>
     </tr>
 </%def>

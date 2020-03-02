@@ -11,27 +11,27 @@
     status = 'status_%s' % lang
 %>
     <tr>
-        <td class="cell-left">${_('ch.bfe.komo-projekte.project_title')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.komo-projekte.project_title', lang)}</td>
         <td>${c['attributes'][project_title] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfe.komo-projekte.description')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.komo-projekte.description', lang)}</td>
         <td>${c['attributes'][description] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfe.komo-projekte.topic')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.komo-projekte.topic', lang)}</td>
         <td>${c['attributes'][topic] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfe.komo-projekte.project_sponsor')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.komo-projekte.project_sponsor', lang)}</td>
         <td>${c['attributes']['project_sponsor'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfe.komo-projekte.sponsor_type')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.komo-projekte.sponsor_type', lang)}</td>
         <td>${c['attributes'][sponsor_type] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfe.komo-projekte.amount_sponsored')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.komo-projekte.amount_sponsored', lang)}</td>
 % if c['attributes']['amount_sponsored']:
      <td>${int(c['attributes']['amount_sponsored'])} CHF </td>
 % else:
@@ -39,7 +39,7 @@
 % endif
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfe.komo-projekte.status')}</td>
+        <td class="cell-left">${Translator.translate('ch.bfe.komo-projekte.status', lang)}</td>
         <td>${c['attributes'][status] or '-'}</td>
     </tr>
 </%def>

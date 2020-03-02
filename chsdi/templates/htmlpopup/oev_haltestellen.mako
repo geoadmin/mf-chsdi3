@@ -52,17 +52,17 @@ baseUrl = request.registry.settings['api_url']
 % if type_station == 'Bedienpunkt' :
 
     <p><b>${c['attributes']['name'] or '-'}</b></p>
-    <p>${_('ch.bav.haltestellen-oev.bedienpunkt')}</p>
+    <p>${Translator.translate('ch.bav.haltestellen-oev.bedienpunkt', lang)}</p>
 
 % elif type_station == 'Anschlusspunkt' :
 
    <p><b>${c['attributes']['name'] or '-'}</b></p>
-   <p>${_('ch.bav.haltestellen-oev.anschlusspunkt')}</p>
+   <p>${Translator.translate('ch.bav.haltestellen-oev.anschlusspunkt', lang)}</p>
 
 % elif type_station == 'reiner_Betriebspunkt' :
 
    <p><b>${c['attributes']['name'] or '-'}</b></p>
-   <p>${_('ch.bav.haltestellen-oev.reiner_betriebspunkt')}</p>
+   <p>${Translator.translate('ch.bav.haltestellen-oev.reiner_betriebspunkt', lang)}</p>
 
 % else:
 
@@ -146,7 +146,7 @@ $(document).ready(function() {
 });
 
 </script>
-    <p><b>${c['attributes']['name'] or '-'}</b>, ${_('ch.bav.haltestellen-oev.next_departures')}:</p>
+    <p><b>${c['attributes']['name'] or '-'}</b>, ${Translator.translate('ch.bav.haltestellen-oev.next_departures', lang)}:</p>
   <table>
     <tr>
         <td id="numero${id}" class="col-label"></td>
@@ -177,50 +177,50 @@ $(document).ready(function() {
 %>
 <table>
   <tr>
-      <td class="cell-meta">${_('ch.bav.haltestellen-oev.id')}</td>
+      <td class="cell-meta">${Translator.translate('ch.bav.haltestellen-oev.id', lang)}</td>
       <td class="cell-meta">${c['featureId'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${_('ch.bav.haltestellen-oev.name')}</td>
+    <td class="cell-meta">${Translator.translate('ch.bav.haltestellen-oev.name', lang)}</td>
     <td class="cell-meta">${c['attributes']['name'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${_('ch.bav.haltestellen-oev.abkuerzung')}</td>
+    <td class="cell-meta">${Translator.translate('ch.bav.haltestellen-oev.abkuerzung', lang)}</td>
     <td class="cell-meta">${c['attributes']['abkuerzung'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${_('ch.bav.haltestellen-oev.tuabkuerzung')}</td>
+    <td class="cell-meta">${Translator.translate('ch.bav.haltestellen-oev.tuabkuerzung', lang)}</td>
     <td class="cell-meta">${c['attributes']['tuabkuerzung'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${_('ch.bav.haltestellen-oev.betriebspunkttyp')}</td>
+    <td class="cell-meta">${Translator.translate('ch.bav.haltestellen-oev.betriebspunkttyp', lang)}</td>
 
 % if type_station == 'Bedienpunkt' :
 
-    <td class="cell-meta">${_('ch.bav.haltestellen-oev.bedienpunkt')}</td>
+    <td class="cell-meta">${Translator.translate('ch.bav.haltestellen-oev.bedienpunkt', lang)}</td>
 
 % elif type_station == 'Anschlusspunkt' :
 
-   <td class="cell-meta">${_('ch.bav.haltestellen-oev.anschlusspunkt')}</td>
+   <td class="cell-meta">${Translator.translate('ch.bav.haltestellen-oev.anschlusspunkt', lang)}</td>
 
 % elif type_station == 'reiner_Betriebspunkt' :
 
-   <td class="cell-meta">${_('ch.bav.haltestellen-oev.reiner_betriebspunkt')}</td>
+   <td class="cell-meta">${Translator.translate('ch.bav.haltestellen-oev.reiner_betriebspunkt', lang)}</td>
 
 % elif type_station == 'Haltestelle' :
 
-    <td class="cell-meta">${_('ch.bav.haltestellen-oev.haltestelle')}</td>
+    <td class="cell-meta">${Translator.translate('ch.bav.haltestellen-oev.haltestelle', lang)}</td>
 
 % endif
   </tr>
   <tr>
-    <td class="cell-meta">${_('ch.bav.haltestellen-oev.verkehrsmittel')}</td>
+    <td class="cell-meta">${Translator.translate('ch.bav.haltestellen-oev.verkehrsmittel', lang)}</td>
     <td class="cell-meta">${_(verkehr)}</td>
   </tr>
   <tr>
       <td class="cell-meta"></td>
       <td class="cell-meta"><p><a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic, '&showTooltip=true'))}" target="new">
-        ${_('Link to object')}
+        ${Translator.translate('Link to object', lang)}
       </a></p></td>
   </tr>
 </table>

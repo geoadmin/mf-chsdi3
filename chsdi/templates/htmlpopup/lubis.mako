@@ -94,38 +94,38 @@ viewer_url = get_viewer_url(request, params)
   <td>${c['featureId'] or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${_('tt_lubis_Flugdatum')}</td>
+  <td class="cell-left">${Translator.translate('tt_lubis_Flugdatum', lang)}</td>
   <td>${datum or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${_('tt_lubis_Filmart')}</td>
+  <td class="cell-left">${Translator.translate('tt_lubis_Filmart', lang)}</td>
   <td>${c['attributes']['filmart'] or '-'}</td>
 </tr>
 
 % if 'contact_image_url' in c['attributes'] and c['attributes']['contact_image_url']:
 <tr>
-  <td class="cell-left">${_('tt_lubis_url_canton')}</td>
+  <td class="cell-left">${Translator.translate('tt_lubis_url_canton', lang)}</td>
   <td><a href="${c['attributes']['contact_image_url']}" target="_blank">${c['attributes']['contact_image_url']}</a></td>
 </tr>
 % endif
 
 % if preview_url != "" and image_width != None:
 <tr>
-  <td class="cell-left">${_('tt_lubis_Quickview')}</td>
+  <td class="cell-left">${Translator.translate('tt_lubis_Quickview', lang)}</td>
   <td>
     <a href="${viewer_url}" target="_blank"><img src="${preview_url}" alt="quickview"></a>
   </td>
 </tr>
 % else:
 <tr>
-  <td class="cell-left">${_('tt_lubis_Quickview')}</td>
-  <td>${_('tt_lubis_noQuickview')}</td>
+  <td class="cell-left">${Translator.translate('tt_lubis_Quickview', lang)}</td>
+  <td>${Translator.translate('tt_lubis_noQuickview', lang)}</td>
 </tr>
 % endif
 
 % if 'contact_web' in c['attributes']:
 <tr>
-  <th class="cell-left">${_('tt_lubis_bildorder')}</th>
+  <th class="cell-left">${Translator.translate('tt_lubis_bildorder', lang)}</th>
   <td>
     ${c['attributes']['contact'] | br }
     <br/>
@@ -195,42 +195,42 @@ params = (
 viewer_url = get_viewer_url(request, params)
 shop_url = request.registry.settings['shop_url']
 %>
-<title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
+<title>${Translator.translate('tt_lubis_ebkey', lang)}: ${c['featureId']}</title>
 
 <body onload="init()">
   <table class="table-with-border kernkraftwerke-extended">
-    <tr><th class="cell-left">${_('tt_lubis_ebkey')}</th>            <td>${c['featureId'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_inventarnummer')}</th>   <td>${c['attributes']['inventarnummer'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_Flugdatum')}</th>        <td>${datum or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_flughoehe')}</th>        <td>${c['attributes']['flughoehe'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_massstab')}</th>         <td>1:${c['attributes']['massstab'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_y')}</th>                <td>${c['attributes']['x'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_x')}</th>                <td>${c['attributes']['y'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_Filmart')}</th>          <td>${c['attributes']['filmart'] or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_ebkey', lang)}</th>            <td>${c['featureId'] or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_inventarnummer', lang)}</th>   <td>${c['attributes']['inventarnummer'] or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_Flugdatum', lang)}</th>        <td>${datum or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_flughoehe', lang)}</th>        <td>${c['attributes']['flughoehe'] or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_massstab', lang)}</th>         <td>1:${c['attributes']['massstab'] or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_y', lang)}</th>                <td>${c['attributes']['x'] or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_x', lang)}</th>                <td>${c['attributes']['y'] or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_Filmart', lang)}</th>          <td>${c['attributes']['filmart'] or '-'}</td></tr>
 
 % if 'contact_image_url' in c['attributes'] and c['attributes']['contact_image_url']:
 <tr>
-  <th class="cell-left">${_('tt_lubis_url_canton')}</th>
+  <th class="cell-left">${Translator.translate('tt_lubis_url_canton', lang)}</th>
   <td><a href="${c['attributes']['contact_image_url']}" target="_blank">${c['attributes']['contact_image_url']}</a></td>
 </tr>
 % endif
 
-    <tr><th class="cell-left">${_('tt_lubis_originalsize')}</th>     <td>${c['attributes']['originalsize'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_filesize_mb')}</th>      <td>${filesize_mb or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_bildpfad')}</th>         <td>${filename or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_orthophoto')}</th>       <td>${c['attributes']['orthophoto'] or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_orientierung')}</th>     <td>${orientierung or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_rotation')}</th>         <td>${c['attributes']['rotation'] or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_originalsize', lang)}</th>     <td>${c['attributes']['originalsize'] or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_filesize_mb', lang)}</th>      <td>${filesize_mb or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_bildpfad', lang)}</th>         <td>${filename or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_orthophoto', lang)}</th>       <td>${c['attributes']['orthophoto'] or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_orientierung', lang)}</th>     <td>${orientierung or '-'}</td></tr>
+    <tr><th class="cell-left">${Translator.translate('tt_lubis_rotation', lang)}</th>         <td>${c['attributes']['rotation'] or '-'}</td></tr>
 % if 'contact_web' not in c['attributes']:
   <tr class="chsdi-no-print">
-    <th class="cell-left">${_('link')} Online Shop</th>
+    <th class="cell-left">${Translator.translate('link', lang)} Online Shop</th>
     <td><a href="https:${shop_url}/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
     target="toposhop">Online Shop</a></td>
   </tr>
 % endif
 % if 'contact_web' in c['attributes']:
   <tr class="chsdi-no-print">
-    <th class="cell-left">${_('tt_lubis_bildorder')}</th>
+    <th class="cell-left">${Translator.translate('tt_lubis_bildorder', lang)}</th>
     <td>${c['attributes']['contact'] | br } <br /> ${c['attributes']['contact_email']} <br /><a href="${c['attributes']['contact_web']}" target="_blank">${c['attributes']['contact_web']}</a></td>
   </tr>
 % endif

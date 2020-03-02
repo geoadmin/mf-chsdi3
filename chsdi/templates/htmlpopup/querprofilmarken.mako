@@ -4,22 +4,22 @@
 <%
     lang = 'fr' if lang in ('fr', 'it') else 'de'
 %>
-<tr><td class="cell-left">${_('schluesselid')}</td>                                 <td>${c['attributes']['schluesselid'] or '-'}</td></tr>
-<tr><td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.typ')}</td>       <td>${c['attributes']['typ'] or '-'}</td></tr>
-<tr><td class="cell-left">${_('x')}</td>                                            
+<tr><td class="cell-left">${Translator.translate('schluesselid', lang)}</td>                                 <td>${c['attributes']['schluesselid'] or '-'}</td></tr>
+<tr><td class="cell-left">${Translator.translate('ch.bafu.wasserbau-querprofilmarken.typ', lang)}</td>       <td>${c['attributes']['typ'] or '-'}</td></tr>
+<tr><td class="cell-left">${Translator.translate('x', lang)}</td>
   % if c['attributes']['x_koordinate']:
     <td>${round(c['attributes']['x_koordinate'],2) or '-'}</td></tr>
   % else:
     <td>-</td></tr>
   % endif
-<tr><td class="cell-left">${_('y')}</td>
+<tr><td class="cell-left">${Translator.translate('y', lang)}</td>
   % if c['attributes']['y_koordinate']:
     <td>${round(c['attributes']['y_koordinate'],2) or '-'}</td></tr>
   % else:
     <td>-</td></tr>
   % endif
-<tr><td class="cell-left">${_('azimut')}</td>                                       <td>${c['attributes']['azimut'] or '-'}</td></tr>
-<tr><td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.herkunft')}</td>  <td>${c['attributes']['herkunft'] or '-'}</td></tr>
+<tr><td class="cell-left">${Translator.translate('azimut', lang)}</td>                                       <td>${c['attributes']['azimut'] or '-'}</td></tr>
+<tr><td class="cell-left">${Translator.translate('ch.bafu.wasserbau-querprofilmarken.herkunft', lang)}</td>  <td>${c['attributes']['herkunft'] or '-'}</td></tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
@@ -32,15 +32,15 @@
   <col width=50%>
 </colgroup>
 <tr>
-<th class="cell-left">${_('schluesselid')}</th>
+<th class="cell-left">${Translator.translate('schluesselid', lang)}</th>
 <td>${c['attributes']['schluesselid'] or '-'}</td>
 </tr>
 <tr>
-<th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.typ')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-querprofilmarken.typ', lang)}</th>
 <td>${c['attributes']['typ'] or '-'}</td>
 </tr>
 <tr>
-<th class="cell-left">${_('x')}</th>
+<th class="cell-left">${Translator.translate('x', lang)}</th>
   % if c['attributes']['x_koordinate']:
     <td>${round(c['attributes']['x_koordinate'],2) or '-'}</td>
   % else:
@@ -48,7 +48,7 @@
   % endif  
 </tr>
 <tr>
-<th class="cell-left">${_('y')}</th>
+<th class="cell-left">${Translator.translate('y', lang)}</th>
   % if c['attributes']['y_koordinate']:
     <td>${round(c['attributes']['y_koordinate'],2) or '-'}</td>
   % else:
@@ -56,15 +56,15 @@
   % endif    
 </tr>
 <tr>
-<th class="cell-left">${_('azimut')}</th>
+<th class="cell-left">${Translator.translate('azimut', lang)}</th>
 <td>${c['attributes']['azimut'] or '-'}</td>
 </tr>
 <tr>
-<th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.herkunft')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-querprofilmarken.herkunft', lang)}</th>
 <td>${c['attributes']['herkunft'] or '-'}</td>
 </tr>
 <tr>
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.bemerkung')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.bemerkung', lang)}</th>
 <td>${c['attributes']['bemerkung'] or '-'}</td>
 </tr>
 </table>

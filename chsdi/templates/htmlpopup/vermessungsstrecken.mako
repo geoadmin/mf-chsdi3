@@ -3,10 +3,10 @@
 <%def name="preview()">${c.feature.titel or '-'}</%def>
 
 <%def name="table_body(c, lang)">
-<tr><td class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.gewaessernummer')}</td>    <td>${c['attributes']['gewaessernummer'] or '-'}</td></tr>
-<tr><td class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.streckenid')}</td>         <td>${c['attributes']['streckenid'] or '-'}</td></tr>
-<tr><td class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.bezeichnung')}</td>        <td>${c['attributes']['bezeichnung'] or '-'}</td></tr>
-<tr><td class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.gwlnr')}</td>              <td>${c['attributes']['gwlnr'] or '-'}</td></tr>
+<tr><td class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.gewaessernummer', lang)}</td>    <td>${c['attributes']['gewaessernummer'] or '-'}</td></tr>
+<tr><td class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.streckenid', lang)}</td>         <td>${c['attributes']['streckenid'] or '-'}</td></tr>
+<tr><td class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.bezeichnung', lang)}</td>        <td>${c['attributes']['bezeichnung'] or '-'}</td></tr>
+<tr><td class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.gwlnr', lang)}</td>              <td>${c['attributes']['gwlnr'] or '-'}</td></tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
@@ -22,15 +22,15 @@
 <td width="30%" >&nbsp;</td>
 </tr>
 <tr>
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.routeid')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.routeid', lang)}</th>
 <td>${c['attributes']['routeid'] or '-'}</td>
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.gewaessernummer')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.gewaessernummer', lang)}</th>
 <td>${c['attributes']['gewaessernummer'] or '-'}</td>
 </tr>
 <tr>
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.bemerkung')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.bemerkung', lang)}</th>
 <td>${c['attributes']['bemerkung'] or '-'}</td>
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.anfangsmass')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.anfangsmass', lang)}</th>
 % if c['attributes']['anfangsmass']:
     <td>${round(c['attributes']['anfangsmass'],3) or '-'}</td>
 % else:
@@ -38,19 +38,19 @@
 % endif
 </tr>
 <tr>
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.endmass')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.endmass', lang)}</th>
 % if c['attributes']['endmass']:
     <td>${round(c['attributes']['endmass'],3) or '-'}</td>
 % else:
     <td>-</td>
 % endif
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.streckenid')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.streckenid', lang)}</th>
 <td>${c['attributes']['streckenid'] or '-'}</td>
 </tr>
 <tr>
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.bezeichnung')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.bezeichnung', lang)}</th>
 <td>${c['attributes']['bezeichnung'] or '-'}</td>
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.laenge_km')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.laenge_km', lang)}</th>
 % if c['attributes']['laenge_km']:
     <td>${round(c['attributes']['laenge_km'],3) or '-'}</td>
 % else:
@@ -58,15 +58,15 @@
 % endif
 </tr>
 <tr>
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.anzahl_profile')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.anzahl_profile', lang)}</th>
 <td>${c['attributes']['anzahl_profile'] or '-'}</td>
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.aufnahme_intervall')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.aufnahme_intervall', lang)}</th>
 <td>${c['attributes']['aufnahme_intervall'] or '-'}</td>
 </tr>
 <tr>
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.aufnahme_letzte')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.aufnahme_letzte', lang)}</th>
 <td>${c['attributes']['aufnahme_letzte'] or '-'}</td>
-<th class="cell-left">${_('ch.bafu.wasserbau-vermessungsstrecken.gwlnr')}</th>
+<th class="cell-left">${Translator.translate('ch.bafu.wasserbau-vermessungsstrecken.gwlnr', lang)}</th>
 <td>${c['attributes']['gwlnr'] or '-'}</td>
 </tr>
 </table>

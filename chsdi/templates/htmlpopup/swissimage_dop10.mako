@@ -3,7 +3,7 @@
 
 <%def name="table_body(c,lang)">
 
-    <tr><td class="cell-left">${_('ch.swisstopo.images-swissimage-dop10.metadata-kartenblatt_nummer')}</td>   <td>${c['id'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.images-swissimage-dop10.metadata-kartenblatt')}</td>    <td>${c['attributes']['datenstand'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.images-swissimage-dop10.metadata-resolution')}</td>    <td>${c['attributes']['resolution'] or '-'}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('ch.swisstopo.images-swissimage-dop10.metadata-kartenblatt_nummer', lang)}</td>   <td>${c['id'] or '-'}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('ch.swisstopo.images-swissimage-dop10.metadata-kartenblatt', lang)}</td>    <td>${c['attributes']['datenstand'] or '-'}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('ch.swisstopo.images-swissimage-dop10.metadata-resolution', lang)}</td>    <td>${c['attributes']['resolution'] or '-'}</td></tr>
 </%def>

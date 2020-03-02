@@ -12,6 +12,6 @@
   else:
     hertz = '-'
 %>
-    <tr><td class="cell-left">${_('ch.bakom.richtfunkverbindungen.link_class')}</td>           <td>${hertz}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('ch.bakom.richtfunkverbindungen.link_class', lang)}</td>           <td>${hertz}</td></tr>
 </%def>
 

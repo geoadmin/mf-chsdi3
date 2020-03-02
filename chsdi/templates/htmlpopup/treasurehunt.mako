@@ -8,16 +8,16 @@
     information = 'info_%s' % lang
 
 %>
-    <tr><td class="cell-left">${_('title')}</td><td>${c['attributes'][title] or '-'|n}</td></tr>
+    <tr><td class="cell-left">${Translator.translate('title', lang)}</td><td>${c['attributes'][title] or '-'|n}</td></tr>
 
 % if c['attributes']['type_coord'] =='info':
     <tr>
-    <td class="cell-left">${_('information')}</td><td>${c['attributes'][information] or '-'|n}</td>
+    <td class="cell-left">${Translator.translate('information', lang)}</td><td>${c['attributes'][information] or '-'|n}</td>
     </tr>
 % else:    
     <tr>
-    <td class="cell-left">${_('link')}<td>
-    <a href="${c['attributes'][link] or '-'|n}" target="_parent">${_('treasure_hunt')}</a></td>
+    <td class="cell-left">${Translator.translate('link', lang)}<td>
+    <a href="${c['attributes'][link] or '-'|n}" target="_parent">${Translator.translate('treasure_hunt', lang)}</a></td>
     </tr>
 % endif
 

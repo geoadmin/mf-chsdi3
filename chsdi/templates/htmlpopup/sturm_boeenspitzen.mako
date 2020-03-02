@@ -19,9 +19,9 @@
 
 %>
 
-    <tr><td class="cell-left">${_('Boeenspitzen_ms')}</td>                                            
+    <tr><td class="cell-left">${Translator.translate('Boeenspitzen_ms', lang)}</td>
       	<td>${c['attributes'][boeenspitzen_ms_values] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('Boeenspitzen_kmh')}</td>
+    <tr><td class="cell-left">${Translator.translate('Boeenspitzen_kmh', lang)}</td>
         <td>${c['attributes'][boeenspitzen_kmh_values] or '-'}</td></tr>
 
 
