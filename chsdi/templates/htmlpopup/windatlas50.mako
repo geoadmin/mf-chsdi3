@@ -1,8 +1,6 @@
 <%inherit file="base.mako"/>
 <%!
 import requests
-import logging
-logging.debug("in windatlas for the html popup")
 def getAltitude(baseUrl, center):
     fullUrl = 'http://' + baseUrl +'/rest/services/height'
     response = requests.get(
