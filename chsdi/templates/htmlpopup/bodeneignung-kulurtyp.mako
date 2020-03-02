@@ -13,7 +13,7 @@
   <tr>
     <td width="30" bgcolor="${c['attributes']['symb_color']}" style="border-style: solid; border-width: 1px; -webkit-print-color-adjust:exact;">&nbsp;</td>
     <td width="20">&nbsp;</td>
-    <td>${_(Key_To_Translate)}</td>
+    <td>${t.Translator.translate(Key_To_Translate, lang)}</td>
   </tr>
   <tr>
     <td>${t.Translator.translate('bodeneignung_id', lang)}</td>

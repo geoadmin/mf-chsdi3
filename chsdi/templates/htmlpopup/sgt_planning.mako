@@ -20,7 +20,7 @@
     <tr><td class="cell-left">${t.Translator.translate('ch.bfe.sachplan-geologie-tiefenlager.validuntil', lang)}</td>       <td>${c['attributes']['validuntil'] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('ch.bfe.sachplan-geologie-tiefenlager.description', lang)}</td>      <td>${c['attributes']['description'] or '-'}</td></tr>
 % if c['attributes'][web]:
-    <tr><td class="cell-left">${t.Translator.translate('ch.bfe.sachplan-geologie-tiefenlager.web')}</td>            <td><a href="${c['attributes'][web]}" target="_blank">${_('tt_sachplan_objektblatt', lang)}</a></td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.bfe.sachplan-geologie-tiefenlager.web', lang)}</td>            <td><a href="${c['attributes'][web]}" target="_blank">${t.Translator.translate('tt_sachplan_objektblatt', lang)}</a></td></tr>
 % else:
     <tr><td class="cell-left">${t.Translator.translate('ch.bfe.sachplan-geologie-tiefenlager.web', lang)}</td>            <td> - </td></tr>
 %endif

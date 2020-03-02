@@ -90,7 +90,7 @@ params = (
 viewer_url = get_viewer_url(request, params)
 %>
 <tr>
-  <td class="cell-left">${_(tt_lubis_ebkey)}</td>
+  <td class="cell-left">${t.Translator.translate(tt_lubis_ebkey, lang)}</td>
   <td>${c['featureId'] or '-'}</td>
 </tr>
 <tr>

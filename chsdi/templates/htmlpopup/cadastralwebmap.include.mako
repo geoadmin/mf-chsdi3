@@ -54,8 +54,8 @@
     % elif c['attributes']['ak'] == 'VS':
         <tr><td class="cell-left">${t.Translator.translate('link to canton geoportal', lang)}</td><td><a href="https://sitonline.vs.ch/urbanisation/mo/${fallbackLang}/" target="_blnk">VS</a></td></br>
     % elif c['attributes']['ak'] == 'FL':
-        <tr><td class="cell-left">${t.Translator.translate('link to geoportal')}</td><td><a href="http://geodaten.llv.li/geoshop/public.html?zoombox=${c['bboxlv95'][0]},${c['bboxlv95'][1]},${c['bboxlv95'][2]},${c['bboxlv95'][3]}" target="_blank">${_('FL', lang)}</a></td></tr>
+        <tr><td class="cell-left">${t.Translator.translate('link to geoportal', lang)}</td><td><a href="http://geodaten.llv.li/geoshop/public.html?zoombox=${c['bboxlv95'][0]},${c['bboxlv95'][1]},${c['bboxlv95'][2]},${c['bboxlv95'][3]}" target="_blank">${t.Translator.translate('FL', lang)}</a></td></tr>
     % else:
-        <tr><td class="cell-left">${t.Translator.translate('link to canton geoportal')}</td><td>${_('Canton has provided no link to portal', lang)}</td></tr>
+        <tr><td class="cell-left">${t.Translator.translate('link to canton geoportal', lang)}</td><td>${t.Translator.translate('Canton has provided no link to portal', lang)}</td></tr>
     % endif
 </%def>

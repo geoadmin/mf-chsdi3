@@ -17,7 +17,7 @@
     <tr><td class="cell-left">${t.Translator.translate('tt_sachplan_facility_beschlussdatum', lang)}</td>        <td>${c['attributes']['validfrom'] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('tt_sachplan_beschreibung', lang)}</td>                   <td>${c['attributes'][description_text] or '-'}</td></tr>
 % if c['attributes']['doc_web']:
-    <tr><td class="cell-left">${t.Translator.translate('tt_sachplan_weitereinfo')}</td>                    <td><a href="${c['attributes']['doc_web'] or '-'}" target="_blank">${_('tt_sachplan_objektblatt', lang)}</a></td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('tt_sachplan_weitereinfo', lang)}</td>                    <td><a href="${c['attributes']['doc_web'] or '-'}" target="_blank">${t.Translator.translate('tt_sachplan_objektblatt', lang)}</a></td></tr>
 % else:
     <tr><td class="cell-left">${t.Translator.translate('tt_sachplan_weitereinfo', lang)}</td>                    <td> - </td></tr>
 %endif

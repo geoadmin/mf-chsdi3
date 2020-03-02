@@ -32,7 +32,7 @@
     <tr><td colspan="2">${t.Translator.translate('ch.are.windenergie-bundesinteressen.tt_short_info', lang)}</td></tr>
     <tr class="wind_space"><td colspan="2"></td></tr>
     <tr><td class="wind_legend_title" colspan="2">${t.Translator.translate('ch.are.windenergie-bundesinteressen.kbik', lang)}:</td></tr>
-    <tr><td colspan="2"><div class="wind_bund_extendet.wind_kbik_main wind_kbik_dyn" style="background-color:${color};"></div>${_(legend_text)}</td></tr>
+    <tr><td colspan="2"><div class="wind_bund_extendet.wind_kbik_main wind_kbik_dyn" style="background-color:${color};"></div>${t.Translator.translate(legend_text, lang)}</td></tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
@@ -64,11 +64,11 @@
            <td><p>${desc_bik4}</p></td>
        </tr>
        <tr class="wind_legend">
-           <td><div class="wind_kbik_main wind_kbik_1"></div><div class="wind_kbik_main wind_kbik_5"></div><p>${t.Translator.translate('ch.are.windenergie-bundesinteressen.bik1')}, ${_('ch.are.windenergie-bundesinteressen.bik5', lang)}</p></td>
+           <td><div class="wind_kbik_main wind_kbik_1"></div><div class="wind_kbik_main wind_kbik_5"></div><p>${t.Translator.translate('ch.are.windenergie-bundesinteressen.bik1', lang)}, ${t.Translator.translate('ch.are.windenergie-bundesinteressen.bik5', lang)}</p></td>
            <td><p>${desc_bik1}</p></td>
        </tr>
        <tr class="wind_info">
-           <td colspan="2"><p>${t.Translator.translate('ch.are.windenergie-bundesinteressen.tt_info_footer')} <a href="https://${t.Translator.translate('ch.are.windenergie-bundesinteressen.tt_link')}" target="_blank">${_('ch.are.windenergie-bundesinteressen.tt_link', lang)}</a></p></td>
+           <td colspan="2"><p>${t.Translator.translate('ch.are.windenergie-bundesinteressen.tt_info_footer', lang)} <a href="https://${t.Translator.translate('ch.are.windenergie-bundesinteressen.tt_link', lang)}" target="_blank">${t.Translator.translate('ch.are.windenergie-bundesinteressen.tt_link', lang)}</a></p></td>
        </tr>
     </table>
     </body>

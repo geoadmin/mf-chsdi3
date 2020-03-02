@@ -36,7 +36,7 @@
         }
     </style>
     <tr>
-        <td class="cell-left"><label>${_('ch.bfe.biogasanlagen.name' )}</label></td>
+        <td class="cell-left"><label>${t.Translator.translate('ch.bfe.biogasanlagen.name' , lang)}</label></td>
         <td>${data['name'] or '-'}</td>
     </tr>
     <tr>
@@ -62,7 +62,7 @@
 %>
     <table class="table-with-border">
         <tr>
-            <th class="cell-left">${_('ch.bfe.biogasanlagen.name' )}</th>
+            <th class="cell-left">${t.Translator.translate('ch.bfe.biogasanlagen.name' , lang)}</th>
             <td>${data['name'] or '-'}</td>
         </tr>
         <tr>

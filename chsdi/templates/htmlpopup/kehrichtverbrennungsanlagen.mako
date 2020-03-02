@@ -75,7 +75,7 @@
 
     <table class="table-with-border">
         <tr>
-            <th class="cell-left">${_('ch.bfe.kehrichtverbrennungsanlagen.name' )}</th>
+            <th class="cell-left">${t.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.name' , lang)}</th>
             <td>${c['attributes']['name'] or '-'}</td>
         </tr>
         <tr>

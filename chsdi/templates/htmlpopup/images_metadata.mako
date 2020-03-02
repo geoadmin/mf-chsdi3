@@ -5,5 +5,5 @@
 	<tr><td class="cell-left">${t.Translator.translate('tilenumber', lang)}</td><td>${c['featureId']}</td></tr>
   <tr><td class="cell-left">${t.Translator.translate('sheetname', lang)}</td><td>${c['attributes']['lk25_name']}</td></tr>
   <tr><td class="cell-left">${t.Translator.translate('Datenstand', lang)}</td><td>${c['attributes']['datenstand'] or '-'}</td></tr>
-	<tr><td class="cell-left">${t.Translator.translate('Datenbezug')}</td><td><a href="http://www.toposhop.admin.ch/de/shop/products/images/ortho/swissimage/index" target="_blank">${_('Toposhop', lang)}</a></td></tr>
+	<tr><td class="cell-left">${t.Translator.translate('Datenbezug', lang)}</td><td><a href="http://www.toposhop.admin.ch/de/shop/products/images/ortho/swissimage/index" target="_blank">${t.Translator.translate('Toposhop', lang)}</a></td></tr>
 </%def> 

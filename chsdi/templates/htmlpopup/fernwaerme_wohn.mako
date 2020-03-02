@@ -10,7 +10,7 @@
 
 <%def name="extended_info(c, lang)">
     <table class="table-with-border">
-        <tr><th class="cell-left">${_('ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas' )}</th>             <td>${c['attributes']['percentgas'] or '-'}</td></tr>
+        <tr><th class="cell-left">${t.Translator.translate('ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentgas' , lang)}</th>             <td>${c['attributes']['percentgas'] or '-'}</td></tr>
         <tr><th class="cell-left">${t.Translator.translate('ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentoil', lang)}</th>              <td>${c['attributes']['percentoil'] or '-'}</td></tr>
         <tr><th class="cell-left">${t.Translator.translate('ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentpump', lang)}</th>             <td>${c['attributes']['percentpump'] or '-'}</td></tr>
         <tr><th class="cell-left">${t.Translator.translate('ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.percentremoteheat', lang)}</th>       <td>${c['attributes']['percentremoteheat'] or '-'}</td></tr>

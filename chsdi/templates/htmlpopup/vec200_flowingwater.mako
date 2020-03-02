@@ -14,7 +14,7 @@
     
     <tr><td class="cell-left">${t.Translator.translate('hydrografische_herkunft', lang)}</td><td>
     % if c['attributes']['hoc']:
-    ${_(c['attributes']['hoc'])}
+    ${t.Translator.translate(c['attributes']['hoc'], lang)}
     % else:
     -
     % endif

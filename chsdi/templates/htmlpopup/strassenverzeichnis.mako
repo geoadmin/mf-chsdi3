@@ -11,9 +11,9 @@
     <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.plzo', lang)}</td>                 <td>${c['attributes']['plzo'] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.gdenr', lang)}</td>                 <td>${c['attributes']['gdenr'] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.gdename', lang)}</td>                 <td>${c['attributes']['gdename'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.type')}</td>                 <td>${_(c['attributes']['type'] or '-', lang)}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.status')}</td>                 <td>${_(c['attributes']['status'] or '-', lang)}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.official', lang)}</td>                 <td>${_(official)}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.validated', lang)}</td>                 <td>${_(validated)}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.modified')}</td>                 <td>${_(c['attributes']['modified'] or '-', lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.type', lang)}</td>                 <td>${t.Translator.translate(c['attributes']['type'] or '-', lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.status', lang)}</td>                 <td>${t.Translator.translate(c['attributes']['status'] or '-', lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.official', lang)}</td>                 <td>${t.Translator.translate(official, lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.validated', lang)}</td>                 <td>${t.Translator.translate(validated, lang)}</td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.amtliches-strassenverzeichnis.modified', lang)}</td>                 <td>${t.Translator.translate(c['attributes']['modified'] or '-', lang)}</td></tr>
 </%def>

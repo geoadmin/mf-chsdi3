@@ -50,7 +50,7 @@
           % if c['attributes']['mail'] == None:
             <td>-</td>
           % else:
-            <td><a href="mailto:${c['attributes']['mail']}">${_(c['attributes']['mail'])}</a></td>
+            <td><a href="mailto:${c['attributes']['mail']}">${t.Translator.translate(c['attributes']['mail'], lang)}</a></td>
           % endif
     </tr>
     <tr>
@@ -58,7 +58,7 @@
           % if c['attributes']['webaddress'] == None:
             <td>-</td>
           % else:
-            <td><a target="_blank" href="${c['attributes']['webaddress']}">${_(c['attributes']['webaddress'])}</a></td>
+            <td><a target="_blank" href="${c['attributes']['webaddress']}">${t.Translator.translate(c['attributes']['webaddress'], lang)}</a></td>
           % endif
     </tr>
 </%def>

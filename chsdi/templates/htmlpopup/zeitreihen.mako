@@ -70,7 +70,7 @@ def get_viewer_url(request, params):
   %>
   <tr>
     <td class="cell-left">${t.Translator.translate('kartenwerk', lang)}</td>
-    <td>${_(productName)}</td>
+    <td>${t.Translator.translate(productName, lang)}</td>
   </tr>
   <tr>
     <td class="cell-left">${t.Translator.translate('kbnum', lang)}</td>
@@ -92,7 +92,7 @@ def get_viewer_url(request, params):
 <tr>
   <td class="cell-left">${t.Translator.translate('tt_zeitreihen_FullResView', lang)}</td>
   <td>
-    <a href="${viewer_url}" target="_blank" title="${t.Translator.translate('tt_zeitreihen_FullResView')} - ${c['attributes']['kbbez']} - ${c['attributes']['kbnum']} - ${c['attributes']['release_year']} - ${c['attributes']['bv_nummer']}"><img src="${preview_url}" alt="${_('tt_zeitreihen_FullResView', lang)} - ${c['attributes']['kbbez']} - ${c['attributes']['release_year']} - ${c['attributes']['bv_nummer']}"></a>
+    <a href="${viewer_url}" target="_blank" title="${t.Translator.translate('tt_zeitreihen_FullResView', lang)} - ${c['attributes']['kbbez']} - ${c['attributes']['kbnum']} - ${c['attributes']['release_year']} - ${c['attributes']['bv_nummer']}"><img src="${preview_url}" alt="${t.Translator.translate('tt_zeitreihen_FullResView', lang)} - ${c['attributes']['kbbez']} - ${c['attributes']['release_year']} - ${c['attributes']['bv_nummer']}"></a>
   </td>
 </tr>
 % else:

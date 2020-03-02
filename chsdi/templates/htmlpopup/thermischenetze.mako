@@ -13,7 +13,7 @@
     <tr><td class="cell-left">${t.Translator.translate('ch.bfe.thermische-netze.operator', lang)}</td><td>${c['attributes']['operator'] or '-'}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('ch.bfe.thermische-netze.contact', lang)}</td> <td>${c['attributes']['contact']}</td></tr>
     <tr><td class="cell-left">${t.Translator.translate('ch.bfe.thermische-netze.de_enersource_main', lang)}</td><td>${c['attributes'][enersource_main] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('ch.bfe.thermische-netze.feedback')}</td><td><a target="_blank" href="https://www.uvek-gis.admin.ch/BFE/storymaps/EE_ThermischeNetze_Feedback/?&name=${c['attributes']['name']}&place=${c['attributes']['place']}&long=${c['attributes']['x']}&lat=${c['attributes']['y']}&lang=${lang}">${_('ch.bfe.thermische-netze.sendfeedback', lang)}</a></td></tr>
+    <tr><td class="cell-left">${t.Translator.translate('ch.bfe.thermische-netze.feedback', lang)}</td><td><a target="_blank" href="https://www.uvek-gis.admin.ch/BFE/storymaps/EE_ThermischeNetze_Feedback/?&name=${c['attributes']['name']}&place=${c['attributes']['place']}&long=${c['attributes']['x']}&lat=${c['attributes']['y']}&lang=${lang}">${t.Translator.translate('ch.bfe.thermische-netze.sendfeedback', lang)}</a></td></tr>
 
 </%def>
 

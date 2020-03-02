@@ -22,7 +22,7 @@ if c['attributes']['validuntil']:
 endif
 %>
     <tr>
-      <td class="cell-left">${_(name)}</td>
+      <td class="cell-left">${t.Translator.translate(name, lang)}</td>
       <td>${c['attributes'][plname]}</td>
     </tr>
     <tr>
@@ -55,7 +55,7 @@ endif
     document_title_part = c['attributes']['doc_title'].split('###')
 %>
 %  for i in range(len(document_web_part)):
-     <tr><td class="cell-left">${_(doc_title)}</td> <td><a href="${document_web_part[i] or '-'}" target="_blank">${document_title_part[i] or '-'}</a></td></tr>
+     <tr><td class="cell-left">${t.Translator.translate(doc_title, lang)}</td> <td><a href="${document_web_part[i] or '-'}" target="_blank">${document_title_part[i] or '-'}</a></td></tr>
 %endfor
 % else:
     <tr>

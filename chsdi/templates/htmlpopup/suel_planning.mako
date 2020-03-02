@@ -22,7 +22,7 @@ if c['attributes']['validuntil']:
 endif
 %>
     <tr>
-      <td class="cell-left">${_(name)}</td>
+      <td class="cell-left">${t.Translator.translate(name, lang)}</td>
       <td>${c['attributes'][plname]}</td>
     </tr>
     <tr>
@@ -51,7 +51,7 @@ endif
     </tr>
 % if c['attributes']['doc_web']:
     <tr>
-      <td class="cell-left">${_(doc_title)}</td>
+      <td class="cell-left">${t.Translator.translate(doc_title, lang)}</td>
       <td><a href="${c['attributes']['doc_web']}" target="_blank">${c['attributes']['doc_title'] or '-'}</a></td></tr>
 % else:
     <tr>

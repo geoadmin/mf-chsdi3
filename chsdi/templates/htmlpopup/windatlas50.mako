@@ -222,7 +222,7 @@ table#windrichtung  td.align-right {
     <td>${round(props['v_mean'],1)} m/s</td>
   </tr>
   <tr>
-    <td class="inner-table" colspan="2"><b>${t.Translator.translate('tt_bfe_windrose_geschwverteilung')}</b><br/>${_('tt_bfe_windrose_help', lang)}<br/><div id="rose"></div>
+    <td class="inner-table" colspan="2"><b>${t.Translator.translate('tt_bfe_windrose_geschwverteilung', lang)}</b><br/>${t.Translator.translate('tt_bfe_windrose_help', lang)}<br/><div id="rose"></div>
       <table id="windrichtung">
         <tr>
           <th>${t.Translator.translate('tt_bfe_windrichtung', lang)}</th>
@@ -325,7 +325,7 @@ table#windrichtung  td.align-right {
   </tr>
   <tr>
     <td class="inner-table" colspan="2">
-      <b>${t.Translator.translate('tt_bfe_windrichtung_weibullverteilung')}</b><br/>${_('tt_bfe_windstaerke_info', lang)}<br/><div id="weibull"></div>
+      <b>${t.Translator.translate('tt_bfe_windrichtung_weibullverteilung', lang)}</b><br/>${t.Translator.translate('tt_bfe_windstaerke_info', lang)}<br/><div id="weibull"></div>
       <table id="windrichtung">
         <tr>
           <th>${t.Translator.translate('tt_bfe_geschwindigkeit', lang)}</th>
