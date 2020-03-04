@@ -941,6 +941,21 @@ msgstr "Agglomeration and isolated cities"
 msgid "ch.are.agglomerationsverkehr"
 msgstr "Beitragsberechtigte Städte und Agglomerationen"
 
+msgid "ch.are.agglomerationsverkehr.agglo_name"
+msgstr "Agglomerationsname"
+
+msgid "ch.are.agglomerationsverkehr.agglo_no"
+msgstr "Agglomerationscode"
+
+msgid "ch.are.agglomerationsverkehr.gem_no"
+msgstr "Gemeindenummer"
+
+msgid "ch.are.agglomerationsverkehr.land"
+msgstr "Land"
+
+msgid "ch.are.agglomerationsverkehr.name"
+msgstr "Gemeindename"
+
 msgid "ch.are.alpenkonvention"
 msgstr "Alpine Convention"
 
@@ -986,6 +1001,12 @@ msgstr "Density of employment 2008"
 msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Population density 2000"
 
+msgid "ch.are.erreichbarkeit-miv"
+msgstr "Erreichbarkeit Strasse"
+
+msgid "ch.are.erreichbarkeit-oev"
+msgstr "Erreichbarkeit ÖV"
+
 msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Typology of municipalities ARE"
 
@@ -1000,6 +1021,30 @@ msgstr "ARE + canton"
 
 msgid "ch.are.landschaftstypen"
 msgstr "Landscape typology of Switzerland"
+
+msgid "ch.are.reisezeit-agglomerationen-miv"
+msgstr "Reisezeit zu Agglos Strasse"
+
+msgid "ch.are.reisezeit-agglomerationen-miv.strasse_no_agglo"
+msgstr "Zonencode des Agglomerationszentrums"
+
+msgid "ch.are.reisezeit-agglomerationen-miv.strasse_reisezeit_agglo"
+msgstr "Reisezeit zum Agglomerationszentrum"
+
+msgid "ch.are.reisezeit-agglomerationen-miv.verkehrszone_id"
+msgstr "Zonencode Verkehrszone"
+
+msgid "ch.are.reisezeit-agglomerationen-oev"
+msgstr "Reisezeit zu Agglos ÖV"
+
+msgid "ch.are.reisezeit-agglomerationen-oev.oev_no_agglo"
+msgstr "Zonencode des Agglomerationszentrums"
+
+msgid "ch.are.reisezeit-agglomerationen-oev.oev_reisezeit_agglo"
+msgstr "Reisezeit zum Agglomerationszentrum"
+
+msgid "ch.are.reisezeit-agglomerationen-oev.verkehrszone_id"
+msgstr "Zonencode Verkehrszone"
 
 msgid "ch.are.reisezeit-miv"
 msgstr "Time of travel IMT"
@@ -5147,9 +5192,6 @@ msgstr "TBE: Side of tick bite reported"
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "TBE: recommendation of vaccination"
 
-msgid "ch.bag.zecken-lyme"
-msgstr "Borreliosis risk regions"
-
 msgid "ch.bag.zeckenstichmodell"
 msgstr "Tick bite model"
 
@@ -5291,6 +5333,9 @@ msgstr "112 Emergency Center"
 msgid "ch.bakom.notruf-112_satellit.satellit_112"
 msgstr "112 Number satellite network"
 
+msgid "ch.bakom.notruf-112_zentral"
+msgstr "112 Alarm centers"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Fixed network"
 
@@ -5332,6 +5377,9 @@ msgstr "117 Emergency Center"
 
 msgid "ch.bakom.notruf-117_mobilnetz.mobile_117"
 msgstr "Mobile routing number"
+
+msgid "ch.bakom.notruf-117_zentral"
+msgstr "117 Alarm centers"
 
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Fixed network"
@@ -5375,6 +5423,9 @@ msgstr "118 Emergency Center"
 msgid "ch.bakom.notruf-118_mobilnetz.mobile_118"
 msgstr "Mobile routing number"
 
+msgid "ch.bakom.notruf-118_zentral"
+msgstr "118 Alarm centers"
+
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Fixed network"
 
@@ -5416,6 +5467,9 @@ msgstr "143 Emergency Center"
 
 msgid "ch.bakom.notruf-143_mobilnetz.mobile_143"
 msgstr "Mobile routing number"
+
+msgid "ch.bakom.notruf-143_zentral"
+msgstr "143 Alarm centers"
 
 msgid "ch.bakom.notruf-144_festnetz"
 msgstr "144 Fixed network"
@@ -5459,6 +5513,9 @@ msgstr "144 Emergency Center"
 msgid "ch.bakom.notruf-144_mobilnetz.mobile_144"
 msgstr "Mobile routing number"
 
+msgid "ch.bakom.notruf-144_zentral"
+msgstr "144 Alarm centers"
+
 msgid "ch.bakom.notruf-147_festnetz"
 msgstr "147 Fixed network"
 
@@ -5500,6 +5557,9 @@ msgstr "147 Emergency Center"
 
 msgid "ch.bakom.notruf-147_mobilnetz.mobile_147"
 msgstr "Mobile routing number"
+
+msgid "ch.bakom.notruf-147_zentral"
+msgstr "147 Alarm centers"
 
 msgid "ch.bakom.notruf.adresse_112_festnetz"
 msgstr "Emergency Center fixed network"
@@ -5819,6 +5879,9 @@ msgstr "Stockwerk des Ermittlungspunkts"
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.lr_night"
 msgstr "Eff. Immissionspegel Nacht [dB(A)]"
 
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.receptor"
+msgstr "Punkt Nr."
+
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
 msgstr "Railway noise, act. immissions D"
 
@@ -5836,6 +5899,9 @@ msgstr "Stockwerk des Ermittlungspunkts"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.lr_day"
 msgstr "Eff. Immissionspegel Tag [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.receptor"
+msgstr "Punkt Nr."
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Railway noise (fixed) N emissions"

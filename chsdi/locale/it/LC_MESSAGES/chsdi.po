@@ -941,6 +941,21 @@ msgstr "Agglomerati e cittá isolate"
 msgid "ch.are.agglomerationsverkehr"
 msgstr "Città e agglomerati aventi diritto ai contributi"
 
+msgid "ch.are.agglomerationsverkehr.agglo_name"
+msgstr "Nome dell’agglomerazione"
+
+msgid "ch.are.agglomerationsverkehr.agglo_no"
+msgstr "Code dell’agglomerazione"
+
+msgid "ch.are.agglomerationsverkehr.gem_no"
+msgstr "Numero della commune"
+
+msgid "ch.are.agglomerationsverkehr.land"
+msgstr "Paese"
+
+msgid "ch.are.agglomerationsverkehr.name"
+msgstr "Nome della commune"
+
 msgid "ch.are.alpenkonvention"
 msgstr "Convenzione delle alpi"
 
@@ -986,6 +1001,12 @@ msgstr "Densità di impieghi 2008"
 msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Densità di popolazione 2000"
 
+msgid "ch.are.erreichbarkeit-miv"
+msgstr "Accessibilité route"
+
+msgid "ch.are.erreichbarkeit-oev"
+msgstr "Accessibilité TP"
+
 msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Tipologia dei comuni ARE"
 
@@ -1000,6 +1021,30 @@ msgstr "ARE + cantone"
 
 msgid "ch.are.landschaftstypen"
 msgstr "Tipologia dei paesaggi svizzeri"
+
+msgid "ch.are.reisezeit-agglomerationen-miv"
+msgstr "Temps de parcours aux agglos route"
+
+msgid "ch.are.reisezeit-agglomerationen-miv.strasse_no_agglo"
+msgstr "Code de la zone du centre d’agglomération"
+
+msgid "ch.are.reisezeit-agglomerationen-miv.strasse_reisezeit_agglo"
+msgstr "Temps de parcours au centre d’agglomération"
+
+msgid "ch.are.reisezeit-agglomerationen-miv.verkehrszone_id"
+msgstr "Code de la zone de transport"
+
+msgid "ch.are.reisezeit-agglomerationen-oev"
+msgstr "Temps de parcours aux agglos en TP"
+
+msgid "ch.are.reisezeit-agglomerationen-oev.oev_no_agglo"
+msgstr "Code de la zone du centre d’agglomération"
+
+msgid "ch.are.reisezeit-agglomerationen-oev.oev_reisezeit_agglo"
+msgstr "Temps de parcours au centre d’agglomération"
+
+msgid "ch.are.reisezeit-agglomerationen-oev.verkehrszone_id"
+msgstr "Code de la zone de transport"
 
 msgid "ch.are.reisezeit-miv"
 msgstr "Tempo di viaggio TIM"
@@ -5147,9 +5192,6 @@ msgstr "FSME – Luoghi con casi dichiarati"
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "FSME - vaccinazione raccomandata"
 
-msgid "ch.bag.zecken-lyme"
-msgstr "Zone a rischio di Borreliosi"
-
 msgid "ch.bag.zeckenstichmodell"
 msgstr "Modello delle punture di zecche"
 
@@ -5291,6 +5333,9 @@ msgstr "112 Centrale d‘allarme"
 msgid "ch.bakom.notruf-112_satellit.satellit_112"
 msgstr "112 Numero rete via satellite"
 
+msgid "ch.bakom.notruf-112_zentral"
+msgstr "112 Centrale d‘allarme"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Rete fissa"
 
@@ -5332,6 +5377,9 @@ msgstr "117 Centrale d‘allarme"
 
 msgid "ch.bakom.notruf-117_mobilnetz.mobile_117"
 msgstr "117 Numero di routing mobile"
+
+msgid "ch.bakom.notruf-117_zentral"
+msgstr "117 Centrale d‘allarme"
 
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Rete fissa"
@@ -5375,6 +5423,9 @@ msgstr "118 Centrale d‘allarme"
 msgid "ch.bakom.notruf-118_mobilnetz.mobile_118"
 msgstr "118 Numero di routing mobile"
 
+msgid "ch.bakom.notruf-118_zentral"
+msgstr "118 Centrale d‘allarme"
+
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Rete fissa"
 
@@ -5416,6 +5467,9 @@ msgstr "143 Centrale d‘allarme"
 
 msgid "ch.bakom.notruf-143_mobilnetz.mobile_143"
 msgstr "143 Numero di routing mobile"
+
+msgid "ch.bakom.notruf-143_zentral"
+msgstr "143 Centrale d‘allarme"
 
 msgid "ch.bakom.notruf-144_festnetz"
 msgstr "144 Rete fissa"
@@ -5459,6 +5513,9 @@ msgstr "144 Centrale d‘allarme"
 msgid "ch.bakom.notruf-144_mobilnetz.mobile_144"
 msgstr "144 Numero di routing mobile"
 
+msgid "ch.bakom.notruf-144_zentral"
+msgstr "144 Centrale d‘allarme"
+
 msgid "ch.bakom.notruf-147_festnetz"
 msgstr "147 Rete fissa"
 
@@ -5500,6 +5557,9 @@ msgstr "147 Centrale d‘allarme"
 
 msgid "ch.bakom.notruf-147_mobilnetz.mobile_147"
 msgstr "147 Numero di routing mobile"
+
+msgid "ch.bakom.notruf-147_zentral"
+msgstr "147 Centrale d‘allarme"
 
 msgid "ch.bakom.notruf.adresse_112_festnetz"
 msgstr "Centrale d‘allarme rete fissa"
@@ -5819,6 +5879,9 @@ msgstr "Piano di punto di determinazione"
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.lr_night"
 msgstr "Immissione eff. notte  [dB(A)]"
 
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.receptor"
+msgstr "Punto no."
+
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
 msgstr "Rumore dei treni, Immissioni eff. G"
 
@@ -5836,6 +5899,9 @@ msgstr "Piano di punto di determinazione"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.lr_day"
 msgstr "Immissione eff. giorno  [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.receptor"
+msgstr "Punto no."
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Rumore dei treni, emissioni N stab."
