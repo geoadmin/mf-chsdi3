@@ -1,6 +1,6 @@
 <%inherit file="base.mako"/>
 <%!
-import chsdi.lib.translator as t
+import chsdi.lib.translator as mod_translate
 import requests
 def getAltitude(baseUrl, center):
     fullUrl = 'http://' + baseUrl +'/rest/services/height'

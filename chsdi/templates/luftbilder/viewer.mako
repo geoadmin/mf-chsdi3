@@ -1,7 +1,7 @@
 <%namespace name="lubis_map" file="lubis_map.mako"/>
 
 <%
-  import chsdi.lib.translator as t
+  import chsdi.lib.translator as mod_translate
   from pyramid.url import route_url
   try:
       from urllib2 import urlopen

@@ -3,7 +3,7 @@
 <%
   from pyramid.url import route_url
   import requests
-  import chsdi.lib.translator as t
+  import chsdi.lib.translator as mod_translate
 
 
   c = context
