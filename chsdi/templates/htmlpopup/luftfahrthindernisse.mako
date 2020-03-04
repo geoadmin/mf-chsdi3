@@ -12,16 +12,16 @@ from pyramid.url import route_url
   else:
     sanctiontext = attr['sanctiontext']
 %>
-<tr><td class="cell-left">${t.Translator.translate('tt_ch.bazl.registrationnummer', lang)}</td>      <td>${c['attributes']['registrationnumber']}</td></tr>
-<tr><td class="cell-left">${t.Translator.translate('tt_ch.bazl.kartnummer', lang)}</td>              <td>${c['attributes']['lk100']}</td></tr>
-<tr><td class="cell-left">${t.Translator.translate('tt_ch.bazl.hindernisart', lang)}</td>            <td>${c['attributes']['obstacletype']}</td></tr>
-<tr><td class="cell-left">${t.Translator.translate('status', lang)}</td>                             <td>${c['attributes']['state']}</td></tr>
-<tr><td class="cell-left">${t.Translator.translate('tt_ch.bazl.maxheight', lang)}</td>               <td>${c['attributes']['maxheightagl']}</td></tr>
-<tr><td class="cell-left">${t.Translator.translate('tt_ch.bazl.elevation', lang)}</td>               <td>${c['attributes']['topelevationamsl']}</td></tr>
-<tr><td class="cell-left">${t.Translator.translate('tt_ch.bazl.totallength', lang)}</td>             <td>${c['attributes']['totallength']}</td></tr>
-<tr><td class="cell-left">${t.Translator.translate('tt_ch.bazl.startofconstruction', lang)}</td>     <td>${c['attributes']['startofconstruction'] or '-'}</td></tr>
-<tr><td class="cell-left">${t.Translator.translate('tt_ch.bazl.abortionaccomplished', lang)}</td>    <td>${c['attributes']['duration'] or '-'}</td></tr>
-<tr><td class="cell-left">${t.Translator.translate('tt_ch.bazl.markierung', lang)}</td>              <td>${sanctiontext}</td></tr>
+<tr><td class="cell-left">${mod_translate.Translator.translate('tt_ch.bazl.registrationnummer', lang)}</td>      <td>${c['attributes']['registrationnumber']}</td></tr>
+<tr><td class="cell-left">${mod_translate.Translator.translate('tt_ch.bazl.kartnummer', lang)}</td>              <td>${c['attributes']['lk100']}</td></tr>
+<tr><td class="cell-left">${mod_translate.Translator.translate('tt_ch.bazl.hindernisart', lang)}</td>            <td>${c['attributes']['obstacletype']}</td></tr>
+<tr><td class="cell-left">${mod_translate.Translator.translate('status', lang)}</td>                             <td>${c['attributes']['state']}</td></tr>
+<tr><td class="cell-left">${mod_translate.Translator.translate('tt_ch.bazl.maxheight', lang)}</td>               <td>${c['attributes']['maxheightagl']}</td></tr>
+<tr><td class="cell-left">${mod_translate.Translator.translate('tt_ch.bazl.elevation', lang)}</td>               <td>${c['attributes']['topelevationamsl']}</td></tr>
+<tr><td class="cell-left">${mod_translate.Translator.translate('tt_ch.bazl.totallength', lang)}</td>             <td>${c['attributes']['totallength']}</td></tr>
+<tr><td class="cell-left">${mod_translate.Translator.translate('tt_ch.bazl.startofconstruction', lang)}</td>     <td>${c['attributes']['startofconstruction'] or '-'}</td></tr>
+<tr><td class="cell-left">${mod_translate.Translator.translate('tt_ch.bazl.abortionaccomplished', lang)}</td>    <td>${c['attributes']['duration'] or '-'}</td></tr>
+<tr><td class="cell-left">${mod_translate.Translator.translate('tt_ch.bazl.markierung', lang)}</td>              <td>${sanctiontext}</td></tr>
 </%def>
 <%def name="extended_info(c, lang)">
 <%
@@ -70,83 +70,83 @@ from pyramid.url import route_url
     </tr>
     <tr>
       <th class="cell-left" colspan="2" style="background-color: #FFFFFF;">
-        <div style="float: left; text-align: left; font-weight: bold; font-size: 14px;">${t.Translator.translate('tt_ch.bazl.registrationnummer', lang)}: ${attr['registrationnumber']}</div>
-        <div style="float: right; text-align: right; padding-right: 16px;">${t.Translator.translate('tt_ch.bazl.hindernisart', lang)}: ${attr['obstacletype']}</div>
+        <div style="float: left; text-align: left; font-weight: bold; font-size: 14px;">${mod_translate.Translator.translate('tt_ch.bazl.registrationnummer', lang)}: ${attr['registrationnumber']}</div>
+        <div style="float: right; text-align: right; padding-right: 16px;">${mod_translate.Translator.translate('tt_ch.bazl.hindernisart', lang)}: ${attr['obstacletype']}</div>
       </th>
     </tr>
      <tr>
      <td></td>
      </tr>
     <tr bgcolor="#EFEFEF">
-      <th style="text-align:left" colspan="2">${t.Translator.translate('status', lang)}: ${attr['state']}</th>
+      <th style="text-align:left" colspan="2">${mod_translate.Translator.translate('status', lang)}: ${attr['state']}</th>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('tt_ch.bazl.startofconstruction', lang)}: ${startofconstruction or '-'}</td>
+      <td class="cell-meta-one" colspan="2">${mod_translate.Translator.translate('tt_ch.bazl.startofconstruction', lang)}: ${startofconstruction or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('tt_ch.bazl.abortionaccomplished', lang)}: ${attr['duration'] or '-'}</td>
+      <td class="cell-meta-one" colspan="2">${mod_translate.Translator.translate('tt_ch.bazl.abortionaccomplished', lang)}: ${attr['duration'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('tt_bazl_abortion', lang)}: ${abortionaccomplished}</td>
+      <td class="cell-meta-one" colspan="2">${mod_translate.Translator.translate('tt_bazl_abortion', lang)}: ${abortionaccomplished}</td>
     </tr>
     <tr bgcolor="#EFEFEF">
-      <th style="text-align:left" colspan="2">${t.Translator.translate('tt_ch.bazl.geometriedaten', lang)}:</th>
+      <th style="text-align:left" colspan="2">${mod_translate.Translator.translate('tt_ch.bazl.geometriedaten', lang)}:</th>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('tt_ch.bazl.maxheight', lang)}: ${attr['maxheightagl']}</td></tr>
+      <td class="cell-meta-one" colspan="2">${mod_translate.Translator.translate('tt_ch.bazl.maxheight', lang)}: ${attr['maxheightagl']}</td></tr>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('tt_ch.bazl.elevation', lang)}: ${attr['topelevationamsl']}</td>
+      <td class="cell-meta-one" colspan="2">${mod_translate.Translator.translate('tt_ch.bazl.elevation', lang)}: ${attr['topelevationamsl']}</td>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('tt_ch.bazl.totallength', lang)}: ${attr['totallength']}</td>
+      <td class="cell-meta-one" colspan="2">${mod_translate.Translator.translate('tt_ch.bazl.totallength', lang)}: ${attr['totallength']}</td>
     </tr>
 
 % if bbox == True and attr['geomtype'] != 'line':
     <tr bgcolor="#EFEFEF">
-      <th style="text-align:left" colspan="2">${t.Translator.translate('Bounding Box - Coordinates', lang)} [CH1903]:</th>
+      <th style="text-align:left" colspan="2">${mod_translate.Translator.translate('Bounding Box - Coordinates', lang)} [CH1903]:</th>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est', lang)}=${c['bbox'][0]}    ${t.Translator.translate('nord', lang)}=${c['bbox'][1]}</td>
+      <td class="cell-meta-one" colspan="2">${mod_translate.Translator.translate('est', lang)}=${c['bbox'][0]}    ${mod_translate.Translator.translate('nord', lang)}=${c['bbox'][1]}</td>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est', lang)}=${c['bbox'][0]}    ${t.Translator.translate('nord', lang)}=${c['bbox'][3]}</td>
+      <td class="cell-meta-one" colspan="2">${mod_translate.Translator.translate('est', lang)}=${c['bbox'][0]}    ${mod_translate.Translator.translate('nord', lang)}=${c['bbox'][3]}</td>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est', lang)}=${c['bbox'][2]}    ${t.Translator.translate('nord', lang)}=${c['bbox'][1]}</td>
+      <td class="cell-meta-one" colspan="2">${mod_translate.Translator.translate('est', lang)}=${c['bbox'][2]}    ${mod_translate.Translator.translate('nord', lang)}=${c['bbox'][1]}</td>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est', lang)}=${c['bbox'][2]}    ${t.Translator.translate('nord', lang)}=${c['bbox'][3]}</td>
+      <td class="cell-meta-one" colspan="2">${mod_translate.Translator.translate('est', lang)}=${c['bbox'][2]}    ${mod_translate.Translator.translate('nord', lang)}=${c['bbox'][3]}</td>
     </tr>
 
 % else:
     <tr bgcolor="#EFEFEF">
-      <th style="text-align:left" colspan="2">${t.Translator.translate('Coordinates', lang)} [CH1903]:</th>
+      <th style="text-align:left" colspan="2">${mod_translate.Translator.translate('Coordinates', lang)} [CH1903]:</th>
     </tr>
     <tr>
-      <td class="cell-meta-one" colspan="2">${t.Translator.translate('est', lang)}=${c['bbox'][0]}    ${t.Translator.translate('nord', lang)}=${c['bbox'][1]}</td>
+      <td class="cell-meta-one" colspan="2">${mod_translate.Translator.translate('est', lang)}=${c['bbox'][0]}    ${mod_translate.Translator.translate('nord', lang)}=${c['bbox'][1]}</td>
     </tr>
   % if attr['geomtype'] == 'line':
       <tr>
-        <td class="cell-meta-one" colspan="2">${t.Translator.translate('est', lang)}=${c['bbox'][2]}    ${t.Translator.translate('nord', lang)}=${c['bbox'][3]}</td>
+        <td class="cell-meta-one" colspan="2">${mod_translate.Translator.translate('est', lang)}=${c['bbox'][2]}    ${mod_translate.Translator.translate('nord', lang)}=${c['bbox'][3]}</td>
       </tr>
   % endif
 % endif
     <tr bgcolor="#EFEFEF">
-      <th style="text-align:left" colspan="2">${t.Translator.translate('tt_ch.bazl.markierung', lang)}:</th>
+      <th style="text-align:left" colspan="2">${mod_translate.Translator.translate('tt_ch.bazl.markierung', lang)}:</th>
     </tr>
     <tr>
       <td class="cell-meta-one" colspan="2">${sanctiontext}</td>
     </tr>
     <tr bgcolor="#EFEFEF">
-      <th style="text-align:left" colspan="2">${t.Translator.translate('tt_ch.bazl.kartnummer', lang)}: ${attr['lk100']}</th>
+      <th style="text-align:left" colspan="2">${mod_translate.Translator.translate('tt_ch.bazl.kartnummer', lang)}: ${attr['lk100']}</th>
     </tr>
   </table>
 </div>
 <div class="chsdi-map-container table-with-border" style="width: 100%; height: 400px;">
   <div id="map${id}"></div>
 </div>
-<div style="font-size:12px; text-align:justify;">${t.Translator.translate('tt_ch.bazl_longtext', lang)} <br>${t.Translator.translate('date', lang)}: ${datenstand}</div>
+<div style="font-size:12px; text-align:justify;">${mod_translate.Translator.translate('tt_ch.bazl_longtext', lang)} <br>${mod_translate.Translator.translate('date', lang)}: ${datenstand}</div>
 <script type="text/javascript">
   function init${id}() {
     var map = new ga.Map({

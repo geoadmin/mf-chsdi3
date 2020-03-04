@@ -3,5 +3,5 @@
 <%def name="preview()">${c.feature.titel or '-'}</%def>
 
 <%def name="table_body(c, lang)">
-<tr><td class="cell-left">${t.Translator.translate('ch.swisstopo.geologie-dosisleistung-terrestrisch.contour', lang)}</td>    <td>${c['attributes']['contour'] or '-'}</td></tr>
+<tr><td class="cell-left">${mod_translate.Translator.translate('ch.swisstopo.geologie-dosisleistung-terrestrisch.contour', lang)}</td>    <td>${c['attributes']['contour'] or '-'}</td></tr>
 </%def>

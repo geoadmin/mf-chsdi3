@@ -52,17 +52,17 @@ baseUrl = request.registry.settings['api_url']
 % if type_station == 'Bedienpunkt' :
 
     <p><b>${c['attributes']['name'] or '-'}</b></p>
-    <p>${t.Translator.translate('ch.bav.haltestellen-oev.bedienpunkt', lang)}</p>
+    <p>${mod_translate.Translator.translate('ch.bav.haltestellen-oev.bedienpunkt', lang)}</p>
 
 % elif type_station == 'Anschlusspunkt' :
 
    <p><b>${c['attributes']['name'] or '-'}</b></p>
-   <p>${t.Translator.translate('ch.bav.haltestellen-oev.anschlusspunkt', lang)}</p>
+   <p>${mod_translate.Translator.translate('ch.bav.haltestellen-oev.anschlusspunkt', lang)}</p>
 
 % elif type_station == 'reiner_Betriebspunkt' :
 
    <p><b>${c['attributes']['name'] or '-'}</b></p>
-   <p>${t.Translator.translate('ch.bav.haltestellen-oev.reiner_betriebspunkt', lang)}</p>
+   <p>${mod_translate.Translator.translate('ch.bav.haltestellen-oev.reiner_betriebspunkt', lang)}</p>
 
 % else:
 
@@ -130,7 +130,7 @@ $(document).ready(function() {
       timeDiffCol.html(timeDiff);
       predictableDelayCol.html(delay);
     }).fail(function() {
-      destinationCol.html('<p style="height:24px; margin:0px;">${t.Translator.translate('ch.bav.haltestellen-oev.nodata2', lang)}</p>');
+      destinationCol.html('<p style="height:24px; margin:0px;">${mod_translate.Translator.translate('ch.bav.haltestellen-oev.nodata2', lang)}</p>');
     });
   };
 
@@ -146,7 +146,7 @@ $(document).ready(function() {
 });
 
 </script>
-    <p><b>${c['attributes']['name'] or '-'}</b>, ${t.Translator.translate('ch.bav.haltestellen-oev.next_departures', lang)}:</p>
+    <p><b>${c['attributes']['name'] or '-'}</b>, ${mod_translate.Translator.translate('ch.bav.haltestellen-oev.next_departures', lang)}:</p>
   <table>
     <tr>
         <td id="numero${id}" class="col-label"></td>
@@ -177,50 +177,50 @@ $(document).ready(function() {
 %>
 <table>
   <tr>
-      <td class="cell-meta">${t.Translator.translate('ch.bav.haltestellen-oev.id', lang)}</td>
+      <td class="cell-meta">${mod_translate.Translator.translate('ch.bav.haltestellen-oev.id', lang)}</td>
       <td class="cell-meta">${c['featureId'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.Translator.translate('ch.bav.haltestellen-oev.name', lang)}</td>
+    <td class="cell-meta">${mod_translate.Translator.translate('ch.bav.haltestellen-oev.name', lang)}</td>
     <td class="cell-meta">${c['attributes']['name'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.Translator.translate('ch.bav.haltestellen-oev.abkuerzung', lang)}</td>
+    <td class="cell-meta">${mod_translate.Translator.translate('ch.bav.haltestellen-oev.abkuerzung', lang)}</td>
     <td class="cell-meta">${c['attributes']['abkuerzung'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.Translator.translate('ch.bav.haltestellen-oev.tuabkuerzung', lang)}</td>
+    <td class="cell-meta">${mod_translate.Translator.translate('ch.bav.haltestellen-oev.tuabkuerzung', lang)}</td>
     <td class="cell-meta">${c['attributes']['tuabkuerzung'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-meta">${t.Translator.translate('ch.bav.haltestellen-oev.betriebspunkttyp', lang)}</td>
+    <td class="cell-meta">${mod_translate.Translator.translate('ch.bav.haltestellen-oev.betriebspunkttyp', lang)}</td>
 
 % if type_station == 'Bedienpunkt' :
 
-    <td class="cell-meta">${t.Translator.translate('ch.bav.haltestellen-oev.bedienpunkt', lang)}</td>
+    <td class="cell-meta">${mod_translate.Translator.translate('ch.bav.haltestellen-oev.bedienpunkt', lang)}</td>
 
 % elif type_station == 'Anschlusspunkt' :
 
-   <td class="cell-meta">${t.Translator.translate('ch.bav.haltestellen-oev.anschlusspunkt', lang)}</td>
+   <td class="cell-meta">${mod_translate.Translator.translate('ch.bav.haltestellen-oev.anschlusspunkt', lang)}</td>
 
 % elif type_station == 'reiner_Betriebspunkt' :
 
-   <td class="cell-meta">${t.Translator.translate('ch.bav.haltestellen-oev.reiner_betriebspunkt', lang)}</td>
+   <td class="cell-meta">${mod_translate.Translator.translate('ch.bav.haltestellen-oev.reiner_betriebspunkt', lang)}</td>
 
 % elif type_station == 'Haltestelle' :
 
-    <td class="cell-meta">${t.Translator.translate('ch.bav.haltestellen-oev.haltestelle', lang)}</td>
+    <td class="cell-meta">${mod_translate.Translator.translate('ch.bav.haltestellen-oev.haltestelle', lang)}</td>
 
 % endif
   </tr>
   <tr>
-    <td class="cell-meta">${t.Translator.translate('ch.bav.haltestellen-oev.verkehrsmittel', lang)}</td>
-    <td class="cell-meta">${t.Translator.translate(verkehr, lang)}</td>
+    <td class="cell-meta">${mod_translate.Translator.translate('ch.bav.haltestellen-oev.verkehrsmittel', lang)}</td>
+    <td class="cell-meta">${mod_translate.Translator.translate(verkehr, lang)}</td>
   </tr>
   <tr>
       <td class="cell-meta"></td>
       <td class="cell-meta"><p><a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic, '&showTooltip=true'))}" target="new">
-        ${t.Translator.translate('Link to object', lang)}
+        ${mod_translate.Translator.translate('Link to object', lang)}
       </a></p></td>
   </tr>
 </table>

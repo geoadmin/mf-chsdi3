@@ -27,35 +27,35 @@
     address = text_creator(arr_address)
 %>
     <tr>
-        <td class="cell-left">${t.Translator.translate('ch.bfe.erneuerbarheizen.company', lang)}</td>
+        <td class="cell-left">${mod_translate.Translator.translate('ch.bfe.erneuerbarheizen.company', lang)}</td>
         <td>${c['attributes']['company'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.Translator.translate('ch.bfe.erneuerbarheizen.firstname_name', lang)}</td>
+        <td class="cell-left">${mod_translate.Translator.translate('ch.bfe.erneuerbarheizen.firstname_name', lang)}</td>
         <td>${c['attributes']['firstname_name'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.Translator.translate('ch.bfe.erneuerbarheizen.email', lang)}</td>
+        <td class="cell-left">${mod_translate.Translator.translate('ch.bfe.erneuerbarheizen.email', lang)}</td>
           % if c['attributes']['email'] == None:
             <td>-</td>
           % else:
-            <td><a href="mailto:${c['attributes']['email']}">${t.Translator.translate(c['attributes']['email'], lang)}</a></td>
+            <td><a href="mailto:${c['attributes']['email']}">${mod_translate.Translator.translate(c['attributes']['email'], lang)}</a></td>
           % endif
     </tr>
     <tr>
-        <td class="cell-left">${t.Translator.translate('ch.bfe.erneuerbarheizen.phonenumber', lang)}</td>
+        <td class="cell-left">${mod_translate.Translator.translate('ch.bfe.erneuerbarheizen.phonenumber', lang)}</td>
         <td>${c['attributes']['phonenumber'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.Translator.translate('ch.bfe.erneuerbarheizen.pc_place', lang)}</td>
+        <td class="cell-left">${mod_translate.Translator.translate('ch.bfe.erneuerbarheizen.pc_place', lang)}</td>
         <td>${address}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.Translator.translate('ch.bfe.erneuerbarheizen.language', lang)}</td>
+        <td class="cell-left">${mod_translate.Translator.translate('ch.bfe.erneuerbarheizen.language', lang)}</td>
         <td>${c['attributes'][language] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.Translator.translate('ch.bfe.erneuerbarheizen.consultant_cat', lang)}</td>
+        <td class="cell-left">${mod_translate.Translator.translate('ch.bfe.erneuerbarheizen.consultant_cat', lang)}</td>
         <td>${c['attributes'][consultant_cat] or '-'}</td>
     </tr>
 </%def>

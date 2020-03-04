@@ -3,6 +3,6 @@
 
 <%def name="table_body(c,lang)">
 
-    <tr><td class="cell-left">${t.Translator.translate('tt_fsme_gemname', lang)}</td>    <td>${c['attributes']['gemname'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('tt_fsme_gemnr', lang)}</td>      <td>${c['attributes']['bfsnr'] or '-'}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('tt_fsme_gemname', lang)}</td>    <td>${c['attributes']['gemname'] or '-'}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('tt_fsme_gemnr', lang)}</td>      <td>${c['attributes']['bfsnr'] or '-'}</td></tr>
 </%def>

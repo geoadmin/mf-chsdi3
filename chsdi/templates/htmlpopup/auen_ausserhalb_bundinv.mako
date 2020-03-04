@@ -9,23 +9,23 @@
     %>
 
     <tr>
-        <td class="cell-left">${t.Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar.name', lang)}</td>
+        <td class="cell-left">${mod_translate.Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar.name', lang)}</td>
         <td>${c['attributes']['name'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar.objnummer', lang)}</td>
+        <td class="cell-left">${mod_translate.Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar.objnummer', lang)}</td>
         <td>${c['id']}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar.code_qualitaet', lang)}</td>
+        <td class="cell-left">${mod_translate.Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar.code_qualitaet', lang)}</td>
         <td>${c['attributes'][quality] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung', lang)}</td>
+        <td class="cell-left">${mod_translate.Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar.code_bedeutung', lang)}</td>
         <td>${c['attributes'][significance] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${t.Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar.shape_area', lang)}</td>
+        <td class="cell-left">${mod_translate.Translator.translate('ch.bafu.auen-ausserhalb_bundesinventar.shape_area', lang)}</td>
         <td>${round(c['attributes']['shape_area'], 1) or '-'}</td>
     </tr>
 

@@ -63,7 +63,7 @@
 <div class="legend-footer">
 % if hasLegend:
   <br>
-  <span>${t.Translator.translate('Legend', lang)}</span><br>
+  <span>${mod_translate.Translator.translate('Legend', lang)}</span><br>
 % if legend_url_pdf:
   <a href="${legend_url_pdf}" target="_blank"><img src="${legend_url}"></img></a><br>
 % else:
@@ -73,13 +73,13 @@
   <br><br>
 % endif
 % endif
-  <span>${t.Translator.translate('Information', lang)}</span><br>
+  <span>${mod_translate.Translator.translate('Information', lang)}</span><br>
   <table>
-    <tr><td>${t.Translator.translate('geobasisdatensatz', lang)}</td> <td>${c['attributes']['bundCollectionNumber'] if 'bundCollectionNumber' in c['attributes'] else '-'}</td></tr>
+    <tr><td>${mod_translate.Translator.translate('geobasisdatensatz', lang)}</td> <td>${c['attributes']['bundCollectionNumber'] if 'bundCollectionNumber' in c['attributes'] else '-'}</td></tr>
 % if 'scaleLimit' in c['attributes']:
-    <tr><td>${t.Translator.translate('Gueltiger Massstabsbereich', lang)}</td> <td>${c['attributes']['scaleLimit']}</td></tr>
+    <tr><td>${mod_translate.Translator.translate('Gueltiger Massstabsbereich', lang)}</td> <td>${c['attributes']['scaleLimit']}</td></tr>
 % endif
-    <tr><td>${t.Translator.translate('Metadaten', lang)}</td>
+    <tr><td>${mod_translate.Translator.translate('Metadaten', lang)}</td>
 % if 'idGeoCat' in c:
   % if lang in ('de', 'rm'):
       <td><a target="_blank" href="https://www.geocat.ch/geonetwork/srv/ger/md.viewer#/full_view/${c['idGeoCat']}/tab/complete">
@@ -90,45 +90,45 @@
   % else:
       <td><a target="_blank" href="https://www.geocat.ch/geonetwork/srv/eng/md.viewer#/full_view/${c['idGeoCat']}/tab/complete">
   % endif
-      ${t.Translator.translate('layer_geocat_text', lang)}</a></td>
+      ${mod_translate.Translator.translate('layer_geocat_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${t.Translator.translate('Detailbeschreibung', lang)}</td>
+      <td>${mod_translate.Translator.translate('Detailbeschreibung', lang)}</td>
 % if 'urlDetails' in c['attributes']:
-      <td><a href="${c['attributes']['urlDetails']}" target="new">${t.Translator.translate('layer_url_text', lang)}</a></td>
+      <td><a href="${c['attributes']['urlDetails']}" target="new">${mod_translate.Translator.translate('layer_url_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${t.Translator.translate('Datenbezug', lang)}</td>
+      <td>${mod_translate.Translator.translate('Datenbezug', lang)}</td>
 % if 'downloadUrl' in c['attributes']:
-      <td><a href="${c['attributes']['downloadUrl']}" target="new">${t.Translator.translate('layer_url_download_text', lang)}</a></td>
+      <td><a href="${c['attributes']['downloadUrl']}" target="new">${mod_translate.Translator.translate('layer_url_download_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${t.Translator.translate('Thematisches Geoportal', lang)}</td>
+      <td>${mod_translate.Translator.translate('Thematisches Geoportal', lang)}</td>
 % if 'urlApplication' in c['attributes']:
-      <td><a href="${c['attributes']['urlApplication']}" target="new">${t.Translator.translate('layer_url_portal_text', lang)}</a></td>
+      <td><a href="${c['attributes']['urlApplication']}" target="new">${mod_translate.Translator.translate('layer_url_portal_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${t.Translator.translate('WMS Dienst', lang)}</td>
+      <td>${mod_translate.Translator.translate('WMS Dienst', lang)}</td>
 % if 'wmsUrlResource' in c['attributes']:
-      <td><a href="${wms_url}" target="new">${t.Translator.translate('wms_resource_text', lang)}</a></td>
+      <td><a href="${wms_url}" target="new">${mod_translate.Translator.translate('wms_resource_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${t.Translator.translate('Datenstand', lang)}</td>
+      <td>${mod_translate.Translator.translate('Datenstand', lang)}</td>
       <td>${h.parse_date_datenstand(times)}</td>
     </tr>
   </table>
