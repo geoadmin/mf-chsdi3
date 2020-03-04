@@ -11984,9 +11984,6 @@ msgstr "Fri"
 msgid "ch.vbs.schiessanzeigen.wochentag.7"
 msgstr "Sat"
 
-msgid "ch.vbs.schiessanzeigen.wochentag.7"
-msgstr "Sun"
-
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Map of restricted and danger areas"
 
