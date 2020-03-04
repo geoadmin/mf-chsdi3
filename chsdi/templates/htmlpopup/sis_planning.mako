@@ -22,31 +22,31 @@ if c['attributes']['validuntil']:
 endif
 %>
     <tr>
-      <td class="cell-left">${t.Translator.translate(name, lang)}</td>
+      <td class="cell-left">${mod_translate.Translator.translate(name, lang)}</td>
       <td>${c['attributes'][plname]}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.Translator.translate('tt_sachplan_planning_typ', lang)}</td>
+      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_planning_typ', lang)}</td>
       <td>${c['attributes'][measuretype_text] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.Translator.translate('tt_sachplan_planning_coordstand', lang)}</td>
+      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_planning_coordstand', lang)}</td>
       <td>${c['attributes'][coordinationlevel_text] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.Translator.translate('tt_sachplan_planning_planungstand', lang)}</td>
+      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_planning_planungstand', lang)}</td>
       <td>${c['attributes'][planningstatus_text] or '-'}</td>
     </tr>
 	  <tr>
-      <td class="cell-left">${t.Translator.translate('tt_sachplan_planning_von', lang)}</td>
+      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_planning_von', lang)}</td>
       <td>${datefrom or '-'}</td>
     </tr>
 	  <tr>
-      <td class="cell-left">${t.Translator.translate('tt_sachplan_planning_bis', lang)}</td>
+      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_planning_bis', lang)}</td>
       <td>${dateto or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${t.Translator.translate('tt_sachplan_beschreibung', lang)}</td>
+      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_beschreibung', lang)}</td>
       <td>${c['attributes'][description_text] or '-'}</td>
     </tr>
 %  if c['attributes']['doc_web'] and c['attributes']['doc_title']:
@@ -55,11 +55,11 @@ endif
     document_title_part = c['attributes']['doc_title'].split('###')
 %>
 %  for i in range(len(document_web_part)):
-     <tr><td class="cell-left">${t.Translator.translate(doc_title, lang)}</td> <td><a href="${document_web_part[i] or '-'}" target="_blank">${document_title_part[i] or '-'}</a></td></tr>
+     <tr><td class="cell-left">${mod_translate.Translator.translate(doc_title, lang)}</td> <td><a href="${document_web_part[i] or '-'}" target="_blank">${document_title_part[i] or '-'}</a></td></tr>
 %endfor
 % else:
     <tr>
-      <td class="cell-left">${t.Translator.translate('tt_sachplan_weitereinfo', lang)}</td>
+      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_weitereinfo', lang)}</td>
       <td> - </td>
     </tr>
 %endif

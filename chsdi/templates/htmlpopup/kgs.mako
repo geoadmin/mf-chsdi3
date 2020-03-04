@@ -4,11 +4,11 @@
 
 <%def name="table_body(c, lang)">
     <% c['stable_id'] = True %>
-    <tr><td class="cell-left">${t.Translator.translate('ch.babs.kulturgueter.zkob', lang)}</td>   <td>${c['attributes']['zkob']}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('y', lang)}</td>              <td>${int(round(c['attributes']['x'],0)) or '-'}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('x', lang)}</td>              <td>${int(round(c['attributes']['y'],0)) or '-'}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('gemeinde', lang)}</td>       <td>${c['attributes']['gemeinde'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('kanton', lang)}</td>         <td>${c['attributes']['kt_kz'] or '-'}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('ch.babs.kulturgueter.zkob', lang)}</td>   <td>${c['attributes']['zkob']}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('y', lang)}</td>              <td>${int(round(c['attributes']['x'],0)) or '-'}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('x', lang)}</td>              <td>${int(round(c['attributes']['y'],0)) or '-'}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('gemeinde', lang)}</td>       <td>${c['attributes']['gemeinde'] or '-'}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('kanton', lang)}</td>         <td>${c['attributes']['kt_kz'] or '-'}</td></tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
@@ -53,40 +53,40 @@
 
     <table class="table-with-border kernkraftwerke-extended">
         <tr>
-            <th class="cell-left">${t.Translator.translate('name', lang)}</th>
+            <th class="cell-left">${mod_translate.Translator.translate('name', lang)}</th>
             <td>${c['attributes']['zkob'] or '-'}</td>
         </tr>
         <tr>
-            <th class="cell-left">${t.Translator.translate('kategorie', lang)}</th>
+            <th class="cell-left">${mod_translate.Translator.translate('kategorie', lang)}</th>
             <td>${c['attributes']['kategorie'] or '-'}</td>
         </tr>
         <tr>
-            <th class="cell-left">${t.Translator.translate('tt_kbs_objektart', lang)}</th>
+            <th class="cell-left">${mod_translate.Translator.translate('tt_kbs_objektart', lang)}</th>
             <td>
                 % for i, objart in enumerate(objarts):
-                    ${t.Translator.translate('kultur' + objart) + ' / ' if (i+1<len(objarts)) else _('kultur' + objart, lang)}
+                    ${mod_translate.Translator.translate('kultur' + objart) + ' / ' if (i+1<len(objarts)) else _('kultur' + objart, lang)}
                 % endfor
             </td>
         </tr>
         <tr>
-            <th class="cell-left">${t.Translator.translate('tt_kbs_nbr', lang)}</th>
+            <th class="cell-left">${mod_translate.Translator.translate('tt_kbs_nbr', lang)}</th>
             <td>${c['featureId'] or '-'}</td>
         </tr>
         <tr>
-            <th class="cell-left">${t.Translator.translate('grundadresse', lang)}</th>
+            <th class="cell-left">${mod_translate.Translator.translate('grundadresse', lang)}</th>
             <td>${c['attributes']['adresse'] or ''} ${c['attributes']['hausnr'] or ''}</td>
         </tr>
         <tr>
-            <th class="cell-left">${t.Translator.translate('tt_kbs_gemeinde', lang)} (${t.Translator.translate('tt_kbs_gemeinde_ehemalige', lang)})</th>
+            <th class="cell-left">${mod_translate.Translator.translate('tt_kbs_gemeinde', lang)} (${mod_translate.Translator.translate('tt_kbs_gemeinde_ehemalige', lang)})</th>
             <td>${c['attributes']['gemeinde'] or ''} ${'('+c['attributes']['gemeinde_ehemalig']+')' if c['attributes']['gemeinde_ehemalig'] else ''}</td>
         </tr>
         <tr>
-            <th class="cell-left">${t.Translator.translate('Coordinates', lang)}</th>
+            <th class="cell-left">${mod_translate.Translator.translate('Coordinates', lang)}</th>
             <td>${int(round(c['attributes']['x'],0)) or ''} / ${int(round(c['attributes']['y'],0)) or ''}</td>
         </tr>
     % if c['attributes']['pdf_list'] is not None:
         <tr>
-            <th class="cell-left">${t.Translator.translate('Feature tooltip', lang)}:</th>
+            <th class="cell-left">${mod_translate.Translator.translate('Feature tooltip', lang)}:</th>
             <td>
 	        % for pdf in c['attributes']['pdf_list'].split(','):
                 <a href="https://${dataGeoAdminHost}/ch.babs.kulturgueter/PDF/${pdf}" target="_blank">${pdf}</a><br />
@@ -96,19 +96,19 @@
     %endif
     % if c['attributes']['link_uri'] is not None:
         <tr>
-          <th class="cell-left">${t.Translator.translate('legalregulationlink', lang)}</th>
+          <th class="cell-left">${mod_translate.Translator.translate('legalregulationlink', lang)}</th>
             <td><a href="${c['attributes']['link_uri']}">${c['attributes']['link_title']}</a></td>
         </tr>
     % endif
     % if c['attributes']['link_2_uri'] is not None:
         <tr>
-          <th class="cell-left">${t.Translator.translate('legalregulationlink', lang)}</th>
+          <th class="cell-left">${mod_translate.Translator.translate('legalregulationlink', lang)}</th>
           <td><a href="${c['attributes']['link_2_uri']}">${c['attributes']['link_2_title']}</a></td>
         </tr>
     % endif
     % if c['attributes']['link_3_uri'] is not None:
         <tr>
-          <th class="cell-left">${t.Translator.translate('legalregulationlink', lang)}</th>
+          <th class="cell-left">${mod_translate.Translator.translate('legalregulationlink', lang)}</th>
           <td><a href="${c['attributes']['link_3_uri']}">${c['attributes']['link_3_title']}</a></td>
         </tr>
     % endif

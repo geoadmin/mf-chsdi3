@@ -67,9 +67,9 @@ colspan = 3 if image_exists else 2
   <tr style="height: 25px;">
   % if attr.index(a) == 0:
       % if layer in layerTile :
-          <td class="cell-left">${t.Translator.translate('ch.swisstopo.images-swissimage.metadata.%s' % a, lang)}</td>
+          <td class="cell-left">${mod_translate.Translator.translate('ch.swisstopo.images-swissimage.metadata.%s' % a, lang)}</td>
       % else: 
-          <td class="cell-left">${t.Translator.translate('ch.swisstopo.lk25-papierkarte.metadata.%s' % a, lang)}</td>
+          <td class="cell-left">${mod_translate.Translator.translate('ch.swisstopo.lk25-papierkarte.metadata.%s' % a, lang)}</td>
       % endif
           <td>${c['attributes'][a]}</td>
     % if image_exists == True:
@@ -77,10 +77,10 @@ colspan = 3 if image_exists else 2
     % endif
   % else:
       % if a == 'url_legend':
-          <td>${t.Translator.translate('linkzurlegende', lang)}</td>
+          <td>${mod_translate.Translator.translate('linkzurlegende', lang)}</td>
           <td><a href="${c['attributes']['url_legend']}" target="_blank">${c['attributes'][name]}</a></td>
       % else:
-          <td valign="top" class="cell-left">${t.Translator.translate('ch.swisstopo.lk25-papierkarte.metadata.%s' % a, lang)}</td>
+          <td valign="top" class="cell-left">${mod_translate.Translator.translate('ch.swisstopo.lk25-papierkarte.metadata.%s' % a, lang)}</td>
           <td valign="top">${c['attributes'][a]}</td>
       % endif
   % endif
@@ -89,7 +89,7 @@ colspan = 3 if image_exists else 2
   <tr style="height: 100%;">
     <td></td>
 % if c['attributes']['available'] == False:
-    <td valign="top">${t.Translator.translate('shop_availability', lang)}
+    <td valign="top">${mod_translate.Translator.translate('shop_availability', lang)}
 % else:
     <td valign="top">
 % endif

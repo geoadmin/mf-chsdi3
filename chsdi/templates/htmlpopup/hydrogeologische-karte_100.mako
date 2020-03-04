@@ -11,7 +11,7 @@ if c['attributes']['pdf_list']:
   pdf_links = [l for l in c['attributes']['pdf_list'].split('##')]
 %>
 <tr>
-  <td class="cell-left">${t.Translator.translate('tt_document', lang)}</td>
+  <td class="cell-left">${mod_translate.Translator.translate('tt_document', lang)}</td>
   <td class="cell-meta-big">
 % if pdf_links != '':
 % for link in pdf_links:

@@ -7,10 +7,10 @@
     nummer = c['layerBodId'] + '.' + 'id'
 %>
 <% c['stable_id'] = True %>
-    <tr><td class="cell-left">${t.Translator.translate(nummer, lang)}</td>                 <td>${c['featureId']}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate(zaehlstelle, lang)}</td>            <td>${c['attributes']['zaehlstellen_bezeichnung']}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('physischvirtuell', lang)}</td>     <td>${c['attributes']['zst_physisch_virtuell'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('messstellentyp', lang)}</td>       <td>${c['attributes']['messstellentyp'] or '-'}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate(nummer, lang)}</td>                 <td>${c['featureId']}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate(zaehlstelle, lang)}</td>            <td>${c['attributes']['zaehlstellen_bezeichnung']}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('physischvirtuell', lang)}</td>     <td>${c['attributes']['zst_physisch_virtuell'] or '-'}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('messstellentyp', lang)}</td>       <td>${c['attributes']['messstellentyp'] or '-'}</td></tr>
 </%def>
 
 <%def name="extended_info(c, lang)">

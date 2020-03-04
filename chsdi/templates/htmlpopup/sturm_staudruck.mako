@@ -15,7 +15,7 @@
 
 %>
 
-    <tr><td class="cell-left">${t.Translator.translate('Staudruck', lang)}</td>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('Staudruck', lang)}</td>
 	<td>${c['attributes'][staudruck_values] or '-'}</td></tr>
 
 </%def>

@@ -8,9 +8,9 @@
     desc = 'desc_%s' % lang
 %>
 
-    <tr><td class="cell-left">${t.Translator.translate('name', lang)}</td>        <td>${c['attributes']['name'] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('nabeltyp', lang)}</td>    <td>${c['attributes'][typ] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('werte', lang)}</td>       <td>${c['attributes'][desc] or '-'}</td></tr>
-    <tr><td class="cell-left">${t.Translator.translate('abfrage', lang)}</td>    <td><a href="http://www.bafu.admin.ch/luft/luftbelastung/blick_zurueck/datenabfrage/index.html" target="_blank">Link</a></td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('name', lang)}</td>        <td>${c['attributes']['name'] or '-'}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('nabeltyp', lang)}</td>    <td>${c['attributes'][typ] or '-'}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('werte', lang)}</td>       <td>${c['attributes'][desc] or '-'}</td></tr>
+    <tr><td class="cell-left">${mod_translate.Translator.translate('abfrage', lang)}</td>    <td><a href="http://www.bafu.admin.ch/luft/luftbelastung/blick_zurueck/datenabfrage/index.html" target="_blank">Link</a></td></tr>
 </%def>
 
