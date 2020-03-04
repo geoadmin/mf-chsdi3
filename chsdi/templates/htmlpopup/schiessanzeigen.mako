@@ -9,11 +9,11 @@ lang = 'de' if lang == 'rm' else lang
 info_url = 'url_%s' % lang
 arr_wochentage = []
 if c['attributes']['wochentag']:
-  arr_wochentage     = str(c['attributes']['wochentag']).split(';')
-  arr_belegungsdatum = str(c['attributes']['belegungsdatum']).split(';')
-  arr_zeit_von       = str(c['attributes']['zeit_von']).split(';')
-  arr_zeit_bis       = str(c['attributes']['zeit_bis']).split(';')
-  arr_anmerkung      = str(c['attributes']['anmerkung']).split(';')
+  arr_wochentage     = unicode(c['attributes']['wochentag']).split(';')
+  arr_belegungsdatum = unicode(c['attributes']['belegungsdatum']).split(';')
+  arr_zeit_von       = unicode(c['attributes']['zeit_von']).split(';')
+  arr_zeit_bis       = unicode(c['attributes']['zeit_bis']).split(';')
+  arr_anmerkung      = unicode(c['attributes']['anmerkung']).split(';')
 counter = 0
 %>
 <% c['stable_id'] = True %>
