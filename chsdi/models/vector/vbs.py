@@ -88,8 +88,10 @@ class SchiessAnzeigen(Base, Vector):
     url_en = Column('url_en', Unicode)
     belegungsdatum = Column('belegungsdatum', Unicode)
     wochentag = Column('belegungsdatum_wochentag', Unicode)
+    wochentag = Column('belegungsdatum_wochentag', Unicode)
     zeit_von = Column('zeit_von', Unicode)
     zeit_bis = Column('zeit_bis', Unicode)
+    anmerkung = Column('anmerkung', Unicode)
     the_geom = Column(Geometry2D)
 
 register(SchiessAnzeigen.__bodId__, SchiessAnzeigen)

@@ -4,6 +4,7 @@
 
 <%def name="table_body(c, lang)">
 <%
+import datetime
 lang = 'de' if lang == 'rm' else lang
 info_url = 'url_%s' % lang
 arr_wochentage = []
@@ -12,6 +13,7 @@ if c['attributes']['wochentag']:
   arr_belegungsdatum = str(c['attributes']['belegungsdatum']).split(';')
   arr_zeit_von       = str(c['attributes']['zeit_von']).split(';')
   arr_zeit_bis       = str(c['attributes']['zeit_bis']).split(';')
+  arr_anmerkung      = str(c['attributes']['anmerkung']).split(';')
 counter = 0
 %>
 <% c['stable_id'] = True %>
@@ -48,12 +50,13 @@ counter = 0
         <%
            zeit = '%s - %s' % (arr_zeit_von[counter], arr_zeit_bis[counter])
            wochentag = _('ch.vbs.schiessanzeigen.wochentag.%s' % wochentag)
+           datum = datetime.datetime.strptime(arr_belegungsdatum[counter], "%Y-%m-%d").strftime("%d.%m.%Y")
         %>
-    ## # spetial case 0 and 0 means no shooting
+    ## # special case 0 and 0 means no shooting
         % if zeit == '0 - 0':
-          <tr><td><${wochentag}</td><td>${arr_belegungsdatum[counter]}</td><td>${_('ch.vbs.schiessanzeigen.kein_schiessen')}</td></tr>
+          <tr><td><${wochentag}</td><td>${arr_belegungsdatum[counter]}</td><td colspan="2">${_('ch.vbs.schiessanzeigen.kein_schiessen')}</td></tr>
         % else:
-          <tr><td>${wochentag}</td><td>${arr_belegungsdatum[counter]}</td><td>${zeit}</td></tr>
+          <tr><td>${wochentag}</td><td>${datum}</td><td>${zeit}</td><td>${arr_anmerkung[counter]}</td></tr>
         % endif
         <% counter += 1 %>
       % endfor
