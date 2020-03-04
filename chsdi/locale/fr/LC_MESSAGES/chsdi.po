@@ -11984,6 +11984,9 @@ msgstr "Ven"
 msgid "ch.vbs.schiessanzeigen.wochentag.7"
 msgstr "Sam"
 
+msgid "ch.vbs.schiessanzeigen.wochentag.7"
+msgstr "Dim"
+
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Carte des zones interdites"
 
