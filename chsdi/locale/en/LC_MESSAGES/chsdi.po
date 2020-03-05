@@ -938,6 +938,9 @@ msgstr "Agglomeration - Definition 2000"
 msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Agglomeration and isolated cities"
 
+msgid "ch.are.agglomerationsverkehr"
+msgstr "Beitragsberechtigte Städte und Agglomerationen"
+
 msgid "ch.are.alpenkonvention"
 msgstr "Alpine Convention"
 
@@ -5019,7 +5022,7 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "40km2 sub catchment areas"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Type of flow regime"
+msgstr "Vorfluterabschnitte"
 
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "Catchment area number"
@@ -8429,6 +8432,9 @@ msgstr "https://www.sem.admin.ch/sem/en/home.html"
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis"
+msgstr "Amtliches Gebäudeadressverzeichnis"
+
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
 msgstr "Official street index"
 
@@ -8638,9 +8644,6 @@ msgstr "Division last glacial max. 500 Paper"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata.release"
 msgstr "Edition"
-
-msgid "ch.swisstopo.geologie-erlebnis_geologie"
-msgstr "Experience Geology"
 
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Bedrock elevation model"
@@ -11849,6 +11852,48 @@ msgstr "Sachplan Militär"
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Sachplan Militär"
 
+msgid "ch.vbs.schiessanzeigen"
+msgstr "Published shooting range bulletins and hazard zones"
+
+msgid "ch.vbs.schiessanzeigen.auskunft"
+msgstr "Information point"
+
+msgid "ch.vbs.schiessanzeigen.belegung"
+msgstr "Current shooting data"
+
+msgid "ch.vbs.schiessanzeigen.bezeichnung"
+msgstr "Shooting range"
+
+msgid "ch.vbs.schiessanzeigen.keine_info"
+msgstr "No information available"
+
+msgid "ch.vbs.schiessanzeigen.kein_schiessen"
+msgstr "No shooting"
+
+msgid "ch.vbs.schiessanzeigen.url"
+msgstr "List of shooting range bulletins"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.1"
+msgstr "Sun"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.2"
+msgstr "Mon"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.3"
+msgstr "Tue"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.4"
+msgstr "Wed"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.5"
+msgstr "Thu"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.6"
+msgstr "Fri"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.7"
+msgstr "Sat"
+
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Map of restricted and danger areas"
 
@@ -12010,6 +12055,33 @@ msgstr "Create polygon"
 
 msgid "ct"
 msgstr "Ct."
+
+msgid "cwm_egris_egrid"
+msgstr "EGRID"
+
+msgid "cwm_number"
+msgstr "Number"
+
+msgid "cwm_realestate_type"
+msgstr "Real Estate Type"
+
+msgid "cwm_realestate_type_0"
+msgstr "Distinct and permanent rights"
+
+msgid "cwm_realestate_type_1"
+msgstr "Rights to spring water"
+
+msgid "cwm_realestate_type_2"
+msgstr "Concession rights"
+
+msgid "cwm_realestate_type_3"
+msgstr "other"
+
+msgid "cwm_realestate_type_4"
+msgstr "Mineral rights"
+
+msgid "cwm_realestate_type_default"
+msgstr "Land and buildings"
 
 msgid "cyan"
 msgstr "cyan"
@@ -12930,6 +13002,9 @@ msgid "<i>Friedhof</i>"
 msgstr "Cemetery"
 
 msgid "<i>Gebaeude Einzelhaus</i>"
+msgstr "Building"
+
+msgid "<i>Gebaeude</i>"
 msgstr "Building"
 
 msgid "<i>Gebiet</i>"
