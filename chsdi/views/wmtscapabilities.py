@@ -57,7 +57,7 @@ class WMTSCapabilites(MapNameValidation):
             raise HTTPBadRequest('EPSG:%s not found. Must be one of %s' % (epsg, ", ".join(available_epsg_codes)))
         self.tileMatrixSet = epsg
 
-    @view_config(route_name='wmtscapabilities')
+    @view_config(route_name='wmtscapabilities', http_cache=0)
     def wmtscapabilities(self):
         from pyramid.renderers import render_to_response
         scheme = self.request.headers.get(
