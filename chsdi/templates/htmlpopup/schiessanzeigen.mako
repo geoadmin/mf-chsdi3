@@ -5,6 +5,9 @@
 <%def name="table_body(c, lang)">
 <%
 import datetime
+import re
+counter = 0
+p = re.compile('^0{1,4} - 0{1,4}$')
 lang = 'de' if lang == 'rm' else lang
 info_url = 'url_%s' % lang
 arr_wochentage = []
@@ -14,7 +17,6 @@ if c['attributes']['wochentag']:
   arr_zeit_von       = unicode(c['attributes']['zeit_von']).split(';')
   arr_zeit_bis       = unicode(c['attributes']['zeit_bis']).split(';')
   arr_anmerkung      = unicode(c['attributes']['anmerkung']).split(';')
-counter = 0
 %>
 <% c['stable_id'] = True %>
     <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.bezeichnung')}</td>       <td>${c['attributes']['bezeichnung'] or '-'}</td></tr>
@@ -53,7 +55,7 @@ counter = 0
            datum = datetime.datetime.strptime(arr_belegungsdatum[counter], "%Y-%m-%d").strftime("%d.%m.%Y")
         %>
     ## # special case 0 and 0 means no shooting
-        % if zeit == '0 - 0':
+        % if p.match(zeit):
           <tr><td><${wochentag}</td><td>${arr_belegungsdatum[counter]}</td><td colspan="2">${_('ch.vbs.schiessanzeigen.kein_schiessen')}</td></tr>
         % else:
           <tr><td>${wochentag}</td><td>${datum}</td><td>${zeit}</td><td>${arr_anmerkung[counter]}</td></tr>
