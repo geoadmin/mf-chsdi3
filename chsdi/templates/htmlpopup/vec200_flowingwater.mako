@@ -2,24 +2,24 @@
 
 <%def name="table_body(c,lang)">
     <% c[stable_id] = True %>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('schiffbarkeit', lang)}</td><td>
+    <tr><td class="cell-left">${h.translate('schiffbarkeit', lang)}</td><td>
     % if c['attributes']['exs'] == 'Not applicable':
-    ${mod_translate.Translator.translate('No', lang)}
+    ${h.translate('No', lang)}
     % elif c['attributes']['exs'] == 'Naviguable and opera':
-    ${mod_translate.Translator.translate('Yes', lang)}
+    ${h.translate('Yes', lang)}
     % else:
     -
     % endif
     </td></tr>
     
-    <tr><td class="cell-left">${mod_translate.Translator.translate('hydrografische_herkunft', lang)}</td><td>
+    <tr><td class="cell-left">${h.translate('hydrografische_herkunft', lang)}</td><td>
     % if c['attributes']['hoc']:
-    ${mod_translate.Translator.translate(c['attributes']['hoc'], lang)}
+    ${h.translate(c['attributes']['hoc'], lang)}
     % else:
     -
     % endif
     </td></tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('name', lang)}</td>
+    <tr><td class="cell-left">${h.translate('name', lang)}</td>
     % if c['attributes']['name'].strip()== 'N_P':
       <td>-</td>
     % else:

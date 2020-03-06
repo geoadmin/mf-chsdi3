@@ -2,7 +2,7 @@
 
 <%def name="table_body(c, lang)">
 
-    <tr><td class="cell-left">${mod_translate.Translator.translate('ch.vbs.patrouilledesglaciers-z_rennen.name', lang)}</td>
+    <tr><td class="cell-left">${h.translate('ch.vbs.patrouilledesglaciers-z_rennen.name', lang)}</td>
 	<td>${c['attributes']['name'] or '-'}</td></tr>
 
 </%def>

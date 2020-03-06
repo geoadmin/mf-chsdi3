@@ -42,9 +42,9 @@ if is_oereb_service:
 
   list_egrid = get_xml(url_get_egrid)
 %>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('kanton', lang)}</td>    <td>${c['attributes']['kanton'] or '-'}</td></tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('gemgemeinde', lang)}</td>    <td>${c['attributes']['gemeindename'] or '-'}</td></tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('oereb_status', lang)}</td>
+    <tr><td class="cell-left">${h.translate('kanton', lang)}</td>    <td>${c['attributes']['kanton'] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('gemgemeinde', lang)}</td>    <td>${c['attributes']['gemeindename'] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('oereb_status', lang)}</td>
 % if lang == 'de':
      <td>${c['attributes']['oereb_status_de'] or '-'}</td></tr>
 % elif lang == 'fr':
@@ -56,8 +56,8 @@ if is_oereb_service:
 % elif lang == 'rm':
      <td>${c['attributes']['oereb_status_rm'] or '-'}</td></tr>
 % endif
-    <tr><td class="cell-left">${mod_translate.Translator.translate('oereb_firma', lang)}</td>    <td>${c['attributes']['firmenname'] or '-'}</td></tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('grundadresse', lang)}</td>
+    <tr><td class="cell-left">${h.translate('oereb_firma', lang)}</td>    <td>${c['attributes']['firmenname'] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('grundadresse', lang)}</td>
       % if c['attributes']['ort'] == None:
        <td>-</td>
       % else:
@@ -66,8 +66,8 @@ if is_oereb_service:
         </td>
       % endif
     </tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('grundtel', lang)}</td>    <td>${c['attributes']['telefon'] or '-'}</td></tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('Email', lang)}</td>
+    <tr><td class="cell-left">${h.translate('grundtel', lang)}</td>    <td>${c['attributes']['telefon'] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('Email', lang)}</td>
       % if c['attributes']['email'] == None:
        <td>-</td>
       % elif "@" in c['attributes']['email']:
@@ -76,17 +76,17 @@ if is_oereb_service:
        <td>-</td>
       % endif
     </tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('gemdarstellung', lang)}</td>
+    <tr><td class="cell-left">${h.translate('gemdarstellung', lang)}</td>
       % if c['attributes']['url_oereb'] == None:
        <td>-</td>
       % else:
-         <td><a target="_blank" href="${c['attributes']['url_oereb']}">${mod_translate.Translator.translate('link', lang)}</a></td>
+         <td><a target="_blank" href="${c['attributes']['url_oereb']}">${h.translate('link', lang)}</a></td>
       % endif
     </tr>
     % if is_oereb_service:
       % for egrid in list_egrid:
         <tr>
-            <td class="cell-left">${mod_translate.Translator.translate('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice', lang)}</td>
+            <td class="cell-left">${h.translate('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice', lang)}</td>
             <td><a target="_blank" href="${path_pdf}${egrid.text}">PDF (${egrid.text})</a></td>
         </tr>
       % endfor

@@ -1,6 +1,6 @@
 <%inherit file="base.mako"/>
 <%!
-import chsdi.lib.translator as mod_translate
+
 import requests
 def getAltitude(baseUrl, center):
     fullUrl = 'http://' + baseUrl +'/rest/services/height'
@@ -36,23 +36,23 @@ props = c['attributes']
 </style>
 <!-- html output -->
     <tr>
-      <th class="cell-left">${mod_translate.Translator.translate('tt_bfe_hinweis_wa', lang)}</th>
-      <td>${mod_translate.Translator.translate('tt_bfe_hinweis_text', lang)}</td>
+      <th class="cell-left">${h.translate('tt_bfe_hinweis_wa', lang)}</th>
+      <td>${h.translate('tt_bfe_hinweis_text', lang)}</td>
     </tr>
     <tr>
-      <th class="cell-left">${mod_translate.Translator.translate('tt_bfe_hoehe_gelaende', lang)}</th>
-      <td>${dhm_altitude or '-'} ${mod_translate.Translator.translate('abk_meter_ueber_meer', lang)}</td>
+      <th class="cell-left">${h.translate('tt_bfe_hoehe_gelaende', lang)}</th>
+      <td>${dhm_altitude or '-'} ${h.translate('abk_meter_ueber_meer', lang)}</td>
     </tr>
     <tr>
-      <th class="cell-left">${mod_translate.Translator.translate('tt_bfe_geschw_wind_durchschnitt', lang)}</th>
+      <th class="cell-left">${h.translate('tt_bfe_geschw_wind_durchschnitt', lang)}</th>
       <td>${round(props['v_mean'], 1)} m/s</td>
     </tr>
     <tr>
-      <th class="cell-left">${mod_translate.Translator.translate('zusatzinfo', lang)}</th>
-      <td><a href="${baseUrl}/rest/services/ech/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}" target="_blank">${mod_translate.Translator.translate('tt_bfe_geschw_wind_exttooltip', lang)}</a></td>
+      <th class="cell-left">${h.translate('zusatzinfo', lang)}</th>
+      <td><a href="${baseUrl}/rest/services/ech/MapServer/${c['layerBodId']}/${c['featureId']}/extendedHtmlPopup?lang=${lang}" target="_blank">${h.translate('tt_bfe_geschw_wind_exttooltip', lang)}</a></td>
     </tr>
     <tr>
-      <th colspan=2 class="cell-meta-one">${mod_translate.Translator.translate('tt_bfe_windrose', lang)}</th>
+      <th colspan=2 class="cell-meta-one">${h.translate('tt_bfe_windrose', lang)}</th>
     </tr>
     <tr>
       <td colspan=2>
@@ -202,32 +202,32 @@ table#windrichtung  td.align-right {
 <body>
 <table class="table-with-border kernkraftwerke-extended">
   <tr>
-    <th class="cell-left">${mod_translate.Translator.translate('tt_bfe_hinweis_wa', lang)}</th>
-    <td>${mod_translate.Translator.translate('tt_bfe_hinweis_text', lang)}</td>
+    <th class="cell-left">${h.translate('tt_bfe_hinweis_wa', lang)}</th>
+    <td>${h.translate('tt_bfe_hinweis_text', lang)}</td>
   </tr>
   <tr>
-    <th class="cell-left">${mod_translate.Translator.translate('tt_bfe_hoehe_ueber_grund', lang)}</th>
+    <th class="cell-left">${h.translate('tt_bfe_hoehe_ueber_grund', lang)}</th>
     <td>${altitude or '-'} m</td>
   </tr>
   <tr>
-    <th class="cell-left">${mod_translate.Translator.translate('tt_bfe_koordinaten', lang)}</th>
+    <th class="cell-left">${h.translate('tt_bfe_koordinaten', lang)}</th>
     <td>${center or '-'}</td>
   </tr>
   <tr>
-    <th class="cell-left">${mod_translate.Translator.translate('tt_bfe_hoehe_gelaende', lang)}</th>
-    <td>${dhm_altitude or '-'} ${mod_translate.Translator.translate('abk_meter_ueber_meer', lang)}</td>
+    <th class="cell-left">${h.translate('tt_bfe_hoehe_gelaende', lang)}</th>
+    <td>${dhm_altitude or '-'} ${h.translate('abk_meter_ueber_meer', lang)}</td>
   </tr>
   <tr>
-    <th class="cell-left">${mod_translate.Translator.translate('tt_bfe_geschw_wind_durchschnitt', lang)}</th>
+    <th class="cell-left">${h.translate('tt_bfe_geschw_wind_durchschnitt', lang)}</th>
     <td>${round(props['v_mean'],1)} m/s</td>
   </tr>
   <tr>
-    <td class="inner-table" colspan="2"><b>${mod_translate.Translator.translate('tt_bfe_windrose_geschwverteilung', lang)}</b><br/>${mod_translate.Translator.translate('tt_bfe_windrose_help', lang)}<br/><div id="rose"></div>
+    <td class="inner-table" colspan="2"><b>${h.translate('tt_bfe_windrose_geschwverteilung', lang)}</b><br/>${h.translate('tt_bfe_windrose_help', lang)}<br/><div id="rose"></div>
       <table id="windrichtung">
         <tr>
-          <th>${mod_translate.Translator.translate('tt_bfe_windrichtung', lang)}</th>
-          <th>${mod_translate.Translator.translate('tt_bfe_haeufigkeit', lang)}</th>
-          <th>${mod_translate.Translator.translate('tt_bfe_mittlere_geschw', lang)}</th>
+          <th>${h.translate('tt_bfe_windrichtung', lang)}</th>
+          <th>${h.translate('tt_bfe_haeufigkeit', lang)}</th>
+          <th>${h.translate('tt_bfe_mittlere_geschw', lang)}</th>
           <th>A</th>
           <th>k</th>
         </tr>
@@ -325,11 +325,11 @@ table#windrichtung  td.align-right {
   </tr>
   <tr>
     <td class="inner-table" colspan="2">
-      <b>${mod_translate.Translator.translate('tt_bfe_windrichtung_weibullverteilung', lang)}</b><br/>${mod_translate.Translator.translate('tt_bfe_windstaerke_info', lang)}<br/><div id="weibull"></div>
+      <b>${h.translate('tt_bfe_windrichtung_weibullverteilung', lang)}</b><br/>${h.translate('tt_bfe_windstaerke_info', lang)}<br/><div id="weibull"></div>
       <table id="windrichtung">
         <tr>
-          <th>${mod_translate.Translator.translate('tt_bfe_geschwindigkeit', lang)}</th>
-          <th style="text-align:right">${mod_translate.Translator.translate('tt_bfe_haeufigkeit', lang)}</th>
+          <th>${h.translate('tt_bfe_geschwindigkeit', lang)}</th>
+          <th style="text-align:right">${h.translate('tt_bfe_haeufigkeit', lang)}</th>
         </tr>
         <tr>
           <td>0 m/s</td>
@@ -693,7 +693,7 @@ var path = svg.selectAll(".solidArc")
     .attr("fill", "grey");
 
     svg.append("text")
-    .text("${mod_translate.Translator.translate('tt_bfe_haeufigkeit', lang)}")
+    .text("${h.translate('tt_bfe_haeufigkeit', lang)}")
     .style("font-size", "10px")
     .style("text-align", "center")
     .attr("fill", "grey")
@@ -758,7 +758,7 @@ legends.forEach(function (legend) {
      legendY -= 15;
 });
 svg.append("text")
-    .text("${mod_translate.Translator.translate('tt_bfe_windgeschwindigkeit', lang)}")
+    .text("${h.translate('tt_bfe_windgeschwindigkeit', lang)}")
     .style("font-size", "10px")
     .attr("fill", "grey")
 % if iframe:
@@ -824,14 +824,14 @@ var svg_weibull = d3.select("#weibull").append("svg")
       .attr("class", "line")
       .attr("d", line);
   svg_weibull.append("text")
-    .text("${mod_translate.Translator.translate('tt_bfe_haeufigkeit', lang)}")
+    .text("${h.translate('tt_bfe_haeufigkeit', lang)}")
     .style("font-size", "10px")
     .style("text-align", "center")
     .attr("fill", "black")
     .attr("transform", "translate(-35,130) rotate(270)");
 
   svg_weibull.append("text")
-    .text("${mod_translate.Translator.translate('tt_bfe_windgeschwindigkeit', lang)} [m/s]")
+    .text("${h.translate('tt_bfe_windgeschwindigkeit', lang)} [m/s]")
     .style("font-size", "10px")
     .style("text-align", "center")
     .attr("fill", "black")

@@ -7,7 +7,7 @@
     ei_hdyn = 'ei_hdyn_%s' % lang
     ei_type = 'ei_type_%s' % lang
 %>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('ch.bafu.karst-unterirdische_fliesswege.ei_type', lang)}</td>       <td>${c['attributes'][ei_type] or '-'}</td></tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('ch.bafu.karst-unterirdische_fliesswege.ei_hdyn', lang)}</td>      <td>${c['attributes'][ei_hdyn] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('ch.bafu.karst-unterirdische_fliesswege.ei_type', lang)}</td>       <td>${c['attributes'][ei_type] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('ch.bafu.karst-unterirdische_fliesswege.ei_hdyn', lang)}</td>      <td>${c['attributes'][ei_hdyn] or '-'}</td></tr>
 </%def>
 

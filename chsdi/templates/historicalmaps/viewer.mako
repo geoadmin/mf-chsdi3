@@ -3,7 +3,7 @@
 <%
   from pyramid.url import route_url
   import requests
-  import chsdi.lib.translator as mod_translate
+
 
 
   c = context
@@ -132,20 +132,20 @@
   <body onload="init()">
     <div class="header">
       <div class="pull-left">${title}</div>
-      <a class="pull-right" href="${geoadminUrl}" target="_blank">${mod_translate.Translator.translate('link to geoportal', lang)}</a>
+      <a class="pull-right" href="${geoadminUrl}" target="_blank">${h.translate('link to geoportal', lang)}</a>
     </div>
     <div class="wrapper">
       <div id="zeitreihenmap"></div>
     </div>
     <div class="footer">
-      <a class="pull-left" href="${mod_translate.Translator.translate('disclaimer url', lang)}" target="_blank">Copyright</a>
+      <a class="pull-left" href="${h.translate('disclaimer url', lang)}" target="_blank">Copyright</a>
       <div id="messagectrl"></div>
       <script>
         if ( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
           if (navigator.platform.substr(0,3) == 'Mac') {
-            document.getElementById("messagectrl").innerHTML = "${mod_translate.Translator.translate('rotation key apple', lang)}";
+            document.getElementById("messagectrl").innerHTML = "${h.translate('rotation key apple', lang)}";
           } else {
-            document.getElementById("messagectrl").innerHTML = "${mod_translate.Translator.translate('rotation key', lang)}";
+            document.getElementById("messagectrl").innerHTML = "${h.translate('rotation key', lang)}";
           }
         }
       </script>

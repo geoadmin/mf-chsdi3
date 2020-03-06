@@ -2,15 +2,15 @@
 
 <%def name="table_body(c,lang)">
        <tr>
-         <td class="cell-left">${mod_translate.Translator.translate('ch.astra.hauptstrassennetz.roadnumber', lang)}</td>
+         <td class="cell-left">${h.translate('ch.astra.hauptstrassennetz.roadnumber', lang)}</td>
          <td>${c['attributes']['roadnumber'] or '-'}</td>
        </tr>
        <tr>
-         <td class="cell-left">${mod_translate.Translator.translate('ch.astra.hauptstrassennetz.segmentid', lang)}</td>
+         <td class="cell-left">${h.translate('ch.astra.hauptstrassennetz.segmentid', lang)}</td>
          <td>${c['attributes']['segmentdescription'] or '-'}</td>
        </tr>
        <tr>
-         <td class="cell-left">${mod_translate.Translator.translate('ch.astra.hauptstrassennetz.canton', lang)}</td>
+         <td class="cell-left">${h.translate('ch.astra.hauptstrassennetz.canton', lang)}</td>
          <td>${c['attributes']['canton'] or '-'}</td>
        </tr>
 </%def>

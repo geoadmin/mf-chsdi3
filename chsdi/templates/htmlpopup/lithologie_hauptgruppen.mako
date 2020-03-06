@@ -3,7 +3,7 @@
 <%def name="table_body(c,lang)">
     <tr><td colspan="3">&nbsp;</tr>
     <tr>
-      <td colspan="3">${mod_translate.Translator.translate('tt_gk_500_LithoHaupt', lang)}</td>
+      <td colspan="3">${h.translate('tt_gk_500_LithoHaupt', lang)}</td>
     </tr>
     <tr><td colspan="3">&nbsp;</tr>
     <tr>

@@ -15,15 +15,15 @@
         url = 'url_de' 
 %>
     <tr>
-      <td class="cell-left">${mod_translate.Translator.translate('ch.bafu.hydrologie-hochwasserstatistik.name', lang)}</td>
+      <td class="cell-left">${h.translate('ch.bafu.hydrologie-hochwasserstatistik.name', lang)}</td>
       <td>${c['attributes']['name'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${mod_translate.Translator.translate('ch.bafu.hydrologie-hochwasserstatistik.url', lang)}</td>
-      <td><a href="${c['attributes']['url_hqpdf'] or '-'}" target="_blank">${mod_translate.Translator.translate('ch.bafu.hydrologie-hochwasserstatistik.pdf', lang)}</a></td>
+      <td class="cell-left">${h.translate('ch.bafu.hydrologie-hochwasserstatistik.url', lang)}</td>
+      <td><a href="${c['attributes']['url_hqpdf'] or '-'}" target="_blank">${h.translate('ch.bafu.hydrologie-hochwasserstatistik.pdf', lang)}</a></td>
     </tr>
     <tr>
-      <td class="cell-left">${mod_translate.Translator.translate('ch.bafu.hydrologie-hochwasserstatistik.urlpdf', lang)}</td>
-      <td><a href="${c['attributes'][url] or '-'}" target="_blank">${mod_translate.Translator.translate('ch.bafu.hydrologie-hochwasserstatistik.link', lang)}</a></td>
+      <td class="cell-left">${h.translate('ch.bafu.hydrologie-hochwasserstatistik.urlpdf', lang)}</td>
+      <td><a href="${c['attributes'][url] or '-'}" target="_blank">${h.translate('ch.bafu.hydrologie-hochwasserstatistik.link', lang)}</a></td>
     </tr>
 </%def>

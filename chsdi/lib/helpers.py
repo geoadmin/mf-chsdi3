@@ -43,6 +43,7 @@ from shapely.wkt import dumps as shape_dumps, loads as shape_loads
 from shapely.geometry.base import BaseGeometry
 from chsdi.lib.parser import WhereParser
 from chsdi.lib.exceptions import QueryParseException, CoordinatesTransformationException
+from chsdi.lib.translator import Translator
 import logging
 
 if six.PY3:
@@ -653,3 +654,6 @@ def separate_statements(substring, model):
 def sanitize_user_input_accents(string):
     # this transforms the umlauts in latin compliant version, then remove the accents entirely
     return unidecode.unidecode(remove_accents(string))
+
+def translate(text, lang):
+    return Translator.translate(text, lang)

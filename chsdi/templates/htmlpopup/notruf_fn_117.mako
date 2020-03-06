@@ -13,8 +13,8 @@
 
 <% c['stable_id'] = True %>
 
-    <tr><td class="cell-left">${mod_translate.Translator.translate('ch.bakom.notruf-117_festnetz.117_festnetz', lang)}</td>    	<td>${c['attributes']['festnetz_117'] or '-'}</td></tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('ch.bakom.notruf-117_festnetz.gemeinde', lang)}</td>          <td>${c['attributes']['fn_gemeinde_117'] or '-'}</td></tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('ch.bakom.notruf-117_festnetz.adresse', lang)}</td>           <td>${_(str_output)|n}</td></tr>
+    <tr><td class="cell-left">${h.translate('ch.bakom.notruf-117_festnetz.117_festnetz', lang)}</td>    	<td>${c['attributes']['festnetz_117'] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('ch.bakom.notruf-117_festnetz.gemeinde', lang)}</td>          <td>${c['attributes']['fn_gemeinde_117'] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('ch.bakom.notruf-117_festnetz.adresse', lang)}</td>           <td>${_(str_output)|n}</td></tr>
 </%def>
 
