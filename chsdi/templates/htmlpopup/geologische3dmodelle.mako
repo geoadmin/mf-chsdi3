@@ -56,12 +56,36 @@
       <td>${c['attributes']['year_publication'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.contracting_entity')}</td>
+      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_contracting_entity')}</td>
       <td>${c['attributes'][contracting_entity] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.author')}</td>
+      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_author')}</td>
       <td>${c['attributes'][author] or '-'}</td>
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_link_portal')}</td>
+          % if 'http' not in c['attributes'][link_portal]:
+             <td>${c['attributes'][link_portal] or '-'}</td>
+          % else:
+             <td><a  target="_blank" href=${c['attributes'][link_portal] or '-'}>link</a></td>
+          % endif
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_link_description')}</td>
+          % if 'http' not in c['attributes'][link_description]:
+             <td>${c['attributes'][link_description] or '-'}</td>
+          % else:
+             <td><a  target="_blank" href=${c['attributes'][link_description] or '-'}>link</a></td>
+          % endif
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_link_documentation')}</td>
+          % if 'http' not in c['attributes'][link_documentation]:
+             <td>${c['attributes'][link_documentation] or '-'}</td>
+          % else:
+             <td><a  target="_blank" href=${c['attributes'][link_documentation] or '-'}>link</a></td>
+          % endif
     </tr>
   </table>
 </%def>
