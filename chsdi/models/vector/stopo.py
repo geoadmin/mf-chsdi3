@@ -15,9 +15,9 @@ Base = bases['stopo']
 class GeologieGeologische3dmodelle(Base, Vector):
     __tablename__ = 'geologische_3dmodelle'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/geologische3dmodelle.mako'
     __bodId__ = 'ch.swisstopo.geologie-geologische_3dmodelle'
-    __label__ = 'name'
+    __extended_info__ = True
+    __label_ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     purpose = Column('purpose', Unicode)
