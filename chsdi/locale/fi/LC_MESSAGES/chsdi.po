@@ -938,6 +938,9 @@ msgstr "Aglomeraziuns - Definiziun 2000"
 msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Aglomeraziuns e citads isoladas"
 
+msgid "ch.are.agglomerationsverkehr"
+msgstr "Beitragsberechtigte Städte und Agglomerationen"
+
 msgid "ch.are.alpenkonvention"
 msgstr "Convenziun da las Alps"
 
@@ -5019,7 +5022,7 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "Intschess parzials 40km2"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Tip d'urden da deflussiun"
+msgstr "Vorfluterabschnitte"
 
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "Gesamteinzugsgebiets-Nummer"
@@ -8429,6 +8432,9 @@ msgstr "https://www.sem.admin.ch/sem/de/home.html"
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis"
+msgstr "Amtliches Gebäudeadressverzeichnis"
+
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
 msgstr "Register uffizial da las vias"
 
@@ -8638,9 +8644,6 @@ msgstr "Div. Ultim glatsch max. 500 Stampa"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata.release"
 msgstr "Ausgabejahr"
-
-msgid "ch.swisstopo.geologie-erlebnis_geologie"
-msgstr "Aventura geologia"
 
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Autezza da la surfatscha da grip"
@@ -11849,6 +11852,48 @@ msgstr "Sachplan Militär"
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Sachplan Militär"
 
+msgid "ch.vbs.schiessanzeigen"
+msgstr "Publizierte Schiessanzeigen und Gefahrenzonen"
+
+msgid "ch.vbs.schiessanzeigen.auskunft"
+msgstr "Auskunftstelle"
+
+msgid "ch.vbs.schiessanzeigen.belegung"
+msgstr "Aktuelle Schiessdaten"
+
+msgid "ch.vbs.schiessanzeigen.bezeichnung"
+msgstr "Schiessplatz"
+
+msgid "ch.vbs.schiessanzeigen.keine_info"
+msgstr "Keine Informationen verfügbar"
+
+msgid "ch.vbs.schiessanzeigen.kein_schiessen"
+msgstr "Kein Schiessen"
+
+msgid "ch.vbs.schiessanzeigen.url"
+msgstr "Aktuelle Liste der Schiessanzeigen"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.1"
+msgstr "So"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.2"
+msgstr "Mo"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.3"
+msgstr "Di"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.4"
+msgstr "Mi"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.5"
+msgstr "Do"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.6"
+msgstr "Fr"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.7"
+msgstr "Sa"
+
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Charta da zonas scumandadas"
 
@@ -12010,6 +12055,33 @@ msgstr "Registrar il poligon"
 
 msgid "ct"
 msgstr "Kt."
+
+msgid "cwm_egris_egrid"
+msgstr "EGRID"
+
+msgid "cwm_number"
+msgstr "Nummer"
+
+msgid "cwm_realestate_type"
+msgstr "Grundstücksart"
+
+msgid "cwm_realestate_type_0"
+msgstr "Baurecht"
+
+msgid "cwm_realestate_type_1"
+msgstr "Quellenrecht"
+
+msgid "cwm_realestate_type_2"
+msgstr "Konzessionsrecht"
+
+msgid "cwm_realestate_type_3"
+msgstr "weitere"
+
+msgid "cwm_realestate_type_4"
+msgstr "Bergwerk"
+
+msgid "cwm_realestate_type_default"
+msgstr "Liegenschaft"
 
 msgid "cyan"
 msgstr "cian"
@@ -12930,6 +13002,9 @@ msgid "<i>Friedhof</i>"
 msgstr "Santeri"
 
 msgid "<i>Gebaeude Einzelhaus</i>"
+msgstr "Edifizi"
+
+msgid "<i>Gebaeude</i>"
 msgstr "Edifizi"
 
 msgid "<i>Gebiet</i>"

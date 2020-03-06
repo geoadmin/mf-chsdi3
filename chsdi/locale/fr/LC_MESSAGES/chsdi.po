@@ -938,6 +938,9 @@ msgstr "Agglomérations - Définition 2000"
 msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Agglomérations et villes isolées"
 
+msgid "ch.are.agglomerationsverkehr"
+msgstr "Villes et agglomérations ayant droit aux contributions"
+
 msgid "ch.are.alpenkonvention"
 msgstr "Convention des Alpes"
 
@@ -5019,7 +5022,7 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "Bassins versants partiels 40km2"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Type de régime d'écoulement"
+msgstr "Tronçons d'effluents"
 
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "N° du bassin versant complet"
@@ -6915,7 +6918,7 @@ msgid "ch.bfe.energiestaedte.punktezahl"
 msgstr "Nombre de points"
 
 msgid "ch.bfe.erneuerbarheizen"
-msgstr "Conseil incitatif chauffez vert"
+msgstr "Conseiller chauffez renouvelable"
 
 msgid "ch.bfe.erneuerbarheizen.company"
 msgstr "Société"
@@ -8429,6 +8432,9 @@ msgstr "https://www.sem.admin.ch/sem/fr/home.html"
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis"
+msgstr "Rép.off. des adresses de bâtiments"
+
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
 msgstr "Répertoire officiel des rues"
 
@@ -8638,9 +8644,6 @@ msgstr "Découpage dernier max. glaciaire 500 Papier"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata.release"
 msgstr "Édition"
-
-msgid "ch.swisstopo.geologie-erlebnis_geologie"
-msgstr "Géologie Vivante"
 
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Modèle d'altitude du toit du rocher"
@@ -11849,6 +11852,48 @@ msgstr "Plan sectoriel militaire"
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Plan sectoriel militaire"
 
+msgid "ch.vbs.schiessanzeigen"
+msgstr "Avis de tir et zones de danger publiés"
+
+msgid "ch.vbs.schiessanzeigen.auskunft"
+msgstr "Point info"
+
+msgid "ch.vbs.schiessanzeigen.belegung"
+msgstr "Dates de tir actuelles"
+
+msgid "ch.vbs.schiessanzeigen.bezeichnung"
+msgstr "Place de tir"
+
+msgid "ch.vbs.schiessanzeigen.keine_info"
+msgstr "Aucune information disponible"
+
+msgid "ch.vbs.schiessanzeigen.kein_schiessen"
+msgstr "Pas de tir"
+
+msgid "ch.vbs.schiessanzeigen.url"
+msgstr "Liste actuelle des avis de tir"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.1"
+msgstr "Dim"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.2"
+msgstr "Lun"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.3"
+msgstr "Mar"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.4"
+msgstr "Mer"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.5"
+msgstr "Jeu"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.6"
+msgstr "Ven"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.7"
+msgstr "Sam"
+
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Carte des zones interdites"
 
@@ -12010,6 +12055,33 @@ msgstr "Créer polygone"
 
 msgid "ct"
 msgstr "Ct."
+
+msgid "cwm_egris_egrid"
+msgstr "EGRID"
+
+msgid "cwm_number"
+msgstr "Numero"
+
+msgid "cwm_realestate_type"
+msgstr "Genre Immeuble"
+
+msgid "cwm_realestate_type_0"
+msgstr "Droit de superficie"
+
+msgid "cwm_realestate_type_1"
+msgstr "Droit de source"
+
+msgid "cwm_realestate_type_2"
+msgstr "Droit de concession"
+
+msgid "cwm_realestate_type_3"
+msgstr "autre"
+
+msgid "cwm_realestate_type_4"
+msgstr "mine"
+
+msgid "cwm_realestate_type_default"
+msgstr "Bien-fonds"
 
 msgid "cyan"
 msgstr "cyan"
@@ -12930,6 +13002,9 @@ msgid "<i>Friedhof</i>"
 msgstr "Cimetière"
 
 msgid "<i>Gebaeude Einzelhaus</i>"
+msgstr "Bâtiment"
+
+msgid "<i>Gebaeude</i>"
 msgstr "Bâtiment"
 
 msgid "<i>Gebiet</i>"
