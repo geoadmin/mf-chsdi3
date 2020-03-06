@@ -135,7 +135,7 @@ class LayersConfig(Base):
                 del config['format']
         # sublayers don't have attributions
         if 'attribution' in config:
-            config['attributionUrl'] = translate(self.__dict__['attribution'] + '.url')
+            config['attributionUrl'] = translate(self.__dict__['attribution'] + '.url', params.lang)
 
         # adding __queryable_attributes__ if they have them
         models = models_from_bodid(self.layerBodId)
