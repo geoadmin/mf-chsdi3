@@ -938,6 +938,9 @@ msgstr "Agglomerati - Definizione 2000"
 msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Agglomerati e cittá isolate"
 
+msgid "ch.are.agglomerationsverkehr"
+msgstr "Città e agglomerati aventi diritto ai contributi"
+
 msgid "ch.are.alpenkonvention"
 msgstr "Convenzione delle alpi"
 
@@ -5019,7 +5022,7 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "Bacini imbriferi 40 km2"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Tipo di regime di deflusso"
+msgstr "Tronçons d'effluents"
 
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "N° del bacino idrografico completo"
@@ -5787,37 +5790,37 @@ msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht"
 msgstr "Rumore dei treni, immissioni eff. N"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_es"
-msgstr "Degré de sensibilité"
+msgstr "Grado di sensibilità"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_operation_status"
-msgstr "Evaluation du local d'exploitation"
+msgstr "Valutazione locanda aziendale"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_pointofdetermination"
-msgstr "Type de point de détermination"
+msgstr "Tipo di punto di determinazione"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.floor"
-msgstr "Etage du point de détermination"
+msgstr "Piano di punto di determinazione"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.lr_night"
-msgstr "Immission eff. nuit [dB(A)]"
+msgstr "Immissione eff. notte  [dB(A)]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
 msgstr "Rumore dei treni, Immissioni eff. G"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_es"
-msgstr "Degré de sensibilité"
+msgstr "Grado di sensibilità"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_operation_status"
-msgstr "Evaluation du local d'exploitation"
+msgstr "Valutazione locanda aziendale"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_pointofdetermination"
-msgstr "Type de point de détermination"
+msgstr "Tipo di punto di determinazione"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.floor"
-msgstr "Etage du point de détermination"
+msgstr "Piano di punto di determinazione"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.lr_day"
-msgstr "Immission eff. jour [dB(A)]"
+msgstr "Immissione eff. giorno  [dB(A)]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Rumore dei treni, emissioni N stab."
@@ -8429,6 +8432,9 @@ msgstr "https://www.sem.admin.ch/sem/it/home.html"
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis"
+msgstr "Eelenco ufficiale degli indirizzi degli edifici"
+
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
 msgstr "Elenco ufficiale delle vie"
 
@@ -8638,9 +8644,6 @@ msgstr "Divisione ultimo max. glaciale 500 Stampa"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata.release"
 msgstr "Edizione"
-
-msgid "ch.swisstopo.geologie-erlebnis_geologie"
-msgstr "Avventura geologia"
 
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Altitudine del substrato roccioso"
@@ -11849,6 +11852,48 @@ msgstr "Piano settoriale militare"
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Piano settoriale militare"
 
+msgid "ch.vbs.schiessanzeigen"
+msgstr "Avvisi di tiro e zone pericolose pubblicato"
+
+msgid "ch.vbs.schiessanzeigen.auskunft"
+msgstr "Servizio info"
+
+msgid "ch.vbs.schiessanzeigen.belegung"
+msgstr "Date di tiro attuali"
+
+msgid "ch.vbs.schiessanzeigen.bezeichnung"
+msgstr "Piazzo di tiro"
+
+msgid "ch.vbs.schiessanzeigen.keine_info"
+msgstr "Nessuna informazione disponibile"
+
+msgid "ch.vbs.schiessanzeigen.kein_schiessen"
+msgstr "No tiro"
+
+msgid "ch.vbs.schiessanzeigen.url"
+msgstr "Lista d'avvisi di tiro"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.1"
+msgstr "Dom"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.2"
+msgstr "Lun"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.3"
+msgstr "Mar"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.4"
+msgstr "Mer"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.5"
+msgstr "Gio"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.6"
+msgstr "Ven"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.7"
+msgstr "Sab"
+
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Carta delle zone soggette a divieti"
 
@@ -12010,6 +12055,33 @@ msgstr "Crea poligono"
 
 msgid "ct"
 msgstr "Ct."
+
+msgid "cwm_egris_egrid"
+msgstr "EGRID"
+
+msgid "cwm_number"
+msgstr "Numero"
+
+msgid "cwm_realestate_type"
+msgstr "Genere Fondo"
+
+msgid "cwm_realestate_type_0"
+msgstr "Dritto di superficie"
+
+msgid "cwm_realestate_type_1"
+msgstr "Dritto di sorgente"
+
+msgid "cwm_realestate_type_2"
+msgstr "Dritto di concessione"
+
+msgid "cwm_realestate_type_3"
+msgstr "altro"
+
+msgid "cwm_realestate_type_4"
+msgstr "miniera"
+
+msgid "cwm_realestate_type_default"
+msgstr "Bene immobile"
 
 msgid "cyan"
 msgstr "Ciano"
@@ -12930,6 +13002,9 @@ msgid "<i>Friedhof</i>"
 msgstr "Cimitero"
 
 msgid "<i>Gebaeude Einzelhaus</i>"
+msgstr "Edificio"
+
+msgid "<i>Gebaeude</i>"
 msgstr "Edificio"
 
 msgid "<i>Gebiet</i>"
