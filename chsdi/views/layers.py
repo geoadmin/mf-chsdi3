@@ -134,7 +134,7 @@ def feature_attributes(request):
                    attrName in featureAttrs:
                     fieldType = _find_type(model(), attrName)
                     fields.append({'name': attrName, 'type': str(fieldType),
-                                   'alias': translate("%s.%s" % (layerId, attrName), lang),
+                                   'alias': translate("%s.%s" % (layerId, attrName), params.lang),
                                    'values': []
                                    })
                     trackAttributesNames.append(attrName)
@@ -145,7 +145,7 @@ def feature_attributes(request):
                             value = str(value)
                         fields[fieldsIndex] = insert_value_at(field, attrName, value)
 
-    return {'id': layerId, 'name': translate(layerId, lang), 'fields': fields}
+    return {'id': layerId, 'name': translate(layerId, params.lang), 'fields': fields}
 
 
 @view_config(route_name='faqlist', renderer='jsonp')
@@ -172,7 +172,7 @@ def faqlist(request):
         lyr = list(layer.values()).pop()
         if 'parentLayerId' not in lyr and not k.endswith('_3d'):
             if k not in translations:
-                translations[k] = h.translate(k, lang)
+                translations[k] = translate(k, params.lang)
             if 'tooltip' in lyr and lyr['tooltip']:
                 tooltipLayers.append(k)
             if 'queryableAttributes' in lyr and lyr['queryableAttributes']:
