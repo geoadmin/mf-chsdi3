@@ -15,6 +15,7 @@ BODID ?=
 DEPLOY_TARGET ?=
 BRANCH_TO_DELETE ?=
 WMSSCALELEGEND ?=
+UPDATE_TRANSLATION ?= 'true'
 
 # Variables
 USER_SOURCE ?= rc_user
@@ -178,7 +179,7 @@ help:
 	@echo "- deletebranchdev    List deployed branches or delete a deployed branch on dev (BRANCH_TO_DELETE=...)"
 	@echo "- deletebranchint    List deployed branches or delete a deployed branch on int (BRANCH_TO_DELETE=...)"
 	@echo "- updateapi          Updates geoadmin api source code (ol3 fork)"
-	@echo "- deploydev          Deploys master to dev (SNAPSHOT=true to also create a snapshot)"
+	@echo "- deploydev          Deploys master to dev (SNAPSHOT=true to also create a snapshot, UPDATE_TRANSLATION=true|false)"
 	@echo "- updatedev          Updates master to dev, if version has changed (with snapshot)"
 	@echo "- deployint          Deploys a snapshot to integration (SNAPSHOT=201512021146)"
 	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"

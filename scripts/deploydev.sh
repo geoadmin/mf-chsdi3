@@ -82,13 +82,18 @@ echo "Deployed branch $GITBRANCH to dev main."
 # create a snapshot
 if [ $CREATE_SNAPSHOT == 'true' ]; then
   # Make sure translations are updated
-  make translate
-  TRANSLATIONS_DIFF=$(git diff)
-  if [ ! -z "$TRANSLATIONS_DIFF" ]; then
-    echo $TRANSLATIONS_DIFF
-    echo "Some translations haven't been updated yet, please update the translations..."
-    echo "Aborting..."
-    exit 1
+  if [ ${UPDATE_TRANSLATION} != 'false' ]; then
+      make translate
+      TRANSLATIONS_DIFF=$(git diff)
+      if [ ! -z "$TRANSLATIONS_DIFF" ]; then
+        echo $TRANSLATIONS_DIFF
+        echo "Some translations haven't been updated yet, please update the translations..."
+        echo "Aborting..."
+        exit 1
+      fi
+  else
+      echo "No updating translations"
+  
   fi
 
   # Deploying snapshot to snapshot directory

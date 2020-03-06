@@ -83,7 +83,7 @@ deploy process is done.
 
 `make deploydev SNAPSHOT=true`
 
-This updates the source in /var/www... to the latest master branch from github,
+This updates the source in /var/www/vhosts/mf-chsdi3/private/ to the latest master branch from github,
 creates a snapshot and runs nosetests against the test db. The snapshot directory
 will be shown when the script is done. *Note*: you can omit the `-s` parameter if
 you don't want to create a snapshot e.g. for intermediate releases on dev main.
