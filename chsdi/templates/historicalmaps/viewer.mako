@@ -16,7 +16,7 @@
   layerBodId = params.layerId
   bildnummer = c.get('bildnummer')
   title = h.translate(layerBodId, lang)
-  pageTitle = _(c.get('title')) + ': ' + bildnummer
+  pageTitle = h.translate(c.get('title'), lang) + ': ' + bildnummer
   title += ': ' + pageTitle
   loaderUrl = h.make_agnostic(route_url('ga_api', request))
 
