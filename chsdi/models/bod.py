@@ -4,7 +4,7 @@ from gatilegrid import getTileGrid
 from sqlalchemy import Column, Unicode, Integer, Boolean, DateTime, Float
 from sqlalchemy.dialects import postgresql
 
-from chsdi.lib.helpers import make_agnostic, shift_to
+from chsdi.lib.helpers import make_agnostic, shift_to, translate
 from chsdi.models import bases, models_from_bodid, get_models_attributes_keys
 
 Base = bases['bod']
@@ -92,7 +92,6 @@ class LayersConfig(Base):
 
     def layerConfig(self, params):
         config = {}
-        translate = params.translate
         settings = params.request.registry.settings
         wmsHost = settings['wmshost']
         defaultResolution = 0.5
@@ -103,9 +102,9 @@ class LayersConfig(Base):
                 if k == 'maps':
                     config['topics'] = val
                 elif k == 'layerBodId':
-                    config['label'] = translate(val)
+                    config['label'] = translate(val, params.lang)
                 elif k == 'attribution':
-                    config[k] = translate(val)
+                    config[k] = translate(val, params.lang)
                 elif k == 'tilematrix_resolution_max':
                     if val != defaultResolution and \
                             self.__dict__['srid'] != u'4326':

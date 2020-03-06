@@ -7,7 +7,7 @@ import decimal
 import six
 from pyramid.threadlocal import get_current_registry
 from chsdi.models.types import GeometryChsdi
-from chsdi.lib.helpers import transform_round_geometry
+from chsdi.lib.helpers import transform_round_geometry, translate
 from shapely.geometry import box
 from sqlalchemy.sql import func
 from sqlalchemy.orm.util import class_mapper
@@ -117,7 +117,7 @@ class Vector(object):
     def srid(self):
         return self.geometry_column().type.srid
 
-    def to_esrijson(self, trans, returnGeometry, srid=DEFAULT_OUPUT_SRID):
+    def to_esrijson(self, lang, returnGeometry, srid=DEFAULT_OUPUT_SRID):
         if returnGeometry:
             id, geom, properties, bbox = self.__read__()
             geom = self.transform_shape(geom, srid, rounding=True)
@@ -130,10 +130,10 @@ class Vector(object):
                                    attributes=properties,
                                    bbox=bbox,
                                    layerBodId=self.__bodId__,
-                                   layerName=trans(self.__bodId__))
-        return self._no_geom_template(trans)
+                                   layerName=translate(self.__bodId__, lang))
+        return self._no_geom_template(lang)
 
-    def to_geojson(self, trans, returnGeometry, srid=DEFAULT_OUPUT_SRID):
+    def to_geojson(self, lang, returnGeometry, srid=DEFAULT_OUPUT_SRID):
         if returnGeometry:
             id, geom, properties, bbox = self.__read__()
             geom = self.transform_shape(geom, srid, rounding=True)
@@ -147,13 +147,13 @@ class Vector(object):
                                    properties=properties,
                                    bbox=bbox,
                                    layerBodId=self.__bodId__,
-                                   layerName=trans(self.__bodId__))
-        return self._no_geom_template(trans, attrs_name='properties')
+                                   layerName=translate(self.__bodId__, lang))
+        return self._no_geom_template(lang, attrs_name='properties')
 
-    def _no_geom_template(self, trans, attrs_name='attributes'):
+    def _no_geom_template(self, lang, attrs_name='attributes'):
         return {
             'layerBodId': self.__bodId__,
-            'layerName': trans(self.__bodId__),
+            'layerName': translate(self.__bodId__, lang),
             'featureId': self.id,
             'id': self.id,
             attrs_name: self.get_attributes()

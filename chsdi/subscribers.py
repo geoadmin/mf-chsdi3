@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import six
-from pyramid.i18n import get_localizer
+from pyramid.i18n import get_localizer, TranslationStringFactory
 from chsdi.lib import helpers
 
 
@@ -22,4 +22,5 @@ def add_localizer(event):
         request.lang = request.lang.encode('ascii', 'ignore')
     # The load balancer forwards requests as http, therefore we need to check X-Forwarded-Proto
     request.scheme = request.headers.get('X-Forwarded-Proto', request.scheme)
+
     request.localizer = localizer

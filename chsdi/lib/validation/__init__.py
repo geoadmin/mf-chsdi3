@@ -28,7 +28,6 @@ class BaseValidation(MapNameValidation):
         self.cbName = request.params.get('callback')
         self.request = request
         self.lang = request.lang
-        self.translate = request.translate
 
 
 class BaseLayersValidation(BaseValidation):
