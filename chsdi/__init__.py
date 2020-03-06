@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from pyramid.config import Configurator
-# from pyramid.events import BeforeRender, NewRequest
-# from chsdi.subscribers import add_localizer, add_renderer_globals
+from pyramid.events import BeforeRender, NewRequest
+from chsdi.subscribers import add_localizer, add_renderer_globals
 from pyramid.renderers import JSONP
 from sqlalchemy.orm import scoped_session, sessionmaker
 from papyrus.renderers import GeoJSON
@@ -53,8 +53,8 @@ def main(global_config, **settings):
 
     # configure 'locale' dir as the translation dir for chsdi app
     # config.add_translation_dirs('chsdi:locale/')
-    # config.add_subscriber(add_localizer, NewRequest)
-    # config.add_subscriber(add_renderer_globals, BeforeRender)
+    config.add_subscriber(add_localizer, NewRequest)
+    config.add_subscriber(add_renderer_globals, BeforeRender)
 
     # renderers
     config.add_mako_renderer('.html')
