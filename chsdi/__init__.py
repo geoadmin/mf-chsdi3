@@ -52,9 +52,9 @@ def main(global_config, **settings):
     config.include('pyramid_mako')
 
     # configure 'locale' dir as the translation dir for chsdi app
-    config.add_translation_dirs('chsdi:locale/')
-    config.add_subscriber(add_localizer, NewRequest)
-    config.add_subscriber(add_renderer_globals, BeforeRender)
+    # config.add_translation_dirs('chsdi:locale/')
+    # config.add_subscriber(add_localizer, NewRequest)
+    # config.add_subscriber(add_renderer_globals, BeforeRender)
 
     # renderers
     config.add_mako_renderer('.html')
