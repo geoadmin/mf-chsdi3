@@ -2,7 +2,7 @@
 
 from pyramid.config import Configurator
 from pyramid.events import BeforeRender, NewRequest
-from chsdi.subscribers import add_localizer, add_renderer_globals
+# from chsdi.subscribers import add_localizer, add_renderer_globals
 from pyramid.renderers import JSONP
 from sqlalchemy.orm import scoped_session, sessionmaker
 from papyrus.renderers import GeoJSON
