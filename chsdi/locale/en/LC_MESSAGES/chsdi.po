@@ -1685,6 +1685,9 @@ msgstr "Unfalltag"
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_it"
 msgstr "Unfalltag"
 
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour"
+msgstr "Hour of accident"
+
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour_text"
 msgstr "Hour of accident"
 
@@ -1762,6 +1765,9 @@ msgstr "Unfalltag"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_it"
 msgstr "Unfalltag"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour"
+msgstr "Hour of accident"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour_text"
 msgstr "Hour of accident"
@@ -1841,6 +1847,9 @@ msgstr "Unfalltag"
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_it"
 msgstr "Unfalltag"
 
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour"
+msgstr "Hour of accident"
+
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour_text"
 msgstr "Hour of accident"
 
@@ -1919,6 +1928,9 @@ msgstr "Unfalltag"
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_it"
 msgstr "Unfalltag"
 
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour"
+msgstr "Hour of accident"
+
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour_text"
 msgstr "Hour of accident"
 
@@ -1996,6 +2008,9 @@ msgstr "Unfalltag"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_it"
 msgstr "Unfalltag"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour"
+msgstr "Hour of accident"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour_text"
 msgstr "Hour of accident"
@@ -4944,7 +4959,7 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Return flows"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
-msgstr "2km2 sub catchment areas"
+msgstr "2 km² sub catchment areas"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
 msgstr "Percentage CH of the total watershed area"
@@ -5019,10 +5034,10 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_2.min_z"
 msgstr "Minimum altitude"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
-msgstr "40km2 sub catchment areas"
+msgstr "40 km² sub catchment areas"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Type of flow regime"
+msgstr "Vorfluterabschnitte"
 
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "Catchment area number"
@@ -8645,9 +8660,6 @@ msgstr "Division last glacial max. 500 Paper"
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata.release"
 msgstr "Edition"
 
-msgid "ch.swisstopo.geologie-erlebnis_geologie"
-msgstr "Experience Geology"
-
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Bedrock elevation model"
 
@@ -11857,6 +11869,45 @@ msgstr "Sachplan Militär"
 
 msgid "ch.vbs.schiessanzeigen"
 msgstr "Published shooting range bulletins and hazard zones"
+
+msgid "ch.vbs.schiessanzeigen.auskunft"
+msgstr "Information point"
+
+msgid "ch.vbs.schiessanzeigen.belegung"
+msgstr "Current shooting data"
+
+msgid "ch.vbs.schiessanzeigen.bezeichnung"
+msgstr "Shooting range"
+
+msgid "ch.vbs.schiessanzeigen.keine_info"
+msgstr "No information available"
+
+msgid "ch.vbs.schiessanzeigen.kein_schiessen"
+msgstr "No shooting"
+
+msgid "ch.vbs.schiessanzeigen.url"
+msgstr "List of shooting range bulletins"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.1"
+msgstr "Sun"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.2"
+msgstr "Mon"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.3"
+msgstr "Tue"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.4"
+msgstr "Wed"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.5"
+msgstr "Thu"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.6"
+msgstr "Fri"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.7"
+msgstr "Sat"
 
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Map of restricted and danger areas"

@@ -1685,6 +1685,9 @@ msgstr "Jour de l'accident"
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_it"
 msgstr "Jour de l'accident"
 
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour"
+msgstr "Heure de l'accident"
+
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour_text"
 msgstr "Heure de l'accident"
 
@@ -1762,6 +1765,9 @@ msgstr "Jour de l'accident"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_it"
 msgstr "Jour de l'accident"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour"
+msgstr "Heure de l'accident"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour_text"
 msgstr "Heure de l'accident"
@@ -1841,6 +1847,9 @@ msgstr "Jour de l'accident"
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_it"
 msgstr "Jour de l'accident"
 
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour"
+msgstr "Heure de l'accident"
+
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour_text"
 msgstr "Heure de l'accident"
 
@@ -1919,6 +1928,9 @@ msgstr "Jour de l'accident"
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_it"
 msgstr "Jour de l'accident"
 
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour"
+msgstr "Heure de l'accident"
+
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour_text"
 msgstr "Heure de l'accident"
 
@@ -1996,6 +2008,9 @@ msgstr "Jour de l'accident"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_it"
 msgstr "Jour de l'accident"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour"
+msgstr "Heure de l'accident"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour_text"
 msgstr "Heure de l'accident"
@@ -4944,7 +4959,7 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Restitution"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
-msgstr "Bassins versants partiels 2km2"
+msgstr "Bassins versants partiels 2km²"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
 msgstr "Pourcentage CH de la surface du BV entier"
@@ -5019,10 +5034,10 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_2.min_z"
 msgstr "Altitude minimale"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
-msgstr "Bassins versants partiels 40km2"
+msgstr "Bassins versants partiels 40km²"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Type de régime d'écoulement"
+msgstr "Tronçons d'effluents"
 
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "N° du bassin versant complet"
@@ -8645,9 +8660,6 @@ msgstr "Découpage dernier max. glaciaire 500 Papier"
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata.release"
 msgstr "Édition"
 
-msgid "ch.swisstopo.geologie-erlebnis_geologie"
-msgstr "Géologie Vivante"
-
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Modèle d'altitude du toit du rocher"
 
@@ -11857,6 +11869,45 @@ msgstr "Plan sectoriel militaire"
 
 msgid "ch.vbs.schiessanzeigen"
 msgstr "Avis de tir et zones de danger publiés"
+
+msgid "ch.vbs.schiessanzeigen.auskunft"
+msgstr "Point info"
+
+msgid "ch.vbs.schiessanzeigen.belegung"
+msgstr "Dates de tir actuelles"
+
+msgid "ch.vbs.schiessanzeigen.bezeichnung"
+msgstr "Place de tir"
+
+msgid "ch.vbs.schiessanzeigen.keine_info"
+msgstr "Aucune information disponible"
+
+msgid "ch.vbs.schiessanzeigen.kein_schiessen"
+msgstr "Pas de tir"
+
+msgid "ch.vbs.schiessanzeigen.url"
+msgstr "Liste actuelle des avis de tir"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.1"
+msgstr "Dim"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.2"
+msgstr "Lun"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.3"
+msgstr "Mar"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.4"
+msgstr "Mer"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.5"
+msgstr "Jeu"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.6"
+msgstr "Ven"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.7"
+msgstr "Sam"
 
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Carte des zones interdites"
