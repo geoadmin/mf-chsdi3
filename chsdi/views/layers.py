@@ -17,7 +17,7 @@ from chsdi.lib.validation import BaseLayersValidation
 from chsdi.models import models_from_bodid, get_models_attributes_keys
 from chsdi.models.bod import LayersConfig, get_bod_model, computeHeader, CacheUpdate
 from chsdi.lib.filters import full_text_search, filter_by_geodata_staging, filter_by_map_name
-
+from chsdi.lib.helpers import translate
 SAMPLE_SIZE = 100
 MAX_ATTRIBUTES_VALUES = 5
 
@@ -75,7 +75,7 @@ def legend(request):
         if 'dataStatus' in layerMetadata['attributes']:
             status = layerMetadata['attributes']['dataStatus']
             if status == u'bgdi_created':
-                layerMetadata['attributes']['dataStatus'] = params.translate('None') + params.translate('Datenstand')
+                layerMetadata['attributes']['dataStatus'] = translate('None', params.lang) + translate('Datenstand', params.lang)
     legend = {
         'layer': layerMetadata,
         'hasLegend': _has_legend(layerId, params.lang)
@@ -134,7 +134,7 @@ def feature_attributes(request):
                    attrName in featureAttrs:
                     fieldType = _find_type(model(), attrName)
                     fields.append({'name': attrName, 'type': str(fieldType),
-                                   'alias': params.translate("%s.%s" % (layerId, attrName)),
+                                   'alias': translate("%s.%s" % (layerId, attrName), lang),
                                    'values': []
                                    })
                     trackAttributesNames.append(attrName)
@@ -145,7 +145,7 @@ def feature_attributes(request):
                             value = str(value)
                         fields[fieldsIndex] = insert_value_at(field, attrName, value)
 
-    return {'id': layerId, 'name': params.translate(layerId), 'fields': fields}
+    return {'id': layerId, 'name': translate(layerId, lang), 'fields': fields}
 
 
 @view_config(route_name='faqlist', renderer='jsonp')
@@ -172,7 +172,7 @@ def faqlist(request):
         lyr = list(layer.values()).pop()
         if 'parentLayerId' not in lyr and not k.endswith('_3d'):
             if k not in translations:
-                translations[k] = request.translate(k)
+                translations[k] = h.translate(k, lang)
             if 'tooltip' in lyr and lyr['tooltip']:
                 tooltipLayers.append(k)
             if 'queryableAttributes' in lyr and lyr['queryableAttributes']:

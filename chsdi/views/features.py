@@ -21,7 +21,7 @@ from chsdi.lib.validation.features import HtmlPopupServiceValidation, ExtendedHt
 from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.validation.identify import IdentifyServiceValidation
 from chsdi.lib.validation.geometryservice import GeometryServiceValidation
-from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d, make_geoadmin_url, shift_to
+from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d, make_geoadmin_url, shift_to, translate
 from chsdi.lib.filters import full_text_search
 from chsdi.models.clientdata_dynamodb import get_bucket
 from chsdi.models import models_from_bodid, perimeter_models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
@@ -423,7 +423,7 @@ def _get_feature_grid(col, row, timestamp, grid, bucket, params):
         if not params.returnGeometry:
             del feature['geometry']
         feature['layerBodId'] = layerBodId
-        feature['layerName'] = params.translate(layerBodId)
+        feature['layerName'] = translate(layerBodId, params.lang)
     return feature, None
 
 
@@ -803,10 +803,10 @@ def _cut(request):
 
 def _process_feature(feature, params):
     if params.geometryFormat == 'geojson':
-        return feature.to_geojson(params.translate,
-                           params.returnGeometry,
-                           srid=params.srid)
-    return feature.to_esrijson(params.translate,
+        return feature.to_geojson(params.lang,
+                                  params.returnGeometry,
+                                  srid=params.srid)
+    return feature.to_esrijson(params.lang,
                                params.returnGeometry,
                                srid=params.srid)
 

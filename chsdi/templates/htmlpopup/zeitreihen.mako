@@ -27,7 +27,7 @@ def date_to_str(datum):
     try:
         return datetime.datetime.strptime(datum.strip(), "%Y%m%d").strftime("%d-%m-%Y")
     except:
-        return request.translate('None') + request.translate('Datenstand')
+        return h.translate('None', lang) + h.translate('Datenstand', lang)
 
 def get_viewer_url(request, params):
     f = {

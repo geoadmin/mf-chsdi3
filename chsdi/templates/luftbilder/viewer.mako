@@ -33,7 +33,7 @@
           if searchFile:
               searchFile.close()
   lang = c.get('lang') if c.get('lang') is not None else 'de'
-  title = request.translate(layerBodId) if c.get('datenherr') is None else request.translate(layerBodId) + ' (' + c.get('datenherr') + ')'
+  title = h.translate(layerBodId, lang) if c.get('datenherr') is None else h.translate(layerBodId, lang) + ' (' + c.get('datenherr') + ')'
   pageTitle = c.get('title') + ': ' + featureId
   title += ': ' + pageTitle
   loaderUrl = h.make_agnostic(route_url('ga_api', request))
