@@ -81,7 +81,7 @@ datum = date_to_str(c['attributes']['flugdatum'])
 params = (
     image_width,
     image_height,
-    _('ch.swisstopo.lubis-luftbilder-dritte-kantone.ebkey'),
+    h.translate('ch.swisstopo.lubis-luftbilder-dritte-kantone.ebkey', lang),
     c['featureId'],
     c['attributes']['firma'],
     c['layerBodId'],
@@ -186,7 +186,7 @@ if image_rotation is None:
 params = (
     image_width,
     image_height,
-    _('tt_lubis_ebkey'),
+    h.translate('tt_lubis_ebkey', lang),
     c['featureId'],
     c['attributes']['firma'],
     c['layerBodId'],
