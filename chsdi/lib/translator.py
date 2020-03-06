@@ -3,7 +3,6 @@
 import os
 from threading import Lock
 import psycopg2
-import logging
 from cachetools import TTLCache
 from psycopg2.extras import RealDictCursor
 from psycopg2.extensions import register_type, UNICODE
@@ -18,21 +17,20 @@ class Translator:
     _translations = None
     _supported_languages = ['de', 'fr', 'en', 'rm', 'it']
     _lock = Lock()
+    _translation_query = 'SELECT msg_id, ' + ', '.join(_supported_languages) + ' FROM translations ORDER BY msg_id;'
 
     """
     Database transation methods
     """
     @staticmethod
     def get_db_connection():
-        logging.debug(os.environ.get('DBHOST'))
-        logging.debug(os.environ.get('DBSTAGING'))
         return psycopg2.connect(host=os.environ.get('DBHOST'),
                                 dbname="bod_{}".format(os.environ.get('DBSTAGING')),
                                 user='www-data')
 
-    @staticmethod
-    def select_all(cur):
-        cur.execute('SELECT msg_id, de, fr, it, rm, en FROM translations ORDER BY msg_id;')
+    @classmethod
+    def select_all(cls, cur):
+        cur.execute(cls._translation_query)
         return cur
 
     @classmethod
