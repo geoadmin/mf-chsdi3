@@ -10,7 +10,7 @@ from shapely.geometry import box, Point, mapping
 from chsdi.lib.validation.search import SearchValidation
 from chsdi.lib.helpers import format_search_text, format_locations_search_text
 from chsdi.lib.helpers import _transform_point as transform_coordinate, parse_box2d, shift_to, ilen
-from chsdi.lib.helpers import center_from_box2d, transform_round_geometry as transform_shape
+from chsdi.lib.helpers import center_from_box2d, transform_round_geometry as transform_shape, translate
 from chsdi.lib.sphinxapi import sphinxapi
 from chsdi.lib import mortonspacekey as msk
 
@@ -587,7 +587,7 @@ class Search(SearchValidation):
     def _translate_label(self, label):
         translation = re.search(r'.*(<i>[\s\S]*?<\/i>).*', label) or False
         if translation:
-            translated = self.request.translate(translation.group(1))
+            translated = translate(translation.group(1), self.lang)
             label = label.replace(translation.group(1),
                                   u'<i>{}</i>'.format(translated))
 
