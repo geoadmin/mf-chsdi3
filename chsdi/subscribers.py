@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import six
-from pyramid.i18n import get_localizer, TranslationStringFactory
+from pyramid.i18n import get_localizer
 from chsdi.lib import helpers
 
 
