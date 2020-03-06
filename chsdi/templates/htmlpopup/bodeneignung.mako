@@ -4,11 +4,11 @@
 
 <%def name="table_body(c, lang)">
     <tr>
-      <td class="cell-left">${mod_translate.Translator.translate('bodeneignung_id', lang)}</td>
+      <td class="cell-left">${h.translate('bodeneignung_id', lang)}</td>
       <td>${c['attributes']['farbe'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${mod_translate.Translator.translate('bodeneignung_eignungsei', lang)}</td>
+      <td class="cell-left">${h.translate('bodeneignung_eignungsei', lang)}</td>
       <td>${c['attributes']['eignungsei'] or '-'}</td>
     </tr>
 </%def>

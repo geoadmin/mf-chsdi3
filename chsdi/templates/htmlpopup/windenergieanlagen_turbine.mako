@@ -4,15 +4,15 @@
 
 <%def name="table_body(c, lang)">
  <tr>
-  <td class="cell-left">${mod_translate.Translator.translate('windenergieanlage', lang)}</td>
+  <td class="cell-left">${h.translate('windenergieanlage', lang)}</td>
   <td>${c['attributes']['fac_name'] or '-'}</td>
  </tr>
  <tr>
-  <td class="cell-left">${mod_translate.Translator.translate('elevation', lang)}</td>
-  <td>${c['attributes']['tur_altitude'] or '-'} ${mod_translate.Translator.translate('abk_meter_ueber_meer', lang)}</td>
+  <td class="cell-left">${h.translate('elevation', lang)}</td>
+  <td>${c['attributes']['tur_altitude'] or '-'} ${h.translate('abk_meter_ueber_meer', lang)}</td>
  </tr>
  <tr>
-  <td class="cell-left">${mod_translate.Translator.translate('leistung', lang)}</td>
+  <td class="cell-left">${h.translate('leistung', lang)}</td>
       % if c['attributes']['tur_power'] == None:
          <td>-</td>
       % else:
@@ -24,13 +24,13 @@
       % endif
  </tr>
  <tr>
-  <td class="cell-left">${mod_translate.Translator.translate('baujahr', lang)}</td>
+  <td class="cell-left">${h.translate('baujahr', lang)}</td>
   <td>${c['attributes']['tur_year'] or '-'}</td>
  </tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
-<title>${mod_translate.Translator.translate('ch.bfe.windenergieanlagen', lang)}</title>
+<title>${h.translate('ch.bfe.windenergieanlagen', lang)}</title>
 <body onload="init()">
 <div class="zsborder">
 <%
@@ -64,24 +64,24 @@
    import locale
    locale.setlocale(locale.LC_ALL, 'fr_CH.utf-8')
 %>   
-<h3>${mod_translate.Translator.translate('windenergieangaben', lang)}</h3>
+<h3>${h.translate('windenergieangaben', lang)}</h3>
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5" width=100%>
   <tr>
     <th class="cell-meta" width=30%>
-      ${mod_translate.Translator.translate('tt_ch.bfe.abgeltung-wasserkraftnutzung_name', lang)}
+      ${h.translate('tt_ch.bfe.abgeltung-wasserkraftnutzung_name', lang)}
     </th>
     <td width=70%>
       ${c['attributes']['fac_name']}
     </td>
   </tr>
   <tr>
-    <th class="cell-meta">${mod_translate.Translator.translate('windenergiebetreiber', lang)}</th>
+    <th class="cell-meta">${h.translate('windenergiebetreiber', lang)}</th>
     <td>
       ${c['attributes']['fac_operator']}
     </td>
   </tr>
   <tr>
-    <th class="cell-meta">${mod_translate.Translator.translate('website', lang)}</th>
+    <th class="cell-meta">${h.translate('website', lang)}</th>
       % if c['attributes']['fac_website'] == None:
          <td>-</td>
       % else:
@@ -89,7 +89,7 @@
       % endif
   </tr>
   <tr>
-    <th class="cell-meta">${mod_translate.Translator.translate('installierteleistung', lang)}</th>
+    <th class="cell-meta">${h.translate('installierteleistung', lang)}</th>
       % if c['attributes']['fac_power'] == None:
          <td>-</td>
       % else:
@@ -97,15 +97,15 @@
       % endif
   </tr>
 </table>
-<h3> ${mod_translate.Translator.translate('produktionsdaten', lang)}</h3>
+<h3> ${h.translate('produktionsdaten', lang)}</h3>
 % if c['attributes']['fac_xml_prod'] != None:
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5" width=100%>
   <tr width=100%>
     <th class="cell-meta" width=20%>
-      ${mod_translate.Translator.translate('tt_emission_datum', lang)}
+      ${h.translate('tt_emission_datum', lang)}
     </th>
     <th class="cell-meta" width=80%>
-      ${mod_translate.Translator.translate('produktion', lang)}
+      ${h.translate('produktion', lang)}
     </th>
   </tr>
 % for production in productions:
@@ -119,7 +119,7 @@ src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.windenergieanlagen/chart_${c
 % else:
 <h3> - </h3>
 % endif
-<h3> ${mod_translate.Translator.translate('windturbinenangaben', lang)}</h3>
+<h3> ${h.translate('windturbinenangaben', lang)}</h3>
 <table class="table-with-border kernkraftwerke-extended" cellpadding="1">
    <colgroup>
       <col width=13%>
@@ -131,13 +131,13 @@ src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.windenergieanlagen/chart_${c
       <col width=19%>
    </colgroup>
 <tr>
-  <th class="cell-meta">${mod_translate.Translator.translate('hersteller', lang)}</th>
-  <th class="cell-meta">${mod_translate.Translator.translate('modell', lang)}</th>
-  <th class="cell-meta">${mod_translate.Translator.translate('rotordurchmesser', lang)}</th>
-  <th class="cell-meta">${mod_translate.Translator.translate('nabenhoehe', lang)}</th>
-  <th class="cell-meta">${mod_translate.Translator.translate('installierteleistung', lang)}</th>
-  <th class="cell-meta">${mod_translate.Translator.translate('baujahr_de_fr', lang)}</th>
-  <th class="cell-meta">${mod_translate.Translator.translate('statut', lang)}</th>
+  <th class="cell-meta">${h.translate('hersteller', lang)}</th>
+  <th class="cell-meta">${h.translate('modell', lang)}</th>
+  <th class="cell-meta">${h.translate('rotordurchmesser', lang)}</th>
+  <th class="cell-meta">${h.translate('nabenhoehe', lang)}</th>
+  <th class="cell-meta">${h.translate('installierteleistung', lang)}</th>
+  <th class="cell-meta">${h.translate('baujahr_de_fr', lang)}</th>
+  <th class="cell-meta">${h.translate('statut', lang)}</th>
 </tr>
 % if lang=='fr':
 % for tu in turbs:

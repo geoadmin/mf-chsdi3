@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 <%
-  import chsdi.lib.translator as mod_translate
+
   c = legend['layer']
   hasLegend = legend['hasLegend']
   host = h.make_agnostic(request.host_url + request.uscript_name)
@@ -63,7 +63,7 @@
 <div class="legend-footer">
 % if hasLegend:
   <br>
-  <span>${mod_translate.Translator.translate('Legend', lang)}</span><br>
+  <span>${h.translate('Legend', lang)}</span><br>
 % if legend_url_pdf:
   <a href="${legend_url_pdf}" target="_blank"><img src="${legend_url}"></img></a><br>
 % else:
@@ -73,13 +73,13 @@
   <br><br>
 % endif
 % endif
-  <span>${mod_translate.Translator.translate('Information', lang)}</span><br>
+  <span>${h.translate('Information', lang)}</span><br>
   <table>
-    <tr><td>${mod_translate.Translator.translate('geobasisdatensatz', lang)}</td> <td>${c['attributes']['bundCollectionNumber'] if 'bundCollectionNumber' in c['attributes'] else '-'}</td></tr>
+    <tr><td>${h.translate('geobasisdatensatz', lang)}</td> <td>${c['attributes']['bundCollectionNumber'] if 'bundCollectionNumber' in c['attributes'] else '-'}</td></tr>
 % if 'scaleLimit' in c['attributes']:
-    <tr><td>${mod_translate.Translator.translate('Gueltiger Massstabsbereich', lang)}</td> <td>${c['attributes']['scaleLimit']}</td></tr>
+    <tr><td>${h.translate('Gueltiger Massstabsbereich', lang)}</td> <td>${c['attributes']['scaleLimit']}</td></tr>
 % endif
-    <tr><td>${mod_translate.Translator.translate('Metadaten', lang)}</td>
+    <tr><td>${h.translate('Metadaten', lang)}</td>
 % if 'idGeoCat' in c:
   % if lang in ('de', 'rm'):
       <td><a target="_blank" href="https://www.geocat.ch/geonetwork/srv/ger/md.viewer#/full_view/${c['idGeoCat']}/tab/complete">
@@ -90,45 +90,45 @@
   % else:
       <td><a target="_blank" href="https://www.geocat.ch/geonetwork/srv/eng/md.viewer#/full_view/${c['idGeoCat']}/tab/complete">
   % endif
-      ${mod_translate.Translator.translate('layer_geocat_text', lang)}</a></td>
+      ${h.translate('layer_geocat_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${mod_translate.Translator.translate('Detailbeschreibung', lang)}</td>
+      <td>${h.translate('Detailbeschreibung', lang)}</td>
 % if 'urlDetails' in c['attributes']:
-      <td><a href="${c['attributes']['urlDetails']}" target="new">${mod_translate.Translator.translate('layer_url_text', lang)}</a></td>
+      <td><a href="${c['attributes']['urlDetails']}" target="new">${h.translate('layer_url_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${mod_translate.Translator.translate('Datenbezug', lang)}</td>
+      <td>${h.translate('Datenbezug', lang)}</td>
 % if 'downloadUrl' in c['attributes']:
-      <td><a href="${c['attributes']['downloadUrl']}" target="new">${mod_translate.Translator.translate('layer_url_download_text', lang)}</a></td>
+      <td><a href="${c['attributes']['downloadUrl']}" target="new">${h.translate('layer_url_download_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${mod_translate.Translator.translate('Thematisches Geoportal', lang)}</td>
+      <td>${h.translate('Thematisches Geoportal', lang)}</td>
 % if 'urlApplication' in c['attributes']:
-      <td><a href="${c['attributes']['urlApplication']}" target="new">${mod_translate.Translator.translate('layer_url_portal_text', lang)}</a></td>
+      <td><a href="${c['attributes']['urlApplication']}" target="new">${h.translate('layer_url_portal_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${mod_translate.Translator.translate('WMS Dienst', lang)}</td>
+      <td>${h.translate('WMS Dienst', lang)}</td>
 % if 'wmsUrlResource' in c['attributes']:
-      <td><a href="${wms_url}" target="new">${mod_translate.Translator.translate('wms_resource_text', lang)}</a></td>
+      <td><a href="${wms_url}" target="new">${h.translate('wms_resource_text', lang)}</a></td>
 % else:
       <td>-</td>
 % endif
     </tr>
     <tr>
-      <td>${mod_translate.Translator.translate('Datenstand', lang)}</td>
+      <td>${h.translate('Datenstand', lang)}</td>
       <td>${h.parse_date_datenstand(times)}</td>
     </tr>
   </table>

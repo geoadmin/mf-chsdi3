@@ -1,13 +1,13 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c,lang)">
-    <tr><td class="cell-left">${mod_translate.Translator.translate('nffirmenname', lang)}</td>    <td>${c['attributes']['firmenname'] or '-'}</td></tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('nfname', lang)}</td>    <td>${c['attributes']['name'] or '-'}
+    <tr><td class="cell-left">${h.translate('nffirmenname', lang)}</td>    <td>${c['attributes']['firmenname'] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('nfname', lang)}</td>    <td>${c['attributes']['name'] or '-'}
       % if c['attributes']['stellvertreter']:
-           (${mod_translate.Translator.translate('ch.swisstopo-vd.geometa-nfgeom.stellvertreter', lang)})
+           (${h.translate('ch.swisstopo-vd.geometa-nfgeom.stellvertreter', lang)})
       % endif
     </td></tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('grundadresse', lang)}</td>
+    <tr><td class="cell-left">${h.translate('grundadresse', lang)}</td>
       % if c['attributes']['adresse'].strip() == '#':
            <td>-</td>
       % else:  
@@ -18,8 +18,8 @@
       </td>
       % endif
     </tr>
-    <tr><td class="cell-left">${mod_translate.Translator.translate('grundtel', lang)}</td>    <td>${c['attributes']['telefon'] or '-'}</td></tr>
-     <tr><td class="cell-left">${mod_translate.Translator.translate('grundurl', lang)}</td>
+    <tr><td class="cell-left">${h.translate('grundtel', lang)}</td>    <td>${c['attributes']['telefon'] or '-'}</td></tr>
+     <tr><td class="cell-left">${h.translate('grundurl', lang)}</td>
       % if c['attributes']['email'] == None:
        <td>-</td>
       % elif "@" in c['attributes']['email']:

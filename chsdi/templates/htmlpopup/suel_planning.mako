@@ -22,40 +22,40 @@ if c['attributes']['validuntil']:
 endif
 %>
     <tr>
-      <td class="cell-left">${mod_translate.Translator.translate(name, lang)}</td>
+      <td class="cell-left">${h.translate(name, lang)}</td>
       <td>${c['attributes'][plname]}</td>
     </tr>
     <tr>
-      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_planning_typ', lang)}</td>
+      <td class="cell-left">${h.translate('tt_sachplan_planning_typ', lang)}</td>
       <td>${c['attributes'][measuretype_text] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_planning_coordstand', lang)}</td>
+      <td class="cell-left">${h.translate('tt_sachplan_planning_coordstand', lang)}</td>
       <td>${c['attributes'][coordinationlevel_text] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_planning_planungstand', lang)}</td>
+      <td class="cell-left">${h.translate('tt_sachplan_planning_planungstand', lang)}</td>
       <td>${c['attributes'][planningstatus_text] or '-'}</td>
     </tr>
 	  <tr>
-      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_planning_von', lang)}</td>
+      <td class="cell-left">${h.translate('tt_sachplan_planning_von', lang)}</td>
       <td>${datefrom or '-'}</td>
     </tr>
 	  <tr>
-      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_planning_bis', lang)}</td>
+      <td class="cell-left">${h.translate('tt_sachplan_planning_bis', lang)}</td>
       <td>${dateto or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_beschreibung', lang)}</td>
+      <td class="cell-left">${h.translate('tt_sachplan_beschreibung', lang)}</td>
       <td>${c['attributes'][description_text] or '-' | n}</td>
     </tr>
 % if c['attributes']['doc_web']:
     <tr>
-      <td class="cell-left">${mod_translate.Translator.translate(doc_title, lang)}</td>
+      <td class="cell-left">${h.translate(doc_title, lang)}</td>
       <td><a href="${c['attributes']['doc_web']}" target="_blank">${c['attributes']['doc_title'] or '-'}</a></td></tr>
 % else:
     <tr>
-      <td class="cell-left">${mod_translate.Translator.translate('tt_sachplan_weitereinfo', lang)}</td>
+      <td class="cell-left">${h.translate('tt_sachplan_weitereinfo', lang)}</td>
       <td> - </td>
     </tr>
 %endif

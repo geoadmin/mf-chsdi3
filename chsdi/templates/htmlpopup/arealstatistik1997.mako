@@ -4,9 +4,9 @@
 
 <%def name="table_body(c,lang)">
 <% c['stable_id'] = True %>
-    <tr><td class="cell-left-large">${mod_translate.Translator.translate('gmde', lang)}</td>                   <td>${c['attributes']['gmde'] or '-'}</td></tr>
-    <tr><td class="cell-left-large">${mod_translate.Translator.translate('fj85', lang)}</td>                   <td>${c['attributes']['fj85'] or '-'}</td></tr>
-    <tr><td class="cell-left-large">${mod_translate.Translator.translate('id_arealstatistik_85', lang)}</td>   <td>${c['attributes']['id_arealstatistik_85'] or '-'}</td></tr>
-    <tr><td class="cell-left-large">${mod_translate.Translator.translate('fj97', lang)}</td>                   <td>${c['attributes']['fj97'] or '-'}</td></tr>
-    <tr><td class="cell-left-large">${mod_translate.Translator.translate('id_arealstatistik_97', lang)}</td>   <td>${c['attributes']['id_arealstatistik'] or '-'}</td></tr>
+    <tr><td class="cell-left-large">${h.translate('gmde', lang)}</td>                   <td>${c['attributes']['gmde'] or '-'}</td></tr>
+    <tr><td class="cell-left-large">${h.translate('fj85', lang)}</td>                   <td>${c['attributes']['fj85'] or '-'}</td></tr>
+    <tr><td class="cell-left-large">${h.translate('id_arealstatistik_85', lang)}</td>   <td>${c['attributes']['id_arealstatistik_85'] or '-'}</td></tr>
+    <tr><td class="cell-left-large">${h.translate('fj97', lang)}</td>                   <td>${c['attributes']['fj97'] or '-'}</td></tr>
+    <tr><td class="cell-left-large">${h.translate('id_arealstatistik_97', lang)}</td>   <td>${c['attributes']['id_arealstatistik'] or '-'}</td></tr>
 </%def>

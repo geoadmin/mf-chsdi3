@@ -10,7 +10,7 @@
         }
     </style>
     <div id="kehrichtverbrennungsanlagen_waerme_graph">
-        <label>${mod_translate.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.diagramm_waerme', lang)}</label>
+        <label>${h.translate('ch.bfe.kehrichtverbrennungsanlagen.diagramm_waerme', lang)}</label>
         <img src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.kehrichtverbrennungsanlagen/waerme_${c['attributes']['wasteincinerationplantr']}.png">
     </div>
 </%def>
@@ -25,7 +25,7 @@
         }
     </style>
     <div id="kehrichtverbrennungsanlagen_strom_graph">
-        <label>${mod_translate.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.diagramm_strom', lang)}</label>
+        <label>${h.translate('ch.bfe.kehrichtverbrennungsanlagen.diagramm_strom', lang)}</label>
         <img src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.kehrichtverbrennungsanlagen/strom_${c['attributes']['wasteincinerationplantr']}.png">
     </div>
 </%def>
@@ -44,26 +44,26 @@
         }
     </style>
     <tr>
-        <td class="cell-left">${mod_translate.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.name', lang)}</td>
+        <td class="cell-left">${h.translate('ch.bfe.kehrichtverbrennungsanlagen.name', lang)}</td>
         <td>${c['attributes']['name'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${mod_translate.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.place', lang)}</td>
+        <td class="cell-left">${h.translate('ch.bfe.kehrichtverbrennungsanlagen.place', lang)}</td>
         <td>${c['attributes']['place'] or '-'}</td>
     </tr>
 %if c['attributes']['web']:
     <tr>
-        <td>${mod_translate.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.web', lang)}</td>
+        <td>${h.translate('ch.bfe.kehrichtverbrennungsanlagen.web', lang)}</td>
         <td><a href="${c['attributes']['web']}" target="_blank">${c['attributes']['web']}</a></te>
     </tr>
 %else:
     <tr>
-        <td>${mod_translate.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.web', lang)}</td>
+        <td>${h.translate('ch.bfe.kehrichtverbrennungsanlagen.web', lang)}</td>
         <td> - </td>
     </tr>
 %endif
     <tr>
-        <td class="cell-left">${mod_translate.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation', lang)}</td>
+        <td class="cell-left">${h.translate('ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation', lang)}</td>
         <td>${c['attributes']['beginningofoperation'] or '-'}</td>
     </tr>
     <tr>
@@ -75,28 +75,28 @@
 
     <table class="table-with-border">
         <tr>
-            <th class="cell-left">${mod_translate.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.name' , lang)}</th>
+            <th class="cell-left">${h.translate('ch.bfe.kehrichtverbrennungsanlagen.name' , lang)}</th>
             <td>${c['attributes']['name'] or '-'}</td>
         </tr>
         <tr>
-            <th class="cell-left">${mod_translate.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.place', lang)}</th>
+            <th class="cell-left">${h.translate('ch.bfe.kehrichtverbrennungsanlagen.place', lang)}</th>
             <td>${c['attributes']['place'] or '-'}</td>
         </tr>
     %if c['attributes']['web']:
         <tr>
-            <th class="cell-left">${mod_translate.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.web', lang)}</th>
+            <th class="cell-left">${h.translate('ch.bfe.kehrichtverbrennungsanlagen.web', lang)}</th>
             <td>
                 <a target="_blank" href="${c['attributes']['web']}">${c['attributes']['web']}</a>
             </td>
         </tr>
     %else:
         <tr>
-            <td>${mod_translate.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.web', lang)}</td>
+            <td>${h.translate('ch.bfe.kehrichtverbrennungsanlagen.web', lang)}</td>
             <td> - </td>
         </tr>
     %endif
         <tr>
-            <th class="cell-left">${mod_translate.Translator.translate('ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation', lang)}</th>
+            <th class="cell-left">${h.translate('ch.bfe.kehrichtverbrennungsanlagen.beginning_of_operation', lang)}</th>
             <td>${c['attributes']['beginningofoperation'] or '-'}</td>
         </tr>
         <tr>

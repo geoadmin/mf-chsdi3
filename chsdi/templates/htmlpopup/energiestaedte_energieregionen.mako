@@ -9,11 +9,11 @@
  %>
 
 <tr>
-  <td class="cell-left">${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.name', lang)}</td>
+  <td class="cell-left">${h.translate('ch.bfe.energiestaedte-energieregionen.name', lang)}</td>
   <td>${c['attributes']['name'] or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.kategorie', lang)}</td>
+  <td class="cell-left">${h.translate('ch.bfe.energiestaedte-energieregionen.kategorie', lang)}</td>
   <td>${c['attributes'][bezeichnung_kat] or '-'}</td>
 </tr>
 <tr>
@@ -36,7 +36,7 @@
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
   <tr>
     <th class="cell-meta">
-      ${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.name', lang)}
+      ${h.translate('ch.bfe.energiestaedte-energieregionen.name', lang)}
     </th>
     <td>
       ${c['attributes']['name']}
@@ -44,7 +44,7 @@
   </tr>
   <tr>
     <th class="cell-meta">
-      ${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.kategorie', lang)}
+      ${h.translate('ch.bfe.energiestaedte-energieregionen.kategorie', lang)}
     </th>
     <td>
       ${c['attributes'][bezeichnung_kat] or '-'}
@@ -52,7 +52,7 @@
   </tr>
   <tr>
     <th class="cell-meta">
-      ${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.beteiligtegemeinden', lang)}
+      ${h.translate('ch.bfe.energiestaedte-energieregionen.beteiligtegemeinden', lang)}
     </th>
     <td>
       ${c['attributes']['beteiligtegemeinden'] or '-'}
@@ -60,7 +60,7 @@
   </tr>
   <tr>
     <th class="cell-meta" colspan="2">
-      ${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.erklaerung', lang)}
+      ${h.translate('ch.bfe.energiestaedte-energieregionen.erklaerung', lang)}
     </th>
   </tr>
   <tr>
@@ -75,10 +75,10 @@ L’OFEN encourage des projets concrets et finance le suivi et le coaching par d
      </td>
    </tr>
    <th class="cell-meta">
-    ${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.erklaerungslink', lang)}
+    ${h.translate('ch.bfe.energiestaedte-energieregionen.erklaerungslink', lang)}
    </th>
     <td class="cell-meta">
-    <a target="_blank" href="http://www.region-energie.ch">${mod_translate.Translator.translate('link', lang)}</a>
+    <a target="_blank" href="http://www.region-energie.ch">${h.translate('link', lang)}</a>
    </td>
   % elif lang=='it' :
     <td class="cell-meta" colspan="2"><p align="justify">
@@ -91,10 +91,10 @@ L'UFE promuove progetti concreti, finanzia l'accompagnamento e il coaching da pa
     </td>
   </tr>
    <th class="cell-meta">
-    ${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.erklaerungslink', lang)}
+    ${h.translate('ch.bfe.energiestaedte-energieregionen.erklaerungslink', lang)}
    </th>
     <td class="cell-meta">
-    <a target="_blank" href="http://www.regione-energia.ch">${mod_translate.Translator.translate('link', lang)}</a>
+    <a target="_blank" href="http://www.regione-energia.ch">${h.translate('link', lang)}</a>
    </td>
   % elif lang=='en' :
     <td class="cell-meta" colspan="2"><p align="justify">
@@ -107,10 +107,10 @@ The SFOE promotes specific projects and finances support and coaching provided b
     </td>
   </tr>
    <th class="cell-meta">
-    ${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.erklaerungslink', lang)}
+    ${h.translate('ch.bfe.energiestaedte-energieregionen.erklaerungslink', lang)}
    </th>
     <td class="cell-meta">
-    <a target="_blank" href="http://www.energie-region.ch">${mod_translate.Translator.translate('link', lang)}</a>
+    <a target="_blank" href="http://www.energie-region.ch">${h.translate('link', lang)}</a>
    </td>
   % else :
     <td class="cell-meta" colspan="2"><p align="justify">
@@ -124,27 +124,27 @@ Das BFE fördert konkrete Projekte, finanziert Begleitung und Coaching durch spe
    </td>
    </tr>
    <th class="cell-meta">
-    ${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.erklaerungslink', lang)}
+    ${h.translate('ch.bfe.energiestaedte-energieregionen.erklaerungslink', lang)}
    </th>
     <td class="cell-meta">
-    <a target="_blank" href="http://www.energie-region.ch">${mod_translate.Translator.translate('link', lang)}</a>
+    <a target="_blank" href="http://www.energie-region.ch">${h.translate('link', lang)}</a>
    </td>
  % endif
   </tr>
     <th class="cell-meta">
-     ${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.linkenergieregion', lang)}
+     ${h.translate('ch.bfe.energiestaedte-energieregionen.linkenergieregion', lang)}
   </th>
  % if c['attributes']['linkenergieregion'] is None:
    <td class="cell-meta"> - </td>
  % else:
    <td class="cell-meta">
-     <a target="_blank" href="${c['attributes']['linkenergieregion']}">${mod_translate.Translator.translate('link', lang)}</a>
+     <a target="_blank" href="${c['attributes']['linkenergieregion']}">${h.translate('link', lang)}</a>
   </td>
  % endif
    </tr>
    <tr>
     <th class="cell-meta">
-     ${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.berater', lang)}
+     ${h.translate('ch.bfe.energiestaedte-energieregionen.berater', lang)}
   </th>
  % if c['attributes']['mailberater'] is None:
    <td class="cell-meta"> - </td>
@@ -156,7 +156,7 @@ Das BFE fördert konkrete Projekte, finanziert Begleitung und Coaching durch spe
   </tr>
   <tr>
    <th class="cell-meta">
-      ${mod_translate.Translator.translate('ch.bfe.energiestaedte-energieregionen.projektportrait', lang)}
+      ${h.translate('ch.bfe.energiestaedte-energieregionen.projektportrait', lang)}
   </th>
  % if len(projektportraitlink_split) > 0:
    <td class="cell-meta">

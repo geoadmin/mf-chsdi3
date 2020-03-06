@@ -3,7 +3,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-    <tr><td class="cell-left">${mod_translate.Translator.translate('tt_kkw_name', lang)}</td>          <td>${c['attributes']['name']}</td></tr>
+    <tr><td class="cell-left">${h.translate('tt_kkw_name', lang)}</td>          <td>${c['attributes']['name']}</td></tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
@@ -47,28 +47,28 @@
         });
     </script>
     <table class="table-with-border kernkraftwerke-extended">
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_name', lang)}</th>          <td>${c['attributes']['name']}</td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_operator', lang)}</th>      <td><a href='${operator[link_i]}'>${operator[lang_i]}</a></td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_enforcement_1', lang)}</th>      <td><a href='${enforcement_1[link_i]}'>${enforcement_1[lang_i]}</a></td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_enforcement_2', lang)}</th>      <td><a href='${enforcement_2[link_i]}'>${enforcement_2[lang_i]}</a></td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_enforcement_3', lang)}</th>      <td><a href='${enforcement_3[link_i]}'>${enforcement_3[lang_i]}</a></td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_regulatory', lang)}</th>      <td><a href='${regulatory[link_i]}'>${regulatory[lang_i]}</a></td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_license', lang)}</th>      <td>${license[lang_i]}</td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_gemeinde', lang)}</th>      <td>${c['attributes']['municipality']}</td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_canton', lang)}</th>      <td>${c['attributes']['canton']}</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_name', lang)}</th>          <td>${c['attributes']['name']}</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_operator', lang)}</th>      <td><a href='${operator[link_i]}'>${operator[lang_i]}</a></td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_enforcement_1', lang)}</th>      <td><a href='${enforcement_1[link_i]}'>${enforcement_1[lang_i]}</a></td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_enforcement_2', lang)}</th>      <td><a href='${enforcement_2[link_i]}'>${enforcement_2[lang_i]}</a></td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_enforcement_3', lang)}</th>      <td><a href='${enforcement_3[link_i]}'>${enforcement_3[lang_i]}</a></td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_regulatory', lang)}</th>      <td><a href='${regulatory[link_i]}'>${regulatory[lang_i]}</a></td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_license', lang)}</th>      <td>${license[lang_i]}</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_gemeinde', lang)}</th>      <td>${c['attributes']['municipality']}</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_canton', lang)}</th>      <td>${c['attributes']['canton']}</td></tr>
 
     % for reactor_i in xrange(0, c['attributes']['reactors']):
         <tr></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_reactor_name', lang)}</th>      <td><strong>${reactor_name[reactor_i]}</strong></td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_life_phase', lang)}</th>      <td>${life_phase[lang_i][reactor_i]}</td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_reactor_type', lang)}</th>      <td>${reactor_type[lang_i][reactor_i]}</td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_cooling_type', lang)}</th>      <td>${cooling_type[lang_i][reactor_i]}</td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_nominalthermaloutput', lang)}</th>      <td>${nominal_thermal_output[reactor_i]} MW</td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_grosseloutput', lang)}</th>      <td>${gross_el_output[reactor_i]} MWe</td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_neteloutput', lang)}</th>      <td>${net_el_output[reactor_i]} MWe</td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_contruction', lang)}</th>      <td>${construction_phase[reactor_i]}</td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_operation', lang)}</th>      <td>${operation_phase[reactor_i]}</td></tr>
-        <tr><th class="cell-left">${mod_translate.Translator.translate('tt_kkw_decontamination', lang)}</th>      <td>${decontamination_phase[reactor_i]}</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_reactor_name', lang)}</th>      <td><strong>${reactor_name[reactor_i]}</strong></td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_life_phase', lang)}</th>      <td>${life_phase[lang_i][reactor_i]}</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_reactor_type', lang)}</th>      <td>${reactor_type[lang_i][reactor_i]}</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_cooling_type', lang)}</th>      <td>${cooling_type[lang_i][reactor_i]}</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_nominalthermaloutput', lang)}</th>      <td>${nominal_thermal_output[reactor_i]} MW</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_grosseloutput', lang)}</th>      <td>${gross_el_output[reactor_i]} MWe</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_neteloutput', lang)}</th>      <td>${net_el_output[reactor_i]} MWe</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_contruction', lang)}</th>      <td>${construction_phase[reactor_i]}</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_operation', lang)}</th>      <td>${operation_phase[reactor_i]}</td></tr>
+        <tr><th class="cell-left">${h.translate('tt_kkw_decontamination', lang)}</th>      <td>${decontamination_phase[reactor_i]}</td></tr>
     % endfor
     </table>
     <div class="thumbnail-container">

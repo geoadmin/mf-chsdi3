@@ -42,6 +42,7 @@ from shapely.wkt import dumps as shape_dumps, loads as shape_loads
 from shapely.geometry.base import BaseGeometry
 from chsdi.lib.parser import WhereParser
 from chsdi.lib.exceptions import QueryParseException, CoordinatesTransformationException
+from chsdi.lib.translator import Translator
 import logging
 
 if six.PY3:
@@ -612,3 +613,7 @@ def decompress_gzipped_string(string):
         in_ = StringIO(string)
     content = gzip.GzipFile(fileobj=in_, mode='rb')
     return content.read()
+
+
+def translate(text, lang):
+    return Translator.translate(text, lang)

@@ -3,7 +3,7 @@
 <%!
   from pyramid.url import route_url
   import chsdi.lib.helpers as h
-  import chsdi.lib.translator as mod_translate
+
 %>
 <%
   lang = request.lang
@@ -67,7 +67,7 @@
             <td>
           % endif
               <a href="${h.make_agnostic(request.route_url('extendedHtmlPopup', map=topic, layerId=c['layerBodId'], featureId=str(c['featureId'])))}?lang=${lang}" target="_blank">
-                ${mod_translate.Translator.translate('zusatzinfo', lang)}&nbsp;<img src="${h.versioned(request.static_url('chsdi:static/images/ico_extern.gif'))}" />
+                ${h.translate('zusatzinfo', lang)}&nbsp;<img src="${h.versioned(request.static_url('chsdi:static/images/ico_extern.gif'))}" />
               </a>
             </td>
         </tr>
@@ -81,7 +81,7 @@
             <td>
           % endif
               <a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&time={}'.format(timestamp), '&lang=', lang, '&topic=', topic))}" target="new">
-                ${mod_translate.Translator.translate('Link to object', lang)}
+                ${h.translate('Link to object', lang)}
               </a>
             </td>
           </tr>
@@ -91,18 +91,18 @@
   </div>
   % if isExtended:
   <div class="htmlpopup-footer">
-    <a href="${mod_translate.Translator.translate('disclaimer url', lang)}" target="_blank">
-      ${mod_translate.Translator.translate('disclaimer title', lang)}
+    <a href="${h.translate('disclaimer url', lang)}" target="_blank">
+      ${h.translate('disclaimer title', lang)}
     </a>
     <div class="float-right">
       % if c['stable_id'] is True:
       <a class="link" href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic))}" target="new">
-        ${mod_translate.Translator.translate('Link to object', lang)}
+        ${h.translate('Link to object', lang)}
       </a>
       &nbsp;|&nbsp;
       % endif
       <a href="javascript:window.print();">
-        ${mod_translate.Translator.translate('print', lang)}
+        ${h.translate('print', lang)}
       </a>
     </div>
     </div>

@@ -14,6 +14,6 @@ if amount <= 3:
     amount = '0.1-3'
 %>
 <% c['stable_id'] = False %>
-  <tr><td class="cell-left">${mod_translate.Translator.translate('%s.year' % layerBodId, lang)}</td>           <td>${c['attributes']['i_year'] or '-'}</td></tr>
-  <tr><td class="cell-left">${mod_translate.Translator.translate('%s.amount' % layerBodId, lang)}</td>         <td>${amount}</td></tr>
+  <tr><td class="cell-left">${h.translate('%s.year' % layerBodId, lang)}</td>           <td>${c['attributes']['i_year'] or '-'}</td></tr>
+  <tr><td class="cell-left">${h.translate('%s.amount' % layerBodId, lang)}</td>         <td>${amount}</td></tr>
 </%def>
