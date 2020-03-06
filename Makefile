@@ -169,7 +169,6 @@ help:
 	@echo "- teste2e            Launch end-to-end tests"
 	@echo "- lint               Run the linter"
 	@echo "- autolint           Run the autolinter"
-	@echo "- translate          Generate the translation files"
 	@echo "- legends            Downloads and optimizes all WMS legend images (make legends BODID=ch.foo WMSSCALELEGEND=)"
 	@echo "- doc                Generate the doc for api3.geo.admin.ch"
 	@echo "- deploybranch       Deploy current branch to dev (must be pushed before hand)"
@@ -209,7 +208,7 @@ user:
 	source $(USER_SOURCE) && make all
 
 .PHONY: all
-all: setup chsdi/static/css/extended.min.css templates potomo lint fixrights doc rss
+all: setup chsdi/static/css/extended.min.css templates lint fixrights doc rss
 
 setup: .venv node_modules .venv/hooks
 
@@ -265,32 +264,6 @@ doc: chsdi/static/css/extended.min.css
 rss: doc chsdi/static/doc/build/releasenotes/index.html
 	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
 	${PYTHON_CMD} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
-
-.PHONY: translate
-translate:
-	@echo "${GREEN}Updating translations...${RESET}";
-	source rc_dev && ${PYTHON_CMD} scripts/translation2po.py chsdi/locale/;
-	make potomo;
-
-chsdi/locale/en/LC_MESSAGES/chsdi.po:
-chsdi/locale/en/LC_MESSAGES/chsdi.mo: chsdi/locale/en/LC_MESSAGES/chsdi.po
-	msgfmt -o $@ $<
-chsdi/locale/fr/LC_MESSAGES/chsdi.po:
-chsdi/locale/fr/LC_MESSAGES/chsdi.mo: chsdi/locale/fr/LC_MESSAGES/chsdi.po
-	msgfmt -o $@ $<
-chsdi/locale/de/LC_MESSAGES/chsdi.po:
-chsdi/locale/de/LC_MESSAGES/chsdi.mo: chsdi/locale/de/LC_MESSAGES/chsdi.po
-	msgfmt -o $@ $<
-chsdi/locale/fi/LC_MESSAGES/chsdi.po:
-chsdi/locale/fi/LC_MESSAGES/chsdi.mo: chsdi/locale/fi/LC_MESSAGES/chsdi.po
-	msgfmt -o $@ $<
-chsdi/locale/it/LC_MESSAGES/chsdi.po:
-chsdi/locale/it/LC_MESSAGES/chsdi.mo: chsdi/locale/it/LC_MESSAGES/chsdi.po
-	msgfmt -o $@ $<
-
-potomo: chsdi/locale/en/LC_MESSAGES/chsdi.mo chsdi/locale/fr/LC_MESSAGES/chsdi.mo \
-        chsdi/locale/de/LC_MESSAGES/chsdi.mo chsdi/locale/fi/LC_MESSAGES/chsdi.mo \
-        chsdi/locale/it/LC_MESSAGES/chsdi.mo
 
 .PHONY: deploybranch
 deploybranch:
