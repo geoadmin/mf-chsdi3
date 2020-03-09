@@ -18,9 +18,6 @@ class TranslationService(object):
     @view_config(route_name='translations', renderer='jsonp')
     def translations(self):
         translations = Translator.get_translations()
-        msg_ids = OrderedDict()
-        for msg_id, translation in translations[self.lang]:
-            msg_ids[msg_id] = translation
-        msg_ids = OrderedDict([(msg_id, translation) for msg_id, translation in translations[self.lang]])
+        msg_ids = OrderedDict([(msg_id, translation) for msg_id, translation in translations[self.lang].items()])
 
         return msg_ids
