@@ -56,6 +56,8 @@ class Translator:
             cls._translations = dict()
             for lang in cls._supported_languages:
                 cls._translations.setdefault(lang, TTLCache(maxsize=CACHE_SIZE, ttl=CACHE_TTL))
+        if cls._translations['de'].currsize == 0:
+            cls.fill_translations()
         return cls._translations
 
     @classmethod
@@ -64,9 +66,6 @@ class Translator:
         if lang not in cls._supported_languages:
             # default language is german
             lang = 'de'
-        if translations[lang].currsize == 0:
-            # we do not fill the cache unless it is empty
-            cls.fill_translations()
 
         translated_value = translations[lang].get(msg_id, msg_id)
         return translated_value

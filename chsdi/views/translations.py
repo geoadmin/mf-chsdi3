@@ -4,7 +4,7 @@
 from collections import OrderedDict
 from pyramid.view import view_config
 
-from chsdi.models.bod import Translations
+from chsdi.lib.translator import Translator
 
 
 class TranslationService(object):
@@ -17,9 +17,10 @@ class TranslationService(object):
 
     @view_config(route_name='translations', renderer='jsonp')
     def translations(self):
-        model = Translations
-        lang = self.lang
-        query = self.request.db.query(model).order_by(model.msgId)
-        msgIds = OrderedDict([(q.msgId, getattr(q, lang)) for q in query])
+        translations = Translator.get_translations()
+        msg_ids = OrderedDict()
+        for msg_id, translation in translations[self.lang]:
+            msg_ids[msg_id] = translation
+        msg_ids = OrderedDict([(msg_id, translation) for msg_id, translation in translations[self.lang]])
 
-        return msgIds
+        return msg_ids
