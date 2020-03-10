@@ -28,6 +28,8 @@ API & applications
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_191218...r_200318>`__
 - Announcement:
     - The ARE layer `ch.are.agglomerationen_isolierte_staedte` (Agglomerations - Definition 2000) will be removed from the BGDI services on 01.07.2020. The layer will be replaced by `ch.are.agglomerationsverkehr` (on prod starting 20.05.2020).
+    - The swisstopo layer `ch.swisstopo-vd.geometa-los` will be completely removed from the FSDI services during Q2/2020.
+    - The geology layer `ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata` will be removed from CHSDI services on May 20th 2020.
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
