@@ -15,6 +15,8 @@ CACHE_SIZE = 10000
 class Translator:
 
     _translations = None
+    _host = None
+    _staging = None
     _supported_languages = ['de', 'fr', 'en', 'rm', 'it']
     _lock = Lock()
     _translation_query = 'SELECT msg_id, ' + ', '.join(_supported_languages) + ' FROM translations ORDER BY msg_id;'
@@ -22,16 +24,25 @@ class Translator:
     """
     Database transation methods
     """
-    @staticmethod
-    def get_db_connection():
-        return psycopg2.connect(host=os.environ.get('DBHOST'),
-                                dbname="bod_{}".format(os.environ.get('DBSTAGING')),
+    @classmethod
+    def get_db_connection(cls):
+        host = cls._host if cls._host is not None else os.environ.get('DBHOST')
+        dbname = "bod_{}".format(cls._staging) if cls._staging is not None else \
+            "bod_{}".format(os.environ.get('DBSTAGING'))
+        return psycopg2.connect(host=host,
+                                dbname=dbname,
                                 user='www-data')
 
     @classmethod
     def select_all(cls, cur):
         cur.execute(cls._translation_query)
         return cur
+
+    @classmethod
+    def init(cls, db_host, db_staging, supported_languages):
+        cls._supported_languages = supported_languages
+        cls._host = db_host
+        cls._staging = db_staging
 
     @classmethod
     def fill_translations(cls):

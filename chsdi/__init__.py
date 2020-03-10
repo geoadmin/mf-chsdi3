@@ -9,6 +9,7 @@ from papyrus.renderers import GeoJSON
 
 from chsdi.renderers import EsriJSON, CSVRenderer
 from chsdi.models import initialize_sql
+from chsdi.lib.translator import Translator
 
 
 def db(request):
@@ -68,6 +69,8 @@ def main(global_config, **settings):
     config.registry.dbmaker = scoped_session(sessionmaker())
     config.add_request_method(db, reify=True)
     initialize_sql(settings)
+    Translator.init(settings.get('translation_host'), settings.get('translation_staging'),
+                    settings.get('available_languages'))
 
     # route definitions
     config.add_route('dev', '/dev')
