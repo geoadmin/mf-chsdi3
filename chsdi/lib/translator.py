@@ -40,7 +40,7 @@ class Translator:
 
     @classmethod
     def init(cls, db_host, db_staging, supported_languages):
-        cls._supported_languages = supported_languages
+        cls._supported_languages = supported_languages.split()
         cls._host = db_host
         cls._staging = db_staging
 

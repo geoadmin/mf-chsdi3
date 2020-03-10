@@ -67,7 +67,7 @@ shortener.allowed_domains = ${shortener_allowed_domains}
 # Translations
 
 translation_host = ${dbhost}
-translation_staging = ${dbport}
+translation_staging = ${dbstaging}
 
 ###
 # wsgi server configuration
