@@ -938,6 +938,9 @@ msgstr "Agglomeration - Definition 2000"
 msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Agglomeration and isolated cities"
 
+msgid "ch.are.agglomerationsverkehr"
+msgstr "Beitragsberechtigte Städte und Agglomerationen"
+
 msgid "ch.are.alpenkonvention"
 msgstr "Alpine Convention"
 
@@ -4014,7 +4017,7 @@ msgid "ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag"
 msgstr "CLN Exceedance"
 
 msgid "ch.bafu.mittlere-abfluesse"
-msgstr "Mean runoff (m³/s)"
+msgstr "Mean runoff (m³/s) and regime"
 
 msgid "ch.bafu.mittlere-abfluesse.abflussvar"
 msgstr "Abflussvariabilität (%)"
@@ -4916,6 +4919,24 @@ msgstr "Wasserkraftnutzung - Weitere Entnahme"
 msgid "ch.bafu.wasser-gebietsauslaesse"
 msgstr "Area outlets"
 
+msgid "ch.bafu.wasser-gebietsauslaesse.adresse"
+msgstr "Address ('waterbody kilo-metre')"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.de_nebenarm"
+msgstr "Waterbody type"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.ezgnr"
+msgstr "Catchment area number"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.gewaessername"
+msgstr "Waterbody name"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.gwlnr"
+msgstr "Number of the river"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.id"
+msgstr "Identifier of the area outlet"
+
 msgid "ch.bafu.wasser-leitungen"
 msgstr "Supply"
 
@@ -4923,10 +4944,64 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Return flows"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
-msgstr "2km2 sub catchment areas"
+msgstr "2 km² sub catchment areas"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
+msgstr "Percentage CH of the total watershed area"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_bestockteflaechen"
+msgstr "Forests and shrubs"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_landwirtschaftsflaechen"
+msgstr "Agricultural areas"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_siedlungsflaechen"
+msgstr "Artificial surfaces"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_unproduktiveflaechen"
+msgstr "Open spaces with little or no vegetation"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_bebauteflaechen"
+msgstr "Artificial surfaces"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_feuchtflaechen"
+msgstr "Wetlands"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_landwirtschaft"
+msgstr "Agricultural areas"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_waelder"
+msgstr "Forest and semi natural areas"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_wasserflaechen"
+msgstr "Water bodies"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.de_nebenarm"
+msgstr "Indication"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
 msgstr "Name of river basin"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_1"
+msgstr "Altitude catchment area [m]"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_2"
+msgstr "Land cover CH based on area statistics [%]"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_3"
+msgstr "Land cover based on CORINE Land Cover [%]"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_4"
+msgstr "Due to certain limitations of the source data, the calcuated indicators cannot claim absolute accuracy."
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ezgnr"
+msgstr "Catchment area number"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.gesamtflaeche"
+msgstr "Catchment area size [km2]"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.gewaessername"
+msgstr "Waterbody name"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.gwlnr"
 msgstr "Number of the river"
@@ -4934,11 +5009,41 @@ msgstr "Number of the river"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.id"
 msgstr "Sub-catchment area number"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.max_z"
+msgstr "Maximum altitude"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.mean_z"
+msgstr "Mean altitude"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.min_z"
+msgstr "Minimum altitude"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
-msgstr "40km2 sub catchment areas"
+msgstr "40 km² sub catchment areas"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Type of flow regime"
+msgstr "Vorfluterabschnitte"
+
+msgid "ch.bafu.wasser-vorfluter.ezgnr"
+msgstr "Catchment area number"
+
+msgid "ch.bafu.wasser-vorfluter.gewaessername"
+msgstr "Waterbody name"
+
+msgid "ch.bafu.wasser-vorfluter.gwlnr"
+msgstr "Number of the river"
+
+msgid "ch.bafu.wasser-vorfluter.id"
+msgstr "Identifier of the section of the effluent"
+
+msgid "ch.bafu.wasser-vorfluter.nebenarm"
+msgstr "Waterbody type"
+
+msgid "ch.bafu.wasser-vorfluter.oberesende"
+msgstr "Finish address (’waterbody kilometre’)"
+
+msgid "ch.bafu.wasser-vorfluter.unteresende"
+msgstr "Start address (’waterbody kilometre’)"
 
 msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
 msgstr "Permitted paths and trails"
@@ -5840,8 +5945,38 @@ msgstr "Year"
 msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht"
 msgstr "Railway noise, perm. immissions N"
 
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.de_es"
+msgstr "Empfindlichkeitsstufe"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.de_pointofdetermination_t"
+msgstr "Typ des Ermittlungspunktes"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.floor"
+msgstr "Stockwerk des Ermittlungspunkts"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.lr_max_night"
+msgstr "Max. zul. Pegel (Nacht)"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.lr_max_year"
+msgstr "Verfügungsjahr"
+
 msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag"
 msgstr "Railway noise, perm. immissions D"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.de_es"
+msgstr "Empfindlichkeitsstufe"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.de_pointofdetermination_t"
+msgstr "Typ des Ermittlungspunktes"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.floor"
+msgstr "Stockwerk des Ermittlungspunkts"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.lr_max_day"
+msgstr "Max. zul. Pegel (Tag)"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.lr_max_year"
+msgstr "Verfügungsjahr"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Emissions Plan 2015"
@@ -6438,7 +6573,7 @@ msgid "ch.bazl.projektierungszonen-flughafenanlagen.oereb.text_thema"
 msgstr "Theme"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung"
-msgstr "SAIP consultation"
+msgstr "SIL consultation"
 
 msgid "ch.bazl.sachplan-infrastruktur-luftfahrt_kraft"
 msgstr "SP Aviation infrastructure"
@@ -7640,9 +7775,6 @@ msgstr "Erosion risk"
 msgid "ch.blw.erosion-fliesswegkarte"
 msgstr "Flow-path map"
 
-msgid "ch.blw.erosion-mit_bergzonen"
-msgstr "Erosion risk 2"
-
 msgid "ch.blw.erosion-quantitativ"
 msgstr "Erosion risk crop quantitative"
 
@@ -8300,6 +8432,9 @@ msgstr "https://www.sem.admin.ch/sem/en/home.html"
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis"
+msgstr "Amtliches Gebäudeadressverzeichnis"
+
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
 msgstr "Official street index"
 
@@ -8510,9 +8645,6 @@ msgstr "Division last glacial max. 500 Paper"
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata.release"
 msgstr "Edition"
 
-msgid "ch.swisstopo.geologie-erlebnis_geologie"
-msgstr "Experience Geology"
-
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Bedrock elevation model"
 
@@ -8632,6 +8764,39 @@ msgstr "The geoid"
 
 msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Isostatic anomalies 500"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle"
+msgstr "3D geological models"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.content"
+msgstr "Modelled horizons / units"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_author"
+msgstr "Author(s)"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_contracting_entity"
+msgstr "Contracting entity"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_link_description"
+msgstr "External link to detailed description"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_link_documentation"
+msgstr "External link to documentation"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_link_portal"
+msgstr "External link to portal"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.purpose"
+msgstr "Purpose"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.remarks"
+msgstr "Remarks"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.year_publication"
+msgstr "Year of publication"
 
 msgid "ch.swisstopo.geologie-geologische_einheiten-onegeology"
 msgstr "Geology 1:500 000"
@@ -11687,6 +11852,48 @@ msgstr "Sachplan Militär"
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Sachplan Militär"
 
+msgid "ch.vbs.schiessanzeigen"
+msgstr "Published shooting range bulletins and hazard zones"
+
+msgid "ch.vbs.schiessanzeigen.auskunft"
+msgstr "Information point"
+
+msgid "ch.vbs.schiessanzeigen.belegung"
+msgstr "Current shooting data"
+
+msgid "ch.vbs.schiessanzeigen.bezeichnung"
+msgstr "Shooting range"
+
+msgid "ch.vbs.schiessanzeigen.keine_info"
+msgstr "No information available"
+
+msgid "ch.vbs.schiessanzeigen.kein_schiessen"
+msgstr "No shooting"
+
+msgid "ch.vbs.schiessanzeigen.url"
+msgstr "List of shooting range bulletins"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.1"
+msgstr "Sun"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.2"
+msgstr "Mon"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.3"
+msgstr "Tue"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.4"
+msgstr "Wed"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.5"
+msgstr "Thu"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.6"
+msgstr "Fri"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.7"
+msgstr "Sat"
+
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Map of restricted and danger areas"
 
@@ -11848,6 +12055,33 @@ msgstr "Create polygon"
 
 msgid "ct"
 msgstr "Ct."
+
+msgid "cwm_egris_egrid"
+msgstr "EGRID"
+
+msgid "cwm_number"
+msgstr "Number"
+
+msgid "cwm_realestate_type"
+msgstr "Real Estate Type"
+
+msgid "cwm_realestate_type_0"
+msgstr "Distinct and permanent rights"
+
+msgid "cwm_realestate_type_1"
+msgstr "Rights to spring water"
+
+msgid "cwm_realestate_type_2"
+msgstr "Concession rights"
+
+msgid "cwm_realestate_type_3"
+msgstr "other"
+
+msgid "cwm_realestate_type_4"
+msgstr "Mineral rights"
+
+msgid "cwm_realestate_type_default"
+msgstr "Land and buildings"
 
 msgid "cyan"
 msgstr "cyan"
@@ -12768,6 +13002,9 @@ msgid "<i>Friedhof</i>"
 msgstr "Cemetery"
 
 msgid "<i>Gebaeude Einzelhaus</i>"
+msgstr "Building"
+
+msgid "<i>Gebaeude</i>"
 msgstr "Building"
 
 msgid "<i>Gebiet</i>"

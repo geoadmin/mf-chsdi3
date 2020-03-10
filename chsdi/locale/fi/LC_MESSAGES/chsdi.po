@@ -938,6 +938,9 @@ msgstr "Aglomeraziuns - Definiziun 2000"
 msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Aglomeraziuns e citads isoladas"
 
+msgid "ch.are.agglomerationsverkehr"
+msgstr "Beitragsberechtigte Städte und Agglomerationen"
+
 msgid "ch.are.alpenkonvention"
 msgstr "Convenziun da las Alps"
 
@@ -4916,6 +4919,24 @@ msgstr "Wasserkraftnutzung - Weitere Entnahme"
 msgid "ch.bafu.wasser-gebietsauslaesse"
 msgstr "Sbuccadas intschess idrografics"
 
+msgid "ch.bafu.wasser-gebietsauslaesse.adresse"
+msgstr "Adresse (\"Gewässerkilometer\")"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.de_nebenarm"
+msgstr "Gewässertyp"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.ezgnr"
+msgstr "Gesamteinzugsgebiets-Nummer"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.gewaessername"
+msgstr "Gewässername"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.gwlnr"
+msgstr "Gewässerlaufnummer"
+
+msgid "ch.bafu.wasser-gebietsauslaesse.id"
+msgstr "Identifikator Gebietsauslass"
+
 msgid "ch.bafu.wasser-leitungen"
 msgstr "Conducts d'affluenza"
 
@@ -4923,10 +4944,64 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Restituziun d'aua"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
-msgstr "Intschess parzials 2km2"
+msgstr "Intschess parzials 2 km²"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
+msgstr "Flächenanteil Gesamt-EZG % CH"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_bestockteflaechen"
+msgstr "Bestockte Flächen"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_landwirtschaftsflaechen"
+msgstr "Landwirtschaftsflächen"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_siedlungsflaechen"
+msgstr "Siedlungsflächen"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_unproduktiveflaechen"
+msgstr "Unproduktive Flächen"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_bebauteflaechen"
+msgstr "Bebaute Flächen"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_feuchtflaechen"
+msgstr "Feuchtflächen"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_landwirtschaft"
+msgstr "Landwirtschaft"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_waelder"
+msgstr "Wälder und naturnahe Flächen"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_wasserflaechen"
+msgstr "Wasserflächen"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.de_nebenarm"
+msgstr "Hinweis"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
 msgstr "Flussgebietsname"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_1"
+msgstr "Höhe Gesamteinzugsgebiet [m]"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_2"
+msgstr "Bodenbedeckung CH basierend auf der Arealstatistik [%]"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_3"
+msgstr "Bodenbedeckung basierend auf CORINE Land Cover [%]"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_info_4"
+msgstr "Wegen gewissen Einschränkungen der Grundlagendaten erheben die daraus berechneten Kennzahlen keinen Anspruch auf absolute Präzision."
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.ezgnr"
+msgstr "Gesamteinzugsgebiets-Nummer"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.gesamtflaeche"
+msgstr "Fläche Gesamteinzugsgebiet [km2]"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.gewaessername"
+msgstr "Gewässername"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.gwlnr"
 msgstr "Gewässerlaufnummer"
@@ -4934,11 +5009,41 @@ msgstr "Gewässerlaufnummer"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.id"
 msgstr "Teileinzugsgebiets-Nummer"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.max_z"
+msgstr "Maximale Höhe"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.mean_z"
+msgstr "Mittlere Höhe"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.min_z"
+msgstr "Minimale Höhe"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
-msgstr "Intschess parzials 40km2"
+msgstr "Intschess parzials 40 km²"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Tip d'urden da deflussiun"
+msgstr "Vorfluterabschnitte"
+
+msgid "ch.bafu.wasser-vorfluter.ezgnr"
+msgstr "Gesamteinzugsgebiets-Nummer"
+
+msgid "ch.bafu.wasser-vorfluter.gewaessername"
+msgstr "Gewässername"
+
+msgid "ch.bafu.wasser-vorfluter.gwlnr"
+msgstr "Gewässerlaufnummer"
+
+msgid "ch.bafu.wasser-vorfluter.id"
+msgstr "Identifikator Vorfluterabschnitt"
+
+msgid "ch.bafu.wasser-vorfluter.nebenarm"
+msgstr "Gewässertyp"
+
+msgid "ch.bafu.wasser-vorfluter.oberesende"
+msgstr "Endadresse (’Gewässerkilometer’)"
+
+msgid "ch.bafu.wasser-vorfluter.unteresende"
+msgstr "Anfangsadresse (’Gewässerkilometer’)"
 
 msgid "ch.bafu.wege-wildruhezonen-jagdbanngebiete"
 msgstr "Vias e rutas permessas"
@@ -5840,8 +5945,38 @@ msgstr "Jahr"
 msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht"
 msgstr "Eisenbahnlärm, zuläss. Immission N"
 
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.de_es"
+msgstr "Empfindlichkeitsstufe"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.de_pointofdetermination_t"
+msgstr "Typ des Ermittlungspunktes"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.floor"
+msgstr "Stockwerk des Ermittlungspunkts"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.lr_max_night"
+msgstr "Max. zul. Pegel (Nacht)"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.lr_max_year"
+msgstr "Verfügungsjahr"
+
 msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag"
 msgstr "Eisenbahnlärm, zuläss. Immission T"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.de_es"
+msgstr "Empfindlichkeitsstufe"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.de_pointofdetermination_t"
+msgstr "Typ des Ermittlungspunktes"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.floor"
+msgstr "Stockwerk des Ermittlungspunkts"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.lr_max_day"
+msgstr "Max. zul. Pegel (Tag)"
+
+msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.lr_max_year"
+msgstr "Verfügungsjahr"
 
 msgid "ch.bav.laerm-emissionplan_eisenbahn_2015"
 msgstr "Plan d'emissiuns viafiers 2015"
@@ -7640,9 +7775,6 @@ msgstr "Erosionsrisiko"
 msgid "ch.blw.erosion-fliesswegkarte"
 msgstr "Charta da deflussiun"
 
-msgid "ch.blw.erosion-mit_bergzonen"
-msgstr "Ristga d'erosiun qualitativa 2"
-
 msgid "ch.blw.erosion-quantitativ"
 msgstr "Ristga erosiun terren cultivà quant"
 
@@ -8300,6 +8432,9 @@ msgstr "https://www.sem.admin.ch/sem/de/home.html"
 msgid "ch.swisstopo"
 msgstr "swisstopo"
 
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis"
+msgstr "Amtliches Gebäudeadressverzeichnis"
+
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
 msgstr "Register uffizial da las vias"
 
@@ -8510,9 +8645,6 @@ msgstr "Div. Ultim glatsch max. 500 Stampa"
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata.release"
 msgstr "Ausgabejahr"
 
-msgid "ch.swisstopo.geologie-erlebnis_geologie"
-msgstr "Aventura geologia"
-
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Autezza da la surfatscha da grip"
 
@@ -8633,6 +8765,39 @@ msgstr "Das Geoid"
 msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Anomalias isostaticas 500"
 
+msgid "ch.swisstopo.geologie-geologische_3dmodelle"
+msgstr "Geologische 3D-Modelle"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.content"
+msgstr "Modellierte Horizonte / Einheiten"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_author"
+msgstr "Autor(en)"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_contracting_entity"
+msgstr "Auftraggeber"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_link_description"
+msgstr "Externer Link zur Detailbeschreibung"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_link_documentation"
+msgstr "Externer Link zur Dokumentation"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.de_link_portal"
+msgstr "Externer Link zum Fachportal"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.name"
+msgstr "Name"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.purpose"
+msgstr "Zweck"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.remarks"
+msgstr "Bemerkungen"
+
+msgid "ch.swisstopo.geologie-geologische_3dmodelle.year_publication"
+msgstr "Erstellungsjahr"
+
 msgid "ch.swisstopo.geologie-geologische_einheiten-onegeology"
 msgstr "CHE LG DE 1:500k Geologische Einheiten"
 
@@ -8751,31 +8916,31 @@ msgid "ch.swisstopo.geologie-geologischer_atlas_vector.metadata.s_title_de"
 msgstr "Name"
 
 msgid "ch.swisstopo.geologie-geomol-isotherme_100"
-msgstr "Höhe 100 °C-Isotherme"
+msgstr "Nivel isoterma 100 °C"
 
 msgid "ch.swisstopo.geologie-geomol-isotherme_100.elev"
 msgstr "Höhe 100 °C-Isotherme [m ü.M.]"
 
 msgid "ch.swisstopo.geologie-geomol-isotherme_150"
-msgstr "Höhe 150 °C-Isotherme"
+msgstr "Nivel isoterma 150 °C"
 
 msgid "ch.swisstopo.geologie-geomol-isotherme_150.elev"
 msgstr "Höhe 150 °C-Isotherme [m ü.M.]"
 
 msgid "ch.swisstopo.geologie-geomol-isotherme_60"
-msgstr "Höhe 60 °C-Isotherme"
+msgstr "Nivel isoterma 60 °C"
 
 msgid "ch.swisstopo.geologie-geomol-isotherme_60.elev"
 msgstr "Höhe 60 °C-Isotherme [m ü.M.]"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten"
-msgstr "Temperaturmodell - Daten"
+msgstr "Model da temperatura - datas"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten.name"
 msgstr "Name"
 
 msgid "ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk"
-msgstr "Temperaturen Top Muschelkalk"
+msgstr "Temperaturas sisum il Muschelkalk"
 
 msgid "ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk.elev"
 msgstr "Höhe Top Muschelkalk [m ü.M.]"
@@ -8784,7 +8949,7 @@ msgid "ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk.pixel_value"
 msgstr "Temperatur [°C]"
 
 msgid "ch.swisstopo.geologie-geomol-temperatur_top_omalm"
-msgstr "Temperaturen Top Oberer Malm"
+msgstr "Temp. sisum il Malm superiur"
 
 msgid "ch.swisstopo.geologie-geomol-temperatur_top_omalm.elev"
 msgstr "Höhe Top Oberer Malm [m ü.M.]"
@@ -8793,7 +8958,7 @@ msgid "ch.swisstopo.geologie-geomol-temperatur_top_omalm.pixel_value"
 msgstr "Temperatur [°C]"
 
 msgid "ch.swisstopo.geologie-geomol-temperatur_top_omm"
-msgstr "Temperaturen Top OMM"
+msgstr "Temperaturas sisum la OMM"
 
 msgid "ch.swisstopo.geologie-geomol-temperatur_top_omm.elev"
 msgstr "Höhe Top OMM [m ü.M.]"
@@ -8802,37 +8967,37 @@ msgid "ch.swisstopo.geologie-geomol-temperatur_top_omm.pixel_value"
 msgstr "Temperatur [°C]"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_1000"
-msgstr "Temperaturen 1000 m Tiefe"
+msgstr "Temperaturas profunditad 1000 m"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_1000.pixel_value"
 msgstr "Temperatur [°C]"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_1500"
-msgstr "Temperaturen 1500 m Tiefe"
+msgstr "Temperaturas profunditad 1500 m"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_1500.pixel_value"
 msgstr "Temperatur [°C]"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_2000"
-msgstr "Temperaturen 2000 m Tiefe"
+msgstr "Temperaturas profunditad 2000 m"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_2000.pixel_value"
 msgstr "Temperatur [°C]"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_3000"
-msgstr "Temperaturen 3000 m Tiefe"
+msgstr "Temperaturas profunditad 3000 m"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_3000.pixel_value"
 msgstr "Temperatur [°C]"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_4000"
-msgstr "Temperaturen 4000 m Tiefe"
+msgstr "Temperaturas profunditad 4000 m"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_4000.pixel_value"
 msgstr "Temperatur [°C]"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_500"
-msgstr "Temperaturen 500 m Tiefe"
+msgstr "Temperaturas profunditad 500 m"
 
 msgid "ch.swisstopo.geologie-geomol-temperaturverteilung_500.pixel_value"
 msgstr "Temperatur [°C]"
@@ -8916,7 +9081,7 @@ msgid "ch.swisstopo.geologie-geotechnik-ziegeleien_1995.ziegeleien"
 msgstr "Name der Ziegelei"
 
 msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional"
-msgstr "Geothermische Potenzialstudien"
+msgstr "Studis dal potenzial geotermic"
 
 msgid "ch.swisstopo.geologie-geothermische_potenzialstudien_regional.auftraggeber"
 msgstr "Auftraggeber"
@@ -11687,6 +11852,48 @@ msgstr "Sachplan Militär"
 msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Sachplan Militär"
 
+msgid "ch.vbs.schiessanzeigen"
+msgstr "Publizierte Schiessanzeigen und Gefahrenzonen"
+
+msgid "ch.vbs.schiessanzeigen.auskunft"
+msgstr "Auskunftstelle"
+
+msgid "ch.vbs.schiessanzeigen.belegung"
+msgstr "Aktuelle Schiessdaten"
+
+msgid "ch.vbs.schiessanzeigen.bezeichnung"
+msgstr "Schiessplatz"
+
+msgid "ch.vbs.schiessanzeigen.keine_info"
+msgstr "Keine Informationen verfügbar"
+
+msgid "ch.vbs.schiessanzeigen.kein_schiessen"
+msgstr "Kein Schiessen"
+
+msgid "ch.vbs.schiessanzeigen.url"
+msgstr "Aktuelle Liste der Schiessanzeigen"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.1"
+msgstr "So"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.2"
+msgstr "Mo"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.3"
+msgstr "Di"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.4"
+msgstr "Mi"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.5"
+msgstr "Do"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.6"
+msgstr "Fr"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.7"
+msgstr "Sa"
+
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Charta da zonas scumandadas"
 
@@ -11848,6 +12055,33 @@ msgstr "Registrar il poligon"
 
 msgid "ct"
 msgstr "Kt."
+
+msgid "cwm_egris_egrid"
+msgstr "EGRID"
+
+msgid "cwm_number"
+msgstr "Nummer"
+
+msgid "cwm_realestate_type"
+msgstr "Grundstücksart"
+
+msgid "cwm_realestate_type_0"
+msgstr "Baurecht"
+
+msgid "cwm_realestate_type_1"
+msgstr "Quellenrecht"
+
+msgid "cwm_realestate_type_2"
+msgstr "Konzessionsrecht"
+
+msgid "cwm_realestate_type_3"
+msgstr "weitere"
+
+msgid "cwm_realestate_type_4"
+msgstr "Bergwerk"
+
+msgid "cwm_realestate_type_default"
+msgstr "Liegenschaft"
 
 msgid "cyan"
 msgstr "cian"
@@ -12768,6 +13002,9 @@ msgid "<i>Friedhof</i>"
 msgstr "Santeri"
 
 msgid "<i>Gebaeude Einzelhaus</i>"
+msgstr "Edifizi"
+
+msgid "<i>Gebaeude</i>"
 msgstr "Edifizi"
 
 msgid "<i>Gebiet</i>"
