@@ -602,16 +602,13 @@ def gzip_string(string):
     return out
 
 
-def decompress_gzipped_string(string):
-    # Python2/3
-    if not isinstance(string, six.string_types):
-        in_ = BytesIO()
-        in_.write(string)
-        in_.seek(0)
+def decompress_gzipped_string(streaming_body):
+    if six.PY2:
+        string_file = StringIO(streaming_body.read())
+        gzip_file = gzip.GzipFile(fileobj=string_file, mode='r', compresslevel=5)
+        return gzip_file.read().decode('utf-8')
     else:
-        in_ = StringIO(string)
-    content = gzip.GzipFile(fileobj=in_, mode='rb')
-    return content.read()
+        return gzip.decompress(streaming_body.read()).decode()
 
 
 def unnacent_where_text(where_string, model):

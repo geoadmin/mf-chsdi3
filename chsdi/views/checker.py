@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from boto.exception import JSONResponseError
+# TODO : find boto3 equivalent --> from boto.exception import JSONResponseError
 from pyramid.view import view_config
 from pyramid.response import Response
 from pyramid.httpexceptions import HTTPInternalServerError
@@ -23,12 +23,14 @@ class Checker(FileView):
     def backend(self):
         try:
             self.dynamodb_fileshandler.table.count()
-        except (KeyError, JSONResponseError):
+            # TODO , JSONResponseError equivalent too
+        except KeyError:
             raise HTTPInternalServerError('Cannot access to DynamoDB backend {}'.format(self.dynamodb_fileshandler.table.table_name))
 
         try:
-            resp = self.s3_fileshandler.bucket.get_key(self.key_name)
-        except (KeyError, JSONResponseError):
+            resp = self.s3_fileshandler.bucket.get_item(self.key_name)
+        # TODO , JSONResponseError equivalent too
+        except KeyError:
             raise HTTPInternalServerError('Cannot access bucket {}'.format(self.bucket_name))
 
         if resp is None or resp.key != self.key_name:

@@ -55,19 +55,16 @@ def validate_kml_input():
             if request.content_type != EXPECTED_KML_CONTENT_TYPE:
                 raise exc.HTTPUnsupportedMediaType('Only KML file are accepted')
             # IE9 sends data urlencoded
-
             # Python2/3
             if six.PY3:
                 quoted_str = request.body.decode('utf-8')
             else:
                 quoted_str = request.body
             data = unquote_plus(quoted_str)
-
             if len(data) > MAX_FILE_SIZE:
                 error_msg = 'File size exceed %s bytes' % MAX_FILE_SIZE
                 log.error(error_msg)
                 raise exc.HTTPRequestEntityTooLarge(error_msg)
-
             # Prevent erroneous kml
             data = re.sub('(\s+on\w*=(\"[^\"]+\"|\'[^\']+\'))', ' ', data, flags = re.I | re.M)
             data = re.sub('(<|&lt;)script\s*\S*[^(>|&gt;)]*?(>|&gt;)(.|\s)*?(<|&lt;)\/script(>|&gt;)', ' ', data, flags = re.I | re.M)
@@ -81,7 +78,6 @@ def validate_kml_input():
                 request.body = data.encode('utf8')
             else:
                 request.body = data
-
             return func(self, *args, **kwargs)
         return wrapper
     return decorator

@@ -2,7 +2,9 @@
 
 from pyramid.view import view_config
 import pyramid.httpexceptions as exc
-import boto.dynamodb2.exceptions as boto_exc
+
+import boto3.exceptions as boto_exc
+from boto3.dynamodb.conditions import Key
 
 import time
 
@@ -19,13 +21,14 @@ def _add_item(table, url):
         url_short = '%x' % t
         try:
             table.put_item(
-                data={
+                Item={
                     'url_short': url_short,
                     'url': url,
                     'timestamp': time.strftime('%Y-%m-%d %X', time.localtime())
                 }
             )
-        except boto_exc.ProvisionedThroughputExceededException as e:
+        except boto_exc.Boto3Error as e:
+            # TODO : find boto3 equivalent for ProvisionedThroughputExceededException
             raise exc.HTTPInternalServerError('Write units exceeded: %s' % e)
         except Exception as e:
             raise exc.HTTPInternalServerError('Error during put item %s' % e)
@@ -35,10 +38,13 @@ def _add_item(table, url):
 
 
 def _get_url_short(table, url):
-    row = table.query_2(index='UrlIndex', url__eq=url)
+
+    response  = table.query(
+        IndexName="UrlIndex",
+        KeyConditionExpression=Key('url').eq(url),
+    )
     try:
-        item = next(row)
-        return item['url_short']
+        return response['Items'][0]['url_short']
     except Exception:
         return None
 
@@ -57,7 +63,6 @@ def shortener(request):
             table = get_dynamodb_table(table_name='shorturl')
         except Exception as e:
             raise exc.HTTPInternalServerError('Error during connection %s' % e)
-
         url_short = _add_item(table, url)
 
     # Use env specific URLs
@@ -80,13 +85,13 @@ def shorten_redirect(request):
     table = get_dynamodb_table(table_name='shorturl')
 
     try:
-        url_short = table.get_item(url_short=url_short)
-        url = url_short.get('url')
-    except boto_exc.ItemNotFound as e:
-        raise exc.HTTPNotFound('This short url doesn\'t exist: s.geo.admin.ch/%s Error is: %s' % (url_short, e))
-    except boto_exc.ProvisionedThroughputExceededException as e:  # pragma: no cover
-        raise exc.HTTPInternalServerError('Read units exceeded: %s' % e)
+        response = table.query(
+            KeyConditionExpression=Key('url_short').eq(url_short)
+        )
+        url = response['Items'][0]['url'] if len(response['Items']) > 0 else None
+
     except Exception as e:  # pragma: no cover
         raise exc.HTTPInternalServerError('Unexpected internal server error: %s' % e)
-
+    if url is None:
+        raise exc.HTTPNotFound('This short url doesn\'t exist: s.geo.admin.ch/%s' % url_short)
     raise exc.HTTPMovedPermanently(location=url)

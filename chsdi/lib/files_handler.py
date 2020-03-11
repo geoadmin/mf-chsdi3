@@ -4,16 +4,12 @@ import six
 import uuid
 import base64
 import time
-from boto.dynamodb2.exceptions import ItemNotFound
 
-from boto.exception import S3ResponseError
-from boto.s3.key import Key
-from boto.utils import parse_ts
 import pyramid.httpexceptions as exc
 from pyramid.response import Response
 
 from chsdi.lib.helpers import gzip_string
-from chsdi.models.clientdata_dynamodb import get_dynamodb_table, get_bucket
+from chsdi.models.clientdata_dynamodb import get_dynamodb_table, get_file_from_bucket, delete_file_in_bucket, upload_object_to_bucket
 
 import logging
 
@@ -30,7 +26,7 @@ class DynamoDBFilesHandler:
     def save_item(self, admin_id, file_id, timestamp):
         try:
             self.table.put_item(
-                data={
+                Item={
                     'adminId': admin_id,
                     'fileId': file_id,
                     'timestamp': timestamp,
@@ -43,15 +39,21 @@ class DynamoDBFilesHandler:
     def get_item(self, admin_id):
         item = None
         try:
-            item = self.table.get_item(adminId=str(admin_id))
-        except ItemNotFound:
+            item = self.table.get_item(Key={'adminId': str(admin_id)}).get('Item', None)
+        except Exception:
             pass
         return item
 
-    def update_item_timestamp(self, item, timestamp):
+    def update_item_timestamp(self, admin_id, timestamp):
         try:
-            item['timestamp'] = timestamp
-            item.save()
+            self.table.update_item(Key={
+                'adminId': admin_id
+            }, AttributeUpdates={
+                'timestamp': {
+                    'Value': timestamp,
+                    'Action': 'PUT'
+                }
+            })
         except Exception as e:
             raise exc.HTTPBadRequest('Error while updating the timestamp' % e)
 
@@ -60,28 +62,24 @@ class S3FilesHandler:
 
     def __init__(self, bucket_name):
         # We use instance roles
-        self.bucket = get_bucket(bucket_name)
         self.bucket_name = bucket_name
         self.default_headers = {
             'Cache-Control': 'no-cache, must-revalidate'
         }
 
-    def get_key(self, file_id):
-        key = None
+    def get_item(self, file_id):  # TODO: errors
         try:
-            key = self.bucket.get_key(file_id)
-        except S3ResponseError as e:
-            raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
+            item = get_file_from_bucket(self.bucket_name, file_id)
         except Exception as e:
             raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
-        return key
+        return item
 
     def get_key_timestamp(self, file_id):
-        key = self.get_key(file_id)
-        if key:
-            last_updated = parse_ts(key.last_modified)
+        try:
+            last_updated = get_file_from_bucket(self.bucket_name, file_id)['LastModified']
             return last_updated.strftime('%Y-%m-%d %X')
-        return time.strftime('%Y-%m-%d %X', time.localtime())
+        except Exception:
+            return time.strftime('%Y-%m-%d %X', time.localtime())
 
     def save_object(self, file_id, mime, content_encoding, data, replace=False):
         msg = 'configuring' if replace else 'updating'
@@ -92,24 +90,19 @@ class S3FilesHandler:
             raise exc.HTTPInternalServerError(error_msg)
 
         try:
-            k = Key(bucket=self.bucket)
-            k.key = file_id
-            k.set_metadata('Content-Type', mime)
-            k.content_type = mime
-            k.content_encoding = content_encoding
-            k.set_metadata('Content-Encoding', content_encoding)
-            logging.info(data)
-            k.set_contents_from_string(data, headers=self.default_headers, replace=replace)
+            upload_object_to_bucket(
+                self.bucket_name, file_id, mime, content_encoding,
+                data, self.default_headers['Cache-Control'], replace=False)
         except Exception as e:
             error_msg = 'Error while %s S3 key (%s) %s' % (msg, file_id, e)
             log.error(error_msg)
             raise exc.HTTPInternalServerError(error_msg)
 
-    def delete_key(self, key):
+    def delete_key(self, file_id):
         try:
-            self.bucket.delete_key(key)
+            delete_file_in_bucket(self.bucket_name, file_id)
         except Exception as e:
-            raise exc.HTTPInternalServerError('Error while deleting file %s. %e' % (key.key, e))
+            raise exc.HTTPInternalServerError('Error while deleting file %s. %e' % (file_id, e))
 
 
 class FilesHandler(object):
@@ -126,12 +119,10 @@ class FilesHandler(object):
 
     def __init__(self, request):
         self.request = request
-
         # Set up AWS DynamoDB and S3 handlers
         self.dynamodb_fileshandler = DynamoDBFilesHandler(
             self.dynamodb_table_name, self.bucket_key_name)
         self.s3_fileshandler = S3FilesHandler(self.bucket_name)
-
         # This mean that we suppose a file has already been created
         if request.matched_route.name == self.default_route_name:
             req_id = request.matchdict['id']
@@ -144,10 +135,10 @@ class FilesHandler(object):
                 self.admin_id = req_id
                 self.file_id = db_item.get('fileId')
 
-            key = self.s3_fileshandler.get_key(self.file_path)
-            if key is None:
+            try:
+                self.item = self.s3_fileshandler.get_item(self.file_path)
+            except Exception:
                 raise exc.HTTPNotFound('File %s not found' % self.file_path)
-            self.key = key
 
     @property
     def file_path(self):
@@ -187,14 +178,14 @@ class FilesHandler(object):
                     'fileId': self.file_id
                 }
             else:
-                data = self.key.get_contents_as_string()
+                data = self.s3_fileshandler.get_item(self.file_path)['Body'].read()
                 return Response(
                     data,
-                    content_type=self.key.content_type,
-                    content_encoding=self.key.content_encoding
+                    content_type=self.item['ContentType'],
+                    content_encoding=self.item['ContentEncoding']
                 )
         except Exception as e:
-            raise exc.HTTPNotFound('File %s not found %s' % (self.file_id, e))
+            raise exc.HTTPNotFound('File %s not found %s' % (self.file_path, e))
 
     def update_file(self):
         data = self.request.body
@@ -219,8 +210,7 @@ class FilesHandler(object):
             self.dynamodb_fileshandler.save_item(self.admin_id, self.file_id, timestamp)
         else:
             # Simply update the timestamp
-            item = self.dynamodb_fileshandler.get_item(self.admin_id)
-            self.dynamodb_fileshandler.update_item_timestamp(item, timestamp)
+            self.dynamodb_fileshandler.update_item_timestamp(self.admin_id, timestamp)
 
         return {
             'adminId': self.admin_id,
@@ -231,7 +221,7 @@ class FilesHandler(object):
     def delete_file(self):
         if self.admin_id is None:
             raise exc.HTTPUnauthorized('You are not authorized to delete file %s' % self.file_id)
-        self.s3_fileshandler.delete_key(self.key)
+        self.s3_fileshandler.delete_key(self.file_id)
         return {
             'success': True
         }
@@ -249,4 +239,4 @@ class FilesHandler(object):
     def _fork(self):
         self.file_id = self._get_uuid()
         self.admin_id = self._get_uuid()
-        del self.key
+        del self.item
