@@ -729,7 +729,7 @@ msgid "bfs_nolu_420"
 msgstr "Superfici improduttive"
 
 msgid "bfsnr"
-msgstr "Numéro OFS"
+msgstr "Numero UST"
 
 msgid "bfs_service_link_href"
 msgstr "https://www.bfs.admin.ch"
@@ -1685,6 +1685,9 @@ msgstr "Giorno dell'incidente"
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_it"
 msgstr "Giorno dell'incidente"
 
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour"
+msgstr "Ora dell'incidente"
+
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour_text"
 msgstr "Ora dell'incidente"
 
@@ -1762,6 +1765,9 @@ msgstr "Giorno dell'incidente"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_it"
 msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour"
+msgstr "Ora dell'incidente"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour_text"
 msgstr "Ora dell'incidente"
@@ -1841,6 +1847,9 @@ msgstr "Giorno dell'incidente"
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_it"
 msgstr "Giorno dell'incidente"
 
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour"
+msgstr "Ora dell'incidente"
+
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour_text"
 msgstr "Ora dell'incidente"
 
@@ -1919,6 +1928,9 @@ msgstr "Giorno dell'incidente"
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_it"
 msgstr "Giorno dell'incidente"
 
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour"
+msgstr "Ora dell'incidente"
+
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour_text"
 msgstr "Ora dell'incidente"
 
@@ -1996,6 +2008,9 @@ msgstr "Giorno dell'incidente"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_it"
 msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour"
+msgstr "Ora dell'incidente"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour_text"
 msgstr "Ora dell'incidente"
@@ -4944,7 +4959,7 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Restituzione"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
-msgstr "Bacini imbriferi 2km2"
+msgstr "Bacini imbriferi 2 km²"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
 msgstr "Percentuale CH della superficie del bacino imbrifero totale"
@@ -5019,7 +5034,7 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_2.min_z"
 msgstr "Altitudine minima"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
-msgstr "Bacini imbriferi 40 km2"
+msgstr "Bacini imbriferi 40 km²"
 
 msgid "ch.bafu.wasser-vorfluter"
 msgstr "Tronçons d'effluents"
@@ -7584,7 +7599,7 @@ msgid "ch.bfs.gebaeude_wohnungs_register.egid"
 msgstr "EGID"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.gdename"
-msgstr "Commune"
+msgstr "Comune"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.municipality_label"
 msgstr "Comune"
@@ -7602,7 +7617,7 @@ msgid "ch.bfs.gebaeude_wohnungs_register_preview"
 msgstr "Registro degli edifici e delle abitazioni"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.strname1"
-msgstr "Rue"
+msgstr "Via"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.zip_canton"
 msgstr "Download cantone"
