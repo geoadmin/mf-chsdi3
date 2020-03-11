@@ -1098,19 +1098,23 @@ register('ch.bafu.gewaesserschutzbereiche', Gewaesserschutzbereiche)
 
 
 class Vorfluter (Base, Vector):
-    __tablename__ = 'vorfluter'
+    __tablename__ = 'effluent'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasser-vorfluter'
     __template__ = 'templates/htmlpopup/vorfluter.mako'
-    __label__ = 'teilezgnr'
+    __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    teilezgnr = Column('teilezgnr', Integer)
+    id_2 = Column('id', Integer)
+    ezgnr = Column('ezgnr', Integer)
     gwlnr = Column('gwlnr', Unicode)
-    measure = Column('measure', Integer)
-    endmeasure = Column('endmeasure', Integer)
-    name = Column('name', Unicode)
-    regimenr = Column('regimenr', Integer)
-    regimetyp = Column('regimetyp', Unicode)
+    unteresende = Column('unteresende', Integer)
+    oberesende = Column('oberesende', Integer)
+    gewaessername = Column('gewaessername', Unicode)
+    de_nebenarm = Column('de_nebenarm', Unicode)
+    fr_nebenarm = Column('fr_nebenarm', Unicode)
+    it_nebenarm = Column('it_nebenarm', Unicode)
+    en_nebenarm = Column('en_nebenarm', Unicode)
+    rm_nebenarm = Column('rm_nebenarm', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasser-vorfluter', Vorfluter)
