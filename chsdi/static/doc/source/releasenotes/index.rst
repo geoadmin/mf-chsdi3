@@ -40,15 +40,7 @@ API & applications
 Geodata
 *******
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Railway noise, perm. immissions N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht)                       |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Railway noise, perm. immissions D <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag)                           |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `3D geological models <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologische_3dmodelle>`__ (ch.swisstopo.geologie-geologische_3dmodelle)                                                                      |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Railway noise, act. immissions N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht)                          |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Railway noise, act. immissions D <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag)                              |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Sunshine cumulative daily total <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-sonnenscheindauer-kumuliert-10min>`__ (ch.meteoschweiz.messwerte-sonnenscheindauer-kumuliert-10min)                           |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
