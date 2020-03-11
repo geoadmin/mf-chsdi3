@@ -910,3 +910,18 @@ class TestReleasesService(TestsBase):
     def test_unknown_layers(self):
         params = {'imageDisplay': '500,600,96', 'mapExtent': '611399.9999999999,158650,690299.9999999999,198150'}
         self.testapp.get('/rest/services/all/MapServer/dummylayer/releases', params=params, status=400)
+
+    def test_find_layerdefs_with_accents(self):
+        params1 = {
+            "layer": "ch.swisstopo.amtliches-strassenverzeichnis",
+            "searchText": "371",
+            "searchField": "gdenr",
+            "returnGeometry": "false",
+            "layerDefs": '''{"ch.swisstopo.amtliches-strassenverzeichnis": "label like '%Contrôle%'"}'''
+        }
+
+        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params1, status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        for feat in resp.json['results']:
+            self.assertIn(feat['attributes']['gdenr'], [371])
+            self.assertIn('Kontrollstrasse', feat['attributes']['label'])
