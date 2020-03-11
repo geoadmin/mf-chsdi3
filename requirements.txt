@@ -60,3 +60,4 @@ WebOb==1.8.5
 WebTest==2.0.33
 zope.deprecation==4.4.0
 zope.interface==4.6.0
+unidecode==1.1.1

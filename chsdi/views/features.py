@@ -21,7 +21,7 @@ from chsdi.lib.validation.features import HtmlPopupServiceValidation, ExtendedHt
 from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.validation.identify import IdentifyServiceValidation
 from chsdi.lib.validation.geometryservice import GeometryServiceValidation
-from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d, make_geoadmin_url, shift_to
+from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d, make_geoadmin_url, shift_to, unnacent_where_text
 from chsdi.lib.filters import full_text_search
 from chsdi.models.clientdata_dynamodb import get_file_from_bucket
 from chsdi.models import models_from_bodid, perimeter_models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
@@ -715,10 +715,11 @@ def _find(request):
                 query = query.filter(
                     searchColumn == searchText
                 )
-        if where_txt is not None:
+        if where_text is not None:
+            where_txt = unnacent_where_text(where_text, model)
             query = query.filter(text(
-                "({})".format(where_txt)  # operator precedance
-            ))
+                "({})".format(where_txt))  # operator precedance
+            )
         query = query.limit(MaxFeatures)
         for feature in query:
             f = _process_feature(feature, params)
