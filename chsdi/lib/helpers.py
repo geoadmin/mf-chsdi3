@@ -610,6 +610,7 @@ def decompress_gzipped_string(streaming_body):
     else:
         return gzip.decompress(streaming_body.read()).decode()
 
+
 def unnacent_where_text(where_string, model):
 
     # where_string is the arbitrary where text given by the query
