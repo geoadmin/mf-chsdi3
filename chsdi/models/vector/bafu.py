@@ -1138,10 +1138,9 @@ class Teileinzugsgebiete2 (Base, Vector):
     __bodId__ = 'ch.bafu.wasser-teileinzugsgebiete_2'
     __template__ = 'templates/htmlpopup/teileinzugsgebiete2.mako'
     __returnedGeometry__ = 'the_geom_ext'
-    __label__ = 'ezgnr'
+    __label__ = 'id'
     __extended_info__ = True
-    id = Column('bgdi_id', Integer, primary_key=True)
-    ezgnr = Column('ezgnr', Integer)
+    id = Column('ezgnr', Integer, primary_key=True)
     gewaessername = Column('gewaessername', Unicode)
     gesamtflaeche = Column('gesamtflaeche', Float)
     de_nebenarm = Column('de_nebenarm', Unicode)
