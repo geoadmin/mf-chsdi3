@@ -16,7 +16,11 @@
           % if 'http' not in c['attributes'][link_portal]:
              <td>${c['attributes'][link_portal] or '-'}</td>
           % else:
+<<<<<<< HEAD
              <td><a  target="_blank" href=${c['attributes'][link_portal] or '-'}>Link</a></td>
+=======
+             <td><a  target="_blank" href=${c['attributes'][link_portal] or '-'}>link</a></td>
+>>>>>>> CHSDI ch.swisstopo.geologie-geologische_3dmodelle  (#3376)
           % endif
     </tr> 
 </%def>
@@ -68,7 +72,11 @@
           % if 'http' not in c['attributes'][link_portal]:
              <td>${c['attributes'][link_portal] or '-'}</td>
           % else:
+<<<<<<< HEAD
              <td><a  target="_blank" href=${c['attributes'][link_portal] or '-'}>Link</a></td>
+=======
+             <td><a  target="_blank" href=${c['attributes'][link_portal] or '-'}>link</a></td>
+>>>>>>> CHSDI ch.swisstopo.geologie-geologische_3dmodelle  (#3376)
           % endif
     </tr>
     <tr>
@@ -76,7 +84,11 @@
           % if 'http' not in c['attributes'][link_description]:
              <td>${c['attributes'][link_description] or '-'}</td>
           % else:
+<<<<<<< HEAD
              <td><a  target="_blank" href=${c['attributes'][link_description] or '-'}>Link</a></td>
+=======
+             <td><a  target="_blank" href=${c['attributes'][link_description] or '-'}>link</a></td>
+>>>>>>> CHSDI ch.swisstopo.geologie-geologische_3dmodelle  (#3376)
           % endif
     </tr>
     <tr>
@@ -84,7 +96,11 @@
           % if 'http' not in c['attributes'][link_documentation]:
              <td>${c['attributes'][link_documentation] or '-'}</td>
           % else:
+<<<<<<< HEAD
              <td><a  target="_blank" href=${c['attributes'][link_documentation] or '-'}>Link</a></td>
+=======
+             <td><a  target="_blank" href=${c['attributes'][link_documentation] or '-'}>link</a></td>
+>>>>>>> CHSDI ch.swisstopo.geologie-geologische_3dmodelle  (#3376)
           % endif
     </tr>
   </table>
