@@ -729,7 +729,7 @@ msgid "bfs_nolu_420"
 msgstr "Superfici improduttive"
 
 msgid "bfsnr"
-msgstr "Numéro OFS"
+msgstr "Numero UST"
 
 msgid "bfs_service_link_href"
 msgstr "https://www.bfs.admin.ch"
@@ -1685,6 +1685,9 @@ msgstr "Giorno dell'incidente"
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_it"
 msgstr "Giorno dell'incidente"
 
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour"
+msgstr "Ora dell'incidente"
+
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour_text"
 msgstr "Ora dell'incidente"
 
@@ -1762,6 +1765,9 @@ msgstr "Giorno dell'incidente"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_it"
 msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour"
+msgstr "Ora dell'incidente"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour_text"
 msgstr "Ora dell'incidente"
@@ -1841,6 +1847,9 @@ msgstr "Giorno dell'incidente"
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_it"
 msgstr "Giorno dell'incidente"
 
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour"
+msgstr "Ora dell'incidente"
+
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour_text"
 msgstr "Ora dell'incidente"
 
@@ -1919,6 +1928,9 @@ msgstr "Giorno dell'incidente"
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_it"
 msgstr "Giorno dell'incidente"
 
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour"
+msgstr "Ora dell'incidente"
+
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour_text"
 msgstr "Ora dell'incidente"
 
@@ -1996,6 +2008,9 @@ msgstr "Giorno dell'incidente"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_it"
 msgstr "Giorno dell'incidente"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour"
+msgstr "Ora dell'incidente"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour_text"
 msgstr "Ora dell'incidente"
@@ -4944,7 +4959,7 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Restituzione"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
-msgstr "Bacini imbriferi 2km2"
+msgstr "Bacini imbriferi 2 km²"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
 msgstr "Percentuale CH della superficie del bacino imbrifero totale"
@@ -5019,10 +5034,10 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_2.min_z"
 msgstr "Altitudine minima"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
-msgstr "Bacini imbriferi 40 km2"
+msgstr "Bacini imbriferi 40 km²"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Tipo di regime di deflusso"
+msgstr "Tronçons d'effluents"
 
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "N° del bacino idrografico completo"
@@ -5790,37 +5805,37 @@ msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht"
 msgstr "Rumore dei treni, immissioni eff. N"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_es"
-msgstr "Degré de sensibilité"
+msgstr "Grado di sensibilità"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_operation_status"
-msgstr "Evaluation du local d'exploitation"
+msgstr "Valutazione locanda aziendale"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_pointofdetermination"
-msgstr "Type de point de détermination"
+msgstr "Tipo di punto di determinazione"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.floor"
-msgstr "Etage du point de détermination"
+msgstr "Piano di punto di determinazione"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.lr_night"
-msgstr "Immission eff. nuit [dB(A)]"
+msgstr "Immissione eff. notte  [dB(A)]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
 msgstr "Rumore dei treni, Immissioni eff. G"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_es"
-msgstr "Degré de sensibilité"
+msgstr "Grado di sensibilità"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_operation_status"
-msgstr "Evaluation du local d'exploitation"
+msgstr "Valutazione locanda aziendale"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_pointofdetermination"
-msgstr "Type de point de détermination"
+msgstr "Tipo di punto di determinazione"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.floor"
-msgstr "Etage du point de détermination"
+msgstr "Piano di punto di determinazione"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.lr_day"
-msgstr "Immission eff. jour [dB(A)]"
+msgstr "Immissione eff. giorno  [dB(A)]"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Rumore dei treni, emissioni N stab."
@@ -7584,7 +7599,7 @@ msgid "ch.bfs.gebaeude_wohnungs_register.egid"
 msgstr "EGID"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.gdename"
-msgstr "Commune"
+msgstr "Comune"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.municipality_label"
 msgstr "Comune"
@@ -7602,7 +7617,7 @@ msgid "ch.bfs.gebaeude_wohnungs_register_preview"
 msgstr "Registro degli edifici e delle abitazioni"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.strname1"
-msgstr "Rue"
+msgstr "Via"
 
 msgid "ch.bfs.gebaeude_wohnungs_register.zip_canton"
 msgstr "Download cantone"
@@ -8644,9 +8659,6 @@ msgstr "Divisione ultimo max. glaciale 500 Stampa"
 
 msgid "ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata.release"
 msgstr "Edizione"
-
-msgid "ch.swisstopo.geologie-erlebnis_geologie"
-msgstr "Avventura geologia"
 
 msgid "ch.swisstopo.geologie-felsoberflaeche_hoehenmodell"
 msgstr "Altitudine del substrato roccioso"
@@ -11857,6 +11869,45 @@ msgstr "Piano settoriale militare"
 
 msgid "ch.vbs.schiessanzeigen"
 msgstr "Avvisi di tiro e zone pericolose pubblicato"
+
+msgid "ch.vbs.schiessanzeigen.auskunft"
+msgstr "Servizio info"
+
+msgid "ch.vbs.schiessanzeigen.belegung"
+msgstr "Date di tiro attuali"
+
+msgid "ch.vbs.schiessanzeigen.bezeichnung"
+msgstr "Piazzo di tiro"
+
+msgid "ch.vbs.schiessanzeigen.keine_info"
+msgstr "Nessuna informazione disponibile"
+
+msgid "ch.vbs.schiessanzeigen.kein_schiessen"
+msgstr "No tiro"
+
+msgid "ch.vbs.schiessanzeigen.url"
+msgstr "Lista d'avvisi di tiro"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.1"
+msgstr "Dom"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.2"
+msgstr "Lun"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.3"
+msgstr "Mar"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.4"
+msgstr "Mer"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.5"
+msgstr "Gio"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.6"
+msgstr "Ven"
+
+msgid "ch.vbs.schiessanzeigen.wochentag.7"
+msgstr "Sab"
 
 msgid "ch.vbs.sperr-gefahrenzonenkarte"
 msgstr "Carta delle zone soggette a divieti"
