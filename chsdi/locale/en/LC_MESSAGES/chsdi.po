@@ -4994,6 +4994,39 @@ msgstr "Water bodies"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.de_nebenarm"
 msgstr "Indication"
 
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
+msgstr "Percentage CH of the total watershed area"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_bestockteflaechen"
+msgstr "Forests and shrubs"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_landwirtschaftsflaechen"
+msgstr "Agricultural areas"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_siedlungsflaechen"
+msgstr "Artificial surfaces"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_unproduktiveflaechen"
+msgstr "Open spaces with little or no vegetation"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_bebauteflaechen"
+msgstr "Artificial surfaces"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_feuchtflaechen"
+msgstr "Wetlands"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_landwirtschaft"
+msgstr "Agricultural areas"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_waelder"
+msgstr "Forest and semi natural areas"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_wasserflaechen"
+msgstr "Water bodies"
+
+msgid "ch.bafu.wasser-teileinzugsgebiete_2.de_nebenarm"
+msgstr "Indication"
+
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
 msgstr "Name of river basin"
 
@@ -5038,6 +5071,27 @@ msgstr "40 km² sub catchment areas"
 
 msgid "ch.bafu.wasser-vorfluter"
 msgstr "Vorfluterabschnitte"
+
+msgid "ch.bafu.wasser-vorfluter.ezgnr"
+msgstr "Catchment area number"
+
+msgid "ch.bafu.wasser-vorfluter.gewaessername"
+msgstr "Waterbody name"
+
+msgid "ch.bafu.wasser-vorfluter.gwlnr"
+msgstr "Number of the river"
+
+msgid "ch.bafu.wasser-vorfluter.id"
+msgstr "Identifier of the section of the effluent"
+
+msgid "ch.bafu.wasser-vorfluter.nebenarm"
+msgstr "Waterbody type"
+
+msgid "ch.bafu.wasser-vorfluter.oberesende"
+msgstr "Finish address (’waterbody kilometre’)"
+
+msgid "ch.bafu.wasser-vorfluter.unteresende"
+msgstr "Start address (’waterbody kilometre’)"
 
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "Catchment area number"
