@@ -1685,6 +1685,9 @@ msgstr "Unfalltag"
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_it"
 msgstr "Unfalltag"
 
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour"
+msgstr "Unfallstunde"
+
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour_text"
 msgstr "Unfallstunde"
 
@@ -1762,6 +1765,9 @@ msgstr "Unfalltag"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_it"
 msgstr "Unfalltag"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour"
+msgstr "Unfallstunde"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour_text"
 msgstr "Unfallstunde"
@@ -1841,6 +1847,9 @@ msgstr "Unfalltag"
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_it"
 msgstr "Unfalltag"
 
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour"
+msgstr "Unfallstunde"
+
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour_text"
 msgstr "Unfallstunde"
 
@@ -1919,6 +1928,9 @@ msgstr "Unfalltag"
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_it"
 msgstr "Unfalltag"
 
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour"
+msgstr "Unfallstunde"
+
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour_text"
 msgstr "Unfallstunde"
 
@@ -1996,6 +2008,9 @@ msgstr "Unfalltag"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_it"
 msgstr "Unfalltag"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour"
+msgstr "Unfallstunde"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour_text"
 msgstr "Unfallstunde"
@@ -2586,7 +2601,7 @@ msgid "ch.bafu.erosion-gruenland_bodenabtrag"
 msgstr "Erosionsrisiko Dauergrünland"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_apr"
-msgstr "Erosionsrisiko Dauergrünland Apr."
+msgstr "Erosionsrisiko Dauergrünland April"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_aug"
 msgstr "Erosionsrisiko Dauergrünland Aug."
@@ -2610,7 +2625,7 @@ msgid "ch.bafu.erosion-gruenland_bodenabtrag_mai"
 msgstr "Erosionsrisiko Dauergrünland Mai"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_mrz"
-msgstr "Erosionsrisiko Dauergrünland Mär."
+msgstr "Erosionsrisiko Dauergrünland März"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_nov"
 msgstr "Erosionsrisiko Dauergrünland Nov."
@@ -4944,7 +4959,7 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Wasserrückgabe"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
-msgstr "Teileinzugsgebiete 2km2"
+msgstr "Teileinzugsgebiete 2 km²"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
 msgstr "Flächenanteil Gesamt-EZG % CH"
@@ -5019,7 +5034,7 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_2.min_z"
 msgstr "Minimale Höhe"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
-msgstr "Teileinzugsgebiete 40km2"
+msgstr "Teileinzugsgebiete 40 km²"
 
 msgid "ch.bafu.wasser-vorfluter"
 msgstr "Vorfluterabschnitte"
@@ -11100,10 +11115,10 @@ msgid "ch.swisstopo.swisstlm3d-strassen_belagsart_200"
 msgstr "Natur"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_belagsart_999997"
-msgstr "ub"
+msgstr "Unbekannt"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_belagsart_999998"
-msgstr "k_W"
+msgstr "Kein Wert"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_eigentuemer_"
 msgstr "-"
@@ -11127,10 +11142,10 @@ msgid "ch.swisstopo.swisstlm3d-strassen_eigentuemer_500"
 msgstr "Privat"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_eigentuemer_999997"
-msgstr "ub"
+msgstr "Unbekannt"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_eigentuemer_999998"
-msgstr "k_W"
+msgstr "Kein Wert"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_objektart_"
 msgstr "-"
@@ -11223,10 +11238,10 @@ msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbedeutung_300"
 msgstr "Verbindungsstrasse"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbedeutung_999997"
-msgstr "k_W"
+msgstr "Kein Wert"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbedeutung_999998"
-msgstr "k_W"
+msgstr "Kein Wert"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_"
 msgstr "-"
@@ -11295,10 +11310,10 @@ msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_900"
 msgstr "Radweg"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_999997"
-msgstr "ub"
+msgstr "Unbekannt"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_999998"
-msgstr "k_W"
+msgstr "Kein Wert"
 
 msgid "ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_None"
 msgstr "-"

@@ -1685,6 +1685,9 @@ msgstr "Unfalltag"
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidentday_it"
 msgstr "Unfalltag"
 
+msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour"
+msgstr "Hour of accident"
+
 msgid "ch.astra.unfaelle-personenschaeden_alle.accidenthour_text"
 msgstr "Hour of accident"
 
@@ -1762,6 +1765,9 @@ msgstr "Unfalltag"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidentday_it"
 msgstr "Unfalltag"
+
+msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour"
+msgstr "Hour of accident"
 
 msgid "ch.astra.unfaelle-personenschaeden_fahrraeder.accidenthour_text"
 msgstr "Hour of accident"
@@ -1841,6 +1847,9 @@ msgstr "Unfalltag"
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidentday_it"
 msgstr "Unfalltag"
 
+msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour"
+msgstr "Hour of accident"
+
 msgid "ch.astra.unfaelle-personenschaeden_fussgaenger.accidenthour_text"
 msgstr "Hour of accident"
 
@@ -1919,6 +1928,9 @@ msgstr "Unfalltag"
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidentday_it"
 msgstr "Unfalltag"
 
+msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour"
+msgstr "Hour of accident"
+
 msgid "ch.astra.unfaelle-personenschaeden_getoetete.accidenthour_text"
 msgstr "Hour of accident"
 
@@ -1996,6 +2008,9 @@ msgstr "Unfalltag"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidentday_it"
 msgstr "Unfalltag"
+
+msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour"
+msgstr "Hour of accident"
 
 msgid "ch.astra.unfaelle-personenschaeden_motorraeder.accidenthour_text"
 msgstr "Hour of accident"
@@ -4944,7 +4959,7 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Return flows"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
-msgstr "2km2 sub catchment areas"
+msgstr "2 km² sub catchment areas"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
 msgstr "Percentage CH of the total watershed area"
@@ -5019,7 +5034,7 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_2.min_z"
 msgstr "Minimum altitude"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_40"
-msgstr "40km2 sub catchment areas"
+msgstr "40 km² sub catchment areas"
 
 msgid "ch.bafu.wasser-vorfluter"
 msgstr "Vorfluterabschnitte"

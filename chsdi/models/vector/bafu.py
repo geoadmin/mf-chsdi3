@@ -1098,19 +1098,23 @@ register('ch.bafu.gewaesserschutzbereiche', Gewaesserschutzbereiche)
 
 
 class Vorfluter (Base, Vector):
-    __tablename__ = 'vorfluter'
+    __tablename__ = 'effluent'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasser-vorfluter'
     __template__ = 'templates/htmlpopup/vorfluter.mako'
-    __label__ = 'teilezgnr'
+    __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    teilezgnr = Column('teilezgnr', Integer)
+    id_2 = Column('id', Integer)
+    ezgnr = Column('ezgnr', Integer)
     gwlnr = Column('gwlnr', Unicode)
-    measure = Column('measure', Integer)
-    endmeasure = Column('endmeasure', Integer)
-    name = Column('name', Unicode)
-    regimenr = Column('regimenr', Integer)
-    regimetyp = Column('regimetyp', Unicode)
+    unteresende = Column('unteresende', Integer)
+    oberesende = Column('oberesende', Integer)
+    gewaessername = Column('gewaessername', Unicode)
+    de_nebenarm = Column('de_nebenarm', Unicode)
+    fr_nebenarm = Column('fr_nebenarm', Unicode)
+    it_nebenarm = Column('it_nebenarm', Unicode)
+    en_nebenarm = Column('en_nebenarm', Unicode)
+    rm_nebenarm = Column('rm_nebenarm', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasser-vorfluter', Vorfluter)
@@ -1133,63 +1137,36 @@ register('ch.bafu.hydrologie-gewaesserzustandsmessstationen', Gewaesserzustandst
 
 
 class Teileinzugsgebiete2 (Base, Vector):
-    __tablename__ = 'view_ebene_2km_full'
+    __tablename__ = 'teileinzugsgebiete_2_full'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasser-teileinzugsgebiete_2'
     __template__ = 'templates/htmlpopup/teileinzugsgebiete2.mako'
-    __returnedGeometry__ = 'ext_the_geom'
+    __returnedGeometry__ = 'the_geom_ext'
     __label__ = 'id'
     __extended_info__ = True
-    __queryable_attributes__ = ['gwlnr', 'id', 'ext_ezg_flussgb']
-    id = Column('teilezgnr', Integer, primary_key=True)
-    gwlnr = Column('gwlnr', Unicode)
-    measure = Column('measure', Integer)
-    teilezgfla = Column('teilezgfla', Unicode)
-    ezgflaeche = Column('ezgflaeche', Unicode)
-    typ2_de = Column('typ2_de', Unicode)
-    flussgb_de = Column('flussgb_de', Unicode)
-    typ2_fr = Column('typ2_fr', Unicode)
-    flussgb_fr = Column('flussgb_fr', Unicode)
-    typ2_it = Column('typ2_it', Unicode)
-    flussgb_it = Column('flussgb_it', Unicode)
-    typ2_rm = Column('typ2_rm', Unicode)
-    flussgb_rm = Column('flussgb_rm', Unicode)
-    typ2_en = Column('typ2_en', Unicode)
-    flussgb_en = Column('flussgb_en', Unicode)
-    ext_gewiss_nr_namen_gewaesser = Column('ext_gewiss_nr_namen_gewaesser', Unicode)
-    ext_ezg_xy_gebietsauslass = Column('ext_ezg_xy_gebietsauslass', Unicode)
-    ext_gebietsauslaesse_gemeindename = Column('ext_gebietsauslaesse_gemeindename', Unicode)
-    ext_ezg_gewissnr = Column('ext_ezg_gewissnr', Integer)
-    ext_ezg_flussgb = Column('ext_ezg_flussgb', Integer)
-    ext_physiogeographie_gesamtflaeche = Column('ext_physiogeographie_gesamtflaeche', Numeric)
-    ext_physiogeographie_anteil_ch = Column('ext_physiogeographie_anteil_ch', Numeric)
-    ext_landnutzung_ant_siedlung = Column('ext_landnutzung_ant_siedlung', Numeric)
-    ext_landnutzung_ant_landwirtschaft = Column('ext_landnutzung_ant_landwirtschaft', Numeric)
-    ext_landnutzung_ant_bestockt = Column('ext_landnutzung_ant_bestockt', Numeric)
-    ext_landnutzung_ant_gewaesser = Column('ext_landnutzung_ant_gewaesser', Numeric)
-    ext_landnutzung_ant_gletscher_firn = Column('ext_landnutzung_ant_gletscher_firn', Numeric)
-    ext_landnutzung_ant_unprod_sonst = Column('ext_landnutzung_ant_unprod_sonst', Numeric)
-    ext_physiogeographie_ch_min_z = Column('ext_physiogeographie_ch_min_z', Numeric)
-    ext_physiogeographie_ch_mean_z = Column('ext_physiogeographie_ch_mean_z', Numeric)
-    ext_physiogeographie_ch_max_z = Column('ext_physiogeographie_ch_max_z', Numeric)
-    ext_abfluesse_regimetyp = Column('ext_abfluesse_regimetyp', Unicode)
-    ext_abfluesse_mqn_jahr = Column('ext_abfluesse_mqn_jahr', Numeric)
-    ext_abfluesse_mqn_jan = Column('ext_abfluesse_mqn_jan', Numeric)
-    ext_abfluesse_mqn_feb = Column('ext_abfluesse_mqn_feb', Numeric)
-    ext_abfluesse_mqn_mar = Column('ext_abfluesse_mqn_mar', Numeric)
-    ext_abfluesse_mqn_apr = Column('ext_abfluesse_mqn_apr', Numeric)
-    ext_abfluesse_mqn_mai = Column('ext_abfluesse_mqn_mai', Numeric)
-    ext_abfluesse_mqn_jun = Column('ext_abfluesse_mqn_jun', Numeric)
-    ext_abfluesse_mqn_jul = Column('ext_abfluesse_mqn_jul', Numeric)
-    ext_abfluesse_mqn_aug = Column('ext_abfluesse_mqn_aug', Numeric)
-    ext_abfluesse_mqn_sep = Column('ext_abfluesse_mqn_sep', Numeric)
-    ext_abfluesse_mqn_okt = Column('ext_abfluesse_mqn_okt', Numeric)
-    ext_abfluesse_mqn_nov = Column('ext_abfluesse_mqn_nov', Numeric)
-    ext_abfluesse_mqn_dez = Column('ext_abfluesse_mqn_dez', Numeric)
-    ext_ezg_datenausgabe = Column('ext_ezg_datenausgabe', Integer)
-    ext_abfluesse_abflussvar = Column('ext_abfluesse_abflussvar', Numeric)
+    id = Column('ezgnr', Integer, primary_key=True)
+    gewaessername = Column('gewaessername', Unicode)
+    gesamtflaeche = Column('gesamtflaeche', Float)
+    de_nebenarm = Column('de_nebenarm', Unicode)
+    fr_nebenarm = Column('fr_nebenarm', Unicode)
+    it_nebenarm = Column('it_nebenarm', Unicode)
+    en_nebenarm = Column('en_nebenarm', Unicode)
+    rm_nebenarm = Column('rm_nebenarm', Unicode)
+    min_z = Column('min_z', Float)
+    max_z = Column('max_z', Float)
+    mean_z = Column('mean_z', Float)
+    anteil_ch = Column('anteil_ch', Float)
+    as_siedlungsflaechen = Column('as_siedlungsflaechen', Float)
+    as_landwirtschaftsflaechen = Column('as_landwirtschaftsflaechen', Float)
+    as_bestockteflaechen = Column('as_bestockteflaechen', Float)
+    as_unproduktiveflaechen = Column('as_unproduktiveflaechen', Float)
+    clc_bebauteflaechen = Column('clc_bebauteflaechen', Float)
+    clc_landwirtschaft = Column('clc_landwirtschaft', Float)
+    clc_waelder = Column('clc_waelder', Float)
+    clc_feuchtflaechen = Column('clc_feuchtflaechen', Float)
+    clc_wasserflaechen = Column('clc_wasserflaechen', Float)
     the_geom = Column(Geometry2D)
-    ext_the_geom = Column('ext_the_geom', Geometry2D)
+    the_geom_ext = Column('the_geom_ext', Geometry2D)
 
 register('ch.bafu.wasser-teileinzugsgebiete_2', Teileinzugsgebiete2)
 
@@ -1209,32 +1186,22 @@ register('ch.bafu.wasser-teileinzugsgebiete_40', Teileinzugsgebiete40)
 
 
 class Gebietsauslaesse (Base, Vector):
-    __tablename__ = 'outlets'
+    __tablename__ = 'gebietsauslaesse'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasser-gebietsauslaesse'
     __template__ = 'templates/htmlpopup/gebietsauslaesse.mako'
-    __extended_info__ = True
-    __label__ = 'ezgnr'
+    __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
+    id_2 = Column('id', Integer)
     ezgnr = Column('ezgnr', Integer)
     gwlnr = Column('gwlnr', Unicode)
-    measure = Column('measure', Integer)
-    gesamtflae = Column('gesamtflae', Unicode)
-    gewaessern = Column('gewaessern', Unicode)
-    anteil_ch = Column('anteil_ch', Unicode)
-    kanal_de = Column('kanal_de', Unicode)
-    kanal_fr = Column('kanal_fr', Unicode)
-    kanal_it = Column('kanal_it', Unicode)
-    kanal_rm = Column('kanal_rm', Unicode)
-    kanal_en = Column('kanal_en', Unicode)
-    meanalt = Column('meanalt', Unicode)
-    maxalt = Column('maxalt', Unicode)
-    mq_jahr = Column('mq_jahr', Unicode)
-    feuchtflae = Column('feuchtflae', Unicode)
-    wasserflae = Column('wasserflae', Unicode)
-    bebautefl = Column('bebautefl', Unicode)
-    landwirtsc = Column('landwirtsc', Unicode)
-    wald_natur = Column('wald_natur', Unicode)
+    gewaessername = Column('gewaessername', Unicode)
+    adresse = Column('adresse', Integer)
+    de_nebenarm = Column('de_nebenarm', Unicode)
+    fr_nebenarm = Column('fr_nebenarm', Unicode)
+    it_nebenarm = Column('it_nebenarm', Unicode)
+    rm_nebenarm = Column('rm_nebenarm', Unicode)
+    en_nebenarm = Column('en_nebenarm', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasser-gebietsauslaesse', Gebietsauslaesse)
