@@ -60,6 +60,6 @@
     % endif
     <tr><td class="cell-left">${h.translate('cwm_number', lang)}</td><td>${c['attributes']['number'] or '-'}</td></tr>
     <tr><td class="cell-left">${h.translate('cwm_egris_egrid', lang)}</td><td>${c['attributes']['egris_egrid'] or '-'}</td></tr>
-    <tr><td class="cell-left">${h.translate('cwm_realestate_type'), lang}</td><td>${h.translate('cwm_realestate_type_{}'.format(c['attributes']['realestate_type']), lang if c['attributes']['realestate_type'] >=0 else 'cwm_realestate_type_default', lang)}</td></tr>
+    <tr><td class="cell-left">${h.translate('cwm_realestate_type'), lang}</td><td>${h.translate(('cwm_realestate_type_{}'.format(c['attributes']['realestate_type']) if c['attributes']['realestate_type'] >=0 else 'cwm_realestate_type_default'), lang)}</td></tr>
 </%def>
 
