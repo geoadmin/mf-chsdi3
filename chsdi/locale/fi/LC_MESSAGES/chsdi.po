@@ -2601,7 +2601,7 @@ msgid "ch.bafu.erosion-gruenland_bodenabtrag"
 msgstr "Erosionsrisiko Dauergrünland"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_apr"
-msgstr "Erosionsrisiko Dauergrünland Apr."
+msgstr "Erosionsrisiko Dauergrünland April"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_aug"
 msgstr "Erosionsrisiko Dauergrünland Aug."
@@ -2625,7 +2625,7 @@ msgid "ch.bafu.erosion-gruenland_bodenabtrag_mai"
 msgstr "Erosionsrisiko Dauergrünland Mai"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_mrz"
-msgstr "Erosionsrisiko Dauergrünland Mär."
+msgstr "Erosionsrisiko Dauergrünland März"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_nov"
 msgstr "Erosionsrisiko Dauergrünland Nov."
