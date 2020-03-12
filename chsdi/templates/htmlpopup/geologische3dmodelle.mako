@@ -8,11 +8,11 @@
     link_portal = '%s_link_portal' %lang
     %>
 
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geologische_3dmodelle.name')}</td><td>${c['attributes']['name'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geologische_3dmodelle.purpose')}</td><td>${c['attributes']['purpose'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geologische_3dmodelle.year_publication')}</td><td>${c['attributes']['year_publication'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_contracting_entity')}</td><td>${c['attributes'][contracting_entity] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_link_portal')}</td>
+    <tr><td class="cell-left">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.name', lang)}</td><td>${c['attributes']['name'] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.purpose', lang)}</td><td>${c['attributes']['purpose'] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.year_publication', lang)}</td><td>${c['attributes']['year_publication'] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.de_contracting_entity', lang)}</td><td>${c['attributes'][contracting_entity] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.de_link_portal', lang)}</td>
           % if 'http' not in c['attributes'][link_portal]:
              <td>${c['attributes'][link_portal] or '-'}</td>
           % else:
@@ -36,35 +36,35 @@
 <body onload="init()">
   <table class="table-with-border kernkraftwerke-extended">
     <tr>
-      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.name')}</td>
+      <td class="cell-meta">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.name', lang)}</td>
       <td>${c['attributes']['name'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.purpose')}</td>
+      <td class="cell-meta">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.purpose', lang)}</td>
       <td>${c['attributes']['purpose'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.content')}</td>
+      <td class="cell-meta">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.content', lang)}</td>
       <td>${c['attributes']['content'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.remarks')}</td>
+      <td class="cell-meta">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.remarks', lang)}</td>
       <td>${c['attributes']['remarks'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.year_publication')}</td>
+      <td class="cell-meta">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.year_publication', lang)}</td>
       <td>${c['attributes']['year_publication'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_contracting_entity')}</td>
+      <td class="cell-meta">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.de_contracting_entity', lang)}</td>
       <td>${c['attributes'][contracting_entity] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_author')}</td>
+      <td class="cell-meta">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.de_author', lang)}</td>
       <td>${c['attributes'][author] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_link_portal')}</td>
+      <td class="cell-meta">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.de_link_portal', lang)}</td>
           % if 'http' not in c['attributes'][link_portal]:
              <td>${c['attributes'][link_portal] or '-'}</td>
           % else:
@@ -72,7 +72,7 @@
           % endif
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_link_description')}</td>
+      <td class="cell-meta">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.de_link_description', lang)}</td>
           % if 'http' not in c['attributes'][link_description]:
              <td>${c['attributes'][link_description] or '-'}</td>
           % else:
@@ -80,7 +80,7 @@
           % endif
     </tr>
     <tr>
-      <td class="cell-meta">${_('ch.swisstopo.geologie-geologische_3dmodelle.de_link_documentation')}</td>
+      <td class="cell-meta">${h.translate('ch.swisstopo.geologie-geologische_3dmodelle.de_link_documentation', lang)}</td>
           % if 'http' not in c['attributes'][link_documentation]:
              <td>${c['attributes'][link_documentation] or '-'}</td>
           % else:

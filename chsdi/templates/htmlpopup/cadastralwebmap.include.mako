@@ -58,8 +58,8 @@
     % else:
         <tr><td class="cell-left">${h.translate('link to canton geoportal', lang)}</td><td>${h.translate('Canton has provided no link to portal', lang)}</td></tr>
     % endif
-    <tr><td class="cell-left">${_('cwm_number')}</td><td>${c['attributes']['number'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('cwm_egris_egrid')}</td><td>${c['attributes']['egris_egrid'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('cwm_realestate_type')}</td><td>${_('cwm_realestate_type_{}'.format(c['attributes']['realestate_type']) if c['attributes']['realestate_type'] >=0 else 'cwm_realestate_type_default')}</td></tr>
+    <tr><td class="cell-left">${h.translate('cwm_number', lang)}</td><td>${c['attributes']['number'] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('cwm_egris_egrid', lang)}</td><td>${c['attributes']['egris_egrid'] or '-'}</td></tr>
+    <tr><td class="cell-left">${h.translate('cwm_realestate_type'), lang}</td><td>${h.translate('cwm_realestate_type_{}'.format(c['attributes']['realestate_type']) if c['attributes']['realestate_type'] >=0 else 'cwm_realestate_type_default', lang)}</td></tr>
 </%def>
 
