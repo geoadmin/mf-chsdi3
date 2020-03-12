@@ -423,6 +423,8 @@ def _get_feature_grid(col, row, timestamp, grid, bucket_name, params):
             del feature['geometry']
         feature['layerBodId'] = layerBodId
         feature['layerName'] = translate(layerBodId, params.lang)
+    except:
+        pass
     return feature, None
 
 

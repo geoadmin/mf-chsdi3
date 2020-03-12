@@ -655,5 +655,6 @@ def sanitize_user_input_accents(string):
     # this transforms the umlauts in latin compliant version, then remove the accents entirely
     return unidecode.unidecode(remove_accents(string))
 
+
 def translate(text, lang):
     return Translator.translate(text, lang)
