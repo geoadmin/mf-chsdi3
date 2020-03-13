@@ -25,7 +25,7 @@
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata16.png",
         "label": {
-          "template": "${station_name}\n - %",
+          "template": "${station_name}\n - min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -90,7 +90,7 @@
           "width": 2
         },
         "label": {
-          "template": "${value} %",
+          "template": "${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -135,7 +135,7 @@
           "width": 2
         },
         "label": {
-          "template": "${station_name}\n ${value} %",
+          "template": "${station_name}\n ${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -200,7 +200,7 @@
           "width": 2
         },
         "label": {
-          "template": "${value} %",
+          "template": "${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -245,7 +245,7 @@
           "width": 2
         },
         "label": {
-          "template": "${station_name}\n ${value} %",
+          "template": "${station_name}\n ${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -310,7 +310,7 @@
           "width": 2
         },
         "label": {
-          "template": "${value} %",
+          "template": "${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -355,7 +355,7 @@
           "width": 2
         },
         "label": {
-          "template": "${station_name}\n ${value} %",
+          "template": "${station_name}\n ${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -420,7 +420,7 @@
           "width": 2
         },
         "label": {
-          "template": "${value} %",
+          "template": "${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -465,7 +465,7 @@
           "width": 2
         },
         "label": {
-          "template": "${station_name}\n ${value} %",
+          "template": "${station_name}\n ${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -530,7 +530,7 @@
           "width": 2
         },
         "label": {
-          "template": "${value} %",
+          "template": "${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -575,7 +575,7 @@
           "width": 2
         },
         "label": {
-          "template": "${station_name}\n ${value} %",
+          "template": "${station_name}\n ${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -640,7 +640,7 @@
           "width": 2
         },
         "label": {
-          "template": "${value} %",
+          "template": "${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -685,7 +685,7 @@
           "width": 2
         },
         "label": {
-          "template": "${station_name}\n ${value} %",
+          "template": "${station_name}\n ${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -750,7 +750,7 @@
           "width": 2
         },
         "label": {
-          "template": "${value} %",
+          "template": "${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -795,7 +795,7 @@
           "width": 2
         },
         "label": {
-          "template": "${station_name}\n ${value} %",
+          "template": "${station_name}\n ${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -860,7 +860,7 @@
           "width": 2
         },
         "label": {
-          "template": "${value} %",
+          "template": "${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -905,7 +905,7 @@
           "width": 2
         },
         "label": {
-          "template": "${station_name}\n ${value} %",
+          "template": "${station_name}\n ${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -970,7 +970,7 @@
           "width": 2
         },
         "label": {
-          "template": "${value} %",
+          "template": "${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -1015,7 +1015,7 @@
           "width": 2
         },
         "label": {
-          "template": "${station_name}\n ${value} %",
+          "template": "${station_name}\n ${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -1080,7 +1080,7 @@
           "width": 2
         },
         "label": {
-          "template": "${value} %",
+          "template": "${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -1125,7 +1125,7 @@
           "width": 2
         },
         "label": {
-          "template": "${station_name}\n ${value} %",
+          "template": "${station_name}\n ${value} min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -1175,7 +1175,7 @@
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata16.png",
         "label": {
-          "template": "${station_name}\n - %",
+          "template": "${station_name}\n - min",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
