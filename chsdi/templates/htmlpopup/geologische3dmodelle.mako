@@ -16,7 +16,7 @@
           % if 'http' not in c['attributes'][link_portal]:
              <td>${c['attributes'][link_portal] or '-'}</td>
           % else:
-             <td><a  target="_blank" href=${c['attributes'][link_portal] or '-'}>link</a></td>
+             <td><a  target="_blank" href=${c['attributes'][link_portal] or '-'}>Link</a></td>
           % endif
     </tr> 
 </%def>
@@ -68,7 +68,7 @@
           % if 'http' not in c['attributes'][link_portal]:
              <td>${c['attributes'][link_portal] or '-'}</td>
           % else:
-             <td><a  target="_blank" href=${c['attributes'][link_portal] or '-'}>link</a></td>
+             <td><a  target="_blank" href=${c['attributes'][link_portal] or '-'}>Link</a></td>
           % endif
     </tr>
     <tr>
@@ -76,7 +76,7 @@
           % if 'http' not in c['attributes'][link_description]:
              <td>${c['attributes'][link_description] or '-'}</td>
           % else:
-             <td><a  target="_blank" href=${c['attributes'][link_description] or '-'}>link</a></td>
+             <td><a  target="_blank" href=${c['attributes'][link_description] or '-'}>Link</a></td>
           % endif
     </tr>
     <tr>
@@ -84,7 +84,7 @@
           % if 'http' not in c['attributes'][link_documentation]:
              <td>${c['attributes'][link_documentation] or '-'}</td>
           % else:
-             <td><a  target="_blank" href=${c['attributes'][link_documentation] or '-'}>link</a></td>
+             <td><a  target="_blank" href=${c['attributes'][link_documentation] or '-'}>Link</a></td>
           % endif
     </tr>
   </table>
