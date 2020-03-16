@@ -40,8 +40,8 @@ class DynamoDBFilesHandler:
         item = None
         try:
             item = self.table.get_item(Key={'adminId': str(admin_id)}).get('Item', None)
-        except Exception:
-            pass
+        except Exception as e:
+            raise exc.HTTPInternalServerError('temporary error, meant to check if everything is all right. \n ' % e)
         return item
 
     def update_item_timestamp(self, admin_id, timestamp):
