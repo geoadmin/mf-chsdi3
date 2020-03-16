@@ -90,10 +90,9 @@ class S3FilesHandler:
             raise exc.HTTPInternalServerError(error_msg)
 
         try:
-            response = upload_object_to_bucket(
+            return upload_object_to_bucket(
                 self.bucket_name, file_id, mime, content_encoding,
                 data, self.default_headers['Cache-Control'])
-            log.warning(response)
 
         except Exception as e:
             error_msg = 'Error while %s S3 key (%s) %s' % (msg, file_id, e)
@@ -203,7 +202,7 @@ class FilesHandler(object):
             status = 'copied'
             self._fork()
         updated = status == 'updated'
-        self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data, updated)
+        response = self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data, updated)
         # Fetch last modified from S3 to add it to DynamoBD
         timestamp = self.s3_fileshandler.get_key_timestamp(self.file_path)
 
@@ -217,7 +216,8 @@ class FilesHandler(object):
         return {
             'adminId': self.admin_id,
             'fileId': self.file_id,
-            'status': status
+            'status': status,
+            'response': response
         }
 
     def delete_file(self):
