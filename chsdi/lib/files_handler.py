@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# TODO: remove this exact line here.
 import six
 import uuid
 import base64
@@ -90,7 +89,7 @@ class S3FilesHandler:
             raise exc.HTTPInternalServerError(error_msg)
 
         try:
-            return upload_object_to_bucket(
+            upload_object_to_bucket(
                 self.bucket_name, file_id, mime, content_encoding,
                 data, self.default_headers['Cache-Control'])
 
@@ -202,7 +201,7 @@ class FilesHandler(object):
             status = 'copied'
             self._fork()
         updated = status == 'updated'
-        response = self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data, updated)
+        self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data, updated)
         # Fetch last modified from S3 to add it to DynamoBD
         timestamp = self.s3_fileshandler.get_key_timestamp(self.file_path)
 
@@ -216,8 +215,7 @@ class FilesHandler(object):
         return {
             'adminId': self.admin_id,
             'fileId': self.file_id,
-            'status': status,
-            'response': response
+            'status': status
         }
 
     def delete_file(self):
