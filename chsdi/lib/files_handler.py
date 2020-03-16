@@ -93,7 +93,7 @@ class S3FilesHandler:
             response = upload_object_to_bucket(
                 self.bucket_name, file_id, mime, content_encoding,
                 data, self.default_headers['Cache-Control'])
-            log.info(response)
+            log.warning(response)
 
         except Exception as e:
             error_msg = 'Error while %s S3 key (%s) %s' % (msg, file_id, e)
