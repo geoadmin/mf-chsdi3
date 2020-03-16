@@ -40,8 +40,8 @@ class DynamoDBFilesHandler:
         item = None
         try:
             item = self.table.get_item(Key={'adminId': str(admin_id)}).get('Item', None)
-        except Exception as e:
-            raise exc.HTTPInternalServerError('temporary error, meant to check if everything is all right. \n ' % e)
+        except Exception:
+            pass
         return item
 
     def update_item_timestamp(self, admin_id, timestamp):
@@ -92,7 +92,7 @@ class S3FilesHandler:
         try:
             upload_object_to_bucket(
                 self.bucket_name, file_id, mime, content_encoding,
-                data, self.default_headers['Cache-Control'], replace=False)
+                data, self.default_headers['Cache-Control'], replace=replace)
         except Exception as e:
             error_msg = 'Error while %s S3 key (%s) %s' % (msg, file_id, e)
             log.error(error_msg)
