@@ -8780,6 +8780,12 @@ msgstr "Il geoide"
 msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Anomalie isostatiche 500"
 
+msgid "ch.swisstopo.geologie-geoevents_anfrage"
+msgstr "GeoEventi su richiesta"
+
+msgid "ch.swisstopo.geologie-geoevents_demnaechst"
+msgstr "Prossimi GeoEventi"
+
 msgid "ch.swisstopo.geologie-geologische_3dmodelle"
 msgstr "Modelli geologici 3D"
 
@@ -9040,6 +9046,9 @@ msgstr "Inclinazione 500"
 
 msgid "ch.swisstopo.geologie-geophysik-totalintensitaet"
 msgstr "Intensità campo magnetico 500"
+
+msgid "ch.swisstopo.geologie-geosites"
+msgstr "Geositi"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk200"
 msgstr "Carta geotecnica 200"
