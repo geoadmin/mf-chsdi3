@@ -90,9 +90,11 @@ class S3FilesHandler:
             raise exc.HTTPInternalServerError(error_msg)
 
         try:
-            upload_object_to_bucket(
+            response = upload_object_to_bucket(
                 self.bucket_name, file_id, mime, content_encoding,
                 data, self.default_headers['Cache-Control'])
+            log.info(response)
+
         except Exception as e:
             error_msg = 'Error while %s S3 key (%s) %s' % (msg, file_id, e)
             log.error(error_msg)
@@ -200,17 +202,17 @@ class FilesHandler(object):
             # In case the file already exist, we create a fork
             status = 'copied'
             self._fork()
-        forked = status == 'copied'
-        self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data, not forked)
+        updated = status == 'updated'
+        self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data, updated)
         # Fetch last modified from S3 to add it to DynamoBD
         timestamp = self.s3_fileshandler.get_key_timestamp(self.file_path)
 
-        if forked:
-            # Save new entry to DynamoDB
-            self.dynamodb_fileshandler.save_item(self.admin_id, self.file_id, timestamp)
-        else:
+        if updated:
             # Simply update the timestamp
             self.dynamodb_fileshandler.update_item_timestamp(self.admin_id, timestamp)
+        else:
+            # Save new entry to DynamoDB
+            self.dynamodb_fileshandler.save_item(self.admin_id, self.file_id, timestamp)
 
         return {
             'adminId': self.admin_id,

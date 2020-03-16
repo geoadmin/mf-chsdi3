@@ -105,8 +105,8 @@ def delete_file_in_bucket(bucket_name, file_name):
 
 
 def upload_object_to_bucket(bucket_name, file_id, mime, content_encoding, data, cache_control):
-    delete_file_in_bucket(bucket_name, file_id)
-    return s3_connection.get().put_object(
+    conn = s3_connection.get()
+    return conn.put_object(
         Body=data,
         Key=file_id,
         ContentType=mime,
