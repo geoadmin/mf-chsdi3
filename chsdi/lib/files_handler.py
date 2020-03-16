@@ -82,7 +82,7 @@ class S3FilesHandler:
             return time.strftime('%Y-%m-%d %X', time.localtime())
 
     def save_object(self, file_id, mime, content_encoding, data, replace=False):
-        msg = 'configuring' if replace else 'updating'
+        msg = 'configuring' if not replace else 'updating'
         # Python2/3
         if data is None:
             error_msg = 'Error while saving %s S3 key (%s): file is empty' % (msg, file_id)
@@ -92,7 +92,7 @@ class S3FilesHandler:
         try:
             upload_object_to_bucket(
                 self.bucket_name, file_id, mime, content_encoding,
-                data, self.default_headers['Cache-Control'], replace=replace)
+                data, self.default_headers['Cache-Control'])
         except Exception as e:
             error_msg = 'Error while %s S3 key (%s) %s' % (msg, file_id, e)
             log.error(error_msg)

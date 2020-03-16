@@ -104,13 +104,7 @@ def delete_file_in_bucket(bucket_name, file_name):
                                   Key=file_name)
 
 
-def upload_object_to_bucket(bucket_name, file_id, mime, content_encoding, data, cache_control, replace=False):
-    if not replace:
-        try:
-            get_file_from_bucket(bucket_name, file_id)
-            return None
-        except Exception:
-            pass
+def upload_object_to_bucket(bucket_name, file_id, mime, content_encoding, data, cache_control):
     return s3_connection.get().put_object(
         Body=data,
         Key=file_id,
