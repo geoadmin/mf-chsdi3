@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import six
 import uuid
 import base64
@@ -82,7 +81,7 @@ class S3FilesHandler:
             return time.strftime('%Y-%m-%d %X', time.localtime())
 
     def save_object(self, file_id, mime, content_encoding, data, replace=False):
-        msg = 'configuring' if replace else 'updating'
+        msg = 'configuring' if not replace else 'updating'
         # Python2/3
         if data is None:
             error_msg = 'Error while saving %s S3 key (%s): file is empty' % (msg, file_id)
@@ -92,7 +91,8 @@ class S3FilesHandler:
         try:
             upload_object_to_bucket(
                 self.bucket_name, file_id, mime, content_encoding,
-                data, self.default_headers['Cache-Control'], replace=False)
+                data, self.default_headers['Cache-Control'])
+
         except Exception as e:
             error_msg = 'Error while %s S3 key (%s) %s' % (msg, file_id, e)
             log.error(error_msg)
@@ -200,17 +200,17 @@ class FilesHandler(object):
             # In case the file already exist, we create a fork
             status = 'copied'
             self._fork()
-        forked = status == 'copied'
-        self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data, not forked)
+        updated = status == 'updated'
+        self.s3_fileshandler.save_object(self.file_path, mime, content_encoding, data, updated)
         # Fetch last modified from S3 to add it to DynamoBD
         timestamp = self.s3_fileshandler.get_key_timestamp(self.file_path)
 
-        if forked:
-            # Save new entry to DynamoDB
-            self.dynamodb_fileshandler.save_item(self.admin_id, self.file_id, timestamp)
-        else:
+        if updated:
             # Simply update the timestamp
             self.dynamodb_fileshandler.update_item_timestamp(self.admin_id, timestamp)
+        else:
+            # Save new entry to DynamoDB
+            self.dynamodb_fileshandler.save_item(self.admin_id, self.file_id, timestamp)
 
         return {
             'adminId': self.admin_id,
