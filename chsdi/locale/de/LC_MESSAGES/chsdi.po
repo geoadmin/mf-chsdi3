@@ -4994,39 +4994,6 @@ msgstr "Wasserflächen"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.de_nebenarm"
 msgstr "Hinweis"
 
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
-msgstr "Flächenanteil Gesamt-EZG % CH"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_bestockteflaechen"
-msgstr "Bestockte Flächen"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_landwirtschaftsflaechen"
-msgstr "Landwirtschaftsflächen"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_siedlungsflaechen"
-msgstr "Siedlungsflächen"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_unproduktiveflaechen"
-msgstr "Unproduktive Flächen"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_bebauteflaechen"
-msgstr "Bebaute Flächen"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_feuchtflaechen"
-msgstr "Feuchtflächen"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_landwirtschaft"
-msgstr "Landwirtschaft"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_waelder"
-msgstr "Wälder und naturnahe Flächen"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_wasserflaechen"
-msgstr "Wasserflächen"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.de_nebenarm"
-msgstr "Hinweis"
-
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
 msgstr "Flussgebietsname"
 
@@ -5071,27 +5038,6 @@ msgstr "Teileinzugsgebiete 40 km²"
 
 msgid "ch.bafu.wasser-vorfluter"
 msgstr "Vorfluterabschnitte"
-
-msgid "ch.bafu.wasser-vorfluter.ezgnr"
-msgstr "Gesamteinzugsgebiets-Nummer"
-
-msgid "ch.bafu.wasser-vorfluter.gewaessername"
-msgstr "Gewässername"
-
-msgid "ch.bafu.wasser-vorfluter.gwlnr"
-msgstr "Gewässerlaufnummer"
-
-msgid "ch.bafu.wasser-vorfluter.id"
-msgstr "Identifikator Vorfluterabschnitt"
-
-msgid "ch.bafu.wasser-vorfluter.nebenarm"
-msgstr "Gewässertyp"
-
-msgid "ch.bafu.wasser-vorfluter.oberesende"
-msgstr "Endadresse (’Gewässerkilometer’)"
-
-msgid "ch.bafu.wasser-vorfluter.unteresende"
-msgstr "Anfangsadresse (’Gewässerkilometer’)"
 
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "Gesamteinzugsgebiets-Nummer"

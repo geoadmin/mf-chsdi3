@@ -4994,39 +4994,6 @@ msgstr "Surfaces en eau"
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.de_nebenarm"
 msgstr "Indication"
 
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
-msgstr "Pourcentage CH de la surface du BV entier"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_bestockteflaechen"
-msgstr "Surfaces boisées"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_landwirtschaftsflaechen"
-msgstr "Surfaces agricoles"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_siedlungsflaechen"
-msgstr "Surfaces d'habitat"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.as_unproduktiveflaechen"
-msgstr "Surfaces improductives"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_bebauteflaechen"
-msgstr "Territoires artificialisés"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_feuchtflaechen"
-msgstr "Zones humides"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_landwirtschaft"
-msgstr "Territoires agricoles"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_waelder"
-msgstr "Forêts et milieux semi-naturels"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.clc_wasserflaechen"
-msgstr "Surfaces en eau"
-
-msgid "ch.bafu.wasser-teileinzugsgebiete_2.de_nebenarm"
-msgstr "Indication"
-
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.ext_ezg_flussgb"
 msgstr "Nom du bassin fluvial"
 
@@ -5071,27 +5038,6 @@ msgstr "Bassins versants partiels 40km²"
 
 msgid "ch.bafu.wasser-vorfluter"
 msgstr "Tronçons d'effluents"
-
-msgid "ch.bafu.wasser-vorfluter.ezgnr"
-msgstr "N° du bassin versant complet"
-
-msgid "ch.bafu.wasser-vorfluter.gewaessername"
-msgstr "Nom du cours d’eau"
-
-msgid "ch.bafu.wasser-vorfluter.gwlnr"
-msgstr "N° du cours d’eau"
-
-msgid "ch.bafu.wasser-vorfluter.id"
-msgstr "Identificateur du tronçon d'effluent"
-
-msgid "ch.bafu.wasser-vorfluter.nebenarm"
-msgstr "Type de cours d'eau"
-
-msgid "ch.bafu.wasser-vorfluter.oberesende"
-msgstr "Adresse d’arrivée (kilométrage d’eau)"
-
-msgid "ch.bafu.wasser-vorfluter.unteresende"
-msgstr "Adresse de départ (kilométrage d’eau)"
 
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "N° du bassin versant complet"
