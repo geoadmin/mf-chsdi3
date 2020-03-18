@@ -941,6 +941,21 @@ msgstr "Agglomerationen und isolierte Städte"
 msgid "ch.are.agglomerationsverkehr"
 msgstr "Beitragsberechtigte Städte und Agglomerationen"
 
+msgid "ch.are.agglomerationsverkehr.agglo_name"
+msgstr "Agglomerationsname"
+
+msgid "ch.are.agglomerationsverkehr.agglo_no"
+msgstr "Agglomerationscode"
+
+msgid "ch.are.agglomerationsverkehr.gem_no"
+msgstr "Gemeindenummer"
+
+msgid "ch.are.agglomerationsverkehr.land"
+msgstr "Land"
+
+msgid "ch.are.agglomerationsverkehr.name"
+msgstr "Gemeindename"
+
 msgid "ch.are.alpenkonvention"
 msgstr "Alpenkonvention"
 
@@ -8780,6 +8795,12 @@ msgstr "Das Geoid"
 msgid "ch.swisstopo.geologie-geodaesie-isostatische_anomalien"
 msgstr "Isostatische Anomalien 500"
 
+msgid "ch.swisstopo.geologie-geoevents_anfrage"
+msgstr "GeoEvents auf Anfrage"
+
+msgid "ch.swisstopo.geologie-geoevents_demnaechst"
+msgstr "GeoEvents demnächst"
+
 msgid "ch.swisstopo.geologie-geologische_3dmodelle"
 msgstr "Geologische 3D-Modelle"
 
@@ -9040,6 +9061,9 @@ msgstr "Inklination 500"
 
 msgid "ch.swisstopo.geologie-geophysik-totalintensitaet"
 msgstr "Magnetfeldstärke 500"
+
+msgid "ch.swisstopo.geologie-geosites"
+msgstr "Geosites"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk200"
 msgstr "Geotechnische Karte 200"
