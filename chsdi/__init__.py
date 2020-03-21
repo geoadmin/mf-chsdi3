@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import os
+import six
 from pyramid.config import Configurator
 from pyramid.events import BeforeRender, NewRequest
 from chsdi.subscribers import add_localizer, add_renderer_globals
@@ -50,6 +52,14 @@ def main(global_config, **settings):
     settings['app_version'] = app_version
     config = Configurator(settings=settings)
     config.include('pyramid_mako')
+
+    # OpenApi3
+    if six.PY3:
+        config.include("pyramid_openapi3")
+        config.pyramid_openapi3_spec(
+            os.path.join(os.path.dirname(__file__), "openapi.yaml"),
+            route='/api/v1/openapi.yaml'
+        )
 
     # configure 'locale' dir as the translation dir for chsdi app
     config.add_translation_dirs('chsdi:locale/')
@@ -149,7 +159,8 @@ def main(global_config, **settings):
     config.add_static_view('examples', 'chsdi:static/doc/examples')
     config.add_static_view('vectorStyles', 'chsdi:static/vectorStyles')
     # keep this the last one
-    config.add_static_view('/', 'chsdi:static/doc/build')
+    config.pyramid_openapi3_add_explorer(route="/api/")
+    config.add_static_view('/doc', 'chsdi:static/doc/build')
 
     # required to find code decorated by view_config
     config.scan(ignore=['chsdi.tests', 'chsdi.models.bod'])

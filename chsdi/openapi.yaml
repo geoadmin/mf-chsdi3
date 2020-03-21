@@ -1,0 +1,268 @@
+openapi: "3.0.0"
+info:
+  version: "1.0.0"
+  title: GeoAdmin API
+paths:
+  /rest/services/api/MapServer/{layerBodId}:
+    get:
+      summary: attributes names that are specific to a layer.
+      operationId: getLayerAttributes
+      tags:
+        - layer
+      parameters:
+        - name: layerBodId
+          in: path
+          required: true
+          description: The bodId of the layer
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returning an object with layer's attributes
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LayerAttributes"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+                
+  /rest/services/api/MapServer/{layerBodId}/legend:
+    get:
+      summary: legend (image) to a to layer
+      operationId: getLegend
+      tags:
+        - legend
+      parameters:
+        - name: layerBodId
+          in: path
+          required: true
+          description: The bodId of the layer
+          schema:
+            type: string
+        - name: lang
+          in: query
+          required: false
+          description: the desidered language (de, fr, it , rm, en)
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returning an object with layer's attributes
+          content:
+            text/html:
+              schema:
+                 type: string
+            
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+                
+  /rest/services/{mapId}/MapServer/identify:
+    get:
+      summary: attributes names that are specific to a layer.
+      operationId: identifyFeature
+      tags:
+        - layer
+      parameters:
+        - name: mapId
+          in: path
+          required: true
+          description: The mapId (normally, 'api')
+          schema:
+            type: string
+          example: api
+        - in: query
+          name: geometry
+          description: The geometry to identify on. The geometry is specified by the geometry type. This parameter is specified as a separated list of coordinates. The simple syntax (comma separated list of coordinates) and the complex one can be used. (ESRI syntax for geometries)
+          required: true
+          schema:
+            type: string
+          example: '{"paths":[[[675000,245000],[660000,260000],[620000,250000]]]}'
+        - name: geometryType
+          description: The type of geometry to identify on (esriGeometry)
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - esriGeometryPoint
+              - esriGeometryPolyline
+              - esriGeometryPolygon
+              - esriGeometryEnvelope
+          example: esriGeometryPolyline
+        - name: layers
+          description: 'The layers to perform the identify operation on. Per default query all the layers in the GeoAdmin API. Notation: all:"comma separated list of technical layer names"'
+          in: query
+          required: false
+          schema:
+            type: string
+          example: all:ch.bafu.bundesinventare-bln
+        - name: imageDisplay
+          in: query
+          schema:
+            type: string
+          example: 500,600,96
+        - name: mapExtent
+          description: The extent of the map. (minx, miny, maxx, maxy). Optional if tolereance=0. Default to The mapExtent and the imageDisplay parameters are used by the server to calculate the 0,0,0,0
+          in: query
+          required: false
+          style: form
+          explode: false
+          schema:
+            type: string
+          example: 548945.5,147956,549402,148103.5
+        - name: returnGeometry
+          description: This parameter defines whether the geometry is returned or not. Default to “true”.
+          in: query
+          required: false
+          schema:
+            type: boolean
+            default: true
+        - name: tolerance
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 0
+        - name: geometryFormat
+          in: query
+          schema:
+            type: string
+            enum:
+              - geojson
+              - esrijson
+        - name: offset
+          description: Offset for the first record (if more than 50 records)
+          in: query
+          schema:
+            type: integer
+        - name: sr
+          description: 'The spatial reference, for both the input and the ouput. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84) and 3857 (Web Pseudo-Mercator). Defaults to “21781”.'
+          in: query
+          required: false
+          example: 21781
+          schema:
+            type: integer
+            enum:
+              - 21781
+              - 4326
+              - 3057
+              - 2056
+              
+        - name: lang
+          description: The language for descriptions and attributes (not everything is translated)
+          in: query
+          schema:
+            type: string
+            enum:
+              - de
+              - fr
+              - it
+              - rm
+              - en
+        - name: layerDefs
+          description: Filter features with an expression.
+          in: query
+          required: false
+          schema:
+            type: object
+        - name: callback
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returning an object with layer's attributes
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LayerAttributes"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+                
+components:
+  schemas:
+    esriGeometryEnvelope:
+      type: object
+      required:
+        - xmin
+        - ymin
+        - xmax
+        - ymax
+      properties:
+        xmin:
+          type: number
+          format: double
+        ymin:
+          type: number
+          format: double
+        xmax:
+          type: number
+          format: double
+        ymax:
+          type: number
+          format: double
+        wkid:
+           $ref: '#/components/schemas/spatialReference'
+    esriGeometryPoint:
+      type: object
+      required:
+        - x
+        - y
+      properties:
+        x:
+          type: number
+          format: double
+        y:
+          type: number
+          format: double
+        wkid:
+           $ref: '#/components/schemas/spatialReference'
+    spatialReference:
+      type: object
+      required:
+        - wkid
+      properties:
+         wkid:
+            type: integer
+            format: int32
+
+    Error:
+      type: object
+      required:
+        - code
+        - status
+        - detail
+      properties:
+        code:
+          type: integer
+          format: int32
+        status:
+          type: string
+        detail:
+          type: string
+    LayerAttributes:
+      type: object
+      required:
+        - fields
+        - id
+        - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        fields:
+          type: object
