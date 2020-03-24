@@ -941,6 +941,21 @@ msgstr "Agglomérations et villes isolées"
 msgid "ch.are.agglomerationsverkehr"
 msgstr "Villes et agglomérations ayant droit aux contributions"
 
+msgid "ch.are.agglomerationsverkehr.agglo_name"
+msgstr "Nom d’agglomération"
+
+msgid "ch.are.agglomerationsverkehr.agglo_no"
+msgstr "Code d’agglomération"
+
+msgid "ch.are.agglomerationsverkehr.gem_no"
+msgstr "Numéro de commune"
+
+msgid "ch.are.agglomerationsverkehr.land"
+msgstr "Pays"
+
+msgid "ch.are.agglomerationsverkehr.name"
+msgstr "Nom de commune"
+
 msgid "ch.are.alpenkonvention"
 msgstr "Convention des Alpes"
 
@@ -986,6 +1001,12 @@ msgstr "Densité de l`emploi 2008"
 msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Densité de population 2000"
 
+msgid "ch.are.erreichbarkeit-miv"
+msgstr "Accessibilité route"
+
+msgid "ch.are.erreichbarkeit-oev"
+msgstr "Accessibilité TP"
+
 msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Typologie des communes ARE"
 
@@ -1000,6 +1021,12 @@ msgstr "ARE + canton"
 
 msgid "ch.are.landschaftstypen"
 msgstr "Typologie des paysages suisses"
+
+msgid "ch.are.reisezeit-agglomerationen-miv"
+msgstr "Temps de parcours aux agglos route"
+
+msgid "ch.are.reisezeit-agglomerationen-oev"
+msgstr "Temps de parcours aux agglos en TP"
 
 msgid "ch.are.reisezeit-miv"
 msgstr "Temps de parcours en TIM"
