@@ -941,6 +941,21 @@ msgstr "Agglomeration and isolated cities"
 msgid "ch.are.agglomerationsverkehr"
 msgstr "Beitragsberechtigte Städte und Agglomerationen"
 
+msgid "ch.are.agglomerationsverkehr.agglo_name"
+msgstr "Agglomerationsname"
+
+msgid "ch.are.agglomerationsverkehr.agglo_no"
+msgstr "Agglomerationscode"
+
+msgid "ch.are.agglomerationsverkehr.gem_no"
+msgstr "Gemeindenummer"
+
+msgid "ch.are.agglomerationsverkehr.land"
+msgstr "Land"
+
+msgid "ch.are.agglomerationsverkehr.name"
+msgstr "Gemeindename"
+
 msgid "ch.are.alpenkonvention"
 msgstr "Alpine Convention"
 
@@ -986,6 +1001,12 @@ msgstr "Density of employment 2008"
 msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Population density 2000"
 
+msgid "ch.are.erreichbarkeit-miv"
+msgstr "Erreichbarkeit Strasse"
+
+msgid "ch.are.erreichbarkeit-oev"
+msgstr "Erreichbarkeit ÖV"
+
 msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Typology of municipalities ARE"
 
@@ -1000,6 +1021,12 @@ msgstr "ARE + canton"
 
 msgid "ch.are.landschaftstypen"
 msgstr "Landscape typology of Switzerland"
+
+msgid "ch.are.reisezeit-agglomerationen-miv"
+msgstr "Reisezeit zu Agglos Strasse"
+
+msgid "ch.are.reisezeit-agglomerationen-oev"
+msgstr "Reisezeit zu Agglos ÖV"
 
 msgid "ch.are.reisezeit-miv"
 msgstr "Time of travel IMT"
