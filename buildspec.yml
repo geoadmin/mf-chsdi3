@@ -87,7 +87,7 @@ phases:
       - echo SHELL=${SHELL}
       - echo USE_PYTHON3=${USE_PYTHON3}
       - echo "===========POSGRESQL========================"
-      - pg_isready -h ${DBHOST} -p ${DBPORT}
+      - python ./scripts/pg_ready.py
       - echo "============================================"
   build:
     commands:
