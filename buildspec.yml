@@ -32,7 +32,7 @@ env:
     CACHE_CONTROL: no-cache
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
   parameter-store:
-    OPENTRANS_API_KEY: "/terraform-codepipeline-example/opentrans_api_key"
+    OPENTRANS_API_KEY: "/opentrans_api/key"
 
 phases:
   install:
