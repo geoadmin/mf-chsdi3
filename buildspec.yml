@@ -8,7 +8,7 @@ env:
     ALTI_URL: //service-alti.dev.bgdi.ch
     API_URL: //mf-chsdi3.dev.bgdi.ch
     SHOP_URL: //shop-bgdi.dev.bgdi.ch
-    DBHOST: 10.220.12.37
+    DBHOST: 10.220.12.26
     DBPORT: 5432
     DBSTAGING: dev
     DEPLOY_TARGET: dev
