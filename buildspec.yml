@@ -8,7 +8,7 @@ env:
     ALTI_URL: //service-alti.dev.bgdi.ch
     API_URL: //mf-chsdi3.dev.bgdi.ch
     SHOP_URL: //shop-bgdi.dev.bgdi.ch
-    DBHOST: pg-sandbox.bgdi.ch
+    DBHOST: 10.220.12.37
     DBPORT: 5432
     DBSTAGING: dev
     DEPLOY_TARGET: dev
@@ -86,7 +86,9 @@ phases:
       - echo BASH=${BASH}
       - echo SHELL=${SHELL}
       - echo USE_PYTHON3=${USE_PYTHON3}
-      - echo "==================================="
+      - echo "===========POSGRESQL========================"
+      - pg_isready -h ${DBHOST} -p ${DBPORT}
+      - echo "============================================"
   build:
     commands:
       - echo Build started on $(date)
@@ -103,4 +105,5 @@ phases:
       - echo Testing...
       - make lint
       - .venv/bin/nosetests   tests/functional/
+      - .venv/bin/nosetests   tests/integration/
       - echo "Doing nothing, but great success"
