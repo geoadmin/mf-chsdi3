@@ -90,6 +90,7 @@ phases:
       - echo USE_PYTHON3=${USE_PYTHON3}
       - echo "===========POSGRESQL========================"
       - python ./scripts/pg_ready.py
+      - hostname -I
       - echo "============================================"
   build:
     commands:
