@@ -105,5 +105,6 @@ phases:
       - echo Testing...
       - make lint
       - .venv/bin/nosetests   tests/functional/
-      - .venv/bin/nosetests   tests/integration/
+      - echo "Running a single test"
+      - .venv/bin/nosetests tests/integration/test_identify_service.py:TestIdentifyService.test_identify_trivia
       - echo "Doing nothing, but great success"
