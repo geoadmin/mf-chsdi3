@@ -33,6 +33,8 @@ env:
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
   parameter-store:
     OPENTRANS_API_KEY: "/opentrans_api/key"
+    PGUSER: "/postgresql/pguser"
+    PGPASSWORD: "/postgresql/pgpassword"
 
 phases:
   install:
