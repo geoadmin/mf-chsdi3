@@ -23,6 +23,8 @@ from chsdi.models.grid import get_grid_spec
 if six.PY3:
     long = int
 
+DO_S3_TESTS = int(os.environ.get('S3_TESTS', 1)) == 1
+
 
 class TestLayerService(TestsBase):
     def test_one(self):
@@ -85,7 +87,9 @@ class LayersChecker(object):
 
     def ilayersAllModels(self):
         for layer in self.ilayers(tooltip=True, geojson=False):
-            gridSpec = get_grid_spec(layer)
+            gridSpec = None
+            if DO_S3_TESTS:
+                gridSpec = get_grid_spec(layer)
             if gridSpec is None and layer not in self.emptyGeoTables:
                 models = models_from_bodid(layer)
                 assert (models is not None and len(models) > 0), layer
