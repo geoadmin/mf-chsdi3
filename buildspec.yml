@@ -111,14 +111,14 @@ phases:
       - echo "==========Running functional tests=============="
       - .venv/bin/nosetests   tests/functional/
       - echo "==========Running integration tests=============="
-      - .venv/bin/nosetests tests/integration/test_admin.py
+      - # .venv/bin/nosetests tests/integration/test_admin.py
       - .venv/bin/nosetests tests/integration/test_cache_update.py
       - .venv/bin/nosetests tests/integration/test_catalog.py
       - .venv/bin/nosetests tests/integration/test_checker.py
       - .venv/bin/nosetests tests/integration/test_color.py
       - .venv/bin/nosetests tests/integration test_doc.py
       - .venv/bin/nosetests tests/integration/test_features_service.py
-      - .venv/bin/nosetests tests/integration/test_file_storage.py
+      - # .venv/bin/nosetests tests/integration/test_file_storage.py
       - .venv/bin/nosetests tests/integration/test_glstyles_storage.py
       - .venv/bin/nosetests tests/integration/test_historicalmaps.py
       - .venv/bin/nosetests tests/integration/test_identify_service.py
@@ -129,7 +129,7 @@ phases:
       - .venv/bin/nosetests tests/integration/test_opentransapi.py
       - .venv/bin/nosetests tests/integration/test_qrcode.py
       - .venv/bin/nosetests tests/integration/test_search.py
-      - .venv/bin/nosetests tests/integration/test_shortener.py
+      - # .venv/bin/nosetests tests/integration/test_shortener.py
       - .venv/bin/nosetests tests/integration/test_sitemap.py
       - .venv/bin/nosetests tests/integration/test_sphinxapi.py
       - .venv/bin/nosetests tests/integration/test_stationboard.py
