@@ -5861,6 +5861,9 @@ msgstr "Stockwerk des Ermittlungspunkts"
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.lr_night"
 msgstr "Eff. Immissionspegel Nacht [dB(A)]"
 
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.receptor"
+msgstr "Punkt Nr."
+
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
 msgstr "Railway noise, act. immissions D"
 
@@ -5878,6 +5881,9 @@ msgstr "Stockwerk des Ermittlungspunkts"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.lr_day"
 msgstr "Eff. Immissionspegel Tag [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.receptor"
+msgstr "Punkt Nr."
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Railway noise (fixed) N emissions"

@@ -5861,6 +5861,9 @@ msgstr "Piano di punto di determinazione"
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.lr_night"
 msgstr "Immissione eff. notte  [dB(A)]"
 
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.receptor"
+msgstr "Punto no."
+
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
 msgstr "Rumore dei treni, Immissioni eff. G"
 
@@ -5878,6 +5881,9 @@ msgstr "Piano di punto di determinazione"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.lr_day"
 msgstr "Immissione eff. giorno  [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.receptor"
+msgstr "Punto no."
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Rumore dei treni, emissioni N stab."

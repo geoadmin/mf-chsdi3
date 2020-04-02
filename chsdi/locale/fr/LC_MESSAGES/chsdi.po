@@ -5861,6 +5861,9 @@ msgstr "Etage du point de détermination"
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.lr_night"
 msgstr "Immission eff. nuit [dB(A)]"
 
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.receptor"
+msgstr "Point no."
+
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
 msgstr "Bruit ferrov., immissions eff. J"
 
@@ -5878,6 +5881,9 @@ msgstr "Etage du point de détermination"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.lr_day"
 msgstr "Immission eff. jour [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.receptor"
+msgstr "Point no."
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Bruit ferrov., émissions fixées N"

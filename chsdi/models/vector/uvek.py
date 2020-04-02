@@ -2721,6 +2721,7 @@ class LaermBelastungEisenbahnEffektiveImmissionen:
     en_operation_status = Column('en_operation_status', Unicode)
     rm_operation_status = Column('rm_operation_status', Unicode)
     floor = Column('floor', Unicode)
+    receptor = Column('receptor', Unicode)
     the_geom = Column(Geometry2D)
 
 
