@@ -119,7 +119,7 @@ phases:
       - .venv/bin/nosetests tests/integration/test_doc.py
       - .venv/bin/nosetests tests/integration/test_features_service.py
       - # .venv/bin/nosetests tests/integration/test_file_storage.py
-      - .venv/bin/nosetests tests/integration/test_glstyles_storage.py
+      - # .venv/bin/nosetests tests/integration/test_glstyles_storage.py
       - .venv/bin/nosetests tests/integration/test_historicalmaps.py
       - .venv/bin/nosetests tests/integration/test_identify_service.py
       - .venv/bin/nosetests tests/integration/test_layers.py
