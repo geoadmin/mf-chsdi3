@@ -111,7 +111,6 @@ phases:
       - echo "==========Running functional tests=============="
       - .venv/bin/nosetests   tests/functional/
       - echo "==========Running integration tests=============="
-      - .venv/bin/nosetests   tests/integration/
       - .venv/bin/nosetests tests/integrations/test_admin.py
       - .venv/bin/nosetests tests/integration/test_cache_update.py
       - .venv/bin/nosetests tests/integration/test_catalog.py
