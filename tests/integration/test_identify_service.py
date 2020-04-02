@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from unittest import skip
+import os
+from unittest import skip, skipUnless
 from tests.integration import TestsBase, shift_to_lv95, reproject_to_srid
 import math
 from shapely.geometry import shape, Point, box
+
+
+S3_TESTS = os.environ.get('S3_TESTS', True)
 
 accept_headers = {'Accept': 'application/json, text/plain, */*'}
 
@@ -348,6 +352,7 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/json')
 
+    @skipUnless(S3_TESTS, "test requires AWS S3 access")
     def test_identify_valid_on_grid(self):
         params = {'geometry': '555000,171125',
                   'geometryFormat': 'geojson',
@@ -369,6 +374,7 @@ class TestIdentifyService(TestsBase):
         self.assertGeojsonFeature(resp_2.json['results'][0], 2056)
         self.assertEqual(resp.json['results'][0]['id'], resp_2.json['results'][0]['id'])
 
+    @skipUnless(S3_TESTS, "test requires AWS S3 access")
     def test_identify_valid_envelope_on_grid(self):
         params = {'geometry': '555000,171125,556000,172125',
                   'geometryFormat': 'geojson',
