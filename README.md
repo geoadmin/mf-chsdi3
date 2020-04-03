@@ -165,6 +165,13 @@ To run against your private environment:
 To execute all tests, including _wmts_ and _varnish_ ones, which are deactivated by default:
 `scripts/nose_run.sh -a`
 
+### Deactivate some tests
+
+You may deactivate tests requiring access to `DynamoDB`, 'AWS S3' or the 'Sphinx server', by 
+setting the following environmental variables to `0`
+
+    DYNAMODB_TESTS=0 SPHINX_TESTS=0 S3_TESTS=0 make test
+
 ## Checker
 
 Apache/WSGI checker
