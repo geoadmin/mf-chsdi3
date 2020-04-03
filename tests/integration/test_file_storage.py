@@ -2,7 +2,7 @@
 
 import os
 import six
-from tests.integration import TestsBase
+from tests.integration import TestsBase, s3_tests, dynamodb_tests
 
 
 WRONG_CONTENT_TYPE = 'nasty type'
@@ -95,6 +95,8 @@ blabla random text blabla
 class TestFileView(TestsBase):
 
     def setUp(self):
+        if not s3_tests or not dynamodb_tests:
+            self.skipTest("Service files requires access both to AWS S3 and DynamoDB")
         super(TestFileView, self).setUp()
         self.headers = {'Content-Type': 'application/vnd.google-earth.kml+xml',
                         'X-SearchServer-Authorized': 'true'}

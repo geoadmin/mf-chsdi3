@@ -1,10 +1,14 @@
 # -*- coding: utf-8  -*-
 
-from tests.integration import TestsBase
+from tests.integration import TestsBase, sphinx_tests
 from chsdi.lib.sphinxapi import sphinxapi
 
 
 class Test_SphinxApi(TestsBase):
+
+    def setUp(self):
+        if not sphinx_tests:
+            self.skipTest("Service search requires access to the sphinx server")
 
     def _callFUT(self):
         api = sphinxapi.SphinxClient()

@@ -2,7 +2,7 @@
 
 
 import json
-from tests.integration import TestsBase
+from tests.integration import TestsBase, s3_tests, dynamodb_tests
 
 
 GL_STYLE = {
@@ -53,6 +53,8 @@ def to_utf8(data):
 class TestGLStylesView(TestsBase):
 
     def setUp(self):
+        if not s3_tests or not dynamodb_tests:
+            self.skipTest("Service GLStyles requires access both to AWS S3 and DynamoDB")
         super(TestGLStylesView, self).setUp()
         self.headers = {'Content-Type': 'application/json',
                         'X-SearchServer-Authorized': 'true'}

@@ -1,13 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import os
 from unittest import skipUnless
-from tests.integration import TestsBase
+from tests.integration import TestsBase, dynamodb_tests
 from chsdi.views.qrcode_generator import _shorten_url
 from pyramid import testing
-
-
-DO_S3_TESTS = int(os.environ.get('S3_TESTS', 1)) == 1
 
 
 class TestQRCodeView(TestsBase):
@@ -19,7 +15,7 @@ class TestQRCodeView(TestsBase):
     def test_qrcode_badurl(self):
         self.testapp.get('/qrcodegenerator', params={'url': 'http://dummy.com'}, status=400)
 
-    @skipUnless(DO_S3_TESTS, "Requires AWS DynamoDB access")
+    @skipUnless(dynamodb_tests, "Requires AWS DynamoDB access")
     def test_shorten_url(self):
         url = 'https://map.geo.admin.ch/?topic=ech&lang=fr&bgLayer=ch.swisstopo.pixelkarte-farbe&' + \
               'layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bafu.wrz-wildruhezonen_portal,' + \

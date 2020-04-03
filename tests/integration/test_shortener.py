@@ -2,12 +2,16 @@
 
 import time
 from random import randint
-from tests.integration import TestsBase
+from tests.integration import TestsBase, dynamodb_tests
 
 
 class TestShortenerView(TestsBase):
+    def setUp(self):
+        if not not dynamodb_tests:
+            self.skipTest("Service shortener requires access to AWS DynamoDB")
 
     # 1 read capacity unit = 4 KB read capacity per second
+
     def tearDown(self):
         time.sleep(randint(1, 10))
 
