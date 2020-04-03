@@ -7,8 +7,9 @@ from tests.integration import TestsBase, dynamodb_tests
 
 class TestShortenerView(TestsBase):
     def setUp(self):
-        if not not dynamodb_tests:
+        if not dynamodb_tests:
             self.skipTest("Service shortener requires access to AWS DynamoDB")
+        super(TestShortenerView, self).setUp()
 
     # 1 read capacity unit = 4 KB read capacity per second
 
