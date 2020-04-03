@@ -127,7 +127,7 @@ phases:
       - .venv/bin/nosetests tests/integration/test_layers_service.py
       - .venv/bin/nosetests tests/integration/test_loader.py
       - .venv/bin/nosetests tests/integration/test_luftbilder.py
-      - # .venv/bin/nosetests tests/integration/test_opentransapi.py
+      - .venv/bin/nosetests tests/integration/test_opentransapi.py
       - .venv/bin/nosetests tests/integration/test_qrcode.py
       - .venv/bin/nosetests tests/integration/test_search.py
       - # .venv/bin/nosetests tests/integration/test_shortener.py
