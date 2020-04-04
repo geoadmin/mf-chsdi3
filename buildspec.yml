@@ -92,7 +92,6 @@ phases:
       - echo "===========POSGRESQL========================"
       - python ./scripts/pg_ready.py
       - ./scripts/pg-isready -db "dbname=kogis_${DBSTAGING} host=${DBHOST} user=${PGUSER} password=${PGPASSWORD} port=${DBPORT}"
-      - python ./scripts/test_sphinxserver.py
       - hostname -I
       - echo "============================================"
   build:
@@ -105,6 +104,9 @@ phases:
               make cleanall build/python dev
            fi
       - echo Build completed on $(date)
+      - echo "===========SPHINXSEARCH===================="
+      - python ./scripts/test_sphinxserver.py
+      - echo "==========================================="
       
   post_build:
     commands:

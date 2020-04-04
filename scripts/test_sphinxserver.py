@@ -1,72 +1,46 @@
 import os
-import select
+import sys
 import socket
-import re
-from struct import pack, unpack
+from chsdi.lib.sphinxapi import sphinxapi
 
-class SphinxClient:
-
-    def __init__(self, host):
-        """
-        Create a new client object, and fill defaults.
-        """
-        self._host          =  host                   # searchd host (default is "localhost")
-        self._port          = 9312                          # searchd port (default is 9312)
-        self._path          = None                          # searchd unix-domain socket path
-        self._socket        = None
-        self._timeout       = 10
-
-    def Connect(self):
-        """
-        INTERNAL METHOD, DO NOT CALL. Connects to searchd server.
-        """
-        if self._socket:
-            # we have a socket, but is it still alive?
-            sr, sw, _ = select.select([self._socket], [self._socket], [], 0)
-
-            # this is how alive socket should look
-            if len(sr) == 0 and len(sw) == 1:
-                return self._socket
-
-            # oops, looks like it was closed, lets reopen
-            self._socket.close()
-            self._socket = None
-
-        try:
-            if self._path:
-                af = socket.AF_UNIX
-                addr = self._path
-                desc = self._path
-            else:
-                af = socket.AF_INET
-                addr = (self._host, self._port)
-                desc = '%s;%s' % addr
-            sock = socket.socket(af, socket.SOCK_STREAM)
-            sock.settimeout(self._timeout)
-            sock.connect(addr)
-        except socket.error as msg:
-            if sock:
-                sock.close()
-            self._error = 'connection to %s failed (%s)' % (desc, msg)
-            return
-
-        v = unpack('>L', sock.recv(4))[0]
-        if v < 1:
-            sock.close()
-            self._error = 'expected searchd protocol version, got %s' % v
-            return
-
-        # all ok, send my version
-        sock.send(pack('>L', 1))
-        return sock
+sys.tracebacklimit = 0
 
 
-if __name__ == '__main__':
-    sphinxhost = os.environ.get('SPHINXHOST', 'localhost')
-    s = SphinxClient(sphinxhost)
-    resp = s.Connect()
-    if isinstance(resp, socket.socket):
-        print("Connected to Sphinx server {}".format(sphinxhost))
-    else:
-        print("Cannot connect to Sphinx server {}".format(sphinxhost))
+searchText ='@(title,detail,layer) "wand" | @(title,detail,layer) "^wand" | @(title,detail,layer) "wand$" | @(title,detail,layer) "^wand$" | @(title,detail,layer) "wand"~5 | @(title,detail,layer) "wand*" | @(title,detail,layer) "^wand*" | @(title,detail,layer) "wand*"~5 | @(title,detail,layer) "*wand*" | @(title,detail,layer) "^*wand*" | @(title,detail,layer) "*wand*"~5 & @topics (inspire | ech) & @staging prod | @staging integration | @staging test'
+topicFilter='(inspire | ech)'
+mapName='inspire'
+index_name = 'layers_fr'
+temp = []
+
+sphinxhost = os.environ.get('SPHINXHOST', 'localhost')
+
+sphinx = sphinxapi.SphinxClient()
+sphinx.SetServer(sphinxhost, 9312)
+sphinx.SetMatchMode(sphinxapi.SPH_MATCH_EXTENDED)
+        
+
+sphinx.SetConnectTimeout(10.0)
+
+resp = sphinx._Connect()
+
+if isinstance(resp, socket.socket):
+        print("Connected to Sphinx server <{}>".format(sphinxhost))
+else:
+        raise Exception("Cannot connect to Sphinx server <{}>. Exit".format(sphinxhost))
+        # sys.exit(1)
+        
+try:
+        temp = sphinx.Query(searchText, index=index_name)
+except IOError:
+        raise 
+temp = temp['matches'] if temp is not None else temp
+
+if len(temp) > 0:
+    print("Querying Sphinx server successful")
+    for l in temp:
+        print(l['attrs']['label'])
+else:
+    raise Exception("Not the expected result while querying Sphinx Server")
+
+
     
