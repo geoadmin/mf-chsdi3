@@ -34,7 +34,7 @@ except IOError:
         raise 
 temp = temp['matches'] if temp is not None else temp
 
-if len(temp) > 0:
+if temp is not None and len(temp) > 0:
     print("Querying Sphinx server successful")
     for l in temp:
         print(l['attrs']['label'])
