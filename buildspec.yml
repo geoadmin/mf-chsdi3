@@ -105,7 +105,7 @@ phases:
            fi
       - echo Build completed on $(date)
       - echo "===========SPHINXSEARCH===================="
-      - python ./scripts/test_sphinxserver.py
+      - .venv/bin/python ./scripts/test_sphinxserver.py
       - echo "==========================================="
       
   post_build:
