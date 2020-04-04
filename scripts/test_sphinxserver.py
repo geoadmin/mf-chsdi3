@@ -26,8 +26,7 @@ resp = sphinx._Connect()
 if isinstance(resp, socket.socket):
         print("Connected to Sphinx server <{}>".format(sphinxhost))
 else:
-        raise Exception("Cannot connect to Sphinx server <{}>. Exit".format(sphinxhost))
-        # sys.exit(1)
+        print("Cannot connect to Sphinx server <{}>. Exit".format(sphinxhost))
         
 try:
         temp = sphinx.Query(searchText, index=index_name)
@@ -40,7 +39,7 @@ if len(temp) > 0:
     for l in temp:
         print(l['attrs']['label'])
 else:
-    raise Exception("Not the expected result while querying Sphinx Server")
+    print("Not the expected result while querying Sphinx Server")
 
 
     
