@@ -1,5 +1,5 @@
-boto3==1.12.34
-botocore==1.15.34
+boto3==1.12.36
+botocore==1.15.36
 flake8==3.7.9
 pep8==1.7.1
 pyflakes==2.1.1
