@@ -9,6 +9,7 @@ class Test_SphinxApi(TestsBase):
     def setUp(self):
         if not sphinx_tests:
             self.skipTest("Service search requires access to the sphinx server")
+        super(Test_SphinxApi, self).setUp()
 
     def _callFUT(self):
         api = sphinxapi.SphinxClient()

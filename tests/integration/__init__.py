@@ -65,8 +65,10 @@ class TestsBase(TestCase):
 
     def tearDown(self):
         testing.tearDown()
-        del self.testapp
-        del self.grids
+        if hasattr(self, 'testapp'):
+            del self.testapp
+        if hasattr(self, 'grids'):
+            del self.grids
 
     @contextmanager
     def getSession(self):
