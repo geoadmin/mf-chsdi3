@@ -173,3 +173,27 @@ class ZweitwohnungsAnteil(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.are.wohnungsinventar-zweitwohnungsanteil', ZweitwohnungsAnteil)
+
+
+class Erreichbarkeit(Base, Vector):
+    __tablename__ = 'erreichbarkeit'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False, 'extend_existing': True})
+    __label__ = 'verkehrszone_id'
+    verkehrszone_id = Column('verkehrszone_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+
+class ErreichbarkeitOev(Base, Erreichbarkeit, Vector):
+    __bodId__ = 'ch.are.erreichbarkeit-oev'
+    __template__ = 'templates/htmlpopup/erreichbarkeit_oev.mako'
+    oev_erreichb_ewap = Column('oev_erreichb_ewap', Float)
+
+register('ch.are.erreichbarkeit-oev', ErreichbarkeitOev)
+
+
+class ErreichbarkeitMiv(Base, Erreichbarkeit, Vector):
+    __bodId__ = 'ch.are.erreichbarkeit-miv'
+    __template__ = 'templates/htmlpopup/erreichbarkeit_miv.mako'
+    strasse_erreichb_ewap = Column('strasse_erreichb_ewap', Float)
+
+register('ch.are.erreichbarkeit-miv', ErreichbarkeitMiv)
