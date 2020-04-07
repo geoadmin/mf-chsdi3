@@ -11951,6 +11951,9 @@ msgstr "Auskunftstelle"
 msgid "ch.vbs.schiessanzeigen.belegung"
 msgstr "Aktuelle Schiessdaten"
 
+msgid "ch.vbs.schiessanzeigen.belplan_id"
+msgstr "ID-Nummer"
+
 msgid "ch.vbs.schiessanzeigen.bezeichnung"
 msgstr "Schiessplatz"
 

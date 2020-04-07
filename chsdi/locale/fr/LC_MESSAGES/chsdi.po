@@ -11951,6 +11951,9 @@ msgstr "Point info"
 msgid "ch.vbs.schiessanzeigen.belegung"
 msgstr "Dates de tir actuelles"
 
+msgid "ch.vbs.schiessanzeigen.belplan_id"
+msgstr "ID-No"
+
 msgid "ch.vbs.schiessanzeigen.bezeichnung"
 msgstr "Place de tir"
 

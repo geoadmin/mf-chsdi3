@@ -11951,6 +11951,9 @@ msgstr "Information point"
 msgid "ch.vbs.schiessanzeigen.belegung"
 msgstr "Current shooting data"
 
+msgid "ch.vbs.schiessanzeigen.belplan_id"
+msgstr "ID-Number"
+
 msgid "ch.vbs.schiessanzeigen.bezeichnung"
 msgstr "Shooting range"
 

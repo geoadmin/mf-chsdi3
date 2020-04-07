@@ -19,6 +19,7 @@ if c['attributes']['wochentag']:
   arr_anmerkung      = unicode(c['attributes']['anmerkung']).split(';')
 %>
 <% c['stable_id'] = True %>
+    <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.belplan_id')}</td>       <td>${c['featureId'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.bezeichnung')}</td>       <td>${c['attributes']['bezeichnung'] or '-'}</td></tr>
     ## auskunft
     <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.auskunft')}</td>
