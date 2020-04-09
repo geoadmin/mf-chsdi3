@@ -132,10 +132,10 @@ phases:
       - .venv/bin/nosetests tests/integration/test_luftbilder.py
       - .venv/bin/nosetests tests/integration/test_opentransapi.py
       - .venv/bin/nosetests tests/integration/test_qrcode.py
-      - .venv/bin/nosetests tests/integration/test_search.py
+      - # .venv/bin/nosetests tests/integration/test_search.py
       - .venv/bin/nosetests tests/integration/test_shortener.py
       - .venv/bin/nosetests tests/integration/test_sitemap.py
-      - .venv/bin/nosetests tests/integration/test_sphinxapi.py
+      - # .venv/bin/nosetests tests/integration/test_sphinxapi.py
       - .venv/bin/nosetests tests/integration/test_stationboard.py
       - .venv/bin/nosetests tests/integration/test_topics.py
       - .venv/bin/nosetests tests/integration/test_translation.py
