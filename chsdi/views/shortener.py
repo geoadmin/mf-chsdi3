@@ -57,10 +57,12 @@ def shortener(request):
         # Index restriction in DynamoDB
         url_short = 'toolong'
     else:  # pragma: no cover
-        url_short = check_url(url, request.registry.settings)
+        settings = request.registry.settings
+        url_short = check_url(url, settings)
+        table_name = settings.get('shortener.table_name')
         # DynamoDB v2 high-level abstraction
         try:
-            table = get_dynamodb_table(table_name='shorturl')
+            table = get_dynamodb_table(table_name=table_name)
         except Exception as e:
             raise exc.HTTPInternalServerError('Error during connection %s' % e)
         url_short = _add_item(table, url)
