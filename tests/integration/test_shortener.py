@@ -2,7 +2,11 @@
 
 import time
 from random import randint
+from unittest import skipUnless
 from tests.integration import TestsBase, dynamodb_tests
+
+# TODO
+dynamodb_write = True
 
 
 class TestShortenerView(TestsBase):
@@ -55,12 +59,17 @@ class TestShortenerView(TestsBase):
     def test_shortener_too_long_get(self):
         self.testapp.get('/shorten/toolong', status=302)
 
+    @skipUnless(dynamodb_write, "Skipping write to DynamoDB")
     def test_url_short(self):
         test_url = 'https://map.geo.admin.ch/?topic=ech&lang=en&bgLayer=ch.swisstopo.pixelkarte-farbe&layers' \
             '=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bafu.wrz-wildruhezonen_portal,' \
             'ch.swisstopo.swisstlm3d-wanderwege&layers_visibility=false,false,false,false&layers_timestamp=' \
             '18641231,,,&X=214128.92&Y=823805.99&zoom=2'
-        self.testapp.get('/shorten.json', params={'url': test_url}, status=200)
+        resp = self.testapp.get('/shorten.json', params={'url': test_url}, status=200)
+        shorturl = resp['shorturl']
+        resp2  = self.testapp.head('/shorten.json', params={'url': shorturl}, status=200)
+        back_url = resp2.heads.get('location')
+        self.assertEqual(test_url, back_url)
 
     def test_shorten_json_example(self):
         test_url = 'http://api3.geo.admin.ch/shorten.json?url=https:%2F%2Fmf-geoadmin3.int.bgdi.ch' \
