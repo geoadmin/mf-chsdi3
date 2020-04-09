@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     SHELL: /bin/bash
-    AWS_DEFAULT_REGION: eu-west-1
+    AWS_DEFAULT_REGION: eu-central-1
     APACHE_BASE_PATH: main
     ALTI_URL: //service-alti.dev.bgdi.ch
     API_URL: //mf-chsdi3.dev.bgdi.ch
@@ -132,10 +132,10 @@ phases:
       - .venv/bin/nosetests tests/integration/test_luftbilder.py
       - .venv/bin/nosetests tests/integration/test_opentransapi.py
       - .venv/bin/nosetests tests/integration/test_qrcode.py
-      - # .venv/bin/nosetests tests/integration/test_search.py
+      -  .venv/bin/nosetests tests/integration/test_search.py
       - .venv/bin/nosetests tests/integration/test_shortener.py
       - .venv/bin/nosetests tests/integration/test_sitemap.py
-      - # .venv/bin/nosetests tests/integration/test_sphinxapi.py
+      - .venv/bin/nosetests tests/integration/test_sphinxapi.py
       - .venv/bin/nosetests tests/integration/test_stationboard.py
       - .venv/bin/nosetests tests/integration/test_topics.py
       - .venv/bin/nosetests tests/integration/test_translation.py
