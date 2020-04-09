@@ -54,6 +54,7 @@ apache_entry_path = ${apache_entry_path}
 kml_temp_dir=${kml_temp_dir}
 http_proxy = ${http_proxy}
 geoadmin_file_storage_bucket = ${geoadmin_file_storage_bucket}
+geoadmin_file_storage_table = ${geoadmin_file_storage_table}
 public_bucket_host = ${public_bucket_host}
 vector_bucket = ${vector_bucket}
 datageoadminhost = ${datageoadminhost}
@@ -63,6 +64,7 @@ max_featureids_request = 20
 
 shortener.allowed_hosts = ${shortener_allowed_hosts}
 shortener.allowed_domains = ${shortener_allowed_domains}
+shortener.table_name = ${shortener_table_name}
 
 ###
 # wsgi server configuration
