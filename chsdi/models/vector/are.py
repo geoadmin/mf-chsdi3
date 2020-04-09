@@ -188,7 +188,6 @@ class ReisezeitAgglomerationenOev(Base, ReisezeitAgglomerationen, Vector):
     __template__ = 'templates/htmlpopup/reisezeit_agglomerationen_oev.mako'
     oev_reisezeit_agglo = Column('oev_reisezeit_agglo', Integer)
     oev_no_agglo = Column('oev_no_agglo', Integer)
-    verkehrszone_id = Column('verkehrszone_id', Integer)
 
 register('ch.are.reisezeit-agglomerationen-oev', ReisezeitAgglomerationenOev)
 
@@ -198,6 +197,5 @@ class ReisezeitAgglomerationenMiv(Base, ReisezeitAgglomerationen, Vector):
     __template__ = 'templates/htmlpopup/reisezeit_agglomerationen_miv.mako'
     strasse_reisezeit_agglo = Column('strasse_reisezeit_agglo', Integer)
     strasse_no_agglo = Column('strasse_no_agglo', Integer)
-    verkehrszone_id = Column('verkehrszone_id', Integer)
 
 register('ch.are.reisezeit-agglomerationen-miv', ReisezeitAgglomerationenMiv)
