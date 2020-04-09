@@ -37,6 +37,8 @@ APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''
 DATAGEOADMINHOST ?= data.geo.admin.ch
 SHORTENER_ALLOWED_DOMAINS := admin.ch, swisstopo.ch, bgdi.ch
 SHORTENER_ALLOWED_HOSTS ?=
+# A single table for dev, int and prod. Different name for each build test
+SHORTENER_TABLE_NAME ?= shorturl
 PYPI_URL ?= https://pypi.org/simple/
 GITHUB_LAST_COMMIT=$(shell curl -s  https://api.github.com/repos/geoadmin/mf-chsdi3/commits | jq -r '.[0].sha')
 
@@ -64,7 +66,8 @@ LAST_SHOP_URL := $(call lastvalue,shop-url)
 LAST_HOST := $(call lastvalue,host)
 LAST_GEOADMIN_FILE_STORAGE_BUCKET := $(call lastvalue,geoadmin-file-storage-bucket)
 LAST_PUBLIC_BUCKET_HOST  := $(call lastvalue,public-bucket-host)
-LAST_SHORTENER_ALLOWED_HOSTS := $(call lastvalue,allowed-hosts)
+LAST_SHORTENER_ALLOWED_HOSTS := $(call lastvalue,shortener-allowed-hosts)
+LAST_SHORTENER_TABLE_NAME := $(call lastvalue,shortener-table-name)
 LAST_VECTOR_BUCKET := $(call lastvalue,vector-bucket)
 LAST_DATAGEOADMINHOST := $(call lastvalue,datageoadminhost)
 LAST_CMSGEOADMINHOST := $(call lastvalue,cmsgeoadminhost)
@@ -474,6 +477,7 @@ production.ini: production.ini.in \
                 .venv/last-linkeddatahost \
                 .venv/last-opentrans-api-key \
                 .venv/last-shortener-allowed-domains \
+                .venv/last-shortener-table-name \
                 guard-OPENTRANS_API_KEY
 	@echo "${GREEN}Creating production.ini...${RESET}";
 	${MAKO_CMD} \
@@ -499,6 +503,7 @@ production.ini: production.ini.in \
 		--var "geoadmin_file_storage_bucket=$(GEOADMIN_FILE_STORAGE_BUCKET)" \
 		--var "public_bucket_host=$(PUBLIC_BUCKET_HOST)" \
 		--var "shortener_allowed_hosts=$(SHORTENER_ALLOWED_HOSTS)" \
+		--var "shortener_table_name=$(SHORTENER_TABLE_NAME)" \
 		--var "vector_bucket=$(VECTOR_BUCKET)" \
 		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
 		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
@@ -630,6 +635,9 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-shortener-allowed-hosts::
 	$(call cachelastvariable,$@,$(SHORTENER_ALLOWED_HOSTS),$(LAST_SHORTENER_ALLOWED_HOSTS),shortener-allowed-hosts)
+
+.venv/last-shortener-table-name::
+	$(call cachelastvariable,$@,$(SHORTENER_TABLE_NAME),$(LAST_SHORTENER_TABLE_NAME),shortener-table-name)
 
 .venv/last-vector-bucket::
 	$(call cachelastvariable,$@,$(VECTOR_BUCKET),$(LAST_VECTOR_BUCKET),vector-bucket)

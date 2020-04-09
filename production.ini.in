@@ -63,6 +63,7 @@ max_featureids_request = 20
 
 shortener.allowed_hosts = ${shortener_allowed_hosts}
 shortener.allowed_domains = ${shortener_allowed_domains}
+shortener.table_name = ${shortener_table_name}
 
 ###
 # wsgi server configuration
