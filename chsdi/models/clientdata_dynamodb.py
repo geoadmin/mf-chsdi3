@@ -78,8 +78,9 @@ dynamodb_connection = DynamodbConnection()
 s3_connection = S3Connect()
 
 
-def get_dynamodb_table(table_name='shorturl'):
-    conn = dynamodb_connection.get()
+def get_dynamodb_table(table_name='shorturl', region='eu-west-1'):
+
+    conn = dynamodb_connection(region=region).get()
     try:
         table = conn.Table(table_name)
     except Exception as e:  # pragma: no cover

@@ -60,9 +60,10 @@ def shortener(request):
         settings = request.registry.settings
         url_short = check_url(url, settings)
         table_name = settings.get('shortener.table_name')
+        aws_region = 'eu-central-1'  # TODO settings.get('shortener.region')
         # DynamoDB v2 high-level abstraction
         try:
-            table = get_dynamodb_table(table_name=table_name)
+            table = get_dynamodb_table(table_name=table_name, region=aws_region)
         except Exception as e:
             raise exc.HTTPInternalServerError('Error during connection %s' % e)
         url_short = _add_item(table, url)
