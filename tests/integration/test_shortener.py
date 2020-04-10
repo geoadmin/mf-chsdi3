@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import time
-from random import randint, seed
+from random import randint
 from tests.integration import TestsBase, dynamodb_tests
 
 
@@ -72,7 +72,7 @@ class TestShortenerView(TestsBase):
 
     # Identical url should have the same hash
     def test_url_short_hash_reuse(self):
-        random_url = 'https://map.geo.admin.ch?_dc={}'.format(seed(time.time()))
+        random_url = 'https://map.geo.admin.ch?_dc={}'.format(time.time())
         resp = self.testapp.get('/shorten.json', params={'url': random_url}, status=200)
         resp2 = self.testapp.get('/shorten.json', params={'url': random_url}, status=200)
         self.assertEqual(resp.json['shorturl'], resp2.json['shorturl'])
