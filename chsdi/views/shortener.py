@@ -19,12 +19,14 @@ def _add_item(table, url):
         # Magic number relates to the initial epoch
         t = int(time.time() * 1000) - 1000000000000
         url_short = '%x' % t
+        now = time.localtime()
         try:
             table.put_item(
                 Item={
                     'url_short': url_short,
                     'url': url,
-                    'timestamp': time.strftime('%Y-%m-%d %X', time.localtime())
+                    'timestamp': time.strftime('%Y-%m-%d %X', now),
+                    'epoch': time.strftime('%s', now)
                 }
             )
         except boto_exc.Boto3Error as e:
