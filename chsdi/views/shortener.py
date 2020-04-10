@@ -60,7 +60,7 @@ def shortener(request):
         settings = request.registry.settings
         url_short = check_url(url, settings)
         table_name = settings.get('shortener.table_name')
-        aws_region = 'eu-central-1'  # TODO settings.get('shortener.region')
+        aws_region = settings.get('shortener.table_region')
         # DynamoDB v2 high-level abstraction
         try:
             table = get_dynamodb_table(table_name=table_name, region=aws_region)

@@ -40,6 +40,7 @@ SHORTENER_ALLOWED_HOSTS ?=
 # A single table for dev, int and prod. Different name for each build test
 GEOADMIN_FILE_STORAGE_TABLE ?= geoadmin-file-storage
 SHORTENER_TABLE_NAME ?= shorturl
+SHORTENER_TABLE_REGION ?= eu-west-1
 PYPI_URL ?= https://pypi.org/simple/
 GITHUB_LAST_COMMIT=$(shell curl -s  https://api.github.com/repos/geoadmin/mf-chsdi3/commits | jq -r '.[0].sha')
 
@@ -70,6 +71,7 @@ LAST_GEOADMIN_FILE_STORAGE_TABLE := $(call lastvalue,geoadmin-file-storage-table
 LAST_PUBLIC_BUCKET_HOST  := $(call lastvalue,public-bucket-host)
 LAST_SHORTENER_ALLOWED_HOSTS := $(call lastvalue,shortener-allowed-hosts)
 LAST_SHORTENER_TABLE_NAME := $(call lastvalue,shortener-table-name)
+LAST_SHORTENER_TABLE_REGION := $(call lastvalue,shortener-table-region)
 LAST_VECTOR_BUCKET := $(call lastvalue,vector-bucket)
 LAST_DATAGEOADMINHOST := $(call lastvalue,datageoadminhost)
 LAST_CMSGEOADMINHOST := $(call lastvalue,cmsgeoadminhost)
@@ -481,6 +483,7 @@ production.ini: production.ini.in \
                 .venv/last-opentrans-api-key \
                 .venv/last-shortener-allowed-domains \
                 .venv/last-shortener-table-name \
+                .venv/last-shortener-table-region \
                 guard-OPENTRANS_API_KEY
 	@echo "${GREEN}Creating production.ini...${RESET}";
 	${MAKO_CMD} \
@@ -508,6 +511,7 @@ production.ini: production.ini.in \
 		--var "public_bucket_host=$(PUBLIC_BUCKET_HOST)" \
 		--var "shortener_allowed_hosts=$(SHORTENER_ALLOWED_HOSTS)" \
 		--var "shortener_table_name=$(SHORTENER_TABLE_NAME)" \
+		--var "shortener_table_region=$(SHORTENER_TABLE_REGION)" \
 		--var "vector_bucket=$(VECTOR_BUCKET)" \
 		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
 		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
@@ -645,6 +649,9 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-shortener-table-name::
 	$(call cachelastvariable,$@,$(SHORTENER_TABLE_NAME),$(LAST_SHORTENER_TABLE_NAME),shortener-table-name)
+
+.venv/last-shortener-table-region::
+	$(call cachelastvariable,$@,$(SHORTENER_TABLE_REGION),$(LAST_SHORTENER_TABLE_REGION),shortener-table-region)
 
 .venv/last-vector-bucket::
 	$(call cachelastvariable,$@,$(VECTOR_BUCKET),$(LAST_VECTOR_BUCKET),vector-bucket)

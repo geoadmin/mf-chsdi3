@@ -67,7 +67,8 @@ class TestShortenerView(TestsBase):
             '18641231,,,&X=214128.92&Y=823805.99&zoom=2'
         resp = self.testapp.get('/shorten.json', params={'url': test_url}, status=200)
         shorturl = resp.json['shorturl']
-        resp2  = self.testapp.get('/shorten.json', params={'url': shorturl}, status=200)
+        shorthash = shorturl.split('/')[-1]
+        resp2  = self.testapp.get('/shorten/{}'.format(shorthash), status=301)
         back_url = resp2.headers.get('location')
         self.assertEqual(test_url, back_url)
 
