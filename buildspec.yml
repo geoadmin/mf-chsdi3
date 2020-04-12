@@ -14,6 +14,7 @@ env:
     DEPLOY_TARGET: dev
     GEODATA_STAGING: test
     GEOADMIN_FILE_STORAGE_BUCKET: public-dev-bgdi-ch
+    GEOADMIN_FILE_STORAGE_TABLE: mf_chsdi3_geoadmin_file_storage
     GEOADMINHOST: mf-geoadmin3.dev.bgdi.ch
     HOST: mf-chsdi3.dev.bgdi.ch
     KEEP_VERSION: false
