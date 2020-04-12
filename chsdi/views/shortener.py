@@ -87,7 +87,14 @@ def shorten_redirect(request):
     if url_short == 'toolong':
         raise exc.HTTPFound(location='http://map.geo.admin.ch')
 
-    table = get_dynamodb_table(table_name='shorturl')
+    settings = request.registry.settings
+    table_name = settings.get('shortener.table_name')
+    aws_region = settings.get('shortener.table_region')
+
+    try:
+        table = get_dynamodb_table(table_name=table_name, region=aws_region)
+    except Exception as e:
+        raise exc.HTTPInternalServerError('Error during connection %s' % e)
 
     try:
         response = table.query(
