@@ -66,8 +66,6 @@ class TestShortenerView(TestsBase):
         shorturl = resp.json['shorturl']
         shorthash = shorturl.split('/')[-1]
         # The reverse, get the url from the short hash
-        time.sleep(randint(2, 5))
-        self.assertEqual(shorthash, '889b121f38')
         resp2  = self.testapp.get('/shorten/{}'.format(shorthash), status=301)
         back_url = resp2.headers.get('location')
         self.assertEqual(test_url, back_url)
