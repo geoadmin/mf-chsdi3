@@ -30,7 +30,7 @@ env:
     CMSGEOADMINHOST: https://cms.geo.admin.ch
     LINKEDDATAHOST: https://ld.geo.admin.ch
     CACHE_CONTROL: no-cache
-    SHORTENER_TABLE_NAME: shorturl
+    SHORTENER_TABLE_NAME: mf_chsdi3_shorturl
     SHORTENER_TABLE_REGION: eu-central-1
 
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
