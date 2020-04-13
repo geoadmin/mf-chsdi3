@@ -41,6 +41,7 @@ SHORTENER_ALLOWED_HOSTS ?=
 # A single table for dev, int and prod. Different name for each build test
 GEOADMIN_FILE_STORAGE_TABLE_NAME ?= geoadmin-file-storage
 GEOADMIN_FILE_STORAGE_TABLE_REGION ?= $(DEFAULT_AWS_REGION)
+GEOADMIN_FILE_STORAGE_BUCKET ?= public-dev-bgdi-ch
 SHORTENER_TABLE_NAME ?= shorturl
 SHORTENER_TABLE_REGION ?= $(DEFAULT_AWS_REGION)
 PYPI_URL ?= https://pypi.org/simple/
