@@ -104,9 +104,9 @@ phases:
       - echo Build started on $(date)
       - |-
            if [ "${USE_PYTHON3}" = 0 ]; then
-             make cleanall dev
+             make cleanall all
            else
-              make cleanall build/python dev
+              make cleanall build/python all
            fi
       - echo Build completed on $(date)
       - echo "===========SPHINXSEARCH===================="
