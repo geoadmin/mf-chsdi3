@@ -989,11 +989,89 @@ msgstr "Personenverkehr ÖV"
 msgid "ch.are.belastung-personenverkehr-bahn-2008"
 msgstr "Personenverkehr ÖV"
 
+msgid "ch.are.belastung-personenverkehr-bahn.asp_oev"
+msgstr "Fahrgäste, Schienenverkehr, Abendspitze (MSP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-bahn.dtv_oev"
+msgstr "Fahrgäste, Schienenverkehr, durchschnittlicher Tagesverkehr (DTV)"
+
+msgid "ch.are.belastung-personenverkehr-bahn.dwv_oev"
+msgstr "Fahrgäste, Schienenverkehr, durchschnittlicher Werktagverkehr (DWV)"
+
+msgid "ch.are.belastung-personenverkehr-bahn.msp_oev"
+msgstr "Fahrgäste, Schienenverkehr, Morgenspitze (MSP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-bahn.nr"
+msgstr "Streckennummer"
+
 msgid "ch.are.belastung-personenverkehr-strasse"
 msgstr "Personenverkehr Strasse"
 
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
 msgstr "Personenverkehr Strasse"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_fzg"
+msgstr "alle Fahrzeuge, Abendspitze (MSP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_li"
+msgstr "Lieferwagen, Abendspitze (MSP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_lw"
+msgstr "Lastwagen, Abendspitze (MSP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_lz"
+msgstr "Lastzug, Abendspitze (MSP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_pw"
+msgstr "Personenwagen, Abendspitze (MSP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_fzg"
+msgstr "alle Fahrzeuge, durchschnittlicher Tagesverkehr (DTV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_li"
+msgstr "Lieferwagen, durchschnittlicher Tagesverkehr (DTV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_lw"
+msgstr "Lastwagen, durchschnittlicher Tagesverkehr (DTV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_lz"
+msgstr "Lastzug, durchschnittlicher Tagesverkehr (DTV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_pw"
+msgstr "Personenwagen, durchschnittlicher Tagesverkehr (DTV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_fzg"
+msgstr "Verkehrsbelastung, alle Fahrzeuge, durchschnittlicher Werktagverkehr (DWV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_li"
+msgstr "Lieferwagen, durchschnittlicher Werktagverkehr (DWV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_lw"
+msgstr "Lastwagen, durchschnittlicher Werktagverkehr (DWV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_lz"
+msgstr "Lastzug, durchschnittlicher Werktagverkehr (DWV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_pw"
+msgstr "Personenwagen, durchschnittlicher Werktagverkehr (DWV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_fzg"
+msgstr "alle Fahrzeuge, Morgenspitze (MSP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_li"
+msgstr "Lieferwagen, Morgenspitze (MSP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_lw"
+msgstr "Lastwagen, Morgenspitze (MSP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_lz"
+msgstr "Lastzug, Morgenspitze (MSP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_pw"
+msgstr "Personenwagen, Morgenspitze (MSP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.nr"
+msgstr "Streckennummer"
 
 msgid "ch.are.beschaeftigtendichte-bz08"
 msgstr "Beschäftigtendichte 2008"
@@ -1004,8 +1082,20 @@ msgstr "Bevölkerungsdichte 2000"
 msgid "ch.are.erreichbarkeit-miv"
 msgstr "Erreichbarkeit Strasse"
 
+msgid "ch.are.erreichbarkeit-miv.strasse_erreichb_ewap"
+msgstr "Erreichbarkeitswert"
+
+msgid "ch.are.erreichbarkeit-miv.verkehrszone_id"
+msgstr "Zonencode Verkehrszone"
+
 msgid "ch.are.erreichbarkeit-oev"
 msgstr "Erreichbarkeit ÖV"
+
+msgid "ch.are.erreichbarkeit-oev.oev_erreichb_ewap"
+msgstr "Erreichbarkeit Einwohner/Arbeitsplätze"
+
+msgid "ch.are.erreichbarkeit-oev.verkehrszone_id"
+msgstr "Zonencode Verkehrszone"
 
 msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Gemeindetypologie ARE"

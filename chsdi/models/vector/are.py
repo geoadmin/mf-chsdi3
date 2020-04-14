@@ -178,7 +178,7 @@ register('ch.are.wohnungsinventar-zweitwohnungsanteil', ZweitwohnungsAnteil)
 class Erreichbarkeit:
     __tablename__ = 'erreichbarkeit'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False, 'extend_existing': True})
-    __label__ = 'verkehrszone_id'
+    __label__ = 'id'
     id = Column('verkehrszone_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
