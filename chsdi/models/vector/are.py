@@ -205,8 +205,7 @@ class BelastungPersonenverkehrStrasse(Base, Vector):
     asp_lw = Column('asp_lw', Integer)
     asp_lz = Column('asp_lz', Integer)
     the_geom = Column(Geometry2D)
-
-register('ch.are.belastung-personenverkehr-strasse', BelastungPersonenverkehrStrasse)
+register(BelastungPersonenverkehrStrasse.__bodId__, BelastungPersonenverkehrStrasse)
 
 
 class BelastungPersonenverkehrBahn(Base, Vector):
@@ -223,4 +222,4 @@ class BelastungPersonenverkehrBahn(Base, Vector):
     asp_oev = Column('asp_oev', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.are.belastung-personenverkehr-bahn', BelastungPersonenverkehrBahn)
+register(BelastungPersonenverkehrBahn.__bodId__, BelastungPersonenverkehrBahn)
