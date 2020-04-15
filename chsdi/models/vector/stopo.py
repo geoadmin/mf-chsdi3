@@ -632,14 +632,6 @@ class GeolSpezialKarteMetadata(Base, ShopProductGroupClass, Vector):
 register('ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata', GeolSpezialKarteMetadata)
 
 
-class GeolGeneralKarteMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_ggk'
-    __bodId__ = 'ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata'
-
-register('ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata', GeolGeneralKarteMetadata)
-
-
 class GeolGenKarteGGK200Meta(Base, ShopProductGroupClass, Vector):
     __tablename__ = 'view_gridstand_ggk_shop'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
