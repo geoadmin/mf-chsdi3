@@ -1,7 +1,7 @@
 mf-chsdi3
 =========
 
-Next generation of [http://api3.geo.admin.ch](http://api3.geo.admin.ch)
+Next generation services [http://api3.geo.admin.ch](http://api3.geo.admin.ch) for map.geo.admin.ch
 
 **AWS CodeBuild Status**
 
@@ -20,35 +20,26 @@ or when you're using ssh key (see https://help.github.com/articles/generating-ss
 
     git clone git@github.com:geoadmin/mf-chsdi3.git
 
-Add .pgpass to your environment
+Add _.pgpass_ to your environment
 
     cd
     touch .pgpass
     chmod 600 .pgpass
 
-Open .pgpass and Add
+Open _.pgpass_ and Add
 
     pg.bgdi.ch:5432:*:${username}:${pass}
     pg-sandbox.bgdi.ch:5432:*:${username}:${pass}
 
-Make sure PGUSER and PGPASS is set in your .bashrc (for nosetests, potranslate and sphinx)
+Make sure PGUSER and PGPASS is set in your _.bashrc_ (for nosetests, potranslate and sphinx)
 
     export PGUSER=${username} // postgres user (won't be relevant soon)
     export PGPASS=${pass}
 
-Add .boto to your environment
+Note: on `vpc-mf1-dev`, AWS credentials are set by an *instance rule*. On other instances, you'll have to instance 
+manually the credentials in `$HOME/.aws/credentials`
 
-    cd
-    touch .boto
-    chmod 600 .boto
 
-Open .boto and Add (`/etc/boto.cfg` for main)
-
-    [Credentials]
-    aws_access_key_id = ${keyid}
-    aws_secret_access_key = ${accesskey}
-
-[Nagios Check for Dynamodb Dumps](https://dashboard.bgdi.ch/cgi-bin/nagios3/extinfo.cgi?type=2&host=ip-10-220-4-46.eu-west-1.compute.internal&service=DynamoDB+backup)
 
 Create a developer specific build configuration:
 
@@ -58,7 +49,7 @@ Add the port number in the newly created user rc file. You should at least edit 
 
     export SERVER_PORT=9000
 
-Add the API key to retrieve departure information from https://opentransportdata.swiss into the users rc file or directly in the .bashrc (keepass). For instance:
+Add the API key to retrieve departure information from https://opentransportdata.swiss into the users rc file or directly in the .bashrc (`gopass`). For instance:
 
     export OPENTRANS_API_KEY=dasffdjfjfjfjf566776jfjfjfj22243eac841ce7c9426355b
 
@@ -82,7 +73,10 @@ that points to your working directory. If all is well, you can reach your pages 
 
 All the hooks check that we don't accidently publish sensitive AWS keys to
 github - in the files as well as in the commit messages. We also execute
-`make lint` in the pre-commit hook.
+
+    make lint
+
+in the pre-commit hook.
 
 Other checks can be added freely to any hook.
 
@@ -103,7 +97,7 @@ Called before comitting changes locally and checks pre-commit messages (usually 
 Do the following commands **inside your working directory**. Here's how a standard
 deploy process is done.
 
-`make deploydev SNAPSHOT=true`
+    make deploydev SNAPSHOT=true
 
 This updates the source in /var/www... to the latest master branch from github,
 creates a snapshot and runs nosetests against the test db. The snapshot directory
@@ -113,11 +107,11 @@ you don't want to create a snapshot e.g. for intermediate releases on dev main.
 Once a snapshot has been created, you are able to deploy this snapshot to a
 desired target. For integration, do
 
-`make deployint SNAPSHOT=201512011411`
+    make deployint SNAPSHOT=201512011411
 
 This will run the full nose tests **from inside the 201512011411 snapshot directory** against the **integration db cluster**. Only if these tests are successfull, the snapshot is deployed to the integration cluster.
 
-`make deployprod SNAPSHOT=201512011411`
+    make deployprod SNAPSHOT=201512011411
 
 You can disable the running of the nosetests against the target backends by adding
 `notests` parameter to the snapshot command. This is handy in an emergency (when
@@ -125,14 +119,14 @@ deploying an old known-to-work snapshot) or when you have to re-deploy
 a snapshot that you know has passed the tests for the given backend.
 To disable the tests, use the following command:
 
-`make deployint SNAPSHOT=201512011411 NO_TESTS=notests`
+    make deployint SNAPSHOT=201512011411 NO_TESTS=notests
 
 Use `notests` parameter with care, as it removes a level of tests.
 
 Per default the deploy command uses the deploy configuration of the snapshot directory.
 If you want to use the deploy configuration of directory from which you are executing this command, you can use:
 
-`make deployint SNAPSHOT=201512011411`
+    make deployint SNAPSHOT=201512011411
 
 ## Deploying a branch
 
@@ -156,10 +150,12 @@ http://mf-chsdi3.int.bgdi.ch/gjn_deploybranch/ (Don't forget the slash at the en
 ## Deleting a branch
 
 To list all the deployed branch:
-`make deletebranch`
+
+    make deletebranch
 
 To delete a given branch:
-`make deletebranch BRANCH_TO_DELETE=my_deployed_branch`
+
+    make deletebranch BRANCH_TO_DELETE=my_deployed_branch
 
 ## Get correct back-link to geoadmin3
 Per default the back-link to geoadmin3 points to the main instance. If you
@@ -175,19 +171,24 @@ We are able to run our integration tests against different staging environments
 include access information for all clusters (add pgcluster0i and pgcluster0)**
 
 To run against prod environment:
-`scripts/nose_run.sh -p`
+
+    scripts/nose_run.sh -p
 
 To run against int environment:
-`scripts/nose_run.sh -i`
+
+    scripts/nose_run.sh -i
 
 To run against dev/test environment:
-`scripts/nose_run.sh`
+
+    scripts/nose_run.sh
 
 To run against your private environment:
-`make test`
+
+    make test
 
 To execute all tests, including _wmts_ and _varnish_ ones, which are deactivated by default:
-`scripts/nose_run.sh -a`
+
+    scripts/nose_run.sh -a
 
 ## Deactivate some tests
 
