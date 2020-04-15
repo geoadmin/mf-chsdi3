@@ -5,12 +5,12 @@ Next generation of [http://api3.geo.admin.ch](http://api3.geo.admin.ch)
 
 **AWS CodeBuild Status**
 
-Python3 ![Build Status](https://codebuild.eu-west-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiUlhtNW03YmI4c0llOTdsV0tYdTdnYTEvRm9Rc3pXd0FsSVhHYlJRWnhNbGdhOWtNTnFpeHh3UGNNdzBPS0cwR2NYWkNiRUp5MzRnSFRpS3lCdnpxc0owPSIsIml2UGFyYW1ldGVyU3BlYyI6ImZjTjZaWXB3dHE2V21uUFoiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+Python3 ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiMFAzY3lvZVQ4eFRjSk9DWE1xNWpqQVUrL3pFb0VVQmpyRG9HY0ZtV0tSVXU3djMzQ0dvMDhMaG1qa2k5YkV6V1huRjRuNXljTnZZazdnc3pQNVpmVmdZPSIsIml2UGFyYW1ldGVyU3BlYyI6InFJOXZ3azE5NzJoZ2U2bXYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
-Python2 ![Build Status](https://codebuild.eu-west-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZ2RQVVdOakhmOU4zTjZzN0ozSVUveS9HWE43SU8wdmFMYmM4SWIxUU1ibDVWcS95cU5VbW4zUFhNMTc5RktNQlhGbE5kdDQ4VmQzaUcyWUhnK2kxSGNBPSIsIml2UGFyYW1ldGVyU3BlYyI6InkxWnU3cTZuTENHYWVtVTUiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+Python2 ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiTGN0cGVaT0s4OG9CMCtMeW14elhmMzBVWEF3U3F1b3A2a01BbktuNWJyOUVOMUxiUXB1SmFwK2diV0JkOXdvT3VIbmJjMkVjYU02N1pTZmFPRUtXdXFZPSIsIml2UGFyYW1ldGVyU3BlYyI6IjZ0ZmgzUFY2dnYwUm9QcHYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
 
-# Getting started
+# Installing
 
 Checkout the source code:
 
@@ -76,7 +76,29 @@ that points to your working directory. If all is well, you can reach your pages 
 
     http://mf-chsdi3.dev.bgdi.ch/<username>/
 
-## Deploying to dev, int, and prod
+## Git hooks
+
+3 git hooks are installed automatically when `make user` is called.
+
+All the hooks check that we don't accidently publish sensitive AWS keys to
+github - in the files as well as in the commit messages. We also execute
+`make lint` in the pre-commit hook.
+
+Other checks can be added freely to any hook.
+
+### `pre-commit` hook
+
+Called before committing changes locally. The commands in the `scripts/pre-commit.sh` script are executed.
+
+### `commit-msg` hook
+
+Called before comitting changes locally and checks the commit message. The commands in the `scripts/commit-msg.sh` script are executed.
+
+### `prepare-commit-msg` hook
+
+Called before comitting changes locally and checks pre-commit messages (usually from --fast-forward merges. The commands in the `scripts/prepare-commit-msg.sh` are executed.
+
+# Deploying to dev, int, and prod
 
 Do the following commands **inside your working directory**. Here's how a standard
 deploy process is done.
@@ -144,6 +166,8 @@ Per default the back-link to geoadmin3 points to the main instance. If you
 want to change that, adapt the `geoadminhost` variable in the
 `buildout_branch.cfg.in` input file and commit it in *your branch*.
 
+# Testing
+
 ## Run nosetests manual on different environments
 We are able to run our integration tests against different staging environments
 
@@ -165,14 +189,45 @@ To run against your private environment:
 To execute all tests, including _wmts_ and _varnish_ ones, which are deactivated by default:
 `scripts/nose_run.sh -a`
 
-### Deactivate some tests
+## Deactivate some tests
 
 You may deactivate tests requiring access to `DynamoDB`, 'AWS S3' or the 'Sphinx server', by 
 setting the following environmental variables to `0`
 
     DYNAMODB_TESTS=0 SPHINX_TESTS=0 S3_TESTS=0 make test
 
-## Checker
+### Resources for testing
+
+:bomb: Resources are in `eu-central-1` for testing, otherwise in `eu-west-1`
+
+#### PostgreSQL
+The PostgreSQL cluster with all vector data. This cannot be deactivate, as the project wont start without
+
+#### Sphinx server
+
+The `search service` needs the `Sphinx search server` cluster, running on separate instances. These tests may
+be skipped with:
+
+    SPHINX_TESTS=0  make test
+
+#### AWS DynamoDB
+
+The `shortener service` uses on single `AWS DynamoDB` table on all three environment (`dev`, `int` and `prod`)
+These tests may be skipped with:
+
+    DYNAMODB_TESTS=0  make test
+
+#### AWS S3
+
+The `file service` use to store and retrieve `KML` and `GL styles` use both `AWS S3` _buckets_ and `AWS DynamoDB` tables. 
+The tables are `vectortiles-styles-storage` and `geoadmin-file-storage` (same for all environments), and the buckets are `public-(dev|int|prod)-bgdi-ch`,
+used by both services. To run theses tests, both variables must be set to `true` (which is the default):
+
+    S3_TESTS=1 DYNAMODB_TESTS=1 make test
+
+
+
+# Checker
 
 Apache/WSGI checker
 
@@ -198,7 +253,7 @@ make legends BODID=ch.layername WMSSCALELEGEND=1000
 
 Make sure, you're using the desired `echo $WMSHOST` project variable (`source rc_xxx` or `export WMSHOST=xxx`)
 
-## Python Code Styling
+# Python Code Styling
 
 We are currently using the FLAKES 8 convention for Python code.
 You can find more information about our code styling here:
@@ -222,6 +277,8 @@ To autocorrect most linting mistakes
 make autolint
 ```
 
+# Varia
+
 ## Lint a JSON file
 
 ```bash
@@ -229,7 +286,7 @@ export PATH=$(npm bin):$PATH
 jsonlint-cli --pretty temp.json > chsdi/static/vectorStyles/ch.meteoschweiz.messwerte-foehn-10min.json
 ```
 
-### Create legends
+## Create legends
 
 Install dependencies:
 
@@ -243,24 +300,4 @@ Run the script
 node scripts/createlegends.js ch.meteoschweiz.messwerte-niederschlagn
 ```
 
-## Git hooks
 
-3 git hooks are installed automatically when `make user` is called.
-
-All the hooks check that we don't accidently publish sensitive AWS keys to
-github - in the files as well as in the commit messages. We also execute
-`make lint` in the pre-commit hook.
-
-Other checks can be added freely to any hook.
-
-### `pre-commit` hook
-
-Called before committing changes locally. The commands in the `scripts/pre-commit.sh` script are executed.
-
-### `commit-msg` hook
-
-Called before comitting changes locally and checks the commit message. The commands in the `scripts/commit-msg.sh` script are executed.
-
-### `prepare-commit-msg` hook
-
-Called before comitting changes locally and checks pre-commit messages (usually from --fast-forward merges. The commands in the `scripts/prepare-commit-msg.sh` are executed.
