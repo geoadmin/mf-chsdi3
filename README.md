@@ -40,7 +40,6 @@ Note: on `vpc-mf1-dev`, AWS credentials are set by an *instance rule*. On other 
 manually the credentials in `$HOME/.aws/credentials`
 
 
-
 Create a developer specific build configuration:
 
     touch rc_user_<username>
@@ -59,17 +58,17 @@ Where "username" is your specific rc configuration. To create the specific build
 
     make user
 
-If you do this on mf1t, you need to make sure that a correct configuration exists under
+If you do this on `vpc-mf1-dev1`, you need to make sure that a correct configuration exists under
 
     /var/www/vhosts/mf-chsdi3/conf
 
-that points to your working directory. If all is well, you can reach your pages at:
+that points to your working directory. If all is well (`sudo apache2ctl graceful`), you can reach your pages at:
 
     http://mf-chsdi3.dev.bgdi.ch/<username>/
 
 ## Git hooks
 
-3 git hooks are installed automatically when `make user` is called.
+Three `git hooks` are installed automatically when `make user` is called.
 
 All the hooks check that we don't accidently publish sensitive AWS keys to
 github - in the files as well as in the commit messages. We also execute
