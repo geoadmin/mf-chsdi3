@@ -1,7 +1,7 @@
 mf-chsdi3
 =========
 
-Next generation services [http://api3.geo.admin.ch](http://api3.geo.admin.ch) for map.geo.admin.ch
+Next generation services [https://api3.geo.admin.ch](http://api3.geo.admin.ch) for [https://map.geo.admin.ch](https://map.geo.admin.ch)
 
 **AWS CodeBuild Status**
 
