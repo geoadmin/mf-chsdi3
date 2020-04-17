@@ -173,3 +173,29 @@ class ZweitwohnungsAnteil(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.are.wohnungsinventar-zweitwohnungsanteil', ZweitwohnungsAnteil)
+
+
+class Reisezeit:
+    __tablename__ = 'reisezeit'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False, 'extend_existing': True})
+    __label__ = 'id'
+    id = Column('verkehrszone_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+
+class ReisezeitOev(Base, Reisezeit, Vector):
+    __bodId__ = 'ch.are.reisezeit-oev'
+    __template__ = 'templates/htmlpopup/reisezeit_oev.mako'
+    oev_reisezeit_z = Column('oev_reisezeit_z', Integer)
+    oev_no_z = Column('oev_no_z', Integer)
+
+register('ch.are.reisezeit-oev', ReisezeitOev)
+
+
+class ReisezeitMiv(Base, Reisezeit, Vector):
+    __bodId__ = 'ch.are.reisezeit-miv'
+    __template__ = 'templates/htmlpopup/reisezeit_miv.mako'
+    strasse_reisezeit_z = Column('strasse_reisezeit_z', Integer)
+    strasse_no_z = Column('strasse_no_z', Integer)
+
+register('ch.are.reisezeit-miv', ReisezeitMiv)
