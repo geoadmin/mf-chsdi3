@@ -939,7 +939,22 @@ msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Agglomérations et villes isolées"
 
 msgid "ch.are.agglomerationsverkehr"
-msgstr "Villes et agglomérations ayant droit aux contributions"
+msgstr "Villes et agglomérations VaCO"
+
+msgid "ch.are.agglomerationsverkehr.agglo_name"
+msgstr "Nom d’agglomération"
+
+msgid "ch.are.agglomerationsverkehr.agglo_no"
+msgstr "Code d’agglomération"
+
+msgid "ch.are.agglomerationsverkehr.gem_no"
+msgstr "Numéro de commune"
+
+msgid "ch.are.agglomerationsverkehr.land"
+msgstr "Pays"
+
+msgid "ch.are.agglomerationsverkehr.name"
+msgstr "Nom de commune"
 
 msgid "ch.are.alpenkonvention"
 msgstr "Convention des Alpes"
@@ -974,17 +989,113 @@ msgstr "Trafic voyageurs (transport public)"
 msgid "ch.are.belastung-personenverkehr-bahn-2008"
 msgstr "Trafic voyageurs (transport public)"
 
+msgid "ch.are.belastung-personenverkehr-bahn.asp_oev"
+msgstr "Voyageurs, trafic ferroviaire, heures de pointe en soirée (SHP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-bahn.dtv_oev"
+msgstr "Voyageurs, trafic ferroviaire, trafic journalier moyen (TJM)"
+
+msgid "ch.are.belastung-personenverkehr-bahn.dwv_oev"
+msgstr "Voyageurs, trafic ferroviaire, trafic journalier moyen des jours ouvrables (TJMO)"
+
+msgid "ch.are.belastung-personenverkehr-bahn.msp_oev"
+msgstr "Voyageurs, trafic ferroviaire, heures de pointe en matinée (MHP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-bahn.nr"
+msgstr "Numéro de segment"
+
 msgid "ch.are.belastung-personenverkehr-strasse"
 msgstr "Trafic voyageurs (routier)"
 
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
 msgstr "Trafic voyageurs (routier)"
 
+msgid "ch.are.belastung-personenverkehr-strasse.asp_fzg"
+msgstr "tous les véhicules, heures de pointe en soirée (SHP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_li"
+msgstr "fourgon de livraison, heures de pointe en soirée (SHP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_lw"
+msgstr "camion, heures de pointe en soirée (SHP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_lz"
+msgstr "camion articulé, heures de pointe en soirée (SHP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_pw"
+msgstr "voiture particulière, heures de pointe en soirée (SHP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_fzg"
+msgstr "tous les véhicules, trafic journalier moyen (TJM)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_li"
+msgstr "fourgon de livraison, trafic journalier moyen (TJM)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_lw"
+msgstr "camion, trafic journalier moyen (TJM)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_lz"
+msgstr "camion articulé, trafic journalier moyen (TJM)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_pw"
+msgstr "voiture particulière, trafic journalier moyen (TJM)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_fzg"
+msgstr "Charge de trafic, tous les véhicules, trafic journalier moyen des jours ouvrables (TJMO)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_li"
+msgstr "fourgon de livraison, trafic journalier moyen des jours ouvrables (TJMO)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_lw"
+msgstr "camion, trafic journalier moyen des jours ouvrables (TJMO)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_lz"
+msgstr "camion articulé, trafic journalier moyen des jours ouvrables (TJMO)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_pw"
+msgstr "voiture particulière, trafic journalier moyen des jours ouvrables (TJMO)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_fzg"
+msgstr "tous les véhicules, heures de pointe en matinée (MHP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_li"
+msgstr "fourgon de livraison, heures de pointe en matinée (MHP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_lw"
+msgstr "camion, heures de pointe en matinée (MHP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_lz"
+msgstr "camion articulé, heures de pointe en matinée (MHP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_pw"
+msgstr "voiture particulière, heures de pointe en matinée (MHP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.nr"
+msgstr "Numéro de segment"
+
 msgid "ch.are.beschaeftigtendichte-bz08"
 msgstr "Densité de l`emploi 2008"
 
 msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Densité de population 2000"
+
+msgid "ch.are.erreichbarkeit-miv"
+msgstr "Accessibilité route"
+
+msgid "ch.are.erreichbarkeit-miv.strasse_erreichb_ewap"
+msgstr "Valeur d’accessibilité habitants/emplois"
+
+msgid "ch.are.erreichbarkeit-miv.verkehrszone_id"
+msgstr "Code de la zone de transport"
+
+msgid "ch.are.erreichbarkeit-oev"
+msgstr "Accessibilité TP"
+
+msgid "ch.are.erreichbarkeit-oev.oev_erreichb_ewap"
+msgstr "Valeur d’accessibilité habitants/emplois"
+
+msgid "ch.are.erreichbarkeit-oev.verkehrszone_id"
+msgstr "Code de la zone de transport"
 
 msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Typologie des communes ARE"
@@ -1001,17 +1112,59 @@ msgstr "ARE + canton"
 msgid "ch.are.landschaftstypen"
 msgstr "Typologie des paysages suisses"
 
+msgid "ch.are.reisezeit-agglomerationen-miv"
+msgstr "Temps de parcours aux agglos route"
+
+msgid "ch.are.reisezeit-agglomerationen-miv.strasse_no_agglo"
+msgstr "Code de la zone du centre d’agglomération"
+
+msgid "ch.are.reisezeit-agglomerationen-miv.strasse_reisezeit_agglo"
+msgstr "Temps de parcours au centre d’agglomération"
+
+msgid "ch.are.reisezeit-agglomerationen-miv.verkehrszone_id"
+msgstr "Code de la zone de transport"
+
+msgid "ch.are.reisezeit-agglomerationen-oev"
+msgstr "Temps de parcours aux agglos en TP"
+
+msgid "ch.are.reisezeit-agglomerationen-oev.oev_no_agglo"
+msgstr "Code de la zone du centre d’agglomération"
+
+msgid "ch.are.reisezeit-agglomerationen-oev.oev_reisezeit_agglo"
+msgstr "Temps de parcours au centre d’agglomération"
+
+msgid "ch.are.reisezeit-agglomerationen-oev.verkehrszone_id"
+msgstr "Code de la zone de transport"
+
 msgid "ch.are.reisezeit-miv"
 msgstr "Temps de parcours en TIM"
 
 msgid "ch.are.reisezeit_miv-2005"
 msgstr "Temps de parcours en TIM 2005"
 
+msgid "ch.are.reisezeit-miv.strasse_no_z"
+msgstr "Code de la zone du centre"
+
+msgid "ch.are.reisezeit-miv.strasse_reisezeit_z"
+msgstr "Temps de parcours au centre"
+
+msgid "ch.are.reisezeit-miv.verkehrszone_id"
+msgstr "Code de la zone de transport"
+
 msgid "ch.are.reisezeit-oev"
 msgstr "Temps de parcours en TP"
 
 msgid "ch.are.reisezeit_oev-2005"
 msgstr "Temps de parcours en TP 2005"
+
+msgid "ch.are.reisezeit-oev.oev_no_z"
+msgstr "Code de la zone du centre"
+
+msgid "ch.are.reisezeit-oev.oev_reisezeit_z"
+msgstr "Temps de parcours au centre"
+
+msgid "ch.are.reisezeit-oev.verkehrszone_id"
+msgstr "Code de la zone de transport"
 
 msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=fr"
@@ -5147,9 +5300,6 @@ msgstr "FSME - Lieux déclarés de piqûre"
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "FSME - vaccination recommandée"
 
-msgid "ch.bag.zecken-lyme"
-msgstr "Zones à risque de Borréliose"
-
 msgid "ch.bag.zeckenstichmodell"
 msgstr "Modèle des piqûres"
 
@@ -5291,6 +5441,9 @@ msgstr "112 Centrale d‘alarme"
 msgid "ch.bakom.notruf-112_satellit.satellit_112"
 msgstr "112 Numéro réseau satellite"
 
+msgid "ch.bakom.notruf-112_zentral"
+msgstr "112 Centrales d'alarme"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Réseau fixe"
 
@@ -5332,6 +5485,9 @@ msgstr "117 Centrale d‘alarme"
 
 msgid "ch.bakom.notruf-117_mobilnetz.mobile_117"
 msgstr "117 Numéro d’acheminement mobile"
+
+msgid "ch.bakom.notruf-117_zentral"
+msgstr "117 Centrales d'alarme"
 
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Réseau fixe"
@@ -5375,6 +5531,9 @@ msgstr "118 Centrale d‘alarme"
 msgid "ch.bakom.notruf-118_mobilnetz.mobile_118"
 msgstr "118 Numéro d’acheminement mobile"
 
+msgid "ch.bakom.notruf-118_zentral"
+msgstr "118 Centrales d'alarme"
+
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Réseau fixe"
 
@@ -5416,6 +5575,9 @@ msgstr "143 Centrale d‘alarme"
 
 msgid "ch.bakom.notruf-143_mobilnetz.mobile_143"
 msgstr "143 Numéro d’acheminement mobile"
+
+msgid "ch.bakom.notruf-143_zentral"
+msgstr "143 Centrales d'alarme"
 
 msgid "ch.bakom.notruf-144_festnetz"
 msgstr "144 Réseau fixe"
@@ -5459,6 +5621,9 @@ msgstr "144 Centrale d‘alarme"
 msgid "ch.bakom.notruf-144_mobilnetz.mobile_144"
 msgstr "144 Numéro d’acheminement mobile"
 
+msgid "ch.bakom.notruf-144_zentral"
+msgstr "144 Centrales d'alarme"
+
 msgid "ch.bakom.notruf-147_festnetz"
 msgstr "147 Réseau fixe"
 
@@ -5500,6 +5665,9 @@ msgstr "147 Centrale d‘alarme"
 
 msgid "ch.bakom.notruf-147_mobilnetz.mobile_147"
 msgstr "147 Numéro d’acheminement mobile"
+
+msgid "ch.bakom.notruf-147_zentral"
+msgstr "147 Centrales d'alarme"
 
 msgid "ch.bakom.notruf.adresse_112_festnetz"
 msgstr "Centrale d‘alarme réseau fixe"
@@ -5819,6 +5987,9 @@ msgstr "Etage du point de détermination"
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.lr_night"
 msgstr "Immission eff. nuit [dB(A)]"
 
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.receptor"
+msgstr "Point no."
+
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
 msgstr "Bruit ferrov., immissions eff. J"
 
@@ -5836,6 +6007,9 @@ msgstr "Etage du point de détermination"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.lr_day"
 msgstr "Immission eff. jour [dB(A)]"
+
+msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.receptor"
+msgstr "Point no."
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
 msgstr "Bruit ferrov., émissions fixées N"
@@ -9048,7 +9222,7 @@ msgid "ch.swisstopo.geologie-geophysik-totalintensitaet"
 msgstr "Intensité champ magnétique 500"
 
 msgid "ch.swisstopo.geologie-geosites"
-msgstr "Geosites"
+msgstr "Géosites"
 
 msgid "ch.swisstopo.geologie-geotechnik-gk200"
 msgstr "Carte géotechnique 200"
@@ -11884,6 +12058,9 @@ msgstr "Point info"
 
 msgid "ch.vbs.schiessanzeigen.belegung"
 msgstr "Dates de tir actuelles"
+
+msgid "ch.vbs.schiessanzeigen.belplan_id"
+msgstr "ID-No"
 
 msgid "ch.vbs.schiessanzeigen.bezeichnung"
 msgstr "Place de tir"
