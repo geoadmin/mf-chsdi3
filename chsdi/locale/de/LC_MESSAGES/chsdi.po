@@ -939,7 +939,7 @@ msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Agglomerationen und isolierte Städte"
 
 msgid "ch.are.agglomerationsverkehr"
-msgstr "Beitragsberechtigte Städte und Agglomerationen"
+msgstr "Städte und Agglomerationen BeSA"
 
 msgid "ch.are.agglomerationsverkehr.agglo_name"
 msgstr "Agglomerationsname"

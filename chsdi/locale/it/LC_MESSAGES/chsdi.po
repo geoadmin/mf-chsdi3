@@ -939,7 +939,7 @@ msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Agglomerati e cittá isolate"
 
 msgid "ch.are.agglomerationsverkehr"
-msgstr "Città e agglomerati aventi diritto ai contributi"
+msgstr "Città e agglomerati CaCO"
 
 msgid "ch.are.agglomerationsverkehr.agglo_name"
 msgstr "Nome dell’agglomerazione"
