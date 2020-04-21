@@ -186,7 +186,7 @@ class Erreichbarkeit:
 class ErreichbarkeitOev(Base, Erreichbarkeit, Vector):
     __bodId__ = 'ch.are.erreichbarkeit-oev'
     __template__ = 'templates/htmlpopup/erreichbarkeit_oev.mako'
-    oev_erreichb_ewap = Column('oev_erreichb_ewap', Float)
+    oev_erreichb_ewap = Column('oev_erreichb_ewap', Integer)
 
 register('ch.are.erreichbarkeit-oev', ErreichbarkeitOev)
 
@@ -194,6 +194,6 @@ register('ch.are.erreichbarkeit-oev', ErreichbarkeitOev)
 class ErreichbarkeitMiv(Base, Erreichbarkeit, Vector):
     __bodId__ = 'ch.are.erreichbarkeit-miv'
     __template__ = 'templates/htmlpopup/erreichbarkeit_miv.mako'
-    strasse_erreichb_ewap = Column('strasse_erreichb_ewap', Float)
+    strasse_erreichb_ewap = Column('strasse_erreichb_ewap', Integer)
 
 register('ch.are.erreichbarkeit-miv', ErreichbarkeitMiv)
