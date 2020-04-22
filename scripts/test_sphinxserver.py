@@ -1,6 +1,7 @@
 import os
 import sys
 import socket
+import six
 from chsdi.lib.sphinxapi import sphinxapi
 
 sys.tracebacklimit = 0
@@ -37,7 +38,10 @@ temp = temp['matches'] if temp is not None else temp
 if temp is not None and len(temp) > 0:
     print("Querying Sphinx server successful")
     for l in temp:
-        print(l['attrs']['label'])
+        if six.PY2:
+            print(l['attrs']['label'].encode("utf-8"))
+        else:
+            print(l['attrs']['label'])
 else:
     print("Not the expected result while querying Sphinx Server")
 
