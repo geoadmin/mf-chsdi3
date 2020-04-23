@@ -119,7 +119,7 @@ phases:
       - echo Testing...
       - make lint
       - echo "==========Running functional tests=============="
-      - .venv/bin/nosetests   tests/functional/
+      -  mkdir -p junit-reports/functional  && .venv/bin/nosetests --with-xunit --xunit-file=junit-reports/functional/nosetest.xml  tests/functional/
       - echo "==========Running integration tests=============="
       - .venv/bin/nosetests tests/integration/test_admin.py
       - .venv/bin/nosetests tests/integration/test_cache_update.py
@@ -131,14 +131,14 @@ phases:
       - .venv/bin/nosetests tests/integration/test_file_storage.py
       - .venv/bin/nosetests tests/integration/test_glstyles_storage.py
       - .venv/bin/nosetests tests/integration/test_historicalmaps.py
-      - .venv/bin/nosetests tests/integration/test_identify_service.py
+      - .venv/bin/nosetests --with-xunit --xunit-file=.venv/junit-reports/integration.xml tests/integration/test_identify_service.py
       - # .venv/bin/nosetests tests/integration/test_layers.py
       - .venv/bin/nosetests tests/integration/test_layers_service.py
       - .venv/bin/nosetests tests/integration/test_loader.py
       - .venv/bin/nosetests tests/integration/test_luftbilder.py
       - .venv/bin/nosetests tests/integration/test_opentransapi.py
       - .venv/bin/nosetests tests/integration/test_qrcode.py
-      -  .venv/bin/nosetests tests/integration/test_search.py
+      - .venv/bin/nosetests tests/integration/test_search.py
       - .venv/bin/nosetests tests/integration/test_shortener.py
       - .venv/bin/nosetests tests/integration/test_sitemap.py
       - .venv/bin/nosetests tests/integration/test_sphinxapi.py
@@ -147,3 +147,9 @@ phases:
       - .venv/bin/nosetests tests/integration/test_translation.py
       - .venv/bin/nosetests tests/integration/test_wmtscapabilities.py
       - echo "Great success"
+>>>>>>> re-oops
+reports:
+  reportGroupJunit:
+    files:
+      - 'junit-reports/**/*'
+    file-format: JunitXml
