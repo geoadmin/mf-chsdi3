@@ -3523,9 +3523,9 @@ class Gebirgslandeplaetze(Base, Vector):
     descrip_de = Column('descrip_de', Unicode)
     descrip_fr = Column('descrip_fr', Unicode)
     descrip_it = Column('descrip_it', Unicode)
-    arp_east = Column('arp_east', Float)
-    arp_north = Column('arp_north', Float)
-    elevation = Column('elevation', Float)
+    arp_east = Column('arp_east', Integer)
+    arp_north = Column('arp_north', Integer)
+    elevation = Column('elevation', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bazl.gebirgslandeplaetze', Gebirgslandeplaetze)
