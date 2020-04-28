@@ -11,7 +11,6 @@ class FileView(FilesHandler):
 
     def __init__(self, request):
         self.dynamodb_table_name = request.registry.settings['geoadmin_file_storage_table']
-        self.bucket_key_name = 'geoadmin_file_storage_bucket'
         self.bucket_name = request.registry.settings['geoadmin_file_storage_bucket']
         self.default_mime_type = 'application/vnd.google-earth.kml+xml'
         self.default_route_name = 'files'

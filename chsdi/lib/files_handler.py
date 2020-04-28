@@ -112,7 +112,6 @@ class FilesHandler(object):
 
     # Properties to be overriden in the __init__ function of the child class
     dynamodb_table_name = ''
-    bucket_key_name = ''
     bucket_name = ''
     bucket_folder = ''
     # Define with the dot
@@ -124,7 +123,7 @@ class FilesHandler(object):
         self.request = request
         # Set up AWS DynamoDB and S3 handlers
         self.dynamodb_fileshandler = DynamoDBFilesHandler(
-            self.dynamodb_table_name, self.bucket_key_name)
+            self.dynamodb_table_name, self.bucket_name)
         self.s3_fileshandler = S3FilesHandler(self.bucket_name)
         # This mean that we suppose a file has already been created
         if request.matched_route.name == self.default_route_name:
