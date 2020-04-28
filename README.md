@@ -1,16 +1,16 @@
 mf-chsdi3
 =========
 
-Next generation of [http://api3.geo.admin.ch](http://api3.geo.admin.ch)
+Next generation services [https://api3.geo.admin.ch](http://api3.geo.admin.ch) for [https://map.geo.admin.ch](https://map.geo.admin.ch)
 
 **AWS CodeBuild Status**
 
-Python3 ![Build Status](https://codebuild.eu-west-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiUlhtNW03YmI4c0llOTdsV0tYdTdnYTEvRm9Rc3pXd0FsSVhHYlJRWnhNbGdhOWtNTnFpeHh3UGNNdzBPS0cwR2NYWkNiRUp5MzRnSFRpS3lCdnpxc0owPSIsIml2UGFyYW1ldGVyU3BlYyI6ImZjTjZaWXB3dHE2V21uUFoiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+Python3 ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiMFAzY3lvZVQ4eFRjSk9DWE1xNWpqQVUrL3pFb0VVQmpyRG9HY0ZtV0tSVXU3djMzQ0dvMDhMaG1qa2k5YkV6V1huRjRuNXljTnZZazdnc3pQNVpmVmdZPSIsIml2UGFyYW1ldGVyU3BlYyI6InFJOXZ3azE5NzJoZ2U2bXYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
-Python2 ![Build Status](https://codebuild.eu-west-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZ2RQVVdOakhmOU4zTjZzN0ozSVUveS9HWE43SU8wdmFMYmM4SWIxUU1ibDVWcS95cU5VbW4zUFhNMTc5RktNQlhGbE5kdDQ4VmQzaUcyWUhnK2kxSGNBPSIsIml2UGFyYW1ldGVyU3BlYyI6InkxWnU3cTZuTENHYWVtVTUiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+Python2 ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiTGN0cGVaT0s4OG9CMCtMeW14elhmMzBVWEF3U3F1b3A2a01BbktuNWJyOUVOMUxiUXB1SmFwK2diV0JkOXdvT3VIbmJjMkVjYU02N1pTZmFPRUtXdXFZPSIsIml2UGFyYW1ldGVyU3BlYyI6IjZ0ZmgzUFY2dnYwUm9QcHYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
 
-# Getting started
+# Installing
 
 Checkout the source code:
 
@@ -20,35 +20,25 @@ or when you're using ssh key (see https://help.github.com/articles/generating-ss
 
     git clone git@github.com:geoadmin/mf-chsdi3.git
 
-Add .pgpass to your environment
+Add _.pgpass_ to your environment
 
     cd
     touch .pgpass
     chmod 600 .pgpass
 
-Open .pgpass and Add
+Open _.pgpass_ and Add
 
     pg.bgdi.ch:5432:*:${username}:${pass}
     pg-sandbox.bgdi.ch:5432:*:${username}:${pass}
 
-Make sure PGUSER and PGPASS is set in your .bashrc (for nosetests, potranslate and sphinx)
+Make sure PGUSER and PGPASS is set in your _.bashrc_ (for nosetests, potranslate and sphinx)
 
     export PGUSER=${username} // postgres user (won't be relevant soon)
     export PGPASS=${pass}
 
-Add .boto to your environment
+Note: on `vpc-mf1-dev`, AWS credentials are set by an *instance rule*. On other instances, you'll have to instance 
+manually the credentials in `$HOME/.aws/credentials`
 
-    cd
-    touch .boto
-    chmod 600 .boto
-
-Open .boto and Add (`/etc/boto.cfg` for main)
-
-    [Credentials]
-    aws_access_key_id = ${keyid}
-    aws_secret_access_key = ${accesskey}
-
-[Nagios Check for Dynamodb Dumps](https://dashboard.bgdi.ch/cgi-bin/nagios3/extinfo.cgi?type=2&host=ip-10-220-4-46.eu-west-1.compute.internal&service=DynamoDB+backup)
 
 Create a developer specific build configuration:
 
@@ -58,7 +48,7 @@ Add the port number in the newly created user rc file. You should at least edit 
 
     export SERVER_PORT=9000
 
-Add the API key to retrieve departure information from https://opentransportdata.swiss into the users rc file or directly in the .bashrc (keepass). For instance:
+Add the API key to retrieve departure information from https://opentransportdata.swiss into the users rc file or directly in the .bashrc (`gopass`). For instance:
 
     export OPENTRANS_API_KEY=dasffdjfjfjfjf566776jfjfjfj22243eac841ce7c9426355b
 
@@ -68,20 +58,45 @@ Where "username" is your specific rc configuration. To create the specific build
 
     make user
 
-If you do this on mf1t, you need to make sure that a correct configuration exists under
+If you do this on `vpc-mf1-dev1`, you need to make sure that a correct configuration exists under
 
     /var/www/vhosts/mf-chsdi3/conf
 
-that points to your working directory. If all is well, you can reach your pages at:
+that points to your working directory. If all is well (`sudo apache2ctl graceful`), you can reach your pages at:
 
     http://mf-chsdi3.dev.bgdi.ch/<username>/
 
-## Deploying to dev, int, and prod
+## Git hooks
+
+Three `git hooks` are installed automatically when `make user` is called.
+
+All the hooks check that we don't accidently publish sensitive AWS keys to
+github - in the files as well as in the commit messages. We also execute
+
+    make lint
+
+in the pre-commit hook.
+
+Other checks can be added freely to any hook.
+
+### `pre-commit` hook
+
+Called before committing changes locally. The commands in the `scripts/pre-commit.sh` script are executed.
+
+### `commit-msg` hook
+
+Called before comitting changes locally and checks the commit message. The commands in the `scripts/commit-msg.sh` script are executed.
+
+### `prepare-commit-msg` hook
+
+Called before comitting changes locally and checks pre-commit messages (usually from --fast-forward merges. The commands in the `scripts/prepare-commit-msg.sh` are executed.
+
+# Deploying to dev, int, and prod
 
 Do the following commands **inside your working directory**. Here's how a standard
 deploy process is done.
 
-`make deploydev SNAPSHOT=true`
+    make deploydev SNAPSHOT=true
 
 This updates the source in /var/www... to the latest master branch from github,
 creates a snapshot and runs nosetests against the test db. The snapshot directory
@@ -91,11 +106,11 @@ you don't want to create a snapshot e.g. for intermediate releases on dev main.
 Once a snapshot has been created, you are able to deploy this snapshot to a
 desired target. For integration, do
 
-`make deployint SNAPSHOT=201512011411`
+    make deployint SNAPSHOT=201512011411
 
 This will run the full nose tests **from inside the 201512011411 snapshot directory** against the **integration db cluster**. Only if these tests are successfull, the snapshot is deployed to the integration cluster.
 
-`make deployprod SNAPSHOT=201512011411`
+    make deployprod SNAPSHOT=201512011411
 
 You can disable the running of the nosetests against the target backends by adding
 `notests` parameter to the snapshot command. This is handy in an emergency (when
@@ -103,14 +118,14 @@ deploying an old known-to-work snapshot) or when you have to re-deploy
 a snapshot that you know has passed the tests for the given backend.
 To disable the tests, use the following command:
 
-`make deployint SNAPSHOT=201512011411 NO_TESTS=notests`
+    make deployint SNAPSHOT=201512011411 NO_TESTS=notests
 
 Use `notests` parameter with care, as it removes a level of tests.
 
 Per default the deploy command uses the deploy configuration of the snapshot directory.
 If you want to use the deploy configuration of directory from which you are executing this command, you can use:
 
-`make deployint SNAPSHOT=201512011411`
+    make deployint SNAPSHOT=201512011411
 
 ## Deploying a branch
 
@@ -134,15 +149,19 @@ http://mf-chsdi3.int.bgdi.ch/gjn_deploybranch/ (Don't forget the slash at the en
 ## Deleting a branch
 
 To list all the deployed branch:
-`make deletebranch`
+
+    make deletebranch
 
 To delete a given branch:
-`make deletebranch BRANCH_TO_DELETE=my_deployed_branch`
+
+    make deletebranch BRANCH_TO_DELETE=my_deployed_branch
 
 ## Get correct back-link to geoadmin3
 Per default the back-link to geoadmin3 points to the main instance. If you
 want to change that, adapt the `geoadminhost` variable in the
 `buildout_branch.cfg.in` input file and commit it in *your branch*.
+
+# Testing
 
 ## Run nosetests manual on different environments
 We are able to run our integration tests against different staging environments
@@ -151,21 +170,64 @@ We are able to run our integration tests against different staging environments
 include access information for all clusters (add pgcluster0i and pgcluster0)**
 
 To run against prod environment:
-`scripts/nose_run.sh -p`
+
+    scripts/nose_run.sh -p
 
 To run against int environment:
-`scripts/nose_run.sh -i`
+
+    scripts/nose_run.sh -i
 
 To run against dev/test environment:
-`scripts/nose_run.sh`
+
+    scripts/nose_run.sh
 
 To run against your private environment:
-`make test`
+
+    make test
 
 To execute all tests, including _wmts_ and _varnish_ ones, which are deactivated by default:
-`scripts/nose_run.sh -a`
 
-## Checker
+    scripts/nose_run.sh -a
+
+## Deactivate some tests
+
+You may deactivate tests requiring access to `DynamoDB`, 'AWS S3' or the 'Sphinx server', by 
+setting the following environmental variables to `0`
+
+    DYNAMODB_TESTS=0 SPHINX_TESTS=0 S3_TESTS=0 make test
+
+### Resources for testing
+
+:bomb: Resources are in `eu-central-1` for testing, otherwise in `eu-west-1`
+
+#### PostgreSQL
+The PostgreSQL cluster with all vector data. This cannot be deactivate, as the project wont start without
+
+#### Sphinx server
+
+The `search service` needs the `Sphinx search server` cluster, running on separate instances. These tests may
+be skipped with:
+
+    SPHINX_TESTS=0  make test
+
+#### AWS DynamoDB
+
+The `shortener service` uses on single `AWS DynamoDB` table on all three environment (`dev`, `int` and `prod`)
+These tests may be skipped with:
+
+    DYNAMODB_TESTS=0  make test
+
+#### AWS S3
+
+The `file service` use to store and retrieve `KML` and `GL styles` use both `AWS S3` _buckets_ and `AWS DynamoDB` tables. 
+The tables are `vectortiles-styles-storage` and `geoadmin-file-storage` (same for all environments), and the buckets are `public-(dev|int|prod)-bgdi-ch`,
+used by both services. To run theses tests, both variables must be set to `true` (which is the default):
+
+    S3_TESTS=1 DYNAMODB_TESTS=1 make test
+
+
+
+# Checker
 
 Apache/WSGI checker
 
@@ -191,7 +253,7 @@ make legends BODID=ch.layername WMSSCALELEGEND=1000
 
 Make sure, you're using the desired `echo $WMSHOST` project variable (`source rc_xxx` or `export WMSHOST=xxx`)
 
-## Python Code Styling
+# Python Code Styling
 
 We are currently using the FLAKES 8 convention for Python code.
 You can find more information about our code styling here:
@@ -215,6 +277,8 @@ To autocorrect most linting mistakes
 make autolint
 ```
 
+# Varia
+
 ## Lint a JSON file
 
 ```bash
@@ -222,7 +286,7 @@ export PATH=$(npm bin):$PATH
 jsonlint-cli --pretty temp.json > chsdi/static/vectorStyles/ch.meteoschweiz.messwerte-foehn-10min.json
 ```
 
-### Create legends
+## Create legends
 
 Install dependencies:
 
@@ -236,24 +300,4 @@ Run the script
 node scripts/createlegends.js ch.meteoschweiz.messwerte-niederschlagn
 ```
 
-## Git hooks
 
-3 git hooks are installed automatically when `make user` is called.
-
-All the hooks check that we don't accidently publish sensitive AWS keys to
-github - in the files as well as in the commit messages. We also execute
-`make lint` in the pre-commit hook.
-
-Other checks can be added freely to any hook.
-
-### `pre-commit` hook
-
-Called before committing changes locally. The commands in the `scripts/pre-commit.sh` script are executed.
-
-### `commit-msg` hook
-
-Called before comitting changes locally and checks the commit message. The commands in the `scripts/commit-msg.sh` script are executed.
-
-### `prepare-commit-msg` hook
-
-Called before comitting changes locally and checks pre-commit messages (usually from --fast-forward merges. The commands in the `scripts/prepare-commit-msg.sh` are executed.

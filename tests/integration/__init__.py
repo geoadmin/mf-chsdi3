@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+from distutils.util import strtobool
 from unittest import TestCase
 from pyramid import testing
 from webtest import TestApp
@@ -13,6 +14,10 @@ from sqlalchemy.sql.expression import func
 from chsdi.lib.helpers import transform_round_geometry as transform_shape
 from chsdi.lib.validation import SUPPORTED_OUTPUT_SRS
 from shapely.geometry import box, Point
+
+s3_tests = strtobool(os.environ.get('S3_TESTS', '1'))
+dynamodb_tests = strtobool(os.environ.get('DYNAMODB_TESTS', '1'))
+sphinx_tests = strtobool(os.environ.get('SPHINX_TESTS', '1'))
 
 
 def reproject_to_srid(string_coords, srid_from, srid_to, round_to=2):
@@ -60,8 +65,10 @@ class TestsBase(TestCase):
 
     def tearDown(self):
         testing.tearDown()
-        del self.testapp
-        del self.grids
+        if hasattr(self, 'testapp'):
+            del self.testapp
+        if hasattr(self, 'grids'):
+            del self.grids
 
     @contextmanager
     def getSession(self):

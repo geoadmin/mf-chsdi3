@@ -19,12 +19,14 @@ def _add_item(table, url):
         # Magic number relates to the initial epoch
         t = int(time.time() * 1000) - 1000000000000
         url_short = '%x' % t
+        now = time.localtime()
         try:
             table.put_item(
                 Item={
                     'url_short': url_short,
                     'url': url,
-                    'timestamp': time.strftime('%Y-%m-%d %X', time.localtime())
+                    'timestamp': time.strftime('%Y-%m-%d %X', now),
+                    'epoch': time.strftime('%s', now)
                 }
             )
         except boto_exc.Boto3Error as e:
@@ -60,9 +62,10 @@ def shortener(request):
         settings = request.registry.settings
         url_short = check_url(url, settings)
         table_name = settings.get('shortener.table_name')
+        aws_region = settings.get('shortener.table_region')
         # DynamoDB v2 high-level abstraction
         try:
-            table = get_dynamodb_table(table_name=table_name)
+            table = get_dynamodb_table(table_name=table_name, region=aws_region)
         except Exception as e:
             raise exc.HTTPInternalServerError('Error during connection %s' % e)
         url_short = _add_item(table, url)
@@ -84,7 +87,14 @@ def shorten_redirect(request):
     if url_short == 'toolong':
         raise exc.HTTPFound(location='http://map.geo.admin.ch')
 
-    table = get_dynamodb_table(table_name='shorturl')
+    settings = request.registry.settings
+    table_name = settings.get('shortener.table_name')
+    aws_region = settings.get('shortener.table_region')
+
+    try:
+        table = get_dynamodb_table(table_name=table_name, region=aws_region)
+    except Exception as e:
+        raise exc.HTTPInternalServerError('Error during connection %s' % e)
 
     try:
         response = table.query(
