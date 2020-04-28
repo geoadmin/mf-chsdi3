@@ -26,7 +26,7 @@ env:
     PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
     ROBOTS_FILE: robots.txt
     SERVER_PORT: 6543
-    SPHINXHOST: 10.220.4.177 
+    SPHINXHOST: service-sphinxsearch.dev.bgdi.ch 
     VECTOR_BUCKET: mf-chsdi3-bgdi-grid-based-data
     WMSHOST: wms-bgdi.dev.bgdi.ch
     WSGI_PROCESSES: 1
