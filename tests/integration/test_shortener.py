@@ -74,6 +74,7 @@ class TestShortenerView(TestsBase):
     def test_url_short_hash_reuse(self):
         random_url = 'https://map.geo.admin.ch?_dc={}'.format(time.time())
         resp = self.testapp.get('/shorten.json', params={'url': random_url}, status=200)
+        time.sleep(5)
         resp2 = self.testapp.get('/shorten.json', params={'url': random_url}, status=200)
         self.assertEqual(resp.json['shorturl'], resp2.json['shorturl'])
 
