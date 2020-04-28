@@ -26,10 +26,10 @@ class DynamoDBFilesHandler:
         try:
             self.table.put_item(
                 Item={
-                    'adminId': admin_id,
-                    'fileId': file_id,
-                    'timestamp': timestamp,
-                    'bucket': self.bucket_name
+                    'adminId': {'S': admin_id},
+                    'fileId': {'S': file_id},
+                    'timestamp': {'S': timestamp},
+                    'bucket': {'S': self.bucket_name}
                 }
             )
         except Exception as e:
@@ -39,7 +39,10 @@ class DynamoDBFilesHandler:
         item = None
         try:
             item = self.table.get_item(Key={'adminId': str(admin_id)}).get('Item', None)
-        except Exception:
+        except Exception as e:
+            log.error("----------------------------------------")
+            log.error("...----------------------------------...")
+            log.error(e)
             pass
         return item
 
