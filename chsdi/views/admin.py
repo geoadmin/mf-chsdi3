@@ -46,7 +46,7 @@ def kml_load(api_url='//api3.geo.admin.ch', bucket_name=None, table_name=None, r
     logging.debug("-------------------::::::::::::::::::::::::::::::::::::-------------------------")
     results = table.query(Limit=LIMIT * 4,
                           IndexName='bucketTimestampIndex',
-                          KeyConditionExpression=Key('bucket').eq(bucket_name) & Key('timestamp').begins_with('2'),
+                          KeyConditionExpression=Key('bucket').eq(bucket_name) & Key('timestamp').begins_with(date),
                           ScanIndexForward=False)
     logging.debug("----------------------- ! ! ! ---------------------")
     logging.debug(results['Items'])
