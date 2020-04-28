@@ -98,7 +98,6 @@ phases:
       - echo USE_PYTHON3=${USE_PYTHON3}
       - echo "===========POSGRESQL========================"
       - python ./scripts/pg_ready.py
-      - ./scripts/pg-isready -db "dbname=kogis_${DBSTAGING} host=${DBHOST} user=${PGUSER} password=${PGPASSWORD} port=${DBPORT}"
       - hostname -I
       - echo "============================================"
   build:
