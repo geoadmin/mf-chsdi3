@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from tests.integration import TestsBase, shift_to_lv95
+from tests.integration import TestsBase, shift_to_lv95, sphinx_tests
 from chsdi.lib.helpers import parse_box2d, ilen
 
 
 class TestSearchServiceView(TestsBase):
+
+    def setUp(self):
+        if not sphinx_tests:
+            self.skipTest("Service search requires access to the sphinx server")
+        super(TestSearchServiceView, self).setUp()
 
     def assertAttrs(self, type_, attrs, srid, returnGeometry=True, spatialOrder=False):
         self.assertIn('detail', attrs)

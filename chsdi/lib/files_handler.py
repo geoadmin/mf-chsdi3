@@ -17,9 +17,9 @@ log = logging.getLogger(__name__)
 
 class DynamoDBFilesHandler:
 
-    def __init__(self, table_name, bucket_name):
+    def __init__(self, table_name, bucket_name, table_region):
         # We use instance roles
-        self.table = get_dynamodb_table(table_name=table_name)
+        self.table = get_dynamodb_table(table_name=table_name, region=table_region)
         self.bucket_name = bucket_name
 
     def save_item(self, admin_id, file_id, timestamp):
@@ -33,7 +33,7 @@ class DynamoDBFilesHandler:
                 }
             )
         except Exception as e:
-            raise exc.HTTPBadRequest('Error during put item %s' % e)
+            raise exc.HTTPBadRequest('Error while saving item to bucket <{}>: {}'.format(self.bucket_name, e))
 
     def get_item(self, admin_id):
         item = None
@@ -73,7 +73,7 @@ class S3FilesHandler:
         try:
             item = get_file_from_bucket(self.bucket_name, file_id)
         except Exception as e:
-            raise exc.HTTPInternalServerError('Cannot access file with id=%s: %s' % (file_id, e))
+            raise exc.HTTPInternalServerError('Cannot access file with id={} in bucket={}: {}'.format(file_id, self.bucket_name, e))
         return item
 
     def get_key_timestamp(self, file_id):
@@ -97,7 +97,7 @@ class S3FilesHandler:
                 data, self.default_headers['Cache-Control'])
 
         except Exception as e:
-            error_msg = 'Error while %s S3 key (%s) %s' % (msg, file_id, e)
+            error_msg = 'Error while {} S3 key ({}) in bucket={}: {}'.format(msg, file_id, self.bucket_name, e)
             log.error(error_msg)
             raise exc.HTTPInternalServerError(error_msg)
 
@@ -114,6 +114,7 @@ class FilesHandler(object):
     dynamodb_table_name = ''
     bucket_name = ''
     bucket_folder = ''
+    region = ''
     # Define with the dot
     bucket_file_extension = ''
     default_mime_type = ''
@@ -122,8 +123,7 @@ class FilesHandler(object):
     def __init__(self, request):
         self.request = request
         # Set up AWS DynamoDB and S3 handlers
-        self.dynamodb_fileshandler = DynamoDBFilesHandler(
-            self.dynamodb_table_name, self.bucket_name)
+        self.dynamodb_fileshandler = DynamoDBFilesHandler(self.dynamodb_table_name, self.bucket_name, self.region)
         self.s3_fileshandler = S3FilesHandler(self.bucket_name)
         # This mean that we suppose a file has already been created
         if request.matched_route.name == self.default_route_name:

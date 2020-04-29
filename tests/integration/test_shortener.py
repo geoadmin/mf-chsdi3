@@ -2,16 +2,20 @@
 
 import time
 from random import randint
-from tests.integration import TestsBase
+from tests.integration import TestsBase, dynamodb_tests
 
 
 class TestShortenerView(TestsBase):
+    def setUp(self):
+        if not dynamodb_tests:
+            self.skipTest("Service shortener requires access to AWS DynamoDB")
+        super(TestShortenerView, self).setUp()
 
-    # 1 read capacity unit = 4 KB read capacity per second
+    # Slow down the tests, 1 read capacity unit = 1 strongly consistent read per second (max 4 KB per read)
     def tearDown(self):
-        time.sleep(randint(1, 10))
+        time.sleep(randint(1, 5))
 
-    def test_shortener_toolong_url_insert(self):
+    def test_shortener_toolong_url_insert_and_read(self):
         test_url = 'https://map.geo.admin.ch/?topic=ech&lang=en&bgLayer=ch.swisstopo.pixelkarte-farbe' \
             '&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bafu.wrz-wildruhezonen_portal,' \
             'ch.swisstopo.swisstlm3d-wanderwege,KML%7C%7Chttps:%2F%2Fpublic.geo.admin.ch' \
@@ -38,24 +42,41 @@ class TestShortenerView(TestsBase):
             'ch.swisstopo.pixelkarte-pk50.metadata&layers_timestamp=19961231,,,,,,,,,,,,,,,,,,,,,' \
             '&X=172839.76&Y=662412.05&zoom=3&time=1996&layers_opacity=0.25,1,1,0.4,1,1,1,1,1,1,1,1,1,1,1,' \
             '0.55,0.45,1,1,1,1,1&catalogNodes=457,458'
+        # DynamoDB indices cannot be larger than 2048
+        self.assertTrue(len(test_url) > 2048)
         resp = self.testapp.get('/shorten.json', params={'url': test_url}, status=200)
         self.assertTrue(resp.json['shorturl'].endswith('toolong'))
+        # Now read, the short hash should exist
+        self.testapp.get('/shorten/toolong', status=302)
 
     def test_shortener_shorturl_not_exists(self):
         self.testapp.get('/shorten/blw', status=404)
 
-    def test_shortener_moved_permanently(self):
-        self.testapp.get('/shorten/6863fbb96f', status=301)
-
-    def test_shortener_too_long_get(self):
-        self.testapp.get('/shorten/toolong', status=302)
+    # Only geo.admin.ch url may be shortened
+    def test_shortener_forbidden_link(self):
+        forbidden_url = 'https://very.naughty.website.com/'
+        self.testapp.get('/shorten.json', params={'url': forbidden_url}, status=400)
 
     def test_url_short(self):
         test_url = 'https://map.geo.admin.ch/?topic=ech&lang=en&bgLayer=ch.swisstopo.pixelkarte-farbe&layers' \
             '=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bafu.wrz-wildruhezonen_portal,' \
             'ch.swisstopo.swisstlm3d-wanderwege&layers_visibility=false,false,false,false&layers_timestamp=' \
             '18641231,,,&X=214128.92&Y=823805.99&zoom=2'
-        self.testapp.get('/shorten.json', params={'url': test_url}, status=200)
+        resp = self.testapp.get('/shorten.json', params={'url': test_url}, status=200)
+        shorturl = resp.json['shorturl']
+        shorthash = shorturl.split('/')[-1]
+        # The reverse, get the url from the short hash
+        resp2  = self.testapp.get('/shorten/{}'.format(shorthash), status=301)
+        back_url = resp2.headers.get('location')
+        self.assertEqual(test_url, back_url)
+
+    # Identical url should have the same hash
+    def test_url_short_hash_reuse(self):
+        random_url = 'https://map.geo.admin.ch?_dc={}'.format(time.time())
+        resp = self.testapp.get('/shorten.json', params={'url': random_url}, status=200)
+        time.sleep(5)
+        resp2 = self.testapp.get('/shorten.json', params={'url': random_url}, status=200)
+        self.assertEqual(resp.json['shorturl'], resp2.json['shorturl'])
 
     def test_shorten_json_example(self):
         test_url = 'http://api3.geo.admin.ch/shorten.json?url=https:%2F%2Fmf-geoadmin3.int.bgdi.ch' \

@@ -10,7 +10,8 @@ from chsdi.lib.decorators import requires_authorization, validate_glstyle_input
 class GLStylesView(FilesHandler):
 
     def __init__(self, request):
-        self.dynamodb_table_name = 'vectortiles-styles-storage'
+        self.dynamodb_table_name = request.registry.settings['glstyles_storage_table_name']
+        self.region = request.registry.settings['glstyles_storage_table_region']
         self.bucket_name = request.registry.settings['geoadmin_file_storage_bucket']
         self.default_mime_type = 'application/json'
         self.bucket_folder = 'gl-styles'

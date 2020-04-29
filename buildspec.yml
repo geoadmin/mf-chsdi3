@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     SHELL: /bin/bash
-    AWS_DEFAULT_REGION: eu-west-1
+    AWS_DEFAULT_REGION: eu-central-1
     APACHE_BASE_PATH: main
     ALTI_URL: //service-alti.dev.bgdi.ch
     API_URL: //mf-chsdi3.dev.bgdi.ch
@@ -13,7 +13,11 @@ env:
     DBSTAGING: dev
     DEPLOY_TARGET: dev
     GEODATA_STAGING: test
-    GEOADMIN_FILE_STORAGE_BUCKET: public-dev-bgdi-ch
+    GEOADMIN_FILE_STORAGE_BUCKET: mf-chsdi3-geoadmin-file-storage-bucket
+    GEOADMIN_FILE_STORAGE_TABLE_NAME: mf_chsdi3_geoadmin_file_storage
+    GEOADMIN_FILE_STORAGE_TABLE_REGION: eu-central-1
+    GLSTYLES_STORAGE_TABLE_NAME: mf-chsdi3-vectortiles-styles-storage
+    GLSTYLES_STORAGE_TABLE_REGION: eu-central-1
     GEOADMINHOST: mf-geoadmin3.dev.bgdi.ch
     HOST: mf-chsdi3.dev.bgdi.ch
     KEEP_VERSION: false
@@ -22,17 +26,23 @@ env:
     PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
     ROBOTS_FILE: robots.txt
     SERVER_PORT: 6543
-    SPHINXHOST: service-sphinxsearch.dev.bgdi.ch
-    VECTOR_BUCKET: bgdi-grid-based-data
+    SPHINXHOST: service-sphinxsearch.dev.bgdi.ch 
+    VECTOR_BUCKET: mf-chsdi3-bgdi-grid-based-data
     WMSHOST: wms-bgdi.dev.bgdi.ch
     WSGI_PROCESSES: 1
     WSGI_THREADS: 15
     CMSGEOADMINHOST: https://cms.geo.admin.ch
     LINKEDDATAHOST: https://ld.geo.admin.ch
     CACHE_CONTROL: no-cache
+    SHORTENER_TABLE_NAME: mf_chsdi3_shorturl
+    SHORTENER_TABLE_REGION: eu-central-1
+
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
+    # We do not have AWS S3 and DynmoDB access for now
   parameter-store:
-    OPENTRANS_API_KEY: "/terraform-codepipeline-example/opentrans_api_key"
+    OPENTRANS_API_KEY: "/opentrans_api/key"
+    PGUSER: "/postgresql/pguser"
+    PGPASSWORD: "/postgresql/pgpassword"
 
 phases:
   install:
@@ -86,21 +96,54 @@ phases:
       - echo BASH=${BASH}
       - echo SHELL=${SHELL}
       - echo USE_PYTHON3=${USE_PYTHON3}
-      - echo "==================================="
+      - echo "===========POSGRESQL========================"
+      - python ./scripts/pg_ready.py
+      - hostname -I
+      - echo "============================================"
   build:
     commands:
       - echo Build started on $(date)
       - |-
            if [ "${USE_PYTHON3}" = 0 ]; then
-             make cleanall dev
+             make cleanall all
            else
-              make cleanall build/python dev
+              make cleanall build/python all
            fi
       - echo Build completed on $(date)
+      - echo "===========SPHINXSEARCH===================="
+      - .venv/bin/python ./scripts/test_sphinxserver.py
+      - echo "==========================================="
       
   post_build:
     commands:
       - echo Testing...
       - make lint
+      - echo "==========Running functional tests=============="
       - .venv/bin/nosetests   tests/functional/
-      - echo "Doing nothing, but great success"
+      - echo "==========Running integration tests=============="
+      - .venv/bin/nosetests tests/integration/test_admin.py
+      - .venv/bin/nosetests tests/integration/test_cache_update.py
+      - .venv/bin/nosetests tests/integration/test_catalog.py
+      - .venv/bin/nosetests tests/integration/test_checker.py
+      - .venv/bin/nosetests tests/integration/test_color.py
+      - .venv/bin/nosetests tests/integration/test_doc.py
+      - .venv/bin/nosetests tests/integration/test_features_service.py
+      - .venv/bin/nosetests tests/integration/test_file_storage.py
+      - .venv/bin/nosetests tests/integration/test_glstyles_storage.py
+      - .venv/bin/nosetests tests/integration/test_historicalmaps.py
+      - .venv/bin/nosetests tests/integration/test_identify_service.py
+      - # .venv/bin/nosetests tests/integration/test_layers.py
+      - .venv/bin/nosetests tests/integration/test_layers_service.py
+      - .venv/bin/nosetests tests/integration/test_loader.py
+      - .venv/bin/nosetests tests/integration/test_luftbilder.py
+      - .venv/bin/nosetests tests/integration/test_opentransapi.py
+      - .venv/bin/nosetests tests/integration/test_qrcode.py
+      -  .venv/bin/nosetests tests/integration/test_search.py
+      - .venv/bin/nosetests tests/integration/test_shortener.py
+      - .venv/bin/nosetests tests/integration/test_sitemap.py
+      - .venv/bin/nosetests tests/integration/test_sphinxapi.py
+      - .venv/bin/nosetests tests/integration/test_stationboard.py
+      - .venv/bin/nosetests tests/integration/test_topics.py
+      - .venv/bin/nosetests tests/integration/test_translation.py
+      - .venv/bin/nosetests tests/integration/test_wmtscapabilities.py
+      - echo "Great success"
