@@ -147,7 +147,7 @@ phases:
       - .venv/bin/nosetests tests/integration/test_translation.py
       - .venv/bin/nosetests tests/integration/test_wmtscapabilities.py
       - echo "Great success"
->>>>>>> re-oops
+
 reports:
   reportGroupJunit:
     files:
