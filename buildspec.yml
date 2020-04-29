@@ -131,7 +131,7 @@ phases:
       - .venv/bin/nosetests tests/integration/test_file_storage.py
       - .venv/bin/nosetests tests/integration/test_glstyles_storage.py
       - .venv/bin/nosetests tests/integration/test_historicalmaps.py
-      - .venv/bin/nosetests --with-xunit --xunit-file=.venv/junit-reports/integration.xml tests/integration/test_identify_service.py
+      - .venv/bin/nosetests --with-xunit --xunit-file=junit-reports/integration.xml tests/integration/test_identify_service.py
       - # .venv/bin/nosetests tests/integration/test_layers.py
       - .venv/bin/nosetests tests/integration/test_layers_service.py
       - .venv/bin/nosetests tests/integration/test_loader.py
