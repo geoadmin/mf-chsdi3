@@ -182,6 +182,7 @@ help:
 	@echo "- serve              Serve the application with pserve"
 	@echo "- shell              Enter interactive shell with app loaded in the background"
 	@echo "- test               Launch the tests (no e2e tests)"
+	@echo "- testci             Lauch tests with reports (for CI)"
 	@echo "- teste2e            Launch end-to-end tests"
 	@echo "- lint               Run the linter"
 	@echo "- autolint           Run the autolinter"
@@ -257,6 +258,11 @@ shell:
 .PHONY: test
 test:
 	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD}  tests/ -e .*e2e.*
+
+.PHONY: testci
+testci:
+	mkdir -p junit-reports
+	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} --with-xunit --xunit-file=junit-reports/integration.xml   tests/ -e .*e2e.*
 
 .PHONY: teste2e
 teste2e:
