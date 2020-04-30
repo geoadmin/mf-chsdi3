@@ -182,6 +182,7 @@ help:
 	@echo "- serve              Serve the application with pserve"
 	@echo "- shell              Enter interactive shell with app loaded in the background"
 	@echo "- test               Launch the tests (no e2e tests)"
+	@echo "- testci             Lauch tests with reports (for CI)"
 	@echo "- teste2e            Launch end-to-end tests"
 	@echo "- lint               Run the linter"
 	@echo "- autolint           Run the autolinter"
@@ -257,6 +258,12 @@ shell:
 .PHONY: test
 test:
 	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD}  tests/ -e .*e2e.*
+
+.PHONY: testci
+testci:
+	mkdir -p junit-reports/{integration,functional}
+	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} --with-xunit --xunit-file=junit-reports/functional/nosetest.xml   tests/functional -e .*e2e.*
+	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} --with-xunit --xunit-file=junit-reports/integration/nosetest.xml  tests/integration -e .*e2e.*
 
 .PHONY: teste2e
 teste2e:
@@ -751,6 +758,7 @@ clean:
 	rm -rf deploy/deploy-branch.cfg
 	rm -rf deploy/conf/00-branch.conf
 	rm -f  chsdi/static/info.json
+	rm -rf junit_report
 
 .PHONY: cleanall
 cleanall: clean
