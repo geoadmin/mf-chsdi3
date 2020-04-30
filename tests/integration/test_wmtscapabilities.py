@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import sys
 from numpy.testing import assert_almost_equal
 from tests.integration import TestsBase
 
@@ -56,8 +57,16 @@ class TestWmtsCapabilitiesView(TestsBase):
                 data = file_xml_schema.read()
             raw_schema = InputIO(data)
 
-            xml_schema_doc = etree.parse(raw_schema)
-            xml_schema = etree.XMLSchema(xml_schema_doc)
+            try:
+                xml_schema_doc = etree.parse(raw_schema)
+                xml_schema = etree.XMLSchema(xml_schema_doc)
+            except etree.XMLSchemaParseError as e:
+                t, v, tb = sys.exc_info()
+                if "Failed to load the document 'http://schemas.opengis.net/ows/1.1.0/owsServiceProvider.xsd' for inclusion." in e:
+                    self.skipTest("Cannot load XML schema from 'http://schemas.opengis.net/ows/1.1.0/owsServiceProvider.xsd'")
+                else:
+                    six.reraise(t, v, tb)
+
             for lang in ['de', 'fr', 'it', 'en']:
                 for epsg in [4326, 2056, 3857, 21781]:
                     resp = self.testapp.get(
