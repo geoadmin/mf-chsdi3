@@ -139,7 +139,7 @@ class FilesHandler(object):
             try:
                 self.item = self.s3_fileshandler.get_item(self.file_path)
             except Exception:
-                raise exc.HTTPNotFound('File %s not found in bucket %s' % self.file_path, self.bucket_name)
+                raise exc.HTTPNotFound('File {} not found in bucket {}'.format(self.file_path, self.bucket_name))
 
     @property
     def file_path(self):
