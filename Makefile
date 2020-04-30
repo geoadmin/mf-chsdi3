@@ -261,8 +261,9 @@ test:
 
 .PHONY: testci
 testci:
-	mkdir -p junit-reports
-	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} --with-xunit --xunit-file=junit-reports/integration.xml   tests/ -e .*e2e.*
+	mkdir -p junit-reports/{integration,functional}
+	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} --with-xunit --xunit-file=junit-reports/functional/nosetest.xml   tests/functional -e .*e2e.*
+	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} --with-xunit --xunit-file=junit-reports/integration/nosetest.xml  tests/integration -e .*e2e.*
 
 .PHONY: teste2e
 teste2e:

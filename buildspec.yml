@@ -120,7 +120,7 @@ phases:
       - make lint
       - echo "==========Running tests=============="
       - make testci
-      - echo "Great success"
+      - echo "Done"
 
 reports:
   reportGroupJunit:
