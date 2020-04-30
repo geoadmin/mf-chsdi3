@@ -758,6 +758,7 @@ clean:
 	rm -rf deploy/deploy-branch.cfg
 	rm -rf deploy/conf/00-branch.conf
 	rm -f  chsdi/static/info.json
+	rm -rf junit_report
 
 .PHONY: cleanall
 cleanall: clean
