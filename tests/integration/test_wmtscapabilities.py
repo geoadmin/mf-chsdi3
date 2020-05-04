@@ -62,7 +62,7 @@ class TestWmtsCapabilitiesView(TestsBase):
                 xml_schema = etree.XMLSchema(xml_schema_doc)
             except etree.XMLSchemaParseError as e:
                 t, v, tb = sys.exc_info()
-                if "Failed to load the document 'http://schemas.opengis.net/ows/1.1.0/owsServiceProvider.xsd' for inclusion." in e:
+                if "Failed to load the document 'http://schemas.opengis.net/ows/1.1.0/owsServiceProvider.xsd' for inclusion." in str(e):
                     self.skipTest("Cannot load XML schema from 'http://schemas.opengis.net/ows/1.1.0/owsServiceProvider.xsd'")
                 else:
                     six.reraise(t, v, tb)
