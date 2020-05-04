@@ -952,10 +952,6 @@ RESTFul interface is available.
 | **distinct_points (optional)**    | If True, it will ensure the coordinates given to the service are part of the response.    |
 |                                   | Possible values are True or False, default to False.                                      |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **smart_filling (optional)**      | If True, it will ensure there are no more points than the resolution of the tiles.        |
-|                                   | For example, if the resolution is 2 meters, there will be at most one point every two     |
-|                                   | meters. Possible values are True or False, default to False.                  |           |
-+-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | Only available for **profile.json**. The name of the callback function.                   |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 
