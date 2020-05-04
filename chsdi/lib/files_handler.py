@@ -39,8 +39,8 @@ class DynamoDBFilesHandler:
         item = None
         try:
             item = self.table.get_item(Key={'adminId': str(admin_id)}).get('Item', None)
-        except Exception:
-            pass
+        except Exception as e:
+            log.error(e)
         return item
 
     def update_item_timestamp(self, admin_id, timestamp):
@@ -109,7 +109,6 @@ class FilesHandler(object):
 
     # Properties to be overriden in the __init__ function of the child class
     dynamodb_table_name = ''
-    bucket_key_name = ''
     bucket_name = ''
     bucket_folder = ''
     region = ''
@@ -121,8 +120,7 @@ class FilesHandler(object):
     def __init__(self, request):
         self.request = request
         # Set up AWS DynamoDB and S3 handlers
-        self.dynamodb_fileshandler = DynamoDBFilesHandler(
-            self.dynamodb_table_name, self.bucket_key_name, self.region)
+        self.dynamodb_fileshandler = DynamoDBFilesHandler(self.dynamodb_table_name, self.bucket_name, self.region)
         self.s3_fileshandler = S3FilesHandler(self.bucket_name)
         # This mean that we suppose a file has already been created
         if request.matched_route.name == self.default_route_name:

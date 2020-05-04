@@ -2,12 +2,14 @@
 
 import datetime
 import requests
+import logging
 from requests.exceptions import RequestException
 from pyramid.view import view_config
 from pyramid.renderers import render_to_response
 from chsdi.models.clientdata_dynamodb import get_dynamodb_table
 from boto3.dynamodb.conditions import Key
 
+log = logging.getLogger(__name__)
 LIMIT = 50
 
 
@@ -45,8 +47,8 @@ def kml_load(api_url='//api3.geo.admin.ch', bucket_name=None, table_name=None, r
             resp = requests.head("http:" + api_url + "/files/" + f['fileId'], headers={'User-Agent': 'mf-geoadmin/python'})
             if int(resp.status_code) == 200:
                 fileids.append((f['fileId'], f['adminId'], f['timestamp']))
-        except RequestException:
-            pass
+        except RequestException as e:
+            log.error(e)
         if len(fileids) >= LIMIT:
             return fileids
     return fileids
