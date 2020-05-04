@@ -26,10 +26,10 @@ class DynamoDBFilesHandler:
         try:
             self.table.put_item(
                 Item={
-                    'adminId': {'S': admin_id},
-                    'fileId': {'S': file_id},
-                    'timestamp': {'S': timestamp},
-                    'bucket': {'S': self.bucket_name}
+                    'adminId': admin_id,
+                    'fileId': file_id,
+                    'timestamp': : timestamp,
+                    'bucket': self.bucket_name
                 }
             )
         except Exception as e:
