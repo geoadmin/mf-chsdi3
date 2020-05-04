@@ -28,7 +28,7 @@ class DynamoDBFilesHandler:
                 Item={
                     'adminId': admin_id,
                     'fileId': file_id,
-                    'timestamp': : timestamp,
+                    'timestamp': timestamp,
                     'bucket': self.bucket_name
                 }
             )
