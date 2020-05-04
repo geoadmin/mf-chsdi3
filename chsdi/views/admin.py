@@ -19,6 +19,11 @@ def admin_kml(context, request):
     table_name = settings.get('geoadmin_file_storage_table_name')
     table_region = settings.get('geoadmin_file_storage_table_region')
     api_url = settings.get('api_url')
+    logging.debug("-----------------------------------------------------------------------")
+    logging.debug(bucket_name)
+    logging.debug(table_name)
+    logging.debug(api_url)
+    logging.debug("-----------------------------------------------------------------------")
     files = kml_load(api_url=api_url,
                      bucket_name=bucket_name,
                      table_name=table_name,
