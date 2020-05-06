@@ -16,7 +16,9 @@
     <tr><td class="cell-left">${_('ch.swisstopo.geologie-geowege.treffpunkt_gemeinde')}</td>                     <td>${arr_treffpunkt_gemeinde[i] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.geologie-geowege.treffpunkt_kanton')}</td>                       <td>${arr_treffpunkt_kanton[i] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.geologie-geowege.kontakt_firma')}</td>                           <td>${arr_kontakt_firma[i] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geowege.post_permalink')}</td>                          <td><a href="${arr_post_permalink or '-'}" target="_blank">Link</a></td></tr>
+% if arr_kontakt_post_permalink:
+    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geowege.post_permalink')}</td>                          <td><a href="${arr_kontakt_post_permalink[i]}" target="_blank">Link</a></td></tr>
+%endif
 % endfor
 </%def>
 
