@@ -1,6 +1,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
+<% c['stable_id'] = True %>
     <%
     reliable = 'yesText' if c['attributes']['adr_reliable'] else 'noText'
     official = 'yesText' if c['attributes']['adr_official'] else 'noText'
