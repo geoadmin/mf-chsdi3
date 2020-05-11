@@ -40,49 +40,73 @@ API & applications
 
 Geodata
 *******
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Accessibility by road <//map.geo.admin.ch/?layers=ch.are.erreichbarkeit-miv>`__ (ch.are.erreichbarkeit-miv)                                                                                   |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Railway noise, perm. immissions D <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag)     |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Railway noise, perm. immissions N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht) |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `GeoEvents on request <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geoevents_anfrage>`__ (ch.swisstopo.geologie-geoevents_anfrage)                                                        |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Cities and conurbations BeSA <//map.geo.admin.ch/?layers=ch.are.agglomerationsverkehr>`__ (ch.are.agglomerationsverkehr)                                                                      |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Geosites <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geosites>`__ (ch.swisstopo.geologie-geosites)                                                                                      |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Accessibility by PT <//map.geo.admin.ch/?layers=ch.are.erreichbarkeit-oev>`__ (ch.are.erreichbarkeit-oev)                                                                                     |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Travel time to agglos by road <//map.geo.admin.ch/?layers=ch.are.reisezeit-agglomerationen-miv>`__ (ch.are.reisezeit-agglomerationen-miv)                                                     |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Upcoming GeoEvents <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geoevents_demnaechst>`__ (ch.swisstopo.geologie-geoevents_demnaechst)                                                    |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Published shooting range bulletins and hazard zones <//map.geo.admin.ch/?layers=ch.vbs.schiessanzeigen>`__ (ch.vbs.schiessanzeigen)                                                           |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Travel time to agglos by PT <//map.geo.admin.ch/?layers=ch.are.reisezeit-agglomerationen-oev>`__ (ch.are.reisezeit-agglomerationen-oev)                                                       |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Railway noise, act. immissions N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht)    |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Railway noise, act. immissions D <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag)        |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Wind energy plants <//map.geo.admin.ch/?layers=ch.bfe.windenergieanlagen>`__ (ch.bfe.windenergieanlagen)                                                                                      |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Travel time to centres by PT <//map.geo.admin.ch/?layers=ch.are.reisezeit-oev>`__ (ch.are.reisezeit-oev)                                                                                      |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Travel time to centres by road <//map.geo.admin.ch/?layers=ch.are.reisezeit-miv>`__ (ch.are.reisezeit-miv)                                                                                    |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Cleantech projects <//map.geo.admin.ch/?layers=ch.bfe.energieforschung>`__ (ch.bfe.energieforschung)                                                                                          |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                                               |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Geo-trails <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geowege>`__ (ch.swisstopo.geologie-geowege)                                                                                      |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Energy-Regions <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-energieregionen>`__ (ch.bfe.energiestaedte-energieregionen)                                                                  |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                                                         |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Accessibility by road <//map.geo.admin.ch/?layers=ch.are.erreichbarkeit-miv>`__ (ch.are.erreichbarkeit-miv)                                                                                       |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Railway noise, perm. immissions D <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag)         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Railway noise, perm. immissions N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht)     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `GeoEvents on request <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geoevents_anfrage>`__ (ch.swisstopo.geologie-geoevents_anfrage)                                                            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Cities and conurbations BeSA <//map.geo.admin.ch/?layers=ch.are.agglomerationsverkehr>`__ (ch.are.agglomerationsverkehr)                                                                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geosites <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geosites>`__ (ch.swisstopo.geologie-geosites)                                                                                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Accessibility by PT <//map.geo.admin.ch/?layers=ch.are.erreichbarkeit-oev>`__ (ch.are.erreichbarkeit-oev)                                                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Travel time to agglos by road <//map.geo.admin.ch/?layers=ch.are.reisezeit-agglomerationen-miv>`__ (ch.are.reisezeit-agglomerationen-miv)                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upcoming GeoEvents <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geoevents_demnaechst>`__ (ch.swisstopo.geologie-geoevents_demnaechst)                                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Published shooting range bulletins and hazard zones <//map.geo.admin.ch/?layers=ch.vbs.schiessanzeigen>`__ (ch.vbs.schiessanzeigen)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Travel time to agglos by PT <//map.geo.admin.ch/?layers=ch.are.reisezeit-agglomerationen-oev>`__ (ch.are.reisezeit-agglomerationen-oev)                                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Railway noise, act. immissions N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht)        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Railway noise, act. immissions D <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag)            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Amtliches Gebäudeadressverzeichnis <//map.geo.admin.ch/?layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis>`__ (ch.swisstopo.amtliches-gebaeudeadressverzeichnis)                            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wind energy plants <//map.geo.admin.ch/?layers=ch.bfe.windenergieanlagen>`__ (ch.bfe.windenergieanlagen)                                                                                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Travel time to centres by PT <//map.geo.admin.ch/?layers=ch.are.reisezeit-oev>`__ (ch.are.reisezeit-oev)                                                                                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Travel time to centres by road <//map.geo.admin.ch/?layers=ch.are.reisezeit-miv>`__ (ch.are.reisezeit-miv)                                                                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cleantech projects <//map.geo.admin.ch/?layers=ch.bfe.energieforschung>`__ (ch.bfe.energieforschung)                                                                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                                                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geo-trails <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geowege>`__ (ch.swisstopo.geologie-geowege)                                                                                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Energy-Regions <//map.geo.admin.ch/?layers=ch.bfe.energiestaedte-energieregionen>`__ (ch.bfe.energiestaedte-energieregionen)                                                                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                                                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mountainbiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.mountainbikeland>`__ (ch.astra.mountainbikeland)                                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Skating in Switzerland <//map.geo.admin.ch/?layers=ch.astra.skatingland>`__ (ch.astra.skatingland)                                                                                                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cycling in Switzerland <//map.geo.admin.ch/?layers=ch.astra.veloland>`__ (ch.astra.veloland)                                                                                                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.wanderland>`__ (ch.astra.wanderland)                                                                                                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Passenger traffic (public transport) <//map.geo.admin.ch/?layers=ch.are.belastung-personenverkehr-bahn>`__ (ch.are.belastung-personenverkehr-bahn)                                                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Passenger traffic <//map.geo.admin.ch/?layers=ch.are.belastung-personenverkehr-strasse>`__ (ch.are.belastung-personenverkehr-strasse)                                                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway noise (act.) N emissions <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht)  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway noise (act.) D emissions <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag)      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Image strips swisstopo <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-bildstreifen>`__ (ch.swisstopo.lubis-bildstreifen)                                                                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map swissTLM (color) <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-farbe>`__ (ch.swisstopo.swisstlm3d-karte-farbe)                                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map swissTLM (grey) <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-grau>`__ (ch.swisstopo.swisstlm3d-karte-grau)                                                                       |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20200318:
