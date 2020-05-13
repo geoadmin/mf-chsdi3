@@ -57,7 +57,7 @@ if c['attributes']['wochentag']:
         %>
     ## # special case 0 and 0 means no shooting
         % if p.match(zeit):
-          <tr><td><${wochentag}</td><td>${arr_belegungsdatum[counter]}</td><td colspan="2">${_('ch.vbs.schiessanzeigen.kein_schiessen')}</td></tr>
+          <tr><td>${wochentag}</td><td>${datum}</td><td colspan="2">${_('ch.vbs.schiessanzeigen.kein_schiessen')}</td></tr>
         % else:
           <tr><td>${wochentag}</td><td>${datum}</td><td>${zeit}</td><td>${arr_anmerkung[counter]}</td></tr>
         % endif

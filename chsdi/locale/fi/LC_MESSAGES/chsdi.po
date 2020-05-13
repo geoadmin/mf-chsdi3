@@ -939,7 +939,7 @@ msgid "ch.are.agglomerationen_isolierte_staedte-2000"
 msgstr "Aglomeraziuns e citads isoladas"
 
 msgid "ch.are.agglomerationsverkehr"
-msgstr "Beitragsberechtigte Städte und Agglomerationen"
+msgstr "Citads ed aglomeraziuns BeSA"
 
 msgid "ch.are.agglomerationsverkehr.agglo_name"
 msgstr "Agglomerationsname"
@@ -984,16 +984,94 @@ msgid "ch.are.belastung-gueterverkehr-strasse-2008"
 msgstr "Güterverkehr Strasse"
 
 msgid "ch.are.belastung-personenverkehr-bahn"
-msgstr "Traffic da persunas TP"
+msgstr "Personenverkehr Schiene"
 
 msgid "ch.are.belastung-personenverkehr-bahn-2008"
 msgstr "Personenverkehr ÖV"
 
+msgid "ch.are.belastung-personenverkehr-bahn.asp_oev"
+msgstr "Fahrgäste, Abendspitze (MSP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-bahn.dtv_oev"
+msgstr "Fahrgäste, durchschnittlicher Tagesverkehr (DTV)"
+
+msgid "ch.are.belastung-personenverkehr-bahn.dwv_oev"
+msgstr "Fahrgäste, durchschnittlicher Werktagverkehr (DWV)"
+
+msgid "ch.are.belastung-personenverkehr-bahn.msp_oev"
+msgstr "Fahrgäste, Morgenspitze (MSP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-bahn.nr"
+msgstr "Streckennummer"
+
 msgid "ch.are.belastung-personenverkehr-strasse"
-msgstr "Traffic da persunas via"
+msgstr "Personen-/Güterverkehr Strasse"
 
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
 msgstr "Personenverkehr Strasse"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_fzg"
+msgstr "alle Fahrzeuge, Abendspitze (MSP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_li"
+msgstr "Lieferwagen, Abendspitze (MSP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_lw"
+msgstr "Lastwagen, Abendspitze (MSP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_lz"
+msgstr "Lastzug, Abendspitze (MSP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.asp_pw"
+msgstr "Personenwagen, Abendspitze (MSP, 17h-18h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_fzg"
+msgstr "alle Fahrzeuge, durchschnittlicher Tagesverkehr (DTV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_li"
+msgstr "Lieferwagen, durchschnittlicher Tagesverkehr (DTV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_lw"
+msgstr "Lastwagen, durchschnittlicher Tagesverkehr (DTV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_lz"
+msgstr "Lastzug, durchschnittlicher Tagesverkehr (DTV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dtv_pw"
+msgstr "Personenwagen, durchschnittlicher Tagesverkehr (DTV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_fzg"
+msgstr "Alle Fahrzeuge, durchschnittlicher Werktagverkehr (DWV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_li"
+msgstr "Lieferwagen, durchschnittlicher Werktagverkehr (DWV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_lw"
+msgstr "Lastwagen, durchschnittlicher Werktagverkehr (DWV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_lz"
+msgstr "Lastzug, durchschnittlicher Werktagverkehr (DWV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.dwv_pw"
+msgstr "Personenwagen, durchschnittlicher Werktagverkehr (DWV)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_fzg"
+msgstr "alle Fahrzeuge, Morgenspitze (MSP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_li"
+msgstr "Lieferwagen, Morgenspitze (MSP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_lw"
+msgstr "Lastwagen, Morgenspitze (MSP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_lz"
+msgstr "Lastzug, Morgenspitze (MSP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.msp_pw"
+msgstr "Personenwagen, Morgenspitze (MSP, 7h-8h)"
+
+msgid "ch.are.belastung-personenverkehr-strasse.nr"
+msgstr "Streckennummer"
 
 msgid "ch.are.beschaeftigtendichte-bz08"
 msgstr "Beschäftigtendichte 2008"
@@ -1002,10 +1080,22 @@ msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Bevölkerungsdichte 2000"
 
 msgid "ch.are.erreichbarkeit-miv"
-msgstr "Erreichbarkeit Strasse"
+msgstr "Erreichbarkeit auf der Strasse"
+
+msgid "ch.are.erreichbarkeit-miv.strasse_erreichb_ewap"
+msgstr "Erreichbarkeit (Punkte)"
+
+msgid "ch.are.erreichbarkeit-miv.verkehrszone_id"
+msgstr "Zonencode Verkehrszone"
 
 msgid "ch.are.erreichbarkeit-oev"
-msgstr "Erreichbarkeit ÖV"
+msgstr "Erreichbarkeit mit dem ÖV"
+
+msgid "ch.are.erreichbarkeit-oev.oev_erreichb_ewap"
+msgstr "Erreichbarkeit (Punkte)"
+
+msgid "ch.are.erreichbarkeit-oev.verkehrszone_id"
+msgstr "Zonencode Verkehrszone"
 
 msgid "ch.are.gemeindetyp-1990-9klassen"
 msgstr "Tipologia da las vischnancas ARE"
@@ -1047,16 +1137,34 @@ msgid "ch.are.reisezeit-agglomerationen-oev.verkehrszone_id"
 msgstr "Zonencode Verkehrszone"
 
 msgid "ch.are.reisezeit-miv"
-msgstr "Temp da viadi ad in center TIM"
+msgstr "Reisezeit zu Zentren Strasse"
 
 msgid "ch.are.reisezeit_miv-2005"
 msgstr "Reisezeit zu Zentren mit dem MIV 2005"
 
+msgid "ch.are.reisezeit-miv.strasse_no_z"
+msgstr "Zonencode des Zentrums"
+
+msgid "ch.are.reisezeit-miv.strasse_reisezeit_z"
+msgstr "Reisezeit zum Zentrum"
+
+msgid "ch.are.reisezeit-miv.verkehrszone_id"
+msgstr "Zonencode Verkehrszone"
+
 msgid "ch.are.reisezeit-oev"
-msgstr "Temp da viadi ad in center TP"
+msgstr "Reisezeit zu Zentren ÖV"
 
 msgid "ch.are.reisezeit_oev-2005"
 msgstr "Reisezeit zu Zentren ÖV 2005"
+
+msgid "ch.are.reisezeit-oev.oev_no_z"
+msgstr "Zonencode des Zentrums"
+
+msgid "ch.are.reisezeit-oev.oev_reisezeit_z"
+msgstr "Reisezeit zum Zentrum"
+
+msgid "ch.are.reisezeit-oev.verkehrszone_id"
+msgstr "Zonencode Verkehrszone"
 
 msgid "ch.are.url"
 msgstr "http://www.are.admin.ch/index.html?lang=de"
@@ -8516,6 +8624,45 @@ msgstr "swisstopo"
 msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis"
 msgstr "Amtliches Gebäudeadressverzeichnis"
 
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_edid"
+msgstr "Eidgenössischer Gebäudeeingangsidentifikator"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_egaid"
+msgstr "Eidgenössischer Gebäudeadressidentifikator"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_modified"
+msgstr "Letzte Änderung"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_number"
+msgstr "Hausnummer"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_official"
+msgstr "Offiziell"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_reliable"
+msgstr "Zuverlässig"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_status"
+msgstr "Status"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_zip"
+msgstr "Postleitzahl / Ortschaft"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.bdg_egid"
+msgstr "Eidgenössischer Gebäudeidentifikator"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.com_fosnr"
+msgstr "BFS-Nr."
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.com_name"
+msgstr "Gemeindename"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.str_esid"
+msgstr "Eidgenössischer Strassenidentifikator"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.str_label"
+msgstr "Strassenname"
+
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
 msgstr "Register uffizial da las vias"
 
@@ -8596,6 +8743,9 @@ msgstr "DHM25 sumbriva dal reliev"
 
 msgid "ch.swisstopo.dreiecksvermaschung"
 msgstr "MN95 Rait triangulara"
+
+msgid "ch.swisstopo.erlebnisgeologie"
+msgstr "swisstopo, Erlebnis Geologie"
 
 msgid "ch.swisstopo.fixpunkte-agnes"
 msgstr "AGNES"
@@ -9222,7 +9372,25 @@ msgid "ch.swisstopo.geologie-geotope"
 msgstr "Geotops svizzers"
 
 msgid "ch.swisstopo.geologie-geowege"
-msgstr "Sendas da viandar geologicas"
+msgstr "Geo-sendas"
+
+msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
+msgstr "Kurzbeschreibung"
+
+msgid "ch.swisstopo.geologie-geowege.kontakt_firma"
+msgstr "Veranstalter"
+
+msgid "ch.swisstopo.geologie-geowege.post_permalink"
+msgstr "Link zum GeoEvent"
+
+msgid "ch.swisstopo.geologie-geowege.post_title"
+msgstr "Titel"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_gemeinde"
+msgstr "Ort"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
+msgstr "Kanton"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2"
 msgstr "Documents geol. (1000-21000km2)"
@@ -11440,6 +11608,9 @@ msgstr "Foerderband"
 
 msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_5"
 msgstr "Skilift"
+
+msgid "ch.swisstopo.swisstlm3d-wald"
+msgstr "Wald swissTLM3D"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Sendas da viandar"
