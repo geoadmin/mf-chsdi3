@@ -12114,7 +12114,7 @@ msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Piano settoriale militare"
 
 msgid "ch.vbs.schiessanzeigen"
-msgstr "Avvisi di tiro e zone pericolose pubblicato"
+msgstr "Avvisi di tiro e zone di pericolo pubblicati"
 
 msgid "ch.vbs.schiessanzeigen.auskunft"
 msgstr "Servizio info"

@@ -8622,7 +8622,7 @@ msgid "ch.swisstopo"
 msgstr "swisstopo"
 
 msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis"
-msgstr "Amtliches Gebäudeadressverzeichnis"
+msgstr "Official directory of building addresses"
 
 msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_edid"
 msgstr "Federal Building entrance identifier"
