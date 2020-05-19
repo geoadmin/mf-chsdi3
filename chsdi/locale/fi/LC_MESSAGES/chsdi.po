@@ -4418,6 +4418,42 @@ msgstr "Badalestg cun spias numerusas"
 msgid "ch.bafu.neophyten-vielblaettrige_lupine"
 msgstr "Lupina cun feglia numerusa"
 
+msgid "ch.bafu.niederschlagserosivitaet-apr"
+msgstr "Niederschlagserosivität Apr."
+
+msgid "ch.bafu.niederschlagserosivitaet-aug"
+msgstr "Niederschlagserosivität Aug."
+
+msgid "ch.bafu.niederschlagserosivitaet-dez"
+msgstr "Niederschlagserosivität Dez."
+
+msgid "ch.bafu.niederschlagserosivitaet-feb"
+msgstr "Niederschlagserosivität Feb."
+
+msgid "ch.bafu.niederschlagserosivitaet-jan"
+msgstr "Niederschlagserosivität Jan."
+
+msgid "ch.bafu.niederschlagserosivitaet-jul"
+msgstr "Niederschlagserosivität Juli"
+
+msgid "ch.bafu.niederschlagserosivitaet-jun"
+msgstr "Niederschlagserosivität Juni"
+
+msgid "ch.bafu.niederschlagserosivitaet-mai"
+msgstr "Niederschlagserosivität Mai"
+
+msgid "ch.bafu.niederschlagserosivitaet-mrz"
+msgstr "Niederschlagserosivität März"
+
+msgid "ch.bafu.niederschlagserosivitaet-nov"
+msgstr "Niederschlagserosivität Nov."
+
+msgid "ch.bafu.niederschlagserosivitaet-okt"
+msgstr "Niederschlagserosivität Okt."
+
+msgid "ch.bafu.niederschlagserosivitaet-sep"
+msgstr "Niederschlagserosivität Sep."
+
 msgid "ch.bafu.oekomorphologie-f_abschnitte"
 msgstr "Ecomorfologia F – trajects"
 
@@ -9392,24 +9428,6 @@ msgstr "Ort"
 msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
 msgstr "Kanton"
 
-msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
-msgstr "Kurzbeschreibung"
-
-msgid "ch.swisstopo.geologie-geowege.kontakt_firma"
-msgstr "Veranstalter"
-
-msgid "ch.swisstopo.geologie-geowege.post_permalink"
-msgstr "Link zum GeoEvent"
-
-msgid "ch.swisstopo.geologie-geowege.post_title"
-msgstr "Titel"
-
-msgid "ch.swisstopo.geologie-geowege.treffpunkt_gemeinde"
-msgstr "Ort"
-
-msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
-msgstr "Kanton"
-
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2"
 msgstr "Documents geol. (1000-21000km2)"
 
@@ -11023,6 +11041,9 @@ msgstr "Divisiun swissALTI3D Raster"
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Sumbriva reliev"
+
+msgid "ch.swisstopo.swissalti3d-reliefschattierung_monodirektional"
+msgstr "swissALTI3D reliev monodirecziunal"
 
 msgid "ch.swisstopo.swissbathy3d-reliefschattierung"
 msgstr "swissBATHY3D Sumbriva dal reliev"

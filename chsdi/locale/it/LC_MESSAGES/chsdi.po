@@ -4418,6 +4418,42 @@ msgstr "Poligono con spighe numerose"
 msgid "ch.bafu.neophyten-vielblaettrige_lupine"
 msgstr "Lupino fogliuto"
 
+msgid "ch.bafu.niederschlagserosivitaet-apr"
+msgstr "Potenz. erosivo precipitaz. apr."
+
+msgid "ch.bafu.niederschlagserosivitaet-aug"
+msgstr "Potenz. erosivo precipitaz. ago."
+
+msgid "ch.bafu.niederschlagserosivitaet-dez"
+msgstr "Potenz. erosivo precipitaz. dic."
+
+msgid "ch.bafu.niederschlagserosivitaet-feb"
+msgstr "Potenz. erosivo precipitaz. feb."
+
+msgid "ch.bafu.niederschlagserosivitaet-jan"
+msgstr "Potenz. erosivo precipitaz. genn."
+
+msgid "ch.bafu.niederschlagserosivitaet-jul"
+msgstr "Potenz. erosivo precipitaz. lug."
+
+msgid "ch.bafu.niederschlagserosivitaet-jun"
+msgstr "Potenz. erosivo precipitaz. giu."
+
+msgid "ch.bafu.niederschlagserosivitaet-mai"
+msgstr "Potenz. erosivo precipitaz. mag."
+
+msgid "ch.bafu.niederschlagserosivitaet-mrz"
+msgstr "Potenz. erosivo precipitaz. mar."
+
+msgid "ch.bafu.niederschlagserosivitaet-nov"
+msgstr "Potenz. erosivo precipitaz nov."
+
+msgid "ch.bafu.niederschlagserosivitaet-okt"
+msgstr "Potenz. erosivo precipitaz. ott."
+
+msgid "ch.bafu.niederschlagserosivitaet-sep"
+msgstr "Potenz. erosivo precipitaz. set."
+
 msgid "ch.bafu.oekomorphologie-f_abschnitte"
 msgstr "Ecomorfologia R - Tratti"
 
@@ -9392,24 +9428,6 @@ msgstr "Luogo"
 msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
 msgstr "Cantone"
 
-msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
-msgstr "Breve descrizione"
-
-msgid "ch.swisstopo.geologie-geowege.kontakt_firma"
-msgstr "Organizzatore"
-
-msgid "ch.swisstopo.geologie-geowege.post_permalink"
-msgstr "Link al GeoEvento"
-
-msgid "ch.swisstopo.geologie-geowege.post_title"
-msgstr "Titolo"
-
-msgid "ch.swisstopo.geologie-geowege.treffpunkt_gemeinde"
-msgstr "Luogo"
-
-msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
-msgstr "Cantone"
-
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2"
 msgstr "Documenti geologici (1000-21000km2)"
 
@@ -11024,6 +11042,9 @@ msgstr "Divisione swissALTI3D Raster"
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"
 
+msgid "ch.swisstopo.swissalti3d-reliefschattierung_monodirektional"
+msgstr "swissALTI3D rilievo monodirezionale"
+
 msgid "ch.swisstopo.swissbathy3d-reliefschattierung"
 msgstr "swissBATHY3D Ombreggiature del rilievo"
 
@@ -12135,7 +12156,7 @@ msgid "ch.vbs.schiessanzeigen"
 msgstr "Avvisi di tiro e zone di pericolo pubblicati"
 
 msgid "ch.vbs.schiessanzeigen.auskunft"
-msgstr "Servizio info"
+msgstr "Contatto per le informazioni"
 
 msgid "ch.vbs.schiessanzeigen.belegung"
 msgstr "Date di tiro attuali"
@@ -12144,7 +12165,7 @@ msgid "ch.vbs.schiessanzeigen.belplan_id"
 msgstr "ID-No"
 
 msgid "ch.vbs.schiessanzeigen.bezeichnung"
-msgstr "Piazzo di tiro"
+msgstr "Piazza di tiro"
 
 msgid "ch.vbs.schiessanzeigen.keine_info"
 msgstr "Nessuna informazione disponibile"
@@ -12153,7 +12174,7 @@ msgid "ch.vbs.schiessanzeigen.kein_schiessen"
 msgstr "No tiro"
 
 msgid "ch.vbs.schiessanzeigen.url"
-msgstr "Lista d'avvisi di tiro"
+msgstr "Lista degli avvisi di tiro"
 
 msgid "ch.vbs.schiessanzeigen.wochentag.1"
 msgstr "Dom"
