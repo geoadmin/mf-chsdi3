@@ -71,6 +71,32 @@ class Territorialregionen(Base, Vector):
 register('ch.vbs.territorialregionen', Territorialregionen)
 
 
+class SchiessAnzeigen(Base, Vector):
+    __tablename__ = 'v_schiessanzeigen'
+    __table_args__ = ({'autoload': False})
+    __template__ = 'templates/htmlpopup/schiessanzeigen.mako'
+    __bodId__ = 'ch.vbs.schiessanzeigen'
+    __label__ = 'bezeichnung'
+    id = Column('belplan_id', Unicode, primary_key=True)
+    bezeichnung = Column('bezeichnung', Unicode)
+    infobezeichnung = Column('infobezeichnung', Unicode)
+    infotelefonnr = Column('infotelefonnr', Unicode)
+    infoemail = Column('infoemail', Unicode)
+    url_de = Column('url_de', Unicode)
+    url_fr = Column('url_fr', Unicode)
+    url_it = Column('url_it', Unicode)
+    url_en = Column('url_en', Unicode)
+    belegungsdatum = Column('belegungsdatum', Unicode)
+    wochentag = Column('belegungsdatum_wochentag', Unicode)
+    wochentag = Column('belegungsdatum_wochentag', Unicode)
+    zeit_von = Column('zeit_von', Unicode)
+    zeit_bis = Column('zeit_bis', Unicode)
+    anmerkung = Column('anmerkung', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(SchiessAnzeigen.__bodId__, SchiessAnzeigen)
+
+
 class PatrouilledesglaciersZ(Base, Vector):
     __tablename__ = 'patrouille_z'
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
