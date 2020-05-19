@@ -956,21 +956,6 @@ msgstr "Pays"
 msgid "ch.are.agglomerationsverkehr.name"
 msgstr "Nom de commune"
 
-msgid "ch.are.agglomerationsverkehr.agglo_name"
-msgstr "Nom d’agglomération"
-
-msgid "ch.are.agglomerationsverkehr.agglo_no"
-msgstr "Code d’agglomération"
-
-msgid "ch.are.agglomerationsverkehr.gem_no"
-msgstr "Numéro de commune"
-
-msgid "ch.are.agglomerationsverkehr.land"
-msgstr "Pays"
-
-msgid "ch.are.agglomerationsverkehr.name"
-msgstr "Nom de commune"
-
 msgid "ch.are.alpenkonvention"
 msgstr "Convention des Alpes"
 
@@ -999,7 +984,7 @@ msgid "ch.are.belastung-gueterverkehr-strasse-2008"
 msgstr "Trafic poids lourds (routier)"
 
 msgid "ch.are.belastung-personenverkehr-bahn"
-msgstr "Trafic voyageurs (transport public)"
+msgstr "Trafic voyageurs rail"
 
 msgid "ch.are.belastung-personenverkehr-bahn-2008"
 msgstr "Trafic voyageurs (transport public)"
@@ -1020,7 +1005,7 @@ msgid "ch.are.belastung-personenverkehr-bahn.nr"
 msgstr "Numéro de segment"
 
 msgid "ch.are.belastung-personenverkehr-strasse"
-msgstr "Trafic voyageurs (routier)"
+msgstr "Trafic voyageurs/marchand. route"
 
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
 msgstr "Trafic voyageurs (routier)"
@@ -1095,7 +1080,7 @@ msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Densité de population 2000"
 
 msgid "ch.are.erreichbarkeit-miv"
-msgstr "Accessibilité route"
+msgstr "Accessibilité sur la route"
 
 msgid "ch.are.erreichbarkeit-miv.strasse_erreichb_ewap"
 msgstr "Accessibilité (points)"
@@ -1104,7 +1089,7 @@ msgid "ch.are.erreichbarkeit-miv.verkehrszone_id"
 msgstr "Code de la zone de transport"
 
 msgid "ch.are.erreichbarkeit-oev"
-msgstr "Accessibilité TP"
+msgstr "Accessibilité en TP"
 
 msgid "ch.are.erreichbarkeit-oev.oev_erreichb_ewap"
 msgstr "Accessibilité (points)"
@@ -1140,7 +1125,7 @@ msgid "ch.are.reisezeit-agglomerationen-miv.verkehrszone_id"
 msgstr "Code de la zone de transport"
 
 msgid "ch.are.reisezeit-agglomerationen-oev"
-msgstr "Temps de parcours aux agglos en TP"
+msgstr "Temps de parcours aux agglos TP"
 
 msgid "ch.are.reisezeit-agglomerationen-oev.oev_no_agglo"
 msgstr "Code de la zone du centre d’agglomération"
@@ -1152,7 +1137,7 @@ msgid "ch.are.reisezeit-agglomerationen-oev.verkehrszone_id"
 msgstr "Code de la zone de transport"
 
 msgid "ch.are.reisezeit-miv"
-msgstr "Temps de parcours en TIM"
+msgstr "Temps de parcours aux centres route"
 
 msgid "ch.are.reisezeit_miv-2005"
 msgstr "Temps de parcours en TIM 2005"
@@ -1167,7 +1152,7 @@ msgid "ch.are.reisezeit-miv.verkehrszone_id"
 msgstr "Code de la zone de transport"
 
 msgid "ch.are.reisezeit-oev"
-msgstr "Temps de parcours en TP"
+msgstr "Temps de parcours aux centres TP"
 
 msgid "ch.are.reisezeit_oev-2005"
 msgstr "Temps de parcours en TP 2005"
@@ -8639,6 +8624,45 @@ msgstr "swisstopo"
 msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis"
 msgstr "Rép.off. des adresses de bâtiments"
 
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_edid"
+msgstr "Identificateur fédéral d’entrée"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_egaid"
+msgstr "Identificateur fédédral d’adresse de bâtiment"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_modified"
+msgstr "Dernière modification"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_number"
+msgstr "Numéro de bâtiment"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_official"
+msgstr "Officiel"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_reliable"
+msgstr "Fiable"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_status"
+msgstr "Statut"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_zip"
+msgstr "Code postale / localité"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.bdg_egid"
+msgstr "Identificateur fédéral de bâtiment"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.com_fosnr"
+msgstr "Numéro d’ OFS"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.com_name"
+msgstr "Nom de la commune"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.str_esid"
+msgstr "Identificateur fédéral de rue"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.str_label"
+msgstr "Nom de rue"
+
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
 msgstr "Répertoire officiel des rues"
 
@@ -8719,6 +8743,9 @@ msgstr "MNT25 estompage du relief"
 
 msgid "ch.swisstopo.dreiecksvermaschung"
 msgstr "MN95 Maillage triangulaire"
+
+msgid "ch.swisstopo.erlebnisgeologie"
+msgstr "swisstopo, Géologie vivante"
 
 msgid "ch.swisstopo.fixpunkte-agnes"
 msgstr "AGNES"
@@ -9345,7 +9372,25 @@ msgid "ch.swisstopo.geologie-geotope"
 msgstr "Géotopes suisses"
 
 msgid "ch.swisstopo.geologie-geowege"
-msgstr "Sentiers géologiques"
+msgstr "Géo-sentiers"
+
+msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
+msgstr "Description brève"
+
+msgid "ch.swisstopo.geologie-geowege.kontakt_firma"
+msgstr "Organisateur"
+
+msgid "ch.swisstopo.geologie-geowege.post_permalink"
+msgstr "Liens vers le GeoEvent"
+
+msgid "ch.swisstopo.geologie-geowege.post_title"
+msgstr "Titre"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_gemeinde"
+msgstr "Lieu"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
+msgstr "Canton"
 
 msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
 msgstr "Description brève"
@@ -11581,6 +11626,9 @@ msgstr "Tapis roulant"
 
 msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_5"
 msgstr "Téléski"
+
+msgid "ch.swisstopo.swisstlm3d-wald"
+msgstr "Forêt swissTLM3D"
 
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Chemins de randonnée pédestre"

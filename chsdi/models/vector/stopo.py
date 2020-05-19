@@ -349,18 +349,57 @@ class GravimetrischerAtlasMesspunkte(Base, Vector):
 register('ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte', GravimetrischerAtlasMesspunkte)
 
 
+class GeologieGeoevents:
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geologie_geoevents.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geowege'
+    id = Column('post_id', Integer, primary_key=True)
+    post_title = Column('post_title', Unicode)
+    allgemein_leadtext = Column('allgemein_leadtext', Unicode)
+    treffpunkt_gemeinde = Column('treffpunkt_gemeinde', Unicode)
+    treffpunkt_kanton = Column('treffpunkt_kanton', Unicode)
+    kontakt_firma = Column('kontakt_firma', Unicode)
+    post_permalink = Column('post_permalink', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class GeologieGeoeventsDemnaechst(Base, Vector, GeologieGeoevents):
+    __tablename__ = 'v_erlebnis_naechste'
+    __bodId__ = 'ch.swisstopo.geologie-geoevents_demnaechst'
+
+register(GeologieGeoeventsDemnaechst.__bodId__, GeologieGeoeventsDemnaechst)
+
+
+class GeologieGeoeventsAnfrage(Base, Vector, GeologieGeoevents):
+    __tablename__ = 'v_erlebnis_anfrage'
+    __bodId__ = 'ch.swisstopo.geologie-geoevents_anfrage'
+
+register(GeologieGeoeventsAnfrage.__bodId__, GeologieGeoeventsAnfrage)
+
+
+class GeologieGeoeventsSites(Base, Vector, GeologieGeoevents):
+    __tablename__ = 'v_erlebnis_sites'
+    __bodId__ = 'ch.swisstopo.geologie-geosites'
+
+register(GeologieGeoeventsSites.__bodId__, GeologieGeoeventsSites)
+
+
 class GeologieGeowege(Base, Vector):
-    __tablename__ = 'geowege'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geologie_geowege.mako'
     __bodId__ = 'ch.swisstopo.geologie-geowege'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    titel_1 = Column('titel_1', Unicode)
-    titel_2 = Column('titel_2', Unicode)
-    link = Column('link', Unicode)
+    id = Column('post_id', Integer, primary_key=True)
+    post_title = Column('agg_post_title', Unicode)
+    allgemein_leadtext = Column('agg_allgemein_leadtext', Unicode)
+    treffpunkt_gemeinde = Column('agg_treffpunkt_gemeinde', Unicode)
+    treffpunkt_kanton = Column('agg_treffpunkt_kanton', Unicode)
+    kontakt_firma = Column('agg_kontakt_firma', Unicode)
+    post_permalink = Column('agg_post_permalink', Unicode)
     the_geom = Column(Geometry2D)
+    __tablename__ = 'v_erlebnis_geowege_tracks'
+    __bodId__ = 'ch.swisstopo.geologie-geowege'
 
-register('ch.swisstopo.geologie-geowege', GeologieGeowege)
+register(GeologieGeowege.__bodId__, GeologieGeowege)
 
 
 class ShopProductClass:
