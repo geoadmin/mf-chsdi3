@@ -191,7 +191,10 @@ class ZweitwohnungsAnteil(Base, Vector):
 
 register('ch.are.wohnungsinventar-zweitwohnungsanteil', ZweitwohnungsAnteil)
 
+class ReisezeitAgglomerationen:
+    __tablename__ = 'reisezeit_agglomerationen'
 
+    
 class Reisezeit:
     __tablename__ = 'reisezeit'
 
@@ -203,6 +206,22 @@ class Erreichbarkeit:
     id = Column('verkehrszone_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
+class ReisezeitAgglomerationenOev(Base, ReisezeitAgglomerationen, Vector):
+    __bodId__ = 'ch.are.reisezeit-agglomerationen-oev'
+    __template__ = 'templates/htmlpopup/reisezeit_agglomerationen_oev.mako'
+    oev_reisezeit_agglo = Column('oev_reisezeit_agglo', Integer)
+    oev_no_agglo = Column('oev_no_agglo', Integer)
+
+register('ch.are.reisezeit-agglomerationen-oev', ReisezeitAgglomerationenOev)
+
+
+class ReisezeitAgglomerationenMiv(Base, ReisezeitAgglomerationen, Vector):
+    __bodId__ = 'ch.are.reisezeit-agglomerationen-miv'
+    __template__ = 'templates/htmlpopup/reisezeit_agglomerationen_miv.mako'
+    strasse_reisezeit_agglo = Column('strasse_reisezeit_agglo', Integer)
+    strasse_no_agglo = Column('strasse_no_agglo', Integer)
+
+register('ch.are.reisezeit-agglomerationen-miv', ReisezeitAgglomerationenMiv)
 
 class ReisezeitOev(Base, Reisezeit, Vector):
     __bodId__ = 'ch.are.reisezeit-oev'
