@@ -9392,6 +9392,24 @@ msgstr "Ort"
 msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
 msgstr "Kanton"
 
+msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
+msgstr "Kurzbeschreibung"
+
+msgid "ch.swisstopo.geologie-geowege.kontakt_firma"
+msgstr "Veranstalter"
+
+msgid "ch.swisstopo.geologie-geowege.post_permalink"
+msgstr "Link zum GeoEvent"
+
+msgid "ch.swisstopo.geologie-geowege.post_title"
+msgstr "Titel"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_gemeinde"
+msgstr "Ort"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
+msgstr "Kanton"
+
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2"
 msgstr "Documents geol. (1000-21000km2)"
 

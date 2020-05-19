@@ -2305,33 +2305,6 @@ class GeometaPNF(Base, Vector):
 register('ch.swisstopo-vd.geometa-periodische_nachfuehrung', GeometaPNF)
 
 
-class GeometaLos(Base, Vector):
-    __tablename__ = 'amogr_los'
-    __table_args__ = ({'schema': 'vd', 'autoload': False})
-    __template__ = 'templates/htmlpopup/los.mako'
-    __bodId__ = 'ch.swisstopo-vd.geometa-los'
-    __label__ = 'operatsname'
-    __returnedGeometry__ = 'the_geom_gen50'
-    id = Column('gid', Integer, primary_key=True)
-    fid = Column('id', Integer)
-    neu_id = Column('neu_id', Unicode)
-    operatsname = Column('operatsname', Unicode)
-    losnr = Column('losnr', Unicode)
-    taetigkeit_d = Column('taetigkeit_d', Unicode)
-    taetigkeit_f = Column('taetigkeit_f', Unicode)
-    taetigkeit_i = Column('taetigkeit_i', Unicode)
-    quality = Column('quality', Unicode)
-    flaeche_vertrag = Column('flaeche_vertrag', Unicode)
-    frame = Column('frame', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
-    the_geom = Column('the_geom', Geometry2D)
-
-register('ch.swisstopo-vd.geometa-los', GeometaLos)
-
-# link sur le pdf ne fontionne pas...
-
-
 class GeometaGemeinde(Base, Vector):
     __tablename__ = 'amogr_gemeinde'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
@@ -3274,14 +3247,13 @@ register('ch.swisstopo.swissimage-product.metadata', SwissimageHistMetadata)
 
 
 class AmtlichesStrassenverzeichnis(Base, Vector):
-    __tablename__ = 'streetnames'
+    __tablename__ = 'streetnames_tooltip'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/strassenverzeichnis.mako'
     __bodId__ = 'ch.swisstopo.amtliches-strassenverzeichnis'
     __label__ = 'label'
     __queryable_attributes__ = ['label', 'plzo', 'gdename', 'gdenr', 'type']
-    id = Column('bgdi_id', Integer, primary_key=True)
-    esid = Column('esid', Integer)
+    id = Column('esid', Integer, primary_key=True)
     label = Column('label', Unicode)
     plzo = Column('plzo', Unicode)
     gdename = Column('gdename', Unicode)
