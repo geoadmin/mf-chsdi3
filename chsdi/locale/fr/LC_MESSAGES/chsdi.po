@@ -956,21 +956,6 @@ msgstr "Pays"
 msgid "ch.are.agglomerationsverkehr.name"
 msgstr "Nom de commune"
 
-msgid "ch.are.agglomerationsverkehr.agglo_name"
-msgstr "Nom d’agglomération"
-
-msgid "ch.are.agglomerationsverkehr.agglo_no"
-msgstr "Code d’agglomération"
-
-msgid "ch.are.agglomerationsverkehr.gem_no"
-msgstr "Numéro de commune"
-
-msgid "ch.are.agglomerationsverkehr.land"
-msgstr "Pays"
-
-msgid "ch.are.agglomerationsverkehr.name"
-msgstr "Nom de commune"
-
 msgid "ch.are.alpenkonvention"
 msgstr "Convention des Alpes"
 
