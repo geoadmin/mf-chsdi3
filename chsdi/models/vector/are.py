@@ -191,8 +191,10 @@ class ZweitwohnungsAnteil(Base, Vector):
 
 register('ch.are.wohnungsinventar-zweitwohnungsanteil', ZweitwohnungsAnteil)
 
+
 class Reisezeit:
     __tablename__ = 'reisezeit'
+
 
 class Erreichbarkeit:
     __tablename__ = 'erreichbarkeit'
@@ -219,6 +221,7 @@ class ReisezeitMiv(Base, Reisezeit, Vector):
 
 register('ch.are.reisezeit-miv', ReisezeitMiv)
 
+
 class ErreichbarkeitOev(Base, Erreichbarkeit, Vector):
     __bodId__ = 'ch.are.erreichbarkeit-oev'
     __template__ = 'templates/htmlpopup/erreichbarkeit_oev.mako'
@@ -233,6 +236,7 @@ class ErreichbarkeitMiv(Base, Erreichbarkeit, Vector):
     strasse_erreichb_ewap = Column('strasse_erreichb_ewap', Integer)
 
 register('ch.are.erreichbarkeit-miv', ErreichbarkeitMiv)
+
 
 class BelastungPersonenverkehrStrasse(Base, Vector):
     __tablename__ = 'belastung_personenverkehr'
@@ -282,4 +286,3 @@ class BelastungPersonenverkehrBahn(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(BelastungPersonenverkehrBahn.__bodId__, BelastungPersonenverkehrBahn)
-
