@@ -194,10 +194,12 @@ register('ch.are.wohnungsinventar-zweitwohnungsanteil', ZweitwohnungsAnteil)
 
 class ReisezeitAgglomerationen:
     __tablename__ = 'reisezeit_agglomerationen'
+    id = Column('bgdi_id', Integer, primary_key=True)
 
 
 class Reisezeit:
     __tablename__ = 'reisezeit'
+    id = Column('bgdi_id', Integer, primary_key=True)
 
 
 class Erreichbarkeit:
@@ -211,6 +213,7 @@ class Erreichbarkeit:
 class ReisezeitAgglomerationenOev(Base, ReisezeitAgglomerationen, Vector):
     __bodId__ = 'ch.are.reisezeit-agglomerationen-oev'
     __template__ = 'templates/htmlpopup/reisezeit_agglomerationen_oev.mako'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False, 'extend_existing': True})
     oev_reisezeit_agglo = Column('oev_reisezeit_agglo', Integer)
     oev_no_agglo = Column('oev_no_agglo', Integer)
 
@@ -220,6 +223,7 @@ register('ch.are.reisezeit-agglomerationen-oev', ReisezeitAgglomerationenOev)
 class ReisezeitAgglomerationenMiv(Base, ReisezeitAgglomerationen, Vector):
     __bodId__ = 'ch.are.reisezeit-agglomerationen-miv'
     __template__ = 'templates/htmlpopup/reisezeit_agglomerationen_miv.mako'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False, 'extend_existing': True})
     strasse_reisezeit_agglo = Column('strasse_reisezeit_agglo', Integer)
     strasse_no_agglo = Column('strasse_no_agglo', Integer)
 
@@ -229,6 +233,7 @@ register('ch.are.reisezeit-agglomerationen-miv', ReisezeitAgglomerationenMiv)
 class ReisezeitOev(Base, Reisezeit, Vector):
     __bodId__ = 'ch.are.reisezeit-oev'
     __template__ = 'templates/htmlpopup/reisezeit_oev.mako'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False, 'extend_existing': True})
     oev_reisezeit_z = Column('oev_reisezeit_z', Integer)
     oev_no_z = Column('oev_no_z', Integer)
 
@@ -238,6 +243,7 @@ register('ch.are.reisezeit-oev', ReisezeitOev)
 class ReisezeitMiv(Base, Reisezeit, Vector):
     __bodId__ = 'ch.are.reisezeit-miv'
     __template__ = 'templates/htmlpopup/reisezeit_miv.mako'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False, 'extend_existing': True})
     strasse_reisezeit_z = Column('strasse_reisezeit_z', Integer)
     strasse_no_z = Column('strasse_no_z', Integer)
 
