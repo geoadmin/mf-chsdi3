@@ -173,3 +173,53 @@ class ZweitwohnungsAnteil(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.are.wohnungsinventar-zweitwohnungsanteil', ZweitwohnungsAnteil)
+
+
+class BelastungPersonenverkehrStrasse(Base, Vector):
+    __tablename__ = 'belastung_personenverkehr'
+    __table_args__ = ({'schema': 'strassen', 'autoload': False})
+    __template__ = 'templates/htmlpopup/personenverkehr_strasse.mako'
+    __bodId__ = 'ch.are.belastung-personenverkehr-strasse'
+    __label__ = 'nr'
+    __extended_info__ = True
+    id = Column('bgdi_id', Integer, primary_key=True)
+    nr = Column('nr', Integer)
+    dwv_fzg = Column('dwv_fzg', Integer)
+    dwv_pw = Column('dwv_pw', Integer)
+    dwv_li = Column('dwv_li', Integer)
+    dwv_lw = Column('dwv_lw', Integer)
+    dwv_lz = Column('dwv_lz', Integer)
+    dtv_fzg = Column('dtv_fzg', Integer)
+    dtv_pw = Column('dtv_pw', Integer)
+    dtv_li = Column('dtv_li', Integer)
+    dtv_lw = Column('dtv_lw', Integer)
+    dtv_lz = Column('dtv_lz', Integer)
+    msp_fzg = Column('msp_fzg', Integer)
+    msp_pw = Column('msp_pw', Integer)
+    msp_li = Column('msp_li', Integer)
+    msp_lw = Column('msp_lw', Integer)
+    msp_lz = Column('msp_lz', Integer)
+    asp_fzg = Column('asp_fzg', Integer)
+    asp_pw = Column('asp_pw', Integer)
+    asp_li = Column('asp_li', Integer)
+    asp_lw = Column('asp_lw', Integer)
+    asp_lz = Column('asp_lz', Integer)
+    the_geom = Column(Geometry2D)
+register(BelastungPersonenverkehrStrasse.__bodId__, BelastungPersonenverkehrStrasse)
+
+
+class BelastungPersonenverkehrBahn(Base, Vector):
+    __tablename__ = 'belastung_personenverkehr'
+    __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': False})
+    __template__ = 'templates/htmlpopup/personenverkehr_bahn.mako'
+    __bodId__ = 'ch.are.belastung-personenverkehr-bahn'
+    __label__ = 'nr'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    nr = Column('nr', Integer)
+    dwv_oev = Column('dwv_oev', Integer)
+    dtv_oev = Column('dtv_oev', Integer)
+    msp_oev = Column('msp_oev', Integer)
+    asp_oev = Column('asp_oev', Integer)
+    the_geom = Column(Geometry2D)
+
+register(BelastungPersonenverkehrBahn.__bodId__, BelastungPersonenverkehrBahn)
