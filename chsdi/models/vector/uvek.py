@@ -2701,7 +2701,7 @@ register('ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht', LaermBe
 
 
 class LaermBelastungEisenbahnEffektiveImmissionen:
-    __tablename__ = 'laerm_eisenbahn_effektive_immissionen'
+    __tablename__ = 'laermbelastung_eisenbahn_eff_immissionen'
     __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -2721,6 +2721,7 @@ class LaermBelastungEisenbahnEffektiveImmissionen:
     en_operation_status = Column('en_operation_status', Unicode)
     rm_operation_status = Column('rm_operation_status', Unicode)
     floor = Column('floor', Unicode)
+    receptor = Column('receptor', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -2738,6 +2739,42 @@ class LaermBelastungEisenbahnEffektiveImmissionenTag(Base, LaermBelastungEisenba
     lr_day = Column('lr_day', Float)
 
 register('ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag', LaermBelastungEisenbahnEffektiveImmissionenTag)
+
+
+class LaermBelastungEisenbahnZulaessigeImmissionen:
+    __tablename__ = 'laerm_eisenbahn_zulaessig_immissionen'
+    __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    lr_max_year = Column('lr_max_year', Integer)
+    de_es = Column('de_es', Unicode)
+    fr_es = Column('fr_es', Unicode)
+    it_es = Column('it_es', Unicode)
+    en_es = Column('en_es', Unicode)
+    rm_es = Column('rm_es', Unicode)
+    de_pointofdetermination_t = Column('de_pointofdetermination_t', Unicode)
+    fr_pointofdetermination_t = Column('fr_pointofdetermination_t', Unicode)
+    it_pointofdetermination_t = Column('it_pointofdetermination_t', Unicode)
+    en_pointofdetermination_t = Column('en_pointofdetermination_t', Unicode)
+    rm_pointofdetermination_t = Column('rm_pointofdetermination_t', Unicode)
+    floor = Column('floor', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class LaermBelastungEisenbahnZulaessigeImmissionenNacht(Base, LaermBelastungEisenbahnZulaessigeImmissionen, Vector):
+    __bodId__ = 'ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht'
+    __template__ = 'templates/htmlpopup/laerm_eisenbahn_zulaessige_immissionen_nacht.mako'
+    lr_max_night = Column('lr_max_night', Float)
+
+register('ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht', LaermBelastungEisenbahnZulaessigeImmissionenNacht)
+
+
+class LaermBelastungEisenbahnZulaessigeImmissionenTag(Base, LaermBelastungEisenbahnZulaessigeImmissionen, Vector):
+    __bodId__ = 'ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag'
+    __template__ = 'templates/htmlpopup/laerm_eisenbahn_zulaessige_immissionen_tag.mako'
+    lr_max_day = Column('lr_max_day', Float)
+
+register('ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag', LaermBelastungEisenbahnZulaessigeImmissionenTag)
 
 
 class SifFacilitiesA(Base, Vector):
@@ -3523,9 +3560,9 @@ class Gebirgslandeplaetze(Base, Vector):
     descrip_de = Column('descrip_de', Unicode)
     descrip_fr = Column('descrip_fr', Unicode)
     descrip_it = Column('descrip_it', Unicode)
-    arp_east = Column('arp_east', Float)
-    arp_north = Column('arp_north', Float)
-    elevation = Column('elevation', Float)
+    arp_east = Column('arp_east', Integer)
+    arp_north = Column('arp_north', Integer)
+    elevation = Column('elevation', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bazl.gebirgslandeplaetze', Gebirgslandeplaetze)

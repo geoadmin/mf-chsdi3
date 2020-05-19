@@ -2,7 +2,7 @@
 
 from sqlalchemy import Column
 
-from sqlalchemy.types import Numeric, Boolean, Integer, Float, Unicode
+from sqlalchemy.types import Numeric, Boolean, Integer, Float, Unicode, BigInteger, SmallInteger
 
 from chsdi.models import register, register_perimeter, bases
 from chsdi.models.types import DateTimeChsdi
@@ -349,18 +349,57 @@ class GravimetrischerAtlasMesspunkte(Base, Vector):
 register('ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte', GravimetrischerAtlasMesspunkte)
 
 
+class GeologieGeoevents:
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geologie_geoevents.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geowege'
+    id = Column('post_id', Integer, primary_key=True)
+    post_title = Column('post_title', Unicode)
+    allgemein_leadtext = Column('allgemein_leadtext', Unicode)
+    treffpunkt_gemeinde = Column('treffpunkt_gemeinde', Unicode)
+    treffpunkt_kanton = Column('treffpunkt_kanton', Unicode)
+    kontakt_firma = Column('kontakt_firma', Unicode)
+    post_permalink = Column('post_permalink', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class GeologieGeoeventsDemnaechst(Base, Vector, GeologieGeoevents):
+    __tablename__ = 'v_erlebnis_naechste'
+    __bodId__ = 'ch.swisstopo.geologie-geoevents_demnaechst'
+
+register(GeologieGeoeventsDemnaechst.__bodId__, GeologieGeoeventsDemnaechst)
+
+
+class GeologieGeoeventsAnfrage(Base, Vector, GeologieGeoevents):
+    __tablename__ = 'v_erlebnis_anfrage'
+    __bodId__ = 'ch.swisstopo.geologie-geoevents_anfrage'
+
+register(GeologieGeoeventsAnfrage.__bodId__, GeologieGeoeventsAnfrage)
+
+
+class GeologieGeoeventsSites(Base, Vector, GeologieGeoevents):
+    __tablename__ = 'v_erlebnis_sites'
+    __bodId__ = 'ch.swisstopo.geologie-geosites'
+
+register(GeologieGeoeventsSites.__bodId__, GeologieGeoeventsSites)
+
+
 class GeologieGeowege(Base, Vector):
-    __tablename__ = 'geowege'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geologie_geowege.mako'
     __bodId__ = 'ch.swisstopo.geologie-geowege'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    titel_1 = Column('titel_1', Unicode)
-    titel_2 = Column('titel_2', Unicode)
-    link = Column('link', Unicode)
+    id = Column('post_id', Integer, primary_key=True)
+    post_title = Column('agg_post_title', Unicode)
+    allgemein_leadtext = Column('agg_allgemein_leadtext', Unicode)
+    treffpunkt_gemeinde = Column('agg_treffpunkt_gemeinde', Unicode)
+    treffpunkt_kanton = Column('agg_treffpunkt_kanton', Unicode)
+    kontakt_firma = Column('agg_kontakt_firma', Unicode)
+    post_permalink = Column('agg_post_permalink', Unicode)
     the_geom = Column(Geometry2D)
+    __tablename__ = 'v_erlebnis_geowege_tracks'
+    __bodId__ = 'ch.swisstopo.geologie-geowege'
 
-register('ch.swisstopo.geologie-geowege', GeologieGeowege)
+register(GeologieGeowege.__bodId__, GeologieGeowege)
 
 
 class ShopProductClass:
@@ -630,14 +669,6 @@ class GeolSpezialKarteMetadata(Base, ShopProductGroupClass, Vector):
     __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata'
 
 register('ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata', GeolSpezialKarteMetadata)
-
-
-class GeolGeneralKarteMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_ggk'
-    __bodId__ = 'ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata'
-
-register('ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata', GeolGeneralKarteMetadata)
 
 
 class GeolGenKarteGGK200Meta(Base, ShopProductGroupClass, Vector):
@@ -2274,33 +2305,6 @@ class GeometaPNF(Base, Vector):
 register('ch.swisstopo-vd.geometa-periodische_nachfuehrung', GeometaPNF)
 
 
-class GeometaLos(Base, Vector):
-    __tablename__ = 'amogr_los'
-    __table_args__ = ({'schema': 'vd', 'autoload': False})
-    __template__ = 'templates/htmlpopup/los.mako'
-    __bodId__ = 'ch.swisstopo-vd.geometa-los'
-    __label__ = 'operatsname'
-    __returnedGeometry__ = 'the_geom_gen50'
-    id = Column('gid', Integer, primary_key=True)
-    fid = Column('id', Integer)
-    neu_id = Column('neu_id', Unicode)
-    operatsname = Column('operatsname', Unicode)
-    losnr = Column('losnr', Unicode)
-    taetigkeit_d = Column('taetigkeit_d', Unicode)
-    taetigkeit_f = Column('taetigkeit_f', Unicode)
-    taetigkeit_i = Column('taetigkeit_i', Unicode)
-    quality = Column('quality', Unicode)
-    flaeche_vertrag = Column('flaeche_vertrag', Unicode)
-    frame = Column('frame', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
-    the_geom = Column('the_geom', Geometry2D)
-
-register('ch.swisstopo-vd.geometa-los', GeometaLos)
-
-# link sur le pdf ne fontionne pas...
-
-
 class GeometaGemeinde(Base, Vector):
     __tablename__ = 'amogr_gemeinde'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
@@ -3243,14 +3247,13 @@ register('ch.swisstopo.swissimage-product.metadata', SwissimageHistMetadata)
 
 
 class AmtlichesStrassenverzeichnis(Base, Vector):
-    __tablename__ = 'streetnames'
+    __tablename__ = 'streetnames_tooltip'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/strassenverzeichnis.mako'
     __bodId__ = 'ch.swisstopo.amtliches-strassenverzeichnis'
     __label__ = 'label'
     __queryable_attributes__ = ['label', 'plzo', 'gdename', 'gdenr', 'type']
-    id = Column('bgdi_id', Integer, primary_key=True)
-    esid = Column('esid', Integer)
+    id = Column('esid', Integer, primary_key=True)
     label = Column('label', Unicode)
     plzo = Column('plzo', Unicode)
     gdename = Column('gdename', Unicode)
@@ -3329,3 +3332,27 @@ class AktuelleErdbeben(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.gefahren-aktuelle_erdbeben', AktuelleErdbeben)
+
+
+class AmtlichesAdressVerzeichnis(Base, Vector):
+    __tablename__ = 'addressverzeichnis'
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __template__ = 'templates/htmlpopup/addressverzeichnis.mako'
+    __bodId__ = 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis'
+    __label__ = 'id'
+    id = Column('adr_egaid', BigInteger, primary_key=True)
+    bdg_egid = Column('bdg_egid', BigInteger)
+    adr_edid = Column('adr_edid', Integer)
+    str_esid = Column('str_esid', Integer)
+    str_label = Column('str_label', Unicode)
+    adr_number = Column('adr_number', Unicode)
+    adr_zip = Column('adr_zip', Unicode)
+    com_fosnr = Column('com_fosnr', SmallInteger)
+    com_name = Column('com_name', Unicode)
+    adr_status = Column('adr_status', Unicode)
+    adr_official = Column('adr_official', Boolean)
+    adr_reliable = Column('adr_reliable', Boolean)
+    adr_modified = Column('adr_modified', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(AmtlichesAdressVerzeichnis.__bodId__, AmtlichesAdressVerzeichnis)

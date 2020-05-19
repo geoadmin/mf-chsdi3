@@ -924,4 +924,4 @@ class TestReleasesService(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         for feat in resp.json['results']:
             self.assertIn(feat['attributes']['gdenr'], [371])
-            self.assertIn('Kontrollstrasse', feat['attributes']['label'])
+            self.assertIn(u'Contrôle', feat['attributes']['label'])
