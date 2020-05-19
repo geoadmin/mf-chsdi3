@@ -60,6 +60,23 @@ class AggloIsoStaedte(Base, Vector):
 register('ch.are.agglomerationen_isolierte_staedte', AggloIsoStaedte)
 
 
+class Agglomerationsverkehr(Base, Vector):
+    __tablename__ = 'agglomerationsverkehr'
+    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
+    __template__ = 'templates/htmlpopup/agglomerationsverkehr.mako'
+    __bodId__ = 'ch.are.agglomerationsverkehr'
+    __label__ = 'name'
+    id = Column('id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    gem_no = Column('gem_no', Integer)
+    agglo_no = Column('agglo_no', Integer)
+    agglo_name = Column('agglo_name', Unicode)
+    land = Column('land', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.are.agglomerationsverkehr', Agglomerationsverkehr)
+
+
 class GueteklasseOev(Base, Vector):
     __tablename__ = 'gueteklassen'
     __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': False})
