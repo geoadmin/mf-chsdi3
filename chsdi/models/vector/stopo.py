@@ -3208,14 +3208,13 @@ register('ch.swisstopo.swissimage-product.metadata', SwissimageHistMetadata)
 
 
 class AmtlichesStrassenverzeichnis(Base, Vector):
-    __tablename__ = 'streetnames'
+    __tablename__ = 'streetnames_tooltip'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/strassenverzeichnis.mako'
     __bodId__ = 'ch.swisstopo.amtliches-strassenverzeichnis'
     __label__ = 'label'
     __queryable_attributes__ = ['label', 'plzo', 'gdename', 'gdenr', 'type']
-    id = Column('bgdi_id', Integer, primary_key=True)
-    esid = Column('esid', Integer)
+    id = Column('esid', Integer, primary_key=True)
     label = Column('label', Unicode)
     plzo = Column('plzo', Unicode)
     gdename = Column('gdename', Unicode)
