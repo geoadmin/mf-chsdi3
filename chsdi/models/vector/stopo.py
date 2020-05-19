@@ -2,7 +2,7 @@
 
 from sqlalchemy import Column
 
-from sqlalchemy.types import Numeric, Boolean, Integer, Float, Unicode
+from sqlalchemy.types import Numeric, Boolean, Integer, Float, Unicode, BigInteger, SmallInteger
 
 from chsdi.models import register, register_perimeter, bases
 from chsdi.models.types import DateTimeChsdi
@@ -3332,3 +3332,27 @@ class AktuelleErdbeben(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.gefahren-aktuelle_erdbeben', AktuelleErdbeben)
+
+
+class AmtlichesAdressVerzeichnis(Base, Vector):
+    __tablename__ = 'addressverzeichnis'
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __template__ = 'templates/htmlpopup/addressverzeichnis.mako'
+    __bodId__ = 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis'
+    __label__ = 'id'
+    id = Column('adr_egaid', BigInteger, primary_key=True)
+    bdg_egid = Column('bdg_egid', BigInteger)
+    adr_edid = Column('adr_edid', Integer)
+    str_esid = Column('str_esid', Integer)
+    str_label = Column('str_label', Unicode)
+    adr_number = Column('adr_number', Unicode)
+    adr_zip = Column('adr_zip', Unicode)
+    com_fosnr = Column('com_fosnr', SmallInteger)
+    com_name = Column('com_name', Unicode)
+    adr_status = Column('adr_status', Unicode)
+    adr_official = Column('adr_official', Boolean)
+    adr_reliable = Column('adr_reliable', Boolean)
+    adr_modified = Column('adr_modified', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(AmtlichesAdressVerzeichnis.__bodId__, AmtlichesAdressVerzeichnis)

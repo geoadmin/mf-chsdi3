@@ -27,7 +27,7 @@ LANGS=(de fr it en rm)
 
 for lang in ${LANGS[@]}; do
   IMG_LOCATION=${LEGENDS_FOLDER}${BODID}_$lang.png
-  wget $WMS_URL$lang -O $IMG_LOCATION
+  wget $WMS_URL$lang"&RANDOM=${RANDOM}" -O $IMG_LOCATION
   IMG_WIDTH=$(convert $IMG_LOCATION -print "%w" /dev/null)
   IMG_HEIGHT=$(convert $IMG_LOCATION -print "%h" /dev/null)
   if (( $IMG_WIDTH > 480 )); then
