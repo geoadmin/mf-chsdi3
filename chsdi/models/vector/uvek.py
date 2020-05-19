@@ -2701,7 +2701,7 @@ register('ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht', LaermBe
 
 
 class LaermBelastungEisenbahnEffektiveImmissionen:
-    __tablename__ = 'laerm_eisenbahn_effektive_immissionen'
+    __tablename__ = 'laermbelastung_eisenbahn_eff_immissionen'
     __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -2721,6 +2721,7 @@ class LaermBelastungEisenbahnEffektiveImmissionen:
     en_operation_status = Column('en_operation_status', Unicode)
     rm_operation_status = Column('rm_operation_status', Unicode)
     floor = Column('floor', Unicode)
+    receptor = Column('receptor', Unicode)
     the_geom = Column(Geometry2D)
 
 
