@@ -5,7 +5,7 @@ import six
 from webtest import TestApp
 from webtest.app import AppError
 from unittest import skip
-from tests.integration import TestsBase
+from tests.integration import TestsBase, s3_tests
 from pyramid_mako import MakoRenderingException
 from PIL import Image
 from contextlib import contextmanager
@@ -22,6 +22,8 @@ from chsdi.models.grid import get_grid_spec
 
 if six.PY3:
     long = int
+
+DO_S3_TESTS = int(os.environ.get('S3_TESTS', 1)) == 1
 
 
 class TestLayerService(TestsBase):
@@ -85,9 +87,13 @@ class LayersChecker(object):
 
     def ilayersAllModels(self):
         for layer in self.ilayers(tooltip=True, geojson=False):
-            gridSpec = get_grid_spec(layer)
+            gridSpec = None
+            if s3_tests:
+                gridSpec = get_grid_spec(layer)
             if gridSpec is None and layer not in self.emptyGeoTables:
                 models = models_from_bodid(layer)
+                if not s3_tests and models is None:
+                    skip("No model found for layer <{}>".format(layer))
                 assert (models is not None and len(models) > 0), layer
                 for model in models:
                     primaryKeyColumn = model.primary_key_column()

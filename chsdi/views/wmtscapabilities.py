@@ -103,4 +103,13 @@ class WMTSCapabilites(MapNameValidation):
             wmts,
             request=self.request)
         response.content_type = 'text/xml'
+
+        # Notify caching systems that the content of the response
+        # varies depending on the protocol used (i.e. http or https)
+        # The original protocol used by the client is stored in X-Forwarded-Proto
+        # header by the ALB
+        # Note: vary header in Pyramid needs to be a list
+        # https://docs.pylonsproject.org/projects/pyramid/en/latest/api/response.html#pyramid.response.Response.vary
+        response.vary = ['X-Forwarded-Proto']
+
         return response

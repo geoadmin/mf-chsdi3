@@ -949,8 +949,12 @@ RESTFul interface is available.
 |                                   | value the offset value specify the number of values before and after used to calculate    |
 |                                   | the average.                                                                              |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
+| **distinct_points (optional)**    | If True, it will ensure the coordinates given to the service are part of the response.    |
+|                                   | Possible values are True or False, default to False.                                      |
++-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | Only available for **profile.json**. The name of the callback function.                   |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
+
 
 Example
 *******

@@ -2,7 +2,8 @@
 
 import os
 import six
-from tests.integration import TestsBase
+import time
+from tests.integration import TestsBase, s3_tests, dynamodb_tests
 
 
 WRONG_CONTENT_TYPE = 'nasty type'
@@ -95,6 +96,8 @@ blabla random text blabla
 class TestFileView(TestsBase):
 
     def setUp(self):
+        if not s3_tests or not dynamodb_tests:
+            self.skipTest("Service files requires access both to AWS S3 and DynamoDB")
         super(TestFileView, self).setUp()
         self.headers = {'Content-Type': 'application/vnd.google-earth.kml+xml',
                         'X-SearchServer-Authorized': 'true'}
@@ -117,6 +120,7 @@ class TestFileView(TestsBase):
     def test_update_kml(self):
         resp = self.testapp.post('/files', VALID_KML, headers=self.headers, status=200)
         admin_id = resp.json['adminId']
+        time.sleep(5)  # allow time for writing
 
         resp = self.testapp.post('/files/%s' % admin_id, VALID_KML, headers=self.headers, status=200)
         self.assertTrue(resp.json['status'], 'updated')
@@ -126,6 +130,7 @@ class TestFileView(TestsBase):
         resp = self.testapp.post('/files', VALID_KML, headers=self.headers, status=200)
         admin_id = resp.json['adminId']
         file_id = resp.json['fileId']
+        time.sleep(5)  # allow time for writing
 
         resp = self.testapp.post('/files/%s' % file_id, VALID_KML, headers=self.headers, status=200)
         self.assertEqual(resp.json['status'], 'copied')

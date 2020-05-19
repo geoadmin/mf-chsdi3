@@ -27,3 +27,4 @@ print/WEB-INF/web.xml
 tests/varnish*
 app*.log
 local
+junit-results
