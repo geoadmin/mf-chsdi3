@@ -4418,6 +4418,42 @@ msgstr "Polygonum polystachyum"
 msgid "ch.bafu.neophyten-vielblaettrige_lupine"
 msgstr "Lupinus polyphyllus"
 
+msgid "ch.bafu.niederschlagserosivitaet-apr"
+msgstr "Rainfall erosivity Apr."
+
+msgid "ch.bafu.niederschlagserosivitaet-aug"
+msgstr "Rainfall erosivity Aug."
+
+msgid "ch.bafu.niederschlagserosivitaet-dez"
+msgstr "Rainfall erosivity Dec."
+
+msgid "ch.bafu.niederschlagserosivitaet-feb"
+msgstr "Rainfall erosivity Feb."
+
+msgid "ch.bafu.niederschlagserosivitaet-jan"
+msgstr "Rainfall erosivity Jan."
+
+msgid "ch.bafu.niederschlagserosivitaet-jul"
+msgstr "Rainfall erosivity July"
+
+msgid "ch.bafu.niederschlagserosivitaet-jun"
+msgstr "Rainfall erosivity June"
+
+msgid "ch.bafu.niederschlagserosivitaet-mai"
+msgstr "Rainfall erosivity May"
+
+msgid "ch.bafu.niederschlagserosivitaet-mrz"
+msgstr "Rainfall erosivity Mar."
+
+msgid "ch.bafu.niederschlagserosivitaet-nov"
+msgstr "Rainfall erosivity Nov."
+
+msgid "ch.bafu.niederschlagserosivitaet-okt"
+msgstr "Rainfall erosivity Oct."
+
+msgid "ch.bafu.niederschlagserosivitaet-sep"
+msgstr "Rainfall erosivity Sep."
+
 msgid "ch.bafu.oekomorphologie-f_abschnitte"
 msgstr "Ecomorphology F – River reaches"
 
@@ -9392,24 +9428,6 @@ msgstr "Location"
 msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
 msgstr "Canton"
 
-msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
-msgstr "Short description"
-
-msgid "ch.swisstopo.geologie-geowege.kontakt_firma"
-msgstr "Organizer"
-
-msgid "ch.swisstopo.geologie-geowege.post_permalink"
-msgstr "Link to GeoEvent"
-
-msgid "ch.swisstopo.geologie-geowege.post_title"
-msgstr "Title"
-
-msgid "ch.swisstopo.geologie-geowege.treffpunkt_gemeinde"
-msgstr "Location"
-
-msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
-msgstr "Canton"
-
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2"
 msgstr "Geol. documents (1000-21000km2)"
 
@@ -11023,6 +11041,9 @@ msgstr "Division swissALTI3D Raster"
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D Hillshade"
+
+msgid "ch.swisstopo.swissalti3d-reliefschattierung_monodirektional"
+msgstr "swissALTI3D monodirectional hillshade"
 
 msgid "ch.swisstopo.swissbathy3d-reliefschattierung"
 msgstr "swissBATHY3D Hillshade"

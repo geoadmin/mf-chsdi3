@@ -4418,6 +4418,42 @@ msgstr "Renouée à épis nombreux"
 msgid "ch.bafu.neophyten-vielblaettrige_lupine"
 msgstr "Lupin à folioles nombreuses"
 
+msgid "ch.bafu.niederschlagserosivitaet-apr"
+msgstr "Action érosive précipitations avr."
+
+msgid "ch.bafu.niederschlagserosivitaet-aug"
+msgstr "Action érosive précipitations août"
+
+msgid "ch.bafu.niederschlagserosivitaet-dez"
+msgstr "Action érosive précipitations déc."
+
+msgid "ch.bafu.niederschlagserosivitaet-feb"
+msgstr "Action érosive précipitations fév."
+
+msgid "ch.bafu.niederschlagserosivitaet-jan"
+msgstr "Action érosive précipitations jan."
+
+msgid "ch.bafu.niederschlagserosivitaet-jul"
+msgstr "Action érosive précipitations jui."
+
+msgid "ch.bafu.niederschlagserosivitaet-jun"
+msgstr "Action érosive précipitations juin"
+
+msgid "ch.bafu.niederschlagserosivitaet-mai"
+msgstr "Action érosive précipitations mai"
+
+msgid "ch.bafu.niederschlagserosivitaet-mrz"
+msgstr "Action érosive précipitations mar."
+
+msgid "ch.bafu.niederschlagserosivitaet-nov"
+msgstr "Action érosive précipitations nov."
+
+msgid "ch.bafu.niederschlagserosivitaet-okt"
+msgstr "Action érosive précipitations oct."
+
+msgid "ch.bafu.niederschlagserosivitaet-sep"
+msgstr "Action érosive précipitations sep."
+
 msgid "ch.bafu.oekomorphologie-f_abschnitte"
 msgstr "Ecomorphologie R - Tronçons"
 
@@ -9392,24 +9428,6 @@ msgstr "Lieu"
 msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
 msgstr "Canton"
 
-msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
-msgstr "Description brève"
-
-msgid "ch.swisstopo.geologie-geowege.kontakt_firma"
-msgstr "Organisateur"
-
-msgid "ch.swisstopo.geologie-geowege.post_permalink"
-msgstr "Liens vers le GeoEvent"
-
-msgid "ch.swisstopo.geologie-geowege.post_title"
-msgstr "Titre"
-
-msgid "ch.swisstopo.geologie-geowege.treffpunkt_gemeinde"
-msgstr "Lieu"
-
-msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
-msgstr "Canton"
-
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2"
 msgstr "Documents géol. (1000-21000km2)"
 
@@ -11023,6 +11041,9 @@ msgstr "Découpage swissALTI3D Raster"
 
 msgid "ch.swisstopo.swissalti3d-reliefschattierung"
 msgstr "swissALTI3D estompage du relief"
+
+msgid "ch.swisstopo.swissalti3d-reliefschattierung_monodirektional"
+msgstr "swissALTI3D relief monodirectionnel"
 
 msgid "ch.swisstopo.swissbathy3d-reliefschattierung"
 msgstr "swissBATHY3D Ombrage du relief"
