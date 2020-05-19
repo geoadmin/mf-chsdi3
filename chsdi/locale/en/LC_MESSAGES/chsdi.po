@@ -8622,7 +8622,7 @@ msgid "ch.swisstopo"
 msgstr "swisstopo"
 
 msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis"
-msgstr "Amtliches Gebäudeadressverzeichnis"
+msgstr "Official directory of building addresses"
 
 msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_edid"
 msgstr "Federal Building entrance identifier"
@@ -9373,6 +9373,24 @@ msgstr "Geotopes in Switzerland"
 
 msgid "ch.swisstopo.geologie-geowege"
 msgstr "Geo-trails"
+
+msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
+msgstr "Short description"
+
+msgid "ch.swisstopo.geologie-geowege.kontakt_firma"
+msgstr "Organizer"
+
+msgid "ch.swisstopo.geologie-geowege.post_permalink"
+msgstr "Link to GeoEvent"
+
+msgid "ch.swisstopo.geologie-geowege.post_title"
+msgstr "Title"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_gemeinde"
+msgstr "Location"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
+msgstr "Canton"
 
 msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
 msgstr "Short description"
