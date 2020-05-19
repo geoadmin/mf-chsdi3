@@ -984,28 +984,28 @@ msgid "ch.are.belastung-gueterverkehr-strasse-2008"
 msgstr "Traffico merci dai veicoli pesanti 2008"
 
 msgid "ch.are.belastung-personenverkehr-bahn"
-msgstr "Traffico viaggiatori (trasporti pubblici)"
+msgstr "Traffico viaggiatori ferrovia"
 
 msgid "ch.are.belastung-personenverkehr-bahn-2008"
 msgstr "Traffico viaggiatori 2008"
 
 msgid "ch.are.belastung-personenverkehr-bahn.asp_oev"
-msgstr "Passegeri, traffico ferro-viario, ore di punta alla sera (OPS, 17h-18h)"
+msgstr "Passegeri, ore di punta alla sera (OPS, 17h-18h)"
 
 msgid "ch.are.belastung-personenverkehr-bahn.dtv_oev"
-msgstr "Passegeri, traffico ferroviario, traffico giornaliero medio (TGM)"
+msgstr "Passegeri, traffico giornaliero medio (TGM)"
 
 msgid "ch.are.belastung-personenverkehr-bahn.dwv_oev"
-msgstr "Passegeri, traffico ferroviario, traffico lavorativo giornaliero medio (TLGM)"
+msgstr "Passegeri, traffico lavora-tivo giornaliero medio (TLGM)"
 
 msgid "ch.are.belastung-personenverkehr-bahn.msp_oev"
-msgstr "Passegeri, traffico ferroviario, ore di punta al mattino (OPM, 7h-8h)"
+msgstr "Passegeri, ore di punta al mattino (OPM, 7h-8h)"
 
 msgid "ch.are.belastung-personenverkehr-bahn.nr"
 msgstr "Numero del tragitto"
 
 msgid "ch.are.belastung-personenverkehr-strasse"
-msgstr "Traffico viaggiatori (strada)"
+msgstr "Traffico viaggiatori/merci strada"
 
 msgid "ch.are.belastung-personenverkehr-strasse-2008"
 msgstr "Traffico viaggiatori 2008"
@@ -1041,7 +1041,7 @@ msgid "ch.are.belastung-personenverkehr-strasse.dtv_pw"
 msgstr "autovettura, traffico giornaliero medio (TGM)"
 
 msgid "ch.are.belastung-personenverkehr-strasse.dwv_fzg"
-msgstr "Carico del traffico, tutti i veicoli, traffico lavorativo giornaliero medio (TLGM)"
+msgstr "Tutti i veicoli, traffico lavorativo giornaliero medio (TLGM)"
 
 msgid "ch.are.belastung-personenverkehr-strasse.dwv_li"
 msgstr "furgone di consegna, traffico lavorativo giorna-liero medio (TLGM)"
@@ -1053,7 +1053,7 @@ msgid "ch.are.belastung-personenverkehr-strasse.dwv_lz"
 msgstr "camion articulato, traffico lavorativo giornaliero medio (TLGM)"
 
 msgid "ch.are.belastung-personenverkehr-strasse.dwv_pw"
-msgstr "autovettura, traffico lavorativo giornaliero medio (TLGM)"
+msgstr "autovettura, traffico lavora-tivo giornaliero medio (TLGM)"
 
 msgid "ch.are.belastung-personenverkehr-strasse.msp_fzg"
 msgstr "tutti i veicoli, ore di punta al mattino (OPM, 7h-8h)"
@@ -1080,19 +1080,19 @@ msgid "ch.are.bevoelkerungsdichte-vz00"
 msgstr "Densità di popolazione 2000"
 
 msgid "ch.are.erreichbarkeit-miv"
-msgstr "Accessibilité route"
+msgstr "Accessibilità su strada"
 
 msgid "ch.are.erreichbarkeit-miv.strasse_erreichb_ewap"
-msgstr "Valeur d’accessibilité habitants/emplois"
+msgstr "Accessibilité (points)"
 
 msgid "ch.are.erreichbarkeit-miv.verkehrszone_id"
 msgstr "Code de la zone de transport"
 
 msgid "ch.are.erreichbarkeit-oev"
-msgstr "Accessibilité TP"
+msgstr "Accessibilità con TP"
 
 msgid "ch.are.erreichbarkeit-oev.oev_erreichb_ewap"
-msgstr "Valeur d’accessibilité habitants/emplois"
+msgstr "Accessibilité (points)"
 
 msgid "ch.are.erreichbarkeit-oev.verkehrszone_id"
 msgstr "Code de la zone de transport"
@@ -1113,7 +1113,7 @@ msgid "ch.are.landschaftstypen"
 msgstr "Tipologia dei paesaggi svizzeri"
 
 msgid "ch.are.reisezeit-agglomerationen-miv"
-msgstr "Temps de parcours aux agglos route"
+msgstr "Tempo di viaggio verso agglo strada"
 
 msgid "ch.are.reisezeit-agglomerationen-miv.strasse_no_agglo"
 msgstr "Code de la zone du centre d’agglomération"
@@ -1125,7 +1125,7 @@ msgid "ch.are.reisezeit-agglomerationen-miv.verkehrszone_id"
 msgstr "Code de la zone de transport"
 
 msgid "ch.are.reisezeit-agglomerationen-oev"
-msgstr "Temps de parcours aux agglos en TP"
+msgstr "Tempo di viaggio verso agglo TP"
 
 msgid "ch.are.reisezeit-agglomerationen-oev.oev_no_agglo"
 msgstr "Code de la zone du centre d’agglomération"
@@ -1137,7 +1137,7 @@ msgid "ch.are.reisezeit-agglomerationen-oev.verkehrszone_id"
 msgstr "Code de la zone de transport"
 
 msgid "ch.are.reisezeit-miv"
-msgstr "Tempo di viaggio TIM"
+msgstr "Tempo di viaggio verso centri strada"
 
 msgid "ch.are.reisezeit_miv-2005"
 msgstr "Tempo di viaggio TIM 2005"
@@ -1152,7 +1152,7 @@ msgid "ch.are.reisezeit-miv.verkehrszone_id"
 msgstr "Code de la zone de transport"
 
 msgid "ch.are.reisezeit-oev"
-msgstr "Tempo di viaggio con TP 2005"
+msgstr "Tempo di viaggio verso centri TP"
 
 msgid "ch.are.reisezeit_oev-2005"
 msgstr "Tempo di viaggio con TP 2005"
@@ -8624,6 +8624,45 @@ msgstr "swisstopo"
 msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis"
 msgstr "Eelenco ufficiale degli indirizzi degli edifici"
 
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_edid"
+msgstr "Identificatore federale dell’entrata dell’edificio"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_egaid"
+msgstr "Identificatore federale dell’indrizzi degli edifici"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_modified"
+msgstr "Ultima modificazione"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_number"
+msgstr "Numero dell’edificio"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_official"
+msgstr "Ufficiale"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_reliable"
+msgstr "Affidabile"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_status"
+msgstr "Stato"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_zip"
+msgstr "numero postale d'avviamento / località"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.bdg_egid"
+msgstr "Identificatore federale dell’edificio"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.com_fosnr"
+msgstr "No. UST"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.com_name"
+msgstr "Nome del Comune"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.str_esid"
+msgstr "Identificatore federale della strada"
+
+msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.str_label"
+msgstr "Nome della via"
+
 msgid "ch.swisstopo.amtliches-strassenverzeichnis"
 msgstr "Elenco ufficiale delle vie"
 
@@ -8704,6 +8743,9 @@ msgstr "MDT25 ombreggiature del rilievo"
 
 msgid "ch.swisstopo.dreiecksvermaschung"
 msgstr "MN95 Magliatura triangolare"
+
+msgid "ch.swisstopo.erlebnisgeologie"
+msgstr "swisstopo, Avventura geologia"
 
 msgid "ch.swisstopo.fixpunkte-agnes"
 msgstr "AGNES"
@@ -9330,7 +9372,43 @@ msgid "ch.swisstopo.geologie-geotope"
 msgstr "Geotopi svizzeri"
 
 msgid "ch.swisstopo.geologie-geowege"
-msgstr "Sentieri geologici"
+msgstr "Geo-sentieri"
+
+msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
+msgstr "Breve descrizione"
+
+msgid "ch.swisstopo.geologie-geowege.kontakt_firma"
+msgstr "Organizzatore"
+
+msgid "ch.swisstopo.geologie-geowege.post_permalink"
+msgstr "Link al GeoEvento"
+
+msgid "ch.swisstopo.geologie-geowege.post_title"
+msgstr "Titolo"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_gemeinde"
+msgstr "Luogo"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
+msgstr "Cantone"
+
+msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
+msgstr "Breve descrizione"
+
+msgid "ch.swisstopo.geologie-geowege.kontakt_firma"
+msgstr "Organizzatore"
+
+msgid "ch.swisstopo.geologie-geowege.post_permalink"
+msgstr "Link al GeoEvento"
+
+msgid "ch.swisstopo.geologie-geowege.post_title"
+msgstr "Titolo"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_gemeinde"
+msgstr "Luogo"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
+msgstr "Cantone"
 
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2"
 msgstr "Documenti geologici (1000-21000km2)"
@@ -11549,6 +11627,9 @@ msgstr "Nastro trasportatore"
 msgid "ch.swisstopo.swisstlm3d-uebrigerverkehr_objektart_5"
 msgstr "Sciovia"
 
+msgid "ch.swisstopo.swisstlm3d-wald"
+msgstr "Foresta swissTLM3D"
+
 msgid "ch.swisstopo.swisstlm3d-wanderwege"
 msgstr "Percorsi escursionistici"
 
@@ -12051,7 +12132,7 @@ msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Piano settoriale militare"
 
 msgid "ch.vbs.schiessanzeigen"
-msgstr "Avvisi di tiro e zone pericolose pubblicato"
+msgstr "Avvisi di tiro e zone di pericolo pubblicati"
 
 msgid "ch.vbs.schiessanzeigen.auskunft"
 msgstr "Servizio info"
