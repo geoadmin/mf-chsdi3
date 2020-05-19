@@ -9392,6 +9392,24 @@ msgstr "Luogo"
 msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
 msgstr "Cantone"
 
+msgid "ch.swisstopo.geologie-geowege.allgemein_leadtext"
+msgstr "Breve descrizione"
+
+msgid "ch.swisstopo.geologie-geowege.kontakt_firma"
+msgstr "Organizzatore"
+
+msgid "ch.swisstopo.geologie-geowege.post_permalink"
+msgstr "Link al GeoEvento"
+
+msgid "ch.swisstopo.geologie-geowege.post_title"
+msgstr "Titolo"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_gemeinde"
+msgstr "Luogo"
+
+msgid "ch.swisstopo.geologie-geowege.treffpunkt_kanton"
+msgstr "Cantone"
+
 msgid "ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2"
 msgstr "Documenti geologici (1000-21000km2)"
 
@@ -12117,7 +12135,7 @@ msgid "ch.vbs.schiessanzeigen"
 msgstr "Avvisi di tiro e zone di pericolo pubblicati"
 
 msgid "ch.vbs.schiessanzeigen.auskunft"
-msgstr "Contatto per le informazioni"
+msgstr "Servizio info"
 
 msgid "ch.vbs.schiessanzeigen.belegung"
 msgstr "Date di tiro attuali"
@@ -12126,7 +12144,7 @@ msgid "ch.vbs.schiessanzeigen.belplan_id"
 msgstr "ID-No"
 
 msgid "ch.vbs.schiessanzeigen.bezeichnung"
-msgstr "Piazza di tiro"
+msgstr "Piazzo di tiro"
 
 msgid "ch.vbs.schiessanzeigen.keine_info"
 msgstr "Nessuna informazione disponibile"
@@ -12135,7 +12153,7 @@ msgid "ch.vbs.schiessanzeigen.kein_schiessen"
 msgstr "No tiro"
 
 msgid "ch.vbs.schiessanzeigen.url"
-msgstr "Lista degli avvisi di tiro"
+msgstr "Lista d'avvisi di tiro"
 
 msgid "ch.vbs.schiessanzeigen.wochentag.1"
 msgstr "Dom"
