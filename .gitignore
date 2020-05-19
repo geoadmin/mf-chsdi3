@@ -17,6 +17,7 @@ chsdi.egg-info
 chsdi/static/doc/build/
 chsdi/static/css/extended.min.css
 chsdi/static/css/blueimp-gallery.min.css
+chsdi/static/info.json
 deploy/hooks/pre-create-code
 node_modules
 MANIFEST
