@@ -195,11 +195,13 @@ register('ch.are.wohnungsinventar-zweitwohnungsanteil', ZweitwohnungsAnteil)
 class ReisezeitAgglomerationen:
     __tablename__ = 'reisezeit_agglomerationen'
     id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
 
 
 class Reisezeit:
     __tablename__ = 'reisezeit'
     id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
 
 
 class Erreichbarkeit:
