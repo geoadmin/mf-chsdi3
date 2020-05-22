@@ -47,7 +47,7 @@ env:
 phases:
   install:
     runtime-versions:
-      docker: 18
+      python: 3.8
     commands:
       - |-
            if [ "${USE_PYTHON3}" = 0 ]; then
