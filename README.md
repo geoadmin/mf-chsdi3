@@ -300,4 +300,3 @@ Run the script
 node scripts/createlegends.js ch.meteoschweiz.messwerte-niederschlagn
 ```
 
-
