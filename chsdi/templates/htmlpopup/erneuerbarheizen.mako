@@ -51,6 +51,10 @@
         <td>${address}</td>
     </tr>
     <tr>
+        <td class="cell-left">${_('ch.bfe.erneuerbarheizen.consultingcosts')}</td>
+        <td><${c['attributes']['consultingcosts'] or '-'}</td>
+    </tr>
+    <tr>
         <td class="cell-left">${_('ch.bfe.erneuerbarheizen.language')}</td>
         <td>${c['attributes'][language] or '-'}</td>
     </tr>

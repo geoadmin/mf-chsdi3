@@ -886,7 +886,7 @@ register('ch.bfe.statistik-wasserkraftanlagen', StatistikwasserkraftanlagenNew)
 
 
 class Erneuerbarheizen(Base, Vector):
-    __tablename__ = 'erneuerbarheizen'
+    __tablename__ = 'renewable_heating'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/erneuerbarheizen.mako'
     __bodId__ = 'ch.bfe.erneuerbarheizen'
@@ -911,14 +911,18 @@ class Erneuerbarheizen(Base, Vector):
     consulting_type_fr = Column('consulting_type_fr', Unicode)
     consulting_type_it = Column('consulting_type_it', Unicode)
     consulting_type_en = Column('consulting_type_en', Unicode)
+    consulting_type_rm = Column('consulting_type_rm', Unicode)
     language_fr = Column('language_fr', Unicode)
     language_it = Column('language_it', Unicode)
     language_de = Column('language_de', Unicode)
     language_en = Column('language_en', Unicode)
+    language_rm = Column('language_rm', Unicode)
     consultant_cat_fr = Column('consultant_cat_fr', Unicode)
     consultant_cat_it = Column('consultant_cat_it', Unicode)
     consultant_cat_de = Column('consultant_cat_de', Unicode)
     consultant_cat_en = Column('consultant_cat_en', Unicode)
+    consultant_cat_rm = Column('consultant_cat_rm', Unicode)
+    consultingcosts = Column('consultingcosts', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.erneuerbarheizen', Erneuerbarheizen)
