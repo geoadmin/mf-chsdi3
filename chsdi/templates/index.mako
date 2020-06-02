@@ -76,7 +76,6 @@ version = python_version()
           <a href="/rest/services/ech/MapServer/ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata">Returns all the attributes of the layer ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata</a>
           <h3>Find</h3>
           <a href="rest/services/ech/MapServer/find?layer=ch.bafu.bundesinventare-bln&searchText=Lavaux&searchField=bln_name&returnGeometry=false">Find Lavaux in the field bln_name of the layer ch.bafu.bundesinventare-bln</a> <br>
-          <a href="/rest/services/ech/MapServer/find?layer=ch.are.agglomerationen_isolierte_staedte&searchText=15&searchField=flaeche_ha">Find 15 in field flaeche_ha of layer ch.are.agglomerationen_isolierte_staedte (pre-infix match)</a> <br>
           <h3>Releases Service</h3>
           <a href="rest/services/ech/MapServer/ch.swisstopo.zeitreihen/releases?geometry=548945.5,147956,549402,148103.5&geometryType=esriGeometryEnvelope&mapExtent=611399.9999999999,158650,690299.9999999999,198150&imageDisplay=500,500,96">Zeitreihen Layer</a> <br>
           <a
