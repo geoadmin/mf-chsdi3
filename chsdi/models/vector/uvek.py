@@ -1206,7 +1206,7 @@ register('ch.bakom.notruf-143_festnetz', BakomNotruf143Fest)
 
 class BakomNotruf143Zentral(Base, Vector):
     __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_zentral_143.mako'
     __bodId__ = 'ch.bakom.notruf-143_zentral'
     __queryable_attributes__ = []
@@ -1239,7 +1239,7 @@ register('ch.bakom.notruf-144_festnetz', BakomNotruf144Fest)
 
 class BakomNotruf144Zentral(Base, Vector):
     __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_zentral_144.mako'
     __bodId__ = 'ch.bakom.notruf-144_zentral'
     __queryable_attributes__ = []
@@ -1272,7 +1272,7 @@ register('ch.bakom.notruf-147_festnetz', BakomNotruf147Fest)
 
 class BakomNotruf147Zentral(Base, Vector):
     __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_zentral_147.mako'
     __bodId__ = 'ch.bakom.notruf-147_zentral'
     __queryable_attributes__ = []
