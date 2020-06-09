@@ -1279,7 +1279,7 @@ class BakomNotruf147Zentral(Base, Vector):
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
     festnetz_147 = Column('festnetz_147', Unicode)
-    fn_zentrale_147 = Column('festnetz_147', Unicode)
+    fn_zentrale_147 = Column('fn_zentrale_147', Unicode)
     mobile_147 = Column('mobile_147', Unicode)
     mo_zentrale_147 = Column('mo_zentrale_147', Unicode)
     the_geom = Column(Geometry2D)
