@@ -1499,14 +1499,14 @@ msgstr "La Svizzera in canoa"
 msgid "ch.astra.kt"
 msgstr "USTRA + cantone"
 
-msgid "ch.astra.langsamverkehr-wandern_sperrungen_umleitungen"
-msgstr "Fermeture des sentiers de randonnée"
-
 msgid "ch.astra.mountainbikeland"
 msgstr "La Svizzera in mountain bike"
 
 msgid "ch.astra.mountainbikeland.attribut_c"
 msgstr "Percorsi"
+
+msgid "ch.astra.mountainbikeland-sperrungen_umleitungen"
+msgstr "to do"
 
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Asse delle strade nazionali"
@@ -1720,6 +1720,9 @@ msgstr "La Svizzera in skating"
 
 msgid "ch.astra.skatingland.attribut_c"
 msgstr "Percorsi"
+
+msgid "ch.astra.skatingland-sperrungen_umleitungen"
+msgstr "to do"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Stazioni di conteggio (regionale)"
@@ -2240,11 +2243,107 @@ msgstr "La Svizzera in bici"
 msgid "ch.astra.veloland.attribut_c"
 msgstr "Percorsi"
 
+msgid "ch.astra.veloland-sperrungen_umleitungen"
+msgstr "to do"
+
 msgid "ch.astra.wanderland"
 msgstr "La Svizzera a piedi"
 
 msgid "ch.astra.wanderland.attribut_c"
 msgstr "Percorsi"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen"
+msgstr "Chiusure di sentieri pedonali"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.abstract"
+msgstr "Spiegazione"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider"
+msgstr "Fonte dei dati"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.canton"
+msgstr "Ufficio cantonale"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.schweizmobil"
+msgstr "SvizerraMobile / Ufficio cantonale"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
+msgstr "Sentieri Svizzeri e Associazione cantonale per i sentieri escur-sionistici"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.duration"
+msgstr "Durata prevista"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.file"
+msgstr "Dettagli"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason"
+msgstr "Causa"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.1"
+msgstr "Costruzione e manutenzio-ne"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
+msgstr "Sentiero impraticabile"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
+msgstr "Cambiamento di percorso"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.2"
+msgstr "Lavori forestali"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.3"
+msgstr "Manifestazione"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.4"
+msgstr "Caduta di rocce"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.5"
+msgstr "Smottamento"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.6"
+msgstr "Caduta di pietre"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.7"
+msgstr "Valanga primaverile"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.8"
+msgstr "Danni da tempesta"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
+msgstr "Inondazioni"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.99"
+msgstr "Altro"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate"
+msgstr "Stato"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.provisionally"
+msgstr "provvisorio"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.validated"
+msgstr "validato"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.title"
+msgstr "Titolo"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.url1_link"
+msgstr "Ulteriori informazioni"
 
 msgid "ch.babs"
 msgstr "FOCP"
@@ -3045,7 +3144,7 @@ msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Classe dei terreni di fondazione"
 
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
-msgstr "Zone sismiche"
+msgstr "Zone sismiche SIA 261"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
 msgstr "Terremoti storici"
@@ -5148,7 +5247,7 @@ msgid "ch.bafu.wasser-rueckgabe"
 msgstr "Restituzione"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2"
-msgstr "Bacini imbriferi 2 km²"
+msgstr "Bacini imbibiferi parziali 2 km²"
 
 msgid "ch.bafu.wasser-teileinzugsgebiete_2.anteil_ch"
 msgstr "Percentuale CH della superficie del bacino imbrifero totale"
@@ -5226,7 +5325,7 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "Bacini imbriferi 40 km²"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Tronçons d'effluents"
+msgstr "Tratti di acque reflue"
 
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "N° del bacino idrografico completo"
@@ -5615,6 +5714,18 @@ msgstr "143 Numero di routing mobile"
 msgid "ch.bakom.notruf-143_zentral"
 msgstr "143 Centrale d‘allarme"
 
+msgid "ch.bakom.notruf-143_zentral.festnetz_143"
+msgstr "Numero di routing fissa"
+
+msgid "ch.bakom.notruf-143_zentral.fn_zentrale_143"
+msgstr "Centrale d'allarme rete fissa"
+
+msgid "ch.bakom.notruf-143_zentral.mobile_143"
+msgstr "Numero di routing mobile"
+
+msgid "ch.bakom.notruf-143_zentral.mo_zentrale_143"
+msgstr "Centrale d'allarme rete mobile"
+
 msgid "ch.bakom.notruf-144_festnetz"
 msgstr "144 Rete fissa"
 
@@ -5660,6 +5771,18 @@ msgstr "144 Numero di routing mobile"
 msgid "ch.bakom.notruf-144_zentral"
 msgstr "144 Centrale d‘allarme"
 
+msgid "ch.bakom.notruf-144_zentral.festnetz_144"
+msgstr "Numero di routing fissa"
+
+msgid "ch.bakom.notruf-144_zentral.fn_zentrale_144"
+msgstr "Centrale d'allarme rete fissa"
+
+msgid "ch.bakom.notruf-144_zentral.mobile_144"
+msgstr "Numero di routing mobile"
+
+msgid "ch.bakom.notruf-144_zentral.mo_zentrale_144"
+msgstr "Centrale d'allarme rete mobile"
+
 msgid "ch.bakom.notruf-147_festnetz"
 msgstr "147 Rete fissa"
 
@@ -5704,6 +5827,18 @@ msgstr "147 Numero di routing mobile"
 
 msgid "ch.bakom.notruf-147_zentral"
 msgstr "147 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-147_zentral.festnetz_147"
+msgstr "Numero di routing fissa"
+
+msgid "ch.bakom.notruf-147_zentral.fn_zentrale_147"
+msgstr "Centrale d'allarme rete fissa"
+
+msgid "ch.bakom.notruf-147_zentral.mobile_147"
+msgstr "Numero di routing mobile"
+
+msgid "ch.bakom.notruf-147_zentral.mo_zentrale_147"
+msgstr "Centrale d'allarme rete mobile"
 
 msgid "ch.bakom.notruf.adresse_112_festnetz"
 msgstr "Centrale d‘allarme rete fissa"
@@ -7150,6 +7285,9 @@ msgstr "Ditta"
 
 msgid "ch.bfe.erneuerbarheizen.consultant_cat"
 msgstr "Categoria(e)"
+
+msgid "ch.bfe.erneuerbarheizen.consultingcosts"
+msgstr "Costi di consulenza"
 
 msgid "ch.bfe.erneuerbarheizen.email"
 msgstr "Indirizzo e-mail"
@@ -8960,9 +9098,6 @@ msgstr "Nome"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
 msgstr "Numero"
 
-msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata"
-msgstr "Divisione carta geologica generale 200 Stampa"
-
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name"
 msgstr "Nome"
 
@@ -8980,9 +9115,6 @@ msgstr "Nome"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.number"
 msgstr "Numero"
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.release"
-msgstr "Edizione"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
 msgstr "Edizione"
@@ -11732,9 +11864,6 @@ msgstr "Informazioni sul Comune"
 msgid "ch.swisstopo-vd.geometa-grundbuch"
 msgstr "Informazioni del registro fondiario"
 
-msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Aree con lavori in corso"
-
 msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Geometra revisore"
 
@@ -12153,7 +12282,7 @@ msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Piano settoriale militare"
 
 msgid "ch.vbs.schiessanzeigen"
-msgstr "Avvisi di tiro e zone di pericolo pubblicati"
+msgstr "Avvisi di tiro e zone pericolose pubblicato"
 
 msgid "ch.vbs.schiessanzeigen.auskunft"
 msgstr "Contatto per le informazioni"
