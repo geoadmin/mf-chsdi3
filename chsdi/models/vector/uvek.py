@@ -82,6 +82,55 @@ class SchienennetzSegment(Base, Vector):
 register(SchienennetzSegment.__bodId__, SchienennetzSegment)
 
 
+class SperrungenUmleitungen:
+    __table_args__ = ({'schema': 'astra', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/sperrungen_umleitungen.mako'
+    __label__ = 'sperrungen_type'
+    __queryable_attributes__ = ['title_de', 'title_fr', 'title_it', 'title_en']
+    id = Column('bgdi_id', Integer, primary_key=True)
+    sperrungen_type = Column('type', Unicode)
+    land = Column('land', Unicode)
+    duration_de = Column('duration_de', Unicode)
+    duration_fr = Column('duration_fr', Unicode)
+    duration_it = Column('duration_it', Unicode)
+    duration_en = Column('duration_en', Unicode)
+    reason = Column('reason', Numeric)
+    title_de = Column('title_de', Unicode)
+    title_fr = Column('title_fr', Unicode)
+    title_it = Column('title_it', Unicode)
+    title_en = Column('title_en', Unicode)
+    abstract_de = Column('abstract_de', Unicode)
+    abstract_fr = Column('abstract_fr', Unicode)
+    abstract_it = Column('abstract_it', Unicode)
+    abstract_en = Column('abstract_en', Unicode)
+    state_validate = Column('state_validate', Unicode)
+    sperrung_file = Column('file', Unicode)
+    content_provider = Column('content_provider')
+    url1_link_de = Column('url1_link_de', Unicode)
+    url1_link_fr = Column('url1_link_fr', Unicode)
+    url1_link_it = Column('url1_link_it', Unicode)
+    url1_link_en = Column('url1_link_en', Unicode)
+    url1_text_de = Column('url1_text_de', Unicode)
+    url1_text_fr = Column('url1_text_fr', Unicode)
+    url1_text_it = Column('url1_text_it', Unicode)
+    url1_text_en = Column('url1_text_en', Unicode)
+    the_geom = Column('the_geom', Geometry2D)
+
+
+class WanderlandSperrungenUmleitungen(Base, SperrungenUmleitungen, Vector):
+    __tablename__ = 'v_sperrungen_umleitungen_line_wanderland'
+    __bodId__ = 'ch.astra.wanderland-sperrungen_umleitungen'
+
+register(WanderlandSperrungenUmleitungen.__bodId__, WanderlandSperrungenUmleitungen)
+
+
+class VelolandSperrungenUmleitungen(Base, SperrungenUmleitungen, Vector):
+    __tablename__ = 'v_sperrungen_umleitungen_line_veloland'
+    __bodId__ = 'ch.astra.veloland-sperrungen_umleitungen'
+
+register(VelolandSperrungenUmleitungen.__bodId__, VelolandSperrungenUmleitungen)
+
+
 class OevHaltestellen:
     __tablename__ = 'oev_haltestellen_tooltip'
     __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
