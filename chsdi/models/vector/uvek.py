@@ -1350,7 +1350,7 @@ register('ch.bakom.notruf-112_satellit', BakomNotruf112Sat)
 
 class BakomNotruf(Base, Vector):
     __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf.mako'
     __bodId__ = 'ch.bakom.notruf'
     __queryable_attributes__ = ['mobile_112', 'mo_addresse_112',
@@ -1413,6 +1413,59 @@ class BakomNotruf(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf', BakomNotruf)
+
+
+class BakomNotruf112Zentral(Base, Vector):
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/notruf_zentral_112.mako'
+    __bodId__ = 'ch.bakom.notruf-112_zentral'
+    __queryable_attributes__ = []
+    __label__ = 'id'
+    id = Column('bfs_nummer', Integer, primary_key=True)
+    festnetz_112 = Column('festnetz_112', Unicode)
+    fn_zentrale_112 = Column('fn_zentrale_112', Unicode)
+    mobile_112 = Column('mobile_112', Unicode)
+    mo_zentrale_112 = Column('mo_zentrale_112', Unicode)
+    satellit_112 = Column('satellit_112', Unicode)
+    sa_zentrale_112 = Column('sa_zentrale_112', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bakom.notruf-112_zentral', BakomNotruf112Zentral)
+
+
+class BakomNotruf117Zentral(Base, Vector):
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/notruf_zentral_117.mako'
+    __bodId__ = 'ch.bakom.notruf-117_zentral'
+    __queryable_attributes__ = []
+    __label__ = 'id'
+    id = Column('bfs_nummer', Integer, primary_key=True)
+    festnetz_117 = Column('festnetz_117', Unicode)
+    fn_zentrale_117 = Column('fn_zentrale_117', Unicode)
+    mobile_117 = Column('mobile_117', Unicode)
+    mo_zentrale_117 = Column('mo_zentrale_117', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bakom.notruf-117_zentral', BakomNotruf117Zentral)
+
+
+class BakomNotruf118Zentral(Base, Vector):
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/notruf_zentral_118.mako'
+    __bodId__ = 'ch.bakom.notruf-118_zentral'
+    __queryable_attributes__ = []
+    __label__ = 'id'
+    id = Column('bfs_nummer', Integer, primary_key=True)
+    festnetz_118 = Column('festnetz_118', Unicode)
+    fn_zentrale_118 = Column('fn_zentrale_118', Unicode)
+    mobile_118 = Column('mobile_118', Unicode)
+    mo_zentrale_118 = Column('mo_zentrale_118', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bakom.notruf-118_zentral', BakomNotruf118Zentral)
 
 
 class Bakomfernsehsender(Base, Vector):
