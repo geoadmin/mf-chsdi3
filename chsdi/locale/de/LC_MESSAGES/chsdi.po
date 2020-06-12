@@ -1499,14 +1499,14 @@ msgstr "Kanuland"
 msgid "ch.astra.kt"
 msgstr "ASTRA + Kanton"
 
-msgid "ch.astra.langsamverkehr-wandern_sperrungen_umleitungen"
-msgstr "Wanderwegsperrungen"
-
 msgid "ch.astra.mountainbikeland"
 msgstr "Mountainbikeland Schweiz"
 
 msgid "ch.astra.mountainbikeland.attribut_c"
 msgstr "Route"
+
+msgid "ch.astra.mountainbikeland-sperrungen_umleitungen"
+msgstr "Sperrungen Mountainbike"
 
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Nationalstrassenachsen"
@@ -1720,6 +1720,9 @@ msgstr "Skatingland Schweiz"
 
 msgid "ch.astra.skatingland.attribut_c"
 msgstr "Route"
+
+msgid "ch.astra.skatingland-sperrungen_umleitungen"
+msgstr "Sperrungen Skating"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Zählstellen (regional)"
@@ -2240,11 +2243,107 @@ msgstr "Veloland Schweiz"
 msgid "ch.astra.veloland.attribut_c"
 msgstr "Route"
 
+msgid "ch.astra.veloland-sperrungen_umleitungen"
+msgstr "Sperrungen Velo"
+
 msgid "ch.astra.wanderland"
 msgstr "Wanderland"
 
 msgid "ch.astra.wanderland.attribut_c"
 msgstr "Route"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen"
+msgstr "Wanderwegsperrungen"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.abstract"
+msgstr "Erläuterung"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider"
+msgstr "Datenquelle"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.canton"
+msgstr "Kantonale Fachstelle"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.schweizmobil"
+msgstr "SchweizMobil / Kantonale Fachstelle"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
+msgstr "Schweizer Wanderwege und kantonale Wanderweg-Fachorganisationen"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.duration"
+msgstr "Vorassichtliche Dauer"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.file"
+msgstr "Details"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason"
+msgstr "Grund"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.1"
+msgstr "Bau- & Unterhaltsarbeiten"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
+msgstr "Weg unpassierbar"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
+msgstr "Geänderte Streckenführung"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
+msgstr "GIGO: reason 15- not in spec"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
+msgstr "GIGO: reason 16 - not in spec"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.2"
+msgstr "Forstarbeiten"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.3"
+msgstr "Grossanlass"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.4"
+msgstr "Felssturz"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.5"
+msgstr "Hangrutsch"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.6"
+msgstr "Steinschlag"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.7"
+msgstr "Frühlingslawine"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.8"
+msgstr "Sturmschäden"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
+msgstr "Hochwasser"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.99"
+msgstr "Andere"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate"
+msgstr "Status"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.provisionally"
+msgstr "provisorisch"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.validated"
+msgstr "validiert"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.title"
+msgstr "Titel"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.url1_link"
+msgstr "Weitere Informationen"
 
 msgid "ch.babs"
 msgstr "BABS"
@@ -3045,7 +3144,7 @@ msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Seismische Baugrundklassen"
 
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
-msgstr "Erdbebenzonen"
+msgstr "Erdbebenzonen SIA 261"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
 msgstr "Historische Erdbeben"
@@ -5480,6 +5579,24 @@ msgstr "112 Nummer Satellitennetz"
 msgid "ch.bakom.notruf-112_zentral"
 msgstr "112 Alarmzentralen"
 
+msgid "ch.bakom.notruf-112_zentral.festnetz_112"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-112_zentral.fn_zentrale_112"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-112_zentral.mobile_112"
+msgstr "Routing-Nummer Mobilenetz"
+
+msgid "ch.bakom.notruf-112_zentral.mo_zentrale_112"
+msgstr "Alarmzentrale Mobilnetz"
+
+msgid "ch.bakom.notruf-112_zentral.satellit_112"
+msgstr "Routing-Nummer Satellitennetz"
+
+msgid "ch.bakom.notruf-112_zentral.sa_zentrale_112"
+msgstr "Alarmzentrale Satellitennetz"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Festnetz"
 
@@ -5524,6 +5641,18 @@ msgstr "117 Routing-Nummer Mobilnetz"
 
 msgid "ch.bakom.notruf-117_zentral"
 msgstr "117 Alarmzentralen"
+
+msgid "ch.bakom.notruf-117_zentral.festnetz_117"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-117_zentral.fn_zentrale_117"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-117_zentral.mobile_117"
+msgstr "Routing-Nummer Mobilenetz"
+
+msgid "ch.bakom.notruf-117_zentral.mo_zentrale_117"
+msgstr "Alarmzentrale Mobilnetz"
 
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Festnetz"
@@ -5570,6 +5699,18 @@ msgstr "118 Routing-Nummer Mobilnetz"
 msgid "ch.bakom.notruf-118_zentral"
 msgstr "118 Alarmzentralen"
 
+msgid "ch.bakom.notruf-118_zentral.festnetz_118"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-118_zentral.fn_zentrale_118"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-118_zentral.mobile_118"
+msgstr "Routing-Nummer Mobilenetz"
+
+msgid "ch.bakom.notruf-118_zentral.mo_zentrale_118"
+msgstr "Alarmzentrale Mobilnetz"
+
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Festnetz"
 
@@ -5614,6 +5755,18 @@ msgstr "143 Routing-Nummer Mobilnetz"
 
 msgid "ch.bakom.notruf-143_zentral"
 msgstr "143 Alarmzentralen"
+
+msgid "ch.bakom.notruf-143_zentral.festnetz_143"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-143_zentral.fn_zentrale_143"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-143_zentral.mobile_143"
+msgstr "Routing-Nummer FMobilnetz"
+
+msgid "ch.bakom.notruf-143_zentral.mo_zentrale_143"
+msgstr "Alarmzentrale Mobilnetz"
 
 msgid "ch.bakom.notruf-144_festnetz"
 msgstr "144 Festnetz"
@@ -5660,6 +5813,18 @@ msgstr "144 Routing-Nummer Mobilnetz"
 msgid "ch.bakom.notruf-144_zentral"
 msgstr "144 Alarmzentralen"
 
+msgid "ch.bakom.notruf-144_zentral.festnetz_144"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-144_zentral.fn_zentrale_144"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-144_zentral.mobile_144"
+msgstr "Routing-Nummer FMobilnetz"
+
+msgid "ch.bakom.notruf-144_zentral.mo_zentrale_144"
+msgstr "Alarmzentrale Mobilnetz"
+
 msgid "ch.bakom.notruf-147_festnetz"
 msgstr "147 Festnetz"
 
@@ -5704,6 +5869,18 @@ msgstr "147 Routing-Nummer Mobilnetz"
 
 msgid "ch.bakom.notruf-147_zentral"
 msgstr "147 Alarmzentralen"
+
+msgid "ch.bakom.notruf-147_zentral.festnetz_147"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-147_zentral.fn_zentrale_147"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-147_zentral.mobile_147"
+msgstr "Routing-Nummer FMobilnetz"
+
+msgid "ch.bakom.notruf-147_zentral.mo_zentrale_147"
+msgstr "Alarmzentrale Mobilnetz"
 
 msgid "ch.bakom.notruf.adresse_112_festnetz"
 msgstr "Alarmzentrale Festnetz"
@@ -7150,6 +7327,9 @@ msgstr "Firma"
 
 msgid "ch.bfe.erneuerbarheizen.consultant_cat"
 msgstr "Kategorie/-n"
+
+msgid "ch.bfe.erneuerbarheizen.consultingcosts"
+msgstr "Beratungskosten"
 
 msgid "ch.bfe.erneuerbarheizen.email"
 msgstr "Mailadresse"
@@ -8960,9 +9140,6 @@ msgstr "Name"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
 msgstr "Nummer"
 
-msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata"
-msgstr "Einteilung Geologische Generalkarte 200 Papier"
-
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name"
 msgstr "Name"
 
@@ -8980,9 +9157,6 @@ msgstr "Name"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.number"
 msgstr "Nummer"
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.release"
-msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
 msgstr "Ausgabejahr"
@@ -11731,9 +11905,6 @@ msgstr "Gemeindeinformationen"
 
 msgid "ch.swisstopo-vd.geometa-grundbuch"
 msgstr "Grundbuchinformationen"
-
-msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Gebiete in Arbeit"
 
 msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Nachführungsgeometer/in"
