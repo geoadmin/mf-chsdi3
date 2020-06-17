@@ -1318,17 +1318,22 @@ register(AlpinAuenAusserhalbBundesinventar.__bodId__, AlpinAuenAusserhalbBundesi
 
 
 class AuenVegetationsKarten(Base, Vector):
-    __tablename__ = 'auen_vegetation'
+    __tablename__ = 'auen_vegetationskarte'
     __table_args__ = ({'schema': 'flora', 'autoload': False})
     __bodId__ = 'ch.bafu.auen-vegetationskarten'
-    __queryable_attributes__ = ['auveg_obj', 'auveg_name', 'auveg_jahr', 'auveg_k22']
+    __queryable_attributes__ = ['obj_nummer', 'name', 'kartierjahr', 'primaervegetation_de', 'primaervegetation_fr', 'primaervegetation_it']
     __template__ = 'templates/htmlpopup/auen_veg.mako'
-    __label__ = 'auveg_name'
+    __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    auveg_name = Column('auveg_name', Unicode)
-    auveg_obj = Column('auveg_obj', Integer)
-    auveg_jahr = Column('auveg_jahr', Integer)
-    auveg_k22 = Column('auveg_k22', Integer)
+    name = Column('name', Unicode)
+    obj_nummer = Column('obj_nummer', Integer)
+    kertierjahr = Column('kartierjahr', Integer)
+    primaervegetation_de = Column('primaervegetation_de', Unicode)
+    primaervegetation_fr = Column('primaervegetation_fr', Unicode)
+    primaervegetation_it = Column('primaervegetation_it', Unicode)
+    code_primaervegetation = Column('code_primaervegetation', Unicode)
+    ref_obj_blatt = Column('ref_obj_blatt', Unicode)
+    area_ha = Column('area_ha', Numeric)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.auen-vegetationskarten', AuenVegetationsKarten)
