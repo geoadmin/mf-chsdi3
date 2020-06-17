@@ -2283,7 +2283,7 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.reason"
 msgstr "Causa"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.1"
-msgstr "Costruzione e manutenzio-ne"
+msgstr "Costruzione e manutenzione"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
 msgstr "Inondazioni"
@@ -2582,6 +2582,9 @@ msgstr "Superficie [ha]"
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Zone golenali carte di vegetazione"
 
+msgid "ch.bafu.auen-vegetationskarten.area_ha"
+msgstr "Area [ha]"
+
 msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
 msgstr "Anno mappatura"
 
@@ -2593,6 +2596,24 @@ msgstr "Nome dell'oggetto"
 
 msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
 msgstr "Numero dell'oggetto"
+
+msgid "ch.bafu.auen-vegetationskarten.code_primaervegtation"
+msgstr "Numero di vegetazione"
+
+msgid "ch.bafu.auen-vegetationskarten.kartierjahr"
+msgstr "Anno mappatura"
+
+msgid "ch.bafu.auen-vegetationskarten.name"
+msgstr "Nome dell'oggetto"
+
+msgid "ch.bafu.auen-vegetationskarten.obj_nummer"
+msgstr "Numero dell'oggetto"
+
+msgid "ch.bafu.auen-vegetationskarten.primaervegetation"
+msgstr "Mappatura unità di vegeta-zione primaria"
+
+msgid "ch.bafu.auen-vegetationskarten.ref_obj_blatt"
+msgstr "Descrizione dell'oggetto"
 
 msgid "ch.bafu.biogeographische_regionen"
 msgstr "Regioni biogeografiche"

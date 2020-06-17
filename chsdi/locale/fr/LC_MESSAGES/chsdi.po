@@ -2582,6 +2582,9 @@ msgstr "Surface [ha]"
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Végétation dans zones alluviales"
 
+msgid "ch.bafu.auen-vegetationskarten.area_ha"
+msgstr "Area [ha]"
+
 msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
 msgstr "Année de la cartographie"
 
@@ -2593,6 +2596,24 @@ msgstr "Nom de l'objet"
 
 msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
 msgstr "Numéro de l'objet"
+
+msgid "ch.bafu.auen-vegetationskarten.code_primaervegtation"
+msgstr "Numéro de végétation"
+
+msgid "ch.bafu.auen-vegetationskarten.kartierjahr"
+msgstr "Année de la cartographie"
+
+msgid "ch.bafu.auen-vegetationskarten.name"
+msgstr "Nom de l'objet"
+
+msgid "ch.bafu.auen-vegetationskarten.obj_nummer"
+msgstr "Numéro de l'objet"
+
+msgid "ch.bafu.auen-vegetationskarten.primaervegetation"
+msgstr "Unité de cartographie de la végétation primaire"
+
+msgid "ch.bafu.auen-vegetationskarten.ref_obj_blatt"
+msgstr "Description d'objet"
 
 msgid "ch.bafu.biogeographische_regionen"
 msgstr "Régions biogéographiques"

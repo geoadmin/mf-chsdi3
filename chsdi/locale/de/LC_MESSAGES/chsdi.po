@@ -2582,6 +2582,9 @@ msgstr "Fläche [ha]"
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Auen Vegetationskarten"
 
+msgid "ch.bafu.auen-vegetationskarten.area_ha"
+msgstr "Fläche [ha]"
+
 msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
 msgstr "Jahr der Kartierung"
 
@@ -2593,6 +2596,24 @@ msgstr "Name"
 
 msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
 msgstr "Objektnummer"
+
+msgid "ch.bafu.auen-vegetationskarten.code_primaervegtation"
+msgstr "Vegetationsnummer"
+
+msgid "ch.bafu.auen-vegetationskarten.kartierjahr"
+msgstr "Jahr der Kartierung"
+
+msgid "ch.bafu.auen-vegetationskarten.name"
+msgstr "Name"
+
+msgid "ch.bafu.auen-vegetationskarten.obj_nummer"
+msgstr "Objektnummer"
+
+msgid "ch.bafu.auen-vegetationskarten.primaervegetation"
+msgstr "Kartiereinheit der Primärvege-tation"
+
+msgid "ch.bafu.auen-vegetationskarten.ref_obj_blatt"
+msgstr "Objektblatt"
 
 msgid "ch.bafu.biogeographische_regionen"
 msgstr "Biogeographische Regionen"
@@ -6165,13 +6186,13 @@ msgid "ch.bav.haltestellen-oev.verkehrsmittel"
 msgstr "Verkehrsmittel"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev"
-msgstr "Altlasten/belastete Standorte öV"
+msgstr "Belastete Standorte öV"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.katasternummer"
 msgstr "BAV Standortnummer"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
-msgstr "Altlasten/belastete Standorte öV ÖREB"
+msgstr "Belastete Standorte öV ÖREB"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.publiziertab"
 msgstr "Publiziert ab"
