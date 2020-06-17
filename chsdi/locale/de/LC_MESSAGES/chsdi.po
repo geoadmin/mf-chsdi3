@@ -2253,10 +2253,10 @@ msgid "ch.astra.wanderland.attribut_c"
 msgstr "Route"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen"
-msgstr "Wanderwegsperrungen"
+msgstr "Sperrungen Wanderwege"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.abstract"
-msgstr "Erläuterung"
+msgstr "Weitere Informationen"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider"
 msgstr "Datenquelle"
@@ -2274,10 +2274,10 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
 msgstr "Schweizer Wanderwege und kantonale Wanderweg-Fachorganisationen"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.duration"
-msgstr "Vorassichtliche Dauer"
+msgstr "Dauer"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.file"
-msgstr "Details"
+msgstr "Dokument"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason"
 msgstr "Grund"
@@ -2286,10 +2286,16 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.1"
 msgstr "Bau- & Unterhaltsarbeiten"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
-msgstr "Weg unpassierbar"
+msgstr "Hochwasser"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
 msgstr "Geänderte Streckenführung"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.12"
+msgstr "Andere"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.13"
+msgstr "Weg unpassierbar"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
 msgstr "GIGO: reason 15- not in spec"
@@ -2298,31 +2304,28 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
 msgstr "GIGO: reason 16 - not in spec"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.2"
-msgstr "Forstarbeiten"
+msgstr "-"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.3"
-msgstr "Grossanlass"
+msgstr "Forstarbeiten"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.4"
-msgstr "Felssturz"
+msgstr "Grossanlass"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.5"
-msgstr "Hangrutsch"
+msgstr "Felssturz"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.6"
-msgstr "Steinschlag"
+msgstr "Hangrutsch"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.7"
-msgstr "Frühlingslawine"
+msgstr "Steinschlag"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.8"
-msgstr "Sturmschäden"
+msgstr "Frühlingslawine"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
-msgstr "Hochwasser"
-
-msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.99"
-msgstr "Andere"
+msgstr "Sturmschäden"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.None"
 msgstr "-"
@@ -2343,7 +2346,7 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.title"
 msgstr "Titel"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.url1_link"
-msgstr "Weitere Informationen"
+msgstr "Webseite"
 
 msgid "ch.babs"
 msgstr "BABS"
@@ -3145,6 +3148,9 @@ msgstr "Seismische Baugrundklassen"
 
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
 msgstr "Erdbebenzonen SIA 261"
+
+msgid "ch.bafu.gefahren-gefaehrdungszonen.zone"
+msgstr "Erdbebenzone SIA 261"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
 msgstr "Historische Erdbeben"
@@ -5579,6 +5585,24 @@ msgstr "112 Nummer Satellitennetz"
 msgid "ch.bakom.notruf-112_zentral"
 msgstr "112 Alarmzentralen"
 
+msgid "ch.bakom.notruf-112_zentral.festnetz_112"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-112_zentral.fn_zentrale_112"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-112_zentral.mobile_112"
+msgstr "Routing-Nummer Mobilenetz"
+
+msgid "ch.bakom.notruf-112_zentral.mo_zentrale_112"
+msgstr "Alarmzentrale Mobilnetz"
+
+msgid "ch.bakom.notruf-112_zentral.satellit_112"
+msgstr "Routing-Nummer Satellitennetz"
+
+msgid "ch.bakom.notruf-112_zentral.sa_zentrale_112"
+msgstr "Alarmzentrale Satellitennetz"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Festnetz"
 
@@ -5624,6 +5648,18 @@ msgstr "117 Routing-Nummer Mobilnetz"
 msgid "ch.bakom.notruf-117_zentral"
 msgstr "117 Alarmzentralen"
 
+msgid "ch.bakom.notruf-117_zentral.festnetz_117"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-117_zentral.fn_zentrale_117"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-117_zentral.mobile_117"
+msgstr "Routing-Nummer Mobilenetz"
+
+msgid "ch.bakom.notruf-117_zentral.mo_zentrale_117"
+msgstr "Alarmzentrale Mobilnetz"
+
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Festnetz"
 
@@ -5668,6 +5704,18 @@ msgstr "118 Routing-Nummer Mobilnetz"
 
 msgid "ch.bakom.notruf-118_zentral"
 msgstr "118 Alarmzentralen"
+
+msgid "ch.bakom.notruf-118_zentral.festnetz_118"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-118_zentral.fn_zentrale_118"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-118_zentral.mobile_118"
+msgstr "Routing-Nummer Mobilenetz"
+
+msgid "ch.bakom.notruf-118_zentral.mo_zentrale_118"
+msgstr "Alarmzentrale Mobilnetz"
 
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Festnetz"
@@ -7785,7 +7833,7 @@ msgid "ch.bfe.thermische-netze.zip"
 msgstr "PLZ"
 
 msgid "ch.bfe.url"
-msgstr "http://www.bfe.admin.ch/index.html?lang=de"
+msgstr "https://www.bfe.admin.ch/bfe/de/home.html"
 
 msgid "ch.bfe.windenergieanlagen"
 msgstr "Windenergieanlagen"
