@@ -104,7 +104,10 @@ class SperrungenUmleitungen:
     abstract_it = Column('abstract_it', Unicode)
     abstract_en = Column('abstract_en', Unicode)
     state_validate = Column('state_validate', Unicode)
-    sperrung_file = Column('file', Unicode)
+    file_de = Column('file_de', Unicode)
+    file_fr = Column('file_fr', Unicode)
+    file_it = Column('file_it', Unicode)
+    file_en = Column('file_en', Unicode)
     content_provider = Column('content_provider')
     url1_link_de = Column('url1_link_de', Unicode)
     url1_link_fr = Column('url1_link_fr', Unicode)
@@ -129,6 +132,20 @@ class VelolandSperrungenUmleitungen(Base, SperrungenUmleitungen, Vector):
     __bodId__ = 'ch.astra.veloland-sperrungen_umleitungen'
 
 register(VelolandSperrungenUmleitungen.__bodId__, VelolandSperrungenUmleitungen)
+
+
+class SkatinglandSperrungenUmleitungen(Base, SperrungenUmleitungen, Vector):
+    __tablename__ = 'v_sperrungen_umleitungen_line_skatingland'
+    __bodId__ = 'ch.astra.skatingland-sperrungen_umleitungen'
+
+register(SkatinglandSperrungenUmleitungen.__bodId__, SkatinglandSperrungenUmleitungen)
+
+
+class MountainbikelandSperrungenUmleitungen(Base, SperrungenUmleitungen, Vector):
+    __tablename__ = 'v_sperrungen_umleitungen_line_mtbland'
+    __bodId__ = 'ch.astra.mountainbikeland-sperrungen_umleitungen'
+
+register(MountainbikelandSperrungenUmleitungen.__bodId__, MountainbikelandSperrungenUmleitungen)
 
 
 class OevHaltestellen:
