@@ -2253,10 +2253,10 @@ msgid "ch.astra.wanderland.attribut_c"
 msgstr "Route"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen"
-msgstr "Serradas da sendas da viandar"
+msgstr "Sperrungen Wanderwege"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.abstract"
-msgstr "Erläuterung"
+msgstr "Weitere Informationen"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider"
 msgstr "Datenquelle"
@@ -2274,10 +2274,10 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
 msgstr "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.duration"
-msgstr "Vorassichtliche Dauer"
+msgstr "Dauer"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.file"
-msgstr "Details"
+msgstr "Dokument"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason"
 msgstr "Grund"
@@ -2290,6 +2290,12 @@ msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
 msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.12"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.12"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.13"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.13"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
 msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
@@ -2321,9 +2327,6 @@ msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.8"
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
 msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
 
-msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.99"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.99"
-
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.None"
 msgstr "-"
 
@@ -2343,7 +2346,7 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.title"
 msgstr "Titel"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.url1_link"
-msgstr "Weitere Informationen"
+msgstr "Webseite"
 
 msgid "ch.babs"
 msgstr "BABS"
@@ -3144,6 +3147,9 @@ msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Classas da sulom seismicas"
 
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
+msgstr "Zonas da terratrembels SIA 261"
+
+msgid "ch.bafu.gefahren-gefaehrdungszonen.zone"
 msgstr "Zonas da terratrembels SIA 261"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
@@ -5579,6 +5585,24 @@ msgstr "112 Nummer Satellitennetz"
 msgid "ch.bakom.notruf-112_zentral"
 msgstr "112 Alarmzentralen"
 
+msgid "ch.bakom.notruf-112_zentral.festnetz_112"
+msgstr "Numer da routing fixa"
+
+msgid "ch.bakom.notruf-112_zentral.fn_zentrale_112"
+msgstr "Alarmzentrale Rait fixa"
+
+msgid "ch.bakom.notruf-112_zentral.mobile_112"
+msgstr "Numer da routing mobila"
+
+msgid "ch.bakom.notruf-112_zentral.mo_zentrale_112"
+msgstr "Alarmzentrale Rait mobila"
+
+msgid "ch.bakom.notruf-112_zentral.satellit_112"
+msgstr "Routing-Nummer Satellitennetz"
+
+msgid "ch.bakom.notruf-112_zentral.sa_zentrale_112"
+msgstr "Alarmzentrale Satellitennetz"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Rait fixa"
 
@@ -5624,6 +5648,18 @@ msgstr "117 Numer da routing mobila"
 msgid "ch.bakom.notruf-117_zentral"
 msgstr "117 Alarmzentralen"
 
+msgid "ch.bakom.notruf-117_zentral.festnetz_117"
+msgstr "Numer da routing fixa"
+
+msgid "ch.bakom.notruf-117_zentral.fn_zentrale_117"
+msgstr "Alarmzentrale Rait fixa"
+
+msgid "ch.bakom.notruf-117_zentral.mobile_117"
+msgstr "Numer da routing mobila"
+
+msgid "ch.bakom.notruf-117_zentral.mo_zentrale_117"
+msgstr "Alarmzentrale Rait mobila"
+
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Rait fixa"
 
@@ -5668,6 +5704,18 @@ msgstr "118 Numer da routing mobila"
 
 msgid "ch.bakom.notruf-118_zentral"
 msgstr "118 Alarmzentralen"
+
+msgid "ch.bakom.notruf-118_zentral.festnetz_118"
+msgstr "Numer da routing fixa"
+
+msgid "ch.bakom.notruf-118_zentral.fn_zentrale_118"
+msgstr "Alarmzentrale Rait fixa"
+
+msgid "ch.bakom.notruf-118_zentral.mobile_118"
+msgstr "Numer da routing mobila"
+
+msgid "ch.bakom.notruf-118_zentral.mo_zentrale_118"
+msgstr "Alarmzentrale Rait mobila"
 
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Rait fixa"
@@ -7785,7 +7833,7 @@ msgid "ch.bfe.thermische-netze.zip"
 msgstr "PLZ"
 
 msgid "ch.bfe.url"
-msgstr "http://www.bfe.admin.ch/index.html?lang=de"
+msgstr "https://www.bfe.admin.ch/bfe/en/home.html"
 
 msgid "ch.bfe.windenergieanlagen"
 msgstr "Implants d'energia dal vent"

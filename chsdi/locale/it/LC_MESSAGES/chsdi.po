@@ -1506,7 +1506,7 @@ msgid "ch.astra.mountainbikeland.attribut_c"
 msgstr "Percorsi"
 
 msgid "ch.astra.mountainbikeland-sperrungen_umleitungen"
-msgstr "to do"
+msgstr "Chiusure Mountain Bike"
 
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Asse delle strade nazionali"
@@ -1722,7 +1722,7 @@ msgid "ch.astra.skatingland.attribut_c"
 msgstr "Percorsi"
 
 msgid "ch.astra.skatingland-sperrungen_umleitungen"
-msgstr "to do"
+msgstr "Chiusure Skating"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Stazioni di conteggio (regionale)"
@@ -2244,7 +2244,7 @@ msgid "ch.astra.veloland.attribut_c"
 msgstr "Percorsi"
 
 msgid "ch.astra.veloland-sperrungen_umleitungen"
-msgstr "to do"
+msgstr "Chiusure bicicletta"
 
 msgid "ch.astra.wanderland"
 msgstr "La Svizzera a piedi"
@@ -2253,10 +2253,10 @@ msgid "ch.astra.wanderland.attribut_c"
 msgstr "Percorsi"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen"
-msgstr "Chiusure di sentieri pedonali"
+msgstr "Chiusure Percorsi escursionistici"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.abstract"
-msgstr "Spiegazione"
+msgstr "Ulteriori informazioni"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider"
 msgstr "Fonte dei dati"
@@ -2268,16 +2268,16 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.None"
 msgstr "-"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.schweizmobil"
-msgstr "SvizerraMobile / Ufficio cantonale"
+msgstr "SvizzeraMobile / Ufficio cantonale"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
 msgstr "Sentieri Svizzeri e Associazione cantonale per i sentieri escur-sionistici"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.duration"
-msgstr "Durata prevista"
+msgstr "Durata"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.file"
-msgstr "Dettagli"
+msgstr "Documento"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason"
 msgstr "Causa"
@@ -2286,10 +2286,16 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.1"
 msgstr "Costruzione e manutenzio-ne"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
-msgstr "Sentiero impraticabile"
+msgstr "Inondazioni"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
 msgstr "Cambiamento di percorso"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.12"
+msgstr "Altro"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.13"
+msgstr "Sentiero impraticabile"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
 msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
@@ -2298,31 +2304,28 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
 msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.2"
-msgstr "Lavori forestali"
+msgstr "-"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.3"
-msgstr "Manifestazione"
+msgstr "Lavori forestali"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.4"
-msgstr "Caduta di rocce"
+msgstr "Manifestazione"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.5"
-msgstr "Smottamento"
+msgstr "Caduta di rocce"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.6"
-msgstr "Caduta di pietre"
+msgstr "Smottamento"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.7"
-msgstr "Valanga primaverile"
+msgstr "Caduta di pietre"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.8"
-msgstr "Danni da tempesta"
+msgstr "Valanga primaverile"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
-msgstr "Inondazioni"
-
-msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.99"
-msgstr "Altro"
+msgstr "Danni da tempesta"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.None"
 msgstr "-"
@@ -2343,7 +2346,7 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.title"
 msgstr "Titolo"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.url1_link"
-msgstr "Ulteriori informazioni"
+msgstr "Sito web"
 
 msgid "ch.babs"
 msgstr "FOCP"
@@ -3145,6 +3148,9 @@ msgstr "Classe dei terreni di fondazione"
 
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
 msgstr "Zone sismiche SIA 261"
+
+msgid "ch.bafu.gefahren-gefaehrdungszonen.zone"
+msgstr "Zona sismica SIA 261"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
 msgstr "Terremoti storici"
@@ -5579,6 +5585,24 @@ msgstr "112 Numero rete via satellite"
 msgid "ch.bakom.notruf-112_zentral"
 msgstr "112 Centrale d‘allarme"
 
+msgid "ch.bakom.notruf-112_zentral.festnetz_112"
+msgstr "Fixed routing number"
+
+msgid "ch.bakom.notruf-112_zentral.fn_zentrale_112"
+msgstr "Emergency Center fixed network"
+
+msgid "ch.bakom.notruf-112_zentral.mobile_112"
+msgstr "Mobile routing number"
+
+msgid "ch.bakom.notruf-112_zentral.mo_zentrale_112"
+msgstr "Emergency Center mobile network"
+
+msgid "ch.bakom.notruf-112_zentral.satellit_112"
+msgstr "Satellite routing number"
+
+msgid "ch.bakom.notruf-112_zentral.sa_zentrale_112"
+msgstr "Emergency Center satellit network"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Rete fissa"
 
@@ -5624,6 +5648,18 @@ msgstr "117 Numero di routing mobile"
 msgid "ch.bakom.notruf-117_zentral"
 msgstr "117 Centrale d‘allarme"
 
+msgid "ch.bakom.notruf-117_zentral.festnetz_117"
+msgstr "Fixed routing number"
+
+msgid "ch.bakom.notruf-117_zentral.fn_zentrale_117"
+msgstr "Emergency Center fixed network"
+
+msgid "ch.bakom.notruf-117_zentral.mobile_117"
+msgstr "Mobile routing number"
+
+msgid "ch.bakom.notruf-117_zentral.mo_zentrale_117"
+msgstr "Emergency Center mobile network"
+
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Rete fissa"
 
@@ -5668,6 +5704,18 @@ msgstr "118 Numero di routing mobile"
 
 msgid "ch.bakom.notruf-118_zentral"
 msgstr "118 Centrale d‘allarme"
+
+msgid "ch.bakom.notruf-118_zentral.festnetz_118"
+msgstr "Fixed routing number"
+
+msgid "ch.bakom.notruf-118_zentral.fn_zentrale_118"
+msgstr "Emergency Center fixed network"
+
+msgid "ch.bakom.notruf-118_zentral.mobile_118"
+msgstr "Mobile routing number"
+
+msgid "ch.bakom.notruf-118_zentral.mo_zentrale_118"
+msgstr "Emergency Center mobile network"
 
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Rete fissa"
@@ -7785,7 +7833,7 @@ msgid "ch.bfe.thermische-netze.zip"
 msgstr "NPA"
 
 msgid "ch.bfe.url"
-msgstr "http://www.bfe.admin.ch/index.html?lang=it"
+msgstr "https://www.bfe.admin.ch/bfe/it/home.html"
 
 msgid "ch.bfe.windenergieanlagen"
 msgstr "Impianti eolici"
