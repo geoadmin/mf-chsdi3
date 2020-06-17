@@ -2582,6 +2582,9 @@ msgstr "Area [ha]"
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Floodplains vegetation maps"
 
+msgid "ch.bafu.auen-vegetationskarten.area_ha"
+msgstr "Area [ha]"
+
 msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
 msgstr "Year of mapping"
 
@@ -2593,6 +2596,24 @@ msgstr "Object name"
 
 msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
 msgstr "Object Nr."
+
+msgid "ch.bafu.auen-vegetationskarten.code_primaervegtation"
+msgstr "Number of Vegetation"
+
+msgid "ch.bafu.auen-vegetationskarten.kartierjahr"
+msgstr "Year of mapping"
+
+msgid "ch.bafu.auen-vegetationskarten.name"
+msgstr "Object name"
+
+msgid "ch.bafu.auen-vegetationskarten.obj_nummer"
+msgstr "Object Nr."
+
+msgid "ch.bafu.auen-vegetationskarten.primaervegetation"
+msgstr "Mapping unit of primary vegetation"
+
+msgid "ch.bafu.auen-vegetationskarten.ref_obj_blatt"
+msgstr "Objectsheet"
 
 msgid "ch.bafu.biogeographische_regionen"
 msgstr "Biogeographical regions"

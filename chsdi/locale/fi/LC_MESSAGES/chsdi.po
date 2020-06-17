@@ -2262,16 +2262,16 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider"
 msgstr "Datenquelle"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.canton"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.content_provider.canton"
+msgstr "Kantonale Fachstelle"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.None"
 msgstr "-"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.schweizmobil"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.content_provider.schweizmobil"
+msgstr "SchweizMobil / Kantonale Fachstelle"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
+msgstr "Schweizer Wanderwege und kantonale Wanderweg-Fachorganisationen"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.duration"
 msgstr "Dauer"
@@ -2283,19 +2283,19 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.reason"
 msgstr "Grund"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.1"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.1"
+msgstr "Bau- & Unterhaltsarbeiten"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
+msgstr "Hochwasser"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
+msgstr "Geänderte Streckenführung"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.12"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.12"
+msgstr "Geänderte Streckenführung"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.13"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.13"
+msgstr "Andere"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
 msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
@@ -2304,28 +2304,28 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
 msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.2"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.2"
+msgstr "-"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.3"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.3"
+msgstr "Forstarbeiten"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.4"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.4"
+msgstr "Grossanlass"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.5"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.5"
+msgstr "Felssturz"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.6"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.6"
+msgstr "Hangrutsch"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.7"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.7"
+msgstr "Steinschlag"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.8"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.8"
+msgstr "Frühlingslawine"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
+msgstr "Sturmschäden"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.None"
 msgstr "-"
@@ -2337,10 +2337,10 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.None"
 msgstr "-"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.provisionally"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.state_validate.provisionally"
+msgstr "provisorisch"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.validated"
-msgstr "ch.astra.wanderland-sperrungen_umleitungen.state_validate.validated"
+msgstr "validiert"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.title"
 msgstr "Titel"
@@ -2582,6 +2582,9 @@ msgstr "Fläche [ha]"
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Zonas umidas"
 
+msgid "ch.bafu.auen-vegetationskarten.area_ha"
+msgstr "Fläche [ha]"
+
 msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
 msgstr "Jahr der Kartierung"
 
@@ -2593,6 +2596,24 @@ msgstr "Objektname"
 
 msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
 msgstr "Objektnr."
+
+msgid "ch.bafu.auen-vegetationskarten.code_primaervegtation"
+msgstr "Vegetationsnummer"
+
+msgid "ch.bafu.auen-vegetationskarten.kartierjahr"
+msgstr "Jahr der Kartierung"
+
+msgid "ch.bafu.auen-vegetationskarten.name"
+msgstr "Objektname"
+
+msgid "ch.bafu.auen-vegetationskarten.obj_nummer"
+msgstr "Objektnr."
+
+msgid "ch.bafu.auen-vegetationskarten.primaervegetation"
+msgstr "Kartiereinheit der Primärvege-tation"
+
+msgid "ch.bafu.auen-vegetationskarten.ref_obj_blatt"
+msgstr "Objektblatt"
 
 msgid "ch.bafu.biogeographische_regionen"
 msgstr "Regiuns biogeograficas"
@@ -6165,13 +6186,13 @@ msgid "ch.bav.haltestellen-oev.verkehrsmittel"
 msgstr "Verkehrsmittel"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev"
-msgstr "Contaminaziun traffic public"
+msgstr "Lieus contamin. traffic public"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.katasternummer"
 msgstr "BAV Standortnummer"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
-msgstr "Contaminaziun traffic public RPDP"
+msgstr "Lieus contamin. traffic public RPDP"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.publiziertab"
 msgstr "Publitga da"
