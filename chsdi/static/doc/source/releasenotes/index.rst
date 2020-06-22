@@ -28,6 +28,8 @@ API & applications
 - Bug fixes
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_200520...r_200701>`__
 - Announcement:
+    - The BFS layer ch.bfs.gebaeude_wohnungs_register (Register of Buildings and Dwellings) will extend its data model on all FSDI services (map, api3 and download on data.geo.admin.ch) by the release of September 16th 2020 according to https://www.bfs.admin.ch/bfs/en/home/statistics/catalogues-databases/publications.assetdetail.7008785.html (model description available in German only).
+    - The swisstopo layer ch.swisstopo.vec200-landcover-wald will be completely removed from the FSDI services in december 2020.
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
