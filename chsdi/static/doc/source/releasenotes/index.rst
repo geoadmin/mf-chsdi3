@@ -15,6 +15,51 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20200701:
+
+Release 20200520 - Wednesday, July 1st 2020
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_200520...r_200701>`__
+- Announcement:
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_200520...r_200701>`__
+
+
+Geodata
+*******
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Oct. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-okt>`__ (ch.bafu.niederschlagserosivitaet-okt)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Nov. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-nov>`__ (ch.bafu.niederschlagserosivitaet-nov)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Dec. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-dez>`__ (ch.bafu.niederschlagserosivitaet-dez)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial Images swisstopo color <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_farbe>`__ (ch.swisstopo.lubis-luftbilder_farbe)                                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial Images swisstopo b / w <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_schwarzweiss>`__ (ch.swisstopo.lubis-luftbilder_schwarzweiss)                                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial Images swisstopo infrared <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_infrarot>`__ (ch.swisstopo.lubis-luftbilder_infrarot)                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images privates <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-firmen>`__ (ch.swisstopo.lubis-luftbilder-dritte-firmen)                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division geological atlas 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas.metadata)                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Basiskarte GIN <//map.geo.admin.ch/?layers=ch.bafu.gefahren-basiskarte>`__ (ch.bafu.gefahren-basiskarte)                                                                                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20200520:
 
 Release 20200520 - Wednesday, Mai 20th 2020
