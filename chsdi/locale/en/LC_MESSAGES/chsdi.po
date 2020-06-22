@@ -5607,22 +5607,22 @@ msgid "ch.bakom.notruf-112_zentral"
 msgstr "112 Alarm centers"
 
 msgid "ch.bakom.notruf-112_zentral.festnetz_112"
-msgstr "Numero di routing fissa"
+msgstr "Fixed routing number"
 
 msgid "ch.bakom.notruf-112_zentral.fn_zentrale_112"
-msgstr "Centrale d'allarme rete fissa"
+msgstr "Emergency Center fixed network"
 
 msgid "ch.bakom.notruf-112_zentral.mobile_112"
-msgstr "Numero di routing mobile"
+msgstr "Mobile routing number"
 
 msgid "ch.bakom.notruf-112_zentral.mo_zentrale_112"
-msgstr "Centrale d'allarme rete mobile"
+msgstr "Emergency Center mobile network"
 
 msgid "ch.bakom.notruf-112_zentral.satellit_112"
-msgstr "Numero di routing satellitare"
+msgstr "Satellite routing number"
 
 msgid "ch.bakom.notruf-112_zentral.sa_zentrale_112"
-msgstr "Centrale d'allarme rete satellitare"
+msgstr "Emergency Center satellit network"
 
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Fixed network"
@@ -5670,16 +5670,16 @@ msgid "ch.bakom.notruf-117_zentral"
 msgstr "117 Alarm centers"
 
 msgid "ch.bakom.notruf-117_zentral.festnetz_117"
-msgstr "Numero di routing fissa"
+msgstr "Fixed routing number"
 
 msgid "ch.bakom.notruf-117_zentral.fn_zentrale_117"
-msgstr "Centrale d'allarme rete fissa"
+msgstr "Emergency Center fixed network"
 
 msgid "ch.bakom.notruf-117_zentral.mobile_117"
-msgstr "Numero di routing mobile"
+msgstr "Mobile routing number"
 
 msgid "ch.bakom.notruf-117_zentral.mo_zentrale_117"
-msgstr "Centrale d'allarme rete mobile"
+msgstr "Emergency Center mobile network"
 
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Fixed network"
@@ -5727,16 +5727,16 @@ msgid "ch.bakom.notruf-118_zentral"
 msgstr "118 Alarm centers"
 
 msgid "ch.bakom.notruf-118_zentral.festnetz_118"
-msgstr "Numero di routing fissa"
+msgstr "Fixed routing number"
 
 msgid "ch.bakom.notruf-118_zentral.fn_zentrale_118"
-msgstr "Centrale d'allarme rete fissa"
+msgstr "Emergency Center fixed network"
 
 msgid "ch.bakom.notruf-118_zentral.mobile_118"
-msgstr "Numero di routing mobile"
+msgstr "Mobile routing number"
 
 msgid "ch.bakom.notruf-118_zentral.mo_zentrale_118"
-msgstr "Centrale d'allarme rete mobile"
+msgstr "Emergency Center mobile network"
 
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Fixed network"
