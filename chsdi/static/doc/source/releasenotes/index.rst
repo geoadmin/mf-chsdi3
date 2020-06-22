@@ -44,9 +44,8 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Rainfall erosivity Dec. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-dez>`__ (ch.bafu.niederschlagserosivitaet-dez)                                                               |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Forest swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlme3d-wald>`__ (ch.swisstopo.swisstlme3d-wald)                                                               |
+| New    | `Forest swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlme3d-wald>`__ (ch.swisstopo.swisstlme3d-wald)                                                                                   |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 | Update | `Aerial Images swisstopo color <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_farbe>`__ (ch.swisstopo.lubis-luftbilder_farbe)                                                           |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Aerial Images swisstopo b / w <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_schwarzweiss>`__ (ch.swisstopo.lubis-luftbilder_schwarzweiss)                                             |
