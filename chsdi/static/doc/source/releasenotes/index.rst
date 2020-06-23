@@ -40,17 +40,17 @@ API & applications
 Geodata
 *******
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Rainfall erosivity Jul. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-jul>`__ (ch.bafu.niederschlagserosivitaet-jul)                                                               |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Rainfall erosivity Aug. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-aug>`__ (ch.bafu.niederschlagserosivitaet-aug)                                                               |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Rainfall erosivity Sep. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-sep>`__ (ch.bafu.niederschlagserosivitaet-sep)                                                               |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Rainfall erosivity Apr. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-apr>`__ (ch.bafu.niederschlagserosivitaet-apr)                                                               |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Rainfall erosivity Mai. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-mai>`__ (ch.bafu.niederschlagserosivitaet-mai)                                                               |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Rainfall erosivity Jun. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-jun>`__ (ch.bafu.niederschlagserosivitaet-jun)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Jul. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-jul>`__ (ch.bafu.niederschlagserosivitaet-jul)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Aug. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-aug>`__ (ch.bafu.niederschlagserosivitaet-aug)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Sep. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-sep>`__ (ch.bafu.niederschlagserosivitaet-sep)                                                               |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Rainfall erosivity Oct. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-okt>`__ (ch.bafu.niederschlagserosivitaet-okt)                                                               |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -74,33 +74,33 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Basiskarte GIN <//map.geo.admin.ch/?layers=ch.bafu.gefahren-basiskarte>`__ (ch.bafu.gefahren-basiskarte)                                                                                          |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Emergency calls by comune <//map.geo.admin.ch/?layers=ch.bakom.notruf>`__ (ch.bakom.notruf)                                                                                          |
+| Update | `Emergency calls by comune <//map.geo.admin.ch/?layers=ch.bakom.notruf>`__ (ch.bakom.notruf)                                                                                                       |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `112 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_festnetz>`__ (ch.bakom.notruf-112_festnetz)                                                                                          |
+| Update | `112 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_festnetz>`__ (ch.bakom.notruf-112_festnetz)                                                                                     |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `112 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_mobilnetz>`__ (ch.bakom.notruf-112_mobilnetz)                                                                                          |
+| Update | `112 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_mobilnetz>`__ (ch.bakom.notruf-112_mobilnetz)                                                                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `112 Satellite network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_satellit>`__ (ch.bakom.notruf-112_satellit)                                                                                          |
+| Update | `112 Satellite network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_satellit>`__ (ch.bakom.notruf-112_satellit)                                                                                 |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `117 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_festnetz>`__ (ch.bakom.notruf-117_festnetz)                                                                                          |
+| Update | `117 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_festnetz>`__ (ch.bakom.notruf-117_festnetz)                                                                                     |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `117 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_mobilnetz>`__ (ch.bakom.notruf-117_mobilnetz)                                                                                          |
+| Update | `117 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_mobilnetz>`__ (ch.bakom.notruf-117_mobilnetz)                                                                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `118 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_festnetz>`__ (ch.bakom.notruf-118_festnetz)                                                                                          |
+| Update | `118 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_festnetz>`__ (ch.bakom.notruf-118_festnetz)                                                                                     |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `118 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_mobilnetz>`__ (ch.bakom.notruf-118_mobilnetz)                                                                                          |
+| Update | `118 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_mobilnetz>`__ (ch.bakom.notruf-118_mobilnetz)                                                                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `143 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-143_festnetz>`__ (ch.bakom.notruf-143_festnetz)                                                                                          |
+| Update | `143 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-143_festnetz>`__ (ch.bakom.notruf-143_festnetz)                                                                                     |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `143 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-143_mobilnetz>`__ (ch.bakom.notruf-143_mobilnetz)                                                                                          |
+| Update | `143 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-143_mobilnetz>`__ (ch.bakom.notruf-143_mobilnetz)                                                                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `144 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-144_festnetz>`__ (ch.bakom.notruf-144_festnetz)                                                                                          |
+| Update | `144 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-144_festnetz>`__ (ch.bakom.notruf-144_festnetz)                                                                                     |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `144 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-144_mobilnetz>`__ (ch.bakom.notruf-144_mobilnetz)                                                                                          |
+| Update | `144 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-144_mobilnetz>`__ (ch.bakom.notruf-144_mobilnetz)                                                                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `147 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-147_festnetz>`__ (ch.bakom.notruf-147_festnetz)                                                                                          |
+| Update | `147 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-147_festnetz>`__ (ch.bakom.notruf-147_festnetz)                                                                                     |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `147 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-147_mobilnetz>`__ (ch.bakom.notruf-147_mobilnetz)                                                                                          |
+| Update | `147 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-147_mobilnetz>`__ (ch.bakom.notruf-147_mobilnetz)                                                                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
