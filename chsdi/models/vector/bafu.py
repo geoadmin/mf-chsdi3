@@ -1327,7 +1327,7 @@ class AuenVegetationsKarten(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     obj_nummer = Column('obj_nummer', Integer)
-    kertierjahr = Column('kartierjahr', Integer)
+    kartierjahr = Column('kartierjahr', Integer)
     primaervegetation_de = Column('primaervegetation_de', Unicode)
     primaervegetation_fr = Column('primaervegetation_fr', Unicode)
     primaervegetation_it = Column('primaervegetation_it', Unicode)
