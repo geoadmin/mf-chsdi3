@@ -12,7 +12,7 @@
     <tr><td class="cell-left">${_('ch.bafu.auen-vegetationskarten.kartierjahr')}</td>               <td>${c['attributes']['kartierjahr']}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.auen-vegetationskarten.primaervegetation')}</td>         <td>${c['attributes'][primaervegetation] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.auen-vegetationskarten.code_primaervegetation')}</td>    <td>${c['attributes']['code_primaervegetation'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.auen-vegetationskarten.ref_obj_blatt')}</td>             <td></td><a href="${c['attributes']['ref_obj_blatt']}" target="_blank">PDF</a></tr>
+    <tr><td class="cell-left">${_('ch.bafu.auen-vegetationskarten.ref_obj_blatt')}</td>             <td><a href="${c['attributes']['ref_obj_blatt']}" target="_blank">PDF</a></td></tr>
     <tr><td class="cell-left">${_('ch.bafu.auen-vegetationskarten.area_ha')}</td>                   <td>${c['attributes']['area_ha'] or '-'}</td></tr>
 
 </%def>
