@@ -9,10 +9,6 @@ from chsdi.models.bod import Catalog
 from chsdi.lib.validation import MapNameValidation
 from chsdi.lib.filters import filter_by_geodata_staging
 
-DEFAULT_CATEGORY = 'missing category'
-DEFAULT_STAGING = 'missing staging'
-DEFAULT_LABEl = 'missing label'
-
 
 # Custom networkx like function
 # Inspired by https://github.com/networkx/networkx/blob/master/networkx/readwrite/json_graph/tree.py#L16
@@ -38,9 +34,9 @@ def tree_data(G, root, attrs, meta):
         nbrs = sorted(nbrs)
         for child in nbrs:
             d = dict(chain(G.node[child].items(), [(id_, child)]))
-            d['category'] = meta[d['id']].get('category', DEFAULT_CATEGORY)
-            d['staging'] = meta[d['id']].get('staging', DEFAULT_STAGING)
-            d['label'] = meta[d['id']].get('label', DEFAULT_LABEl)
+            d['category'] = meta[d['id']]['category']
+            d['staging'] = meta[d['id']]['staging']
+            d['label'] = meta[d['id']]['label']
             # only for sorting according to 'orderKey'
             if 'orderKey' in meta[d['id']]:
                 d['orderKey'] = meta[d['id']]['orderKey']
