@@ -132,6 +132,8 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Areas of silver fir <//map.geo.admin.ch/?layers=ch.bafu.wald-tannenareale>`__ (ch.bafu.wald-tannenareale)                                                                               |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tracer tests <//map.geo.admin.ch/?layers=ch.bafu.hydrogeologie-markierversuche>`__ (ch.bafu.hydrogeologie-markierversuche)                                                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Seismic zones SIA 261 <//map.geo.admin.ch/?layers=ch.bafu.gefahren-gefaehrdungszonen>`__ (ch.bafu.gefahren-gefaehrdungszonen)                                                           |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Number of connection providers <//map.geo.admin.ch/?layers=ch.bakom.anbieter-eigenes_festnetz>`__ (ch.bakom.anbieter-eigenes_festnetz)                                                  |
@@ -153,6 +155,8 @@ Geodata
 | Update | `3D terrain and corresponding backgroundmaps <//s.geo.admin.ch/8a12282172>`__ (ch.swisstopo.swisstlm3d-karte-grau.3d and ch.swisstopo.swisstlm3d-karte-farbe.3d)                         |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Mapping of Floodplains of National Importance <//map.geo.admin.ch/?layers=ch.bafu.auen-vegetationskarten>`__ (ch.bafu.auen-vegetationskarten)                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-eisenbahnnetz>`__ (ch.swisstopo.swisstlm3d-eisenbahnnetz)                                           |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
