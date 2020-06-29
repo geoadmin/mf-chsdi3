@@ -22,7 +22,7 @@
     % if code_hinweis is not None:
         <tr><td class="cell-left">${_('ch.bafu.alpweiden-herdenschutzhunde.hinweis')}</td><td>${_('ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_%s' % code_hinweis)}</td></tr>
     % endif
-    <tr><td class="cell-left">${_('ch.bafu.alpweiden-herdenschutzhunde.kontname')}</td><td>${c['attributes']['kontname'].strip() or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.alpweiden-herdenschutzhunde.konttel')}</td><td>${c['attributes']['konttel'].strip() or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.alpweiden-herdenschutzhunde.kontemail')}</td><td>${c['attributes']['kontemail'].strip() or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.alpweiden-herdenschutzhunde.kontname')}</td><td>${c['attributes']['kontname'] or '-'.strip()}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.alpweiden-herdenschutzhunde.konttel')}</td><td>${c['attributes']['konttel'] or '-'.strip()}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.alpweiden-herdenschutzhunde.kontemail')}</td><td>${c['attributes']['kontemail'] or '-'.strip()}</td></tr>
 </%def>
