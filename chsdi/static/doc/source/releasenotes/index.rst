@@ -72,6 +72,8 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division geological atlas 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas.metadata)               |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Alps with guard dogs <//map.geo.admin.ch/?layers=ch.bafu.alpenweiden_herdenschutzhunde>`__ (ch.bafu.alpenweiden_herdenschutzhunde)                                                      |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Basiskarte GIN <//map.geo.admin.ch/?layers=ch.bafu.gefahren-basiskarte>`__ (ch.bafu.gefahren-basiskarte)                                                                                |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Emergency calls by comune <//map.geo.admin.ch/?layers=ch.bakom.notruf>`__ (ch.bakom.notruf)                                                                                             |
@@ -132,7 +134,7 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Areas of silver fir <//map.geo.admin.ch/?layers=ch.bafu.wald-tannenareale>`__ (ch.bafu.wald-tannenareale)                                                                               |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Tracer tests <//map.geo.admin.ch/?layers=ch.bafu.hydrogeologie-markierversuche>`__ (ch.bafu.hydrogeologie-markierversuche)                                                                               |
+| Update | `Tracer tests <//map.geo.admin.ch/?layers=ch.bafu.hydrogeologie-markierversuche>`__ (ch.bafu.hydrogeologie-markierversuche)                                                              |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Seismic zones SIA 261 <//map.geo.admin.ch/?layers=ch.bafu.gefahren-gefaehrdungszonen>`__ (ch.bafu.gefahren-gefaehrdungszonen)                                                           |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
