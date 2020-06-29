@@ -23,4 +23,5 @@ export WSGI_PROCESSES=4
 export WSGI_THREADS=30
 export CMSGEOADMINHOST=https://cms.geo.admin.ch
 export LINKEDDATAHOST=https://ld.geo.admin.ch
-export CACHE_CONTROL="max-age=1800, public"
+expor CACHE_CONTROL="max-age=1800, public"
+export DYNAMIC_TRANSLATION=1

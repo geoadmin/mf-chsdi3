@@ -49,6 +49,7 @@ SHORTENER_TABLE_NAME ?= shorturl
 SHORTENER_TABLE_REGION ?= $(AWS_DEFAULT_REGION)
 PYPI_URL ?= https://pypi.org/simple/
 GITHUB_LAST_COMMIT=$(shell curl -s  https://api.github.com/repos/geoadmin/mf-chsdi3/commits | jq -r '.[0].sha')
+DYNAMIC_TRANSLATION ?= 1
 
 # Last values
 KEEP_VERSION ?= 'false'
@@ -101,6 +102,7 @@ LAST_KML_TEMP_DIR := $(call lastvalue,kml-temp-dir)
 LAST_GIT_COMMIT_HASH ?= $(call lastvalue,git-commit-hash)
 LAST_GIT_COMMIT_SHORT ?= $(call lastvalue,git-commit-short)
 LAST_GITHUB_LAST_COMMIT := $(call lastvalue,github-last-commit)
+LAST_DYNAMIC_TRANSLATION := $(call lastvalue, dynamic-translation)
 
 PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
@@ -503,6 +505,7 @@ production.ini: production.ini.in \
                 .venv/last-shortener-allowed-domains \
                 .venv/last-shortener-table-name \
                 .venv/last-shortener-table-region \
+								.venv/last-dynamic-translation \
                 guard-OPENTRANS_API_KEY
 	@echo "${GREEN}Creating production.ini...${RESET}";
 	${MAKO_CMD} \
@@ -539,6 +542,7 @@ production.ini: production.ini.in \
 		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
 		--var "linkeddatahost=$(LINKEDDATAHOST)" \
 		--var "opentrans_api_key=$(OPENTRANS_API_KEY)" \
+		--var "dynamic_translation=$(DYNAMIC_TRANSLATION)" \
 		--var "shortener_allowed_domains=$(SHORTENER_ALLOWED_DOMAINS)" $< > $@
 
 .venv/hooks: .venv/bin/git-secrets ./scripts/install-git-hooks.sh
@@ -701,6 +705,9 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-shortener-allowed-domains::
 	$(call cachelastvariable,$@,$(SHORTENER_ALLOWED_DOMAINS),$(LAST_SHORTENER_ALLOWED_DOMAINS),shortener-allowed-domains)
+
+.venv/last-dynamic-translation::
+	$(call cachelastvariable,$@,$(DYNAMIC_TRANSLATION),$(LAST_DYNAMIC_TRANSLATION),dynamic-translation)
 
 # wsgi.conf.in
 .venv/last-robots-file::
