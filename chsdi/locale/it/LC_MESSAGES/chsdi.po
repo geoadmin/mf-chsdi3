@@ -1506,7 +1506,7 @@ msgid "ch.astra.mountainbikeland.attribut_c"
 msgstr "Percorsi"
 
 msgid "ch.astra.mountainbikeland-sperrungen_umleitungen"
-msgstr "to do"
+msgstr "Chiusure Mountain Bike"
 
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Asse delle strade nazionali"
@@ -1722,7 +1722,7 @@ msgid "ch.astra.skatingland.attribut_c"
 msgstr "Percorsi"
 
 msgid "ch.astra.skatingland-sperrungen_umleitungen"
-msgstr "to do"
+msgstr "Chiusure Skating"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Stazioni di conteggio (regionale)"
@@ -2244,7 +2244,7 @@ msgid "ch.astra.veloland.attribut_c"
 msgstr "Percorsi"
 
 msgid "ch.astra.veloland-sperrungen_umleitungen"
-msgstr "to do"
+msgstr "Chiusure Bicicletta"
 
 msgid "ch.astra.wanderland"
 msgstr "La Svizzera a piedi"
@@ -2253,10 +2253,10 @@ msgid "ch.astra.wanderland.attribut_c"
 msgstr "Percorsi"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen"
-msgstr "Chiusure di sentieri pedonali"
+msgstr "Chiusure Sentieri escursionistici"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.abstract"
-msgstr "Spiegazione"
+msgstr "Ulteriori informazioni"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider"
 msgstr "Fonte dei dati"
@@ -2268,28 +2268,34 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.None"
 msgstr "-"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.schweizmobil"
-msgstr "SvizerraMobile / Ufficio cantonale"
+msgstr "SvizzeraMobile / Ufficio cantonale"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
-msgstr "Sentieri Svizzeri e Associazione cantonale per i sentieri escur-sionistici"
+msgstr "Sentieri Svizzeri e Associazione cantonale per i sentieri escursionistici"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.duration"
-msgstr "Durata prevista"
+msgstr "Durata"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.file"
-msgstr "Dettagli"
+msgstr "Documento"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason"
 msgstr "Causa"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.1"
-msgstr "Costruzione e manutenzio-ne"
+msgstr "Costruzione e manutenzione"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
-msgstr "Sentiero impraticabile"
+msgstr "Inondazioni"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
 msgstr "Cambiamento di percorso"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.12"
+msgstr "Altro"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.13"
+msgstr "Sentiero impraticabile"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
 msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
@@ -2298,31 +2304,28 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
 msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.2"
-msgstr "Lavori forestali"
+msgstr "-"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.3"
-msgstr "Manifestazione"
+msgstr "Lavori forestali"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.4"
-msgstr "Caduta di rocce"
+msgstr "Manifestazione"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.5"
-msgstr "Smottamento"
+msgstr "Caduta di rocce"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.6"
-msgstr "Caduta di pietre"
+msgstr "Smottamento"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.7"
-msgstr "Valanga primaverile"
+msgstr "Caduta di pietre"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.8"
-msgstr "Danni da tempesta"
+msgstr "Valanga primaverile"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
-msgstr "Inondazioni"
-
-msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.99"
-msgstr "Altro"
+msgstr "Danni da tempesta"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.None"
 msgstr "-"
@@ -2343,7 +2346,7 @@ msgid "ch.astra.wanderland-sperrungen_umleitungen.title"
 msgstr "Titolo"
 
 msgid "ch.astra.wanderland-sperrungen_umleitungen.url1_link"
-msgstr "Ulteriori informazioni"
+msgstr "Sito web"
 
 msgid "ch.babs"
 msgstr "FOCP"
@@ -2372,11 +2375,14 @@ msgstr "n.n."
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_116"
 msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_123"
+msgstr "Per la zona del Lavanchy-Poy, La strada sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_125"
 msgstr "Ulteriori raccomandazioni sul comportamento da adottare in presenza di vacche nutrici sono disponibili su www.sentierisvizzeri.ch"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_135"
-msgstr "Se i cani da protezione delle greggi si trovano all'alpe di Bremingard, è possibile andare al Col du Chamois passando da Cerniets senza incontrarli (questa nuova via alternativa tra Cerniets e il Col du Chamois è segnalata)"
+msgstr "Se i cani da protezione delle greggi si trovano all'alpe di Bremingard, è possibile andare al Col du Chamois passando da Cerniets senza incontrarli (questa nuova via alternativa tra Cerniets e il Col du Chamois è segnalata)."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_138"
 msgstr "Due sentieri escursionistici collegano l'alpe di Niwen a Stafel. Quello a valle è delimitato da recinzioni. Quello che si trova a monte, passando da Nibubedu non lo è ed è pertanto possibile incontrarvi cani da protezione in giugno e in settembre."
@@ -2396,6 +2402,15 @@ msgstr "Unicamente durante il mese di settembre è possibile incontrare cani da 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_163"
 msgstr "Se il gregge protetto dai cani si trova in prossimità di un sentiero ufficiale, esso viene recintato, affinché non dobbiate attraversarlo. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_216"
+msgstr "È possibile incontrare dei cani da protezione da metà Giugno a metà Luglio sul sentiero che congiunge l’arrivo della funivia del « Cuolm da Vi » alla stazione intermediaria del « Cungieri ». Durante questo periodo il sentiero sarà munito di recinzioni."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_220"
+msgstr "Nella zona del Val Segnas, i cani da protezione dei greggi sono presenti soltanto nel mese di ottobre."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_229"
+msgstr "Al momento dell'aggiornamento degli alpeggi protetti dai cani, non era ancora stato deciso se i cani da protezione delle greggi saranno impiegati all'alpe di Ontanettes nel 2020."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_4"
 msgstr "I sentieri escursionistici presso il Lag da Pigniu sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
 
@@ -2411,14 +2426,8 @@ msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affi
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_60"
 msgstr "Il sentiero escursionistico a sud di Bärried è delimitato da recinzioni. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_73"
-msgstr "Il Dent de la Valerette può essere raggiunto senza incontrare cani da protezione delle greggi passando da Chindonne."
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_77"
-msgstr "Sul sentiero andando da Chummli al punto 1652, delle interazioni con i cani della protezione dei greggi sono possibili per una durata di circa due settimane. (Ulterioni info presso PN Diemtigtal)"
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_87"
-msgstr "La cima dell'Ochsen può essere raggiunta senza attraversare il gregge protetto passando da Ritz e Oberalpigle."
+msgstr "Sul sentiero andando da Chummli al punto 1652, delle interazioni con i cani della protezione dei greggi sono possibili per una durata di circa due settimane (Ulterioni info presso PN Diemtigtal)."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_91"
 msgstr "I sentieri escursionistici ufficiali sono delimitati da recinzioni, affinché non dobbiate attraversare il gregge protetto dai cani. Se avete cani da compagnia teneteli al guinzaglio e passate rapidamente senza soffermarvi."
@@ -2495,8 +2504,26 @@ msgstr "Di regola da metà giugno a fine settembre. Prestate attenzione  alle in
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1021"
 msgstr "Di regola da metà giugno a metà settembre"
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1022"
 msgstr "Dall'inizio di agosto a metà settembre è possibile incontrare i cani da protezione delle greggi sul sentiero che collega il \"Canalbrücke\" alla Capanna Zapport."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1023"
+msgstr "Di regola da fine Maggio all'inizio di Luglio, e dall'inizio di Settembre a metà Ottobre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
+msgstr "Di regola dall'inizio di Giugno a metà Settembre"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1025"
+msgstr "Di regola da fine Maggio a fine Giugno su l’alpeggio di Lavanchy-Poy. E da metà Giugno a fine Settembre sulle alpi Taveyanne"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1026"
+msgstr "Di regola da fine Maggio a metà Giugno nella parte bassa dell'alpeggio. Da metà Agosto all'inizio di Ottobre su tutti gl’alpeggi"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1027"
+msgstr "Di regola dall'inizio di Giugno a metà Ottobre. Il gregge e i cani da protezione dei greggi si trovano nella zona dei laghi durante il mese di Agosto"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1028"
+msgstr "Di regola da metà Giugno all'inizio di Luglio, ed inoltre nel mese di Settembre: Grüscheralp (pascolo di Golrosa, Cavell, Schafbüel). Dall'inizio di Luglio all'inizio di Settembre: Alp Drusa (pascolo intorno al rifugio di Carschina e sul Schafberg)"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Contatto E-mail"
@@ -2579,6 +2606,9 @@ msgstr "Superficie [ha]"
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Zone golenali carte di vegetazione"
 
+msgid "ch.bafu.auen-vegetationskarten.area_ha"
+msgstr "Superficie [ha]"
+
 msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
 msgstr "Anno mappatura"
 
@@ -2590,6 +2620,24 @@ msgstr "Nome dell'oggetto"
 
 msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
 msgstr "Numero dell'oggetto"
+
+msgid "ch.bafu.auen-vegetationskarten.code_primaervegetation"
+msgstr "Numero di vegetazione"
+
+msgid "ch.bafu.auen-vegetationskarten.kartierjahr"
+msgstr "Anno mappatura"
+
+msgid "ch.bafu.auen-vegetationskarten.name"
+msgstr "Nome dell'oggetto"
+
+msgid "ch.bafu.auen-vegetationskarten.obj_nummer"
+msgstr "Numero dell'oggetto"
+
+msgid "ch.bafu.auen-vegetationskarten.primaervegetation"
+msgstr "Mappatura unità di vegeta-zione primaria"
+
+msgid "ch.bafu.auen-vegetationskarten.ref_obj_blatt"
+msgstr "Descrizione dell'oggetto"
 
 msgid "ch.bafu.biogeographische_regionen"
 msgstr "Regioni biogeografiche"
@@ -3145,6 +3193,9 @@ msgstr "Classe dei terreni di fondazione"
 
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
 msgstr "Zone sismiche SIA 261"
+
+msgid "ch.bafu.gefahren-gefaehrdungszonen.zone"
+msgstr "Zona sismica SIA 261"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
 msgstr "Terremoti storici"
@@ -5580,22 +5631,22 @@ msgid "ch.bakom.notruf-112_zentral"
 msgstr "112 Centrale d‘allarme"
 
 msgid "ch.bakom.notruf-112_zentral.festnetz_112"
-msgstr "Fixed routing number"
+msgstr "Numero di routing fissa"
 
 msgid "ch.bakom.notruf-112_zentral.fn_zentrale_112"
-msgstr "Emergency Center fixed network"
+msgstr "Centrale d'allarme rete fissa"
 
 msgid "ch.bakom.notruf-112_zentral.mobile_112"
-msgstr "Mobile routing number"
+msgstr "Numero di routing mobile"
 
 msgid "ch.bakom.notruf-112_zentral.mo_zentrale_112"
-msgstr "Emergency Center mobile network"
+msgstr "Centrale d'allarme rete mobile"
 
 msgid "ch.bakom.notruf-112_zentral.satellit_112"
-msgstr "Satellite routing number"
+msgstr "Numero di routing satellitare"
 
 msgid "ch.bakom.notruf-112_zentral.sa_zentrale_112"
-msgstr "Emergency Center satellit network"
+msgstr "Centrale d'allarme rete satellitare"
 
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Rete fissa"
@@ -5643,16 +5694,16 @@ msgid "ch.bakom.notruf-117_zentral"
 msgstr "117 Centrale d‘allarme"
 
 msgid "ch.bakom.notruf-117_zentral.festnetz_117"
-msgstr "Fixed routing number"
+msgstr "Numero di routing fissa"
 
 msgid "ch.bakom.notruf-117_zentral.fn_zentrale_117"
-msgstr "Emergency Center fixed network"
+msgstr "Centrale d'allarme rete fissa"
 
 msgid "ch.bakom.notruf-117_zentral.mobile_117"
-msgstr "Mobile routing number"
+msgstr "Numero di routing mobile"
 
 msgid "ch.bakom.notruf-117_zentral.mo_zentrale_117"
-msgstr "Emergency Center mobile network"
+msgstr "Centrale d'allarme rete mobile"
 
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Rete fissa"
@@ -5700,16 +5751,16 @@ msgid "ch.bakom.notruf-118_zentral"
 msgstr "118 Centrale d‘allarme"
 
 msgid "ch.bakom.notruf-118_zentral.festnetz_118"
-msgstr "Fixed routing number"
+msgstr "Numero di routing fissa"
 
 msgid "ch.bakom.notruf-118_zentral.fn_zentrale_118"
-msgstr "Emergency Center fixed network"
+msgstr "Centrale d'allarme rete fissa"
 
 msgid "ch.bakom.notruf-118_zentral.mobile_118"
-msgstr "Mobile routing number"
+msgstr "Numero di routing mobile"
 
 msgid "ch.bakom.notruf-118_zentral.mo_zentrale_118"
-msgstr "Emergency Center mobile network"
+msgstr "Centrale d'allarme rete mobile"
 
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Rete fissa"
@@ -6756,7 +6807,7 @@ msgid "ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb.text_thema"
 msgstr "Tema"
 
 msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze"
-msgstr "Catasto dei rumori – aerodromi civili"
+msgstr "Catasto dei rumori - aerodromi civili"
 
 msgid "ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde"
 msgstr "Inquinam. fonico 1a ora notte"
@@ -7827,7 +7878,7 @@ msgid "ch.bfe.thermische-netze.zip"
 msgstr "NPA"
 
 msgid "ch.bfe.url"
-msgstr "http://www.bfe.admin.ch/index.html?lang=it"
+msgstr "https://www.bfe.admin.ch/bfe/it/home.html"
 
 msgid "ch.bfe.windenergieanlagen"
 msgstr "Impianti eolici"
