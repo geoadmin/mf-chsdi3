@@ -966,7 +966,7 @@ msgid "ch.are_and_canton.url"
 msgstr "http://www.are.admin.ch/index.html?lang=en"
 
 msgid "ch.are.bauzonen"
-msgstr "Zonas da construcziun Svizra (arm.)"
+msgstr "Zonas da construcziun CH (arm.)"
 
 msgid "ch.are.bauzonen-2007"
 msgstr "Bauzonen Schweiz 2007"
@@ -1275,7 +1275,7 @@ msgid "ch.astra.ausnahmetransportrouten"
 msgstr "Rutas per transports excepziunals"
 
 msgid "ch.astra.baulinien-nationalstrassen"
-msgstr "Lingias da construcziun da las vias naziunalas"
+msgstr "Lingias constr. vias naziunalas"
 
 msgid "ch.astra.baulinien-nationalstrassen.approval_date"
 msgstr "Data approvaziun"
@@ -1296,7 +1296,7 @@ msgid "ch.astra.baulinien-nationalstrassen.inrepeal"
 msgstr "aufzuhebend"
 
 msgid "ch.astra.baulinien-nationalstrassen.oereb"
-msgstr "Lingias da construcziun da las vias naziunalas RDPP"
+msgstr "Lingias constr. vias naz. RDPP"
 
 msgid "ch.astra.baulinien-nationalstrassen.oereb.publiziertab"
 msgstr "Publitga da"
@@ -1499,9 +1499,6 @@ msgstr "Kanuland"
 msgid "ch.astra.kt"
 msgstr "ASTRA + chantun"
 
-msgid "ch.astra.langsamverkehr-wandern_sperrungen_umleitungen"
-msgstr "Wanderwegsperrungen"
-
 msgid "ch.astra.mountainbikeland"
 msgstr "La Svizra cun velo da muntogna"
 
@@ -1542,7 +1539,7 @@ msgid "ch.astra.nationalstrassenachsen.strassennummer"
 msgstr "Strassennummer"
 
 msgid "ch.astra.projektierungszonen-nationalstrassen.oereb"
-msgstr "Zonas projectaziun autostradas RPDP"
+msgstr "Zonas projectaz. autostradas RPDP"
 
 msgid "ch.astra.sachplan-infrastruktur-strasse_anhoerung"
 msgstr "Audiziun SIN"
@@ -2255,6 +2252,99 @@ msgstr "La Svizra a pe"
 msgid "ch.astra.wanderland.attribut_c"
 msgstr "Route"
 
+msgid "ch.astra.wanderland-sperrungen_umleitungen"
+msgstr "Serradas da sendas da viandar"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.abstract"
+msgstr "Erläuterung"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider"
+msgstr "Datenquelle"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.canton"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.content_provider.canton"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.schweizmobil"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.content_provider.schweizmobil"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.duration"
+msgstr "Vorassichtliche Dauer"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.file"
+msgstr "Details"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason"
+msgstr "Grund"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.1"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.1"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.2"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.2"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.3"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.3"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.4"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.4"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.5"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.5"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.6"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.6"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.7"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.7"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.8"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.8"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.99"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.99"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate"
+msgstr "Status"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.provisionally"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.state_validate.provisionally"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.validated"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.state_validate.validated"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.title"
+msgstr "Titel"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.url1_link"
+msgstr "Weitere Informationen"
+
 msgid "ch.babs"
 msgstr "BABS"
 
@@ -2448,7 +2538,7 @@ msgid "ch.bafu.auen-ausserhalb_bundesinventar"
 msgstr "Zonas umidas ordaifer invent. fed."
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin"
-msgstr "Zonas umidas alp. ordaifer inv. fed."
+msgstr "Zonas umidas alp. ordaif. inv.fed."
 
 msgid "ch.bafu.auen-ausserhalb_bundesinventar_alpin.auentyp"
 msgstr "Typ"
@@ -2733,7 +2823,7 @@ msgid "ch.bafu.bundesinventare-trockenwiesen_trockenweiden.teilobjnummer"
 msgstr "Teilobjekt-Nr."
 
 msgid "ch.bafu.bundesinventare-vogelreservate"
-msgstr "Reservats d'utschels: aua, migrants"
+msgstr "Reservats utschels: aua, migrants"
 
 msgid "ch.bafu.bundesinventare-vogelreservate.name"
 msgstr "Objektname"
@@ -2760,43 +2850,43 @@ msgid "ch.bafu.bundesinventare-vogelreservate.teilgebiet"
 msgstr "Teilgebiet"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag"
-msgstr "Erosionsrisiko Dauergrünland"
+msgstr "Ristga d'erosiun pastg. perm."
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_apr"
-msgstr "Erosionsrisiko Dauergrünland April"
+msgstr "Ristga d'erosiun pastg. perm. avr."
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_aug"
-msgstr "Erosionsrisiko Dauergrünland Aug."
+msgstr "Ristga d'erosiun pastg. perm. avu."
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_dez"
-msgstr "Erosionsrisiko Dauergrünland Dez."
+msgstr "Ristga d'erosiun pastg. perm. dec."
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_feb"
-msgstr "Erosionsrisiko Dauergrünland Feb."
+msgstr "Ristga d'erosiun pastg. perm. fav."
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_jan"
 msgstr "Erosionsrisiko Dauergrünland Jan."
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_jul"
-msgstr "Erosionsrisiko Dauergrünland Juli"
+msgstr "Ristga d'erosiun pastg. perm. fan."
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_jun"
-msgstr "Erosionsrisiko Dauergrünland Juni"
+msgstr "Ristga d'erosiun pastg. perm. zer."
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_mai"
-msgstr "Erosionsrisiko Dauergrünland Mai"
+msgstr "Ristga d'erosiun pastg. perm. matg"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_mrz"
-msgstr "Erosionsrisiko Dauergrünland März"
+msgstr "Ristga d'erosiun pastg. perm. mars"
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_nov"
-msgstr "Erosionsrisiko Dauergrünland Nov."
+msgstr "Ristga d'erosiun pastg. perm. nov."
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_okt"
-msgstr "Erosionsrisiko Dauergrünland Okt."
+msgstr "Ristga d'erosiun pastg. perm. oct."
 
 msgid "ch.bafu.erosion-gruenland_bodenabtrag_sep"
-msgstr "Erosionsrisiko Dauergrünland Sep."
+msgstr "Ristga d'erosiun pastg. perm. sett"
 
 msgid "ch.bafu.eua"
 msgstr "BAFU / EUA"
@@ -2892,7 +2982,7 @@ msgid "ch.bafu.fischerei-aeschen_larvenhabitate"
 msgstr "Litschalas: habitats da larvas"
 
 msgid "ch.bafu.fischerei-aeschen_verbreitungsgebiet"
-msgstr "Litschalas: territori da derasaziun"
+msgstr "Litschalas: territori derasaziun"
 
 msgid "ch.bafu.fischerei-krebspest"
 msgstr "Pesta da giombers"
@@ -2901,13 +2991,13 @@ msgid "ch.bafu.fischerei-nasenlaichplaetze"
 msgstr "Plazzas da fregar per nas"
 
 msgid "ch.bafu.fischerei-proliferative_nierenkrankheit"
-msgstr "MRP (malsogna renala proliferativa)"
+msgstr "MRP–malsogna renala proliferativa"
 
 msgid "ch.bafu.flora-schwingrasen"
 msgstr "Pastgets flottants"
 
 msgid "ch.bafu.flora-verbreitungskarten"
-msgstr "Raster da las chartas da derasaziun"
+msgstr "Raster chartas da derasaziun"
 
 msgid "ch.bafu.flora-weltensutter_atlas"
 msgstr "Atlas Welten&Sutter"
@@ -3054,7 +3144,7 @@ msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Classas da sulom seismicas"
 
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
-msgstr "Zonas da terratrembels"
+msgstr "Zonas da terratrembels SIA 261"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
 msgstr "Terratrembels istorics"
@@ -3069,19 +3159,19 @@ msgid "ch.bafu.gewaesserschutz-badewasserqualitaet"
 msgstr "Qualitad da l'aua dals bogns"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.0"
-msgstr "ch.bafu.gewaesserschutz-badewasserqualitaet.0"
+msgstr "Klassifizierung der Qualität nicht möglich"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.1"
-msgstr "ch.bafu.gewaesserschutz-badewasserqualitaet.1"
+msgstr "Ausgezeichnete Qualität"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.2"
-msgstr "ch.bafu.gewaesserschutz-badewasserqualitaet.2"
+msgstr "Gute Qualität"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.3"
-msgstr "ch.bafu.gewaesserschutz-badewasserqualitaet.3"
+msgstr "Ausreichende Qualität"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.4"
-msgstr "ch.bafu.gewaesserschutz-badewasserqualitaet.4"
+msgstr "Mangelhafte Qualität"
 
 msgid "ch.bafu.gewaesserschutz-badewasserqualitaet.aeussereraspekt"
 msgstr "Äusserer Aspekt"
@@ -3348,7 +3438,7 @@ msgid "ch.bafu.gewaesserschutz-klaeranlagen_anteilq347.vsa_kategorie"
 msgstr "Reinigungstyp (VSA-Kategorie)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse"
-msgstr "Sereneras – capacitad (valur abit.)"
+msgstr "Sereneras–capacitad (valur abit.)"
 
 msgid "ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse.abwasseranteil_q347"
 msgstr "Prozentanteil Abwasser im Vorfluter bei Niedrigwasser"
@@ -3690,7 +3780,7 @@ msgid "ch.bafu.hydrologie-hintergrundkarte"
 msgstr "Charta da fund datas idrologicas"
 
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel"
-msgstr "Idrometers da l'aua gronda maximala"
+msgstr "Idrometers d'aua gronda maximala"
 
 msgid "ch.bafu.hydrologie-hochwassergrenzwertpegel.datenherkunft"
 msgstr "Datenherkunft"
@@ -4014,7 +4104,7 @@ msgid "ch.bafu.hydroweb-messstationen_zustand.description"
 msgstr "Bezeichnung"
 
 msgid "ch.bafu.hydroweb-warnkarte_national"
-msgstr "Charta d'avertiment auas naziunalas"
+msgstr "Charta avertiment auas naziunalas"
 
 msgid "ch.bafu.hydroweb-warnkarte_national.datum"
 msgstr "Datum"
@@ -4032,7 +4122,7 @@ msgid "ch.bafu.hydroweb-warnkarte_national.validuntil"
 msgstr "Gültig von"
 
 msgid "ch.bafu.hydroweb-warnkarte_regional"
-msgstr "Charta d'avertiment flums regiunals"
+msgstr "Charta avertiment flums regiunals"
 
 msgid "ch.bafu.hydroweb-warnkarte_regional.datum"
 msgstr "Datum"
@@ -4128,7 +4218,7 @@ msgid "ch.bafu.karst-quellen_schwinden.ip_z"
 msgstr "Z-Koordinate"
 
 msgid "ch.bafu.karst-unterirdische_fliesswege"
-msgstr "Vias da deflussiun d'aua sutterrana"
+msgstr "Vias da deflussiun aua sutterrana"
 
 msgid "ch.bafu.karst-unterirdische_fliesswege.ei_hdyn"
 msgstr "Hydrodynamische Situation"
@@ -5061,10 +5151,10 @@ msgid "ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken.subcode"
 msgstr "subcode"
 
 msgid "ch.bafu.wald-wasserverfuegbarkeit_boden"
-msgstr "Wasserverfügbarkeit im Boden"
+msgstr "Disponibladad d'aua en il terren"
 
 msgid "ch.bafu.wald-wasserverfuegbarkeit_pflanzen"
-msgstr "Wasserverfügbarkeit für Pflanzen"
+msgstr "Disponibladad d'aua per plantas"
 
 msgid "ch.bafu.wasserbau-querprofilmarken"
 msgstr "Marca dals profils traversals"
@@ -5235,7 +5325,7 @@ msgid "ch.bafu.wasser-teileinzugsgebiete_40"
 msgstr "Intschess parzials 40 km²"
 
 msgid "ch.bafu.wasser-vorfluter"
-msgstr "Vorfluterabschnitte"
+msgstr "Trajects da prefluents"
 
 msgid "ch.bafu.wasser-vorfluter.ezgnr"
 msgstr "Gesamteinzugsgebiets-Nummer"
@@ -5325,7 +5415,7 @@ msgid "ch.bag"
 msgstr "BAG"
 
 msgid "ch.bag.radonkarte"
-msgstr "Radonkarte"
+msgstr "Charta da radon"
 
 msgid "ch.bag.radonkarte.confidence"
 msgstr "Vertrauensindex"
@@ -5340,7 +5430,7 @@ msgid "ch.bag.url"
 msgstr "http://www.bag.admin.ch/index.html?lang=de"
 
 msgid "ch.bag.zecken-fsme-faelle"
-msgstr "FSME - Lieus da piztgada annunziads"
+msgstr "FSME-Lieus da piztgada annunziads"
 
 msgid "ch.bag.zecken-fsme-impfung"
 msgstr "FSME – vaccinaziun recumandada"
@@ -5489,6 +5579,24 @@ msgstr "112 Nummer Satellitennetz"
 msgid "ch.bakom.notruf-112_zentral"
 msgstr "112 Alarmzentralen"
 
+msgid "ch.bakom.notruf-112_zentral.festnetz_112"
+msgstr "Numer da routing fixa"
+
+msgid "ch.bakom.notruf-112_zentral.fn_zentrale_112"
+msgstr "Alarmzentrale Rait fixa"
+
+msgid "ch.bakom.notruf-112_zentral.mobile_112"
+msgstr "Numer da routing mobila"
+
+msgid "ch.bakom.notruf-112_zentral.mo_zentrale_112"
+msgstr "Alarmzentrale Rait mobila"
+
+msgid "ch.bakom.notruf-112_zentral.satellit_112"
+msgstr "Routing-Nummer Satellitennetz"
+
+msgid "ch.bakom.notruf-112_zentral.sa_zentrale_112"
+msgstr "Alarmzentrale Satellitennetz"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Rait fixa"
 
@@ -5533,6 +5641,18 @@ msgstr "117 Numer da routing mobila"
 
 msgid "ch.bakom.notruf-117_zentral"
 msgstr "117 Alarmzentralen"
+
+msgid "ch.bakom.notruf-117_zentral.festnetz_117"
+msgstr "Numer da routing fixa"
+
+msgid "ch.bakom.notruf-117_zentral.fn_zentrale_117"
+msgstr "Alarmzentrale Rait fixa"
+
+msgid "ch.bakom.notruf-117_zentral.mobile_117"
+msgstr "Numer da routing mobila"
+
+msgid "ch.bakom.notruf-117_zentral.mo_zentrale_117"
+msgstr "Alarmzentrale Rait mobila"
 
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Rait fixa"
@@ -5579,6 +5699,18 @@ msgstr "118 Numer da routing mobila"
 msgid "ch.bakom.notruf-118_zentral"
 msgstr "118 Alarmzentralen"
 
+msgid "ch.bakom.notruf-118_zentral.festnetz_118"
+msgstr "Numer da routing fixa"
+
+msgid "ch.bakom.notruf-118_zentral.fn_zentrale_118"
+msgstr "Alarmzentrale Rait fixa"
+
+msgid "ch.bakom.notruf-118_zentral.mobile_118"
+msgstr "Numer da routing mobila"
+
+msgid "ch.bakom.notruf-118_zentral.mo_zentrale_118"
+msgstr "Alarmzentrale Rait mobila"
+
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Rait fixa"
 
@@ -5623,6 +5755,18 @@ msgstr "143 Numer da routing mobila"
 
 msgid "ch.bakom.notruf-143_zentral"
 msgstr "143 Alarmzentralen"
+
+msgid "ch.bakom.notruf-143_zentral.festnetz_143"
+msgstr "Numer da routing fixa"
+
+msgid "ch.bakom.notruf-143_zentral.fn_zentrale_143"
+msgstr "Alarmzentrale Rait fixa"
+
+msgid "ch.bakom.notruf-143_zentral.mobile_143"
+msgstr "Numer da routing mobila"
+
+msgid "ch.bakom.notruf-143_zentral.mo_zentrale_143"
+msgstr "Alarmzentrale Rait mobila"
 
 msgid "ch.bakom.notruf-144_festnetz"
 msgstr "144 Rait fixa"
@@ -5669,6 +5813,18 @@ msgstr "144 Numer da routing mobila"
 msgid "ch.bakom.notruf-144_zentral"
 msgstr "144 Alarmzentralen"
 
+msgid "ch.bakom.notruf-144_zentral.festnetz_144"
+msgstr "Numer da routing fixa"
+
+msgid "ch.bakom.notruf-144_zentral.fn_zentrale_144"
+msgstr "Alarmzentrale Rait fixa"
+
+msgid "ch.bakom.notruf-144_zentral.mobile_144"
+msgstr "Numer da routing mobila"
+
+msgid "ch.bakom.notruf-144_zentral.mo_zentrale_144"
+msgstr "Alarmzentrale Rait mobila"
+
 msgid "ch.bakom.notruf-147_festnetz"
 msgstr "147 Rait fixa"
 
@@ -5713,6 +5869,18 @@ msgstr "147 Numer da routing mobila"
 
 msgid "ch.bakom.notruf-147_zentral"
 msgstr "147 Alarmzentralen"
+
+msgid "ch.bakom.notruf-147_zentral.festnetz_147"
+msgstr "Numer da routing fixa"
+
+msgid "ch.bakom.notruf-147_zentral.fn_zentrale_147"
+msgstr "Alarmzentrale Rait fixa"
+
+msgid "ch.bakom.notruf-147_zentral.mobile_147"
+msgstr "Numer da routing mobila"
+
+msgid "ch.bakom.notruf-147_zentral.mo_zentrale_147"
+msgstr "Alarmzentrale Rait mobila"
 
 msgid "ch.bakom.notruf.adresse_112_festnetz"
 msgstr "Alarmzentrale Festnetz"
@@ -6015,7 +6183,7 @@ msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.text_thema"
 msgstr "Tema"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht"
-msgstr "Canera da viafier, eff. Immissiun N"
+msgstr "Canera viafier, immissiun eff. N"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.de_es"
 msgstr "Empfindlichkeitsstufe"
@@ -6036,7 +6204,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht.receptor"
 msgstr "Punkt Nr."
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag"
-msgstr "Canera da viafier, eff. emissiun D"
+msgstr "Canera viafier, immissiun eff. D"
 
 msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.de_es"
 msgstr "Empfindlichkeitsstufe"
@@ -6057,7 +6225,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag.receptor"
 msgstr "Punkt Nr."
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht"
-msgstr "Canera da viafier, fix. Emissiun N"
+msgstr "Canera da viafier, emissiun fixà N"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.km_from"
 msgstr "Km von"
@@ -6084,7 +6252,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht.lre_remark"
 msgstr "Bemerkungen"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag"
-msgstr "Canera da viafier, fix. Emissiun D"
+msgstr "Canera da viafier, emissiun fixà D"
 
 msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.km_from"
 msgstr "Km von"
@@ -6111,7 +6279,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag.lre_remark"
 msgstr "Bemerkungen"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht"
-msgstr "Canera da viafier, eff. Emissiun N"
+msgstr "Canera da viafier, emissiun eff. N"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.enmodel_railway"
 msgstr "Emissionsmodell"
@@ -6144,7 +6312,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht.year_evalu
 msgstr "Jahr"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag"
-msgstr "Canera da viafier, eff. Emissiun D"
+msgstr "Canera da viafier, emissiun eff. D"
 
 msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.enmodel_railway"
 msgstr "Emissionsmodell"
@@ -6177,7 +6345,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag.year_evaluat
 msgstr "Jahr"
 
 msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht"
-msgstr "Eisenbahnlärm, zuläss. Immission N"
+msgstr "Canera viafier, immissiun admiss. N"
 
 msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.de_es"
 msgstr "Empfindlichkeitsstufe"
@@ -6195,7 +6363,7 @@ msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht.lr_max_year"
 msgstr "Verfügungsjahr"
 
 msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag"
-msgstr "Eisenbahnlärm, zuläss. Immission T"
+msgstr "Canera viafier, immissiun admiss. D"
 
 msgid "ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.de_es"
 msgstr "Empfindlichkeitsstufe"
@@ -7152,13 +7320,16 @@ msgid "ch.bfe.energiestaedte.punktezahl"
 msgstr "Punktezahl"
 
 msgid "ch.bfe.erneuerbarheizen"
-msgstr "Impulsberatung erneuerbar heizen"
+msgstr "Consult. d'impuls stgaudar regen."
 
 msgid "ch.bfe.erneuerbarheizen.company"
 msgstr "Firma"
 
 msgid "ch.bfe.erneuerbarheizen.consultant_cat"
 msgstr "Kategorie/-n"
+
+msgid "ch.bfe.erneuerbarheizen.consultingcosts"
+msgstr "Beratungskosten"
 
 msgid "ch.bfe.erneuerbarheizen.email"
 msgstr "Mailadresse"
@@ -7179,7 +7350,7 @@ msgid "ch.bfe.erneuerbarheizen.street_streetnumber"
 msgstr "Adresse"
 
 msgid "ch.bfe.fernwaerme-angebot"
-msgstr "Wärme- und Kälteangebot"
+msgstr "Purschida chalur/fradur"
 
 msgid "ch.bfe.fernwaerme-angebot.heatpotential"
 msgstr "Wärmepotenzial [MWh/a]"
@@ -7191,7 +7362,7 @@ msgid "ch.bfe.fernwaerme-angebot.name"
 msgstr "Name"
 
 msgid "ch.bfe.fernwaerme-nachfrage_industrie"
-msgstr "Wärme-/Kältenachfrage Industrie"
+msgstr "Dumonda chalur/fradur industria"
 
 msgid "ch.bfe.fernwaerme-nachfrage_industrie.industry"
 msgstr "Meistverbrauchende Branche"
@@ -7203,7 +7374,7 @@ msgid "ch.bfe.fernwaerme-nachfrage_industrie.noga"
 msgstr "Meistvertretene Branche"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude"
-msgstr "Wärme-/Kältenachfrage Wohnen und DL"
+msgstr "Dumonda chalur/fradur abitar, serv"
 
 msgid "ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude.needhome"
 msgstr "Wärmenachfrage Wohnen [MWh/a]"
@@ -7290,7 +7461,7 @@ msgid "ch.bfe.kleinwasserkraftpotentiale"
 msgstr "Potenzials d'ovras pitschnas"
 
 msgid "ch.bfe.komo-projekte"
-msgstr "KOMO-Projekte"
+msgstr "Projects COMO"
 
 msgid "ch.bfe.komo-projekte.amount_sponsored"
 msgstr "KOMO Beitrag"
@@ -7314,7 +7485,7 @@ msgid "ch.bfe.komo-projekte.topic"
 msgstr "Thema"
 
 msgid "ch.bfe.ladestellen-elektromobilitaet"
-msgstr "Ladestationen für Elektroautos"
+msgstr "Staziuns per chargiar autos elec."
 
 msgid "ch.bfe.ladestellen-elektromobilitaet.accessibility"
 msgstr "Zugang"
@@ -7596,7 +7767,7 @@ msgid "ch.bfe.stauanlagen-bundesaufsicht.damtype_de"
 msgstr "Sperrentyp"
 
 msgid "ch.bfe.thermische-netze"
-msgstr "Thermische Netze"
+msgstr "Raits termicas"
 
 msgid "ch.bfe.thermische-netze.beginningofoperation"
 msgstr "Inbetriebnahme"
@@ -8001,7 +8172,7 @@ msgid "ch.blw.emapis-zusammenfassung"
 msgstr "Svilup rural"
 
 msgid "ch.blw.erosion"
-msgstr "Ristga erosiun terren cultivà quali"
+msgstr "Ristga eros. terren cultivà quali"
 
 msgid "ch.blw.erosion2"
 msgstr "Erosionsrisiko"
@@ -8010,7 +8181,7 @@ msgid "ch.blw.erosion-fliesswegkarte"
 msgstr "Charta da deflussiun"
 
 msgid "ch.blw.erosion-quantitativ"
-msgstr "Ristga erosiun terren cultivà quant"
+msgstr "Ristga eros. terren cultivà quant"
 
 msgid "ch.blw.feldblockkarte"
 msgstr "Charta da blocs da parcellas"
@@ -8334,25 +8505,25 @@ msgid "ch.meteoschweiz"
 msgstr "MeteoSchweiz"
 
 msgid "ch.meteoschweiz.homogenereihen"
-msgstr "Homogene Monatsdaten"
+msgstr "Datas mensilas omogenas"
 
 msgid "ch.meteoschweiz.klimanormwerte-niederschlag_1961_1990"
-msgstr "Klimanormwerte Niederschlag 1961-1990"
+msgstr "Normas climat. precipit. 1961-1990"
 
 msgid "ch.meteoschweiz.klimanormwerte-niederschlag_aktuelle_periode"
-msgstr "Klimanormwerte Niederschlag 1981-2010"
+msgstr "Normas climat. precipit. 1981-2010"
 
 msgid "ch.meteoschweiz.klimanormwerte-sonnenscheindauer_1961_1990"
-msgstr "Klimanormwerte Sonnenscheindauer 1961-1990"
+msgstr "Normas climat. sulegl 1961-1990"
 
 msgid "ch.meteoschweiz.klimanormwerte-sonnenscheindauer_aktuelle_periode"
-msgstr "Klimanormwerte Sonnenscheindauer 1981-2010"
+msgstr "Normas climat. sulegl 1981-2010"
 
 msgid "ch.meteoschweiz.klimanormwerte-temperatur_1961_1990"
-msgstr "Klimanormwerte Temperatur 1961-1990"
+msgstr "Normas climat. temp. 1961-1990"
 
 msgid "ch.meteoschweiz.klimanormwerte-temperatur_aktuelle_periode"
-msgstr "Klimanormwerte Temperatur 1981-2010"
+msgstr "Normas climat. temp. 1981-2010"
 
 msgid "ch.meteoschweiz.messnetz-atmosphaere"
 msgstr "Staziuns d'atmosfera"
@@ -8385,7 +8556,7 @@ msgid "ch.meteoschweiz.messnetz-webcams"
 msgstr "Cameras meteorologicas"
 
 msgid "ch.meteoschweiz.messwerte-aktuell"
-msgstr "Automatische meteorologische Bodenmessstationen - aktuelle Messwerte"
+msgstr "Staz. meteo. aut. valurs actualas"
 
 msgid "ch.meteoschweiz.messwerte-foehn-10min"
 msgstr "Index dal favugn, 10 min"
@@ -8460,7 +8631,7 @@ msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-10min"
 msgstr "Durada radiaziun sulegl, 10 min"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-kumuliert-10min"
-msgstr "Sonnenschein kumulierte Tagessumme"
+msgstr "Sulegl, summa dal di cumulada"
 
 msgid "ch.meteoschweiz.messwerte-sonnenscheindauer-relativ-1d"
 msgstr "Sulegl relativa, 1 di"
@@ -8478,10 +8649,10 @@ msgid "ch.meteoschweiz.messwerte-windgeschwindigkeit-kmh-10min"
 msgstr "Sveltezza dal vent, 10 min"
 
 msgid "ch.meteoschweiz.normwerttabellen"
-msgstr "Klimanormwerte"
+msgstr "Normas climatologicas"
 
 msgid "ch.meteoschweiz.temperaturmittel-1864"
-msgstr "Schweizer Temperaturmittel ab 1864"
+msgstr "Temperatura media svizra dapi 1864"
 
 msgid "ch.mobility.standorte"
 msgstr "Carsharing"
@@ -8667,7 +8838,7 @@ msgid "ch.swisstopo"
 msgstr "swisstopo"
 
 msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis"
-msgstr "Amtliches Gebäudeadressverzeichnis"
+msgstr "Register uff. adressas edifizis"
 
 msgid "ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_edid"
 msgstr "Eidgenössischer Gebäudeeingangsidentifikator"
@@ -8832,7 +9003,7 @@ msgid "ch.swisstopo.gas25-papierkarte.metadata"
 msgstr "Divisiun atlas geologic 25 Stampa"
 
 msgid "ch.swisstopo.generalkarte300_papier.metadata"
-msgstr "Divisiun charta generala 300 Stampa"
+msgstr "Div. charta generala 300 Stampa"
 
 msgid "ch.swisstopo.generalkarte300_papier.metadata.release"
 msgstr "Ausgabejahr"
@@ -9084,7 +9255,7 @@ msgid "ch.swisstopo.geologie-geologische_karte"
 msgstr "Geologia 500"
 
 msgid "ch.swisstopo.geologie-geologische_karte_papier.metadata"
-msgstr "Divisiun charta geologica 500 Stampa"
+msgstr "Div. charta geologica 500 Stampa"
 
 msgid "ch.swisstopo.geologie-geologische_karte_papier.metadata.release"
 msgstr "Ausgabejahr"
@@ -9285,7 +9456,7 @@ msgid "ch.swisstopo.geologie-geomorphologie.ads_name"
 msgstr "Übersicht Geomorphologie: Oberflächenform"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura"
-msgstr "Eromagnetica Svizra Bassa/Giura 500"
+msgstr "Eromagnetica Bassa/Giura 500"
 
 msgid "ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz"
 msgstr "Eromagnetica 500"
@@ -9690,7 +9861,7 @@ msgid "ch.swisstopo.geologie-grundwasservorkommen_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata"
-msgstr "Div. vulnerab. aua sutt. 500 Stampa"
+msgstr "Div. vulner. aua sutt. 500 Stampa"
 
 msgid "ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen"
 msgstr "Resursas d'aua sutterrana 500"
@@ -9993,7 +10164,7 @@ msgid "ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung.tlyearsformatted"
 msgstr "Betriebsjahre"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata"
-msgstr "Div. chartas geol. spezialas Retagl"
+msgstr "Div.chartas geol. spezialas Retagl"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.name_de"
 msgstr "Name"
@@ -10014,7 +10185,7 @@ msgid "ch.swisstopo.geologie-spezialkarten_schweiz.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata"
-msgstr "Div. chartas geol. spezialas Stampa"
+msgstr "Div.chartas geol. spezialas Stampa"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.name"
 msgstr "Name"
@@ -10038,7 +10209,7 @@ msgid "ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata"
-msgstr "Div. chartas geol. spezialas Vectur"
+msgstr "Div.chartas geol. spezialas Vectur"
 
 msgid "ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata.name_de"
 msgstr "Name"
@@ -10230,10 +10401,10 @@ msgid "ch.swisstopo.hiks-siegfried"
 msgstr "Charta Siegfried Emprima ediziun"
 
 msgid "ch.swisstopo.hiks-siegfried-ta25.metadata"
-msgstr "Divisiun Charta Siegfried 25 Raster"
+msgstr "Div. Charta Siegfried 25 Raster"
 
 msgid "ch.swisstopo.hiks-siegfried-ta50.metadata"
-msgstr "Divisiun Charta Siegfried 50 Raster"
+msgstr "Div. Charta Siegfried 50 Raster"
 
 msgid "ch.swisstopo.icao-papierkarte.metadata"
 msgstr "Divisiun charta aviatica Stampa"
@@ -10719,7 +10890,7 @@ msgid "ch.swisstopo.lubis-luftbilder_farbe.ort"
 msgstr "Ort"
 
 msgid "ch.swisstopo.lubis-luftbilder_infrarot"
-msgstr "Fotografias ord l'aria infracotsch."
+msgstr "Fotografias aria infracotschnas"
 
 msgid "ch.swisstopo.lubis-luftbilder_infrarot.id"
 msgstr "Numer da maletg"
@@ -10842,7 +11013,7 @@ msgid "ch.swisstopo.pixelkarte-farbe-pk50.noscale"
 msgstr "Charta naziunala 1:50'000 | CN50"
 
 msgid "ch.swisstopo.pixelkarte-farbe-winter"
-msgstr "Charta naz. enviern | LK10, LK25, LK50, LK100"
+msgstr "Charta naz. enviern LK10,25,50,100"
 
 msgid "ch.swisstopo.pixelkarte-grau"
 msgstr "Charta naziunala (grisch)"
@@ -10974,7 +11145,7 @@ msgid "ch.swisstopo.rapidmapping.title"
 msgstr "Titel"
 
 msgid "ch.swisstopo.schneeschuhwandern"
-msgstr "Schneeschuhwandern"
+msgstr "Ir cun gianellas"
 
 msgid "ch.swisstopo.schneeschuhwandern.attribut_c"
 msgstr "Route"
@@ -10989,10 +11160,10 @@ msgid "ch.swisstopo.scnat"
 msgstr "swisstopo, scnat"
 
 msgid "ch.swisstopo.segelflugkarte.metadata"
-msgstr "Div. charta sgol senza motor Raster"
+msgstr "Div.charta sgol senza motor Raster"
 
 msgid "ch.swisstopo.segelflugkarte_papier.metadata"
-msgstr "Div. charta sgol senza motor Stampa"
+msgstr "Div.charta sgol senza motor Stampa"
 
 msgid "ch.swisstopo.segelflugkarte_papier.metadata.release"
 msgstr "Ausgabejahr"
@@ -11007,7 +11178,7 @@ msgid "ch.swisstopo.sgtk"
 msgstr "swisstopo, sgtk"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata"
-msgstr "Div. charta da sport da naiv 50 Stampa"
+msgstr "Div.charta sport da naiv 50 Stampa"
 
 msgid "ch.swisstopo.skitourenkarte-50.metadata.name"
 msgstr "Name"
@@ -11034,7 +11205,7 @@ msgid "ch.swisstopo.stk200-papierkarte.metadata"
 msgstr "Divisiun charta da las vias Stampa"
 
 msgid "ch.swisstopo.strassenkarte200_papier.metadata"
-msgstr "Div. charta da las vias Stampa"
+msgstr "Div. charta vias Stampa"
 
 msgid "ch.swisstopo.strassenkarte200_papier.metadata.release"
 msgstr "Ausgabejahr"
@@ -11685,7 +11856,7 @@ msgid "ch.swisstopo.transformationsgenauigkeit"
 msgstr "MN95 Precisaziun da transfurmaziun"
 
 msgid "ch.swisstopo.treasurehunt"
-msgstr "Schatzkarte"
+msgstr "Charta da stgazis"
 
 msgid "ch.swisstopo.uebersicht-gemeinden"
 msgstr "GEM300"
@@ -11781,7 +11952,7 @@ msgid "ch.swisstopo.vec200-adminboundaries-protectedarea"
 msgstr "Territoris protegids swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-building"
-msgstr "Edifizis generalisads swissTLMRegio"
+msgstr "Edifizis generalis. swissTLMRegio"
 
 msgid "ch.swisstopo.vec200-hydrography"
 msgstr "Idrologia swissTLMRegio"
@@ -11961,7 +12132,7 @@ msgid "ch.swisstopo.wanderkarte25-zus_papier.metadata.release"
 msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.wanderkarte33_papier.metadata"
-msgstr "Div. charta viandar 1:33'333 Stampa"
+msgstr "Div. charta viandar 1:33333 Stampa"
 
 msgid "ch.swisstopo.wanderkarte33_papier.metadata.name"
 msgstr "Name"
@@ -12153,7 +12324,7 @@ msgid "ch.vbs.sachplan-infrastruktur-militaer_kraft_polygons_raster"
 msgstr "Sachplan Militär"
 
 msgid "ch.vbs.schiessanzeigen"
-msgstr "Publizierte Schiessanzeigen und Gefahrenzonen"
+msgstr "Annunzias tir e zonas privel publ."
 
 msgid "ch.vbs.schiessanzeigen.auskunft"
 msgstr "Auskunftstelle"

@@ -957,7 +957,7 @@ msgid "ch.are.agglomerationsverkehr.name"
 msgstr "Nom de commune"
 
 msgid "ch.are.alpenkonvention"
-msgstr "Convention des Alpes"
+msgstr "Convention alpine"
 
 msgid "ch.are_and_canton"
 msgstr "ARE, canton"
@@ -1203,7 +1203,7 @@ msgid "ch.are.windenergie-bundesinteressen.tt_short_info"
 msgstr "Pour chaque cellule de 500m x 500m, les restrictions inhérentes aux intérêts de la Confédération lors de la planification d'installations éoliennes sont attribuées à une catégorie spécifique. L'attribution se fait en tenant compte du statut juridique des"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil"
-msgstr "inventaire des logements"
+msgstr "Inventaire des logements"
 
 msgid "ch.are.wohnungsinventar-zweitwohnungsanteil.gemeinde"
 msgstr "Commune"
@@ -1498,9 +1498,6 @@ msgstr "la Suisse en canoë"
 
 msgid "ch.astra.kt"
 msgstr "OFROU + canton"
-
-msgid "ch.astra.langsamverkehr-wandern_sperrungen_umleitungen"
-msgstr "Fermeture des sentiers de randonnée"
 
 msgid "ch.astra.mountainbikeland"
 msgstr "la Suisse à VTT"
@@ -2254,6 +2251,99 @@ msgstr "La Suisse à pied"
 
 msgid "ch.astra.wanderland.attribut_c"
 msgstr "Itinéraires"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen"
+msgstr "Fermeture des sentiers de randonnée"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.abstract"
+msgstr "Explications"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider"
+msgstr "Source des données"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.canton"
+msgstr "Service cantonal"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.schweizmobil"
+msgstr "SuisseMobile / Service cantonal"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
+msgstr "Suisse Rando et Associations cantonales de tourisme pédestre"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.duration"
+msgstr "Durée probable"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.file"
+msgstr "Détails"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason"
+msgstr "Raison"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.1"
+msgstr "Travaux de construction et d'entretien"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
+msgstr "Chemin impraticable"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
+msgstr "Trajet modifié"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
+msgstr "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.2"
+msgstr "Travaux forestiers"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.3"
+msgstr "Manifestation"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.4"
+msgstr "Éboulement"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.5"
+msgstr "Glissement de terrain"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.6"
+msgstr "Chute de pierres"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.7"
+msgstr "Avalanche de printemps"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.8"
+msgstr "Dommages suite à une tempête"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
+msgstr "Inondation"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.99"
+msgstr "Autre"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate"
+msgstr "Statut"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.provisionally"
+msgstr "provisoire"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.validated"
+msgstr "validé"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.title"
+msgstr "Titre"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.url1_link"
+msgstr "Autres informations"
 
 msgid "ch.babs"
 msgstr "OFPP"
@@ -3054,7 +3144,7 @@ msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Classes de sols de fondation"
 
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
-msgstr "Zones sismiques"
+msgstr "Zones sismiques SIA261"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
 msgstr "Séismes historiques"
@@ -5489,6 +5579,24 @@ msgstr "112 Numéro réseau satellite"
 msgid "ch.bakom.notruf-112_zentral"
 msgstr "112 Centrales d'alarme"
 
+msgid "ch.bakom.notruf-112_zentral.festnetz_112"
+msgstr "Numéro d'acheminement fixe"
+
+msgid "ch.bakom.notruf-112_zentral.fn_zentrale_112"
+msgstr "Centrale d'alarme réseau fixe"
+
+msgid "ch.bakom.notruf-112_zentral.mobile_112"
+msgstr "Numéro d'acheminement mobile"
+
+msgid "ch.bakom.notruf-112_zentral.mo_zentrale_112"
+msgstr "Centrale d'alarme réseau mobile"
+
+msgid "ch.bakom.notruf-112_zentral.satellit_112"
+msgstr "Numéro d'acheminement réseau satellite"
+
+msgid "ch.bakom.notruf-112_zentral.sa_zentrale_112"
+msgstr "Centrale d'alarme réseau satellite"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Réseau fixe"
 
@@ -5533,6 +5641,18 @@ msgstr "117 Numéro d’acheminement mobile"
 
 msgid "ch.bakom.notruf-117_zentral"
 msgstr "117 Centrales d'alarme"
+
+msgid "ch.bakom.notruf-117_zentral.festnetz_117"
+msgstr "Numméro d'acheminement fixe"
+
+msgid "ch.bakom.notruf-117_zentral.fn_zentrale_117"
+msgstr "Centrale d'alarme réseau fixe"
+
+msgid "ch.bakom.notruf-117_zentral.mobile_117"
+msgstr "Numméro d'acheminement mobile"
+
+msgid "ch.bakom.notruf-117_zentral.mo_zentrale_117"
+msgstr "Centrale d'alarme réseau mobile"
 
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Réseau fixe"
@@ -5579,6 +5699,18 @@ msgstr "118 Numéro d’acheminement mobile"
 msgid "ch.bakom.notruf-118_zentral"
 msgstr "118 Centrales d'alarme"
 
+msgid "ch.bakom.notruf-118_zentral.festnetz_118"
+msgstr "Numméro d'acheminement fixe"
+
+msgid "ch.bakom.notruf-118_zentral.fn_zentrale_118"
+msgstr "Centrale d'alarme réseau fixe"
+
+msgid "ch.bakom.notruf-118_zentral.mobile_118"
+msgstr "Numméro d'acheminement mobile"
+
+msgid "ch.bakom.notruf-118_zentral.mo_zentrale_118"
+msgstr "Centrale d'alarme réseau mobile"
+
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Réseau fixe"
 
@@ -5623,6 +5755,18 @@ msgstr "143 Numéro d’acheminement mobile"
 
 msgid "ch.bakom.notruf-143_zentral"
 msgstr "143 Centrales d'alarme"
+
+msgid "ch.bakom.notruf-143_zentral.festnetz_143"
+msgstr "Numéro d'acheminement fixe"
+
+msgid "ch.bakom.notruf-143_zentral.fn_zentrale_143"
+msgstr "Centrale d'alarme réseau fixe"
+
+msgid "ch.bakom.notruf-143_zentral.mobile_143"
+msgstr "Numéro d'acheminement mobile"
+
+msgid "ch.bakom.notruf-143_zentral.mo_zentrale_143"
+msgstr "Centrale d'alarme réseau mobile"
 
 msgid "ch.bakom.notruf-144_festnetz"
 msgstr "144 Réseau fixe"
@@ -5669,6 +5813,18 @@ msgstr "144 Numéro d’acheminement mobile"
 msgid "ch.bakom.notruf-144_zentral"
 msgstr "144 Centrales d'alarme"
 
+msgid "ch.bakom.notruf-144_zentral.festnetz_144"
+msgstr "Numéro d'acheminement fixe"
+
+msgid "ch.bakom.notruf-144_zentral.fn_zentrale_144"
+msgstr "Centrale d'alarme réseau fixe"
+
+msgid "ch.bakom.notruf-144_zentral.mobile_144"
+msgstr "Numéro d'acheminement mobile"
+
+msgid "ch.bakom.notruf-144_zentral.mo_zentrale_144"
+msgstr "Centrale d'alarme réseau mobile"
+
 msgid "ch.bakom.notruf-147_festnetz"
 msgstr "147 Réseau fixe"
 
@@ -5713,6 +5869,18 @@ msgstr "147 Numéro d’acheminement mobile"
 
 msgid "ch.bakom.notruf-147_zentral"
 msgstr "147 Centrales d'alarme"
+
+msgid "ch.bakom.notruf-147_zentral.festnetz_147"
+msgstr "Numéro d'acheminement fixe"
+
+msgid "ch.bakom.notruf-147_zentral.fn_zentrale_147"
+msgstr "Centrale d'alarme réseau fixe"
+
+msgid "ch.bakom.notruf-147_zentral.mobile_147"
+msgstr "Numéro d'acheminement mobile"
+
+msgid "ch.bakom.notruf-147_zentral.mo_zentrale_147"
+msgstr "Centrale d'alarme réseau mobile"
 
 msgid "ch.bakom.notruf.adresse_112_festnetz"
 msgstr "Centrale d‘alarme réseau fixe"
@@ -7159,6 +7327,9 @@ msgstr "Société"
 
 msgid "ch.bfe.erneuerbarheizen.consultant_cat"
 msgstr "Catégorie(s)"
+
+msgid "ch.bfe.erneuerbarheizen.consultingcosts"
+msgstr "Coûts de conseil"
 
 msgid "ch.bfe.erneuerbarheizen.email"
 msgstr "Adresse e-mail"
