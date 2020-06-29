@@ -1508,6 +1508,9 @@ msgstr "La Svizra cun velo da muntogna"
 msgid "ch.astra.mountainbikeland.attribut_c"
 msgstr "Route"
 
+msgid "ch.astra.mountainbikeland-sperrungen_umleitungen"
+msgstr "Sperrungen Mountainbike"
+
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Axas da las vias naziunalas"
 
@@ -1720,6 +1723,9 @@ msgstr "La Svizra cun skates"
 
 msgid "ch.astra.skatingland.attribut_c"
 msgstr "Route"
+
+msgid "ch.astra.skatingland-sperrungen_umleitungen"
+msgstr "Sperrungen Skating"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Dumbraziun traffic (regiunal)"
@@ -2239,6 +2245,9 @@ msgstr "La Svizra cun velo"
 
 msgid "ch.astra.veloland.attribut_c"
 msgstr "Route"
+
+msgid "ch.astra.veloland-sperrungen_umleitungen"
+msgstr "Sperrungen Velo"
 
 msgid "ch.astra.wanderland"
 msgstr "La Svizra a pe"
@@ -8960,9 +8969,6 @@ msgstr "Name"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
 msgstr "Nummer"
 
-msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata"
-msgstr "Div. charta geol. gen. 200 Stampa"
-
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name"
 msgstr "Name"
 
@@ -8980,9 +8986,6 @@ msgstr "Name"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.number"
 msgstr "Nummer"
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.release"
-msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
 msgstr "Ausgabejahr"
@@ -11731,9 +11734,6 @@ msgstr "Infurmaziuns vischnanca"
 
 msgid "ch.swisstopo-vd.geometa-grundbuch"
 msgstr "Infurmaziuns register funsil"
-
-msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Territoris en lavur"
 
 msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Geometer-revisur"

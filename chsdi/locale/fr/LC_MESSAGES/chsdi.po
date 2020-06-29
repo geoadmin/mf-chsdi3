@@ -1508,6 +1508,9 @@ msgstr "la Suisse à VTT"
 msgid "ch.astra.mountainbikeland.attribut_c"
 msgstr "Itinéraires"
 
+msgid "ch.astra.mountainbikeland-sperrungen_umleitungen"
+msgstr "to do"
+
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Axes des routes nationales"
 
@@ -1720,6 +1723,9 @@ msgstr "La Suisse en rollers"
 
 msgid "ch.astra.skatingland.attribut_c"
 msgstr "Itinéraires"
+
+msgid "ch.astra.skatingland-sperrungen_umleitungen"
+msgstr "to do"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Postes de comptage (régional)"
@@ -2239,6 +2245,9 @@ msgstr "La Suisse à vélo"
 
 msgid "ch.astra.veloland.attribut_c"
 msgstr "Itinéraires"
+
+msgid "ch.astra.veloland-sperrungen_umleitungen"
+msgstr "to do"
 
 msgid "ch.astra.wanderland"
 msgstr "La Suisse à pied"
@@ -8960,9 +8969,6 @@ msgstr "Nom"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
 msgstr "Numéro"
 
-msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata"
-msgstr "Découpage carte géologique générale 200 Papier"
-
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name"
 msgstr "Nom"
 
@@ -8980,9 +8986,6 @@ msgstr "Nom"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.number"
 msgstr "Numéro"
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.release"
-msgstr "Édition"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
 msgstr "Édition"
@@ -11731,9 +11734,6 @@ msgstr "Informations sur la commune"
 
 msgid "ch.swisstopo-vd.geometa-grundbuch"
 msgstr "Information sur le registre foncier"
-
-msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Secteurs en travaux"
 
 msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Géomètre-conservateur"
