@@ -17,6 +17,7 @@ class GeologieGeologische3dmodelle(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geologische3dmodelle.mako'
     __bodId__ = 'ch.swisstopo.geologie-geologische_3dmodelle'
+    __returnedGeometry__ = 'the_geom_simplified'
     __extended_info__ = True
     __label_ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -50,6 +51,7 @@ class GeologieGeologische3dmodelle(Base, Vector):
     it_link_documentation = Column('it_link_documentation', Unicode)
     en_link_documentation = Column('en_link_documentation', Unicode)
     rm_link_documentation = Column('rm_link_documentation', Unicode)
+    the_geom_simplified = Column('the_geom_simplified', Geometry2D)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geologische_3dmodelle', GeologieGeologische3dmodelle)
