@@ -44,22 +44,6 @@ class Alpenkonvention(Base, Vector):
 register('ch.are.alpenkonvention', Alpenkonvention)
 
 
-class AggloIsoStaedte(Base, Vector):
-    __tablename__ = 'agglomerationen_isolierte_staedte'
-    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
-    __template__ = 'templates/htmlpopup/aggloisostaedte.mako'
-    __bodId__ = 'ch.are.agglomerationen_isolierte_staedte'
-    __label__ = 'name'
-    id = Column('row_id', Integer, primary_key=True)
-    name = Column('name', Unicode)
-    klasse_de = Column('klasse_de', Unicode)
-    klasse_fr = Column('klasse_fr', Unicode)
-    flaeche_ha = Column('flaeche_ha', Float)
-    the_geom = Column(Geometry2D)
-
-register('ch.are.agglomerationen_isolierte_staedte', AggloIsoStaedte)
-
-
 class Agglomerationsverkehr(Base, Vector):
     __tablename__ = 'agglomerationsverkehr'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})

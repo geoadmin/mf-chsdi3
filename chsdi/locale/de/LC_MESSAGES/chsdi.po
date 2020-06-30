@@ -1499,14 +1499,14 @@ msgstr "Kanuland"
 msgid "ch.astra.kt"
 msgstr "ASTRA + Kanton"
 
-msgid "ch.astra.langsamverkehr-wandern_sperrungen_umleitungen"
-msgstr "Wanderwegsperrungen"
-
 msgid "ch.astra.mountainbikeland"
 msgstr "Mountainbikeland Schweiz"
 
 msgid "ch.astra.mountainbikeland.attribut_c"
 msgstr "Route"
+
+msgid "ch.astra.mountainbikeland-sperrungen_umleitungen"
+msgstr "Sperrungen Mountainbike"
 
 msgid "ch.astra.nationalstrassenachsen"
 msgstr "Nationalstrassenachsen"
@@ -1720,6 +1720,9 @@ msgstr "Skatingland Schweiz"
 
 msgid "ch.astra.skatingland.attribut_c"
 msgstr "Route"
+
+msgid "ch.astra.skatingland-sperrungen_umleitungen"
+msgstr "Sperrungen Skating"
 
 msgid "ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal"
 msgstr "Zählstellen (regional)"
@@ -2240,11 +2243,110 @@ msgstr "Veloland Schweiz"
 msgid "ch.astra.veloland.attribut_c"
 msgstr "Route"
 
+msgid "ch.astra.veloland-sperrungen_umleitungen"
+msgstr "Sperrungen Velo"
+
 msgid "ch.astra.wanderland"
 msgstr "Wanderland"
 
 msgid "ch.astra.wanderland.attribut_c"
 msgstr "Route"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen"
+msgstr "Sperrungen Wanderwege"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.abstract"
+msgstr "Weitere Informationen"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider"
+msgstr "Datenquelle"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.canton"
+msgstr "Kantonale Fachstelle"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.schweizmobil"
+msgstr "SchweizMobil / Kantonale Fachstelle"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.content_provider.sww"
+msgstr "Schweizer Wanderwege und kantonale Wanderweg-Fachorganisationen"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.duration"
+msgstr "Dauer"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.file"
+msgstr "Dokument"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason"
+msgstr "Grund"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.1"
+msgstr "Bau- & Unterhaltsarbeiten"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.10"
+msgstr "Hochwasser"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.11"
+msgstr "Geänderte Streckenführung"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.12"
+msgstr "Andere"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.13"
+msgstr "Weg unpassierbar"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.15"
+msgstr "GIGO: reason 15- not in spec"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.16"
+msgstr "GIGO: reason 16 - not in spec"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.2"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.3"
+msgstr "Forstarbeiten"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.4"
+msgstr "Grossanlass"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.5"
+msgstr "Felssturz"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.6"
+msgstr "Hangrutsch"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.7"
+msgstr "Steinschlag"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.8"
+msgstr "Frühlingslawine"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.9"
+msgstr "Sturmschäden"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.reason.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate"
+msgstr "Status"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.None"
+msgstr "-"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.provisionally"
+msgstr "provisorisch"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.state_validate.validated"
+msgstr "validiert"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.title"
+msgstr "Titel"
+
+msgid "ch.astra.wanderland-sperrungen_umleitungen.url1_link"
+msgstr "Webseite"
 
 msgid "ch.babs"
 msgstr "BABS"
@@ -2273,6 +2375,9 @@ msgstr "n.n."
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_116"
 msgstr "Die offiziellen Wanderwege sind ausgezäunt - es ist nicht damit zu rechnen, direkt auf die geschützte Herde zu treffen."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_123"
+msgstr "im Sektor Lavanchy-Poy, die Strasse ist ausgezäunt - es ist nicht damit zu rechnen, direkt auf die geschützte Herde zu treffen."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_125"
 msgstr "Empfehlungen zum korrekten Verhalten bei Begegnungen mit Mutterkuhherden finden Sie auf der Website der Schweizer Wanderwege."
 
@@ -2280,7 +2385,7 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_135"
 msgstr "Als Alternative  zum Weg Unteri Rippa - Bremingard - Col du Chamois wird bei Präsenz Hunde die Route Unteri Rippa - Cerniets - Col du Chamois empfohlen. Zwischen dem Col du Chamois und Cerniets wurde diese Alternativroute im Feld neu gekennzeichnet."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_138"
-msgstr "Der tiefer verlaufende Weg von der Niwenalp zum Stafel ist ausgezäunt; der höher parallel verlaufende Weg über Nibubedu hingegen quert in den Mt. Juni u. Sept. die geschützte Herde (Juli/Aug. befindet sich die Herde in höher gelegenen Weidesektoren)."
+msgstr "Der tiefer verlaufende Weg von der Niwenalp zum Stafel ist ausgezäunt, der höher parallel verlaufende Weg über Nibubedu hingegen quert in den Mt. Juni u. Sept. die geschützte Herde (Juli/Aug. befindet sich die Herde in höher gelegenen Weidesektoren)."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_145"
 msgstr "Die Herde und die Herdenschutzhunde sind zwar während dem Sommer einige Tage auf dem Kaiseregg-Pass, jedoch ausschliesslich unter der Woche"
@@ -2289,13 +2394,22 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_150"
 msgstr "Der Weg vom Vord. Sänntum zum Turtmannsee (westl. der Turtmänna) sowie der Höhenweg über Biele zur Turtmannhütte (östl. der Turtmänna) sind ausgezäunt. Für Juli wird empfohlen, den Weg vom Vord. Sänntum über Holustei nach Biele nicht zu nutzen."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_154"
-msgstr "Um die Schafalpung im Rappental zu sichern, läuft ein Pilotprojekt zur Intensivierung des Herdenschutzes. Zur Entlastung des Hirten werden Schafalpung mit Schutzhunden und Tourismus 2019 entflochten und Wanderwege temporär gesperrt oder umgeleitet."
+msgstr "Um die Schafalpung im Rappental zu sichern, läuft ein Pilotprojekt zur Intensivierung des Herdenschutzes. Zur Entlastung des Hirten werden Schafalpung mit Schutzhunden und Tourismus 2020 entflochten und Wanderwege temporär gesperrt oder umgeleitet."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_16"
 msgstr "Von Baumgarte zum Pass (Pkt. 1829) ist nur im September damit zu rechnen, auf Herdenschutzhunde zu stossen (davor ist der Wanderweg abgezäunt)."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_163"
 msgstr "Befindet sich die geschützte Herde in der Nähe des Wanderweges, so ist dieser ausgezäunt, so dass Sie in der Regel nicht auf die geschützte Herde treffen. Vom Mitführen von Hunden wird abgeraten."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_216"
+msgstr "Die Herdenschutzhunde sind zwischen Mitte Juni und Mitte Juli auf dem Wanderweg, welcher von der Bergstation Cuolm da Vi zur Zwischenstation bei Cungieri führt, anzutreffen. Der Weg wird in dieser Zeit ausgezäunt."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_220"
+msgstr "Auf dem markierten Gebiet im Val Segnas ist nur im Oktober damit zu rechnen, Herdenschutzhunde anzutreffen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_229"
+msgstr "Zum Zeitpunkt der Aktualisierung der Einsatzgebiete der Herdenschutzhunde war noch nicht definitiv klar, ob 2020 wirklich Hunde auf Les Ontanettes die Schafherde beschuetzen werden."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_4"
 msgstr "Der Wanderweg am Lag da Pigniu ist bei Anwesenheit der Herdenschutzhunde ausgezäunt, so dass Sie in der Regel nicht direkt auf die geschützte Herde treffen. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
@@ -2312,14 +2426,8 @@ msgstr "Die Wanderwege sind ausgezäunt, so dass Sie in der Regel nicht direkt a
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_60"
 msgstr "Der Wanderweg südlich des Bärried ist abgezäunt. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_73"
-msgstr "Der Dent de Valerette kann ohne Begegnung mit der geschützten Herde aus bestiegen werden. Wählen Sie dazu den Weg via Chîndonne."
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_77"
 msgstr "Der Wanderweg vom Bruchgeereberg über Pkt. 1652 und weiter Richtung Chummli ist ausgezäunt. Einzig während rund 2 Wochen ist auf dem Wegabschnitt Pkt. 1652-Chummli damit zu rechnen, direkt auf die geschützte Herde zu treffen (Auskünfte: NP Diemtigtal)"
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_87"
-msgstr "Der Ochsen kann auch ohne Begegnung mit der geschützten Herde bestiegen werden. Wählen Sie dazu den Wanderweg über Ritz und Oberalpigle."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_91"
 msgstr "Die Wanderwege sind ausgezäunt, so dass Sie in der Regel nicht direkt auf die geschützte Herde treffen. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
@@ -2396,8 +2504,26 @@ msgstr "In der Regel zwischen Mitte Juni und Ende September. Beachten Sie nach M
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1021"
 msgstr "In der Regel zwischen Mitte Juni und Mitte September."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1022"
 msgstr "Von Anfang August bis Mitte September ist auf dem Wanderweg von der Canalbrücke aus Richtung Zapporthütte damit zu rechnen, auf Herdenschutzhunde zu treffen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1023"
+msgstr "In der Regel Ende Mai bis Anfang Juli und Anfang September bis Mitte Oktober"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
+msgstr "In der Regel zwischen Anfang Juni und Mitte September."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1025"
+msgstr "In der Regel Ende Mai bis Ende Juni auf der Weide Lavanchy-Poy. Mitte Juni bis Ende September auf der Alp Taveyanne"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1026"
+msgstr "In der Regel Ende Mai bis Mitte Juni auf dem unteren Teil der Alpweide. Mitte August bis Anfang Oktober auf der ganzen Alp"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1027"
+msgstr "In der Regel Anfang Juni bis Mitte Oktober. Die Herde mit den Herdenschutzhunden befindet sich im August in der Region um die Seen"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1028"
+msgstr "Mitte April - Mitte Juni: Weiden Rossboden und Älpli bei Malans. Mitte Juni - Anfang Juli und September: Grüscheralp (Alpweide um Golrosa, Cavell, Schafbüel). Ab Juli - Anfang September: Alp Drusa (Alpweide rund um Carschinahütte und Schafberg)"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Kontakt E-Mail"
@@ -2480,6 +2606,9 @@ msgstr "Fläche [ha]"
 msgid "ch.bafu.auen-vegetationskarten"
 msgstr "Auen Vegetationskarten"
 
+msgid "ch.bafu.auen-vegetationskarten.area_ha"
+msgstr "Fläche [ha]"
+
 msgid "ch.bafu.auen-vegetationskarten.auveg_jahr"
 msgstr "Jahr der Kartierung"
 
@@ -2491,6 +2620,24 @@ msgstr "Name"
 
 msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
 msgstr "Objektnummer"
+
+msgid "ch.bafu.auen-vegetationskarten.code_primaervegetation"
+msgstr "Vegetationsnummer"
+
+msgid "ch.bafu.auen-vegetationskarten.kartierjahr"
+msgstr "Jahr der Kartierung"
+
+msgid "ch.bafu.auen-vegetationskarten.name"
+msgstr "Name"
+
+msgid "ch.bafu.auen-vegetationskarten.obj_nummer"
+msgstr "Objektnummer"
+
+msgid "ch.bafu.auen-vegetationskarten.primaervegetation"
+msgstr "Kartiereinheit der Primärvegetation"
+
+msgid "ch.bafu.auen-vegetationskarten.ref_obj_blatt"
+msgstr "Objektblatt"
 
 msgid "ch.bafu.biogeographische_regionen"
 msgstr "Biogeographische Regionen"
@@ -3045,7 +3192,10 @@ msgid "ch.bafu.gefahren-baugrundklassen"
 msgstr "Seismische Baugrundklassen"
 
 msgid "ch.bafu.gefahren-gefaehrdungszonen"
-msgstr "Erdbebenzonen"
+msgstr "Erdbebenzonen SIA 261"
+
+msgid "ch.bafu.gefahren-gefaehrdungszonen.zone"
+msgstr "Erdbebenzone SIA 261"
 
 msgid "ch.bafu.gefahren-historische_erdbeben"
 msgstr "Historische Erdbeben"
@@ -5480,6 +5630,24 @@ msgstr "112 Nummer Satellitennetz"
 msgid "ch.bakom.notruf-112_zentral"
 msgstr "112 Alarmzentralen"
 
+msgid "ch.bakom.notruf-112_zentral.festnetz_112"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-112_zentral.fn_zentrale_112"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-112_zentral.mobile_112"
+msgstr "Routing-Nummer Mobilenetz"
+
+msgid "ch.bakom.notruf-112_zentral.mo_zentrale_112"
+msgstr "Alarmzentrale Mobilnetz"
+
+msgid "ch.bakom.notruf-112_zentral.satellit_112"
+msgstr "Routing-Nummer Satellitennetz"
+
+msgid "ch.bakom.notruf-112_zentral.sa_zentrale_112"
+msgstr "Alarmzentrale Satellitennetz"
+
 msgid "ch.bakom.notruf-117_festnetz"
 msgstr "117 Festnetz"
 
@@ -5524,6 +5692,18 @@ msgstr "117 Routing-Nummer Mobilnetz"
 
 msgid "ch.bakom.notruf-117_zentral"
 msgstr "117 Alarmzentralen"
+
+msgid "ch.bakom.notruf-117_zentral.festnetz_117"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-117_zentral.fn_zentrale_117"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-117_zentral.mobile_117"
+msgstr "Routing-Nummer Mobilenetz"
+
+msgid "ch.bakom.notruf-117_zentral.mo_zentrale_117"
+msgstr "Alarmzentrale Mobilnetz"
 
 msgid "ch.bakom.notruf-118_festnetz"
 msgstr "118 Festnetz"
@@ -5570,6 +5750,18 @@ msgstr "118 Routing-Nummer Mobilnetz"
 msgid "ch.bakom.notruf-118_zentral"
 msgstr "118 Alarmzentralen"
 
+msgid "ch.bakom.notruf-118_zentral.festnetz_118"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-118_zentral.fn_zentrale_118"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-118_zentral.mobile_118"
+msgstr "Routing-Nummer Mobilenetz"
+
+msgid "ch.bakom.notruf-118_zentral.mo_zentrale_118"
+msgstr "Alarmzentrale Mobilnetz"
+
 msgid "ch.bakom.notruf-143_festnetz"
 msgstr "143 Festnetz"
 
@@ -5614,6 +5806,18 @@ msgstr "143 Routing-Nummer Mobilnetz"
 
 msgid "ch.bakom.notruf-143_zentral"
 msgstr "143 Alarmzentralen"
+
+msgid "ch.bakom.notruf-143_zentral.festnetz_143"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-143_zentral.fn_zentrale_143"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-143_zentral.mobile_143"
+msgstr "Routing-Nummer FMobilnetz"
+
+msgid "ch.bakom.notruf-143_zentral.mo_zentrale_143"
+msgstr "Alarmzentrale Mobilnetz"
 
 msgid "ch.bakom.notruf-144_festnetz"
 msgstr "144 Festnetz"
@@ -5660,6 +5864,18 @@ msgstr "144 Routing-Nummer Mobilnetz"
 msgid "ch.bakom.notruf-144_zentral"
 msgstr "144 Alarmzentralen"
 
+msgid "ch.bakom.notruf-144_zentral.festnetz_144"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-144_zentral.fn_zentrale_144"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-144_zentral.mobile_144"
+msgstr "Routing-Nummer FMobilnetz"
+
+msgid "ch.bakom.notruf-144_zentral.mo_zentrale_144"
+msgstr "Alarmzentrale Mobilnetz"
+
 msgid "ch.bakom.notruf-147_festnetz"
 msgstr "147 Festnetz"
 
@@ -5704,6 +5920,18 @@ msgstr "147 Routing-Nummer Mobilnetz"
 
 msgid "ch.bakom.notruf-147_zentral"
 msgstr "147 Alarmzentralen"
+
+msgid "ch.bakom.notruf-147_zentral.festnetz_147"
+msgstr "Routing-Nummer Festnetz"
+
+msgid "ch.bakom.notruf-147_zentral.fn_zentrale_147"
+msgstr "Alarmzentrale Festnetz"
+
+msgid "ch.bakom.notruf-147_zentral.mobile_147"
+msgstr "Routing-Nummer FMobilnetz"
+
+msgid "ch.bakom.notruf-147_zentral.mo_zentrale_147"
+msgstr "Alarmzentrale Mobilnetz"
 
 msgid "ch.bakom.notruf.adresse_112_festnetz"
 msgstr "Alarmzentrale Festnetz"
@@ -5982,13 +6210,13 @@ msgid "ch.bav.haltestellen-oev.verkehrsmittel"
 msgstr "Verkehrsmittel"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev"
-msgstr "Altlasten/belastete Standorte öV"
+msgstr "Belastete Standorte öV"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.katasternummer"
 msgstr "BAV Standortnummer"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
-msgstr "Altlasten/belastete Standorte öV ÖREB"
+msgstr "Belastete Standorte öV ÖREB"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.publiziertab"
 msgstr "Publiziert ab"
@@ -7151,6 +7379,9 @@ msgstr "Firma"
 msgid "ch.bfe.erneuerbarheizen.consultant_cat"
 msgstr "Kategorie/-n"
 
+msgid "ch.bfe.erneuerbarheizen.consultingcosts"
+msgstr "Beratungskosten"
+
 msgid "ch.bfe.erneuerbarheizen.email"
 msgstr "Mailadresse"
 
@@ -7647,7 +7878,7 @@ msgid "ch.bfe.thermische-netze.zip"
 msgstr "PLZ"
 
 msgid "ch.bfe.url"
-msgstr "http://www.bfe.admin.ch/index.html?lang=de"
+msgstr "https://www.bfe.admin.ch/bfe/de/home.html"
 
 msgid "ch.bfe.windenergieanlagen"
 msgstr "Windenergieanlagen"
@@ -8960,9 +9191,6 @@ msgstr "Name"
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.number"
 msgstr "Nummer"
 
-msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata"
-msgstr "Einteilung Geologische Generalkarte 200 Papier"
-
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.name"
 msgstr "Name"
 
@@ -8980,9 +9208,6 @@ msgstr "Name"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.number"
 msgstr "Nummer"
-
-msgid "ch.swisstopo.geologie-generalkarte-ggk200_papier.metadata.release"
-msgstr "Ausgabejahr"
 
 msgid "ch.swisstopo.geologie-generalkarte-ggk200.release"
 msgstr "Ausgabejahr"
@@ -11731,9 +11956,6 @@ msgstr "Gemeindeinformationen"
 
 msgid "ch.swisstopo-vd.geometa-grundbuch"
 msgstr "Grundbuchinformationen"
-
-msgid "ch.swisstopo-vd.geometa-los"
-msgstr "Gebiete in Arbeit"
 
 msgid "ch.swisstopo-vd.geometa-nfgeom"
 msgstr "Nachführungsgeometer/in"

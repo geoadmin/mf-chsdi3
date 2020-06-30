@@ -4,8 +4,8 @@
 
 <%
     lang = lang if lang in ('fr', 'it') else 'de'
-    consultant_cat = 'consultant_cat_%s' % lang
-    language = 'language_%s' % lang
+    consultant_cat = '%s_consultant_cat' % lang
+    language = '%s_language' % lang
 
     arr_address = []
 
@@ -49,6 +49,10 @@
     <tr>
         <td class="cell-left">${_('ch.bfe.erneuerbarheizen.pc_place')}</td>
         <td>${address}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.bfe.erneuerbarheizen.consultingcosts')}</td>
+        <td>${c['attributes']['consultingcosts'] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bfe.erneuerbarheizen.language')}</td>

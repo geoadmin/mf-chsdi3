@@ -82,6 +82,71 @@ class SchienennetzSegment(Base, Vector):
 register(SchienennetzSegment.__bodId__, SchienennetzSegment)
 
 
+class SperrungenUmleitungen:
+    __table_args__ = ({'schema': 'astra', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/sperrungen_umleitungen.mako'
+    __label__ = 'sperrungen_type'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    sperrungen_type = Column('type', Unicode)
+    land = Column('land', Unicode)
+    duration_de = Column('duration_de', Unicode)
+    duration_fr = Column('duration_fr', Unicode)
+    duration_it = Column('duration_it', Unicode)
+    duration_en = Column('duration_en', Unicode)
+    reason = Column('reason', Numeric)
+    title_de = Column('title_de', Unicode)
+    title_fr = Column('title_fr', Unicode)
+    title_it = Column('title_it', Unicode)
+    title_en = Column('title_en', Unicode)
+    abstract_de = Column('abstract_de', Unicode)
+    abstract_fr = Column('abstract_fr', Unicode)
+    abstract_it = Column('abstract_it', Unicode)
+    abstract_en = Column('abstract_en', Unicode)
+    state_validate = Column('state_validate', Unicode)
+    file_de = Column('file_de', Unicode)
+    file_fr = Column('file_fr', Unicode)
+    file_it = Column('file_it', Unicode)
+    file_en = Column('file_en', Unicode)
+    content_provider = Column('content_provider')
+    url1_link_de = Column('url1_link_de', Unicode)
+    url1_link_fr = Column('url1_link_fr', Unicode)
+    url1_link_it = Column('url1_link_it', Unicode)
+    url1_link_en = Column('url1_link_en', Unicode)
+    url1_text_de = Column('url1_text_de', Unicode)
+    url1_text_fr = Column('url1_text_fr', Unicode)
+    url1_text_it = Column('url1_text_it', Unicode)
+    url1_text_en = Column('url1_text_en', Unicode)
+    the_geom = Column('the_geom', Geometry2D)
+
+
+class WanderlandSperrungenUmleitungen(Base, SperrungenUmleitungen, Vector):
+    __tablename__ = 'v_sperrungen_umleitungen_line_wanderland'
+    __bodId__ = 'ch.astra.wanderland-sperrungen_umleitungen'
+
+register(WanderlandSperrungenUmleitungen.__bodId__, WanderlandSperrungenUmleitungen)
+
+
+class VelolandSperrungenUmleitungen(Base, SperrungenUmleitungen, Vector):
+    __tablename__ = 'v_sperrungen_umleitungen_line_veloland'
+    __bodId__ = 'ch.astra.veloland-sperrungen_umleitungen'
+
+register(VelolandSperrungenUmleitungen.__bodId__, VelolandSperrungenUmleitungen)
+
+
+class SkatinglandSperrungenUmleitungen(Base, SperrungenUmleitungen, Vector):
+    __tablename__ = 'v_sperrungen_umleitungen_line_skatingland'
+    __bodId__ = 'ch.astra.skatingland-sperrungen_umleitungen'
+
+register(SkatinglandSperrungenUmleitungen.__bodId__, SkatinglandSperrungenUmleitungen)
+
+
+class MountainbikelandSperrungenUmleitungen(Base, SperrungenUmleitungen, Vector):
+    __tablename__ = 'v_sperrungen_umleitungen_line_mtbland'
+    __bodId__ = 'ch.astra.mountainbikeland-sperrungen_umleitungen'
+
+register(MountainbikelandSperrungenUmleitungen.__bodId__, MountainbikelandSperrungenUmleitungen)
+
+
 class OevHaltestellen:
     __tablename__ = 'oev_haltestellen_tooltip'
     __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
@@ -886,7 +951,7 @@ register('ch.bfe.statistik-wasserkraftanlagen', StatistikwasserkraftanlagenNew)
 
 
 class Erneuerbarheizen(Base, Vector):
-    __tablename__ = 'erneuerbarheizen'
+    __tablename__ = 'renewable_heating'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/erneuerbarheizen.mako'
     __bodId__ = 'ch.bfe.erneuerbarheizen'
@@ -907,18 +972,22 @@ class Erneuerbarheizen(Base, Vector):
     website = Column('website', Unicode)
     privatecontrol = Column('privatecontrol', Unicode)
     additionalinformation = Column('additionalinformation', Unicode)
-    consulting_type_de = Column('consulting_type_de', Unicode)
-    consulting_type_fr = Column('consulting_type_fr', Unicode)
-    consulting_type_it = Column('consulting_type_it', Unicode)
-    consulting_type_en = Column('consulting_type_en', Unicode)
-    language_fr = Column('language_fr', Unicode)
-    language_it = Column('language_it', Unicode)
-    language_de = Column('language_de', Unicode)
-    language_en = Column('language_en', Unicode)
-    consultant_cat_fr = Column('consultant_cat_fr', Unicode)
-    consultant_cat_it = Column('consultant_cat_it', Unicode)
-    consultant_cat_de = Column('consultant_cat_de', Unicode)
-    consultant_cat_en = Column('consultant_cat_en', Unicode)
+    de_consulting_type = Column('de_consulting_type', Unicode)
+    fr_consulting_type = Column('fr_consulting_type', Unicode)
+    it_consulting_type = Column('it_consulting_type', Unicode)
+    en_consulting_type = Column('en_consulting_type', Unicode)
+    rm_consulting_type = Column('rm_consulting_type', Unicode)
+    de_language = Column('de_language', Unicode)
+    fr_language = Column('fr_language', Unicode)
+    it_language = Column('it_language', Unicode)
+    en_language = Column('en_language', Unicode)
+    rm_language = Column('rm_language', Unicode)
+    de_consultant_cat = Column('de_consultant_cat', Unicode)
+    fr_consultant_cat = Column('fr_consultant_cat', Unicode)
+    it_consultant_cat = Column('it_consultant_cat', Unicode)
+    en_consultant_cat = Column('en_consultant_cat', Unicode)
+    rm_consultant_cat = Column('rm_consultant_cat', Unicode)
+    consultingcosts = Column('consultingcosts', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.erneuerbarheizen', Erneuerbarheizen)
