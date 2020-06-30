@@ -15,6 +15,157 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20200701:
+
+Release 20200701 - Wednesday, July 1st 2020
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_200520...r_200701>`__
+- Announcement:
+    - The BFS layer ch.bfs.gebaeude_wohnungs_register (Register of Buildings and Dwellings) will extend its data model on all FSDI services (map, api3 and download on data.geo.admin.ch) by the release of September 16th 2020 according to https://www.bfs.admin.ch/bfs/en/home/statistics/catalogues-databases/publications.assetdetail.7008785.html (model description available in German only).
+    - The swisstopo layer ch.swisstopo.vec200-landcover-wald will be completely removed from the FSDI services in december 2020.
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_200520...r_200701>`__
+
+
+Geodata
+*******
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Apr. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-apr>`__ (ch.bafu.niederschlagserosivitaet-apr)                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Mai. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-mai>`__ (ch.bafu.niederschlagserosivitaet-mai)                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Jun. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-jun>`__ (ch.bafu.niederschlagserosivitaet-jun)                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Jul. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-jul>`__ (ch.bafu.niederschlagserosivitaet-jul)                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Aug. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-aug>`__ (ch.bafu.niederschlagserosivitaet-aug)                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Sep. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-sep>`__ (ch.bafu.niederschlagserosivitaet-sep)                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Oct. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-okt>`__ (ch.bafu.niederschlagserosivitaet-okt)                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Nov. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-nov>`__ (ch.bafu.niederschlagserosivitaet-nov)                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rainfall erosivity Dec. <//map.geo.admin.ch/?layers=ch.bafu.niederschlagserosivitaet-dez>`__ (ch.bafu.niederschlagserosivitaet-dez)                                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Forest swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlme3d-wald>`__ (ch.swisstopo.swisstlme3d-wald)                                                                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial Images swisstopo color <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_farbe>`__ (ch.swisstopo.lubis-luftbilder_farbe)                                                 |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial Images swisstopo b / w <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_schwarzweiss>`__ (ch.swisstopo.lubis-luftbilder_schwarzweiss)                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial Images swisstopo infrared <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_infrarot>`__ (ch.swisstopo.lubis-luftbilder_infrarot)                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images privates <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-firmen>`__ (ch.swisstopo.lubis-luftbilder-dritte-firmen)                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division geological atlas 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas.metadata)               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Alps with guard dogs <//map.geo.admin.ch/?layers=ch.bafu.alpenweiden_herdenschutzhunde>`__ (ch.bafu.alpenweiden_herdenschutzhunde)                                                      |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Basiskarte GIN <//map.geo.admin.ch/?layers=ch.bafu.gefahren-basiskarte>`__ (ch.bafu.gefahren-basiskarte)                                                                                |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Emergency calls by comune <//map.geo.admin.ch/?layers=ch.bakom.notruf>`__ (ch.bakom.notruf)                                                                                             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `112 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_festnetz>`__ (ch.bakom.notruf-112_festnetz)                                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `112 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_mobilnetz>`__ (ch.bakom.notruf-112_mobilnetz)                                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `112 Satellite network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_satellit>`__ (ch.bakom.notruf-112_satellit)                                                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `117 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_festnetz>`__ (ch.bakom.notruf-117_festnetz)                                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `117 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_mobilnetz>`__ (ch.bakom.notruf-117_mobilnetz)                                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `118 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_festnetz>`__ (ch.bakom.notruf-118_festnetz)                                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `118 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_mobilnetz>`__ (ch.bakom.notruf-118_mobilnetz)                                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `143 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-143_festnetz>`__ (ch.bakom.notruf-143_festnetz)                                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `143 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-143_mobilnetz>`__ (ch.bakom.notruf-143_mobilnetz)                                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `144 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-144_festnetz>`__ (ch.bakom.notruf-144_festnetz)                                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `144 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-144_mobilnetz>`__ (ch.bakom.notruf-144_mobilnetz)                                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `147 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-147_festnetz>`__ (ch.bakom.notruf-147_festnetz)                                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `147 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-147_mobilnetz>`__ (ch.bakom.notruf-147_mobilnetz)                                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 30 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink30>`__ (ch.bakom.downlink30)                                                                                          |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 3 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink3>`__ (ch.bakom.downlink3)                                                                                             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink10>`__ (ch.bakom.uplink10)                                                                                                |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Forest ecoregions <//map.geo.admin.ch/?layers=ch.bafu.wald-standortsregionen>`__ (ch.bafu.wald-standortsregionen)                                                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink100>`__ (ch.bakom.uplink100)                                                                                             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 1000 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink1000>`__ (ch.bakom.uplink1000)                                                                                          |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink100>`__ (ch.bakom.downlink100)                                                                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Optical fibre FTTB/FTTH <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-glasfaser>`__ (ch.bakom.anschlussart-glasfaser)                                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 300 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink300>`__ (ch.bakom.downlink300)                                                                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink10>`__ (ch.bakom.downlink10)                                                                                          |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Copper wire <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-kupferdraht>`__ (ch.bakom.anschlussart-kupferdraht)                                                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 500 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink500>`__ (ch.bakom.downlink500)                                                                                       |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 1000 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink1000>`__ (ch.bakom.downlink1000)                                                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Coaxial cable <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-koaxialkabel>`__ (ch.bakom.anschlussart-koaxialkabel)                                                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Areas of silver fir <//map.geo.admin.ch/?layers=ch.bafu.wald-tannenareale>`__ (ch.bafu.wald-tannenareale)                                                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tracer tests <//map.geo.admin.ch/?layers=ch.bafu.hydrogeologie-markierversuche>`__ (ch.bafu.hydrogeologie-markierversuche)                                                              |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Seismic zones SIA 261 <//map.geo.admin.ch/?layers=ch.bafu.gefahren-gefaehrdungszonen>`__ (ch.bafu.gefahren-gefaehrdungszonen)                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Number of connection providers <//map.geo.admin.ch/?layers=ch.bakom.anbieter-eigenes_festnetz>`__ (ch.bakom.anbieter-eigenes_festnetz)                                                  |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `3G - UMTS / HSPA <//map.geo.admin.ch/?layers=ch.bakom.mobilnetz-3g>`__ (ch.bakom.mobilnetz-3g)                                                                                          |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `3D geological models <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologische_3dmodelle>`__ (ch.swisstopo.geologie-geologische_3dmodelle)                                          |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink1>`__ (ch.bakom.uplink1)                                                                                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `4G - LTE / LTE-A <//map.geo.admin.ch/?layers=ch.bakom.mobilnetz-4g>`__ (ch.bakom.mobilnetz-4g)                                                                                          |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `2G - GSM / EDGE <//map.geo.admin.ch/?layers=ch.bakom.mobilnetz-2g>`__ (ch.bakom.mobilnetz-2g)                                                                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Advice on renewable energy <//map.geo.admin.ch/?layers=ch.bfe.erneuerbarheizen>`__ (ch.bfe.erneuerbarheizen)                                                                            |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `5G - NR <//map.geo.admin.ch/?layers=ch.bakom.mobilnetz-5g>`__ (ch.bakom.mobilnetz-5g)                                                                                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `3D terrain and corresponding backgroundmaps <//s.geo.admin.ch/8a12282172>`__ (ch.swisstopo.swisstlm3d-karte-grau.3d and ch.swisstopo.swisstlm3d-karte-farbe.3d)                         |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mapping of Floodplains of National Importance <//map.geo.admin.ch/?layers=ch.bafu.auen-vegetationskarten>`__ (ch.bafu.auen-vegetationskarten)                                           |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-eisenbahnnetz>`__ (ch.swisstopo.swisstlm3d-eisenbahnnetz)                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geosites <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geosites>`__ (ch.swisstopo.geologie-geosites)                                                                                |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geo-trails <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geowege>`__ (ch.swisstopo.geologie-geowege)                                                                                |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20200520:
 
 Release 20200520 - Wednesday, Mai 20th 2020
