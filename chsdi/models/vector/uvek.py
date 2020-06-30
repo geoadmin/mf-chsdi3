@@ -86,7 +86,6 @@ class SperrungenUmleitungen:
     __table_args__ = ({'schema': 'astra', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/sperrungen_umleitungen.mako'
     __label__ = 'sperrungen_type'
-    __queryable_attributes__ = ['title_de', 'title_fr', 'title_it', 'title_en']
     id = Column('bgdi_id', Integer, primary_key=True)
     sperrungen_type = Column('type', Unicode)
     land = Column('land', Unicode)
