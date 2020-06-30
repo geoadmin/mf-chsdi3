@@ -2375,6 +2375,9 @@ msgstr "n.n."
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_116"
 msgstr "Die offiziellen Wanderwege sind ausgezäunt - es ist nicht damit zu rechnen, direkt auf die geschützte Herde zu treffen."
 
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_123"
+msgstr "im Sektor Lavanchy-Poy, die Strasse ist ausgezäunt - es ist nicht damit zu rechnen, direkt auf die geschützte Herde zu treffen."
+
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_125"
 msgstr "Empfehlungen zum korrekten Verhalten bei Begegnungen mit Mutterkuhherden finden Sie auf der Website der Schweizer Wanderwege."
 
@@ -2382,7 +2385,7 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_135"
 msgstr "Als Alternative  zum Weg Unteri Rippa - Bremingard - Col du Chamois wird bei Präsenz Hunde die Route Unteri Rippa - Cerniets - Col du Chamois empfohlen. Zwischen dem Col du Chamois und Cerniets wurde diese Alternativroute im Feld neu gekennzeichnet."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_138"
-msgstr "Der tiefer verlaufende Weg von der Niwenalp zum Stafel ist ausgezäunt; der höher parallel verlaufende Weg über Nibubedu hingegen quert in den Mt. Juni u. Sept. die geschützte Herde (Juli/Aug. befindet sich die Herde in höher gelegenen Weidesektoren)."
+msgstr "Der tiefer verlaufende Weg von der Niwenalp zum Stafel ist ausgezäunt, der höher parallel verlaufende Weg über Nibubedu hingegen quert in den Mt. Juni u. Sept. die geschützte Herde (Juli/Aug. befindet sich die Herde in höher gelegenen Weidesektoren)."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_145"
 msgstr "Die Herde und die Herdenschutzhunde sind zwar während dem Sommer einige Tage auf dem Kaiseregg-Pass, jedoch ausschliesslich unter der Woche"
@@ -2391,13 +2394,22 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_150"
 msgstr "Der Weg vom Vord. Sänntum zum Turtmannsee (westl. der Turtmänna) sowie der Höhenweg über Biele zur Turtmannhütte (östl. der Turtmänna) sind ausgezäunt. Für Juli wird empfohlen, den Weg vom Vord. Sänntum über Holustei nach Biele nicht zu nutzen."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_154"
-msgstr "Um die Schafalpung im Rappental zu sichern, läuft ein Pilotprojekt zur Intensivierung des Herdenschutzes. Zur Entlastung des Hirten werden Schafalpung mit Schutzhunden und Tourismus 2019 entflochten und Wanderwege temporär gesperrt oder umgeleitet."
+msgstr "Um die Schafalpung im Rappental zu sichern, läuft ein Pilotprojekt zur Intensivierung des Herdenschutzes. Zur Entlastung des Hirten werden Schafalpung mit Schutzhunden und Tourismus 2020 entflochten und Wanderwege temporär gesperrt oder umgeleitet."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_16"
 msgstr "Von Baumgarte zum Pass (Pkt. 1829) ist nur im September damit zu rechnen, auf Herdenschutzhunde zu stossen (davor ist der Wanderweg abgezäunt)."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_163"
 msgstr "Befindet sich die geschützte Herde in der Nähe des Wanderweges, so ist dieser ausgezäunt, so dass Sie in der Regel nicht auf die geschützte Herde treffen. Vom Mitführen von Hunden wird abgeraten."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_216"
+msgstr "Die Herdenschutzhunde sind zwischen Mitte Juni und Mitte Juli auf dem Wanderweg, welcher von der Bergstation Cuolm da Vi zur Zwischenstation bei Cungieri führt, anzutreffen. Der Weg wird in dieser Zeit ausgezäunt."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_220"
+msgstr "Auf dem markierten Gebiet im Val Segnas ist nur im Oktober damit zu rechnen, Herdenschutzhunde anzutreffen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_229"
+msgstr "Zum Zeitpunkt der Aktualisierung der Einsatzgebiete der Herdenschutzhunde war noch nicht definitiv klar, ob 2020 wirklich Hunde auf Les Ontanettes die Schafherde beschuetzen werden."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_4"
 msgstr "Der Wanderweg am Lag da Pigniu ist bei Anwesenheit der Herdenschutzhunde ausgezäunt, so dass Sie in der Regel nicht direkt auf die geschützte Herde treffen. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
@@ -2414,14 +2426,8 @@ msgstr "Die Wanderwege sind ausgezäunt, so dass Sie in der Regel nicht direkt a
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_60"
 msgstr "Der Wanderweg südlich des Bärried ist abgezäunt. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_73"
-msgstr "Der Dent de Valerette kann ohne Begegnung mit der geschützten Herde aus bestiegen werden. Wählen Sie dazu den Weg via Chîndonne."
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_77"
 msgstr "Der Wanderweg vom Bruchgeereberg über Pkt. 1652 und weiter Richtung Chummli ist ausgezäunt. Einzig während rund 2 Wochen ist auf dem Wegabschnitt Pkt. 1652-Chummli damit zu rechnen, direkt auf die geschützte Herde zu treffen (Auskünfte: NP Diemtigtal)"
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_87"
-msgstr "Der Ochsen kann auch ohne Begegnung mit der geschützten Herde bestiegen werden. Wählen Sie dazu den Wanderweg über Ritz und Oberalpigle."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_91"
 msgstr "Die Wanderwege sind ausgezäunt, so dass Sie in der Regel nicht direkt auf die geschützte Herde treffen. Mit Begleithunden - undbeding angeleint - bitte zügig an der geschützten Weide vorbeigehen."
@@ -2498,8 +2504,26 @@ msgstr "In der Regel zwischen Mitte Juni und Ende September. Beachten Sie nach M
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1021"
 msgstr "In der Regel zwischen Mitte Juni und Mitte September."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1022"
 msgstr "Von Anfang August bis Mitte September ist auf dem Wanderweg von der Canalbrücke aus Richtung Zapporthütte damit zu rechnen, auf Herdenschutzhunde zu treffen."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1023"
+msgstr "In der Regel Ende Mai bis Anfang Juli und Anfang September bis Mitte Oktober"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
+msgstr "In der Regel zwischen Anfang Juni und Mitte September."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1025"
+msgstr "In der Regel Ende Mai bis Ende Juni auf der Weide Lavanchy-Poy. Mitte Juni bis Ende September auf der Alp Taveyanne"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1026"
+msgstr "In der Regel Ende Mai bis Mitte Juni auf dem unteren Teil der Alpweide. Mitte August bis Anfang Oktober auf der ganzen Alp"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1027"
+msgstr "In der Regel Anfang Juni bis Mitte Oktober. Die Herde mit den Herdenschutzhunden befindet sich im August in der Region um die Seen"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1028"
+msgstr "Mitte April - Mitte Juni: Weiden Rossboden und Älpli bei Malans. Mitte Juni - Anfang Juli und September: Grüscheralp (Alpweide um Golrosa, Cavell, Schafbüel). Ab Juli - Anfang September: Alp Drusa (Alpweide rund um Carschinahütte und Schafberg)"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Kontakt E-Mail"
@@ -2597,7 +2621,7 @@ msgstr "Name"
 msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
 msgstr "Objektnummer"
 
-msgid "ch.bafu.auen-vegetationskarten.code_primaervegtation"
+msgid "ch.bafu.auen-vegetationskarten.code_primaervegetation"
 msgstr "Vegetationsnummer"
 
 msgid "ch.bafu.auen-vegetationskarten.kartierjahr"
@@ -2610,7 +2634,7 @@ msgid "ch.bafu.auen-vegetationskarten.obj_nummer"
 msgstr "Objektnummer"
 
 msgid "ch.bafu.auen-vegetationskarten.primaervegetation"
-msgstr "Kartiereinheit der Primärvege-tation"
+msgstr "Kartiereinheit der Primärvegetation"
 
 msgid "ch.bafu.auen-vegetationskarten.ref_obj_blatt"
 msgstr "Objektblatt"

@@ -2244,7 +2244,7 @@ msgid "ch.astra.veloland.attribut_c"
 msgstr "Route"
 
 msgid "ch.astra.veloland-sperrungen_umleitungen"
-msgstr "Closures bike"
+msgstr "Closures Bike"
 
 msgid "ch.astra.wanderland"
 msgstr "Wanderland"
@@ -2364,7 +2364,7 @@ msgid "ch.bafu"
 msgstr "FOEN"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde"
-msgstr "Alps with guard dogs"
+msgstr "Alps with livestock guardian dogs"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis"
 msgstr "Hints"
@@ -2374,6 +2374,9 @@ msgstr "n.n."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_116"
 msgstr "A fence will protect you from direct contact with the guardian dogs on the official hiking trails."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_123"
+msgstr "In Lavanchy -Poy, a fence will protect you from direct contact with the guardian dogs on the street."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_125"
 msgstr "You can find recommendations for correct behavior around suckler cows on the Swiss hiking trails  website (only in de/fr/it)."
@@ -2391,13 +2394,22 @@ msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_150"
 msgstr "On the trails \"Vorderer Sänntum\" to \"Turtmannsee\" (west of \"Turtmänna\") and \"Biele\" to the \"Turtmannhütte\" (east of \"Turtmänna\") the dogs are fenced off. We recommend not to hike from \"Vorderer Sänntum\" via \"Holstulei\" to \"Biele\" in July."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_154"
-msgstr "To ensure Alpine pasturing with sheep in Rappental, livestock protection has been intensified. To relieve the shepherd, livestock guardian dogs and tourism will be separated in 2019 - hiking trails will be temporarily closed or diverted."
+msgstr "To ensure Alpine pasturing with sheep in Rappental, livestock protection has been intensified. To relieve the shepherd, livestock guardian dogs and tourism will be separated in 2020 - hiking trails will be temporarily closed or diverted."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_16"
 msgstr "A fence will prevent direct contact with the guardian dogs. Only between Baumgarte to the pass (1829) the trail is not fenced off. There, guardian dogs are only present in September."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_163"
 msgstr "If sheep and guardian dogs are close to the hiking trail, a fence will protect you from direct contact. If you have a companion dog with you, please put it on the leash and pass the pasture briskly."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_216"
+msgstr "The dogs can be met between mid-June and mid-July on the hiking trail that leads from the Cuolm da Vi top station to the intermediate station at Cungieri. The hiking trail is fenced out during this time."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_220"
+msgstr "In the Val Segnas area, sheep and guardian dogs might be present only in October."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_229"
+msgstr "It wasn`t decided yet, if there will be guardian dogs with the sheep at Les Ontanettes, when the protection areas were updated."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_4"
 msgstr "When guardian dogs are present around Lag da Pigniu, a fence will protect you from direct contact. If you have a companion dog with you, please put it on the leash and pass the pasture briskly."
@@ -2414,14 +2426,8 @@ msgstr "A fence will protect you from direct contact with the guardian dogs. If 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_60"
 msgstr "South of Bärried, a fence will protect you from direct contact with the guardian dogs. If you have a companion dog with you, please put it on the leash and pass the pasture briskly."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_73"
-msgstr "If you want to climb Dent de Valerette without direct contact with the guardian dogs, use the trail via Chîndonne."
-
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_77"
 msgstr "The hiking trail from Bruchgeereberg via Pkt. 1652 and further on towards Chummli is fenced off. Only during about 2 weeks it is possible to meet the protected herd on the trail section Chummli Pkt. 1652 directly (More information: NP Diemtigtal)."
-
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_87"
-msgstr "If you want to climb Ochsen without direct contact with the guardian dogs, use the trail via Ritz and Oberalpiege."
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hinweis_code_91"
 msgstr "A fence will protect you from direct contact with the guardian dogs. If you have a companion dog with you, please put it on the leash and pass the pasture briskly."
@@ -2498,8 +2504,26 @@ msgstr "Usually from mid June until the end of September. Please consider the in
 msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1021"
 msgstr "Usually from mid June until mid September."
 
-msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1022"
 msgstr "From the beginning of August until mid September you might have direct contact with the guardian dogs on the trail between \"Canalbrücke\" and \"Zapporthütte\"."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1023"
+msgstr "Usually from late May to the beginning of July and from early September to mid-October"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1024"
+msgstr "Usually from the beginning of June until mid September."
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1025"
+msgstr "Usually from the end of May to the end of June on the pasture around Lavanchy-Poy and from mid-June to the end of September on the pasture around Taveyanne mountain"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1026"
+msgstr "Usually from the end of May to mid-June on the lower part of the mountain pasture and from mid-August to the beginning of October on the whole of the mountain pasture"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1027"
+msgstr "Usually from the beginning of June to mid-October. The flock and the livestock guardian dogs are around the lakes during the month of August"
+
+msgid "ch.bafu.alpweiden-herdenschutzhunde.hundepraesenz_code_1028"
+msgstr "Mid April - mid June: Pastures Rossboden and Älpli near Malans. Mid June - beginning of July and September: Grüscheralp. From July - beginning of September: Alp Drusa (alpine pasture around Carschina hut and Schafberg)"
 
 msgid "ch.bafu.alpweiden-herdenschutzhunde.kontemail"
 msgstr "Contact E-mail"
@@ -2597,7 +2621,7 @@ msgstr "Object name"
 msgid "ch.bafu.auen-vegetationskarten.auveg_obj"
 msgstr "Object Nr."
 
-msgid "ch.bafu.auen-vegetationskarten.code_primaervegtation"
+msgid "ch.bafu.auen-vegetationskarten.code_primaervegetation"
 msgstr "Number of Vegetation"
 
 msgid "ch.bafu.auen-vegetationskarten.kartierjahr"
@@ -6192,7 +6216,7 @@ msgid "ch.bav.kataster-belasteter-standorte-oev.katasternummer"
 msgstr "BAV Standortnummer"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb"
-msgstr "Polluted sites - pub. transp. OeREB"
+msgstr "Polluted sites - pub. transp. PLR"
 
 msgid "ch.bav.kataster-belasteter-standorte-oev.oereb.publiziertab"
 msgstr "Published since"
