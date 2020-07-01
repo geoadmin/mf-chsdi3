@@ -1,6 +1,7 @@
 *.pyc
 *.ini
 *.mo
+*.po
 *.iml
 *.swp
 *~

@@ -1,11 +1,22 @@
 # -*- coding: utf-8 -*-
 
+
+import cachetools.func
+
 from gatilegrid import getTileGrid
 from sqlalchemy import Column, Unicode, Integer, Boolean, DateTime, Float
 from sqlalchemy.dialects import postgresql
+from sqlalchemy.exc import SQLAlchemyError
 
 from chsdi.lib.helpers import make_agnostic, shift_to
 from chsdi.models import bases, models_from_bodid, get_models_attributes_keys
+
+import logging
+
+log = logging.getLogger(__name__)
+
+# Interval (sec) between two request to translation table
+DYNAMIC_TRANSLATION_TTL = 3600
 
 Base = bases['bod']
 
@@ -499,3 +510,21 @@ class Translations(Base):
     it = Column('it', Unicode)
     rm = Column('rm', Unicode)
     en = Column('en', Unicode)
+
+
+@cachetools.func.ttl_cache(ttl = DYNAMIC_TRANSLATION_TTL)
+def get_translations(lang, session):
+    # Returns the the translation dictionnary from BOD for all supported langs.
+    log.debug('Get translations from DB for "{}"'.format(lang))
+
+    d = {}
+    try:
+        query = session.query(Translations)
+        results = query.all()
+        for row in results:
+            d[row.msgId] = getattr(row, lang)
+    except SQLAlchemyError as e:
+        log.error("Cannot get translations from BOD: {}".format(e))
+        return None
+
+    return d

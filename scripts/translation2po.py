@@ -4,6 +4,7 @@ import os
 import sys
 import codecs
 import yaml
+import six
 import psycopg2
 from collections import OrderedDict
 from psycopg2.extras import RealDictCursor
@@ -87,12 +88,16 @@ def sanatize(txt):
 
 def write_po_file(lang, translations, f):
     f.write(create_yaml_header(lang))
-    for msg_id, val in translations[lang].iteritems():
-        f.write("msgid \"" + sanatize(msg_id) + "\"\n")
-        if val:
-            f.write("msgstr \"" + sanatize(val) + "\"\n\n")
-        else:
-            f.write("msgstr \"" + sanatize(msg_id) + "\"\n\n")
+    if six.PY2:
+        items_gen = translations[lang].iteritems()
+    else:
+        items_gen = translations[lang].items()
+    for msg_id, val in items_gen:
+            f.write("msgid \"" + sanatize(msg_id) + "\"\n")
+            if val:
+                f.write("msgstr \"" + sanatize(val) + "\"\n\n")
+            else:
+                f.write("msgstr \"" + sanatize(msg_id) + "\"\n\n")
 
 
 def main():
