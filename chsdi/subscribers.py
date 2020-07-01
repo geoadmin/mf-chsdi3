@@ -34,10 +34,13 @@ def update_localizer(lang, localizer, session):
 
     translations = get_translations(lang, session)
 
-    if translations is not None and 'chsdi' in localizer.translations._domains.keys():
-        localizer.translations._domains['chsdi']._catalog = translations
+    if translations is not None:
+        if 'chsdi' in localizer.translations._domains.keys():
+            localizer.translations._domains['chsdi']._catalog = translations
+        else:
+            log.error("Cannot update localizer. Inexisting domain.")
     else:
-        log.error("Cannot add BOD translations to the 'localizer'. Inexisting domain or empty catalog.")
+        log.error("Cannot update the 'localizer'. Empty catalog.")
     return localizer
 
 

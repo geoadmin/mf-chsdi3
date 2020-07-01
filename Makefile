@@ -102,7 +102,7 @@ LAST_KML_TEMP_DIR := $(call lastvalue,kml-temp-dir)
 LAST_GIT_COMMIT_HASH ?= $(call lastvalue,git-commit-hash)
 LAST_GIT_COMMIT_SHORT ?= $(call lastvalue,git-commit-short)
 LAST_GITHUB_LAST_COMMIT := $(call lastvalue,github-last-commit)
-LAST_DYNAMIC_TRANSLATION := $(call lastvalue, dynamic-translation)
+LAST_DYNAMIC_TRANSLATION := $(call lastvalue,dynamic-translation)
 
 PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
 TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
@@ -228,7 +228,7 @@ user:
 	source $(USER_SOURCE) && make all
 
 .PHONY: all
-all: setup chsdi/static/css/extended.min.css templates potomo lint fixrights doc rss
+all: setup chsdi/static/css/extended.min.css templates translate lint fixrights doc rss
 
 setup: .venv node_modules .venv/hooks
 
@@ -294,8 +294,13 @@ rss: doc chsdi/static/doc/build/releasenotes/index.html
 .PHONY: translate
 translate:
 	@echo "${GREEN}Updating translations...${RESET}";
-	source rc_dev && ${PYTHON_CMD} scripts/translation2po.py chsdi/locale/;
-	make potomo;
+	make pofiles potomo
+	
+.PHONY: pofiles
+pofiles:
+		@echo "${GREEN}Generating pofiles...${RESET}";
+		mkdir -p chsdi/locale/{de,fr,it,fi,en}/LC_MESSAGES;
+		source rc_dev && ${PYTHON_CMD} scripts/translation2po.py chsdi/locale/
 
 chsdi/locale/en/LC_MESSAGES/chsdi.po:
 chsdi/locale/en/LC_MESSAGES/chsdi.mo: chsdi/locale/en/LC_MESSAGES/chsdi.po
@@ -773,11 +778,11 @@ cleanall: clean
 	rm -rf node_modules
 	rm -rf .git/hooks/*
 	rm -rf chsdi/static/css/extended.min.css
-	rm -rf chsdi/locale/en/LC_MESSAGES/chsdi.mo
-	rm -rf chsdi/locale/fr/LC_MESSAGES/chsdi.mo
-	rm -rf chsdi/locale/de/LC_MESSAGES/chsdi.mo
-	rm -rf chsdi/locale/fi/LC_MESSAGES/chsdi.mo
-	rm -rf chsdi/locale/it/LC_MESSAGES/chsdi.mo
+	rm -rf chsdi/locale/en/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/fr/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/de/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/fi/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/it/LC_MESSAGES/chsdi.*
 	rm -rf chsdi/static/js/jquery.min.js
 	rm -rf chsdi/static/js/blueimp-gallery.min.js
 	rm -rf chsdi/static/js/d3.min.js
