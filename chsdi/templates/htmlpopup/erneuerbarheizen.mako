@@ -52,7 +52,11 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bfe.erneuerbarheizen.consultingcosts')}</td>
-        <td>${c['attributes']['consultingcosts'] or '-'}</td>
+        % if c['attributes']['consultingcosts'] == None:
+            <td>${_('ch.bfe.erneuerbarheizen.onrequest')}<td>
+        % else:
+            <td>${c['attributes']['consultingcosts']}</td>
+        %endif
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bfe.erneuerbarheizen.language')}</td>
