@@ -1,6 +1,6 @@
 {
   "type": "unique",
-  "property": "type_coord",
+  "property": "name",
   "values": [
     {
       "geomType": "point",
@@ -11,7 +11,7 @@
       }
     }, {
       "geomType": "point",
-      "value": "info",
+      "value": "",
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.swisstopo.treasurehunt/2015_info.png"
