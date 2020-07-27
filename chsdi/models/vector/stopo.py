@@ -3358,3 +3358,38 @@ class AmtlichesAdressVerzeichnis(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(AmtlichesAdressVerzeichnis.__bodId__, AmtlichesAdressVerzeichnis)
+
+
+class GeologieFelslabore(Base, Vector):
+    __tablename__ = 'felslabore'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geol_felslabore.mako'
+    __bodId__ = 'ch.swisstopo.geologie-felslabore'
+    __label__ = 'name'
+    __extended_info__ = True
+    __queryabl_attributes__ = ['name', 'operator']
+    name = Column('name', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_en = Column('description_en', Unicode)
+    operator = Column('operator', Unicode)
+    time_frame = Column('time_frame', Unicode)
+    website_de = Column('website_de', Unicode)
+    website_fr = Column('website_fr', Unicode)
+    website_en = Column('website_en', Unicode)
+    visitor_de = Column('visitor_de', Unicode)
+    visitor_fr = Column('visitor_fr', Unicode)
+    visitor_en = Column('visitor_en', Unicode)
+    partners_de = Column('partners_de', Unicode)
+    partners_fr = Column('partners_fr', Unicode)
+    partners_en = Column('partners_en', Unicode)
+    publ_opr_de = Column('publ_opr_de', Unicode)
+    publ_opr_fr = Column('publ_opr_fr', Unicode)
+    publ_opr_en = Column('publ_opr_en', Unicode)
+    publ_tech_de = Column('publ_tech_de', Unicode)
+    publ_tech_fr = Column('publ_tech_fr', Unicode)
+    publ_tech_en = Column('publ_tech_en', Unicode)
+    research_data = Column('research_data', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-felslabore', GeologieFelslabore)
