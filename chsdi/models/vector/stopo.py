@@ -3363,7 +3363,7 @@ register(AmtlichesAdressVerzeichnis.__bodId__, AmtlichesAdressVerzeichnis)
 class GeologieFelslabore(Base, Vector):
     __tablename__ = 'felslabore'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/geol_felslabore.mako'
+    __template__ = 'templates/htmlpopup/geologie_felslabore.mako'
     __bodId__ = 'ch.swisstopo.geologie-felslabore'
     __label__ = 'name'
     __extended_info__ = True
