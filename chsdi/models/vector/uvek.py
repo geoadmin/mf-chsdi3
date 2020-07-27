@@ -1216,6 +1216,7 @@ class BakomNotrufBase:
 class BakomNotruf143Zentral(Base, BakomNotrufBase, Vector):
     __template__ = 'templates/htmlpopup/notruf_zentral_143.mako'
     __bodId__ = 'ch.bakom.notruf-143_zentral'
+    gemeinde_143 = Column('gemeinde_143', Unicode)
     festnetz_143 = Column('festnetz_143', Unicode)
     fn_zentrale_143 = Column('fn_zentrale_143', Unicode)
     mobile_143 = Column('mobile_143', Unicode)
@@ -1243,6 +1244,7 @@ register('ch.bakom.notruf-144_festnetz', BakomNotruf144Fest)
 class BakomNotruf144Zentral(Base, BakomNotrufBase, Vector):
     __template__ = 'templates/htmlpopup/notruf_zentral_144.mako'
     __bodId__ = 'ch.bakom.notruf-144_zentral'
+    gemeinde_144 = Column('gemeinde_144', Unicode)
     festnetz_144 = Column('festnetz_144', Unicode)
     fn_zentrale_144 = Column('fn_zentrale_144', Unicode)
     mobile_144 = Column('mobile_144', Unicode)
@@ -1270,6 +1272,7 @@ register('ch.bakom.notruf-147_festnetz', BakomNotruf147Fest)
 class BakomNotruf147Zentral(Base, BakomNotrufBase, Vector):
     __template__ = 'templates/htmlpopup/notruf_zentral_147.mako'
     __bodId__ = 'ch.bakom.notruf-147_zentral'
+    gemeinde_147 = Column('gemeinde_147', Unicode)
     festnetz_147 = Column('festnetz_147', Unicode)
     fn_zentrale_147 = Column('fn_zentrale_147', Unicode)
     mobile_147 = Column('mobile_147', Unicode)
