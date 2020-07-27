@@ -17,6 +17,7 @@
     endfor
 %>
 <% c['stable_id'] = True %>
+    <tr><td class="cell-left">${_('ch.bakom.notruf-117_zentral.gemeinde_117')}</td>    	<td>${c['attributes']['gemeinde_117'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bakom.notruf-117_zentral.festnetz_117')}</td>    	<td>${c['attributes']['festnetz_117'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bakom.notruf-117_zentral.fn_zentrale_117')}</td>          <td>${_(str_output_fn)|n}</td></tr>
     <tr><td class="cell-left">${_('ch.bakom.notruf-117_zentral.mobile_117')}</td>           <td>${c['attributes']['mobile_117'] or '-'}</td></tr>

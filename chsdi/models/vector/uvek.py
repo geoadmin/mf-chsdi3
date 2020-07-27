@@ -1423,6 +1423,7 @@ class BakomNotruf112Zentral(Base, Vector):
     __queryable_attributes__ = []
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
+    gemeinde_112 = Column('gemeinde_112', Unicode)
     festnetz_112 = Column('festnetz_112', Unicode)
     fn_zentrale_112 = Column('fn_zentrale_112', Unicode)
     mobile_112 = Column('mobile_112', Unicode)
@@ -1442,6 +1443,7 @@ class BakomNotruf117Zentral(Base, Vector):
     __queryable_attributes__ = []
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
+    gemeinde_117 = Column('gemeinde_112', Unicode)
     festnetz_117 = Column('festnetz_117', Unicode)
     fn_zentrale_117 = Column('fn_zentrale_117', Unicode)
     mobile_117 = Column('mobile_117', Unicode)
@@ -1459,6 +1461,7 @@ class BakomNotruf118Zentral(Base, Vector):
     __queryable_attributes__ = []
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
+    gemeinde_118 = Column('gemeinde_112', Unicode)
     festnetz_118 = Column('festnetz_118', Unicode)
     fn_zentrale_118 = Column('fn_zentrale_118', Unicode)
     mobile_118 = Column('mobile_118', Unicode)
