@@ -3368,6 +3368,7 @@ class GeologieFelslabore(Base, Vector):
     __label__ = 'name'
     __extended_info__ = True
     __queryabl_attributes__ = ['name', 'operator']
+    id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     description_de = Column('description_de', Unicode)
     description_fr = Column('description_fr', Unicode)
