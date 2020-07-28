@@ -311,3 +311,18 @@ class GenGrenzenAggloG2(Base, GenGrenzenAgglo, Vector):
     __bodId__ = 'ch.bfs.generalisierte-grenzen_agglomerationen_g2'
 
 register(GenGrenzenAggloG2.__bodId__, GenGrenzenAggloG2)
+
+
+class Landschaftswandel(Base, Vector):
+    __tablename__ = 'landschaftswandel'
+    __table_args__ = ({'schema': 'bfs', 'autoload': False})
+    __template__ = 'templates/htmlpopup/landschaftswandel.mako'
+    __bodId__ = 'ch.bfs.landschaftswandel'
+    __label__ = 'n'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    haupttype = Column('haupttype', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfs.landschaftswandel', Landschaftswandel)
+
+
