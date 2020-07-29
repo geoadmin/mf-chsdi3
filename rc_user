@@ -4,6 +4,8 @@ export APACHE_BASE_PATH=$USERNAME
 export API_URL=//mf-chsdi3.dev.bgdi.ch/$USERNAME
 export GEOADMINHOST=mf-geoadmin3.dev.bgdi.ch/$USERNAME
 export MODWSGI_CONFIG=development.ini
+export APACHE_ENTRY_PATH="" && [[ "$APACHE_BASE_PATH" == "main"  ]] && export APACHE_ENTRY_PATH="/${APACHE_BASE_PATH}"
+
 if [ -f rc_user_$USERNAME ]; then
   echo 'Sourcing:'
   echo rc_user_$USERNAME

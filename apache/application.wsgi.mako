@@ -1,6 +1,6 @@
 import sys
 
-activate_this = "${current_directory}/.venv/bin/activate_this.py"
+activate_this = "${CURRENT_DIRECTORY}/.venv/bin/activate_this.py"
 execfile(activate_this, dict(__file__=activate_this))
 
 from paste.deploy import loadapp
@@ -10,7 +10,7 @@ if sys.version_info >= (2, 6):
 else:
     from paste.script.util.logging_config import fileConfig
 
-configfile = "${current_directory}/${modwsgi_config}"
+configfile = "${CURRENT_DIRECTORY}/${MODWSGI_CONFIG}"
 try:
     fileConfig(configfile)
 except:

@@ -24,6 +24,10 @@ AddOutputFilterByType DEFLATE text/html text/plain text/xml
 # http://code.google.com/p/modwsgi/wiki/FrequentlyAskedQuestions#Access_Control_Mechanisms
 WSGIPassAuthorization On
 
+# PostgreSQL credential
+SetEnv PGUSER ${PGUSER}
+SetEnv PGPASSWORD ${PGPASSWORD}
+
 <IfModule mod_headers.c>
   Header set X-UA-Compatible "IE=Edge"
 </IfModule>
@@ -43,11 +47,11 @@ RewriteRule ^${APACHE_ENTRY_PATH}/(static/)?(info\.json|admin)         https://%
 # If URI has numbers at the start, we cache a year
 # This allows a client to create their own cache and
 # update at his discretion
-RewriteRule ^${APACHE_ENTRY_PATH}/[0-9]+/(.*)$ ${APACHE_ENTRY_PATH}/$1 [E=${apache_base_path}setyearcache:true,PT]
-Header merge Cache-Control "max-age=31536013, public" env=${apache_base_path}setyearcache
+RewriteRule ^${APACHE_ENTRY_PATH}/[0-9]+/(.*)$ ${APACHE_ENTRY_PATH}/$1 [E=${APACHE_BASE_PATH}setyearcache:true,PT]
+Header merge Cache-Control "max-age=31536013, public" env=${APACHE_BASE_PATH}setyearcache
 
 # Default cache#
-Header setifempty  Cache-Control "${cache_control}"
+Header setifempty  Cache-Control "${CACHE_CONTROL}"
 
 # Info
 RewriteRule ^${APACHE_ENTRY_PATH}/info.json ${APACHE_ENTRY_PATH}/static/info.json [PT]
@@ -90,10 +94,10 @@ RewriteRule ^${APACHE_ENTRY_PATH}/(.*)$ ${APACHE_ENTRY_PATH}/shorten/$1 [PT]
 
 # define a process group
 # WSGIDaemonProcess, default are 1 process and 15 threads
-WSGIDaemonProcess mf-chsdi3:${apache_base_path} display-name=%{GROUP} user=${modwsgi_user} processes=${wsgi_processes} threads=${wsgi_threads}
+WSGIDaemonProcess mf-chsdi3:${APACHE_BASE_PATH} display-name=%{GROUP} user=${MODWSGI_USER} processes=${WSGI_PROCESSES} threads=${WSGI_THREADS}
 
 # define the path to the WSGI app
-WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${wsgi_app}/
+WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${WSGI_APP}/
 
 # Enabling CORS, has to be set after WSGI application
 Header unset Access-control-allow-origin
@@ -107,7 +111,7 @@ Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, 
 <Directory ${CURRENT_DIRECTORY}/apache>
     Order allow,deny
     Allow from all
-    WSGIProcessGroup mf-chsdi3:${apache_base_path}
+    WSGIProcessGroup mf-chsdi3:${APACHE_BASE_PATH}
     WSGIApplicationGroup %{GLOBAL}
 </Directory>
 
@@ -124,7 +128,7 @@ Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, 
 </LocationMatch>
 
 # kml file downloads
-AliasMatch ^${APACHE_ENTRY_PATH}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${kml_temp_dir}/$1
+AliasMatch ^${APACHE_ENTRY_PATH}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${KML_TEMP_DIR}/$1
 
 
 <LocationMatch ^${APACHE_ENTRY_PATH}/(admin/kml|static/info.json)>

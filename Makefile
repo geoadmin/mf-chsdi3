@@ -24,7 +24,7 @@ CURRENT_DIRECTORY := ${PWD}
 WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
 INSTALL_DIRECTORY := .venv
 KML_TEMP_DIR := /var/local/print/kml
-MODWSGI_USER := www-data
+MODWSGI_USER ?= www-data
 HTTP_PROXY := http://ec2-52-28-118-239.eu-central-1.compute.amazonaws.com:80
 BRANCH_STAGING := $(shell if [ '$(DEPLOY_TARGET)' = 'dev' ]; then echo 'test'; else echo 'integration'; fi)
 GIT_BRANCH := $(shell if [ -f '.venv/deployed-git-branch' ]; \
@@ -214,6 +214,7 @@ help:
 	@echo "PYTHON_CMD:          ${PYTHON_CMD}"
 	@echo "PYTHONPATH:          ${PYTHONPATH}"
 	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
+	@echo "WSGI_APP:            ${WSGI_APP}"
 	@echo "API_URL:             ${API_URL}"
 	@echo "WMSHOST:             ${WMSHOST}"
 	@echo "BRANCH_STAGING:      ${BRANCH_STAGING}"
@@ -236,7 +237,6 @@ all: setup chsdi/static/css/extended.min.css templates translate lint fixrights 
 setup: .venv node_modules .venv/hooks
 
 templates: apache/wsgi.conf development.ini production.ini chsdi/static/info.json
-	$(call build_templates,$(DEPLOY_TARGET)) 
 
 define build_templates
 	source rc_$1 \                                                                                                 
@@ -436,6 +436,8 @@ apache/wsgi.conf: apache/wsgi.conf.in \
                   .venv/last-WSGI_APP \
                   .venv/last-KML_TEMP_DIR
 	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
+	@echo "APACHE_ENTRY_PATH=${APACHE_ENTRY_PATH}"
+	@echo "APACHE_BASE_PATH=${APACHE_BASE_PATH}"
 	${ENVSUBST_CMD} < $< > $@
 
 app.log:
@@ -674,7 +676,7 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 	$(call cachelastvariable,$@,$(DEPLOY_TARGET),$(LAST_DEPLOY_TARGET),deploy-target)
 
 .venv/last-MODWSGI_USER::
-	$(call cachelastvariable,$@,$(MODWSGI_USER),$(LAST_MODWSGI_USER),modewsgi-user)
+	$(call cachelastvariable,$@,$(MODWSGI_USER),$(LAST_MODWSGI_USER),modwsgi-user)
 
 .venv/last-CACHE_CONTROL::
 	$(call cachelastvariable,$@,$(CACHE_CONTROL),$(LAST_CACHE_CONTROL),cache-control)
