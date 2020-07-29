@@ -324,5 +324,3 @@ class Landschaftswandel(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfs.landschaftswandel', Landschaftswandel)
-
-
