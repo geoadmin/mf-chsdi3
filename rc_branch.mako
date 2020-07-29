@@ -1,4 +1,4 @@
-source rc_${deploy_target}
+source rc_${DEPLOY_TARGET}
 export APACHE_BASE_PATH=${GIT_BRANCH}
 export API_URL=//mf-chsdi3.${DEPLOY_TARGET}.BGDI.CH/${GIT_BRANCH}
 export GEODATA_STAGING=test
