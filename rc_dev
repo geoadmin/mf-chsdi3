@@ -24,4 +24,6 @@ export WSGI_THREADS=15
 export CMSGEOADMINHOST=https://cms.geo.admin.ch
 export LINKEDDATAHOST=https://ld.geo.admin.ch
 export CACHE_CONTROL=no-cache
+export APACHE_LOG_LEVEL=warn
+export SHORTENER_ALLOWED_DOMAINS="admin.ch, swisstopo.ch, bgdi.ch"
 export DYNAMIC_TRANSLATION=1
