@@ -21,12 +21,13 @@ export VECTOR_BUCKET=bgdi-grid-based-data
 export WMSHOST=wms.geo.admin.ch
 export WSGI_PROCESSES=4
 export WSGI_THREADS=30
+export MODWSGI_USER=www-data
 export CMSGEOADMINHOST=https://cms.geo.admin.ch
 export LINKEDDATAHOST=https://ld.geo.admin.ch
 export APACHE_LOG_LEVEL=warn
 export SHORTENER_ALLOWED_DOMAINS="admin.ch, swisstopo.ch, bgdi.ch"
 export CACHE_CONTROL="max-age=1800, public"
 export DYNAMIC_TRANSLATION=1
-export export APACHE_LOG_LEVEL=warn
-export SHORTENER_ALLOWED_DOMAINS="admin.ch, swisstopo.ch, bgdi.ch"
-export WSGI_APP=${PWD}/apache/application.wsgi 
+export WSGI_APP=${PWD}/apache/application.wsgi
+export APACHE_ENTRY_PATH="" && [[ "$APACHE_BASE_PATH" == "main"   ]] && export APACHE_ENTRY_PATH="/${APACHE_BASE_PATH}" 
+export CURRENT_DIRECTORY=${PWD}
