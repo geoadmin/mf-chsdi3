@@ -18,7 +18,8 @@ BASE_DIR=/var/www/vhosts/mf-chsdi3
 CODE_DIR=$BASE_DIR/private/branch/$GIT_BRANCH
 
 echo "==================================================================="
-echo "Continue deploying chsdi3 branch <${GIT_BRANCH}> to <dev> "
+echo "Deploying chsdi3 branch <${GIT_BRANCH}> to <dev> "
+echo "==================================================================="
 
 if ! [ -f $CODE_DIR/.git/config ];
 then
@@ -32,6 +33,10 @@ git fetch origin && git reset --hard && git checkout $GIT_BRANCH && git reset --
 make cleanall
 
 # This creates the branch configuration
+echo "======================================="
+echo "Creating configs in <${GIT_BRANCH}>"
+echo "======================================="
+
 make setup
 make rc_branch DEPLOY_TARGET=dev GIT_BRANCH=$GIT_BRANCH
 source rc_branch
@@ -48,6 +53,10 @@ sudo apache2ctl graceful
 # Deploy to int if 'int' is specified
 if [ $1 -a $1 == 'int' ];
 then
+    echo "==================================================================="
+    echo "Deploying chsdi3 branch <${GIT_BRANCH}> to <dev> "
+    echo "==================================================================="
+
     sudo -u deploy deploy -r deploy/deploy-branch.cfg int;
 fi
 
