@@ -51,7 +51,8 @@ env:
     LINKEDDATAHOST: https://ld.geo.admin.ch
     PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
     SHOP_URL: //shop-bgdi.dev.bgdi.ch
-    SHORTENER_ALLOWED_DOMAINS: "admin.ch, swisstopo.ch, bgdi.ch"
+    # No domains, otherwise it fails
+    SHORTENER_ALLOWED_DOMAINS: ""
     SHORTENER_ALLOWED_HOSTS: 
     SHORTENER_TABLE_NAME: shorturl
     SHORTENER_TABLE_REGION: ${AWS_DEFAULT_REGION}
