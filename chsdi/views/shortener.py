@@ -11,6 +11,11 @@ import time
 from chsdi.models.clientdata_dynamodb import get_dynamodb_table
 from chsdi.lib.helpers import check_url, make_api_url
 
+# we only accept URL shorter or equal to 2048 characters
+# AWS DynamoDB Index restriction (hard-limit)
+# Still the case in July 2020
+MAX_URL_LENGTH = 2048
+
 
 def _add_item(table, url):
     url_short = _get_url_short(table, url)
@@ -54,9 +59,7 @@ def _get_url_short(table, url):
 @view_config(route_name='shorten', renderer='jsonp')
 def shortener(request):
     url = request.params.get('url')
-    if len(url) >= 2046:
-        # we only accept URL shorter or equal to 2046 characters
-        # Index restriction in DynamoDB
+    if len(url) > MAX_URL_LENGTH:
         url_short = 'toolong'
     else:  # pragma: no cover
         settings = request.registry.settings
