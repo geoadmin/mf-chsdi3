@@ -36,6 +36,8 @@ env:
     CACHE_CONTROL: no-cache
     SHORTENER_TABLE_NAME: mf_chsdi3_shorturl
     SHORTENER_TABLE_REGION: eu-central-1
+    DYNAMIC_TRANSLATION: 1
+
 
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
     # We do not have AWS S3 and DynmoDB access for now

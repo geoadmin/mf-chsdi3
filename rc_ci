@@ -26,3 +26,4 @@ export DYNAMIC_TRANSLATION=1
 export WSGI_APP=${PWD}/apache/application.wsgi
 export APACHE_ENTRY_PATH="" && [[ "$APACHE_BASE_PATH" == "main"   ]] && export APACHE_ENTRY_PATH="/${APACHE_BASE_PATH}" 
 export CURRENT_DIRECTORY=${PWD}
+export DYNAMIC_TRANSLATION=1
