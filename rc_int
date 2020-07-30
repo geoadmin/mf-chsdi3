@@ -1,33 +1,33 @@
-export APACHE_BASE_PATH=main
 export ALTI_URL=//service-alti.int.bgdi.ch
+export APACHE_BASE_PATH=main
+export APACHE_ENTRY_PATH="" && [[ "$APACHE_BASE_PATH" == "main"   ]] && export APACHE_ENTRY_PATH="/${APACHE_BASE_PATH}" 
+export APACHE_LOG_LEVEL=warn
 export API_URL=//mf-chsdi3.int.bgdi.ch
-export SHOP_URL=//shop-bgdi.int.bgdi.ch
+export CACHE_CONTROL="max-age=1800, public"
+export CMSGEOADMINHOST=https://cms.geo.admin.ch
+export CURRENT_DIRECTORY=${PWD}
 export DBHOST=pg-sandbox.bgdi.ch
 export DBPORT=5432
 export DBSTAGING=int
 export DEPLOY_TARGET=int
-export GEODATA_STAGING=integration
+export DYNAMIC_TRANSLATION=1
 export GEOADMIN_FILE_STORAGE_BUCKET=public-int-bgdi-ch
 export GEOADMINHOST=mf-geoadmin3.int.bgdi.ch
+export GEODATA_STAGING=integration
 export HOST=mf-chsdi3.int.bgdi.ch
 export KEEP_VERSION=true
-export WMTS_PUBLIC_HOST=tod.int.bgdi.ch
+export LINKEDDATAHOST=https://ld.geo.admin.ch
 export MODWSGI_CONFIG=production.ini
+export MODWSGI_USER=www-data
 export PUBLIC_BUCKET_HOST=public.int.bgdi.ch
 export ROBOTS_FILE=robots.txt
 export SERVER_PORT=6543
+export SHOP_URL=//shop-bgdi.int.bgdi.ch
+export SHORTENER_ALLOWED_DOMAINS="admin.ch, swisstopo.ch, bgdi.ch"
 export SPHINXHOST=service-sphinxsearch.int.bgdi.ch
 export VECTOR_BUCKET=bgdi-grid-based-data
 export WMSHOST=wms-bgdi.int.bgdi.ch
+export WMTS_PUBLIC_HOST=tod.int.bgdi.ch
+export WSGI_APP=${PWD}/apache/application.wsgi
 export WSGI_PROCESSES=1
 export WSGI_THREADS=15
-export MODWSGI_USER=www-data
-export CMSGEOADMINHOST=https://cms.geo.admin.ch
-export LINKEDDATAHOST=https://ld.geo.admin.ch
-export APACHE_LOG_LEVEL=warn
-export SHORTENER_ALLOWED_DOMAINS="admin.ch, swisstopo.ch, bgdi.ch"
-export CACHE_CONTROL="max-age=1800, public"
-export DYNAMIC_TRANSLATION=1
-export WSGI_APP=${PWD}/apache/application.wsgi
-export APACHE_ENTRY_PATH="" && [[ "$APACHE_BASE_PATH" == "main"   ]] && export APACHE_ENTRY_PATH="/${APACHE_BASE_PATH}" 
-export CURRENT_DIRECTORY=${PWD}
