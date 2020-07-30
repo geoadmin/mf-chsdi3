@@ -395,6 +395,9 @@ rc_branch: rc_branch.mako \
            .venv/last-DEPLOY_TARGET \
            .venv/last-BRANCH_STAGING
 	@echo "${GREEN}Creating branch template...${RESET}"
+	$(eval export DEPLOY_TARGET ?= ${DEPLOY_TARGET})
+	$(eval export GIT_BRANCH ?= ${GIT_BRANCH})
+	$(eval export BRANCH_STAGING ?= ${BRANCH_STAGING})
 	${ENVSUBST_CMD} < $< > $@
 
 deploy/deploy-branch.cfg.in:
