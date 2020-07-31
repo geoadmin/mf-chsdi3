@@ -528,3 +528,17 @@ def get_translations(lang, session):
         return None
 
     return d
+
+
+class WmsConfiguration(Base):
+    __dbname__ = 'bod'
+    __tablename__ = 'tileset'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    datasetId = Column('fk_dataset_id', Unicode, primary_key=True)
+    fmt = Column('format', Unicode)
+    cache_ttl = Column('cache_ttl', Unicode)
+    resolution_max = Column('resolution_max', Float)
+    resolution_min = Column('resolution_min', Float)
+    timestamp = Column('timestamp', Integer)
+    wms_gutter = Column('wms_gutter', Float)
+    s3_resolution_max = Column('s3_resolution_max', Float)
