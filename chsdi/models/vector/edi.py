@@ -320,7 +320,11 @@ class Landschaftswandel(Base, Vector):
     __bodId__ = 'ch.bfs.landschaftswandel'
     __label__ = 'n'
     id = Column('bgdi_id', Integer, primary_key=True)
-    haupttype = Column('haupttype', Unicode)
+    haupttyp = Column('haupttyp', Unicode)
+    typ1 = Column('typ1', Unicode)
+    typ2 = Column('typ2', Unicode)
+    typ3 = Column('typ3', Unicode)
+    typ4 = Column('typ4', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfs.landschaftswandel', Landschaftswandel)
