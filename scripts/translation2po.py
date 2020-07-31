@@ -10,6 +10,7 @@ from collections import OrderedDict
 from psycopg2.extras import RealDictCursor
 from psycopg2.extensions import register_type, UNICODE
 
+DEFAULT_DBPORT = 5432
 
 def validate_params(argv):
     if len(argv) > 2:
@@ -35,7 +36,10 @@ def get_yaml(yaml_file_path):
 
 
 def get_db_connection():
-    return psycopg2.connect(host=os.environ.get('DBHOST'), dbname='bod_master', user='www-data')
+    return psycopg2.connect(host=os.environ.get('DBHOST'), 
+                            port=os.environ.get('DBPORT', DEFAULT_DBPORT),
+                            dbname='bod_master', 
+                            user='www-data')
 
 
 def select_all(cur):
