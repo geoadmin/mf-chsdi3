@@ -318,7 +318,7 @@ class Landschaftswandel(Base, Vector):
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
     __template__ = 'templates/htmlpopup/landschaftswandel.mako'
     __bodId__ = 'ch.bfs.landschaftswandel'
-    __label__ = 'n'
+    __label__ = 'haupttyp'
     id = Column('bgdi_id', Integer, primary_key=True)
     haupttyp = Column('haupttyp', Unicode)
     typ1 = Column('typ1', Unicode)
