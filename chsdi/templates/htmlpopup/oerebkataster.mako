@@ -15,10 +15,10 @@ def sanitise_url(url):
 def get_xml(path):
     list_egrid = []
     try:
-      response = requests.get(path)
+      response = requests.get(path, verify=False) # verify=False to get it working for grison
       if response.status_code == 200:
-       root = et.fromstring(response.text)
-       list_egrid = root.findall('{http://schemas.geo.admin.ch/V_D/OeREB/1.0/Extract}egrid')
+        root = et.fromstring(response.text)
+        list_egrid = root.findall('{http://schemas.geo.admin.ch/V_D/OeREB/1.0/Extract}egrid')
     except:
       pass
     return list_egrid
