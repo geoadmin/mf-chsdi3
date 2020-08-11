@@ -197,12 +197,3 @@ class FixpunkteHfp2(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-hfp2', FixpunkteHfp2)
-
-
-# This address model is just used in the sitemap service
-# It contains different attributes than the standard
-# Gebaeuderegister model for the layer 'ch.bfs.gebaeude_wohnungs_register'
-# This model is not registered
-class SitemapGebaeuderegister(Gebaeuderegister):
-    X = Column('gkody', Numeric)
-    Y = Column('gkodx', Numeric)
