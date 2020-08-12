@@ -32,10 +32,10 @@ class Gebaeuderegister(Base, Vector):
     # extended tooltip -> gebaeude
     egrid = Column('egrid', Unicode)
     lgbkr = Column('lgbkr', SmallInteger)
-    lparz = Column('lparz', BigInteger)
+    lparz = Column('lparz', Unicode)
     lparzsx = Column('lparzsx', BigInteger)
     ltyp = Column('ltyp', SmallInteger)
-    gebnr = Column('gebnr', BigInteger)
+    gebnr = Column('gebnr', Unicode)
     gbez = Column('gbez', Unicode)
     gkode = Column('gkode', Float)
     gkodn = Column('gkodn', Float)
