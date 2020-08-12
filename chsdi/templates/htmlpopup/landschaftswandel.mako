@@ -3,11 +3,11 @@
 <%def name="table_body(c, lang)">
 
 <%
-    lang = lang if lang in ('fr','it', 'en') else 'de'
-    typ1 = 'typ1_%s' % lang
-    typ2 = 'typ2_%s' % lang
-    typ3 = 'typ3_%s' % lang
-    typ4 = 'typ4_%s' % lang
+    lang = lang if lang in ('fr','it','en') else 'de'
+    typ1_text = 'typ1_%s' % lang
+    typ2_text = 'typ2_%s' % lang
+    typ3_text = 'typ3_%s' % lang
+    typ4_text = 'typ4_%s' % lang
 %>
 
 <tr><td class="cell-left">${_('ch.bfs.landschaftswandel.gmde')}</td><td>${c['attributes']['gmde'] or '-'}</td></tr>
@@ -16,10 +16,10 @@
 
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.typ1')}</td>
-  <td>${c['attributes']['typ1'] or '-'}</td>
-  <td>${c['attributes']['typ2'] or '-'}</td>
-  <td>${c['attributes']['typ3'] or '-'}</td>
-  <td>${c['attributes']['typ4'] or '-'}</td>
+  <td>${c['attributes']['typ1_text'] or '-'}</td>
+  <td>${c['attributes']['typ2_text'] or '-'}</td>
+  <td>${c['attributes']['typ3_text'] or '-'}</td>
+  <td>${c['attributes']['typ4_text'] or '-'}</td>
 </tr>
 
 </%def>
