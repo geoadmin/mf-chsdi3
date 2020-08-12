@@ -22,7 +22,7 @@
 </tr>
 
 <tr>
-  <td class="cell-left">${_('ch.bfs.landschaftswandel.typ1')}</td>
+  <td class="cell-left">${_('ch.bfs.landschaftswandel.typ')}</td>
   <td>${c['attributes'][typ1_text] or '-'}</td>
   <td>${c['attributes'][typ2_text] or '-'}</td>
   <td>${c['attributes'][typ3_text] or '-'}</td>
@@ -30,7 +30,7 @@
 </tr>
 
 <tr>
-  <td class="cell-left">${_('ch.bfs.landschaftswandel.linkdownload_de')}</td>
+  <td class="cell-left">${_('ch.bfs.landschaftswandel.linkdownload')}</td>
   <td colspan="4">${c['attributes'][download_link] or '-'}</td>
 </tr>
 
