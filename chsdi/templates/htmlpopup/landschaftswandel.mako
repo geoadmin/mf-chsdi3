@@ -31,7 +31,7 @@
 
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.linkdownload')}</td>
-  <td colspan="4">${c['attributes'][download_link] or '-'}</td>
+  <td colspan="4"><a href="${c['attributes'][download_link] or '-'}" target="_blank">Download pdf</a></td>
 </tr>
 
 </%def>
