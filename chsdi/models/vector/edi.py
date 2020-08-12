@@ -320,6 +320,8 @@ class Landschaftswandel(Base, Vector):
     __bodId__ = 'ch.bfs.landschaftswandel'
     __label__ = 'haupttyp'
     id = Column('bgdi_id', Integer, primary_key=True)
+    gmde = Column('gmde', Unicode)
+    swissnames = Column('swissnames', Unicode)
     haupttyp = Column('haupttyp', Unicode)
     typ1 = Column('typ1', Unicode)
     typ2 = Column('typ2', Unicode)
