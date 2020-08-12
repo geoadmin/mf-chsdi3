@@ -5,7 +5,6 @@
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.typ1')}</td>
   <td>${c['attributes']['typ1'] or '-'}</td>
-  <td>${c['attributes']['typ1'] or '-'}</td>
   <td>${c['attributes']['typ2'] or '-'}</td>
   <td>${c['attributes']['typ3'] or '-'}</td>
   <td>${c['attributes']['typ4'] or '-'}</td>
