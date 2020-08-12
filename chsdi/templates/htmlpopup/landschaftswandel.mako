@@ -23,15 +23,15 @@
 
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.typ')}</td>
-  <td>${c['attributes'][typ1_text] or '-'}</td>
-  <td>${c['attributes'][typ2_text] or '-'}</td>
-  <td>${c['attributes'][typ3_text] or '-'}</td>
-  <td>${c['attributes'][typ4_text] or '-'}</td>
+  <td><div style='max-width: 50px;'>${c['attributes'][typ1_text] or '-'}</div></td>
+  <td><div style='max-width: 50px;'>${c['attributes'][typ2_text] or '-'}</div></td>
+  <td><div style='max-width: 50px;'>${c['attributes'][typ3_text] or '-'}</div></td>
+  <td><div style='max-width: 50px;'>${c['attributes'][typ4_text] or '-'}</div></td>
 </tr>
 
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.linkdownload')}</td>
-  <td colspan="4"><a href="${c['attributes'][download_link] or '-'}" target="_blank">Download pdf</a></td>
+  <td colspan="4"><a href="${c['attributes'][download_link] or '-'}" target="_blank">${_('link')}</a></td>
 </tr>
 
 </%def>
