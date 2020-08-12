@@ -16,10 +16,10 @@
 
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.typ1')}</td>
-  <td>${[typ1_text]}</td>
-  <td>${[typ2_text]}</td>
-  <td>${[typ3_text]}</td>
-  <td>${[typ4_text]}</td>
+  <td>${c['attributes'][typ1_text]}</td>
+  <td>${c['attributes'][typ2_text]}</td>
+  <td>${c['attributes'][typ3_text]}</td>
+  <td>${c['attributes'][typ4_text]}</td>
 </tr>
 
 </%def>
