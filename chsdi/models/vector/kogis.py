@@ -20,7 +20,7 @@ class Gebaeuderegister(Base, Vector):
     __extended_info__ = True
     # basic tooltip -> gebaeude_eingang
     id = Column('egid_edid', Unicode, primary_key=True)
-    egid = Column('egid', Integer)
+    egid = Column('egid', Unicode)
     strname_deinr = Column('strname_deinr', Unicode)
     plz_plz6 = Column('plz_plz6', Unicode)
     dplzname = Column('dplzname', Unicode)
