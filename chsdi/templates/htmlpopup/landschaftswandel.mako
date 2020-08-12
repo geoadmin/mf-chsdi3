@@ -2,15 +2,6 @@
 
 <%def name="table_body(c, lang)">
 
-<%
-    lang = lang if lang in ('fr','it','en') else 'de'
-    typ1_text = 'typ1_%s' % lang
-    typ2_text = 'typ2_%s' % lang
-    typ3_text = 'typ3_%s' % lang
-    typ4_text = 'typ4_%s' % lang
-    download_link = 'linkdownload_%s' % lang
-%>
-
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.gmde')}</td>
   <td colspan="4">${c['attributes']['gmde'] or '-'}</td>
