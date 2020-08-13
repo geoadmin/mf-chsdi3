@@ -44,7 +44,7 @@
 
     import dateutil.parser as date_parser
     len_array_streetnames=len(c['attributes']['strname'])
-    len_array_wohnungen=len(c['attributes']['ewid'])
+    len_array_wohnungen=len(c['attributes']['ewid'] or [])
 %>
   <table>
     <tr><th colspan=2>${_('ch.bfs.gebaeude_wohnungs_register.block_gebaeude')}</th></tr>
