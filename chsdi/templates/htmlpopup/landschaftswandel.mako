@@ -23,10 +23,10 @@
 
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.typ')}</td>
-  <td><div style='max-width: 100px;'>${c['attributes'][typ1_text] or ''}</div></td>
-  <td><div style='max-width: 100px;'>${c['attributes'][typ2_text] or ''}</div></td>
-  <td><div style='max-width: 100px;'>${c['attributes'][typ3_text] or ''}</div></td>
-  <td><div style='max-width: 100px;'>${c['attributes'][typ4_text] or ''}</div></td>
+  <td><div style='display: inline-block; padding: 2px;'>${c['attributes'][typ1_text] or ''}</div></td>
+  <td><div style='display: inline-block; padding: 2px;'>${c['attributes'][typ2_text] or ''}</div></td>
+  <td><div style='display: inline-block; padding: 2px;'>${c['attributes'][typ3_text] or ''}</div></td>
+  <td><div style='display: inline-block; padding: 2px;'>${c['attributes'][typ4_text] or ''}</div></td>
 </tr>
 
 <tr>
