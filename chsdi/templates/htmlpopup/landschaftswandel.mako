@@ -11,8 +11,8 @@
     download_link = 'linkdownload_%s' % lang
     
     def getQuickviewLink(link):
-        link.split('?')[1] + "?width=198&height=120"
-        return link
+        quickview_link = link.split('?')[1] + "?width=198&height=120"
+        return quickview_link
 %>
 
 <tr>
