@@ -11,7 +11,7 @@
     download_link = 'linkdownload_%s' % lang
     
     def getQuickviewLink(link):
-        quickview_link = link.split('?')[1] + "?width=198&height=120"
+        quickview_link = link.split('?')[0] + "?width=198&height=120"
         return quickview_link
 %>
 
@@ -40,7 +40,7 @@
 
 <tr>
   <td class="cell-left">${_('quickview')}</td>
-  <td colspan="4">${getQuickviewLink(c['attributes']['linkbild'])}"</td>
+  <td colspan="4"><img src="${getQuickviewLink(c['attributes']['linkbild'])}"></td>
 </tr>  
 
 </%def>
