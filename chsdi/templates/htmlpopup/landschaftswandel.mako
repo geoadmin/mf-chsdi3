@@ -9,7 +9,8 @@
     typ3_text = 'typ3_%s' % lang
     typ4_text = 'typ4_%s' % lang
     download_link = 'linkdownload_%s' % lang
-    quickview_link = ${c['attributes']['linkbild']}.split('?')[1] + "?width=198&height=120"
+    quickview_link = ${c['attributes']['linkbild']}
+    quickview_size = "?width=198&height=120"
 %>
 
 <tr>
