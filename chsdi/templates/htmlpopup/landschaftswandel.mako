@@ -34,5 +34,10 @@
   <td colspan="4"><a href="${c['attributes'][download_link] or '-'}" target="_blank">${_('link')}</a></td>
 </tr>
 
+<tr>
+  <td class="cell-left">${_('quickview')}</td>
+  <td colspan="4"><img src="${c['attributes']['linkbild'] or ''}" width="150"></td>
+</tr>  
+
 </%def>
 

@@ -347,6 +347,7 @@ class Landschaftswandel(Base, Vector):
     linkdownload_fr = Column('linkdownload_fr', Unicode)
     linkdownload_it = Column('linkdownload_it', Unicode)
     linkdownload_en = Column('linkdownload_en', Unicode)
+    linkbild = Column('linkbild', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfs.landschaftswandel', Landschaftswandel)
