@@ -17,30 +17,30 @@
 
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.gmde')}</td>
-  <td colspan="4">${c['attributes']['gmde'] or '-'}</td>
+  <td class="cell-left" colspan="4">${c['attributes']['gmde'] or '-'}</td>
 </tr>
 
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.swissnames')}</td>
-  <td colspan="4">${c['attributes']['swissnames'] or '-'}</td>
+  <td class="cell-left" colspan="4">${c['attributes']['swissnames'] or '-'}</td>
 </tr>
 
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.typ')}</td>
-  <td><div style='display: inline-block; padding: 2px;'>${c['attributes'][typ1_text] or ''}</div></td>
-  <td><div style='display: inline-block; padding: 2px;'>${c['attributes'][typ2_text] or ''}</div></td>
-  <td><div style='display: inline-block; padding: 2px;'>${c['attributes'][typ3_text] or ''}</div></td>
-  <td><div style='display: inline-block; padding: 2px;'>${c['attributes'][typ4_text] or ''}</div></td>
+  <td class="cell-left"><div style='display: inline-block; padding: 2px;'>${c['attributes'][typ1_text] or ''}</div></td>
+  <td class="cell-left"><div style='display: inline-block; padding: 2px;'>${c['attributes'][typ2_text] or ''}</div></td>
+  <td class="cell-left"><div style='display: inline-block; padding: 2px;'>${c['attributes'][typ3_text] or ''}</div></td>
+  <td class="cell-left"><div style='display: inline-block; padding: 2px;'>${c['attributes'][typ4_text] or ''}</div></td>
 </tr>
 
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.linkdownload')}</td>
-  <td colspan="4"><a href="${c['attributes'][download_link] or '-'}" target="_blank">${_('link')}</a></td>
+  <td class="cell-left" colspan="4"><a href="${c['attributes'][download_link] or '-'}" target="_blank">${_('link')}</a></td>
 </tr>
 
 <tr>
-  <td class="cell-left">${_('quickview')}</td>
-  <td colspan="4"><img src="${getQuickviewLink(c['attributes']['linkbild'])}"></td>
+  <td class="cell-left">${_('ch.bfs.landschaftswandel.quickview')}</td>
+  <td class="cell-left" colspan="4"><img src="${getQuickviewLink(c['attributes']['linkbild'])}"></td>
 </tr>  
 
 </%def>
