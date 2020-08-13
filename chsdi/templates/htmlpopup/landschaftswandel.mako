@@ -9,7 +9,7 @@
     typ3_text = 'typ3_%s' % lang
     typ4_text = 'typ4_%s' % lang
     download_link = 'linkdownload_%s' % lang
-    quickview_link = linkbild.split('?')[1] + "?width=198&height=120"
+    quickview_link = ${c['attributes']['linkbild']}.split('?')[1] + "?width=198&height=120"
 %>
 
 <tr>
@@ -37,7 +37,7 @@
 
 <tr>
   <td class="cell-left">${_('quickview')}</td>
-  <td colspan="4"><img src="${[quickview_link] or ''}" width="250"></td>
+  <td colspan="4"><img src="${quickview_link}"></td>
 </tr>  
 
 </%def>
