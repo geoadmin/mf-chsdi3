@@ -36,7 +36,7 @@
 
 <tr>
   <td class="cell-left">${_('quickview')}</td>
-  <td colspan="4"><img src="${c['attributes']['linkbild'] or ''}" width="150"></td>
+  <td colspan="4"><img src="${c['attributes']['linkbild'] or ''}" width="250"></td>
 </tr>  
 
 </%def>
