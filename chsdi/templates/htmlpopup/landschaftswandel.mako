@@ -51,7 +51,7 @@
 
 <script>
 function openQuickviewImage(image_url) { 
-  window.open('_blank').document.write(image_url);
+  window.open('_blank').document.write('<img src="' + image_url + '">');
 }
 </script>
 
