@@ -40,6 +40,12 @@
 
 <tr style="height: 10px;"><td></td></tr>
 
+<script>
+function openQuickviewImage(image_url) { 
+  window.open().document.write('<img src="' + image_url + '">');
+}
+</script>
+
 <tr>
   <td class="cell-left">Quickview</td>
   <td class="cell-left" colspan="4">
@@ -48,12 +54,6 @@
     </a>
   </td>
 </tr>  
-
-<script>
-function openQuickviewImage(image_url) { 
-  window.open('_blank').document.write('<img src="' + image_url + '">');
-}
-</script>
 
 </%def>
 
