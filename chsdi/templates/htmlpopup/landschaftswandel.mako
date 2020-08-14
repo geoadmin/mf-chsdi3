@@ -38,6 +38,8 @@
   <td class="cell-left" colspan="4"><a href="${c['attributes'][download_link] or '-'}" target="_blank">${_('link')}</a></td>
 </tr>
 
+<tr style="height: 10px;"><td></td></tr>
+
 <tr>
   <td class="cell-left">Quickview</td>
   <td class="cell-left" colspan="4">
