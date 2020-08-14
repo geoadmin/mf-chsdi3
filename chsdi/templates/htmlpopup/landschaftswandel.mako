@@ -50,7 +50,7 @@ function openQuickviewImage(image_url) {
   <td class="cell-left">Quickview</td>
   <td class="cell-left" colspan="4">
     <a href="#">
-      <img src="${getQuickviewLink(c['attributes']['linkbild'])}" target="_blank" onclick="openQuickviewImage(${c['attributes']['linkbild']});">
+      <img src="${getQuickviewLink(c['attributes']['linkbild'])}" onclick="openQuickviewImage(${c['attributes']['linkbild']});">
     </a>
   </td>
 </tr>  
