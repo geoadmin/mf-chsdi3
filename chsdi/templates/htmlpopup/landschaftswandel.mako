@@ -2,17 +2,6 @@
 
 <%def name="table_body(c, lang)">
 
-<style>
-  table {
-    table-layout: fixed;
-    width: 100%;
-  }
-  td {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-  }
-</style>
-
 <%
     lang = lang if lang in ('fr','it','en') else 'de'
     typ1_text = 'typ1_%s' % lang
