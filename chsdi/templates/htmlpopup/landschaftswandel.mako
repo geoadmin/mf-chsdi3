@@ -44,11 +44,16 @@
   <td class="cell-left">Quickview</td>
   <td class="cell-left" colspan="4">
     <a href="${c['attributes']['linkbild'] or '-'}" target="_blank">
-      <img src="${getQuickviewLink(c['attributes']['linkbild'])}">
+      <img src="${getQuickviewLink(c['attributes']['linkbild'])}" onclick="openQuickviewImage(${c['attributes']['linkbild']})">
     </a>
   </td>
 </tr>  
 
+<script>
+function openQuickviewImage(image_url) { 
+  window.open().document.write(image_url);
+}
+</script>
 
 </%def>
 
