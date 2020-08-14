@@ -40,7 +40,11 @@
 
 <tr>
   <td class="cell-left">Quickview</td>
-  <td class="cell-left" colspan="4"><img src="${getQuickviewLink(c['attributes']['linkbild'])}"></td>
+  <td class="cell-left" colspan="4">
+    <a href="${c['attributes']['linkbild'] or '-'}" target="_blank">
+      <img src="${getQuickviewLink(c['attributes']['linkbild'])}">
+    </a>
+  </td>
 </tr>  
 
 </%def>
