@@ -2,6 +2,14 @@
 
 <%def name="table_body(c, lang)">
 
+<style>
+  table {
+    table-layout: fixed;
+    overflow-wrap: break-word;
+    word-wrap: break-word; /* IE */
+  }
+</style>
+
 <%
     lang = lang if lang in ('fr','it','en') else 'de'
     typ1_text = 'typ1_%s' % lang
@@ -39,7 +47,7 @@
 </tr>
 
 <tr>
-  <td class="cell-left">${_('ch.bfs.landschaftswandel.quickview')}</td>
+  <td class="cell-left">Quickview</td>
   <td class="cell-left" colspan="4"><img src="${getQuickviewLink(c['attributes']['linkbild'])}"></td>
 </tr>  
 
