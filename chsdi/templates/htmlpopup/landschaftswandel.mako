@@ -5,8 +5,11 @@
 <style>
   table {
     table-layout: fixed;
+    width: 100%;
+  }
+  td {
     overflow-wrap: break-word;
-    word-wrap: break-word; /* IE */
+    word-wrap: break-word;
   }
 </style>
 
