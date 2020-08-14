@@ -45,6 +45,11 @@
     import dateutil.parser as date_parser
     len_array_streetnames=len(c['attributes']['strname'])
     len_array_wohnungen=len(c['attributes']['ewid'] or [])
+
+    # link to object hack
+    import requests
+    request = context.get('request')
+    topic = request.matchdict.get('map')
 %>
   <table>
     <tr><th colspan=2>${_('ch.bfs.gebaeude_wohnungs_register.block_gebaeude')}</th></tr>
@@ -94,6 +99,13 @@
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.dkodn')}</td>          <td class="cell-meta-small">${c['attributes']['dkodn'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.doffadr')}</td>        <td class="cell-meta-small">${c['attributes']['doffadr'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.dexpdat')}</td>        <td class="cell-meta-small">${c['attributes']['dexpdat'] or '-'}</td></tr>
+    <!-- link to object -->
+    <tr>
+      <td class="cell-meta"></td>
+      <td class="cell-meta"><p><a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic, '&showTooltip=true'))}" target="new">
+        ${_('Link to object')}
+      </a></p></td>
+    </tr>
 % for i in range(len_array_wohnungen):
     <tr><th colspan=2>${_('ch.bfs.gebaeude_wohnungs_register.block_wohnung')}</th></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.ewid')}</td>           <td class="cell-meta-small">${c['attributes']['ewid'][i] or '-'}</td></tr>
