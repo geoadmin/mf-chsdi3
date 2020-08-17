@@ -15,6 +15,22 @@
         return quickview_link
 %>
 
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .imgbox {
+    display: grid;
+    height: 100%;
+  }
+  .center-fit {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
+  }
+</style>
+
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.gmde')}</td>
   <td class="cell-left" colspan="4">${c['attributes']['gmde'] or '-'}</td>
@@ -42,7 +58,7 @@
 
 <script>
 function openQuickviewImage(image_url) { 
-  window.open('_blank').document.write('<img src="' + image_url + '">');
+  window.open('_blank').document.write('<div class="imgbox"><img class="center-fit" src="' + image_url + '"></div>');
 }
 </script>
 
