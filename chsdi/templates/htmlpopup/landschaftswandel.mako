@@ -44,7 +44,7 @@
 <script>
 function openQuickviewImage(image_url) { 
   full_url = image_url.split('?')[0] + "?width=990&height=600"
-  window.open('_blank').document.write('<html><style>html,body{height:100%;margin:0;padding:0;} img{padding:0;display:block;margin:0 auto;max-height:100%;max-width:100%;}</style><body><img src="' + full_url + '"></body></html>');
+  window.open('_blank').document.write('<html><head><title>${c['attributes']['gmde'] or ''}: ${c['attributes']['swissnames'] or '-'}</title></head><style>html,body{height:100%;margin:0;padding:0;}img{padding:0;display:block;margin:0 auto;max-height:100%;max-width:100%;}</style><body><img src="' + image_url + '"></body></html>');
 }
 </script>
 
