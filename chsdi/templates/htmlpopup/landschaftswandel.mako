@@ -16,18 +16,18 @@
 %>
 
 <style>
-  * {
+  html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
   }
-  .imgbox {
-    display: grid;
-    height: 100%;
-  }
-  .center-fit {
+
+  img {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
     max-width: 100%;
-    max-height: 100vh;
-    margin: auto;
   }
 </style>
 
@@ -58,7 +58,7 @@
 
 <script>
 function openQuickviewImage(image_url) { 
-  window.open('_blank').document.write('<div class="imgbox"><img class="center-fit" src="' + image_url + '"></div>');
+  window.open('_blank').document.write('<html><body><img src="' + image_url + '"></body></html>');
 }
 </script>
 
