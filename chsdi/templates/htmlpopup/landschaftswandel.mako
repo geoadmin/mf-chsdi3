@@ -13,26 +13,8 @@
     def getQuickviewLink(link):
         quickview_link = link.split('?')[0] + "?width=198&height=120"
         return quickview_link
-    
-    def getFullImageLink(link):
-        fullimage_link = link.split('?')[0] + "?width=990&height=600"
-        return fullimage_link
-%>
 
-<style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  img {
-    padding: 0;
-    display: block;
-    margin: 0 auto;
-    max-height: 100%;
-    max-width: 100%;
-  }
-</style>
+%>
 
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.gmde')}</td>
@@ -61,7 +43,8 @@
 
 <script>
 function openQuickviewImage(image_url) { 
-  window.open('_blank').document.write('<html><body><img src="' + image_url + '"></body></html>');
+  full_url = image_url.split('?')[0] + "?width=990&height=600"
+  window.open('_blank').document.write('<html><style>html,body{height:100%;margin:0;padding:0;} img{padding:0;display:block;margin:0 auto;max-height:100%;max-width:100%;}</style><body><img src="' + full_url + '"></body></html>');
 }
 </script>
 
@@ -69,7 +52,7 @@ function openQuickviewImage(image_url) {
   <td class="cell-left">Quickview</td>
   <td class="cell-left" colspan="4">
     <a href="#">
-      <img src="${getQuickviewLink(c['attributes']['linkbild'])}" onclick="openQuickviewImage(getFullImageLink('${c['attributes']['linkbild']}'));">
+      <img src="${getQuickviewLink(c['attributes']['linkbild'])}" onclick="openQuickviewImage('${c['attributes']['linkbild']}');">
     </a>
   </td>
 </tr>  
