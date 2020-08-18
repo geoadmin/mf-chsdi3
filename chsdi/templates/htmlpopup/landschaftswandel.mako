@@ -28,10 +28,19 @@
 
 <tr>
   <td class="cell-left">${_('ch.bfs.landschaftswandel.typ')}</td>
-  <td class="cell-left"><div style='display: inline-block; padding: 0px;'>${c['attributes'][typ1_text] or ''}</div></td>
-  <td class="cell-left"><div style='display: inline-block; padding: 0px;'>${c['attributes'][typ2_text] or ''}</div></td>
-  <td class="cell-left"><div style='display: inline-block; padding: 0px;'>${c['attributes'][typ3_text] or ''}</div></td>
-  <td class="cell-left"><div style='display: inline-block; padding: 0px;'>${c['attributes'][typ4_text] or ''}</div></td>
+  <td class="cell-left">${c['attributes'][typ1_text] or ''}</td>
+</tr>
+<tr>
+  <td class="cell-left"></td>
+  <td class="cell-left">${c['attributes'][typ2_text] or ''}</td>
+</tr>
+<tr>
+  <td class="cell-left"></td>
+  <td class="cell-left">${c['attributes'][typ3_text] or ''}</td>
+</tr>
+<tr>
+  <td class="cell-left"></td>
+  <td class="cell-left">${c['attributes'][typ4_text] or ''}</td>
 </tr>
 
 <tr>
