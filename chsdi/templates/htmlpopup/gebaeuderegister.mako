@@ -76,6 +76,7 @@
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gabbj')}</td>          <td class="cell-meta-small">${c['attributes']['gabbj'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.garea')}</td>          <td class="cell-meta-small">${c['attributes']['garea'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvol')}</td>           <td class="cell-meta-small">${c['attributes']['gvol'] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvolnorm')}</td>           <td class="cell-meta-small">${c['attributes']['gvolnorm'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvolsce')}</td>        <td class="cell-meta-small">${c['attributes']['gvolsce'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gastw')}</td>          <td class="cell-meta-small">${c['attributes']['gastw'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.ganzwhg')}</td>        <td class="cell-meta-small">${c['attributes']['ganzwhg'] or '-'}</td></tr>
@@ -90,6 +91,7 @@
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.strname')} ${c['attributes']['strsp'][i] or '-'}</td>          <td class="cell-meta-small">${c['attributes']['strname'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.strnamk')} ${c['attributes']['strsp'][i] or '-'}</td>          <td class="cell-meta-small">${c['attributes']['strnamk'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.strindx')} ${c['attributes']['strsp'][i] or '-'}</td>          <td class="cell-meta-small">${c['attributes']['strindx'][i] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.strsp')} ${c['attributes']['strsp'][i] or '-'}</td>            <td class="cell-meta-small">${c['attributes']['strsp'][i] or '-'}</td></tr>
 % endfor
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.stroffiziel')}</td>    <td class="cell-meta-small">${c['attributes']['stroffiziel'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.dplz4')}</td>          <td class="cell-meta-small">${c['attributes']['dplz4'] or '-'}</td></tr>
