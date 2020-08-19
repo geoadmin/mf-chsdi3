@@ -324,3 +324,27 @@ class SimPlanningRasterK(Base, SimPlanning, Vector):
     __minscale__ = 1
 
 register('ch.vbs.sachplan-infrastruktur-militaer_kraft', SimPlanningRasterK)
+
+
+class KatasterBelasteterStandorteMilitaer(Base, Vector):
+    __tablename__ = 'kataster-belasteter-standorte-militaer'
+    __table_args__ = ({'schema': 'militaer', 'autoload': False})
+    __template__ = 'templates/htmlpopup/kataster_belasteter_standorte_militaer.mako'
+    __bodId__ = 'ch.vbs.kataster-belasteter-standorte-militaer'
+    __queryable_attributes__ = ['katasternummer']
+    __label__ = 'katasternummer'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    lauf_katasternummernr = Column('katasternummer', Unicode)
+    standorttyp_de = Column('standorttyp_de', Unicode)
+    standorttyp_fr = Column('standorttyp_fr', Unicode)
+    standorttyp_it = Column('standorttyp_it', Unicode)
+    status_altlv_de = Column('status_altlv_de', Unicode)
+    status_altlv_fr = Column('status_altlv_fr', Unicode)
+    status_altlv_it = Column('status_altlv_it', Unicode)
+    untersuchungsmassnahmen_de = Column('untersuchungsmassnahmen_de', Unicode)
+    untersuchungsmassnahmen_fr = Column('untersuchungsmassnahmen_fr', Unicode)
+    untersuchungsmassnahmen_it = Column('untersuchungsmassnahmen_it', Unicode)
+    url_kbs_auszug = Column('url_kbs_auszug', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.vbs.kataster-belasteter-standorte-militaer', KatasterBelasteterStandorteMilitaer)
