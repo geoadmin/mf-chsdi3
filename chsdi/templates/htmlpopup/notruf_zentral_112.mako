@@ -23,6 +23,6 @@
     <tr><td class="cell-left">${_('ch.bakom.notruf-112_zentral.mobile_112')}</td>           <td>${c['attributes']['mobile_112'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bakom.notruf-112_zentral.mo_zentrale_112')}</td>     <td>${_(str_output_mo)|n}</td></tr>
     <tr><td class="cell-left">${_('ch.bakom.notruf-112_zentral.satellit_112')}</td>           <td>${c['attributes']['satellit_112'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bakom.notruf-112_zentral.sa_zentrale_112')}</td>     <td>${_(str_output_mo)|n}</td></tr>
+    <tr><td class="cell-left">${_('ch.bakom.notruf-112_zentral.sa_zentrale_112')}</td>     <td>${_(str_output_sa)|n}</td></tr>
 </%def>
 
