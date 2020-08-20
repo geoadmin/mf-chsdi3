@@ -2863,7 +2863,7 @@ class LaermbelastungEinsenbahnLaermschutzwaende(Base, Vector):
     material_fr = Column('material_fr', Unicode)
     material_it = Column('material_it', Unicode)
     material_en = Column('material_en', Unicode)
-    has_glass = Column('enmodel_railway', Boolean)
+    has_glass = Column('has_glass', Boolean)
     year_construction = Column('year_construction', Integer)
     year_legal = Column('year_legal', Integer)
     the_geom = Column(Geometry2D)
