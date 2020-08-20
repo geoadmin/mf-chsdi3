@@ -15,6 +15,13 @@
     for i in range(arr_len):
         str_output_mo = str_output_mo + arr_mo_zentrale_112[i] + '<br />' if  i < (arr_len-1) else str_output_mo + arr_mo_zentrale_112[i]
     endfor
+    
+    arr_sa_zentrale_112 = c['attributes']['sa_zentrale_112'].split('\n')
+    arr_len = len(arr_sa_zentrale_112)
+    str_output_sa = ''
+    for i in range(arr_len):
+        str_output_sa = str_output_sa + arr_sa_zentrale_112[i] + '<br />' if  i < (arr_len-1) else str_output_sa + arr_sa_zentrale_112[i]
+    endfor
 %>
 <% c['stable_id'] = True %>
     <tr><td class="cell-left">${_('ch.bakom.notruf-112_zentral.gemeinde_112')}</td>    	<td>${c['attributes']['gemeinde_112'] or '-'}</td></tr>
