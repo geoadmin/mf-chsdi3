@@ -334,7 +334,7 @@ class KatasterBelasteterStandorteMilitaer(Base, Vector):
     __queryable_attributes__ = ['katasternummer']
     __label__ = 'katasternummer'
     id = Column('bgdi_id', Integer, primary_key=True)
-    lauf_katasternummernr = Column('katasternummer', Unicode)
+    katasternummer = Column('katasternummer', Unicode)
     standorttyp_de = Column('standorttyp_de', Unicode)
     standorttyp_fr = Column('standorttyp_fr', Unicode)
     standorttyp_it = Column('standorttyp_it', Unicode)
