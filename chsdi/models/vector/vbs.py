@@ -327,7 +327,7 @@ register('ch.vbs.sachplan-infrastruktur-militaer_kraft', SimPlanningRasterK)
 
 
 class KatasterBelasteterStandorteMilitaer(Base, Vector):
-    __tablename__ = 'kataster-belasteter-standorte-militaer'
+    __tablename__ = 'kataster_belasteter_standorte_militaer'
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
     __template__ = 'templates/htmlpopup/kataster_belasteter_standorte_militaer.mako'
     __bodId__ = 'ch.vbs.kataster-belasteter-standorte-militaer'
