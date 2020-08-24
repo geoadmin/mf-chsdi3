@@ -15,6 +15,5 @@
     <tr><td class="cell-left">${_('ch.vbs.kataster-belasteter-standorte-militaer.status_altlv')}</td>                          <td>${c['attributes'][status_altlv] or '-'}</td></tr>
     <tr><td class="cell-left" valign="top">${_('ch.vbs.kataster-belasteter-standorte-militaer.untersuchungsmassnahmen')}</td>  <td>${_(str_output)|n}</td></tr> 
     <tr><td class="cell-left">${_('ch.vbs.kataster-belasteter-standorte-militaer.url_kbs_auszug')}</td>                        <td><a href="${c['attributes']['url_kbs_auszug'] or '-'}" target="_blank">${_('link')}</a></td></tr>
-    <tr><td>&nbsp;</td>                                                                                                       <td>&nbsp;</td></tr>
 
 </%def>
