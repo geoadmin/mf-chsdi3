@@ -12,6 +12,8 @@
   url_municipality = 'https://%s/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (datageoadminhost, canton, bfs_nr)
 
   # show translated streetname if available
+  # map rm to ro in bfs delivery
+  lang = lang.replace('rm', 'ro')
   strsp_lower=[x.lower() for x in c['attributes']['strsp']]
   streetname=c['attributes']['strname_deinr']
   if lang in strsp_lower:
