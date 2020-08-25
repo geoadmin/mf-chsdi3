@@ -10,9 +10,16 @@
   bfs_nr = c['attributes']['ggdenr']
   url_canton = 'https://%s/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (datageoadminhost, canton, canton)
   url_municipality = 'https://%s/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (datageoadminhost, canton, bfs_nr)
+
+  # show translated streetname if available
+  strsp_lower=[x.lower() for x in c['attributes']['strsp']]
+  streetname=c['attributes']['strname_deinr']
+  if lang in strsp_lower:
+    pos = strsp_lower.index(lang)
+    streetname = '{} {}'.format(c['attributes']['strname'][pos], c['attributes']['deinr'])
 %>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.egid')}</td>           <td>${c['attributes']['egid'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.strname_deinr')}</td>  <td>${c['attributes']['strname_deinr'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.strname_deinr')}</td>  <td>${streetname or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.plz_plz6')}</td>       <td>${c['attributes']['plz_plz6'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.dplzname')}</td>       <td>${c['attributes']['dplzname'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.ggdename')}</td>       <td>${c['attributes']['ggdename'] or '-'}</td></tr>
