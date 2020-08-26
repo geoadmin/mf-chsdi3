@@ -244,10 +244,10 @@ class UrsprungsbezeichnungenFleisch(Base, Vector):
     __label__ = 'objektcode'
     id = Column('bgdi_id', Integer, primary_key=True)
     objektcode = Column('objektcode', Integer)
-    objekt_de = Column('objekt_de', Unicode)
-    objekt_fr = Column('objekt_fr', Unicode)
-    objekt_it = Column('objekt_it', Unicode)
-    objekt_en = Column('objekt_en', Unicode)
+    objekt_d = Column('objekt_d', Unicode)
+    objekt_f = Column('objekt_f', Unicode)
+    objekt_i = Column('objekt_i', Unicode)
+    objekt_e = Column('objekt_e', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.blw.ursprungsbezeichnungen-fleisch', UrsprungsbezeichnungenFleisch)
