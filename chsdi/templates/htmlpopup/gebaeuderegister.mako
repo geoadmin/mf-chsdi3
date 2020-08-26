@@ -63,7 +63,8 @@
       if value is None:
         return '-'
       else:
-        return _('ch.bfs.gebaeude_wohnungs_register.{}.{}'.format(attribute, value))
+        result =  _('ch.bfs.gebaeude_wohnungs_register.{}.{}'.format(attribute, value))
+        return value if attribute in result else result
 
     def translate_boolean(value):
       if value is None:
