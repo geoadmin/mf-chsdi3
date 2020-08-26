@@ -2,9 +2,8 @@
 
 <%def name="table_body(c, lang)">
 
-<% c['stable_id'] = True %>
-
 <%
+  c['stable_id'] = True
   datageoadminhost = request.registry.settings['datageoadminhost']
   canton = c['attributes']['gdekt']
   bfs_nr = c['attributes']['ggdenr']
@@ -59,6 +58,18 @@
     import requests
     request = context.get('request')
     topic = request.matchdict.get('map')
+
+    def translate_attribute(attribute, value):
+      if value is None:
+        return '-'
+      else:
+        return _('ch.bfs.gebaeude_wohnungs_register.{}.{}'.format(attribute, value))
+
+    def translate_boolean(value):
+      if value is None:
+        return '-'
+      else:
+        return 'yesText' if value == 1 else 'noText'
 %>
   <table>
     <tr><th colspan=2>${_('ch.bfs.gebaeude_wohnungs_register.block_gebaeude')}</th></tr>
@@ -75,18 +86,18 @@
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gbez')}</td>           <td class="cell-meta-small">${c['attributes']['gbez'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gkode')}</td>          <td class="cell-meta-small">${c['attributes']['gkode'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gkodn')}</td>          <td class="cell-meta-small">${c['attributes']['gkodn'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gksce')}</td>          <td class="cell-meta-small">${c['attributes']['gksce'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gstat')}</td>          <td class="cell-meta-small">${c['attributes']['gstat'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gkat')}</td>           <td class="cell-meta-small">${c['attributes']['gkat'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gklas')}</td>          <td class="cell-meta-small">${c['attributes']['gklas'] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gksce')}</td>          <td class="cell-meta-small">${_(translate_attribute('gksce', c['attributes']['gksce']))}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gstat')}</td>          <td class="cell-meta-small">${_(translate_attribute('gstat', c['attributes']['gstat']))}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gkat')}</td>           <td class="cell-meta-small">${_(translate_attribute('gkat', c['attributes']['gkat']))}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gklas')}</td>          <td class="cell-meta-small">${_(translate_attribute('gklas', c['attributes']['gklas']))}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gbauj')}</td>          <td class="cell-meta-small">${c['attributes']['gbauj'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gbaum')}</td>          <td class="cell-meta-small">${c['attributes']['gbaum'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gbaup')}</td>          <td class="cell-meta-small">${c['attributes']['gbaup'] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gbaup')}</td>          <td class="cell-meta-small">${_(translate_attribute('gbaup', c['attributes']['gbaup']))}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gabbj')}</td>          <td class="cell-meta-small">${c['attributes']['gabbj'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.garea')}</td>          <td class="cell-meta-small">${c['attributes']['garea'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvol')}</td>           <td class="cell-meta-small">${c['attributes']['gvol'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvolnorm')}</td>           <td class="cell-meta-small">${c['attributes']['gvolnorm'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvolsce')}</td>        <td class="cell-meta-small">${c['attributes']['gvolsce'] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvolnorm')}</td>       <td class="cell-meta-small">${_(translate_attribute('gvolnorm', c['attributes']['gvolnorm']))}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvolsce')}</td>        <td class="cell-meta-small">${_(translate_attribute('gvolsce', c['attributes']['gvolsce']))}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gastw')}</td>          <td class="cell-meta-small">${c['attributes']['gastw'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.ganzwhg')}</td>        <td class="cell-meta-small">${c['attributes']['ganzwhg'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gazzi')}</td>          <td class="cell-meta-small">${c['attributes']['gazzi'] or '-'}</td></tr>
@@ -102,13 +113,13 @@
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.strindx')} ${c['attributes']['strsp'][i] or '-'}</td>          <td class="cell-meta-small">${c['attributes']['strindx'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.strsp')} ${c['attributes']['strsp'][i] or '-'}</td>            <td class="cell-meta-small">${c['attributes']['strsp'][i] or '-'}</td></tr>
 % endfor
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.stroffiziel')}</td>    <td class="cell-meta-small">${c['attributes']['stroffiziel'] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.stroffiziel')}</td>    <td class="cell-meta-small">${_(translate_boolean(c['attributes']['stroffiziel']))}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.dplz4')}</td>          <td class="cell-meta-small">${c['attributes']['dplz4'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.dplzz')}</td>          <td class="cell-meta-small">${c['attributes']['dplzz'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.dplzname')}</td>       <td class="cell-meta-small">${c['attributes']['dplzname'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.dkode')}</td>          <td class="cell-meta-small">${c['attributes']['dkode'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.dkodn')}</td>          <td class="cell-meta-small">${c['attributes']['dkodn'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.doffadr')}</td>        <td class="cell-meta-small">${c['attributes']['doffadr'] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.doffadr')}</td>    <td class="cell-meta-small">${_(translate_boolean(c['attributes']['doffadr']))}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.dexpdat')}</td>        <td class="cell-meta-small">${c['attributes']['dexpdat'] or '-'}</td></tr>
     <!-- link to object -->
     <tr>
@@ -121,11 +132,11 @@
     <tr><th colspan=2>${_('ch.bfs.gebaeude_wohnungs_register.block_wohnung')}</th></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.ewid')}</td>           <td class="cell-meta-small">${c['attributes']['ewid'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.whgnr')}</td>          <td class="cell-meta-small">${c['attributes']['whgnr'][i] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wstwk')}</td>          <td class="cell-meta-small">${c['attributes']['wstwk'][i] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wstwk')}</td>          <td class="cell-meta-small">${_(translate_attribute('wstwk', c['attributes']['wstwk'][i]))}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wmehrg')}</td>         <td class="cell-meta-small">${c['attributes']['wmehrg'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.weinr')}</td>          <td class="cell-meta-small">${c['attributes']['weinr'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wbez')}</td>           <td class="cell-meta-small">${c['attributes']['wbez'][i] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wstat')}</td>          <td class="cell-meta-small">${c['attributes']['wstat'][i] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wstat')}</td>          <td class="cell-meta-small">${_(translate_attribute('wstat', c['attributes']['wstat'][i]))}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wexpdat')}</td>        <td class="cell-meta-small">${c['attributes']['wexpdat'][i].strftime("%d.%m.%Y") or '-'}</td></tr>
 % endfor
   </table>
