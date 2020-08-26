@@ -247,7 +247,6 @@ class UrsprungsbezeichnungenFleisch(Base, Vector):
     objekt_d = Column('objekt_d', Unicode)
     objekt_f = Column('objekt_f', Unicode)
     objekt_i = Column('objekt_i', Unicode)
-    objekt_e = Column('objekt_e', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.blw.ursprungsbezeichnungen-fleisch', UrsprungsbezeichnungenFleisch)
