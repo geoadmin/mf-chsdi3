@@ -237,7 +237,7 @@ register('ch.blw.emapis-zusammenfassung', EmapisZusammenfassung)
 
 
 class UrsprungsbezeichnungenFleisch(Base, Vector):
-    __tablename__ = 'ursprungsbezeichnungen'
+    __tablename__ = 'ursprungsbezeichnungen_fleisch'
     __table_args__ = ({'schema': 'blw', 'autoload': False})
     __bodId__ = 'ch.blw.ursprungsbezeichnungen-fleisch'
     __template__ = 'templates/htmlpopup/ursprungsbezeichnungen.mako'
