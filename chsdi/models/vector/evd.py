@@ -234,3 +234,20 @@ class EmapisZusammenfassung(Base, Emapis, Vector):
     __bodId__ = 'ch.blw.emapis-zusammenfassung'
 
 register('ch.blw.emapis-zusammenfassung', EmapisZusammenfassung)
+
+
+class UrsprungsbezeichnungenFleisch(Base, Vector):
+    __tablename__ = 'ursprungsbezeichnungen'
+    __table_args__ = ({'schema': 'blw', 'autoload': False})
+    __bodId__ = 'ch.blw.ursprungsbezeichnungen-fleisch'
+    __template__ = 'templates/htmlpopup/ursprungsbezeichnungen.mako'
+    __label__ = 'objektcode'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objektcode = Column('objektcode', Integer)
+    objekt_de = Column('objekt_de', Unicode)
+    objekt_fr = Column('objekt_fr', Unicode)
+    objekt_it = Column('objekt_it', Unicode)
+    objekt_en = Column('objekt_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.ursprungsbezeichnungen-fleisch', UrsprungsbezeichnungenFleisch)
