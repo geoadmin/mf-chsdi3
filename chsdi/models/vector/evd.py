@@ -236,10 +236,11 @@ class EmapisZusammenfassung(Base, Emapis, Vector):
 register('ch.blw.emapis-zusammenfassung', EmapisZusammenfassung)
 
 
-class Ursprungsbezeichnungen(Base, Vector):
+class UrsprungsbezeichnungenFleisch(Base, Vector):
     __tablename__ = 'ursprungsbezeichnungen'
     __table_args__ = ({'schema': 'blw', 'autoload': False})
-    __template__ = 'templates/htmlpopup/ursprungsbezeichnungen.mako'
+    __bodId__ = 'ch.blw.ursprungsbezeichnungen-fleisch'
+    __template__ = 'templates/htmlpopup/ursprungsbezeichnungen-fleisch.mako'
     __label__ = 'objektcode'
     id = Column('bgdi_id', Integer, primary_key=True)
     objektcode = Column('objektcode', Integer)
@@ -249,32 +250,4 @@ class Ursprungsbezeichnungen(Base, Vector):
     objekt_en = Column('objekt_en', Unicode)
     the_geom = Column(Geometry2D)
 
-
-class UrsprungsbezeichnungenFleisch(Base, Ursprungsbezeichnungen, Vector):
-    __bodId__ = 'ch.blw.ursprungsbezeichnungen-fleisch'
-
 register('ch.blw.ursprungsbezeichnungen-fleisch', UrsprungsbezeichnungenFleisch)
-
-
-class UrsprungsbezeichnungenKaese(Base, Ursprungsbezeichnungen, Vector):
-    __bodId__ = 'ch.blw.ursprungsbezeichnungen-kaese'
-
-register('ch.blw.ursprungsbezeichnungen-kaese', UrsprungsbezeichnungenKaese)
-
-
-class UrsprungsbezeichnungenKonditoreiwaren(Base, Ursprungsbezeichnungen, Vector):
-    __bodId__ = 'ch.blw.ursprungsbezeichnungen-konditoreiwaren'
-
-register('ch.blw.ursprungsbezeichnungen-konditoreiwaren', UrsprungsbezeichnungenKonditoreiwaren)
-
-
-class UrsprungsbezeichnungenPflanzen(Base, Ursprungsbezeichnungen, Vector):
-    __bodId__ = 'ch.blw.ursprungsbezeichnungen-pflanzen'
-
-register('ch.blw.ursprungsbezeichnungen-pflanzen', UrsprungsbezeichnungenPflanzen)
-
-
-class UrsprungsbezeichnungenSpirituosen(Base, Ursprungsbezeichnungen, Vector):
-    __bodId__ = 'ch.blw.ursprungsbezeichnungen-spirituosen'
-
-register('ch.blw.ursprungsbezeichnungen-spirituosen', UrsprungsbezeichnungenSpirituosen)
