@@ -17,7 +17,7 @@
   streetname=c['attributes']['strname_deinr']
   if lang in strsp_lower:
     pos = strsp_lower.index(lang)
-    streetname = '{} {}'.format(c['attributes']['strname'][pos], c['attributes']['deinr'])
+    streetname = u'{} {}'.format(c['attributes']['strname'][pos], c['attributes']['deinr'])
 %>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.egid')}</td>           <td>${c['attributes']['egid'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.strname_deinr')}</td>  <td>${streetname or '-'}</td></tr>
@@ -63,14 +63,15 @@
       if value is None:
         return '-'
       else:
-        result =  _('ch.bfs.gebaeude_wohnungs_register.{}.{}'.format(attribute, value))
-        return value if attribute in result else result
+        result =  _(u'ch.bfs.gebaeude_wohnungs_register.{}.{}'.format(attribute, value))
+        return value if c['layerBodId'] in result else result
 
     def translate_boolean(value):
       if value is None:
         return '-'
       else:
         return 'yesText' if value == 1 else 'noText'
+
 %>
   <table>
     <tr><th colspan=2>${_('ch.bfs.gebaeude_wohnungs_register.block_gebaeude')}</th></tr>
