@@ -240,6 +240,7 @@ class UrsprungsbezeichnungenFleisch(Base, Vector):
     __tablename__ = 'ursprungsbezeichnungen_fleisch'
     __table_args__ = ({'schema': 'blw', 'autoload': False})
     __bodId__ = 'ch.blw.ursprungsbezeichnungen-fleisch'
+    __queryable_attributes__ = ['objektcode', 'objekt_d', 'objekt_f', 'objekt_i']
     __template__ = 'templates/htmlpopup/ursprungsbezeichnungen.mako'
     __label__ = 'objektcode'
     id = Column('bgdi_id', Integer, primary_key=True)
