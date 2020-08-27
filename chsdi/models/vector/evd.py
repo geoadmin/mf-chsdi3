@@ -282,3 +282,19 @@ class UrsprungsbezeichnungenKonditoreiwaren(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.blw.ursprungsbezeichnungen-konditoreiwaren', UrsprungsbezeichnungenKonditoreiwaren)
+
+
+class UrsprungsbezeichnungenPflanzen(Base, Vector):
+    __tablename__ = 'ursprungsbezeichnungen_pflanzen'
+    __table_args__ = ({'schema': 'blw', 'autoload': False})
+    __bodId__ = 'ch.blw.ursprungsbezeichnungen-pflanzen'
+    __template__ = 'templates/htmlpopup/ursprungsbezeichnungen.mako'
+    __label__ = 'objektcode'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objektcode = Column('objektcode', Integer)
+    objekt_d = Column('objekt_d', Unicode)
+    objekt_f = Column('objekt_f', Unicode)
+    objekt_i = Column('objekt_i', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.ursprungsbezeichnungen-pflanzen', UrsprungsbezeichnungenPflanzen)
