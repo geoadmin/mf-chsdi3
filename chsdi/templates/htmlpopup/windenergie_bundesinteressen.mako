@@ -39,7 +39,7 @@
 <%def name="extended_info(c, lang)">
 <%
     # get the description
-    lang = lang if lang in ('rm','en') else 'de'
+    lang = lang if lang in ('fr', 'it') else 'de'
     desc_schutzgeb_o_inter = c['attributes']['schutzgeb_o_inter_%s' % lang] or '-'
     desc_grunds_ausschlussgeb = c['attributes']['grunds_ausschlussgeb_%s' % lang] or '-'
     desc_inter_abwaeg_national = c['attributes']['inter_abwaeg_national_%s' % lang] or '-'
