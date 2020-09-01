@@ -3,7 +3,7 @@
 <%def name="table_body(c, lang)">
 
 <%
-    lang = {'rm': 'de', 'it': 'fr'}.get(lang, defualt=lang)
+    lang = {'rm': 'de', 'it': 'fr'}.get(lang, lang)
     description = 'description_%s' % lang
     website = 'website_%s' % lang
     contact = 'contact_%s' % lang
@@ -22,7 +22,7 @@
 <%def name="extended_info(c,lang)">
 
 <%
-    lang = {'rm': 'de', 'it': 'fr'}.get(lang, defualt=lang)
+    lang = {'rm': 'de', 'it': 'fr'}.get(lang, lang)
     description = 'description_%s' % lang
     website = 'website_%s' % lang
     contact = 'contact_%s' % lang
