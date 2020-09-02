@@ -77,6 +77,13 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `SP Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                 |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product&layers_timestamp=2019&time=2019>`__ (ch.swisstopo.swissimage-product)                          |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata&layers_timestamp=2019&time=2019>`__ (ch.swisstopo.swissimage-product.metadata) |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Register of Buildings and Dwellings <//map.geo.admin.ch/?layers=ch.bfs.gebaeude_wohnungs_register>`__ (ch.bfs.gebaeude_wohnungs_register)                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 .. _releasenotes_20200701:
 
@@ -7131,12 +7138,12 @@ API & applications
               return a.href;
               }
        var rss_url = relativeToAbsolute('rss2.xml').replace(/^http:\/\//i, 'https://');;
-       
-       setTimeout(function() {  
+
+       setTimeout(function() {
        jQuery('<a>', {
            id: 'foo',
            href: "https://validator.w3.org/feed/check.cgi?url=" + rss_url,
-           title: 'Validate my RSS feed', 
+           title: 'Validate my RSS feed',
            html: ' <img src="https://validator.w3.org/feed/images/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed" />',
            alt: "[Valid RSS]"}).appendTo('#rss-feed');
 
