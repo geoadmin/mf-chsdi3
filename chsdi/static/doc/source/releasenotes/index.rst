@@ -41,11 +41,21 @@ Geodata
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `swissALTI3D Hillshade Monodirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d-relief-monodirektional>`__ (ch.swisstopo.swissalti3d-relief-monodirektional)                 |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `TBE: Side of tick bite reported <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Documentation of landscape change <//map.geo.admin.ch/?layers=ch.bfs.landschaftswandel>`__ (ch.bfs.landschaftswandel)                                                                   |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Public transport stops <//map.geo.admin.ch/?layers=ch.bav.haltestellen-oev>`__ (ch.bav.haltestellen-oev)                                                                                |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Waste incineration plants <//map.geo.admin.ch/?layers=ch.bfe.kehrichtverbrennungsanlagen>`__ (ch.bfe.kehrichtverbrennungsanlagen)                                                       |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Solar energy: suitability of roofs <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-daecher>`__ (ch.bfe.solarenergie-eignung-daecher)                                            |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Areas with wind-power potential <//map.geo.admin.ch/?layers=ch.bfe.windenergie-potenzialgebiete>`__ (ch.bfe.windenergie-potenzialgebiete)                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                 |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20200701:
