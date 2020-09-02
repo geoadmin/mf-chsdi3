@@ -39,13 +39,33 @@ API & applications
 Geodata
 *******
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `swissALTI3D Hillshade Monodirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d-relief-monodirektional>`__ (ch.swisstopo.swissalti3d-relief-monodirektional)                 |
+| New    | `112 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_zentral>`__ (ch.bakom.notruf-112_zentral)                                                                             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `117 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_zentral>`__ (ch.bakom.notruf-117_zentral)                                                                             |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `118 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_zentral>`__ (ch.bakom.notruf-118_zentral)                                                                             |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `TBE: Side of tick bite reported <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                   |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Documentation of landscape change <//map.geo.admin.ch/?layers=ch.bfs.landschaftswandel>`__ (ch.bfs.landschaftswandel)                                                                   |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Fleischwaren (GGA) <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-fleisch>`__ (ch.blw.ursprungsbezeichnungen-fleisch)                                                        |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Käse (GUB) <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-kaese>`__ (ch.blw.ursprungsbezeichnungen-kaese)                                                                    |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Konditoreiwaren (GGA) <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-konditoreiwaren>`__ (ch.blw.ursprungsbezeichnungen-konditoreiwaren)                                     |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Pflanziche Produkte (GUB) <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-pflanzen>`__ (ch.blw.ursprungsbezeichnungen-pflanzen)                                               |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Spirituosen (GUB) <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-spirituosen>`__ (ch.blw.ursprungsbezeichnungen-spirituosen)                                                 |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `swissALTI3D Hillshade Monodirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d-relief-monodirektional>`__ (ch.swisstopo.swissalti3d-relief-monodirektional)                 |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Public transport stops <//map.geo.admin.ch/?layers=ch.bav.haltestellen-oev>`__ (ch.bav.haltestellen-oev)                                                                                |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SIL consultation <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung)                                  |
++--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Aviation infrastructure <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_kraft>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_kraft)                              |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Waste incineration plants <//map.geo.admin.ch/?layers=ch.bfe.kehrichtverbrennungsanlagen>`__ (ch.bfe.kehrichtverbrennungsanlagen)                                                       |
 +--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
