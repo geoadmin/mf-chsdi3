@@ -4,7 +4,7 @@
 <%
     kbik = c['attributes']['kbik']
     d_colors = {1:'#B0B0B0', 2:'#A63603', 3:'#E4510C', 4:'#FD8D3C', 5:'#E1E490', 6:'#FFFFFF'}
-    d_attr_map = {1:'bauzonen_puffer', 2: 'schutzgeb_o_inter', 3:'grunds_ausschlussgeb', '4': 'inter_abwaeg_national', 5: 'vorbehaltsgeb',  6: 'weitere_einschraenk'}
+    d_attr_map = {1:'bauzonen_puffer', 2: 'schutzgeb_o_inter', 3:'grunds_ausschlussgeb', 4: 'inter_abwaeg_national', 5: 'vorbehaltsgeb',  6: 'weitere_einschraenk'}
     color = d_colors[kbik]
     legend_text = 'ch.are.windenergie-bundesinteressen.%s' % d_attr_map[kbik]
 %>
