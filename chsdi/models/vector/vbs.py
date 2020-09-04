@@ -160,14 +160,24 @@ class BundestankstellenBebeco:
     __table_args__ = ({'schema': 'militaer', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/bundestankstellen.mako'
     __bodId__ = 'ch.vbs.bundestankstellen-bebeco'
-    __queryable_attributes__ = ['ort', 'plz', 'strasse']
+    __queryable_attributes__ = ['ort', 'standort', 'adresse', 'plz', 'produkt',  'produkt_de', 'produkt_fr', 'produkt_it']
     __label__ = 'ort'
     __returnedGeometry__ = 'the_geom_point'
     id = Column('bgdi_id', Integer, primary_key=True)
-    strasse = Column('strasse', Unicode)
+    standort = Column('standort', Unicode)
+    adresse = Column('adresse', Unicode)
     plz = Column('plz', Integer)
     ort = Column('ort', Unicode)
-    bezugszeit = Column('bezugszeit', Unicode)
+    oeffnungszeiten = Column('oeffnungszeiten', Unicode)
+    produkt_de = Column('produkt_de', Unicode)
+    produkt_fr = Column('produkt_fr', Unicode)
+    produkt_it = Column('produkt_it', Unicode)
+    hinweis_de = Column('hinweis_de', Unicode)
+    hinweis_fr = Column('hinweis_fr', Unicode)
+    hinweis_it = Column('hinweis_it', Unicode)
+    kontakt = Column('kontakt', Unicode)
+    x = Column('x', Float)
+    y = Column('y', Float)
     the_geom_point = Column('the_geom', Geometry2D)
 
 
