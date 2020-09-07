@@ -16,7 +16,7 @@ Release Notes
 
 .. _releasenotes_20200916:
 
-Release 20200701 - Wednesday, September 16th 2020
+Release 20200916 - Wednesday, September 16th 2020
 -------------------------------------------------
 
 API & applications
