@@ -10,7 +10,7 @@
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_laermschutzwaende.height_above_track')}</td>             <td>${c['attributes']['height_above_track'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_laermschutzwaende.noisebarriertype')}</td>               <td>${c['attributes'][noisebarriertype] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_laermschutzwaende.material')}</td>                       <td>${c['attributes'][material] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_laermschutzwaende.has_glass')}</td>                      <td>${c['attributes']['has_glass'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_laermschutzwaende.has_glass')}</td>                      <td>${_({0: 'noText', 1: 'yesText'}.get(c['attributes']['has_glass'], '-'))}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_laermschutzwaende.year_construction')}</td>              <td>${c['attributes']['year_construction'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_laermschutzwaende.year_legal')}</td>                     <td>${c['attributes']['year_legal'] or '-'}</td></tr>
 </%def>
