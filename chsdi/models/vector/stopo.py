@@ -1,12 +1,18 @@
 # -*- coding: utf-8 -*-
 
+import requests
+import xml.etree.ElementTree as et
+
 from sqlalchemy import Column
 
 from sqlalchemy.types import Numeric, Boolean, Integer, Float, Unicode, BigInteger, SmallInteger
+from sqlalchemy.ext.hybrid import hybrid_property
+from geoalchemy2.shape import to_shape
 
 from chsdi.models import register, register_perimeter, bases
 from chsdi.models.types import DateTimeChsdi
 from chsdi.models.vector import Vector, Geometry2D
+from chsdi.lib.helpers import sanitize_url
 
 
 Base = bases['stopo']
@@ -2406,6 +2412,40 @@ class OerebkatasterZoom1(Base, Oerebkataster, Vector):
     egris_egrid = Column('egris_egrid', Integer)
     __minscale__ = 1
     __maxscale__ = 50000
+
+    @hybrid_property
+    def _is_oereb_webservice(self):
+        return self.oereb_webservice != None and self.bgdi_status == 0
+
+    @hybrid_property
+    def _center(self):
+        return to_shape(self.the_geom).representative_point()
+
+    @hybrid_property
+    def _oereb_xml_url(self):
+        path_xml = "/getegrid/xml/?XY="
+        center = self._center
+        return "{}{}{},{}".format(self.oereb_webservice, path_xml, center.x, center.y)
+
+    @hybrid_property
+    def egrids(self):
+        list_egrid = []
+        try:
+            response = requests.get(self._oereb_xml_url)
+            if response.status_code == 200:
+                root = et.fromstring(response.text)
+                list_egrid = root.findall('{http://schemas.geo.admin.ch/V_D/OeREB/1.0/Extract}egrid')
+        except BaseException:
+            pass
+        return [e.text for e in list_egrid]
+
+    @hybrid_property
+    def pdfs(self):
+        if self._is_oereb_webservice:
+            path_pdf = sanitize_url("{}/extract/reduced/pdf/".format(self.oereb_webservice))
+            return ['{0}{1}'.format(path_pdf, i) for i in self.egrids]
+        return []
+
 
 register('ch.swisstopo-vd.stand-oerebkataster', OerebkatasterZoom1)
 

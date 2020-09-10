@@ -328,6 +328,7 @@ def _identify_db(params, layerBodIds):
             break
         else:
             features.append(_process_feature(feature, params))
+
     return features
 
 

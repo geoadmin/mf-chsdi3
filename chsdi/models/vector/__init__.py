@@ -12,6 +12,7 @@ from shapely.geometry import box
 from sqlalchemy.sql import func
 from sqlalchemy.orm.util import class_mapper
 from sqlalchemy.orm.properties import ColumnProperty
+from sqlalchemy.ext.hybrid import hybrid_property
 from geoalchemy2.elements import WKBElement
 from geoalchemy2.shape import to_shape
 
@@ -81,6 +82,16 @@ class Vector(object):
         geom = None
         bbox = None
         properties = {}
+        hybrids = dict(
+            (key, prop)
+            for key, prop in class_mapper(self.__class__).all_orm_descriptors.items()
+            if isinstance(prop, (ColumnProperty, hybrid_property))
+        )
+        # Add hybrid attributes (see https://jira.swisstopo.ch/browse/BGDIINF_SB-1301)
+        # These attributes are "constructed" and do not have columns in the DB
+        for i in hybrids.keys():
+            if not i.startswith('_'):
+                properties[i] = getattr(self, i)
         for p in class_mapper(self.__class__).iterate_properties:
             if isinstance(p, ColumnProperty):
                 if len(p.columns) != 1:  # pragma: no cover
@@ -105,6 +116,7 @@ class Vector(object):
                 elif (not col.foreign_keys
                       and not isinstance(col.type, GeometryChsdi)):
                     properties[p.key] = val
+
         properties = self.insert_label(properties)
         return id, geom, properties, bbox
 
