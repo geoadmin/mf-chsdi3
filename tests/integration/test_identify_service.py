@@ -735,6 +735,27 @@ class TestIdentifyService(TestsBase):
                   'geometryFormat': 'interlis'}
         self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
 
+    # This model has hybrid_properties that are normally not exposed
+    def test_identify_oerebkatasterzoom1(self):
+
+        params = {'geometry': '2601796.375,1200283.125',
+            'geometryFormat': 'geojson',
+            'geometryType': 'esriGeometryPoint',
+            'imageDisplay': '1059,907,96',
+            'lang': 'en',
+            'layers': 'all:ch.swisstopo-vd.stand-oerebkataster',
+            'limit': 10,
+            'mapExtent': '2601618.350028069,1200166.769096322,2601883.100028069,1200393.519096322',
+            'returnGeometry': 'true',
+            'sr': 2056,
+            'tolerance': '10'
+                  }
+
+        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp.content_type, 'application/geo+json')
+        self.assertIn('pdfs', resp.json['results'][0]['properties'].keys())
+        self.assertIn(resp.json['results'][0]['properties']['egris_egrid'], " ".join(resp.json['results'][0]['properties']['pdfs']))
+
     def test_identify_query_time(self):
         params = {'geometryFormat': 'geojson',
                   'layers': 'all:ch.bazl.luftfahrthindernis',
