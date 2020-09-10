@@ -2428,22 +2428,22 @@ class OerebkatasterZoom1(Base, Oerebkataster, Vector):
         return "{}{}{},{}".format(self.oereb_webservice, path_xml, center.x, center.y)
 
     @hybrid_property
-    def egrids(self):
+    def _egrids(self):
         list_egrid = []
         try:
-            response = requests.get(self._oereb_xml_url)
+            response = requests.get(self._oereb_xml_url, timeout=5)
             if response.status_code == 200:
                 root = et.fromstring(response.text)
                 list_egrid = root.findall('{http://schemas.geo.admin.ch/V_D/OeREB/1.0/Extract}egrid')
         except BaseException:
-            pass
+            return []
         return [e.text for e in list_egrid]
 
     @hybrid_property
     def pdfs(self):
         if self._is_oereb_webservice:
             path_pdf = sanitize_url("{}/extract/reduced/pdf/".format(self.oereb_webservice))
-            return ['{0}{1}'.format(path_pdf, i) for i in self.egrids]
+            return ['{0}{1}'.format(path_pdf, i) for i in self._egrids]
         return []
 
 
