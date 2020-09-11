@@ -3342,6 +3342,7 @@ class AmtlichesAdressVerzeichnis(Base, Vector):
     __template__ = 'templates/htmlpopup/addressverzeichnis.mako'
     __bodId__ = 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis'
     __label__ = 'id'
+    __queryable_attributes__ = ['id', 'bdg_egid', 'adr_edid', 'str_esid', 'str_label', 'adr_number']
     id = Column('adr_egaid', BigInteger, primary_key=True)
     bdg_egid = Column('bdg_egid', BigInteger)
     adr_edid = Column('adr_edid', Integer)
