@@ -2902,6 +2902,31 @@ class LaermBelastungEisenbahnZulaessigeImmissionenTag(Base, LaermBelastungEisenb
 register('ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag', LaermBelastungEisenbahnZulaessigeImmissionenTag)
 
 
+class LaermbelastungEinsenbahnLaermschutzwaende(Base, Vector):
+    __tablename__ = 'laermbelastung_eisenbahn_laermschutzwaende'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/laermbelastung_eisenbahn_laermschutzwaende.mako'
+    __bodId__ = 'ch.bav.laermbelastung-eisenbahn_laermschutzwaende'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    noisebarrierheight = Column('noisebarrierheight', Float)
+    height_above_track = Column('height_above_track', Float)
+    noisebarriertype_de = Column('noisebarriertype_de', Unicode)
+    noisebarriertype_fr = Column('noisebarriertype_fr', Unicode)
+    noisebarriertype_it = Column('noisebarriertype_it', Unicode)
+    noisebarriertype_en = Column('noisebarriertype_en', Unicode)
+    material_de = Column('material_de', Unicode)
+    material_fr = Column('material_fr', Unicode)
+    material_it = Column('material_it', Unicode)
+    material_en = Column('material_en', Unicode)
+    has_glass = Column('has_glass', Boolean)
+    year_construction = Column('year_construction', Integer)
+    year_legal = Column('year_legal', Integer)
+    the_geom = Column(Geometry2D)
+
+register('ch.bav.laermbelastung-eisenbahn_laermschutzwaende', LaermbelastungEinsenbahnLaermschutzwaende)
+
+
 class SifFacilitiesA(Base, Vector):
     __tablename__ = 'sif_fac_anhorung'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
