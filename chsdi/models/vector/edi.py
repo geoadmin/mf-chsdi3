@@ -387,3 +387,43 @@ class GenGrenzenAggloG2(Base, GenGrenzenAgglo, Vector):
     __bodId__ = 'ch.bfs.generalisierte-grenzen_agglomerationen_g2'
 
 register(GenGrenzenAggloG2.__bodId__, GenGrenzenAggloG2)
+
+
+class Landschaftswandel(Base, Vector):
+    __tablename__ = 'landschaftswandel'
+    __table_args__ = ({'schema': 'bfs', 'autoload': False})
+    __template__ = 'templates/htmlpopup/landschaftswandel.mako'
+    __bodId__ = 'ch.bfs.landschaftswandel'
+    __label__ = 'haupttyp'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    gmde = Column('gmde', Unicode)
+    swissnames = Column('swissnames', Unicode)
+    haupttyp = Column('haupttyp', Unicode)
+    typ1 = Column('typ1', Unicode)
+    typ2 = Column('typ2', Unicode)
+    typ3 = Column('typ3', Unicode)
+    typ4 = Column('typ4', Unicode)
+    typ1_de = Column('typ1_de', Unicode)
+    typ2_de = Column('typ2_de', Unicode)
+    typ3_de = Column('typ3_de', Unicode)
+    typ4_de = Column('typ4_de', Unicode)
+    typ1_fr = Column('typ1_fr', Unicode)
+    typ2_fr = Column('typ2_fr', Unicode)
+    typ3_fr = Column('typ3_fr', Unicode)
+    typ4_fr = Column('typ4_fr', Unicode)
+    typ1_it = Column('typ1_it', Unicode)
+    typ2_it = Column('typ2_it', Unicode)
+    typ3_it = Column('typ3_it', Unicode)
+    typ4_it = Column('typ4_it', Unicode)
+    typ1_en = Column('typ1_en', Unicode)
+    typ2_en = Column('typ2_en', Unicode)
+    typ3_en = Column('typ3_en', Unicode)
+    typ4_en = Column('typ4_en', Unicode)
+    linkdownload_de = Column('linkdownload_de', Unicode)
+    linkdownload_fr = Column('linkdownload_fr', Unicode)
+    linkdownload_it = Column('linkdownload_it', Unicode)
+    linkdownload_en = Column('linkdownload_en', Unicode)
+    linkbild = Column('linkbild', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfs.landschaftswandel', Landschaftswandel)
