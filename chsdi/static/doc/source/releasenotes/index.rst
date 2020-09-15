@@ -28,8 +28,11 @@ API & applications
 - Added oereb layer ch.vbs.kataster-belasteter-standorte-militaer.oereb
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_200701...r_200916>`__
 - Announcement:
-    - The BFS layer ch.bfs.gebaeude_wohnungs_register (Register of Buildings and Dwellings) will extend its data model on all FSDI services (map, api3 and download on data.geo.admin.ch) by the release of September 16th 2020 according to https://www.bfs.admin.ch/bfs/en/home/statistics/catalogues-databases/publications.assetdetail.7008785.html (model description available in German only).
     - The swisstopo layer ch.swisstopo.vec200-landcover-wald will be completely removed from the FSDI services in december 2020.
+    - The model change of the BFS layer ch.bfs.gebaeude_wohnungs_register (Register of Buildings and Dwellings) has been postponed to the FSDI release of October 28th 2020. For Identify users the data structure will change as given in the following example, which can actively be tested:
+        - previous, now productive data model: https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register/9051164_0
+        - new data model: https://mf-chsdi3.int.bgdi.ch/feature_bfs_sedex/rest/services/all/MapServer/ch.bfs.gebaeude_wohnungs_register/9051164_0
+
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
