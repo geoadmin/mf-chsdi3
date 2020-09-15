@@ -1008,7 +1008,7 @@ class TestSearchServiceView(TestsBase):
             'type': 'featuresearch',
             'searchLang': 'fr',
             'searchText': 'rue de boujean',
-            'features': 'ch.bfs.gebaeude_wohnungs_register',
+            'features': 'ch.bfs.gebaeude_wohnungs_register_preview',
             'sr': '2056'
         }
         resp_fr = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
@@ -1017,7 +1017,7 @@ class TestSearchServiceView(TestsBase):
             'type': 'featuresearch',
             'searchLang': 'de',
             'searchText': 'bözingenstrasse',
-            'features': 'ch.bfs.gebaeude_wohnungs_register',
+            'features': 'ch.bfs.gebaeude_wohnungs_register_preview',
             'sr': '2056'
         }
         resp_de = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
@@ -1029,7 +1029,7 @@ class TestSearchServiceView(TestsBase):
             'type': 'featuresearch',
             'searchLang': 'fr',
             'searchText': 'boujean',
-            'features': 'ch.bfs.gebaeude_wohnungs_register,ch.swisstopo.lubis-luftbilder_farbe'
+            'features': 'ch.bfs.gebaeude_wohnungs_register_preview,ch.swisstopo.lubis-luftbilder_farbe'
         }
         self.testapp.get('/rest/services/ech/SearchServer', params=params, status=400)
 
@@ -1038,20 +1038,20 @@ class TestSearchServiceView(TestsBase):
             'type': 'featuresearch',
             'searchLang': 'fr',
             'searchText': 'aegerten 40',
-            'features': 'ch.bfs.gebaeude_wohnungs_register'
+            'features': 'ch.bfs.gebaeude_wohnungs_register_preview'
         }
         resp_fr = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         params = {
             'type': 'featuresearch',
             'searchLang': 'de',
             'searchText': 'aegerten 40',
-            'features': 'ch.bfs.gebaeude_wohnungs_register'
+            'features': 'ch.bfs.gebaeude_wohnungs_register_preview'
         }
         resp_de = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         params = {
             'type': 'featuresearch',
             'searchText': 'aegerten 40',
-            'features': 'ch.bfs.gebaeude_wohnungs_register'
+            'features': 'ch.bfs.gebaeude_wohnungs_register_preview'
         }
         resp_agnostic = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
 
