@@ -130,7 +130,7 @@ register('ch.are.gemeindetypen', Gemeindetypen_2012)
 
 
 class WindenergieBundesinteressen(Base, Vector):
-    __tablename__ = 'windenergie_bundesinteressen'
+    __tablename__ = 'windenergie_bundesint'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
     __template__ = 'templates/htmlpopup/windenergie_bundesinteressen.mako'
     __bodId__ = 'ch.are.windenergie-bundesinteressen'
@@ -138,18 +138,21 @@ class WindenergieBundesinteressen(Base, Vector):
     __extended_info__ = True
     id = Column('bgdi_id', Integer, primary_key=True)
     kbik = Column('kbik', Integer)
-    bik1_5_d = Column('bik1_5_d', Unicode)
-    bik1_5_fr = Column('bik1_5_fr', Unicode)
-    bik1_5_it = Column('bik1_5_it', Unicode)
-    bik2_d = Column('bik2_d', Unicode)
-    bik2_fr = Column('bik2_fr', Unicode)
-    bik2_it = Column('bik2_it', Unicode)
-    bik3_d = Column('bik3_d', Unicode)
-    bik3_fr = Column('bik3_fr', Unicode)
-    bik3_it = Column('bik3_it', Unicode)
-    bik4_d = Column('bik4_d', Unicode)
-    bik4_fr = Column('bik4_fr', Unicode)
-    bik4_it = Column('bik4_it', Unicode)
+    weitere_einschraenk_de = Column('weitere_einschraenk_de', Unicode)
+    weitere_einschraenk_fr = Column('weitere_einschraenk_fr', Unicode)
+    weitere_einschraenk_it = Column('weitere_einschraenk_it', Unicode)
+    schutzgeb_o_inter_de = Column('schutzgeb_o_inter_de', Unicode)
+    schutzgeb_o_inter_fr = Column('schutzgeb_o_inter_fr', Unicode)
+    schutzgeb_o_inter_it = Column('schutzgeb_o_inter_it', Unicode)
+    grunds_ausschlussgeb_de = Column('grunds_ausschlussgeb_de', Unicode)
+    grunds_ausschlussgeb_fr = Column('grunds_ausschlussgeb_fr', Unicode)
+    grunds_ausschlussgeb_it = Column('grunds_ausschlussgeb_it', Unicode)
+    inter_abwaeg_national_de = Column('inter_abwaeg_national_de', Unicode)
+    inter_abwaeg_national_fr = Column('inter_abwaeg_national_fr', Unicode)
+    inter_abwaeg_national_it = Column('inter_abwaeg_national_it', Unicode)
+    vorbehaltsgeb_de = Column('vorbehaltsgeb_de', Unicode)
+    vorbehaltsgeb_fr = Column('vorbehaltsgeb_fr', Unicode)
+    vorbehaltsgeb_it = Column('vorbehaltsgeb_it', Unicode)
     the_geom = Column(Geometry2D)
 
 register(WindenergieBundesinteressen.__bodId__, WindenergieBundesinteressen)

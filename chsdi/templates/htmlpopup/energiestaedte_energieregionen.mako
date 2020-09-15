@@ -70,7 +70,7 @@ Le projet des Régions-Energie permet à des communes de mener une politique én
 <br />
 Les Régions-Energie qui participent au programme d’encouragement «Région-Energie 2016-2019» opèrent via un organisme intercommunal, investissent dans des projets innovants et intègrent l’économie locale et la population à leurs activités.<br />
 <br />
-L’OFEN encourage des projets concrets et finance le suivi et le coaching par des conseillers spécialisés Région-Energie ainsi que le soutien accordé par l’antenne Région-Energie. Le calculateur  <a href="https://www.local-energy.swiss/fr/profibereich/profi-instrumente/2000-watt-gesellschaft/gemeinden-und-staedte.html#/" target="_blank"> énergie et climats</a> mis à disposition permet en outre de calculer la consommation d’énergie et d’évaluer le potentiel des projets.<br />
+L’OFEN encourage des projets concrets et finance le suivi et le coaching par des conseillers spécialisés Région-Energie ainsi que le soutien accordé par l’antenne Région-Energie. Le calculateur  <a href="https://www.local-energy.swiss/fr/arbeitsbereich/2000-watt-gesellschaft-pro/werkzeuge-und-instrumente/energie-und-klima-kalkulator.html#/" target="_blank"> énergie et climats</a> mis à disposition permet en outre de calculer la consommation d’énergie et d’évaluer le potentiel des projets.<br />
      </p>
      </td>
    </tr>
@@ -86,7 +86,7 @@ Il progetto «Regione-Energia» consente ai Comuni che vi partecipano di diventa
 <br />
 Le Regioni-Energia che partecipano al programma di sostegno «Regione-Energia 2016-2019» operano mediante un ente intercomunale, investono in progetti inno-vativi e coinvolgono nelle loro attività le imprese d’artigianato e commerciali locali e la popolazione.<br />
 <br />
-L'UFE promuove progetti concreti, finanzia l'accompagnamento e il coaching da parte di consulenti specializzati nell'ambito delle Regioni-Energia, nonché il sostegno da parte del centro di competenza «Regione-Energia». Inoltre, per fare un bilancio del consumo di energia e stimare il potenziale, è a disposizione  <a href="https://www.local-energy.swiss/it/profibereich/profi-instrumente/2000-watt-gesellschaft/gemeinden-und-staedte.html#/" target="_blank">il calcolatore dell’energia e del clima.</a><br />
+L'UFE promuove progetti concreti, finanzia l'accompagnamento e il coaching da parte di consulenti specializzati nell'ambito delle Regioni-Energia, nonché il sostegno da parte del centro di competenza «Regione-Energia». Inoltre, per fare un bilancio del consumo di energia e stimare il potenziale, è a disposizione  <a href="https://www.local-energy.swiss/it/arbeitsbereich/2000-watt-gesellschaft-pro/werkzeuge-und-instrumente/energie-und-klima-kalkulator.html#/" target="_blank">il calcolatore dell’energia e del clima.</a><br />
     </p>
     </td>
   </tr>
@@ -102,7 +102,7 @@ Under the Energy Regions concept, the local councils in the programme can evolve
 <br />
 The Energy Regions participating in the SFOE’s Energy Region 2016–2019 support programme operate under the auspices of an intercommunal umbrella body. They invest in innovative projects and encourage local businesses and residents to take part in their activities.<br />
 <br />
-The SFOE promotes specific projects and finances support and coaching provided by specialised Energy Region consultants. It alsofunds activities by the Energy Region Coordination Centre.  <a href="https://www.local-energy.swiss/profibereich/profi-instrumente/2000-watt-gesellschaft/gemeinden-und-staedte.html#/" target="_blank"> The Energy and Climate calculator</a> enables authorities to assess their energy use and potentials for efficiency and renewable energy use.<br />
+The SFOE promotes specific projects and finances support and coaching provided by specialised Energy Region consultants. It alsofunds activities by the Energy Region Coordination Centre.  <a href="https://www.local-energy.swiss/arbeitsbereich/2000-watt-gesellschaft-pro/werkzeuge-und-instrumente/energie-und-klima-kalkulator.html#/" target="_blank"> The Energy and Climate calculator</a> enables authorities to assess their energy use and potentials for efficiency and renewable energy use.<br />
     </p>
     </td>
   </tr>
@@ -118,7 +118,7 @@ Das Konzept der Energie-Region ermöglicht es den beteiligten Gemeinden, sich im
 <br />
 Die beim BFE-Unterstützungsprogramm „Energie-Region 2016-2019“ teilnehmenden Energie-Regionen operieren über eine interkommunale Trägerschaft, investieren in innovative Projekte und binden das ansässige Gewerbe sowie Bevölkerung in ihre Aktivitäten ein.<br />
 <br />
-Das BFE fördert konkrete Projekte, finanziert Begleitung und Coaching durch spezialisierte Energie-Regionen-Beratende sowie Unterstützung durch die Fachstelle Energie-Region. Zudem steht <a href="https://www.local-energy.swiss/profibereich/profi-instrumente/2000-watt-gesellschaft/gemeinden-und-staedte.html#/" target="_blank">der Energie- und Klimakalkulator</a> für die Bilanzierung des Energieverbrauchs sowie für die Potenzialabschätzung zur Verfügung.<br />
+Das BFE fördert konkrete Projekte, finanziert Begleitung und Coaching durch spezialisierte Energie-Regionen-Beratende sowie Unterstützung durch die Fachstelle Energie-Region. Zudem steht <a href="https://www.local-energy.swiss/arbeitsbereich/2000-watt-gesellschaft-pro/werkzeuge-und-instrumente/energie-und-klima-kalkulator.html#/" target="_blank">der Energie- und Klimakalkulator</a> für die Bilanzierung des Energieverbrauchs sowie für die Potenzialabschätzung zur Verfügung.<br />
 <br />
    </p>
    </td>

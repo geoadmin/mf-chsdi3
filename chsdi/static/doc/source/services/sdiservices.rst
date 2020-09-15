@@ -1171,7 +1171,7 @@ Metadata Service
 
 The `layer.json` file determines which terrain tiles are available.
 
-- https://3d.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20180601/4326/layer.json
+- https://3d.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20200520/4326/layer.json
 
 Parameters
 **********
