@@ -47,7 +47,7 @@ class TestFeaturesView(TestsBase):
     def test_find_scan(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register',
                   'searchField': 'egid',
-                  'searchText': '1757559'}
+                  'searchText': '1231641'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         results = resp.json['results']
@@ -89,7 +89,7 @@ class TestFeaturesView(TestsBase):
     def test_find_exact_int(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register',
                   'searchField': 'egid',
-                  'searchText': '1753854',
+                  'searchText': '1231625',
                   'returnGeometry': 'false',
                   'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
@@ -112,8 +112,8 @@ class TestFeaturesView(TestsBase):
 
     def test_find_exact_text(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register',
-                  'searchField': 'strname_deinr',
-                  'searchText': 'Rue Neuve 12',
+                  'searchField': 'strname1',
+                  'searchText': 'Beaulieustrasse',
                   'returnGeometry': 'false',
                   'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
@@ -177,8 +177,8 @@ class TestFeaturesView(TestsBase):
 
     def test_find_contains(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register',
-                  'searchText': 'Rue Neuve 12',
-                  'searchField': 'strname_deinr',
+                  'searchText': 'Islastrasse',
+                  'searchField': 'strname1',
                   'returnGeometry': 'false',
                   'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
