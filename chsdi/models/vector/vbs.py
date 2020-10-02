@@ -40,6 +40,38 @@ class Kulturgueter(Base, Vector):
 register('ch.babs.kulturgueter', Kulturgueter)
 
 
+class KulturgueterAnhoerung(Base, Vector):
+    __tablename__ = 'kgs_anhoerung'
+    __table_args__ = ({'schema': 'babs', 'autoload': False})
+    __template__ = 'templates/htmlpopup/kgs.mako'
+    __bodId__ = 'ch.babs.kulturgueter-anhoerung'
+    __queryable_attributes__ = ['zkob']
+    __extended_info__ = True
+    __label__ = 'zkob'
+    id = Column('kgs_nr', Integer, primary_key=True)
+    zkob = Column('zkob', Unicode)
+    x = Column('x', Float)
+    y = Column('y', Float)
+    kategorie = Column('kategorie', Unicode)
+    gemeinde = Column('gemeinde', Unicode)
+    gemeinde_ehemalig = Column('gemeinde_ehemalig', Unicode)
+    objektart = Column('objektart', Unicode)
+    hausnr = Column('hausnr', Unicode)
+    adresse = Column('adresse', Unicode)
+    kurztexte = Column('kurztexte', Unicode)
+    kt_kz = Column('kt_kz', Unicode)
+    pdf_list = Column('pdf_list', Unicode)
+    link_uri = Column('link_uri', Unicode)
+    link_title = Column('link_title', Unicode)
+    link_2_uri = Column('link_2_uri', Unicode)
+    link_2_title = Column('link_2_title', Unicode)
+    link_3_uri = Column('link_3_uri', Unicode)
+    link_3_title = Column('link_3_title', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.babs.kulturgueter-anhoerung', KulturgueterAnhoerung)
+
+
 class NationalesSportanlagenkonzept(Base, Vector):
     __tablename__ = 'nationales_sportanlagenkonzept'
     __table_args__ = ({'schema': 'baspo', 'autoload': False})
