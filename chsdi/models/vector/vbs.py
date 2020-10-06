@@ -43,7 +43,7 @@ register('ch.babs.kulturgueter', Kulturgueter)
 class KulturgueterAnhoerung(Base, Vector):
     __tablename__ = 'kgs_anhoerung'
     __table_args__ = ({'schema': 'babs', 'autoload': False})
-    __template__ = 'templates/htmlpopup/kgs.mako'
+    __template__ = 'templates/htmlpopup/kgs_anhoerung.mako'
     __bodId__ = 'ch.babs.kulturgueter-anhoerung'
     __queryable_attributes__ = ['zkob']
     __extended_info__ = True
