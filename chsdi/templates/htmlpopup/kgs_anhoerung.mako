@@ -18,8 +18,8 @@
         import csv
         from urllib2 import urlopen
         dataGeoAdminHost = request.registry.settings['datageoadminhost']
-        dataPath = 'ch.babs.kulturgueter-anhoerung'
-        csv_url = "https://" + dataGeoAdminHost + "/" + dataPath + "/image/meta.txt"
+        dataPath = 'ch.babs.kulturgueter'
+        csv_url = "https://" + dataGeoAdminHost + "/ch.babs.kulturgueter-anhoerung/image/meta.txt"
         csv_file = None
         try:
             csv_file = urlopen(csv_url)
@@ -89,7 +89,7 @@
             <th class="cell-left">${_('Feature tooltip')}:</th>
             <td>
 	        % for pdf in c['attributes']['pdf_list'].split(','):
-                <a href="https://${dataGeoAdminHost}/ch.babs.kulturgueter/PDF/${pdf}" target="_blank">${pdf}</a><br />
+                <a href="https://${dataGeoAdminHost}/${dataPath}/PDF/${pdf}" target="_blank">${pdf}</a><br />
 	        % endfor
             </td>
 	    </tr>
