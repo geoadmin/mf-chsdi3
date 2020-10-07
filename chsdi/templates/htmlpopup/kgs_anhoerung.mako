@@ -29,7 +29,7 @@
                 if i == 0: # The first row is NUMMER;BILDNR;FOTOGRAF;COPYRIGHT and cannot be parsed.
                     continue
                 if int(row[0]) == c['featureId']:
-                    pic_list.append(map(lambda x: x.decode('cp1252'), row))
+                    pic_list.append(map(lambda x: x.decode('utf-8'), row))
         finally:
             csv_file.close()
     %>
