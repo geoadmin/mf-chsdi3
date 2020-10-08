@@ -1246,6 +1246,19 @@ class GridstandSwisssurface3d(Base, Vector):
 register('ch.swisstopo.swisssurface3d.metadata', GridstandSwisssurface3d)
 
 
+class GridstandSwisssurface3dRaster(Base, Vector):
+    __tablename__ = 'view_gridstand_swisssurface3d_raster_metadata'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.swisssurface3d-raster.metadata'
+    __template__ = 'templates/htmlpopup/swisssurface3d_raster.mako'
+    __label__ = 'id'
+    id = Column('tilekey', Unicode, primary_key=True)
+    fly_y_min = Column('fly_y_min', Integer)
+    the_geom = Column(Geometry2D)
+
+register(GridstandSwisssurface3dRaster.__bodId__, GridstandSwisssurface3dRaster)
+
+
 class SwissimageProduct(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_swissimage'
     __table_args__ = ({'schema': 'public', 'autoload': False})
