@@ -1254,6 +1254,7 @@ class GridstandSwisssurface3dRaster(Base, Vector):
     __label__ = 'id'
     id = Column('tilekey', Unicode, primary_key=True)
     fly_y_min = Column('fly_y_min', Integer)
+    fly_y_max = Column('fly_y_max', Integer)
     the_geom = Column(Geometry2D)
 
 register(GridstandSwisssurface3dRaster.__bodId__, GridstandSwisssurface3dRaster)
