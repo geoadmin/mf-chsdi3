@@ -1,9 +1,10 @@
 <%inherit file="base.mako"/>
+<%namespace file="seilbahnenbundeskonzession.mako" import="seilbahnen"/>
 
 <%def name="table_body(c,lang)">
 <%
-  layer = 'ch.swisstopo.geologie-geotope_kantone_stand.'
+  layer = 'ch.bav.seilbahnen-bundeskonzession.'
 %>
-  <tr><td class="cell-left">${_('anlagenr')}</td> <td>${c['attributes']['anlagenr'] or '-'}</td></tr>
-  <tr><td class="cell-left">${_('anlagename')}</td> <td>${c['attributes']['anlagename'] or '-'}</td></tr>
+  ${seilbahnen()}
+  <tr><td class="cell-left">${_(layer + 'bauwerkstyp')}</td> <td>${c['attributes']['bauwerkstyp'] or '-'}</td></tr>
 </%def>
