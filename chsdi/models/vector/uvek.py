@@ -3743,7 +3743,7 @@ class Gebirgslandeplaetze(Base, Vector):
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/gebirgslandeplaetze.mako'
     __bodId__ = 'ch.bazl.gebirgslandeplaetze'
-    id = Column('oid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     icao = Column('icao', Unicode)
     name = Column('name', Unicode)
     canton = Column('canton', Unicode)
