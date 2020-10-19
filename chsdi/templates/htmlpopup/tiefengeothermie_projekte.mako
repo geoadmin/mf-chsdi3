@@ -30,7 +30,7 @@
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.depth')}</th><td>${c['attributes']['depth'] or '-'}</td></tr>
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.reservoir')}</th><td>${c['attributes']['reservoir'] or '-'}</td></tr>
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.temp')}</th><td>${c['attributes']['temp'] or '-'}</td></tr>
-   <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.capacity')}</th><td>${c['attributes']['capacity'] or '-'}</td></tr>
+   <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.capacity')}</th><td>${c['attributes']['capac'] or '-'}</td></tr>
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.production')}</th><td>${c['attributes']['production'] or '-'}</td></tr>
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.year')}</th><td>${c['attributes']['year'] or '-'}</td></tr>
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.subsidy')}</th><td>${c['attributes'][subsidy_text] or '-'}</td></tr>
@@ -41,9 +41,6 @@
        <td><a href="${c['attributes']['download']}" target="_blank">Zip</a></td>
    % endif
    </tr>
-   <%
-   weblink = c['attributes']['weblink'].split('; ')
-   %>
    <tr>
      <th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.more')}</th>
      % if c['attributes'][more_text] == None or c['attributes'][more_text] == "-":
