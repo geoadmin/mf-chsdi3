@@ -34,19 +34,20 @@
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.production')}</th><td>${c['attributes']['production'] or '-'}</td></tr>
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.year')}</th><td>${c['attributes']['year'] or '-'}</td></tr>
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.subsidy')}</th><td>${c['attributes'][subsidy_text] or '-'}</td></tr>
-   <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.download')}</th>
-   % if c['attributes']['download'] == None or c['attributes']['download'] == "-":
-       <td>-</td>
-   % else:
-       <td><a href="${c['attributes']['download']}" target="_blank">Zip</a></td>
-   % endif
+   <tr>
+     <th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.download')}</th>
+       % if c['attributes']['download'] == None or c['attributes']['download'] == "-":
+         <td>-</td>
+       % else:
+         <td><a href="${c['attributes']['download']}" target="_blank">Zip</a></td>
+       % endif
    </tr>
    <tr>
      <th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.more')}</th>
-     % if c['attributes'][more_text] == None or c['attributes'][more_text] == "-":
+       % if c['attributes'][more_text] == None or c['attributes'][more_text] == "-":
             <td>-</td>
-     % else:
-        <td>
+       % else:
+         <td>
          %  for i in range(len(more_text)):
             <a href="${more_text[i]}" target="_blank">Link_${i+1}</a>&nbsp;
          %endfor
