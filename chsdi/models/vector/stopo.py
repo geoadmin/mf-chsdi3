@@ -1464,7 +1464,7 @@ class TiefenGeothermieProjekte(Base, Vector):
     community = Column('community', Unicode)
     depth = Column('depth', Integer)
     temp = Column('temp', Unicode)
-    capacity = Column('capacity', Unicode)
+    capacity = Column('capac', Unicode)
     production = Column('production', Unicode)
     reservoir = Column('reservoir', Unicode)
     download = Column('download', Unicode)
