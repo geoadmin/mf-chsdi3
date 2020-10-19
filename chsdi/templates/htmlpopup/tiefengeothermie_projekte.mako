@@ -1,14 +1,11 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c,lang)">
-
 <%
     lang = lang if lang in ('fr','en') else 'de'
     status_text = 'status_%s' % lang
     system_text = 'system_%s' % lang
     use_text = 'use_%s' % lang
-    subsidy_text = 'subsidy_%s' % lang
-    more_text = 'more_%s' % lang
 %>
    <tr><td class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.name')}</td><td>${c['attributes']['name'] or '-'}</td></tr>
    <tr><td class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.owner')}</td><td>${c['attributes']['owner'] or '-'}</td></tr>
@@ -18,8 +15,15 @@
 </%def>
 
 <%def name="extended_info(c,lang)">
+<%
+    lang = lang if lang in ('fr','en') else 'de'
+    status_text = 'status_%s' % lang
+    system_text = 'system_%s' % lang
+    use_text = 'use_%s' % lang
+    subsidy_text = 'subsidy_%s' % lang
+    more_text = 'more_%s' % lang
+%>
 <table class="table-with-border tiefengeothermie_projekte-extended">
-
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.name')}</th><td>${c['attributes']['name'] or '-'}</td></tr>
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.owner')}</th><td>${c['attributes']['owner'] or '-'}</td></tr>
    <tr><th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.status')}</th><td>${c['attributes'][status_text] or '-'}</td></tr>
