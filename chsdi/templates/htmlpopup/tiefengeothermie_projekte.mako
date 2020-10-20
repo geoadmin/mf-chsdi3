@@ -49,13 +49,13 @@
    <tr>
      <th class="cell-left">${_('ch.swisstopo.geologie-tiefengeothermie_projekte.more')}</th>
        % if c['attributes'][more_text] == None or c['attributes'][more_text] == "-":
-            <td>-</td>
-       % else:
+         <td>-</td>
+       % elif c['attributes'][more_text][0:7] == "https://":
          <td>
-         %  for i in range(len(more_text)):
-            <a href="${more_text[i]}" target="_blank">Link_${i+1}</a>&nbsp;
-         %endfor
-        </td>
+            <a href="${c['attributes'][more_text]}" target="_blank">Link</a>
+         </td>
+       % else:
+            <td>c['attributes'][more_text]</td>
      % endif
    </tr>
 </table>
