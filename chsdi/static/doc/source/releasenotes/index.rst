@@ -14,6 +14,118 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20201028:
+
+Release 20201028 - Wednesday, October 28th 2020
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_200916...r_201028>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_200916...r_201028>`__
+
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division swissSURFACE3D Raster <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d-raster.metadata>`__ (ch.swisstopo.swisssurface3d-raster.metadata)                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `swissSURFACE3D Hillshade Monodirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d-reliefschattierung_monodirektional>`__ (ch.swisstopo.swisssurface3d-reliefschattierung_monodirektional)         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `swissSURFACE3D Hillshade Multidirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d-reliefschattierung-multidirektional>`__ (ch.swisstopo.swisssurface3d-reliefschattierung-multidirektional)      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Seilbahnen mit Bundeskonzession <//map.geo.admin.ch/?layers=ch.bav.seilbahnen-bundeskonzession>`__ (ch.bav.seilbahnen-bundeskonzession)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Climate normals sunshine duration 1961-1990 <//map.geo.admin.ch/?layers=ch.meteoschweiz.klimanormwerte-sonnenscheindauer_1961_1990>`__ (ch.meteoschweiz.klimanormwerte-sonnenscheindauer_1961_1990)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Climate normals sunshine duration 1981-2010 <//map.geo.admin.ch/?layers=ch.meteoschweiz.klimanormwerte-sonnenscheindauer_aktuelle_periode>`__ (ch.meteoschweiz.klimanormwerte-sonnenscheindauer_aktuelle_periode)|
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Climate normals temperature 1961-1990 <//map.geo.admin.ch/?layers=ch.meteoschweiz.klimanormwerte-temperatur_1961_1990>`__ (ch.meteoschweiz.klimanormwerte-temperatur_1961_1990)                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Climate normals temperature 1981-2010 <//map.geo.admin.ch/?layers=ch.meteoschweiz.klimanormwerte-temperatur_aktuelle_periode>`__ (ch.meteoschweiz.klimanormwerte-temperatur_aktuelle_periode)                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Climate normals precipitation 1961-1990 <//map.geo.admin.ch/?layers=ch.meteoschweiz.klimanormwerte-niederschlag_1961_1990>`__ (ch.meteoschweiz.klimanormwerte-niederschlag_1961_1990)                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Climate normals precipitation 1981-2010 <//map.geo.admin.ch/?layers=ch.meteoschweiz.klimanormwerte-niederschlag_aktuelle_periode>`__ (ch.meteoschweiz.klimanormwerte-niederschlag_aktuelle_periode)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerodromes + Heliports <//map.geo.admin.ch/?layers=ch.bazl.flugplaetze-heliports>`__ (ch.bazl.flugplaetze-heliports)                                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Arsenals <//map.geo.admin.ch/?layers=ch.vbs.retablierungsstellen>`__ (ch.vbs.retablierungsstellen)                                                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Konsultationsbereiche Rohrleitungen <//map.geo.admin.ch/?layers=ch.bfe.rohrleitungen-konsultationsbereiche>`__ (ch.bfe.rohrleitungen-konsultationsbereiche)                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Biogas plants <//map.geo.admin.ch/?layers=ch.bfe.biogasanlagen>`__ (ch.bfe.biogasanlagen)                                                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map of forest damage – projectile <//map.geo.admin.ch/?layers=ch.vbs.waldschadenkarte>`__ (ch.vbs.waldschadenkarte)                                                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill)                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 1st night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde)                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lmax <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel)  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lr <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter)                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. light / large airecrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge)|
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. ligt aircrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. last night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. milit. aerodr. (tot.) <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 2nd night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Protected Areas VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-adminboundaries-protectedarea>`__ (ch.swisstopo.vec200-adminboundaries-protectedarea)                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Building generalized VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-building>`__ (ch.swisstopo.vec200-building)                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydrology VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-hydrography>`__ (ch.swisstopo.vec200-hydrography)                                                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Land cover VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-landcover>`__ (ch.swisstopo.vec200-landcover)                                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Forested areas <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-landcover-wald>`__ (ch.swisstopo.vec200-landcover-wald)                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Single objects  VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-miscellaneous>`__ (ch.swisstopo.vec200-miscellaneous)                                                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Elevations VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-miscellaneous-geodpoint>`__ (ch.swisstopo.vec200-miscellaneous-geodpoint)                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Names VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-names-namedlocation>`__ (ch.swisstopo.vec200-names-namedlocation)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transportation VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-transportation-oeffentliche-verkehr>`__ (ch.swisstopo.vec200-transportation-oeffentliche-verkehr)                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Road system VECTOR200 <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-transportation-strassennetz>`__ (ch.swisstopo.vec200-transportation-strassennetz)                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Federal filling stations BEBECO <//map.geo.admin.ch/?layers=ch.vbs.bundestankstellen-bebeco>`__ (ch.vbs.bundestankstellen-bebeco)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division national map 25 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte25_papier.metadata>`__ (ch.swisstopo.landeskarte25_papier.metadata)                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division national map 50 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte50_papier.metadata>`__ (ch.swisstopo.landeskarte50_papier.metadata)                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division national map 100 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte100_papier.metadata>`__ (ch.swisstopo.landeskarte100_papier.metadata)                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division hiking map 50 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.wanderkarte50_papier.metadata>`__ (ch.swisstopo.wanderkarte50_papier.metadata)                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Deep geothermal projects <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-tiefengeothermie_projekte>`__ (ch.swisstopo.geologie-tiefengeothermie_projekte)                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Reserved zones aiports <//map.geo.admin.ch/?layers=ch.bazl.projektierungszonen-flughafenanlagen>`__ (ch.bazl.projektierungszonen-flughafenanlagen)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `3D Objects from TLM <//s.geo.admin.ch/81bdb0f497>`__ (ch.swisstopo.swisstlm3d.3d)                                                                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Register of Buildings and Dwellings <//map.geo.admin.ch/?layers=ch.bfs.gebaeude_wohnungs_register>`__ (ch.bfs.gebaeude_wohnungs_register)                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20200916:
 
 Release 20200916 - Wednesday, September 16th 2020
