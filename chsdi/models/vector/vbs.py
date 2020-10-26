@@ -160,14 +160,24 @@ class BundestankstellenBebeco:
     __table_args__ = ({'schema': 'militaer', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/bundestankstellen.mako'
     __bodId__ = 'ch.vbs.bundestankstellen-bebeco'
-    __queryable_attributes__ = ['ort', 'plz', 'strasse']
+    __queryable_attributes__ = ['ort', 'standort', 'adresse', 'plz', 'produkt_de', 'produkt_fr', 'produkt_it']
     __label__ = 'ort'
     __returnedGeometry__ = 'the_geom_point'
     id = Column('bgdi_id', Integer, primary_key=True)
-    strasse = Column('strasse', Unicode)
+    standort = Column('standort', Unicode)
+    adresse = Column('adresse', Unicode)
     plz = Column('plz', Integer)
     ort = Column('ort', Unicode)
-    bezugszeit = Column('bezugszeit', Unicode)
+    oeffnungszeiten = Column('oeffnungszeiten', Unicode)
+    produkt_de = Column('produkt_de', Unicode)
+    produkt_fr = Column('produkt_fr', Unicode)
+    produkt_it = Column('produkt_it', Unicode)
+    hinweis_de = Column('hinweis_de', Unicode)
+    hinweis_fr = Column('hinweis_fr', Unicode)
+    hinweis_it = Column('hinweis_it', Unicode)
+    kontakt = Column('kontakt', Unicode)
+    x = Column('x', Float)
+    y = Column('y', Float)
     the_geom_point = Column('the_geom', Geometry2D)
 
 
@@ -338,13 +348,13 @@ class KatasterBelasteterStandorteMilitaer(Base, Vector):
     standorttyp_de = Column('standorttyp_de', Unicode)
     standorttyp_fr = Column('standorttyp_fr', Unicode)
     standorttyp_it = Column('standorttyp_it', Unicode)
-    status_altlv_de = Column('status_altlv_de', Unicode)
-    status_altlv_fr = Column('status_altlv_fr', Unicode)
-    status_altlv_it = Column('status_altlv_it', Unicode)
+    statusaltlv_de = Column('status_altlv_de', Unicode)
+    statusaltlv_fr = Column('status_altlv_fr', Unicode)
+    statusaltlv_it = Column('status_altlv_it', Unicode)
     untersuchungsmassnahmen_de = Column('untersuchungsmassnahmen_de', Unicode)
     untersuchungsmassnahmen_fr = Column('untersuchungsmassnahmen_fr', Unicode)
     untersuchungsmassnahmen_it = Column('untersuchungsmassnahmen_it', Unicode)
-    url_kbs_auszug = Column('url_kbs_auszug', Unicode)
+    url = Column('url_kbs_auszug', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.vbs.kataster-belasteter-standorte-militaer', KatasterBelasteterStandorteMilitaer)

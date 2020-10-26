@@ -3743,7 +3743,7 @@ class Gebirgslandeplaetze(Base, Vector):
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/gebirgslandeplaetze.mako'
     __bodId__ = 'ch.bazl.gebirgslandeplaetze'
-    id = Column('oid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     icao = Column('icao', Unicode)
     name = Column('name', Unicode)
     canton = Column('canton', Unicode)
@@ -3851,3 +3851,41 @@ class BiomasseNichtVerholzt (Base, Biomasse, Vector):
     non_woody = Column('non_woody', Float)
 
 register(BiomasseNichtVerholzt.__bodId__, BiomasseNichtVerholzt)
+
+
+class SeilbahnenBundeskonzession:
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __bodId__ = 'ch.bav.seilbahnen-bundeskonzession'
+    __label__ = 'anlagename'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+    anlagenr = Column('anlagenr', Unicode)
+    anlagename = Column('anlagename', Unicode)
+    betreiber_tuabkuerzung = Column('betreiber_tuabkuerzung', Unicode)
+
+
+class SeilbahnenBundeskonzessionBauwerk (Base, SeilbahnenBundeskonzession, Vector):
+    __tablename__ = 'seilbahnen_bundeskonzession_bauwerk'
+    __template__ = 'templates/htmlpopup/seilbahnenbundeskonzession_bauwerk.mako'
+    bauwerkstyp = Column('bauwerkstyp', Unicode)
+
+
+class SeilbahnenBundeskonzessioSeilbahnstreke (Base, SeilbahnenBundeskonzession, Vector):
+    __tablename__ = 'seilbahnen_bundeskonzession_seilbahnstrecke'
+    __template__ = 'templates/htmlpopup/seilbahnenbundeskonzession_seilbahnstrecke.mako'
+    bahntyp = Column('bahntyp', Unicode)
+    fahrzeugtyp = Column('fahrzeugtyp', Unicode)
+    hoehendifferenz = Column('hoehendifferenz', Unicode)
+    laengeschief = Column('laengeschief', Unicode)
+
+
+class SeilbahnenBundeskonzessioStation (Base, SeilbahnenBundeskonzession, Vector):
+    __tablename__ = 'seilbahnen_bundeskonzession_station'
+    __template__ = 'templates/htmlpopup/seilbahnenbundeskonzession_station.mako'
+    bp_nummer = Column('bp_nummer', Unicode)
+    bp_name = Column('bp_name', Unicode)
+    stationstyp = Column('stationstyp', Unicode)
+
+register('ch.bav.seilbahnen-bundeskonzession', SeilbahnenBundeskonzessioSeilbahnstreke)
+register('ch.bav.seilbahnen-bundeskonzession', SeilbahnenBundeskonzessioStation)
+register('ch.bav.seilbahnen-bundeskonzession', SeilbahnenBundeskonzessionBauwerk)

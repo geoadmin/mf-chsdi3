@@ -2139,7 +2139,7 @@ class SturmStaudruck30(Base, Vector):
     __bodId__ = 'ch.bafu.sturm-staudruck_30'
     __template__ = 'templates/htmlpopup/sturm_staudruck.mako'
     __label__ = 'id'
-    id = Column('oid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     staudruck_30 = Column('staudruck_30', Unicode)
     staudruck_50 = Column('staudruck_50', Unicode)
     staudruck_100 = Column('staudruck_100', Unicode)
@@ -2155,7 +2155,7 @@ class SturmStaudruck50(Base, Vector):
     __bodId__ = 'ch.bafu.sturm-staudruck_50'
     __template__ = 'templates/htmlpopup/sturm_staudruck.mako'
     __label__ = 'id'
-    id = Column('oid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     staudruck_30 = Column('staudruck_30', Unicode)
     staudruck_50 = Column('staudruck_50', Unicode)
     staudruck_100 = Column('staudruck_100', Unicode)
@@ -2171,7 +2171,7 @@ class SturmStaudruck100(Base, Vector):
     __bodId__ = 'ch.bafu.sturm-staudruck_100'
     __template__ = 'templates/htmlpopup/sturm_staudruck.mako'
     __label__ = 'id'
-    id = Column('oid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     staudruck_30 = Column('staudruck_30', Unicode)
     staudruck_50 = Column('staudruck_50', Unicode)
     staudruck_100 = Column('staudruck_100', Unicode)
@@ -2187,7 +2187,7 @@ class SturmStaudruck300(Base, Vector):
     __bodId__ = 'ch.bafu.sturm-staudruck_300'
     __template__ = 'templates/htmlpopup/sturm_staudruck.mako'
     __label__ = 'id'
-    id = Column('oid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     staudruck_30 = Column('staudruck_30', Unicode)
     staudruck_50 = Column('staudruck_50', Unicode)
     staudruck_100 = Column('staudruck_100', Unicode)
@@ -2203,7 +2203,7 @@ class SturmBoeenspitzen30(Base, Vector):
     __bodId__ = 'ch.bafu.sturm-boeenspitzen_30'
     __template__ = 'templates/htmlpopup/sturm_boeenspitzen.mako'
     __label__ = 'id'
-    id = Column('oid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     boenspitzen_kmh_30 = Column('boenspitzen_kmh_30', Unicode)
     boenspitzen_ms_30 = Column('boenspitzen_ms_30', Unicode)
     the_geom = Column(Geometry2D)
@@ -2217,7 +2217,7 @@ class SturmBoeenspitzen50(Base, Vector):
     __bodId__ = 'ch.bafu.sturm-boeenspitzen_50'
     __template__ = 'templates/htmlpopup/sturm_boeenspitzen.mako'
     __label__ = 'id'
-    id = Column('oid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     boenspitzen_kmh_50 = Column('boenspitzen_kmh_50', Unicode)
     boenspitzen_ms_50 = Column('boenspitzen_ms_50', Unicode)
     the_geom = Column(Geometry2D)
@@ -2231,7 +2231,7 @@ class SturmBoeenspitzen100(Base, Vector):
     __bodId__ = 'ch.bafu.sturm-boeenspitzen_100'
     __template__ = 'templates/htmlpopup/sturm_boeenspitzen.mako'
     __label__ = 'id'
-    id = Column('oid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     boenspitzen_kmh_100 = Column('boenspitzen_kmh_100', Unicode)
     boenspitzen_ms_100 = Column('boenspitzen_ms_100', Unicode)
     the_geom = Column(Geometry2D)
@@ -2245,7 +2245,7 @@ class SturmBoeenspitzen300(Base, Vector):
     __bodId__ = 'ch.bafu.sturm-boeenspitzen_300'
     __template__ = 'templates/htmlpopup/sturm_boeenspitzen.mako'
     __label__ = 'id'
-    id = Column('oid', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     boenspitzen_kmh_300 = Column('boenspitzen_kmh_300', Unicode)
     boenspitzen_ms_300 = Column('boenspitzen_ms_300', Unicode)
     the_geom = Column(Geometry2D)
