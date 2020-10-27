@@ -26,6 +26,8 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_200916...r_201028>`__
+- Due to maintenance work, the layer ch.swisstopo.geologie-tiefengeothermie-projekte will be temporarily unavailable in CHSDI until the release of December 9th 2020. In the meantime, the layer is still accessible for `download <https://data.geo.admin.ch/ch.swisstopo.geologie-tiefengeothermie_projekte/>`__.
+
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
@@ -113,8 +115,6 @@ Geodata
 | Update | `Division national map 100 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte100_papier.metadata>`__ (ch.swisstopo.landeskarte100_papier.metadata)                                                        |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division hiking map 50 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.wanderkarte50_papier.metadata>`__ (ch.swisstopo.wanderkarte50_papier.metadata)                                                             |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Deep geothermal projects <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-tiefengeothermie_projekte>`__ (ch.swisstopo.geologie-tiefengeothermie_projekte)                                                       |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                                        |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
