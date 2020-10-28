@@ -265,3 +265,10 @@ class TestMapServiceView(TestsBase):
 
     def test_layer_attributes_none_modelToQuery(self):
         self.testapp.get('/rest/services/ech/MapServer/ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata/attributes/wrongAttribute', status=400)
+
+    # Some models have `datetime`type which breaks with the default serializer
+    def test_layer_attributes_datetime(self):
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfs.gebaeude_wohnungs_register', status=200)
+        self.assertEqual(resp.content_type, 'application/json')
+        resp = self.testapp.get('/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register', params={'callback': 'cb_'}, status=200)
+        self.assertEqual(resp.content_type, 'application/javascript')
