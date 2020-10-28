@@ -119,7 +119,10 @@ def feature_attributes(request):
             if len(field['values']) < MAX_ATTRIBUTES_VALUES and \
                value not in field['values']:
                 field['values'].append(value)
-                field['values'].sort()
+                try:
+                    field['values'].sort()
+                except Exception:
+                    pass
         return field
 
     for model in models:
