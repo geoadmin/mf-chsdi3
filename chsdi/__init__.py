@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import datetime
 from pyramid.config import Configurator
 from pyramid.events import BeforeRender, NewRequest
 from chsdi.subscribers import add_localizer, add_renderer_globals
@@ -59,7 +60,13 @@ def main(global_config, **settings):
     # renderers
     config.add_mako_renderer('.html')
     config.add_mako_renderer('.js')
-    config.add_renderer('jsonp', JSONP(param_name='callback', indent=None, separators=(',', ':')))
+
+    json_renderer = JSONP(param_name='callback', indent=None, separators=(',', ':'))
+
+    def datetime_adapter(obj, request):
+        return obj.isoformat()
+    json_renderer.add_adapter(datetime.datetime, datetime_adapter)
+    config.add_renderer('jsonp', json_renderer)
     config.add_renderer('geojson', GeoJSON(jsonp_param_name='callback'))
     config.add_renderer('esrijson', EsriJSON(jsonp_param_name='callback'))
     config.add_renderer('csv', CSVRenderer)
