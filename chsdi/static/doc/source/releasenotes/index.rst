@@ -25,6 +25,7 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
+- Announcement: the swisstopo layer ch.swisstopo.vec200-landcover-wald has been removed from FSDI services as announced earlier this year
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_201028...r_201209>`__
 
 
