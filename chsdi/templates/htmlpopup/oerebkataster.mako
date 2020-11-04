@@ -1,47 +1,6 @@
 <%inherit file="base.mako"/>
 
-<%!
-import requests
-import xml.etree.ElementTree as et
-import re
-
-def sanitise_url(url):
-  """du to canton TI"""
-  list_to_check=['getegrid','extract']
-  for to_check in list_to_check:
-    url = url.replace('//{}'.format(to_check), '/{}'.format(to_check))
-  return url
-
-def get_xml(path):
-    list_egrid = []
-    try:
-      response = requests.get(path)
-      if response.status_code == 200:
-       root = et.fromstring(response.text)
-       list_egrid = root.findall('{http://schemas.geo.admin.ch/V_D/OeREB/1.0/Extract}egrid')
-    except:
-      pass
-    return list_egrid
-
-%>
 <%def name="table_body(c,lang)">
-<%
-path_xml = "/getegrid/xml/?XY="
-if not 'oereb_webservice' in c['attributes'].keys():
-  c['attributes']['oereb_webservice'] = None
-  c['attributes']['bgdi_status'] = None
-else:
-  path_pdf = sanitise_url("{}/extract/reduced/pdf/".format(c['attributes']['oereb_webservice']))
-request = context.get('request')
-coord = request.params.get('coord')
-
-is_oereb_service = c['attributes']['oereb_webservice'] != None and c['attributes']['bgdi_status'] == 0 # is there a service available
-
-if is_oereb_service:
-  url_get_egrid = sanitise_url("{}{}{}".format(c['attributes']['oereb_webservice'], path_xml, coord))
-
-  list_egrid = get_xml(url_get_egrid)
-%>
     <tr><td class="cell-left">${_('kanton')}</td>    <td>${c['attributes']['kanton'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('gemgemeinde')}</td>    <td>${c['attributes']['gemeindename'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('oereb_status')}</td>
@@ -83,12 +42,8 @@ if is_oereb_service:
          <td><a target="_blank" href="${c['attributes']['url_oereb']}">${_('link')}</a></td>
       % endif
     </tr>
-    % if is_oereb_service:
-      % for egrid in list_egrid:
-        <tr>
-            <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
-            <td><a target="_blank" href="${path_pdf}${egrid.text}">PDF (${egrid.text})</a></td>
-        </tr>
-      % endfor
-    % endif
+    <tr>
+        <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
+        <td><a target="_blank" href="${c['attributes']['pdf_url']}">PDF (${c['attributes']['egris_egrid']})</a></td>
+    </tr>
 </%def>

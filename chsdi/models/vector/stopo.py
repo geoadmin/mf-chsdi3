@@ -2410,6 +2410,7 @@ class Oerebkataster:
     telefon = Column('telefon', Unicode)
     email = Column('email', Unicode)
     url_oereb = Column('url_oereb', Unicode)
+    pdf_url = Column('pdf_url', Unicode)
     the_geom = Column(Geometry2D)
 
 
