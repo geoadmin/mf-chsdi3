@@ -48,7 +48,11 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
-        <td><a target="_blank" href="${c['attributes']['pdf_url']}">PDF (${c['attributes']['egris_egrid']})</a></td>
+        % if c['attributes']['egris_egrid'] == None:
+            <td>-</td>
+        % else:
+            <td><a target="_blank" href="${c['attributes']['pdf_url']}">PDF (${c['attributes']['egris_egrid']})</a></td>
+        % endif
     </tr>
       % endif
 </%def>
