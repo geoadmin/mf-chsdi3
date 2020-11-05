@@ -1,5 +1,4 @@
 <%inherit file="base.mako"/>
-
 <%def name="table_body(c,lang)">
     <tr><td class="cell-left">${_('kanton')}</td>    <td>${c['attributes']['kanton'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('gemgemeinde')}</td>    <td>${c['attributes']['gemeindename'] or '-'}</td></tr>
@@ -42,6 +41,7 @@
          <td><a target="_blank" href="${c['attributes']['url_oereb']}">${_('link')}</a></td>
       % endif
     </tr>
+      % if 'oereb_webservice' in c['attributes'].keys():
     <tr>
         <td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.lparz')}</td>
         <td>${c['attributes']['number'] or '-'}</td>
@@ -50,4 +50,5 @@
         <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
         <td><a target="_blank" href="${c['attributes']['pdf_url']}">PDF (${c['attributes']['egris_egrid']})</a></td>
     </tr>
+      % endif
 </%def>
