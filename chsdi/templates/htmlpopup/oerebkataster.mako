@@ -43,6 +43,10 @@
       % endif
     </tr>
     <tr>
+        <td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.lparz')}</td>
+        <td>${c['attributes']['number'] or '-'}</td>
+    </tr>
+    <tr>
         <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
         <td><a target="_blank" href="${c['attributes']['pdf_url']}">PDF (${c['attributes']['egris_egrid']})</a></td>
     </tr>

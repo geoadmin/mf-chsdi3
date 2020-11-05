@@ -2419,6 +2419,7 @@ class OerebkatasterZoom1(Base, Oerebkataster, Vector):
     oereb_webservice = Column('oereb_webservice', Unicode)
     bgdi_status = Column('bgdi_status', Integer)
     egris_egrid = Column('egris_egrid', Integer)
+    number = Column('number_', Integer)
     __minscale__ = 1
     __maxscale__ = 50000
 
