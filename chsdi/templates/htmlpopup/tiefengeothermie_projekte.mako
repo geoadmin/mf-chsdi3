@@ -3,11 +3,11 @@
 <%def name="table_body(c,lang)">
 <%
     % if lang in ('de','rm'):
-    lang = 'de'
+      lang = 'de'
     % elif lang in ('fr','it'):
-    lang = 'fr'
+      lang = 'fr'
     % else:
-    lang = 'en'
+      lang = 'en'
     % endif
     status_text = 'status_%s' % lang
     system_text = 'system_%s' % lang
@@ -23,11 +23,11 @@
 <%def name="extended_info(c,lang)">
 <%
     % if lang in ('de','rm'):
-    lang = 'de'
+      lang = 'de'
     % elif lang in ('fr','it'):
-    lang = 'fr'
+      lang = 'fr'
     % else:
-    lang = 'en'
+      lang = 'en'
     % endif
     status_text = 'status_%s' % lang
     system_text = 'system_%s' % lang
