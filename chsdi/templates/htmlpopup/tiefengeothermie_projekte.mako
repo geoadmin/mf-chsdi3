@@ -2,9 +2,7 @@
 
 <%def name="table_body(c,lang)">
 <%
-    lang = 'de' if lang in ('de','rm')
-    lang = 'fr' if lang in ('fr','it')
-    lang = 'en' if lang in ('en')
+    lang = 'de' if lang in ('de','rm') else lang = 'fr' if lang in ('fr','it') else lang = 'en' if lang in ('en')
     status_text = 'status_%s' % lang
     system_text = 'system_%s' % lang
     use_text = 'use_%s' % lang
@@ -18,9 +16,7 @@
 
 <%def name="extended_info(c,lang)">
 <%
-    lang = 'de' if lang in ('de','rm')
-    lang = 'fr' if lang in ('fr','it')
-    lang = 'en' if lang in ('en')
+    lang = 'de' if lang in ('de','rm') else lang = 'fr' if lang in ('fr','it') else lang = 'en' if lang in ('en')
     status_text = 'status_%s' % lang
     system_text = 'system_%s' % lang
     use_text = 'use_%s' % lang
