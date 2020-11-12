@@ -2055,11 +2055,11 @@ class GeologieEiszeitLgm(Base, Vector):
 register('ch.swisstopo.geologie-eiszeit-lgm', GeologieEiszeitLgm)
 
 
-class GeologieGesteinsdachte(Base, Vector):
-    __tablename__ = 'gesteinsdachte'
+class GeologieGesteinsdichte(Base, Vector):
+    __tablename__ = 'gesteinsdichte'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/geol_gesteinsdachte.mako'
-    __bodId__ = 'ch.swisstopo.geologie-gesteinsdachte'
+    __template__ = 'templates/htmlpopup/geol_gesteinsdichte.mako'
+    __bodId__ = 'ch.swisstopo.geologie-gesteinsdichte'
     __label__ = 'saphyr_n'
     id = Column('bgdi_id', Integer, primary_key=True)
     saphyr_n = Column('saphyr_n', Unicode)
@@ -2074,7 +2074,7 @@ class GeologieGesteinsdachte(Base, Vector):
     saphyr_pdf = Column('saphyr_pdf', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-gesteinsdachte', GeologieGesteinsdachte)
+register('ch.swisstopo.geologie-gesteinsdichte', GeologieGesteinsdichte)
 
 
 class Swisstlm3dEisenbahn50000(Base, Vector):
