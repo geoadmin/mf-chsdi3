@@ -2064,7 +2064,7 @@ class GeologieGesteinsdichte(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     saphyr_n = Column('saphyr_n', Unicode)
     rhob_m = Column('rhob_m', Integer)
-    rhob_me = Column('rhob_me', Integer)
+    rhob_med = Column('rhob_med', Integer)
     rhob_sd = Column('rhob_sd', Integer)
     rhob_anz = Column('rhob_anz', Integer)
     rhob_p05 = Column('rhob_p05', Integer)
