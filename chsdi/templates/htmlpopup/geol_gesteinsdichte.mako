@@ -6,6 +6,42 @@
   <td class="cell-left">${_('ch.swisstopo.geologie-gesteinsdichte.saphyr_n')}</td>
   <td class="cell-left">${c['attributes']['saphyr_n'] or '-'}</td>
 </tr>
+<tr>
+  <td class="cell-left">${_('ch.swisstopo.geologie-gesteinsdichte.rhob_m')}</td>
+  <td class="cell-left">${c['attributes']['rhob_m'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_('ch.swisstopo.geologie-gesteinsdichte.rhob_anz')}</td>
+  <td class="cell-left">${c['attributes']['rhob_anz'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_('ch.swisstopo.geologie-gesteinsdichte.rhob_med')}</td>
+  <td class="cell-left">${c['attributes']['rhob_med'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_('ch.swisstopo.geologie-gesteinsdichte.rhob_sd')}</td>
+  <td class="cell-left">${c['attributes']['rhob_sd'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_('ch.swisstopo.geologie-gesteinsdichte.rhob_p05')}</td>
+  <td class="cell-left">${c['attributes']['rhob_p05'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_('ch.swisstopo.geologie-gesteinsdichte.rhob_p25')}</td>
+  <td class="cell-left">${c['attributes']['rhob_p25'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_('ch.swisstopo.geologie-gesteinsdichte.rhob_p75')}</td>
+  <td class="cell-left">${c['attributes']['rhob_p75'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_('ch.swisstopo.geologie-gesteinsdichte.rhob_p95')}</td>
+  <td class="cell-left">${c['attributes']['rhob_p95'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_('ch.swisstopo.geologie-gesteinsdichte.saphyr_pdf')}</td>
+  <td class="cell-left">${c['attributes']['saphyr_pdf'] or '-'}</td>
+</tr>
 
 </%def>
 
