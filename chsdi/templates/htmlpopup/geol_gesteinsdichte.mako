@@ -39,8 +39,12 @@
   <td class="cell-left">${c['attributes']['rhob_p95'] or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${_('ch.swisstopo.geologie-gesteinsdichte.saphyr_pdf')}</td>
-  <td class="cell-left">${c['attributes']['saphyr_pdf'] or '-'}</td>
+<td class="cell-left">${_('ch.swisstopo.geologie-gesteinsdichte.saphyr_pdf')}</td>
+   % if c['attributes']['saphyr_pdf'] == None or c['attributes']['saphyr_pdf'] == "-":
+       <td>-</td>
+   % else:
+       <td><a href="${c['attributes']['saphyr_pdf']}" target="_blank">.pdf</a></td>
+   % endif
 </tr>
 
 </%def>
