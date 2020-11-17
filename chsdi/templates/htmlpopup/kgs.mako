@@ -25,7 +25,7 @@
             reader = csv.reader(csv_file, delimiter =';')  # creates the reader object
             encoding = 'cp1252' if c['layerBodId'] == "ch.babs.kulturgueter" else 'utf-8'
             next(reader) # Skip header
-            pic_list = [row.decode(encoding) for row in reader if int(row[0]) == c['featureId']]
+            pic_list = [map(lambda x: x.decode(encoding), row) for row in reader if int(row[0]) == c['featureId']]
         finally:
             csv_file.close()
     %>
