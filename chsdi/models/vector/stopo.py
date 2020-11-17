@@ -2566,6 +2566,9 @@ class GeologieGeotopeKantoneStand(Base, Vector):
     name = Column('name', Unicode)
     sigel = Column('sigel', Unicode)
     dataviewer = Column('dataviewer', Unicode)
+    link = Column('link', Unicode)
+    inventar = Column('inventar', Unicode)
+    zugnage = Column('invetar', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotope_kantone_stand', GeologieGeotopeKantoneStand)

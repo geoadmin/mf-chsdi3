@@ -6,12 +6,14 @@
 %>
 <tr><td class="cell-left">${_(layer + 'name')}</td> <td>${c['attributes']['name'] or '-'}</td></tr>
 <tr><td class="cell-left">${_(layer + 'sigel')}</td> <td>${c['attributes']['sigel'] or '-'}</td></tr>
+<tr><td class="cell-left">${_(layer + 'invetar')}</td> <td>${c['attributes']['invetar'] or '-'}</td></tr>
+<tr><td class="cell-left">${_(layer + 'zugang')}</td> <td>${c['attributes']['zugang'] or '-'}</td></tr>
 
 <%
-  url_path = c['attributes']['dataviewer'] or '-'
+  url_path = c['attributes']['url'] or '-'
 %>
 <tr>
-<td class="cell-left">${_(layer + 'dataviewer')}</td>
+<td class="cell-left">${_(layer + 'link')}</td>
 % if url_path == '-':
 <td> ${url_path} </td>
 % else:
