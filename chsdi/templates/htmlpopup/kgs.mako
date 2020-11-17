@@ -18,18 +18,14 @@
         import csv
         from urllib2 import urlopen
         dataGeoAdminHost = request.registry.settings['datageoadminhost']
-        dataPath = 'ch.babs.kulturgueter/image'
-        csv_url = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + 'meta.txt'
+        csv_url = "https://" + dataGeoAdminHost + "/" + c['layerBodId']  + "/image/meta.txt"
         csv_file = None
         try:
             csv_file = urlopen(csv_url)
             reader = csv.reader(csv_file, delimiter =';')  # creates the reader object
-            pic_list = []
-            for i, row in enumerate(reader):   # iterates the rows of the file in orders
-                if i == 0: # The first row is NUMMER;BILDNR;FOTOGRAF;COPYRIGHT and cannot be parsed.
-                    continue
-                if int(row[0]) == c['featureId']:
-                    pic_list.append(map(lambda x: x.decode('cp1252'), row))
+            encoding = 'cp1252' if c['layerBodId'] == "ch.babs.kulturgueter" else 'utf-8'
+            next(reader) # Skip header
+            pic_list = [row.decode(encoding) for row in reader if int(row[0]) == c['featureId']]
         finally:
             csv_file.close()
     %>
