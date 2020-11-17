@@ -80,7 +80,7 @@
             <th class="cell-left">${_('Coordinates')}</th>
             <td>${int(round(c['attributes']['x'],0)) or ''} / ${int(round(c['attributes']['y'],0)) or ''}</td>
         </tr>
-    % if c['attributes']['pdf_list'] is not None:
+    % if c['attributes']['pdf_list'] not in [None, ""]:
         <tr>
             <th class="cell-left">${_('Feature tooltip')}:</th>
             <td>
@@ -90,19 +90,19 @@
             </td>
 	    </tr>
     %endif
-    % if c['attributes']['link_uri'] is not None:
+    % if c['attributes']['link_uri'] not in [None, ""]:
         <tr>
           <th class="cell-left">${_('legalregulationlink')}</th>
             <td><a href="${c['attributes']['link_uri']}">${c['attributes']['link_title']}</a></td>
         </tr>
     % endif
-    % if c['attributes']['link_2_uri'] is not None:
+    % if c['attributes']['link_2_uri'] not in [None, ""]:
         <tr>
           <th class="cell-left">${_('legalregulationlink')}</th>
           <td><a href="${c['attributes']['link_2_uri']}">${c['attributes']['link_2_title']}</a></td>
         </tr>
     % endif
-    % if c['attributes']['link_3_uri'] is not None:
+    % if c['attributes']['link_3_uri'] not in [None, ""]:
         <tr>
           <th class="cell-left">${_('legalregulationlink')}</th>
           <td><a href="${c['attributes']['link_3_uri']}">${c['attributes']['link_3_title']}</a></td>
@@ -131,7 +131,7 @@
             </div>
         </div>
     <table class="kernkraftwerke-extended">
-    % if c['attributes']['kurztexte'] is not None:
+    % if c['attributes']['kurztexte'] not in [None, ""]:
         <tr>
           <td>${c['attributes']['kurztexte']}</td>
         </tr>
