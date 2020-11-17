@@ -70,7 +70,7 @@
       if value is None:
         return '-'
       else:
-        return 'yesText' if value == 1 else 'noText'
+        return 'yesText' if str(value) == '1' else 'noText'
 
 %>
   <table>
