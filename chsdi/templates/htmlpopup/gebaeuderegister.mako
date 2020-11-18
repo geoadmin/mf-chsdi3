@@ -72,6 +72,7 @@
       else:
         return 'yesText' if str(value) == '1' else 'noText'
 
+
 %>
   <table>
     <tr><th colspan=2>${_('ch.bfs.gebaeude_wohnungs_register.block_gebaeude')}</th></tr>
