@@ -15,6 +15,7 @@
     <%
         c['stable_id'] = True
         objarts = c['attributes']['objektart'].split(',')
+        gemeinde_ehemalig = c['attributes']['gemeinde_ehemalig'] if c['attributes']['gemeinde_ehemalig'].startswith("(") else "("+c['attributes']['gemeinde_ehemalig']+")"
         import csv
         from urllib2 import urlopen
         dataGeoAdminHost = request.registry.settings['datageoadminhost']
@@ -74,7 +75,7 @@
         </tr>
         <tr>
             <th class="cell-left">${_('tt_kbs_gemeinde')} (${_('tt_kbs_gemeinde_ehemalige')})</th>
-            <td>${c['attributes']['gemeinde'] or ''} ${'('+c['attributes']['gemeinde_ehemalig']+')' if c['attributes']['gemeinde_ehemalig'] else ''}</td>
+            <td>${c['attributes']['gemeinde'] or ''} ${gemeinde_ehemalig if c['attributes']['gemeinde_ehemalig'] not in [Null, ""] else ''}</td>
         </tr>
         <tr>
             <th class="cell-left">${_('Coordinates')}</th>
