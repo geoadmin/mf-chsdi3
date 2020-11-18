@@ -11,7 +11,7 @@ class OpenTrans:
 
     def __init__(self, open_trans_api_key):
         self.open_trans_api_key = open_trans_api_key  # Get API key from config .ini
-        self.url = 'https://api.opentransportdata.swiss/trias'  # URL of API
+        self.url = 'https://api.opentransportdata.swiss/trias2020'  # URL of API
 
     def get_departures(self, station_id, number_results=5, request_dt_time=False):
         if not request_dt_time:
