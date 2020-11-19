@@ -181,6 +181,18 @@ class OevHaltestellenZoom2(Base, OevHaltestellen, Vector):
 register(OevHaltestellen.__bodId__, OevHaltestellenZoom2)
 
 
+class OevHaltekante:
+    __tablename__ = 'oev_haltekante'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/oev_haltekante.mako'
+    __bodId__ = 'ch.bav.haltestellen-oev'
+    __label__ = 'name'
+    laenge = Column('name', Unicode)
+    kantenhoehe = Column('abkuerzung', Unicode)
+
+register(OevHaltekante.__bodId__, OevHaltekante)
+
+
 # IVS NAT and REG use the same template
 class SicherheitsZonenPlan (Base, Vector):
     __tablename__ = 'sichereitszonen'
