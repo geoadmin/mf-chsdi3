@@ -1,0 +1,94 @@
+{
+        "type": "unique",
+        "property": "vehicleType",
+        "values": [
+                {
+                        "geomType": "point",
+                        "value": "Bike",
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/bike.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Bike",
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/ebike.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "CargoBike",
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/cargobike.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Scooter",
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/scooter.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Moped",
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/moped.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Car",
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/car.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Car",
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/ecar.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Other",
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/other.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Other",
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/eother.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Taxi",
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/taxi.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Taxi",
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/etaxi.png"
+                        }
+                }
+        ]
+}
