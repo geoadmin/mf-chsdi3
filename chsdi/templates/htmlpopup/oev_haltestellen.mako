@@ -168,11 +168,11 @@ $(document).ready(function() {
     lang = request.lang
 
     if lang in ('de','rm','en'):
-      lang = 'de'
+      lang_z = 'de'
     else
-      lang = 'fr'
+      lang_z = 'fr'
 
-    verkehrsmittel_text = 'verkehrsmittel_%s' % lang
+    verkehrsmittel_text = 'verkehrsmittel_bezeichnungen_%s' % lang
 
     topic = request.matchdict.get('map')
     if c['attributes'][verkehrsmittel_text]:
