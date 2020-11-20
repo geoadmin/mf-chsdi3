@@ -153,11 +153,13 @@ $(document).ready(function() {
 <%def name="extended_info(c, lang)">
 <%
     protocol = request.scheme
-    lang = request.lang
     if lang in ('de', 'rm', 'en'):
       lang_text = 'de'
     else:
       lang_text = 'fr'
+    betriebspunkttyp_text = 'betriebspunkttyp_%s' % lang_text
+    verkehrsmittel_text = 'verkehrsmittel_%s' % lang_text
+    lang = request.lang
     topic = request.matchdict.get('map')
     c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
 %>
@@ -181,11 +183,11 @@ $(document).ready(function() {
   </tr>
   <tr>
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.betriebspunkttyp')}</td>
-    <td class="cell-meta">${c['attributes']['betriebspunkttyp_de'] or '-'}</td>
+    <td class="cell-meta">${c['attributes'][betriebspunkttyp_text] or '-'}</td>
   </tr>
   <tr>
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.verkehrsmittel')}</td>
-    <td class="cell-meta">${c['attributes']['verkehrsmittel_de'] or '-'}</td>
+    <td class="cell-meta">${c['attributes'][verkehrsmittel_text] or '-'}</td>
   </tr>
   <tr>
     <td class="cell-meta"></td>
