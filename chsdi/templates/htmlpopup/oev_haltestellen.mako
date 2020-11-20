@@ -15,7 +15,7 @@ baseUrl = request.registry.settings['api_url']
     lang = request.lang
     topic = request.matchdict.get('map')
     host = h.make_agnostic(request.host_url + request.uscript_name)
-    type_station = c['attributes']['betriebspunkttyp']
+    type_station = c['attributes']['betriebspunkttyp_de']
     id = c['featureId']
     c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
     host = request.registry.settings['api_url']
@@ -162,6 +162,7 @@ $(document).ready(function() {
 % endif
 </%def>
 
+
 <%def name="extended_info(c, lang)">
 <%
     protocol = request.scheme
@@ -172,7 +173,7 @@ $(document).ready(function() {
     else:
       var_verkehrsmittel = '-'
     verkehr = var_verkehrsmittel.lower()
-    type_station = c['attributes']['betriebspunkttyp']
+    type_station = c['attributes']['betriebspunkttyp_de']
     c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
 %>
 <table>
@@ -212,10 +213,11 @@ $(document).ready(function() {
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.haltestelle')}</td>
 
 % endif
+
   </tr>
   <tr>
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.verkehrsmittel')}</td>
-    <td class="cell-meta">${_(verkehr)}</td>
+    <td class="cell-meta">${c['attributes']['verkehrsmittel_de'] or '-'}</td>
   </tr>
   <tr>
       <td class="cell-meta"></td>
