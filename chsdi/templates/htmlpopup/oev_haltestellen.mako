@@ -154,6 +154,10 @@ $(document).ready(function() {
 <%
     protocol = request.scheme
     lang = request.lang
+    if lang in ('de', 'rm', 'en'):
+      lang_text = 'de'
+    else:
+      lang_text = 'fr'
     topic = request.matchdict.get('map')
     c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
 %>
