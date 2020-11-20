@@ -166,17 +166,9 @@ $(document).ready(function() {
 <%
     protocol = request.scheme
     lang = request.lang
-
-    if lang in ('de','rm','en'):
-      lang_z = 'de'
-    else
-      lang_z = 'fr'
-
-    verkehrsmittel_text = 'verkehrsmittel_bezeichnungen_%s' % lang
-
     topic = request.matchdict.get('map')
-    if c['attributes'][verkehrsmittel_text]:
-      var_verkehrsmittel = '<i>haltestellen_' + c['attributes'][verkehrsmittel_text] + '</i>'
+    if c['attributes']['verkehrsmittel_de']:
+      var_verkehrsmittel = '<i>haltestellen_' + c['attributes']['verkehrsmittel_de'] + '</i>'
     else:
       var_verkehrsmittel = '-'
     verkehr = var_verkehrsmittel.lower()
