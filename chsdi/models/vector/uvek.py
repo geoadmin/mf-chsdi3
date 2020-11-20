@@ -162,7 +162,7 @@ class OevHaltestellen:
     tuabkuerzung = Column('transportunternehmen_abkuerzung', Unicode)
     betriebspunkttyp = Column('betriebspunkttyp_bezeichnung_de', Unicode)
     betriebspunkttyp_fr = Column('betriebspunkttyp_bezeichnung_fr', Unicode)
-    verkehrsmittel = Column('verkehrsmittel_bezeichnung_de', Unicode)
+    verkehrsmittel_de = Column('verkehrsmittel_bezeichnung_de', Unicode)
     verkehrsmittel_fr = Column('verkehrsmittel_bezeichnung_fr', Unicode)
     # point geometry hilight
     the_geom_point = Column('the_geom', Geometry2D)
