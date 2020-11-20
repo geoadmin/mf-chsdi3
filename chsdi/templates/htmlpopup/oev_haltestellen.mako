@@ -11,7 +11,7 @@
 <%def name="iframe_content(c, lang)">
 <%
     if lang in ('de','rm','en'):
-      lang = 'de
+      lang = 'de'
     else:
       lang = 'fr'
 
