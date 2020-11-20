@@ -148,7 +148,7 @@ register(MountainbikelandSperrungenUmleitungen.__bodId__, MountainbikelandSperru
 
 
 class OevHaltestellen:
-    __tablename__ = 'oev_haltestellen_tooltip'
+    __tablename__ = 'oev_haltestellen_tooltip_update'
     __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/oev_haltestellen.mako'
     __bodId__ = 'ch.bav.haltestellen-oev'
@@ -159,9 +159,11 @@ class OevHaltestellen:
     id = Column('nummer', Integer, primary_key=True)
     name = Column('name', Unicode)
     abkuerzung = Column('abkuerzung', Unicode)
-    tuabkuerzung = Column('tuabkuerzung', Unicode)
-    betriebspunkttyp = Column('betriebspunkttyp', Unicode)
-    verkehrsmittel = Column('verkehrsmittel', Unicode)
+    tuabkuerzung = Column('transportunternehmen_abkuerzung', Unicode)
+    betriebspunkttyp = Column('betriebspunkttyp_bezeichnung_de', Unicode)
+    betriebspunkttyp_fr = Column('betriebspunkttyp_bezeichnung_fr', Unicode)
+    verkehrsmittel = Column('verkehrsmittel_bezeichnung_de', Unicode)
+    verkehrsmittel_fr = Column('verkehrsmittel_bezeichnung_fr', Unicode)
     # point geometry hilight
     the_geom_point = Column('the_geom', Geometry2D)
 
@@ -179,18 +181,6 @@ class OevHaltestellenZoom2(Base, OevHaltestellen, Vector):
     the_geom = Column('bgdi_geom_poly_overview', Geometry2D)
 
 register(OevHaltestellen.__bodId__, OevHaltestellenZoom2)
-
-
-class OevHaltekante:
-    __tablename__ = 'oev_haltekante'
-    __table_args__ = ({'schema': 'bav', 'autoload': False})
-    __template__ = 'templates/htmlpopup/oev_haltekante.mako'
-    __bodId__ = 'ch.bav.haltestellen-oev'
-    __label__ = 'name'
-    laenge = Column('name', Unicode)
-    kantenhoehe = Column('abkuerzung', Unicode)
-
-register(OevHaltekante.__bodId__, OevHaltekante)
 
 
 # IVS NAT and REG use the same template
