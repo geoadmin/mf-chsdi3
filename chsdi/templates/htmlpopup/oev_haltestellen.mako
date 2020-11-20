@@ -1,21 +1,28 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-<%
-baseUrl = request.registry.settings['api_url']
-%>
+  <%
+    baseUrl = request.registry.settings['api_url']
+  %>
   <iframe src="${baseUrl}/rest/services/all/MapServer/${c['layerBodId']}/${c['featureId']}/iframeHtmlPopup?lang=${lang}" width="100%" height="165" frameborder="0" style="border: 0;" scrolling="no"></iframe>
 </%def>
 
 
 <%def name="iframe_content(c, lang)">
 <%
+    if lang in ('de','rm','en'):
+      lang = 'de
+    else:
+      lang = 'fr'
+
+    betriebspunkttyp_text = 'betriebspunkttyp_bezeichnung_%s' % lang
+
     from pyramid.url import route_url
     protocol = request.scheme
     lang = request.lang
     topic = request.matchdict.get('map')
     host = h.make_agnostic(request.host_url + request.uscript_name)
-    type_station = c['attributes']['betriebspunkttyp']
+    type_station = c['attributes'][betriebspunkttyp_text]
     id = c['featureId']
     c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
     host = request.registry.settings['api_url']
@@ -146,7 +153,8 @@ $(document).ready(function() {
 });
 
 </script>
-    <p><b>${c['attributes']['name'] or '-'}</b>, ${_('ch.bav.haltestellen-oev.next_departures')}:</p>
+
+  <p><b>${c['attributes']['name'] or '-'}</b>, ${_('ch.bav.haltestellen-oev.next_departures')}:</p>
   <table>
     <tr>
         <td id="numero${id}" class="col-label"></td>
@@ -172,7 +180,7 @@ $(document).ready(function() {
     else:
       var_verkehrsmittel = '-'
     verkehr = var_verkehrsmittel.lower()
-    type_station = c['attributes']['betriebspunkttyp']
+    type_station = c['attributes'][betriebspunkttyp_text]
     c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
 %>
 <table>
@@ -194,24 +202,15 @@ $(document).ready(function() {
   </tr>
   <tr>
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.betriebspunkttyp')}</td>
-
-% if type_station == 'Bedienpunkt' :
-
-    <td class="cell-meta">${_('ch.bav.haltestellen-oev.bedienpunkt')}</td>
-
-% elif type_station == 'Anschlusspunkt' :
-
-   <td class="cell-meta">${_('ch.bav.haltestellen-oev.anschlusspunkt')}</td>
-
-% elif type_station == 'reiner_Betriebspunkt' :
-
-   <td class="cell-meta">${_('ch.bav.haltestellen-oev.reiner_betriebspunkt')}</td>
-
-% elif type_station == 'Haltestelle' :
-
-    <td class="cell-meta">${_('ch.bav.haltestellen-oev.haltestelle')}</td>
-
-% endif
+    % if type_station == 'Bedienpunkt' :
+      <td class="cell-meta">${_('ch.bav.haltestellen-oev.bedienpunkt')}</td>
+    % elif type_station == 'Anschlusspunkt' :
+      <td class="cell-meta">${_('ch.bav.haltestellen-oev.anschlusspunkt')}</td>
+    % elif type_station == 'reiner_Betriebspunkt' :
+      <td class="cell-meta">${_('ch.bav.haltestellen-oev.reiner_betriebspunkt')}</td>
+    % elif type_station == 'Haltestelle' :
+      <td class="cell-meta">${_('ch.bav.haltestellen-oev.haltestelle')}</td>
+    % endif
   </tr>
   <tr>
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.verkehrsmittel')}</td>
@@ -225,9 +224,11 @@ $(document).ready(function() {
   </tr>
 </table>
 <br />
+
 <div>
  <iframe src="${''.join((c['baseUrl'], '/embed.html', '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic))}" width='580' height='300' style="width: 100%;" frameborder='0' style='border:0'></iframe>
 </div>
+
 </%def>
 
 <%def name="extended_resources(c, lang)">

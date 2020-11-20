@@ -160,7 +160,7 @@ class OevHaltestellen:
     name = Column('name', Unicode)
     abkuerzung = Column('abkuerzung', Unicode)
     tuabkuerzung = Column('transportunternehmen_abkuerzung', Unicode)
-    betriebspunkttyp = Column('betriebspunkttyp_bezeichnung_de', Unicode)
+    betriebspunkttyp_de = Column('betriebspunkttyp_bezeichnung_de', Unicode)
     betriebspunkttyp_fr = Column('betriebspunkttyp_bezeichnung_fr', Unicode)
     verkehrsmittel = Column('verkehrsmittel_bezeichnung_de', Unicode)
     verkehrsmittel_fr = Column('verkehrsmittel_bezeichnung_fr', Unicode)
