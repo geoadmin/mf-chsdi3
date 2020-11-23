@@ -2672,16 +2672,19 @@ register('ch.swisstopo.geologie-gisgeol-flaechen-lt10km2', GisgeolFlaechenLt10km
 class Geocover:
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = 'ch.swisstopo.geologie-geocover'
+    the_geom = Column(Geometry2D)
+
+
+class GeocoverBase(Geocover):
     __label__ = 'description_de'
     __queryable_attributes__ = []
     __maxscale__ = 70000
     id = Column('bgdi_id', Integer, primary_key=True)
     description_de = Column('description_de', Unicode)
     description_fr = Column('description_fr', Unicode)
-    the_geom = Column(Geometry2D)
 
 
-class GeocoverExtended(Geocover):
+class GeocoverExtended(GeocoverBase):
     spec_description_de = Column('spec_description_de', Unicode)
     spec_description_fr = Column('spec_description_fr', Unicode)
 
@@ -2720,7 +2723,7 @@ class GeocoverPointDrill(Base, GeocoverExtended, Vector):
     rem_fr = Column('rem_fr', Unicode)
 
 
-class GeocoverPointInfo(Base, Geocover, Vector):
+class GeocoverPointInfo(Base, GeocoverBase, Vector):
     __tablename__ = 'geocover_point_info'
     __template__ = 'templates/htmlpopup/geocover_point_info.mako'
 
@@ -2742,7 +2745,7 @@ class GeocoverPolygonAux2(Base, GeocoverExtended, Vector):
     __template__ = 'templates/htmlpopup/geocover_aux.mako'
 
 
-class GeocoverPolygonMain(Base, Geocover, Vector):
+class GeocoverPolygonMain(Base, GeocoverBase, Vector):
     __tablename__ = 'geocover_polygon_main'
     __template__ = 'templates/htmlpopup/geocover_polygon.mako'
     litstrat_link_de = Column('litstrat_link_de', Unicode)
@@ -2757,7 +2760,7 @@ class GeocoverPolygonMain(Base, Geocover, Vector):
     orig_description_fr = Column('orig_description_fr', Unicode)
 
 
-class GeocoverGridShop (Base, Geocover, ShopProductGroupClass, Vector):
+class GeocoverGridShop(Base, Geocover, ShopProductGroupClass, Vector):
     __tablename__ = 'view_geocover_grid_shop'
     __minscale__ = 70000
     base = Column('base', Unicode)
