@@ -148,7 +148,7 @@ register(MountainbikelandSperrungenUmleitungen.__bodId__, MountainbikelandSperru
 
 
 class OevHaltestellen:
-    __tablename__ = 'oev_haltestellen_tooltip_update'
+    __tablename__ = 'oev_haltestellen_tooltip'
     __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/oev_haltestellen.mako'
     __bodId__ = 'ch.bav.haltestellen-oev'
