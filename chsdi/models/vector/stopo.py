@@ -3412,3 +3412,32 @@ class GeologieFelslabore(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-felslabore', GeologieFelslabore)
+
+
+class Gletschermaechtigkeit:
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.geologie-gletschermaechtigkeit'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+
+class GletschermaechtigkeitGPRProfiles(Base, Gletschermaechtigkeit, Vector):
+    __tablename__ = 'gletschermaechtigkeit_gpr_profiles'
+    __template__ = 'templates/htmlpopup/gletscherausdehnung_gpr_profiles.mako'
+    __label__ = 'gpr_prf_name'
+    gpr_prf_name = Column('prf_name', Unicode)
+    gpr_max_thik = Column('max_thik', Float)
+
+
+class GletschermaechtigkeitIceThikness(Base, Gletschermaechtigkeit, Vector):
+    __tablename__ = 'gletschermaechtigkeit_ice_thinkness'
+    __template__ = 'templates/htmlpopup/gletscherausdehnung_ice_thikness.mako'
+    __label__ = 'pk_sgi'
+    pk_sgi = Column('pk_sgi', Unicode)
+    mean_thik = Column('mean_thik', Float)
+    max_thik = Column('max_thik', Float)
+    volume = Column('volume', Float)
+    year_mode = Column('year_mode', Integer)
+
+register('ch.swisstopo.geologie-gletschermaechtigkeit', GletschermaechtigkeitGPRProfiles)
+register('ch.swisstopo.geologie-gletschermaechtigkeit', GletschermaechtigkeitIceThikness)
