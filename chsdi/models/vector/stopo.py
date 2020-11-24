@@ -3412,3 +3412,18 @@ class GeologieFelslabore(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-felslabore', GeologieFelslabore)
+
+
+class Gletscherausdehnung(Base, Vector):
+    __tablename__ = 'view_gletscherausdehnung_sgi_2016_glaciers'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/gletscherausdehnung.mako'
+    __bodId__ = 'ch.swisstopo.geologie-gletscherausdehnung'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    sgi_id = Column('sgi_id', Unicode)
+    area_km2 = Column('area_km2', Float)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-gletscherausdehnung', Gletscherausdehnung)
