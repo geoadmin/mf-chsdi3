@@ -161,8 +161,7 @@ class OevHaltestellenZoom1(Base, OevHaltestellen, Vector):
     __extended_info__ = True
     __queryable_attributes__ = ['id', 'name']
     __returnedGeometry__ = 'the_geom_point'
-    xtf_id = Column('xtf_id', Unicode, primary_key=True)
-    id = Column('nummer', Integer)
+    id = Column('nummer', Integer, primary_key=True)
     name = Column('name', Unicode)
     abkuerzung = Column('abkuerzung', Unicode)
     tuabkuerzung = Column('transportunternehmen_abkuerzung', Unicode)
@@ -184,8 +183,7 @@ class OevHaltestellenZoom2(Base, OevHaltestellen, Vector):
     __extended_info__ = True
     __queryable_attributes__ = ['id', 'name']
     __returnedGeometry__ = 'the_geom_point'
-    xtf_id = Column('xtf_id', Unicode, primary_key=True)
-    id = Column('nummer', Integer)
+    id = Column('nummer', Integer, primary_key=True)
     name = Column('name', Unicode)
     abkuerzung = Column('abkuerzung', Unicode)
     tuabkuerzung = Column('transportunternehmen_abkuerzung', Unicode)
@@ -200,11 +198,11 @@ class OevHaltestellenZoom2(Base, OevHaltestellen, Vector):
 
 class OevHaltekante(Base, OevHaltestellen, Vector):
     __tablename__ = 'oev_haltekante_tooltip'
-    __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/oev_haltekante.mako'
-    __label__ = 'xtf_id'
+    __label__ = 'haltestelle'
     __maxscale__ = 5000
-    xtf_id = Column('xtf_id', Unicode, primary_key=True)
+    id = Column('nummer', Unicode, primary_key=True)
     bezeichnung_de = Column('bezeichnung_de', Unicode)
     bezeichnung_fr = Column('bezeichnung_fr', Unicode)
     betrieblichebezeichnung = Column('betrieblichebezeichnung', Unicode)
