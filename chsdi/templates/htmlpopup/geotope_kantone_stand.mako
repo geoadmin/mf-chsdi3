@@ -13,7 +13,7 @@
   url_path = c['attributes']['link'] or '-'
 %>
 <tr>
-<td class="cell-left">${_(layer + 'link')}</td>
+<td class="cell-left">${_('link')}</td>
 % if url_path == '-':
 <td> ${url_path} </td>
 % else:
