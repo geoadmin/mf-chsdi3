@@ -3423,7 +3423,7 @@ class Gletschermaechtigkeit:
 
 class GletschermaechtigkeitGPRProfiles(Base, Gletschermaechtigkeit, Vector):
     __tablename__ = 'gletschermaechtigkeit_gpr_profiles'
-    __template__ = 'templates/htmlpopup/gletscherausdehnung_gpr_profiles.mako'
+    __template__ = 'templates/htmlpopup/gletschermaechtigkeit_gpr_profiles.mako'
     __label__ = 'gpr_prf_name'
     gpr_prf_name = Column('prf_name', Unicode)
     gpr_max_thik = Column('max_thik', Float)
@@ -3431,7 +3431,7 @@ class GletschermaechtigkeitGPRProfiles(Base, Gletschermaechtigkeit, Vector):
 
 class GletschermaechtigkeitIceThikness(Base, Gletschermaechtigkeit, Vector):
     __tablename__ = 'gletschermaechtigkeit_ice_thinkness'
-    __template__ = 'templates/htmlpopup/gletscherausdehnung_ice_thikness.mako'
+    __template__ = 'templates/htmlpopup/gletschermaechtigkeit_ice_thikness.mako'
     __label__ = 'pk_sgi'
     pk_sgi = Column('pk_sgi', Unicode)
     mean_thik = Column('mean_thik', Float)
