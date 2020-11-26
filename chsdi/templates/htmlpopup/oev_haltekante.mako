@@ -29,7 +29,7 @@
   </tr>
   <tr>
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.kantenhoehe')}</td>
-    <td class="cell-meta">${c['attributes']['kantenhoehe] or '-'}</td>
+    <td class="cell-meta">${c['attributes']['kantenhoehe'] or '-'}</td>
   </tr>
   <tr>
     <td class="cell-meta">${_('ch.bav.haltestellen-oev.haltestelle')}</td>
