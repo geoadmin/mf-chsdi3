@@ -203,6 +203,7 @@ class OevHaltekante(Base, OevHaltestellen, Vector):
     __label__ = 'haltestelle'
     __maxscale__ = 5000
     id = Column('nummer', Unicode, primary_key=True)
+    nummer_text = Column('nummer_text', Unicode)
     bezeichnung_de = Column('bezeichnung_de', Unicode)
     bezeichnung_fr = Column('bezeichnung_fr', Unicode)
     betrieblichebezeichnung = Column('betrieblichebezeichnung', Unicode)
