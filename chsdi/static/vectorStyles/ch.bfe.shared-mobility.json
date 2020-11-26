@@ -1,93 +1,817 @@
 {
         "type": "unique",
-        "property": "vehicleType",
+        "property": "symbol",
         "values": [
                 {
                         "geomType": "point",
                         "value": "Bike",
+                        "minResolution": 0,
+                        "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/bike.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Bike",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Bike",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Bike0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Bike0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Bike0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike0_50px.png"
                         }
                 },
                 {
                         "geomType": "point",
                         "value": "E-Bike",
+                        "minResolution": 0,
+                        "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/ebike.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Bike",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Bike",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Bike0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Bike0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Bike0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike0_50px.png"
                         }
                 },
                 {
                         "geomType": "point",
                         "value": "CargoBike",
+                        "minResolution": 0,
+                        "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/cargobike.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "CargoBike",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "CargoBike",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "CargoBike0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "CargoBike0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "CargoBike0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike0_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-CargoBike",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-CargoBike",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-CargoBike",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-CargoBike0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-CargoBike0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-CargoBike0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike0_50px.png"
                         }
                 },
                 {
                         "geomType": "point",
                         "value": "Scooter",
+                        "minResolution": 0,
+                        "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/scooter.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Scooter",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Scooter",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Scooter0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Scooter0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Scooter0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter0_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Scooter",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Scooter",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Scooter",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Scooter0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Scooter0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Scooter0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter0_50px.png"
                         }
                 },
                 {
                         "geomType": "point",
                         "value": "Moped",
+                        "minResolution": 0,
+                        "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/moped.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Moped",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Moped",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Moped0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Moped0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Moped0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped0_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Moped",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Moped",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Moped",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Moped0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Moped0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Moped0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped0_50px.png"
                         }
                 },
                 {
                         "geomType": "point",
                         "value": "Car",
+                        "minResolution": 0,
+                        "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/car.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Car",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Car",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Car0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Car0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Car0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car0_50px.png"
                         }
                 },
                 {
                         "geomType": "point",
                         "value": "E-Car",
+                        "minResolution": 0,
+                        "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/ecar.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car_30px.png"
                         }
                 },
                 {
                         "geomType": "point",
-                        "value": "Other",
+                        "value": "E-Car",
+                        "minResolution": 20,
+                        "maxResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/other.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car_40px.png"
                         }
                 },
                 {
                         "geomType": "point",
-                        "value": "E-Other",
+                        "value": "E-Car",
+                        "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/eother.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Car0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Car0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Car0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car0_50px.png"
                         }
                 },
                 {
                         "geomType": "point",
                         "value": "Taxi",
+                        "minResolution": 0,
+                        "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/taxi.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Taxi",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Taxi",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Taxi0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Taxi0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Taxi0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi0_50px.png"
                         }
                 },
                 {
                         "geomType": "point",
                         "value": "E-Taxi",
+                        "minResolution": 0,
+                        "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/etaxi.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Taxi",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Taxi",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Taxi0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Taxi0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Taxi0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi0_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Other",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Other",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Other",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Other0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Other0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "Other0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other0_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Other",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Other",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Other",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other_50px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Other0",
+                        "minResolution": 0,
+                        "maxResolution": 20,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other0_30px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Other0",
+                        "minResolution": 20,
+                        "maxResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other0_40px.png"
+                        }
+                },
+                {
+                        "geomType": "point",
+                        "value": "E-Other0",
+                        "minResolution": 250,
+                        "vectorOptions": {
+                                "type": "icon",
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other0_50px.png"
                         }
                 }
         ]
