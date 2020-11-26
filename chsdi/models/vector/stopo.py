@@ -3415,7 +3415,7 @@ register('ch.swisstopo.geologie-felslabore', GeologieFelslabore)
 
 
 class Gletscherausdehnung(Base, Vector):
-    __tablename__ = 'view_gletscherausdehnung_sgi_2016_glaciers'
+    __tablename__ = 'view_gletscherausdehnung_tooltip'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gletscherausdehnung.mako'
     __bodId__ = 'ch.swisstopo.geologie-gletscherausdehnung'
