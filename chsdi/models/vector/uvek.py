@@ -161,7 +161,8 @@ class OevHaltestellenZoom1(Base, OevHaltestellen, Vector):
     __extended_info__ = True
     __queryable_attributes__ = ['id', 'name']
     __returnedGeometry__ = 'the_geom_point'
-    id = Column('nummer', Integer, primary_key=True)
+    xtf_id = Column('xtf_id', Unicode, primary_key=True)
+    id = Column('nummer', Integer)
     name = Column('name', Unicode)
     abkuerzung = Column('abkuerzung', Unicode)
     tuabkuerzung = Column('transportunternehmen_abkuerzung', Unicode)
@@ -183,7 +184,8 @@ class OevHaltestellenZoom2(Base, OevHaltestellen, Vector):
     __extended_info__ = True
     __queryable_attributes__ = ['id', 'name']
     __returnedGeometry__ = 'the_geom_point'
-    id = Column('nummer', Integer, primary_key=True)
+    xtf_id = Column('xtf_id', Unicode, primary_key=True)
+    id = Column('nummer', Integer)
     name = Column('name', Unicode)
     abkuerzung = Column('abkuerzung', Unicode)
     tuabkuerzung = Column('transportunternehmen_abkuerzung', Unicode)
