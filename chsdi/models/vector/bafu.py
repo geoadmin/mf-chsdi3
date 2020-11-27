@@ -2353,8 +2353,8 @@ class LandesforstinventarWirtschaftsregion(Base, LandesforstinventarRegion, Vect
 register(LandesforstinventarWirtschaftsregion.__bodId__, LandesforstinventarWirtschaftsregion)
 
 
-class LandesforstinventarSchutzregion(Base, LandesforstinventarRegion, Vector):
-    __tablename__ = 'view_landesforstinventar_schutzregionen'
-    __bodId__ = 'ch.bafu.landesforstinventar-schutzregionen'
+class LandesforstinventarSchutzwaldregion(Base, LandesforstinventarRegion, Vector):
+    __tablename__ = 'view_landesforstinventar_schutzwaldregionen'
+    __bodId__ = 'ch.bafu.landesforstinventar-schutzwaldregionen'
 
-register(LandesforstinventarSchutzregion.__bodId__, LandesforstinventarSchutzregion)
+register(LandesforstinventarSchutzwaldregion.__bodId__, LandesforstinventarSchutzwaldregion)
