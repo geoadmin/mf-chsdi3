@@ -2340,21 +2340,21 @@ class LandesforstinventarRegion:
 
 
 class LandesforstinventarProduktionsregion(Base, LandesforstinventarRegion, Vector):
-    __tablename__ = 'view_landesforstinventar_produktionsregionen'
+    __tablename__ = 'produktionsregionen'
     __bodId__ = 'ch.bafu.landesforstinventar-produktionsregionen'
 
 register(LandesforstinventarProduktionsregion.__bodId__, LandesforstinventarProduktionsregion)
 
 
 class LandesforstinventarWirtschaftsregion(Base, LandesforstinventarRegion, Vector):
-    __tablename__ = 'view_landesforstinventar_wirtschaftsregionen'
+    __tablename__ = 'wirtschaftsregionen'
     __bodId__ = 'ch.bafu.landesforstinventar-wirtschaftsregionen'
 
 register(LandesforstinventarWirtschaftsregion.__bodId__, LandesforstinventarWirtschaftsregion)
 
 
 class LandesforstinventarSchutzwaldregion(Base, LandesforstinventarRegion, Vector):
-    __tablename__ = 'view_landesforstinventar_schutzwaldregionen'
+    __tablename__ = 'schutzwaldregionen'
     __bodId__ = 'ch.bafu.landesforstinventar-schutzwaldregionen'
 
 register(LandesforstinventarSchutzwaldregion.__bodId__, LandesforstinventarSchutzwaldregion)
