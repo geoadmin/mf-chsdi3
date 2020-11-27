@@ -2326,3 +2326,38 @@ class LandesForstInventarVegetationsHoehenModellRelief(Base, LandesForstInventar
     __bodId__ = 'ch.bafu.landesforstinventar-vegetationshoehenmodell_relief'
 
 register(LandesForstInventarVegetationsHoehenModellRelief.__bodId__, LandesForstInventarVegetationsHoehenModellRelief)
+
+
+class LandesforstinventarRegion:
+    __template__ = 'templates/landesforstinventar-region.mako'
+    __label__ = 'id'
+    id = Column('id', Integer, primary_key=True)
+    name_de = Column*'name_de', Unicode)
+    name_fr = Column*'name_de', Unicode)
+    name_it = Column*'name_de', Unicode)
+
+
+class LandesforstinventarProduktionsregion(Base, LandesforstinventarRegion, Vector):
+    __tablename__ = 'view_landesforstinventar_produktionsregionen'
+    __table_args__ = ({'schema': 'wald', 'autoload': False})
+    __bodId__ = 'ch.bafu.landesforstinventar-produktionsregionen'
+    __queryable_attributes__ = []
+
+
+class LandesforstinventarWirtscahftsregion(Base, LandesforstinventarRegion, Vector):
+    __tablename__ = 'view_landesforstinventar_wirtscahftsregionen'
+    __table_args__ = ({'schema': 'wald', 'autoload': False})
+    __bodId__ = 'ch.bafu.landesforstinventar-wirtscahftsregionen'
+    __queryable_attributes__ = []
+
+
+class LandesforstinventarSchutzregion(Base, LandesforstinventarRegion, Vector):
+    __tablename__ = 'view_landesforstinventar_schutzregionen'
+    __table_args__ = ({'schema': 'wald', 'autoload': False})
+    __bodId__ = 'ch.bafu.landesforstinventar-schutzregionen'
+    __queryable_attributes__ = []
+
+
+register(LandesforstinventarProduktionsregion.__bodId__, LandesforstinventarProduktionsregion)
+register(LandesforstinventarWirtscahftsregion.__bodId__, LandesforstinventarWirtscahftsregion)
+register(LandesforstinventarSchutzregion.__bodId__, LandesforstinventarSchutzregion)
