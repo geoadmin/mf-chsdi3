@@ -2346,11 +2346,11 @@ class LandesforstinventarProduktionsregion(Base, LandesforstinventarRegion, Vect
 register(LandesforstinventarProduktionsregion.__bodId__, LandesforstinventarProduktionsregion)
 
 
-class LandesforstinventarWirtscahftsregion(Base, LandesforstinventarRegion, Vector):
-    __tablename__ = 'view_landesforstinventar_wirtscahftsregionen'
-    __bodId__ = 'ch.bafu.landesforstinventar-wirtscahftsregionen'
+class LandesforstinventarWirtschaftsregion(Base, LandesforstinventarRegion, Vector):
+    __tablename__ = 'view_landesforstinventar_wirtschaftsregionen'
+    __bodId__ = 'ch.bafu.landesforstinventar-wirtschaftsregionen'
 
-register(LandesforstinventarWirtscahftsregion.__bodId__, LandesforstinventarWirtscahftsregion)
+register(LandesforstinventarWirtschaftsregion.__bodId__, LandesforstinventarWirtschaftsregion)
 
 
 class LandesforstinventarSchutzregion(Base, LandesforstinventarRegion, Vector):
