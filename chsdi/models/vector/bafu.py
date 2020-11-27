@@ -2330,8 +2330,7 @@ register(LandesForstInventarVegetationsHoehenModellRelief.__bodId__, LandesForst
 
 class LandesforstinventarRegion:
     __table_args__ = ({'schema': 'wald', 'autoload': False})
-    __template__ = 'templates/landesforstinventar-region.mako'
-    __queryable_attributes__ = []
+    __template__ = 'templates/htmlpopup/landesforstinventar-region.mako'
     __label__ = 'id'
     id = Column('id', Integer, primary_key=True)
     name_de = Column('name_de', Unicode)
