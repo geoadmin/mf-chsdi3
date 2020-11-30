@@ -62,6 +62,8 @@
          <td>-</td>
        % elif "https://" in c['attributes'][more_text]:
          <td><a href="${c['attributes'][more_text]}" target="_blank">Link</a></td>
+       % elif "http://" in c['attributes'][more_text]:
+         <td><a href="${c['attributes'][more_text]}" target="_blank">Link</a></td>
        % else:
          <td>${c['attributes'][more_text]}</td>
        % endif
