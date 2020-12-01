@@ -9,7 +9,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike_50px.png"
                         }
                 },
                 {
@@ -28,7 +28,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike_30px.png"
                         }
                 },
                 {
@@ -38,7 +38,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike0_50px.png"
                         }
                 },
                 {
@@ -57,7 +57,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Bike0_30px.png"
                         }
                 },
                 {
@@ -67,7 +67,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike_50px.png"
                         }
                 },
                 {
@@ -86,7 +86,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike_30px.png"
                         }
                 },
                 {
@@ -96,7 +96,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike0_50px.png"
                         }
                 },
                 {
@@ -115,7 +115,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Bike0_30px.png"
                         }
                 },
                 {
@@ -125,7 +125,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike_50px.png"
                         }
                 },
                 {
@@ -144,7 +144,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike_30px.png"
                         }
                 },
                 {
@@ -154,7 +154,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike0_50px.png"
                         }
                 },
                 {
@@ -173,7 +173,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/CargoBike0_30px.png"
                         }
                 },
                 {
@@ -183,7 +183,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike_50px.png"
                         }
                 },
                 {
@@ -202,7 +202,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike_30px.png"
                         }
                 },
                 {
@@ -212,7 +212,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike0_50px.png"
                         }
                 },
                 {
@@ -231,7 +231,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-CargoBike0_30px.png"
                         }
                 },
                 {
@@ -241,7 +241,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter_50px.png"
                         }
                 },
                 {
@@ -260,7 +260,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter_30px.png"
                         }
                 },
                 {
@@ -270,7 +270,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter0_50px.png"
                         }
                 },
                 {
@@ -289,7 +289,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Scooter0_30px.png"
                         }
                 },
                 {
@@ -299,7 +299,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter_50px.png"
                         }
                 },
                 {
@@ -318,7 +318,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter_30px.png"
                         }
                 },
                 {
@@ -328,7 +328,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter0_50px.png"
                         }
                 },
                 {
@@ -347,7 +347,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Scooter0_30px.png"
                         }
                 },
                 {
@@ -357,7 +357,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped_50px.png"
                         }
                 },
                 {
@@ -376,7 +376,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped_30px.png"
                         }
                 },
                 {
@@ -386,7 +386,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped0_50px.png"
                         }
                 },
                 {
@@ -405,7 +405,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Moped0_30px.png"
                         }
                 },
                 {
@@ -415,7 +415,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped_50px.png"
                         }
                 },
                 {
@@ -434,7 +434,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped_30px.png"
                         }
                 },
                 {
@@ -444,7 +444,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped0_50px.png"
                         }
                 },
                 {
@@ -463,7 +463,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Moped0_30px.png"
                         }
                 },
                 {
@@ -473,7 +473,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car_50px.png"
                         }
                 },
                 {
@@ -492,7 +492,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car_30px.png"
                         }
                 },
                 {
@@ -502,7 +502,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car0_50px.png"
                         }
                 },
                 {
@@ -521,7 +521,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Car0_30px.png"
                         }
                 },
                 {
@@ -531,7 +531,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car_50px.png"
                         }
                 },
                 {
@@ -550,7 +550,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car_30px.png"
                         }
                 },
                 {
@@ -560,7 +560,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car0_50px.png"
                         }
                 },
                 {
@@ -579,7 +579,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Car0_30px.png"
                         }
                 },
                 {
@@ -589,7 +589,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi_50px.png"
                         }
                 },
                 {
@@ -608,7 +608,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi_30px.png"
                         }
                 },
                 {
@@ -618,7 +618,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi0_50px.png"
                         }
                 },
                 {
@@ -637,7 +637,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Taxi0_30px.png"
                         }
                 },
                 {
@@ -647,7 +647,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi_50px.png"
                         }
                 },
                 {
@@ -666,7 +666,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi_30px.png"
                         }
                 },
                 {
@@ -676,7 +676,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi0_50px.png"
                         }
                 },
                 {
@@ -695,7 +695,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Taxi0_30px.png"
                         }
                 },
                 {
@@ -705,7 +705,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other_50px.png"
                         }
                 },
                 {
@@ -724,7 +724,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other_30px.png"
                         }
                 },
                 {
@@ -734,7 +734,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other0_50px.png"
                         }
                 },
                 {
@@ -753,7 +753,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/Other0_30px.png"
                         }
                 },
                 {
@@ -763,7 +763,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other_50px.png"
                         }
                 },
                 {
@@ -782,7 +782,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other_30px.png"
                         }
                 },
                 {
@@ -792,7 +792,7 @@
                         "maxResolution": 20,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other0_30px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other0_50px.png"
                         }
                 },
                 {
@@ -811,7 +811,7 @@
                         "minResolution": 250,
                         "vectorOptions": {
                                 "type": "icon",
-                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other0_50px.png"
+                                "src": "https://data.geo.admin.ch/ch.bfe.shared-mobility/icons/E-Other0_30px.png"
                         }
                 }
         ]
