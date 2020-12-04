@@ -12,7 +12,7 @@
 
 <table>
   <tr>
-    <td class="cell-meta">${_('ch.bav.haltestellen-oev.id')}</td>
+    <td class="cell-meta">${_('ch.bav.haltestellen-oev.nummer_haltekante')}</td>
     <td class="cell-meta">${c['attributes']['nummer_text'] or '-'}</td>
   </tr>
   <tr>
