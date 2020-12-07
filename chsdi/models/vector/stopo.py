@@ -2556,6 +2556,23 @@ register('ch.swisstopo.geologie-geotope', GeologieGeotopePunkte)
 register('ch.swisstopo.geologie-geotope', GeologieGeotopeFlaechen)
 
 
+class GeologieGeotopeKantoneStand(Base, Vector):
+    __tablename__ = 'view_geotope_kantone_stand'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geotope_kantone_stand.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geotope_kantone_stand'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    sigel = Column('sigel', Unicode)
+    link = Column('url', Unicode)
+    inventar = Column('inventar', Unicode)
+    zugang = Column('zugang', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-geotope_kantone_stand', GeologieGeotopeKantoneStand)
+
+
 class SteineHistBauwerke(Base, Vector):
     __tablename__ = 'geotechnik_steine_historische_bauwerke'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
