@@ -14,6 +14,88 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20201209:
+
+Release 20201209 - Wednesday, December 9th 2020
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcement: the swisstopo layer ch.swisstopo.vec200-landcover-wald has been removed from FSDI services as previously announced on July 1st 2020
+- Announcement: the layers ch.bafu.grundwasserschutzareale, ch.bafu.grundwasserschutzzonen and ch.bafu.gewaesserschutzbereiche will be completely removed from the FSDI services in March 2021
+- Announcement: the layers ch.blw.emapis-beizugsgebiet, ch.blw.emapis-bewaesserung, ch.blw.emapis-elektrizitaetsversorgung, ch.blw.emapis-entwaesserung, ch.blw.emapis-hochbau, ch.blw.emapis-milchleitung, ch.blw.emapis-oekologie, ch.blw.emapis-projektschwerpunkt, ch.blw.emapis-seilbahnen, ch.blw.emapis-wasserversorgung, ch.blw.emapis-wegebau and ch.blw.emapis-zusammenfassung will be completely removed from the FSDI services in March 2021
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_201028...r_201209>`__
+
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_201028...r_201209>`__
+
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `PCP Inventory 2021 <//map.geo.admin.ch/?layers=ch.babs.kulturgueter-anhoerung>`__ (ch.babs.kulturgueter-anhoerung)                                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Basemap light hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.leichte-basiskarte_reliefschattierung>`__ (ch.swisstopo.leichte-basiskarte_reliefschattierung)                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Production regions NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-produktionsregionen>`__ (ch.bafu.landesforstinventar-produktionsregionen)                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Economic regions NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-wirtscahftsregionen>`__ (ch.bafu.landesforstinventar-wirtscahftsregionen)                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Protection forest regions NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-schutzwaldregionen>`__ (ch.bafu.landesforstinventar-schutzwaldregionen)                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Soil bulk density <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gesteinsdichte>`__ (ch.swisstopo.geologie-gesteinsdichte)                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Status of Cantonal Geotope Inventories <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geotope_kantone_stand>`__ (ch.swisstopo.geologie-geotope_kantone_stand)                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Glacier Extent <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gletscherausdehnung>`__ (ch.swisstopo.geologie-gletscherausdehnung)                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Glacier Thickness <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gletschermaechtigkeit>`__ (ch.swisstopo.geologie-gletschermaechtigkeit)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Low distortion area <//map.geo.admin.ch/?layers=ch.swisstopo-vd.spannungsarme-gebiete>`__ (ch.swisstopo-vd.spannungsarme-gebiete)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Housing Inventory <//map.geo.admin.ch/?layers=ch.are.wohnungsinventar-zweitwohnungsanteil>`__ (ch.are.wohnungsinventar-zweitwohnungsanteil)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Winter national map LK10, LK25, LK50, LK100 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-winter>`__ (ch.swisstopo.pixelkarte-farbe-winter)                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division snowshoe/ski tour maps 50 Paper <//map.geo.admin.ch/?layers=ch.swisstopo.skitourenkarte-50.metadata>`__ (ch.swisstopo.skitourenkarte-50.metadata)                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe trekking <//map.geo.admin.ch/?layers=ch.swisstopo.schneeschuhwandern>`__ (ch.swisstopo.schneeschuhwandern)                                                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Minergie <//map.geo.admin.ch/?layers=ch.bfe.minergiegebaeude>`__ (ch.bfe.minergiegebaeude)                                                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Deep geothermal projects <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-tiefengeothermie_projekte>`__ (ch.swisstopo.geologie-tiefengeothermie_projekte)                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport stops <//map.geo.admin.ch/?layers=ch.bav.haltestellen-oev>`__ (ch.bav.haltestellen-oev)                                                                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Seismic subsoil classes <//map.geo.admin.ch/?layers=ch.bafu.gefahren-baugrundklassen>`__ (ch.bafu.gefahren-baugrundklassen)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Spectral micro-zoning <//map.geo.admin.ch/?layers=ch.bafu.gefahren-spektral>`__ (ch.bafu.gefahren-spektral)                                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Seismic zones SIA 261 <//map.geo.admin.ch/?layers=ch.bafu.gefahren-gefaehrdungszonen>`__ (ch.bafu.gefahren-gefaehrdungszonen)                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division GeoCover <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover.metadata>`__ (ch.swisstopo.geologie-geocover.metadata)                                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20201028:
 
 Release 20201028 - Wednesday, October 28th 2020
