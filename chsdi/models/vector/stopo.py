@@ -2728,48 +2728,42 @@ class Geocover:
     the_geom = Column(Geometry2D)
 
 
-class GeocoverFeatures(Geocover):
-    __label__ = 'description'
+class GeocoverBase(Geocover):
+    __label__ = 'description_de'
+    __queryable_attributes__ = []
+    __maxscale__ = 70000
     id = Column('bgdi_id', Integer, primary_key=True)
-    basisdatensatz_de = Column('basisdatensatz_de', Unicode)
-    basisdatensatz_fr = Column('basisdatensatz_fr', Unicode)
-    description = Column('description', Unicode)
     description_de = Column('description_de', Unicode)
     description_fr = Column('description_fr', Unicode)
-    __maxscale__ = 70000
-    __queryable_attributes__ = []
 
 
-class GeocoverLineAux(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_line_aux'
-    __template__ = 'templates/htmlpopup/geocover_line_aux.mako'
+class GeocoverExtended(GeocoverBase):
     spec_description_de = Column('spec_description_de', Unicode)
     spec_description_fr = Column('spec_description_fr', Unicode)
 
 
-class GeocoverPointHydro(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_point_hydro'
+class GeocoverLineAux(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_line_aux'
+    __template__ = 'templates/htmlpopup/geocover_aux.mako'
+
+
+class GeocoverPointHydro(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_point_hydro'
     __template__ = 'templates/htmlpopup/geocover_point_hydro.mako'
-    spec_description_de = Column('spec_description_de', Unicode)
-    spec_description_fr = Column('spec_description_fr', Unicode)
     azimut = Column('azimut', Unicode)
     depth = Column('depth', Unicode)
 
 
-class GeocoverPointGeol(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_point_geol'
+class GeocoverPointGeol(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_point_geol'
     __template__ = 'templates/htmlpopup/geocover_point_hydro.mako'
-    spec_description_de = Column('spec_description_de', Unicode)
-    spec_description_fr = Column('spec_description_fr', Unicode)
     azimut = Column('azimut', Unicode)
     depth = Column('depth', Unicode)
 
 
-class GeocoverPointDrill(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_point_drill'
+class GeocoverPointDrill(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_point_drill'
     __template__ = 'templates/htmlpopup/geocover_point_drill.mako'
-    spec_description_de = Column('spec_description_de', Unicode)
-    spec_description_fr = Column('spec_description_fr', Unicode)
     azimut = Column('azimut', Unicode)
     depth_1 = Column('depth_1', Unicode)
     description_1_de = Column('description_1_de', Unicode)
@@ -2777,68 +2771,49 @@ class GeocoverPointDrill(Base, GeocoverFeatures, Vector):
     depth_2 = Column('depth_2', Unicode)
     description_2_de = Column('description_2_de', Unicode)
     description_2_fr = Column('description_2_fr', Unicode)
+    spec_val = Column('spec_val', Integer)
+    rem_de = Column('rem_de', Unicode)
+    rem_fr = Column('rem_fr', Unicode)
 
 
-class GeocoverPointInfo(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_point_info'
+class GeocoverPointInfo(Base, GeocoverBase, Vector):
+    __tablename__ = 'geocover_point_info'
     __template__ = 'templates/htmlpopup/geocover_point_info.mako'
 
 
-class GeocoverPointStruct(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_point_struct'
+class GeocoverPointStruct(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_point_struct'
     __template__ = 'templates/htmlpopup/geocover_point_struct.mako'
-    spec_description_de = Column('spec_description_de', Unicode)
-    spec_description_fr = Column('spec_description_fr', Unicode)
     azimut = Column('azimut', Unicode)
     dip = Column('dip', Unicode)
 
 
-class GeocoverPolygonAux1(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_polygon_aux_1'
+class GeocoverPolygonAux1(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_polygon_aux_1'
+    __template__ = 'templates/htmlpopup/geocover_aux.mako'
+
+
+class GeocoverPolygonAux2(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_polygon_aux_2'
+    __template__ = 'templates/htmlpopup/geocover_aux.mako'
+
+
+class GeocoverPolygonMain(Base, GeocoverBase, Vector):
+    __tablename__ = 'geocover_polygon_main'
     __template__ = 'templates/htmlpopup/geocover_polygon.mako'
-    tecto_de = Column('tecto_de', Unicode)
-    tecto_fr = Column('tecto_fr', Unicode)
     litstrat_link_de = Column('litstrat_link_de', Unicode)
     litstrat_link_fr = Column('litstrat_link_fr', Unicode)
     litho_fr = Column('litho_fr', Unicode)
     litho_de = Column('litho_de', Unicode)
-    chrono_fr = Column('chrono_fr', Unicode)
-    chrono_de = Column('chrono_de', Unicode)
-    harmos_rev_fr = Column('harmos_rev_fr', Unicode)
-    harmos_rev_de = Column('harmos_rev_de', Unicode)
-
-
-class GeocoverPolygonAux2(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_polygon_aux_2'
-    __template__ = 'templates/htmlpopup/geocover_polygon.mako'
     tecto_de = Column('tecto_de', Unicode)
     tecto_fr = Column('tecto_fr', Unicode)
-    litstrat_link_de = Column('litstrat_link_de', Unicode)
-    litstrat_link_fr = Column('litstrat_link_fr', Unicode)
-    litho_fr = Column('litho_fr', Unicode)
-    litho_de = Column('litho_de', Unicode)
     chrono_fr = Column('chrono_fr', Unicode)
     chrono_de = Column('chrono_de', Unicode)
-    harmos_rev_fr = Column('harmos_rev_fr', Unicode)
-    harmos_rev_de = Column('harmos_rev_de', Unicode)
+    orig_description_de = Column('orig_description_de', Unicode)
+    orig_description_fr = Column('orig_description_fr', Unicode)
 
 
-class GeocoverPolygonMain(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_polygon_main'
-    __template__ = 'templates/htmlpopup/geocover_polygon.mako'
-    tecto_de = Column('tecto_de', Unicode)
-    tecto_fr = Column('tecto_fr', Unicode)
-    litstrat_link_de = Column('litstrat_link_de', Unicode)
-    litstrat_link_fr = Column('litstrat_link_fr', Unicode)
-    litho_fr = Column('litho_fr', Unicode)
-    litho_de = Column('litho_de', Unicode)
-    chrono_fr = Column('chrono_fr', Unicode)
-    chrono_de = Column('chrono_de', Unicode)
-    harmos_rev_fr = Column('harmos_rev_fr', Unicode)
-    harmos_rev_de = Column('harmos_rev_de', Unicode)
-
-
-class GeocoverGridShop (Base, Geocover, ShopProductGroupClass, Vector):
+class GeocoverGridShop(Base, Geocover, ShopProductGroupClass, Vector):
     __tablename__ = 'view_geocover_grid_shop'
     __minscale__ = 70000
     base = Column('base', Unicode)
