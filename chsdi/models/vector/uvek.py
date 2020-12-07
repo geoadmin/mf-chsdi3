@@ -201,7 +201,7 @@ class OevHaltekante(Base, OevHaltestellen, Vector):
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __template__ = 'templates/htmlpopup/oev_haltekante.mako'
     __label__ = 'haltestelle'
-    __maxscale__ = 5000
+    __maxscale__ = 4000
     id = Column('nummer', Unicode, primary_key=True)
     nummer_text = Column('nummer_text', Unicode)
     bezeichnung_de = Column('bezeichnung_de', Unicode)
