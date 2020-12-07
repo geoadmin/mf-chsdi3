@@ -1455,28 +1455,40 @@ register('ch.swisstopo.geologie-geotechnik-gk200', GeologieGeotechnikGk200)
 
 
 class TiefenGeothermieProjekte(Base, Vector):
-    __tablename__ = 'tiefengeothermie_projekte_pkt'
+    __tablename__ = 'tiefengeothermie_projekte_plg'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/tiefengeothermie_projekte.mako'
     __bodId__ = 'ch.swisstopo.geologie-tiefengeothermie_projekte'
     __label__ = 'name'
     __extended_info__ = True
-    __queryable_attributes__ = ['name']
+    __queryable_attributes__ = ['name', 'status_de', 'status_fr', 'status_en', 'system_de', 'system_fr', 'system_en']
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     owner = Column('owner', Unicode)
-    status = Column('status', Unicode)
-    system = Column('system', Unicode)
-    use = Column('use', Unicode)
+    status_de = Column('status_de', Unicode)
+    status_fr = Column('status_fr', Unicode)
+    status_en = Column('status_en', Unicode)
+    system_de = Column('system_de', Unicode)
+    system_fr = Column('system_fr', Unicode)
+    system_en = Column('system_en', Unicode)
+    use_de = Column('use_de', Unicode)
+    use_fr = Column('use_fr', Unicode)
+    use_en = Column('use_en', Unicode)
     canton = Column('canton', Unicode)
     community = Column('community', Unicode)
     depth = Column('depth', Integer)
     temp = Column('temp', Unicode)
-    power = Column('power', Unicode)
-    produc = Column('produc', Unicode)
-    weblink = Column('weblink', Unicode)
+    capacity = Column('capac', Unicode)
+    production = Column('production', Unicode)
     reservoir = Column('reservoir', Unicode)
     download = Column('download', Unicode)
+    year = Column('year', Unicode)
+    subsidy_de = Column('subsidy_de', Unicode)
+    subsidy_fr = Column('subsidy_fr', Unicode)
+    subsidy_en = Column('subsidy_en', Unicode)
+    more_de = Column('more_de', Unicode)
+    more_fr = Column('more_fr', Unicode)
+    more_en = Column('more_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register(TiefenGeothermieProjekte.__bodId__, TiefenGeothermieProjekte)
