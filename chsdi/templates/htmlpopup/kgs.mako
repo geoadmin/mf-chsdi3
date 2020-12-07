@@ -15,21 +15,18 @@
     <%
         c['stable_id'] = True
         objarts = c['attributes']['objektart'].split(',')
+        gemeinde_ehemalig = c['attributes']['gemeinde_ehemalig'] if c['attributes']['gemeinde_ehemalig'].startswith("(") else "("+c['attributes']['gemeinde_ehemalig']+")"
         import csv
         from urllib2 import urlopen
         dataGeoAdminHost = request.registry.settings['datageoadminhost']
-        dataPath = 'ch.babs.kulturgueter/image'
-        csv_url = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + 'meta.txt'
+        csv_url = "https://" + dataGeoAdminHost + "/" + c['layerBodId']  + "/image/meta.txt"
         csv_file = None
         try:
             csv_file = urlopen(csv_url)
             reader = csv.reader(csv_file, delimiter =';')  # creates the reader object
-            pic_list = []
-            for i, row in enumerate(reader):   # iterates the rows of the file in orders
-                if i == 0: # The first row is NUMMER;BILDNR;FOTOGRAF;COPYRIGHT and cannot be parsed.
-                    continue
-                if int(row[0]) == c['featureId']:
-                    pic_list.append(map(lambda x: x.decode('cp1252'), row))
+            encoding = 'cp1252' if c['layerBodId'] == "ch.babs.kulturgueter" else 'utf-8'
+            next(reader) # Skip header
+            pic_list = [map(lambda x: x.decode(encoding), row) for row in reader if int(row[0]) == c['featureId']]
         finally:
             csv_file.close()
     %>
@@ -78,13 +75,13 @@
         </tr>
         <tr>
             <th class="cell-left">${_('tt_kbs_gemeinde')} (${_('tt_kbs_gemeinde_ehemalige')})</th>
-            <td>${c['attributes']['gemeinde'] or ''} ${'('+c['attributes']['gemeinde_ehemalig']+')' if c['attributes']['gemeinde_ehemalig'] else ''}</td>
+            <td>${c['attributes']['gemeinde'] or ''} ${gemeinde_ehemalig if c['attributes']['gemeinde_ehemalig'] not in [Null, ""] else ''}</td>
         </tr>
         <tr>
             <th class="cell-left">${_('Coordinates')}</th>
             <td>${int(round(c['attributes']['x'],0)) or ''} / ${int(round(c['attributes']['y'],0)) or ''}</td>
         </tr>
-    % if c['attributes']['pdf_list'] is not None:
+    % if c['attributes']['pdf_list'] not in [None, ""]:
         <tr>
             <th class="cell-left">${_('Feature tooltip')}:</th>
             <td>
@@ -94,19 +91,19 @@
             </td>
 	    </tr>
     %endif
-    % if c['attributes']['link_uri'] is not None:
+    % if c['attributes']['link_uri'] not in [None, ""]:
         <tr>
           <th class="cell-left">${_('legalregulationlink')}</th>
             <td><a href="${c['attributes']['link_uri']}">${c['attributes']['link_title']}</a></td>
         </tr>
     % endif
-    % if c['attributes']['link_2_uri'] is not None:
+    % if c['attributes']['link_2_uri'] not in [None, ""]:
         <tr>
           <th class="cell-left">${_('legalregulationlink')}</th>
           <td><a href="${c['attributes']['link_2_uri']}">${c['attributes']['link_2_title']}</a></td>
         </tr>
     % endif
-    % if c['attributes']['link_3_uri'] is not None:
+    % if c['attributes']['link_3_uri'] not in [None, ""]:
         <tr>
           <th class="cell-left">${_('legalregulationlink')}</th>
           <td><a href="${c['attributes']['link_3_uri']}">${c['attributes']['link_3_title']}</a></td>
@@ -135,7 +132,7 @@
             </div>
         </div>
     <table class="kernkraftwerke-extended">
-    % if c['attributes']['kurztexte'] is not None:
+    % if c['attributes']['kurztexte'] not in [None, ""]:
         <tr>
           <td>${c['attributes']['kurztexte']}</td>
         </tr>
