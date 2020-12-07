@@ -26,8 +26,8 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - Announcement: the swisstopo layer ch.swisstopo.vec200-landcover-wald has been removed from FSDI services as previously announced on July 1st 2020
-- Announcement: the layers ch.bafu.grundwasserschutzareale, ch.bafu.grundwasserschutzzonen and ch.bafu.gewaesserschutzbereiche will be completely removed from the FSDI services in march 2021
-- Announcement: the layers ch.blw.emapis-beizugsgebiet, ch.blw.emapis-bewaesserung, ch.blw.emapis-elektrizitaetsversorgung, ch.blw.emapis-entwaesserung, ch.blw.emapis-hochbau, ch.blw.emapis-milchleitung, ch.blw.emapis-oekologie, ch.blw.emapis-projektschwerpunkt, ch.blw.emapis-seilbahnen, ch.blw.emapis-wasserversorgung, ch.blw.emapis-wegebau and ch.blw.emapis-zusammenfassung will be completely removed from the FSDI services in march 2021
+- Announcement: the layers ch.bafu.grundwasserschutzareale, ch.bafu.grundwasserschutzzonen and ch.bafu.gewaesserschutzbereiche will be completely removed from the FSDI services in March 2021
+- Announcement: the layers ch.blw.emapis-beizugsgebiet, ch.blw.emapis-bewaesserung, ch.blw.emapis-elektrizitaetsversorgung, ch.blw.emapis-entwaesserung, ch.blw.emapis-hochbau, ch.blw.emapis-milchleitung, ch.blw.emapis-oekologie, ch.blw.emapis-projektschwerpunkt, ch.blw.emapis-seilbahnen, ch.blw.emapis-wasserversorgung, ch.blw.emapis-wegebau and ch.blw.emapis-zusammenfassung will be completely removed from the FSDI services in March 2021
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_201028...r_201209>`__
 
 
