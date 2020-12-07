@@ -148,10 +148,15 @@ register(MountainbikelandSperrungenUmleitungen.__bodId__, MountainbikelandSperru
 
 
 class OevHaltestellen:
+    __bodId__ = 'ch.bav.haltestellen-oev'
+
+
+class OevHaltestellenZoom1(Base, OevHaltestellen, Vector):
     __tablename__ = 'oev_haltestellen_tooltip'
     __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/oev_haltestellen.mako'
-    __bodId__ = 'ch.bav.haltestellen-oev'
+    __minscale__ = 1
+    __maxscale__ = 3000
     __label__ = 'name'
     __extended_info__ = True
     __queryable_attributes__ = ['id', 'name']
@@ -159,26 +164,57 @@ class OevHaltestellen:
     id = Column('nummer', Integer, primary_key=True)
     name = Column('name', Unicode)
     abkuerzung = Column('abkuerzung', Unicode)
-    tuabkuerzung = Column('tuabkuerzung', Unicode)
-    betriebspunkttyp = Column('betriebspunkttyp', Unicode)
-    verkehrsmittel = Column('verkehrsmittel', Unicode)
+    tuabkuerzung = Column('transportunternehmen_abkuerzung', Unicode)
+    betriebspunkttyp_de = Column('betriebspunkttyp_bezeichnung_de', Unicode)
+    betriebspunkttyp_fr = Column('betriebspunkttyp_bezeichnung_fr', Unicode)
+    verkehrsmittel_de = Column('verkehrsmittel_bezeichnung_de', Unicode)
+    verkehrsmittel_fr = Column('verkehrsmittel_bezeichnung_fr', Unicode)
     # point geometry hilight
     the_geom_point = Column('the_geom', Geometry2D)
-
-
-class OevHaltestellenZoom1(Base, OevHaltestellen, Vector):
-    __minscale__ = 1
-    __maxscale__ = 3000
     the_geom = Column('bgdi_geom_poly', Geometry2D)
-
-register(OevHaltestellen.__bodId__, OevHaltestellenZoom1)
 
 
 class OevHaltestellenZoom2(Base, OevHaltestellen, Vector):
+    __tablename__ = 'oev_haltestellen_tooltip'
+    __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/oev_haltestellen.mako'
     __minscale__ = 3000
+    __label__ = 'name'
+    __extended_info__ = True
+    __queryable_attributes__ = ['id', 'name']
+    __returnedGeometry__ = 'the_geom_point'
+    id = Column('nummer', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    abkuerzung = Column('abkuerzung', Unicode)
+    tuabkuerzung = Column('transportunternehmen_abkuerzung', Unicode)
+    betriebspunkttyp_de = Column('betriebspunkttyp_bezeichnung_de', Unicode)
+    betriebspunkttyp_fr = Column('betriebspunkttyp_bezeichnung_fr', Unicode)
+    verkehrsmittel_de = Column('verkehrsmittel_bezeichnung_de', Unicode)
+    verkehrsmittel_fr = Column('verkehrsmittel_bezeichnung_fr', Unicode)
+    # point geometry hilight
+    the_geom_point = Column('the_geom', Geometry2D)
     the_geom = Column('bgdi_geom_poly_overview', Geometry2D)
 
+
+class OevHaltekante(Base, OevHaltestellen, Vector):
+    __tablename__ = 'oev_haltekante_tooltip'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __template__ = 'templates/htmlpopup/oev_haltekante.mako'
+    __label__ = 'haltestelle'
+    __maxscale__ = 4000
+    id = Column('nummer', Unicode, primary_key=True)
+    nummer_text = Column('nummer_text', Unicode)
+    bezeichnung_de = Column('bezeichnung_de', Unicode)
+    bezeichnung_fr = Column('bezeichnung_fr', Unicode)
+    betrieblichebezeichnung = Column('betrieblichebezeichnung', Unicode)
+    laenge = Column('laenge', Float)
+    kantenhoehe = Column('kantenhoehe', Float)
+    haltestelle = Column('name', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(OevHaltestellen.__bodId__, OevHaltestellenZoom1)
 register(OevHaltestellen.__bodId__, OevHaltestellenZoom2)
+register(OevHaltestellen.__bodId__, OevHaltekante)
 
 
 # IVS NAT and REG use the same template
