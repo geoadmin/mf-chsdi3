@@ -8,11 +8,9 @@ from chsdi.models.vector import Vector, Geometry2D, Geometry3D
 Base = bases['vbs']
 
 
-class Kulturgueter(Base, Vector):
-    __tablename__ = 'kgs'
+class Kulturgueter:
     __table_args__ = ({'schema': 'babs', 'autoload': False})
     __template__ = 'templates/htmlpopup/kgs.mako'
-    __bodId__ = 'ch.babs.kulturgueter'
     __queryable_attributes__ = ['zkob']
     __extended_info__ = True
     __label__ = 'zkob'
@@ -37,7 +35,19 @@ class Kulturgueter(Base, Vector):
     link_3_title = Column('link_3_title', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.babs.kulturgueter', Kulturgueter)
+
+class KulturgueterInKraft(Base, Vector, Kulturgueter):
+    __tablename__ = 'kgs'
+    __bodId__ = 'ch.babs.kulturgueter'
+
+register('ch.babs.kulturgueter', KulturgueterInKraft)
+
+
+class KulturgueterAnhoerung(Base, Vector, Kulturgueter):
+    __tablename__ = 'kgs_anhoerung'
+    __bodId__ = 'ch.babs.kulturgueter-anhoerung'
+
+register('ch.babs.kulturgueter-anhoerung', KulturgueterAnhoerung)
 
 
 class NationalesSportanlagenkonzept(Base, Vector):

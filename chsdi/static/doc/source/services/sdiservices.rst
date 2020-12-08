@@ -1260,7 +1260,7 @@ A tile request is in the following form:
 
 example of one pbf tile:
 
-- https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.leichte-basiskarte.vt/v006/7/67/44.pbf
+- https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/7/67/44.pbf
 
 GetStyle
 ********
@@ -1273,7 +1273,7 @@ A style request is in the following form:
 
 example of a mapbox style:
 
-- https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v006/style.json
+- https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/style.json
 
 Available datasets and styles as mapbox vector tiles
 ****************************************************
@@ -1293,7 +1293,7 @@ The URL of the metadata `json` file is :
 
 example of tileset: 
 
-- https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.leichte-basiskarte.vt/v006.json
+- https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0.json
 
 
 

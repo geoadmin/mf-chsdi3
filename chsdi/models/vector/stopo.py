@@ -1455,28 +1455,40 @@ register('ch.swisstopo.geologie-geotechnik-gk200', GeologieGeotechnikGk200)
 
 
 class TiefenGeothermieProjekte(Base, Vector):
-    __tablename__ = 'tiefengeothermie_projekte_pkt'
+    __tablename__ = 'tiefengeothermie_projekte_plg'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/tiefengeothermie_projekte.mako'
     __bodId__ = 'ch.swisstopo.geologie-tiefengeothermie_projekte'
     __label__ = 'name'
     __extended_info__ = True
-    __queryable_attributes__ = ['name']
+    __queryable_attributes__ = ['name', 'status_de', 'status_fr', 'status_en', 'system_de', 'system_fr', 'system_en']
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     owner = Column('owner', Unicode)
-    status = Column('status', Unicode)
-    system = Column('system', Unicode)
-    use = Column('use', Unicode)
+    status_de = Column('status_de', Unicode)
+    status_fr = Column('status_fr', Unicode)
+    status_en = Column('status_en', Unicode)
+    system_de = Column('system_de', Unicode)
+    system_fr = Column('system_fr', Unicode)
+    system_en = Column('system_en', Unicode)
+    use_de = Column('use_de', Unicode)
+    use_fr = Column('use_fr', Unicode)
+    use_en = Column('use_en', Unicode)
     canton = Column('canton', Unicode)
     community = Column('community', Unicode)
     depth = Column('depth', Integer)
     temp = Column('temp', Unicode)
-    power = Column('power', Unicode)
-    produc = Column('produc', Unicode)
-    weblink = Column('weblink', Unicode)
+    capacity = Column('capac', Unicode)
+    production = Column('production', Unicode)
     reservoir = Column('reservoir', Unicode)
     download = Column('download', Unicode)
+    year = Column('year', Unicode)
+    subsidy_de = Column('subsidy_de', Unicode)
+    subsidy_fr = Column('subsidy_fr', Unicode)
+    subsidy_en = Column('subsidy_en', Unicode)
+    more_de = Column('more_de', Unicode)
+    more_fr = Column('more_fr', Unicode)
+    more_en = Column('more_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register(TiefenGeothermieProjekte.__bodId__, TiefenGeothermieProjekte)
@@ -2055,6 +2067,28 @@ class GeologieEiszeitLgm(Base, Vector):
 register('ch.swisstopo.geologie-eiszeit-lgm', GeologieEiszeitLgm)
 
 
+class GeologieGesteinsdichte(Base, Vector):
+    __tablename__ = 'gesteinsdichte'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geol_gesteinsdichte.mako'
+    __bodId__ = 'ch.swisstopo.geologie-gesteinsdichte'
+    __label__ = 'saphyr_n'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    saphyr_n = Column('saphyr_n', Unicode)
+    rhob_m = Column('rhob_m', Integer)
+    rhob_med = Column('rhob_med', Integer)
+    rhob_sd = Column('rhob_sd', Integer)
+    rhob_anz = Column('rhob_anz', Integer)
+    rhob_p05 = Column('rhob_p05', Integer)
+    rhob_p25 = Column('rhob_p25', Integer)
+    rhob_p75 = Column('rhob_p75', Integer)
+    rhob_p95 = Column('rhob_p95', Integer)
+    saphyr_pdf = Column('saphyr_pdf', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-gesteinsdichte', GeologieGesteinsdichte)
+
+
 class Swisstlm3dEisenbahn50000(Base, Vector):
     __tablename__ = 'eisenbahn_50000_tooltip'
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
@@ -2418,6 +2452,8 @@ class OerebkatasterZoom1(Base, Oerebkataster, Vector):
     oereb_webservice = Column('oereb_webservice', Unicode)
     bgdi_status = Column('bgdi_status', Integer)
     egris_egrid = Column('egris_egrid', Integer)
+    pdf_url = Column('pdf_url', Unicode)
+    number = Column('number_', Integer)
     __minscale__ = 1
     __maxscale__ = 50000
 
@@ -2556,6 +2592,23 @@ register('ch.swisstopo.geologie-geotope', GeologieGeotopePunkte)
 register('ch.swisstopo.geologie-geotope', GeologieGeotopeFlaechen)
 
 
+class GeologieGeotopeKantoneStand(Base, Vector):
+    __tablename__ = 'view_geotope_kantone_stand'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geotope_kantone_stand.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geotope_kantone_stand'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    sigel = Column('sigel', Unicode)
+    link = Column('url', Unicode)
+    inventar = Column('inventar', Unicode)
+    zugang = Column('zugang', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-geotope_kantone_stand', GeologieGeotopeKantoneStand)
+
+
 class SteineHistBauwerke(Base, Vector):
     __tablename__ = 'geotechnik_steine_historische_bauwerke'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
@@ -2675,48 +2728,42 @@ class Geocover:
     the_geom = Column(Geometry2D)
 
 
-class GeocoverFeatures(Geocover):
-    __label__ = 'description'
+class GeocoverBase(Geocover):
+    __label__ = 'description_de'
+    __queryable_attributes__ = []
+    __maxscale__ = 70000
     id = Column('bgdi_id', Integer, primary_key=True)
-    basisdatensatz_de = Column('basisdatensatz_de', Unicode)
-    basisdatensatz_fr = Column('basisdatensatz_fr', Unicode)
-    description = Column('description', Unicode)
     description_de = Column('description_de', Unicode)
     description_fr = Column('description_fr', Unicode)
-    __maxscale__ = 70000
-    __queryable_attributes__ = []
 
 
-class GeocoverLineAux(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_line_aux'
-    __template__ = 'templates/htmlpopup/geocover_line_aux.mako'
+class GeocoverExtended(GeocoverBase):
     spec_description_de = Column('spec_description_de', Unicode)
     spec_description_fr = Column('spec_description_fr', Unicode)
 
 
-class GeocoverPointHydro(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_point_hydro'
+class GeocoverLineAux(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_line_aux'
+    __template__ = 'templates/htmlpopup/geocover_aux.mako'
+
+
+class GeocoverPointHydro(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_point_hydro'
     __template__ = 'templates/htmlpopup/geocover_point_hydro.mako'
-    spec_description_de = Column('spec_description_de', Unicode)
-    spec_description_fr = Column('spec_description_fr', Unicode)
     azimut = Column('azimut', Unicode)
     depth = Column('depth', Unicode)
 
 
-class GeocoverPointGeol(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_point_geol'
+class GeocoverPointGeol(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_point_geol'
     __template__ = 'templates/htmlpopup/geocover_point_hydro.mako'
-    spec_description_de = Column('spec_description_de', Unicode)
-    spec_description_fr = Column('spec_description_fr', Unicode)
     azimut = Column('azimut', Unicode)
     depth = Column('depth', Unicode)
 
 
-class GeocoverPointDrill(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_point_drill'
+class GeocoverPointDrill(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_point_drill'
     __template__ = 'templates/htmlpopup/geocover_point_drill.mako'
-    spec_description_de = Column('spec_description_de', Unicode)
-    spec_description_fr = Column('spec_description_fr', Unicode)
     azimut = Column('azimut', Unicode)
     depth_1 = Column('depth_1', Unicode)
     description_1_de = Column('description_1_de', Unicode)
@@ -2724,68 +2771,49 @@ class GeocoverPointDrill(Base, GeocoverFeatures, Vector):
     depth_2 = Column('depth_2', Unicode)
     description_2_de = Column('description_2_de', Unicode)
     description_2_fr = Column('description_2_fr', Unicode)
+    spec_val = Column('spec_val', Integer)
+    rem_de = Column('rem_de', Unicode)
+    rem_fr = Column('rem_fr', Unicode)
 
 
-class GeocoverPointInfo(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_point_info'
+class GeocoverPointInfo(Base, GeocoverBase, Vector):
+    __tablename__ = 'geocover_point_info'
     __template__ = 'templates/htmlpopup/geocover_point_info.mako'
 
 
-class GeocoverPointStruct(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_point_struct'
+class GeocoverPointStruct(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_point_struct'
     __template__ = 'templates/htmlpopup/geocover_point_struct.mako'
-    spec_description_de = Column('spec_description_de', Unicode)
-    spec_description_fr = Column('spec_description_fr', Unicode)
     azimut = Column('azimut', Unicode)
     dip = Column('dip', Unicode)
 
 
-class GeocoverPolygonAux1(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_polygon_aux_1'
+class GeocoverPolygonAux1(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_polygon_aux_1'
+    __template__ = 'templates/htmlpopup/geocover_aux.mako'
+
+
+class GeocoverPolygonAux2(Base, GeocoverExtended, Vector):
+    __tablename__ = 'geocover_polygon_aux_2'
+    __template__ = 'templates/htmlpopup/geocover_aux.mako'
+
+
+class GeocoverPolygonMain(Base, GeocoverBase, Vector):
+    __tablename__ = 'geocover_polygon_main'
     __template__ = 'templates/htmlpopup/geocover_polygon.mako'
-    tecto_de = Column('tecto_de', Unicode)
-    tecto_fr = Column('tecto_fr', Unicode)
     litstrat_link_de = Column('litstrat_link_de', Unicode)
     litstrat_link_fr = Column('litstrat_link_fr', Unicode)
     litho_fr = Column('litho_fr', Unicode)
     litho_de = Column('litho_de', Unicode)
-    chrono_fr = Column('chrono_fr', Unicode)
-    chrono_de = Column('chrono_de', Unicode)
-    harmos_rev_fr = Column('harmos_rev_fr', Unicode)
-    harmos_rev_de = Column('harmos_rev_de', Unicode)
-
-
-class GeocoverPolygonAux2(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_polygon_aux_2'
-    __template__ = 'templates/htmlpopup/geocover_polygon.mako'
     tecto_de = Column('tecto_de', Unicode)
     tecto_fr = Column('tecto_fr', Unicode)
-    litstrat_link_de = Column('litstrat_link_de', Unicode)
-    litstrat_link_fr = Column('litstrat_link_fr', Unicode)
-    litho_fr = Column('litho_fr', Unicode)
-    litho_de = Column('litho_de', Unicode)
     chrono_fr = Column('chrono_fr', Unicode)
     chrono_de = Column('chrono_de', Unicode)
-    harmos_rev_fr = Column('harmos_rev_fr', Unicode)
-    harmos_rev_de = Column('harmos_rev_de', Unicode)
+    orig_description_de = Column('orig_description_de', Unicode)
+    orig_description_fr = Column('orig_description_fr', Unicode)
 
 
-class GeocoverPolygonMain(Base, GeocoverFeatures, Vector):
-    __tablename__ = 'view_geocover_polygon_main'
-    __template__ = 'templates/htmlpopup/geocover_polygon.mako'
-    tecto_de = Column('tecto_de', Unicode)
-    tecto_fr = Column('tecto_fr', Unicode)
-    litstrat_link_de = Column('litstrat_link_de', Unicode)
-    litstrat_link_fr = Column('litstrat_link_fr', Unicode)
-    litho_fr = Column('litho_fr', Unicode)
-    litho_de = Column('litho_de', Unicode)
-    chrono_fr = Column('chrono_fr', Unicode)
-    chrono_de = Column('chrono_de', Unicode)
-    harmos_rev_fr = Column('harmos_rev_fr', Unicode)
-    harmos_rev_de = Column('harmos_rev_de', Unicode)
-
-
-class GeocoverGridShop (Base, Geocover, ShopProductGroupClass, Vector):
+class GeocoverGridShop(Base, Geocover, ShopProductGroupClass, Vector):
     __tablename__ = 'view_geocover_grid_shop'
     __minscale__ = 70000
     base = Column('base', Unicode)
@@ -3412,3 +3440,47 @@ class GeologieFelslabore(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-felslabore', GeologieFelslabore)
+
+
+class Gletscherausdehnung(Base, Vector):
+    __tablename__ = 'view_gletscherausdehnung_tooltip'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/gletscherausdehnung.mako'
+    __bodId__ = 'ch.swisstopo.geologie-gletscherausdehnung'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    sgi_id = Column('sgi_id', Unicode)
+    area_km2 = Column('area_km2', Float)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-gletscherausdehnung', Gletscherausdehnung)
+
+
+class Gletschermaechtigkeit:
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.geologie-gletschermaechtigkeit'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+
+class GletschermaechtigkeitGPRProfiles(Base, Gletschermaechtigkeit, Vector):
+    __tablename__ = 'gletschermaechtigkeit_gpr_profiles'
+    __template__ = 'templates/htmlpopup/gletschermaechtigkeit_gpr_profiles.mako'
+    __label__ = 'gpr_prf_name'
+    gpr_prf_name = Column('prf_name', Unicode)
+    gpr_max_thik = Column('max_thik', Float)
+
+
+class GletschermaechtigkeitIceThikness(Base, Gletschermaechtigkeit, Vector):
+    __tablename__ = 'gletschermaechtigkeit_ice_thinkness'
+    __template__ = 'templates/htmlpopup/gletschermaechtigkeit_ice_thikness.mako'
+    __label__ = 'pk_sgi'
+    pk_sgi = Column('pk_sgi', Unicode)
+    mean_thik = Column('mean_thik', Float)
+    max_thik = Column('max_thik', Float)
+    volume = Column('volume', Float)
+    year_mode = Column('year_mode', Integer)
+
+register('ch.swisstopo.geologie-gletschermaechtigkeit', GletschermaechtigkeitGPRProfiles)
+register('ch.swisstopo.geologie-gletschermaechtigkeit', GletschermaechtigkeitIceThikness)

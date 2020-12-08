@@ -486,7 +486,7 @@ class TestIdentifyService(TestsBase):
         params = {'geometry': '600000,200000,601000,201000',
                   'geometryType': 'esriGeometryEnvelope',
                   'imageDisplay': '500,600,96',
-                  'mapExtent': '548945.5,147956,549402,148103.5',
+                  'mapExtent': '600000,200000,601000,201000',
                   'tolerance': '1',
                   'layers': 'all:ch.bav.haltestellen-oev',
                   'geometryFormat': 'geojson',
