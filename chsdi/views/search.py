@@ -187,15 +187,16 @@ class Search(SearchValidation):
             try:
                 # wildcard search only if more than one character in searchtext
                 if len(' '.join(self.searchText)) > 1 or self.bbox:
-                    # wildcard search
+                    # standard wildcard search
                     self.sphinx.AddQuery(searchTextFinal, index='swisssearch')
 
-                # exact search
-                searchText = '@detail "^%s"' % (' '.join(self.searchText))
+                # exact search, first 10 results
+                searchText = '@detail ^%s' % ' '.join(self.searchText)
                 self.sphinx.AddQuery(searchText, index='swisssearch')
 
-                # reset settingss
+                # reset settings
                 temp = self.sphinx.RunQueries()
+
                 # In case RunQueries doesn't return results (reason unknown)
                 # related to issue
                 if temp is None:
@@ -204,22 +205,12 @@ class Search(SearchValidation):
             except IOError:  # pragma: no cover
                 raise exc.HTTPGatewayTimeout()
 
-            wildcard_results = temp[0].get('matches', [])
-            merged_results = []
+            temp_merged = temp[0].get('matches', []) + temp[1].get('matches', []) if len(temp) == 2 else temp[0].get('matches', [])
 
-            if len(temp) == 2:
-                # we have results from both queries (exact + wildcard)
-                # prepend exact search results to wildcard search result
-                exact_results = temp[1].get('matches', [])
-                merged_results = exact_results + wildcard_results
-            else:
-                # we have results from one or no query
-                merged_results = wildcard_results
-
-            # remove duplicate from sphinx results, exact search results have priority over wildcard search results
+            # remove duplicate results, exact search results have priority over wildcard search results
             temp = []
             seen = []
-            for d in merged_results:
+            for d in temp_merged:
                 if d['id'] not in seen:
                     temp.append(d)
                     seen.append(d['id'])
