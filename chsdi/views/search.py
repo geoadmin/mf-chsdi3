@@ -192,7 +192,6 @@ class Search(SearchValidation):
 
                 # exact search use default ranking for exact search
                 searchText = '@detail "^%s"' % (' '.join(self.searchText))
-                self.sphinx.SetRankingMode(sphinxapi.SPH_RANK_PROXIMITY_BM25)
                 self.sphinx.AddQuery(searchText, index='swisssearch')
 
                 # reset settingss
@@ -212,11 +211,17 @@ class Search(SearchValidation):
                 # we have results from both queries (exact + wildcard)
                 # prepend exact search results to wildcard search result
                 exact_results = temp[1].get('matches', [])
+                # exact matches have priority over prefix matches
+                # searchText=waldhofstrasse+1
+                # waldhofstrasse 1 -> weight 100
+                # waldhofstrasse 1.1 -> weight 1
+                for result in exact_results:
+                    if result['attrs']['detail'].startswith('%s ' % (' '.join(self.searchText))):
+                        result['weight'] += 99
                 merged_results = exact_results + wildcard_results
             else:
                 # we have results from one or no query
                 merged_results = wildcard_results
-
             # remove duplicate from sphinx results, exact search results have priority over wildcard search results
             temp = []
             seen = []
@@ -227,7 +232,6 @@ class Search(SearchValidation):
 
             # reduce number of elements in result to limit
             temp = temp[:limit]
-
             # if standard index did not find anything, use soundex/metaphon indices
             # which should be more fuzzy in its results
             if temp is None or len(temp) <= 0:
