@@ -457,27 +457,18 @@ register('ch.bafu.typisierung-fliessgewaesser', TypFliessgewaesser)
 
 
 class WasserVermessungsstrecken(Base, Vector):
-    __tablename__ = 'vermessungsstrecken'
+    __tablename__ = 'vermessungsabschnitte'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasserbau-vermessungsstrecken'
-    __queryable_attributes__ = ['gewaessernummer', 'streckenid', 'bezeichnung', 'gwlnr']
     __template__ = 'templates/htmlpopup/vermessungsstrecken.mako'
-    __extended_info__ = True
-    __label__ = 'bezeichnung'
+    __label__ = 'gwlnr'
     id = Column('bgdi_id', Integer, primary_key=True)
-    bezeichnung = Column('bezeichnung', Unicode)
-    routeid = Column('routeid', Integer)
-    gewaessernummer = Column('gewaessernummer', Unicode)
-    bemerkung = Column('bemerkung', Unicode)
-    anfangsmass = Column('anfangsmass', Numeric)
-    endmass = Column('endmass', Numeric)
-    streckenid = Column('streckenid', Integer)
-    bezeichnung = Column('bezeichnung', Unicode)
-    laenge_km = Column('laenge_km', Numeric)
-    anzahl_profile = Column('anzahl_profile', Integer)
-    aufnahme_intervall = Column('aufnahme_intervall', Integer)
-    aufnahme_letzte = Column('aufnahme_letzte', Integer)
+    verantwortung = Column('verantwortung', Unicode)
     gwlnr = Column('gwlnr', Unicode)
+    flussname = Column('flussname', Unicode)
+    abschnitt = Column('abschnitt', Unicode)
+    gerinnetyp = Column('gerinnetyp', Unicode)
+    uebersicht_messkampagne_link = Column('uebersicht_messkampagne_link', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasserbau-vermessungsstrecken', WasserVermessungsstrecken)
