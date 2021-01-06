@@ -35,6 +35,7 @@
 </%def>
 
 
+
 <%def name="extended_info(c, lang)">
 <%
     lang = lang if lang in ('fr','it') else 'de'
@@ -77,19 +78,19 @@
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.e_li')}</td>
-  <td>${c['attributes']['e_li'] or '-'}</td>
+  <td>${round(c['attributes']['e_li'], 2) or '-'}</td>
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.n_li')}</td>
-  <td>${c['attributes']['n_li'] or '-'}</td>
+  <td>${round(c['attributes']['n_li'], 2) or '-'}</td>
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.hoehe_li')}</td>
-  <td>${c['attributes']['hoehe_li'] or '-'}</td>
+  <td>${round(c['attributes']['hoehe_li'], 2) or '-'}</td>
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.azimut_li')}</td>
-  <td>${c['attributes']['azimut_li'] or '-'}</td>
+  <td>${round(c['attributes']['azimut_li'], 2) or '-'}</td>
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.foto_1_li')}</td>
@@ -105,19 +106,19 @@
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.e_re')}</td>
-  <td>${c['attributes']['e_re'] or '-'}</td>
+  <td>${round(c['attributes']['e_re'], 2) or '-'}</td>
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.n_re')}</td>
-  <td>${c['attributes']['n_re'] or '-'}</td>
+  <td>${round(c['attributes']['n_re'], 2) or '-'}</td>
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.hoehe_re')}</td>
-  <td>${c['attributes']['hoehe_re'] or '-'}</td>
+  <td>${round(c['attributes']['hoehe_re'], 2) or '-'}</td>
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.azimut_re')}</td>
-  <td>${c['attributes']['azimut_re'] or '-'}</td>
+  <td>${round(c['attributes']['azimut_re'], 2) or '-'}</td>
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.foto_1_re')}</td>
