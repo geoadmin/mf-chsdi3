@@ -22,11 +22,11 @@
 </tr>
 <tr>
   <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.bww_km')}</td>
-  <td>${c['attributes']['bww_km'] or '-'}</td>
+  <td>${str(c['attributes']['bww_km']) or '-'}</td>
 </tr>
 <tr>
   <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.lokale_km')}</td>
-  <td>${c['attributes']['lokale_km'] or '-'}</td>
+  <td>${str(c['attributes']['lokale_km']) or '-'}</td>
 </tr>
 <tr>
   <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.datum')}</td>
