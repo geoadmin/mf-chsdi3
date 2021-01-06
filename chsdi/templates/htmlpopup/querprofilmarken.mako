@@ -2,29 +2,41 @@
 
 <%def name="table_body(c, lang)">
 <%
-    lang = 'fr' if lang in ('fr', 'it') else 'de'
+    lang = lang if lang in ('fr','it') else 'de'
 %>
-<tr><td class="cell-left">${_('schluesselid')}</td>                                 <td>${c['attributes']['schluesselid'] or '-'}</td></tr>
-<tr><td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.typ')}</td>       <td>${c['attributes']['typ'] or '-'}</td></tr>
-<tr><td class="cell-left">${_('x')}</td>                                            
-  % if c['attributes']['x_koordinate']:
-    <td>${round(c['attributes']['x_koordinate'],2) or '-'}</td></tr>
-  % else:
-    <td>-</td></tr>
-  % endif
-<tr><td class="cell-left">${_('y')}</td>
-  % if c['attributes']['y_koordinate']:
-    <td>${round(c['attributes']['y_koordinate'],2) or '-'}</td></tr>
-  % else:
-    <td>-</td></tr>
-  % endif
-<tr><td class="cell-left">${_('azimut')}</td>                                       <td>${c['attributes']['azimut'] or '-'}</td></tr>
-<tr><td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.herkunft')}</td>  <td>${c['attributes']['herkunft'] or '-'}</td></tr>
+<tr>
+  <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.gwlnr'}</td>
+  <td>${c['attributes']['gwlnr'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.flussname')}</td>
+  <td>${c['attributes']['flussname'] or '-'}</td></tr>
+<tr>
+<tr>
+  <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.abschnitt')}</td>
+  <td>${c['attributes']['abschnitt'] or '-'}</td></tr>
+<tr>
+<tr>
+  <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.gewiss_adr')}</td>
+  <td>${c['attributes']['gewiss_adr'] or '-'}</td></tr>
+<tr>
+<tr>
+  <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.bww_km')}</td>
+  <td>${c['attributes']['bww_km'] or '-'}</td></tr>
+<tr>
+<tr>
+  <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.lokale_km')}</td>
+  <td>${c['attributes']['lokale_km'] or '-'}</td></tr>
+<tr>
+<tr>
+  <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.datum')}</td>
+  <td>${c['attributes']['datum'] or '-'}</td></tr>
+<tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
 <%
-    lang = 'fr' if lang in ('fr', 'it') else 'de'
+    lang = lang if lang in ('fr','it') else 'de'
 %>
 <table class="table-with-border kernkraftwerke-extended">
 <colgroup>

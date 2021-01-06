@@ -518,18 +518,31 @@ class WasserbauQuerprofilmarken(Base, Vector):
     __tablename__ = 'querprofilmarken'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasserbau-querprofilmarken'
-    __queryable_attributes__ = ['typ', 'herkunft']
     __template__ = 'templates/htmlpopup/querprofilmarken.mako'
     __extended_info__ = True
-    __label__ = 'schluesselid'
+    __label__ = 'gwlnr'
     id = Column('bgdi_id', Integer, primary_key=True)
-    schluesselid = Column('schluesselid', Integer)
-    typ = Column('typ', Unicode)
-    x_koordinate = Column('x_koordinate', Numeric)
-    y_koordinate = Column('y_koordinate', Numeric)
-    azimut = Column('azimut', Integer)
-    herkunft = Column('herkunft', Unicode)
-    bemerkung = Column('bemerkung', Unicode)
+    gwlnr = Column('gwlnr', Unicode)
+    flussname = Column('flussname', Unicode)
+    abschnitt = Column('abschnitt', Unicode)
+    gewiss_adr = Column('gewiss_adr', Integer)
+    bww_km = Column('bww_km', Numeric)
+    lokale_km = Column('lokale_km', Numeric)
+    datum = Column('datum', Unicode)
+    markierung_li = Column('markierung_li', Unicode)
+    e_li = Column('e_li', Numeric)
+    n_li = Column('n_li', Numeric)
+    hoehe_li = Column('hoehe_li', Numeric)
+    azimut_li = Column('azimut_li', Numeric)
+    foto_1_li = Column('foto_1_li', Unicode)
+    foto_2_li = Column('foto_2_li', Unicode)
+    markierung_re = Column('markierung_re', Unicode)
+    e_re = Column('e_re', Numeric)
+    n_re = Column('n_re', Numeric)
+    hoehe_re = Column('hoehe_re', Numeric)
+    azimut_re = Column('azimut_re', Numeric)
+    foto_1_re = Column('foto_1_re', Unicode)
+    foto_2_re = Column('foto_2_re', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasserbau-querprofilmarken', WasserbauQuerprofilmarken)
