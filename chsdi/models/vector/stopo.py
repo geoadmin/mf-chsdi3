@@ -1648,35 +1648,6 @@ class GeologieGeotechnikZiegeleien1907(Base, Vector):
 register('ch.swisstopo.geologie-geotechnik-ziegeleien_1907', GeologieGeotechnikZiegeleien1907)
 
 
-class GeologieGeotechnikZiegeleien1965(Base, Vector):
-    __tablename__ = 'geotechnik_ziegeleien_1965'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/ziegeleien_1965.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geotechnik-ziegeleien_1965'
-    __queryable_attributes__ = ['ziegelei']
-    __label__ = 'ziegelei'
-    id = Column('id', Integer, primary_key=True)
-    ziegelei = Column('ziegelei', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geotechnik-ziegeleien_1965', GeologieGeotechnikZiegeleien1965)
-
-
-class GeologieGeotechnikZiegeleien1995(Base, Vector):
-    __tablename__ = 'geotechnik_ziegeleien_1995'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/ziegeleien_1995.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geotechnik-ziegeleien_1995'
-    __queryable_attributes__ = ['ziegeleien']
-    __label__ = 'ziegeleien'
-    id = Column('id', Integer, primary_key=True)
-    ziegeleien = Column('ziegeleien', Unicode)
-    produkt = Column('produkt', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geotechnik-ziegeleien_1995', GeologieGeotechnikZiegeleien1995)
-
-
 class GeologieHydroKarteGrundwasservorkommen(Base, Vector):
     __tablename__ = 'grundwasservorkommen'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
