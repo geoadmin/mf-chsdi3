@@ -39,6 +39,8 @@
 <%def name="extended_info(c, lang)">
 <%
     lang = lang if lang in ('fr','it') else 'de'
+    markierung_li_text = 'markierung_li_desc_%s' % lang
+    markierung_re_text = 'markierung_re_desc_%s' % lang
 %>
 <table class="table-with-border kernkraftwerke-extended">
 <colgroup>
@@ -74,7 +76,7 @@
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.markierung_li')}</td>
-  <td>${c['attributes']['markierung_li'] or '-'}</td>
+  <td>${c['attributes'][markierung_li_text] or '-'}</td>
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.e_li')}</td>
@@ -102,7 +104,7 @@
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.markierung_re')}</td>
-  <td>${c['attributes']['markierung_re'] or '-'}</td>
+  <td>${c['attributes'][markierung_re_text] or '-'}</td>
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.e_re')}</td>

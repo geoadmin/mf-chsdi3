@@ -543,6 +543,12 @@ class WasserbauQuerprofilmarken(Base, Vector):
     azimut_re = Column('azimut_re', Numeric)
     foto_1_re = Column('foto_1_re', Unicode)
     foto_2_re = Column('foto_2_re', Unicode)
+    markierung_li_desc_de = Column('markierung_li_desc_de', Unicode)
+    markierung_li_desc_fr = Column('markierung_li_desc_fr', Unicode)
+    markierung_li_desc_it = Column('markierung_li_desc_it', Unicode)
+    markierung_re_desc_de = Column('markierung_re_desc_de', Unicode)
+    markierung_re_desc_fr = Column('markierung_re_desc_fr', Unicode)
+    markierung_re_desc_it = Column('markierung_re_desc_it', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasserbau-querprofilmarken', WasserbauQuerprofilmarken)
