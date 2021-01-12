@@ -41,13 +41,6 @@ lang = request.lang
         <tr><th class="cell-left">${_('tt_lubis_linielaenge')}</th>         <td>${c['attributes']['toposhop_length'] or '-'}</td></tr>
         <tr><th class="cell-left">${_('tt_lubis_project')}</th>             <td>${c['attributes']['goal'] or '-'}</td></tr>
         <tr><th class="cell-left">${_('tt_lubis_source_georef')}</th>       <td>${c['attributes']['source_georef'] or '-'}</td></tr>
-% if   c['attributes']['gsd'] == 0.25 or c['attributes']['gsd'] == 0.5 or round(c['attributes']['gsd'],1) == 0.1:
-        <tr><th class="cell-left">${_('link')} Online Shop</th>
-        <td><a href="https:${shop_url}/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
-target="toposhop">Online Shop</a></td></tr>
-% else:
-        <tr><th class="cell-left">${_('tt_firmen_Link')}</th>              <td><a href="mailto:geodata@swisstopo.ch?subject=${_('tt_firmen_Link ')} ebkey:${c['featureId']}">geodata@swisstopo.ch</a></td></tr>
-% endif
 </table>
   <br>
 <div class="chsdi-map-container table-with-border">
