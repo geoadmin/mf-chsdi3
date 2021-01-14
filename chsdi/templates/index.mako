@@ -82,7 +82,6 @@ version = python_version()
           <a href="rest/services/ech/MapServer/ch.astra.ivs-reg_loc/54967/htmlPopup">Html Popup Ex 3</a> <br>
           <a href="rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/11/htmlPopup?lang=it">Html popup Ex 4 cadastral web map</a> <br>
           <a href="rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/5/extendedHtmlPopup">Extended html content Ex 1</a> <br>
-          <a href="rest/services/ech/MapServer/ch.bfe.energieforschung/35/extendedHtmlPopup">Extended html content Ex 2 with images</a> <br>
           <a href="rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/legend">Get Legend Ex 1</a> <br>
           <a href="rest/services/ech/MapServer/ch.bafu.bundesinventare-jagdbanngebiete/legend?lang=fr&callback=cb">Get Legend Ex 2 with callback</a> <br>
           <a href='rest/services/inspire/1.0.0/WMTSCapabilities.xml'>WMTS capabilities inspire</a> <br>
