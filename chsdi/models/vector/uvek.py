@@ -809,43 +809,34 @@ register('ch.bfe.energiestaedte-2000watt-areale', Energiestaedte2000wattAreale)
 
 
 class Energieforschung(Base, Vector):
-    __tablename__ = 'energieforschung'
+    __tablename__ = 'energieforschung_projekte'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/energieforschung.mako'
     __bodId__ = 'ch.bfe.energieforschung'
-    __extended_info__ = True
-    __queryable_attributes__ = ['projektnummer', 'titel']
-    __label__ = 'titel'
+    __queryable_attributes__ = ['title_de', 'title_fr', 'title_it', 'title_en']
+    __label__ = 'title_de'
     id = Column('bgdi_id', Integer, primary_key=True)
-    titel = Column('titel', Unicode)
-    leuchtturm = Column('leuchtturm', Integer)
-    beschreibung = Column('beschreibung', Unicode)
-    projektstatus_fr = Column('projektstatus_fr', Unicode)
-    projektstatus_de = Column('projektstatus_de', Unicode)
-    projektstatus_it = Column('projektstatus_it', Unicode)
-    projektstatus_en = Column('projektstatus_en', Unicode)
-    projektnummer = Column('projektnummer', Unicode)
-    projektbeginn = Column('projektbeginn', Unicode)
-    projektende = Column('projektende', Unicode)
-    oberthema_fr = Column('oberthema_fr', Unicode)
-    oberthema_de = Column('oberthema_de', Unicode)
-    oberthema_it = Column('oberthema_it', Unicode)
-    oberthema_en = Column('oberthema_en', Unicode)
-    unterthema_fr = Column('unterthema_fr', Unicode)
-    unterthema_de = Column('unterthema_de', Unicode)
-    unterthema_it = Column('unterthema_it', Unicode)
-    unterthema_en = Column('unterthema_en', Unicode)
-    bericht = Column('bericht', Unicode)
-    fachartikel = Column('fachartikel', Unicode)
-    infoclip = Column('infoclip', Unicode)
-    projektpartner = Column('projektpartner', Unicode)
-    kontakt = Column('kontakt', Unicode)
-    plz = Column('plz', Unicode)
-    ort = Column('ort', Unicode)
-    kanton = Column('kanton', Unicode)
-    bild0 = Column('bild0', Unicode)
-    bild1 = Column('bild1', Unicode)
-    bild2 = Column('bild2', Unicode)
+    title_de = Column('title_de', Unicode)
+    title_fr = Column('title_fr', Unicode)
+    title_it = Column('title_it', Unicode)
+    title_en = Column('title_en', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    description_en = Column('description_en', Unicode)
+    topic_de = Column('topic_de', Unicode)
+    topic_fr = Column('topic_fr', Unicode)
+    topic_it = Column('topic_it', Unicode)
+    topic_en = Column('topic_en', Unicode)
+    status_de = Column('status_de', Unicode)
+    status_fr = Column('status_fr', Unicode)
+    status_it = Column('status_it', Unicode)
+    status_en = Column('status_en', Unicode)
+    duration = Column('projektnummer', Unicode)
+    link_de = Column('link_de', Unicode)
+    link_fr = Column('link_fr', Unicode)
+    link_it = Column('link_it', Unicode)
+    link_en = Column('link_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.energieforschung', Energieforschung)
