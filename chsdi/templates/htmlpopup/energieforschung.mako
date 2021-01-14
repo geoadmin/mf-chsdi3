@@ -26,7 +26,7 @@
   <td>${c['attributes'][status] or '-'}</td>
 </tr>
 <tr>
-  <td class="cell-left">${_('ch.bfe.energieforschung.projektbeginn')}</td>
+  <td class="cell-left">${_('ch.bfe.energieforschung.duration')}</td>
   <td>${c['attributes']['duration'] or '-'}</td>
 </tr>
 <tr>
