@@ -832,7 +832,7 @@ class Energieforschung(Base, Vector):
     status_fr = Column('status_fr', Unicode)
     status_it = Column('status_it', Unicode)
     status_en = Column('status_en', Unicode)
-    duration = Column('projektnummer', Unicode)
+    duration = Column('duration', Unicode)
     link_de = Column('link_de', Unicode)
     link_fr = Column('link_fr', Unicode)
     link_it = Column('link_it', Unicode)
