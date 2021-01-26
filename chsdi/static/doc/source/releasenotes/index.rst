@@ -14,6 +14,67 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20210224:
+
+Release 20210224 - Wednesday, February 24th 2021
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_201028...r_201209>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_201028...r_201209>`__
+
+Geodata
+*******
+
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Number of connection providers <//map.geo.admin.ch/?layers=ch.bakom.anbieter-eigenes_festnetz>`__ (ch.bakom.anbieter-eigenes_festnetz)|
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink10>`__ (ch.bakom.downlink10)                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink100>`__ (ch.bakom.downlink100)                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink1>`__ (ch.bakom.uplink1)                                                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink10>`__ (ch.bakom.uplink10)                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink100>`__ (ch.bakom.uplink100)                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Upload ≥ 1000 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink1000>`__ (ch.bakom.uplink1000)                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Optical fibre FTTB/FTTH <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-glasfaser>`__ (ch.bakom.anschlussart-glasfaser)             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Coaxial cable <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-koaxialkabel>`__ (ch.bakom.anschlussart-koaxialkabel)                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Copper wire <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-kupferdraht>`__ (ch.bakom.anschlussart-kupferdraht)                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `2G - GSM / EDGE <//map.geo.admin.ch/?layers=ch.bakom.mobilnetz-2g>`__ (ch.bakom.mobilnetz-2g)                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `5G - NR <//map.geo.admin.ch/?layers=ch.bakom.mobilnetz-3g>`__ (ch.bakom.mobilnetz-3g)                                                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `3G - UMTS / HSPA <//map.geo.admin.ch/?layers=ch.bakom.mobilnetz-4g>`__ (ch.bakom.mobilnetz-4g)                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `4G - LTE / LTE-A <//map.geo.admin.ch/?layers=ch.bakom.mobilnetz-5g>`__ (ch.bakom.mobilnetz-5g)                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 3 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink3>`__ (ch.bakom.downlink3)                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 30 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink30>`__ (ch.bakom.downlink30)                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 300 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink300>`__ (ch.bakom.downlink300)                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 500 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink500>`__ (ch.bakom.downlink500)                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Download ≥ 1000 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink1000>`__ (ch.bakom.downlink1000)                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20201209:
 
 Release 20201209 - Wednesday, December 9th 2020
