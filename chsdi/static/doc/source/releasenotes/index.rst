@@ -25,6 +25,7 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
+- Announcement: the layers ch.bfe.bikesharing, ch.mobility.standorte and ch.bfe.energiestaedte-energieregionen will be completely removed from the FSDI services in May 2021
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_201028...r_201209>`__
 
 `MAP <//map.geo.admin.ch>`__
