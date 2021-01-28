@@ -520,7 +520,6 @@ class MittlereAbfluesseZukunft(Base, Vector):
     __bodId__ = 'ch.bafu.mittlere-abfluesse_zukunft'
     __queryable_attributes__ = ['place', 'water_name']
     __template__ = 'templates/htmlpopup/mittlere_abfluesse_zukunft.mako'
-    __extended_info__ = True
     __label__ = 'place'
     id = Column('bgdi_id', Integer, primary_key=True)
     place = Column('place', Unicode)
