@@ -514,6 +514,26 @@ class MittlereAbfluesse(Base, Vector):
 register('ch.bafu.mittlere-abfluesse', MittlereAbfluesse)
 
 
+class MittlereAbfluesseZukunft(Base, Vector):
+    __tablename__ = 'mittlere_abfluesse_zukunft'
+    __table_args__ = ({'schema': 'wasser', 'autoload': False})
+    __bodId__ = 'ch.bafu.mittlere-abfluesse_zukunft'
+    __queryable_attributes__ = ['place', 'water_name']
+    __template__ = 'templates/htmlpopup/mittlere_abfluesse_zukunft.mako'
+    __extended_info__ = True
+    __label__ = 'place'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    place = Column('place', Unicode)
+    water_name = Column('water_name', Unicode)
+    area = Column('area', Numeric)
+    ezgheight = Column('ezgheight', Numeric)
+    glacier = Column('glacier', Numeric)
+    url = Column('url', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bafu.mittlere-abfluesse_zukunft', MittlereAbfluesseZukunft)
+
+
 class WasserbauQuerprofilmarken(Base, Vector):
     __tablename__ = 'querprofilmarken'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
