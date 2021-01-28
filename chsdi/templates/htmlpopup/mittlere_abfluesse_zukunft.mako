@@ -6,7 +6,10 @@
   <tr><td class="cell-left">${_('ch.bafu.mittlere-abfluesse_zukunft.area')}</td><td>${c['attributes']['area'] or '-'}</td></tr>
   <tr><td class="cell-left">${_('ch.bafu.mittlere-abfluesse_zukunft.ezgheight')}</td><td>${c['attributes']['ezgheight'] or '-'}</td></tr>
   <tr><td class="cell-left">${_('ch.bafu.mittlere-abfluesse_zukunft.glacier')}</td><td>${c['attributes']['glacier'] or '-'}</td></tr>
-  <tr><td class="cell-left">${_('ch.bafu.mittlere-abfluesse_zukunft.url')}</td><td>${c['attributes']['url'] or '-'}</td></tr>
+  <tr>
+    <td class="cell-left">${_('ch.bafu.mittlere-abfluesse_zukunft.url')}</td>
+    <td><a href="${c['attributes']['url'] or '-'}" target="_blank">${_('ch.bfe.minergiegebaeude.link')}</a></td>
+  </tr>
 </%def>
 
 
