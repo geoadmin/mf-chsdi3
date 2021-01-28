@@ -7,8 +7,8 @@
   <tr><td class="cell-left" style="white-space:nowrap">${_('ch.bafu.mittlere-abfluesse_zukunft.ezgheight')}</td><td>${c['attributes']['ezgheight'] or '-'}</td></tr>
   <tr><td class="cell-left" style="white-space:nowrap">${_('ch.bafu.mittlere-abfluesse_zukunft.glacier')}</td><td>${c['attributes']['glacier'] or '-'}</td></tr>
   <tr>
-    <td class="cell-left">${_('ch.bafu.mittlere-abfluesse_zukunft.url')}</td>
-    <td><a href="${c['attributes']['url'] or '-'}" target="_blank">${_('ch.bfe.minergiegebaeude.link')}</a></td>
+    <td class="cell-left" style="white-space:nowrap">${_('ch.bafu.mittlere-abfluesse_zukunft.url')}</td>
+    <td><a href="${c['attributes']['url'] or '-'}" target="_blank">${_('ch.bafu.mittlere-abfluesse_zukunf.link')}</a></td>
   </tr>
 </%def>
 
