@@ -153,9 +153,10 @@ class TestSearchServiceView(TestsBase):
 
     def test_search_locations_geojson_with_projection(self):
         projections = {'2056': [2534437.97, 1150655.173, 2544978.008, 1161554.51],
-                       '4326': [6.58296, 46.503981, 6.721816, 46.602973],
-                       '3857': [732811.8, 5861483.7, 748269.1, 5877508.3],
-                       '21781': [534438.40469522, 150654.771724574, 544978.33190583, 161554.027818952]}
+                       '4326': [6.582954, 46.503985, 6.721812, 46.602977],
+                       '3857': [732811.1, 5861484.2, 748268.7, 5877509.0],
+                       '21781': [534437.969999999, 150655.173000001, 544978.008000001, 161554.509999998]}
+
         params = {
             'type': 'locations',
             'searchText': 'lausanne',
@@ -694,12 +695,12 @@ class TestSearchServiceView(TestsBase):
             'bbox': '564100,168443,664150,268643'
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1 5306 tegerfelden 4320 tegerfelden ch ag')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1.1 5306 tegerfelden 4320 tegerfelden ch ag')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781, spatialOrder=True)
         params['sr'] = '2056'
         params['bbox'] = shift_to_lv95(params['bbox'])
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1 5306 tegerfelden 4320 tegerfelden ch ag')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1.1 5306 tegerfelden 4320 tegerfelden ch ag')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 2056, spatialOrder=True)
         params = {
             'type': 'locations',
@@ -708,7 +709,7 @@ class TestSearchServiceView(TestsBase):
             'sortbbox': 'true'
         }
         resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1 5306 tegerfelden 4320 tegerfelden ch ag')
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'buechli 1.1 5306 tegerfelden 4320 tegerfelden ch ag')
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781, spatialOrder=True)
         params = {
             'type': 'locations',
