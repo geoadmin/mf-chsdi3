@@ -29,6 +29,7 @@ from chsdi.models.bod import OerebMetadata, get_bod_model
 from chsdi.models.vector import get_scale, get_resolution, has_buffer
 from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
 from chsdi.views.layers import get_layer, get_layers_metadata_for_params
+from chsdi.lib.helpers import _transform_coordinates, transform_round_geometry
 
 
 import logging
@@ -270,6 +271,9 @@ def _identify_grid(params, layerBodIds):
         pointCoordinates = center_from_box2d(bbox)
     else:
         pointCoordinates = list(list(geometry.coords)[0])
+    # if coordinates is in WebMercator, we reproject the coordinate to LV95
+    if params.srid == 3857 or params.srid == 4326:
+        pointCoordinates = _transform_coordinates(pointCoordinates, params.srid, 2056)
     bucketName = params.request.registry.settings['vector_bucket']
     for layer in layerBodIds:
         [layerBodId, gridSpec] = next(six.iteritems(layer))
@@ -279,7 +283,7 @@ def _identify_grid(params, layerBodIds):
         grid = Grid(gridSpec.get('extent'),
                     gridSpec.get('resolutionX'),
                     gridSpec.get('resolutionY'))
-        if params.srid == 2056 and gridSpec.get('srid') == '21781':
+        if (params.srid == 2056 or params.srid == 3857 or params.srid == 4326) and gridSpec.get('srid') == '21781':
             pointCoordinates = shift_to(pointCoordinates, 21781)
         elif params.srid == 21781 and gridSpec.get('srid') == '2056':
             pointCoordinates = shift_to(pointCoordinates, 2056)
@@ -291,7 +295,8 @@ def _identify_grid(params, layerBodIds):
                 # For some reason we define the id twice..
                 feature['featureId'] = feature['id']
                 feature['properties']['label'] = feature['id']
-                if params.srid == 2056 and gridSpec.get('srid') == '21781':
+                if (params.srid == 2056 or params.srid == 3857 or params.srid == 4326) \
+                        and gridSpec.get('srid') == '21781':
                     feature['bbox'] = shift_to(feature['bbox'], 2056)
                     coords = feature['geometry']['coordinates']
                     coords = [[shift_to(c, 2056) for c in coords[0]]]
@@ -302,6 +307,12 @@ def _identify_grid(params, layerBodIds):
                     coords = [[shift_to(c, 21781) for c in coords[0]]]
                     feature['geometry']['coordinates'] = coords
 
+                # if targeted SRID is WebMercator, we reproject the feature geometry and bbox here
+                if params.srid == 3857 or params.srid == 4326:
+                    coords = feature['geometry']['coordinates']
+                    coords = [[_transform_coordinates(c, 2056, params.srid) for c in coords[0]]]
+                    feature['geometry']['coordinates'] = coords
+                    feature['bbox'] = transform_round_geometry(feature['bbox'], 2056, params.srid)
                 features.append(feature)
 
     return features
