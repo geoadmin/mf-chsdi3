@@ -378,8 +378,8 @@ class TestIdentifyService(TestsBase):
         self.assertGeojsonFeature(resp_2.json['results'][0], 3857)
         self.assertEqual(resp.json['results'][0]['id'], resp_2.json['results'][0]['id'])
         params['sr'] = '4326'
-        params['geometry'] = reproject_to_srid(params['geometry'], 2056, 4326)
-        params['mapExtent'] = reproject_to_srid(params['mapExtent'], 2056, 4326)
+        params['geometry'] = reproject_to_srid(params['geometry'], 3857, 4326, 6)
+        params['mapExtent'] = reproject_to_srid(params['mapExtent'], 3857, 4326, 6)
         resp_2 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp_2.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp_2.json['results'][0], 4326)
