@@ -351,39 +351,37 @@ class TestIdentifyService(TestsBase):
 
     @skipUnless(s3_tests, "Requires AWS S3 access")
     def test_identify_valid_on_grid(self):
-        params = {'geometry': '555000,171125',
-                  'geometryFormat': 'geojson',
-                  'geometryType': 'esriGeometryPoint',
-                  'imageDisplay': '1920,793,96',
-                  'layers': 'all:ch.bfe.windenergie-geschwindigkeit_h50',
-                  'mapExtent': '346831.18,86207.571,826831.18,284457.57',
-                  'returnGeometry': 'true',
-                  'tolerance': '10'}
-        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/geo+json')
-        self.assertIn('results', resp.json)
-        self.assertEqual(len(resp.json['results']), 1)
-        params['sr'] = '2056'
-        params['geometry'] = shift_to_lv95(params['geometry'])
-        params['mapExtent'] = shift_to_lv95(params['mapExtent'])
-        resp_2 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_2.content_type, 'application/geo+json')
-        self.assertGeojsonFeature(resp_2.json['results'][0], 2056)
-        self.assertEqual(resp.json['results'][0]['id'], resp_2.json['results'][0]['id'])
-        params['sr'] = '3857'
-        params['geometry'] = reproject_to_srid(params['geometry'], 2056, 3857)
-        params['mapExtent'] = reproject_to_srid(params['mapExtent'], 2056, 3857)
-        resp_2 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_2.content_type, 'application/geo+json')
-        self.assertGeojsonFeature(resp_2.json['results'][0], 3857)
-        self.assertEqual(resp.json['results'][0]['id'], resp_2.json['results'][0]['id'])
-        params['sr'] = '4326'
-        params['geometry'] = reproject_to_srid(params['geometry'], 3857, 4326, 6)
-        params['mapExtent'] = reproject_to_srid(params['mapExtent'], 3857, 4326, 6)
-        resp_2 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_2.content_type, 'application/geo+json')
-        self.assertGeojsonFeature(resp_2.json['results'][0], 4326)
-        self.assertEqual(resp.json['results'][0]['id'], resp_2.json['results'][0]['id'])
+        geometry = '555000,171125'
+        map_extent = '346831.18,86207.571,826831.18,284457.57'
+        params = {
+            'geometry': geometry,
+            'geometryFormat': 'geojson',
+            'geometryType': 'esriGeometryPoint',
+            'imageDisplay': '1920,793,96',
+            'layers': 'all:ch.bfe.windenergie-geschwindigkeit_h50',
+            'mapExtent': map_extent,
+            'returnGeometry': 'true',
+            'tolerance': '10'
+        }
+        response_epsg_21781 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(response_epsg_21781.content_type, 'application/geo+json')
+        self.assertIn('results', response_epsg_21781.json)
+        self.assertEqual(len(response_epsg_21781.json['results']), 1)
+        feature = response_epsg_21781.json['results'][0]['feature']
+        self.assertGeojsonFeature(feature, 21781)
+        feature_id = feature['id']
+
+        # checking all other supported SR by re-projecting geom and extent before request
+        for sr in [2056, 3857, 4326]:
+            params['sr'] = sr
+            params['geometry'] = reproject_to_srid(geometry, 21781, sr)
+            params['mapExtent'] = reproject_to_srid(map_extent, 21781, sr)
+            resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+            self.assertEqual(resp.content_type, 'application/geo+json')
+            self.assertEqual(len(resp.json['results']), 1)
+            feature = resp.json['results'][0]['feature']
+            self.assertGeojsonFeature(feature, sr)
+            self.assertEqual(feature_id, feature['id'])
 
     @skipUnless(s3_tests, "Requires AWS S3 access")
     def test_identify_valid_envelope_on_grid(self):

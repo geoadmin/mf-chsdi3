@@ -356,7 +356,7 @@ def _get_features(params, extended=False, process=True):
             col, row = featureId.split('_')
             layerProperties = get_grid_layer_properties(params.layerId)
             timestamp = layerProperties.get('timestamp')
-            yield _get_feature_grid(col, row, timestamp, gridSpec, bucketName, params)
+            yield _get_feature_grid(col, row, timestamp, gridSpec, bucketName, params, process=process)
         else:
             yield _get_feature_db(featureId, params, models, process=process)
 
@@ -392,7 +392,7 @@ def _get_feature_db(featureId, params, models, process=True):
     return feature, vector_model
 
 
-def _get_feature_grid(col, row, timestamp, gridSpec, bucket_name, params):
+def _get_feature_grid(col, row, timestamp, gridSpec, bucket_name, params, process=True):
     feature = None
     col = str(col)
     row = str(row)
@@ -446,7 +446,12 @@ def _get_feature_grid(col, row, timestamp, gridSpec, bucket_name, params):
 
     except Exception:
         pass
-    return {'feature': feature}, None
+    # in order to mimic DB output, if process flag is true we wrap the feature into a "feature" attribute
+    if process:
+        # the DB also calls here the process method from Vector class, but what we have here is not an instance of this
+        # class. So we just wrap the feature without processing it to a GeoJSON or EsriJSON.
+        feature = {'feature': feature}
+    return feature, None
 
 
 def _has_extended_info(isExtended, hasExtendedInfo, bodId):
