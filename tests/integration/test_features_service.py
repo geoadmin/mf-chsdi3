@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from unittest import skip
+from unittest import skip, skipUnless
 from webtest.app import AppError
 from pyramid_mako import MakoRenderingException
-from tests.integration import TestsBase, shift_to_lv95, reproject_to_srid
+from tests.integration import TestsBase, shift_to_lv95, reproject_to_srid, s3_tests
 
 from chsdi.lib.validation import SUPPORTED_OUTPUT_SRS
 
@@ -752,6 +752,19 @@ class TestFeaturesView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
         self.assertEqual(list(resp.json.keys())[0], 'ch.swisstopo.swissimage-product')
         self.assertEqual(list(resp.json['ch.swisstopo.swissimage-product'])[0]['area'], 0.0)
+
+    @skipUnless(s3_tests, "Requires AWS S3 access")
+    def test_feature_grid_valid_feature(self):
+        layer_id = 'ch.bfe.windenergie-geschwindigkeit_h50'
+        feature_id = '1713_888'
+        for sr in [2056, 21781, 4326, 3857]:
+            resp = self.testapp.get('/rest/services/all/MapServer/%s/%s' % (layer_id, feature_id), params={
+                'sr': sr
+            })
+            self.assertEqual(resp.content_type, 'application/json')
+            feature = resp.json['feature']
+            self.assertEqual(feature['id'], feature_id)
+            self.assertGeojsonFeature(feature, sr)
 
 
 zlayer = 'ch.swisstopo.zeitreihen'
