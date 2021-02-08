@@ -37,6 +37,8 @@ Geodata
 *******
 
 +--------+----------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Tank relocation routes <//map.geo.admin.ch/?layers=ch.vbs.panzerverschiebungsrouten>`__ (ch.vbs.panzerverschiebungsrouten)            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Number of connection providers <//map.geo.admin.ch/?layers=ch.bakom.anbieter-eigenes_festnetz>`__ (ch.bakom.anbieter-eigenes_festnetz)|
 +--------+----------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Download ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink10>`__ (ch.bakom.downlink10)                                        |
