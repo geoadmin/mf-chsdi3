@@ -367,7 +367,7 @@ class TestIdentifyService(TestsBase):
         self.assertEqual(response_epsg_21781.content_type, 'application/geo+json')
         self.assertIn('results', response_epsg_21781.json)
         self.assertEqual(len(response_epsg_21781.json['results']), 1)
-        feature = response_epsg_21781.json['results'][0]['feature']
+        feature = response_epsg_21781.json['results'][0]
         self.assertGeojsonFeature(feature, 21781)
         feature_id = feature['id']
 
@@ -379,7 +379,7 @@ class TestIdentifyService(TestsBase):
             resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
             self.assertEqual(resp.content_type, 'application/geo+json')
             self.assertEqual(len(resp.json['results']), 1)
-            feature = resp.json['results'][0]['feature']
+            feature = resp.json['results'][0]
             self.assertGeojsonFeature(feature, sr)
             self.assertEqual(feature_id, feature['id'])
 
