@@ -289,7 +289,7 @@ def _identify_grid(params, layerBodIds):
             pointCoordinates = shift_to(pointCoordinates, 2056)
         [col, row] = grid.cellAddressFromPointCoordinate(pointCoordinates)
         if col is not None and row is not None:
-            feature, none = _get_feature_grid(col, row, timestamp, gridSpec, bucketName, params)
+            feature, none = _get_feature_grid(col, row, timestamp, gridSpec, bucketName, params, process=False)
             if feature is not None:
                 features.append(feature)
 
