@@ -27,7 +27,7 @@ env:
     ROBOTS_FILE: robots.txt
     SERVER_PORT: 6543
     SPHINXHOST: service-sphinxsearch.dev.bgdi.ch 
-    VECTOR_BUCKET: mf-chsdi3-bgdi-grid-based-data
+    VECTOR_BUCKET: bgdi-grid-based-data
     WMSHOST: wms-bgdi.dev.bgdi.ch
     WSGI_PROCESSES: 1
     WSGI_THREADS: 15
