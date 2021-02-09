@@ -756,7 +756,7 @@ class TestFeaturesView(TestsBase):
     @skipUnless(s3_tests, "Requires AWS S3 access")
     def test_feature_grid_valid_feature(self):
         layer_id = 'ch.bfe.windenergie-geschwindigkeit_h50'
-        feature_id = '1713_888'
+        feature_id = '696_1249'
         for sr in [2056, 21781, 4326, 3857]:
             resp = self.testapp.get('/rest/services/all/MapServer/%s/%s' % (layer_id, feature_id), params={
                 'sr': sr
