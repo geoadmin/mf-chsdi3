@@ -39,6 +39,8 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Tank relocation routes <//map.geo.admin.ch/?layers=ch.vbs.panzerverschiebungsrouten>`__ (ch.vbs.panzerverschiebungsrouten)                                                           |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Future mean runoff (m³/s) and regime <//map.geo.admin.ch/?layers=ch.bafu.mittlere-abfluesse_zukunft>`__ (ch.bafu.mittlere-abfluesse_zukunft)                                         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Number of connection providers <//map.geo.admin.ch/?layers=ch.bakom.anbieter-eigenes_festnetz>`__ (ch.bakom.anbieter-eigenes_festnetz)                                               |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Download ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink10>`__ (ch.bakom.downlink10)                                                                                       |
@@ -116,6 +118,24 @@ Geodata
 | Update | `Elevation 100 °C isotherm <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-isotherme_100>`__ (ch.swisstopo.geologie-geomol-isotherme_100)                                    |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Elevation 150 °C isotherm <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geomol-isotherme_150>`__ (ch.swisstopo.geologie-geomol-isotherme_150)                                    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=bafu.wrz-wildruhezonen_portal>`__ (bafu.wrz-wildruhezonen_portal)                                                              |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Vermessungsstrecken - Querprofilmarke <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-querprofilmarken>`__ (ch.bafu.wasserbau-querprofilmarken)                                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Protected areas MIL <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-luftfahrt>`__ (ch.bafu.schutzgebiete-luftfahrt)                                                                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Dry grasslands (DGS) <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-trockenwiesen_trockenweiden>`__ (ch.bafu.bundesinventare-trockenwiesen_trockenweiden)                       |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Fens <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-flachmoore>`__ (ch.bafu.bundesinventare-flachmoore)                                                                         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                            |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
