@@ -289,30 +289,8 @@ def _identify_grid(params, layerBodIds):
             pointCoordinates = shift_to(pointCoordinates, 2056)
         [col, row] = grid.cellAddressFromPointCoordinate(pointCoordinates)
         if col is not None and row is not None:
-            feature, none = _get_feature_grid(col, row, timestamp, grid, bucketName, params)
+            feature, none = _get_feature_grid(col, row, timestamp, gridSpec, bucketName, params)
             if feature is not None:
-                feature['bbox'] = grid.cellExtent(col, row)
-                # For some reason we define the id twice..
-                feature['featureId'] = feature['id']
-                feature['properties']['label'] = feature['id']
-                if (params.srid == 2056 or params.srid == 3857 or params.srid == 4326) \
-                        and gridSpec.get('srid') == '21781':
-                    feature['bbox'] = shift_to(feature['bbox'], 2056)
-                    coords = feature['geometry']['coordinates']
-                    coords = [[shift_to(c, 2056) for c in coords[0]]]
-                    feature['geometry']['coordinates'] = coords
-                if params.srid == 21781 and gridSpec.get('srid') == '2056':
-                    feature['bbox'] = shift_to(feature['bbox'], 21781)
-                    coords = feature['geometry']['coordinates']
-                    coords = [[shift_to(c, 21781) for c in coords[0]]]
-                    feature['geometry']['coordinates'] = coords
-
-                # if targeted SRID is WebMercator, we reproject the feature geometry and bbox here
-                if params.srid == 3857 or params.srid == 4326:
-                    coords = feature['geometry']['coordinates']
-                    coords = [[_transform_coordinates(c, 2056, params.srid) for c in coords[0]]]
-                    feature['geometry']['coordinates'] = coords
-                    feature['bbox'] = transform_round_geometry(feature['bbox'], 2056, params.srid)
                 features.append(feature)
 
     return features
@@ -376,12 +354,9 @@ def _get_features(params, extended=False, process=True):
             if featureId.find('_') == -1:
                 raise exc.HTTPBadRequest('Unexpected id formatting')
             col, row = featureId.split('_')
-            grid = Grid(gridSpec.get('extent'),
-                        gridSpec.get('resolutionX'),
-                        gridSpec.get('resolutionY'))
             layerProperties = get_grid_layer_properties(params.layerId)
             timestamp = layerProperties.get('timestamp')
-            yield _get_feature_grid(col, row, timestamp, grid, bucketName, params)
+            yield _get_feature_grid(col, row, timestamp, gridSpec, bucketName, params, process=process)
         else:
             yield _get_feature_db(featureId, params, models, process=process)
 
@@ -417,7 +392,7 @@ def _get_feature_db(featureId, params, models, process=True):
     return feature, vector_model
 
 
-def _get_feature_grid(col, row, timestamp, grid, bucket_name, params):
+def _get_feature_grid(col, row, timestamp, gridSpec, bucket_name, params, process=True):
     feature = None
     col = str(col)
     row = str(row)
@@ -425,16 +400,57 @@ def _get_feature_grid(col, row, timestamp, grid, bucket_name, params):
     layerBodId = params.layerId
     featureS3KeyName = 'tooltip/%s/default/%s/%s/%s/data.json' % (layerBodId, timestamp, col, row)
     try:
-
         featureJson = decompress_gzipped_string(get_file_from_bucket(bucket_name, featureS3KeyName)['Body'])
-        # Beacause of esriJSON design and papyrus no esrijson support for now
+        # Because of esriJSON design and papyrus no esrijson support for now
         feature = geojson.loads(featureJson)
         if not params.returnGeometry:
             del feature['geometry']
         feature['layerBodId'] = layerBodId
         feature['layerName'] = params.translate(layerBodId)
+        # For some reason we define the id twice...
+        feature['featureId'] = feature['id']
+        feature['properties']['label'] = feature['id']
+
+        # to mimic DB output, we add a bbox value, defined by the geom of the GeoJSON (it's always a mono shape polygon
+        # representing the tile surface)
+        # for some reason, we can't use the grid here to extract the extent of the tile when coming from the feature
+        # metadata endpoint (it raises an exception)
+        bbox_bottom_left = None
+        bbox_top_right = None
+        if hasattr(feature, 'geometry') and hasattr(feature.geometry, 'coordinates'):
+            for coord in feature.geometry.coordinates[0]:
+                if not bbox_bottom_left or bbox_bottom_left[0] > coord[0] or bbox_bottom_left[1] > coord[1]:
+                    bbox_bottom_left = coord
+                if not bbox_top_right or bbox_top_right[0] < coord[0] or bbox_top_right[1] < coord[1]:
+                    bbox_top_right = coord
+        if bbox_top_right and bbox_top_right:
+            feature['bbox'] = [bbox_bottom_left[0], bbox_bottom_left[1], bbox_top_right[0], bbox_top_right[1]]
+
+        if (params.srid == 2056 or params.srid == 3857 or params.srid == 4326) and gridSpec.get('srid') == '21781':
+            feature['bbox'] = shift_to(feature['bbox'], 2056)
+            coords = feature['geometry']['coordinates']
+            coords = [[shift_to(c, 2056) for c in coords[0]]]
+            feature['geometry']['coordinates'] = coords
+        if params.srid == 21781 and gridSpec.get('srid') == '2056':
+            feature['bbox'] = shift_to(feature['bbox'], 21781)
+            coords = feature['geometry']['coordinates']
+            coords = [[shift_to(c, 21781) for c in coords[0]]]
+            feature['geometry']['coordinates'] = coords
+
+        # if targeted SRID is WebMercator, we reproject the feature geometry and bbox here
+        if params.srid == 3857 or params.srid == 4326:
+            coords = feature['geometry']['coordinates']
+            coords = [[_transform_coordinates(c, 2056, params.srid) for c in coords[0]]]
+            feature['geometry']['coordinates'] = coords
+            feature['bbox'] = transform_round_geometry(feature['bbox'], 2056, params.srid)
+
     except Exception:
         pass
+    # in order to mimic DB output, if process flag is true we wrap the feature into a "feature" attribute
+    if process:
+        # the DB also calls here the process method from Vector class, but what we have here is not an instance of this
+        # class. So we just wrap the feature without processing it to a GeoJSON or EsriJSON.
+        feature = {'feature': feature}
     return feature, None
 
 
