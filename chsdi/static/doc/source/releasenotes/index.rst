@@ -221,6 +221,38 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division GeoCover <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover.metadata>`__ (ch.swisstopo.geologie-geocover.metadata)                                                                              |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division Dufour Map Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-dufour.metadata>`__ (ch.swisstopo.hiks-dufour.metadata)                                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division special geological maps Vector <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata>`__ (ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata)                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `General Geological Map of Switzerland 1:200,000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-generalkarte-ggk200>`__ (ch.swisstopo.geologie-generalkarte-ggk200)                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division General Geol. Map 200 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-generalkarte-ggk200.metadata>`__ (ch.swisstopo.geologie-generalkarte-ggk200.metadata)                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Soil bulk density <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gesteinsdichte>`__ (ch.swisstopo.geologie-gesteinsdichte)                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division National Map 25 Vector <//map.geo.admin.ch/?layers=ch.swisstopo.swiss-map-vector25.metadata>`__ (ch.swisstopo.swiss-map-vector25.metadata)                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division swissSURFACE3D Raster <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d-raster.metadata>`__ (ch.swisstopo.swisssurface3d-raster.metadata)                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division geological atlas 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas.metadata)                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division special geological maps Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-spezialkarten_schweiz.metadata>`__ (ch.swisstopo.geologie-spezialkarten_schweiz.metadata)                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division geological atlas 25 Vector <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas_vector.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas_vector.metadata)                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division swissSURFACE3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d.metadata>`__ (ch.swisstopo.swisssurface3d.metadata)                                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Filling stations BEBECO <//map.geo.admin.ch/?layers=ch.vbs.bundestankstellen-bebeco>`__ (ch.vbs.bundestankstellen-bebeco)                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
+
+
+
+
+
 
 
 .. _releasenotes_20201028:
