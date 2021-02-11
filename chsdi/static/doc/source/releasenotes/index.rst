@@ -25,6 +25,9 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
+- Announcement: the layers ch.swisstopo.digitales-hoehenmodell_25.metadata, ch.swisstopo.images-spot-5.metadata, ch.swisstopo.images-swissimage.metadata, ch.swisstopo.luftfahrtkarten-icao.metadata, ch.swisstopo.pixelkarte-pk500.metadata, ch.swisstopo.pixelkarte-pk1000.metadata, ch.swisstopo.segelflugkarte.metadata, ch.swisstopo.swissalti3d.metadata, ch.swisstopo.swissbuildings3d_1.metadata, ch.swisstopo.swissbuildings3d_2.metadata, ch.swisstopo.swiss-map-raster10.metadata, ch.swisstopo.swiss-map-vector10.metadata, ch.swisstopo.swiss-map-vector1000.metadata, ch.swisstopo.swiss-map-vector500.metadata and ch.swisstopo.swisstlm3d.metadata are obsolete and have been removed from FSDI services on Feb. 24th 2021
+- Announcement: the layers ch.bafu.grundwasserschutzareale, ch.bafu.grundwasserschutzzonen and ch.bafu.gewaesserschutzbereiche will be completely removed from the FSDI services in March 2021
+- Announcement: the layers ch.blw.emapis-beizugsgebiet, ch.blw.emapis-bewaesserung, ch.blw.emapis-elektrizitaetsversorgung, ch.blw.emapis-entwaesserung, ch.blw.emapis-hochbau, ch.blw.emapis-milchleitung, ch.blw.emapis-oekologie, ch.blw.emapis-projektschwerpunkt, ch.blw.emapis-seilbahnen, ch.blw.emapis-wasserversorgung, ch.blw.emapis-wegebau and ch.blw.emapis-zusammenfassung will be completely removed from the FSDI services in March 2021
 - Announcement: the layers ch.bfe.bikesharing, ch.mobility.standorte and ch.bfe.energiestaedte-energieregionen will be completely removed from the FSDI services in May 2021
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_201028...r_201209>`__
 
