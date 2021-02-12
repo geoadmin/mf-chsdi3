@@ -22,7 +22,7 @@ The GeoAdmin API provides also :ref:`rest_services`
 Who can use the GeoAdmin API ?
 ******************************
 
-The GeoAdmin API terms of use are accessible here: `Terms of Use <https://www.geo.admin.ch/de/geo-services/geo-services/portrayal-services-web-mapping/programming-interface-api/order_form.html>`_
+The GeoAdmin API terms of use are accessible here: `Terms of Use <https://www.geo.admin.ch/terms-of-use>`_
 
 What is the license of the GeoAdmin API ?
 *****************************************
@@ -57,15 +57,7 @@ Feel free to use it and ask all the questions you want.
 Which layers are available ?
 ****************************
 
-Some layers can’t be freely used. These layers are accessible by the way of `swisstopo web access - WMTS documentation <https://www.swisstopo.ch/webaccess>`_
-
-The list below includes the layers that require a swisstopo web acesss:
-
-.. raw:: html
-
-   <body>
-      <div id="chargeableLayers" style="margin-left:10px;margin-bottom:24px;"></div>
-   </body>
+From 1.3.2021 all layers can be freely used. 
 
 The following list contains all the free accessible layers:
 
@@ -175,7 +167,7 @@ The help pages of http://map.geo.admin.ch is accessible here: http://help.geo.ad
 Can I use http://localhost to test my developments ?
 ****************************************************
 
-Yes, localhost can be used to test the developments. In all cases, you have to follow the `Terms of Use <https://www.geo.admin.ch/de/geo-services/geo-services/portrayal-services-web-mapping/programming-interface-api/order_form.html>`_.
+Yes, localhost can be used to test the developments. In all cases, you have to follow the `Terms of Use <https://www.geo.admin.ch/terms-of-use>`_.
 
 Where can I get information about OEREB/RDPPF Feature Service ?
 ***************************************************************
