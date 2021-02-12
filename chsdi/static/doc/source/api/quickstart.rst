@@ -9,7 +9,9 @@ API Quick start
 
 .. note::
 
-  The GeoAdmin API and all GeoAdmin services can be used in both HTTP and HTTPS contexts. Though most layers are freely accessible, a `swisstopo web access <https://www.swisstopo.ch/webaccess>`_ is required for some of them. For a list of all available layers and their accessibility please refer to the `FAQ <faq/index.html#which-layers-are-available>`_.
+  The GeoAdmin API and all GeoAdmin services can be used in both HTTP and HTTPS contexts. The access and use of the data or the services is free of charge, subject to the provisions on fair use, see `www.geo.admin.ch/terms-of-use <https://www.geo.admin.ch/terms-of-use>`_ is required for some of them. 
+  
+  **Note on web scraping**: Automatic parsing of the geoservices via bots with  `high query intensities <https://www.geo.admin.ch/terms-of-use>`_ is to be refrained from. For obtaining the datasets outside the context of the web services (use in offline systems, databases, etc.), the  `download service  <https://data.geo.admin.ch/api/stac/v0.9/static/api.html>`_ or  `file based download <https://data.geo.admin.ch>`_  has to be used.
 
 .. raw:: html
 
