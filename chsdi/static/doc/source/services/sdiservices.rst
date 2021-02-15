@@ -873,8 +873,6 @@ Height
 This service allows to obtain elevation information for a point.
 See `Height models <https://shop.swisstopo.admin.ch/de/products/height_models/alti3D>`_ for more details about data used by this service.
 
-.. warning::
-    This service is not freely accessible (fee required). `Please Contact us <mailto:geodata@swisstopo.ch>`_
 
 
 URL
@@ -917,8 +915,6 @@ Profile
 This service allows to obtain elevation information for a polyline in CSV format.
 See `Height models <https://shop.swisstopo.admin.ch/de/products/height_models/alti3D>`_ for more details about data used by this service.
 
-.. warning::
-    This service is not freely accessible (fee required).** `Please Contact us <mailto:geodata@swisstopo.ch>`_
 
 URL
 ***
@@ -971,10 +967,6 @@ WMTS
 
 A RESTFul implementation of the `WMTS <http://www.opengeospatial.org/standards/wmts>`_ `OGC <http://www.opengeospatial.org/>`_ standard.
 For detailed information, see `WMTS OGC standard <http://www.opengeospatial.org/standards/wmts>`_
-
-.. warning::
-    In order to have access to the WMTS, you require to register to `swisstopo web access - Inscription form`_ (in German),
-    even if most layers are free to use. See :ref:`available_layers` for a list of all available layers.
 
 .. note::
     Only the RESTFul request encoding to `GetTile` is implemented, not the `GetLegend` and `GetFeatureInfo`. No KVP and SOAP request encoding is supported.
@@ -1104,7 +1096,6 @@ Four projections are supported. The same tiles are offered in four other *tilema
 Note:
 
 * Partly due to a limitation of the WTMS 1.0.0 recommendations, each *projection* has its own *GetCapabilities* document.
-* The same access restrictions apply as above.
 * The same `timestamps` are available in all projection. New `timestamp` are added to the former ones.
 * The layer *ch.kantone.cadastralwebmap-farbe* uses a WMS service as its source.
 * Note that all layers are available at all scales. You have to check for which **tileMatrixSets** a particuliar layer is defined. Your WMTS client may either stretch the
@@ -1155,7 +1146,6 @@ Terrain Service
 
 A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `Quantized Mesh <https://github.com/AnalyticalGraphicsInc/quantized-mesh>`_ terrain service.
 Terrain tiles are served according to the `Tile Map Service (TMS) <http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification>`_ layout and global-geodetic profile.
-In order to access the terrain tiles, you require to fill a `swisstopo web access - Inscription form`_ (in German).
 
 URL
 ***
@@ -1304,7 +1294,7 @@ example of tileset:
 3D Tiles
 ----------
 A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `3D Tiles specification <https://github.com/AnalyticalGraphicsInc/3d-tiles>`_.
-In order to access the 3D tiles, you require a `swisstopo web access - Inscription form`_ .
+
 
 URL
 ***
@@ -1399,4 +1389,4 @@ Examples
 - `Get a dataset (Get Spatial Data Set Operation) <https://atom.geo.admin.ch/inspire/search?spatial_dataset_identifier_code=e81d4df0-52c8-4258-a38b-96f6761c976b&spatial_dataset_identifier_namespace=http://www.swisstopo.ch/&crs=http://www.opengis.net/def/crs/EPSG/0/3857>`_ (code, namespace and crs to be found in the Open Search Description Document)
 - `Search for all available downloads <https://atom.geo.admin.ch/inspire/search?q=inspire>`_
 
-.. _`swisstopo web access - Inscription form`: https://www.geo.admin.ch/de/geo-dienstleistungen/geodienste/darstellungsdienste-webmapping-webgis-anwendungen/programmierschnittstelle-api/anmeldung.html
+
