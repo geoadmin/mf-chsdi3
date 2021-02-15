@@ -1245,7 +1245,7 @@ Example
 Mapbox Vector Tiles
 -------------------
 A RESTFul implementation of `Mapbox Vector Tiles <https://www.mapbox.com/vector-tiles>`_.
-See description `conditions <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html>`_
+See  `description <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html>`_
 
 The service provides both *tiles* and *styles* that the customer can use. 
 
@@ -1271,7 +1271,7 @@ MBTiles for storing  tiled map data in SQLite databases for immediate usage and 
 
     <Scheme>://<ServerName>/tiles/<LayerName>/<version>/<LayerName>.mbtiles
 
-example of one pbf tile:
+example of the .mbtile file:
 
 - https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
 
