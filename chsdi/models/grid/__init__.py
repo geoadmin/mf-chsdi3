@@ -22,7 +22,14 @@ grids = {
         'resolutionX': 100.0,
         'resolutionY': -100.0,
         'srid': '21781'
+    },
+    '4': {
+        'extent': [2485410.040, 1075269.945, 2833710.041, 1295969.946],
+        'resolutionX': 2.000000003445305,
+        'resolutionY': -2.000000004531038,
+        'srid': '2056'
     }
+
 }
 
 
@@ -62,3 +69,8 @@ register_bodid_gridid('ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor', grid
                       timestamp='20150701', template='templates/htmlpopup/phosphor.mako')
 register_bodid_gridid('ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff', gridId='3', extended=False,
                       timestamp='20150701', template='templates/htmlpopup/stickstoff.mako')
+
+# ch.blw.erosion-quantitativ layer
+register_bodid_gridid('ch.blw.erosion-quantitativ', gridId='4', extended=False,
+                      timestamp='20190330', template='templates/htmlpopup/erosion_quantitativ.mako')
+
