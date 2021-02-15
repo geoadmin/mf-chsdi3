@@ -1245,7 +1245,7 @@ Example
 Mapbox Vector Tiles
 -------------------
 A RESTFul implementation of `Mapbox Vector Tiles <https://www.mapbox.com/vector-tiles>`_.
-For the testing phase, the service is free for use. See conditions `conditions <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html>`_
+See description `conditions <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html>`_
 
 The service provides both *tiles* and *styles* that the customer can use. 
 
@@ -1256,24 +1256,46 @@ A tile request is in the following form:
 
 ::
 
-    <Scheme>://<ServerName>/mbtiles/<LayerName>/<version>/<zoomlevel>/<x>/<y>.pbf
+    <Scheme>://<ServerName>/tiles/<LayerName>/<version>/<zoomlevel>/<x>/<y>.pbf
 
 example of one pbf tile:
 
-- https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/7/67/44.pbf
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/7/67/44.pbf
+
+GetTileSets
+***********
+
+MBTiles for storing  tiled map data in SQLite databases for immediate usage and for efficient transfer. A MBtileSet request is in the following form:
+
+::
+
+    <Scheme>://<ServerName>/tiles/<LayerName>/<version>/<LayerName>.mbtiles
+
+example of one pbf tile:
+
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
+
+
+
 
 GetStyle
 ********
 
-A style request is in the following form:
+A current (latest version) style request is in the following form:
 
 ::
 
-    <Scheme>://<ServerName>/gl-styles/<layername>/<version>/style.json
+    <Scheme>://<ServerName>/styles/<layername>/<version>/style.json
+    
+A previous versioned style request is in the following form:
 
-example of a mapbox style:
+::
 
-- https://vectortiles.geo.admin.ch/gl-styles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/style.json
+    <Scheme>://<ServerName>/styles/<version>/<layername>/style.json
+
+example of a current mapbox style:
+
+- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/style.json
 
 Available datasets and styles as mapbox vector tiles
 ****************************************************
@@ -1289,11 +1311,11 @@ The URL of the metadata `json` file is :
 
 ::
 
-   <Scheme>://<ServerName>/mbtiles/<LayerName>/<version>.json
+   <Scheme>://<ServerName>/tiles/<LayerName>/<version>.json
 
 example of tileset: 
 
-- https://vectortiles.geo.admin.ch/mbtiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0.json
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0.json
 
 
 
