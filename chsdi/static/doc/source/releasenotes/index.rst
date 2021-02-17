@@ -25,9 +25,9 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- Announcement: the layers ch.bfe.bikesharing, ch.mobility.standorte and ch.bfe.energiestaedte-energieregionen will be completely removed from the FSDI services in May 2021
+- All services are now freely accessible, no registration required, no referer checks in place. we updated our terms of use: https://www.geo.admin.ch/terms-of-use, taking effect on 1.3.2021. We still do recommend that you sign-up for our mailing list / forum http://groups.google.com/group/geoadmin-api to get notified regarding announcements.
 - Mapbox Vector Tiles services: test phase is over- please update to the `production  URL schema to GetTile and GetStyle <https://api3.geo.admin.ch/services/sdiservices.html#mapbox-vector-tiles>`__.
-- We updated our terms of use: https://www.geo.admin.ch/terms-of-use, taking effect on 1.3.2021 
+- Announcement: the layers ch.bfe.bikesharing, ch.mobility.standorte and ch.bfe.energiestaedte-energieregionen will be completely removed from the FSDI services in May 2021
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_201028...r_201209>`__
 
 `MAP <//map.geo.admin.ch>`__
