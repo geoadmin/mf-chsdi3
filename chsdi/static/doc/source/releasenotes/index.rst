@@ -25,6 +25,8 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
+- All services are now freely accessible, no registration required, no referer checks in place. we updated our terms of use: https://www.geo.admin.ch/terms-of-use, taking effect on 1.3.2021. We still do recommend that you sign-up for our mailing list / forum http://groups.google.com/group/geoadmin-api to get notified regarding announcements.
+- Mapbox Vector Tiles services: test phase is over- please update to the `production  URL schema to GetTile and GetStyle <https://api3.geo.admin.ch/services/sdiservices.html#mapbox-vector-tiles>`__.
 - Announcement: the layers ch.swisstopo.digitales-hoehenmodell_25.metadata, ch.swisstopo.images-spot-5.metadata, ch.swisstopo.images-swissimage.metadata, ch.swisstopo.luftfahrtkarten-icao.metadata, ch.swisstopo.pixelkarte-pk500.metadata, ch.swisstopo.pixelkarte-pk1000.metadata, ch.swisstopo.segelflugkarte.metadata, ch.swisstopo.swissalti3d.metadata, ch.swisstopo.swissbuildings3d_1.metadata, ch.swisstopo.swissbuildings3d_2.metadata, ch.swisstopo.swiss-map-raster10.metadata, ch.swisstopo.swiss-map-vector10.metadata, ch.swisstopo.swiss-map-vector1000.metadata, ch.swisstopo.swiss-map-vector500.metadata and ch.swisstopo.swisstlm3d.metadata are obsolete and have been removed from FSDI services on Feb. 24th 2021
 - Announcement: the layers ch.bafu.grundwasserschutzareale, ch.bafu.grundwasserschutzzonen and ch.bafu.gewaesserschutzbereiche will be completely removed from the FSDI services in March 2021
 - Announcement: the layers ch.blw.emapis-beizugsgebiet, ch.blw.emapis-bewaesserung, ch.blw.emapis-elektrizitaetsversorgung, ch.blw.emapis-entwaesserung, ch.blw.emapis-hochbau, ch.blw.emapis-milchleitung, ch.blw.emapis-oekologie, ch.blw.emapis-projektschwerpunkt, ch.blw.emapis-seilbahnen, ch.blw.emapis-wasserversorgung, ch.blw.emapis-wegebau and ch.blw.emapis-zusammenfassung will be completely removed from the FSDI services in March 2021
@@ -145,6 +147,8 @@ Geodata
 | Update | `Biogeographical regions ARE <//map.geo.admin.ch/?layers=ch.bafu.biogeographische_regionen>`__ (ch.bafu.biogeographische_regionen)                                                    |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Anlagen Gütertransport Schiene <//map.geo.admin.ch/?layers=ch.bav.anlagen-schienengueterverkehr>`__ (ch.bav.anlagen-schienengueterverkehr)                                           |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Status of Cantonal Geotope Inventories <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geotope_kantone_stand>`__ (ch.swisstopo.geologie-geotope_kantone_stand)                     |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
