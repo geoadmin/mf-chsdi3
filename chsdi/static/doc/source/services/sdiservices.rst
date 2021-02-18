@@ -1265,18 +1265,15 @@ example of one pbf tile:
 GetTileSets
 ***********
 
-MBTiles for storing  tiled map data in SQLite databases for immediate usage and for efficient transfer. A MBtileSet request is in the following form:
+MBTiles for storing  tiled map data in SQLite databases for immediate or offline usage and for efficient transfer. A MBtileSet request is in the following form:
 
 ::
 
     <Scheme>://<ServerName>/tiles/<LayerName>/<version>/<LayerName>.mbtiles
 
-example of the .mbtile file:
+example of the .mbtiles file:
 
 - https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
-
-
-
 
 GetStyle
 ********
@@ -1285,17 +1282,19 @@ A current (latest version) style request is in the following form:
 
 ::
 
-    <Scheme>://<ServerName>/styles/<layername>/<version>/style.json
+    <Scheme>://<ServerName>/styles/<layername>/style.json
+    
+example of a current mapbox style:
+
+- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte.vt/style.json
     
 A previous versioned style request is in the following form:
 
 ::
 
-    <Scheme>://<ServerName>/styles/<version>/<layername>/style.json
+    <Scheme>://<ServerName>/styles/<layername>/<version>/style.json
 
-example of a current mapbox style:
 
-- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/style.json
 
 Available datasets and styles as mapbox vector tiles
 ****************************************************
