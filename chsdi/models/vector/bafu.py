@@ -1869,13 +1869,16 @@ class Biogeoreg(Base, Vector):
     __table_args__ = ({'schema': 'diverse', 'autoload': False})
     __bodId__ = 'ch.bafu.biogeographische_regionen'
     __template__ = 'templates/htmlpopup/biogeoreg.mako'
-    __label__ = 'biogreg_r1'
+    __label__ = 'regionname_de'
     id = Column('bgdi_id', Integer, primary_key=True)
-    biogreg_r6 = Column('biogreg_r6', Unicode)
-    biogreg_ve = Column('biogreg_ve', Unicode)
-    biogreg_r1 = Column('biogreg_r1', Unicode)
-    biogreg_c6 = Column('biogreg_c6', Integer)
-    biogreg_c1 = Column('biogreg_c1', Integer)
+    objnummer = Column('objnummer', Integer)
+    regionname_de = Column('regionname_de', Unicode)
+    regionname_fr = Column('regionname_fr', Unicode)
+    regionname_it = Column('regionname_it', Unicode)
+    unterregionname_de = Column('unterregionname_de', Unicode)
+    unterregionname_fr = Column('unterregionname_fr', Unicode)
+    unterregionname_it = Column('unterregionname_it', Unicode)
+    area = Column('area', Numeric)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.biogeographische_regionen', Biogeoreg)
