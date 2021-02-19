@@ -368,3 +368,16 @@ class KatasterBelasteterStandorteMilitaer(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.vbs.kataster-belasteter-standorte-militaer', KatasterBelasteterStandorteMilitaer)
+
+
+class Panzerverschiebungsrouten(Base, Vector):
+    __tablename__ = 'panzerverschiebungsrouten_kunstbauten'
+    __table_args__ = ({'schema': 'militaer', 'autoload': False})
+    __template__ = 'templates/htmlpopup/panzerverschiebungsrouten.mako'
+    __bodId__ = 'ch.vbs.panzerverschiebungsrouten'
+    __label__ = 'tonnage'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    tonnage = Column('tonnage', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.vbs.panzerverschiebungsrouten', Panzerverschiebungsrouten)
