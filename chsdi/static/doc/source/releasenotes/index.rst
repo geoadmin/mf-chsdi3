@@ -25,7 +25,7 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- All services are now freely accessible, no registration required, no referer checks in place. we updated our terms of use: https://www.geo.admin.ch/terms-of-use, taking effect on 1.3.2021. We still do recommend that you sign-up for our mailing list / forum http://groups.google.com/group/geoadmin-api to get notified regarding announcements.
+- All services are now freely accessible, no registration required, no referer checks in place. We updated our terms of use: https://www.geo.admin.ch/terms-of-use, taking effect on 1.3.2021. We still do recommend that you sign-up for our mailing list / forum http://groups.google.com/group/geoadmin-api to get notified regarding announcements.
 - Mapbox Vector Tiles services: test phase is over- please update to the `production  URL schema to GetTile and GetStyle <https://api3.geo.admin.ch/services/sdiservices.html#mapbox-vector-tiles>`__.
 - Announcement: the layers ch.swisstopo.digitales-hoehenmodell_25.metadata, ch.swisstopo.images-spot-5.metadata, ch.swisstopo.images-swissimage.metadata, ch.swisstopo.luftfahrtkarten-icao.metadata, ch.swisstopo.pixelkarte-pk500.metadata, ch.swisstopo.pixelkarte-pk1000.metadata, ch.swisstopo.segelflugkarte.metadata, ch.swisstopo.swissalti3d.metadata, ch.swisstopo.swissbuildings3d_1.metadata, ch.swisstopo.swissbuildings3d_2.metadata, ch.swisstopo.swiss-map-raster10.metadata, ch.swisstopo.swiss-map-vector10.metadata, ch.swisstopo.swiss-map-vector1000.metadata, ch.swisstopo.swiss-map-vector500.metadata and ch.swisstopo.swisstlm3d.metadata are obsolete and have been removed from FSDI services on Feb. 24th 2021
 - Announcement: the layers ch.bafu.grundwasserschutzareale, ch.bafu.grundwasserschutzzonen and ch.bafu.gewaesserschutzbereiche will be completely removed from the FSDI services in March 2021
@@ -48,51 +48,9 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Future mean runoff (m³/s) and regime <//map.geo.admin.ch/?layers=ch.bafu.mittlere-abfluesse_zukunft>`__ (ch.bafu.mittlere-abfluesse_zukunft)                                         |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Number of connection providers <//map.geo.admin.ch/?layers=ch.bakom.anbieter-eigenes_festnetz>`__ (ch.bakom.anbieter-eigenes_festnetz)                                               |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink10>`__ (ch.bakom.downlink10)                                                                                       |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink100>`__ (ch.bakom.downlink100)                                                                                    |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Upload ≥ 1 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink1>`__ (ch.bakom.uplink1)                                                                                                |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Upload ≥ 10 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink10>`__ (ch.bakom.uplink10)                                                                                             |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Upload ≥ 100 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink100>`__ (ch.bakom.uplink100)                                                                                          |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Upload ≥ 1000 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.uplink1000>`__ (ch.bakom.uplink1000)                                                                                       |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Optical fibre FTTB/FTTH <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-glasfaser>`__ (ch.bakom.anschlussart-glasfaser)                                                            |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Coaxial cable <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-koaxialkabel>`__ (ch.bakom.anschlussart-koaxialkabel)                                                                |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Copper wire <//map.geo.admin.ch/?layers=ch.bakom.anschlussart-kupferdraht>`__ (ch.bakom.anschlussart-kupferdraht)                                                                    |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `2G - GSM / EDGE <//map.geo.admin.ch/?layers=ch.bakom.mobilnetz-2g>`__ (ch.bakom.mobilnetz-2g)                                                                                        |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `5G - NR <//map.geo.admin.ch/?layers=ch.bakom.mobilnetz-3g>`__ (ch.bakom.mobilnetz-3g)                                                                                                |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `3G - UMTS / HSPA <//map.geo.admin.ch/?layers=ch.bakom.mobilnetz-4g>`__ (ch.bakom.mobilnetz-4g)                                                                                       |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `4G - LTE / LTE-A <//map.geo.admin.ch/?layers=ch.bakom.mobilnetz-5g>`__ (ch.bakom.mobilnetz-5g)                                                                                       |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 3 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink3>`__ (ch.bakom.downlink3)                                                                                          |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 30 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink30>`__ (ch.bakom.downlink30)                                                                                       |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 300 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink300>`__ (ch.bakom.downlink300)                                                                                    |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 500 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink500>`__ (ch.bakom.downlink500)                                                                                    |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Download ≥ 1000 Mbit/s <//map.geo.admin.ch/?layers=ch.bakom.downlink1000>`__ (ch.bakom.downlink1000)                                                                                 |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Cleantech projects <//map.geo.admin.ch/?layers=ch.bfe.energieforschung>`__ (ch.bfe.energieforschung)                                                                                 |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Interregional wildlife corridor <//map.geo.admin.ch/?layers=ch.bafu.fauna-wildtierkorridor_national>`__ (ch.bafu.fauna-wildtierkorridor_national)                                    |
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| update | `Division swissALTI3D Raster <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d.metadata>`__ (ch.swisstopo.swissalti3d.metadata)                                                    | 
-+--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division National Map 25 Vector <//map.geo.admin.ch/?layers=ch.swisstopo.swiss-map-vector25.metadata>`__ (ch.swisstopo.swiss-map-vector25.metadata)                                  |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `swissALTI3D Hillshade Monodirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d-relief-monodirektional>`__ (ch.swisstopo.swissalti3d-relief-monodirektional)              |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -233,31 +191,8 @@ Geodata
 | Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                                       |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division GeoCover <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover.metadata>`__ (ch.swisstopo.geologie-geocover.metadata)                                                                              |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division Dufour Map Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-dufour.metadata>`__ (ch.swisstopo.hiks-dufour.metadata)                                                                                 |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division special geological maps Vector <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata>`__ (ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata)                |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `General Geological Map of Switzerland 1:200,000 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-generalkarte-ggk200>`__ (ch.swisstopo.geologie-generalkarte-ggk200)                                            |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division General Geol. Map 200 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-generalkarte-ggk200.metadata>`__ (ch.swisstopo.geologie-generalkarte-ggk200.metadata)                                           |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Soil bulk density <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gesteinsdichte>`__ (ch.swisstopo.geologie-gesteinsdichte)                                                                                    |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division National Map 25 Vector <//map.geo.admin.ch/?layers=ch.swisstopo.swiss-map-vector25.metadata>`__ (ch.swisstopo.swiss-map-vector25.metadata)                                                              |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division swissSURFACE3D Raster <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d-raster.metadata>`__ (ch.swisstopo.swisssurface3d-raster.metadata)                                                         |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division geological atlas 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas.metadata)                                        |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division special geological maps Raster <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-spezialkarten_schweiz.metadata>`__ (ch.swisstopo.geologie-spezialkarten_schweiz.metadata)                              |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division geological atlas 25 Vector <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas_vector.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas_vector.metadata)                          |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division swissSURFACE3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d.metadata>`__ (ch.swisstopo.swisssurface3d.metadata)                                                                              |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Filling stations BEBECO <//map.geo.admin.ch/?layers=ch.vbs.bundestankstellen-bebeco>`__ (ch.vbs.bundestankstellen-bebeco)                                                                                        |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------+
 
 
 
