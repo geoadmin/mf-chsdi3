@@ -457,27 +457,18 @@ register('ch.bafu.typisierung-fliessgewaesser', TypFliessgewaesser)
 
 
 class WasserVermessungsstrecken(Base, Vector):
-    __tablename__ = 'vermessungsstrecken'
+    __tablename__ = 'vermessungsabschnitte'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasserbau-vermessungsstrecken'
-    __queryable_attributes__ = ['gewaessernummer', 'streckenid', 'bezeichnung', 'gwlnr']
     __template__ = 'templates/htmlpopup/vermessungsstrecken.mako'
-    __extended_info__ = True
-    __label__ = 'bezeichnung'
+    __label__ = 'gwlnr'
     id = Column('bgdi_id', Integer, primary_key=True)
-    bezeichnung = Column('bezeichnung', Unicode)
-    routeid = Column('routeid', Integer)
-    gewaessernummer = Column('gewaessernummer', Unicode)
-    bemerkung = Column('bemerkung', Unicode)
-    anfangsmass = Column('anfangsmass', Numeric)
-    endmass = Column('endmass', Numeric)
-    streckenid = Column('streckenid', Integer)
-    bezeichnung = Column('bezeichnung', Unicode)
-    laenge_km = Column('laenge_km', Numeric)
-    anzahl_profile = Column('anzahl_profile', Integer)
-    aufnahme_intervall = Column('aufnahme_intervall', Integer)
-    aufnahme_letzte = Column('aufnahme_letzte', Integer)
+    verantwortung = Column('verantwortung', Unicode)
     gwlnr = Column('gwlnr', Unicode)
+    flussname = Column('flussname', Unicode)
+    abschnitt = Column('abschnitt', Unicode)
+    gerinnetyp = Column('gerinnetyp', Unicode)
+    uebersicht_messkampagne_link = Column('uebersicht_messkampagne_link', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasserbau-vermessungsstrecken', WasserVermessungsstrecken)
@@ -514,22 +505,60 @@ class MittlereAbfluesse(Base, Vector):
 register('ch.bafu.mittlere-abfluesse', MittlereAbfluesse)
 
 
+class MittlereAbfluesseZukunft(Base, Vector):
+    __tablename__ = 'mittlere_abfluesse_zukunft'
+    __table_args__ = ({'schema': 'wasser', 'autoload': False})
+    __bodId__ = 'ch.bafu.mittlere-abfluesse_zukunft'
+    __queryable_attributes__ = ['place', 'water_name']
+    __template__ = 'templates/htmlpopup/mittlere_abfluesse_zukunft.mako'
+    __label__ = 'place'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    place = Column('place', Unicode)
+    water_name = Column('water_name', Unicode)
+    area = Column('area', Numeric)
+    ezgheight = Column('ezgheight', Numeric)
+    glacier = Column('glacier', Numeric)
+    url = Column('url', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bafu.mittlere-abfluesse_zukunft', MittlereAbfluesseZukunft)
+
+
 class WasserbauQuerprofilmarken(Base, Vector):
     __tablename__ = 'querprofilmarken'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.wasserbau-querprofilmarken'
-    __queryable_attributes__ = ['typ', 'herkunft']
     __template__ = 'templates/htmlpopup/querprofilmarken.mako'
     __extended_info__ = True
-    __label__ = 'schluesselid'
+    __label__ = 'gwlnr'
     id = Column('bgdi_id', Integer, primary_key=True)
-    schluesselid = Column('schluesselid', Integer)
-    typ = Column('typ', Unicode)
-    x_koordinate = Column('x_koordinate', Numeric)
-    y_koordinate = Column('y_koordinate', Numeric)
-    azimut = Column('azimut', Integer)
-    herkunft = Column('herkunft', Unicode)
-    bemerkung = Column('bemerkung', Unicode)
+    gwlnr = Column('gwlnr', Unicode)
+    flussname = Column('flussname', Unicode)
+    abschnitt = Column('abschnitt', Unicode)
+    gewiss_adr = Column('gewiss_adr', Integer)
+    bww_km = Column('bww_km', Numeric)
+    lokale_km = Column('lokale_km', Numeric)
+    datum = Column('datum', Unicode)
+    markierung_li = Column('markierung_li', Unicode)
+    e_li = Column('e_li', Numeric)
+    n_li = Column('n_li', Numeric)
+    hoehe_li = Column('hoehe_li', Numeric)
+    azimut_li = Column('azimut_li', Numeric)
+    foto_1_li = Column('foto_1_li', Unicode)
+    foto_2_li = Column('foto_2_li', Unicode)
+    markierung_re = Column('markierung_re', Unicode)
+    e_re = Column('e_re', Numeric)
+    n_re = Column('n_re', Numeric)
+    hoehe_re = Column('hoehe_re', Numeric)
+    azimut_re = Column('azimut_re', Numeric)
+    foto_1_re = Column('foto_1_re', Unicode)
+    foto_2_re = Column('foto_2_re', Unicode)
+    markierung_li_desc_de = Column('markierung_li_desc_de', Unicode)
+    markierung_li_desc_fr = Column('markierung_li_desc_fr', Unicode)
+    markierung_li_desc_it = Column('markierung_li_desc_it', Unicode)
+    markierung_re_desc_de = Column('markierung_re_desc_de', Unicode)
+    markierung_re_desc_fr = Column('markierung_re_desc_fr', Unicode)
+    markierung_re_desc_it = Column('markierung_re_desc_it', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasserbau-querprofilmarken', WasserbauQuerprofilmarken)
@@ -1850,13 +1879,16 @@ class Biogeoreg(Base, Vector):
     __table_args__ = ({'schema': 'diverse', 'autoload': False})
     __bodId__ = 'ch.bafu.biogeographische_regionen'
     __template__ = 'templates/htmlpopup/biogeoreg.mako'
-    __label__ = 'biogreg_r1'
+    __label__ = 'regionname_de'
     id = Column('bgdi_id', Integer, primary_key=True)
-    biogreg_r6 = Column('biogreg_r6', Unicode)
-    biogreg_ve = Column('biogreg_ve', Unicode)
-    biogreg_r1 = Column('biogreg_r1', Unicode)
-    biogreg_c6 = Column('biogreg_c6', Integer)
-    biogreg_c1 = Column('biogreg_c1', Integer)
+    objnummer = Column('objnummer', Integer)
+    regionname_de = Column('regionname_de', Unicode)
+    regionname_fr = Column('regionname_fr', Unicode)
+    regionname_it = Column('regionname_it', Unicode)
+    unterregionname_de = Column('unterregionname_de', Unicode)
+    unterregionname_fr = Column('unterregionname_fr', Unicode)
+    unterregionname_it = Column('unterregionname_it', Unicode)
+    area = Column('area', Numeric)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.biogeographische_regionen', Biogeoreg)

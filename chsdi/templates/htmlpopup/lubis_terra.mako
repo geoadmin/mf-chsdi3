@@ -234,11 +234,6 @@ url_smapshot= "https://smapshot.heig-vd.ch/map/?imageId={}".format(c['attributes
         </td>
     </tr>
     <tr><th class="cell-left">${_('link')} smapshot</th>         <td><a href="${url_smapshot}" target="_blank">${_('link')} smapshot</a></td></tr>
-  <tr class="chsdi-no-print">
-    <th class="cell-left">${_('link')} Online Shop</th>
-    <td><a href="https:${shop_url}/${lang}/dispatcher?layer=${c['layerBodId']}&featureid=${c['featureId']}"
-    target="toposhop">Online Shop</a></td>
-  </tr>
   </table>
   <br>
 <div class="chsdi-map-container table-with-border">

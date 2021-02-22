@@ -1648,35 +1648,6 @@ class GeologieGeotechnikZiegeleien1907(Base, Vector):
 register('ch.swisstopo.geologie-geotechnik-ziegeleien_1907', GeologieGeotechnikZiegeleien1907)
 
 
-class GeologieGeotechnikZiegeleien1965(Base, Vector):
-    __tablename__ = 'geotechnik_ziegeleien_1965'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/ziegeleien_1965.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geotechnik-ziegeleien_1965'
-    __queryable_attributes__ = ['ziegelei']
-    __label__ = 'ziegelei'
-    id = Column('id', Integer, primary_key=True)
-    ziegelei = Column('ziegelei', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geotechnik-ziegeleien_1965', GeologieGeotechnikZiegeleien1965)
-
-
-class GeologieGeotechnikZiegeleien1995(Base, Vector):
-    __tablename__ = 'geotechnik_ziegeleien_1995'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/ziegeleien_1995.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geotechnik-ziegeleien_1995'
-    __queryable_attributes__ = ['ziegeleien']
-    __label__ = 'ziegeleien'
-    id = Column('id', Integer, primary_key=True)
-    ziegeleien = Column('ziegeleien', Unicode)
-    produkt = Column('produkt', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geotechnik-ziegeleien_1995', GeologieGeotechnikZiegeleien1995)
-
-
 class GeologieHydroKarteGrundwasservorkommen(Base, Vector):
     __tablename__ = 'grundwasservorkommen'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
@@ -2593,7 +2564,7 @@ register('ch.swisstopo.geologie-geotope', GeologieGeotopeFlaechen)
 
 
 class GeologieGeotopeKantoneStand(Base, Vector):
-    __tablename__ = 'view_geotope_kantone_stand'
+    __tablename__ = 'view_stand_kantonale_geotope'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geotope_kantone_stand.mako'
     __bodId__ = 'ch.swisstopo.geologie-geotope_kantone_stand'
@@ -2601,9 +2572,12 @@ class GeologieGeotopeKantoneStand(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     sigel = Column('sigel', Unicode)
-    link = Column('url', Unicode)
     inventar = Column('inventar', Unicode)
-    zugang = Column('zugang', Unicode)
+    link = Column('link', Unicode)
+    kontakt = Column('kontakt', Unicode)
+    publikation = Column('publikation', Unicode)
+    quelle = Column('quelle', Unicode)
+    bemerkung = Column('bemerkung', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotope_kantone_stand', GeologieGeotopeKantoneStand)
