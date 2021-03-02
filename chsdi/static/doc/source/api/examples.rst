@@ -7,13 +7,6 @@
 `API Examples <http://codepen.io/geoadmin/collections/popular/>`_
 =================================================================
 
-JS API examples
----------------
-
-.. raw:: html
-
-  <ul id="cat1"></ul>
-
 OpenLayers 3 examples
 ---------------------
 
@@ -96,12 +89,8 @@ Other JS web mapping APIs integration
       codepen: 'MyYYXR',
       cat: 2
     }, {
-      label: 'More OpenLayers 3 Examples on the official website.',
-      link: 'https://openlayers.org/en/v3.20.1/examples/',
-      cat: 2
-    }, {
-      label: 'More OpenLayers 4 Examples on the official website.',
-      link: 'https://openlayers.org/en/v4.6.5/examples/',
+      label: 'More OpenLayers 6 Examples on the official website.',
+      link: 'https://openlayers.org/en/v6.5.0/examples/',
       cat: 2
     }, {
       label: 'Feature selection of KML and GeoJSON layers',
@@ -150,7 +139,7 @@ Other JS web mapping APIs integration
           break;
       };
     });
-    document.getElementById('cat1').innerHTML = cat1;
+    // document.getElementById('cat1').innerHTML = cat1;
     document.getElementById('cat2').innerHTML = cat2;
     document.getElementById('cat3').innerHTML = cat3;
     document.getElementById('cat4').innerHTML = cat4;
