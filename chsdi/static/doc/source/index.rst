@@ -45,22 +45,53 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
     }
   </style>
   <body>
-    <div id="map"></div>
-    <script type="text/javascript" src="loader.js?version=4.4.2"></script>
-    <script type="text/javascript">
-      var layer = ga.layer.create('ch.swisstopo.pixelkarte-farbe');
-      var map = new ga.Map({
-        target: 'map',
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css">
+
+    <div id="map" class="map"></div>
+    <script>
+      var projection = ol.proj.get("EPSG:3857");
+      var projectionExtent = projection.getExtent();
+      
+      let size = (projectionExtent[2] - projectionExtent[0]) / 256;
+      
+      const topleft = [projectionExtent[0], projectionExtent[3]];
+      
+      const layer = new ol.layer.Tile({
+        opacity: 0.95,
+        source: new ol.source.WMTS({
+          url:
+            "http://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{TileMatrix}/{TileCol}/{TileRow}.jpeg",
+          crossOrigin: "anonymous",
+          attributions: "(c) swisstopo",
+          matrixSet: "3857",
+          format: "image/jpeg",
+          resourceType: "tile",
+          requestEncoding: "REST",
+          projection: projection,
+          tileGrid: new ol.tilegrid.WMTS({
+            origin: topleft,
+            resolutions: [...Array(21).keys()].map((key) => size / Math.pow(2, key)),
+            matrixIds: [...Array(21).keys()]
+          })
+        }),
+        extent: projectionExtent,
+        style: "default",
+        wrapX: true,
+        visible: true
+      });
+      
+      var map = new ol.Map({
+        target: "map",
         layers: [layer],
         view: new ol.View({
-          resolution: 750,
-          center: [2680000, 1180000]
+          center: ol.proj.fromLonLat([7.44835, 46.94811]),
+          zoom: 7
         })
       });
+
     </script>
   </body>
-
-`Do you want to see the code? <api/quickstart.html>`_
 
 
 .. warning::
@@ -78,7 +109,6 @@ API
 .. toctree::
    :maxdepth: 1
 
-   api/quickstart
    api/examples
    api/doc
    services/sdiservices
