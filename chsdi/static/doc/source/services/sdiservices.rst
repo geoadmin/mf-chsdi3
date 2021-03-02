@@ -1295,7 +1295,7 @@ The list of current datasets and styles is available visiting the `official serv
 Metadata Service
 ****************
 
-Each tileset has a corresponding metatda `json` file that describes the available set of tiles.
+Each tileset has a corresponding metatdata `json` file that describes the available set of tiles.
 The URL of the metadata `json` file is : 
 
 ::
@@ -1304,7 +1304,7 @@ The URL of the metadata `json` file is :
 
 example of tileset: 
 
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0.json
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/tiles.json
 
 
 
