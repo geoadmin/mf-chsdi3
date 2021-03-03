@@ -93,6 +93,7 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
     </script>
   </body>
 
+`Do you want to see some more examples? <api/examples.html>`_
 
 .. warning::
    
