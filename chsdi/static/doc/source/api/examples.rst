@@ -99,7 +99,7 @@ Deprecated OpenLayers 3 and 4 examples
       cat: 1
     }, {
       label: 'Most simple example using vanilla OL6',
-      link: 'https://codesandbox.io/s/geoadmin-with-vanilla-openlayers-forked-z3dij',
+      link: 'https://codesandbox.io/s/geoadmin-with-vanilla-openlayers-z3dij',
       cat: 2
     }, {
       label: 'Using WMTS and WMS together in OL6',
