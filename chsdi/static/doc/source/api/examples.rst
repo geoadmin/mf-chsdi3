@@ -139,7 +139,6 @@ Other JS web mapping APIs integration
           break;
       };
     });
-    // document.getElementById('cat1').innerHTML = cat1;
     document.getElementById('cat2').innerHTML = cat2;
     document.getElementById('cat3').innerHTML = cat3;
     document.getElementById('cat4').innerHTML = cat4;
