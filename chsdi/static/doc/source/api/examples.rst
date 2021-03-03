@@ -7,14 +7,8 @@
 `API Examples <http://codepen.io/geoadmin/collections/popular/>`_
 =================================================================
 
-JS API examples
----------------
-
-.. raw:: html
-
-  <ul id="cat1"></ul>
-
-OpenLayers 3 examples
+  
+OpenLayers 6 examples
 ---------------------
 
 .. raw:: html
@@ -43,6 +37,14 @@ Other JS web mapping APIs integration
 .. raw:: html
 
   <ul id="cat5"></ul>
+  
+  
+Deprecated OpenLayers 3 and 4 examples
+--------------------------------------
+
+.. raw:: html
+
+  <ul id="cat1"></ul>
 
 .. raw:: html
 
@@ -50,58 +52,62 @@ Other JS web mapping APIs integration
     var conf = [{
       label: 'Map with overlay layer',
       codepen: 'qbeqPQ',
-      cat: 1
+      cat: 0
     }, {
       label: 'Map with KML file overlay',
       codepen: 'eJqBVV',
-      cat: 1
+      cat: 0
     }, {
       label: 'Geocoder',
       codepen: 'JGgzQG',
-      cat: 1
+      cat: 0
     }, {
       label: 'Rectangle selection',
       codepen: 'NxQmvo',
-      cat: 1
+      cat: 0
     }, {
       label: 'Searchbox',
       codepen: 'xZvNEY',
-      cat: 1
+      cat: 0
     }, {
       label: 'Catalog',
       codepen: 'grYLdY',
-      cat: 1
+      cat: 0
     }, {
       label: 'Localisation',
       codepen: 'GZKrem',
-      cat: 1
+      cat: 0
     }, {
       label: 'GeoJSON integration',
       codepen: 'ZWzXgv',
-      cat: 1
+      cat: 0
     }, {
       label: 'WMTS and WMS in swiss projection (EPSG:21781)',
       codepen: 'xVKLdV',
-      cat: 2
+      cat: 1
     }, {
       label: 'WMTS in Pseudo-Mercator projection (EPSG:3857)',
       codepen: 'pyzwwL',
-      cat: 2
+      cat: 1
     }, {
       label: 'WMTS in LV95 (EPSG:2056)',
       codepen: 'GZKEam',
-      cat: 2
+      cat: 1
     }, {
       label: 'All available layers as WMTS',
       codepen: 'MyYYXR',
+      cat: 1
+    }, {
+      label: 'Most simple example using vanilla OL6',
+      link: 'https://codesandbox.io/s/geoadmin-with-vanilla-openlayers-z3dij',
       cat: 2
     }, {
-      label: 'More OpenLayers 3 Examples on the official website.',
-      link: 'https://openlayers.org/en/v3.20.1/examples/',
+      label: 'Using WMTS and WMS together in OL6',
+      link: 'https://codesandbox.io/s/vanilla-openlayers-with-a-wms-layer-06h77',
       cat: 2
     }, {
-      label: 'More OpenLayers 4 Examples on the official website.',
-      link: 'https://openlayers.org/en/v4.6.5/examples/',
+      label: 'More OpenLayers 6 Examples on the official website.',
+      link: 'https://openlayers.org/en/v6.5.0/examples/',
       cat: 2
     }, {
       label: 'Feature selection of KML and GeoJSON layers',
@@ -133,6 +139,7 @@ Other JS web mapping APIs integration
       var link = tpl.replace('{link}', item.link).replace('{label}', item.label);
       switch(item.cat) {
         default:
+          break;
         case 1:
           cat1 += link;
           break;

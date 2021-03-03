@@ -4,14 +4,14 @@
     <link href="../_static/custom.css" rel="stylesheet" type="text/css" />
   </head>
 
-API Doc
-=======
+JS API Doc
+==========
 
 The GeoAdmin JS API extends `OpenLayers <https://openlayers.org/>`_ with Swiss specific configurations and layers.
 
 .. warning::
-    The GeoAdmin JS API is now very _mature_ and not updated. It's default version is based on Openlayers 3.6.0 (released on 7 Jun 2015), and the subsequent ones on Openlayers 3.18.2 (1 Sep 2016) and 4.4.2 (released on  6 Oct 2017).
-    We urge you to use your favorite webmapping framework for new development, like `OpenLayers <https://openlayers.org/>`_ , `Leflets <https://leafletjs.com/>`_ , Google Maps, Yandex Map, Bing Map or anything implementing the `OGC WMTS <https://www.ogc.org/standards/wmts>`_
+    The GeoAdmin JS API is now very **mature** and not updated anymore. It's default version is based on Openlayers 3.6.0 (released on 7 Jun 2015), and the subsequent ones on Openlayers 3.18.2 (1 Sep 2016) and 4.4.2 (released on  6 Oct 2017).
+    We urge you to use your favorite webmapping framework for new development, like `OpenLayers <https://openlayers.org/>`_ , `Leaflets <https://leafletjs.com/>`_ , Google Maps, Yandex Map, Bing Map or anything implementing the `OGC WMTS <https://www.ogc.org/standards/wmts>`_
 
 The API is available in multiple versions:
 
