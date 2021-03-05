@@ -1,13 +1,12 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c,lang)">
-<%
-  layer = c['layerBodId']
-%>
-<tr><td class="cell-left">${_(layer + '.pk_sgi')}</td> <td>${c['attributes']['pk_sgi'] or '-'}</td></tr>
-<tr><td class="cell-left">${_(layer + '.mean_thik')}</td> <td>${c['attributes']['mean_thik'] or '-'}</td></tr>
-<tr><td class="cell-left">${_(layer + '.max_thik')}</td> <td>${c['attributes']['max_thik'] or '-'}</td></tr>
-<tr><td class="cell-left">${_(layer + '.volume')}</td> <td>${c['attributes']['volume'] or '-'}</td></tr>
-<tr><td class="cell-left">${_(layer + '.year_mode')}</td> <td>${c['attributes']['year_mode'] or '-'}</td></tr>
+
+<tr><td class="cell-left">${_('ch.swisstopo.geologie-gletschermaechtigkeit.name')}</td><td>${c['attributes']['name'] or '-'}</td></tr>
+<tr><td class="cell-left">${_('ch.swisstopo.geologie-gletschermaechtigkeit.mean_thick')}</td><td>${c['attributes']['mean_thick'] or '-'}</td></tr>
+<tr><td class="cell-left">${_('ch.swisstopo.geologie-gletschermaechtigkeit.max_thick')}</td><td>${c['attributes']['max_thick'] or '-'}</td></tr>
+<tr><td class="cell-left">${_('ch.swisstopo.geologie-gletschermaechtigkeit.volume')}</td><td>${c['attributes']['volume'] or '-'}</td></tr>
+<tr><td class="cell-left">${_('ch.swisstopo.geologie-gletschermaechtigkeit.year_mode')}</td><td>${c['attributes']['year_mode'] or '-'}</td></tr>
+
 </%def>
 
