@@ -76,7 +76,7 @@ The following list contains all the free accessible layers:
     $.getJSON( "../../rest/services/api/faqlist", function( data ) {
       var layersApi = data;
       var translationsApi = data.translations;
-      var names = ["chargeableLayers", "notChargeableLayers", "tooltipLayers", "searchableLayers", "queryableLayers"];
+      var names = ["notChargeableLayers", "tooltipLayers", "searchableLayers", "queryableLayers"];
       for (var index=0; index < names.length; index++) {
         var name = names[index];
         var newInner = "<br><table border=\"0\">";
@@ -86,7 +86,9 @@ The following list contains all the free accessible layers:
                 layersApi[name][layer] + '" target="new"> ' + layersApi[name][layer] + '</a>&nbsp('+translationsApi[layersApi[name][layer]]+')</td></tr>';
           counter++;
         }
-        document.getElementById(name).innerHTML = newInner;
+        if (document.getElementById(name)) {
+          document.getElementById(name).innerHTML = newInner;
+        }
         newInner = [];
       }
     });
