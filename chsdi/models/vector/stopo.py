@@ -3451,8 +3451,9 @@ class GletschermaechtigkeitIceThikness(Base, Gletschermaechtigkeit, Vector):
     __template__ = 'templates/htmlpopup/gletschermaechtigkeit_ice_thikness.mako'
     __label__ = 'pk_sgi'
     pk_sgi = Column('pk_sgi', Unicode)
-    mean_thik = Column('mean_thik', Float)
-    max_thik = Column('max_thik', Float)
+    name = Column('name', Unicode)
+    mean_thick = Column('mean_thick', Float)
+    max_thick = Column('max_thick', Float)
     volume = Column('volume', Float)
     year_mode = Column('year_mode', Integer)
 
