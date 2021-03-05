@@ -86,7 +86,9 @@ The following list contains all the free accessible layers:
                 layersApi[name][layer] + '" target="new"> ' + layersApi[name][layer] + '</a>&nbsp('+translationsApi[layersApi[name][layer]]+')</td></tr>';
           counter++;
         }
-        document.getElementById(name).innerHTML = newInner;
+        if (document.getElementById(name)) {
+          document.getElementById(name).innerHTML = newInner;
+        }
         newInner = [];
       }
     });
