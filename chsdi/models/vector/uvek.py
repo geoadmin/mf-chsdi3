@@ -978,13 +978,12 @@ register('ch.bfe.statistik-wasserkraftanlagen', StatistikwasserkraftanlagenNew)
 
 
 class Erneuerbarheizen(Base, Vector):
-    __tablename__ = 'renewable_heating'
+    __tablename__ = 'renewable_heating_efh'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/erneuerbarheizen.mako'
     __bodId__ = 'ch.bfe.erneuerbarheizen'
     __label__ = 'company'
     id = Column('xtf_id', Integer, primary_key=True)
-    name = Column('name', Unicode)
     company = Column('company', Unicode)
     firstname_name = Column('firstname_name', Unicode)
     email = Column('email', Unicode)
