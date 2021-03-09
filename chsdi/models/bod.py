@@ -532,7 +532,7 @@ def get_translations(lang, session):
 
 class WmsConfiguration(Base):
     __dbname__ = 'bod'
-    __tablename__ = 'tileset'
+    __tablename__ = 'view_tileset'
     __table_args__ = ({'schema': 'public', 'autoload': False})
     datasetId = Column('fk_dataset_id', Unicode, primary_key=True)
     fmt = Column('format', Unicode)
