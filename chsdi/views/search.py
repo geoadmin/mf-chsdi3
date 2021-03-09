@@ -206,7 +206,6 @@ class Search(SearchValidation):
 
             wildcard_results = temp[0].get('matches', [])
             merged_results = []
-
             if len(temp) == 2:
                 # we have results from both queries (exact + wildcard)
                 # prepend exact search results to wildcard search result
@@ -216,8 +215,8 @@ class Search(SearchValidation):
                 # waldhofstrasse 1 -> weight 100
                 # waldhofstrasse 1.1 -> weight 1
                 for result in exact_results:
-                    if result['attrs']['detail'].startswith('%s ' % (' '.join(self.searchText))) or \
-                       result['attrs']['detail'] == ' '.join(self.searchText):
+                    if result['attrs']['detail'].startswith('%s ' % (' '.join(self.searchText).lower())) or \
+                       result['attrs']['detail'] == ' '.join(self.searchText).lower():
                         result['weight'] += 99
                 merged_results = exact_results + wildcard_results
             else:
