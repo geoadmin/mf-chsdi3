@@ -60,9 +60,6 @@ tt_lubis_ebkey = c['layerBodId'] + '.' + 'id'
 lang = lang if lang in ('fr','it','en') else 'de'
 c['stable_id'] = True
 
-toposhopscan = 'nein'
-if c['attributes']['filename'] :
-    toposhopscan = 'ja'
 preview_url = determinePreviewUrl(c['featureId'])
 
 image_width = c['attributes']['image_width'] if 'image_width' in  c['attributes'] else None
@@ -159,11 +156,9 @@ lang = request.lang
 preview_url = determinePreviewUrl(c['featureId'])
 
 filesize_mb = '-'
-toposhopscan = 'nein'
 filename = c['attributes']['filename']
 if filename:
     filesize_mb = c['attributes']['filesize_mb']
-    toposhopscan = 'ja'
 endif
 orientierung = '-'
 if c['attributes']['orientierung']:
@@ -193,7 +188,6 @@ params = (
     lang,
     image_rotation)
 viewer_url = get_viewer_url(request, params)
-shop_url = request.registry.settings['shop_url']
 %>
 <title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
 
@@ -217,7 +211,13 @@ shop_url = request.registry.settings['shop_url']
 
     <tr><th class="cell-left">${_('tt_lubis_originalsize')}</th>     <td>${c['attributes']['originalsize'] or '-'}</td></tr>
     <tr><th class="cell-left">${_('tt_lubis_filesize_mb')}</th>      <td>${filesize_mb or '-'}</td></tr>
-    <tr><th class="cell-left">${_('tt_lubis_bildpfad')}</th>         <td>${filename or '-'}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_bildpfad')}</th>
+% if filename and filename.startswith('http'):
+        <td><a href="${filename or '-'}" target="_blank">${filename or '-'}</a></td></tr>
+% else:
+        <td>${filename or '-'} - ${c['attributes']['firma']}</td></tr>
+% endif
+
     <tr><th class="cell-left">${_('tt_lubis_orthophoto')}</th>       <td>${c['attributes']['orthophoto'] or '-'}</td></tr>
     <tr><th class="cell-left">${_('tt_lubis_orientierung')}</th>     <td>${orientierung or '-'}</td></tr>
     <tr><th class="cell-left">${_('tt_lubis_rotation')}</th>         <td>${c['attributes']['rotation'] or '-'}</td></tr>
