@@ -18,7 +18,7 @@ class LuftbilderBase:
     id = Column('ebkey', Unicode, primary_key=True)
     filename = Column('filename', Unicode)
     inventarnummer = Column('inventarnummer', Integer)
-    bildnummer = Column('bildnummer', Integer)
+    bildnummer = Column('bildnummer', Unicode)
     flugdatum = Column('flugdatum', Unicode)
     firma = Column('firma', Unicode)
     filmart = Column('filmart', Unicode)
