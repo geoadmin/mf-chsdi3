@@ -75,6 +75,7 @@ class LuftbilderDritteFirmen(Base, LuftbilderBase, Vector):
     contact = Column('contact', Unicode)
     contact_email = Column('contact_email', Unicode)
     contact_web = Column('contact_web', Unicode)
+    doi_link = Column('doi_link', Unicode)
 
 register('ch.swisstopo.lubis-luftbilder-dritte-firmen', LuftbilderDritteFirmen)
 
