@@ -2390,3 +2390,25 @@ class LandesforstinventarSchutzwaldregion(Base, LandesforstinventarRegion, Vecto
     __bodId__ = 'ch.bafu.landesforstinventar-schutzwaldregionen'
 
 register(LandesforstinventarSchutzwaldregion.__bodId__, LandesforstinventarSchutzwaldregion)
+
+
+class AmphibienwanderungVerkehrskonflikte(Base, Vector):
+    __tablename__ = 'amphibienwanderung_verkehrskonflikte'
+    __table_args__ = ({'schema': 'fauna', 'autoload': False})
+    __bodId__ = 'ch.bafu.amphibienwanderung-verkehrskonflikte'
+    __template__ = 'templates/htmlpopup/amphibienwanderung-verkehrskonflikte.mako'
+    __queryable_attributes__ = ['nr_datenbank', 'name']
+    __label__ = 'name'
+    id = Column('nr_datenbank', Integer, primary_key=True)
+    nr_kanton = Column('nr_kanton', Unicode)
+    name = Column('name', Unicode)
+    type_de = Column('type_de', Unicode)
+    type_fr = Column('type_fr', Unicode)
+    type_it = Column('type_it', Unicode)
+    massnahme_de = Column('massnahme_de', Unicode)
+    massnahme_fr = Column('massnahme_fr', Unicode)
+    massnahme_it = Column('massnahme_it', Unicode)
+    ref_datenblatt = Column('ref_datenblatt', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(AmphibienwanderungVerkehrskonflikte.__bodId__, AmphibienwanderungVerkehrskonflikte)
