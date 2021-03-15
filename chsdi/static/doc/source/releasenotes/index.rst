@@ -29,7 +29,7 @@ API & applications
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_210222...r_210317>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_210224...r_210317>`__
 
 Geodata
 *******
