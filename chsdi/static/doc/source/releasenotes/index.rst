@@ -14,6 +14,31 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20210317:
+
+Release 20210317 - Wednesday, March 17th 2021
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_210222...r_210317>`__
+
+Geodata
+*******
+
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Electricity production plants <//map.geo.admin.ch/?layers=ch.bfe.elektrizitaetsproduktionsanlagen>`__ (ch.bfe.elektrizitaetsproduktionsanlagen)                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20210224:
 
 Release 20210224 - Wednesday, February 24th 2021
@@ -38,7 +63,7 @@ API & applications
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_201028...r_201209>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_201209...r_210224>`__
 
 Geodata
 *******
@@ -110,7 +135,6 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Dry grasslands appendix 2 <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2>`__ (ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2)  |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 
 .. _releasenotes_20201209:
