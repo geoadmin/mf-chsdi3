@@ -1006,6 +1006,34 @@ class Erneuerbarheizen(Base, Vector):
 register('ch.bfe.erneuerbarheizen', Erneuerbarheizen)
 
 
+class ErneuerbarheizenMFH(Base, Vector):
+    __tablename__ = 'renewable_heating_mfh'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/erneuerbarheizen_mfh.mako'
+    __bodId__ = 'ch.bfe.erneuerbarheizen-mehrfamilienhaeuser'
+    __label__ = 'company'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    company = Column('company', Unicode)
+    firstname_name = Column('firstname_name', Unicode)
+    email = Column('email', Unicode)
+    phonenumber = Column('phonenumber', Unicode)
+    street_streetnumber = Column('street_streetnumber', Unicode)
+    pc_place = Column('pc_place', Unicode)
+    de_language = Column('de_language', Unicode)
+    fr_language = Column('fr_language', Unicode)
+    it_language = Column('it_language', Unicode)
+    en_language = Column('en_language', Unicode)
+    rm_language = Column('rm_language', Unicode)
+    de_consultant_cat = Column('de_consultant_cat', Unicode)
+    fr_consultant_cat = Column('fr_consultant_cat', Unicode)
+    it_consultant_cat = Column('it_consultant_cat', Unicode)
+    en_consultant_cat = Column('en_consultant_cat', Unicode)
+    rm_consultant_cat = Column('rm_consultant_cat', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.erneuerbarheizen-mehrfamilienhaeuser', ErneuerbarheizenMFH)
+
+
 class StauanlagenBundesaufsicht(Base, Vector):
     __tablename__ = 'stauanlagen_bundesaufsicht'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
