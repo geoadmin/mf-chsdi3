@@ -14,6 +14,85 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20210317:
+
+Release 20210317 - Wednesday, March 17th 2021
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcement: Changes in SEARCH Service http://api.geo.admin.ch/services/sdiservices.html#search taking effect on 05.05.2021: in the response "weight:" results will change (improved weighting and correct merge of exact + wildcard results). Test the new behaviour on our intgeration plattform (not for operational use): 
+  - INT SEARCH Service: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer 
+  - INT SEARCH Service example: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer?sr=2056&searchText=Hardturmstrasse%20105%208005%20Z%C3%BCrich&lang=de&type=locations
+  - INT SEARCH Service example: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer?sr=2056&searchText=rotten&lang=de&type=locations
+  - CHANGES are documented in the PULL REQUEST: https://github.com/geoadmin/mf-chsdi3/pull/3657
+- Announcement: the layers ch.bafu.grundwasserschutzareale, ch.bafu.grundwasserschutzzonen and ch.bafu.gewaesserschutzbereiche have been removed from the FSDI services as previously announced
+- Announcement: the layers ch.blw.emapis-beizugsgebiet, ch.blw.emapis-bewaesserung, ch.blw.emapis-elektrizitaetsversorgung, ch.blw.emapis-entwaesserung, ch.blw.emapis-hochbau, ch.blw.emapis-milchleitung, ch.blw.emapis-oekologie, ch.blw.emapis-projektschwerpunkt, ch.blw.emapis-seilbahnen, ch.blw.emapis-wasserversorgung, ch.blw.emapis-wegebau and ch.blw.emapis-zusammenfassung have been removed from the FSDI services as previously announced
+- Announcement: the layers ch.bfe.bikesharing, ch.mobility.standorte and ch.bfe.energiestaedte-energieregionen will be completely removed from the FSDI services in May 2021
+- Announcement: the layer ch.bafu.bundesinventare-flachmoore_regional will be completely removed from the FSDI services in June 2021
+- Announcement: the layers ch.bafu.showme-gemeinden_hochwasser, ch.bafu.showme-gemeinden_lawinen, ch.bafu.showme-gemeinden_rutschungen, ch.bafu.showme-gemeinden_sturzprozesse, ch.bafu.showme-kantone_hochwasser, ch.bafu.showme-kantone_lawinen, ch.bafu.showme-kantone_rutschungen and ch.bafu.showme-kantone_sturzprozesse will be completely removed from the FSDI services in June 2021
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_210224...r_210317>`__
+
+Geodata
+*******
+
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Electricity production plants <//map.geo.admin.ch/?layers=ch.bfe.elektrizitaetsproduktionsanlagen>`__ (ch.bfe.elektrizitaetsproduktionsanlagen)                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Heating advice large apartments <//map.geo.admin.ch/?layers=ch.bfe.erneuerbarheizen-mehrfamilienhaeuser>`__ (ch.bfe.erneuerbarheizen-mehrfamilienhaeuser)                            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Beech) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-buche-1h>`__ (ch.meteoschweiz.messwerte-pollen-buche-1h)                    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Oak) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-eiche-1h>`__ (ch.meteoschweiz.messwerte-pollen-eiche-1h)                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Alder) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-erle-1h>`__ (ch.meteoschweiz.messwerte-pollen-erle-1h)                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Ash) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-esche-1h>`__ (ch.meteoschweiz.messwerte-pollen-esche-1h)                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Grasses) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-graeser-1h>`__ (ch.meteoschweiz.messwerte-pollen-graeser-1h)              |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Birche) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-birke-1h>`__ (ch.meteoschweiz.messwerte-pollen-birke-1h)                   |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Hazel) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-hasel-1h>`__ (ch.meteoschweiz.messwerte-pollen-hasel-1h)                    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Advice on renewable energy <//map.geo.admin.ch/?layers=ch.bfe.erneuerbarheizen>`__ (ch.bfe.erneuerbarheizen)                                                                         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Solarenergie: Eignung Fassaden <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-fassaden>`__ (ch.bfe.solarenergie-eignung-fassaden)                                           |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Official street index <//map.geo.admin.ch/?layers=ch.swisstopo.amtliches-strassenverzeichnis>`__ (ch.swisstopo.amtliches-strassenverzeichnis)                                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Amtliches Gebäudeadressverzeichnis <//map.geo.admin.ch/?layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis>`__ (ch.swisstopo.amtliches-gebaeudeadressverzeichnis)               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images privates <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-firmen>`__ (ch.swisstopo.lubis-luftbilder-dritte-firmen)                                     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a bicycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fahrraeder>`__ (ch.astra.unfaelle-personenschaeden_fahrraeder)                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents with fatalities <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_getoetete>`__ (ch.astra.unfaelle-personenschaeden_getoetete)                                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents with personal injury <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_alle>`__ (ch.astra.unfaelle-personenschaeden_alle)                                     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a pedestrian <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fussgaenger>`__ (ch.astra.unfaelle-personenschaeden_fussgaenger)                     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a motorcycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_motorraeder>`__ (ch.astra.unfaelle-personenschaeden_motorraeder)                     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents per inhabitant <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_pro_einwohner>`__ (ch.astra.schwerverunfallte-kanton_pro_einwohner)                           |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents per inhabitant - Speeding <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_geschwindigkeit>`__ (ch.astra.schwerverunfallte-kanton_geschwindigkeit)            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents per inhabitant - Alcohol <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_alkohol>`__ (ch.astra.schwerverunfallte-kanton_alkohol)                             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents in the annual comparison <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_jahresvergleich>`__ (ch.astra.schwerverunfallte-kanton_jahresvergleich)             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20210224:
 
 Release 20210224 - Wednesday, February 24th 2021
@@ -38,7 +117,7 @@ API & applications
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_201028...r_201209>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_201209...r_210224>`__
 
 Geodata
 *******
@@ -110,7 +189,6 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Dry grasslands appendix 2 <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2>`__ (ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2)  |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 
 .. _releasenotes_20201209:
