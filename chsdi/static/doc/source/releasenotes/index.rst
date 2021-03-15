@@ -25,6 +25,16 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
+- Announcement: Changes in SEARCH Service http://api.geo.admin.ch/services/sdiservices.html#search taking effect on 05.05.2021: in the response "weight:" results will change (improved weighting and correct merge of exact + wildcard results). Test the new behaviour on our intgeration plattform (not for operational use): 
+  - INT SEARCH Service: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer 
+  - INT SEARCH Service example: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer?sr=2056&searchText=Hardturmstrasse%20105%208005%20Z%C3%BCrich&lang=de&type=locations
+  - INT SEARCH Service example: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer?sr=2056&searchText=rotten&lang=de&type=locations
+  - CHANGES are documented in the PULL REQUEST: https://github.com/geoadmin/mf-chsdi3/pull/3657
+- Announcement: the layers ch.bafu.grundwasserschutzareale, ch.bafu.grundwasserschutzzonen and ch.bafu.gewaesserschutzbereiche have been removed from the FSDI services as previously announced
+- Announcement: the layers ch.blw.emapis-beizugsgebiet, ch.blw.emapis-bewaesserung, ch.blw.emapis-elektrizitaetsversorgung, ch.blw.emapis-entwaesserung, ch.blw.emapis-hochbau, ch.blw.emapis-milchleitung, ch.blw.emapis-oekologie, ch.blw.emapis-projektschwerpunkt, ch.blw.emapis-seilbahnen, ch.blw.emapis-wasserversorgung, ch.blw.emapis-wegebau and ch.blw.emapis-zusammenfassung have been removed from the FSDI services as previously announced
+- Announcement: the layers ch.bfe.bikesharing, ch.mobility.standorte and ch.bfe.energiestaedte-energieregionen will be completely removed from the FSDI services in May 2021
+- Announcement: the layer ch.bafu.bundesinventare-flachmoore_regional will be completely removed from the FSDI services in June 2021
+- Announcement: the layers ch.bafu.showme-gemeinden_hochwasser, ch.bafu.showme-gemeinden_lawinen, ch.bafu.showme-gemeinden_rutschungen, ch.bafu.showme-gemeinden_sturzprozesse, ch.bafu.showme-kantone_hochwasser, ch.bafu.showme-kantone_lawinen, ch.bafu.showme-kantone_rutschungen and ch.bafu.showme-kantone_sturzprozesse will be completely removed from the FSDI services in June 2021
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
