@@ -39,6 +39,20 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Heating advice large apartments <//map.geo.admin.ch/?layers=ch.bfe.erneuerbarheizen-mehrfamilienhaeuser>`__ (ch.bfe.erneuerbarheizen-mehrfamilienhaeuser)                            |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Beech) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-buche-1h>`__ (ch.meteoschweiz.messwerte-pollen-buche-1h)                    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Oak) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-eiche-1h>`__ (ch.meteoschweiz.messwerte-pollen-eiche-1h)                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Alder) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-erle-1h>`__ (ch.meteoschweiz.messwerte-pollen-erle-1h)                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Ash) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-esche-1h>`__ (ch.meteoschweiz.messwerte-pollen-esche-1h)                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Grasses) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-graeser-1h>`__ (ch.meteoschweiz.messwerte-pollen-graeser-1h)              |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Birche) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-birke-1h>`__ (ch.meteoschweiz.messwerte-pollen-birke-1h)                   |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hourly average pollen concentration (Hazel) <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-pollen-hasel-1h>`__ (ch.meteoschweiz.messwerte-pollen-hasel-1h)                    |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Advice on renewable energy <//map.geo.admin.ch/?layers=ch.bfe.erneuerbarheizen>`__ (ch.bfe.erneuerbarheizen)                                                                         |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Official street index <//map.geo.admin.ch/?layers=ch.swisstopo.amtliches-strassenverzeichnis>`__ (ch.swisstopo.amtliches-strassenverzeichnis)                                        |
