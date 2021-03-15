@@ -219,7 +219,7 @@ viewer_url = get_viewer_url(request, params)
         <td>${filename or '-'}</td></tr>
 % endif
 
-% if 'doi_link' in c['attributes'] and c['attributes']['doi_link'] and c['attributes']['doi_link'].startswith('http'):
+% if c['attributes'].get('doi_link', '').startswith('http'):
     <tr><th class="cell-left">DOI Link</th>                          <td><a href="${c['attributes']['doi_link']}" target="_blank">${c['attributes']['doi_link']}</a></td></tr>
 % endif
     <tr><th class="cell-left">${_('tt_lubis_orthophoto')}</th>       <td>${c['attributes']['orthophoto'] or '-'}</td></tr>
