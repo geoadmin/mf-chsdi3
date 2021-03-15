@@ -3370,7 +3370,8 @@ class AmtlichesAdressVerzeichnis(Base, Vector):
     com_name = Column('com_name', Unicode)
     adr_status = Column('adr_status', Unicode)
     adr_official = Column('adr_official', Boolean)
-    adr_reliable = Column('adr_reliable', Boolean)
+    adr_valid = Column('adr_reliable', Boolean)
+    bdg_category = Column('bdg_category', Unicode)
     adr_modified = Column('adr_modified', Unicode)
     the_geom = Column(Geometry2D)
 

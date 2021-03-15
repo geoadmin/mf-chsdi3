@@ -978,32 +978,18 @@ register('ch.bfe.statistik-wasserkraftanlagen', StatistikwasserkraftanlagenNew)
 
 
 class Erneuerbarheizen(Base, Vector):
-    __tablename__ = 'renewable_heating'
+    __tablename__ = 'renewable_heating_efh'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/erneuerbarheizen.mako'
     __bodId__ = 'ch.bfe.erneuerbarheizen'
     __label__ = 'company'
     id = Column('xtf_id', Integer, primary_key=True)
-    firstname = Column('firstname', Unicode)
-    name = Column('name', Unicode)
     company = Column('company', Unicode)
     firstname_name = Column('firstname_name', Unicode)
     email = Column('email', Unicode)
     phonenumber = Column('phonenumber', Unicode)
-    street = Column('street', Unicode)
-    streetnumber = Column('streetnumber', Unicode)
     street_streetnumber = Column('street_streetnumber', Unicode)
-    postalcode = Column('postalcode', Integer)
-    place = Column('place', Unicode)
     pc_place = Column('pc_place', Unicode)
-    website = Column('website', Unicode)
-    privatecontrol = Column('privatecontrol', Unicode)
-    additionalinformation = Column('additionalinformation', Unicode)
-    de_consulting_type = Column('de_consulting_type', Unicode)
-    fr_consulting_type = Column('fr_consulting_type', Unicode)
-    it_consulting_type = Column('it_consulting_type', Unicode)
-    en_consulting_type = Column('en_consulting_type', Unicode)
-    rm_consulting_type = Column('rm_consulting_type', Unicode)
     de_language = Column('de_language', Unicode)
     fr_language = Column('fr_language', Unicode)
     it_language = Column('it_language', Unicode)
@@ -1018,6 +1004,34 @@ class Erneuerbarheizen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.erneuerbarheizen', Erneuerbarheizen)
+
+
+class ErneuerbarheizenMFH(Base, Vector):
+    __tablename__ = 'renewable_heating_mfh'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/erneuerbarheizen_mfh.mako'
+    __bodId__ = 'ch.bfe.erneuerbarheizen-mehrfamilienhaeuser'
+    __label__ = 'company'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    company = Column('company', Unicode)
+    firstname_name = Column('firstname_name', Unicode)
+    email = Column('email', Unicode)
+    phonenumber = Column('phonenumber', Unicode)
+    street_streetnumber = Column('street_streetnumber', Unicode)
+    pc_place = Column('pc_place', Unicode)
+    de_language = Column('de_language', Unicode)
+    fr_language = Column('fr_language', Unicode)
+    it_language = Column('it_language', Unicode)
+    en_language = Column('en_language', Unicode)
+    rm_language = Column('rm_language', Unicode)
+    de_consultant_cat = Column('de_consultant_cat', Unicode)
+    fr_consultant_cat = Column('fr_consultant_cat', Unicode)
+    it_consultant_cat = Column('it_consultant_cat', Unicode)
+    en_consultant_cat = Column('en_consultant_cat', Unicode)
+    rm_consultant_cat = Column('rm_consultant_cat', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.erneuerbarheizen-mehrfamilienhaeuser', ErneuerbarheizenMFH)
 
 
 class StauanlagenBundesaufsicht(Base, Vector):
@@ -3916,3 +3930,44 @@ class SeilbahnenBundeskonzessioStation (Base, SeilbahnenBundeskonzession, Vector
 register('ch.bav.seilbahnen-bundeskonzession', SeilbahnenBundeskonzessioSeilbahnstreke)
 register('ch.bav.seilbahnen-bundeskonzession', SeilbahnenBundeskonzessioStation)
 register('ch.bav.seilbahnen-bundeskonzession', SeilbahnenBundeskonzessionBauwerk)
+
+
+class Elektrizitaetsproduktionsanlagen (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'elektrizitaetsproduktionsanlagen'
+    __template__ = 'templates/htmlpopup/elektrizitaetsproduktionsanlagen.mako'
+    __extended_info__ = True
+    __bodId__ = 'ch.bfe.elektrizitaetsproduktionsanlagen'
+    __label__ = 'id'
+    id = Column('xtf_id', Unicode, primary_key=True)
+    address = Column('address', Unicode)
+    canton = Column('canton', Unicode)
+    beginning_of_operation = Column('beginning_of_operation', Unicode)
+    initial_power = Column('initial_power', Unicode)
+    total_power = Column('total_power', Unicode)
+    main_category_de = Column('main_category_de', Unicode)
+    main_category_fr = Column('main_category_fr', Unicode)
+    main_category_it = Column('main_category_it', Unicode)
+    main_category_en = Column('main_category_en', Unicode)
+    sub_category_de = Column('sub_category_de', Unicode)
+    sub_category_fr = Column('sub_category_fr', Unicode)
+    sub_category_it = Column('sub_category_it', Unicode)
+    sub_category_en = Column('sub_category_en', Unicode)
+    plant_type_de = Column('plant_type_de', Unicode)
+    plant_type_fr = Column('plant_type_fr', Unicode)
+    plant_type_it = Column('plant_type_it', Unicode)
+    plant_type_en = Column('plant_type_en', Unicode)
+    detail_date = Column('detail_date', Unicode)
+    detail_power = Column('detail_power', Unicode)
+    detail_inclination = Column('detail_inclination', Unicode)
+    detail_plant_type_de = Column('detail_plant_type_de', Unicode)
+    detail_plant_type_fr = Column('detail_plant_type_fr', Unicode)
+    detail_plant_type_it = Column('detail_plant_type_it', Unicode)
+    detail_plant_type_en = Column('detail_plant_type_en', Unicode)
+    detail_orientation_de = Column('detail_orientation_de', Unicode)
+    detail_orientation_fr = Column('detail_orientation_fr', Unicode)
+    detail_orientation_it = Column('detail_orientation_it', Unicode)
+    detail_orientation_en = Column('detail_orientation_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.elektrizitaetsproduktionsanlagen', Elektrizitaetsproduktionsanlagen)

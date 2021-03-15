@@ -45,23 +45,93 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
     }
   </style>
   <body>
-    <div id="map"></div>
-    <script type="text/javascript" src="loader.js?version=4.4.2"></script>
-    <script type="text/javascript">
-      var layer = ga.layer.create('ch.swisstopo.pixelkarte-farbe');
-      var map = new ga.Map({
-        target: 'map',
-        layers: [layer],
-        view: new ol.View({
-          resolution: 750,
-          center: [2680000, 1180000]
-        })
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.12/proj4.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css">
+
+    <div id="map" class="map"></div>
+    <script>
+      const TILEGRID_ORIGIN = [2420000, 1350000]; // in EPSG:2056
+      // resolutions in meter/pixel
+      const TILEGRID_RESOLUTIONS = [
+        4000,
+        3750,
+        3500,
+        3250,
+        3000,
+        2750,
+        2500,
+        2250,
+        2000,
+        1750,
+        1500,
+        1250,
+        1000,
+        750,
+        650,
+        500,
+        250,
+        100,
+        50,
+        20,
+        10,
+        5,
+        2.5,
+        2,
+        1.5,
+        1,
+        0.5,
+        0.25,
+        0.1
+      ];
+
+      // adding Swiss projections to proj4 (proj string comming from https://epsg.io/)
+      proj4.defs(
+        "EPSG:2056",
+        "+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs"
+      );
+
+      ol.proj.proj4.register(proj4);
+
+      var projection = new ol.proj.Projection({
+        code: "EPSG:2056",
+          extent: [2420000, 1030000, 2900000, 1350000]
       });
+
+      const backgroundLayer = new ol.layer.Tile({
+        id: "background-layer",
+        projection: projection,
+        source: new ol.source.XYZ({
+        tileGrid: new ol.tilegrid.WMTS({
+          origin: [2420000, 1350000],
+          resolutions: TILEGRID_RESOLUTIONS
+        }),
+        projection: projection,
+          url: "https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/2056/{z}/{x}/{y}.jpeg"
+          })
+      });
+
+      const view = new ol.View({
+        projection: projection,
+        center: [ 2659515.0, 1190001.3],
+        zoom: 1.5
+      });
+
+      const map = new ol.Map({
+        target: "map",
+        controls: ol.control.defaults().extend([
+          new ol.control.ScaleLine({
+            units: "metric"
+          })
+        ]),
+        layers: [backgroundLayer],
+          view: view
+      });
+
     </script>
   </body>
 
-`Do you want to see the code? <api/quickstart.html>`_
-
+`Do you want to see some more examples? <api/examples.html>`_
 
 .. warning::
    
@@ -78,7 +148,6 @@ API
 .. toctree::
    :maxdepth: 1
 
-   api/quickstart
    api/examples
    api/doc
    services/sdiservices

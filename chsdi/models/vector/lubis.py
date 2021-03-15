@@ -18,7 +18,7 @@ class LuftbilderBase:
     id = Column('ebkey', Unicode, primary_key=True)
     filename = Column('filename', Unicode)
     inventarnummer = Column('inventarnummer', Integer)
-    bildnummer = Column('bildnummer', Integer)
+    bildnummer = Column('bildnummer', Unicode)
     flugdatum = Column('flugdatum', Unicode)
     firma = Column('firma', Unicode)
     filmart = Column('filmart', Unicode)
@@ -75,6 +75,7 @@ class LuftbilderDritteFirmen(Base, LuftbilderBase, Vector):
     contact = Column('contact', Unicode)
     contact_email = Column('contact_email', Unicode)
     contact_web = Column('contact_web', Unicode)
+    doi_link = Column('doi_link', Unicode)
 
 register('ch.swisstopo.lubis-luftbilder-dritte-firmen', LuftbilderDritteFirmen)
 
