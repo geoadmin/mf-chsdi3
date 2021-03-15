@@ -47,6 +47,24 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Aerial images privates <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-firmen>`__ (ch.swisstopo.lubis-luftbilder-dritte-firmen)                                     |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a bicycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fahrraeder>`__ (ch.astra.unfaelle-personenschaeden_fahrraeder)                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents with fatalities <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_getoetete>`__ (ch.astra.unfaelle-personenschaeden_getoetete)                                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents with personal injury <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_alle>`__ (ch.astra.unfaelle-personenschaeden_alle)                                     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a pedestrian <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fussgaenger>`__ (ch.astra.unfaelle-personenschaeden_fussgaenger)                     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a motorcycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_motorraeder>`__ (ch.astra.unfaelle-personenschaeden_motorraeder)                     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents per inhabitant <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_pro_einwohner>`__ (ch.astra.schwerverunfallte-kanton_pro_einwohner)                           |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents per inhabitant - Speeding <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_geschwindigkeit>`__ (ch.astra.schwerverunfallte-kanton_geschwindigkeit)            |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents per inhabitant - Alcohol <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_alkohol>`__ (ch.astra.schwerverunfallte-kanton_alkohol)                             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents in the annual comparison <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_jahresvergleich>`__ (ch.astra.schwerverunfallte-kanton_jahresvergleich)             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20210224:
