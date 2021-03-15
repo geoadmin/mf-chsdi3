@@ -3902,3 +3902,44 @@ class SeilbahnenBundeskonzessioStation (Base, SeilbahnenBundeskonzession, Vector
 register('ch.bav.seilbahnen-bundeskonzession', SeilbahnenBundeskonzessioSeilbahnstreke)
 register('ch.bav.seilbahnen-bundeskonzession', SeilbahnenBundeskonzessioStation)
 register('ch.bav.seilbahnen-bundeskonzession', SeilbahnenBundeskonzessionBauwerk)
+
+
+class Elektrizitaetsproduktionsanlagen (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'elektrizitaetsproduktionsanlagen'
+    __template__ = 'templates/htmlpopup/elektrizitaetsproduktionsanlagen.mako'
+    __extended_info__ = True
+    __bodId__ = 'ch.bfe.elektrizitaetsproduktionsanlagen'
+    __label__ = 'id'
+    id = Column('xtf_id', Unicode, primary_key=True)
+    address = Column('address', Unicode)
+    canton = Column('canton', Unicode)
+    beginning_of_operation = Column('beginning_of_operation', Unicode)
+    initial_power = Column('initial_power', Unicode)
+    total_power = Column('total_power', Unicode)
+    main_category_de = Column('main_category_de', Unicode)
+    main_category_fr = Column('main_category_fr', Unicode)
+    main_category_it = Column('main_category_it', Unicode)
+    main_category_en = Column('main_category_en', Unicode)
+    sub_category_de = Column('sub_category_de', Unicode)
+    sub_category_fr = Column('sub_category_fr', Unicode)
+    sub_category_it = Column('sub_category_it', Unicode)
+    sub_category_en = Column('sub_category_en', Unicode)
+    plant_type_de = Column('plant_type_de', Unicode)
+    plant_type_fr = Column('plant_type_fr', Unicode)
+    plant_type_it = Column('plant_type_it', Unicode)
+    plant_type_en = Column('plant_type_en', Unicode)
+    detail_date = Column('detail_date', Unicode)
+    detail_power = Column('detail_power', Unicode)
+    detail_inclination = Column('detail_inclination', Unicode)
+    detail_plant_type_de = Column('detail_plant_type_de', Unicode)
+    detail_plant_type_fr = Column('detail_plant_type_fr', Unicode)
+    detail_plant_type_it = Column('detail_plant_type_it', Unicode)
+    detail_plant_type_en = Column('detail_plant_type_en', Unicode)
+    detail_orientation_de = Column('detail_orientation_de', Unicode)
+    detail_orientation_fr = Column('detail_orientation_fr', Unicode)
+    detail_orientation_it = Column('detail_orientation_it', Unicode)
+    detail_orientation_en = Column('detail_orientation_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.elektrizitaetsproduktionsanlagen', Elektrizitaetsproduktionsanlagen)
