@@ -3452,8 +3452,8 @@ class GletschermaechtigkeitIceThikness(Base, Gletschermaechtigkeit, Vector):
     __label__ = 'pk_sgi'
     pk_sgi = Column('pk_sgi', Unicode)
     name = Column('name', Unicode)
-    mean_thick = Column('mean_thick', Float)
-    max_thick = Column('max_thick', Float)
+    mean_thick = Column('mean_thick', Integer)
+    max_thick = Column('max_thick', Integer)
     volume = Column('volume', Float)
     year_mode = Column('year_mode', Integer)
 
