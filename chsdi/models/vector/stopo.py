@@ -3443,7 +3443,7 @@ class GletschermaechtigkeitGPRProfiles(Base, Gletschermaechtigkeit, Vector):
     __template__ = 'templates/htmlpopup/gletschermaechtigkeit_gpr_profiles.mako'
     __label__ = 'gpr_prf_name'
     gpr_prf_name = Column('prf_name', Unicode)
-    gpr_max_thik = Column('max_thik', Float)
+    gpr_max_thik = Column('max_thik', Integer)
 
 
 class GletschermaechtigkeitIceThikness(Base, Gletschermaechtigkeit, Vector):
