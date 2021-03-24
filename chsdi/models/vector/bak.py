@@ -36,6 +36,72 @@ class Isos(Base, Vector):
 register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', Isos)
 
 
+
+class IsosOrtsbildTeil(Base, IsosBase, Vector):
+    __tablename__ = 'view_isos_ortsbildteil'
+    __bodId__ = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder'
+    __label__ = 'teil_name'
+    __maxscale__ = 25000
+    # __minscale__ = 5000
+    teil_nummer = Column('teil_id', Integer)
+    teil_name = Column('teil_name', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class IsosOrtsbildHinweis(Base, IsosBase, Vector):
+    __tablename__ = 'view_isos_hinweis'
+    __bodId__ = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder'
+    __label__ = 'teil_name'
+    __maxscale__ = 5000
+    hinweis_nummer = Column('hinweis_id', Unicode)
+    hinweis_name = Column('hinweis_name', Unicode)
+    siehe_auch = Column('siehe_auch', Unicode)
+    teil_nummer = Column('teil_id', Integer)
+    teil_name = Column('teil_name', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbild)
+register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbildPerimeter)
+register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbildTeil)
+register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbildHinweis)
+
+
+class IsosFotoBase(IsosBase):
+    __bodId__ = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos'
+    __queryable_attributes__ = ['id', 'name']
+    __label__ = 'name'
+    the_geom = Column(Geometry2D)
+
+
+class IsosFotoOrtsbild(Base, IsosFotoBase, Vector):
+    __tablename__ = 'view_isos_foto'
+    __minscale__ = 50001
+
+register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOrtsbild)
+
+
+class IsosFotoOB(Base, IsosFotoBase, Vector):
+    __tablename__ = 'view_isos_foto_ob'
+    __maxscale__ = 50000
+    __minscale__ = 25001
+
+
+class IsosFotoOBT(Base, IsosFotoBase, Vector):
+    __tablename__ = 'view_isos_foto_obt'
+    __maxscale__ = 25000
+    __minscale__ = 5001
+
+
+class IsosFotoOBTH(Base, IsosFotoBase, Vector):
+    __tablename__ = 'view_isos_foto_obth'
+    __maxscale__ = 5000
+
+register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOrtsbild)
+register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOB)
+register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOBT)
+register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOBTH)
+
+
 class Unesco(Base, Vector):
     __tablename__ = 'unesco'
     __table_args__ = ({'autoload': False})
