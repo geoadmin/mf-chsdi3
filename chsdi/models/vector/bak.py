@@ -10,31 +10,34 @@ from chsdi.models.vector import Vector, Geometry2D
 Base = bases['bak']
 
 
-class Isos(Base, Vector):
-    __tablename__ = 'isos'
-    __table_args__ = ({'autoload': False})
+class IsosBase:
     __template__ = 'templates/htmlpopup/isos.mako'
+    __table_args__ = ({'autoload': False, 'extend_existing': True})
+    id = Column('xtf_id', Unicode, primary_key=True)
+    kantone = Column('kantone', Unicode)
+    nummer = Column('id', Integer)
+    name = Column('name', Unicode)
+    siedlungskategorie = Column('siedlungskategorie', Unicode)
+    url = Column('url', Unicode)
+
+
+class IsosOrtsbild(Base, IsosBase, Vector):
+    __tablename__ = 'view_isos_ortsbild'
     __bodId__ = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder'
-    __label__ = 'ortsbildname'
-    id = Column('gid', Integer, primary_key=True)
-    ortsbildname = Column('ortsbildname', Unicode)
-    kanton = Column('kanton', Unicode)
-    vergleichsrastereinheit = Column('vergleichsrastereinheit', Unicode)
-    lagequalitaeten = Column('lagequalitaeten', Unicode)
-    raeumliche_qualitaeten = Column('raeumliche_qualitaeten', Unicode)
-    arch__hist__qualitaeten = Column('arch__hist__qualitaeten', Unicode)
-    fassungsjahr = Column('fassungsjahr', Unicode)
-    band_1 = Column('band_1', Unicode)
-    band_2 = Column('band_2', Unicode)
-    publikationsjahr_1 = Column('publikationsjahr_1', Unicode)
-    publikationsjahr_2 = Column('publikationsjahr_2', Unicode)
-    pdf_dokument_1 = Column('pdf_dokument_1', Unicode)
-    pdf_dokument_2 = Column('pdf_dokument_2', Unicode)
-    pdfspecial = Column('pdfspecial', Unicode)
+    __label__ = 'name'
+    __queryable_attributes__ = ['id', 'name']
+    __minscale__ = 50001
     the_geom = Column(Geometry2D)
 
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', Isos)
 
+class IsosOrtsbildPerimeter(Base, IsosBase, Vector):
+    __tablename__ = 'view_isos_ortsbild'
+    __bodId__ = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder'
+    __label__ = 'name'
+    __queryable_attributes__ = ['id', 'name']
+    __maxscale__ = 50000
+    __minscale__ = 25001
+    the_geom = Column('perimeter', Geometry2D)
 
 
 class IsosOrtsbildTeil(Base, IsosBase, Vector):
@@ -76,8 +79,6 @@ class IsosFotoBase(IsosBase):
 class IsosFotoOrtsbild(Base, IsosFotoBase, Vector):
     __tablename__ = 'view_isos_foto'
     __minscale__ = 50001
-
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOrtsbild)
 
 
 class IsosFotoOB(Base, IsosFotoBase, Vector):
