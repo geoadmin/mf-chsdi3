@@ -19,25 +19,24 @@ class IsosBase:
     name = Column('name', Unicode)
     siedlungskategorie = Column('siedlungskategorie', Unicode)
     url = Column('url', Unicode)
+    the_geom = Column(Geometry2D)
 
 
 class IsosOrtsbild(Base, IsosBase, Vector):
-    __tablename__ = 'view_isos_ortsbild'
+    __tablename__ = 'isos_ortsbild'
     __bodId__ = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder'
     __label__ = 'name'
     __queryable_attributes__ = ['id', 'name']
     __minscale__ = 50001
-    the_geom = Column(Geometry2D)
 
 
 class IsosOrtsbildPerimeter(Base, IsosBase, Vector):
-    __tablename__ = 'view_isos_ortsbild'
+    __tablename__ = 'view_isos_perimeter'
     __bodId__ = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder'
     __label__ = 'name'
     __queryable_attributes__ = ['id', 'name']
     __maxscale__ = 50000
     __minscale__ = 25001
-    the_geom = Column('perimeter', Geometry2D)
 
 
 class IsosOrtsbildTeil(Base, IsosBase, Vector):
@@ -48,7 +47,6 @@ class IsosOrtsbildTeil(Base, IsosBase, Vector):
     # __minscale__ = 5000
     teil_nummer = Column('teil_id', Integer)
     teil_name = Column('teil_name', Unicode)
-    the_geom = Column(Geometry2D)
 
 
 class IsosOrtsbildHinweis(Base, IsosBase, Vector):
@@ -61,7 +59,6 @@ class IsosOrtsbildHinweis(Base, IsosBase, Vector):
     siehe_auch = Column('siehe_auch', Unicode)
     teil_nummer = Column('teil_id', Integer)
     teil_name = Column('teil_name', Unicode)
-    the_geom = Column(Geometry2D)
 
 register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbild)
 register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbildPerimeter)
@@ -73,7 +70,6 @@ class IsosFotoBase(IsosBase):
     __bodId__ = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos'
     __queryable_attributes__ = ['id', 'name']
     __label__ = 'name'
-    the_geom = Column(Geometry2D)
 
 
 class IsosFotoOrtsbild(Base, IsosFotoBase, Vector):
