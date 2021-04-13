@@ -2160,6 +2160,11 @@ class Waldreservate(Base, Vector):
     gisflaeche = Column('obj_gisflaeche', Float)
     gesflaeche = Column('obj_gesflaeche', Float)
     mcpfe = Column('mcpfe_class', Unicode)
+    mcpfe_class_de = Column('mcpfe_class_de', Unicode)
+    mcpfe_class_fr = Column('mcpfe_class_fr', Unicode)
+    mcpfe_class_it = Column('mcpfe_class_it', Unicode)
+    mcpfe_class_en = Column('mcpfe_class_en', Unicode)
+    mcpfe_class_rm = Column('mcpfe_class_rm', Unicode)
     the_geom = Column(Geometry2D)
 
 register(Waldreservate.__bodId__, Waldreservate)
