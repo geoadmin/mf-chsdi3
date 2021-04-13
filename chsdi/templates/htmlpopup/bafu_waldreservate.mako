@@ -17,6 +17,6 @@
         <td>-</td></tr>
       % endif
     <tr><td class="cell-left">${_('ch.bafu.waldreservate.gisteilobjekt')}</td><td>${round(c['attributes']['gisteilobjekt'], 2) or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.waldreservate.mcpfe')}</td><td>${c(['attributes'][class_text]) or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.waldreservate.mcpfe')}</td><td>${c['attributes'][class_text] or '-'}</td></tr>
 </%def>
 
