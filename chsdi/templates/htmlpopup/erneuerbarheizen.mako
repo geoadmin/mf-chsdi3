@@ -52,7 +52,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bfe.erneuerbarheizen.consultingcosts')}</td>
-        % if c['attributes']['consultingcosts'] == '':
+        % if c['attributes']['consultingcosts']:
             <td>${_('ch.bfe.erneuerbarheizen.onrequest')}<td>
         % else:
             <td>${c['attributes']['consultingcosts']}</td>
