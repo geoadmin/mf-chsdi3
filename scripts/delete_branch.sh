@@ -10,6 +10,15 @@ BRANCH_DIR=$BASE/private/branch
 CONF="$BASE/conf/00-$BRANCH.conf"
 BASEDIR="$BRANCH_DIR/$BRANCH"
 
+list_branches() {
+    # prints branch name and date of last modification
+    local frmt="%-100s %s\n"
+    printf "${frmt}" "<BRANCH NAME>" "<LAST MODIFICATION>"
+    for branch in "${BRANCH_DIR}"/*; do
+        printf "${frmt}" "$(basename "${branch}")" "$(date -r "${branch}" +"%F %T")"
+    done
+}
+
 # Read target ips
 source <(grep "$TARGET =" deploy/deploy.cfg | sed 's/ *//g')
 IFS=', ' read -r -a TARGET_IPS <<< "${!TARGET}"
@@ -30,13 +39,13 @@ if [ $# -ne 2 ]; then
     for TARGET_IP in "${TARGET_IPS[@]}"; do
         if [ $TARGET_IP ]; then
             echo "Possible values on $TARGET_IP:"
-            BRANCHES=$(ssh $USER@$TARGET_IP "ls $BRANCH_DIR")
+            BRANCHES=$(ssh $USER@$TARGET_IP "$(typeset -f list_branches); list_branches")
         else
             echo "Possible values on dev:"
-            BRANCHES=$(ls $BRANCH_DIR)
+            BRANCHES=$(list_branches)
         fi
-        for b in $BRANCHES; do
-            echo "        $b"
+        for b in "$BRANCHES"; do
+            echo "$b"
         done
     done
     exit 0
