@@ -76,7 +76,6 @@ class PronaturaWaldreservate(Base, Vector):
     mcpfe_class_fr = Column('mcpfe_class_fr', Unicode)
     mcpfe_class_it = Column('mcpfe_class_it', Unicode)
     mcpfe_class_en = Column('mcpfe_class_en', Unicode)
-    mcpfe_class_rm = Column('mcpfe_class_rm', Unicode)
     the_geom = Column(Geometry2D)
 
 register(PronaturaWaldreservate.__bodId__, PronaturaWaldreservate)
