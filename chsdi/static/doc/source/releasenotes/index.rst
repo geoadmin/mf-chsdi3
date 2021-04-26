@@ -36,6 +36,12 @@ Geodata
 *******
 
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hail hazard (size), 10 years <//map.geo.admin.ch/?layers=ch.meteoschweiz.hagelgefaehrdung-korngroesse_10_jahre>`__ (ch.meteoschweiz.hagelgefaehrdung-korngroesse_10_jahre)           |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hail hazard (size), 20 years <//map.geo.admin.ch/?layers=ch.meteoschweiz.hagelgefaehrdung-korngroesse_20_jahre>`__ (ch.meteoschweiz.hagelgefaehrdung-korngroesse_20_jahre)           |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hail hazard (size), 50 years <//map.geo.admin.ch/?layers=ch.meteoschweiz.hagelgefaehrdung-korngroesse_50_jahre>`__ (ch.meteoschweiz.hagelgefaehrdung-korngroesse_50_jahre)           |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Aerial images cantons <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-kantone>`__ (ch.swisstopo.lubis-luftbilder-dritte-kantone)                                    |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Mountainbiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.mountainbikeland>`__ (ch.astra.mountainbikeland)                                                                  |
@@ -48,36 +54,56 @@ Geodata
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Interregional wildlife corridor <//map.geo.admin.ch/?layers=ch.bafu.fauna-wildtierkorridor_national>`__ (ch.bafu.fauna-wildtierkorridor_national)                                    |
 +--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Seismic subsoil classes <//map.geo.admin.ch/?layers=ch.bafu.gefahren-baugrundklassen>`__ (ch.bafu.gefahren-baugrundklassen)                                                                                      |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `TBE: Side of tick bite reported <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                                            |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Restrictions for drones <//map.geo.admin.ch/?layers=ch.bazl.einschraenkungen-drohnen>`__ (ch.bazl.einschraenkungen-drohnen)                                                                       |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Aerodromes + Heliports <//map.geo.admin.ch/?layers=ch.bazl.flugplaetze-heliports>`__ (ch.bazl.flugplaetze-heliports)                                                              |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Aeronautical Chart ICAO <//map.geo.admin.ch/?layers=ch.bazl.luftfahrtkarten-icao>`__ (ch.bazl.luftfahrtkarten-icao)                                                               |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Glider Chart <//map.geo.admin.ch/?layers=ch.bazl.segelflugkarte>`__ (ch.bazl.segelflugkarte)                                                                                      |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Mil Airspace Chart <//map.geo.admin.ch/?layers=ch.vbs.milairspacechart>`__ (ch.vbs.milairspacechart)                                                                              |
-+--------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Mountain landing sites <//map.geo.admin.ch/?layers=ch.bazl.gebirgslandeplaetze>`__ (ch.bazl.gebirgslandeplaetze)                                                  |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Airspaces - TMA <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-nahkontrollbezirke>`__ (ch.bazl.luftraeume-nahkontrollbezirke)                                                                     |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Airspaces - FIZ <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-fluginformationszonen>`__ (ch.bazl.luftraeume-fluginformationszonen)                                                               |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Airspaces - FIR <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-fluginformationsgebiet>`__ (ch.bazl.luftraeume-fluginformationsgebiet)                                                               |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Airspaces - CTR <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-kontrollzonen>`__ (ch.bazl.luftraeume-kontrollzonen)                                                                               |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-
-
-
-
+| Update | `Seismic subsoil classes <//map.geo.admin.ch/?layers=ch.bafu.gefahren-baugrundklassen>`__ (ch.bafu.gefahren-baugrundklassen)                                                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `TBE: Side of tick bite reported <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Restrictions for drones <//map.geo.admin.ch/?layers=ch.bazl.einschraenkungen-drohnen>`__ (ch.bazl.einschraenkungen-drohnen)                                                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerodromes + Heliports <//map.geo.admin.ch/?layers=ch.bazl.flugplaetze-heliports>`__ (ch.bazl.flugplaetze-heliports)                                                                 |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aeronautical Chart ICAO <//map.geo.admin.ch/?layers=ch.bazl.luftfahrtkarten-icao>`__ (ch.bazl.luftfahrtkarten-icao)                                                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Glider Chart <//map.geo.admin.ch/?layers=ch.bazl.segelflugkarte>`__ (ch.bazl.segelflugkarte)                                                                                         |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mil Airspace Chart <//map.geo.admin.ch/?layers=ch.vbs.milairspacechart>`__ (ch.vbs.milairspacechart)                                                                                 |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISS MIL PILOTS CHART <//map.geo.admin.ch/?layers=ch.vbs.swissmilpilotschart>`__ (ch.vbs.swissmilpilotschart)                                                                       |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mountain landing sites <//map.geo.admin.ch/?layers=ch.bazl.gebirgslandeplaetze>`__ (ch.bazl.gebirgslandeplaetze)                                                                     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces - TMA <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-nahkontrollbezirke>`__ (ch.bazl.luftraeume-nahkontrollbezirke)                                                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces - FIZ <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-fluginformationszonen>`__ (ch.bazl.luftraeume-fluginformationszonen)                                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces - FIR <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-fluginformationsgebiet>`__ (ch.bazl.luftraeume-fluginformationsgebiet)                                                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces - CTR <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-kontrollzonen>`__ (ch.bazl.luftraeume-kontrollzonen)                                                                  |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aeronatutical Chart ICAO <//map.geo.admin.ch/?layers=ch.bazl.luftfahrtkarten-icao>`__ (ch.bazl.luftfahrtkarten-icao)                                                                 |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map of restricted and danger areas <//map.geo.admin.ch/?layers=ch.vbs.sperr-gefahrenzonenkarte>`__ (ch.vbs.sperr-gefahrenzonenkarte)                                                 |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Spitallandeplätze <//map.geo.admin.ch?layers=ch.bazl.spitallandeplaetze>`__ (ch.bazl.spitallandeplaetze)                                                                             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Pro Natura forest reserves <//map.geo.admin.ch/?layers=ch.pronatura.waldreservate>`__ (ch.pronatura.waldreservate)                                                                   |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Gravimetric base network <//map.geo.admin.ch/?layers=ch.swisstopo.landesschwerenetz>`__ (ch.swisstopo.landesschwerenetz)                                                             |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Glacier Thickness <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-gletschermaechtigkeit>`__ (ch.swisstopo.geologie-gletschermaechtigkeit)                                          |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydrography swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-gewaessernetz>`__ (ch.swisstopo.swisstlm3d-gewaessernetz)                                                 |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-eisenbahnnetz>`__ (ch.swisstopo.swisstlm3d-eisenbahnnetz)                                                     |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cableways swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-uebrigerverkehr>`__ (ch.swisstopo.swisstlm3d-uebrigerverkehr)                                               |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Roads and Tracks swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-strassen>`__ (ch.swisstopo.swisstlm3d-strassen)                                                      |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking trails <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-wanderwege>`__ (ch.swisstopo.swisstlm3d-wanderwege)                                                                |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Forest swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-wald>`__ (ch.swisstopo.swisstlm3d-wald)                                                                        |
++--------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
