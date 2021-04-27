@@ -1001,6 +1001,7 @@ class Erneuerbarheizen(Base, Vector):
     en_consultant_cat = Column('en_consultant_cat', Unicode)
     rm_consultant_cat = Column('rm_consultant_cat', Unicode)
     consultingcosts = Column('consultingcosts', Unicode)
+    website = Column('website', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.erneuerbarheizen', Erneuerbarheizen)
@@ -1030,6 +1031,7 @@ class ErneuerbarheizenMFH(Base, Vector):
     en_consultant_cat = Column('en_consultant_cat', Unicode)
     rm_consultant_cat = Column('rm_consultant_cat', Unicode)
     consultingcosts = Column('consultingcosts', Unicode)
+    website = Column('website', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.erneuerbarheizen-mehrfamilienhaeuser', ErneuerbarheizenMFH)
