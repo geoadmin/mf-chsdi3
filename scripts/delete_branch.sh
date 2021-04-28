@@ -12,9 +12,10 @@ BASEDIR="$BRANCH_DIR/$BRANCH"
 
 list_branches() {
     # prints branch name and date of last modification
+    local my_folder=$1
     local frmt="%-100s %s\n"
     printf "${frmt}" "<BRANCH NAME>" "<LAST MODIFICATION>"
-    for branch in "${BRANCH_DIR}"/*; do
+    for branch in "${my_folder}"/*; do
         printf "${frmt}" "$(basename "${branch}")" "$(date -r "${branch}" +"%F %T")"
     done
 }
@@ -39,10 +40,10 @@ if [ $# -ne 2 ]; then
     for TARGET_IP in "${TARGET_IPS[@]}"; do
         if [ $TARGET_IP ]; then
             echo "Possible values on $TARGET_IP:"
-            BRANCHES=$(ssh $USER@$TARGET_IP "$(typeset -f list_branches); list_branches")
+            BRANCHES=$(ssh $USER@$TARGET_IP "$(typeset -f list_branches); list_branches ${BRANCH_DIR}")
         else
             echo "Possible values on dev:"
-            BRANCHES=$(list_branches)
+            BRANCHES=$(list_branches "${BRANCH_DIR}")
         fi
         for b in "$BRANCHES"; do
             echo "$b"
