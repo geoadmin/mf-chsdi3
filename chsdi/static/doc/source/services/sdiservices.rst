@@ -933,7 +933,7 @@ RESTFul interface is available.
 | Parameters                        | Description                                                                               |
 +===================================+===========================================================================================+
 | **geom (required)**               | A GeoJSON representation of a polyline (type = LineString). The LineString should not     |
-|                                   | have more than 6'000 coordinates.                                                         |
+|                                   | have more than `PROFILE_MAX_AMOUNT_POINTS`, generally 5'000 coordinates.                  |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **sr (optional)**                 | The reference system to use (EPSG code). Valid value are 2056 (for LV95) and 21781 (for   |
 |                                   | LV03). Strongly advised to set one, but if not given, trying to guess which one to use.   |
