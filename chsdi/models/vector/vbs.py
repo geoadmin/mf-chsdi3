@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Unicode, Integer, Float
+from sqlalchemy import Column, Unicode, Integer, Float, Boolean
 
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D, Geometry3D
@@ -82,7 +82,7 @@ register('ch.vbs.territorialregionen', Territorialregionen)
 
 
 class SchiessAnzeigen(Base, Vector):
-    __tablename__ = 'v_schiessanzeigen'
+    __tablename__ = 'schiessanzeigen'
     __table_args__ = ({'autoload': False})
     __template__ = 'templates/htmlpopup/schiessanzeigen.mako'
     __bodId__ = 'ch.vbs.schiessanzeigen'
@@ -98,10 +98,14 @@ class SchiessAnzeigen(Base, Vector):
     url_en = Column('url_en', Unicode)
     belegungsdatum = Column('belegungsdatum', Unicode)
     wochentag = Column('belegungsdatum_wochentag', Unicode)
-    wochentag = Column('belegungsdatum_wochentag', Unicode)
     zeit_von = Column('zeit_von', Unicode)
     zeit_bis = Column('zeit_bis', Unicode)
     anmerkung = Column('anmerkung', Unicode)
+    pdf_de = Column('pdf_de', Unicode)
+    pdf_fr = Column('pdf_fr', Unicode)
+    pdf_it = Column('pdf_it', Unicode)
+    pdf_en = Column('pdf_en', Unicode)
+    kein_schiessen = Column('kein_schiessen', Boolean)
     the_geom = Column(Geometry2D)
 
 register(SchiessAnzeigen.__bodId__, SchiessAnzeigen)
