@@ -28,7 +28,7 @@ pdf = 'pdf_%s' % lang
     ## url
     <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.url')}</td> 
     % if c['attributes'][info_url]:
-      <td><a href="${c['attributes'][info_url]}" target="_blank">${_('ch.vbs.schiessanzeigen.url_title')}</a></td></tr>
+      <td><a href="${c['attributes'][info_url]}" target="_blank">${_('ch.vbs.schiessanzeigen.url')}</a></td></tr>
     % else:
       <td>-</td></tr>
     % endif
@@ -38,14 +38,14 @@ pdf = 'pdf_%s' % lang
       <table>
     ## # iterating weekdays
       % for i in range(len(c['attributes']['wochentag'])):
-        <tr><td>${_('ch.vbs.schiessanzeigen.wochentag.%s' % c['attributes']['wochentag'][i])}</td>
+        <tr><td>${_('ch.vbs.schiessanzeigen.wochentag.%s' % str(c['attributes']['wochentag'][i]%7+1))}</td>
         <td>${c['attributes']['belegungsdatum'][i].strftime("%d.%m.%Y")}</td>
     ## # special case no shooting
-        % if c['attributes']['belegungsdatum'][i]:
+        % if c['attributes']['kein_schiessen'][i]:
         <td colspan="2">${_('ch.vbs.schiessanzeigen.kein_schiessen')}</td></tr>
         % else:
           <td>${'%s - %s' % (c['attributes']['zeit_von'][i], c['attributes']['zeit_bis'][i])}</td>
-          <td><a href="${c['attributes'][pdf]}" target="_blank">PDF</a></td></tr>
+          <td><a href="${c['attributes'][pdf][i]}" target="_blank">PDF</a></td></tr>
         % endif
       % endfor
       </table>
