@@ -103,7 +103,7 @@
           // 650, 500, 250, 100, 50, 20, 10, 5, 2.5, 2, 1, 0.5, 0.25, 0.1
           resolution: 10,
           // Define a coordinate CH1903 (EPSG:21781) for the center of the view
-          center: [${c['attributes']['koordinate_ost']},${c['attributes']['koordinate_nord']}]
+          center: [${c['attributes']['koordinate_ost']-2000000},${c['attributes']['koordinate_nord']-1000000}]
           }),
           tooltip: false, 
           interactions: ol.interaction.defaults({doubleClickZoom: false, dragPan: false, mouseWheelZoom: false})
@@ -127,7 +127,7 @@
          // 650, 500, 250, 100, 50, 20, 10, 5, 2.5, 2, 1, 0.5, 0.25, 0.1
          resolution: 2,
          // Define a coordinate CH1903 for the center of the view
-         center: [${c['attributes']['koordinate_ost']},${c['attributes']['koordinate_nord']}]
+         center: [${c['attributes']['koordinate_ost']-2000000},${c['attributes']['koordinate_nord']-1000000}]
          }),
          tooltip: false,
          interactions: ol.interaction.defaults({doubleClickZoom: false, dragPan: false, mouseWheelZoom: false})
