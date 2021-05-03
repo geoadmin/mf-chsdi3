@@ -3444,7 +3444,7 @@ class GletschermaechtigkeitGPRProfiles(Base, Gletschermaechtigkeit, Vector):
     __template__ = 'templates/htmlpopup/gletschermaechtigkeit_gpr_profiles.mako'
     __label__ = 'gpr_prf_name'
     gpr_prf_name = Column('prf_name', Unicode)
-    gpr_max_thik = Column('max_thik', Float)
+    gpr_max_thik = Column('max_thik', Integer)
 
 
 class GletschermaechtigkeitIceThikness(Base, Gletschermaechtigkeit, Vector):
@@ -3452,8 +3452,9 @@ class GletschermaechtigkeitIceThikness(Base, Gletschermaechtigkeit, Vector):
     __template__ = 'templates/htmlpopup/gletschermaechtigkeit_ice_thikness.mako'
     __label__ = 'pk_sgi'
     pk_sgi = Column('pk_sgi', Unicode)
-    mean_thik = Column('mean_thik', Float)
-    max_thik = Column('max_thik', Float)
+    name = Column('name', Unicode)
+    mean_thick = Column('mean_thick', Integer)
+    max_thick = Column('max_thick', Integer)
     volume = Column('volume', Float)
     year_mode = Column('year_mode', Integer)
 
