@@ -63,7 +63,6 @@ class PronaturaWaldreservate(Base, Vector):
     __table_args__ = ({'schema': 'pronatura', 'autoload': False})
     __template__ = 'templates/htmlpopup/pronatura.mako'
     __bodId__ = 'ch.pronatura.waldreservate'
-    __queryable_attributes__ = ['name', 'objnummer', 'gesflaeche', 'gesflaeche', 'gisteilobjekt']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     objnummer = Column('objnummer', Integer)
