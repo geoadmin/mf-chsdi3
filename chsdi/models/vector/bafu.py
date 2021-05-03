@@ -2034,6 +2034,7 @@ class Baugrundklassen(Base, Vector):
     __returnedGeometry__ = 'the_geom_highlight'
     id = Column('_count', Integer, primary_key=True)
     bgk = Column('bgk', Unicode)
+    referenz = Column('referenz', Unicode)
     the_geom = Column(Geometry2D)
     the_geom_highlight = Column('the_geom_highlight', Geometry2D)
 
