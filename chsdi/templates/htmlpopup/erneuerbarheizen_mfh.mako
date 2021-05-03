@@ -5,7 +5,7 @@
   layer = c['layerBodId']
 %>
 <%
-    lang = lang if lang in ('fr', 'it') else 'de' #TODO
+    lang = lang if lang in ('fr', 'it') else 'de'
     consultant_cat = '%s_consultant_cat' % lang
     language = '%s_language' % lang
 
@@ -51,6 +51,14 @@
     <tr>
         <td class="cell-left">${_(layer +'.addres')}</td>
         <td>${address}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_(layer +'.consultingcosts')}</td>
+        % if not c['attributes']['consultingcosts']:
+            <td>${_(layer + '.onrequest')}<td>
+        % else:
+            <td>${c['attributes']['consultingcosts']} </td>
+        % endif
     </tr>
     <tr>
         <td class="cell-left">${_(layer +'.language')}</td>

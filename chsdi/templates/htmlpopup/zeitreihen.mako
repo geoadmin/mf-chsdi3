@@ -85,7 +85,7 @@ def get_viewer_url(request, params):
     <td>${c['attributes']['release_year'] or '-'}</td></tr>
   <tr>
     <td class="cell-left">${_('blattbezeichnung')}</td>
-    <td><a target="_blank" href="http://www.alexandria.ch/primo_library/libweb/action/dlSearch.do?institution=BIG&vid=ALEX&scope=default_scope&query=lsr07,contains,${c['attributes']['bv_nummer']}">${c['attributes']['kbbez'] or '-'}</a></td>
+    <td><a target="_blank" href="http://www.alexandria.ch/discovery/search?tab=in_library&search_scope=swisstopo&vid=41BIG_INST:ALEX&query=lds02,contains,${c['attributes']['bv_nummer']}">${c['attributes']['kbbez'] or '-'}</a></td>
   </tr>
 
 % if viewer_url != "" and preview_url != "" and image_width != None:

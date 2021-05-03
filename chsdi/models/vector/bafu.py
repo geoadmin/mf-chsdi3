@@ -2034,6 +2034,7 @@ class Baugrundklassen(Base, Vector):
     __returnedGeometry__ = 'the_geom_highlight'
     id = Column('_count', Integer, primary_key=True)
     bgk = Column('bgk', Unicode)
+    referenz = Column('referenz', Unicode)
     the_geom = Column(Geometry2D)
     the_geom_highlight = Column('the_geom_highlight', Geometry2D)
 
@@ -2151,7 +2152,6 @@ class Waldreservate(Base, Vector):
     __table_args__ = ({'schema': 'wald', 'autoload': False})
     __template__ = 'templates/htmlpopup/bafu_waldreservate.mako'
     __bodId__ = 'ch.bafu.waldreservate'
-    __queryable_attributes__ = ['objnummer', 'name', 'gisflaeche', 'gesflaeche', 'gisteilobjekt', 'mcpfe']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     objnummer = Column('objnummer', Unicode)
@@ -2159,7 +2159,10 @@ class Waldreservate(Base, Vector):
     name = Column('name', Unicode)
     gisflaeche = Column('obj_gisflaeche', Float)
     gesflaeche = Column('obj_gesflaeche', Float)
-    mcpfe = Column('mcpfe_class', Unicode)
+    mcpfe_class_de = Column('mcpfe_class_de', Unicode)
+    mcpfe_class_fr = Column('mcpfe_class_fr', Unicode)
+    mcpfe_class_it = Column('mcpfe_class_it', Unicode)
+    mcpfe_class_en = Column('mcpfe_class_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register(Waldreservate.__bodId__, Waldreservate)
@@ -2390,3 +2393,24 @@ class LandesforstinventarSchutzwaldregion(Base, LandesforstinventarRegion, Vecto
     __bodId__ = 'ch.bafu.landesforstinventar-schutzwaldregionen'
 
 register(LandesforstinventarSchutzwaldregion.__bodId__, LandesforstinventarSchutzwaldregion)
+
+
+class AmphibienwanderungVerkehrskonflikte(Base, Vector):
+    __tablename__ = 'amphibienwanderung_verkehrskonflikte'
+    __table_args__ = ({'schema': 'fauna', 'autoload': False})
+    __bodId__ = 'ch.bafu.amphibienwanderung-verkehrskonflikte'
+    __template__ = 'templates/htmlpopup/amphibienwanderung-verkehrskonflikte.mako'
+    __label__ = 'name'
+    id = Column('nr_datenbank', Integer, primary_key=True)
+    nr_kanton = Column('nr_kanton', Unicode)
+    name = Column('name', Unicode)
+    type_de = Column('type_de', Unicode)
+    type_fr = Column('type_fr', Unicode)
+    type_it = Column('type_it', Unicode)
+    massnahme_de = Column('massnahme_de', Unicode)
+    massnahme_fr = Column('massnahme_fr', Unicode)
+    massnahme_it = Column('massnahme_it', Unicode)
+    ref_datenblatt = Column('ref_datenblatt', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(AmphibienwanderungVerkehrskonflikte.__bodId__, AmphibienwanderungVerkehrskonflikte)

@@ -1001,6 +1001,8 @@ class Erneuerbarheizen(Base, Vector):
     en_consultant_cat = Column('en_consultant_cat', Unicode)
     rm_consultant_cat = Column('rm_consultant_cat', Unicode)
     consultingcosts = Column('consultingcosts', Unicode)
+    # Website is intenionally defined only in the model and not used for the htmlpopup
+    website = Column('website', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.erneuerbarheizen', Erneuerbarheizen)
@@ -1029,6 +1031,9 @@ class ErneuerbarheizenMFH(Base, Vector):
     it_consultant_cat = Column('it_consultant_cat', Unicode)
     en_consultant_cat = Column('en_consultant_cat', Unicode)
     rm_consultant_cat = Column('rm_consultant_cat', Unicode)
+    consultingcosts = Column('consultingcosts', Unicode)
+    # Website is intenionally defined only in the model and not used for the htmlpopup
+    website = Column('website', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.erneuerbarheizen-mehrfamilienhaeuser', ErneuerbarheizenMFH)
