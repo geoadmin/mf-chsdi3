@@ -2397,7 +2397,6 @@ class AmphibienwanderungVerkehrskonflikte(Base, Vector):
     __table_args__ = ({'schema': 'fauna', 'autoload': False})
     __bodId__ = 'ch.bafu.amphibienwanderung-verkehrskonflikte'
     __template__ = 'templates/htmlpopup/amphibienwanderung-verkehrskonflikte.mako'
-    __queryable_attributes__ = ['nr_datenbank', 'name']
     __label__ = 'name'
     id = Column('nr_datenbank', Integer, primary_key=True)
     nr_kanton = Column('nr_kanton', Unicode)
