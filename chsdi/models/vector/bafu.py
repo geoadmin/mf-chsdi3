@@ -2151,7 +2151,6 @@ class Waldreservate(Base, Vector):
     __table_args__ = ({'schema': 'wald', 'autoload': False})
     __template__ = 'templates/htmlpopup/bafu_waldreservate.mako'
     __bodId__ = 'ch.bafu.waldreservate'
-    __queryable_attributes__ = ['objnummer', 'name', 'gisflaeche', 'gesflaeche', 'gisteilobjekt', 'mcpfe']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     objnummer = Column('objnummer', Unicode)
@@ -2159,7 +2158,10 @@ class Waldreservate(Base, Vector):
     name = Column('name', Unicode)
     gisflaeche = Column('obj_gisflaeche', Float)
     gesflaeche = Column('obj_gesflaeche', Float)
-    mcpfe = Column('mcpfe_class', Unicode)
+    mcpfe_class_de = Column('mcpfe_class_de', Unicode)
+    mcpfe_class_fr = Column('mcpfe_class_fr', Unicode)
+    mcpfe_class_it = Column('mcpfe_class_it', Unicode)
+    mcpfe_class_en = Column('mcpfe_class_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register(Waldreservate.__bodId__, Waldreservate)
