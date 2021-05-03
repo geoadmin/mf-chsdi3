@@ -2,57 +2,40 @@
 
 <%inherit file="base.mako"/>
 
-<%!
-   from chsdi.lib.helpers import quoting
-%>
-
 <%def name="table_body(c, lang)">
-    <tr><td class="cell-left">${_('kanton')}</td>                     <td>${c['attributes']['kanton'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ortsbildname')}</td>               <td>${c['attributes']['ortsbildname']}</td></tr>
-    <tr><td class="cell-left">${_('kategorie')}</td>                  <td>${c['attributes']['vergleichsrastereinheit'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('lagequalitaeten')}</td>            <td>${c['attributes']['lagequalitaeten'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('raeumliche_qualitaeten')}</td>     <td>${c['attributes']['raeumliche_qualitaeten'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('arch__hist__qualitaeten')}</td>    <td>${c['attributes']['arch__hist__qualitaeten'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('fassung')}</td>                    <td>${c['attributes']['fassungsjahr'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('band_1_2')}</td>                   <td>${c['attributes']['band_1'] or '-'} | ${c['attributes']['band_2'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('publikationsjahr_1_2')}</td>       <td>${c['attributes']['publikationsjahr_1'] or '-'} | ${c['attributes']['publikationsjahr_2'] or '-'}</td></tr>
-<%
-dataHost = request.registry.settings['datageoadminhost']
-dataPath = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder/PDF'
-url_pdf = None
-url_pdf2 = None
-if c['attributes']['pdf_dokument_1']:
-  url_pdf = '//%s/%s/%s.pdf' % (dataHost, dataPath, c['attributes']['pdf_dokument_1'])
-if c['attributes']['pdf_dokument_2']:
-  url_pdf2 = '//%s/%s/%s.pdf' % (dataHost, dataPath, c['attributes']['pdf_dokument_2'])
+    <tr><td class="cell-left">${_('ch.bak.bundesinventar-schuetzenswerte-ortsbilder.kanton')}</td>
+    % if c['attributes']['kantone']:
+      <td>${', '.join(c['attributes']['kantone'])}</td></tr>
+    % else:
+      <td>${'-'}</td></tr>
+    % endif
+    <tr><td class="cell-left">${_('ch.bak.bundesinventar-schuetzenswerte-ortsbilder.nummer')}</td>         <td>${c['attributes']['nummer'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bak.bundesinventar-schuetzenswerte-ortsbilder.name')}</td>           <td>${c['attributes']['name']}</td></tr>
+    <tr><td class="cell-left">${_('ch.bak.bundesinventar-schuetzenswerte-ortsbilder.kategorie')}</td>      <td>${c['attributes']['siedlungskategorie'] or '-'}</td></tr>
+    
+    % if c['attributes'].get('hinweis_nummer'):
+      <tr><td class="cell-left">${_(c['layerBodId']+'.hinweis_nummer')}</td>         <td>${c['attributes']['hinweis_nummer'] or '-'}</td></tr>
+      <tr><td class="cell-left">${_(c['layerBodId']+'.hinweis_name')}</td>           <td>${c['attributes']['hinweis_name']}</td></tr>
+    % endif
+       
+    % if c['attributes'].get('teil_nummer') :
+      <tr><td class="cell-left">${_(c['layerBodId']+'.teil_nummer')}</td>         <td>${c['attributes']['teil_nummer'] or '-'}</td></tr>
+      <tr><td class="cell-left">${_(c['layerBodId']+'.teil_name')}</td>           <td>${c['attributes']['teil_name']}</td></tr>
+    % endif
 
-pdfname = []
-if c['attributes']['pdfspecial'] is not None:
-    pdfname = c['attributes']['pdfspecial'].split(',')
-%>
-    <tr>
-      % if  c['attributes']['pdf_dokument_1'] != 'ISOS_5800':
-      <td class="cell-left">${_('pdf_dokument_1_2')}</td>
-      <td>
-        % if c['attributes']['pdf_dokument_1']:
-            <a href="${url_pdf}" target="_blank">${c['attributes']['pdf_dokument_1']}.pdf</a> |
-        % else:
-            - | 
-        % endif
-        % if c['attributes']['pdf_dokument_2']:
-            &nbsp;<a href="${url_pdf2}" target="_blank">${c['attributes']['pdf_dokument_2']}.pdf</a>
-        % else:
-            &nbsp;-
-        % endif
-      </td>
-      % elif c['attributes']['pdf_dokument_1'] == 'ISOS_5800' :
-      <td class="cell-left" style="vertical-align: top;">PDFs</td>
-      <td>
-          % for name in pdfname:
-          <a href="//${dataHost}/${dataPath}/ISOS_5800_${name}.pdf"  target="_blank">ISOS_5800_${name}.pdf<a/><br>
-          % endfor
-      </td>
+    % if c['attributes'].get('hinweis_nummer'):
+      <tr><td class="cell-left">${_(c['layerBodId']+'.siehe_auch')}</td>
+      % if c['attributes']['siehe_auch']:
+        <td>${', '.join(c['attributes']['siehe_auch'])}</td></tr>
+      % else:
+        <td>${'-'}</td></tr>
       % endif
-    </tr>
-    <tr><td colspan=2>${_('ch.bak.isos.warning')}</td></td></tr>
+    % endif
+    
+    <tr><td class="cell-left">${_(c['layerBodId']+'.url')}</td>
+    % if c['attributes']['url']:
+      <td><a href="${c['attributes']['url']}" target="_blank">${_('link')}</a></td></tr>
+    % else:
+      <td>${'-'}</td></tr>
+    % endif
 </%def>
