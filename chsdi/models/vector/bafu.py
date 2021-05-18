@@ -2371,6 +2371,7 @@ class LandesforstinventarRegion:
     name_de = Column('name_de', Unicode)
     name_fr = Column('name_fr', Unicode)
     name_it = Column('name_it', Unicode)
+    name_en = Column('name_en', Unicode)
     the_geom = Column(Geometry2D)
 
 
