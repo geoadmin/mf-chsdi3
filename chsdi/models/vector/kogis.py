@@ -28,7 +28,6 @@ class FixpunkteLfp1(Base, Vector):
     __table_args__ = ({'schema': 'fpds', 'autoload': False})
     __template__ = 'templates/htmlpopup/fixpunkte.mako'
     __bodId__ = 'ch.swisstopo.fixpunkte-lfp1'
-    __queryable_attributes__ = ['id']
     __label__ = 'id'
     id = Column('pointid', Unicode, primary_key=True)
     punktname = Column('punktname', Unicode)
@@ -53,7 +52,6 @@ class FixpunkteLfp2(Base, Vector):
     __table_args__ = ({'schema': 'fpds', 'autoload': False})
     __template__ = 'templates/htmlpopup/fixpunkte.mako'
     __bodId__ = 'ch.swisstopo.fixpunkte-lfp2'
-    __queryable_attributes__ = ['id']
     __label__ = 'id'
     id = Column('pointid', Unicode, primary_key=True)
     nbident = Column('nbident', Unicode)
@@ -78,7 +76,6 @@ class FixpunkteHfp1(Base, Vector):
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
     __template__ = 'templates/htmlpopup/fixpunkte.mako'
     __bodId__ = 'ch.swisstopo.fixpunkte-hfp1'
-    __queryable_attributes__ = ['id', 'bgdi_label']
     __label__ = 'id'
     id = Column('pointid', Unicode, primary_key=True)
     bgdi_label = Column('bgdi_label', Unicode)
@@ -104,7 +101,6 @@ class FixpunkteHfp2(Base, Vector):
     __table_args__ = ({'schema': 'fpds', 'autoload': True})
     __template__ = 'templates/htmlpopup/fixpunkte.mako'
     __bodId__ = 'ch.swisstopo.fixpunkte-hfp2'
-    __queryable_attributes__ = ['id']
     __label__ = 'id'
     id = Column('pointid', Unicode, primary_key=True)
     nbident = Column('nbident', Unicode)

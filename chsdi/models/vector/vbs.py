@@ -11,7 +11,6 @@ Base = bases['vbs']
 class Kulturgueter:
     __table_args__ = ({'schema': 'babs', 'autoload': False})
     __template__ = 'templates/htmlpopup/kgs.mako'
-    __queryable_attributes__ = ['zkob']
     __extended_info__ = True
     __label__ = 'zkob'
     id = Column('kgs_nr', Integer, primary_key=True)
@@ -142,7 +141,6 @@ class Retablierungsstellen(Base, Vector):
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
     __template__ = 'templates/htmlpopup/retablierungsstellen.mako'
     __bodId__ = 'ch.vbs.retablierungsstellen'
-    __queryable_attributes__ = ['name']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
@@ -157,7 +155,6 @@ class Armeelogistikcenter(Base, Vector):
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
     __template__ = 'templates/htmlpopup/armeelogistikcenter.mako'
     __bodId__ = 'ch.vbs.armeelogistikcenter'
-    __queryable_attributes__ = ['name', 'abkuerzung']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
@@ -174,7 +171,6 @@ class BundestankstellenBebeco:
     __table_args__ = ({'schema': 'militaer', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/bundestankstellen.mako'
     __bodId__ = 'ch.vbs.bundestankstellen-bebeco'
-    __queryable_attributes__ = ['ort', 'standort', 'adresse', 'plz', 'produkt_de', 'produkt_fr', 'produkt_it']
     __label__ = 'ort'
     __returnedGeometry__ = 'the_geom_point'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -215,7 +211,6 @@ class LogistikraeumeArmeelogistikcenter(Base, Vector):
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
     __template__ = 'templates/htmlpopup/logistikraeume.mako'
     __bodId__ = 'ch.vbs.logistikraeume-armeelogistikcenter'
-    __queryable_attributes__ = ['kanton', 'region']
     __label__ = 'kanton'
     id = Column('bgdi_id', Integer, primary_key=True)
     kanton = Column('kantone', Unicode)
@@ -230,7 +225,6 @@ class Waldschaden(Base, Vector):
     __table_args__ = ({'schema': 'wascha', 'autoload': False})
     __template__ = 'templates/htmlpopup/waldschadenkarte.mako'
     __bodId__ = 'ch.vbs.waldschadenkarte'
-    __queryable_attributes__ = ['lauf_nr', 'jahr_schad', 'gde_name', 'lokalname', 'x_koord', 'y_koord']
     __label__ = 'lauf_nr'
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
@@ -355,7 +349,6 @@ class KatasterBelasteterStandorteMilitaer(Base, Vector):
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
     __template__ = 'templates/htmlpopup/kataster_belasteter_standorte_militaer.mako'
     __bodId__ = 'ch.vbs.kataster-belasteter-standorte-militaer'
-    __queryable_attributes__ = ['katasternummer']
     __label__ = 'katasternummer'
     id = Column('bgdi_id', Integer, primary_key=True)
     katasternummer = Column('katasternummer', Unicode)
