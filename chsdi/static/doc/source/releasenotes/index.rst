@@ -14,6 +14,35 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20210630:
+
+
+Release 20210630 - Wednesday, June 30th 2021
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcement: the layers ch.bfe.bikesharing, ch.mobility.standorte and ch.bfe.energiestaedte-energieregionen have been removed from the FSDI services as previously announced
+- Announcement: the layer ch.bafu.bundesinventare-flachmoore_regional will be completely removed from the FSDI services in June 2021
+- Announcement: the layers ch.bafu.showme-gemeinden_hochwasser, ch.bafu.showme-gemeinden_lawinen, ch.bafu.showme-gemeinden_rutschungen, ch.bafu.showme-gemeinden_sturzprozesse, ch.bafu.showme-kantone_hochwasser, ch.bafu.showme-kantone_lawinen, ch.bafu.showme-kantone_rutschungen and ch.bafu.showme-kantone_sturzprozesse will be completely removed from the FSDI services in June 2021
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_210505...r_210630>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_210505...r_210630>`__
+
+Geodata
+*******
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Solar energy: suitability of roofs <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-daecher>`__ (ch.bfe.solarenergie-eignung-daecher)                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20210505:
 
 
