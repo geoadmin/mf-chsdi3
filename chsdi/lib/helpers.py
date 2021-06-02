@@ -630,7 +630,7 @@ def unnacent_where_text(where_string, model):
                 if str(getattr(model, where_text_split[0]).type) == 'VARCHAR':
                     # if we get to this place, it means we have a string type of data with a custom input from the
                     # customer and we will need to unaccent them to make the search.
-                    return "unaccent({}) {} {}".format(where_text_split[0], separator, sanitize_user_input_accents(separate_statements(where_text_split[1], model)))
+                    return "remove_accents({}) {} {}".format(where_text_split[0], separator, sanitize_user_input_accents(separate_statements(where_text_split[1], model)).lower())
                 else:
                     # if we get here, it means we had a separator, but it's not a string (only possibility should be '='
                     # and a number. So we break out of the for loop for performances purpose
