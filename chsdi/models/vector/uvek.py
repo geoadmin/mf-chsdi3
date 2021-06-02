@@ -1783,7 +1783,7 @@ register('ch.bazl.hindernisbegrenzungsflaechen-perimeter', Hindernisbegrenzungsf
 
 
 class AstraStrasseFacilitiesA(Base, Vector):
-    __tablename__ = 'sachplan_strasse_fac_anhorung'
+    __tablename__ = 'sachplan_strasse_fac_anhoerung'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/astra_strasse_facilities.mako'
     __bodId__ = 'ch.astra.sachplan-infrastruktur-strasse_anhoerung'
@@ -1814,7 +1814,7 @@ class AstraStrasseFacilitiesA(Base, Vector):
 
 
 class AstraStrassePlanningA(Base, Vector):
-    __tablename__ = 'sachplan_strasse_pl_anhorung'
+    __tablename__ = 'sachplan_strasse_pl_anhoerung'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/astra_strasse_planning.mako'
     __bodId__ = 'ch.astra.sachplan-infrastruktur-strasse_anhoerung'
@@ -1851,7 +1851,7 @@ class AstraStrassePlanningA(Base, Vector):
 
 
 class AstraStrassePlanningRasterA(Base, Vector):
-    __tablename__ = 'sachplan_strasse_pl_r_anhorung'
+    __tablename__ = 'sachplan_strasse_pl_r_anhoerung'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/astra_strasse_planning.mako'
     __bodId__ = 'ch.astra.sachplan-infrastruktur-strasse_anhoerung'
