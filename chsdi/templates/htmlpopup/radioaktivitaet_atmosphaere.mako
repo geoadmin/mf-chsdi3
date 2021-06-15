@@ -12,6 +12,6 @@
     <tr><td class="cell-left">${_('ch.bag.radioaktivitaet-atmosphaere.nuc3')}</td>       <td>${c['attributes']['nuc3'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bag.radioaktivitaet-atmosphaere.nuc4')}</td>       <td>${c['attributes']['nuc4'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bag.radioaktivitaet-atmosphaere.nuc5')}</td>       <td>${c['attributes']['nuc5'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('link')}</td>            <td><a target="_blank" href="${c['attributes']['stationlink']}">${_('link') or '-'}</a></td></tr>
+    <tr><td class="cell-left">${_('ch.bag.radioaktivitaet-atmosphaere.stationlink')}</td>            <td><a target="_blank" href="${c['attributes']['stationlink']}">${_('link') or '-'}</a></td></tr>
 </%def>
 
