@@ -1,11 +1,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-    <%
-    c['stable_id'] = True 
-    %>
-
-    <tr><td class="cell-left">${_('ch.bag.radioaktivitaet-atmosphaere.station')}</td>    <td>${c['id']}</td></tr>
+    <tr><td class="cell-left">${_('ch.bag.radioaktivitaet-atmosphaere.station')}</td>    <td>${c['attributes']['station'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bag.radioaktivitaet-atmosphaere.period')}</td>     <td>${c['attributes']['period'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bag.radioaktivitaet-atmosphaere.nuc1')}</td>       <td>${c['attributes']['nuc1'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bag.radioaktivitaet-atmosphaere.nuc2')}</td>       <td>${c['attributes']['nuc2'] or '-'}</td></tr>
