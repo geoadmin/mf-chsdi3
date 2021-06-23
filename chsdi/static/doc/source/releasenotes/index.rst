@@ -26,9 +26,9 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- Announcement: the layers ch.bfe.bikesharing, ch.mobility.standorte and ch.bfe.energiestaedte-energieregionen have been removed from the FSDI services as previously announced
-- Announcement: the layer ch.bafu.bundesinventare-flachmoore_regional will be completely removed from the FSDI services in June 2021
-- Announcement: the layers ch.bafu.showme-gemeinden_hochwasser, ch.bafu.showme-gemeinden_lawinen, ch.bafu.showme-gemeinden_rutschungen, ch.bafu.showme-gemeinden_sturzprozesse, ch.bafu.showme-kantone_hochwasser, ch.bafu.showme-kantone_lawinen, ch.bafu.showme-kantone_rutschungen and ch.bafu.showme-kantone_sturzprozesse will be completely removed from the FSDI services in June 2021
+- Announcement: the layer ch.swisstopo.konsultation-lk10-landeskarte will completely be removed from FSDI services on Sept. 8th 2021
+- Announcement: the layer ch.bafu.bundesinventare-flachmoore_regional has been removed from the FSDI services as previously announced
+- Announcement: the layers ch.bafu.showme-gemeinden_hochwasser, ch.bafu.showme-gemeinden_lawinen, ch.bafu.showme-gemeinden_rutschungen, ch.bafu.showme-gemeinden_sturzprozesse, ch.bafu.showme-kantone_hochwasser, ch.bafu.showme-kantone_lawinen, ch.bafu.showme-kantone_rutschungen and ch.bafu.showme-kantone_sturzprozesse have been removed from the FSDI services as previously announced
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_210505...r_210630>`__
 
 `MAP <//map.geo.admin.ch>`__
