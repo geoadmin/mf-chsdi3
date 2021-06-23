@@ -96,11 +96,19 @@
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.foto_1_li')}</td>
-  <td>${c['attributes']['foto_1_li'] or '-'}</td>
+  % if c['attributes']['foto_1_li']:
+    <td><a target="_blank" href="${c['attributes']['foto_1_li']}">${_('link')}</a></td>
+  % else:
+    <td>-</td>
+  % endif
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.foto_2_li')}</td>
-  <td>${c['attributes']['foto_2_li'] or '-'}</td>
+  % if c['attributes']['foto_2_li']:
+    <td><a target="_blank" href="${c['attributes']['foto_2_li']}">${_('link')}</a></td>
+  % else:
+    <td>-</td>
+  % endif
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.markierung_re')}</td>
@@ -124,11 +132,19 @@
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.foto_1_re')}</td>
-  <td>${c['attributes']['foto_1_re'] or '-'}</td>
+  % if c['attributes']['foto_1_re']:
+    <td><a target="_blank" href="${c['attributes']['foto_1_re']}">${_('link')}</a></td>
+  % else:
+    <td>-</td>
+  % endif
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.foto_2_re')}</td>
-  <td>${c['attributes']['foto_2_re'] or '-'}</td>
+  % if c['attributes']['foto_2_re']:
+    <td><a target="_blank" href="${c['attributes']['foto_2_re']}">${_('link')}</a></td>
+  % else:
+    <td>-</td>
+  % endif
 </tr>
 </table>
 </%def>
