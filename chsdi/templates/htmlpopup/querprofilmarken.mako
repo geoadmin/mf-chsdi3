@@ -22,11 +22,19 @@
 </tr>
 <tr>
   <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.bww_km')}</td>
-  <td>${str(round(c['attributes']['bww_km'], 2)) or '-'}</td>
+  % if c['attributes']['bww_km']:
+  <td>${str(round(c['attributes']['bww_km'], 2))}</td>
+  % else:
+  <td>-</td>
+  % endif
 </tr>
 <tr>
   <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.lokale_km')}</td>
-  <td>${str(round(c['attributes']['lokale_km'], 2)) or '-'}</td>
+  % if c['attributes']['lokale_km']:
+  <td>${str(round(c['attributes']['lokale_km'], 2))}</td>
+  % else:
+  <td>-</td>
+  % endif
 </tr>
 <tr>
   <td class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.datum')}</td>
@@ -64,11 +72,19 @@
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.bww_km')}</th>
-  <td>${str(round(c['attributes']['bww_km'], 2)) or '-'}</td>
+  % if c['attributes']['bww_km']:
+  <td>${str(round(c['attributes']['bww_km'], 2))}</td>
+  % else:
+  <td>-</td>
+  % endif
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.lokale_km')}</th>
-  <td>${str(round(c['attributes']['lokale_km'], 2)) or '-'}</td>
+  % if c['attributes']['lokale_km']:
+  <td>${str(round(c['attributes']['lokale_km'], 2))}</td>
+  % else:
+  <td>-</td>
+  % endif
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.datum')}</th>
@@ -80,19 +96,36 @@
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.e_li')}</th>
-  <td>${round(c['attributes']['e_li'], 2) or '-'}</td>
+  % if c['attributes']['e_li']:
+  <td>${round(c['attributes']['e_li'], 2)}</td>
+  % else:
+  <td>-</td>
+  % endif
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.n_li')}</th>
-  <td>${round(c['attributes']['n_li'], 2) or '-'}</td>
+  % if c['attributes']['n_li']:
+  <td>${round(c['attributes']['n_li'], 2)}</td>
+  % else:
+  <td>-</td>
+  % endif
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.hoehe_li')}</th>
-  <td>${round(c['attributes']['hoehe_li'], 2) or '-'}</td>
+  % if c['attributes']['hoehe_li']:
+  <td>${round(c['attributes']['hoehe_li'], 2)}</td>
+  % else:
+  <td>-</td>
+  % endif
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.azimut_li')}</th>
-  <td>${round(c['attributes']['azimut_li'], 2) or '-'}</td>
+  % if c['attributes']['azimut_li']:
+  <td>${round(c['attributes']['azimut_li'], 2)}</td>
+  % else:
+  <td>-</td>
+  % endif
+  
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.foto_1_li')}</th>
@@ -116,19 +149,35 @@
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.e_re')}</th>
-  <td>${round(c['attributes']['e_re'], 2) or '-'}</td>
+  % if c['attributes']['e_re']:
+  <td>${round(c['attributes']['e_re'], 2)}</td>
+  % else:
+  <td>-</td>
+  % endif
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.n_re')}</th>
-  <td>${round(c['attributes']['n_re'], 2) or '-'}</td>
+  % if c['attributes']['n_re']:
+  <td>${round(c['attributes']['n_re'], 2)}</td>
+  % else:
+  <td>-</td>
+  % endif
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.hoehe_re')}</th>
-  <td>${round(c['attributes']['hoehe_re'], 2) or '-'}</td>
+  % if c['attributes']['hoehe_re']:
+  <td>${round(c['attributes']['hoehe_re'], 2)}</td>
+  % else:
+  <td>-</td>
+  % endif
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.azimut_re')}</th>
-  <td>${round(c['attributes']['azimut_re'], 2) or '-'}</td>
+  % if c['attributes']['azimut_re']:
+  <td>${round(c['attributes']['azimut_re'], 2)}</td>
+  % else:
+  <td>-</td>
+  % endif
 </tr>
 <tr>
   <th class="cell-left">${_('ch.bafu.wasserbau-querprofilmarken.foto_1_re')}</th>
