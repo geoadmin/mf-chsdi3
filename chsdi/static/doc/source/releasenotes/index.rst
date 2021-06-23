@@ -40,6 +40,8 @@ Geodata
 *******
 
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Radioactivity in the atmosphere <//map.geo.admin.ch/?layers=ch.bag.radioaktivitaet-atmosphaere>`__ (ch.bag.radioaktivitaet-atmosphaere)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Solar energy: suitability of roofs <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-daecher>`__ (ch.bfe.solarenergie-eignung-daecher)                                                                     |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Zeckenstichmodell <//map.geo.admin.ch/?layers=ch.bag.zeckenstichmodell>`__ (ch.bag.zeckenstichmodell)                                                                                                            |
@@ -47,6 +49,10 @@ Geodata
 | Update | `SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product&layers_timestamp=2020&time=2020>`__ (ch.swisstopo.swissimage-product)                                                   |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata&layers_timestamp=2020&time=2020>`__ (ch.swisstopo.swissimage-product.metadata)                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tank relocation routes <//map.geo.admin.ch/?layers=ch.vbs.panzerverschiebungsrouten>`__ (ch.vbs.panzerverschiebungsrouten)                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill)                                                 |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
