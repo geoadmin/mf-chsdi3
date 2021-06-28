@@ -2361,7 +2361,6 @@ class LandesForstInventarVegetationRelief:
     __tablename__ = 'vegetationshoehenmodell_relief'
     __table_args__ = ({'schema': 'wald', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/landesforstinventar-vegetationshoehenmodell.mako'
-    __queryable_attributes__ = ['datenstand']
     __label__ = 'datenstand'
     id = Column('bgdi_id', Integer, primary_key=True)
     datenstand = Column('datenstand', Integer)
