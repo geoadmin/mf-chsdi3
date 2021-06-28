@@ -206,8 +206,8 @@ class TestMapServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/layersConfig', status=200)
         self.assertEqual(resp.content_type, 'application/json')
         jsonData = resp.json
-        self.assertIn('ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp', jsonData)
-        layer = jsonData['ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp']
+        self.assertIn('ch.swisstopo.amtliches-strassenverzeichnis', jsonData)
+        layer = jsonData['ch.swisstopo.amtliches-strassenverzeichnis']
         self.assertIn('queryableAttributes', layer)
         self.assertGreater(len(layer['queryableAttributes']), 0)
         # Should not have
@@ -250,7 +250,7 @@ class TestMapServiceView(TestsBase):
     def test_layer_attributes_multi_models(self):
         resp = self.testapp.get('/rest/services/api/MapServer/ch.bav.sachplan-infrastruktur-schiene_kraft', status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertEqual(len(resp.json['fields']), 3)
+        self.assertEqual(len(resp.json['fields']), 33)
 
     def test_features_attributes_multi_models(self):
         resp = self.testapp.get('/rest/services/api/MapServer/ch.bav.sachplan-infrastruktur-schiene_kraft/attributes/plname_de', status=200)

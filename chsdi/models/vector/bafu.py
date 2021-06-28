@@ -51,7 +51,6 @@ class Hydrogeologischekarte100(Base, Vector):
     __tablename__ = 'hydrogeologische_karte_100'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrogeologische-karte_100'
-    __queryable_attributes__ = ['name', 'pdf_list']
     __template__ = 'templates/htmlpopup/hydrogeologische-karte_100.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -68,7 +67,6 @@ class KarstFliesswege(Base, Vector):
     __template__ = 'templates/htmlpopup/karst-unterirdische_fliesswege.mako'
     __bodId__ = 'ch.bafu.karst-unterirdische_fliesswege'
     __label__ = 'id'
-    __queryable_attributes__ = ['ei_type', 'ei_hdyn']
     id = Column('objectid', Integer, primary_key=True)
     ei_id = Column('ei_id', Unicode)
     ei_hdyn = Column('ei_hdyn', SmallInteger)
@@ -92,7 +90,6 @@ class KarstEinzugsgebieteinheiten(Base, Vector):
     __template__ = 'templates/htmlpopup/karst-einzugsgebietseinheiten.mako'
     __bodId__ = 'ch.bafu.karst-einzugsgebietseinheiten'
     __label__ = 'id'
-    __queryable_attributes__ = ['ub_type', 'ub_flux']
     id = Column('objectid', Integer, primary_key=True)
     ub_name = Column('ub_name', Unicode)
     ub_type = Column('ub_type', SmallInteger)
@@ -117,7 +114,6 @@ class KarstGrundwasservorkommen(Base, Vector):
     __template__ = 'templates/htmlpopup/karst-ausdehnung_grundwasservorkommen.mako'
     __bodId__ = 'ch.bafu.karst-ausdehnung_grundwasservorkommen'
     __label__ = 'id'
-    __queryable_attributes__ = ['nk_type', 'nk_level', 'nk_hdyn']
     id = Column('objectid', Integer, primary_key=True)
     nk_hdyn = Column('nk_hdyn', SmallInteger)
     nk_type = Column('nk_type', SmallInteger)
@@ -141,7 +137,6 @@ class KarstEinzugsgebiete(Base, Vector):
     __template__ = 'templates/htmlpopup/karst-einzugsgebiete.mako'
     __bodId__ = 'ch.bafu.karst-einzugsgebiete'
     __label__ = 'ba_name'
-    __queryable_attributes__ = ['ba_name']
     __returnedGeometry__ = 'the_geom_highlight'
     id = Column('objectid', Integer, primary_key=True)
     ba_id = Column('ba_id', Unicode)
@@ -163,7 +158,6 @@ class KarstQuellenschwinden(Base, Vector):
     __bodId__ = 'ch.bafu.karst-quellen_schwinden'
     __label__ = 'ip_name'
     __returnedGeometry__ = 'the_geom_highlight'
-    __queryable_attributes__ = ['ip_type', 'ip_name', 'ip_qclass', 'ip_reg', 'ip_exp']
     id = Column('objectid', Integer, primary_key=True)
     ip_id = Column('ip_id', Unicode)
     ip_name = Column('ip_name', Unicode)
@@ -200,7 +194,6 @@ class Vec25Gewaessernetz2000(Base, Vector):
     __tablename__ = 'gewaessernetz_2000'
     __table_args__ = ({'schema': 'vec25', 'autoload': False})
     __bodId__ = 'ch.bafu.vec25-gewaessernetz_2000'
-    __queryable_attributes__ = ['gwlnr', 'gewissnr', 'name', 'objectval']
     __template__ = 'templates/htmlpopup/vec25-gewaessernetz_2000.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -217,7 +210,6 @@ class Untersuchungsgebiete(Base, Vector):
     __tablename__ = 'hydrologie_untersuchungsgebiete'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-untersuchungsgebiete'
-    __queryable_attributes__ = ['name', 'max_hoe', 'min_hoe', 'mit_hoe', 'antv_ab86', 'einzugsgebietsflaeche', 'regimtyp']
     __template__ = 'templates/htmlpopup/hug.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -240,7 +232,6 @@ class Hochwassergrenzwertpegel(Base, Vector):
     __tablename__ = 'hochwassergrenzwertpegel'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-hochwassergrenzwertpegel'
-    __queryable_attributes__ = ['name', 'hoehe', 'einzugsgebietsflaeche', 'nummer', 'fluss', 'm_ende', 'm_beginn']
     __template__ = 'templates/htmlpopup/hochwassergrenzwertpegel.mako'
     __extended_info__ = True
     __label__ = 'name'
@@ -264,7 +255,6 @@ class AtlasKantonaleMessstationen(Base, Vector):
     __tablename__ = 'hydro_atlas_kant_messstationen'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologischer-atlas_kantonale-messstationen'
-    __queryable_attributes__ = ['hoehe', 'betriebsbeginn', 'einzugsgebietsflaeche', 'nummer', 'vergletscherung', 'bilanzgebietsnummer']
     __template__ = 'templates/htmlpopup/atlas_kantonale_messstationen.mako'
     __extended_info__ = True
     __label__ = 'name'
@@ -288,7 +278,6 @@ class Daueruntersuchung_fliessgewaesser(Base, Vector):
     __tablename__ = 'hydro_duntersuchung_fliessgewaesser'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser'
-    __queryable_attributes__ = ['name', 'hoehe', 'betriebsbeginn', 'einzugsgebietsflaeche', 'mittlerehoehe', 'vergletscherung', 'stationierung', 'flussgebiet']
     __template__ = 'templates/htmlpopup/daueruntersuchung_fliessgewaesser.mako'
     __extended_info__ = True
     __label__ = 'name'
@@ -315,7 +304,6 @@ class Vec25Seen(Base, Vector):
     __tablename__ = 'seen'
     __table_args__ = ({'schema': 'vec25', 'autoload': False})
     __bodId__ = 'ch.bafu.vec25-seen'
-    __queryable_attributes__ = ['gewaesserkennzahl', 'name', 'seetyp', 'ausgleichsbecken', 'reguliert', 'seeflaeche_km2', 'inhalt_see_mio_m3', 'nutzinhalt_mio_m3', 'tiefe_see_m', 'hoehenlage_muem', 'uferlaenge_m', 'gwlnr']
     __template__ = 'templates/htmlpopup/vec25_seen.mako'
     __extended_info__ = True
     __label__ = 'name'
@@ -342,7 +330,6 @@ class HydroAtlasFlussgebiete(Base, Vector):
     __tablename__ = 'atlas_flussgebiete'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologischer-atlas_flussgebiete'
-    __queryable_attributes__ = ['nummer', 'name', 'shape_area', 'umfang']
     __template__ = 'templates/htmlpopup/atlas_flussgebiete.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -360,7 +347,6 @@ class HydroAtlasBilanzgebiete(Base, Vector):
     __tablename__ = 'atlas_bilanzgebiete'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologischer-atlas_bilanzgebiete'
-    __queryable_attributes__ = ['name', 'flussgebiet', 'shape_area']
     __template__ = 'templates/htmlpopup/atlas_bilanzgebiete.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -378,7 +364,6 @@ class HydroAtlasBasisgebiete(Base, Vector):
     __tablename__ = 'atlas_basisgebiete'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologischer-atlas_basisgebiete'
-    __queryable_attributes__ = ['gebietskennzahl', 'bemerkung', 'flussgebiet', 'max_hoe', 'min_hoe', 'mit_hoe', 'mit_ns', 's_w_ns', 'jahrtemp_g', 'winttemp_g', 'shape_area']
     __template__ = 'templates/htmlpopup/atlas_basisgebiete.mako'
     __extended_info__ = True
     __label__ = 'nummer'
@@ -404,7 +389,6 @@ class Niedrigwasserstatistik(Base, Vector):
     __tablename__ = 'niedrigwasserstatistik'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-niedrigwasserstatistik'
-    __queryable_attributes__ = ['name']
     __template__ = 'templates/htmlpopup/niedrigwasserstatistik.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -421,7 +405,6 @@ class TypFliessgewaesser(Base, Vector):
     __tablename__ = 'typisierung_fliessgewaesser'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.typisierung-fliessgewaesser'
-    __queryable_attributes__ = ['objectid_gwn25', 'grosserfluss', 'biogeo', 'hoehe', 'abfluss', 'gefaelle', 'geo', 'code', 'gewaessertyp', 'aehnlichkeit']
     __template__ = 'templates/htmlpopup/fliessgewaesser_typ.mako'
     __extended_info__ = True
     __label__ = 'objectid_gwn25'
@@ -478,8 +461,6 @@ class MittlereAbfluesse(Base, Vector):
     __tablename__ = 'mittlere_abfluesse'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.mittlere-abfluesse'
-    __queryable_attributes__ = ['mqn_jahr', 'mqn_jan', 'mqn_feb', 'mqn_mar', 'mqn_apr', 'mqn_mai', 'mqn_jun', 'mqn_jul',
-                                'mqn_aug', 'mqn_sep', 'mqn_okt', 'mqn_nov', 'mqn_dez', 'regimetyp', 'regimenummer', 'abflussvar']
     __template__ = 'templates/htmlpopup/mittlere_abfluesse.mako'
     __extended_info__ = True
     __label__ = 'regimenummer'
@@ -509,7 +490,6 @@ class MittlereAbfluesseZukunft(Base, Vector):
     __tablename__ = 'mittlere_abfluesse_zukunft'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.mittlere-abfluesse_zukunft'
-    __queryable_attributes__ = ['place', 'water_name']
     __template__ = 'templates/htmlpopup/mittlere_abfluesse_zukunft.mako'
     __label__ = 'place'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -568,7 +548,6 @@ class FeststoffeGeschiebemessnetz(Base, Vector):
     __tablename__ = 'geschiebemessnetz'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.feststoffe-geschiebemessnetz'
-    __queryable_attributes__ = ['gsch_n', 'lk', 'lage', 'fn', 'hmax', 'hmin', 'hmed', 'exp', 'form', 'geologie', 'platz', 'fluss', 'station', 'institut', 'amt']
     __template__ = 'templates/htmlpopup/geschiebemessnetz.mako'
     __extended_info__ = True
     __label__ = 'fluss'
@@ -692,7 +671,6 @@ class HydroQ347(Base, Vector):
     __tablename__ = 'hydro_q347'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-q347'
-    __queryable_attributes__ = ['basisid', 'lhg', 'gewaesser', 'flaeche', 'q_84_93', 'qp', 'p', 'qmod']
     __template__ = 'templates/htmlpopup/hydro_q347.mako'
     __extended_info__ = True
     __label__ = 'gewaesser'
@@ -719,7 +697,6 @@ class HugStationen(Base, Vector):
     __tablename__ = 'hydrologie_untersuchungsgebiete_stationen'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-untersuchungsgebiete_stationen'
-    __queryable_attributes__ = ['name', 'hoehe', 'betriebsbeginn', 'einzugsgebietsflaeche', 'flussgebiet']
     __template__ = 'templates/htmlpopup/hug_stationen.mako'
     __label__ = 'name'
     id = Column('geodb_oid', Integer, primary_key=True)
@@ -753,7 +730,6 @@ class StrukturgueteHochrheinLinkesufer(Base, Vector):
     __tablename__ = 'strukturguete_hochrhein'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.strukturguete-hochrhein_linkesufer'
-    __queryable_attributes__ = ['lumfeld', 'rumfeld', 'lufer', 'rufer', 'sohle']
     __template__ = 'templates/htmlpopup/strukturguete_hochrhein.mako'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -772,7 +748,6 @@ class StrukturgueteHochrheinLinkesumfeld(Base, Vector):
     __tablename__ = 'strukturguete_hochrhein'
     __table_args__ = ({'schema': 'wasser', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.strukturguete-hochrhein_linkesumfeld'
-    __queryable_attributes__ = ['lumfeld', 'rumfeld', 'lufer', 'rufer', 'sohle']
     __template__ = 'templates/htmlpopup/strukturguete_hochrhein.mako'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -791,7 +766,6 @@ class StrukturgueteHochrheinRechtesumfeld(Base, Vector):
     __tablename__ = 'strukturguete_hochrhein'
     __table_args__ = ({'schema': 'wasser', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.strukturguete-hochrhein_rechtesumfeld'
-    __queryable_attributes__ = ['lumfeld', 'rumfeld', 'lufer', 'rufer', 'sohle']
     __template__ = 'templates/htmlpopup/strukturguete_hochrhein.mako'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -810,7 +784,6 @@ class StrukturgueteHochrheinRechtesufer(Base, Vector):
     __tablename__ = 'strukturguete_hochrhein'
     __table_args__ = ({'schema': 'wasser', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.strukturguete-hochrhein_rechtesufer'
-    __queryable_attributes__ = ['lumfeld', 'rumfeld', 'lufer', 'rufer', 'sohle']
     __template__ = 'templates/htmlpopup/strukturguete_hochrhein.mako'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -829,7 +802,6 @@ class StrukturgueteHochrheinSohle(Base, Vector):
     __tablename__ = 'strukturguete_hochrhein'
     __table_args__ = ({'schema': 'wasser', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.bafu.strukturguete-hochrhein_sohle'
-    __queryable_attributes__ = ['lumfeld', 'rumfeld', 'lufer', 'rufer', 'sohle']
     __template__ = 'templates/htmlpopup/strukturguete_hochrhein.mako'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -848,8 +820,6 @@ class GewaesserschutzBadewasserqualitaet(Base, Vector):
     __tablename__ = 'baqua'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.gewaesserschutz-badewasserqualitaet'
-    __queryable_attributes__ = ['id', 'bwname', 'groupid', 'nwunitname', 'rbdsuname',
-                                'gemeinde', 'canton', 'bwatercat', 'qualitaet_eua']
     __template__ = 'templates/htmlpopup/gewaesserschutz_badewasserqualitaet.mako'
     __extended_info__ = True
     __label__ = 'bwname'
@@ -929,7 +899,6 @@ class Temperaturmessnetz(Base, Vector):
     __tablename__ = 'temperaturmessnetz'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-wassertemperaturmessstationen'
-    __queryable_attributes__ = ['id', 'name']
     __template__ = 'templates/htmlpopup/temperaturmessnetz.mako'
     __label__ = 'name'
     id = Column('nr', Integer, primary_key=True)
@@ -945,11 +914,6 @@ class GewaesserschutzTemplate:
     __template__ = 'templates/htmlpopup/klaeranlagen.mako'
     __extended_info__ = True
     __label__ = 'name'
-    __queryable_attributes__ = ['nummer', 'name', 'ort', 'name_vorfluter', 'gewiss_nr', 'reinigungstyp', 'abw_tagesmittel', 'abw_tagesspitze',
-                                'spitzenbelastung_regen', 'rohabwasser_tag', 'frischschlamm_tag', 'stabilisierter_schlamm_tag', 'bsb5anteil',
-                                'bsb5absolut', 'csbanteil', 'csbabsolut', 'docanteil', 'docabsolut', 'nh4_nanteil', 'nh4_nabsolut', 'nh4_n_ganzjaehrig',
-                                'nanteil', 'nabsolut', 'n_abwassertemperatur', 'gesamtpanteil', 'gesamtpabsolut', 'gesamt_ungel_stoffe_absolut',
-                                'andere_stoffe', 'kanton', 'vsa_kategorie', 'ausbaugroesse_egw', 'anzahl_nat_einwohner', 'jahr_nat_einwohner', 'abwasseranteil_q347', 'gwlnr']
     id = Column('nummer', Integer, primary_key=True)
     name = Column('name', Unicode)
     rechtswert = Column('rechtswert', Integer)
@@ -1153,7 +1117,6 @@ class Gewaesserzustandst (Base, Vector):
     __tablename__ = 'dbgz'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-gewaesserzustandsmessstationen'
-    __queryable_attributes__ = ['nr', 'name', 'gewaesser']
     __template__ = 'templates/htmlpopup/gewaesserzustandsmessstationen.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -1240,7 +1203,6 @@ class AU(Base, Vector):
     __tablename__ = 'auen'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-auen'
-    __queryable_attributes__ = ['objnummer', 'name']
     __template__ = 'templates/htmlpopup/auen.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -1261,7 +1223,6 @@ class AU_A2(Base, Vector):
     __tablename__ = 'auen_anhang2'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-auen_anhang2'
-    __queryable_attributes__ = ['objnummer', 'name']
     __template__ = 'templates/htmlpopup/auen_anhang2.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -1282,7 +1243,6 @@ class AuenVegetationAlpin(Base, Vector):
     __tablename__ = 'auen_vegetation_alpin'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-auen_vegetation_alpin'
-    __queryable_attributes__ = ['objnummer', 'objname', 'vegetation']
     __template__ = 'templates/htmlpopup/auen_vegetation_alpin.mako'
     __label__ = 'objname'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -1325,7 +1285,6 @@ class AlpinAuenAusserhalbBundesinventar(Base, Vector):
     __tablename__ = 'alpinauen'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __bodId__ = 'ch.bafu.auen-ausserhalb_bundesinventar_alpin'
-    __queryable_attributes__ = ['name']
     __template__ = 'templates/htmlpopup/auen_ausserhalb_bundinv_alpin.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -1350,7 +1309,6 @@ class AuenVegetationsKarten(Base, Vector):
     __tablename__ = 'auen_vegetationskarte'
     __table_args__ = ({'schema': 'flora', 'autoload': False})
     __bodId__ = 'ch.bafu.auen-vegetationskarten'
-    __queryable_attributes__ = ['obj_nummer', 'name', 'kartierjahr', 'primaervegetation_de', 'primaervegetation_fr', 'primaervegetation_it']
     __template__ = 'templates/htmlpopup/auen_veg.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -1372,7 +1330,6 @@ class BLN(Base, Vector):
     __tablename__ = 'bln_v2'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-bln'
-    __queryable_attributes__ = ['bln_name']
     __template__ = 'templates/htmlpopup/bln.mako'
     __label__ = 'bln_name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -1414,7 +1371,6 @@ class JB(Base, Vector):
     __tablename__ = 'jb'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-jagdbanngebiete'
-    __queryable_attributes__ = ['jb_name']
     __template__ = 'templates/htmlpopup/jb.mako'
     __label__ = 'jb_name'  # Composite labels
     id = Column('gid', Integer, primary_key=True)
@@ -1520,7 +1476,6 @@ class Flachmoore(Base, Vector):
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-flachmoore'
     __template__ = 'templates/htmlpopup/flachmoore.mako'
-    __queryable_attributes__ = ['objnummer']
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
@@ -2046,7 +2001,6 @@ class Wrzselect(Base, Vector):
     __table_args__ = ({'schema': 'wrzportal', 'autoload': False})
     __bodId__ = 'ch.bafu.wrz-jagdbanngebiete_select'
     __template__ = 'templates/htmlpopup/wrz_select.mako'
-    __queryable_attributes__ = ['kanton', 'jb_name', 'beschlussjahr', 'schutzs_de', 'schutzs_fr', 'schutzs_it']
     __label__ = 'jb_name'
     id = Column('bgdi_id', Integer, primary_key=True)
     jb_name = Column('jb_name', Unicode)
@@ -2134,7 +2088,6 @@ class Wildtier(Base, Vector):
     __bodId__ = 'ch.bafu.fauna-wildtierkorridor_national'
     __template__ = 'templates/htmlpopup/wildtierkorridor.mako'
     __label__ = 'objnummer'
-    __queryable_attributes__ = ['name', 'objnummer', 'zustand_de', 'zustand_fr', 'zustand_it']
     id = Column('bgdi_id', Integer, primary_key=True)
     objnummer = Column('objnummer', Unicode)
     name = Column('name', Unicode)
@@ -2292,7 +2245,6 @@ class Hochwasserstatistik(Base, Vector):
     __tablename__ = 'hochwasserstatistik'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologie-hochwasserstatistik'
-    __queryable_attributes__ = ['name']
     __template__ = 'templates/htmlpopup/hochwasserstatistik.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -2310,7 +2262,6 @@ class HydrogeologieMarkierversuche(Base, Vector):
     __table_args__ = ({'schema': 'hydrogeolog', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrogeologie-markierversuche'
     __template__ = 'templates/htmlpopup/hydrogeologie_markierversuche.mako'
-    __queryable_attributes__ = ['ort', 'milieu', 'markierstoff']
     __label__ = 'id'
     id = Column('id', Integer, primary_key=True)
     nummer_ein = Column('nummer_ein', Integer)
@@ -2330,7 +2281,6 @@ class LandesForstInventarVegetation:
     __tablename__ = 'vegetationshoehenmodell'
     __table_args__ = ({'schema': 'wald', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/landesforstinventar-vegetationshoehenmodell.mako'
-    __queryable_attributes__ = ['datenstand']
     __label__ = 'datenstand'
     id = Column('bgdi_id', Integer, primary_key=True)
     datenstand = Column('datenstand', Integer)
@@ -2357,6 +2307,7 @@ class LandesforstinventarRegion:
     name_de = Column('name_de', Unicode)
     name_fr = Column('name_fr', Unicode)
     name_it = Column('name_it', Unicode)
+    name_en = Column('name_en', Unicode)
     the_geom = Column(Geometry2D)
 
 
