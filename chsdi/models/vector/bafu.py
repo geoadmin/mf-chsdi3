@@ -2326,20 +2326,6 @@ class HydrogeologieMarkierversuche(Base, Vector):
 register('ch.bafu.hydrogeologie-markierversuche', HydrogeologieMarkierversuche)
 
 
-class LandesForstInventarWaldMischGrad(Base, Vector):
-    __tablename__ = 'waldmischgrad'
-    __table_args__ = ({'schema': 'wald', 'autoload': False})
-    __bodId__ = 'ch.bafu.landesforstinventar-waldmischungsgrad'
-    __template__ = 'templates/htmlpopup/landesforstinventar-waldmischgrad.mako'
-    __queryable_attributes__ = ['datenstand']
-    __label__ = 'datenstand'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    datenstand = Column('datenstand', Integer)
-    the_geom = Column(Geometry2D)
-
-register(LandesForstInventarWaldMischGrad.__bodId__, LandesForstInventarWaldMischGrad)
-
-
 class LandesForstInventarVegetation:
     __tablename__ = 'vegetationshoehenmodell'
     __table_args__ = ({'schema': 'wald', 'autoload': False, 'extend_existing': True})
