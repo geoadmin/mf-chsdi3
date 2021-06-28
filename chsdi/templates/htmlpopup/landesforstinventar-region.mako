@@ -3,7 +3,7 @@
 <%def name="table_body(c, lang)">
 <%
     c['stable_id'] = True
-    lang = lang if lang in ('fr','it') else 'de'
+    lang = 'de' if lang == 'rm' else lang
     name = 'name_' + lang
 %>
     <tr><td class="cell-left">${_('id')}</td>           <td>${c['featureId'] or '-'}</td></tr>
