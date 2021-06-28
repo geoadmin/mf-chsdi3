@@ -72,8 +72,6 @@ def feedback(context, request):
 
         mailServer = smtplib.SMTP('127.0.0.1', 25)
         mailServer.ehlo()
-        mailServer.starttls()
-        mailServer.ehlo()
         # Recipients and sender are always the same
         mailServer.sendmail(to, to, msg.as_string())
         mailServer.close()
