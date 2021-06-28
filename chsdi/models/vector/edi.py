@@ -315,6 +315,26 @@ class FsmeImpfung(Base, Vector):
 register('ch.bag.zecken-fsme-impfung', FsmeImpfung)
 
 
+class RadioaktivitaetAtmosphaere(Base, Vector):
+    __tablename__ = 'radioaktivitaet'
+    __table_args__ = ({'schema': 'bag', 'autoload': False})
+    __template__ = 'templates/htmlpopup/radioaktivitaet_atmosphaere.mako'
+    __bodId__ = 'ch.bag.radioaktivitaet-atmosphaere'
+    __label__ = 'station'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    station = Column('station', Unicode)
+    period = Column('period', Unicode)
+    nuc1 = Column('nuc1', Unicode)
+    nuc2 = Column('nuc2', Unicode)
+    nuc3 = Column('nuc3', Unicode)
+    nuc4 = Column('nuc4', Unicode)
+    nuc5 = Column('nuc5', Unicode)
+    stationlink = Column('stationlink', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bag.radioaktivitaet-atmosphaere', RadioaktivitaetAtmosphaere)
+
+
 class VolkBetriebZaehlung:
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
     __template__ = 'templates/htmlpopup/volk_betrieb_zaehlung.mako'
