@@ -22,7 +22,6 @@ class Bodeneignung:
 class Kulturtyp(Base, Bodeneignung, Vector):
     __template__ = 'templates/htmlpopup/bodeneignung-kulurtyp.mako'
     __bodId__ = 'ch.blw.bodeneignung-kulturtyp'
-    # __queryable_attributes__ = ['farbe']
     __label__ = 'symb_color'
     symb_color = Column('symb_color', Unicode)
 
@@ -240,7 +239,6 @@ class UrsprungsbezeichnungenFleisch(Base, Vector):
     __tablename__ = 'ursprungsbezeichnungen_fleisch'
     __table_args__ = ({'schema': 'blw', 'autoload': False})
     __bodId__ = 'ch.blw.ursprungsbezeichnungen-fleisch'
-    __queryable_attributes__ = ['objektcode', 'objekt_d', 'objekt_f', 'objekt_i']
     __template__ = 'templates/htmlpopup/ursprungsbezeichnungen.mako'
     __label__ = 'objektcode'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -257,7 +255,6 @@ class UrsprungsbezeichnungenKaese(Base, Vector):
     __tablename__ = 'ursprungsbezeichnungen_kaese'
     __table_args__ = ({'schema': 'blw', 'autoload': False})
     __bodId__ = 'ch.blw.ursprungsbezeichnungen-kaese'
-    __queryable_attributes__ = ['objektcode', 'objekt_d', 'objekt_f', 'objekt_i']
     __template__ = 'templates/htmlpopup/ursprungsbezeichnungen.mako'
     __label__ = 'objektcode'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -274,7 +271,6 @@ class UrsprungsbezeichnungenKonditoreiwaren(Base, Vector):
     __tablename__ = 'ursprungsbezeichnungen_konditoreiwaren'
     __table_args__ = ({'schema': 'blw', 'autoload': False})
     __bodId__ = 'ch.blw.ursprungsbezeichnungen-konditoreiwaren'
-    __queryable_attributes__ = ['objektcode', 'objekt_d', 'objekt_f', 'objekt_i']
     __template__ = 'templates/htmlpopup/ursprungsbezeichnungen.mako'
     __label__ = 'objektcode'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -291,7 +287,6 @@ class UrsprungsbezeichnungenPflanzen(Base, Vector):
     __tablename__ = 'ursprungsbezeichnungen_pflanzen'
     __table_args__ = ({'schema': 'blw', 'autoload': False})
     __bodId__ = 'ch.blw.ursprungsbezeichnungen-pflanzen'
-    __queryable_attributes__ = ['objektcode', 'objekt_d', 'objekt_f', 'objekt_i']
     __template__ = 'templates/htmlpopup/ursprungsbezeichnungen.mako'
     __label__ = 'objektcode'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -308,7 +303,6 @@ class UrsprungsbezeichnungenSpirituosen(Base, Vector):
     __tablename__ = 'ursprungsbezeichnungen_spirituosen'
     __table_args__ = ({'schema': 'blw', 'autoload': False})
     __bodId__ = 'ch.blw.ursprungsbezeichnungen-spirituosen'
-    __queryable_attributes__ = ['objektcode', 'objekt_d', 'objekt_f', 'objekt_i']
     __template__ = 'templates/htmlpopup/ursprungsbezeichnungen.mako'
     __label__ = 'objektcode'
     id = Column('bgdi_id', Integer, primary_key=True)

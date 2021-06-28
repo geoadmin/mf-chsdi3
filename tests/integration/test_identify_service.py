@@ -757,16 +757,16 @@ class TestIdentifyService(TestsBase):
 
     def test_identify_query_null(self):
         params = {'geometryFormat': 'geojson',
-                  'layers': 'all:ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp',
-                  'where': 'andere_stoffe is null'}
+                  'layers': 'all:ch.bazl.luftfahrthindernis',
+                  'where': 'abortionaccomplished is null'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_not_null(self):
         params = {'geometryFormat': 'geojson',
-                  'layers': 'all:ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp',
-                  'where': 'andere_stoffe is not null'}
+                  'layers': 'all:ch.bazl.luftfahrthindernis',
+                  'where': 'totallength is not null'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
@@ -851,10 +851,9 @@ class TestIdentifyService(TestsBase):
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_offset(self):
-        params = {'layers': 'all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
+        params = {'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
                   'returnGeometry': 'false',
-                  'timeInstant': '2015',
-                  'where': 'gemname ilike \'%a%\''}
+                  'where': 'gdename ilike \'%a%\''}
         resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         params.update({'offset': '2'})
         self.assertNotIn('geometry', resp_1.json['results'][0])
@@ -941,14 +940,14 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
 
     def test_identify_quer_spatial_filters_scale_dep(self):
-        params = {'layers': 'all:ch.bav.haltestellen-oev',
-                  'geometry': '643952.5,164121.24999999997',
+        params = {'layers': 'all:ch.bfe.solarenergie-eignung-daecher',
+                  'geometry': '2642877.792491166,1130728.3764497258',
                   'geometryFormat': 'geojson',
                   'geometryType': 'esriGeometryPoint',
-                  'imageDisplay': '1641,867,96',
-                  'mapExtent': '533750,136249.99999999994,550250,174249.99999999997',
-                  'tolerance': '5',
-                  'where': 'name ilike \'%dietikon%\''
+                  'imageDisplay': '1102,948,96',
+                  'mapExtent': '2642758.5675955135,1130581.5290043117,2643074.110592108,1130852.9761556475',
+                  'tolerance': '10',
+                  'where': 'building_id = 2521433'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')

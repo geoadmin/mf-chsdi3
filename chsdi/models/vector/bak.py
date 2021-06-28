@@ -26,7 +26,6 @@ class IsosOrtsbild(Base, IsosBase, Vector):
     __tablename__ = 'isos_ortsbild'
     __bodId__ = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder'
     __label__ = 'name'
-    __queryable_attributes__ = ['id', 'name']
     __minscale__ = 50001
 
 
@@ -34,7 +33,6 @@ class IsosOrtsbildPerimeter(Base, IsosBase, Vector):
     __tablename__ = 'view_isos_perimeter'
     __bodId__ = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder'
     __label__ = 'name'
-    __queryable_attributes__ = ['id', 'name']
     __maxscale__ = 50000
     __minscale__ = 25001
 
@@ -68,7 +66,6 @@ register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbildHinweis
 
 class IsosFotoBase(IsosBase):
     __bodId__ = 'ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos'
-    __queryable_attributes__ = ['id', 'name']
     __label__ = 'name'
 
 
