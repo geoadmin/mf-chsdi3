@@ -2341,10 +2341,8 @@ register(LandesForstInventarWaldMischGrad.__bodId__, LandesForstInventarWaldMisc
 
 
 class LandesForstInventarVegetation:
-    __tablename__ = 'vegetationshoehenmodell'
     __table_args__ = ({'schema': 'wald', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/landesforstinventar-vegetationshoehenmodell.mako'
-    __queryable_attributes__ = ['datenstand']
     __label__ = 'datenstand'
     id = Column('bgdi_id', Integer, primary_key=True)
     datenstand = Column('datenstand', Integer)
@@ -2353,22 +2351,15 @@ class LandesForstInventarVegetation:
 
 class LandesForstInventarVegetationsHoehenModell(Base, LandesForstInventarVegetation, Vector):
     __bodId__ = 'ch.bafu.landesforstinventar-vegetationshoehenmodell'
+    __tablename__ = 'vegetationshoehenmodell'
+    __queryable_attributes__ = ['datenstand']
 
 register(LandesForstInventarVegetationsHoehenModell.__bodId__, LandesForstInventarVegetationsHoehenModell)
 
 
-class LandesForstInventarVegetationRelief:
-    __tablename__ = 'vegetationshoehenmodell_relief'
-    __table_args__ = ({'schema': 'wald', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/landesforstinventar-vegetationshoehenmodell.mako'
-    __label__ = 'datenstand'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    datenstand = Column('datenstand', Integer)
-    the_geom = Column(Geometry2D)
-
-
-class LandesForstInventarVegetationsHoehenModellRelief(Base, LandesForstInventarVegetationRelief, Vector):
+class LandesForstInventarVegetationsHoehenModellRelief(Base, LandesForstInventarVegetation, Vector):
     __bodId__ = 'ch.bafu.landesforstinventar-vegetationshoehenmodell_relief'
+    __tablename__ = 'vegetationshoehenmodell_relief'
 
 register(LandesForstInventarVegetationsHoehenModellRelief.__bodId__, LandesForstInventarVegetationsHoehenModellRelief)
 
