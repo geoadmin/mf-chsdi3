@@ -2278,7 +2278,6 @@ register('ch.bafu.hydrogeologie-markierversuche', HydrogeologieMarkierversuche)
 
 
 class LandesForstInventarVegetation:
-    __tablename__ = 'vegetationshoehenmodell'
     __table_args__ = ({'schema': 'wald', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/landesforstinventar-vegetationshoehenmodell.mako'
     __label__ = 'datenstand'
@@ -2289,12 +2288,15 @@ class LandesForstInventarVegetation:
 
 class LandesForstInventarVegetationsHoehenModell(Base, LandesForstInventarVegetation, Vector):
     __bodId__ = 'ch.bafu.landesforstinventar-vegetationshoehenmodell'
+    __tablename__ = 'vegetationshoehenmodell'
+    __queryable_attributes__ = ['datenstand']
 
 register(LandesForstInventarVegetationsHoehenModell.__bodId__, LandesForstInventarVegetationsHoehenModell)
 
 
 class LandesForstInventarVegetationsHoehenModellRelief(Base, LandesForstInventarVegetation, Vector):
     __bodId__ = 'ch.bafu.landesforstinventar-vegetationshoehenmodell_relief'
+    __tablename__ = 'vegetationshoehenmodell_relief'
 
 register(LandesForstInventarVegetationsHoehenModellRelief.__bodId__, LandesForstInventarVegetationsHoehenModellRelief)
 
