@@ -23,12 +23,14 @@
     arr_fn_addresse_118 = c['attributes']['fn_addresse_118']
     arr_fn_addresse_143 = c['attributes']['fn_addresse_143']
     arr_fn_addresse_144 = c['attributes']['fn_addresse_144']
+    arr_fn_addresse_145 = c['attributes']['fn_addresse_145']
     arr_fn_addresse_147 = c['attributes']['fn_addresse_147']
     arr_mo_addresse_112 = c['attributes']['mo_addresse_112']
     arr_mo_addresse_117 = c['attributes']['mo_addresse_117']
     arr_mo_addresse_118 = c['attributes']['mo_addresse_118']
     arr_mo_addresse_143 = c['attributes']['mo_addresse_143']
     arr_mo_addresse_144 = c['attributes']['mo_addresse_144']
+    arr_mo_addresse_145 = c['attributes']['mo_addresse_145']
     arr_mo_addresse_147 = c['attributes']['mo_addresse_147']
     arr_sa_addresse_112 = c['attributes']['sa_addresse_112']
 
@@ -37,12 +39,14 @@
     fn_addresse_118 = text_separation(arr_fn_addresse_118)
     fn_addresse_143 = text_separation(arr_fn_addresse_143)
     fn_addresse_144 = text_separation(arr_fn_addresse_144)
+    fn_addresse_145 = text_separation(arr_fn_addresse_145)
     fn_addresse_147 = text_separation(arr_fn_addresse_147)
     mo_addresse_112 = text_separation(arr_mo_addresse_112)
     mo_addresse_117 = text_separation(arr_mo_addresse_117)
     mo_addresse_118 = text_separation(arr_mo_addresse_118)
     mo_addresse_143 = text_separation(arr_mo_addresse_143)
     mo_addresse_144 = text_separation(arr_mo_addresse_144)
+    mo_addresse_145 = text_separation(arr_mo_addresse_145)
     mo_addresse_147 = text_separation(arr_mo_addresse_147)
     sa_addresse_112 = text_separation(arr_sa_addresse_112)
 %>
@@ -160,6 +164,29 @@
         <td class="cell-meta">${c['attributes']['mobile_144'] or '-'}</td>
         <th class="cell-meta">${_('ch.bakom.notruf.adresse_144_mobil')}</th>
         <td class="cell-meta">${_(mo_addresse_144)|n}</td>
+    </tr>
+    <tr>
+</table>
+<tr><td class="cell-meta-one" colspan="2">&nbsp;</td></tr>
+<table class="table-with-border">
+    <colgroup>
+      <col width=65%>
+      <col width=40%>
+      <col width=60%>
+      <col width=80%>
+    </colgroup>
+    <tr><th class="cell-meta-one" colspan="4">${145}</th></tr>
+    <tr>
+        <th class="cell-meta">${_('ch.bakom.notruf.festnetz')}</th>
+        <td class="cell-meta">${c['attributes']['festnetz_145'] or '-'}</td>
+        <th class="cell-meta">${_('ch.bakom.notruf.adresse_145_festnetz')}</th>
+        <td class="cell-meta">${_(fn_addresse_145)|n}</td>
+    </tr>
+    <tr>
+        <th class="cell-meta">${_('ch.bakom.notruf.mobilnetz')}</th>
+        <td class="cell-meta">${c['attributes']['mobile_145'] or '-'}</td>
+        <th class="cell-meta">${_('ch.bakom.notruf.adresse_145_mobil')}</th>
+        <td class="cell-meta">${_(mo_addresse_145)|n}</td>
     </tr>
     <tr>
 </table>
