@@ -3737,59 +3737,6 @@ class Spitallandeplaetze(Base, Vector):
 register('ch.bazl.spitallandeplaetze', Spitallandeplaetze)
 
 
-class Bikesharing:
-    __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/bikesharing.mako'
-    __bodId__ = 'ch.bfe.bikesharing'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    id_provider = Column('id_provider', Integer)
-    provider_de = Column('provider_de', Unicode)
-    provider_fr = Column('provider_fr', Unicode)
-    provider_it = Column('provider_it', Unicode)
-    provider_en = Column('provider_en', Unicode)
-    providerlink_de = Column('providerlink_de', Unicode)
-    providerlink_fr = Column('providerlink_fr', Unicode)
-    providerlink_it = Column('providerlink_it', Unicode)
-    providerlink_en = Column('providerlink_en', Unicode)
-    address = Column('address', Unicode)
-    postcode = Column('postcode', Integer)
-    city = Column('city', Unicode)
-    time_de = Column('time_de', Unicode)
-    time_fr = Column('time_fr', Unicode)
-    time_it = Column('time_it', Unicode)
-    time_en = Column('time_en', Unicode)
-    rent_de = Column('rent_de', Unicode)
-    rent_fr = Column('rent_fr', Unicode)
-    rent_it = Column('rent_it', Unicode)
-    rent_en = Column('rent_en', Unicode)
-    description_de = Column('description_de', Unicode)
-    description_fr = Column('description_fr', Unicode)
-    description_it = Column('description_it', Unicode)
-    description_en = Column('description_en', Unicode)
-    id_return = Column('id_return', Integer)
-    return_de = Column('return_de', Unicode)
-    return_fr = Column('return_fr', Unicode)
-    return_it = Column('return_it', Unicode)
-    return_en = Column('return_en', Unicode)
-    feedback_de = Column('feedback_de', Unicode)
-    feedback_fr = Column('feedback_fr', Unicode)
-    feedback_it = Column('feedback_it', Unicode)
-    feedback_en = Column('feedback_en', Unicode)
-    the_geom = Column(Geometry2D)
-
-
-class BikesharingPolygon (Base, Bikesharing, Vector):
-    __tablename__ = 'bikesharing_polygon'
-
-register('ch.bfe.bikesharing', BikesharingPolygon)
-
-
-class BikesharingPoint (Base, Bikesharing, Vector):
-    __tablename__ = 'bikesharing_point'
-
-register('ch.bfe.bikesharing', BikesharingPoint)
-
-
 class Biomasse:
     __tablename__ = 'biomasse'
     __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': True})
