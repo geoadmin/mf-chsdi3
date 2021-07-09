@@ -735,37 +735,6 @@ class Energiestaedte(Base, Vector):
 register('ch.bfe.energiestaedte', Energiestaedte)
 
 
-class EnergiestaedteRegionen(Base, Vector):
-    __tablename__ = 'energiestaedte_energieregionen'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/energiestaedte_energieregionen.mako'
-    __bodId__ = 'ch.bfe.energiestaedte-energieregionen'
-    __extended_info__ = True
-    __label__ = 'name'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Unicode)
-    kategorie = Column('kategorie', Unicode)
-    beteiligtegemeinden = Column('beteiligtegemeinden', Unicode)
-    linkenergieregion = Column('linkenergieregion', Unicode)
-    berater = Column('berater', Unicode)
-    mailberater  = Column('mailberater', Unicode)
-    bezeichnung_kat_de = Column('bezeichnung_kat_de', Unicode)
-    bezeichnung_kat_fr = Column('bezeichnung_kat_fr', Unicode)
-    bezeichnung_kat_it = Column('bezeichnung_kat_it', Unicode)
-    bezeichnung_kat_en = Column('bezeichnung_kat_en', Unicode)
-    projektportraittext_de = Column('projektportraittext_de', Unicode)
-    projektportraittext_fr = Column('projektportraittext_fr', Unicode)
-    projektportraittext_it = Column('projektportraittext_it', Unicode)
-    projektportraittext_en = Column('projektportraittext_en', Unicode)
-    projektportraitlink_de = Column('projektportraitlink_de', Unicode)
-    projektportraitlink_fr = Column('projektportraitlink_fr', Unicode)
-    projektportraitlink_it = Column('projektportraitlink_it', Unicode)
-    projektportraitlink_en = Column('projektportraitlink_en', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfe.energiestaedte-energieregionen', EnergiestaedteRegionen)
-
-
 class Energiestaedte2000wattAreale(Base, Vector):
     __tablename__ = 'energiestaedte_2000watt_areale'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
