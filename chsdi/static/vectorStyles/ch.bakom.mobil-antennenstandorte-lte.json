@@ -3,7 +3,7 @@
   "geomType": "point",
   "vectorOptions": {
     "type": "circle",
-    "radius": 4,
+    "radius": 7,
     "fill": {
       "color": "#007DFF"
     },
