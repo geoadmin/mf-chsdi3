@@ -2411,7 +2411,6 @@ class ThermischeNetzeGeometry(Base, Vector):
     id = Column('xtf_id', Unicode, primary_key=True)
     name = Column('name', Unicode)
     operator = Column('operator', Unicode)
-    contact = Column('contact', Unicode)
     de_enersource_main = Column('de_enersource_main', Unicode)
     fr_enersource_main = Column('fr_enersource_main', Unicode)
     it_enersource_main = Column('it_enersource_main', Unicode)
