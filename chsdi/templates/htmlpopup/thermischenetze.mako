@@ -74,7 +74,7 @@
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.power')}</td>
-      <td>${c['attributes']['power'] or '-'}</td>
+      <td>${c['attributes']['power'] or '-'} MW</td>
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.energy')}</td>
