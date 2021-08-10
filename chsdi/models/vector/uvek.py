@@ -3856,3 +3856,25 @@ class Elektrizitaetsproduktionsanlagen (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.elektrizitaetsproduktionsanlagen', Elektrizitaetsproduktionsanlagen)
+
+
+class WaermepotentialGewaesser (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'waermepotential_gewaesser'
+    __template__ = 'templates/htmlpopup/waermepotential_gewaesser.mako'
+    __bodId__ = 'ch.bfe.waermepotential-gewaesser'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    extraction_spring = Column('extraction_spring', Unicode)
+    extraction_summer = Column('extraction_summer', Unicode)
+    extraction_fall = Column('extraction_fall', Unicode)
+    extraction_winter = Column('extraction_winter', Unicode)
+    disposal_spring = Column('disposal_spring', Unicode)
+    disposal_summer = Column('disposal_summer', Unicode)
+    disposal_fall = Column('disposal_fall', Unicode)
+    disposal_winter = Column('disposal_winter', Unicode)
+    further_information = Column('further_information', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.waermepotential-gewaesser', WaermepotentialGewaesser)
