@@ -74,11 +74,11 @@
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.power')}</td>
-      <td>${c['attributes']['power'] or '-'} MW</td>
+      <td>${c['attributes']['power'] or '-'}</td>
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.energy')}</td>
-      <td>${c['attributes']['energy'] or '-'} MWh/a</td>
+      <td>${c['attributes']['energy'] or '-'}</td>
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.houseconnections')}</td>
@@ -86,7 +86,7 @@
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.netlength')}</td>
-      <td>${c['attributes']['netlength'] or '-'} km</td>
+      <td>${c['attributes']['netlength'] or '-'}</td>
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.de_energysource')}</td>
