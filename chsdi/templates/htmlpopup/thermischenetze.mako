@@ -45,6 +45,10 @@
       <td>${c['attributes']['operator'] or '-'}</td>
     </tr>
     <tr>
+      <td class="cell-meta">${_('ch.bfe.thermische-netze.contact')}</td>
+      <td>${c['attributes']['contact'] or '-'}</td>
+    </tr>
+    <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.operatoraddress')}</td>
       <td>${c['attributes']['operatoraddress'] or '-'}</td>
     </tr>
