@@ -11,7 +11,8 @@
 <% c['stable_id'] = True %>
     <tr><td class="cell-left">${_('ch.bfe.thermische-netze.name')}</td> <td>${c['attributes']['name']}</td></tr>
     <tr><td class="cell-left">${_('ch.bfe.thermische-netze.operator')}</td><td>${c['attributes']['operator'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bfe.thermische-netze.contact')}</td> <td>${c['attributes']['contact']}</td></tr>
+    <tr><td class="cell-left">${_('ch.bfe.thermische-netze.beginningofoperation')}</td><td>${c['attributes']['beginningofoperation'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bfe.thermische-netze.power')}</td><td>${c['attributes']['power'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfe.thermische-netze.de_enersource_main')}</td><td>${c['attributes'][enersource_main] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfe.thermische-netze.feedback')}</td><td><a target="_blank" href="https://www.uvek-gis.admin.ch/BFE/storymaps/EE_ThermischeNetze_Feedback/?&name=${c['attributes']['name']}&place=${c['attributes']['place']}&long=${c['attributes']['x']}&lat=${c['attributes']['y']}&lang=${lang}">${_('ch.bfe.thermische-netze.sendfeedback')}</a></td></tr>
 
@@ -42,10 +43,6 @@
     <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.operator')}</td>
       <td>${c['attributes']['operator'] or '-'}</td>
-    </tr>
-    <tr>
-      <td class="cell-meta">${_('ch.bfe.thermische-netze.contact')}</td>
-      <td>${c['attributes']['contact'] or '-'}</td>
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bfe.thermische-netze.operatoraddress')}</td>
