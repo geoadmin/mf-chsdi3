@@ -1,6 +1,8 @@
 SHELL = /bin/bash
 .DEFAULT_GOAL := help
 
+SERVICE_NAME := mf-chsdi3
+
 # Macro functions
 lastvalue = $(shell if [ -f .venv/last-$1 ]; then cat .venv/last-$1 2> /dev/null; else echo '-none-'; fi;)
 
@@ -50,6 +52,23 @@ SHORTENER_TABLE_REGION ?= $(AWS_DEFAULT_REGION)
 PYPI_URL ?= https://pypi.org/simple/
 GITHUB_LAST_COMMIT=$(shell curl -s  https://api.github.com/repos/geoadmin/mf-chsdi3/commits | jq -r '.[0].sha')
 DYNAMIC_TRANSLATION ?= 1
+
+# Docker metadata
+GIT_HASH = `git rev-parse HEAD`
+GIT_HASH_SHORT = `git rev-parse --short HEAD`
+GIT_BRANCH = `git symbolic-ref HEAD --short 2>/dev/null`
+GIT_DIRTY = `git status --porcelain`
+GIT_TAG = `git describe --tags || echo "no version info"`
+AUTHOR = $(USER)
+
+# Docker variables
+DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
+DOCKER_IMG_LOCAL_TAG := $(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+DOCKER_IMAGE_LOCAL_TAG_BASEIMAGE = $(DOCKER_REGISTRY)/mf-chsdi3:base
+
+# AWS variables
+ AWS_DEFAULT_REGION ?= eu-central-1
+
 
 # Last values
 KEEP_VERSION ?= 'false'
@@ -157,7 +176,7 @@ else
     PYTHON_VERSION := $(shell $(SYSTEM_PYTHON_CMD)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
 endif
 PIP_CMD := $(INSTALL_DIRECTORY)/bin/pip${PYTHON_VERSION}
-build/python: 
+build/python:
 		mkdir -p build && touch build/python;
 else
 		PYTHON_VERSION := $(shell python2 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
@@ -243,30 +262,46 @@ all: setup chsdi/static/css/extended.min.css templates translate lint fixrights 
 setup: .venv node_modules .venv/hooks
 
 templates: apache/wsgi.conf apache/application.wsgi development.ini production.ini chsdi/static/info.json
-	$(call build_templates,$(DEPLOY_TARGET)) 
+	$(call build_templates,$(DEPLOY_TARGET))
+
 
 .PHONY: baseimage
 baseimage:
-	docker build -t swisstopo/mf-chsdi3:base  -f Dockerfile.base .
+	docker build -t $(DOCKER_IMAGE_LOCAL_TAG_BASEIMAGE)  -f Dockerfile.base .
+
 
 .PHONY: image
 image:
-	docker build -t swisstopo/mf-chsdi3:python3.7  -f Dockerfile  .
-	
+	docker build \
+		--build-arg GIT_HASH="$(GIT_HASH)" \
+		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
+		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
+		--build-arg VERSION="$(GIT_TAG)" \
+		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG) -f Dockerfile .
+
+
+.PHONY: dockerlogin
+dockerlogin:
+	aws --profile swisstopo-bgdi-builder ecr get-login-password --region $(AWS_DEFAULT_REGION) | docker login --username AWS --password-stdin $(DOCKER_REGISTRY)
+
+
+.PHONY: dockerpush
+dockerpush: baseimage image
+	docker push $(DOCKER_IMAGE_LOCAL_TAG_BASEIMAGE)
+	docker push $(DOCKER_IMG_LOCAL_TAG)
+
+
 .PHONY: environ
 environ:
-	$(call build_templates,$(DEPLOY_TARGET)) 
+	$(call build_templates,$(DEPLOY_TARGET))
 
 define build_templates
-	export $(shell cat $1.env) && source rc_$1 \                                                                                                 
+	export $(shell cat $1.env) && source rc_$1 \
 	envsubst < apache/wsgi.conf.in > apache/wsgi.conf && envsubst < rancher-compose.yml.in > rancher-compose.yml && \
 		envsubst <  apache/application.wsgi.in > apache/application.wsgi && \
 		envsubst < docker-compose.yml.in > docker-compose.yml && \
 		envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
 endef
-
-
-
 
 .PHONY: serve
 serve:
@@ -568,7 +603,7 @@ requirements.txt:
 ifeq ($(USE_PYTHON3), 1)
 .venv: requirements.txt
 		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; 
+		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ;
 		${PIP_CMD} install --index-url ${PYPI_URL}  -e .
 else
 .venv: requirements.txt
