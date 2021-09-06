@@ -26,7 +26,7 @@ env:
     PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
     ROBOTS_FILE: robots.txt
     SERVER_PORT: 6543
-    SPHINXHOST: service-sphinxsearch.dev.bgdi.ch 
+    SPHINXHOST: service-sphinxsearch.dev.bgdi.ch
     VECTOR_BUCKET: mf-chsdi3-bgdi-grid-based-data
     WMSHOST: wms-bgdi.dev.bgdi.ch
     WSGI_PROCESSES: 1
@@ -46,8 +46,6 @@ env:
 
 phases:
   install:
-    runtime-versions:
-      docker: 18
     commands:
       - |-
            if [ "${USE_PYTHON3}" = 0 ]; then
@@ -113,7 +111,7 @@ phases:
       - echo "===========SPHINXSEARCH===================="
       - .venv/bin/python ./scripts/test_sphinxserver.py
       - echo "==========================================="
-      
+
   post_build:
     commands:
       - echo Testing...

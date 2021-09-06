@@ -9,40 +9,6 @@ from chsdi.models.vector import Vector, Geometry2D
 Base = bases['dritte']
 
 
-class MobilityStandorte:
-    __tablename__ = 'standorte_tooltip'
-    __table_args__ = ({'schema': 'mobility', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/mobility_standorte.mako'
-    __bodId__ = 'ch.mobility.standorte'
-    __label__ = 'name'
-    __returnedGeometry__ = 'the_geom_point'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Unicode)
-    number = Column('number', Integer)
-    location = Column('location', Unicode)
-    lat = Column('lat', Float)
-    lon = Column('lon', Float)
-    street = Column('street', Unicode)
-    city = Column('city', Unicode)
-    categories = Column('categories', Unicode)
-    the_geom_point = Column('the_geom', Geometry2D)
-
-
-class MobilityStandorteZoom1(Base, MobilityStandorte, Vector):
-    __minscale__ = 1
-    __maxscale__ = 4000
-    the_geom = Column('the_geom_click', Geometry2D)
-
-register(MobilityStandorte.__bodId__, MobilityStandorteZoom1)
-
-
-class MobilityStandorteZoom2(Base, MobilityStandorte, Vector):
-    __minscale__ = 4000
-    the_geom = Column('the_geom_click_overview', Geometry2D)
-
-register(MobilityStandorte.__bodId__, MobilityStandorteZoom2)
-
-
 class Notfallschutz(Base, Vector):
     __tablename__ = 'zonenplan_kernanlagen'
     __table_args__ = ({'schema': 'ensi', 'autoload': False})
@@ -116,159 +82,56 @@ class AeromagnetischeKarte1100(Base, Vector):
     et_fromatt_1100 = Column('et_fromatt_1100', Numeric)
     the_geom = Column(Geometry2D)
 
-
 register('ch.nagra.aeromagnetische-karte_1100', AeromagnetischeKarte1100)
 
 
-class AsylFacilitiesA(Base, Vector):
+class AsylFacilities:
+    __table_args__ = ({'schema': 'sem', 'autoload': False})
+    __template__ = 'templates/htmlpopup/asyl_facilities.mako'
+    # Translatable labels in fr, it
+    __label__ = 'facname_de'
+    id = Column('stabil_id', Unicode, primary_key=True)
+    facname_de = Column('facname_de', Unicode)
+    facname_fr = Column('facname_fr', Unicode)
+    facname_it = Column('facname_it', Unicode)
+    kindid = Column('kindid', Unicode)
+    fackind_text_de = Column('fackind_text_de', Unicode)
+    fackind_text_fr = Column('fackind_text_fr', Unicode)
+    fackind_text_it = Column('fackind_text_it', Unicode)
+    statusid = Column('statusid', Unicode)
+    facstatus_text_de = Column('facstatus_text_de', Unicode)
+    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
+    facstatus_text_it = Column('facstatus_text_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    description_text_de = Column('description_text_de', Unicode)
+    description_text_fr = Column('description_text_fr', Unicode)
+    description_text_it = Column('description_text_it', Unicode)
+    document_web = Column('document_web', Unicode)
+    document_title = Column('document_title', Unicode)
+    objectname_de = Column('objectname_de', Unicode)
+    objectname_fr = Column('objectname_fr', Unicode)
+    objectname_it = Column('objectname_it', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class AsylFacilitiesAnhoerung(Base, AsylFacilities, Vector):
     __tablename__ = 'sachplan_asyl_facilities_anhorung'
-    __table_args__ = ({'schema': 'sem', 'autoload': False})
-    __template__ = 'templates/htmlpopup/asyl_facilities.mako'
     __bodId__ = 'ch.sem.sachplan-asyl_anhoerung'
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Unicode, primary_key=True)
-    facname_de = Column('facname_de', Unicode)
-    facname_fr = Column('facname_fr', Unicode)
-    facname_it = Column('facname_it', Unicode)
-    kindid = Column('kindid', Unicode)
-    fackind_text_de = Column('fackind_text_de', Unicode)
-    fackind_text_fr = Column('fackind_text_fr', Unicode)
-    fackind_text_it = Column('fackind_text_it', Unicode)
-    statusid = Column('statusid', Unicode)
-    facstatus_text_de = Column('facstatus_text_de', Unicode)
-    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
-    facstatus_text_it = Column('facstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    description_text_de = Column('description_text_de', Unicode)
-    description_text_fr = Column('description_text_fr', Unicode)
-    description_text_it = Column('description_text_it', Unicode)
-    document_web = Column('document_web', Unicode)
-    document_title = Column('document_title', Unicode)
-    objectname_de = Column('objectname_de', Unicode)
-    objectname_fr = Column('objectname_fr', Unicode)
-    objectname_it = Column('objectname_it', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    the_geom = Column(Geometry2D)
 
 
-class AsylPlanningA(Base, Vector):
-    __tablename__ = 'sachplan_asyl_plmeasures_anhorung'
-    __table_args__ = ({'schema': 'sem', 'autoload': False})
-    __template__ = 'templates/htmlpopup/asyl_planning.mako'
-    __bodId__ = 'ch.sem.sachplan-asyl_anhoerung'
-    # Translatable labels in fr, it
-    __label__ = 'plname_de'
-    id = Column('stabil_id', Unicode, primary_key=True)
-    plname_de = Column('plname_de', Unicode)
-    plname_fr = Column('plname_fr', Unicode)
-    plname_it = Column('plname_it', Unicode)
-    meastype_tid = Column('meastype_tid', Unicode)
-    meastype_text_de = Column('meastype_text_de', Unicode)
-    meastype_text_fr = Column('meastype_text_fr', Unicode)
-    meastype_text_it = Column('meastype_text_it', Unicode)
-    coordlevel_bid = Column('coordlevel_bid', Unicode)
-    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
-    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
-    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
-    plstatus_text_de = Column('plstatus_text_de', Unicode)
-    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
-    plstatus_text_it = Column('plstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
-    description_text_de = Column('description_text_de', Unicode)
-    description_text_fr = Column('description_text_fr', Unicode)
-    description_text_it = Column('description_text_it', Unicode)
-    document_web = Column('document_web', Unicode)
-    document_title = Column('document_title', Unicode)
-    objectname_de = Column('objectname_de', Unicode)
-    objectname_fr = Column('objectname_fr', Unicode)
-    objectname_it = Column('objectname_it', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    __minscale__ = 20005
-    __maxscale__ = 500005
-    the_geom = Column(Geometry2D)
-
-
-class AsylPlanningRasterA(Base, Vector):
-    __tablename__ = 'sachplan_asyl_plmeasures_r_anhorung'
-    __table_args__ = ({'schema': 'sem', 'autoload': False})
-    __template__ = 'templates/htmlpopup/asyl_planning.mako'
-    __bodId__ = 'ch.sem.sachplan-asyl_anhoerung'
-    # Translatable labels in fr, it
-    __label__ = 'plname_de'
-    id = Column('stabil_id', Unicode, primary_key=True)
-    plname_de = Column('plname_de', Unicode)
-    plname_fr = Column('plname_fr', Unicode)
-    plname_it = Column('plname_it', Unicode)
-    meastype_tid = Column('meastype_tid', Unicode)
-    meastype_text_de = Column('meastype_text_de', Unicode)
-    meastype_text_fr = Column('meastype_text_fr', Unicode)
-    meastype_text_it = Column('meastype_text_it', Unicode)
-    coordlevel_bid = Column('coordlevel_bid', Unicode)
-    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
-    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
-    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
-    plstatus_text_de = Column('plstatus_text_de', Unicode)
-    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
-    plstatus_text_it = Column('plstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
-    description_text_de = Column('description_text_de', Unicode)
-    description_text_fr = Column('description_text_fr', Unicode)
-    description_text_it = Column('description_text_it', Unicode)
-    document_web = Column('document_web', Unicode)
-    document_title = Column('document_title', Unicode)
-    objectname_de = Column('objectname_de', Unicode)
-    objectname_fr = Column('objectname_fr', Unicode)
-    objectname_it = Column('objectname_it', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    __maxscale__ = 20005
-    __minscale__ = 1
-    the_geom = Column(Geometry2D)
-
-register('ch.sem.sachplan-asyl_anhoerung', AsylFacilitiesA)
-register('ch.sem.sachplan-asyl_anhoerung', AsylPlanningA)
-register('ch.sem.sachplan-asyl_anhoerung', AsylPlanningRasterA)
-
-
-class AsylFacilitiesK(Base, Vector):
+class AsylFacilitiesKraft(Base, AsylFacilities, Vector):
     __tablename__ = 'sachplan_asyl_facilities_kraft'
-    __table_args__ = ({'schema': 'sem', 'autoload': False})
-    __template__ = 'templates/htmlpopup/asyl_facilities.mako'
     __bodId__ = 'ch.sem.sachplan-asyl_kraft'
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Unicode, primary_key=True)
-    facname_de = Column('facname_de', Unicode)
-    facname_fr = Column('facname_fr', Unicode)
-    facname_it = Column('facname_it', Unicode)
-    kindid = Column('kindid', Unicode)
-    fackind_text_de = Column('fackind_text_de', Unicode)
-    fackind_text_fr = Column('fackind_text_fr', Unicode)
-    fackind_text_it = Column('fackind_text_it', Unicode)
-    statusid = Column('statusid', Unicode)
-    facstatus_text_de = Column('facstatus_text_de', Unicode)
-    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
-    facstatus_text_it = Column('facstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    description_text_de = Column('description_text_de', Unicode)
-    description_text_fr = Column('description_text_fr', Unicode)
-    description_text_it = Column('description_text_it', Unicode)
-    document_web = Column('document_web', Unicode)
-    document_title = Column('document_title', Unicode)
-    objectname_de = Column('objectname_de', Unicode)
-    objectname_fr = Column('objectname_fr', Unicode)
-    objectname_it = Column('objectname_it', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    the_geom = Column(Geometry2D)
 
 
-class AsylPlanningK(Base, Vector):
-    __tablename__ = 'sachplan_asyl_plmeasures_kraft'
+register('ch.sem.sachplan-asyl_anhoerung', AsylFacilitiesAnhoerung)
+register('ch.sem.sachplan-asyl_kraft', AsylFacilitiesKraft)
+
+
+class AsylPlanning:
     __table_args__ = ({'schema': 'sem', 'autoload': False})
     __template__ = 'templates/htmlpopup/asyl_planning.mako'
-    __bodId__ = 'ch.sem.sachplan-asyl_kraft'
     # Translatable labels in fr, it
     __label__ = 'plname_de'
     id = Column('stabil_id', Unicode, primary_key=True)
@@ -297,48 +160,38 @@ class AsylPlanningK(Base, Vector):
     objectname_fr = Column('objectname_fr', Unicode)
     objectname_it = Column('objectname_it', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class AsylPlanningAnhoerung(Base, AsylPlanning, Vector):
+    __tablename__ = 'sachplan_asyl_plmeasures_anhorung'
+    __bodId__ = 'ch.sem.sachplan-asyl_anhoerung'
     __minscale__ = 20005
     __maxscale__ = 500005
-    the_geom = Column(Geometry2D)
 
 
-class AsylPlanningRasterK(Base, Vector):
-    __tablename__ = 'sachplan_asyl_plmeasures_r_kraft'
-    __table_args__ = ({'schema': 'sem', 'autoload': False})
-    __template__ = 'templates/htmlpopup/asyl_planning.mako'
-    __bodId__ = 'ch.sem.sachplan-asyl_kraft'
-    # Translatable labels in fr, it
-    __label__ = 'plname_de'
-    id = Column('stabil_id', Unicode, primary_key=True)
-    plname_de = Column('plname_de', Unicode)
-    plname_fr = Column('plname_fr', Unicode)
-    plname_it = Column('plname_it', Unicode)
-    meastype_tid = Column('meastype_tid', Unicode)
-    meastype_text_de = Column('meastype_text_de', Unicode)
-    meastype_text_fr = Column('meastype_text_fr', Unicode)
-    meastype_text_it = Column('meastype_text_it', Unicode)
-    coordlevel_bid = Column('coordlevel_bid', Unicode)
-    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
-    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
-    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
-    plstatus_text_de = Column('plstatus_text_de', Unicode)
-    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
-    plstatus_text_it = Column('plstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
-    description_text_de = Column('description_text_de', Unicode)
-    description_text_fr = Column('description_text_fr', Unicode)
-    description_text_it = Column('description_text_it', Unicode)
-    document_web = Column('document_web', Unicode)
-    document_title = Column('document_title', Unicode)
-    objectname_de = Column('objectname_de', Unicode)
-    objectname_fr = Column('objectname_fr', Unicode)
-    objectname_it = Column('objectname_it', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
+class AsylPlanningRasterAnhoerung(Base, AsylPlanning, Vector):
+    __tablename__ = 'sachplan_asyl_plmeasures_r_anhorung'
+    __bodId__ = 'ch.sem.sachplan-asyl_anhoerung'
     __maxscale__ = 20005
     __minscale__ = 1
-    the_geom = Column(Geometry2D)
 
-register('ch.sem.sachplan-asyl_kraft', AsylFacilitiesK)
-register('ch.sem.sachplan-asyl_kraft', AsylPlanningK)
-register('ch.sem.sachplan-asyl_kraft', AsylPlanningRasterK)
+
+class AsylPlanningKraft(Base, AsylPlanning, Vector):
+    __tablename__ = 'sachplan_asyl_plmeasures_kraft'
+    __bodId__ = 'ch.sem.sachplan-asyl_kraft'
+    __minscale__ = 20005
+    __maxscale__ = 500005
+
+
+class AsylPlanningRasterKraft(Base, AsylPlanning, Vector):
+    __tablename__ = 'sachplan_asyl_plmeasures_r_kraft'
+    __bodId__ = 'ch.sem.sachplan-asyl_kraft'
+    __maxscale__ = 20005
+    __minscale__ = 1
+
+
+register('ch.sem.sachplan-asyl_anhoerung', AsylPlanningAnhoerung)
+register('ch.sem.sachplan-asyl_anhoerung', AsylPlanningRasterAnhoerung)
+register('ch.sem.sachplan-asyl_kraft', AsylPlanningKraft)
+register('ch.sem.sachplan-asyl_kraft', AsylPlanningRasterKraft)
