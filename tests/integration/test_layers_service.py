@@ -218,8 +218,6 @@ class TestMapServiceView(TestsBase):
     def test_layer_attributes(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln', status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        resp = self.testapp.get('/rest/services/api/MapServer/ch.mobility.standorte', status=200)
-        self.assertEqual(resp.content_type, 'application/json')
 
     def test_layer_attributes_lang_specific(self):
         lang = 'de'
