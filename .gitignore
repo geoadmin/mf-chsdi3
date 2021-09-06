@@ -23,6 +23,7 @@ deploy/hooks/pre-create-code
 node_modules
 MANIFEST
 buildout_branch.cfg
+25-mf-chsdi3.conf
 deploy/deploy-branch.cfg
 deploy/conf/00-branch.conf
 print/WEB-INF/web.xml

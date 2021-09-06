@@ -1,3 +1,7 @@
+# 
+# Only for python2 and vhost
+#
+#
 version: 0.2
 
 env:
@@ -26,7 +30,7 @@ env:
     PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
     ROBOTS_FILE: robots.txt
     SERVER_PORT: 6543
-    SPHINXHOST: service-sphinxsearch.dev.bgdi.ch 
+    SPHINXHOST: service-sphinxsearch.dev.bgdi.ch
     VECTOR_BUCKET: mf-chsdi3-bgdi-grid-based-data
     WMSHOST: wms-bgdi.dev.bgdi.ch
     WSGI_PROCESSES: 1
@@ -36,10 +40,9 @@ env:
     CACHE_CONTROL: no-cache
     SHORTENER_TABLE_NAME: mf_chsdi3_shorturl
     SHORTENER_TABLE_REGION: eu-central-1
+
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
     # We do not have AWS S3 and DynmoDB access for now
-    S3_TESTS: 0
-    DYNAMODB_TESTS: 0
   parameter-store:
     OPENTRANS_API_KEY: "/opentrans_api/key"
     PGUSER: "/postgresql/pguser"
@@ -47,8 +50,6 @@ env:
 
 phases:
   install:
-    runtime-versions:
-      python: 3.7
     commands:
       - |-
            if [ "${USE_PYTHON3}" = 0 ]; then
@@ -104,17 +105,12 @@ phases:
   build:
     commands:
       - echo Build started on $(date)
-      - |-
-           if [ "${USE_PYTHON3}" = 0 ]; then
-             make cleanall all
-           else
-              make cleanall build/python all
-           fi
+      - make cleanall all
       - echo Build completed on $(date)
       - echo "===========SPHINXSEARCH===================="
       - .venv/bin/python ./scripts/test_sphinxserver.py
       - echo "==========================================="
-      
+
   post_build:
     commands:
       - echo Testing...

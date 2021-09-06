@@ -2,13 +2,12 @@ version: '2'
 services:
   chsdi3:
     build: .
-    image: swisstopo/mf-chsdi3:python3.7
+    image: ${DOCKER_IMG_TAG_LATEST}
     env_file:
     - ${RANCHER_LABEL}.env
     environment:
       PGUSER: ${PGUSER}
       PGPASSWORD: ${PGPASSWORD}
-    network_mode: "host"
     command:
       - /usr/sbin/apache2ctl
       - "-D"

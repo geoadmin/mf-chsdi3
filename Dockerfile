@@ -1,5 +1,4 @@
-#FROM python:3.8-buster
-FROM 974517877189.dkr.ecr.eu-central-1.amazonaws.com/mf-chsdi3:base
+FROM python:3.7-buster
 
 ENV USE_PYTHON3=1
 ENV SYSTEM_PYTHON_CMD=/usr/local/bin/python3.7
@@ -9,6 +8,18 @@ ENV PROJ=chsdi
 ENV VHOST=mf-${PROJ}3
 ENV PROJDIR=/var/www/vhosts/${VHOST}/private/${PROJ}
 
+RUN apt-get update && apt-get install apt-utils \
+      ; DEBIAN_FRONTEND=noninteractive apt-get install -y --upgrade ca-certificates \
+      ; DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg::Options::="--force-confold" \
+      nodejs npm  build-essential git  gettext-base libpq-dev libgeos-dev \
+      apache2 libapache2-mod-wsgi-py3 \
+      gettext gettext-base  \
+      curl \
+      bash \
+      vim \
+      lynx \
+      && apt-get clean \
+      && rm -rf /var/lib/apt/lists/*
 
 RUN groupadd --gid 2500 geodata \
     && useradd --uid 2500 --gid geodata --shell /bin/bash --create-home geodata
@@ -28,7 +39,8 @@ RUN /usr/sbin/a2enmod auth_basic authz_groupfile autoindex dir env expires filte
 
 COPY . /var/www/vhosts/${VHOST}/private/chsdi
 WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
-RUN . ./rc_dev && make cleanall build/python setup chsdi/static/css/extended.min.css production.ini development.ini  potomo lint fixrights doc
+# TODO: potomo & translate
+RUN . ./rc_dev && make cleanall build/python setup chsdi/static/css/extended.min.css development.ini production.ini fixrights
 
 ENTRYPOINT ["/var/www/vhosts/mf-chsdi3/private/chsdi/docker-entrypoint.sh"]
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]

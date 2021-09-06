@@ -32,6 +32,7 @@ GIT_BRANCH := $(shell if [ -f '.venv/deployed-git-branch' ]; \
 GIT_COMMIT_HASH ?= $(shell git rev-parse --verify HEAD)
 GIT_COMMIT_SHORT ?= $(shell git rev-parse --short $(GIT_COMMIT_HASH))
 GIT_COMMIT_DATE ?= $(shell git log -1  --date=iso --pretty=format:%cd)
+DOCKER_IMG_TAG_LATEST ?= $(DOCKER_REGISTRY)/${SERVICE_NAME}:${GIT_BRANCH}.latest
 CURRENT_DATE ?= $(shell date -u +"%Y-%m-%d %H:%M:%S %z")
 NO_TESTS ?= withtests
 NODE_DIRECTORY := node_modules
@@ -54,11 +55,11 @@ GITHUB_LAST_COMMIT=$(shell curl -s  https://api.github.com/repos/geoadmin/mf-chs
 DYNAMIC_TRANSLATION ?= 1
 
 # Docker metadata
-GIT_HASH = `git rev-parse HEAD`
-GIT_HASH_SHORT = `git rev-parse --short HEAD`
-GIT_BRANCH = `git symbolic-ref HEAD --short 2>/dev/null`
-GIT_DIRTY = `git status --porcelain`
-GIT_TAG = `git describe --tags || echo "no version info"`
+GIT_HASH = $(shell git rev-parse HEAD)
+GIT_HASH_SHORT = $(shell git rev-parse --short HEAD)
+GIT_BRANCH = $(shell git symbolic-ref HEAD --short 2>/dev/null)
+GIT_DIRTY = $(shell git status --porcelain)
+GIT_TAG = $(shell git describe --tags || echo "no version info")
 AUTHOR = $(USER)
 
 # Docker variables
@@ -163,7 +164,7 @@ GREEN := $(shell tput setaf 2)
 # We need GDAL which is hard to install in a venv, modify PYTHONPATH to use the
 # system wide version.
 GDAL_VERSION ?= 1.10.0
-PYTHON_INSTALL_VERSION ?= 3.6.4
+PYTHON_INSTALL_VERSION ?= 3.7.10
 
 ifndef USE_PYTHON3
 		override USE_PYTHON3 = 0
@@ -248,6 +249,8 @@ help:
 	@echo "GIT_BRANCH:          ${GIT_BRANCH}"
 	@echo "SERVER_PORT:         ${SERVER_PORT}"
 	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
+	@echo "DOCKER_IMG_LOCAL_TAG   ${DOCKER_IMG_LOCAL_TAG}"
+	@echo "DOCKER_IMG_TAG_LATEST  ${DOCKER_IMG_TAG_LATEST}"
 	@echo
 
 
@@ -277,7 +280,7 @@ image:
 		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
 		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
 		--build-arg VERSION="$(GIT_TAG)" \
-		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG) -f Dockerfile .
+		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG) -t ${DOCKER_IMG_TAG_LATEST} -f Dockerfile .
 
 
 .PHONY: dockerlogin
@@ -296,8 +299,8 @@ environ:
 	$(call build_templates,$(DEPLOY_TARGET))
 
 define build_templates
-	export $(shell cat $1.env) && source rc_$1 \
-	envsubst < apache/wsgi.conf.in > apache/wsgi.conf && envsubst < rancher-compose.yml.in > rancher-compose.yml && \
+	export $(shell cat $1.env) && source rc_$1 && export DOCKER_IMG_LOCAL_TAG=${DOCKER_IMG_LOCAL_TAG} && export DOCKER_IMG_TAG_LATEST=${DOCKER_IMG_TAG_LATEST} && \
+		envsubst < apache/wsgi.conf.in > apache/wsgi.conf && \
 		envsubst <  apache/application.wsgi.in > apache/application.wsgi && \
 		envsubst < docker-compose.yml.in > docker-compose.yml && \
 		envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
@@ -354,7 +357,7 @@ translate:
 pofiles:
 		@echo "${GREEN}Generating pofiles...${RESET}";
 		mkdir -p chsdi/locale/{de,fr,it,fi,en}/LC_MESSAGES;
-		source rc_dev && ${PYTHON_CMD} scripts/translation2po.py chsdi/locale/
+		source rc_prod && ${PYTHON_CMD} scripts/translation2po.py chsdi/locale/
 
 chsdi/locale/en/LC_MESSAGES/chsdi.po:
 chsdi/locale/en/LC_MESSAGES/chsdi.mo: chsdi/locale/en/LC_MESSAGES/chsdi.po
@@ -597,21 +600,23 @@ production.ini: production.ini.in \
 	./scripts/install-git-hooks.sh
 	touch $@
 
+ifeq ($(USE_PYTHON3), 1)
+requirements-py3.txt:
+	@echo "${GREEN}File requirements-py3.txt has changed${RESET}";
+
+.venv: requirements-py3.txt
+		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
+		${PIP_CMD} install --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL} ;
+		${PIP_CMD} install -r requirements-py3.txt --index-url ${PYPI_URL}  -e .
+else
 requirements.txt:
 	@echo "${GREEN}File requirements.txt has changed${RESET}";
-
-ifeq ($(USE_PYTHON3), 1)
-.venv: requirements.txt
-		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ;
-		${PIP_CMD} install --index-url ${PYPI_URL}  -e .
-else
 .venv: requirements.txt
 	@echo "${GREEN}Setting up virtual environement...${RESET}";
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv -p /usr/bin/python2  $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install --upgrade pip==19.2.3 setuptools==44.0.0 enum34==1.1.6 --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install --requirement requirements.txt  pip==19.2.3 setuptools==44.0.0 enum34==1.1.6 --index-url ${PYPI_URL} ; \
 	fi
 	${PIP_CMD} install --index-url ${PYPI_URL} -e .
 endif

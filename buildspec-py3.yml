@@ -1,10 +1,17 @@
+#
+# Only for python3 and docker
+#
 version: 0.2
 
 env:
   variables:
     SHELL: /bin/bash
     AWS_DEFAULT_REGION: eu-central-1
+    SERVICE_NAME: "mf-chsdi3"
+    DOCKER_REGISTRY: "974517877189.dkr.ecr.eu-central-1.amazonaws.com"
+    USER: "aws_code_build"
     APACHE_BASE_PATH: main
+    APACHE_PORT: 8009
     ALTI_URL: //service-alti.dev.bgdi.ch
     API_URL: //mf-chsdi3.dev.bgdi.ch
     SHOP_URL: //shop-bgdi.dev.bgdi.ch
@@ -25,8 +32,9 @@ env:
     MODWSGI_CONFIG: production.ini
     PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
     ROBOTS_FILE: robots.txt
+    RANCHER_LABEL: dev
     SERVER_PORT: 6543
-    SPHINXHOST: service-sphinxsearch.dev.bgdi.ch 
+    SPHINXHOST: service-sphinxsearch.dev.bgdi.ch
     VECTOR_BUCKET: mf-chsdi3-bgdi-grid-based-data
     WMSHOST: wms-bgdi.dev.bgdi.ch
     WSGI_PROCESSES: 1
@@ -36,10 +44,14 @@ env:
     CACHE_CONTROL: no-cache
     SHORTENER_TABLE_NAME: mf_chsdi3_shorturl
     SHORTENER_TABLE_REGION: eu-central-1
+    SYSTEM_PYTHON_CMD: python3
+    BUILD_TARGET: dev
+    GIT_TAG: undefined
+    # Disable some tests
+    DYNAMODB_TESTS: 0
+    S3_TESTS: 0
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
     # We do not have AWS S3 and DynmoDB access for now
-    S3_TESTS: 0
-    DYNAMODB_TESTS: 0
   parameter-store:
     OPENTRANS_API_KEY: "/opentrans_api/key"
     PGUSER: "/postgresql/pguser"
@@ -50,17 +62,15 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
-      - |-
-           if [ "${USE_PYTHON3}" = 0 ]; then
-             echo "Installing python 2.7"
-             apt-get update && apt-get install -y python2.7 python2.7-dev virtualenv build-essential
-           fi
+      - aws --version
 
   pre_build:
     commands:
       - echo Configuring stuff...
       - aws --version
       - exec /bin/bash
+      - echo "Login to AWS ECR docker registry"
+      - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${DOCKER_REGISTRY}
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - GITHUB_BRANCH=${CODEBUILD_WEBHOOK_HEAD_REF#refs/heads/*}
       - TODAY=$(date '+%Y%m%d')
@@ -80,6 +90,7 @@ phases:
       - python --version
       - python2 --version
       - python3 --version
+      - which python3
       - bash --version
       - echo "=========== VARIABLES ============="
       - echo CODEBUILD_RESOLVED_SOURCE_VERSION=${CODEBUILD_RESOLVED_SOURCE_VERSION}
@@ -96,31 +107,52 @@ phases:
       - echo IMAGE_TAG=${IMAGE_TAG}
       - echo BASH=${BASH}
       - echo SHELL=${SHELL}
+      - echo CURRENT_DIRECTORY=$(pwd)
       - echo USE_PYTHON3=${USE_PYTHON3}
       - echo "===========POSGRESQL========================"
       - python ./scripts/pg_ready.py
       - hostname -I
-      - echo "============================================"
+      - make help
+      - echo "==================================="
   build:
     commands:
       - echo Build started on $(date)
+      - make cleanall all
       - |-
-           if [ "${USE_PYTHON3}" = 0 ]; then
-             make cleanall all
-           else
-              make cleanall build/python all
-           fi
+        if [ "${GIT_TAG}" = "undefined"  ] ; then
+          DOCKER_IMG_TAG="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GITHUB_BRANCH}.${COMMIT_HASH}"
+        else
+          DOCKER_IMG_TAG="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GIT_TAG}"
+        fi
+      - export DOCKER_IMG_TAG=${DOCKER_IMG_TAG}
+      - export DOCKER_IMG_TAG_LATEST="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GITHUB_BRANCH}.latest"
+      #- export $(cat dev.env) && docker build -t swisstopo/mf-chsdi3:python3.7  .
+      - echo "Building docker image with tags ${DOCKER_IMG_TAG} and ${DOCKER_IMG_TAG_LATEST}"
+      - >
+          docker build
+          --build-arg GIT_HASH="${COMMIT_HASH}"
+          --build-arg GIT_BRANCH="${GITHUB_BRANCH}"
+          --build-arg AUTHOR="CI"
+          --build-arg VERSION="${GIT_TAG}"
+          -t "${DOCKER_IMG_TAG}" -t "${DOCKER_IMG_TAG_LATEST}" .
       - echo Build completed on $(date)
       - echo "===========SPHINXSEARCH===================="
       - .venv/bin/python ./scripts/test_sphinxserver.py
       - echo "==========================================="
-      
+
   post_build:
     commands:
-      - echo Testing...
-      - make lint
       - echo "==========Running tests=============="
-      - make testci
+      - make templates lint testci
+      - docker-compose up -d
+      - echo Testing
+      - DOCKER_CONTAINER_ID=$(docker ps -aq --filter status="running" --filter ancestor="${DOCKER_IMG_TAG_LATEST}") && if [ -z "$DOCKER_CONTAINER_ID"  ]; then exit 1; fi
+      - echo "Running test with the running container"
+      - docker exec -i "$DOCKER_CONTAINER_ID"   .venv/bin/nosetests  tests/functional
+      - curl -s localhost:${APACHE_PORT}/rest/services/api/MapServer | jq -r '.layers[].layerBodId'
+      - echo "=========== Pushing image to repository ==========="
+      - docker push ${DOCKER_IMG_TAG}
+      - docker push ${DOCKER_IMG_TAG_LATEST}
       - echo "Done"
 
 reports:
