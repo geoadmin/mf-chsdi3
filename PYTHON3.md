@@ -2,7 +2,7 @@ Migration to Python3
 ====================
 
 
-Currently, we are porting `mf-chsdi3` to Python3.
+Currently, we are porting `mf-chsdi3` to `python3` and `docker`
 
 For practical reason, `Makefile` will download and compile its
 own version of Python 3.6 and store it in the `local` directory.

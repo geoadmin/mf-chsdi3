@@ -264,9 +264,12 @@ all: setup chsdi/static/css/extended.min.css templates translate lint fixrights 
 
 setup: .venv node_modules .venv/hooks
 
+ifeq ($(USE_PYTHON3), 1)
 templates: apache/wsgi.conf apache/application.wsgi development.ini production.ini chsdi/static/info.json
 	$(call build_templates,$(DEPLOY_TARGET))
-
+else
+templates: apache/wsgi.conf development.ini production.ini chsdi/static/info.json
+endif
 
 .PHONY: image
 image:
@@ -295,7 +298,7 @@ environ:
 
 define build_templates
 	export $(shell cat $1.env) && source rc_$1 && export DOCKER_IMG_LOCAL_TAG=${DOCKER_IMG_LOCAL_TAG} && export DOCKER_IMG_TAG_LATEST=${DOCKER_IMG_TAG_LATEST} && \
-		envsubst < apache/wsgi.conf.in > apache/wsgi.conf && \
+		envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
 		envsubst <  apache/application.wsgi.in > apache/application.wsgi && \
 		envsubst < docker-compose.yml.in > docker-compose.yml && \
 		envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
@@ -374,6 +377,7 @@ potomo: chsdi/locale/en/LC_MESSAGES/chsdi.mo chsdi/locale/fr/LC_MESSAGES/chsdi.m
         chsdi/locale/de/LC_MESSAGES/chsdi.mo chsdi/locale/fi/LC_MESSAGES/chsdi.mo \
         chsdi/locale/it/LC_MESSAGES/chsdi.mo
 
+### vhosts specific targets ###
 .PHONY: deploybranch
 deploybranch:
 	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev...${RESET}";
@@ -466,13 +470,23 @@ deploy/conf/00-branch.conf: deploy/conf/00-branch.conf.in \
 	@echo "${GREEN}Creating deploy/conf/00-branch.conf...${RESET}"
 	${MAKO_CMD} --var "git_branch=$(GIT_BRANCH)" $< > $@
 
+
+### Starting script is different again in python2 and python3
 apache/application.wsgi.mako:
-	@echo "${GREEN}Template file apache/application.wsgi.mako has changed${RESET}";
+		@echo "${GREEN}Template file apache/application.wsgi.mako has changed${RESET}";
+
+apache/application.wsgi.in:
+	@echo "${GREEN}Template file apache/application.wsgi.in has changed${RESET}";
+
+ifeq ($(USE_PYTHON3), 0)
 apache/application.wsgi: apache/application.wsgi.mako \
                          .venv/last-current-directory \
                          .venv/last-modwsgi-config
-apache/application.wsgi.in:
-	@echo "${GREEN}Template file apache/application.wsgi.in has changed${RESET}";
+		@echo "${GREEN}Creating apache/application.wsgi...${RESET}";
+		${MAKO_CMD} \
+				--var "current_directory=$(CURRENT_DIRECTORY)" \
+				--var "modwsgi_config=$(MODWSGI_CONFIG)" $< > $@
+else
 
 apache/application.wsgi: apache/application.wsgi.in\
                          .venv/last-current-directory \
@@ -480,9 +494,17 @@ apache/application.wsgi: apache/application.wsgi.in\
 	@echo "${GREEN}Creating apache/application.wsgi...${RESET}";
 	${ENVSUBST_CMD} < $< > $@
 
+endif
+
 apache/wsgi.conf.in:
 	@echo "${GREEN}Template file apache/wsgi.conf.in has changed${RESET}";
-apache/wsgi.conf: apache/wsgi.conf.in \
+
+apache/wsgi-py3.conf.in:
+	@echo "${GREEN}Template file apache/wsgi-py3.conf.in has changed${RESET}";
+
+ifeq ($(USE_PYTHON3), 1)
+
+apache/wsgi.conf: apache/wsgi-py3.conf.in \
                   apache/application.wsgi \
                   .venv/last-apache-base-path \
                   .venv/last-apache-entry-path \
@@ -499,6 +521,37 @@ apache/wsgi.conf: apache/wsgi.conf.in \
 	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
 	${ENVSUBST_CMD} < $< > $@
 
+else
+apache/wsgi.conf: apache/wsgi.conf.in \
+                  apache/application.wsgi \
+                  .venv/last-apache-base-path \
+                  .venv/last-apache-entry-path \
+                  .venv/last-robots-file \
+                  .venv/last-branch-staging \
+                  .venv/last-git-branch \
+                  .venv/last-current-directory \
+                  .venv/last-deploy-target \
+                  .venv/last-modwsgi-user \
+                  .venv/last-wsgi-processes \
+                  .venv/last-wsgi-threads \
+                  .venv/last-wsgi-app \
+                  .venv/last-kml-temp-dir
+		@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
+		${MAKO_CMD} \
+				--var "apache_base_path=$(APACHE_BASE_PATH)" \
+				--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
+				--var "robots_file=$(ROBOTS_FILE)" \
+				--var "branch_staging=$(BRANCH_STAGING)" \
+				--var "git_branch=$(GIT_BRANCH)" \
+				--var "current_directory=$(CURRENT_DIRECTORY)" \
+				--var "deploy_target=$(DEPLOY_TARGET)" \
+				--var "cache_control=$(CACHE_CONTROL)" \
+				--var "modwsgi_user=$(MODWSGI_USER)" \
+				--var "wsgi_processes=$(WSGI_PROCESSES)" \
+				--var "wsgi_threads=$(WSGI_THREADS)" \
+				--var "wsgi_app=$(WSGI_APP)" \
+				--var "kml_temp_dir=$(KML_TEMP_DIR)" $< > $@
+endif
 
 app.log:
 	touch $@
@@ -611,7 +664,8 @@ requirements.txt:
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv -p /usr/bin/python2  $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install --requirement requirements.txt  pip==19.2.3 setuptools==44.0.0 enum34==1.1.6 --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install pip==19.2.3 setuptools==44.1.1 enum34==1.1.6 --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install --requirement requirements.txt  --index-url ${PYPI_URL} ; \
 	fi
 	${PIP_CMD} install --index-url ${PYPI_URL} -e .
 endif
