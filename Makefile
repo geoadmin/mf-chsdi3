@@ -268,11 +268,6 @@ templates: apache/wsgi.conf apache/application.wsgi development.ini production.i
 	$(call build_templates,$(DEPLOY_TARGET))
 
 
-.PHONY: baseimage
-baseimage:
-	docker build -t $(DOCKER_IMAGE_LOCAL_TAG_BASEIMAGE)  -f Dockerfile.base .
-
-
 .PHONY: image
 image:
 	docker build \
@@ -289,8 +284,8 @@ dockerlogin:
 
 
 .PHONY: dockerpush
-dockerpush: baseimage image
-	docker push $(DOCKER_IMAGE_LOCAL_TAG_BASEIMAGE)
+dockerpush: image
+	docker push $(DOCKER_IMG_TAG_LATEST)
 	docker push $(DOCKER_IMG_LOCAL_TAG)
 
 
