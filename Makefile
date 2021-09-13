@@ -868,6 +868,7 @@ clean:
 	rm -rf junit_report
 	rm -f docker-compose.yml
 	rm -f rancher-compose.yml
+	rm -rf 25-mf-chsdi3.conf
 
 .PHONY: cleanall
 cleanall: clean

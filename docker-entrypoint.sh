@@ -17,7 +17,7 @@ envsubst < apache/application.wsgi.in > apache/application.wsgi
 
 envsubst < apache/ports.conf.in > /etc/apache2/ports.conf
 
-envsubst < apache/wsgi.conf.in > apache/wsgi.conf
+envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf
 
 
 
