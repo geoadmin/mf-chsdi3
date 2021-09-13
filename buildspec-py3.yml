@@ -91,6 +91,7 @@ phases:
       - python2 --version
       - python3 --version
       - which python3
+      - node --version
       - bash --version
       - echo "=========== VARIABLES ============="
       - echo CODEBUILD_RESOLVED_SOURCE_VERSION=${CODEBUILD_RESOLVED_SOURCE_VERSION}
