@@ -608,41 +608,41 @@ production.ini: production.ini.in \
                 guard-OPENTRANS_API_KEY
 	@echo "${GREEN}Creating production.ini...${RESET}";
 	${MAKO_CMD} \
-		--var "app_version=$(VERSION)" \
-		--var "server_port=$(SERVER_PORT)" \
-		--var "apache_base_path=$(APACHE_BASE_PATH)" \
-		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
-		--var "current_directory=$(CURRENT_DIRECTORY)" \
-		--var "dbhost=$(DBHOST)" \
-		--var "dbport=$(DBPORT)" \
-		--var "dbstaging=$(DBSTAGING)" \
-		--var "alti_url=$(ALTI_URL)" \
-		--var "api_url=$(API_URL)" \
-		--var "shop_url=$(SHOP_URL)" \
-		--var "geodata_staging=$(GEODATA_STAGING)" \
-		--var "sphinxhost=$(SPHINXHOST)" \
-		--var "wmshost=$(WMSHOST)" \
-		--var "wmts_public_host=$(WMTS_PUBLIC_HOST)" \
-		--var "geoadminhost=$(GEOADMINHOST)" \
-		--var "host=$(HOST)" \
-		--var "kml_temp_dir=$(KML_TEMP_DIR)" \
-		--var "http_proxy=$(HTTP_PROXY)" \
-		--var "geoadmin_file_storage_bucket=$(GEOADMIN_FILE_STORAGE_BUCKET)" \
-		--var "geoadmin_file_storage_table_region=$(GEOADMIN_FILE_STORAGE_TABLE_REGION)" \
-		--var "geoadmin_file_storage_table_name=$(GEOADMIN_FILE_STORAGE_TABLE_NAME)" \
-		--var "glstyles_storage_table_name=$(GLSTYLES_STORAGE_TABLE_NAME)" \
-		--var "glstyles_storage_table_region=$(GLSTYLES_STORAGE_TABLE_REGION)" \
-		--var "public_bucket_host=$(PUBLIC_BUCKET_HOST)" \
-		--var "shortener_allowed_hosts=$(SHORTENER_ALLOWED_HOSTS)" \
-		--var "shortener_table_name=$(SHORTENER_TABLE_NAME)" \
-		--var "shortener_table_region=$(SHORTENER_TABLE_REGION)" \
-		--var "vector_bucket=$(VECTOR_BUCKET)" \
-		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
-		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
-		--var "linkeddatahost=$(LINKEDDATAHOST)" \
-		--var "opentrans_api_key=$(OPENTRANS_API_KEY)" \
-		--var "dynamic_translation=$(DYNAMIC_TRANSLATION)" \
-		--var "shortener_allowed_domains=$(SHORTENER_ALLOWED_DOMAINS)" $< > $@
+		--var "APP_VERSION=$(VERSION)" \
+		--var "SERVER_PORT=$(SERVER_PORT)" \
+		--var "APACHE_BASE_PATH=$(APACHE_BASE_PATH)" \
+		--var "APACHE_ENTRY_PATH=$(APACHE_ENTRY_PATH)" \
+		--var "CURRENT_DIRECTORY=$(CURRENT_DIRECTORY)" \
+		--var "DBHOST=$(DBHOST)" \
+		--var "DBPORT=$(DBPORT)" \
+		--var "DBSTAGING=$(DBSTAGING)" \
+		--var "ALTI_URL=$(ALTI_URL)" \
+		--var "API_URL=$(API_URL)" \
+		--var "SHOP_URL=$(SHOP_URL)" \
+		--var "GEODATA_STAGING=$(GEODATA_STAGING)" \
+		--var "SPHINXHOST=$(SPHINXHOST)" \
+		--var "WMSHOST=$(WMSHOST)" \
+		--var "WMTS_PUBLIC_HOST=$(WMTS_PUBLIC_HOST)" \
+		--var "GEOADMINHOST=$(GEOADMINHOST)" \
+		--var "HOST=$(HOST)" \
+		--var "KML_TEMP_DIR=$(KML_TEMP_DIR)" \
+		--var "HTTP_PROXY=$(HTTP_PROXY)" \
+		--var "GEOADMIN_FILE_STORAGE_BUCKET=$(GEOADMIN_FILE_STORAGE_BUCKET)" \
+		--var "GEOADMIN_FILE_STORAGE_TABLE_REGION=$(GEOADMIN_FILE_STORAGE_TABLE_REGION)" \
+		--var "GEOADMIN_FILE_STORAGE_TABLE_NAME=$(GEOADMIN_FILE_STORAGE_TABLE_NAME)" \
+		--var "GLSTYLES_STORAGE_TABLE_NAME=$(GLSTYLES_STORAGE_TABLE_NAME)" \
+		--var "GLSTYLES_STORAGE_TABLE_REGION=$(GLSTYLES_STORAGE_TABLE_REGION)" \
+		--var "PUBLIC_BUCKET_HOST=$(PUBLIC_BUCKET_HOST)" \
+		--var "SHORTENER_ALLOWED_HOSTS=$(SHORTENER_ALLOWED_HOSTS)" \
+		--var "SHORTENER_TABLE_NAME=$(SHORTENER_TABLE_NAME)" \
+		--var "SHORTENER_TABLE_REGION=$(SHORTENER_TABLE_REGION)" \
+		--var "VECTOR_BUCKET=$(VECTOR_BUCKET)" \
+		--var "DATAGEOADMINHOST=$(DATAGEOADMINHOST)" \
+		--var "CMSGEOADMINHOST=$(CMSGEOADMINHOST)" \
+		--var "LINKEDDATAHOST=$(LINKEDDATAHOST)" \
+		--var "OPENTRANS_API_KEY=$(OPENTRANS_API_KEY)" \
+		--var "DYNAMIC_TRANSLATION=$(DYNAMIC_TRANSLATION)" \
+		--var "SHORTENER_ALLOWED_DOMAINS=$(SHORTENER_ALLOWED_DOMAINS)" $< > $@
 
 .venv/hooks: .venv/bin/git-secrets ./scripts/install-git-hooks.sh
 	@echo "${GREEN}Installing git hooks${RESET}";
