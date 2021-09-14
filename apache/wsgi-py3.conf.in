@@ -47,7 +47,7 @@ RedirectMatch ^${APACHE_ENTRY_PATH}$ ${APACHE_ENTRY_PATH}/
 
 # KML admin
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^${apache_entry_path}/(static/)?(info\.json|admin)         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+RewriteRule ^${APACHE_ENTRY_PATH}/(static/)?(info\.json|admin)         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
 # If URI has numbers at the start, we cache a year
 # This allows a client to create their own cache and
@@ -56,10 +56,10 @@ RewriteRule ^${APACHE_ENTRY_PATH}/[0-9]+/(.*)$ ${APACHE_ENTRY_PATH}/$1 [E=${APAC
 Header merge Cache-Control "max-age=31536013, public" env=${APACHE_BASE_PATH}setyearcache
 
 # Default cache#
-Header setifempty  Cache-Control "${cache_control}"
+Header setifempty  Cache-Control "${CACHE_CONTROL}"
 
 # Info
-RewriteRule ^${apache_entry_path}/info.json ${apache_entry_path}/static/info.json [PT]
+RewriteRule ^${APACHE_ENTRY_PATH}/info.json ${APACHE_ENTRY_PATH}/static/info.json [PT]
 
 # Static for cross domain flash/arcgis
 RewriteRule ^${APACHE_ENTRY_PATH}/(crossdomain.xml|clientaccesspolicy.xml) ${APACHE_ENTRY_PATH}/static/$1 [PT]
