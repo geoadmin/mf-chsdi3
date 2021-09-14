@@ -4,17 +4,14 @@ services:
     build: .
     image: ${DOCKER_IMG_TAG_LATEST}
     env_file:
-    - ${RANCHER_LABEL}.env
+    - ${DEPLOY_TARGET}.env
     environment:
       PGUSER: ${PGUSER}
       PGPASSWORD: ${PGPASSWORD}
+      USE_PYTHON3: 1
     command:
       - /usr/sbin/apache2ctl
       - "-D"
       - "FOREGROUND"
     ports:
       - "${APACHE_PORT}:${APACHE_PORT}"
-    labels:
-      io.rancher.scheduler.affinity:host_label: application=print,staging=${RANCHER_LABEL}
-      io.rancher.container.pull_image: always
-      io.rancher.scheduler.global: 'true'
