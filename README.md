@@ -9,6 +9,12 @@ Python3 ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid
 
 Python2 ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiTGN0cGVaT0s4OG9CMCtMeW14elhmMzBVWEF3U3F1b3A2a01BbktuNWJyOUVOMUxiUXB1SmFwK2diV0JkOXdvT3VIbmJjMkVjYU02N1pTZmFPRUtXdXFZPSIsIml2UGFyYW1ldGVyU3BlYyI6IjZ0ZmgzUFY2dnYwUm9QcHYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
+# Version
+
+As 2021, the project is slowing transitioning to `python3` and `docker`. So basically, there two way of running this project:
+
+  * Within an pache2 `vhost` and `python2`, which still is the default
+  * With `python3`and `docker`. See the `PYTHON3.md` file for more information.
 
 # Installing
 

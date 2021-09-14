@@ -1,4 +1,5 @@
 import os
+import sys
 
 from setuptools import setup, find_packages
 
@@ -6,7 +7,11 @@ here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.md')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 
-requires = open(os.path.join(here, 'requirements.txt')).read().split('\n')
+REQUIREMENTS_FILE = 'requirements-py3.txt'
+if sys.version_info < (3, 0, 0):
+    REQUIREMENTS_FILE = 'requirements.txt'
+
+requires = open(os.path.join(here, REQUIREMENTS_FILE)).read().split('\n')
 
 setup(name='chsdi',
       version='3.2.0',

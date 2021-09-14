@@ -1,6 +1,8 @@
 SHELL = /bin/bash
 .DEFAULT_GOAL := help
 
+SERVICE_NAME := mf-chsdi3
+
 # Macro functions
 lastvalue = $(shell if [ -f .venv/last-$1 ]; then cat .venv/last-$1 2> /dev/null; else echo '-none-'; fi;)
 
@@ -30,6 +32,7 @@ GIT_BRANCH := $(shell if [ -f '.venv/deployed-git-branch' ]; \
 GIT_COMMIT_HASH ?= $(shell git rev-parse --verify HEAD)
 GIT_COMMIT_SHORT ?= $(shell git rev-parse --short $(GIT_COMMIT_HASH))
 GIT_COMMIT_DATE ?= $(shell git log -1  --date=iso --pretty=format:%cd)
+DOCKER_IMG_TAG_LATEST ?= $(DOCKER_REGISTRY)/${SERVICE_NAME}:${GIT_BRANCH}.latest
 CURRENT_DATE ?= $(shell date -u +"%Y-%m-%d %H:%M:%S %z")
 NO_TESTS ?= withtests
 NODE_DIRECTORY := node_modules
@@ -50,6 +53,23 @@ SHORTENER_TABLE_REGION ?= $(AWS_DEFAULT_REGION)
 PYPI_URL ?= https://pypi.org/simple/
 GITHUB_LAST_COMMIT=$(shell curl -s  https://api.github.com/repos/geoadmin/mf-chsdi3/commits | jq -r '.[0].sha')
 DYNAMIC_TRANSLATION ?= 1
+
+# Docker metadata
+GIT_HASH = $(shell git rev-parse HEAD)
+GIT_HASH_SHORT = $(shell git rev-parse --short HEAD)
+GIT_BRANCH = $(shell git symbolic-ref HEAD --short 2>/dev/null)
+GIT_DIRTY = $(shell git status --porcelain)
+GIT_TAG = $(shell git describe --tags || echo "no version info")
+AUTHOR = $(USER)
+
+# Docker variables
+DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
+DOCKER_IMG_LOCAL_TAG := $(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+DOCKER_IMAGE_LOCAL_TAG_BASEIMAGE = $(DOCKER_REGISTRY)/mf-chsdi3:base
+
+# AWS variables
+ AWS_DEFAULT_REGION ?= eu-central-1
+
 
 # Last values
 KEEP_VERSION ?= 'false'
@@ -117,6 +137,7 @@ PSERVE_CMD := $(INSTALL_DIRECTORY)/bin/pserve
 PSHELL_CMD := $(INSTALL_DIRECTORY)/bin/pshell
 PYTHON_CMD := $(INSTALL_DIRECTORY)/bin/python
 SPHINX_CMD := $(INSTALL_DIRECTORY)/bin/sphinx-build
+ENVSUBST_CMD := /usr/bin/envsubst
 
 # Linting rules
 PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731,W503,W504,W605"
@@ -143,14 +164,20 @@ GREEN := $(shell tput setaf 2)
 # We need GDAL which is hard to install in a venv, modify PYTHONPATH to use the
 # system wide version.
 GDAL_VERSION ?= 1.10.0
+PYTHON_INSTALL_VERSION ?= 3.7.10
 
 ifndef USE_PYTHON3
 		override USE_PYTHON3 = 0
 endif
 
 ifeq ($(USE_PYTHON3), 1)
-		PYTHON_VERSION := 3.6.8
-build/python: local/bin/python3.6
+ifeq (, $(shell which $(SYSTEM_PYTHON_CMD)))
+		PYTHON_VERSION := $(shell $(PYTHON_INSTALL_VERSION)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+else
+    PYTHON_VERSION := $(shell $(SYSTEM_PYTHON_CMD)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+endif
+PIP_CMD := $(INSTALL_DIRECTORY)/bin/pip${PYTHON_VERSION}
+build/python:
 		mkdir -p build && touch build/python;
 else
 		PYTHON_VERSION := $(shell python2 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
@@ -161,7 +188,7 @@ PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python$
 
 PYTHON_BINDIR := $(shell dirname $(PYTHON_CMD))
 PYTHONHOME :=$(shell eval "cd $(PYTHON_BINDIR); pwd; cd > /dev/null")
-SYSTEM_PYTHON_CMD := $(CURRENT_DIR)/local/bin/python3
+SYSTEM_PYTHON_CMD ?= $(CURRENT_DIRECTORY)/local/bin/python$(PYTHON_VERSION)
 
 .PHONY: python
 python: build/python
@@ -169,10 +196,10 @@ python: build/python
 
 local/bin/python3.6:
 		mkdir -p $(CURRENT_DIRECTORY)/local;
-		curl -z $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_VERSION).tar.xz \
-				https://www.python.org/ftp/python/$(PYTHON_VERSION)/Python-$(PYTHON_VERSION).tar.xz \
-				-o $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_VERSION).tar.xz;
-		cd $(CURRENT_DIRECTORY)/local && tar -xf Python-$(PYTHON_VERSION).tar.xz && Python-$(PYTHON_VERSION)/configure --prefix=$(CURRENT_DIRECTORY)/local/   --with-ensurepip=install --enable-optimizations && make altinstall
+		curl https://www.python.org/ftp/python/$(PYTHON_INSTALL_VERSION)/Python-$(PYTHON_INSTALL_VERSION).tar.xz \
+				-o $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_INSTALL_VERSION).tar.xz;
+		cd $(CURRENT_DIRECTORY)/local && tar -xf Python-$(PYTHON_INSTALL_VERSION).tar.xz && Python-$(PYTHON_INSTALL_VERSION)/configure --prefix=$(CURRENT_DIRECTORY)/local/   --with-ensurepip=install --enable-optimizations && make altinstall;
+
 
 .PHONY: help
 help:
@@ -209,6 +236,8 @@ help:
 	@echo "USE_PYTHON3          ${USE_PYTHON3}"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
 	@echo "PYTHON_CMD:          ${PYTHON_CMD}"
+	@echo "SYSTEM_PYTHON_CMD:   ${SYSTEM_PYTHON_CMD}"
+	@echo "PIP_CMD:             ${PIP_CMD}"
 	@echo "PYTHONPATH:          ${PYTHONPATH}"
 	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
 	@echo "API_URL:             ${API_URL}"
@@ -220,6 +249,8 @@ help:
 	@echo "GIT_BRANCH:          ${GIT_BRANCH}"
 	@echo "SERVER_PORT:         ${SERVER_PORT}"
 	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
+	@echo "DOCKER_IMG_LOCAL_TAG   ${DOCKER_IMG_LOCAL_TAG}"
+	@echo "DOCKER_IMG_TAG_LATEST  ${DOCKER_IMG_TAG_LATEST}"
 	@echo
 
 
@@ -227,27 +258,51 @@ help:
 user:
 	source $(USER_SOURCE) && make all
 
+# TODO removed rss
 .PHONY: all
 all: setup chsdi/static/css/extended.min.css templates translate lint fixrights doc rss
 
 setup: .venv node_modules .venv/hooks
 
+ifeq ($(USE_PYTHON3), 1)
+templates: apache/wsgi.conf apache/application.wsgi development.ini production.ini chsdi/static/info.json
+	$(call build_templates,$(DEPLOY_TARGET))
+else
 templates: apache/wsgi.conf development.ini production.ini chsdi/static/info.json
+endif
+
+.PHONY: image
+image:
+	docker build \
+		--build-arg GIT_HASH="$(GIT_HASH)" \
+		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
+		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
+		--build-arg VERSION="$(GIT_TAG)" \
+		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG) -t ${DOCKER_IMG_TAG_LATEST} -f Dockerfile .
 
 
+.PHONY: dockerlogin
+dockerlogin:
+	aws --profile swisstopo-bgdi-builder ecr get-login-password --region $(AWS_DEFAULT_REGION) | docker login --username AWS --password-stdin $(DOCKER_REGISTRY)
 
 
-.PHONY: dev
-dev:
-	source rc_dev && make all
+.PHONY: dockerpush
+dockerpush: image
+	docker push $(DOCKER_IMG_TAG_LATEST)
+	docker push $(DOCKER_IMG_LOCAL_TAG)
 
-.PHONY: int
-int:
-	source rc_int && make all
 
-.PHONY: prod
-prod:
-	source rc_prod && make all
+.PHONY: environ
+environ:
+	$(call build_templates,$(DEPLOY_TARGET))
+
+define build_templates
+	export $(shell cat $1.env) && source rc_$1 && export DOCKER_IMG_LOCAL_TAG=${DOCKER_IMG_LOCAL_TAG} && export DOCKER_IMG_TAG_LATEST=${DOCKER_IMG_TAG_LATEST} && \
+		envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
+		envsubst <  apache/application.wsgi.in > apache/application.wsgi && \
+		envsubst < docker-compose.yml.in > docker-compose.yml && \
+		envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
+endef
 
 .PHONY: serve
 serve:
@@ -300,7 +355,7 @@ translate:
 pofiles:
 		@echo "${GREEN}Generating pofiles...${RESET}";
 		mkdir -p chsdi/locale/{de,fr,it,fi,en}/LC_MESSAGES;
-		source rc_dev && ${PYTHON_CMD} scripts/translation2po.py chsdi/locale/
+		source rc_prod && ${PYTHON_CMD} scripts/translation2po.py chsdi/locale/
 
 chsdi/locale/en/LC_MESSAGES/chsdi.po:
 chsdi/locale/en/LC_MESSAGES/chsdi.mo: chsdi/locale/en/LC_MESSAGES/chsdi.po
@@ -322,6 +377,7 @@ potomo: chsdi/locale/en/LC_MESSAGES/chsdi.mo chsdi/locale/fr/LC_MESSAGES/chsdi.m
         chsdi/locale/de/LC_MESSAGES/chsdi.mo chsdi/locale/fi/LC_MESSAGES/chsdi.mo \
         chsdi/locale/it/LC_MESSAGES/chsdi.mo
 
+### vhosts specific targets ###
 .PHONY: deploybranch
 deploybranch:
 	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev...${RESET}";
@@ -414,19 +470,41 @@ deploy/conf/00-branch.conf: deploy/conf/00-branch.conf.in \
 	@echo "${GREEN}Creating deploy/conf/00-branch.conf...${RESET}"
 	${MAKO_CMD} --var "git_branch=$(GIT_BRANCH)" $< > $@
 
+
+### Starting script is different again in python2 and python3
 apache/application.wsgi.mako:
-	@echo "${GREEN}Template file apache/application.wsgi.mako has changed${RESET}";
+		@echo "${GREEN}Template file apache/application.wsgi.mako has changed${RESET}";
+
+apache/application.wsgi.in:
+	@echo "${GREEN}Template file apache/application.wsgi.in has changed${RESET}";
+
+ifeq ($(USE_PYTHON3), 0)
 apache/application.wsgi: apache/application.wsgi.mako \
                          .venv/last-current-directory \
                          .venv/last-modwsgi-config
+		@echo "${GREEN}Creating apache/application.wsgi...${RESET}";
+		${MAKO_CMD} \
+				--var "current_directory=$(CURRENT_DIRECTORY)" \
+				--var "modwsgi_config=$(MODWSGI_CONFIG)" $< > $@
+else
+
+apache/application.wsgi: apache/application.wsgi.in\
+                         .venv/last-current-directory \
+                         .venv/last-modwsgi-config
 	@echo "${GREEN}Creating apache/application.wsgi...${RESET}";
-	${MAKO_CMD} \
-		--var "current_directory=$(CURRENT_DIRECTORY)" \
-		--var "modwsgi_config=$(MODWSGI_CONFIG)" $< > $@
+	${ENVSUBST_CMD} < $< > $@
+
+endif
 
 apache/wsgi.conf.in:
 	@echo "${GREEN}Template file apache/wsgi.conf.in has changed${RESET}";
-apache/wsgi.conf: apache/wsgi.conf.in \
+
+apache/wsgi-py3.conf.in:
+	@echo "${GREEN}Template file apache/wsgi-py3.conf.in has changed${RESET}";
+
+ifeq ($(USE_PYTHON3), 1)
+
+apache/wsgi.conf: apache/wsgi-py3.conf.in \
                   apache/application.wsgi \
                   .venv/last-apache-base-path \
                   .venv/last-apache-entry-path \
@@ -441,21 +519,39 @@ apache/wsgi.conf: apache/wsgi.conf.in \
                   .venv/last-wsgi-app \
                   .venv/last-kml-temp-dir
 	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
-	${MAKO_CMD} \
-		--var "apache_base_path=$(APACHE_BASE_PATH)" \
-		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
-		--var "robots_file=$(ROBOTS_FILE)" \
-		--var "branch_staging=$(BRANCH_STAGING)" \
-		--var "git_branch=$(GIT_BRANCH)" \
-		--var "current_directory=$(CURRENT_DIRECTORY)" \
-		--var "deploy_target=$(DEPLOY_TARGET)" \
-		--var "cache_control=$(CACHE_CONTROL)" \
-		--var "modwsgi_user=$(MODWSGI_USER)" \
-		--var "wsgi_processes=$(WSGI_PROCESSES)" \
-		--var "wsgi_threads=$(WSGI_THREADS)" \
-		--var "wsgi_app=$(WSGI_APP)" \
-		--var "kml_temp_dir=$(KML_TEMP_DIR)" $< > $@
+	${ENVSUBST_CMD} < $< > $@
 
+else
+apache/wsgi.conf: apache/wsgi.conf.in \
+                  apache/application.wsgi \
+                  .venv/last-apache-base-path \
+                  .venv/last-apache-entry-path \
+                  .venv/last-robots-file \
+                  .venv/last-branch-staging \
+                  .venv/last-git-branch \
+                  .venv/last-current-directory \
+                  .venv/last-deploy-target \
+                  .venv/last-modwsgi-user \
+                  .venv/last-wsgi-processes \
+                  .venv/last-wsgi-threads \
+                  .venv/last-wsgi-app \
+                  .venv/last-kml-temp-dir
+		@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
+		${MAKO_CMD} \
+				--var "apache_base_path=$(APACHE_BASE_PATH)" \
+				--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
+				--var "robots_file=$(ROBOTS_FILE)" \
+				--var "branch_staging=$(BRANCH_STAGING)" \
+				--var "git_branch=$(GIT_BRANCH)" \
+				--var "current_directory=$(CURRENT_DIRECTORY)" \
+				--var "deploy_target=$(DEPLOY_TARGET)" \
+				--var "cache_control=$(CACHE_CONTROL)" \
+				--var "modwsgi_user=$(MODWSGI_USER)" \
+				--var "wsgi_processes=$(WSGI_PROCESSES)" \
+				--var "wsgi_threads=$(WSGI_THREADS)" \
+				--var "wsgi_app=$(WSGI_APP)" \
+				--var "kml_temp_dir=$(KML_TEMP_DIR)" $< > $@
+endif
 
 app.log:
 	touch $@
@@ -468,10 +564,7 @@ development.ini: development.ini.in \
 	               .venv/last-version \
 	               .venv/last-server-port
 	@echo "${GREEN}Creating development.ini....${RESET}";
-	${MAKO_CMD} \
-		--var "app_version=$(VERSION)" \
-		--var "current_directory=$(CURRENT_DIRECTORY)" \
-		--var "server_port=$(SERVER_PORT)" $< > $@
+	${ENVSUBST_CMD} <  $< > $@
 
 production.ini.in:
 	@echo "${GREEN}Template file production.ini.in has changed${RESET}";
@@ -555,21 +648,24 @@ production.ini: production.ini.in \
 	./scripts/install-git-hooks.sh
 	touch $@
 
+ifeq ($(USE_PYTHON3), 1)
+requirements-py3.txt:
+	@echo "${GREEN}File requirements-py3.txt has changed${RESET}";
+
+.venv: requirements-py3.txt
+		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
+		${PIP_CMD} install --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL} ;
+		${PIP_CMD} install -r requirements-py3.txt --index-url ${PYPI_URL}  -e .
+else
 requirements.txt:
 	@echo "${GREEN}File requirements.txt has changed${RESET}";
-
-ifeq ($(USE_PYTHON3), 1)
-.venv: requirements.txt
-		test -d "$(INSTALL_DIRECTORY)" || local/bin/python3.6 -m venv $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install --upgrade pip==19.2.3 setuptools --index-url ${PYPI_URL} ; 
-		${PIP_CMD} install --index-url ${PYPI_URL}  -e .
-else
 .venv: requirements.txt
 	@echo "${GREEN}Setting up virtual environement...${RESET}";
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv -p /usr/bin/python2  $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install --upgrade pip==19.2.3 setuptools==44.0.0 enum34==1.1.6 --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install pip==19.2.3 setuptools==44.1.1 enum34==1.1.6 --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install --requirement requirements.txt  --index-url ${PYPI_URL} ; \
 	fi
 	${PIP_CMD} install --index-url ${PYPI_URL} -e .
 endif
@@ -605,7 +701,7 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 # application.wsg
 .venv/last-modwsgi-config::
-	$(call cachelastvariable,$@,$(MODWSGI_CONFIG),$(LAST_MODWSGI_CONFIG),modwsgi-config)
+	$(call cachelastvariable,$@,$(MODWSGI_CONFIG),$(LAST_MODWSGI_CONFIG),MODWSGI-CONFIG)
 
 # development.ini.in
 .venv/last-version::
@@ -684,9 +780,6 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 .venv/last-public-bucket-host::
 	$(call cachelastvariable,$@,$(PUBLIC_BUCKET_HOST),$(LAST_PUBLIC_BUCKET_HOST),public-bucket-host)
 
-.venv/last-shortener-allowed-hosts::
-	$(call cachelastvariable,$@,$(SHORTENER_ALLOWED_HOSTS),$(LAST_SHORTENER_ALLOWED_HOSTS),shortener-allowed-hosts)
-
 .venv/last-shortener-table-name::
 	$(call cachelastvariable,$@,$(SHORTENER_TABLE_NAME),$(LAST_SHORTENER_TABLE_NAME),shortener-table-name)
 
@@ -710,6 +803,9 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-shortener-allowed-domains::
 	$(call cachelastvariable,$@,$(SHORTENER_ALLOWED_DOMAINS),$(LAST_SHORTENER_ALLOWED_DOMAINS),shortener-allowed-domains)
+
+.venv/last-shortener-allowed-hosts::
+	$(call cachelastvariable,$@,$(SHORTENER_ALLOWED_HOSTS),$(LAST_SHORTENER_ALLOWED_HOSTS),shortener-allowed-hosts)
 
 .venv/last-dynamic-translation::
 	$(call cachelastvariable,$@,$(DYNAMIC_TRANSLATION),$(LAST_DYNAMIC_TRANSLATION),dynamic-translation)
@@ -764,13 +860,15 @@ clean:
 	rm -rf production.ini
 	rm -rf development.ini
 	rm -rf apache/wsgi.conf
-	rm -rf rc_branch
 	rm -rf app.log
 	rm -rf apache/application.wsgi
 	rm -rf deploy/deploy-branch.cfg
 	rm -rf deploy/conf/00-branch.conf
 	rm -f  chsdi/static/info.json
 	rm -rf junit_report
+	rm -f docker-compose.yml
+	rm -f rancher-compose.yml
+	rm -rf 25-mf-chsdi3.conf
 
 .PHONY: cleanall
 cleanall: clean
