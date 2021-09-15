@@ -61,7 +61,7 @@ env:
     WMTS_PUBLIC_HOST: wmts.geo.admin.ch
     WSGI_APP: /var/www/vhosts/mf-chsdi3/private/chsdi/apache/application.wsgi
     WSGI_PROCESSES: 1
-    WSGI_THREADS: 15
+    WSGI_THREADS: 5
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
     # We do not have AWS S3 and DynmoDB access for now
   parameter-store:
@@ -130,7 +130,6 @@ phases:
   build:
     commands:
       - echo "======== Build started on $(date) =========="
-      - make cleanall all
       - |-
         if [ "${GIT_TAG}" = "undefined"  ] ; then
           DOCKER_IMG_TAG="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GITHUB_BRANCH}.${COMMIT_HASH}"
@@ -139,7 +138,7 @@ phases:
         fi
       - export DOCKER_IMG_TAG=${DOCKER_IMG_TAG}
       - export DOCKER_IMG_TAG_LATEST="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GITHUB_BRANCH}.latest"
-      #- export $(cat dev.env) && docker build -t swisstopo/mf-chsdi3:python3.7  .
+      - make cleanall all
       - echo "Building docker image with tags ${DOCKER_IMG_TAG} and ${DOCKER_IMG_TAG_LATEST}"
       - >
           docker build
@@ -149,11 +148,6 @@ phases:
           --build-arg VERSION="${GIT_TAG}"
           -t "${DOCKER_IMG_TAG}" -t "${DOCKER_IMG_TAG_LATEST}" .
       - echo Build completed on $(date)
-      - docker push ${DOCKER_IMG_TAG_LATEST}
-      - docker-compose up -d
-      - DOCKER_CONTAINER_ID=$(docker ps -aq)
-      - echo "DOCKER_CONTAINER_ID=${DOCKER_CONTAINER_ID}"
-      - docker logs ${DOCKER_CONTAINER_ID}
       - echo "===========SPHINXSEARCH===================="
       - .venv/bin/python ./scripts/test_sphinxserver.py
       - echo "==========================================="
@@ -161,7 +155,7 @@ phases:
   post_build:
     commands:
       - echo "========== Running tests =============="
-      - make templates lint testci
+      - make lint testci
       - echo "========== Starting container =============="
       - docker-compose up -d
       - DOCKER_CONTAINER_ID=$(docker ps -aq --filter status="running" --filter ancestor="${DOCKER_IMG_TAG_LATEST}") && if [ -z "$DOCKER_CONTAINER_ID"  ]; then exit 1; fi
