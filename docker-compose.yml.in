@@ -8,6 +8,7 @@ services:
     environment:
       PGUSER: ${PGUSER}
       PGPASSWORD: ${PGPASSWORD}
+      OPENTRANS_API_KEY: ${OPENTRANS_API_KEY}
       USE_PYTHON3: 1
     command:
       - /usr/sbin/apache2ctl
