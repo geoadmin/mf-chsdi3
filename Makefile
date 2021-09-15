@@ -39,6 +39,8 @@ NODE_DIRECTORY := node_modules
 APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''; else echo /$(APACHE_BASE_PATH); fi)
 DATAGEOADMINHOST ?= data.geo.admin.ch
 AWS_DEFAULT_REGION ?= eu-west-1
+# ECR region currently differs from the AWS_DEFAULT_REGION
+AWS_REGION_ECR ?= eu-central-1
 SHORTENER_ALLOWED_DOMAINS := admin.ch, swisstopo.ch, bgdi.ch
 SHORTENER_ALLOWED_HOSTS ?=
 # A single table for dev, int and prod. Different name for each build test
@@ -66,10 +68,6 @@ AUTHOR = $(USER)
 DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
 DOCKER_IMG_LOCAL_TAG := $(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
 DOCKER_IMAGE_LOCAL_TAG_BASEIMAGE = $(DOCKER_REGISTRY)/mf-chsdi3:base
-
-# AWS variables
- AWS_DEFAULT_REGION ?= eu-central-1
-
 
 # Last values
 KEEP_VERSION ?= 'false'
@@ -228,6 +226,9 @@ help:
 	@echo "- updatedev          Updates master to dev, if version has changed (with snapshot)"
 	@echo "- deployint          Deploys a snapshot to integration (SNAPSHOT=201512021146)"
 	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"
+	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
+	@echo "- image              Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
+	@echo "- dockerpush         Build and push the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
 	@echo "- clean              Remove generated files"
 	@echo "- cleanall           Remove all the build artefacts"
 	@echo "- pythonclean        Remove all the build artefacts and the downloaded python version"
@@ -283,7 +284,7 @@ image:
 
 .PHONY: dockerlogin
 dockerlogin:
-	aws --profile swisstopo-bgdi-builder ecr get-login-password --region $(AWS_DEFAULT_REGION) | docker login --username AWS --password-stdin $(DOCKER_REGISTRY)
+	aws --profile swisstopo-bgdi-builder ecr get-login-password --region $(AWS_REGION_ECR) | docker login --username AWS --password-stdin $(DOCKER_REGISTRY)
 
 
 .PHONY: dockerpush
@@ -350,7 +351,7 @@ rss: doc chsdi/static/doc/build/releasenotes/index.html
 translate:
 	@echo "${GREEN}Updating translations...${RESET}";
 	make pofiles potomo
-	
+
 .PHONY: pofiles
 pofiles:
 		@echo "${GREEN}Generating pofiles...${RESET}";
