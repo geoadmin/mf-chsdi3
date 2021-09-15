@@ -10,46 +10,57 @@ env:
     SERVICE_NAME: "mf-chsdi3"
     DOCKER_REGISTRY: "974517877189.dkr.ecr.eu-central-1.amazonaws.com"
     USER: "aws_code_build"
-    APACHE_BASE_PATH: main
-    APACHE_PORT: 8009
-    ALTI_URL: //service-alti.dev.bgdi.ch
-    API_URL: //mf-chsdi3.dev.bgdi.ch
-    SHOP_URL: //shop-bgdi.dev.bgdi.ch
-    DBHOST: pg-sandbox.bgdi.ch
-    DBPORT: 5432
-    DBSTAGING: dev
-    DEPLOY_TARGET: dev
-    GEODATA_STAGING: test
-    GEOADMIN_FILE_STORAGE_BUCKET: mf-chsdi3-geoadmin-file-storage-bucket
-    GEOADMIN_FILE_STORAGE_TABLE_NAME: mf_chsdi3_geoadmin_file_storage
-    GEOADMIN_FILE_STORAGE_TABLE_REGION: eu-central-1
-    GLSTYLES_STORAGE_TABLE_NAME: mf-chsdi3-vectortiles-styles-storage
-    GLSTYLES_STORAGE_TABLE_REGION: eu-central-1
-    GEOADMINHOST: mf-geoadmin3.dev.bgdi.ch
-    HOST: mf-chsdi3.dev.bgdi.ch
-    KEEP_VERSION: false
-    WMTS_PUBLIC_HOST: tod.dev.bgdi.ch
-    MODWSGI_CONFIG: production.ini
-    PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
-    ROBOTS_FILE: robots.txt
-    RANCHER_LABEL: dev
-    SERVER_PORT: 6543
-    SPHINXHOST: service-sphinxsearch.dev.bgdi.ch
-    VECTOR_BUCKET: mf-chsdi3-bgdi-grid-based-data
-    WMSHOST: wms-bgdi.dev.bgdi.ch
-    WSGI_PROCESSES: 1
-    WSGI_THREADS: 15
-    CMSGEOADMINHOST: https://cms.geo.admin.ch
-    LINKEDDATAHOST: https://ld.geo.admin.ch
-    CACHE_CONTROL: no-cache
-    SHORTENER_TABLE_NAME: mf_chsdi3_shorturl
-    SHORTENER_TABLE_REGION: eu-central-1
-    SYSTEM_PYTHON_CMD: python3
-    BUILD_TARGET: dev
-    GIT_TAG: undefined
-    # Disable some tests
     DYNAMODB_TESTS: 0
     S3_TESTS: 0
+    BUILD_TARGET: dev
+    GIT_TAG: undefined
+    ALTI_URL: //service-alti.prod.bgdi.ch
+    APACHE_BASE_PATH: main
+    APACHE_ENTRY_PATH: 
+    APACHE_LOG_LEVEL: warn
+    APACHE_PORT: 8009
+    API_URL: //api3.geo.admin.ch
+    AWS_DEFAULT_REGION: eu-central-1
+    CACHE_CONTROL: no-cache
+    CMSGEOADMINHOST: https://cms.geo.admin.ch
+    DATAGEOADMINHOST: data.geo.admin.ch
+    DBHOST: pg-sandbox.bgdi.ch
+    DBPORT: 5432
+    DBSTAGING: prod
+    DEPLOY_TARGET: prod
+    DYNAMIC_TRANSLATION: 1
+    GEOADMIN_FILE_STORAGE_BUCKET: public-prod-bgdi-ch
+    GEOADMIN_FILE_STORAGE_TABLE_NAME: geoadmin-file-storage
+    GEOADMIN_FILE_STORAGE_TABLE_NAME: mf_chsdi3_geoadmin_file_storage
+    GEOADMIN_FILE_STORAGE_TABLE_REGION: eu-central-1
+    GEOADMINHOST: map.geo.admin.ch
+    GEODATA_STAGING: prod
+    GLSTYLES_STORAGE_BUCKET: public-prod-bgdi-ch
+    GLSTYLES_STORAGE_TABLE_NAME: vectortiles-styles-storage
+    GLSTYLES_STORAGE_TABLE_REGION: eu-central-1
+    HOST: api3.geo.admin.ch
+    HTTP_PROXY: http://ec2-52-28-118-239.eu-central-1.compute.amazonaws.com:80
+    KEEP_VERSION: false
+    KML_TEMP_DIR: /var/local/print/kml
+    LINKEDDATAHOST: https://ld.geo.admin.ch
+    MODWSGI_CONFIG: production.ini
+    MODWSGI_USER: www-data
+    PUBLIC_BUCKET_HOST: public.geo.admin.ch
+    ROBOTS_FILE: robots_prod.txt
+    SERVER_PORT: 6543
+    SHOP_URL: //shop.swisstopo.admin.ch
+    SHORTENER_ALLOWED_DOMAINS: admin.ch,swisstopo.ch,bgdi.ch
+    SHORTENER_ALLOWED_HOSTS: admin.ch,swisstopo.ch,bgdi.ch
+    SHORTENER_TABLE_NAME: shorturl
+    SHORTENER_TABLE_REGION: eu-central-1
+    SPHINXHOST: service-sphinxsearch.prod.bgdi.ch
+    SYSTEM_PYTHON_CMD: python3
+    VECTOR_BUCKET: mf-chsdi3-bgdi-grid-based-data
+    WMSHOST: wms.geo.admin.ch
+    WMTS_PUBLIC_HOST: wmts.geo.admin.ch
+    WSGI_APP: /var/www/vhosts/mf-chsdi3/private/chsdi/apache/application.wsgi
+    WSGI_PROCESSES: 1
+    WSGI_THREADS: 15
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
     # We do not have AWS S3 and DynmoDB access for now
   parameter-store:
