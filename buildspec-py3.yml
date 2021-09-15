@@ -12,8 +12,9 @@ env:
     USER: "aws_code_build"
     DYNAMODB_TESTS: 0
     S3_TESTS: 0
-    BUILD_TARGET: dev
+    BUILD_TARGET: prod
     GIT_TAG: undefined
+    # Copied from prod.env
     ALTI_URL: //service-alti.prod.bgdi.ch
     APACHE_BASE_PATH: main
     APACHE_ENTRY_PATH: 
@@ -128,7 +129,7 @@ phases:
       - echo "==================================="
   build:
     commands:
-      - echo Build started on $(date)
+      - echo "======== Build started on $(date) =========="
       - make cleanall all
       - |-
         if [ "${GIT_TAG}" = "undefined"  ] ; then
@@ -148,18 +149,24 @@ phases:
           --build-arg VERSION="${GIT_TAG}"
           -t "${DOCKER_IMG_TAG}" -t "${DOCKER_IMG_TAG_LATEST}" .
       - echo Build completed on $(date)
+      - docker push ${DOCKER_IMG_TAG_LATEST}
+      - docker-compose up -d
+      - DOCKER_CONTAINER_ID=$(docker ps -aq)
+      - echo "DOCKER_CONTAINER_ID=${DOCKER_CONTAINER_ID}"
+      - docker logs ${DOCKER_CONTAINER_ID}
       - echo "===========SPHINXSEARCH===================="
       - .venv/bin/python ./scripts/test_sphinxserver.py
       - echo "==========================================="
 
   post_build:
     commands:
-      - echo "==========Running tests=============="
+      - echo "========== Running tests =============="
       - make templates lint testci
+      - echo "========== Starting container =============="
       - docker-compose up -d
-      - echo Testing
       - DOCKER_CONTAINER_ID=$(docker ps -aq --filter status="running" --filter ancestor="${DOCKER_IMG_TAG_LATEST}") && if [ -z "$DOCKER_CONTAINER_ID"  ]; then exit 1; fi
-      - echo "Running test with the running container"
+      - echo "DOCKER_CONTAINER_ID=${DOCKER_CONTAINER_ID}"
+      - echo "=========== Running test within the running container ================"
       - docker exec -i "$DOCKER_CONTAINER_ID"   .venv/bin/nosetests  tests/functional
       - curl -s localhost:${APACHE_PORT}/rest/services/api/MapServer | jq -r '.layers[].layerBodId'
       - echo "=========== Pushing image to repository ==========="

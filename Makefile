@@ -194,12 +194,15 @@ SYSTEM_PYTHON_CMD ?= $(CURRENT_DIRECTORY)/local/bin/python$(PYTHON_VERSION)
 python: build/python
 		@echo "Python installed"
 
-local/bin/python3.6:
+local/bin/python3.7:
 		mkdir -p $(CURRENT_DIRECTORY)/local;
 		curl https://www.python.org/ftp/python/$(PYTHON_INSTALL_VERSION)/Python-$(PYTHON_INSTALL_VERSION).tar.xz \
 				-o $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_INSTALL_VERSION).tar.xz;
 		cd $(CURRENT_DIRECTORY)/local && tar -xf Python-$(PYTHON_INSTALL_VERSION).tar.xz && Python-$(PYTHON_INSTALL_VERSION)/configure --prefix=$(CURRENT_DIRECTORY)/local/   --with-ensurepip=install --enable-optimizations && make altinstall;
 
+.PHONY: print_vars 
+print_vars:
+	    $(foreach v, $(.VARIABLES), $(if $(filter file,$(origin $(v))), $(info $(v)=$($(v)))))
 
 .PHONY: help
 help:
