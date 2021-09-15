@@ -149,6 +149,7 @@ phases:
           --build-arg VERSION="${GIT_TAG}"
           -t "${DOCKER_IMG_TAG}" -t "${DOCKER_IMG_TAG_LATEST}" .
       - echo Build completed on $(date)
+      - make templates
       - docker-compose up -d
       - DOCKER_CONTAINER_ID=$(docker ps -aq)
       - docker logs ${DOCKER_CONTAINER_ID}
