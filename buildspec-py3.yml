@@ -72,20 +72,21 @@ phases:
       - echo "Login to AWS ECR docker registry"
       - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${DOCKER_REGISTRY}
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - GITHUB_BRANCH=${CODEBUILD_WEBHOOK_HEAD_REF#refs/heads/*}
-      - TODAY=$(date '+%Y%m%d')
-      - IMAGE_TAG=r_${TODAY}_${COMMIT_HASH}
-      - COMPOSE_PROJECT_NAME=${IMAGE_TAG}
+
+      # Reading git branch (the utility in the deploy script is unable to read it automatically
+      # on CodeBuild)
+      # see https://stackoverflow.com/questions/47657423/get-github-git-branch-for-aws-codebuild
+      - export GITHUB_BRANCH="$(git symbolic-ref HEAD --short 2>/dev/null)"
       - |-
-           if [ "${CODEBUILD_WEBHOOK_TRIGGER}" = pr/* ]; then
-             PULL_REQUEST=${CODEBUILD_WEBHOOK_TRIGGER#pr/*}
-           fi
-      - |-
-           if [ "${GIT_BRANCH}" != master  ]; then
-               LATEST=${GITHUB_BRANCH:-staging}
-           else
-               LATEST=latest
-           fi
+        if [ "${GITHUB_BRANCH}" = "" ] ; then
+          GITHUB_BRANCH="$(git branch -a --contains HEAD | sed -n 2p | awk '{ printf $1 }')";
+          export GITHUB_BRANCH=${GITHUB_BRANCH#remotes/origin/};
+        fi
+      - export PULL_REQUEST=${CODEBUILD_WEBHOOK_TRIGGER#pr/*}
+      - export COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - export GIT_TAG="$(git describe --tags || echo 'no version info')"
+      - echo "GITHUB_BRANCH=${GITHUB_BRANCH} COMMIT_HASH=${COMMIT_HASH} GIT_TAG=${GIT_TAG}"
+
       - echo "=========== VERSIONS ============="
       - python --version
       - python2 --version
@@ -105,7 +106,6 @@ phases:
       - echo COMMIT_HASH=${COMMIT_HASH}
       - echo PULL_REQUEST=${PULL_REQUEST}
       - echo GITHUB_BRANCH=${GITHUB_BRANCH}
-      - echo IMAGE_TAG=${IMAGE_TAG}
       - echo BASH=${BASH}
       - echo SHELL=${SHELL}
       - echo CURRENT_DIRECTORY=$(pwd)
