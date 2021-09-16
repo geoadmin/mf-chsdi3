@@ -46,7 +46,7 @@ qualname = sqlalchemy.engine
 # "level = WARN" logs neither.  (Recommended for production systems.)
 
 [handlers]
-keys = console, file, sqlfile
+keys = console
 
 [formatters]
 keys = generic
@@ -57,7 +57,7 @@ handlers = console
 
 [logger_chsdi]
 level = DEBUG
-handlers = file
+handlers = console
 qualname = chsdi
 
 [handler_console]

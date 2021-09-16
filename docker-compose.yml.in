@@ -4,10 +4,11 @@ services:
     build: .
     image: ${DOCKER_IMG_TAG_LATEST}
     env_file:
-    - ${RANCHER_LABEL}.env
+    - ${DEPLOY_TARGET}.env
     environment:
       PGUSER: ${PGUSER}
       PGPASSWORD: ${PGPASSWORD}
+      OPENTRANS_API_KEY: ${OPENTRANS_API_KEY}
     command:
       - /usr/sbin/apache2ctl
       - "-D"
