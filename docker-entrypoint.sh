@@ -9,7 +9,9 @@ set -eo pipefail
 : "${DEPLOY_TARGET:?Variable DEPLOY_TARGET not set or empty}"
 
 INSTALLDIR=$(dirname $(readlink -f "$0"))
-export INSTALLDIR
+CURRENT_DIRECTORY=${INSTALLDIR}
+export INSTALLDIR 
+export CURRENT_DIRECTORY
 
 
 echo "INSTALLDIR=${INSTALLDIR}"
@@ -25,7 +27,6 @@ envsubst < apache/application.wsgi.in > apache/application.wsgi
 envsubst < apache/ports.conf.in > /etc/apache2/ports.conf
 
 envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf
-
 
 
 # Always put this damn shit
