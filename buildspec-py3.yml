@@ -127,7 +127,6 @@ phases:
         fi
       - export DOCKER_IMG_TAG=${DOCKER_IMG_TAG}
       - export DOCKER_IMG_TAG_LATEST="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GITHUB_BRANCH}.latest"
-      #- export $(cat dev.env) && docker build -t swisstopo/mf-chsdi3:python3.7  .
       - echo "Building docker image with tags ${DOCKER_IMG_TAG} and ${DOCKER_IMG_TAG_LATEST}"
       - >
           docker build
