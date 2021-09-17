@@ -1,5 +1,10 @@
 #!/bin/bash
-set -e
+set -eo pipefail
+
+: "${DEPLOY_TARGET:?Variable DEPLOY_TARGET not set or empty}"
+: "${DBHOST:?Variable DBHOST not set or empty}"
+: "${DBPORT:?Variable DBPORT not set or empty}"
+: "${PGUSER:?Variable PGUSER not set or empty}"
 
 : "${DEPLOY_TARGET:?Variable DEPLOY_TARGET not set or empty}"
 
@@ -8,6 +13,8 @@ export INSTALLDIR
 
 
 echo "INSTALLDIR=${INSTALLDIR}"
+
+pg_isready -d stopo_prod -h ${DBHOST} -p ${DBPORT} -U ${PGUSER}
 
 source rc_${DEPLOY_TARGET} && make production.ini development.ini
 
