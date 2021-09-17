@@ -1423,21 +1423,6 @@ class Flachmoore(Base, Vector):
 register('ch.bafu.bundesinventare-flachmoore', Flachmoore)
 
 
-class FlachmooreReg(Base, Vector):
-    __tablename__ = 'fm_regional'
-    __table_args__ = ({'schema': 'bundinv', 'autoload': False})
-    __bodId__ = 'ch.bafu.bundesinventare-flachmoore_regional'
-    __template__ = 'templates/htmlpopup/flachmoore_reg.mako'
-    __label__ = 'name'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Unicode)
-    objnummer = Column('objnummer', Unicode)
-    shape_area = Column('shape_area', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bafu.bundesinventare-flachmoore_regional', FlachmooreReg)
-
-
 class SchutzgebieteAulav:
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
     __template__ = 'templates/htmlpopup/bafu_schutzge_aulav_std.mako'
