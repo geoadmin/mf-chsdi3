@@ -36,7 +36,7 @@ COPY 90-chsdi3.conf    /var/www/vhosts/mf-chsdi3/conf/
 COPY 25-mf-chsdi3.conf /etc/apache2/sites-available/000-default.conf
 RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf && a2enconf fqdn
 
-RUN /usr/sbin/a2enmod auth_basic authz_groupfile autoindex dir env expires filter headers http2 include mpm_event negotiation proxy proxy_http proxy_http2 rewrite setenvif ssl status wsgi alias
+RUN /usr/sbin/a2enmod auth_basic authz_groupfile autoindex dir env expires filter headers http2 include mpm_event negotiation proxy proxy_http proxy_http2 rewrite setenvif status wsgi alias
 
 COPY . /var/www/vhosts/${VHOST}/private/chsdi
 WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
