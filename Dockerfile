@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install apt-utils \
       ; DEBIAN_FRONTEND=noninteractive apt-get install -y --upgrade ca-certificates \
       ; DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg::Options::="--force-confold" \
       nodejs npm  build-essential git  gettext-base libpq-dev libgeos-dev \
+      postgresql-client-common postgresql-client-11 \
       apache2 libapache2-mod-wsgi-py3 \
       gettext gettext-base  \
       curl \

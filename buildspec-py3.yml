@@ -139,18 +139,20 @@ phases:
       - echo Build completed on $(date)
       - echo "===========SPHINXSEARCH===================="
       - .venv/bin/python ./scripts/test_sphinxserver.py
-      - echo "==========================================="
-
-  post_build:
-    commands:
       - echo "==========Running tests=============="
       - make templates lint testci
       - docker-compose up -d
-      - echo Testing
+      - DOCKER_CONTAINER_ID=$(docker ps -aq --filter ancestor="${DOCKER_IMG_TAG_LATEST}")
+      - echo "DOCKER_CONTAINER_ID=${DOCKER_CONTAINER_ID}"
+      - docker logs ${DOCKER_CONTAINER_ID}
       - DOCKER_CONTAINER_ID=$(docker ps -aq --filter status="running" --filter ancestor="${DOCKER_IMG_TAG_LATEST}") && if [ -z "$DOCKER_CONTAINER_ID"  ]; then exit 1; fi
-      - echo "Running test with the running container"
-      - docker exec -i "$DOCKER_CONTAINER_ID"   .venv/bin/nosetests  tests/functional
+      - echo "Running test with the running container ${DOCKER_CONTAINER_ID}"
+      - docker exec -i ${DOCKER_CONTAINER_ID} .venv/bin/nosetests  tests/functional
       - curl -s localhost:${APACHE_PORT}/rest/services/api/MapServer | jq -r '.layers[].layerBodId'
+
+  post_build:
+    commands:
+      - test "$CODEBUILD_BUILD_SUCCEEDING" = "1"
       - echo "=========== Pushing image to repository ==========="
       - docker push ${DOCKER_IMG_TAG}
       - docker push ${DOCKER_IMG_TAG_LATEST}
