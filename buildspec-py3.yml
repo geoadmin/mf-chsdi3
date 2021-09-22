@@ -5,13 +5,13 @@ version: 0.2
 
 env:
   variables:
-    SHELL: /bin/bash
+    SHELL: bash
     AWS_DEFAULT_REGION: eu-central-1
     SERVICE_NAME: "mf-chsdi3"
     DOCKER_REGISTRY: "974517877189.dkr.ecr.eu-central-1.amazonaws.com"
     USER: "aws_code_build"
     APACHE_BASE_PATH: main
-    APACHE_PORT: 8009
+    APACHE_PORT: 80
     ALTI_URL: //service-alti.dev.bgdi.ch
     API_URL: //mf-chsdi3.dev.bgdi.ch
     SHOP_URL: //shop-bgdi.dev.bgdi.ch
@@ -33,7 +33,7 @@ env:
     PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
     ROBOTS_FILE: robots.txt
     RANCHER_LABEL: dev
-    SERVER_PORT: 6543
+    SERVER_PORT: 80
     SPHINXHOST: service-sphinxsearch.dev.bgdi.ch
     VECTOR_BUCKET: mf-chsdi3-bgdi-grid-based-data
     WMSHOST: wms-bgdi.dev.bgdi.ch
@@ -147,7 +147,7 @@ phases:
       - DOCKER_CONTAINER_ID=$(docker ps -aq --filter status="running" --filter ancestor="${DOCKER_IMG_TAG_LATEST}") && if [ -z "$DOCKER_CONTAINER_ID"  ]; then exit 1; fi
       - echo "Running test with the running container ${DOCKER_CONTAINER_ID}"
       - docker exec -i ${DOCKER_CONTAINER_ID} .venv/bin/nosetests  tests/functional
-      - curl -s localhost:${APACHE_PORT}/rest/services/api/MapServer | jq -r '.layers[].layerBodId'
+      - curl -s localhost:${SERVER_PORT}/rest/services/api/MapServer | jq -r '.layers[].layerBodId'
 
   post_build:
     commands:

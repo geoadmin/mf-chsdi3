@@ -14,7 +14,7 @@ services:
       - "-D"
       - "FOREGROUND"
     ports:
-      - "${APACHE_PORT}:${APACHE_PORT}"
+      - "${SERVER_PORT}:${APACHE_PORT}"
     labels:
       io.rancher.scheduler.affinity:host_label: application=print,staging=${RANCHER_LABEL}
       io.rancher.container.pull_image: always

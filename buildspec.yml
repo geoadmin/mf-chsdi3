@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    SHELL: /bin/bash
+    SHELL: bash
     AWS_DEFAULT_REGION: eu-central-1
     APACHE_BASE_PATH: main
     ALTI_URL: //service-alti.dev.bgdi.ch
@@ -25,7 +25,7 @@ env:
     MODWSGI_CONFIG: production.ini
     PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
     ROBOTS_FILE: robots.txt
-    SERVER_PORT: 6543
+    SERVER_PORT: 80
     SPHINXHOST: service-sphinxsearch.dev.bgdi.ch 
     VECTOR_BUCKET: mf-chsdi3-bgdi-grid-based-data
     WMSHOST: wms-bgdi.dev.bgdi.ch
