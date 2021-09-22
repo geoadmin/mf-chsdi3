@@ -48,8 +48,8 @@ env:
     BUILD_TARGET: dev
     GIT_TAG: undefined
     # Disable some tests
-    DYNAMODB_TESTS: 0
-    S3_TESTS: 0
+    DYNAMODB_TESTS: 1
+    S3_TESTS: 1
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
     # We do not have AWS S3 and DynmoDB access for now
   parameter-store:
