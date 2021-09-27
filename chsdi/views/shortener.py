@@ -74,7 +74,7 @@ def shortener(request):
         url_short = _add_item(table, url)
 
     # Use env specific URLs
-    if request.host not in ('api.geo.admin.ch', 'api3.geo.admin.ch'):
+    if request.host not in ('api.geo.admin.ch', 'api3.geo.admin.ch', 'mf-chsdi3.prod.bgdi.ch'):
         host_url = make_api_url(request) + '/shorten/'
     else:
         host_url = ''.join((request.scheme, '://s.geo.admin.ch/'))
