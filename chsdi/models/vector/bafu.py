@@ -2289,3 +2289,36 @@ class AmphibienwanderungVerkehrskonflikte(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(AmphibienwanderungVerkehrskonflikte.__bodId__, AmphibienwanderungVerkehrskonflikte)
+
+
+class Vegetationshoehenstufen (Base, Vector):
+    __table_args__ = ({'schema': 'wald', 'autoload': False})
+    __template__ = 'templates/htmlpopup/wald-vegetationshoehenstufen_1975.mako'
+    __label__ = 'bgdi_id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    hoehenstufen_de = Column('hoehenstufen_de', Unicode)
+    hoehenstufen_fr = Column('hoehenstufen_fr', Unicode)
+    hoehenstufen_it = Column('hoehenstufen_it', Unicode)
+    hoehenstufen_en = Column('hoehenstufen_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class Vegetationshoehenstufen1975 (Base, Vegetationshoehenstufen, Vector):
+    __tablename__ = 'vegetationshoehenstufen_19975'
+    __bodId__ = 'ch.bafu.wald-vegetationshoehenstufen_1975'
+
+register(Vegetationshoehenstufen1975.__bodId__, Vegetationshoehenstufen1975)
+
+
+class Vegetationshoehenstufen2085Trocken (Base, Vegetationshoehenstufen, Vector):
+    __tablename__ = 'vegetationshoehenstufen_2085_tocken'
+    __bodId__ = 'ch.bafu.wald-vegetationshoehenstufen_2085_trocken'
+
+register(Vegetationshoehenstufen2085Trocken.__bodId__, Vegetationshoehenstufen2085Trocken)
+
+
+class Vegetationshoehenstufen2085WenigerTrocken (Base, Vegetationshoehenstufen, Vector):
+    __tablename__ = 'vegetationshoehenstufen_2085WenigerTrocken'
+    __bodId__ = 'ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken'
+
+register(Vegetationshoehenstufen2085WenigerTrocken.__bodId__, Vegetationshoehenstufen2085WenigerTrocken)
