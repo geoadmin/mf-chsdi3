@@ -25,11 +25,14 @@ from pyramid.url import route_url
 </%def>
 <%def name="extended_info(c, lang)">
 <%
+  from chsdi.lib.helpers import shift_to
+
   c['last'] = False
   wms_url = 'https://' + request.registry.settings['wmshost']
   attr = c['attributes']
   startofconstruction = str(attr['startofconstruction'].day) + '.' + str(attr['startofconstruction'].month) + '.' + str(attr['startofconstruction'].year)
   datenstand = str(attr['bgdi_created'].day) + '.' + str(attr['bgdi_created'].month) + '.' + str(attr['bgdi_created'].year)
+  c['bbox'] = shift_to(c['bbox'], 2056)
 
   if c['bbox'][0] !=  c['bbox'][2]:
     bbox = True
@@ -48,7 +51,6 @@ from pyramid.url import route_url
   
   id = c['featureId']
   geometry = c['geometry']
-
 %>
 <style type="text/css">
   /*  Smartphones portrait (320px) et landscape (480px) */
@@ -104,7 +106,7 @@ from pyramid.url import route_url
 
 % if bbox == True and attr['geomtype'] != 'line':
     <tr bgcolor="#EFEFEF">
-      <th style="text-align:left" colspan="2">${_('Bounding Box - Coordinates')} [CH1903]:</th>
+      <th style="text-align:left" colspan="2">${_('Bounding Box - Coordinates')} [CH1903+]:</th>
     </tr>
     <tr>
       <td class="cell-meta-one" colspan="2">${_('est')}=${c['bbox'][0]}    ${_('nord')}=${c['bbox'][1]}</td>
@@ -121,7 +123,7 @@ from pyramid.url import route_url
 
 % else:
     <tr bgcolor="#EFEFEF">
-      <th style="text-align:left" colspan="2">${_('Coordinates')} [CH1903]:</th>
+      <th style="text-align:left" colspan="2">${_('Coordinates')} [CH1903+]:</th>
     </tr>
     <tr>
       <td class="cell-meta-one" colspan="2">${_('est')}=${c['bbox'][0]}    ${_('nord')}=${c['bbox'][1]}</td>
@@ -155,7 +157,7 @@ from pyramid.url import route_url
         ga.layer.create('ch.swisstopo.pixelkarte-grau'),
         new ol.layer.Image({
            source: new ol.source.ImageWMS({
-             params:{'LAYERS':'org.epsg.grid_21781,org.epsg.grid_4326,ch.bazl.luftfahrthindernis'},
+             params:{'LAYERS':'org.epsg.grid_2056,org.epsg.grid_4326,ch.bazl.luftfahrthindernis'},
              ratio: 1,
              url: '${wms_url}'
            })
