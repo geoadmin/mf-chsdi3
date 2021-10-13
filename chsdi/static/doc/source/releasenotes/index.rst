@@ -17,6 +17,31 @@ Release Notes
 .. _releasenotes_20210908:
 
 
+Release 20211027 - Wednesday, October 27th 2021
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcement: ...
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_210908...r_211027>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_210908...r_211027>`__
+
+Geodata
+*******
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Terrestrial images swisstopo <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-terrestrische_aufnahmen>`__ (ch.swisstopo.lubis-terrestrische_aufnahmen)                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 Release 20210908 - Wednesday, September 9th 2021
 -------------------------------------------------
 
