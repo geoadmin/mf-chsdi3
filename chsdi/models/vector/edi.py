@@ -84,8 +84,8 @@ class Gebaeuderegister(Base, Vector):
 register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)
 
 
-class Arealstatistik2009(Base, Vector):
-    __tablename__ = 'arealstatistik_std_2009'
+class Arealstatistik(Base, Vector):
+    __tablename__ = 'arealstatistik_std'
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
     __template__ = 'templates/htmlpopup/arealstatistik_std.mako'
     __bodId__ = 'ch.bfs.arealstatistik'
@@ -94,61 +94,17 @@ class Arealstatistik2009(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    fj85 = Column('fj85', Integer)
-    fj97 = Column('fj97', Integer)
-    fj09 = Column('fj09', Integer)
-    id_arealstatistik_85 = Column('id_arealstatistik_85', Integer)
-    id_arealstatistik_97 = Column('id_arealstatistik_97', Integer)
-    id_arealstatistik_09 = Column('id_arealstatistik_09', Integer)
+    fj = Column('fj', Integer)
+    as_4 = Column('as_4', Integer)
+    as_17 = Column('as_17', Integer)
+    as_72 = Column('as_72', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bfs.arealstatistik', Arealstatistik2009)
+register('ch.bfs.arealstatistik', Arealstatistik)
 
 
-class Arealstatistik1985(Base, Vector):
-    __tablename__ = 'arealstatistik_std_1985'
-    __table_args__ = ({'schema': 'bfs', 'autoload': False})
-    __template__ = 'templates/htmlpopup/arealstatistik_std.mako'
-    __bodId__ = 'ch.bfs.arealstatistik-1985'
-    # __minscale__ = 5001
-    __maxscale__ = 50000
-    # specially big layer
-    __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    fj85 = Column('fj85', Integer)
-    fj97 = Column('fj97', Integer)
-    fj09 = Column('fj09', Integer)
-    id_arealstatistik_85 = Column('id_arealstatistik_85', Integer)
-    id_arealstatistik_97 = Column('id_arealstatistik_97', Integer)
-    id_arealstatistik_09 = Column('id_arealstatistik_09', Integer)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfs.arealstatistik-1985', Arealstatistik1985)
-
-
-class Arealstatistik1997(Base, Vector):
-    __tablename__ = 'arealstatistik_std_1997'
-    __table_args__ = ({'schema': 'bfs', 'autoload': False})
-    __template__ = 'templates/htmlpopup/arealstatistik_std.mako'
-    __bodId__ = 'ch.bfs.arealstatistik-1997'
-    # __minscale__ = 5001
-    __maxscale__ = 50000
-    # specially big layer
-    __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    fj85 = Column('fj85', Integer)
-    fj97 = Column('fj97', Integer)
-    fj09 = Column('fj09', Integer)
-    id_arealstatistik_85 = Column('id_arealstatistik_85', Integer)
-    id_arealstatistik_97 = Column('id_arealstatistik_97', Integer)
-    id_arealstatistik_09 = Column('id_arealstatistik_09', Integer)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfs.arealstatistik-1997', Arealstatistik1997)
-
-
-class ArealstatistikBodenbedeckung2009(Base, Vector):
-    __tablename__ = 'arealstatistik_nolc_2009'
+class ArealstatistikBodenbedeckung(Base, Vector):
+    __tablename__ = 'arealstatistik_nolc'
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
     __template__ = 'templates/htmlpopup/arealstatistik_nolc.mako'
     __bodId__ = 'ch.bfs.arealstatistik-bodenbedeckung'
@@ -157,57 +113,12 @@ class ArealstatistikBodenbedeckung2009(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    fj85 = Column('fj85', Integer)
-    fj97 = Column('fj97', Integer)
-    fj09 = Column('fj09', Integer)
-    id_arealstatistik_nolc_85 = Column('id_arealstatistik_nolc_85', Integer)
-    id_arealstatistik_nolc_97 = Column('id_arealstatistik_nolc_97', Integer)
-    id_arealstatistik_nolc_09 = Column('id_arealstatistik_nolc_09', Integer)
+    fj = Column('fj', Integer)
+    as_10 = Column('as_10', Integer)
+    as_27 = Column('as_27', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bfs.arealstatistik-bodenbedeckung', ArealstatistikBodenbedeckung2009)
-
-
-class ArealstatistikBodenbedeckung1997(Base, Vector):
-    __tablename__ = 'arealstatistik_nolc_1997'
-    __table_args__ = ({'schema': 'bfs', 'autoload': False})
-    __template__ = 'templates/htmlpopup/arealstatistik_nolc.mako'
-    __bodId__ = 'ch.bfs.arealstatistik-bodenbedeckung-1997'
-    # __minscale__ = 5001
-    __maxscale__ = 50000
-    # specially big layer
-    __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    fj85 = Column('fj85', Integer)
-    fj97 = Column('fj97', Integer)
-    fj09 = Column('fj09', Integer)
-    id_arealstatistik_nolc_85 = Column('id_arealstatistik_nolc_85', Integer)
-    id_arealstatistik_nolc_97 = Column('id_arealstatistik_nolc_97', Integer)
-    id_arealstatistik_nolc_09 = Column('id_arealstatistik_nolc_09', Integer)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfs.arealstatistik-bodenbedeckung-1997', ArealstatistikBodenbedeckung1997)
-
-
-class ArealstatistikBodenbedeckung1985(Base, Vector):
-    __tablename__ = 'arealstatistik_nolc_1985'
-    __table_args__ = ({'schema': 'bfs', 'autoload': False})
-    __template__ = 'templates/htmlpopup/arealstatistik_nolc.mako'
-    __bodId__ = 'ch.bfs.arealstatistik-bodenbedeckung-1985'
-    # __minscale__ = 5001
-    __maxscale__ = 50000
-    # specially big layer
-    __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    fj85 = Column('fj85', Integer)
-    fj97 = Column('fj97', Integer)
-    fj09 = Column('fj09', Integer)
-    id_arealstatistik_nolc_85 = Column('id_arealstatistik_nolc_85', Integer)
-    id_arealstatistik_nolc_97 = Column('id_arealstatistik_nolc_97', Integer)
-    id_arealstatistik_nolc_09 = Column('id_arealstatistik_nolc_09', Integer)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfs.arealstatistik-bodenbedeckung-1985', ArealstatistikBodenbedeckung1985)
+register('ch.bfs.arealstatistik-bodenbedeckung', ArealstatistikBodenbedeckung)
 
 
 class ArealstatistikBodennutzung(Base, Vector):
