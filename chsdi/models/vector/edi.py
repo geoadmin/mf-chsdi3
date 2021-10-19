@@ -97,6 +97,11 @@ class Arealstatistik(Base, Vector):
     survey = Column('survey', Integer)
     fj = Column('fj', Integer)
     as_72 = Column('as_72', Integer)
+    desc_as_72_de = Column('desc-as_72_de', Integer)
+    desc_as_72_fr = Column('desc-as_72_fr', Integer)
+    desc_as_72_it = Column('desc-as_72_it', Integer)
+    desc_as_72_rm = Column('desc-as_72_rm', Integer)
+    desc_as_72_en = Column('desc-as_72_en', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik', Arealstatistik)
@@ -115,6 +120,11 @@ class ArealstatistikBodenbedeckung(Base, Vector):
     survey = Column('survey', Integer)
     fj = Column('fj', Integer)
     lc_27 = Column('lc_27', Integer)
+    desc_lc_27_de = Column('desc_lc_27_de', Integer)
+    desc_lc_27_fr = Column('desc_lc_27_fr', Integer)
+    desc_lc_27_it = Column('desc_lc_27_it', Integer)
+    desc_lc_27_rm = Column('desc_lc_27_rm', Integer)
+    desc_lc_27_en = Column('desc_lc_27_en', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik-bodenbedeckung', ArealstatistikBodenbedeckung)
