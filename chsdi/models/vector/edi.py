@@ -114,7 +114,7 @@ class ArealstatistikBodenbedeckung(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     survey = Column('survey', Integer)
     fj = Column('fj', Integer)
-    as_27 = Column('as_27', Integer)
+    lc_27 = Column('lc_27', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik-bodenbedeckung', ArealstatistikBodenbedeckung)
