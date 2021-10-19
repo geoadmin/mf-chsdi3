@@ -94,9 +94,8 @@ class Arealstatistik(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
+    survey = Column('survey', Integer)
     fj = Column('fj', Integer)
-    as_4 = Column('as_4', Integer)
-    as_17 = Column('as_17', Integer)
     as_72 = Column('as_72', Integer)
     the_geom = Column(Geometry2D)
 
@@ -113,8 +112,8 @@ class ArealstatistikBodenbedeckung(Base, Vector):
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
+    survey = Column('survey', Integer)
     fj = Column('fj', Integer)
-    as_10 = Column('as_10', Integer)
     as_27 = Column('as_27', Integer)
     the_geom = Column(Geometry2D)
 
