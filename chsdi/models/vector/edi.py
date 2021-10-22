@@ -90,7 +90,7 @@ class Arealstatistik(Base, Vector):
     __template__ = 'templates/htmlpopup/arealstatistik_std.mako'
     __bodId__ = 'ch.bfs.arealstatistik'
     # __minscale__ = 5001
-    __maxscale__ = 50000
+    __maxscale__ = 10000
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -113,7 +113,7 @@ class ArealstatistikBodenbedeckung(Base, Vector):
     __template__ = 'templates/htmlpopup/arealstatistik_nolc.mako'
     __bodId__ = 'ch.bfs.arealstatistik-bodenbedeckung'
     #  __minscale__ = 5001
-    __maxscale__ = 50000
+    __maxscale__ = 10000
     # specially big layer
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
