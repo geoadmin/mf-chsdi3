@@ -3866,8 +3866,8 @@ class WaermepotentialGewaesser (Base, Vector):
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
-    heat_extraction_gwha = Column('heat_extraction_gwha', Unicode)
-    heat_disposal_gwha = Column('heat_disposal_gwha', Unicode)
+    heat_extraction_gwha = Column('heat_extraction_gwha', Integer)
+    heat_disposal_gwha = Column('heat_disposal_gwha', Integer)
     further_information = Column('further_information', Unicode)
     the_geom = Column(Geometry2D)
 
