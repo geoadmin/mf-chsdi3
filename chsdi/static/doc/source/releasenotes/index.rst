@@ -26,7 +26,8 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- Announcement: ...
+- Announcement: the layer ch.babs.kulturgueter-anhoerung will completely be removed from FSDI services on December 15th 2021
+- Announcement: the layer ch.bakom.downlink3 will completely be removed from FSDI services on December 15th 2021
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_210908...r_211027>`__
 
 `MAP <//map.geo.admin.ch>`__
