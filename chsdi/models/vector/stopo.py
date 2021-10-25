@@ -245,34 +245,6 @@ class DosisleistungTerrestrisch(Base, Vector):
 register('ch.swisstopo.geologie-dosisleistung-terrestrisch', DosisleistungTerrestrisch)
 
 
-class Smv1000(Base, Vector):
-    __tablename__ = 'smv1000'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __template__ = 'templates/htmlpopup/smv.mako'
-    __bodId__ = 'ch.swisstopo.swiss-map-vector1000.metadata'
-    id = Column('perimeter', Unicode, primary_key=True)
-    scale = Column('n_scale', Integer)
-    price = Column('n_price', Integer)
-    release = Column('dt_release', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.swiss-map-vector1000.metadata', Smv1000)
-
-
-class Smv500(Base, Vector):
-    __tablename__ = 'smv500'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __template__ = 'templates/htmlpopup/smv.mako'
-    __bodId__ = 'ch.swisstopo.swiss-map-vector500.metadata'
-    id = Column('perimeter', Unicode, primary_key=True)
-    scale = Column('n_scale', Integer)
-    price = Column('n_price', Integer)
-    release = Column('dt_release', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.swiss-map-vector500.metadata', Smv500)
-
-
 class Landesschwerenetz(Base, Vector):
     __tablename__ = 'landesschwerenetz'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
@@ -525,30 +497,6 @@ class LetztEisMaxMetadata(Base, ShopProductClass, Vector):
     __bodId__ = 'ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata'
 
 register('ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata', LetztEisMaxMetadata)
-
-
-class Icao500DigitalMeta(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __tablename__ = 'icao500_digital'
-    __bodId__ = 'ch.swisstopo.luftfahrtkarten-icao.metadata'
-    name_de = Column('s_title_de', Unicode)
-    name_fr = Column('s_title_fr', Unicode)
-    name_it = Column('s_title_it', Unicode)
-    name_en = Column('s_title_en', Unicode)
-
-register('ch.swisstopo.luftfahrtkarten-icao.metadata', Icao500DigitalMeta)
-
-
-class SegelFlug300DigitalMeta(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __tablename__ = 'segelflugkarte'
-    __bodId__ = 'ch.swisstopo.segelflugkarte.metadata'
-    name_de = Column('s_title_de', Unicode)
-    name_fr = Column('s_title_fr', Unicode)
-    name_it = Column('s_title_it', Unicode)
-    name_en = Column('s_title_en', Unicode)
-
-register('ch.swisstopo.segelflugkarte.metadata', SegelFlug300DigitalMeta)
 
 
 class ShopProductGroupClass(ShopProductClass):
@@ -1178,12 +1126,8 @@ class GridstandPk500Perimeter(Base, GridstandPermiterTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk500.noscale'
 
 
-class GridstandPk500Meta(GridstandPk500):
-    __bodId__ = 'ch.swisstopo.pixelkarte-pk500.metadata'
-
 register('ch.swisstopo.pixelkarte-farbe-pk500.noscale', GridstandPk500)
 register_perimeter('ch.swisstopo.pixelkarte-farbe-pk500.noscale', GridstandPk500Perimeter)
-register('ch.swisstopo.pixelkarte-pk500.metadata', GridstandPk500Meta)
 
 
 class SwissimageProductPerimeter(Base, Vector):
@@ -3050,15 +2994,6 @@ register('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25)
 register_perimeter('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25Perimeter)
 
 
-class SpotMosaicPerimeter(Base, ShopStandardClass, Vector):
-    __tablename__ = 'view_gridstand_spot5_metadata'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.images-spot-5.metadata'
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.images-spot-5.metadata', SpotMosaicPerimeter)
-
-
 class SwissAlti3dMetadataPerimeter(Base, ShopStandardClass, Vector):
     __tablename__ = 'shop_perimeter_swissalti3d'
     __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
@@ -3078,15 +3013,6 @@ class SwissTlm3dMetadataPerimeter(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swisstlm3d.metadata', SwissTlm3dMetadataPerimeter)
-
-
-class SwissBuildings3d1MetadataPerimeter(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_perimeter_swissbuildings3d'
-    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
-    __bodId__ = 'ch.swisstopo.swissbuildings3d_1.metadata'
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.swissbuildings3d_1.metadata', SwissBuildings3d1MetadataPerimeter)
 
 
 class SwissMapVector10MetadataPerimeter(Base, ShopStandardClass, Vector):
@@ -3120,15 +3046,6 @@ class SwissMapRaster10MetadataPerimeter(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register(SwissMapRaster10MetadataPerimeter.__bodId__, SwissMapRaster10MetadataPerimeter)
-
-
-class Dhm25MetadataPerimeter(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_perimeter_dhm25'
-    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
-    __bodId__ = 'ch.swisstopo.digitales-hoehenmodell_25.metadata'
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.digitales-hoehenmodell_25.metadata', Dhm25MetadataPerimeter)
 
 
 class SwissBuildings3d2Meta(Base, ShopStandardClass, Vector):

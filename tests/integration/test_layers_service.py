@@ -164,15 +164,6 @@ class TestMapServiceView(TestsBase):
             self.assertNotIn('geojsonUrlDe', layer)
             self.assertIn('styleUrl', layer)
             self.assertIn('updateDelay', layer)
-        if 'ch.swisstopo.swiss-map-vector1000.metadata' in res:
-            layer = res['ch.swisstopo.swiss-map-vector1000.metadata']
-            self.assertIn('extent', layer)
-            extent = layer['extent']
-            self.assertEqual(len(extent), 4)
-            self.assertIsInstance(extent[0], float)
-            self.assertIsInstance(extent[1], float)
-            self.assertIsInstance(extent[2], float)
-            self.assertIsInstance(extent[3], float)
 
         resp = self.testapp.get('/rest/services/all/MapServer/layersConfig', params={'sr': '2056'}, status=200)
         self.assertEqual(resp.content_type, 'application/json')
@@ -184,15 +175,6 @@ class TestMapServiceView(TestsBase):
             self.assertNotIn('geojsonUrlDe', layer)
             self.assertIn('styleUrl', layer)
             self.assertIn('updateDelay', layer)
-        if 'ch.swisstopo.swiss-map-vector1000.metadata' in res:
-            layer = res['ch.swisstopo.swiss-map-vector1000.metadata']
-            self.assertIn('extent', layer)
-            extent = layer['extent']
-            self.assertEqual(len(extent), 4)
-            self.assertIsInstance(extent[0], float)
-            self.assertIsInstance(extent[1], float)
-            self.assertIsInstance(extent[2], float)
-            self.assertIsInstance(extent[3], float)
 
     def test_layersconfig_with_callback(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/layersConfig', params={'callback': 'cb_'}, status=200)
