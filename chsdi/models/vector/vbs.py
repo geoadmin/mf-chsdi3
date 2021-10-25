@@ -378,3 +378,26 @@ class Panzerverschiebungsrouten(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.vbs.panzerverschiebungsrouten', Panzerverschiebungsrouten)
+
+
+class ArmeeKriegsdenkmaeler(Base, Vector):
+    __tablename__ = 'armee_kriegsdenkmaeler'
+    __table_args__ = ({'schema': 'militaer', 'autoload': False})
+    __template__ = 'templates/htmlpopup/armee_kriegsdenkmaeler.mako'
+    __bodId__ = 'ch.vbs.armee-kriegsdenkmaeler'
+    __label__ = 'inventar_nr'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    inventar_nr = Column('inventar_nr', Unicode)
+    kanton = Column('kanton', Unicode)
+    standort = Column('standort', Unicode)
+    bezeichnung = Column('bezeichnung', Unicode)
+    kategorie = Column('kategorie', Unicode)
+    thema = Column('thema', Unicode)
+    zeitraum = Column('zeitraum', Unicode)
+    form = Column('form', Unicode)
+    baujahr = Column('baujahr', Unicode)
+    link_zum_objekt = Column('link_zum_objekt', Unicode)
+    link_zum_gesamtinventar = Column('link_zum_gesamtinventar', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.vbs.armee-kriegsdenkmaeler', ArmeeKriegsdenkmaeler)
