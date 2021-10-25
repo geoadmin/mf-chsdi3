@@ -1841,8 +1841,7 @@ class Spektral(Base, Vector):
     __bodId__ = 'ch.bafu.gefahren-spektral'
     __template__ = 'templates/htmlpopup/spektral.mako'
     __label__ = 'id'
-    id = Column('_count', Integer, primary_key=True)
-    fid = Column('id', Integer)
+    id = Column('bgdi_id', Integer, primary_key=True)
     spectral_3 = Column('spectral_3', Unicode)
     spectral_4 = Column('spectral_4', Unicode)
     the_geom = Column(Geometry2D)
@@ -1908,7 +1907,7 @@ class Baugrundklassen(Base, Vector):
     __template__ = 'templates/htmlpopup/baugrundklassen.mako'
     __label__ = 'bgk'
     __returnedGeometry__ = 'the_geom_highlight'
-    id = Column('_count', Integer, primary_key=True)
+    id = Column('bgdi_id', Integer, primary_key=True)
     bgk = Column('bgk', Unicode)
     referenz = Column('referenz', Unicode)
     the_geom = Column(Geometry2D)
