@@ -58,9 +58,9 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Arsenals <//map.geo.admin.ch/?layers=ch.vbs.retablierungsstellen>`__ (ch.vbs.retablierungsstellen)                                                                                                               |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `SP Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                                                                               |
+| Update | `SP Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                                          |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                                                                                               |
+| Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                                             |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
