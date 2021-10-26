@@ -14,7 +14,50 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
-.. _releasenotes_20210908:
+.. _releasenotes_20211027:
+
+
+Release 20211027 - Wednesday, October 27th 2021
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcement: the layer ch.babs.kulturgueter-anhoerung will completely be removed from FSDI services on December 15th 2021
+- Announcement: the layer ch.bakom.downlink3 will completely be removed from FSDI services on December 15th 2021
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_210908...r_211027>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_210908...r_211027>`__
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Altitudinal zones 1975 <//map.geo.admin.ch/?layers=ch.bafu.wald-vegetationshoehenstufen_1975>`__ (ch.bafu.wald-vegetationshoehenstufen_1975)                                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Potential heat use of water bodies <//map3.geo.admin.ch/?layers=ch.bfe.waermepotential-gewaesser>`__ (ch.bfe.waermepotential-gewaesser)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hail hazard (size), 100 years <//map.geo.admin.ch/?layers=ch.meteoschweiz.hagelgefaehrdung-korngroesse_100_jahre>`__ (ch.meteoschweiz.hagelgefaehrdung-korngroesse_100_jahre)                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Armee- und Kriegsdenkmäler <//map.geo.admin.ch/?layers=ch.vbs.armee-kriegsdenkmaeler>`__ (ch.vbs.armee-kriegsdenkmaeler)                                                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Terrestrial images swisstopo <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-terrestrische_aufnahmen>`__ (ch.swisstopo.lubis-terrestrische_aufnahmen)                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Altitudinal zones 2085 less dry <//map.geo.admin.ch/?layers=ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken>`__ (ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken)                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Altitudinal zones 2085 dry <//map.geo.admin.ch/?layers=ch.bafu.wald-vegetationshoehenstufen_2085_trocken>`__ (ch.bafu.wald-vegetationshoehenstufen_2085_trocken)                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Arsenals <//map.geo.admin.ch/?layers=ch.vbs.retablierungsstellen>`__ (ch.vbs.retablierungsstellen)                                                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 Release 20210908 - Wednesday, September 9th 2021
