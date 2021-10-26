@@ -9,14 +9,15 @@
     planningstatus = 'planningstatus_%s' % lang
     web = 'web_%s' % lang
 %>
-    <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager.facptname')}</td>              <td>${c['attributes'][facptname] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager.fackind')}</td>                <td>${c['attributes'][fackind] or '-'}</td></tr>
-	  <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager.planningstatus')}</td>         <td>${c['attributes'][planningstatus] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager.validfrom')}</td>              <td>${c['attributes']['validfrom'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager.description')}</td>            <td>${c['attributes']['description'] or '-'}</td></tr>
-% if c['attributes'][web]:
-    <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager.web')}</td>                    <td><a href="${c['attributes'][web]}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td></tr>
-% else:
-    <tr><td class="cell-left">${_('ch.bfe.sachplan-geologie-tiefenlager.web')}</td>                    <td> - </td></tr>
-%endif
+    <tr><td class="cell-left">${_('tt_sachplan_facptname')}</td>                 <td>${c['attributes'][facptname] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('tt_sachplan_facility_anlageart')}</td>        <td>${c['attributes'][fackind] or '-'}</td></tr>
+	<tr><td class="cell-left">${_('tt_sachplan_planning_planungstand')}</td>     <td>${c['attributes'][planningstatus] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('tt_sachplan_planning_von')}</td>              <td>${c['attributes']['validfrom'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('tt_sachplan_beschreibung')}</td>              <td>${c['attributes']['description'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('tt_sachplan_weitereinfo')}</td>
+    % if c['attributes'][web]:
+        <td><a href="${c['attributes'][web]}" target="_blank">${_('tt_sachplan_objektblatt')}</a></td></tr>
+    % else:
+        <td> - </td></tr>
+    %endif
 </%def>
