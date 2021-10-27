@@ -99,20 +99,14 @@ class TestFileView(TestsBase):
         if not s3_tests or not dynamodb_tests:
             self.skipTest("Service files requires access both to AWS S3 and DynamoDB")
         super(TestFileView, self).setUp()
-        self.headers = {'Content-Type': 'application/vnd.google-earth.kml+xml',
-                        'X-SearchServer-Authorized': 'true'}
+        self.headers = {'Content-Type': 'application/vnd.google-earth.kml+xml'}
 
     def test_create_kml(self):
         resp = self.testapp.post('/files', VALID_KML, headers=self.headers, status=200)
         self.assertIn('adminId', resp.json)
 
-    def test_file_not_authorized(self):
-        self.testapp.post('/files', VALID_KML, headers={'X-SearchServer-Authorized': 'false',
-                                                        'Content-Type': 'application/vnd.google-earth.kml+xml'}, status=403)
-
     def test_file_invalid_content_type(self):
-        self.testapp.post('/files', VALID_KML, headers={'X-SearchServer-Authorized': 'true',
-                                                        'Content-Type': WRONG_CONTENT_TYPE}, status=415)
+        self.testapp.post('/files', VALID_KML, headers={'Content-Type': WRONG_CONTENT_TYPE}, status=415)
 
     def test_file_not_well_formed_kml(self):
         self.testapp.post('/files', NOT_WELL_FORMED_KML, headers=self.headers, status=415)
@@ -265,6 +259,6 @@ class TestFileView(TestsBase):
 
     def test_file_ie9_fix(self):
         # No content-type default to 'application/vnd.google-earth.kml+xml'
-        self.testapp.post('/files', VALID_KML, headers={'X-SearchServer-Authorized': 'true'}, status=200)
+        self.testapp.post('/files', VALID_KML, headers={}, status=200)
         # Having IE9 user-agent makes it working again
-        self.testapp.post('/files', URLENCODED_KML, headers={'X-SearchServer-Authorized': 'true', 'User-Agent': 'MSIE 9.0'}, status=200)
+        self.testapp.post('/files', URLENCODED_KML, headers={'User-Agent': 'MSIE 9.0'}, status=200)
