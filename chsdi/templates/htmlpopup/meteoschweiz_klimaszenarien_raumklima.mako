@@ -29,7 +29,7 @@
   </tr>
   <tr>
     <td class="cell-left">${_('ch.meteoschweiz.klimaszenarien-raumklima.link')}</td>
-    <td><a href="${c['attributes']['link']">Link</a></td>
+    <td><a href="${c['attributes']['link']}">${_('link')}</a></td>
   </tr>
 </%def>
 
