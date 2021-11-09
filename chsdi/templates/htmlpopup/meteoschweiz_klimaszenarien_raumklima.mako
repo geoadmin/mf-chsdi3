@@ -28,7 +28,7 @@
     <td class="cell-left">${_('ch.meteoschweiz.klimaszenarien-raumklima.parameter')}</td><td>${c['attributes'][parameter_text] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left">${_('ch.meteoschweiz.klimaszenarien-raumklima.link')}</td><td>${c['attributes']['link'] or '-'}</td>
+    <td class="cell-left">${_('ch.meteoschweiz.klimaszenarien-raumklima.link')}</td><td><a href="${c['attributes']['link']">${_('ch.meteoschweiz.klimaszenarien-raumklima.link')}</a></td>
   </tr>
 </%def>
 
