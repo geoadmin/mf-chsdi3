@@ -10,7 +10,7 @@
 %>
 
   <tr>
-    <td class="cell-left">${_('ch.meteoschweiz.klimaszenarien-raumklima.station')}</td><td>${c['attributes']['station'] or '-'}</td>
+    <td class="cell-left">${_('ch.meteoschweiz.klimaszenarien-raumklima.station')}</td><td>${c['attributes']['station'] or '-'} (${c['attributes']['abk']})</td>
   </tr>
   <tr>
     <td class="cell-left">${_('ch.meteoschweiz.klimaszenarien-raumklima.stationtyp')}</td><td>${c['attributes'][stationtyp_text] or '-'}</td>
@@ -22,7 +22,7 @@
     <td class="cell-left">${_('ch.meteoschweiz.klimaszenarien-raumklima.eigentuemer')}</td><td>${c['attributes'][eigentuemer_text] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left">${_('ch.meteoschweiz.klimaszenarien-raumklima.stationshoehe')}</td><td>${c['attributes']['stationhoehe'] or '-'}</td>
+    <td class="cell-left">${_('ch.meteoschweiz.klimaszenarien-raumklima.stationshoehe')} [m]</td><td>${c['attributes']['stationhoehe'] or '-'}</td>
   </tr>
   <tr>
     <td class="cell-left">${_('ch.meteoschweiz.klimaszenarien-raumklima.parameter')}</td><td>${c['attributes'][parameter_text] or '-'}</td>
