@@ -13,8 +13,8 @@
     <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.teilgebiet')}</td>         <td>${c['attributes']['teilgebiet'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.schutzkategorie')}</td>         <td>${c['attributes'][schutzkat] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.schutzebene')}</td>         <td>${c['attributes'][schutzeb] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.shape_area')}</td>          <td>${round(c['attributes']['shape_area']) or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.obj_gisflaeche')}</td>         <td>${round(c['attributes']['obj_gisflaeche']) or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.shape_area')}</td>          <td>${round(c['attributes']['shape_area'], 1) or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.obj_gisflaeche')}</td>         <td>${round(c['attributes']['obj_gisflaeche'], 1) or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.bundesinventare-vogelreservate.refobjblatt')}</td>        <td><a target="_blank" href="${c['attributes']['refobjblatt']}">${_('link') or '-'}</a></td></tr>
 </%def>
 
