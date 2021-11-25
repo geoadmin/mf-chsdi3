@@ -1685,17 +1685,19 @@ register('ch.bafu.oekomorphologie-f_bauwerke', OekomBauwerke)
 
 
 class Steinbockkolonien(Base, Vector):
-    __tablename__ = 'sb'
+    __tablename__ = 'steinbockkolonien'
     __table_args__ = ({'schema': 'fauna', 'autoload': False})
     __bodId__ = 'ch.bafu.fauna-steinbockkolonien'
     __template__ = 'templates/htmlpopup/steinbockkolonien.mako'
-    __label__ = 'sb_name'
-    id = Column('gid', Integer, primary_key=True)
-    sb_name = Column('sb_name', Unicode)
-    sb_obj = Column('sb_obj', Integer)
-    sb_kt = Column('sb_kt', Unicode)
-    sb_fl = Column('sb_fl', Numeric)
-    sb_gf = Column('sb_gf', Numeric)
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    objnummer = Column('objnummer', Integer)
+    kantone = Column('kantone', Unicode)
+    shape_area = Column('shape_area', Numeric)
+    gebietstyp_de = Column('gebietstyp_de', Unicode)
+    gebietstyp_fr = Column('gebietstyp_fr', Unicode)
+    gebietstyp_it = Column('gebietstyp_it', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.fauna-steinbockkolonien', Steinbockkolonien)
