@@ -84,6 +84,14 @@ class KatasterBelastetenStandorteZivflplOereb(Base, OerebBase, Vector):
 register_oereb(KatasterBelastetenStandorteZivflplOereb.__bodId__, KatasterBelastetenStandorteZivflplOereb)
 
 
+class KatasterBelastetenStandorteZivflplV20Oereb(Base, OerebBase, Vector):
+    __tablename__ = 'kataster_belasteter_standorte_zivflpl_oereb'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __bodId__ = 'ch.bazl.kataster-belasteter-standorte-zivilflugplaetze_V2_0.oereb'
+
+register_oereb(KatasterBelastetenStandorteZivflplV20Oereb.__bodId__, KatasterBelastetenStandorteZivflplV20Oereb)
+
+
 class BaulinienFlughafenanlagenOereb(Base, OerebBase, Vector):
     __tablename__ = 'baulinien_flughafenanlagen_oereb'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
