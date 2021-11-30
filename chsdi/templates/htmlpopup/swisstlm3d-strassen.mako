@@ -10,7 +10,7 @@
 %>
     <tr>
       <td class="cell-left">${_('ch.swisstopo.swisstlm3d-strassen.strassenname')}</td>
-      <td>${c['attributes']['strassenname'] or '-'}</td>
+      <td>{c['attributes']['strassenname'] or '-'}</td>
     </tr>
     <tr>
       <td class="cell-left">${_('ch.swisstopo.swisstlm3d-strassen.objektart')}</td>
