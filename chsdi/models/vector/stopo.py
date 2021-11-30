@@ -2073,6 +2073,7 @@ class Swisstlm3dStrassen500000(Base, Vector):
     __label__ = 'objektart'
     __minscale__ = 500000
     id = Column('bgdi_id', Integer, primary_key=True)
+    strassenname = Column('strassenname', Unicode)
     objektart = Column('objektart', Integer)
     belagsart = Column('belagsart', Unicode)
     eigentuemer = Column('eigentuemer', Unicode)
@@ -2091,6 +2092,7 @@ class Swisstlm3dStrassen100000(Base, Vector):
     __maxscale__ = 500000
     __minscale__ = 100000
     id = Column('bgdi_id', Integer, primary_key=True)
+    strassenname = Column('strassenname', Unicode)
     objektart = Column('objektart', Integer)
     belagsart = Column('belagsart', Unicode)
     eigentuemer = Column('eigentuemer', Unicode)
@@ -2109,6 +2111,7 @@ class Swisstlm3dStrassen10000(Base, Vector):
     __maxscale__ = 100000
     __minscale__ = 10000
     id = Column('bgdi_id', Integer, primary_key=True)
+    strassenname = Column('strassenname', Unicode)
     objektart = Column('objektart', Integer)
     belagsart = Column('belagsart', Unicode)
     eigentuemer = Column('eigentuemer', Unicode)
@@ -2126,6 +2129,7 @@ class Swisstlm3dStrassen(Base, Vector):
     __label__ = 'objektart'
     __maxscale__ = 10000
     id = Column('bgdi_id', Integer, primary_key=True)
+    strassenname = Column('strassenname', Unicode)
     objektart = Column('objektart', Integer)
     belagsart = Column('belagsart', Unicode)
     eigentuemer = Column('eigentuemer', Unicode)

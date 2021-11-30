@@ -9,6 +9,10 @@
     verkehrsbeschraenkung_label = 'ch.swisstopo.swisstlm3d-strassen_verkehrsbeschraenkung_%s' % c['attributes']['verkehrsbeschraenkung']
 %>
     <tr>
+      <td class="cell-left">${_('ch.swisstopo.swisstlm3d-strassen.strassenname')}</td>
+      <td>c['attributes']['strassenname'] or '-'}</td>
+    </tr>
+    <tr>
       <td class="cell-left">${_('ch.swisstopo.swisstlm3d-strassen.objektart')}</td>
       <td>${_(objektart_label) or '-'}</td>
     </tr>
