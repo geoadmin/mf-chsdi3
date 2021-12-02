@@ -87,7 +87,7 @@ register_oereb(KatasterBelastetenStandorteZivflplOereb.__bodId__, KatasterBelast
 class KatasterBelastetenStandorteZivflplV20Oereb(Base, OerebBase, Vector):
     __tablename__ = 'kataster_belasteter_standorte_zivflpl_v2_0_oereb'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
-    __bodId__ = 'ch.bazl.kataster-belasteter-standorte-zivilflugplaetze_V2_0.oereb'
+    __bodId__ = 'ch.bazl.kataster-belasteter-standorte-zivilflugplaetze_v2_0.oereb'
 
 register_oereb(KatasterBelastetenStandorteZivflplV20Oereb.__bodId__, KatasterBelastetenStandorteZivflplV20Oereb)
 
