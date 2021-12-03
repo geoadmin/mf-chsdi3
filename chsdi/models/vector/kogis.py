@@ -25,22 +25,24 @@ register('ch.swisstopo.fixpunkte-agnes', Agnes)
 
 class FixpunkteLfp1(Base, Vector):
     __tablename__ = 'punkt_lage_lfp1'
-    __table_args__ = ({'schema': 'fpds', 'autoload': False})
-    __template__ = 'templates/htmlpopup/fixpunkte.mako'
+    __table_args__ = ({'schema': 'fida', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fixpunkte_fida.mako'
     __bodId__ = 'ch.swisstopo.fixpunkte-lfp1'
     __label__ = 'id'
     id = Column('pointid', Unicode, primary_key=True)
     punktname = Column('punktname', Unicode)
-    nummer = Column('nummer', Unicode)
     status = Column('status', Unicode)
-    nbident = Column('nbident', Unicode)
-    x03 = Column('x03', Numeric)
-    y03 = Column('y03', Numeric)
+    nummer = Column('nummer', Unicode)
     n95 = Column('n95', Numeric)
     e95 = Column('e95', Numeric)
     h02 = Column('h02', Numeric)
+    proto_url = Column('proto_url', Unicode)
     zugang = Column('zugang', Unicode)
-    url = Column('url', Unicode)
+    ordnung = Column('ordnung', Unicode)
+    l_gen_lv95 = Column('l_gen_lv95', Numeric)
+    h_gen_lv95 = Column('h_gen_lv95', Numeric)
+    l_zuv_lv95 = Column('l_zuv_lv95', Unicode)
+    h_zuv_lv95 = Column('l_zuv_lv95', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
