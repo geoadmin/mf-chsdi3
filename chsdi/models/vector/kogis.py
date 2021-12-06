@@ -31,6 +31,7 @@ class FixpunkteLfp1(Base, Vector):
     __label__ = 'id'
     id = Column('pointid', Unicode, primary_key=True)
     punktname = Column('punktname', Unicode)
+    nbident = Column('nbident', Unicode)
     status = Column('status', Unicode)
     nummer = Column('nummer', Unicode)
     n95 = Column('n95', Numeric)
