@@ -2,7 +2,7 @@
 
 <%def name="table_body(c, lang)">
   <tr>
-    <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_flussgebiete.flussgebiet')}</td>
+    <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_flussgebiete.name')}</td>
     <td>${c['attributes']['flussgb'] or '-'}</td>
   </tr>
   <tr>
