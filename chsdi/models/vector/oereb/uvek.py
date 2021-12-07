@@ -42,6 +42,22 @@ class BaulinienNationalstrassenOereb(Base, OerebBase, Vector):
 register_oereb(BaulinienNationalstrassenOereb.__bodId__, BaulinienNationalstrassenOereb)
 
 
+class BaulinienNationalstrassenV20Oereb(Base, OerebBase, Vector):
+    __tablename__ = 'baulinien_nationalstrassen_v2_0_oereb'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __bodId__ = 'ch.astra.baulinien-nationalstrassen_v2_0.oereb'
+
+register_oereb(BaulinienNationalstrassenV20Oereb.__bodId__, BaulinienNationalstrassenV20Oereb)
+
+
+# class BaulinienNationalstrasseniAenderungV20Oereb(Base, OerebBase, Vector):
+#     __tablename__ = 'baulinien_nationalstrassen_aenderung_v2_0_oereb'
+#     __table_args__ = ({'schema': 'astra', 'autoload': False})
+#     __bodId__ = 'ch.astra.baulinien-nationalstrassen_aenderung_v2_0.oereb'
+#
+# register_oereb(BaulinienNationalstrassenV20Oereb.__bodId__, BaulinienNationalstrassenV20Oereb)
+
+
 # BAV
 class KatasterBelastetenStandorteOevOereb(Base, OerebBase, Vector):
     __tablename__ = 'kataster_belasteter_standorte_oev_oereb'
@@ -49,6 +65,14 @@ class KatasterBelastetenStandorteOevOereb(Base, OerebBase, Vector):
     __bodId__ = 'ch.bav.kataster-belasteter-standorte-oev.oereb'
 
 register_oereb(KatasterBelastetenStandorteOevOereb.__bodId__, KatasterBelastetenStandorteOevOereb)
+
+
+class KatasterBelastetenStandorteOevV20Oereb(Base, OerebBase, Vector):
+    __tablename__ = 'kataster_belasteter_standorte_oev_v2_0_oereb'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __bodId__ = 'ch.bav.kataster-belasteter-standorte-oev_v2_0.oereb'
+
+register_oereb(KatasterBelastetenStandorteOevV20Oereb.__bodId__, KatasterBelastetenStandorteOevV20Oereb)
 
 
 class ProjektierungszonenEisenbahnanlagenOereb(Base, OerebBase, Vector):
@@ -92,12 +116,36 @@ class ProjektierungszonenOereb(Base, OerebBase, Vector):
 register_oereb(ProjektierungszonenOereb.__bodId__, ProjektierungszonenOereb)
 
 
+class ProjektierungszonenV20Oereb(Base, OerebBase, Vector):
+    __tablename__ = 'projektierungszonen_v2_0_oereb'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __bodId__ = 'ch.bazl.projektierungszonen-flughafenanlagen_v2_0.oereb'
+
+register_oereb(ProjektierungszonenV20Oereb.__bodId__, ProjektierungszonenV20Oereb)
+
+
 class SichereitszonenOereb(Base, OerebBase, Vector):
     __tablename__ = 'sichereitszonen_oereb'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __bodId__ = 'ch.bazl.sicherheitszonenplan.oereb'
 
 register_oereb(SichereitszonenOereb.__bodId__, SichereitszonenOereb)
+
+
+class SichereitszonenV20Oereb(Base, OerebBase, Vector):
+    __tablename__ = 'sichereitszonen_v2_0_oereb'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __bodId__ = 'ch.bazl.sicherheitszonenplan_v2_0.oereb'
+
+register_oereb(SichereitszonenV20Oereb.__bodId__, SichereitszonenV20Oereb)
+
+
+# class SichereitszonenAenderungV20Oereb(Base, OerebBase, Vector):
+#     __tablename__ = 'sichereitszonen_v2_0_oereb'
+#     __table_args__ = ({'schema': 'bazl', 'autoload': False})
+#     __bodId__ = 'ch.bazl.sicherheitszonenplan_aenderun_v2_0.oereb'
+#
+# register_oereb(SichereitszonenAenderungV20Oereb.__bodId__, SichereitszonenAenderungV20Oereb)
 
 
 class KatasterBelastetenStandorteZivflplOereb(Base, OerebBase, Vector):

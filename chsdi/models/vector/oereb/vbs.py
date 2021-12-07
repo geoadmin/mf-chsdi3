@@ -24,3 +24,11 @@ class KatasterBelasteterStandorteMilitaerOereb(Base, OerebBase, Vector):
     __bodId__ = 'ch.vbs.kataster-belasteter-standorte-militaer.oereb'
 
 register_oereb(KatasterBelasteterStandorteMilitaerOereb.__bodId__, KatasterBelasteterStandorteMilitaerOereb)
+
+
+class KatasterBelasteterStandorteMilitaerV20Oereb(Base, OerebBase, Vector):
+    __tablename__ = 'kataster_belasteter_standorte_militaer_v2_0oereb'
+    __table_args__ = ({'schema': 'militaer', 'autoload': False})
+    __bodId__ = 'ch.vbs.kataster-belasteter-standorte-militaer_v2_0_.oereb'
+
+register_oereb(KatasterBelasteterStandorteMilitaerV20Oereb.__bodId__, KatasterBelasteterStandorteMilitaerV20Oereb)
