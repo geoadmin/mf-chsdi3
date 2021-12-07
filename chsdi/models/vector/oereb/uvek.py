@@ -26,6 +26,14 @@ class ProjektierungszonenNationalstrassenOereb(Base, OerebBase, Vector):
 register_oereb(ProjektierungszonenNationalstrassenOereb.__bodId__, ProjektierungszonenNationalstrassenOereb)
 
 
+class ProjektierungszonenNationalstrassenV20Oereb(Base, OerebBase, Vector):
+    __tablename__ = 'projektierungszonen_nationalstrassen_v2_0_oereb'
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __bodId__ = 'ch.astra.projektierungszonen-nationalstrassen_v2_0.oereb'
+
+register_oereb(ProjektierungszonenNationalstrassenV20Oereb.__bodId__, ProjektierungszonenNationalstrassenV20Oereb)
+
+
 class BaulinienNationalstrassenOereb(Base, OerebBase, Vector):
     __tablename__ = 'baulinien_nationalstrassen_oereb'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
@@ -51,12 +59,28 @@ class ProjektierungszonenEisenbahnanlagenOereb(Base, OerebBase, Vector):
 register_oereb(ProjektierungszonenEisenbahnanlagenOereb.__bodId__, ProjektierungszonenEisenbahnanlagenOereb)
 
 
+class ProjektierungszonenEisenbahnanlagenV20Oereb(Base, OerebBase, Vector):
+    __tablename__ = 'projektierungszonen_eisenbahnanlagen_v2_0_oereb'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __bodId__ = 'ch.bav.projektierungszonen-eisenbahnanlagen_v2_0.oereb'
+
+register_oereb(ProjektierungszonenEisenbahnanlagenV20Oereb.__bodId__, ProjektierungszonenEisenbahnanlagenV20Oereb)
+
+
 class BaulinienEisenbahnanlagenOereb(Base, OerebBase, Vector):
     __tablename__ = 'baulinien_eisenbahnanlagen_oereb'
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __bodId__ = 'ch.bav.baulinien-eisenbahnanlagen.oereb'
 
 register_oereb(BaulinienEisenbahnanlagenOereb.__bodId__, BaulinienEisenbahnanlagenOereb)
+
+
+class BaulinienEisenbahnanlagenV20Oereb(Base, OerebBase, Vector):
+    __tablename__ = 'baulinien_eisenbahnanlagen_v2_0_oereb'
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __bodId__ = 'ch.bav.baulinien-eisenbahnanlagen_v2_0.oereb'
+
+register_oereb(BaulinienEisenbahnanlagenV20Oereb.__bodId__, BaulinienEisenbahnanlagenV20Oereb)
 
 
 # BAZL
@@ -98,3 +122,11 @@ class BaulinienFlughafenanlagenOereb(Base, OerebBase, Vector):
     __bodId__ = 'ch.bazl.baulinien-flughafenanlagen.oereb'
 
 register_oereb(BaulinienFlughafenanlagenOereb.__bodId__, BaulinienFlughafenanlagenOereb)
+
+
+class BaulinienFlughafenanlagenV20Oereb(Base, OerebBase, Vector):
+    __tablename__ = 'baulinien_flughafenanlagen_v2_0_oereb'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __bodId__ = 'ch.bazl.baulinien-flughafenanlagen_v2_0.oereb'
+
+register_oereb(BaulinienFlughafenanlagenV20Oereb.__bodId__, BaulinienFlughafenanlagenV20Oereb)
