@@ -321,20 +321,33 @@ class IVSRegLoc(Base, Vector):
 register('ch.astra.ivs-reg_loc', IVSRegLoc)
 
 
-class BaulinienNationalstrassen(Base, Vector):
-    __tablename__ = 'baulinien_nationalstrassen_line'
+class BaulinienNationalstrassen():
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/baulinien_nationalstrassen.mako'
     __bodId__ = 'ch.astra.baulinien-nationalstrassen'
-    __label__ = 'status'
     id = Column('bgdi_id', Integer, primary_key=True)
-    status = Column('status', Unicode)
-    approval_date = Column('approval_date', Date)
-    publication_date = Column('publication_date', Date)
-    approving_authority = Column('approving_authority', Unicode)
     the_geom = Column(Geometry2D)
 
-register(BaulinienNationalstrassen.__bodId__, BaulinienNationalstrassen)
+
+class BaulinienNationalstrassenLine(Base, BaulinienNationalstrassen, Vector):
+    __tablename__ = 'baulinien_nationalstrassen_line'
+    __label__ = 'status'
+    status = Column('status', Unicode)
+    approval_date = Column('approval_date', Date)
+    publication_date_from = Column('publication_date_from', Date)
+    approving_authority = Column('approving_authority', Unicode)
+    planning_approval_name = Column('planning_approval_name', Unicode)
+
+register(BaulinienNationalstrassenLine.__bodId__, BaulinienNationalstrassenLine)
+
+
+class BaulinienNationalstrassenArea(Base, BaulinienNationalstrassen, Vector):
+    __tablename__ = 'baulinien_nationalstrassen_area'
+    __label__ = 'id'
+    vertical_limit_upward = Column('vertical_limit_upward', Unicode)
+    vertical_limit_downward = Column('vertical_limit_downward', Unicode)
+
+register(BaulinienNationalstrassenArea.__bodId__, BaulinienNationalstrassenArea)
 
 
 class Zaehlstellenregloc(Base, Vector):
