@@ -57,6 +57,22 @@ register_oereb(BaulinienNationalstrassenV20Oereb.__bodId__, BaulinienNationalstr
 #
 # register_oereb(BaulinienNationalstrassenV20Oereb.__bodId__, BaulinienNationalstrassenV20Oereb)
 
+# BFE
+class BaulinienStarkstromV20Oereb(Base, OerebBase, Vector):
+    __tablename__ = 'baulinien_starkstromanlagen_v2_0_oereb'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __bodId__ = 'ch.bfe.baulinien-starkstromanlagen_v2_0.oereb'
+
+register_oereb(BaulinienStarkstromV20Oereb.__bodId__, BaulinienStarkstromV20Oereb)
+
+
+class ProjektierungStarkstromV20Oereb(Base, OerebBase, Vector):
+    __tablename__ = 'projektierungszonen_starkstromanlagen_v2_0_oereb'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __bodId__ = 'ch.bfe.projektierungszonen-starkstromanlagen_v2_0.oereb'
+
+register_oereb(ProjektierungStarkstromV20Oereb.__bodId__, ProjektierungStarkstromV20Oereb)
+
 
 # BAV
 class KatasterBelastetenStandorteOevOereb(Base, OerebBase, Vector):
