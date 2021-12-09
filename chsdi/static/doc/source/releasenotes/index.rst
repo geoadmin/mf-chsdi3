@@ -14,8 +14,31 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
-.. _releasenotes_20211027:
+.. _releasenotes_20211215:
 
+Release 20211215 - Wednesday, December 15th 2021
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_211027...r_211215>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_210908...r_211215>`__
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Dummy <//map.geo.admin.ch/?layers=ch.dummy>`__ (ch.dummy)                                                                                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. _releasenotes_20211027:
 
 Release 20211027 - Wednesday, October 27th 2021
 -------------------------------------------------
