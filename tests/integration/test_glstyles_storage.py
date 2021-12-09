@@ -56,19 +56,12 @@ class TestGLStylesView(TestsBase):
         if not s3_tests or not dynamodb_tests:
             self.skipTest("Service GLStyles requires access both to AWS S3 and DynamoDB")
         super(TestGLStylesView, self).setUp()
-        self.headers = {'Content-Type': 'application/json',
-                        'X-SearchServer-Authorized': 'true'}
-        self.headers_not_auth = {'Content-Type': 'application/json',
-                        'X-SearchServer-Authorized': 'false'}
-        self.headers_wrong_ctype = {'Content-Type': 'application/toto_et_zozo_et_momo',
-                        'X-SearchServer-Authorized': 'true'}
+        self.headers = {'Content-Type': 'application/json'}
+        self.headers_wrong_ctype = {'Content-Type': 'application/toto_et_zozo_et_momo'}
 
     def test_create_glstyle(self):
         resp = self.testapp.post('/gl-styles', GL_STYLE_JSON, headers=self.headers, status=200)
         self.assertIn('adminId', resp.json)
-
-    def test_glstyle_not_auth(self):
-        self.testapp.post('/gl-styles', GL_STYLE_JSON, headers=self.headers_not_auth, status=403)
 
     def test_glstyle_invalid_content_type(self):
         self.testapp.post('/gl-styles', GL_STYLE_JSON, headers=self.headers_wrong_ctype, status=415)

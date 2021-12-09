@@ -1,0 +1,24 @@
+<VirtualHost *:${APACHE_PORT}>
+
+    RewriteEngine On
+
+    ServerName localhost
+
+    DocumentRoot /var/www/html
+
+    LogLevel ${APACHE_LOG_LEVEL}
+    ErrorLog /proc/self/fd/2
+    # CustomLog /dev/null combined
+    CustomLog /dev/stdout  combined
+
+
+    RewriteRule ^/$ /static/index.html [R=301]
+
+    # If the request is not for a valid file
+    RewriteCond %{REQUEST_URI} !^/checker
+    RewriteRule ^/(.*)  http://127.0.0.1:${WSGI_PORT}/$1  [P]
+    ProxyPassReverse / http://127.0.0.1:${WSGI_PORT}/
+        
+
+</VirtualHost>
+
