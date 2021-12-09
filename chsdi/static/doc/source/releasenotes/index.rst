@@ -37,7 +37,13 @@ API & applications
 Geodata
 *******
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Dummy <//map.geo.admin.ch/?layers=ch.dummy>`__ (ch.dummy)                                                                                                                                                        |
+| New    | `Reserved zones for motorways V2.0 PLR <//map.geo.admin.ch/?layers=ch.astra.projektierungszonen-nationalstrassen_v2_0.oereb>`__ (ch.astra.projektierungszonen-nationalstrassen_v2_0.oereb)                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Building lines for railways V2.0 PLR <//map.geo.admin.ch/?layers=ch.bav.baulinien-eisenbahnanlagen_v2_0.oereb>`__ (ch.bav.baulinien-eisenbahnanlagen_v2_0.oereb)                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Reserved zones for public transport facilities V2.0 PLR <//map.geo.admin.ch/?layers=ch.bav.projektierungszonen-eisenbahnanlagen_v2_0.oereb>`__ (ch.bav.projektierungszonen-eisenbahnanlagen_v2_0.oereb)          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Building lines for airports V2.0 PLR <//map.geo.admin.ch/?layers=ch.bazl.baulinien-flughafenanlagen_v2_0.oereb>`__ (ch.bazl.baulinien-flughafenanlagen_v2_0.oereb)                                               |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
