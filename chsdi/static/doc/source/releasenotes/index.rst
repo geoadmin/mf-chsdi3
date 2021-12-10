@@ -27,6 +27,10 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
+- Announcement: the layer ch.babs.kulturgueter-anhoerung has been removed from FSDI services as previously announced
+- Announcement: the layer ch.bakom.downlink3 has been removed from FSDI services as previously announced
+- Announcement: the layers ch.bfs.arealstatistik-1985, ch.bfs.arealstatistik-1997, ch.bfs.arealstatistik-bodenbedeckung-1985, ch.bfs.arealstatistik-bodenbedeckung-1997, ch.bfs.arealstatistik-bodennutzung, ch.bfs.arealstatistik-bodennutzung-1985, ch.bfs.arealstatistik-bodennutzung-1997 and ch.bfs.arealstatistik-hintergrund will be removed from FSDI services on March 16th 2022
+- Announcement: the layer ch.swisstopo.fixpunkte-lfp1 has the following structural changes: Removed attributes: y03, x03. Newly added attributes: l_gen_lv95, h_gen_lv95, l_zuv_lv95, h_zuv_lv95 as announced in the api google group
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_211027...r_211215>`__
 
 `MAP <//map.geo.admin.ch>`__
