@@ -28,7 +28,6 @@ The returned format is Interlis (XML).
   - ch.bazl.projektierungszonen-flughafenanlagen.oereb
   - ch.bazl.sicherheitszonenplan.oereb
   - ch.vbs.kataster-belasteter-standorte-militaer.oereb
-  - baldur träumt
 
 URL
 ***
