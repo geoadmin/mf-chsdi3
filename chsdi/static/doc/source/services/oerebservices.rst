@@ -17,7 +17,7 @@ The returned format is Interlis (XML).
 
 .. warning::
   This service is only available for the following layers:
-  
+
   Layers with model V2_0 (https://models.geo.admin.ch/V_D/OeREB/OeREBKRMtrsfr_V2_0.ili):
   - ch.astra.projektierungszonen-nationalstrassen_v2_0.oereb *(this layer has no data)*
   - ch.astra.baulinien-nationalstrassen_v2_0.oereb
@@ -31,7 +31,8 @@ The returned format is Interlis (XML).
   - ch.bav.kataster-belasteter-standorte-oev_v2_0.oereb
   - ch.bfe.projektierungszonen-starkstromanlagen_v2_0.oereb *(this layer has no data)*
   - ch.bfe.baulinien-starkstromanlagen_v2_0.oereb *(this layer has no data)*
-   Layers with model V1_1 (https://models.geo.admin.ch/V_D/OeREB/replaced/OeREBKRMtrsfr_V1_1.ili):
+
+  Layers with model V1_1 (https://models.geo.admin.ch/V_D/OeREB/replaced/OeREBKRMtrsfr_V1_1.ili):
   - ch.astra.projektierungszonen-nationalstrassen.oereb *(this layer has no data)*
   - ch.astra.baulinien-nationalstrassen.oereb
   - ch.bav.projektierungszonen-eisenbahnanlagen.oereb *(this layer has no data)*
@@ -42,7 +43,7 @@ The returned format is Interlis (XML).
   - ch.vbs.kataster-belasteter-standorte-militaer.oereb
   - ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb
   - ch.bav.kataster-belasteter-standorte-oev.oereb
-  
+
 URL
 ***
 
