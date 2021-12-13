@@ -18,6 +18,18 @@ The returned format is Interlis (XML).
 .. warning::
   This service is only available for the following layers:
 
+  - ch.astra.baulinien-nationalstrassen_v2_0.oereb
+  - ch.astra.projektierungszonen-nationalstrassen_v2_0.oereb *(this layer has no data)*
+  - ch.bav.baulinien-eisenbahnanlagen_v2_0.oereb *(this layer has no data)*
+  - ch.bav.kataster-belasteter-standorte-oev_v2_0.oereb
+  - ch.bav.projektierungszonen-eisenbahnanlagen_v2_0.oereb *(this layer has no data)*
+  - ch.bazl.baulinien-flughafenanlagen_v2_0.oereb *(this layer has no data)*
+  - ch.bazl.kataster-belasteter-standorte-zivilflugplaetze_v2_0.oereb
+  - ch.bazl.projektierungszonen-flughafenanlagen_v2_0.oereb
+  - ch.bazl.sicherheitszonenplan_v2_0.oereb
+  - ch.bfe.baulinien-starkstromanlagen_v2_0.oereb *(this layer has no data)*
+  - ch.bfe.projektierungszonen-starkstromanlagen_v2_0.oereb *(this layer has no data)*
+  - ch.vbs.kataster-belasteter-standorte-militaer_v2_0.oereb
   - ch.astra.baulinien-nationalstrassen.oereb
   - ch.astra.projektierungszonen-nationalstrassen.oereb *(this layer has no data)*
   - ch.bav.baulinien-eisenbahnanlagen.oereb *(this layer has no data)*
