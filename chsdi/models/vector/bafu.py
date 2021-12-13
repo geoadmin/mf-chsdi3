@@ -331,14 +331,13 @@ class HydroAtlasFlussgebiete(Base, Vector):
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
     __bodId__ = 'ch.bafu.hydrologischer-atlas_flussgebiete'
     __template__ = 'templates/htmlpopup/atlas_flussgebiete.mako'
-    __label__ = 'name'
+    __label__ = 'flussgb'
+    __returnedGeometry__ = 'the_geom_simple'
     id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Unicode)
-    nummer = Column('nummer', Integer)
-    flussgebiet = Column('flussgebiet', Integer)
-    shape_area = Column('shape_area', Numeric)
-    umfang = Column('umfang', Numeric)
+    flussgb = Column('flussgb', Unicode)
+    flaeche = Column('flaeche', Numeric)
     the_geom = Column(Geometry2D)
+    the_geom_simple = Column('the_geom_simple', Geometry2D)
 
 register('ch.bafu.hydrologischer-atlas_flussgebiete', HydroAtlasFlussgebiete)
 
