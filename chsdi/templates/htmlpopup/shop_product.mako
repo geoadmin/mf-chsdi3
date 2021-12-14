@@ -17,7 +17,8 @@ elif layer == 'ch.swisstopo.stk200-papierkarte.metadata':
 image = cmsGeoadminHost + '/www.swisstopo.admin.ch/shop/swisstopoproducts/250/' + img_id + '.jpg'
 if (layer == 'ch.swisstopo.pixelkarte-pk25.metadata' or
     layer == 'ch.swisstopo.pixelkarte-pk50.metadata' or
-    layer == 'ch.swisstopo.pixelkarte-pk100.metadata'):
+    layer == 'ch.swisstopo.pixelkarte-pk100.metadata' or
+    layer == 'ch.swisstopo.pixelkarte-pk200.metadata'):
     image_exists = False
 elif 'pk_product' not in c['attributes']:
     image_exists = h.resource_exists(image)

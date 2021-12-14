@@ -255,11 +255,9 @@ class ErreichbarkeitMiv(Base, Erreichbarkeit, Vector):
 register('ch.are.erreichbarkeit-miv', ErreichbarkeitMiv)
 
 
-class BelastungPersonenverkehrStrasse(Base, Vector):
-    __tablename__ = 'belastung_personenverkehr'
+class GeneralPersonenverkehrStrasse:
     __table_args__ = ({'schema': 'strassen', 'autoload': False})
     __template__ = 'templates/htmlpopup/personenverkehr_strasse.mako'
-    __bodId__ = 'ch.are.belastung-personenverkehr-strasse'
     __label__ = 'nr'
     __extended_info__ = True
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -285,14 +283,23 @@ class BelastungPersonenverkehrStrasse(Base, Vector):
     asp_lw = Column('asp_lw', Integer)
     asp_lz = Column('asp_lz', Integer)
     the_geom = Column(Geometry2D)
+
+
+class BelastungPersonenverkehrStrasse(Base, GeneralPersonenverkehrStrasse, Vector):
+    __tablename__ = 'belastung_personenverkehr'
+    __bodId__ = 'ch.are.belastung-personenverkehr-strasse'
 register(BelastungPersonenverkehrStrasse.__bodId__, BelastungPersonenverkehrStrasse)
 
 
-class BelastungPersonenverkehrBahn(Base, Vector):
-    __tablename__ = 'belastung_personenverkehr'
+class BelastungPersonenverkehrStrasseZukunft(Base, GeneralPersonenverkehrStrasse, Vector):
+    __tablename__ = 'belastung_personenverkehr_zukunft'
+    __bodId__ = 'ch.are.belastung-personenverkehr-strasse_zukunft'
+register(BelastungPersonenverkehrStrasseZukunft.__bodId__, BelastungPersonenverkehrStrasseZukunft)
+
+
+class GeneralBelastungPersonenverkehrBahn:
     __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': False})
     __template__ = 'templates/htmlpopup/personenverkehr_bahn.mako'
-    __bodId__ = 'ch.are.belastung-personenverkehr-bahn'
     __label__ = 'nr'
     id = Column('bgdi_id', Integer, primary_key=True)
     nr = Column('nr', Integer)
@@ -302,4 +309,14 @@ class BelastungPersonenverkehrBahn(Base, Vector):
     asp_oev = Column('asp_oev', Integer)
     the_geom = Column(Geometry2D)
 
+
+class BelastungPersonenverkehrBahn(Base, GeneralBelastungPersonenverkehrBahn, Vector):
+    __tablename__ = 'belastung_personenverkehr'
+    __bodId__ = 'ch.are.belastung-personenverkehr-bahn'
 register(BelastungPersonenverkehrBahn.__bodId__, BelastungPersonenverkehrBahn)
+
+
+class BelastungPersonenverkehrBahnZukunft(Base, GeneralBelastungPersonenverkehrBahn, Vector):
+    __tablename__ = 'belastung_personenverkehr_zukunft'
+    __bodId__ = 'ch.are.belastung-personenverkehr-bahn_zukunft'
+register(BelastungPersonenverkehrBahnZukunft.__bodId__, BelastungPersonenverkehrBahnZukunft)

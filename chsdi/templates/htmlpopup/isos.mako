@@ -3,7 +3,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-    <tr><td class="cell-left">${_('ch.bak.bundesinventar-schuetzenswerte-ortsbilder.kanton')}</td>
+    <tr><td class="cell-left">${_('ch.bak.bundesinventar-schuetzenswerte-ortsbilder.kantone')}</td>
     % if c['attributes']['kantone']:
       <td>${', '.join(c['attributes']['kantone'])}</td></tr>
     % else:
@@ -11,7 +11,7 @@
     % endif
     <tr><td class="cell-left">${_('ch.bak.bundesinventar-schuetzenswerte-ortsbilder.nummer')}</td>         <td>${c['attributes']['nummer'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bak.bundesinventar-schuetzenswerte-ortsbilder.name')}</td>           <td>${c['attributes']['name']}</td></tr>
-    <tr><td class="cell-left">${_('ch.bak.bundesinventar-schuetzenswerte-ortsbilder.kategorie')}</td>      <td>${c['attributes']['siedlungskategorie'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bak.bundesinventar-schuetzenswerte-ortsbilder.siedlungskategorie')}</td>      <td>${c['attributes']['siedlungskategorie'] or '-'}</td></tr>
     
     % if c['attributes'].get('hinweis_nummer'):
       <tr><td class="cell-left">${_(c['layerBodId']+'.hinweis_nummer')}</td>         <td>${c['attributes']['hinweis_nummer'] or '-'}</td></tr>

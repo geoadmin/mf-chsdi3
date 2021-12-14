@@ -367,3 +367,35 @@ class Landschaftswandel(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfs.landschaftswandel', Landschaftswandel)
+
+
+class MeteoschweizKlimaszenarienRaumklima(Base, Vector):
+    __tablename__ = 'klimaszenarien_raumklima'
+    __table_args__ = ({'schema': 'meteoschweiz', 'autoload': False})
+    __template__ = 'templates/htmlpopup/meteoschweiz_klimaszenarien_raumklima.mako'
+    __bodId__ = 'ch.meteoschweiz.klimaszenarien-raumklima'
+    __label__ = 'station'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    station = Column('station', Unicode)
+    abk = Column('abk', Unicode)
+    stationtyp_de = Column('stationtyp_de', Unicode)
+    stationtyp_fr = Column('stationtyp_fr', Unicode)
+    stationtyp_it = Column('stationtyp_it', Unicode)
+    stationtyp_en = Column('stationtyp_en', Unicode)
+    standorttyp_de = Column('standorttyp_de', Unicode)
+    standorttyp_fr = Column('standorttyp_fr', Unicode)
+    standorttyp_it = Column('standorttyp_it', Unicode)
+    standorttyp_en = Column('standorttyp_en', Unicode)
+    eigentuemer_de = Column('eigentuemer_de', Unicode)
+    eigentuemer_fr = Column('eigentuemer_fr', Unicode)
+    eigentuemer_it = Column('eigentuemer_it', Unicode)
+    eigentuemer_en = Column('eigentuemer_en', Unicode)
+    stationhoehe = Column('stationhoehe', Integer)
+    parameter_de = Column('parameter_de', Unicode)
+    parameter_fr = Column('parameter_fr', Unicode)
+    parameter_it = Column('parameter_it', Unicode)
+    parameter_en = Column('parameter_en', Unicode)
+    link = Column('link', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.meteoschweiz.klimaszenarien-raumklima', MeteoschweizKlimaszenarienRaumklima)

@@ -14,6 +14,127 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+
+.. _releasenotes_20211215:
+
+
+Release 20211215 - Wednesday, December 15th 2021
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcement: the layer ch.babs.kulturgueter-anhoerung has been removed from FSDI services as previously announced
+- Announcement: the layer ch.bakom.downlink3 has been removed from FSDI services as previously announced
+- Announcement: the layers ch.bfs.arealstatistik-1985, ch.bfs.arealstatistik-1997, ch.bfs.arealstatistik-bodenbedeckung-1985, ch.bfs.arealstatistik-bodenbedeckung-1997, ch.bfs.arealstatistik-bodennutzung, ch.bfs.arealstatistik-bodennutzung-1985, ch.bfs.arealstatistik-bodennutzung-1997 and ch.bfs.arealstatistik-hintergrund will be removed from FSDI services on March 16th 2022
+- Announcement: the layer ch.swisstopo.fixpunkte-lfp1 has the following structural changes: Removed attributes: y03, x03. Newly added attributes: l_gen_lv95, h_gen_lv95, l_zuv_lv95, h_zuv_lv95 as announced in the api google group
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/r_211027...r_211215>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_211027...r_211215>`__
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Passenger traffic rail 2050 <//map.geo.admin.ch/?layers=ch.are.belastung-personenverkehr-bahn_zukunft>`__ (ch.are.belastung-personenverkehr-bahn_zukunft)                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Passenger/freight traffic road 2050 <//map.geo.admin.ch/?layers=ch.are.belastung-personenverkehr-strasse_zukunft>`__ (ch.are.belastung-personenverkehr-strasse_zukunft)                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Building lines for motorways V2.0 PLR (ch.astra.baulinien-nationalstrassen_v2_0.oereb) WMS and OEREB FS only`                                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Building lines for motorways mod. V2.0 PLR (ch.astra.baulinien-nationalstrassen_aenderung_v2_0.oereb) WMS only`                                                                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Reserved zones for motorways V2.0 PLR (ch.astra.projektierungszonen-nationalstrassen_v2_0.oereb) WMS and OEREB FS only`                                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Building lines for railways V2.0 PLR (ch.bav.baulinien-eisenbahnanlagen_v2_0.oereb) WMS and OEREB FS only`                                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `CCS public transports V2.0 PLR (ch.bav.kataster-belasteter-standorte-oev_v2_0.oereb) WMS and OEREB FS only`                                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Reserved zones for public transport facilities V2.0 PLR (ch.bav.projektierungszonen-eisenbahnanlagen_v2_0.oereb) WMS and OEREB FS only`                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Building lines for airports V2.0 PLR (ch.bazl.baulinien-flughafenanlagen_v2_0.oereb) WMS and OEREB FS only`                                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `CCS civil aerodromes V2.0 PLR (ch.bazl.kataster-belasteter-standorte-zivilflugplaetze_v2_0.oereb) WMS and OEREB FS only`                                                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Reserved zones airports V2.0 PLR (ch.bazl.projektierungszonen-flughafenanlagen_v2_0.oereb) WMS and OEREB FS only`                                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Safety zone plan V2.0 PLR (ch.bazl.sicherheitszonenplan_v2_0.oereb) WMS and OEREB FS only`                                                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Safety zone plan modification V2.0 PLR (ch.bazl.sicherheitszonenplan_aenderung_v2_0.oereb) WMS only`                                                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Baulinien Starkstrom V2 ÖREB (ch.bfe.baulinien-starkstromanlagen_v2_0.oereb) WMS and OEREB FS only`                                                                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Baulinien Starkstroma Änd. V2 ÖREB (ch.bfe.baulinien-starkstromanlagen_aenderung_v2_0.oereb) WMS only`                                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Projektierungszonen Starkstrom V2 ÖREB (ch.bfe.projektierungszonen-starkstromanlagen_v2_0.oereb) WMS and OEREB FS only`                                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Projektierungszonen Starkstrom Änd. V2 ÖREB (ch.bfe.projektierungszonen-starkstromanlagen_aenderung_v2_0.oereb) WMS only`                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Climate scenarios indoor climate <//map.geo.admin.ch/?layers=ch.meteoschweiz.klimaszenarien-raumklima>`__ (ch.meteoschweiz.klimaszenarien-raumklima)                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Road Map 1:200'000 <//map.geo.admin.ch/?layers=ch.swisstopo.strassenkarte-200>`__ (ch.swisstopo.strassenkarte-200)                                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Contaminated military sites V2.0 PLR (ch.vbs.kataster-belasteter-standorte-militaer_v2_0.oereb) WMS and OEREB FS only`                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Building lines for motorways <//map.geo.admin.ch/?layers=ch.astra.baulinien-nationalstrassen>`__ (ch.astra.baulinien-nationalstrassen)                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `PCP Inventory <//map.geo.admin.ch/?layers=ch.babs.kulturgueter>`__ (ch.babs.kulturgueter)                                                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Bathing water quality <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-badewasserqualitaet>`__ (ch.bafu.gewaesserschutz-badewasserqualitaet)                                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Paper map: National Map 1:200'000 <//map.geo.admin.ch/?layers=ch.swisstopo.landeskarte200_papier.metadata>`__ (ch.swisstopo.landeskarte200_papier.metadata)                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Printed Map: Road Map 1:200'000 <//map.geo.admin.ch/?layers=ch.swisstopo.strassenkarte200_papier.metadata>`__ (ch.swisstopo.strassenkarte200_papier.metadata)                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Paper map: General Map 1:300'000 <//map.geo.admin.ch/?layers=ch.swisstopo.generalkarte300_papier.metadata>`__ (ch.swisstopo.generalkarte300_papier.metadata)                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Parks (Zones) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Parks (Perimeter) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter)                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Flussgebiete (Einzugsgebiete) HADES <//map.geo.admin.ch/?layers=ch.bafu.hydrologischer-atlas_flussgebiete>`__ (ch.bafu.hydrologischer-atlas_flussgebiete)                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Roads and Tracks swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-strassen>`__ (ch.swisstopo.swisstlm3d-strassen)                                                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ibex colonies <//map.geo.admin.ch/?layers=ch.bafu.fauna-steinbockkolonien)>`__ (ch.bafu.fauna-steinbockkolonien)                                                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=bafu.wrz-wildruhezonen_portal>`__ (bafu.wrz-wildruhezonen_portal)                                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway network <//map.geo.admin.ch/?layers=ch.bav.schienennetz>`__ (ch.bav.schienennetz)                                                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Land use statistics standard <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik>`__ (ch.bfs.arealstatistik)                                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Land use statistics cover <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik-bodennutzung>`__ (ch.bfs.arealstatistik-bodennutzung)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tank relocation routes <//map.geo.admin.ch/?layers=ch.vbs.panzerverschiebungsrouten>`__ (ch.vbs.panzerverschiebungsrouten)                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissBATHY3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissbathy3d-reliefschattierung>`__ (ch.swisstopo.swissbathy3d-reliefschattierung)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Meat products <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-fleisch>`__ (ch.blw.ursprungsbezeichnungen-fleisch)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cheese <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-kaese>`__ (ch.blw.ursprungsbezeichnungen-kaese)                                                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Confectionery <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-konditoreiwaren>`__ (ch.blw.ursprungsbezeichnungen-konditoreiwaren)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Plant products <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-pflanzen>`__ (ch.blw.ursprungsbezeichnungen-pflanzen)                                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Spirits <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-spirituosen>`__ (ch.blw.ursprungsbezeichnungen-spirituosen)                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe trekking <//map.geo.admin.ch/?layers=ch.swisstopo.schneeschuhwandern>`__ (ch.swisstopo.schneeschuhwandern)                                                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20211027:
 
 
@@ -60,7 +181,10 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-Release 20210908 - Wednesday, September 9th 2021
+.. _releasenotes_20210908:
+
+
+Release 20210908 - Wednesday, September 8th 2021
 -------------------------------------------------
 
 API & applications
