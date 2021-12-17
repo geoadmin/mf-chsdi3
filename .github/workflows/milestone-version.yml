@@ -1,0 +1,12 @@
+name: on-pr-close
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
+
+jobs:
+  release:
+    uses: geoadmin/.github/.github/workflows/milestone-release.yml@master

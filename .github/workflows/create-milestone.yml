@@ -1,0 +1,8 @@
+name: on-create
+
+on:
+  create:
+
+jobs:
+  milestone:
+    uses: geoadmin/.github/.github/workflows/create-milestone.yml@master
