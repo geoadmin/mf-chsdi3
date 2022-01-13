@@ -47,12 +47,21 @@
         <td>${c['attributes']['number'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_webservice')}</td>
-        % if c['attributes']['egris_egrid'] == None:
+        <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_extract_pdf')}</td>
+        % if c['attributes']['oereb_extract_pdf'] == None:
             <td>-</td>
         % else:
-            <td><a target="_blank" href="${c['attributes']['pdf_url']}">PDF (${c['attributes']['egris_egrid']})</a></td>
+            <td><a target="_blank" href="${c['attributes']['oereb_extract_pdf']}">PDF (${c['attributes']['egris_egrid']})</a></td>
         % endif
     </tr>
+    <tr>
+        <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_extract_url')}</td>
+        % if c['attributes']['oereb_extract_url'] == None:
+            <td>-</td>
+        % else:
+            <td><a target="_blank" href="${c['attributes']['oereb_extract_url']}">URL (${c['attributes']['egris_egrid']})</a></td>
+        % endif
+    </tr>
+
       % endif
 </%def>
