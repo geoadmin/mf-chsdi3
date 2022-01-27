@@ -1,5 +1,8 @@
 <%inherit file="base.mako"/>
 <%def name="table_body(c,lang)">
+<%
+realestate_type = 'ch.swisstopo-vd.stand-oerebkataster.realestate_type_' + str(c['attributes']['realestate_type'])
+%>
     <tr><td class="cell-left">${_('kanton')}</td>    <td>${c['attributes']['kanton'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('gemgemeinde')}</td>    <td>${c['attributes']['gemeindename'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('oereb_status')}</td>
@@ -45,6 +48,14 @@
     <tr>
         <td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.lparz')}</td>
         <td>${c['attributes']['number'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.realestate_type')}</td>
+        % if c['attributes']['realestate_type'] == None:
+            <td>-</td>
+        % else:
+            <td>${_(realestate_type)}</td>
+        % endif
     </tr>
     <tr>
         <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_extract_pdf')}</td>

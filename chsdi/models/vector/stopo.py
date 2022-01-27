@@ -2268,6 +2268,7 @@ class Oerebkataster:
     oereb_status_it = Column('oereb_status_it', Unicode)
     oereb_status_rm = Column('oereb_status_rm', Unicode)
     oereb_status_en = Column('oereb_status_en', Unicode)
+    realestate_type = Column('realestate_type', Unicode)
     bfs_nr = Column('bfs_nr', Integer)
     firmenname = Column('firmenname', Unicode)
     adresszeile = Column('adresszeile', Unicode)
