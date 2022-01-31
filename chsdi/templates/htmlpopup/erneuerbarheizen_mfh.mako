@@ -56,6 +56,8 @@
         <td class="cell-left">${_(layer +'.consultingcosts')}</td>
         % if not c['attributes']['consultingcosts']:
             <td>${_(layer + '.onrequest')}<td>
+        % elif c['attributes']['consultingcosts'] == '0 CHF':
+            <td>${_('ch.bfe.erneuerbarheizen.free')}<td>
         % else:
             <td>${c['attributes']['consultingcosts']} </td>
         % endif
