@@ -496,8 +496,8 @@ class TestSearchServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertGreater(len(resp.json['results']), 0)
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin isabelle-de-montolieu 2 1010 lausanne 5586 lausanne ch vd')
-        self.assertEqual(resp.json['results'][0]['attrs']['num'], 2)
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin isabelle-de-montolieu 21.2 1010 lausanne 5586 lausanne ch vd')
+        self.assertEqual(resp.json['results'][0]['attrs']['num'], 212)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
 
     def test_search_address_with_letters(self):
