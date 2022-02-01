@@ -4,6 +4,7 @@
 version: 0.2
 
 env:
+  shell: bash
   variables:
     SHELL: /bin/bash
     AWS_DEFAULT_REGION: eu-central-1
@@ -73,15 +74,8 @@ phases:
       - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${DOCKER_REGISTRY}
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
 
-      # Reading git branch (the utility in the deploy script is unable to read it automatically
-      # on CodeBuild)
-      # see https://stackoverflow.com/questions/47657423/get-github-git-branch-for-aws-codebuild
-      - export GITHUB_BRANCH="$(git symbolic-ref HEAD --short 2>/dev/null)"
-      - |-
-        if [ "${GITHUB_BRANCH}" = "" ] ; then
-          GITHUB_BRANCH="$(git branch -a --contains HEAD | sed -n 2p | awk '{ printf $1 }')";
-          export GITHUB_BRANCH=${GITHUB_BRANCH#remotes/origin/};
-        fi
+      - echo "CODEBUILD_WEBHOOK_HEAD_REF=${CODEBUILD_WEBHOOK_HEAD_REF} CODEBUILD_WEBHOOK_BASE_REF=${CODEBUILD_WEBHOOK_BASE_REF}"
+      - export GITHUB_BRANCH="${CODEBUILD_WEBHOOK_HEAD_REF#refs/heads/}"
       - export PULL_REQUEST=${CODEBUILD_WEBHOOK_TRIGGER#pr/*}
       - export COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - export GIT_TAG="$(git describe --tags || echo 'no version info')"
@@ -121,12 +115,12 @@ phases:
       - make cleanall all
       - |-
         if [ "${GIT_TAG}" = "undefined"  ] ; then
-          DOCKER_IMG_TAG="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GITHUB_BRANCH}.${COMMIT_HASH}"
+          DOCKER_IMG_TAG="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GITHUB_BRANCH//\//_}.${COMMIT_HASH}"
         else
           DOCKER_IMG_TAG="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GIT_TAG}"
         fi
       - export DOCKER_IMG_TAG=${DOCKER_IMG_TAG}
-      - export DOCKER_IMG_TAG_LATEST="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GITHUB_BRANCH}.latest"
+      - export DOCKER_IMG_TAG_LATEST="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GITHUB_BRANCH//\//_}.latest"
       #- export $(cat dev.env) && docker build -t swisstopo/mf-chsdi3:python3.7  .
       - echo "Building docker image with tags ${DOCKER_IMG_TAG} and ${DOCKER_IMG_TAG_LATEST}"
       - >
