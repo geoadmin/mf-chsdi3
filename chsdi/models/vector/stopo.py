@@ -545,12 +545,6 @@ class Landeskarte100PapierMetadata(Base, ShopProductGroupClass, Vector):
 register('ch.swisstopo.landeskarte100_papier.metadata', Landeskarte100PapierMetadata)
 
 
-class Luftfahrt100Metadata(Scale100Metadata):
-    __bodId__ = 'ch.swisstopo.lhk100-papierkarte.metadata'
-
-register('ch.swisstopo.lhk100-papierkarte.metadata', Luftfahrt100Metadata)
-
-
 class Landeskarte200Metadata(Base, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __tablename__ = 'view_gridstand_lk200_shop'
@@ -2957,77 +2951,6 @@ register('ch.swisstopo.swissnames3d', Swissnames3dRaster13)
 # Perimeter only layers
 
 
-class SwissTLM3dPerimeter(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_perimeter_swisstlm3d'
-    __table_args__ = ({'autoload': False})
-    __bodId__ = 'ch.swisstopo.swisstlm3d-karte-farbe'
-    __ignore_max_feature_geometry_size__ = True  # ignore MAX_FEATURE_GEOMETRY_SIZE
-    __totalArea__ = 41455.0
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.swisstlm3d-karte-farbe', SwissTLM3dPerimeter)
-
-
-class SwissAlti3dPerimeter(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_perimeter_swissalti3d'
-    __table_args__ = ({'autoload': False})
-    __bodId__ = 'ch.swisstopo.swissalti3d-reliefschattierung'
-    __ignore_max_feature_geometry_size__ = True  # ignore MAX_FEATURE_GEOMETRY_SIZE
-    __totalArea__ = 42465.0
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.swissalti3d-reliefschattierung', SwissAlti3dPerimeter)
-
-
-class DHM25(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_dhm25'
-    __table_args__ = ({'autoload': False})
-    __bodId__ = 'ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'
-    the_geom = Column(Geometry2D)
-
-
-class DHM25Perimeter(Base, Vector):
-    __tablename__ = 'shop_perimeter_dhm25'
-    __table_args__ = ({'autoload': False})
-    __bodId__ = 'ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'
-    __totalArea__ = 58500.0
-    id = Column('min', Integer, primary_key=True)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25)
-register_perimeter('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', DHM25Perimeter)
-
-
-class SwissAlti3dMetadataPerimeter(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_perimeter_swissalti3d'
-    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
-    __bodId__ = 'ch.swisstopo.swissalti3d.metadata'
-    __ignore_max_feature_geometry_size__ = True  # ignore MAX_FEATURE_GEOMETRY_SIZE
-    __totalArea__ = 42465.0
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.swissalti3d.metadata', SwissAlti3dMetadataPerimeter)
-
-
-class SwissTlm3dMetadataPerimeter(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_perimeter_swisstlm3d'
-    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
-    __bodId__ = 'ch.swisstopo.swisstlm3d.metadata'
-    __ignore_max_feature_geometry_size__ = True  # ignore MAX_FEATURE_GEOMETRY_SIZE
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.swisstlm3d.metadata', SwissTlm3dMetadataPerimeter)
-
-
-class SwissMapVector10MetadataPerimeter(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_perimeter_vector10'
-    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
-    __bodId__ = 'ch.swisstopo.swiss-map-vector10.metadata'
-    the_geom = Column(Geometry2D)
-
-register(SwissMapVector10MetadataPerimeter.__bodId__, SwissMapVector10MetadataPerimeter)
-
-
 class SwissMapVector25MetadataPerimeter(Base, Vector):
     __tablename__ = 'shop_perimeter_vector25'
     __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
@@ -3041,24 +2964,6 @@ class SwissMapVector25MetadataPerimeter(Base, Vector):
     datenstand = Column('release', Unicode)
 
 register(SwissMapVector25MetadataPerimeter.__bodId__, SwissMapVector25MetadataPerimeter)
-
-
-class SwissMapRaster10MetadataPerimeter(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_perimeter_raster10'
-    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
-    __bodId__ = 'ch.swisstopo.swiss-map-raster10.metadata'
-    the_geom = Column(Geometry2D)
-
-register(SwissMapRaster10MetadataPerimeter.__bodId__, SwissMapRaster10MetadataPerimeter)
-
-
-class SwissBuildings3d2Meta(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_perimeter_build3d2'
-    __table_args__ = ({'autoload': False})
-    __bodId__ = 'ch.swisstopo.swissbuildings3d_2.metadata'
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.swissbuildings3d_2.metadata', SwissBuildings3d2Meta)
 
 
 class Lotabweichungen(Base, Vector):

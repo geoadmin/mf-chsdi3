@@ -609,20 +609,20 @@ class TestFeaturesView(TestsBase):
         resp.mustcontain('<iframe src=')
 
     def test_cut_all_dataset(self):
-        params = {'layers': 'all:ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'}
+        params = {'layers': 'all:ch.swisstopo.images-swissimage.metadata'}
         resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', resp.json)
-        self.assertIn('groupby', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
-        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
-        self.assertIn('area', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
+        self.assertIn('ch.swisstopo.images-swissimage.metadata', resp.json)
+        self.assertIn('groupby', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
+        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
+        self.assertIn('area', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
 
     def test_cut_all_dataset_lv95(self):
-        params = {'layers': 'all:ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', 'sr': '2056'}
+        params = {'layers': 'all:ch.swisstopo.images-swissimage.metadata', 'sr': '2056'}
         resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', resp.json)
-        self.assertIn('groupby', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
-        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
-        self.assertIn('area', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
+        self.assertIn('ch.swisstopo.images-swissimage.metadata', resp.json)
+        self.assertIn('groupby', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
+        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
+        self.assertIn('area', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
 
     def test_cut_no_group_geom_only(self):
         params = {'geometryType': 'esriGeometryEnvelope',
@@ -709,16 +709,16 @@ class TestFeaturesView(TestsBase):
 
     def test_cut_with_feature_clipper(self):
         params = {'clipper': 'ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill:2222',
-                  'layers': 'all:ch.swisstopo.swisstlm3d-karte-farbe'}
+                  'layers': 'all:ch.swisstopo.images-swissimage.metadata'}
         resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.swisstlm3d-karte-farbe', resp.json)
-        self.assertEqual(len(resp.json['ch.swisstopo.swisstlm3d-karte-farbe']), 1)
+        self.assertIn('ch.swisstopo.images-swissimage.metadata', resp.json)
+        self.assertEqual(len(resp.json['ch.swisstopo.images-swissimage.metadata']), 1)
 
     def test_cut_total_area(self):
-        params = {'layers': 'all:ch.swisstopo.swisstlm3d-karte-farbe'}
+        params = {'layers': 'all:ch.swisstopo.images-swissimage.metadata'}
         resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.swisstlm3d-karte-farbe', resp.json)
-        self.assertEqual(len(resp.json['ch.swisstopo.swisstlm3d-karte-farbe']), 1)
+        self.assertIn('ch.swisstopo.images-swissimage.metadata', resp.json)
+        self.assertEqual(len(resp.json['ch.swisstopo.images-swissimage.metadata']), 1)
 
     def test_cut_complex_polygon_and_two_layers_with_groups(self):
         params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
@@ -735,7 +735,7 @@ class TestFeaturesView(TestsBase):
         resp.mustcontain('No GeoTable was found for foo')
 
     def test_cut_bad_clipper_layer_id(self):
-        params = {'clipper': 'foo:2222', 'layers': 'all:ch.swisstopo.swisstlm3d-karte-farbe'}
+        params = {'clipper': 'foo:2222', 'layers': 'all:ch.swisstopo.images-swissimage.metadata'}
         resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=400)
         resp.mustcontain('No Vector Table was found for foo')
 
