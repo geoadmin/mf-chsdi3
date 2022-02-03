@@ -4,7 +4,7 @@ from sqlalchemy import Column
 
 from sqlalchemy.types import Numeric, Boolean, Integer, Float, Unicode, BigInteger, SmallInteger
 
-from chsdi.models import register, register_perimeter, bases
+from chsdi.models import register, bases
 from chsdi.models.types import DateTimeChsdi
 from chsdi.models.vector import Vector, Geometry2D
 
@@ -1027,16 +1027,6 @@ class GridstandPermiterTemplate:
 
 # PK 25
 
-
-class GridstandPK25Perimeter(Base, Vector):
-    __tablename__ = 'shop_perimeter_pk25'
-    __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk25.noscale'
-    __table_args__ = ({'autoload': False})
-    the_geom = Column(Geometry2D)
-    id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry2D)
-
-
 class GridstandPk25Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk25.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk25_tilecache'
@@ -1044,19 +1034,8 @@ class GridstandPk25Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
 
 
 register('ch.swisstopo.pixelkarte-pk25.metadata', GridstandPk25Meta)
-register_perimeter('ch.swisstopo.pixelkarte-farbe-pk25.noscale', GridstandPK25Perimeter)
 
 # PK 50
-
-
-# Only PK50 has a fixed perimeter
-class GridstandPK50Perimeter(Base, Vector):
-    __tablename__ = 'shop_perimeter_pk50'
-    __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk50.noscale'
-    __totalArea__ = 65520.0
-    __table_args__ = ({'autoload': False})
-    id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry2D)
 
 
 class GridstandPk50Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
@@ -1066,17 +1045,8 @@ class GridstandPk50Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
 
 
 register('ch.swisstopo.pixelkarte-pk50.metadata', GridstandPk50Meta)
-register_perimeter('ch.swisstopo.pixelkarte-farbe-pk50.noscale', GridstandPK50Perimeter)
 
 # PK 100
-
-
-class GridstandPK100Perimeter(Base, Vector):
-    __tablename__ = 'shop_perimeter_pk100'
-    __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk100.noscale'
-    __table_args__ = ({'autoload': False})
-    id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry2D)
 
 
 class GridstandPk100Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
@@ -1085,17 +1055,8 @@ class GridstandPk100Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
     tileid = Column('tileid', Unicode)
 
 register('ch.swisstopo.pixelkarte-pk100.metadata', GridstandPk100Meta)
-register_perimeter('ch.swisstopo.pixelkarte-farbe-pk100.noscale', GridstandPK100Perimeter)
 
 # PK 200
-
-
-class GridstandPK200Perimeter(Base, Vector):
-    __tablename__ = 'shop_perimeter_pk200'
-    __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk200.noscale'
-    __table_args__ = ({'autoload': False})
-    id = Column('bgdi_id', Integer, primary_key=True)
-    the_geom = Column(Geometry2D)
 
 
 class GridstandPk200Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
@@ -1104,7 +1065,6 @@ class GridstandPk200Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
     tileid = Column('tileid', Unicode)
 
 register('ch.swisstopo.pixelkarte-pk200.metadata', GridstandPk200Meta)
-register_perimeter('ch.swisstopo.pixelkarte-farbe-pk200.noscale', GridstandPK200Perimeter)
 
 # PK 500
 
@@ -1115,22 +1075,7 @@ class GridstandPk500(Base, ShopProductClass, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk500.noscale'
 
 
-class GridstandPk500Perimeter(Base, GridstandPermiterTemplate, Vector):
-    __tablename__ = 'shop_perimeter_pk500'
-    __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk500.noscale'
-
-
 register('ch.swisstopo.pixelkarte-farbe-pk500.noscale', GridstandPk500)
-register_perimeter('ch.swisstopo.pixelkarte-farbe-pk500.noscale', GridstandPk500Perimeter)
-
-
-class SwissimageProductPerimeter(Base, Vector):
-    __tablename__ = 'shop_perimeter_swissimage'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.images-swissimage.metadata'
-    id = Column('min', Integer, primary_key=True)
-    resolution = Column('resolution', Float)
-    the_geom = Column(Geometry2D)
 
 
 class GridstandSwissimage(Base, ShopStandardClass, Vector):
@@ -1195,7 +1140,6 @@ class SwissimageProduct(Base, ShopStandardClass, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissimage-product', SwissimageProduct)
-register_perimeter('ch.swisstopo.swissimage-product', SwissimageProductPerimeter)
 
 
 class GeologischeKarteLine(Base, Vector):
@@ -2715,7 +2659,6 @@ register('ch.swisstopo.geologie-geocover', GeocoverPolygonAux1)
 register('ch.swisstopo.geologie-geocover', GeocoverPolygonAux2)
 register('ch.swisstopo.geologie-geocover', GeocoverPolygonMain)
 register('ch.swisstopo.geologie-geocover', GeocoverGridShop)
-register_perimeter('ch.swisstopo.geologie-geocover', GeocoverGridShop)
 
 
 class GeolGeocoverMetadata(Base, Geocover, ShopProductGroupClass, Vector):
