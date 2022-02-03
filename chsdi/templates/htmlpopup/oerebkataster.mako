@@ -5,7 +5,7 @@ realestate_type = 'ch.swisstopo-vd.stand-oerebkataster.realestate_type_' + str(c
 %>
     <tr><td class="cell-left">${_('kanton')}</td>    <td>${c['attributes']['kanton'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('gemgemeinde')}</td>    <td>${c['attributes']['gemeindename'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('oereb_status')}</td>
+    <tr><td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.oereb_status')}</td>
 % if lang == 'de':
      <td>${c['attributes']['oereb_status_de'] or '-'}</td></tr>
 % elif lang == 'fr':
@@ -17,7 +17,7 @@ realestate_type = 'ch.swisstopo-vd.stand-oerebkataster.realestate_type_' + str(c
 % elif lang == 'rm':
      <td>${c['attributes']['oereb_status_rm'] or '-'}</td></tr>
 % endif
-    <tr><td class="cell-left">${_('oereb_firma')}</td>    <td>${c['attributes']['firmenname'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.firma')}</td>    <td>${c['attributes']['firmenname'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('grundadresse')}</td>
       % if c['attributes']['ort'] == None:
        <td>-</td>
@@ -46,7 +46,7 @@ realestate_type = 'ch.swisstopo-vd.stand-oerebkataster.realestate_type_' + str(c
     </tr>
       % if 'oereb_webservice' in c['attributes'].keys():
     <tr>
-        <td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.lparz')}</td>
+        <td class="cell-left">${_('ch.swisstopo-vd.stand-oerebkataster.number')}</td>
         <td>${c['attributes']['number'] or '-'}</td>
     </tr>
     <tr>
