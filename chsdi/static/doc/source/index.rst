@@ -172,7 +172,7 @@ Terms of use
    api/terms_of_use
 
 .. note::
-    The GeoAdmin API terms of use are accessible here: `www.geo.admin.ch/terms-of-use <www.geo.admin.ch/terms-of-use>`_
+    The GeoAdmin API terms of use are accessible here: https://www.geo.admin.ch/terms-of-use
 
 .. About Geoadmin API section
 
