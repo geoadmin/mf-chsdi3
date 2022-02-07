@@ -9,7 +9,7 @@ lastvalue = $(shell if [ -f .venv/last-$1 ]; then cat .venv/last-$1 2> /dev/null
 define cachelastvariable
 	mkdir -p $(dir $1)
 	test "$2" != "$3" && \
-	    echo "$2" > .venv/last-$4 || :
+		echo "$2" > .venv/last-$4 || :
 endef
 
 # Script variables
@@ -20,7 +20,7 @@ WMSSCALELEGEND ?=
 
 # Variables
 USER_SOURCE ?= rc_user
-CURRENT_DIRECTORY := $(shell pwd)
+export CURRENT_DIRECTORY := $(shell pwd)
 WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
 INSTALL_DIRECTORY := .venv
 KML_TEMP_DIR := /var/local/print/kml
@@ -417,7 +417,7 @@ updatedev: .venv/last-github-last-commit
 		@if [ "${GITHUB_LAST_COMMIT}" == "${LAST_GITHUB_LAST_COMMIT}"   ]; then \
 				echo "No updating dev"; \
 		else \
-		    scripts/deploydev.sh -s; \
+			scripts/deploydev.sh -s; \
 		fi
 
 
@@ -562,14 +562,14 @@ app.log:
 development.ini.in: app.log
 	@echo "${GREEN}Template file development.ini.in has changed${RESET}";
 development.ini: development.ini.in \
-	               .venv/last-version \
-	               .venv/last-server-port
+				   .venv/last-version \
+				   .venv/last-server-port
 	@echo "${GREEN}Creating development.ini....${RESET}";
 	${ENVSUBST_CMD} <  $< > $@
 
 production.ini.in:
 	@echo "${GREEN}Template file production.ini.in has changed${RESET}";
-production.ini: production.ini.in \
+production.ini:  production.ini.in \
                 .venv/last-version \
                 .venv/last-server-port \
                 .venv/last-apache-base-path \
@@ -592,8 +592,8 @@ production.ini: production.ini.in \
                 .venv/last-geoadmin-file-storage-bucket \
                 .venv/last-geoadmin-file-storage-table-name \
                 .venv/last-geoadmin-file-storage-table-region \
-								.venv/last-glstyles-storage-table-name \
-								.venv/last-glstyles-storage-table-region \
+                .venv/last-glstyles-storage-table-name \
+                .venv/last-glstyles-storage-table-region \
                 .venv/last-public-bucket-host \
                 .venv/last-shortener-allowed-hosts \
                 .venv/last-vector-bucket \
@@ -604,7 +604,7 @@ production.ini: production.ini.in \
                 .venv/last-shortener-allowed-domains \
                 .venv/last-shortener-table-name \
                 .venv/last-shortener-table-region \
-								.venv/last-dynamic-translation \
+                .venv/last-dynamic-translation \
                 guard-OPENTRANS_API_KEY
 	@echo "${GREEN}Creating production.ini...${RESET}";
 	${MAKO_CMD} \
