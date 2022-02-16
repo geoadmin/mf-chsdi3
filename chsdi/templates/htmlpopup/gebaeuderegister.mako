@@ -123,7 +123,6 @@
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.genw2')}</td>          <td class="cell-meta-small">${c['attributes']['genw2'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerscew2')}</td>     <td class="cell-meta-small">${c['attributes']['gwaerscew2'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerdatw2')}</td>     <td class="cell-meta-small">${c['attributes']['gwaerdatw2'] or '-'}</td></tr>
-
     <tr><th colspan=2>${_('ch.bfs.gebaeude_wohnungs_register.block_eingang')}</th></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.edid')}</td>           <td class="cell-meta-small">${c['attributes']['edid'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.egaid')}</td>          <td class="cell-meta-small">${c['attributes']['egaid'] or '-'}</td></tr>
