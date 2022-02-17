@@ -2,6 +2,9 @@
 
 from sqlalchemy import Column, Unicode, Integer, Float, Boolean
 
+from sqlalchemy.dialects import postgresql
+from chsdi.models.types import DateTimeChsdi
+
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D, Geometry3D
 
@@ -95,16 +98,16 @@ class SchiessAnzeigen(Base, Vector):
     url_fr = Column('url_fr', Unicode)
     url_it = Column('url_it', Unicode)
     url_en = Column('url_en', Unicode)
-    belegungsdatum = Column('belegungsdatum', Unicode)
-    wochentag = Column('belegungsdatum_wochentag', Integer)
-    zeit_von = Column('zeit_von', Unicode)
-    zeit_bis = Column('zeit_bis', Unicode)
-    anmerkung = Column('anmerkung', Unicode)
-    pdf_de = Column('pdf_de', Unicode)
-    pdf_fr = Column('pdf_fr', Unicode)
-    pdf_it = Column('pdf_it', Unicode)
-    pdf_en = Column('pdf_en', Unicode)
-    kein_schiessen = Column('kein_schiessen', Boolean)
+    belegungsdatum = Column('belegungsdatum', postgresql.ARRAY(DateTimeChsdi))
+    wochentag = Column('belegungsdatum_wochentag', postgresql.ARRAY(Integer))
+    zeit_von = Column('zeit_von', postgresql.ARRAY(Unicode))
+    zeit_bis = Column('zeit_bis', postgresql.ARRAY(Unicode))
+    anmerkung = Column('anmerkung', postgresql.ARRAY(Unicode))
+    pdf_de = Column('pdf_de', postgresql.ARRAY(Unicode))
+    pdf_fr = Column('pdf_fr', postgresql.ARRAY(Unicode))
+    pdf_it = Column('pdf_it', postgresql.ARRAY(Unicode))
+    pdf_en = Column('pdf_en', postgresql.ARRAY(Unicode))
+    kein_schiessen = Column('kein_schiessen', postgresql.ARRAY(Boolean))
     the_geom = Column(Geometry2D)
 
 register(SchiessAnzeigen.__bodId__, SchiessAnzeigen)
