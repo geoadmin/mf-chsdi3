@@ -17,7 +17,7 @@ from chsdi.lib.helpers import check_url, make_api_url
 MAX_URL_LENGTH = 2048
 
 
-def _add_item(table, url):
+def _add_item(table, url, staging='prod'):
     url_short = _get_url_short(table, url)
     if url_short is None:  # pragma: no cover
         # Create a new short url if url not in DB
@@ -31,7 +31,8 @@ def _add_item(table, url):
                     'url_short': url_short,
                     'url': url,
                     'timestamp': time.strftime('%Y-%m-%d %X', now),
-                    'epoch': time.strftime('%s', now)
+                    'epoch': time.strftime('%s', now),
+                    'staging': staging,
                 }
             )
         except boto_exc.Boto3Error as e:
@@ -66,12 +67,13 @@ def shortener(request):
         url_short = check_url(url, settings)
         table_name = settings.get('shortener.table_name')
         aws_region = settings.get('shortener.table_region')
+        staging = settings['geodata_staging']
         # DynamoDB v2 high-level abstraction
         try:
             table = get_dynamodb_table(table_name=table_name, region=aws_region)
         except Exception as e:
             raise exc.HTTPInternalServerError('Error during connection %s' % e)
-        url_short = _add_item(table, url)
+        url_short = _add_item(table, url, staging=staging)
 
     # Use env specific URLs
     if request.host not in ('api.geo.admin.ch', 'api3.geo.admin.ch'):
