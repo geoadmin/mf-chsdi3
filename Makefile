@@ -159,7 +159,7 @@ GREEN := $(shell tput setaf 2)
 # We need GDAL which is hard to install in a venv, modify PYTHONPATH to use the
 # system wide version.
 GDAL_VERSION ?= 1.10.0
-PYTHON_INSTALL_VERSION ?= 3.7.10
+PYTHON_INSTALL_VERSION ?= 3.7
 
 ifndef USE_PYTHON3
 		override USE_PYTHON3 = 0
@@ -167,33 +167,17 @@ endif
 
 ifeq ($(USE_PYTHON3), 1)
 ifeq (, $(shell which $(SYSTEM_PYTHON_CMD)))
-		PYTHON_VERSION := $(shell $(PYTHON_INSTALL_VERSION)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+		PYTHON_VERSION := $(PYTHON_INSTALL_VERSION)
 else
-    PYTHON_VERSION := $(shell $(SYSTEM_PYTHON_CMD)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+		PYTHON_VERSION := $(shell $(SYSTEM_PYTHON_CMD)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
 endif
 PIP_CMD := $(INSTALL_DIRECTORY)/bin/pip${PYTHON_VERSION}
-build/python:
-		mkdir -p build && touch build/python;
 else
-		PYTHON_VERSION := $(shell python2 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
-build/python:
-		mkdir -p build && touch build/python;
+	PYTHON_VERSION := $(shell python2 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
 endif
 PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
 
-PYTHON_BINDIR := $(shell dirname $(PYTHON_CMD))
-PYTHONHOME :=$(shell eval "cd $(PYTHON_BINDIR); pwd; cd > /dev/null")
-SYSTEM_PYTHON_CMD ?= $(CURRENT_DIRECTORY)/local/bin/python$(PYTHON_VERSION)
-
-.PHONY: python
-python: build/python
-		@echo "Python installed"
-
-local/bin/python3.6:
-		mkdir -p $(CURRENT_DIRECTORY)/local;
-		curl https://www.python.org/ftp/python/$(PYTHON_INSTALL_VERSION)/Python-$(PYTHON_INSTALL_VERSION).tar.xz \
-				-o $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_INSTALL_VERSION).tar.xz;
-		cd $(CURRENT_DIRECTORY)/local && tar -xf Python-$(PYTHON_INSTALL_VERSION).tar.xz && Python-$(PYTHON_INSTALL_VERSION)/configure --prefix=$(CURRENT_DIRECTORY)/local/   --with-ensurepip=install --enable-optimizations && make altinstall;
+SYSTEM_PYTHON_CMD ?= python$(PYTHON_VERSION)
 
 
 .PHONY: help
@@ -228,7 +212,6 @@ help:
 	@echo "- dockerpush         Build and push the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
 	@echo "- clean              Remove generated files"
 	@echo "- cleanall           Remove all the build artefacts"
-	@echo "- pythonclean        Remove all the build artefacts and the downloaded python version"
 	@echo
 	@echo "Variables:"
 	@echo "USE_PYTHON3          ${USE_PYTHON3}"
@@ -883,7 +866,3 @@ cleanall: clean
 	rm -rf chsdi/static/js/blueimp-gallery.min.js
 	rm -rf chsdi/static/js/d3.min.js
 	rm -rf chsdi/static/js/d3-tip.js
-
-.PHONY: pythonclean
-pythonclean: cleanall
-	rm -rf local

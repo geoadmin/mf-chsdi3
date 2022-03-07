@@ -41,7 +41,7 @@ RUN /usr/sbin/a2enmod auth_basic authz_groupfile autoindex dir env expires filte
 COPY . /var/www/vhosts/${VHOST}/private/chsdi
 WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
 # TODO: potomo & translate
-RUN . ./rc_dev && make cleanall build/python setup chsdi/static/css/extended.min.css development.ini production.ini fixrights
+RUN . ./rc_dev && make cleanall setup chsdi/static/css/extended.min.css development.ini production.ini fixrights
 
 ENTRYPOINT ["/var/www/vhosts/mf-chsdi3/private/chsdi/docker-entrypoint.sh"]
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
