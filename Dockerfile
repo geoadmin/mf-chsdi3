@@ -8,19 +8,19 @@ ENV PROJ=chsdi
 ENV VHOST=mf-${PROJ}3
 ENV PROJDIR=/var/www/vhosts/${VHOST}/private/${PROJ}
 
-RUN apt-get update && apt-get install apt-utils \
-      ; DEBIAN_FRONTEND=noninteractive apt-get install -y --upgrade ca-certificates \
-      ; DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg::Options::="--force-confold" \
-      nodejs npm  build-essential git  gettext-base libpq-dev libgeos-dev \
-      postgresql-client-common postgresql-client-11 \
-      apache2 libapache2-mod-wsgi-py3 \
-      gettext gettext-base  \
-      curl \
-      bash \
-      vim \
-      lynx \
-      && apt-get clean \
-      && rm -rf /var/lib/apt/lists/*
+RUN apt-get update -qq && apt-get install -qq -y apt-utils \
+    ; DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --upgrade ca-certificates \
+    ; DEBIAN_FRONTEND=noninteractive apt-get install -qq -y -o Dpkg::Options::="--force-confold" \
+    nodejs npm  build-essential git  gettext-base libpq-dev libgeos-dev \
+    postgresql-client-common postgresql-client-11 \
+    apache2 libapache2-mod-wsgi-py3 \
+    gettext gettext-base  \
+    curl \
+    bash \
+    vim \
+    lynx \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN groupadd --gid 2500 geodata \
     && useradd --uid 2500 --gid geodata --shell /bin/bash --create-home geodata

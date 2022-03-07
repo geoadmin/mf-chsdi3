@@ -51,6 +51,7 @@ env:
     # Disable some tests
     DYNAMODB_TESTS: 0
     S3_TESTS: 0
+    CI_QUIET: 1
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project
     # We do not have AWS S3 and DynmoDB access for now
   parameter-store:

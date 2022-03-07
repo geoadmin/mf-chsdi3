@@ -19,6 +19,7 @@ BRANCH_TO_DELETE ?=
 WMSSCALELEGEND ?=
 
 # Variables
+CI_QUIET ?= 0 # be more quiet on CI
 USER_SOURCE ?= rc_user
 CURRENT_DIRECTORY := $(shell pwd)
 WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
@@ -133,6 +134,14 @@ PSHELL_CMD := $(INSTALL_DIRECTORY)/bin/pshell
 PYTHON_CMD := $(INSTALL_DIRECTORY)/bin/python
 SPHINX_CMD := $(INSTALL_DIRECTORY)/bin/sphinx-build
 ENVSUBST_CMD := /usr/bin/envsubst
+
+ifeq ($(CI_QUIET), 1)
+PIP_QUIET := -q
+NPM_QUIET := --silent
+else
+PIP_QUIET :=
+NPM_QUIET :=
+endif
 
 # Linting rules
 PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731,W503,W504,W605"
@@ -637,8 +646,8 @@ requirements-py3.txt:
 
 .venv: requirements-py3.txt
 		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL} ;
-		${PIP_CMD} install -r requirements-py3.txt --index-url ${PYPI_URL}  -e .
+		${PIP_CMD} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL} ;
+		${PIP_CMD} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e .
 else
 requirements.txt:
 	@echo "${GREEN}File requirements.txt has changed${RESET}";
@@ -647,10 +656,10 @@ requirements.txt:
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv -p /usr/bin/python2  $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install pip==19.2.3 setuptools==44.1.1 enum34==1.1.6 --index-url ${PYPI_URL} ; \
-		${PIP_CMD} install --requirement requirements.txt  --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install $(PIP_QUIET) pip==19.2.3 setuptools==44.1.1 enum34==1.1.6 --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install $(PIP_QUIET) --requirement requirements.txt  --index-url ${PYPI_URL} ; \
 	fi
-	${PIP_CMD} install --index-url ${PYPI_URL} -e .
+	${PIP_CMD} install $(PIP_QUIET) --index-url ${PYPI_URL} -e .
 endif
 
 .venv/bin/git-secrets: .venv
@@ -666,7 +675,7 @@ package.json:
 	@echo "${GREEN}File package.json has changed${RESET}";
 node_modules: package.json
 	@echo "${GREEN}Installing node packages...${RESET}";
-	npm install --production
+	npm install $(NPM_QUIET) --production
 	cp -f node_modules/jquery/dist/jquery.min.js chsdi/static/js/jquery.min.js
 	cp -f node_modules/blueimp-gallery/js/blueimp-gallery.min.js chsdi/static/js/blueimp-gallery.min.js
 	cp -f node_modules/d3/d3.min.js chsdi/static/js/d3.min.js

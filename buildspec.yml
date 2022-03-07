@@ -41,6 +41,7 @@ env:
     # We do not have AWS S3 and DynmoDB access for now
     S3_TESTS: 0
     DYNAMODB_TESTS: 0
+    CI_QUIET: 1
   parameter-store:
     OPENTRANS_API_KEY: "/opentrans_api/key"
     PGUSER: "/postgresql/pguser"
