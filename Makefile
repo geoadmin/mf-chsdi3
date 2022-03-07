@@ -151,9 +151,11 @@ PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731,W503,W504,W605"
 # W605 invalid escape sequence
 
 # Colors
+ifneq ($(shell echo ${TERM}),)
 RESET := $(shell tput sgr0)
 RED := $(shell tput setaf 1)
 GREEN := $(shell tput setaf 2)
+endif
 
 # Versions
 # We need GDAL which is hard to install in a venv, modify PYTHONPATH to use the
