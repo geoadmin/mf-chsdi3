@@ -51,17 +51,12 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
-      - |-
-           if [ "${USE_PYTHON3}" = 0 ]; then
-             echo "Installing python 2.7"
-             apt-get update && apt-get install -y python2.7 python2.7-dev virtualenv build-essential
-           fi
+      - echo "Installing python 2.7"
+      - apt-get update -qq && apt-get install -qq -y python2.7 python2.7-dev virtualenv build-essential
 
   pre_build:
     commands:
       - echo Configuring stuff...
-      - aws --version
-      - exec /bin/bash
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - GITHUB_BRANCH=${CODEBUILD_WEBHOOK_HEAD_REF#refs/heads/*}
       - TODAY=$(date '+%Y%m%d')
@@ -78,6 +73,7 @@ phases:
                LATEST=latest
            fi
       - echo "=========== VERSIONS ============="
+      - aws --version
       - python --version
       - python2 --version
       - python3 --version
@@ -106,12 +102,7 @@ phases:
   build:
     commands:
       - echo Build started on $(date)
-      - |-
-           if [ "${USE_PYTHON3}" = 0 ]; then
-             make cleanall all
-           else
-              make cleanall build/python all
-           fi
+      - make cleanall all
       - echo Build completed on $(date)
       - echo "===========SPHINXSEARCH===================="
       - .venv/bin/python ./scripts/test_sphinxserver.py
@@ -119,7 +110,7 @@ phases:
 
   post_build:
     commands:
-      - echo Testing...
+      - echo Linting...
       - make lint
       - echo "==========Running tests=============="
       - make testci
