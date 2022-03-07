@@ -176,7 +176,7 @@ def faqlist(request):
         if 'parentLayerId' not in lyr and not k.endswith('_3d'):
             if k not in translations:
                 translations[k] = request.translate(k)
-            if 'tooltip' in lyr and lyr['tooltip']:
+            if 'tooltip' in lyr and lyr['tooltip'] and 'type' in lyr and lyr['type'] not in ('geojson',):
                 tooltipLayers.append(k)
             if 'queryableAttributes' in lyr and lyr['queryableAttributes']:
                 queryableLayers.append(k)
