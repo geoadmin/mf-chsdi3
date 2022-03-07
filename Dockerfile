@@ -40,6 +40,19 @@ RUN /usr/sbin/a2enmod auth_basic authz_groupfile autoindex dir env expires filte
 
 COPY . /var/www/vhosts/${VHOST}/private/chsdi
 WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
+
+ARG GIT_HASH=unknown
+ARG GIT_BRANCH=unknown
+ARG GIT_DIRTY=unknown
+ARG VERSION=unknown
+ARG AUTHOR=unknown
+
+LABEL git.hash=$GIT_HASH
+LABEL git.branch=$GIT_BRANCH
+LABEL git.dirty=$GIT_DIRTY
+LABEL version=$VERSION
+LABEL author=$AUTHOR
+
 # TODO: potomo & translate
 RUN . ./rc_dev && make cleanall setup chsdi/static/css/extended.min.css development.ini production.ini fixrights
 
