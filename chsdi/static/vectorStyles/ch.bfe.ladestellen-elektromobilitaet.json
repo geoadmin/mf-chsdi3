@@ -1,261 +1,358 @@
 {
-	"type": "unique",
-	"property": "symbology",
-	"values": [{
-                "geomType": "point",
-                "value": "Unknown_False",
-                "minResolution":0,
-                "maxResolution":20,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-no-status-information-50px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-                "geomType": "point",
-                "value": "Unknown_False",
-                "minResolution":20,
-                "maxResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-no-status-information-40px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-                "geomType": "point",
-                "value": "Unknown_False",
-                "minResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-no-status-information-30px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-		"geomType": "point",
-		"value": "Available_False",
-                "minResolution":0,
-                "maxResolution":20,
-		"vectorOptions": {
-			"type": "icon",
-        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-available-50px.png",
-        	"scale": 1,
-        	"anchor": [0.5, 1]
-		}
-	}, {
-                "geomType": "point",
-                "value": "Available_False",
-                "minResolution":20,
-                "maxResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-available-40px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-                "geomType": "point",
-                "value": "Available_False",
-                "minResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-available-30px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-		"geomType": "point",
-		"value": "Reserved_False",
-                "minResolution":0,
-                "maxResolution":20,
-		"vectorOptions": {
-			"type": "icon",
-        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-reserved-50px.png",
-        	"scale": 1,
-        	"anchor": [0.5, 1]
-		}
-	}, {
-                "geomType": "point",
-                "value": "Reserved_False",
-                "minResolution":20,
-                "maxResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-reserved-40px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-                "geomType": "point",
-                "value": "Reserved_False",
-                "minResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-reserved-30px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-		"geomType": "point",
-		"value": "Occupied_False",
-                "minResolution":0,
-                "maxResolution":20,
-		"vectorOptions": {
-			"type": "icon",
-        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-occupied-50px.png",
-        	"scale": 1,
-        	"anchor": [0.5, 1]
-		}
-	}, {
-                "geomType": "point",
-                "value": "Occupied_False",
-                "minResolution":20,
-                "maxResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-occupied-40px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-                "geomType": "point",
-                "value": "Occupied_False",
-                "minResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-occupied-30px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-		"geomType": "point",
-		"value": "OutOfService_False",
-                "minResolution":0,
-                "maxResolution":20,
-		"vectorOptions": {
-			"type": "icon",
-        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-50px.png",
-        	"scale": 1,
-        	"anchor": [0.5, 1]
-		}
-	}, {
-                "geomType": "point",
-                "value": "OutOfService_False",
-                "minResolution":20,
-                "maxResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-40px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-                "geomType": "point",
-                "value": "OutOfService_False",
-                "minResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-30px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-		"geomType": "point",
-		"value": "Offline_False",
-                "minResolution":0,
-                "maxResolution":20,
-		"vectorOptions": {
-			"type": "icon",
-        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-50px.png",
-        	"scale": 1,
-        	"anchor": [0.5, 1]
-		}
-	}, {
-                "geomType": "point",
-                "value": "Offline_False",
-                "minResolution":20,
-                "maxResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-40px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-                "geomType": "point",
-                "value": "Offline_False",
-                "minResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-30px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-		"geomType": "point",
-		"value": "EVSENotFound_False",
-                "minResolution":0,
-                "maxResolution":10,
-		"vectorOptions": {
-			"type": "icon",
-        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-50px.png",
-        	"scale": 1,
-        	"anchor": [0.5, 1]
-		}
-	}, {
-                "geomType": "point",
-                "value": "EVSENotFound_False",
-                "minResolution":20,
-                "maxResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-40px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-                "geomType": "point",
-                "value": "EVSENotFound_False",
-                "minResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-30px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-		"geomType": "point",
-		"value": "Unknown_False",
-                "minResolution":0,
-                "maxResolution":20,
-		"vectorOptions": {
-			"type": "icon",
-        	"src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-50px.png",
-        	"scale": 1,
-        	"anchor": [0.5, 1]
-		}
-	}, {
-                "geomType": "point",
-                "value": "Unknown_False",
-                "minResolution":20,
-                "maxResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-40px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }, {
-                "geomType": "point",
-                "value": "Unknown_False",
-                "minResolution":250,
-                "vectorOptions": {
-                        "type": "icon",
-                "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-30px.png",
-                "scale": 1,
-                "anchor": [0.5, 1]
-                }
-        }]
+  "type": "unique",
+  "property": "symbology",
+  "values": [
+    {
+      "geomType": "point",
+      "value": "Unknown_False",
+      "minResolution": 0,
+      "maxResolution": 20,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-no-status-information-50px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Unknown_False",
+      "minResolution": 20,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-no-status-information-40px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Unknown_False",
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-no-status-information-30px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Available_False",
+      "minResolution": 0,
+      "maxResolution": 20,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-available-50px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Available_False",
+      "minResolution": 20,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-available-40px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Available_False",
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-available-30px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Reserved_False",
+      "minResolution": 0,
+      "maxResolution": 20,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-reserved-50px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Reserved_False",
+      "minResolution": 20,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-reserved-40px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Reserved_False",
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-reserved-30px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Occupied_False",
+      "minResolution": 0,
+      "maxResolution": 20,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-occupied-50px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Occupied_False",
+      "minResolution": 20,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-occupied-40px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Occupied_False",
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-occupied-30px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "OutOfService_False",
+      "minResolution": 0,
+      "maxResolution": 20,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-50px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "OutOfService_False",
+      "minResolution": 20,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-40px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "OutOfService_False",
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-30px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Offline_False",
+      "minResolution": 0,
+      "maxResolution": 20,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-50px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Offline_False",
+      "minResolution": 20,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-40px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Offline_False",
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-30px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "EVSENotFound_False",
+      "minResolution": 0,
+      "maxResolution": 10,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-50px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "EVSENotFound_False",
+      "minResolution": 20,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-40px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "EVSENotFound_False",
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-30px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Unknown_False",
+      "minResolution": 0,
+      "maxResolution": 20,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-50px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Unknown_False",
+      "minResolution": 20,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-40px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    },
+    {
+      "geomType": "point",
+      "value": "Unknown_False",
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bfe.ladestellen-elektromobilitaet/symbols/icon-pin-shadow-offline-30px.png",
+        "scale": 1,
+        "anchor": [
+          0.5,
+          1
+        ]
+      }
+    }
+  ]
 }
