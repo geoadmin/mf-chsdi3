@@ -57,16 +57,13 @@ GITHUB_LAST_COMMIT=$(shell curl -s  https://api.github.com/repos/geoadmin/mf-chs
 DYNAMIC_TRANSLATION ?= 1
 
 # Docker metadata
-GIT_HASH = $(shell git rev-parse HEAD)
-GIT_HASH_SHORT = $(shell git rev-parse --short HEAD)
-GIT_BRANCH = $(shell git symbolic-ref HEAD --short 2>/dev/null)
 GIT_DIRTY = $(shell git status --porcelain)
 GIT_TAG = $(shell git describe --tags || echo "no version info")
 AUTHOR = $(USER)
 
 # Docker variables
 DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
-DOCKER_IMG_LOCAL_TAG := $(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+DOCKER_IMG_LOCAL_TAG := $(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_COMMIT_SHORT)
 DOCKER_IMAGE_LOCAL_TAG_BASEIMAGE = $(DOCKER_REGISTRY)/mf-chsdi3:base
 
 # Last values
@@ -275,7 +272,7 @@ endif
 .PHONY: image
 image:
 	docker build \
-		--build-arg GIT_HASH="$(GIT_HASH)" \
+		--build-arg GIT_HASH="$(GIT_COMMIT_HASH)" \
 		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
 		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
 		--build-arg VERSION="$(GIT_TAG)" \
