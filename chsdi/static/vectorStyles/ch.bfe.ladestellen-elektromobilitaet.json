@@ -1,9 +1,9 @@
 {
 	"type": "unique",
-	"property": "Availability",
+	"property": "symbology",
 	"values": [{
                 "geomType": "point",
-                "value": "Unknown",
+                "value": "Unknown_False",
                 "minResolution":0,
                 "maxResolution":20,
                 "vectorOptions": {
@@ -14,7 +14,7 @@
                 }
         }, {
                 "geomType": "point",
-                "value": "Unknown",
+                "value": "Unknown_False",
                 "minResolution":20,
                 "maxResolution":250,
                 "vectorOptions": {
@@ -25,7 +25,7 @@
                 }
         }, {
                 "geomType": "point",
-                "value": "Unknown",
+                "value": "Unknown_False",
                 "minResolution":250,
                 "vectorOptions": {
                         "type": "icon",
@@ -35,7 +35,7 @@
                 }
         }, {
 		"geomType": "point",
-		"value": "Available",
+		"value": "Available_False",
                 "minResolution":0,
                 "maxResolution":20,
 		"vectorOptions": {
@@ -46,7 +46,7 @@
 		}
 	}, {
                 "geomType": "point",
-                "value": "Available",
+                "value": "Available_False",
                 "minResolution":20,
                 "maxResolution":250,
                 "vectorOptions": {
@@ -57,7 +57,7 @@
                 }
         }, {
                 "geomType": "point",
-                "value": "Available",
+                "value": "Available_False",
                 "minResolution":250,
                 "vectorOptions": {
                         "type": "icon",
@@ -67,7 +67,7 @@
                 }
         }, {
 		"geomType": "point",
-		"value": "Reserved",
+		"value": "Reserved_False",
                 "minResolution":0,
                 "maxResolution":20,
 		"vectorOptions": {
@@ -78,7 +78,7 @@
 		}
 	}, {
                 "geomType": "point",
-                "value": "Reserved",
+                "value": "Reserved_False",
                 "minResolution":20,
                 "maxResolution":250,
                 "vectorOptions": {
@@ -89,7 +89,7 @@
                 }
         }, {
                 "geomType": "point",
-                "value": "Reserved",
+                "value": "Reserved_False",
                 "minResolution":250,
                 "vectorOptions": {
                         "type": "icon",
@@ -99,7 +99,7 @@
                 }
         }, {
 		"geomType": "point",
-		"value": "Occupied",
+		"value": "Occupied_False",
                 "minResolution":0,
                 "maxResolution":20,
 		"vectorOptions": {
@@ -110,7 +110,7 @@
 		}
 	}, {
                 "geomType": "point",
-                "value": "Occupied",
+                "value": "Occupied_False",
                 "minResolution":20,
                 "maxResolution":250,
                 "vectorOptions": {
@@ -121,7 +121,7 @@
                 }
         }, {
                 "geomType": "point",
-                "value": "Occupied",
+                "value": "Occupied_False",
                 "minResolution":250,
                 "vectorOptions": {
                         "type": "icon",
@@ -131,7 +131,7 @@
                 }
         }, {
 		"geomType": "point",
-		"value": "OutOfService",
+		"value": "OutOfService_False",
                 "minResolution":0,
                 "maxResolution":20,
 		"vectorOptions": {
@@ -142,7 +142,7 @@
 		}
 	}, {
                 "geomType": "point",
-                "value": "OutOfService",
+                "value": "OutOfService_False",
                 "minResolution":20,
                 "maxResolution":250,
                 "vectorOptions": {
@@ -153,7 +153,7 @@
                 }
         }, {
                 "geomType": "point",
-                "value": "OutOfService",
+                "value": "OutOfService_False",
                 "minResolution":250,
                 "vectorOptions": {
                         "type": "icon",
@@ -163,7 +163,7 @@
                 }
         }, {
 		"geomType": "point",
-		"value": "Offline",
+		"value": "Offline_False",
                 "minResolution":0,
                 "maxResolution":20,
 		"vectorOptions": {
@@ -174,7 +174,7 @@
 		}
 	}, {
                 "geomType": "point",
-                "value": "Offline",
+                "value": "Offline_False",
                 "minResolution":20,
                 "maxResolution":250,
                 "vectorOptions": {
@@ -185,7 +185,7 @@
                 }
         }, {
                 "geomType": "point",
-                "value": "Offline",
+                "value": "Offline_False",
                 "minResolution":250,
                 "vectorOptions": {
                         "type": "icon",
@@ -195,7 +195,7 @@
                 }
         }, {
 		"geomType": "point",
-		"value": "EVSENotFound",
+		"value": "EVSENotFound_False",
                 "minResolution":0,
                 "maxResolution":10,
 		"vectorOptions": {
@@ -206,7 +206,7 @@
 		}
 	}, {
                 "geomType": "point",
-                "value": "EVSENotFound",
+                "value": "EVSENotFound_False",
                 "minResolution":20,
                 "maxResolution":250,
                 "vectorOptions": {
@@ -217,7 +217,7 @@
                 }
         }, {
                 "geomType": "point",
-                "value": "EVSENotFound",
+                "value": "EVSENotFound_False",
                 "minResolution":250,
                 "vectorOptions": {
                         "type": "icon",
@@ -227,7 +227,7 @@
                 }
         }, {
 		"geomType": "point",
-		"value": "Unknown",
+		"value": "Unknown_False",
                 "minResolution":0,
                 "maxResolution":20,
 		"vectorOptions": {
@@ -238,7 +238,7 @@
 		}
 	}, {
                 "geomType": "point",
-                "value": "Unknown",
+                "value": "Unknown_False",
                 "minResolution":20,
                 "maxResolution":250,
                 "vectorOptions": {
@@ -249,7 +249,7 @@
                 }
         }, {
                 "geomType": "point",
-                "value": "Unknown",
+                "value": "Unknown_False",
                 "minResolution":250,
                 "vectorOptions": {
                         "type": "icon",
