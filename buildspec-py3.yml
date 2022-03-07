@@ -62,17 +62,13 @@ phases:
   install:
     runtime-versions:
       python: 3.7
-    commands:
-      - aws --version
+
 
   pre_build:
     commands:
       - echo Configuring stuff...
-      - aws --version
-      - exec /bin/bash
       - echo "Login to AWS ECR docker registry"
       - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${DOCKER_REGISTRY}
-      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
 
       - echo "CODEBUILD_WEBHOOK_HEAD_REF=${CODEBUILD_WEBHOOK_HEAD_REF} CODEBUILD_WEBHOOK_BASE_REF=${CODEBUILD_WEBHOOK_BASE_REF}"
       - export GITHUB_BRANCH="${CODEBUILD_WEBHOOK_HEAD_REF#refs/heads/}"
@@ -81,7 +77,8 @@ phases:
       - export GIT_TAG="$(git describe --tags || echo 'no version info')"
       - echo "GITHUB_BRANCH=${GITHUB_BRANCH} COMMIT_HASH=${COMMIT_HASH} GIT_TAG=${GIT_TAG}"
 
-      - echo "=========== VERSIONS ============="
+      - echo "=========== VERSIONS ============="$
+      - aws --version
       - python --version
       - python2 --version
       - python3 --version
@@ -133,8 +130,10 @@ phases:
       - echo Build completed on $(date)
       - echo "===========SPHINXSEARCH===================="
       - .venv/bin/python ./scripts/test_sphinxserver.py
+      - echo "==========Linting===================="
+      - make templates lint
       - echo "==========Running tests=============="
-      - make templates lint testci
+      - make testci
       - docker-compose up -d
       - DOCKER_CONTAINER_ID=$(docker ps -aq --filter ancestor="${DOCKER_IMG_TAG_LATEST}")
       - echo "DOCKER_CONTAINER_ID=${DOCKER_CONTAINER_ID}"
