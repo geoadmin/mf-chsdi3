@@ -72,8 +72,31 @@
       else:
         return 'yesText' if str(value) == '1' else 'noText'
 
-
+    lang = lang if lang in ('fr','it') else 'de'
+    ltyp_text = 'ltyp_%s' % lang
+    gksce_text = '_%s' % lang
+    gstat_text = '_%s' % lang
+    gkat_text = '_%s' % lang
+    gklas_text = '_%s' % lang
+    gbaup_text = '_%s' % lang
+    gvolnorm_text = '_%s' % lang
+    gvolsce_text = '_%s' % lang
+    gwaerzh1_text = '_%s' % lang
+    genh1_text = '_%s' % lang
+    gwaersceh1_text = '_%s' % lang
+    gwaerzh2_text = '_%s' % lang
+    genh2_text = '_%s' % lang
+    gwaersceh2_text = '_%s' % lang
+    gwaerzw1_text = '_%s' % lang
+    genw1_text = '_%s' % lang
+    gwaerscew1_text = '_%s' % lang
+    gwaerzw2_text = '_%s' % lang
+    genw2_text = '_%s' % lang
+    gwaerscew2_text = '_%s' % lang
+    wstat_text = '_%s' % lang
+    wstwk_text = '_%s' % lang
 %>
+
   <table>
     <tr><th colspan=2>${_('ch.bfs.gebaeude_wohnungs_register.block_gebaeude')}</th></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.egid')}</td>           <td class="cell-meta-small">${c['attributes']['egid'] or '-'}</td></tr>
@@ -84,43 +107,43 @@
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.lgbkr')}</td>          <td class="cell-meta-small">${c['attributes']['lgbkr'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.lparz')}</td>          <td class="cell-meta-small">${c['attributes']['lparz'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.lparzsx')}</td>        <td class="cell-meta-small">${c['attributes']['lparzsx'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.ltyp')}</td>           <td class="cell-meta-small">${c['attributes']['ltyp'] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.ltyp')}</td>           <td class="cell-meta-small">${c['attributes'][ltyp_text] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gebnr')}</td>          <td class="cell-meta-small">${c['attributes']['gebnr'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gbez')}</td>           <td class="cell-meta-small">${c['attributes']['gbez'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gkode')}</td>          <td class="cell-meta-small">${c['attributes']['gkode'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gkodn')}</td>          <td class="cell-meta-small">${c['attributes']['gkodn'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gksce')}</td>          <td class="cell-meta-small">${_(translate_attribute('gksce', c['attributes']['gksce']))}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gstat')}</td>          <td class="cell-meta-small">${_(translate_attribute('gstat', c['attributes']['gstat']))}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gkat')}</td>           <td class="cell-meta-small">${_(translate_attribute('gkat', c['attributes']['gkat']))}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gklas')}</td>          <td class="cell-meta-small">${_(translate_attribute('gklas', c['attributes']['gklas']))}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gksce')}</td>          <td class="cell-meta-small">${c['attributes'][gksce_text] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gstat')}</td>          <td class="cell-meta-small">${c['attributes'][gstat_text] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gkat')}</td>           <td class="cell-meta-small">${c['attributes'][gkat_text] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gklas')}</td>          <td class="cell-meta-small">${c['attributes'][gklas_text] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gbauj')}</td>          <td class="cell-meta-small">${c['attributes']['gbauj'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gbaum')}</td>          <td class="cell-meta-small">${c['attributes']['gbaum'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gbaup')}</td>          <td class="cell-meta-small">${_(translate_attribute('gbaup', c['attributes']['gbaup']))}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gbaup')}</td>          <td class="cell-meta-small">${c['attributes'][gbaup_text] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gabbj')}</td>          <td class="cell-meta-small">${c['attributes']['gabbj'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.garea')}</td>          <td class="cell-meta-small">${c['attributes']['garea'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvol')}</td>           <td class="cell-meta-small">${c['attributes']['gvol'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvolnorm')}</td>       <td class="cell-meta-small">${_(translate_attribute('gvolnorm', c['attributes']['gvolnorm']))}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvolsce')}</td>        <td class="cell-meta-small">${_(translate_attribute('gvolsce', c['attributes']['gvolsce']))}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvolnorm')}</td>       <td class="cell-meta-small">${c['attributes'][gvolnorm_text] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gvolsce')}</td>        <td class="cell-meta-small">${c['attributes'][gvolsce_text] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gastw')}</td>          <td class="cell-meta-small">${c['attributes']['gastw'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.ganzwhg')}</td>        <td class="cell-meta-small">${c['attributes']['ganzwhg'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gazzi')}</td>          <td class="cell-meta-small">${c['attributes']['gazzi'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gschutzr')}</td>       <td class="cell-meta-small">${c['attributes']['gschutzr'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gebf')}</td>           <td class="cell-meta-small">${c['attributes']['gebf'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerzh1')}</td>       <td class="cell-meta-small">${c['attributes']['gwaerzh1'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.genh1')}</td>          <td class="cell-meta-small">${c['attributes']['genh1'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaersceh1')}</td>     <td class="cell-meta-small">${c['attributes']['gwaersceh1'] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerzh1')}</td>       <td class="cell-meta-small">${c['attributes'][gwaerzh1_text] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.genh1')}</td>          <td class="cell-meta-small">${c['attributes'][genh1_text] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaersceh1')}</td>     <td class="cell-meta-small">${c['attributes'][gwaersceh1_text] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerdath1')}</td>     <td class="cell-meta-small">${c['attributes']['gwaerdath1'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerzh2')}</td>       <td class="cell-meta-small">${c['attributes']['gwaerzh2'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.genh2')}</td>          <td class="cell-meta-small">${c['attributes']['genh2'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaersceh2')}</td>     <td class="cell-meta-small">${c['attributes']['gwaersceh2'] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerzh2')}</td>       <td class="cell-meta-small">${c['attributes'][gwaerzh2_text] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.genh2')}</td>          <td class="cell-meta-small">${c['attributes'][genh2_text] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaersceh2')}</td>     <td class="cell-meta-small">${c['attributes'][gwaersceh2_text] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerdath2')}</td>     <td class="cell-meta-small">${c['attributes']['gwaerdath2'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerzw1')}</td>       <td class="cell-meta-small">${c['attributes']['gwaerzw1'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.genw1')}</td>          <td class="cell-meta-small">${c['attributes']['genw1'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerscew1')}</td>     <td class="cell-meta-small">${c['attributes']['gwaerscew1'] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerzw1')}</td>       <td class="cell-meta-small">${c['attributes'][gwaerzw1_text] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.genw1')}</td>          <td class="cell-meta-small">${c['attributes'][genw1_text] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerscew1')}</td>     <td class="cell-meta-small">${c['attributes'][gwaerscew1_text] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerdatw1')}</td>     <td class="cell-meta-small">${c['attributes']['gwaerdatw1'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerzw2')}</td>       <td class="cell-meta-small">${c['attributes']['gwaerzw2'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.genw2')}</td>          <td class="cell-meta-small">${c['attributes']['genw2'] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerscew2')}</td>     <td class="cell-meta-small">${c['attributes']['gwaerscew2'] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerzw2')}</td>       <td class="cell-meta-small">${c['attributes'][gwaerzw2_text] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.genw2')}</td>          <td class="cell-meta-small">${c['attributes'][genw2_text] or '-'}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerscew2')}</td>     <td class="cell-meta-small">${c['attributes'][gwaerscew2_text] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gwaerdatw2')}</td>     <td class="cell-meta-small">${c['attributes']['gwaerdatw2'] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.gexpdat')}</td>        <td class="cell-meta-small">${c['attributes']['gexpdat'] or '-'}</td></tr>
     <tr><th colspan=2>${_('ch.bfs.gebaeude_wohnungs_register.block_eingang')}</th></tr>
@@ -159,12 +182,12 @@
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.ewid')}</td>           <td class="cell-meta-small">${c['attributes']['ewid'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.whgnr')}</td>          <td class="cell-meta-small">${c['attributes']['whgnr'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.weinr')}</td>          <td class="cell-meta-small">${c['attributes']['weinr'][i] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wstwk')}</td>          <td class="cell-meta-small">${_(translate_attribute('wstwk', c['attributes']['wstwk'][i]))}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wstwk')}</td>          <td class="cell-meta-small">${c['attributes'][wstwk_text][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wmehrg')}</td>         <td class="cell-meta-small">${c['attributes']['wmehrg'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wbez')}</td>           <td class="cell-meta-small">${c['attributes']['wbez'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wbauj')}</td>          <td class="cell-meta-small">${c['attributes']['wbauj'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wabbj')}</td>          <td class="cell-meta-small">${c['attributes']['wabbj'][i] or '-'}</td></tr>
-    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wstat')}</td>          <td class="cell-meta-small">${_(translate_attribute('wstat', c['attributes']['wstat'][i]))}</td></tr>
+    <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wstat')}</td>          <td class="cell-meta-small">${c['attributes'][wstat_text][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.warea')}</td>          <td class="cell-meta-small">${c['attributes']['warea'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wazim')}</td>          <td class="cell-meta-small">${c['attributes']['wazim'][i] or '-'}</td></tr>
     <tr><td class="cell-meta-small">${_('ch.bfs.gebaeude_wohnungs_register.wkche')}</td>          <td class="cell-meta-small">${c['attributes']['wkche'][i] or '-'}</td></tr>
