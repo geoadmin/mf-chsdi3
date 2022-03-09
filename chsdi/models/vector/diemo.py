@@ -15,10 +15,13 @@ class DiemoLocations(Base, Vector):
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __bodId__ = 'ch.bfe.ladestellen-elektromobilitaet'
     __queryable_attributes__ = ['EvseID', 'Availability', 'QueryPlugs', 'Accessibility', 'IsHubjectCompatible', 'QueryChargingFacilities', 'DynamicInfoAvailable',
-                                'QueryChargingModes', 'ChargingPoolID', 'MaxCapacity', 'QueryPaymentOptions', 'AdditionalInfo', 'ChargingStationId', 'ChargingStationName',
-                                'EnChargingStationName', 'QueryAddress', 'Street', 'HouseNum', 'Floor', 'Region', 'PostalCode', 'City', 'Timezone', 'Country', 'QueryAuthenticationModes',
-                                'Latitude', 'Longitude', 'GeoCoordinates', 'EntranceLatitude', 'EntranceLongitude', 'EntranceLatitude', 'GeoChargingPointEntrance', 'lastUpdate', 'ClearinghouseID',
-                                'IsOpen24Hours', 'OpeningTimes', 'HubOperatorID', 'OperatorID', 'OperatorName', 'HotlinePhoneNumber', 'deltaType', 'QueryValueAddedServices']
+                                'ChargingPoolID', 'MaxCapacity', 'DynamicPowerLevel', 'QueryPaymentOptions', 'AdditionalInfo', 'ChargingStationId',
+                                'QueryAddress', 'Street', 'HouseNum', 'Floor', 'Region', 'PostalCode', 'City', 'Timezone', 'Country', 'QueryAuthenticationModes',
+                                'Latitude', 'Longitude', 'GeoCoordinates', 'EntranceLatitude', 'EntranceLongitude', 'EntranceLatitude', 'GeoChargingPointEntrance',
+                                'lastUpdate', 'ClearinghouseID', 'AddressParkingSpot', 'AddressParkingFacility', 'AccessibilityLocation', 'CalibrationLawDataAvailability',
+                                'QueryChargingStationLocationReference', 'QueryEnergySource', 'EnvironmentalImpact', 'LocationImage', 'QueryChargingStationNames', 'RenewableEnergy',
+                                'SuboperatorName', 'IsOpen24Hours', 'OpeningTimes', 'HubOperatorID', 'OperatorID', 'OperatorName', 'HotlinePhoneNumber', 'deltaType',
+                                'QueryValueAddedServices']
     __label__ = 'EvseID'
     id = Column('bgdi_id', Numeric, primary_key=True)
     EvseID = Column('loading_unit_id', Unicode)
@@ -33,6 +36,8 @@ class DiemoLocations(Base, Vector):
     DynamicInfoAvailable = Column('dynamic_info_available', Unicode)
     MaxCapacity = Column('max_capacity', Numeric)
     deltaType = Column('delta_type', Unicode)
+    DynamicPowerLevel = Column('dynamic_power_level', Boolean)
+    HardwareManufacturer = Column('hardware_manufacturer', Unicode)
     PaymentOptions = Column('payment_options', postgresql.ARRAY(Unicode))
     QueryPaymentOptions = Column('queriable_payment_options', Unicode)
     AdditionalInfo = Column('additional_info', Unicode)
@@ -62,6 +67,20 @@ class DiemoLocations(Base, Vector):
     OperatorID = Column('operator_id', Unicode)
     HubOperatorID = Column('hub_operator_id', Unicode)
     ClearinghouseID = Column('clearing_house_id', Unicode)
+    AddressParkingSpot = Column('address_parking_spot', Unicode)
+    AddressParkingFacility = Column('address_parking_facility', Boolean)
+    AccessibilityLocation = Column('accessibility_location', Unicode)
+    CalibrationLawDataAvailability = Column('calibration_law_data_availability', Unicode)
+    ChargingStationLocationReference = Column('charging_station_location_reference', postgresql.ARRAY(Unicode))
+    QueryChargingStationLocationReference = Column('queriable_charging_station_location_reference', Unicode)
+    EnergySource = Column('energy_source', postgresql.ARRAY(Unicode))
+    QueryEnergySource = Column('queriable_energy_source', Unicode)
+    EnvironmentalImpact = Column('environmental_impact', Unicode)
+    LocationImage = Column('location_image', Unicode)
+    ChargingStationNames = Column('names', postgresql.ARRAY(Unicode))
+    QueryChargingStationNames = Column('queriable_names', Unicode)
+    RenewableEnergy = Column('renewable_energy', Boolean)
+    SuboperatorName = Column('suboperator_name', Unicode)
     OperatorName = Column('operator_name', Unicode)
     HotlinePhoneNumber = Column('hotline_phone_num', Unicode)
     ProviderURL = Column('provider_url', Unicode)
