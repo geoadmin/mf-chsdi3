@@ -1,6 +1,8 @@
 mf-chsdi3
 =========
 
+TEST CI
+
 Next generation services [https://api3.geo.admin.ch](http://api3.geo.admin.ch) for [https://map.geo.admin.ch](https://map.geo.admin.ch)
 
 **AWS CodeBuild Status**
