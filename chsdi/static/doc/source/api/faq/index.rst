@@ -104,7 +104,8 @@ The following list contains all the free accessible layers:
 Which layers have a tooltip?
 ****************************
 
-Not all the layers have a tooltip. Below, you can find the complete list all the layers that have a tooltip:
+Not all the layers have a tooltip. The complete list of layer using the `htmlPopup <../../services/sdiservices.html#htmlpopup-resource>`_ service is 
+the following. Note: some vector layer (GeoJSON) have a client-only tooltip and are not using this service:
 
 .. raw:: html
 
