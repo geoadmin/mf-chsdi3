@@ -19,6 +19,7 @@ BRANCH_TO_DELETE ?=
 WMSSCALELEGEND ?=
 
 # Variables
+CI_QUIET ?= 0 # be more quiet on CI
 USER_SOURCE ?= rc_user
 CURRENT_DIRECTORY := $(shell pwd)
 WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
@@ -57,16 +58,13 @@ GITHUB_LAST_COMMIT=$(shell curl -s  https://api.github.com/repos/geoadmin/mf-chs
 DYNAMIC_TRANSLATION ?= 1
 
 # Docker metadata
-GIT_HASH = $(shell git rev-parse HEAD)
-GIT_HASH_SHORT = $(shell git rev-parse --short HEAD)
-GIT_BRANCH = $(shell git symbolic-ref HEAD --short 2>/dev/null)
 GIT_DIRTY = $(shell git status --porcelain)
 GIT_TAG = $(shell git describe --tags || echo "no version info")
 AUTHOR = $(USER)
 
 # Docker variables
 DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
-DOCKER_IMG_LOCAL_TAG := $(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+DOCKER_IMG_LOCAL_TAG := $(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_COMMIT_SHORT)
 DOCKER_IMAGE_LOCAL_TAG_BASEIMAGE = $(DOCKER_REGISTRY)/mf-chsdi3:base
 
 # Last values
@@ -137,6 +135,14 @@ PYTHON_CMD := $(INSTALL_DIRECTORY)/bin/python
 SPHINX_CMD := $(INSTALL_DIRECTORY)/bin/sphinx-build
 ENVSUBST_CMD := /usr/bin/envsubst
 
+ifeq ($(CI_QUIET), 1)
+PIP_QUIET := -q
+NPM_QUIET := --silent
+else
+PIP_QUIET :=
+NPM_QUIET :=
+endif
+
 # Linting rules
 PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731,W503,W504,W605"
 
@@ -154,15 +160,17 @@ PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731,W503,W504,W605"
 # W605 invalid escape sequence
 
 # Colors
+ifneq ($(shell echo ${TERM}),)
 RESET := $(shell tput sgr0)
 RED := $(shell tput setaf 1)
 GREEN := $(shell tput setaf 2)
+endif
 
 # Versions
 # We need GDAL which is hard to install in a venv, modify PYTHONPATH to use the
 # system wide version.
 GDAL_VERSION ?= 1.10.0
-PYTHON_INSTALL_VERSION ?= 3.7.10
+PYTHON_INSTALL_VERSION ?= 3.7
 
 ifndef USE_PYTHON3
 		override USE_PYTHON3 = 0
@@ -170,33 +178,17 @@ endif
 
 ifeq ($(USE_PYTHON3), 1)
 ifeq (, $(shell which $(SYSTEM_PYTHON_CMD)))
-		PYTHON_VERSION := $(shell $(PYTHON_INSTALL_VERSION)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+		PYTHON_VERSION := $(PYTHON_INSTALL_VERSION)
 else
-    PYTHON_VERSION := $(shell $(SYSTEM_PYTHON_CMD)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
+		PYTHON_VERSION := $(shell $(SYSTEM_PYTHON_CMD)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
 endif
 PIP_CMD := $(INSTALL_DIRECTORY)/bin/pip${PYTHON_VERSION}
-build/python:
-		mkdir -p build && touch build/python;
 else
-		PYTHON_VERSION := $(shell python2 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
-build/python:
-		mkdir -p build && touch build/python;
+	PYTHON_VERSION := $(shell python2 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
 endif
 PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
 
-PYTHON_BINDIR := $(shell dirname $(PYTHON_CMD))
-PYTHONHOME :=$(shell eval "cd $(PYTHON_BINDIR); pwd; cd > /dev/null")
-SYSTEM_PYTHON_CMD ?= $(CURRENT_DIRECTORY)/local/bin/python$(PYTHON_VERSION)
-
-.PHONY: python
-python: build/python
-		@echo "Python installed"
-
-local/bin/python3.6:
-		mkdir -p $(CURRENT_DIRECTORY)/local;
-		curl https://www.python.org/ftp/python/$(PYTHON_INSTALL_VERSION)/Python-$(PYTHON_INSTALL_VERSION).tar.xz \
-				-o $(CURRENT_DIRECTORY)/local/Python-$(PYTHON_INSTALL_VERSION).tar.xz;
-		cd $(CURRENT_DIRECTORY)/local && tar -xf Python-$(PYTHON_INSTALL_VERSION).tar.xz && Python-$(PYTHON_INSTALL_VERSION)/configure --prefix=$(CURRENT_DIRECTORY)/local/   --with-ensurepip=install --enable-optimizations && make altinstall;
+SYSTEM_PYTHON_CMD ?= python$(PYTHON_VERSION)
 
 
 .PHONY: help
@@ -231,7 +223,6 @@ help:
 	@echo "- dockerpush         Build and push the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
 	@echo "- clean              Remove generated files"
 	@echo "- cleanall           Remove all the build artefacts"
-	@echo "- pythonclean        Remove all the build artefacts and the downloaded python version"
 	@echo
 	@echo "Variables:"
 	@echo "USE_PYTHON3          ${USE_PYTHON3}"
@@ -275,7 +266,7 @@ endif
 .PHONY: image
 image:
 	docker build \
-		--build-arg GIT_HASH="$(GIT_HASH)" \
+		--build-arg GIT_HASH="$(GIT_COMMIT_HASH)" \
 		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
 		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
 		--build-arg VERSION="$(GIT_TAG)" \
@@ -655,8 +646,8 @@ requirements-py3.txt:
 
 .venv: requirements-py3.txt
 		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL} ;
-		${PIP_CMD} install -r requirements-py3.txt --index-url ${PYPI_URL}  -e .
+		${PIP_CMD} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL} ;
+		${PIP_CMD} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e .
 else
 requirements.txt:
 	@echo "${GREEN}File requirements.txt has changed${RESET}";
@@ -665,10 +656,10 @@ requirements.txt:
 	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
 	then \
 		virtualenv -p /usr/bin/python2  $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install pip==19.2.3 setuptools==44.1.1 enum34==1.1.6 --index-url ${PYPI_URL} ; \
-		${PIP_CMD} install --requirement requirements.txt  --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install $(PIP_QUIET) pip==19.2.3 setuptools==44.1.1 enum34==1.1.6 --index-url ${PYPI_URL} ; \
+		${PIP_CMD} install $(PIP_QUIET) --requirement requirements.txt  --index-url ${PYPI_URL} ; \
 	fi
-	${PIP_CMD} install --index-url ${PYPI_URL} -e .
+	${PIP_CMD} install $(PIP_QUIET) --index-url ${PYPI_URL} -e .
 endif
 
 .venv/bin/git-secrets: .venv
@@ -684,7 +675,7 @@ package.json:
 	@echo "${GREEN}File package.json has changed${RESET}";
 node_modules: package.json
 	@echo "${GREEN}Installing node packages...${RESET}";
-	npm install --production
+	npm install $(NPM_QUIET) --production
 	cp -f node_modules/jquery/dist/jquery.min.js chsdi/static/js/jquery.min.js
 	cp -f node_modules/blueimp-gallery/js/blueimp-gallery.min.js chsdi/static/js/blueimp-gallery.min.js
 	cp -f node_modules/d3/d3.min.js chsdi/static/js/d3.min.js
@@ -886,7 +877,3 @@ cleanall: clean
 	rm -rf chsdi/static/js/blueimp-gallery.min.js
 	rm -rf chsdi/static/js/d3.min.js
 	rm -rf chsdi/static/js/d3-tip.js
-
-.PHONY: pythonclean
-pythonclean: cleanall
-	rm -rf local
