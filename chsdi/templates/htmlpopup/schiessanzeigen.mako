@@ -39,7 +39,7 @@ pdf = 'pdf_%s' % lang
     ## # iterating weekdays
       % for i in range(len(c['attributes']['wochentag'])):
         <tr><td>${_('ch.vbs.schiessanzeigen.wochentag.%s' % str(c['attributes']['wochentag'][i]%7+1))}</td>
-        <td>${c['attributes']['belegungsdatum'][i].strftime("%d.%m.%Y")}</td>
+        <td>${c['attributes']['belegungsdatum'][i]}</td>
     ## # special case no shooting
         % if c['attributes']['kein_schiessen'][i]:
         <td colspan="2">${_('ch.vbs.schiessanzeigen.kein_schiessen')}</td></tr>

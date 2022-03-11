@@ -38,11 +38,6 @@ def register(name, klass):
     bodmap.setdefault(name, []).append(klass)
 
 
-def register_perimeter(name, klass):
-    name = unicode(name)
-    perimetermap.setdefault(name, []).append(klass)
-
-
 def register_oereb(name, klass):
     name = unicode(name)
     oerebmap.setdefault(name, []).append(klass)
@@ -71,13 +66,6 @@ def set_models_srid(models, srid):
     for m in models:
         ms.append(m)
     return ms
-
-
-def perimeter_models_from_bodid(bodId, srid=21781):
-    perimeter_models = perimetermap.get(bodId)
-    if perimeter_models is None:
-        return models_from_bodid(bodId, srid=srid)
-    return set_models_srid(perimeter_models, srid)
 
 
 def oereb_models_from_bodid(bodId, scale=None, srid=21781):

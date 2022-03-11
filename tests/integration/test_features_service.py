@@ -608,151 +608,6 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<iframe src=')
 
-    def test_cut_all_dataset(self):
-        params = {'layers': 'all:ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', resp.json)
-        self.assertIn('groupby', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
-        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
-        self.assertIn('area', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
-
-    def test_cut_all_dataset_lv95(self):
-        params = {'layers': 'all:ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', 'sr': '2056'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung', resp.json)
-        self.assertIn('groupby', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
-        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
-        self.assertIn('area', resp.json['ch.swisstopo.digitales-hoehenmodell_25_reliefschattierung'][0])
-
-    def test_cut_no_group_geom_only(self):
-        params = {'geometryType': 'esriGeometryEnvelope',
-                  'geometry': '545000,145000,555000,170005',
-                  'layers': 'all:ch.swisstopo.images-swissimage.metadata'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.images-swissimage.metadata', resp.json)
-        self.assertIn('area', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
-        self.assertIn('groupby', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
-        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
-
-        params = {'geometryType': 'esriGeometryEnvelope',
-                  'geometry': '545000,145000,555000,170005',
-                  'layers': 'all:ch.swisstopo.pixelkarte-farbe-pk50.noscale'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.pixelkarte-farbe-pk50.noscale', resp.json)
-        self.assertIn('area', resp.json['ch.swisstopo.pixelkarte-farbe-pk50.noscale'][0])
-        self.assertIn('groupby', resp.json['ch.swisstopo.pixelkarte-farbe-pk50.noscale'][0])
-        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.pixelkarte-farbe-pk50.noscale'][0])
-
-    def test_cut_no_group_geom_only_lv95(self):
-        params = {'geometryType': 'esriGeometryEnvelope',
-                  'geometry': shift_to_lv95('545000,145000,555000,170005'),
-                  'layers': 'all:ch.swisstopo.images-swissimage.metadata',
-                  'sr': '2056'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        result = resp.json['ch.swisstopo.images-swissimage.metadata'][0]
-        self.assertIn('ch.swisstopo.images-swissimage.metadata', resp.json)
-        self.assertIn('area', result)
-        self.assertGreater(result['area'], 0)
-        self.assertIn('groupby', result)
-        self.assertIn('groupbyvalue', result)
-
-        params = {'geometryType': 'esriGeometryEnvelope',
-                  'geometry': shift_to_lv95('545000,145000,555000,170005'),
-                  'layers': 'all:ch.swisstopo.pixelkarte-farbe-pk50.noscale',
-                  'sr': '2056'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        result = resp.json['ch.swisstopo.pixelkarte-farbe-pk50.noscale'][0]
-        self.assertIn('ch.swisstopo.pixelkarte-farbe-pk50.noscale', resp.json)
-        self.assertIn('area', result)
-        self.assertGreater(result['area'], 0)
-        self.assertIn('groupby', result)
-        self.assertIn('groupbyvalue', result)
-
-    def test_cut_bad_geom(self):
-        params = {'geometryType': 'esriGeometryEnvelope',
-                  'geometry': '545000,145000,555000',
-                  'layers': 'all:ch.swisstopo.images-swissimage.metadata'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=400)
-        resp.mustcontain('Please provide a valid geometry')
-
-    def test_cut_bad_geom_type(self):
-        params = {'geometryType': 'esriGeometryPoint',
-                  'geometry': '545000,145000,555000,170005',
-                  'layers': 'all:ch.swisstopo.images-swissimage.metadata'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=400)
-        resp.mustcontain('Please provide a valid geometry type. Available: (esriGeometryPolygon, esriGeometryEnvelope)')
-
-    def test_cut_with_group_geom_only(self):
-        params = {'geometryType': 'esriGeometryEnvelope',
-                  'geometry': '545000,145000,555000,170005',
-                  'layers': 'all:ch.swisstopo.images-swissimage.metadata',
-                  'groupby': 'datenstand'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.images-swissimage.metadata', resp.json)
-        self.assertGreater(len(resp.json['ch.swisstopo.images-swissimage.metadata']), 1)
-        self.assertIn('area', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
-        self.assertIn('groupby', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
-        self.assertIn('groupbyvalue', resp.json['ch.swisstopo.images-swissimage.metadata'][0])
-
-    def test_cut_swissimage_product_whole_dataset(self):
-        params = {'layers': 'all:ch.swisstopo.swissimage-product',
-                  'groupby': 'resolution'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.swissimage-product', resp.json)
-        self.assertEqual(len(resp.json['ch.swisstopo.swissimage-product']), 2)
-        self.assertGreater(len(resp.json['ch.swisstopo.swissimage-product']), 1)
-        # A bit more than Switzerland should be covered by either resolution: 0.25 or 0.50m
-        totalArea = 0
-        for group in resp.json['ch.swisstopo.swissimage-product']:
-            totalArea += group['area']
-        self.assertGreaterEqual(totalArea, 45045)
-
-    def test_cut_with_feature_clipper(self):
-        params = {'clipper': 'ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill:2222',
-                  'layers': 'all:ch.swisstopo.swisstlm3d-karte-farbe'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.swisstlm3d-karte-farbe', resp.json)
-        self.assertEqual(len(resp.json['ch.swisstopo.swisstlm3d-karte-farbe']), 1)
-
-    def test_cut_total_area(self):
-        params = {'layers': 'all:ch.swisstopo.swisstlm3d-karte-farbe'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.swisstlm3d-karte-farbe', resp.json)
-        self.assertEqual(len(resp.json['ch.swisstopo.swisstlm3d-karte-farbe']), 1)
-
-    def test_cut_complex_polygon_and_two_layers_with_groups(self):
-        params = {'geometry': '{"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}',
-                  'geometryType': 'esriGeometryPolygon', 'layers': 'all:ch.swisstopo.images-swissimage.metadata,ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
-                  'groupby': 'datenstand,kanton'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertIn('ch.swisstopo.images-swissimage.metadata', resp.json)
-        self.assertIn('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', resp.json)
-        self.assertEqual('datenstand', resp.json['ch.swisstopo.images-swissimage.metadata'][0]['groupby'])
-
-    def test_cut_total_wrong_id(self):
-        params = {'layers': 'all:foo'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=400)
-        resp.mustcontain('No GeoTable was found for foo')
-
-    def test_cut_bad_clipper_layer_id(self):
-        params = {'clipper': 'foo:2222', 'layers': 'all:ch.swisstopo.swisstlm3d-karte-farbe'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=400)
-        resp.mustcontain('No Vector Table was found for foo')
-
-    def test_cut_bad_clipper_feature_id(self):
-        params = {'clipper': 'ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill:toto',
-                  'layers': 'all:ch.swisstopo.images-swissimage.metadata', 'groupby': 'datenstand'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=404)
-        resp.mustcontain('No feature with id toto')
-
-    def test_cut_outside_extent(self):
-        params = {'layers': 'all:ch.swisstopo.swissimage-product',
-                  'geometryType': 'esriGeometryEnvelope',
-                  'geometry': '478968,280720,486572,292875'}
-        resp = self.testapp.get('/rest/services/ech/GeometryServer/cut', params=params, status=200)
-        self.assertEqual(list(resp.json.keys())[0], 'ch.swisstopo.swissimage-product')
-        self.assertEqual(list(resp.json['ch.swisstopo.swissimage-product'])[0]['area'], 0.0)
-
     @skipUnless(s3_tests, "Requires AWS S3 access")
     def test_feature_grid_valid_feature(self):
         layer_id = 'ch.bfe.windenergie-geschwindigkeit_h50'
@@ -844,7 +699,7 @@ class TestReleasesService(TestsBase):
                 "18981231", "19021231", "19051231", "19061231", "19081231", "19091231",
                 "19121231", "19221231", "19231231", "19281231", "19331231", "19591231",
                 "19651231", "19701231", "19761231", "19821231", "19881231", "19941231",
-                "20001231", "20071231", "20171231"]
+                "20001231", "20071231", "20171231", "20201231"]
         for idx, i in enumerate(ist):
             self.assertEqual(i, soll[idx], str(idx))
 
@@ -906,7 +761,8 @@ class TestReleasesService(TestsBase):
         soll = ["18611231", "18641231", "18661231", "18711231", "18751231", "18761231",
                 "18791231", "18821231", "18841231", "18961231", "18971231", "19011231",
                 "19131231", "19311231", "19421231", "19551231", "19571231", "19641231",
-                "19701231", "19761231", "19821231", "19881231", "19941231", "20001231", "20061231", "20121231"]
+                "19701231", "19761231", "19821231", "19881231", "19941231", "20001231",
+                "20061231", "20121231", "20181231"]
         for idx, i in enumerate(ist):
             self.assertEqual(i, soll[idx], str(idx))
 

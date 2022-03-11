@@ -43,7 +43,7 @@ class FixpunkteLfp1(Base, Vector):
     l_gen_lv95 = Column('l_gen_lv95', Numeric)
     h_gen_lv95 = Column('h_gen_lv95', Numeric)
     l_zuv_lv95 = Column('l_zuv_lv95', Unicode)
-    h_zuv_lv95 = Column('l_zuv_lv95', Unicode)
+    h_zuv_lv95 = Column('h_zuv_lv95', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 

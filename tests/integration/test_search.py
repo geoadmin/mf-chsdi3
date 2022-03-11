@@ -152,10 +152,10 @@ class TestSearchServiceView(TestsBase):
             self.assertEqual(resp.json['bbox'], projections[sr])
 
     def test_search_locations_geojson_with_projection(self):
-        projections = {'2056': [2534437.97, 1150655.173, 2544978.008, 1161554.51],
-                       '4326': [6.582954, 46.503985, 6.721812, 46.602977],
-                       '3857': [732811.1, 5861484.2, 748268.7, 5877509.0],
-                       '21781': [534437.969999999, 150655.173000001, 544978.008000001, 161554.509999998]}
+        projections = {'2056': [2534421.17100006, 1145150.43900561, 2544978.00800004, 1161554.51000385],
+                       '4326': [6.582735, 46.454467, 6.722468, 46.602977],
+                       '3857': [732786.7, 5853479.5, 748341.7, 5877509],
+                       '21781': [534421.171000061, 145150.439005612, 544978.008000039, 161554.510003855]}
 
         params = {
             'type': 'locations',
@@ -496,8 +496,8 @@ class TestSearchServiceView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertGreater(len(resp.json['results']), 0)
-        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin isabelle-de-montolieu 2 1010 lausanne 5586 lausanne ch vd')
-        self.assertEqual(resp.json['results'][0]['attrs']['num'], 2)
+        self.assertEqual(resp.json['results'][0]['attrs']['detail'], 'chemin isabelle-de-montolieu 21.2 1010 lausanne 5586 lausanne ch vd')
+        self.assertEqual(resp.json['results'][0]['attrs']['num'], 212)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)
 
     def test_search_address_with_letters(self):
