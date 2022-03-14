@@ -3099,20 +3099,20 @@ class AmtlichesAdressVerzeichnis(Base, Vector):
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/addressverzeichnis.mako'
     __bodId__ = 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis'
-    __label__ = 'id'
-    __queryable_attributes__ = ['id', 'bdg_egid', 'adr_edid', 'str_esid', 'str_label', 'adr_number']
-    id = Column('adr_egaid', BigInteger, primary_key=True)
+    __label__ = 'adr_egaid'
+    __queryable_attributes__ = ['adr_egaid', 'bdg_egid', 'adr_edid', 'str_esid', 'stn_label', 'adr_number']
+    id = Column('id', BigInteger, primary_key=True)
+    adr_egaid = Column('adr_egaid', BigInteger)
     bdg_egid = Column('bdg_egid', BigInteger)
     adr_edid = Column('adr_edid', Integer)
     str_esid = Column('str_esid', Integer)
-    str_label = Column('str_label', Unicode)
+    stn_label = Column('stn_label', Unicode)
     adr_number = Column('adr_number', Unicode)
-    adr_zip = Column('adr_zip', Unicode)
+    zip_label = Column('zip_label', Unicode)
     com_fosnr = Column('com_fosnr', SmallInteger)
     com_name = Column('com_name', Unicode)
     adr_status = Column('adr_status', Unicode)
     adr_official = Column('adr_official', Boolean)
-    adr_valid = Column('adr_reliable', Boolean)
     bdg_category = Column('bdg_category', Unicode)
     adr_modified = Column('adr_modified', Unicode)
     the_geom = Column(Geometry2D)
