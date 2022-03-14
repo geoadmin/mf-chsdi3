@@ -43,7 +43,7 @@ API & applications
 Geodata
 *******
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Reserved zones airports modification V2.0 PLR (ch.bazl.projektierungszonen-flughafenanlagen_aenderung_v2_0.oereb) WMS and OEREB FS only`                                                                         |
+| New    | `Reserved zones airports modification V2.0 PLR (ch.bazl.projektierungszonen-flughafenanlagen_aenderung_v2_0.oereb) WMS only`                                                                         |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Safety zone plan modification V2.0 PLR (ch.bazl.sicherheitszonenplan_aenderung_v2_0.oereb) WMS only`                                                                                                             |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
