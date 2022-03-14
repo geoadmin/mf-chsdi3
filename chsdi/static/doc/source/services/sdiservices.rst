@@ -1119,7 +1119,7 @@ Example
 XYZ
 ----
 
-XYZ tile layers are layers comprised of multiple tiles. The XYZ tile service provides tiles based on a URL template with values substituted in for Zoom Level and X and Y counts of the tile. Unlike WMTS that follow the OGC standard, the XYZ tile service are often used in Web Mapping Context and are therefore a de facto standard. The XYZ tile service is provided with a fixed projection ( EPSG:3857). 
+XYZ tile layers are layers comprised of multiple tiles. The XYZ tile service provides tiles based on a URL template with values substituted in for Zoom Level and X and Y counts of the tile. Unlike WMTS that follow the OGC standard, the XYZ tile service is often used in Web Mapping Context and is therefore a de facto standard. The XYZ tile service is provided with a fixed projection ( EPSG:3857). 
 
 .. note::
     We encourage  users to use WMTS layer  service which provides predefined tiles (like an XYZ service) with an option to use a RESTful templated URL or a KVP request and with a variety of projections and grids. Moreover, using WMTS GetCapabilities provides an up to date Metadata Service for the available layers.
