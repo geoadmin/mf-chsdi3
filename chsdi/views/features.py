@@ -20,11 +20,10 @@ from geoalchemy2.types import Geometry
 from chsdi.lib.validation.features import HtmlPopupServiceValidation, ExtendedHtmlPopupServiceValidation, GetFeatureServiceValidation, AttributesServiceValidation
 from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.validation.identify import IdentifyServiceValidation
-from chsdi.lib.validation.geometryservice import GeometryServiceValidation
 from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d, make_geoadmin_url, shift_to, unnacent_where_text
 from chsdi.lib.filters import full_text_search
 from chsdi.models.clientdata_dynamodb import get_file_from_bucket
-from chsdi.models import models_from_bodid, perimeter_models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
+from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.bod import OerebMetadata, get_bod_model
 from chsdi.models.vector import get_scale, get_resolution, has_buffer
 from chsdi.models.grid import get_grid_spec, get_grid_layer_properties
@@ -484,90 +483,6 @@ def _render_feature_template(options, request):
         }, request=request)
 
 
-def _get_cut_response_template(area, groupby, groupbyvalue):
-    return {
-        'area': area,
-        'groupby': groupby,
-        'groupbyvalue': groupbyvalue
-    }
-
-
-def _get_areas_for_params(params, models):
-    ''' Returns a generator function that yields
-    a cut areas, layerIds and group attribute. '''
-    groupbyIdx = 0
-    for vectorLayer in models:
-        # Python2/3
-        bodId = next(iter(vectorLayer))
-        if params.groupby is not None:
-            models = [
-                m for m in vectorLayer[bodId]['models']
-                if hasattr(m, params.groupby[groupbyIdx])
-            ]
-            if len(models) == 0:
-                raise exc.HTTPBadRequest('Attribute %s not found for layer %s' % (
-                    params.groupby[groupbyIdx], bodId))
-        else:
-            models = vectorLayer[bodId]['models']
-        for model in models:
-            if all((params.geometry, params.geometryType)):
-                geomFilter = model.geom_intersects(
-                    params.geometry,
-                    params.srid
-                )
-                cutGeoms = model.geom_intersection(
-                    params.geometry,
-                    params.srid
-                )
-            elif not params.totalArea:
-                params.layerId = params.clipper[0]
-                params.featureIds = params.clipper[1].split(',')
-                params.returnGeometry = True
-                feature, clipperModel = next(_get_features(params, process=False))
-
-                geomFilter = model.geom_intersects(
-                    feature.the_geom,
-                    params.srid
-                )
-                cutGeoms = model.geom_intersection(
-                    feature.the_geom,
-                    params.srid
-                )
-            if params.groupby is not None:
-                query = params.request.db.query(
-                    getattr(model, params.groupby[groupbyIdx]).label('groupbyValue'),
-                    func.Sum(func.ST_Area(cutGeoms)).label('area')
-                ).filter(
-                    geomFilter
-                ).group_by(
-                    getattr(model, params.groupby[groupbyIdx])
-                )
-            elif params.totalArea:
-                query = params.request.db.query(
-                    func.Sum(func.ST_Area(model.geometry_column())).label('area')
-                )
-            else:
-                query = params.request.db.query(
-                    func.Sum(func.ST_Area(cutGeoms)).label('area')
-                ).filter(
-                    geomFilter
-                )
-            try:
-                for feature in query:
-                    area = feature.area if feature.area is not None else 0.0
-                    area = round(float(area) / (1000.0 * 1000.0), 2)  # convert to square kilometers
-                    groupby = params.groupby[groupbyIdx] if params.groupby is not None else None
-                    groupbyvalue = feature.groupbyValue if hasattr(feature, 'groupbyValue') else None
-                    resp = _get_cut_response_template(area, groupby, groupbyvalue)
-                    # Per default return all areas even if equal to 0
-                    yield {
-                        bodId: resp
-                    }
-            except Exception as e:
-                raise Exception(e)
-        groupbyIdx += 1
-
-
 def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None):
     ''' Returns a generator function that yields
     a feature. '''
@@ -778,55 +693,6 @@ def _format_search_text(columnType, searchText):
     elif isinstance(columnType, Geometry):
         raise exc.HTTPBadRequest('Find operations cannot be performed on geometry columns')
     return searchText
-
-
-@view_config(route_name='cut', renderer='jsonp')
-def _cut(request):
-    params = GeometryServiceValidation(request)
-    layerIds = params.layers
-    totalArea = params.totalArea
-
-    results = {}
-    models = []
-    # Organize models per layer
-    for layerId in layerIds:
-        # Never scale dependant
-        modelsForLayer = perimeter_models_from_bodid(layerId, srid=params.srid)
-        if totalArea and modelsForLayer:
-            for model in modelsForLayer:
-                if hasattr(model, '__totalArea__'):
-                    results[layerId] = [
-                        _get_cut_response_template(model.__totalArea__, None, None)
-                    ]
-                else:
-                    modelsPerLayer = {layerId: {'models': modelsForLayer}}
-                    models.append(modelsPerLayer)
-        else:
-            if modelsForLayer is not None:
-                modelsPerLayer = {layerId: {'models': modelsForLayer}}
-                models.append(modelsPerLayer)
-
-    if len(results.keys()) == 0 and len(models) == 0:
-        raise exc.HTTPBadRequest(
-            'No GeoTable was found for %s' % ' '.join(layerIds))
-
-    areas_gen = _get_areas_for_params(params, models)
-    while True:
-        try:
-            feature = next(areas_gen)
-        except InternalError as e:  # pragma: no cover
-            raise exc.HTTPInternalServerError(
-                'Your request generated the following database error: %s' % e.message.replace('\n', ''))
-        except StopIteration:
-            break
-        # Python2/3
-        bodId = next(iter(feature))
-        if bodId not in results:
-            results[bodId] = [feature[bodId]]
-        else:
-            results[bodId].append(feature[bodId])
-    # In square meters
-    return results
 
 
 def _process_feature(feature, params):

@@ -34,7 +34,6 @@
                  'ch.swisstopo.schneeschuhwandern',
                  'ch.swisstopo.swisstlm3d-strassen',
                  'ch.swisstopo.swisstlm3d-uebrigerverkehr',
-                 'ch.swisstopo.swisstlm3d-gewaessernetz',
                  'ch.swisstopo.swisstlm3d-eisenbahnnetz',
                  'ch.vbs.milairspacechart',
                  'ch.vbs.sperr-gefahrenzonenkarte',
