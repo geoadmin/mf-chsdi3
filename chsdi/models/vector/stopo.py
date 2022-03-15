@@ -2268,7 +2268,6 @@ class Oerebkataster:
     oereb_status_it = Column('oereb_status_it', Unicode)
     oereb_status_rm = Column('oereb_status_rm', Unicode)
     oereb_status_en = Column('oereb_status_en', Unicode)
-    realestate_type = Column('realestate_type', Unicode)
     bfs_nr = Column('bfs_nr', Integer)
     firmenname = Column('firmenname', Unicode)
     adresszeile = Column('adresszeile', Unicode)
@@ -2288,6 +2287,7 @@ class OerebkatasterZoom1(Base, Oerebkataster, Vector):
     oereb_extract_pdf = Column('oereb_extract_pdf', Unicode)
     oereb_extract_url = Column('oereb_extract_url', Unicode)
     number = Column('number_', Integer)
+    realestate_type = Column('realestate_type', Unicode)
     __minscale__ = 1
     __maxscale__ = 50000
 
