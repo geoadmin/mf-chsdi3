@@ -627,7 +627,9 @@ class KatasterBelasteterStandorte(Base, Vector):
     untersuchungsstand_de = Column('untersuchungsstand_de', Unicode)
     untersuchungsstand_fr = Column('untersuchungsstand_fr', Unicode)
     untersuchungsstand_it = Column('untersuchungsstand_it', Unicode)
-    url = Column('url', Unicode)
+    url_de = Column('url_de', Unicode)
+    url_fr = Column('url_fr', Unicode)
+    url_it = Column('url_it', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
