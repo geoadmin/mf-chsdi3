@@ -27,9 +27,9 @@
     <tr>
         <td class="cell-left">${_('ch.bazl.flugplaetze-heliports.elevation')}</td>
         % if c['attributes']['elevation']:
-        <td>${int(round(c['attributes']['elevation']))}</td>
+            <td>${int(round(c['attributes']['elevation']))}</td>
         % else:
-        <td>-</td>
+            <td>-</td>
         % endif
     </tr>
 </%def>
