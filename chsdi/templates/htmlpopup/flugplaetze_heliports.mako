@@ -3,7 +3,8 @@
 <%def name="table_body(c, lang)">
     <tr>
         <td class="cell-left">${_('ch.bazl.flugplaetze-heliports.icao')}</td>
-        <td>${c['attributes']['icao'] or '-'}</td></tr>
+        <td>${c['attributes']['icao'] or '-'}</td>
+    </tr>
     <tr>
         <td class="cell-left">${_('ch.bazl.flugplaetze-heliports.name')}</td>
         <td>${c['attributes']['name'] or '-'}</td>
