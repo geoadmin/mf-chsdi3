@@ -520,15 +520,15 @@ class TestFeaturesView(TestsBase):
         self.assertIn(bodId + '=' + featureId + '&amp;time=1999', resp.text)
 
     def test_htmlpopup_scale_dependent(self):
-        params = {'mapExtent': '625622.5,210705,629147.5,212922.5',
+        params = {'mapExtent': '620000,180000,680000,230000',
                   'imageDisplay': '1410,887,96',
                   'lang': 'fr'}
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfe.windenergieanlagen/turbine_21/htmlPopup', params=params, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfe.windenergieanlagen/turbine_45/htmlPopup', params=params, status=200)
         resp.mustcontain('Puissance')
-        params = {'mapExtent': '588187.5,183652.5,658687.5,228002.5',
+        params = {'mapExtent': '650000,150000,700000,200000',
                   'imageDisplay': '1410,887,96',
                   'lang': 'fr'}
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfe.windenergieanlagen/facility_SCH/htmlPopup', params=params, status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfe.windenergieanlagen/facility_GUE/htmlPopup', params=params, status=200)
         resp.mustcontain('Type')
 
     def test_htmlpopup_cadastralwebmap(self):
