@@ -354,7 +354,9 @@ class KatasterBelasteterStandorteMilitaer(Base, Vector):
     untersuchungsmassnahmen_de = Column('untersuchungsmassnahmen_de', Unicode)
     untersuchungsmassnahmen_fr = Column('untersuchungsmassnahmen_fr', Unicode)
     untersuchungsmassnahmen_it = Column('untersuchungsmassnahmen_it', Unicode)
-    url = Column('url_kbs_auszug', Unicode)
+    url_de = Column('url_kbs_auszug_de', Unicode)
+    url_fr = Column('url_kbs_auszug_fr', Unicode)
+    url_it = Column('url_kbs_auszug_it', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.vbs.kataster-belasteter-standorte-militaer', KatasterBelasteterStandorteMilitaer)
