@@ -1043,7 +1043,9 @@ register('ch.swisstopo.dreiecksvermaschung', Dreiecksvermaschung)
 class GridstandTemplate:
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __label__ = 'lk_name'
-    id = Column('kbnum', Unicode, primary_key=True)
+    __template__ = 'templates/htmlpopup/gridstand.mako'
+    id = Column('gid', BigInteger, primary_key=True)
+    tileid = Column('tileid', Unicode)
     lk_name = Column('lk_name', Unicode)
     datenstand = Column('release', Integer)
     the_geom = Column(Geometry2D)
@@ -1057,10 +1059,10 @@ class GridstandPermiterTemplate:
 
 # PK 25
 
-class GridstandPk25Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
+
+class GridstandPk25Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk25.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk25_tilecache'
-    tileid = Column('tileid', Unicode)
 
 
 register('ch.swisstopo.pixelkarte-pk25.metadata', GridstandPk25Meta)
@@ -1068,10 +1070,9 @@ register('ch.swisstopo.pixelkarte-pk25.metadata', GridstandPk25Meta)
 # PK 50
 
 
-class GridstandPk50Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
+class GridstandPk50Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk50.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk50_tilecache'
-    tileid = Column('tileid', Unicode)
 
 
 register('ch.swisstopo.pixelkarte-pk50.metadata', GridstandPk50Meta)
@@ -1079,33 +1080,21 @@ register('ch.swisstopo.pixelkarte-pk50.metadata', GridstandPk50Meta)
 # PK 100
 
 
-class GridstandPk100Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
+class GridstandPk100Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk100.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk100_tilecache'
-    tileid = Column('tileid', Unicode)
 
 register('ch.swisstopo.pixelkarte-pk100.metadata', GridstandPk100Meta)
 
 # PK 200
 
 
-class GridstandPk200Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
+class GridstandPk200Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk200.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk200_tilecache'
-    tileid = Column('tileid', Unicode)
+    id = Column('kbnum', Unicode, primary_key=True)
 
 register('ch.swisstopo.pixelkarte-pk200.metadata', GridstandPk200Meta)
-
-# PK 500
-
-
-class GridstandPk500(Base, ShopProductClass, Vector):
-    __tablename__ = 'view_gridstand_datenhaltung_pk500_tilecache_shop'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk500.noscale'
-
-
-register('ch.swisstopo.pixelkarte-farbe-pk500.noscale', GridstandPk500)
 
 
 class GridstandSwissimage(Base, ShopStandardClass, Vector):
