@@ -423,14 +423,14 @@ It's important, that the parameters are correctly serialized and url-encoded, e.
     >>> import json
     >>> import urllib.parse
     >>> params = {
-            "ch.swisstopo.amtliches-strassenverzeichnis": "plzo = '8302 Kloten'"
+            "ch.swisstopo.amtliches-strassenverzeichnis": "zip_label = '8302 Kloten'"
         }
     >>> print(json.dumps(params))
-    {"ch.swisstopo.amtliches-strassenverzeichnis": "plzo = '8302 Kloten'"}
+    {"ch.swisstopo.amtliches-strassenverzeichnis": "zip_label = '8302 Kloten'"}
     >>> print(urllib.parse.quote(json.dumps(params)))
-    %7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%20%22plzo%20%3D%20%278302%20Kloten%27%22%7D
+    %7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%20%22zip_label%20%3D%20%278302%20Kloten%27%22%7D
     >>> print('&layerDefs={}'.format(urllib.parse.quote(json.dumps(params))))
-    &layerDefs=%7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%20%22plzo%20%3D%20%278302%20Kloten%27%22%7D
+    &layerDefs=%7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%20%22zip_label%20%3D%20%278302%20Kloten%27%22%7D
 
 
 Examples
@@ -535,7 +535,7 @@ Examples
 - Search for “Lavaux” in the field “bln_name” of the layer “ch.bafu.bundesinventare-bln” (infix match): `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bafu.bundesinventare-bln&searchText=Lavaux&searchField=bln_name&returnGeometry=false  <../../../rest/services/api/MapServer/find?layer=ch.bafu.bundesinventare-bln&searchText=Lavaux&searchField=bln_name&returnGeometry=false>`_
 - Search for “12316” in the field “egid” of the layer “ch.bfs.gebaeude_wohnungs_register” (infix match): `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=123164&searchField=egid&returnGeometry=false  <../../../rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=123164&searchField=egid&returnGeometry=false>`_
 - Search for “123164” in the field “egid” of the layer “ch.bfs.gebaeude_wohnungs_register” (exact match): `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=1231641&searchField=egid&returnGeometry=false&contains=false <../../../rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=1231641&searchField=egid&returnGeometry=false&contains=false>`_
-- Search for the Talstrasse in Commune 'Full-Reuenthal': `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.swisstopo.amtliches-strassenverzeichnis&searchText=Talstrasse&searchField=label&returnGeometry=false&contains=false&layerDefs={"ch.swisstopo.amtliches-strassenverzeichnis": "gdenr = 4307"} <../../../rest/services/api/MapServer/find?layer=ch.swisstopo.amtliches-strassenverzeichnis&searchText=Talstrasse&searchField=label&returnGeometry=false&contains=false&layerDefs=%7B"ch.swisstopo.amtliches-strassenverzeichnis"%3A%20"gdenr%20%3D%204307"%7D>`_
+- Search for the Talstrasse in Commune 'Full-Reuenthal': `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.swisstopo.amtliches-strassenverzeichnis&searchText=Talstrasse&searchField=stn_label&returnGeometry=false&contains=false&layerDefs={"ch.swisstopo.amtliches-strassenverzeichnis": "com_fosnr = 4307"} <../../../rest/services/api/MapServer/find?layer=ch.swisstopo.amtliches-strassenverzeichnis&searchText=Talstrasse&searchField=stn_label&returnGeometry=false&contains=false&layerDefs=%7B"ch.swisstopo.amtliches-strassenverzeichnis"%3A%20"com_fosnr%20%3D%204307"%7D>`_
 
 .. _featureresource_description:
 

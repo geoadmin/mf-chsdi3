@@ -853,7 +853,7 @@ class TestIdentifyService(TestsBase):
     def test_identify_query_offset(self):
         params = {'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
                   'returnGeometry': 'false',
-                  'where': 'gdename ilike \'%a%\''}
+                  'where': 'com_name ilike \'%a%\''}
         resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         params.update({'offset': '2'})
         self.assertNotIn('geometry', resp_1.json['results'][0])
