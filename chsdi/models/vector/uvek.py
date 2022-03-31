@@ -818,7 +818,6 @@ class FernWaermeAngebot(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     heatpotential = Column('heatpotential', Float)
-    heat_supplier_category = Column('heat_supplier_category', Integer)
     bezeichnung_de = Column('bezeichnung_de', Unicode)
     bezeichnung_fr = Column('bezeichnung_fr', Unicode)
     bezeichnung_it = Column('bezeichnung_it', Unicode)
