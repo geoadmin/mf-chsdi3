@@ -774,7 +774,7 @@ class TestReleasesService(TestsBase):
 
     def test_layer_without_releases(self):
         params = {'imageDisplay': '500,600,96', 'mapExtent': '611399.9999999999,158650,690299.9999999999,198150'}
-        self.testapp.get('/rest/services/all/MapServer/ch.swisstopo.images-swissimage.metadata/releases', params=params, status=400)
+        self.testapp.get('/rest/services/all/MapServer/ch.swisstopo.pixelkarte-farbe/releases', params=params, status=400)
 
     def test_unknown_layers(self):
         params = {'imageDisplay': '500,600,96', 'mapExtent': '611399.9999999999,158650,690299.9999999999,198150'}

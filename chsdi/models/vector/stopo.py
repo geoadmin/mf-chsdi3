@@ -1097,20 +1097,6 @@ class GridstandPk200Meta(Base, GridstandTemplate, Vector):
 register('ch.swisstopo.pixelkarte-pk200.metadata', GridstandPk200Meta)
 
 
-class GridstandSwissimage(Base, ShopStandardClass, Vector):
-    __tablename__ = 'view_gridstand_datenhaltung_swissimage_tilecache'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.images-swissimage.metadata'
-    __label__ = 'lk25_name'
-    id = Column('tilenumber', Unicode, primary_key=True)
-    tileid = Column('tileid', Unicode)
-    lk25_name  = Column('lk25_name', Unicode)
-    datenstand = Column('datenstand', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.images-swissimage.metadata', GridstandSwissimage)
-
-
 class GridstandSwissimageDop10(Base, Vector):
     __tablename__ = 'view_gridstand_datenhaltung_swissimage_dop10_tilecache'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
