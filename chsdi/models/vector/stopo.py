@@ -2931,12 +2931,13 @@ class HiksDufourMetadata(Base, Vector):
 register('ch.swisstopo.hiks-dufour.metadata', HiksDufourMetadata)
 
 
-class HiksSiegfriedTa25Metadata(Base, ShopStandardClass, Vector):
+class HiksSiegfriedTa25Metadata(Base, Vector):
     __tablename__ = 'view_gridstand_siegfried_ta25_shop'
+    __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta25.metadata'
-    number = Column('s_map_number', Unicode)
-    scale = Column('scale', Integer)
+    id = Column('kbnum', Integer, primary_key=True)
+    name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.hiks-siegfried-ta25.metadata', HiksSiegfriedTa25Metadata)
