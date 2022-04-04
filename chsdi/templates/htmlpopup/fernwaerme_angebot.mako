@@ -3,7 +3,6 @@
 <%def name="table_body(c, lang)">
 
 <%
-    lang = lang if lang in ('fr', 'it','en') else 'de'
     if not c['attributes']['heatpotential'] == None:
       heatpotential = "{:,}".format(int(c['attributes']['heatpotential'])).replace(',','\'')
     else:
