@@ -818,10 +818,6 @@ class FernWaermeAngebot(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     heatpotential = Column('heatpotential', Float)
-    bezeichnung_de = Column('bezeichnung_de', Unicode)
-    bezeichnung_fr = Column('bezeichnung_fr', Unicode)
-    bezeichnung_it = Column('bezeichnung_it', Unicode)
-    bezeichnung_en = Column('bezeichnung_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.fernwaerme-angebot', FernWaermeAngebot)
