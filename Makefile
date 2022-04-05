@@ -82,7 +82,7 @@ LAST_WMTS_PUBLIC_HOST := $(call lastvalue,wmts-public-host)
 LAST_GEOADMINHOST := $(call lastvalue,geoadminhost)
 LAST_API_URL := $(call lastvalue,api-url)
 LAST_HOST := $(call lastvalue,host)
-LAST_PUBLIC_BUCKET_HOST  := $(call lastvalue,public-bucket-host)
+LAST_LOADER_JS_BUCKET_HOST  := $(call lastvalue,loader-js-bucket-host)
 LAST_VECTOR_BUCKET := $(call lastvalue,vector-bucket)
 LAST_DATAGEOADMINHOST := $(call lastvalue,datageoadminhost)
 LAST_LINKEDDATAHOST := $(call lastvalue,linkeddatahost)
@@ -537,7 +537,7 @@ production.ini:  production.ini.in \
                 .venv/last-host \
                 .venv/last-kml-temp-dir \
                 .venv/last-http-proxy \
-                .venv/last-public-bucket-host \
+                .venv/last-loader-js-bucket-host \
                 .venv/last-vector-bucket \
                 .venv/last-datageoadminhost \
                 .venv/last-linkeddatahost \
@@ -564,7 +564,7 @@ production.ini:  production.ini.in \
 		--var "host=$(HOST)" \
 		--var "kml_temp_dir=$(KML_TEMP_DIR)" \
 		--var "http_proxy=$(HTTP_PROXY)" \
-		--var "public_bucket_host=$(PUBLIC_BUCKET_HOST)" \
+		--var "loader_js_bucket_host=$(LOADER_JS_BUCKET_HOST)" \
 		--var "vector_bucket=$(VECTOR_BUCKET)" \
 		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
 		--var "linkeddatahost=$(LINKEDDATAHOST)" \
@@ -671,8 +671,8 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 .venv/last-http-proxy::
 	$(call cachelastvariable,$@,$(HTTP_PROXY),$(LAST_HTTP_PROXY),http-proxy)
 
-.venv/last-public-bucket-host::
-	$(call cachelastvariable,$@,$(PUBLIC_BUCKET_HOST),$(LAST_PUBLIC_BUCKET_HOST),public-bucket-host)
+.venv/last-loader-js-bucket-host::
+	$(call cachelastvariable,$@,$(LOADER_JS_BUCKET_HOST),$(LAST_LOADER_JS_BUCKET_HOST),loader-js-bucket-host)
 
 .venv/last-vector-bucket::
 	$(call cachelastvariable,$@,$(VECTOR_BUCKET),$(LAST_VECTOR_BUCKET),vector-bucket)
