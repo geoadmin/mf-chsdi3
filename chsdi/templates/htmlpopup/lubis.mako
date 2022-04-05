@@ -102,7 +102,7 @@ viewer_url = get_viewer_url(request, params)
 % if 'contact_image_url' in c['attributes'] and c['attributes']['contact_image_url']:
 <tr>
   <td class="cell-left">${_('tt_lubis_url_canton')}</td>
-  <td><a href="${c['attributes']['contact_image_url']}" target="_blank">${c['attributes']['contact_image_url']}</a></td>
+  <td><a href="${c['attributes']['contact_image_url']}" target="_blank">${_('tt_lubis_url_canton')}</td>
 </tr>
 % endif
 
