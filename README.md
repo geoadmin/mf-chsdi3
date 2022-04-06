@@ -238,9 +238,6 @@ Apache/WSGI checker
 
     curl -I http://api3.geo.admin.ch/checker
 
-Idem, with DynamoDB and S3 bucket access
-
-    curl -I http://api3.geo.admin.ch/backend_checker
 
 ## Download WMS image legends
 

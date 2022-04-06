@@ -36,7 +36,7 @@ RedirectMatch permanent ^${apache_entry_path}/iipimage/(.*)$ ${apache_entry_path
 RedirectMatch ^${apache_entry_path}$ ${apache_entry_path}/
 
 
-# KML admin
+# KML admin TODO KML
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^${apache_entry_path}/(static/)?(info\.json|admin)         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
@@ -126,7 +126,7 @@ Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, 
 # kml file downloads
 AliasMatch ^${apache_entry_path}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${kml_temp_dir}/$1
 
-
+# TODO KML
 <LocationMatch ^${apache_entry_path}/(admin/kml|static/info.json)>
     AuthType Basic
     AuthName "Your IWI credential"
