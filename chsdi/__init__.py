@@ -97,7 +97,6 @@ def main(global_config, **settings):
     config.add_route('extendedHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/extendedHtmlPopup')
     config.add_route('search', '/rest/services/{map}/SearchServer')
     config.add_route('wmtscapabilities', '/rest/services/{map}/1.0.0/WMTSCapabilities.xml')
-    config.add_route('feedback', '/feedback')
     config.add_route('luftbilder', '/luftbilder/viewer.html')
     config.add_route('historicalmaps', '/historicalmaps/viewer.html')
     config.add_route('checker', '/checker')
