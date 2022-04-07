@@ -24,15 +24,22 @@ Who can use the GeoAdmin API ?
 
 The GeoAdmin API terms of use are accessible here: `Terms of Use <https://www.geo.admin.ch/terms-of-use>`_
 
-What is the license of the GeoAdmin API ?
-*****************************************
+What is the license of the GeoAdmin JS API ?
+********************************************
 
 The GeoAdmin JavaScript API has a BSD license.
+
+How many calls am I allowed to make ?
+*************************************
+
+20 requests per minute on a 24/7 average on any of the REST services are considered "fair use". If you need more - pls contact us via info@geo.admin.ch. Please keep in mind our terms
+https://www.geo.admin.ch/terms-of-use
+
 
 Are the GeoAdmin services running ?
 ***********************************
 
-The status of all GeoAdmin services and applications is available here: http://status.geo.admin.ch 
+The status of all GeoAdmin services and applications is available here: http://status.geo.admin.ch
 
 What are the technical restrictions of the GeoAdmin API ?
 *********************************************************
@@ -57,7 +64,7 @@ Feel free to use it and ask all the questions you want.
 Which layers are available ?
 ****************************
 
-From 1.3.2021 all layers can be freely used. 
+From 1.3.2021 all layers can be freely used.
 
 The following list contains all the free accessible layers:
 
@@ -104,7 +111,7 @@ The following list contains all the free accessible layers:
 Which layers have a tooltip?
 ****************************
 
-Not all the layers have a tooltip. The complete list of layer using the `htmlPopup <../../services/sdiservices.html#htmlpopup-resource>`_ service is 
+Not all the layers have a tooltip. The complete list of layer using the `htmlPopup <../../services/sdiservices.html#htmlpopup-resource>`_ service is
 the following. Note: some vector layer (GeoJSON) have a client-only tooltip and are not using this service:
 
 .. raw:: html
