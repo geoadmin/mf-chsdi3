@@ -196,10 +196,10 @@ To execute all tests, including _wmts_ and _varnish_ ones, which are deactivated
 
 ## Deactivate some tests
 
-You may deactivate tests requiring access to `DynamoDB`, 'AWS S3' or the 'Sphinx server', by 
+You may deactivate tests requiring access to 'AWS S3' or the 'Sphinx server', by 
 setting the following environmental variables to `0`
 
-    DYNAMODB_TESTS=0 SPHINX_TESTS=0 S3_TESTS=0 make test
+    SPHINX_TESTS=0 S3_TESTS=0 make test
 
 ### Resources for testing
 
@@ -214,13 +214,6 @@ The `search service` needs the `Sphinx search server` cluster, running on separa
 be skipped with:
 
     SPHINX_TESTS=0  make test
-
-#### AWS DynamoDB
-
-The `shortener service` uses on single `AWS DynamoDB` table on all three environment (`dev`, `int` and `prod`)
-These tests may be skipped with:
-
-    DYNAMODB_TESTS=0  make test
 
 #### AWS S3
 

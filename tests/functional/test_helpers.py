@@ -4,7 +4,7 @@ import unittest
 from pyramid import testing
 from pyramid.threadlocal import get_current_registry
 from chsdi.lib.helpers import (
-    make_agnostic, make_api_url, check_url, sanitize_url, _transform_point,
+    make_agnostic, sanitize_url, _transform_point,
     check_even, format_search_text, remove_accents, escape_sphinx_syntax,
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
     versioned, parse_box2d, center_from_box2d, format_scale,
@@ -64,44 +64,6 @@ class Test_Helpers(unittest.TestCase):
         test_path2 = 'http://junodummyducolozouzlouwioiii.ch'
         test_result2 = resource_exists(test_path2)
         self.assertFalse(test_result2)
-
-    def test_make_api_url(self):
-        request = testing.DummyRequest()
-        request.host = 'api3.geo.admin.ch'
-        request.scheme = 'http'
-        request.registry.settings = {}
-        request.registry.settings['apache_base_path'] = 'main'
-        api_url = make_api_url(request, agnostic=True)
-        self.assertTrue(not api_url.startswith('http://'))
-        self.assertTrue(api_url.startswith('//'))
-        self.assertEqual(api_url, '//api3.geo.admin.ch')
-
-        request.scheme = 'https'
-        api_url = make_api_url(request)
-        self.assertEqual(api_url, 'https://api3.geo.admin.ch')
-
-        request.host = 'localhost:9000'
-        request.scheme = 'http'
-        api_url = make_api_url(request)
-        self.assertEqual(api_url, api_url)
-
-    def test_check_url(self):
-        from pyramid.httpexceptions import HTTPBadRequest
-        url = None
-        config = {'shortener.allowed_hosts': 'admin.ch,swisstopo.ch,bgdi.ch'}
-        with self.assertRaises(HTTPBadRequest):
-            check_url(url, config)
-
-        url = 'dummy'
-        with self.assertRaises(HTTPBadRequest):
-            check_url(url, config)
-
-        url = 'http://dummy.ch'
-        with self.assertRaises(HTTPBadRequest):
-            check_url(url, config)
-
-        url = 'http://admin.ch'
-        self.assertEqual(url, check_url(url, config))
 
     def test_sanitize_url(self):
         base_url_string = 'http://somehost.com/some/path/here'
