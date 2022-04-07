@@ -34,7 +34,7 @@ Add _.pgpass_ to your environment
 
 Open _.pgpass_ and Add
 
-    pg.bgdi.ch:5432:*:${username}:${pass}
+    pg.bgdi.ch:5432:*:${PGUSER}:${PGPASS}
 
 Make sure PGUSER and PGPASS is set in your _.bashrc_ (for nosetests, potranslate and sphinx)
 
