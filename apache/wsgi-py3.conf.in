@@ -88,6 +88,11 @@ RewriteRule ^${APACHE_ENTRY_PATH}/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH
 RewriteRule ^${APACHE_ENTRY_PATH}/EPSG/(\d+)/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
 RewriteRule ^${APACHE_ENTRY_PATH}/EPSG/(\d+)/(de|fr|it|rm|en)/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1&lang=$2 [L,PT]
 
+# Loader.js service
+<LocationMatch ^${APACHE_ENTRY_PATH}/loader\.js>
+    Order allow,deny
+    Allow from all
+</LocationMatch>
 
 ############  WSGI #################################3
 
