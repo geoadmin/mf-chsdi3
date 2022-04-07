@@ -2558,18 +2558,16 @@ register('ch.swisstopo.geologie-gisgeol-flaechen-lt10km2', GisgeolFlaechenLt10km
 class Geocover:
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = 'ch.swisstopo.geologie-geocover'
-    the_geom = Column(Geometry2D)
-
-
-class GeocoverBase(Geocover):
     __label__ = 'description_de'
-    __maxscale__ = 70000
     id = Column('bgdi_id', Integer, primary_key=True)
     description_de = Column('description_de', Unicode)
     description_fr = Column('description_fr', Unicode)
+    erl_num = Column('erl_num', Unicode)
+    ber_num = Column('ber_num', Unicode)
+    the_geom = Column(Geometry2D)
 
 
-class GeocoverExtended(GeocoverBase):
+class GeocoverExtended(Geocover):
     spec_description_de = Column('spec_description_de', Unicode)
     spec_description_fr = Column('spec_description_fr', Unicode)
 
@@ -2608,7 +2606,7 @@ class GeocoverPointDrill(Base, GeocoverExtended, Vector):
     rem_fr = Column('rem_fr', Unicode)
 
 
-class GeocoverPointInfo(Base, GeocoverBase, Vector):
+class GeocoverPointInfo(Base, Geocover, Vector):
     __tablename__ = 'geocover_point_info'
     __template__ = 'templates/htmlpopup/geocover_point_info.mako'
 
@@ -2630,7 +2628,7 @@ class GeocoverPolygonAux2(Base, GeocoverExtended, Vector):
     __template__ = 'templates/htmlpopup/geocover_aux.mako'
 
 
-class GeocoverPolygonMain(Base, GeocoverBase, Vector):
+class GeocoverPolygonMain(Base, Geocover, Vector):
     __tablename__ = 'geocover_polygon_main'
     __template__ = 'templates/htmlpopup/geocover_polygon.mako'
     litstrat_link_de = Column('litstrat_link_de', Unicode)
@@ -2645,12 +2643,6 @@ class GeocoverPolygonMain(Base, GeocoverBase, Vector):
     orig_description_fr = Column('orig_description_fr', Unicode)
 
 
-class GeocoverGridShop(Base, Geocover, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_geocover_grid_shop'
-    __minscale__ = 70000
-    base = Column('base', Unicode)
-    version = Column('version', Unicode)
-
 register('ch.swisstopo.geologie-geocover', GeocoverLineAux)
 register('ch.swisstopo.geologie-geocover', GeocoverPointHydro)
 register('ch.swisstopo.geologie-geocover', GeocoverPointGeol)
@@ -2660,7 +2652,6 @@ register('ch.swisstopo.geologie-geocover', GeocoverPointStruct)
 register('ch.swisstopo.geologie-geocover', GeocoverPolygonAux1)
 register('ch.swisstopo.geologie-geocover', GeocoverPolygonAux2)
 register('ch.swisstopo.geologie-geocover', GeocoverPolygonMain)
-register('ch.swisstopo.geologie-geocover', GeocoverGridShop)
 
 
 class GeolGeocoverMetadata(Base, Geocover, ShopProductGroupClass, Vector):

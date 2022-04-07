@@ -24,4 +24,20 @@
     <tr><td class="cell-left">${_('geocover_tecto')}</td><td>${c['attributes'][tecto] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.geologie-geocover.chrono')}</td><td>${c['attributes'][chrono] or '-'}</td></tr>
     <tr><td class="cell-left">${_('geocover_orig_description')}</td><td>${c['attributes'][orig_description] or '-'}</td></tr>
+    <tr>
+        <td class="cell-left">${_('geocover_erl_num')}</td>
+        % if c['attributes']['erl_num']:
+        <td><a target ="_blank" href="https://data.geo.admin.ch/ch.swisstopo.geologie-geologischer_atlas/erlaeuterungen/${c['attributes']['erl_num']}">${_('link')}</a></td>
+        % else:
+        <td>-</td>
+        % endif
+    </tr>
+    <tr>
+        <td class="cell-left">${_('geocover_ber_num')}</td>
+        % if c['attributes']['ber_num']:
+        <td><a target ="_blank" href="https://data.geo.admin.ch/ch.swisstopo.geologie-geocover/berichte/${c['attributes']['ber_num']}">${_('link')}</a></td>
+        % else:
+        <td>-</td>
+        % endif
+    </tr>
 </%def>
