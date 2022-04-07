@@ -5,58 +5,6 @@ import boto3
 import pyramid.httpexceptions as exc
 
 
-'''
-CREATE a table
---------------
-
-import time
-from boto.dynamodb2.table import Table
-from boto.dynamodb2.fields import HashKey, GlobalKeysOnlyIndex
-
-table = Table.create(shorturl, schema=[
-    HashKey('url_short'),
-], throughput={
-    'read': 18,
-    'write': 18,
-},
-global_indexes=[
-    GlobalKeysOnlyIndex('UrlIndex', parts=[
-        HashKey('url')
-    ], throughput={
-        'read': 18,
-        'write': 18
-    }),
-])
-time.sleep(30)
-
-DROP a table
-------------
-
-from boto.dynamodb import connect_to_region
-
-conn = connect_to_region(region_name='eu-west-1')
-table=conn.get_table('shorturl')
-table.delete()
-
-'''
-
-
-class DynamodbConnection:
-    # This is a singleton. This is nice.
-    def __init__(self, region='eu-west-1'):
-        self.conn = None
-        self.region = region
-
-    def get(self):
-        if self.conn is None:
-            try:
-                self.conn = boto3.resource('dynamodb', region_name=self.region)
-            except Exception as e:  # pragma: no cover
-                raise exc.HTTPBadRequest(
-                    'DynamoDB: Error during connection init %s' % e)
-        return self.conn
-
-
 class S3Connect:
     def __init__(self, region='eu-west-1'):
         self.conn = None
@@ -74,21 +22,7 @@ class S3Connect:
         return self.conn
 
 
-dynamodb_connection = DynamodbConnection()
 s3_connection = S3Connect()
-
-
-def get_dynamodb_table(table_name='shorturl', region='eu-west-1'):
-    dyn = dynamodb_connection
-    dyn.region = region
-    conn = dyn.get()
-    try:
-        table = conn.Table(table_name)
-    except Exception as e:  # pragma: no cover
-        raise exc.HTTPInternalServerError(
-            'DynamoDB: Error during connection to the table %s\n%s' % (
-                table_name, e))
-    return table
 
 
 def get_file_from_bucket(bucket_name, file_name):

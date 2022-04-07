@@ -35,9 +35,6 @@ version = python_version()
       <h2 id="checkers">Checkers</h2>
           <a href="checker">Checker for home page</a> <br>
           <a href="checker_dev">Checker for dev page</a> <br>
-      <h2 id="shorten">Shorten url</h2>
-          <a href="shorten.json?url=https:%2F%2Fmf-geoadmin3.int.bgdi.ch%2F%3FX%3D164565.22%26Y%3D620538.74%26zoom%3D2%26lang%3Den%26topic%3Dlubis%26bgLayer%3Dch.swisstopo.pixelkarte-grau%26catalogNodes%3D1179,1180,1184,1186%26layers%3Dch.swisstopo.lubis-bildstreifen">Shorten Example</a> <br>
-          <a href="shorten/5f9f3359d3">Shorten link redirection</a> <br>
       <h2 id="mapservices">Map Services</h2>
           <h3>Mapservice (Layer metadata)</h3>
           <a href="rest/services/ech/MapServer">Topic (ech)</a> <br>

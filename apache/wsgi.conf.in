@@ -79,15 +79,6 @@ RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities.xml ${apache_entry_path
 RewriteRule ^${apache_entry_path}/EPSG/(\d+)/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
 RewriteRule ^${apache_entry_path}/EPSG/(\d+)/(de|fr|it|rm|en)/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1&lang=$2 [L,PT]
 
-# Shorten service
-RewriteCond %{HTTP_HOST} ^s.geo.admin.ch$
-RewriteRule ^${apache_entry_path}/(.*)$ ${apache_entry_path}/shorten/$1 [PT]
-
-<LocationMatch ^${apache_entry_path}/(loader\.js|shorten|shorten.json)>
-    Order allow,deny
-    Allow from all
-</LocationMatch>
-
 # define a process group
 # WSGIDaemonProcess, default are 1 process and 15 threads
 WSGIDaemonProcess mf-chsdi3:${apache_base_path} display-name=%{GROUP} user=${modwsgi_user} processes=${wsgi_processes} threads=${wsgi_threads}

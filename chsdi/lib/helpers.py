@@ -102,15 +102,6 @@ def make_agnostic(path):
         return path
 
 
-def make_api_url(request, agnostic=False):
-    base_path = request.registry.settings['apache_base_path']
-    base_path = '' if base_path == 'main' else '/' + base_path
-    host = request.host + base_path if 'localhost' not in request.host else request.host
-    if agnostic:
-        return ''.join(('//', host))
-    return ''.join((request.scheme, '://', host))
-
-
 def make_geoadmin_url(request, agnostic=False):
     protocol = request.scheme
     base_url = ''.join((protocol, '://', request.registry.settings['geoadminhost']))
@@ -125,21 +116,6 @@ def resource_exists(path, headers={'User-Agent': 'mf-geoadmin/python'}, verify=F
     except ConnectionError:
         return False
     return r.status_code == requests.codes.ok
-
-
-def check_url(url, config):
-    if url is None:
-        raise HTTPBadRequest('The parameter url is missing from the request')
-    parsedUrl = urlparse(url)
-    hostname = parsedUrl.hostname
-    if hostname is None:
-        raise HTTPBadRequest('Could not determine the hostname')
-    domain = ".".join(hostname.split(".")[-2:])
-    allowed_hosts = config['shortener.allowed_hosts'] if 'shortener.allowed_hosts' in config else ''
-    allowed_domains = config['shortener.allowed_domains'] if 'shortener.allowed_domains' in config else ''
-    if domain not in allowed_domains and hostname not in allowed_hosts:
-        raise HTTPBadRequest('Shortener can only be used for %s domains or %s hosts.' % (allowed_domains, allowed_hosts))
-    return url
 
 
 def sanitize_url(url):
