@@ -224,13 +224,10 @@ These tests may be skipped with:
 
 #### AWS S3
 
-The `file service` use to store and retrieve `KML` and `GL styles` use both `AWS S3` _buckets_ and `AWS DynamoDB` tables. 
-The tables are `vectortiles-styles-storage` and `geoadmin-file-storage` (same for all environments), and the buckets are `public-(dev|int|prod)-bgdi-ch`,
-used by both services. To run theses tests, both variables must be set to `true` (which is the default):
+S3 is used for the identify service and the feature grid (windatlas). The bucket is `mf-chsdi3-bgdi-grid-based-data`.
+To ski the tests that depends on S3, sets the `S3_TESTS` variables must be set to `false`:
 
-    S3_TESTS=1 DYNAMODB_TESTS=1 make test
-
-
+    S3_TESTS=0 make test
 
 # Checker
 
@@ -238,9 +235,6 @@ Apache/WSGI checker
 
     curl -I http://api3.geo.admin.ch/checker
 
-Idem, with DynamoDB and S3 bucket access
-
-    curl -I http://api3.geo.admin.ch/backend_checker
 
 ## Download WMS image legends
 

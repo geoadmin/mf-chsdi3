@@ -13,7 +13,7 @@ from past.utils import old_div
 try:
     from StringIO import StringIO
 except ImportError:
-    from io import StringIO, BytesIO
+    from io import StringIO
 
 from six.moves import zip, reduce, zip_longest
 from itertools import chain
@@ -575,31 +575,6 @@ def int_with_apostrophe(x):
 
 def get_loaderjs_url(request, version='3.6.0'):
     return make_agnostic(route_url('ga_api', request)) + '?version=' + version
-
-
-def gzip_string(string):
-    # Python2/3
-    if six.PY2:
-        infile = StringIO()
-        data = string
-    else:
-        infile = BytesIO()
-        try:
-            data = string.encode('utf8')
-        except (UnicodeDecodeError, AttributeError):
-            data = string
-    try:
-        gzip_file = gzip.GzipFile(fileobj=infile, mode='w', compresslevel=5)
-        gzip_file.write(data)
-        gzip_file.close()
-        infile.seek(0)
-        out = infile.getvalue()
-    except Exception as e:
-        log.error("Cannot gzip string: {}".format(e))
-        out = None
-    finally:
-        infile.close()
-    return out
 
 
 def decompress_gzipped_string(streaming_body):

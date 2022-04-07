@@ -45,9 +45,9 @@ RedirectMatch permanent ^${APACHE_ENTRY_PATH}/IIPIMAGE/(.*)$ ${APACHE_ENTRY_PATH
 RedirectMatch ^${APACHE_ENTRY_PATH}$ ${APACHE_ENTRY_PATH}/
 
 
-# KML admin
+# Info
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^${apache_entry_path}/(static/)?(info\.json|admin)         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+RewriteRule ^${apache_entry_path}/static/info\.json         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
 # If URI has numbers at the start, we cache a year
 # This allows a client to create their own cache and
@@ -103,15 +103,15 @@ RewriteRule ^${APACHE_ENTRY_PATH}/(.*)$ ${APACHE_ENTRY_PATH}/shorten/$1 [PT]
 # LoadModule wsgi_module modules/mod_wsgi.so
 
 #don't forget this line
-# WSGISocketPrefix /var/run/wsgi 
+# WSGISocketPrefix /var/run/wsgi
 
 WSGIApplicationGroup %{GLOBAL}
 WSGIPassAuthorization On
 
 WSGIDaemonProcess mf-chsdi3:${APACHE_BASE_PATH} display-name=%{GROUP} user=${MODWSGI_USER} processes=${WSGI_PROCESSES} threads=${WSGI_THREADS} \
    python-path=${INSTALLDIR}/.venv/lib/python3.7/site-packages \
-   python-home=${INSTALLDIR}/.venv  
- 
+   python-home=${INSTALLDIR}/.venv
+
 
 # define the path to the WSGI app
 WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${WSGI_APP}
@@ -158,11 +158,9 @@ Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, 
 # kml file downloads
 AliasMatch ^${APACHE_ENTRY_PATH}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${KML_TEMP_DIR}/$1
 
-# KML admin
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^${APACHE_ENTRY_PATH}/admin         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
-<LocationMatch ^${APACHE_ENTRY_PATH}/(admin/kml|static/info.json)>
+# Info
+<LocationMatch ^${APACHE_ENTRY_PATH}/static/info.json>
     AuthType Basic
     AuthName "Your IWI credential"
     # Optional line:
