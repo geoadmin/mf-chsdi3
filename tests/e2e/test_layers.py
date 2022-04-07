@@ -23,8 +23,6 @@ from chsdi.models.grid import get_grid_spec
 if six.PY3:
     long = int
 
-DO_S3_TESTS = int(os.environ.get('S3_TESTS', 1)) == 1
-
 
 class TestLayerService(TestsBase):
     def test_one(self):
