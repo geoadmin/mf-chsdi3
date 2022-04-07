@@ -7,7 +7,6 @@ export DBPORT=5432
 export DBSTAGING=int
 export DEPLOY_TARGET=int
 export GEODATA_STAGING=integration
-export GEOADMIN_FILE_STORAGE_BUCKET=public-int-bgdi-ch
 export GEOADMINHOST=mf-geoadmin3.int.bgdi.ch
 export HOST=mf-chsdi3.int.bgdi.ch
 export KEEP_VERSION=true
@@ -24,6 +23,5 @@ export WSGI_THREADS=15
 export CMSGEOADMINHOST=https://cms.geo.admin.ch
 export LINKEDDATAHOST=https://ld.geo.admin.ch
 export APACHE_LOG_LEVEL=warn
-export SHORTENER_ALLOWED_DOMAINS="admin.ch, swisstopo.ch, bgdi.ch"
 export CACHE_CONTROL="max-age=1800, public"
 export DYNAMIC_TRANSLATION=1

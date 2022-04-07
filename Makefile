@@ -42,17 +42,6 @@ DATAGEOADMINHOST ?= data.geo.admin.ch
 AWS_DEFAULT_REGION ?= eu-west-1
 # ECR region currently differs from the AWS_DEFAULT_REGION
 AWS_REGION_ECR ?= eu-central-1
-SHORTENER_ALLOWED_DOMAINS := admin.ch, swisstopo.ch, bgdi.ch
-SHORTENER_ALLOWED_HOSTS ?=
-# A single table for dev, int and prod. Different name for each build test
-GEOADMIN_FILE_STORAGE_TABLE_NAME ?= geoadmin-file-storage
-GEOADMIN_FILE_STORAGE_TABLE_REGION ?= $(AWS_DEFAULT_REGION)
-GEOADMIN_FILE_STORAGE_BUCKET ?= public-dev-bgdi-ch
-GLSTYLES_STORAGE_TABLE_NAME ?= vectortiles-styles-storage
-GLSTYLES_STORAGE_TABLE_REGION ?= $(AWS_DEFAULT_REGION)
-GLSTYLES_STORAGE_BUCKET ?= $(GEOADMIN_FILE_STORAGE_BUCKET)
-SHORTENER_TABLE_NAME ?= shorturl
-SHORTENER_TABLE_REGION ?= $(AWS_DEFAULT_REGION)
 PYPI_URL ?= https://pypi.org/simple/
 GITHUB_LAST_COMMIT=$(shell curl -s  https://api.github.com/repos/geoadmin/mf-chsdi3/commits | jq -r '.[0].sha')
 DYNAMIC_TRANSLATION ?= 1
@@ -89,21 +78,12 @@ LAST_ALTI_URL := $(call lastvalue,alti-url)
 LAST_API_URL := $(call lastvalue,api-url)
 LAST_SHOP_URL := $(call lastvalue,shop-url)
 LAST_HOST := $(call lastvalue,host)
-LAST_GEOADMIN_FILE_STORAGE_BUCKET := $(call lastvalue,geoadmin-file-storage-bucket)
-LAST_GEOADMIN_FILE_STORAGE_TABLE_NAME := $(call lastvalue,geoadmin-file-storage-table-name)
-LAST_GEOADMIN_FILE_STORAGE_TABLE_REGION := $(call lastvalue,geoadmin-file-storage-table-region)
-LAST_GLSTYLES_STORAGE_TABLE_NAME := $(call lastvalue,glstyles-storage-table-name)
-LAST_GLSTYLES_STORAGE_TABLE_REGION := $(call lastvalue,glstyles-storage-table-region)
 LAST_PUBLIC_BUCKET_HOST  := $(call lastvalue,public-bucket-host)
-LAST_SHORTENER_ALLOWED_HOSTS := $(call lastvalue,shortener-allowed-hosts)
-LAST_SHORTENER_TABLE_NAME := $(call lastvalue,shortener-table-name)
-LAST_SHORTENER_TABLE_REGION := $(call lastvalue,shortener-table-region)
 LAST_VECTOR_BUCKET := $(call lastvalue,vector-bucket)
 LAST_DATAGEOADMINHOST := $(call lastvalue,datageoadminhost)
 LAST_CMSGEOADMINHOST := $(call lastvalue,cmsgeoadminhost)
 LAST_LINKEDDATAHOST := $(call lastvalue,linkeddatahost)
 LAST_OPENTRANS_API_KEY := $(call lastvalue,opentrans-api-key)
-LAST_SHORTENER_ALLOWED_DOMAINS := $(call lastvalue,shortener-allowed-domains)
 LAST_ROBOTS_FILE := $(call lastvalue,robots-file)
 LAST_WSGI_THREADS := $(call lastvalue,wsgi-threads)
 LAST_BRANCH_STAGING := $(call lastvalue,branch-staging)
@@ -580,21 +560,12 @@ production.ini:  production.ini.in \
                 .venv/last-host \
                 .venv/last-kml-temp-dir \
                 .venv/last-http-proxy \
-                .venv/last-geoadmin-file-storage-bucket \
-                .venv/last-geoadmin-file-storage-table-name \
-                .venv/last-geoadmin-file-storage-table-region \
-                .venv/last-glstyles-storage-table-name \
-                .venv/last-glstyles-storage-table-region \
                 .venv/last-public-bucket-host \
-                .venv/last-shortener-allowed-hosts \
                 .venv/last-vector-bucket \
                 .venv/last-datageoadminhost \
                 .venv/last-cmsgeoadminhost \
                 .venv/last-linkeddatahost \
                 .venv/last-opentrans-api-key \
-                .venv/last-shortener-allowed-domains \
-                .venv/last-shortener-table-name \
-                .venv/last-shortener-table-region \
                 .venv/last-dynamic-translation \
                 guard-OPENTRANS_API_KEY
 	@echo "${GREEN}Creating production.ini...${RESET}";
@@ -618,22 +589,13 @@ production.ini:  production.ini.in \
 		--var "host=$(HOST)" \
 		--var "kml_temp_dir=$(KML_TEMP_DIR)" \
 		--var "http_proxy=$(HTTP_PROXY)" \
-		--var "geoadmin_file_storage_bucket=$(GEOADMIN_FILE_STORAGE_BUCKET)" \
-		--var "geoadmin_file_storage_table_region=$(GEOADMIN_FILE_STORAGE_TABLE_REGION)" \
-		--var "geoadmin_file_storage_table_name=$(GEOADMIN_FILE_STORAGE_TABLE_NAME)" \
-		--var "glstyles_storage_table_name=$(GLSTYLES_STORAGE_TABLE_NAME)" \
-		--var "glstyles_storage_table_region=$(GLSTYLES_STORAGE_TABLE_REGION)" \
 		--var "public_bucket_host=$(PUBLIC_BUCKET_HOST)" \
-		--var "shortener_allowed_hosts=$(SHORTENER_ALLOWED_HOSTS)" \
-		--var "shortener_table_name=$(SHORTENER_TABLE_NAME)" \
-		--var "shortener_table_region=$(SHORTENER_TABLE_REGION)" \
 		--var "vector_bucket=$(VECTOR_BUCKET)" \
 		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
 		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
 		--var "linkeddatahost=$(LINKEDDATAHOST)" \
 		--var "opentrans_api_key=$(OPENTRANS_API_KEY)" \
-		--var "dynamic_translation=$(DYNAMIC_TRANSLATION)" \
-		--var "shortener_allowed_domains=$(SHORTENER_ALLOWED_DOMAINS)" $< > $@
+		--var "dynamic_translation=$(DYNAMIC_TRANSLATION)" $< > $@
 
 .venv/hooks: .venv/bin/git-secrets ./scripts/install-git-hooks.sh
 	@echo "${GREEN}Installing git hooks${RESET}";
@@ -754,29 +716,8 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 .venv/last-http-proxy::
 	$(call cachelastvariable,$@,$(HTTP_PROXY),$(LAST_HTTP_PROXY),http-proxy)
 
-.venv/last-geoadmin-file-storage-bucket::
-	$(call cachelastvariable,$@,$(GEOADMIN_FILE_STORAGE_BUCKET),$(LAST_GEOADMIN_FILE_STORAGE_BUCKET),geoadmin-file-storage-bucket)
-
-.venv/last-geoadmin-file-storage-table-name::
-	$(call cachelastvariable,$@,$(GEOADMIN_FILE_STORAGE_TABLE_NAME),$(LAST_GEOADMIN_FILE_STORAGE_TABLE_NAME),geoadmin-file-storage-table-name)
-
-.venv/last-geoadmin-file-storage-table-region::
-	$(call cachelastvariable,$@,$(GEOADMIN_FILE_STORAGE_TABLE_REGION),$(LAST_GEOADMIN_FILE_STORAGE_TABLE_REGION),geoadmin-file-storage-table-region)
-
-.venv/last-glstyles-storage-table-name::
-	$(call cachelastvariable,$@,$(GLSTYLES_STORAGE_TABLE_NAME),$(LAST_GLSTYLES_STORAGE_TABLE_NAME),glstyles-storage-table-name)
-
-.venv/last-glstyles-storage-table-region::
-	$(call cachelastvariable,$@,$(GLSTYLES_STORAGE_TABLE_REGION),$(LAST_GLSTYLES_STORAGE_TABLE_REGION),glstyles-storage-table-region)
-
 .venv/last-public-bucket-host::
 	$(call cachelastvariable,$@,$(PUBLIC_BUCKET_HOST),$(LAST_PUBLIC_BUCKET_HOST),public-bucket-host)
-
-.venv/last-shortener-table-name::
-	$(call cachelastvariable,$@,$(SHORTENER_TABLE_NAME),$(LAST_SHORTENER_TABLE_NAME),shortener-table-name)
-
-.venv/last-shortener-table-region::
-	$(call cachelastvariable,$@,$(SHORTENER_TABLE_REGION),$(LAST_SHORTENER_TABLE_REGION),shortener-table-region)
 
 .venv/last-vector-bucket::
 	$(call cachelastvariable,$@,$(VECTOR_BUCKET),$(LAST_VECTOR_BUCKET),vector-bucket)
@@ -792,12 +733,6 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-opentrans-api-key::
 	$(call cachelastvariable,$@,$(OPENTRANS_API_KEY),$(LAST_OPENTRANS_API_KEY),opentrans-api-key)
-
-.venv/last-shortener-allowed-domains::
-	$(call cachelastvariable,$@,$(SHORTENER_ALLOWED_DOMAINS),$(LAST_SHORTENER_ALLOWED_DOMAINS),shortener-allowed-domains)
-
-.venv/last-shortener-allowed-hosts::
-	$(call cachelastvariable,$@,$(SHORTENER_ALLOWED_HOSTS),$(LAST_SHORTENER_ALLOWED_HOSTS),shortener-allowed-hosts)
 
 .venv/last-dynamic-translation::
 	$(call cachelastvariable,$@,$(DYNAMIC_TRANSLATION),$(LAST_DYNAMIC_TRANSLATION),dynamic-translation)

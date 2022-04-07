@@ -97,46 +97,14 @@ def main(global_config, **settings):
     config.add_route('extendedHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/extendedHtmlPopup')
     config.add_route('search', '/rest/services/{map}/SearchServer')
     config.add_route('wmtscapabilities', '/rest/services/{map}/1.0.0/WMTSCapabilities.xml')
-    config.add_route('feedback', '/feedback')
-    config.add_route('qrcodegenerator', '/qrcodegenerator')
     config.add_route('luftbilder', '/luftbilder/viewer.html')
     config.add_route('historicalmaps', '/historicalmaps/viewer.html')
     config.add_route('checker', '/checker')
     config.add_route('checker_dev', '/checker_dev')
-    config.add_route('backend_checker', '/backend_checker')
     config.add_route('downloadkml', '/downloadkml')
     config.add_route('translations', '/rest/services/translations')
     config.add_route('wmsconfig', '/rest/services/wmsconfig')
 
-    # kml files
-    config.add_route('files_collection', '/files', request_method=('GET', 'POST', 'DELETE'))
-    add_cors_route(config,
-                   '/files',
-                   'files_collection',
-                   headers={'Access-Control-Allow-Credentials': 'true'},
-                   methods=['GET', 'POST', 'DELETE'])
-    config.add_route('files', '/files/{id}', request_method=('GET', 'POST', 'DELETE'))
-    add_cors_route(config,
-                   '/files/{id}',
-                   'files',
-                   headers={'Access-Control-Allow-Credentials': 'true'},
-                   methods=['GET', 'POST', 'DELETE'])
-
-    # glstyles json files
-    config.add_route('glstyles_collection', '/gl-styles', request_method=('GET', 'POST', 'DELETE'))
-    add_cors_route(config,
-                   '/gl-styles',
-                   'glstyles_collection',
-                   headers={'Access-Control-Allow-Credentials': 'true'},
-                   methods=['GET', 'POST', 'DELETE'])
-    config.add_route('glstyles', '/gl-styles/{id}', request_method=('GET', 'POST', 'DELETE'))
-    add_cors_route(config,
-                   '/gl-styles/{id}',
-                   'glstyles',
-                   headers={'Access-Control-Allow-Credentials': 'true'},
-                   methods=['GET', 'POST', 'DELETE'])
-
-    config.add_route('adminkml', '/admin/kml')
     config.add_route('stationboard', '/stationboard/stops/{id}')
     config.add_route('faqlist', '/rest/services/{map}/faqlist')
     config.add_route('color', '/color/{r},{g},{b}/{image}')
@@ -144,10 +112,6 @@ def main(global_config, **settings):
     # Some views for specific routes
     config.add_view(route_name='dev', renderer='chsdi:templates/index.mako')
     config.add_view(route_name='testi18n', renderer='chsdi:templates/testi18n.mako')
-
-    # Shortener
-    config.add_route('shorten', '/shorten.json')
-    config.add_route('shorten_redirect', '/shorten/{id}')
 
     # static view definitions
     config.add_static_view('static', 'chsdi:static')

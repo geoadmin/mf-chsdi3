@@ -135,10 +135,24 @@ class TestSearchServiceView(TestsBase):
         self.assertEqual(resp.json['bbox'], [420000, 30000, 900000, 510000])
 
     def test_search_layers_geojson_with_projection(self):
-        projections = {'2056': [2420000.0, 1029999.9, 2900000.0, 1509999.9],
-                       '4326': [5.140299, 45.398122, 11.591428, 49.66641],
-                       '3857': [572215.5, 5684416.9, 1290351.9, 6388703.1],
-                       '21781': [420000, 30000, 900000, 510000]}
+        projections = {
+            '2056': {
+                'proj': [2420000.0, 1029999.9, 2900000.0, 1509999.9],
+                'delta': 1
+            },
+            '4326': {
+                'proj': [5.140299, 45.398122, 11.591428, 49.66641],
+                'delta': 0.05
+            },
+            '3857': {
+                'proj': [572215.5, 5684416.9, 1290351.9, 6388703.1],
+                'delta': 1
+            },
+            '21781': {
+                'proj': [420000, 30000, 900000, 510000],
+                'delta': 1
+            }
+        }
         params = {
             'type': 'layers',
             'searchText': 'wand',
@@ -149,13 +163,34 @@ class TestSearchServiceView(TestsBase):
             resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
             self.assertEqual(resp.content_type, 'application/geo+json')
             self.assertEqual(resp.json['type'], 'FeatureCollection')
-            self.assertEqual(resp.json['bbox'], projections[sr])
+            self.assertAlmostEqual(
+                resp.json['bbox'][0], projections[sr]['proj'][0], delta=projections[sr]['delta'])
+            self.assertAlmostEqual(
+                resp.json['bbox'][1], projections[sr]['proj'][1], delta=projections[sr]['delta'])
+            self.assertAlmostEqual(
+                resp.json['bbox'][2], projections[sr]['proj'][2], delta=projections[sr]['delta'])
+            self.assertAlmostEqual(
+                resp.json['bbox'][3], projections[sr]['proj'][3], delta=projections[sr]['delta'])
 
     def test_search_locations_geojson_with_projection(self):
-        projections = {'2056': [2534421.17100006, 1145150.43900561, 2544978.00800004, 1161554.51000385],
-                       '4326': [6.582735, 46.454467, 6.722468, 46.602977],
-                       '3857': [732786.7, 5853479.5, 748341.7, 5877509],
-                       '21781': [534421.171000061, 145150.439005612, 544978.008000039, 161554.510003855]}
+        projections = {
+            '2056': {
+                'proj': [2534421.17100006, 1145150.43900561, 2544978.00800004, 1161554.51000385],
+                'delta': 1
+            },
+            '4326': {
+                'proj': [6.582735, 46.454467, 6.722468, 46.602977],
+                'delta': 0.05
+            },
+            '3857': {
+                'proj': [732786.7, 5853479.5, 748341.7, 5877509],
+                'delta': 1
+            },
+            '21781': {
+                'proj': [534421.171000061, 145150.439005612, 544978.008000039, 161554.510003855],
+                'delta': 1
+            }
+        }
 
         params = {
             'type': 'locations',
@@ -168,7 +203,14 @@ class TestSearchServiceView(TestsBase):
             resp = self.testapp.get('/rest/services/inspire/SearchServer', params=params, status=200)
             self.assertEqual(resp.content_type, 'application/geo+json')
             self.assertEqual(resp.json['type'], 'FeatureCollection')
-            self.assertEqual(resp.json['bbox'], projections[sr])
+            self.assertAlmostEqual(
+                resp.json['bbox'][0], projections[sr]['proj'][0], delta=projections[sr]['delta'])
+            self.assertAlmostEqual(
+                resp.json['bbox'][1], projections[sr]['proj'][1], delta=projections[sr]['delta'])
+            self.assertAlmostEqual(
+                resp.json['bbox'][2], projections[sr]['proj'][2], delta=projections[sr]['delta'])
+            self.assertAlmostEqual(
+                resp.json['bbox'][3], projections[sr]['proj'][3], delta=projections[sr]['delta'])
 
     def test_search_layers_with_cb(self):
         params = {

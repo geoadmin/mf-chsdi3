@@ -36,9 +36,9 @@ RedirectMatch permanent ^${apache_entry_path}/iipimage/(.*)$ ${apache_entry_path
 RedirectMatch ^${apache_entry_path}$ ${apache_entry_path}/
 
 
-# KML admin
+# Info
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^${apache_entry_path}/(static/)?(info\.json|admin)         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+RewriteRule ^${apache_entry_path}/static/info\.json         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
 # If URI has numbers at the start, we cache a year
 # This allows a client to create their own cache and
@@ -79,11 +79,8 @@ RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities.xml ${apache_entry_path
 RewriteRule ^${apache_entry_path}/EPSG/(\d+)/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
 RewriteRule ^${apache_entry_path}/EPSG/(\d+)/(de|fr|it|rm|en)/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1&lang=$2 [L,PT]
 
-# Shorten service
-RewriteCond %{HTTP_HOST} ^s.geo.admin.ch$
-RewriteRule ^${apache_entry_path}/(.*)$ ${apache_entry_path}/shorten/$1 [PT]
-
-<LocationMatch ^${apache_entry_path}/(loader\.js|shorten|shorten.json)>
+# Loader.js
+<LocationMatch ^${apache_entry_path}/loader\.js>
     Order allow,deny
     Allow from all
 </LocationMatch>
@@ -126,8 +123,8 @@ Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, 
 # kml file downloads
 AliasMatch ^${apache_entry_path}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${kml_temp_dir}/$1
 
-
-<LocationMatch ^${apache_entry_path}/(admin/kml|static/info.json)>
+# Info
+<LocationMatch ^${apache_entry_path}/static/info.json>
     AuthType Basic
     AuthName "Your IWI credential"
     # Optional line:
