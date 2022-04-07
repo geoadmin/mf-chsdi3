@@ -45,9 +45,9 @@ RedirectMatch permanent ^${APACHE_ENTRY_PATH}/IIPIMAGE/(.*)$ ${APACHE_ENTRY_PATH
 RedirectMatch ^${APACHE_ENTRY_PATH}$ ${APACHE_ENTRY_PATH}/
 
 
-# KML admin
+# Info
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^${apache_entry_path}/(static/)?(info\.json|admin)         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+RewriteRule ^${apache_entry_path}/static/info\.json         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
 # If URI has numbers at the start, we cache a year
 # This allows a client to create their own cache and
@@ -158,12 +158,9 @@ Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, 
 # kml file downloads
 AliasMatch ^${APACHE_ENTRY_PATH}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${KML_TEMP_DIR}/$1
 
-# KML admin TODO KML
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^${APACHE_ENTRY_PATH}/admin         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
-# TODO KML
-<LocationMatch ^${APACHE_ENTRY_PATH}/(admin/kml|static/info.json)>
+# Info
+<LocationMatch ^${APACHE_ENTRY_PATH}/static/info.json>
     AuthType Basic
     AuthName "Your IWI credential"
     # Optional line:
