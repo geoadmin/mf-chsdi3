@@ -2674,53 +2674,41 @@ class GeolGeocoverMetadata(Base, Geocover, ShopProductGroupClass, Vector):
 register('ch.swisstopo.geologie-geocover.metadata', GeolGeocoverMetadata)
 
 
-class Ga25Atlas:
+class GeologischerAtlas:
     __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas'
+    __label__ = 'description'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    description = Column('description', Unicode)
+    erl_num = Column('erl_num', Unicode)
+    leg_num = Column('leg_num', Unicode)
     the_geom = Column(Geometry2D)
 
 
-class Ga25AtlasGrid(Base, Ga25Atlas, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_ga25_grid'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    __minscale__ = 70000
-
-
-class Ga25Features(Ga25Atlas):
-    __label__ = 'description'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    basisdatensatz = Column('basisdatensatz', Unicode)
-    description = Column('description', Unicode)
-    __maxscale__ = 70000
-
-
-class Ga25LineAux(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_line_aux'
+class GeologischerAtlasLineAux(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_line_aux'
     __template__ = 'templates/htmlpopup/ga25_line_aux.mako'
     spec_description = Column('spec_description', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PointHydro(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_point_hydro'
+class GeologischerAtlasPointHydro(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_point_hydro'
     __template__ = 'templates/htmlpopup/ga25_point_hydro.mako'
     spec_description = Column('spec_description', Unicode)
     azimut = Column('azimut', Unicode)
     depth = Column('depth', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PointGeol(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_point_geol'
+class GeologischerAtlasPointGeol(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_point_geol'
     __template__ = 'templates/htmlpopup/ga25_point_hydro.mako'
     spec_description = Column('spec_description', Unicode)
     azimut = Column('azimut', Unicode)
     depth = Column('depth', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PointDrill(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_point_drill'
+class GeologischerAtlasPointDrill(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_point_drill'
     __template__ = 'templates/htmlpopup/ga25_point_drill.mako'
     spec_description = Column('spec_description', Unicode)
     azimut = Column('azimut', Unicode)
@@ -2728,54 +2716,48 @@ class Ga25PointDrill(Base, Ga25Features, Vector):
     description_1 = Column('description_1', Unicode)
     depth_2 = Column('depth_2', Unicode)
     description_2 = Column('description_2', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PointInfo(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_point_info'
+class GeologischerAtlasPointInfo(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_point_info'
     __template__ = 'templates/htmlpopup/ga25_point_info.mako'
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PointStruct(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_point_struct'
+class GeologischerAtlasPointStruct(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_point_struct'
     __template__ = 'templates/htmlpopup/ga25_point_struct.mako'
     spec_description = Column('spec_description', Unicode)
     azimut = Column('azimut', Unicode)
     dip = Column('dip', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PolygonAux1(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_polygon_aux_1'
+class GeologischerAtlasPolygonAux1(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_polygon_aux_1'
     __template__ = 'templates/htmlpopup/ga25_polygon.mako'
     tecto = Column('tecto', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PolygonAux2(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_polygon_aux_2'
+class GeologischerAtlasPolygonAux2(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_polygon_aux_2'
     __template__ = 'templates/htmlpopup/ga25_polygon.mako'
     tecto = Column('tecto', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PolygonMain(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_polygon_main'
+class GeologischerAtlasPolygonMain(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_polygon_main'
     __template__ = 'templates/htmlpopup/ga25_polygon.mako'
     tecto = Column('tecto', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25LineAux)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointHydro)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointGeol)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointDrill)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointInfo)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointStruct)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PolygonAux1)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PolygonAux2)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PolygonMain)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25AtlasGrid)
+
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasLineAux)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointHydro)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointGeol)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointDrill)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointInfo)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointStruct)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPolygonAux1)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPolygonAux2)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPolygonMain)
 
 
 class Swissnames3d:
