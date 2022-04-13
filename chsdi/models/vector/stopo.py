@@ -593,14 +593,6 @@ class GeolAtlasMetadata(Base, ShopProductGroupClass, Vector):
 register('ch.swisstopo.geologie-geologischer_atlas_papier.metadata', GeolAtlasMetadata)
 
 
-class GeolAtlasVectorMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gav25'
-    __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas_vector.metadata'
-
-register('ch.swisstopo.geologie-geologischer_atlas_vector.metadata', GeolAtlasVectorMetadata)
-
-
 class GeolSpezialKarteMetadata(Base, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __tablename__ = 'view_gridstand_gsk'
@@ -617,12 +609,31 @@ class GeolGenKarteGGK200Meta(Base, ShopProductGroupClass, Vector):
 register('ch.swisstopo.geologie-generalkarte-ggk200.metadata', GeolGenKarteGGK200Meta)
 
 
-class Ga25Meta(Base, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_ga25_grid_shop'
+class GeologischerAtlasMeta:
     __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geologischer_atlas_meta.mako'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    nummer = Column('nummer', Integer)
+    name = Column('name', Unicode)
+    massstab = Column('massstab', Unicode)
+    ausgabejahr = Column('ausgabejahr', Integer)
+    autoren = Column('autoren', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class GeologischerAtlasRasterMeta(Base, GeologischerAtlasMeta, Vector):
+    __tablename__ = 'geologischer_atlas_raster_meta'
     __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas.metadata'
 
-register('ch.swisstopo.geologie-geologischer_atlas.metadata', Ga25Meta)
+register('ch.swisstopo.geologie-geologischer_atlas.metadata', GeologischerAtlasRasterMeta)
+
+
+class GeologischerAtlasVectorMeta(Base, GeologischerAtlasMeta, Vector):
+    __tablename__ = 'geologischer_atlas_vector_meta'
+    __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas_vector.metadata'
+
+register('ch.swisstopo.geologie-geologischer_atlas_vector.metadata', GeologischerAtlasVectorMeta)
 
 
 class GeolSpezialKartenVectorMeta(Base, ShopProductGroupClass, Vector):
