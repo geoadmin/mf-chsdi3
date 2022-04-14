@@ -625,20 +625,31 @@ class Ga25Meta(Base, ShopProductGroupClass, Vector):
 register('ch.swisstopo.geologie-geologischer_atlas.metadata', Ga25Meta)
 
 
-class GeolSpezialKartenVectorMeta(Base, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_gsk_vector'
+class GeolSpezialkartenMetadata:
     __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/spezialkarten_meta.mako'
+    __label__ = 'titel'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    gsk_nr = Column('gsk_nr', Unicode)
+    titel = Column('titel', Unicode)
+    massstab = Column('massstab', Unicode)
+    jahrgang = Column('jahrgang', Integer)
+    autoren = Column('autoren', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class GeolSpezialkartenRasterMetadata(Base, GeolSpezialkartenMetadata, Vector):
+    __tablename__ = 'spezialkarten_raster_meta'
+    __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz.metadata'
+
+register('ch.swisstopo.geologie-spezialkarten_schweiz.metadata', GeolSpezialkartenRasterMetadata)
+
+
+class GeolSpezialKartenVectorMeta(Base, GeolSpezialkartenMetadata, Vector):
+    __tablename__ = 'spezialkarten_vector_meta'
     __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata'
 
 register('ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata', GeolSpezialKartenVectorMeta)
-
-
-class GeolSpezialKartenMetadata(Base, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_gsk_raster'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz.metadata'
-
-register('ch.swisstopo.geologie-spezialkarten_schweiz.metadata', GeolSpezialKartenMetadata)
 
 
 class SwissboundariesBezirk(Base, Vector):
