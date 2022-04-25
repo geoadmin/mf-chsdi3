@@ -3012,12 +3012,11 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
     __label__ = 'stn_label'
     __queryable_attributes__ = ['stn_label', 'zip_label', 'com_name', 'com_fosnr', 'str_type']
     id = Column('id', Integer, primary_key=True)
-    str_esid = Column('str_esid', Integer, primary_key=True)
+    str_esid = Column('str_esid', Integer)
     stn_label = Column('stn_label', Unicode)
     zip_label = Column('zip_label', Unicode)
     com_name = Column('com_name', Unicode)
     com_fosnr = Column('com_fosnr', Integer)
-    str_valid = Column('str_valid', Integer)
     str_official = Column('str_official', Integer)
     str_modified = Column('str_modified', Unicode)
     str_type = Column('str_type', Unicode)

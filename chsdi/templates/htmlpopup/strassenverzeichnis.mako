@@ -1,9 +1,8 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-    <% c['stable_id'] = True %>
     <%
-    validated = 'yesText' if c['attributes']['str_valid'] == 1 else 'noText'
+    c['stable_id'] = True
     official = 'yesText' if c['attributes']['str_official'] == 1 else 'noText'
     %>
 
@@ -38,10 +37,6 @@
     <tr>
         <td class="cell-left">${_(c['layerBodId'] + '.official')}</td>
         <td>${_(official)}</td>
-    </tr>
-    <tr>
-        <td class="cell-left">${_(c['layerBodId'] + '.validated')}</td>
-        <td>${_(validated)}</td>
     </tr>
     <tr>
         <td class="cell-left">${_(c['layerBodId'] + '.modified')}</td>
