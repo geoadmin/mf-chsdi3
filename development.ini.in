@@ -57,7 +57,7 @@ handlers = console
 
 [logger_chsdi]
 level = DEBUG
-handlers = file
+handlers = console
 qualname = chsdi
 
 [handler_console]
