@@ -105,7 +105,7 @@ qualname = chsdi
 
 [handler_console]
 class = StreamHandler
-args = (sys.stderr,)
+args = (sys.stdout,)
 level = NOTSET
 formatter = generic
 
