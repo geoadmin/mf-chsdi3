@@ -16,7 +16,8 @@ echo "INSTALLDIR=${INSTALLDIR}"
 
 pg_isready -d stopo_prod -h ${DBHOST} -p ${DBPORT} -U ${PGUSER}
 
-source rc_${DEPLOY_TARGET} && make production.ini development.ini
+# Using env vars
+make production.ini development.ini
 
 envsubst < 25-mf-chsdi3.conf.in > /etc/apache2/sites-available/000-default.conf 
 
