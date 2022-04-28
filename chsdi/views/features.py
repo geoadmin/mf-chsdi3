@@ -445,7 +445,7 @@ def _get_feature_grid(col, row, timestamp, gridSpec, bucket_name, params, proces
 
     except Exception as e:
         log.error("Error while reading features from grid (S3): {}".format(e))
-        raise exc.HTTPInternalServerError("Internal Error while requesting grid features")
+        raise exc.HTTPInternalServerError("Internal Error while requesting grid features: {}".format(e))
     # in order to mimic DB output, if process flag is true we wrap the feature into a "feature" attribute
     if process:
         # the DB also calls here the process method from Vector class, but what we have here is not an instance of this
