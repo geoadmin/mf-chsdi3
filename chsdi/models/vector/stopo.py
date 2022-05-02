@@ -508,14 +508,6 @@ class ShopProductGroupClass(ShopProductClass):
     name_en = Column('s_title_en', Unicode)
 
 
-class SkitourenkarteMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_lkski_shop'
-    __bodId__ = 'ch.swisstopo.skitourenkarte-50.metadata'
-
-register('ch.swisstopo.skitourenkarte-50.metadata', SkitourenkarteMetadata)
-
-
 class Landeskarte25PapierMetadata(Base, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __tablename__ = 'lk25_papier'
