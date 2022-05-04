@@ -508,14 +508,6 @@ class ShopProductGroupClass(ShopProductClass):
     name_en = Column('s_title_en', Unicode)
 
 
-class SkitourenkarteMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_lkski_shop'
-    __bodId__ = 'ch.swisstopo.skitourenkarte-50.metadata'
-
-register('ch.swisstopo.skitourenkarte-50.metadata', SkitourenkarteMetadata)
-
-
 class Landeskarte25PapierMetadata(Base, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __tablename__ = 'lk25_papier'
@@ -1043,7 +1035,9 @@ register('ch.swisstopo.dreiecksvermaschung', Dreiecksvermaschung)
 class GridstandTemplate:
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __label__ = 'lk_name'
-    id = Column('kbnum', Unicode, primary_key=True)
+    __template__ = 'templates/htmlpopup/gridstand.mako'
+    id = Column('gid', BigInteger, primary_key=True)
+    tileid = Column('tileid', Unicode)
     lk_name = Column('lk_name', Unicode)
     datenstand = Column('release', Integer)
     the_geom = Column(Geometry2D)
@@ -1057,10 +1051,10 @@ class GridstandPermiterTemplate:
 
 # PK 25
 
-class GridstandPk25Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
+
+class GridstandPk25Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk25.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk25_tilecache'
-    tileid = Column('tileid', Unicode)
 
 
 register('ch.swisstopo.pixelkarte-pk25.metadata', GridstandPk25Meta)
@@ -1068,10 +1062,9 @@ register('ch.swisstopo.pixelkarte-pk25.metadata', GridstandPk25Meta)
 # PK 50
 
 
-class GridstandPk50Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
+class GridstandPk50Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk50.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk50_tilecache'
-    tileid = Column('tileid', Unicode)
 
 
 register('ch.swisstopo.pixelkarte-pk50.metadata', GridstandPk50Meta)
@@ -1079,47 +1072,21 @@ register('ch.swisstopo.pixelkarte-pk50.metadata', GridstandPk50Meta)
 # PK 100
 
 
-class GridstandPk100Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
+class GridstandPk100Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk100.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk100_tilecache'
-    tileid = Column('tileid', Unicode)
 
 register('ch.swisstopo.pixelkarte-pk100.metadata', GridstandPk100Meta)
 
 # PK 200
 
 
-class GridstandPk200Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
+class GridstandPk200Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk200.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk200_tilecache'
-    tileid = Column('tileid', Unicode)
+    id = Column('kbnum', Unicode, primary_key=True)
 
 register('ch.swisstopo.pixelkarte-pk200.metadata', GridstandPk200Meta)
-
-# PK 500
-
-
-class GridstandPk500(Base, ShopProductClass, Vector):
-    __tablename__ = 'view_gridstand_datenhaltung_pk500_tilecache_shop'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk500.noscale'
-
-
-register('ch.swisstopo.pixelkarte-farbe-pk500.noscale', GridstandPk500)
-
-
-class GridstandSwissimage(Base, ShopStandardClass, Vector):
-    __tablename__ = 'view_gridstand_datenhaltung_swissimage_tilecache'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.images-swissimage.metadata'
-    __label__ = 'lk25_name'
-    id = Column('tilenumber', Unicode, primary_key=True)
-    tileid = Column('tileid', Unicode)
-    lk25_name  = Column('lk25_name', Unicode)
-    datenstand = Column('datenstand', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.images-swissimage.metadata', GridstandSwissimage)
 
 
 class GridstandSwissimageDop10(Base, Vector):
@@ -2944,34 +2911,37 @@ class Lotabweichungen(Base, Vector):
 register('ch.swisstopo.lotabweichungen', Lotabweichungen)
 
 
-class HiksDufourMetadata(Base, ShopStandardClass, Vector):
+class HiksDufourMetadata(Base, Vector):
     __tablename__ = 'view_gridstand_dufour_shop'
+    __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-dufour.metadata'
-    number = Column('s_map_number', Unicode)
-    scale = Column('scale', Integer)
+    id = Column('kbnum', Integer, primary_key=True)
+    name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.hiks-dufour.metadata', HiksDufourMetadata)
 
 
-class HiksSiegfriedTa25Metadata(Base, ShopStandardClass, Vector):
+class HiksSiegfriedTa25Metadata(Base, Vector):
     __tablename__ = 'view_gridstand_siegfried_ta25_shop'
+    __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta25.metadata'
-    number = Column('s_map_number', Unicode)
-    scale = Column('scale', Integer)
+    id = Column('kbnum', Integer, primary_key=True)
+    name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.hiks-siegfried-ta25.metadata', HiksSiegfriedTa25Metadata)
 
 
-class HiksSiegfriedTa50Metadata(Base, ShopStandardClass, Vector):
+class HiksSiegfriedTa50Metadata(Base, Vector):
     __tablename__ = 'view_gridstand_siegfried_ta50_shop'
+    __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta50.metadata'
-    number = Column('s_map_number', Unicode)
-    scale = Column('scale', Integer)
+    id = Column('kbnum', Integer, primary_key=True)
+    name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.hiks-siegfried-ta50.metadata', HiksSiegfriedTa50Metadata)
