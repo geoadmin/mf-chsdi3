@@ -2654,13 +2654,22 @@ register('ch.swisstopo.geologie-geocover', GeocoverPolygonAux2)
 register('ch.swisstopo.geologie-geocover', GeocoverPolygonMain)
 
 
-class GeolGeocoverMetadata(Base, Geocover, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_geocover_grid_shop'
-    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
+class GeolGeocoverMetadata(Base, Vector):
+    __tablename__ = 'geocover_meta'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geocover_metadata.mako'
     __bodId__ = 'ch.swisstopo.geologie-geocover.metadata'
-    __label__ = 'name_de'
-    version = Column('version', Unicode)
-    base = Column('base', Unicode)
+    __label__ = 'msh_map_ti'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    msh_map_nb = Column('msh_map_nb', Integer)
+    msh_map_ti = Column('msh_map_ti', Unicode)
+    msh_scale = Column('msh_scale', Unicode)
+    msh_edit = Column('msh_edit', Integer)
+    msh_versio = Column('msh_versio', Unicode)
+    msh_basis = Column('msh_basis', Unicode)
+    msh_author = Column('msh_author', Unicode)
+    msh_rev = Column('msh_rev', Unicode)
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geocover.metadata', GeolGeocoverMetadata)
 
