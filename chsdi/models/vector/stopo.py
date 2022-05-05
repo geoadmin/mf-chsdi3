@@ -465,14 +465,6 @@ class Scale100Metadata(Base, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
 
 
-class GeolSpezialKarteMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gsk'
-    __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata'
-
-register('ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata', GeolSpezialKarteMetadata)
-
-
 class GeolGeneralkarteGGK200Meta(Base, Vector):
     __tablename__ = 'generalkarte_ggk200_meta'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
