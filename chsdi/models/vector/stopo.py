@@ -443,14 +443,6 @@ class GrundwasserVulnerabilitaetPapierMetadata(Base, ShopProductClass, Vector):
 register('ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata', GrundwasserVulnerabilitaetPapierMetadata)
 
 
-class IcaoPapierMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __tablename__ = 'icao_papier'
-    __bodId__ = 'ch.swisstopo.luftfahrtkarten-icao_papier.metadata'
-
-register('ch.swisstopo.luftfahrtkarten-icao_papier.metadata', IcaoPapierMetadata)
-
-
 class GrundWasserVorkommenMetadata(Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __tablename__ = 'view_gridstand_gkwvor500'
