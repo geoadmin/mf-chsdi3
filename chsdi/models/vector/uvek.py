@@ -1641,11 +1641,11 @@ register('ch.bazl.projektierungszonen-flughafenanlagen', ProjFlughafenanlagen)
 
 class LuftfahrthindernisBase:
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
-    __label__ = 'name'
+    __label__ = 'registrationnumber'
     __template__ = 'templates/htmlpopup/luftfahrthindernisse.mako'
     id = Column('bgdi_id', Integer, primary_key=True)
     airport = Column('airport', Unicode)
-    name = Column('name', Unicode)
+    registrationnumber = Column('registrationnumber', Unicode)
     obstacletype = Column('obstacletype', Unicode)
     maxheightagl = Column('maxheightagl', Unicode)
     topelevationamsl = Column('topelevationamsl', Float)
