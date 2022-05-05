@@ -403,14 +403,6 @@ class GravimetrischerAtlasPapierMetadata(Base, ShopProductClass, Vector):
 register('ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata', GravimetrischerAtlasPapierMetadata)
 
 
-class TektonischeKarte500Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gkt500'
-    __bodId__ = 'ch.swisstopo.geologie-tektonische_karte_papier.metadata'
-
-register('ch.swisstopo.geologie-tektonische_karte_papier.metadata', TektonischeKarte500Metadata)
-
-
 class SchwereKarte500Metadata(Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __tablename__ = 'view_gridstand_gkba500'
