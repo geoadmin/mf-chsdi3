@@ -403,14 +403,6 @@ class GravimetrischerAtlasPapierMetadata(Base, ShopProductClass, Vector):
 register('ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata', GravimetrischerAtlasPapierMetadata)
 
 
-class SchwereKarte500Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gkba500'
-    __bodId__ = 'ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata'
-
-register('ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata', SchwereKarte500Metadata)
-
-
 class GrundwasserVulnerabilitaetPapierMetadata(Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     __tablename__ = 'view_gridstand_gkwvul500'
