@@ -505,14 +505,6 @@ class Scale100Metadata(Base, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
 
 
-class Landeskarte200Metadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_lk200_shop'
-    __bodId__ = 'ch.swisstopo.landeskarte200_papier.metadata'
-
-register('ch.swisstopo.landeskarte200_papier.metadata', Landeskarte200Metadata)
-
-
 class GeolAtlasMetadata(Base, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __tablename__ = 'view_gridstand_gas25'
