@@ -500,14 +500,6 @@ class ShopProductGroupClass(ShopProductClass):
     name_en = Column('s_title_en', Unicode)
 
 
-class Landeskarte25PapierMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __tablename__ = 'lk25_papier'
-    __bodId__ = 'ch.swisstopo.landeskarte25_papier.metadata'
-
-register('ch.swisstopo.landeskarte25_papier.metadata', Landeskarte25PapierMetadata)
-
-
 class Landeskarte50PapierMetadata (Base, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __tablename__ = 'lk50_papier'
