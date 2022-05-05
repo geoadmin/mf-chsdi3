@@ -395,14 +395,6 @@ class ShopStandardClass:
     name_en = Column('s_title_en', Unicode)
 
 
-class GravimetrischerAtlasPapierMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
-    __tablename__ = 'view_gridstand_gravimetrie_atlas_metadata_shop'
-    __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata'
-
-register('ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata', GravimetrischerAtlasPapierMetadata)
-
-
 class ShopProductGroupClass(ShopProductClass):
     __label__ = 'number'
     number = Column('s_map_number', Unicode)
