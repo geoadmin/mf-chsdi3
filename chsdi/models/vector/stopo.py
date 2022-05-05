@@ -372,43 +372,6 @@ class GeologieGeowege(Base, Vector):
 register(GeologieGeowege.__bodId__, GeologieGeowege)
 
 
-class ShopProductClass:
-    __template__ = 'templates/htmlpopup/shop_product.mako'
-    __label__ = 'id'
-    id = Column('pk_product', Unicode, primary_key=True)
-    scale = Column('scale', Integer)
-    release = Column('release', Integer)
-    data = Column('data', Integer)
-    isbn = Column('s_isbn', Unicode)
-    author = Column('s_author', Unicode)
-    available = Column('available', Boolean)
-    the_geom = Column(Geometry2D)
-
-
-class ShopStandardClass:
-    __template__ = 'templates/htmlpopup/shop_product.mako'
-    id = Column('pk_product', Unicode, primary_key=True)
-    available = Column('available', Boolean)
-    name_de = Column('s_title_de', Unicode)
-    name_fr = Column('s_title_fr', Unicode)
-    name_it = Column('s_title_it', Unicode)
-    name_en = Column('s_title_en', Unicode)
-
-
-class ShopProductGroupClass(ShopProductClass):
-    __label__ = 'number'
-    number = Column('s_map_number', Unicode)
-    name_de = Column('s_title_de', Unicode)
-    name_fr = Column('s_title_fr', Unicode)
-    name_it = Column('s_title_it', Unicode)
-    name_en = Column('s_title_en', Unicode)
-
-
-class Scale100Metadata(Base, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_gridstand_lk100_shop'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-
-
 class GeolGeneralkarteGGK200Meta(Base, Vector):
     __tablename__ = 'generalkarte_ggk200_meta'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
@@ -944,15 +907,6 @@ class GridstandSwisssurface3dRaster(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(GridstandSwisssurface3dRaster.__bodId__, GridstandSwisssurface3dRaster)
-
-
-class SwissimageProduct(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_swissimage'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.swissimage-product'
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.swissimage-product', SwissimageProduct)
 
 
 class GeologischeKarteLine(Base, Vector):
