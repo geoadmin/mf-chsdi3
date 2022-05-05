@@ -419,14 +419,6 @@ class GrundwasserVulnerabilitaetPapierMetadata(Base, ShopProductClass, Vector):
 register('ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata', GrundwasserVulnerabilitaetPapierMetadata)
 
 
-class GrundWasserVorkommenMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gkwvor500'
-    __bodId__ = 'ch.swisstopo.geologie-grundwasservorkommen_papier.metadata'
-
-register('ch.swisstopo.geologie-grundwasservorkommen_papier.metadata', GrundWasserVorkommenMetadata)
-
-
 class LetztEisMaxMetadata(Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __tablename__ = 'view_gridstand_gklgm500'
