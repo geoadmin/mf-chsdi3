@@ -2646,7 +2646,7 @@ register('ch.swisstopo.swissnames3d', Swissnames3dRaster13)
 
 
 class SwissMapVector25MetadataPerimeter(Base, Vector):
-    __tablename__ = 'shop_perimeter_vector25'
+    __tablename__ = 'perimeter_vector25'
     __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/smv25.mako'
     __bodId__ = 'ch.swisstopo.swiss-map-vector25.metadata'
@@ -2682,7 +2682,7 @@ register('ch.swisstopo.lotabweichungen', Lotabweichungen)
 
 
 class HiksDufourMetadata(Base, Vector):
-    __tablename__ = 'view_gridstand_dufour_shop'
+    __tablename__ = 'view_gridstand_dufour'
     __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-dufour.metadata'
@@ -2694,7 +2694,7 @@ register('ch.swisstopo.hiks-dufour.metadata', HiksDufourMetadata)
 
 
 class HiksSiegfriedTa25Metadata(Base, Vector):
-    __tablename__ = 'view_gridstand_siegfried_ta25_shop'
+    __tablename__ = 'view_gridstand_siegfried_ta25'
     __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta25.metadata'
@@ -2706,7 +2706,7 @@ register('ch.swisstopo.hiks-siegfried-ta25.metadata', HiksSiegfriedTa25Metadata)
 
 
 class HiksSiegfriedTa50Metadata(Base, Vector):
-    __tablename__ = 'view_gridstand_siegfried_ta50_shop'
+    __tablename__ = 'view_gridstand_siegfried_ta50'
     __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta50.metadata'
