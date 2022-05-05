@@ -403,14 +403,6 @@ class GravimetrischerAtlasPapierMetadata(Base, ShopProductClass, Vector):
 register('ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata', GravimetrischerAtlasPapierMetadata)
 
 
-class Landeskarte1000PapierMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False, 'extend_existing': True})
-    __tablename__ = 'view_gridstand_lk1000'
-    __bodId__ = 'ch.swisstopo.landeskarte1000_papier.metadata'
-
-register('ch.swisstopo.landeskarte1000_papier.metadata', Landeskarte1000PapierMetadata)
-
-
 class SegelFlug300Metadata(Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __tablename__ = 'view_gridstand_sfk300'
