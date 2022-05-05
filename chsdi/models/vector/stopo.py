@@ -920,8 +920,8 @@ register('ch.swisstopo.images-swissimage-dop10.metadata', GridstandSwissimageDop
 
 
 class GridstandSwisssurface3d(Base, Vector):
-    __tablename__ = 'shop_perimeter_swisssurface3d'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __tablename__ = 'view_gridstand_swisssurface3d'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.swisssurface3d.metadata'
     __template__ = 'templates/htmlpopup/swisssurface3d.mako'
     __label__ = 'id'
