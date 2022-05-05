@@ -545,14 +545,6 @@ class Landeskarte200Metadata(Base, ShopProductGroupClass, Vector):
 register('ch.swisstopo.landeskarte200_papier.metadata', Landeskarte200Metadata)
 
 
-class WanderkarteT33Metadata (Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_wkt33_shop'
-    __bodId__ = 'ch.swisstopo.wanderkarte33_papier.metadata'
-
-register('ch.swisstopo.wanderkarte33_papier.metadata', WanderkarteT33Metadata)
-
-
 class Wanderkarte25zusMetadata(Base, ShopProductGroupClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __tablename__ = 'view_gridstand_lkwander25zus_shop'
