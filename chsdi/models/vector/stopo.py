@@ -403,14 +403,6 @@ class GravimetrischerAtlasPapierMetadata(Base, ShopProductClass, Vector):
 register('ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata', GravimetrischerAtlasPapierMetadata)
 
 
-class Generalkarte300Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_gk300'
-    __bodId__ = 'ch.swisstopo.generalkarte300_papier.metadata'
-
-register('ch.swisstopo.generalkarte300_papier.metadata', Generalkarte300Metadata)
-
-
 class Landeskarte500Metadata(Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __tablename__ = 'view_gridstand_lk500'
