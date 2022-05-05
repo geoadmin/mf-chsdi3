@@ -435,14 +435,6 @@ class SegelFlug300Metadata(Base, ShopProductClass, Vector):
 register('ch.swisstopo.segelflugkarte_papier.metadata', SegelFlug300Metadata)
 
 
-class StrassenKarte200Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_stk200'
-    __bodId__ = 'ch.swisstopo.strassenkarte200_papier.metadata'
-
-register('ch.swisstopo.strassenkarte200_papier.metadata', StrassenKarte200Metadata)
-
-
 class GeolKarte500Metadata(Base, ShopProductClass, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __tablename__ = 'view_gridstand_gkg500'
