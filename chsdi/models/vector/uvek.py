@@ -1666,7 +1666,7 @@ register(Luftfahrthindernis.__bodId__, Luftfahrthindernis)
 
 
 class LuftfahrthindernisAktuell(Base, LuftfahrthindernisBase, Vector):
-    __bodId__ = 'ch.bazl.luftfahrthindernis-aktuell'
+    __bodId__ = 'ch.bazl.luftfahrthindernis-aenderungen'
     __tablename__ = 'view_obstacles_active'
 
 register(LuftfahrthindernisAktuell.__bodId__, LuftfahrthindernisAktuell)
