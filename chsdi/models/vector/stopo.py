@@ -2991,18 +2991,18 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/strassenverzeichnis.mako'
     __bodId__ = 'ch.swisstopo.amtliches-strassenverzeichnis'
-    __label__ = 'label'
-    __queryable_attributes__ = ['label', 'plzo', 'gdename', 'gdenr', 'type']
-    id = Column('esid', Integer, primary_key=True)
-    label = Column('label', Unicode)
-    plzo = Column('plzo', Unicode)
-    gdename = Column('gdename', Unicode)
-    gdenr = Column('gdenr', Integer)
-    validated = Column('validated', Integer)
-    official = Column('official', Integer)
-    modified = Column('modified', Unicode)
-    type = Column('type', Unicode)
-    status = Column('status', Unicode)
+    __label__ = 'stn_label'
+    __queryable_attributes__ = ['stn_label', 'zip_label', 'com_name', 'com_fosnr', 'str_type']
+    id = Column('id', Integer, primary_key=True)
+    str_esid = Column('str_esid', Integer)
+    stn_label = Column('stn_label', Unicode)
+    zip_label = Column('zip_label', Unicode)
+    com_name = Column('com_name', Unicode)
+    com_fosnr = Column('com_fosnr', Integer)
+    str_official = Column('str_official', Integer)
+    str_modified = Column('str_modified', Unicode)
+    str_type = Column('str_type', Unicode)
+    str_status = Column('str_status', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.amtliches-strassenverzeichnis', AmtlichesStrassenverzeichnis)

@@ -1,20 +1,45 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-    <% c['stable_id'] = True %>
     <%
-    validated = 'yesText' if c['attributes']['validated'] == 1 else 'noText'
-    official = 'yesText' if c['attributes']['official'] == 1 else 'noText'
+    c['stable_id'] = True
+    official = 'yesText' if c['attributes']['str_official'] == 1 else 'noText'
     %>
 
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.esid')}</td>                 <td>${c['featureId']}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.label')}</td>                 <td>${c['attributes']['label'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.plzo')}</td>                 <td>${c['attributes']['plzo'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.gdenr')}</td>                 <td>${c['attributes']['gdenr'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.gdename')}</td>                 <td>${c['attributes']['gdename'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.type')}</td>                 <td>${_(c['attributes']['type'] or '-')}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.status')}</td>                 <td>${_(c['attributes']['status'] or '-')}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.official')}</td>                 <td>${_(official)}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.validated')}</td>                 <td>${_(validated)}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-strassenverzeichnis.modified')}</td>                 <td>${_(c['attributes']['modified'] or '-')}</td></tr>
+    <tr>
+        <td class="cell-left">${_(c['layerBodId'] + '.esid')}</td>
+        <td>${c['featureId']}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_(c['layerBodId'] + '.label')}</td>
+        <td>${c['attributes']['stn_label'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_(c['layerBodId'] + '.plzo')}</td>
+        <td>${c['attributes']['zip_label'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_(c['layerBodId'] + '.gdenr')}</td>
+        <td>${c['attributes']['com_fosnr'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_(c['layerBodId'] + '.gdename')}</td>
+        <td>${c['attributes']['com_name'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_(c['layerBodId'] + '.type')}</td>
+        <td>${_(c['attributes']['str_type'] or '-')}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_(c['layerBodId'] + '.status')}</td>
+        <td>${_(c['attributes']['str_status'] or '-')}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_(c['layerBodId'] + '.official')}</td>
+        <td>${_(official)}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_(c['layerBodId'] + '.modified')}</td>
+        <td>${_(c['attributes']['str_modified'] or '-')}</td>
+    </tr>
 </%def>
