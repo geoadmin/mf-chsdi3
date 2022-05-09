@@ -98,7 +98,6 @@ class LayersConfig(Base):
     geojsonUrlen = Column('geojson_url_en', Unicode)
     config3d = Column('fk_config3d', Boolean)
     srid = Column('srid', Unicode)
-    shop = Column('shop_option_arr', postgresql.ARRAY(Unicode))
     extent = Column('extent', postgresql.ARRAY(Float))
 
     def layerConfig(self, params):

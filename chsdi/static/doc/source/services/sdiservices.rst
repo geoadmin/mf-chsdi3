@@ -325,13 +325,13 @@ Tolerance, mapExtent and imageDisplay
 
 If *tolerance=0*, *imageDisplay* and *mapExtent* are generaly not needed, except to get models which are scale dependant, e.g.
 displaying points at smaller scales and polygons ar larger one.
-If using *tolerance>0*, bot *imageDisplay* and *mapExtent* must be set to meaningfull values. As the *teloerance* is in pixels, 
+If using *tolerance>0*, bot *imageDisplay* and *mapExtent* must be set to meaningfull values. As the *teloerance* is in pixels,
 these value are used to convert it to map units, _i.e._ meters.
 
 The following table summarize the various combinations:
 
 +--------------------+------------------------------------------+-----------------------------------------+
-|                    | imageDisplay=0,0,0  mapExtent=0,0,0,0    |  imageDisplay=1,1,1  mapExtent=1,1,1,1  |     
+|                    | imageDisplay=0,0,0  mapExtent=0,0,0,0    |  imageDisplay=1,1,1  mapExtent=1,1,1,1  |
 +====================+==========================================+=========================================+
 | **tolerance=0**    | No buffer & No scale                     |  No buffer & but scale                  |
 +--------------------+------------------------------------------+-----------------------------------------+
@@ -398,8 +398,8 @@ The filter expression can consist of a single expression of the form `<attribute
 ::
 
   state='open' and startofconstruction>='2018-10'
- 
-`<attribute>` must be one of the queryable attributes, the type of `<value>` must correspond the the type of the queryable attribute (see above) and `<operator>` can be one of 
+
+`<attribute>` must be one of the queryable attributes, the type of `<value>` must correspond the the type of the queryable attribute (see above) and `<operator>` can be one of
 
 +-----------------+--------------------------------------+----------------------------------------------------------------+
 |  Data type      |                Operators             |     Examples                                                   |
@@ -646,7 +646,7 @@ The search service is separated in 3 various categories or types:
 * The **location search** which is composed of the following geocoded locations:
 
   * Cantons, Cities and communes
-  * All names as printed on the national map (`SwissNames <https://shop.swisstopo.admin.ch/de/products/landscape/names3D>`_)
+  * All names as printed on the national map
   * The districts
   * The ZIP codes
   * The addresses
@@ -871,7 +871,6 @@ Height
 ------
 
 This service allows to obtain elevation information for a point.
-See `Height models <https://shop.swisstopo.admin.ch/de/products/height_models/alti3D>`_ for more details about data used by this service.
 
 
 
@@ -913,7 +912,6 @@ Profile
 -------
 
 This service allows to obtain elevation information for a polyline in CSV format.
-See `Height models <https://shop.swisstopo.admin.ch/de/products/height_models/alti3D>`_ for more details about data used by this service.
 
 
 URL
@@ -1237,7 +1235,7 @@ Mapbox Vector Tiles
 A RESTFul implementation of `Mapbox Vector Tiles <https://www.mapbox.com/vector-tiles>`_.
 See  `description <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html>`_
 
-The service provides both *tiles* and *styles* that the customer can use. 
+The service provides both *tiles* and *styles* that the customer can use.
 
 GetTile
 *******
@@ -1273,11 +1271,11 @@ A current (latest version) style request is in the following form:
 ::
 
     <Scheme>://<ServerName>/styles/<layername>/style.json
-    
+
 example of a current mapbox style:
 
 - https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte.vt/style.json
-    
+
 A previous versioned style request is in the following form:
 
 ::
@@ -1296,13 +1294,13 @@ Metadata Service
 ****************
 
 Each tileset has a corresponding metatdata `json` file that describes the available set of tiles.
-The URL of the metadata `json` file is : 
+The URL of the metadata `json` file is :
 
 ::
 
    <Scheme>://<ServerName>/tiles/<LayerName>/<version>.json
 
-example of tileset: 
+example of tileset:
 
 - https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/tiles.json
 

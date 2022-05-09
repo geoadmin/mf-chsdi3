@@ -10,7 +10,6 @@ env:
     APACHE_BASE_PATH: main
     ALTI_URL: //service-alti.dev.bgdi.ch
     API_URL: //mf-chsdi3.dev.bgdi.ch
-    SHOP_URL: //shop-bgdi.dev.bgdi.ch
     DBHOST: pg.bgdi.ch
     DBPORT: 5432
     DBSTAGING: dev
