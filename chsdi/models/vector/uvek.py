@@ -627,7 +627,9 @@ class KatasterBelasteterStandorte(Base, Vector):
     untersuchungsstand_de = Column('untersuchungsstand_de', Unicode)
     untersuchungsstand_fr = Column('untersuchungsstand_fr', Unicode)
     untersuchungsstand_it = Column('untersuchungsstand_it', Unicode)
-    url = Column('url', Unicode)
+    url_de = Column('url_de', Unicode)
+    url_fr = Column('url_fr', Unicode)
+    url_it = Column('url_it', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
@@ -816,11 +818,6 @@ class FernWaermeAngebot(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     heatpotential = Column('heatpotential', Float)
-    heat_supplier_category = Column('heat_supplier_category', Integer)
-    bezeichnung_de = Column('bezeichnung_de', Unicode)
-    bezeichnung_fr = Column('bezeichnung_fr', Unicode)
-    bezeichnung_it = Column('bezeichnung_it', Unicode)
-    bezeichnung_en = Column('bezeichnung_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.fernwaerme-angebot', FernWaermeAngebot)
@@ -2725,7 +2722,9 @@ class KbsZivilflugpl(Base, Vector):
     untersuchungsstand_de = Column('untersuchungsstand_de', Unicode)
     untersuchungsstand_fr = Column('untersuchungsstand_fr', Unicode)
     untersuchungsstand_it = Column('untersuchungsstand_it', Unicode)
-    url = Column('url', Unicode)
+    url_de = Column('url_de', Unicode)
+    url_fr = Column('url_fr', Unicode)
+    url_it = Column('url_it', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bazl.kataster-belasteter-standorte-zivilflugplaetze', KbsZivilflugpl)
