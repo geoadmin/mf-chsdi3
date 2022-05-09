@@ -4,6 +4,7 @@
 
 <%
     lang = lang if lang in ('fr', 'it','en') else 'de'
+    bezeichnung = 'bezeichnung_%s' % lang
     if not c['attributes']['heatpotential'] == None:
       heatpotential = "{:,}".format(int(c['attributes']['heatpotential'])).replace(',','\'')
     else:
