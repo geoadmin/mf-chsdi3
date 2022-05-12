@@ -1173,7 +1173,7 @@ Unlike WMTS that follow the OGC standard, the XYZ tile service are often used in
 
 Example
 *******
-* TO DO @marc: An OpenLayers example showing the `Swissimage as XYZ <link to CODEPEN>`_
+* An OpenLayers example showing the `Swissimage as XYZ <https://codepen.io/geoadmin/pen/xxYEwjQ>`_
 
 
 .. _cacheupdate_description:
