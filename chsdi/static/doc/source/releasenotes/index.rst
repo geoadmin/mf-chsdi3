@@ -14,6 +14,29 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20220518:
+
+Release 20220518 - Wednesday, Mai 18th 2022
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-03-16-rc9...2022-05-18-rc1>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_211215...r_220316>`__
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `TITLE EN (xx.xxx.xxxxxxx)`                                                                                                                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20220316:
 
@@ -705,8 +728,8 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- Announcement: Changes in SEARCH Service http://api.geo.admin.ch/services/sdiservices.html#search taking effect on 05.05.2021: in the response "weight:" results will change (improved weighting and correct merge of exact + wildcard results). Test the new behaviour on our intgeration plattform (not for operational use): 
-  - INT SEARCH Service: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer 
+- Announcement: Changes in SEARCH Service http://api.geo.admin.ch/services/sdiservices.html#search taking effect on 05.05.2021: in the response "weight:" results will change (improved weighting and correct merge of exact + wildcard results). Test the new behaviour on our intgeration plattform (not for operational use):
+  - INT SEARCH Service: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer
   - INT SEARCH Service example: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer?sr=2056&searchText=Hardturmstrasse%20105%208005%20Z%C3%BCrich&lang=de&type=locations
   - INT SEARCH Service example: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer?sr=2056&searchText=rotten&lang=de&type=locations
   - CHANGES are documented in the PULL REQUEST: https://github.com/geoadmin/mf-chsdi3/pull/3657
@@ -976,7 +999,7 @@ API & applications
 - Due to maintenance work, the layer ch.swisstopo.geologie-tiefengeothermie-projekte will be temporarily unavailable in CHSDI until the release of December 9th 2020. In the meantime, the layer is still accessible for `download <https://data.geo.admin.ch/ch.swisstopo.geologie-tiefengeothermie_projekte/>`__.
 - Announcement:
     - The BFS layer ch.bfs.gebaeude_wohnungs_register (Register of Buildings and Dwellings) will extend its data model on all FSDI services (map, api3 and download on data.geo.admin.ch) by this release according to https://www.bfs.admin.ch/bfs/en/home/statistics/catalogues-databases/publications.assetdetail.7008785.html (model description available in German only).
-        - now productive data model: https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register/9051164_0 
+        - now productive data model: https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register/9051164_0
 
 
 `MAP <//map.geo.admin.ch>`__
