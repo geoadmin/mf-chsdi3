@@ -2757,6 +2757,40 @@ register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPolygonAux
 register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPolygonMain)
 
 
+class GeologischerAtlasProfil(Base, Vector):
+    __tablename__ = 'geologischer_atlas_profil'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geologischer_atlas_profil.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas_profile'
+    __label__ = 'id'
+    __extended_info__ = True
+    id = Column('ga25_id', Integer, primary_key=True)
+    ga25_name = Column('ga25_name', Unicode)
+    ga25_no = Column('ga25_no', Integer)
+    ga25_edition = Column('ga25_edition', Integer)
+    plate_no = Column('plate_no', Unicode)
+    section_no = Column('section_no', Unicode)
+    section_type_de = Column('section_type_de', Unicode)
+    section_type_fr = Column('section_type_fr', Unicode)
+    section_type_it = Column('section_type_it', Unicode)
+    section_type_en = Column('section_type_en', Unicode)
+    scale = Column('scale', Unicode)
+    vert_exag = Column('vert_exag', Float)
+    author = Column('author', Unicode)
+    link_original = Column('link_original', Unicode)
+    link_onlineshop_de = Column('link_onlineshop_de', Unicode)
+    link_onlineshop_fr = Column('link_onlineshop_fr', Unicode)
+    link_onlineshop_it = Column('link_onlineshop_it', Unicode)
+    link_onlineshop_en = Column('link_onlineshop_en', Unicode)
+    swissgeol_link_de = Column('swissgeol_link_de', Unicode)
+    swissgeol_link_fr = Column('swissgeol_link_fr', Unicode)
+    swissgeol_link_it = Column('swissgeol_link_it', Unicode)
+    swissgeol_link_en = Column('swissgeol_link_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(GeologischerAtlasProfil.__bodId__, GeologischerAtlasProfil)
+
+
 class Swissnames3d:
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __label__ = 'name'
