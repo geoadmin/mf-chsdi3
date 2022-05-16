@@ -646,7 +646,7 @@ The search service is separated in 3 various categories or types:
 * The **location search** which is composed of the following geocoded locations:
 
   * Cantons, Cities and communes
-  * All names as printed on the national map
+  * All names as printed on the national map (`SwissNames <https://www.swisstopo.admin.ch/en/geodata/landscape/names3d.html>`_)
   * The districts
   * The ZIP codes
   * The addresses
@@ -870,8 +870,7 @@ Example of feature search usage with other services
 Height
 ------
 
-This service allows to obtain elevation information for a point.
-
+This service allows to obtain elevation information for a point. See `Height models <https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html>`_ for more details about data used by this service.
 
 
 URL
@@ -911,7 +910,7 @@ Examples
 Profile
 -------
 
-This service allows to obtain elevation information for a polyline in CSV format.
+This service allows to obtain elevation information for a polyline in CSV format. See `Height models <https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html>`_ for more details about data used by this service.
 
 
 URL
