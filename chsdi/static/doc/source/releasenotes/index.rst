@@ -37,10 +37,12 @@ API & applications
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_211215...r_220316>`__
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_220316...r_220518>`__
 
 Geodata
 *******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geological Profiles GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas_profile>`__ (ch.swisstopo.geologie-geologischer_atlas_profile)                                   |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `TBE: Side of tick bite reported <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                          |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,6 +75,10 @@ Geodata
 | Update | `Alp. Floodplains outside Fed. Inv. <//map.geo.admin.ch/?layers=ch.bafu.auen-ausserhalb_bundesinventar_alpin>`__ (ch.bafu.auen-ausserhalb_bundesinventar_alpin)                                 |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | update | `Contaminated military sites V2.0 PLR (ch.vbs.kataster-belasteter-standorte-militaer_v2_0.oereb) WMS and OEREB FS only`                                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Official street index <//map.geo.admin.ch/?layers=ch.swisstopo.amtliches-strassenverzeichnis>`__ (ch.swisstopo.amtliches-strassenverzeichnis)                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Housing Inventory <//map.geo.admin.ch/?layers=ch.are.wohnungsinventar-zweitwohnungsanteil>`__ (ch.are.wohnungsinventar-zweitwohnungsanteil)                                                    |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
