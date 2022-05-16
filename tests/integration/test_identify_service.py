@@ -758,7 +758,7 @@ class TestIdentifyService(TestsBase):
     def test_identify_query_not_null(self):
         params = {'geometryFormat': 'geojson',
                   'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
-                  'where': 'gdenr is not null'}
+                  'where': 'com_fosnr is not null'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
@@ -766,7 +766,7 @@ class TestIdentifyService(TestsBase):
     def test_identify_query_number(self):
         params = {'geometryFormat': 'geojson',
                   'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
-                  'where': 'gdenr < 2'}
+                  'where': 'com_fosnr < 2'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
@@ -790,7 +790,7 @@ class TestIdentifyService(TestsBase):
     def test_identify_query_and(self):
         params = {'geometryFormat': 'geojson',
                   'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
-                  'where': 'gdename ilike \'%maschwanden%\' or gdenr < 2'}
+                  'where': 'com_name ilike \'%maschwanden%\' or com_fosnr < 2'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
@@ -1030,8 +1030,8 @@ class TestIdentifyService(TestsBase):
     def test_identify_layerDefs_and_where(self):
         params = {'geometryFormat': 'geojson',
                   'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
-                  'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "gdenr < 20"}',
-                  'where': "gdenr < 20"}
+                  'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "com_fosnr < 20"}',
+                  'where': "com_fosnr < 20"}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn("Parameters 'layerDefs' and 'where' are mutually exclusive", resp.json['detail'])
@@ -1075,7 +1075,7 @@ class TestIdentifyService(TestsBase):
                   'sr': '2056',
                   'tolerance': '5',
                   'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
-                  'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "gdenr < 20"}'
+                  'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "com_fosnr < 20"}'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
