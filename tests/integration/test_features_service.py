@@ -121,17 +121,6 @@ class TestFeaturesView(TestsBase):
         self.assertGreater(len(resp.json['results']), 1)
         self.assertEsrijsonFeature(resp.json['results'][0], 21781, hasGeometry=False)
 
-    def test_find_exact_date(self):
-        params = {'layer': 'ch.bazl.luftfahrthindernis',
-                  'searchField': 'startofconstruction',
-                  'searchText': '1950-01-01',
-                  'returnGeometry': 'false',
-                  'contains': 'false'}
-        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
-        self.assertGreater(len(resp.json['results']), 1)
-        self.assertEsrijsonFeature(resp.json['results'][0], 21781, hasGeometry=False)
-
     def test_find_geojson(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register',
                   'searchField': 'egid',

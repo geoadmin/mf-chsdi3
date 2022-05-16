@@ -1644,34 +1644,37 @@ class ProjFlughafenanlagen(Base, Vector):
 register('ch.bazl.projektierungszonen-flughafenanlagen', ProjFlughafenanlagen)
 
 
-class Luftfahrthindernis(Base, Vector):
-    __tablename__ = 'view_luftfahrthindernis'
+class LuftfahrthindernisBase:
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
-    __template__ = 'templates/htmlpopup/luftfahrthindernisse.mako'
-    __bodId__ = 'ch.bazl.luftfahrthindernis'
-    __extended_info__ = True
-    __queryable_attributes__ = ['registrationnumber', 'state', 'maxheightagl', 'startofconstruction',
-                                'topelevationamsl', 'totallength', 'bgdi_activesince', 'abortionaccomplished']
-    # Must be equal to the mapped value of the column
     __label__ = 'registrationnumber'
+    __template__ = 'templates/htmlpopup/luftfahrthindernisse.mako'
     id = Column('bgdi_id', Integer, primary_key=True)
-    sanctiontext = Column('sanctiontext', Unicode)
+    airport = Column('airport', Unicode)
     registrationnumber = Column('registrationnumber', Unicode)
-    lk100 = Column('lk100', Unicode)
     obstacletype = Column('obstacletype', Unicode)
-    state = Column('state', Unicode)
-    maxheightagl = Column('maxheightagl', Integer)
-    topelevationamsl = Column('topelevationamsl', Integer)
-    totallength = Column('totallength', Integer)
-    startofconstruction = Column('startofconstruction', Date)
-    bgdi_activesince = Column('bgdi_activesince', Date)
-    duration = Column('duration', Unicode)
-    geomtype = Column('geomtype', Unicode)
-    abortionaccomplished = Column('abortionaccomplished', Date)
-    bgdi_created = Column('bgdi_created', Unicode)
+    maxheightagl = Column('maxheightagl', Unicode)
+    topelevationamsl = Column('topelevationamsl', Float)
+    radius = Column('radius', Float)
+    effectivedate = Column('effectivedate', Date)
+    marking = Column('marking', Unicode)
+    lighting = Column('lighting', Unicode)
+    group = Column('group', Unicode)
+    uuid = Column('uuid', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.luftfahrthindernis', Luftfahrthindernis)
+
+class Luftfahrthindernis(Base, LuftfahrthindernisBase, Vector):
+    __bodId__ = 'ch.bazl.luftfahrthindernis'
+    __tablename__ = 'view_obstacles'
+
+register(Luftfahrthindernis.__bodId__, Luftfahrthindernis)
+
+
+class LuftfahrthindernisAktuell(Base, LuftfahrthindernisBase, Vector):
+    __bodId__ = 'ch.bazl.luftfahrthindernis-aenderungen'
+    __tablename__ = 'view_obstacles_active'
+
+register(LuftfahrthindernisAktuell.__bodId__, LuftfahrthindernisAktuell)
 
 
 class LuftfahrtRecht(Base, Vector):

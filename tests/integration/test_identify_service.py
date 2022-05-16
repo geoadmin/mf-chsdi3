@@ -749,56 +749,48 @@ class TestIdentifyService(TestsBase):
 
     def test_identify_query_time(self):
         params = {'geometryFormat': 'geojson',
-                  'layers': 'all:ch.bazl.luftfahrthindernis',
-                  'where': 'startofconstruction > \'2014-12-01\''}
-        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/geo+json')
-        self.assertGeojsonFeature(resp.json['results'][0], 21781)
-
-    def test_identify_query_null(self):
-        params = {'geometryFormat': 'geojson',
-                  'layers': 'all:ch.bazl.luftfahrthindernis',
-                  'where': 'abortionaccomplished is null'}
+                  'layers': 'all:ch.bafu.landesforstinventar-vegetationshoehenmodell',
+                  'where': 'datenstand > \'2014-12-01\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_not_null(self):
         params = {'geometryFormat': 'geojson',
-                  'layers': 'all:ch.bazl.luftfahrthindernis',
-                  'where': 'totallength is not null'}
+                  'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
+                  'where': 'gdenr is not null'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_number(self):
         params = {'geometryFormat': 'geojson',
-                  'layers': 'all:ch.bazl.luftfahrthindernis',
-                  'where': 'maxheightagl > 210'}
+                  'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
+                  'where': 'gdenr < 2'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_text(self):
         params = {'geometryFormat': 'geojson',
-                  'layers': 'all:ch.bazl.luftfahrthindernis',
-                  'where': 'state ilike \'%a%\''}
+                  'layers': 'all:ch.astra.unfaelle-personenschaeden_alle',
+                  'where': 'roadtype_de ilike \'%autobahn%\''}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_or(self):
         params = {'geometryFormat': 'geojson',
-                  'layers': 'all:ch.bazl.luftfahrthindernis',
-                  'where': 'state ilike \'%a%\' and startofconstruction > \'2014-12-01\''}
+                  'layers': 'all:ch.astra.unfaelle-personenschaeden_alle',
+                  'where': 'roadtype_de ilike \'%autobahn%\' and accidentyear > 2013'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
     def test_identify_query_and(self):
         params = {'geometryFormat': 'geojson',
-                  'layers': 'all:ch.bazl.luftfahrthindernis',
-                  'where': 'state ilike \'%a%\' or startofconstruction > \'2014-12-01\''}
+                  'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
+                  'where': 'gdename ilike \'%maschwanden%\' or gdenr < 2'}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
@@ -1008,23 +1000,6 @@ class TestIdentifyService(TestsBase):
         resp = self.testapp.get('/rest/services/api/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertEqual(len(resp.json['results']), 0)
-#
-#    TODO: activate after update of data (ltpal)
-#   def test_identify_treasurehunt_good_scale(self):
-#
-#       params = dict(geometryType='esriGeometryPoint',
-#                     geometry='2791830,1142580',
-#                     geometryFormat='geojson',
-#                     imageDisplay='1920,730,96',
-#                     layers='all:ch.swisstopo.treasurehunt',
-#                     mapExtent='2791830,1142580,2791830,1142580',
-#                     returnGeometry='true',
-#                     sr='2056',
-#                     tolerance='10',
-#                     lang='fr')
-#       resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-#       self.assertEqual(resp.content_type, 'application/json')
-#       self.assertEqual(len(resp.json['results']), 1)
 
     def test_identify_treasurehunt_not_in_scale_range(self):
         params = dict(geometryType='esriGeometryPoint',
@@ -1054,9 +1029,9 @@ class TestIdentifyService(TestsBase):
 
     def test_identify_layerDefs_and_where(self):
         params = {'geometryFormat': 'geojson',
-                  'layers': 'all:ch.bazl.luftfahrthindernis',
-                  'layerDefs': '{"ch.bazl.luftfahrthindernis": "startofconstruction > \'2014-12-01\'"}',
-                  'where': "startofconstruction > \'2014-12-01\'"}
+                  'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
+                  'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "gdenr < 20"}',
+                  'where': "gdenr < 20"}
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertIn("Parameters 'layerDefs' and 'where' are mutually exclusive", resp.json['detail'])
@@ -1064,12 +1039,12 @@ class TestIdentifyService(TestsBase):
     def test_identify_layerDefs_non_existing_layer(self):
         params = {'geometryFormat': 'geojson',
                   'geometryType': 'esriGeometryEnvelope',
-                  'geometry': '2548945.5,1147956,2549402,1148103.5',
+                  'geometry': '2675151.7236328125,1232508.3544921873,2690102.0532226562,1244982.7392578123',
                   'imageDisplay': '1367,949,96',
-                  'mapExtent': '2318250,952750,3001750,1427250',
+                  'mapExtent': '2668934.25,1226981.15,2691834.25,1247301.15',
                   'sr': '2056',
                   'tolerance': '5',
-                  'layers': 'all:ch.bazl.luftfahrthindernis',
+                  'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
                   'layerDefs': '{"ch.another.layer": "startofconstruction > \'2014-12-01\'"}'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
@@ -1079,29 +1054,28 @@ class TestIdentifyService(TestsBase):
     def test_identify_layerDefs_non_existing_attribute(self):
         params = {'geometryFormat': 'geojson',
                   'geometryType': 'esriGeometryEnvelope',
-                  'geometry': '2548945.5,1147956,2549402,1148103.5',
+                  'geometry': '2675151.7236328125,1232508.3544921873,2690102.0532226562,1244982.7392578123',
                   'imageDisplay': '1367,949,96',
-                  'mapExtent': '2318250,952750,3001750,1427250',
+                  'mapExtent': '2668934.25,1226981.15,2691834.25,1247301.15',
                   'sr': '2056',
                   'tolerance': '5',
-                  'layers': 'all:ch.bazl.luftfahrthindernis',
-                  'layerDefs': '{"ch.bazl.luftfahrthindernis": "dummy_attribute > \'2014-12-01\'"}'
+                  'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
+                  'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "dummy_attribute > \'2014-12-01\'"}'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         self.assertEqual(resp.content_type, 'application/json')
         self.assertTrue(u"Query attribute 'dummy_attribute' is not queryable" in resp.json['detail'])
 
     def test_identify_layerDefs(self):
-
         params = {'geometryFormat': 'geojson',
                   'geometryType': 'esriGeometryEnvelope',
-                  'geometry': '2548945.5,1147956,2549402,1148103.5',
+                  'geometry': '2675151.7236328125,1232508.3544921873,2690102.0532226562,1244982.7392578123',
                   'imageDisplay': '1367,949,96',
-                  'mapExtent': '2318250,952750,3001750,1427250',
+                  'mapExtent': '2668934.25,1226981.15,2691834.25,1247301.15',
                   'sr': '2056',
                   'tolerance': '5',
-                  'layers': 'all:ch.bazl.luftfahrthindernis',
-                  'layerDefs': '{"ch.bazl.luftfahrthindernis": "startofconstruction > \'2014-12-01\'"}'
+                  'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
+                  'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "gdenr < 20"}'
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp.content_type, 'application/geo+json')
