@@ -50,8 +50,6 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Restrictions for drones <//map.geo.admin.ch/?layers=ch.bazl.einschraenkungen-drohnen>`__ (ch.bazl.einschraenkungen-drohnen)                                                                    |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Airspaces - CTR <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-kontrollzonen>`__ (ch.bazl.luftraeume-kontrollzonen)                                                                            |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Airspaces: Control areas - CTA <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-kontrollbezirke>`__ (ch.bazl.luftraeume-kontrollbezirke)                                                         |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Airspaces: Control zones - CTR <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-kontrollzonen>`__ (ch.bazl.luftraeume-kontrollzonen)                                                             |
