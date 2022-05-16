@@ -35,7 +35,7 @@ def date_to_str(datum):
     except:
         pass
 
-    try: 
+    try:
         return datetime.datetime.strptime(datum.strip(), "%Y%m").strftime("%m-%Y")
     except:
         return datum
@@ -198,7 +198,6 @@ params = (
     lang,
     image_rotation)
 viewer_url = get_viewer_url(request, params)
-shop_url = request.registry.settings['shop_url']
 
 dataPath = 'ch.swisstopo.lubis-terrestrische_aufnahmen/'
 dataGeoAdminHost = request.registry.settings['datageoadminhost']
@@ -224,7 +223,7 @@ url_smapshot= "https://smapshot.heig-vd.ch/map/?imageId={}".format(c['attributes
     <tr><th class="cell-left">${_('ch.swisstopo.lubis-luftbilder_schraegaufnahmen.tt_lubis_schraegaufnahmen_medium_format')}</th>                 <td>${c['attributes']['medium_format'] or '-'}</td></tr>
     <tr><th class="cell-left">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.tt_filesize')}</th>                 <td>${c['attributes']['filesize_mb'] or '-'}</td></tr>
     <tr><th class="cell-left">${_('tt_lubis_bildpfad')}</th>         <td>${filename or '-'}</td></tr>
-    <tr><th class="cell-left">${_('link')}</th>         
+    <tr><th class="cell-left">${_('link')}</th>
         <td>
 % if pdf:
     <a href="${url_pdf}" target="_blank">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.expertenlink')} - pdf</a>
