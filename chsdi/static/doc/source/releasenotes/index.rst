@@ -44,6 +44,8 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Geological Profiles GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas_profile>`__ (ch.swisstopo.geologie-geologischer_atlas_profile)                                   |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Latest changes of obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis-aenderungen>`__ (ch.bazl.luftfahrthindernis-aenderungen)                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `TBE: Side of tick bite reported <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                          |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Restrictions for drones <//map.geo.admin.ch/?layers=ch.bazl.einschraenkungen-drohnen>`__ (ch.bazl.einschraenkungen-drohnen)                                                                    |
@@ -79,6 +81,16 @@ Geodata
 | Update | `Official street index <//map.geo.admin.ch/?layers=ch.swisstopo.amtliches-strassenverzeichnis>`__ (ch.swisstopo.amtliches-strassenverzeichnis)                                                  |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Housing Inventory <//map.geo.admin.ch/?layers=ch.are.wohnungsinventar-zweitwohnungsanteil>`__ (ch.are.wohnungsinventar-zweitwohnungsanteil)                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Air navigation obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis>`__ (ch.bazl.luftfahrthindernis)                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images cantons <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-kantone>`__ (ch.swisstopo.lubis-luftbilder-dritte-kantone)                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division Dufour Map Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-dufour.metadata>`__ (ch.swisstopo.hiks-dufour.metadata)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division Siegfried Map 50 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-siegfried-ta50.metadata>`__ (ch.swisstopo.hiks-siegfried-ta50.metadata)                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division Siegfried Map 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-siegfried-ta25.metadata>`__ (ch.swisstopo.hiks-siegfried-ta25.metadata)                                         |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
