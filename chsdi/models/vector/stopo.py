@@ -372,227 +372,6 @@ class GeologieGeowege(Base, Vector):
 register(GeologieGeowege.__bodId__, GeologieGeowege)
 
 
-class ShopProductClass:
-    __template__ = 'templates/htmlpopup/shop_product.mako'
-    __label__ = 'id'
-    id = Column('pk_product', Unicode, primary_key=True)
-    scale = Column('scale', Integer)
-    release = Column('release', Integer)
-    data = Column('data', Integer)
-    isbn = Column('s_isbn', Unicode)
-    author = Column('s_author', Unicode)
-    available = Column('available', Boolean)
-    the_geom = Column(Geometry2D)
-
-
-class ShopStandardClass:
-    __template__ = 'templates/htmlpopup/shop_product.mako'
-    id = Column('pk_product', Unicode, primary_key=True)
-    available = Column('available', Boolean)
-    name_de = Column('s_title_de', Unicode)
-    name_fr = Column('s_title_fr', Unicode)
-    name_it = Column('s_title_it', Unicode)
-    name_en = Column('s_title_en', Unicode)
-
-
-class GravimetrischerAtlasPapierMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
-    __tablename__ = 'view_gridstand_gravimetrie_atlas_metadata_shop'
-    __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata'
-
-register('ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata', GravimetrischerAtlasPapierMetadata)
-
-
-class Generalkarte300Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_gk300'
-    __bodId__ = 'ch.swisstopo.generalkarte300_papier.metadata'
-
-register('ch.swisstopo.generalkarte300_papier.metadata', Generalkarte300Metadata)
-
-
-class Landeskarte500Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_lk500'
-    __bodId__ = 'ch.swisstopo.landeskarte500_papier.metadata'
-
-register('ch.swisstopo.landeskarte500_papier.metadata', Landeskarte500Metadata)
-
-
-class Landeskarte1000PapierMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False, 'extend_existing': True})
-    __tablename__ = 'view_gridstand_lk1000'
-    __bodId__ = 'ch.swisstopo.landeskarte1000_papier.metadata'
-
-register('ch.swisstopo.landeskarte1000_papier.metadata', Landeskarte1000PapierMetadata)
-
-
-class SegelFlug300Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_sfk300'
-    __bodId__ = 'ch.swisstopo.segelflugkarte_papier.metadata'
-
-register('ch.swisstopo.segelflugkarte_papier.metadata', SegelFlug300Metadata)
-
-
-class StrassenKarte200Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_stk200'
-    __bodId__ = 'ch.swisstopo.strassenkarte200_papier.metadata'
-
-register('ch.swisstopo.strassenkarte200_papier.metadata', StrassenKarte200Metadata)
-
-
-class GeolKarte500Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gkg500'
-    __bodId__ = 'ch.swisstopo.geologie-geologische_karte_papier.metadata'
-
-register('ch.swisstopo.geologie-geologische_karte_papier.metadata', GeolKarte500Metadata)
-
-
-class TektonischeKarte500Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gkt500'
-    __bodId__ = 'ch.swisstopo.geologie-tektonische_karte_papier.metadata'
-
-register('ch.swisstopo.geologie-tektonische_karte_papier.metadata', TektonischeKarte500Metadata)
-
-
-class SchwereKarte500Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gkba500'
-    __bodId__ = 'ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata'
-
-register('ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata', SchwereKarte500Metadata)
-
-
-class GrundwasserVulnerabilitaetPapierMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
-    __tablename__ = 'view_gridstand_gkwvul500'
-    __bodId__ = 'ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata'
-
-register('ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata', GrundwasserVulnerabilitaetPapierMetadata)
-
-
-class IcaoPapierMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __tablename__ = 'icao_papier'
-    __bodId__ = 'ch.swisstopo.luftfahrtkarten-icao_papier.metadata'
-
-register('ch.swisstopo.luftfahrtkarten-icao_papier.metadata', IcaoPapierMetadata)
-
-
-class GrundWasserVorkommenMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gkwvor500'
-    __bodId__ = 'ch.swisstopo.geologie-grundwasservorkommen_papier.metadata'
-
-register('ch.swisstopo.geologie-grundwasservorkommen_papier.metadata', GrundWasserVorkommenMetadata)
-
-
-class LetztEisMaxMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gklgm500'
-    __bodId__ = 'ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata'
-
-register('ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata', LetztEisMaxMetadata)
-
-
-class ShopProductGroupClass(ShopProductClass):
-    __label__ = 'number'
-    number = Column('s_map_number', Unicode)
-    name_de = Column('s_title_de', Unicode)
-    name_fr = Column('s_title_fr', Unicode)
-    name_it = Column('s_title_it', Unicode)
-    name_en = Column('s_title_en', Unicode)
-
-
-class Landeskarte25PapierMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __tablename__ = 'lk25_papier'
-    __bodId__ = 'ch.swisstopo.landeskarte25_papier.metadata'
-
-register('ch.swisstopo.landeskarte25_papier.metadata', Landeskarte25PapierMetadata)
-
-
-class Landeskarte50PapierMetadata (Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __tablename__ = 'lk50_papier'
-    __bodId__ = 'ch.swisstopo.landeskarte50_papier.metadata'
-
-register('ch.swisstopo.landeskarte50_papier.metadata', Landeskarte50PapierMetadata)
-
-
-class Scale100Metadata(Base, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_gridstand_lk100_shop'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-
-
-class Landeskarte100PapierMetadata(Base, ShopProductGroupClass, Vector):
-    __tablename__ = 'lk100_papier'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.landeskarte100_papier.metadata'
-
-register('ch.swisstopo.landeskarte100_papier.metadata', Landeskarte100PapierMetadata)
-
-
-class Landeskarte200Metadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_lk200_shop'
-    __bodId__ = 'ch.swisstopo.landeskarte200_papier.metadata'
-
-register('ch.swisstopo.landeskarte200_papier.metadata', Landeskarte200Metadata)
-
-
-class Wanderkarte50PapierMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __tablename__ = 'lkwander50_papier'
-    __bodId__ = 'ch.swisstopo.wanderkarte50_papier.metadata'
-
-register('ch.swisstopo.wanderkarte50_papier.metadata', Wanderkarte50PapierMetadata)
-
-
-class WanderkarteT33Metadata (Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_wkt33_shop'
-    __bodId__ = 'ch.swisstopo.wanderkarte33_papier.metadata'
-
-register('ch.swisstopo.wanderkarte33_papier.metadata', WanderkarteT33Metadata)
-
-
-class Wanderkarte25zusMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_lkwander25zus_shop'
-    __bodId__ = 'ch.swisstopo.wanderkarte25-zus_papier.metadata'
-
-register('ch.swisstopo.wanderkarte25-zus_papier.metadata', Wanderkarte25zusMetadata)
-
-
-class BurgenKarte200Metadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_bk200'
-    __bodId__ = 'ch.swisstopo.burgenkarte200_papier.metadata'
-
-register('ch.swisstopo.burgenkarte200_papier.metadata', BurgenKarte200Metadata)
-
-
-class GeolAtlasMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gas25'
-    __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas_papier.metadata'
-
-register('ch.swisstopo.geologie-geologischer_atlas_papier.metadata', GeolAtlasMetadata)
-
-
-class GeolSpezialKarteMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gsk'
-    __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata'
-
-register('ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata', GeolSpezialKarteMetadata)
-
-
 class GeolGeneralkarteGGK200Meta(Base, Vector):
     __tablename__ = 'generalkarte_ggk200_meta'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
@@ -1104,8 +883,8 @@ register('ch.swisstopo.images-swissimage-dop10.metadata', GridstandSwissimageDop
 
 
 class GridstandSwisssurface3d(Base, Vector):
-    __tablename__ = 'shop_perimeter_swisssurface3d'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __tablename__ = 'view_gridstand_swisssurface3d'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.swisssurface3d.metadata'
     __template__ = 'templates/htmlpopup/swisssurface3d.mako'
     __label__ = 'id'
@@ -1128,15 +907,6 @@ class GridstandSwisssurface3dRaster(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(GridstandSwisssurface3dRaster.__bodId__, GridstandSwisssurface3dRaster)
-
-
-class SwissimageProduct(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_swissimage'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.swissimage-product'
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.swissimage-product', SwissimageProduct)
 
 
 class GeologischeKarteLine(Base, Vector):
@@ -2910,7 +2680,7 @@ register('ch.swisstopo.swissnames3d', Swissnames3dRaster13)
 
 
 class SwissMapVector25MetadataPerimeter(Base, Vector):
-    __tablename__ = 'shop_perimeter_vector25'
+    __tablename__ = 'perimeter_vector25'
     __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/smv25.mako'
     __bodId__ = 'ch.swisstopo.swiss-map-vector25.metadata'
@@ -2946,7 +2716,7 @@ register('ch.swisstopo.lotabweichungen', Lotabweichungen)
 
 
 class HiksDufourMetadata(Base, Vector):
-    __tablename__ = 'view_gridstand_dufour_shop'
+    __tablename__ = 'view_gridstand_dufour'
     __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-dufour.metadata'
@@ -2958,7 +2728,7 @@ register('ch.swisstopo.hiks-dufour.metadata', HiksDufourMetadata)
 
 
 class HiksSiegfriedTa25Metadata(Base, Vector):
-    __tablename__ = 'view_gridstand_siegfried_ta25_shop'
+    __tablename__ = 'view_gridstand_siegfried_ta25'
     __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta25.metadata'
@@ -2970,7 +2740,7 @@ register('ch.swisstopo.hiks-siegfried-ta25.metadata', HiksSiegfriedTa25Metadata)
 
 
 class HiksSiegfriedTa50Metadata(Base, Vector):
-    __tablename__ = 'view_gridstand_siegfried_ta50_shop'
+    __tablename__ = 'view_gridstand_siegfried_ta50'
     __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta50.metadata'
