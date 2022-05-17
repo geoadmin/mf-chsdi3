@@ -5,6 +5,7 @@
     lang = lang if lang in ('fr', 'it') else 'de'
     standorttyp = 'standorttyp_%s' % lang
     statusaltlv = 'statusaltlv_%s' % lang
+    url = 'url_%s' % lang
     untersuchungsstand = 'untersuchungsstand_%s' % lang
     arr_untersuchungsstand = c['attributes'][untersuchungsstand].split('##')
     arr_len = len(arr_untersuchungsstand)
@@ -19,6 +20,6 @@
     <tr><td class="cell-left">${_('tt_ch_bav_kataster_belasteter_standorte_oev_standorttyp')}</td>              <td>${c['attributes'][standorttyp] or '-'}</td></tr>
     <tr><td class="cell-left">${_('tt_ch_bav_kataster_belasteter_standorte_oev_beurteilung')}</td>              <td>${c['attributes'][statusaltlv] or '-'}</td></tr>
     <tr><td class="cell-left" valign="top">${_('tt_ch_bav_kataster_belasteter_standorte_oev_untersuchungsstand_2')}</td>     <td>${_(str_output)|n}</td></tr> 
-    <tr><td class="cell-left">${_('tt_ch_bav_kataster_belasteter_standorte_oev_beschreibung')}</td>             <td><a href="${c['attributes']['url'] or '-'}" target="_blank">${_('tt_ch_bav_kataster_belasteter_standorte_oev_katasterauszug')}</a></td></tr>
+    <tr><td class="cell-left">${_('tt_ch_bav_kataster_belasteter_standorte_oev_beschreibung')}</td>             <td><a href="${c['attributes'][url] or '-'}" target="_blank">${_('tt_ch_bav_kataster_belasteter_standorte_oev_katasterauszug')}</a></td></tr>
     <tr><td>&nbsp;</td>                                                                                         <td>&nbsp;</td></tr>
 </%def>

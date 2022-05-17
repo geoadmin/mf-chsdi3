@@ -14,6 +14,83 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20220518:
+
+Release 20220518 - Wednesday, Mai 18th 2022
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- XYZ Service Request Structure Documentation: http://api.geo.admin.ch/services/sdiservices.html#XYZ
+- Announcement: 
+    - **ch.bazl.luftfahrthindernis** has changed its data model as previously announced: Attributes removed: abortionaccomplished, duration, lk100, sanctiontext, startofconstruction, totallength. Attributes added: airport, effectivedate, group, lighting, marking, radius, uuid. 
+    - **ch.swisstopo.amtliches-strassenverzeichnis** has changed its complete data model as previously announced. New model according to the official `model description <https://www.cadastre.ch/content/cadastre-internet/de/services/service/registry/street/_jcr_content/contentPar/tabs_copy/items/dokumente/tabPar/downloadlist/downloadItems/314_1614004254682.download/Spezifikation-DE.pdf>`__ Attributes removed: id, label, plzo, gdenr, gdename, type, status, official, validated, modified. Attributes added: str_esid, stn_label, zip_label, com_fosnr, com_name, str_type, str_status, str_official, str_valid, str_modified
+    - **ch.swisstopo.wanderkarte50_papier.metadata, ch.swisstopo.wanderkarte33_papier.metadata, ch.swisstopo.wanderkarte25-zus_papier.metadata, ch.swisstopo.skitourenkarte-50.metadata, ch.swisstopo.strassenkarte200_papier.metadata,ch.swisstopo.burgenkarte200_papier.metadata, ch.swisstopo.landeskarte25_papier.metadata, ch.swisstopo.landeskarte50_papier.metadata, ch.swisstopo.landeskarte100_papier.metadata, ch.swisstopo.landeskarte200_papier.metadata, ch.swisstopo.generalkarte300_papier.metadata, ch.swisstopo.landeskarte500_papier.metadata, ch.swisstopo.landeskarte1000_papier.metadata, ch.swisstopo.luftfahrtkarten-icao_papier.metadata, ch.swisstopo.segelflugkarte_papier.metadata, ch.swisstopo.geologie-geologischer_atlas_papier.metadata, ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata, ch.swisstopo.geologie-geologische_karte_papier.metadata, ch.swisstopo.geologie-tektonische_karte_papier.metadata, ch.swisstopo.geologie-grundwasservorkommen_papier.metadata, ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata, ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata, ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata, ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata** have been removed from FSDI services as previously announced
+    - **ch.swisstopo.uebersicht-gemeinden** and **ch.swisstopo.uebersicht-schweiz** will be removed from FSDI services with the release on June 29th 2022
+    - **ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2, ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2, ch.swisstopo.geologie-gisgeol-flaechen-10to100km2 ch.swisstopo.geologie-gisgeol-flaechen-10x10km, ch.swisstopo.geologie-gisgeol-flaechen-1x1km, ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2, ch.swisstopo.geologie-gisgeol-flaechen-lt10km2, ch.swisstopo.geologie-gisgeol-linien** and **ch.swisstopo.geologie-gisgeol-punkte** will be removed from FSDI services with the release on June 29th 2022
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-03-16-rc9...2022-05-18-rc1>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_220316...r_220518>`__
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geological Profiles GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas_profile>`__ (ch.swisstopo.geologie-geologischer_atlas_profile)                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Latest changes of obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis-aenderungen>`__ (ch.bazl.luftfahrthindernis-aenderungen)                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `TBE: Side of tick bite reported <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Restrictions for drones <//map.geo.admin.ch/?layers=ch.bazl.einschraenkungen-drohnen>`__ (ch.bazl.einschraenkungen-drohnen)                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Control areas - CTA <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-kontrollbezirke>`__ (ch.bazl.luftraeume-kontrollbezirke)                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Control zones - CTR <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-kontrollzonen>`__ (ch.bazl.luftraeume-kontrollzonen)                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Flight information region - FIR <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-fluginformationsgebiet>`__ (ch.bazl.luftraeume-fluginformationsgebiet)                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Flight information zones - FIZ <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-fluginformationszonen>`__ (ch.bazl.luftraeume-fluginformationszonen)                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Terminal control areas - TMA <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-nahkontrollbezirke>`__ (ch.bazl.luftraeume-nahkontrollbezirke)                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aeronautical Chart ICAO <//map.geo.admin.ch/?layers=ch.bazl.luftfahrtkarten-icao>`__ (ch.bazl.luftfahrtkarten-icao)                                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Glider Chart <//map.geo.admin.ch/?layers=ch.bazl.segelflugkarte>`__ (ch.bazl.segelflugkarte)                                                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISS MIL PILOTS CHART <//map.geo.admin.ch/?layers=ch.vbs.swissmilpilotschart>`__ (ch.vbs.swissmilpilotschart)                                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map of restricted and danger areas <//map.geo.admin.ch/?layers=ch.vbs.sperr-gefahrenzonenkarte>`__ (ch.vbs.sperr-gefahrenzonenkarte)                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mil Airspace Chart <//map.geo.admin.ch/?layers=ch.vbs.milairspacechart>`__ (ch.vbs.milairspacechart)                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerodromes + Heliports <//map.geo.admin.ch/?layers=ch.bazl.flugplaetze-heliports>`__ (ch.bazl.flugplaetze-heliports)                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Alp. Floodplains outside Fed. Inv. <//map.geo.admin.ch/?layers=ch.bafu.auen-ausserhalb_bundesinventar_alpin>`__ (ch.bafu.auen-ausserhalb_bundesinventar_alpin)                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| update | `Contaminated military sites V2.0 PLR (ch.vbs.kataster-belasteter-standorte-militaer_v2_0.oereb) WMS and OEREB FS only`                                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Official street index <//map.geo.admin.ch/?layers=ch.swisstopo.amtliches-strassenverzeichnis>`__ (ch.swisstopo.amtliches-strassenverzeichnis)                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Housing Inventory <//map.geo.admin.ch/?layers=ch.are.wohnungsinventar-zweitwohnungsanteil>`__ (ch.are.wohnungsinventar-zweitwohnungsanteil)                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Air navigation obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis>`__ (ch.bazl.luftfahrthindernis)                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images cantons <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-kantone>`__ (ch.swisstopo.lubis-luftbilder-dritte-kantone)                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division Dufour Map Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-dufour.metadata>`__ (ch.swisstopo.hiks-dufour.metadata)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division Siegfried Map 50 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-siegfried-ta50.metadata>`__ (ch.swisstopo.hiks-siegfried-ta50.metadata)                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division Siegfried Map 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-siegfried-ta25.metadata>`__ (ch.swisstopo.hiks-siegfried-ta25.metadata)                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 .. _releasenotes_20220316:
 
@@ -705,8 +782,8 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- Announcement: Changes in SEARCH Service http://api.geo.admin.ch/services/sdiservices.html#search taking effect on 05.05.2021: in the response "weight:" results will change (improved weighting and correct merge of exact + wildcard results). Test the new behaviour on our intgeration plattform (not for operational use): 
-  - INT SEARCH Service: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer 
+- Announcement: Changes in SEARCH Service http://api.geo.admin.ch/services/sdiservices.html#search taking effect on 05.05.2021: in the response "weight:" results will change (improved weighting and correct merge of exact + wildcard results). Test the new behaviour on our intgeration plattform (not for operational use):
+  - INT SEARCH Service: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer
   - INT SEARCH Service example: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer?sr=2056&searchText=Hardturmstrasse%20105%208005%20Z%C3%BCrich&lang=de&type=locations
   - INT SEARCH Service example: http://mf-chsdi3.int.bgdi.ch/feature_BGDIINF_SB-1527_fix_search/rest/services/ech/SearchServer?sr=2056&searchText=rotten&lang=de&type=locations
   - CHANGES are documented in the PULL REQUEST: https://github.com/geoadmin/mf-chsdi3/pull/3657
@@ -976,7 +1053,7 @@ API & applications
 - Due to maintenance work, the layer ch.swisstopo.geologie-tiefengeothermie-projekte will be temporarily unavailable in CHSDI until the release of December 9th 2020. In the meantime, the layer is still accessible for `download <https://data.geo.admin.ch/ch.swisstopo.geologie-tiefengeothermie_projekte/>`__.
 - Announcement:
     - The BFS layer ch.bfs.gebaeude_wohnungs_register (Register of Buildings and Dwellings) will extend its data model on all FSDI services (map, api3 and download on data.geo.admin.ch) by this release according to https://www.bfs.admin.ch/bfs/en/home/statistics/catalogues-databases/publications.assetdetail.7008785.html (model description available in German only).
-        - now productive data model: https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register/9051164_0 
+        - now productive data model: https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register/9051164_0
 
 
 `MAP <//map.geo.admin.ch>`__

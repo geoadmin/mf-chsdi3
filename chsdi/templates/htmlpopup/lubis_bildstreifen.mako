@@ -5,9 +5,6 @@ from pyramid.url import route_url
 %>
 
 <%def name="table_body(c, lang)">
-<%
-shop_url = request.registry.settings['shop_url']
-%>
 
 <% c['stable_id'] = True %>
     <tr><td class="cell-left">${_('ch.swisstopo.lubis-bildstreifen.id')}</td>          <td>${c['featureId']}</td></tr>
@@ -21,7 +18,6 @@ shop_url = request.registry.settings['shop_url']
 <%def name="extended_info(c, lang)">
 <%
 c['stable_id'] = True
-shop_url = request.registry.settings['shop_url']
 protocol = request.scheme
 c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
 topic = request.matchdict.get('map')

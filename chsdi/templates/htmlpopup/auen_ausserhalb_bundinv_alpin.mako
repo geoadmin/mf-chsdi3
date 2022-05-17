@@ -14,7 +14,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.auen-ausserhalb_bundesinventar_alpin.objnummer')}</td>
-        <td>${c['id']}</td>
+        <td>${c['attributes']['objnummer'] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.auen-ausserhalb_bundesinventar_alpin.auentyp')}</td>

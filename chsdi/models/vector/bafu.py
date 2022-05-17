@@ -1223,6 +1223,7 @@ class AlpinAuenAusserhalbBundesinventar(Base, Vector):
     __template__ = 'templates/htmlpopup/auen_ausserhalb_bundinv_alpin.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
+    objnummer = Column('objnummer', Integer)
     name = Column('name', Unicode)
     de_biobedeutung = Column('de_biobedeutung', Unicode)
     fr_biobedeutung = Column('fr_biobedeutung', Unicode)

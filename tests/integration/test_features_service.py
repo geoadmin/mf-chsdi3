@@ -121,17 +121,6 @@ class TestFeaturesView(TestsBase):
         self.assertGreater(len(resp.json['results']), 1)
         self.assertEsrijsonFeature(resp.json['results'][0], 21781, hasGeometry=False)
 
-    def test_find_exact_date(self):
-        params = {'layer': 'ch.bazl.luftfahrthindernis',
-                  'searchField': 'startofconstruction',
-                  'searchText': '1950-01-01',
-                  'returnGeometry': 'false',
-                  'contains': 'false'}
-        resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
-        self.assertEqual(resp.content_type, 'application/json')
-        self.assertGreater(len(resp.json['results']), 1)
-        self.assertEsrijsonFeature(resp.json['results'][0], 21781, hasGeometry=False)
-
     def test_find_geojson(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register',
                   'searchField': 'egid',
@@ -237,17 +226,17 @@ class TestFeaturesView(TestsBase):
 
     def test_find_wrong_layer_layerdefs(self):
         params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
-                  'searchField': 'label',
+                  'searchField': 'stn_label',
                   'searchText': 'Talstrasse',
                   'returnGeometry': 'false',
                   'contains': 'false',
-                  'layerDefs': '{"tutu": "gdenr > 2000"}'}
+                  'layerDefs': '{"tutu": "com_fosnr > 2000"}'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
         resp.mustcontain("You can only filter on layer 'ch.swisstopo.amtliches-strassenverzeichnis' in 'layerDefs'")
 
     def test_find_wrong_attribute(self):
         params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
-                  'searchField': 'label',
+                  'searchField': 'stn_label',
                   'searchText': 'Talstrasse',
                   'returnGeometry': 'false',
                   'contains': 'false',
@@ -257,7 +246,7 @@ class TestFeaturesView(TestsBase):
 
     def test_find_all_talstrasse(self):
         params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
-                  'searchField': 'label',
+                  'searchField': 'stn_label',
                   'searchText': 'Talstrasse',
                   'returnGeometry': 'false',
                   'contains': 'false'}
@@ -271,16 +260,16 @@ class TestFeaturesView(TestsBase):
         params1 = {
             "layer": "ch.swisstopo.amtliches-strassenverzeichnis",
             "searchText": "Studerweg",
-            "searchField": "label",
+            "searchField": "stn_label",
             "returnGeometry": "false",
-            "layerDefs": '''{"ch.swisstopo.amtliches-strassenverzeichnis": "gdename = 'Olten' or gdename = 'Sattel'"}'''
+            "layerDefs": '''{"ch.swisstopo.amtliches-strassenverzeichnis": "com_name = 'Olten' or com_name = 'Sattel'"}'''
         }
         params2 = {
             "layer": "ch.swisstopo.amtliches-strassenverzeichnis",
             "searchText": "Studerweg",
-            "searchField": "label",
+            "searchField": "stn_label",
             "returnGeometry": "false",
-            "layerDefs": '''{"ch.swisstopo.amtliches-strassenverzeichnis": "gdename = 'Sattel' or gdename = 'Olten'"}'''
+            "layerDefs": '''{"ch.swisstopo.amtliches-strassenverzeichnis": "com_name = 'Sattel' or com_name = 'Olten'"}'''
         }
 
         resp1 = self.testapp.get('/rest/services/all/MapServer/find', params=params1, status=200)
@@ -288,22 +277,22 @@ class TestFeaturesView(TestsBase):
         self.assertEqual(resp1.content_type, 'application/json')
         # self.assertEqual(resp1.json['results'], resp2.json['results'])
         for feat in resp2.json['results']:
-            self.assertIn(feat['attributes']['gdename'], ['Olten', 'Sattel'])
-            self.assertIn('Studer', feat['attributes']['label'])
+            self.assertIn(feat['attributes']['com_name'], ['Olten', 'Sattel'])
+            self.assertIn('Studer', feat['attributes']['stn_label'])
 
     def test_find_filter_with_layerdefs(self):
         params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
-                  'searchField': 'label',
+                  'searchField': 'stn_label',
                   'searchText': 'Talstrasse',
                   'returnGeometry': 'false',
                   'contains': 'false',
-                  'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "gdenr = 4307"}'}
+                  'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "com_fosnr = 4307"}'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         # Not more than one road should have the same name in a given commune
         self.assertLessEqual(len(resp.json['results']), 1)
         for feat in resp.json['results']:
-            self.assertEqual(feat['attributes']['gdenr'], 4307)
+            self.assertEqual(feat['attributes']['com_fosnr'], 4307)
 
     def test_feature_wrong_idlayer(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/toto/362', status=400)
@@ -774,7 +763,7 @@ class TestReleasesService(TestsBase):
 
     def test_layer_without_releases(self):
         params = {'imageDisplay': '500,600,96', 'mapExtent': '611399.9999999999,158650,690299.9999999999,198150'}
-        self.testapp.get('/rest/services/all/MapServer/ch.swisstopo.images-swissimage.metadata/releases', params=params, status=400)
+        self.testapp.get('/rest/services/all/MapServer/ch.swisstopo.pixelkarte-farbe/releases', params=params, status=400)
 
     def test_unknown_layers(self):
         params = {'imageDisplay': '500,600,96', 'mapExtent': '611399.9999999999,158650,690299.9999999999,198150'}
@@ -784,13 +773,13 @@ class TestReleasesService(TestsBase):
         params1 = {
             "layer": "ch.swisstopo.amtliches-strassenverzeichnis",
             "searchText": "371",
-            "searchField": "gdenr",
+            "searchField": "com_fosnr",
             "returnGeometry": "false",
-            "layerDefs": '''{"ch.swisstopo.amtliches-strassenverzeichnis": "label like '%Contrôle%'"}'''
+            "layerDefs": '''{"ch.swisstopo.amtliches-strassenverzeichnis": "stn_label like '%Contrôle%'"}'''
         }
 
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params1, status=200)
         self.assertEqual(resp.content_type, 'application/json')
         for feat in resp.json['results']:
-            self.assertIn(feat['attributes']['gdenr'], [371])
-            self.assertIn(u'Contrôle', feat['attributes']['label'])
+            self.assertIn(feat['attributes']['com_fosnr'], [371])
+            self.assertIn(u'Contrôle', feat['attributes']['stn_label'])

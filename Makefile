@@ -76,7 +76,6 @@ LAST_WMTS_PUBLIC_HOST := $(call lastvalue,wmts-public-host)
 LAST_GEOADMINHOST := $(call lastvalue,geoadminhost)
 LAST_ALTI_URL := $(call lastvalue,alti-url)
 LAST_API_URL := $(call lastvalue,api-url)
-LAST_SHOP_URL := $(call lastvalue,shop-url)
 LAST_HOST := $(call lastvalue,host)
 LAST_PUBLIC_BUCKET_HOST  := $(call lastvalue,public-bucket-host)
 LAST_VECTOR_BUCKET := $(call lastvalue,vector-bucket)
@@ -551,7 +550,6 @@ production.ini:  production.ini.in \
                 .venv/last-dbstaging \
                 .venv/last-alti-url \
                 .venv/last-api-url \
-                .venv/last-shop-url \
                 .venv/last-geodata-staging \
                 .venv/last-sphinxhost \
                 .venv/last-wmshost \
@@ -580,7 +578,6 @@ production.ini:  production.ini.in \
 		--var "dbstaging=$(DBSTAGING)" \
 		--var "alti_url=$(ALTI_URL)" \
 		--var "api_url=$(API_URL)" \
-		--var "shop_url=$(SHOP_URL)" \
 		--var "geodata_staging=$(GEODATA_STAGING)" \
 		--var "sphinxhost=$(SPHINXHOST)" \
 		--var "wmshost=$(WMSHOST)" \
@@ -703,9 +700,6 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-api-url::
 	$(call cachelastvariable,$@,$(API_URL),$(LAST_API_URL),api-url)
-
-.venv/last-shop-url::
-	$(call cachelastvariable,$@,$(SHOP_URL),$(LAST_SHOP_URL),shop-url)
 
 .venv/last-host::
 	$(call cachelastvariable,$@,$(HOST),$(LAST_HOST),host)

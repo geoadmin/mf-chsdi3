@@ -372,273 +372,74 @@ class GeologieGeowege(Base, Vector):
 register(GeologieGeowege.__bodId__, GeologieGeowege)
 
 
-class ShopProductClass:
-    __template__ = 'templates/htmlpopup/shop_product.mako'
-    __label__ = 'id'
-    id = Column('pk_product', Unicode, primary_key=True)
-    scale = Column('scale', Integer)
-    release = Column('release', Integer)
-    data = Column('data', Integer)
-    isbn = Column('s_isbn', Unicode)
-    author = Column('s_author', Unicode)
-    available = Column('available', Boolean)
+class GeolGeneralkarteGGK200Meta(Base, Vector):
+    __tablename__ = 'generalkarte_ggk200_meta'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/generalkarte_ggk200.metadata.mako'
+    __bodId__ = 'ch.swisstopo.geologie-generalkarte-ggk200.metadata'
+    __label__ = 'titel'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    nr = Column('nr', Integer)
+    titel = Column('titel', Unicode)
+    jahr = Column('jahr', Integer)
+    autor = Column('autor', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.geologie-generalkarte-ggk200.metadata', GeolGeneralkarteGGK200Meta)
+
+
+class GeologischerAtlasMeta:
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geologischer_atlas_meta.mako'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    nummer = Column('nummer', Integer)
+    name = Column('name', Unicode)
+    massstab = Column('massstab', Unicode)
+    ausgabejahr = Column('ausgabejahr', Integer)
+    autoren = Column('autoren', Unicode)
     the_geom = Column(Geometry2D)
 
 
-class ShopStandardClass:
-    __template__ = 'templates/htmlpopup/shop_product.mako'
-    id = Column('pk_product', Unicode, primary_key=True)
-    available = Column('available', Boolean)
-    name_de = Column('s_title_de', Unicode)
-    name_fr = Column('s_title_fr', Unicode)
-    name_it = Column('s_title_it', Unicode)
-    name_en = Column('s_title_en', Unicode)
-
-
-class GravimetrischerAtlasPapierMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
-    __tablename__ = 'view_gridstand_gravimetrie_atlas_metadata_shop'
-    __bodId__ = 'ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata'
-
-register('ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata', GravimetrischerAtlasPapierMetadata)
-
-
-class Generalkarte300Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_gk300'
-    __bodId__ = 'ch.swisstopo.generalkarte300_papier.metadata'
-
-register('ch.swisstopo.generalkarte300_papier.metadata', Generalkarte300Metadata)
-
-
-class Landeskarte500Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_lk500'
-    __bodId__ = 'ch.swisstopo.landeskarte500_papier.metadata'
-
-register('ch.swisstopo.landeskarte500_papier.metadata', Landeskarte500Metadata)
-
-
-class Landeskarte1000PapierMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False, 'extend_existing': True})
-    __tablename__ = 'view_gridstand_lk1000'
-    __bodId__ = 'ch.swisstopo.landeskarte1000_papier.metadata'
-
-register('ch.swisstopo.landeskarte1000_papier.metadata', Landeskarte1000PapierMetadata)
-
-
-class SegelFlug300Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_sfk300'
-    __bodId__ = 'ch.swisstopo.segelflugkarte_papier.metadata'
-
-register('ch.swisstopo.segelflugkarte_papier.metadata', SegelFlug300Metadata)
-
-
-class StrassenKarte200Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_stk200'
-    __bodId__ = 'ch.swisstopo.strassenkarte200_papier.metadata'
-
-register('ch.swisstopo.strassenkarte200_papier.metadata', StrassenKarte200Metadata)
-
-
-class GeolKarte500Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gkg500'
-    __bodId__ = 'ch.swisstopo.geologie-geologische_karte_papier.metadata'
-
-register('ch.swisstopo.geologie-geologische_karte_papier.metadata', GeolKarte500Metadata)
-
-
-class TektonischeKarte500Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gkt500'
-    __bodId__ = 'ch.swisstopo.geologie-tektonische_karte_papier.metadata'
-
-register('ch.swisstopo.geologie-tektonische_karte_papier.metadata', TektonischeKarte500Metadata)
-
-
-class SchwereKarte500Metadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gkba500'
-    __bodId__ = 'ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata'
-
-register('ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata', SchwereKarte500Metadata)
-
-
-class GrundwasserVulnerabilitaetPapierMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
-    __tablename__ = 'view_gridstand_gkwvul500'
-    __bodId__ = 'ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata'
-
-register('ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata', GrundwasserVulnerabilitaetPapierMetadata)
-
-
-class IcaoPapierMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __tablename__ = 'icao_papier'
-    __bodId__ = 'ch.swisstopo.luftfahrtkarten-icao_papier.metadata'
-
-register('ch.swisstopo.luftfahrtkarten-icao_papier.metadata', IcaoPapierMetadata)
-
-
-class GrundWasserVorkommenMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gkwvor500'
-    __bodId__ = 'ch.swisstopo.geologie-grundwasservorkommen_papier.metadata'
-
-register('ch.swisstopo.geologie-grundwasservorkommen_papier.metadata', GrundWasserVorkommenMetadata)
-
-
-class LetztEisMaxMetadata(Base, ShopProductClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gklgm500'
-    __bodId__ = 'ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata'
-
-register('ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata', LetztEisMaxMetadata)
-
-
-class ShopProductGroupClass(ShopProductClass):
-    __label__ = 'number'
-    number = Column('s_map_number', Unicode)
-    name_de = Column('s_title_de', Unicode)
-    name_fr = Column('s_title_fr', Unicode)
-    name_it = Column('s_title_it', Unicode)
-    name_en = Column('s_title_en', Unicode)
-
-
-class SkitourenkarteMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_lkski_shop'
-    __bodId__ = 'ch.swisstopo.skitourenkarte-50.metadata'
-
-register('ch.swisstopo.skitourenkarte-50.metadata', SkitourenkarteMetadata)
-
-
-class Landeskarte25PapierMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __tablename__ = 'lk25_papier'
-    __bodId__ = 'ch.swisstopo.landeskarte25_papier.metadata'
-
-register('ch.swisstopo.landeskarte25_papier.metadata', Landeskarte25PapierMetadata)
-
-
-class Landeskarte50PapierMetadata (Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __tablename__ = 'lk50_papier'
-    __bodId__ = 'ch.swisstopo.landeskarte50_papier.metadata'
-
-register('ch.swisstopo.landeskarte50_papier.metadata', Landeskarte50PapierMetadata)
-
-
-class Scale100Metadata(Base, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_gridstand_lk100_shop'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-
-
-class Landeskarte100PapierMetadata(Base, ShopProductGroupClass, Vector):
-    __tablename__ = 'lk100_papier'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.landeskarte100_papier.metadata'
-
-register('ch.swisstopo.landeskarte100_papier.metadata', Landeskarte100PapierMetadata)
-
-
-class Landeskarte200Metadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_lk200_shop'
-    __bodId__ = 'ch.swisstopo.landeskarte200_papier.metadata'
-
-register('ch.swisstopo.landeskarte200_papier.metadata', Landeskarte200Metadata)
-
-
-class Wanderkarte50PapierMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __tablename__ = 'lkwander50_papier'
-    __bodId__ = 'ch.swisstopo.wanderkarte50_papier.metadata'
-
-register('ch.swisstopo.wanderkarte50_papier.metadata', Wanderkarte50PapierMetadata)
-
-
-class WanderkarteT33Metadata (Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_wkt33_shop'
-    __bodId__ = 'ch.swisstopo.wanderkarte33_papier.metadata'
-
-register('ch.swisstopo.wanderkarte33_papier.metadata', WanderkarteT33Metadata)
-
-
-class Wanderkarte25zusMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_lkwander25zus_shop'
-    __bodId__ = 'ch.swisstopo.wanderkarte25-zus_papier.metadata'
-
-register('ch.swisstopo.wanderkarte25-zus_papier.metadata', Wanderkarte25zusMetadata)
-
-
-class BurgenKarte200Metadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __tablename__ = 'view_gridstand_bk200'
-    __bodId__ = 'ch.swisstopo.burgenkarte200_papier.metadata'
-
-register('ch.swisstopo.burgenkarte200_papier.metadata', BurgenKarte200Metadata)
-
-
-class GeolAtlasMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gas25'
-    __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas_papier.metadata'
-
-register('ch.swisstopo.geologie-geologischer_atlas_papier.metadata', GeolAtlasMetadata)
-
-
-class GeolAtlasVectorMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gav25'
-    __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas_vector.metadata'
-
-register('ch.swisstopo.geologie-geologischer_atlas_vector.metadata', GeolAtlasVectorMetadata)
-
-
-class GeolSpezialKarteMetadata(Base, ShopProductGroupClass, Vector):
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'view_gridstand_gsk'
-    __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata'
-
-register('ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata', GeolSpezialKarteMetadata)
-
-
-class GeolGenKarteGGK200Meta(Base, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_gridstand_ggk_shop'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.geologie-generalkarte-ggk200.metadata'
-
-register('ch.swisstopo.geologie-generalkarte-ggk200.metadata', GeolGenKarteGGK200Meta)
-
-
-class Ga25Meta(Base, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_ga25_grid_shop'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
+class GeologischerAtlasRasterMeta(Base, GeologischerAtlasMeta, Vector):
+    __tablename__ = 'geologischer_atlas_raster_meta'
     __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas.metadata'
 
-register('ch.swisstopo.geologie-geologischer_atlas.metadata', Ga25Meta)
+register('ch.swisstopo.geologie-geologischer_atlas.metadata', GeologischerAtlasRasterMeta)
 
 
-class GeolSpezialKartenVectorMeta(Base, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_gsk_vector'
+class GeologischerAtlasVectorMeta(Base, GeologischerAtlasMeta, Vector):
+    __tablename__ = 'geologischer_atlas_vector_meta'
+    __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas_vector.metadata'
+
+register('ch.swisstopo.geologie-geologischer_atlas_vector.metadata', GeologischerAtlasVectorMeta)
+
+
+class GeolSpezialkartenMetadata:
     __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/spezialkarten_meta.mako'
+    __label__ = 'titel'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    gsk_nr = Column('gsk_nr', Unicode)
+    titel = Column('titel', Unicode)
+    massstab = Column('massstab', Unicode)
+    jahrgang = Column('jahrgang', Integer)
+    autoren = Column('autoren', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class GeolSpezialkartenRasterMetadata(Base, GeolSpezialkartenMetadata, Vector):
+    __tablename__ = 'spezialkarten_raster_meta'
+    __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz.metadata'
+
+register('ch.swisstopo.geologie-spezialkarten_schweiz.metadata', GeolSpezialkartenRasterMetadata)
+
+
+class GeolSpezialKartenVectorMeta(Base, GeolSpezialkartenMetadata, Vector):
+    __tablename__ = 'spezialkarten_vector_meta'
     __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata'
 
 register('ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata', GeolSpezialKartenVectorMeta)
-
-
-class GeolSpezialKartenMetadata(Base, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_gsk_raster'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz.metadata'
-
-register('ch.swisstopo.geologie-spezialkarten_schweiz.metadata', GeolSpezialKartenMetadata)
 
 
 class SwissboundariesBezirk(Base, Vector):
@@ -1013,7 +814,9 @@ register('ch.swisstopo.dreiecksvermaschung', Dreiecksvermaschung)
 class GridstandTemplate:
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __label__ = 'lk_name'
-    id = Column('kbnum', Unicode, primary_key=True)
+    __template__ = 'templates/htmlpopup/gridstand.mako'
+    id = Column('gid', BigInteger, primary_key=True)
+    tileid = Column('tileid', Unicode)
     lk_name = Column('lk_name', Unicode)
     datenstand = Column('release', Integer)
     the_geom = Column(Geometry2D)
@@ -1027,10 +830,10 @@ class GridstandPermiterTemplate:
 
 # PK 25
 
-class GridstandPk25Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
+
+class GridstandPk25Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk25.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk25_tilecache'
-    tileid = Column('tileid', Unicode)
 
 
 register('ch.swisstopo.pixelkarte-pk25.metadata', GridstandPk25Meta)
@@ -1038,10 +841,9 @@ register('ch.swisstopo.pixelkarte-pk25.metadata', GridstandPk25Meta)
 # PK 50
 
 
-class GridstandPk50Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
+class GridstandPk50Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk50.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk50_tilecache'
-    tileid = Column('tileid', Unicode)
 
 
 register('ch.swisstopo.pixelkarte-pk50.metadata', GridstandPk50Meta)
@@ -1049,47 +851,21 @@ register('ch.swisstopo.pixelkarte-pk50.metadata', GridstandPk50Meta)
 # PK 100
 
 
-class GridstandPk100Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
+class GridstandPk100Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk100.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk100_tilecache'
-    tileid = Column('tileid', Unicode)
 
 register('ch.swisstopo.pixelkarte-pk100.metadata', GridstandPk100Meta)
 
 # PK 200
 
 
-class GridstandPk200Meta(Base, GridstandTemplate, ShopStandardClass, Vector):
+class GridstandPk200Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk200.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk200_tilecache'
-    tileid = Column('tileid', Unicode)
+    id = Column('kbnum', Unicode, primary_key=True)
 
 register('ch.swisstopo.pixelkarte-pk200.metadata', GridstandPk200Meta)
-
-# PK 500
-
-
-class GridstandPk500(Base, ShopProductClass, Vector):
-    __tablename__ = 'view_gridstand_datenhaltung_pk500_tilecache_shop'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.pixelkarte-farbe-pk500.noscale'
-
-
-register('ch.swisstopo.pixelkarte-farbe-pk500.noscale', GridstandPk500)
-
-
-class GridstandSwissimage(Base, ShopStandardClass, Vector):
-    __tablename__ = 'view_gridstand_datenhaltung_swissimage_tilecache'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.images-swissimage.metadata'
-    __label__ = 'lk25_name'
-    id = Column('tilenumber', Unicode, primary_key=True)
-    tileid = Column('tileid', Unicode)
-    lk25_name  = Column('lk25_name', Unicode)
-    datenstand = Column('datenstand', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.images-swissimage.metadata', GridstandSwissimage)
 
 
 class GridstandSwissimageDop10(Base, Vector):
@@ -1107,8 +883,8 @@ register('ch.swisstopo.images-swissimage-dop10.metadata', GridstandSwissimageDop
 
 
 class GridstandSwisssurface3d(Base, Vector):
-    __tablename__ = 'shop_perimeter_swisssurface3d'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __tablename__ = 'view_gridstand_swisssurface3d'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.swisssurface3d.metadata'
     __template__ = 'templates/htmlpopup/swisssurface3d.mako'
     __label__ = 'id'
@@ -1131,15 +907,6 @@ class GridstandSwisssurface3dRaster(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(GridstandSwisssurface3dRaster.__bodId__, GridstandSwisssurface3dRaster)
-
-
-class SwissimageProduct(Base, ShopStandardClass, Vector):
-    __tablename__ = 'shop_swissimage'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.swissimage-product'
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.swissimage-product', SwissimageProduct)
 
 
 class GeologischeKarteLine(Base, Vector):
@@ -2558,18 +2325,16 @@ register('ch.swisstopo.geologie-gisgeol-flaechen-lt10km2', GisgeolFlaechenLt10km
 class Geocover:
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = 'ch.swisstopo.geologie-geocover'
-    the_geom = Column(Geometry2D)
-
-
-class GeocoverBase(Geocover):
     __label__ = 'description_de'
-    __maxscale__ = 70000
     id = Column('bgdi_id', Integer, primary_key=True)
     description_de = Column('description_de', Unicode)
     description_fr = Column('description_fr', Unicode)
+    erl_num = Column('erl_num', Unicode)
+    ber_num = Column('ber_num', Unicode)
+    the_geom = Column(Geometry2D)
 
 
-class GeocoverExtended(GeocoverBase):
+class GeocoverExtended(Geocover):
     spec_description_de = Column('spec_description_de', Unicode)
     spec_description_fr = Column('spec_description_fr', Unicode)
 
@@ -2608,7 +2373,7 @@ class GeocoverPointDrill(Base, GeocoverExtended, Vector):
     rem_fr = Column('rem_fr', Unicode)
 
 
-class GeocoverPointInfo(Base, GeocoverBase, Vector):
+class GeocoverPointInfo(Base, Geocover, Vector):
     __tablename__ = 'geocover_point_info'
     __template__ = 'templates/htmlpopup/geocover_point_info.mako'
 
@@ -2630,7 +2395,7 @@ class GeocoverPolygonAux2(Base, GeocoverExtended, Vector):
     __template__ = 'templates/htmlpopup/geocover_aux.mako'
 
 
-class GeocoverPolygonMain(Base, GeocoverBase, Vector):
+class GeocoverPolygonMain(Base, Geocover, Vector):
     __tablename__ = 'geocover_polygon_main'
     __template__ = 'templates/htmlpopup/geocover_polygon.mako'
     litstrat_link_de = Column('litstrat_link_de', Unicode)
@@ -2645,12 +2410,6 @@ class GeocoverPolygonMain(Base, GeocoverBase, Vector):
     orig_description_fr = Column('orig_description_fr', Unicode)
 
 
-class GeocoverGridShop(Base, Geocover, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_geocover_grid_shop'
-    __minscale__ = 70000
-    base = Column('base', Unicode)
-    version = Column('version', Unicode)
-
 register('ch.swisstopo.geologie-geocover', GeocoverLineAux)
 register('ch.swisstopo.geologie-geocover', GeocoverPointHydro)
 register('ch.swisstopo.geologie-geocover', GeocoverPointGeol)
@@ -2660,67 +2419,63 @@ register('ch.swisstopo.geologie-geocover', GeocoverPointStruct)
 register('ch.swisstopo.geologie-geocover', GeocoverPolygonAux1)
 register('ch.swisstopo.geologie-geocover', GeocoverPolygonAux2)
 register('ch.swisstopo.geologie-geocover', GeocoverPolygonMain)
-register('ch.swisstopo.geologie-geocover', GeocoverGridShop)
 
 
-class GeolGeocoverMetadata(Base, Geocover, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_geocover_grid_shop'
-    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
+class GeolGeocoverMetadata(Base, Vector):
+    __tablename__ = 'geocover_meta'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geocover_metadata.mako'
     __bodId__ = 'ch.swisstopo.geologie-geocover.metadata'
-    __label__ = 'name_de'
-    version = Column('version', Unicode)
-    base = Column('base', Unicode)
+    __label__ = 'msh_map_ti'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    msh_map_nb = Column('msh_map_nb', Integer)
+    msh_map_ti = Column('msh_map_ti', Unicode)
+    msh_scale = Column('msh_scale', Unicode)
+    msh_edit = Column('msh_edit', Integer)
+    msh_versio = Column('msh_versio', Unicode)
+    msh_basis = Column('msh_basis', Unicode)
+    msh_author = Column('msh_author', Unicode)
+    msh_rev = Column('msh_rev', Unicode)
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geocover.metadata', GeolGeocoverMetadata)
 
 
-class Ga25Atlas:
+class GeologischerAtlas:
     __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas'
+    __label__ = 'description'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    description = Column('description', Unicode)
+    erl_num = Column('erl_num', Unicode)
+    leg_num = Column('leg_num', Unicode)
     the_geom = Column(Geometry2D)
 
 
-class Ga25AtlasGrid(Base, Ga25Atlas, ShopProductGroupClass, Vector):
-    __tablename__ = 'view_ga25_grid'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    __minscale__ = 70000
-
-
-class Ga25Features(Ga25Atlas):
-    __label__ = 'description'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    basisdatensatz = Column('basisdatensatz', Unicode)
-    description = Column('description', Unicode)
-    __maxscale__ = 70000
-
-
-class Ga25LineAux(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_line_aux'
+class GeologischerAtlasLineAux(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_line_aux'
     __template__ = 'templates/htmlpopup/ga25_line_aux.mako'
     spec_description = Column('spec_description', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PointHydro(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_point_hydro'
+class GeologischerAtlasPointHydro(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_point_hydro'
     __template__ = 'templates/htmlpopup/ga25_point_hydro.mako'
     spec_description = Column('spec_description', Unicode)
     azimut = Column('azimut', Unicode)
     depth = Column('depth', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PointGeol(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_point_geol'
+class GeologischerAtlasPointGeol(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_point_geol'
     __template__ = 'templates/htmlpopup/ga25_point_hydro.mako'
     spec_description = Column('spec_description', Unicode)
     azimut = Column('azimut', Unicode)
     depth = Column('depth', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PointDrill(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_point_drill'
+class GeologischerAtlasPointDrill(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_point_drill'
     __template__ = 'templates/htmlpopup/ga25_point_drill.mako'
     spec_description = Column('spec_description', Unicode)
     azimut = Column('azimut', Unicode)
@@ -2728,54 +2483,82 @@ class Ga25PointDrill(Base, Ga25Features, Vector):
     description_1 = Column('description_1', Unicode)
     depth_2 = Column('depth_2', Unicode)
     description_2 = Column('description_2', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PointInfo(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_point_info'
+class GeologischerAtlasPointInfo(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_point_info'
     __template__ = 'templates/htmlpopup/ga25_point_info.mako'
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PointStruct(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_point_struct'
+class GeologischerAtlasPointStruct(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_point_struct'
     __template__ = 'templates/htmlpopup/ga25_point_struct.mako'
     spec_description = Column('spec_description', Unicode)
     azimut = Column('azimut', Unicode)
     dip = Column('dip', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PolygonAux1(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_polygon_aux_1'
+class GeologischerAtlasPolygonAux1(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_polygon_aux_1'
     __template__ = 'templates/htmlpopup/ga25_polygon.mako'
     tecto = Column('tecto', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PolygonAux2(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_polygon_aux_2'
+class GeologischerAtlasPolygonAux2(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_polygon_aux_2'
     __template__ = 'templates/htmlpopup/ga25_polygon.mako'
     tecto = Column('tecto', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
 
-class Ga25PolygonMain(Base, Ga25Features, Vector):
-    __tablename__ = 'view_ga25_polygon_main'
+class GeologischerAtlasPolygonMain(Base, GeologischerAtlas, Vector):
+    __tablename__ = 'geologischer_atlas_polygon_main'
     __template__ = 'templates/htmlpopup/ga25_polygon.mako'
     tecto = Column('tecto', Unicode)
-    url_legend = Column('url_legende', Unicode)
 
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25LineAux)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointHydro)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointGeol)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointDrill)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointInfo)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PointStruct)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PolygonAux1)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PolygonAux2)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25PolygonMain)
-register('ch.swisstopo.geologie-geologischer_atlas', Ga25AtlasGrid)
+
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasLineAux)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointHydro)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointGeol)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointDrill)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointInfo)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointStruct)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPolygonAux1)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPolygonAux2)
+register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPolygonMain)
+
+
+class GeologischerAtlasProfil(Base, Vector):
+    __tablename__ = 'geologischer_atlas_profil'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/geologischer_atlas_profil.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas_profile'
+    __label__ = 'id'
+    __extended_info__ = True
+    id = Column('ga25_id', Integer, primary_key=True)
+    ga25_name = Column('ga25_name', Unicode)
+    ga25_no = Column('ga25_no', Integer)
+    ga25_edition = Column('ga25_edition', Integer)
+    plate_no = Column('plate_no', Unicode)
+    section_no = Column('section_no', Unicode)
+    section_type_de = Column('section_type_de', Unicode)
+    section_type_fr = Column('section_type_fr', Unicode)
+    section_type_it = Column('section_type_it', Unicode)
+    section_type_en = Column('section_type_en', Unicode)
+    scale = Column('scale', Unicode)
+    vert_exag = Column('vert_exag', Float)
+    author = Column('author', Unicode)
+    link_original = Column('link_original', Unicode)
+    link_onlineshop_de = Column('link_onlineshop_de', Unicode)
+    link_onlineshop_fr = Column('link_onlineshop_fr', Unicode)
+    link_onlineshop_it = Column('link_onlineshop_it', Unicode)
+    link_onlineshop_en = Column('link_onlineshop_en', Unicode)
+    swissgeol_link_de = Column('swissgeol_link_de', Unicode)
+    swissgeol_link_fr = Column('swissgeol_link_fr', Unicode)
+    swissgeol_link_it = Column('swissgeol_link_it', Unicode)
+    swissgeol_link_en = Column('swissgeol_link_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(GeologischerAtlasProfil.__bodId__, GeologischerAtlasProfil)
 
 
 class Swissnames3d:
@@ -2897,7 +2680,7 @@ register('ch.swisstopo.swissnames3d', Swissnames3dRaster13)
 
 
 class SwissMapVector25MetadataPerimeter(Base, Vector):
-    __tablename__ = 'shop_perimeter_vector25'
+    __tablename__ = 'perimeter_vector25'
     __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/smv25.mako'
     __bodId__ = 'ch.swisstopo.swiss-map-vector25.metadata'
@@ -2932,34 +2715,37 @@ class Lotabweichungen(Base, Vector):
 register('ch.swisstopo.lotabweichungen', Lotabweichungen)
 
 
-class HiksDufourMetadata(Base, ShopStandardClass, Vector):
-    __tablename__ = 'view_gridstand_dufour_shop'
+class HiksDufourMetadata(Base, Vector):
+    __tablename__ = 'view_gridstand_dufour'
+    __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-dufour.metadata'
-    number = Column('s_map_number', Unicode)
-    scale = Column('scale', Integer)
+    id = Column('kbnum', Integer, primary_key=True)
+    name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.hiks-dufour.metadata', HiksDufourMetadata)
 
 
-class HiksSiegfriedTa25Metadata(Base, ShopStandardClass, Vector):
-    __tablename__ = 'view_gridstand_siegfried_ta25_shop'
+class HiksSiegfriedTa25Metadata(Base, Vector):
+    __tablename__ = 'view_gridstand_siegfried_ta25'
+    __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta25.metadata'
-    number = Column('s_map_number', Unicode)
-    scale = Column('scale', Integer)
+    id = Column('kbnum', Integer, primary_key=True)
+    name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.hiks-siegfried-ta25.metadata', HiksSiegfriedTa25Metadata)
 
 
-class HiksSiegfriedTa50Metadata(Base, ShopStandardClass, Vector):
-    __tablename__ = 'view_gridstand_siegfried_ta50_shop'
+class HiksSiegfriedTa50Metadata(Base, Vector):
+    __tablename__ = 'view_gridstand_siegfried_ta50'
+    __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta50.metadata'
-    number = Column('s_map_number', Unicode)
-    scale = Column('scale', Integer)
+    id = Column('kbnum', Integer, primary_key=True)
+    name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.hiks-siegfried-ta50.metadata', HiksSiegfriedTa50Metadata)
@@ -3009,18 +2795,18 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/strassenverzeichnis.mako'
     __bodId__ = 'ch.swisstopo.amtliches-strassenverzeichnis'
-    __label__ = 'label'
-    __queryable_attributes__ = ['label', 'plzo', 'gdename', 'gdenr', 'type']
-    id = Column('esid', Integer, primary_key=True)
-    label = Column('label', Unicode)
-    plzo = Column('plzo', Unicode)
-    gdename = Column('gdename', Unicode)
-    gdenr = Column('gdenr', Integer)
-    validated = Column('validated', Integer)
-    official = Column('official', Integer)
-    modified = Column('modified', Unicode)
-    type = Column('type', Unicode)
-    status = Column('status', Unicode)
+    __label__ = 'stn_label'
+    __queryable_attributes__ = ['stn_label', 'zip_label', 'com_name', 'com_fosnr', 'str_type']
+    id = Column('id', Integer, primary_key=True)
+    str_esid = Column('str_esid', Integer)
+    stn_label = Column('stn_label', Unicode)
+    zip_label = Column('zip_label', Unicode)
+    com_name = Column('com_name', Unicode)
+    com_fosnr = Column('com_fosnr', Integer)
+    str_official = Column('str_official', Integer)
+    str_modified = Column('str_modified', Unicode)
+    str_type = Column('str_type', Unicode)
+    str_status = Column('str_status', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.amtliches-strassenverzeichnis', AmtlichesStrassenverzeichnis)

@@ -325,13 +325,13 @@ Tolerance, mapExtent and imageDisplay
 
 If *tolerance=0*, *imageDisplay* and *mapExtent* are generaly not needed, except to get models which are scale dependant, e.g.
 displaying points at smaller scales and polygons ar larger one.
-If using *tolerance>0*, bot *imageDisplay* and *mapExtent* must be set to meaningfull values. As the *teloerance* is in pixels, 
+If using *tolerance>0*, bot *imageDisplay* and *mapExtent* must be set to meaningfull values. As the *teloerance* is in pixels,
 these value are used to convert it to map units, _i.e._ meters.
 
 The following table summarize the various combinations:
 
 +--------------------+------------------------------------------+-----------------------------------------+
-|                    | imageDisplay=0,0,0  mapExtent=0,0,0,0    |  imageDisplay=1,1,1  mapExtent=1,1,1,1  |     
+|                    | imageDisplay=0,0,0  mapExtent=0,0,0,0    |  imageDisplay=1,1,1  mapExtent=1,1,1,1  |
 +====================+==========================================+=========================================+
 | **tolerance=0**    | No buffer & No scale                     |  No buffer & but scale                  |
 +--------------------+------------------------------------------+-----------------------------------------+
@@ -398,8 +398,8 @@ The filter expression can consist of a single expression of the form `<attribute
 ::
 
   state='open' and startofconstruction>='2018-10'
- 
-`<attribute>` must be one of the queryable attributes, the type of `<value>` must correspond the the type of the queryable attribute (see above) and `<operator>` can be one of 
+
+`<attribute>` must be one of the queryable attributes, the type of `<value>` must correspond the the type of the queryable attribute (see above) and `<operator>` can be one of
 
 +-----------------+--------------------------------------+----------------------------------------------------------------+
 |  Data type      |                Operators             |     Examples                                                   |
@@ -423,14 +423,14 @@ It's important, that the parameters are correctly serialized and url-encoded, e.
     >>> import json
     >>> import urllib.parse
     >>> params = {
-            "ch.swisstopo.amtliches-strassenverzeichnis": "plzo = '8302 Kloten'"
+            "ch.swisstopo.amtliches-strassenverzeichnis": "zip_label = '8302 Kloten'"
         }
     >>> print(json.dumps(params))
-    {"ch.swisstopo.amtliches-strassenverzeichnis": "plzo = '8302 Kloten'"}
+    {"ch.swisstopo.amtliches-strassenverzeichnis": "zip_label = '8302 Kloten'"}
     >>> print(urllib.parse.quote(json.dumps(params)))
-    %7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%20%22plzo%20%3D%20%278302%20Kloten%27%22%7D
+    %7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%20%22zip_label%20%3D%20%278302%20Kloten%27%22%7D
     >>> print('&layerDefs={}'.format(urllib.parse.quote(json.dumps(params))))
-    &layerDefs=%7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%20%22plzo%20%3D%20%278302%20Kloten%27%22%7D
+    &layerDefs=%7B%22ch.swisstopo.amtliches-strassenverzeichnis%22%3A%20%22zip_label%20%3D%20%278302%20Kloten%27%22%7D
 
 
 Examples
@@ -535,7 +535,7 @@ Examples
 - Search for “Lavaux” in the field “bln_name” of the layer “ch.bafu.bundesinventare-bln” (infix match): `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bafu.bundesinventare-bln&searchText=Lavaux&searchField=bln_name&returnGeometry=false  <../../../rest/services/api/MapServer/find?layer=ch.bafu.bundesinventare-bln&searchText=Lavaux&searchField=bln_name&returnGeometry=false>`_
 - Search for “12316” in the field “egid” of the layer “ch.bfs.gebaeude_wohnungs_register” (infix match): `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=123164&searchField=egid&returnGeometry=false  <../../../rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=123164&searchField=egid&returnGeometry=false>`_
 - Search for “123164” in the field “egid” of the layer “ch.bfs.gebaeude_wohnungs_register” (exact match): `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=1231641&searchField=egid&returnGeometry=false&contains=false <../../../rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=1231641&searchField=egid&returnGeometry=false&contains=false>`_
-- Search for the Talstrasse in Commune 'Full-Reuenthal': `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.swisstopo.amtliches-strassenverzeichnis&searchText=Talstrasse&searchField=label&returnGeometry=false&contains=false&layerDefs={"ch.swisstopo.amtliches-strassenverzeichnis": "gdenr = 4307"} <../../../rest/services/api/MapServer/find?layer=ch.swisstopo.amtliches-strassenverzeichnis&searchText=Talstrasse&searchField=label&returnGeometry=false&contains=false&layerDefs=%7B"ch.swisstopo.amtliches-strassenverzeichnis"%3A%20"gdenr%20%3D%204307"%7D>`_
+- Search for the Talstrasse in Commune 'Full-Reuenthal': `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.swisstopo.amtliches-strassenverzeichnis&searchText=Talstrasse&searchField=stn_label&returnGeometry=false&contains=false&layerDefs={"ch.swisstopo.amtliches-strassenverzeichnis": "com_fosnr = 4307"} <../../../rest/services/api/MapServer/find?layer=ch.swisstopo.amtliches-strassenverzeichnis&searchText=Talstrasse&searchField=stn_label&returnGeometry=false&contains=false&layerDefs=%7B"ch.swisstopo.amtliches-strassenverzeichnis"%3A%20"com_fosnr%20%3D%204307"%7D>`_
 
 .. _featureresource_description:
 
@@ -646,7 +646,7 @@ The search service is separated in 3 various categories or types:
 * The **location search** which is composed of the following geocoded locations:
 
   * Cantons, Cities and communes
-  * All names as printed on the national map (`SwissNames <https://shop.swisstopo.admin.ch/de/products/landscape/names3D>`_)
+  * All names as printed on the national map (`SwissNames <https://www.swisstopo.admin.ch/en/geodata/landscape/names3d.html>`_)
   * The districts
   * The ZIP codes
   * The addresses
@@ -870,9 +870,7 @@ Example of feature search usage with other services
 Height
 ------
 
-This service allows to obtain elevation information for a point.
-See `Height models <https://shop.swisstopo.admin.ch/de/products/height_models/alti3D>`_ for more details about data used by this service.
-
+This service allows to obtain elevation information for a point. See `Height models <https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html>`_ for more details about data used by this service.
 
 
 URL
@@ -912,8 +910,7 @@ Examples
 Profile
 -------
 
-This service allows to obtain elevation information for a polyline in CSV format.
-See `Height models <https://shop.swisstopo.admin.ch/de/products/height_models/alti3D>`_ for more details about data used by this service.
+This service allows to obtain elevation information for a polyline in CSV format. See `Height models <https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html>`_ for more details about data used by this service.
 
 
 URL
@@ -1299,7 +1296,7 @@ Mapbox Vector Tiles
 A RESTFul implementation of `Mapbox Vector Tiles <https://www.mapbox.com/vector-tiles>`_.
 See  `description <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html>`_
 
-The service provides both *tiles* and *styles* that the customer can use. 
+The service provides both *tiles* and *styles* that the customer can use.
 
 GetTile
 *******
@@ -1335,11 +1332,11 @@ A current (latest version) style request is in the following form:
 ::
 
     <Scheme>://<ServerName>/styles/<layername>/style.json
-    
+
 example of a current mapbox style:
 
 - https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte.vt/style.json
-    
+
 A previous versioned style request is in the following form:
 
 ::
@@ -1358,13 +1355,13 @@ Metadata Service
 ****************
 
 Each tileset has a corresponding metatdata `json` file that describes the available set of tiles.
-The URL of the metadata `json` file is : 
+The URL of the metadata `json` file is :
 
 ::
 
    <Scheme>://<ServerName>/tiles/<LayerName>/<version>.json
 
-example of tileset: 
+example of tileset:
 
 - https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/tiles.json
 
