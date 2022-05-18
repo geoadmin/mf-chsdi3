@@ -1160,7 +1160,7 @@ https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/current/3857/{z}
 
 
 Supported projections
----------------------
+*********************
 
 Unlike WMTS that follow the OGC standard, the XYZ tile service are often used in Web Mapping Context and therefore one projection is supported.
 
