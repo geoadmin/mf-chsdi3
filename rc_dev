@@ -23,4 +23,4 @@ export CMSGEOADMINHOST=https://cms.geo.admin.ch
 export LINKEDDATAHOST=https://ld.geo.admin.ch
 export CACHE_CONTROL=no-cache
 export DYNAMIC_TRANSLATION=1
-export APACHE_LOG_LEVEL=warn
+export APACHE_LOG_LEVEL=debug
