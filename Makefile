@@ -263,6 +263,15 @@ dockerpush: image
 	docker push $(DOCKER_IMG_LOCAL_TAG)
 
 
+.PHONY: dockerrun
+dockerrun:
+	docker run \
+		-it \
+		--network=host \
+		--env-file=dev_frankfurt.env \
+		$(DOCKER_IMG_LOCAL_TAG)
+
+
 .PHONY: environ
 environ:
 	$(call build_templates,$(DEPLOY_TARGET))
