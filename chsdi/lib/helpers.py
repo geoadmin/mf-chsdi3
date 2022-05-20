@@ -9,7 +9,6 @@ import six
 import unidecode
 from decimal import Decimal
 from past.utils import old_div
-from functools import reduce
 
 try:
     from StringIO import StringIO
