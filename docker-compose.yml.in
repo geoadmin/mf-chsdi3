@@ -1,13 +1,14 @@
 version: '2'
 services:
   chsdi3:
-    build: .
-    image: ${DOCKER_IMG_TAG_LATEST}
+    image: ${DOCKER_IMG_LOCAL_TAG}
     env_file:
     - ${DEPLOY_TARGET}.env
     environment:
       PGUSER: ${PGUSER}
       PGPASSWORD: ${PGPASSWORD}
+      OPENTRANS_API_KEY: ${OPENTRANS_API_KEY}
+      APP_VERSION: ${VERSION}
     command:
       - /usr/sbin/apache2ctl
       - "-D"

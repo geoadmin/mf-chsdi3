@@ -260,6 +260,13 @@ dockerrun: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASS
 		--env APP_VERSION=${VERSION} \
 		$(DOCKER_IMG_LOCAL_TAG)
 
+docker-compose.yml: guard-DEPLOY_TARGET guard-APACHE_PORT guard-PGUSER guard-PGPASSWORD guard-OPENTRANS_API_KEY docker-compose.yml.in 
+	envsubst < docker-compose.yml.in > docker-compose.yml
+
+.PHONY: dockercomposeup
+dockercomposeup: docker-compose.yml
+	docker-compose up
+
 .PHONY: dockerlogin
 dockerlogin:
 	aws --profile swisstopo-bgdi-builder ecr get-login-password --region $(AWS_REGION_ECR) | docker login --username AWS --password-stdin $(DOCKER_REGISTRY)
