@@ -16,9 +16,10 @@ echo "INSTALLDIR=${INSTALLDIR}"
 
 pg_isready -d stopo_prod -h ${DBHOST} -p ${DBPORT} -U ${PGUSER}
 
-source rc_${DEPLOY_TARGET} && make production.ini development.ini
+cut -c8- ${DOCKER_ENV_FILE} > ${DOCKER_ENV_FILE}_no_export
+source ${DOCKER_ENV_FILE}_no_export && make production.ini development.ini
 
-envsubst < 25-mf-chsdi3.conf.in > /etc/apache2/sites-available/000-default.conf 
+envsubst < 25-mf-chsdi3.conf.in > /etc/apache2/sites-available/000-default.conf
 
 envsubst < apache/application.wsgi.in > apache/application.wsgi
 

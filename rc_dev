@@ -24,3 +24,4 @@ export LINKEDDATAHOST=https://ld.geo.admin.ch
 export CACHE_CONTROL=no-cache
 export DYNAMIC_TRANSLATION=1
 export APACHE_LOG_LEVEL=debug
+export DOCKER_ENV_FILE=rc_dev

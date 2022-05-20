@@ -1,4 +1,4 @@
-source rc_dev_frankfurt
+source rc_dev_frankfurt # this can be rc_dev, rc_dev_frankfurt, rc_...
 export USERNAME=$(whoami)
 export APACHE_BASE_PATH=$USERNAME
 export API_URL=//mf-chsdi3.dev.bgdi.ch/$USERNAME
