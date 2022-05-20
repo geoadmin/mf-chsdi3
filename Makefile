@@ -252,7 +252,7 @@ image:
 		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG) -t ${DOCKER_IMG_TAG_LATEST} -f Dockerfile .
 
 .PHONY: dockerrun
-dockerrun: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION
+dockerrun: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
 	docker run \
 		-it \
         	-p ${APACHE_PORT}:${APACHE_PORT} \
