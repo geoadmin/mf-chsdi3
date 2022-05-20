@@ -249,6 +249,16 @@ image:
 		--build-arg VERSION="$(GIT_TAG)" \
 		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG) -t ${DOCKER_IMG_TAG_LATEST} -f Dockerfile .
 
+.PHONY: dockerrun
+dockerrun: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION
+	docker run \
+		-it \
+        	-p ${APACHE_PORT}:${APACHE_PORT} \
+                --env-file=${DEPLOY_TARGET}.env \
+                --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
+		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
+		--env APP_VERSION=${VERSION} \
+		$(DOCKER_IMG_LOCAL_TAG)
 
 .PHONY: dockerlogin
 dockerlogin:
