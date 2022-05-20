@@ -33,7 +33,9 @@
   ServerSignature Off
   LogLevel ${APACHE_LOG_LEVEL}
   ErrorLog /dev/stderr
+  TransferLog /dev/stdout  
   CustomLog /dev/stdout  combined
+
 
   ## Script alias directives
   ScriptAlias /cgi-bin "/var/www/vhosts/mf-chsdi3/cgi-bin/"
