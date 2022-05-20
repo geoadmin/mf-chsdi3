@@ -1,0 +1,112 @@
+###
+# app configuration
+# http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/environment.html
+###
+
+[app:main]
+use = egg:chsdi
+app_version = ${APP_VERSION}
+entry_path = ${APACHE_ENTRY_PATH}
+available_languages = de fr it en rm
+
+pyramid.reload_templates = false
+pyramid.debug_authorization = false
+pyramid.debug_notfound = false
+pyramid.debug_routematch = false
+pyramid.prevent_http_cache = false
+pyramid.default_locale_name = de
+pyramid.includes = pyramid_tm
+
+# SQLAlchemy database URL
+sqlalchemy.are.url = postgresql://${DBHOST}:${DBPORT}/are_${DBSTAGING}
+sqlalchemy.bafu.url = postgresql://${DBHOST}:${DBPORT}/bafu_${DBSTAGING}
+sqlalchemy.bak.url = postgresql://${DBHOST}:${DBPORT}/bak_${DBSTAGING}
+sqlalchemy.bod.url = postgresql://${DBHOST}:${DBPORT}/bod_${DBSTAGING}
+sqlalchemy.dritte.url = postgresql://${DBHOST}:${DBPORT}/dritte_${DBSTAGING}
+sqlalchemy.edi.url = postgresql://${DBHOST}:${DBPORT}/edi_${DBSTAGING}
+sqlalchemy.evd.url = postgresql://${DBHOST}:${DBPORT}/evd_${DBSTAGING}
+sqlalchemy.kogis.url = postgresql://${DBHOST}:${DBPORT}/kogis_${DBSTAGING}
+sqlalchemy.stopo.url = postgresql://${DBHOST}:${DBPORT}/stopo_${DBSTAGING}
+sqlalchemy.uvek.url = postgresql://${DBHOST}:${DBPORT}/uvek_${DBSTAGING}
+sqlalchemy.uvek_solarkataster.url = postgresql://${DBHOST}:${DBPORT}/uvek_solarkataster_${DBSTAGING}
+sqlalchemy.vbs.url = postgresql://${DBHOST}:${DBPORT}/vbs_${DBSTAGING}
+sqlalchemy.zeitreihen.url = postgresql://${DBHOST}:${DBPORT}/zeitreihen_${DBSTAGING}
+sqlalchemy.lubis.url = postgresql://${DBHOST}:${DBPORT}/lubis_${DBSTAGING}
+sqlalchemy.diemo.url = postgresql://${DBHOST}:${DBPORT}/diemo_${DBSTAGING}
+
+# Mako specific
+mako.directories = chsdi:templates
+
+geodata_staging = ${GEODATA_STAGING}
+sphinxhost = ${SPHINXHOST}
+wmshost = ${WMSHOST}
+wmts_public_host = ${WMTS_PUBLIC_HOST}
+geoadminhost = ${GEOADMINHOST}
+cmsgeoadminhost = ${CMSGEOADMINHOST}
+linkeddatahost = ${LINKEDDATAHOST}
+alti_url = ${ALTI_URL}
+api_url = ${API_URL}
+install_directory = ${CURRENT_DIRECTORY}
+host = ${HOST}
+apache_base_path = ${APACHE_BASE_PATH}
+apache_entry_path = ${APACHE_ENTRY_PATH}
+kml_temp_dir=${KML_TEMP_DIR}
+http_proxy = ${HTTP_PROXY}
+public_bucket_host = ${PUBLIC_BUCKET_HOST}
+vector_bucket = ${VECTOR_BUCKET}
+datageoadminhost = ${DATAGEOADMINHOST}
+opentrans_api_key = ${OPENTRANS_API_KEY}
+empty_geotables = ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung,ch.bfe.sachplan-uebertragungsleitungen_anhoerung,ch.blw.emapis-bewaesserung,ch.blw.emapis-elektrizitaetsversorgung,ch.blw.emapis-milchleitung,ch.blw.emapis-seilbahnen,ch.vbs.sachplan-infrastruktur-militaer_anhoerung,ch.sem.sachplan-asyl_anhoerung,ch.astra.sachplan-infrastruktur-strasse_anhoerung,ch.bav.sachplan-infrastruktur-schiene_anhorung
+max_featureids_request = 20
+
+# Use the BOD directly, no .po./mo files
+dynamic_translation = ${DYNAMIC_TRANSLATION}
+
+###
+# wsgi server configuration
+###
+
+[server:main]
+use = egg:waitress#main
+host = 0.0.0.0
+port = ${SERVER_PORT}
+
+###
+# logging configuration
+# http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/logging.html
+###
+
+[loggers]
+keys = root, chsdi, sqlalchemy
+
+[logger_sqlalchemy]
+level = DEBUG
+handlers =
+qualname = sqlalchemy.engine
+# "level = INFO" logs SQL queries.
+# "level = DEBUG" logs SQL queries and results.
+# "level = WARN" logs neither.  (Recommended for production systems.)
+
+[handlers]
+keys = console
+
+[formatters]
+keys = generic
+
+[logger_root]
+level = DEBUG
+handlers = console
+
+[logger_chsdi]
+level = DEBUG
+handlers =
+qualname = chsdi
+
+[handler_console]
+class = StreamHandler
+args = (sys.stderr,)
+level = NOTSET
+formatter = generic
+
+[formatter_generic]
+format = %(asctime)s %(levelname)-5.5s [%(name)s][%(threadName)s] %(message)s
