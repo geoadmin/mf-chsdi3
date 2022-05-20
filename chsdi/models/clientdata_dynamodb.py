@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import os
 import boto3
 
 import pyramid.httpexceptions as exc
@@ -22,8 +22,12 @@ class S3Connect:
         return self.conn
 
 
-s3_connection = S3Connect()
+VECTOR_BUCKET_REGION = os.getenv('VECTOR_BUCKET_REGION', None)
 
+if VECTOR_BUCKET_REGION:
+    s3_connection = S3Connect(region=VECTOR_BUCKET_REGION)
+else:
+    s3_connection = S3Connect()
 
 def get_file_from_bucket(bucket_name, file_name):
     conn = s3_connection.get()
