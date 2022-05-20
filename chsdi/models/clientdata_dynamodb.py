@@ -29,6 +29,7 @@ if VECTOR_BUCKET_REGION:
 else:
     s3_connection = S3Connect()
 
+
 def get_file_from_bucket(bucket_name, file_name):
     conn = s3_connection.get()
     try:
