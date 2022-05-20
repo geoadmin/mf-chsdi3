@@ -17,6 +17,7 @@ BODID ?=
 DEPLOY_TARGET ?=
 BRANCH_TO_DELETE ?=
 WMSSCALELEGEND ?=
+RC_FILE_TO_USE ?=
 
 # Variables
 CI_QUIET ?= 0 # be more quiet on CI
@@ -268,7 +269,7 @@ dockerrun:
 	docker run \
 		-it \
 		--network=host \
-		--env-file=dev_frankfurt.env \
+		--env-file=${RC_FILE_TO_USE}_no_export \
 		$(DOCKER_IMG_LOCAL_TAG)
 
 

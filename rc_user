@@ -1,4 +1,6 @@
-source rc_dev_frankfurt # this can be rc_dev, rc_dev_frankfurt, rc_...
+export RC_FILE_TO_USE=rc_dev_frankfurt # this can be rc_dev, rc_dev_frankfurt, rc_...
+source ${RC_FILE_TO_USE}
+cut -c8- rc_dev_frankfurt >> ${RC_FILE_TO_USE}_no_export
 export USERNAME=$(whoami)
 export APACHE_BASE_PATH=$USERNAME
 export API_URL=//mf-chsdi3.dev.bgdi.ch/$USERNAME
