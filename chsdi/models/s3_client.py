@@ -1,26 +1,23 @@
 # -*- coding: utf-8 -*-
-
 import boto3
 
 import pyramid.httpexceptions as exc
 
 
 class S3Connect:
-    def __init__(self, region='eu-west-1'):
+    def __init__(self):
         self.conn = None
-        self.region = region
 
     def get(self):
         if self.conn is None:
             try:
                 # Cannot use bucket names with dots
                 # see: https://github.com/boto/boto/issues/2836
-                self.conn = boto3.client('s3', region_name=self.region)
+                self.conn = boto3.client('s3')
             except Exception as e:  # pragma: no cover
                 raise exc.HTTPInternalServerError(
                     'S3: Error during connection init %s' % e)
         return self.conn
-
 
 s3_connection = S3Connect()
 
