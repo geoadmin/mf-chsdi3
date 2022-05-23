@@ -27,7 +27,6 @@ env:
     WMSHOST: wms-bgdi.dev.bgdi.ch
     WSGI_PROCESSES: 1
     WSGI_THREADS: 15
-    CMSGEOADMINHOST: https://cms.geo.admin.ch
     LINKEDDATAHOST: https://ld.geo.admin.ch
     CACHE_CONTROL: no-cache
     CI_QUIET: 1

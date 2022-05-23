@@ -79,7 +79,6 @@ LAST_HOST := $(call lastvalue,host)
 LAST_PUBLIC_BUCKET_HOST  := $(call lastvalue,public-bucket-host)
 LAST_VECTOR_BUCKET := $(call lastvalue,vector-bucket)
 LAST_DATAGEOADMINHOST := $(call lastvalue,datageoadminhost)
-LAST_CMSGEOADMINHOST := $(call lastvalue,cmsgeoadminhost)
 LAST_LINKEDDATAHOST := $(call lastvalue,linkeddatahost)
 LAST_OPENTRANS_API_KEY := $(call lastvalue,opentrans-api-key)
 LAST_ROBOTS_FILE := $(call lastvalue,robots-file)
@@ -559,7 +558,6 @@ production.ini:  production.ini.in \
                 .venv/last-public-bucket-host \
                 .venv/last-vector-bucket \
                 .venv/last-datageoadminhost \
-                .venv/last-cmsgeoadminhost \
                 .venv/last-linkeddatahost \
                 .venv/last-opentrans-api-key \
                 .venv/last-dynamic-translation \
@@ -586,7 +584,6 @@ production.ini:  production.ini.in \
 		--var "public_bucket_host=$(PUBLIC_BUCKET_HOST)" \
 		--var "vector_bucket=$(VECTOR_BUCKET)" \
 		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
-		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
 		--var "linkeddatahost=$(LINKEDDATAHOST)" \
 		--var "opentrans_api_key=$(OPENTRANS_API_KEY)" \
 		--var "dynamic_translation=$(DYNAMIC_TRANSLATION)" $< > $@
@@ -712,9 +709,6 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-datageoadminhost::
 	$(call cachelastvariable,$@,$(DATAGEOADMINHOST),$(LAST_DATAGEOADMINHOST),datageoadminhost)
-
-.venv/last-cmsgeoadminhost::
-	$(call cachelastvariable,$@,$(CMSGEOADMINHOST),$(LAST_CMSGEOADMINHOST),cmsgeoadminhost)
 
 .venv/last-linkeddatahost::
 	$(call cachelastvariable,$@,$(LINKEDDATAHOST),$(LAST_LINKEDDATAHOST),linkeddatahost)
