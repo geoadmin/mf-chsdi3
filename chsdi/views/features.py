@@ -22,7 +22,7 @@ from chsdi.lib.validation.find import FindServiceValidation
 from chsdi.lib.validation.identify import IdentifyServiceValidation
 from chsdi.lib.helpers import format_query, decompress_gzipped_string, center_from_box2d, make_geoadmin_url, shift_to, unnacent_where_text
 from chsdi.lib.filters import full_text_search
-from chsdi.models.clientdata_dynamodb import get_file_from_bucket
+from chsdi.models.s3_client import get_file_from_bucket
 from chsdi.models import models_from_bodid, queryable_models_from_bodid, oereb_models_from_bodid
 from chsdi.models.bod import OerebMetadata, get_bod_model
 from chsdi.models.vector import get_scale, get_resolution, has_buffer
