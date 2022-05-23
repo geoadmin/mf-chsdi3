@@ -13,7 +13,9 @@ env:
     USER: "aws_code_build"
     APACHE_BASE_PATH: main
     API_URL: //sys-api3.dev.bgdi.ch
-    DBHOST: pg-geodata-replica.bgdi.ch
+    # TODO currently integration tests are not working with the DB in Frankfurt
+    #DBHOST: pg-geodata-replica.bgdi.ch
+    DBHOST: pg.bgdi.ch
     DBPORT: 5432
     DBSTAGING: dev
     GEODATA_STAGING: test
