@@ -44,7 +44,6 @@ wmts_public_host = ${wmts_public_host}
 geoadminhost = ${geoadminhost}
 cmsgeoadminhost = ${cmsgeoadminhost}
 linkeddatahost = ${linkeddatahost}
-alti_url = ${alti_url}
 api_url = ${api_url}
 install_directory = ${current_directory}
 host = ${host}

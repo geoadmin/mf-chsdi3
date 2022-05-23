@@ -74,7 +74,6 @@ LAST_SPHINXHOST := $(call lastvalue,sphinxhost)
 LAST_WMSHOST := $(call lastvalue,wmshost)
 LAST_WMTS_PUBLIC_HOST := $(call lastvalue,wmts-public-host)
 LAST_GEOADMINHOST := $(call lastvalue,geoadminhost)
-LAST_ALTI_URL := $(call lastvalue,alti-url)
 LAST_API_URL := $(call lastvalue,api-url)
 LAST_HOST := $(call lastvalue,host)
 LAST_PUBLIC_BUCKET_HOST  := $(call lastvalue,public-bucket-host)
@@ -548,7 +547,6 @@ production.ini:  production.ini.in \
                 .venv/last-dbhost \
                 .venv/last-dbport \
                 .venv/last-dbstaging \
-                .venv/last-alti-url \
                 .venv/last-api-url \
                 .venv/last-geodata-staging \
                 .venv/last-sphinxhost \
@@ -576,7 +574,6 @@ production.ini:  production.ini.in \
 		--var "dbhost=$(DBHOST)" \
 		--var "dbport=$(DBPORT)" \
 		--var "dbstaging=$(DBSTAGING)" \
-		--var "alti_url=$(ALTI_URL)" \
 		--var "api_url=$(API_URL)" \
 		--var "geodata_staging=$(GEODATA_STAGING)" \
 		--var "sphinxhost=$(SPHINXHOST)" \
@@ -694,9 +691,6 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-geoadminhost::
 	$(call cachelastvariable,$@,$(GEOADMINHOST),$(LAST_GEOADMINHOST),geoadminhost)
-
-.venv/last-alti-url::
-	$(call cachelastvariable,$@,$(ALTI_URL),$(LAST_ALTI_URL),alti-url)
 
 .venv/last-api-url::
 	$(call cachelastvariable,$@,$(API_URL),$(LAST_API_URL),api-url)

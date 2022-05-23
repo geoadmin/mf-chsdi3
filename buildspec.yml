@@ -8,7 +8,6 @@ env:
     SERVICE_NAME: "mf-chsdi3"
     USER: "aws_code_build"
     APACHE_BASE_PATH: main
-    ALTI_URL: //service-alti.dev.bgdi.ch
     API_URL: //mf-chsdi3.dev.bgdi.ch
     DBHOST: pg.bgdi.ch
     DBPORT: 5432
