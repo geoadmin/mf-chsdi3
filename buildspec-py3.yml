@@ -12,22 +12,22 @@ env:
     DOCKER_REGISTRY: "974517877189.dkr.ecr.eu-central-1.amazonaws.com"
     USER: "aws_code_build"
     APACHE_BASE_PATH: main
-    API_URL: //mf-chsdi3.dev.bgdi.ch
-    DBHOST: pg.bgdi.ch
+    API_URL: //sys-api3.dev.bgdi.ch
+    DBHOST: pg-geodata-replica.bgdi.ch
     DBPORT: 5432
     DBSTAGING: dev
     GEODATA_STAGING: test
     GEOADMINHOST: mf-geoadmin3.dev.bgdi.ch
-    HOST: mf-chsdi3.dev.bgdi.ch
+    HOST: sys-api3.dev.bgdi.ch
     KEEP_VERSION: false
-    WMTS_PUBLIC_HOST: tod.dev.bgdi.ch
+    WMTS_PUBLIC_HOST: sys-wmts.dev.bgdi.ch
     MODWSGI_CONFIG: production.ini
-    PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
+    PUBLIC_BUCKET_HOST: sys-public.dev.bgdi.ch
     ROBOTS_FILE: robots.txt
     SERVER_PORT: 6543
     SPHINXHOST: service-sphinxsearch.dev.bgdi.ch
-    VECTOR_BUCKET: mf-chsdi3-bgdi-grid-based-data
-    WMSHOST: wms-bgdi.dev.bgdi.ch
+    VECTOR_BUCKET: service-mf-chsdi3-grid-geojsons-dev-swisstopo
+    WMSHOST: sys-wms.dev.bgdi.ch
     WSGI_PROCESSES: 1
     WSGI_THREADS: 15
     LINKEDDATAHOST: https://ld.geo.admin.ch
