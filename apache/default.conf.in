@@ -7,7 +7,7 @@
     DocumentRoot /var/www/html
 
     LogLevel ${APACHE_LOG_LEVEL}
-    ErrorLog /proc/self/fd/2
+    ErrorLog /dev/stdout
     # CustomLog /dev/null combined
     CustomLog /dev/stdout  combined
 
@@ -18,7 +18,7 @@
     RewriteCond %{REQUEST_URI} !^/checker
     RewriteRule ^/(.*)  http://127.0.0.1:${WSGI_PORT}/$1  [P]
     ProxyPassReverse / http://127.0.0.1:${WSGI_PORT}/
-        
+
 
 </VirtualHost>
 

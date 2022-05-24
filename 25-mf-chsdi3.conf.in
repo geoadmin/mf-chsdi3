@@ -32,7 +32,7 @@
   ## Logging
   ServerSignature Off
   LogLevel ${APACHE_LOG_LEVEL}
-  ErrorLog /dev/stderr
+  ErrorLog /dev/stdout
   CustomLog /dev/stdout  combined
 
   ## Script alias directives
