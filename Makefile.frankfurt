@@ -135,6 +135,28 @@ serve:  guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWOR
 .PHONY: shell
 shell:
 	PYTHONPATH=${PYTHONPATH} ${PSHELL} local.ini
+	
+	
+.PHONY: dockerbuild
+dockerbuild: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
+	docker build \
+		--build-arg GIT_HASH="$(GIT_COMMIT_HASH)" \
+		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
+		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
+		--build-arg VERSION="$(GIT_TAG)" \
+		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG)  -f Dockerfile .
+
+
+.PHONY: dockerrun
+dockerrun: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
+	docker run \
+		-it \
+        	-p ${APACHE_PORT}:${APACHE_PORT} \
+                --env-file=${DEPLOY_TARGET}.env \
+                --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
+		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
+		--env APP_VERSION=${VERSION} \
+		$(DOCKER_IMG_LOCAL_TAG)
 
 .PHONY: test
 test:
