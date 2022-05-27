@@ -7,6 +7,7 @@ ENV OPENTRANS_API_KEY=dummy-key
 ENV PROJ=chsdi
 ENV VHOST=mf-${PROJ}3
 ENV PROJDIR=/var/www/vhosts/${VHOST}/private/${PROJ}
+ENV MAKEFILE=Makefile.frankfurt
 
 RUN apt-get update -qq && apt-get install -qq -y apt-utils \
     ; DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --upgrade ca-certificates \
@@ -53,8 +54,9 @@ LABEL git.dirty=$GIT_DIRTY
 LABEL version=$VERSION
 LABEL author=$AUTHOR
 
-# TODO: potomo & translate
-RUN . ./rc_dev && make cleanall setup chsdi/static/css/extended.min.css development.ini production.ini fixrights
+# FIXME: potomo & translate (do we still need the compiled .mo files?)
+# FIXME: figure out the best way to build chsdi/static/css/extended.min.css (no need to incorporate the whole node.js to build a single CSS file!)
+RUN make -f ${MAKEFILE} cleanall setup environ fixrights
 
 ENTRYPOINT ["/var/www/vhosts/mf-chsdi3/private/chsdi/docker-entrypoint.sh"]
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
