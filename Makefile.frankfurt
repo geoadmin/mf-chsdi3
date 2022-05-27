@@ -162,6 +162,11 @@ autolint:
 	@echo "${GREEN}Auto correction of python files...${RESET}";
 	${AUTOPEP8} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
 
+# FIXME add the rss and css compilation	
+.PHONY: doc
+doc: 
+	@echo "${GREEN}Building the documentation...${RESET}";
+	cd chsdi/static/doc && ../../../${SPHINX} -W -b html source build || exit 1 ;
 
 
 # TODO: still needed?
