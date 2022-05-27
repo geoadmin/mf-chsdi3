@@ -1,7 +1,9 @@
 ###
-# app configuration
+# pylons app configuration
 # http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/environment.html
-###
+#
+# development (both local and dev) setting for the pylons app.
+# Use this file only in the legacy infrastructure (python2/vhost/ireland)
 
 [app:main]
 use = config:production.ini
