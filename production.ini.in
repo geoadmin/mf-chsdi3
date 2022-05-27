@@ -42,9 +42,7 @@ sphinxhost = ${sphinxhost}
 wmshost = ${wmshost}
 wmts_public_host = ${wmts_public_host}
 geoadminhost = ${geoadminhost}
-cmsgeoadminhost = ${cmsgeoadminhost}
 linkeddatahost = ${linkeddatahost}
-alti_url = ${alti_url}
 api_url = ${api_url}
 install_directory = ${current_directory}
 host = ${host}
@@ -79,9 +77,18 @@ port = 6543
 [loggers]
 keys = root, chsdi, sqlalchemy
 
+[logger_root]
+level = INFO
+handlers = console
+
+[logger_chsdi]
+level = INFO
+handlers = console
+qualname = chsdi
+
 [logger_sqlalchemy]
 level = WARN
-handlers =
+handlers = console
 qualname = sqlalchemy.engine
 # "level = INFO" logs SQL queries.
 # "level = DEBUG" logs SQL queries and results.
@@ -90,23 +97,14 @@ qualname = sqlalchemy.engine
 [handlers]
 keys = console
 
-[formatters]
-keys = generic
-
-[logger_root]
-level = WARN
-handlers = console
-
-[logger_chsdi]
-level = WARN
-handlers =
-qualname = chsdi
-
 [handler_console]
 class = StreamHandler
-args = (sys.stderr,)
-level = NOTSET
+args = (sys.stdout,)
+level = INFO
 formatter = generic
+
+[formatters]
+keys = generic
 
 [formatter_generic]
 format = %(asctime)s %(levelname)-5.5s [%(name)s][%(threadName)s] %(message)s

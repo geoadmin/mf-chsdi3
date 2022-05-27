@@ -1,5 +1,4 @@
 export APACHE_BASE_PATH=main
-export ALTI_URL=//service-alti.int.bgdi.ch
 export API_URL=//mf-chsdi3.int.bgdi.ch
 export DBHOST=pg.bgdi.ch
 export DBPORT=5432
@@ -19,7 +18,6 @@ export VECTOR_BUCKET=bgdi-grid-based-data
 export WMSHOST=wms-bgdi.int.bgdi.ch
 export WSGI_PROCESSES=1
 export WSGI_THREADS=15
-export CMSGEOADMINHOST=https://cms.geo.admin.ch
 export LINKEDDATAHOST=https://ld.geo.admin.ch
 export APACHE_LOG_LEVEL=warn
 export CACHE_CONTROL="max-age=1800, public"

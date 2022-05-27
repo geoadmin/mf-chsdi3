@@ -12,7 +12,7 @@ pyramid.debug_authorization = true
 pyramid.debug_notfound = true
 pyramid.debug_routematch = true
 pyramid.prevent_http_cache = true
-pyramid.includes = 
+pyramid.includes =
     pyramid_debugtoolbar
 mako.imports =
     import logging
@@ -37,9 +37,18 @@ port = ${SERVER_PORT}
 [loggers]
 keys = root, chsdi, sqlalchemy
 
+[logger_root]
+level = DEBUG
+handlers = console
+
+[logger_chsdi]
+level = DEBUG
+handlers = console
+qualname = chsdi
+
 [logger_sqlalchemy]
 level = INFO
-handlers =
+handlers = console
 qualname = sqlalchemy.engine
 # "level = INFO" logs SQL queries.
 # "level = DEBUG" logs SQL queries and results.
@@ -48,22 +57,10 @@ qualname = sqlalchemy.engine
 [handlers]
 keys = console, file, sqlfile
 
-[formatters]
-keys = generic
-
-[logger_root]
-level = DEBUG
-handlers = console
-
-[logger_chsdi]
-level = DEBUG
-handlers = file
-qualname = chsdi
-
 [handler_console]
 class = StreamHandler
-args = (sys.stderr,)
-level = NOTSET
+args = (sys.stdout,)
+level = DEBUG
 formatter = generic
 
 [handler_file]
@@ -77,6 +74,9 @@ class = FileHandler
 level = INFO
 formater = generic
 args = ('${CURRENT_DIRECTORY}/appsql.log', 'w')
+
+[formatters]
+keys = generic
 
 [formatter_generic]
 format = %(asctime)s %(levelname)-5.5s [%(name)s][%(threadName)s] %(message)s

@@ -74,13 +74,11 @@ LAST_SPHINXHOST := $(call lastvalue,sphinxhost)
 LAST_WMSHOST := $(call lastvalue,wmshost)
 LAST_WMTS_PUBLIC_HOST := $(call lastvalue,wmts-public-host)
 LAST_GEOADMINHOST := $(call lastvalue,geoadminhost)
-LAST_ALTI_URL := $(call lastvalue,alti-url)
 LAST_API_URL := $(call lastvalue,api-url)
 LAST_HOST := $(call lastvalue,host)
 LAST_PUBLIC_BUCKET_HOST  := $(call lastvalue,public-bucket-host)
 LAST_VECTOR_BUCKET := $(call lastvalue,vector-bucket)
 LAST_DATAGEOADMINHOST := $(call lastvalue,datageoadminhost)
-LAST_CMSGEOADMINHOST := $(call lastvalue,cmsgeoadminhost)
 LAST_LINKEDDATAHOST := $(call lastvalue,linkeddatahost)
 LAST_OPENTRANS_API_KEY := $(call lastvalue,opentrans-api-key)
 LAST_ROBOTS_FILE := $(call lastvalue,robots-file)
@@ -250,6 +248,18 @@ image:
 		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
 		--build-arg VERSION="$(GIT_TAG)" \
 		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG) -t ${DOCKER_IMG_TAG_LATEST} -f Dockerfile .
+
+
+.PHONY: dockerrun
+dockerrun: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
+	docker run \
+		-it \
+        	-p ${APACHE_PORT}:${APACHE_PORT} \
+                --env-file=${DEPLOY_TARGET}.env \
+                --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
+		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
+		--env APP_VERSION=${VERSION} \
+		$(DOCKER_IMG_LOCAL_TAG)
 
 
 .PHONY: dockerlogin
@@ -548,7 +558,6 @@ production.ini:  production.ini.in \
                 .venv/last-dbhost \
                 .venv/last-dbport \
                 .venv/last-dbstaging \
-                .venv/last-alti-url \
                 .venv/last-api-url \
                 .venv/last-geodata-staging \
                 .venv/last-sphinxhost \
@@ -561,7 +570,6 @@ production.ini:  production.ini.in \
                 .venv/last-public-bucket-host \
                 .venv/last-vector-bucket \
                 .venv/last-datageoadminhost \
-                .venv/last-cmsgeoadminhost \
                 .venv/last-linkeddatahost \
                 .venv/last-opentrans-api-key \
                 .venv/last-dynamic-translation \
@@ -576,7 +584,6 @@ production.ini:  production.ini.in \
 		--var "dbhost=$(DBHOST)" \
 		--var "dbport=$(DBPORT)" \
 		--var "dbstaging=$(DBSTAGING)" \
-		--var "alti_url=$(ALTI_URL)" \
 		--var "api_url=$(API_URL)" \
 		--var "geodata_staging=$(GEODATA_STAGING)" \
 		--var "sphinxhost=$(SPHINXHOST)" \
@@ -589,7 +596,6 @@ production.ini:  production.ini.in \
 		--var "public_bucket_host=$(PUBLIC_BUCKET_HOST)" \
 		--var "vector_bucket=$(VECTOR_BUCKET)" \
 		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
-		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
 		--var "linkeddatahost=$(LINKEDDATAHOST)" \
 		--var "opentrans_api_key=$(OPENTRANS_API_KEY)" \
 		--var "dynamic_translation=$(DYNAMIC_TRANSLATION)" $< > $@
@@ -695,9 +701,6 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 .venv/last-geoadminhost::
 	$(call cachelastvariable,$@,$(GEOADMINHOST),$(LAST_GEOADMINHOST),geoadminhost)
 
-.venv/last-alti-url::
-	$(call cachelastvariable,$@,$(ALTI_URL),$(LAST_ALTI_URL),alti-url)
-
 .venv/last-api-url::
 	$(call cachelastvariable,$@,$(API_URL),$(LAST_API_URL),api-url)
 
@@ -718,9 +721,6 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-datageoadminhost::
 	$(call cachelastvariable,$@,$(DATAGEOADMINHOST),$(LAST_DATAGEOADMINHOST),datageoadminhost)
-
-.venv/last-cmsgeoadminhost::
-	$(call cachelastvariable,$@,$(CMSGEOADMINHOST),$(LAST_CMSGEOADMINHOST),cmsgeoadminhost)
 
 .venv/last-linkeddatahost::
 	$(call cachelastvariable,$@,$(LINKEDDATAHOST),$(LAST_LINKEDDATAHOST),linkeddatahost)

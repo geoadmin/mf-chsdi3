@@ -33,7 +33,6 @@ class TestVarnish(TestsBase):
         try:
             os.environ["http_proxy"] = self.registry.settings['http_proxy']
             self.api_url = 'http:%s' % self.registry.settings['api_url']
-            self.alti_url = 'http:%s' % self.registry.settings['alti_url']
             self.wmts_public_host = 'http://' + self.registry.settings['wmts_public_host'] + '/'
         except KeyError as e:
             raise e
@@ -47,56 +46,6 @@ class TestVarnish(TestsBase):
         geometric_attrs = ['x', 'y', 'lon', 'lat', 'geom_st_box2d']
         return len(set(geometric_attrs).intersection(attrs)) > 0
 
-
-class TestHeight(TestVarnish):
-
-    def test_height_no_referer(self):
-
-        payload = {'easting': 600000.0, 'northing': 200000.0, '_id': self.hash()}
-        resp = requests.get(self.alti_url + '/rest/services/height', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
-
-        self.assertEqual(resp.status_code, 403)
-
-    def test_height_good_referer(self):
-
-        payload = {'easting': 600000.0, 'northing': 200000.0, '_id': self.hash()}
-        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
-        resp = requests.get(self.alti_url + '/rest/services/height', params=payload, headers=headers)
-
-        self.assertEqual(resp.status_code, 200)
-
-
-class TestProfile(TestVarnish):
-
-    def test_profile_json_no_referer(self):
-
-        payload = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', '_id': self.hash()}
-        resp = requests.get(self.alti_url + '/rest/services/profile.json', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
-
-        self.assertEqual(resp.status_code, 403)
-
-    def test_profile_json_good_referer(self):
-
-        payload = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', '_id': self.hash()}
-        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
-        resp = requests.get(self.alti_url + '/rest/services/profile.json', params=payload, headers=headers)
-
-        self.assertEqual(resp.status_code, 200)
-
-    def test_profile_csv_no_referer(self):
-
-        payload = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', '_id': self.hash()}
-        resp = requests.get(self.alti_url + '/rest/services/profile.csv', params=payload, headers={'User-Agent': 'mf-geoadmin/python'})
-
-        self.assertEqual(resp.status_code, 403)
-
-    def test_profile_csv_good_referer(self):
-
-        payload = {'geom': '{"type":"LineString","coordinates":[[550050,206550],[556950,204150],[561050,207950]]}', '_id': self.hash()}
-        headers = {'referer': 'http://unittest.geo.admin.ch', 'User-Agent': 'mf-geoadmin/python'}
-        resp = requests.get(self.alti_url + '/rest/services/profile.csv', params=payload, headers=headers)
-
-        self.assertEqual(resp.status_code, 200)
 
 
 class TestMapproxyGetTile(TestVarnish):
