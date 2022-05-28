@@ -48,9 +48,10 @@ GIT_DIRTY = `git status --porcelain`
 GIT_TAG = `git describe --tags || echo "no version info"`
 AUTHOR = $(USER)
 
-# Docker variables
+# AWS and docker variables
 DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
 DOCKER_IMG_LOCAL_TAG := $(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+AWS_REGION_ECR := eu-central-1
 
 # Colors
 ifneq ($(shell echo ${TERM}),)
@@ -135,7 +136,11 @@ serve:  guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWOR
 .PHONY: shell
 shell:
 	PYTHONPATH=${PYTHONPATH} ${PSHELL} local.ini
-	
+
+	.PHONY: dockerlogin
+dockerlogin:
+	aws --profile swisstopo-bgdi-builder ecr get-login-password --region $(AWS_REGION_ECR) | docker login --username AWS --password-stdin $(DOCKER_REGISTRY)
+
 	
 .PHONY: dockerbuild
 dockerbuild: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
