@@ -1,2 +1,1 @@
-Listen 80
 Listen ${APACHE_PORT}
