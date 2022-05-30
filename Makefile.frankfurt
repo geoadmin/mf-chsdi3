@@ -1,0 +1,155 @@
+#
+# This Makefile is to be used only in new environement (docker, python3 and
+# AWS Region Frankfurt (eu-central-1)
+# Please, keep it lean, compact and understandable 
+#
+# Currently, the .venv is used inside the docker image, to run
+# the application and locally, for development, linting, generating
+# files from template, building doc, etc. Python 3.7 is used.
+
+SHELL = /bin/bash
+.DEFAULT_GOAL := help
+
+SERVICE_NAME := mf-chsdi3
+
+CURRENT_DIR := $(shell pwd)
+INSTALL_DIRECTORY := .venv
+
+
+# general targets timestamps
+TIMESTAMPS = .timestamps
+REQUIREMENTS := $(TIMESTAMPS)
+
+
+# Commands
+AUTOPEP8 := $(INSTALL_DIRECTORY)/bin/autopep8
+FLAKE8 := $(INSTALL_DIRECTORY)/bin/flake8
+MAKO := $(INSTALL_DIRECTORY)/bin/mako-render
+NOSE := $(INSTALL_DIRECTORY)/bin/nosetests
+PIP := $(INSTALL_DIRECTORY)/bin/pip3
+PSERVE := $(INSTALL_DIRECTORY)/bin/pserve
+PSHELL := $(INSTALL_DIRECTORY)/bin/pshell
+PYTHON := $(INSTALL_DIRECTORY)/bin/python3
+SPHINX := $(INSTALL_DIRECTORY)/bin/sphinx-build
+ENVSUBST := /usr/bin/envsubst
+
+PYTHON_VERSION := 3.7
+SYSTEM_PYTHON_CMD ?= python${PYTHON_VERSION}
+PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
+
+
+PYPI_URL ?= https://pypi.org/simple/
+
+# Docker metadata
+GIT_HASH = `git rev-parse HEAD`
+GIT_HASH_SHORT = `git rev-parse --short HEAD`
+GIT_BRANCH = `git symbolic-ref HEAD --short 2>/dev/null`
+GIT_DIRTY = `git status --porcelain`
+GIT_TAG = `git describe --tags || echo "no version info"`
+AUTHOR = $(USER)
+
+# Docker variables
+DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
+DOCKER_IMG_LOCAL_TAG := $(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+
+# Colors
+ifneq ($(shell echo ${TERM}),)
+RESET := $(shell tput sgr0)
+RED := $(shell tput setaf 1)
+GREEN := $(shell tput setaf 2)
+endif
+
+# Python files (for linting)
+PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
+
+# Linting rules
+PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731,W503,W504,W605"
+
+# E128: continuation line under-indented for visual indent
+# E221: multiple spaces before operator
+# E241: multiple spaces after ':'
+# E251: multiple spaces around keyword/parameter equals
+# E272: multiple spaces before keyword
+# E501: line length 79 per default
+# E711: comparison to None should be 'if cond is None:' (SQLAlchemy's filter syntax requires this ignore!)
+# E731: do not assign a lambda expression, use a def
+# TODO: break before or after, but decide
+# W503: line break before binary operator
+# W504: line break afterbinary operator
+# W605 invalid escape sequence
+
+.PHONY: help
+help:
+	@echo "Usage: make <target>"
+	@echo
+	@echo "Possible targets:"
+	@echo "- lint/autolint      Python code quality assurance"
+	@echo "- clean              Remove generated files"
+	@echo "- cleanall           Remove all the build artefacts"
+	@echo
+	@echo "Variables:"
+	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
+	@echo "SYSTEM_PYTHON_CMD:   ${SYSTEM_PYTHON_CMD}"
+	@echo "PIP:                 ${PIP}"
+	@echo "SERVER_PORT:         ${SERVER_PORT}"
+	@echo "APACHE_PORT:         ${APACHE_PORT}"
+	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
+	@echo "DOCKER_REGISTRY      ${DOCKER_REGISTRY}"
+	@echo "DOCKER_IMG_LOCAL_TAG ${DOCKER_IMG_LOCAL_TAG}"
+	@echo
+
+setup: .venv
+
+
+
+# TODO: replace through pipenv as in the other projects.
+.venv: requirements-py3.txt
+		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
+		${PIP} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL} ;
+		${PIP} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e .
+	
+
+
+.PHONY: teste2e
+teste2e:
+	PYTHONPATH=${PYTHONPATH} ${NOSE} tests/e2e/
+
+# TODO: Replace through yapf, once the old vhost infra is replaced
+.PHONY: lint
+lint:
+	@echo "${GREEN}Linting python files...${RESET}";
+	${FLAKE8} --ignore=${PEP8_IGNORE} $(PYTHON_FILES) && echo ${RED}
+
+# TODO: Replace through yapf, once the old vhost infra is replaced
+.PHONY: autolint
+autolint:
+	@echo "${GREEN}Auto correction of python files...${RESET}";
+	${AUTOPEP8} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
+
+
+
+# TODO: still needed?
+fixrights:
+	@echo "${GREEN}Fixing rights...${RESET}";
+	chgrp -f -R geodata . || :
+	chmod -f -R g+srwX . || :
+
+
+guard-%:
+	@ if test "${${*}}" = ""; then \
+	  echo "Environment variable $* not set. Add it to your command."; \
+	  exit 1; \
+	fi
+
+
+$(TIMESTAMPS):
+	mkdir -p $(TIMESTAMPS)
+
+.PHONY: clean
+clean:
+	rm -rf $(TIMESTAMPS)
+
+
+PHONY: cleanall
+cleanall: clean
+	rm -rf .venv

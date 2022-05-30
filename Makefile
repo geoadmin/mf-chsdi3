@@ -1,3 +1,9 @@
+#
+# This is the legacy Makefile, to be exclusively used 
+# within the vhost environment, python2 and eu-west-1 aws region
+# 
+# Keep it as is!
+
 SHELL = /bin/bash
 .DEFAULT_GOAL := help
 
