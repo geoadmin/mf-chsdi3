@@ -1,45 +1,42 @@
-Migration to Python3
-====================
+Migration to Python3, Docker and Frankfort
+==========================================
 
 
-Currently, we are porting `mf-chsdi3` to `python3` and `docker`
+Currently, we are porting `mf-chsdi3` to `python3`, `docker` and `Frankfurt`
 
 Install
 -------
 
-For practical reason, `Makefile` will download and compile its
-own version of Python 3.6 and store it in the `local` directory.
+Use only `Makefile.frankfurt`
 
 
-To install the `venv`:
+Install the python virtual environment (still `virtualenv`at this point)
 
-    USE_PYTHON3=1 make cleanall user
+    make -f Makefile.frankfurt setup
 
-For all `make` target, use the same `USE_PYTHON3=1` variable
+Set the require environmental variables with
 
-    USE_PYTHON3=1 make test
+    export $(cat local.env)
+    
+Build the Pylons settings files and run the local `waitress`server
 
-or
+    make -f Makefile.frankfurt environ server
+    
 
-    USE_PYTHON3=1 make serve
+N.B. Some variables must be set manually, namely `PGUSER`, `PGPWASSPORD`, `OPENTRANS_API_KEY`
+
 
 Docker build
 ------------
 
 
+
+     make -f Makefile.frankfurt environ dockerbuild dockerrun
+
+
 Testing
 -------
 
-The project `mf-chsdi3` needs a working PostgreSQL connection but will however
-always start and hang forever.
+Many tests still fails, but run them with
 
-The `docker-entrypoint-sh` script is testing the PostgreSQL connectivity
-
-    docker-compose up 
-    Recreating mf-chsdi3_chsdi3_1 ... done
-    Attaching to mf-chsdi3_chsdi3_1
-    chsdi3_1  | INSTALLDIR=/var/www/vhosts/mf-chsdi3/private/chsdi
-    chsdi3_1  | pg.bgdi.ch:5432 - no response
-    mf-chsdi3_chsdi3_1 exited with code 2
-
-and fail if no database is found.
+    make -f Makefile.frankfurt test
