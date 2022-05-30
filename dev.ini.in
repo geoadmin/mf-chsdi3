@@ -2,12 +2,11 @@
 # pylons app configuration
 # http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/environment.html
 #
-# development (both local and dev) setting for the pylons app.
-# Use this file only in the legacy infrastructure (python2/vhost/ireland)
+# Use this file exclusively on docker/frankfurt/python3 and k8s dev environment
 
 [app:main]
-use = config:production.ini
-app_version = ${app_version}
+use = config:base.ini
+app_version = ${APP_VERSION}
 
 pyramid.reload_templates = true
 pyramid.debug_authorization = true
@@ -57,25 +56,13 @@ qualname = sqlalchemy.engine
 # "level = WARN" logs neither.  (Recommended for production systems.)
 
 [handlers]
-keys = console, file, sqlfile
+keys = console
 
 [handler_console]
 class = StreamHandler
 args = (sys.stdout,)
 level = DEBUG
 formatter = generic
-
-[handler_file]
-class = FileHandler
-level = INFO
-formatter = generic
-args = ('${CURRENT_DIRECTORY}/app.log', 'w')
-
-[handler_sqlfile]
-class = FileHandler
-level = INFO
-formater = generic
-args = ('${CURRENT_DIRECTORY}/appsql.log', 'w')
 
 [formatters]
 keys = generic

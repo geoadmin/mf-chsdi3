@@ -84,6 +84,7 @@ help:
 	@echo
 	@echo "Possible targets:"
 	@echo "- lint/autolint      Python code quality assurance"
+	@echo "- image              Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
 	@echo "- clean              Remove generated files"
 	@echo "- cleanall           Remove all the build artefacts"
 	@echo
@@ -107,9 +108,44 @@ setup: .venv
 		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
 		${PIP} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL} ;
 		${PIP} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e .
+		
+.PHONY: environ
+environ:
+	$(call build_templates)
+# FIXME: nosetests is still using development.ini
+define build_templates
+	export DOCKER_IMG_LOCAL_TAG=${DOCKER_IMG_LOCAL_TAG} && \
+	export CURRENT_DIR=${CURRENT_DIR} && \
+	envsubst < base.ini.in > base.ini && \
+	envsubst < dev.ini.in > dev.ini && \
+	envsubst < base.ini.in > production.ini && \
+	envsubst < dev.ini.in > development.ini && \
+	envsubst < local.ini.in > local.ini && \
+	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
+	envsubst <  apache/application.wsgi.in > apache/application.wsgi && \
+	envsubst < docker-compose.yml.in > docker-compose.yml && \
+	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
+endef
+
+
+.PHONY: serve
+serve:  guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-APACHE_PORT
+	PYTHONPATH=${PYTHONPATH} ${PSERVE} local.ini --reload
+
+.PHONY: shell
+shell:
+	PYTHONPATH=${PYTHONPATH} ${PSHELL} local.ini
+
+.PHONY: test
+test:
+	PYTHONPATH=${PYTHONPATH} ${NOSE} --verbosity=2  --cover-erase  tests/ -e .*e2e.*
+
+.PHONY: testci
+testci:
+	mkdir -p junit-reports/{integration,functional}
+	PYTHONPATH=${PYTHONPATH} ${NOSE} --with-xunit --xunit-file=junit-reports/functional/nosetest.xml   tests/functional -e .*e2e.*
+	PYTHONPATH=${PYTHONPATH} ${NOSE} --with-xunit --xunit-file=junit-reports/integration/nosetest.xml  tests/integration -e .*e2e.*
 	
-
-
 .PHONY: teste2e
 teste2e:
 	PYTHONPATH=${PYTHONPATH} ${NOSE} tests/e2e/
@@ -126,6 +162,11 @@ autolint:
 	@echo "${GREEN}Auto correction of python files...${RESET}";
 	${AUTOPEP8} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
 
+# FIXME add the rss and css compilation	
+.PHONY: doc
+doc: 
+	@echo "${GREEN}Building the documentation...${RESET}";
+	cd chsdi/static/doc && ../../../${SPHINX} -W -b html source build || exit 1 ;
 
 
 # TODO: still needed?

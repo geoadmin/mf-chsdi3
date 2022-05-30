@@ -2,12 +2,11 @@
 # pylons app configuration
 # http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/environment.html
 #
-# development (both local and dev) setting for the pylons app.
-# Use this file only in the legacy infrastructure (python2/vhost/ireland)
+# Use this file exclusively on docker/frankfurt/python3 and local development
 
 [app:main]
-use = config:production.ini
-app_version = ${app_version}
+use = config:base.ini
+app_version = ${APP_VERSION}
 
 pyramid.reload_templates = true
 pyramid.debug_authorization = true
@@ -69,13 +68,13 @@ formatter = generic
 class = FileHandler
 level = INFO
 formatter = generic
-args = ('${CURRENT_DIRECTORY}/app.log', 'w')
+args = ('${CURRENT_DIR}/app.log', 'w')
 
 [handler_sqlfile]
 class = FileHandler
 level = INFO
 formater = generic
-args = ('${CURRENT_DIRECTORY}/appsql.log', 'w')
+args = ('${CURRENT_DIR}/appsql.log', 'w')
 
 [formatters]
 keys = generic
