@@ -11,12 +11,19 @@ Python2 ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid
 
 # Version
 
-As 2021, the project is slowing transitioning to `python3` and `docker`. So basically, there two way of running this project:
+As 2022, the project is slowing transitioning to `python3` and `docker`. So basically, there two way of running this project:
 
-  * Within an pache2 `vhost` and `python2`, which still is the default
-  * With `python3`and `docker`. See the `PYTHON3.md` file for more information.
+## Legacy vhost
 
-# Installing
+Using the `Makefile`, this is running within an apache2 `vhost` and with `python2`, which still is the default.
+You may test python3 setting `USE_PYTHON3=1`
+
+## New world
+
+With `python3`, `docker` in `eu-central-1`. Use `Makefile.frankfurt`. SE the `PYTHON3.md` file.
+
+
+# Installing (legacy)
 
 Checkout the source code:
 
@@ -166,7 +173,7 @@ Per default the back-link to geoadmin3 points to the main instance. If you
 want to change that, adapt the `geoadminhost` variable in the
 `buildout_branch.cfg.in` input file and commit it in *your branch*.
 
-# Testing
+# Testing (legacy)
 
 ## Run nosetests manual on different environments
 We are able to run our integration tests against different staging environments
