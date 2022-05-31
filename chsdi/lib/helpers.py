@@ -604,3 +604,8 @@ def separate_statements(substring, model):
 def sanitize_user_input_accents(string):
     # this transforms the umlauts in latin compliant version, then remove the accents entirely
     return unidecode.unidecode(remove_accents(string))
+
+
+def anonymize_string(text, replacement='*'):
+    text_half_length = int(len(text) / 2)
+    return text.replace(text[0:text_half_length], replacement * text_half_length)
