@@ -84,10 +84,32 @@ help:
 	@echo "Usage: make <target>"
 	@echo
 	@echo "Possible targets:"
+	@echo
+	@echo -e "\033[1mSetup TARGETS\033[0m "
+	@echo "- setup              Create the python virtual environment with developper tools"
+	@echo
+	@echo -e "\033[1mFORMATING, LINTING AND TESTING TOOLS TARGETS\033[0m "
 	@echo "- lint/autolint      Python code quality assurance"
-	@echo "- image              Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
+	@echo "- shell              Pylons shell (for debugging)"
+	@echo "- test               Functional and integration nose tests"
+	@echo "- testci             Same as `test` but with specific junit output for the CI"
+	@echo "- teste2e            End-to-end tests"
+	@echo
+	@echo -e "\033[1mLOCAL SERVER TARGETS\033[0m "
+	@echo "- environ            Create the pylons settings file from templates and environment variables."
+	@echo "- serve              Run the wsgi app using the waitress debug server. Port can be set by Env variable SERVER_PORT (default: 6543)"
+	@echo
+	@echo -e "\033[1mLWEBSITE AND DOCUMENTATION\033[0m "
+	@echo "- doc                Create the website and static files"
+	@echo
+	@echo -e "\033[1mDocker TARGETS\033[0m "
+	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
+	@echo "- dockerbuild        Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
+	@echo "- dockerrun          Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG)) on port APACHE_PORT=$(APACHE_PORT)"
+	@echo
+	@echo -e "\033[1mCLEANING TARGETS\033[0m "
 	@echo "- clean              Remove generated files"
-	@echo "- cleanall           Remove all the build artefacts"
+	@echo "- cleanall           Remove all the build artefacts and venv"
 	@echo
 	@echo "Variables:"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
