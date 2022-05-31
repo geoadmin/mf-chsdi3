@@ -2679,21 +2679,6 @@ register('ch.swisstopo.swissnames3d', Swissnames3dRaster13)
 # Perimeter only layers
 
 
-class SwissMapVector25MetadataPerimeter(Base, Vector):
-    __tablename__ = 'perimeter_vector25'
-    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/smv25.mako'
-    __bodId__ = 'ch.swisstopo.swiss-map-vector25.metadata'
-    __label__ = 'name_de'
-    id = Column('kbnum', Unicode, primary_key=True)
-    the_geom = Column(Geometry2D)
-    name_de = Column('s_title_de', Unicode)
-    tileid = Column('tileid', Unicode)
-    datenstand = Column('release', Unicode)
-
-register(SwissMapVector25MetadataPerimeter.__bodId__, SwissMapVector25MetadataPerimeter)
-
-
 class Lotabweichungen(Base, Vector):
     __tablename__ = 'lotabweichungen_nur_punkte'
     __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
