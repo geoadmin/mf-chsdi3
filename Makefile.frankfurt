@@ -12,8 +12,14 @@ SHELL = /bin/bash
 
 SERVICE_NAME := mf-chsdi3
 
-CURRENT_DIR := $(shell pwd)
+CURRENT_DIRECTORY := $(shell pwd)
 INSTALL_DIRECTORY := .venv
+
+# default configuration
+ENV_FILE ?= .env.default
+SERVER_PORT ?= 6543
+APACHE_PORT ?= 8080
+
 
 
 # general targets timestamps
@@ -116,21 +122,30 @@ environ:
 # FIXME: nosetests is still using development.ini
 define build_templates
 	export DOCKER_IMG_LOCAL_TAG=${DOCKER_IMG_LOCAL_TAG} && \
-	export CURRENT_DIR=${CURRENT_DIR} && \
+	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	envsubst < base.ini.in > base.ini && \
 	envsubst < dev.ini.in > dev.ini && \
 	envsubst < base.ini.in > production.ini && \
 	envsubst < dev.ini.in > development.ini && \
 	envsubst < local.ini.in > local.ini && \
 	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
-	envsubst <  apache/application.wsgi.in > apache/application.wsgi && \
+	envsubst < apache/application.wsgi.in > apache/application.wsgi && \
 	envsubst < docker-compose.yml.in > docker-compose.yml && \
 	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
 endef
 
+local.ini: local.ini.in base.ini guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-APACHE_PORT
+	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
+	export $(cat .env.default) && \
+	${ENVSUBST} <  $< > $@
+	
+
+base.ini: base.ini.in 
+	${ENVSUBST} <  $< > $@
+	cp $@ production.ini
 
 .PHONY: serve
-serve:  guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-APACHE_PORT
+serve:  local.ini
 	PYTHONPATH=${PYTHONPATH} ${PSERVE} local.ini --reload
 
 .PHONY: shell
@@ -143,7 +158,7 @@ dockerlogin:
 
 	
 .PHONY: dockerbuild
-dockerbuild: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
+dockerbuild: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
 	docker build \
 		--build-arg GIT_HASH="$(GIT_COMMIT_HASH)" \
 		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
@@ -153,11 +168,11 @@ dockerbuild: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPA
 
 
 .PHONY: dockerrun
-dockerrun: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
+dockerrun: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
 	docker run \
 		-it \
         	-p ${APACHE_PORT}:${APACHE_PORT} \
-                --env-file=${DEPLOY_TARGET}.env \
+                --env-file=${ENV_FILE} \
                 --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
 		--env APP_VERSION=${VERSION} \
@@ -216,6 +231,10 @@ $(TIMESTAMPS):
 .PHONY: clean
 clean:
 	rm -rf $(TIMESTAMPS)
+	rm -f base.ini
+	rm -f local.ini
+	rm -f production.ini
+	rm -f development.ini
 
 
 PHONY: cleanall

@@ -16,7 +16,6 @@ env:
     DBHOST: pg.bgdi.ch
     DBPORT: 5432
     DBSTAGING: dev
-    DEPLOY_TARGET: dev
     GEODATA_STAGING: test
     GEOADMINHOST: mf-geoadmin3.dev.bgdi.ch
     HOST: mf-chsdi3.dev.bgdi.ch

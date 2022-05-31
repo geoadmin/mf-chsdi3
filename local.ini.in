@@ -68,13 +68,13 @@ formatter = generic
 class = FileHandler
 level = INFO
 formatter = generic
-args = ('${CURRENT_DIR}/app.log', 'w')
+args = ('${CURRENT_DIRECTORY}/app.log', 'w')
 
 [handler_sqlfile]
 class = FileHandler
 level = INFO
 formater = generic
-args = ('${CURRENT_DIR}/appsql.log', 'w')
+args = ('${CURRENT_DIRECTORY}/appsql.log', 'w')
 
 [formatters]
 keys = generic

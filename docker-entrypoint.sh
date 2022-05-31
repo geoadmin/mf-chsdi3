@@ -1,7 +1,6 @@
 #!/bin/bash
 set -eo pipefail
 
-: "${DEPLOY_TARGET:?Variable DEPLOY_TARGET not set or empty}"
 : "${DBHOST:?Variable DBHOST not set or empty}"
 : "${DBPORT:?Variable DBPORT not set or empty}"
 : "${PGUSER:?Variable PGUSER not set or empty}"
@@ -16,8 +15,8 @@ echo "INSTALLDIR=${INSTALLDIR}"
 
 pg_isready -d stopo_prod -h ${DBHOST} -p ${DBPORT} -U ${PGUSER}
 
-#source rc_${DEPLOY_TARGET} && make production.ini development.ini
 envsubst < base.ini.in > base.ini
+# FIXME: name should be local.ini
 envsubst < dev.ini.in > development.ini
 
 envsubst < 25-mf-chsdi3.conf.in > /etc/apache2/sites-available/000-default.conf 
