@@ -1,7 +1,7 @@
 #
 # This Makefile is to be used only in new environement (docker, python3 and
 # AWS Region Frankfurt (eu-central-1)
-# Please, keep it lean, compact and understandable 
+# Please, keep it lean, compact and understandable
 #
 # Currently, the .venv is used inside the docker image, to run
 # the application and locally, for development, linting, generating
@@ -46,18 +46,29 @@ PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python$
 
 PYPI_URL ?= https://pypi.org/simple/
 
-# Docker metadata
-GIT_HASH = `git rev-parse HEAD`
-GIT_HASH_SHORT = `git rev-parse --short HEAD`
-GIT_BRANCH = `git symbolic-ref HEAD --short 2>/dev/null`
-GIT_DIRTY = `git status --porcelain`
-GIT_TAG = `git describe --tags || echo "no version info"`
-AUTHOR = $(USER)
 
 # AWS and docker variables
 DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
-DOCKER_IMG_LOCAL_TAG := $(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
 AWS_REGION_ECR := eu-central-1
+AUTHOR=$(USER)
+
+# Docker metadata
+INSIDE_DOCKER_IMAGE?=False
+ifeq ($(INSIDE_DOCKER_IMAGE), False)
+	GIT_HASH=$(shell git rev-parse HEAD)
+	GIT_HASH_SHORT=$(shell git rev-parse --short HEAD)
+	GIT_BRANCH=$(shell git symbolic-ref HEAD --short 2>/dev/null)
+	GIT_DIRTY=$(shell git status --porcelain)
+	GIT_TAG=$(shell git describe --tags || echo "no version info")
+	DOCKER_IMG_LOCAL_TAG=$(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+else
+	GIT_HASH=unknown
+	GIT_HASH_SHORT=unknown
+	GIT_BRANCH=unknown
+	GIT_DIRTY=unknown
+	GIT_TAG=unknown
+	DOCKER_IMG_LOCAL_TAG=$(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+endif
 
 # Colors
 ifneq ($(shell echo ${TERM}),)
@@ -137,7 +148,8 @@ setup: .venv
 		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
 		${PIP} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL} ;
 		${PIP} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e .
-		
+
+
 .PHONY: environ
 environ:
 	$(call build_templates)
@@ -184,7 +196,7 @@ shell:
 dockerlogin:
 	aws --profile swisstopo-bgdi-builder ecr get-login-password --region $(AWS_REGION_ECR) | docker login --username AWS --password-stdin $(DOCKER_REGISTRY)
 
-	
+
 .PHONY: dockerbuild
 dockerbuild: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
 	docker build \
@@ -215,7 +227,7 @@ testci:
 	mkdir -p junit-reports/{integration,functional}
 	PYTHONPATH=${PYTHONPATH} ${NOSE} --with-xunit --xunit-file=junit-reports/functional/nosetest.xml   tests/functional -e .*e2e.*
 	PYTHONPATH=${PYTHONPATH} ${NOSE} --with-xunit --xunit-file=junit-reports/integration/nosetest.xml  tests/integration -e .*e2e.*
-	
+
 .PHONY: teste2e
 teste2e:
 	PYTHONPATH=${PYTHONPATH} ${NOSE} tests/e2e/
@@ -232,9 +244,9 @@ autolint:
 	@echo "${GREEN}Auto correction of python files...${RESET}";
 	${AUTOPEP8} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
 
-# FIXME add the rss and css compilation	
+# FIXME add the rss and css compilation
 .PHONY: doc
-doc: 
+doc:
 	@echo "${GREEN}Building the documentation...${RESET}";
 	cd chsdi/static/doc && ../../../${SPHINX} -W -b html source build || exit 1 ;
 

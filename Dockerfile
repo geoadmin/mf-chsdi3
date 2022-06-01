@@ -56,7 +56,9 @@ LABEL author=$AUTHOR
 
 # FIXME: potomo & translate (do we still need the compiled .mo files?)
 # FIXME: figure out the best way to build chsdi/static/css/extended.min.css (no need to incorporate the whole node.js to build a single CSS file!)
-RUN make -f ${MAKEFILE} cleanall setup environ fixrights
+# FIXME: the flag INSIDE_DOCKER_IMAGE=True is only useful when using Makefile.frankfurt but will be ignored otherwise (i.e. when using Makefiles
+# other than Makefile.frankfurt which won't be the case anyways..)
+RUN make -f ${MAKEFILE} cleanall setup environ fixrights INSIDE_DOCKER_IMAGE=True
 
 ENTRYPOINT ["/var/www/vhosts/mf-chsdi3/private/chsdi/docker-entrypoint.sh"]
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
