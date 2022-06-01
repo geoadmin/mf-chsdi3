@@ -104,6 +104,7 @@ help:
 	@echo
 	@echo -e "\033[1mSetup TARGETS\033[0m "
 	@echo "- setup              Create the python virtual environment with developper tools"
+	@echo "- all                Build the application with all dependent files. Ready to serve"
 	@echo
 	@echo -e "\033[1mFORMATING, LINTING AND TESTING TOOLS TARGETS\033[0m "
 	@echo "- lint/autolint      Python code quality assurance"
@@ -118,6 +119,7 @@ help:
 	@echo
 	@echo -e "\033[1mLWEBSITE AND DOCUMENTATION\033[0m "
 	@echo "- doc                Create the website and static files"
+	@echo "- rss                Create RSS feed from the releasenotes html file"
 	@echo
 	@echo -e "\033[1mDocker TARGETS\033[0m "
 	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
@@ -139,8 +141,12 @@ help:
 	@echo "DOCKER_IMG_LOCAL_TAG ${DOCKER_IMG_LOCAL_TAG}"
 	@echo
 
+# TODO: add targets translate when merged
+.PHONY: all
+all: setup environ lint fixrights doc rss
+	
+.PHONY: setup
 setup: .venv
-
 
 
 # TODO: replace through pipenv as in the other projects.
@@ -250,6 +256,10 @@ doc:
 	@echo "${GREEN}Building the documentation...${RESET}";
 	cd chsdi/static/doc && ../../../${SPHINX} -W -b html source build || exit 1 ;
 
+.PHONY:
+rss: doc chsdi/static/doc/build/releasenotes/index.html
+	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
+	${PYTHON} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
 
 # TODO: still needed?
 fixrights:
@@ -275,6 +285,7 @@ clean:
 	rm -f local.ini
 	rm -f production.ini
 	rm -f development.ini
+	rm -f chsdi/static/doc/build/releasenotes/rss2.xml
 
 
 PHONY: cleanall
