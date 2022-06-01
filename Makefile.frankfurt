@@ -162,7 +162,7 @@ define setup_env
 	$(eval export sed 's/=.*//' $(1))
 endef
 
-local.ini: local.ini.in base.ini guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-APACHE_PORT
+local.ini: local.ini.in base.ini guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-APACHE_PORT
 	$(call setup_env,$(ENV_FILE))
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	${ENVSUBST} <  $< > $@
