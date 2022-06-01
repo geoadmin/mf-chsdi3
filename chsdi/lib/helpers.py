@@ -22,7 +22,7 @@ from functools import partial
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
 from pyramid.url import route_url
-from pyramid.httpexceptions import HTTPBadRequest, HTTPRequestTimeout, HTTPInternalServerError
+from pyramid.httpexceptions import HTTPBadRequest, HTTPRequestTimeout
 import unicodedata
 try:
     from urlparse import urlparse, urlunparse, urljoin
@@ -116,10 +116,10 @@ def resource_exists(path, headers={'User-Agent': 'mf-geoadmin/python'}, verify=F
     try:
         r = requests.head(path, headers=headers, verify=verify, timeout=REQUESTS_DEFAULT_TIMEOUT)
     except Timeout as e:
-        log.error('Timeout while requesting HEAD on "%s"' % path)
+        log.error('Timeout while requesting HEAD on "%s"\n%s' % (path, e))
         return False
-    except ConnectionError:
-        log.error('ConnectionError while requesting HEAD on "%s"' % path)
+    except ConnectionError as e:
+        log.error('ConnectionError while requesting HEAD on "%s\n%s"' % (path, e))
         return False
     except RequestException as e:
         log.error('Unknown exception while requesting "%s"\n%s' % (path, e))
