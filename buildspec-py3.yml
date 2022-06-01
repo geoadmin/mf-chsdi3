@@ -97,7 +97,6 @@ phases:
         then
           # PR to merge personal branch (feature or bug) into master
           export DBSTAGING=prod
-          export DEPLOY_TARGET=prod
           export GEODATA_STAGING=prod
         elif [[ "${GIT_BRANCH}" == master ]] && \
              [[ "${MERGED_FROM}" != geoadmin/develop* ]];
@@ -105,7 +104,6 @@ phases:
           # Push event triggered either by a PR merge on master (except for PR to merge develop* into master)
           # or by a push on the master branch.
           export DBSTAGING=prod
-          export DEPLOY_TARGET=prod
           export GEODATA_STAGING=prod
         fi
       - echo "=========== VERSIONS =============="
