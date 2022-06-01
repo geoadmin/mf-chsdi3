@@ -19,6 +19,9 @@ INSTALL_DIRECTORY := .venv
 ENV_FILE ?= .env.default
 SERVER_PORT ?= 6543
 APACHE_PORT ?= 8080
+# Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
+# https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
+AVAILABLE_LANGUAGES := de fr it fi en
 
 
 
@@ -139,7 +142,7 @@ help:
 	@echo "DOCKER_IMG_LOCAL_TAG ${DOCKER_IMG_LOCAL_TAG}"
 	@echo
 
-setup: .venv
+setup: .venv translate
 
 
 
@@ -174,6 +177,17 @@ define setup_env
 	$(eval export sed 's/=.*//' $(1))
 endef
 
+# Generate a basically empty gettext `chsdi` domain.
+# Translation are dynamic, the domain is updated at runtime directly from the BOD
+.PHONY: translate
+translate: .venv
+	 ${PYTHON} setup.py extract_messages
+	 for lng in ${AVAILABLE_LANGUAGES}; do \
+		${PYTHON} setup.py init_catalog -l $$lng; \
+	done; 
+	${PYTHON} setup.py compile_catalog
+
+
 local.ini: local.ini.in base.ini guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-APACHE_PORT
 	$(call setup_env,$(ENV_FILE))
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
@@ -185,7 +199,7 @@ base.ini: base.ini.in
 	cp $@ production.ini
 
 .PHONY: serve
-serve:  local.ini
+serve:  local.ini 
 	PYTHONPATH=${PYTHONPATH} ${PSERVE} local.ini --reload
 
 .PHONY: shell
@@ -280,3 +294,8 @@ clean:
 PHONY: cleanall
 cleanall: clean
 	rm -rf .venv
+	rm -rf chsdi/locale/en/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/fr/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/de/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/fi/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/it/LC_MESSAGES/chsdi.*
