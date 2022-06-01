@@ -14,7 +14,7 @@ Install the python virtual environment (still `virtualenv`at this point)
 
     make -f Makefile.frankfurt setup
 
-The required environement variables are set in `.ven.default`
+The required environement variables are set in `.env.default`
 
  
 Build the Pylons settings files and run the local `waitress`server
