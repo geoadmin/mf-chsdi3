@@ -6,6 +6,10 @@ import pyramid.httpexceptions as exc
 
 from chsdi.lib.helpers import anonymize_string
 
+import logging
+
+log = logging.getLogger(__name__)
+
 
 class S3Connect:
     def __init__(self):
@@ -31,9 +35,13 @@ def get_file_from_bucket(bucket_name, file_name):
         response = conn.get_object(Bucket=bucket_name,
                                    Key=file_name)
     except boto_exc.NoCredentialsError as c:
-        raise exc.HTTPInternalServerError("Credential error for  bucket (%s)\n%s" % (anonymize_string(bucket_name), c))
+        credential_error_tpl = "Credential error for  bucket (%s)\n%s"
+        log.error(credential_error_tpl % (bucket_name, c))
+        raise exc.HTTPInternalServerError(credential_error_tpl % (anonymize_string(bucket_name, length = 5), c))
     except Exception as e:
-        raise exc.HTTPInternalServerError("Bucket (%s) or file (%s) not valids. \n%s" % (anonymize_string(bucket_name), file_name, e))
+        error_tpl = "Bucket (%s) or file (%s) not valids. \n%s"
+        log.error(error_tpl % (bucket_name, file_name, e))
+        raise exc.HTTPInternalServerError(error_tpl % (anonymize_string(bucket_name, length = 5), file_name, e))
         return e
     return response
 

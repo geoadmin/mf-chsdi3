@@ -614,6 +614,6 @@ def sanitize_user_input_accents(string):
     return unidecode.unidecode(remove_accents(string))
 
 
-def anonymize_string(text, replacement='*'):
-    text_half_length = int(len(text) / 2)
-    return text.replace(text[0:text_half_length], replacement * text_half_length)
+def anonymize_string(text, length = None, replacement='*'):
+    txt_length = len(text) if length is None else length
+    return text.replace(text[0:], replacement * txt_length)
