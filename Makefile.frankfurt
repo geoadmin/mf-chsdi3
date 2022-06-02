@@ -19,6 +19,9 @@ INSTALL_DIRECTORY := .venv
 ENV_FILE ?= .env.default
 SERVER_PORT ?= 6543
 APACHE_PORT ?= 8080
+# Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
+# https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
+AVAILABLE_LANGUAGES := de fr it fi en
 
 
 
@@ -104,6 +107,7 @@ help:
 	@echo
 	@echo -e "\033[1mSetup TARGETS\033[0m "
 	@echo "- setup              Create the python virtual environment with developper tools"
+	@echo "- all                Build the application with all dependent files. Ready to serve"
 	@echo
 	@echo -e "\033[1mFORMATING, LINTING AND TESTING TOOLS TARGETS\033[0m "
 	@echo "- lint/autolint      Python code quality assurance"
@@ -118,6 +122,7 @@ help:
 	@echo
 	@echo -e "\033[1mLWEBSITE AND DOCUMENTATION\033[0m "
 	@echo "- doc                Create the website and static files"
+	@echo "- rss                Create RSS feed from the releasenotes html file"
 	@echo
 	@echo -e "\033[1mDocker TARGETS\033[0m "
 	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
@@ -139,7 +144,13 @@ help:
 	@echo "DOCKER_IMG_LOCAL_TAG ${DOCKER_IMG_LOCAL_TAG}"
 	@echo
 
-setup: .venv
+
+# TODO: add targets translate when merged
+.PHONY: all
+all: setup environ lint fixrights doc rss
+	
+.PHONY: setup
+setup: .venv translate
 
 
 
@@ -164,7 +175,6 @@ define build_templates
 	envsubst < local.ini.in > local.ini && \
 	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
 	envsubst < apache/application.wsgi.in > apache/application.wsgi && \
-	envsubst < docker-compose.yml.in > docker-compose.yml && \
 	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
 endef
 
@@ -173,6 +183,17 @@ define setup_env
 	$(eval include $(1))
 	$(eval export sed 's/=.*//' $(1))
 endef
+
+# Generate a basically empty gettext `chsdi` domain.
+# Translation are dynamic, the domain is updated at runtime directly from the BOD
+.PHONY: translate
+translate: .venv
+	 ${PYTHON} setup.py extract_messages
+	 for lng in ${AVAILABLE_LANGUAGES}; do \
+		${PYTHON} setup.py init_catalog -l $$lng; \
+	done; 
+	${PYTHON} setup.py compile_catalog
+
 
 local.ini: local.ini.in base.ini guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-APACHE_PORT
 	$(call setup_env,$(ENV_FILE))
@@ -185,7 +206,7 @@ base.ini: base.ini.in
 	cp $@ production.ini
 
 .PHONY: serve
-serve:  local.ini
+serve:  local.ini 
 	PYTHONPATH=${PYTHONPATH} ${PSERVE} local.ini --reload
 
 .PHONY: shell
@@ -250,6 +271,10 @@ doc:
 	@echo "${GREEN}Building the documentation...${RESET}";
 	cd chsdi/static/doc && ../../../${SPHINX} -W -b html source build || exit 1 ;
 
+.PHONY:
+rss: doc chsdi/static/doc/build/releasenotes/index.html
+	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
+	${PYTHON} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
 
 # TODO: still needed?
 fixrights:
@@ -275,8 +300,14 @@ clean:
 	rm -f local.ini
 	rm -f production.ini
 	rm -f development.ini
+	rm -f chsdi/static/doc/build/releasenotes/rss2.xml
 
 
 PHONY: cleanall
 cleanall: clean
 	rm -rf .venv
+	rm -rf chsdi/locale/en/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/fr/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/de/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/fi/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/it/LC_MESSAGES/chsdi.*

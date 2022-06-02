@@ -156,6 +156,7 @@ phases:
     commands:
       - echo "=========== BUILD ================="
       - echo Build started on $(date)
+      # TODO: replace with `Makefile.frankfurt` later on
       - make all
       - >
         docker build
