@@ -165,6 +165,7 @@ setup: .venv translate
 
 .PHONY: environ
 environ:
+# FIXME: nosetests is still using development.ini
 	export DOCKER_IMG_LOCAL_TAG=${DOCKER_IMG_LOCAL_TAG} && \
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	envsubst < base.ini.in > base.ini && \
