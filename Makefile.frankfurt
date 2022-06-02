@@ -1,7 +1,7 @@
 #
 # This Makefile is to be used only in new environement (docker, python3 and
 # AWS Region Frankfurt (eu-central-1)
-# Please, keep it lean, compact and understandable 
+# Please, keep it lean, compact and understandable
 #
 # Currently, the .venv is used inside the docker image, to run
 # the application and locally, for development, linting, generating
@@ -12,8 +12,17 @@ SHELL = /bin/bash
 
 SERVICE_NAME := mf-chsdi3
 
-CURRENT_DIR := $(shell pwd)
+CURRENT_DIRECTORY := $(shell pwd)
 INSTALL_DIRECTORY := .venv
+
+# default configuration
+ENV_FILE ?= .env.default
+SERVER_PORT ?= 6543
+APACHE_PORT ?= 8080
+# Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
+# https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
+AVAILABLE_LANGUAGES := de fr it fi en
+
 
 
 # general targets timestamps
@@ -40,18 +49,29 @@ PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python$
 
 PYPI_URL ?= https://pypi.org/simple/
 
-# Docker metadata
-GIT_HASH = `git rev-parse HEAD`
-GIT_HASH_SHORT = `git rev-parse --short HEAD`
-GIT_BRANCH = `git symbolic-ref HEAD --short 2>/dev/null`
-GIT_DIRTY = `git status --porcelain`
-GIT_TAG = `git describe --tags || echo "no version info"`
-AUTHOR = $(USER)
 
 # AWS and docker variables
 DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
-DOCKER_IMG_LOCAL_TAG := $(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
 AWS_REGION_ECR := eu-central-1
+AUTHOR=$(USER)
+
+# Docker metadata
+INSIDE_DOCKER_IMAGE?=False
+ifeq ($(INSIDE_DOCKER_IMAGE), False)
+	GIT_HASH=$(shell git rev-parse HEAD)
+	GIT_HASH_SHORT=$(shell git rev-parse --short HEAD)
+	GIT_BRANCH=$(shell git symbolic-ref HEAD --short 2>/dev/null)
+	GIT_DIRTY=$(shell git status --porcelain)
+	GIT_TAG=$(shell git describe --tags || echo "no version info")
+	DOCKER_IMG_LOCAL_TAG=$(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+else
+	GIT_HASH=unknown
+	GIT_HASH_SHORT=unknown
+	GIT_BRANCH=unknown
+	GIT_DIRTY=unknown
+	GIT_TAG=unknown
+	DOCKER_IMG_LOCAL_TAG=$(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+endif
 
 # Colors
 ifneq ($(shell echo ${TERM}),)
@@ -87,6 +107,7 @@ help:
 	@echo
 	@echo -e "\033[1mSetup TARGETS\033[0m "
 	@echo "- setup              Create the python virtual environment with developper tools"
+	@echo "- all                Build the application with all dependent files. Ready to serve"
 	@echo
 	@echo -e "\033[1mFORMATING, LINTING AND TESTING TOOLS TARGETS\033[0m "
 	@echo "- lint/autolint      Python code quality assurance"
@@ -101,6 +122,7 @@ help:
 	@echo
 	@echo -e "\033[1mLWEBSITE AND DOCUMENTATION\033[0m "
 	@echo "- doc                Create the website and static files"
+	@echo "- rss                Create RSS feed from the releasenotes html file"
 	@echo
 	@echo -e "\033[1mDocker TARGETS\033[0m "
 	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
@@ -122,7 +144,13 @@ help:
 	@echo "DOCKER_IMG_LOCAL_TAG ${DOCKER_IMG_LOCAL_TAG}"
 	@echo
 
-setup: .venv
+
+# TODO: add targets translate when merged
+.PHONY: all
+all: setup environ lint fixrights doc rss
+	
+.PHONY: setup
+setup: .venv translate
 
 
 
@@ -131,28 +159,54 @@ setup: .venv
 		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
 		${PIP} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL} ;
 		${PIP} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e .
-		
+
+
 .PHONY: environ
 environ:
 	$(call build_templates)
 # FIXME: nosetests is still using development.ini
 define build_templates
 	export DOCKER_IMG_LOCAL_TAG=${DOCKER_IMG_LOCAL_TAG} && \
-	export CURRENT_DIR=${CURRENT_DIR} && \
+	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	envsubst < base.ini.in > base.ini && \
 	envsubst < dev.ini.in > dev.ini && \
 	envsubst < base.ini.in > production.ini && \
 	envsubst < dev.ini.in > development.ini && \
 	envsubst < local.ini.in > local.ini && \
 	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
-	envsubst <  apache/application.wsgi.in > apache/application.wsgi && \
-	envsubst < docker-compose.yml.in > docker-compose.yml && \
+	envsubst < apache/application.wsgi.in > apache/application.wsgi && \
 	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
 endef
 
+define setup_env
+	@echo "Setup vars from ENV_FILE=$(ENV_FILE)"
+	$(eval include $(1))
+	$(eval export sed 's/=.*//' $(1))
+endef
+
+# Generate a basically empty gettext `chsdi` domain.
+# Translation are dynamic, the domain is updated at runtime directly from the BOD
+.PHONY: translate
+translate: .venv
+	 ${PYTHON} setup.py extract_messages
+	 for lng in ${AVAILABLE_LANGUAGES}; do \
+		${PYTHON} setup.py init_catalog -l $$lng; \
+	done; 
+	${PYTHON} setup.py compile_catalog
+
+
+local.ini: local.ini.in base.ini guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-APACHE_PORT
+	$(call setup_env,$(ENV_FILE))
+	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
+	${ENVSUBST} <  $< > $@
+	
+
+base.ini: base.ini.in 
+	${ENVSUBST} <  $< > $@
+	cp $@ production.ini
 
 .PHONY: serve
-serve:  guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-APACHE_PORT
+serve:  local.ini 
 	PYTHONPATH=${PYTHONPATH} ${PSERVE} local.ini --reload
 
 .PHONY: shell
@@ -163,9 +217,9 @@ shell:
 dockerlogin:
 	aws --profile swisstopo-bgdi-builder ecr get-login-password --region $(AWS_REGION_ECR) | docker login --username AWS --password-stdin $(DOCKER_REGISTRY)
 
-	
+
 .PHONY: dockerbuild
-dockerbuild: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
+dockerbuild: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
 	docker build \
 		--build-arg GIT_HASH="$(GIT_COMMIT_HASH)" \
 		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
@@ -175,11 +229,11 @@ dockerbuild: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPA
 
 
 .PHONY: dockerrun
-dockerrun: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
+dockerrun: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
 	docker run \
 		-it \
         	-p ${APACHE_PORT}:${APACHE_PORT} \
-                --env-file=${DEPLOY_TARGET}.env \
+                --env-file=${ENV_FILE} \
                 --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
 		--env APP_VERSION=${VERSION} \
@@ -194,7 +248,7 @@ testci:
 	mkdir -p junit-reports/{integration,functional}
 	PYTHONPATH=${PYTHONPATH} ${NOSE} --with-xunit --xunit-file=junit-reports/functional/nosetest.xml   tests/functional -e .*e2e.*
 	PYTHONPATH=${PYTHONPATH} ${NOSE} --with-xunit --xunit-file=junit-reports/integration/nosetest.xml  tests/integration -e .*e2e.*
-	
+
 .PHONY: teste2e
 teste2e:
 	PYTHONPATH=${PYTHONPATH} ${NOSE} tests/e2e/
@@ -211,12 +265,16 @@ autolint:
 	@echo "${GREEN}Auto correction of python files...${RESET}";
 	${AUTOPEP8} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
 
-# FIXME add the rss and css compilation	
+# FIXME add the rss and css compilation
 .PHONY: doc
-doc: 
+doc:
 	@echo "${GREEN}Building the documentation...${RESET}";
 	cd chsdi/static/doc && ../../../${SPHINX} -W -b html source build || exit 1 ;
 
+.PHONY:
+rss: doc chsdi/static/doc/build/releasenotes/index.html
+	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
+	${PYTHON} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
 
 # TODO: still needed?
 fixrights:
@@ -238,8 +296,18 @@ $(TIMESTAMPS):
 .PHONY: clean
 clean:
 	rm -rf $(TIMESTAMPS)
+	rm -f base.ini
+	rm -f local.ini
+	rm -f production.ini
+	rm -f development.ini
+	rm -f chsdi/static/doc/build/releasenotes/rss2.xml
 
 
 PHONY: cleanall
 cleanall: clean
 	rm -rf .venv
+	rm -rf chsdi/locale/en/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/fr/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/de/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/fi/LC_MESSAGES/chsdi.*
+	rm -rf chsdi/locale/it/LC_MESSAGES/chsdi.*

@@ -1,6 +1,7 @@
 .venv
 .gitignore
 .gitmodules
+.git
 *.swp
 *.yml
 apache2.sh
