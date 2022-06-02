@@ -17,8 +17,11 @@ INSTALL_DIRECTORY := .venv
 
 # default configuration
 ENV_FILE ?= .env.default
-SERVER_PORT ?= 6543
-APACHE_PORT ?= 8080
+
+# read all env vars from ENV_FILE and export them all
+include $(ENV_FILE)
+export
+
 # Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
 # https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
 AVAILABLE_LANGUAGES := de fr it fi en
@@ -148,10 +151,9 @@ help:
 # TODO: add targets translate when merged
 .PHONY: all
 all: setup environ lint fixrights doc rss
-	
+
 .PHONY: setup
 setup: .venv translate
-
 
 
 # TODO: replace through pipenv as in the other projects.
@@ -163,9 +165,6 @@ setup: .venv translate
 
 .PHONY: environ
 environ:
-	$(call build_templates)
-# FIXME: nosetests is still using development.ini
-define build_templates
 	export DOCKER_IMG_LOCAL_TAG=${DOCKER_IMG_LOCAL_TAG} && \
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	envsubst < base.ini.in > base.ini && \
@@ -176,13 +175,7 @@ define build_templates
 	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
 	envsubst < apache/application.wsgi.in > apache/application.wsgi && \
 	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
-endef
 
-define setup_env
-	@echo "Setup vars from ENV_FILE=$(ENV_FILE)"
-	$(eval include $(1))
-	$(eval export sed 's/=.*//' $(1))
-endef
 
 # Generate a basically empty gettext `chsdi` domain.
 # Translation are dynamic, the domain is updated at runtime directly from the BOD
@@ -194,13 +187,12 @@ translate: .venv
 	done;
 	${PYTHON} setup.py compile_catalog
 
-
-local.ini: local.ini.in base.ini guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-APACHE_PORT
-	$(call setup_env,$(ENV_FILE))
+.PHONY: local.ini
+local.ini: local.ini.in base.ini environ_aux guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-APACHE_PORT
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	${ENVSUBST} <  $< > $@
 
-
+.PHONY: base.ini
 base.ini: base.ini.in
 	${ENVSUBST} <  $< > $@
 	cp $@ production.ini
@@ -301,6 +293,7 @@ clean:
 	rm -f production.ini
 	rm -f development.ini
 	rm -f chsdi/static/doc/build/releasenotes/rss2.xml
+
 
 
 PHONY: cleanall
