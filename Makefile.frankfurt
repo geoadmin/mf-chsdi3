@@ -22,7 +22,7 @@ APACHE_PORT ?= 8080
 # Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
 # https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
 AVAILABLE_LANGUAGES := de fr it fi en
-
+NODE_MODULES := node_modules
 
 
 # general targets timestamps
@@ -142,15 +142,21 @@ help:
 	@echo "DOCKER_IMG_LOCAL_TAG ${DOCKER_IMG_LOCAL_TAG}"
 	@echo
 
-setup: .venv translate
+# TODO: add targets `translate` when merged
+.PHONY: all
+all: setup environ lint fixrights doc chsdi/static/css/extended.min.css
+
+setup: .venv translate $(NODE_MODULES)
 
 
+requirements-py3.txt:
+	@echo "${GREEN}requirements-py3.txt has changed...${RESET}";
 
 # TODO: replace through pipenv as in the other projects.
 .venv: requirements-py3.txt
-		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
-		${PIP} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL} ;
-		${PIP} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e .
+		test -d "$(INSTALL_DIRECTORY)" ||  ( $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY) && \
+		${PIP} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL}  && \
+		${PIP} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e . )
 
 
 .PHONY: environ
@@ -264,6 +270,19 @@ doc:
 	@echo "${GREEN}Building the documentation...${RESET}";
 	cd chsdi/static/doc && ../../../${SPHINX} -W -b html source build || exit 1 ;
 
+$(NODE_MODULES): package.json
+	@echo "${GREEN}Installing node packages...${RESET}";
+	npm install $(NPM_QUIET) --production
+	cp -f $(NODE_MODULES)/jquery/dist/jquery.min.js chsdi/static/js/jquery.min.js
+	cp -f $(NODE_MODULES)/blueimp-gallery/js/blueimp-gallery.min.js chsdi/static/js/blueimp-gallery.min.js
+	cp -f $(NODE_MODULES)/d3/d3.min.js chsdi/static/js/d3.min.js
+	cp -f $(NODE_MODULES)/d3-tip/index.js chsdi/static/js/d3-tip.js
+	cp -f $(NODE_MODULES)/blueimp-gallery/css/blueimp-gallery.min.css chsdi/static/css/blueimp-gallery.min.css
+
+
+chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
+	@echo "${GREEN}Generating new css file...${RESET}";
+	$(NODE_MODULES)/.bin/lessc -ru --clean-css $< $@
 
 # TODO: still needed?
 fixrights:
