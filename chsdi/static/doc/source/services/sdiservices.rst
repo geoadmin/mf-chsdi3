@@ -1416,13 +1416,13 @@ URL
 ::
 
   https://sparql.geo.admin.ch/sparql
-  https://ld.geo.admin.ch/sparql/ (YASGUI)
+  https://geo.ld.admin.ch/sparql/ (YASGUI)
 
 Available datasets
 ******************
 
-- `swissBOUNDARIES3D <https://ld.geo.admin.ch/data/swissBOUNDARIES3D>`_
-- `Public transport stops <https://ld.geo.admin.ch/data/PublicTransportStops>`_
+- `swissBOUNDARIES3D <https://geo.ld.admin.ch/data/swissBOUNDARIES3D>`_
+- `Public transport stops <https://geo.ld.admin.ch/data/PublicTransportStops>`_
 
 Examples
 ********
