@@ -5,7 +5,6 @@ set -eo pipefail
 : "${DBPORT:?Variable DBPORT not set or empty}"
 : "${PGUSER:?Variable PGUSER not set or empty}"
 
-: "${DEPLOY_TARGET:?Variable DEPLOY_TARGET not set or empty}"
 
 INSTALLDIR=$(dirname $(readlink -f "$0"))
 export INSTALLDIR

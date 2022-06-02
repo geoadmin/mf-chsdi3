@@ -287,7 +287,6 @@ define build_templates
 	export $(shell cat $1.env) && source rc_$1 && export DOCKER_IMG_LOCAL_TAG=${DOCKER_IMG_LOCAL_TAG} && export DOCKER_IMG_TAG_LATEST=${DOCKER_IMG_TAG_LATEST} && \
 		envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
 		envsubst <  apache/application.wsgi.in > apache/application.wsgi && \
-		envsubst < docker-compose.yml.in > docker-compose.yml && \
 		envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
 endef
 
@@ -793,8 +792,6 @@ clean:
 	rm -rf deploy/conf/00-branch.conf
 	rm -f  chsdi/static/info.json
 	rm -rf junit_report
-	rm -f docker-compose.yml
-	rm -f rancher-compose.yml
 	rm -rf 25-mf-chsdi3.conf
 
 .PHONY: cleanall
