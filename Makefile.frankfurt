@@ -167,7 +167,6 @@ define build_templates
 	envsubst < local.ini.in > local.ini && \
 	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
 	envsubst < apache/application.wsgi.in > apache/application.wsgi && \
-	envsubst < docker-compose.yml.in > docker-compose.yml && \
 	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
 endef
 
