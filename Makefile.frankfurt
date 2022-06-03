@@ -194,7 +194,7 @@ translate: .venv
 	 ${PYTHON} setup.py extract_messages
 	 for lng in ${AVAILABLE_LANGUAGES}; do \
 		${PYTHON} setup.py init_catalog -l $$lng; \
-	done; 
+	done;
 	${PYTHON} setup.py compile_catalog
 
 
@@ -202,14 +202,14 @@ local.ini: local.ini.in base.ini guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PG
 	$(call setup_env,$(ENV_FILE))
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	${ENVSUBST} <  $< > $@
-	
 
-base.ini: base.ini.in 
+
+base.ini: base.ini.in
 	${ENVSUBST} <  $< > $@
 	cp $@ production.ini
 
 .PHONY: serve
-serve:  local.ini 
+serve:  local.ini
 	PYTHONPATH=${PYTHONPATH} ${PSERVE} local.ini --reload
 
 .PHONY: shell
@@ -222,7 +222,7 @@ dockerlogin:
 
 
 .PHONY: dockerbuild
-dockerbuild: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
+dockerbuild: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-APACHE_PORT
 	docker build \
 		--build-arg GIT_HASH="$(GIT_COMMIT_HASH)" \
 		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
@@ -232,14 +232,14 @@ dockerbuild: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION
 
 
 .PHONY: dockerrun
-dockerrun: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
+dockerrun: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-APACHE_PORT
 	docker run \
 		-it \
         	-p ${APACHE_PORT}:${APACHE_PORT} \
                 --env-file=${ENV_FILE} \
                 --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
-		--env APP_VERSION=${VERSION} \
+		--env APP_VERSION="$(GIT_TAG)" \
 		$(DOCKER_IMG_LOCAL_TAG)
 
 .PHONY: test

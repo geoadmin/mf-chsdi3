@@ -16,6 +16,7 @@ apache/wsgi.conf
 apache/application.wsgi
 apache/tomcat-print.conf
 chsdi.egg-info
+chsdi/locale
 chsdi/static/doc/build/
 chsdi/static/css/extended.min.css
 chsdi/static/css/blueimp-gallery.min.css
