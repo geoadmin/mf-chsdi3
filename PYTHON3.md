@@ -15,7 +15,7 @@ adapted or you can use a copy of `.env.default`, e.g. `env.mine` and use that
 instead.
 
 ```bash
-source .env.local (or .env.mine)
+set -o allexport; source .env.default (or .env.mine); set +o allexport  
 export ENV_FILE=.env.local (or .env.mine)
 ```
 
