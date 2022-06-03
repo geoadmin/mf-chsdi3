@@ -97,6 +97,7 @@ phases:
         then
           # PR to merge personal branch (feature or bug) into master
           export DBSTAGING=prod
+          # TODO: remove the variable DEPLOY_TARGET once `make` use `Makefile.frankfurt`
           export DEPLOY_TARGET=prod
           export GEODATA_STAGING=prod
         elif [[ "${GIT_BRANCH}" == master ]] && \
@@ -105,6 +106,7 @@ phases:
           # Push event triggered either by a PR merge on master (except for PR to merge develop* into master)
           # or by a push on the master branch.
           export DBSTAGING=prod
+          # TODO: remove the variable DEPLOY_TARGET once `make` use `Makefile.frankfurt`
           export DEPLOY_TARGET=prod
           export GEODATA_STAGING=prod
         fi

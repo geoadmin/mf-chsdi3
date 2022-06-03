@@ -19,12 +19,12 @@ The required environement variables are set in `.env.default`
  
 Build the Pylons settings files and run the local `waitress`server
 
-    make -f Makefile.frankfurt environ server
+    make -f Makefile.frankfurt environ serve
     
 You may want to customize the variables. Copy the file `.env.default` as `.ven.mine`,
 change the variables you want and use them with
 
-    ENV_FILE=.env.mine make -f Makefile.frankfurt environ server
+    ENV_FILE=.env.mine make -f Makefile.frankfurt environ serve
     
 
 N.B. Some variables must be set manually, namely `PGUSER`, `PGPWASSPORD`, `OPENTRANS_API_KEY`
