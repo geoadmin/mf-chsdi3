@@ -18,10 +18,6 @@ INSTALL_DIRECTORY := .venv
 # default configuration
 ENV_FILE ?= .env.default
 
-# read all env vars from ENV_FILE and export them all
-include $(ENV_FILE)
-export
-
 # Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
 # https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
 AVAILABLE_LANGUAGES := de fr it fi en

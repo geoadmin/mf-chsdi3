@@ -10,11 +10,18 @@ Install
 Use only `Makefile.frankfurt`
 
 
+The required environment variables are set in `.env.default`. They can be
+adapted or you can use a copy of `.env.default`, e.g. `env.mine` and use that
+instead.
+
+```bash
+source .env.local (or .env.mine)
+export ENV_FILE=.env.local (or .env.mine)
+```
+
 Install the python virtual environment (still `virtualenv`at this point)
 
     make -f Makefile.frankfurt setup
-
-The required environement variables are set in `.env.default`
 
  
 Build the Pylons settings files and run the local `waitress`server
