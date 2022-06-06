@@ -59,3 +59,5 @@ LABEL author=$AUTHOR
 # FIXME: the flag INSIDE_DOCKER_IMAGE=True is only useful when using Makefile.frankfurt but will be ignored otherwise (i.e. when using Makefiles
 # other than Makefile.frankfurt which won't be the case anyways..)
 RUN make -f ${MAKEFILE} cleanall setup fixrights INSIDE_DOCKER_IMAGE=True
+
+ENTRYPOINT [ "/usr/sbin/apache2ctl", "-D", "FOREGROUND" ]
