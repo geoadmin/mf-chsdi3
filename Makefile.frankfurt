@@ -127,6 +127,7 @@ help:
 	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
 	@echo "- dockerbuild        Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
 	@echo "- dockerrun          Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG)) on port APACHE_PORT=$(APACHE_PORT)"
+	@echo "- dockerpush         Build and push the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
 	@echo
 	@echo -e "\033[1mCLEANING TARGETS\033[0m "
 	@echo "- clean              Remove generated files"
@@ -233,6 +234,12 @@ dockerrun: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD 
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
 		--env APP_VERSION="$(GIT_TAG)" \
 		$(DOCKER_IMG_LOCAL_TAG)
+
+
+.PHONY: dockerpush
+dockerpush: dockerbuild
+	docker push $(DOCKER_IMG_LOCAL_TAG)
+
 
 .PHONY: test
 test:
