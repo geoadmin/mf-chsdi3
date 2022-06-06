@@ -34,7 +34,7 @@ RUN mkdir -p /var/www/vhosts/${VHOST}/conf && \
 
 
 COPY 90-chsdi3.conf    /var/www/vhosts/mf-chsdi3/conf/
-COPY 25-mf-chsdi3.conf /etc/apache2/sites-available/000-default.conf
+
 RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf && a2enconf fqdn
 
 RUN /usr/sbin/a2enmod auth_basic authz_groupfile autoindex dir env expires filter headers http2 include mpm_event negotiation proxy proxy_http proxy_http2 rewrite setenvif status wsgi alias
@@ -58,7 +58,4 @@ LABEL author=$AUTHOR
 # FIXME: figure out the best way to build chsdi/static/css/extended.min.css (no need to incorporate the whole node.js to build a single CSS file!)
 # FIXME: the flag INSIDE_DOCKER_IMAGE=True is only useful when using Makefile.frankfurt but will be ignored otherwise (i.e. when using Makefiles
 # other than Makefile.frankfurt which won't be the case anyways..)
-RUN make -f ${MAKEFILE} cleanall setup environ fixrights INSIDE_DOCKER_IMAGE=True
-
-ENTRYPOINT ["/var/www/vhosts/mf-chsdi3/private/chsdi/docker-entrypoint.sh"]
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+RUN make -f ${MAKEFILE} cleanall setup fixrights INSIDE_DOCKER_IMAGE=True
