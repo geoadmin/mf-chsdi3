@@ -4,7 +4,7 @@
    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-flachmoore.objnummer')}</td>          <td>${c['attributes']['objnummer'] or '-'}</td></tr>
    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-flachmoore.name')}</td>         <td>${c['attributes']['name'] or '-'}</td></tr>
     % if c['attributes']['shape_area']:
-        <tr><td class="cell-left">${_('ch.bafu.bundesinventare-flachmoore.shape_area')}</td><td>${round(c['attributes']['shape_area'] / 10000, 1)}</td></tr>
+        <tr><td class="cell-left">${_('ch.bafu.bundesinventare-flachmoore.shape_area')}</td><td>${round(c['attributes']['shape_area'] / 10000, 1)} Test</td></tr>
     % else:
         <tr><td class="cell-left">${_('ch.bafu.bundesinventare-flachmoore.shape_area')}</td><td>-</td></tr>
     % endif
