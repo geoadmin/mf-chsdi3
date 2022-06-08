@@ -9,7 +9,7 @@ ldlink = linkeddatahost + '/boundaries/canton/' + str(c['id'])
 <tr><td class="cell-left">${_('ch.swisstopo.swissboundaries3d-kanton-flaeche.fill.ak')}</td><td>${c['attributes']['ak'] or '-'}</td></tr>
 <tr><td class="cell-left">${_('ch.swisstopo.swissboundaries3d-kanton-flaeche.fill.name')}</td><td>${c['attributes']['name']}</td></tr>
 <tr>
-    % if c['attributes']['flaeche_ha']:
+    % if c['attributes']['flaeche']:
         <td class="cell-left">${_('flaeche_ha')}</td><td>${int(round(c['attributes']['flaeche']))} ha</td>
     % else:
         <td class="cell-left">${_('flaeche_ha')}</td><td>-</td>
