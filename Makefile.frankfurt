@@ -21,7 +21,10 @@ ENV_FILE ?= .env.default
 # Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
 # https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
 AVAILABLE_LANGUAGES := de fr it fi en
+# Create legends
+WMSSCALELEGEND ?=
 NODE_MODULES := node_modules
+
 
 
 # general targets timestamps
@@ -122,6 +125,9 @@ help:
 	@echo -e "\033[1mLWEBSITE AND DOCUMENTATION\033[0m "
 	@echo "- doc                Create the website and static files"
 	@echo "- rss                Create RSS feed from the releasenotes html file"
+	@echo
+	@echo -e "\033[1mLDATA INTEGRATION\033[0m "
+	@echo "- legends           Download from the WMS server the legend images for a given layer"
 	@echo
 	@echo -e "\033[1mDocker TARGETS\033[0m "
 	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
@@ -293,6 +299,11 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 rss: doc chsdi/static/doc/build/releasenotes/index.html
 	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
 	${PYTHON} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
+
+
+.PHONY: legends
+legends: guard-BODID guard-WMSHOST
+	scripts/downloadlegends.sh $(WMSHOST) $(BODID) $(WMSSCALELEGEND)
 
 
 # TODO: still needed?

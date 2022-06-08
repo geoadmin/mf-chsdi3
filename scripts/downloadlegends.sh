@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Script to generate the legends images from a mapserver WMS source.
+# These images are used in `legend service` for `map.geo.admin.ch`
+
 WMSHOST=$1
 BODID=$2
 WMSCALELEGEND=
