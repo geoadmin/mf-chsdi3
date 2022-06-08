@@ -1,9 +1,10 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c,lang)">
+    <td class="cell-left">${_('laenge_m')}</td>
     % if c['attributes']['length']:
-        <tr><td class="cell-left">${_('laenge_m')}</td><td>${int(round(c['attributes']['length']))}</td></tr>
+        <td>${int(round(c['attributes']['length']))}</td>
     % else:
-        <tr><td class="cell-left">${_('laenge_m')}</td><td>-</td></tr>
+        <td>-</td>
     % endif
 </%def>

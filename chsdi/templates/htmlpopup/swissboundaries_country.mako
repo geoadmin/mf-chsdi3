@@ -9,10 +9,11 @@ ldlink = linkeddatahost + '/boundaries/country/' + str(c['id'])
 <tr><td class="cell-left">${_('ch.swisstopo.swissboundaries3d-land-flaeche.fill.id')}</td><td>${c['id'] or '-'}</td></tr>
 <tr><td class="cell-left">${_('ch.swisstopo.swissboundaries3d-land-flaeche.fill.name')}</td><td>${c['attributes']['bez']}</td></tr>
 <tr>
+    <td class="cell-left">${_('flaeche_ha')}</td>
     % if c['attributes']['flaeche']:
-        <td class="cell-left">${_('flaeche_ha')}</td><td>${int(round(c['attributes']['flaeche']))} ha</td>
+        <td>${int(round(c['attributes']['flaeche']))} ha</td>
     % else:
-        <td class="cell-left">${_('flaeche_ha')}</td><td>-</td>
+        <td>-</td>
     % endif
 </tr>
 <tr><td class="cell-left">${_('link')}</td><td><a href="${ldlink}" target="_blank">Linked Data URI</a></td></tr>
