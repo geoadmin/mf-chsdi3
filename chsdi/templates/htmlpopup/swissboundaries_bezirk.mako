@@ -6,8 +6,20 @@ linkeddatahost = request.registry.settings['linkeddatahost']
 ldlink = linkeddatahost + '/boundaries/district/' + str(c['id'])
 %>
 <% c['stable_id'] = True %>
-<tr><td class="cell-left">${_('bfsnr')}</td><td>${int(round(c['featureId'])) or '-'}</td></tr>
+<tr>
+    % if c['featureId']:
+        <td class="cell-left">${_('bfsnr')}</td><td>${int(round(c['featureId']))} ha</td>
+    % else:
+        <td class="cell-left">${_('bfsnr')}</td><td>-</td>
+    % endif
+</tr>
 <tr><td class="cell-left">${_('ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill.name')}</td><td>${c['attributes']['name']}</td></tr>
-<tr><td class="cell-left">${_('flaeche_ha')}</td><td>${int(round(c['attributes']['flaeche'])) or '-'} ha</td></tr>
+<tr>
+    % if c['attributes']['flaeche_ha']:
+        <td class="cell-left">${_('flaeche_ha')}</td><td>${int(round(c['attributes']['flaeche']))} ha</td>
+    % else:
+        <td class="cell-left">${_('flaeche_ha')}</td><td>-</td>
+    % endif
+</tr>
 <tr><td class="cell-left">${_('link')}</td><td><a href="${ldlink}" target="_blank">Linked Data URI</a></td></tr>
 </%def>
