@@ -2,6 +2,7 @@ FROM python:3.7-buster
 
 ENV USE_PYTHON3=1
 ENV SYSTEM_PYTHON_CMD=/usr/local/bin/python3.7
+ENV PYPI_URL=https://pypi.org/simple/
 ENV OPENTRANS_API_KEY=dummy-key
 
 ENV PROJ=chsdi
@@ -58,7 +59,9 @@ LABEL author=$AUTHOR
 # FIXME: figure out the best way to build chsdi/static/css/extended.min.css (no need to incorporate the whole node.js to build a single CSS file!)
 # FIXME: the flag INSIDE_DOCKER_IMAGE=True is only useful when using Makefile.frankfurt but will be ignored otherwise (i.e. when using Makefiles
 # other than Makefile.frankfurt which won't be the case anyways..)
-RUN make -f ${MAKEFILE} cleanall setup environ fixrights INSIDE_DOCKER_IMAGE=True
+# FIXME: use pipenv
+RUN pip3 install -q --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL}  && \
+		pip3 install -q -r requirements-py3.txt --index-url ${PYPI_URL}  -e . 
 
 ENTRYPOINT ["/var/www/vhosts/mf-chsdi3/private/chsdi/docker-entrypoint.sh"]
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
