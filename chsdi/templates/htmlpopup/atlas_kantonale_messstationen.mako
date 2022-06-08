@@ -11,11 +11,10 @@
       <td>${c['attributes']['betriebsbeginn'] or '-'}</td>
     </tr>
     <tr>
+      <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.einzugsgebietsflaeche')}</td>
       % if c['attributes']['einzugsgebietsflaeche']:
-          <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.einzugsgebietsflaeche')}</td>
           <td>${round(c['attributes']['einzugsgebietsflaeche'], 2)}</td>
       % else:
-          <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.einzugsgebietsflaeche')}</td>
           <td>-</td>
       % endif
     </tr>
@@ -42,29 +41,26 @@
     <td class="cell-meta">${c['attributes']['nummer'] or '-'}</td>
   </tr>
   <tr>
+    <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.rechtswert')}</td>
     % if c['attributes']['rechtswert']:
-      <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.rechtswert')}</td>
       <td>${round(c['attributes']['rechtswert'], 2)}</td>
     % else:
-      <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.rechtswert')}</td>
       <td>-</td>
     % endif
   </tr>
   <tr>
+    <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.hochwert')}</td>
     % if c['attributes']['hochwert']:
-      <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.hochwert')}</td>
       <td>${round(c['attributes']['hochwert'], 2)}</td>
     % else:
-      <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.hochwert')}</td>
       <td>-</td>
     % endif
   </tr>
   <tr>
+    <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.hoehe')}</td>
     % if c['attributes']['hoehe']:
-      <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.hoehe')}</td>
       <td>${round(c['attributes']['hoehe'], 2)}</td>
     % else:
-      <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.hoehe')}</td>
       <td>-</td>
     % endif
   </tr>
@@ -73,11 +69,10 @@
     <td class="cell-meta">${c['attributes']['betriebsbeginn'] or '-'}</td>
   </tr>
   <tr>
+    <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.einzugsgebietsflaeche')}</td>
     % if c['attributes']['einzugsgebietsflaeche']:
-      <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.einzugsgebietsflaeche')}</td>
       <td>${round(c['attributes']['einzugsgebietsflaeche'], 2)}</td>
     % else:
-      <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.einzugsgebietsflaeche')}</td>
       <td>-</td>
     % endif
   </tr>

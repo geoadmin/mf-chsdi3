@@ -10,10 +10,11 @@
       % endif
     </tr>
     <tr>
+        <td class="cell-left">${_('flaeche_ha')}</td>
         % if c['attributes']['flaeche_ha']:
-            <td class="cell-left">${_('flaeche_ha')}</td><td>${int(round(c['attributes']['flaeche_ha']))}</td>
+            <td>${int(round(c['attributes']['flaeche_ha']))}</td>
         % else:
-            <td class="cell-left">${_('flaeche_ha')}</td><td>-</td>
+            <td>-</td>
         % endif
     </tr>
 </%def>

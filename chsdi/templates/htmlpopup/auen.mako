@@ -10,11 +10,10 @@
     <tr><td class="cell-left">${_('ch.bafu.bundesinventare-auen.name')}</td>           <td>${c['attributes']['name']}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.bundesinventare-auen.auen_type')}</td>            <td>${c['attributes'][auen_typ] or '-'}</td></tr>
     <tr>
+      <td class="cell-left">${_('ch.bafu.bundesinventare-auen.shape_area')}</td>
       % if c['attributes']['shape_area']:
-          <td class="cell-left">${_('ch.bafu.bundesinventare-auen.shape_area')}</td>
           <td>${round(c['attributes']['shape_area'] / 10000, 1)}</td>
       % else:
-          <td class="cell-left">${_('ch.bafu.bundesinventare-auen.shape_area')}</td>
           <td>-</td>
       % endif
     </tr>

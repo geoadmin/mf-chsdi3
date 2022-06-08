@@ -14,12 +14,11 @@
     <tr><td class="cell-left">${_('ch.bafu.auen-vegetationskarten.code_primaervegetation')}</td>    <td>${c['attributes']['code_primaervegetation'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.auen-vegetationskarten.ref_obj_blatt')}</td>             <td><a href="${c['attributes']['ref_obj_blatt']}" target="_blank">${_('link')}</a></td></tr>
     <tr>
+      <td class="cell-left">${_('ch.bafu.auen-vegetationskarten.area_ha')}</td>
       % if c['attributes']['area_ha']:
-          <td class="cell-left">${_('ch.bafu.auen-vegetationskarten.area_ha')}</td>
-          <td>${round(c['attributes']['area_ha'], 2)}</td>
+        <td>${round(c['attributes']['area_ha'], 2)}</td>
       % else:
-          <td class="cell-left">${_('ch.bafu.auen-vegetationskarten.area_ha')}</td>
-          <td>-</td>
+        <td>-</td>
       % endif
     </tr>
 

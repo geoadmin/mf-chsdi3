@@ -25,11 +25,10 @@
         <td>${c['attributes'][significance] or '-'}</td>
     </tr>
     <tr>
+        <td class="cell-left">${_('ch.bafu.auen-ausserhalb_bundesinventar.shape_area')}</td>
         % if c['attributes']['shape_area']:
-            <td class="cell-left">${_('ch.bafu.auen-ausserhalb_bundesinventar.shape_area')}</td>
             <td>${round(c['attributes']['shape_area'], 1)}</td>
         % else:
-            <td class="cell-left">${_('ch.bafu.auen-ausserhalb_bundesinventar.shape_area')}</td>
             <td>-</td>
         % endif
     </tr>
