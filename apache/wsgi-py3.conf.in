@@ -105,14 +105,13 @@ WSGIApplicationGroup %{GLOBAL}
 WSGIPassAuthorization On
 
 WSGIDaemonProcess mf-chsdi3:${APACHE_BASE_PATH} display-name=%{GROUP} user=${MODWSGI_USER} processes=${WSGI_PROCESSES} threads=${WSGI_THREADS} \
-   python-path=${INSTALLDIR}/.venv/lib/python3.7/site-packages \
-   python-home=${INSTALLDIR}/.venv
+   python-path=/usr/local/lib/python3.7/site-packages 
 
 
 # define the path to the WSGI app
 WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${WSGI_APP}
 
-<Directory ${INSTALLDIR}/.venv>
+<Directory ${INSTALLDIR}/>
       WSGIProcessGroup mf-chsdi3:${APACHE_BASE_PATH}
     WSGIApplicationGroup %{GLOBAL}
   Order allow,deny
