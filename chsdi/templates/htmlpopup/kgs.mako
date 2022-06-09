@@ -92,7 +92,7 @@
         </tr>
         <tr>
             <th class="cell-left">${_('Coordinates')}</th>
-            % if c['attributes']['x'] & c['attributes']['y']:
+            % if c['attributes']['x']:
                 <td>${int(round(c['attributes']['x']))} / ${int(round(c['attributes']['y']))}</td>
             % else:
                 <td>-</td>
