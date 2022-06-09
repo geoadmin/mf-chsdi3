@@ -15,7 +15,7 @@
     <%
         c['stable_id'] = True
         objarts = c['attributes']['objektart'].split(',')
-        gemeinde_ehemalig = c['attributes']['gemeinde_ehemalig'] if c['attributes']['gemeinde_ehemalig'].startswith("(") else "("+c['attributes']['gemeinde_ehemalig']+")"
+        gemeinde_ehemalig = c['attributes']['gemeinde_ehemalig'] if str(c['attributes']['gemeinde_ehemalig']).startswith("(") else "("+c['attributes']['gemeinde_ehemalig']+")"
         import csv
         dataGeoAdminHost = request.registry.settings['datageoadminhost']
         csv_url = "https://" + dataGeoAdminHost + "/" + c['layerBodId']  + "/image/meta.txt"
