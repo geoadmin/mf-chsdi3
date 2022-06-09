@@ -5,8 +5,22 @@
 <%def name="table_body(c, lang)">
     <% c['stable_id'] = True %>
     <tr><td class="cell-left">${_('ch.babs.kulturgueter.zkob')}</td>   <td>${c['attributes']['zkob']}</td></tr>
-    <tr><td class="cell-left">${_('y')}</td>              <td>${int(round(c['attributes']['x'],0)) or '-'}</td></tr>
-    <tr><td class="cell-left">${_('x')}</td>              <td>${int(round(c['attributes']['y'],0)) or '-'}</td></tr>
+    <tr>
+        <td class="cell-left">${_('y')}</td>
+        % if c['attributes']['y']:
+            <td>${int(round(c['attributes']['y']))}</td>
+        % else:
+            <td>-</td>
+        % endif
+    </tr>
+    <tr>
+        <td class="cell-left">${_('x')}</td>
+        % if c['attributes']['x']:
+            <td>${int(round(c['attributes']['x']))}</td>
+        % else:
+            <td>-</td>
+        % endif
+    </tr>
     <tr><td class="cell-left">${_('gemeinde')}</td>       <td>${c['attributes']['gemeinde'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('kanton')}</td>         <td>${c['attributes']['kt_kz'] or '-'}</td></tr>
 </%def>
@@ -78,7 +92,11 @@
         </tr>
         <tr>
             <th class="cell-left">${_('Coordinates')}</th>
-            <td>${int(round(c['attributes']['x'],0)) or ''} / ${int(round(c['attributes']['y'],0)) or ''}</td>
+            % if c['attributes']['x'] & c['attributes']['y']:
+                <td>${int(round(c['attributes']['x']))} / ${int(round(c['attributes']['y']))}</td>
+            % else:
+                <td>-</td>
+            % endif
         </tr>
     % if c['attributes']['pdf_list'] not in [None, ""]:
         <tr>
