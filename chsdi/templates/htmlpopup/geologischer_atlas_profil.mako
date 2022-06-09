@@ -83,7 +83,11 @@
         </tr>
         <tr>
             <td class="cell-meta">${_(c['layerBodId'] + '.vert_exag')}</td>
-            <td class="cell-meta">${round(c['attributes']['vert_exag'], 2) or '-'}</td>
+            % if c['attributes']['vert_exag']:
+                <td>${round(c['attributes']['vert_exag'], 2)}</td>
+            % else:
+                <td>-</td>
+            % endif
         </tr>
         <tr>
             <td class="cell-meta">${_(c['layerBodId'] + '.author')}</td>
