@@ -55,10 +55,6 @@ LABEL git.dirty=$GIT_DIRTY
 LABEL version=$VERSION
 LABEL author=$AUTHOR
 
-# FIXME: potomo & translate (do we still need the compiled .mo files?)
-# FIXME: figure out the best way to build chsdi/static/css/extended.min.css (no need to incorporate the whole node.js to build a single CSS file!)
-# FIXME: the flag INSIDE_DOCKER_IMAGE=True is only useful when using Makefile.frankfurt but will be ignored otherwise (i.e. when using Makefiles
-# other than Makefile.frankfurt which won't be the case anyways..)
 # FIXME: use pipenv
 RUN pip3 install -q --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL}  && \
 		pip3 install -q -r requirements-py3.txt --index-url ${PYPI_URL}  -e . 
