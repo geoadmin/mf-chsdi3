@@ -10,8 +10,8 @@ obj_art = arr_obj_art[c['attributes']['objektart']]
 <% c['stable_id'] = True %> 
 <tr>
     <td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.id')}</td>
-    % if c['attributes']['featureId']:
-        <td>${int(round(c['attributes']['featureId']))}</td>
+    % if c['featureId']:
+        <td>${int(round(c['featureId']))}</td>
     % else:
         <td>-</td>
     % endif
