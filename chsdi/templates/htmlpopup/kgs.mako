@@ -6,17 +6,17 @@
     <% c['stable_id'] = True %>
     <tr><td class="cell-left">${_('ch.babs.kulturgueter.zkob')}</td>   <td>${c['attributes']['zkob']}</td></tr>
     <tr>
-        <td class="cell-left">${_('y')}</td>
-        % if c['attributes']['y']:
-            <td>${int(round(c['attributes']['y']))}</td>
+        <td class="cell-left">${_('x')}</td>
+        % if c['attributes']['x']:
+            <td>${int(round(c['attributes']['x']))}</td>
         % else:
             <td>-</td>
         % endif
     </tr>
     <tr>
-        <td class="cell-left">${_('x')}</td>
-        % if c['attributes']['x']:
-            <td>${int(round(c['attributes']['x']))}</td>
+        <td class="cell-left">${_('y')}</td>
+        % if c['attributes']['y']:
+            <td>${int(round(c['attributes']['y']))}</td>
         % else:
             <td>-</td>
         % endif

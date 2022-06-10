@@ -16,7 +16,7 @@
     <tr>
       <td class="cell-left">${_('ch.bafu.auen-vegetationskarten.area_ha')}</td>
       % if c['attributes']['area_ha']:
-        <td>${round(c['attributes']['area_ha'], 2)}</td>
+        <td>${round(c['attributes']['area_ha'], 3)}</td>
       % else:
         <td>-</td>
       % endif
