@@ -4,7 +4,7 @@
     <tr>
       <td class="cell-left">${_('flaeche_ha')}</td>
       % if c['attributes']['area']:
-         <td>${int(round(c['attributes']['area']))} ha</td>
+         <td>${int(round(c['attributes']['area']))}</td>
       % else:
          <td>-</td>
       % endif
@@ -12,7 +12,7 @@
     <tr>
       <td class="cell-left">${_('perimeter_m')}</td>
       % if c['attributes']['perimeter']:
-         <td>${round(c['attributes']['perimeter']))} m</td>
+         <td>${int(round(c['attributes']['perimeter']))}</td>
       % else:
          <td>-</td>
       % endif

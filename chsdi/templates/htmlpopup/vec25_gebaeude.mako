@@ -3,7 +3,7 @@
 <%def name="table_body(c,lang)">
     <tr><td class="cell-left">${_('flaeche_m2')}</td>
         % if c['attributes']['area']:
-            <td>${int(round(c['attributes']['area']))} m2</td>
+            <td>${int(round(c['attributes']['area']))}</td>
         % else:
             <td>-</td>
         % endif
@@ -11,7 +11,7 @@
     <tr>
         <td class="cell-left">${_('perimeter_m')}</td>
         % if c['attributes']['perimeter']:
-            <td>${int(round(c['attributes']['perimeter']))} m</td>
+            <td>${int(round(c['attributes']['perimeter']))}</td>
         % else:
             <td>-</td>
         % endif

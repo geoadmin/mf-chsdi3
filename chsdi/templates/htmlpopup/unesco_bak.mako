@@ -12,7 +12,6 @@
     <tr><td class="cell-left">${_('ch.bak.schutzgebiete-unesco_weltkulturerbe_type')}</td>  <td>${c['attributes'][zone] or '-'}</td></tr>
     <tr>
       <td class="cell-left">${_('bak_unesco_weltkulturerbe_flaeche')}</td>
-      <td>${surface_ha}</td>
       % if c['attributes']['bgdi_surface']:
          <td>${round(c['attributes']['bgdi_surface'], 2)}</td>
       % else:

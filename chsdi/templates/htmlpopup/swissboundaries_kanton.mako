@@ -11,7 +11,7 @@ ldlink = linkeddatahost + '/boundaries/canton/' + str(c['id'])
 <tr>
     <td class="cell-left">${_('flaeche_ha')}</td>
     % if c['attributes']['flaeche']:
-        <td>${int(round(c['attributes']['flaeche']))} ha</td>
+        <td>${int(round(c['attributes']['flaeche']))}</td>
     % else:
         <td>-</td>
     % endif
