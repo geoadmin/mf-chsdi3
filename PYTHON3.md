@@ -1,17 +1,20 @@
 Migration to Python3, Docker and Frankfort
 ==========================================
 
-
 Currently, we are porting `mf-chsdi3` to `python3`, `docker` and `Frankfurt`
+
+- [Install](#install)
+- [Docker build](#docker-build)
+- [Docker run](#docker-run)
+- [Testing](#testing)
 
 Install
 -------
 
 Use only `Makefile.frankfurt`
 
-
 The required environment variables are set in `.env.default`. They can be
-adapted or you can use a copy of `.env.default`, e.g. `env.mine` and use that
+adapted or you can use a copy of `.env.default`, e.g. `.env.mine` and use that
 instead.
 
 ```bash
@@ -21,36 +24,57 @@ export ENV_FILE=.env.local (or .env.mine)
 
 Install the python virtual environment (still `virtualenv`at this point)
 
-    make -f Makefile.frankfurt setup
+```bash
+make -f Makefile.frankfurt setup
+```
 
- 
-Build the Pylons settings files and run the local `waitress`server
+Build the Pylons settings files and run the local `waitress` server
 
-    make -f Makefile.frankfurt environ serve
-    
+```bash
+summon make -f Makefile.frankfurt environ serve
+```
+
 You may want to customize the variables. Copy the file `.env.default` as `.ven.mine`,
 change the variables you want and use them with
 
-    ENV_FILE=.env.mine make -f Makefile.frankfurt environ serve
-    
-
-N.B. Some variables must be set manually, namely `PGUSER`, `PGPWASSPORD`, `OPENTRANS_API_KEY`
-
+```bash
+summon make -f Makefile.frankfurt ENV_FILE=.env.mine environ serve
+```
 
 Docker build
 ------------
 
+```bash
+    make -f Makefile.frankfurt dockerbuild
+```
 
-     make -f Makefile.frankfurt environ dockerbuild dockerrun
-     
-Use your custome set of variables with
+Docker run
+----------
 
-    ENV_FILE=.env.mine  make -f Makefile.frankfurt environ dockerbuild dockerrun
-    
+```bash
+summon make -f Makefile.frankfurt dockerrun
+```
+
+NOTE: You need access to the database `pg-geodata-replica.bgdi.ch`. For this you can use the SSH
+LocalForward functionality with our jumphost and then modify the `DBHOST` to `localhost`
+
+1. Open an SSH connection with port forwarding
+
+    ```bash
+    ssh ssh0a.prod.bgdi.ch -L 5432:pg-geodata-replica.bgdi.ch:5432
+    ```
+
+2. Starts the container localy
+
+    ```bash
+    summon make -f Makefile.frankfurt ENV_FILE=.env.mine dockerrun
+    ```
 
 Testing
 -------
 
 Many tests still fails, but run them with
 
-    make -f Makefile.frankfurt test
+```bash
+make -f Makefile.frankfurt test
+```
