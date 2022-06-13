@@ -30,7 +30,11 @@
     <tr><td class="cell-left">${_(ivs_slaname)}</td><td>${c['attributes']['ivs_slaname']}</td></tr>
     <tr><td class="cell-left">${_('ivs_documentation')}</td>
 <%
-    from urllib2 import urlopen
+    try:
+        from urllib2 import urlopen
+    except ImportError:
+        # Python3 fallback
+        from urllib.request import urlopen
     from chsdi.lib.helpers import resource_exists
     dataGeoAdminHost = request.registry.settings['datageoadminhost']
     dataPath = 'ch.astra.ivs-nat/PDF'
