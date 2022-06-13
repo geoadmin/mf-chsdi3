@@ -1,9 +1,11 @@
 #!/bin/bash
 set -eo pipefail
 
+# mandatory environment variables
 : "${DBHOST:?Variable DBHOST not set or empty}"
 : "${DBPORT:?Variable DBPORT not set or empty}"
 : "${PGUSER:?Variable PGUSER not set or empty}"
+: "${OPENTRANS_API_KEY:?Variable OPENTRANS_API_KEY not set or empty}"
 
 
 INSTALLDIR=$(dirname $(readlink -f "$0"))
