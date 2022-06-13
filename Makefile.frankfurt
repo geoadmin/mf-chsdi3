@@ -171,8 +171,9 @@ build: doc translate chsdi/static/css/extended.min.css rss
 
 
 .PHONY: environ
-environ:
+environ: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
 # FIXME: nosetests is still using development.ini
+	export $(shell cat $(ENV_FILE)) && \
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	export APP_VERSION="$(GIT_TAG)" && \
 	envsubst < base.ini.in > base.ini && \

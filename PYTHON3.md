@@ -31,14 +31,14 @@ make -f Makefile.frankfurt setup
 Build the Pylons settings files and run the local `waitress` server
 
 ```bash
-summon make -f Makefile.frankfurt environ serve
+summon make -f Makefile.frankfurt build serve
 ```
 
 You may want to customize the variables. Copy the file `.env.default` as `.ven.mine`,
 change the variables you want and use them with
 
 ```bash
-summon make -f Makefile.frankfurt ENV_FILE=.env.mine environ serve
+summon make -f Makefile.frankfurt ENV_FILE=.env.mine build serve
 ```
 
 Docker build

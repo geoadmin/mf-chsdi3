@@ -28,7 +28,7 @@ def initialize_sql(settings):
             pool_recycle=20,
             pool_size=20,
             max_overflow=-1,
-            connect_args={"connect_timeout": 30}
+            connect_args={"connect_timeout": 10}
         )
         engines[db] = engine
         bases[db].metadata.bind = engine
