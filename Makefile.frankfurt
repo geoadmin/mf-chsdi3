@@ -122,7 +122,7 @@ help:
 	@echo -e "\033[1mDocker TARGETS\033[0m "
 	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
 	@echo "- dockerbuild        Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
-	@echo "- dockerrun          Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG)) on port APACHE_PORT=$(APACHE_PORT)"
+	@echo "- dockerrun          Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG)) on port HTTP_PORT=$(HTTP_PORT)"
 	@echo "- dockerpush         Build and push the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
 	@echo
 	@echo -e "\033[1mCLEANING TARGETS\033[0m "
@@ -134,7 +134,7 @@ help:
 	@echo "SYSTEM_PYTHON_CMD:   ${SYSTEM_PYTHON_CMD}"
 	@echo "PIP:                 ${PIP}"
 	@echo "SERVER_PORT:         ${SERVER_PORT}"
-	@echo "APACHE_PORT:         ${APACHE_PORT}"
+	@echo "HTTP_PORT:           ${HTTP_PORT}"
 	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
 	@echo "DOCKER_REGISTRY      ${DOCKER_REGISTRY}"
 	@echo "DOCKER_IMG_LOCAL_TAG ${DOCKER_IMG_LOCAL_TAG}"
@@ -188,7 +188,7 @@ translate: .venv
 	${PYTHON} setup.py compile_catalog
 
 .PHONY: local.ini
-local.ini: local.ini.in base.ini environ_aux guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-APACHE_PORT
+local.ini: local.ini.in base.ini environ_aux guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-HTTP_PORT
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	${ENVSUBST} <  $< > $@
 
@@ -211,7 +211,7 @@ dockerlogin:
 
 
 .PHONY: dockerbuild
-dockerbuild: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-APACHE_PORT
+dockerbuild: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-HTTP_PORT
 	docker build \
 		--build-arg GIT_HASH="$(GIT_COMMIT_HASH)" \
 		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
@@ -221,10 +221,10 @@ dockerbuild: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-APACHE_
 
 
 .PHONY: dockerrun
-dockerrun: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-APACHE_PORT
+dockerrun: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-HTTP_PORT
 	docker run \
 		-it \
-        	-p ${APACHE_PORT}:${APACHE_PORT} \
+        -p ${HTTP_PORT}:${HTTP_PORT} \
                 --env-file=${ENV_FILE} \
                 --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \

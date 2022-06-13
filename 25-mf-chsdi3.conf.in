@@ -3,7 +3,7 @@
 # Managed by Puppet
 # ************************************
 
-<VirtualHost *:${APACHE_PORT}>
+<VirtualHost *:${HTTP_PORT}>
   # ServerName mf-chsdi3
 
   ## Vhost docroot

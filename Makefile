@@ -257,10 +257,10 @@ image:
 
 
 .PHONY: dockerrun
-dockerrun: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
+dockerrun: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-HTTP_PORT
 	docker run \
 		-it \
-        	-p ${APACHE_PORT}:${APACHE_PORT} \
+		-p ${HTTP_PORT}:${HTTP_PORT} \
                 --env-file=${DEPLOY_TARGET}.env \
                 --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
