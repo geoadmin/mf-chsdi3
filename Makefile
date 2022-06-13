@@ -1,7 +1,7 @@
 #
-# This is the legacy Makefile, to be exclusively used 
+# This is the legacy Makefile, to be exclusively used
 # within the vhost environment, python2 and eu-west-1 aws region
-# 
+#
 # Keep it as is!
 
 SHELL = /bin/bash
@@ -237,7 +237,7 @@ user:
 .PHONY: all
 all: setup chsdi/static/css/extended.min.css templates translate lint fixrights doc rss
 
-setup: .venv node_modules .venv/hooks
+setup: .venv node_modules
 
 ifeq ($(USE_PYTHON3), 1)
 templates: apache/wsgi.conf apache/application.wsgi development.ini production.ini chsdi/static/info.json
@@ -605,10 +605,6 @@ production.ini:  production.ini.in \
 		--var "opentrans_api_key=$(OPENTRANS_API_KEY)" \
 		--var "dynamic_translation=$(DYNAMIC_TRANSLATION)" $< > $@
 
-.venv/hooks: .venv/bin/git-secrets ./scripts/install-git-hooks.sh
-	@echo "${GREEN}Installing git hooks${RESET}";
-	./scripts/install-git-hooks.sh
-	touch $@
 
 ifeq ($(USE_PYTHON3), 1)
 requirements-py3.txt:
@@ -631,15 +627,6 @@ requirements.txt:
 	fi
 	${PIP_CMD} install $(PIP_QUIET) --index-url ${PYPI_URL} -e .
 endif
-
-.venv/bin/git-secrets: .venv
-	@echo "${GREEN}Installing git secrets${RESET}";
-	if [ ! -d ".git" ]; then git init; fi
-	rm -rf .venv/git-secrets
-	git clone https://github.com/awslabs/git-secrets .venv/git-secrets
-	cd .venv/git-secrets  && git reset --hard 635895a8d1b7c976ac9794cef420f8dc111a24d4 && make install PREFIX=..
-	(git config --local --get-regexp secret && git config --remove-section secrets) || cd
-	.venv/bin/git-secrets --register-aws
 
 package.json:
 	@echo "${GREEN}File package.json has changed${RESET}";
@@ -809,3 +796,6 @@ cleanall: clean
 	rm -rf chsdi/static/js/blueimp-gallery.min.js
 	rm -rf chsdi/static/js/d3.min.js
 	rm -rf chsdi/static/js/d3-tip.js
+	@for ENTRY in $(shell git --no-pager config --get-regexp '^secrets\..*' | awk '{print $$1}' | sort -u); do \
+		git config --unset-all $${ENTRY}; \
+	done
