@@ -18,11 +18,7 @@ envsubst < base.ini.in > base.ini
 # FIXME: name should be local.ini
 envsubst < dev.ini.in > development.ini
 
-envsubst < 25-mf-chsdi3.conf.in > /etc/apache2/sites-available/000-default.conf 
-
 envsubst < apache/application.wsgi.in > apache/application.wsgi
-
-envsubst < apache/ports.conf.in > /etc/apache2/ports.conf
 
 envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf
 

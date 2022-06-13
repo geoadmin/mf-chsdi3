@@ -134,7 +134,6 @@ help:
 	@echo "SYSTEM_PYTHON_CMD:   ${SYSTEM_PYTHON_CMD}"
 	@echo "PIP:                 ${PIP}"
 	@echo "HTTP_PORT:           ${HTTP_PORT}"
-	@echo "HTTP_PORT:           ${HTTP_PORT}"
 	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
 	@echo "DOCKER_REGISTRY      ${DOCKER_REGISTRY}"
 	@echo "DOCKER_IMG_LOCAL_TAG ${DOCKER_IMG_LOCAL_TAG}"
@@ -173,8 +172,7 @@ environ:
 	envsubst < dev.ini.in > development.ini && \
 	envsubst < local.ini.in > local.ini && \
 	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
-	envsubst < apache/application.wsgi.in > apache/application.wsgi && \
-	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
+	envsubst < apache/application.wsgi.in > apache/application.wsgi
 
 
 # Generate a basically empty gettext `chsdi` domain.
@@ -224,7 +222,7 @@ dockerbuild: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-HTTP_PO
 dockerrun: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-HTTP_PORT
 	docker run \
 		-it \
-        -p ${HTTP_PORT}:${HTTP_PORT} \
+        -p ${HTTP_PORT}:80 \
                 --env-file=${ENV_FILE} \
                 --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
