@@ -18,6 +18,13 @@ INSTALL_DIRECTORY := .venv
 # default configuration
 ENV_FILE ?= .env.default
 
+define load_env
+    $(eval ENV := $(1))
+    @echo " - load env $(ENV)"
+    $(eval include $(1))
+    $(eval export)
+endef
+
 # Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
 # https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
 AVAILABLE_LANGUAGES := de fr it fi en
@@ -148,6 +155,8 @@ all: setup environ lint fixrights doc chsdi/static/css/extended.min.css rss
 setup: .venv translate $(NODE_MODULES)
 
 
+LoadEnvFile:
+	$(call load_env, ${ENV_FILE})
 
 
 requirements-py3.txt:
@@ -162,7 +171,7 @@ requirements-py3.txt:
 
 
 .PHONY: environ
-environ:
+environ: LoadEnvFile
 # FIXME: nosetests is still using development.ini
 	export DOCKER_IMG_LOCAL_TAG=${DOCKER_IMG_LOCAL_TAG} && \
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
@@ -186,7 +195,7 @@ translate: .venv
 	${PYTHON} setup.py compile_catalog
 
 .PHONY: local.ini
-local.ini: local.ini.in base.ini guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-HTTP_PORT
+local.ini: local.ini.in base.ini guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	${ENVSUBST} <  $< > $@
 
@@ -196,7 +205,7 @@ base.ini: base.ini.in
 	cp $@ production.ini
 
 .PHONY: serve
-serve:  local.ini
+serve: local.ini environ
 	PYTHONPATH=${PYTHONPATH} ${PSERVE} local.ini --reload
 
 .PHONY: shell
@@ -219,7 +228,7 @@ dockerbuild: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-HTTP_PO
 
 
 .PHONY: dockerrun
-dockerrun: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-HTTP_PORT
+dockerrun: LoadEnvFile guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-HTTP_PORT
 	docker run \
 		-it \
         -p ${HTTP_PORT}:80 \
