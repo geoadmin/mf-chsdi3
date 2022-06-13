@@ -1370,7 +1370,7 @@ The URL of the metadata `json` file is :
 
 example of tileset:
 
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/tiles.json
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/tiles.json
 
 
 
