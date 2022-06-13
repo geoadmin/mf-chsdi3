@@ -188,7 +188,7 @@ translate: .venv
 	${PYTHON} setup.py compile_catalog
 
 .PHONY: local.ini
-local.ini: local.ini.in base.ini environ_aux guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-HTTP_PORT
+local.ini: local.ini.in base.ini guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-GIT_HASH_SHORT guard-HTTP_PORT
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	${ENVSUBST} <  $< > $@
 
