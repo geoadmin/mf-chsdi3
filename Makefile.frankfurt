@@ -110,7 +110,7 @@ help:
 	@echo
 	@echo -e "\033[1mLOCAL SERVER TARGETS\033[0m "
 	@echo "- environ            Create the pylons settings file from templates and environment variables."
-	@echo "- serve              Run the wsgi app using the waitress debug server. Port can be set by Env variable SERVER_PORT (default: 6543)"
+	@echo "- serve              Run the wsgi app using the waitress debug server. Port can be set by Env variable HTTP_PORT (default: 6543)"
 	@echo
 	@echo -e "\033[1mLWEBSITE AND DOCUMENTATION\033[0m "
 	@echo "- doc                Create the website and static files"
@@ -133,7 +133,7 @@ help:
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
 	@echo "SYSTEM_PYTHON_CMD:   ${SYSTEM_PYTHON_CMD}"
 	@echo "PIP:                 ${PIP}"
-	@echo "SERVER_PORT:         ${SERVER_PORT}"
+	@echo "HTTP_PORT:           ${HTTP_PORT}"
 	@echo "HTTP_PORT:           ${HTTP_PORT}"
 	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
 	@echo "DOCKER_REGISTRY      ${DOCKER_REGISTRY}"

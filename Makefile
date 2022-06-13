@@ -68,7 +68,7 @@ LAST_VERSION := $(call lastvalue,version)
 VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '-none-' ]; \
 						 then echo $(LAST_VERSION); else date +'%s'; fi)
 LAST_MODWSGI_CONFIG := $(call lastvalue,modwsgi-config)
-LAST_SERVER_PORT := $(call lastvalue,server-port)
+LAST_HTTP_PORT := $(call lastvalue,server-port)
 LAST_CURRENT_DIRECTORY := $(call lastvalue,current-directory)
 LAST_APACHE_BASE_PATH := $(call lastvalue,apache-base-path)
 LAST_APACHE_ENTRY_PATH := $(call lastvalue,apache-entry-path)
@@ -222,7 +222,7 @@ help:
 	@echo "DBSTAGING:           ${DBSTAGING}"
 	@echo "GEOADMINHOST:        ${GEOADMINHOST}"
 	@echo "GIT_BRANCH:          ${GIT_BRANCH}"
-	@echo "SERVER_PORT:         ${SERVER_PORT}"
+	@echo "HTTP_PORT:           ${HTTP_PORT}"
 	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
 	@echo "DOCKER_IMG_LOCAL_TAG   ${DOCKER_IMG_LOCAL_TAG}"
 	@echo "DOCKER_IMG_TAG_LATEST  ${DOCKER_IMG_TAG_LATEST}"
@@ -582,7 +582,7 @@ production.ini:  production.ini.in \
 	@echo "${GREEN}Creating production.ini...${RESET}";
 	${MAKO_CMD} \
 		--var "app_version=$(VERSION)" \
-		--var "server_port=$(SERVER_PORT)" \
+		--var "http_port=$(HTTP_PORT)" \
 		--var "apache_base_path=$(APACHE_BASE_PATH)" \
 		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
 		--var "current_directory=$(CURRENT_DIRECTORY)" \
@@ -657,7 +657,7 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 	$(call cachelastvariable,$@,$(VERSION),$(LAST_VERSION),version)
 
 .venv/last-server-port::
-	$(call cachelastvariable,$@,$(SERVER_PORT),$(LAST_SERVER_PORT),server-port)
+	$(call cachelastvariable,$@,$(HTTP_PORT),$(LAST_HTTP_PORT),server-port)
 
 # production.ini.in
 .venv/last-current-directory::

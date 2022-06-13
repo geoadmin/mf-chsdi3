@@ -58,7 +58,7 @@ Create a developer specific build configuration:
 
 Add the port number in the newly created user rc file. You should at least edit your dev port. For instance:
 
-    export SERVER_PORT=9000
+    export HTTP_PORT=9000
 
 Add the API key to retrieve departure information from https://opentransportdata.swiss into the users rc file or directly in the .bashrc (`gopass`). For instance:
 
