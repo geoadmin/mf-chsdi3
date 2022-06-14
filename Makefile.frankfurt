@@ -292,11 +292,13 @@ lint:
 	@echo "${GREEN}Linting python files...${RESET}";
 	${FLAKE8} --ignore=${PEP8_IGNORE} $(PYTHON_FILES) && echo ${RED}
 
+
 # TODO: Replace through yapf, once the old vhost infra is replaced
 .PHONY: autolint
 autolint:
 	@echo "${GREEN}Auto correction of python files...${RESET}";
 	${AUTOPEP8} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
+
 
 # FIXME add the rss and css compilation
 .PHONY: doc
@@ -347,25 +349,24 @@ clean:
 	rm -f 25-mf-chsdi3.conf
 	rm -f apache/application.wsgi
 	rm -f apache/wsgi.conf
-	rm -f chsdi/static/doc/build/releasenotes/rss2.xml
 	rm -f chsdi/static/info.json
+	rm -rf chsdi/static/doc/build
+	rm -f  chsdi/static/doc/build/releasenotes/rss2.xml
+	rm -f  chsdi/static/css/blueimp-gallery.min.css
+	rm -f  chsdi/static/css/extended.min.css
+	rm -f  chsdi/locale/chsdi.pot
+	for lng in ${AVAILABLE_LANGUAGES}; do \
+		rm -rf chsdi/locale/$${lng}; \
+	done;
 	find chsdi/static/js -type f ! -name .gitignore -delete
-	rm -f .coverage
-
+	rm -f .coverage .coverage.*
+	find . -name "__pycache__" -exec rm -rf "{}" \;
 
 
 PHONY: cleanall
 cleanall: clean
-	rm -rf .venv
-	find . -name "__pycache__" -exec rm -rf "{}" \;
-	rm -rf node_modules
-	rm -rf chsdi/locale/en
-	rm -rf chsdi/locale/fr
-	rm -rf chsdi/locale/de
-	rm -rf chsdi/locale/fi
-	rm -rf chsdi/locale/it
-	rm -f  chsdi/locale/chsdi.pot
 	rm -rf chsdi.egg-info/
-	rm -rf chsdi/static/doc/build
-	rm -f  chsdi/static/css/blueimp-gallery.min.css
+	rm -rf .venv
+	rm -rf node_modules
+	rm -f  package-lock.json
 
