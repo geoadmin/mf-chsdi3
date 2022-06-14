@@ -1,47 +1,63 @@
 FROM python:3.7-buster
 
-ENV USE_PYTHON3=1
 ENV SYSTEM_PYTHON_CMD=/usr/local/bin/python3.7
 ENV PYPI_URL=https://pypi.org/simple/
-ENV OPENTRANS_API_KEY=dummy-key
-
 ENV PROJ=chsdi
 ENV VHOST=mf-${PROJ}3
 ENV PROJDIR=/var/www/vhosts/${VHOST}/private/${PROJ}
-ENV MAKEFILE=Makefile.frankfurt
+ENV USER geodata
+ENV GROUP geodata
 
-RUN apt-get update -qq && apt-get install -qq -y apt-utils \
-    ; DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --upgrade ca-certificates \
-    ; DEBIAN_FRONTEND=noninteractive apt-get install -qq -y -o Dpkg::Options::="--force-confold" \
-    nodejs npm  build-essential git  gettext-base libpq-dev libgeos-dev \
-    postgresql-client-common postgresql-client-11 \
-    apache2 libapache2-mod-wsgi-py3 \
-    gettext gettext-base  \
-    curl \
-    bash \
-    vim \
-    lynx \
+# REQUIREMENTS NOTE:
+#  - gettext-base is required for envsubst in docker-entrypoint.sh
+#  - libgeos-dev is required by shapely python package
+RUN apt-get update -qq \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --upgrade ca-certificates \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y  \
+        libgeos-dev \
+        gettext-base \
+        apache2 libapache2-mod-wsgi-py3 \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && groupadd --gid 2500 ${GROUP} \
+    && useradd --uid 2500 --gid ${GROUP} --shell /bin/sh --create-home ${USER} \
+    && mkdir -p /var/www/vhosts/${VHOST}/conf \
+    && mkdir -p /var/www/vhosts/${VHOST}/private \
+    && mkdir -p /var/www/vhosts/${VHOST}/cgi-bin \
+    && mkdir -p /var/www/vhosts/${VHOST}/htdocs \
+    && mkdir -p /var/www/vhosts/${VHOST}/logs \
+    && pip3 install -q --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL}
 
-RUN groupadd --gid 2500 geodata \
-    && useradd --uid 2500 --gid geodata --shell /bin/bash --create-home geodata
+COPY --chown=${USER}:${GROUP} 90-chsdi3.conf    /var/www/vhosts/${VHOST}/conf/
+RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
+    && a2enconf fqdn \
+    && a2enmod \
+        auth_basic \
+        authz_groupfile \
+        autoindex \
+        dir \
+        env \
+        expires \
+        filter \
+        headers \
+        http2 \
+        include \
+        mpm_event \
+        negotiation \
+        proxy \
+        proxy_http \
+        proxy_http2 \
+        rewrite \
+        setenvif \
+        status \
+        wsgi \
+        alias
 
-RUN mkdir -p /var/www/vhosts/${VHOST}/conf && \
-    mkdir -p /var/www/vhosts/${VHOST}/private && \
-    mkdir -p /var/www/vhosts/${VHOST}/cgi-bin && \
-    mkdir -p /var/www/vhosts/${VHOST}/htdocs && \
-    mkdir -p /var/www/vhosts/${VHOST}/logs
-
-
-COPY 90-chsdi3.conf    /var/www/vhosts/mf-chsdi3/conf/
-COPY 25-mf-chsdi3.conf /etc/apache2/sites-available/000-default.conf
-RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf && a2enconf fqdn
-
-RUN /usr/sbin/a2enmod auth_basic authz_groupfile autoindex dir env expires filter headers http2 include mpm_event negotiation proxy proxy_http proxy_http2 rewrite setenvif status wsgi alias
-
-COPY . /var/www/vhosts/${VHOST}/private/chsdi
+COPY --chown=${USER}:${GROUP} . /var/www/vhosts/${VHOST}/private/chsdi
 WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
+
+# FIXME: use pipenv
+RUN pip3 install -q -r requirements-py3.txt --index-url ${PYPI_URL} -e .
 
 ARG GIT_HASH=unknown
 ARG GIT_BRANCH=unknown
@@ -55,9 +71,8 @@ LABEL git.dirty=$GIT_DIRTY
 LABEL version=$VERSION
 LABEL author=$AUTHOR
 
-# FIXME: use pipenv
-RUN pip3 install -q --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL}  && \
-		pip3 install -q -r requirements-py3.txt --index-url ${PYPI_URL}  -e . 
-
+# NOTE: Here below we cannot use environment variable with ENTRYPOINT using the `exec` form.
+# The ENTRYPOINT `exec` form is required in order to use the docker-entrypoint.sh as first
+# command to run before the CMD.
 ENTRYPOINT ["/var/www/vhosts/mf-chsdi3/private/chsdi/docker-entrypoint.sh"]
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]

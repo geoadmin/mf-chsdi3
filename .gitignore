@@ -10,6 +10,7 @@
 .idea
 .installed.cfg
 .venv/
+.env.*
 rc_branch
 rc_user_*
 apache/wsgi.conf
