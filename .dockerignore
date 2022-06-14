@@ -1,12 +1,39 @@
+# Python stuff
 .venv
-.git
+__pycache__
+
+# Git stuff
 .gitignore
 .gitmodules
+.git
+.github
+
+# Useless stuff and markdown
 *.swp
-*.yml
-*.yml.in
-apache2.sh
-PYTHON3.md
+*.orig
+
+# Local work directories (scripts, tests, etc)
 deploy
-local
-__pycache__
+scripts
+tests
+
+# CI and build stuff
+buildspec*
+Makefile*
+MANIFEST*
+package.json
+package-lock.json
+secrets.yml
+node_modules
+# TODO remove those after the migration to frankfurt
+production.ini.in
+development.ini.in
+production.ini
+development.ini
+rc_*
+requirements.txt
+
+# Ignore all hidden files
+.*
+
+

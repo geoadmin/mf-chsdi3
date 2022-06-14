@@ -17,7 +17,11 @@
         objarts = c['attributes']['objektart'].split(',')
         gemeinde_ehemalig = c['attributes']['gemeinde_ehemalig'] if str(c['attributes']['gemeinde_ehemalig']).startswith("(") else "("+c['attributes']['gemeinde_ehemalig']+")"
         import csv
-        from urllib2 import urlopen
+        try:
+            from urllib2 import urlopen
+        except ImportError:
+            # Python3 fallback
+            from urllib.request import urlopen
         dataGeoAdminHost = request.registry.settings['datageoadminhost']
         csv_url = "https://" + dataGeoAdminHost + "/" + c['layerBodId']  + "/image/meta.txt"
         csv_file = None

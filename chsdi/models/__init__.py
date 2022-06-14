@@ -27,7 +27,8 @@ def initialize_sql(settings):
             'sqlalchemy.%s.' % db,
             pool_recycle=20,
             pool_size=20,
-            max_overflow=-1
+            max_overflow=-1,
+            connect_args={"connect_timeout": 10}
         )
         engines[db] = engine
         bases[db].metadata.bind = engine

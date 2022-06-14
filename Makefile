@@ -1,3 +1,9 @@
+#
+# This is the legacy Makefile, to be exclusively used
+# within the vhost environment, python2 and eu-west-1 aws region
+#
+# Keep it as is!
+
 SHELL = /bin/bash
 .DEFAULT_GOAL := help
 
@@ -74,13 +80,11 @@ LAST_SPHINXHOST := $(call lastvalue,sphinxhost)
 LAST_WMSHOST := $(call lastvalue,wmshost)
 LAST_WMTS_PUBLIC_HOST := $(call lastvalue,wmts-public-host)
 LAST_GEOADMINHOST := $(call lastvalue,geoadminhost)
-LAST_ALTI_URL := $(call lastvalue,alti-url)
 LAST_API_URL := $(call lastvalue,api-url)
 LAST_HOST := $(call lastvalue,host)
 LAST_PUBLIC_BUCKET_HOST  := $(call lastvalue,public-bucket-host)
 LAST_VECTOR_BUCKET := $(call lastvalue,vector-bucket)
 LAST_DATAGEOADMINHOST := $(call lastvalue,datageoadminhost)
-LAST_CMSGEOADMINHOST := $(call lastvalue,cmsgeoadminhost)
 LAST_LINKEDDATAHOST := $(call lastvalue,linkeddatahost)
 LAST_OPENTRANS_API_KEY := $(call lastvalue,opentrans-api-key)
 LAST_ROBOTS_FILE := $(call lastvalue,robots-file)
@@ -233,7 +237,7 @@ user:
 .PHONY: all
 all: setup chsdi/static/css/extended.min.css templates translate lint fixrights doc rss
 
-setup: .venv node_modules .venv/hooks
+setup: .venv node_modules
 
 ifeq ($(USE_PYTHON3), 1)
 templates: apache/wsgi.conf apache/application.wsgi development.ini production.ini chsdi/static/info.json
@@ -250,6 +254,18 @@ image:
 		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
 		--build-arg VERSION="$(GIT_TAG)" \
 		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG) -t ${DOCKER_IMG_TAG_LATEST} -f Dockerfile .
+
+
+.PHONY: dockerrun
+dockerrun: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
+	docker run \
+		-it \
+        	-p ${APACHE_PORT}:${APACHE_PORT} \
+                --env-file=${DEPLOY_TARGET}.env \
+                --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
+		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
+		--env APP_VERSION=${VERSION} \
+		$(DOCKER_IMG_LOCAL_TAG)
 
 
 .PHONY: dockerlogin
@@ -271,7 +287,6 @@ define build_templates
 	export $(shell cat $1.env) && source rc_$1 && export DOCKER_IMG_LOCAL_TAG=${DOCKER_IMG_LOCAL_TAG} && export DOCKER_IMG_TAG_LATEST=${DOCKER_IMG_TAG_LATEST} && \
 		envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
 		envsubst <  apache/application.wsgi.in > apache/application.wsgi && \
-		envsubst < docker-compose.yml.in > docker-compose.yml && \
 		envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
 endef
 
@@ -548,7 +563,6 @@ production.ini:  production.ini.in \
                 .venv/last-dbhost \
                 .venv/last-dbport \
                 .venv/last-dbstaging \
-                .venv/last-alti-url \
                 .venv/last-api-url \
                 .venv/last-geodata-staging \
                 .venv/last-sphinxhost \
@@ -561,7 +575,6 @@ production.ini:  production.ini.in \
                 .venv/last-public-bucket-host \
                 .venv/last-vector-bucket \
                 .venv/last-datageoadminhost \
-                .venv/last-cmsgeoadminhost \
                 .venv/last-linkeddatahost \
                 .venv/last-opentrans-api-key \
                 .venv/last-dynamic-translation \
@@ -576,7 +589,6 @@ production.ini:  production.ini.in \
 		--var "dbhost=$(DBHOST)" \
 		--var "dbport=$(DBPORT)" \
 		--var "dbstaging=$(DBSTAGING)" \
-		--var "alti_url=$(ALTI_URL)" \
 		--var "api_url=$(API_URL)" \
 		--var "geodata_staging=$(GEODATA_STAGING)" \
 		--var "sphinxhost=$(SPHINXHOST)" \
@@ -589,15 +601,10 @@ production.ini:  production.ini.in \
 		--var "public_bucket_host=$(PUBLIC_BUCKET_HOST)" \
 		--var "vector_bucket=$(VECTOR_BUCKET)" \
 		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
-		--var "cmsgeoadminhost=$(CMSGEOADMINHOST)" \
 		--var "linkeddatahost=$(LINKEDDATAHOST)" \
 		--var "opentrans_api_key=$(OPENTRANS_API_KEY)" \
 		--var "dynamic_translation=$(DYNAMIC_TRANSLATION)" $< > $@
 
-.venv/hooks: .venv/bin/git-secrets ./scripts/install-git-hooks.sh
-	@echo "${GREEN}Installing git hooks${RESET}";
-	./scripts/install-git-hooks.sh
-	touch $@
 
 ifeq ($(USE_PYTHON3), 1)
 requirements-py3.txt:
@@ -620,15 +627,6 @@ requirements.txt:
 	fi
 	${PIP_CMD} install $(PIP_QUIET) --index-url ${PYPI_URL} -e .
 endif
-
-.venv/bin/git-secrets: .venv
-	@echo "${GREEN}Installing git secrets${RESET}";
-	if [ ! -d ".git" ]; then git init; fi
-	rm -rf .venv/git-secrets
-	git clone https://github.com/awslabs/git-secrets .venv/git-secrets
-	cd .venv/git-secrets  && git reset --hard 635895a8d1b7c976ac9794cef420f8dc111a24d4 && make install PREFIX=..
-	(git config --local --get-regexp secret && git config --remove-section secrets) || cd
-	.venv/bin/git-secrets --register-aws
 
 package.json:
 	@echo "${GREEN}File package.json has changed${RESET}";
@@ -695,9 +693,6 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 .venv/last-geoadminhost::
 	$(call cachelastvariable,$@,$(GEOADMINHOST),$(LAST_GEOADMINHOST),geoadminhost)
 
-.venv/last-alti-url::
-	$(call cachelastvariable,$@,$(ALTI_URL),$(LAST_ALTI_URL),alti-url)
-
 .venv/last-api-url::
 	$(call cachelastvariable,$@,$(API_URL),$(LAST_API_URL),api-url)
 
@@ -718,9 +713,6 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 
 .venv/last-datageoadminhost::
 	$(call cachelastvariable,$@,$(DATAGEOADMINHOST),$(LAST_DATAGEOADMINHOST),datageoadminhost)
-
-.venv/last-cmsgeoadminhost::
-	$(call cachelastvariable,$@,$(CMSGEOADMINHOST),$(LAST_CMSGEOADMINHOST),cmsgeoadminhost)
 
 .venv/last-linkeddatahost::
 	$(call cachelastvariable,$@,$(LINKEDDATAHOST),$(LAST_LINKEDDATAHOST),linkeddatahost)
@@ -787,8 +779,6 @@ clean:
 	rm -rf deploy/conf/00-branch.conf
 	rm -f  chsdi/static/info.json
 	rm -rf junit_report
-	rm -f docker-compose.yml
-	rm -f rancher-compose.yml
 	rm -rf 25-mf-chsdi3.conf
 
 .PHONY: cleanall
@@ -806,3 +796,6 @@ cleanall: clean
 	rm -rf chsdi/static/js/blueimp-gallery.min.js
 	rm -rf chsdi/static/js/d3.min.js
 	rm -rf chsdi/static/js/d3-tip.js
+	@for ENTRY in $(shell git --no-pager config --get-regexp '^secrets\..*' | awk '{print $$1}' | sort -u); do \
+		git config --unset-all $${ENTRY}; \
+	done

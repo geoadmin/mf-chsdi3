@@ -1116,7 +1116,7 @@ Example
 XYZ
 ----
 
-XYZ tile layers are layers comprised of multiple tiles. The XYZ tile service provides tiles based on a URL template with values substituted in for Zoom Level and X and Y counts of the tile. Unlike WMTS that follow the OGC standard, the XYZ tile service is often used in Web Mapping Context and is therefore a de facto standard. The XYZ tile service is provided with a fixed projection ( EPSG:3857). 
+XYZ tile layers are layers comprised of multiple tiles. The XYZ tile service provides tiles based on a URL template with values substituted in for Zoom Level and X and Y counts of the tile. Unlike WMTS that follow the OGC standard, the XYZ tile service is often used in Web Mapping Context and is therefore a de facto standard. The XYZ tile service is provided with a fixed projection ( EPSG:3857).
 
 .. note::
     We encourage  users to use WMTS layer  service which provides predefined tiles (like an XYZ service) with an option to use a RESTful templated URL or a KVP request and with a variety of projections and grids. Moreover, using WMTS GetCapabilities provides an up to date Metadata Service for the available layers.
@@ -1140,7 +1140,7 @@ Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabili
 StyleName              default                         Only **default** is supported.
 Time                   2010, 2010-01                   Date of tile generation in (ISO-8601) or logical value like **current**. A list of available values is provided in the `GetCapabilities <//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document under the <Dimension> tag. We recommend to use the value under the <Default> tag. Note that these values might change frequently - **check for updates regularly**.
 TileMatrixSet          3857  (constant)                EPSG code for Webmercator
-{z}                    {z}                             
+{z}                    {z}
 {x}                    {x}
 {y}                    {y}
 FormatExtension        png                             Mostly png, except for some raster layer (pixelkarte and swissimage)
@@ -1160,7 +1160,7 @@ https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/current/3857/{z}
 
 
 Supported projections
----------------------
+*********************
 
 Unlike WMTS that follow the OGC standard, the XYZ tile service are often used in Web Mapping Context and therefore one projection is supported.
 
@@ -1298,6 +1298,32 @@ See  `description <https://www.geo.admin.ch/en/geo-services/geo-services/portray
 
 The service provides both *tiles* and *styles* that the customer can use.
 
+GetStyle
+********
+
+A current (latest version) style request is in the following form:
+
+::
+
+    <Scheme>://<ServerName>/styles/<layername>/style.json
+
+example of current maplibre styles of light base map and imagery base map:
+
+- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte.vt/style.json
+- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte-imagery.vt/style.json
+
+A previous versioned style request is in the following form:
+
+::
+
+    <Scheme>://<ServerName>/styles/<layername>/<version>/style.json
+
+
+(available previous versions are: v1.1.0, v1.2.0, v1.3.0, v1.4.0, v1.5.0 and v1.6.0)
+
+
+.. _vectortiles GetTile:
+
 GetTile
 *******
 
@@ -1309,7 +1335,7 @@ A tile request is in the following form:
 
 example of one pbf tile:
 
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/7/67/44.pbf
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/7/67/44.pbf
 
 GetTileSets
 ***********
@@ -1322,26 +1348,7 @@ MBTiles for storing  tiled map data in SQLite databases for immediate or offline
 
 example of the .mbtiles file:
 
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
-
-GetStyle
-********
-
-A current (latest version) style request is in the following form:
-
-::
-
-    <Scheme>://<ServerName>/styles/<layername>/style.json
-
-example of a current mapbox style:
-
-- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte.vt/style.json
-
-A previous versioned style request is in the following form:
-
-::
-
-    <Scheme>://<ServerName>/styles/<layername>/<version>/style.json
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
 
 
 
@@ -1363,7 +1370,7 @@ The URL of the metadata `json` file is :
 
 example of tileset:
 
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/tiles.json
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/tiles.json
 
 
 

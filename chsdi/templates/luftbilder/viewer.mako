@@ -5,6 +5,7 @@
   try:
       from urllib2 import urlopen
   except ImportError:
+      # Python3 fallback
       from urllib.request import urlopen
   from json import loads
 

@@ -12,12 +12,10 @@ env:
     DOCKER_REGISTRY: "974517877189.dkr.ecr.eu-central-1.amazonaws.com"
     USER: "aws_code_build"
     APACHE_BASE_PATH: main
-    ALTI_URL: //service-alti.dev.bgdi.ch
     API_URL: //mf-chsdi3.dev.bgdi.ch
     DBHOST: pg.bgdi.ch
     DBPORT: 5432
     DBSTAGING: dev
-    DEPLOY_TARGET: dev
     GEODATA_STAGING: test
     GEOADMINHOST: mf-geoadmin3.dev.bgdi.ch
     HOST: mf-chsdi3.dev.bgdi.ch
@@ -32,7 +30,6 @@ env:
     WMSHOST: wms-bgdi.dev.bgdi.ch
     WSGI_PROCESSES: 1
     WSGI_THREADS: 15
-    CMSGEOADMINHOST: https://cms.geo.admin.ch
     LINKEDDATAHOST: https://geo.ld.admin.ch
     CACHE_CONTROL: no-cache
     CI_QUIET: 1
@@ -100,6 +97,7 @@ phases:
         then
           # PR to merge personal branch (feature or bug) into master
           export DBSTAGING=prod
+          # TODO: remove the variable DEPLOY_TARGET once `make` use `Makefile.frankfurt`
           export DEPLOY_TARGET=prod
           export GEODATA_STAGING=prod
         elif [[ "${GIT_BRANCH}" == master ]] && \
@@ -108,6 +106,7 @@ phases:
           # Push event triggered either by a PR merge on master (except for PR to merge develop* into master)
           # or by a push on the master branch.
           export DBSTAGING=prod
+          # TODO: remove the variable DEPLOY_TARGET once `make` use `Makefile.frankfurt`
           export DEPLOY_TARGET=prod
           export GEODATA_STAGING=prod
         fi
@@ -157,6 +156,7 @@ phases:
     commands:
       - echo "=========== BUILD ================="
       - echo Build started on $(date)
+      # TODO: replace with `Makefile.frankfurt` later on
       - make all
       - >
         docker build

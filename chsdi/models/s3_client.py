@@ -1,26 +1,30 @@
 # -*- coding: utf-8 -*-
-
 import boto3
 
+import botocore.exceptions as boto_exc
 import pyramid.httpexceptions as exc
+
+from chsdi.lib.helpers import anonymize_string
+
+import logging
+
+log = logging.getLogger(__name__)
 
 
 class S3Connect:
-    def __init__(self, region='eu-west-1'):
+    def __init__(self):
         self.conn = None
-        self.region = region
 
     def get(self):
         if self.conn is None:
             try:
                 # Cannot use bucket names with dots
                 # see: https://github.com/boto/boto/issues/2836
-                self.conn = boto3.client('s3', region_name=self.region)
+                self.conn = boto3.client('s3')
             except Exception as e:  # pragma: no cover
                 raise exc.HTTPInternalServerError(
                     'S3: Error during connection init %s' % e)
         return self.conn
-
 
 s3_connection = S3Connect()
 
@@ -30,8 +34,15 @@ def get_file_from_bucket(bucket_name, file_name):
     try:
         response = conn.get_object(Bucket=bucket_name,
                                    Key=file_name)
+    except boto_exc.NoCredentialsError as c:
+        credential_error_tpl = "Credential error for  bucket (%s)\n%s"
+        log.error(credential_error_tpl % (bucket_name, c))
+        raise exc.HTTPInternalServerError(credential_error_tpl % (anonymize_string(bucket_name, length = 5), c))
     except Exception as e:
-        raise exc.HTTPInternalServerError("bucket (%s) or file (%s) not valids. \n%s" % (bucket_name, file_name, e))
+        error_tpl = "Bucket (%s) or file (%s) not valids. \n%s"
+        log.error(error_tpl % (bucket_name, file_name, e))
+        raise exc.HTTPInternalServerError(error_tpl % (anonymize_string(bucket_name, length = 5), file_name, e))
+        return e
     return response
 
 

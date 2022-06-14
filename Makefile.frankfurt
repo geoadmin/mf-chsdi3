@@ -1,0 +1,354 @@
+#
+# This Makefile is to be used only in new environement (docker, python3 and
+# AWS Region Frankfurt (eu-central-1)
+# Please, keep it lean, compact and understandable
+#
+# Currently, the .venv is used inside the docker image, to run
+# the application and locally, for development, linting, generating
+# files from template, building doc, etc. Python 3.7 is used.
+
+SHELL = /bin/bash
+.DEFAULT_GOAL := help
+
+SERVICE_NAME := mf-chsdi3
+
+CURRENT_DIRECTORY := $(shell pwd)
+INSTALL_DIRECTORY := .venv
+
+# default configuration
+ENV_FILE ?= .env.default
+APACHE_PORT ?= 8009
+
+# Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
+# https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
+AVAILABLE_LANGUAGES := de fr it fi en
+# Create legends
+WMSSCALELEGEND ?=
+NODE_MODULES := node_modules
+
+
+
+# general targets timestamps
+TIMESTAMPS = .timestamps
+REQUIREMENTS := $(TIMESTAMPS)
+
+
+# Commands
+AUTOPEP8 := $(INSTALL_DIRECTORY)/bin/autopep8
+FLAKE8 := $(INSTALL_DIRECTORY)/bin/flake8
+MAKO := $(INSTALL_DIRECTORY)/bin/mako-render
+NOSE := $(INSTALL_DIRECTORY)/bin/nosetests
+PIP := $(INSTALL_DIRECTORY)/bin/pip3
+PSERVE := $(INSTALL_DIRECTORY)/bin/pserve
+PSHELL := $(INSTALL_DIRECTORY)/bin/pshell
+PYTHON := $(INSTALL_DIRECTORY)/bin/python3
+SPHINX := $(INSTALL_DIRECTORY)/bin/sphinx-build
+ENVSUBST := /usr/bin/envsubst
+
+PYTHON_VERSION := 3.7
+SYSTEM_PYTHON_CMD ?= python${PYTHON_VERSION}
+PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
+
+
+PYPI_URL ?= https://pypi.org/simple/
+
+
+# AWS and docker variables
+DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
+AWS_REGION_ECR := eu-central-1
+AUTHOR=$(USER)
+
+# Git metadata
+GIT_HASH=$(shell git rev-parse HEAD)
+GIT_HASH_SHORT=$(shell git rev-parse --short HEAD)
+GIT_BRANCH=$(shell git symbolic-ref HEAD --short 2>/dev/null)
+GIT_DIRTY=$(shell git status --porcelain)
+GIT_TAG=$(shell git describe --tags || echo "no version info")
+DOCKER_IMG_LOCAL_TAG=$(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+
+# Colors
+ifneq ($(shell echo ${TERM}),)
+RESET := $(shell tput sgr0)
+RED := $(shell tput setaf 1)
+GREEN := $(shell tput setaf 2)
+endif
+
+# Python files (for linting)
+PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
+
+# Linting rules
+PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731,W503,W504,W605"
+
+# E128: continuation line under-indented for visual indent
+# E221: multiple spaces before operator
+# E241: multiple spaces after ':'
+# E251: multiple spaces around keyword/parameter equals
+# E272: multiple spaces before keyword
+# E501: line length 79 per default
+# E711: comparison to None should be 'if cond is None:' (SQLAlchemy's filter syntax requires this ignore!)
+# E731: do not assign a lambda expression, use a def
+# TODO: break before or after, but decide
+# W503: line break before binary operator
+# W504: line break afterbinary operator
+# W605 invalid escape sequence
+
+.PHONY: help
+help:
+	@echo "Usage: make <target>"
+	@echo
+	@echo "Possible targets:"
+	@echo
+	@echo -e "\033[1mSetup TARGETS\033[0m "
+	@echo "- setup              Create the python virtual environment with developper tools"
+	@echo "- all                Build the application with all dependent files. Ready to serve"
+	@echo
+	@echo -e "\033[1mBuild TARGETS\033[0m "
+	@echo "- build              Build the application files."
+	@echo
+	@echo -e "\033[1mFORMATING, LINTING AND TESTING TOOLS TARGETS\033[0m "
+	@echo "- lint/autolint      Python code quality assurance"
+	@echo "- shell              Pylons shell (for debugging)"
+	@echo "- test               Functional and integration nose tests"
+	@echo "- testci             Same as `test` but with specific junit output for the CI"
+	@echo "- teste2e            End-to-end tests"
+	@echo
+	@echo -e "\033[1mLOCAL SERVER TARGETS\033[0m "
+	@echo "- environ            Create the pylons settings file from templates and environment variables."
+	@echo "- serve              Run the wsgi app using the waitress debug server. Port can be set by Env variable SERVER_PORT (default: 6543)"
+	@echo
+	@echo -e "\033[1mLWEBSITE AND DOCUMENTATION\033[0m "
+	@echo "- doc                Create the website and static files"
+	@echo "- rss                Create RSS feed from the releasenotes html file"
+	@echo
+	@echo -e "\033[1mLDATA INTEGRATION\033[0m "
+	@echo "- legends           Download from the WMS server the legend images for a given layer"
+	@echo
+	@echo -e "\033[1mDocker TARGETS\033[0m "
+	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
+	@echo "- dockerbuild        Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
+	@echo "- dockerrun          Run the project within docker localy (with tag := $(DOCKER_IMG_LOCAL_TAG)) on port $(APACHE_PORT)"
+	@echo "- dockerrun-shell    Run the project within docker localy (with tag := $(DOCKER_IMG_LOCAL_TAG)) on port $(APACHE_PORT)"
+	@echo "- dockerpush         Build and push the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
+	@echo
+	@echo -e "\033[1mCLEANING TARGETS\033[0m "
+	@echo "- clean              Remove generated files"
+	@echo "- cleanall           Remove all the build artefacts and venv"
+	@echo
+	@echo "Variables:"
+	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
+	@echo "SYSTEM_PYTHON_CMD:   ${SYSTEM_PYTHON_CMD}"
+	@echo "PIP:                 ${PIP}"
+	@echo "SERVER_PORT:         ${SERVER_PORT}"
+	@echo "APACHE_PORT:         ${APACHE_PORT}"
+	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
+	@echo "DOCKER_REGISTRY      ${DOCKER_REGISTRY}"
+	@echo "DOCKER_IMG_LOCAL_TAG ${DOCKER_IMG_LOCAL_TAG}"
+	@echo
+
+
+# TODO: add targets `translate` when merged
+.PHONY: all
+all: setup environ lint build
+
+
+.PHONY: setup
+setup: .venv $(NODE_MODULES)
+
+
+requirements-py3.txt:
+	@echo "${GREEN}requirements-py3.txt has changed...${RESET}";
+
+
+# TODO: replace through pipenv as in the other projects.
+.venv: requirements-py3.txt
+		test -d "$(INSTALL_DIRECTORY)" ||  ( $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY) && \
+		${PIP} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL}  && \
+		${PIP} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e . )
+
+
+.PHONY: build
+build: doc translate chsdi/static/css/extended.min.css rss
+
+
+.PHONY: environ
+environ: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
+# FIXME: nosetests is still using development.ini
+	export $(shell cat $(ENV_FILE)) && \
+	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
+	export APP_VERSION="$(GIT_TAG)" && \
+	envsubst < base.ini.in > base.ini && \
+	envsubst < dev.ini.in > development.ini && \
+	envsubst < prod.ini.in > production.ini && \
+	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
+	envsubst < apache/application.wsgi.in > apache/application.wsgi && \
+	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
+
+
+# Generate a basically empty gettext `chsdi` domain.
+# Translation are dynamic, the domain is updated at runtime directly from the BOD
+.PHONY: translate
+translate: .venv guard-ENV_FILE
+	@echo "${GREEN}Building the translation...${RESET}";
+	#source ${ENV_FILE}
+	 ${PYTHON} setup.py extract_messages
+	 for lng in ${AVAILABLE_LANGUAGES}; do \
+		${PYTHON} setup.py init_catalog -l $$lng; \
+	done;
+	${PYTHON} setup.py compile_catalog
+
+
+.PHONY: serve
+serve: environ
+	PYTHONPATH=${PYTHONPATH} ${PSERVE} development.ini --reload --browser
+
+
+.PHONY: shell
+shell:
+	PYTHONPATH=${PYTHONPATH} ${PSHELL} development.ini
+
+
+	.PHONY: dockerlogin
+dockerlogin:
+	aws --profile swisstopo-bgdi-builder ecr get-login-password --region $(AWS_REGION_ECR) | docker login --username AWS --password-stdin $(DOCKER_REGISTRY)
+
+
+.PHONY: dockerbuild
+dockerbuild: build
+	docker build \
+		--build-arg GIT_HASH="$(GIT_COMMIT_HASH)" \
+		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
+		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
+		--build-arg VERSION="$(GIT_TAG)" \
+		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG)  -f Dockerfile .
+
+
+.PHONY: dockerrun
+dockerrun: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
+	docker run \
+	    -it \
+	    --network=host \
+	    --env-file=${ENV_FILE} \
+	    --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
+		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
+		--env APP_VERSION="$(GIT_TAG)" \
+		$(DOCKER_IMG_LOCAL_TAG)
+
+
+.PHONY: dockerrun-shell
+dockerrun-shell: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
+	docker run \
+	    -it \
+	    --network=host \
+	    --env-file=${ENV_FILE} \
+	    --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
+		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
+		--env APP_VERSION="$(GIT_TAG)" \
+		--entrypoint /bin/sh \
+		$(DOCKER_IMG_LOCAL_TAG)
+
+
+.PHONY: dockerpush
+dockerpush:
+	docker push $(DOCKER_IMG_LOCAL_TAG)
+
+
+.PHONY: test
+test:
+	PYTHONPATH=${PYTHONPATH} ${NOSE} --verbosity=2  --cover-erase  tests/ -e .*e2e.*
+
+.PHONY: testci
+testci:
+	mkdir -p junit-reports/{integration,functional}
+	PYTHONPATH=${PYTHONPATH} ${NOSE} --with-xunit --xunit-file=junit-reports/functional/nosetest.xml   tests/functional -e .*e2e.*
+	PYTHONPATH=${PYTHONPATH} ${NOSE} --with-xunit --xunit-file=junit-reports/integration/nosetest.xml  tests/integration -e .*e2e.*
+
+.PHONY: teste2e
+teste2e:
+	PYTHONPATH=${PYTHONPATH} ${NOSE} tests/e2e/
+
+# TODO: Replace through yapf, once the old vhost infra is replaced
+.PHONY: lint
+lint:
+	@echo "${GREEN}Linting python files...${RESET}";
+	${FLAKE8} --ignore=${PEP8_IGNORE} $(PYTHON_FILES) && echo ${RED}
+
+# TODO: Replace through yapf, once the old vhost infra is replaced
+.PHONY: autolint
+autolint:
+	@echo "${GREEN}Auto correction of python files...${RESET}";
+	${AUTOPEP8} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
+
+# FIXME add the rss and css compilation
+.PHONY: doc
+doc:
+	@echo "${GREEN}Building the documentation...${RESET}";
+	cd chsdi/static/doc && ../../../${SPHINX} -W -b html source build || exit 1 ;
+
+
+$(NODE_MODULES): package.json
+	@echo "${GREEN}Installing node packages...${RESET}";
+	npm install $(NPM_QUIET) --production
+	mkdir -p chsdi/static/js/
+	cp -f $(NODE_MODULES)/jquery/dist/jquery.min.js chsdi/static/js/jquery.min.js
+	cp -f $(NODE_MODULES)/blueimp-gallery/js/blueimp-gallery.min.js chsdi/static/js/blueimp-gallery.min.js
+	cp -f $(NODE_MODULES)/d3/d3.min.js chsdi/static/js/d3.min.js
+	cp -f $(NODE_MODULES)/d3-tip/index.js chsdi/static/js/d3-tip.js
+	cp -f $(NODE_MODULES)/blueimp-gallery/css/blueimp-gallery.min.css chsdi/static/css/blueimp-gallery.min.css
+
+
+chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
+	@echo "${GREEN}Generating new css file...${RESET}";
+	$(NODE_MODULES)/.bin/lessc -ru --clean-css $< $@
+
+
+.PHONY:
+rss: doc chsdi/static/doc/build/releasenotes/index.html
+	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
+	${PYTHON} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
+
+
+.PHONY: legends
+legends: guard-BODID guard-WMSHOST
+	scripts/downloadlegends.sh $(WMSHOST) $(BODID) $(WMSSCALELEGEND)
+
+
+guard-%:
+	@ if test "${${*}}" = ""; then \
+	  echo "Environment variable $* not set. Add it to your command."; \
+	  exit 1; \
+	fi
+
+
+$(TIMESTAMPS):
+	mkdir -p $(TIMESTAMPS)
+
+.PHONY: clean
+clean:
+	rm -rf $(TIMESTAMPS)
+	rm -f base.ini
+	rm -f production.ini
+	rm -f development.ini
+	rm -f 25-mf-chsdi3.conf
+	rm -f apache/application.wsgi
+	rm -f apache/wsgi.conf
+	rm -f chsdi/static/doc/build/releasenotes/rss2.xml
+	find chsdi/static/js -type f ! -name .gitignore -delete
+	rm -f .coverage
+
+
+
+PHONY: cleanall
+cleanall: clean
+	rm -rf .venv
+	find . -name "__pycache__" -exec rm -rf "{}" \;
+	rm -rf node_modules
+	rm -rf chsdi/locale/en
+	rm -rf chsdi/locale/fr
+	rm -rf chsdi/locale/de
+	rm -rf chsdi/locale/fi
+	rm -rf chsdi/locale/it
+	rm -f  chsdi/locale/chsdi.pot
+	rm -rf chsdi.egg-info/
+	rm -rf chsdi/static/doc/build
+	rm -f  chsdi/static/css/blueimp-gallery.min.css
+

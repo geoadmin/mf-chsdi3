@@ -6,16 +6,18 @@
 *.swp
 *~
 *.orig
-.coverage
+.coverage*
 .idea
 .installed.cfg
 .venv/
+.env.*
 rc_branch
 rc_user_*
 apache/wsgi.conf
 apache/application.wsgi
 apache/tomcat-print.conf
 chsdi.egg-info
+chsdi/locale
 chsdi/static/doc/build/
 chsdi/static/css/extended.min.css
 chsdi/static/css/blueimp-gallery.min.css
@@ -37,3 +39,4 @@ build
 rancher-*.yml
 docker*.yml
 _pg_pass
+package-lock.json
