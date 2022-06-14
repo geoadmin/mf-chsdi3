@@ -6,7 +6,7 @@
 *.swp
 *~
 *.orig
-.coverage
+.coverage*
 .idea
 .installed.cfg
 .venv/

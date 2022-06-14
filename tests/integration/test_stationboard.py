@@ -15,7 +15,7 @@ class TestStationboard(TestsBase):
             resp = self.testapp.get('/stationboard/stops/8501120', status=200)
             self.assertEqual(resp.status, 200)
         except (AppError, AssertionError):
-            self.skipTest("OpenTrans API is down. Skipping iall  tests")
+            self.skipTest("OpenTrans API is down. Skipping all  tests")
 
     def test_stationboard(self):
         resp = self.testapp.get('/stationboard/stops/8501120', status=200)
