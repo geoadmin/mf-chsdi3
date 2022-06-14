@@ -26,11 +26,13 @@ AVAILABLE_LANGUAGES := de fr it fi en
 WMSSCALELEGEND ?=
 NODE_MODULES := node_modules
 
-
-
-# general targets timestamps
-TIMESTAMPS = .timestamps
-REQUIREMENTS := $(TIMESTAMPS)
+ifeq ($(CI_QUIET), 1)
+PIP_QUIET := -q
+NPM_QUIET := --silent
+else
+PIP_QUIET :=
+NPM_QUIET :=
+endif
 
 
 # Commands
@@ -38,7 +40,7 @@ AUTOPEP8 := $(INSTALL_DIRECTORY)/bin/autopep8
 FLAKE8 := $(INSTALL_DIRECTORY)/bin/flake8
 MAKO := $(INSTALL_DIRECTORY)/bin/mako-render
 NOSE := $(INSTALL_DIRECTORY)/bin/nosetests
-PIP := $(INSTALL_DIRECTORY)/bin/pip3
+PIP := $(INSTALL_DIRECTORY)/bin/pip3 $(PIP_QUIET)
 PSERVE := $(INSTALL_DIRECTORY)/bin/pserve
 PSHELL := $(INSTALL_DIRECTORY)/bin/pshell
 PYTHON := $(INSTALL_DIRECTORY)/bin/python3
@@ -337,12 +339,8 @@ guard-%:
 	fi
 
 
-$(TIMESTAMPS):
-	mkdir -p $(TIMESTAMPS)
-
 .PHONY: clean
 clean:
-	rm -rf $(TIMESTAMPS)
 	rm -f base.ini
 	rm -f production.ini
 	rm -f development.ini
