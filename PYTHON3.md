@@ -1,15 +1,15 @@
-Migration to Python3, Docker and Frankfort
-==========================================
+# Migration to Python3, Docker and Frankfort
 
 Currently, we are porting `mf-chsdi3` to `python3`, `docker` and `Frankfurt`
 
 - [Install](#install)
 - [Docker build](#docker-build)
 - [Docker run](#docker-run)
-- [Testing](#testing)
+- [Unit Testing](#unit-testing)
+  - [Prerequisites](#prerequisites)
+  - [AWS S3 Credentials](#aws-s3-credentials)
 
-Install
--------
+## Install
 
 Use only `Makefile.frankfurt`
 
@@ -41,15 +41,13 @@ change the variables you want and use them with
 summon make -f Makefile.frankfurt ENV_FILE=.env.mine build serve
 ```
 
-Docker build
-------------
+## Docker build
 
 ```bash
     make -f Makefile.frankfurt dockerbuild
 ```
 
-Docker run
-----------
+## Docker run
 
 ```bash
 summon make -f Makefile.frankfurt dockerrun
@@ -70,11 +68,33 @@ LocalForward functionality with our jumphost and then modify the `DBHOST` to `lo
     summon make -f Makefile.frankfurt ENV_FILE=.env.mine dockerrun
     ```
 
-Testing
--------
+## Unit Testing
 
-Many tests still fails, but run them with
+### Prerequisites
+
+- PostgreSQL DB `pg-geodata-replica.bgdi.ch` must be reachable
+- Access to AWS services
+  - Read access to S3 bucket `service-mf-chsdi3-grid-geojsons-dev-swisstopo` (can be disable with `S3_TESTS=0`)
+
+To run the tests enter
 
 ```bash
-make -f Makefile.frankfurt test
+summon make -f Makefile.frankfurt test
 ```
+
+Or if you use your own environment file
+
+```bash
+summon make -f Makefile.frankfurt ENV_FILE=.env.mine test
+```
+
+**:warning: If you don't have AWS Access you can disable the S3 tests as follow**
+
+```bash
+summon make -f Makefile.frankfurt S3_TESTS=0 test
+```
+
+### AWS S3 Credentials
+
+To configure your AWS S3 access Credentials you can either sets the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+environment variables or if you use ZSH you can use the `acp swisstopo-bgdi-dev` command (see [oh-my-zsh aws plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws))

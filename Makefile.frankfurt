@@ -17,7 +17,8 @@ INSTALL_DIRECTORY := .venv
 
 # default configuration
 ENV_FILE ?= .env.default
-APACHE_PORT ?= 8009
+include $(ENV_FILE)
+S3_TESTS ?= 1
 
 # Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
 # https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
@@ -146,10 +147,12 @@ help:
 	@echo "Variables:"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
 	@echo "SYSTEM_PYTHON_CMD:   ${SYSTEM_PYTHON_CMD}"
-	@echo "PIP:                 ${PIP}"
+	@echo "DBHOST:              ${DBHOST}"
+	@echo "DBPORT:              ${DBPORT}"
 	@echo "SERVER_PORT:         ${SERVER_PORT}"
 	@echo "APACHE_PORT:         ${APACHE_PORT}"
 	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
+	@echo "S3_TESTS:            ${S3_TESTS}"
 	@echo "DOCKER_REGISTRY      ${DOCKER_REGISTRY}"
 	@echo "DOCKER_IMG_LOCAL_TAG ${DOCKER_IMG_LOCAL_TAG}"
 	@echo
@@ -272,8 +275,9 @@ dockerpush:
 
 
 .PHONY: test
-test:
-	PYTHONPATH=${PYTHONPATH} ${NOSE} --verbosity=2  --cover-erase  tests/ -e .*e2e.*
+test: config-templates build
+	export $(shell cat $(ENV_FILE)) && python ./scripts/pg_ready.py
+	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2  --cover-erase  tests/ -e "(.*e2e.*|test_search|test_sphinxapi)"
 
 
 .PHONY: unittest-ci
@@ -286,7 +290,7 @@ unittest-ci: config-templates build
 # after the migration.
 	PYTHONPATH=${PYTHONPATH} S3_TESTS=0 ${NOSE} --with-xunit --xunit-file=junit-reports/integration/nosetest.xml \
 		tests/integration \
-		-e "(test_wmtscapabitlities|test_search|test_sphinxapi)"
+		-e "(test_search|test_sphinxapi)"
 
 
 .PHONY: teste2e
