@@ -13,7 +13,7 @@ SHELL = /bin/bash
 SERVICE_NAME := mf-chsdi3
 
 CURRENT_DIRECTORY := $(shell pwd)
-INSTALL_DIRECTORY := .venv
+VENV := .venv
 
 # default configuration
 ENV_FILE ?= .env.default
@@ -23,6 +23,13 @@ S3_TESTS ?= 1
 # Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
 # https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
 AVAILABLE_LANGUAGES := de fr it fi en
+LANGUAGES_PO_FILES := $(patsubst %,chsdi/locale/%/LC_MESSAGES/chsdi.po, $(AVAILABLE_LANGUAGES))
+LANGUAGES_MO_FILES := $(patsubst %,chsdi/locale/%/LC_MESSAGES/chsdi.mo, $(AVAILABLE_LANGUAGES))
+TRANSLATION_POT_FILE := chsdi/locale/chsdi.pot
+TRANSLATION_DIRS := $(patsubst %,chsdi/locale/%, $(AVAILABLE_LANGUAGES))
+TRANSLATION_FILES := $(TRANSLATION_POT_FILE) $(LANGUAGES_PO_FILES) $(LANGUAGES_MO_FILES)
+DOC_BUILD := chsdi/static/doc/build
+
 # Create legends
 WMSSCALELEGEND ?=
 NODE_MODULES := node_modules
@@ -37,20 +44,20 @@ endif
 
 
 # Commands
-AUTOPEP8 := $(INSTALL_DIRECTORY)/bin/autopep8
-FLAKE8 := $(INSTALL_DIRECTORY)/bin/flake8
-MAKO := $(INSTALL_DIRECTORY)/bin/mako-render
-NOSE := $(INSTALL_DIRECTORY)/bin/nosetests
-PIP := $(INSTALL_DIRECTORY)/bin/pip3 $(PIP_QUIET)
-PSERVE := $(INSTALL_DIRECTORY)/bin/pserve
-PSHELL := $(INSTALL_DIRECTORY)/bin/pshell
-PYTHON := $(INSTALL_DIRECTORY)/bin/python3
-SPHINX := $(INSTALL_DIRECTORY)/bin/sphinx-build
+AUTOPEP8 := $(VENV)/bin/autopep8
+FLAKE8 := $(VENV)/bin/flake8
+MAKO := $(VENV)/bin/mako-render
+NOSE := $(VENV)/bin/nosetests
+PIP := $(VENV)/bin/pip3 $(PIP_QUIET)
+PSERVE := $(VENV)/bin/pserve
+PSHELL := $(VENV)/bin/pshell
+PYTHON := $(VENV)/bin/python3
+SPHINX := $(VENV)/bin/sphinx-build
 ENVSUBST := /usr/bin/envsubst
 
 PYTHON_VERSION := 3.7
 SYSTEM_PYTHON_CMD ?= python${PYTHON_VERSION}
-PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
+PYTHONPATH ?= $(VENV)/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
 
 
 PYPI_URL ?= https://pypi.org/simple/
@@ -164,7 +171,7 @@ all: setup config-templates lint build
 
 
 .PHONY: setup
-setup: .venv $(NODE_MODULES)
+setup: $(VENV) $(NODE_MODULES)
 
 
 requirements-py3.txt:
@@ -172,8 +179,8 @@ requirements-py3.txt:
 
 
 # TODO: replace through pipenv as in the other projects.
-.venv: requirements-py3.txt
-		test -d "$(INSTALL_DIRECTORY)" ||  ( $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY) && \
+$(VENV): requirements-py3.txt
+		test -d "$(VENV)" ||  ( $(SYSTEM_PYTHON_CMD) -m venv $(VENV) && \
 		${PIP} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL}  && \
 		${PIP} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e . )
 
@@ -211,21 +218,32 @@ config-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD chsdi/st
 # Generate a basically empty gettext `chsdi` domain.
 # Translation are dynamic, the domain is updated at runtime directly from the BOD
 .PHONY: translate
-translate: .venv
-	@echo "${GREEN}Building the translation...${RESET}";
-	${PYTHON} setup.py extract_messages
-	for lng in ${AVAILABLE_LANGUAGES}; do \
-		${PYTHON} setup.py init_catalog -l $$lng; \
-	done;
-	${PYTHON} setup.py compile_catalog
+translate: $(VENV) $(TRANSLATION_FILES)
+
+
+# FIXME add the rss and css compilation
+.PHONY: doc
+doc: $(VENV) $(DOC_BUILD)
+
+
+.PHONY:
+rss: $(VENV) doc chsdi/static/doc/build/releasenotes/index.html
+	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
+	${PYTHON} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
+
+
+.PHONY: legends
+legends: $(VENV) guard-BODID guard-WMSHOST
+	scripts/downloadlegends.sh $(WMSHOST) $(BODID) $(WMSSCALELEGEND)
+
 
 .PHONY: serve
-serve: config-templates
+serve: $(VENV) config-templates
 	PYTHONPATH=${PYTHONPATH} ${PSERVE} development.ini --reload
 
 
 .PHONY: shell
-shell: config-templates
+shell: $(VENV) config-templates
 	PYTHONPATH=${PYTHONPATH} ${PSHELL} development.ini
 
 
@@ -275,13 +293,13 @@ dockerpush:
 
 
 .PHONY: test
-test: config-templates build
+test: $(VENV) config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
 	export $(shell cat $(ENV_FILE)) && ${PYTHON} ./scripts/pg_ready.py
 	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2  --cover-erase  tests/ -e "(.*e2e.*|test_search|test_sphinxapi)"
 
 
 .PHONY: unittest-ci
-unittest-ci: config-templates build
+unittest-ci: $(VENV) config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
 	mkdir -p junit-reports/{integration,functional}
 	PYTHONPATH=${PYTHONPATH} ${NOSE} --with-xunit --xunit-file=junit-reports/functional/nosetest.xml \
 		tests/functional
@@ -294,29 +312,24 @@ unittest-ci: config-templates build
 
 
 .PHONY: teste2e
-teste2e:
+teste2e: $(VENV)
 	PYTHONPATH=${PYTHONPATH} ${NOSE} tests/e2e/
 
 # TODO: Replace through yapf, once the old vhost infra is replaced
 .PHONY: lint
-lint:
+lint: $(VENV)
 	@echo "${GREEN}Linting python files...${RESET}";
 	${FLAKE8} --ignore=${PEP8_IGNORE} $(PYTHON_FILES) && echo ${RED}
 
 
 # TODO: Replace through yapf, once the old vhost infra is replaced
 .PHONY: autolint
-autolint:
+autolint: $(VENV)
 	@echo "${GREEN}Auto correction of python files...${RESET}";
 	${AUTOPEP8} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
 
 
-# FIXME add the rss and css compilation
-.PHONY: doc
-doc:
-	@echo "${GREEN}Building the documentation...${RESET}";
-	cd chsdi/static/doc && ../../../${SPHINX} -W -b html source build || exit 1 ;
-
+# Compiling targets
 
 $(NODE_MODULES): package.json
 	@echo "${GREEN}Installing node packages...${RESET}";
@@ -328,21 +341,32 @@ $(NODE_MODULES): package.json
 	cp -f $(NODE_MODULES)/d3-tip/index.js chsdi/static/js/d3-tip.js
 	cp -f $(NODE_MODULES)/blueimp-gallery/css/blueimp-gallery.min.css chsdi/static/css/blueimp-gallery.min.css
 
-
 chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 	@echo "${GREEN}Generating new css file...${RESET}";
 	$(NODE_MODULES)/.bin/lessc -ru --clean-css $< $@
 
+# Translation POT file depends on all files from chsdi sources except the translation files generated
+# and the python compiled and cache files
+TRANSLATION_POT_FILE_DEPENDENCIES := $(shell find chsdi -name *.py)
+$(TRANSLATION_POT_FILE): $(TRANSLATION_POT_FILE_DEPENDENCIES)
+	@echo "${GREEN}Extracting the translation...${RESET}";
+	${PYTHON} setup.py extract_messages
 
-.PHONY:
-rss: doc chsdi/static/doc/build/releasenotes/index.html
-	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
-	${PYTHON} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
+
+$(LANGUAGES_PO_FILES): $(TRANSLATION_POT_FILE)
+	@echo "${GREEN}Building the translation PO $@ file...${RESET}";
+	${PYTHON} setup.py init_catalog -l $(patsubst chsdi/locale/%/LC_MESSAGES/chsdi.po,%, $@)
 
 
-.PHONY: legends
-legends: guard-BODID guard-WMSHOST
-	scripts/downloadlegends.sh $(WMSHOST) $(BODID) $(WMSSCALELEGEND)
+$(LANGUAGES_MO_FILES): $(LANGUAGES_PO_FILES)
+	@echo "${GREEN}Building the translation MO $@ file...${RESET}";
+	${PYTHON} setup.py compile_catalog -l $(patsubst chsdi/locale/%/LC_MESSAGES/chsdi.mo,%, $@)
+
+
+DOC_FILES_DEPENDENCIES := $(shell find chsdi/static/doc/source ! -name *.pyc ! -name __pycache__)
+$(DOC_BUILD): $(DOC_FILES_DEPENDENCIES)
+	@echo "${GREEN}Building the documentation...${RESET}";
+	cd chsdi/static/doc && ../../../${SPHINX} -W -b html source build || exit 1 ;
 
 
 guard-%:
@@ -351,6 +375,7 @@ guard-%:
 	  exit 1; \
 	fi
 
+# Clean targets
 
 .PHONY: clean
 clean:
@@ -361,23 +386,19 @@ clean:
 	rm -f apache/application.wsgi
 	rm -f apache/wsgi.conf
 	rm -f chsdi/static/info.json
-	rm -rf chsdi/static/doc/build
-	rm -f  chsdi/static/doc/build/releasenotes/rss2.xml
+	rm -rf $(DOC_BUILD)
 	rm -f  chsdi/static/css/blueimp-gallery.min.css
 	rm -f  chsdi/static/css/extended.min.css
-	rm -f  chsdi/locale/chsdi.pot
-	for lng in ${AVAILABLE_LANGUAGES}; do \
-		rm -rf chsdi/locale/$${lng}; \
-	done;
-	find chsdi/static/js -type f ! -name .gitignore -delete
+	rm -rf $(TRANSLATION_DIRS)
+	find chsdi/static/js -type f ! -name .gitignore -exec rm -f \;
 	rm -f .coverage .coverage.*
-	find . -name "__pycache__" -exec rm -rf "{}" \;
+	find chsdi -name "__pycache__" -exec rm -rf "{}" \;
 
 
 PHONY: cleanall
 cleanall: clean
 	rm -rf chsdi.egg-info/
-	rm -rf .venv
+	rm -rf $(VENV)
 	rm -rf node_modules
 	rm -f  package-lock.json
 
