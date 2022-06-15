@@ -65,6 +65,7 @@ GIT_BRANCH=$(shell git symbolic-ref HEAD --short 2>/dev/null)
 GIT_DIRTY=$(shell git status --porcelain)
 GIT_TAG=$(shell git describe --tags || echo "no version info")
 DOCKER_IMG_LOCAL_TAG=$(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+GIT_COMMIT_DATE ?= $(shell git log -1  --date=iso --pretty=format:%cd)
 
 # Colors
 ifneq ($(shell echo ${TERM}),)
@@ -72,6 +73,9 @@ RESET := $(shell tput sgr0)
 RED := $(shell tput setaf 1)
 GREEN := $(shell tput setaf 2)
 endif
+
+# Date
+CURRENT_DATE ?= $(shell date -u +"%Y-%m-%d %H:%M:%S %z")
 
 # Python files (for linting)
 PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
@@ -167,11 +171,22 @@ requirements-py3.txt:
 
 
 .PHONY: build
-build: doc translate chsdi/static/css/extended.min.css rss
+build: doc translate chsdi/static/css/extended.min.css rss chsdi/static/info.json
+
+.PHONY: chsdi/static/info.json
+chsdi/static/info.json:
+	export APP_VERSION="$(GIT_TAG)" && \
+	export GIT_BRANCH="$(GIT_BRANCH)" && \
+	export GIT_HASH_SHORT="$(GIT_HASH_SHORT)" && \
+	export GIT_COMMIT_DATE="$(GIT_COMMIT_DATE)" && \
+	export GIT_HASH="$(GIT_HASH)" && \
+	export PYTHON_VERSION="$(PYTHON_VERSION)" && \
+	export CURRENT_DATE="$(CURRENT_DATE)" && \
+	envsubst < info.json.in > chsdi/static/info.json
 
 
 .PHONY: environ
-environ: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
+environ: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD chsdi/static/info.json
 # FIXME: nosetests is still using development.ini
 	export $(shell cat $(ENV_FILE)) && \
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
@@ -195,7 +210,6 @@ translate: .venv guard-ENV_FILE
 		${PYTHON} setup.py init_catalog -l $$lng; \
 	done;
 	${PYTHON} setup.py compile_catalog
-
 
 .PHONY: serve
 serve: environ
@@ -332,6 +346,7 @@ clean:
 	rm -f apache/application.wsgi
 	rm -f apache/wsgi.conf
 	rm -f chsdi/static/doc/build/releasenotes/rss2.xml
+	rm -f chsdi/static/info.json
 	find chsdi/static/js -type f ! -name .gitignore -delete
 	rm -f .coverage
 

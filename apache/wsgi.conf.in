@@ -123,17 +123,6 @@ Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, 
 # kml file downloads
 AliasMatch ^${apache_entry_path}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${kml_temp_dir}/$1
 
-# Info
-<LocationMatch ^${apache_entry_path}/static/info.json>
-    AuthType Basic
-    AuthName "Your IWI credential"
-    # Optional line:
-    AuthBasicProvider file
-    AuthUserFile "/etc/apache2/htpasswd"
-    AuthGroupFile "/etc/apache2/htgroup"
-    Require group iwi-team bgdi-team
-</LocationMatch>
-
 # WMTS GetCapabilities access control
 RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities.EPSG.(\d+).xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
 RewriteRule ^${apache_entry_path}/1.0.0/WMTSCapabilities.xml ${apache_entry_path}/rest/services/api/1.0.0/WMTSCapabilities.xml [L,QSA,PT]

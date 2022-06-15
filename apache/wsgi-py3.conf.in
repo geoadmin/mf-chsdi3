@@ -105,7 +105,7 @@ WSGIApplicationGroup %{GLOBAL}
 WSGIPassAuthorization On
 
 WSGIDaemonProcess mf-chsdi3:${APACHE_BASE_PATH} display-name=%{GROUP} user=${MODWSGI_USER} processes=${WSGI_PROCESSES} threads=${WSGI_THREADS} \
-   python-path=/usr/local/lib/python3.7/site-packages 
+   python-path=/usr/local/lib/python3.7/site-packages
 
 
 # define the path to the WSGI app
@@ -152,18 +152,6 @@ Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, 
 
 # kml file downloads
 AliasMatch ^${APACHE_ENTRY_PATH}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${KML_TEMP_DIR}/$1
-
-
-# Info
-<LocationMatch ^${APACHE_ENTRY_PATH}/static/info.json>
-    AuthType Basic
-    AuthName "Your IWI credential"
-    # Optional line:
-    AuthBasicProvider file
-    AuthUserFile "/etc/apache2/htpasswd"
-    AuthGroupFile "/etc/apache2/htgroup"
-    Require group iwi-team bgdi-team
-</LocationMatch>
 
 # WMTS GetCapabilities access control
 RewriteRule ^${APACHE_ENTRY_PATH}/1.0.0/WMTSCapabilities.EPSG.(\d+).xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
