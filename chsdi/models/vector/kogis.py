@@ -76,7 +76,7 @@ register('ch.swisstopo.fixpunkte-lfp2', FixpunkteLfp2)
 
 class FixpunkteHfp1(Base, Vector):
     __tablename__ = 'punkt_hoehe_hfp1'
-    __table_args__ = ({'schema': 'fida', 'autoload': True})
+    __table_args__ = ({'schema': 'fida', 'autoload': False})
     __template__ = 'templates/htmlpopup/fida_hfp1.mako'
     __bodId__ = 'ch.swisstopo.fixpunkte-hfp1'
     __label__ = 'id'
@@ -103,7 +103,7 @@ register('ch.swisstopo.fixpunkte-hfp1', FixpunkteHfp1)
 
 class FixpunkteHfp2(Base, Vector):
     __tablename__ = 'punkt_hoehe_hfp2'
-    __table_args__ = ({'schema': 'fpds', 'autoload': True})
+    __table_args__ = ({'schema': 'fpds', 'autoload': False})
     __template__ = 'templates/htmlpopup/fixpunkte.mako'
     __bodId__ = 'ch.swisstopo.fixpunkte-hfp2'
     __label__ = 'id'
