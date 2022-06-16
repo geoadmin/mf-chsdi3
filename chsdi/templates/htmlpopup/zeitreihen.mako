@@ -3,6 +3,7 @@
 <%!
 import datetime
 import urllib
+import six
 from pyramid.url import route_url
 import chsdi.lib.helpers as h
 import markupsafe
@@ -39,7 +40,12 @@ def get_viewer_url(request, params):
         'lang': params[5],
         'release_year': params[6]
     }
-    return h.make_agnostic(route_url('historicalmaps', request)) + '?' + urllib.urlencode(f)
+    # Python2/3
+    if six.PY3:
+      return h.make_agnostic(route_url('historicalmaps', request)) + '?' + urllib.parse.urlencode(f)
+    else:
+      return h.make_agnostic(route_url('historicalmaps', request)) + '?' + urllib.urlencode(f)
+
 
 %>
 
@@ -57,8 +63,8 @@ def get_viewer_url(request, params):
     image_height = wh[1]
 
     params = (
-        image_width, 
-        image_height, 
+        image_width,
+        image_height,
         productName,
         c['attributes']['bv_nummer'],
         c['layerBodId'],
