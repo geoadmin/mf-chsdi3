@@ -51,7 +51,12 @@ def get_viewer_url(request, params):
         'lang': params[6],
         'rotation': params[7]
     }
-    return h.make_agnostic(route_url('luftbilder', request)) + '?' + urllib.urlencode(f)
+    import six
+    # Python2/3
+    if six.PY3:
+      return h.make_agnostic(route_url('luftbilder', request)) + '?' + urllib.parse.urlencode(f)
+    else:
+      return h.make_agnostic(route_url('luftbilder', request)) + '?' + urllib.urlencode(f)
 
 %>
 
