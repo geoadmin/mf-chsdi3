@@ -8,6 +8,7 @@ Currently, we are porting `mf-chsdi3` to `python3`, `docker` and `Frankfurt`
 - [Unit Testing](#unit-testing)
   - [Prerequisites](#prerequisites)
   - [AWS S3 Credentials](#aws-s3-credentials)
+- [Download WMS image legends](#download-wms-image-legends)
 
 ## Install
 
@@ -93,3 +94,19 @@ summon make -f Makefile.frankfurt S3_TESTS=0 test
 
 To configure your AWS S3 access Credentials you can either sets the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
 environment variables or if you use ZSH you can use the `acp swisstopo-bgdi-dev` command (see [oh-my-zsh aws plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws))
+
+## Download WMS image legends
+
+In order to download all images of a layer in the correct format and with the correct dimensions, simply use:
+
+```bash
+make legends BODID=ch.layername WMSHOST=wms.geo.admi.ch
+```
+
+Alternatively, you can also download a WMS legend for a specific scale.
+
+```bash
+make legends BODID=ch.layername WMSHOST=wms.geo.admi.ch WMSSCALELEGEND=1000
+```
+
+You will need the `optipgn` tool order to download the legends, use `sudo apt install optipng` to install it.
