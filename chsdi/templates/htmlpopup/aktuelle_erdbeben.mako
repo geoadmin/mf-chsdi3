@@ -28,7 +28,7 @@
     try:
         r = requests.get(url)
         response = r.content.decode('utf-8')
-        # Consider any status other than 2xx as error or mapserver 200 responses with MapServer Message in body
+        # Consider any status other than 200 as error or mapserver 200 responses with MapServer Message in body
         if not r.status_code == 200 or "MapServer Message" in response:
             response = "invalid service repsonse:<br/>response: {}<br/>http status: {}<br/>Url: {}".format(response, r.status_code, url)
     except requests.exceptions.RequestException as e:

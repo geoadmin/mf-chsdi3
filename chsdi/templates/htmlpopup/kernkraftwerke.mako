@@ -33,6 +33,7 @@
         dismantling_phase = c['attributes']['dismantling_phase'].split('##');
 
         # Python3's range is Python2's xrange
+        # TODO python2 clean-up
         try:
           xrange
         except NameError:

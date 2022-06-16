@@ -20,6 +20,7 @@
         dataGeoAdminHost = request.registry.settings['datageoadminhost']
         csv_url = "https://" + dataGeoAdminHost + "/" + c['layerBodId']  + "/image/meta.txt"
         csv_file = None
+        # TODO python2 clean-up
         try:
             from urllib2 import urlopen
             csv_file = urlopen(csv_url)
