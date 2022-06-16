@@ -30,7 +30,7 @@ tsf = TranslationStringFactory('chsdi')
 @cachetools.func.ttl_cache(ttl = DYNAMIC_TRANSLATION_TTL)
 def update_localizer(lang, localizer, session):
     # At this point the localizer is read. We update the translation catalog from the translation
-    # table in the BOD, if reuired.
+    # table in the BOD, if required.
 
     translations = get_translations(lang, session)
 

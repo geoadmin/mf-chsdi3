@@ -11,6 +11,8 @@
 .installed.cfg
 .venv/
 .env.*
+!.env.default
+!.env.ci
 rc_branch
 rc_user_*
 apache/wsgi.conf
