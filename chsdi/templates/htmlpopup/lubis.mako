@@ -6,6 +6,7 @@ import datetime
 from pyramid.url import route_url
 import chsdi.lib.helpers as h
 import markupsafe
+# Python2/3
 try:
     from urllib import urlencode
 except ImportError:

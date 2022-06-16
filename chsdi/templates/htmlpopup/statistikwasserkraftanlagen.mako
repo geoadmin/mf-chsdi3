@@ -1,7 +1,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-<% 
+<%
     import chsdi.lib.helpers as h
 
     c['stable_id'] = True
@@ -46,7 +46,6 @@
 <%
     c['stable_id'] = True
     lang = 'de' if lang in ('de', 'rm', 'en') else lang
-    import urllib2
     has_picture = True
     headers = {'Referer': 'http://admin.ch'}
     url = "http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.statistik-wasserkraftanlagen/%d.jpg" % c['featureId']
@@ -65,7 +64,7 @@
   <tr>
     <td class="cell-meta">${_('tt_ch.bfe.statistik-wasserkraftanlagen_wastanumber')}</td>
     <td class="cell-meta">${c['featureId']}</td>
-  </tr>    
+  </tr>
   <tr>
     <td class="cell-meta">${_('tt_ch.bfe.statistik-wasserkraftanlagen_location')}</td>
     <td class="cell-meta">${c['attributes']['location'] or '-'}</td>

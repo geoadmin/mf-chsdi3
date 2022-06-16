@@ -58,6 +58,9 @@ DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
 AWS_REGION_ECR := eu-central-1
 AUTHOR=$(USER)
 
+# data.geo.admin.ch hosts
+DATAGEOADMINHOST ?= data.geo.admin.ch
+
 # Git metadata
 GIT_HASH=$(shell git rev-parse HEAD)
 GIT_HASH_SHORT=$(shell git rev-parse --short HEAD)
@@ -191,6 +194,7 @@ environ: guard-ENV_FILE guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD ch
 	export $(shell cat $(ENV_FILE)) && \
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	export APP_VERSION="$(GIT_TAG)" && \
+	export DATAGEOADMINHOST="$(DATAGEOADMINHOST)" && \
 	envsubst < base.ini.in > base.ini && \
 	envsubst < dev.ini.in > development.ini && \
 	envsubst < prod.ini.in > production.ini && \

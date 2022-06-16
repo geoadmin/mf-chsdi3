@@ -4,6 +4,7 @@
 <%!
 import datetime
 import urllib
+import six
 from pyramid.url import route_url
 import chsdi.lib.helpers as h
 import markupsafe
@@ -51,7 +52,11 @@ def get_viewer_url(request, params):
         'lang': params[6],
         'rotation': params[7]
     }
-    return h.make_agnostic(route_url('luftbilder', request)) + '?' + urllib.urlencode(f)
+    # Python2/3
+    if six.PY3:
+      return h.make_agnostic(route_url('luftbilder', request)) + '?' + urllib.parse.urlencode(f)
+    else:
+      return h.make_agnostic(route_url('luftbilder', request)) + '?' + urllib.urlencode(f)
 
 %>
 
