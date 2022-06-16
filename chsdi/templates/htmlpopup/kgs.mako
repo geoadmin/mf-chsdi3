@@ -24,9 +24,9 @@
             from urllib2 import urlopen
             csv_file = urlopen(csv_url)
             reader = csv.reader(csv_file, delimiter =';')  # creates the reader object
-            csv_file.close()
             next(reader) # Skip header
             pic_list = [map(lambda x: x.decode("utf-8"), row) for row in reader if int(row[0]) == c['featureId']]
+            csv_file.close()
         except ImportError:
             # Python3 fallback
             from urllib.request import urlopen
