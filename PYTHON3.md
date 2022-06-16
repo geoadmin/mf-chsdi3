@@ -17,11 +17,6 @@ The required environment variables are set in `.env.default`. They can be
 adapted or you can use a copy of `.env.default`, e.g. `.env.mine` and use that
 instead.
 
-```bash
-set -o allexport; source .env.default (or .env.mine); set +o allexport  
-export ENV_FILE=.env.local (or .env.mine)
-```
-
 Install the python virtual environment (still `virtualenv`at this point)
 
 ```bash
