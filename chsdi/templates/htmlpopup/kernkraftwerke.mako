@@ -32,6 +32,12 @@
         decontamination_phase = c['attributes']['decontamination_phase'].split('##');
         dismantling_phase = c['attributes']['dismantling_phase'].split('##');
 
+        # Python3's range is Python2's xrange
+        try:
+          xrange
+        except NameError:
+          xrange = range
+
     %>
     <script>
         $(document).ready(function(){
@@ -60,15 +66,15 @@
     % for reactor_i in xrange(0, c['attributes']['reactors']):
         <tr></tr>
         <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.reactor_name')}</th>      <td><strong>${reactor_name[reactor_i]}</strong></td></tr>
-        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.life_phase_de')}</th>      <td>${life_phase[lang_i][reactor_i]}</td></tr>
-        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.reactor_type_de')}</th>      <td>${reactor_type[lang_i][reactor_i]}</td></tr>
-        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.cooling_type_de')}</th>      <td>${cooling_type[lang_i][reactor_i]}</td></tr>
-        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.nominal_thermal_output')}</th>      <td>${nominal_thermal_output[reactor_i]} MW</td></tr>
-        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.gross_el_output')}</th>      <td>${gross_el_output[reactor_i]} MWe</td></tr>
-        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.net_el_output')}</th>      <td>${net_el_output[reactor_i]} MWe</td></tr>
-        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.construction_phase')}</th>      <td>${construction_phase[reactor_i]}</td></tr>
-        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.operation_phase')}</th>      <td>${operation_phase[reactor_i]}</td></tr>
-        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.decontamination_phase')}</th>      <td>${decontamination_phase[reactor_i]}</td></tr>
+        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.life_phase_de')}</th>      <td>${list(life_phase)[lang_i][reactor_i]}</td></tr>
+        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.reactor_type_de')}</th>      <td>${list(reactor_type)[lang_i][reactor_i]}</td></tr>
+        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.cooling_type_de')}</th>      <td>${list(cooling_type)[lang_i][reactor_i]}</td></tr>
+        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.nominal_thermal_output')}</th>      <td>${list(nominal_thermal_output)[reactor_i]} MW</td></tr>
+        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.gross_el_output')}</th>      <td>${list(gross_el_output)[reactor_i]} MWe</td></tr>
+        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.net_el_output')}</th>      <td>${list(net_el_output)[reactor_i]} MWe</td></tr>
+        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.construction_phase')}</th>      <td>${list(construction_phase)[reactor_i]}</td></tr>
+        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.operation_phase')}</th>      <td>${list(operation_phase)[reactor_i]}</td></tr>
+        <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.decontamination_phase')}</th>      <td>${list(decontamination_phase)[reactor_i]}</td></tr>
     % endfor
     </table>
     <div class="thumbnail-container">
