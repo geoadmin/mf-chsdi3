@@ -10,11 +10,6 @@ import unidecode
 from decimal import Decimal
 from past.utils import old_div
 
-try:
-    from StringIO import StringIO
-except ImportError:
-    from io import StringIO
-
 from six.moves import zip, reduce, zip_longest
 from itertools import chain
 
@@ -37,7 +32,11 @@ except ImportError:
 import xml.etree.ElementTree as etree
 from pyproj import Proj, transform as proj_transform
 from requests.exceptions import ConnectionError, Timeout, RequestException
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
+# TODO: clean-up when only Python 3.x and no longer 2.x is in use
+try:
+    from requests.packages.urllib3.exceptions import InsecureRequestWarning
+except ImportError:
+    from urllib3.exceptions import InsecureRequestWarning
 from shapely.ops import transform as shape_transform
 from shapely.wkt import dumps as shape_dumps, loads as shape_loads
 from shapely.geometry.base import BaseGeometry
@@ -460,17 +459,12 @@ def float_raise_nan(val):
 
 def parse_box2d(stringBox2D):
     extent = stringBox2D.replace('BOX(', '').replace(')', '').replace(',', ' ')
-    # Python2/3
-    box = map(float, extent.split(' '))
-    if not isinstance(box, list):
-        box = list(box)
+    # TODO: clean-up when only Python 3.x and no longer 2.x is in use
+    box = list(map(float, extent.split(' ')))
     return box
 
 
-def is_box2d(box2D):
-    # Python2/3
-    if not isinstance(box2D, list):
-        box2D = list(box2D)
+def validate_box2d(box2D):
     # Bottom left to top right only
     if len(box2D) != 4 or box2D[0] > box2D[2] or box2D[1] > box2D[3]:
         raise ValueError('Invalid box2D.')
@@ -478,7 +472,7 @@ def is_box2d(box2D):
 
 
 def center_from_box2d(box2D):
-    box2D = is_box2d(box2D)
+    box2D = validate_box2d(box2D)
     return [
         box2D[0] + ((box2D[2] - box2D[0]) / 2),
         box2D[1] + ((box2D[3] - box2D[1]) / 2)
@@ -537,7 +531,7 @@ def format_scale(scale):
     scale_str = str(scale)
     n = ''
     while len(scale_str) > 3:
-        # Python2/3
+        # TODO: clean-up when only Python 3.x and no longer 2.x is in use
         scale_prov = old_div(int(float(scale_str)), 1000)
         n = n + "'000"
         scale_str = str(scale_prov)
@@ -563,7 +557,7 @@ def get_loaderjs_url(request, version='3.6.0'):
 
 def decompress_gzipped_string(streaming_body):
     if six.PY2:
-        string_file = StringIO(streaming_body.read())
+        string_file = six.StringIO(streaming_body.read())
         gzip_file = gzip.GzipFile(fileobj=string_file, mode='r', compresslevel=5)
         return gzip_file.read().decode('utf-8')
     else:

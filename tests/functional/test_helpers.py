@@ -16,10 +16,8 @@ from shapely.geometry import Point, Polygon
 from shapely.geometry import mapping
 from numpy.testing import assert_almost_equal
 
-try:
-    from urlparse import urljoin
-except ImportError:
-    from urllib.parse import urljoin
+# TODO: clean-up when only Python 3.x and no longer 2.x is in use
+from six.moves.urllib.parse import urljoin
 
 
 class Test_Helpers(unittest.TestCase):

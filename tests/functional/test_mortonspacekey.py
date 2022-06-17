@@ -174,4 +174,4 @@ class Test_QuadTree(unittest.TestCase):
         self._test_compare_with_bbox(msk.BBox(660000.1, 30000.1, 899999.9, 269999.9))
         self._test_compare_with_bbox(msk.BBox(660000.1, 30000.1, 899999.1, 269999.1))
 
-        map(lambda x: self._test_compare_with_bbox(self.randBBox()), range(20))
+        list(map(lambda x: self._test_compare_with_bbox(self.randBBox()), list(range(20))))

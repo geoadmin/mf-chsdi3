@@ -11,6 +11,7 @@ def full_text_search(query, ormColumns, searchText):
     def ilike_search(col):
         if col is not None:
             return cast(col, Text).ilike('%%%s%%' % searchText)
+    # TODO: clean-up when only Python 3.x and no longer 2.x is in use
     return query.filter(or_(
         *map(ilike_search, ormColumns)
     ))

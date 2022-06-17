@@ -10,6 +10,8 @@ from papyrus.renderers import GeoJSON
 
 from chsdi.renderers import EsriJSON, CSVRenderer
 from chsdi.models import initialize_sql
+# TODO: clean-up when only Python 3.x and no longer 2.x is in use
+import six
 
 
 def db(request):
@@ -35,7 +37,8 @@ def add_cors_route(config, pattern, service, headers=None, methods=[]):
         response.headers['Access-Control-Allow-Methods'] = ','.join(
             allowed_methods + methods)
         if headers is not None:
-            for k, v in headers.iteritems():
+            # TODO: clean-up when only Python 3.x and no longer 2.x is in use
+            for k, v in six.iteritems(headers):
                 response.headers[k] = v
         return response
 

@@ -490,7 +490,8 @@ class Search(SearchValidation):
         try:
             box2d = res['geom_st_box2d']
             box_str = box2d[4:-1]
-            b = map(float, re.split(' |,', box_str))
+            # TODO: clean-up when only Python 3.x and no longer 2.x is in use
+            b = list(map(float, re.split(' |,', box_str)))
             shape = box(*b)
             bbox = transform_shape(shape, self.DEFAULT_SRID, self.srid).bounds
             res['geom_st_box2d'] = "BOX({} {},{} {})".format(*bbox)
@@ -503,7 +504,7 @@ class Search(SearchValidation):
         if not self.returnGeometry:
             attrs2Del = ['x', 'y', 'lon', 'lat', 'geom_st_box2d']
             popAtrrs = lambda x: res.pop(x) if x in res else x
-            # Python2/3
+            # TODO: clean-up when only Python 3.x and no longer 2.x is in use
             if six.PY2:
                 map(popAtrrs, attrs2Del)
             else:
