@@ -245,8 +245,7 @@ class DosisleistungTerrestrisch(Base, Vector):
 register('ch.swisstopo.geologie-dosisleistung-terrestrisch', DosisleistungTerrestrisch)
 
 
-class Landesschwerenetz(Base, Vector):
-    __tablename__ = 'landesschwerenetz'
+class Landesschwerenetz:
     __table_args__ = ({'schema': 'fida', 'autoload': False})
     __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
     __bodId__ = 'ch.swisstopo.landesschwerenetz'
@@ -270,7 +269,20 @@ class Landesschwerenetz(Base, Vector):
     link_lfp_url = Column('link_lfp', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.landesschwerenetz', Landesschwerenetz)
+
+class LandesschwerenetzZoom1(Base, Landesschwerenetz, Vector):
+    __tablename__ = 'landesschwerenetz'
+    __minscale__ = 1
+    __maxscale__ = 3000
+
+
+class LandesschwerenetzZoom2(Base, Landesschwerenetz, Vector):
+    __tablename__ = 'landesschwerenetz_overview'
+    __minscale__ = 3000
+
+
+register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom1)
+register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom2)
 
 
 class GravimetrischerAtlasMesspunkte(Base, Vector):
