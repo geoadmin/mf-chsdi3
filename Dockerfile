@@ -64,12 +64,14 @@ ARG GIT_BRANCH=unknown
 ARG GIT_DIRTY=unknown
 ARG VERSION=unknown
 ARG AUTHOR=unknown
+ARG APP_VERSION=unknown
 
 LABEL git.hash=$GIT_HASH
 LABEL git.branch=$GIT_BRANCH
 LABEL git.dirty=$GIT_DIRTY
 LABEL version=$VERSION
 LABEL author=$AUTHOR
+LABEL app_version=$APP_VERSION
 
 # NOTE: Here below we cannot use environment variable with ENTRYPOINT using the `exec` form.
 # The ENTRYPOINT `exec` form is required in order to use the docker-entrypoint.sh as first

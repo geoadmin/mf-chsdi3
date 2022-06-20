@@ -36,7 +36,6 @@ phases:
       - echo "Login to AWS ECR docker registry"
       - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${DOCKER_REGISTRY}
 
-
   pre_build:
     commands:
       - echo "=========== Configuring stuff ====="
@@ -143,6 +142,7 @@ phases:
         --build-arg GIT_BRANCH="${GIT_BRANCH}"
         --build-arg GIT_DIRTY="${GIT_DIRTY}"
         --build-arg AUTHOR="CI"
+        --build-arg APP_VERSION="${APP_VERSION}"
         --build-arg VERSION="${GIT_TAG}"
         -t "${DOCKER_IMG_TAG}" -t "${DOCKER_IMG_TAG_LATEST}" .
       - echo Build completed on $(date)
@@ -165,5 +165,5 @@ phases:
 reports:
   reportGroupJunit:
     files:
-      - 'junit-reports/**/*'
+      - "junit-reports/**/*"
     file-format: JunitXml
