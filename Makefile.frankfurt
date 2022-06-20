@@ -77,7 +77,8 @@ GIT_HASH_SHORT=$(shell git rev-parse --short HEAD)
 GIT_BRANCH=$(shell git symbolic-ref HEAD --short 2>/dev/null)
 GIT_DIRTY=$(shell git status --porcelain)
 GIT_TAG=$(shell git describe --tags || echo "no version info")
-DOCKER_IMG_LOCAL_TAG=$(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_HASH_SHORT)
+DOCKER_IMAGE_TAG ?= local-$(USER)-$(GIT_HASH_SHORT)
+DOCKER_IMG_LOCAL_TAG_PATH = $(DOCKER_REGISTRY)/$(SERVICE_NAME):$(DOCKER_IMAGE_TAG)
 GIT_COMMIT_DATE ?= $(shell git log -1  --date=iso --pretty=format:%cd)
 
 # Colors
@@ -142,10 +143,11 @@ help:
 	@echo
 	@echo -e "\033[1mDocker TARGETS\033[0m "
 	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
-	@echo "- dockerbuild        Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
-	@echo "- dockerrun          Run the project within docker localy (with tag := $(DOCKER_IMG_LOCAL_TAG)) on port $(APACHE_PORT)"
-	@echo "- dockerrun-shell    Run the project within docker localy (with tag := $(DOCKER_IMG_LOCAL_TAG)) on port $(APACHE_PORT)"
-	@echo "- dockerpush         Build and push the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
+	@echo "- dockerbuild        Build the project localy (with tag := $(DOCKER_IMAGE_TAG))"
+	@echo "- dockerrun          Run the project within docker localy (with tag := $(DOCKER_IMAGE_TAG)) on port $(APACHE_PORT)"
+	@echo "- dockerrun-shell    Run the project within docker localy (with tag := $(DOCKER_IMAGE_TAG)) on port $(APACHE_PORT)"
+	@echo "- dockerpush         Build and push the project localy (with tag := $(DOCKER_IMAGE_TAG))"
+	@echo "- dockerpull         Pull the docker image with tag $(DOCKER_IMAGE_TAG))"
 	@echo
 	@echo -e "\033[1mCLEANING TARGETS\033[0m "
 	@echo "- clean              Remove generated files"
@@ -161,7 +163,7 @@ help:
 	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
 	@echo "S3_TESTS:            ${S3_TESTS}"
 	@echo "DOCKER_REGISTRY      ${DOCKER_REGISTRY}"
-	@echo "DOCKER_IMG_LOCAL_TAG ${DOCKER_IMG_LOCAL_TAG}"
+	@echo "DOCKER_IMAGE_TAG     ${DOCKER_IMAGE_TAG}"
 	@echo
 
 
@@ -259,7 +261,7 @@ dockerbuild: build
 		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
 		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
 		--build-arg VERSION="$(GIT_TAG)" \
-		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG)  -f Dockerfile .
+		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG_PATH) -f Dockerfile .
 
 
 .PHONY: dockerrun
@@ -271,7 +273,7 @@ dockerrun: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
 	    --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
 		--env APP_VERSION="$(GIT_TAG)" \
-		$(DOCKER_IMG_LOCAL_TAG)
+		$(DOCKER_IMG_LOCAL_TAG_PATH)
 
 
 .PHONY: dockerrun-shell
@@ -284,12 +286,17 @@ dockerrun-shell: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
 		--env APP_VERSION="$(GIT_TAG)" \
 		--entrypoint /bin/sh \
-		$(DOCKER_IMG_LOCAL_TAG)
+		$(DOCKER_IMG_LOCAL_TAG_PATH)
 
 
 .PHONY: dockerpush
 dockerpush:
-	docker push $(DOCKER_IMG_LOCAL_TAG)
+	docker push $(DOCKER_IMG_LOCAL_TAG_PATH)
+
+
+.PHONY: dockerpull
+dockerpull:
+	docker pull $(DOCKER_IMG_LOCAL_TAG_PATH)
 
 
 .PHONY: test
