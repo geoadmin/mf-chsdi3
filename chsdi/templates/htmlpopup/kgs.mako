@@ -15,18 +15,19 @@
     <%
         c['stable_id'] = True
         objarts = c['attributes']['objektart'].split(',')
-        gemeinde_ehemalig = c['attributes']['gemeinde_ehemalig'] if c['attributes']['gemeinde_ehemalig'].startswith("(") else "("+c['attributes']['gemeinde_ehemalig']+")"
+        gemeinde_ehemalig = c['attributes']['gemeinde_ehemalig'] if str(c['attributes']['gemeinde_ehemalig']).startswith("(") else "("+c['attributes']['gemeinde_ehemalig']+")"
         import csv
         dataGeoAdminHost = request.registry.settings['datageoadminhost']
         csv_url = "https://" + dataGeoAdminHost + "/" + c['layerBodId']  + "/image/meta.txt"
         csv_file = None
+        # TODO python2 clean-up
         try:
             from urllib2 import urlopen
             csv_file = urlopen(csv_url)
             reader = csv.reader(csv_file, delimiter =';')  # creates the reader object
-            csv_file.close()
             next(reader) # Skip header
             pic_list = [map(lambda x: x.decode("utf-8"), row) for row in reader if int(row[0]) == c['featureId']]
+            csv_file.close()
         except ImportError:
             # Python3 fallback
             from urllib.request import urlopen

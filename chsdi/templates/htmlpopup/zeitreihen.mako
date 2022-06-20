@@ -41,6 +41,7 @@ def get_viewer_url(request, params):
         'release_year': params[6]
     }
     # Python2/3
+    # TODO python2 clean-up
     if six.PY3:
       return h.make_agnostic(route_url('historicalmaps', request)) + '?' + urllib.parse.urlencode(f)
     else:

@@ -49,6 +49,7 @@ def get_viewer_url(request, params):
         'rotation': params[7]
     }
     # Python2/3
+    # TODO python2 clean-up
     if six.PY3:
       return h.make_agnostic(route_url('luftbilder', request)) + '?' + urllib.parse.urlencode(f)
     else:
