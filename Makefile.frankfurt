@@ -201,7 +201,7 @@ set-app_version:
 	export PYTHON_VERSION="$(PYTHON_VERSION)" && \
 	export CURRENT_DATE="$(CURRENT_DATE)" && \
 	envsubst < info.json.in > chsdi/static/info.json && \
-	envsubst < app_version.ini.in > app_version.ini
+	envsubst < base_version.ini.in > base_version.ini
 
 
 .PHONY: config-templates
@@ -388,7 +388,7 @@ guard-%:
 
 .PHONY: clean
 clean:
-	rm -f app_version.ini
+	rm -f base_version.ini
 	rm -f base.ini
 	rm -f production.ini
 	rm -f development.ini
