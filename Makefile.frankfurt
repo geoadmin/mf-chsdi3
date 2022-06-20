@@ -72,14 +72,15 @@ AUTHOR=$(USER)
 DATAGEOADMINHOST ?= data.geo.admin.ch
 
 # Git metadata
-GIT_HASH=$(shell git rev-parse HEAD)
-GIT_HASH_SHORT=$(shell git rev-parse --short HEAD)
-GIT_BRANCH=$(shell git symbolic-ref HEAD --short 2>/dev/null)
-GIT_DIRTY=$(shell git status --porcelain)
-GIT_TAG=$(shell git describe --tags || echo "no version info")
+GIT_HASH ?= $(shell git rev-parse HEAD)
+GIT_HASH_SHORT ?= $(shell git rev-parse --short HEAD)
+GIT_BRANCH ?= $(shell git symbolic-ref HEAD --short 2>/dev/null)
+GIT_DIRTY ?= $(shell git status --porcelain)
+GIT_TAG ?= $(shell git describe --tags || echo "no version info")
+GIT_COMMIT_DATE ?= $(shell git log -1  --date=iso --pretty=format:%cd)
 DOCKER_IMAGE_TAG ?= local-$(USER)-$(GIT_HASH_SHORT)
 DOCKER_IMG_LOCAL_TAG_PATH = $(DOCKER_REGISTRY)/$(SERVICE_NAME):$(DOCKER_IMAGE_TAG)
-GIT_COMMIT_DATE ?= $(shell git log -1  --date=iso --pretty=format:%cd)
+APP_VERSION=$(GIT_TAG)
 
 # Colors
 ifneq ($(shell echo ${TERM}),)
@@ -188,26 +189,27 @@ $(VENV): requirements-py3.txt
 
 
 .PHONY: build
-build: doc translate chsdi/static/css/extended.min.css rss chsdi/static/info.json
+build: doc translate chsdi/static/css/extended.min.css rss set-app_version
 
-.PHONY: chsdi/static/info.json
-chsdi/static/info.json:
-	export APP_VERSION="$(GIT_TAG)" && \
+.PHONY: set-app_version
+set-app_version:
+	export APP_VERSION="$(APP_VERSION)" && \
 	export GIT_BRANCH="$(GIT_BRANCH)" && \
 	export GIT_HASH_SHORT="$(GIT_HASH_SHORT)" && \
 	export GIT_COMMIT_DATE="$(GIT_COMMIT_DATE)" && \
 	export GIT_HASH="$(GIT_HASH)" && \
 	export PYTHON_VERSION="$(PYTHON_VERSION)" && \
 	export CURRENT_DATE="$(CURRENT_DATE)" && \
-	envsubst < info.json.in > chsdi/static/info.json
+	envsubst < info.json.in > chsdi/static/info.json && \
+	envsubst < app_version.ini.in > app_version.ini
 
 
 .PHONY: config-templates
-config-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD chsdi/static/info.json
+config-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_version
 # FIXME: nosetests is still using development.ini
 	export $(shell cat $(ENV_FILE)) && \
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
-	export APP_VERSION="$(GIT_TAG)" && \
+	export APP_VERSION="$(APP_VERSION)" && \
 	export DATAGEOADMINHOST="$(DATAGEOADMINHOST)" && \
 	envsubst < base.ini.in > base.ini && \
 	envsubst < dev.ini.in > development.ini && \
@@ -240,12 +242,12 @@ legends: $(VENV) guard-BODID guard-WMSHOST
 
 
 .PHONY: serve
-serve: $(VENV) config-templates
+serve: $(VENV) config-templates set-app_version
 	PYTHONPATH=${PYTHONPATH} ${PSERVE} development.ini --reload
 
 
 .PHONY: shell
-shell: $(VENV) config-templates
+shell: $(VENV) config-templates set-app_version
 	PYTHONPATH=${PYTHONPATH} ${PSHELL} development.ini
 
 
@@ -386,6 +388,7 @@ guard-%:
 
 .PHONY: clean
 clean:
+	rm -f app_version.ini
 	rm -f base.ini
 	rm -f production.ini
 	rm -f development.ini

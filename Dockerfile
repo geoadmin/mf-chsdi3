@@ -14,9 +14,9 @@ ENV GROUP geodata
 RUN apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --upgrade ca-certificates \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y  \
-        libgeos-dev \
-        gettext-base \
-        apache2 libapache2-mod-wsgi-py3 \
+    libgeos-dev \
+    gettext-base \
+    apache2 libapache2-mod-wsgi-py3 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd --gid 2500 ${GROUP} \
@@ -32,26 +32,26 @@ COPY --chown=${USER}:${GROUP} 90-chsdi3.conf    /var/www/vhosts/${VHOST}/conf/
 RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
     && a2enconf fqdn \
     && a2enmod \
-        auth_basic \
-        authz_groupfile \
-        autoindex \
-        dir \
-        env \
-        expires \
-        filter \
-        headers \
-        http2 \
-        include \
-        mpm_event \
-        negotiation \
-        proxy \
-        proxy_http \
-        proxy_http2 \
-        rewrite \
-        setenvif \
-        status \
-        wsgi \
-        alias
+    auth_basic \
+    authz_groupfile \
+    autoindex \
+    dir \
+    env \
+    expires \
+    filter \
+    headers \
+    http2 \
+    include \
+    mpm_event \
+    negotiation \
+    proxy \
+    proxy_http \
+    proxy_http2 \
+    rewrite \
+    setenvif \
+    status \
+    wsgi \
+    alias
 
 COPY --chown=${USER}:${GROUP} . /var/www/vhosts/${VHOST}/private/chsdi
 WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
@@ -64,12 +64,14 @@ ARG GIT_BRANCH=unknown
 ARG GIT_DIRTY=unknown
 ARG VERSION=unknown
 ARG AUTHOR=unknown
+ARG APP_VERSION=unknown
 
 LABEL git.hash=$GIT_HASH
 LABEL git.branch=$GIT_BRANCH
 LABEL git.dirty=$GIT_DIRTY
 LABEL version=$VERSION
 LABEL author=$AUTHOR
+LABEL app_version=$APP_VERSION
 
 # NOTE: Here below we cannot use environment variable with ENTRYPOINT using the `exec` form.
 # The ENTRYPOINT `exec` form is required in order to use the docker-entrypoint.sh as first

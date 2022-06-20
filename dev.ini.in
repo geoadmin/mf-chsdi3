@@ -5,8 +5,7 @@
 # Use this file exclusively on docker/frankfurt/python3 and k8s dev environment
 
 [app:main]
-use = config:base.ini
-app_version = ${APP_VERSION}
+use = config:app_version.ini
 
 pyramid.reload_templates = true
 pyramid.debug_authorization = true
