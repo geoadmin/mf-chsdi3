@@ -61,10 +61,23 @@ keys = console
 class = StreamHandler
 args = (sys.stdout,)
 level = DEBUG
-formatter = generic
+formatter = json
 
 [formatters]
-keys = generic
+keys = generic, json
 
 [formatter_generic]
 format = %(asctime)s %(levelname)-5.5s [%(name)s][%(threadName)s] %(message)s
+
+[formatter_json]
+class = logging_utilities.formatters.json_formatter.JsonFormatter
+format: {
+        "time": "asctime",
+        "level": "levelname",
+        "logger": "name",
+        "module": "module",
+        "function": "funcName",
+        "pid_tid": "%(process)x/%(thread)x",
+        "message": "message",
+        "exc_info": "exc_info"
+    }
