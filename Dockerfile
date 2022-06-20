@@ -14,9 +14,9 @@ ENV GROUP geodata
 RUN apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --upgrade ca-certificates \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y  \
-    libgeos-dev \
-    gettext-base \
-    apache2 libapache2-mod-wsgi-py3 \
+        libgeos-dev \
+        gettext-base \
+        apache2 libapache2-mod-wsgi-py3 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd --gid 2500 ${GROUP} \
@@ -32,26 +32,26 @@ COPY --chown=${USER}:${GROUP} 90-chsdi3.conf    /var/www/vhosts/${VHOST}/conf/
 RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
     && a2enconf fqdn \
     && a2enmod \
-    auth_basic \
-    authz_groupfile \
-    autoindex \
-    dir \
-    env \
-    expires \
-    filter \
-    headers \
-    http2 \
-    include \
-    mpm_event \
-    negotiation \
-    proxy \
-    proxy_http \
-    proxy_http2 \
-    rewrite \
-    setenvif \
-    status \
-    wsgi \
-    alias
+        auth_basic \
+        authz_groupfile \
+        autoindex \
+        dir \
+        env \
+        expires \
+        filter \
+        headers \
+        http2 \
+        include \
+        mpm_event \
+        negotiation \
+        proxy \
+        proxy_http \
+        proxy_http2 \
+        rewrite \
+        setenvif \
+        status \
+        wsgi \
+        alias
 
 COPY --chown=${USER}:${GROUP} . /var/www/vhosts/${VHOST}/private/chsdi
 WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
