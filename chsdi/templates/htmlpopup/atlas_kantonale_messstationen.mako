@@ -71,9 +71,9 @@
   <tr>
     <td class="cell-left">${_('ch.bafu.hydrologischer-atlas_kantonale-messstationen.einzugsgebietsflaeche')}</td>
     % if c['attributes']['einzugsgebietsflaeche']:
-      <td>${round(c['attributes']['einzugsgebietsflaeche'], 2)}</td>
+      <td class="cell-meta">${round(c['attributes']['einzugsgebietsflaeche'], 2)}</td>
     % else:
-      <td>-</td>
+      <td class="cell-meta">-</td>
     % endif
   </tr>
   <tr>
