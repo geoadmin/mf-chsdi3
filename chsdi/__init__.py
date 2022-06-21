@@ -11,6 +11,7 @@ from papyrus.renderers import GeoJSON
 from chsdi.renderers import EsriJSON, CSVRenderer
 from chsdi.models import initialize_sql
 
+import logging
 
 def db(request):
     maker = request.registry.dbmaker

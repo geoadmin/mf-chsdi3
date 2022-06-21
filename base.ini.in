@@ -118,7 +118,7 @@ format: {
         "logger": "name",
         "module": "module",
         "function": "funcName",
-        "pid_tid": "%(process)x/%(thread)x",
+        "pid_tid": "%(process)d/%(thread)d",
         "message": "message",
         "exc_info": "exc_info"
     }

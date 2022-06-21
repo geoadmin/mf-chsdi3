@@ -3,6 +3,20 @@
 # Managed by Puppet
 # ************************************
 
+# # Use JSON format for logs
+# ErrorLogFormat "{\"time\":\"%{cu}tZ\", \"level\":\"%l\", \"pid_tid\":\"%P/%T\", \"request_id\":\"%L\", \"message\":\"%M\"}"
+# LogFormat "{\"time\":\"%{%Y-%m-%dT%T}t.%{usec_frac}tZ\", \"level\":\"INFO\", \"pid_tid\":\"%P/%T\", \"request\":{\"method\":\"%m\", \"path\":\"%U\", \"query_string\":\"%q\", \"error_log_id\":\"%L\"}, \"response\":{\"status\":\"%>s\", \"elapsed_time_ms\":\"%{ms}T\"}}" common
+
+# # Write log to stderr
+# ErrorLog /dev/stdout
+
+# Write access log to stdout
+# GlobalLog /dev/stdout common
+
+LogFormat "{\"time\": \"%{%Y-%m-%dT%T}t.%{usec_frac}tZ\", \"level\": \"INFO\", \"pid_tid\": \"%P/%T\", \"request_id\": \"%L\", \"request\": {\"method\": \"%m\", \"path\": \"%U\", \"query_string\": \"%q\", \"response\": {\"status\": \"%>s\", \"elapsed_time_ms\": \"%{ms}T\"}}" common
+CustomLog /dev/stdout common
+LogLevel ${APACHE_LOG_LEVEL}
+
 <VirtualHost *:${APACHE_PORT}>
   # ServerName mf-chsdi3
 
@@ -30,10 +44,12 @@
   Include "/var/www/vhosts/mf-chsdi3/conf/*.conf"
 
   ## Logging
-  ServerSignature Off
-  LogLevel ${APACHE_LOG_LEVEL}
+  ErrorLogFormat "{\"time\":\"%{cu}tZ\", \"pid_tid\":\"%P/%T\", \"request_id\":\"%L\", \"appache_log_level\":\"%l\", \"module\":\"%m\", \"message\":\"%M\"}"
+  ErrorLogFormat request "{\"time\":\"%{cu}tZ\", \"request_id\":\"%L\", \"headers\": {\"User-Agent\":\"%{User-Agent}i\", \"Referer\":\"%{Referer}i\", \"Origin\":\"%{Origin}i\"}}"
+  LogLevel error
   ErrorLog /dev/stdout
-  CustomLog /dev/stdout  combined
+  ServerSignature Off
+
 
   ## Script alias directives
   ScriptAlias /cgi-bin "/var/www/vhosts/mf-chsdi3/cgi-bin/"
