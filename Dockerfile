@@ -28,6 +28,10 @@ RUN apt-get update -qq \
     && mkdir -p /var/www/vhosts/${VHOST}/logs \
     && pip3 install -q --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL}
 
+# FIXME: use pipenv
+COPY requirements-py3.txt .
+RUN pip3 install -r requirements-py3.txt --index-url ${PYPI_URL}
+
 COPY --chown=${USER}:${GROUP} 90-chsdi3.conf    /var/www/vhosts/${VHOST}/conf/
 RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
     && a2enconf fqdn \
@@ -56,8 +60,7 @@ RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
 COPY --chown=${USER}:${GROUP} . /var/www/vhosts/${VHOST}/private/chsdi
 WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
 
-# FIXME: use pipenv
-RUN pip3 install -q -r requirements-py3.txt --index-url ${PYPI_URL} -e .
+RUN pip3 install -e .
 
 ARG GIT_HASH=unknown
 ARG GIT_BRANCH=unknown
