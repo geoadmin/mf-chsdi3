@@ -42,5 +42,5 @@ More examples of use are available on the `API Examples <https://api3.geo.admin.
 Other useful links:
 
 - `GeoAdmin API documentation <http://geoadmin.github.io/ol3/apidoc/>`_
-- `OpenLayers API documentation <https://openlayers.org/en/latest/doc/>`_
+- OpenLayers API documentation: for `version 3 <https://openlayers.org/en/v3.20.1/doc/>`_ or `version 4 <https://openlayers.org/en/v4.6.5/doc/>`_
 
