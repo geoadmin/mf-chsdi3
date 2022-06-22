@@ -68,44 +68,4 @@ dynamic_translation = ${DYNAMIC_TRANSLATION}
 [server:main]
 use = egg:waitress#main
 host = 0.0.0.0
-port = 6543
-
-###
-# logging configuration
-# http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/logging.html
-###
-
-[loggers]
-keys = root, chsdi, sqlalchemy
-
-[logger_root]
-level = INFO
-handlers = console
-
-[logger_chsdi]
-level = INFO
-handlers = console
-qualname = chsdi
-
-[logger_sqlalchemy]
-level = WARN
-handlers = console
-qualname = sqlalchemy.engine
-# "level = INFO" logs SQL queries.
-# "level = DEBUG" logs SQL queries and results.
-# "level = WARN" logs neither.  (Recommended for production systems.)
-
-[handlers]
-keys = console
-
-[handler_console]
-class = StreamHandler
-args = (sys.stdout,)
-level = INFO
-formatter = generic
-
-[formatters]
-keys = generic
-
-[formatter_generic]
-format = %(asctime)s %(levelname)-5.5s [%(name)s][%(threadName)s] %(message)s
+port = ${SERVER_PORT}

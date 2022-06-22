@@ -8,6 +8,9 @@ ENV PROJDIR=/var/www/vhosts/${VHOST}/private/${PROJ}
 ENV USER geodata
 ENV GROUP geodata
 
+# Setup default logging levels
+ENV APACHE_LOG_LEVEL=info PY_ROOT_LOG_LEVEL=INFO PY_CHSDI_LOG_LEVEL=INFO PY_SQLALCHEMY_LOG_LEVEL=WARNING
+
 # REQUIREMENTS NOTE:
 #  - gettext-base is required for envsubst in docker-entrypoint.sh
 #  - libgeos-dev is required by shapely python package
