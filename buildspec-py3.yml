@@ -43,7 +43,7 @@ phases:
       - export GIT_BRANCH="${CODEBUILD_WEBHOOK_HEAD_REF#refs/heads/}"
       - export GIT_BASE_BRANCH="${CODEBUILD_WEBHOOK_BASE_REF#refs/heads/}"
       - export GIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - export GIT_TAG="$(git describe --tags || echo 'unknown')"
+      - export GIT_TAG="$(git describe --tags --dirty || echo 'unknown')"
       - export GIT_DIRTY="$(git status --porcelain)"
       # When build are manually triggered by a user, the CODEBUILD_WEBHOOK_HEAD_REF is not
       # set resulting to an empty GIT_BRANCH. Usually Codebuild don't checkout the branch but
@@ -142,7 +142,6 @@ phases:
         --build-arg GIT_BRANCH="${GIT_BRANCH}"
         --build-arg GIT_DIRTY="${GIT_DIRTY}"
         --build-arg AUTHOR="CI"
-        --build-arg APP_VERSION="${APP_VERSION}"
         --build-arg VERSION="${GIT_TAG}"
         -t "${DOCKER_IMG_TAG}" -t "${DOCKER_IMG_TAG_LATEST}" .
       - echo Build completed on $(date)

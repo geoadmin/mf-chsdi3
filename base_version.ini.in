@@ -1,5 +1,0 @@
-# this is a separate file, as the app_version is not supposed to be set at runtime
-[app:main]
-use = config:base.ini
-app_version=${APP_VERSION}
-

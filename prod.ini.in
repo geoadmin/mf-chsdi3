@@ -5,7 +5,7 @@
 # Use this file exclusively on docker/frankfurt/python3 and k8s int and prod environment
 
 [app:main]
-use = config:base_version.ini
+use = config:base.ini
 
 ###
 # wsgi server configuration
