@@ -42,7 +42,6 @@ def get_file_from_bucket(bucket_name, file_name):
         error_tpl = "Bucket (%s) or file (%s) not valids. \n%s"
         log.error(error_tpl % (bucket_name, file_name, e))
         raise exc.HTTPInternalServerError(error_tpl % (anonymize_string(bucket_name, length = 5), file_name, e))
-        return e
     return response
 
 
