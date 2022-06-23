@@ -8,6 +8,9 @@ ENV PROJDIR=/var/www/vhosts/${VHOST}/private/${PROJ}
 ENV USER geodata
 ENV GROUP geodata
 
+# Setup default logging levels
+ENV APACHE_LOG_LEVEL=info PY_ROOT_LOG_LEVEL=INFO PY_CHSDI_LOG_LEVEL=INFO PY_SQLALCHEMY_LOG_LEVEL=WARNING
+
 # REQUIREMENTS NOTE:
 #  - gettext-base is required for envsubst in docker-entrypoint.sh
 #  - libgeos-dev is required by shapely python package
@@ -27,6 +30,10 @@ RUN apt-get update -qq \
     && mkdir -p /var/www/vhosts/${VHOST}/htdocs \
     && mkdir -p /var/www/vhosts/${VHOST}/logs \
     && pip3 install -q --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL}
+
+# FIXME: use pipenv
+COPY requirements-py3.txt .
+RUN pip3 install -r requirements-py3.txt --index-url ${PYPI_URL}
 
 COPY --chown=${USER}:${GROUP} 90-chsdi3.conf    /var/www/vhosts/${VHOST}/conf/
 RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
@@ -56,8 +63,7 @@ RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
 COPY --chown=${USER}:${GROUP} . /var/www/vhosts/${VHOST}/private/chsdi
 WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
 
-# FIXME: use pipenv
-RUN pip3 install -q -r requirements-py3.txt --index-url ${PYPI_URL} -e .
+RUN pip3 install -e .
 
 ARG GIT_HASH=unknown
 ARG GIT_BRANCH=unknown
@@ -70,6 +76,10 @@ LABEL git.branch=$GIT_BRANCH
 LABEL git.dirty=$GIT_DIRTY
 LABEL version=$VERSION
 LABEL author=$AUTHOR
+
+# Substitute the version in the pylons configuration. Note because envsubst cannot do in place
+# substitution we use the tee tool to do the in place substitution.
+RUN APP_VERSION=$VERSION envsubst '${APP_VERSION}' < base.ini.in | tee base.ini.in > /dev/null
 
 # NOTE: Here below we cannot use environment variable with ENTRYPOINT using the `exec` form.
 # The ENTRYPOINT `exec` form is required in order to use the docker-entrypoint.sh as first

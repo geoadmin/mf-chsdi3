@@ -4,15 +4,16 @@
 <%
     import requests
     request = context.get('request')
-    defaultCoord = ['600000', '200000']
-    defaultBbox = ['600000', '200000', '650000', '250000']
+    defaultCoord = [600000.0, 200000.0]
+    defaultBbox = [600000.0, 200000.0, 650000.0, 250000.0]
+    defaultImageDisplay = [0, 0, 0]
     topic = request.matchdict.get('map')
     baseUrl = request.registry.settings['api_url']
 
     # generate getfeatureinfo request
-    coord_x, coord_y = [float(x) for x in request.params['coord'].split(",")] if request.params['coord'] else defaultCoord
-    bbox_xmin, bbox_ymin, bbox_xmax, bbox_ymax = [float(x) for x in request.params['mapExtent'].split(",")] if request.params['mapExtent'] else defaultBbox
-    imageDisplay = [int(x) for x in request.params['imageDisplay'].split(",")]
+    coord_x, coord_y = [float(x) for x in request.params['coord'].split(",")] if request.params.get('coord', False) else defaultCoord
+    bbox_xmin, bbox_ymin, bbox_xmax, bbox_ymax = [float(x) for x in request.params['mapExtent'].split(",")] if request.params.get('mapExtent', False) else defaultBbox
+    imageDisplay = [int(x) for x in request.params['imageDisplay'].split(",")] if request.params.get('imageDisplay', False) else defaultImageDisplay
     getfeatureinfo_x = int(((coord_x - bbox_xmin)/(bbox_xmax-bbox_xmin))*imageDisplay[0])
     getfeatureinfo_y = int(((bbox_ymax - coord_y)/(bbox_ymax-bbox_ymin))*imageDisplay[1])
 
@@ -27,8 +28,8 @@
     try:
         r = requests.get(url)
         response = r.content.decode('utf-8')
-        # Consider any status other than 2xx as error or mapserver 200 responses with MapServer Message in body
-        if not r.status_code // 100 == 2 or "MapServer Message" in r.content:
+        # Consider any status other than 200 as error or mapserver 200 responses with MapServer Message in body
+        if not r.status_code == 200 or "MapServer Message" in response:
             response = "invalid service repsonse:<br/>response: {}<br/>http status: {}<br/>Url: {}".format(response, r.status_code, url)
     except requests.exceptions.RequestException as e:
         # A serious problem happened, like an SSLError or InvalidURL

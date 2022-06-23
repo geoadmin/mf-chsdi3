@@ -1,24 +1,25 @@
 # -*- coding: utf-8 -*-
 
 import os
-import six
-from webtest import TestApp
-from webtest.app import AppError
-from unittest import skip
-from tests.integration import TestsBase, s3_tests
-from pyramid_mako import MakoRenderingException
-from PIL import Image
+import unittest
 from contextlib import contextmanager
+from unittest import SkipTest, skip
+
+import six
+from chsdi.models import models_from_bodid
+from chsdi.models.bod import LayersConfig
+from chsdi.models.grid import get_grid_spec
+from PIL import Image
 from pyramid.paster import get_app
+from pyramid_mako import MakoRenderingException
 from sqlalchemy import distinct
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.sql.expression import func
 from sqlalchemy.types import BigInteger
-
-from chsdi.models.bod import LayersConfig
-from chsdi.models import models_from_bodid
-from chsdi.models.grid import get_grid_spec
+from tests.integration import TestsBase, s3_tests
+from webtest import TestApp
+from webtest.app import AppError
 
 if six.PY3:
     long = int
@@ -91,7 +92,7 @@ class LayersChecker(object):
             if gridSpec is None and layer not in self.emptyGeoTables:
                 models = models_from_bodid(layer)
                 if not s3_tests and models is None:
-                    skip("No model found for layer <{}>".format(layer))
+                    raise SkipTest("Skip Layer, no model found for layer <{}>".format(layer))
                 assert (models is not None and len(models) > 0), layer
                 for model in models:
                     primaryKeyColumn = model.primary_key_column()
@@ -119,24 +120,28 @@ class LayersChecker(object):
                     if isinstance(self.nrOfFeatures, (int, long)):
                         query = query.limit(self.nrOfFeatures)
                     hasExtended = model.__extended_info__ if hasattr(model, '__extended_info__') else False
-                    for q in query:
-                        yield (layer, str(q[0]), hasExtended)
+                    try:
+                        for q in query:
+                            yield (layer, str(q[0]), hasExtended)
+                    except:
+                        raise ValueError("no table found for layer {}".format(layer))
 
     def checkHtmlPopup(self, layer, feature, extended):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
             link = '/rest/services/all/MapServer/' + layer + '/' + feature + '/htmlPopup?callback=cb_&lang=' + lang
             try:
-                resp = self.testapp.get(link)
+                resp = self.testapp.get(link, status=200)
                 assert resp.status_int == 200, link
-            except (AppError, AssertionError, MakoRenderingException):
-                skip("Skiping htmlPopup test for {}".format(layer))
+            except (AppError, AssertionError, MakoRenderingException) as error:
+                raise ValueError("Failed htmlPopup test for {} error: {}".format(link, error))
+
             if extended:
                 try:
                     link = link.replace('htmlPopup', 'extendedHtmlPopup')
-                    resp = self.testapp.get(link)
+                    resp = self.testapp.get(link, status=200)
                     assert resp.status_int == 200, link
-                except (AppError, AssertionError, MakoRenderingException):
-                    skip("Skiping extendedHtmlPopup for {}".format(layer))
+                except (AppError, AssertionError, MakoRenderingException) as error:
+                    raise ValueError("Failed extendedHtmlPopup for {} error: {}".format(link, error))
 
     def checkLegend(self, layer):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
@@ -152,7 +157,7 @@ class LayersChecker(object):
 
     def checkLegendImage(self, layer, legendsPath, legendImages):
         if legendImages is None:
-            skip("Skip checkLegendImage for layer <{}>".format(layer))
+            raise SkipTest("Skip checkLegendImage for layer <{}>".format(layer))
             return False
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
             key = layer + '_' + lang
@@ -168,8 +173,8 @@ class LayersChecker(object):
         models = models_from_bodid(layer)
         try:
             assert (models is not None and len(models) > 0), layer
-        except AssertionError:
-            self.skipTest("Cannot find model for layer {}".format(layer))
+        except AssertionError as error:
+            raise skipTest("Cannot find model for layer {} error: {}".format(layer, error))
         model = models[0]
         hasFeatures = True
         # Special treatment for non-distributed sphinx indices (single model)

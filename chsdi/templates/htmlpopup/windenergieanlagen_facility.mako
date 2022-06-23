@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-<%inherit file="base.mako"/> 
+<%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
 <tr>
@@ -15,7 +15,7 @@
   <td>${c['attributes']['fac_type_it'] or '-'}</td>
  % else:
   <td>${c['attributes']['fac_type_de'] or '-'}</td>
- %endif 
+ %endif
   </td>
 </tr>
 </%def>
@@ -39,7 +39,7 @@
  for tur in treeturb:
      turid=tur[0].text
      name=tur[1].text
-     alti=tur[2].text 
+     alti=tur[2].text
      leis = tur[3].text
      bauj = tur[4].text
      manu = tur[5].text
@@ -53,8 +53,8 @@
 %>
 <%
    import locale
-   locale.setlocale(locale.LC_ALL, 'fr_CH.utf-8')
-%>   
+   locale.setlocale(locale.LC_ALL, 'de_CH.utf8')
+%>
 <h3>${_('windenergieangaben')}</h3>
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
   <tr>
@@ -110,7 +110,7 @@ src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.windenergieanlagen/chart_${c
 % else:
 <h3> - </h3>
 % endif
-<h3> ${_('windturbinenangaben')}</h3>       
+<h3> ${_('windturbinenangaben')}</h3>
 <table class="table-with-border kernkraftwerke-extended" cellpadding="1">
    <colgroup>
       <col width=13%>
