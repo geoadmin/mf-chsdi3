@@ -158,7 +158,6 @@ class LayersChecker(object):
     def checkLegendImage(self, layer, legendsPath, legendImages):
         if legendImages is None:
             raise SkipTest("Skip checkLegendImage for layer <{}>".format(layer))
-            return False
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
             key = layer + '_' + lang
             images = [l for l in legendImages if l.startswith(key)]
@@ -174,7 +173,7 @@ class LayersChecker(object):
         try:
             assert (models is not None and len(models) > 0), layer
         except AssertionError as error:
-            raise skipTest("Cannot find model for layer {} error: {}".format(layer, error))
+            raise SkipTest("Cannot find model for layer {} error: {}".format(layer, error))
         model = models[0]
         hasFeatures = True
         # Special treatment for non-distributed sphinx indices (single model)
