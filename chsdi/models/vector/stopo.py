@@ -2534,7 +2534,7 @@ class GeologischerAtlasProfil(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas_profile'
     __label__ = 'id'
     __extended_info__ = True
-    id = Column('ga25_id', Integer, primary_key=True)
+    id = Column('ga25_id', Unicode, primary_key=True)
     ga25_name = Column('ga25_name', Unicode)
     ga25_no = Column('ga25_no', Integer)
     ga25_edition = Column('ga25_edition', Integer)
@@ -2720,7 +2720,7 @@ class HiksDufourMetadata(Base, Vector):
     __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-dufour.metadata'
-    id = Column('kbnum', Integer, primary_key=True)
+    id = Column('kbnum', Unicode, primary_key=True)
     name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
@@ -2732,7 +2732,7 @@ class HiksSiegfriedTa25Metadata(Base, Vector):
     __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta25.metadata'
-    id = Column('kbnum', Integer, primary_key=True)
+    id = Column('kbnum', Unicode, primary_key=True)
     name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
@@ -2744,7 +2744,7 @@ class HiksSiegfriedTa50Metadata(Base, Vector):
     __template__ = 'templates/htmlpopup/dufour_meta.mako'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.hiks-siegfried-ta50.metadata'
-    id = Column('kbnum', Integer, primary_key=True)
+    id = Column('kbnum', Unicode, primary_key=True)
     name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
