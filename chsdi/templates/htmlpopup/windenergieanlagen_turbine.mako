@@ -60,10 +60,6 @@
      statit=tur[11].text
      turbs.append((manu,mode,roto,hoeh,leis,bauj,statde,statfr,statit))
 %>
-<%
-   import locale
-   locale.setlocale(locale.LC_ALL, 'fr_CH.utf-8')
-%>   
 <h3>${_('windenergieangaben')}</h3>
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5" width=100%>
   <tr>
@@ -109,7 +105,7 @@
     </th>
   </tr>
 % for production in productions:
-      <tr><td>${production[0]}</td><td>${locale.format('%d',int(production[1]),1)} kWh</td></tr>
+      <tr><td>${production[0]}</td><td>${format( int(production[1]), ',').replace(',','\'')} kWh</td></tr>
 % endfor
 </table>
 <table class="table-with-border kernkraftwerke-extended" cellpadding="5">
