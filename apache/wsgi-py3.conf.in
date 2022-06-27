@@ -49,10 +49,14 @@ RedirectMatch ^${APACHE_ENTRY_PATH}$ ${APACHE_ENTRY_PATH}/
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^${APACHE_ENTRY_PATH}/static/info\.json         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
-# If URI has numbers at the start, we cache a year
+# Versioned URL rewrite:
+# If URI has a version string at the start, we cache a year
 # This allows a client to create their own cache and
-# update at his discretion
-RewriteRule ^${APACHE_ENTRY_PATH}/[0-9]+/(.*)$ ${APACHE_ENTRY_PATH}/$1 [E=${APACHE_BASE_PATH}setyearcache:true,PT]
+# update at his discretion.
+# REGEX explained:
+#  - \d{4}-\d{2}-\d{2}-rc\d+ => match milestone version string YYYY-MM-DD-rcX
+#  - (?:-[^/]*)? => match non official milestone versiont string YYYY-MM-DD-rcX-x-shorthas, (?:) is a non capturing group.
+RewriteRule ^${APACHE_ENTRY_PATH}/\d{4}-\d{2}-\d{2}-rc\d+(?:-[^/]*)?/(.*)$ ${APACHE_ENTRY_PATH}/$1 [E=${APACHE_BASE_PATH}setyearcache:true,PT]
 Header merge Cache-Control "max-age=31536013, public" env=${APACHE_BASE_PATH}setyearcache
 
 # Default cache#
