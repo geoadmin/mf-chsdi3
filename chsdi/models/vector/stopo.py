@@ -245,61 +245,44 @@ class DosisleistungTerrestrisch(Base, Vector):
 register('ch.swisstopo.geologie-dosisleistung-terrestrisch', DosisleistungTerrestrisch)
 
 
-class Landesschwerenetz(Base, Vector):
+class Landesschwerenetz:
+    __table_args__ = ({'schema': 'fida', 'autoload': False})
+    __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
+    __bodId__ = 'ch.swisstopo.landesschwerenetz'
+    __label__ = 'label_tt'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    nr_lsn2004 = Column('nr_lsn2004', Unicode)
+    name = Column('name', Unicode)
+    label_tt = Column('label', Unicode)
+    type = Column('type', Unicode)
+    lat_etrs = Column('lat_etrs', Numeric)
+    lon_etrs = Column('lon_etrs', Numeric)
+    y_lv95 = Column('y_lv95', Numeric)
+    x_lv95 = Column('x_lv95', Numeric)
+    h_ln02 = Column('h_ln02', Numeric)
+    gravity = Column('gravity', Numeric)
+    rms = Column('rms', Numeric)
+    vert_grad = Column('vertgrad', Numeric)
+    link_hfp_title = Column('linkhfptit', Unicode)
+    link_hfp_url = Column('link_hfp', Unicode)
+    link_lfp_title = Column('linklfptit', Unicode)
+    link_lfp_url = Column('link_lfp', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class LandesschwerenetzZoom1(Base, Landesschwerenetz, Vector):
     __tablename__ = 'landesschwerenetz'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
-    __bodId__ = 'ch.swisstopo.landesschwerenetz'
-    __label__ = 'label_tt'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    nr_lsn2004 = Column('nr_lsn2004', Unicode)
-    name = Column('name', Unicode)
-    label_tt = Column('label', Unicode)
-    type = Column('type', Unicode)
-    lat_etrs = Column('lat_etrs', Numeric)
-    lon_etrs = Column('lon_etrs', Numeric)
-    y_lv03 = Column('y_lv03', Numeric)
-    x_lv03 = Column('x_lv03', Numeric)
-    h_ln02 = Column('h_ln02', Numeric)
-    gravity = Column('gravity', Numeric)
-    rms = Column('rms', Numeric)
-    vert_grad = Column('vert_grad', Numeric)
-    link_hfp_title = Column('link_hfp_title', Unicode)
-    link_hfp_url = Column('link_hfp_url', Unicode)
-    link_lfp_title = Column('link_lfp_title', Unicode)
-    link_lfp_url = Column('link_lfp_url', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.landesschwerenetz', Landesschwerenetz)
-
-
-class LandesschwerenetzExt(Base, Vector):
-    __tablename__ = 'landesschwerenetz_exz'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
-    __bodId__ = 'ch.swisstopo.landesschwerenetz'
+    __minscale__ = 1
     __maxscale__ = 3000
-    __label__ = 'label_tt'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    nr_lsn2004 = Column('nr_lsn2004', Unicode)
-    name = Column('name', Unicode)
-    label_tt = Column('label', Unicode)
-    type = Column('type', Unicode)
-    lat_etrs = Column('lat_etrs', Numeric)
-    lon_etrs = Column('lon_etrs', Numeric)
-    y_lv03 = Column('y_lv03', Numeric)
-    x_lv03 = Column('x_lv03', Numeric)
-    h_ln02 = Column('h_ln02', Numeric)
-    gravity = Column('gravity', Numeric)
-    rms = Column('rms', Numeric)
-    vert_grad = Column('vert_grad', Numeric)
-    link_hfp_title = Column('link_hfp_title', Unicode)
-    link_hfp_url = Column('link_hfp_url', Unicode)
-    link_lfp_title = Column('link_lfp_title', Unicode)
-    link_lfp_url = Column('link_lfp_url', Unicode)
-    the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.landesschwerenetz', LandesschwerenetzExt)
+
+class LandesschwerenetzZoom2(Base, Landesschwerenetz, Vector):
+    __tablename__ = 'landesschwerenetz_overview'
+    __minscale__ = 3000
+
+
+register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom1)
+register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom2)
 
 
 class GravimetrischerAtlasMesspunkte(Base, Vector):
