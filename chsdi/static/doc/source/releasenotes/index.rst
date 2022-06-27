@@ -27,7 +27,9 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - Announcement:
-    -
+    - **ch.astra.mountainbikeland-sperrungen_umleitungen, ch.astra.skatingland-sperrungen_umleitungen, ch.astra.veloland-sperrungen_umleitungen and ch.astra.wanderland-sperrungen_umleitungen will get the following changes on their CHSDI data model with the release on September 7th 2022: **Attributes to be removed**: content_provider, reason, state_validate, type, url1_text. **Attributes to be added**: content_provider_de, content_provider_fr, content_provider_it, content_provider_en, reason_de, reason_fr, reason_it, reason_en, state_validate_de, state_validate_fr, state_validate_it, state_validate_en (all text instead of coded values), route_nr, segment_nr, type_de, type_fr, type_it, type_en
+    - **ch.swisstopo.uebersicht-gemeinden** and **ch.swisstopo.uebersicht-schweiz** have been removed from FSDI services as previously announced
+    - **ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2, ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2, ch.swisstopo.geologie-gisgeol-flaechen-10to100km2 ch.swisstopo.geologie-gisgeol-flaechen-10x10km, ch.swisstopo.geologie-gisgeol-flaechen-1x1km, ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2, ch.swisstopo.geologie-gisgeol-flaechen-lt10km2, ch.swisstopo.geologie-gisgeol-linien** and **ch.swisstopo.geologie-gisgeol-punkte** have been removed from FSDI services as previously announced
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-05-18-rc33...2022-06-29-rc1>`__
 
 `MAP <//map.geo.admin.ch>`__
