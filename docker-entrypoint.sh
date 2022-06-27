@@ -4,7 +4,6 @@
 : "${DBPORT:?Variable DBPORT not set or empty}"
 : "${PGUSER:?Variable PGUSER not set or empty}"
 
-echo "INSTALLDIR=${INSTALLDIR}"
 
 envsubst < base.ini.in > base.ini
 envsubst < dev.ini.in > development.ini

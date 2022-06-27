@@ -1,0 +1,10 @@
+{
+  "python":"${PYTHON_VERSION}",
+  "branch":"${GIT_BRANCH}",
+  "version": "${APP_VERSION}",
+  "dirty": "${GIT_DIRTY}",
+  "last_commit_short": "${GIT_HASH_SHORT}",
+  "last_commit_hash": "${GIT_HASH}",
+  "last_commit_date": "${GIT_COMMIT_DATE}",
+  "build_date": "${CURRENT_DATE}"
+}

@@ -9,7 +9,7 @@
             urlarr = c['attributes']['fdaurl'].split(';')
             aliasdict = dict(zip(aliasarr, urlarr))
         %>
-        % for key in sorted(aliasdict.iterkeys(), key=unicode.lower):
+        % for key in sorted(aliasdict):
             <tr><td><a href="${aliasdict[key] or '-'}" target="_blank">${key or '-'}</a></td></tr>
 	    % endfor
     % else:
