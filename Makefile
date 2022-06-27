@@ -201,9 +201,6 @@ help:
 	@echo "- updatedev          Updates master to dev, if version has changed (with snapshot)"
 	@echo "- deployint          Deploys a snapshot to integration (SNAPSHOT=201512021146)"
 	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"
-	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
-	@echo "- image              Build the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
-	@echo "- dockerpush         Build and push the project localy (with tag := $(DOCKER_IMG_LOCAL_TAG))"
 	@echo "- clean              Remove generated files"
 	@echo "- cleanall           Remove all the build artefacts"
 	@echo
@@ -245,38 +242,6 @@ templates: apache/wsgi.conf apache/application.wsgi development.ini production.i
 else
 templates: apache/wsgi.conf development.ini production.ini chsdi/static/info.json
 endif
-
-.PHONY: image
-image:
-	docker build \
-		--build-arg GIT_HASH="$(GIT_COMMIT_HASH)" \
-		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
-		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
-		--build-arg VERSION="$(GIT_TAG)" \
-		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG) -t ${DOCKER_IMG_TAG_LATEST} -f Dockerfile .
-
-
-.PHONY: dockerrun
-dockerrun: guard-DEPLOY_TARGET guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD guard-VERSION guard-APACHE_PORT
-	docker run \
-		-it \
-        	-p ${APACHE_PORT}:${APACHE_PORT} \
-                --env-file=${DEPLOY_TARGET}.env \
-                --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
-		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
-		--env APP_VERSION=${VERSION} \
-		$(DOCKER_IMG_LOCAL_TAG)
-
-
-.PHONY: dockerlogin
-dockerlogin:
-	aws --profile swisstopo-bgdi-builder ecr get-login-password --region $(AWS_REGION_ECR) | docker login --username AWS --password-stdin $(DOCKER_REGISTRY)
-
-
-.PHONY: dockerpush
-dockerpush: image
-	docker push $(DOCKER_IMG_TAG_LATEST)
-	docker push $(DOCKER_IMG_LOCAL_TAG)
 
 
 .PHONY: environ
