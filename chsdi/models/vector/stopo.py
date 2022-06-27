@@ -2988,3 +2988,57 @@ class GletschermaechtigkeitIceThikness(Base, Gletschermaechtigkeit, Vector):
 
 register('ch.swisstopo.geologie-gletschermaechtigkeit', GletschermaechtigkeitGPRProfiles)
 register('ch.swisstopo.geologie-gletschermaechtigkeit', GletschermaechtigkeitIceThikness)
+
+
+class FixpunkteLfp1(Base, Vector):
+    __tablename__ = 'punkt_lage_lfp1'
+    __table_args__ = ({'schema': 'fida', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fida_lfp1.mako'
+    __bodId__ = 'ch.swisstopo.fixpunkte-lfp1'
+    __label__ = 'id'
+    id = Column('pointid', Unicode, primary_key=True)
+    punktname = Column('punktname', Unicode)
+    nbident = Column('nbident', Unicode)
+    status = Column('status', Unicode)
+    nummer = Column('nummer', Unicode)
+    n95 = Column('n95', Numeric)
+    e95 = Column('e95', Numeric)
+    h02 = Column('h02', Numeric)
+    proto_url = Column('proto_url', Unicode)
+    zugang = Column('zugang', Unicode)
+    ordnung = Column('ordnung', Unicode)
+    l_gen_lv95 = Column('l_gen_lv95', Numeric)
+    h_gen_lv95 = Column('h_gen_lv95', Numeric)
+    l_zuv_lv95 = Column('l_zuv_lv95', Unicode)
+    h_zuv_lv95 = Column('h_zuv_lv95', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.fixpunkte-lfp1', FixpunkteLfp1)
+
+
+class FixpunkteHfp1(Base, Vector):
+    __tablename__ = 'punkt_hoehe_hfp1'
+    __table_args__ = ({'schema': 'fida', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fida_hfp1.mako'
+    __bodId__ = 'ch.swisstopo.fixpunkte-hfp1'
+    __label__ = 'id'
+    id = Column('pointid', Unicode, primary_key=True)
+    punktname = Column('punktname', Unicode)
+    e95 = Column('e95', Numeric)
+    n95 = Column('n95', Numeric)
+    h02 = Column('h02', Numeric)
+    proto_url = Column('proto_url', Unicode)
+    ordnung = Column('ordnung', Unicode)
+    zugang = Column('zugang', Unicode)
+    h95_ell = Column('h95_ell', Unicode)
+    l_gen_lv95 = Column('l_gen_lv95', Numeric)
+    h_gen_lv95 = Column('h_gen_lv95', Numeric)
+    l_zuv_lv95 = Column('l_zuv_lv95', Unicode)
+    h_zuv_lv95 = Column('h_zuv_lv95', Unicode)
+    zust_haupt = Column('zust_haupt', Unicode)
+    zustaendig = Column('zustaendig', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.fixpunkte-hfp1', FixpunkteHfp1)
