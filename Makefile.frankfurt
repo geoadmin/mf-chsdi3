@@ -128,7 +128,7 @@ help:
 	@echo "- lint/autolint      Python code quality assurance"
 	@echo "- shell              Pylons shell (for debugging)"
 	@echo "- test               Functional and integration nose tests"
-	@echo "- testci             Same as `test` but with specific junit output for the CI"
+	@echo "- unittest-ci        Same as 'test' but with specific junit output for the CI"
 	@echo "- teste2e            End-to-end tests"
 	@echo
 	@echo -e "\033[1mLOCAL SERVER TARGETS\033[0m "

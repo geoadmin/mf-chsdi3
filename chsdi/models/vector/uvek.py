@@ -3755,7 +3755,7 @@ register('ch.bazl.gebirgslandeplaetze', Gebirgslandeplaetze)
 
 class Spitallandeplaetze(Base, Vector):
     __tablename__ = 'spitallandeplaetze'
-    __table_args__ = ({'schema': 'bazl', 'autoload': True})
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/spitallandeplaetze.mako'
     __bodId__ = 'ch.bazl.spitallandeplaetze'
     __label__ = 'name'

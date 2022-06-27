@@ -9,14 +9,30 @@
 
     <tr><td class="cell-left">${_('ch.bafu.waldreservate.objnummer')}</td><td>${c['attributes']['objnummer'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.waldreservate.name')}</td><td>${c['attributes']['name'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.waldreservate.gisflaeche')}</td><td>${round(c['attributes']['gisflaeche'], 2) or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.waldreservate.obj_gesflaeche')}</td>
-      % if c['attributes']['gesflaeche'] is not None:
-        <td>${round(c['attributes']['gesflaeche'], 2)}</td></tr>
+    <tr>
+      <td class="cell-left">${_('ch.bafu.waldreservate.gisflaeche')}</td>
+      % if c['attributes']['gisflaeche']:
+        <td>${round(c['attributes']['gisflaeche'], 2)}</td>
       % else:
-        <td>-</td></tr>
+        <td>-</td>
       % endif
-    <tr><td class="cell-left">${_('ch.bafu.waldreservate.gisteilobjekt')}</td><td>${round(c['attributes']['gisteilobjekt'], 2) or '-'}</td></tr>
+    </tr>
+    <tr>
+      <td class="cell-left">${_('ch.bafu.waldreservate.obj_gesflaeche')}</td>
+      % if c['attributes']['gesflaeche'] is not None:
+        <td>${round(c['attributes']['gesflaeche'], 2)}</td>
+      % else:
+        <td>-</td>
+      % endif
+    </tr>
+    <tr>
+      <td class="cell-left">${_('ch.bafu.waldreservate.gisteilobjekt')}</td>
+      % if c['attributes']['gisteilobjekt']:
+        <td>${round(c['attributes']['gisteilobjekt'], 2)}</td>
+      % else:
+        <td>-</td>
+      % endif
+    </tr>
     <tr><td class="cell-left">${_('ch.bafu.waldreservate.mcpfe')}</td><td>${c['attributes'][class_text] or '-'}</td></tr>
 </%def>
 

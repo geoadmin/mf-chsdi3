@@ -26,7 +26,7 @@ register('ch.swisstopo.fixpunkte-agnes', Agnes)
 class FixpunkteLfp1(Base, Vector):
     __tablename__ = 'punkt_lage_lfp1'
     __table_args__ = ({'schema': 'fida', 'autoload': False})
-    __template__ = 'templates/htmlpopup/fixpunkte_fida.mako'
+    __template__ = 'templates/htmlpopup/fida_lfp1.mako'
     __bodId__ = 'ch.swisstopo.fixpunkte-lfp1'
     __label__ = 'id'
     id = Column('pointid', Unicode, primary_key=True)
@@ -76,23 +76,25 @@ register('ch.swisstopo.fixpunkte-lfp2', FixpunkteLfp2)
 
 class FixpunkteHfp1(Base, Vector):
     __tablename__ = 'punkt_hoehe_hfp1'
-    __table_args__ = ({'schema': 'fpds', 'autoload': True})
-    __template__ = 'templates/htmlpopup/fixpunkte.mako'
+    __table_args__ = ({'schema': 'fida', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fida_hfp1.mako'
     __bodId__ = 'ch.swisstopo.fixpunkte-hfp1'
     __label__ = 'id'
     id = Column('pointid', Unicode, primary_key=True)
-    bgdi_label = Column('bgdi_label', Unicode)
-    nbident = Column('nbident', Unicode)
     punktname = Column('punktname', Unicode)
-    status = Column('status', Unicode)
-    nummer = Column('nummer', Unicode)
-    x03 = Column('x03', Numeric)
-    y03 = Column('y03', Numeric)
-    n95 = Column('n95', Numeric)
     e95 = Column('e95', Numeric)
+    n95 = Column('n95', Numeric)
     h02 = Column('h02', Numeric)
+    proto_url = Column('proto_url', Unicode)
+    ordnung = Column('ordnung', Unicode)
     zugang = Column('zugang', Unicode)
-    url = Column('url', Unicode)
+    h95_ell = Column('h95_ell', Unicode)
+    l_gen_lv95 = Column('l_gen_lv95', Numeric)
+    h_gen_lv95 = Column('h_gen_lv95', Numeric)
+    l_zuv_lv95 = Column('l_zuv_lv95', Unicode)
+    h_zuv_lv95 = Column('h_zuv_lv95', Unicode)
+    zust_haupt = Column('zust_haupt', Unicode)
+    zustaendig = Column('zustaendig', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
@@ -101,7 +103,7 @@ register('ch.swisstopo.fixpunkte-hfp1', FixpunkteHfp1)
 
 class FixpunkteHfp2(Base, Vector):
     __tablename__ = 'punkt_hoehe_hfp2'
-    __table_args__ = ({'schema': 'fpds', 'autoload': True})
+    __table_args__ = ({'schema': 'fpds', 'autoload': False})
     __template__ = 'templates/htmlpopup/fixpunkte.mako'
     __bodId__ = 'ch.swisstopo.fixpunkte-hfp2'
     __label__ = 'id'

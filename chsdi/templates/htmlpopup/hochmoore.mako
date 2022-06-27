@@ -11,7 +11,14 @@
     <tr><td class="cell-left">${_('ch.bafu.bundesinventare-hochmoore.name')}</td>         <td>${c['attributes']['name']}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.bundesinventare-hochmoore.hochmoore_type')}</td>                <td>${c['attributes'][type] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.bundesinventare-hochmoore.unit')}</td>     <td>${c['attributes'][unit] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.bundesinventare-hochmoore.shape_area')}</td>         <td>${round(c['attributes']['shape_area']/10000, 1) or '-'}</td></tr>
+    <tr>
+        <td class="cell-left">${_('ch.bafu.bundesinventare-hochmoore.shape_area')}</td>
+        % if c['attributes']['shape_area']:
+            <td>${round(c['attributes']['shape_area'] / 10000, 1)}</td>
+        % else:
+            <td>-</td>
+        % endif
+    </tr>
     <tr><td class="cell-left">${_('ch.bafu.bundesinventare-hochmoore.refobjblat')}</td>        <td><a target="_blank" href="${c['attributes']['refobjblat']}">${_('link') or '-'}</a></td></tr>
 </%def>
 

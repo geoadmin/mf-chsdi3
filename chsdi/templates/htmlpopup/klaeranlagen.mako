@@ -9,7 +9,14 @@
     <tr><td class="cell-left">${_('ch_bafu_gee-kla.ort')}</td>                      <td>${c['attributes']['ort'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch_bafu_gee-kla.vsa_kategorie')}</td>            <td>${c['attributes']['vsa_kategorie'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch_bafu_gee-kla.ausbaugroesse_egw')}</td>        <td>${c['attributes']['ausbaugroesse_egw'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch_bafu_gee-kla.abwasseranteil_q347')}</td>      <td>${round(c['attributes']['abwasseranteil_q347'],3) or '-'}</td></tr>
+    <tr>
+      <td class="cell-left">${_('ch_bafu_gee-kla.abwasseranteil_q347')}</td>
+      % if c['attributes']['abwasseranteil_q347']:
+        <td>${round(c['attributes']['abwasseranteil_q347'], 3)}</td>
+      % else:
+        <td>-</td>
+      % endif
+    </tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
@@ -142,7 +149,11 @@
     </tr>
     <tr>
       <th class="cell-left">${_('ch_bafu_gee-kla.abwasseranteil_q347')}</th>
-      <td>${round(c['attributes']['abwasseranteil_q347'],3) or '-'}</td>
+      % if c['attributes']['abwasseranteil_q347']:
+        <td>${round(c['attributes']['abwasseranteil_q347'], 3)}</td>
+      % else:
+        <td>-</td>
+      % endif
       <th class="cell-left">${_('ch_bafu_gee-kla.gwlnr')}</th>
       <td>${c['attributes']['gwlnr'] or '-'}</td>
     </tr>

@@ -32,7 +32,7 @@ from chsdi.lib.helpers import _transform_coordinates, transform_round_geometry
 
 
 import logging
-log = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 
 MAX_FEATURES = 201
@@ -310,7 +310,7 @@ def _identify_db(params, layerBodIds):
             # db structure, we only return the title of the error and not details
             # about table names and the like
             # Python2/3
-            log.error("Database error while reading features: {}".format(e))
+            logger.error("Database error while reading features: {}".format(e))
             raise exc.HTTPBadRequest('Your request generated a database errorwhile reading features')
         except StopIteration:
             break
@@ -398,54 +398,52 @@ def _get_feature_grid(col, row, timestamp, gridSpec, bucket_name, params, proces
     timestamp = str(timestamp)
     layerBodId = params.layerId
     featureS3KeyName = 'tooltip/%s/default/%s/%s/%s/data.json' % (layerBodId, timestamp, col, row)
-    try:
-        featureJson = decompress_gzipped_string(get_file_from_bucket(bucket_name, featureS3KeyName)['Body'])
-        # Because of esriJSON design and papyrus no esrijson support for now
-        feature = geojson.loads(featureJson)
-        if not params.returnGeometry:
-            del feature['geometry']
-        feature['layerBodId'] = layerBodId
-        feature['layerName'] = params.translate(layerBodId)
-        # For some reason we define the id twice...
-        feature['featureId'] = feature['id']
-        feature['properties']['label'] = feature['id']
+    featureJson = decompress_gzipped_string(get_file_from_bucket(bucket_name, featureS3KeyName)['Body'])
+    # Because of esriJSON design and papyrus no esrijson support for now
+    feature = geojson.loads(featureJson)
+    if not params.returnGeometry:
+        del feature['geometry']
+    feature['layerBodId'] = layerBodId
+    feature['layerName'] = params.translate(layerBodId)
+    # For some reason we define the id twice...
+    feature['featureId'] = feature['id']
+    feature['properties']['label'] = feature['id']
 
-        # to mimic DB output, we add a bbox value, defined by the geom of the GeoJSON (it's always a mono shape polygon
-        # representing the tile surface)
-        # for some reason, we can't use the grid here to extract the extent of the tile when coming from the feature
-        # metadata endpoint (it raises an exception)
-        bbox_bottom_left = None
-        bbox_top_right = None
-        if hasattr(feature, 'geometry') and hasattr(feature.geometry, 'coordinates'):
-            for coord in feature.geometry.coordinates[0]:
-                if not bbox_bottom_left or bbox_bottom_left[0] > coord[0] or bbox_bottom_left[1] > coord[1]:
-                    bbox_bottom_left = coord
-                if not bbox_top_right or bbox_top_right[0] < coord[0] or bbox_top_right[1] < coord[1]:
-                    bbox_top_right = coord
-        if bbox_top_right and bbox_top_right:
+    logger.debug('Get feature grid: params.srid=%s, gridSpec.get(srid)=%s feature.geometry=%s', params.srid, gridSpec.get('srid'), hasattr(feature, 'geometry'))
+
+    # to mimic DB output, we add a bbox value, defined by the geom of the GeoJSON (it's always a mono shape polygon
+    # representing the tile surface)
+    # for some reason, we can't use the grid here to extract the extent of the tile when coming from the feature
+    # metadata endpoint (it raises an exception)
+    bbox_bottom_left = None
+    bbox_top_right = None
+    if hasattr(feature, 'geometry') and hasattr(feature.geometry, 'coordinates'):
+        for coord in feature.geometry.coordinates[0]:
+            if not bbox_bottom_left or bbox_bottom_left[0] > coord[0] or bbox_bottom_left[1] > coord[1]:
+                bbox_bottom_left = coord
+            if not bbox_top_right or bbox_top_right[0] < coord[0] or bbox_top_right[1] < coord[1]:
+                bbox_top_right = coord
+        if bbox_top_right and bbox_bottom_left:
             feature['bbox'] = [bbox_bottom_left[0], bbox_bottom_left[1], bbox_top_right[0], bbox_top_right[1]]
 
-        if (params.srid == 2056 or params.srid == 3857 or params.srid == 4326) and gridSpec.get('srid') == '21781':
-            feature['bbox'] = shift_to(feature['bbox'], 2056)
-            coords = feature['geometry']['coordinates']
-            coords = [[shift_to(c, 2056) for c in coords[0]]]
-            feature['geometry']['coordinates'] = coords
-        if params.srid == 21781 and gridSpec.get('srid') == '2056':
-            feature['bbox'] = shift_to(feature['bbox'], 21781)
-            coords = feature['geometry']['coordinates']
-            coords = [[shift_to(c, 21781) for c in coords[0]]]
-            feature['geometry']['coordinates'] = coords
+            if (params.srid == 2056 or params.srid == 3857 or params.srid == 4326) and gridSpec.get('srid') == '21781':
+                feature['bbox'] = shift_to(feature['bbox'], 2056)
+                coords = feature['geometry']['coordinates']
+                coords = [[shift_to(c, 2056) for c in coords[0]]]
+                feature['geometry']['coordinates'] = coords
+            if params.srid == 21781 and gridSpec.get('srid') == '2056':
+                feature['bbox'] = shift_to(feature['bbox'], 21781)
+                coords = feature['geometry']['coordinates']
+                coords = [[shift_to(c, 21781) for c in coords[0]]]
+                feature['geometry']['coordinates'] = coords
 
-        # if targeted SRID is WebMercator, we reproject the feature geometry and bbox here
-        if params.srid == 3857 or params.srid == 4326:
-            coords = feature['geometry']['coordinates']
-            coords = [[_transform_coordinates(c, 2056, params.srid) for c in coords[0]]]
-            feature['geometry']['coordinates'] = coords
-            feature['bbox'] = transform_round_geometry(feature['bbox'], 2056, params.srid)
+            # if targeted SRID is WebMercator, we reproject the feature geometry and bbox here
+            if params.srid == 3857 or params.srid == 4326:
+                coords = feature['geometry']['coordinates']
+                coords = [[_transform_coordinates(c, 2056, params.srid) for c in coords[0]]]
+                feature['geometry']['coordinates'] = coords
+                feature['bbox'] = transform_round_geometry(feature['bbox'], 2056, params.srid)
 
-    except Exception as e:
-        log.error("Error while reading features from grid (S3): {}".format(e))
-        raise exc.HTTPInternalServerError("Internal Error while requesting grid features: {}".format(e))
     # in order to mimic DB output, if process flag is true we wrap the feature into a "feature" attribute
     if process:
         # the DB also calls here the process method from Vector class, but what we have here is not an instance of this
