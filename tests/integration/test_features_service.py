@@ -16,33 +16,33 @@ class TestFeaturesView(TestsBase):
                   'searchText': '1231641',
                   'sr': '9999'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
-        resp.mustcontain('Unsupported spatial reference')
+        self.assertIn('Unsupported spatial reference', resp.text)
 
     def test_searchField_none(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register',
                   'searchText': '1231641'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
-        resp.mustcontain('Please provide a searchField')
+        self.assertIn('Please provide a searchField', resp.text)
 
     def test_searchField_error(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register',
                   'searchField': 'egid, bln_fl',
                   'searchText': '1231641'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
-        resp.mustcontain('You can provide only one searchField at a time')
+        self.assertIn('You can provide only one searchField at a time', resp.text)
 
     def test_none_layer(self):
         params = {'searchField': 'egid',
                   'searchText': '1231641'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
-        resp.mustcontain('Please provide a parameter layer')
+        self.assertIn('Please provide a parameter layer', resp.text)
 
     def test_two_layer(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register,ch.bazl.luftfahrthindernis',
                   'searchField': 'egid',
                   'searchText': '1231641'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
-        resp.mustcontain('You can provide only one layer at a time')
+        self.assertIn('You can provide only one layer at a time', resp.text)
 
     def test_find_scan(self):
         params = {'layer': 'ch.bfs.gebaeude_wohnungs_register',
@@ -182,7 +182,7 @@ class TestFeaturesView(TestsBase):
                   'returnGeometry': 'false',
                   'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
-        resp.mustcontain('Please provide a float')
+        self.assertIn('Please provide a float', resp.text)
 
     def test_find_non_integer(self):
         params = {'layer': 'ch.bafu.bundesinventare-bln',
@@ -191,7 +191,7 @@ class TestFeaturesView(TestsBase):
                   'returnGeometry': 'false',
                   'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
-        resp.mustcontain('Please provide an integer')
+        self.assertIn('Please provide an integer', resp.text)
 
     def test_find_boolean_true(self):
         params = {'layer': 'ch.swisstopo.lubis-luftbilder_farbe',
@@ -222,7 +222,7 @@ class TestFeaturesView(TestsBase):
                   'returnGeometry': 'false',
                   'contains': 'false'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
-        resp.mustcontain('Please provide a boolean value (true/false)')
+        self.assertIn('Please provide a boolean value (true/false)', resp.text)
 
     def test_find_wrong_layer_layerdefs(self):
         params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
@@ -232,7 +232,7 @@ class TestFeaturesView(TestsBase):
                   'contains': 'false',
                   'layerDefs': '{"tutu": "com_fosnr > 2000"}'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
-        resp.mustcontain("You can only filter on layer 'ch.swisstopo.amtliches-strassenverzeichnis' in 'layerDefs'")
+        self.assertIn("You can only filter on layer 'ch.swisstopo.amtliches-strassenverzeichnis' in 'layerDefs'", resp.text)
 
     def test_find_wrong_attribute(self):
         params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
@@ -242,7 +242,7 @@ class TestFeaturesView(TestsBase):
                   'contains': 'false',
                   'layerDefs': '{"ch.swisstopo.amtliches-strassenverzeichnis": "toto = 4307"}'}
         resp = self.testapp.get('/rest/services/all/MapServer/find', params=params, status=400)
-        resp.mustcontain("Query attribute 'toto' is not queryable")
+        self.assertIn("Query attribute 'toto' is not queryable", resp.text)
 
     def test_find_all_talstrasse(self):
         params = {'layer': 'ch.swisstopo.amtliches-strassenverzeichnis',
@@ -296,18 +296,18 @@ class TestFeaturesView(TestsBase):
 
     def test_feature_wrong_idlayer(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/toto/362', status=400)
-        resp.mustcontain('No Vector Table was found for')
+        self.assertIn('No Vector Table was found for', resp.text)
 
     def test_feature_wrong_srid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/0', params={'sr': '111'}, status=400)
-        resp.mustcontain('Unsupported spatial reference')
+        self.assertIn('Unsupported spatial reference', resp.text)
 
     def test_feature_wrong_idfeature(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/0', status=404)
-        resp.mustcontain('No feature with id')
+        self.assertIn('No feature with id', resp.text)
 
         resp = self.testapp.get('/rest/services/api/MapServer/ch.bafu.bundesinventare-bln/htmlPopup', status=404)
-        resp.mustcontain('No feature with id')
+        self.assertIn('No feature with id', resp.text)
 
     def test_feature_htmlpopup_not_scale_dep(self):
         params = {'imageDisplay': '960,700,96',
@@ -342,7 +342,7 @@ class TestFeaturesView(TestsBase):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureIds = ','.join(map(str, range(50)))
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureIds), status=400)
-        resp.mustcontain('Too many featureIds')
+        self.assertIn('Too many featureIds', resp.text)
 
     def test_feature_valid_topic_all(self):
         bodId = 'ch.bafu.bundesinventare-bln'
@@ -420,7 +420,7 @@ class TestFeaturesView(TestsBase):
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s' % (bodId, featureId), params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'text/javascript')
-        resp.mustcontain('cb_({')
+        self.assertIn('cb_({', resp.text)
 
     def test_feature_geojson_geom_supported_srs(self):
         bodId = 'ch.bafu.bundesinventare-bln'
@@ -471,7 +471,7 @@ class TestFeaturesView(TestsBase):
 
     def test_htmlpopup_invalid_srid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/362/htmlPopup', params={'sr': '111'}, status=400)
-        resp.mustcontain('Unsupported spatial reference')
+        self.assertIn('Unsupported spatial reference', resp.text)
 
     def test_htmlpopup_invalid_id_format(self):
         bodId = 'ch.swisstopo.geologie-geologischer_atlas'
@@ -483,14 +483,14 @@ class TestFeaturesView(TestsBase):
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s/htmlPopup' % (bodId, featureId), status=200)
         self.assertEqual(resp.content_type, 'text/html')
-        resp.mustcontain('<table')
+        self.assertIn('<table', resp.text)
 
     def test_htmlpopup_valid_lv95(self):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s/htmlPopup' % (bodId, featureId), params={'sr': '2056'}, status=200)
         self.assertEqual(resp.content_type, 'text/html')
-        resp.mustcontain('<table')
+        self.assertIn('<table', resp.text)
 
     def test_htmlpopup_lang(self):
         bodId = 'ch.bafu.bundesinventare-bln'
@@ -513,12 +513,12 @@ class TestFeaturesView(TestsBase):
                   'imageDisplay': '1410,887,96',
                   'lang': 'fr'}
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfe.windenergieanlagen/turbine_45/htmlPopup', params=params, status=200)
-        resp.mustcontain('Puissance')
+        self.assertIn('Puissance', resp.text)
         params = {'mapExtent': '650000,150000,700000,200000',
                   'imageDisplay': '1410,887,96',
                   'lang': 'fr'}
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bfe.windenergieanlagen/facility_GUE/htmlPopup', params=params, status=200)
-        resp.mustcontain('Type')
+        self.assertIn('Type', resp.text)
 
     def test_htmlpopup_cadastralwebmap(self):
         params = {'mapExtent': '485412.34375,109644.67,512974.44,135580.01999999999',
@@ -527,33 +527,33 @@ class TestFeaturesView(TestsBase):
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s/htmlPopup' % (bodId, featureId), params=params, status=200)
         self.assertEqual(resp.content_type, 'text/html')
-        resp.mustcontain('<table')
+        self.assertIn('<table', resp.text)
 
     def test_htmlpopup_bad_request_image_display(self):
         params = {'mapExtent': '485412.34375,109644.67,512974.44,135580.01999999999',
                   'imageDisplay': '600,96'}
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/16847593/htmlPopup', params=params, status=400)
-        resp.mustcontain('Please provide the parameter imageDisplay in a comma separated list of 3 arguments '
-                         '(width,height,dpi)')
+        self.assertIn('Please provide the parameter imageDisplay in a comma separated list of 3 arguments '
+                      '(width,height,dpi)', resp.text)
 
     def test_htmlpopup_nan_image_display(self):
         params = {'mapExtent': '485412.34375,109644.67,512974.44,135580.01999999999', 'imageDisplay': '600,96,None'}
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.kantone.cadastralwebmap-farbe/16847593/htmlPopup', params=params, status=400)
-        resp.mustcontain('Please provide numerical values for the parameter imageDisplay')
+        self.assertIn('Please provide numerical values for the parameter imageDisplay', resp.text)
 
     def test_htmlpopup_bad_request_map_extent(self):
         params = {'mapExtent': 'quite_big_extent',
                   'imageDisplay': '1362,1139,96',
                   'lang': 'fr'}
         resp = self.testapp.get('/rest/services/all/MapServer/ch.bafu.schutzgebiete-aulav_uebrige/400/htmlPopup', params=params, status=400)
-        resp.mustcontain('Please provide numerical values for the parameter mapExtent')
+        self.assertIn('Please provide numerical values for the parameter mapExtent', resp.text)
 
     def test_htmlpopup_valid_topic_all(self):
         bodId = 'ch.bafu.bundesinventare-bln'
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/all/MapServer/%s/%s/htmlPopup' % (bodId, featureId), status=200)
         self.assertEqual(resp.content_type, 'text/html')
-        resp.mustcontain('<table')
+        self.assertIn('<table', resp.text)
 
     def test_htmlpopup_valid_with_callback(self):
         bodId = 'ch.bafu.bundesinventare-bln'
@@ -590,12 +590,12 @@ class TestFeaturesView(TestsBase):
     def test_iframehtmlpopup(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bav.haltestellen-oev/8573140/iframeHtmlPopup', status=200)
         self.assertEqual(resp.content_type, 'text/html')
-        resp.mustcontain('<script src=')
+        self.assertIn('<script src=', resp.text)
 
     def test_htmlpopup_with_iframeservice(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bav.haltestellen-oev/8573140/htmlPopup', status=200)
         self.assertEqual(resp.content_type, 'text/html')
-        resp.mustcontain('<iframe src=')
+        self.assertIn('<iframe src=', resp.text)
 
     @skipUnless(s3_tests, "Requires AWS S3 access")
     def test_feature_grid_valid_feature(self):

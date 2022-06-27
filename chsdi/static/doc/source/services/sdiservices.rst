@@ -437,12 +437,13 @@ Examples
 ********
 
 - Identify all the features belonging to ch.bafu.nabelstationen using a tolerance of 5 pixels around a point: `https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometry=678250,213000&geometryFormat=geojson&geometryType=esriGeometryPoint&imageDisplay=1391,1070,96&lang=fr&layers=all:ch.bafu.nabelstationen&mapExtent=312250,-77500,1007750,457500&returnGeometry=true&tolerance=5 <../../../rest/services/all/MapServer/identify?geometry=678250,213000&geometryFormat=geojson&geometryType=esriGeometryPoint&imageDisplay=1391,1070,96&lang=fr&layers=all:ch.bafu.nabelstationen&mapExtent=312250,-77500,1007750,457500&returnGeometry=true&tolerance=5>`_
-- Identify all the features belonging to ch.bfs.arealstatistik intersecting an enveloppe (or bounding box): `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik-1985>`_
+- Identify all the features belonging to ch.bfs.arealstatistik intersecting an envelope (or bounding box): `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik>`_
 - Identify all the features belonging to ch.bafu.bundesinventare-bln a polyline: `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"paths":[[[675000,245000],[660000,260000],[620000,250000]]]}&geometryType=esriGeometryPolyline&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln <../../../rest/services/api/MapServer/identify?geometry={"paths":[[[675000,245000],[660000,260000],[620000,250000]]]}&geometryType=esriGeometryPolyline&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln>`_
 - Identify all the features belonging to ch.bafu.bundesinventare-bln intersecting a polygon: `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometry={"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}&geometryType=esriGeometryPolygon&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln <../../../rest/services/api/MapServer/identify?geometry={"rings":[[[675000,245000],[670000,255000],[680000,260000],[690000,255000],[685000,240000],[675000,245000]]]}&geometryType=esriGeometryPolygon&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=5&layers=all:ch.bafu.bundesinventare-bln>`_
-- Same request for ch.bfs.arealstatistik as above but returned geometry format is GeoJSON: `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&geometryFormat=geojson <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik-1985&geometryFormat=geojson>`_
-- Same request for ch.bfs.arealstatistik as above but geometry is not returned: `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&returnGeometry=false <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik-1985&returnGeometry=false>`_
-- Filter features with **layerDefs**: `https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=2548945.5,1147956,2549402,1148103.5&geometryFormat=geojson&imageDisplay=1367,949,96&lang=en&layers=all:ch.bazl.luftfahrthindernis&mapExtent=2318250,952750,3001750,1427250&returnGeometry=false&sr=2056&tolerance=5&layerDefs={"ch.bazl.luftfahrthindernis":"state ilike '%A%'"} <../../../rest/services/all/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=2548945.5,1147956,2549402,1148103.5&geometryFormat=geojson&imageDisplay=1367,949,96&lang=en&layers=all:ch.bazl.luftfahrthindernis&mapExtent=2318250,952750,3001750,1427250&returnGeometry=false&sr=2056&tolerance=5&layerDefs=%7B%22ch.bazl.luftfahrthindernis%22%3A%22state%20ilike%20%27%25A%25%27%22%7D>`_
+- Same request for ch.bfs.arealstatistik as above but returned geometry format is GeoJSON: `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&geometryFormat=geojson <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&geometryFormat=geojson>`_
+- Same request for ch.bfs.arealstatistik as above but geometry is not returned: `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&returnGeometry=false <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=500,600,96&mapExtent=548945.5,147956,549402,148103.5&tolerance=1&layers=all:ch.bfs.arealstatistik&returnGeometry=false>`_
+- Filter features with **layerDefs**: `https://api3.geo.admin.ch/rest/services/all/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=2548945.5,1147956,2549402,1148103.5&geometryFormat=geojson&imageDisplay=1367,949,96&lang=en&layers=all:ch.swisstopo.amtliches-strassenverzeichnis&mapExtent=2318250,952750,3001750,1427250&returnGeometry=false&sr=2056&tolerance=5&layerDefs={"ch.swisstopo.amtliches-strassenverzeichnis":"stn_label+ilike+'%Corniche%'"} <../../../rest/services/all/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=2548945.5,1147956,2549402,1148103.5&geometryFormat=geojson&imageDisplay=1367,949,96&lang=en&layers=all:ch.swisstopo.amtliches-strassenverzeichnis&mapExtent=2318250,952750,3001750,1427250&returnGeometry=false&sr=2056&tolerance=5&layerDefs={"ch.swisstopo.amtliches-strassenverzeichnis":"stn_label+ilike+%27%Corniche%%27"}>`_
+
 
 
 Examples of Reverse Geocoding
@@ -450,7 +451,7 @@ Examples of Reverse Geocoding
 
 The service identify can be used for Reverse Geocoding operations. Here is a `list of all the available layers <../../../api/faq/index.html#which-layers-are-available>`_.
 
-- Perform an identify request to find the districts intersecting a given enveloppe geometry (no buffer): `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill&returnGeometry=false  <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill&returnGeometry=false>`_
+- Perform an identify request to find the districts intersecting a given envelope geometry (no buffer): `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill&returnGeometry=false  <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryEnvelope&geometry=548945.5,147956,549402,148103.5&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill&returnGeometry=false>`_
 - Perform an identify request to find the municipal boundaries and ZIP (PLZ or NPA) intersecting with a point (no buffer): `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=548945.5,147956&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&returnGeometry=false <../../../rest/services/api/MapServer/identify?geometryType=esriGeometryPoint&geometry=548945.5,147956&imageDisplay=0,0,0&mapExtent=0,0,0,0&tolerance=0&layers=all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz&returnGeometry=false>`_
 - Reverse geocoding an `address` with a point (no buffer): `https://api3.geo.admin.ch/rest/services/api/MapServer/identify?mapExtent=0,0,100,100&imageDisplay=100,100,100&tolerance=1&geometryType=esriGeometryPoint&geometry=600968.625,197426.921875&layers=all:ch.bfs.gebaeude_wohnungs_register&returnGeometry=false <../../../rest/services/api/MapServer/identify?mapExtent=0,0,100,100&imageDisplay=100,100,100&tolerance=1&geometryType=esriGeometryPoint&geometry=600968.625,197426.921875&layers=all:ch.bfs.gebaeude_wohnungs_register&returnGeometry=false>`_
 
@@ -531,7 +532,6 @@ One layer, one search text and one attribute.
 
 Examples
 ********
-
 - Search for “Lavaux” in the field “bln_name” of the layer “ch.bafu.bundesinventare-bln” (infix match): `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bafu.bundesinventare-bln&searchText=Lavaux&searchField=bln_name&returnGeometry=false  <../../../rest/services/api/MapServer/find?layer=ch.bafu.bundesinventare-bln&searchText=Lavaux&searchField=bln_name&returnGeometry=false>`_
 - Search for “12316” in the field “egid” of the layer “ch.bfs.gebaeude_wohnungs_register” (infix match): `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=123164&searchField=egid&returnGeometry=false  <../../../rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=123164&searchField=egid&returnGeometry=false>`_
 - Search for “123164” in the field “egid” of the layer “ch.bfs.gebaeude_wohnungs_register” (exact match): `https://api3.geo.admin.ch/rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=1231641&searchField=egid&returnGeometry=false&contains=false <../../../rest/services/api/MapServer/find?layer=ch.bfs.gebaeude_wohnungs_register&searchText=1231641&searchField=egid&returnGeometry=false&contains=false>`_
@@ -1116,7 +1116,7 @@ Example
 XYZ
 ----
 
-XYZ tile layers are layers comprised of multiple tiles. The XYZ tile service provides tiles based on a URL template with values substituted in for Zoom Level and X and Y counts of the tile. Unlike WMTS that follow the OGC standard, the XYZ tile service is often used in Web Mapping Context and is therefore a de facto standard. The XYZ tile service is provided with a fixed projection ( EPSG:3857). 
+XYZ tile layers are layers comprised of multiple tiles. The XYZ tile service provides tiles based on a URL template with values substituted in for Zoom Level and X and Y counts of the tile. Unlike WMTS that follow the OGC standard, the XYZ tile service is often used in Web Mapping Context and is therefore a de facto standard. The XYZ tile service is provided with a fixed projection ( EPSG:3857).
 
 .. note::
     We encourage  users to use WMTS layer  service which provides predefined tiles (like an XYZ service) with an option to use a RESTful templated URL or a KVP request and with a variety of projections and grids. Moreover, using WMTS GetCapabilities provides an up to date Metadata Service for the available layers.
@@ -1140,7 +1140,7 @@ Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabili
 StyleName              default                         Only **default** is supported.
 Time                   2010, 2010-01                   Date of tile generation in (ISO-8601) or logical value like **current**. A list of available values is provided in the `GetCapabilities <//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document under the <Dimension> tag. We recommend to use the value under the <Default> tag. Note that these values might change frequently - **check for updates regularly**.
 TileMatrixSet          3857  (constant)                EPSG code for Webmercator
-{z}                    {z}                             
+{z}                    {z}
 {x}                    {x}
 {y}                    {y}
 FormatExtension        png                             Mostly png, except for some raster layer (pixelkarte and swissimage)
@@ -1160,7 +1160,7 @@ https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/current/3857/{z}
 
 
 Supported projections
----------------------
+*********************
 
 Unlike WMTS that follow the OGC standard, the XYZ tile service are often used in Web Mapping Context and therefore one projection is supported.
 
@@ -1298,6 +1298,32 @@ See  `description <https://www.geo.admin.ch/en/geo-services/geo-services/portray
 
 The service provides both *tiles* and *styles* that the customer can use.
 
+GetStyle
+********
+
+A current (latest version) style request is in the following form:
+
+::
+
+    <Scheme>://<ServerName>/styles/<layername>/style.json
+
+example of current maplibre styles of light base map and imagery base map:
+
+- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte.vt/style.json
+- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte-imagery.vt/style.json
+
+A previous versioned style request is in the following form:
+
+::
+
+    <Scheme>://<ServerName>/styles/<layername>/<version>/style.json
+
+
+(available previous versions are: v1.1.0, v1.2.0, v1.3.0, v1.4.0, v1.5.0 and v1.6.0)
+
+
+.. _vectortiles GetTile:
+
 GetTile
 *******
 
@@ -1309,7 +1335,7 @@ A tile request is in the following form:
 
 example of one pbf tile:
 
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/7/67/44.pbf
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/7/67/44.pbf
 
 GetTileSets
 ***********
@@ -1322,26 +1348,7 @@ MBTiles for storing  tiled map data in SQLite databases for immediate or offline
 
 example of the .mbtiles file:
 
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
-
-GetStyle
-********
-
-A current (latest version) style request is in the following form:
-
-::
-
-    <Scheme>://<ServerName>/styles/<layername>/style.json
-
-example of a current mapbox style:
-
-- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte.vt/style.json
-
-A previous versioned style request is in the following form:
-
-::
-
-    <Scheme>://<ServerName>/styles/<layername>/<version>/style.json
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
 
 
 
@@ -1363,7 +1370,7 @@ The URL of the metadata `json` file is :
 
 example of tileset:
 
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v1.0.0/tiles.json
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/tiles.json
 
 
 

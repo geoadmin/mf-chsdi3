@@ -11,13 +11,16 @@ env:
     SERVICE_NAME: "mf-chsdi3"
     DOCKER_REGISTRY: "974517877189.dkr.ecr.eu-central-1.amazonaws.com"
     USER: "aws_code_build"
-    APACHE_BASE_PATH: main
-    ALTI_URL: //service-alti.dev.bgdi.ch
-    API_URL: //mf-chsdi3.dev.bgdi.ch
+    CI_QUIET: 1
+    SYSTEM_PYTHON_CMD: python3
+    # DB connection variable are used by the buildspec to verify DB connectivity therefore
+    # they need to be defined outside of .env.ci
+    # TODO once the migration is done use pg-geodata-replica.bgdi.ch (DB in Frankfurt)
     DBHOST: pg.bgdi.ch
     DBPORT: 5432
+    # DBSTAGING and GEODATA_STAGING values depends on the PR therefore they are set here and not
+    # in the .env.ci file
     DBSTAGING: dev
-    DEPLOY_TARGET: dev
     GEODATA_STAGING: test
     GEOADMINHOST: mf-geoadmin3.dev.bgdi.ch
     HOST: mf-chsdi3.dev.bgdi.ch
@@ -53,7 +56,6 @@ phases:
       - echo "Login to AWS ECR docker registry"
       - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${DOCKER_REGISTRY}
 
-
   pre_build:
     commands:
       - echo "=========== Configuring stuff ====="
@@ -61,7 +63,7 @@ phases:
       - export GIT_BRANCH="${CODEBUILD_WEBHOOK_HEAD_REF#refs/heads/}"
       - export GIT_BASE_BRANCH="${CODEBUILD_WEBHOOK_BASE_REF#refs/heads/}"
       - export GIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - export GIT_TAG="$(git describe --tags || echo 'unknown')"
+      - export GIT_TAG="$(git describe --tags --dirty || echo 'unknown')"
       - export GIT_DIRTY="$(git status --porcelain)"
       # When build are manually triggered by a user, the CODEBUILD_WEBHOOK_HEAD_REF is not
       # set resulting to an empty GIT_BRANCH. Usually Codebuild don't checkout the branch but
@@ -100,7 +102,6 @@ phases:
         then
           # PR to merge personal branch (feature or bug) into master
           export DBSTAGING=prod
-          export DEPLOY_TARGET=prod
           export GEODATA_STAGING=prod
         elif [[ "${GIT_BRANCH}" == master ]] && \
              [[ "${MERGED_FROM}" != geoadmin/develop* ]];
@@ -108,14 +109,11 @@ phases:
           # Push event triggered either by a PR merge on master (except for PR to merge develop* into master)
           # or by a push on the master branch.
           export DBSTAGING=prod
-          export DEPLOY_TARGET=prod
           export GEODATA_STAGING=prod
         fi
       - echo "=========== VERSIONS =============="
       - aws --version
-      - python --version
       - python3 --version
-      - which python3
       - node --version
       - bash --version
       - echo "=========== VARIABLES ============="
@@ -140,24 +138,24 @@ phases:
       - echo DOCKER_IMG_TAG=${DOCKER_IMG_TAG}
       - echo DOCKER_IMG_TAG_LATEST=${DOCKER_IMG_TAG_LATEST}
       - echo DBSTAGING=${DBSTAGING}
-      - echo DEPLOY_TARGET=${DEPLOY_TARGET}
       - echo GEODATA_STAGING=${GEODATA_STAGING}
       - echo BASH=${BASH}
-      - echo SHELL=${SHELL}
       - echo CURRENT_DIRECTORY=$(pwd)
       - echo USE_PYTHON3=${USE_PYTHON3}
       - echo "=========== POSGRESQL ============="
       - python ./scripts/pg_ready.py
       - echo "host=$(hostname -I)"
-      - make help
       - echo "=========== PREPARE ==============="
-      - make cleanall
+      - make -f Makefile.frankfurt cleanall setup
+      - echo "=========== LINTING ==============="
+      - make -f Makefile.frankfurt lint
 
   build:
     commands:
       - echo "=========== BUILD ================="
       - echo Build started on $(date)
-      - make all
+      - make -f Makefile.frankfurt build
+      - echo "=========== DOCKER BUILD =========="
       - >
         docker build
         --build-arg GIT_HASH="${GIT_HASH}"
@@ -167,10 +165,6 @@ phases:
         --build-arg VERSION="${GIT_TAG}"
         -t "${DOCKER_IMG_TAG}" -t "${DOCKER_IMG_TAG_LATEST}" .
       - echo Build completed on $(date)
-      - echo "=========== SPHINXSEARCH =========="
-      - .venv/bin/python ./scripts/test_sphinxserver.py
-      - echo "=========== Linting ==============="
-      - make lint
 
   post_build:
     commands:
@@ -181,7 +175,7 @@ phases:
           echo "!!!!!!!! WARNING: Could not find the git BASE branch, might be due to manual build !!!!!!!"
           echo "!!!!!!!! WARNING: STAGING for testing might be incorrect !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
         fi
-      - make testci
+      - make -f Makefile.frankfurt unittest-ci
       - echo "=========== Pushing image ========="
       - docker push ${DOCKER_IMG_TAG}
       - docker push ${DOCKER_IMG_TAG_LATEST}
@@ -190,5 +184,5 @@ phases:
 reports:
   reportGroupJunit:
     files:
-      - 'junit-reports/**/*'
+      - "junit-reports/**/*"
     file-format: JunitXml

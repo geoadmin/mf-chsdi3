@@ -2,12 +2,10 @@
 # pylons app configuration
 # http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/environment.html
 #
-# development (both local and dev) setting for the pylons app.
-# Use this file only in the legacy infrastructure (python2/vhost/ireland)
+# Use this file exclusively on docker/frankfurt/python3 and k8s dev environment
 
 [app:main]
-use = config:production.ini
-app_version = ${app_version}
+use = config:base.ini
 
 pyramid.reload_templates = true
 pyramid.debug_authorization = true
@@ -27,9 +25,7 @@ debugtoolbar.hosts = 0.0.0.0/0
 # wsgi server configuration
 ###
 [server:main]
-use = egg:waitress#main
-host = 0.0.0.0
-port = ${SERVER_PORT}
+use = config:base.ini
 
 ###
 # logging configuration
@@ -40,16 +36,16 @@ port = ${SERVER_PORT}
 keys = root, chsdi, sqlalchemy
 
 [logger_root]
-level = DEBUG
+level = ${PY_ROOT_LOG_LEVEL}
 handlers = console
 
 [logger_chsdi]
-level = DEBUG
+level = ${PY_CHSDI_LOG_LEVEL}
 handlers = console
 qualname = chsdi
 
 [logger_sqlalchemy]
-level = INFO
+level = ${PY_SQLALCHEMY_LOG_LEVEL}
 handlers = console
 qualname = sqlalchemy.engine
 # "level = INFO" logs SQL queries.
@@ -57,28 +53,20 @@ qualname = sqlalchemy.engine
 # "level = WARN" logs neither.  (Recommended for production systems.)
 
 [handlers]
-keys = console, file, sqlfile
+keys = console
 
 [handler_console]
 class = StreamHandler
 args = (sys.stdout,)
-level = DEBUG
-formatter = generic
-
-[handler_file]
-class = FileHandler
-level = INFO
-formatter = generic
-args = ('${CURRENT_DIRECTORY}/app.log', 'w')
-
-[handler_sqlfile]
-class = FileHandler
-level = INFO
-formater = generic
-args = ('${CURRENT_DIRECTORY}/appsql.log', 'w')
+level = ${PY_ROOT_LOG_LEVEL}
+formatter = apache
 
 [formatters]
-keys = generic
+keys = apache
 
-[formatter_generic]
-format = %(asctime)s %(levelname)-5.5s [%(name)s][%(threadName)s] %(message)s
+[formatter_apache]
+# NOTES:
+# - we use %(message)r instead of %(message)s in order to keep multiline logs as one entry
+# - The logs are going through apache logging system, which will add additionals informations;
+#   timestamp, request_id, headers, process and thread IDs, ... (see 25-mf-chsdi3.conf.in)
+format = app=CHSDI %(levelname)s [%(module)s/%(name)s] %(message)r

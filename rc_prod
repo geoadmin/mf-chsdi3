@@ -1,5 +1,4 @@
 export APACHE_BASE_PATH=main
-export ALTI_URL=//service-alti.prod.bgdi.ch
 export API_URL=//api3.geo.admin.ch
 export DBHOST=pg.bgdi.ch
 export DBPORT=5432

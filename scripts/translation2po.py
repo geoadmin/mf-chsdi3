@@ -37,14 +37,15 @@ def get_yaml(yaml_file_path):
 
 def get_db_connection():
     try:
-        conn = psycopg2.connect(host=os.environ.get('DBHOST'), 
+        conn = psycopg2.connect(host=os.environ.get('DBHOST'),
                             port=os.environ.get('DBPORT', DEFAULT_DBPORT),
-                            dbname='bod_master', 
+                            dbname='bod_master',
                             user='www-data',
+                            password='www-data',
                             connect_timeout=5)
         return conn
-    except psycopg2.OperationalError:
-        print("Cannot connect do Database {}".format(os.environ.get('DBHOST')))
+    except psycopg2.OperationalError as error:
+        print("Cannot connect do Database {}: {}".format(os.environ.get('DBHOST'), error))
         sys.exit(1)
 
 

@@ -36,7 +36,7 @@ except ImportError:
 
 import xml.etree.ElementTree as etree
 from pyproj import Proj, transform as proj_transform
-from requests.exceptions import ConnectionError
+from requests.exceptions import ConnectionError, Timeout, RequestException
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 from shapely.ops import transform as shape_transform
 from shapely.wkt import dumps as shape_dumps, loads as shape_loads
@@ -52,6 +52,8 @@ if six.PY3:
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 log = logging.getLogger(__name__)
+
+REQUESTS_DEFAULT_TIMEOUT = 5
 
 
 PROJECTIONS = {}
@@ -112,9 +114,15 @@ def make_geoadmin_url(request, agnostic=False):
 
 def resource_exists(path, headers={'User-Agent': 'mf-geoadmin/python'}, verify=False):
     try:
-        r = requests.head(path, headers=headers, verify=verify)
-    except ConnectionError:
+        r = requests.head(path, headers=headers, verify=verify, timeout=REQUESTS_DEFAULT_TIMEOUT)
+    except Timeout as e:
+        log.error('Timeout while requesting HEAD on "%s"\n%s' % (path, e))
         return False
+    except ConnectionError as e:
+        log.error('ConnectionError while requesting HEAD on "%s\n%s"' % (path, e))
+        return False
+    except RequestException as e:
+        log.error('Unknown exception while requesting "%s"\n%s' % (path, e))
     return r.status_code == requests.codes.ok
 
 
@@ -604,3 +612,8 @@ def separate_statements(substring, model):
 def sanitize_user_input_accents(string):
     # this transforms the umlauts in latin compliant version, then remove the accents entirely
     return unidecode.unidecode(remove_accents(string))
+
+
+def anonymize_string(text, length = None, replacement='*'):
+    txt_length = len(text) if length is None else length
+    return text.replace(text[0:], replacement * txt_length)

@@ -30,10 +30,13 @@
   Include "/var/www/vhosts/mf-chsdi3/conf/*.conf"
 
   ## Logging
-  ServerSignature Off
+  ErrorLogFormat "[%{cu}t] level=%l request_id=%L pid_tid=%P/%T - %M"
+  ErrorLogFormat request "[%{cu}t] level=%l request_id=%L headers: User-Agent=\"%{User-Agent}i\" Referer=\"%{Referer}i\" Origin=\"%{Origin}i\""
+  ErrorLog /dev/stdout
+  CustomLog /dev/stdout "[%{%Y-%m-%dT%T}t.%{usec_frac}t] level=info request_id=%L \"%r\" status=%>s remote=%h duration=%{ms}T query=%q
   LogLevel ${APACHE_LOG_LEVEL}
-  ErrorLog /dev/stderr
-  CustomLog /dev/stdout  combined
+  ServerSignature Off
+
 
   ## Script alias directives
   ScriptAlias /cgi-bin "/var/www/vhosts/mf-chsdi3/cgi-bin/"

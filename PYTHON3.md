@@ -1,45 +1,112 @@
-Migration to Python3
-====================
+# Migration to Python3, Docker and Frankfort
 
+Currently, we are porting `mf-chsdi3` to `python3`, `docker` and `Frankfurt`
 
-Currently, we are porting `mf-chsdi3` to `python3` and `docker`
+- [Install](#install)
+- [Docker build](#docker-build)
+- [Docker run](#docker-run)
+- [Unit Testing](#unit-testing)
+  - [Prerequisites](#prerequisites)
+  - [AWS S3 Credentials](#aws-s3-credentials)
+- [Download WMS image legends](#download-wms-image-legends)
 
-Install
--------
+## Install
 
-For practical reason, `Makefile` will download and compile its
-own version of Python 3.6 and store it in the `local` directory.
+Use only `Makefile.frankfurt`
 
+The required environment variables are set in `.env.default`. They can be
+adapted or you can use a copy of `.env.default`, e.g. `.env.mine` and use that
+instead.
 
-To install the `venv`:
+Install the python virtual environment (still `virtualenv`at this point)
 
-    USE_PYTHON3=1 make cleanall user
+```bash
+make -f Makefile.frankfurt setup
+```
 
-For all `make` target, use the same `USE_PYTHON3=1` variable
+Build the Pylons settings files and run the local `waitress` server
 
-    USE_PYTHON3=1 make test
+```bash
+summon make -f Makefile.frankfurt build serve
+```
 
-or
+You may want to customize the variables. Copy the file `.env.default` as `.ven.mine`,
+change the variables you want and use them with
 
-    USE_PYTHON3=1 make serve
+```bash
+summon make -f Makefile.frankfurt ENV_FILE=.env.mine build serve
+```
 
-Docker build
-------------
+## Docker build
 
+```bash
+    make -f Makefile.frankfurt dockerbuild
+```
 
-Testing
--------
+## Docker run
 
-The project `mf-chsdi3` needs a working PostgreSQL connection but will however
-always start and hang forever.
+```bash
+summon make -f Makefile.frankfurt dockerrun
+```
 
-The `docker-entrypoint-sh` script is testing the PostgreSQL connectivity
+NOTE: You need access to the database `pg-geodata-replica.bgdi.ch`. For this you can use the SSH
+LocalForward functionality with our jumphost and then modify the `DBHOST` to `localhost`
 
-    docker-compose up 
-    Recreating mf-chsdi3_chsdi3_1 ... done
-    Attaching to mf-chsdi3_chsdi3_1
-    chsdi3_1  | INSTALLDIR=/var/www/vhosts/mf-chsdi3/private/chsdi
-    chsdi3_1  | pg.bgdi.ch:5432 - no response
-    mf-chsdi3_chsdi3_1 exited with code 2
+1. Open an SSH connection with port forwarding
 
-and fail if no database is found.
+    ```bash
+    ssh ssh0a.prod.bgdi.ch -L 5432:pg-geodata-replica.bgdi.ch:5432
+    ```
+
+2. Starts the container localy
+
+    ```bash
+    summon make -f Makefile.frankfurt ENV_FILE=.env.mine dockerrun
+    ```
+
+## Unit Testing
+
+### Prerequisites
+
+- PostgreSQL DB `pg-geodata-replica.bgdi.ch` must be reachable
+- Access to AWS services
+  - Read access to S3 bucket `service-mf-chsdi3-grid-geojsons-dev-swisstopo` (can be disable with `S3_TESTS=0`)
+
+To run the tests enter
+
+```bash
+summon make -f Makefile.frankfurt test
+```
+
+Or if you use your own environment file
+
+```bash
+summon make -f Makefile.frankfurt ENV_FILE=.env.mine test
+```
+
+**:warning: If you don't have AWS Access you can disable the S3 tests as follow**
+
+```bash
+summon make -f Makefile.frankfurt S3_TESTS=0 test
+```
+
+### AWS S3 Credentials
+
+To configure your AWS S3 access Credentials you can either sets the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+environment variables or if you use ZSH you can use the `acp swisstopo-bgdi-dev` command (see [oh-my-zsh aws plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws))
+
+## Download WMS image legends
+
+In order to download all images of a layer in the correct format and with the correct dimensions, simply use:
+
+```bash
+make legends BODID=ch.layername WMSHOST=wms.geo.admi.ch
+```
+
+Alternatively, you can also download a WMS legend for a specific scale.
+
+```bash
+make legends BODID=ch.layername WMSHOST=wms.geo.admi.ch WMSSCALELEGEND=1000
+```
+
+You will need the `optipgn` tool order to download the legends, use `sudo apt install optipng` to install it.

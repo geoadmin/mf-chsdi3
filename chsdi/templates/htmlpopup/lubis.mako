@@ -6,6 +6,7 @@ import datetime
 from pyramid.url import route_url
 import chsdi.lib.helpers as h
 import markupsafe
+# TODO python2 clean-up
 try:
     from urllib import urlencode
 except ImportError:
@@ -114,7 +115,7 @@ viewer_url = get_viewer_url(request, params)
   </td>
 </tr>
 
-% elif c['attributes'].get('doi_link', '-').startswith('http'):
+% elif str(c['attributes'].get('doi_link', '-')).startswith('http'):
 <tr>
   <td class="cell-left">${_('tt_lubis_Quickview')}</td>
   <td><a href="${c['attributes']['doi_link']}" target="_blank">${c['attributes']['doi_link']}</a></td></tr>
