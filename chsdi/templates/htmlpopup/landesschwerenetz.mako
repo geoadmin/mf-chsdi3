@@ -9,7 +9,6 @@ translate_type = c['attributes']['type'] + '_landesschwerenetz_type'
 
     <tr><td class="cell-left">${_('ch.swisstopo.landesschwerenetz.nr_lsn2004')}</td>        <td>${c['attributes']['nr_lsn2004']}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.landesschwerenetz.name')}</td>              <td>${c['attributes']['name']}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.landesschwerenetz.label')}</td>             <td>${c['attributes']['label_tt']}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.landesschwerenetz.type')}</td>              <td>${_(translate_type)}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.landesschwerenetz.lat_etrs')}</td>          <td>${c['attributes']['lat_etrs']}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.landesschwerenetz.lon_etrs')}</td>          <td>${c['attributes']['lon_etrs']}</td></tr>
