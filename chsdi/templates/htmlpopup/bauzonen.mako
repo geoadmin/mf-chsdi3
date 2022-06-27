@@ -13,5 +13,12 @@
   <tr><td class="cell-left">${_('tt_bauzonen_gemeindetypen_NAME')}</td>    <td>${c['attributes']['name']}</td></tr>
   <tr><td class="cell-left">${_('tt_bauzonen_gemeindetypen_KT_NO')}</td>    <td>${c['attributes']['kt_no'] or '-'}</td></tr>
 	<tr><td class="cell-left">${_('tt_bauzonen_gemeindetypen_KT_KZ')}</td>    <td>${c['attributes']['kt_kz'] or '-'}</td></tr>
-  <tr><td class="cell-left">${_('tt_bauzonen_FLAECHE')}</td>    <td>${int(round(c['attributes']['flaeche'])) or '-'}</td></tr>
+  <tr>
+    <td class="cell-left">${_('tt_bauzonen_FLAECHE')}</td>
+    % if c['attributes']['flaeche']:
+      <td>${int(round(c['attributes']['flaeche']))}</td>
+    % else:
+      <td>-</td>
+    % endif
+  </tr>
 </%def>

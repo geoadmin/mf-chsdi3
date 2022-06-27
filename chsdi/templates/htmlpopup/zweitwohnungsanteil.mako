@@ -30,11 +30,19 @@
     </tr>
     <tr>
       <td class="cell-left">${_('tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3110')}</td>
-      <td>${round(c['attributes']['zwg_3110'],1) or '-'} %</td>
+      % if c['attributes']['zwg_3110']:
+        <td>${round(c['attributes']['zwg_3110'], 1)} %</td>
+      % else:
+        <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-left">${_('tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3120')}</td>
-      <td>${round(c['attributes']['zwg_3120'],1) or '-'} %</td>
+      % if c['attributes']['zwg_3120']:
+        <td>${round(c['attributes']['zwg_3120'], 1)} %</td>
+      % else:
+        <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-left">${_('tt_ch.are.wohnungsinventar-zweitwohnungsanteil_zwg_3200')}</td>

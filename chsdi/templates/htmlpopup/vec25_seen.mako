@@ -30,12 +30,24 @@
 <td>${c['attributes']['reguliert'] or '-'}</td>
 </tr>
 <th class="cell-left">${_('ch.bafu.vec25-seen.seeflaeche_km2')}</th>
-<td>${round(c['attributes']['seeflaeche_km2'],2) or '-'}</td>
+% if c['attributes']['seeflaeche_km2']:
+   <td>${round(c['attributes']['seeflaeche_km2'], 2)}</td>
+% else:
+   <td>-</td>
+% endif
 <th class="cell-left">${_('ch.bafu.vec25-seen.inhalt_see_mio_m3')}</th>
-<td>${round(c['attributes']['inhalt_see_mio_m3'],2) or '-'}</td>
+% if c['attributes']['inhalt_see_mio_m3']:
+   <td>${round(c['attributes']['inhalt_see_mio_m3'], 2)}</td>
+% else:
+   <td>-</td>
+% endif
 </tr>
 <th class="cell-left">${_('ch.bafu.vec25-seen.nutzinhalt_mio_m3')}</th>
-<td>${round(c['attributes']['nutzinhalt_mio_m3'],2) or '-'}</td>
+% if c['attributes']['nutzinhalt_mio_m3']:
+   <td>${round(c['attributes']['nutzinhalt_mio_m3'], 2)}</td>
+% else:
+   <td>-</td>
+% endif
 <th class="cell-left">${_('ch.bafu.vec25-seen.tiefe_see_m')}</th>
 <td>${c['attributes']['tiefe_see_m'] or '-'}</td>
 </tr>

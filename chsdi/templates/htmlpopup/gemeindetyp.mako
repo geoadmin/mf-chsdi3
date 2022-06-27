@@ -14,6 +14,10 @@
     </tr>
     <tr>
       <td class="cell-left">${_('flaeche_ha')}</td>
-      <td>${int(round(c['attributes']['flaeche_ha'])) or '-'}</td>
+      % if c['attributes']['flaeche_ha']:
+        <td>${int(round(c['attributes']['flaeche_ha']))}</td>
+      % else:
+        <td>-</td>
+      % endif
     </tr>
 </%def>

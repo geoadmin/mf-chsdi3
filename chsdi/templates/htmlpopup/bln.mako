@@ -21,7 +21,11 @@
   </tr>
   <tr>
     <td class="cell-left">${_('ch.bafu.bundesinventare-bln.bln_fl')}</td>
-    <td>${round(c['attributes']['bln_fl'],2) or '-'}</td>
+    % if c['attributes']['bln_fl']:
+      <td>${round(c['attributes']['bln_fl'], 2)}</td>
+    % else:
+      <td>-</td>
+    % endif
   </tr>
   <tr>
       <td class="cell-left">${_('ch.bafu.bundesinventare-bln.linkurldescription')}</td>

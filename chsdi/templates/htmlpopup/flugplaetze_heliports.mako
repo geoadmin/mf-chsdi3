@@ -19,11 +19,19 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bazl.flugplaetze-heliports.arp_east')}</td>
-        <td>${int(round(c['attributes']['arp_east'])) or '-'}</td>
+        % if c['attributes']['arp_east']:
+            <td>${int(round(c['attributes']['arp_east']))}</td>
+        % else:
+            <td>-</td>
+        % endif
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bazl.flugplaetze-heliports.arp_north')}</td>
-        <td>${int(round(c['attributes']['arp_north'])) or '-'}</td>
+        % if c['attributes']['arp_north']:
+            <td>${int(round(c['attributes']['arp_north']))}</td>
+        % else:
+            <td>-</td>
+        % endif
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bazl.flugplaetze-heliports.elevation')}</td>

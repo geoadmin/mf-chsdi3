@@ -10,7 +10,14 @@
 %>
 
 <% c['stable_id'] = False %>
-    <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.lr_max_day')}</td> <td>${int(round(c['attributes']['lr_max_day'], 1)) or '-'}</td></tr>
+    <tr>
+      <td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.lr_max_day')}</td>
+      % if c['attributes']['lr_max_day']:
+        <td>${round(c['attributes']['lr_max_day'], 1)}</td>
+      % else:
+        <td>-</td>
+      % endif
+    </tr>
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.de_es')}</td><td>${c['attributes'][es] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.floor')}</td><td>${c['attributes']['floor'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag.de_pointofdetermination_t')}</td><td>${c['attributes'][pointofdetermination_t] or '-'}</td></tr>

@@ -11,14 +11,7 @@
 </%def>
 
 <%def name="extended_info(c, lang)">
-<%
-    shape_area_in_km2 = c['attributes']['shape_area']
-    if shape_area_in_km2 is not None:
-        shape_area_in_km2 = round(shape_area_in_km2 / 1000000,1)
-    else:
-        shape_area_in_km2 = 0
 
-%>
 <table class="table-with-border kernkraftwerke-extended">
 <tr>
 <th width="25%"class="cell-left">${_('ch.bafu.hydrologischer-atlas_basisgebiete.nummer')}</th>
@@ -40,24 +33,24 @@
 </tr>
 <tr>
 <th width="25%"class="cell-left">${_('ch.bafu.hydrologischer-atlas_basisgebiete.mit_hoe')}</th>
-% if c['attributes']['mit_hoe'] != None:
-<td width="25%">${round(c['attributes']['mit_hoe'],2) or '-'}</td>
+% if c['attributes']['mit_hoe']:
+    <td width="25%">${round(c['attributes']['mit_hoe'], 2)}</td>
 % else:
-<td width="25%">-</td>
+    <td width="25%">-</td>
 % endif
 <th width="25%"class="cell-left">${_('ch.bafu.hydrologischer-atlas_basisgebiete.mit_ns')}</th>
-% if c['attributes']['mit_ns'] != None:
-<td width="25%">${round(c['attributes']['mit_ns'],2) or '-'}</td>
+% if c['attributes']['mit_ns']:
+    <td width="25%">${round(c['attributes']['mit_ns'], 2)}</td>
 % else:
-<td width="25%">-</td>
+    <td width="25%">-</td>
 % endif
 </tr>
 <tr>
 <th width="25%"class="cell-left">${_('ch.bafu.hydrologischer-atlas_basisgebiete.s_w_ns')}</th>
-% if c['attributes']['s_w_ns'] != None:
-<td width="25%">${round(c['attributes']['s_w_ns'],3) or '-'}</td>
+% if c['attributes']['s_w_ns']:
+    <td width="25%">${round(c['attributes']['s_w_ns'], 3)}</td>
 % else:
-<td width="25%">-</td>
+    <td width="25%">-</td>
 % endif
 <th width="25%"class="cell-left">${_('ch.bafu.hydrologischer-atlas_basisgebiete.jahrtemp_g')}</th>
 <td width="25%">${c['attributes']['jahrtemp_g'] or '-'}</td>
@@ -66,7 +59,11 @@
 <th width="25%"class="cell-left">${_('ch.bafu.hydrologischer-atlas_basisgebiete.winttemp_g')}</th>
 <td width="25%">${c['attributes']['winttemp_g'] or '-'}</td>
 <th width="25%"class="cell-left">${_('flaeche_km2')}</th>
-<td width="25%">${shape_area_in_km2 or '-'}</td>
+% if c['attributes']['shape_area']:
+    <td width="25%">${_('flaeche_ha')}</td><td>${round(c['attributes']['shape_area'] / 1000000, 1)}</td>
+% else:
+    <td width="25%">${_('flaeche_ha')}</td><td>-</td>
+% endif
 </tr>
 
 </table>
