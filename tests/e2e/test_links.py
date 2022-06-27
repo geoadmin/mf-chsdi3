@@ -40,6 +40,9 @@ class LinksChecker(TestsBase):
         del self.testapp
         return False
 
+    def runTest(self):
+        pass
+
     def ilinks(self):
         bod_id = 'ch.kantone.cadastralwebmap-farbe'
         ids = [self.getRandomFeatureId(bod_id) for i in range(30)]
