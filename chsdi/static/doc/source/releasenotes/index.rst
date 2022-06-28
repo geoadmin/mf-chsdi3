@@ -14,6 +14,76 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+
+.. _releasenotes_20220629:
+
+Release 20220629 - Wednesday, June 29th 2022
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcement:
+    - **ch.astra.mountainbikeland-sperrungen_umleitungen, ch.astra.skatingland-sperrungen_umleitungen, ch.astra.veloland-sperrungen_umleitungen and ch.astra.wanderland-sperrungen_umleitungen will get the following changes on their CHSDI data model with the release on September 7th 2022: **Attributes to be removed**: content_provider, reason, state_validate, type, url1_text. **Attributes to be added**: content_provider_de, content_provider_fr, content_provider_it, content_provider_en, reason_de, reason_fr, reason_it, reason_en, state_validate_de, state_validate_fr, state_validate_it, state_validate_en (all text instead of coded values), route_nr, segment_nr, type_de, type_fr, type_it, type_en
+    - **ch.swisstopo.uebersicht-gemeinden** and **ch.swisstopo.uebersicht-schweiz** have been removed from FSDI services as previously announced
+    - **ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2, ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2, ch.swisstopo.geologie-gisgeol-flaechen-10to100km2 ch.swisstopo.geologie-gisgeol-flaechen-10x10km, ch.swisstopo.geologie-gisgeol-flaechen-1x1km, ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2, ch.swisstopo.geologie-gisgeol-flaechen-lt10km2, ch.swisstopo.geologie-gisgeol-linien** and **ch.swisstopo.geologie-gisgeol-punkte** have been removed from FSDI services as previously announced
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-05-18-rc33...2022-06-29-rc1>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_220518...r_220629>`__
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division national map 100 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-pk100.metadata>`__ (ch.swisstopo.pixelkarte-pk100.metadata)                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division national map 50 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-pk50.metadata>`__ (ch.swisstopo.pixelkarte-pk50.metadata)                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division national map 25 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-pk25.metadata>`__ (ch.swisstopo.pixelkarte-pk25.metadata)                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Gravimetric base network <//map.geo.admin.ch/?layers=ch.swisstopo.landesschwerenetz>`__ (ch.swisstopo.landesschwerenetz)                                                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Height control points HFP1 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-hfp1>`__ (ch.swisstopo.fixpunkte-hfp1)                                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Image strips swisstopo <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-bildstreifen>`__ (ch.swisstopo.lubis-bildstreifen)                                                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Bathing water quality <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-badewasserqualitaet>`__ (ch.bafu.gewaesserschutz-badewasserqualitaet)                                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Parks (Zones) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Parks (Perimeter) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter)                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SIL consultation <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung)                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Aviation infrastructure <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_kraft>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_kraft)                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division GeoCover <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover.metadata>`__ (ch.swisstopo.geologie-geocover.metadata)                                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas.metadata)                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissSURFACE3D Hillshade Monodirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d-reliefschattierung_monodirektional>`__ (ch.swisstopo.swisssurface3d-reliefschattierung_monodirektional)         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissSURFACE3D Hillshade Multidirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d-reliefschattierung-multidirektional>`__ (ch.swisstopo.swisssurface3d-reliefschattierung-multidirektional)      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Erosion risk crop qualitative <//map.geo.admin.ch/?layers=ch.blw.erosion>`__ (ch.blw.erosion)                                                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Erosion risk crop quantitative <//map.geo.admin.ch/?layers=ch.blw.erosion-quantitativ>`__ (ch.blw.erosion-quantitativ)                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20220518:
 
 Release 20220518 - Wednesday, Mai 18th 2022
@@ -26,8 +96,8 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - XYZ Service Request Structure Documentation: http://api.geo.admin.ch/services/sdiservices.html#XYZ
-- Announcement: 
-    - **ch.bazl.luftfahrthindernis** has changed its data model as previously announced: Attributes removed: abortionaccomplished, duration, lk100, sanctiontext, startofconstruction, totallength. Attributes added: airport, effectivedate, group, lighting, marking, radius, uuid. 
+- Announcement:
+    - **ch.bazl.luftfahrthindernis** has changed its data model as previously announced: Attributes removed: abortionaccomplished, duration, lk100, sanctiontext, startofconstruction, totallength. Attributes added: airport, effectivedate, group, lighting, marking, radius, uuid.
     - **ch.swisstopo.amtliches-strassenverzeichnis** has changed its complete data model as previously announced. New model according to the official `model description <https://www.cadastre.ch/content/cadastre-internet/de/services/service/registry/street/_jcr_content/contentPar/tabs_copy/items/dokumente/tabPar/downloadlist/downloadItems/314_1614004254682.download/Spezifikation-DE.pdf>`__ Attributes removed: id, label, plzo, gdenr, gdename, type, status, official, validated, modified. Attributes added: str_esid, stn_label, zip_label, com_fosnr, com_name, str_type, str_status, str_official, str_valid, str_modified
     - **ch.swisstopo.wanderkarte50_papier.metadata, ch.swisstopo.wanderkarte33_papier.metadata, ch.swisstopo.wanderkarte25-zus_papier.metadata, ch.swisstopo.skitourenkarte-50.metadata, ch.swisstopo.strassenkarte200_papier.metadata,ch.swisstopo.burgenkarte200_papier.metadata, ch.swisstopo.landeskarte25_papier.metadata, ch.swisstopo.landeskarte50_papier.metadata, ch.swisstopo.landeskarte100_papier.metadata, ch.swisstopo.landeskarte200_papier.metadata, ch.swisstopo.generalkarte300_papier.metadata, ch.swisstopo.landeskarte500_papier.metadata, ch.swisstopo.landeskarte1000_papier.metadata, ch.swisstopo.luftfahrtkarten-icao_papier.metadata, ch.swisstopo.segelflugkarte_papier.metadata, ch.swisstopo.geologie-geologischer_atlas_papier.metadata, ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata, ch.swisstopo.geologie-geologische_karte_papier.metadata, ch.swisstopo.geologie-tektonische_karte_papier.metadata, ch.swisstopo.geologie-grundwasservorkommen_papier.metadata, ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata, ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata, ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata, ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata** have been removed from FSDI services as previously announced
     - **ch.swisstopo.uebersicht-gemeinden** and **ch.swisstopo.uebersicht-schweiz** will be removed from FSDI services with the release on June 29th 2022
