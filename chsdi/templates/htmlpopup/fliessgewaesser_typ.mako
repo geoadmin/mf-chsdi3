@@ -91,7 +91,7 @@
 <tr>
 <th class="cell-left">${_('ch.bafu.typisierung-fliessgewaesser.shape_length')}</th>
 % if c['attributes']['shape_length']:
-    <td>${round(c['attributes']['shape_length'],3) or '-'}</td>
+    <td>${round(c['attributes']['shape_length'],3)}</td>
 % else:
     <td>-</td>
 % endif

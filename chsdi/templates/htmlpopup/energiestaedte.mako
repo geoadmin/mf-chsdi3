@@ -32,12 +32,12 @@
     </td>
   </tr>
   <tr>
-    <th class="cell-meta">
-      ${_('ch.bfe.energiestaedte.punktezahl')}
-    </th>
-    <td>
-      ${round(c['attributes']['punktezahl'],2) or '-'}
-    </td>
+    <th class="cell-meta">${_('ch.bfe.energiestaedte.punktezahl')}</th>
+    % if c['attributes']['punktezahl']:
+      <td>${round(c['attributes']['punktezahl'], 2)}</td>
+    % else:
+      <td>-</td>
+    % endif
   </tr>
   <tr>
     <th class="cell-meta">

@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <td class="cell-left">${_('link')}</td>
-      <td><a href="https://ld.geo.admin.ch/energy/hydropowerplant/${c['featureId']}" target="_blank">Linked Data URI</a></td>
+      <td><a href="https://geo.ld.admin.ch/energy/hydropowerplant/${c['featureId']}" target="_blank">Linked Data URI</a></td>
     </tr>
 </%def>
 

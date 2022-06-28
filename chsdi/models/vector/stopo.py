@@ -245,61 +245,44 @@ class DosisleistungTerrestrisch(Base, Vector):
 register('ch.swisstopo.geologie-dosisleistung-terrestrisch', DosisleistungTerrestrisch)
 
 
-class Landesschwerenetz(Base, Vector):
+class Landesschwerenetz:
+    __table_args__ = ({'schema': 'fida', 'autoload': False})
+    __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
+    __bodId__ = 'ch.swisstopo.landesschwerenetz'
+    __label__ = 'label_tt'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    nr_lsn2004 = Column('nr_lsn2004', Unicode)
+    name = Column('name', Unicode)
+    label_tt = Column('label', Unicode)
+    type = Column('type', Unicode)
+    lat_etrs = Column('lat_etrs', Numeric)
+    lon_etrs = Column('lon_etrs', Numeric)
+    y_lv95 = Column('y_lv95', Numeric)
+    x_lv95 = Column('x_lv95', Numeric)
+    h_ln02 = Column('h_ln02', Numeric)
+    gravity = Column('gravity', Numeric)
+    rms = Column('rms', Numeric)
+    vert_grad = Column('vertgrad', Numeric)
+    link_hfp_title = Column('linkhfptit', Unicode)
+    link_hfp_url = Column('link_hfp', Unicode)
+    link_lfp_title = Column('linklfptit', Unicode)
+    link_lfp_url = Column('link_lfp', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class LandesschwerenetzZoom1(Base, Landesschwerenetz, Vector):
     __tablename__ = 'landesschwerenetz'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
-    __bodId__ = 'ch.swisstopo.landesschwerenetz'
-    __label__ = 'label_tt'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    nr_lsn2004 = Column('nr_lsn2004', Unicode)
-    name = Column('name', Unicode)
-    label_tt = Column('label', Unicode)
-    type = Column('type', Unicode)
-    lat_etrs = Column('lat_etrs', Numeric)
-    lon_etrs = Column('lon_etrs', Numeric)
-    y_lv03 = Column('y_lv03', Numeric)
-    x_lv03 = Column('x_lv03', Numeric)
-    h_ln02 = Column('h_ln02', Numeric)
-    gravity = Column('gravity', Numeric)
-    rms = Column('rms', Numeric)
-    vert_grad = Column('vert_grad', Numeric)
-    link_hfp_title = Column('link_hfp_title', Unicode)
-    link_hfp_url = Column('link_hfp_url', Unicode)
-    link_lfp_title = Column('link_lfp_title', Unicode)
-    link_lfp_url = Column('link_lfp_url', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.landesschwerenetz', Landesschwerenetz)
-
-
-class LandesschwerenetzExt(Base, Vector):
-    __tablename__ = 'landesschwerenetz_exz'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
-    __bodId__ = 'ch.swisstopo.landesschwerenetz'
+    __minscale__ = 1
     __maxscale__ = 3000
-    __label__ = 'label_tt'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    nr_lsn2004 = Column('nr_lsn2004', Unicode)
-    name = Column('name', Unicode)
-    label_tt = Column('label', Unicode)
-    type = Column('type', Unicode)
-    lat_etrs = Column('lat_etrs', Numeric)
-    lon_etrs = Column('lon_etrs', Numeric)
-    y_lv03 = Column('y_lv03', Numeric)
-    x_lv03 = Column('x_lv03', Numeric)
-    h_ln02 = Column('h_ln02', Numeric)
-    gravity = Column('gravity', Numeric)
-    rms = Column('rms', Numeric)
-    vert_grad = Column('vert_grad', Numeric)
-    link_hfp_title = Column('link_hfp_title', Unicode)
-    link_hfp_url = Column('link_hfp_url', Unicode)
-    link_lfp_title = Column('link_lfp_title', Unicode)
-    link_lfp_url = Column('link_lfp_url', Unicode)
-    the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.landesschwerenetz', LandesschwerenetzExt)
+
+class LandesschwerenetzZoom2(Base, Landesschwerenetz, Vector):
+    __tablename__ = 'landesschwerenetz_overview'
+    __minscale__ = 3000
+
+
+register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom1)
+register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom2)
 
 
 class GravimetrischerAtlasMesspunkte(Base, Vector):
@@ -2679,21 +2662,6 @@ register('ch.swisstopo.swissnames3d', Swissnames3dRaster13)
 # Perimeter only layers
 
 
-class SwissMapVector25MetadataPerimeter(Base, Vector):
-    __tablename__ = 'perimeter_vector25'
-    __table_args__ = ({'schema': 'public', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/smv25.mako'
-    __bodId__ = 'ch.swisstopo.swiss-map-vector25.metadata'
-    __label__ = 'name_de'
-    id = Column('kbnum', Unicode, primary_key=True)
-    the_geom = Column(Geometry2D)
-    name_de = Column('s_title_de', Unicode)
-    tileid = Column('tileid', Unicode)
-    datenstand = Column('release', Unicode)
-
-register(SwissMapVector25MetadataPerimeter.__bodId__, SwissMapVector25MetadataPerimeter)
-
-
 class Lotabweichungen(Base, Vector):
     __tablename__ = 'lotabweichungen_nur_punkte'
     __table_args__ = ({'schema': 'geodaesie', 'autoload': False})
@@ -2988,3 +2956,57 @@ class GletschermaechtigkeitIceThikness(Base, Gletschermaechtigkeit, Vector):
 
 register('ch.swisstopo.geologie-gletschermaechtigkeit', GletschermaechtigkeitGPRProfiles)
 register('ch.swisstopo.geologie-gletschermaechtigkeit', GletschermaechtigkeitIceThikness)
+
+
+class FixpunkteLfp1(Base, Vector):
+    __tablename__ = 'punkt_lage_lfp1'
+    __table_args__ = ({'schema': 'fida', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fida_lfp1.mako'
+    __bodId__ = 'ch.swisstopo.fixpunkte-lfp1'
+    __label__ = 'id'
+    id = Column('pointid', Unicode, primary_key=True)
+    punktname = Column('punktname', Unicode)
+    nbident = Column('nbident', Unicode)
+    status = Column('status', Unicode)
+    nummer = Column('nummer', Unicode)
+    n95 = Column('n95', Numeric)
+    e95 = Column('e95', Numeric)
+    h02 = Column('h02', Numeric)
+    proto_url = Column('proto_url', Unicode)
+    zugang = Column('zugang', Unicode)
+    ordnung = Column('ordnung', Unicode)
+    l_gen_lv95 = Column('l_gen_lv95', Numeric)
+    h_gen_lv95 = Column('h_gen_lv95', Numeric)
+    l_zuv_lv95 = Column('l_zuv_lv95', Unicode)
+    h_zuv_lv95 = Column('h_zuv_lv95', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.fixpunkte-lfp1', FixpunkteLfp1)
+
+
+class FixpunkteHfp1(Base, Vector):
+    __tablename__ = 'punkt_hoehe_hfp1'
+    __table_args__ = ({'schema': 'fida', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fida_hfp1.mako'
+    __bodId__ = 'ch.swisstopo.fixpunkte-hfp1'
+    __label__ = 'id'
+    id = Column('pointid', Unicode, primary_key=True)
+    punktname = Column('punktname', Unicode)
+    e95 = Column('e95', Numeric)
+    n95 = Column('n95', Numeric)
+    h02 = Column('h02', Numeric)
+    proto_url = Column('proto_url', Unicode)
+    ordnung = Column('ordnung', Unicode)
+    zugang = Column('zugang', Unicode)
+    h95_ell = Column('h95_ell', Unicode)
+    l_gen_lv95 = Column('l_gen_lv95', Numeric)
+    h_gen_lv95 = Column('h_gen_lv95', Numeric)
+    l_zuv_lv95 = Column('l_zuv_lv95', Unicode)
+    h_zuv_lv95 = Column('h_zuv_lv95', Unicode)
+    zust_haupt = Column('zust_haupt', Unicode)
+    zustaendig = Column('zustaendig', Unicode)
+    bgdi_created = Column('bgdi_created', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.swisstopo.fixpunkte-hfp1', FixpunkteHfp1)

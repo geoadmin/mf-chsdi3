@@ -18,7 +18,24 @@
            <td>${c['attributes']['regname_fr'] or '-'}</td>
       % endif
     </tr>
-    <tr><td class="cell-left">${_('flaeche_ha')}</td>    <td>${int(round(c['attributes']['object_are'])) or '-'}</td></tr>
-    <tr><td class="cell-left">${_('gesamtflaeche_ha')}</td>    <td>${int(round(c['attributes']['typ_area'])) or '-'}</td></tr>
-    <tr><td class="cell-left">${_('stand')}</td>    <td>${c['attributes']['stand'] or '-'}</td></tr>
+    <tr>
+      <td class="cell-left">${_('flaeche_ha')}</td>
+     % if c['attributes']['object_are']:
+          <td>${int(round(c['attributes']['object_are']))}</td>
+     % else:
+          <td>-</td>
+     % endif
+    </tr>
+    <tr>
+      <td class="cell-left">${_('gesamtflaeche_ha')}</td>
+     % if c['attributes']['typ_area']:
+          <td>${int(round(c['attributes']['typ_area']))}</td>
+     % else:
+          <td>-</td>
+     % endif
+    </tr>
+    <tr>
+      <td class="cell-left">${_('stand')}</td>
+      <td>${c['attributes']['stand'] or '-'}</td>
+    </tr>
 </%def>

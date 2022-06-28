@@ -27,7 +27,7 @@ env:
     WMSHOST: wms-bgdi.dev.bgdi.ch
     WSGI_PROCESSES: 1
     WSGI_THREADS: 15
-    LINKEDDATAHOST: https://ld.geo.admin.ch
+    LINKEDDATAHOST: https://geo.ld.admin.ch
     CACHE_CONTROL: no-cache
     CI_QUIET: 1
     # The all important USE_PYTHON3 variable is set by the AWS CodeBuild project

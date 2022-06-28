@@ -13,5 +13,12 @@ rechtsgrundlage = '%s_%s' % ('rechtsgrundlage',c['attributes']['rechtsgrundlage'
     <tr><td class="cell-left">${_('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.rechtsgrundlage')}</td>      <td>${_(rechtsgrundlage)}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.teilobjnummer')}</td>        <td>${c['attributes']['teil_nummer'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.zone')}</td>                 <td>${_(zone)}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.shape_area')}</td>         <td>${round(c['attributes']['shape_area']/10000,1)}</td></tr>
+    <tr>
+    <td class="cell-left">${_('ch.bafu.schutzgebiete-paerke_nationaler_bedeutung.shape_area')}</td>
+     % if c['attributes']['shape_area']:
+       <td>${round(c['attributes']['shape_area'] / 10000, 1)}</td>
+     % else:
+       <td>-</td>
+     % endif
+    </tr>
 </%def>
