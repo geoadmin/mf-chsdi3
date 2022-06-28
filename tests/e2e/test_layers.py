@@ -194,7 +194,7 @@ class LayersChecker(object):
     def checkPrimaryKeyColumnTypeMapping(self, layerId, featureId, model, primaryKeyColumn):
         schema = 'public' if 'schema' not in model.__table_args__ else model.__table_args__['schema']
         if featureId is None:
-            print("No feature was found in table %s for layer {}".format(schema + '.' + model.__tablename__, layerId))
+            print("No feature was found in table {} for layer {}".format(schema + '.' + model.__tablename__, layerId))
         else:
             pythonType = primaryKeyColumn.type.python_type if not isinstance(primaryKeyColumn.type, BigInteger) else (int, long)
             assert isinstance(featureId, pythonType), 'Expected %s; Got: %s; For layer %s and GeoTable %s' % (
