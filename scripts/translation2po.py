@@ -41,7 +41,6 @@ def get_db_connection():
                             port=os.environ.get('DBPORT', DEFAULT_DBPORT),
                             dbname='bod_master',
                             user='www-data',
-                            password='www-data',
                             connect_timeout=5)
         return conn
     except psycopg2.OperationalError as error:
