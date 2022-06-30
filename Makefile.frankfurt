@@ -274,7 +274,6 @@ dockerrun: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
 	    --env-file=${ENV_FILE} \
 	    --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
-		--env APP_VERSION="$(GIT_TAG)" \
 		$(DOCKER_IMG_LOCAL_TAG_PATH)
 
 
@@ -286,7 +285,6 @@ dockerrun-shell: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
 	    --env-file=${ENV_FILE} \
 	    --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
-		--env APP_VERSION="$(GIT_TAG)" \
 		--entrypoint /bin/sh \
 		$(DOCKER_IMG_LOCAL_TAG_PATH)
 
