@@ -42,6 +42,7 @@ RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
         auth_basic \
         authz_groupfile \
         autoindex \
+        deflate \
         dir \
         env \
         expires \

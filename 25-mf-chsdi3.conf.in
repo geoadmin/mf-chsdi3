@@ -31,7 +31,7 @@
 
   ## Logging
   ErrorLogFormat "[%{cu}t] level=%l request_id=%L pid_tid=%P/%T - %M"
-  ErrorLogFormat request "[%{cu}t] level=%l request_id=%L headers: User-Agent=\"%{User-Agent}i\" Referer=\"%{Referer}i\" Origin=\"%{Origin}i\""
+  ErrorLogFormat request "[%{cu}t] level=%l request_id=%L headers: User-Agent=\"%{User-Agent}i\" Referer=\"%{Referer}i\" Origin=\"%{Origin}i\" Accept-Language=\"%{Accept-Language}i\" Accept-Encoding=\"%{Accept-Encoding}i\"  Accept=\"%{Accept}i\""
   ErrorLog /dev/stdout
   CustomLog /dev/stdout "[%{%Y-%m-%dT%T}t.%{usec_frac}t] level=info request_id=%L \"%r\" status=%>s remote=%h duration=%{ms}T query=%q
   LogLevel ${APACHE_LOG_LEVEL}
