@@ -33,6 +33,11 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
+      - echo "Installing kubectl"
+      - curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.22.6/2022-03-09/bin/linux/amd64/kubectl
+      - chmod +x ./kubectl
+      - mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+      - kubectl version --short --client
       - echo "Login to AWS ECR docker registry"
       - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${DOCKER_REGISTRY}
 
@@ -168,6 +173,20 @@ phases:
           docker push ${DOCKER_IMG_TAG_LATEST}
         fi
       - echo "Done"
+      - |
+        if [[ "${GIT_BRANCH}" == develop-* ]]; then
+          echo "=========== Deploy on DEV ======"
+          echo "Setup kubectl with AWS profile"
+          aws --profile swisstopo-bgdi-dev --region eu-central-1 \
+              eks update-kubeconfig \
+                --name dev \
+                --alias swisstopo-bgdi-dev \
+                --role-arn "arn:aws:iam::839910802816:role/kubernetes-codebuild-dev"
+          kubectl config use-context swisstopo-bgdi-dev
+          echo "Rollout restart service on DEV"
+          kubectl -n mf-chsdi3 rollout restart deployment
+        fi
+
 
 reports:
   reportGroupJunit:
