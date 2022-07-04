@@ -51,7 +51,6 @@ host = ${HOST}
 apache_base_path = ${APACHE_BASE_PATH}
 apache_entry_path = ${APACHE_ENTRY_PATH}
 kml_temp_dir=${KML_TEMP_DIR}
-http_proxy = ${HTTP_PROXY}
 public_bucket_host = ${PUBLIC_BUCKET_HOST}
 vector_bucket = ${VECTOR_BUCKET}
 datageoadminhost = ${DATAGEOADMINHOST}

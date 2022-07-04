@@ -52,9 +52,6 @@ RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
         include \
         mpm_event \
         negotiation \
-        proxy \
-        proxy_http \
-        proxy_http2 \
         rewrite \
         setenvif \
         status \
