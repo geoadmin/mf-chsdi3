@@ -103,8 +103,8 @@ class SearchValidation(MapNameValidation):
             raise HTTPBadRequest("Please provide a search text")
         searchTextList = value.split(' ')
         # Remove empty strings
-        # Python2/3
-        searchTextList = list(filter(None, searchTextList))
+        # TODO: clean-up when only Python 3.x and no longer 2.x is in use
+        searchTextList = list([_f for _f in searchTextList if _f])
         if ilen(searchTextList) > MAX_SEARCH_TERMS:
             raise HTTPBadRequest("The searchText parameter can not contain more than 10 words")
         self._searchText = searchTextList
@@ -116,7 +116,7 @@ class SearchValidation(MapNameValidation):
             if len(values) != 4:
                 raise HTTPBadRequest("Please provide 4 coordinates in a comma separated list")
             try:
-                # Python 2/3
+                # TODO: clean-up when only Python 3.x and no longer 2.x is in use
                 values = list(map(float_raise_nan, values))
             except ValueError:
                 raise HTTPBadRequest("Please provide numerical values for the parameter bbox")
@@ -202,5 +202,5 @@ class SearchValidation(MapNameValidation):
         if value == 'en':
             value = 'de'
         if value is not None and value not in self.availableLangs:
-            raise HTTPBadRequest('Usupported lang filter %s' % value)
+            raise HTTPBadRequest('Unsupported lang filter %s' % value)
         self._searchLang = value

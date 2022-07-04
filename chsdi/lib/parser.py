@@ -74,11 +74,11 @@ class WhereParser(object):
 
     @property
     def tokens(self):
-        return filter(lambda x: x not in ('or', 'and'), self._tokens())
+        return [x for x in self._tokens() if x not in ('or', 'and')]
 
     @property
     def operators(self):
-        return filter(lambda x: x in ('or', 'and'), self._tokens())
+        return [x for x in self._tokens() if x in ('or', 'and')]
 
     def _tokens(self):
         r = []

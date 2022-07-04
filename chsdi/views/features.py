@@ -34,7 +34,6 @@ from chsdi.lib.helpers import _transform_coordinates, transform_round_geometry
 import logging
 logger = logging.getLogger(__name__)
 
-
 MAX_FEATURES = 201
 
 
@@ -125,7 +124,7 @@ def _prepare_popup_response(params, request, isExtended=False, isIframe=False):
 
     if params.cbName is None:
         return response
-    # Python2/3
+    # TODO: clean-up when only Python 3.x and no longer 2.x is in use
     if six.PY3:
         return response.body.decode('utf8')
     return response.body
@@ -486,7 +485,7 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
     ''' Returns a generator function that yields
     a feature. '''
     for layer in layerBodIds:
-        # Python2/3
+        # TODO: clean-up when only Python 3.x and no longer 2.x is in use
         layerBodId, models = next(six.iteritems(layer))
         # Determine the limit
         limits = [x for x in [maxFeatures, params.limit] if x is not None]

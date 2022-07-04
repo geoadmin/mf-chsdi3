@@ -49,9 +49,7 @@ def layers_config(request):
     params = BaseLayersValidation(request)
     query = params.request.db.query(LayersConfig)
     layers = {}
-    # Python 2/3
     for layer in get_layers_config_for_params(params, query, LayersConfig):
-        # layers = dict(list(layers.items()) + list(layer.items()))
         layers = dict(chain(layers.items(), layer.items()))
 
     return layers
@@ -170,7 +168,6 @@ def faqlist(request):
 
     query = params.request.db.query(LayersConfig)
     for layer in get_layers_config_for_params(params, query, LayersConfig):
-        # Python2/3
         k = list(layer.keys()).pop()
         lyr = list(layer.values()).pop()
         if 'parentLayerId' not in lyr and not k.endswith('_3d'):

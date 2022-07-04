@@ -2,10 +2,10 @@
 
 <%
   from pyramid.url import route_url
+  # TODO: clean-up when only Python 3.x and no longer 2.x are in use
   try:
       from urllib2 import urlopen
   except ImportError:
-      # Python3 fallback
       from urllib.request import urlopen
   from json import loads
 

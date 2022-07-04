@@ -40,8 +40,7 @@ def get_viewer_url(request, params):
         'lang': params[5],
         'release_year': params[6]
     }
-    # Python2/3
-    # TODO python2 clean-up
+    # TODO: clean-up when only Python 3.x and no longer 2.x is in use
     if six.PY3:
       return h.make_agnostic(route_url('historicalmaps', request)) + '?' + urllib.parse.urlencode(f)
     else:

@@ -49,7 +49,7 @@ def add_localizer(event):
     request._LOCALE_ = helpers.locale_negotiator(request)
     localizer = get_localizer(request)
     request.lang = 'rm' if localizer.locale_name == 'fi' else localizer.locale_name
-    # Python2/3
+    # TODO: clean-up when only Python 3.x and no longer 2.x is in use
     if not six.PY3:
         request.lang = request.lang.encode('ascii', 'ignore')
     # The load balancer forwards requests as http, therefore we need to check X-Forwarded-Proto

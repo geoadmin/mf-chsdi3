@@ -8,7 +8,7 @@ from pyramid.httpexceptions import HTTPBadRequest
 from pyramid.view import view_config
 from pyramid.response import Response
 
-# Python2/3
+# TODO: clean-up when only Python 3.x and no longer 2.x is in use
 if six.PY3:
     from io import BytesIO
 else:
