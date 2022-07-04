@@ -156,9 +156,19 @@ phases:
           echo "!!!!!!!! WARNING: STAGING for testing might be incorrect !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
         fi
       - make -f Makefile.frankfurt unittest-ci
-      - echo "=========== Pushing image ========="
-      - docker push ${DOCKER_IMG_TAG}
-      - docker push ${DOCKER_IMG_TAG_LATEST}
+      # Only pushes images to ECR for PR that have been merged, this means that the event triggering
+      # the CI is a git push and not a PR event. In this case the GIT_BRANCH variable as the name
+      # of the branch which got the push event.
+      - |
+        if [[ "${GIT_BRANCH}" == master ]] || [[ "${GIT_BRANCH}" == develop-* ]]; then
+          echo "=========== Pushing image ========="
+          echo "Push image ${DOCKER_IMG_TAG}"
+          docker push ${DOCKER_IMG_TAG}
+        fi
+        if [[ "${GIT_BRANCH}" == develop-* ]]; then
+          echo "Push latest image ${DOCKER_IMG_TAG_LATEST}"
+          docker push ${DOCKER_IMG_TAG_LATEST}
+        fi
       - echo "Done"
 
 reports:
