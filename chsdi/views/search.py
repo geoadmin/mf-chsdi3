@@ -490,7 +490,6 @@ class Search(SearchValidation):
         try:
             box2d = res['geom_st_box2d']
             box_str = box2d[4:-1]
-            # TODO: clean-up when only Python 3.x and no longer 2.x is in use
             b = list(map(float, re.split(' |,', box_str)))
             shape = box(*b)
             bbox = transform_shape(shape, self.DEFAULT_SRID, self.srid).bounds

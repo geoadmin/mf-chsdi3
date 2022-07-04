@@ -459,7 +459,6 @@ def float_raise_nan(val):
 
 def parse_box2d(stringBox2D):
     extent = stringBox2D.replace('BOX(', '').replace(')', '').replace(',', ' ')
-    # TODO: clean-up when only Python 3.x and no longer 2.x is in use
     box = list(map(float, extent.split(' ')))
     return box
 
@@ -556,6 +555,7 @@ def get_loaderjs_url(request, version='3.6.0'):
 
 
 def decompress_gzipped_string(streaming_body):
+    # TODO: clean-up when only Python 3.x and no longer 2.x is in use
     if six.PY2:
         string_file = six.StringIO(streaming_body.read())
         gzip_file = gzip.GzipFile(fileobj=string_file, mode='r', compresslevel=5)
