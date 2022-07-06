@@ -164,8 +164,6 @@ phases:
           echo "=========== Pushing image ========="
           echo "Push image ${DOCKER_IMG_TAG}"
           docker push ${DOCKER_IMG_TAG}
-        fi
-        if [[ "${GIT_BRANCH}" == develop-* ]]; then
           echo "Push latest image ${DOCKER_IMG_TAG_LATEST}"
           docker push ${DOCKER_IMG_TAG_LATEST}
         fi
