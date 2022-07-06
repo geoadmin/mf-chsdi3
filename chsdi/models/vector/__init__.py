@@ -28,9 +28,6 @@ DEFAULT_OUPUT_SRID = 21781
 
 
 def get_resolution(imageDisplay, mapExtent):
-    # TODO: Python2/3
-    if not isinstance(imageDisplay, list):
-        imageDisplay = list(imageDisplay)
     bounds = mapExtent.bounds
     map_meter_width = abs(bounds[0] - bounds[2])
     map_meter_height = abs(bounds[1] - bounds[3])
@@ -40,9 +37,6 @@ def get_resolution(imageDisplay, mapExtent):
 
 
 def get_scale(imageDisplay, mapExtent):
-    # TODO: Python2/3
-    if not isinstance(imageDisplay, list):
-        imageDisplay = list(imageDisplay)
     resolution = get_resolution(imageDisplay, mapExtent)
     return resolution * 39.37 * imageDisplay[2]
 

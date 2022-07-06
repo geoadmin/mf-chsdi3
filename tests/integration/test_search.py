@@ -432,7 +432,7 @@ class TestSearchServiceView(TestsBase):
         }
         resp = self.testapp.get('/rest/services/ech/SearchServer', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
-        results_addresses = filter(lambda x: x if x['attrs']['origin'] == 'address' else False, resp.json['results'])
+        results_addresses = [x for x in resp.json['results'] if (x if x['attrs']['origin'] == 'address' else False)]
         self.assertLessEqual(ilen(results_addresses), 50)
         self.assertGreater(len(list(resp.json['results'])), 0)
         self.assertAttrs('locations', resp.json['results'][0]['attrs'], 21781)

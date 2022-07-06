@@ -7,7 +7,8 @@ import json
 import os
 import errno
 import time
-import urllib
+# TODO: clean-up when only Python 3.x and no longer 2.x is in use
+from six.moves.urllib.parse import unquote_plus
 from pyramid.view import view_config
 from pyramid.response import Response
 from pyramid.httpexceptions import (HTTPBadRequest, HTTPInternalServerError)
@@ -51,7 +52,7 @@ class DownloadKML:
             return Response(status=200)
 
         # IE is always URLEncoding the body
-        jsonstring = urllib.unquote_plus(self.request.body)
+        jsonstring = unquote_plus(self.request.body)
 
         try:
             spec = json.loads(jsonstring, encoding=self.request.charset)

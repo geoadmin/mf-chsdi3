@@ -141,10 +141,8 @@ class TestWmtsCapabilitiesView(TestsBase):
                 assert_almost_equal(float(coords[1]), 20037508.3428, decimal=4)
 
     def test_axis_order(self):
-        try:
-            from urllib.parse import urlparse
-        except ImportError:
-            from urlparse import urlparse
+        # TODO: clean-up when only Python 3.x and no longer 2.x is in use
+        from six.moves.urllib.parse import urlparse
         import xml.etree.ElementTree as etree
 
         for epsg in EPSGS:

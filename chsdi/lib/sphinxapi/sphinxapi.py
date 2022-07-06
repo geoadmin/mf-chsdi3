@@ -463,7 +463,7 @@ class SphinxClient:
 
         self._groupby = attribute
         self._groupfunc = func
-        # Python2/3
+        # TODO: clean-up when only Python 3.x and no longer 2.x is in use
         self._groupsort = str_bytes(groupsort)
 
     def SetGroupDistinct(self, attribute):
@@ -510,7 +510,7 @@ class SphinxClient:
         """
         self._groupby = ''
         self._groupfunc = SPH_GROUPBY_DAY
-        # Python2/3
+        # TODO: clean-up when only Python 3.x and no longer 2.x is in use
         self._groupsort = str_bytes('@group desc')
         self._groupdistinct = ''
 
@@ -562,7 +562,7 @@ class SphinxClient:
         req.extend(pack('>L',1)) # id64 range marker
         req.extend(pack('>Q', self._min_id))
         req.extend(pack('>Q', self._max_id))
-        
+
         # filters
         req.extend ( pack ( '>L', len(self._filters) ) )
         for f in self._filters:
@@ -594,7 +594,7 @@ class SphinxClient:
         req.extend ( pack ( '>2L', self._groupfunc, len(self._groupby) ) )
         req.extend ( self._groupby )
         req.extend ( pack ( '>2L', self._maxmatches, len(self._groupsort) ) )
-        # TODO Python2/3
+        # TODO: clean-up when only Python 3.x and no longer 2.x is in use
         # _groupsort is a str
         req.extend ( self._groupsort )
         req.extend ( pack ( '>LLL', self._cutoff, self._retrycount, self._retrydelay))
@@ -664,7 +664,7 @@ class SphinxClient:
         # req.extend ( pack('>L',len(self._tokenfilterlibrary)) + self._tokenfilterlibrary )
         # req.extend ( pack('>L',len(self._tokenfiltername)) + self._tokenfiltername )
         # req.extend ( pack('>L',len(self._tokenfilteropts)) + self._tokenfilteropts )
-            
+
         # send query, get response
 
         self._reqs.append(req)
@@ -720,7 +720,7 @@ class SphinxClient:
 
                 if status == SEARCHD_WARNING:
                     result['warning'] = message
-                    
+
                 else:
                     result['error'] = message
                     continue
@@ -871,7 +871,7 @@ class SphinxClient:
         if opts.get('allow_empty'):             flags |= 256
         if opts.get('emit_zones'):              flags |= 512
         if opts.get('load_files_scattered'):    flags |= 1024
-        
+
         # mode=0, flags
         req = bytearray()
         req.extend(pack('>2L', 0, flags))
@@ -901,7 +901,7 @@ class SphinxClient:
 
         req.extend(pack('>L', int(opts['limit'])))
         req.extend(pack('>L', int(opts['around'])))
-        
+
         req.extend(pack('>L', int(opts['limit_passages'])))
         req.extend(pack('>L', int(opts['limit_words'])))
         req.extend(pack('>L', int(opts['start_passage_id'])))
@@ -989,7 +989,7 @@ class SphinxClient:
         if mva:
             mva_attr = 1
         for attr in attrs:
-            # TODO Python2/3
+            # TODO: clean-up when only Python 3.x and no longer 2.x is in use
             if six.PY3:
                 attr = attr.encode('utf8')
             req.append(pack('>L', len(attr)) + attr)
@@ -1035,7 +1035,7 @@ class SphinxClient:
         assert (isinstance(hits, int))
 
         # build request
- 
+
         req = bytearray()
         query = str_bytes(query)
         req.extend(pack ( '>L', len(query) ) + query)

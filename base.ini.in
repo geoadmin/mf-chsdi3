@@ -7,7 +7,7 @@
 
 [app:main]
 use = egg:chsdi
-app_version=${APP_VERSION}
+app_version = ${APP_VERSION}
 entry_path = ${APACHE_ENTRY_PATH}
 available_languages = de fr it en rm
 
@@ -50,8 +50,7 @@ install_directory = ${CURRENT_DIRECTORY}
 host = ${HOST}
 apache_base_path = ${APACHE_BASE_PATH}
 apache_entry_path = ${APACHE_ENTRY_PATH}
-kml_temp_dir=${KML_TEMP_DIR}
-http_proxy = ${HTTP_PROXY}
+kml_temp_dir = ${KML_TEMP_DIR}
 public_bucket_host = ${PUBLIC_BUCKET_HOST}
 vector_bucket = ${VECTOR_BUCKET}
 datageoadminhost = ${DATAGEOADMINHOST}

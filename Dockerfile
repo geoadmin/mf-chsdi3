@@ -52,9 +52,6 @@ RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
         include \
         mpm_event \
         negotiation \
-        proxy \
-        proxy_http \
-        proxy_http2 \
         rewrite \
         setenvif \
         status \
@@ -72,15 +69,15 @@ ARG GIT_DIRTY=unknown
 ARG VERSION=unknown
 ARG AUTHOR=unknown
 
-LABEL git.hash=$GIT_HASH
-LABEL git.branch=$GIT_BRANCH
-LABEL git.dirty=$GIT_DIRTY
-LABEL version=$VERSION
-LABEL author=$AUTHOR
+LABEL git.hash=${GIT_HASH}
+LABEL git.branch=${GIT_BRANCH}
+LABEL git.dirty=${GIT_DIRTY}
+LABEL version=${VERSION}
+LABEL author=${AUTHOR}
 
-# Substitute the version in the pylons configuration. Note because envsubst cannot do in place
-# substitution we use the tee tool to do the in place substitution.
-RUN APP_VERSION=$VERSION envsubst '${APP_VERSION}' < base.ini.in | tee base.ini.in > /dev/null
+# Substitute the version in the pylons configuration.
+ENV APP_VERSION=${VERSION}
+RUN sed -i 's/${APP_VERSION}/'${APP_VERSION}'/g' base.ini.in
 
 # NOTE: Here below we cannot use environment variable with ENTRYPOINT using the `exec` form.
 # The ENTRYPOINT `exec` form is required in order to use the docker-entrypoint.sh as first
