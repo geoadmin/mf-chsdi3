@@ -18,13 +18,14 @@ from geoalchemy2.shape import to_shape
 if six.PY3:
     buffer = memoryview
 
-Geometry2D = GeometryChsdi(geometry_type='GEOMETRY', dimension=2, srid=2056)
-Geometry3D = GeometryChsdi(geometry_type='GEOMETRYZ', dimension=3, srid=2056)
+DEFAULT_DB_SRID = 2056
+Geometry2D = GeometryChsdi(geometry_type='GEOMETRY', dimension=2, srid=DEFAULT_DB_SRID)
+Geometry3D = GeometryChsdi(geometry_type='GEOMETRYZ', dimension=3, srid=DEFAULT_DB_SRID)
 
 
 MAX_FEATURE_GEOMETRY_SIZE = 1e6
 
-DEFAULT_OUPUT_SRID = 21781
+DEFAULT_OUTPUT_SRID = 21781
 
 
 def get_resolution(imageDisplay, mapExtent):
@@ -47,13 +48,13 @@ def has_buffer(imageDisplay, mapExtent, tolerance):
         and all(val != 0 for val in imageDisplay) and mapExtent.area != 0)
 
 
-def get_tolerance_meters(imageDisplay, mapExtent, tolerance, srid, srid_to=DEFAULT_OUPUT_SRID):
+def get_tolerance_meters(imageDisplay, mapExtent, tolerance, srid):
     if has_buffer(imageDisplay, mapExtent, tolerance):
         # if srs is geographic, convert bounds to meters
         if srid == 4326:
-            bounds = transform_round_geometry(mapExtent, srid, srid_to, rounding=True).bounds
+            bounds = transform_round_geometry(mapExtent, srid, DEFAULT_DB_SRID, rounding=True).bounds
         else:
-            bounds = trans_mapExtent.bounds
+            bounds = mapExtent.bounds
         map_meter_width = abs(bounds[0] - bounds[2])
         map_meter_height = abs(bounds[1] - bounds[3])
         img_px_width = imageDisplay[0]
@@ -115,7 +116,7 @@ class Vector(object):
     def srid(self):
         return self.geometry_column().type.srid
 
-    def to_esrijson(self, trans, returnGeometry, srid=DEFAULT_OUPUT_SRID):
+    def to_esrijson(self, trans, returnGeometry, srid=DEFAULT_OUTPUT_SRID):
         if returnGeometry:
             id, geom, properties, bbox = self.__read__()
             geom = self.transform_shape(geom, srid, rounding=True)
@@ -131,7 +132,7 @@ class Vector(object):
                                    layerName=trans(self.__bodId__))
         return self._no_geom_template(trans)
 
-    def to_geojson(self, trans, returnGeometry, srid=DEFAULT_OUPUT_SRID):
+    def to_geojson(self, trans, returnGeometry, srid=DEFAULT_OUTPUT_SRID):
         if returnGeometry:
             id, geom, properties, bbox = self.__read__()
             geom = self.transform_shape(geom, srid, rounding=True)
