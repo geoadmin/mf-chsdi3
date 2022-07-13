@@ -47,9 +47,10 @@ def has_buffer(imageDisplay, mapExtent, tolerance):
         and all(val != 0 for val in imageDisplay) and mapExtent.area != 0)
 
 
-def get_tolerance_meters(imageDisplay, mapExtent, tolerance):
+def get_tolerance_meters(imageDisplay, mapExtent, tolerance, srid, srid_to=DEFAULT_OUPUT_SRID):
     if has_buffer(imageDisplay, mapExtent, tolerance):
-        bounds = mapExtent.bounds
+        trans_mapExtent = transform_round_geometry(mapExtent, srid, srid_to, rounding=True)
+        bounds = trans_mapExtent.bounds
         map_meter_width = abs(bounds[0] - bounds[2])
         map_meter_height = abs(bounds[1] - bounds[3])
         img_px_width = imageDisplay[0]
@@ -179,7 +180,7 @@ class Vector(object):
 
     @classmethod
     def geom_filter(cls, geometry, imageDisplay, mapExtent, tolerance, srid):
-        tolerance_meters = get_tolerance_meters(imageDisplay, mapExtent, tolerance)
+        tolerance_meters = get_tolerance_meters(imageDisplay, mapExtent, tolerance, srid)
         geom_column = cls.geometry_column()
         wkb_geometry = WKBElement(buffer(geometry.wkb), srid)
         return func.ST_DWITHIN(geom_column,
@@ -213,7 +214,7 @@ class Vector(object):
     '''
     @classmethod
     def order_by_distance(cls, geometry, geometryType, imageDisplay, mapExtent, tolerance, limit, srid):
-        tolerance_meters = get_tolerance_meters(imageDisplay, mapExtent, tolerance)
+        tolerance_meters = get_tolerance_meters(imageDisplay, mapExtent, tolerance, srid)
         # If limit is equal to 1 we have to be accurate
         if tolerance_meters <= 250.0 or limit == 1:
             wkb_geometry = WKBElement(buffer(geometry.wkb), srid)
