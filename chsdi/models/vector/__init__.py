@@ -49,8 +49,11 @@ def has_buffer(imageDisplay, mapExtent, tolerance):
 
 def get_tolerance_meters(imageDisplay, mapExtent, tolerance, srid, srid_to=DEFAULT_OUPUT_SRID):
     if has_buffer(imageDisplay, mapExtent, tolerance):
-        trans_mapExtent = transform_round_geometry(mapExtent, srid, srid_to, rounding=True)
-        bounds = trans_mapExtent.bounds
+        # if srs is geographic, convert bounds to meters
+        if srid == 4326:
+            bounds = transform_round_geometry(mapExtent, srid, srid_to, rounding=True).bounds
+        else:
+            bounds = trans_mapExtent.bounds
         map_meter_width = abs(bounds[0] - bounds[2])
         map_meter_height = abs(bounds[1] - bounds[3])
         img_px_width = imageDisplay[0]
