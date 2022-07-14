@@ -38,6 +38,11 @@ phases:
       - chmod +x ./kubectl
       - mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
       - kubectl version --short --client
+      - echo "Configure AWS profile swisstopo-bgdi-dev"
+      - sts=$(aws sts assume-role --role-arn "arn:aws:iam::839910802816:role/kubernetes-codebuild-dev" --role-session-name "swisstopo-bgdi-dev")
+      - aws configure set aws_access_key_id $(echo $sts | jq -r '.Credentials''.AccessKeyId') --profile swisstopo-bgdi-dev
+      - aws configure set aws_secret_access_key $(echo $sts | jq -r '.Credentials''.SecretAccessKey') --profile swisstopo-bgdi-dev
+      - aws configure set aws_session_token $(echo $sts | jq -r '.Credentials''.SessionToken') --profile swisstopo-bgdi-dev
       - echo "Login to AWS ECR docker registry"
       - aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${DOCKER_REGISTRY}
 
