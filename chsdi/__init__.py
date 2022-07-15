@@ -10,8 +10,6 @@ from papyrus.renderers import GeoJSON
 
 from chsdi.renderers import EsriJSON, CSVRenderer
 from chsdi.models import initialize_sql
-# TODO: clean-up when only Python 3.x and no longer 2.x is in use
-import six
 
 
 def db(request):
@@ -23,28 +21,6 @@ def db(request):
     request.add_finished_callback(cleanup)
 
     return session
-
-
-def add_cors_route(config, pattern, service, headers=None, methods=[]):
-    # The use of "GET" also implies that the view will respond to "HEAD".
-    allowed_methods = ['OPTIONS', 'HEAD']
-
-    def view(request):  # pragma: no cover
-        response = request.response
-        response.cache_control.no_cache = True
-        response.cache_control.max_age = 0
-        response.headers['Access-Control-Allow-Origin'] = '*'
-        response.headers['Access-Control-Allow-Methods'] = ','.join(
-            allowed_methods + methods)
-        if headers is not None:
-            # TODO: clean-up when only Python 3.x and no longer 2.x is in use
-            for k, v in six.iteritems(headers):
-                response.headers[k] = v
-        return response
-
-    name = service + '_options'
-    config.add_route(name, pattern, request_method=allowed_methods)
-    config.add_view(view, route_name=name)
 
 
 def main(global_config, **settings):
