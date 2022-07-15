@@ -4,6 +4,10 @@ import six
 from distutils.util import strtobool
 import cachetools.func
 
+from pyramid.events import NewRequest
+from pyramid.events import BeforeRender
+from pyramid.events import NewResponse
+from pyramid.events import subscriber
 from pyramid.i18n import get_localizer, TranslationStringFactory
 from chsdi.lib import helpers
 from chsdi.models.bod import get_translations
@@ -15,8 +19,10 @@ import logging
 DYNAMIC_TRANSLATION_TTL = 3600
 
 log = logging.getLogger(__name__)
+route_logger = logging.getLogger('route')
 
 
+@subscriber(BeforeRender)
 def add_renderer_globals(event):
     request = event.get('request')
     if request:
@@ -44,6 +50,7 @@ def update_localizer(lang, localizer, session):
     return localizer
 
 
+@subscriber(NewRequest)
 def add_localizer(event):
     request = event.request
     request._LOCALE_ = helpers.locale_negotiator(request)
@@ -65,3 +72,26 @@ def add_localizer(event):
 
     if use_dynamic_translation:
         request.localizer = update_localizer(request.lang, request.localizer, request.db)
+
+
+@subscriber(NewRequest)
+def log_request(event):
+    if route_logger.isEnabledFor(logging.INFO):
+        route_logger.info(
+            'REQUEST: %s %s - headers=%s',
+            event.request.method,
+            event.request.path_qs,
+            {k: v for k, v in event.request.headers.items()}
+        )
+
+
+@subscriber(NewResponse)
+def log_response(event):
+    if route_logger.isEnabledFor(logging.INFO):
+        route_logger.info(
+            'RESPONSE: %s %s %s - headers=%s',
+            event.request.method,
+            event.request.path_qs,
+            event.response.status,
+            {h[0]: h[1] for h in event.response.headerlist}
+        )
