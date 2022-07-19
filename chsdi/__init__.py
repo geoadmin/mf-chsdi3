@@ -2,16 +2,12 @@
 
 import datetime
 from pyramid.config import Configurator
-from pyramid.events import BeforeRender, NewRequest
-from chsdi.subscribers import add_localizer, add_renderer_globals
 from pyramid.renderers import JSONP
 from sqlalchemy.orm import scoped_session, sessionmaker
 from papyrus.renderers import GeoJSON
 
 from chsdi.renderers import EsriJSON, CSVRenderer
 from chsdi.models import initialize_sql
-# TODO: clean-up when only Python 3.x and no longer 2.x is in use
-import six
 
 
 def db(request):
@@ -25,28 +21,6 @@ def db(request):
     return session
 
 
-def add_cors_route(config, pattern, service, headers=None, methods=[]):
-    # The use of "GET" also implies that the view will respond to "HEAD".
-    allowed_methods = ['OPTIONS', 'HEAD']
-
-    def view(request):  # pragma: no cover
-        response = request.response
-        response.cache_control.no_cache = True
-        response.cache_control.max_age = 0
-        response.headers['Access-Control-Allow-Origin'] = '*'
-        response.headers['Access-Control-Allow-Methods'] = ','.join(
-            allowed_methods + methods)
-        if headers is not None:
-            # TODO: clean-up when only Python 3.x and no longer 2.x is in use
-            for k, v in six.iteritems(headers):
-                response.headers[k] = v
-        return response
-
-    name = service + '_options'
-    config.add_route(name, pattern, request_method=allowed_methods)
-    config.add_view(view, route_name=name)
-
-
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
@@ -57,8 +31,6 @@ def main(global_config, **settings):
 
     # configure 'locale' dir as the translation dir for chsdi app
     config.add_translation_dirs('chsdi:locale/')
-    config.add_subscriber(add_localizer, NewRequest)
-    config.add_subscriber(add_renderer_globals, BeforeRender)
 
     # renderers
     config.add_mako_renderer('.html')
