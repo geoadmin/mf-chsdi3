@@ -26,13 +26,13 @@ class TestStationboard(TestsBase):
         resp.mustcontain('No data available for the station 153153')
 
     def test_stationboardi_limit(self):
-        params = {'destination': 'Luzern', 'limit': '1'}
+        params = {'limit': '1'}
         resp = self.testapp.get('/stationboard/stops/8501120', params=params, status=200)
         self.assertEqual(len(resp.json), 1)
         self.assertEqual(resp.content_type, 'application/json')
 
     def test_stationboard_with_cb(self):
-        params = {'destination': 'Luzern', 'callback': 'cb_'}
+        params = {'callback': 'cb_'}
         resp = self.testapp.get('/stationboard/stops/8501120', params=params, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
         resp.mustcontain('cb_(')

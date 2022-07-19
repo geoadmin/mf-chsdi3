@@ -28,8 +28,6 @@ class TransportView(object):
             else:
                 self.id = int(id)
 
-            self.destination = request.params.get('destination', 'all')
-
             limit = request.params.get('limit')
             if limit:
                 if limit.isdigit():
