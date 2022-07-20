@@ -11,6 +11,7 @@ from pyramid.events import subscriber
 from pyramid.i18n import get_localizer, TranslationStringFactory
 from chsdi.lib import helpers
 from chsdi.models.bod import get_translations
+from chsdi.response_callbacks import add_default_cache_control
 
 
 import logging
@@ -83,6 +84,11 @@ def log_request(event):
             event.request.path_qs,
             {k: v for k, v in event.request.headers.items()}
         )
+
+
+@subscriber(NewRequest)
+def setup_cache_control_callback(event):
+    event.request.add_response_callback(add_default_cache_control)
 
 
 @subscriber(NewResponse)

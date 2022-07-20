@@ -551,6 +551,7 @@ production.ini:  production.ini.in \
 		--var "apache_base_path=$(APACHE_BASE_PATH)" \
 		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
 		--var "current_directory=$(CURRENT_DIRECTORY)" \
+		--var "default_cache_control=$(CACHE_CONTROL)" \
 		--var "dbhost=$(DBHOST)" \
 		--var "dbport=$(DBPORT)" \
 		--var "dbstaging=$(DBSTAGING)" \
