@@ -1670,7 +1670,7 @@ class GebietsbeschraenkungenDrohnen(Base, Vector):
     period_end = Column('period_end', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.einschraenkungen-drohnen', EinschraenkungenDrohnen)
+register('ch.bazl.gebietsbeschraenkungen-drohnen', GebietsbeschraenkungenDrohnen)
 
 
 class ProjFlughafenanlagen(Base, Vector):
