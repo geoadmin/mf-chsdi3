@@ -25,3 +25,16 @@
     <td><a href="${c['attributes'][auth_url]}" target="_blank">${_('ch.bazl.einschraenkungen-drohnen.bew_li_url')}</a>
   </tr>
 </%def>
+
+<%def name="extended_info(c, lang)">
+  <%
+    lang = lang if lang in ('fr', 'it', 'en') else 'de'
+    zone_name = 'zone_name_%s' % lang
+  %>
+  <table>
+    <tr>
+      <td class="cell-meta">${_('ch.bazl.einschraenkungen-drohnen.name')}</td>
+      <td class="cell-meta">${c['attributes'][zone_name] or '-'}</td>
+    </tr>
+  </table>
+</%def>
