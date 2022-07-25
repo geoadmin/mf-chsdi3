@@ -1623,6 +1623,7 @@ class GebietsbeschraenkungenDrohnen(Base, Vector):
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/gebietsbeschraenkungen_drohnen.mako'
     __bodId__ = 'ch.bazl.gebietsbeschraenkungen-drohnen'
+    __extended_info__ = True
     id = Column('bgdi_id', Integer, primary_key=True)
     zone_name_de = Column('zone_name_de', Unicode)
     zone_name_fr = Column('zone_name_fr', Unicode)
