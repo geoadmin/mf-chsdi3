@@ -22,7 +22,7 @@
   </tr>
   <tr>
     <td>${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_url')}</td>
-    <td><a href="${c['attributes'][auth_url]}" target="_blank">Link</a>
+    <td><a href="${c['attributes'][auth_url]}" target="_blank">${_('link')}</a>
   </tr>
 </%def>
 
@@ -35,6 +35,7 @@
     auth_url = 'auth_url_%s' % lang
     auth_name = 'auth_name_%s' % lang
     auth_contact = 'auth_contact_%s' % lang
+    auth_service = 'auth_service_%s' % lang
     auth_email = 'auth_email_%s' % lang
     auth_phone = 'auth_phone_%s' % lang
   %>
@@ -53,7 +54,7 @@
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_url')}</td>
-      <td class="cell-meta"><a href="${c['attributes'][auth_url]}" target="_blank">Link</a>
+      <td class="cell-meta"><a href="${c['attributes'][auth_url]}" target="_blank">${_('link')}</a>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_name')}</td>
@@ -61,7 +62,7 @@
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_service')}</td>
-    <td class="cell-meta">${c['attributes'][auth_contact] or '-'}</td>
+    <td class="cell-meta">${c['attributes'][auth_service] or '-'}</td>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_contactname')}</td>
