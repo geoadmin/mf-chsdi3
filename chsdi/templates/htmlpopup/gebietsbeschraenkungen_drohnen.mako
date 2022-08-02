@@ -38,6 +38,7 @@
     auth_service = 'auth_service_%s' % lang
     auth_email = 'auth_email_%s' % lang
     auth_phone = 'auth_phone_%s' % lang
+    period_end = ','.join('period_end') if c['attributes']['period_end'] else '-'
   %>
   <table>
     <tr>
@@ -118,7 +119,7 @@
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.period_end')}</td>
-    <td class="cell-meta">','.join(${c['attributes'][period_end']) or '-'}</td>
+    <td class="cell-meta">${_(period_end)}</td>
     </tr>
   </table>
 </%def>
