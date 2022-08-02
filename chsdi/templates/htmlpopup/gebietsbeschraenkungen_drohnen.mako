@@ -118,7 +118,7 @@
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.period_end')}</td>
-    <td class="cell-meta">${c['attributes']['period_end'] or '-'}</td>
+    <td class="cell-meta">','.join(${c['attributes'][period_end']) or '-'}</td>
     </tr>
   </table>
 </%def>
