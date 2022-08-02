@@ -328,7 +328,7 @@ def computeHeader(mapName, srid):
     maxZoom = len(gagrid.RESOLUTIONS)
     dpi = 90.7
     lods = []
-    for zoom in range(minZoom, maxZoom + 1):
+    for zoom in range(minZoom, maxZoom):
         lods.append(
             {'level': zoom,
              'resolution': gagrid.getResolution(zoom),
