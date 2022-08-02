@@ -113,11 +113,11 @@
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.period_day')}</td>
-    <td class="cell-meta">${c['attributes']['period_day'] or '-'}</td>
+    <td class="cell-meta">${_(period_day)}</td>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.period_start')}</td>
-    <td class="cell-meta">${c['attributes']['period_start'] or '-'}</td>
+    <td class="cell-meta">${_(period_start)}</td>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.period_end')}</td>
