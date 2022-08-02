@@ -38,7 +38,7 @@
     auth_service = 'auth_service_%s' % lang
     auth_email = 'auth_email_%s' % lang
     auth_phone = 'auth_phone_%s' % lang
-    period_end = ','.join('period_end') if c['attributes']['period_end'] else '-'
+    period_end = ','.join(c['attributes']['period_end']) if c['attributes']['period_end'] else '-'
   %>
   <table>
     <tr>
