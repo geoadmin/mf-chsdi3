@@ -870,7 +870,12 @@ Example of feature search usage with other services
 Height
 ------
 
-This service allows to obtain elevation information for a point. See `Height models <https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html>`_ for more details about data used by this service.
+This service allows to obtain elevation information for a point.
+
+Outside of Switzerland a 10m grid elevation model is used. It is a combined digital elevation model consisting of elevation models from mapping agencies of France, Italy, Austria, Bavaria and Baden-Württemberg and derived with a resolution of 10m.
+The extend covers XMin: 2443000 YMin: 1024000 XMax: 2895000 YMax: 1340000
+
+See `Height models <https://www.swisstopo.admin.ch/en/geodata/height/alti3d.html>`_ for more details about data used by this service.
 
 
 URL
