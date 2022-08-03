@@ -22,7 +22,7 @@
   </tr>
   <tr>
     <td>${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_url')}</td>
-    <td><a href="${c['attributes'][auth_url]}" target="_blank">${_('link')}</a>
+    <td><a href="${c['attributes'][auth_url]}" target="_blank">${_('ch.bazl.gebietsbeschraenkungen-drohnen.link')}</a>
   </tr>
 </%def>
 
