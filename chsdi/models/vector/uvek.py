@@ -3926,10 +3926,10 @@ class ElektrischeAnlagenUeber36Mast (Base, Vector):
 register(ElektrischeAnlagenUeber36Mast.__bodId__, ElektrischeAnlagenUeber36Mast)
 
 
-class ElektrischeAnlagenUeber36Poly (Base, Vector):
+class ElektrischeAnlagenUeber36Station (Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'elektrische_anlagen_ueber_36_poly'
-    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_poly.mako'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_station.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -3937,9 +3937,7 @@ class ElektrischeAnlagenUeber36Poly (Base, Vector):
     bezeichnung = Column('bezeichnung', Unicode)
     eigentuemer = Column('eigentuemer', Unicode)
     stromnetztyp = Column('stromnetztyp', Unicode)
-    leitungtyp = Column('leitungtyp', Unicode)
-    spannung = Column('spannung', Unicode)
-    frequenz = Column('frequenz', Unicode)
+    stationtyp = Column('stationtyp', Unicode)
     the_geom = Column(Geometry2D)
 
-register(ElektrischeAnlagenUeber36Poly.__bodId__, ElektrischeAnlagenUeber36Poly)
+register(ElektrischeAnlagenUeber36Station.__bodId__, ElektrischeAnlagenUeber36Station)
