@@ -3928,7 +3928,7 @@ register(ElektrischeAnlagenUeber36Mast.__bodId__, ElektrischeAnlagenUeber36Mast)
 
 class ElektrischeAnlagenUeber36Station (Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __tablename__ = 'elektrische_anlagen_ueber_36_point'
+    __tablename__ = 'elektrische_anlagen_ueber_36_poly'
     __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_station.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
     __label__ = 'id'
