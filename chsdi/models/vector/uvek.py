@@ -3890,10 +3890,10 @@ class WaermepotentialGewaesser (Base, Vector):
 register('ch.bfe.waermepotential-gewaesser', WaermepotentialGewaesser)
 
 
-class ElektrischeAnlagenUeber36Leitung (Base, Vector):
+class ElektrischeAnlagenUeber36Line (Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'elektrische_anlagen_ueber_36_line'
-    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_leitung.mako'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_line.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -3906,13 +3906,13 @@ class ElektrischeAnlagenUeber36Leitung (Base, Vector):
     frequenz = Column('frequenz', Unicode)
     the_geom = Column(Geometry2D)
 
-register(ElektrischeAnlagenUeber36Leitung.__bodId__, ElektrischeAnlagenUeber36Leitung)
+register(ElektrischeAnlagenUeber36Line.__bodId__, ElektrischeAnlagenUeber36Line)
 
 
-class ElektrischeAnlagenUeber36Mast (Base, Vector):
+class ElektrischeAnlagenUeber36Point (Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'elektrische_anlagen_ueber_36_point'
-    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_mast.mako'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_point.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -3923,13 +3923,13 @@ class ElektrischeAnlagenUeber36Mast (Base, Vector):
     hoehe = Column('hoehe', Integer)
     the_geom = Column(Geometry2D)
 
-register(ElektrischeAnlagenUeber36Mast.__bodId__, ElektrischeAnlagenUeber36Mast)
+register(ElektrischeAnlagenUeber36Point.__bodId__, ElektrischeAnlagenUeber36Point)
 
 
-class ElektrischeAnlagenUeber36Station (Base, Vector):
+class ElektrischeAnlagenUeber36Poly (Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'elektrische_anlagen_ueber_36_poly'
-    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_station.mako'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_poly.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -3940,4 +3940,4 @@ class ElektrischeAnlagenUeber36Station (Base, Vector):
     stationtyp = Column('stationtyp', Unicode)
     the_geom = Column(Geometry2D)
 
-register(ElektrischeAnlagenUeber36Station.__bodId__, ElektrischeAnlagenUeber36Station)
+register(ElektrischeAnlagenUeber36Poly.__bodId__, ElektrischeAnlagenUeber36Poly)
