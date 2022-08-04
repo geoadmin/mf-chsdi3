@@ -13,4 +13,8 @@
         <td class="cell-left">${_('ch.bfe.elektrische-anlagen_ueber_36.StromnetzTyp')}</td>
         <td>${c['attributes']['stromnetztyp'] or '-'}</td>
     </tr>
+    <tr>
+        <td class="cell-left">${_('ch.bfe.elektrische-anlagen_ueber_36.StationTyp')}</td>
+        <td>${c['attributes']['stationtyp'] or '-'}</td>
+    </tr>
 </%def>
