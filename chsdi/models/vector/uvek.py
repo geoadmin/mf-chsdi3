@@ -3909,12 +3909,16 @@ class ElektrischeAnlagenUeber36Leitung (Base, Vector):
 register(ElektrischeAnlagenUeber36Leitung.__bodId__, ElektrischeAnlagenUeber36Leitung)
 
 
-class ElektrischeAnlagenUeber36Mast (Base, Vector):
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+class ElektrischeAnlagenUeber36Point:
+    __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': True})
     __tablename__ = 'elektrische_anlagen_ueber_36_point'
-    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_mast.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
     __label__ = 'id'
+
+
+class ElektrischeAnlagenUeber36Mast (Base, ElektrischeAnlagenUeber36Point, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_mast.mako'
     id = Column('bgdi_id', Integer, primary_key=True)
     fid = Column('id', Unicode)
     eigentuemer = Column('eigentuemer', Unicode)
@@ -3926,17 +3930,15 @@ class ElektrischeAnlagenUeber36Mast (Base, Vector):
 register(ElektrischeAnlagenUeber36Mast.__bodId__, ElektrischeAnlagenUeber36Mast)
 
 
-class ElektrischeAnlagenUeber36StationPoly (Base, Vector):
+class ElektrischeAnlagenUeber36Station (Base, ElektrischeAnlagenUeber36Point, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __tablename__ = 'elektrische_anlagen_ueber_36_poly'
     __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_station.mako'
-    __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
-    __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
     fid = Column('id', Unicode)
     bezeichnung = Column('bezeichnung', Unicode)
     eigentuemer = Column('eigentuemer', Unicode)
     stromnetztyp = Column('stromnetztyp', Unicode)
+    stationtyp = Column('stationtyp', Unicode)
     the_geom = Column(Geometry2D)
 
-register(ElektrischeAnlagenUeber36StationPoly.__bodId__, ElektrischeAnlagenUeber36StationPoly)
+register(ElektrischeAnlagenUeber36Station.__bodId__, ElektrischeAnlagenUeber36Station)
