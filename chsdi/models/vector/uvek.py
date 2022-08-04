@@ -3922,6 +3922,7 @@ class ElektrischeAnlagenUeber36Point (Base, Vector):
     stromnetztyp = Column('stromnetztyp', Unicode)
     masttyp = Column('masttyp', Unicode)
     hoehe = Column('hoehe', Integer)
+    stationtyp = Column('stationtyp', Unicode)
     the_geom = Column(Geometry2D)
 
 register(ElektrischeAnlagenUeber36Point.__bodId__, ElektrischeAnlagenUeber36Point)
