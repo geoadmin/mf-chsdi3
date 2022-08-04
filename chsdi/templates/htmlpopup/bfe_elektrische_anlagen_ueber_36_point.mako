@@ -18,7 +18,8 @@
         <td class="cell-left">${_('ch.bfe.elektrische-anlagen_ueber_36.Hoehe')}</td>
         <td>${c['attributes']['hoehe'] or '-'}</td>
     </tr>
-    % else:
+    % endif
+    % if c['attributes']['stationtyp']:
     <tr>
         <td class="cell-left">${_('ch.bfe.elektrische-anlagen_ueber_36.Bezeichnung')}</td>
         <td>${c['attributes']['bezeichnung'] or '-'}</td>
