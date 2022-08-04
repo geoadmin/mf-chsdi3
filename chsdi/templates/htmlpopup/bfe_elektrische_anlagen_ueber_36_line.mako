@@ -1,6 +1,13 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
+    <%
+        stromnetztyp = c['layerBodId'] + '.' + c['attributes']['stromnetztyp']
+        leitungtyp = c['layerBodId'] + '.' + c['attributes']['leitungtyp']
+        spannung = c['layerBodId'] + '.' + c['attributes']['spannung']
+        frequenz = c['layerBodId'] + '.' + c['attributes']['frequenz']
+    %>
+
     <tr>
         <td class="cell-left">${_('ch.bfe.elektrische-anlagen_ueber_36.Bezeichnung')}</td>
         <td>${c['attributes']['bezeichnung'] or '-'}</td>
@@ -11,11 +18,11 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bfe.elektrische-anlagen_ueber_36.StromnetzTyp')}</td>
-        <td>${c['attributes']['stromnetztyp'] or '-'}</td>
+        <td>${_(stromnetztyp)}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bfe.elektrische-anlagen_ueber_36.LeitungTyp')}</td>
-        <td>${c['attributes']['leitungtyp'] or '-'}</td>
+        <td>${_(leitungtyp)}</td>
     </tr>
     % if c['attributes']['spannungandere']:
     <tr>
@@ -25,11 +32,11 @@
     % else:
     <tr>
         <td class="cell-left">${_('ch.bfe.elektrische-anlagen_ueber_36.Spannung')}</td>
-        <td>${c['attributes']['spannung'] or '-'}</td>
+        <td>${_(spannung)}</td>
     </tr>
     % endif
     <tr>
         <td class="cell-left">${_('ch.bfe.elektrische-anlagen_ueber_36.Frequenz')}</td>
-        <td>${c['attributes']['frequenz'] or '-'}</td>
+        <td>${_(frequenz)}</td>
     </tr>
 </%def>
