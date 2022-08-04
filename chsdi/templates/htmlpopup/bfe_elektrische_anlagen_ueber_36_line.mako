@@ -20,7 +20,7 @@
     % if c['attributes']['spannungandere']:
     <tr>
         <td class="cell-left">${_('ch.bfe.elektrische-anlagen_ueber_36.Spannung')}</td>
-        <td>${c['attributes']['spannungandere'] or '-'}</td>
+        <td>${c['attributes']['spannungandere']} kV</td>
     </tr>
     % else:
     <tr>

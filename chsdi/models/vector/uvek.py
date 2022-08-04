@@ -3903,6 +3903,7 @@ class ElektrischeAnlagenUeber36Line (Base, Vector):
     stromnetztyp = Column('stromnetztyp', Unicode)
     leitungtyp = Column('leitungtyp', Unicode)
     spannung = Column('spannung', Unicode)
+    spannungandere = Column('spannungandere', Unicode)
     frequenz = Column('frequenz', Unicode)
     the_geom = Column(Geometry2D)
 
