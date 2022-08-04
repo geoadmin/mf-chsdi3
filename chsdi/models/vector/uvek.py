@@ -3919,5 +3919,3 @@ class ElektrischeAnlagenUeber36Point(Base, ElektrischeAnlagenUeber36, Vector):
     __tablename__ = 'elektrische_anlagen_ueber_36_point'
 
 register(ElektrischeAnlagenUeber36.__bodId__, ElektrischeAnlagenUeber36Point)
-
-
