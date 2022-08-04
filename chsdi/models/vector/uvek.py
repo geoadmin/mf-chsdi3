@@ -3913,9 +3913,3 @@ class ElektrischeAnlagenUeber36 (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.elektrische-anlagen_ueber_36', ElektrischeAnlagenUeber36)
-
-
-class ElektrischeAnlagenUeber36Point(Base, ElektrischeAnlagenUeber36, Vector):
-    __tablename__ = 'elektrische_anlagen_ueber_36_point'
-
-register(ElektrischeAnlagenUeber36.__bodId__, ElektrischeAnlagenUeber36Point)
