@@ -3937,7 +3937,6 @@ class ElektrischeAnlagenUeber36StationPoly (Base, Vector):
     bezeichnung = Column('bezeichnung', Unicode)
     eigentuemer = Column('eigentuemer', Unicode)
     stromnetztyp = Column('stromnetztyp', Unicode)
-    stationtyp = Column('stationtyp', Unicode)
     the_geom = Column(Geometry2D)
 
 register(ElektrischeAnlagenUeber36StationPoly.__bodId__, ElektrischeAnlagenUeber36StationPoly)
