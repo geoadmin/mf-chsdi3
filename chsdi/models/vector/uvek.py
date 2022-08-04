@@ -3924,4 +3924,3 @@ class ElektrischeAnlagenUeber36Mast (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(ElektrischeAnlagenUeber36Mast.__bodId__, ElektrischeAnlagenUeber36Mast)
-
