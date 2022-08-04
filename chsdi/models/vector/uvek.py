@@ -3891,7 +3891,8 @@ register('ch.bfe.waermepotential-gewaesser', WaermepotentialGewaesser)
 
 
 class ElektrischeAnlagenUeber36 (Base, Vector):
-    __table_args__ = ({'schema': 'bfe', 'autoload': False, 'extend_existing': True})
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'elektrische_anlagen_ueber_36_line'
     __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
     __label__ = 'id'
