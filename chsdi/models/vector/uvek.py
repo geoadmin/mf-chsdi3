@@ -3890,10 +3890,10 @@ class WaermepotentialGewaesser (Base, Vector):
 register('ch.bfe.waermepotential-gewaesser', WaermepotentialGewaesser)
 
 
-class ElektrischeAnlagenUeber36 (Base, Vector):
+class ElektrischeAnlagenUeber36Line (Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'elektrische_anlagen_ueber_36_line'
-    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36.mako'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_line.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -3913,4 +3913,5 @@ class ElektrischeAnlagenUeber36 (Base, Vector):
     stationtyp = Column('stationtyp', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.elektrische-anlagen_ueber_36', ElektrischeAnlagenUeber36)
+register(ElektrischeAnlagenUeber36Line.__bodId__, ElektrischeAnlagenUeber36Line)
+
