@@ -3900,18 +3900,10 @@ class ElektrischeAnlagenUeber36Line (Base, Vector):
     fid = Column('id', Unicode)
     bezeichnung = Column('bezeichnung', Unicode)
     eigentuemer = Column('eigentuemer', Unicode)
-    eigentumvollstaendig = Column('eigentumvollstaendig', Unicode)
-    lagegenauigkeit = Column('lagegenauigkeit', Unicode)
     stromnetztyp = Column('stromnetztyp', Unicode)
-    masttyp = Column('masttyp', Unicode)
-    hoehe = Column('hoehe', Integer)
     leitungtyp = Column('leitungtyp', Unicode)
     spannung = Column('spannung', Unicode)
-    spannungandere = Column('spannungandere', Unicode)
-    betriebsstatus = Column('betriebsstatus', Unicode)
     frequenz = Column('frequenz', Unicode)
-    stationtyp = Column('stationtyp', Unicode)
     the_geom = Column(Geometry2D)
 
 register(ElektrischeAnlagenUeber36Line.__bodId__, ElektrischeAnlagenUeber36Line)
-
