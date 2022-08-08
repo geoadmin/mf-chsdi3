@@ -50,10 +50,11 @@ def shift_to_lv95(string_coords):
 class TestsBase(TestCase):
 
     def setUp(self):
-        from pyramid.paster import get_app
+        from pyramid.paster import get_app, get_appsettings
         dir_path = os.path.dirname(os.path.realpath(__file__))
         inifile = os.path.realpath(os.path.join(dir_path, '../..', 'development.ini'))
         app = get_app(inifile)
+        self.app_settings = get_appsettings(inifile)
         self.testapp = TestApp(app)
         self.grids = {
             '21781': getTileGrid(21781),
