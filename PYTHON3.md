@@ -3,11 +3,15 @@
 Currently, we are porting `mf-chsdi3` to `python3`, `docker` and `Frankfurt`
 
 - [Install](#install)
-- [Docker build](#docker-build)
-- [Docker run](#docker-run)
+- [External Ressources Dependencies](#external-ressources-dependencies)
+  - [Postgresql Port Forwarding](#postgresql-port-forwarding)
+  - [S3 Vector Bucket Access](#s3-vector-bucket-access)
+- [Docker](#docker)
+  - [Docker build](#docker-build)
+  - [Docker run](#docker-run)
 - [Unit Testing](#unit-testing)
   - [Prerequisites](#prerequisites)
-  - [AWS S3 Credentials](#aws-s3-credentials)
+  - [Starting the tests](#starting-the-tests)
 - [Download WMS image legends](#download-wms-image-legends)
 
 ## Install
@@ -37,32 +41,52 @@ change the variables you want and use them with
 summon make -f Makefile.frankfurt ENV_FILE=.env.mine build serve
 ```
 
-## Docker build
+:book: You need some external ressource to run the service, see [External ressources dependencies](#external-ressources-dependencies)
+
+## External Ressources Dependencies
+
+To run the service locally you need to have access to the following external ressources:
+
+- Postgresql database `pg-geodata-replica.bgdi.ch`
+- S3 bucket `service-mf-chsdi3-grid-geojsons-dev-swisstopo` (NOTE: this bucket is only required by some of the Identity endpoints)
+
+### Postgresql Port Forwarding
+
+You can use the ssh port forwarding feature to have access to `pg-geodata-replica.bgdi.ch` by using the jump host:
 
 ```bash
-    make -f Makefile.frankfurt dockerbuild
+ssh ssh0a.prod.bgdi.ch -L 5432:pg-geodata-replica.bgdi.ch:5432
 ```
 
-## Docker run
+Then set the `DBHOST` environment variable to `localhost` (you can do this in your own environment file e.g. `.env.mine` and run the make file as follow: `summon make -f Makefile.frankfurt ENV_FILE=.env.mine serve`)
+
+### S3 Vector Bucket Access
+
+To have access to the S3 bucket, you can either set your `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variable. **:warning: When using those variables make sure that the command are not saved into history file !**
+
+Alternatively if you are using `zsh` you can use the `aws` plugin (see [oh-my-zsh aws plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws)) with the following command:
+
+```bash
+acp swisstopo-bgdi-dev
+```
+
+This command will automatically use your AWS profile `swisstopo-bgdi-dev` for any AWS connection services.
+
+## Docker
+
+### Docker build
+
+```bash
+make -f Makefile.frankfurt dockerbuild
+```
+
+### Docker run
 
 ```bash
 summon make -f Makefile.frankfurt dockerrun
 ```
 
-NOTE: You need access to the database `pg-geodata-replica.bgdi.ch`. For this you can use the SSH
-LocalForward functionality with our jumphost and then modify the `DBHOST` to `localhost`
-
-1. Open an SSH connection with port forwarding
-
-    ```bash
-    ssh ssh0a.prod.bgdi.ch -L 5432:pg-geodata-replica.bgdi.ch:5432
-    ```
-
-2. Starts the container localy
-
-    ```bash
-    summon make -f Makefile.frankfurt ENV_FILE=.env.mine dockerrun
-    ```
+:book: You need some external ressource to run the service, see [External ressources dependencies](#external-ressources-dependencies)
 
 ## Unit Testing
 
@@ -71,6 +95,10 @@ LocalForward functionality with our jumphost and then modify the `DBHOST` to `lo
 - PostgreSQL DB `pg-geodata-replica.bgdi.ch` must be reachable
 - Access to AWS services
   - Read access to S3 bucket `service-mf-chsdi3-grid-geojsons-dev-swisstopo` (can be disable with `S3_TESTS=0`)
+
+See [External Ressources Dependencies](#external-ressources-dependencies) for more infos on those prerequisites.
+
+### Starting the tests
 
 To run the tests enter
 
@@ -89,11 +117,6 @@ summon make -f Makefile.frankfurt ENV_FILE=.env.mine test
 ```bash
 summon make -f Makefile.frankfurt S3_TESTS=0 test
 ```
-
-### AWS S3 Credentials
-
-To configure your AWS S3 access Credentials you can either sets the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
-environment variables or if you use ZSH you can use the `acp swisstopo-bgdi-dev` command (see [oh-my-zsh aws plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/aws))
 
 ## Download WMS image legends
 

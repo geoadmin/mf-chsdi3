@@ -55,9 +55,6 @@ RewriteRule ^${APACHE_ENTRY_PATH}/static/info\.json         https://%{HTTP_HOST}
 RewriteRule ^${APACHE_ENTRY_PATH}/\d{4}-\d{2}-\d{2}-rc\d+(?:-[^/]*)?/(.*)$ ${APACHE_ENTRY_PATH}/$1 [E=${APACHE_BASE_PATH}setyearcache:true,PT]
 Header merge Cache-Control "max-age=31536013, public" env=${APACHE_BASE_PATH}setyearcache
 
-# Default cache#
-Header setifempty  Cache-Control "${CACHE_CONTROL}"
-
 # Info
 RewriteRule ^${APACHE_ENTRY_PATH}/info.json ${APACHE_ENTRY_PATH}/static/info.json [PT]
 

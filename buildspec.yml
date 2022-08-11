@@ -19,7 +19,7 @@ env:
     KEEP_VERSION: false
     WMTS_PUBLIC_HOST: tod.dev.bgdi.ch
     MODWSGI_CONFIG: production.ini
-    PUBLIC_BUCKET_HOST: public.dev.bgdi.ch
+    LOADER_JS_BUCKET_HOST: sys-api3.dev.bgdi.ch
     ROBOTS_FILE: robots.txt
     SERVER_PORT: 6543
     SPHINXHOST: service-sphinxsearch.dev.bgdi.ch
