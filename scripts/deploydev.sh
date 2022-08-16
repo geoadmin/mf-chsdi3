@@ -59,7 +59,7 @@ fi
 
 # Build the project
 source rc_dev
-make all
+make -f Makefile.ireland -f Makefile.ireland all
 
 exit_code=$?
 
@@ -82,7 +82,7 @@ echo "Deployed branch $GITBRANCH to dev main."
 # create a snapshot
 if [ $CREATE_SNAPSHOT == 'true' ]; then
   # Generate the .po files
-  make translate
+  make -f Makefile.ireland translate
 
   # Deploying snapshot to snapshot directory
   sudo -u deploy deploy -c deploy/deploy.cfg $SNAPSHOTDIR

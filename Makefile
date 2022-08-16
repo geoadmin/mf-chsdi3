@@ -1,122 +1,38 @@
 #
-# This is the legacy Makefile, to be exclusively used
-# within the vhost environment, python2 and eu-west-1 aws region
+# This Makefile is to be used only in new environement (docker, python3 and
+# AWS Region Frankfurt (eu-central-1)
+# Please, keep it lean, compact and understandable
 #
-# Keep it as is!
+# Currently, the .venv is used inside the docker image, to run
+# the application and locally, for development, linting, generating
+# files from template, building doc, etc. Python 3.7 is used.
 
 SHELL = /bin/bash
 .DEFAULT_GOAL := help
 
 SERVICE_NAME := mf-chsdi3
 
-# Macro functions
-lastvalue = $(shell if [ -f .venv/last-$1 ]; then cat .venv/last-$1 2> /dev/null; else echo '-none-'; fi;)
+CURRENT_DIRECTORY := $(shell pwd)
+VENV := .venv
 
-define cachelastvariable
-	mkdir -p $(dir $1)
-	test "$2" != "$3" && \
-		echo "$2" > .venv/last-$4 || :
-endef
+# default configuration
+ENV_FILE ?= .env.default
+include $(ENV_FILE)
+S3_TESTS ?= 1
 
-# Script variables
-BODID ?=
-DEPLOY_TARGET ?=
-BRANCH_TO_DELETE ?=
+# Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
+# https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
+AVAILABLE_LANGUAGES := de fr it fi en
+LANGUAGES_PO_FILES := $(patsubst %,chsdi/locale/%/LC_MESSAGES/chsdi.po, $(AVAILABLE_LANGUAGES))
+LANGUAGES_MO_FILES := $(patsubst %,chsdi/locale/%/LC_MESSAGES/chsdi.mo, $(AVAILABLE_LANGUAGES))
+TRANSLATION_POT_FILE := chsdi/locale/chsdi.pot
+TRANSLATION_DIRS := $(patsubst %,chsdi/locale/%, $(AVAILABLE_LANGUAGES))
+TRANSLATION_FILES := $(TRANSLATION_POT_FILE) $(LANGUAGES_PO_FILES) $(LANGUAGES_MO_FILES)
+DOC_BUILD := chsdi/static/doc/build
+
+# Create legends
 WMSSCALELEGEND ?=
-
-# Variables
-CI_QUIET ?= 0 # be more quiet on CI
-USER_SOURCE ?= rc_user
-export CURRENT_DIRECTORY := $(shell pwd)
-WSGI_APP := $(CURRENT_DIRECTORY)/apache/application.wsgi
-INSTALL_DIRECTORY := .venv
-KML_TEMP_DIR := /var/local/print/kml
-MODWSGI_USER := www-data
-HTTP_PROXY := http://ec2-52-28-118-239.eu-central-1.compute.amazonaws.com:80
-BRANCH_STAGING := $(shell if [ '$(DEPLOY_TARGET)' = 'dev' ]; then echo 'test'; else echo 'integration'; fi)
-GIT_BRANCH := $(shell if [ -f '.venv/deployed-git-branch' ]; \
-							  then cat .venv/deployed-git-branch 2> /dev/null; else git rev-parse --symbolic-full-name --abbrev-ref HEAD; fi)
-GIT_COMMIT_HASH ?= $(shell git rev-parse --verify HEAD)
-GIT_COMMIT_SHORT ?= $(shell git rev-parse --short $(GIT_COMMIT_HASH))
-GIT_COMMIT_DATE ?= $(shell git log -1  --date=iso --pretty=format:%cd)
-DOCKER_IMG_TAG_LATEST ?= $(DOCKER_REGISTRY)/${SERVICE_NAME}:${GIT_BRANCH}.latest
-CURRENT_DATE ?= $(shell date -u +"%Y-%m-%d %H:%M:%S %z")
-NO_TESTS ?= withtests
-NODE_DIRECTORY := node_modules
-APACHE_ENTRY_PATH := $(shell if [ '$(APACHE_BASE_PATH)' = 'main' ]; then echo ''; else echo /$(APACHE_BASE_PATH); fi)
-DATAGEOADMINHOST ?= data.geo.admin.ch
-AWS_DEFAULT_REGION ?= eu-west-1
-# ECR region currently differs from the AWS_DEFAULT_REGION
-AWS_REGION_ECR ?= eu-central-1
-PYPI_URL ?= https://pypi.org/simple/
-GITHUB_LAST_COMMIT=$(shell curl -s  https://api.github.com/repos/geoadmin/mf-chsdi3/commits | jq -r '.[0].sha')
-DYNAMIC_TRANSLATION ?= 1
-
-# Docker metadata
-GIT_DIRTY = $(shell git status --porcelain)
-GIT_TAG = $(shell git describe --tags || echo "no version info")
-AUTHOR = $(USER)
-
-# Docker variables
-DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
-DOCKER_IMG_LOCAL_TAG := $(DOCKER_REGISTRY)/$(SERVICE_NAME):local-$(USER)-$(GIT_COMMIT_SHORT)
-DOCKER_IMAGE_LOCAL_TAG_BASEIMAGE = $(DOCKER_REGISTRY)/mf-chsdi3:base
-
-# Last values
-KEEP_VERSION ?= 'false'
-LAST_VERSION := $(call lastvalue,version)
-VERSION := $(shell if [ '$(KEEP_VERSION)' = 'true' ] && [ '$(LAST_VERSION)' != '-none-' ]; \
-						 then echo $(LAST_VERSION); else date +'%s'; fi)
-LAST_MODWSGI_CONFIG := $(call lastvalue,modwsgi-config)
-LAST_SERVER_PORT := $(call lastvalue,server-port)
-LAST_CURRENT_DIRECTORY := $(call lastvalue,current-directory)
-LAST_APACHE_BASE_PATH := $(call lastvalue,apache-base-path)
-LAST_APACHE_ENTRY_PATH := $(call lastvalue,apache-entry-path)
-LAST_DBHOST := $(call lastvalue,dbhost)
-LAST_DBPORT := $(call lastvalue,dbport)
-LAST_DBSTAGING := $(call lastvalue,dbstaging)
-LAST_GEODATA_STAGING := $(call lastvalue,geodata-staging)
-LAST_SPHINXHOST := $(call lastvalue,sphinxhost)
-LAST_WMSHOST := $(call lastvalue,wmshost)
-LAST_WMTS_PUBLIC_HOST := $(call lastvalue,wmts-public-host)
-LAST_GEOADMINHOST := $(call lastvalue,geoadminhost)
-LAST_API_URL := $(call lastvalue,api-url)
-LAST_HOST := $(call lastvalue,host)
-LAST_LOADER_JS_BUCKET_HOST  := $(call lastvalue,loader-js-bucket-host)
-LAST_VECTOR_BUCKET := $(call lastvalue,vector-bucket)
-LAST_DATAGEOADMINHOST := $(call lastvalue,datageoadminhost)
-LAST_LINKEDDATAHOST := $(call lastvalue,linkeddatahost)
-LAST_OPENTRANS_API_KEY := $(call lastvalue,opentrans-api-key)
-LAST_ROBOTS_FILE := $(call lastvalue,robots-file)
-LAST_WSGI_THREADS := $(call lastvalue,wsgi-threads)
-LAST_BRANCH_STAGING := $(call lastvalue,branch-staging)
-LAST_GIT_BRANCH := $(call lastvalue,git-branch)
-LAST_DEPLOY_TARGET := $(call lastvalue,deploy_target)
-LAST_CACHE_CONTROL := $(call lastvalue,cache-control)
-LAST_WSGI_USER := $(call lastvalue,wsgi-user)
-LAST_WSGI_PROCESSES := $(call lastvalue,wsgi-processes)
-LAST_WSGI_THREADS := $(call lastvalue,wsgi-threads)
-LAST_WSGI_APP := $(call lastvalue,wsgi-app)
-LAST_KML_TEMP_DIR := $(call lastvalue,kml-temp-dir)
-LAST_GIT_COMMIT_HASH ?= $(call lastvalue,git-commit-hash)
-LAST_GIT_COMMIT_SHORT ?= $(call lastvalue,git-commit-short)
-LAST_GITHUB_LAST_COMMIT := $(call lastvalue,github-last-commit)
-LAST_DYNAMIC_TRANSLATION := $(call lastvalue,dynamic-translation)
-
-PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
-TEMPLATE_FILES := $(shell find -type f -name "*.in" -print)
-
-# Commands
-AUTOPEP8_CMD := $(INSTALL_DIRECTORY)/bin/autopep8
-FLAKE8_CMD := $(INSTALL_DIRECTORY)/bin/flake8
-MAKO_CMD := $(INSTALL_DIRECTORY)/bin/mako-render
-NOSE_CMD := $(INSTALL_DIRECTORY)/bin/nosetests
-PIP_CMD := $(INSTALL_DIRECTORY)/bin/pip
-PSERVE_CMD := $(INSTALL_DIRECTORY)/bin/pserve
-PSHELL_CMD := $(INSTALL_DIRECTORY)/bin/pshell
-PYTHON_CMD := $(INSTALL_DIRECTORY)/bin/python
-SPHINX_CMD := $(INSTALL_DIRECTORY)/bin/sphinx-build
-ENVSUBST_CMD := /usr/bin/envsubst
+NODE_MODULES := node_modules
 
 ifeq ($(CI_QUIET), 1)
 PIP_QUIET := -q
@@ -125,6 +41,59 @@ else
 PIP_QUIET :=
 NPM_QUIET :=
 endif
+
+
+# Commands
+AUTOPEP8 := $(VENV)/bin/autopep8
+FLAKE8 := $(VENV)/bin/flake8
+MAKO := $(VENV)/bin/mako-render
+NOSE := $(VENV)/bin/nosetests
+PIP := $(VENV)/bin/pip3 $(PIP_QUIET)
+PSERVE := $(VENV)/bin/pserve
+PSHELL := $(VENV)/bin/pshell
+PYTHON := $(VENV)/bin/python3
+SPHINX := $(VENV)/bin/sphinx-build
+ENVSUBST := /usr/bin/envsubst
+
+PYTHON_VERSION := 3.7
+SYSTEM_PYTHON_CMD ?= python${PYTHON_VERSION}
+PYTHONPATH ?= $(VENV)/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
+
+
+PYPI_URL ?= https://pypi.org/simple/
+
+
+# AWS and docker variables
+DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
+AWS_REGION_ECR := eu-central-1
+AUTHOR=$(USER)
+
+# data.geo.admin.ch hosts
+DATAGEOADMINHOST ?= data.geo.admin.ch
+
+# Git metadata
+GIT_HASH ?= $(shell git rev-parse HEAD)
+GIT_HASH_SHORT ?= $(shell git rev-parse --short HEAD)
+GIT_BRANCH ?= $(shell git symbolic-ref HEAD --short 2>/dev/null)
+GIT_DIRTY ?= $(shell git status --porcelain)
+GIT_TAG ?= $(shell git describe --tags --dirty || echo "no version info")
+GIT_COMMIT_DATE ?= $(shell git log -1  --date=iso --pretty=format:%cd)
+DOCKER_IMAGE_TAG ?= local-$(USER)-$(GIT_HASH_SHORT)
+DOCKER_IMG_LOCAL_TAG_PATH = $(DOCKER_REGISTRY)/$(SERVICE_NAME):$(DOCKER_IMAGE_TAG)
+APP_VERSION=$(GIT_TAG)
+
+# Colors
+ifneq ($(shell echo ${TERM}),)
+RESET := $(shell tput sgr0)
+RED := $(shell tput setaf 1)
+GREEN := $(shell tput setaf 2)
+endif
+
+# Date
+CURRENT_DATE ?= $(shell date -u +"%Y-%m-%d %H:%M:%S %z")
+
+# Python files (for linting)
+PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
 
 # Linting rules
 PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731,W503,W504,W605"
@@ -142,591 +111,272 @@ PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731,W503,W504,W605"
 # W504: line break afterbinary operator
 # W605 invalid escape sequence
 
-# Colors
-ifneq ($(shell echo ${TERM}),)
-RESET := $(shell tput sgr0)
-RED := $(shell tput setaf 1)
-GREEN := $(shell tput setaf 2)
-endif
-
-# Versions
-# We need GDAL which is hard to install in a venv, modify PYTHONPATH to use the
-# system wide version.
-GDAL_VERSION ?= 1.10.0
-PYTHON_INSTALL_VERSION ?= 3.7
-
-ifndef USE_PYTHON3
-		override USE_PYTHON3 = 0
-endif
-
-ifeq ($(USE_PYTHON3), 1)
-ifeq (, $(shell which $(SYSTEM_PYTHON_CMD)))
-		PYTHON_VERSION := $(PYTHON_INSTALL_VERSION)
-else
-		PYTHON_VERSION := $(shell $(SYSTEM_PYTHON_CMD)  --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
-endif
-PIP_CMD := $(INSTALL_DIRECTORY)/bin/pip${PYTHON_VERSION}
-else
-	PYTHON_VERSION := $(shell python2 --version 2>&1 | cut -d ' ' -f 2 | cut -d '.' -f 1,2)
-endif
-PYTHONPATH ?= .venv/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
-
-SYSTEM_PYTHON_CMD ?= python$(PYTHON_VERSION)
-
-
 .PHONY: help
 help:
 	@echo "Usage: make <target>"
 	@echo
 	@echo "Possible targets:"
-	@echo "- user               Build the user specific version of the app"
-	@echo "- all                Build the app"
-	@echo "- serve              Serve the application with pserve"
-	@echo "- shell              Enter interactive shell with app loaded in the background"
-	@echo "- test               Launch the tests (no e2e tests)"
-	@echo "- testci             Lauch tests with reports (for CI)"
-	@echo "- teste2e            Launch end-to-end tests"
-	@echo "- lint               Run the linter"
-	@echo "- autolint           Run the autolinter"
-	@echo "- translate          Generate the translation files"
-	@echo "- legends            Downloads and optimizes all WMS legend images (make legends BODID=ch.foo WMSSCALELEGEND=)"
-	@echo "- doc                Generate the doc for api3.geo.admin.ch"
-	@echo "- deploybranch       Deploy current branch to dev (must be pushed before hand)"
-	@echo "- deploybranchint    Deploy current branch to dev and int (must be pushed before hand)"
-	@echo "- deletebranch       List deployed branches or delete a deployed branch on dev and int (BRANCH_TO_DELETE=...)"
-	@echo "- deletebranchdev    List deployed branches or delete a deployed branch on dev (BRANCH_TO_DELETE=...)"
-	@echo "- deletebranchint    List deployed branches or delete a deployed branch on int (BRANCH_TO_DELETE=...)"
-	@echo "- updateapi          Updates geoadmin api source code (ol3 fork)"
-	@echo "- deploydev          Deploys master to dev (SNAPSHOT=true to also create a snapshot)"
-	@echo "- updatedev          Updates master to dev, if version has changed (with snapshot)"
-	@echo "- deployint          Deploys a snapshot to integration (SNAPSHOT=201512021146)"
-	@echo "- deployprod         Deploys a snapshot to production (SNAPSHOT=201512021146)"
+	@echo
+	@echo -e "\033[1mSetup TARGETS\033[0m "
+	@echo "- setup              Create the python virtual environment with developper tools"
+	@echo "- all                Build the application with all dependent files. Ready to serve"
+	@echo
+	@echo -e "\033[1mBuild TARGETS\033[0m "
+	@echo "- build              Build the application files."
+	@echo
+	@echo -e "\033[1mFORMATING, LINTING AND TESTING TOOLS TARGETS\033[0m "
+	@echo "- lint/autolint      Python code quality assurance"
+	@echo "- shell              Pylons shell (for debugging)"
+	@echo "- test               Functional and integration nose tests"
+	@echo "- unittest-ci        Same as 'test' but with specific junit output for the CI"
+	@echo "- teste2e            End-to-end tests"
+	@echo
+	@echo -e "\033[1mLOCAL SERVER TARGETS\033[0m "
+	@echo "- config-templates   Create the pylons settings file from templates and environment variables."
+	@echo "- serve              Run the wsgi app using the waitress debug server. Port can be set by Env variable SERVER_PORT (default: 6543)"
+	@echo
+	@echo -e "\033[1mWEBSITE AND DOCUMENTATION\033[0m "
+	@echo "- doc                Create the website and static files"
+	@echo "- rss                Create RSS feed from the releasenotes html file"
+	@echo
+	@echo -e "\033[1mDATA INTEGRATION\033[0m "
+	@echo "- legends           Download from the WMS server the legend images for a given layer"
+	@echo
+	@echo -e "\033[1mDocker TARGETS\033[0m "
+	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
+	@echo "- dockerbuild        Build the project localy (with tag := $(DOCKER_IMAGE_TAG))"
+	@echo "- dockerrun          Run the project within docker localy (with tag := $(DOCKER_IMAGE_TAG)) on port $(APACHE_PORT)"
+	@echo "- dockerrun-shell    Run the project within docker localy (with tag := $(DOCKER_IMAGE_TAG)) on port $(APACHE_PORT)"
+	@echo "- dockerpush         Build and push the project localy (with tag := $(DOCKER_IMAGE_TAG))"
+	@echo "- dockerpull         Pull the docker image with tag $(DOCKER_IMAGE_TAG))"
+	@echo
+	@echo -e "\033[1mCLEANING TARGETS\033[0m "
 	@echo "- clean              Remove generated files"
-	@echo "- cleanall           Remove all the build artefacts"
+	@echo "- cleanall           Remove all the build artefacts and venv"
 	@echo
 	@echo "Variables:"
-	@echo "USE_PYTHON3          ${USE_PYTHON3}"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
-	@echo "PYTHON_CMD:          ${PYTHON_CMD}"
 	@echo "SYSTEM_PYTHON_CMD:   ${SYSTEM_PYTHON_CMD}"
-	@echo "PIP_CMD:             ${PIP_CMD}"
-	@echo "PYTHONPATH:          ${PYTHONPATH}"
-	@echo "APACHE_ENTRY_PATH:   ${APACHE_ENTRY_PATH}"
-	@echo "API_URL:             ${API_URL}"
-	@echo "WMSHOST:             ${WMSHOST}"
-	@echo "BRANCH_STAGING:      ${BRANCH_STAGING}"
 	@echo "DBHOST:              ${DBHOST}"
-	@echo "DBSTAGING:           ${DBSTAGING}"
-	@echo "GEOADMINHOST:        ${GEOADMINHOST}"
-	@echo "GIT_BRANCH:          ${GIT_BRANCH}"
+	@echo "DBPORT:              ${DBPORT}"
 	@echo "SERVER_PORT:         ${SERVER_PORT}"
+	@echo "APACHE_PORT:         ${APACHE_PORT}"
 	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
-	@echo "DOCKER_IMG_LOCAL_TAG   ${DOCKER_IMG_LOCAL_TAG}"
-	@echo "DOCKER_IMG_TAG_LATEST  ${DOCKER_IMG_TAG_LATEST}"
+	@echo "S3_TESTS:            ${S3_TESTS}"
+	@echo "DOCKER_REGISTRY      ${DOCKER_REGISTRY}"
+	@echo "DOCKER_IMAGE_TAG     ${DOCKER_IMAGE_TAG}"
 	@echo
 
 
-.PHONY: user
-user:
-	source $(USER_SOURCE) && make all
-
-# TODO removed rss
+# TODO: add targets `translate` when merged
 .PHONY: all
-all: setup chsdi/static/css/extended.min.css templates translate lint fixrights doc rss
-
-setup: .venv node_modules
-
-ifeq ($(USE_PYTHON3), 1)
-templates: apache/wsgi.conf apache/application.wsgi development.ini production.ini chsdi/static/info.json
-	$(call build_templates,$(DEPLOY_TARGET))
-else
-templates: apache/wsgi.conf development.ini production.ini chsdi/static/info.json
-endif
+all: setup config-templates lint build
 
 
-.PHONY: environ
-environ:
-	$(call build_templates,$(DEPLOY_TARGET))
+.PHONY: setup
+setup: $(VENV) $(NODE_MODULES)
 
-define build_templates
-	export $(shell cat $1.env) && source rc_$1 && export DOCKER_IMG_LOCAL_TAG=${DOCKER_IMG_LOCAL_TAG} && export DOCKER_IMG_TAG_LATEST=${DOCKER_IMG_TAG_LATEST} && \
-		envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
-		envsubst <  apache/application.wsgi.in > apache/application.wsgi && \
-		envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
-endef
 
-.PHONY: serve
-serve:
-	PYTHONPATH=${PYTHONPATH} ${PSERVE_CMD} development.ini --reload
+requirements-py3.txt:
+	@echo "${GREEN}requirements-py3.txt has changed...${RESET}";
 
-.PHONY: shell
-shell:
-	PYTHONPATH=${PYTHONPATH} ${PSHELL_CMD} development.ini
 
-.PHONY: test
-test:
-	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD}  tests/ -e .*e2e.*
+# TODO: replace through pipenv as in the other projects.
+$(VENV): requirements-py3.txt
+		test -d "$(VENV)" ||  ( $(SYSTEM_PYTHON_CMD) -m venv $(VENV) && \
+		${PIP} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL}  && \
+		${PIP} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e . )
 
-.PHONY: testci
-testci:
-	mkdir -p junit-reports/{integration,functional}
-	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} --with-xunit --xunit-file=junit-reports/functional/nosetest.xml   tests/functional -e .*e2e.*
-	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} --with-xunit --xunit-file=junit-reports/integration/nosetest.xml  tests/integration -e .*e2e.*
 
-.PHONY: teste2e
-teste2e:
-	PYTHONPATH=${PYTHONPATH} ${NOSE_CMD} tests/e2e/
+.PHONY: build
+build: doc translate chsdi/static/css/extended.min.css rss set-app_version
 
-.PHONY: lint
-lint:
-	@echo "${GREEN}Linting python files...${RESET}";
-	${FLAKE8_CMD} --ignore=${PEP8_IGNORE} $(PYTHON_FILES) && echo ${RED}
+.PHONY: set-app_version
+set-app_version:
+	export APP_VERSION="$(APP_VERSION)" && \
+	export GIT_BRANCH="$(GIT_BRANCH)" && \
+	export GIT_HASH_SHORT="$(GIT_HASH_SHORT)" && \
+	export GIT_COMMIT_DATE="$(GIT_COMMIT_DATE)" && \
+	export GIT_HASH="$(GIT_HASH)" && \
+	export GIT_DIRTY="$(GIT_DIRTY)" && \
+	export PYTHON_VERSION="$(PYTHON_VERSION)" && \
+	export CURRENT_DATE="$(CURRENT_DATE)" && \
+	envsubst < chsdi/static/info.json.in > chsdi/static/info.json
 
-.PHONY: autolint
-autolint:
-	@echo "${GREEN}Auto correction of python files...${RESET}";
-	${AUTOPEP8_CMD} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
 
+.PHONY: config-templates
+config-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_version
+# FIXME: nosetests is still using development.ini
+	export $(shell cat $(ENV_FILE)) && \
+	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
+	export APP_VERSION="$(APP_VERSION)" && \
+	export DATAGEOADMINHOST="$(DATAGEOADMINHOST)" && \
+	envsubst < base.ini.in > base.ini && \
+	envsubst < dev.ini.in > development.ini && \
+	envsubst < prod.ini.in > production.ini && \
+	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
+	envsubst < apache/application.wsgi.in > apache/application.wsgi && \
+	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
+
+
+# Generate a basically empty gettext `chsdi` domain.
+# Translation are dynamic, the domain is updated at runtime directly from the BOD
+.PHONY: translate
+translate: $(VENV) $(TRANSLATION_FILES)
+
+
+# FIXME add the rss and css compilation
 .PHONY: doc
-doc: chsdi/static/css/extended.min.css
-	@echo "${GREEN}Building the documentation...${RESET}";
-	cd chsdi/static/doc && ../../../${SPHINX_CMD} -W -b html source build || exit 1 ;
+doc: $(VENV) $(DOC_BUILD)
+
 
 .PHONY:
-rss: doc chsdi/static/doc/build/releasenotes/index.html
+rss: $(VENV) doc chsdi/static/doc/build/releasenotes/index.html
 	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
-	${PYTHON_CMD} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
+	${PYTHON} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
 
-.PHONY: translate
-translate:
-	@echo "${GREEN}Updating translations...${RESET}";
-	make pofiles potomo
-
-.PHONY: pofiles
-pofiles:
-		@echo "${GREEN}Generating pofiles...${RESET}";
-		mkdir -p chsdi/locale/{de,fr,it,fi,en}/LC_MESSAGES;
-		source rc_prod && ${PYTHON_CMD} scripts/translation2po.py chsdi/locale/
-
-chsdi/locale/en/LC_MESSAGES/chsdi.po:
-chsdi/locale/en/LC_MESSAGES/chsdi.mo: chsdi/locale/en/LC_MESSAGES/chsdi.po
-	msgfmt -o $@ $<
-chsdi/locale/fr/LC_MESSAGES/chsdi.po:
-chsdi/locale/fr/LC_MESSAGES/chsdi.mo: chsdi/locale/fr/LC_MESSAGES/chsdi.po
-	msgfmt -o $@ $<
-chsdi/locale/de/LC_MESSAGES/chsdi.po:
-chsdi/locale/de/LC_MESSAGES/chsdi.mo: chsdi/locale/de/LC_MESSAGES/chsdi.po
-	msgfmt -o $@ $<
-chsdi/locale/fi/LC_MESSAGES/chsdi.po:
-chsdi/locale/fi/LC_MESSAGES/chsdi.mo: chsdi/locale/fi/LC_MESSAGES/chsdi.po
-	msgfmt -o $@ $<
-chsdi/locale/it/LC_MESSAGES/chsdi.po:
-chsdi/locale/it/LC_MESSAGES/chsdi.mo: chsdi/locale/it/LC_MESSAGES/chsdi.po
-	msgfmt -o $@ $<
-
-potomo: chsdi/locale/en/LC_MESSAGES/chsdi.mo chsdi/locale/fr/LC_MESSAGES/chsdi.mo \
-        chsdi/locale/de/LC_MESSAGES/chsdi.mo chsdi/locale/fi/LC_MESSAGES/chsdi.mo \
-        chsdi/locale/it/LC_MESSAGES/chsdi.mo
-
-### vhosts specific targets ###
-.PHONY: deploybranch
-deploybranch:
-	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev...${RESET}";
-	./scripts/deploybranch.sh
-
-.PHONY: deletebranch
-deletebranch:
-	make deletebranchdev BRANCH_TO_DELETE=$(BRANCH_TO_DELETE)
-	make deletebranchint BRANCH_TO_DELETE=$(BRANCH_TO_DELETE)
-
-.PHONY: deletebranchdev
-deletebranchdev:
-	./scripts/delete_branch.sh dev $(BRANCH_TO_DELETE)
-
-.PHONY: deletebranchint
-deletebranchint:
-	./scripts/delete_branch.sh int $(BRANCH_TO_DELETE)
-
-.PHONY: deploybranchint
-deploybranchint:
-	@echo "${GREEN}Deploying branch $(GIT_BRANCH) to dev and int...${RESET}";
-	./scripts/deploybranch.sh int
-
-# Remove when ready to be merged
-.PHONY: deploydev
-deploydev:
-	@if test "$(SNAPSHOT)" = "true"; \
-	then \
-		scripts/deploydev.sh -s; \
-	else \
-		scripts/deploydev.sh; \
-	fi
-
-.PHONY: updatedev
-updatedev: .venv/last-github-last-commit
-		@if [ "${GITHUB_LAST_COMMIT}" == "${LAST_GITHUB_LAST_COMMIT}"   ]; then \
-				echo "No updating dev"; \
-		else \
-			scripts/deploydev.sh -s; \
-		fi
-
-
-.PHONY: deployint
-deployint: guard-SNAPSHOT
-	scripts/deploysnapshot.sh $(SNAPSHOT) int $(NO_TESTS)
-
-.PHONY: deployprod
-deployprod: guard-SNAPSHOT
-	scripts/deploysnapshot.sh $(SNAPSHOT) prod $(NO_TESTS)
 
 .PHONY: legends
-legends: guard-BODID guard-WMSHOST
-	source rc_user && scripts/downloadlegends.sh $(WMSHOST) $(BODID) $(WMSSCALELEGEND)
-
-chsdi/templates/info.json.mako:
-	@echo "${GREEN}info.json has changed${RESET}";
-chsdi/static/info.json:  chsdi/templates/info.json.mako
-		${PYTHON_CMD} ${MAKO_CMD} \
-		--var "version=$(VERSION)" \
-		--var "git_branch=$(GIT_BRANCH)" \
-		--var "git_commit_short=$(GIT_COMMIT_SHORT)" \
-		--var "git_commit_date=$(GIT_COMMIT_DATE)" \
-		--var "git_commit_hash=$(GIT_COMMIT_HASH)" \
-		--var "python_version=$(PYTHON_VERSION)" \
-		--var "build_date=$(CURRENT_DATE)"  $< > $@
-
-rc_branch.mako:
-	@echo "${GREEN}Branch has changed${RESET}";
-rc_branch: rc_branch.mako \
-           .venv/last-git-branch \
-           .venv/last-deploy-target \
-           .venv/last-branch-staging
-	@echo "${GREEN}Creating branch template...${RESET}"
-	${MAKO_CMD} \
-		--var "git_branch=$(GIT_BRANCH)" \
-		--var "deploy_target=$(DEPLOY_TARGET)" \
-		--var "branch_staging=$(BRANCH_STAGING)" $< > $@
-
-deploy/deploy-branch.cfg.in:
-	@echo "${GREEN]}Template file deploy/deploy-branch.cfg.in has changed${RESET}";
-deploy/deploy-branch.cfg: deploy/deploy-branch.cfg.in \
-                          .venv/last-git-branch
-	@echo "${GREEN}Creating deploy/deploy-branch.cfg...${RESET}";
-	${MAKO_CMD} --var "git_branch=$(GIT_BRANCH)" $< > $@
-
-deploy/conf/00-branch.conf.in:
-	@echo "${GREEN}Templat file deploy/conf/00-branch.conf.in has changed${RESET}";
-deploy/conf/00-branch.conf: deploy/conf/00-branch.conf.in \
-                            .venv/last-git-branch
-	@echo "${GREEN}Creating deploy/conf/00-branch.conf...${RESET}"
-	${MAKO_CMD} --var "git_branch=$(GIT_BRANCH)" $< > $@
+legends: $(VENV) guard-BODID guard-WMSHOST
+	scripts/downloadlegends.sh $(WMSHOST) $(BODID) $(WMSSCALELEGEND)
 
 
-### Starting script is different again in python2 and python3
-apache/application.wsgi.mako:
-		@echo "${GREEN}Template file apache/application.wsgi.mako has changed${RESET}";
-
-apache/application.wsgi.in:
-	@echo "${GREEN}Template file apache/application.wsgi.in has changed${RESET}";
-
-ifeq ($(USE_PYTHON3), 0)
-apache/application.wsgi: apache/application.wsgi.mako \
-                         .venv/last-current-directory \
-                         .venv/last-modwsgi-config
-		@echo "${GREEN}Creating apache/application.wsgi...${RESET}";
-		${MAKO_CMD} \
-				--var "current_directory=$(CURRENT_DIRECTORY)" \
-				--var "modwsgi_config=$(MODWSGI_CONFIG)" $< > $@
-else
-
-apache/application.wsgi: apache/application.wsgi.in\
-                         .venv/last-current-directory \
-                         .venv/last-modwsgi-config
-	@echo "${GREEN}Creating apache/application.wsgi...${RESET}";
-	${ENVSUBST_CMD} < $< > $@
-
-endif
-
-apache/wsgi.conf.in:
-	@echo "${GREEN}Template file apache/wsgi.conf.in has changed${RESET}";
-
-apache/wsgi-py3.conf.in:
-	@echo "${GREEN}Template file apache/wsgi-py3.conf.in has changed${RESET}";
-
-ifeq ($(USE_PYTHON3), 1)
-
-apache/wsgi.conf: apache/wsgi-py3.conf.in \
-                  apache/application.wsgi \
-                  .venv/last-apache-base-path \
-                  .venv/last-apache-entry-path \
-                  .venv/last-robots-file \
-                  .venv/last-branch-staging \
-                  .venv/last-git-branch \
-                  .venv/last-current-directory \
-                  .venv/last-deploy-target \
-                  .venv/last-modwsgi-user \
-                  .venv/last-wsgi-processes \
-                  .venv/last-wsgi-threads \
-                  .venv/last-wsgi-app \
-                  .venv/last-kml-temp-dir
-	@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
-	${ENVSUBST_CMD} < $< > $@
-
-else
-apache/wsgi.conf: apache/wsgi.conf.in \
-                  apache/application.wsgi \
-                  .venv/last-apache-base-path \
-                  .venv/last-apache-entry-path \
-                  .venv/last-robots-file \
-                  .venv/last-branch-staging \
-                  .venv/last-git-branch \
-                  .venv/last-current-directory \
-                  .venv/last-deploy-target \
-                  .venv/last-modwsgi-user \
-                  .venv/last-wsgi-processes \
-                  .venv/last-wsgi-threads \
-                  .venv/last-wsgi-app \
-                  .venv/last-kml-temp-dir
-		@echo "${GREEN}Creating apache/wsgi.conf...${RESET}";
-		${MAKO_CMD} \
-				--var "apache_base_path=$(APACHE_BASE_PATH)" \
-				--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
-				--var "robots_file=$(ROBOTS_FILE)" \
-				--var "branch_staging=$(BRANCH_STAGING)" \
-				--var "git_branch=$(GIT_BRANCH)" \
-				--var "current_directory=$(CURRENT_DIRECTORY)" \
-				--var "deploy_target=$(DEPLOY_TARGET)" \
-				--var "cache_control=$(CACHE_CONTROL)" \
-				--var "modwsgi_user=$(MODWSGI_USER)" \
-				--var "wsgi_processes=$(WSGI_PROCESSES)" \
-				--var "wsgi_threads=$(WSGI_THREADS)" \
-				--var "wsgi_app=$(WSGI_APP)" \
-				--var "kml_temp_dir=$(KML_TEMP_DIR)" $< > $@
-endif
-
-app.log:
-	touch $@
-	chmod a+rw $@
+.PHONY: serve
+serve: $(VENV) config-templates set-app_version
+	PYTHONPATH=${PYTHONPATH} ${PSERVE} development.ini --reload
 
 
-development.ini.in: app.log
-	@echo "${GREEN}Template file development.ini.in has changed${RESET}";
-development.ini: development.ini.in \
-				   .venv/last-version \
-				   .venv/last-server-port
-	@echo "${GREEN}Creating development.ini....${RESET}";
-	${ENVSUBST_CMD} <  $< > $@
-
-production.ini.in:
-	@echo "${GREEN}Template file production.ini.in has changed${RESET}";
-production.ini:  production.ini.in \
-                .venv/last-version \
-                .venv/last-server-port \
-                .venv/last-apache-base-path \
-                .venv/last-apache-entry-path \
-                .venv/last-current-directory \
-                .venv/last-dbhost \
-                .venv/last-dbport \
-                .venv/last-dbstaging \
-                .venv/last-api-url \
-                .venv/last-geodata-staging \
-                .venv/last-sphinxhost \
-                .venv/last-wmshost \
-                .venv/last-wmts-public-host \
-                .venv/last-geoadminhost \
-                .venv/last-host \
-                .venv/last-kml-temp-dir \
-                .venv/last-http-proxy \
-                .venv/last-loader-js-bucket-host \
-                .venv/last-vector-bucket \
-                .venv/last-datageoadminhost \
-                .venv/last-linkeddatahost \
-                .venv/last-opentrans-api-key \
-                .venv/last-dynamic-translation \
-                guard-OPENTRANS_API_KEY
-	@echo "${GREEN}Creating production.ini...${RESET}";
-	${MAKO_CMD} \
-		--var "app_version=$(VERSION)" \
-		--var "server_port=$(SERVER_PORT)" \
-		--var "apache_base_path=$(APACHE_BASE_PATH)" \
-		--var "apache_entry_path=$(APACHE_ENTRY_PATH)" \
-		--var "current_directory=$(CURRENT_DIRECTORY)" \
-		--var "default_cache_control=$(CACHE_CONTROL)" \
-		--var "dbhost=$(DBHOST)" \
-		--var "dbport=$(DBPORT)" \
-		--var "dbstaging=$(DBSTAGING)" \
-		--var "api_url=$(API_URL)" \
-		--var "geodata_staging=$(GEODATA_STAGING)" \
-		--var "sphinxhost=$(SPHINXHOST)" \
-		--var "wmshost=$(WMSHOST)" \
-		--var "wmts_public_host=$(WMTS_PUBLIC_HOST)" \
-		--var "geoadminhost=$(GEOADMINHOST)" \
-		--var "host=$(HOST)" \
-		--var "kml_temp_dir=$(KML_TEMP_DIR)" \
-		--var "http_proxy=$(HTTP_PROXY)" \
-		--var "loader_js_bucket_host=$(LOADER_JS_BUCKET_HOST)" \
-		--var "vector_bucket=$(VECTOR_BUCKET)" \
-		--var "datageoadminhost=$(DATAGEOADMINHOST)" \
-		--var "linkeddatahost=$(LINKEDDATAHOST)" \
-		--var "opentrans_api_key=$(OPENTRANS_API_KEY)" \
-		--var "dynamic_translation=$(DYNAMIC_TRANSLATION)" $< > $@
+.PHONY: shell
+shell: $(VENV) config-templates set-app_version
+	PYTHONPATH=${PYTHONPATH} ${PSHELL} development.ini
 
 
-ifeq ($(USE_PYTHON3), 1)
-requirements-py3.txt:
-	@echo "${GREEN}File requirements-py3.txt has changed${RESET}";
+.PHONY: dockerlogin
+dockerlogin:
+	aws --profile swisstopo-bgdi-builder ecr get-login-password --region $(AWS_REGION_ECR) | docker login --username AWS --password-stdin $(DOCKER_REGISTRY)
 
-.venv: requirements-py3.txt
-		test -d "$(INSTALL_DIRECTORY)" || $(SYSTEM_PYTHON_CMD) -m venv $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL} ;
-		${PIP_CMD} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e .
-else
-requirements.txt:
-	@echo "${GREEN}File requirements.txt has changed${RESET}";
-.venv: requirements.txt
-	@echo "${GREEN}Setting up virtual environement...${RESET}";
-	@if [ ! -d $(INSTALL_DIRECTORY) ]; \
-	then \
-		virtualenv -p /usr/bin/python2  $(INSTALL_DIRECTORY); \
-		${PIP_CMD} install $(PIP_QUIET) pip==19.2.3 setuptools==44.1.1 enum34==1.1.6 --index-url ${PYPI_URL} ; \
-		${PIP_CMD} install $(PIP_QUIET) --requirement requirements.txt  --index-url ${PYPI_URL} ; \
-	fi
-	${PIP_CMD} install $(PIP_QUIET) --index-url ${PYPI_URL} -e .
-endif
 
-package.json:
-	@echo "${GREEN}File package.json has changed${RESET}";
-node_modules: package.json
+.PHONY: dockerbuild
+dockerbuild: build
+	docker build \
+		--build-arg GIT_HASH="$(GIT_COMMIT_HASH)" \
+		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
+		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
+		--build-arg VERSION="$(GIT_TAG)" \
+		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG_PATH) -f Dockerfile .
+
+
+.PHONY: dockerrun
+dockerrun: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
+	docker run \
+	    -it \
+	    --network=host \
+	    --env-file=${ENV_FILE} \
+	    --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
+		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
+		$(DOCKER_IMG_LOCAL_TAG_PATH)
+
+
+.PHONY: dockerrun-shell
+dockerrun-shell: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
+	docker run \
+	    -it \
+	    --network=host \
+	    --env-file=${ENV_FILE} \
+	    --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
+		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
+		--entrypoint /bin/sh \
+		$(DOCKER_IMG_LOCAL_TAG_PATH)
+
+
+.PHONY: dockerpush
+dockerpush:
+	docker push $(DOCKER_IMG_LOCAL_TAG_PATH)
+
+
+.PHONY: dockerpull
+dockerpull:
+	docker pull $(DOCKER_IMG_LOCAL_TAG_PATH)
+
+
+.PHONY: test
+test: $(VENV) config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
+	export $(shell cat $(ENV_FILE)) && ${PYTHON} ./scripts/pg_ready.py
+	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2 --cover-erase  tests/ -e "(.*e2e.*|test_search|test_sphinxapi)"
+
+
+.PHONY: unittest-ci
+unittest-ci: $(VENV) config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
+	mkdir -p junit-reports/{integration,functional}
+	PYTHONPATH=${PYTHONPATH} ${NOSE} --verbosity=2 \
+		--with-xunit --xunit-file=junit-reports/functional/nosetest.xml \
+		tests/functional
+# FIXME here below we ignore the test_wmtscapabitlities, test_search and test_sphinxapi because
+# they are not passing in Frankfurt environment and they will anyway be removed from mf-chsdi3
+# after the migration.
+	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2 \
+		--with-xunit --xunit-file=junit-reports/integration/nosetest.xml \
+		tests/integration \
+		-e "(test_search|test_sphinxapi)"
+
+
+.PHONY: teste2e
+teste2e: $(VENV)
+	PYTHONPATH=${PYTHONPATH} ${NOSE} tests/e2e/
+
+# TODO: Replace through yapf, once the old vhost infra is replaced
+.PHONY: lint
+lint: $(VENV)
+	@echo "${GREEN}Linting python files...${RESET}";
+	${FLAKE8} --ignore=${PEP8_IGNORE} $(PYTHON_FILES) && echo ${RED}
+
+
+# TODO: Replace through yapf, once the old vhost infra is replaced
+.PHONY: autolint
+autolint: $(VENV)
+	@echo "${GREEN}Auto correction of python files...${RESET}";
+	${AUTOPEP8} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
+
+
+# Compiling targets
+
+$(NODE_MODULES): package.json
 	@echo "${GREEN}Installing node packages...${RESET}";
 	npm install $(NPM_QUIET) --production
-	cp -f node_modules/jquery/dist/jquery.min.js chsdi/static/js/jquery.min.js
-	cp -f node_modules/blueimp-gallery/js/blueimp-gallery.min.js chsdi/static/js/blueimp-gallery.min.js
-	cp -f node_modules/d3/d3.min.js chsdi/static/js/d3.min.js
-	cp -f node_modules/d3-tip/index.js chsdi/static/js/d3-tip.js
-	cp -f node_modules/blueimp-gallery/css/blueimp-gallery.min.css chsdi/static/css/blueimp-gallery.min.css
+	mkdir -p chsdi/static/js/
+	cp -f $(NODE_MODULES)/jquery/dist/jquery.min.js chsdi/static/js/jquery.min.js
+	cp -f $(NODE_MODULES)/blueimp-gallery/js/blueimp-gallery.min.js chsdi/static/js/blueimp-gallery.min.js
+	cp -f $(NODE_MODULES)/d3/d3.min.js chsdi/static/js/d3.min.js
+	cp -f $(NODE_MODULES)/d3-tip/index.js chsdi/static/js/d3-tip.js
+	cp -f $(NODE_MODULES)/blueimp-gallery/css/blueimp-gallery.min.css chsdi/static/css/blueimp-gallery.min.css
 
-chsdi/static/less/extended.less:
-	@echo "${GREEN}File chsdi/static/less/extended.less has changed${RESET}";
 chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 	@echo "${GREEN}Generating new css file...${RESET}";
-	node_modules/.bin/lessc -ru --clean-css $< $@
+	$(NODE_MODULES)/.bin/lessc -ru --clean-css $< $@
 
-.venv/last-github-last-commit::
-	$(call cachelastvariable,$@,$(GITHUB_LAST_COMMIT),$(LAST_GITHUB_LAST_COMMIT),github-last-commit)
+# Translation POT file depends on all files from chsdi sources except the translation files generated
+# and the python compiled and cache files
+TRANSLATION_POT_FILE_DEPENDENCIES := $(shell find chsdi -name *.py)
+$(TRANSLATION_POT_FILE): $(TRANSLATION_POT_FILE_DEPENDENCIES)
+	@echo "${GREEN}Extracting the translation...${RESET}";
+	${PYTHON} setup.py extract_messages
 
-# application.wsg
-.venv/last-modwsgi-config::
-	$(call cachelastvariable,$@,$(MODWSGI_CONFIG),$(LAST_MODWSGI_CONFIG),MODWSGI-CONFIG)
 
-# development.ini.in
-.venv/last-version::
-	$(call cachelastvariable,$@,$(VERSION),$(LAST_VERSION),version)
+$(LANGUAGES_PO_FILES): $(TRANSLATION_POT_FILE)
+	@echo "${GREEN}Building the translation PO $@ file...${RESET}";
+	${PYTHON} setup.py init_catalog -l $(patsubst chsdi/locale/%/LC_MESSAGES/chsdi.po,%, $@)
 
-.venv/last-server-port::
-	$(call cachelastvariable,$@,$(SERVER_PORT),$(LAST_SERVER_PORT),server-port)
 
-# production.ini.in
-.venv/last-current-directory::
-	$(call cachelastvariable,$@,$(CURRENT_DIRECTORY),$(LAST_CURRENT_DIRECTORY),current-directory)
+$(LANGUAGES_MO_FILES): $(LANGUAGES_PO_FILES)
+	@echo "${GREEN}Building the translation MO $@ file...${RESET}";
+	${PYTHON} setup.py compile_catalog -l $(patsubst chsdi/locale/%/LC_MESSAGES/chsdi.mo,%, $@)
 
-.venv/last-apache-base-path::
-	$(call cachelastvariable,$@,$(APACHE_BASE_PATH),$(LAST_APACHE_BASE_PATH),apache-base-path)
 
-.venv/last-apache-entry-path::
-	$(call cachelastvariable,$@,$(APACHE_ENTRY_PATH),$(LAST_APACHE_ENTRY_PATH),apache-entry-path)
+DOC_FILES_DEPENDENCIES := $(shell find chsdi/static/doc/source ! -name *.pyc ! -name __pycache__)
+$(DOC_BUILD): $(DOC_FILES_DEPENDENCIES)
+	@echo "${GREEN}Building the documentation...${RESET}";
+	cd chsdi/static/doc && ../../../${SPHINX} -W -b html source build || exit 1 ;
 
-.venv/last-dbhost::
-	$(call cachelastvariable,$@,$(DBHOST),$(LAST_DBHOST),dbhost)
-
-.venv/last-dbport::
-	$(call cachelastvariable,$@,$(DBPORT),$(LAST_DBPORT),dbport)
-
-.venv/last-dbstaging::
-	$(call cachelastvariable,$@,$(DBSTAGING),$(LAST_DBSTAGING),dbstaging)
-
-.venv/last-geodata-staging::
-	$(call cachelastvariable,$@,$(GEODATA_STAGING),$(LAST_GEODATA_STAGING),geodata-staging)
-
-.venv/last-sphinxhost::
-	$(call cachelastvariable,$@,$(SPHINXHOST),$(LAST_SPHINXHOST),sphinxhost)
-
-.venv/last-wmshost::
-	$(call cachelastvariable,$@,$(WMSHOST),$(LAST_WMSHOST),wmshost)
-
-.venv/last-wmts-public-host::
-	$(call cachelastvariable,$@,$(WMTS_PUBLIC_HOST),$(LAST_WMTS_PUBLIC_HOST),wmts-public-host)
-
-.venv/last-geoadminhost::
-	$(call cachelastvariable,$@,$(GEOADMINHOST),$(LAST_GEOADMINHOST),geoadminhost)
-
-.venv/last-api-url::
-	$(call cachelastvariable,$@,$(API_URL),$(LAST_API_URL),api-url)
-
-.venv/last-host::
-	$(call cachelastvariable,$@,$(HOST),$(LAST_HOST),host)
-
-.venv/last-kml-temp-dir::
-	$(call cachelastvariable,$@,$(KML_TEMP_DIR),$(LAST_KML_TEMP_DIR),kml_temp_dir)
-
-.venv/last-http-proxy::
-	$(call cachelastvariable,$@,$(HTTP_PROXY),$(LAST_HTTP_PROXY),http-proxy)
-
-.venv/last-loader-js-bucket-host::
-	$(call cachelastvariable,$@,$(LOADER_JS_BUCKET_HOST),$(LAST_LOADER_JS_BUCKET_HOST),loader-js-bucket-host)
-
-.venv/last-vector-bucket::
-	$(call cachelastvariable,$@,$(VECTOR_BUCKET),$(LAST_VECTOR_BUCKET),vector-bucket)
-
-.venv/last-datageoadminhost::
-	$(call cachelastvariable,$@,$(DATAGEOADMINHOST),$(LAST_DATAGEOADMINHOST),datageoadminhost)
-
-.venv/last-linkeddatahost::
-	$(call cachelastvariable,$@,$(LINKEDDATAHOST),$(LAST_LINKEDDATAHOST),linkeddatahost)
-
-.venv/last-opentrans-api-key::
-	$(call cachelastvariable,$@,$(OPENTRANS_API_KEY),$(LAST_OPENTRANS_API_KEY),opentrans-api-key)
-
-.venv/last-dynamic-translation::
-	$(call cachelastvariable,$@,$(DYNAMIC_TRANSLATION),$(LAST_DYNAMIC_TRANSLATION),dynamic-translation)
-
-# wsgi.conf.in
-.venv/last-robots-file::
-	$(call cachelastvariable,$@,$(ROBOTS_FILE),$(LAST_ROBOTS_FILE),robots-file)
-
-.venv/last-wsgi-threads::
-	$(call cachelastvariable,$@,$(WSGI_THREADS),$(LAST_WSGI_THREADS),wsgi-threads)
-
-.venv/last-branch-staging::
-	$(call cachelastvariable,$@,$(BRANCH_STAGING),$(LAST_BRANCH_STAGING),branch-staging)
-
-.venv/last-git-branch::
-	$(call cachelastvariable,$@,$(GIT_BRANCH),$(LAST_GIT_BRANCH),git-branch)
-
-.venv/last-deploy-target::
-	$(call cachelastvariable,$@,$(DEPLOY_TARGET),$(LAST_DEPLOY_TARGET),deploy-target)
-
-.venv/last-modwsgi-user::
-	$(call cachelastvariable,$@,$(MODWSGI_USER),$(LAST_MODWSGI_USER),modewsgi-user)
-
-.venv/last-cache-control::
-	$(call cachelastvariable,$@,$(CACHE_CONTROL),$(LAST_CACHE_CONTROL),cache-control)
-
-.venv/last-wsgi-user::
-	$(call cachelastvariable,$@,$(WSGI_USER),$(LAST_WSGI_USER),wsgi-user)
-
-.venv/last-wsgi-processes::
-	$(call cachelastvariable,$@,$(WSGI_PROCESSES),$(LAST_WSGI_PROCESSES),wsgi-processes)
-
-.venv/last-wsgi-threads::
-	$(call cachelastvariable,$@,$(WSGI_THREADS),$(LAST_WSGI_THREADS),wsgi-threads)
-
-.venv/last-wsgi-app::
-	$(call cachelastvariable,$@,$(WSGI_APP),$(LAST_WSGI_APP),wsgi-app)
-
-fixrights:
-	@echo "${GREEN}Fixing rights...${RESET}";
-	chgrp -f -R geodata . || :
-	chmod -f -R g+srwX . || :
 
 guard-%:
 	@ if test "${${*}}" = ""; then \
@@ -734,34 +384,30 @@ guard-%:
 	  exit 1; \
 	fi
 
+# Clean targets
+
 .PHONY: clean
 clean:
-	rm -rf production.ini
-	rm -rf development.ini
-	rm -rf apache/wsgi.conf
-	rm -rf app.log
-	rm -rf apache/application.wsgi
-	rm -rf deploy/deploy-branch.cfg
-	rm -rf deploy/conf/00-branch.conf
-	rm -f  chsdi/static/info.json
-	rm -rf junit_report
-	rm -rf 25-mf-chsdi3.conf
+	rm -f base.ini
+	rm -f production.ini
+	rm -f development.ini
+	rm -f 25-mf-chsdi3.conf
+	rm -f apache/application.wsgi
+	rm -f apache/wsgi.conf
+	rm -f chsdi/static/info.json
+	rm -rf $(DOC_BUILD)
+	rm -f  chsdi/static/css/blueimp-gallery.min.css
+	rm -f  chsdi/static/css/extended.min.css
+	rm -rf $(TRANSLATION_DIRS)
+	find chsdi/static/js -type f ! -name .gitignore -exec rm -f \;
+	rm -f .coverage .coverage.*
+	find chsdi -name "__pycache__" -exec rm -rf "{}" \;
 
-.PHONY: cleanall
+
+PHONY: cleanall
 cleanall: clean
-	rm -rf .venv
+	rm -rf chsdi.egg-info/
+	rm -rf $(VENV)
 	rm -rf node_modules
-	rm -rf .git/hooks/*
-	rm -rf chsdi/static/css/extended.min.css
-	rm -rf chsdi/locale/en/LC_MESSAGES/chsdi.*
-	rm -rf chsdi/locale/fr/LC_MESSAGES/chsdi.*
-	rm -rf chsdi/locale/de/LC_MESSAGES/chsdi.*
-	rm -rf chsdi/locale/fi/LC_MESSAGES/chsdi.*
-	rm -rf chsdi/locale/it/LC_MESSAGES/chsdi.*
-	rm -rf chsdi/static/js/jquery.min.js
-	rm -rf chsdi/static/js/blueimp-gallery.min.js
-	rm -rf chsdi/static/js/d3.min.js
-	rm -rf chsdi/static/js/d3-tip.js
-	@for ENTRY in $(shell git --no-pager config --get-regexp '^secrets\..*' | awk '{print $$1}' | sort -u); do \
-		git config --unset-all $${ENTRY}; \
-	done
+	rm -f  package-lock.json
+

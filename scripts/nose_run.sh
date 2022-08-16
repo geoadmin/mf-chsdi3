@@ -8,14 +8,14 @@ OPTIND=1         # Reset in case getopts has been used previously in the shell.
 while getopts "ipa" opt; do
   case "$opt" in
   i) nosetests_options="-e .*e2e.*"
-     make clean
+     make -f Makefile.ireland clean
      source rc_int
-     make all
+     make -f Makefile.ireland all
      ;;
   p) nosetests_options="-e .*e2e.*"
-     make clean
+     make -f Makefile.ireland clean
      source rc_prod
-     make all
+     make -f Makefile.ireland all
      ;;
   a) nosetests_options=" "
      ;;

@@ -25,20 +25,20 @@ instead.
 Install the python virtual environment (still `virtualenv`at this point)
 
 ```bash
-make -f Makefile.frankfurt setup
+make setup
 ```
 
 Build the Pylons settings files and run the local `waitress` server
 
 ```bash
-summon make -f Makefile.frankfurt build serve
+summon make build serve
 ```
 
 You may want to customize the variables. Copy the file `.env.default` as `.ven.mine`,
 change the variables you want and use them with
 
 ```bash
-summon make -f Makefile.frankfurt ENV_FILE=.env.mine build serve
+summon make ENV_FILE=.env.mine build serve
 ```
 
 :book: You need some external ressource to run the service, see [External ressources dependencies](#external-ressources-dependencies)
@@ -58,7 +58,7 @@ You can use the ssh port forwarding feature to have access to `pg-geodata-replic
 ssh ssh0a.prod.bgdi.ch -L 5432:pg-geodata-replica.bgdi.ch:5432
 ```
 
-Then set the `DBHOST` environment variable to `localhost` (you can do this in your own environment file e.g. `.env.mine` and run the make file as follow: `summon make -f Makefile.frankfurt ENV_FILE=.env.mine serve`)
+Then set the `DBHOST` environment variable to `localhost` (you can do this in your own environment file e.g. `.env.mine` and run the make file as follow: `summon make ENV_FILE=.env.mine serve`)
 
 ### S3 Vector Bucket Access
 
@@ -77,13 +77,13 @@ This command will automatically use your AWS profile `swisstopo-bgdi-dev` for an
 ### Docker build
 
 ```bash
-make -f Makefile.frankfurt dockerbuild
+make dockerbuild
 ```
 
 ### Docker run
 
 ```bash
-summon make -f Makefile.frankfurt dockerrun
+summon make dockerrun
 ```
 
 :book: You need some external ressource to run the service, see [External ressources dependencies](#external-ressources-dependencies)
@@ -103,19 +103,19 @@ See [External Ressources Dependencies](#external-ressources-dependencies) for mo
 To run the tests enter
 
 ```bash
-summon make -f Makefile.frankfurt test
+summon make test
 ```
 
 Or if you use your own environment file
 
 ```bash
-summon make -f Makefile.frankfurt ENV_FILE=.env.mine test
+summon make ENV_FILE=.env.mine test
 ```
 
 **:warning: If you don't have AWS Access you can disable the S3 tests as follow**
 
 ```bash
-summon make -f Makefile.frankfurt S3_TESTS=0 test
+summon make S3_TESTS=0 test
 ```
 
 ## Download WMS image legends

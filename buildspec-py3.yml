@@ -136,15 +136,15 @@ phases:
       - python ./scripts/pg_ready.py
       - echo "host=$(hostname -I)"
       - echo "=========== PREPARE ==============="
-      - make -f Makefile.frankfurt cleanall setup
+      - make cleanall setup
       - echo "=========== LINTING ==============="
-      - make -f Makefile.frankfurt lint
+      - make lint
 
   build:
     commands:
       - echo "=========== BUILD ================="
       - echo Build started on $(date)
-      - make -f Makefile.frankfurt build
+      - make build
       - echo "=========== DOCKER BUILD =========="
       - >
         docker build
@@ -165,7 +165,7 @@ phases:
           echo "!!!!!!!! WARNING: Could not find the git BASE branch, might be due to manual build !!!!!!!"
           echo "!!!!!!!! WARNING: STAGING for testing might be incorrect !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
         fi
-      - make -f Makefile.frankfurt unittest-ci
+      - make unittest-ci
       # Only pushes images to ECR for PR that have been merged, this means that the event triggering
       # the CI is a git push and not a PR event. In this case the GIT_BRANCH variable as the name
       # of the branch which got the push event.
