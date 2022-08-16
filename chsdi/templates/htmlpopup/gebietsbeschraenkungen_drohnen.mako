@@ -57,7 +57,7 @@
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_url')}</td>
-      <td class="cell-meta"><a href="${c['attributes'][auth_url]}" target="_blank">${_('link')}</a>
+      <td class="cell-meta"><a href="${c['attributes'][auth_url]}" target="_blank">${_('ch.bazl.gebietsbeschraenkungen-drohnen.link')}</a>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_name')}</td>
@@ -85,15 +85,15 @@
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.air_lowerlimit')}</td>
+    <td class="cell-meta">${c['attributes']['air_vol_lower_limit'] or '-'}</td>
+    </tr>
+    <tr>
+    <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.air_lowervref')}</td>
     <td class="cell-meta">${c['attributes']['air_vol_lower_vref'] or '-'}</td>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.air_upperlimit')}</td>
     <td class="cell-meta">${c['attributes']['air_vol_upper_limit'] or '-'}</td>
-    </tr>
-    <tr>
-    <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.air_lowervref')}</td>
-    <td class="cell-meta">${c['attributes']['air_vol_lower_vref'] or '-'}</td>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.air_uppervref')}</td>
