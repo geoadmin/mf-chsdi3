@@ -10,3 +10,9 @@ def add_default_cache_control(request, response):
     if not str(response.cache_control):
         dft_cache_control = request.registry.settings['default_cache_control']
         response.cache_control = CacheControl.parse(dft_cache_control, type='response')
+
+
+def add_cors_header(request, response):
+    response.headers['Access-Control-Allow-Origin'] = "*"
+    response.headers['Access-Control-Allow-Methods'] = "POST, GET, OPTIONS"
+    response.headers['Access-Control-Allow-Headers'] = "x-requested-with, Content-Type, origin, authorization, accept, client-security-token"
