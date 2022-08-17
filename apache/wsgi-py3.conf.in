@@ -115,16 +115,6 @@ WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${WSGI_APP}
   Allow from all
 </Directory>
 
-
-
-
-
-# Enabling CORS, has to be set after WSGI application
-Header unset Access-control-allow-origin
-Header always  set Access-Control-Allow-Origin "*"
-Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS"
-Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, origin, authorization, accept, client-security-token"
-
 # assign the WSGI app instance the process group defined aboven, we put the WSGI
 # app instance in the global application group so it is always executed within
 # the main interpreter
@@ -141,11 +131,6 @@ Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, 
    Allow from all
 </LocationMatch>
 
-# Static for cross domain flash/arcgis
-<LocationMatch ^${APACHE_ENTRY_PATH}/files>
-   Header unset Access-Control-Allow-Methods
-   Header always set Access-Control-Allow-Methods "POST, GET, DELETE, OPTIONS"
-</LocationMatch>
 
 # kml file downloads
 AliasMatch ^${APACHE_ENTRY_PATH}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${KML_TEMP_DIR}/$1
