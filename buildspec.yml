@@ -134,20 +134,20 @@ phases:
       - echo "=========== POSGRESQL ============="
       - python ./scripts/pg_ready.py
       - echo "host=$(hostname -I)"
-      - make help
+      - make -f Makefile.ireland help
       - echo "=========== PREPARE ==============="
-      - make cleanall
+      - make -f Makefile.ireland cleanall
 
   build:
     commands:
       - echo "=========== BUILD ================="
       - echo Build started on $(date)
-      - make all
+      - make -f Makefile.ireland all
       - echo Build completed on $(date)
       - echo "=========== SPHINXSEARCH =========="
       - .venv/bin/python ./scripts/test_sphinxserver.py
       - echo "=========== Linting ==============="
-      - make lint
+      - make -f Makefile.ireland lint
 
   post_build:
     commands:
@@ -158,7 +158,7 @@ phases:
           echo "!!!!!!!! WARNING: Could not find the git BASE branch, might be due to manual build !!!!!!!"
           echo "!!!!!!!! WARNING: STAGING for testing might be incorrect !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
         fi
-      - make testci
+      - make -f Makefile.ireland testci
       - echo "Done"
 
 reports:
