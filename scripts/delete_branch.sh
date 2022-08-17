@@ -31,9 +31,9 @@ fi
 if [ $# -ne 2 ]; then
     echo """No branch name given.
         If you are using through make you need to add a parameter BRANCH_TO_DELETE:
-            make deletebranch  BRANCH_TO_DELETE=[branch_name_to_delete]
-            make deletebranchdev  BRANCH_TO_DELETE=[branch_name_to_delete]
-            make deletebranchint  BRANCH_TO_DELETE=[branch_name_to_delete]
+            make -f Makefile.ireland deletebranch  BRANCH_TO_DELETE=[branch_name_to_delete]
+            make -f Makefile.ireland deletebranchdev  BRANCH_TO_DELETE=[branch_name_to_delete]
+            make -f Makefile.ireland deletebranchint  BRANCH_TO_DELETE=[branch_name_to_delete]
         If you are using the script directly:
             ./scripts/delete_branch.sh [dev|int] [branch_name_to_delete]"""
 

@@ -12,7 +12,7 @@ T="$(date +%s)"
 # Bail out on any error
 set -o errexit
 
-[ -z "${GIT_BRANCH}"  ] && GIT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD) 
+[ -z "${GIT_BRANCH}"  ] && GIT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 
 BASE_DIR=/var/www/vhosts/mf-chsdi3
 CODE_DIR=$BASE_DIR/private/branch/$GIT_BRANCH
@@ -29,15 +29,15 @@ cd $CODE_DIR
 # Remove all local changes and get latest GITBRANCH from remote
 git fetch origin && git reset --hard && git checkout $GIT_BRANCH && git reset --hard origin/$GIT_BRANCH && git clean -fxd .
 # Clean all in case the branch was deployed previously
-make cleanall
+make -f Makefile.ireland cleanall
 
 # This creates the branch configuration
-make setup
-make rc_branch DEPLOY_TARGET=dev GIT_BRANCH=$GIT_BRANCH
+make -f Makefile.ireland setup
+make -f Makefile.ireland rc_branch DEPLOY_TARGET=dev GIT_BRANCH=$GIT_BRANCH
 source rc_branch
-make all
-make deploy/deploy-branch.cfg
-make deploy/conf/00-branch.conf
+make -f Makefile.ireland all
+make -f Makefile.ireland deploy/deploy-branch.cfg
+make -f Makefile.ireland deploy/conf/00-branch.conf
 
 # Copy the apache configuration for the branch
 cp deploy/conf/00-branch.conf $BASE_DIR/conf/00-$GIT_BRANCH.conf

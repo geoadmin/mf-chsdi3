@@ -68,7 +68,7 @@ Every variables you export in rc_user_<username> will override the default ones 
 
 Where "username" is your specific rc configuration. To create the specific build:
 
-    make user
+    make -f Makefile.ireland user
 
 If you do this on `vpc-mf1-dev1`, you need to make sure that a correct configuration exists under
 
@@ -80,12 +80,12 @@ that points to your working directory. If all is well (`sudo apache2ctl graceful
 
 ## Git hooks
 
-Three `git hooks` are installed automatically when `make user` is called.
+Three `git hooks` are installed automatically when `make -f Makefile.ireland user` is called.
 
 All the hooks check that we don't accidently publish sensitive AWS keys to
 github - in the files as well as in the commit messages. We also execute
 
-    make lint
+    make -f Makefile.ireland lint
 
 in the pre-commit hook.
 
@@ -108,7 +108,7 @@ Called before comitting changes locally and checks pre-commit messages (usually 
 Do the following commands **inside your working directory**. Here's how a standard
 deploy process is done.
 
-    make deploydev SNAPSHOT=true
+    make -f Makefile.ireland deploydev SNAPSHOT=true
 
 This updates the source in /var/www... to the latest master branch from github,
 creates a snapshot and runs nosetests against the test db. The snapshot directory
@@ -118,11 +118,11 @@ you don't want to create a snapshot e.g. for intermediate releases on dev main.
 Once a snapshot has been created, you are able to deploy this snapshot to a
 desired target. For integration, do
 
-    make deployint SNAPSHOT=201512011411
+    make -f Makefile.ireland deployint SNAPSHOT=201512011411
 
 This will run the full nose tests **from inside the 201512011411 snapshot directory** against the **integration db cluster**. Only if these tests are successfull, the snapshot is deployed to the integration cluster.
 
-    make deployprod SNAPSHOT=201512011411
+    make -f Makefile.ireland deployprod SNAPSHOT=201512011411
 
 You can disable the running of the nosetests against the target backends by adding
 `notests` parameter to the snapshot command. This is handy in an emergency (when
@@ -130,19 +130,19 @@ deploying an old known-to-work snapshot) or when you have to re-deploy
 a snapshot that you know has passed the tests for the given backend.
 To disable the tests, use the following command:
 
-    make deployint SNAPSHOT=201512011411 NO_TESTS=notests
+    make -f Makefile.ireland deployint SNAPSHOT=201512011411 NO_TESTS=notests
 
 Use `notests` parameter with care, as it removes a level of tests.
 
 Per default the deploy command uses the deploy configuration of the snapshot directory.
 If you want to use the deploy configuration of directory from which you are executing this command, you can use:
 
-    make deployint SNAPSHOT=201512011411
+    make -f Makefile.ireland deployint SNAPSHOT=201512011411
 
 ## Deploying a branch
 
-Call the `make deploybranch` command **in your working directory** to deploy your current
-branch to test (Use `make deploybranchint` to also deploy it to integration).
+Call the `make -f Makefile.ireland deploybranch` command **in your working directory** to deploy your current
+branch to test (Use `make -f Makefile.ireland deploybranchint` to also deploy it to integration).
 The code for deployment, however, does not come from your working directory,
 but does get cloned (first time) or pulled (if done once) **directly from github**.
 So you'll likely use this command **after** you push your branch to github.
@@ -162,11 +162,11 @@ http://mf-chsdi3.int.bgdi.ch/gjn_deploybranch/ (Don't forget the slash at the en
 
 To list all the deployed branch:
 
-    make deletebranch
+    make -f Makefile.ireland deletebranch
 
 To delete a given branch:
 
-    make deletebranch BRANCH_TO_DELETE=my_deployed_branch
+    make -f Makefile.ireland deletebranch BRANCH_TO_DELETE=my_deployed_branch
 
 ## Get correct back-link to geoadmin3
 Per default the back-link to geoadmin3 points to the main instance. If you
@@ -195,7 +195,7 @@ To run against dev/test environment:
 
 To run against your private environment:
 
-    make test
+    make -f Makefile.ireland test
 
 To execute all tests, including _wmts_ and _varnish_ ones, which are deactivated by default:
 
@@ -206,7 +206,7 @@ To execute all tests, including _wmts_ and _varnish_ ones, which are deactivated
 You may deactivate tests requiring access to 'AWS S3' or the 'Sphinx server', by 
 setting the following environmental variables to `0`
 
-    SPHINX_TESTS=0 S3_TESTS=0 make test
+    SPHINX_TESTS=0 S3_TESTS=0 make -f Makefile.ireland test
 
 ### Resources for testing
 
@@ -220,14 +220,14 @@ The PostgreSQL cluster with all vector data. This cannot be deactivate, as the p
 The `search service` needs the `Sphinx search server` cluster, running on separate instances. These tests may
 be skipped with:
 
-    SPHINX_TESTS=0  make test
+    SPHINX_TESTS=0  make -f Makefile.ireland test
 
 #### AWS S3
 
 S3 is used for the identify service and the feature grid (windatlas). The bucket is `mf-chsdi3-bgdi-grid-based-data`.
 To ski the tests that depends on S3, sets the `S3_TESTS` variables must be set to `false`:
 
-    S3_TESTS=0 make test
+    S3_TESTS=0 make -f Makefile.ireland test
 
 # Checker
 
@@ -241,13 +241,13 @@ Apache/WSGI checker
 In order to download all images of a layer in the correct format and with the correct dimensions, simply use:
 
 ```bash
-make legends BODID=ch.layername
+make -f Makefile.ireland legends BODID=ch.layername
 ```
 
 Alternatively, you can also download a WMS legend for a specific scale.
 
 ```bash
-make legends BODID=ch.layername WMSSCALELEGEND=1000
+make -f Makefile.ireland legends BODID=ch.layername WMSSCALELEGEND=1000
 ```
 
 Make sure, you're using the desired `echo $WMSHOST` project variable (`source rc_xxx` or `export WMSHOST=xxx`)
@@ -267,13 +267,13 @@ You can find additional information about autopep8 here:
 To check the code styling:
 
 ```bash
-make lint
+make -f Makefile.ireland lint
 ```
 
 To autocorrect most linting mistakes
 
 ```bash
-make autolint
+make -f Makefile.ireland autolint
 ```
 
 # Varia
