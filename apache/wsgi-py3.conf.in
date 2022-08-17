@@ -77,13 +77,6 @@ RewriteRule ^${APACHE_ENTRY_PATH}/robots.txt ${APACHE_ENTRY_PATH}/static/${ROBOT
     Header set Content-type "text/plain"
 </LocationMatch>
 
-# WMTS Capabilities
-RewriteRule ^${APACHE_ENTRY_PATH}/1.0.0/WMTSCapabilities\.xml$ ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml [PT,NC,QSA,L]
-RewriteRule ^${APACHE_ENTRY_PATH}/1.0.0/WMTSCapabilities.EPSG.(\d+).xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
-RewriteRule ^${APACHE_ENTRY_PATH}/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml [L,QSA,PT]
-# # Better ArcGis support
-RewriteRule ^${APACHE_ENTRY_PATH}/EPSG/(\d+)/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
-RewriteRule ^${APACHE_ENTRY_PATH}/EPSG/(\d+)/(de|fr|it|rm|en)/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1&lang=$2 [L,PT]
 
 # Loader.js service
 <LocationMatch ^${APACHE_ENTRY_PATH}/loader\.js>
@@ -134,10 +127,3 @@ WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${WSGI_APP}
 
 # kml file downloads
 AliasMatch ^${APACHE_ENTRY_PATH}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${KML_TEMP_DIR}/$1
-
-# WMTS GetCapabilities access control
-RewriteRule ^${APACHE_ENTRY_PATH}/1.0.0/WMTSCapabilities.EPSG.(\d+).xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
-RewriteRule ^${APACHE_ENTRY_PATH}/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml [L,QSA,PT]
-# Better ArcGis support
-RewriteRule ^${APACHE_ENTRY_PATH}/EPSG/(\d+)/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1 [L,QSA,PT]
-RewriteRule ^${APACHE_ENTRY_PATH}/EPSG/(\d+)/(de|fr|it|rm|en)/1.0.0/WMTSCapabilities.xml ${APACHE_ENTRY_PATH}/rest/services/api/1.0.0/WMTSCapabilities.xml?epsg=$1&lang=$2 [L,PT]
