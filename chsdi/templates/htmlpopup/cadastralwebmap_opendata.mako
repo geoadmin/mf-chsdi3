@@ -95,7 +95,7 @@ ${partials.table_body_cadastral(c, lang, fallbackLang)}
 <%
     import requests
     request = context.get('request')
-    protocol = request.scheme
+    protocol = 'https'
     download_url = context.get('request').params.get('download_url')
     pdf = False
     try:
