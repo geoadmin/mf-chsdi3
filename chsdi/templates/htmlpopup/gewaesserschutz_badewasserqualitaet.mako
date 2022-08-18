@@ -40,7 +40,7 @@ badewasserqualitaet_eua = 'ch.bafu.gewaesserschutz-badewasserqualitaet.%s' % c['
 badewasserqualitaet_eua = 'ch.bafu.gewaesserschutz-badewasserqualitaet.%s' % c['attributes']['qualitaet_eua']
 protocol = request.scheme
 c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
-datageoadminUrl = 'https://' + request.registry.settings['datageoadminhost'] + '/ch.bafu.gewaesserschutz-badewasserqualitaet/image/'
+datageoadminUrl = request.registry.settings['datageoadminhost'] + '/ch.bafu.gewaesserschutz-badewasserqualitaet/image/'
 topic = request.matchdict.get('map')
 lang = request.lang
 %>

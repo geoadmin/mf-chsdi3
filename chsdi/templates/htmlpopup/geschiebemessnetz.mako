@@ -14,7 +14,7 @@
 <%
     dataGeoAdminHost = request.registry.settings['datageoadminhost']
     dataPath = 'ch.bafu.feststoffe-geschiebemessnetz/PDF'
-    url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['pdf_file']
+    url_pdf = dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['pdf_file']
 %>
 <tr><td class="cell-left">${_('link')}</td>
     <td>
@@ -162,7 +162,7 @@
     if c['attributes']['pdf_file'] is not None:
         dataGeoAdminHost = request.registry.settings['datageoadminhost']
         dataPath = 'ch.bafu.feststoffe-geschiebemessnetz/PDF'
-        url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['pdf_file']
+        url_pdf = dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['pdf_file']
         pdf = resource_exists(url_pdf)
 %>
 <th class="cell-left">${_('link')}</th>
