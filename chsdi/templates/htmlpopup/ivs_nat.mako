@@ -32,6 +32,7 @@
 <%
     from chsdi.lib.helpers import resource_exists
     dataGeoAdminHost = request.registry.settings['datageoadminhost']
+    dataGeoAdminHostProtocol = request.registry.settings['datageoadminhost_protocol']
     dataPath = 'ch.astra.ivs-nat/PDF'
     pdf = None
     if c['attributes']['ivs_sortsla'] is not None:
@@ -44,13 +45,13 @@
         PDF_Level_3_exist = PDF_Full[8:10]
         PDF_Level_3 = PDF_Full
         PDF_Level_3_Name = PDF_Level_2_Name + '.' + str(int(PDF_Full[8:10]))
-        url = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['ivs_sortsla'] + ".pdf"
+        url = dataGeoAdminHostProtocol + "://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['ivs_sortsla'] + ".pdf"
         pdf = resource_exists(url)
 %>
 
 % if pdf:
     <td>
-      ${_('ivs_nat_strecke')}: <a href="https://${dataGeoAdminHost}/${dataPath}/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
+      ${_('ivs_nat_strecke')}: <a href="${dataGeoAdminHostProtocol}://${dataGeoAdminHost}/${dataPath}/${PDF_Level_1}.pdf" target="_blank">${PDF_Level_1_Name}</a><br />
       % if PDF_Level_2_exist != '00':
         ${_('ivs_nat_linienfuehrung')}: <a href="//${dataGeoAdminHost}/${dataPath}/${PDF_Level_2}.pdf" target="_blank">${PDF_Level_2_Name}</a><br />
       % endif

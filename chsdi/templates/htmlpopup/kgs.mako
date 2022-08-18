@@ -32,7 +32,8 @@
         gemeinde_ehemalig = c['attributes']['gemeinde_ehemalig'] if str(c['attributes']['gemeinde_ehemalig']).startswith("(") else "("+c['attributes']['gemeinde_ehemalig']+")"
         import csv
         dataGeoAdminHost = request.registry.settings['datageoadminhost']
-        csv_url = "https://" + dataGeoAdminHost + "/" + c['layerBodId']  + "/image/meta.txt"
+        dataGeoAdminHostProtocol = request.registry.settings['datageoadminhost_protocol']
+        csv_url = dataGeoAdminHostProtocol + "://" + dataGeoAdminHost + "/" + c['layerBodId']  + "/image/meta.txt"
         csv_file = None
         # TODO python2 clean-up
         try:
@@ -110,7 +111,7 @@
             <th class="cell-left">${_('Feature tooltip')}:</th>
             <td>
 	        % for pdf in c['attributes']['pdf_list'].split(','):
-                <a href="https://${dataGeoAdminHost}/ch.babs.kulturgueter/PDF/${pdf}" target="_blank">${pdf}</a><br />
+                <a href="${dataGeoAdminHostProtocol}://${dataGeoAdminHost}/ch.babs.kulturgueter/PDF/${pdf}" target="_blank">${pdf}</a><br />
 	        % endfor
             </td>
 	    </tr>
@@ -147,8 +148,8 @@
             <div class="thumbnail-container">
             %for pic in pic_list:
                 <div class="thumbnail">
-                    <a href="https://${dataGeoAdminHost}/ch.babs.kulturgueter/image/kgs_${pic[0]}_${pic[1]}.jpg">
-                        <img class="image" src="https://${dataGeoAdminHost}/ch.babs.kulturgueter/image/kgs_${pic[0]}_${pic[1]}.jpg" />
+                    <a href="${dataGeoAdminHostProtocol}://${dataGeoAdminHost}/ch.babs.kulturgueter/image/kgs_${pic[0]}_${pic[1]}.jpg">
+                        <img class="image" src="${dataGeoAdminHostProtocol}://${dataGeoAdminHost}/ch.babs.kulturgueter/image/kgs_${pic[0]}_${pic[1]}.jpg" />
                     </a>
                     <div>${pic[3] or ''} - ${pic[2] or ''}</div>
                 </div>

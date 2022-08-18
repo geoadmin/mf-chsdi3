@@ -13,8 +13,9 @@
 <tr><td class="cell-left">${_('ch.bafu.feststoffe-geschiebemessnetz.amt')}</td><td>${c['attributes']['amt'] or '-'}</td></tr>
 <%
     dataGeoAdminHost = request.registry.settings['datageoadminhost']
+    dataGeoAdminHostProtocol = request.registry.settings['datageoadminhost_protocol']
     dataPath = 'ch.bafu.feststoffe-geschiebemessnetz/PDF'
-    url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['pdf_file']
+    url_pdf = dataGeoAdminHostProtocol + "://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['pdf_file']
 %>
 <tr><td class="cell-left">${_('link')}</td>
     <td>

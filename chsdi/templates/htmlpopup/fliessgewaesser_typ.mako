@@ -16,7 +16,8 @@
     pdf = None
     if c['attributes']['url_portraits'] is not None:
         dataGeoAdminHost = request.registry.settings['datageoadminhost']
-        url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['url_portraits']
+        dataGeoAdminHostProtocol = request.registry.settings['datageoadminhost_protocol']
+        url_pdf = dataGeoAdminHostProtocol + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['url_portraits']
         pdf = resource_exists(url_pdf)
 %>
 <tr>
@@ -39,15 +40,16 @@
     url_uebersicht = 'url_uebersicht_%s' % lang
     quali = 'quali_%s' % lang[0]
     dataGeoAdminHost = request.registry.settings['datageoadminhost']
+    dataGeoAdminHostProtocol = request.registry.settings['datageoadminhost_protocol']
 
     pdf = None
     pdf_legend = None
 
     if c['attributes']['url_portraits'] is not None:
-        url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['url_portraits']
+        url_pdf = dataGeoAdminHostProtocol + "://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['url_portraits']
         pdf = resource_exists(url_pdf)
     if c['attributes'][url_uebersicht] is not None:
-        url_legend_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes'][url_uebersicht]
+        url_legend_pdf = dataGeoAdminHostProtocol + "://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes'][url_uebersicht]
         pdf_legend = resource_exists(url_legend_pdf)
 %>
 

@@ -3,8 +3,9 @@
 <%def name="table_body(c,lang)">
 <%
     dataGeoAdminHost = request.registry.settings['datageoadminhost']
+    dataGeoAdminHostProtocol = request.registry.settings['datageoadminhost_protocol']
     dataPath = 'ch.swisstopo.geologie-geotechnik-gk200/PDF'
-    url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['file_name'] + '_' + lang + '.pdf'
+    url_pdf = dataGeoAdminHostProtocol + "://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['file_name'] + '_' + lang + '.pdf'
 %>
     <tr><td colspan="3">&nbsp;</tr>
     <tr>
