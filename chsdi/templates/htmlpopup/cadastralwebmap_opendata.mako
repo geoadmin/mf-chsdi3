@@ -17,7 +17,6 @@
   from chsdi.lib.validation.identify import IdentifyServiceValidation
   from chsdi.lib.helpers import shift_to
   request = context.get('request')
-  protocol = 'https'
   fallbackLang = 'fr' if request.lang in ('fr', 'it') else 'de'
 
   class CadastralWebMapParams(IdentifyServiceValidation):
@@ -53,9 +52,9 @@
       c['clickCoordLv03'] = [float(a) for a in params.coord.split(',')] if params.coord else defaultCoordLv03
       c['clickCoordLv95'] = shift_to(c['clickCoordLv03'], 2056)
 
-  pdf_url = "%s://geodata01.admin.ch/order/jPqrueQazrt/av_pdf.igs?pos=%s/%s" % (protocol, c['clickCoordLv03'][0] , c['clickCoordLv03'][1])
-  shp_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/SHP/%s/%s.zip" % (protocol, request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['attributes']['bfsnr'])
-  itf_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/ITF/%s/%s.zip" % (protocol, request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['attributes']['bfsnr'])
+  pdf_url = "https://geodata01.admin.ch/order/jPqrueQazrt/av_pdf.igs?pos=%s/%s" % (c['clickCoordLv03'][0] , c['clickCoordLv03'][1])
+  shp_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/SHP/%s/%s.zip" % (request.registry.settings['datageoadminhost_protocol'], request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['attributes']['bfsnr'])
+  itf_url = "%s://%s/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/ITF/%s/%s.zip" % (request.registry.settings['datageoadminhost_protocol'], request.registry.settings['datageoadminhost'], c['attributes']['ak'],c['attributes']['bfsnr'])
 %>
 
 ${partials.table_body_cadastral(c, lang, fallbackLang)}
@@ -95,7 +94,6 @@ ${partials.table_body_cadastral(c, lang, fallbackLang)}
 <%
     import requests
     request = context.get('request')
-    protocol = 'https'
     download_url = context.get('request').params.get('download_url')
     pdf = False
     try:

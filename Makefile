@@ -70,6 +70,7 @@ AUTHOR=$(USER)
 
 # data.geo.admin.ch hosts
 DATAGEOADMINHOST ?= data.geo.admin.ch
+DATAGEOADMINHOST_PROTOCOL ?= https
 
 # Git metadata
 GIT_HASH ?= $(shell git rev-parse HEAD)
