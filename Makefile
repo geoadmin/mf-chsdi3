@@ -302,7 +302,7 @@ dockerpull:
 .PHONY: test
 test: $(VENV) config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
 	export $(shell cat $(ENV_FILE)) && ${PYTHON} ./scripts/pg_ready.py
-	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2 --cover-erase  tests/ -e "(.*e2e.*|test_search|test_sphinxapi)"
+	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2 --cover-erase  tests/ -e "(.*e2e.*|test_sphinxapi)"
 
 
 .PHONY: unittest-ci
@@ -311,13 +311,13 @@ unittest-ci: $(VENV) config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
 	PYTHONPATH=${PYTHONPATH} ${NOSE} --verbosity=2 \
 		--with-xunit --xunit-file=junit-reports/functional/nosetest.xml \
 		tests/functional
-# FIXME here below we ignore the test_search and test_sphinxapi because
+# FIXME here below we ignore the test_sphinxapi because
 # they are not passing in Frankfurt environment and they will anyway be removed from mf-chsdi3
 # after the migration.
 	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2 \
 		--with-xunit --xunit-file=junit-reports/integration/nosetest.xml \
 		tests/integration \
-		-e "(test_search|test_sphinxapi)"
+		-e test_sphinxapi
 
 
 .PHONY: teste2e
