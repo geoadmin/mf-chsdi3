@@ -211,9 +211,9 @@ config-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	export APP_VERSION="$(APP_VERSION)" && \
 	export DATAGEOADMINHOST="$(DATAGEOADMINHOST)" && \
-	envsubst < base.ini.in > base.ini && \
-	envsubst < dev.ini.in > development.ini && \
-	envsubst < prod.ini.in > production.ini && \
+	envsubst < pyramid-config/base.ini.in > base.ini && \
+	envsubst < pyramid-config/dev.ini.in > development.ini && \
+	envsubst < pyramid-config/prod.ini.in > production.ini && \
 	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
 	envsubst < apache/application.wsgi.in > apache/application.wsgi && \
 	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
