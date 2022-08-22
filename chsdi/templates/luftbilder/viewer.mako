@@ -19,7 +19,7 @@
   displayLink = True
   ## This is a HACK to ensure backward compatibility
   if not layerBodId.startswith('ch.'):
-      templateURL = 'http://' + request.registry.settings['host'] + '/rest/services/' + topic + '/SearchServer?features=ch.swisstopo.lubis-luftbilder_schwarzweiss,ch.swisstopo.lubis-luftbilder_farbe,ch.swisstopo.lubis-luftbilder-dritte-firmen,ch.swisstopo.lubis-luftbilder-dritte-kantone,ch.swisstopo.lubis-luftbilder_infrarot&type=featuresearch&searchText=' + featureId
+      templateURL = search_base_url + '/rest/services/' + topic + '/SearchServer?features=ch.swisstopo.lubis-luftbilder_schwarzweiss,ch.swisstopo.lubis-luftbilder_farbe,ch.swisstopo.lubis-luftbilder-dritte-firmen,ch.swisstopo.lubis-luftbilder-dritte-kantone,ch.swisstopo.lubis-luftbilder_infrarot&type=featuresearch&searchText=' + featureId
       searchFile = None
       try:
           searchFile = urlopen(templateURL)
