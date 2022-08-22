@@ -192,86 +192,6 @@ class BodLayerEn(Base, Bod):
     __table_args__ = ({'schema': 're3'})
 
 
-class GetCap(object):
-    __dbname__ = 'bod'
-    id = Column('fk_dataset_id', Unicode, primary_key=True)
-    arr_all_formats = Column('format', Unicode)
-    timestamp = Column('timestamp', Unicode)
-    bod_layer_id = Column('bod_layer_id', Unicode)
-    staging = Column('staging', Unicode)
-    bezeichnung = Column('bezeichnung', Unicode)
-    kurzbezeichnung = Column('kurzbezeichnung', Unicode)
-    abstract = Column('abstract', Unicode)
-    inspire_name = Column('inspire_name', Unicode)
-    inspire_abstract = Column('inspire_abstract', Unicode)
-    inspire_oberthema_name = Column('inspire_oberthema_name', Unicode)
-    inspire_oberthema_abstract = Column('inspire_oberthema_abstract', Unicode)
-    geobasisdatensatz_name = Column('geobasisdatensatz_name', Unicode)
-    datenherr = Column('datenherr', Unicode)
-    wms_kontakt_abkuerzung = Column('wms_kontakt_abkuerzung', Unicode)
-    wms_kontakt_name = Column('wms_kontakt_name', Unicode)
-    resolution_min = Column('resolution_min', Integer)
-    resolution_max = Column('resolution_max', Integer)
-    maps = Column('topics', Unicode)  # the topics
-    chargeable = Column('chargeable', Boolean)
-    idGeoCat = Column('idgeocat', Unicode)
-
-    def getClosestZoom(self, epsg, resolution):
-        tilegrid = getTileGrid(int(epsg))()
-        return tilegrid.getClosestZoom(float(resolution))
-
-
-class GetCapFr(Base, GetCap):
-    __tablename__ = 'view_bod_wmts_getcapabilities_fr'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
-
-
-class GetCapDe(Base, GetCap):
-    __tablename__ = 'view_bod_wmts_getcapabilities_de'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
-
-
-class GetCapEn(Base, GetCap):
-    __tablename__ = 'view_bod_wmts_getcapabilities_en'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
-
-
-class GetCapIt(Base, GetCap):
-    __tablename__ = 'view_bod_wmts_getcapabilities_it'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
-
-
-class GetCapRm(Base, GetCap):
-    __tablename__ = 'view_bod_wmts_getcapabilities_rm'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
-
-
-class GetCapThemes(object):
-    __dbname__ = 'bod'
-    id = Column('inspire_id', Unicode, primary_key=True)
-    inspire_name = Column('inspire_name', Unicode)
-    inspire_abstract = Column('inspire_abstract', Unicode)
-    inspire_oberthema_name = Column('inspire_oberthema_name', Unicode)
-    oberthema_id = Column('oberthema_id', Unicode)
-    inspire_oberthema_abstract = Column('inspire_oberthema_abstract', Unicode)
-    fk_dataset_id = Column('fk_dataset_id', Unicode)
-
-
-class GetCapThemesFr(Base, GetCapThemes):
-    __tablename__ = 'view_bod_wmts_getcapabilities_themes_fr'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
-
-
-class GetCapThemesDe(Base, GetCapThemes):
-    __tablename__ = 'view_bod_wmts_getcapabilities_themes_de'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
-
-
-class GetCapThemesEn(Base, GetCapThemes):
-    __tablename__ = 'view_bod_wmts_getcapabilities_themes_en'
-    __table_args__ = ({'schema': 're3', 'autoload': False})
-
-
 class ServiceMetadata(object):
     id = Column('wms_id', Unicode, primary_key=True)
     pk_map_name = Column('pk_map_name', Unicode)
@@ -454,39 +374,6 @@ def get_bod_model(lang):
         return BodLayerEn
     else:
         return BodLayerDe
-
-
-def get_wmts_models(lang):
-    if lang == 'fr':
-        return {
-            'GetCap': GetCapFr,
-            'GetCapThemes': GetCapThemesFr,
-            'ServiceMetadata': ServiceMetadataFr
-        }
-    elif lang == 'it':
-        return {
-            'GetCap': GetCapIt,
-            'GetCapThemes': GetCapThemesFr,
-            'ServiceMetadata': ServiceMetadataIt
-        }
-    elif lang == 'en':
-        return {
-            'GetCap': GetCapEn,
-            'GetCapThemes': GetCapThemesEn,
-            'ServiceMetadata': ServiceMetadataEn
-        }
-    elif lang == 'rm':
-        return {
-            'GetCap': GetCapRm,
-            'GetCapThemes': GetCapThemesDe,
-            'ServiceMetadata': ServiceMetadataRm
-        }
-    else:
-        return {
-            'GetCap': GetCapDe,
-            'GetCapThemes': GetCapThemesDe,
-            'ServiceMetadata': ServiceMetadataDe
-        }
 
 
 class CacheUpdate(Base):
