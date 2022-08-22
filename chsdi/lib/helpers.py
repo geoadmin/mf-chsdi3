@@ -167,16 +167,6 @@ def format_search_text(input_str):
     )
 
 
-def format_locations_search_text(input_str):
-    if input_str is None:
-        return input_str
-    # only remove trailing and leading dots
-    input_str = ' '.join([w.strip('.') for w in input_str.split()])
-    # remove double quotation marks
-    input_str = input_str.replace('"', '')
-    return format_search_text(input_str)
-
-
 def remove_accents(input_str):
     if input_str is None:
         return input_str

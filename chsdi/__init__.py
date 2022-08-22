@@ -70,7 +70,6 @@ def main(global_config, **settings):
     config.add_route('htmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/htmlPopup')
     config.add_route('iframeHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/iframeHtmlPopup')
     config.add_route('extendedHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/extendedHtmlPopup')
-    config.add_route('search', '/rest/services/{map}/SearchServer')
     config.add_route('luftbilder', '/luftbilder/viewer.html')
     config.add_route('historicalmaps', '/historicalmaps/viewer.html')
     config.add_route('checker', '/checker')

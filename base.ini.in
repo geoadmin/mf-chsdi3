@@ -10,6 +10,7 @@ use = egg:chsdi
 app_version = ${APP_VERSION}
 entry_path = ${APACHE_ENTRY_PATH}
 available_languages = de fr it en rm
+search_base_url=${SEARCH_BASE_URL}
 
 pyramid.reload_templates = false
 pyramid.debug_authorization = false
