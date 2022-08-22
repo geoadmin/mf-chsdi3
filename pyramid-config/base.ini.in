@@ -10,7 +10,6 @@ use = egg:chsdi
 app_version = ${APP_VERSION}
 entry_path = ${APACHE_ENTRY_PATH}
 available_languages = de fr it en rm
-search_base_url=${SEARCH_BASE_URL}
 
 pyramid.reload_templates = false
 pyramid.debug_authorization = false
@@ -41,7 +40,7 @@ sqlalchemy.diemo.url = postgresql://${DBHOST}:${DBPORT}/diemo_${DBSTAGING}
 mako.directories = chsdi:templates
 
 geodata_staging = ${GEODATA_STAGING}
-sphinxhost = ${SPHINXHOST}
+search_base_url=${SEARCH_BASE_URL}
 wmshost = ${WMSHOST}
 wmts_public_host = ${WMTS_PUBLIC_HOST}
 geoadminhost = ${GEOADMINHOST}
