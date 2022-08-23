@@ -7,11 +7,24 @@ here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.md')).read()
 CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
 
-REQUIREMENTS_FILE = 'requirements-py3.txt'
-if sys.version_info < (3, 0, 0):
-    REQUIREMENTS_FILE = 'requirements.txt'
+REQUIREMENTS_FILE = 'requirements.txt'
+
+# As pipenv install -e edits the pipfile itself, it is better to avoid chances of it being called
+# further in the code. Thus we create a simple requirements file to avoid unintended consequences
+
+if not os.path.exists(os.path.join(here, REQUIREMENTS_FILE)):
+    requirements = open(os.path.join(here, 'Pipfile')).read().split('\n')
+    requirements = requirements[requirements.index('[packages]') + 1:
+                                requirements.index('[requires]')]
+    requirements.pop(requirements.index('[dev-packages]'))
+    requirements = [req.replace('"', '') for req in requirements]
+    requirements = [req.replace(' = ', '') for req in requirements]
+    with open(os.path.join(here, REQUIREMENTS_FILE), 'w+') as file:
+        for req in requirements:
+            file.write(f"{req}\n")
 
 requires = open(os.path.join(here, REQUIREMENTS_FILE)).read().split('\n')
+print(requires)
 
 setup(name='chsdi',
       version='3.2.0',

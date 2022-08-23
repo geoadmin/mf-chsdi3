@@ -23,6 +23,7 @@ env:
     DBSTAGING: dev
     GEODATA_STAGING: test
     ENV_FILE: .env.ci
+    PIPENV_NOSPIN: 1
   parameter-store:
     OPENTRANS_API_KEY: "/opentrans_api/key"
     PGUSER: "/postgresql/pguser"
