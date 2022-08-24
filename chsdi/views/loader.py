@@ -16,11 +16,13 @@ def loadjs(request):
     ignore_polyfill = request.params.get('ignore_polyfill')
     # Determined automatically in subscriber
     lang = request.lang
-    loader_js_bucket_host = request.registry.settings['host']
-    if "hproxy" in request.host_url:
-        proto = "http" if "https" not in request.host_url else "https"
+
+    if "loader_js_bucket_localhost" in request.registry.settings:
+        host = request.registry.settings["loader_js_bucket_localhost"]
+    elif "CloudFront-Forwarded-Proto" in request.headers:
+        host = '%s://%s' % (request.headers["CloudFront-Forwarded-Proto"], request.host)
     else:
-        proto = "https"
+        host = request.host_url
 
     # If version not provided fallback to the first entry
     version_str = request.params.get('version', available_versions[0])
@@ -38,8 +40,8 @@ def loadjs(request):
     mode_str = '-debug' if mode is not None else ''
 
     def get_resource_url(filename, extension, mode_str=''):
-        return '%s://%s/%s/%s%s.%s' % (
-            proto, loader_js_bucket_host, s3_resources_path, filename, mode_str, extension)
+        return '%s/%s/%s%s.%s' % (
+            host, s3_resources_path, filename, mode_str, extension)
 
     ga_css = get_resource_url('ga', 'css')
     ga_js = get_resource_url('ga', 'js', mode_str)
