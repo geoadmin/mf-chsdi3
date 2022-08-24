@@ -96,7 +96,7 @@ def versioned(path):
 
 def make_agnostic(path):
     handle_path = lambda x: x.split('://')[1] if len(x.split('://')) == 2 else path
-    if path.startswith('http'):
+    if path.startswith('http') and path.find('localhost') == -1:
         path = handle_path(path)
         return '//' + path
     else:
