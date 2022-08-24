@@ -1665,6 +1665,7 @@ class GebietsbeschraenkungenDrohnen(Base, Vector):
     auth_phone_en = Column('auth_phone_en', Unicode)
     auth_intervalbefore = Column('auth_intervalbefore', Unicode)
     air_vol_lower_vref = Column('air_vol_lower_vref', Unicode)
+    air_vol_lower_limit = Column('air_vol_lower_limit', Unicode)
     air_vol_upper_vref = Column('air_vol_upper_vref', Unicode)
     air_vol_upper_limit = Column('air_vol_upper_limit', Unicode)
     time_permanent = Column('time_permanent', Unicode)
