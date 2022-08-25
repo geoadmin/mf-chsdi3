@@ -50,21 +50,18 @@ phases:
     commands:
       - echo "=========== Configuring stuff ====="
       - export PULL_REQUEST=${CODEBUILD_WEBHOOK_TRIGGER#pr/*}
-      - export GIT_BRANCH="${CODEBUILD_WEBHOOK_HEAD_REF#refs/heads/}"
+      - |-
+        if [[ -n "${CODEBUILD_WEBHOOK_HEAD_REF}" ]]; then
+          export GIT_BRANCH="${CODEBUILD_WEBHOOK_HEAD_REF#refs/heads/}"
+        else
+          # NOTE: For manual build trigger, CODEBUILD_WEBHOOK_HEAD_REF is not set therefore get
+          # the branch name from git command. This is a bit hacky but did not find any other solution
+          export GIT_BRANCH=$(git show-ref --heads | grep $(git --no-pager show --format=%H) | head -1 | awk '{gsub("refs/heads/", ""); print $2}')
+        fi
       - export GIT_BASE_BRANCH="${CODEBUILD_WEBHOOK_BASE_REF#refs/heads/}"
       - export GIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - export GIT_TAG="$(git describe --tags --dirty || echo 'unknown')"
       - export GIT_DIRTY="$(git status --porcelain)"
-      # When build are manually triggered by a user, the CODEBUILD_WEBHOOK_HEAD_REF is not
-      # set resulting to an empty GIT_BRANCH. Usually Codebuild don't checkout the branch but
-      # the commit and is on a detached HEAD. Therefore we need to use `git describe --exact-match --all`
-      # that returns either the git tag of the detached HEAD if any or the branch if any or failed.
-      - |
-        if [[ -z "${GIT_BRANCH}" ]];
-        then
-          GIT_BRANCH=$(git describe --exact-match --all 2>/dev/null || echo "unknown")
-          export GIT_BRANCH=${GIT_BRANCH#heads/}
-        fi
       - |
         if [[ "${GIT_TAG}" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}-rc[0-9]+[[:alnum:]-]*$$ ]]; then
           export APP_VERSION="${GIT_TAG}"

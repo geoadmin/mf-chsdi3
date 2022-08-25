@@ -30,7 +30,6 @@ production.ini.in
 development.ini.in
 production.ini
 development.ini
-rc_*
 requirements.txt
 
 # Ignore all hidden files

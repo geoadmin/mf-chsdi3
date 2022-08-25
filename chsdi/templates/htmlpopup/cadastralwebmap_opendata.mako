@@ -17,9 +17,9 @@
   from chsdi.lib.validation.identify import IdentifyServiceValidation
   from chsdi.lib.helpers import shift_to
   request = context.get('request')
-  protocol = request.scheme
+  protocol = 'https'
   fallbackLang = 'fr' if request.lang in ('fr', 'it') else 'de'
-  
+
   class CadastralWebMapParams(IdentifyServiceValidation):
       def __init__(self, request):
           self.srid = request.params.get('sr', '21781')
@@ -29,12 +29,12 @@
           self.mapExtent = request.params.get('mapExtent', defaultExtent)
           self.imageDisplay = request.params.get('imageDisplay', defaultImageDisplay)
           self.coord = request.params.get('coord')
-  
+
   params = CadastralWebMapParams(request)
   c['scale']  = get_scale(params.imageDisplay, params.mapExtent)
   topic = request.matchdict.get('map')
   baseUrl = request.registry.settings['api_url']
-  
+
 
   if params.srid == 2056:
       c['bboxlv95'] =  list(params.mapExtent.bounds)
@@ -95,7 +95,7 @@ ${partials.table_body_cadastral(c, lang, fallbackLang)}
 <%
     import requests
     request = context.get('request')
-    protocol = request.scheme
+    protocol = 'https'
     download_url = context.get('request').params.get('download_url')
     pdf = False
     try:

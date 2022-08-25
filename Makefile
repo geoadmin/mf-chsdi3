@@ -219,9 +219,9 @@ config-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	export APP_VERSION="$(APP_VERSION)" && \
 	export DATAGEOADMINHOST="$(DATAGEOADMINHOST)" && \
-	envsubst < base.ini.in > base.ini && \
-	envsubst < dev.ini.in > development.ini && \
-	envsubst < prod.ini.in > production.ini && \
+	envsubst < pyramid-config/base.ini.in > base.ini && \
+	envsubst < pyramid-config/dev.ini.in > development.ini && \
+	envsubst < pyramid-config/prod.ini.in > production.ini && \
 	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
 	envsubst < apache/application.wsgi.in > apache/application.wsgi && \
 	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
@@ -311,7 +311,7 @@ dockerpull:
 .PHONY: test
 test: $(VENV) config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
 	export $(shell cat $(ENV_FILE)) && ${PYTHON} ./scripts/pg_ready.py
-	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2 --cover-erase  tests/ -e "(.*e2e.*|test_search|test_sphinxapi)"
+	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2 --cover-erase  tests/ -e .*e2e.*
 
 
 .PHONY: unittest-ci
@@ -320,13 +320,9 @@ unittest-ci: $(VENV) config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
 	PYTHONPATH=${PYTHONPATH} ${NOSE} --verbosity=2 \
 		--with-xunit --xunit-file=junit-reports/functional/nosetest.xml \
 		tests/functional
-# FIXME here below we ignore the test_wmtscapabitlities, test_search and test_sphinxapi because
-# they are not passing in Frankfurt environment and they will anyway be removed from mf-chsdi3
-# after the migration.
 	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2 \
 		--with-xunit --xunit-file=junit-reports/integration/nosetest.xml \
-		tests/integration \
-		-e "(test_search|test_sphinxapi)"
+		tests/integration
 
 
 .PHONY: teste2e

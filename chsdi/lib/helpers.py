@@ -96,7 +96,7 @@ def versioned(path):
 
 def make_agnostic(path):
     handle_path = lambda x: x.split('://')[1] if len(x.split('://')) == 2 else path
-    if path.startswith('http'):
+    if path.startswith('http') and path.find('localhost') == -1:
         path = handle_path(path)
         return '//' + path
     else:
@@ -165,16 +165,6 @@ def format_search_text(input_str):
     return remove_accents(
         escape_sphinx_syntax(input_str)
     )
-
-
-def format_locations_search_text(input_str):
-    if input_str is None:
-        return input_str
-    # only remove trailing and leading dots
-    input_str = ' '.join([w.strip('.') for w in input_str.split()])
-    # remove double quotation marks
-    input_str = input_str.replace('"', '')
-    return format_search_text(input_str)
 
 
 def remove_accents(input_str):

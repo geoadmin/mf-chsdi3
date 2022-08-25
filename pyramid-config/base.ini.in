@@ -40,7 +40,7 @@ sqlalchemy.diemo.url = postgresql://${DBHOST}:${DBPORT}/diemo_${DBSTAGING}
 mako.directories = chsdi:templates
 
 geodata_staging = ${GEODATA_STAGING}
-sphinxhost = ${SPHINXHOST}
+search_base_url=${SEARCH_BASE_URL}
 wmshost = ${WMSHOST}
 wmts_public_host = ${WMTS_PUBLIC_HOST}
 geoadminhost = ${GEOADMINHOST}
