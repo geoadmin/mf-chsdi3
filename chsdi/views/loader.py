@@ -17,7 +17,8 @@ def loadjs(request):
     # Determined automatically in subscriber
     lang = request.lang
 
-    if "loader_js_bucket_localhost" in request.registry.settings:
+    loader_js_bucket_localhost = request.registry.settings.get("loader_js_bucket_localhost", None)
+    if loader_js_bucket_localhost:
         host_url = request.registry.settings["loader_js_bucket_localhost"]
     else:
         host_url = request.host_url
