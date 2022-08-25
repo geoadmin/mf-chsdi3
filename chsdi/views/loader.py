@@ -18,11 +18,9 @@ def loadjs(request):
     lang = request.lang
 
     if "loader_js_bucket_localhost" in request.registry.settings:
-        host = request.registry.settings["loader_js_bucket_localhost"]
-    elif "CloudFront-Forwarded-Proto" in request.headers:
-        host = '%s://%s' % (request.headers["CloudFront-Forwarded-Proto"], request.host)
+        host_url = request.registry.settings["loader_js_bucket_localhost"]
     else:
-        host = request.host_url
+        host_url = request.host_url
 
     # If version not provided fallback to the first entry
     version_str = request.params.get('version', available_versions[0])
@@ -41,13 +39,12 @@ def loadjs(request):
 
     def get_resource_url(filename, extension, mode_str=''):
         return '%s/%s/%s%s.%s' % (
-            host, s3_resources_path, filename, mode_str, extension)
+            host_url, s3_resources_path, filename, mode_str, extension)
 
     ga_css = get_resource_url('ga', 'css')
     ga_js = get_resource_url('ga', 'js', mode_str)
     epsg_21781_js = get_resource_url('EPSG21781', 'js')
     epsg_2056_js = get_resource_url('EPSG2056', 'js')
-    api_url = '%s%s' % (host, request.path)
 
     response = render_to_response(
         'chsdi:templates/loader.js',
@@ -57,7 +54,7 @@ def loadjs(request):
             'ga_js': ga_js,
             'epsg_21781_js': epsg_21781_js,
             'epsg_2056_js': epsg_2056_js,
-            'api_url': api_url.replace('/loader.js', ''),
+            'api_url': request.path_url.replace('/loader.js', ''),
             'ignore_polyfill': ignore_polyfill,
             'data': json.dumps(data, separators=(',', ':'))
         },
