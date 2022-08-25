@@ -65,12 +65,14 @@ RUN pip3 install -e .
 ARG GIT_HASH=unknown
 ARG GIT_BRANCH=unknown
 ARG GIT_DIRTY=unknown
+ARG GIT_TAG=unknown
 ARG VERSION=unknown
 ARG AUTHOR=unknown
 
 LABEL git.hash=${GIT_HASH}
 LABEL git.branch=${GIT_BRANCH}
 LABEL git.dirty=${GIT_DIRTY}
+LABEL git.tag=${GIT_TAG}
 LABEL version=${VERSION}
 LABEL author=${AUTHOR}
 

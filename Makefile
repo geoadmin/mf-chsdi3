@@ -80,7 +80,14 @@ GIT_TAG ?= $(shell git describe --tags --dirty || echo "no version info")
 GIT_COMMIT_DATE ?= $(shell git log -1  --date=iso --pretty=format:%cd)
 DOCKER_IMAGE_TAG ?= local-$(USER)-$(GIT_HASH_SHORT)
 DOCKER_IMG_LOCAL_TAG_PATH = $(DOCKER_REGISTRY)/$(SERVICE_NAME):$(DOCKER_IMAGE_TAG)
-APP_VERSION=$(GIT_TAG)
+
+# We need to have a valid APP_VERSION otherwise some makos that generate versioned url links won't work anymore.
+IS_VALID_VERSION := $(shell [[ $(GIT_TAG) =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}-rc[0-9]+[[:alnum:]-]*$$ ]] && echo valid)
+ifdef IS_VALID_VERSION
+	APP_VERSION ?= $(GIT_TAG)
+else
+	APP_VERSION ?= 0000-00-00-rc0-$(GIT_HASH_SHORT)
+endif
 
 # Colors
 ifneq ($(shell echo ${TERM}),)
@@ -199,6 +206,7 @@ set-app_version:
 	export GIT_COMMIT_DATE="$(GIT_COMMIT_DATE)" && \
 	export GIT_HASH="$(GIT_HASH)" && \
 	export GIT_DIRTY="$(GIT_DIRTY)" && \
+	export GIT_TAG="$(GIT_TAG)" && \
 	export PYTHON_VERSION="$(PYTHON_VERSION)" && \
 	export CURRENT_DATE="$(CURRENT_DATE)" && \
 	envsubst < chsdi/static/info.json.in > chsdi/static/info.json
@@ -262,7 +270,8 @@ dockerbuild: build
 		--build-arg GIT_HASH="$(GIT_COMMIT_HASH)" \
 		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
 		--build-arg GIT_DIRTY="$(GIT_DIRTY)" \
-		--build-arg VERSION="$(GIT_TAG)" \
+		--build-arg GIT_TAG="$(GIT_TAG)" \
+		--build-arg VERSION="$(APP_VERSION)" \
 		--build-arg AUTHOR="$(AUTHOR)" -t $(DOCKER_IMG_LOCAL_TAG_PATH) -f Dockerfile .
 
 
