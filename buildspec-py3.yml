@@ -65,6 +65,12 @@ phases:
           GIT_BRANCH=$(git describe --exact-match --all 2>/dev/null || echo "unknown")
           export GIT_BRANCH=${GIT_BRANCH#heads/}
         fi
+      - |
+        if [[ "${GIT_TAG}" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}-rc[0-9]+[[:alnum:]-]*$$ ]]; then
+          export APP_VERSION="${GIT_TAG}"
+        else
+          export APP_VERSION="0000-00-00-rc0-${GIT_HASH_SHORT}"
+        fi
       - |-
         if [ "${GIT_TAG}" = "unknown"  ] ; then
           DOCKER_IMG_TAG="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GIT_BRANCH//\//_}.${GIT_HASH}"
@@ -151,8 +157,9 @@ phases:
         --build-arg GIT_HASH="${GIT_HASH}"
         --build-arg GIT_BRANCH="${GIT_BRANCH}"
         --build-arg GIT_DIRTY="${GIT_DIRTY}"
+        --build-arg GIT_TAG="${GIT_TAG}"
         --build-arg AUTHOR="CI"
-        --build-arg VERSION="${GIT_TAG}"
+        --build-arg VERSION="${APP_VERSION}"
         -t "${DOCKER_IMG_TAG}" -t "${DOCKER_IMG_TAG_LATEST}" .
       - echo Build completed on $(date)
 
