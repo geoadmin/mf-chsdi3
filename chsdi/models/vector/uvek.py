@@ -1618,6 +1618,67 @@ class EinschraenkungenDrohnen(Base, Vector):
 register('ch.bazl.einschraenkungen-drohnen', EinschraenkungenDrohnen)
 
 
+class GebietsbeschraenkungenDrohnen(Base, Vector):
+    __tablename__ = 'gebietsbeschraenkungen_drohnen'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __template__ = 'templates/htmlpopup/gebietsbeschraenkungen_drohnen.mako'
+    __bodId__ = 'ch.bazl.gebietsbeschraenkungen-drohnen'
+    __extended_info__ = True
+    id = Column('bgdi_id', Integer, primary_key=True)
+    zone_name_de = Column('zone_name_de', Unicode)
+    zone_name_fr = Column('zone_name_fr', Unicode)
+    zone_name_it = Column('zone_name_it', Unicode)
+    zone_name_en = Column('zone_name_en', Unicode)
+    zone_restriction_id = Column('zone_restriction_id', Unicode)
+    zone_reason_id = Column('zone_reason_id', Unicode)
+    zone_restriction_de = Column('zone_restriction_de', Unicode)
+    zone_restriction_fr = Column('zone_restriction_fr', Unicode)
+    zone_restriction_it = Column('zone_restriction_it', Unicode)
+    zone_restriction_en = Column('zone_restriction_en', Unicode)
+    zone_message_de = Column('zone_message_de', Unicode)
+    zone_message_fr = Column('zone_message_fr', Unicode)
+    zone_message_it = Column('zone_message_it', Unicode)
+    zone_message_en = Column('zone_message_en', Unicode)
+    auth_url_de = Column('auth_url_de', Unicode)
+    auth_url_fr = Column('auth_url_fr', Unicode)
+    auth_url_it = Column('auth_url_it', Unicode)
+    auth_url_en = Column('auth_url_en', Unicode)
+    auth_name_de = Column('auth_name_de', Unicode)
+    auth_name_fr = Column('auth_name_fr', Unicode)
+    auth_name_it = Column('auth_name_it', Unicode)
+    auth_name_en = Column('auth_name_en', Unicode)
+    auth_contact_de = Column('auth_contact_de', Unicode)
+    auth_contact_fr = Column('auth_contact_fr', Unicode)
+    auth_contact_it = Column('auth_contact_it', Unicode)
+    auth_contact_en = Column('auth_contact_en', Unicode)
+    auth_service_de = Column('auth_service_de', Unicode)
+    auth_service_fr = Column('auth_service_fr', Unicode)
+    auth_service_it = Column('auth_service_it', Unicode)
+    auth_service_en = Column('auth_service_en', Unicode)
+    auth_email_de = Column('auth_email_de', Unicode)
+    auth_email_fr = Column('auth_email_fr', Unicode)
+    auth_email_it = Column('auth_email_it', Unicode)
+    auth_email_en = Column('auth_email_en', Unicode)
+    auth_phone_de = Column('auth_phone_de', Unicode)
+    auth_phone_fr = Column('auth_phone_fr', Unicode)
+    auth_phone_it = Column('auth_phone_it', Unicode)
+    auth_phone_en = Column('auth_phone_en', Unicode)
+    auth_intervalbefore = Column('auth_intervalbefore', Unicode)
+    air_vol_lower_vref = Column('air_vol_lower_vref', Unicode)
+    air_vol_lower_limit = Column('air_vol_lower_limit', Unicode)
+    air_vol_upper_vref = Column('air_vol_upper_vref', Unicode)
+    air_vol_upper_limit = Column('air_vol_upper_limit', Unicode)
+    time_permanent = Column('time_permanent', Unicode)
+    time_start = Column('time_start', Unicode)
+    time_end = Column('time_end', Unicode)
+    period_day = Column('period_day', Unicode)
+    period_start = Column('period_start', Unicode)
+    period_end = Column('period_end', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bazl.gebietsbeschraenkungen-drohnen', GebietsbeschraenkungenDrohnen)
+
+
 class ProjFlughafenanlagen(Base, Vector):
     __tablename__ = 'projektierungszonen'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
