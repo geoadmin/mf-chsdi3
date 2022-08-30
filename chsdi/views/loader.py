@@ -16,7 +16,12 @@ def loadjs(request):
     ignore_polyfill = request.params.get('ignore_polyfill')
     # Determined automatically in subscriber
     lang = request.lang
-    loader_js_bucket_host = request.registry.settings['loader_js_bucket_host']
+
+    loader_js_bucket_localhost = request.registry.settings.get("loader_js_bucket_localhost", None)
+    if loader_js_bucket_localhost:
+        host_url = request.registry.settings["loader_js_bucket_localhost"]
+    else:
+        host_url = request.host_url
 
     # If version not provided fallback to the first entry
     version_str = request.params.get('version', available_versions[0])
@@ -34,8 +39,8 @@ def loadjs(request):
     mode_str = '-debug' if mode is not None else ''
 
     def get_resource_url(filename, extension, mode_str=''):
-        return 'https://%s/%s/%s%s.%s' % (
-            loader_js_bucket_host, s3_resources_path, filename, mode_str, extension)
+        return '%s/%s/%s%s.%s' % (
+            host_url, s3_resources_path, filename, mode_str, extension)
 
     ga_css = get_resource_url('ga', 'css')
     ga_js = get_resource_url('ga', 'js', mode_str)

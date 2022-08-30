@@ -61,8 +61,6 @@ def add_localizer(event):
     # TODO: clean-up when only Python 3.x and no longer 2.x is in use
     if not six.PY3:
         request.lang = request.lang.encode('ascii', 'ignore')
-    # The load balancer forwards requests as http, therefore we need to check X-Forwarded-Proto
-    request.scheme = request.headers.get('X-Forwarded-Proto', request.scheme)
 
     def auto_translate(string):
         return localizer.translate(tsf(string))
