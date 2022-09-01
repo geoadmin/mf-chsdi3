@@ -10,8 +10,7 @@
 <%def name="extended_info(c, lang)">
 
 <%
-  lang = lang if lang in ('fr','it') else 'de'
-  lang = lang if lang != 'it' else 'fr'
+  lang = lang if lang in ('fr','it', 'en') else 'de'
   networktype = '%s_networktype' % lang
 %>
 
