@@ -26,6 +26,8 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - Announcement:
+- the layers **ch.astra.mountainbikeland-sperrungen_umleitungen, ch.astra.skatingland-sperrungen_umleitungen, ch.astra.veloland-sperrungen_umleitungen and ch.astra.wanderland-sperrungen_umleitungen have the following changes on their CHSDI data model with this release as previously announced: **Attributes to be removed**: content_provider, reason, state_validate, type, url1_text. **Attributes to be added**: content_provider_de, content_provider_fr, content_provider_it, content_provider_en, reason_de, reason_fr, reason_it, reason_en, state_validate_de, state_validate_fr, state_validate_it, state_validate_en (all text instead of coded values), route_nr, segment_nr, type_de, type_fr, type_it, type_en
+- the layers **ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal** and **ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet** will be removed from FSDI services with the release on October 26th 2022
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-06-29-rc32...2022-09-07-rc1>`__
 
 `MAP <//map.geo.admin.ch>`__
