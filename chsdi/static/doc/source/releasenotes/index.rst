@@ -14,6 +14,30 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20220907:
+
+Release 20220907 - Wednesday, September 7th 2022
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcement:
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-06-29-rc32...2022-09-07-rc1>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_220629...r_220907>`__
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ENG title <//map.geo.admin.ch/?layers=xx.xxxxx.xxxx>`__ (xx.xxxx.xxxx)                                                                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20220629:
 
