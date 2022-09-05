@@ -32,6 +32,7 @@ DOC_BUILD := chsdi/static/doc/build
 
 # Create legends
 WMSSCALELEGEND ?=
+
 NODE_MODULES := node_modules
 
 ifeq ($(CI_QUIET), 1)
@@ -140,7 +141,7 @@ help:
 	@echo "- rss                Create RSS feed from the releasenotes html file"
 	@echo
 	@echo -e "\033[1mDATA INTEGRATION\033[0m "
-	@echo "- legends           Download from the WMS server the legend images for a given layer"
+	@echo "- legends           Download from the WMS server the legend images for a given layer BODID= WMSHOST=localhost:9X78"
 	@echo
 	@echo -e "\033[1mDocker TARGETS\033[0m "
 	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
@@ -238,7 +239,11 @@ rss: $(VENV) doc chsdi/static/doc/build/releasenotes/index.html
 
 .PHONY: legends
 legends: $(VENV) guard-BODID guard-WMSHOST
-	scripts/downloadlegends.sh $(WMSHOST) $(BODID) $(WMSSCALELEGEND)
+	WMSPROTOCOL="https"; \
+	if [[ $(WMSHOST) == *"localhost"* ]]; then \
+		WMSPROTOCOL="http"; \
+	fi && \
+	scripts/downloadlegends.sh "$${WMSPROTOCOL}://$(WMSHOST)" $(BODID) $(WMSSCALELEGEND)
 
 
 .PHONY: serve

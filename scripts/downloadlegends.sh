@@ -3,17 +3,17 @@
 # Script to generate the legends images from a mapserver WMS source.
 # These images are used in `legend service` for `map.geo.admin.ch`
 
-WMSHOST=$1
+WMS_BASE_URL=$1
 BODID=$2
 WMSCALELEGEND=
 if [ -n "$3" ]; then
   WMSCALELEGEND=$3
 fi
 LEGENDS_FOLDER=chsdi/static/images/legends/
-echo "WMSHOST: $WMSHOST"
+echo "WMS_BASE_URL: $WMS_BASE_URL"
 echo "BODID: $BODID"
 echo "WMSSCALELEGEND: $WMSCALELEGEND"
-WMS_URL_GETCAP="https://$WMSHOST?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities"
+WMS_URL_GETCAP="$WMS_BASE_URL?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities"
 COUNT_OCCURENCE=$(curl -s $WMS_URL_GETCAP | grep -c $BODID)
 
 if [ "$COUNT_OCCURENCE" -eq "0" ]; then
@@ -21,7 +21,7 @@ if [ "$COUNT_OCCURENCE" -eq "0" ]; then
   exit 1
 fi
 
-WMS_URL="https://$WMSHOST?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&FORMAT=image/png&TRANSPARENT=true&LAYER=$BODID&SLD_VERSION=1.1.0"
+WMS_URL="$WMS_BASE_URL?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&FORMAT=image/png&TRANSPARENT=true&LAYER=$BODID&SLD_VERSION=1.1.0"
 if [ -n "$WMSCALELEGEND" ]; then
   WMS_URL="${WMS_URL}&SCALE=$WMSCALELEGEND"
 fi
