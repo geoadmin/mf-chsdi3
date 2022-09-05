@@ -24,7 +24,6 @@ if not os.path.exists(os.path.join(here, REQUIREMENTS_FILE)):
             file.write(f"{req}\n")
 
 requires = open(os.path.join(here, REQUIREMENTS_FILE)).read().split('\n')
-print(requires)
 
 setup(name='chsdi',
       version='3.2.0',
