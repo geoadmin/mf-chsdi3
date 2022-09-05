@@ -96,6 +96,8 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Noise exp. 2nd night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde)              |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Traffic counting locations - principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung-uebergeordnet)                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20220629:
 
