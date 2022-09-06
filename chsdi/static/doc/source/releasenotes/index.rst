@@ -14,6 +14,102 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20220907:
+
+Release 20220907 - Wednesday, September 7th 2022
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcement:
+- the layers **ch.astra.mountainbikeland-sperrungen_umleitungen, ch.astra.skatingland-sperrungen_umleitungen, ch.astra.veloland-sperrungen_umleitungen and ch.astra.wanderland-sperrungen_umleitungen have the following changes on their CHSDI data model with this release as previously announced: **Attributes to be removed**: content_provider, reason, state_validate, type, url1_text. **Attributes to be added**: content_provider_de, content_provider_fr, content_provider_it, content_provider_en, reason_de, reason_fr, reason_it, reason_en, state_validate_de, state_validate_fr, state_validate_it, state_validate_en (all text instead of coded values), route_nr, segment_nr, type_de, type_fr, type_it, type_en
+- the layers **ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal** and **ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet** will be removed from FSDI services with the release on October 26th 2022
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-06-29-rc32...2022-09-07-rc1>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- `Full changelog <https://github.com/geoadmin/mf-geoadmin3/compare/r_220629...r_220907>`__
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Upper timberline <//map.geo.admin.ch/?layers=ch.bafu.wald-obere-waldgrenze>`__ (ch.bafu.wald-obere-waldgrenze)                                                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Frequency of Föhn <//map.geo.admin.ch/?layers=ch.bafu.wald-foehnhaeufigkeit_jahr>`__ (ch.bafu.wald-foehnhaeufigkeit_jahr)                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Continentality 1000 m 1995 <//map.geo.admin.ch/?layers=ch.bafu.wald-kontinentalitaet_jahr_1000m_1981_2010>`__ (ch.bafu.wald-kontinentalitaet_jahr_1000m_1981_2010)                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Continentality 1000 m July 1995 <//map.geo.admin.ch/?layers=ch.bafu.wald-kontinentalitaet_juli_1000m_1981_2010>`__ (ch.bafu.wald-kontinentalitaet_juli_1000m_1981_2010)                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rel. air humidity July, 1981-2010 <//map.geo.admin.ch/?layers=ch.bafu.wald-relative_luftfeuchte_juli_1981_2010>`__ (ch.bafu.wald-relative_luftfeuchte_juli_1981_2010)                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Rel. air humidity year, 1981-2010 <//map.geo.admin.ch/?layers=ch.bafu.wald-relative_luftfeuchte_jahr_1981_2010>`__ (ch.bafu.wald-relative_luftfeuchte_jahr_1981_2010)                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Precipitation summer 2085, RCP 8.5 <//map.geo.admin.ch/?layers=ch.bafu.wald-niederschlag_sommer_2085_stark>`__ (ch.bafu.wald-niederschlag_sommer_2085_stark)                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Precipitation summer 2085, RCP 4.5 <//map.geo.admin.ch/?layers=ch.bafu.wald-niederschlag_sommer_2085_maessig>`__ (ch.bafu.wald-niederschlag_sommer_2085_maessig)                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Precipitation summer 2085, RCP 2.6 <//map.geo.admin.ch/?layers=ch.bafu.wald-niederschlag_sommer_2085_gering>`__ (ch.bafu.wald-niederschlag_sommer_2085_gering)                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Precipitation Appril-August 2085, RCP 8.5 <//map.geo.admin.ch/?layers=ch.bafu.wald-niederschlag_april_august_2085_stark>`__ (ch.bafu.wald-niederschlag_april_august_2085_stark)                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Precipitation Appril-August 2085, RCP 4.5 <//map.geo.admin.ch/?layers=ch.bafu.wald-niederschlag_april_august_2085_maessig>`__ (ch.bafu.wald-niederschlag_april_august_2085_maessig)                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Precipitation Appril-August 2085, RCP 2.6 <//map.geo.admin.ch/?layers=ch.bafu.wald-niederschlag_april_august_2085_gering>`__ (ch.bafu.wald-niederschlag_april_august_2085_gering)                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Air temperature July 2085, RCP 8.5 <//map.geo.admin.ch/?layers=ch.bafu.wald-lufttemperatur_juli_2085_stark>`__ (ch.bafu.wald-lufttemperatur_juli_2085_stark)                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Air temperature July 2085, RCP 4.5 <//map.geo.admin.ch/?layers=ch.bafu.wald-lufttemperatur_juli_2085_maessig>`__ (ch.bafu.wald-lufttemperatur_juli_2085_maessig)                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Air temperature July 2085, RCP 2.6 <//map.geo.admin.ch/?layers=ch.bafu.wald-lufttemperatur_juli_2085_gering>`__ (ch.bafu.wald-lufttemperatur_juli_2085_gering)                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Air temperature July 2085, 1981-2010 <//map.geo.admin.ch/?layers=ch.bafu.wald-lufttemperatur_juli_1981_2010>`__ (ch.bafu.wald-lufttemperatur_juli_1981_2010)                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Air temperature July 2085, 1961-1990 <//map.geo.admin.ch/?layers=ch.bafu.wald-lufttemperatur_juli_1961_1990>`__ (ch.bafu.wald-lufttemperatur_juli_1961_1990)                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Restrictions for drones <//map.geo.admin.ch/?layers=ch.bazl.einschraenkungen-drohnen>`__ (ch.bazl.einschraenkungen-drohnen)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Vermessungsstrecken - Querprofilmarke <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-querprofilmarken>`__ (ch.bafu.wasserbau-querprofilmarken)                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Datenbank Querprofile (QP) - Vermessungsstrecken <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-vermessungsstrecken>`__ (ch.bafu.wasserbau-vermessungsstrecken)                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 1st night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde)                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lmax <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel)  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lr <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter)                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. light / large airecrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge)|
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. ligt aircrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. last night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. milit. aerodr. (tot.) <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 2nd night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Traffic counting locations - principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung-uebergeordnet)                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product&layers_timestamp=2021&time=2021>`__ (ch.swisstopo.swissimage-product)                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata&layers_timestamp=2021&time=2021>`__ (ch.swisstopo.swissimage-product.metadata)                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Planimetric control points LFP1 <//map.geo.admin.ch/?layers=ch.swisstopo.fixpunkte-lfp1>`__ (ch.swisstopo.fixpunkte-lfp1)                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial Images swisstopo color <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_farbe>`__ (ch.swisstopo.lubis-luftbilder_farbe)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial Images swisstopo b / w <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_schwarzweiss>`__ (ch.swisstopo.lubis-luftbilder_schwarzweiss)                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial Images swisstopo infrared <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder_infrarot>`__ (ch.swisstopo.lubis-luftbilder_infrarot)                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images privates <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-firmen>`__ (ch.swisstopo.lubis-luftbilder-dritte-firmen)                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20220629:
 

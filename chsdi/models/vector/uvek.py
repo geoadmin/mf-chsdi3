@@ -84,13 +84,19 @@ class SperrungenUmleitungen:
     __template__ = 'templates/htmlpopup/sperrungen_umleitungen.mako'
     __label__ = 'sperrungen_type'
     id = Column('bgdi_id', Integer, primary_key=True)
-    sperrungen_type = Column('type', Unicode)
+    sperrungen_type_de = Column('type_de', Unicode)
+    sperrungen_type_fr = Column('type_fr', Unicode)
+    sperrungen_type_it = Column('type_it', Unicode)
+    sperrungen_type_en = Column('type_en', Unicode)
     land = Column('land', Unicode)
     duration_de = Column('duration_de', Unicode)
     duration_fr = Column('duration_fr', Unicode)
     duration_it = Column('duration_it', Unicode)
     duration_en = Column('duration_en', Unicode)
-    reason = Column('reason', Numeric)
+    reason_de = Column('reason_de', Numeric)
+    reason_fr = Column('reason_fr', Numeric)
+    reason_it = Column('reason_it', Numeric)
+    reason_en = Column('reason_en', Numeric)
     title_de = Column('title_de', Unicode)
     title_fr = Column('title_fr', Unicode)
     title_it = Column('title_it', Unicode)
@@ -99,20 +105,24 @@ class SperrungenUmleitungen:
     abstract_fr = Column('abstract_fr', Unicode)
     abstract_it = Column('abstract_it', Unicode)
     abstract_en = Column('abstract_en', Unicode)
-    state_validate = Column('state_validate', Unicode)
+    state_validate_de = Column('state_validate_de', Unicode)
+    state_validate_fr = Column('state_validate_fr', Unicode)
+    state_validate_it = Column('state_validate_it', Unicode)
+    state_validate_en = Column('state_validate_en', Unicode)
     file_de = Column('file_de', Unicode)
     file_fr = Column('file_fr', Unicode)
     file_it = Column('file_it', Unicode)
     file_en = Column('file_en', Unicode)
-    content_provider = Column('content_provider')
+    content_provider_de = Column('content_provider_de')
+    content_provider_fr = Column('content_provider_fr')
+    content_provider_it = Column('content_provider_it')
+    content_provider_en = Column('content_provider_en')
     url1_link_de = Column('url1_link_de', Unicode)
     url1_link_fr = Column('url1_link_fr', Unicode)
     url1_link_it = Column('url1_link_it', Unicode)
     url1_link_en = Column('url1_link_en', Unicode)
-    url1_text_de = Column('url1_text_de', Unicode)
-    url1_text_fr = Column('url1_text_fr', Unicode)
-    url1_text_it = Column('url1_text_it', Unicode)
-    url1_text_en = Column('url1_text_en', Unicode)
+    route_nr = Column('route_nr', Numeric)
+    segment_nr = Column('segment_nr', Numeric)
     the_geom = Column('the_geom', Geometry2D)
 
 
@@ -1207,8 +1217,8 @@ register('ch.bakom.notruf', BakomNotruf)
 
 
 class BakomNotruf112Fest(Base, Vector):
-    __tablename__ = 'notruf_fn_112'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_fn_112.mako'
     __bodId__ = 'ch.bakom.notruf-112_festnetz'
     __label__ = 'id'
@@ -1222,8 +1232,8 @@ register('ch.bakom.notruf-112_festnetz', BakomNotruf112Fest)
 
 
 class BakomNotruf117Fest(Base, Vector):
-    __tablename__ = 'notruf_fn_117'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_fn_117.mako'
     __bodId__ = 'ch.bakom.notruf-117_festnetz'
     __label__ = 'id'
@@ -1237,8 +1247,8 @@ register('ch.bakom.notruf-117_festnetz', BakomNotruf117Fest)
 
 
 class BakomNotruf118Fest(Base, Vector):
-    __tablename__ = 'notruf_fn_118'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_fn_118.mako'
     __bodId__ = 'ch.bakom.notruf-118_festnetz'
     __label__ = 'id'
@@ -1252,8 +1262,8 @@ register('ch.bakom.notruf-118_festnetz', BakomNotruf118Fest)
 
 
 class BakomNotruf143Fest(Base, Vector):
-    __tablename__ = 'notruf_fn_143'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_fn_143.mako'
     __bodId__ = 'ch.bakom.notruf-143_festnetz'
     __label__ = 'id'
@@ -1267,8 +1277,8 @@ register('ch.bakom.notruf-143_festnetz', BakomNotruf143Fest)
 
 
 class BakomNotruf144Fest(Base, Vector):
-    __tablename__ = 'notruf_fn_144'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_fn_144.mako'
     __bodId__ = 'ch.bakom.notruf-144_festnetz'
     __label__ = 'id'
@@ -1282,8 +1292,8 @@ register('ch.bakom.notruf-144_festnetz', BakomNotruf144Fest)
 
 
 class BakomNotruf145Fest(Base, Vector):
-    __tablename__ = 'notruf_fn_145'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_fn_145.mako'
     __bodId__ = 'ch.bakom.notruf-145_festnetz'
     __label__ = 'id'
@@ -1297,8 +1307,8 @@ register('ch.bakom.notruf-145_festnetz', BakomNotruf145Fest)
 
 
 class BakomNotruf147Fest(Base, Vector):
-    __tablename__ = 'notruf_fn_147'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_fn_147.mako'
     __bodId__ = 'ch.bakom.notruf-147_festnetz'
     __label__ = 'id'
@@ -1312,8 +1322,8 @@ register('ch.bakom.notruf-147_festnetz', BakomNotruf147Fest)
 
 
 class BakomNotruf112Mobil(Base, Vector):
-    __tablename__ = 'notruf_mo_112'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_mo_112.mako'
     __bodId__ = 'ch.bakom.notruf-112_mobilnetz'
     __label__ = 'id'
@@ -1327,8 +1337,8 @@ register('ch.bakom.notruf-112_mobilnetz', BakomNotruf112Mobil)
 
 
 class BakomNotruf117Mobil(Base, Vector):
-    __tablename__ = 'notruf_mo_117'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_mo_117.mako'
     __bodId__ = 'ch.bakom.notruf-117_mobilnetz'
     __label__ = 'id'
@@ -1342,8 +1352,8 @@ register('ch.bakom.notruf-117_mobilnetz', BakomNotruf117Mobil)
 
 
 class BakomNotruf118Mobil(Base, Vector):
-    __tablename__ = 'notruf_mo_118'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_mo_118.mako'
     __bodId__ = 'ch.bakom.notruf-118_mobilnetz'
     __label__ = 'id'
@@ -1357,8 +1367,8 @@ register('ch.bakom.notruf-118_mobilnetz', BakomNotruf118Mobil)
 
 
 class BakomNotruf143Mobil(Base, Vector):
-    __tablename__ = 'notruf_mo_143'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_mo_143.mako'
     __bodId__ = 'ch.bakom.notruf-143_mobilnetz'
     __label__ = 'id'
@@ -1372,8 +1382,8 @@ register('ch.bakom.notruf-143_mobilnetz', BakomNotruf143Mobil)
 
 
 class BakomNotruf144Mobil(Base, Vector):
-    __tablename__ = 'notruf_mo_144'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_mo_144.mako'
     __bodId__ = 'ch.bakom.notruf-144_mobilnetz'
     __label__ = 'id'
@@ -1387,8 +1397,8 @@ register('ch.bakom.notruf-144_mobilnetz', BakomNotruf144Mobil)
 
 
 class BakomNotruf145Mobil(Base, Vector):
-    __tablename__ = 'notruf_mo_145'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_mo_145.mako'
     __bodId__ = 'ch.bakom.notruf-145_mobilnetz'
     __label__ = 'id'
@@ -1402,8 +1412,8 @@ register('ch.bakom.notruf-145_mobilnetz', BakomNotruf145Mobil)
 
 
 class BakomNotruf147Mobil(Base, Vector):
-    __tablename__ = 'notruf_mo_147'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_mo_147.mako'
     __bodId__ = 'ch.bakom.notruf-147_mobilnetz'
     __label__ = 'id'
@@ -1518,8 +1528,8 @@ register('ch.bakom.notruf-147_zentral', BakomNotruf147Zentral)
 
 
 class BakomNotruf112Sat(Base, Vector):
-    __tablename__ = 'notruf_sa_112'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'notruf'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/notruf_sa_112.mako'
     __bodId__ = 'ch.bakom.notruf-112_satellit'
     __label__ = 'id'
@@ -1616,6 +1626,67 @@ class EinschraenkungenDrohnen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bazl.einschraenkungen-drohnen', EinschraenkungenDrohnen)
+
+
+class GebietsbeschraenkungenDrohnen(Base, Vector):
+    __tablename__ = 'gebietsbeschraenkungen_drohnen'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __template__ = 'templates/htmlpopup/gebietsbeschraenkungen_drohnen.mako'
+    __bodId__ = 'ch.bazl.gebietsbeschraenkungen-drohnen'
+    __extended_info__ = True
+    id = Column('bgdi_id', Integer, primary_key=True)
+    zone_name_de = Column('zone_name_de', Unicode)
+    zone_name_fr = Column('zone_name_fr', Unicode)
+    zone_name_it = Column('zone_name_it', Unicode)
+    zone_name_en = Column('zone_name_en', Unicode)
+    zone_restriction_id = Column('zone_restriction_id', Unicode)
+    zone_reason_id = Column('zone_reason_id', Unicode)
+    zone_restriction_de = Column('zone_restriction_de', Unicode)
+    zone_restriction_fr = Column('zone_restriction_fr', Unicode)
+    zone_restriction_it = Column('zone_restriction_it', Unicode)
+    zone_restriction_en = Column('zone_restriction_en', Unicode)
+    zone_message_de = Column('zone_message_de', Unicode)
+    zone_message_fr = Column('zone_message_fr', Unicode)
+    zone_message_it = Column('zone_message_it', Unicode)
+    zone_message_en = Column('zone_message_en', Unicode)
+    auth_url_de = Column('auth_url_de', Unicode)
+    auth_url_fr = Column('auth_url_fr', Unicode)
+    auth_url_it = Column('auth_url_it', Unicode)
+    auth_url_en = Column('auth_url_en', Unicode)
+    auth_name_de = Column('auth_name_de', Unicode)
+    auth_name_fr = Column('auth_name_fr', Unicode)
+    auth_name_it = Column('auth_name_it', Unicode)
+    auth_name_en = Column('auth_name_en', Unicode)
+    auth_contact_de = Column('auth_contact_de', Unicode)
+    auth_contact_fr = Column('auth_contact_fr', Unicode)
+    auth_contact_it = Column('auth_contact_it', Unicode)
+    auth_contact_en = Column('auth_contact_en', Unicode)
+    auth_service_de = Column('auth_service_de', Unicode)
+    auth_service_fr = Column('auth_service_fr', Unicode)
+    auth_service_it = Column('auth_service_it', Unicode)
+    auth_service_en = Column('auth_service_en', Unicode)
+    auth_email_de = Column('auth_email_de', Unicode)
+    auth_email_fr = Column('auth_email_fr', Unicode)
+    auth_email_it = Column('auth_email_it', Unicode)
+    auth_email_en = Column('auth_email_en', Unicode)
+    auth_phone_de = Column('auth_phone_de', Unicode)
+    auth_phone_fr = Column('auth_phone_fr', Unicode)
+    auth_phone_it = Column('auth_phone_it', Unicode)
+    auth_phone_en = Column('auth_phone_en', Unicode)
+    auth_intervalbefore = Column('auth_intervalbefore', Unicode)
+    air_vol_lower_vref = Column('air_vol_lower_vref', Unicode)
+    air_vol_lower_limit = Column('air_vol_lower_limit', Unicode)
+    air_vol_upper_vref = Column('air_vol_upper_vref', Unicode)
+    air_vol_upper_limit = Column('air_vol_upper_limit', Unicode)
+    time_permanent = Column('time_permanent', Unicode)
+    time_start = Column('time_start', Unicode)
+    time_end = Column('time_end', Unicode)
+    period_day = Column('period_day', Unicode)
+    period_start = Column('period_start', Unicode)
+    period_end = Column('period_end', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bazl.gebietsbeschraenkungen-drohnen', GebietsbeschraenkungenDrohnen)
 
 
 class ProjFlughafenanlagen(Base, Vector):
