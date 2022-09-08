@@ -56,7 +56,8 @@ phases:
         else
           # NOTE: For manual build trigger, CODEBUILD_WEBHOOK_HEAD_REF is not set therefore get
           # the branch name from git command. This is a bit hacky but did not find any other solution
-          export GIT_BRANCH=$(git show-ref --heads | grep $(git --no-pager show --format=%H) | head -1 | awk '{gsub("refs/heads/", ""); print $2}')
+          echo CODEBUILD_RESOLVED_SOURCE_VERSION=${CODEBUILD_RESOLVED_SOURCE_VERSION}
+          export GIT_BRANCH=$(git describe --all | awk '{gsub("remotes/origin/|origin/|heads/|refs/heads/", ""); print $1}')
         fi
       - export GIT_BASE_BRANCH="${CODEBUILD_WEBHOOK_BASE_REF#refs/heads/}"
       - export GIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
