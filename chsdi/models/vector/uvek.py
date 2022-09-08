@@ -3967,7 +3967,7 @@ class ElektrischeAnlagenUeber36Line (Base, Vector):
     __tablename__ = 'elektrische_anlagen_ueber_36_line'
     __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_line.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
-    __label__ = 'id'
+    __label__ = 'fid'
     id = Column('bgdi_id', Integer, primary_key=True)
     fid = Column('id', Unicode)
     bezeichnung = Column('bezeichnung', Unicode)
@@ -3987,7 +3987,7 @@ class ElektrischeAnlagenUeber36Point (Base, Vector):
     __tablename__ = 'elektrische_anlagen_ueber_36_point'
     __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_point.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
-    __label__ = 'id'
+    __label__ = 'fid'
     id = Column('bgdi_id', Integer, primary_key=True)
     fid = Column('id', Unicode)
     eigentuemer = Column('eigentuemer', Unicode)
@@ -4005,7 +4005,7 @@ class ElektrischeAnlagenUeber36Poly (Base, Vector):
     __tablename__ = 'elektrische_anlagen_ueber_36_poly'
     __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_poly.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
-    __label__ = 'id'
+    __label__ = 'fid'
     id = Column('bgdi_id', Integer, primary_key=True)
     fid = Column('id', Unicode)
     bezeichnung = Column('bezeichnung', Unicode)
