@@ -50,7 +50,6 @@ install_directory = ${CURRENT_DIRECTORY}
 host = ${HOST}
 apache_base_path = ${APACHE_BASE_PATH}
 apache_entry_path = ${APACHE_ENTRY_PATH}
-kml_temp_dir = ${KML_TEMP_DIR}
 loader_js_bucket_localhost = ${LOADER_JS_BUCKET_LOCALHOST}
 vector_bucket = ${VECTOR_BUCKET}
 datageoadminhost = ${DATAGEOADMINHOST}
