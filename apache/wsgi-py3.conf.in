@@ -118,6 +118,3 @@ WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${WSGI_APP}
     WSGIApplicationGroup %{GLOBAL}
 </Directory>
 
-
-# kml file downloads
-AliasMatch ^${APACHE_ENTRY_PATH}/kml/(map\.geo\.admin\.ch_KML_\d+\.kml)$ ${KML_TEMP_DIR}/$1
