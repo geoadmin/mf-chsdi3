@@ -193,7 +193,7 @@ setup: $(NODE_MODULES)
 
 
 .PHONY: build
-build: doc translate chsdi/static/css/extended.min.css rss set-app_version
+build: node-module-files doc translate chsdi/static/css/extended.min.css rss set-app_version
 
 .PHONY: set-app_version
 set-app_version:
@@ -350,12 +350,16 @@ autolint: setup
 $(NODE_MODULES): package.json
 	@echo "${GREEN}Installing node packages...${RESET}";
 	npm install $(NPM_QUIET) --production
+
+
+node-module-files: $(NODE_MODULES)
 	mkdir -p chsdi/static/js/
 	cp -f $(NODE_MODULES)/jquery/dist/jquery.min.js chsdi/static/js/jquery.min.js
 	cp -f $(NODE_MODULES)/blueimp-gallery/js/blueimp-gallery.min.js chsdi/static/js/blueimp-gallery.min.js
 	cp -f $(NODE_MODULES)/d3/d3.min.js chsdi/static/js/d3.min.js
 	cp -f $(NODE_MODULES)/d3-tip/index.js chsdi/static/js/d3-tip.js
 	cp -f $(NODE_MODULES)/blueimp-gallery/css/blueimp-gallery.min.css chsdi/static/css/blueimp-gallery.min.css
+
 
 chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 	@echo "${GREEN}Generating new css file...${RESET}";
