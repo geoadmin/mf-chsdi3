@@ -23,10 +23,6 @@ WSGIPassAuthorization On
   Header set X-UA-Compatible "IE=Edge"
 </IfModule>
 
-# Redirect old main/wsgi stuff
-RedirectMatch permanent ^/main/wsgi/(.*)$ /$1
-RedirectMatch permanent ^${APACHE_ENTRY_PATH}/IIPIMAGE/(.*)$ ${APACHE_ENTRY_PATH}/luftbilder/$1
-
 # Redirect no-slash target to slashed version
 RedirectMatch ^${APACHE_ENTRY_PATH}$ ${APACHE_ENTRY_PATH}/
 
