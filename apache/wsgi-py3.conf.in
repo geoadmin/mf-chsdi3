@@ -19,16 +19,6 @@ ExpiresActive on
 # http://code.google.com/p/modwsgi/wiki/FrequentlyAskedQuestions#Access_Control_Mechanisms
 WSGIPassAuthorization On
 
-# Checker
-ErrorDocument 200 "OK"
-RewriteEngine On
-RewriteRule "/ok" - [R=200]
-
-
-# PostgreSQL credential
-SetEnv PGUSER ${PGUSER}
-SetEnv PGPASSWORD ${PGPASSWORD}
-
 <IfModule mod_headers.c>
   Header set X-UA-Compatible "IE=Edge"
 </IfModule>
