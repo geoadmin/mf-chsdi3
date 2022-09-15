@@ -17,5 +17,7 @@ envsubst < apache/ports.conf.in > /etc/apache2/ports.conf
 
 envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf
 
+cd chsdi/static/ && ln -sf "${ROBOTS_FILE}" robots.txt && cd - || echo "FAILED TO CREATE ROBOTS LINK"
+
 # Execute the command provided by CMD in Dockerfile
 exec "$@"
