@@ -45,7 +45,12 @@ def metadata(request):
 
 
 @view_config(route_name='layersConfig', renderer='jsonp')
+@view_config(route_name='layersConfig-1', renderer='jsonp')
 def layers_config(request):
+    if 'map' not in request.matchdict:
+        # New /configs/{lang}/layersConfig.json style url don't have a map value
+        # therefore fallback to 'all'
+        request.matchdict['map'] = 'all'
     params = BaseLayersValidation(request)
     query = params.request.db.query(LayersConfig)
     layers = {}

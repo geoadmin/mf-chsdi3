@@ -7,6 +7,7 @@ from chsdi.lib.filters import filter_by_geodata_staging
 
 
 @view_config(route_name='topics', renderer='jsonp')
+@view_config(route_name='topics-1', renderer='jsonp')
 def topics(request):
     model = Topics
     geodataStaging = request.registry.settings['geodata_staging']

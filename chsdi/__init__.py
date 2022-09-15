@@ -97,6 +97,15 @@ def main(global_config, **settings):
     config.add_route('faqlist', '/rest/services/{map}/faqlist')
     config.add_route('color', '/color/{r},{g},{b}/{image}')
 
+    # Some new style routes used by the viewer see geoadmin/mf-geoadmin3 PR #4687 and geoadmin/web-mapviewer
+    config.add_route('layersConfig-1', '/configs/{lang:\w\w}/layersConfig.json')
+    config.add_route('translations-1', '/configs/{lang:\w\w}/translations.json')
+    config.add_route('catalog-1', '/configs/{lang:\w\w}/catalog.{map:\w+}.json')
+    # This route is only used by the new viewer geoadmin/web-mapviewer
+    config.add_route('topics-1', '/configs/services.json')
+    # The following route doesn't seems to be used anymore
+    # config.add_route('topics-2', '/configs/{lang:\w\w}/services.json')
+
     # Static route
     config.add_static_route('chsdi', 'static')
 

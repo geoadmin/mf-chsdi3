@@ -37,13 +37,6 @@ RedirectMatch ^${APACHE_ENTRY_PATH}$ ${APACHE_ENTRY_PATH}/
 RewriteRule ^${APACHE_ENTRY_PATH}/\d{4}-\d{2}-\d{2}-rc\d+(?:-[^/]*)?/(.*)$ ${APACHE_ENTRY_PATH}/$1 [E=${APACHE_BASE_PATH}setyearcache:true,PT]
 Header merge Cache-Control "max-age=31536013, public" env=${APACHE_BASE_PATH}setyearcache
 
-# New style config url (see mf-geoadmin3 #4687)
-RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/layersConfig\.json ${APACHE_ENTRY_PATH}/rest/services/all/MapServer/layersConfig?lang=$1 [PT]
-RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/translations\.json ${APACHE_ENTRY_PATH}/rest/services/translations?lang=$1 [PT]
-RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/catalog\.(\w+)\.json ${APACHE_ENTRY_PATH}/rest/services/$2/CatalogServer?lang=$1 [PT]
-RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/services\.json ${APACHE_ENTRY_PATH}/rest/services [PT]
-RewriteRule ^${APACHE_ENTRY_PATH}/configs/services\.json ${APACHE_ENTRY_PATH}/rest/services [PT]
-
 ############  WSGI #################################3
 
 # LoadModule wsgi_module modules/mod_wsgi.so

@@ -143,11 +143,16 @@ def locale_negotiator(request):
     except IOError:  # pragma: no cover
         raise HTTPRequestTimeout('Request was aborted. Didn\'t receive full request')
 
-    settings = get_current_registry().settings
-    languages = settings['available_languages'].split()
     if lang == 'rm':
         return 'fi'
-    elif lang is None or lang not in languages:
+
+    if lang is None and request.matchdict is not None and 'lang' in request.matchdict:
+        # Fallback to lang url parameter if available (required by the new /configs/ style urls
+        lang = request.matchdict['lang']
+
+    languages = get_current_registry().settings['available_languages'].split()
+
+    if lang not in languages:
         if request.accept_language:
             return request.accept_language.best_match(languages, 'de')
         # the default_locale_name configuration variable

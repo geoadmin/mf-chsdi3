@@ -8,6 +8,7 @@ from pyramid.events import NewRequest
 from pyramid.events import BeforeRender
 from pyramid.events import NewResponse
 from pyramid.events import subscriber
+from pyramid.events import ContextFound
 from pyramid.i18n import get_localizer, TranslationStringFactory
 from chsdi.lib import helpers
 from chsdi.models.bod import get_translations
@@ -53,7 +54,7 @@ def update_localizer(lang, localizer, session):
     return localizer
 
 
-@subscriber(NewRequest)
+@subscriber(ContextFound)
 def add_localizer(event):
     request = event.request
     request._LOCALE_ = helpers.locale_negotiator(request)

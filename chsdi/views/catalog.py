@@ -107,6 +107,7 @@ class CatalogService(MapNameValidation):
         self.staging = request.registry.settings['geodata_staging']
 
     @view_config(route_name='catalog', renderer='jsonp')
+    @view_config(route_name='catalog-1', renderer='jsonp')
     def catalog(self):
         model = Catalog
         query = self.request.db.query(model)\

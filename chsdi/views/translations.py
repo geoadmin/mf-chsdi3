@@ -16,6 +16,7 @@ class TranslationService(object):
         self.lang = request.lang
 
     @view_config(route_name='translations', renderer='jsonp')
+    @view_config(route_name='translations-1', renderer='jsonp')
     def translations(self):
         model = Translations
         lang = self.lang
