@@ -73,7 +73,3 @@ unidecode = "==1.1.1"
 
 [requires]
 python_version = "3.7"
-
-[packages.e1839a8]
-path = "."
-editable = true

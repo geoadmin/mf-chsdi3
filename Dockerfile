@@ -32,6 +32,8 @@ RUN apt-get update -qq \
     && mkdir -p /var/www/vhosts/${VHOST}/htdocs \
     && mkdir -p /var/www/vhosts/${VHOST}/logs
 
+COPY Pipfile* ./
+RUN pipenv install --system --deploy --ignore-pipfile
 
 COPY --chown=${USER}:${GROUP} 90-chsdi3.conf    /var/www/vhosts/${VHOST}/conf/
 RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
@@ -59,8 +61,7 @@ COPY --chown=${USER}:${GROUP} . /var/www/vhosts/${VHOST}/private/chsdi
 
 WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
 
-RUN pipenv install --system --deploy --ignore-pipfile
-
+RUN pip3 install -e .
 
 ARG GIT_HASH=unknown
 ARG GIT_BRANCH=unknown

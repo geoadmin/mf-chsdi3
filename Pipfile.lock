@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a87c1975112b4dd86f33c1d5da6ad0e10add4e17fbd3b55c9413e4dc5984e1b0"
+            "sha256": "af5d3550fd837ed192e8e81d5814a5f5fe33c469a1b1b24b53afebd91c60782c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -73,11 +73,11 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:43dadad18a7f168740e66944e4fa82c6611848ff9056ad910f8f7a3e46ab89e0",
-                "sha256:cffdcd380919da6137f76633531a5817e3a9f268575c128249fb637e4f9e73fb"
+                "sha256:36973885b9542e6bd01dea287b2b4b3b21236307c56324fcc3f1160f2d655ed5",
+                "sha256:e232343de1ab72c2aa521b625c80f699e356830fd0e2c620b465b304b17b0516"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==2022.6.15.1"
+            "version": "==2022.9.14"
         },
         "chardet": {
             "hashes": [
@@ -85,10 +85,6 @@
                 "sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"
             ],
             "version": "==3.0.4"
-        },
-        "chsdi": {
-            "editable": true,
-            "path": "."
         },
         "coverage": {
             "hashes": [
@@ -144,10 +140,6 @@
             ],
             "index": "pypi",
             "version": "==0.15.2"
-        },
-        "e1839a8": {
-            "editable": true,
-            "path": "."
         },
         "entrypoints": {
             "hashes": [

@@ -231,6 +231,7 @@ config-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_
 # Translation are dynamic, the domain is updated at runtime directly from the BOD
 .PHONY: translate
 translate: setup $(TRANSLATION_FILES)
+	$(PIP) install -e .
 
 
 # FIXME add the rss and css compilation
@@ -254,7 +255,7 @@ legends: $(VENV) setup guard-BODID guard-WMSHOST
 
 
 .PHONY: serve
-serve: setup config-templates set-app_version
+serve: setup build
 	PYTHONPATH=${PYTHONPATH} ${PSERVE} development.ini --reload
 
 
