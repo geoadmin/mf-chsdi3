@@ -26,17 +26,6 @@ WSGIPassAuthorization On
 # Redirect no-slash target to slashed version
 RedirectMatch ^${APACHE_ENTRY_PATH}$ ${APACHE_ENTRY_PATH}/
 
-
-# Versioned URL rewrite:
-# If URI has a version string at the start, we cache a year
-# This allows a client to create their own cache and
-# update at his discretion.
-# REGEX explained:
-#  - \d{4}-\d{2}-\d{2}-rc\d+ => match milestone version string YYYY-MM-DD-rcX
-#  - (?:-[^/]*)? => match non official milestone versiont string YYYY-MM-DD-rcX-x-shorthas, (?:) is a non capturing group.
-RewriteRule ^${APACHE_ENTRY_PATH}/\d{4}-\d{2}-\d{2}-rc\d+(?:-[^/]*)?/(.*)$ ${APACHE_ENTRY_PATH}/$1 [E=${APACHE_BASE_PATH}setyearcache:true,PT]
-Header merge Cache-Control "max-age=31536013, public" env=${APACHE_BASE_PATH}setyearcache
-
 # New style config url (see mf-geoadmin3 #4687)
 RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/layersConfig\.json ${APACHE_ENTRY_PATH}/rest/services/all/MapServer/layersConfig?lang=$1 [PT]
 RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/translations\.json ${APACHE_ENTRY_PATH}/rest/services/translations?lang=$1 [PT]

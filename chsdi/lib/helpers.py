@@ -20,9 +20,9 @@ from pyramid.url import route_url
 from pyramid.httpexceptions import HTTPBadRequest, HTTPRequestTimeout
 import unicodedata
 try:
-    from urlparse import urlparse, urlunparse, urljoin
+    from urlparse import urlparse, urljoin
 except ImportError:
-    from urllib.parse import urlparse, urlunparse, urljoin
+    from urllib.parse import urlparse, urljoin
 
 try:
     from urllib import quote
@@ -74,24 +74,6 @@ def to_utf8(data):
 
 def ilen(iterable):
     return reduce(lambda sum, element: sum + 1, iterable, 0)
-
-
-def versioned(path):
-    version = get_current_registry().settings['app_version']
-    entry_path = get_current_registry().settings['entry_path'] + '/'
-    if version is not None:
-        agnosticPath = make_agnostic(path)
-        parsedURL = urlparse(agnosticPath)
-        # we don't do version when behind pserve (at localhost)
-        if 'localhost:' not in parsedURL.netloc:
-            parts = parsedURL.path.split(entry_path, 1)
-            if len(parts) > 1:
-                parsedURL = parsedURL._replace(
-                    path=parts[0] + entry_path + version + '/' + parts[1])
-                agnosticPath = urlunparse(parsedURL)
-        return agnosticPath
-    else:
-        return path
 
 
 def make_agnostic(path):
