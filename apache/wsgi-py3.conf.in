@@ -63,13 +63,6 @@ RewriteRule ^${APACHE_ENTRY_PATH}/robots.txt ${APACHE_ENTRY_PATH}/static/${ROBOT
     Header set Content-type "text/plain"
 </LocationMatch>
 
-
-# Loader.js service
-<LocationMatch ^${APACHE_ENTRY_PATH}/loader\.js>
-    Order allow,deny
-    Allow from all
-</LocationMatch>
-
 ############  WSGI #################################3
 
 # LoadModule wsgi_module modules/mod_wsgi.so
