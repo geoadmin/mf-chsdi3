@@ -20,6 +20,8 @@ RUN apt-get update -qq \
         libgeos-dev \
         gettext-base \
         apache2 libapache2-mod-wsgi-py3 \
+    && pip3 install pipenv \
+    && pipenv --version \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd --gid 2500 ${GROUP} \
@@ -28,12 +30,10 @@ RUN apt-get update -qq \
     && mkdir -p /var/www/vhosts/${VHOST}/private \
     && mkdir -p /var/www/vhosts/${VHOST}/cgi-bin \
     && mkdir -p /var/www/vhosts/${VHOST}/htdocs \
-    && mkdir -p /var/www/vhosts/${VHOST}/logs \
-    && pip3 install -q --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL}
+    && mkdir -p /var/www/vhosts/${VHOST}/logs
 
-# FIXME: use pipenv
-COPY requirements-py3.txt .
-RUN pip3 install -r requirements-py3.txt --index-url ${PYPI_URL}
+COPY Pipfile* ./
+RUN pipenv install --system --deploy --ignore-pipfile
 
 COPY --chown=${USER}:${GROUP} 90-chsdi3.conf    /var/www/vhosts/${VHOST}/conf/
 RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
@@ -58,6 +58,7 @@ RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
         alias
 
 COPY --chown=${USER}:${GROUP} . /var/www/vhosts/${VHOST}/private/chsdi
+
 WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
 
 RUN pip3 install -e .

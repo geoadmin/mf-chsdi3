@@ -13,7 +13,10 @@ SHELL = /bin/bash
 SERVICE_NAME := mf-chsdi3
 
 CURRENT_DIRECTORY := $(shell pwd)
-VENV := .venv
+
+# PIPENV files
+PIP_FILE = Pipfile
+PIP_FILE_LOCK = Pipfile.lock
 
 # default configuration
 ENV_FILE ?= .env.default
@@ -43,23 +46,26 @@ PIP_QUIET :=
 NPM_QUIET :=
 endif
 
+VENV = $(shell pipenv --venv)
 
 # Commands
-AUTOPEP8 := $(VENV)/bin/autopep8
-FLAKE8 := $(VENV)/bin/flake8
-MAKO := $(VENV)/bin/mako-render
-NOSE := $(VENV)/bin/nosetests
-PIP := $(VENV)/bin/pip3 $(PIP_QUIET)
-PSERVE := $(VENV)/bin/pserve
-PSHELL := $(VENV)/bin/pshell
-PYTHON := $(VENV)/bin/python3
-SPHINX := $(VENV)/bin/sphinx-build
+PIPENV_RUN := pipenv run
 ENVSUBST := /usr/bin/envsubst
+
+# Venv commands : these are evaluated at runtime, not at declaration
+AUTOPEP8 = $(VENV)/bin/autopep8
+FLAKE8 = $(VENV)/bin/flake8
+MAKO = $(VENV)/bin/mako-render
+NOSE = $(VENV)/bin/nosetests
+PIP = $(VENV)/bin/pip3 $(PIP_QUIET)
+PSERVE = $(VENV)/bin/pserve
+PSHELL = $(VENV)/bin/pshell
+PYTHON = $(VENV)/bin/python3
+SPHINX = $(VENV)/bin/sphinx-build
 
 PYTHON_VERSION := 3.7
 SYSTEM_PYTHON_CMD ?= python${PYTHON_VERSION}
 PYTHONPATH ?= $(VENV)/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
-
 
 PYPI_URL ?= https://pypi.org/simple/
 
@@ -140,7 +146,7 @@ help:
 	@echo "- teste2e            End-to-end tests"
 	@echo
 	@echo -e "\033[1mLOCAL SERVER TARGETS\033[0m "
-	@echo "- config-templates   Create the pylons settings file from templates and environment variables."
+	@echo "- local-templates    Create the pylons settings file from templates and environment variables for local development."
 	@echo "- serve              Run the wsgi app using the waitress debug server. Port can be set by Env variable SERVER_PORT (default: 6543)"
 	@echo
 	@echo -e "\033[1mWEBSITE AND DOCUMENTATION\033[0m "
@@ -160,7 +166,8 @@ help:
 	@echo
 	@echo -e "\033[1mCLEANING TARGETS\033[0m "
 	@echo "- clean              Remove generated files"
-	@echo "- cleanall           Remove all the build artefacts and venv"
+	@echo "- cleanall           Remove all the build artefacts"
+	@echo "- cleanenv			Call cleanall, then remove the environment"
 	@echo
 	@echo "Variables:"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
@@ -176,24 +183,13 @@ help:
 	@echo
 
 
-# TODO: add targets `translate` when merged
 .PHONY: all
-all: setup config-templates lint build
+all: setup lint build local-templates
 
 
 .PHONY: setup
-setup: $(VENV) $(NODE_MODULES)
-
-
-requirements-py3.txt:
-	@echo "${GREEN}requirements-py3.txt has changed...${RESET}";
-
-
-# TODO: replace through pipenv as in the other projects.
-$(VENV): requirements-py3.txt
-		test -d "$(VENV)" ||  ( $(SYSTEM_PYTHON_CMD) -m venv $(VENV) && \
-		${PIP} install $(PIP_QUIET) --upgrade pip==21.2.4 setuptools --index-url ${PYPI_URL}  && \
-		${PIP} install $(PIP_QUIET) -r requirements-py3.txt --index-url ${PYPI_URL}  -e . )
+setup: $(NODE_MODULES)
+	if ! [ -d "$(VENV)" ] ;then pipenv install --dev; fi
 
 
 .PHONY: build
@@ -213,8 +209,8 @@ set-app_version:
 	envsubst < chsdi/static/info.json.in > chsdi/static/info.json
 
 
-.PHONY: config-templates
-config-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_version
+.PHONY: local-templates
+local-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_version
 # FIXME: nosetests is still using development.ini
 	export $(shell cat $(ENV_FILE)) && \
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
@@ -231,22 +227,23 @@ config-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_
 # Generate a basically empty gettext `chsdi` domain.
 # Translation are dynamic, the domain is updated at runtime directly from the BOD
 .PHONY: translate
-translate: $(VENV) $(TRANSLATION_FILES)
+translate: setup $(TRANSLATION_FILES)
+	$(PIP) install -e .
 
 
 # FIXME add the rss and css compilation
 .PHONY: doc
-doc: $(VENV) $(DOC_BUILD)
+doc: setup $(DOC_BUILD)
 
 
 .PHONY:
-rss: $(VENV) doc chsdi/static/doc/build/releasenotes/index.html
+rss: setup doc chsdi/static/doc/build/releasenotes/index.html
 	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
 	${PYTHON} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
 
 
 .PHONY: legends
-legends: $(VENV) guard-BODID guard-WMSHOST
+legends: $(VENV) setup guard-BODID guard-WMSHOST
 	WMSPROTOCOL="https"; \
 	if [[ $(WMSHOST) == *"localhost"* ]]; then \
 		WMSPROTOCOL="http"; \
@@ -255,12 +252,12 @@ legends: $(VENV) guard-BODID guard-WMSHOST
 
 
 .PHONY: serve
-serve: $(VENV) config-templates set-app_version
+serve: setup local-templates build
 	PYTHONPATH=${PYTHONPATH} ${PSERVE} development.ini --reload
 
 
 .PHONY: shell
-shell: $(VENV) config-templates set-app_version
+shell: setup local-templates build
 	PYTHONPATH=${PYTHONPATH} ${PSHELL} development.ini
 
 
@@ -314,13 +311,13 @@ dockerpull:
 
 
 .PHONY: test
-test: $(VENV) config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
+test: setup local-templates $(TRANSLATION_FILES) $(DOC_BUILD)
 	export $(shell cat $(ENV_FILE)) && ${PYTHON} ./scripts/pg_ready.py
 	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2 --cover-erase  tests/ -e .*e2e.*
 
 
 .PHONY: unittest-ci
-unittest-ci: $(VENV) config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
+unittest-ci: setup local-templates $(TRANSLATION_FILES) $(DOC_BUILD)
 	mkdir -p junit-reports/{integration,functional}
 	PYTHONPATH=${PYTHONPATH} ${NOSE} --verbosity=2 \
 		--with-xunit --xunit-file=junit-reports/functional/nosetest.xml \
@@ -331,19 +328,19 @@ unittest-ci: $(VENV) config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
 
 
 .PHONY: teste2e
-teste2e: $(VENV)
+teste2e: setup
 	PYTHONPATH=${PYTHONPATH} ${NOSE} tests/e2e/
 
 # TODO: Replace through yapf, once the old vhost infra is replaced
 .PHONY: lint
-lint: $(VENV)
+lint: setup
 	@echo "${GREEN}Linting python files...${RESET}";
 	${FLAKE8} --ignore=${PEP8_IGNORE} $(PYTHON_FILES) && echo ${RED}
 
 
 # TODO: Replace through yapf, once the old vhost infra is replaced
 .PHONY: autolint
-autolint: $(VENV)
+autolint: setup
 	@echo "${GREEN}Auto correction of python files...${RESET}";
 	${AUTOPEP8} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
 
@@ -385,7 +382,7 @@ $(LANGUAGES_MO_FILES): $(LANGUAGES_PO_FILES)
 DOC_FILES_DEPENDENCIES := $(shell find chsdi/static/doc/source ! -name *.pyc ! -name __pycache__)
 $(DOC_BUILD): $(DOC_FILES_DEPENDENCIES)
 	@echo "${GREEN}Building the documentation...${RESET}";
-	cd chsdi/static/doc && ../../../${SPHINX} -W -b html source build || exit 1 ;
+	cd chsdi/static/doc && $(SPHINX) -W -b html source build || exit 1 ;
 
 
 guard-%:
@@ -411,13 +408,16 @@ clean:
 	rm -rf $(TRANSLATION_DIRS)
 	find chsdi/static/js -type f ! -name .gitignore -exec rm -f \;
 	rm -f .coverage .coverage.*
+	rm -f requirements.txt
 	find chsdi -name "__pycache__" -exec rm -rf "{}" \;
 
 
-PHONY: cleanall
+.PHONY: cleanall
 cleanall: clean
 	rm -rf chsdi.egg-info/
-	rm -rf $(VENV)
-	rm -rf node_modules
 	rm -f  package-lock.json
+	rm -rf $(NODE_MODULES)
+	if [ -d "$(VENV)" ]; then pipenv --rm; fi
+
+
 
