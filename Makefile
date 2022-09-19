@@ -146,7 +146,7 @@ help:
 	@echo "- teste2e            End-to-end tests"
 	@echo
 	@echo -e "\033[1mLOCAL SERVER TARGETS\033[0m "
-	@echo "- config-templates   Create the pylons settings file from templates and environment variables."
+	@echo "- local-templates    Create the pylons settings file from templates and environment variables for local development."
 	@echo "- serve              Run the wsgi app using the waitress debug server. Port can be set by Env variable SERVER_PORT (default: 6543)"
 	@echo
 	@echo -e "\033[1mWEBSITE AND DOCUMENTATION\033[0m "
@@ -183,16 +183,13 @@ help:
 	@echo
 
 
-
-
-# TODO: add targets `translate` when merged
 .PHONY: all
-all: setup config-templates lint build
+all: setup lint build local-templates
 
 
 .PHONY: setup
 setup: $(NODE_MODULES)
-	if ! [ -d "$(VENV)" ] ;then pipenv install --dev;fi
+	if ! [ -d "$(VENV)" ] ;then pipenv install --dev; fi
 
 
 .PHONY: build
@@ -212,8 +209,8 @@ set-app_version:
 	envsubst < chsdi/static/info.json.in > chsdi/static/info.json
 
 
-.PHONY: config-templates
-config-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_version
+.PHONY: local-templates
+local-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_version
 # FIXME: nosetests is still using development.ini
 	export $(shell cat $(ENV_FILE)) && \
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
@@ -255,12 +252,12 @@ legends: $(VENV) setup guard-BODID guard-WMSHOST
 
 
 .PHONY: serve
-serve: setup build
+serve: setup local-templates build
 	PYTHONPATH=${PYTHONPATH} ${PSERVE} development.ini --reload
 
 
 .PHONY: shell
-shell: setup config-templates set-app_version
+shell: setup local-templates build
 	PYTHONPATH=${PYTHONPATH} ${PSHELL} development.ini
 
 
@@ -314,13 +311,13 @@ dockerpull:
 
 
 .PHONY: test
-test: setup config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
+test: setup local-templates $(TRANSLATION_FILES) $(DOC_BUILD)
 	export $(shell cat $(ENV_FILE)) && ${PYTHON} ./scripts/pg_ready.py
 	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2 --cover-erase  tests/ -e .*e2e.*
 
 
 .PHONY: unittest-ci
-unittest-ci: setup config-templates $(TRANSLATION_FILES) $(DOC_BUILD)
+unittest-ci: setup local-templates $(TRANSLATION_FILES) $(DOC_BUILD)
 	mkdir -p junit-reports/{integration,functional}
 	PYTHONPATH=${PYTHONPATH} ${NOSE} --verbosity=2 \
 		--with-xunit --xunit-file=junit-reports/functional/nosetest.xml \
