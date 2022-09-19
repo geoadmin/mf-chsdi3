@@ -22,3 +22,7 @@ def add_cross_domain_policy(request, response):
     # Check if the request is a cross domain policy request
     if request.path in ['/crossdomain.xml', '/clientaccesspolicy.xml']:
         response.headers['Content-Type'] = 'text/x-cross-domain-policy'
+
+
+def patch_kml_content_type(request, response):
+    response.headers['Content-Type'] = 'application/vnd.google-earth.kml+xml'

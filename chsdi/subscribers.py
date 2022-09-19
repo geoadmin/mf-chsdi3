@@ -14,6 +14,7 @@ from chsdi.models.bod import get_translations
 from chsdi.response_callbacks import add_default_cache_control
 from chsdi.response_callbacks import add_cors_header
 from chsdi.response_callbacks import add_cross_domain_policy
+from chsdi.response_callbacks import patch_kml_content_type
 
 
 import logging
@@ -91,6 +92,8 @@ def setup_response_callbacks(event):
     event.request.add_response_callback(add_default_cache_control)
     event.request.add_response_callback(add_cors_header)
     event.request.add_response_callback(add_cross_domain_policy)
+    if event.request.path.endswith('.kml'):
+        event.request.add_response_callback(patch_kml_content_type)
 
 
 @subscriber(NewResponse)
