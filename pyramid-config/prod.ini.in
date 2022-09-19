@@ -45,14 +45,10 @@ keys = console
 class = StreamHandler
 args = (sys.stdout,)
 level = ${PY_ROOT_LOG_LEVEL}
-formatter = apache
+formatter = common
 
 [formatters]
-keys = apache
+keys = common
 
-[formatter_apache]
-# NOTES:
-# - we use %(message)r instead of %(message)s in order to keep multiline logs as one entry
-# - The logs are going through apache logging system, which will add additionals informations;
-#   timestamp, request_id, headers, process and thread IDs, ... (see 25-mf-chsdi3.conf.in)
-format = app=CHSDI %(levelname)s [%(module)s/%(name)s] %(message)r
+[formatter_common]
+format = %(asctime)s [%(levelname)-5.5s] [%(module)s/%(name)s][%(threadName)s] %(message)s

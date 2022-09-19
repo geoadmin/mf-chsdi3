@@ -14,14 +14,10 @@ SERVICE_NAME := mf-chsdi3
 
 CURRENT_DIRECTORY := $(shell pwd)
 
-# PIPENV files
-PIP_FILE = Pipfile
-PIP_FILE_LOCK = Pipfile.lock
-
 # default configuration
 ENV_FILE ?= .env.default
 include $(ENV_FILE)
-S3_TESTS ?= 1
+export $(shell sed 's/=.*//' $(ENV_FILE))
 
 # Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
 # https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
@@ -46,7 +42,7 @@ PIP_QUIET :=
 NPM_QUIET :=
 endif
 
-VENV = $(shell pipenv --venv)
+VENV = $(shell pipenv --venv 2> /dev/null || echo "NO_VIRTUAL_ENVIRONEMENT")
 
 # Commands
 PIPENV_RUN := pipenv run
@@ -63,20 +59,12 @@ PSHELL = $(VENV)/bin/pshell
 PYTHON = $(VENV)/bin/python3
 SPHINX = $(VENV)/bin/sphinx-build
 
-PYTHON_VERSION := 3.7
-SYSTEM_PYTHON_CMD ?= python${PYTHON_VERSION}
-PYTHONPATH ?= $(VENV)/lib/python${PYTHON_VERSION}/site-packages:/usr/lib64/python${PYTHON_VERSION}/site-packages
-
-PYPI_URL ?= https://pypi.org/simple/
-
+PYTHON_VERSION := $(shell $$(pipenv --py 2> /dev/null) --version 2>&1 | awk '{print $$2}')
 
 # AWS and docker variables
 DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
 AWS_REGION_ECR := eu-central-1
 AUTHOR=$(USER)
-
-# data.geo.admin.ch hosts
-DATAGEOADMINHOST ?= data.geo.admin.ch
 
 # Git metadata
 GIT_HASH ?= $(shell git rev-parse HEAD)
@@ -87,14 +75,6 @@ GIT_TAG ?= $(shell git describe --tags --dirty || echo "no version info")
 GIT_COMMIT_DATE ?= $(shell git log -1  --date=iso --pretty=format:%cd)
 DOCKER_IMAGE_TAG ?= local-$(USER)-$(GIT_HASH_SHORT)
 DOCKER_IMG_LOCAL_TAG_PATH = $(DOCKER_REGISTRY)/$(SERVICE_NAME):$(DOCKER_IMAGE_TAG)
-
-# We need to have a valid APP_VERSION otherwise some makos that generate versioned url links won't work anymore.
-IS_VALID_VERSION := $(shell [[ $(GIT_TAG) =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}-rc[0-9]+[[:alnum:]-]*$$ ]] && echo valid)
-ifdef IS_VALID_VERSION
-	APP_VERSION ?= $(GIT_TAG)
-else
-	APP_VERSION ?= 0000-00-00-rc0-$(GIT_HASH_SHORT)
-endif
 
 # Colors
 ifneq ($(shell echo ${TERM}),)
@@ -107,7 +87,7 @@ endif
 CURRENT_DATE ?= $(shell date -u +"%Y-%m-%d %H:%M:%S %z")
 
 # Python files (for linting)
-PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path chsdi/lib/sphinxapi -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
+PYTHON_FILES := $(shell find chsdi/* tests/* -path chsdi/static -prune -o -path tests/e2e -prune -o -type f -name "*.py" -print)
 
 # Linting rules
 PEP8_IGNORE := "E128,E221,E241,E251,E272,E305,E501,E711,E731,W503,W504,W605"
@@ -147,7 +127,7 @@ help:
 	@echo
 	@echo -e "\033[1mLOCAL SERVER TARGETS\033[0m "
 	@echo "- local-templates    Create the pylons settings file from templates and environment variables for local development."
-	@echo "- serve              Run the wsgi app using the waitress debug server. Port can be set by Env variable SERVER_PORT (default: 6543)"
+	@echo "- serve              Run the wsgi app using the gunicorn debug server. Port can be set by Env variable HTTP_PORT (default: $(HTTP_PORT))"
 	@echo
 	@echo -e "\033[1mWEBSITE AND DOCUMENTATION\033[0m "
 	@echo "- doc                Create the website and static files"
@@ -159,8 +139,8 @@ help:
 	@echo -e "\033[1mDocker TARGETS\033[0m "
 	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
 	@echo "- dockerbuild        Build the project localy (with tag := $(DOCKER_IMAGE_TAG))"
-	@echo "- dockerrun          Run the project within docker localy (with tag := $(DOCKER_IMAGE_TAG)) on port $(APACHE_PORT)"
-	@echo "- dockerrun-shell    Run the project within docker localy (with tag := $(DOCKER_IMAGE_TAG)) on port $(APACHE_PORT)"
+	@echo "- dockerrun          Run the project within docker localy (with tag := $(DOCKER_IMAGE_TAG)) on port $(HTTP_PORT)"
+	@echo "- dockerrun-shell    Run the project within docker localy (with tag := $(DOCKER_IMAGE_TAG)) on port $(HTTP_PORT)"
 	@echo "- dockerpush         Build and push the project localy (with tag := $(DOCKER_IMAGE_TAG))"
 	@echo "- dockerpull         Pull the docker image with tag $(DOCKER_IMAGE_TAG))"
 	@echo
@@ -171,11 +151,10 @@ help:
 	@echo
 	@echo "Variables:"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"
-	@echo "SYSTEM_PYTHON_CMD:   ${SYSTEM_PYTHON_CMD}"
+	@echo "VENV:                ${VENV}"
 	@echo "DBHOST:              ${DBHOST}"
 	@echo "DBPORT:              ${DBPORT}"
-	@echo "SERVER_PORT:         ${SERVER_PORT}"
-	@echo "APACHE_PORT:         ${APACHE_PORT}"
+	@echo "HTTP_PORT:           ${HTTP_PORT}"
 	@echo "OPENTRANS_API_KEY:   ${OPENTRANS_API_KEY}"
 	@echo "S3_TESTS:            ${S3_TESTS}"
 	@echo "DOCKER_REGISTRY      ${DOCKER_REGISTRY}"
@@ -189,14 +168,19 @@ all: setup lint build local-templates
 
 .PHONY: setup
 setup: $(NODE_MODULES)
-	if ! [ -d "$(VENV)" ] ;then pipenv install --dev; fi
+	@echo "${GREEN}Setup...${RESET}";
+	pipenv install --dev
+	# Here it is important NOT to use pipenv otherwise the editable package is added to Pipfile
+	pipenv run pip install -e .
 
 
 .PHONY: build
-build: node-module-files doc translate chsdi/static/css/extended.min.css rss set-app_version
+build: guard-VENV node-module-files doc translate chsdi/static/css/extended.min.css rss set-app_version
+
 
 .PHONY: set-app_version
 set-app_version:
+	@echo "${GREEN}Setting app version...${RESET}";
 	export APP_VERSION="$(APP_VERSION)" && \
 	export GIT_BRANCH="$(GIT_BRANCH)" && \
 	export GIT_HASH_SHORT="$(GIT_HASH_SHORT)" && \
@@ -211,40 +195,36 @@ set-app_version:
 
 .PHONY: local-templates
 local-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_version
-# FIXME: nosetests is still using development.ini
+	@echo "${GREEN}Setting local development configuration templates...${RESET}";
 	export $(shell cat $(ENV_FILE)) && \
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
 	export APP_VERSION="$(APP_VERSION)" && \
-	export DATAGEOADMINHOST="$(DATAGEOADMINHOST)" && \
 	envsubst < pyramid-config/base.ini.in > base.ini && \
 	envsubst < pyramid-config/dev.ini.in > development.ini && \
 	envsubst < pyramid-config/prod.ini.in > production.ini && \
-	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
-	envsubst < apache/application.wsgi.in > apache/application.wsgi && \
-	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf && \
 	cd chsdi/static && ln -sf "${ROBOTS_FILE}" robots.txt && cd -
 
 
 # Generate a basically empty gettext `chsdi` domain.
 # Translation are dynamic, the domain is updated at runtime directly from the BOD
 .PHONY: translate
-translate: setup $(TRANSLATION_FILES)
-	$(PIP) install -e .
+translate: guard-VENV $(TRANSLATION_FILES)
 
 
 # FIXME add the rss and css compilation
 .PHONY: doc
-doc: setup $(DOC_BUILD)
+doc: guard-VENV $(DOC_BUILD)
 
 
 .PHONY:
-rss: setup doc chsdi/static/doc/build/releasenotes/index.html
+rss: guard-VENV doc chsdi/static/doc/build/releasenotes/index.html
 	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
 	${PYTHON} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
 
 
 .PHONY: legends
-legends: $(VENV) setup guard-BODID guard-WMSHOST
+legends: guard-VENV guard-BODID guard-WMSHOST
+	@echo "${GREEN}Downloading legends...${RESET}";
 	WMSPROTOCOL="https"; \
 	if [[ $(WMSHOST) == *"localhost"* ]]; then \
 		WMSPROTOCOL="http"; \
@@ -253,13 +233,14 @@ legends: $(VENV) setup guard-BODID guard-WMSHOST
 
 
 .PHONY: serve
-serve: setup local-templates build
-	PYTHONPATH=${PYTHONPATH} ${PSERVE} development.ini --reload
+serve: guard-VENV local-templates build
+	@echo "${GREEN}Starting gunicorn server...${RESET}";
+	$(PYTHON) gunicorn_wsgi.py --reload --paste development.ini
 
 
 .PHONY: shell
-shell: setup local-templates build
-	PYTHONPATH=${PYTHONPATH} ${PSHELL} development.ini
+shell: guard-VENV local-templates build
+	${PSHELL} development.ini
 
 
 .PHONY: dockerlogin
@@ -269,6 +250,7 @@ dockerlogin:
 
 .PHONY: dockerbuild
 dockerbuild: build
+	@echo "${GREEN}Building docker image...${RESET}";
 	docker build \
 		--build-arg GIT_HASH="$(GIT_COMMIT_HASH)" \
 		--build-arg GIT_BRANCH="$(GIT_BRANCH)" \
@@ -279,23 +261,25 @@ dockerbuild: build
 
 
 .PHONY: dockerrun
-dockerrun: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
+dockerrun: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD dockerbuild
+	@echo "${GREEN}Starting docker container...${RESET}";
 	docker run \
-	    -it \
-	    --network=host \
-	    --env-file=${ENV_FILE} \
-	    --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
+		-it \
+		--network=host \
+		--env-file=${ENV_FILE} \
+		--env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
 		$(DOCKER_IMG_LOCAL_TAG_PATH)
 
 
 .PHONY: dockerrun-shell
 dockerrun-shell: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
+	@echo "${GREEN}Starting docker shell...${RESET}";
 	docker run \
-	    -it \
-	    --network=host \
-	    --env-file=${ENV_FILE} \
-	    --env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
+		-it \
+		--network=host \
+		--env-file=${ENV_FILE} \
+		--env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
 		--entrypoint /bin/sh \
 		$(DOCKER_IMG_LOCAL_TAG_PATH)
@@ -312,36 +296,41 @@ dockerpull:
 
 
 .PHONY: test
-test: setup local-templates $(TRANSLATION_FILES) $(DOC_BUILD)
+test: guard-VENV local-templates build
+	@echo "${GREEN}Unit testings...${RESET}";
 	export $(shell cat $(ENV_FILE)) && ${PYTHON} ./scripts/pg_ready.py
-	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2 --cover-erase  tests/ -e .*e2e.*
+	$(NOSE) --verbosity=2 --cover-erase  tests/ -e .*e2e.*
 
 
 .PHONY: unittest-ci
-unittest-ci: setup local-templates $(TRANSLATION_FILES) $(DOC_BUILD)
+unittest-ci: guard-VENV local-templates build
+	@echo "${GREEN}Unit testings for CI...${RESET}";
+	export $(shell cat $(ENV_FILE))
 	mkdir -p junit-reports/{integration,functional}
-	PYTHONPATH=${PYTHONPATH} ${NOSE} --verbosity=2 \
+	$(NOSE) --verbosity=2 \
 		--with-xunit --xunit-file=junit-reports/functional/nosetest.xml \
 		tests/functional
-	PYTHONPATH=${PYTHONPATH} S3_TESTS=$(S3_TESTS) ${NOSE} --verbosity=2 \
+	$(NOSE) --verbosity=2 \
 		--with-xunit --xunit-file=junit-reports/integration/nosetest.xml \
 		tests/integration
 
 
 .PHONY: teste2e
-teste2e: setup
-	PYTHONPATH=${PYTHONPATH} ${NOSE} tests/e2e/
+teste2e: guard-VENV local-templates build
+	@echo "${GREEN}Pseudo E2E tests...${RESET}";
+	export $(shell cat $(ENV_FILE))
+	$(NOSE) tests/e2e/
 
 # TODO: Replace through yapf, once the old vhost infra is replaced
 .PHONY: lint
-lint: setup
+lint: guard-VENV
 	@echo "${GREEN}Linting python files...${RESET}";
 	${FLAKE8} --ignore=${PEP8_IGNORE} $(PYTHON_FILES) && echo ${RED}
 
 
 # TODO: Replace through yapf, once the old vhost infra is replaced
 .PHONY: autolint
-autolint: setup
+autolint: guard-VENV
 	@echo "${GREEN}Auto correction of python files...${RESET}";
 	${AUTOPEP8} --in-place --aggressive --aggressive --verbose --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
 
@@ -353,7 +342,8 @@ $(NODE_MODULES): package.json
 	npm install $(NPM_QUIET) --production
 
 
-node-module-files: $(NODE_MODULES)
+node-module-files:
+	@echo "${GREEN}Building node js static files...${RESET}";
 	mkdir -p chsdi/static/js/
 	cp -f $(NODE_MODULES)/jquery/dist/jquery.min.js chsdi/static/js/jquery.min.js
 	cp -f $(NODE_MODULES)/blueimp-gallery/js/blueimp-gallery.min.js chsdi/static/js/blueimp-gallery.min.js
@@ -366,9 +356,10 @@ chsdi/static/css/extended.min.css: chsdi/static/less/extended.less
 	@echo "${GREEN}Generating new css file...${RESET}";
 	$(NODE_MODULES)/.bin/lessc -ru --clean-css $< $@
 
+
 # Translation POT file depends on all files from chsdi sources except the translation files generated
 # and the python compiled and cache files
-TRANSLATION_POT_FILE_DEPENDENCIES := $(shell find chsdi -name *.py)
+TRANSLATION_POT_FILE_DEPENDENCIES := $(shell find chsdi -name "*.py")
 $(TRANSLATION_POT_FILE): $(TRANSLATION_POT_FILE_DEPENDENCIES)
 	@echo "${GREEN}Extracting the translation...${RESET}";
 	${PYTHON} setup.py extract_messages
@@ -384,7 +375,7 @@ $(LANGUAGES_MO_FILES): $(LANGUAGES_PO_FILES)
 	${PYTHON} setup.py compile_catalog -l $(patsubst chsdi/locale/%/LC_MESSAGES/chsdi.mo,%, $@)
 
 
-DOC_FILES_DEPENDENCIES := $(shell find chsdi/static/doc/source ! -name *.pyc ! -name __pycache__)
+DOC_FILES_DEPENDENCIES := $(shell find chsdi/static/doc/source ! -name "*.pyc" ! -name __pycache__)
 $(DOC_BUILD): $(DOC_FILES_DEPENDENCIES)
 	@echo "${GREEN}Building the documentation...${RESET}";
 	cd chsdi/static/doc && $(SPHINX) -W -b html source build || exit 1 ;
@@ -392,22 +383,29 @@ $(DOC_BUILD): $(DOC_FILES_DEPENDENCIES)
 
 guard-%:
 	@ if test "${${*}}" = ""; then \
-	  echo "Environment variable $* not set. Add it to your command."; \
-	  exit 1; \
+		echo "Environment variable $* not set. Add it to your command."; \
+		exit 1; \
 	fi
+
+
+guard-VENV:
+	@ if [ ! -e $(VENV) ]; then \
+		echo "Virtual environement does not exists build it first with: make setup"; \
+		exit 1; \
+	fi
+
 
 # Clean targets
 
 .PHONY: clean
 clean:
+	@echo "${GREEN}Cleaning generated files...${RESET}";
 	rm -f base.ini
 	rm -f production.ini
 	rm -f development.ini
-	rm -f 25-mf-chsdi3.conf
-	rm -f apache/application.wsgi
-	rm -f apache/wsgi.conf
 	rm -f chsdi/static/info.json
 	rm -f chsdi/static/robots.txt
+	rm -rf chsdi/static/js/*
 	rm -rf $(DOC_BUILD)
 	rm -f  chsdi/static/css/blueimp-gallery.min.css
 	rm -f  chsdi/static/css/extended.min.css
@@ -420,6 +418,7 @@ clean:
 
 .PHONY: cleanall
 cleanall: clean
+	@echo "${GREEN}Cleaning everything...${RESET}";
 	rm -rf chsdi.egg-info/
 	rm -f  package-lock.json
 	rm -rf $(NODE_MODULES)

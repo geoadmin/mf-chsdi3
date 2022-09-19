@@ -63,7 +63,6 @@ class Test_Helpers(unittest.TestCase):
         request.host = 'api3.geo.admin.ch'
         request.scheme = 'http'
         request.registry.settings = {}
-        request.registry.settings['apache_base_path'] = 'main'
         request.registry.settings['available_languages'] = 'fr de it rm en'
 
         request.params['lang'] = 'de'

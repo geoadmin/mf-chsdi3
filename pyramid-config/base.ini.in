@@ -8,7 +8,6 @@
 [app:main]
 use = egg:chsdi
 app_version = ${APP_VERSION}
-entry_path = ${APACHE_ENTRY_PATH}
 available_languages = de fr it en rm
 
 pyramid.reload_templates = false
@@ -48,8 +47,6 @@ linkeddatahost = ${LINKEDDATAHOST}
 api_url = ${API_URL}
 install_directory = ${CURRENT_DIRECTORY}
 host = ${HOST}
-apache_base_path = ${APACHE_BASE_PATH}
-apache_entry_path = ${APACHE_ENTRY_PATH}
 loader_js_bucket_localhost = ${LOADER_JS_BUCKET_LOCALHOST}
 vector_bucket = ${VECTOR_BUCKET}
 datageoadminhost = ${DATAGEOADMINHOST}
@@ -68,6 +65,5 @@ dynamic_translation = ${DYNAMIC_TRANSLATION}
 ###
 
 [server:main]
-use = egg:waitress#main
-host = 0.0.0.0
-port = ${SERVER_PORT}
+use = egg:gunicorn#main
+accesslog = -

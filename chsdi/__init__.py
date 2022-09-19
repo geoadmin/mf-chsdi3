@@ -3,7 +3,6 @@
 import datetime
 from pyramid.config import Configurator
 from pyramid.renderers import JSONP
-from pyramid.request import Request
 from sqlalchemy.orm import scoped_session, sessionmaker
 from papyrus.renderers import GeoJSON
 
@@ -22,27 +21,12 @@ def db(request):
     return session
 
 
-class WsgiSchemeAdaptedRequest(Request):
-    # TODO: remove this class, once apache is removed
-    # (https://jira.swisstopo.ch/browse/BGDIINF_SB-2486).
-    # Afterwards this can be solved similarly to our flask services using
-    # e.g. gunicorn.
-    def __init__(self, environ, **kwargs):
-        if "HTTP_CLOUDFRONT_FORWARDED_PROTO" in environ:
-            environ["wsgi.url_scheme"] = environ["HTTP_CLOUDFRONT_FORWARDED_PROTO"]
-        elif "HTTP_X_FORWARDED_PROTO" in environ:
-            environ["wsgi.url_scheme"] = environ["HTTP_X_FORWARDED_PROTO"]
-        super().__init__(environ, **kwargs)
-
-
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
     app_version = settings.get('app_version')
     settings['app_version'] = app_version
-    # TODO: request_factory can be removed, once apache is removed, see few
-    # lines above.
-    config = Configurator(settings=settings, request_factory=WsgiSchemeAdaptedRequest)
+    config = Configurator(settings=settings)
     config.include('pyramid_mako')
     config.include('akhet.static')
 

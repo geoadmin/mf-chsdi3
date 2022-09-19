@@ -15,9 +15,6 @@
 .env.*
 !.env.default
 !.env.ci
-apache/wsgi.conf
-apache/application.wsgi
-apache/tomcat-print.conf
 chsdi.egg-info
 chsdi/locale
 chsdi/static/doc/build/
@@ -28,7 +25,6 @@ chsdi/static/robots.txt
 node_modules
 MANIFEST
 buildout_branch.cfg
-25-mf-chsdi3.conf
 print/WEB-INF/web.xml
 app*.log
 local

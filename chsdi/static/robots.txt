@@ -1,1 +1,1 @@
-robots_dev.txt
+robots_prod.txt
