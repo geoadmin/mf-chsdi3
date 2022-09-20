@@ -44,6 +44,7 @@ def main(global_config, **settings):
     # lines above.
     config = Configurator(settings=settings, request_factory=WsgiSchemeAdaptedRequest)
     config.include('pyramid_mako')
+    config.include('akhet.static')
 
     # configure 'locale' dir as the translation dir for chsdi app
     config.add_translation_dirs('chsdi:locale/')
@@ -96,6 +97,9 @@ def main(global_config, **settings):
     config.add_route('faqlist', '/rest/services/{map}/faqlist')
     config.add_route('color', '/color/{r},{g},{b}/{image}')
 
+    # Static route
+    config.add_static_route('chsdi', 'static')
+
     # Some views for specific routes
     config.add_view(route_name='dev', renderer='chsdi:templates/index.mako')
     config.add_view(route_name='testi18n', renderer='chsdi:templates/testi18n.mako')
@@ -103,6 +107,7 @@ def main(global_config, **settings):
     # static view definitions
     config.add_static_view('static', 'chsdi:static')
     config.add_static_view('images', 'chsdi:static/images')
+    config.add_static_view('js', 'chsdi:static/js')
     config.add_static_view('examples', 'chsdi:static/doc/examples')
     config.add_static_view('vectorStyles', 'chsdi:static/vectorStyles')
     # keep this the last one

@@ -13,6 +13,7 @@ from chsdi.lib import helpers
 from chsdi.models.bod import get_translations
 from chsdi.response_callbacks import add_default_cache_control
 from chsdi.response_callbacks import add_cors_header
+from chsdi.response_callbacks import add_cross_domain_policy
 
 
 import logging
@@ -89,6 +90,7 @@ def log_request(event):
 def setup_response_callbacks(event):
     event.request.add_response_callback(add_default_cache_control)
     event.request.add_response_callback(add_cors_header)
+    event.request.add_response_callback(add_cross_domain_policy)
 
 
 @subscriber(NewResponse)

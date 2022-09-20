@@ -16,6 +16,8 @@ __pycache__
 deploy
 scripts
 tests
+chsdi/static/info.json.ini
+chsdi/static/robots.txt
 
 # CI and build stuff
 buildspec*
@@ -25,13 +27,6 @@ package.json
 package-lock.json
 secrets.yml
 node_modules
-
-# TODO remove those after the migration to frankfurt
-production.ini.in
-development.ini.in
-production.ini
-development.ini
-
 
 # Ignore all hidden files
 .*

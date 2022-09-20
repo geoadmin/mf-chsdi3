@@ -221,7 +221,8 @@ local-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_v
 	envsubst < pyramid-config/prod.ini.in > production.ini && \
 	envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf && \
 	envsubst < apache/application.wsgi.in > apache/application.wsgi && \
-	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf
+	envsubst < 25-mf-chsdi3.conf.in > 25-mf-chsdi3.conf && \
+	cd chsdi/static && ln -sf "${ROBOTS_FILE}" robots.txt && cd -
 
 
 # Generate a basically empty gettext `chsdi` domain.
@@ -406,6 +407,7 @@ clean:
 	rm -f apache/application.wsgi
 	rm -f apache/wsgi.conf
 	rm -f chsdi/static/info.json
+	rm -f chsdi/static/robots.txt
 	rm -rf $(DOC_BUILD)
 	rm -f  chsdi/static/css/blueimp-gallery.min.css
 	rm -f  chsdi/static/css/extended.min.css
