@@ -19,23 +19,9 @@ ExpiresActive on
 # http://code.google.com/p/modwsgi/wiki/FrequentlyAskedQuestions#Access_Control_Mechanisms
 WSGIPassAuthorization On
 
-# Checker
-ErrorDocument 200 "OK"
-RewriteEngine On
-RewriteRule "/ok" - [R=200]
-
-
-# PostgreSQL credential
-SetEnv PGUSER ${PGUSER}
-SetEnv PGPASSWORD ${PGPASSWORD}
-
 <IfModule mod_headers.c>
   Header set X-UA-Compatible "IE=Edge"
 </IfModule>
-
-# Redirect old main/wsgi stuff
-RedirectMatch permanent ^/main/wsgi/(.*)$ /$1
-RedirectMatch permanent ^${APACHE_ENTRY_PATH}/IIPIMAGE/(.*)$ ${APACHE_ENTRY_PATH}/luftbilder/$1
 
 # Redirect no-slash target to slashed version
 RedirectMatch ^${APACHE_ENTRY_PATH}$ ${APACHE_ENTRY_PATH}/
@@ -75,13 +61,6 @@ RewriteRule ^${APACHE_ENTRY_PATH}/configs/services\.json ${APACHE_ENTRY_PATH}/re
 RewriteRule ^${APACHE_ENTRY_PATH}/robots.txt ${APACHE_ENTRY_PATH}/static/${ROBOTS_FILE} [PT]
 <LocationMatch ^${APACHE_ENTRY_PATH}/static/(robots.txt|robots_prod.txt)>
     Header set Content-type "text/plain"
-</LocationMatch>
-
-
-# Loader.js service
-<LocationMatch ^${APACHE_ENTRY_PATH}/loader\.js>
-    Order allow,deny
-    Allow from all
 </LocationMatch>
 
 ############  WSGI #################################3
