@@ -3,6 +3,8 @@
 : "${DBHOST:?Variable DBHOST not set or empty}"
 : "${DBPORT:?Variable DBPORT not set or empty}"
 : "${PGUSER:?Variable PGUSER not set or empty}"
+: "${GUNICORN_TMPFS_DIR:?Variable GUNICORN_TMPFS_DIR not set or empty}"
+: "${ROBOTS_FILE:?Variable ROBOTS_FILE not set or empty}"
 
 
 envsubst < pyramid-config/base.ini.in > base.ini

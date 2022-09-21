@@ -13,3 +13,7 @@ forwarded_allow_ips = "*"
 secure_scheme_headers = {
     os.getenv("FORWARDED_PROTO_HEADER_NAME", "X-Forwarded-Proto").upper(): 'https'
 }
+preload_app = True
+keepalive = 60
+timeout = 60
+worker_tmp_dir = os.getenv("GUNICORN_TMPFS_DIR")

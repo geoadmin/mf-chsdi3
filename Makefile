@@ -269,6 +269,7 @@ dockerrun: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD dockerbuild
 		--env-file=${ENV_FILE} \
 		--env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
+		--mount type=tmpfs,destination=${GUNICORN_TMPFS_DIR} \
 		$(DOCKER_IMG_LOCAL_TAG_PATH)
 
 
@@ -281,8 +282,8 @@ dockerrun-shell: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
 		--env-file=${ENV_FILE} \
 		--env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
-		--entrypoint /bin/sh \
-		$(DOCKER_IMG_LOCAL_TAG_PATH)
+		--mount type=tmpfs,destination=${GUNICORN_TMPFS_DIR} \
+		$(DOCKER_IMG_LOCAL_TAG_PATH) /bin/sh
 
 
 .PHONY: dockerpush
