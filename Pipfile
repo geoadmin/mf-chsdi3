@@ -69,7 +69,7 @@ WebTest = "==2.0.33"
 unidecode = "==1.1.1"
 Akhet = "==2.0"
 gunicorn = "==20.1.0"
-eventlet = "==0.30.2"
+gevent = "*"
 
 [dev-packages]
 

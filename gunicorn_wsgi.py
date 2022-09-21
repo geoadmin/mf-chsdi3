@@ -1,8 +1,8 @@
-# from gevent import monkey
-# monkey.patch_all()  # noqa: E402
+from gevent import monkey
+monkey.patch_all()  # noqa: E402
 
-from eventlet import monkey_patch
-monkey_patch() # noqa: E402
+# from eventlet import monkey_patch
+# monkey_patch() # noqa: E402
 
 # from gunicorn.app.wsgiapp import WSGIApplication
 
