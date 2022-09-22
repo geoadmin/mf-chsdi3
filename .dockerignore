@@ -22,7 +22,6 @@ chsdi/static/robots.txt
 # CI and build stuff
 buildspec*
 Makefile*
-MANIFEST*
 package.json
 package-lock.json
 secrets.yml

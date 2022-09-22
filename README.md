@@ -1,8 +1,8 @@
 # mf-chsdi3
 
-=========
-
-Python3 ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiMFAzY3lvZVQ4eFRjSk9DWE1xNWpqQVUrL3pFb0VVQmpyRG9HY0ZtV0tSVXU3djMzQ0dvMDhMaG1qa2k5YkV6V1huRjRuNXljTnZZazdnc3pQNVpmVmdZPSIsIml2UGFyYW1ldGVyU3BlYyI6InFJOXZ3azE5NzJoZ2U2bXYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+| Branch | Status |
+|---|---|
+| master | ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiMFAzY3lvZVQ4eFRjSk9DWE1xNWpqQVUrL3pFb0VVQmpyRG9HY0ZtV0tSVXU3djMzQ0dvMDhMaG1qa2k5YkV6V1huRjRuNXljTnZZazdnc3pQNVpmVmdZPSIsIml2UGFyYW1ldGVyU3BlYyI6InFJOXZ3azE5NzJoZ2U2bXYiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master) |
 
 ## Table of contents
 
@@ -44,14 +44,14 @@ make setup
 Build the Pylons settings files and run the local `waitress` server
 
 ```bash
-summon make build serve
+summon make serve
 ```
 
 You may want to customize the variables. Copy the file `.env.default` as `.ven.mine`,
 change the variables you want and use them with
 
 ```bash
-summon make ENV_FILE=.env.mine build serve
+summon make ENV_FILE=.env.mine serve
 ```
 
 :book: You need some external ressource to run the service, see [External ressources dependencies](#external-ressources-dependencies)

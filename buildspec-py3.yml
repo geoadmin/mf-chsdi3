@@ -12,7 +12,6 @@ env:
     DOCKER_REGISTRY: "974517877189.dkr.ecr.eu-central-1.amazonaws.com"
     USER: "aws_code_build"
     CI_QUIET: 1
-    SYSTEM_PYTHON_CMD: python3
     # DB connection variable are used by the buildspec to verify DB connectivity therefore
     # they need to be defined outside of .env.ci
     # TODO once the migration is done use pg-geodata-replica.bgdi.ch (DB in Frankfurt)
@@ -135,12 +134,11 @@ phases:
       - echo GEODATA_STAGING=${GEODATA_STAGING}
       - echo BASH=${BASH}
       - echo CURRENT_DIRECTORY=$(pwd)
-      - echo USE_PYTHON3=${USE_PYTHON3}
       - echo "=========== POSGRESQL ============="
       - python ./scripts/pg_ready.py
       - echo "host=$(hostname -I)"
       - echo "=========== PREPARE ==============="
-      - make cleanall setup
+      - make setup
       - echo "=========== LINTING ==============="
       - make lint
 

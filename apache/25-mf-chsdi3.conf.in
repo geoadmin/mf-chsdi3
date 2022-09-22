@@ -3,21 +3,21 @@
 # Managed by Puppet
 # ************************************
 
-<VirtualHost *:${APACHE_PORT}>
+<VirtualHost *:${HTTP_PORT}>
   # ServerName mf-chsdi3
 
   ## Vhost docroot
-  DocumentRoot "/var/www/vhosts/mf-chsdi3/htdocs"
+  DocumentRoot "${VHOST_DIR}/htdocs"
 
-  ## Directories, there should at least be a declaration for /var/www/vhosts/mf-chsdi3/htdocs
+  ## Directories, there should at least be a declaration for ${VHOST_DIR}/htdocs
 
-  <Directory "/var/www/vhosts/mf-chsdi3/htdocs">
+  <Directory "${VHOST_DIR}/htdocs">
     Options +Indexes +FollowSymLinks +MultiViews
     AllowOverride None
     Require all granted
   </Directory>
 
-  <Directory "/var/www/vhosts/mf-chsdi3/cgi-bin">
+  <Directory "${VHOST_DIR}/cgi-bin">
     Options +ExecCGI
     AllowOverride None
     Require all granted
@@ -27,7 +27,7 @@
   </Directory>
 
   ## Load additional static includes
-  Include "/var/www/vhosts/mf-chsdi3/conf/*.conf"
+  Include "${VHOST_DIR}/conf/*.conf"
 
   ## Logging
   ErrorLogFormat "[%{cu}t] level=%l request_id=%L pid_tid=%P/%T - %M"
@@ -39,7 +39,7 @@
 
 
   ## Script alias directives
-  ScriptAlias /cgi-bin "/var/www/vhosts/mf-chsdi3/cgi-bin/"
+  ScriptAlias /cgi-bin "${VHOST_DIR}/cgi-bin/"
 
   ## Server aliases
   # ServerAlias api.geo.admin.ch

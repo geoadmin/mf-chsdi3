@@ -1,4 +1,4 @@
-<VirtualHost *:${APACHE_PORT}>
+<VirtualHost *:${HTTP_PORT}>
 
     RewriteEngine On
 

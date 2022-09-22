@@ -5,11 +5,11 @@
 : "${PGUSER:?Variable PGUSER not set or empty}"
 
 
-envsubst < pyramid-config/base.ini.in > base.ini
-envsubst < pyramid-config/dev.ini.in > development.ini
-envsubst < pyramid-config/prod.ini.in > production.ini
+envsubst < chsdi/config/base.ini.in > base.ini
+envsubst < chsdi/config/dev.ini.in > development.ini
+envsubst < chsdi/config/prod.ini.in > production.ini
 
-envsubst < 25-mf-chsdi3.conf.in > /etc/apache2/sites-available/000-default.conf
+envsubst < apache/25-mf-chsdi3.conf.in > /etc/apache2/sites-available/000-default.conf
 
 envsubst < apache/application.wsgi.in > apache/application.wsgi
 
