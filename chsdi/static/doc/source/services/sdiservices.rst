@@ -685,6 +685,8 @@ Only RESTFul interface is available.
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **sr (optional)**                   | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84)          |
 |                                     | and 3857 (Web Pseudo-Mercator). Defaults to "21781".                                      |
+|                                     | When a *returnGeometry* is set, its coordiantes will be returned in this *sr*.            |
+|                                     | When setting a *bbox*, its coordinates have to be in the corresponding *sr*.              |
 +-------------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryFormat (optional)**       | Set to *geojson* if you want the service to return a GeoJSON `FeatureCollection`.         |
 |                                     | Geometries will be returned in the *sr* projection.                                       |
@@ -706,7 +708,8 @@ Only RESTFul interface is available.
 | **limit (optional)**              | The maximum number of results to retrive per request (Max and default limit=30)           |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84)          |
-|                                   | and 3857 (Web Pseudo-Mercator). Defaults to "21781".                                      |
+|                                   | and 3857 (Web Pseudo-Mercator). Defaults to "21781". When setting *geometryFormat*        |
+|                                   | to *geosjon*, the coordinates are returned in the corresponding *sr*.                     |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryFormat (optional)**     | Set to *geojson* if you want the service to return a GeoJSON `FeatureCollection`.         |
 |                                   | Geometries will be returned in the *sr* projection.                                       |
@@ -724,7 +727,7 @@ Only RESTFul interface is available.
 | **type (required)**               | The type of performed search. Specify `featuresearch` to perform a feature search.        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **bbox (optional)**               | A comma separated list of 4 coordinates representing the bounding box according to which  |
-|                                   | features should be ordered (SRID: 21781).                                                 |
+|                                   | features should be ordered (SRID: 21781 or 2056).                                         |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **sortbbox (optional)**           | When `bbox` is specified and this parameter is "true", then the ranking of the results is |
 |                                   | performed according to the distance between the locations and the center of the bounding  |
@@ -734,8 +737,8 @@ Only RESTFul interface is available.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **limit (optional)**              | The maximum number of results to retrive per request (Max and default limit=20)           |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03), 2056 (LV95), 4326 (WGS84)          |
-|                                   | and 3857 (Web Pseudo-Mercator). Defaults to "21781".                                      |
+| **sr (optional)**                 | The spatial reference. Supported values: 21781 (LV03) and 2056 (LV95)                     |
+|                                   | Defaults to "21781".                                                                      |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **geometryFormat (optional)**     | Set to *geojson* if you want the service to return a GeoJSON `FeatureCollection`.         |
 |                                   | Geometries will be returned in the *sr* projection.                                       |
