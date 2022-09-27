@@ -7,8 +7,8 @@
   datageoadminhost = request.registry.settings['datageoadminhost']
   canton = c['attributes']['gdekt']
   bfs_nr = c['attributes']['ggdenr']
-  url_canton = 'https://%s/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (datageoadminhost, canton, canton)
-  url_municipality = 'https://%s/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (datageoadminhost, canton, bfs_nr)
+  url_canton = '%s/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (datageoadminhost, canton, canton)
+  url_municipality = '%s/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (datageoadminhost, canton, bfs_nr)
 
   # show translated streetname if available
   # map rm to ro in bfs delivery
