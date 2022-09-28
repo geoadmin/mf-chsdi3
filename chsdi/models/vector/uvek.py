@@ -4015,3 +4015,20 @@ class ElektrischeAnlagenUeber36Poly (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(ElektrischeAnlagenUeber36Poly.__bodId__, ElektrischeAnlagenUeber36Poly)
+
+
+class ElektrischeAnlagenUeber36PolyPoint (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'elektrische_anlagen_ueber_36_poly_point'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_poly_point.mako'
+    __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
+    __label__ = 'fid'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    fid = Column('id', Unicode)
+    bezeichnung = Column('bezeichnung', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    stromnetztyp = Column('stromnetztyp', Unicode)
+    stationtyp = Column('stationtyp', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(ElektrischeAnlagenUeber36PolyPoint.__bodId__, ElektrischeAnlagenUeber36PolyPoint)
