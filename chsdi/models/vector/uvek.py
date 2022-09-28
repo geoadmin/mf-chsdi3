@@ -4000,10 +4000,10 @@ class ElektrischeAnlagenUeber36Point (Base, Vector):
 register(ElektrischeAnlagenUeber36Point.__bodId__, ElektrischeAnlagenUeber36Point)
 
 
-class ElektrischeAnlagenUeber36Poly (Base, Vector):
+class ElektrischeAnlagenUeber36StationPoly (Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __tablename__ = 'elektrische_anlagen_ueber_36_poly'
-    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_poly.mako'
+    __tablename__ = 'elektrische_anlagen_ueber_36_station_poly'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_station_poly.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
     __label__ = 'fid'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -4014,13 +4014,13 @@ class ElektrischeAnlagenUeber36Poly (Base, Vector):
     stationtyp = Column('stationtyp', Unicode)
     the_geom = Column(Geometry2D)
 
-register(ElektrischeAnlagenUeber36Poly.__bodId__, ElektrischeAnlagenUeber36Poly)
+register(ElektrischeAnlagenUeber36StationPoly.__bodId__, ElektrischeAnlagenUeber36StationPoly)
 
 
-class ElektrischeAnlagenUeber36PolyPoint (Base, Vector):
+class ElektrischeAnlagenUeber36StationPoint (Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __tablename__ = 'elektrische_anlagen_ueber_36_poly_point'
-    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_poly_point.mako'
+    __tablename__ = 'elektrische_anlagen_ueber_36_station_point'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_station_point.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
     __label__ = 'fid'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -4031,4 +4031,4 @@ class ElektrischeAnlagenUeber36PolyPoint (Base, Vector):
     stationtyp = Column('stationtyp', Unicode)
     the_geom = Column(Geometry2D)
 
-register(ElektrischeAnlagenUeber36PolyPoint.__bodId__, ElektrischeAnlagenUeber36PolyPoint)
+register(ElektrischeAnlagenUeber36StationPoint.__bodId__, ElektrischeAnlagenUeber36StationPoint)
