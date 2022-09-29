@@ -1,4 +1,3 @@
-import six
 from bs4 import BeautifulSoup
 from datetime import datetime
 import time
@@ -35,7 +34,7 @@ class MyRSS2(PyRSS2Gen.RSSItem):
         PyRSS2Gen.RSSItem.publish(self, handler)
 
     def publish_extensions(self, handler):
-        tmpl = six.text_type('<%s><![CDATA[%s]]></%s>')
+        tmpl = str('<%s><![CDATA[%s]]></%s>')
         handler._write(tmpl % ('description', self.do_not_autooutput_description, 'description'))
 
 
@@ -65,8 +64,6 @@ def extract_data(r):
 
 
 def data_to_description(data):
-    if six.PY2:
-        data = data.decode('utf-8', 'ignore')
     description = data.encode('ascii', 'ignore')
     return description
 
@@ -77,7 +74,7 @@ if __name__ == '__main__':
 
     api_url = sys.argv[1] + '/'
     print("RSS feed url: {}".format(api_url))
-    
+
     items = []
     pathToReleaseNotes = 'chsdi/static/doc/build/releasenotes/index.html'
     try:
@@ -114,9 +111,7 @@ if __name__ == '__main__':
     )
 
     # Make the feed validate (https://validator.w3.org/feed/check.cgi?)
-    rss = rss.to_xml('utf-8')
-    if six.PY3:
-        rss = bytes(rss, 'utf-8')
+    rss = bytes(rss, 'utf-8')
     root = etree.fromstring(rss)
     new_root = Element('rss', nsmap={'atom':XMLNamespaces.atom})
     new_root.attrib['version'] = '2.0'
@@ -130,12 +125,10 @@ if __name__ == '__main__':
     link = channel.find("link")
     link.addnext(atom_link)
     new_root.append(channel)
-    
+
     try:
         with open(RSS_FILE, 'w') as xml:
-            content = etree.tostring(new_root, pretty_print=True)
-            if six.PY3:
-                content = content.decode('utf-8')
+            content = content.decode('utf-8')
             xml.write(content)
         print("RSS file written to {}".format(RSS_FILE))
     except IOError as e:

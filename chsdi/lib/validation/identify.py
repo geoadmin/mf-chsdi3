@@ -2,16 +2,12 @@
 
 import json
 import esrijson
-import six
 from shapely.geometry.linestring import LineString
 from shapely.geometry.polygon import Polygon
 from pyramid.httpexceptions import HTTPBadRequest
 
 from chsdi.lib.helpers import float_raise_nan
 from chsdi.lib.validation import BaseFeaturesValidation
-
-if six.PY3:
-    unicode = str
 
 
 class IdentifyServiceValidation(BaseFeaturesValidation):
@@ -208,9 +204,9 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         if value is None:
             self._returnGeometry = True
         else:
-            if isinstance(value, unicode) and value.lower() == u'true':
+            if isinstance(value, str) and value.lower() == u'true':
                 self._returnGeometry = True
-            elif isinstance(value, unicode) and value.lower() == u'false':
+            elif isinstance(value, str) and value.lower() == u'false':
                 self._returnGeometry = False
             else:
                 self._returnGeometry = True

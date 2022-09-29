@@ -167,7 +167,6 @@ help:
 	@echo -e "\033[1mCLEANING TARGETS\033[0m "
 	@echo "- clean              Remove generated files"
 	@echo "- cleanall           Remove all the build artefacts"
-	@echo "- cleanenv			Call cleanall, then remove the environment"
 	@echo
 	@echo "Variables:"
 	@echo "PYTHON_VERSION:      ${PYTHON_VERSION}"

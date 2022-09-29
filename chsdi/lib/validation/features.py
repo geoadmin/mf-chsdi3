@@ -3,15 +3,10 @@
 
 import re
 import esrijson
-import six
 from pyramid.httpexceptions import HTTPBadRequest
 
 from chsdi.lib.helpers import float_raise_nan
 from chsdi.lib.validation import BaseFeaturesValidation
-
-
-if six.PY3:
-    unicode = str
 
 
 class HtmlPopupServiceValidation(BaseFeaturesValidation):
@@ -130,9 +125,9 @@ class GetFeatureServiceValidation(HtmlPopupServiceValidation):
         if value is None:
             self._returnGeometry = True
         else:
-            if isinstance(value, unicode) and value.lower() == u'true':
+            if isinstance(value, str) and value.lower() == u'true':
                 self._returnGeometry = True
-            elif isinstance(value, unicode) and value.lower() == u'false':
+            elif isinstance(value, str) and value.lower() == u'false':
                 self._returnGeometry = False
             else:
                 self._returnGeometry = True

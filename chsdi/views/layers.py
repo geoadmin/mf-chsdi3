@@ -2,7 +2,6 @@
 
 import os
 import decimal
-import six
 import datetime
 from itertools import chain
 
@@ -85,9 +84,9 @@ def legend(request):
     )
     if params.cbName is None:
         return response
-    if six.PY3:
-        return response.body.decode('utf8')
-    return response.body
+
+    return response.body.decode('utf8')
+
 
 
 def _find_type(model, colProp):
