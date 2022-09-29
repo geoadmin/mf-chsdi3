@@ -1,10 +1,8 @@
-# -*- coding: utf-8 -*-
 import re
 import geojson
 import esrijson
 import datetime
 import decimal
-import six
 from pyramid.threadlocal import get_current_registry
 from chsdi.models.types import GeometryChsdi
 from chsdi.lib.helpers import transform_round_geometry
@@ -15,8 +13,6 @@ from sqlalchemy.orm.properties import ColumnProperty
 from geoalchemy2.elements import WKBElement
 from geoalchemy2.shape import to_shape
 
-if six.PY3:
-    buffer = memoryview
 
 DEFAULT_DB_SRID = 2056
 Geometry2D = GeometryChsdi(geometry_type='GEOMETRY', dimension=2, srid=DEFAULT_DB_SRID)
@@ -67,7 +63,7 @@ def get_tolerance_meters(imageDisplay, mapExtent, tolerance, srid):
 
 def _wrap_wkb_geometry(geometry, srid):
     if not isinstance(geometry, WKBElement):
-        return WKBElement(buffer(geometry.wkb), srid)
+        return WKBElement(memoryview(geometry.wkb), srid)
     return geometry
 
 
@@ -186,7 +182,7 @@ class Vector(object):
     def geom_filter(cls, geometry, imageDisplay, mapExtent, tolerance, srid):
         tolerance_meters = get_tolerance_meters(imageDisplay, mapExtent, tolerance, srid)
         geom_column = cls.geometry_column()
-        wkb_geometry = WKBElement(buffer(geometry.wkb), srid)
+        wkb_geometry = WKBElement(memoryview(geometry.wkb), srid)
         return func.ST_DWITHIN(geom_column,
                                transform_geometry(geom_column, wkb_geometry, srid),
                                tolerance_meters)
@@ -221,7 +217,7 @@ class Vector(object):
         tolerance_meters = get_tolerance_meters(imageDisplay, mapExtent, tolerance, srid)
         # If limit is equal to 1 we have to be accurate
         if tolerance_meters <= 250.0 or limit == 1:
-            wkb_geometry = WKBElement(buffer(geometry.wkb), srid)
+            wkb_geometry = WKBElement(memoryview(geometry.wkb), srid)
             geom_column = cls.geometry_column()
             return func.ST_DISTANCE(geom_column, transform_geometry(geom_column, wkb_geometry, srid))
         return None

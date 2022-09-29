@@ -1,11 +1,8 @@
-import six
 from lark import Lark, Transformer
 from lark.exceptions import LarkError
 import lark
 import logging
 
-if six.PY3:
-    unicode = str
 
 log = logging.getLogger(__name__)
 
@@ -59,7 +56,7 @@ class ParseError(Exception):
 class WhereParser(object):
 
     def __init__(self, text):
-        log.debug(u'WhereParser string to parse: {}'.format(unicode(text)))
+        log.debug(u'WhereParser string to parse: {}'.format(str(text)))
 
         self.text = text
         self.parser = Lark(where_gram, debug=True)
@@ -91,7 +88,7 @@ class WhereParser(object):
             r = tr.children
         else:
             r.append(tr)
-        # log.debug(u'tokens: {}'.format(unicode(r)))
+        # log.debug(u'tokens: {}'.format(str(r)))
         return r
 
     def _tree(self):
@@ -100,31 +97,31 @@ class WhereParser(object):
             tree = self.parser.parse(self.text)
         except LarkError as e:
             raise ParseError("Cannot parse '{}': {}".format(self.text, e))
-        # log.debug(u'tree: {}'.format(unicode(tree)))
+        # log.debug(u'tree: {}'.format(str(tree)))
         return tree
 
 
 class WhereTransformer(Transformer):
 
     def expression(self, args):
-        return u" ".join(map(unicode, args))
+        return u" ".join(map(str, args))
 
     def and_or(self, s):
-        # log.debug(u'and_or: {}'.format(unicode(s[0]).lower()))
-        return unicode(s[0]).lower()
+        # log.debug(u'and_or: {}'.format(str(s[0]).lower()))
+        return str(s[0]).lower()
 
     def is_not_null(self, s):
-        return unicode(s[0]).lower()
+        return str(s[0]).lower()
 
     def ops(self, s):
         return str(s[0]).lower()
 
     def operators_likes(self, s):
-        return unicode(s[0]).lower()
+        return str(s[0]).lower()
 
     def BOOLEAN(self, s):
-        # log.debug(u'boolean: {}'.format(unicode(s)))
+        # log.debug(u'boolean: {}'.format(str(s)))
         return "true" == str(s[0]).lower()
 
     def IS_NOT(self, s):
-        return unicode(s[0]).lower()
+        return str(s[0]).lower()

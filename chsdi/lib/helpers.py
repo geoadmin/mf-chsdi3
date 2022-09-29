@@ -6,13 +6,12 @@ import math
 import requests
 import datetime
 import gzip
-import six
 import unidecode
 from decimal import Decimal
 from past.utils import old_div
 
-from six.moves import zip, reduce, zip_longest
 from itertools import chain
+from itertools import zip_longest
 
 import cachetools
 from pyramid.threadlocal import get_current_registry
@@ -20,34 +19,19 @@ from pyramid.i18n import get_locale_name
 from pyramid.url import route_url
 from pyramid.httpexceptions import HTTPBadRequest, HTTPRequestTimeout
 import unicodedata
-try:
-    from urlparse import urlparse, urljoin
-except ImportError:
-    from urllib.parse import urlparse, urljoin
 
-try:
-    from urllib import quote
-except ImportError:
-    from urllib.parse import quote
-
+from urllib.parse import urlparse, urljoin, quote
+from functools import reduce
 import xml.etree.ElementTree as etree
 from pyproj import CRS, Transformer
 from requests.exceptions import ConnectionError, Timeout, RequestException
-# TODO: clean-up when only Python 3.x and no longer 2.x is in use
-try:
-    from requests.packages.urllib3.exceptions import InsecureRequestWarning
-except ImportError:
-    from urllib3.exceptions import InsecureRequestWarning
+from urllib3.exceptions import InsecureRequestWarning
 from shapely.ops import transform as shape_transform
 from shapely.wkt import dumps as shape_dumps, loads as shape_loads
 from shapely.geometry.base import BaseGeometry
 from chsdi.lib.parser import WhereParser
 from chsdi.lib.exceptions import QueryParseException, CoordinatesTransformationException
 import logging
-
-if six.PY3:
-    unicode = str
-    long = int
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
@@ -227,7 +211,7 @@ def format_query(model, value, lang):
                 log.error(error_msg)
                 raise QueryParseException(error_msg)
 
-            val = val.replace(prop, unicode(column.name))
+            val = val.replace(prop, str(column.name))
             res.append(val)
         return res
 
@@ -244,7 +228,7 @@ def format_query(model, value, lang):
         full = [x for x in chain.from_iterable(zip_longest(statements, operators))
             if x is not None]
 
-        return unicode(" ".join(full))
+        return " ".join(full)
 
     try:
         w = WhereParser(value)
@@ -498,7 +482,6 @@ def format_scale(scale):
     scale_str = str(scale)
     n = ''
     while len(scale_str) > 3:
-        # TODO: clean-up when only Python 3.x and no longer 2.x is in use
         scale_prov = old_div(int(float(scale_str)), 1000)
         n = n + "'000"
         scale_str = str(scale_prov)
@@ -507,7 +490,7 @@ def format_scale(scale):
 
 
 def int_with_apostrophe(x):
-    if type(x) not in [type(0), type(long(0))]:
+    if type(x) not in [type(0), type(int(0))]:
         return '-'
     if x < 0:
         return '-' + int_with_apostrophe(-x)
@@ -523,13 +506,7 @@ def get_loaderjs_url(request, version='3.6.0'):
 
 
 def decompress_gzipped_string(streaming_body):
-    # TODO: clean-up when only Python 3.x and no longer 2.x is in use
-    if six.PY2:
-        string_file = six.StringIO(streaming_body.read())
-        gzip_file = gzip.GzipFile(fileobj=string_file, mode='r', compresslevel=5)
-        return gzip_file.read().decode('utf-8')
-    else:
-        return gzip.decompress(streaming_body.read()).decode()
+    return gzip.decompress(streaming_body.read()).decode()
 
 
 def unnacent_where_text(where_string, model):

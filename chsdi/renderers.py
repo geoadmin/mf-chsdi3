@@ -7,8 +7,7 @@ import datetime
 from sqlalchemy.ext.associationproxy import _AssociationList
 from papyrus.renderers import GeoJSON
 from geojson.codec import PyGFPEncoder
-# TODO: clean-up when only Python 3.x and no longer 2.x is in use
-import six
+import io
 
 
 class EsriJSONEncoder(PyGFPEncoder):
@@ -64,8 +63,7 @@ class CSVRenderer(object):
 
     def __call__(self, value, system):
         import csv
-        # TODO: clean-up when only Python 3.x and no longer 2.x is in use
-        fout = six.StringIO()
+        fout = io.StringIO()
         writer = csv.writer(fout, delimiter=';', quoting=csv.QUOTE_ALL)
 
         writer.writerow(value['headers'])
