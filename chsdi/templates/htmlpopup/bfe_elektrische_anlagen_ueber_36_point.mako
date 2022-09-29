@@ -3,7 +3,6 @@
 <%def name="table_body(c, lang)">
     <%
         stromnetztyp = c['layerBodId'] + '.' + c['attributes']['stromnetztyp']
-        mast = c['attributes']['masttyp']
         masttyp = c['layerBodId'] + '.' + c['attributes']['masttyp']
     %>
         <tr>
