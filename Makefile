@@ -55,7 +55,7 @@ ENVSUBST := /usr/bin/envsubst
 AUTOPEP8 = $(VENV)/bin/autopep8
 FLAKE8 = $(VENV)/bin/flake8
 MAKO = $(VENV)/bin/mako-render
-NOSE = $(VENV)/bin/nosetests
+NOSE = $(VENV)/bin/nose2
 PIP = $(VENV)/bin/pip3 $(PIP_QUIET)
 PSERVE = $(VENV)/bin/pserve
 PSHELL = $(VENV)/bin/pshell
@@ -68,7 +68,6 @@ PYTHON_VERSION := $(shell $$(pipenv --py 2> /dev/null) --version 2>&1 | awk '{pr
 DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
 AWS_REGION_ECR := eu-central-1
 AUTHOR=$(USER)
-
 
 # Git metadata
 GIT_HASH ?= $(shell git rev-parse HEAD)
@@ -310,27 +309,42 @@ dockerpull:
 
 .PHONY: test
 test: guard-VENV clean_logs local-templates build
-	@echo "${GREEN}Unit testings...${RESET}";
+	mkdir -p $(CURRENT_DIRECTORY)/tests/reports
+	@echo "${GREEN}Unit testing (integration tests)...${RESET}";
 	${PYTHON} ./scripts/pg_ready.py
-	$(NOSE) --verbosity=2 --cover-erase tests/ -e .*e2e.*
+	${NOSE} \
+	-c tests/nose2_tests_integration.cfg \
+	-s tests/integration \
+	--verbose
+	-N 7
+	@echo "${GREEN}Unit testing (functional tests)...${RESET}";
+	${PYTHON} ./scripts/pg_ready.py
+	${NOSE} \
+	-c tests/nose2_tests_functional.cfg \
+	-s tests/functional \
+	--verbose \
+	-N 7
 
 
 .PHONY: unittest-ci
 unittest-ci: guard-VENV clean_logs local-templates build
 	@echo "${GREEN}Unit testings for CI...${RESET}";
-	mkdir -p junit-reports/{integration,functional}
-	$(NOSE) --verbosity=2 \
-		--with-xunit --xunit-file=junit-reports/functional/nosetest.xml \
-		tests/functional
-	$(NOSE) --verbosity=2 \
-		--with-xunit --xunit-file=junit-reports/integration/nosetest.xml \
-		tests/integration
+	mkdir -p tests/reports
+	${NOSE} --verbose \
+		-c tests/nose2_tests_functional.cfg \
+		-s tests/functional
+	${NOSE} --verbose \
+		-c tests/nose2_tests_integration.cfg \
+		-s tests/integration
 
 
 .PHONY: teste2e
 teste2e: guard-VENV clean_logs local-templates build
+	mkdir -p $(CURRENT_DIRECTORY)/tests/reports
 	@echo "${GREEN}Pseudo E2E tests...${RESET}";
-	$(NOSE) tests/e2e/
+	${NOSE} --verbose \
+		- c tests/nose2_tests_e2e.cfg
+		-s tests/e2e
 
 # TODO: Replace through yapf, once the old vhost infra is replaced
 .PHONY: lint
@@ -431,6 +445,7 @@ clean:
 	find chsdi/static/js -type f ! -name .gitignore -exec rm -f \;
 	rm -f .coverage .coverage.*
 	rm -f requirements.txt
+	find chsdi -name "__pycache__" -depth -exec rm -rf "{}" \;
 
 
 clean_logs:
