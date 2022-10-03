@@ -11,7 +11,7 @@
 <%
 dataHost = request.registry.settings['datageoadminhost']
 dataPath = 'ch.bafu.karst-einzugsgebiete'
-url_pdf = '//%s/%s/%s.pdf' % (dataHost, dataPath, c['attributes']['ba_id'])
+url_pdf = '%s/%s/%s.pdf' % (dataHost, dataPath, c['attributes']['ba_id'])
 %>
 
 <tr><td class="cell-left">${_('link2dok')}</td>    <td><a href="${url_pdf}" target="_blank">${c['attributes']['ba_id']}.pdf</a></td></tr>

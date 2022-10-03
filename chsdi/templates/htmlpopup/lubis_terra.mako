@@ -208,7 +208,7 @@ dataPath = 'ch.swisstopo.lubis-terrestrische_aufnahmen/'
 dataGeoAdminHost = request.registry.settings['datageoadminhost']
 pdf = None
 
-url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "pdf/" + c['attributes']['base_uuid'] + '.pdf'
+url_pdf = dataGeoAdminHost + "/" + dataPath + "pdf/" + c['attributes']['base_uuid'] + '.pdf'
 pdf = resource_exists(url_pdf)
 
 url_smapshot= "https://smapshot.heig-vd.ch/map/?imageId={}".format(c['attributes']['smapshot_id'])

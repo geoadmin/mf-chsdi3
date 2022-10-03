@@ -16,7 +16,7 @@
     pdf = None
     if c['attributes']['url_portraits'] is not None:
         dataGeoAdminHost = request.registry.settings['datageoadminhost']
-        url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['url_portraits']
+        url_pdf = dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['url_portraits']
         pdf = resource_exists(url_pdf)
 %>
 <tr>
@@ -44,10 +44,10 @@
     pdf_legend = None
 
     if c['attributes']['url_portraits'] is not None:
-        url_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['url_portraits']
+        url_pdf = dataGeoAdminHost + "/" + dataPath + "/" + c['attributes']['url_portraits']
         pdf = resource_exists(url_pdf)
     if c['attributes'][url_uebersicht] is not None:
-        url_legend_pdf = "https://" + dataGeoAdminHost + "/" + dataPath + "/" + c['attributes'][url_uebersicht]
+        url_legend_pdf = dataGeoAdminHost + "/" + dataPath + "/" + c['attributes'][url_uebersicht]
         pdf_legend = resource_exists(url_legend_pdf)
 %>
 

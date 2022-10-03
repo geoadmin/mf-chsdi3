@@ -70,7 +70,7 @@ AWS_REGION_ECR := eu-central-1
 AUTHOR=$(USER)
 
 # data.geo.admin.ch hosts
-DATAGEOADMINHOST ?= data.geo.admin.ch
+DATAGEOADMINHOST ?= https://data.geo.admin.ch
 
 # Git metadata
 GIT_HASH ?= $(shell git rev-parse HEAD)
