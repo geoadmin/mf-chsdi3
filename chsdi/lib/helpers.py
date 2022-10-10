@@ -339,7 +339,7 @@ def get_proj_from_srid(srid):
 def get_precision_for_proj(srid):
     precision = COORDINATES_DECIMALS_FOR_METRIC_PROJ
     proj = get_proj_from_srid(srid)
-    if proj.is_latlong():
+    if proj.crs.is_geographic:
         precision = COORDINATES_DECIMALS_FOR_DEGREE_PROJ
     return precision
 

@@ -234,7 +234,7 @@ class Test_Helpers(unittest.TestCase):
     def test_get_proj_from_srid(self):
         srid = 21781
         proj = get_proj_from_srid(srid)
-        self.assertFalse(proj.is_latlong())
+        self.assertFalse(proj.crs.is_geographic)
         self.assertEqual(proj.srs, '+units=m +init=epsg:21781 ')
 
     def test__transform_point(self):

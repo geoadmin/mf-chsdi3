@@ -1,23 +1,30 @@
-FROM python:3.7-slim-buster AS builder
+FROM python:3.9-slim-buster AS builder
 
 RUN apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y  \
-        gcc \
+        build-essential \
         libgeos-dev \
+        apache2 \
+        apache2-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
-    && pip3 install --user pipenv
+    && pip3 install --user --no-warn-script-location --upgrade pip \
+    && pip3 install --user --no-warn-script-location pipenv
 
 ENV PIPENV_VENV_IN_PROJECT=1
 
 # Pipfile contains requests
-ADD Pipfile.lock Pipfile /usr/src/
+COPY Pipfile.lock Pipfile /usr/src/
 WORKDIR /usr/src
 
 # Create virtualenv with all dependencies
-RUN /root/.local/bin/pipenv sync
+# Install latest mod_wsgi using the pip command, this will automatically download, configure and
+# build mod_wsgi apache module inside the virtual environment. We do this separately and not part
+# of the Pipfile because we only need mod_wsgi on docker image and not locally.
+RUN /root/.local/bin/pipenv sync \
+    && /root/.local/bin/pipenv run pip install mod_wsgi
 
-FROM python:3.7-slim-buster AS runtime
+FROM python:3.9-slim-buster AS runtime
 
 ENV VHOST_DIR=/var/www/vhosts/mf-chsdi3
 ENV INSTALL_DIR=/var/www/vhosts/mf-chsdi3/private/chsdi
@@ -33,12 +40,13 @@ ENV APACHE_LOG_LEVEL=info PY_ROOT_LOG_LEVEL=INFO PY_CHSDI_LOG_LEVEL=INFO PY_SQLA
 
 # REQUIREMENTS NOTE:
 #  - gettext-base is required for envsubst in docker-entrypoint.sh
+#  - libgeos-dev is required by shapely
 RUN apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --upgrade ca-certificates \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y  \
         gettext-base \
         apache2 \
-        libapache2-mod-wsgi-py3 \
+        libgeos-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd --gid 2500 ${GROUP} \
@@ -66,7 +74,6 @@ RUN apt-get update -qq \
         rewrite \
         setenvif \
         status \
-        wsgi \
         alias
 
 # Copy the virtual environment from the builder stage
