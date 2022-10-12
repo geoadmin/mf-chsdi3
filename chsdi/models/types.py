@@ -53,6 +53,7 @@ the main model is kept.
 
 
 class GeometryChsdi(Geometry):
+    cache_ok = True
 
     def __init__(self, geometry_type='GEOMETRY', srid=-1, dimension=2,
                  spatial_index=True, management=False, srid_out=21781):

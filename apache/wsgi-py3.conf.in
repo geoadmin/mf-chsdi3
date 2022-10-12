@@ -19,50 +19,12 @@ ExpiresActive on
 # http://code.google.com/p/modwsgi/wiki/FrequentlyAskedQuestions#Access_Control_Mechanisms
 WSGIPassAuthorization On
 
-# Checker
-ErrorDocument 200 "OK"
-RewriteEngine On
-RewriteRule "/ok" - [R=200]
-
-
-# PostgreSQL credential
-SetEnv PGUSER ${PGUSER}
-SetEnv PGPASSWORD ${PGPASSWORD}
-
 <IfModule mod_headers.c>
   Header set X-UA-Compatible "IE=Edge"
 </IfModule>
 
-# Redirect old main/wsgi stuff
-RedirectMatch permanent ^/main/wsgi/(.*)$ /$1
-RedirectMatch permanent ^${APACHE_ENTRY_PATH}/IIPIMAGE/(.*)$ ${APACHE_ENTRY_PATH}/luftbilder/$1
-
 # Redirect no-slash target to slashed version
 RedirectMatch ^${APACHE_ENTRY_PATH}$ ${APACHE_ENTRY_PATH}/
-
-
-# Info
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^${APACHE_ENTRY_PATH}/static/info\.json         https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
-
-# Versioned URL rewrite:
-# If URI has a version string at the start, we cache a year
-# This allows a client to create their own cache and
-# update at his discretion.
-# REGEX explained:
-#  - \d{4}-\d{2}-\d{2}-rc\d+ => match milestone version string YYYY-MM-DD-rcX
-#  - (?:-[^/]*)? => match non official milestone versiont string YYYY-MM-DD-rcX-x-shorthas, (?:) is a non capturing group.
-RewriteRule ^${APACHE_ENTRY_PATH}/\d{4}-\d{2}-\d{2}-rc\d+(?:-[^/]*)?/(.*)$ ${APACHE_ENTRY_PATH}/$1 [E=${APACHE_BASE_PATH}setyearcache:true,PT]
-Header merge Cache-Control "max-age=31536013, public" env=${APACHE_BASE_PATH}setyearcache
-
-# Info
-RewriteRule ^${APACHE_ENTRY_PATH}/info.json ${APACHE_ENTRY_PATH}/static/info.json [PT]
-
-# Static for cross domain flash/arcgis
-RewriteRule ^${APACHE_ENTRY_PATH}/(crossdomain.xml|clientaccesspolicy.xml) ${APACHE_ENTRY_PATH}/static/$1 [PT]
-<LocationMatch ^${APACHE_ENTRY_PATH}/static/(crossdomain.xml|clientaccesspolicy.xml)>
-    Header set Content-type "text/x-cross-domain-policy"
-</LocationMatch>
 
 # New style config url (see mf-geoadmin3 #4687)
 RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/layersConfig\.json ${APACHE_ENTRY_PATH}/rest/services/all/MapServer/layersConfig?lang=$1 [PT]
@@ -71,50 +33,26 @@ RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/catalog\.(\w+)\.json 
 RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/services\.json ${APACHE_ENTRY_PATH}/rest/services [PT]
 RewriteRule ^${APACHE_ENTRY_PATH}/configs/services\.json ${APACHE_ENTRY_PATH}/rest/services [PT]
 
-# Robots static files
-RewriteRule ^${APACHE_ENTRY_PATH}/robots.txt ${APACHE_ENTRY_PATH}/static/${ROBOTS_FILE} [PT]
-<LocationMatch ^${APACHE_ENTRY_PATH}/static/(robots.txt|robots_prod.txt)>
-    Header set Content-type "text/plain"
-</LocationMatch>
-
-
-# Loader.js service
-<LocationMatch ^${APACHE_ENTRY_PATH}/loader\.js>
-    Order allow,deny
-    Allow from all
-</LocationMatch>
-
 ############  WSGI #################################3
 
-# LoadModule wsgi_module modules/mod_wsgi.so
+${LOAD_WSGI_MODULE_DIRECTIVE}
 
-#don't forget this line
-# WSGISocketPrefix /var/run/wsgi
-
-WSGIApplicationGroup %{GLOBAL}
 WSGIPassAuthorization On
 
-WSGIDaemonProcess mf-chsdi3:${APACHE_BASE_PATH} display-name=%{GROUP} user=${MODWSGI_USER} processes=${WSGI_PROCESSES} threads=${WSGI_THREADS} \
-   python-path=/usr/local/lib/python3.7/site-packages
+WSGIDaemonProcess mf-chsdi3:${APACHE_BASE_PATH} \
+                  display-name=%{GROUP} \
+                  user=${MODWSGI_USER} \
+                  processes=${WSGI_PROCESSES} \
+                  threads=${WSGI_THREADS} \
+                  python-home=${INSTALL_DIR}/.venv
 
+WSGIProcessGroup mf-chsdi3:${APACHE_BASE_PATH}
+WSGIApplicationGroup %{GLOBAL}
 
 # define the path to the WSGI app
-WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${WSGI_APP}
+WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${INSTALL_DIR}/apache/application.wsgi
 
-<Directory ${INSTALLDIR}/>
-      WSGIProcessGroup mf-chsdi3:${APACHE_BASE_PATH}
-    WSGIApplicationGroup %{GLOBAL}
+<Directory ${INSTALL_DIR}>
   Order allow,deny
   Allow from all
 </Directory>
-
-# assign the WSGI app instance the process group defined aboven, we put the WSGI
-# app instance in the global application group so it is always executed within
-# the main interpreter
-<Directory ${INSTALLDIR}/apache>
-    Order allow,deny
-    Allow from all
-    WSGIProcessGroup mf-chsdi3:${APACHE_BASE_PATH}
-    WSGIApplicationGroup %{GLOBAL}
-</Directory>
-

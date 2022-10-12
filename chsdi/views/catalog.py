@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import logging
 
 from pyramid.view import view_config
 import networkx as nx
@@ -8,6 +9,8 @@ from pyramid.httpexceptions import HTTPInternalServerError, HTTPNotFound
 from chsdi.models.bod import Catalog
 from chsdi.lib.validation import MapNameValidation
 from chsdi.lib.filters import filter_by_geodata_staging
+
+logger = logging.getLogger(__name__)
 
 DEFAULT_CATEGORY = 'missing category'
 DEFAULT_STAGING = 'missing staging'
@@ -37,7 +40,7 @@ def tree_data(G, root, attrs, meta):
         children_ = []
         nbrs = sorted(nbrs)
         for child in nbrs:
-            d = dict(chain(G.node[child].items(), [(id_, child)]))
+            d = dict(chain(G.nodes[child].items(), [(id_, child)]))
             d['category'] = meta[d['id']].get('category', DEFAULT_CATEGORY)
             d['staging'] = meta[d['id']].get('staging', DEFAULT_STAGING)
             d['label'] = meta[d['id']].get('label', DEFAULT_LABEl)
@@ -66,7 +69,7 @@ def tree_data(G, root, attrs, meta):
             d.pop('orderKey', None)
         return children_
 
-    data = dict(chain(G.node[root].items(), [(id_, root)]))
+    data = dict(chain(G.nodes[root].items(), [(id_, root)]))
     data[children] = add_children(root, G)
     return data
 
@@ -79,7 +82,8 @@ def initialize_graph(G, rows, lang):
         node_id = getattr(r, 'id')
         if node_id not in meta:
             meta[node_id] = r.to_dict(lang)
-        G.add_edge(node_parent_id, node_id)
+        if node_parent_id:
+            G.add_edge(node_parent_id, node_id)
         if getattr(r, 'category') == 'root':
             if (root_id is not None):
                 raise HTTPInternalServerError('%s has more than 1 root_id, there can be only one!' % r.topic)

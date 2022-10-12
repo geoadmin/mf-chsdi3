@@ -41,9 +41,11 @@ class MyRSS2(PyRSS2Gen.RSSItem):
 
 def extract_releases(html):
     with open(html, 'r') as f:
+        releases = []
         soup = BeautifulSoup(f.read(), 'lxml')
         divRelease = soup.find('div', {'id': 'release-notes'})
-        releases = divRelease.findAll('div', {'id': re.compile('release-')})
+        if divRelease:
+            releases = divRelease.findAll('div', {'id': re.compile('release-')})
     return releases
 
 
@@ -77,7 +79,7 @@ if __name__ == '__main__':
 
     api_url = sys.argv[1] + '/'
     print("RSS feed url: {}".format(api_url))
-    
+
     items = []
     pathToReleaseNotes = 'chsdi/static/doc/build/releasenotes/index.html'
     try:
@@ -130,7 +132,7 @@ if __name__ == '__main__':
     link = channel.find("link")
     link.addnext(atom_link)
     new_root.append(channel)
-    
+
     try:
         with open(RSS_FILE, 'w') as xml:
             content = etree.tostring(new_root, pretty_print=True)

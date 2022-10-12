@@ -1,10 +1,37 @@
-FROM python:3.7-buster
+FROM python:3.9-slim-buster AS builder
 
-ENV SYSTEM_PYTHON_CMD=/usr/local/bin/python3.7
-ENV PYPI_URL=https://pypi.org/simple/
-ENV PROJ=chsdi
-ENV VHOST=mf-${PROJ}3
-ENV PROJDIR=/var/www/vhosts/${VHOST}/private/${PROJ}
+RUN apt-get update -qq \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y  \
+        build-essential \
+        libgeos-dev \
+        apache2 \
+        apache2-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip3 install --user --no-warn-script-location --upgrade pip \
+    && pip3 install --user --no-warn-script-location pipenv
+
+ENV PIPENV_VENV_IN_PROJECT=1
+
+# Pipfile contains requests
+COPY Pipfile.lock Pipfile /usr/src/
+WORKDIR /usr/src
+
+# Create virtualenv with all dependencies
+# Install latest mod_wsgi using the pip command, this will automatically download, configure and
+# build mod_wsgi apache module inside the virtual environment. We do this separately and not part
+# of the Pipfile because we only need mod_wsgi on docker image and not locally.
+RUN /root/.local/bin/pipenv sync \
+    && /root/.local/bin/pipenv run pip install mod_wsgi
+
+FROM python:3.9-slim-buster AS runtime
+
+ENV VHOST_DIR=/var/www/vhosts/mf-chsdi3
+ENV INSTALL_DIR=/var/www/vhosts/mf-chsdi3/private/chsdi
+ENV APACHE_ENTRY_PATH=
+ENV APACHE_BASE_PATH=main
+ENV MODWSGI_USER=www-data
+
 ENV USER geodata
 ENV GROUP geodata
 
@@ -13,30 +40,23 @@ ENV APACHE_LOG_LEVEL=info PY_ROOT_LOG_LEVEL=INFO PY_CHSDI_LOG_LEVEL=INFO PY_SQLA
 
 # REQUIREMENTS NOTE:
 #  - gettext-base is required for envsubst in docker-entrypoint.sh
-#  - libgeos-dev is required by shapely python package
+#  - libgeos-dev is required by shapely
 RUN apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y --upgrade ca-certificates \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y  \
-        libgeos-dev \
         gettext-base \
-        apache2 libapache2-mod-wsgi-py3 \
-    && pip3 install pipenv \
-    && pipenv --version \
+        apache2 \
+        libgeos-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd --gid 2500 ${GROUP} \
     && useradd --uid 2500 --gid ${GROUP} --shell /bin/sh --create-home ${USER} \
-    && mkdir -p /var/www/vhosts/${VHOST}/conf \
-    && mkdir -p /var/www/vhosts/${VHOST}/private \
-    && mkdir -p /var/www/vhosts/${VHOST}/cgi-bin \
-    && mkdir -p /var/www/vhosts/${VHOST}/htdocs \
-    && mkdir -p /var/www/vhosts/${VHOST}/logs
-
-COPY Pipfile* ./
-RUN pipenv install --system --deploy --ignore-pipfile
-
-COPY --chown=${USER}:${GROUP} 90-chsdi3.conf    /var/www/vhosts/${VHOST}/conf/
-RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
+    && mkdir -p ${VHOST_DIR}/conf \
+    && mkdir -p ${VHOST_DIR}/private \
+    && mkdir -p ${VHOST_DIR}/cgi-bin \
+    && mkdir -p ${VHOST_DIR}/htdocs \
+    && mkdir -p ${VHOST_DIR}/logs \
+    &&  echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
     && a2enconf fqdn \
     && a2enmod \
         auth_basic \
@@ -54,14 +74,29 @@ RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
         rewrite \
         setenvif \
         status \
-        wsgi \
         alias
 
-COPY --chown=${USER}:${GROUP} . /var/www/vhosts/${VHOST}/private/chsdi
+# Copy the virtual environment from the builder stage
+COPY --from=builder --chown=${USER}:${GROUP} /usr/src/.venv/ ${INSTALL_DIR}/.venv/
 
-WORKDIR /var/www/vhosts/${VHOST}/private/chsdi
+# Copy the python chsdi package setup files for package installation down below
+COPY --chown=${USER}:${GROUP} \
+    setup.cfg \
+    setup.py \
+    MANIFEST.in \
+    README.md \
+    LICENSE.md \
+    CHANGES.txt \
+    docker-entrypoint.sh   ${INSTALL_DIR}/
 
-RUN pip3 install -e .
+# Add apache configurations and templates
+COPY --chown=${USER}:${GROUP} 90-chsdi3.conf    ${VHOST_DIR}/conf/
+COPY --chown=${USER}:${GROUP} apache            ${INSTALL_DIR}/apache/
+
+# Add the application
+COPY --chown=${USER}:${GROUP} chsdi             ${INSTALL_DIR}/chsdi/
+
+WORKDIR ${INSTALL_DIR}
 
 ARG GIT_HASH=unknown
 ARG GIT_BRANCH=unknown
@@ -77,12 +112,14 @@ LABEL git.tag=${GIT_TAG}
 LABEL version=${VERSION}
 LABEL author=${AUTHOR}
 
-# Substitute the version in the pylons configuration.
+# Substitute the version in the pylons configuration
+# and install the chsdi package as editable needed by pyramid
 ENV APP_VERSION=${VERSION}
-RUN sed -i 's/${APP_VERSION}/'${APP_VERSION}'/g' pyramid-config/base.ini.in
+RUN sed -i 's/${APP_VERSION}/'${APP_VERSION}'/g' chsdi/config/base.ini.in \
+    && .venv/bin/python -m pip install -e .
 
 # NOTE: Here below we cannot use environment variable with ENTRYPOINT using the `exec` form.
 # The ENTRYPOINT `exec` form is required in order to use the docker-entrypoint.sh as first
 # command to run before the CMD.
-ENTRYPOINT ["/var/www/vhosts/mf-chsdi3/private/chsdi/docker-entrypoint.sh"]
+ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]

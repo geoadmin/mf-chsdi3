@@ -40,9 +40,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="apple-touch-icon" sizes="76x76" href="${h.versioned(request.static_url('chsdi:static/images/touch-icon-bund-76x76.png'))}"/>
-    <link rel="apple-touch-icon" sizes="120x120" href="${h.versioned(request.static_url('chsdi:static/images/touch-icon-bund-120x120.png'))}"/>
-    <link rel="apple-touch-icon" sizes="152x152" href="${h.versioned(request.static_url('chsdi:static/images/touch-icon-bund-152x152.png'))}"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="${request.static_url('chsdi:static/images/touch-icon-bund-76x76.png')}"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="${request.static_url('chsdi:static/images/touch-icon-bund-120x120.png')}"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="${request.static_url('chsdi:static/images/touch-icon-bund-152x152.png')}"/>
     <!--[if !HTML5]>
     <meta http-equiv="X-UA-Compatible" content="IE=9,IE=10,IE=edge,chrome=1"/>
     <![endif]-->
@@ -168,7 +168,7 @@
       }
 
     </style>
-    <link rel="shortcut icon" type="image/x-icon" href="${h.versioned(request.static_url('chsdi:static/images/favicon.ico'))}">
+    <link rel="shortcut icon" type="image/x-icon" href="${request.static_url('chsdi:static/images/favicon.ico')}">
   </head>
   <body onload="init()">
     <div class="header">${title}</div>
