@@ -14,6 +14,19 @@ API REST Services
 Most services are implementing or are heavily inspired by `ESRI GeoServices REST Specification <http://resources.arcgis.com/en/help/arcgis-rest-api/index.html#//02r300000054000000>`_
 or by the `Open Geospatial Consortium (OGC) <http://opengeospatial.org>`_.
 
+All API REST endpoints supports only the following HTTP methods (unless specified):
+
++---------+------------------------------------------------------------------------------------------------+
+| Method  | Description                                                                                    |
++=========+================================================================================================+
+| GET     | Return the requested data.                                                                     |
++---------+------------------------------------------------------------------------------------------------+
+| HEAD    | Return only HTTP headers of the GET request (no data in payload).                              |
++---------+------------------------------------------------------------------------------------------------+
+| OPTIONS | Return only the HTTP headers for the communication options (e.g. CORS headers for preflight).  |
+|         | No data in payload.                                                                            |
++---------+------------------------------------------------------------------------------------------------+
+
 .. _metadata_description:
 
 Layers Metadata
@@ -26,7 +39,7 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/api/MapServer
+  GET https://api3.geo.admin.ch/rest/services/api/MapServer
 
 
 Input Parameters
@@ -191,7 +204,7 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}
+  GET https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}
 
 Input Parameters
 ****************
@@ -226,7 +239,7 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/legend
+  GET https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/legend
 
 Input Parameters
 ****************
@@ -262,7 +275,7 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/api/MapServer/identify
+  GET https://api3.geo.admin.ch/rest/services/api/MapServer/identify
 
 Input Parameters
 ****************
@@ -493,7 +506,7 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/api/MapServer/find
+  GET https://api3.geo.admin.ch/rest/services/api/MapServer/find
 
 Input Parameters
 ****************
@@ -552,7 +565,7 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId},{featureId}
+  GET https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId},{featureId}
 
 Input Parameters
 ****************
@@ -597,7 +610,7 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId}/htmlPopup
+  GET https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/{featureId}/htmlPopup
 
 Input Parameters
 ****************
@@ -636,7 +649,7 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/api/SearchServer
+  GET https://api3.geo.admin.ch/rest/services/api/SearchServer
 
 Description
 ***********
@@ -886,7 +899,7 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/height
+  GET https://api3.geo.admin.ch/rest/services/height
 
 Input Parameters
 ****************
@@ -926,8 +939,8 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/profile.json (for json format)
-  https://api3.geo.admin.ch/rest/services/profile.csv  (for a csv)
+  GET|POST https://api3.geo.admin.ch/rest/services/profile.json (for json format)
+  GET|POST https://api3.geo.admin.ch/rest/services/profile.csv  (for a csv)
 
 Input Parameters
 ****************
@@ -992,14 +1005,14 @@ GetTile
 
 ::
 
-    <Scheme>://<ServerName>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/<TileSetId>/<TileRow>/<TileCol>.<FormatExtension>
+    GET <Scheme>://<ServerName>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/<TileSetId>/<TileRow>/<TileCol>.<FormatExtension>
 
 with the following parameters:
 
 ===================    =============================   ==========================================================================
 Parameter              Example                         Explanation
 ===================    =============================   ==========================================================================
-Scheme                 http or https                   The scheme type
+Scheme                 https                           The scheme type
 ServerName             wmts[0-9].geo.admin.ch
 Version                1.0.0                           WMTS protocol version
 Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document.
@@ -1134,14 +1147,14 @@ GetTile
 
 ::
 
-    <Scheme>://<ServerName>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/{z}/{x}/{y}.<FormatExtension>
+    GET <Scheme>://<ServerName>/<ProtocoleVersion>/<LayerName>/<Stylename>/<Time>/<TileMatrixSet>/{z}/{x}/{y}.<FormatExtension>
 
 with the following parameters:
 
 ===================    =============================   ==========================================================================
 Parameter              Example                         Explanation
 ===================    =============================   ==========================================================================
-Scheme                 http or https                   The scheme type
+Scheme                 https                           The scheme type
 ServerName             wmts[0-9].geo.admin.ch
 Version                1.0.0                           WMTS protocol version
 Layername              ch.bfs.arealstatistik-1997      See the WMTS `GetCapabilities <//wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml>`_ document.
@@ -1195,7 +1208,7 @@ URL
 
 ::
 
-  https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/cacheUpdate
+  GET https://api3.geo.admin.ch/rest/services/api/MapServer/{layerBodId}/cacheUpdate
 
 
 Example
@@ -1237,7 +1250,7 @@ A request is in the form:
 
 ::
 
-    https://<ServerName>/<ProtocoleVersion>/ch.swisstopo.terrain.3d/<Stylename>/<Time>/<TileMatrixSetId>/<Zoom>/<X>/<Y>.<FormatExtension>
+    GET https://<ServerName>/<ProtocoleVersion>/ch.swisstopo.terrain.3d/<Stylename>/<Time>/<TileMatrixSetId>/<Zoom>/<X>/<Y>.<FormatExtension>
 
 with the following parameters:
 
@@ -1313,7 +1326,7 @@ A current (latest version) style request is in the following form:
 
 ::
 
-    <Scheme>://<ServerName>/styles/<layername>/style.json
+    GET <Scheme>://<ServerName>/styles/<layername>/style.json
 
 example of current maplibre styles of light base map and imagery base map:
 
@@ -1339,7 +1352,7 @@ A tile request is in the following form:
 
 ::
 
-    <Scheme>://<ServerName>/tiles/<LayerName>/<version>/<zoomlevel>/<x>/<y>.pbf
+    GET <Scheme>://<ServerName>/tiles/<LayerName>/<version>/<zoomlevel>/<x>/<y>.pbf
 
 example of one pbf tile:
 
@@ -1352,7 +1365,7 @@ MBTiles for storing  tiled map data in SQLite databases for immediate or offline
 
 ::
 
-    <Scheme>://<ServerName>/tiles/<LayerName>/<version>/<LayerName>.mbtiles
+    GET <Scheme>://<ServerName>/tiles/<LayerName>/<version>/<LayerName>.mbtiles
 
 example of the .mbtiles file:
 
@@ -1374,7 +1387,7 @@ The URL of the metadata `json` file is :
 
 ::
 
-   <Scheme>://<ServerName>/tiles/<LayerName>/<version>.json
+   GET <Scheme>://<ServerName>/tiles/<LayerName>/<version>.json
 
 example of tileset:
 
@@ -1430,8 +1443,8 @@ URL
 
 ::
 
-  https://sparql.geo.admin.ch/sparql
-  https://geo.ld.admin.ch/sparql/ (YASGUI)
+  GET https://sparql.geo.admin.ch/sparql
+  GET https://geo.ld.admin.ch/sparql/ (YASGUI)
 
 Available datasets
 ******************
@@ -1467,9 +1480,9 @@ URL
 
 ::
 
-  https://atom.geo.admin.ch/inspire/service.xml - Service Feed
-  https://atom.geo.admin.ch/inspire/search/opensearchdescription.xml - Open Search Description Document
-  https://atom.geo.admin.ch/inspire/search?q={} - Search Interface
+  GET https://atom.geo.admin.ch/inspire/service.xml - Service Feed
+  GET https://atom.geo.admin.ch/inspire/search/opensearchdescription.xml - Open Search Description Document
+  GET https://atom.geo.admin.ch/inspire/search?q={} - Search Interface
 
 Available datasets
 ******************
