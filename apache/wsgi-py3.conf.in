@@ -44,13 +44,13 @@ WSGIApplicationGroup %{GLOBAL}
 WSGIPassAuthorization On
 
 WSGIDaemonProcess mf-chsdi3:${APACHE_BASE_PATH} display-name=%{GROUP} user=${MODWSGI_USER} processes=${WSGI_PROCESSES} threads=${WSGI_THREADS} \
-   python-path=/usr/local/lib/python3.7/site-packages
+   python-home=${INSTALL_DIR}/.venv
 
 
 # define the path to the WSGI app
-WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${WSGI_APP}
+WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${INSTALL_DIR}/apache/application.wsgi
 
-<Directory ${INSTALLDIR}/>
+<Directory ${INSTALL_DIR}/>
       WSGIProcessGroup mf-chsdi3:${APACHE_BASE_PATH}
     WSGIApplicationGroup %{GLOBAL}
   Order allow,deny
@@ -60,7 +60,7 @@ WSGIScriptAliasMatch ^${APACHE_ENTRY_PATH}/ ${WSGI_APP}
 # assign the WSGI app instance the process group defined aboven, we put the WSGI
 # app instance in the global application group so it is always executed within
 # the main interpreter
-<Directory ${INSTALLDIR}/apache>
+<Directory ${INSTALL_DIR}/apache>
     Order allow,deny
     Allow from all
     WSGIProcessGroup mf-chsdi3:${APACHE_BASE_PATH}
