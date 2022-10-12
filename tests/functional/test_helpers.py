@@ -8,7 +8,7 @@ from chsdi.lib.helpers import (
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
     parse_box2d, center_from_box2d, format_scale,
     parse_date_string, parse_date_datenstand, int_with_apostrophe, get_loaderjs_url,
-    get_proj_from_srid, get_precision_for_proj, _round_bbox_coordinates, _round_shape_coordinates,
+    get_crs_from_srid, get_precision_for_proj, _round_bbox_coordinates, _round_shape_coordinates,
     round_geometry_coordinates, _transform_coordinates, _transform_shape, transform_round_geometry
 )
 from shapely.geometry import Point, Polygon
@@ -231,11 +231,11 @@ class Test_Helpers(unittest.TestCase):
         self.assertEqual(url, '%s/loader.js?version=3.18.2' % api_url)
         testing.tearDown()
 
-    def test_get_proj_from_srid(self):
+    def test_get_crs_from_srid(self):
         srid = 21781
-        proj = get_proj_from_srid(srid)
-        self.assertFalse(proj.is_latlong())
-        self.assertEqual(proj.srs, '+units=m +init=epsg:21781 ')
+        crs = get_crs_from_srid(srid)
+        self.assertFalse(crs.is_geographic)
+        self.assertEqual(crs.srs, 'EPSG:21781')
 
     def test__transform_point(self):
         srid_from = 4326

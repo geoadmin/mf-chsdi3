@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import threading
 import re
 import math
 import requests
@@ -13,7 +14,7 @@ from past.utils import old_div
 from six.moves import zip, reduce, zip_longest
 from itertools import chain
 
-from functools import partial
+import cachetools
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
 from pyramid.url import route_url
@@ -30,7 +31,7 @@ except ImportError:
     from urllib.parse import quote
 
 import xml.etree.ElementTree as etree
-from pyproj import Proj, transform as proj_transform
+from pyproj import CRS, Transformer
 from requests.exceptions import ConnectionError, Timeout, RequestException
 # TODO: clean-up when only Python 3.x and no longer 2.x is in use
 try:
@@ -54,8 +55,6 @@ log = logging.getLogger(__name__)
 
 REQUESTS_DEFAULT_TIMEOUT = 5
 
-
-PROJECTIONS = {}
 
 # Rounding to abount 0.1 meters
 COORDINATES_DECIMALS_FOR_METRIC_PROJ = 1
@@ -327,19 +326,20 @@ def imagesize_from_metafile(tileUrlBasePath, bvnummer):
     return (width, height)
 
 
-def get_proj_from_srid(srid):
-    if srid in PROJECTIONS:
-        return PROJECTIONS[srid]
-    else:
-        proj = Proj(init='EPSG:{}'.format(srid))
-        PROJECTIONS[srid] = proj
-        return proj
+@cachetools.cached(cache={}, lock=threading.Lock())
+def get_crs_from_srid(srid):
+    return CRS.from_string('EPSG:{}'.format(srid))
+
+
+@cachetools.cached(cache={}, lock=threading.Lock())
+def get_transformer(srid_from, srid_to):
+    return Transformer.from_crs(srid_from, srid_to, always_xy=True)
 
 
 def get_precision_for_proj(srid):
     precision = COORDINATES_DECIMALS_FOR_METRIC_PROJ
-    proj = get_proj_from_srid(srid)
-    if proj.is_latlong():
+    crs = get_crs_from_srid(srid)
+    if crs.is_geographic:
         precision = COORDINATES_DECIMALS_FOR_DEGREE_PROJ
     return precision
 
@@ -371,9 +371,8 @@ def round_geometry_coordinates(geom, precision=None):
 
 
 def _transform_point(coords, srid_from, srid_to):
-    proj_in = get_proj_from_srid(srid_from)
-    proj_out = get_proj_from_srid(srid_to)
-    return proj_transform(proj_in, proj_out, coords[0], coords[1])
+    transformer = get_transformer(srid_from, srid_to)
+    return transformer.transform(coords[0], coords[1])
 
 
 def transform_round_geometry(geom, srid_from, srid_to, rounding=True):
@@ -408,12 +407,9 @@ def _transform_coordinates(coordinates, srid_from, srid_to, rounding=True):
 
 
 def _transform_shape(geom, srid_from, srid_to, rounding=True):
-    proj_in = get_proj_from_srid(srid_from)
-    proj_out = get_proj_from_srid(srid_to)
+    transformer = get_transformer(srid_from, srid_to)
 
-    projection_func = partial(proj_transform, proj_in, proj_out)
-
-    new_geom = shape_transform(projection_func, geom)
+    new_geom = shape_transform(transformer.transform, geom)
     if rounding:
         precision = get_precision_for_proj(srid_to)
         return _round_shape_coordinates(new_geom, precision=precision)
