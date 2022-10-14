@@ -30,6 +30,7 @@ Shapely = "~=1.8"
 simplejson = "~=3.17"
 unidecode = "~=1.3"
 Akhet = "~=2.0"
+logging-utilities = "~=3.0.0"
 
 [dev-packages]
 waitress = "~=2.1"

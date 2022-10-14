@@ -197,7 +197,7 @@ set-app_version:
 
 
 .PHONY: local-templates
-local-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_version
+local-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_version $(LOGS_DIR)
 	@echo "${GREEN}Setting local development configuration templates...${RESET}";
 	export $(shell cat $(ENV_FILE)) && \
 	export CURRENT_DIRECTORY=${CURRENT_DIRECTORY} && \
@@ -236,13 +236,13 @@ legends: guard-VENV guard-BODID guard-WMSHOST
 
 
 .PHONY: serve
-serve: guard-VENV local-templates build
+serve: guard-VENV clean_logs local-templates build ${LOGS_DIR}
 	@echo "${GREEN}Starting gunicorn server...${RESET}";
 	${PSERVE} development.ini --reload
 
 
 .PHONY: shell
-shell: guard-VENV local-templates build
+shell: guard-VENV clean_logs local-templates build ${LOGS_DIR}
 	${PSHELL} development.ini
 
 
@@ -264,12 +264,14 @@ dockerbuild: build
 
 
 .PHONY: dockerrun
-dockerrun: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
+dockerrun: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD clean_logs ${LOGS_DIR}
 	@echo "${GREEN}Starting docker container...${RESET}";
 	docker run \
 		-it \
 		--network=host \
 		--env-file=${ENV_FILE} \
+		--env LOGS_DIR=/var/logs \
+		--mount type=bind,source="$$(pwd)"/logs,target=/var/logs \
 		--env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
 		--env AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} \
@@ -282,12 +284,14 @@ dockerrun: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
 
 
 .PHONY: dockerrun-shell
-dockerrun-shell: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD
+dockerrun-shell: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD clean_logs ${LOGS_DIR}
 	@echo "${GREEN}Starting docker shell...${RESET}";
 	docker run \
 		-it \
 		--network=host \
 		--env-file=${ENV_FILE} \
+		--env LOGS_DIR=/var/logs \
+		--mount type=bind,source="$$(pwd)"/logs,target=/var/logs \
 		--env PGUSER=${PGUSER} --env PGPASSWORD=${PGPASSWORD} \
 		--env OPENTRANS_API_KEY=${OPENTRANS_API_KEY} \
 		$(DOCKER_IMG_LOCAL_TAG_PATH) /bin/sh
@@ -387,6 +391,10 @@ $(DOC_BUILD): $(DOC_FILES_DEPENDENCIES)
 	cd chsdi/static/doc && $(SPHINX) -W -b html source build || exit 1 ;
 
 
+$(LOGS_DIR):
+	mkdir -p ${LOGS_DIR}
+
+
 guard-%:
 	@ if test "${${*}}" = ""; then \
 		echo "Environment variable $* not set. Add it to your command."; \
@@ -424,8 +432,12 @@ clean:
 	rm -f requirements.txt
 
 
+clean_logs:
+	rm -rf ${LOGS_DIR}
+
+
 .PHONY: cleanall
-cleanall: clean
+cleanall: clean clean_logs
 	@echo "${GREEN}Cleaning everything...${RESET}";
 	rm -rf chsdi.egg-info/
 	rm -f  package-lock.json

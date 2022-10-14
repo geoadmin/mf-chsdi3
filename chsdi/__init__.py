@@ -7,6 +7,7 @@ from pyramid.request import Request
 from sqlalchemy.orm import scoped_session, sessionmaker
 from papyrus.renderers import GeoJSON
 
+from chsdi.logging_setup import setup_logging
 from chsdi.renderers import EsriJSON, CSVRenderer
 from chsdi.models import initialize_sql
 
@@ -34,6 +35,8 @@ class WsgiSchemeAdaptedRequest(Request):
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
+    setup_logging()
+
     app_version = settings.get('app_version')
     settings['app_version'] = app_version
     config = Configurator(settings=settings, request_factory=WsgiSchemeAdaptedRequest)

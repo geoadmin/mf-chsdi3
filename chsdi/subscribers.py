@@ -1,5 +1,6 @@
 from distutils.util import strtobool
 import cachetools.func
+import time
 
 from pyramid.events import NewRequest
 from pyramid.events import BeforeRender
@@ -69,14 +70,43 @@ def add_localizer(event):
         request.localizer = update_localizer(request.lang, request.localizer, request.db)
 
 
+def get_payload(obj):
+    if not obj.content_length:
+        return ''
+    if obj.content_type in [
+        'application/json',
+        'application/javascript',
+        'text/javascript',
+        'text/css',
+        'text/plain',
+        'text/html'
+    ]:
+        return obj.text[:128]
+    return '<not a text format>'
+
+
+def get_request_for_logging(req):
+    data = {
+        "path": req.path,
+        "method": req.method,
+        "query_string": req.query_string,
+        "headers": dict(req.headers),
+        "payload": get_payload(req)
+    }
+    return data
+
+
 @subscriber(NewRequest)
 def log_request(event):
+    setattr(event.request, 'started_at', time.time())
     if route_logger.isEnabledFor(logging.INFO):
-        route_logger.info(
-            'REQUEST: %s %s - headers=%s',
+        route_logger.debug(
+            '%s %s',
             event.request.method,
             event.request.path_qs,
-            {k: v for k, v in event.request.headers.items()}
+            extra={
+                "request": get_request_for_logging(event.request)
+            }
         )
 
 
@@ -90,10 +120,19 @@ def setup_response_callbacks(event):
 @subscriber(NewResponse)
 def log_response(event):
     if route_logger.isEnabledFor(logging.INFO):
+        started_at = getattr(event.request, 'started_at', None)
         route_logger.info(
-            'RESPONSE: %s %s %s - headers=%s',
+            '%s %s %s',
             event.request.method,
             event.request.path_qs,
             event.response.status,
-            {h[0]: h[1] for h in event.response.headerlist}
+            extra={
+                "duration": time.time() - started_at if started_at else '',
+                "request": get_request_for_logging(event.request),
+                "response": {
+                    "status_code": event.response.status,
+                    "headers": {h[0]: h[1] for h in event.response.headerlist},
+                    "payload": get_payload(event.response)
+                }
+            }
         )
