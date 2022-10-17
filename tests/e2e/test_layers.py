@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import os
-import unittest
 from contextlib import contextmanager
 from unittest import SkipTest, skip
 
-import six
 from chsdi.models import models_from_bodid
 from chsdi.models.bod import LayersConfig
 from chsdi.models.grid import get_grid_spec
@@ -21,9 +19,6 @@ from tests.integration import TestsBase, s3_tests
 from webtest import TestApp
 from webtest.app import AppError
 
-if six.PY3:
-    long = int
-
 
 class TestLayerService(TestsBase):
     def test_one(self):
@@ -38,7 +33,7 @@ class LayersChecker(object):
     def __enter__(self):
         def num(s):
             if s.isdigit():
-                return long(s)
+                return int(s)
             else:
                 return s
 
@@ -117,7 +112,7 @@ class LayersChecker(object):
                     # Depending on db size, random row is slow
                     if self.randomFeatures:
                         query = query.order_by(func.random())
-                    if isinstance(self.nrOfFeatures, (int, long)):
+                    if isinstance(self.nrOfFeatures, (int, int)):
                         query = query.limit(self.nrOfFeatures)
                     hasExtended = model.__extended_info__ if hasattr(model, '__extended_info__') else False
                     try:
@@ -196,7 +191,7 @@ class LayersChecker(object):
         if featureId is None:
             print("No feature was found in table {} for layer {}".format(schema + '.' + model.__tablename__, layerId))
         else:
-            pythonType = primaryKeyColumn.type.python_type if not isinstance(primaryKeyColumn.type, BigInteger) else (int, long)
+            pythonType = primaryKeyColumn.type.python_type if not isinstance(primaryKeyColumn.type, BigInteger) else (int, int)
             assert isinstance(featureId, pythonType), 'Expected %s; Got: %s; For layer %s and GeoTable %s' % (
                 pythonType, type(featureId), layerId, schema + '.' + model.__tablename__)
 

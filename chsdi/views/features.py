@@ -2,7 +2,6 @@
 
 import re
 import geojson
-import six
 from gatilegrid.grid import Grid
 
 from pyramid.view import view_config
@@ -124,10 +123,8 @@ def _prepare_popup_response(params, request, isExtended=False, isIframe=False):
 
     if params.cbName is None:
         return response
-    # TODO: clean-up when only Python 3.x and no longer 2.x is in use
-    if six.PY3:
-        return response.body.decode('utf8')
-    return response.body
+
+    return response.body.decode('utf8')
 
 
 @view_config(route_name='htmlPopup', renderer='jsonp')
@@ -274,7 +271,7 @@ def _identify_grid(params, layerBodIds):
         pointCoordinates = _transform_coordinates(pointCoordinates, params.srid, 2056)
     bucketName = params.request.registry.settings['vector_bucket']
     for layer in layerBodIds:
-        [layerBodId, gridSpec] = next(six.iteritems(layer))
+        [layerBodId, gridSpec] = next(iter(layer.items()))
         params.layerId = layerBodId
         layerProperties = get_grid_layer_properties(layerBodId)
         timestamp = layerProperties.get('timestamp')
@@ -485,8 +482,8 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
     ''' Returns a generator function that yields
     a feature. '''
     for layer in layerBodIds:
-        # TODO: clean-up when only Python 3.x and no longer 2.x is in use
-        layerBodId, models = next(six.iteritems(layer))
+        layerBodId, models = next(iter(layer.items()))
+
         # Determine the limit
         limits = [x for x in [maxFeatures, params.limit] if x is not None]
         flimit = min(limits) if len(limits) > 0 else None
@@ -627,10 +624,7 @@ def _find(request):
             where_txt = format_query(model, params.where, params.lang)
         vectorLayers.append((model, where_txt))
 
-    # Attributes in the 'where' or 'layerDefs' should match attributes in
-    # at least one model related to a layer bodId
-    # TODO: python3
-    layers = list(list(six.moves.zip(*vectorLayers))[1])
+    layers = list(list(zip(*vectorLayers))[1])
     if params.where is not None and not any(layers):
         raise exc.HTTPBadRequest(
             'Filtering on a not existing field on layer {}'.format(params.layer)

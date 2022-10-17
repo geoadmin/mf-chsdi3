@@ -2,17 +2,12 @@
 
 import os.path
 
-import six
 from PIL import Image
 from pyramid.httpexceptions import HTTPBadRequest
 from pyramid.view import view_config
 from pyramid.response import Response
 
-# TODO: clean-up when only Python 3.x and no longer 2.x is in use
-if six.PY3:
-    from io import BytesIO
-else:
-    from StringIO import StringIO
+from io import BytesIO
 
 
 class ColorService:
@@ -44,10 +39,7 @@ class ColorService:
         if mask.mode == 'P':
             mask = mask.convert('RGBA')
         img = Image.composite(Image.new("RGB", mask.size, (r, g, b)), mask, mask)
-        if six.PY3:
-            output = BytesIO()
-        else:
-            output = StringIO()
+        output = BytesIO()
         img.save(output, format='PNG')
         response = Response(output.getvalue(), content_type='image/png')
         return response

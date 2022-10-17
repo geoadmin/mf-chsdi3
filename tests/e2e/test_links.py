@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-import six
 from webtest import TestApp
 from pyramid.paster import get_app
 from unittest import skip
@@ -19,16 +16,12 @@ MAX_RETRIES = 3
 TIMEOUT = 10
 
 
-if six.PY3:
-    long = int
-
-
 class LinksChecker(TestsBase):
 
     def __enter__(self):
         def num(s):
             if s.isdigit():
-                return long(s)
+                return int(s)
             else:
                 return s
 

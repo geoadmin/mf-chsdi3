@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-import six
 from distutils.util import strtobool
 import cachetools.func
 
@@ -59,9 +56,6 @@ def add_localizer(event):
     request._LOCALE_ = helpers.locale_negotiator(request)
     localizer = get_localizer(request)
     request.lang = 'rm' if localizer.locale_name == 'fi' else localizer.locale_name
-    # TODO: clean-up when only Python 3.x and no longer 2.x is in use
-    if not six.PY3:
-        request.lang = request.lang.encode('ascii', 'ignore')
 
     def auto_translate(string):
         return localizer.translate(tsf(string))
