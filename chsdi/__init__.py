@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+import os
+from distutils.util import strtobool
 import datetime
 from pyramid.config import Configurator
 from pyramid.renderers import JSONP
@@ -35,7 +36,9 @@ class WsgiSchemeAdaptedRequest(Request):
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
-    setup_logging()
+    # Do not setup logging during unittest to avoid overwritting the unittest logging setup
+    if not strtobool(os.getenv('TEST_APP', '0')):
+        setup_logging()
 
     app_version = settings.get('app_version')
     settings['app_version'] = app_version

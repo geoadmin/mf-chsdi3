@@ -70,32 +70,6 @@ def add_localizer(event):
         request.localizer = update_localizer(request.lang, request.localizer, request.db)
 
 
-def get_payload(obj):
-    if not obj.content_length:
-        return ''
-    if obj.content_type in [
-        'application/json',
-        'application/javascript',
-        'text/javascript',
-        'text/css',
-        'text/plain',
-        'text/html'
-    ]:
-        return obj.text[:128]
-    return '<not a text format>'
-
-
-def get_request_for_logging(req):
-    data = {
-        "path": req.path,
-        "method": req.method,
-        "query_string": req.query_string,
-        "headers": dict(req.headers),
-        "payload": get_payload(req)
-    }
-    return data
-
-
 @subscriber(NewRequest)
 def log_request(event):
     setattr(event.request, 'started_at', time.time())
@@ -103,10 +77,7 @@ def log_request(event):
         route_logger.debug(
             '%s %s',
             event.request.method,
-            event.request.path_qs,
-            extra={
-                "request": get_request_for_logging(event.request)
-            }
+            event.request.path_qs
         )
 
 
@@ -128,11 +99,10 @@ def log_response(event):
             event.response.status,
             extra={
                 "duration": time.time() - started_at if started_at else '',
-                "request": get_request_for_logging(event.request),
                 "response": {
                     "status_code": event.response.status,
                     "headers": {h[0]: h[1] for h in event.response.headerlist},
-                    "payload": get_payload(event.response)
+                    "payload": helpers.get_payload(event.response)
                 }
             }
         )

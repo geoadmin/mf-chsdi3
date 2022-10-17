@@ -39,11 +39,11 @@ formatters:
       pidTid: "%(process)x/%(thread)x"
       excInfo: exc_info
       request:
-        path: request.path
-        method: request.method
-        queryString: request.query_string
-        headers: request.headers.
-        payload: request.payload
+        path: context.request.path
+        method: context.request.method
+        queryString: context.request.query_string
+        headers: context.request.headers.
+        payload: context.request.payload
       response:
         statusCode: response.status_code
         headers: response.headers.

@@ -236,13 +236,13 @@ legends: guard-VENV guard-BODID guard-WMSHOST
 
 
 .PHONY: serve
-serve: guard-VENV clean_logs local-templates build ${LOGS_DIR}
+serve: guard-VENV clean_logs local-templates build
 	@echo "${GREEN}Starting gunicorn server...${RESET}";
 	${PSERVE} development.ini --reload
 
 
 .PHONY: shell
-shell: guard-VENV clean_logs local-templates build ${LOGS_DIR}
+shell: guard-VENV clean_logs local-templates build
 	${PSHELL} development.ini
 
 
@@ -308,14 +308,14 @@ dockerpull:
 
 
 .PHONY: test
-test: guard-VENV local-templates build
+test: guard-VENV clean_logs local-templates build
 	@echo "${GREEN}Unit testings...${RESET}";
 	${PYTHON} ./scripts/pg_ready.py
-	$(NOSE) --verbosity=2 --cover-erase  tests/ -e .*e2e.*
+	$(NOSE) --verbosity=2 --cover-erase tests/ -e .*e2e.*
 
 
 .PHONY: unittest-ci
-unittest-ci: guard-VENV local-templates build
+unittest-ci: guard-VENV clean_logs local-templates build
 	@echo "${GREEN}Unit testings for CI...${RESET}";
 	mkdir -p junit-reports/{integration,functional}
 	$(NOSE) --verbosity=2 \
@@ -327,7 +327,7 @@ unittest-ci: guard-VENV local-templates build
 
 
 .PHONY: teste2e
-teste2e: guard-VENV local-templates build
+teste2e: guard-VENV clean_logs local-templates build
 	@echo "${GREEN}Pseudo E2E tests...${RESET}";
 	$(NOSE) tests/e2e/
 
