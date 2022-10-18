@@ -1,5 +1,6 @@
 from distutils.util import strtobool
 import cachetools.func
+import time
 
 from pyramid.events import NewRequest
 from pyramid.events import BeforeRender
@@ -71,12 +72,12 @@ def add_localizer(event):
 
 @subscriber(NewRequest)
 def log_request(event):
+    setattr(event.request, 'started_at', time.time())
     if route_logger.isEnabledFor(logging.INFO):
-        route_logger.info(
-            'REQUEST: %s %s - headers=%s',
+        route_logger.debug(
+            '%s %s',
             event.request.method,
-            event.request.path_qs,
-            {k: v for k, v in event.request.headers.items()}
+            event.request.path_qs
         )
 
 
@@ -90,10 +91,18 @@ def setup_response_callbacks(event):
 @subscriber(NewResponse)
 def log_response(event):
     if route_logger.isEnabledFor(logging.INFO):
+        started_at = getattr(event.request, 'started_at', None)
         route_logger.info(
-            'RESPONSE: %s %s %s - headers=%s',
+            '%s %s %s',
             event.request.method,
             event.request.path_qs,
             event.response.status,
-            {h[0]: h[1] for h in event.response.headerlist}
+            extra={
+                "duration": time.time() - started_at if started_at else '',
+                "response": {
+                    "status_code": event.response.status,
+                    "headers": {h[0]: h[1] for h in event.response.headerlist},
+                    "payload": helpers.get_payload(event.response)
+                }
+            }
         )

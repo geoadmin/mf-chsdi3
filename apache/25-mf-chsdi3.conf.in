@@ -30,10 +30,8 @@
   Include "${VHOST_DIR}/conf/*.conf"
 
   ## Logging
-  ErrorLogFormat "[%{cu}t] level=%l request_id=%L pid_tid=%P/%T - %M"
-  ErrorLogFormat request "[%{cu}t] level=%l request_id=%L headers: User-Agent=\"%{User-Agent}i\" Referer=\"%{Referer}i\" Origin=\"%{Origin}i\" Accept-Language=\"%{Accept-Language}i\" Accept-Encoding=\"%{Accept-Encoding}i\"  Accept=\"%{Accept}i\""
+  ErrorLogFormat "${APACHE_LOG_FMT}"
   ErrorLog /dev/stdout
-  CustomLog /dev/stdout "[%{%Y-%m-%dT%T}t.%{usec_frac}t] level=info request_id=%L \"%r\" status=%>s remote=%h duration=%{ms}T query=%q content-encoding=\"%{Content-Encoding}o\" content-type=\"%{Content-Type}o\" content-length=\"%{Content-Length}o\"
   LogLevel ${APACHE_LOG_LEVEL}
   ServerSignature Off
 

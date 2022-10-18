@@ -22,5 +22,9 @@ envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf
 
 cd chsdi/static/ && ln -sf "${ROBOTS_FILE}" robots.txt && cd - || echo "FAILED TO CREATE ROBOTS LINK"
 
+if [ -n "${LOGS_DIR}" ]; then
+    install -d -o "${USER}" -g "${GROUP}" -m 0777 "${LOGS_DIR}"
+fi
+
 # Execute the command provided by CMD in Dockerfile
 exec "$@"

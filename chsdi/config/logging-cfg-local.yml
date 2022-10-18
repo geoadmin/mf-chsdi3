@@ -1,0 +1,76 @@
+version: 1
+disable_existing_loggers: False # this allow to get logger at module level
+
+root:
+  handlers:
+    - console
+    - file-standard
+    - file-json
+  level: DEBUG
+  propagate: True
+
+# Remove all handlers for werkzeug log entries - prevents duplicated logging
+loggers:
+  sqlalchemy:
+    level: WARNING
+
+filters:
+  isotime:
+    (): logging_utilities.filters.TimeAttribute
+    isotime: False
+    utc_isotime: True
+
+formatters:
+  standard:
+    format: "[%(asctime)s] %(levelname)-8s - %(name)-26s : %(message)s"
+  json:
+    (): logging_utilities.formatters.json_formatter.JsonFormatter
+    add_always_extra: False
+    filter_attributes:
+      - utc_isotime
+    remove_empty: True
+    ignore_missing: True
+    fmt:
+      time: utc_isotime
+      level: levelname
+      logger: name
+      module: module
+      function: funcName
+      pidTid: "%(process)x/%(thread)x"
+      excInfo: exc_info
+      request:
+        path: context.request.path
+        method: context.request.method
+        queryString: context.request.query_string
+        headers: context.request.headers.
+        payload: context.request.payload
+      response:
+        statusCode: response.status_code
+        headers: response.headers.
+        duration: "%(duration)s"
+        payload: response.payload
+      message: message
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: standard
+    stream: ext://sys.stdout
+    filters:
+      - isotime
+  file-standard:
+    level: DEBUG
+    class: logging.FileHandler
+    formatter: standard
+    filename: ${LOGS_DIR}/server-standard-logs.txt
+    mode: w
+    filters:
+      - isotime
+  file-json:
+    level: DEBUG
+    class: logging.FileHandler
+    formatter: json
+    filename: ${LOGS_DIR}/server-json-logs.json
+    mode: w
+    filters:
+      - isotime

@@ -556,3 +556,19 @@ def sanitize_user_input_accents(string):
 def anonymize_string(text, length = None, replacement='*'):
     txt_length = len(text) if length is None else length
     return text.replace(text[0:], replacement * txt_length)
+
+
+def get_payload(obj, trim=128):
+    '''Get payload in text of a request or response object.'''
+    if not obj.content_length:
+        return ''
+    if obj.content_type in [
+        'application/json',
+        'application/javascript',
+        'text/javascript',
+        'text/css',
+        'text/plain',
+        'text/html'
+    ]:
+        return obj.text[:trim]
+    return '<not a text format>'
