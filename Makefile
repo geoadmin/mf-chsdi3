@@ -69,6 +69,7 @@ DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
 AWS_REGION_ECR := eu-central-1
 AUTHOR=$(USER)
 
+
 # Git metadata
 GIT_HASH ?= $(shell git rev-parse HEAD)
 GIT_HASH_SHORT ?= $(shell git rev-parse --short HEAD)

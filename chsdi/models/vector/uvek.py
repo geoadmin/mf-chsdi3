@@ -3960,3 +3960,74 @@ class WaermepotentialGewaesser (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.waermepotential-gewaesser', WaermepotentialGewaesser)
+
+
+class ElektrischeAnlagenUeber36Line (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'elektrische_anlagen_ueber_36_line'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_line.mako'
+    __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
+    __label__ = 'fid'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    fid = Column('id', Unicode)
+    bezeichnung = Column('bezeichnung', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    stromnetztyp = Column('stromnetztyp', Unicode)
+    leitungtyp = Column('leitungtyp', Unicode)
+    spannung = Column('spannung', Unicode)
+    spannungandere = Column('spannungandere', Unicode)
+    frequenz = Column('frequenz', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(ElektrischeAnlagenUeber36Line.__bodId__, ElektrischeAnlagenUeber36Line)
+
+
+class ElektrischeAnlagenUeber36Point (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'elektrische_anlagen_ueber_36_point'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_point.mako'
+    __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
+    __label__ = 'fid'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    fid = Column('id', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    stromnetztyp = Column('stromnetztyp', Unicode)
+    masttyp = Column('masttyp', Unicode)
+    hoehe = Column('hoehe', Integer)
+    the_geom = Column(Geometry2D)
+
+register(ElektrischeAnlagenUeber36Point.__bodId__, ElektrischeAnlagenUeber36Point)
+
+
+class ElektrischeAnlagenUeber36StationPoly (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'elektrische_anlagen_ueber_36_station_poly'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_station_poly.mako'
+    __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
+    __label__ = 'fid'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    fid = Column('id', Unicode)
+    bezeichnung = Column('bezeichnung', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    stromnetztyp = Column('stromnetztyp', Unicode)
+    stationtyp = Column('stationtyp', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(ElektrischeAnlagenUeber36StationPoly.__bodId__, ElektrischeAnlagenUeber36StationPoly)
+
+
+class ElektrischeAnlagenUeber36StationPoint (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'elektrische_anlagen_ueber_36_station_point'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_station_point.mako'
+    __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
+    __label__ = 'fid'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    fid = Column('id', Unicode)
+    bezeichnung = Column('bezeichnung', Unicode)
+    eigentuemer = Column('eigentuemer', Unicode)
+    stromnetztyp = Column('stromnetztyp', Unicode)
+    stationtyp = Column('stationtyp', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(ElektrischeAnlagenUeber36StationPoint.__bodId__, ElektrischeAnlagenUeber36StationPoint)
