@@ -51,6 +51,7 @@ class TestsBase(TestCase):
 
     def setUp(self):
         from pyramid.paster import get_app, get_appsettings
+        os.environ['TEST_APP'] = '1'
         dir_path = os.path.dirname(os.path.realpath(__file__))
         inifile = os.path.realpath(os.path.join(dir_path, '../..', 'development.ini'))
         app = get_app(inifile)
