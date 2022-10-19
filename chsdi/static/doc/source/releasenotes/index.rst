@@ -27,6 +27,7 @@ API & applications
 - Bug fixes
 - Announcement:
 - the layers **ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal** and **ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet** will be removed from FSDI services with the release on October 26th 2022
+- the WMS of the layer **ch.bfe.ladestellen-elektromobilitaet** will be removed from FSDI services with the release on December 14th 2022
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-09-07-rc1...2022-10-26-rc1>`__
 
 `MAP <//map.geo.admin.ch>`__
