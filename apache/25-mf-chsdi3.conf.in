@@ -3,21 +3,21 @@
 # Managed by Puppet
 # ************************************
 
-<VirtualHost *:${APACHE_PORT}>
+<VirtualHost *:${HTTP_PORT}>
   # ServerName mf-chsdi3
 
   ## Vhost docroot
-  DocumentRoot "/var/www/vhosts/mf-chsdi3/htdocs"
+  DocumentRoot "${VHOST_DIR}/htdocs"
 
-  ## Directories, there should at least be a declaration for /var/www/vhosts/mf-chsdi3/htdocs
+  ## Directories, there should at least be a declaration for ${VHOST_DIR}/htdocs
 
-  <Directory "/var/www/vhosts/mf-chsdi3/htdocs">
+  <Directory "${VHOST_DIR}/htdocs">
     Options +Indexes +FollowSymLinks +MultiViews
     AllowOverride None
     Require all granted
   </Directory>
 
-  <Directory "/var/www/vhosts/mf-chsdi3/cgi-bin">
+  <Directory "${VHOST_DIR}/cgi-bin">
     Options +ExecCGI
     AllowOverride None
     Require all granted
@@ -27,19 +27,17 @@
   </Directory>
 
   ## Load additional static includes
-  Include "/var/www/vhosts/mf-chsdi3/conf/*.conf"
+  Include "${VHOST_DIR}/conf/*.conf"
 
   ## Logging
-  ErrorLogFormat "[%{cu}t] level=%l request_id=%L pid_tid=%P/%T - %M"
-  ErrorLogFormat request "[%{cu}t] level=%l request_id=%L headers: User-Agent=\"%{User-Agent}i\" Referer=\"%{Referer}i\" Origin=\"%{Origin}i\" Accept-Language=\"%{Accept-Language}i\" Accept-Encoding=\"%{Accept-Encoding}i\"  Accept=\"%{Accept}i\""
+  ErrorLogFormat "${APACHE_LOG_FMT}"
   ErrorLog /dev/stdout
-  CustomLog /dev/stdout "[%{%Y-%m-%dT%T}t.%{usec_frac}t] level=info request_id=%L \"%r\" status=%>s remote=%h duration=%{ms}T query=%q content-encoding=\"%{Content-Encoding}o\" content-type=\"%{Content-Type}o\" content-length=\"%{Content-Length}o\"
   LogLevel ${APACHE_LOG_LEVEL}
   ServerSignature Off
 
 
   ## Script alias directives
-  ScriptAlias /cgi-bin "/var/www/vhosts/mf-chsdi3/cgi-bin/"
+  ScriptAlias /cgi-bin "${VHOST_DIR}/cgi-bin/"
 
   ## Server aliases
   # ServerAlias api.geo.admin.ch

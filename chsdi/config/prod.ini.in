@@ -1,0 +1,9 @@
+###
+# pylons app configuration
+# http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/environment.html
+#
+# Use this file exclusively on docker/frankfurt/python3 and k8s int and prod environment
+
+[app:main]
+use = config:base.ini
+

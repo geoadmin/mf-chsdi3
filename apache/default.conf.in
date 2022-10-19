@@ -1,16 +1,10 @@
-<VirtualHost *:${APACHE_PORT}>
+<VirtualHost *:${HTTP_PORT}>
 
     RewriteEngine On
 
     ServerName localhost
 
     DocumentRoot /var/www/html
-
-    LogLevel ${APACHE_LOG_LEVEL}
-    ErrorLog /dev/stdout
-    # CustomLog /dev/null combined
-    CustomLog /dev/stdout  combined
-
 
     RewriteRule ^/$ /static/index.html [R=301]
 

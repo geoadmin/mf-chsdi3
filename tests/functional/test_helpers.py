@@ -2,42 +2,23 @@
 
 import unittest
 from pyramid import testing
-from pyramid.threadlocal import get_current_registry
 from chsdi.lib.helpers import (
     make_agnostic, sanitize_url, _transform_point,
     check_even, format_search_text, remove_accents, escape_sphinx_syntax,
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
-    versioned, parse_box2d, center_from_box2d, format_scale,
+    parse_box2d, center_from_box2d, format_scale,
     parse_date_string, parse_date_datenstand, int_with_apostrophe, get_loaderjs_url,
-    get_proj_from_srid, get_precision_for_proj, _round_bbox_coordinates, _round_shape_coordinates,
+    get_crs_from_srid, get_precision_for_proj, _round_bbox_coordinates, _round_shape_coordinates,
     round_geometry_coordinates, _transform_coordinates, _transform_shape, transform_round_geometry
 )
 from shapely.geometry import Point, Polygon
 from shapely.geometry import mapping
 from numpy.testing import assert_almost_equal
 
-# TODO: clean-up when only Python 3.x and no longer 2.x is in use
-from six.moves.urllib.parse import urljoin
+from urllib.parse import urljoin
 
 
 class Test_Helpers(unittest.TestCase):
-
-    def test_versioned(self):
-        registry = get_current_registry()
-
-        registry.settings = {}
-
-        registry.settings['app_version'] = None
-        registry.settings['entry_path'] = '/ltxxx'
-        path = 'https://api3.geo.admin.ch/ltxxx'
-        versioned_path = versioned(path)
-        self.assertEqual(path, versioned_path)
-
-        registry.settings['app_version'] = '1234'
-        registry.settings['entry_path'] = '/ltxxx'
-        path = 'https://api3.geo.admin.ch/ltxxx/?dummy=toto'
-        versioned_path = versioned(path)
-        self.assertEqual(versioned_path, '//api3.geo.admin.ch/ltxxx/1234/?dummy=toto')
 
     def test_make_agnostic(self):
         url = 'http://foo.com'
@@ -249,11 +230,11 @@ class Test_Helpers(unittest.TestCase):
         self.assertEqual(url, '%s/loader.js?version=3.18.2' % api_url)
         testing.tearDown()
 
-    def test_get_proj_from_srid(self):
+    def test_get_crs_from_srid(self):
         srid = 21781
-        proj = get_proj_from_srid(srid)
-        self.assertFalse(proj.is_latlong())
-        self.assertEqual(proj.srs, '+units=m +init=epsg:21781 ')
+        crs = get_crs_from_srid(srid)
+        self.assertFalse(crs.is_geographic)
+        self.assertEqual(crs.srs, 'EPSG:21781')
 
     def test__transform_point(self):
         srid_from = 4326

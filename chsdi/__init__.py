@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+import os
+from distutils.util import strtobool
 import datetime
 from pyramid.config import Configurator
 from pyramid.renderers import JSONP
@@ -7,6 +8,7 @@ from pyramid.request import Request
 from sqlalchemy.orm import scoped_session, sessionmaker
 from papyrus.renderers import GeoJSON
 
+from chsdi.logging_setup import setup_logging
 from chsdi.renderers import EsriJSON, CSVRenderer
 from chsdi.models import initialize_sql
 
@@ -23,10 +25,6 @@ def db(request):
 
 
 class WsgiSchemeAdaptedRequest(Request):
-    # TODO: remove this class, once apache is removed
-    # (https://jira.swisstopo.ch/browse/BGDIINF_SB-2486).
-    # Afterwards this can be solved similarly to our flask services using
-    # e.g. gunicorn.
     def __init__(self, environ, **kwargs):
         if "HTTP_CLOUDFRONT_FORWARDED_PROTO" in environ:
             environ["wsgi.url_scheme"] = environ["HTTP_CLOUDFRONT_FORWARDED_PROTO"]
@@ -38,12 +36,15 @@ class WsgiSchemeAdaptedRequest(Request):
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
+    # Do not setup logging during unittest to avoid overwritting the unittest logging setup
+    if not strtobool(os.getenv('TEST_APP', '0')):
+        setup_logging()
+
     app_version = settings.get('app_version')
     settings['app_version'] = app_version
-    # TODO: request_factory can be removed, once apache is removed, see few
-    # lines above.
     config = Configurator(settings=settings, request_factory=WsgiSchemeAdaptedRequest)
     config.include('pyramid_mako')
+    config.include('akhet.static')
 
     # configure 'locale' dir as the translation dir for chsdi app
     config.add_translation_dirs('chsdi:locale/')
@@ -90,24 +91,28 @@ def main(global_config, **settings):
     config.add_route('historicalmaps', '/historicalmaps/viewer.html')
     config.add_route('checker', '/checker')
     config.add_route('checker_dev', '/checker_dev')
-    config.add_route('downloadkml', '/downloadkml')
     config.add_route('translations', '/rest/services/translations')
 
     config.add_route('stationboard', '/stationboard/stops/{id}')
     config.add_route('faqlist', '/rest/services/{map}/faqlist')
     config.add_route('color', '/color/{r},{g},{b}/{image}')
 
+    # Static route
+    static_max_age = int(settings['static_max_age']) if settings['static_max_age'] else None
+    config.add_static_route('chsdi', 'static', cache_max_age=static_max_age)
+
     # Some views for specific routes
     config.add_view(route_name='dev', renderer='chsdi:templates/index.mako')
     config.add_view(route_name='testi18n', renderer='chsdi:templates/testi18n.mako')
 
     # static view definitions
-    config.add_static_view('static', 'chsdi:static')
-    config.add_static_view('images', 'chsdi:static/images')
-    config.add_static_view('examples', 'chsdi:static/doc/examples')
-    config.add_static_view('vectorStyles', 'chsdi:static/vectorStyles')
+    config.add_static_view('static', 'chsdi:static', cache_max_age=static_max_age)
+    config.add_static_view('images', 'chsdi:static/images', cache_max_age=static_max_age)
+    config.add_static_view('js', 'chsdi:static/js', cache_max_age=static_max_age)
+    config.add_static_view('examples', 'chsdi:static/doc/examples', cache_max_age=static_max_age)
+    config.add_static_view('vectorStyles', 'chsdi:static/vectorStyles', cache_max_age=static_max_age)
     # keep this the last one
-    config.add_static_view('/', 'chsdi:static/doc/build')
+    config.add_static_view('/', 'chsdi:static/doc/build', cache_max_age=static_max_age)
 
     # required to find code decorated by view_config
     config.scan(ignore=['chsdi.tests', 'chsdi.models.bod'])

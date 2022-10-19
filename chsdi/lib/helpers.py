@@ -1,42 +1,31 @@
 # -*- coding: utf-8 -*-
 
+import threading
 import re
 import math
 import requests
 import datetime
 import gzip
-import six
 import unidecode
 from decimal import Decimal
 from past.utils import old_div
 
-from six.moves import zip, reduce, zip_longest
 from itertools import chain
+from itertools import zip_longest
 
-from functools import partial
+import cachetools
 from pyramid.threadlocal import get_current_registry
 from pyramid.i18n import get_locale_name
 from pyramid.url import route_url
 from pyramid.httpexceptions import HTTPBadRequest, HTTPRequestTimeout
 import unicodedata
-try:
-    from urlparse import urlparse, urlunparse, urljoin
-except ImportError:
-    from urllib.parse import urlparse, urlunparse, urljoin
 
-try:
-    from urllib import quote
-except ImportError:
-    from urllib.parse import quote
-
+from urllib.parse import urlparse, urljoin, quote
+from functools import reduce
 import xml.etree.ElementTree as etree
-from pyproj import Proj, transform as proj_transform
+from pyproj import CRS, Transformer
 from requests.exceptions import ConnectionError, Timeout, RequestException
-# TODO: clean-up when only Python 3.x and no longer 2.x is in use
-try:
-    from requests.packages.urllib3.exceptions import InsecureRequestWarning
-except ImportError:
-    from urllib3.exceptions import InsecureRequestWarning
+from urllib3.exceptions import InsecureRequestWarning
 from shapely.ops import transform as shape_transform
 from shapely.wkt import dumps as shape_dumps, loads as shape_loads
 from shapely.geometry.base import BaseGeometry
@@ -44,18 +33,12 @@ from chsdi.lib.parser import WhereParser
 from chsdi.lib.exceptions import QueryParseException, CoordinatesTransformationException
 import logging
 
-if six.PY3:
-    unicode = str
-    long = int
-
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 log = logging.getLogger(__name__)
 
 REQUESTS_DEFAULT_TIMEOUT = 5
 
-
-PROJECTIONS = {}
 
 # Rounding to abount 0.1 meters
 COORDINATES_DECIMALS_FOR_METRIC_PROJ = 1
@@ -74,24 +57,6 @@ def to_utf8(data):
 
 def ilen(iterable):
     return reduce(lambda sum, element: sum + 1, iterable, 0)
-
-
-def versioned(path):
-    version = get_current_registry().settings['app_version']
-    entry_path = get_current_registry().settings['entry_path'] + '/'
-    if version is not None:
-        agnosticPath = make_agnostic(path)
-        parsedURL = urlparse(agnosticPath)
-        # we don't do version when behind pserve (at localhost)
-        if 'localhost:' not in parsedURL.netloc:
-            parts = parsedURL.path.split(entry_path, 1)
-            if len(parts) > 1:
-                parsedURL = parsedURL._replace(
-                    path=parts[0] + entry_path + version + '/' + parts[1])
-                agnosticPath = urlunparse(parsedURL)
-        return agnosticPath
-    else:
-        return path
 
 
 def make_agnostic(path):
@@ -246,7 +211,7 @@ def format_query(model, value, lang):
                 log.error(error_msg)
                 raise QueryParseException(error_msg)
 
-            val = val.replace(prop, unicode(column.name))
+            val = val.replace(prop, str(column.name))
             res.append(val)
         return res
 
@@ -263,7 +228,7 @@ def format_query(model, value, lang):
         full = [x for x in chain.from_iterable(zip_longest(statements, operators))
             if x is not None]
 
-        return unicode(" ".join(full))
+        return " ".join(full)
 
     try:
         w = WhereParser(value)
@@ -345,19 +310,20 @@ def imagesize_from_metafile(tileUrlBasePath, bvnummer):
     return (width, height)
 
 
-def get_proj_from_srid(srid):
-    if srid in PROJECTIONS:
-        return PROJECTIONS[srid]
-    else:
-        proj = Proj(init='EPSG:{}'.format(srid))
-        PROJECTIONS[srid] = proj
-        return proj
+@cachetools.cached(cache={}, lock=threading.Lock())
+def get_crs_from_srid(srid):
+    return CRS.from_string('EPSG:{}'.format(srid))
+
+
+@cachetools.cached(cache={}, lock=threading.Lock())
+def get_transformer(srid_from, srid_to):
+    return Transformer.from_crs(srid_from, srid_to, always_xy=True)
 
 
 def get_precision_for_proj(srid):
     precision = COORDINATES_DECIMALS_FOR_METRIC_PROJ
-    proj = get_proj_from_srid(srid)
-    if proj.is_latlong():
+    crs = get_crs_from_srid(srid)
+    if crs.is_geographic:
         precision = COORDINATES_DECIMALS_FOR_DEGREE_PROJ
     return precision
 
@@ -389,9 +355,8 @@ def round_geometry_coordinates(geom, precision=None):
 
 
 def _transform_point(coords, srid_from, srid_to):
-    proj_in = get_proj_from_srid(srid_from)
-    proj_out = get_proj_from_srid(srid_to)
-    return proj_transform(proj_in, proj_out, coords[0], coords[1])
+    transformer = get_transformer(srid_from, srid_to)
+    return transformer.transform(coords[0], coords[1])
 
 
 def transform_round_geometry(geom, srid_from, srid_to, rounding=True):
@@ -426,12 +391,9 @@ def _transform_coordinates(coordinates, srid_from, srid_to, rounding=True):
 
 
 def _transform_shape(geom, srid_from, srid_to, rounding=True):
-    proj_in = get_proj_from_srid(srid_from)
-    proj_out = get_proj_from_srid(srid_to)
+    transformer = get_transformer(srid_from, srid_to)
 
-    projection_func = partial(proj_transform, proj_in, proj_out)
-
-    new_geom = shape_transform(projection_func, geom)
+    new_geom = shape_transform(transformer.transform, geom)
     if rounding:
         precision = get_precision_for_proj(srid_to)
         return _round_shape_coordinates(new_geom, precision=precision)
@@ -520,7 +482,6 @@ def format_scale(scale):
     scale_str = str(scale)
     n = ''
     while len(scale_str) > 3:
-        # TODO: clean-up when only Python 3.x and no longer 2.x is in use
         scale_prov = old_div(int(float(scale_str)), 1000)
         n = n + "'000"
         scale_str = str(scale_prov)
@@ -529,7 +490,7 @@ def format_scale(scale):
 
 
 def int_with_apostrophe(x):
-    if type(x) not in [type(0), type(long(0))]:
+    if type(x) not in [type(0), type(int(0))]:
         return '-'
     if x < 0:
         return '-' + int_with_apostrophe(-x)
@@ -545,13 +506,7 @@ def get_loaderjs_url(request, version='3.6.0'):
 
 
 def decompress_gzipped_string(streaming_body):
-    # TODO: clean-up when only Python 3.x and no longer 2.x is in use
-    if six.PY2:
-        string_file = six.StringIO(streaming_body.read())
-        gzip_file = gzip.GzipFile(fileobj=string_file, mode='r', compresslevel=5)
-        return gzip_file.read().decode('utf-8')
-    else:
-        return gzip.decompress(streaming_body.read()).decode()
+    return gzip.decompress(streaming_body.read()).decode()
 
 
 def unnacent_where_text(where_string, model):
@@ -601,3 +556,19 @@ def sanitize_user_input_accents(string):
 def anonymize_string(text, length = None, replacement='*'):
     txt_length = len(text) if length is None else length
     return text.replace(text[0:], replacement * txt_length)
+
+
+def get_payload(obj, trim=128):
+    '''Get payload in text of a request or response object.'''
+    if not obj.content_length:
+        return ''
+    if obj.content_type in [
+        'application/json',
+        'application/javascript',
+        'text/javascript',
+        'text/css',
+        'text/plain',
+        'text/html'
+    ]:
+        return obj.text[:trim]
+    return '<not a text format>'

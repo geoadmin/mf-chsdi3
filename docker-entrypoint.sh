@@ -4,18 +4,27 @@
 : "${DBPORT:?Variable DBPORT not set or empty}"
 : "${PGUSER:?Variable PGUSER not set or empty}"
 
+# Get the LoadModule directive
+LOAD_WSGI_MODULE_DIRECTIVE=$("${INSTALL_DIR}/.venv/bin/python" "${INSTALL_DIR}/.venv/bin/mod_wsgi-express" module-config | head -1)
+export LOAD_WSGI_MODULE_DIRECTIVE
 
-envsubst < pyramid-config/base.ini.in > base.ini
-envsubst < pyramid-config/dev.ini.in > development.ini
-envsubst < pyramid-config/prod.ini.in > production.ini
+envsubst < chsdi/config/base.ini.in > base.ini
+envsubst < chsdi/config/dev.ini.in > development.ini
+envsubst < chsdi/config/prod.ini.in > production.ini
 
-envsubst < 25-mf-chsdi3.conf.in > /etc/apache2/sites-available/000-default.conf
+envsubst < apache/25-mf-chsdi3.conf.in > /etc/apache2/sites-available/000-default.conf
 
 envsubst < apache/application.wsgi.in > apache/application.wsgi
 
 envsubst < apache/ports.conf.in > /etc/apache2/ports.conf
 
 envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf
+
+cd chsdi/static/ && ln -sf "${ROBOTS_FILE}" robots.txt && cd - || echo "FAILED TO CREATE ROBOTS LINK"
+
+if [ -n "${LOGS_DIR}" ]; then
+    install -d -o "${USER}" -g "${GROUP}" -m 0777 "${LOGS_DIR}"
+fi
 
 # Execute the command provided by CMD in Dockerfile
 exec "$@"

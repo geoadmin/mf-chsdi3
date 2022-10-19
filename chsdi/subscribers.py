@@ -1,8 +1,6 @@
-# -*- coding: utf-8 -*-
-
-import six
 from distutils.util import strtobool
 import cachetools.func
+import time
 
 from pyramid.events import NewRequest
 from pyramid.events import BeforeRender
@@ -13,6 +11,7 @@ from chsdi.lib import helpers
 from chsdi.models.bod import get_translations
 from chsdi.response_callbacks import add_default_cache_control
 from chsdi.response_callbacks import add_cors_header
+from chsdi.response_callbacks import add_cross_domain_policy
 
 
 import logging
@@ -58,9 +57,6 @@ def add_localizer(event):
     request._LOCALE_ = helpers.locale_negotiator(request)
     localizer = get_localizer(request)
     request.lang = 'rm' if localizer.locale_name == 'fi' else localizer.locale_name
-    # TODO: clean-up when only Python 3.x and no longer 2.x is in use
-    if not six.PY3:
-        request.lang = request.lang.encode('ascii', 'ignore')
 
     def auto_translate(string):
         return localizer.translate(tsf(string))
@@ -76,12 +72,12 @@ def add_localizer(event):
 
 @subscriber(NewRequest)
 def log_request(event):
+    setattr(event.request, 'started_at', time.time())
     if route_logger.isEnabledFor(logging.INFO):
-        route_logger.info(
-            'REQUEST: %s %s - headers=%s',
+        route_logger.debug(
+            '%s %s',
             event.request.method,
-            event.request.path_qs,
-            {k: v for k, v in event.request.headers.items()}
+            event.request.path_qs
         )
 
 
@@ -89,15 +85,24 @@ def log_request(event):
 def setup_response_callbacks(event):
     event.request.add_response_callback(add_default_cache_control)
     event.request.add_response_callback(add_cors_header)
+    event.request.add_response_callback(add_cross_domain_policy)
 
 
 @subscriber(NewResponse)
 def log_response(event):
     if route_logger.isEnabledFor(logging.INFO):
+        started_at = getattr(event.request, 'started_at', None)
         route_logger.info(
-            'RESPONSE: %s %s %s - headers=%s',
+            '%s %s %s',
             event.request.method,
             event.request.path_qs,
             event.response.status,
-            {h[0]: h[1] for h in event.response.headerlist}
+            extra={
+                "duration": time.time() - started_at if started_at else '',
+                "response": {
+                    "status_code": event.response.status,
+                    "headers": {h[0]: h[1] for h in event.response.headerlist},
+                    "payload": helpers.get_payload(event.response)
+                }
+            }
         )

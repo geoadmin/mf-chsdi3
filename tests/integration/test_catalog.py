@@ -67,7 +67,7 @@ class TestCatalogService(TestsBase):
 
     def test_all_catalogs(self):
 
-        def existInList(node, l):
+        def existInList(node, l):  # noqa: E741
             found = False
             for entry in l:
                 if entry.id == node.get('id'):
@@ -109,7 +109,7 @@ class TestCatalogService(TestsBase):
 
     def test_catalogs_with_layersconfig(self):
 
-        def existInList(node, l):
+        def existInList(node, l):  # noqa: E741
             if node.get('category') != 'layer':
                 return True
 

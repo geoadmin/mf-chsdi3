@@ -1,0 +1,31 @@
+###
+# pylons app configuration
+# http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/environment.html
+#
+# Use this file exclusively on docker/frankfurt/python3 and k8s dev environment
+
+[app:main]
+use = config:base.ini
+
+pyramid.reload_templates = true
+pyramid.debug_authorization = true
+pyramid.debug_notfound = true
+pyramid.debug_routematch = true
+pyramid.prevent_http_cache = true
+pyramid.includes =
+    pyramid_debugtoolbar
+mako.imports =
+    import logging
+
+# By default, the toolbar only appears for clients from IP addresses
+# '127.0.0.1' and '::1'.
+debugtoolbar.hosts = 0.0.0.0/0
+
+###
+# Local wsgi development server configuration
+###
+
+[server:main]
+use = egg:waitress#main
+host = 0.0.0.0
+port = ${HTTP_PORT}
