@@ -802,6 +802,7 @@ class GridstandTemplate:
     tileid = Column('tileid', Unicode)
     lk_name = Column('lk_name', Unicode)
     datenstand = Column('release', Integer)
+    releasekey = Column('releasekey', Unicode)
     the_geom = Column(Geometry2D)
 
 
