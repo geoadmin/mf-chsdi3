@@ -25,9 +25,10 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
-- Announcement:
-- the layers **ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal** and **ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet** will be removed from FSDI services with the release on October 26th 2022
+- Announcements:
+- the layer **ch.bazl.einschraenkungen-drohnen** will change its **data and representation model** with the release on December 14th 2022. New attributes on this layer (**current attributes won't be supported anymore!**): zone_name_de, zone_name_fr, zone_name_it, zone_name_en, zone_restriction_de, zone_restriction_fr, zone_restriction_it, zone_restriction_en, zone_message_de, zone_message_fr, zone_message_it, zone_message_en, auth_url, auth_name, auth_contact, auth_service, auth_email, auth_phone, auth_intervalbefore, air_vol_lower_limit, air_vol_lower_vref, air_vol_upper_limit, air_vol_upper_vref, time_permanent, time_start, time_end, period_day, period_start, period_end. Further information: `model description <https://www.bazl.admin.ch/bazl/de/home/themen/geoinformation_statistik/geoinformation/geofachdaten/uaszones.html>`__
 - the WMS of the layer **ch.bfe.ladestellen-elektromobilitaet** will be removed from FSDI services with the release on December 14th 2022
+- the layers **ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal** and **ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet** have been removed from FSDI services as previously announced
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-09-07-rc1...2022-10-26-rc1>`__
 
 `MAP <//map.geo.admin.ch>`__
