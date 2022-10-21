@@ -6,7 +6,6 @@
     zone_name = 'zone_name_%s' % lang
     zone_restriction = 'zone_restriction_%s' % lang
     zone_message = 'zone_message_%s' % lang
-    auth_url = 'auth_url_%s' % lang
   %>
   <tr>
     <td class="cell-left">${_('ch.bazl.gebietsbeschraenkungen-drohnen.zone_name')}</td>
@@ -22,7 +21,7 @@
   </tr>
   <tr>
     <td>${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_url')}</td>
-    <td><a href="${c['attributes'][auth_url]}" target="_blank">${_('ch.bazl.gebietsbeschraenkungen-drohnen.link')}</a>
+    <td><a href="${c['attributes']['auth_url']}" target="_blank">${_('ch.bazl.gebietsbeschraenkungen-drohnen.link')}</a>
   </tr>
 </%def>
 
@@ -32,12 +31,6 @@
     zone_name = 'zone_name_%s' % lang
     zone_restriction = 'zone_restriction_%s' % lang
     zone_message = 'zone_message_%s' % lang
-    auth_url = 'auth_url_%s' % lang
-    auth_name = 'auth_name_%s' % lang
-    auth_contact = 'auth_contact_%s' % lang
-    auth_service = 'auth_service_%s' % lang
-    auth_email = 'auth_email_%s' % lang
-    auth_phone = 'auth_phone_%s' % lang
     period_day = ' / '.join(c['attributes']['period_day']) if c['attributes']['period_day'] else '-'
     period_start = ' / '.join(c['attributes']['period_start']) if c['attributes']['period_start'] else '-'
     period_end = ' / '.join(c['attributes']['period_end']) if c['attributes']['period_end'] else '-'
@@ -57,27 +50,27 @@
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_url')}</td>
-      <td class="cell-meta"><a href="${c['attributes'][auth_url]}" target="_blank">${_('ch.bazl.gebietsbeschraenkungen-drohnen.link')}</a>
+      <td class="cell-meta"><a href="${c['attributes']['auth_url']}" target="_blank">${_('ch.bazl.gebietsbeschraenkungen-drohnen.link')}</a>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_name')}</td>
-    <td class="cell-meta">${c['attributes'][auth_name] or '-'}</td>
+    <td class="cell-meta">${c['attributes']['auth_name'] or '-'}</td>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_service')}</td>
-    <td class="cell-meta">${c['attributes'][auth_service] or '-'}</td>
+    <td class="cell-meta">${c['attributes']['auth_service'] or '-'}</td>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_contactname')}</td>
-    <td class="cell-meta">${c['attributes'][auth_contact] or '-'}</td>
+    <td class="cell-meta">${c['attributes']['auth_contact'] or '-'}</td>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_email')}</td>
-    <td class="cell-meta">${c['attributes'][auth_email] or '-'}</td>
+    <td class="cell-meta">${c['attributes']['auth_email'] or '-'}</td>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_phone')}</td>
-    <td class="cell-meta">${c['attributes'][auth_phone] or '-'}</td>
+    <td class="cell-meta">${c['attributes']['auth_phone'] or '-'}</td>
     </tr>
     <tr>
     <td class="cell-meta">${_('ch.bazl.gebietsbeschraenkungen-drohnen.auth_intervalbefore')}</td>
