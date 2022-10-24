@@ -1650,7 +1650,7 @@ class GebietsbeschraenkungenDrohnen(Base, Vector):
     zone_message_fr = Column('zone_message_fr', Unicode)
     zone_message_it = Column('zone_message_it', Unicode)
     zone_message_en = Column('zone_message_en', Unicode)
-    auth_url_de = Column('auth_url', Unicode)
+    auth_url = Column('auth_url', Unicode)
     auth_name = Column('auth_name', Unicode)
     auth_contact = Column('auth_contact', Unicode)
     auth_service = Column('auth_service', Unicode)
