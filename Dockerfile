@@ -37,7 +37,7 @@ ENV GROUP geodata
 
 # Setup default logging levels
 ENV APACHE_LOG_LEVEL=info
-ENV APACHE_LOG_FMT=%M
+ENV APACHE_LOG_FMT="[%{cu}t] [%l] [pid/tid %P/%T] [%m] [ID %L] %M"
 
 # REQUIREMENTS NOTE:
 #  - gettext-base is required for envsubst in docker-entrypoint.sh
