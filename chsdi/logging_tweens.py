@@ -10,7 +10,7 @@ def logging_context_tween(handler, registry):
             "request": {
                 "method": request.method,
                 "path": request.path,
-                "queryString": request.query_string,
+                "query_string": request.query_string,
                 "headers": dict(request.headers),
                 "payload": helpers.get_payload(request)
             }
