@@ -344,7 +344,8 @@ teste2e: guard-VENV clean_logs local-templates build
 	@echo "${GREEN}Pseudo E2E tests...${RESET}";
 	${NOSE} --verbose \
 		-c tests/nose2_tests_e2e.cfg
-		-s tests/e2e
+		-s tests/e2e \
+		-N 7
 
 # TODO: Replace through yapf, once the old vhost infra is replaced
 .PHONY: lint

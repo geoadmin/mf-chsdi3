@@ -33,7 +33,6 @@ print/WEB-INF/web.xml
 app*.log
 local
 junit-results
-nose2-junit.xml
 junit-reports
 build
 docker*.yml
