@@ -329,7 +329,7 @@ test: guard-VENV clean_logs local-templates build
 .PHONY: unittest-ci
 unittest-ci: guard-VENV clean_logs local-templates build
 	@echo "${GREEN}Unit testings for CI...${RESET}";
-	mkdir -p tests/reports
+	mkdir -p $(CURRENT_DIRECTORY)/tests/reports
 	${NOSE} --verbose \
 		-c tests/nose2_tests_functional.cfg \
 		-s tests/functional
@@ -343,7 +343,7 @@ teste2e: guard-VENV clean_logs local-templates build
 	mkdir -p $(CURRENT_DIRECTORY)/tests/reports
 	@echo "${GREEN}Pseudo E2E tests...${RESET}";
 	${NOSE} --verbose \
-		- c tests/nose2_tests_e2e.cfg
+		-c tests/nose2_tests_e2e.cfg
 		-s tests/e2e
 
 # TODO: Replace through yapf, once the old vhost infra is replaced

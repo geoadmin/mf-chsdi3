@@ -40,3 +40,4 @@ docker*.yml
 _pg_pass
 package-lock.json
 logs/
+/tests/reports/
