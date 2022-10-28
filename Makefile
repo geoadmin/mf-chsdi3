@@ -309,7 +309,7 @@ dockerpull:
 
 .PHONY: test
 test: guard-VENV clean_logs local-templates build
-	mkdir -p $(CURRENT_DIRECTORY)/tests/reports
+	mkdir -p junit-reports/integration
 	@echo "${GREEN}Unit testing (integration tests)...${RESET}";
 	${PYTHON} ./scripts/pg_ready.py
 	${NOSE} \
@@ -318,6 +318,7 @@ test: guard-VENV clean_logs local-templates build
 	--verbose
 	-N 7
 	@echo "${GREEN}Unit testing (functional tests)...${RESET}";
+	mkdir -p junit-reports/functional
 	${PYTHON} ./scripts/pg_ready.py
 	${NOSE} \
 	-c tests/nose2_tests_functional.cfg \
@@ -329,7 +330,8 @@ test: guard-VENV clean_logs local-templates build
 .PHONY: unittest-ci
 unittest-ci: guard-VENV clean_logs local-templates build
 	@echo "${GREEN}Unit testings for CI...${RESET}";
-	mkdir -p $(CURRENT_DIRECTORY)/tests/reports
+	mkdir -p junit-reports/integration
+	mkdir -p junit-reports/functional
 	${NOSE} --verbose \
 		-c tests/nose2_tests_functional.cfg \
 		-s tests/functional
@@ -340,7 +342,7 @@ unittest-ci: guard-VENV clean_logs local-templates build
 
 .PHONY: teste2e
 teste2e: guard-VENV clean_logs local-templates build
-	mkdir -p $(CURRENT_DIRECTORY)/tests/reports
+	mkdir -p junit-reports/e2e
 	@echo "${GREEN}Pseudo E2E tests...${RESET}";
 	${NOSE} --verbose \
 		-c tests/nose2_tests_e2e.cfg
