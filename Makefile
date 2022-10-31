@@ -13,6 +13,8 @@ SHELL = /bin/bash
 SERVICE_NAME := mf-chsdi3
 
 CURRENT_DIRECTORY := $(shell pwd)
+PROJECT_PATH := $(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))
+
 
 # default configuration
 ENV_FILE ?= .env.mine
@@ -21,6 +23,8 @@ ifneq ("$(wildcard $(ENV_FILE))","")
 	include $(ENV_FILE)
 	export $(shell sed 's/=.*//' $(ENV_FILE))
 endif
+
+NUM_PROC ?= 0
 
 # Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
 # https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
@@ -313,18 +317,22 @@ test: guard-VENV clean_logs local-templates build
 	@echo "${GREEN}Unit testing (integration tests)...${RESET}";
 	${PYTHON} ./scripts/pg_ready.py
 	${NOSE} \
-	-c tests/nose2_tests_integration.cfg \
 	-s tests/integration \
-	--verbose
-	-N 7
+	-t $(PROJECT_PATH) \
+	--verbose \
+	-c tests/nose2.cfg \
+	--junit-xml-path junit-reports/integration/nosetest.xml \
+	-N ${NUM_PROC}
 	@echo "${GREEN}Unit testing (functional tests)...${RESET}";
 	mkdir -p junit-reports/functional
 	${PYTHON} ./scripts/pg_ready.py
 	${NOSE} \
-	-c tests/nose2_tests_functional.cfg \
 	-s tests/functional \
+	-t $(PROJECT_PATH) \
 	--verbose \
-	-N 7
+	-c tests/nose2.cfg \
+	--junit-xml-path junit-reports/functional/nosetest.xml \
+	-N ${NUM_PROC}
 
 
 .PHONY: unittest-ci
@@ -333,11 +341,15 @@ unittest-ci: guard-VENV clean_logs local-templates build
 	mkdir -p junit-reports/integration
 	mkdir -p junit-reports/functional
 	${NOSE} --verbose \
-		-c tests/nose2_tests_functional.cfg \
-		-s tests/functional
+		-s tests/functional \
+		-t $(PROJECT_PATH) \
+		-c tests/nose2.cfg \
+		--junit-xml-path junit-reports/functional/nosetest.xml
 	${NOSE} --verbose \
-		-c tests/nose2_tests_integration.cfg \
-		-s tests/integration
+		-s tests/integration \
+		-t $(PROJECT_PATH) \
+		-c tests/nose2.cfg \
+		--junit-xml-path junit-reports/integration/nosetest.xml
 
 
 .PHONY: teste2e
@@ -345,9 +357,11 @@ teste2e: guard-VENV clean_logs local-templates build
 	mkdir -p junit-reports/e2e
 	@echo "${GREEN}Pseudo E2E tests...${RESET}";
 	${NOSE} --verbose \
-		-c tests/nose2_tests_e2e.cfg
 		-s tests/e2e \
-		-N 7
+		-t $(PROJECT_PATH) \
+		-c tests/nose2.cfg \
+		-N ${NUM_PROC} \
+		--junit-xml-path junit-reports/e2e/nosetest.xml
 
 # TODO: Replace through yapf, once the old vhost infra is replaced
 .PHONY: lint
