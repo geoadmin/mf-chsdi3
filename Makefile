@@ -24,7 +24,7 @@ ifneq ("$(wildcard $(ENV_FILE))","")
 	export $(shell sed 's/=.*//' $(ENV_FILE))
 endif
 
-NUM_PROC ?= 0
+PROCESS ?= 0
 
 # Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
 # https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
@@ -322,7 +322,7 @@ test: guard-VENV clean_logs local-templates build
 	--verbose \
 	-c tests/nose2.cfg \
 	--junit-xml-path junit-reports/integration/nosetest.xml \
-	-N ${NUM_PROC}
+	-N ${PROCESS}
 	@echo "${GREEN}Unit testing (functional tests)...${RESET}";
 	mkdir -p junit-reports/functional
 	${PYTHON} ./scripts/pg_ready.py
@@ -332,7 +332,7 @@ test: guard-VENV clean_logs local-templates build
 	--verbose \
 	-c tests/nose2.cfg \
 	--junit-xml-path junit-reports/functional/nosetest.xml \
-	-N ${NUM_PROC}
+	-N ${PROCESS}
 
 
 .PHONY: unittest-ci
@@ -360,7 +360,7 @@ teste2e: guard-VENV clean_logs local-templates build
 		-s tests/e2e \
 		-t $(PROJECT_PATH) \
 		-c tests/nose2.cfg \
-		-N ${NUM_PROC} \
+		-N ${PROCESS} \
 		--junit-xml-path junit-reports/e2e/nosetest.xml
 
 # TODO: Replace through yapf, once the old vhost infra is replaced
