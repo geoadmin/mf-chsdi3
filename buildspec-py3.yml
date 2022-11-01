@@ -197,3 +197,7 @@ reports:
     files:
       - "junit-reports/**/*"
     file-format: JunitXml
+  reportGroupCoverage:
+    files:
+      - coverage.xml
+    file-format: COBERTURAXML
