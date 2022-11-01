@@ -29,6 +29,7 @@ node_modules
 
 # Ignore all hidden files
 .*
+!.coveragerc
 
 logs/
 coverage*
