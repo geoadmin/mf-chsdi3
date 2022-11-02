@@ -130,6 +130,7 @@ help:
 	@echo "- shell              Pylons shell (for debugging)"
 	@echo "- test-functional    Functional nose2 tests"
 	@echo "- test-integration   Integration nose2 tests"
+	@echo "- test   			Functional and integration nose2 tests"
 	@echo "- unittest-ci        Same as 'test' but with specific junit output for the CI"
 	@echo "- teste2e            End-to-end tests"
 	@echo
@@ -312,6 +313,10 @@ dockerpull:
 	docker pull $(DOCKER_IMG_LOCAL_TAG_PATH)
 
 
+.PHONY: test
+test: test-integration test-functional
+
+
 .PHONY: test-integration
 test-integration: guard-VENV clean_logs local-templates build
 	mkdir -p junit-reports/integration
@@ -324,6 +329,7 @@ test-integration: guard-VENV clean_logs local-templates build
 		-c tests/nose2.cfg \
 		--junit-xml-path junit-reports/integration/nosetest.xml \
 		-N ${PROCESS}
+
 
 .PHONY: test-functional
 test-functional: guard-VENV clean_logs local-templates build
