@@ -1,0 +1,11 @@
+[run]
+source = chsdi
+omit =
+    tests/*
+
+[report]
+ignore_errors = True
+show_missing = True
+
+[xml]
+output = coverage_functional.xml

@@ -7,7 +7,7 @@
 *~
 *.orig
 .coverage*
-!.coveragerc
+!.coveragerc*
 coverage*
 .idea
 ./.vscode/
