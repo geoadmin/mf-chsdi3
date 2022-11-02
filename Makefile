@@ -128,7 +128,8 @@ help:
 	@echo -e "\033[1mFORMATING, LINTING AND TESTING TOOLS TARGETS\033[0m "
 	@echo "- lint/autolint      Python code quality assurance"
 	@echo "- shell              Pylons shell (for debugging)"
-	@echo "- test               Functional and integration nose tests"
+	@echo "- test-functional    Functional nose2 tests"
+	@echo "- test-integration   Integration nose2 tests"
 	@echo "- unittest-ci        Same as 'test' but with specific junit output for the CI"
 	@echo "- teste2e            End-to-end tests"
 	@echo
@@ -311,28 +312,32 @@ dockerpull:
 	docker pull $(DOCKER_IMG_LOCAL_TAG_PATH)
 
 
-.PHONY: test
-test: guard-VENV clean_logs local-templates build
+.PHONY: test-integration
+test-integration: guard-VENV clean_logs local-templates build
 	mkdir -p junit-reports/integration
 	@echo "${GREEN}Unit testing (integration tests)...${RESET}";
 	${PYTHON} ./scripts/pg_ready.py
 	${NOSE} \
-	-s tests/integration \
-	-t $(PROJECT_PATH) \
-	--verbose \
-	-c tests/nose2.cfg \
-	--junit-xml-path junit-reports/integration/nosetest.xml \
-	-N ${PROCESS}
-	@echo "${GREEN}Unit testing (functional tests)...${RESET}";
+		-s tests/integration \
+		-t $(PROJECT_PATH) \
+		--verbose \
+		-c tests/nose2.cfg \
+		--junit-xml-path junit-reports/integration/nosetest.xml \
+		-N ${PROCESS}
+
+.PHONY: test-functional
+test-functional: guard-VENV clean_logs local-templates build
 	mkdir -p junit-reports/functional
+	@echo "${GREEN}Unit testing (functional tests)...${RESET}";
 	${PYTHON} ./scripts/pg_ready.py
+
 	${NOSE} \
-	-s tests/functional \
-	-t $(PROJECT_PATH) \
-	--verbose \
-	-c tests/nose2.cfg \
-	--junit-xml-path junit-reports/functional/nosetest.xml \
-	-N ${PROCESS}
+		-s tests/functional \
+		-t $(PROJECT_PATH) \
+		--verbose \
+		-c tests/nose2.cfg \
+		--junit-xml-path junit-reports/functional/nosetest.xml \
+		-N ${PROCESS}
 
 
 .PHONY: unittest-ci
@@ -344,12 +349,16 @@ unittest-ci: guard-VENV clean_logs local-templates build
 		-s tests/functional \
 		-t $(PROJECT_PATH) \
 		-c tests/nose2.cfg \
-		--junit-xml-path junit-reports/functional/nosetest.xml
+		--junit-xml-path junit-reports/functional/nosetest.xml \
+		--coverage-config .coveragerc_ci_func \
+		--coverage-report xml
 	${NOSE} --verbose \
 		-s tests/integration \
 		-t $(PROJECT_PATH) \
 		-c tests/nose2.cfg \
-		--junit-xml-path junit-reports/integration/nosetest.xml
+		--junit-xml-path junit-reports/integration/nosetest.xml \
+		--coverage-config .coveragerc_ci_int \
+		--coverage-report xml
 
 
 .PHONY: teste2e

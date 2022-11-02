@@ -193,7 +193,15 @@ phases:
 
 
 reports:
-  reportGroupJunit:
+  tests:
     files:
       - "junit-reports/**/*"
     file-format: JunitXml
+  cov_func:
+    files:
+      - "coverage_functional.xml"
+    file-format: COBERTURAXML
+  cov_int:
+    files:
+      - "coverage_integration.xml"
+    file-format: COBERTURAXML
