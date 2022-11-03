@@ -134,7 +134,7 @@ phases:
       - python ./scripts/pg_ready.py
       - echo "host=$(hostname -I)"
       - echo "=========== PREPARE ==============="
-      - make setup
+      - make ci
       - echo "=========== LINTING ==============="
       - make lint
 

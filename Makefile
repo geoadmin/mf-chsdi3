@@ -120,6 +120,8 @@ help:
 	@echo
 	@echo -e "\033[1mSetup TARGETS\033[0m "
 	@echo "- setup              Create the python virtual environment with developper tools"
+	@echo "- ci                 Create the python virtual environment with developper tools for the CI"
+	@echo "                     without package updates (based on the Pipfile.lock)."
 	@echo "- all                Build the application with all dependent files. Ready to serve"
 	@echo
 	@echo -e "\033[1mBuild TARGETS\033[0m "
@@ -181,6 +183,15 @@ setup: $(NODE_MODULES)
 	# Here it is important NOT to use pipenv otherwise the editable package is added to Pipfile
 	pipenv run pip install -e .
 	if [ ! -e .env.mine ]; then cp .env.default .env.mine; fi
+
+
+.PHONY: ci
+ci: $(NODE_MODULES)
+	@echo "${GREEN}CI setup...${RESET}";
+	# Create virtual env with all packages for development using the Pipfile.lock
+	pipenv sync --dev
+	# Here it is important NOT to use pipenv otherwise the editable package is added to Pipfile
+	pipenv run pip install -e .
 
 
 .PHONY: build
