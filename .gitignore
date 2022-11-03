@@ -7,6 +7,8 @@
 *~
 *.orig
 .coverage*
+!.coveragerc*
+coverage*
 .idea
 ./.vscode/
 !./.vscode/settings.json
@@ -39,3 +41,4 @@ docker*.yml
 _pg_pass
 package-lock.json
 logs/
+junit-reports/*
