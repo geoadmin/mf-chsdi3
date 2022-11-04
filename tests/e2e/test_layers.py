@@ -138,12 +138,6 @@ class LayersChecker(object):
                 except (AppError, AssertionError, MakoRenderingException) as error:
                     raise ValueError("Failed extendedHtmlPopup for {} error: {}".format(link, error))
 
-    def checkLegend(self, layer):
-        for lang in ('de', 'fr', 'it', 'rm', 'en'):
-            link = '/rest/services/all/MapServer/' + layer + '/legend?callback=cb_&lang=' + lang
-            resp = self.testapp.get(link)
-            assert resp.status_int == 200, link
-
     def checkIdentify(self, layer):
         link = '/rest/services/all/MapServer/identify?geometry=558945.5,147956,559402,148103.5&geometryType=esriGeometryEnvelope&imageDisplay=500,600,96&mapExtent=558945.5,147956,559402,148103.5&tolerance=1&layers=all:' + layer
         resp = self.testapp.get(link)
