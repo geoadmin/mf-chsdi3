@@ -144,18 +144,6 @@ class LayersChecker(object):
         assert resp.status_int == 200, link
         assert resp.content_type == 'application/json', link
 
-    def checkLegendImage(self, layer, legendsPath, legendImages):
-        if legendImages is None:
-            raise SkipTest("Skip checkLegendImage for layer <{}>".format(layer))
-        for lang in ('de', 'fr', 'it', 'rm', 'en'):
-            key = layer + '_' + lang
-            images = [l for l in legendImages if l.startswith(key)]
-            assert (len(images) > 0), 'Prefix "%s" not found in %s' % (key, legendImages)
-            for img in images:
-                if 'big' not in img:
-                    with Image.open(os.path.join(legendsPath, img)) as im:
-                        width, height = im.size
-                        assert (width <= 480), '%s image is too big, %spx instead of 480px' % (img, width)
 
     def checkSearch(self, layer):
         models = models_from_bodid(layer)
@@ -202,23 +190,6 @@ def test_all_ids_mapping():
             yield lc.checkPrimaryKeyColumnTypeMapping, layerId, featureId, model, primaryKeyColumn
 
 
-def test_all_legends_images():
-    # Get list of layers from existing legend images
-    legendsPath = os.getcwd() + '/chsdi/static/images/legends/'
-    legendNames = os.listdir(legendsPath)
-    parseLegendNames = lambda x: x[:-7] if 'big' not in x else x[:-11]
-    legendImages = {}
-    for l in legendNames:
-        legendImages.setdefault(parseLegendNames(l), []).append(l)
-    with LayersChecker() as lc:
-        for layer in lc.ilayers(hasLegend=True):
-            try:
-                legendImage = legendImages.pop(layer)
-            except KeyError:
-                legendImage = None
-            yield lc.checkLegendImage, layer, legendsPath, legendImage
-
-
 def test_all_searchable_layers():
     with LayersChecker() as lc:
         for layer in lc.ilayers(searchable=True):
@@ -230,8 +201,3 @@ def test_all_htmlpopups():
         for layer, feature, extended in lc.ilayersWithFeatures():
             yield lc.checkHtmlPopup, layer, feature, extended
 
-
-def test_all_legends():
-    with LayersChecker() as lc:
-        for layer in lc.ilayers(hasLegend=True):
-            yield lc.checkLegend, layer
