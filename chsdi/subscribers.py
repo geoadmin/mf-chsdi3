@@ -100,7 +100,7 @@ def log_response(event):
             extra={
                 "duration": time.time() - started_at if started_at else '',
                 "response": {
-                    "status_code": event.response.status,
+                    "status_code": event.response.status_code,
                     "headers": {h[0]: h[1] for h in event.response.headerlist},
                     "payload": helpers.get_payload(event.response)
                 }

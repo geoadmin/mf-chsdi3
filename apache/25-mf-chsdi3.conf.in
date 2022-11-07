@@ -3,6 +3,9 @@
 # Managed by Puppet
 # ************************************
 
+# Print the server starting logs to /dev/stdout
+ErrorLog /dev/stdout
+
 <VirtualHost *:${HTTP_PORT}>
   # ServerName mf-chsdi3
 
@@ -33,6 +36,7 @@
   ErrorLogFormat "${APACHE_LOG_FMT}"
   ErrorLog /dev/stdout
   LogLevel ${APACHE_LOG_LEVEL}
+  CustomLog /dev/null common
   ServerSignature Off
 
 
