@@ -2275,3 +2275,18 @@ class AmphibienwanderungVerkehrskonflikte(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(AmphibienwanderungVerkehrskonflikte.__bodId__, AmphibienwanderungVerkehrskonflikte)
+
+
+class GewaesserUferbestockung(Base, Vector):
+    __tablename__ = 'gewaesser_uferbestockung'
+    __table_args__ = ({'schema': 'wasser', 'autoload': False})
+    __bodId__ = 'ch.bafu.gewaesser-uferbestockung'
+    __template__ = 'templates/htmlpopup/bafu_gewaesser_uferbestockung.mako'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('nummer_ein', Unicode)
+    gwl_nr = Column('gwl_nr', Unicode)
+    bestockung = Column('bestockung', Float)
+    the_geom = Column(Geometry2D)
+
+register('ch.bafu.gewaesser-uferbestockung', GewaesserUferbestockung)
