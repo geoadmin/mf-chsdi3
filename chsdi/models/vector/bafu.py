@@ -2288,5 +2288,6 @@ class GewaesserUferbestockung(Base, Vector):
     gwl_nr = Column('gwl_nr', Unicode)
     bestockung = Column('bestockung', Float)
     the_geom = Column(Geometry2D)
+    the_geom_simplified = Column('the_geom_simplified', Geometry2D)
 
 register('ch.bafu.gewaesser-uferbestockung', GewaesserUferbestockung)
