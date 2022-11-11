@@ -1603,7 +1603,7 @@ register('ch.bakom.versorgungsgebiet-ukw', Bakomukw)
 
 
 class EinschraenkungenDrohnen(Base, Vector):
-    __tablename__ = 'gebietsbeschraenkungen_drohnen'
+    __tablename__ = 'einschraenkungen_drohnen'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/einschraenkungen_drohnen.mako'
     __bodId__ = 'ch.bazl.einschraenkungen-drohnen'
