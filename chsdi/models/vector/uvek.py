@@ -1735,11 +1735,18 @@ class LuftfahrthindernisBase:
     the_geom = Column(Geometry2D)
 
 
-class Luftfahrthindernis(Base, LuftfahrthindernisBase, Vector):
+class LuftfahrthindernisBig(Base, LuftfahrthindernisBase, Vector):
     __bodId__ = 'ch.bazl.luftfahrthindernis'
-    __tablename__ = 'view_obstacles'
+    __tablename__ = 'view_obstacles_big'
 
-register(Luftfahrthindernis.__bodId__, Luftfahrthindernis)
+register(LuftfahrthindernisBig.__bodId__, LuftfahrthindernisBig)
+
+
+class LuftfahrthindernisSmall(Base, LuftfahrthindernisBase, Vector):
+    __bodId__ = 'ch.bazl.luftfahrthindernis-klein'
+    __tablename__ = 'view_obstacles_small'
+
+register(LuftfahrthindernisSmall.__bodId__, LuftfahrthindernisSmall)
 
 
 class LuftfahrthindernisAktuell(Base, LuftfahrthindernisBase, Vector):
