@@ -1603,7 +1603,7 @@ register('ch.bakom.versorgungsgebiet-ukw', Bakomukw)
 
 
 class EinschraenkungenDrohnen(Base, Vector):
-    __tablename__ = 'einschraenkungen_drohnen'
+    __tablename__ = 'gebietsbeschraenkungen_drohnen'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/einschraenkungen_drohnen.mako'
     __bodId__ = 'ch.bazl.einschraenkungen-drohnen'
@@ -1643,49 +1643,6 @@ class EinschraenkungenDrohnen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bazl.einschraenkungen-drohnen', EinschraenkungenDrohnen)
-
-
-class GebietsbeschraenkungenDrohnen(Base, Vector):
-    __tablename__ = 'gebietsbeschraenkungen_drohnen'
-    __table_args__ = ({'schema': 'bazl', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gebietsbeschraenkungen_drohnen.mako'
-    __bodId__ = 'ch.bazl.gebietsbeschraenkungen-drohnen'
-    __extended_info__ = True
-    id = Column('bgdi_id', Integer, primary_key=True)
-    zone_name_de = Column('zone_name_de', Unicode)
-    zone_name_fr = Column('zone_name_fr', Unicode)
-    zone_name_it = Column('zone_name_it', Unicode)
-    zone_name_en = Column('zone_name_en', Unicode)
-    zone_restriction_id = Column('zone_restriction_id', Unicode)
-    zone_reason_id = Column('zone_reason_id', Unicode)
-    zone_restriction_de = Column('zone_restriction_de', Unicode)
-    zone_restriction_fr = Column('zone_restriction_fr', Unicode)
-    zone_restriction_it = Column('zone_restriction_it', Unicode)
-    zone_restriction_en = Column('zone_restriction_en', Unicode)
-    zone_message_de = Column('zone_message_de', Unicode)
-    zone_message_fr = Column('zone_message_fr', Unicode)
-    zone_message_it = Column('zone_message_it', Unicode)
-    zone_message_en = Column('zone_message_en', Unicode)
-    auth_url = Column('auth_url', Unicode)
-    auth_name = Column('auth_name', Unicode)
-    auth_contact = Column('auth_contact', Unicode)
-    auth_service = Column('auth_service', Unicode)
-    auth_email = Column('auth_email', Unicode)
-    auth_phone = Column('auth_phone', Unicode)
-    auth_intervalbefore = Column('auth_intervalbefore', Unicode)
-    air_vol_lower_vref = Column('air_vol_lower_vref', Unicode)
-    air_vol_lower_limit = Column('air_vol_lower_limit', Unicode)
-    air_vol_upper_vref = Column('air_vol_upper_vref', Unicode)
-    air_vol_upper_limit = Column('air_vol_upper_limit', Unicode)
-    time_permanent = Column('time_permanent', Unicode)
-    time_start = Column('time_start', Unicode)
-    time_end = Column('time_end', Unicode)
-    period_day = Column('period_day', Unicode)
-    period_start = Column('period_start', Unicode)
-    period_end = Column('period_end', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bazl.gebietsbeschraenkungen-drohnen', GebietsbeschraenkungenDrohnen)
 
 
 class ProjFlughafenanlagen(Base, Vector):
