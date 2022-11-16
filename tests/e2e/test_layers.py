@@ -1,31 +1,18 @@
-# -*- coding: utf-8 -*-
-
 import os
 from contextlib import contextmanager
-from unittest import SkipTest, skip
+from unittest import SkipTest
 
 from chsdi.models import models_from_bodid
 from chsdi.models.bod import LayersConfig
 from chsdi.models.grid import get_grid_spec
-from PIL import Image
 from pyramid.paster import get_app
-from pyramid_mako import MakoRenderingException
 from sqlalchemy import distinct
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.sql.expression import func
 from sqlalchemy.types import BigInteger
-from tests.integration import TestsBase, s3_tests
+from tests.integration import s3_tests
 from webtest import TestApp
-from webtest.app import AppError
-
-
-class TestLayerService(TestsBase):
-    def test_one(self):
-        layer = 'ch.bafu.ren-wald'
-        for lang in ('de', 'fr', 'it', 'rm', 'en'):
-            link = '/rest/services/all/MapServer/' + layer + '/legend?callback=cb_&lang=' + lang
-            self.testapp.get(link, status=200)
 
 
 class LayersChecker(object):
@@ -100,73 +87,7 @@ class LayersChecker(object):
                             featureId = None
                     yield layer, featureId, model, primaryKeyColumn
 
-    def ilayersWithFeatures(self):
-        for layer in self.ilayers(tooltip=True, geojson=False):
-            gridSpec = get_grid_spec(layer)
-            if gridSpec is None and layer not in self.emptyGeoTables:
-                models = models_from_bodid(layer)
-                assert (models is not None and len(models) > 0), layer
-                model = models[0]
-                with self.getSession() as session:
-                    query = session.query(model.primary_key_column())
-                    # Depending on db size, random row is slow
-                    if self.randomFeatures:
-                        query = query.order_by(func.random())
-                    if isinstance(self.nrOfFeatures, (int, int)):
-                        query = query.limit(self.nrOfFeatures)
-                    hasExtended = model.__extended_info__ if hasattr(model, '__extended_info__') else False
-                    try:
-                        for q in query:
-                            yield (layer, str(q[0]), hasExtended)
-                    except:
-                        raise ValueError("no table found for layer {}".format(layer))
 
-    def checkHtmlPopup(self, layer, feature, extended):
-        for lang in ('de', 'fr', 'it', 'rm', 'en'):
-            link = '/rest/services/all/MapServer/' + layer + '/' + feature + '/htmlPopup?callback=cb_&lang=' + lang
-            try:
-                resp = self.testapp.get(link, status=200)
-                assert resp.status_int == 200, link
-            except (AppError, AssertionError, MakoRenderingException) as error:
-                raise ValueError("Failed htmlPopup test for {} error: {}".format(link, error))
-
-            if extended:
-                try:
-                    link = link.replace('htmlPopup', 'extendedHtmlPopup')
-                    resp = self.testapp.get(link, status=200)
-                    assert resp.status_int == 200, link
-                except (AppError, AssertionError, MakoRenderingException) as error:
-                    raise ValueError("Failed extendedHtmlPopup for {} error: {}".format(link, error))
-
-    def checkIdentify(self, layer):
-        link = '/rest/services/all/MapServer/identify?geometry=558945.5,147956,559402,148103.5&geometryType=esriGeometryEnvelope&imageDisplay=500,600,96&mapExtent=558945.5,147956,559402,148103.5&tolerance=1&layers=all:' + layer
-        resp = self.testapp.get(link)
-        assert resp.status_int == 200, link
-        assert resp.content_type == 'application/json', link
-
-
-    def checkSearch(self, layer):
-        models = models_from_bodid(layer)
-        try:
-            assert (models is not None and len(models) > 0), layer
-        except AssertionError as error:
-            raise SkipTest("Cannot find model for layer {} error: {}".format(layer, error))
-        model = models[0]
-        hasFeatures = True
-        # Special treatment for non-distributed sphinx indices (single model)
-        if len(models) == 1:
-            with self.getSession() as session:
-                query = session.query(model.primary_key_column())
-                # we expect 404 errors for searchable layers without any data (no sphinx index)
-                if query.first() is None:
-                    hasFeatures = False
-
-        # If it fails here, it most probably means given layer does not have sphinx index available
-        link = '/rest/services/all/SearchServer?features=' + layer + '&bbox=600818.7808825106,197290.49919797093,601161.2808825106,197587.99919797093&type=featuresearch&searchText=dummy'
-        resp = self.testapp.get(link, status=200)
-        # If there are no features, we don't expect a sphinx index present
-        if not hasFeatures:
-            assert resp.json['results'] == []
 
     def checkPrimaryKeyColumnTypeMapping(self, layerId, featureId, model, primaryKeyColumn):
         schema = 'public' if 'schema' not in model.__table_args__ else model.__table_args__['schema']
@@ -177,27 +98,8 @@ class LayersChecker(object):
             assert isinstance(featureId, pythonType), 'Expected %s; Got: %s; For layer %s and GeoTable %s' % (
                 pythonType, type(featureId), layerId, schema + '.' + model.__tablename__)
 
-
-def test_all_identify():
-    with LayersChecker() as lc:
-        for layer in lc.ilayers(tooltip=True, geojson=False):
-            yield lc.checkIdentify, layer
-
-
 def test_all_ids_mapping():
     with LayersChecker() as lc:
         for layerId, featureId, model, primaryKeyColumn in lc.ilayersAllModels():
             yield lc.checkPrimaryKeyColumnTypeMapping, layerId, featureId, model, primaryKeyColumn
-
-
-def test_all_searchable_layers():
-    with LayersChecker() as lc:
-        for layer in lc.ilayers(searchable=True):
-            yield lc.checkSearch, layer
-
-
-def test_all_htmlpopups():
-    with LayersChecker() as lc:
-        for layer, feature, extended in lc.ilayersWithFeatures():
-            yield lc.checkHtmlPopup, layer, feature, extended
 
