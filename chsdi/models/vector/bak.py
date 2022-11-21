@@ -126,7 +126,7 @@ class HalteplaetzeJenischeSintiRoma(Base, Vector):
     __table_args__ = ({'autoload': False})
     __template__ = 'templates/htmlpopup/halteplaetze_jenische_sinti_roma.mako'
     __bodId__ = 'ch.bak.halteplaetze-jenische_sinti_roma'
-    __label__ = 'gemeinde'
+    __label__ = 'standort'
     id = Column('bgdi_id', Integer, primary_key=True)
     kanton = Column('kanton', Unicode)
     nr_kanton = Column('nr_kanton', Numeric)
