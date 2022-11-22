@@ -28,7 +28,9 @@
       </tr>
     % endfor
   % else:
-    <td>-</td>
+    <tr>
+      <td>-</td>
+    </tr>
   % endif
 </%def>
 
