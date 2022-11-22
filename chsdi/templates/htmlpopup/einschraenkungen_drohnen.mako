@@ -22,7 +22,11 @@
   </tr>
   <tr>
     <td>${_('ch.bazl.einschraenkungen-drohnen.auth_url')}</td>
-    <td><a href="${c['attributes'][auth_url]}" target="_blank">${_('ch.bazl.einschraenkungen-drohnen.link')}</a>
+    % if c['attributes'][auth_url]:
+      <td><a href="${c['attributes'][auth_url]}" target="_blank">${_('ch.bazl.einschraenkungen-drohnen.link')}</a>
+    % else:
+      <td>-</td>
+    % endif
   </tr>
 </%def>
 
