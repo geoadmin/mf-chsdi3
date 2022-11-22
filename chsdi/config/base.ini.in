@@ -37,6 +37,10 @@ sqlalchemy.zeitreihen.url = postgresql://${DBHOST}:${DBPORT}/zeitreihen_${DBSTAG
 sqlalchemy.lubis.url = postgresql://${DBHOST}:${DBPORT}/lubis_${DBSTAGING}
 sqlalchemy.diemo.url = postgresql://${DBHOST}:${DBPORT}/diemo_${DBSTAGING}
 
+# SQLAlchemy pooling and transactions
+sqlalchemy.pool_pre_ping = ${SQLALCHEMY_POOL_PRE_PING}
+sqlalchemy.isolation_level = ${SQLALCHEMY_ISOLATION_LEVEL}
+
 # Mako specific
 mako.directories = chsdi:templates
 
