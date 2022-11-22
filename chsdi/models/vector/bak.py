@@ -119,3 +119,35 @@ class Unesco(Base, Vector):
     the_geom_simplified_tolerance_3 = Column('the_geom_simplified_tolerance_3', Geometry2D)
 
 register('ch.bak.schutzgebiete-unesco_weltkulturerbe', Unesco)
+
+
+class HalteplaetzeJenischeSintiRoma(Base, Vector):
+    __tablename__ = 'halteplaetze_jenische_sinti_roma'
+    __table_args__ = ({'autoload': False})
+    __template__ = 'templates/htmlpopup/halteplaetze_jenische_sinti_roma.mako'
+    __bodId__ = 'ch.bak.halteplaetze-jenische_sinti_roma'
+    __label__ = 'standort'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    kanton = Column('kanton', Unicode)
+    nr_kanton = Column('nr_kanton', Numeric)
+    plz = Column('plz', Numeric)
+    gemeinde = Column('gemeinde', Unicode)
+    standort = Column('standort', Unicode)
+    adresse = Column('adresse', Unicode)
+    platzart = Column('platzart', Numeric)
+    platzart_de = Column('platzart_de', Unicode)
+    platzart_fr = Column('platzart_fr', Unicode)
+    platzart_it = Column('platzart_it', Unicode)
+    platz_status = Column('platz_status', Numeric)
+    platz_status_de = Column('platz_status_de', Unicode)
+    platz_status_fr = Column('platz_status_fr', Unicode)
+    platz_status_it = Column('platz_status_it', Unicode)
+    anzahl_stellplaetze = Column('anzahl_stellplaetze', Numeric)
+    bemerkungen_de = Column('bemerkungen_de', Unicode)
+    bemerkungen_fr = Column('bemerkungen_fr', Unicode)
+    bemerkungen_it = Column('bemerkungen_it', Unicode)
+    x_koordinate = Column('x_koordinate', Numeric)
+    y_koordinate = Column('y_koordinate', Numeric)
+    the_geom = Column(Geometry2D)
+
+register('ch.bak.halteplaetze-jenische_sinti_roma', HalteplaetzeJenischeSintiRoma)
