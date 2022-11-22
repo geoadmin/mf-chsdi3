@@ -1,3 +1,5 @@
+from distutils.util import strtobool
+import os
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import engine_from_config, Column
 
@@ -21,6 +23,8 @@ def initialize_sql(settings):
             pool_recycle=20,
             pool_size=20,
             max_overflow=-1,
+            pool_pre_ping=bool(strtobool(os.getenv("SQLALCHEMY_POOL_PRE_PING", "False"))),
+            isolation_level=os.getenv("SQLALCHEMY_ISOLATION_LEVEL", "READ COMMITTED"),
             connect_args={"connect_timeout": 10}
         )
         engines[db] = engine
