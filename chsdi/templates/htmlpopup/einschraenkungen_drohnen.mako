@@ -20,14 +20,16 @@
     <td class="cell-left">${_('ch.bazl.einschraenkungen-drohnen.zone_message')}</td>
     <td>${c['attributes'][zone_message] or '-'}</td>
   </tr>
-  <tr>
-    <td>${_('ch.bazl.einschraenkungen-drohnen.auth_url')}</td>
-    % if c['attributes'][auth_url]:
-      <td><a href="${c['attributes'][auth_url]}" target="_blank">${_('ch.bazl.einschraenkungen-drohnen.link')}</a>
-    % else:
-      <td>-</td>
-    % endif
-  </tr>
+  % if c['attributes'][auth_url]:
+    %  for i in range(len(c['attributes'][auth_url])):
+      <tr>
+        <td>${_('ch.bazl.einschraenkungen-drohnen.auth_url')}</td>
+        <td><a href="${c['attributes'][auth_url][i]}" target="_blank">${_('ch.bazl.einschraenkungen-drohnen.link')}</a></td>
+      </tr>
+    %endfor
+  % else:
+    <td>-</td>
+  % endif
 </%def>
 
 <%def name="extended_info(c, lang)">
@@ -39,7 +41,6 @@
     auth_url = 'auth_url_%s' % lang
     auth_name = 'auth_name_%s' % lang
     auth_service = 'auth_service_%s' % lang
-    auth_url_txt = ' / '.join(c['attributes'][auth_url]) if c['attributes'][auth_url] else '-'
     auth_name_txt = ' / '.join(c['attributes'][auth_name]) if c['attributes'][auth_name] else '-'
     auth_service_txt = ' / '.join(c['attributes'][auth_service]) if c['attributes'][auth_service] else '-'
     auth_contact = ' / '.join(c['attributes']['auth_contact']) if c['attributes']['auth_contact'] else '-'
@@ -65,7 +66,17 @@
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bazl.einschraenkungen-drohnen.auth_url')}</td>
-      <td class="cell-meta"><a href="${_(auth_url_txt)}" target="_blank">${_('ch.bazl.einschraenkungen-drohnen.link')}</a>
+      % if c['attributes'][auth_url]:
+        <td class="cell-meta">
+          % for i in range(len(c['attributes'][auth_url])):
+            <a href="${c['attributes'][auth_url][i]}" target="_blank">${_('ch.bazl.einschraenkungen-drohnen.link')}</a>
+            % if i < len(c['attributes'][auth_url]) - 1:
+              /
+            % endif
+          %endfor
+      % else:
+        <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bazl.einschraenkungen-drohnen.auth_name')}</td>
