@@ -21,12 +21,12 @@
     <td>${c['attributes'][zone_message] or '-'}</td>
   </tr>
   % if c['attributes'][auth_url]:
-    %  for i in range(len(c['attributes'][auth_url])):
+    % for i in range(len(c['attributes'][auth_url])):
       <tr>
         <td>${_('ch.bazl.einschraenkungen-drohnen.auth_url')}</td>
         <td><a href="${c['attributes'][auth_url][i]}" target="_blank">${_('ch.bazl.einschraenkungen-drohnen.link')}</a></td>
       </tr>
-    %endfor
+    % endfor
   % else:
     <td>-</td>
   % endif
@@ -73,7 +73,7 @@
             % if i < len(c['attributes'][auth_url]) - 1:
               /
             % endif
-          %endfor
+          % endfor
       % else:
         <td>-</td>
       % endif
