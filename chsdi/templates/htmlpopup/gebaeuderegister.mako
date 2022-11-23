@@ -1,14 +1,20 @@
 <%inherit file="base.mako"/>
 
-<%def name="table_body(c, lang)">
+<%def name="translate_attribute(attribute, value)">
+<%
+    if value is None:
+      return '-'
+    else:
+      result =  _(u'ch.bfs.gebaeude_wohnungs_register.{}.{}'.format(attribute, value))
+      return value if c['layerBodId'] in result else result
+%>
+</%def>
 
+<%def name="table_body(c, lang)">
 <%
   c['stable_id'] = True
-  datageoadminhost = request.registry.settings['datageoadminhost']
-  canton = c['attributes']['gdekt']
-  bfs_nr = c['attributes']['ggdenr']
-  url_canton = '%s/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (datageoadminhost, canton, canton)
-  url_municipality = '%s/ch.bfs.gebaeude_wohnungs_register/CSV/%s/%s.zip' % (datageoadminhost, canton, bfs_nr)
+  lang_download = lang if lang in ('de', 'fr', 'it') else 'de'
+  url_download = 'https://www.housing-stat.ch/%s/madd/public.html' % (lang_download)
 
   # show translated streetname if available
   # map rm to ro in bfs delivery
@@ -20,14 +26,14 @@
     streetname = u'{} {}'.format(c['attributes']['strname'][pos], c['attributes']['deinr'])
 %>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.egid')}</td>           <td>${c['attributes']['egid'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.gkat')}</td>           <td>${_(translate_attribute('gkat', c['attributes']['gkat']))}</td></tr>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.strname_deinr')}</td>  <td>${streetname or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.plz_plz6')}</td>       <td>${c['attributes']['plz_plz6'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.dplzname')}</td>       <td>${c['attributes']['dplzname'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.ggdename')}</td>       <td>${c['attributes']['ggdename'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.ggdenr')}</td>         <td>${c['attributes']['ggdenr'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.gexpdat')}</td>        <td>${c['attributes']['gexpdat'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.download_links')}</td> <td><a href="${url_canton}"> ${_('ch.bfs.gebaeude_wohnungs_register.canton_label')}</a></td></tr>
-    <tr><td></td>                                                                           <td><a href="${url_municipality}">${_('ch.bfs.gebaeude_wohnungs_register.municipality_label')}</a></td></tr>
+    <tr><td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register.download_links')}</td> <td><a href="${url_download}"> ${_('ch.bfs.gebaeude_wohnungs_register.download_label')}</a></td></tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
@@ -58,13 +64,6 @@
     import requests
     request = context.get('request')
     topic = request.matchdict.get('map')
-
-    def translate_attribute(attribute, value):
-      if value is None:
-        return '-'
-      else:
-        result =  _(u'ch.bfs.gebaeude_wohnungs_register.{}.{}'.format(attribute, value))
-        return value if c['layerBodId'] in result else result
 
 %>
   <table>
