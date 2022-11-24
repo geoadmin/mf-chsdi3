@@ -138,7 +138,7 @@ help:
 	@echo "- rss                Create RSS feed from the releasenotes html file"
 	@echo
 	@echo -e "\033[1mDATA INTEGRATION\033[0m "
-	@echo "- legends           Download from the WMS server the legend images for a given layer BODID= WMSHOST=localhost:9X78"
+	@echo "- legends           Download from the WMS server the legend images for a given layer BODID= WMSHOST=localhost:9X78 WMSSCALELEGEND=50000"
 	@echo
 	@echo -e "\033[1mDocker TARGETS\033[0m "
 	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
