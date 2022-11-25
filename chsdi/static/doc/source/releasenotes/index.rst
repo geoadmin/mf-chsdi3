@@ -14,7 +14,7 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
-.. _releasenotes_20221026:
+.. _releasenotes_20221214:
 
 Release 20221214 - Wednesday, December 14th 2022
 -------------------------------------------------
@@ -34,6 +34,12 @@ Geodata
 | New    | `Building zones Switzerland (harmonized) <//map.geo.admin.ch/?layers=ch.are.bauzonen>`__ (ch.are.bauzonen)                                                                                                        |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Restrictions for drones <//map.geo.admin.ch/?layers=ch.bazl.einschraenkungen-drohnen>`__ (ch.bazl.einschraenkungen-drohnen)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Habitat Map <//map.geo.admin.ch/?layers=ch.bafu.lebensraumkarte-schweiz>`__ (ch.bafu.lebensraumkarte-schweiz)                                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Stocking of river banks <//map.geo.admin.ch/?layers=ch.bafu.gewaesser-uferbestockung>`__ (ch.bafu.gewaesser-uferbestockung)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Lebensraumkarte Schweiz <//map.geo.admin.ch/?layers=ch.bafu.gewaesser-uferbestockung_vegetation>`__ (ch.bafu.gewaesser-uferbestockung_vegetation)                                                                |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Housing Inventory <//map.geo.admin.ch/?layers=ch.are.wohnungsinventar-zweitwohnungsanteil>`__ (ch.are.wohnungsinventar-zweitwohnungsanteil)                                                                      |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
