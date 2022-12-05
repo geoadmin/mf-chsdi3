@@ -2291,3 +2291,25 @@ class GewaesserUferbestockung(Base, Vector):
     the_geom_simplified = Column('the_geom_simplified', Geometry2D)
 
 register('ch.bafu.gewaesser-uferbestockung', GewaesserUferbestockung)
+
+
+class LebensraumkarteSchweiz(Base, Vector):
+    __tablename__ = 'lebensraumkarte_schweiz'
+    __table_args__ = ({'schema': 'lebensraumkarte', 'autoload': False})
+    __bodId__ = 'ch.bafu.lebensraumkarte-schweiz'
+    __template__ = 'templates/htmlpopup/bafu_lebensraumkarte_schweiz.mako'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    polyid = Column('polyid', Integer)
+    typoch_class = Column('typoch_class', Integer)
+    typoch_group = Column('typoch_group', Integer)
+    typoch_de = Column('typoch_de', Unicode)
+    typoch_fr = Column('typoch_fr', Unicode)
+    typoch_it = Column('typoch_it', Unicode)
+    prob_de = Column('prob_de', Unicode)
+    prob_fr = Column('prob_fr', Unicode)
+    prob_it = Column('prob_it', Unicode)
+    cover = Column('cover', Float)
+    the_geom = Column('the_geom', Geometry2D)
+
+register('ch.bafu.lebensraumkarte-schweiz', LebensraumkarteSchweiz)
