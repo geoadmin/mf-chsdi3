@@ -5,7 +5,7 @@ from chsdi.views.catalog import tree_data
 import networkx as nx
 
 
-class TestCatalogTree(unittest.TestCase):
+class Test_CatalogTree(unittest.TestCase):
 
     def test_not_tree(self):
         G = nx.DiGraph()

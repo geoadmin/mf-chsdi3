@@ -18,7 +18,7 @@ from numpy.testing import assert_almost_equal
 from urllib.parse import urljoin
 
 
-class TestHelpers(unittest.TestCase):
+class Test_Helpers(unittest.TestCase):
 
     def test_make_agnostic(self):
         url = 'http://foo.com'

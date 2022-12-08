@@ -7,7 +7,7 @@ from geojson import Point
 from pyramid import testing
 
 
-class TestEsriGeoJSON(unittest.TestCase):
+class Test_EsriGeoJSON(unittest.TestCase):
 
     def _callFUT(self, **kwargs):
         from chsdi.renderers import EsriJSON

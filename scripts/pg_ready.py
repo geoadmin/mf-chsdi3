@@ -12,7 +12,6 @@ host = os.environ.get('DBHOST')
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.settimeout(2)
 
-
 while retries > 0:
     try:
         s.connect((host, port))
@@ -25,4 +24,4 @@ while retries > 0:
         retries -= 1
 if retries == 0:
      raise Exception("Cannot connect to PostgreSQL on {} and port {}".format(host, port))
-
+     

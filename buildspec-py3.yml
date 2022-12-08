@@ -62,13 +62,17 @@ phases:
       - export GIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - export GIT_TAG="$(git describe --tags --dirty || echo 'unknown')"
       - export GIT_DIRTY="$(git status --porcelain)"
+      - |
+        if [[ "${GIT_TAG}" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}-rc[0-9]+[[:alnum:]-]*$$ ]]; then
+          export APP_VERSION="${GIT_TAG}"
+        else
+          export APP_VERSION="0000-00-00-rc0-${GIT_HASH_SHORT}"
+        fi
       - |-
         if [ "${GIT_TAG}" = "unknown"  ] ; then
           DOCKER_IMG_TAG="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GIT_BRANCH//\//_}.${GIT_HASH}"
-          export APP_VERSION="0000-00-00-rc0-${GIT_HASH}"
         else
           DOCKER_IMG_TAG="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GIT_TAG}"
-          export APP_VERSION="${GIT_TAG}"
         fi
       - export DOCKER_IMG_TAG=${DOCKER_IMG_TAG}
       - export DOCKER_IMG_TAG_LATEST="${DOCKER_REGISTRY}/${SERVICE_NAME}:${GIT_BRANCH//\//_}.latest"
@@ -134,7 +138,7 @@ phases:
       - python ./scripts/pg_ready.py
       - echo "host=$(hostname -I)"
       - echo "=========== PREPARE ==============="
-      - make ci
+      - make setup
       - echo "=========== LINTING ==============="
       - make lint
 
@@ -193,12 +197,7 @@ phases:
 
 
 reports:
-  tests:
+  reportGroupJunit:
     files:
       - "junit-reports/**/*"
     file-format: JunitXml
-  cover:
-    files:
-      - "coverage_functional.xml"
-      - "coverage_integration.xml"
-    file-format: COBERTURAXML

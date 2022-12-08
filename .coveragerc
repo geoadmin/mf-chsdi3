@@ -2,7 +2,3 @@
 source = chsdi
 omit =
     tests/*
-
-[report]
-ignore_errors = True
-show_missing = True
