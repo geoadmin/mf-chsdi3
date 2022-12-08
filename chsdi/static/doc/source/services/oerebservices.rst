@@ -32,18 +32,6 @@ The returned format is Interlis (XML).
   - ch.bfe.projektierungszonen-starkstromanlagen_v2_0.oereb *(this layer has no data)*
   - ch.bfe.baulinien-starkstromanlagen_v2_0.oereb *(this layer has no data)*
 
- Layers with model V1_1 (https://models.geo.admin.ch/V_D/OeREB/replaced/OeREBKRMtrsfr_V1_1.ili):
-  - ch.astra.projektierungszonen-nationalstrassen.oereb *(this layer has no data)*
-  - ch.astra.baulinien-nationalstrassen.oereb
-  - ch.bav.projektierungszonen-eisenbahnanlagen.oereb *(this layer has no data)*
-  - ch.bav.baulinien-eisenbahnanlagen.oereb *(this layer has no data)*
-  - ch.bazl.projektierungszonen-flughafenanlagen.oereb
-  - ch.bazl.baulinien-flughafenanlagen.oereb *(this layer has no data)*
-  - ch.bazl.sicherheitszonenplan.oereb
-  - ch.vbs.kataster-belasteter-standorte-militaer.oereb
-  - ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb
-  - ch.bav.kataster-belasteter-standorte-oev.oereb
-
 URL
 ***
 
