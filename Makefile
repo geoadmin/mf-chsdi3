@@ -13,6 +13,8 @@ SHELL = /bin/bash
 SERVICE_NAME := mf-chsdi3
 
 CURRENT_DIRECTORY := $(shell pwd)
+PROJECT_PATH := $(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))
+
 
 # default configuration
 ENV_FILE ?= .env.mine
@@ -21,6 +23,8 @@ ifneq ("$(wildcard $(ENV_FILE))","")
 	include $(ENV_FILE)
 	export $(shell sed 's/=.*//' $(ENV_FILE))
 endif
+
+PROCESS ?= 0
 
 # Note the `fi`is a hack for `rm`(which didn't exist for a long time!)
 # https://github.com/geoadmin/mf-chsdi3/blob/966b5471dfad9f9c77ca44a089b81419c4a6311b/chsdi/lib/helpers.py#L140-L142
@@ -55,7 +59,7 @@ ENVSUBST := /usr/bin/envsubst
 AUTOPEP8 = $(VENV)/bin/autopep8
 FLAKE8 = $(VENV)/bin/flake8
 MAKO = $(VENV)/bin/mako-render
-NOSE = $(VENV)/bin/nosetests
+NOSE = $(VENV)/bin/nose2
 PIP = $(VENV)/bin/pip3 $(PIP_QUIET)
 PSERVE = $(VENV)/bin/pserve
 PSHELL = $(VENV)/bin/pshell
@@ -68,7 +72,6 @@ PYTHON_VERSION := $(shell $$(pipenv --py 2> /dev/null) --version 2>&1 | awk '{pr
 DOCKER_REGISTRY = 974517877189.dkr.ecr.eu-central-1.amazonaws.com
 AWS_REGION_ECR := eu-central-1
 AUTHOR=$(USER)
-
 
 # Git metadata
 GIT_HASH ?= $(shell git rev-parse HEAD)
@@ -117,6 +120,8 @@ help:
 	@echo
 	@echo -e "\033[1mSetup TARGETS\033[0m "
 	@echo "- setup              Create the python virtual environment with developper tools"
+	@echo "- ci                 Create the python virtual environment with developper tools for the CI"
+	@echo "                     without package updates (based on the Pipfile.lock)."
 	@echo "- all                Build the application with all dependent files. Ready to serve"
 	@echo
 	@echo -e "\033[1mBuild TARGETS\033[0m "
@@ -125,7 +130,9 @@ help:
 	@echo -e "\033[1mFORMATING, LINTING AND TESTING TOOLS TARGETS\033[0m "
 	@echo "- lint/autolint      Python code quality assurance"
 	@echo "- shell              Pylons shell (for debugging)"
-	@echo "- test               Functional and integration nose tests"
+	@echo "- test-functional    Functional nose2 tests"
+	@echo "- test-integration   Integration nose2 tests"
+	@echo "- test   			Functional and integration nose2 tests"
 	@echo "- unittest-ci        Same as 'test' but with specific junit output for the CI"
 	@echo "- teste2e            End-to-end tests"
 	@echo
@@ -176,6 +183,15 @@ setup: $(NODE_MODULES)
 	# Here it is important NOT to use pipenv otherwise the editable package is added to Pipfile
 	pipenv run pip install -e .
 	if [ ! -e .env.mine ]; then cp .env.default .env.mine; fi
+
+
+.PHONY: ci
+ci: $(NODE_MODULES)
+	@echo "${GREEN}CI setup...${RESET}";
+	# Create virtual env with all packages for development using the Pipfile.lock
+	pipenv sync --dev
+	# Here it is important NOT to use pipenv otherwise the editable package is added to Pipfile
+	pipenv run pip install -e .
 
 
 .PHONY: build
@@ -309,28 +325,69 @@ dockerpull:
 
 
 .PHONY: test
-test: guard-VENV clean_logs local-templates build
-	@echo "${GREEN}Unit testings...${RESET}";
+test: test-integration test-functional
+
+
+.PHONY: test-integration
+test-integration: guard-VENV clean_logs local-templates build
+	mkdir -p junit-reports/integration
+	@echo "${GREEN}Unit testing (integration tests)...${RESET}";
 	${PYTHON} ./scripts/pg_ready.py
-	$(NOSE) --verbosity=2 --cover-erase tests/ -e .*e2e.*
+	${NOSE} \
+		-s tests/integration \
+		-t $(PROJECT_PATH) \
+		--verbose \
+		-c tests/nose2.cfg \
+		--junit-xml-path junit-reports/integration/nosetest.xml \
+		-N ${PROCESS}
+
+
+.PHONY: test-functional
+test-functional: guard-VENV clean_logs local-templates build
+	mkdir -p junit-reports/functional
+	@echo "${GREEN}Unit testing (functional tests)...${RESET}";
+	${PYTHON} ./scripts/pg_ready.py
+
+	${NOSE} \
+		-s tests/functional \
+		-t $(PROJECT_PATH) \
+		--verbose \
+		-c tests/nose2.cfg \
+		--junit-xml-path junit-reports/functional/nosetest.xml \
+		-N ${PROCESS}
 
 
 .PHONY: unittest-ci
 unittest-ci: guard-VENV clean_logs local-templates build
 	@echo "${GREEN}Unit testings for CI...${RESET}";
-	mkdir -p junit-reports/{integration,functional}
-	$(NOSE) --verbosity=2 \
-		--with-xunit --xunit-file=junit-reports/functional/nosetest.xml \
-		tests/functional
-	$(NOSE) --verbosity=2 \
-		--with-xunit --xunit-file=junit-reports/integration/nosetest.xml \
-		tests/integration
+	mkdir -p junit-reports/integration
+	mkdir -p junit-reports/functional
+	${NOSE} --verbose \
+		-s tests/functional \
+		-t $(PROJECT_PATH) \
+		-c tests/nose2.cfg \
+		--junit-xml-path junit-reports/functional/nosetest.xml \
+		--coverage-config .coveragerc_ci_func \
+		--coverage-report xml
+	${NOSE} --verbose \
+		-s tests/integration \
+		-t $(PROJECT_PATH) \
+		-c tests/nose2.cfg \
+		--junit-xml-path junit-reports/integration/nosetest.xml \
+		--coverage-config .coveragerc_ci_int \
+		--coverage-report xml
 
 
 .PHONY: teste2e
 teste2e: guard-VENV clean_logs local-templates build
+	mkdir -p junit-reports/e2e
 	@echo "${GREEN}Pseudo E2E tests...${RESET}";
-	$(NOSE) tests/e2e/
+	${NOSE} --verbose \
+		-s tests/e2e \
+		-t $(PROJECT_PATH) \
+		-c tests/nose2.cfg \
+		-N ${PROCESS} \
+		--junit-xml-path junit-reports/e2e/nosetest.xml
 
 # TODO: Replace through yapf, once the old vhost infra is replaced
 .PHONY: lint
@@ -431,6 +488,7 @@ clean:
 	find chsdi/static/js -type f ! -name .gitignore -exec rm -f \;
 	rm -f .coverage .coverage.*
 	rm -f requirements.txt
+	find chsdi -name "__pycache__" -depth -exec rm -rf "{}" \;
 
 
 clean_logs:

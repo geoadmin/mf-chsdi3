@@ -5,7 +5,7 @@ import datetime
 from chsdi.models.types import DateTimeChsdi
 
 
-class Test_DateTimeChsdi(unittest.TestCase):
+class TestDateTimeChsdi(unittest.TestCase):
 
     def test_datetimechsdi(self):
         dt = DateTimeChsdi()

@@ -6,3 +6,6 @@ omit =
 [report]
 ignore_errors = True
 show_missing = True
+
+[xml]
+output = coverage_integration.xml
