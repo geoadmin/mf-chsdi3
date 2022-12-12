@@ -1436,7 +1436,7 @@ Example
 SPARQL Service
 --------------
 
-This service enables the connection of geodata from different sources as Linked Data. See `description <https://www.geo.admin.ch/linkeddata>`_.
+This service enables the connection of geodata from different sources as Linked Data. `See description <https://www.geo.admin.ch/linkeddata>`_.
 
 URL
 ***
