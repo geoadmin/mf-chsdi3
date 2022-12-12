@@ -94,6 +94,22 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Air navigation obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis>`__ (ch.bazl.luftfahrthindernis)                                                                                                 |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Employment (FTE) <//map.geo.admin.ch/?layers=ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente>`__ (ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente)                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Employment <//map.geo.admin.ch/?layers=ch.bfs.betriebszaehlungen-arbeitsstaetten>`__ (ch.bfs.betriebszaehlungen-arbeitsstaetten)                                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Dwellings <//map.geo.admin.ch/?layers=ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen>`__ (ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen)                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Buildings <//map.geo.admin.ch/?layers=ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude>`__ (ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Population (residents) <//map.geo.admin.ch/?layers=ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner>`__ (ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner)                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Winter national map | LK10, LK25, LK50, LK100 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-winter>`__ (ch.swisstopo.pixelkarte-farbe-winter)                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP rail infrastructure <//map.geo.admin.ch/?layers=ch.bav.sachplan-infrastruktur-schiene_kraft>`__ (ch.bav.sachplan-infrastruktur-schiene_kraft)                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SIL Anhörung <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20221026:
 
