@@ -1436,34 +1436,20 @@ Example
 SPARQL Service
 --------------
 
-This service enables the connection of geodata from different sources as Linked Data. It uses the open query language `SPARQL <https://www.w3.org/TR/sparql11-overview/>`_.
+This service enables the connection of geodata from different sources as Linked Data. See `description <https://www.geo.admin.ch/linkeddata>`_.
 
 URL
 ***
 
 ::
 
-  GET https://sparql.geo.admin.ch/sparql
+  GET https://geo.ld.admin.ch/query/ (SPARQL Endpoint)
   GET https://geo.ld.admin.ch/sparql/ (YASGUI)
 
 Available datasets
 ******************
 
-- `swissBOUNDARIES3D <https://geo.ld.admin.ch/data/swissBOUNDARIES3D>`_
-- `Public transport stops <https://geo.ld.admin.ch/data/PublicTransportStops>`_
-
-Examples
-********
-
-- `Get the top five most populated municipalities in 2016 <https://tinyurl.com/ybfn8mlt>`_
-- `Get the 2016 version of the administrative units at coordinate (lon,lat) 7.43, 46.95 <https://tinyurl.com/yb985olj>`_
-- `Get all the districts by canton number and year <https://tinyurl.com/y8fovmtw>`_
-- `Get all the versions of a resource by URI <https://tinyurl.com/hvw2zhq>`_
-- `Get the corresponding resource in Wikidata and GeoNames (Municipality) <https://tinyurl.com/y8ln886n>`_
-- `Get the Wikipedia abstract (Municipality) <https://tinyurl.com/y89hcpce>`_
-- `Get the five highest stops <https://tinyurl.com/yah7tbwd>`_
-- `Get stops above 3000 meters <https://tinyurl.com/yauhxk6x>`_
-- `Get stops with means of transportation = Rack railway, boat <https://tinyurl.com/ycu5gly6>`_
+- `Data Catalog <https://geo.ld.admin.ch/.well-known/void>`_
 
 
 .. _inspireAtomFeed:
