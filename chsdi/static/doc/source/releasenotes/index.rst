@@ -115,6 +115,7 @@ Geodata
 | Update | `Aerial images cantons <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-kantone>`__ (ch.swisstopo.lubis-luftbilder-dritte-kantone)                                                                |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+
 .. _releasenotes_20221026:
 
 Release 20221026 - Wednesday, October 26th 2022
