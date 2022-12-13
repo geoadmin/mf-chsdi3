@@ -26,6 +26,7 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - Announcements:
+
   - the layer **ch.bazl.einschraenkungen-drohnen** has changed its **data and representation model** as previously announced. New attributes on this layer: zone_name_de, zone_name_fr, zone_name_it, zone_name_en, zone_restriction_de, zone_restriction_fr, zone_restriction_it, zone_restriction_en, zone_message_de, zone_message_fr, zone_message_it, zone_message_en, auth_url, auth_name, auth_contact, auth_service, auth_email, auth_phone, auth_intervalbefore, air_vol_lower_limit, air_vol_lower_vref, air_vol_upper_limit, air_vol_upper_vref, time_permanent, time_start, time_end, period_day, period_start, period_end. Further information: `model description <https://www.bazl.admin.ch/bazl/de/home/themen/geoinformation_statistik/geoinformation/geofachdaten/uaszones.html>`__
   - the layer **ch.bazl.luftfahrthindernis** has changed in its content and its representation model: Small obstacles near airports are now published in a seperate layer ch.bazl.luftfahrthindernis-klein
   - the layer **ch.bfs.gebaeude_wohnungs_register** has new download links. Downloads are now provided from the `MADD platform provided by the Federal Statistical Office <https://www.housing-stat.ch/de/madd/public.html>`__
@@ -34,6 +35,7 @@ API & applications
   - the WMS layers **ch.swisstopo.swissboundaries3d.inspire** and **ch.swisstopo.swissnames3d.inspire** have been removed from FSDI services
   - generic solution for technical group WMS layers. Technical groups will now be visible in the GetCapbilities Document as a group with one single Layer having the same name as the group. The new structure of technical groups will allow an easier use of GetFeatureInfo in most GIS clients. Following layers have been reorganized accordingly and many more to follow with the release on March 15th 2023: **ch.astra.mountainbikeland**, **ch.astra.skatingland**, **ch.astra.veloland**, **ch.astra.wanderland**, **ch.bfe.solarenergie-eignung-daecher**, **ch.bfe.solarenergie-eignung-fassaden**, **ch.swisstopo.geologie-geocover**, **ch.swisstopo.geologie-geologische_karte**, **ch.swisstopo.geologie-geologischer_atlas**, **ch.swisstopo.lubis-luftbilder_schraegaufnahmen**, **ch.swisstopo.lubis-terrestrische_aufnahmen**, **ch.swisstopo.swissbathy3d-reliefschattierung** and **ch.swisstopo.swissimage-product.metadata**
   - the layer **ch.pronatura.waldreservate** will be removed from FSDI services with the release of March 15th 2023
+
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-10-26-rc1...2022-12-14-rc1>`__
 
 `MAP <//map.geo.admin.ch>`__
