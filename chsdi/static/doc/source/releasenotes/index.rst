@@ -14,6 +14,108 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20221214:
+
+Release 20221214 - Wednesday, December 14th 2022
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcements:
+  - the layer **ch.bazl.einschraenkungen-drohnen** has changed its **data and representation model** as previously announced. New attributes on this layer: zone_name_de, zone_name_fr, zone_name_it, zone_name_en, zone_restriction_de, zone_restriction_fr, zone_restriction_it, zone_restriction_en, zone_message_de, zone_message_fr, zone_message_it, zone_message_en, auth_url, auth_name, auth_contact, auth_service, auth_email, auth_phone, auth_intervalbefore, air_vol_lower_limit, air_vol_lower_vref, air_vol_upper_limit, air_vol_upper_vref, time_permanent, time_start, time_end, period_day, period_start, period_end. Further information: `model description <https://www.bazl.admin.ch/bazl/de/home/themen/geoinformation_statistik/geoinformation/geofachdaten/uaszones.html>`__
+  - the layer **ch.bazl.luftfahrthindernis** has changed in its content and its representation model: Small obstacles near airports are now published in a seperate layer ch.bazl.luftfahrthindernis-klein
+  - the layer **ch.bfs.gebaeude_wohnungs_register** has new download links. Downloads are now provided from the `MADD platform provided by the Federal Statistical Office <https://www.housing-stat.ch/de/madd/public.html>`__
+  - the WMS of the layer **ch.bfe.ladestellen-elektromobilitaet** has been removed from FSDI services as previously announced
+  - the layers **ch.astra.baulinien-nationalstrassen.oereb**, **ch.astra.projektierungszonen-nationalstrassen.oereb**, **ch.bav.baulinien-eisenbahnanlagen.oereb**, **ch.bav.kataster-belasteter-standorte-oev.oereb**, **ch.bav.projektierungszonen-eisenbahnanlagen.oereb**, **ch.bazl.baulinien-flughafenanlagen.oereb**, **ch.bazl.kataster-belasteter-standorte-zivilflugplaetze.oereb**, **ch.bazl.projektierungszonen-flughafenanlagen.oereb**, **ch.bazl.sicherheitszonenplan.oereb** and **ch.vbs.kataster-belasteter-standorte-militaer.oereb** have been removed from FSDI services (WMS and OEREB Feature Service)
+  - the WMS layers **ch.swisstopo.swissboundaries3d.inspire** and **ch.swisstopo.swissnames3d.inspire** have been removed from FSDI services
+  - generic solution for technical group WMS layers. Technical groups will now be visible in the GetCapbilities Document as a group with one single Layer having the same name as the group. The new structure of technical groups will allow an easier use of GetFeatureInfo in most GIS clients. Following layers have been reorganized accordingly and many more to follow with the release on March 15th 2023: **ch.astra.mountainbikeland**, **ch.astra.skatingland**, **ch.astra.veloland**, **ch.astra.wanderland**, **ch.bfe.solarenergie-eignung-daecher**, **ch.bfe.solarenergie-eignung-fassaden**, **ch.swisstopo.geologie-geocover**, **ch.swisstopo.geologie-geologische_karte**, **ch.swisstopo.geologie-geologischer_atlas**, **ch.swisstopo.lubis-luftbilder_schraegaufnahmen**, **ch.swisstopo.lubis-terrestrische_aufnahmen**, **ch.swisstopo.swissbathy3d-reliefschattierung** and **ch.swisstopo.swissimage-product.metadata**
+  - the layer **ch.pronatura.waldreservate** will be removed from FSDI services with the release of March 15th 2023
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-10-26-rc1...2022-12-14-rc1>`__
+
+`MAP <//map.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Habitat Map <//map.geo.admin.ch/?layers=ch.bafu.lebensraumkarte-schweiz>`__ (ch.bafu.lebensraumkarte-schweiz)                                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Stocking of river banks <//map.geo.admin.ch/?layers=ch.bafu.gewaesser-uferbestockung>`__ (ch.bafu.gewaesser-uferbestockung)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Stocking map <//map.geo.admin.ch/?layers=ch.bafu.gewaesser-uferbestockung_vegetation>`__ (ch.bafu.gewaesser-uferbestockung_vegetation)                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Plätze für Jenische, Sinti und Roma <//map.geo.admin.ch/?layers=ch.bak.halteplaetze-jenische_sinti_roma>`__ (ch.bak.halteplaetze-jenische_sinti_roma)                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Aerodrome obstacles < 25 / 60 m <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis-klein>`__ (ch.bazl.luftfahrthindernis-klein)                                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Building zones Switzerland (harmonized) <//map.geo.admin.ch/?layers=ch.are.bauzonen>`__ (ch.are.bauzonen)                                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Restrictions for drones <//map.geo.admin.ch/?layers=ch.bazl.einschraenkungen-drohnen>`__ (ch.bazl.einschraenkungen-drohnen)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Housing Inventory <//map.geo.admin.ch/?layers=ch.are.wohnungsinventar-zweitwohnungsanteil>`__ (ch.are.wohnungsinventar-zweitwohnungsanteil)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division swissSURFACE3D Raster <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d-raster.metadata>`__ (ch.swisstopo.swisssurface3d-raster.metadata)                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissSURFACE3D Hillshade Monodirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d-reliefschattierung_monodirektional>`__ (ch.swisstopo.swisssurface3d-reliefschattierung_monodirektional)         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissSURFACE3D Hillshade Multidirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d-reliefschattierung-multidirektional>`__ (ch.swisstopo.swisssurface3d-reliefschattierung-multidirektional)      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissBATHY3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissbathy3d-reliefschattierung>`__ (ch.swisstopo.swissbathy3d-reliefschattierung)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Solar energy: suitability of roofs <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-daecher>`__ (ch.bfe.solarenergie-eignung-daecher)                                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Solarenergie: Eignung Fassaden <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-eignung-fassaden>`__ (ch.bfe.solarenergie-eignung-fassaden)                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Vermessungsstrecken - Querprofilmarke <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-querprofilmarken>`__ (ch.bafu.wasserbau-querprofilmarken)                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Datenbank Querprofile (QP) - Vermessungsstrecken <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-vermessungsstrecken>`__ (ch.bafu.wasserbau-vermessungsstrecken)                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=bafu.wrz-wildruhezonen_portal>`__ (bafu.wrz-wildruhezonen_portal)                                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Low distortion area <//map.geo.admin.ch/?layers=ch.swisstopo-vd.spannungsarme-gebiete>`__ (ch.swisstopo-vd.spannungsarme-gebiete)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ILNM <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-bln>`__ (ch.bafu.bundesinventare-bln)                                                                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Floodplains <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-auen>`__ (ch.bafu.bundesinventare-auen)                                                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Register of Buildings and Dwellings <//map.geo.admin.ch/?layers=ch.bfs.gebaeude_wohnungs_register>`__ (ch.bfs.gebaeude_wohnungs_register)                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Air navigation obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis>`__ (ch.bazl.luftfahrthindernis)                                                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Employment (FTE) <//map.geo.admin.ch/?layers=ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente>`__ (ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente)                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Employment <//map.geo.admin.ch/?layers=ch.bfs.betriebszaehlungen-arbeitsstaetten>`__ (ch.bfs.betriebszaehlungen-arbeitsstaetten)                                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Dwellings <//map.geo.admin.ch/?layers=ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen>`__ (ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen)                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Buildings <//map.geo.admin.ch/?layers=ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude>`__ (ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Population (residents) <//map.geo.admin.ch/?layers=ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner>`__ (ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner)                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Winter national map | LK10, LK25, LK50, LK100 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-winter>`__ (ch.swisstopo.pixelkarte-farbe-winter)                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP rail infrastructure <//map.geo.admin.ch/?layers=ch.bav.sachplan-infrastruktur-schiene_kraft>`__ (ch.bav.sachplan-infrastruktur-schiene_kraft)                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SIL Anhörung <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images cantons <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-kantone>`__ (ch.swisstopo.lubis-luftbilder-dritte-kantone)                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20221026:
 
 Release 20221026 - Wednesday, October 26th 2022

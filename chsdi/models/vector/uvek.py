@@ -829,11 +829,6 @@ class FernWaermeAngebot(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     heatpotential = Column('heatpotential', Float)
-    heat_supplier_category = Column('heat_supplier_category', Integer)
-    bezeichnung_de = Column('bezeichnung_de', Unicode)
-    bezeichnung_fr = Column('bezeichnung_fr', Unicode)
-    bezeichnung_it = Column('bezeichnung_it', Unicode)
-    bezeichnung_en = Column('bezeichnung_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.fernwaerme-angebot', FernWaermeAngebot)
@@ -1603,37 +1598,10 @@ register('ch.bakom.versorgungsgebiet-ukw', Bakomukw)
 
 
 class EinschraenkungenDrohnen(Base, Vector):
-    __tablename__ = 'einschraenkungen_drohnen'
+    __tablename__ = 'gebietsbeschraenkungen_drohnen'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/einschraenkungen_drohnen.mako'
     __bodId__ = 'ch.bazl.einschraenkungen-drohnen'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    name_de = Column('name_de', Unicode)
-    name_fr = Column('name_fr', Unicode)
-    name_it = Column('name_it', Unicode)
-    name_en = Column('name_en', Unicode)
-    restr_de = Column('restr_de', Unicode)
-    restr_fr = Column('restr_fr', Unicode)
-    restr_it = Column('restr_it', Unicode)
-    restr_en = Column('restr_en', Unicode)
-    bew_st_de = Column('bew_st_de', Unicode)
-    bew_st_fr = Column('bew_st_fr', Unicode)
-    bew_st_it = Column('bew_st_it', Unicode)
-    bew_st_en = Column('bew_st_en', Unicode)
-    bew_li_de = Column('bew_li_de', Unicode)
-    bew_li_fr = Column('bew_li_fr', Unicode)
-    bew_li_it = Column('bew_li_it', Unicode)
-    bew_li_en = Column('bew_li_en', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bazl.einschraenkungen-drohnen', EinschraenkungenDrohnen)
-
-
-class GebietsbeschraenkungenDrohnen(Base, Vector):
-    __tablename__ = 'gebietsbeschraenkungen_drohnen'
-    __table_args__ = ({'schema': 'bazl', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gebietsbeschraenkungen_drohnen.mako'
-    __bodId__ = 'ch.bazl.gebietsbeschraenkungen-drohnen'
     __extended_info__ = True
     id = Column('bgdi_id', Integer, primary_key=True)
     zone_name_de = Column('zone_name_de', Unicode)
@@ -1658,22 +1626,13 @@ class GebietsbeschraenkungenDrohnen(Base, Vector):
     auth_name_fr = Column('auth_name_fr', Unicode)
     auth_name_it = Column('auth_name_it', Unicode)
     auth_name_en = Column('auth_name_en', Unicode)
-    auth_contact_de = Column('auth_contact_de', Unicode)
-    auth_contact_fr = Column('auth_contact_fr', Unicode)
-    auth_contact_it = Column('auth_contact_it', Unicode)
-    auth_contact_en = Column('auth_contact_en', Unicode)
+    auth_contact = Column('auth_contact', Unicode)
     auth_service_de = Column('auth_service_de', Unicode)
     auth_service_fr = Column('auth_service_fr', Unicode)
     auth_service_it = Column('auth_service_it', Unicode)
     auth_service_en = Column('auth_service_en', Unicode)
-    auth_email_de = Column('auth_email_de', Unicode)
-    auth_email_fr = Column('auth_email_fr', Unicode)
-    auth_email_it = Column('auth_email_it', Unicode)
-    auth_email_en = Column('auth_email_en', Unicode)
-    auth_phone_de = Column('auth_phone_de', Unicode)
-    auth_phone_fr = Column('auth_phone_fr', Unicode)
-    auth_phone_it = Column('auth_phone_it', Unicode)
-    auth_phone_en = Column('auth_phone_en', Unicode)
+    auth_email = Column('auth_email', Unicode)
+    auth_phone = Column('auth_phone', Unicode)
     auth_intervalbefore = Column('auth_intervalbefore', Unicode)
     air_vol_lower_vref = Column('air_vol_lower_vref', Unicode)
     air_vol_lower_limit = Column('air_vol_lower_limit', Unicode)
@@ -1687,7 +1646,7 @@ class GebietsbeschraenkungenDrohnen(Base, Vector):
     period_end = Column('period_end', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.gebietsbeschraenkungen-drohnen', GebietsbeschraenkungenDrohnen)
+register('ch.bazl.einschraenkungen-drohnen', EinschraenkungenDrohnen)
 
 
 class ProjFlughafenanlagen(Base, Vector):
@@ -1735,11 +1694,18 @@ class LuftfahrthindernisBase:
     the_geom = Column(Geometry2D)
 
 
-class Luftfahrthindernis(Base, LuftfahrthindernisBase, Vector):
+class LuftfahrthindernisBig(Base, LuftfahrthindernisBase, Vector):
     __bodId__ = 'ch.bazl.luftfahrthindernis'
-    __tablename__ = 'view_obstacles'
+    __tablename__ = 'view_obstacles_big'
 
-register(Luftfahrthindernis.__bodId__, Luftfahrthindernis)
+register(LuftfahrthindernisBig.__bodId__, LuftfahrthindernisBig)
+
+
+class LuftfahrthindernisSmall(Base, LuftfahrthindernisBase, Vector):
+    __bodId__ = 'ch.bazl.luftfahrthindernis-klein'
+    __tablename__ = 'view_obstacles_small'
+
+register(LuftfahrthindernisSmall.__bodId__, LuftfahrthindernisSmall)
 
 
 class LuftfahrthindernisAktuell(Base, LuftfahrthindernisBase, Vector):
