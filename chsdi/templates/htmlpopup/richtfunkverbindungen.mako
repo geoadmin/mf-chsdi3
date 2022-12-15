@@ -4,7 +4,7 @@
 <%
   link_class = c['attributes']['link_class'].lower().strip()
   if link_class == 'kl1':
-    hertz = '6 - 16 GHz'
+    hertz = '4 - 16 GHz'
   elif link_class == 'kl2':
     hertz = '17 - 29 GHz'
   elif link_class == 'kl3':
