@@ -15,9 +15,9 @@ except ImportError:
 def br(text):
     return text.replace('\n', markupsafe.Markup('<br />'))
 
-tileUrlBasePath = 'http://aerialimages0.geo.admin.ch/tiles'
+def determinePreviewUrl(tileUrlBasePath, ebkey):
 
-def determinePreviewUrl(ebkey):
+    tileUrlBasePath = tileUrlBasePath
 
     def getPreviewImageUrl(ebkey):
         return tileUrlBasePath + '/' + ebkey + '/quickview.jpg'
@@ -31,7 +31,7 @@ def determinePreviewUrl(ebkey):
     if not h.resource_exists(url, headers):
          url = getZeroTileUrl(ebkey)
 
-    return h.make_agnostic(url)
+    return url
 
 def date_to_str(datum):
     try:
@@ -50,7 +50,7 @@ def get_viewer_url(request, params):
         'lang': params[6],
         'rotation': params[7]
     }
-    return h.make_agnostic(route_url('luftbilder', request)) + '?' + urlencode(f)
+    return route_url('luftbilder', request) + '?' + urlencode(f)
 
 %>
 
@@ -60,8 +60,12 @@ def get_viewer_url(request, params):
 tt_lubis_ebkey = c['layerBodId'] + '.' + 'id'
 lang = lang if lang in ('fr','it','en') else 'de'
 c['stable_id'] = True
+request = context.get('request')
+aerialimages_data_host = request.registry.settings['aerialimages_data_host']
+tileUrlBasePath = aerialimages_data_host + '/tiles'
 
-preview_url = determinePreviewUrl(c['featureId'])
+preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
+
 
 image_width = c['attributes']['image_width'] if 'image_width' in  c['attributes'] else None
 image_height = c['attributes']['image_height'] if 'image_height' in c['attributes'] else None
@@ -160,8 +164,11 @@ protocol = request.scheme
 c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
 topic = request.matchdict.get('map')
 lang = request.lang
+aerialimages_data_host = request.registry.settings['aerialimages_data_host']
+tileUrlBasePath = aerialimages_data_host + '/tiles'
 
-preview_url = determinePreviewUrl(c['featureId'])
+
+preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
 
 filesize_mb = '-'
 filename = c['attributes']['filename']
@@ -254,7 +261,7 @@ viewer_url = get_viewer_url(request, params)
   <script type="text/javascript">
     function init() {
 % if preview_url != "" and image_width != None:
-     ${lubis_map.init_map(c['featureId'], image_width, image_height, image_rotation, 'lubismap')}
+     ${lubis_map.init_map(c['featureId'], image_width, image_height, image_rotation, 'lubismap', aerialimages_data_host)}
 %endif
     }
   </script>

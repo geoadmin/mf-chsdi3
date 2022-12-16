@@ -11,9 +11,10 @@ import markupsafe
 def br(text):
     return text.replace('\n', markupsafe.Markup('<br />'))
 
-tileUrlBasePath = 'http://aerialimages0.geo.admin.ch/tiles'
 
-def determinePreviewUrl(ebkey):
+def determinePreviewUrl(tileUrlBasePath, ebkey):
+
+    tileUrlBasePath = tileUrlBasePath
 
     def getPreviewImageUrl(ebkey):
         return tileUrlBasePath + '/' + ebkey + '/quickview.jpg'
@@ -27,7 +28,7 @@ def determinePreviewUrl(ebkey):
     if not h.resource_exists(url, headers):
          url = getZeroTileUrl(ebkey)
 
-    return h.make_agnostic(url)
+    return url
 
 def date_to_str(datum):
     try:
@@ -61,11 +62,15 @@ def get_viewer_url(request, params):
 tt_lubis_ebkey = c['layerBodId'] + '.' + 'id'
 lang = lang if lang in ('fr','it','en') else 'de'
 c['stable_id'] = True
+request = context.get('request')
 
 toposhopscan = 'nein'
 if c['attributes']['filename'] :
     toposhopscan = 'ja'
-preview_url = determinePreviewUrl(c['featureId'])
+
+aerialimages_data_host = request.registry.settings['aerialimages_data_host']
+tileUrlBasePath = aerialimages_data_host + '/tiles'
+preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
 
 image_width = c['attributes']['image_width'] if 'image_width' in  c['attributes'] else None
 image_height = c['attributes']['image_height'] if 'image_height' in c['attributes'] else None
@@ -166,8 +171,11 @@ protocol = request.scheme
 c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
 topic = request.matchdict.get('map')
 lang = request.lang
+aerialimages_data_host = request.registry.settings['aerialimages_data_host']
+tileUrlBasePath = aerialimages_data_host + '/tiles'
 
-preview_url = determinePreviewUrl(c['featureId'])
+
+preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
 
 filesize_mb = '-'
 toposhopscan = 'nein'
@@ -248,7 +256,7 @@ url_smapshot= "https://smapshot.heig-vd.ch/map/?imageId={}".format(c['attributes
   <script type="text/javascript">
     function init() {
 % if preview_url != "" and image_width != None:
-     ${lubis_map.init_map(c['featureId'], image_width, image_height, image_rotation, 'lubismap')}
+     ${lubis_map.init_map(c['featureId'], image_width, image_height, image_rotation, 'lubismap', aerialimages_data_host)}
 %endif
     }
   </script>
