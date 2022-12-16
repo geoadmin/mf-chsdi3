@@ -1,9 +1,15 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
+    <% 
+        lang = 'fr' if lang in ('fr', 'it') else 'de'
+        bln_gebiet = 'bln_gebiet_%s' % lang
+        moorlandschaft = 'moorlandschaft_%s' % lang
+        naturpark = 'naturpark_%s' % lang
+    %>
     <tr>
         <td class="cell-left">${_('ch.bafu.tranquillity-gebiete.bgdi_id')}</td>
-        <td>${c['attributes']['bgk'] or '-'}</td>
+        <td>${c['attributes']['fid'] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.tranquillity-gebiete.name')}</td>
@@ -19,7 +25,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.tranquillity-gebiete.naturpark')}</td>
-        <td>${c['attributes']['naturpark'] or '-'}</td>
+        <td>${c['attributes'][naturpark] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.tranquillity-gebiete.oev_erreichbarkeit')}</td>
@@ -27,11 +33,11 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.tranquillity-gebiete.bln_gebiet')}</td>
-        <td>${c['attributes']['bln_gebiet'] or '-'}</td>
+        <td>${c['attributes'][bln_gebiet] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.tranquillity-gebiete.moorlandschaft')}</td>
-        <td>${c['attributes']['moorlandschaft'] or '-'}</td>
+        <td>${c['attributes'][moorlandschaft] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.tranquillity-gebiete.flaeche')}</td>

@@ -2318,18 +2318,22 @@ register('ch.bafu.lebensraumkarte-schweiz', LebensraumkarteSchweiz)
 class TranquillityGebiete(Base, Vector):
     __tablename__ = 'tranquillity_gebiete'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
-    __bodId__ = 'ch.bafu.schutzge.tranquillity-gebiete'
+    __bodId__ = 'ch.bafu.tranquillity-gebiete'
     __template__ = 'templates/htmlpopup/bafu_tranquillity_gebiete.mako'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
+    fid = Column('fid', Integer)
     flaeche = Column('flaeche', Float)
     oev_erreichbarkeit = Column('oev_erreichbarkeit', Integer)
-    bln_gebiet = Column('bln_gebiet', Unicode)
+    bln_gebiet_de = Column('bln_gebiet_de', Unicode)
+    bln_gebiet_fr = Column('bln_gebiet_fr', Unicode)
     name = Column('name', Unicode)
     kanton = Column('kanton', Unicode)
     gemeinde = Column('gemeinde', Unicode)
-    naturpark = Column('naturpark', Unicode)
-    moorlandschaft = Column('moorlandschaft', Unicode)
+    naturpark_de = Column('naturpark_de', Unicode)
+    naturpark_fr = Column('naturpark_fr', Unicode)
+    moorlandschaft_de = Column('moorlandschaft_de', Unicode)
+    moorlandschaft_fr = Column('moorlandschaft_fr', Unicode)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.bafu.schutzge.tranquillity-gebiete', TranquillityGebiete)
+register('ch.bafu.tranquillity-gebiete', TranquillityGebiete)
