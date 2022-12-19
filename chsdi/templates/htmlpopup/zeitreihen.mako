@@ -7,10 +7,10 @@ from pyramid.url import route_url
 import chsdi.lib.helpers as h
 import markupsafe
 
-tileUrlBasePath = 'http://historicalmaps.geo.admin.ch/tiles'
 
-def determinePreviewUrl(bvnummer):
+def determinePreviewUrl(tileUrlBasePath, bvnummer):
 
+    tileUrlBasePath = tileUrlBasePath
     def getPreviewImageUrl(bvnummer):
         return tileUrlBasePath + '/' + bvnummer + '/quickview.jpg'
 
@@ -21,7 +21,8 @@ def determinePreviewUrl(bvnummer):
     url = getPreviewImageUrl(bvnummer)
     if not h.resource_exists(url, headers):
         url = getZeroTileUrl(bvnummer)
-    return h.make_agnostic(url)
+    return url
+
 
 def date_to_str(datum):
     try:
@@ -39,7 +40,7 @@ def get_viewer_url(request, params):
         'lang': params[5],
         'release_year': params[6]
     }
-    return h.make_agnostic(route_url('historicalmaps', request)) + '?' + urllib.parse.urlencode(f)
+    return route_url('historicalmaps', request) + '?' + urllib.parse.urlencode(f)
 
 
 %>
@@ -50,9 +51,12 @@ def get_viewer_url(request, params):
     productName = 'kartenwerk_%s' % product
 
     image_rotation = 0
+    request = context.get('request')
+    hist_maps_data_host = tileUrlBasePath = request.registry.settings.get('hist_maps_data_host')
+    tileUrlBasePath = hist_maps_data_host + '/tiles'
 
     # Get Image Preview URL and Image Size from Metafile
-    preview_url = determinePreviewUrl(c['attributes']['bv_nummer'])
+    preview_url = determinePreviewUrl(tileUrlBasePath, c['attributes']['bv_nummer'])
     wh = h.imagesize_from_metafile(tileUrlBasePath, c['attributes']['bv_nummer'])
     image_width = wh[0]
     image_height = wh[1]

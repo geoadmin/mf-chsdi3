@@ -37,7 +37,7 @@ def historical_maps(request):
     rotation = request.params.get('rotation')
     title = request.params.get('title')
     baseUrl = request.registry.settings.get('geoadminhost')
-    tileUrlBasePath = 'http://historicalmaps.geo.admin.ch/tiles'
+    tileUrlBasePath = request.registry.settings.get('hist_maps_data_host') + '/tiles'
 
     return render_to_response(
         'chsdi:templates/historicalmaps/viewer.mako',

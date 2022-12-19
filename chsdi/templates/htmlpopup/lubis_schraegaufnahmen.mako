@@ -8,12 +8,12 @@ from pyramid.url import route_url
 import chsdi.lib.helpers as h
 import markupsafe
 
-tileUrlBasePath = 'http://aerialimages0.geo.admin.ch/tiles'
-
 def br(text):
     return text.replace('\n', markupsafe.Markup('<br />'))
 
-def determinePreviewUrl(ebkey):
+def determinePreviewUrl(tileUrlBasePath, ebkey):
+
+    tileUrlBasePath = tileUrlBasePath
 
     def getPreviewImageUrl(ebkey):
         return tileUrlBasePath + '/' + ebkey + '/quickview.jpg'
@@ -27,7 +27,7 @@ def determinePreviewUrl(ebkey):
     if not h.resource_exists(url, headers):
          url = getZeroTileUrl(ebkey)
 
-    return h.make_agnostic(url)
+    return url
 
 
 def date_to_str(datum):
@@ -56,7 +56,9 @@ def get_viewer_url(request, params):
 
 lang = lang if lang in ('fr','it','en') else 'de'
 c['stable_id'] = True
-preview_url = determinePreviewUrl(c['featureId'])
+request = context.get('request')
+tileUrlBasePath = request.registry.settings['aerialimages_data_host'] + '/tiles'
+preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
 
 image_rotation = 0
 wh = h.imagesize_from_metafile(tileUrlBasePath, c['featureId'])
@@ -101,10 +103,12 @@ viewer_url = get_viewer_url(request, params)
 c['stable_id'] = True
 protocol = request.scheme
 c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
+aerialimages_data_host = request.registry.settings['aerialimages_data_host']
+tileUrlBasePath =  aerialimages_data_host + '/tiles'
 topic = request.matchdict.get('map')
 lang = request.lang
 
-preview_url = determinePreviewUrl(c['featureId'])
+preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
 image_rotation = 0
 wh = h.imagesize_from_metafile(tileUrlBasePath, c['featureId'])
 image_width = wh[0]
@@ -150,7 +154,7 @@ viewer_url = get_viewer_url(request, params)
   <script type="text/javascript">
     function init() {
 % if preview_url != "" and image_width != None:
-     ${lubis_map.init_map(c['featureId'], image_width, image_height, image_rotation, 'lubismap')}
+     ${lubis_map.init_map(c['featureId'], image_width, image_height, image_rotation, 'lubismap', aerialimages_data_host)}
 %endif
     }
   </script>
