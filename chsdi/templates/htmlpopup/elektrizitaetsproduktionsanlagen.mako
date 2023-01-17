@@ -18,7 +18,6 @@
 
 <%def name="extended_info(c, lang)">
 <%
-# arrays in identify result: detail_*
 
   lang = {'rm': 'de'}.get(lang, lang)
   main_category = 'main_category_' + lang
