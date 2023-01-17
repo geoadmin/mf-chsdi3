@@ -38,24 +38,5 @@
     <tr><td colspan=2 class="cell-meta">${_('ch.bfe.elektrizitaetsproduktionsanlagen.main_category')}</td>          <td class="cell-meta" colspan=3>${c['attributes'][main_category] or '-'}</td></tr>
     <tr><td colspan=2 class="cell-meta">${_('ch.bfe.elektrizitaetsproduktionsanlagen.sub_category')}</td>           <td class="cell-meta" colspan=3>${c['attributes'][sub_category] or '-'}</td></tr>
     <tr><td colspan=2 class="cell-meta">${_('ch.bfe.elektrizitaetsproduktionsanlagen.plant_type')}</td>             <td class="cell-meta" colspan=3>${c['attributes'][plant_type] or '-'}</td></tr>
-% if c['attributes']['detail_date'] != None:
-    <tr><th colspan=5>${_('ch.bfe.elektrizitaetsproduktionsanlagen.plant_details')}</th></tr>
-    <tr>
-      <th class="cell-meta">${_('ch.bfe.elektrizitaetsproduktionsanlagen.date')}</th>
-      <th class="cell-meta">${_('ch.bfe.elektrizitaetsproduktionsanlagen.power')}</th>
-      <th class="cell-meta">${_('ch.bfe.elektrizitaetsproduktionsanlagen.inclination')}</th>
-      <th class="cell-meta">${_('ch.bfe.elektrizitaetsproduktionsanlagen.orientation')}</th>
-      <th class="cell-meta">${_('ch.bfe.elektrizitaetsproduktionsanlagen.plant_type')}</th>
-    </tr>
-  % for i in range(len(c['attributes']['detail_date'])):
-    <tr>
-      <td class="cell-meta-small">${c['attributes']['detail_date'][i] or '-'}</td>
-      <td class="cell-meta-small">${c['attributes']['detail_power'][i] or '-'}</td>
-      <td class="cell-meta-small">${c['attributes']['detail_inclination'][i] or '-'}</td>
-      <td class="cell-meta-small">${c['attributes'][detail_orientation][i] or '-'}</td>
-      <td class="cell-meta-small">${c['attributes'][detail_plant_type][i] or '-'}</td>
-    </tr>
-  % endfor
-% endif
   </table>
 </%def>
