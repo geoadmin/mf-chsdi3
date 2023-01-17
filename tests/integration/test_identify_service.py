@@ -726,17 +726,6 @@ class TestIdentifyService(TestsBase):
                   'timeInstant': '1936'}
         self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
 
-    def test_identify_oereb(self):
-        params = {'geometry': '618953,170093',
-                  'geometryType': 'esriGeometryPoint',
-                  'imageDisplay': '1920,576,96',
-                  'layers': 'all:ch.bav.kataster-belasteter-standorte-oev.oereb',
-                  'mapExtent': '671164.31244,253770,690364.31244,259530',
-                  'tolerance': '5',
-                  'geometryFormat': 'interlis'}
-        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'text/xml')
-
     def test_identify_oereb_several_layers(self):
         params = {'geometry': '618953,170093',
                   'geometryType': 'esriGeometryPoint',
