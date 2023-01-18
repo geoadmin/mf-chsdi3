@@ -2337,3 +2337,34 @@ class TranquillityGebiete(Base, Vector):
     the_geom = Column('the_geom', Geometry2D)
 
 register('ch.bafu.tranquillity-gebiete', TranquillityGebiete)
+
+
+class KlimaCO2AusstossGebaeude(Base, Vector):
+    __tablename__ = 'co2_ausstoss_gebaeude'
+    __table_args__ = ({'schema': 'klima', 'autoload': False})
+    __bodId__ = 'ch.bafu.klima-co2_ausstoss_gebaeude'
+    __template__ = 'templates/htmlpopup/bafu_klima_co2_ausstoss_gebaeude.mako'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    egid = Column('egid', Unicode)
+    hinweis_de = Column('hinweis_de', Unicode)
+    hinweis_fr = Column('hinweis_fr', Unicode)
+    hinweis_it = Column('hinweis_it', Unicode)
+    co2_range = Column('co2_range', Unicode)
+    genh1_de = Column('genh1_de', Unicode)
+    genh1_fr = Column('genh1_fr', Unicode)
+    genh1_it = Column('genh1_it', Unicode)
+    gwaersceh1_de = Column('gwaersceh1_de', Unicode)
+    gwaersceh1_fr = Column('gwaersceh1_fr', Unicode)
+    gwaersceh1_it = Column('gwaersceh1_it', Unicode)
+    gexpdat = Column('gexpdat', Unicode)
+    linkco2 = Column('linkco2', Unicode)
+    linkpdf_de = Column('linkpdf_de', Unicode)
+    linkpdf_fr = Column('linkpdf_fr', Unicode)
+    linkpdf_it = Column('linkpdf_it', Unicode)
+    linkbafu_de = Column('linkbafu_de', Unicode)
+    linkbafu_fr = Column('linkbafu_fr', Unicode)
+    linkbafu_it = Column('linkbafu_it', Unicode)
+    the_geom = Column('the_geom', Geometry2D)
+
+register('ch.bafu.klima-co2_ausstoss_gebaeude', KlimaCO2AusstossGebaeude)
