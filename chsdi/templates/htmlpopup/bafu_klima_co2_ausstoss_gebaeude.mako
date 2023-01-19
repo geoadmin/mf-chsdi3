@@ -11,7 +11,7 @@
     %>
     <tr>
         <td class="cell-left">${_('ch.bafu.klima-co2_ausstoss_gebaeude.egid')}</td>
-        <td>${c['attributes']['egid'] or '-'}</td>
+        <td>${c['featureId'] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.klima-co2_ausstoss_gebaeude.hinweis')}</td>
