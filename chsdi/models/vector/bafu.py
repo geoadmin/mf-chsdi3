@@ -2345,8 +2345,7 @@ class KlimaCO2AusstossGebaeude(Base, Vector):
     __bodId__ = 'ch.bafu.klima-co2_ausstoss_gebaeude'
     __template__ = 'templates/htmlpopup/bafu_klima_co2_ausstoss_gebaeude.mako'
     __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    egid = Column('egid', Unicode)
+    id = Column('egid', Integer, primary_key=True)
     hinweis_de = Column('hinweis_de', Unicode)
     hinweis_fr = Column('hinweis_fr', Unicode)
     hinweis_it = Column('hinweis_it', Unicode)
