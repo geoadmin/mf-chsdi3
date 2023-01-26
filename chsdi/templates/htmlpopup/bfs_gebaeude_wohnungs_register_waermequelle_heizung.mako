@@ -20,7 +20,7 @@
         <td>${c['attributes']['dplzname'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register_waermequelle_heizung.genh1')}</td>
+        <td class="cell-left">${_('ch.bfs.gebaeude_wohnungs_register_waermequelle_heizung.gwaerzh1')}</td>
         <td>${c['attributes'][gwaerzh1_text] or '-'}</td>
     </tr>
     <tr>
