@@ -74,7 +74,7 @@
       % if download[0]=='-':
       <tr><th class="cell-left">${_('ch.swisstopo.geologie-geothermische_potenzialstudien_regional.download')}</th>       <td>-</td></tr>
       % else:
-      <tr><th class="cell-left">${_('ch.swisstopo.geologie-geothermische_potenzialstudien_regional.download')}</th>       <td><a href="${download[0]}" target="_blank">Zip</a></td></tr>
+      <tr><th class="cell-left">${_('ch.swisstopo.geologie-geothermische_potenzialstudien_regional.download')}</th>       <td><a href="${download[0]}" target="_blank">PDF</a></td></tr>
       %endif
    %endfor
 %endif 
