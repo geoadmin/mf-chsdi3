@@ -2301,7 +2301,6 @@ class LebensraumkarteSchweiz(Base, Vector):
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
     polyid = Column('polyid', Integer)
-    typoch_num = Column('typoch_num', Integer)
     typoch_de = Column('typoch_de', Unicode)
     typoch_fr = Column('typoch_fr', Unicode)
     typoch_it = Column('typoch_it', Unicode)
