@@ -2365,3 +2365,28 @@ class KlimaCO2AusstossGebaeude(Base, Vector):
     the_geom = Column('the_geom', Geometry2D)
 
 register('ch.bafu.klima-co2_ausstoss_gebaeude', KlimaCO2AusstossGebaeude)
+
+
+class WaldbrandPraevention(Base, Vector):
+    __tablename__ = 'waldbrandpraevention'
+    __table_args__ = ({'schema': 'gefahren', 'autoload': False})
+    __bodId__ = 'ch.bafu.gefahren-waldbrand_praeventionsmassnahmen_kantone'
+    __template__ = 'templates/htmlpopup/bafu_gefahren_waldbrandpraevention.mako'
+    __label__ = 'id'
+    id = Column('region_id', Integer, primary_key=True)
+    name_de = Column('name_de', Unicode)
+    name_fr = Column('name_fr', Unicode)
+    name_it = Column('name_it', Unicode)
+    name_en = Column('name_en', Unicode)
+    title_de = Column('title_de', Unicode)
+    title_fr = Column('title_fr', Unicode)
+    title_it = Column('title_it', Unicode)
+    title_en = Column('title_en', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    description_en = Column('description_en', Unicode)
+    valid_from = Column('valid_from', DateTimeChsdi)
+    the_geom = Column('the_geom', Geometry2D)
+
+register(WaldbrandPraevention.__bodId__, WaldbrandPraevention)
