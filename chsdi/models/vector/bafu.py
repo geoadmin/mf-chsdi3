@@ -2387,5 +2387,6 @@ class WaldbrandPraevention(Base, Vector):
     description_it = Column('description_it', Unicode)
     description_en = Column('description_en', Unicode)
     valid_from = Column('valid_from', DateTimeChsdi)
+    the_geom = Column('the_geom', Geometry2D)
 
 register(WaldbrandPraevention.__bodId__, WaldbrandPraevention)
