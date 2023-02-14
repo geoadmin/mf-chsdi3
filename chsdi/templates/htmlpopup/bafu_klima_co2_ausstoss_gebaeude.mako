@@ -4,6 +4,7 @@
     <%
         lang = lang if lang in ('fr','it') else 'de'
         hinweis_text = 'hinweis_%s' %lang
+        gwaerzh1_text = 'gwaerzh1_%s' %lang
         genh1_text = 'genh1_%s' %lang
         gwaersceh1_text = 'gwaersceh1_%s' %lang
         linkpdf_text = 'linkpdf_%s' %lang
@@ -20,6 +21,10 @@
     <tr>
         <td class="cell-left">${_('ch.bafu.klima-co2_ausstoss_gebaeude.co2_range')}</td>
         <td>${c['attributes']['co2_range'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.bafu.klima-co2_ausstoss_gebaeude.gwaerzh1')}</td>
+        <td>${c['attributes'][gwaerzh1_text] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.klima-co2_ausstoss_gebaeude.genh1')}</td>
