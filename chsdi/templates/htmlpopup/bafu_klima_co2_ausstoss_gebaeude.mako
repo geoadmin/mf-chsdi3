@@ -15,6 +15,14 @@
         <td>${c['featureId'] or '-'}</td>
     </tr>
     <tr>
+        <td class="cell-left">${_('ch.bafu.klima-co2_ausstoss_gebaeude.strname_deinr')}</td>
+        <td>${c['attributes']['strname_deinr'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.bafu.klima-co2_ausstoss_gebaeude.dplz4_dplzname')}</td>
+        <td>${c['attributes']['dplz4_dplzname'] or '-'}</td>
+    </tr>
+    <tr>
         <td class="cell-left">${_('ch.bafu.klima-co2_ausstoss_gebaeude.hinweis')}</td>
         <td>${c['attributes'][hinweis_text] or '-'}</td>
     </tr>
