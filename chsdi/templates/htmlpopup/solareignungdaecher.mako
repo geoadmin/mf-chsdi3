@@ -18,5 +18,7 @@
          <td>-</td>
       % endif
     </tr>
+    <tr><td class="cell-left">${_('ch.bfe.solarenergie-eignung-daecher.stromertrag_sommerhalbjahr')}</td>                     <td>${c['attributes']['stromertrag_sommerhalbjahr'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.bfe.solarenergie-eignung-daecher.stromertrag_winterhalbjahr')}</td>                     <td>${c['attributes']['stromertrag_winterhalbjahr'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('link_to_sonnendach')}</td>                                               <td><a href="https://www.uvek-gis.admin.ch/BFE/sonnendach/?featureId=${c['featureId']}&lang=${lang}" target="_blank">${_('sonnendach_link')}</a></td></tr>
 </%def>

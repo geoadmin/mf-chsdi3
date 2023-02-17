@@ -937,27 +937,6 @@ class StauanlagenBundesaufsicht(Base, Vector):
 register('ch.bfe.stauanlagen-bundesaufsicht', StauanlagenBundesaufsicht)
 
 
-class Wpsm (Base, Vector):
-    __tablename__ = 'wpsm_qualifizierte_firmen'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/wpsm.mako'
-    __bodId__ = 'ch.bfe.wpsm-qualifizierte_firmen'
-    __label__ = 'company'
-    id = Column('xtf_id', Integer, primary_key=True)
-    company = Column('company', Unicode)
-    contactperson = Column('contactperson', Unicode)
-    address1 = Column('address1', Unicode)
-    address2 = Column('address2', Unicode)
-    postofficebox = Column('postofficebox', Unicode)
-    pc_place = Column('pc_place', Unicode)
-    telephonenumber = Column('telephonenumber', Unicode)
-    mail = Column('mail', Unicode)
-    webaddress = Column('webaddress', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfe.wpsm-qualifizierte_firmen', Wpsm)
-
-
 class Kleinwasserkraftpotentiale(Base, Vector):
     __tablename__ = 'kleinwasserkraftpotentiale'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
@@ -3793,6 +3772,17 @@ class Elektrizitaetsproduktionsanlagen (Base, Vector):
     plant_type_fr = Column('plant_type_fr', Unicode)
     plant_type_it = Column('plant_type_it', Unicode)
     plant_type_en = Column('plant_type_en', Unicode)
+    detail_date = Column('detail_date', Unicode)
+    detail_power = Column('detail_power', Unicode)
+    detail_inclination = Column('detail_inclination', Unicode)
+    detail_plant_type_de = Column('detail_plant_type_de', Unicode)
+    detail_plant_type_fr = Column('detail_plant_type_fr', Unicode)
+    detail_plant_type_it = Column('detail_plant_type_it', Unicode)
+    detail_plant_type_en = Column('detail_plant_type_en', Unicode)
+    detail_orientation_de = Column('detail_orientation_de', Unicode)
+    detail_orientation_fr = Column('detail_orientation_fr', Unicode)
+    detail_orientation_it = Column('detail_orientation_it', Unicode)
+    detail_orientation_en = Column('detail_orientation_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.elektrizitaetsproduktionsanlagen', Elektrizitaetsproduktionsanlagen)

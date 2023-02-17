@@ -1,12 +1,12 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-<%
-    lang = lang if lang in ('fr','it','en') else 'de'
-    titel = 'titel_%s' % lang
-    weblink = 'weblink_%s' % lang
-    download = c['attributes']['download']
-%>
+   <%
+      lang = lang if lang in ('fr','it','en') else 'de'
+      titel = 'titel_%s' % lang
+      weblink = 'weblink_%s' % lang
+      download = c['attributes']['download']
+   %>
      <tr><td class="cell-left">${_('ch.swisstopo.geologie-geothermische_potenzialstudien_regional.land')}</td>       <td>${c['attributes']['land'] or '-'}</td></tr>
      <tr><td class="cell-left">${_('ch.swisstopo.geologie-geothermische_potenzialstudien_regional.kanton')}</td>       <td>${c['attributes']['kanton'] or '-'}</td></tr>
      <tr><td class="cell-left">${_('ch.swisstopo.geologie-geothermische_potenzialstudien_regional.nb_studien')}</td>       <td>${c['attributes']['nb_studien']}</td></tr>
@@ -14,19 +14,19 @@
 
 
 <%def name="extended_info(c,lang)">
-<%
-    lang = lang if lang in ('fr','it','en') else 'de'
-    titel = 'titel_%s' % lang
-    weblink = 'weblink_%s' % lang
-    download = c['attributes']['download']
-    nbstudien = c['attributes']['nb_studien']
-    titel = c['attributes'][titel].split('##')
-    autor = c['attributes']['autor'].split('##')
-    jahr = c['attributes']['jahr'].split('##')
-    auftraggeber = c['attributes']['auftraggeber'].split('##')
-    weblink = c['attributes'][weblink].split('##')
-    download = c['attributes']['download'].split('##')
-%>
+   <%
+      lang = lang if lang in ('fr','it','en') else 'de'
+      titel = 'titel_%s' % lang
+      weblink = 'weblink_%s' % lang
+      download = c['attributes']['download']
+      nbstudien = c['attributes']['nb_studien']
+      titel = c['attributes'][titel].split('##')
+      autor = c['attributes']['autor'].split('##')
+      jahr = c['attributes']['jahr'].split('##')
+      auftraggeber = c['attributes']['auftraggeber'].split('##')
+      weblink = c['attributes'][weblink].split('##')
+      download = c['attributes']['download'].split('##')
+   %>
 
 <table class="table-with-border geothermishce_potenzialstudien-extended">
      <tr><th class="cell-left">${_('ch.swisstopo.geologie-geothermische_potenzialstudien_regional.land')}</th>       <td>${c['attributes']['land'] or '-'}</td></tr>
@@ -71,14 +71,12 @@
       % else:
          <tr><th class="cell-left">${_('ch.swisstopo.geologie-geothermische_potenzialstudien_regional.weblink')}</th>       <td>-</td></tr>
       %endif
-      % if download[0]=='-':
+      % if download[i]=='-':
       <tr><th class="cell-left">${_('ch.swisstopo.geologie-geothermische_potenzialstudien_regional.download')}</th>       <td>-</td></tr>
       % else:
-      <tr><th class="cell-left">${_('ch.swisstopo.geologie-geothermische_potenzialstudien_regional.download')}</th>       <td><a href="${download[0]}" target="_blank">Zip</a></td></tr>
+      <tr><th class="cell-left">${_('ch.swisstopo.geologie-geothermische_potenzialstudien_regional.download')}</th>       <td><a href="${download[i]}" target="_blank">PDF</a></td></tr>
       %endif
    %endfor
 %endif 
 </table>
 </%def>
-
-
