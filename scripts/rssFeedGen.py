@@ -42,9 +42,9 @@ def extract_releases(html):
     with open(html, 'r') as f:
         releases = []
         soup = BeautifulSoup(f.read(), 'lxml')
-        divRelease = soup.find('div', {'id': 'release-notes'})
+        divRelease = soup.find('section', {'id': 'release-notes'})
         if divRelease:
-            releases = divRelease.findAll('div', {'id': re.compile('release-')})
+            releases = divRelease.findAll('section', {'id': re.compile('release-')})
     return releases
 
 
