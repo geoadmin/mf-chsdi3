@@ -14,7 +14,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.gefahren-waldbrand_praeventionsmassnahmen_kantone.canton')}</td>
-        <td>${c['attributes'][canton] or '-'}</td>
+        <td>${c['attributes']['canton'] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.gefahren-waldbrand_praeventionsmassnahmen_kantone.name')}</td>
