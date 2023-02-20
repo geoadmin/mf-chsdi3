@@ -41,6 +41,8 @@ class SolarClass:
     ausrichtung = Column('ausrichtung', Integer)
     finanzertrag = Column('finanzertrag', Numeric)
     stromertrag = Column('stromertrag', Integer)
+    stromertrag_winterhalbjahr = Column('stromertrag_winterhalbjahr', Integer)
+    stromertrag_sommerhalbjahr = Column('stromertrag_sommerhalbjahr', Integer)
     monats_ertrag = Column('monats_ertrag', postgresql.ARRAY(Numeric))
     gs_serie_start = Column('gs_serie_start', Date)
     klasse_text = Column('klasse_text', Unicode)

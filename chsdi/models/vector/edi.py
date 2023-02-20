@@ -422,3 +422,29 @@ class MeteoschweizKlimaszenarienRaumklima(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.meteoschweiz.klimaszenarien-raumklima', MeteoschweizKlimaszenarienRaumklima)
+
+
+class GebaeudeWohnungsRegisterWaermequelle(Base, Vector):
+    __tablename__ = 'gebaeude_wohnungs_register_waermequelle'
+    __table_args__ = ({'schema': 'bfs', 'autoload': False})
+    __bodId__ = 'ch.bfs.gebaeude_wohnungs_register_waermequelle_heizung'
+    __template__ = 'templates/htmlpopup/bfs_gebaeude_wohnungs_register_waermequelle_heizung.mako'
+    __label__ = 'id'
+    id = Column('egid', Integer, primary_key=True)
+    strname = Column('strname', Unicode)
+    dplzname = Column('dplzname', Unicode)
+    gwaerzh1_de = Column('gwaerzh1_de', Unicode)
+    gwaerzh1_fr = Column('gwaerzh1_fr', Unicode)
+    gwaerzh1_it = Column('gwaerzh1_it', Unicode)
+    genh1_de = Column('genh1_de', Unicode)
+    genh1_fr = Column('genh1_fr', Unicode)
+    genh1_it = Column('genh1_it', Unicode)
+    gwaersceh1_de = Column('gwaersceh1_de', Unicode)
+    gwaersceh1_fr = Column('gwaersceh1_fr', Unicode)
+    gwaersceh1_it = Column('gwaersceh1_it', Unicode)
+    gwaerdath1 = Column('gwaerdath1', Unicode)
+    gexpdat = Column('gexpdat', Unicode)
+    genh1_gwaerperh1 = Column('genh1_gwaerperh1', Integer)
+    the_geom = Column('the_geom', Geometry2D)
+
+register('ch.bfs.gebaeude_wohnungs_register_waermequelle_heizung', GebaeudeWohnungsRegisterWaermequelle)
