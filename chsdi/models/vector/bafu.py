@@ -2392,6 +2392,7 @@ class WaldbrandPraevention(Base, Vector):
     description_it = Column('description_it', Unicode)
     description_en = Column('description_en', Unicode)
     valid_from = Column('valid_from', DateTimeChsdi)
+    canton = Column('canton', Unicode)
     the_geom = Column('the_geom', Geometry2D)
 
 register(WaldbrandPraevention.__bodId__, WaldbrandPraevention)
@@ -2413,6 +2414,7 @@ class WaldbrandWarnung(Base, Vector):
     title_it = Column('title_it', Unicode)
     title_en = Column('title_en', Unicode)
     valid_from = Column('valid_from', DateTimeChsdi)
+    canton = Column('canton', Unicode)
     the_geom = Column('the_geom', Geometry2D)
 
 register(WaldbrandWarnung.__bodId__, WaldbrandWarnung)
