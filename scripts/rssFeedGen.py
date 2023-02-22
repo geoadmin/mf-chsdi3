@@ -67,6 +67,7 @@ def extract_data(r):
 
 def data_to_description(data):
     description = data.encode('ascii', 'ignore')
+    description = description.decode('utf-8')
     return description
 
 if __name__ == '__main__':
