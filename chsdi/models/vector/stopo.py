@@ -3035,3 +3035,41 @@ class FixpunkteHfp1(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-hfp1', FixpunkteHfp1)
+
+
+class FixpunkteLfp2(Base, Vector):
+    __tablename__ = 'fixpunkte_lfp2'
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fixpunkte.mako'
+    __bodId__ = 'ch.swisstopo.fixpunkte-lfp2'
+    __label__ = 'id'
+    id = Column('nbident_nummer', Unicode, primary_key=True)
+    status = Column('status', Unicode)
+    koordinate = Column('koordinate', Unicode)
+    hoehe_geom_m = Column('hoehe_geom_m', Unicode)
+    url_punktprotokoll = Column('url_punktprotokoll', Unicode)
+    punktzeichen = Column('punktzeichen', Unicode)
+    kanton = Column('kanton', Unicode)
+    zust_name = Column('zust_name', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(FixpunkteLfp2.__bodId__, FixpunkteLfp2)
+
+
+class FixpunkteHfp2(Base, Vector):
+    __tablename__ = 'fixpunkte_hfp2'
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fixpunkte.mako'
+    __bodId__ = 'ch.swisstopo.fixpunkte-hfp2'
+    __label__ = 'id'
+    id = Column('nbident_nummer', Unicode, primary_key=True)
+    status = Column('status', Unicode)
+    koordinate = Column('koordinate', Unicode)
+    hoehe_geom_m = Column('hoehe_geom_m', Unicode)
+    url_punktprotokoll = Column('url_punktprotokoll', Unicode)
+    punktzeichen = Column('punktzeichen', Unicode)
+    kanton = Column('kanton', Unicode)
+    zust_name = Column('zust_name', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(FixpunkteHfp2.__bodId__, FixpunkteHfp2)
