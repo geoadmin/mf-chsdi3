@@ -14,6 +14,16 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20230222:
+
+Release 20230222 - Thursday, February 22th 2023
+-----------------------------------------------
+
+API & applications
+******************
+
+The API of the layer ch.bfe.ladestellen-elektromobilitaet is expected to be removed from FSDI services on March 15th. For more information on the exact schedule and the new service, please contact geoinformation@bfe.admin.ch .
+
 .. _releasenotes_20221214:
 
 Release 20221214 - Wednesday, December 14th 2022

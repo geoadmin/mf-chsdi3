@@ -2,6 +2,7 @@
 
 <%def name="table_body(c, lang)">
     <%
+        c['stable_id'] = True
         lang = lang if lang in ('fr','it', 'en') else 'de'
         name_text = 'name_%s' %lang
         title_text = 'title_%s' %lang
@@ -10,6 +11,10 @@
     <tr>
         <td class="cell-left">${_('ch.bafu.gefahren-waldbrand_praeventionsmassnahmen_kantone.region_id')}</td>
         <td>${c['featureId'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.bafu.gefahren-waldbrand_praeventionsmassnahmen_kantone.canton')}</td>
+        <td>${c['attributes']['canton'] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.gefahren-waldbrand_praeventionsmassnahmen_kantone.name')}</td>
