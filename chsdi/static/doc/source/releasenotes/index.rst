@@ -27,6 +27,14 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - Announcements:
+
+  - The API of the layer **ch.bfe.ladestellen-elektromobilitaet** has been removed from FSDI services as previously announced. For more information about the new service please contact geoinformation@bfe.admin.ch
+  - generic solution for technical group WMS layers in wms.geo.admin.ch: Technical groups are now visible in the GetCapbilities document as a group with one single Layer having the same name as the group. The new structure of technical groups allows an easier use of GetFeatureInfo in most GIS clients. All remaining layers have been reorganized accordingly as previously announced
+  - the layer **ch.pronatura.waldreservate** has been removed from chsdi services as previously announced
+  - the layer **ch.bafu.wald-vegetationshoehenstufen_1995** will be removed from chsdi services with the release of May 10th 2023
+  - the downloads for **ch.bfs.gebaeude_wohnungs_register** available via https://data.geo.admin.ch/ch.bfs.gebaeude_wohnungs_register/data.zip will be removed with the deploy of June 28th 2023. Downloads for the Federal Register of Buildings and Dwellings are officially available via https://www.housing-stat.ch/fr/madd/public.html
+  - the layers **ch.bafu.hydrologie-messstationen_gefahren** and **ch.bafu.hydroweb-warnkarte_regional** will be removed from chsdi services with the release of June 28th 2023
+
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-12-14-rc1...2023-03-15-rc1>`__
 
 `MAP <//map.geo.admin.ch>`__
