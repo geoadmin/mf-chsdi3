@@ -26,8 +26,7 @@
 <%
     if alti is None:
       return '-'
-    else:
-      return '{0:.3f}'.format(alti)
+    return '{0:.3f}'.format(alti)
 %>
 </%def>
 
