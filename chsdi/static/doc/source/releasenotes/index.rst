@@ -17,7 +17,7 @@ Release Notes
 
 .. _releasenotes_20230315:
 
-Release 20230315 - Wednesday, March 15th 2022
+Release 20230315 - Wednesday, March 15th 2023
 -------------------------------------------------
 
 API & applications
