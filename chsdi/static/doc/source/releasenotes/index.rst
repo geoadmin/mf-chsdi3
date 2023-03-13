@@ -120,7 +120,7 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Railway noise (act.) D emissions <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag)                     |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Railway noise protection walls <//map.geo.admin.ch/?layers=h.bav.laermbelastung-eisenbahn_laermschutzwaende>`__ (ch.bav.laermbelastung-eisenbahn_laermschutzwaende)                                              |
+| Update | `Railway noise protection walls <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_laermschutzwaende>`__ (ch.bav.laermbelastung-eisenbahn_laermschutzwaende)                                             |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20230222:
