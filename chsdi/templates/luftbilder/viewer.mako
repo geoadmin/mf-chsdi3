@@ -31,6 +31,8 @@
   pageTitle = c.get('title') + ': ' + featureId
   title += ': ' + pageTitle
   loaderUrl = h.make_agnostic(route_url('ga_api', request))
+
+  aerialimages_data_host = request.registry.settings['aerialimages_data_host']
 %>
 
 <!DOCTYPE html>
@@ -194,7 +196,7 @@
     <script type="text/javascript" src="${loaderUrl}?version=3.18.2"></script>
     <script type="text/javascript">
       function init() {
-        ${lubis_map.init_map(c.get('bildnummer'), c.get('width'), c.get('height'), c.get('rotation'), 'lubismap')}
+        ${lubis_map.init_map(c.get('bildnummer'), c.get('width'), c.get('height'), c.get('rotation'), 'lubismap', aerialimages_data_host)}
 
         // FF/IE
         if ('onbeforeprint' in window) {

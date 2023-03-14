@@ -12,5 +12,5 @@
         <td>-</td>
       % endif
     </tr>
-    <tr><td class="cell-left">${_('alexandria')}</td> <td><a href="http://www.alexandria.ch/primo_library/libweb/action/dlSearch.do?institution=BIG&vid=ALEX&scope=default_scope&query=lsr07,contains,${c['attributes']['bv_nummer']}" target="_blank" >${c['attributes']['kbbez'] or '-'}</a></td>
+    <tr><td class="cell-left">${_('alexandria')}</td> <td><a href="https://swisscovery.slsp.ch/discovery/search?query=any,contains,${c['attributes']['bv_nummer']}&tab=41SLSP_NETWORK&search_scope=DN_and_CI&vid=41SLSP_NETWORK:VU1_UNION&offset=0" target="_blank" >${c['attributes']['kbbez'] or '-'}</a></td>
 </%def>

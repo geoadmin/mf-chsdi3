@@ -1075,43 +1075,67 @@ class GeologieGeotechnikGk200(Base, Vector):
 register('ch.swisstopo.geologie-geotechnik-gk200', GeologieGeotechnikGk200)
 
 
-class TiefenGeothermieProjekte(Base, Vector):
-    __tablename__ = 'tiefengeothermie_projekte_plg'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/tiefengeothermie_projekte.mako'
-    __bodId__ = 'ch.swisstopo.geologie-tiefengeothermie_projekte'
-    __label__ = 'name'
-    __extended_info__ = True
+class TiefenGeothermieProjekte:
+    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     owner = Column('owner', Unicode)
     status_de = Column('status_de', Unicode)
     status_fr = Column('status_fr', Unicode)
+    status_it = Column('status_it', Unicode)
     status_en = Column('status_en', Unicode)
     system_de = Column('system_de', Unicode)
     system_fr = Column('system_fr', Unicode)
+    system_it = Column('system_it', Unicode)
     system_en = Column('system_en', Unicode)
-    use_de = Column('use_de', Unicode)
-    use_fr = Column('use_fr', Unicode)
-    use_en = Column('use_en', Unicode)
+    purpose_de = Column('purpose_de', Unicode)
+    purpose_fr = Column('purpose_fr', Unicode)
+    purpose_it = Column('purpose_it', Unicode)
+    purpose_en = Column('purpose_en', Unicode)
     canton = Column('canton', Unicode)
-    community = Column('community', Unicode)
-    depth = Column('depth', Integer)
-    temp = Column('temp', Unicode)
-    capacity = Column('capac', Unicode)
-    production = Column('production', Unicode)
+    municipality_de = Column('municipality_de', Unicode)
+    municipality_fr = Column('municipality_fr', Unicode)
+    municipality_it = Column('municipality_it', Unicode)
+    municipality_en = Column('municipality_en', Unicode)
+    res_tvd = Column('res_tvd', Integer)
     reservoir = Column('reservoir', Unicode)
-    download = Column('download', Unicode)
+    temperature = Column('temperature', Unicode)
     year = Column('year', Unicode)
     subsidy_de = Column('subsidy_de', Unicode)
     subsidy_fr = Column('subsidy_fr', Unicode)
+    subsidy_it = Column('subsidy_it', Unicode)
     subsidy_en = Column('subsidy_en', Unicode)
+    download = Column('download', Unicode)
     more_de = Column('more_de', Unicode)
     more_fr = Column('more_fr', Unicode)
+    more_it = Column('more_it', Unicode)
     more_en = Column('more_en', Unicode)
     the_geom = Column(Geometry2D)
 
-register(TiefenGeothermieProjekte.__bodId__, TiefenGeothermieProjekte)
+
+class TiefenGeothermieProjektePoint(Base, TiefenGeothermieProjekte, Vector):
+    __tablename__ = 'tiefengeothermie_projekte_pkt'
+    __template__ = 'templates/htmlpopup/tiefengeothermie_projekte_pkt.mako'
+    __bodId__ = 'ch.swisstopo.geologie-tiefengeothermie_projekte'
+    __label__ = 'name'
+    __extended_info__ = True
+
+register('ch.swisstopo.geologie-tiefengeothermie_projekte', TiefenGeothermieProjektePoint)
+
+
+class TiefenGeothermieProjektePoly(Base, TiefenGeothermieProjekte, Vector):
+    __tablename__ = 'tiefengeothermie_projekte_plg'
+    __template__ = 'templates/htmlpopup/tiefengeothermie_projekte_plg.mako'
+    __bodId__ = 'ch.swisstopo.geologie-tiefengeothermie_projekte'
+    __label__ = 'name'
+    __extended_info__ = True
+    permis_de = Column('permis_de', Unicode)
+    permis_fr = Column('permis_fr', Unicode)
+    permis_it = Column('permis_it', Unicode)
+    permis_en = Column('permis_en', Unicode)
+    date = Column('date', Unicode)
+
+register('ch.swisstopo.geologie-tiefengeothermie_projekte', TiefenGeothermieProjektePoly)
 
 
 class Gk500Gensese (Base, Vector):
@@ -3011,3 +3035,41 @@ class FixpunkteHfp1(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-hfp1', FixpunkteHfp1)
+
+
+class FixpunkteLfp2(Base, Vector):
+    __tablename__ = 'fixpunkte_lfp2'
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fixpunkte.mako'
+    __bodId__ = 'ch.swisstopo.fixpunkte-lfp2'
+    __label__ = 'id'
+    id = Column('nbident_nummer', Unicode, primary_key=True)
+    status = Column('status', Unicode)
+    koordinate = Column('koordinate', Unicode)
+    hoehe_geom_m = Column('hoehe_geom_m', Unicode)
+    url_punktprotokoll = Column('url_punktprotokoll', Unicode)
+    punktzeichen = Column('punktzeichen', Unicode)
+    kanton = Column('kanton', Unicode)
+    zust_name = Column('zust_name', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(FixpunkteLfp2.__bodId__, FixpunkteLfp2)
+
+
+class FixpunkteHfp2(Base, Vector):
+    __tablename__ = 'fixpunkte_hfp2'
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __template__ = 'templates/htmlpopup/fixpunkte.mako'
+    __bodId__ = 'ch.swisstopo.fixpunkte-hfp2'
+    __label__ = 'id'
+    id = Column('nbident_nummer', Unicode, primary_key=True)
+    status = Column('status', Unicode)
+    koordinate = Column('koordinate', Unicode)
+    hoehe_geom_m = Column('hoehe_geom_m', Unicode)
+    url_punktprotokoll = Column('url_punktprotokoll', Unicode)
+    punktzeichen = Column('punktzeichen', Unicode)
+    kanton = Column('kanton', Unicode)
+    zust_name = Column('zust_name', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(FixpunkteHfp2.__bodId__, FixpunkteHfp2)

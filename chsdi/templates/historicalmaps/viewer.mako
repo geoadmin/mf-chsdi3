@@ -35,6 +35,8 @@
 
   geoadminUrl = "//%s/?layers=%s&zoom=%s&Y=%s&X=%s&time=%s" % (
       request.registry.settings['geoadminhost'], layerBodId, zoomlevel, center[0], center[1], release_year)
+
+  hist_maps_data_host = request.registry.settings.get('hist_maps_data_host')
 %>
 
 <!DOCTYPE html>
@@ -151,7 +153,7 @@
     <script type="text/javascript" src="${loaderUrl}"></script>
     <script type="text/javascript">
       function init() {
-        ${zeitreise_map.init_map(c.get('bildnummer'), width, height, c.get('rotation'), 'zeitreihenmap')}
+        ${zeitreise_map.init_map(c.get('bildnummer'), width, height, c.get('rotation'), 'zeitreihenmap', hist_maps_data_host)}
 
         // FF/IE
         if ('onbeforeprint' in window) {

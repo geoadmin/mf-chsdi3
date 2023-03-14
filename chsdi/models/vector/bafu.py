@@ -2301,8 +2301,6 @@ class LebensraumkarteSchweiz(Base, Vector):
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
     polyid = Column('polyid', Integer)
-    typoch_class = Column('typoch_class', Integer)
-    typoch_group = Column('typoch_group', Integer)
     typoch_de = Column('typoch_de', Unicode)
     typoch_fr = Column('typoch_fr', Unicode)
     typoch_it = Column('typoch_it', Unicode)
@@ -2313,3 +2311,110 @@ class LebensraumkarteSchweiz(Base, Vector):
     the_geom = Column('the_geom', Geometry2D)
 
 register('ch.bafu.lebensraumkarte-schweiz', LebensraumkarteSchweiz)
+
+
+class TranquillityGebiete(Base, Vector):
+    __tablename__ = 'tranquillity_gebiete'
+    __table_args__ = ({'schema': 'schutzge', 'autoload': False})
+    __bodId__ = 'ch.bafu.tranquillity-gebiete'
+    __template__ = 'templates/htmlpopup/bafu_tranquillity_gebiete.mako'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    fid = Column('fid', Integer)
+    flaeche = Column('flaeche', Float)
+    oev_erreichbarkeit = Column('oev_erreichbarkeit', Integer)
+    bln_gebiet_de = Column('bln_gebiet_de', Unicode)
+    bln_gebiet_fr = Column('bln_gebiet_fr', Unicode)
+    name = Column('name', Unicode)
+    kanton = Column('kanton', Unicode)
+    gemeinde = Column('gemeinde', Unicode)
+    naturpark_de = Column('naturpark_de', Unicode)
+    naturpark_fr = Column('naturpark_fr', Unicode)
+    moorlandschaft_de = Column('moorlandschaft_de', Unicode)
+    moorlandschaft_fr = Column('moorlandschaft_fr', Unicode)
+    the_geom = Column('the_geom', Geometry2D)
+
+register('ch.bafu.tranquillity-gebiete', TranquillityGebiete)
+
+
+class KlimaCO2AusstossGebaeude(Base, Vector):
+    __tablename__ = 'co2_ausstoss_gebaeude'
+    __table_args__ = ({'schema': 'klima', 'autoload': False})
+    __bodId__ = 'ch.bafu.klima-co2_ausstoss_gebaeude'
+    __template__ = 'templates/htmlpopup/bafu_klima_co2_ausstoss_gebaeude.mako'
+    __label__ = 'id'
+    id = Column('egid', Integer, primary_key=True)
+    strname_deinr = Column('strname_deinr', Unicode)
+    dplz4_dplzname = Column('dplz4_dplzname', Unicode)
+    hinweis_de = Column('hinweis_de', Unicode)
+    hinweis_fr = Column('hinweis_fr', Unicode)
+    hinweis_it = Column('hinweis_it', Unicode)
+    co2_range = Column('co2_range', Unicode)
+    gwaerzh1_de = Column('gwaerzh1_de', Unicode)
+    gwaerzh1_fr = Column('gwaerzh1_fr', Unicode)
+    gwaerzh1_it = Column('gwaerzh1_it', Unicode)
+    genh1_de = Column('genh1_de', Unicode)
+    genh1_fr = Column('genh1_fr', Unicode)
+    genh1_it = Column('genh1_it', Unicode)
+    gwaersceh1_de = Column('gwaersceh1_de', Unicode)
+    gwaersceh1_fr = Column('gwaersceh1_fr', Unicode)
+    gwaersceh1_it = Column('gwaersceh1_it', Unicode)
+    gexpdat = Column('gexpdat', Unicode)
+    linkco2 = Column('linkco2', Unicode)
+    linkpdf_de = Column('linkpdf_de', Unicode)
+    linkpdf_fr = Column('linkpdf_fr', Unicode)
+    linkpdf_it = Column('linkpdf_it', Unicode)
+    linkbafu_de = Column('linkbafu_de', Unicode)
+    linkbafu_fr = Column('linkbafu_fr', Unicode)
+    linkbafu_it = Column('linkbafu_it', Unicode)
+    the_geom = Column('the_geom', Geometry2D)
+
+register('ch.bafu.klima-co2_ausstoss_gebaeude', KlimaCO2AusstossGebaeude)
+
+
+class WaldbrandPraevention(Base, Vector):
+    __tablename__ = 'waldbrandpraevention'
+    __table_args__ = ({'schema': 'gefahren', 'autoload': False})
+    __bodId__ = 'ch.bafu.gefahren-waldbrand_praeventionsmassnahmen_kantone'
+    __template__ = 'templates/htmlpopup/bafu_gefahren_waldbrandpraevention.mako'
+    __label__ = 'id'
+    id = Column('region_id', Integer, primary_key=True)
+    name_de = Column('name_de', Unicode)
+    name_fr = Column('name_fr', Unicode)
+    name_it = Column('name_it', Unicode)
+    name_en = Column('name_en', Unicode)
+    title_de = Column('title_de', Unicode)
+    title_fr = Column('title_fr', Unicode)
+    title_it = Column('title_it', Unicode)
+    title_en = Column('title_en', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    description_en = Column('description_en', Unicode)
+    valid_from = Column('valid_from', DateTimeChsdi)
+    canton = Column('canton', Unicode)
+    the_geom = Column('the_geom', Geometry2D)
+
+register(WaldbrandPraevention.__bodId__, WaldbrandPraevention)
+
+
+class WaldbrandWarnung(Base, Vector):
+    __tablename__ = 'waldbrandwarnung'
+    __table_args__ = ({'schema': 'gefahren', 'autoload': False})
+    __bodId__ = 'ch.bafu.gefahren-waldbrand_warnung'
+    __template__ = 'templates/htmlpopup/bafu_gefahren_waldbrandwarnung.mako'
+    __label__ = 'id'
+    id = Column('region_id', Integer, primary_key=True)
+    name_de = Column('name_de', Unicode)
+    name_fr = Column('name_fr', Unicode)
+    name_it = Column('name_it', Unicode)
+    name_en = Column('name_en', Unicode)
+    title_de = Column('title_de', Unicode)
+    title_fr = Column('title_fr', Unicode)
+    title_it = Column('title_it', Unicode)
+    title_en = Column('title_en', Unicode)
+    valid_from = Column('valid_from', DateTimeChsdi)
+    canton = Column('canton', Unicode)
+    the_geom = Column('the_geom', Geometry2D)
+
+register(WaldbrandWarnung.__bodId__, WaldbrandWarnung)

@@ -1,12 +1,10 @@
-<%def name="init_map(ebkey, width, height, rotation, target)">
+<%def name="init_map(ebkey, width, height, rotation, target, aerialimages_data_host)">
         var TILE_SIZE = 256;
-        var MAX_INSTANCES = 4;
-        var curInstance = MAX_INSTANCES;
         var width = parseInt(${width | u});
         var height = parseInt(${height | u});
         var rotation= parseInt(${rotation if rotation != 'None' and rotation is not None else 0 | u}) * Math.PI / 180;
 
-        var url = '//aerialimages{curInstance}.geo.admin.ch/tiles/${ebkey}/';
+        var url = '${aerialimages_data_host}/tiles/${ebkey}/';
         var resolutions = [1]; // 1 is the min resolution of the pyramid (for all images)
         var curResolution = resolutions[0];
         var maxResolution = Math.max(width, height) / TILE_SIZE;
@@ -140,8 +138,7 @@
             if (coords[1] * factor > width || coords[2] * factor > height) {
               return undefined;
             }
-            curInstance = (++curInstance > MAX_INSTANCES) ? 0 : curInstance;
-            return url.replace('{curInstance}', curInstance) + tileCoord.join('/') + ".jpg";
+            return url + tileCoord.join('/') + ".jpg";
           }
         });
 

@@ -361,109 +361,6 @@ class BaulinienNationalstrassenArea(Base, BaulinienNationalstrassen, Vector):
 register(BaulinienNationalstrassenArea.__bodId__, BaulinienNationalstrassenArea)
 
 
-class Zaehlstellenregloc(Base, Vector):
-    __tablename__ = 'verkehr_reg_loc'
-    __table_args__ = ({'schema': 'astra', 'autoload': False})
-    __template__ = 'templates/htmlpopup/verkehrszaehlstellen.mako'
-    __bodId__ = 'ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal'
-    __extended_info__ = True
-    __label__ = 'zaehlstellen_bezeichnung'
-    id = Column('nr', Integer, primary_key=True)
-    zaehlstellen_bezeichnung = Column('zaehlstellen_bezeichnung', Unicode)
-    uno_zaehlstelle = Column('uno_zaehlstelle', Unicode)
-    zst_physisch_virtuell = Column('zst_physisch_virtuell', Unicode)
-    messstellentyp = Column('messstellentyp', Unicode)
-    koordinate_ost = Column('koordinate_ost', Integer)
-    koordinate_nord = Column('koordinate_nord', Integer)
-    kanton = Column('kanton', Unicode)
-    swiss_10 = Column('swiss_10', Integer)
-    netz = Column('netz', Unicode)
-    status = Column('status', Unicode)
-    strasse = Column('strasse', Unicode)
-    richtung_1 = Column('richtung_1', Unicode)
-    richtung_2 = Column('richtung_2', Unicode)
-    inbetriebnahme = Column('inbetriebnahme', Unicode)
-    anzahl_fahrstreifen_tot = Column('anzahl_fahrstreifen_tot', Integer)
-    bulletins_sasvz = Column('bulletins_sasvz', Unicode)
-    ssvz_2005 = Column('ssvz_2005', Unicode)
-    jahresauswertung = Column('jahresauswertung', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal', Zaehlstellenregloc)
-
-
-class Zaehstellenueber(Base, Vector):
-    __tablename__ = 'verkehr_ueber'
-    __table_args__ = ({'schema': 'astra', 'autoload': False})
-    __template__ = 'templates/htmlpopup/verkehrszaehlstellen.mako'
-    __bodId__ = 'ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet'
-    __extended_info__ = True
-    __label__ = 'zaehlstellen_bezeichnung'
-    id = Column('nr', Integer, primary_key=True)
-    zaehlstellen_bezeichnung = Column('zaehlstellen_bezeichnung', Unicode)
-    uno_zaehlstelle = Column('uno_zaehlstelle', Unicode)
-    zst_physisch_virtuell = Column('zst_physisch_virtuell', Unicode)
-    messstellentyp = Column('messstellentyp', Unicode)
-    koordinate_ost = Column('koordinate_ost', Integer)
-    koordinate_nord = Column('koordinate_nord', Integer)
-    kanton = Column('kanton', Unicode)
-    swiss_10 = Column('swiss_10', Integer)
-    netz = Column('netz', Unicode)
-    status = Column('status', Unicode)
-    strasse = Column('strasse', Unicode)
-    richtung_1 = Column('richtung_1', Unicode)
-    richtung_2 = Column('richtung_2', Unicode)
-    inbetriebnahme = Column('inbetriebnahme', Unicode)
-    anzahl_fahrstreifen_tot = Column('anzahl_fahrstreifen_tot', Integer)
-    bulletins_sasvz = Column('bulletins_sasvz', Unicode)
-    ssvz_2005 = Column('ssvz_2005', Unicode)
-    jahresauswertung = Column('jahresauswertung', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet', Zaehstellenueber)
-
-
-class Zaehlstellenuebergeordnet(Base, Vector):
-    __tablename__ = 'strassenverkehrszaehlung_uebergeordnet'
-    __table_args__ = ({'schema': 'astra', 'autoload': False})
-    __template__ = 'templates/htmlpopup/verkehrszaehlung_uebergeordnet.mako'
-    __bodId__ = 'ch.astra.strassenverkehrszaehlung-uebergeordnet'
-    __extended_info__ = True
-    __label__ = 'mlocname'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    mlocname = Column('mlocname', Unicode)
-    mlocnr = Column('mlocnr', Unicode)
-    canton = Column('canton', Unicode)
-    streetdesignation = Column('streetdesignation', Unicode)
-    targetlocation1 = Column('targetlocation1', Unicode)
-    targetlocation2 = Column('targetlocation2', Unicode)
-    numberoflanes1 = Column('numberoflanes1', Integer)
-    numberoflanes2 = Column('numberoflanes2', Integer)
-    locationlv95 = Column('locationlv95', Unicode)
-    de_networktype = Column('de_networktype', Unicode)
-    fr_networktype = Column('fr_networktype', Unicode)
-    it_networktype = Column('it_networktype', Unicode)
-    en_networktype = Column('en_networktype', Unicode)
-    rm_networktype = Column('rm_networktype', Unicode)
-    year = Column('year', Integer)
-    dtv = Column('dtv', Integer)
-    dwv = Column('dwv', Integer)
-    msp = Column('msp', Integer)
-    asp = Column('asp', Integer)
-    mspw = Column('mspw', Integer)
-    aspw = Column('aspw', Integer)
-    nt = Column('nt', Integer)
-    nn = Column('nn', Integer)
-    prctheavytraffic = Column('prctheavytraffic', Float)
-    prctheavytrafficday = Column('prctheavytrafficday', Float)
-    prctheavytrafficnight = Column('prctheavytrafficnight', Float)
-    the_geom = Column(Geometry2D)
-
-register('ch.astra.strassenverkehrszaehlung-uebergeordnet', Zaehlstellenuebergeordnet)
-
-
 class Unf:
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/astra_unfaelle.mako'
@@ -1038,27 +935,6 @@ class StauanlagenBundesaufsicht(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.stauanlagen-bundesaufsicht', StauanlagenBundesaufsicht)
-
-
-class Wpsm (Base, Vector):
-    __tablename__ = 'wpsm_qualifizierte_firmen'
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __template__ = 'templates/htmlpopup/wpsm.mako'
-    __bodId__ = 'ch.bfe.wpsm-qualifizierte_firmen'
-    __label__ = 'company'
-    id = Column('xtf_id', Integer, primary_key=True)
-    company = Column('company', Unicode)
-    contactperson = Column('contactperson', Unicode)
-    address1 = Column('address1', Unicode)
-    address2 = Column('address2', Unicode)
-    postofficebox = Column('postofficebox', Unicode)
-    pc_place = Column('pc_place', Unicode)
-    telephonenumber = Column('telephonenumber', Unicode)
-    mail = Column('mail', Unicode)
-    webaddress = Column('webaddress', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bfe.wpsm-qualifizierte_firmen', Wpsm)
 
 
 class Kleinwasserkraftpotentiale(Base, Vector):
