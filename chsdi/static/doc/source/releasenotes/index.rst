@@ -27,6 +27,7 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - Announcements:
+   - Test bla bla
    - the API of the layer **ch.bfe.ladestellen-elektromobilitaet** has been removed from FSDI services as previously announced. For more information about the new service please contact geoinformation@bfe.admin.ch
    - generic solution for technical group WMS layers in wms.geo.admin.ch: Technical groups are now visible in the GetCapbilities document as a group with one single Layer having the same name as the group. The new structure of technical groups allows an easier use of GetFeatureInfo in most GIS clients. All remaining layers have been reorganized accordingly as previously announced
    - the layer **ch.pronatura.waldreservate** has been removed from chsdi services as previously announced
