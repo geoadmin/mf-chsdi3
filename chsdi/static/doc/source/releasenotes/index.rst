@@ -35,6 +35,7 @@ API & applications
    - the layers **ch.bafu.hydrologie-messstationen_gefahren** and **ch.bafu.hydroweb-warnkarte_regional** will be removed from chsdi services with the release of June 28th 2023
 
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2022-12-14-rc1...2023-03-15-rc1>`__
+- testing
 
 `MAP <//map.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
