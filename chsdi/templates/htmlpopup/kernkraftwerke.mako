@@ -20,9 +20,9 @@
         life_phase = [c['attributes']['life_phase_de'], c['attributes']['life_phase_fr'], c['attributes']['life_phase_it'], c['attributes']['life_phase_en']]
         reactor_type = [c['attributes']['reactor_type_de'], c['attributes']['reactor_type_fr'], c['attributes']['reactor_type_it'], c['attributes']['reactor_type_en']]
         cooling_type = [c['attributes']['cooling_type_de'], c['attributes']['cooling_type_fr'], c['attributes']['cooling_type_it'], c['attributes']['cooling_type_en']]
-        life_phase = map(lambda x: x.split('##'), life_phase)
-        reactor_type = map(lambda x: x.split('##'), reactor_type)
-        cooling_type = map(lambda x: x.split('##'), cooling_type)
+        life_phase = list(map(lambda x: x.split('##'), life_phase))
+        reactor_type = list(map(lambda x: x.split('##'), reactor_type))
+        cooling_type = list(map(lambda x: x.split('##'), cooling_type))
         nominal_thermal_output = c['attributes']['nominal_thermal_output'].split('##');
         gross_el_output = c['attributes']['gross_el_output'].split('##');
         net_el_output = c['attributes']['net_el_output'].split('##');
@@ -31,13 +31,6 @@
         operation_phase = c['attributes']['operation_phase'].split('##');
         decontamination_phase = c['attributes']['decontamination_phase'].split('##');
         dismantling_phase = c['attributes']['dismantling_phase'].split('##');
-
-        # Python3's range is Python2's xrange
-        # TODO python2 clean-up
-        try:
-          xrange
-        except NameError:
-          xrange = range
 
     %>
     <script>
@@ -64,7 +57,7 @@
         <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.municipality')}</th>      <td>${c['attributes']['municipality']}</td></tr>
         <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.canton')}</th>      <td>${c['attributes']['canton']}</td></tr>
 
-    % for reactor_i in xrange(0, c['attributes']['reactors']):
+    % for reactor_i in range(0, c['attributes']['reactors']):
         <tr></tr>
         <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.reactor_name')}</th>      <td><strong>${reactor_name[reactor_i]}</strong></td></tr>
         <tr><th class="cell-left">${_('ch.bfe.kernkraftwerke.life_phase_de')}</th>      <td>${list(life_phase)[lang_i][reactor_i]}</td></tr>
