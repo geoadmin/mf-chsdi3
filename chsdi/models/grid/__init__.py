@@ -46,4 +46,3 @@ register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h125', gridId='1', ext
                       timestamp='20181001', template='templates/htmlpopup/windatlas50.mako')
 register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h150', gridId='1', extended=True,
                       timestamp='20181001', template='templates/htmlpopup/windatlas50.mako')
-
