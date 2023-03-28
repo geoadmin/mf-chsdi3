@@ -10,18 +10,6 @@ grids = {
         'resolutionX': 100.0,
         'resolutionY': -100.0,
         'srid': '2056'
-    },
-    '2': {
-        'extent': [485450.00, 75350.00, 833850.00, 295950.00],
-        'resolutionX': 100.0,
-        'resolutionY': -100.0,
-        'srid': '21781'
-    },
-    '3': {
-        'extent': [486450.00, 75450.00, 833550.00, 295550.00],
-        'resolutionX': 100.0,
-        'resolutionY': -100.0,
-        'srid': '21781'
     }
 }
 
