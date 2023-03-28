@@ -10,18 +10,6 @@ grids = {
         'resolutionX': 100.0,
         'resolutionY': -100.0,
         'srid': '2056'
-    },
-    '2': {
-        'extent': [485450.00, 75350.00, 833850.00, 295950.00],
-        'resolutionX': 100.0,
-        'resolutionY': -100.0,
-        'srid': '21781'
-    },
-    '3': {
-        'extent': [486450.00, 75450.00, 833550.00, 295550.00],
-        'resolutionX': 100.0,
-        'resolutionY': -100.0,
-        'srid': '21781'
     }
 }
 
@@ -58,7 +46,3 @@ register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h125', gridId='1', ext
                       timestamp='20181001', template='templates/htmlpopup/windatlas50.mako')
 register_bodid_gridid('ch.bfe.windenergie-geschwindigkeit_h150', gridId='1', extended=True,
                       timestamp='20181001', template='templates/htmlpopup/windatlas50.mako')
-register_bodid_gridid('ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor', gridId='2', extended=False,
-                      timestamp='20150701', template='templates/htmlpopup/phosphor.mako')
-register_bodid_gridid('ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff', gridId='3', extended=False,
-                      timestamp='20150701', template='templates/htmlpopup/stickstoff.mako')
