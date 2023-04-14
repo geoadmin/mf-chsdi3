@@ -3053,7 +3053,7 @@ register(FixpunkteHfp2.__bodId__, FixpunkteHfp2)
 
 class SwisstneBase:
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
-    __bodId__ = 'ch.swisstne-base'
+    __bodId__ = 'ch.swisstopo.swisstne-base'
     __label__ = 'uuid'
     id = Column('bgdi_id', Unicode, primary_key=True)
     uuid = Column('uuid', Unicode)
