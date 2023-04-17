@@ -3049,3 +3049,40 @@ class FixpunkteHfp2(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(FixpunkteHfp2.__bodId__, FixpunkteHfp2)
+
+
+class SwisstneBase:
+    __table_args__ = ({'schema': 'tlm', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.swisstne-base'
+    __label__ = 'uuid'
+    id = Column('bgdi_id', Unicode, primary_key=True)
+    uuid = Column('uuid', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class SwisstneBasePoint(Base, SwisstneBase, Vector):
+    __tablename__ = 'swisstne_base_point'
+    __template__ = 'templates/htmlpopup/swisstne_base_point.mako'
+
+
+class SwisstneBaseLine(Base, SwisstneBase, Vector):
+    __tablename__ = 'swisstne_base_line'
+    __template__ = 'templates/htmlpopup/swisstne_base_line.mako'
+    rail = Column('rail', Integer)
+    road = Column('road', Integer)
+    cableway = Column('cableway', Integer)
+    water = Column('water', Integer)
+
+
+class SwisstneBasePoly(Base, SwisstneBase, Vector):
+    __tablename__ = 'swisstne_base_poly'
+    __template__ = 'templates/htmlpopup/swisstne_base_poly.mako'
+    type_poly = Column('type', Unicode)
+    type_de = Column('type_de', Unicode)
+    type_fr = Column('type_fr', Unicode)
+    type_it = Column('type_it', Unicode)
+    type_en = Column('type_en', Unicode)
+
+register(SwisstneBase.__bodId__, SwisstneBasePoint)
+register(SwisstneBase.__bodId__, SwisstneBaseLine)
+register(SwisstneBase.__bodId__, SwisstneBasePoly)
