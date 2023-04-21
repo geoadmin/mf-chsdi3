@@ -15,6 +15,30 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20230510:
+
+Release 20230510 - Wednesday, Mai 5th 2022
+------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcements:
+    - The WMTS in `Plate-Carrée WGS1984 (EPSG:4326) <https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml>`__ is now in **lat/lon order**
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Dummy <//map.geo.admin.ch/?layers=ch.dummy.dummy>`__ (ch.bafu.dummy.dummy)                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2023-03-15-rc1...2023-05-10-rc1>`__
+
 .. _releasenotes_20230315:
 
 Release 20230315 - Wednesday, March 15th 2022
