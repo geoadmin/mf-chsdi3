@@ -2418,3 +2418,21 @@ class WaldbrandWarnung(Base, Vector):
     the_geom = Column('the_geom', Geometry2D)
 
 register(WaldbrandWarnung.__bodId__, WaldbrandWarnung)
+
+
+class LandesforstinventarKantone(Base, Vector):
+    __tablename__ = 'landesforstinventar_kantone'
+    __table_args__ = ({'schema': 'diverse', 'autoload': False})
+    __bodId__ = 'ch.bafu.landesforstinventar-kantone'
+    __template__ = 'templates/htmlpopup/bafu_landesforstinventar_kantone.mako'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    kantonid = Column('kantonid', Integer)
+    kantonname_de = Column('kantonname_de', Unicode)
+    kantonname_fr = Column('kantonname_fr', Unicode)
+    kantonname_it = Column('kantonname_it', Unicode)
+    kantonname_en = Column('kantonname_en', Unicode)
+    alternatename = Column('alternatename', Unicode)
+    the_geom = Column('the_geom', Geometry2D)
+
+register(LandesforstinventarKantone.__bodId__, LandesforstinventarKantone)
