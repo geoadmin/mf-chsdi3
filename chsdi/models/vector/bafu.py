@@ -1372,6 +1372,9 @@ class WasserentnahmeAll(Base, Vector):
     kantoncode = Column('kantoncode', Unicode)
     ent_gew = Column('ent_gew', Unicode)
     link = Column('link', Unicode)
+    link_de = Column('link_de', Unicode)
+    link_fr = Column('link_fr', Unicode)
+    link_it = Column('link_it', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.wasser-entnahme', WasserentnahmeAll)
