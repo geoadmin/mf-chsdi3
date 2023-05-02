@@ -3068,6 +3068,8 @@ class SwisstneBasePoint(Base, SwisstneBase, Vector):
 class SwisstneBaseLine(Base, SwisstneBase, Vector):
     __tablename__ = 'swisstne_base_line'
     __template__ = 'templates/htmlpopup/swisstne_base_line.mako'
+    from_node_uuid = Column('uuid', Unicode)
+    to_node_uuid = Column('uuid', Unicode)
     rail = Column('rail', Integer)
     road = Column('road', Integer)
     cableway = Column('cableway', Integer)
