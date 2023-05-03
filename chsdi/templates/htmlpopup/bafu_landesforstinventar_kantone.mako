@@ -1,6 +1,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
+    <% c['stable_id'] = True %>
     <%
       lang = lang if lang in ('fr','it', 'en') else 'de'
       kantonname = 'kantonname_%s' %lang

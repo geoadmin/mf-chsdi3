@@ -2426,7 +2426,7 @@ class LandesforstinventarKantone(Base, Vector):
     __bodId__ = 'ch.bafu.landesforstinventar-kantone'
     __template__ = 'templates/htmlpopup/bafu_landesforstinventar_kantone.mako'
     __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('kantonid', Integer, primary_key=True)
     kantonid = Column('kantonid', Integer)
     kantonname_de = Column('kantonname_de', Unicode)
     kantonname_fr = Column('kantonname_fr', Unicode)
