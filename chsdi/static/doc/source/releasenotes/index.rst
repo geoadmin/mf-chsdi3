@@ -32,7 +32,7 @@ API & applications
 Geodata
 *******
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Dummy <//map.geo.admin.ch/?layers=ch.dummy.dummy>`__ (ch.bafu.dummy.dummy)                                                                           |
+| Update |    `Hydropower statistics <//map.geo.admin.ch/?layers=h.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                    |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
