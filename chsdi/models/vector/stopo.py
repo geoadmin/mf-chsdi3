@@ -2034,7 +2034,7 @@ class OerebkatasterZoom1(Base, Oerebkataster, Vector):
     __tablename__ = 'view_stand_oereb_parcel'
     oereb_webservice = Column('oereb_webservice', Unicode)
     bgdi_status = Column('bgdi_status', Integer)
-    egris_egrid = Column('egris_egrid', Integer)
+    egris_egrid = Column('egris_egrid', Unicode)
     oereb_extract_pdf = Column('oereb_extract_pdf', Unicode)
     oereb_extract_url = Column('oereb_extract_url', Unicode)
     number = Column('number_', Integer)
@@ -3068,6 +3068,8 @@ class SwisstneBasePoint(Base, SwisstneBase, Vector):
 class SwisstneBaseLine(Base, SwisstneBase, Vector):
     __tablename__ = 'swisstne_base_line'
     __template__ = 'templates/htmlpopup/swisstne_base_line.mako'
+    from_node_uuid = Column('from_node_uuid', Unicode)
+    to_node_uuid = Column('to_node_uuid', Unicode)
     rail = Column('rail', Integer)
     road = Column('road', Integer)
     cableway = Column('cableway', Integer)

@@ -6,6 +6,14 @@
       <td>${c['attributes']['uuid'] or '-'}</td>
     </tr>
     <tr>
+      <td class="cell-left">${_('ch.swisstopo.swisstne-base.from_node_uuid')}</td>
+      <td>${c['attributes']['from_node_uuid'] or '-'}</td>
+    </tr>
+    <tr>
+      <td class="cell-left">${_('ch.swisstopo.swisstne-base.to_node_uuid')}</td>
+      <td>${c['attributes']['to_node_uuid'] or '-'}</td>
+    </tr>
+    <tr>
       <td class="cell-left">${_('ch.swisstopo.swisstne-base.rail')}</td>
       <td>
         % if c['attributes']['rail'] == 0:
