@@ -17,7 +17,7 @@ Release Notes
 
 .. _releasenotes_20230510:
 
-Release 20230510 - Wednesday, Mai 10th 2023
+Release 20230510 - Wednesday, May 10th 2023
 -------------------------------------------
 
 API & applications
@@ -80,7 +80,7 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Diffuse dissolved phosphorus inputs <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor>`__ (ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor)                    |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update    | `Wells > 500m <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-bohrungen_tiefer_500>`__ (ch.swisstopo.geologie-bohrungen_tiefer_500)                                                           |
+| Update | `Wells > 500m <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-bohrungen_tiefer_500>`__ (ch.swisstopo.geologie-bohrungen_tiefer_500)                                                           |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Cycling in Switzerland <//map.geo.admin.ch/?layers=ch.astra.veloland>`__ (ch.astra.veloland)                                                                                                   |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
