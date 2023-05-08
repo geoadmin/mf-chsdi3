@@ -36,8 +36,6 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Canton NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-kantone>`__ (ch.bafu.landesforstinventar-kantone)                                                                           |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Wells > 500m <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-bohrungen_tiefer_500>`__ (ch.swisstopo.geologie-bohrungen_tiefer_500)                                                           |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Diffuse total phosphorus inputs <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-diffuse_eintraege_gesamt_phosphor>`__ (ch.bafu.gewaesserschutz-diffuse_eintraege_gesamt_phosphor)          |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                                                |
@@ -81,6 +79,8 @@ Geodata
 | Update | `Total total nitrogen inputs <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff>`__ (ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff)                        |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Diffuse dissolved phosphorus inputs <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor>`__ (ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor)                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update    | `Wells > 500m <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-bohrungen_tiefer_500>`__ (ch.swisstopo.geologie-bohrungen_tiefer_500)                                                           |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Cycling in Switzerland <//map.geo.admin.ch/?layers=ch.astra.veloland>`__ (ch.astra.veloland)                                                                                                   |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
