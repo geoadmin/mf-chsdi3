@@ -38,7 +38,9 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Wells > 500m <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-bohrungen_tiefer_500>`__ (ch.swisstopo.geologie-bohrungen_tiefer_500)                                                           |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=h.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                                                 |
+| New    | `Diffuse total phosphorus inputs <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-diffuse_eintraege_gesamt_phosphor>`__ (ch.bafu.gewaesserschutz-diffuse_eintraege_gesamt_phosphor)          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                                                |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Administrative borders G1, agglomerations <//map.geo.admin.ch/?layers=ch.bfs.generalisierte-grenzen_agglomerationen_g1>`__ (ch.bfs.generalisierte-grenzen_agglomerationen_g1)                  |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,6 +73,14 @@ Geodata
 | Update | `Map swissTLM (color) <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-farbe>`__ (ch.swisstopo.swisstlm3d-karte-farbe)                                                                 |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Map swissTLM (grey) <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-grau>`__ (ch.swisstopo.swisstlm3d-karte-grau)                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Catchment <//map.geo.admin.ch/?layers=ch.bafu.wasser-entnahme>`__ (ch.bafu.wasser-entnahme)                                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hunting Ban Reserves <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-jagdbanngebiete>`__ (ch.bafu.bundesinventare-jagdbanngebiete)                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Total total nitrogen inputs <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff>`__ (ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff)                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Diffuse dissolved phosphorus inputs <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor>`__ (ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor)                    |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -187,7 +197,7 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20230222:
-
+ ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff
 Release 20230222 - Thursday, February 22th 2023
 -----------------------------------------------
 
