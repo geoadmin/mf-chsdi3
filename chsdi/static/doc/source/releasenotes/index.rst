@@ -60,6 +60,10 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `ISOS - Photos <//map.geo.admin.ch/?layers=ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos)                                  |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Overland flow map <//map.geo.admin.ch/?layers=ch.bafu.gefaehrdungskarte-oberflaechenabfluss>`__ (ch.bafu.gefaehrdungskarte-oberflaechenabfluss)                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Electricity lines sectoral plan <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2023-03-15-rc1...2023-05-10-rc1>`__
