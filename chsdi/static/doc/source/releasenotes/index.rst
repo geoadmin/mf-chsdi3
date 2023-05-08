@@ -32,6 +32,12 @@ API & applications
 Geodata
 *******
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Base network swiss TNE <//map.geo.admin.ch/?layers=ch.swisstopo.swisstne-base>`__ (ch.swisstopo.swisstne-base)                                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Canton NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-kantone>`__ (ch.bafu.landesforstinventar-kantone)                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wells > 500m <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-bohrungen_tiefer_500>`__ (ch.swisstopo.geologie-bohrungen_tiefer_500)                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Hydropower statistics <//map.geo.admin.ch/?layers=h.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                                                 |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Administrative borders G1, agglomerations <//map.geo.admin.ch/?layers=ch.bfs.generalisierte-grenzen_agglomerationen_g1>`__ (ch.bfs.generalisierte-grenzen_agglomerationen_g1)                  |
@@ -62,7 +68,9 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Overland flow map <//map.geo.admin.ch/?layers=ch.bafu.gefaehrdungskarte-oberflaechenabfluss>`__ (ch.bafu.gefaehrdungskarte-oberflaechenabfluss)                                                |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Electricity lines sectoral plan <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)                                    |
+| Update | `Map swissTLM (color) <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-farbe>`__ (ch.swisstopo.swisstlm3d-karte-farbe)                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map swissTLM (grey) <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-karte-grau>`__ (ch.swisstopo.swisstlm3d-karte-grau)                                                                    |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
