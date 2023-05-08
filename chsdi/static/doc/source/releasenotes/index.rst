@@ -27,7 +27,7 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - Announcements:
-    - The WMTS in `Plate-Carrée WGS1984 (EPSG:4326) <https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml>`__ is now in **lat/lon order**
+    - The WMTS in `WGS84 (EPSG:4326) <https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml>`__ is now in **lat/lon order**
 
 Geodata
 *******
