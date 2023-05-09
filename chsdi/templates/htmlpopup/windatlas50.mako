@@ -1,12 +1,22 @@
 <%inherit file="base.mako"/>
 <%!
+import logging
 import requests
+from requests.exceptions import RequestException
+logger = logging.getLogger(__name__)
+
 def getAltitude(baseUrl, center):
-    fullUrl = 'http://' + baseUrl +'/rest/services/height'
-    response = requests.get(
-        fullUrl + '?easting=%s&northing=%s&elevation_model=COMB' % (center[0], center[1]),
-        headers={'Referer': fullUrl, 'User-Agent': 'mf-geoadmin/python'})
-    result = response.json()
+    url = 'http://%s/rest/services/height' % (baseUrl)
+    query = '?easting=%s&northing=%s&elevation_model=COMB' % (center[0], center[1])
+    try:
+        response = requests.get(
+            url + query,
+            headers={'Referer': url, 'User-Agent': 'mf-geoadmin/python'}
+        )
+        result = response.json()
+    except (RequestException, ConnectionError) as err:
+        logger.exceptions('Failed to get the altitude: %s', err)
+        return 0
     return result['height']
 %>
 
