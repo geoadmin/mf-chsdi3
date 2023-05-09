@@ -3054,9 +3054,8 @@ register(FixpunkteHfp2.__bodId__, FixpunkteHfp2)
 class SwisstneBase:
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __bodId__ = 'ch.swisstopo.swisstne-base'
-    __label__ = 'uuid'
+    __label__ = 'id'
     id = Column('bgdi_id', Unicode, primary_key=True)
-    uuid = Column('uuid', Unicode)
     the_geom = Column(Geometry2D)
 
 
