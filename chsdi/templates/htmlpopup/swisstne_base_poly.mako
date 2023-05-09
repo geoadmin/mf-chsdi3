@@ -7,7 +7,7 @@
   %>
   <tr>
     <td class="cell-left">${_('ch.swisstopo.swisstne-base.uuid')}</td>
-    <td>${c['attributes']['uuid'] or '-'}</td>
+    <td>${c['featureId'] or '-'}</td>
   </tr>
   <tr>
     <td class="cell-left">${_('ch.swisstopo.swisstne-base.type')}</td>
