@@ -3055,7 +3055,7 @@ class SwisstneBase:
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __bodId__ = 'ch.swisstopo.swisstne-base'
     __label__ = 'id'
-    id = Column('bgdi_id', Unicode, primary_key=True)
+    id = Column('uuid', Unicode, primary_key=True)
     the_geom = Column(Geometry2D)
 
 
