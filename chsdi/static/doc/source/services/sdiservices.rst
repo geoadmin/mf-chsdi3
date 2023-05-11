@@ -1102,13 +1102,13 @@ Supported projections
 Four projections are supported. The same tiles are offered in four other *tilematrixsets/projection*.
 
 * LV95/CH1903+ (EPSG:2056)
-    :wmts_getcapabilities:`/EPSG/2056/1.0.0/WMTSCapabilities.xml`
+    `https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml`
 * LV03/CH1903 (EPSG:21781)
-    :wmts_getcapabilities:`/EPSG/21781/1.0.0/WMTSCapabilities.xml`
+    `https://wmts.geo.admin.ch/EPSG/21781/1.0.0/WMTSCapabilities.xml`
 * Plate-Carrée WGS1984 (EPSG:4326, in **lat/lon order**)
-    :wmts_getcapabilities:`/EPSG/4326/1.0.0/WMTSCapabilities.xml`
+    `https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml`
 * WGS84/Pseudo-Mercator (EPSG:3857, as used in OSM, Bing, Google Map)
-    :wmts_getcapabilities:`/EPSG/3857/1.0.0/WMTSCapabilities.xml`
+    `https://wmts.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml`
 
 
 Note:
