@@ -57,7 +57,7 @@
         % if download != '-':
             <tr>
                 <th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.download')}</th>
-                <td><a href="${download}" target="_blank">Zip</a></td>
+                <td><a href="https://data.geo.admin.ch/ch.swisstopo.geologie-bohrungen_tiefer_500/downloads/${download}" target="_blank">Zip</a></td>
             </tr>
         % else:
             <tr>
