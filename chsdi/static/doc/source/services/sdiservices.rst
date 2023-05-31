@@ -1407,11 +1407,8 @@ A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `3D Tiles specifi
 URL
 ***
 
-- https://vectortiles0.geo.admin.ch/3d-tiles/
-- https://vectortiles1.geo.admin.ch/3d-tiles/
-- https://vectortiles2.geo.admin.ch/3d-tiles/
-- https://vectortiles3.geo.admin.ch/3d-tiles/
-- https://vectortiles4.geo.admin.ch/3d-tiles/
+- https://vectortiles.geo.admin.ch/3d-tiles/
+
 
 Metadata Service
 ****************
@@ -1420,14 +1417,14 @@ The `tileset.json` file describes the available set of tiles. In order to use th
 
 Currently, 3 technical layers (ch.swisstopo.swisstlm3d.3d, ch.swisstopo.swissnames3d.3d, ch.swisstopo.vegetation.3d) are available and they contains all available 3D objects. Additional layers will be available in the future. Partial 3D buildings model coverage can be vizsualised `here <https://s.geo.admin.ch/70fb32e692>`_.
 
-- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20201020/tileset.json
-- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swissnames3d.3d/20180716/tileset.json
-- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.vegetation.3d/20190313/tileset.json
+- https://vectortiles.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20201020/tileset.json
+- https://vectortiles.geo.admin.ch/3d-tiles/ch.swisstopo.swissnames3d.3d/20180716/tileset.json
+- https://vectortiles.geo.admin.ch/3d-tiles/ch.swisstopo.vegetation.3d/20190313/tileset.json
 
 Example
 *******
 
-* A `3D tile <https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20201020/8/41/50.b3dm?v=1.0>`_
+* A `3D tile <https://vectortiles.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20201020/8/41/50.b3dm?v=1.0>`_
 
 .. _sparql_description:
 
