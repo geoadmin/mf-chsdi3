@@ -1492,7 +1492,7 @@ class Bakomtv(Base, Vector):
     __template__ = 'templates/htmlpopup/bakomtv.mako'
     __bodId__ = 'ch.bakom.versorgungsgebiet-tv'
     __label__ = 'prog'
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('zone_id', Integer, primary_key=True)
     prog = Column('prog', Unicode)
     the_geom = Column(Geometry2D)
 
@@ -1505,7 +1505,7 @@ class Bakomukw(Base, Vector):
     __template__ = 'templates/htmlpopup/bakomukw.mako'
     __bodId__ = 'ch.bakom.versorgungsgebiet-ukw'
     __label__ = 'prog'
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('zone_id', Integer, primary_key=True)
     prog = Column('prog', Unicode)
     the_geom = Column(Geometry2D)
 
