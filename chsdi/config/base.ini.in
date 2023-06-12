@@ -35,7 +35,6 @@ sqlalchemy.uvek_solarkataster.url = postgresql://${DBHOST}:${DBPORT}/uvek_solark
 sqlalchemy.vbs.url = postgresql://${DBHOST}:${DBPORT}/vbs_${DBSTAGING}
 sqlalchemy.zeitreihen.url = postgresql://${DBHOST}:${DBPORT}/zeitreihen_${DBSTAGING}
 sqlalchemy.lubis.url = postgresql://${DBHOST}:${DBPORT}/lubis_${DBSTAGING}
-sqlalchemy.diemo.url = postgresql://${DBHOST}:${DBPORT}/diemo_${DBSTAGING}
 
 # SQLAlchemy pooling and transactions
 sqlalchemy.pool_pre_ping = ${SQLALCHEMY_POOL_PRE_PING}
