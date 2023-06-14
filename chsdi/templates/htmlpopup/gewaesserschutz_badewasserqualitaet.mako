@@ -1,132 +1,106 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-<% c['stable_id'] = True %>
-<%
-badewasserqualitaet_eua = 'ch.bafu.gewaesserschutz-badewasserqualitaet.%s' % c['attributes']['qualitaet_eua']
-%>
+    <% c['stable_id'] = True %>
+    % if c['attributes']['kategorie'] == 'See':
+        klasse_txt = 'ch.bafu.gewaesserschutz-badewasserqualitaet.l%s' % c['attributes']['klasse']
+    % elif c['attributes']['kategorie'] == 'Fluss':
+        klasse_txt = 'ch.bafu.gewaesserschutz-badewasserqualitaet.r%s' % c['attributes']['klasse']
+    % endif
     <tr>
-      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwid')}</td>
+      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.id')}</td>
       <td>${c['featureId']}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwname')}</td>
-      <td>${c['attributes']['bwname']}</td>
+      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.station')}</td>
+      <td>${c['attributes']['station']}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.groupid')}</td>
-      <td>${c['attributes']['groupid'] or '-'}</td>
+      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.gruppe')}</td>
+      <td>${c['attributes']['gruppe'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.nwunitname')}</td>
-      <td>${c['attributes']['nwunitname'] or '-'}</td>
+      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.gewaesser')}</td>
+      <td>${c['attributes']['gewaesser'] or '-'}</td>
     </tr>
     <tr>
       <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.gemeinde')}</td>
       <td>${c['attributes']['gemeinde'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_eua')}</td>
-      <td>${_(badewasserqualitaet_eua)}</td>
-    </tr>
-    <tr>
-      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.anzahlmessungen')}</td>
-      <td>${c['attributes']['anzahlmessungen'] or '-'}</td>
+      <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.klasse')}</td>
+      <td>${_(klasse_txt)}</td>
     </tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
-<%
-badewasserqualitaet_eua = 'ch.bafu.gewaesserschutz-badewasserqualitaet.%s' % c['attributes']['qualitaet_eua']
-protocol = request.scheme
-c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
-datageoadminUrl = request.registry.settings['datageoadminhost'] + '/ch.bafu.gewaesserschutz-badewasserqualitaet/image/'
-topic = request.matchdict.get('map')
-lang = request.lang
-%>
-<table class="table-with-border  kernkraftwerke-extended">
-  <tr>
-% if c['attributes']['baquaimg'] is None:
-      <span></span>
-% else:
-      <div><center><img style="width: 70%; height:auto" src="${datageoadminUrl + c['attributes']['baquaimg'] or '-'}"/></center></div><br/>
-% endif
-  </tr>
-  <tr>
-      <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwid')}</td>
-      <td class="cell-meta">${c['featureId']}</td>
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwname')}</td>
-    <td class="cell-meta">${c['attributes']['bwname'] or '-'}</td>
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.groupid')}</td>
-    <td class="cell-meta">${c['attributes']['groupid'] or '-'}</td>
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.nwunitname')}</td>
-    <td class="cell-meta">${c['attributes']['nwunitname']}</td>
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.rbdsuname')}</td>
-    <td class="cell-meta">${c['attributes']['rbdsuname'] or '-'}</td>
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.gemeinde')}</td>
-    <td class="cell-meta">${c['attributes']['gemeinde'] or '-'}</td>
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.kanton')}</td>
-    <td class="cell-meta">${c['attributes']['canton'] or '-'}</td>
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat')}</td>
-% if c['attributes']['bwatercat'] == 'L':
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat_l')}</td>
-% elif c['attributes']['bwatercat'] == 'R':
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat_r')}</td>
-% endif
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.yearbw')}</td>
-    <td class="cell-meta">${c['attributes']['yearbw'] or '-'}</td>
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.coord_ch')}</td>
-    <td class="cell-meta">${c['attributes']['coord_ch'] or '-'}</td>
-  </tr>
+  % if c['attributes']['kategorie'] == 'See':
+      klasse_txt = 'ch.bafu.gewaesserschutz-badewasserqualitaet.l%s' % c['attributes']['klasse']
+  % elif c['attributes']['kategorie'] == 'Fluss':
+      klasse_txt = 'ch.bafu.gewaesserschutz-badewasserqualitaet.r%s' % c['attributes']['klasse']
+  % endif
+  <%
+    protocol = request.scheme
+    c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
+    datageoadminUrl = request.registry.settings['datageoadminhost'] + '/ch.bafu.gewaesserschutz-badewasserqualitaet/image/'
+    topic = request.matchdict.get('map')
+    lang = request.lang
+  %>
+  <table class="table-with-border  kernkraftwerke-extended">
     <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.url')}</td>
-% if c['attributes']['url']:
-    <td class="cell-meta"><a href="${c['attributes']['url'] or '-'}" target="_blank">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.urllien')}</a></td>
-% else:
-    <td class="cell-meta">-</td>
-% endif
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz')}</td>
-% if c['attributes']['eua_badeplatz'] == 1:
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz_ja')}</td>
-% elif c['attributes']['eua_badeplatz'] == 0:
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.eua_badeplatz_nein')}</td>
-% endif
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.anzahlmessungen')}</td>
-    <td class="cell-meta">${c['attributes']['anzahlmessungen'] or '-'}</td>
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.verunreinigung_tage')}</td>
-    <td class="cell-meta">${c['attributes']['verunreinigung_tage'] or '-'}</td>
-  </tr>
-  <tr>
-    <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.qualitaet_eua')}</td>
-    <td class="cell-meta">${_(badewasserqualitaet_eua)}</td>
-  </tr>
-</table>
-<br />
-<div>
- <iframe src="${''.join((c['baseUrl'], '/embed.html', '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic))}" width='580' height='300' style="width: 100%;" frameborder='0' style='border:0'></iframe>
-</div>
+      % if c['attributes']['foto'] is None:
+            <span></span>
+      % else:
+            <div><center><img style="width: 70%; height:auto" src="${datageoadminUrl + c['attributes']['foto'] or '-'}"/></center></div><br/>
+      % endif
+    </tr>
+    <tr>
+        <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.id')}</td>
+        <td class="cell-meta">${c['featureId']}</td>
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.station')}</td>
+      <td class="cell-meta">${c['attributes']['station'] or '-'}</td>
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.gruppe')}</td>
+      <td class="cell-meta">${c['attributes']['gruppe'] or '-'}</td>
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.gewaesser')}</td>
+      <td class="cell-meta">${c['attributes']['gewaesser']}</td>
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.gemeinde')}</td>
+      <td class="cell-meta">${c['attributes']['gemeinde'] or '-'}</td>
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.kanton')}</td>
+      <td class="cell-meta">${c['attributes']['kanton'] or '-'}</td>
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.kategorie')}</td>
+      <td class="cell-meta">${c['attributes']['kategorie'] or '-'}</td>
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.jahr')}</td>
+      <td class="cell-meta">${c['attributes']['jahr'] or '-'}</td>
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.link')}</td>
+      % if c['attributes']['link']:
+          <td class="cell-meta"><a href="${c['attributes']['link'] or '-'}" target="_blank">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.urllien')}</a></td>
+      % else:
+          <td class="cell-meta">-</td>
+      % endif
+    </tr>
+    <tr>
+      <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.klasse')}</td>
+      <td class="cell-meta">${_(klasse_txt)}</td>
+    </tr>
+  </table>
+  <br />
+  <div>
+    <iframe src="${''.join((c['baseUrl'], '/embed.html', '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic))}" width='580' height='300' style="width: 100%;" frameborder='0' style='border:0'></iframe>
+  </div>
 </%def>
