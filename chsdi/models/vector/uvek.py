@@ -1710,6 +1710,18 @@ class HindernisbegrenzungsflaechenPerimeter(Base, Vector):
 register('ch.bazl.hindernisbegrenzungsflaechen-perimeter', HindernisbegrenzungsflaechenPerimeter)
 
 
+class IntrinsischesBodenrisikoSora(Base, Vector):
+    __tablename__ = 'ch.bazl.intrinsisches-bodenrisiko_sora'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __template__ = 'templates/htmlpopup/bazl_intrinsisches_bodenrisiko.mako'
+    __bodId__ = 'ch.bazl.intrinsisches-bodenrisiko_sora'
+    id = Column('id', Integer, primary_key=True)
+    density_pop_km2 = Column('idensity_pop_km2', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bazl.intrinsisches-bodenrisiko_sora', HindernisbegrenzungsflaechenPerimeter)
+
+
 class AstraStrasseFacilitiesA(Base, Vector):
     __tablename__ = 'sachplan_strasse_fac_anhoerung'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
