@@ -821,18 +821,18 @@ class GewaesserschutzBadewasserqualitaet(Base, Vector):
     __bodId__ = 'ch.bafu.gewaesserschutz-badewasserqualitaet'
     __template__ = 'templates/htmlpopup/gewaesserschutz_badewasserqualitaet.mako'
     __extended_info__ = True
-    __label__ = 'station'
-    id = Column('id', Unicode, primary_key=True, nullable=False)
-    station = Column('station', Unicode, nullable=False)
-    gruppe = Column('gruppe', Unicode, nullable=True)
-    gewaesser = Column('gewaesser', Unicode, nullable=False)
+    __label__ = 'bwname'
+    id = Column('bwid', Unicode, primary_key=True, nullable=False)
+    bwname = Column('bwname', Unicode, nullable=False)
+    groupid = Column('groupid', Unicode, nullable=True)
+    nwunitname = Column('nwunitname', Unicode, nullable=False)
     gemeinde = Column('gemeinde', Unicode, nullable=False)
-    kanton = Column('kanton', Unicode, nullable=False)
-    kategorie = Column('kategorie', Unicode, nullable=False)
-    link = Column('link', Unicode, nullable=True)
-    foto = Column('foto', Unicode, nullable=True)
-    jahr = Column('jahr', Integer, nullable=False)
-    klasse = Column('klasse', Unicode, nullable=False)
+    canton = Column('canton', Unicode, nullable=False)
+    bwatercat = Column('bwatercat', Unicode, nullable=False)
+    url = Column('url', Unicode, nullable=True)
+    baquaimg = Column('baquaimg', Unicode, nullable=True)
+    year_bw = Column('year_bw', Integer, nullable=False)
+    qualitaet = Column('qualitaet', Unicode, nullable=False)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.gewaesserschutz-badewasserqualitaet', GewaesserschutzBadewasserqualitaet)
