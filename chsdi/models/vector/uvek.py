@@ -1719,7 +1719,7 @@ class IntrinsischesBodenrisikoSora(Base, Vector):
     density_pop_km2 = Column('density_pop_km2', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.intrinsisches-bodenrisiko_sora', IntrinsischesBodenrisikoSora)
+register(IntrinsischesBodenrisikoSora.__bodId__, IntrinsischesBodenrisikoSora)
 
 
 class AstraStrasseFacilitiesA(Base, Vector):
