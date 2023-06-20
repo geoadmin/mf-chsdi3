@@ -6,7 +6,7 @@
     ${_('ch.bazl.intrinsisches-bodenrisiko_sora.density_pop_km2')}
   </td>
   <td>
-    ${c['attributes']['density_pop_km2']}
+    ${c['attributes']['density_pop_km2'] or '-'}
   </td>
 </tr>
 </%def>
