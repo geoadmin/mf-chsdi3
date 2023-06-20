@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Integer, Boolean, Numeric
+from sqlalchemy import Column, Integer, Boolean, Numeric, Date
 from sqlalchemy.types import Unicode
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -38,6 +38,16 @@ class LuftbilderBase:
     the_geom = Column(Geometry2D)
 
 
+class LuftbilderBaseStac(LuftbilderBase):
+    feature_id = Column('feature_id', Unicode)
+    acquired = Column('acquired', Date)
+    film_type = Column('film_type', Unicode)
+    orthofilename = Column('orthofilename', Unicode)
+    e = Column('e', Numeric)
+    n = Column('n', Numeric)
+    z = Column('z', Numeric)
+
+
 class LuftbilderSwisstopoFarbe(Base, LuftbilderBase, Vector):
     __tablename__ = 'luftbilder_swisstopo_color'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_farbe'
@@ -56,7 +66,7 @@ class LuftbilderSwisstopoIr(Base, LuftbilderBase, Vector):
 register('ch.swisstopo.lubis-luftbilder_infrarot', LuftbilderSwisstopoIr)
 
 
-class LuftbilderSwisstopoSw(Base, LuftbilderBase, Vector):
+class LuftbilderSwisstopoSw(Base, LuftbilderBaseStac, Vector):
     __tablename__ = 'luftbilder_swisstopo_bw'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_schwarzweiss'
     image_height = Column('image_height', Integer)
