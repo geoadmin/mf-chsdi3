@@ -60,7 +60,7 @@
       % if c['attributes']['baquaimg'] is None:
             <span></span>
       % else:
-            <div><center><img style="width: 70%; height:auto" src="${datageoadminUrl + c['attributes']['baquaimg'] or '-'}"/></center></div><br/>
+            <div><center><img style="width: 70%; height:auto" src="${c['attributes']['baquaimg']}"/></center></div><br/>
       % endif
     </tr>
     <tr>
