@@ -14,6 +14,73 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20230628:
+
+Release 20230628 - Wednesday, June 28th 2023
+--------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcements:
+    - the downloads for *ch.bfs.gebaeude_wohnungs_register* have been removed from data.geo.admin.ch as previously announced. Downloads for the Federal Register of Buildings and Dwellings are officially available via https://www.housing-stat.ch/fr/madd/public.html
+    - the layers *ch.bafu.hydrologie-messstationen_gefahren* and *ch.bafu.hydroweb-warnkarte_regional* will be removed from chsdi services with the release of September 6th 2023
+    - the mapviewer topic "geothermie" will be removed from map.geo.admin.ch with the release of September 6th 2023
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | `Vector representation of relief <//vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/tiles.json>`__ (ch.swisstopo.relief.vt), a new vector based terrain (vector tiles)                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, zuläss. Immission T <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag)     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, zuläss. Immission N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nach>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nach)   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, tats. Immission N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht)     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, tats. Immission T <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag)         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, tats. Emission T <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag)    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, tats. Emission N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht)|
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, festgel. Emission T <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag)     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, festgel. Emission N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht) |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, Lärmschutzwände <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_laermschutzwaende>`__  (ch.bav.laermbelastung-eisenbahn_laermschutzwaende)                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Konsultationsbereiche Rohrleitungen <//map.geo.admin.ch/?layers=ch.bfe.rohrleitungen-konsultationsbereiche>`__ (ch.bfe.rohrleitungen-konsultationsbereiche)                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cities and conurbations BeSA <//map.geo.admin.ch/?layers=ch.are.agglomerationsverkehr>`__ (ch.are.agglomerationsverkehr)                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Alps with livestock guardian dogs <//map.geo.admin.ch/?layers=ch.bafu.alpweiden-herdenschutzhunde>`__ (ch.bafu.alpweiden-herdenschutzhunde)                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Status of Cantonal Geotope Inventories <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geotope_kantone_stand>`__ (ch.swisstopo.geologie-geotope_kantone_stand)                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking trails <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-wanderwege>`__ (ch.swisstopo.swisstlm3d-wanderwege)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissBATHY3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissbathy3d-reliefschattierung>`__ (ch.swisstopo.swissbathy3d-reliefschattierung)                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Bathing water quality <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-badewasserqualitaet>`__ (ch.bafu.gewaesserschutz-badewasserqualitaet)                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Spectral micro-zoning <//map.geo.admin.ch/?layers=ch.bafu.gefahren-spektral>`__ (ch.bafu.gefahren-spektral)                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Electricity Transmission Lines sectoral plan <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hunting Ban Reserves <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-jagdbanngebiete>`__ (ch.bafu.bundesinventare-jagdbanngebiete)                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 
 .. _releasenotes_20230510:
 
