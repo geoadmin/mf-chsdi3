@@ -6,7 +6,6 @@ import datetime
 from pyramid.url import route_url
 import chsdi.lib.helpers as h
 import markupsafe
-logger = logging.getLogger(__name__)
 
 # TODO python2 clean-up
 try:
@@ -17,16 +16,12 @@ except ImportError:
 def br(text):
     return text.replace('\n', markupsafe.Markup('<br />'))
 
-def determinePreviewUrl(tileUrlBasePath, ebkey):
-
-    def getPreviewImageUrl(ebkey):
-        return tileUrlBasePath + '/' + ebkey + '/quickview.jpg'
-
+def determinePreviewUrl(tileUrlBasePath, featureid):
     headers = {'Referer': 'http://admin.ch'}
-    url = getPreviewImageUrl(ebkey)
-    #testing these 2 url could be done more python like
+    url = f'{tileUrlBasePath}/{featureid}/quickview.jpg'
+    # check if url is valid
     if not h.resource_exists(url, headers):
-         return False
+      return False
 
     return url
 
@@ -54,7 +49,7 @@ def get_viewer_url(request, params):
 <%def name="table_body(c, lang)">
 <%
 
-tt_lubis_ebkey = c['layerBodId'] + '.' + 'id'
+tt_lubis_ebkey = f"{c['layerBodId']}.id"
 lang = lang if lang in ('fr','it','en') else 'de'
 c['stable_id'] = True
 request = context.get('request')
@@ -62,32 +57,86 @@ aerialimages_data_host = request.registry.settings['aerialimages_data_host']
 tileUrlBasePath = aerialimages_data_host + '/tiles'
 
 preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
-logger.info('NOFX: preview_url: %s', preview_url)
 
-image_width = c['attributes']['image_width'] if 'image_width' in  c['attributes'] else None
-image_height = c['attributes']['image_height'] if 'image_height' in c['attributes'] else None
-image_rotation = c['attributes']['rotation'] if 'rotation' in c['attributes'] else None
+# new feature ids start with: lubis-luftbilder
+# simply create a link to the stac browser
+# there is no way to open to activate the orthophoto with the link parameters
+if c['featureId'].startswith('lubis-luftbilder'):
+  datum = datetime.datetime.strptime(c['attributes']['acquired'], '%Y-%m-%d').strftime("%d-%m-%Y")
 
-if image_width is None or image_height is None:
-  wh = h.imagesize_from_metafile(tileUrlBasePath, c['featureId'])
-  image_width = wh[0]
-  image_height = wh[1]
+  # https://sys-data.int.bgdi.ch/browser/index.html#/collections/ch.swisstopo.lubis-luftbilder_schwarzweiss/items/lubis-luftbilder_schwarzweiss_000-193-815?.language=en&.asset=asset-lubis-luftbilder_schwarzweiss_000-193-815_op_2056.tif
+  orthofilename_asset=''
+  if c['attributes']['orthofilename']:
+    orthofilename_asset=f"?.language=en&.asset={c['attributes']['orthofilename']}"
+  # TODO: https://sys-data.int.bgdi.ch/ can be replaced with registry.settings['datageoadminhost'] when we go on prod with this change
+  # as all other resources from data.geo.admin.ch we only respect prod here.
+  viewer_url=(
+    "https://sys-data.int.bgdi.ch/browser/index.html#/collections/"
+    f"{c['layerBodId']}/items/{c['featureId']}{orthofilename_asset}"
+  )
 
-if image_rotation is None:
-  image_rotation = 0
+# old ebkeys with fullresviewer in aerialimages bucket
+else:
+  datum = date_to_str(c['attributes']['flugdatum'])
 
-datum = date_to_str(c['attributes']['flugdatum'])
-params = (
-    image_width,
-    image_height,
-    _('ch.swisstopo.lubis-luftbilder-dritte-kantone.ebkey'),
-    c['featureId'],
-    c['attributes']['firma'],
-    c['layerBodId'],
-    lang,
-    image_rotation)
-viewer_url = get_viewer_url(request, params)
+  image_width = c['attributes']['image_width'] if 'image_width' in  c['attributes'] else None
+  image_height = c['attributes']['image_height'] if 'image_height' in c['attributes'] else None
+  image_rotation = c['attributes']['rotation'] if 'rotation' in c['attributes'] else None
+
+  if image_width is None or image_height is None:
+    wh = h.imagesize_from_metafile(tileUrlBasePath, c['featureId'])
+    image_width = wh[0]
+    image_height = wh[1]
+
+  if image_rotation is None:
+    image_rotation = 0
+
+  params = (
+      image_width,
+      image_height,
+      _('ch.swisstopo.lubis-luftbilder-dritte-kantone.ebkey'),
+      c['featureId'],
+      c['attributes']['firma'],
+      c['layerBodId'],
+      lang,
+      image_rotation)
+  viewer_url = get_viewer_url(request, params)
+
 %>
+
+
+% if c['featureId'].startswith('lubis-luftbilder'): # STAC Tooltips
+<tr>
+  <td class="cell-left">${_(f"{c['layerBodId']}.id")}</td>
+  <td>${c['featureId'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_(f"{c['layerBodId']}.acquired")}</td>
+  <td>${datum or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_(f"{c['layerBodId']}.film_type")}</td>
+  <td>${c['attributes']['filmart'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_(f"{c['layerBodId']}.orthofilename")}</td>
+  <td>${c['attributes']['orthofilename'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_(f"{c['layerBodId']}.e")}</td>
+  <td>${c['attributes']['e'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_(f"{c['layerBodId']}.n")}</td>
+  <td>${c['attributes']['n'] or '-'}</td>
+</tr>
+<tr>
+  <td class="cell-left">${_(f"{c['layerBodId']}.z")}</td>
+  <td>${c['attributes']['z'] or '-'}</td>
+</tr>
+
+
+% else: # OLD Tooltips with GDWH data delivery
 <tr>
   <td class="cell-left">${_(tt_lubis_ebkey)}</td>
   <td>${c['featureId'] or '-'}</td>
@@ -100,8 +149,10 @@ viewer_url = get_viewer_url(request, params)
   <td class="cell-left">${_('tt_lubis_Filmart')}</td>
   <td>${c['attributes']['filmart'] or '-'}</td>
 </tr>
+% endif
 
-% if preview_url != "":
+
+% if preview_url:
 <tr>
   <td class="cell-left">${_('tt_lubis_Quickview')}</td>
   <td>
