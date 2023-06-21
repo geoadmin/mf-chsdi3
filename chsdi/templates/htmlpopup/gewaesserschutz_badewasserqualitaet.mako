@@ -3,12 +3,7 @@
 <%def name="table_body(c, lang)">
     <%
       c['stable_id'] = True 
-      if c['attributes']['bwatercat'] == 'Fluss' :
-        qualitaet_txt = 'ch.bafu.gewaesserschutz-badewasserqualitaet.r%s' % c['attributes']['qualitaet']
-      elif c['attributes']['bwatercat'] == 'See' :
-        qualitaet_txt = 'ch.bafu.gewaesserschutz-badewasserqualitaet.l%s' % c['attributes']['qualitaet']
-      else :
-        qualitaet_txt = '-'
+      qualitaet_txt = 'ch.bafu.gewaesserschutz-badewasserqualitaet.%s' % c['attributes']['qualitaet']
     %>
     <tr>
       <td class="cell-left">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwid')}</td>
@@ -39,12 +34,7 @@
 <%def name="extended_info(c, lang)">
     <%
       c['stable_id'] = True 
-      if c['attributes']['bwatercat'] == 'Fluss' :
-        qualitaet_txt = 'ch.bafu.gewaesserschutz-badewasserqualitaet.r%s' % c['attributes']['qualitaet']
-      elif c['attributes']['bwatercat'] == 'See' :
-        qualitaet_txt = 'ch.bafu.gewaesserschutz-badewasserqualitaet.l%s' % c['attributes']['qualitaet']
-      else :
-        qualitaet_txt = '-'
+      qualitaet_txt = 'ch.bafu.gewaesserschutz-badewasserqualitaet.%s' % c['attributes']['qualitaet']
     %>
 
   <%
