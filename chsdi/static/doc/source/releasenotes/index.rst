@@ -47,6 +47,20 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Eisenbahnlärm, Lärmschutzwände <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_laermschutzwaende>`__  (ch.bav.laermbelastung-eisenbahn_laermschutzwaende)                          |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Konsultationsbereiche Rohrleitungen <//map.geo.admin.ch/?layers=ch.bfe.rohrleitungen-konsultationsbereiche>`__ (ch.bfe.rohrleitungen-konsultationsbereiche)                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cities and conurbations BeSA <//map.geo.admin.ch/?layers=ch.are.agglomerationsverkehr>`__ (ch.are.agglomerationsverkehr)                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Alps with livestock guardian dogs <//map.geo.admin.ch/?layers=ch.bafu.alpweiden-herdenschutzhunde>`__ (ch.bafu.alpweiden-herdenschutzhunde)                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Status of Cantonal Geotope Inventories <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geotope_kantone_stand>`__ (ch.swisstopo.geologie-geotope_kantone_stand)                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking trails <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-wanderwege>`__ (ch.swisstopo.swisstlm3d-wanderwege)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissBATHY3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissbathy3d-reliefschattierung>`__ (ch.swisstopo.swissbathy3d-reliefschattierung)                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20230510:
