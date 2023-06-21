@@ -29,7 +29,23 @@ API & applications
 Geodata
 *******
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `This can be replaced <//map.geo.admin.ch/?layers=to-be-replaced>`__ (ch.to.be.replaced)                                                                                                        |
+| Update | `Eisenbahnlärm, zuläss. Immission T <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag)     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, zuläss. Immission N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nach>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nach)   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, tats. Immission N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht)     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, tats. Immission T <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag)         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, tats. Emission T <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag)    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, tats. Emission N<//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht) |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, festgel. Emission T <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag)     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, festgel. Emission N <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht) |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Eisenbahnlärm, Lärmschutzwände <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_laermschutzwaende>`__  (ch.bav.laermbelastung-eisenbahn_laermschutzwaende)                          |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
