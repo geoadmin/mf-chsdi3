@@ -39,6 +39,8 @@ class LuftbilderBase:
 
 
 class LuftbilderBaseStac(LuftbilderBase):
+    __template__ = 'templates/htmlpopup/lubis_stac.mako'
+    ebkey_old = Column('ebkey_old', Unicode)
     feature_id = Column('feature_id', Unicode)
     acquired = Column('acquired', Date)
     film_type = Column('film_type', Unicode)
