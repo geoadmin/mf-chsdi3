@@ -25,9 +25,15 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 - Bug fixes
+- Announcements:
+    - the downloads for *ch.bfs.gebaeude_wohnungs_register* have been removed from data.geo.admin.ch as previously announced. Downloads for the Federal Register of Buildings and Dwellings are officially available via https://www.housing-stat.ch/fr/madd/public.html
+    - the layers *ch.bafu.hydrologie-messstationen_gefahren* and *ch.bafu.hydroweb-warnkarte_regional* will be removed from chsdi services with the release of September 6th 2023
+    - the mapviewer topic "geothermie" will be removed from map.geo.admin.ch with the release of September 6th 2023
 
 Geodata
 *******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New | `Vector representation of relief <//vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/tiles.json>`__ (ch.swisstopo.relief.vt), a new vector based terrain (vector tiles)                |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Eisenbahnlärm, zuläss. Immission T <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag)     |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -62,6 +68,8 @@ Geodata
 | Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                                                          |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Bathing water quality <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-badewasserqualitaet>`__ (ch.bafu.gewaesserschutz-badewasserqualitaet)                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                        |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                           |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
