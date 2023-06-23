@@ -35,6 +35,7 @@
     <%
       c['stable_id'] = True 
       qualitaet_txt = 'ch.bafu.gewaesserschutz-badewasserqualitaet.%s' % c['attributes']['qualitaet']
+      bwatercat_txt = 'ch.bafu.gewaesserschutz-badewasserqualitaet.%s' % c['attributes']['bwatercat']
     %>
 
   <%
@@ -79,7 +80,7 @@
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.bwatercat')}</td>
-      <td class="cell-meta">${c['attributes']['bwatercat'] or '-'}</td>
+      <td class="cell-meta">${_(bwatercat_txt)}</td>
     </tr>
     <tr>
       <td class="cell-meta">${_('ch.bafu.gewaesserschutz-badewasserqualitaet.year_bw')}</td>
