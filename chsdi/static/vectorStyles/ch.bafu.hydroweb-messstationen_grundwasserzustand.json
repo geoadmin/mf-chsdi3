@@ -1,300 +1,61 @@
 {
   "type": "unique",
-  "property": "quant-class",
+  "property": "groundwater-quantile-class",
   "values": [
     {
       "geomType": "point",
       "value": 0,
-      "minResolution": 100,
       "vectorOptions": {
-        "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/nodata14.png"
-      }
-    },
-    {
-      "geomType": "point",
-      "value": [
-        -100000,
-        0
-      ],
-      "maxResolution": 100,
-      "vectorOptions": {
-        "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu/images/nodata16.png",
-        "label": {
-          "template": "${name}\n - ",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "#BEBEBE"
+        },
+        "stroke": {
+          "color": "#FFFFFF",
+          "width": 1
         }
       }
-    },
-    {
+    }, {
       "geomType": "point",
-      "rotation": "quant-class-radiant",
       "value": 1,
-      "minResolution": 250,
       "vectorOptions": {
-        "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow16_153_102_51.png"
-      }
-    },
-    {
-      "geomType": "point",
-      "rotation": "quant-class-radiant",
-      "value": 1,
-      "minResolution": 100,
-      "maxResolution": 250,
-      "vectorOptions": {
-        "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow20_153_102_51.png",
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "#D48A45"
+        },
+        "stroke": {
+          "color": "#FFFFFF",
+          "width": 1
         }
       }
-    },
-    {
+    }, {
       "geomType": "point",
-      "rotation": "quant-class-radiant",
-      "value": 1,
-      "maxResolution": 100,
-      "vectorOptions": {
-        "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu/images/arrow20_153_102_51.png",
-        "label": {
-          "template": "${name}\n ${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
-        }
-      }
-    },
-    {
-      "geomType": "point",
-      "rotation": "quant-class-radiant",
       "value": 2,
-      "minResolution": 250,
       "vectorOptions": {
-        "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow16_238_215_194.png"
-      }
-    },
-    {
-      "geomType": "point",
-      "rotation": "quant-class-radiant",
-      "value": 2,
-      "minResolution": 100,
-      "maxResolution": 250,
-      "vectorOptions": {
-        "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow20_238_215_194.png",
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "#EFD7C1"
+        },
+        "stroke": {
+          "color": "#FFFFFF",
+          "width": 1
         }
       }
-    },
-    {
+    }, {
       "geomType": "point",
-      "rotation": "quant-class-radiant",
-      "value": 2,
-      "maxResolution": 100,
-      "vectorOptions": {
-        "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/arrow20_238_215_194.png",
-        "label": {
-          "template": "${name}\n ${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
-        }
-      }
-    },
-    {
-      "geomType": "point",
-      "rotation": "quant-class-radiant",
       "value": 3,
-      "minResolution": 250,
       "vectorOptions": {
-        "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow16_26_71_139.png"
-      }
-    },
-    {
-      "geomType": "point",
-      "rotation": "quant-class-radiant",
-      "value": 3,
-      "minResolution": 100,
-      "maxResolution": 250,
-      "vectorOptions": {
-        "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow20_26_71_139.png",
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
-        }
-      }
-    },
-    {
-      "geomType": "point",
-      "rotation": "quant-class-radiant",
-      "value": 3,
-      "maxResolution": 100,
-      "vectorOptions": {
-        "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow20_26_71_139.png",
-        "label": {
-          "template": "${name}\n ${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "#668FBC "
+        },
+        "stroke": {
+          "color": "#FFFFFF",
+          "width": 1
         }
       }
     }
