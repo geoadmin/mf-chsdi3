@@ -19,7 +19,7 @@
     <tr>
         <td class="cell-left">${_(c['layerBodId'] + '.link_original')}</td>
         % if c['attributes']['link_original']:
-        <td><a target ="_blank" href="https://data.geo.admin.ch/ch.swisstopo.geologie-geologischer_atlas_profile/profile/${c['attributes']['link_original']}">${_('link')}</a></td>
+        <td><a target ="_blank" href="${c['attributes']['link_original']}">${_('link')}</a></td>
         % else:
         <td>-</td>
         % endif
@@ -47,7 +47,7 @@
     <%
     if lang == 'rm':
         lang = 'de'
-    
+
     section_type = c['attributes']['section_type_' + lang]
     link_onlineshop = c['attributes']['link_onlineshop_' + lang]
     swissgeol_link = c['attributes']['swissgeol_link_' + lang]
@@ -93,11 +93,11 @@
             <td class="cell-meta">${_(c['layerBodId'] + '.author')}</td>
             <td class="cell-meta">${c['attributes']['author'] or '-'}</td>
         </tr>
-        
+
         <tr>
             <td class="cell-meta">${_(c['layerBodId'] + '.link_original')}</td>
             % if c['attributes']['link_original']:
-            <td class="cell-meta"><a target ="_blank" href="https://data.geo.admin.ch/ch.swisstopo.geologie-geologischer_atlas_profile/profile/${c['attributes']['link_original']}">${_('link')}</a></td>
+            <td class="cell-meta"><a target ="_blank" href="${c['attributes']['link_original']}">${_('link')}</a></td>
             % else:
             <td class="cell-meta">-</td>
             % endif
