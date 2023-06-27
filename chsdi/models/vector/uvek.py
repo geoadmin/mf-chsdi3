@@ -1492,7 +1492,7 @@ class Bakomtv(Base, Vector):
     __template__ = 'templates/htmlpopup/bakomtv.mako'
     __bodId__ = 'ch.bakom.versorgungsgebiet-tv'
     __label__ = 'prog'
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('zone_id', Integer, primary_key=True)
     prog = Column('prog', Unicode)
     the_geom = Column(Geometry2D)
 
@@ -1505,7 +1505,7 @@ class Bakomukw(Base, Vector):
     __template__ = 'templates/htmlpopup/bakomukw.mako'
     __bodId__ = 'ch.bakom.versorgungsgebiet-ukw'
     __label__ = 'prog'
-    id = Column('gid', Integer, primary_key=True)
+    id = Column('zone_id', Integer, primary_key=True)
     prog = Column('prog', Unicode)
     the_geom = Column(Geometry2D)
 
@@ -1708,6 +1708,18 @@ class HindernisbegrenzungsflaechenPerimeter(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bazl.hindernisbegrenzungsflaechen-perimeter', HindernisbegrenzungsflaechenPerimeter)
+
+
+class IntrinsischesBodenrisikoSora(Base, Vector):
+    __tablename__ = 'intrinsisches_bodenrisiko_sora'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __template__ = 'templates/htmlpopup/bazl_intrinsisches_bodenrisiko.mako'
+    __bodId__ = 'ch.bazl.intrinsisches-bodenrisiko_sora'
+    id = Column('id', Integer, primary_key=True)
+    density_pop_km2 = Column('density_pop_km2', Numeric)
+    the_geom = Column(Geometry2D)
+
+register(IntrinsischesBodenrisikoSora.__bodId__, IntrinsischesBodenrisikoSora)
 
 
 class AstraStrasseFacilitiesA(Base, Vector):

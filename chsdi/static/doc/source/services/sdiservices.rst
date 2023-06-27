@@ -1340,7 +1340,7 @@ A previous versioned style request is in the following form:
     <Scheme>://<ServerName>/styles/<layername>/<version>/style.json
 
 
-(available previous versions are: v1.1.0, v1.2.0, v1.3.0, v1.4.0, v1.5.0 and v1.6.0)
+(available previous versions are: v1.1.0, v1.2.0, v1.3.0, v1.4.0, v1.5.0, v1.6.0 and v1.7.0)
 
 
 .. _vectortiles GetTile:
@@ -1356,7 +1356,8 @@ A tile request is in the following form:
 
 example of one pbf tile:
 
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/7/67/44.pbf
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v3.0.0/7/67/44.pbf
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/7/67/44.pbf
 
 GetTileSets
 ***********
@@ -1369,7 +1370,8 @@ MBTiles for storing  tiled map data in SQLite databases for immediate or offline
 
 example of the .mbtiles file:
 
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v3.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/ch.swisstopo.relief.vt.mbtiles
 
 
 
@@ -1391,7 +1393,8 @@ The URL of the metadata `json` file is :
 
 example of tileset:
 
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v2.0.0/tiles.json
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v3.0.0/tiles.json
+- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/tiles.json
 
 
 
@@ -1407,11 +1410,8 @@ A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `3D Tiles specifi
 URL
 ***
 
-- https://vectortiles0.geo.admin.ch/3d-tiles/
-- https://vectortiles1.geo.admin.ch/3d-tiles/
-- https://vectortiles2.geo.admin.ch/3d-tiles/
-- https://vectortiles3.geo.admin.ch/3d-tiles/
-- https://vectortiles4.geo.admin.ch/3d-tiles/
+- https://vectortiles.geo.admin.ch/3d-tiles/
+
 
 Metadata Service
 ****************
@@ -1420,14 +1420,14 @@ The `tileset.json` file describes the available set of tiles. In order to use th
 
 Currently, 3 technical layers (ch.swisstopo.swisstlm3d.3d, ch.swisstopo.swissnames3d.3d, ch.swisstopo.vegetation.3d) are available and they contains all available 3D objects. Additional layers will be available in the future. Partial 3D buildings model coverage can be vizsualised `here <https://s.geo.admin.ch/70fb32e692>`_.
 
-- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20201020/tileset.json
-- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swissnames3d.3d/20180716/tileset.json
-- https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.vegetation.3d/20190313/tileset.json
+- https://vectortiles.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20201020/tileset.json
+- https://vectortiles.geo.admin.ch/3d-tiles/ch.swisstopo.swissnames3d.3d/20180716/tileset.json
+- https://vectortiles.geo.admin.ch/3d-tiles/ch.swisstopo.vegetation.3d/20190313/tileset.json
 
 Example
 *******
 
-* A `3D tile <https://vectortiles0.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20201020/8/41/50.b3dm?v=1.0>`_
+* A `3D tile <https://vectortiles.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20201020/8/41/50.b3dm?v=1.0>`_
 
 .. _sparql_description:
 
