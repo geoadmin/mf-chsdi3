@@ -33,7 +33,7 @@ API & applications
 Geodata
 *******
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New | `Vector representation of relief <//vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/tiles.json>`__ (ch.swisstopo.relief.vt), a new vector based terrain (vector tiles)                |
+| New    | `Vector representation of relief <//vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/tiles.json>`__ (ch.swisstopo.relief.vt), a new vector based terrain (vector tiles)             |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Eisenbahnlärm, zuläss. Immission T <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag)     |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
