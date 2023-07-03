@@ -61,21 +61,18 @@ preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
 # new feature ids start with: lubis-luftbilder
 # simply create a link to the stac browser
 # there is no way to open to activate the orthophoto with the link parameters
+# TODO: https://sys-data.int.bgdi.ch/ can be replaced with registry.settings['datageoadminhost'] when we go on prod with this change
 if c['featureId'].startswith('lubis-luftbilder'):
   datum = datetime.datetime.strptime(c['attributes']['acquired'], '%Y-%m-%d').strftime("%d-%m-%Y")
 
-  # https://sys-data.int.bgdi.ch/browser/index.html#/collections/ch.swisstopo.lubis-luftbilder_schwarzweiss/items/lubis-luftbilder_schwarzweiss_000-193-815?.language=en&.asset=asset-lubis-luftbilder_schwarzweiss_000-193-815_op_2056.tif
-  orthofilename_asset=''
-  if c['attributes']['orthofilename']:
-    orthofilename_asset=f"?.language=en&.asset={c['attributes']['orthofilename']}"
-  # TODO: https://sys-data.int.bgdi.ch/ can be replaced with registry.settings['datageoadminhost'] when we go on prod with this change
-  # as all other resources from data.geo.admin.ch we only respect prod here.
-  viewer_url=(
-    "https://sys-data.int.bgdi.ch/browser/index.html#/collections/"
-    f"{c['layerBodId']}/items/{c['featureId']}{orthofilename_asset}"
-  )
+  aerialimages_url=f"https://sys-data.int.bgdi.ch/{c['layerBodId']}/{c['featureId']}/{c['attributes']['filename']}"
+  meta_csv_url=f"https://sys-data.int.bgdi.ch/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.csv"
+  orthophoto_url=f"https://sys-data.int.bgdi.ch/{c['layerBodId']}/{c['featureId']}/{c['attributes']['orthofilename']}"
 
-# old ebkeys with fullresviewer in aerialimages bucket
+  viewer_url=aerialimages_url
+
+# legacy: old ebkeys with fullresviewer in aerialimages bucket
+# this part can be removed when the migration of the aerialimages bucket to stac/data.geo.admin.ch is finished
 else:
   datum = date_to_str(c['attributes']['flugdatum'])
 
@@ -108,7 +105,9 @@ else:
 % if c['featureId'].startswith('lubis-luftbilder'): # STAC Tooltips
 <tr>
   <td class="cell-left">${_(f"{c['layerBodId']}.id")}</td>
-  <td>${c['featureId'] or '-'}</td>
+  <td>
+    <a href="${aerialimages_url}" target="_blank">${c['featureId'] or '-'}</a>
+  </td>
 </tr>
 <tr>
   <td class="cell-left">${_(f"{c['layerBodId']}.acquired")}</td>
@@ -120,7 +119,13 @@ else:
 </tr>
 <tr>
   <td class="cell-left">${_(f"{c['layerBodId']}.orthofilename")}</td>
-  <td>${c['attributes']['orthofilename'] or '-'}</td>
+% if c['attributes']['orthofilename']:
+  <td>
+    <a href="${orthophoto_url}" target="_blank">${c['attributes']['orthofilename']}</a>
+  </td>
+% else:
+  <td>-</td>
+% endif
 </tr>
 <tr>
   <td class="cell-left">${_(f"{c['layerBodId']}.e")}</td>
@@ -134,7 +139,12 @@ else:
   <td class="cell-left">${_(f"{c['layerBodId']}.z")}</td>
   <td>${c['attributes']['z'] or '-'}</td>
 </tr>
-
+<tr>
+  <td class="cell-left">${_("zusatzinfo")}</td>
+  <td>
+    <a href="${meta_csv_url}" target="_blank">Metadata CSV</a>
+  </td>
+</tr>
 
 % else: # OLD Tooltips with GDWH data delivery
 <tr>
