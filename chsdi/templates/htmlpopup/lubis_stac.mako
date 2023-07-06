@@ -142,7 +142,7 @@ else:
 <tr>
   <td class="cell-left">${_("zusatzinfo")}</td>
   <td>
-    <a href="${meta_csv_url}" target="_blank">Metadata CSV</a>
+    <a href="${meta_csv_url}" target="_blank">${_(f"{c['layerBodId']}.meta_csv_url")}</a>
   </td>
 </tr>
 
