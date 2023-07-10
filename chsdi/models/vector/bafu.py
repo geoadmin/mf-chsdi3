@@ -219,7 +219,6 @@ class Untersuchungsgebiete(Base, Vector):
     mit_hoe = Column('mit_hoe', Integer)
     regimtyp = Column('regimetyp', Unicode)
     antv_ab86 = Column('antv_ab86', Numeric)
-    hyperlink = Column('hyperlink', Unicode)
     einzugsgebietsflaeche = Column('einzugsgebietsflaeche', Numeric)
     stationsseite_de = Column('stationsseite_de', Unicode)
     stationsseite_fr = Column('stationsseite_fr', Unicode)
