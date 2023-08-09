@@ -14,6 +14,31 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20230906:
+
+Release 20230906 - Wednesday, September 6th 2023
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcements:
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Waste incineration plants <//map.geo.admin.ch/?layers=ch.bfe.kehrichtverbrennungsanlagen>`__ (ch.bfe.kehrichtverbrennungsanlagen)                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cross section securing point <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-querprofilmarken>`__ (ch.bafu.wasserbau-querprofilmarken)                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Surveyed sections <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-vermessungsstrecken>`__ (ch.bafu.wasserbau-vermessungsstrecken)                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 .. _releasenotes_20230628:
 
 Release 20230628 - Wednesday, June 28th 2023
