@@ -62,14 +62,13 @@ tt_lubis_Quickview='tt_lubis_Quickview'
 # new feature ids start with: lubis-luftbilder
 # simply create a link to the stac browser
 # there is no way to open to activate the orthophoto with the link parameters
-# TODO: https://sys-data.int.bgdi.ch/ can be replaced with registry.settings['datageoadminhost'] when we go on prod with this change
 if c['featureId'].startswith('lubis-luftbilder'):
   datum = datetime.datetime.strptime(c['attributes']['acquired'], '%Y-%m-%d').strftime("%d-%m-%Y")
-
-  aerialimages_url=f"https://sys-data.int.bgdi.ch/{c['layerBodId']}/{c['featureId']}/{c['attributes']['filename']}"
-  meta_csv_url=f"https://sys-data.int.bgdi.ch/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.csv"
-  orthophoto_url=f"https://sys-data.int.bgdi.ch/{c['layerBodId']}/{c['featureId']}/{c['attributes']['orthofilename']}"
-  preview_url=f"https://sys-data.int.bgdi.ch/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.jpg"
+  dataGeoAdminHost = request.registry.settings['datageoadminhost']
+  aerialimages_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['attributes']['filename']}"
+  meta_csv_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.csv"
+  orthophoto_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['attributes']['orthofilename']}"
+  preview_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.jpg"
 
   viewer_url=aerialimages_url
   tt_lubis_Quickview='tt_lubis_Quickview_stac'
