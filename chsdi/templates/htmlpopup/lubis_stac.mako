@@ -57,19 +57,21 @@ aerialimages_data_host = request.registry.settings['aerialimages_data_host']
 tileUrlBasePath = aerialimages_data_host + '/tiles'
 
 preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
+tt_lubis_Quickview='tt_lubis_Quickview'
 
 # new feature ids start with: lubis-luftbilder
 # simply create a link to the stac browser
 # there is no way to open to activate the orthophoto with the link parameters
-# TODO: https://sys-data.int.bgdi.ch/ can be replaced with registry.settings['datageoadminhost'] when we go on prod with this change
 if c['featureId'].startswith('lubis-luftbilder'):
   datum = datetime.datetime.strptime(c['attributes']['acquired'], '%Y-%m-%d').strftime("%d-%m-%Y")
-
-  aerialimages_url=f"https://sys-data.int.bgdi.ch/{c['layerBodId']}/{c['featureId']}/{c['attributes']['filename']}"
-  meta_csv_url=f"https://sys-data.int.bgdi.ch/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.csv"
-  orthophoto_url=f"https://sys-data.int.bgdi.ch/{c['layerBodId']}/{c['featureId']}/{c['attributes']['orthofilename']}"
+  dataGeoAdminHost = request.registry.settings['datageoadminhost']
+  aerialimages_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['attributes']['filename']}"
+  meta_csv_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.csv"
+  orthophoto_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['attributes']['orthofilename']}"
+  preview_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.jpg"
 
   viewer_url=aerialimages_url
+  tt_lubis_Quickview='tt_lubis_Quickview_stac'
 
 # legacy: old ebkeys with fullresviewer in aerialimages bucket
 # this part can be removed when the migration of the aerialimages bucket to stac/data.geo.admin.ch is finished
@@ -164,14 +166,14 @@ else:
 
 % if preview_url:
 <tr>
-  <td class="cell-left">${_('tt_lubis_Quickview')}</td>
+  <td class="cell-left">${_(tt_lubis_Quickview)}</td>
   <td>
     <a href="${viewer_url}" target="_blank"><img src="${preview_url}" alt="quickview"></a>
   </td>
 </tr>
 % else:
 <tr>
-  <td class="cell-left">${_('tt_lubis_Quickview')}</td>
+  <td class="cell-left">${_(tt_lubis_Quickview)}</td>
   <td>${_('tt_lubis_noQuickview')}</td>
 </tr>
 % endif
