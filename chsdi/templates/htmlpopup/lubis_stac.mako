@@ -57,25 +57,24 @@ aerialimages_data_host = request.registry.settings['aerialimages_data_host']
 tileUrlBasePath = aerialimages_data_host + '/tiles'
 
 preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
+tt_lubis_Quickview='tt_lubis_Quickview'
 
 # new feature ids start with: lubis-luftbilder
 # simply create a link to the stac browser
 # there is no way to open to activate the orthophoto with the link parameters
 if c['featureId'].startswith('lubis-luftbilder'):
   datum = datetime.datetime.strptime(c['attributes']['acquired'], '%Y-%m-%d').strftime("%d-%m-%Y")
+  dataGeoAdminHost = request.registry.settings['datageoadminhost']
+  aerialimages_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['attributes']['filename']}"
+  meta_csv_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.csv"
+  orthophoto_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['attributes']['orthofilename']}"
+  preview_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.jpg"
 
-  # https://sys-data.int.bgdi.ch/browser/index.html#/collections/ch.swisstopo.lubis-luftbilder_schwarzweiss/items/lubis-luftbilder_schwarzweiss_000-193-815?.language=en&.asset=asset-lubis-luftbilder_schwarzweiss_000-193-815_op_2056.tif
-  orthofilename_asset=''
-  if c['attributes']['orthofilename']:
-    orthofilename_asset=f"?.language=en&.asset={c['attributes']['orthofilename']}"
-  # TODO: https://sys-data.int.bgdi.ch/ can be replaced with registry.settings['datageoadminhost'] when we go on prod with this change
-  # as all other resources from data.geo.admin.ch we only respect prod here.
-  viewer_url=(
-    "https://sys-data.int.bgdi.ch/browser/index.html#/collections/"
-    f"{c['layerBodId']}/items/{c['featureId']}{orthofilename_asset}"
-  )
+  viewer_url=aerialimages_url
+  tt_lubis_Quickview='tt_lubis_Quickview_stac'
 
-# old ebkeys with fullresviewer in aerialimages bucket
+# legacy: old ebkeys with fullresviewer in aerialimages bucket
+# this part can be removed when the migration of the aerialimages bucket to stac/data.geo.admin.ch is finished
 else:
   datum = date_to_str(c['attributes']['flugdatum'])
 
@@ -108,7 +107,9 @@ else:
 % if c['featureId'].startswith('lubis-luftbilder'): # STAC Tooltips
 <tr>
   <td class="cell-left">${_(f"{c['layerBodId']}.id")}</td>
-  <td>${c['featureId'] or '-'}</td>
+  <td>
+    <a href="${aerialimages_url}" target="_blank">${c['featureId'] or '-'}</a>
+  </td>
 </tr>
 <tr>
   <td class="cell-left">${_(f"{c['layerBodId']}.acquired")}</td>
@@ -120,7 +121,13 @@ else:
 </tr>
 <tr>
   <td class="cell-left">${_(f"{c['layerBodId']}.orthofilename")}</td>
-  <td>${c['attributes']['orthofilename'] or '-'}</td>
+% if c['attributes']['orthofilename']:
+  <td>
+    <a href="${orthophoto_url}" target="_blank">${c['attributes']['orthofilename']}</a>
+  </td>
+% else:
+  <td>-</td>
+% endif
 </tr>
 <tr>
   <td class="cell-left">${_(f"{c['layerBodId']}.e")}</td>
@@ -134,7 +141,12 @@ else:
   <td class="cell-left">${_(f"{c['layerBodId']}.z")}</td>
   <td>${c['attributes']['z'] or '-'}</td>
 </tr>
-
+<tr>
+  <td class="cell-left">${_("zusatzinfo")}</td>
+  <td>
+    <a href="${meta_csv_url}" target="_blank">${_(f"{c['layerBodId']}.meta_csv_url")}</a>
+  </td>
+</tr>
 
 % else: # OLD Tooltips with GDWH data delivery
 <tr>
@@ -154,14 +166,14 @@ else:
 
 % if preview_url:
 <tr>
-  <td class="cell-left">${_('tt_lubis_Quickview')}</td>
+  <td class="cell-left">${_(tt_lubis_Quickview)}</td>
   <td>
     <a href="${viewer_url}" target="_blank"><img src="${preview_url}" alt="quickview"></a>
   </td>
 </tr>
 % else:
 <tr>
-  <td class="cell-left">${_('tt_lubis_Quickview')}</td>
+  <td class="cell-left">${_(tt_lubis_Quickview)}</td>
   <td>${_('tt_lubis_noQuickview')}</td>
 </tr>
 % endif

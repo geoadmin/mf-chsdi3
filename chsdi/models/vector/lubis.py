@@ -45,6 +45,7 @@ class LuftbilderBaseStac(LuftbilderBase):
     acquired = Column('acquired', Date)
     film_type = Column('film_type', Unicode)
     orthofilename = Column('orthofilename', Unicode)
+    filename = Column('filename', Unicode)
     e = Column('e', Numeric)
     n = Column('n', Numeric)
     z = Column('z', Numeric)
