@@ -404,7 +404,9 @@ def _transform_shape(geom, srid_from, srid_to, rounding=True):
 
 def float_raise_nan(val):
     ret = float(val)
-    if math.isnan(ret):
+    if math.isinf(ret):
+        raise ValueError('infinity is not considered to be a valid value')
+    elif math.isnan(ret):
         raise ValueError('nan is not considered valid float')
     return ret
 
