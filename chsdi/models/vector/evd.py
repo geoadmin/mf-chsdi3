@@ -213,3 +213,21 @@ class UrsprungsbezeichnungenSpirituosen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.blw.ursprungsbezeichnungen-spirituosen', UrsprungsbezeichnungenSpirituosen)
+
+
+class Milchmarktregionen(Base, Vector):
+    __tablename__ = 'milchmarktregionen'
+    __table_args__ = ({'schema': 'blw', 'autoload': False})
+    __bodId__ = 'ch.blw.milchmarktregionen'
+    __template__ = 'templates/htmlpopup/milchmarktregionen.mako'
+    __label__ = 'milchreg'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    milchreg = Column('milchreg', Unicode)
+    bez_de = Column('bez_de', Unicode)
+    bez_fr = Column('bez_fr', Unicode)
+    bez_it = Column('bez_it', Unicode)
+    bez_en = Column('bez_en', Unicode)
+    bez_rm = Column('bez_rm', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.milchmarktregionen', Milchmarktregionen)
