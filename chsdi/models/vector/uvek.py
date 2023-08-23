@@ -1722,13 +1722,13 @@ class HindernisbegrenzungsflaechenKataster:
 
 
 class HindernisbegrenzungsflaechenKatasterArea(Base, HindernisbegrenzungsflaechenKataster, Vector):
-    __tablename__ = 'bazl.hindernisbegrenzungsflaechen_kataster_area'
+    __tablename__ = 'hindernisbegrenzungsflaechen_kataster_area'
 
 register('ch.bazl.hindernisbegrenzungsflaechen-kataster', HindernisbegrenzungsflaechenKatasterArea)
 
 
 class HindernisbegrenzungsflaechenKatasterOlsLine(Base, HindernisbegrenzungsflaechenKataster, Vector):
-    __tablename__ = 'bazl.hindernisbegrenzungsflaechen_kataster_olsline'
+    __tablename__ = 'hindernisbegrenzungsflaechen_kataster_olsline'
 
 register('ch.bazl.hindernisbegrenzungsflaechen-kataster', HindernisbegrenzungsflaechenKatasterOlsLine)
 
