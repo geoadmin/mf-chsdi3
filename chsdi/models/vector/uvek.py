@@ -1710,6 +1710,29 @@ class HindernisbegrenzungsflaechenPerimeter(Base, Vector):
 register('ch.bazl.hindernisbegrenzungsflaechen-perimeter', HindernisbegrenzungsflaechenPerimeter)
 
 
+class HindernisbegrenzungsflaechenKataster:
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __template__ = 'templates/htmlpopup/hindernisbegrenzungsflaechen_kataster.mako'
+    __bodId__ = 'ch.bazl.hindernisbegrenzungsflaechen-kataster'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    icaoloc = Column('icaoloc', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    validuntil = Column('validuntil', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class HindernisbegrenzungsflaechenKatasterArea(Base, HindernisbegrenzungsflaechenKataster, Vector):
+    __tablename__ = 'bazl.hindernisbegrenzungsflaechen_kataster_area'
+
+register('ch.bazl.hindernisbegrenzungsflaechen-kataster', HindernisbegrenzungsflaechenKatasterArea)
+
+
+class HindernisbegrenzungsflaechenKatasterOlsLine(Base, HindernisbegrenzungsflaechenKataster, Vector):
+    __tablename__ = 'bazl.hindernisbegrenzungsflaechen_kataster_olsline'
+
+register('ch.bazl.hindernisbegrenzungsflaechen-kataster', HindernisbegrenzungsflaechenKatasterOlsLine)
+
+
 class IntrinsischesBodenrisikoSora(Base, Vector):
     __tablename__ = 'intrinsisches_bodenrisiko_sora'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
