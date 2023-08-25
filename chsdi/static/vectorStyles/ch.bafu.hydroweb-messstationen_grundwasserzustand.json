@@ -22,7 +22,7 @@
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.bafu/images/nodata16.png",
         "label": {
-          "template": "${name}\n - ",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -56,7 +56,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow16_153_102_51.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/V1_arrow16_239_163_127.png"
       }
     },
     {
@@ -67,33 +67,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow20_153_102_51.png",
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
-        }
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/V1_arrow20_239_163_127.png"
       }
     },
     {
@@ -103,9 +77,9 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu/images/arrow20_153_102_51.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/V1_arrow20_239_163_127.png",
         "label": {
-          "template": "${name}\n ${quant-value}",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -139,7 +113,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow16_238_215_194.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/V1_arrow16_218_255_172.png"
       }
     },
     {
@@ -150,33 +124,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow20_238_215_194.png",
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
-        }
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/V1_arrow20_218_255_172.png"
       }
     },
     {
@@ -186,9 +134,9 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/arrow20_238_215_194.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/V1_arrow20_218_255_172.png",
         "label": {
-          "template": "${name}\n ${quant-value}",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -222,7 +170,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow16_26_71_139.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/V1_arrow16_128_194_208.png"
       }
     },
     {
@@ -233,33 +181,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow20_26_71_139.png",
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
-        }
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/V1_arrow20_128_194_208.png"
       }
     },
     {
@@ -269,9 +191,9 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow20_26_71_139.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/V1_arrow20_128_194_208.png",
         "label": {
-          "template": "${name}\n ${quant-value}",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
