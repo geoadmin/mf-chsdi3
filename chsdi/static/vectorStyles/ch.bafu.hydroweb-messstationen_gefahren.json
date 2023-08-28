@@ -1,6 +1,6 @@
 {
   "type": "unique",
-  "property": "quant-class",
+  "property": "symbol-design",
   "values": [
     {
       "geomType": "point",
@@ -19,7 +19,7 @@
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata16.png",
         "label": {
-          "template": "${name}\n - ",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -48,79 +48,56 @@
     },
     {
       "geomType": "point",
-      "value": 1,
+      "rotation": 3.141592,
+      "value": 1.1,
       "minResolution": 250,
       "vectorOptions": {
-        "type": "circle",
+        "type": "triangle",
         "radius": 6,
         "fill": {
-          "color": "rgba(0,255,0,1)"
+          "color": "rgba(204,255,102,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
         }
       }
     },
     {
       "geomType": "point",
-      "value": 1,
+      "rotation": 3.141592,
+      "value": 1.1,
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
-        "type": "circle",
+        "type": "triangle",
         "radius": 7,
         "fill": {
-          "color": "rgba(0,255,0,1)"
+          "color": "rgba(204,255,102,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
-        },
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
         }
       }
     },
     {
       "geomType": "point",
-      "value": 1,
+      "rotation": 3.141592,
+      "value": 1.1,
       "maxResolution": 100,
       "vectorOptions": {
-        "type": "circle",
+        "type": "triangle",
         "radius": 8,
         "fill": {
-          "color": "rgba(0,255,0,1)"
+          "color": "rgba(204,255,102,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
         },
         "label": {
-          "template": "${name}\n ${quant-value}",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -149,79 +126,53 @@
     },
     {
       "geomType": "point",
-      "value": 2,
+      "value": 1.2,
       "minResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
         "fill": {
-          "color": "rgba(255,255,0,1)"
+          "color": "rgba(204,255,102,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
         }
       }
     },
     {
       "geomType": "point",
-      "value": 2,
+      "value": 1.2,
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
         "fill": {
-          "color": "rgba(255,255,0,1)"
+          "color": "rgba(204,255,102,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
-        },
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
         }
       }
     },
     {
       "geomType": "point",
-      "value": 2,
+      "value": 1.2,
       "maxResolution": 100,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
         "fill": {
-          "color": "rgba(255,255,0,1)"
+          "color": "rgba(204,255,102,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
         },
         "label": {
-          "template": "${name}\n ${quant-value}",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -250,79 +201,56 @@
     },
     {
       "geomType": "point",
-      "value": 3,
+      "rotation": 3.141592,
+      "value": 2.1,
       "minResolution": 250,
       "vectorOptions": {
-        "type": "circle",
+        "type": "triangle",
         "radius": 6,
         "fill": {
-          "color": "rgba(255,153,0,1)"
+          "color": "rgba(255,255,  0,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
         }
       }
     },
     {
       "geomType": "point",
-      "value": 3,
+      "rotation": 3.141592,
+      "value": 2.1,
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
-        "type": "circle",
+        "type": "triangle",
         "radius": 7,
         "fill": {
-          "color": "rgba(255,153,0,1)"
+          "color": "rgba(255,255,  0,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
-        },
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
         }
       }
     },
     {
       "geomType": "point",
-      "value": 3,
+      "rotation": 3.141592,
+      "value": 2.1,
       "maxResolution": 100,
       "vectorOptions": {
-        "type": "circle",
+        "type": "triangle",
         "radius": 8,
         "fill": {
-          "color": "rgba(255,153,0,1)"
+          "color": "rgba(255,255,  0,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
         },
         "label": {
-          "template": "${name}\n ${quant-value}",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -351,79 +279,53 @@
     },
     {
       "geomType": "point",
-      "value": 4,
+      "value": 2.2,
       "minResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 6,
         "fill": {
-          "color": "rgba(255,0,0,1)"
+          "color": "rgba(255,255,  0,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
         }
       }
     },
     {
       "geomType": "point",
-      "value": 4,
+      "value": 2.2,
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
         "type": "circle",
         "radius": 7,
         "fill": {
-          "color": "rgba(255,0,0,1)"
+          "color": "rgba(255,255,  0,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
-        },
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
         }
       }
     },
     {
       "geomType": "point",
-      "value": 4,
+      "value": 2.2,
       "maxResolution": 100,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
         "fill": {
-          "color": "rgba(255,0,0,1)"
+          "color": "rgba(255,255,  0,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
         },
         "label": {
-          "template": "${name}\n ${quant-value}",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -452,43 +354,62 @@
     },
     {
       "geomType": "point",
-      "value": 5,
+      "rotation": 3.141592,
+      "value": 3.1,
       "minResolution": 250,
       "vectorOptions": {
-        "type": "circle",
+        "type": "triangle",
         "radius": 6,
         "fill": {
-          "color": "rgba(128,0,0,1)"
+          "color": "rgba(255,153,  0,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
         }
       }
     },
     {
       "geomType": "point",
-      "value": 5,
+      "rotation": 3.141592,
+      "value": 3.1,
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
-        "type": "circle",
+        "type": "triangle",
         "radius": 7,
         "fill": {
-          "color": "rgba(128,0,0,1)"
+          "color": "rgba(255,153,  0,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "rotation": 3.141592,
+      "value": 3.1,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "triangle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(255,153,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
           "width": 2
         },
         "label": {
-          "template": "${quant-value}",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
             "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
             "scale": 1,
-            "offsetY": -20,
+            "offsetY": -28,
             "padding": [
               2,
               2,
@@ -511,20 +432,359 @@
     },
     {
       "geomType": "point",
-      "value": 5,
+      "value": 3.2,
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(255,153,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 3.2,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(255,153,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 3.2,
       "maxResolution": 100,
       "vectorOptions": {
         "type": "circle",
         "radius": 8,
         "fill": {
-          "color": "rgba(128,0,0,1)"
+          "color": "rgba(255,153,  0,1)"
         },
         "stroke": {
-          "color": "rgba(14,80,114,0.9)",
+          "color": "rgba(117,117,117,1)",
           "width": 2
         },
         "label": {
-          "template": "${name}\n ${quant-value}",
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "rotation": 3.141592,
+      "value": 4.1,
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "triangle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(255,  0,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "rotation": 3.141592,
+      "value": 4.1,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "triangle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(255,  0,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "rotation": 3.141592,
+      "value": 4.1,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "triangle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(255,  0,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        },
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 4.2,
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(255,  0,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 4.2,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(255,  0,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 4.2,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(255,  0,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        },
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "rotation": 3.141592,
+      "value": 5.1,
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "triangle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(128,  0,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "rotation": 3.141592,
+      "value": 5.1,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "triangle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(128,  0,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "rotation": 3.141592,
+      "value": 5.1,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "triangle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(128,  0,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        },
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 5.2,
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 6,
+        "fill": {
+          "color": "rgba(128,  0,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 5.2,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 7,
+        "fill": {
+          "color": "rgba(128,  0,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 5.2,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 8,
+        "fill": {
+          "color": "rgba(128,  0,  0,1)"
+        },
+        "stroke": {
+          "color": "rgba(117,117,117,1)",
+          "width": 2
+        },
+        "label": {
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",

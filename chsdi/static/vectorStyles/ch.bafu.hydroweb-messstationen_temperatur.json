@@ -19,7 +19,7 @@
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_temperatur/images/nodata16.png",
         "label": {
-          "template": "${name}\n - ",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -76,32 +76,6 @@
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
           "width": 2
-        },
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
         }
       }
     },
@@ -177,32 +151,6 @@
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
           "width": 2
-        },
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
         }
       }
     },
@@ -221,7 +169,7 @@
           "width": 2
         },
         "label": {
-          "template": "${name}\n ${quant-value}",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -278,32 +226,6 @@
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
           "width": 2
-        },
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
         }
       }
     },
@@ -322,7 +244,7 @@
           "width": 2
         },
         "label": {
-          "template": "${name}\n ${quant-value}",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -379,32 +301,6 @@
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
           "width": 2
-        },
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
         }
       }
     },
@@ -423,7 +319,7 @@
           "width": 2
         },
         "label": {
-          "template": "${name}\n ${quant-value}",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
@@ -480,32 +376,6 @@
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
           "width": 2
-        },
-        "label": {
-          "template": "${quant-value}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -20,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
-          }
         }
       }
     },
@@ -524,7 +394,7 @@
           "width": 2
         },
         "label": {
-          "template": "${name}\n ${quant-value}",
+          "template": "${name}",
           "text": {
             "textAlign": "center",
             "textBaseline": "middle",
