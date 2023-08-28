@@ -216,12 +216,12 @@ register('ch.blw.ursprungsbezeichnungen-spirituosen', UrsprungsbezeichnungenSpir
 
 
 class Milchmarktregionen(Base, Vector):
-    __tablename__ = 'milchmarktregionen'
+    __tablename__ = 'highlight_v_milchmarktregionen'
     __table_args__ = ({'schema': 'blw', 'autoload': False})
     __bodId__ = 'ch.blw.milchmarktregionen'
     __template__ = 'templates/htmlpopup/milchmarktregionen.mako'
     __label__ = 'milchreg'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('reg', Integer, primary_key=True)
     milchreg = Column('milchreg', Unicode)
     bez_de = Column('bez_de', Unicode)
     bez_fr = Column('bez_fr', Unicode)
