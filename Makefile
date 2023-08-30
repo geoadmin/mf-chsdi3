@@ -359,7 +359,7 @@ test-functional: guard-VENV clean_logs local-templates build
 
 .PHONY: unittest-ci
 unittest-ci: guard-VENV clean_logs local-templates build
-	@echo "${GREEN}Unit testings for CI...${RESET}";
+	@echo "${GREEN}Unit testings for CI with python version ${PYTHON_VERSION}...${RESET}";
 	mkdir -p junit-reports/integration
 	mkdir -p junit-reports/functional
 	${NOSE} --verbose \
