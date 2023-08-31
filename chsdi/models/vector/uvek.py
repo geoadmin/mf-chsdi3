@@ -1739,7 +1739,7 @@ class IntrinsischesBodenrisikoSora(Base, Vector):
     __template__ = 'templates/htmlpopup/bazl_intrinsisches_bodenrisiko.mako'
     __bodId__ = 'ch.bazl.intrinsisches-bodenrisiko_sora'
     id = Column('id', Integer, primary_key=True)
-    density_pop_km2 = Column('density_pop_km2', Numeric)
+    density_pop_km2 = Column('density_pop_km2', Integer)
     the_geom = Column(Geometry2D)
 
 register(IntrinsischesBodenrisikoSora.__bodId__, IntrinsischesBodenrisikoSora)
