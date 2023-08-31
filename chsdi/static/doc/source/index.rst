@@ -180,3 +180,4 @@ Terms of use
    :hidden:
 
    About Geoadmin API <https://www.geo.admin.ch/>
+
