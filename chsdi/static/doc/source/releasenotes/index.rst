@@ -26,6 +26,8 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - Announcements:
+    - the mapviewer topic "geothermie" will be removed from map.geo.admin.ch as previously announced
+    - the layers *ch.bakom.mobil-antennenstandorte-5g, ch.bakom.mobil-antennenstandorte-gsm, ch.bakom.mobil-antennenstandorte-umts, ch.bakom.mobil-antennenstandorte-lte* will be removed from chsdi services with the release of November 1st 2023
 
 Geodata
 *******
