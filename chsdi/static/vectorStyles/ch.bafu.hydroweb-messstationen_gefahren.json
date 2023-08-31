@@ -4,7 +4,7 @@
   "values": [
     {
       "geomType": "point",
-      "value": 0,
+      "value": 0.1,
       "minResolution": 100,
       "vectorOptions": {
         "type": "icon",
@@ -13,7 +13,16 @@
     },
     {
       "geomType": "point",
-      "value": 0,
+      "value": 0.2,
+      "minResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata14.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 0.1,
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
@@ -48,54 +57,11 @@
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
-      "value": 1.1,
-      "minResolution": 250,
-      "vectorOptions": {
-        "type": "triangle",
-        "radius": 6,
-        "fill": {
-          "color": "rgba(204,255,102,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
-      }
-    },
-    {
-      "geomType": "point",
-      "rotation": 3.141592,
-      "value": 1.1,
-      "minResolution": 100,
-      "maxResolution": 250,
-      "vectorOptions": {
-        "type": "triangle",
-        "radius": 7,
-        "fill": {
-          "color": "rgba(204,255,102,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
-      }
-    },
-    {
-      "geomType": "point",
-      "rotation": 3.141592,
-      "value": 1.1,
+      "value": 0.2,
       "maxResolution": 100,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 8,
-        "fill": {
-          "color": "rgba(204,255,102,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        },
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata16.png",
         "label": {
           "template": "${name}",
           "text": {
@@ -120,6 +86,60 @@
             "fill": {
               "color": "white"
             }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 1.1,
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake16_204_255_102.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 1.1,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake20_204_255_102.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 1.1,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake20_204_255_102.png"
+      },
+      "label": {
+        "template": "${name}",
+        "text": {
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+          "scale": 1,
+          "offsetY": -28,
+          "padding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "stroke": {
+            "color": "rgba(14,80,114,0.9)",
+            "width": 3
+          },
+          "backgroundFill": {
+            "color": "rgba(14,80,114,0.9)"
+          },
+          "fill": {
+            "color": "white"
           }
         }
       }
@@ -129,15 +149,8 @@
       "value": 1.2,
       "minResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 6,
-        "fill": {
-          "color": "rgba(204,255,102,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river16_204_255_102.png"
       }
     },
     {
@@ -146,15 +159,8 @@
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 7,
-        "fill": {
-          "color": "rgba(204,255,102,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river20_204_255_102.png"
       }
     },
     {
@@ -162,117 +168,86 @@
       "value": 1.2,
       "maxResolution": 100,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 8,
-        "fill": {
-          "color": "rgba(204,255,102,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        },
-        "label": {
-          "template": "${name}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river20_204_255_102.png"
+      },
+      "label": {
+        "template": "${name}",
+        "text": {
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+          "scale": 1,
+          "offsetY": -28,
+          "padding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "stroke": {
+            "color": "rgba(14,80,114,0.9)",
+            "width": 3
+          },
+          "backgroundFill": {
+            "color": "rgba(14,80,114,0.9)"
+          },
+          "fill": {
+            "color": "white"
           }
         }
       }
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
       "value": 2.1,
       "minResolution": 250,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 6,
-        "fill": {
-          "color": "rgba(255,255,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake16_255_255_0.png"
       }
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
       "value": 2.1,
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 7,
-        "fill": {
-          "color": "rgba(255,255,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake20_255_255_0.png"
       }
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
       "value": 2.1,
       "maxResolution": 100,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 8,
-        "fill": {
-          "color": "rgba(255,255,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        },
-        "label": {
-          "template": "${name}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake20_255_255_0.png"
+      },
+      "label": {
+        "template": "${name}",
+        "text": {
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+          "scale": 1,
+          "offsetY": -28,
+          "padding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "stroke": {
+            "color": "rgba(14,80,114,0.9)",
+            "width": 3
+          },
+          "backgroundFill": {
+            "color": "rgba(14,80,114,0.9)"
+          },
+          "fill": {
+            "color": "white"
           }
         }
       }
@@ -282,15 +257,8 @@
       "value": 2.2,
       "minResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 6,
-        "fill": {
-          "color": "rgba(255,255,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river16_255_255_0.png"
       }
     },
     {
@@ -299,15 +267,8 @@
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 7,
-        "fill": {
-          "color": "rgba(255,255,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river20_255_255_0.png"
       }
     },
     {
@@ -315,117 +276,86 @@
       "value": 2.2,
       "maxResolution": 100,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 8,
-        "fill": {
-          "color": "rgba(255,255,0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        },
-        "label": {
-          "template": "${name}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river20_255_255_0.png"
+      },
+      "label": {
+        "template": "${name}",
+        "text": {
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+          "scale": 1,
+          "offsetY": -28,
+          "padding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "stroke": {
+            "color": "rgba(14,80,114,0.9)",
+            "width": 3
+          },
+          "backgroundFill": {
+            "color": "rgba(14,80,114,0.9)"
+          },
+          "fill": {
+            "color": "white"
           }
         }
       }
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
       "value": 3.1,
       "minResolution": 250,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 6,
-        "fill": {
-          "color": "rgba(255,153,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake16_255_153_0.png"
       }
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
       "value": 3.1,
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 7,
-        "fill": {
-          "color": "rgba(255,153,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake20_255_153_0.png"
       }
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
       "value": 3.1,
       "maxResolution": 100,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 8,
-        "fill": {
-          "color": "rgba(255,153,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        },
-        "label": {
-          "template": "${name}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake20_255_153_0.png"
+      },
+      "label": {
+        "template": "${name}",
+        "text": {
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+          "scale": 1,
+          "offsetY": -28,
+          "padding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "stroke": {
+            "color": "rgba(14,80,114,0.9)",
+            "width": 3
+          },
+          "backgroundFill": {
+            "color": "rgba(14,80,114,0.9)"
+          },
+          "fill": {
+            "color": "white"
           }
         }
       }
@@ -435,15 +365,8 @@
       "value": 3.2,
       "minResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 6,
-        "fill": {
-          "color": "rgba(255,153,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river16_255_153_0.png"
       }
     },
     {
@@ -452,15 +375,8 @@
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 7,
-        "fill": {
-          "color": "rgba(255,153,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river20_255_153_0.png"
       }
     },
     {
@@ -468,117 +384,86 @@
       "value": 3.2,
       "maxResolution": 100,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 8,
-        "fill": {
-          "color": "rgba(255,153,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        },
-        "label": {
-          "template": "${name}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river20_255_153_0.png"
+      },
+      "label": {
+        "template": "${name}",
+        "text": {
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+          "scale": 1,
+          "offsetY": -28,
+          "padding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "stroke": {
+            "color": "rgba(14,80,114,0.9)",
+            "width": 3
+          },
+          "backgroundFill": {
+            "color": "rgba(14,80,114,0.9)"
+          },
+          "fill": {
+            "color": "white"
           }
         }
       }
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
       "value": 4.1,
       "minResolution": 250,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 6,
-        "fill": {
-          "color": "rgba(255,  0,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake16_255_0_0.png"
       }
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
       "value": 4.1,
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 7,
-        "fill": {
-          "color": "rgba(255,  0,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake20_255_0_0.png"
       }
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
       "value": 4.1,
       "maxResolution": 100,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 8,
-        "fill": {
-          "color": "rgba(255,  0,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        },
-        "label": {
-          "template": "${name}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake20_255_0_0.png"
+      },
+      "label": {
+        "template": "${name}",
+        "text": {
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+          "scale": 1,
+          "offsetY": -28,
+          "padding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "stroke": {
+            "color": "rgba(14,80,114,0.9)",
+            "width": 3
+          },
+          "backgroundFill": {
+            "color": "rgba(14,80,114,0.9)"
+          },
+          "fill": {
+            "color": "white"
           }
         }
       }
@@ -588,15 +473,8 @@
       "value": 4.2,
       "minResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 6,
-        "fill": {
-          "color": "rgba(255,  0,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river16_255_0_0.png"
       }
     },
     {
@@ -605,15 +483,8 @@
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 7,
-        "fill": {
-          "color": "rgba(255,  0,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river20_255_0_0.png"
       }
     },
     {
@@ -621,117 +492,86 @@
       "value": 4.2,
       "maxResolution": 100,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 8,
-        "fill": {
-          "color": "rgba(255,  0,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        },
-        "label": {
-          "template": "${name}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river20_255_0_0.png"
+      },
+      "label": {
+        "template": "${name}",
+        "text": {
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+          "scale": 1,
+          "offsetY": -28,
+          "padding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "stroke": {
+            "color": "rgba(14,80,114,0.9)",
+            "width": 3
+          },
+          "backgroundFill": {
+            "color": "rgba(14,80,114,0.9)"
+          },
+          "fill": {
+            "color": "white"
           }
         }
       }
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
       "value": 5.1,
       "minResolution": 250,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 6,
-        "fill": {
-          "color": "rgba(128,  0,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake16_128_0_0.png"
       }
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
       "value": 5.1,
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 7,
-        "fill": {
-          "color": "rgba(128,  0,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake20_128_0_0.png"
       }
     },
     {
       "geomType": "point",
-      "rotation": 3.141592,
       "value": 5.1,
       "maxResolution": 100,
       "vectorOptions": {
-        "type": "triangle",
-        "radius": 8,
-        "fill": {
-          "color": "rgba(128,  0,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        },
-        "label": {
-          "template": "${name}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_lake20_128_0_0.png"
+      },
+      "label": {
+        "template": "${name}",
+        "text": {
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+          "scale": 1,
+          "offsetY": -28,
+          "padding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "stroke": {
+            "color": "rgba(14,80,114,0.9)",
+            "width": 3
+          },
+          "backgroundFill": {
+            "color": "rgba(14,80,114,0.9)"
+          },
+          "fill": {
+            "color": "white"
           }
         }
       }
@@ -741,15 +581,8 @@
       "value": 5.2,
       "minResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 6,
-        "fill": {
-          "color": "rgba(128,  0,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river16_128_0_0.png"
       }
     },
     {
@@ -758,15 +591,8 @@
       "minResolution": 100,
       "maxResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 7,
-        "fill": {
-          "color": "rgba(128,  0,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river20_128_0_0.png"
       }
     },
     {
@@ -774,39 +600,32 @@
       "value": 5.2,
       "maxResolution": 100,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 8,
-        "fill": {
-          "color": "rgba(128,  0,  0,1)"
-        },
-        "stroke": {
-          "color": "rgba(117,117,117,1)",
-          "width": 2
-        },
-        "label": {
-          "template": "${name}",
-          "text": {
-            "textAlign": "center",
-            "textBaseline": "middle",
-            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
-            "scale": 1,
-            "offsetY": -28,
-            "padding": [
-              2,
-              2,
-              2,
-              2
-            ],
-            "stroke": {
-              "color": "rgba(14,80,114,0.9)",
-              "width": 3
-            },
-            "backgroundFill": {
-              "color": "rgba(14,80,114,0.9)"
-            },
-            "fill": {
-              "color": "white"
-            }
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_gefahren/images/warn_level_river20_128_0_0.png"
+      },
+      "label": {
+        "template": "${name}",
+        "text": {
+          "textAlign": "center",
+          "textBaseline": "middle",
+          "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+          "scale": 1,
+          "offsetY": -28,
+          "padding": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "stroke": {
+            "color": "rgba(14,80,114,0.9)",
+            "width": 3
+          },
+          "backgroundFill": {
+            "color": "rgba(14,80,114,0.9)"
+          },
+          "fill": {
+            "color": "white"
           }
         }
       }
