@@ -1,6 +1,6 @@
 {
   "type": "unique",
-  "property": "symbol-design",
+  "property": "symbol_design",
   "values": [
     {
       "geomType": "point",
@@ -96,7 +96,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_153_102_51.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_194_94_38.png"
       }
     },
     {
@@ -106,7 +106,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_153_102_51.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_194_94_38.png"
       }
     },
     {
@@ -115,7 +115,7 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_153_102_51.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_194_94_38.png",
         "label": {
           "template": "${name}",
           "text": {
@@ -150,7 +150,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_153_102_51.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_194_94_38.png"
       }
     },
     {
@@ -160,7 +160,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_153_102_51.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_194_94_38.png"
       }
     },
     {
@@ -169,7 +169,7 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_153_102_51.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_194_94_38.png",
         "label": {
           "template": "${name}",
           "text": {
@@ -204,7 +204,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_212_138_69.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_253_201_141.png"
       }
     },
     {
@@ -214,7 +214,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_212_138_69.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_253_201_141.png"
       }
     },
     {
@@ -223,7 +223,7 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_212_138_69.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_253_201_141.png",
         "label": {
           "template": "${name}",
           "text": {
@@ -258,7 +258,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_212_138_69.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_253_201_141.png"
       }
     },
     {
@@ -268,7 +268,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_212_138_69.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_253_201_141.png"
       }
     },
     {
@@ -277,7 +277,7 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_212_138_69.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_253_201_141.png",
         "label": {
           "template": "${name}",
           "text": {
@@ -312,7 +312,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_239_215_193.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_220_239_196.png"
       }
     },
     {
@@ -322,7 +322,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_239_215_193.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_220_239_196.png"
       }
     },
     {
@@ -331,7 +331,7 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_239_215_193.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_220_239_196.png",
         "label": {
           "template": "${name}",
           "text": {
@@ -366,7 +366,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_239_215_193.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_220_239_196.png"
       }
     },
     {
@@ -376,7 +376,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_239_215_193.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_220_239_196.png"
       }
     },
     {
@@ -385,7 +385,7 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_239_215_193.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_220_239_196.png",
         "label": {
           "template": "${name}",
           "text": {
@@ -420,7 +420,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_102_143_188.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_131_196_200.png"
       }
     },
     {
@@ -430,7 +430,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_102_143_188.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_131_196_200.png"
       }
     },
     {
@@ -439,7 +439,7 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_102_143_188.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_131_196_200.png",
         "label": {
           "template": "${name}",
           "text": {
@@ -474,7 +474,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_102_143_188.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_131_196_200.png"
       }
     },
     {
@@ -484,7 +484,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_102_143_188.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_131_196_200.png"
       }
     },
     {
@@ -493,7 +493,7 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_102_143_188.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_131_196_200.png",
         "label": {
           "template": "${name}",
           "text": {
@@ -528,7 +528,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_26_71_139.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_55_137_141.png"
       }
     },
     {
@@ -538,7 +538,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_26_71_139.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_55_137_141.png"
       }
     },
     {
@@ -547,7 +547,7 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_26_71_139.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_55_137_141.png",
         "label": {
           "template": "${name}",
           "text": {
@@ -582,7 +582,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_26_71_139.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_55_137_141.png"
       }
     },
     {
@@ -592,7 +592,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_26_71_139.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_55_137_141.png"
       }
     },
     {
@@ -601,7 +601,7 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_26_71_139.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_55_137_141.png",
         "label": {
           "template": "${name}",
           "text": {
