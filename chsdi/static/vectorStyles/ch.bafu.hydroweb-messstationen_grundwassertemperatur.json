@@ -54,7 +54,7 @@
         "type": "circle",
         "radius": 6,
         "fill": {
-          "color": "rgba(78, 191,221,1)"
+          "color": "rgba( 52, 132,150, 1)"
         },
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
@@ -71,7 +71,7 @@
         "type": "circle",
         "radius": 7,
         "fill": {
-          "color": "rgba(78, 191,221,1)"
+          "color": "rgba( 52, 132,150, 1)"
         },
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
@@ -87,7 +87,7 @@
         "type": "circle",
         "radius": 8,
         "fill": {
-          "color": "rgba(78, 191,221,1)"
+          "color": "rgba( 52, 132,150, 1)"
         },
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
@@ -129,7 +129,7 @@
         "type": "circle",
         "radius": 6,
         "fill": {
-          "color": "rgba(236,173,135,1)"
+          "color": "rgba(196, 236, 239, 1)"
         },
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
@@ -146,7 +146,7 @@
         "type": "circle",
         "radius": 7,
         "fill": {
-          "color": "rgba(236,173,135,1)"
+          "color": "rgba(196, 236, 239, 1)"
         },
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
@@ -162,7 +162,7 @@
         "type": "circle",
         "radius": 8,
         "fill": {
-          "color": "rgba(236,173,135,1)"
+          "color": "rgba(196, 236, 239, 1)"
         },
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
@@ -204,7 +204,7 @@
         "type": "circle",
         "radius": 6,
         "fill": {
-          "color": "rgba(157, 53, 67,1)"
+          "color": "rgba(239, 163, 127, 1)"
         },
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
@@ -221,7 +221,7 @@
         "type": "circle",
         "radius": 7,
         "fill": {
-          "color": "rgba(157, 53, 67,1)"
+          "color": "rgba(239, 163, 127, 1)"
         },
         "stroke": {
           "color": "rgba(14,80,114,0.9)",
@@ -237,7 +237,7 @@
         "type": "circle",
         "radius": 8,
         "fill": {
-          "color": "rgba(157, 53, 67,1)"
+          "color": "rgba(239, 163, 127, 1)"
         },
         "stroke": {
           "color": "rgba(14,80,114,0.9)",

@@ -110,7 +110,7 @@
       "minResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow16_203_247_246.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow16_203_247_146.png"
       }
     },
     {
@@ -121,7 +121,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow20_203_247_246.png"
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow20_203_247_146.png"
       }
     },
     {
@@ -131,7 +131,7 @@
       "maxResolution": 100,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow20_203_247_246.png",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_grundwasserzustand/images/arrow20_203_247_146.png",
         "label": {
           "template": "${name}",
           "text": {
