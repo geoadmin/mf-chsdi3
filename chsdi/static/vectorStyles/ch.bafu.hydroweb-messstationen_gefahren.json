@@ -1,6 +1,6 @@
 {
   "type": "unique",
-  "property": "symbol-design",
+  "property": "symbol_design",
   "values": [
     {
       "geomType": "point",
