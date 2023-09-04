@@ -26,13 +26,28 @@ API & applications
 '''''''''''''''''''''''''''''
 - Bug fixes
 - Announcements:
-    - the mapviewer topic "geothermie" will be removed from map.geo.admin.ch as previously announced
+    - the mapviewer topic "geothermie" has been removed from map.geo.admin.ch as previously announced
+    - the layer *ch.bafu.hydrologie-messstationen_gefahren* has been removed from chsdi services as previously announced
+    - the layer *ch.bafu.hydroweb-warnkarte_regional* will be removed from chsdi services with the release of November 1st 2023
     - the layers *ch.bakom.mobil-antennenstandorte-5g, ch.bakom.mobil-antennenstandorte-gsm, ch.bakom.mobil-antennenstandorte-umts, ch.bakom.mobil-antennenstandorte-lte* will be removed from chsdi services with the release of November 1st 2023
+    - Since August 2023 swisstopo publishes its aerial images for download step by step. A first group of 30000 images, orthophotos (if available) and metadata is already available. The remaining images will follow in the course of the next year. For aerial images that can now be downloaded, swisstopo has replaced the preview function in the map.geo.admin.ch viewer by a direct download. This offer is part of swisstopo's Open Government Data (OGD) strategy.
 
 Geodata
 *******
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Groundwater temperature <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_grundwassertemperatur>`__ (ch.bafu.hydroweb-messstationen_grundwassertemperatur)                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `SORA Ground Risk <//map.geo.admin.ch/?layers=ch.bazl.intrinsisches-bodenrisiko_sora>`__ (ch.bazl.intrinsisches-bodenrisiko_sora)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Situation of rivers and lakes <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_zustand>`__ (ch.bafu.hydroweb-messstationen_zustand)                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Water temperature rivers <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_temperatur>`__ (ch.bafu.hydroweb-messstationen_temperatur)                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Flood hazard levels <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_gefahren>`__ (ch.bafu.hydroweb-messstationen_gefahren)                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Groundwater level/spring discharge <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_grundwasserzustand>`__ (ch.bafu.hydroweb-messstationen_grundwasserzustand)                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Stations hydrological forecasts <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_vorhersage>`__ (ch.bafu.hydroweb-messstationen_vorhersage)                                          |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Waste incineration plants <//map.geo.admin.ch/?layers=ch.bfe.kehrichtverbrennungsanlagen>`__ (ch.bfe.kehrichtverbrennungsanlagen)                                                              |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
