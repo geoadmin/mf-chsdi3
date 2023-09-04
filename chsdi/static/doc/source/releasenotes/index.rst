@@ -14,6 +14,82 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20230906:
+
+Release 20230906 - Wednesday, September 6th 2023
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+- Bug fixes
+- Announcements:
+    - the mapviewer topic "geothermie" has been removed from map.geo.admin.ch as previously announced
+    - the layer *ch.bafu.hydrologie-messstationen_gefahren* has been removed from chsdi services as previously announced
+    - the layer *ch.bafu.hydroweb-warnkarte_regional* will be removed from chsdi services with the release of November 1st 2023
+    - the layers *ch.bakom.mobil-antennenstandorte-5g, ch.bakom.mobil-antennenstandorte-gsm, ch.bakom.mobil-antennenstandorte-umts, ch.bakom.mobil-antennenstandorte-lte* will be removed from chsdi services with the release of November 1st 2023
+    - Since August 2023 swisstopo publishes its aerial images for download step by step. A first group of 30000 images, orthophotos (if available) and metadata is already available. The remaining images will follow in the course of the next year. For aerial images that can now be downloaded, swisstopo has replaced the preview function in the map.geo.admin.ch viewer by a direct download. This offer is part of swisstopo's Open Government Data (OGD) strategy.
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Groundwater temperature <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_grundwassertemperatur>`__ (ch.bafu.hydroweb-messstationen_grundwassertemperatur)                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `SORA Ground Risk <//map.geo.admin.ch/?layers=ch.bazl.intrinsisches-bodenrisiko_sora>`__ (ch.bazl.intrinsisches-bodenrisiko_sora)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Situation of rivers and lakes <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_zustand>`__ (ch.bafu.hydroweb-messstationen_zustand)                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Water temperature rivers <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_temperatur>`__ (ch.bafu.hydroweb-messstationen_temperatur)                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Flood hazard levels <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_gefahren>`__ (ch.bafu.hydroweb-messstationen_gefahren)                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Groundwater level/spring discharge <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_grundwasserzustand>`__ (ch.bafu.hydroweb-messstationen_grundwasserzustand)                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Stations hydrological forecasts <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_vorhersage>`__ (ch.bafu.hydroweb-messstationen_vorhersage)                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Waste incineration plants <//map.geo.admin.ch/?layers=ch.bfe.kehrichtverbrennungsanlagen>`__ (ch.bfe.kehrichtverbrennungsanlagen)                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cross section securing point <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-querprofilmarken>`__ (ch.bafu.wasserbau-querprofilmarken)                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Surveyed sections <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-vermessungsstrecken>`__ (ch.bafu.wasserbau-vermessungsstrecken)                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hunting Ban Reserves AuLaV <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-aulav_jagdbanngebiete>`__ (ch.bafu.schutzgebiete-aulav_jagdbanngebiete)                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Other protected areas AuLaV <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-aulav_uebrige>`__ (ch.bafu.schutzgebiete-aulav_uebrige)                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `TBE: Side of tick bite reported <//map.geo.admin.ch/?layers=ch.bag.zecken-fsme-faelle>`__ (ch.bag.zecken-fsme-faelle)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tracer tests <//map.geo.admin.ch/?layers=ch.bafu.hydrogeologie-markierversuche>`__ (ch.bafu.hydrogeologie-markierversuche)                                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Interregional wildlife corridor <//map.geo.admin.ch/?layers=ch.bafu.fauna-wildtierkorridor_national>`__ (ch.bafu.fauna-wildtierkorridor_national)                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Flood statistics <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-hochwasserstatistik>`__ (ch.bafu.hydrologie-hochwasserstatistik)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Low-flow statistics <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-niedrigwasserstatistik>`__ (ch.bafu.hydrologie-niedrigwasserstatistik)                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `HUG hydrological study areas <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-untersuchungsgebiete>`__ (ch.bafu.hydrologie-untersuchungsgebiete)                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Water & migrant bird reserves <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-vogelreservate>`__ (ch.bafu.bundesinventare-vogelreservate)                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Vegetation height model NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-vegetationshoehenmodell>`__ (ch.bafu.landesforstinventar-vegetationshoehenmodell)                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Surface model NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-vegetationshoehenmodell_relief>`__ (ch.bafu.landesforstinventar-vegetationshoehenmodell_relief)                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Traffic counting locations - principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung-uebergeordnet)                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product&layers_timestamp=2022&time=2022>`__ (ch.swisstopo.swissimage-product)                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata&layers_timestamp=2022&time=2022>`__ (ch.swisstopo.swissimage-product.metadata)        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Forest reserves <//map.geo.admin.ch/?layers=ch.bafu.waldreservate>`__ (ch.bafu.waldreservate)                                                                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 .. _releasenotes_20230628:
 
 Release 20230628 - Wednesday, June 28th 2023

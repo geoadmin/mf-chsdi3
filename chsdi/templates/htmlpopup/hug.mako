@@ -42,10 +42,6 @@
       <td>${c['attributes']['regimtyp'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_('ch.bafu.hydrologie-untersuchungsgebiete.hyperlink')}</td>
-      <td><a href="${c['attributes']['hyperlink'] or '-'}" target="_blank">${c['attributes']['hyperlink'] or '-'}</a></td>
-    </tr>
-    <tr>
       <td class="cell-left">${_('ch.bafu.hydrologie-untersuchungsgebiete.stationseite')}</td>
       <td><a href="${c['attributes'][url] or '-'}" target="_blank">${_('ch.bafu.hydrologie-untersuchungsgebiete.stationseite')}</a></td>
     </tr>

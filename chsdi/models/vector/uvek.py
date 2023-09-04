@@ -1710,13 +1710,36 @@ class HindernisbegrenzungsflaechenPerimeter(Base, Vector):
 register('ch.bazl.hindernisbegrenzungsflaechen-perimeter', HindernisbegrenzungsflaechenPerimeter)
 
 
+class HindernisbegrenzungsflaechenKataster:
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __template__ = 'templates/htmlpopup/hindernisbegrenzungsflaechen_kataster.mako'
+    __bodId__ = 'ch.bazl.hindernisbegrenzungsflaechen-kataster'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    icaoloc = Column('icaoloc', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    validuntil = Column('validuntil', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class HindernisbegrenzungsflaechenKatasterArea(Base, HindernisbegrenzungsflaechenKataster, Vector):
+    __tablename__ = 'hindernisbegrenzungsflaechen_kataster_area'
+
+register('ch.bazl.hindernisbegrenzungsflaechen-kataster', HindernisbegrenzungsflaechenKatasterArea)
+
+
+class HindernisbegrenzungsflaechenKatasterOlsLine(Base, HindernisbegrenzungsflaechenKataster, Vector):
+    __tablename__ = 'hindernisbegrenzungsflaechen_kataster_olsline'
+
+register('ch.bazl.hindernisbegrenzungsflaechen-kataster', HindernisbegrenzungsflaechenKatasterOlsLine)
+
+
 class IntrinsischesBodenrisikoSora(Base, Vector):
     __tablename__ = 'intrinsisches_bodenrisiko_sora'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/bazl_intrinsisches_bodenrisiko.mako'
     __bodId__ = 'ch.bazl.intrinsisches-bodenrisiko_sora'
     id = Column('id', Integer, primary_key=True)
-    density_pop_km2 = Column('density_pop_km2', Numeric)
+    density_pop_km2 = Column('density_pop_km2', Integer)
     the_geom = Column(Geometry2D)
 
 register(IntrinsischesBodenrisikoSora.__bodId__, IntrinsischesBodenrisikoSora)
@@ -3892,11 +3915,10 @@ class ElektrischeAnlagenUeber36Point (Base, Vector):
 register(ElektrischeAnlagenUeber36Point.__bodId__, ElektrischeAnlagenUeber36Point)
 
 
-class ElektrischeAnlagenUeber36StationPoly (Base, Vector):
+class ElektrischeAnlagenUeber36Station:
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __tablename__ = 'elektrische_anlagen_ueber_36_station_poly'
-    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_station_poly.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
+    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_station.mako'
     __label__ = 'fid'
     id = Column('bgdi_id', Integer, primary_key=True)
     fid = Column('id', Unicode)
@@ -3905,22 +3927,26 @@ class ElektrischeAnlagenUeber36StationPoly (Base, Vector):
     stromnetztyp = Column('stromnetztyp', Unicode)
     stationtyp = Column('stationtyp', Unicode)
     the_geom = Column(Geometry2D)
+
+
+class ElektrischeAnlagenUeber36StationPoly (Base, ElektrischeAnlagenUeber36Station, Vector):
+    __tablename__ = 'elektrische_anlagen_ueber_36_station_poly'
+    __minscale__ = 1
+    __maxscale__ = 25000
 
 register(ElektrischeAnlagenUeber36StationPoly.__bodId__, ElektrischeAnlagenUeber36StationPoly)
 
 
-class ElektrischeAnlagenUeber36StationPoint (Base, Vector):
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __tablename__ = 'elektrische_anlagen_ueber_36_station_point'
-    __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_station_point.mako'
-    __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
-    __label__ = 'fid'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    fid = Column('id', Unicode)
-    bezeichnung = Column('bezeichnung', Unicode)
-    eigentuemer = Column('eigentuemer', Unicode)
-    stromnetztyp = Column('stromnetztyp', Unicode)
-    stationtyp = Column('stationtyp', Unicode)
-    the_geom = Column(Geometry2D)
+class ElektrischeAnlagenUeber36StationPointWithPoly (Base, ElektrischeAnlagenUeber36Station, Vector):
+    __tablename__ = 'elektrische_anlagen_ueber_36_station_point_with_poly'
+    __minscale__ = 25000
 
-register(ElektrischeAnlagenUeber36StationPoint.__bodId__, ElektrischeAnlagenUeber36StationPoint)
+
+register(ElektrischeAnlagenUeber36StationPointWithPoly.__bodId__, ElektrischeAnlagenUeber36StationPointWithPoly)
+
+
+class ElektrischeAnlagenUeber36StationPointNoPoly (Base, ElektrischeAnlagenUeber36Station, Vector):
+    __tablename__ = 'elektrische_anlagen_ueber_36_station_point_no_poly'
+
+
+register(ElektrischeAnlagenUeber36StationPointNoPoly.__bodId__, ElektrischeAnlagenUeber36StationPointNoPoly)

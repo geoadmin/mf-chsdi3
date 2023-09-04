@@ -81,8 +81,7 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
         1.5,
         1,
         0.5,
-        0.25,
-        0.1
+        0.25
       ];
 
       // adding Swiss projections to proj4 (proj string comming from https://epsg.io/)
@@ -181,3 +180,4 @@ Terms of use
    :hidden:
 
    About Geoadmin API <https://www.geo.admin.ch/>
+

@@ -1,89 +1,632 @@
 {
   "type": "unique",
-  "property": "quant-class",
+  "property": "symbol_design",
   "values": [
     {
       "geomType": "point",
-      "value": 0,
+      "value": 0.1,
+      "minResolution": 100,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 8,
-        "fill": {
-          "color": "#BEBEBE"
-        },
-        "stroke": {
-          "color": "#FFFFFF",
-          "width": 1
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata14.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 0.2,
+      "minResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata14.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 0.1,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata16.png",
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
         }
       }
-    }, {
+    },
+    {
       "geomType": "point",
-      "value": 1,
+      "value": 0.2,
+      "maxResolution": 100,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 8,
-        "fill": {
-          "color": "#996633"
-        },
-        "stroke": {
-          "color": "#FFFFFF",
-          "width": 1
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.meteoschweiz/images/nodata16.png",
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
         }
       }
-    }, {
+    },
+    {
       "geomType": "point",
-      "value": 2,
+      "value": 1.1,
+      "minResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 8,
-        "fill": {
-          "color": "#D48A45"
-        },
-        "stroke": {
-          "color": "#FFFFFF",
-          "width": 1
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_194_94_38.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 1.1,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_194_94_38.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 1.1,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_194_94_38.png",
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
         }
       }
-    }, {
+    },
+    {
       "geomType": "point",
-      "value": 3,
+      "value": 1.2,
+      "minResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 8,
-        "fill": {
-          "color": "#EFD7C1"
-        },
-        "stroke": {
-          "color": "#FFFFFF",
-          "width": 1
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_194_94_38.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 1.2,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_194_94_38.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 1.2,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_194_94_38.png",
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
         }
       }
-    }, {
+    },
+    {
       "geomType": "point",
-      "value": 4,
+      "value": 2.1,
+      "minResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 8,
-        "fill": {
-          "color": "#668FBC"
-        },
-        "stroke": {
-          "color": "#FFFFFF",
-          "width": 1
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_253_201_141.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 2.1,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_253_201_141.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 2.1,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_253_201_141.png",
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
         }
       }
-    }, {
+    },
+    {
       "geomType": "point",
-      "value": 5,
+      "value": 2.2,
+      "minResolution": 250,
       "vectorOptions": {
-        "type": "circle",
-        "radius": 8,
-        "fill": {
-          "color": "#1A478B"
-        },
-        "stroke": {
-          "color": "#FFFFFF",
-          "width": 1
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_253_201_141.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 2.2,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_253_201_141.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 2.2,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_253_201_141.png",
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 3.1,
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_220_239_196.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 3.1,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_220_239_196.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 3.1,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_220_239_196.png",
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 3.2,
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_220_239_196.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 3.2,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_220_239_196.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 3.2,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_220_239_196.png",
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 4.1,
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_131_196_200.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 4.1,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_131_196_200.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 4.1,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_131_196_200.png",
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 4.2,
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_131_196_200.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 4.2,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_131_196_200.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 4.2,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_131_196_200.png",
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 5.1,
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake16_55_137_141.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 5.1,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_55_137_141.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 5.1,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_lake20_55_137_141.png",
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
+        }
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 5.2,
+      "minResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river16_55_137_141.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 5.2,
+      "minResolution": 100,
+      "maxResolution": 250,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_55_137_141.png"
+      }
+    },
+    {
+      "geomType": "point",
+      "value": 5.2,
+      "maxResolution": 100,
+      "vectorOptions": {
+        "type": "icon",
+        "src": "https://data.geo.admin.ch/ch.bafu.hydroweb-messstationen_zustand/images/quantile_river20_55_137_141.png",
+        "label": {
+          "template": "${name}",
+          "text": {
+            "textAlign": "center",
+            "textBaseline": "middle",
+            "font": "bold 12px FrutigerNeueW02-Regular,Frutiger,sans-serif",
+            "scale": 1,
+            "offsetY": -28,
+            "padding": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "stroke": {
+              "color": "rgba(14,80,114,0.9)",
+              "width": 3
+            },
+            "backgroundFill": {
+              "color": "rgba(14,80,114,0.9)"
+            },
+            "fill": {
+              "color": "white"
+            }
+          }
         }
       }
     }
