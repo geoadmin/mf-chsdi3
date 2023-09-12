@@ -1333,16 +1333,6 @@ example of current maplibre styles of light base map and imagery base map:
 - https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte.vt/style.json
 - https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte-imagery.vt/style.json
 
-A previous versioned style request is in the following form:
-
-::
-
-    <Scheme>://<ServerName>/styles/<layername>/<version>/style.json
-
-
-(available previous versions are: v1.1.0, v1.2.0, v1.3.0, v1.4.0, v1.5.0, v1.6.0 and v1.7.0)
-
-
 .. _vectortiles GetTile:
 
 GetTile
