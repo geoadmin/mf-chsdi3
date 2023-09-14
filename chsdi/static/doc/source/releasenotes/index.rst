@@ -88,7 +88,7 @@ Geodata
 | Update | `Forest reserves <//map.geo.admin.ch/?layers=ch.bafu.waldreservate>`__ (ch.bafu.waldreservate)                                                                                                  |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2023-06-28-rc1...2023-09-06-rc1>`__
 
 .. _releasenotes_20230628:
 
@@ -156,7 +156,7 @@ Geodata
 | Update | `Hunting Ban Reserves <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-jagdbanngebiete>`__ (ch.bafu.bundesinventare-jagdbanngebiete)                                                         |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2023-05-10-rc1...2023-06-28-rc1>`__
 
 .. _releasenotes_20230510:
 
