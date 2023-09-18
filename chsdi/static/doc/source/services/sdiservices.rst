@@ -297,7 +297,7 @@ No more than 50 features can be retrieved per request.
 | **layers (optional)**             | The layers to perform the identify operation on. Per default query all the layers in the  |
 |                                   | GeoAdmin API. Notation: all:"comma separated list of technical layer names".              |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
-| **mapExtent**                     | The extent of the map. (minx, miny, maxx, maxy). Optional if *tolereance=0*. Default to   |
+| **mapExtent**                     | The extent of the map. (minx, miny, maxx, maxy). Optional if *tolerance=0*. Default to    |
 |    **(required/optional)**        | The mapExtent and the imageDisplay parameters are used by the server to calculate the     |
 |                                   | 0,0,0,0                                                                                   |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
@@ -338,7 +338,7 @@ Tolerance, mapExtent and imageDisplay
 
 If *tolerance=0*, *imageDisplay* and *mapExtent* are generaly not needed, except to get models which are scale dependant, e.g.
 displaying points at smaller scales and polygons ar larger one.
-If using *tolerance>0*, bot *imageDisplay* and *mapExtent* must be set to meaningfull values. As the *teloerance* is in pixels,
+If using *tolerance>0*, both *imageDisplay* and *mapExtent* must be set to meaningfull values. As the *tolerance* is in pixels,
 these value are used to convert it to map units, _i.e._ meters.
 
 The following table summarize the various combinations:
