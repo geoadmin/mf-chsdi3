@@ -3904,6 +3904,7 @@ class ElektrischeAnlagenUeber36Point (Base, Vector):
     __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_point.mako'
     __bodId__ = 'ch.bfe.elektrische-anlagen_ueber_36'
     __label__ = 'fid'
+    __maxscale__ = 50000
     id = Column('bgdi_id', Integer, primary_key=True)
     fid = Column('id', Unicode)
     eigentuemer = Column('eigentuemer', Unicode)
