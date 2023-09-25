@@ -46,6 +46,7 @@ class SolarClass:
     monats_ertrag = Column('monats_ertrag', postgresql.ARRAY(Numeric))
     gs_serie_start = Column('gs_serie_start', Date)
     klasse_text = Column('klasse_text', Unicode)
+    gwr_egid = Column('gwr_egid', Integer)
     the_geom = Column(Geometry2D)
 
 
@@ -89,7 +90,6 @@ class EignungFassaden(Base, SolarClass, Vector):
     __queryable_attributes__ = ['ff_nummer', 'gwr_egid', 'building_id']
     id = Column('ff_uuid', BigInteger, primary_key=True)
     ff_nummer = Column('ff_nummer', Integer)
-    gwr_egid = Column('gwr_egid', Integer)
 
 register(EignungFassaden.__bodId__, EignungFassaden)
 
