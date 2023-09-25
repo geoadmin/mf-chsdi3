@@ -231,3 +231,81 @@ class Milchmarktregionen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.blw.milchmarktregionen', Milchmarktregionen)
+
+
+class SachplanCernAnhoerungFacPnt(Base, Vector):
+    __tablename__ = 'sachplan_cern_anhoerung_fac_pnt'
+    __table_args__ = ({'schema': 'sbfi', 'autoload': False})
+    __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
+    __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_pnt.mako'
+    __label__ = 'objname_de'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objname_de = Column('objname_de', Unicode)
+    objname_fr = Column('objname_fr', Unicode)
+    objname_it = Column('objname_it', Unicode)
+    fackind_text_de = Column('fackind_text_de', Unicode)
+    fackind_text_fr = Column('fackind_text_fr', Unicode)
+    fackind_text_it = Column('fackind_text_it', Unicode)
+    facstatus_text_de = Column('facstatus_text_de', Unicode)
+    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
+    facstatus_text_it = Column('facstatus_text_it', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    validuntil = Column('validuntil', Unicode)    
+    the_geom = Column(Geometry2D)
+
+register('ch.sbfi.sachplan-cern_anhoerung', SachplanCernAnhoerungFacPnt)
+
+
+class SachplanCernAnhoerungFacLine(Base, Vector):
+    __tablename__ = 'sachplan_cern_anhoerung_fac_line'
+    __table_args__ = ({'schema': 'sbfi', 'autoload': False})
+    __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
+    __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_line.mako'
+    __label__ = 'objname_de'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objname_de = Column('objname_de', Unicode)
+    objname_fr = Column('objname_fr', Unicode)
+    objname_it = Column('objname_it', Unicode)
+    fackind_text_de = Column('fackind_text_de', Unicode)
+    fackind_text_fr = Column('fackind_text_fr', Unicode)
+    fackind_text_it = Column('fackind_text_it', Unicode)
+    facstatus_text_de = Column('facstatus_text_de', Unicode)
+    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
+    facstatus_text_it = Column('facstatus_text_it', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    validuntil = Column('validuntil', Unicode)    
+    the_geom = Column(Geometry2D)
+
+register('ch.sbfi.sachplan-cern_anhoerung', SachplanCernAnhoerungFacLine)
+
+
+class SachplanCernAnhoerungPlmPoly(Base, Vector):
+    __tablename__ = 'sachplan_cern_anhoerung_plm_poly'
+    __table_args__ = ({'schema': 'sbfi', 'autoload': False})
+    __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
+    __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_poly.mako'
+    __label__ = 'plname_de'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    plname_de = Column('plname_de', Unicode)
+    plname_fr = Column('plname_fr', Unicode)
+    plname_it = Column('plname_it', Unicode)
+    meastype_text_de = Column('meastype_text_de', Unicode)
+    meastype_text_fr = Column('meastype_text_fr', Unicode)
+    meastype_text_it = Column('meastype_text_it', Unicode)
+    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
+    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
+    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
+    plstatus_text_de = Column('plstatus_text_de', Unicode)
+    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
+    plstatus_text_it = Column('plstatus_text_it', Unicode)
+    validfrom = Column('validfrom', Unicode)
+    validuntil = Column('validuntil', Unicode)    
+    the_geom = Column(Geometry2D)
+
+register('ch.sbfi.sachplan-cern_anhoerung', SachplanCernAnhoerungPlmPoly)
