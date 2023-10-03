@@ -3087,3 +3087,50 @@ class SwisstneBasePoly(Base, SwisstneBase, Vector):
 register(SwisstneBase.__bodId__, SwisstneBasePoint)
 register(SwisstneBase.__bodId__, SwisstneBaseLine)
 register(SwisstneBase.__bodId__, SwisstneBasePoly)
+
+
+class Reflexionsseismik:
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.geologie-reflexionsseismik'
+    __extended_info__ = True
+    id = Column('bgdi_id', Unicode, primary_key=True)
+    alias = Column('alias', Unicode)
+    survey = Column('survey', Unicode)
+    access_int = Column('access_int', Integer)
+    access_de = Column('access_de', Unicode)
+    access_fr = Column('access_fr', Unicode)
+    access_it = Column('access_it', Unicode)
+    access_en = Column('access_en', Unicode)
+    reference = Column('reference', Unicode)
+    srd = Column('srd', Unicode)
+    domain_de = Column('domain_de', Unicode)
+    domain_fr = Column('domain_fr', Unicode)
+    domain_it = Column('domain_it', Unicode)
+    domain_en = Column('domain_en', Unicode)
+    vintage = Column('vintage', Unicode)
+    owner = Column('owner', Unicode)
+    region = Column('region', Unicode)
+    link = Column('link', Unicode)
+    download = Column('download', Unicode)
+    swissgeol = Column('swissgeol', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class ReflexionsseismikLine(Base, Reflexionsseismik, Vector):
+    __tablename__ = 'geologie_reflexionsseismik_line'
+    __template__ = 'templates/htmlpopup/geologie_reflexionsseismik_line.mako'
+    __label__ = 'linename'
+    linename = Column('linename', Unicode)
+    dim_km = Column('dim_km', Float)
+
+register(Reflexionsseismik.__bodId__, ReflexionsseismikLine)
+
+
+class ReflexionsseismikPoly(Base, Reflexionsseismik, Vector):
+    __tablename__ = 'geologie_reflexionsseismik_poly'
+    __template__ = 'templates/htmlpopup/geologie_reflexionsseismik_poly.mako'
+    __label__ = 'cubename'
+    cubename = Column('cubename', Unicode)
+    dim_km2 = Column('dim_km2', Float)
+
+register(Reflexionsseismik.__bodId__, ReflexionsseismikPoly)
