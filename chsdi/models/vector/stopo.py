@@ -3096,7 +3096,6 @@ class Reflexionsseismik:
     id = Column('bgdi_id', Unicode, primary_key=True)
     alias = Column('alias', Unicode)
     survey = Column('survey', Unicode)
-    access_int = Column('access_int', Integer)
     access_de = Column('access_de', Unicode)
     access_fr = Column('access_fr', Unicode)
     access_it = Column('access_it', Unicode)
