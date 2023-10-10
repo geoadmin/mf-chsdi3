@@ -233,7 +233,7 @@ class Milchmarktregionen(Base, Vector):
 register('ch.blw.milchmarktregionen', Milchmarktregionen)
 
 
-class SachplanCernAnhoerungFac :
+class SachplanCernAnhoerungFac:
     __table_args__ = ({'schema': 'sbfi', 'autoload': False})
     __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
     __label__ = 'objname_de'
@@ -289,7 +289,7 @@ class SachplanCernAnhoerungPlmPoly(Base, Vector):
     plstatus_text_fr = Column('plstatus_text_fr', Unicode)
     plstatus_text_it = Column('plstatus_text_it', Unicode)
     validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)    
+    validuntil = Column('validuntil', Unicode)
     description_de = Column('description_de', Unicode)
     description_fr = Column('description_fr', Unicode)
     description_it = Column('description_it', Unicode)
