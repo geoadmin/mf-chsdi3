@@ -30,6 +30,12 @@ API & applications
 Geodata
 *******
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Reflection seismic <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-reflexionsseismik>`__ (ch.swisstopo.geologie-reflexionsseismik)                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wetness potential in the agricultural land, vector ( <//map.geo.admin.ch/?layers=ch.agroscope.feuchtflaechenpotential-kulturlandschaft>`__ (ch.agroscope.feuchtflaechenpotential-kulturlandschaft)               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wildlife Passages <//map.geo.admin.ch/?layers=ch.bafu.fauna-wildtierpassagen>`__ (ch.bafu.fauna-wildtierpassagen)                                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Geological Profiles GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas_profile>`__ (ch.swisstopo.geologie-geologischer_atlas_profile)                                                     |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Safety zone plan <//map.geo.admin.ch/?layers=ch.bazl.sicherheitszonenplan>`__ (ch.bazl.sicherheitszonenplan)                                                                                                     |
@@ -57,6 +63,8 @@ Geodata
 | Update | `Viticulture on slopes <//map.geo.admin.ch/?layers=ch.blw.steil_terrassenlagen_rebbau>`__ (ch.blw.steil_terrassenlagen_rebbau)                                                                                    |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Hillsides and slopes <//map.geo.admin.ch/?layers=ch.blw.hang_steillagen>`__ (ch.blw.hang_steillagen)                                                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Low distortion area <//map.geo.admin.ch/?layers=ch.swisstopo-vd.spannungsarme-gebiete>`__ (ch.swisstopo-vd.spannungsarme-gebiete)                                                                                |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
