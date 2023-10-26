@@ -28,7 +28,7 @@ API & applications
 - Announcements:
     - the layer *ch.bafu.hydroweb-warnkarte_regional* has been removed from chsdi services as previously announced
     - the layers *ch.swisstopo.geologie-geotechnik-zementindustrie_1965*, *ch.swisstopo.geologie-geotechnik-zementindustrie_1995*, *ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung* and *ch.swisstopo.geologie-geotechnik-ziegeleien_1907* will be removed from chsdi services with the release of December 20st 2023
-    - the layers *ch.bakom.mobil-antennenstandorte-5g, ch.bakom.mobil-antennenstandorte-gsm, ch.bakom.mobil-antennenstandorte-umts, ch.bakom.mobil-antennenstandorte-lte* will be removed from chsdi services with the release of March 13th 2024
+    - the removal of the layers *ch.bakom.mobil-antennenstandorte-5g, ch.bakom.mobil-antennenstandorte-gsm, ch.bakom.mobil-antennenstandorte-umts, ch.bakom.mobil-antennenstandorte-lte* has been postponed to 2024. A detailed planning will be communicated later.
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2023-09-06-rc1...2023-11-01-rc1>`__
 
 Geodata
