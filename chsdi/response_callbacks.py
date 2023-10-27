@@ -23,7 +23,7 @@ def add_default_cache_control(request, response):
 def add_cors_header(request, response):
     response.headers['Access-Control-Allow-Origin'] = "*"
     response.headers['Access-Control-Allow-Methods'] = "POST, GET, OPTIONS"
-    response.headers['Access-Control-Allow-Headers'] = "x-requested-with, Content-Type, origin, authorization, accept, client-security-token"
+    response.headers['Access-Control-Allow-Headers'] = "*"
 
 
 def add_cross_domain_policy(request, response):
