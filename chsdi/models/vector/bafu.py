@@ -2431,3 +2431,21 @@ class LandesforstinventarKantone(Base, Vector):
     the_geom = Column('the_geom', Geometry2D)
 
 register(LandesforstinventarKantone.__bodId__, LandesforstinventarKantone)
+
+
+class FaunaWildtierpassagen(Base, Vector):
+    __tablename__ = 'wildtierpassagen'
+    __table_args__ = ({'schema': 'fauna', 'autoload': False})
+    __bodId__ = 'ch.bafu.fauna-wildtierpassagen'
+    __template__ = 'templates/htmlpopup/bafu_fauna_wildtierpassagen.mako'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name  = Column('name', Unicode)
+    verkehrsinfrastrukturtyp  = Column('verkehrsinfrastrukturtyp', Unicode)
+    realisierungsjahr  = Column('realisierungsjahr', Unicode)
+    sanierungastra_de  = Column('sanierungastra_de', Unicode)
+    sanierungastra_fr  = Column('sanierungastra_fr', Unicode)
+    sanierungastra_it  = Column('sanierungastra_it', Unicode)
+    the_geom = Column('the_geom', Geometry2D)
+
+register(FaunaWildtierpassagen.__bodId__, FaunaWildtierpassagen)

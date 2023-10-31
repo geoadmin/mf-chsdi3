@@ -7,98 +7,100 @@
       "value": 0,
       "vectorOptions": {
         "fill": {
-          "color": "#CCFF66",
-          "opacity": 0.8
+          "color": "#CCCCCC"
         },
         "stroke": {
           "color": "#FFFFFF",
           "width": 1
         }
       }
-    }, {
+    },
+    {
       "geomType": "polygon",
       "value": 1,
       "vectorOptions": {
         "fill": {
-          "color": "#00ff00",
-          "opacity": 0.8
+          "color": "#CCFF66"
         },
         "stroke": {
           "color": "#FFFFFF",
           "width": 1
         }
       }
-    }, {
+    },
+    {
       "geomType": "polygon",
       "value": 2,
       "vectorOptions": {
         "fill": {
-          "color": "#FFFF00",
-          "opacity": 0.8
+          "color": "#FFFF00"
         },
         "stroke": {
           "color": "#FFFFFF",
           "width": 1
         }
       }
-    }, {
+    },
+    {
       "geomType": "polygon",
       "value": 3,
       "vectorOptions": {
         "fill": {
-          "color": "#FF9900",
-          "opacity": 0.8
+          "color": "#FF9900"
         },
         "stroke": {
           "color": "#FFFFFF",
           "width": 1
         }
       }
-    }, {
+    },
+    {
       "geomType": "polygon",
       "value": 4,
       "vectorOptions": {
         "fill": {
-          "color": "#FF0000",
-          "opacity": 0.8
+          "color": "#FF0000"
         },
         "stroke": {
           "color": "#FFFFFF",
           "width": 1
         }
       }
-    }, {
+    },
+    {
       "geomType": "polygon",
       "value": 5,
       "vectorOptions": {
         "fill": {
-          "color": "#800000",
-          "opacity": 0.8
+          "color": "#800000"
         },
         "stroke": {
           "color": "#FFFFFF",
           "width": 1
         }
       }
-    }, {
+    },
+    {
       "geomType": "line",
       "value": 0,
       "vectorOptions": {
         "stroke": {
-          "color": "#CCFF66",
+          "color": "#CCCCCC",
           "width": 3
         }
       }
-    }, {
+    },
+    {
       "geomType": "line",
       "value": 1,
       "vectorOptions": {
         "stroke": {
-          "color": "#00ff00",
+          "color": "#CCFF66",
           "width": 3
         }
       }
-    }, {
+    },
+    {
       "geomType": "line",
       "value": 2,
       "vectorOptions": {
@@ -107,7 +109,8 @@
           "width": 3
         }
       }
-    }, {
+    },
+    {
       "geomType": "line",
       "value": 3,
       "vectorOptions": {
@@ -116,7 +119,8 @@
           "width": 3
         }
       }
-    }, {
+    },
+    {
       "geomType": "line",
       "value": 4,
       "vectorOptions": {
@@ -125,13 +129,230 @@
           "width": 3
         }
       }
-    }, {
+    },
+    {
       "geomType": "line",
       "value": 5,
       "vectorOptions": {
         "stroke": {
           "color": "#800000",
           "width": 3
+        }
+      }
+    },
+    {
+      "geomType": "polygon",
+      "value": "Lake.0",
+      "vectorOptions": {
+        "fill": {
+          "color": "#999999"
+        },
+        "stroke": {
+          "color": "#757575",
+          "width": 0.1
+        }
+      }
+    },
+    {
+      "geomType": "polygon",
+      "value": "Lake.1",
+      "vectorOptions": {
+        "fill": {
+          "color": "#CCFF66"
+        },
+        "stroke": {
+          "color": "#757575",
+          "width": 1
+        }
+      }
+    },
+    {
+      "geomType": "polygon",
+      "value": "Lake.2",
+      "vectorOptions": {
+        "fill": {
+          "color": "#FFFF00"
+        },
+        "stroke": {
+          "color": "#757575",
+          "width": 1
+        }
+      }
+    },
+    {
+      "geomType": "polygon",
+      "value": "Lake.3",
+      "vectorOptions": {
+        "fill": {
+          "color": "#FF9900"
+        },
+        "stroke": {
+          "color": "#757575",
+          "width": 1
+        }
+      }
+    },
+    {
+      "geomType": "polygon",
+      "value": "Lake.4",
+      "vectorOptions": {
+        "fill": {
+          "color": "#FF0000"
+        },
+        "stroke": {
+          "color": "#757575",
+          "width": 1
+        }
+      }
+    },
+    {
+      "geomType": "polygon",
+      "value": "Lake.5",
+      "vectorOptions": {
+        "fill": {
+          "color": "#800000"
+        },
+        "stroke": {
+          "color": "#757575",
+          "width": 1
+        }
+      }
+    },
+    {
+      "geomType": "line",
+      "value": "River.0",
+      "vectorOptions": {
+        "stroke": {
+          "color": "#999999",
+          "width": 3
+        }
+      }
+    },
+    {
+      "geomType": "line",
+      "value": "River.1",
+      "vectorOptions": {
+        "stroke": {
+          "color": "#CCFF66",
+          "width": 3
+        }
+      }
+    },
+    {
+      "geomType": "line",
+      "value": "River.2",
+      "vectorOptions": {
+        "stroke": {
+          "color": "#FFFF00",
+          "width": 3
+        }
+      }
+    },
+    {
+      "geomType": "line",
+      "value": "River.3",
+      "vectorOptions": {
+        "stroke": {
+          "color": "#FF9900",
+          "width": 3
+        }
+      }
+    },
+    {
+      "geomType": "line",
+      "value": "River.4",
+      "vectorOptions": {
+        "stroke": {
+          "color": "#FF0000",
+          "width": 3
+        }
+      }
+    },
+    {
+      "geomType": "line",
+      "value": "River.5",
+      "vectorOptions": {
+        "stroke": {
+          "color": "#800000",
+          "width": 3
+        }
+      }
+    },
+    {
+      "geomType": "polygon",
+      "value": "Region.0",
+      "vectorOptions": {
+        "fill": {
+          "color": "#E6E6E6"
+        },
+        "stroke": {
+          "color": "#FFFFFF",
+          "width": 0.3
+        }
+      }
+    },
+    {
+      "geomType": "polygon",
+      "value": "Region.1",
+      "vectorOptions": {
+        "fill": {
+          "color": "#E5FFB3"
+        },
+        "stroke": {
+          "color": "#FFFFFF",
+          "width": 0.3
+        }
+      }
+    },
+    {
+      "geomType": "polygon",
+      "value": "Region.2",
+      "vectorOptions": {
+        "fill": {
+          "color": "#FFFFAA"
+        },
+        "stroke": {
+          "color": "#FFFFFF",
+          "width": 0.3
+        }
+      }
+    },
+    {
+      "geomType": "polygon",
+      "value": "Region.3",
+      "vectorOptions": {
+        "fill": {
+          "color": "#FFC266"
+        },
+        "stroke": {
+          "color": "#FFFFFF",
+          "width": 0.3
+        }
+      }
+    },
+    {
+      "geomType": "polygon",
+      "value": "Region.4",
+      "vectorOptions": {
+        "fill": {
+          "color": "#FF6666"
+        },
+        "stroke": {
+          "color": "#FFFFFF",
+          "width": 0.3
+        }
+      }
+    },
+    {
+      "geomType": "polygon",
+      "value": "Region.5",
+      "vectorOptions": {
+        "fill": {
+          "color": "#CC2929"
+        },
+        "stroke": {
+          "color": "#FFFFFF",
+          "width": 0.3
         }
       }
     }
