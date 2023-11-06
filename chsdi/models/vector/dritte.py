@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from sqlalchemy import Column, Unicode, Integer, Float
+from sqlalchemy import Column, Unicode, Integer
 from sqlalchemy.types import Numeric
 
 from chsdi.models import register, bases
@@ -22,6 +22,7 @@ class Notfallschutz(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.ensi.zonenplan-notfallschutz-kernanlagen', Notfallschutz)
+
 
 class PronaturaNaturschutzgebiete(Base, Vector):
     __tablename__ = 'naturschutzgebiete'
