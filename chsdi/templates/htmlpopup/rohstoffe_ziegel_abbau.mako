@@ -11,56 +11,56 @@
 
 %if c['attributes']['type'] == 'production':
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.obname')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.obname')}</td>
               <td>${c['attributes']['obname'] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.cpkind')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.cpkind')}</td>
               <td>${c['attributes']['cpkind'] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.stkind')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.stkind')}</td>
               <td>${c['attributes'][stkind_text] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.info_url')}</td>
-              <td>${c['attributes'][info_url_text] or '-'}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.info_url')}</td>
+              <td>${c['attributes'][infos_url_text] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.purl')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.purl')}</td>
               <td><a target="_blank" href=${c['attributes']['purl'] or '-'}>${_('layer_url_portal_text')}</a></td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.swissgeol_link')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.swissgeol_link')}</td>
               <td>${c['attributes']['swissgeol_link'] or '-'}</td>
        </tr>
 % else:
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.edkinds')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.edkinds')}</td>
               <td>${c['attributes']['edkinds'] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.cpkind')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.cpkind')}</td>
               <td>${c['attributes']['cpkind'] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.stkind')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.stkind')}</td>
               <td>${c['attributes'][stkind_text] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.ltkinds')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.ltkinds')}</td>
               <td>${c['attributes'][ltkinds_text] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.infos_url')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.infos_url')}</td>
               <td>${c['attributes'][infos_url_text] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.purl')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.purl')}</td>
               <td><a target="_blank" href=${c['attributes']['purl'] or '-'}>${_('layer_url_portal_text')}</a></td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.swissgeol_link')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.swissgeol_link')}</td>
               <td>${c['attributes']['swissgeol_link'] or '-'}</td>
        </tr>
 %endif

@@ -7,7 +7,6 @@
               info_url_text = 'info_url_%s' %lang
               ltkinds_text = 'ltkinds_%s' %lang
               infos_url_text = 'infos_url_%s' %lang
-              cpkind_text = 'cpkind'
        %>
 
 %if c['attributes']['type'] == 'production':
@@ -17,7 +16,7 @@
        </tr>
        <tr>
               <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.cpkind')}</td>
-              <td>${c['attributes'][cpkind_text] or '-'}</td>
+              <td>${c['attributes']['cpkind'] or '-'}</td>
        </tr>
        <tr>
               <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.stkind')}</td>
@@ -42,7 +41,7 @@
        </tr>
        <tr>
               <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.cpkind')}</td>
-              <td>${c['attributes'][cpkind_text] or '-'}</td>
+              <td>${c['attributes']['cpkind'] or '-'}</td>
        </tr>
        <tr>
               <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.stkind')}</td>
