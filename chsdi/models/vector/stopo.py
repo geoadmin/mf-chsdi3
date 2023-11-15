@@ -1574,6 +1574,7 @@ class GeologieRohstoffeZementAbbauVerarbeitung(Base, Vector):
     infos_url_fr = Column('infos_url_fr', Unicode)
     infos_url_it = Column('infos_url_it', Unicode)
     infos_url_en = Column('infos_url_en', Unicode)
+    the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung', GeologieRohstoffeZementAbbauVerarbeitung)
 
