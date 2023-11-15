@@ -1588,6 +1588,7 @@ class GeologieRohstoffeZiegelAbbau(Base, Vector):
     type = Column('type', Unicode)
     obname = Column('obname', Unicode)
     cpkind = Column('cpkind', Unicode)
+    edkinds = Column('edkinds', Unicode)
     purl = Column('purl', Unicode)
     swissgeol_link = Column('swissgeol_link', Unicode)
     stkind_de = Column('stkind_de', Unicode)
