@@ -1406,6 +1406,52 @@ class GeologieGeophysikTotalintensitaet(Base, Vector):
 register('ch.swisstopo.geologie-geophysik-totalintensitaet', GeologieGeophysikTotalintensitaet)
 
 
+class GeologieRohstoffe:
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    id = Column('bgdi_id', Integer, primary_key=True)
+    type = Column('type', Unicode)
+    obname = Column('obname', Unicode)
+    cpkind = Column('cpkind', Unicode)
+    edkinds = Column('edkinds', Unicode)
+    purl = Column('purl', Unicode)
+    swissgeol_link = Column('swissgeol_link', Unicode)
+    stkind_de = Column('stkind_de', Unicode)
+    stkind_fr = Column('stkind_fr', Unicode)
+    stkind_it = Column('stkind_it', Unicode)
+    stkind_en = Column('stkind_en', Unicode)
+    ltkinds_de = Column('ltkinds_de', Unicode)
+    ltkinds_fr = Column('ltkinds_fr', Unicode)
+    ltkinds_it = Column('ltkinds_it', Unicode)
+    ltkinds_en = Column('ltkinds_en', Unicode)
+    infos_url_de = Column('infos_url_de', Unicode)
+    infos_url_fr = Column('infos_url_fr', Unicode)
+    infos_url_it = Column('infos_url_it', Unicode)
+    infos_url_en = Column('infos_url_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class GeologieRohstoffeZementAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
+    __tablename__ = 'rohstoffe_zementabbauverarbeitung'
+    __template__ = 'templates/htmlpopup/rohstoffe_zement_abbau_verarbeitung.mako'
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung'
+    __label__ = 'obname'
+    info_url_de = Column('info_url_de', Unicode)
+    info_url_fr = Column('info_url_fr', Unicode)
+    info_url_it = Column('info_url_it', Unicode)
+    info_url_en = Column('info_url_en', Unicode)
+
+register('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung', GeologieRohstoffeZementAbbauVerarbeitung)
+
+
+class GeologieRohstoffeZiegelAbbau(Base, GeologieRohstoffe, Vector):
+    __tablename__ = 'rohstoffe_ziegel_abbau'
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-ziegel_abbau'
+    __template__ = 'templates/htmlpopup/rohstoffe_ziegel_abbau.mako'
+    __label__ = 'obname'
+
+register(GeologieRohstoffeZiegelAbbau.__bodId__, GeologieRohstoffeZiegelAbbau)
+
+
 class GeologieRohstoffeIndustrieminerale(Base, Vector):
     __tablename__ = 'rohstoffe_industriemin'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
@@ -1543,70 +1589,6 @@ class GeologieRohstoffeGipsAbbauVerarbeitung(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung', GeologieRohstoffeGipsAbbauVerarbeitung)
-
-
-class GeologieRohstoffeZementAbbauVerarbeitung(Base, Vector):
-    __tablename__ = 'rohstoffe_zementabbauverarbeitung'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/rohstoffe_zement_abbau_verarbeitung.mako'
-    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung'
-    __label__ = 'obname'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    type = Column('type', Unicode)
-    obname = Column('obname', Unicode)
-    cpkind = Column('cpkind', Unicode)
-    edkinds = Column('edkinds', Unicode)
-    purl = Column('purl', Unicode)
-    swissgeol_link = Column('swissgeol_link', Unicode)
-    stkind_de = Column('stkind_de', Unicode)
-    stkind_fr = Column('stkind_fr', Unicode)
-    stkind_it = Column('stkind_it', Unicode)
-    stkind_en = Column('stkind_en', Unicode)
-    ltkinds_de = Column('ltkinds_de', Unicode)
-    ltkinds_fr = Column('ltkinds_fr', Unicode)
-    ltkinds_it = Column('ltkinds_it', Unicode)
-    ltkinds_en = Column('ltkinds_en', Unicode)
-    info_url_de = Column('info_url_de', Unicode)
-    info_url_fr = Column('info_url_fr', Unicode)
-    info_url_it = Column('info_url_it', Unicode)
-    info_url_en = Column('info_url_en', Unicode)
-    infos_url_de = Column('infos_url_de', Unicode)
-    infos_url_fr = Column('infos_url_fr', Unicode)
-    infos_url_it = Column('infos_url_it', Unicode)
-    infos_url_en = Column('infos_url_en', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung', GeologieRohstoffeZementAbbauVerarbeitung)
-
-
-class GeologieRohstoffeZiegelAbbau(Base, Vector):
-    __tablename__ = 'rohstoffe_ziegel_abbau'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-ziegel_abbau'
-    __template__ = 'templates/htmlpopup/rohstoffe_ziegel_abbau.mako'
-    __label__ = 'obname'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    type = Column('type', Unicode)
-    obname = Column('obname', Unicode)
-    cpkind = Column('cpkind', Unicode)
-    edkinds = Column('edkinds', Unicode)
-    purl = Column('purl', Unicode)
-    swissgeol_link = Column('swissgeol_link', Unicode)
-    stkind_de = Column('stkind_de', Unicode)
-    stkind_fr = Column('stkind_fr', Unicode)
-    stkind_it = Column('stkind_it', Unicode)
-    stkind_en = Column('stkind_en', Unicode)
-    ltkinds_de = Column('ltkinds_de', Unicode)
-    ltkinds_fr = Column('ltkinds_fr', Unicode)
-    ltkinds_it = Column('ltkinds_it', Unicode)
-    ltkinds_en = Column('ltkinds_en', Unicode)
-    infos_url_de = Column('infos_url_de', Unicode)
-    infos_url_fr = Column('infos_url_fr', Unicode)
-    infos_url_it = Column('infos_url_it', Unicode)
-    infos_url_en = Column('infos_url_en', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(GeologieRohstoffeZiegelAbbau.__bodId__, GeologieRohstoffeZiegelAbbau)
 
 
 class GeologieRohstoffeZiegelVerarbeitung(Base, Vector):
