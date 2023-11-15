@@ -11,57 +11,81 @@
 
 %if c['attributes']['type'] == 'production':
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.obname')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.production_obname')}</td>
               <td>${c['attributes']['obname'] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.cpkind')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.production_cpkind')}</td>
               <td>${c['attributes']['cpkind'] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.stkind')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.production_stkind')}</td>
               <td>${c['attributes'][stkind_text] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.info_url')}</td>
-              <td>${c['attributes'][info_url_text] or '-'}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.production_info_url')}</td>
+              % if 'http' not in c['attributes'][info_url_text]:
+              <td>-</td>
+              % else:
+              <td><a target="_blank" href=${c['attributes'][info_url_text]}>${_('link')}</a></td>
+              % endif
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.purl')}</td>
-              <td><a target="_blank" href=${c['attributes']['purl'] or '-'}>${_('layer_url_portal_text')}</a></td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.production_purl')}</td>
+              % if 'http' not in c['attributes']['purl']:
+              <td>-</td>
+              % else:
+              <td><a target="_blank" href=${c['attributes']['purl']}>${_('layer_url_portal_text')}</a></td>
+              % endif
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.swissgeol_link')}</td>
-              <td>${c['attributes']['swissgeol_link'] or '-'}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.production_swissgeol_link')}</td>
+              % if 'http' not in c['attributes']['swissgeol_link']:
+              <td>-</td>
+              % else:
+              <td><a target="_blank" href=${c['attributes']['swissgeol_link']}>${_('link')}</a></td>
+              % endif
        </tr>
 % else:
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.edkinds')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.mining_edkinds')}</td>
               <td>${c['attributes']['edkinds'] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.cpkind')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.mining_cpkind')}</td>
               <td>${c['attributes']['cpkind'] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.stkind')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.mining_stkind')}</td>
               <td>${c['attributes'][stkind_text] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.ltkinds')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.mining_ltkinds')}</td>
               <td>${c['attributes'][ltkinds_text] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.infos_url')}</td>
-              <td>${c['attributes'][infos_url_text] or '-'}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.mining_infos_url')}</td>
+              % if 'http' not in c['attributes'][infos_url_text]:
+              <td>-</td>
+              % else:
+              <td><a target="_blank" href=${c['attributes'][infos_url_text]}>${_('link')}</a></td>
+              % endif
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.purl')}</td>
-              <td><a target="_blank" href=${c['attributes']['purl'] or '-'}>${_('layer_url_portal_text')}</a></td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.mining_purl')}</td>
+              % if 'http' not in c['attributes']['purl']:
+              <td>-</td>
+              % else:
+              <td><a target="_blank" href=${c['attributes']['purl']}>${_('layer_url_portal_text')}</a></td>
+              % endif
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.swissgeol_link')}</td>
-              <td>${c['attributes']['swissgeol_link'] or '-'}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.mining_swissgeol_link')}</td>
+              % if 'http' not in c['attributes']['swissgeol_link']:
+              <td>-</td>
+              % else:
+              <td><a target="_blank" href=${c['attributes']['swissgeol_link']}>${_('link')}</a></td>
+              % endif
        </tr>
 %endif
 
