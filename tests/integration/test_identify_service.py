@@ -27,7 +27,7 @@ class TestIdentifyService(TestsBase):
     def test_trivial_from_doc(self):
         params = {'lang': 'fr',
                   'sr': '2056',
-                  'layers': 'all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz',
+                  'layers': 'all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz',
                   'imageDisplay': '0,0,0',
                   'mapExtent': '0,0,0,0',
                   'geometry': '2585438.308,1220677.966',
