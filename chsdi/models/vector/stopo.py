@@ -440,13 +440,13 @@ register('ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill', SwissboundariesBe
 
 
 class SwissboundariesGemeinde(Base, Vector):
-    __tablename__ = 'view_swissboundaries_gemeinden_fill_hist'
+    __tablename__ = 'swissboundaries_gemeinden_hist_chsdi'
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __template__ = 'templates/htmlpopup/swissboundaries_gemeinde.mako'
     __bodId__ = 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
     __timeInstant__ = 'jahr'
     __label__ = 'gemname'
-    id = Column('gde_nr_year', Integer, primary_key=True)
+    id = Column('object_id', Integer, primary_key=True)
     gemname = Column('gde_name', Unicode)
     jahr = Column('jahr', Integer)
     gemflaeche = Column('flaeche_ha', Float)
