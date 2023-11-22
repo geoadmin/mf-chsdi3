@@ -2986,6 +2986,8 @@ class FixpunkteLfp1(Base, Vector):
     l_zuv_lv95 = Column('l_zuv_lv95', Unicode)
     h_zuv_lv95 = Column('h_zuv_lv95', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
+    kennzeichnung = Column('kennzeichnung', Unicode)
+    begehbar = Column('begehbar', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-lfp1', FixpunkteLfp1)
@@ -3013,6 +3015,8 @@ class FixpunkteHfp1(Base, Vector):
     zust_haupt = Column('zust_haupt', Unicode)
     zustaendig = Column('zustaendig', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
+    kennzeichnung = Column('kennzeichnung', Unicode)
+    begehbar = Column('begehbar', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-hfp1', FixpunkteHfp1)
