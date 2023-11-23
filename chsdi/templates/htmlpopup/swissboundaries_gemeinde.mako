@@ -4,20 +4,18 @@
 <%
 linkeddatahost = request.registry.settings['linkeddatahost']
 ldlink = linkeddatahost + '/boundaries/municipality/' + str(c['id'])
-arr_obj_art = ['gemeindegebiet', 'kantonsgebiet', 'kommunanz']
-obj_art = arr_obj_art[c['attributes']['objektart']]
 %>
-<% c['stable_id'] = True %> 
+<% c['stable_id'] = True %>
 <tr>
     <td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.id')}</td>
     % if c['featureId']:
-        <td>${int(round(c['featureId']))}</td>
+        <td>${c['featureId']}</td>
     % else:
         <td>-</td>
     % endif
 </tr>
 <tr><td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gemname')}</td><td>${c['attributes']['gemname']}</td></tr>
-<tr><td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.typ')}</td><td>${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.%s' % obj_art)}</td></tr>
+<tr><td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.typ')}</td><td>${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.%s' % c['attributes']['objektart'])}</td></tr>
 <tr>
     <td class="cell-left">${_('flaeche_ha')}</td>
     % if c['attributes']['gemflaeche']:
@@ -34,5 +32,8 @@ obj_art = arr_obj_art[c['attributes']['objektart']]
         <td>-</td>
     % endif
 </tr>
-<tr><td class="cell-left">${_('link')}</td><td><a href="${ldlink}" target="_blank">Linked Data URI</a></td></tr>
+    % if c['attributes']['is_current_jahr']:
+        <tr><td class="cell-left">${_('link')}</td><td><a href="${ldlink}" target="_blank">Linked Data URI</a></td></tr>
+    % endif
+
 </%def>
