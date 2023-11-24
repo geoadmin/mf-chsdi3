@@ -4,12 +4,22 @@
 <%
 linkeddatahost = request.registry.settings['linkeddatahost']
 ldlink = linkeddatahost + '/boundaries/municipality/' + str(c['id'])
+lang = lang if lang in ('fr','it') else 'de'
+link = 'link_%s' % lang
 %>
 <% c['stable_id'] = True %>
 <tr>
-    <td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.id')}</td>
-    % if c['featureId']:
-        <td>${c['featureId']}</td>
+    <td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gde_hist_id')}</td>
+    % if c['attributes']['gde_hist_id']:
+        <td>${c['attributes']['gde_hist_id']}</td>
+    % else:
+        <td>-</td>
+    % endif
+</tr>
+<tr>
+    <td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gde_nr')}</td>
+    % if c['attributes']['gde_nr']:
+        <td>${c['attributes']['gde_nr']}</td>
     % else:
         <td>-</td>
     % endif
@@ -32,8 +42,15 @@ ldlink = linkeddatahost + '/boundaries/municipality/' + str(c['id'])
         <td>-</td>
     % endif
 </tr>
+<tr>
+    <td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.link')}</td>
+    % if c['attributes'][link]:
+        <td>${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.pre_link_label')} <a href="${c['attributes'][link]}" target="_blank">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.link_label')}</a></td>
+    % else:
+        <td>-</td>
+    % endif
+</tr>
     % if c['attributes']['is_current_jahr']:
         <tr><td class="cell-left">${_('link')}</td><td><a href="${ldlink}" target="_blank">Linked Data URI</a></td></tr>
     % endif
-
 </%def>

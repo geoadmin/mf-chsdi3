@@ -446,7 +446,9 @@ class SwissboundariesGemeinde(Base, Vector):
     __bodId__ = 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
     __timeInstant__ = 'jahr'
     __label__ = 'gemname'
-    id = Column('object_id', Integer, primary_key=True)
+    id = Column('object_id', Unicode, primary_key=True)
+    gde_hist_id = Column('gde_hist_id', Integer)
+    gde_nr = Column('gde_nr', Integer)
     gemname = Column('gde_name', Unicode)
     jahr = Column('jahr', Integer)
     gemflaeche = Column('flaeche_ha', Float)
@@ -455,6 +457,9 @@ class SwissboundariesGemeinde(Base, Vector):
     objektart = Column('objektart', Integer)
     is_current_jahr = Column('is_current_jahr', Boolean)
     objektart_lookup = Column('objektart_lookup', Unicode)
+    link_de = Column('link_de', Unicode)
+    link_fr = Column('link_fr', Unicode)
+    link_it = Column('link_it', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', SwissboundariesGemeinde)
