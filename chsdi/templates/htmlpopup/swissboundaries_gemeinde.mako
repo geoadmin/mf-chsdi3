@@ -42,14 +42,13 @@ link = 'link_%s' % lang
         <td>-</td>
     % endif
 </tr>
+% if c['attributes'][link]:
 <tr>
     <td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.link')}</td>
-    % if c['attributes'][link]:
         <td>${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.pre_link_label')} <a href="${c['attributes'][link]}" target="_blank">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.link_label')}</a></td>
-    % else:
-        <td>-</td>
-    % endif
+
 </tr>
+% endif
     % if c['attributes']['is_current_jahr']:
         <tr><td class="cell-left">${_('link')}</td><td><a href="${ldlink}" target="_blank">Linked Data URI</a></td></tr>
     % endif
