@@ -8,14 +8,7 @@ lang = lang if lang in ('fr','it') else 'de'
 link = 'link_%s' % lang
 %>
 <% c['stable_id'] = True %>
-<tr>
-    <td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gde_hist_id')}</td>
-    % if c['attributes']['gde_hist_id']:
-        <td>${c['attributes']['gde_hist_id']}</td>
-    % else:
-        <td>-</td>
-    % endif
-</tr>
+<tr><td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gemname')}</td><td>${c['attributes']['gemname']}</td></tr>
 <tr>
     <td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gde_nr')}</td>
     % if c['attributes']['gde_nr']:
@@ -24,20 +17,19 @@ link = 'link_%s' % lang
         <td>-</td>
     % endif
 </tr>
-<tr><td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gemname')}</td><td>${c['attributes']['gemname']}</td></tr>
+<tr>
+    <td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.gde_hist_id')}</td>
+    % if c['attributes']['gde_hist_id']:
+        <td>${c['attributes']['gde_hist_id']}</td>
+    % else:
+        <td>-</td>
+    % endif
+</tr>
 <tr><td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.typ')}</td><td>${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.%s' % c['attributes']['objektart'])}</td></tr>
 <tr>
     <td class="cell-left">${_('flaeche_ha')}</td>
     % if c['attributes']['gemflaeche']:
         <td>${int(round(c['attributes']['gemflaeche']))}</td>
-    % else:
-        <td>-</td>
-    % endif
-</tr>
-<tr>
-    <td class="cell-left">${_('perimeter_m')}</td>
-    % if c['attributes']['perimeter']:
-        <td>${int(round(c['attributes']['perimeter']))}</td>
     % else:
         <td>-</td>
     % endif
