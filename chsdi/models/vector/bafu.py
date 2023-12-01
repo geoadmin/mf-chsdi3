@@ -1859,6 +1859,7 @@ class Trockenwiesenundweiden(Base, Vector):
     shape_area = Column('shape_area', Numeric)
     objnummer = Column('objnummer', Integer)
     teilobjnummer = Column('teilobjnummer', Unicode)
+    singularitaet = Column('singularitaet', Unicode)
     bewertung = Column('bewertungs', Integer)
     the_geom = Column(Geometry2D)
 
@@ -1877,6 +1878,7 @@ class TrockenwiesenundweidenAnhang2(Base, Vector):
     refobjblat = Column('refobjblat', Unicode)
     shape_area = Column('shape_area', Numeric)
     teilobjnummer = Column('teilobjnummer', Unicode)
+    singularit = Column('singularit', Unicode)
     bewertung = Column('bewertungs', Integer)
     the_geom = Column(Geometry2D)
 
