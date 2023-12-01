@@ -27,7 +27,7 @@ class TestIdentifyService(TestsBase):
     def test_trivial_from_doc(self):
         params = {'lang': 'fr',
                   'sr': '2056',
-                  'layers': 'all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz',
+                  'layers': 'all:ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill,ch.swisstopo-vd.ortschaftenverzeichnis_plz',
                   'imageDisplay': '0,0,0',
                   'mapExtent': '0,0,0,0',
                   'geometry': '2585438.308,1220677.966',
@@ -629,6 +629,25 @@ class TestIdentifyService(TestsBase):
         self.assertGeojsonFeature(resp_2.json['results'][0], 2056)
 
         self.assertEqual(resp_1.json['results'][0]['id'], resp_2.json['results'][0]['id'])
+
+    def test_identify_timeinstant_swissboundaries3d_gemeinden(self):
+        # without timeInstant a lot of features should be returned
+        params = {'geometryFormat': 'geojson',
+                  'geometryType': 'esriGeometryPoint',
+                  'geometry': '614277,188148',
+                  'imageDisplay': '1920,573,96',
+                  'mapExtent': '570727,172398,666727,201048',
+                  'tolerance': '10',
+                  'returnGeometry': 'true',
+                  'layers': 'all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'}
+        resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(resp_1.content_type, 'application/geo+json')
+        self.assertGreater(len(resp_1.json['results']), 1)
+
+        # with timeInstant one single feature should be returned
+        params['timeInstant'] = '1888'
+        resp_2 = self.testapp.get('/rest/services/ech/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertEqual(len(resp_2.json['results']), 1)
 
     def test_identify_one_timeinstant_several_layers(self):
         params = {'geometryType': 'esriGeometryPoint',
