@@ -3951,3 +3951,16 @@ class ElektrischeAnlagenUeber36StationPointNoPoly (Base, ElektrischeAnlagenUeber
 
 
 register(ElektrischeAnlagenUeber36StationPointNoPoly.__bodId__, ElektrischeAnlagenUeber36StationPointNoPoly)
+
+
+class BetriebeStoerfallverordnungEisenbahnanlagen (Base, Vector):
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __tablename__ = 'stoerfallverordnung_eisenbahnanlagen'
+    __template__ = 'templates/htmlpopup/bav_stoerfallverordnung_eisenbahnanlagen.mako'
+    __bodId__ = 'ch.bav.betriebe-stoerfallverordnung_eisenbahnanlagen'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bav.betriebe-stoerfallverordnung_eisenbahnanlagen', BetriebeStoerfallverordnungEisenbahnanlagen)
