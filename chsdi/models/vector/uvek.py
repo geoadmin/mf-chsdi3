@@ -3967,7 +3967,7 @@ register('ch.bav.betriebe-stoerfallverordnung_eisenbahnanlagen', BetriebeStoerfa
 
 
 class LageStoerfallverordnungEisenbahnanlagen (Base, Vector):
-    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __table_args__ = ({'schema': 'bav', 'autoload': False, 'extend_existing': True})
     __tablename__ = 'stoerfallverordnung_eisenbahnanlagen'
     __template__ = 'templates/htmlpopup/bav_lage_stoerfallverordnung_eisenbahnanlagen.mako'
     __bodId__ = 'ch.bav.lage-stoerfallverordnung_eisenbahnanlagen'
