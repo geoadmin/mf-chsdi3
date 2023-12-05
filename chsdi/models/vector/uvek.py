@@ -3974,6 +3974,7 @@ class LageStoerfallverordnungEisenbahnanlagen (Base, Vector):
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
+    geom_type = Column('geom_type', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bav.lage-stoerfallverordnung_eisenbahnanlagen', LageStoerfallverordnungEisenbahnanlagen)
