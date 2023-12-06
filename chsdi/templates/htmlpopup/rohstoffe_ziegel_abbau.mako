@@ -34,7 +34,7 @@
               % if 'http' not in c['attributes']['purl']:
               <td>-</td>
               % else:
-              <td><a target="_blank" href=${c['attributes']['purl']}>${_('layer_url_portal_text')}</a></td>
+              <td><a target="_blank" href=${c['attributes']['purl']}>${_('link')}</a></td>
               % endif
        </tr>
        <tr>
@@ -75,7 +75,7 @@
               % if 'http' not in c['attributes']['purl']:
               <td>-</td>
               % else:
-              <td><a target="_blank" href=${c['attributes']['purl']}>${_('layer_url_portal_text')}</a></td>
+              <td><a target="_blank" href=${c['attributes']['purl']}>${_('link')}</a></td>
               % endif
        </tr>
        <tr>
