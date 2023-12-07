@@ -27,9 +27,45 @@ API & applications
 
 Geodata
 *******
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Consultation <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)                                                     |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Consultation <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 1st night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde)                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lmax <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel)  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lr <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter)                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. light / large airecrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge)|
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. ligt aircrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. last night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. milit. aerodr. (tot.) <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 2nd night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Road Map 1:200'000 <//map.geo.admin.ch/?layers=ch.swisstopo.strassenkarte-200>`__ (ch.swisstopo.strassenkarte-200)                                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Stocking of river banks <//map.geo.admin.ch/?layers=ch.bafu.gewaesser-uferbestockung>`__ (ch.bafu.gewaesser-uferbestockung)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Stocking map <//map.geo.admin.ch/?layers=ch.bafu.gewaesser-uferbestockung_vegetation>`__ (ch.bafu.gewaesser-uferbestockung_vegetation)                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Winter national map | LK10, LK25, LK50, LK100 <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-winter>`__ (ch.swisstopo.pixelkarte-farbe-winter)                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tank relocation routes <//map.geo.admin.ch/?layers=ch.vbs.panzerverschiebungsrouten>`__ (ch.vbs.panzerverschiebungsrouten)                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Built-up areas VIL <//map.geo.admin.ch/?layers=ch.bazl.bebaute-gebiete_luftfahrtrecht>`__ (ch.bazl.bebaute-gebiete_luftfahrtrecht)                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-karto.schneeschuhrouten)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .   . _releasenotes_20231101:
 
