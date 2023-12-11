@@ -2701,6 +2701,56 @@ class SisPlanningRasterK(Base, Vector):
 register('ch.bav.sachplan-infrastruktur-schiene_kraft', SisPlanningRasterK)
 
 
+class SugAnhoerung:
+    __table_args__ = ({'schema': 'bav', 'autoload': False})
+    __bodId__ = 'ch.bav.sachplan-unterirdischer-guetertransport_anhoerung'
+    __label__ = 'facname_de'
+    id = Column('xtf_id', Unicode)
+    facname_de = Column('facname_de',Unicode)
+    facname_fr = Column('facname_fr',Unicode)
+    facname_it = Column('facname_it',Unicode)
+    description_de = Column('description_de',Unicode)
+    description_fr = Column('description_fr',Unicode)
+    description_it = Column('description_it',Unicode)
+    validfrom = Column('validfrom',Unicode)
+    doc_web = Column('doc_web',Unicode)
+    static_url_de = Column('static_url_de',Unicode)
+    static_url_it = Column('static_url_it',Unicode)
+    static_url_fr = Column('static_url_fr',Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class SugPlanignAnhoerung(Base, SugAnhoerung, Vector):
+    __tablename__ = 'sug_pl_anhorung'
+    __template__ = 'templates/htmlpopup/sug_planning.mako'
+    meastype_text_de = Column('meastype_text_de',Unicode)
+    meastype_text_fr = Column('meastype_text_fr',Unicode)
+    meastype_text_it = Column('meastype_text_it',Unicode)
+    coordlevel_text_de = Column('coordlevel_text_de',Unicode)
+    coordlevel_text_fr = Column('coordlevel_text_fr',Unicode)
+    coordlevel_text_it = Column('coordlevel_text_it',Unicode)
+    plstatus_text_de = Column('plstatus_text_de',Unicode)
+    plstatus_text_fr = Column('plstatus_text_fr',Unicode)
+    plstatus_text_it = Column('plstatus_text_it',Unicode)
+    validuntil = Column('validuntil',Unicode)
+
+
+register('ch.bav.sachplan-unterirdischer-guetertransport_anhoerung', SugPlanignAnhoerung)
+
+
+class SugFacilityAnhoerung(Base, SugAnhoerung, Vector):
+    __tablename__ = 'sug_fac_anhorung'
+    __template__ = 'templates/htmlpopup/sug_facility.mako'
+    facstatus_text_de = Column('facstatus_text_de', Unicode)
+    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
+    facstatus_text_it = Column('facstatus_text_it', Unicode)
+    fackind_text_de = Column('fackind_text_de', Unicode)
+    fackind_text_fr = Column('fackind_text_fr', Unicode)
+    fackind_text_it = Column('fackind_text_it', Unicode)
+
+register('ch.bav.sachplan-unterirdischer-guetertransport_anhoerung', SugFacilityAnhoerung)
+
+
 class KbsZivilflugpl(Base, Vector):
     __tablename__ = 'kataster_belasteter_standorte_zivflpl'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
