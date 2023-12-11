@@ -37,9 +37,7 @@
                  'ch.swisstopo.swisstlm3d-eisenbahnnetz',
                  'ch.vbs.milairspacechart',
                  'ch.vbs.sperr-gefahrenzonenkarte',
-                 'ch.swisstopo.strassenkarte-200',
-                 'ch.bav.sachplan-unterirdischer-guetertransport_kraft',
-                 'ch.bav.sachplan-unterirdischer-guetertransport_anhoerung')
+                 'ch.swisstopo.strassenkarte-200')
   if c['layerBodId'] in pdf_legends:
       legend_url_pdf = host + '/static/images/legends/' + c['layerBodId'] + '_' + lang + '_big.pdf'
   else:
