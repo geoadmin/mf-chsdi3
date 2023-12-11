@@ -34,6 +34,7 @@ link = 'link_%s' % lang
         <td>-</td>
     % endif
 </tr>
+<tr><td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.jahr')}</td><td>${c['attributes']['jahr']}</td></tr>
 % if c['attributes'][link]:
 <tr>
     <td class="cell-left">${_('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill.link')}</td>
