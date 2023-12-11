@@ -2703,9 +2703,8 @@ register('ch.bav.sachplan-infrastruktur-schiene_kraft', SisPlanningRasterK)
 
 class SugBaseClass:
     __table_args__ = ({'schema': 'bav', 'autoload': False})
-    __bodId__ = 'ch.bav.sachplan-unterirdischer-guetertransport_anhoerung'
     __label__ = 'facname_de'
-    id = Column('xtf_id', Unicode)
+    id = Column('xtf_id', Unicode, primary_key=True)
     facname_de = Column('facname_de', Unicode)
     facname_fr = Column('facname_fr', Unicode)
     facname_it = Column('facname_it', Unicode)
@@ -2723,37 +2722,7 @@ class SugBaseClass:
 class SugPlanignAnhoerung(Base, SugBaseClass, Vector):
     __tablename__ = 'sug_pl_anhorung'
     __template__ = 'templates/htmlpopup/sug_planning.mako'
-    meastype_text_de = Column('meastype_text_de', Unicode)
-    meastype_text_fr = Column('meastype_text_fr', Unicode)
-    meastype_text_it = Column('meastype_text_it', Unicode)
-    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
-    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
-    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
-    plstatus_text_de = Column('plstatus_text_de', Unicode)
-    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
-    plstatus_text_it = Column('plstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-
-
-register('ch.bav.sachplan-unterirdischer-guetertransport_anhoerung', SugPlanignAnhoerung)
-
-
-class SugFacilityAnhoerung(Base, SugBaseClass, Vector):
-    __tablename__ = 'sug_fac_anhorung'
-    __template__ = 'templates/htmlpopup/sug_facility.mako'
-    facstatus_text_de = Column('facstatus_text_de', Unicode)
-    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
-    facstatus_text_it = Column('facstatus_text_it', Unicode)
-    fackind_text_de = Column('fackind_text_de', Unicode)
-    fackind_text_fr = Column('fackind_text_fr', Unicode)
-    fackind_text_it = Column('fackind_text_it', Unicode)
-
-register('ch.bav.sachplan-unterirdischer-guetertransport_anhoerung', SugFacilityAnhoerung)
-
-
-class SugPlanignKraft(Base, SugBaseClass, Vector):
-    __tablename__ = 'sug_pl_anhorung'
-    __template__ = 'templates/htmlpopup/sug_planning.mako'
+    __bodId__ = 'ch.bav.sachplan-unterirdischer-guetertransport_anhoerung'
     meastype_text_de = Column('meastype_text_de', Unicode)
     meastype_text_fr = Column('meastype_text_fr', Unicode)
     meastype_text_it = Column('meastype_text_it', Unicode)
@@ -2766,12 +2735,13 @@ class SugPlanignKraft(Base, SugBaseClass, Vector):
     validuntil = Column('validuntil', Unicode)
 
 
-register('ch.bav.sachplan-unterirdischer-guetertransport_anhoerung', SugPlanignKraft)
+register('ch.bav.sachplan-unterirdischer-guetertransport_anhoerung', SugPlanignAnhoerung)
 
 
-class SugFacilityKraft(Base, SugBaseClass, Vector):
+class SugFacilityAnhoerung(Base, SugBaseClass, Vector):
     __tablename__ = 'sug_fac_anhorung'
-    __template__ = 'templates/htmlpopup/sug_facility.mako'
+    __template__ = 'templates/htmlpopup/sug_facilities.mako'
+    __bodId__ = 'ch.bav.sachplan-unterirdischer-guetertransport_anhoerung'
     facstatus_text_de = Column('facstatus_text_de', Unicode)
     facstatus_text_fr = Column('facstatus_text_fr', Unicode)
     facstatus_text_it = Column('facstatus_text_it', Unicode)
@@ -2779,7 +2749,40 @@ class SugFacilityKraft(Base, SugBaseClass, Vector):
     fackind_text_fr = Column('fackind_text_fr', Unicode)
     fackind_text_it = Column('fackind_text_it', Unicode)
 
-register('ch.bav.sachplan-unterirdischer-guetertransport_anhoerung', SugFacilityKraft)
+register('ch.bav.sachplan-unterirdischer-guetertransport_anhoerung', SugFacilityAnhoerung)
+
+
+class SugPlanignKraft(Base, SugBaseClass, Vector):
+    __tablename__ = 'sug_pl_kraft'
+    __template__ = 'templates/htmlpopup/sug_planning.mako'
+    __bodId__ = 'ch.bav.sachplan-unterirdischer-guetertransport_kraft'
+    meastype_text_de = Column('meastype_text_de', Unicode)
+    meastype_text_fr = Column('meastype_text_fr', Unicode)
+    meastype_text_it = Column('meastype_text_it', Unicode)
+    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
+    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
+    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
+    plstatus_text_de = Column('plstatus_text_de', Unicode)
+    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
+    plstatus_text_it = Column('plstatus_text_it', Unicode)
+    validuntil = Column('validuntil', Unicode)
+
+
+register('ch.bav.sachplan-unterirdischer-guetertransport_kraft', SugPlanignKraft)
+
+
+class SugFacilityKraft(Base, SugBaseClass, Vector):
+    __tablename__ = 'sug_fac_kraft'
+    __template__ = 'templates/htmlpopup/sug_facilities.mako'
+    __bodId__ = 'ch.bav.sachplan-unterirdischer-guetertransport_kraft'
+    facstatus_text_de = Column('facstatus_text_de', Unicode)
+    facstatus_text_fr = Column('facstatus_text_fr', Unicode)
+    facstatus_text_it = Column('facstatus_text_it', Unicode)
+    fackind_text_de = Column('fackind_text_de', Unicode)
+    fackind_text_fr = Column('fackind_text_fr', Unicode)
+    fackind_text_it = Column('fackind_text_it', Unicode)
+
+register('ch.bav.sachplan-unterirdischer-guetertransport_kraft', SugFacilityKraft)
 
 
 class KbsZivilflugpl(Base, Vector):
