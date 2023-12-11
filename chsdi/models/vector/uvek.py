@@ -3708,7 +3708,7 @@ class FlugplaetzeHeliports(Base, Vector):
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/flugplaetze_heliports.mako'
     __bodId__ = 'ch.bazl.flugplaetze-heliports'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('ident', Unicode, primary_key=True)
     icao = Column('icao', Unicode)
     name = Column('name', Unicode)
     location = Column('location', Unicode)
@@ -3726,7 +3726,7 @@ class Gebirgslandeplaetze(Base, Vector):
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/gebirgslandeplaetze.mako'
     __bodId__ = 'ch.bazl.gebirgslandeplaetze'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('ident', Unicode, primary_key=True)
     icao = Column('icao', Unicode)
     name = Column('name', Unicode)
     canton = Column('canton', Unicode)
