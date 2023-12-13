@@ -25,6 +25,13 @@ API & applications
 `API <//api3.geo.admin.ch>`__
 '''''''''''''''''''''''''''''
 
+- Bug fixes
+- Announcements:
+    - the layer *ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill* has now been switched to time-enabled, data till back to 1850 available
+    - the layers *ch.swisstopo.geologie-geotechnik-zementindustrie_1965*, *ch.swisstopo.geologie-geotechnik-zementindustrie_1995*, *ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung* and *ch.swisstopo.geologie-geotechnik-ziegeleien_1907* have been removed from chsdi services as previously announced
+    - the layer *ch.swisstopo-vd.ortschaftenverzeichnis_plz* will have some changes on its data model probably in March 2024. More information tba
+    - the removal of the layers *ch.bakom.mobil-antennenstandorte-5g, ch.bakom.mobil-antennenstandorte-gsm, ch.bakom.mobil-antennenstandorte-umts, ch.bakom.mobil-antennenstandorte-lte* has been postponed to 2024. A detailed planning will be communicated later.
+
 Geodata
 *******
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
