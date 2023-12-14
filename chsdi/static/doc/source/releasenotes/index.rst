@@ -28,6 +28,22 @@ API & applications
 Geodata
 *******
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Arsenic <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_arsen>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_arsen)                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Chromium <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_chrom>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_chrom)                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Cadmium <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_cadmium>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_cadmium)                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Copper <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_kupfer>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_kupfer)                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Nickel <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_nickel>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_nickel)                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Uranium <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_uran>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_uran)                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Vanadium <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_vanadium>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_vanadium)                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Zink <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_zink>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_zink)                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Consultation <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)                                                                 |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Noise exp. 1st night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde)                |
