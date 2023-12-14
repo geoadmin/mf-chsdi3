@@ -9,12 +9,11 @@
               infos_url_text = 'infos_url_%s' %lang
        %>
 
+       %if c['attributes']['type'] == 'production':
        <tr>
               <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.production_obname')}</td>
               <td>${c['attributes']['obname'] or '-'}</td>
        </tr>
-
-       %if c['attributes']['type'] == 'production':
        <tr>
               <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.production_cpkind')}</td>
               <td>${c['attributes']['cpkind'] or '-'}</td>
@@ -48,6 +47,10 @@
               % endif
        </tr>
        % else:
+       <tr>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.mining_obname')}</td>
+              <td>${c['attributes']['obname'] or '-'}</td>
+       </tr>
        <tr>
               <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung.mining_edkinds')}</td>
               <td>${c['attributes']['edkinds'] or '-'}</td>
