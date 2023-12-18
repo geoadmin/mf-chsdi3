@@ -1,11 +1,13 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
+    
+    <% c['stable_id'] = True %>
 
-<%
-   lang = lang if lang in ('fr', 'it') else 'de'
-   description = 'descrip_%s' % lang
-%>
+    <%
+    lang = lang if lang in ('fr', 'it') else 'de'
+    description = 'descrip_%s' % lang
+    %>
 
     <tr><td class="cell-left">${_('ch.bazl.gebirgslandeplaetze.icao')}</td>         <td>${c['attributes']['icao'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bazl.gebirgslandeplaetze.name')}</td>         <td>${c['attributes']['name'] or '-'}</td></tr>

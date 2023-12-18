@@ -440,17 +440,26 @@ register('ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill', SwissboundariesBe
 
 
 class SwissboundariesGemeinde(Base, Vector):
-    __tablename__ = 'swissboundaries_gemeinden'
+    __tablename__ = 'swissboundaries_gemeinden_hist_chsdi'
     __table_args__ = ({'schema': 'tlm', 'autoload': False})
     __template__ = 'templates/htmlpopup/swissboundaries_gemeinde.mako'
     __bodId__ = 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill'
+    __timeInstant__ = 'jahr'
     __label__ = 'gemname'
-    id = Column('id', Integer, primary_key=True)
-    gemname = Column('gemname', Unicode)
-    gemflaeche = Column('gemflaeche', Float)
+    id = Column('object_id', Unicode, primary_key=True)
+    gde_hist_id = Column('gde_hist_id', Integer)
+    gde_nr = Column('gde_nr', Integer)
+    gemname = Column('gde_name', Unicode)
+    jahr = Column('jahr', Integer)
+    gemflaeche = Column('flaeche_ha', Float)
     perimeter = Column('perimeter', Float)
     kanton = Column('kanton', Unicode)
     objektart = Column('objektart', Integer)
+    is_current_jahr = Column('is_current_jahr', Boolean)
+    objektart_lookup = Column('objektart_lookup', Unicode)
+    link_de = Column('link_de', Unicode)
+    link_fr = Column('link_fr', Unicode)
+    link_it = Column('link_it', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', SwissboundariesGemeinde)
@@ -1406,6 +1415,52 @@ class GeologieGeophysikTotalintensitaet(Base, Vector):
 register('ch.swisstopo.geologie-geophysik-totalintensitaet', GeologieGeophysikTotalintensitaet)
 
 
+class GeologieRohstoffe:
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    id = Column('bgdi_id', Integer, primary_key=True)
+    type = Column('type', Unicode)
+    obname = Column('obname', Unicode)
+    cpkind = Column('cpkind', Unicode)
+    edkinds = Column('edkinds', Unicode)
+    purl = Column('purl', Unicode)
+    swissgeol_link = Column('swissgeol_link', Unicode)
+    stkind_de = Column('stkind_de', Unicode)
+    stkind_fr = Column('stkind_fr', Unicode)
+    stkind_it = Column('stkind_it', Unicode)
+    stkind_en = Column('stkind_en', Unicode)
+    ltkinds_de = Column('ltkinds_de', Unicode)
+    ltkinds_fr = Column('ltkinds_fr', Unicode)
+    ltkinds_it = Column('ltkinds_it', Unicode)
+    ltkinds_en = Column('ltkinds_en', Unicode)
+    infos_url_de = Column('infos_url_de', Unicode)
+    infos_url_fr = Column('infos_url_fr', Unicode)
+    infos_url_it = Column('infos_url_it', Unicode)
+    infos_url_en = Column('infos_url_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class GeologieRohstoffeZementAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
+    __tablename__ = 'rohstoffe_zementabbauverarbeitung'
+    __template__ = 'templates/htmlpopup/rohstoffe_zement_abbau_verarbeitung.mako'
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung'
+    __label__ = 'obname'
+    info_url_de = Column('info_url_de', Unicode)
+    info_url_fr = Column('info_url_fr', Unicode)
+    info_url_it = Column('info_url_it', Unicode)
+    info_url_en = Column('info_url_en', Unicode)
+
+register('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung', GeologieRohstoffeZementAbbauVerarbeitung)
+
+
+class GeologieRohstoffeZiegelAbbau(Base, GeologieRohstoffe, Vector):
+    __tablename__ = 'rohstoffe_ziegel_abbau'
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-ziegel_abbau'
+    __template__ = 'templates/htmlpopup/rohstoffe_ziegel_abbau.mako'
+    __label__ = 'obname'
+
+register(GeologieRohstoffeZiegelAbbau.__bodId__, GeologieRohstoffeZiegelAbbau)
+
+
 class GeologieRohstoffeIndustrieminerale(Base, Vector):
     __tablename__ = 'rohstoffe_industriemin'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
@@ -1543,47 +1598,6 @@ class GeologieRohstoffeGipsAbbauVerarbeitung(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung', GeologieRohstoffeGipsAbbauVerarbeitung)
-
-
-class GeologieRohstoffeZementAbbauVerarbeitung(Base, Vector):
-    __tablename__ = 'rohstoffe_zementabbauverarbeitung'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/rohstoffe_zement_abbau_verarbeitung.mako'
-    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung'
-    __label__ = 'obname'
-    id = Column('obid', Integer, primary_key=True)
-    obname = Column('obname', Unicode)
-    tckinds = Column('tckinds', Unicode)
-    ltkinds = Column('ltkinds', Unicode)
-    emkinds = Column('emkinds', Unicode)
-    pckind = Column('pckind', Unicode)
-    cpkind = Column('cpkind', Unicode)
-    stkind = Column('stkind', Unicode)
-    tlyearsformatted = Column('tlyearsformatted', Unicode)
-    clkind = Column('clkind', Unicode)
-    purl = Column('purl', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung', GeologieRohstoffeZementAbbauVerarbeitung)
-
-
-class GeologieRohstoffeZiegelAbbau(Base, Vector):
-    __tablename__ = 'rohstoffe_ziegel_abbau'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-ziegel_abbau'
-    __template__ = 'templates/htmlpopup/rohstoffe_ziegel_abbau.mako'
-    __label__ = 'obname'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    obname = Column('obname', Unicode)
-    tckinds = Column('tckinds', Unicode)
-    ltkinds = Column('ltkinds', Unicode)
-    stkind = Column('stkind', Unicode)
-    tlyearsformatted = Column('tlyearsformatted', Unicode)
-    purl = Column('purl', Unicode)
-    clkind = Column('clkind', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(GeologieRohstoffeZiegelAbbau.__bodId__, GeologieRohstoffeZiegelAbbau)
 
 
 class GeologieRohstoffeZiegelVerarbeitung(Base, Vector):
@@ -2981,6 +2995,8 @@ class FixpunkteLfp1(Base, Vector):
     l_zuv_lv95 = Column('l_zuv_lv95', Unicode)
     h_zuv_lv95 = Column('h_zuv_lv95', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
+    kennzeichnung = Column('kennzeichnung', Unicode)
+    begehbar = Column('begehbar', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-lfp1', FixpunkteLfp1)
@@ -3008,6 +3024,8 @@ class FixpunkteHfp1(Base, Vector):
     zust_haupt = Column('zust_haupt', Unicode)
     zustaendig = Column('zustaendig', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
+    kennzeichnung = Column('kennzeichnung', Unicode)
+    begehbar = Column('begehbar', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.fixpunkte-hfp1', FixpunkteHfp1)
