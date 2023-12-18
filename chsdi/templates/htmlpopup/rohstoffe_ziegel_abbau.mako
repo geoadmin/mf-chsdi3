@@ -51,10 +51,6 @@
               <td>${c['attributes']['obname'] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.mining_edkinds')}</td>
-              <td>${c['attributes']['edkinds'] or '-'}</td>
-       </tr>
-       <tr>
               <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-ziegel_abbau.mining_cpkind')}</td>
               <td>${c['attributes']['cpkind'] or '-'}</td>
        </tr>
