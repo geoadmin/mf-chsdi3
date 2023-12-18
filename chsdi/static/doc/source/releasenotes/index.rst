@@ -14,7 +14,7 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
-.   . _releasenotes_20231220:
+.. _releasenotes_20231220:
 
 Release 202311220 - Wednesday, December 20st 2023
 -------------------------------------------------
@@ -104,7 +104,7 @@ Geodata
 | Update | `swissALTI3D Hillshade Monodirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d-reliefschattierung_monodirektional>`__ (ch.swisstopo.swissalti3d-reliefschattierung_monodirektional)                  |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.   . _releasenotes_20231101:
+.. _releasenotes_20231101:
 
 Release 20231101 - Wednesday, November 1st 2023
 ------------------------------------------------
