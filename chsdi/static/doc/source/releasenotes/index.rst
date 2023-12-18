@@ -105,6 +105,10 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `swissALTI3D Hillshade Monodirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swissalti3d-reliefschattierung_monodirektional>`__ (ch.swisstopo.swissalti3d-reliefschattierung_monodirektional)                  |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway Installations MAO <//map.geo.admin.ch/?layers=ch.bav.betriebe-stoerfallverordnung_eisenbahnanlagen>`__ (ch.bav.betriebe-stoerfallverordnung_eisenbahnanlagen)                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway Lines MAO <//map.geo.admin.ch/?layers=ch.bav.lage-stoerfallverordnung_eisenbahnanlagen>`__ (ch.bav.lage-stoerfallverordnung_eisenbahnanlagen)                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20231101:
 
