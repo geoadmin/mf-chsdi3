@@ -35,6 +35,8 @@ API & applications
 Geodata
 *******
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hanglagen Abschwemmung <//map.geo.admin.ch/?layers=ch.blw.hanglagen-abschwemmung>`__ (ch.blw.hanglagen-abschwemmung)                                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Geochemical soil atlas of Switzerland: Arsenic <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_arsen>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_arsen)                                   |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Geochemical soil atlas of Switzerland: Chromium <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_chrom>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_chrom)                                  |
