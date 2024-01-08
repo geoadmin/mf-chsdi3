@@ -16,5 +16,12 @@
     <tr><td class="cell-left">${_('tt_sachplan_facility_anlagestatus')}</td>          <td>${c['attributes'][facstatus_text] or '-'}</td></tr>
     <tr><td class="cell-left">${_('tt_sachplan_facility_beschlussdatum')}</td>        <td>${c['attributes']['validfrom'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('tt_sachplan_beschreibung')}</td>                   <td>${c['attributes'][description_text] or '-'}</td></tr>
-    <td class="cell-left">${_(objektblatt)}</td>                                      <td><a href="${c['attributes']['doc_web'] or '-'}" target="_balnk">${c['attributes']['doc_title'] or '-'}</a></td>
+    <td class="cell-left">${_(objektblatt)}</td>
+    <td>
+% if c['attributes']['doc_web'] != None:
+        <a href="${c['attributes']['doc_web']}" target="_balnk">${c['attributes']['doc_title'] or '-'}</a>
+% else:
+        ${c['attributes']['doc_title'] or '-'}
+% endif
+    </td>
 </%def>
