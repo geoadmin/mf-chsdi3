@@ -2712,9 +2712,10 @@ class SugBaseClass:
     description_fr = Column('description_fr', Unicode)
     description_it = Column('description_it', Unicode)
     validfrom = Column('validfrom', Unicode)
-    doc_tid = Column('doc_tid', Unicode)
-    doc_title = Column('doc_title', Unicode)
-    doc_web = Column('doc_web', Unicode)
+    doc_objektblatt_title = Column('doc_objektblatt_title', Unicode)
+    doc_objektblatt_web = Column('doc_objektblatt_web', Unicode)
+    doc_gesamtbericht_title = Column('doc_gesamtbericht_title', Unicode)
+    doc_gesamtbericht_web = Column('doc_gesamtbericht_web', Unicode)
     the_geom = Column(Geometry2D)
 
 
