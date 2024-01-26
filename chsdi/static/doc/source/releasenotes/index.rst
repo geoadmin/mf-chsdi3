@@ -27,7 +27,10 @@ API & applications
 
 - Bug fixes
 - Announcements:
-    - ...
+    - the layer *ch.swisstopo-vd.ortschaftenverzeichnis_plz* will have the following changes on its data model by the release of March 13th 2024: *additional* attributes 'status' and 'modification'
+    - the layer *ch.bfs.generalisierte-grenzen_agglomerationen_g2* will be removed from chsdi services with the release of March 13th 2024.
+    - the layers *ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200* and *ch.swisstopo.geologie-geotechnik-gk200* will be removed from chsdi services with the release of March 13th 2024.
+    - the layers *ch.bakom.mobil-antennenstandorte-5g, ch.bakom.mobil-antennenstandorte-gsm, ch.bakom.mobil-antennenstandorte-umts, ch.bakom.mobil-antennenstandorte-lte* will be removed from chsdi services with the release of March 13th 2024.
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2023-12-20-rc1...2024-01-31-rc1>`__
 
 Geodata
