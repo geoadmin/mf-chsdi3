@@ -75,7 +75,7 @@ Here is an example of response.
           "idGeoCat": "4f10c35a-8fac-4000-ab6d-7a294284059a",
           "layerBodId": "ch.bafu.hydrologie-wassertemperaturmessstationen",
           "attributes": {
-              "wmsUrlResource": "http://wms.geo.admin.ch/?REQUEST=GetCapabilities&SERVICE=WMS&VERSION=1.0.0",
+              "wmsUrlResource": "http://wms.geo.admin.ch/?REQUEST=GetCapabilities&SERVICE=WMS&VERSION=1.3.0",
               "scaleLimit": "-",
               "inspireUpperAbstract": "Environnement, biology and geology | Space and population",
               "inspireName": "Environmental monitoring facilities | Human health and safety",

@@ -51,7 +51,7 @@ class LuftbilderBaseStac(LuftbilderBase):
     z = Column('z', Numeric)
 
 
-class LuftbilderSwisstopoFarbe(Base, LuftbilderBase, Vector):
+class LuftbilderSwisstopoFarbe(Base, LuftbilderBaseStac, Vector):
     __tablename__ = 'luftbilder_swisstopo_color'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_farbe'
     image_height = Column('image_height', Integer)
