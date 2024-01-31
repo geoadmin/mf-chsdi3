@@ -16,7 +16,7 @@ Release Notes
 
 .. _releasenotes_20240131:
 
-Release 20240131 - Wednesday, January 21st 2023
+Release 20240131 - Wednesday, January 31st 2024
 -------------------------------------------------
 
 API & applications
@@ -51,7 +51,7 @@ Geodata
 
 .. _releasenotes_20231220:
 
-Release 202311220 - Wednesday, December 20th 2023
+Release 20231220 - Wednesday, December 20th 2023
 -------------------------------------------------
 
 API & applications
