@@ -194,8 +194,8 @@ class TestFeaturesView(TestsBase):
         self.assertIn('Please provide an integer', resp.text)
 
     def test_find_boolean_true(self):
-        params = {'layer': 'ch.swisstopo.lubis-luftbilder_farbe',
-                  'searchField': 'orientierung',
+        params = {'layer': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
+                  'searchField': 'is_current_jahr',
                   'searchText': 'True',
                   'returnGeometry': 'false',
                   'contains': 'false'}
@@ -205,8 +205,8 @@ class TestFeaturesView(TestsBase):
         self.assertEsrijsonFeature(resp.json['results'][0], 21781, hasGeometry=False)
 
     def test_find_boolean_false(self):
-        params = {'layer': 'ch.swisstopo.lubis-luftbilder_farbe',
-                  'searchField': 'orientierung',
+        params = {'layer': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
+                  'searchField': 'is_current_jahr',
                   'searchText': 'FALSE',
                   'returnGeometry': 'false',
                   'contains': 'false'}
