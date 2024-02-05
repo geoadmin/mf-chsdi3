@@ -174,3 +174,35 @@ register('ch.sem.sachplan-asyl_anhoerung', AsylPlanningAnhoerung)
 register('ch.sem.sachplan-asyl_anhoerung', AsylPlanningRasterAnhoerung)
 register('ch.sem.sachplan-asyl_kraft', AsylPlanningKraft)
 register('ch.sem.sachplan-asyl_kraft', AsylPlanningRasterKraft)
+
+
+class ArmasuisseNaturLandschaftArmee(Base, Vector):
+    __bodId__ = 'ch.armasuisse.natur-landschaft_armee'
+    __table_args__ = ({'schema': 'armasuisse', 'autoload': False})
+    __tablename__ = 'natur_landschaft_armee_tooltip'
+    __template__ = 'templates/htmlpopup/armasuisse_natur_landschaft_armee.mako'
+    __label__ = 'standort'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    standort = Column('standort', Unicode)
+    nla_name = Column('nla_name', Unicode)
+    lebr_de = Column('lebr_de', Unicode)
+    lebr_fr = Column('lebr_fr', Unicode)
+    lebr_it = Column('lebr_it', Unicode)
+    sublebr_de = Column('sublebr_de', Unicode)
+    sublebr_fr = Column('sublebr_fr', Unicode)
+    sublebr_it = Column('sublebr_it', Unicode)
+    schutz_de = Column('schutz_de', Unicode)
+    schutz_fr = Column('schutz_fr', Unicode)
+    schutz_it = Column('schutz_it', Unicode)
+    typ_de = Column('typ_de', Unicode)
+    typ_fr = Column('typ_fr', Unicode)
+    typ_it = Column('typ_it', Unicode)
+    link_nla_de = Column('link_nla_de', Unicode)
+    link_nla_fr = Column('link_nla_fr', Unicode)
+    link_nla_it = Column('link_nla_it', Unicode)
+    link_flyer_de = Column('link_flyer_de', Unicode)
+    link_flyer_fr = Column('link_flyer_fr', Unicode)
+    link_flyer_it = Column('link_flyer_it', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.armasuisse.natur-landschaft_armee', ArmasuisseNaturLandschaftArmee)
