@@ -12,9 +12,6 @@
 
         link_nla_text = c['attributes'][link_nla_col] or '-'
         link_flyer_text = c['attributes'][link_flyer_col] or '-'
-
-        link_nla_text = link_nla_text.replace('</a>', '').replace('<a href="', '').replace('" target="_blank">', ',').split(',')[0]
-
     %>
     <tr>
         <td class="cell-left">${_('ch.armasuisse.natur-landschaft_armee.standort')}</td>
@@ -42,7 +39,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.armasuisse.natur-landschaft_armee.link_nla')}</td>
-        <td><a href="${link_nla_text}" target="_blank">Link</a></td>
+        <td>${link_nla_text | n}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.armasuisse.natur-landschaft_armee.link_flyer')}</td>
