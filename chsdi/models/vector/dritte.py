@@ -203,6 +203,7 @@ class ArmasuisseNaturLandschaftArmee(Base, Vector):
     link_flyer_de = Column('link_flyer_de', Unicode)
     link_flyer_fr = Column('link_flyer_fr', Unicode)
     link_flyer_it = Column('link_flyer_it', Unicode)
+    geom_type = Column('geom_type', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.armasuisse.natur-landschaft_armee', ArmasuisseNaturLandschaftArmee)
