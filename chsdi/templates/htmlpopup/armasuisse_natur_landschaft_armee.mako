@@ -33,7 +33,7 @@
         <td class="cell-left">${_('ch.armasuisse.natur-landschaft_armee.schutz')}</td>
         <td>${c['attributes'][schutz_text] or '-'}</td>
     </tr>
-    %if c['attributes']['typ_de']:
+    %if c['attributes']['geom_type'] == 'ST_MultiPoint':
     <tr>
         <td class="cell-left">${_('ch.armasuisse.natur-landschaft_armee.typ')}</td>
         <td>${c['attributes'][typ_text] or '-'}</td>
