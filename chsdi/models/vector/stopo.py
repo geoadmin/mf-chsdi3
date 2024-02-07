@@ -810,8 +810,8 @@ class GridstandTemplate:
     id = Column('gid', BigInteger, primary_key=True)
     tileid = Column('tileid', Unicode)
     lk_name = Column('lk_name', Unicode)
-    datenstand = Column('release', Integer)
-    releasekey = Column('releasekey', Unicode)
+    datenstand = Column('release', Integer)  # flightyear
+    releasekey = Column('releasekey', Unicode)  # gdwh_releasekey
     the_geom = Column(Geometry2D)
 
 
@@ -826,7 +826,9 @@ class GridstandPermiterTemplate:
 
 class GridstandPk25Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk25.metadata'
-    __tablename__ = 'view_gridstand_datenhaltung_pk25_tilecache'
+    __tablename__ = 'view_pk25_metadata'
+    __timeInstant__ = 'year'
+    year = Column('year', Unicode)
 
 
 register('ch.swisstopo.pixelkarte-pk25.metadata', GridstandPk25Meta)
