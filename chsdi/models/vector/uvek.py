@@ -4071,7 +4071,7 @@ class BakomchStandorteMobilfunkanlagen (Base, Vector):
     __bodId__ = 'ch.bakom.standorte-mobilfunkanlagen'
     __label__ = 'station'
     id = Column('bgdi_id', Integer, primary_key=True)
-    station = Column('name', Unicode)
+    station = Column('station', Unicode)
     typ_de = Column('typ_de', Unicode)
     typ_fr = Column('typ_fr', Unicode)
     typ_it = Column('typ_it', Unicode)
@@ -4097,7 +4097,6 @@ class BakomchStandorteMobilfunkanlagen (Base, Vector):
     agw_fr = Column('agw_fr', Unicode)
     agw_it = Column('agw_it', Unicode)
     agw_en = Column('agw_en', Unicode)
-    geom_type = Column('geom_type', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.standorte-mobilfunkanlagen', BakomchStandorteMobilfunkanlagen)
