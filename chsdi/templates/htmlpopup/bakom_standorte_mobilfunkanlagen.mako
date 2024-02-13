@@ -23,19 +23,19 @@
         <td>${c['attributes'][power_text] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bakom.standorte-mobilfunkanlagen.techno')}</td>
+        <td class="cell-left"></td>
         <td>${c['attributes'][techno_text] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bakom.standorte-mobilfunkanlagen.adaptiv')}</td>
+        <td class="cell-left"></td>
         <td>${c['attributes'][adaptiv_text] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bakom.standorte-mobilfunkanlagen.bewillingung')}</td>
+        <td class="cell-left">${_('ch.bakom.standorte-mobilfunkanlagen.bewilligung')}</td>
         <td>${c['attributes'][bewilligung_text] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bakom.standorte-mobilfunkanlagen.agw')}</td>
+        <td class="cell-left"></td>
         <td>${c['attributes'][agw_text] or '-'}</td>
     </tr>
 
