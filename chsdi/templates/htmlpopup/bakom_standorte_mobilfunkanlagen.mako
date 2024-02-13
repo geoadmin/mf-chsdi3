@@ -19,6 +19,10 @@
         <td>${c['attributes'][typ_text] or '-'}</td>
     </tr>
     <tr>
+        <td class="cell-left">${_('ch.bakom.standorte-mobilfunkanlagen.koord')}</td>
+        <td>${c['attributes']['koord'] or '-'}</td>
+    </tr>
+    <tr>
         <td class="cell-left">${_('ch.bakom.standorte-mobilfunkanlagen.power')}</td>
         <td>${c['attributes'][power_text] or '-'}</td>
     </tr>
