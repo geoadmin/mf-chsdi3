@@ -41,11 +41,19 @@
     %endif
     <tr>
         <td class="cell-left">${_('ch.armasuisse.natur-landschaft_armee.link_nla')}</td>
-        <td>${link_nla_text | n}</td>
+        %if link_nla_text.startswith('http'):
+            <td><a href="${link_nla_text}" target="_blank">${_('link')}</a></td>
+        %else:
+            <td>${link_nla_text}</td>
+        %endif
     </tr>
     <tr>
         <td class="cell-left">${_('ch.armasuisse.natur-landschaft_armee.link_flyer')}</td>
-        <td>${link_flyer_text | n}</td>
+        %if link_flyer_text.startswith('http'):
+        <td><a href="${link_flyer_text}" target="_blank">${_('link')}</a></td>
+        %else:
+            <td>${link_flyer_text}</td>
+        %endif
     </tr>
 
 </%def>
