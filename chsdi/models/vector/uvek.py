@@ -1716,8 +1716,10 @@ class HindernisbegrenzungsflaechenKataster:
     __bodId__ = 'ch.bazl.hindernisbegrenzungsflaechen-kataster'
     id = Column('bgdi_id', Integer, primary_key=True)
     icaoloc = Column('icaoloc', Unicode)
+    surfacetype = Column('surfacetype', Unicode)
     validfrom = Column('validfrom', Unicode)
     validuntil = Column('validuntil', Unicode)
+    document = Column('document', Unicode)
     the_geom = Column(Geometry2D)
 
 
