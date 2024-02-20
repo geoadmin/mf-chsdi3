@@ -10,13 +10,21 @@
     <td>${c['attributes']['surfacetype'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left">${_('ch.bazl.hindernisbegrenzungsflaechen-kataster.validfrom')}</td>
-    <td>${c['attributes']['validfrom'] or '-'}</td>
+    <td class="cell-left">${_('ch.bazl.hindernisbegrenzungsflaechen-kataster.heightaccordingvil')}</td>
+    %if c['attributes']['heightaccordingvil'] == 'Yes':
+      <td>${_('yesText')}</td>
+    %elif c['attributes']['heightaccordingvil'] == 'No':
+      <td>${_('noText')}</td>
+    %else:
+      <td>-</td>
+    %endif
   </tr>
+  %if c['attributes']['heightaboveground'] != None:
   <tr>
-    <td class="cell-left">${_('ch.bazl.hindernisbegrenzungsflaechen-kataster.validuntil')}</td>
-    <td>${c['attributes']['validuntil'] or '-'}</td>
+    <td class="cell-left">${_('ch.bazl.hindernisbegrenzungsflaechen-kataster.heightaboveground')}</td>
+    <td>${c['attributes']['heightaboveground'] or '-'}</td>
   </tr>
+  %endif
   <tr>
     <td class="cell-left">${_('ch.bazl.hindernisbegrenzungsflaechen-kataster.document')}</td>
     %if c['attributes']['document'].startswith('http'):
