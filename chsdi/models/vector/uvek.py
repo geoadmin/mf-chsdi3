@@ -1717,14 +1717,14 @@ class HindernisbegrenzungsflaechenKataster:
     id = Column('bgdi_id', Integer, primary_key=True)
     icaoloc = Column('icaoloc', Unicode)
     surfacetype = Column('surfacetype', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
     document = Column('document', Unicode)
     the_geom = Column(Geometry2D)
 
 
 class HindernisbegrenzungsflaechenKatasterArea(Base, HindernisbegrenzungsflaechenKataster, Vector):
     __tablename__ = 'hindernisbegrenzungsflaechen_kataster_area'
+    heightaccordingvil = Column('heightaccordingvil', Unicode)
+    heightaboveground = Column('heightaboveground', Unicode)
 
 register('ch.bazl.hindernisbegrenzungsflaechen-kataster', HindernisbegrenzungsflaechenKatasterArea)
 
